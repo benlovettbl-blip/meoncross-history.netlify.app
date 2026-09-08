@@ -22,16 +22,16 @@
   .page:last-child { page-break-after: avoid; }
   
   /* Headers */
-  .page-header { border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: flex-end; }
+  .page-header { border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: flex-end; }
   .header-left h1 { margin: 0; font-size: 11pt; color: #1e3a8a; font-weight: 800; text-transform: uppercase; letter-spacing: 0.3px; }
   .header-left p { margin: 1px 0 0 0; font-size: 7pt; color: #64748b; font-weight: 500; }
   .header-tag { font-size: 6.8pt; font-weight: 800; background: #1e3a8a; color: #fff; padding: 2px 7px; border-radius: 3px; text-transform: uppercase; }
   
-  .page-footer { font-size: 6.5pt; color: #94a3b8; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 3px; margin-top: 4px; display: flex; justify-content: space-between; }
+  .page-footer { font-size: 6.5pt; color: #94a3b8; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 3px; margin-top: 3px; display: flex; justify-content: space-between; }
   
-  /* Lined paper simulation */
-  .writing-line { height: 15px; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; }
-  .writing-line.starter { color: #475569; font-style: italic; font-size: 7.5pt; display: flex; align-items: flex-end; padding-bottom: 2px; }
+  /* Realistic Lined paper simulation (7.5mm / 21px notebook ruling) */
+  .writing-line { height: 21px; border-bottom: 1px solid #cbd5e1; margin-bottom: 0; box-sizing: border-box; display: flex; align-items: flex-end; padding-bottom: 2px; }
+  .writing-line.starter { color: #334155; font-style: italic; font-size: 7.2pt; }
   
   /* Answers-Only Bank (Green Pages 4 & 5) */
   .ans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5px 10px; font-size: 7.2pt; flex: 1 1 auto; }
@@ -40,8 +40,8 @@
   .ans-text { color: #15803d; font-weight: 600; line-height: 1.25; }
   
   /* Cover Tracker Table */
-  .tracker-table { width: 100%; border-collapse: collapse; font-size: 7.2pt; margin: 6px 0; }
-  .tracker-table th, .tracker-table td { border: 1px solid #cbd5e1; padding: 3px 5px; vertical-align: middle; }
+  .tracker-table { width: 100%; border-collapse: collapse; font-size: 7.4pt; margin: 4px 0; }
+  .tracker-table th, .tracker-table td { border: 1px solid #cbd5e1; padding: 4px 6px; vertical-align: middle; }
   .tracker-table th { background: #1e3a8a; color: white; font-weight: 800; text-align: left; }
   .tracker-table tr:nth-child(even) { background: #f8fafc; }
   
@@ -51,19 +51,19 @@
   .quiz-cb { width: 9px; height: 9px; border: 1px solid #94a3b8; border-radius: 2px; flex-shrink: 0; margin-top: 1px; }
   
   /* Stepped Ladder Boxes */
-  .ladder-zone { border: 1px solid #cbd5e1; border-radius: 5px; padding: 5px 8px; margin-bottom: 6px; }
+  .ladder-zone { border: 1.5px solid #cbd5e1; border-radius: 5px; padding: 5px 8px; margin-bottom: 5px; }
   .ladder-launchpad { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 4px; padding: 4px 6px; font-size: 7.2pt; color: #1e40af; margin-bottom: 4px; }
   .ladder-stretch { background: #f5f3ff; border: 1px solid #ddd6fe; border-radius: 4px; padding: 4px 6px; font-size: 7.2pt; color: #6d28d9; margin-top: 4px; }
   
   /* Dual Track Split Columns */
-  .dual-track-container { display: grid; grid-template-columns: 34% 66%; gap: 8px; flex: 1 1 auto; margin-bottom: 4px; }
-  .toolkit-col { background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 5px; padding: 6px; font-size: 7pt; display: flex; flex-direction: column; justify-content: space-between; }
-  .writing-col { border: 1px solid #cbd5e1; border-radius: 5px; padding: 6px; display: flex; flex-direction: column; justify-content: space-between; }
-  .toolkit-box { background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 4px; margin-bottom: 4px; }
+  .dual-track-container { display: grid; grid-template-columns: 32% 68%; gap: 8px; margin-bottom: 4px; }
+  .toolkit-col { background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 5px; padding: 6px; font-size: 7pt; display: flex; flex-direction: column; gap: 4px; }
+  .writing-col { border: 1.5px solid #cbd5e1; border-radius: 5px; padding: 6px; display: flex; flex-direction: column; }
+  .toolkit-box { background: #fff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 4px; margin-bottom: 2px; }
   
   /* Planning Engine Tables */
   .plan-table { width: 100%; border-collapse: collapse; font-size: 7.2pt; margin-bottom: 4px; }
-  .plan-table th, .plan-table td { border: 1px solid #cbd5e1; padding: 3px 5px; vertical-align: top; }
+  .plan-table th, .plan-table td { border: 1px solid #cbd5e1; padding: 4px 6px; vertical-align: top; }
   .plan-table th { background: #f1f5f9; font-weight: 800; color: #1e293b; text-align: left; }
 </style>
 </head>
@@ -75,36 +75,38 @@
     <div class="page">
         <div>
             <!-- Banner Header -->
-            <div style="background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%); color: white; padding: 12px 16px; border-radius: 6px; margin-bottom: 8px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 4px; margin-bottom: 6px;">
-                    <span style="font-size: 7.5pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #93c5fd;">Pearson Edexcel GCSE (9–1) History · Option P5</span>
-                    <span style="font-size: 7pt; background: #3b82f6; padding: 2px 6px; border-radius: 3px; font-weight: 700;">12-Page Complete Pack</span>
+            <div style="background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%); color: white; padding: 10px 14px; border-radius: 6px; margin-bottom: 6px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.25); padding-bottom: 4px; margin-bottom: 5px;">
+                    <span style="font-size: 7.6pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #93c5fd;">Pearson Edexcel GCSE (9–1) History · Option P5 Conflict in the Middle East, 1945–1995</span>
+                    <span style="font-size: 7pt; background: #2563eb; color: #fff; padding: 2px 7px; border-radius: 3px; font-weight: 800; text-transform: uppercase;">12-Page Complete Pack</span>
                 </div>
-                <h1 style="margin: 0; font-size: 14pt; font-weight: 800; line-height: 1.2;">Key Topic 1: The Birth of the State of Israel, 1945–63</h1>
-                <p style="margin: 3px 0 0 0; font-size: 8pt; color: #cbd5e1;">Comprehensive Mastery &amp; Exam Practice Booklet · Foundation to Grade 9 · 1945–1963</p>
+                <h1 style="margin: 0; font-size: 13pt; font-weight: 800; line-height: 1.2;">Key Topic 1: The Birth of the State of Israel, 1945–63</h1>
+                <p style="margin: 2px 0 0 0; font-size: 7.8pt; color: #cbd5e1;">Comprehensive Mastery &amp; Exam Practice Booklet · Foundation to Grade 9 · 1945–1963</p>
             </div>
 
             <!-- Student Metadata Box -->
-            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 8px; background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 5px; padding: 6px 10px; margin-bottom: 8px; font-size: 8pt;">
-                <div><strong>Pupil Name:</strong> ________________________________</div>
-                <div><strong>Class / Set:</strong> ___________</div>
-                <div><strong>Target Grade:</strong> [ &nbsp; ]</div>
+            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr; gap: 8px; background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 5px; padding: 5px 8px; margin-bottom: 6px; font-size: 7.6pt;">
+                <div><strong>Pupil Name:</strong> ____________________________</div>
+                <div><strong>Candidate No:</strong> _________</div>
+                <div><strong>Class / Set:</strong> _________</div>
+                <div><strong>Target Grade:</strong> [ &nbsp; ] &nbsp;|&nbsp; <strong>Working:</strong> [ &nbsp; ]</div>
             </div>
 
             <!-- The Master Assessment & Progress Tracker -->
-            <div style="border: 1.5px solid #1e3a8a; border-radius: 6px; padding: 6px 8px; background: #fff; margin-bottom: 8px;">
+            <div style="border: 1.5px solid #1e3a8a; border-radius: 6px; padding: 5px 8px; background: #fff; margin-bottom: 6px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #1e3a8a; padding-bottom: 3px; margin-bottom: 4px;">
-                    <strong style="color: #1e3a8a; font-size: 8.5pt; text-transform: uppercase;">📊 Progress &amp; Assessment Tracker (GCSE 9–1)</strong>
-                    <span style="font-size: 7pt; color: #64748b;">Marked by Teacher or Peer Verified</span>
+                    <strong style="color: #1e3a8a; font-size: 8.2pt; text-transform: uppercase;">📊 Progress &amp; Assessment Tracker (GCSE 9–1)</strong>
+                    <span style="font-size: 6.8pt; color: #64748b;">RAG: 🔴 Red (Needs Review) · 🟡 Amber (Securing) · 🟢 Green (Mastered)</span>
                 </div>
 
                 <table class="tracker-table">
                     <thead>
                         <tr>
-                            <th style="width: 54%;">Assessment Component &amp; Stem Focus</th>
-                            <th style="width: 16%; text-align: center;">Format Style</th>
-                            <th style="width: 14%; text-align: center;">Max Marks</th>
-                            <th style="width: 16%; text-align: center;">Pupil Score</th>
+                            <th style="width: 46%;">Assessment Component &amp; Stem Focus</th>
+                            <th style="width: 14%; text-align: center;">Format Style</th>
+                            <th style="width: 10%; text-align: center;">Max</th>
+                            <th style="width: 14%; text-align: center;">Score</th>
+                            <th style="width: 16%; text-align: center;">Pupil RAG</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -113,84 +115,121 @@
                             <td style="text-align: center;">Checklist</td>
                             <td style="text-align: center;">/80</td>
                             <td style="text-align: center;">_____</td>
+                            <td style="text-align: center; font-size: 7pt; color: #475569;">[ 🔴 &nbsp; 🟡 &nbsp; 🟢 ]</td>
                         </tr>
                         <tr>
                             <td><strong>Round 1 (Stepped):</strong> Q1 Consequence (bombing of the King David Hote...)</td>
                             <td style="text-align: center;">Ladder</td>
                             <td style="text-align: center;">/4</td>
                             <td style="text-align: center;">_____</td>
+                            <td style="text-align: center; font-size: 7pt; color: #475569;">[ 🔴 &nbsp; 🟡 &nbsp; 🟢 ]</td>
                         </tr>
                         <tr>
                             <td><strong>Round 1 (Stepped):</strong> Q2 Importance (UN Resolution 181 for the crea...)</td>
                             <td style="text-align: center;">Ladder</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
+                            <td style="text-align: center; font-size: 7pt; color: #475569;">[ 🔴 &nbsp; 🟡 &nbsp; 🟢 ]</td>
                         </tr>
                         <tr>
                             <td><strong>Round 1 (Stepped):</strong> Q3 Narrative Account (key events of the Arab-Israeli...)</td>
                             <td style="text-align: center;">Ladder</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
+                            <td style="text-align: center; font-size: 7pt; color: #475569;">[ 🔴 &nbsp; 🟡 &nbsp; 🟢 ]</td>
                         </tr>
                         <tr>
                             <td><strong>Round 2 (Dual-Track):</strong> Q1 Consequence (Israeli attacks on Gaza in 195...)</td>
                             <td style="text-align: center;">Dual Track</td>
                             <td style="text-align: center;">/4</td>
                             <td style="text-align: center;">_____</td>
+                            <td style="text-align: center; font-size: 7pt; color: #475569;">[ 🔴 &nbsp; 🟡 &nbsp; 🟢 ]</td>
                         </tr>
                         <tr>
                             <td><strong>Round 2 (Dual-Track):</strong> Q2 Importance (Law of Return (1950) for the n...)</td>
                             <td style="text-align: center;">Dual Track</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
+                            <td style="text-align: center; font-size: 7pt; color: #475569;">[ 🔴 &nbsp; 🟡 &nbsp; 🟢 ]</td>
                         </tr>
                         <tr>
                             <td><strong>Round 2 (Dual-Track):</strong> Q3 Narrative Account (key events of the Suez Crisis ...)</td>
                             <td style="text-align: center;">Dual Track</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
+                            <td style="text-align: center; font-size: 7pt; color: #475569;">[ 🔴 &nbsp; 🟡 &nbsp; 🟢 ]</td>
                         </tr>
                         <tr>
                             <td><strong>Round 3 (Simulation):</strong> Q1 Consequence (formation of the United Arab R...)</td>
                             <td style="text-align: center;">Exam Hall</td>
                             <td style="text-align: center;">/4</td>
                             <td style="text-align: center;">_____</td>
+                            <td style="text-align: center; font-size: 7pt; color: #475569;">[ 🔴 &nbsp; 🟡 &nbsp; 🟢 ]</td>
                         </tr>
                         <tr>
                             <td><strong>Round 3 (Simulation):</strong> Q2 Importance (creation of the Israeli Defenc...)</td>
                             <td style="text-align: center;">Exam Hall</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
+                            <td style="text-align: center; font-size: 7pt; color: #475569;">[ 🔴 &nbsp; 🟡 &nbsp; 🟢 ]</td>
                         </tr>
                         <tr>
                             <td><strong>Round 3 (Simulation):</strong> Q3 Narrative Account (key events leading to the end ...)</td>
                             <td style="text-align: center;">Exam Hall</td>
                             <td style="text-align: center;">/8</td>
                             <td style="text-align: center;">_____</td>
+                            <td style="text-align: center; font-size: 7pt; color: #475569;">[ 🔴 &nbsp; 🟡 &nbsp; 🟢 ]</td>
                         </tr>
                         <tr style="background: #e0e7ff; font-weight: 800; font-size: 7.5pt;">
                             <td colspan="2">TOTAL COMBINED EXAM MARKS:</td>
                             <td style="text-align: center;">/60</td>
                             <td style="text-align: center;">_____ / 60</td>
+                            <td style="text-align: center; font-size: 6.8pt; color: #3730a3;">Overall: [ 9 8 7 6 5 4 ]</td>
                         </tr>
                     </tbody>
                 </table>
-                <div style="display: flex; justify-content: space-between; font-size: 7.2pt; color: #334155; margin-top: 3px; font-weight: 600;">
-                    <span>Teacher / Peer Marker: _____________________________________</span>
-                    <span>Date: _______________</span>
-                    <span>Overall Grade: [ 9 &nbsp; 8 &nbsp; 7 &nbsp; 6 &nbsp; 5 &nbsp; 4 ]</span>
+                <div style="font-size: 6.6pt; color: #475569; margin-top: 3px; font-weight: 600; text-align: center; background: #f8fafc; padding: 2px 4px; border-radius: 3px; border: 1px solid #e2e8f0;">
+                    <strong>Edexcel GCSE Grade Boundaries (Indicative):</strong> &nbsp;
+                    Grade 9: 52+ (87%) &nbsp;•&nbsp; Grade 8: 47+ (78%) &nbsp;•&nbsp; Grade 7: 42+ (70%) &nbsp;•&nbsp; Grade 6: 37+ (62%) &nbsp;•&nbsp; Grade 5: 32+ (53%) &nbsp;•&nbsp; Grade 4: 26+ (43%)
+                </div>
+            </div>
+
+            <!-- Teacher / Examiner Diagnostic Feedback Box (WWW & EBI) -->
+            <div style="border: 1.5px solid #475569; border-radius: 6px; padding: 5px 8px; background: #f8fafc; margin-bottom: 6px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
+                    <strong style="color: #334155; font-size: 7.5pt; text-transform: uppercase;">📝 Examiner / Teacher Diagnostic Feedback</strong>
+                    <span style="font-size: 6.8pt; color: #64748b;">Strengths (WWW) &amp; Priority Next Steps (EBI)</span>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                    <div>
+                        <strong style="color: #166534; font-size: 6.8pt; display: block; margin-bottom: 1px;">🌟 What Went Well (WWW):</strong>
+                        <div class="writing-line" style="height: 18px;"></div>
+                        <div class="writing-line" style="height: 18px;"></div>
+                        <div class="writing-line" style="height: 18px;"></div>
+                    </div>
+                    <div>
+                        <strong style="color: #991b1b; font-size: 6.8pt; display: block; margin-bottom: 1px;">🎯 Even Better If / Next Steps (EBI):</strong>
+                        <div class="writing-line" style="height: 18px;"></div>
+                        <div class="writing-line" style="height: 18px;"></div>
+                        <div class="writing-line" style="height: 18px;"></div>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 6.8pt; color: #334155; margin-top: 4px; border-top: 1px solid #e2e8f0; padding-top: 2px;">
+                    <span>Teacher Signature: ___________________________</span>
+                    <span>Date Marked: _______________</span>
+                    <span>Action Follow-up: _______________</span>
                 </div>
             </div>
 
             <!-- Bottom Box: Fast Facts & Stem Formulas -->
-            <div style="border: 1.5px solid #0f766e; background: #f0fdfa; border-radius: 6px; padding: 6px 10px; font-size: 7pt; line-height: 1.35; color: #115e59;">
-                <div style="font-weight: 800; color: #0f766e; font-size: 7.5pt; text-transform: uppercase; margin-bottom: 3px; display: flex; justify-content: space-between;">
+            <div style="border: 1.5px solid #0f766e; background: #f0fdfa; border-radius: 6px; padding: 5px 8px; font-size: 6.8pt; line-height: 1.3; color: #115e59;">
+                <div style="font-weight: 800; color: #0f766e; font-size: 7.2pt; text-transform: uppercase; margin-bottom: 2px; display: flex; justify-content: space-between;">
                     <span>⏱️ Edexcel Exam Fast Facts &amp; Stem Blueprints (Option P5 Period Study)</span>
                     <span>Total Paper 2: 32 Marks · 50 Mins</span>
                 </div>
-                <div><strong>• 4-Mark Consequence (~6 mins):</strong> <em>P-F-C Formula.</em> State <strong>Point</strong> clearly in sentence 1 &rarr; support with <strong>2–3 detailed facts</strong> &rarr; explain direct <strong>Consequence Link</strong> (why this mattered).</div>
-                <div><strong>• 8-Mark Narrative Account (~12 mins):</strong> <em>T-P-C Storyboard.</em> 3 linked paragraphs: <strong>Trigger / Outbreak</strong> &rarr; <strong>Decisive Turning Point</strong> &rarr; <strong>Climax / Outcome</strong>. Must use explicit causal connectives showing how Stage 1 caused Stage 2.</div>
-                <div><strong>• 8-Mark Importance (~12 mins each):</strong> <em>F-I-L Formula.</em> Identify <strong>Factor</strong> &rarr; provide <strong>Information facts</strong> &rarr; explain causal <strong>Link</strong> showing directly why it was important <em>for the named outcome</em>.</div>
+                <div><strong>• 4-Mark Consequence (~6 mins):</strong> <em>P-F-C Formula.</em> State <strong>Point</strong> clearly in sentence 1 &rarr; support with <strong>2–3 detailed facts</strong> &rarr; explain direct <strong>Consequence Link</strong> (why this mattered for relations or statehood).</div>
+                <div><strong>• 8-Mark Narrative Account (~12 mins):</strong> <em>3-Stage Causal Storyboard.</em> Write 3 linked paragraphs: <strong>Trigger / Outbreak</strong> &rarr; <strong>Decisive Turning Point</strong> &rarr; <strong>Climax / Outcome</strong>. Must use explicit causal connectives explaining how Stage 1 caused Stage 2.</div>
+                <div><strong>• 8-Mark Importance (~12 mins each):</strong> <em>2 Developed Explanations.</em> Write 2 distinct paragraphs: Identify <strong>Factor</strong> &rarr; provide <strong>precise historical facts</strong> &rarr; explain causal <strong>Link</strong> showing directly why it was important <em>for the named outcome</em>.</div>
             </div>
         </div>
 
@@ -1365,31 +1404,32 @@
             </div>
 
             <!-- Q1: 4-Mark Consequence -->
-            <div class="ladder-zone" style="border-left: 3.5px solid #f59e0b;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px;">
+            <div class="ladder-zone" style="border-left: 3.5px solid #f59e0b; margin-bottom: 5px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
                     <strong style="font-size: 8.5pt; color: #1e293b;">Question 1: Consequence (4 Marks)</strong>
                     <span style="font-size: 7pt; color: #b45309; font-weight: 700;">P-F-C Formula · ~6 Mins</span>
                 </div>
-                <div style="font-weight: 800; font-size: 8.5pt; color: #0f172a; margin-bottom: 4px;">
+                <div style="font-weight: 800; font-size: 8.5pt; color: #0f172a; margin-bottom: 3px;">
                     Explain one consequence of the bombing of the King David Hotel (1946).
                 </div>
 
                 <!-- Launchpad -->
-                <div class="ladder-launchpad">
+                <div class="ladder-launchpad" style="padding: 4px 7px; margin-bottom: 3px;">
                     <strong>🚀 Level 1 Launchpad:</strong> Starter: <em>"One consequence was that it shattered British domestic and political resolve to maintain the Palestine Mandate."</em><br>
                     <strong>Facts to Include:</strong> On 22 July 1946, Irgun militants disguised as milkmen detonated explosives in the basement, killing 91 British, Arab, and Jewish staff and destroying the British administrative secretariat.
                 </div>
 
                 <!-- Writing lines -->
-                <div style="padding: 2px 0;">
+                <div style="padding: 1px 0;">
                     <div class="writing-line starter">One consequence was that...</div>
                     <div class="writing-line starter">Specifically, (include 2–3 historical facts)...</div>
                     <div class="writing-line starter">This was significant because it led directly to...</div>
                     <div class="writing-line"></div>
+                    <div class="writing-line"></div>
                 </div>
 
                 <!-- Stretch Callout -->
-                <div class="ladder-stretch">
+                <div class="ladder-stretch" style="padding: 4px 7px; margin-top: 3px;">
                     <strong>⚡ Level 3 (Grade 9) Stretch:</strong> Grade 9 Nuance: Evaluate whether the British decision to quit Palestine was an intended or unintended consequence of the Irgun’s insurgency, and whether economic exhaustion after WW2 made withdrawal inevitable anyway.
                 </div>
             </div>
@@ -1405,7 +1445,7 @@
                 </div>
 
                 <!-- Launchpad -->
-                <div class="ladder-launchpad" style="padding: 3px 6px; margin-bottom: 3px;">
+                <div class="ladder-launchpad" style="padding: 4px 7px; margin-bottom: 3px;">
                     <strong>🚀 Level 1 Launchpad:</strong> Starter: <em>"UN Resolution 181 was important for the creation of Israel because it provided essential international legal legitimacy for sovereign statehood."</em><br>
                     <strong>Facts to Include:</strong> Passed by a 2/3 UN majority on 29 November 1947, allocating 55% of Mandatory Palestine to a Jewish state, 45% to an Arab state, and designating Jerusalem an international corpus separatum under UN administration.
                 </div>
@@ -1430,7 +1470,7 @@
                 </div>
 
                 <!-- Stretch Callout -->
-                <div class="ladder-stretch" style="padding: 3px 6px; margin-top: 3px;">
+                <div class="ladder-stretch" style="padding: 4px 7px; margin-top: 3px;">
                     <strong>⚡ Level 3 (Grade 9) Stretch:</strong> Grade 9 Evaluation: Counter-factual analysis — explain whether Resolution 181 secured peace or whether its rejection by Arab states guaranteed that statehood could only be finalized through military warfare in 1948–49.
                 </div>
             </div>
@@ -1551,69 +1591,83 @@
             </div>
 
             <!-- Q1 Consequence (Dual Track) -->
-            <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 5px 8px; margin-bottom: 6px;">
+            <div style="border: 1.5px solid #cbd5e1; border-radius: 5px; padding: 5px 8px; margin-bottom: 6px;">
                 <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
                     <strong style="font-size: 8.2pt; color: #1e293b;">Question 1: Consequence (4 Marks)</strong>
-                    <span style="font-size: 6.8pt; color: #0369a1; font-weight: 700;">Independent Toolkit</span>
+                    <span style="font-size: 6.8pt; color: #0369a1; font-weight: 700;">Independent Toolkit · P-F-C Formula · ~6 Mins</span>
                 </div>
                 <div style="font-weight: 800; font-size: 8.2pt; color: #0f172a; margin-bottom: 4px;">
                     Explain one consequence of the Israeli attacks on Gaza in 1955.
                 </div>
 
-                <div class="dual-track-container" style="height: 105px;">
-                    <div class="toolkit-col">
+                <div class="dual-track-container" style="height: 78mm;">
+                    <div class="toolkit-col" style="justify-content: space-between;">
                         <div>
                             <strong style="color: #0369a1; font-size: 6.8pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">🧰 Fact Vault (AO1)</strong>
                             <div style="font-size: 6.2pt; margin-bottom: 2px;">• 28 February 1955: IDF paratroopers under Ariel Sharon raided an Egyptian military camp in Gaza.</div><div style="font-size: 6.2pt; margin-bottom: 2px;">• 38 Egyptian soldiers and 8 Israelis were killed, exposing severe Egyptian military deficiencies.</div><div style="font-size: 6.2pt; margin-bottom: 2px;">• Convinced President Nasser that Western arms embargos left Egypt vulnerable to Israeli aggression.</div>
                         </div>
-                        <div style="font-size: 6.2pt; color: #b91c1c; border-top: 1px dashed #f87171; padding-top: 2px;">
-                            <strong>⚠️ Trap:</strong> Do not describe how the raid was carried out; focus solely on the political and military consequence for Nasser.
+                        <div>
+                            <div style="font-size: 6.2pt; color: #b91c1c; border-top: 1px dashed #f87171; padding-top: 2px; margin-bottom: 2px;">
+                                <strong>⚠️ Trap:</strong> Do not describe how the raid was carried out; focus solely on the political and military consequence for Nasser.
+                            </div>
+                            <div style="background: #fdf4ff; border: 1px solid #f0abfc; border-radius: 3px; padding: 2px 4px; font-size: 6.2pt; color: #86198f;">
+                                Grade 9 Upgrade: Explain how this raid directly drove Nasser to seek Soviet-bloc weaponry, culminating in the September 1955 Czech Arms Deal and triggering the countdown to the Suez Crisis.
+                            </div>
                         </div>
                     </div>
                     <div class="writing-col">
-                        <div class="writing-line starter">One consequence was...</div>
-                        <div class="writing-line starter">Specifically,...</div>
-                        <div class="writing-line starter">This was significant because...</div>
+                        <div class="writing-line starter">One consequence was that...</div>
+                        <div class="writing-line starter">Specifically, (deploy 2–3 precise historical facts)...</div>
+                        <div class="writing-line starter">This was significant because it led directly to...</div>
                         <div class="writing-line"></div>
-                        <div style="background: #fdf4ff; border: 1px solid #f0abfc; border-radius: 3px; padding: 2px 4px; font-size: 6.5pt; color: #86198f; margin-top: 2px;">
-                            Grade 9 Upgrade: Explain how this raid directly drove Nasser to seek Soviet-bloc weaponry, culminating in the September 1955 Czech Arms Deal and triggering the countdown to the Suez Crisis.
-                        </div>
+                        <div class="writing-line"></div>
+                        <div class="writing-line"></div>
                     </div>
                 </div>
             </div>
 
             <!-- Q2 Importance (Dual Track) -->
-            <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 5px 8px;">
+            <div style="border: 1.5px solid #cbd5e1; border-radius: 5px; padding: 5px 8px;">
                 <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
                     <strong style="font-size: 8.2pt; color: #1e293b;">Question 2: Importance (8 Marks)</strong>
-                    <span style="font-size: 6.8pt; color: #0369a1; font-weight: 700;">Independent Toolkit</span>
+                    <span style="font-size: 6.8pt; color: #0369a1; font-weight: 700;">Independent Toolkit · F-I-L Formula · 2 Developed Explanations · ~12 Mins</span>
                 </div>
                 <div style="font-weight: 800; font-size: 8.2pt; color: #0f172a; margin-bottom: 4px;">
                     Explain the importance of the Law of Return (1950) for the new state of Israel.
                 </div>
 
-                <div class="dual-track-container" style="height: 155px;">
-                    <div class="toolkit-col">
+                <div class="dual-track-container" style="height: 140mm;">
+                    <div class="toolkit-col" style="justify-content: space-between;">
                         <div>
                             <strong style="color: #0369a1; font-size: 6.8pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">🧰 Fact Vault (AO1)</strong>
                             <div style="font-size: 6.2pt; margin-bottom: 2px;">• Passed by Knesset on 5 July 1950: granted every Jewish person worldwide the legal right to settle in Israel as an automatic citizen.</div><div style="font-size: 6.2pt; margin-bottom: 2px;">• Doubled Israel’s population within four years, absorbing 680,000 immigrants including European Holocaust survivors and Mizrahi/Sephardic refugees expelled from Arab nations.</div><div style="font-size: 6.2pt; margin-bottom: 2px;">• Created vital military manpower for the newly formed IDF and established demographic security against surrounding Arab majorities.</div>
                         </div>
-                        <div style="font-size: 6.2pt; color: #b91c1c; border-top: 1px dashed #f87171; padding-top: 2px;">
-                            <strong>⚠️ Trap:</strong> Ensure your answer links directly to the survival and development OF THE NEW STATE, rather than writing a general history of immigration.
+                        <div>
+                            <div style="font-size: 6.2pt; color: #b91c1c; border-top: 1px dashed #f87171; padding-top: 2px; margin-bottom: 2px;">
+                                <strong>⚠️ Trap:</strong> Ensure your answer links directly to the survival and development OF THE NEW STATE, rather than writing a general history of immigration.
+                            </div>
+                            <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 3px; padding: 2px 4px; font-size: 6.2pt; color: #1e40af; margin-bottom: 2px;">
+                                <strong>🎯 Examiner Focus:</strong> Explain importance directly for the named outcome, not general background.
+                            </div>
+                            <div style="background: #fdf4ff; border: 1px solid #f0abfc; border-radius: 3px; padding: 2px 4px; font-size: 6.2pt; color: #86198f;">
+                                Grade 9 Upgrade: Balance the military and demographic security advantages against the severe economic strain (ma’abarot tent cities, strict food rationing) it placed on the fledgling state.
+                            </div>
                         </div>
                     </div>
                     <div class="writing-col">
-                        <div style="font-size: 6.5pt; font-weight: 800; color: #0369a1; text-transform: uppercase;">Para 1: First Reason for Importance</div>
-                        <div class="writing-line starter">One reason this was important was...</div>
-                        <div class="writing-line starter">Specifically, (factual detail)...</div>
+                        <div style="font-size: 6.6pt; font-weight: 800; color: #0369a1; text-transform: uppercase; margin-bottom: 1px;">Paragraph 1: First Reason for Importance</div>
+                        <div class="writing-line starter">One reason this was important was because...</div>
+                        <div class="writing-line starter">Specifically, (deploy detailed factual evidence)...</div>
+                        <div class="writing-line starter">This was critical for the named outcome because it directly led to...</div>
                         <div class="writing-line"></div>
-                        <div style="font-size: 6.5pt; font-weight: 800; color: #0369a1; margin-top: 2px; text-transform: uppercase;">Para 2: Second Reason for Importance</div>
-                        <div class="writing-line starter">A second reason this was important was...</div>
-                        <div class="writing-line starter">Without this development,...</div>
                         <div class="writing-line"></div>
-                        <div style="background: #fdf4ff; border: 1px solid #f0abfc; border-radius: 3px; padding: 2px 4px; font-size: 6.5pt; color: #86198f; margin-top: 2px;">
-                            Grade 9 Upgrade: Balance the military and demographic security advantages against the severe economic strain (ma’abarot tent cities, strict food rationing) it placed on the fledgling state.
-                        </div>
+
+                        <div style="font-size: 6.6pt; font-weight: 800; color: #0369a1; text-transform: uppercase; margin: 3px 0 1px 0;">Paragraph 2: Second Reason for Importance</div>
+                        <div class="writing-line starter">A second reason this was important was because...</div>
+                        <div class="writing-line starter">For example, (include key names, dates, or terms)...</div>
+                        <div class="writing-line starter">Without this development, the outcome would have differed because...</div>
+                        <div class="writing-line"></div>
+                        <div class="writing-line"></div>
                     </div>
                 </div>
             </div>
@@ -1634,62 +1688,110 @@
             <div class="page-header">
                 <div class="header-left">
                     <h1>Key Topic 1: The Birth of the State of Israel, 1945–63</h1>
-                    <p>Round 2: The Split-Column Dual Track · 8-Mark Narrative Account</p>
+                    <p>Round 2: The Split-Column Dual Track · 8-Mark Narrative Account Masterclass</p>
                 </div>
                 <span class="header-tag" style="background: #0284c7;">Round 2: Stem 3</span>
             </div>
 
-            <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 5px 8px; margin-bottom: 4px;">
+            <div style="border: 1.5px solid #cbd5e1; border-radius: 5px; padding: 5px 8px;">
                 <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
                     <strong style="font-size: 8.5pt; color: #1e293b;">Question 3: Narrative Account (8 Marks)</strong>
-                    <span style="font-size: 7pt; color: #0284c7; font-weight: 700;">Chronological Anchor Toolkit</span>
+                    <span style="font-size: 7pt; color: #0284c7; font-weight: 700;">Chronological Anchor Toolkit · ~12 Mins</span>
                 </div>
-                <div style="font-weight: 800; font-size: 8.5pt; color: #0f172a; margin-bottom: 3px;">
+                <div style="font-weight: 800; font-size: 8.2pt; color: #0f172a; margin-bottom: 3px;">
                     Write a narrative account analysing the key events of the Suez Crisis (1956).
                 </div>
-                <div style="font-size: 7pt; color: #475569; margin-bottom: 4px;">
-                    Stimulus Points: <strong>• Nationalisation of the Suez Canal (July 1956)</strong> &nbsp;&nbsp; <strong>• The Protocol of Sèvres (October 1956)</strong>
+                <div style="font-size: 6.9pt; color: #475569; margin-bottom: 4px;">
+                    Stimulus Points: <strong>• Nationalisation of the Suez Canal (July 1956)</strong> &nbsp;&nbsp; <strong>• The Protocol of Sèvres (October 1956)</strong> &nbsp;&nbsp; <em>(You must also use information of your own.)</em>
                 </div>
 
-                <div class="dual-track-container" style="height: 220mm;">
-                    <div class="toolkit-col">
+                <div class="dual-track-container" style="margin-bottom: 0;">
+                    <!-- Left Toolkit Column (Dense, no whitespace) -->
+                    <div class="toolkit-col" style="display: flex; flex-direction: column; gap: 3.5px; padding: 5px;">
                         <div>
-                            <strong style="color: #0284c7; font-size: 7pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">⏱️ Chronological Anchors</strong>
+                            <strong style="color: #0284c7; font-size: 6.8pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">⏱️ Chronological Anchors (AO1)</strong>
                             
-                                <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px; margin-bottom: 3px; font-size: 6.2pt;">
+                                <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 2px 4px; margin-bottom: 2px; font-size: 6.1pt; line-height: 1.25;">
                                     <strong style="color: #0369a1;">July 1956:</strong> Nasser nationalises Suez Canal after US withdraws Aswan Dam funding.
                                 </div>
                             
-                                <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px; margin-bottom: 3px; font-size: 6.2pt;">
+                                <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 2px 4px; margin-bottom: 2px; font-size: 6.1pt; line-height: 1.25;">
                                     <strong style="color: #0369a1;">Oct 1956:</strong> Protocol of Sèvres: Britain, France, and Israel secret collusion agreement.
                                 </div>
                             
-                                <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px; margin-bottom: 3px; font-size: 6.2pt;">
+                                <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 2px 4px; margin-bottom: 2px; font-size: 6.1pt; line-height: 1.25;">
                                     <strong style="color: #0369a1;">Oct–Nov 1956:</strong> Israel invades Sinai; Anglo-French ultimatum and paratrooper landings at Port Said.
                                 </div>
                             
-                                <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px; margin-bottom: 3px; font-size: 6.2pt;">
+                                <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 2px 4px; margin-bottom: 2px; font-size: 6.1pt; line-height: 1.25;">
                                     <strong style="color: #0369a1;">Nov 1956:</strong> US financial sanctions and UN pressure force humiliating Anglo-French withdrawal.
                                 </div>
                             
-
-                            <strong style="color: #0284c7; font-size: 7pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin: 4px 0 2px 0;">🌉 Causal Bridges</strong>
-                            <div style="font-size: 6.2pt; margin-bottom: 2px;">• <em>"Nasser’s nationalisation prompted..."</em></div><div style="font-size: 6.2pt; margin-bottom: 2px;">• <em>"This led directly to secret tripartite collusion when..."</em></div><div style="font-size: 6.2pt; margin-bottom: 2px;">• <em>"However, the military advance was halted when..."</em></div>
                         </div>
 
-                        <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 3px; padding: 4px; font-size: 6.2pt; color: #1e40af;">
-                            <strong>🎯 Level 3 Standard:</strong> To achieve Level 3 (7–8 marks): Your account must explain how superpower intervention (US threats to collapse the British pound) converted an Anglo-French military victory into a political defeat.
+                        <div>
+                            <strong style="color: #0284c7; font-size: 6.8pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">🌉 Causal Bridges Bank (AO2)</strong>
+                            <div style="font-size: 6.1pt; margin-bottom: 1.5px; color: #334155;">• <em>"Nasser’s nationalisation prompted..."</em></div><div style="font-size: 6.1pt; margin-bottom: 1.5px; color: #334155;">• <em>"This led directly to secret tripartite collusion when..."</em></div><div style="font-size: 6.1pt; margin-bottom: 1.5px; color: #334155;">• <em>"However, the military advance was halted when..."</em></div>
+                        </div>
+
+                        
+                        <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 3px; padding: 3px 4px;">
+                            <strong style="color: #166534; font-size: 6.4pt; display: block; margin-bottom: 1.5px;">🔑 Essential Historical Terms:</strong>
+                            <div style="font-size: 5.9pt; color: #14532d; line-height: 1.25; margin-bottom: 1px;">• <strong>Nationalisation:</strong> Nasser state seizure of Suez Canal Company</div><div style="font-size: 5.9pt; color: #14532d; line-height: 1.25; margin-bottom: 1px;">• <strong>Protocol of Sèvres:</strong> Secret UK-France-Israel collusion pact</div><div style="font-size: 5.9pt; color: #14532d; line-height: 1.25; margin-bottom: 1px;">• <strong>Ultimatum:</strong> Anglo-French pretext to occupy canal zone</div><div style="font-size: 5.9pt; color: #14532d; line-height: 1.25; margin-bottom: 1px;">• <strong>Financial Sanctions:</strong> US pressure on sterling forcing British exit</div>
+                        </div>
+
+                        <div style="background: #fff; border: 1px solid #fca5a5; border-radius: 3px; padding: 3px 4px; font-size: 6pt; color: #991b1b; line-height: 1.25;">
+                            <strong>🚫 Fatal Narrative Trap:</strong> Do not focus purely on military clashes in Sinai. You must explain how US financial sanctions and UN pressure converted an Anglo-French military victory into a political defeat.
+                        </div>
+
+                        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3px 4px; font-size: 6pt; color: #334155; line-height: 1.3;">
+                            <strong style="color: #1e3a8a; display: block; margin-bottom: 1px;">📋 Pre-Flight Self-Audit:</strong>
+                            <div>[ ] Stage 1: Trigger &amp; crisis identified</div>
+                            <div>[ ] Stage 2: Decisive turning point explained</div>
+                            <div>[ ] Stage 3: Long-term outcome &amp; legacy</div>
+                            <div>[ ] Both stimulus points + 1 own fact used</div>
+                            <div>[ ] Explicit causal connective links stages</div>
+                        </div>
+
+                        <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 3px; padding: 3px 4px; font-size: 6pt; color: #1e40af; line-height: 1.25;">
+                            <strong>🎯 Level 3 Standard (7–8 Marks):</strong> To achieve Level 3 (7–8 marks): Your account must explain how superpower intervention (US threats to collapse the British pound) converted an Anglo-French military victory into a political defeat.
+                        </div>
+
+                        <div style="background: #faf5ff; border: 1px solid #e9d5ff; border-radius: 3px; padding: 2.5px 4px; font-size: 5.9pt; color: #6b21a8; line-height: 1.25;">
+                            <strong>📐 3-Stage Causal Storyboard Arc:</strong>
+                            <div style="margin-top: 1px;">Stage 1 (Catalyst) → Stage 2 (Pivot) → Stage 3 (Climax &amp; Outcome)</div>
                         </div>
                     </div>
 
-                    <div class="writing-col">
-                        <div class="writing-line starter">The crisis / war began when...</div>
+                    <!-- Right Writing Column: 3 Developed Paragraphs (28 Ruled Lines Total) -->
+                    <div class="writing-col" style="justify-content: flex-start; padding: 4px 6px;">
+                        <div style="font-size: 6.6pt; font-weight: 800; color: #0284c7; text-transform: uppercase; margin-bottom: 1px;">Paragraph 1: Stage 1 — Trigger &amp; Outbreak (Initial Crisis)</div>
+                        <div class="writing-line starter">The crisis / conflict began when...</div>
+                        <div class="writing-line starter">Specifically, (deploy precise historical facts and figures)...</div>
                         <div class="writing-line"></div>
                         <div class="writing-line"></div>
-                        <div class="writing-line starter">A critical turning point occurred when...</div>
                         <div class="writing-line"></div>
                         <div class="writing-line"></div>
-                        <div class="writing-line starter">Consequently, this led to...</div>
+                        <div class="writing-line"></div>
+                        <div class="writing-line"></div>
+                        <div class="writing-line"></div>
+
+                        <div style="font-size: 6.6pt; font-weight: 800; color: #0284c7; text-transform: uppercase; margin: 3px 0 1px 0;">Paragraph 2: Stage 2 — Decisive Turning Point (Explicit Causal Link)</div>
+                        <div class="writing-line starter">As a direct consequence of this initial outbreak, a decisive turning point occurred when...</div>
+                        <div class="writing-line starter">For example, (include key operations, military maneuvers, or diplomatic shifts)...</div>
+                        <div class="writing-line"></div>
+                        <div class="writing-line"></div>
+                        <div class="writing-line"></div>
+                        <div class="writing-line"></div>
+                        <div class="writing-line"></div>
+                        <div class="writing-line"></div>
+                        <div class="writing-line"></div>
+
+                        <div style="font-size: 6.6pt; font-weight: 800; color: #0284c7; text-transform: uppercase; margin: 3px 0 1px 0;">Paragraph 3: Stage 3 — Climax &amp; Regional Outcome (Explicit Causal Link)</div>
+                        <div class="writing-line starter">This turning point directly triggered the final outcome when...</div>
+                        <div class="writing-line starter">Consequently, the long-term impact on the region was that...</div>
+                        <div class="writing-line"></div>
+                        <div class="writing-line"></div>
                         <div class="writing-line"></div>
                         <div class="writing-line"></div>
                         <div class="writing-line"></div>
@@ -1722,9 +1824,12 @@
             </div>
 
             <!-- Q1 Plan Table -->
-            <div style="margin-bottom: 6px;">
-                <strong style="font-size: 7.8pt; color: #991b1b;">1. 4-Mark Consequence Planning Grid:</strong> 
-                <span style="font-weight: bold; font-size: 7.8pt;">Explain one consequence of the formation of the United Arab Republic (UAR) in 1958.</span>
+            <div style="margin-bottom: 5px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+                    <strong style="font-size: 7.8pt; color: #991b1b;">1. 4-Mark Consequence Planning Grid:</strong>
+                    <span style="font-size: 6.8pt; color: #64748b;">P-F-C Structure</span>
+                </div>
+                <div style="font-weight: bold; font-size: 7.6pt; margin-bottom: 3px;">Explain one consequence of the formation of the United Arab Republic (UAR) in 1958.</div>
                 <table class="plan-table">
                     <tr>
                         <th style="width: 25%;">Point (Sentence 1)</th>
@@ -1740,9 +1845,12 @@
             </div>
 
             <!-- Q2 Plan Table -->
-            <div style="margin-bottom: 6px;">
-                <strong style="font-size: 7.8pt; color: #991b1b;">2. 8-Mark Importance Planning Grid:</strong> 
-                <span style="font-weight: bold; font-size: 7.8pt;">Explain the importance of the creation of the Israeli Defence Forces (IDF) for the aftermath of the 1948–49 war.</span>
+            <div style="margin-bottom: 5px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+                    <strong style="font-size: 7.8pt; color: #991b1b;">2. 8-Mark Importance Planning Grid:</strong>
+                    <span style="font-size: 6.8pt; color: #64748b;">F-I-L Structure</span>
+                </div>
+                <div style="font-weight: bold; font-size: 7.6pt; margin-bottom: 3px;">Explain the importance of the creation of the Israeli Defence Forces (IDF) for the aftermath of the 1948–49 war.</div>
                 <table class="plan-table">
                     <tr>
                         <th style="width: 25%;">Core Factor</th>
@@ -1758,9 +1866,12 @@
             </div>
 
             <!-- Q3 Plan Table -->
-            <div style="margin-bottom: 6px;">
-                <strong style="font-size: 7.8pt; color: #991b1b;">3. 8-Mark Narrative Storyboard Grid:</strong> 
-                <span style="font-weight: bold; font-size: 7.8pt;">Write a narrative account analysing the key events leading to the end of the British Mandate in Palestine (1945–48).</span>
+            <div style="margin-bottom: 5px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+                    <strong style="font-size: 7.8pt; color: #991b1b;">3. 8-Mark Narrative Storyboard Grid:</strong>
+                    <span style="font-size: 6.8pt; color: #64748b;">3-Stage Causal Arc</span>
+                </div>
+                <div style="font-weight: bold; font-size: 7.6pt; margin-bottom: 3px;">Write a narrative account analysing the key events leading to the end of the British Mandate in Palestine (1945–48).</div>
                 <table class="plan-table">
                     <tr>
                         <th style="width: 33%;">Stage 1: Catalyst / Outbreak</th>
@@ -1775,12 +1886,73 @@
                 </table>
             </div>
 
+            <!-- Examiner AO Rubric Guidance Card -->
+            <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; font-size: 6.8pt; margin-bottom: 5px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                <div>
+                    <strong style="color: #1e3a8a;">🎯 AO1 (Knowledge &amp; Recall):</strong> Accurate, specific, and detailed historical facts deployed throughout. Include key figures, statistics, dates, and treaties.
+                </div>
+                <div>
+                    <strong style="color: #1e3a8a;">🎯 AO2 (Historical Analysis):</strong> Sustained causal explanation. Explain consequence, importance, and causal linkages rather than narrative description.
+                </div>
+            </div>
+
             <!-- Self-Audit Checklist -->
-            <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 4px; padding: 4px 8px; font-size: 6.8pt; color: #991b1b;">
+            <div style="background: #fef2f2; border: 1.5px solid #fecaca; border-radius: 4px; padding: 3px 8px; font-size: 6.7pt; color: #991b1b; margin-bottom: 5px;">
                 <strong>📋 PRE-FLIGHT AUDIT CHECKLIST:</strong> &nbsp;
-                [ ] Did I include 2 precise dates/statistics per question? &nbsp;&nbsp;
-                [ ] Does Q2 explain importance FOR THE SPECIFIC PROMPT? &nbsp;&nbsp;
-                [ ] Does Q3 show how Stage 1 caused Stage 2?
+                [ ] 2 precise dates/statistics per question &nbsp;&nbsp;
+                [ ] Q2 links to the NAMED outcome &nbsp;&nbsp;
+                [ ] Q3 explains how Stage 1 caused Stage 2 &nbsp;&nbsp;
+                [ ] Full continuous prose on Page 11
+            </div>
+
+            <!-- Edexcel Exam Timing, Mark Strategy & Planning Engine Blueprint -->
+            <div style="background: #fff; border: 1.5px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; margin-bottom: 5px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px; margin-bottom: 3px;">
+                    <strong style="font-size: 7.2pt; color: #0f172a; text-transform: uppercase;">⏱️ Edexcel Real-Time Exam Timing &amp; Stem Blueprints (32 Marks · 50 Mins)</strong>
+                    <span style="font-size: 6.4pt; color: #64748b;">Option P5 Conflict in the Middle East</span>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1.15fr 1.35fr; gap: 6px; font-size: 6.2pt; line-height: 1.25;">
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
+                        <strong style="color: #0369a1; display: block; margin-bottom: 1px;">Q1: Consequence (4m · ~6 Mins)</strong>
+                        • Formula: <em>Point → Facts → Consequence Link (P-F-C)</em><br/>
+                        • Target: 1 tightly argued paragraph with 2–3 precise dates/names explaining the immediate aftermath.
+                    </div>
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
+                        <strong style="color: #0369a1; display: block; margin-bottom: 1px;">Q2: Importance (8m · ~12 Mins)</strong>
+                        • Formula: <em>Factor → Facts → Direct Link to Named Outcome</em><br/>
+                        • Target: 2 distinct paragraphs; must evaluate why it was important FOR THE SPECIFIC PROMPT.
+                    </div>
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
+                        <strong style="color: #0369a1; display: block; margin-bottom: 1px;">Q3: Narrative Account (8m · ~12 Mins)</strong>
+                        • Formula: <em>3-Stage Causal Storyboard (Trigger → Pivot → Outcome)</em><br/>
+                        • Target: 3 chronological paragraphs with explicit causal connectives explaining how Stage 1 triggered Stage 2.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Student Pre-Exam Data Bank & Rapid Recall Scratchpad -->
+            <div style="background: #f8fafc; border: 1.5px solid #94a3b8; border-radius: 4px; padding: 4px 8px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+                    <strong style="font-size: 7.2pt; color: #1e293b; text-transform: uppercase;">🧠 Pupil Pre-Writing Scratchpad &amp; Data Vault (Jot before writing on Page 11)</strong>
+                    <span style="font-size: 6.3pt; color: #64748b;">Verify 2 key dates / statistics per question</span>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; font-size: 6.2pt;">
+                    <div style="background: #fff; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3px 5px; height: 38px;">
+                        <strong style="color: #0f172a; display: block; margin-bottom: 1px;">Q1 Target Facts / Dates:</strong>
+                        <div class="writing-line" style="height: 13px;"></div>
+                        <div class="writing-line" style="height: 13px;"></div>
+                    </div>
+                    <div style="background: #fff; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3px 5px; height: 38px;">
+                        <strong style="color: #0f172a; display: block; margin-bottom: 1px;">Q2 Factors &amp; Treaties:</strong>
+                        <div class="writing-line" style="height: 13px;"></div>
+                        <div class="writing-line" style="height: 13px;"></div>
+                    </div>
+                    <div style="background: #fff; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3px 5px; height: 38px;">
+                        <strong style="color: #0f172a; display: block; margin-bottom: 1px;">Q3 Causal Connectives:</strong>
+                        <div class="writing-line" style="height: 13px;"></div>
+                        <div class="writing-line" style="height: 13px;"></div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -1805,7 +1977,7 @@
             </div>
 
             <!-- Official Examiner Rubric Header -->
-            <div style="background: #f1f5f9; border: 1.5px solid #475569; border-radius: 4px; padding: 4px 8px; font-size: 6.8pt; margin-bottom: 6px; display: flex; justify-content: space-between;">
+            <div style="background: #f1f5f9; border: 1.5px solid #475569; border-radius: 4px; padding: 4px 8px; font-size: 6.8pt; margin-bottom: 5px; display: flex; justify-content: space-between;">
                 <div>
                     <strong>AO1 Knowledge (Level 3 Standard):</strong> Accurate, specific, and detailed historical facts deployed throughout.
                 </div>
@@ -1814,26 +1986,44 @@
                 </div>
             </div>
 
-            <!-- Continuous Exam Lines -->
+            <!-- Continuous Exam Lines (33 Lines Total, ~20px each, perfectly fills page) -->
             <div style="padding: 0;">
-                <div class="writing-line starter"><strong>Question 1 (4 Marks):</strong> ____________________________________________________________________</div>
-                <div class="writing-line"></div>
-                <div class="writing-line"></div>
-                <div class="writing-line"></div>
-                <div class="writing-line starter" style="margin-top: 4px;"><strong>Question 2 (8 Marks):</strong> ____________________________________________________________________</div>
-                <div class="writing-line"></div>
-                <div class="writing-line"></div>
-                <div class="writing-line"></div>
-                <div class="writing-line"></div>
-                <div class="writing-line"></div>
-                <div class="writing-line starter" style="margin-top: 4px;"><strong>Question 3 (8 Marks):</strong> ____________________________________________________________________</div>
-                <div class="writing-line"></div>
-                <div class="writing-line"></div>
-                <div class="writing-line"></div>
-                <div class="writing-line"></div>
-                <div class="writing-line"></div>
-                <div class="writing-line"></div>
-                <div class="writing-line"></div>
+                <div class="writing-line starter" style="height: 20px;"><strong>Question 1: Consequence (4 Marks):</strong> ___________________________________________________________</div>
+                <div class="writing-line" style="height: 20px;"></div>
+                <div class="writing-line" style="height: 20px;"></div>
+                <div class="writing-line" style="height: 20px;"></div>
+                <div class="writing-line" style="height: 20px;"></div>
+                <div class="writing-line" style="height: 20px;"></div>
+
+                <div class="writing-line starter" style="height: 20px; margin-top: 3px;"><strong>Question 2: Importance (8 Marks) — Paragraph 1:</strong> ____________________________________________</div>
+                <div class="writing-line" style="height: 20px;"></div>
+                <div class="writing-line" style="height: 20px;"></div>
+                <div class="writing-line" style="height: 20px;"></div>
+                <div class="writing-line" style="height: 20px;"></div>
+                <div class="writing-line" style="height: 20px;"></div>
+
+                <div class="writing-line starter" style="height: 20px; margin-top: 2px;"><strong>Question 2: Importance (8 Marks) — Paragraph 2:</strong> ____________________________________________</div>
+                <div class="writing-line" style="height: 20px;"></div>
+                <div class="writing-line" style="height: 20px;"></div>
+                <div class="writing-line" style="height: 20px;"></div>
+                <div class="writing-line" style="height: 20px;"></div>
+                <div class="writing-line" style="height: 20px;"></div>
+
+                <div class="writing-line starter" style="height: 20px; margin-top: 3px;"><strong>Question 3: Narrative Account (8 Marks) — Stage 1:</strong> _________________________________________</div>
+                <div class="writing-line" style="height: 20px;"></div>
+                <div class="writing-line" style="height: 20px;"></div>
+                <div class="writing-line" style="height: 20px;"></div>
+
+                <div class="writing-line starter" style="height: 20px; margin-top: 2px;"><strong>Question 3: Narrative Account (8 Marks) — Stage 2:</strong> _________________________________________</div>
+                <div class="writing-line" style="height: 20px;"></div>
+                <div class="writing-line" style="height: 20px;"></div>
+                <div class="writing-line" style="height: 20px;"></div>
+
+                <div class="writing-line starter" style="height: 20px; margin-top: 2px;"><strong>Question 3: Narrative Account (8 Marks) — Stage 3:</strong> _________________________________________</div>
+                <div class="writing-line" style="height: 20px;"></div>
+                <div class="writing-line" style="height: 20px;"></div>
+                <div class="writing-line" style="height: 20px;"></div>
+                <div class="writing-line" style="height: 20px;"></div>
             </div>
         </div>
 
@@ -1850,32 +2040,32 @@
     <div class="page">
         <div>
             <!-- Header Banner -->
-            <div style="background: #0f172a; color: white; padding: 8px 12px; border-radius: 5px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
+            <div style="background: #0f172a; color: white; padding: 8px 12px; border-radius: 5px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: center;">
                 <div>
                     <h2 style="margin: 0; font-size: 10pt; font-weight: 800; text-transform: uppercase;">⚠️ Examiner Trap Doors &amp; 100% Specification Bank</h2>
-                    <p style="margin: 1px 0 0 0; font-size: 7pt; color: #94a3b8;">Key Topic 1: The Birth of the State of Israel, 1945–63 · Pearson Edexcel GCSE History</p>
+                    <p style="margin: 1px 0 0 0; font-size: 7pt; color: #94a3b8;">Key Topic 1: The Birth of the State of Israel, 1945–63 · Pearson Edexcel GCSE History Option P5</p>
                 </div>
-                <span style="background: #ef4444; color: white; font-size: 6.8pt; font-weight: 800; padding: 2px 6px; border-radius: 3px;">100% Spec Guarantee</span>
+                <span style="background: #ef4444; color: white; font-size: 6.8pt; font-weight: 800; padding: 2px 6px; border-radius: 3px; text-transform: uppercase;">100% KT1 Spec Guarantee</span>
             </div>
 
             <!-- Top Section: Trap Doors -->
-            <div style="border: 1.5px solid #ef4444; background: #fef2f2; border-radius: 5px; padding: 6px 8px; margin-bottom: 6px;">
-                <strong style="color: #b91c1c; font-size: 7.5pt; text-transform: uppercase; display: block; border-bottom: 1px solid #fecaca; padding-bottom: 2px; margin-bottom: 3px;">
-                    🚫 Top 3 Fatal Examiner Traps to Avoid for KT1
+            <div style="border: 1.5px solid #ef4444; background: #fef2f2; border-radius: 5px; padding: 5px 8px; margin-bottom: 5px;">
+                <strong style="color: #b91c1c; font-size: 7.2pt; text-transform: uppercase; display: block; border-bottom: 1px solid #fecaca; padding-bottom: 2px; margin-bottom: 3px;">
+                    🚫 Top 3 Fatal Examiner Traps to Avoid for Key Topic 1
                 </strong>
                 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px;">
                     
-                        <div style="background: #fff; border: 1px solid #fca5a5; border-radius: 3px; padding: 4px; font-size: 6.5pt; line-height: 1.25;">
+                        <div style="background: #fff; border: 1px solid #fca5a5; border-radius: 3px; padding: 3.5px 5px; font-size: 6.4pt; line-height: 1.25;">
                             <strong style="color: #991b1b; display: block; margin-bottom: 1px;">• Partition (1947) vs Armistice (1949)</strong>
                             <span style="color: #7f1d1d;">Do not confuse the 1947 UN Partition Plan (Res 181, which allocated 55% of Mandatory Palestine to a Jewish state) with the 1949 Armistice Green Line (which enclosed 79% following the 1948–49 War). Res 181 was never implemented as Arab leaders rejected it.</span>
                         </div>
                     
-                        <div style="background: #fff; border: 1px solid #fca5a5; border-radius: 3px; padding: 4px; font-size: 6.5pt; line-height: 1.25;">
+                        <div style="background: #fff; border: 1px solid #fca5a5; border-radius: 3px; padding: 3.5px 5px; font-size: 6.4pt; line-height: 1.25;">
                             <strong style="color: #991b1b; display: block; margin-bottom: 1px;">• The Turning Point of the 1948–49 War</strong>
                             <span style="color: #7f1d1d;">The decisive turning point of the 1948–49 War was NOT superior Israeli numbers at the outbreak, but the 4-week UN truce in June 1948. This allowed Israel to import Czech Avia S-199 fighters and rifles, while David Ben-Gurion unified all militias into the IDF.</span>
                         </div>
                     
-                        <div style="background: #fff; border: 1px solid #fca5a5; border-radius: 3px; padding: 4px; font-size: 6.5pt; line-height: 1.25;">
+                        <div style="background: #fff; border: 1px solid #fca5a5; border-radius: 3px; padding: 3.5px 5px; font-size: 6.4pt; line-height: 1.25;">
                             <strong style="color: #991b1b; display: block; margin-bottom: 1px;">• Suez 1956: Military Victory vs Political Defeat</strong>
                             <span style="color: #7f1d1d;">Britain and France achieved total military victory in capturing Port Said in November 1956, but suffered a catastrophic political humiliation when US President Eisenhower threatened financial sanctions, forcing an immediate withdrawal and elevating Nasser into a Pan-Arab hero.</span>
                         </div>
@@ -1884,73 +2074,80 @@
             </div>
 
             <!-- Middle Section: 100% Specification Coverage Bank -->
-            <div style="border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 6px 8px; background: #fff; margin-bottom: 6px;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #1e3a8a; padding-bottom: 2px; margin-bottom: 4px;">
-                    <strong style="color: #1e3a8a; font-size: 7.8pt; text-transform: uppercase;">📚 Specification Practice Bank: 100% Curriculum Coverage</strong>
-                    <span style="font-size: 6.5pt; color: #64748b;">Every remaining specification bullet point tested below</span>
+            <div style="border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 5px 8px; background: #fff; margin-bottom: 5px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #1e3a8a; padding-bottom: 2px; margin-bottom: 3px;">
+                    <strong style="color: #1e3a8a; font-size: 7.6pt; text-transform: uppercase;">📚 Key Topic 1 Specification Practice Bank: 100% Curriculum Coverage</strong>
+                    <span style="font-size: 6.4pt; color: #64748b;">Every remaining specification bullet point tested below</span>
                 </div>
                 
-                <div style="display: flex; flex-direction: column; gap: 3px;">
+                <div style="display: flex; flex-direction: column; gap: 2.5px;">
                     
-                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px; font-size: 6.8pt; display: flex; justify-content: space-between; align-items: center;">
+                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px; font-size: 6.6pt; display: flex; justify-content: space-between; align-items: center;">
                             <span style="flex: 1; padding-right: 6px;">
                                 <strong style="color: #1e3a8a;">Question 1:</strong> Explain one consequence of the conflicting interests and demands of Jews and Arabs within the British Mandate.
+                                <div style="color: #64748b; font-size: 6pt; margin-top: 1px;">💡 <em>Focus on conflicting British promises (Balfour Declaration vs McMahon-Hussein Correspondence) and rising communal violence.</em></div>
                             </span>
-                            <span style="font-size: 6.2pt; font-weight: 800; background: #e0e7ff; color: #3730a3; padding: 1px 5px; border-radius: 3px; white-space: nowrap;">
+                            <span style="font-size: 6.2pt; font-weight: 800; background: #e0e7ff; color: #3730a3; padding: 1.5px 5px; border-radius: 3px; white-space: nowrap;">
                                 Consequence (4m)
                             </span>
                         </div>
                     
-                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px; font-size: 6.8pt; display: flex; justify-content: space-between; align-items: center;">
+                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px; font-size: 6.6pt; display: flex; justify-content: space-between; align-items: center;">
                             <span style="flex: 1; padding-right: 6px;">
                                 <strong style="color: #1e3a8a;">Question 2:</strong> Explain one consequence of the territorial changes resulting from the 1948–49 war.
+                                <div style="color: #64748b; font-size: 6pt; margin-top: 1px;">💡 <em>Explain how Israeli expansion to 79% of Palestine created 700,000 Palestinian refugees (the Nakba) and armistice green lines.</em></div>
                             </span>
-                            <span style="font-size: 6.2pt; font-weight: 800; background: #e0e7ff; color: #3730a3; padding: 1px 5px; border-radius: 3px; white-space: nowrap;">
+                            <span style="font-size: 6.2pt; font-weight: 800; background: #e0e7ff; color: #3730a3; padding: 1.5px 5px; border-radius: 3px; white-space: nowrap;">
                                 Consequence (4m)
                             </span>
                         </div>
                     
-                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px; font-size: 6.8pt; display: flex; justify-content: space-between; align-items: center;">
+                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px; font-size: 6.6pt; display: flex; justify-content: space-between; align-items: center;">
                             <span style="flex: 1; padding-right: 6px;">
                                 <strong style="color: #1e3a8a;">Question 3:</strong> Explain the importance of the refugee status of Palestinian Arabs for relations between Israel and Arab states after 1949.
+                                <div style="color: #64748b; font-size: 6pt; margin-top: 1px;">💡 <em>Explain how Arab states refused resettlement to maintain the Palestinian "Right of Return", entrenching regional hostility.</em></div>
                             </span>
-                            <span style="font-size: 6.2pt; font-weight: 800; background: #e0e7ff; color: #3730a3; padding: 1px 5px; border-radius: 3px; white-space: nowrap;">
+                            <span style="font-size: 6.2pt; font-weight: 800; background: #e0e7ff; color: #3730a3; padding: 1.5px 5px; border-radius: 3px; white-space: nowrap;">
                                 Importance (8m)
                             </span>
                         </div>
                     
-                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px; font-size: 6.8pt; display: flex; justify-content: space-between; align-items: center;">
+                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px; font-size: 6.6pt; display: flex; justify-content: space-between; align-items: center;">
                             <span style="flex: 1; padding-right: 6px;">
                                 <strong style="color: #1e3a8a;">Question 4:</strong> Explain the importance of US aid to Israel in the period 1949–1963.
+                                <div style="color: #64748b; font-size: 6pt; margin-top: 1px;">💡 <em>Explain how US loans and diplomatic backing enabled Israel to absorb 680,000 immigrants and develop sovereign infrastructure.</em></div>
                             </span>
-                            <span style="font-size: 6.2pt; font-weight: 800; background: #e0e7ff; color: #3730a3; padding: 1px 5px; border-radius: 3px; white-space: nowrap;">
+                            <span style="font-size: 6.2pt; font-weight: 800; background: #e0e7ff; color: #3730a3; padding: 1.5px 5px; border-radius: 3px; white-space: nowrap;">
                                 Importance (8m)
                             </span>
                         </div>
                     
-                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px; font-size: 6.8pt; display: flex; justify-content: space-between; align-items: center;">
+                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px; font-size: 6.6pt; display: flex; justify-content: space-between; align-items: center;">
                             <span style="flex: 1; padding-right: 6px;">
                                 <strong style="color: #1e3a8a;">Question 5:</strong> Explain one consequence of Nasser’s leadership of the Arab world for relations with Israel.
+                                <div style="color: #64748b; font-size: 6pt; margin-top: 1px;">💡 <em>Explain how Nasser’s charismatic Pan-Arabism united Arab public opinion against Israel and led to the formation of the UAR and Fedayeen raids.</em></div>
                             </span>
-                            <span style="font-size: 6.2pt; font-weight: 800; background: #e0e7ff; color: #3730a3; padding: 1px 5px; border-radius: 3px; white-space: nowrap;">
+                            <span style="font-size: 6.2pt; font-weight: 800; background: #e0e7ff; color: #3730a3; padding: 1.5px 5px; border-radius: 3px; white-space: nowrap;">
                                 Consequence (4m)
                             </span>
                         </div>
                     
-                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px; font-size: 6.8pt; display: flex; justify-content: space-between; align-items: center;">
+                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px; font-size: 6.6pt; display: flex; justify-content: space-between; align-items: center;">
                             <span style="flex: 1; padding-right: 6px;">
                                 <strong style="color: #1e3a8a;">Question 6:</strong> Explain the importance of the Israeli attacks on Sinai in 1956 for Israeli security.
+                                <div style="color: #64748b; font-size: 6pt; margin-top: 1px;">💡 <em>Explain how capturing Sinai eliminated fedayeen bases in Gaza and secured Israeli navigation through the Straits of Tiran via UNEF peacekeepers.</em></div>
                             </span>
-                            <span style="font-size: 6.2pt; font-weight: 800; background: #e0e7ff; color: #3730a3; padding: 1px 5px; border-radius: 3px; white-space: nowrap;">
+                            <span style="font-size: 6.2pt; font-weight: 800; background: #e0e7ff; color: #3730a3; padding: 1.5px 5px; border-radius: 3px; white-space: nowrap;">
                                 Importance (8m)
                             </span>
                         </div>
                     
-                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px; font-size: 6.8pt; display: flex; justify-content: space-between; align-items: center;">
+                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px; font-size: 6.6pt; display: flex; justify-content: space-between; align-items: center;">
                             <span style="flex: 1; padding-right: 6px;">
                                 <strong style="color: #1e3a8a;">Question 7:</strong> Write a narrative account analysing the development of Israel’s relations with Egypt between 1949 and 1956.
+                                <div style="color: #64748b; font-size: 6pt; margin-top: 1px;">💡 <em>Analyse the chronological sequence: 1949 Armistice → 1955 Gaza raid → Czech Arms Deal → nationalisation → 1956 Suez War.</em></div>
                             </span>
-                            <span style="font-size: 6.2pt; font-weight: 800; background: #e0e7ff; color: #3730a3; padding: 1px 5px; border-radius: 3px; white-space: nowrap;">
+                            <span style="font-size: 6.2pt; font-weight: 800; background: #e0e7ff; color: #3730a3; padding: 1.5px 5px; border-radius: 3px; white-space: nowrap;">
                                 Narrative (8m)
                             </span>
                         </div>
@@ -1958,14 +2155,30 @@
                 </div>
             </div>
 
-            <!-- Bottom Section: Pupil Personal Revision Notes -->
-            <div style="border: 1.5px dashed #475569; border-radius: 5px; padding: 6px 8px; background: #f8fafc;">
-                <strong style="color: #334155; font-size: 7.2pt; text-transform: uppercase; display: block; margin-bottom: 2px;">
-                    ✍️ Pupil Action Plan &amp; Target Areas for Revision
-                </strong>
-                <div class="writing-line starter">My weakest topic in this unit was...</div>
-                <div class="writing-line starter">The specific facts / dates I need to re-learn are...</div>
-                <div class="writing-line starter">My target for the upcoming exam paper is...</div>
+            <!-- Bottom Section: Pupil Personal Revision Action Plan -->
+            <div style="border: 1.5px dashed #475569; border-radius: 5px; padding: 5px 8px; background: #f8fafc;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+                    <strong style="color: #334155; font-size: 7.2pt; text-transform: uppercase;">
+                        ✍️ Pupil Diagnostic Action Plan &amp; Targeted Revision Commitments
+                    </strong>
+                    <span style="font-size: 6.4pt; color: #64748b;">Complete following self-marking of Pages 2–11</span>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 3px;">
+                    <div>
+                        <span style="font-size: 6.5pt; font-weight: 700; color: #475569;">1. Weakest Sub-Topic / Knowledge Area:</span>
+                        <div class="writing-line" style="height: 19px;"><span style="color: #94a3b8; font-size: 6.5pt;">Specific lesson or event:</span></div>
+                    </div>
+                    <div>
+                        <span style="font-size: 6.5pt; font-weight: 700; color: #475569;">2. Key Dates / Statistics I Need to Memorise:</span>
+                        <div class="writing-line" style="height: 19px;"><span style="color: #94a3b8; font-size: 6.5pt;">Flashcard priorities:</span></div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; background: #fff; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3px 6px; font-size: 6.5pt;">
+                    <span><strong>Revision Commitment:</strong> [ &nbsp; ] Complete Quiz Flashcards &nbsp;&nbsp; [ &nbsp; ] Redo Timed Dual-Track &nbsp;&nbsp; [ &nbsp; ] Practice Spec Bank Question</span>
+                    <span><strong>Target Grade:</strong> [ 9 &nbsp; 8 &nbsp; 7 &nbsp; 6 &nbsp; 5 &nbsp; 4 ]</span>
+                </div>
             </div>
         </div>
 
