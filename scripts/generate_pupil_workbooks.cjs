@@ -179,13 +179,438 @@ if (targetUnit && allDirs.includes(targetUnit)) {
   allDirs = [targetUnit];
 }
 
+// -------------------------------------------------------------
+// CME Minimalist 1-Page War Narrative Timeline & Master Chronology Generators
+// -------------------------------------------------------------
+const cmeWarNarrativeConfigs = {
+  lesson_2: {
+    title: 'GCSE Narrative Account: The First Arab-Israeli War (1948–49)',
+    question:
+      'Write a narrative account analysing the key events of the first Arab-Israeli War (1948–49). [8 marks]',
+    stimulus: ['The Arab invasion (15 May 1948)', 'The First UN Truce (June 1948)'],
+    events: [
+      'David Ben-Gurion proclaims independence; five Arab armies invade Palestine.',
+      'Count Folke Bernadotte brokers a 4-week First UN Truce (11 June – 8 July).',
+      'IDF secretly imports Czech arms via Škoda factories (Operation Balak).',
+      'The "Ten Days of Fighting": Israeli counter-offensives break Arab sieges.',
+      'Operation Yoav and Operation Horev drive Egyptian forces from the southern Negev.',
+      '1949 Rhodes Armistice Agreements establish the Green Line and divide Jerusalem.',
+    ],
+    keywords: [
+      'Yishuv',
+      'David Ben-Gurion',
+      'Arab Legion (Glubb Pasha)',
+      'Count Bernadotte',
+      'Operation Balak',
+      'Czech Arms (Škoda)',
+      'Ten Days',
+      'Operation Yoav',
+      '750k Nakba Refugees',
+      'Green Line (1949)',
+    ],
+    phases: [
+      { label: 'Phase 1: Outbreak & Arab Invasion (14–15 May 1948)', lines: 7 },
+      {
+        label: 'Phase 2: The First UN Truce & Secret Czech Arms Resupply (June – July 1948)',
+        lines: 7,
+      },
+      { label: 'Phase 3: Israeli Counter-Offensives & 1949 Rhodes Armistice Agreements', lines: 7 },
+    ],
+  },
+  lesson_4: {
+    title: 'GCSE Narrative Account: The Suez Crisis (1956)',
+    question:
+      'Write a narrative account analysing the key events of the Suez Crisis (1956). [8 marks]',
+    stimulus: [
+      'Nationalisation of the Suez Canal (July 1956)',
+      'The Sèvres Protocol (October 1956)',
+    ],
+    events: [
+      'US and Britain cancel promised loan funding for the Aswan High Dam.',
+      'Nasser nationalises the Suez Canal Company during a speech in Alexandria.',
+      'Britain, France, and Israel secretly draft the tripartite Protocol of Sèvres in Paris.',
+      'Israel launches Operation Kadesh, parachuting troops at Mitla Pass in Sinai.',
+      'Anglo-French forces bomb Egyptian airfields and land paratroopers at Port Said.',
+      'President Eisenhower threatens financial collapse, forcing Britain to accept a ceasefire.',
+    ],
+    keywords: [
+      'Gamal Abdel Nasser',
+      'Anthony Eden',
+      'Aswan High Dam',
+      'Nationalisation (26 July)',
+      'Protocol of Sèvres',
+      'Operation Kadesh',
+      'Mitla Pass',
+      'Operation Musketeer (Port Said)',
+      'Dwight Eisenhower',
+      'UNEF Peacekeepers',
+    ],
+    phases: [
+      {
+        label: 'Phase 1: Causes & Nationalisation of the Suez Canal Company (July 1956)',
+        lines: 7,
+      },
+      {
+        label:
+          'Phase 2: Secret Tripartite Collusion at Sèvres & The Invasion (October – November 1956)',
+        lines: 7,
+      },
+      {
+        label: 'Phase 3: US Financial Ultimatum, Humiliating Withdrawal & UNEF Deployment',
+        lines: 7,
+      },
+    ],
+  },
+  lesson_5: {
+    title: 'GCSE Narrative Account: The Six Day War (June 1967)',
+    question:
+      'Write a narrative account analysing the key events of the Six Day War (June 1967). [8 marks]',
+    stimulus: ['Operation Focus (5 June 1967)', 'The capture of East Jerusalem (7 June 1967)'],
+    events: [
+      'Nasser expels UNEF peacekeepers from Sinai and blockades the Straits of Tiran.',
+      'Operation Focus: Israeli Air Force destroys 300+ Egyptian aircraft in three hours.',
+      'Israeli armoured divisions shatter Egyptian defensive positions across the Sinai.',
+      'Jordan shells West Jerusalem; IDF paratroopers storm and capture the Old City.',
+      'Israeli infantry scale the Syrian volcanic ramparts to capture the Golan Heights.',
+      'Ceasefire leaves Israel in control of Sinai, Gaza, West Bank, Jerusalem, and Golan.',
+    ],
+    keywords: [
+      'UNEF Expulsion',
+      'Straits of Tiran',
+      'Operation Focus (Moked)',
+      'General Moshe Dayan',
+      'Air Supremacy',
+      'Sinai Tank Battles',
+      'Western Wall ("Temple Mount in our hands")',
+      'Golan Heights',
+      'UN Resolution 242',
+      'Khartoum "Three Nos"',
+    ],
+    phases: [
+      {
+        label: 'Phase 1: Diplomatic Escalation & Operation Focus Pre-emptive Strike (5 June 1967)',
+        lines: 7,
+      },
+      {
+        label: 'Phase 2: Three-Front Combat: Sinai Blitz, Fall of Jerusalem & Golan Heights',
+        lines: 7,
+      },
+      {
+        label: 'Phase 3: Ceasefire, Tripled Territory & The Khartoum "Three Nos" Resolution',
+        lines: 7,
+      },
+    ],
+  },
+  lesson_7: {
+    title: 'GCSE Narrative Account: The Yom Kippur War (October 1973)',
+    question:
+      'Write a narrative account analysing the key events of the Yom Kippur War (October 1973). [8 marks]',
+    stimulus: ['Operation Badr (6 October 1973)', 'The US and Soviet arms airlifts'],
+    events: [
+      'Sadat expels 15,000 Soviet advisers to prepare an independent military strategy.',
+      'Operation Badr: Egyptian troops use water monitors to breach the Bar-Lev Line.',
+      'Soviet SAM-6 missile umbrellas inflict devastating losses on the Israeli Air Force.',
+      'IDF reserves mobilize, halt the Syrian tank surge at the Valley of Tears, and counter-attack.',
+      'General Ariel Sharon leads tanks across the Suez Canal at the Chinese Farm.',
+      'Arab OPEC members enact the oil embargo; superpowers face off at DEFCON 3.',
+    ],
+    keywords: [
+      'Anwar Sadat',
+      'Operation Badr (6 Oct)',
+      'Bar-Lev Line',
+      'Water Monitors',
+      'SAM-6 Missiles',
+      'Valley of Tears',
+      'Chinese Farm (Suez Crossing)',
+      'Operation Nickel Grass',
+      'OPEC Oil Embargo ($3 to $12)',
+      'Agranat Commission',
+    ],
+    phases: [
+      {
+        label:
+          'Phase 1: Operation Badr Surprise Attack & The Breaching of the Bar-Lev Line (6–8 Oct 1973)',
+        lines: 7,
+      },
+      {
+        label: 'Phase 2: Israeli Mobilization, Chinese Farm Suez Crossing & Superpower Airlifts',
+        lines: 7,
+      },
+      {
+        label: 'Phase 3: Superpower Nuclear Alert (DEFCON 3), OPEC Oil Shock & Ceasefire Legacy',
+        lines: 7,
+      },
+    ],
+  },
+  lesson_9: {
+    title: 'GCSE Narrative Account: The Israeli Invasion of Lebanon (1982–83)',
+    question:
+      'Write a narrative account analysing the key events of the Israeli invasion of Lebanon (1982–83). [8 marks]',
+    stimulus: [
+      'Operation Peace for Galilee (June 1982)',
+      'The Sabra and Shatila massacre (September 1982)',
+    ],
+    events: [
+      'Abu Nidal gunmen shoot Israeli Ambassador Shlomo Argov in London.',
+      'Ariel Sharon launches Operation Peace for Galilee, advancing 60 miles to Beirut.',
+      'IDF surrounds West Beirut, subjecting PLO strongholds to a punishing 10-week siege.',
+      'Multinational Force oversees the evacuation of Yasser Arafat and 14,000 PLO fighters to Tunis.',
+      'Lebanese President-elect Bachir Gemayel is assassinated in a bomb blast.',
+      'Christian Phalangist militia massacre hundreds of refugees in Sabra and Shatila.',
+    ],
+    keywords: [
+      'Shlomo Argov',
+      'Operation Peace for Galilee',
+      'Ariel Sharon',
+      'Siege of West Beirut',
+      'PLO Evacuation (Tunis)',
+      'Bachir Gemayel',
+      'Phalangist Militia',
+      'Sabra and Shatila',
+      '400k Tel Aviv Protest',
+      'Kahan Commission (Personal Responsibility)',
+    ],
+    phases: [
+      {
+        label: 'Phase 1: Pretext & The Invasion of Lebanon to Besiege Beirut (June – August 1982)',
+        lines: 7,
+      },
+      {
+        label:
+          'Phase 2: PLO Evacuation to Tunis & The Assassination of Bachir Gemayel (Aug – Sept 1982)',
+        lines: 7,
+      },
+      {
+        label:
+          'Phase 3: Sabra & Shatila Massacres, Global Moral Outcry & Kahan Commission Resignation',
+        lines: 7,
+      },
+    ],
+  },
+};
+
+const cmeMasterTimelines = {
+  KT1: {
+    title: 'Key Topic 1 Master Chronology: The Birth of Israel (1936–1963)',
+    lead: 'Master Chronology Challenge: Using your workbook notes and the event bank below, match each pivotal event to its correct year on the timeline and annotate it with one decisive historical consequence.',
+    bank: [
+      '1936–39: Arab Revolt',
+      '1937: Peel Commission (First Partition)',
+      '1939: MacDonald White Paper (75k Quota)',
+      '1946: King David Hotel Bombing',
+      '1947: Sergeants Affair & SS Exodus',
+      '1947: UN Resolution 181 (Partition)',
+      '1948: Independence Declared & Arab Invasion',
+      '1948: First UN Truce & Czech Arms Resupply',
+      '1949: Rhodes Armistice (Green Line)',
+      '1950: Law of Return Enacted',
+      '1953: Qibya Massacre (Unit 101)',
+      '1955: Operation Black Arrow & Czech Arms Deal',
+      '1956: Nationalisation of Suez & Sèvres Protocol',
+      '1956: Suez Crisis & Eisenhower Ultimatum',
+    ],
+    anchors: [
+      { year: '1936–39', label: 'Arab Revolt & 1939 MacDonald White Paper' },
+      { year: '1946–47', label: 'King David Hotel, Sergeants Affair & UN Res 181' },
+      { year: '1948–49', label: 'Declaration of Israel, 1948–49 War & Green Line' },
+      { year: '1950–53', label: 'Law of Return, Mass Migration & Qibya Reprisal' },
+      { year: '1955–56', label: 'Black Arrow, Czech Arms & Nationalisation of Suez' },
+      { year: 'Late 1956', label: 'Protocol of Sèvres, Suez War & US Financial Veto' },
+    ],
+  },
+  KT2: {
+    title: 'Key Topic 2 Master Chronology: The Escalating Conflict (1964–1973)',
+    lead: 'Master Chronology Challenge: Using your workbook notes and the event bank below, match each pivotal event to its correct year on the timeline and annotate it with one decisive historical consequence.',
+    bank: [
+      '1964: Cairo Summit & PLO Formed (Shuqayri)',
+      '1966: Samu Raid & Syrian Border Clashes',
+      'April 1967: Air Battle over Golan (6 MiGs)',
+      'May 1967: Soviet Disinformation & UNEF Expulsion',
+      'May 1967: Straits of Tiran Closed by Nasser',
+      '5 June 1967: Operation Focus Air Strike',
+      '7 June 1967: Capture of East Jerusalem & Western Wall',
+      'August 1967: Khartoum Resolution ("Three Nos")',
+      'Nov 1967: UN Resolution 242 ("Land for Peace")',
+      '1968: Battle of Karameh (Arafat Rises)',
+      '1969–70: War of Attrition & Bar-Lev Line',
+      "Sept 1970: Dawson's Field & Black September",
+      'Sept 1972: Munich Olympics Hostage Massacre',
+      'July 1972: Sadat Expels 15,000 Soviet Advisers',
+      '6 Oct 1973: Operation Badr Breaches Bar-Lev Line',
+      'Oct 1973: Sharon Suez Crossing & OPEC Oil Embargo',
+    ],
+    anchors: [
+      { year: '1964–66', label: 'Creation of PLO, Syrian Border Clashes & Samu Raid' },
+      { year: 'May 1967', label: 'Soviet False Reports, UNEF Expelled & Tiran Blockaded' },
+      { year: 'June 1967', label: 'Operation Focus, Fall of Jerusalem & Six Day War' },
+      { year: 'Late 1967', label: 'Khartoum "Three Nos" & UN Resolution 242' },
+      { year: '1968–70', label: "Battle of Karameh, Dawson's Field & Black September" },
+      { year: '1972–73', label: 'Munich Olympics Massacre & Soviet Advisers Expelled' },
+      { year: 'Oct 1973', label: 'Operation Badr, Yom Kippur War, DEFCON 3 & OPEC Embargo' },
+    ],
+  },
+  KT3: {
+    title: 'Key Topic 3 Master Chronology: Attempts at Peace (1974–1995)',
+    lead: 'Master Chronology Challenge: Using your workbook notes and the event bank below, match each pivotal event to its correct year on the timeline and annotate it with one decisive historical consequence.',
+    bank: [
+      '1974: Arafat "Olive Branch" Speech at UN',
+      '1974–75: Kissinger Shuttle Diplomacy & Sinai Pacts',
+      'June 1975: Suez Canal Reopened by Sadat',
+      '1977: Menachem Begin (Likud) Elected PM',
+      'Nov 1977: Sadat Addresses Israeli Knesset',
+      'Sept 1978: Camp David Accords (Two Frameworks)',
+      'March 1979: Treaty of Washington Signed',
+      'Oct 1981: Anwar Sadat Assassinated in Cairo',
+      'June 1982: Operation Peace for Galilee (Lebanon)',
+      'Sept 1982: Sabra and Shatila Massacre (Kahan Report)',
+      'Dec 1987: Jabalia Crash Sparks First Intifada',
+      '1987: Hamas Founded by Sheikh Yassin',
+      'Dec 1988: Arafat Renounces Terrorism in Geneva',
+      '1989–92: 400,000 Soviet Jews Immigrate to Israel',
+      '1991: Gulf War & Madrid Peace Conference',
+      'June 1992: Rabin & Labour Win Israeli Election',
+      'Jan–Aug 1993: Secret Oslo Farmhouse Negotiations',
+      '13 Sept 1993: Oslo I Accords (White House Handshake)',
+      'Feb 1994: Hebron Mosque Massacre (Baruch Goldstein)',
+      'Oct 1994: Israel-Jordan Peace Treaty Signed',
+      'Sept 1995: Oslo II Partition (Areas A, B, C)',
+      '4 Nov 1995: Yitzhak Rabin Assassinated by Yigal Amir',
+    ],
+    anchors: [
+      { year: '1974–75', label: 'Arafat UN Address, Shuttle Diplomacy & Suez Reopened' },
+      { year: '1977–79', label: 'Sadat in Jerusalem, Camp David Accords & Peace Treaty' },
+      { year: '1981–82', label: 'Sadat Assassinated, Lebanon Invasion & Sabra-Shatila' },
+      { year: '1987–88', label: 'Jabalia Crash, First Intifada & Arafat Geneva Renunciation' },
+      { year: '1991–93', label: 'Soviet Influx, Gulf War, Madrid & Secret Oslo Backchannel' },
+      { year: '1993–94', label: 'Oslo I Handshake, Cairo Agreement & Israel-Jordan Treaty' },
+      { year: '1995', label: 'Oslo II (Areas A, B, C) & Rabin Assassinated in Tel Aviv' },
+    ],
+  },
+};
+
+function generateCmeWarTimelineCanvas(lesson) {
+  if (!lesson) return '';
+  let cfg = null;
+  if (lesson.id === 'lesson_2' || (lesson.title && lesson.title.includes('KT 1.1')))
+    cfg = cmeWarNarrativeConfigs.lesson_2;
+  else if (lesson.id === 'lesson_4' || (lesson.title && lesson.title.includes('KT 1.3')))
+    cfg = cmeWarNarrativeConfigs.lesson_4;
+  else if (lesson.id === 'lesson_5' || (lesson.title && lesson.title.includes('KT 2.1')))
+    cfg = cmeWarNarrativeConfigs.lesson_5;
+  else if (lesson.id === 'lesson_7' || (lesson.title && lesson.title.includes('KT 2.3')))
+    cfg = cmeWarNarrativeConfigs.lesson_7;
+  else if (lesson.id === 'lesson_9' || (lesson.title && lesson.title.includes('KT 3.2')))
+    cfg = cmeWarNarrativeConfigs.lesson_9;
+
+  if (!cfg) return '';
+  return `
+  <div style="page-break-before: always; page-break-after: always; padding: 10px 14px; font-family: 'Inter', sans-serif;">
+    <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 5px; margin-bottom: 8px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <span style="font-size: 8.5pt; font-weight: 800; color: #0284c7; text-transform: uppercase; letter-spacing: 0.5px;">GCSE Exam Masterclass &bull; Question 2 [8 Marks]</span>
+        <span style="font-size: 8pt; font-weight: 700; color: #64748b;">Target Time: 10 mins</span>
+      </div>
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 14pt; color: #1e3a8a; margin: 3px 0 5px 0;">${cfg.question}</h2>
+      <div style="font-size: 8pt; color: #334155; background: #eff6ff; border-left: 3px solid #3b82f6; padding: 4px 8px; border-radius: 4px;">
+        <strong>Edexcel Stimulus Clues:</strong> You may use the following in your answer: &bull; <em>${cfg.stimulus[0]}</em> &bull; <em>${cfg.stimulus[1]}</em>. <span style="color: #b91c1c; font-weight: 600;">You must also use information of your own.</span>
+      </div>
+    </div>
+
+    <!-- Condensed Top Box: 6 Jumbled Events + High-Yield Fact Bank -->
+    <div style="display: grid; grid-template-columns: 1.25fr 1fr; gap: 8px; background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 6px 8px; margin-bottom: 8px;">
+      <div>
+        <div style="font-size: 8pt; font-weight: 800; color: #1e3a8a; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.5px;">
+          <i class="fa-solid fa-arrow-down-1-9"></i> Chronological Challenge (Number 1–6)
+        </div>
+        <div style="font-size: 7.5pt; line-height: 1.3; color: #1e293b;">
+          ${cfg.events.map((ev) => `<div style="margin-bottom: 2px; display: flex; align-items: flex-start; gap: 4px;"><span style="display: inline-block; width: 16px; height: 13px; border: 1px solid #94a3b8; border-radius: 3px; background: #fff; text-align: center; font-size: 6.5pt; font-weight: bold; flex-shrink: 0;">&nbsp;</span> <span>${ev}</span></div>`).join('')}
+        </div>
+      </div>
+      <div style="border-left: 1px solid #cbd5e1; padding-left: 8px;">
+        <div style="font-size: 8pt; font-weight: 800; color: #0284c7; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.5px;">
+          <i class="fa-solid fa-key"></i> High-Yield Fact & Keyword Bank
+        </div>
+        <div style="font-size: 7.5pt; line-height: 1.35; color: #334155;">
+          ${cfg.keywords.map((kw) => `<span style="display: inline-block; background: #e2e8f0; padding: 1px 4px; border-radius: 3px; margin: 1px; font-weight: 600;">${kw}</span>`).join(' ')}
+        </div>
+      </div>
+    </div>
+
+    <!-- Wide Open Ruled Lines Across 3 Phased Nodes -->
+    <div>
+      ${cfg.phases
+        .map(
+          (ph) => `
+        <div style="margin-bottom: 8px;">
+          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
+            <span style="background: #1e3a8a; color: white; padding: 2px 7px; border-radius: 10px; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">${ph.label}</span>
+            <span style="font-size: 7pt; color: #64748b; font-style: italic;">Cause &bull; Action &bull; Consequence &bull; Link</span>
+          </div>
+          ${Array(ph.lines).fill('<div class="task-lines-large"></div>').join('')}
+        </div>
+      `,
+        )
+        .join('')}
+    </div>
+  </div>
+  `;
+}
+
+function generateCmeMasterRevisionTimeline(periodName) {
+  const cfg = cmeMasterTimelines[periodName];
+  if (!cfg) return '';
+  return `
+  <div style="page-break-before: always; page-break-after: always; padding: 12px 15px; font-family: 'Inter', sans-serif;">
+    <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 5px; margin-bottom: 8px; text-align: center;">
+      <div style="font-size: 8pt; font-weight: 800; color: #0284c7; text-transform: uppercase; letter-spacing: 1px;">Master Revision & Chronology Retrieval</div>
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 15pt; color: #1e3a8a; margin: 3px 0;">${cfg.title}</h2>
+      <p style="font-size: 8pt; color: #475569; margin: 0; font-style: italic;">${cfg.lead}</p>
+    </div>
+
+    <!-- Condensed Master Event Bank -->
+    <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 6px 8px; margin-bottom: 10px;">
+      <div style="font-size: 7.5pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 3px; letter-spacing: 0.5px;">
+        <i class="fa-solid fa-layer-group"></i> Master Chronology Event Bank (Match & Deploy)
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px 10px; font-size: 7pt; color: #334155; line-height: 1.3;">
+        ${cfg.bank.map((b) => `<div>&bull; ${b}</div>`).join('')}
+      </div>
+    </div>
+
+    <!-- Ruled Timeline Anchors Spine -->
+    <div>
+      ${cfg.anchors
+        .map(
+          (a) => `
+        <div style="display: flex; gap: 10px; margin-bottom: 8px; align-items: flex-start;">
+          <div style="flex-shrink: 0; width: 75px; text-align: right;">
+            <span style="background: #1e40af; color: white; font-weight: 800; font-size: 8pt; padding: 2px 6px; border-radius: 4px; display: inline-block;">${a.year}</span>
+          </div>
+          <div style="flex-grow: 1; border-left: 2px solid #0284c7; padding-left: 8px; padding-bottom: 1px;">
+            <div style="font-size: 8pt; font-weight: 700; color: #1e293b; margin-bottom: 1px;">${a.label}</div>
+            <div style="font-size: 7pt; color: #64748b; margin-bottom: 1px;">Specific Historical Details & Key Consequence:</div>
+            <div class="task-lines-large"></div>
+            <div class="task-lines-large"></div>
+          </div>
+        </div>
+      `,
+        )
+        .join('')}
+    </div>
+  </div>
+  `;
+}
+
 allDirs.forEach((unitId) => {
   console.log(`Processing workbooks for unit: ${unitId}`);
   let dataPath = path.join(publicUnitsDir, unitId, 'data.js');
   if (unitId === 'cme_new') {
     const canonicalCme = path.join(PATHS.ROOT, 'units', unitId, 'data.js');
     if (fs.existsSync(canonicalCme)) dataPath = canonicalCme;
-  } else if (!fs.existsSync(dataPath) && (unitId === 'weimar_nazi_germany' || unitId === 'early_modern_world')) {
+  } else if (
+    !fs.existsSync(dataPath) &&
+    (unitId === 'weimar_nazi_germany' || unitId === 'early_modern_world')
+  ) {
     dataPath = path.join(PATHS.ROOT, 'units', unitId, 'data.js');
   }
   if (!fs.existsSync(dataPath)) return;
@@ -2673,10 +3098,20 @@ allDirs.forEach((unitId) => {
       `;
       }
 
+      if (unitId === 'cme_new') {
+        const warCanvas = generateCmeWarTimelineCanvas(lesson);
+        if (warCanvas) html += warCanvas;
+      }
+
       if (allVideos.length > 0) {
         appendixData.push({ title: lesson.title, videos: allVideos });
       }
     });
+
+    if (unitId === 'cme_new') {
+      const masterTimeline = generateCmeMasterRevisionTimeline(period.name);
+      if (masterTimeline) html += masterTimeline;
+    }
 
     // --- PUPIL VOICE (END OF UNIT CAPSTONE) ---
     // Generate the holistic pupil voice page at the very end of the booklet

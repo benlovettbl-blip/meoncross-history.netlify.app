@@ -1090,7 +1090,77 @@ export function renderLesson(lesson) {
       `;
     }
 
+    if (
+      lesson.timeline_anchor &&
+      Array.isArray(lesson.timeline_anchor) &&
+      lesson.timeline_anchor.length > 0
+    ) {
+      htmlNarrative += `
+        <details class="timeline-anchor-details" style="background: #ffffff; border: 1px solid #cbd5e1; border-left: 4px solid #0284c7; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); overflow: hidden;" open>
+          <summary style="padding: 12px 18px; font-weight: 700; color: #0f172a; cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; background: #f8fafc;">
+            <span style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; color: #0369a1;">
+              <i class="fa-solid fa-clock-rotate-left" style="color: #0284c7;"></i> Chronology Spine &bull; Key Milestones
+            </span>
+            <span style="font-size: 0.8rem; font-weight: 600; color: #64748b;">${lesson.timeline_anchor.length} Milestones</span>
+          </summary>
+          <div style="padding: 16px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; background: #fff;">
+            ${lesson.timeline_anchor
+              .map(
+                (anchor) => `
+              <div style="position: relative; border-left: 2px solid #e2e8f0; padding-left: 12px;">
+                <div style="position: absolute; left: -6px; top: 2px; width: 10px; height: 10px; border-radius: 50%; background: #0284c7;"></div>
+                <div style="font-size: 0.75rem; font-weight: 800; color: #0284c7; text-transform: uppercase; letter-spacing: 0.5px;">${anchor.date}</div>
+                <div style="font-weight: 700; font-size: 0.95rem; color: #1e293b; margin: 2px 0 4px 0;">${anchor.title}</div>
+                <div style="font-size: 0.82rem; color: #64748b; line-height: 1.4;">${anchor.desc}</div>
+              </div>
+            `,
+              )
+              .join('')}
+          </div>
+        </details>
+      `;
+    }
+
     lesson.narrative_blocks.forEach((block, index) => {
+      if (block.type === 'causal_diagram') {
+        htmlNarrative += `
+          <div class="causal-diagram-container" style="margin: 35px 0; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 12px; padding: 25px; color: #f8fafc; box-shadow: 0 8px 24px rgba(15, 23, 42, 0.25); border: 1px solid #334155;">
+            <div style="text-align: center; margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px;">
+              <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(14, 165, 233, 0.2); border: 1px solid #0ea5e9; color: #38bdf8; padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">
+                <i class="fa-solid fa-code-fork"></i> Interactive Causal Convergence
+              </div>
+              <h3 style="margin: 0; font-size: 1.5rem; font-family: 'Playfair Display', serif; color: #ffffff;">${block.title}</h3>
+              <p style="margin: 8px auto 0 auto; max-width: 650px; font-size: 0.95rem; color: #94a3b8; font-style: italic;">"${block.lead}"</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 25px;">
+              ${block.branches
+                .map(
+                  (b) => `
+                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-top: 4px solid ${b.color}; border-radius: 8px; padding: 14px; display: flex; flex-direction: column;">
+                  <div style="font-weight: 700; font-size: 0.9rem; color: ${b.color}; margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 6px;">${b.category}</div>
+                  <ul style="margin: 0; padding-left: 18px; font-size: 0.84rem; line-height: 1.5; color: #cbd5e1; flex-grow: 1;">
+                    ${b.steps.map((s) => `<li style="margin-bottom: 8px;">${s}</li>`).join('')}
+                  </ul>
+                  <div style="text-align: center; margin-top: 10px; color: ${b.color}; font-size: 1.1rem;">
+                    <i class="fa-solid fa-arrow-down"></i>
+                  </div>
+                </div>
+              `,
+                )
+                .join('')}
+            </div>
+
+            <div style="background: rgba(2, 132, 199, 0.15); border: 2px solid #0284c7; border-radius: 10px; padding: 18px 24px; text-align: center; max-width: 700px; margin: 0 auto; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);">
+              <div style="font-size: 0.8rem; font-weight: 800; color: #38bdf8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">Point of Causal Convergence &bull; ${block.convergence.date}</div>
+              <div style="font-size: 1.25rem; font-weight: 800; color: #ffffff; margin-bottom: 6px; font-family: 'Playfair Display', serif;">${block.convergence.title}</div>
+              <p style="margin: 0; font-size: 0.92rem; line-height: 1.5; color: #e2e8f0;">${block.convergence.desc}</p>
+            </div>
+          </div>
+        `;
+        return;
+      }
+
       if (block.type === 'interactive_map') {
         htmlNarrative += `
             <div class="interactive-map-container" style="margin: 30px 0; background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
