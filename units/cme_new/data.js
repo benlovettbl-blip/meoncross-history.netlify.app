@@ -671,6 +671,26 @@ export const unitData = {
       pair_share: {
         prompt:
           'By 1945, why did Britain face impossible, conflicting pressures in governing Palestine?',
+        dilemma_scale: {
+          title: "Britain's 1945 Imperial Dilemma: The Balance of Competing Pressures",
+          side_a: {
+            actor: 'Palestinian Arab Pressures',
+            tag: 'Majority Self-Determination',
+            points: [
+              'Demanded immediate independence as roughly two-thirds of the population.',
+              'Demanded strict enforcement of the 1939 MacDonald White Paper (75,000 immigration cap & land protections).',
+            ],
+          },
+          pivot: 'British Government (Exhausted Post-WW2)',
+          side_b: {
+            actor: 'Zionist & Jewish Pressures',
+            tag: 'Existential Sanctuary',
+            points: [
+              'Demanded sovereign statehood to rescue 250,000 Holocaust survivors stranded in European DP camps.',
+              'Demanded the total repeal of the 1939 White Paper quotas and immediate unrestricted immigration.',
+            ],
+          },
+        },
         think:
           'Consider the dilemma facing the British government at the end of the Second World War:\n1. Palestinian Arabs (two-thirds of the population) demanded immediate independence and an end to Jewish immigration, citing Britain’s promises in the 1939 MacDonald White Paper.\n2. Jewish leaders and survivors demanded that Britain tear up immigration quotas and create an independent Jewish homeland to rescue 250,000 Holocaust survivors stranded in European displaced persons camps.\n3. Britain was economically exhausted from the war and caught in the crossfire of escalating communal violence.',
         pair: 'Discuss with your partner: Could Britain have satisfied both Arabs and Jews in 1945, or had violent conflict become completely unavoidable? Explain your reasoning.',

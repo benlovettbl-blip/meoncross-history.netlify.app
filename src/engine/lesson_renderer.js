@@ -2068,6 +2068,40 @@ export function renderLesson(lesson) {
             </summary>
             <div style="padding: 20px; background: #ecfdf5;">
               <p style="font-size: 1.15rem; font-weight: 700; color: #065f46; margin-top: 0;">${ps.qNum ? `Q${ps.qNum}. ` : ''}${ps.prompt}</p>
+              ${
+                ps.dilemma_scale
+                  ? `
+                <div class="dilemma-scale-box" style="margin: 15px 0 20px 0; background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 16px; box-shadow: 0 2px 4px rgba(0,0,0,0.04);">
+                  <div style="text-align: center; font-weight: 800; color: #1e3a8a; font-size: 1rem; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <i class="fa-solid fa-scale-balanced" style="color: #0284c7;"></i> ${ps.dilemma_scale.title}
+                  </div>
+                  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; align-items: stretch;">
+                    <div style="background: #fef2f2; border: 1px solid #fecaca; border-top: 3px solid #ef4444; border-radius: 6px; padding: 12px;">
+                      <div style="font-weight: 700; color: #b91c1c; font-size: 0.92rem; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center;">
+                        <span>${ps.dilemma_scale.side_a.actor}</span>
+                        <span style="font-size: 0.75rem; background: #fee2e2; color: #991b1b; padding: 2px 6px; border-radius: 4px;">${ps.dilemma_scale.side_a.tag}</span>
+                      </div>
+                      <ul style="margin: 6px 0 0 0; padding-left: 16px; font-size: 0.85rem; color: #7f1d1d; line-height: 1.45;">
+                        ${ps.dilemma_scale.side_a.points.map((p) => `<li style="margin-bottom: 4px;">${p}</li>`).join('')}
+                      </ul>
+                    </div>
+                    <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-top: 3px solid #3b82f6; border-radius: 6px; padding: 12px;">
+                      <div style="font-weight: 700; color: #1d4ed8; font-size: 0.92rem; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center;">
+                        <span>${ps.dilemma_scale.side_b.actor}</span>
+                        <span style="font-size: 0.75rem; background: #dbeafe; color: #1e40af; padding: 2px 6px; border-radius: 4px;">${ps.dilemma_scale.side_b.tag}</span>
+                      </div>
+                      <ul style="margin: 6px 0 0 0; padding-left: 16px; font-size: 0.85rem; color: #1e3a8a; line-height: 1.45;">
+                        ${ps.dilemma_scale.side_b.points.map((p) => `<li style="margin-bottom: 4px;">${p}</li>`).join('')}
+                      </ul>
+                    </div>
+                  </div>
+                  <div style="text-align: center; margin-top: 10px; font-size: 0.82rem; font-weight: 700; color: #64748b;">
+                    <i class="fa-solid fa-arrows-split-up-and-left" style="color: #0f172a; margin-right: 4px;"></i> Pivot: ${ps.dilemma_scale.pivot}
+                  </div>
+                </div>
+              `
+                  : ''
+              }
               <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px;">
                 <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
                   <div style="font-weight: bold; color: #059669; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
