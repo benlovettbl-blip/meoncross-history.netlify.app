@@ -955,8 +955,13 @@ allDirs.forEach((unitId) => {
             }
 
             if (block.source && block.source.question) {
+              let cleanQuestion = block.source.question.replace(/^Q\d+[\.\:]\s*/i, '');
+              let prefix =
+                cleanQuestion.startsWith('Source Detective') || !cleanQuestion.startsWith(' ')
+                  ? '. '
+                  : ' ';
               _nbHtml += `<div class="task-box">`;
-              _nbHtml += `<h4 style="margin-top: 10px; margin-bottom: 15px;">Q${globalQNum++}${block.source.question}${block.source.page ? ` [p. ${block.source.page}]` : ''}</h4>`;
+              _nbHtml += `<h4 style="margin-top: 10px; margin-bottom: 15px;">Q${globalQNum++}${prefix}${cleanQuestion}${block.source.page ? ` [p. ${block.source.page}]` : ''}</h4>`;
               for (let i = 0; i < 4; i++) {
                 _nbHtml += `<div class="task-lines" style="height: 12px; margin-top: 15px;"></div>`;
               }
@@ -2796,6 +2801,10 @@ allDirs.forEach((unitId) => {
     const outPath = path.join(publicUnitsDir, unitId, filename);
     try {
       fs.writeFileSync(outPath, html);
+      const altUnitsPath = path.join(PATHS.ROOT, 'units', unitId, filename);
+      if (fs.existsSync(path.dirname(altUnitsPath))) {
+        fs.writeFileSync(altUnitsPath, html);
+      }
       console.log(`Generated workbook for ${unitId}: ${filename}`);
     } catch (err) {
       console.error(`❌ Failed to write workbook for ${unitId}: ${filename}`, err.message);

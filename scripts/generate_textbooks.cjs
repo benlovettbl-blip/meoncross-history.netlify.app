@@ -402,7 +402,7 @@ allDirs.forEach((unitId) => {
         html += `</div>`;
       }
 
-      html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L${lessonIndex + 1}: ${formatText(lesson.title)}<span style="display: none;">[[SRC_MARKER:L${lesson.globalIndex}_Start]]</span></h2>`;
+      html += `<h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L${lessonIndex + 1}: ${formatText(lesson.title)}<span style="position: absolute; width: 0; height: 0; overflow: hidden; opacity: 0; pointer-events: none; font-size: 0;">[[SRC_MARKER:L${lesson.globalIndex}_Start]]</span></h2>`;
 
       html += `<div style="margin-bottom: 10px;"></div>`;
 
@@ -634,7 +634,7 @@ allDirs.forEach((unitId) => {
           ) {
             html += `
             <div class="source-container" style="">
-              <span style="display: none;">[[SRC_MARKER:L${lesson.globalIndex}_Source_${sIdx}]]</span>
+              <span style="position: absolute; width: 0; height: 0; overflow: hidden; opacity: 0; pointer-events: none; font-size: 0;">[[SRC_MARKER:L${lesson.globalIndex}_Source_${sIdx}]]</span>
               ${source.title ? `<strong>${badgeSource(source.title, getSourceOverride())}</strong><br>` : ''}
               ${source.src || source.source ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(source.src || source.source, 2) : source.src || source.source}" alt="Source">` : ''}
               ${sourceContent ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px;">${formatText(sourceContent)}</blockquote>` : ''}
@@ -688,7 +688,7 @@ allDirs.forEach((unitId) => {
             let sIdx = lesson.sources ? lesson.sources.length + bIdx : bIdx;
             html += `
             <div class="source-container" style="page-break-inside: avoid; margin-bottom: 15px; margin-top: 15px; border-left: 3px solid #ccc; padding-left: 15px;">
-              <span style="display: none;">[[SRC_MARKER:L${lesson.globalIndex}_Source_${sIdx}]]</span>
+              <span style="position: absolute; width: 0; height: 0; overflow: hidden; opacity: 0; pointer-events: none; font-size: 0;">[[SRC_MARKER:L${lesson.globalIndex}_Source_${sIdx}]]</span>
               ${block.source.title ? `<strong>${badgeSource(block.source.title, getSourceOverride())}</strong><br>` : ''}
               ${block.source.src || block.source.source ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(block.source.src || block.source.source, 2) : block.source.src || block.source.source}" alt="Source" style="max-width: 100%; max-height: 250px;">` : ''}
               ${block.source.content ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px; font-style: italic;">${typeof formatText === 'function' ? formatText(block.source.content) : block.source.content}</blockquote>` : ''}
@@ -796,7 +796,7 @@ allDirs.forEach((unitId) => {
               html += `<div class="task-box">`;
               block.tasks.forEach((task, tIdx) => {
                 if (task.type === 'draw') {
-                  html += `<div class="draw-task" style="display:none;"><span style="display: none;">[[SRC_MARKER:L${lesson.globalIndex}_Task_${bIdx}_${tIdx}]]</span>Q${globalQNum++}: ${task.text || task.question}</div>`;
+                  html += `<div class="draw-task" style="display:none;"><span style="position: absolute; width: 0; height: 0; overflow: hidden; opacity: 0; pointer-events: none; font-size: 0;">[[SRC_MARKER:L${lesson.globalIndex}_Task_${bIdx}_${tIdx}]]</span>Q${globalQNum++}: ${task.text || task.question}</div>`;
                 } else {
                   if (task.type === 'multiple_choice') {
                     html += `<div class="task-box">`;
@@ -924,7 +924,7 @@ allDirs.forEach((unitId) => {
                   ) {
                     // Do nothing
                   } else {
-                    html += `<p style="margin-top:10px;"><span style="display: none;">[[SRC_MARKER:L${lesson.globalIndex}_Task_${bIdx}_${tIdx}]]</span><strong>Q${globalQNum++}. ${task.text || task.question || task.instruction || task.instructions || task.title || ''}</strong></p>`;
+                    html += `<p style="margin-top:10px;"><span style="position: absolute; width: 0; height: 0; overflow: hidden; opacity: 0; pointer-events: none; font-size: 0;">[[SRC_MARKER:L${lesson.globalIndex}_Task_${bIdx}_${tIdx}]]</span><strong>Q${globalQNum++}. ${task.text || task.question || task.instruction || task.instructions || task.title || ''}</strong></p>`;
                     if (task.type === 'extended_writing' && task.instructions) {
                       html += `<p style="font-style: italic; color: #334155; margin-bottom: 5px; margin-top: 5px; font-size: 10pt;">${task.instructions}</p>`;
                     }
@@ -1272,7 +1272,7 @@ allDirs.forEach((unitId) => {
                   : `style=""`;
               html += `
               <div class="source-container" ${containerStyle}>
-                <span style="display: none;">[[SRC_MARKER:L${lesson.globalIndex}_Source_${sIdx}]]</span>
+                <span style="position: absolute; width: 0; height: 0; overflow: hidden; opacity: 0; pointer-events: none; font-size: 0;">[[SRC_MARKER:L${lesson.globalIndex}_Source_${sIdx}]]</span>
                 ${source.title ? `<strong>${badgeSource(source.title, getSourceOverride())}</strong><br>` : ''}
                 ${source.src || source.source ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(source.src || source.source, 2) : source.src || source.source}" alt="Source">` : ''}
                 ${sourceContent ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px;">${formatText(sourceContent)}</blockquote>` : ''}
@@ -1474,6 +1474,10 @@ allDirs.forEach((unitId) => {
     const filename = period.name === 'full' ? 'textbook.html' : `textbook_${period.name}.html`;
     const outPath = path.join(publicUnitsDir, unitId, filename);
     fs.writeFileSync(outPath, html);
+    const altUnitsPath = path.join(ROOT_DIR, 'units', unitId, filename);
+    if (fs.existsSync(path.dirname(altUnitsPath))) {
+      fs.writeFileSync(altUnitsPath, html);
+    }
     console.log(`Generated ${outPath}`);
   });
 });
