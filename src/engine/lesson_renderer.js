@@ -2365,12 +2365,21 @@ export function renderLesson(lesson) {
             typeof lesson.extended.source_a === 'string'
               ? lesson.extended.source_a
               : lesson.extended.source_a.content;
+          const isImageA =
+            typeof content === 'string' &&
+            (content.toLowerCase().endsWith('.png') ||
+              content.toLowerCase().endsWith('.jpg') ||
+              content.toLowerCase().endsWith('.jpeg') ||
+              content.toLowerCase().endsWith('.webp'));
+          const renderedA = isImageA
+            ? `<div style="text-align: center;"><img src="${getAssetUrl(content)}" style="max-width: 100%; max-height: 480px; object-fit: contain; border-radius: 6px; border: 1.5px solid #cbd5e1;" alt="Source A"></div>`
+            : content.replace(/\n/g, '<br>');
           sourceHtml += `
                <div style="flex: 1 1 250px; display: flex; flex-direction: column; font-size: 0.95rem; line-height: 1.5;">
                  <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source A</strong>
                  ${prov ? `<span style="color: #334155; display: block; margin-bottom: 15px; font-style: italic;">${prov}</span>` : ''}
                  <div style="border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px; background: #ffffff; color: #0f172a; flex-grow: 1;">
-                   ${content.replace(/\n/g, '<br>')}
+                   ${renderedA}
                  </div>
                </div>`;
         }
@@ -2381,12 +2390,21 @@ export function renderLesson(lesson) {
             typeof lesson.extended.source_b === 'string'
               ? lesson.extended.source_b
               : lesson.extended.source_b.content;
+          const isImageB =
+            typeof content === 'string' &&
+            (content.toLowerCase().endsWith('.png') ||
+              content.toLowerCase().endsWith('.jpg') ||
+              content.toLowerCase().endsWith('.jpeg') ||
+              content.toLowerCase().endsWith('.webp'));
+          const renderedB = isImageB
+            ? `<div style="text-align: center;"><img src="${getAssetUrl(content)}" style="max-width: 100%; max-height: 480px; object-fit: contain; border-radius: 6px; border: 1.5px solid #cbd5e1;" alt="Source B"></div>`
+            : content.replace(/\n/g, '<br>');
           sourceHtml += `
                <div style="flex: 1 1 250px; display: flex; flex-direction: column; font-size: 0.95rem; line-height: 1.5;">
                  <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source B</strong>
                  ${prov ? `<span style="color: #334155; display: block; margin-bottom: 15px; font-style: italic;">${prov}</span>` : ''}
                  <div style="border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px; background: #ffffff; color: #0f172a; flex-grow: 1;">
-                   ${content.replace(/\n/g, '<br>')}
+                   ${renderedB}
                  </div>
                </div>`;
         }
@@ -2407,16 +2425,73 @@ export function renderLesson(lesson) {
           <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
             <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
               ${lesson.extended.qNum ? `Q${lesson.extended.qNum}. ` : ''}${formatQuestion(lesson.extended.question, !lesson.extended.qNum)}
-              <span style="display: inline-flex; vertical-align: middle;">
+              <span style="display: inline-flex; vertical-align: middle; gap: 6px;">
                 ${lesson.extended.model || lesson.extended.answer ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-icon-only btn-pedagogy-model" title="Reveal Model Answer" data-action="toggle-element" data-target-id="extended-model-${lesson.id}"><i class="fa-solid fa-check-double"></i></button>` : ''}
+                ${lesson.extended.answer_image ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-model" title="Reveal Reference Map" data-action="toggle-element" data-target-id="extended-map-answer-${lesson.id}"><i class="fa-solid fa-map-location-dot"></i> Reveal Reference Map</button>` : ''}
               </span>
             </div>
             ${sourceHtml}
             ${hintsHtml}
+            ${lesson.extended.answer_image ? `
+              <div id="extended-map-answer-${lesson.id}" style="display:none; margin-top: 15px; border: 2px solid #16a34a; border-radius: 8px; padding: 15px; background: #f0fdf4;">
+                <strong style="color: #166534; display: block; margin-bottom: 8px;"><i class="fa-solid fa-circle-check"></i> Authoritative Reference Map:</strong>
+                <div style="text-align: center;"><img src="${getAssetUrl(lesson.extended.answer_image)}" style="max-width: 100%; max-height: 520px; object-fit: contain; border-radius: 6px; border: 1px solid #86efac;" /></div>
+              </div>
+            ` : ''}
             <textarea class="student-answer-input" style="min-height: 200px;" placeholder="Write your extended response here..." oninput="window.updateProgress()"></textarea>
             ${lesson.extended.model || lesson.extended.answer ? `<div id="extended-model-${lesson.id}" class="scaffold-box model-box" style="display:none; margin-top: 15px;">${formatBold(lesson.extended.model || lesson.extended.answer)}</div>` : ''}
           </div>
         `;
+    }
+
+    if (lesson.secondary_map) {
+      const sm = lesson.secondary_map;
+      let smContent = sm.source_a ? (typeof sm.source_a === 'string' ? sm.source_a : sm.source_a.content) : '';
+      let smHints = '';
+      if (sm.hints && sm.hints.length > 0) {
+        smHints = `<div style="margin-top: 15px; padding: 10px; background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px;"><strong style="color: #d97706;">Hints:</strong><ul style="margin: 5px 0 0 0; padding-left: 20px; color: #92400e;">${sm.hints.map((h) => `<li>${formatBold(h)}</li>`).join('')}</ul></div>`;
+      }
+      gcseHtml += `
+        <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px; margin-top: 25px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+            <div style="font-weight: 700; font-size: 1.15rem; color: #1e3a8a;">
+              ${sm.title}
+            </div>
+            ${sm.answer_image ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-model" data-action="toggle-element" data-target-id="secondary-map-answer-${lesson.id}"><i class="fa-solid fa-map-location-dot"></i> Reveal Reference Map</button>` : ''}
+          </div>
+          <p style="font-size: 0.95rem; color: #334155; line-height: 1.5; margin-bottom: 15px;">${formatBold(sm.instructions || sm.question)}</p>
+          ${smContent ? `
+            <div style="text-align: center; margin: 15px 0; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 15px; background: #f8fafc;">
+              <img src="${getAssetUrl(smContent)}" style="max-width: 100%; max-height: 500px; object-fit: contain; border-radius: 4px;" alt="${sm.title}">
+            </div>
+          ` : ''}
+          ${smHints}
+          ${sm.answer_image ? `
+            <div id="secondary-map-answer-${lesson.id}" style="display:none; margin-top: 15px; border: 2px solid #16a34a; border-radius: 8px; padding: 15px; background: #f0fdf4;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <strong style="color: #166534; font-size: 1rem;"><i class="fa-solid fa-circle-check"></i> Model Answer & Reference Maps</strong>
+              </div>
+              <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-top: 10px;">
+                <div style="flex: 1 1 300px; text-align: center;">
+                  <div style="font-size: 0.85rem; font-weight: 700; color: #166534; margin-bottom: 6px;">Israel & Occupied Territories Reference</div>
+                  <img src="${getAssetUrl(sm.answer_image)}" style="max-width: 100%; max-height: 480px; object-fit: contain; border-radius: 6px; border: 1px solid #bbf7d0;" alt="Reference Map">
+                </div>
+                ${sm.macro_map ? `
+                  <div style="flex: 1 1 300px; text-align: center;">
+                    <div style="font-size: 0.85rem; font-weight: 700; color: #166534; margin-bottom: 6px;">1967 Six-Day War Territorial Shift</div>
+                    <img src="${getAssetUrl(sm.macro_map)}" style="max-width: 100%; max-height: 480px; object-fit: contain; border-radius: 6px; border: 1px solid #bbf7d0;" alt="Six-Day War Macro Map">
+                  </div>
+                ` : ''}
+              </div>
+              ${sm.historical_notes ? `
+                <div style="margin-top: 12px; padding: 10px; background: #ffffff; border: 1px solid #86efac; border-radius: 6px; font-size: 0.9rem; color: #14532d; line-height: 1.45;">
+                  <strong>Historical Context:</strong> ${sm.historical_notes}
+                </div>
+              ` : ''}
+            </div>
+          ` : ''}
+        </div>
+      `;
     }
 
     if (lesson.gcse_task) {

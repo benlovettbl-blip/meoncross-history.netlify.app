@@ -589,22 +589,62 @@ export const unitData = {
         },
       ],
       extended: {
-        title: 'Map Task: The Geopolitical Landscape',
+        title: 'Map Task 1: The Geopolitical Landscape of the Middle East',
+        instructions:
+          'Using the blank outline map provided in your workbook (and the reference map in your textbook), accurately locate and label the 9 key nation-states, 8 capital cities, and 8 critical maritime waterways/chokepoints that shaped 20th-century Middle Eastern history.',
         paragraphs: [
-          'Understanding the geography of the Middle East is the essential first step to understanding its history. The borders of the modern Middle East were largely drawn by Britain and France following the collapse of the Ottoman Empire at the end of the First World War. These artificially imposed borders laid the groundwork for decades of instability.',
-          'At the heart of the conflict are several highly contested regions: the Gaza Strip, the West Bank, the Golan Heights, and the Sinai Peninsula. Additionally, control over strategic waterways—like the Suez Canal, the Straits of Tiran, and the River Jordan—has repeatedly triggered military escalation.',
+          'Understanding the physical and political geography of the Middle East is the indispensable foundation for understanding its modern conflicts. The borders of the modern Middle East were largely carved out by British and French imperial diplomats following the collapse of the Ottoman Empire after World War One.',
+          'Control over vital maritime chokepoints—such as the Suez Canal, the Straits of Tiran, and the Persian Gulf—alongside access to scarce freshwater sources like the River Jordan, repeatedly triggered diplomatic showdowns and full-scale wars between 1948 and 1973.',
         ],
         question:
-          'Using the blank map provided in your workbook (or the interactive map here), label the following: \n- Countries: Israel, Egypt, Syria, Jordan, Lebanon, Iraq, Iran\n- Capitals: Jerusalem, Tel Aviv, Cairo, Damascus, Amman, Beirut\n- Waterways: Suez Canal, Straits of Tiran, Gulf of Aqaba, Red Sea, River Jordan, Mediterranean Sea\n- Contested Zones (shade these): Sinai Peninsula, Golan Heights, Gaza Strip, West Bank',
+          'Complete the geopolitical map of the Middle East by checking off each feature as you label it:\n- 🌍 Major Countries: Egypt, Israel, Jordan, Syria, Lebanon, Iraq, Iran, Saudi Arabia, Turkey\n- 🏛️ Capital Cities: Cairo, Jerusalem, Tel Aviv, Amman, Damascus, Beirut, Baghdad, Riyadh\n- 🌊 Waterways & Chokepoints: Suez Canal, Straits of Tiran, Gulf of Aqaba, Gulf of Suez, Red Sea, River Jordan, Mediterranean Sea, Persian Gulf\n- ⛰️ Key Peninsula: Sinai Peninsula',
+        checklist: {
+          countries: [
+            'Egypt',
+            'Israel',
+            'Jordan',
+            'Syria',
+            'Lebanon',
+            'Iraq',
+            'Iran',
+            'Saudi Arabia',
+            'Turkey',
+          ],
+          capitals: [
+            'Cairo',
+            'Jerusalem',
+            'Tel Aviv',
+            'Amman',
+            'Damascus',
+            'Beirut',
+            'Baghdad',
+            'Riyadh',
+          ],
+          waterways: [
+            'Suez Canal',
+            'Straits of Tiran',
+            'Gulf of Aqaba',
+            'Gulf of Suez',
+            'Red Sea',
+            'River Jordan',
+            'Mediterranean Sea',
+            'Persian Gulf',
+          ],
+          terrain: ['Sinai Peninsula'],
+        },
         hints: [
-          'Look carefully at the coastal outlines to locate the Mediterranean and Red Seas.',
-          'Remember that the Sinai Peninsula connects Africa to Asia.',
+          'Locate the two long bodies of water: the Red Sea to the south-west and the Persian Gulf to the east.',
+          'Remember that the Sinai Peninsula forms the land bridge connecting Africa to Asia.',
+          'The Straits of Tiran are the narrow bottleneck at the southern entrance to the Gulf of Aqaba.',
         ],
         source_a: {
-          title: 'Map of the Middle East',
-          provenance: 'Reference Map',
+          title: 'Middle East Outline Map (Blank)',
+          provenance: 'Student Copy for Pupil Workbook',
           content: '/images/middle_east_map.png',
         },
+        answer_image: '/images/middle_east_map_answers.png',
+        model_answer:
+          'Fully labeled reference map of the Middle East displaying all 9 sovereign states, 8 national capitals, and 8 critical strategic waterways and maritime chokepoints.',
       },
       vocabulary: [
         {
@@ -622,21 +662,48 @@ export const unitData = {
       ],
       hide_phase_titles: true,
       secondary_map: {
-        title: 'Map Task: Israel and the Occupied Territories',
+        title: 'Map Task 2: Israel & The Contested Territories (Post-1967)',
+        instructions:
+          'Using the regional outline map of Israel and its immediate frontiers, complete the following geographical and historical tasks to examine the territorial transformations of the 1948 and 1967 wars.',
         question:
-          'Using the blank map provided, shade and label the following critical regions and territories that became the focal point of the conflict post-1967:\n- Israel (pre-1967 borders)\n- The West Bank\n- The Gaza Strip\n- The Golan Heights\n- The Sinai Peninsula',
+          'On your zoomed map of Israel and its immediate frontiers, complete the following:\n1. Label Israel and its 4 immediate neighbouring sovereign states: Lebanon (North), Syria (Northeast), Jordan (East), Egypt (Southwest / Sinai).\n2. Label the 5 strategic water bodies: Mediterranean Sea, Sea of Galilee, River Jordan, Dead Sea, Gulf of Aqaba.\n3. Mark the holy city of Jerusalem with a star (★) on the 1949 Green Line.\n4. Shade and clearly label the territories occupied by Israel during the June 1967 Six-Day War:\n   - The West Bank (captured from Jordan)\n   - The Gaza Strip (captured from Egypt)\n   - The Golan Heights (captured from Syria)\n   - The Sinai Peninsula (captured from Egypt)',
+        checklist: {
+          neighbours: [
+            'Lebanon (North)',
+            'Syria (Northeast)',
+            'Jordan (East)',
+            'Egypt (Sinai Peninsula, Southwest)',
+          ],
+          waterways: [
+            'Mediterranean Sea',
+            'Sea of Galilee',
+            'River Jordan',
+            'Dead Sea',
+            'Gulf of Aqaba',
+          ],
+          occupied_territories: [
+            'West Bank (captured from Jordan — shade ///)',
+            'Gaza Strip (captured from Egypt — shade ///)',
+            'Golan Heights (captured from Syria — shade ///)',
+            'Sinai Peninsula (vast desert buffer captured from Egypt)',
+          ],
+          landmarks: ['Jerusalem ★ (Marked on the 1949 Green Line)'],
+        },
         hints: [
-          'The West Bank is nestled between Israel and Jordan.',
-          'The Sinai Peninsula is the large triangular landmass between Egypt and Israel.',
-          'The Golan Heights border Syria to the northeast.',
+          'The West Bank lies directly west of the River Jordan and Dead Sea, bordering Jordan to the east.',
+          'The Gaza Strip is the small coastal rectangle along the Mediterranean coastline bordering Egypt.',
+          'The Golan Heights is the elevated volcanic plateau directly northeast of the Sea of Galilee bordering Syria.',
+          'Sinai is the large triangular desert peninsula west of the Negev Desert and Gulf of Aqaba.',
         ],
         source_a: {
-          title: 'Zoomed Map (Blank)',
-          provenance: 'Student Copy',
+          title: 'Israel and Frontiers Outline Map (Blank)',
+          provenance: 'Student Copy for Pupil Workbook',
           content: '/images/israel_zoomed_map.png',
         },
-        provenance_clue:
-          'Focus on the precise borders. After the 1967 war, Israel captured the West Bank from Jordan, the Gaza Strip and Sinai Peninsula from Egypt, and the Golan Heights from Syria.',
+        answer_image: '/images/israel_zoomed_map_answers.png',
+        macro_map: '/images/palestine_1967_six_day_war_map.png',
+        historical_notes:
+          'During the Six-Day War (5–10 June 1967), Israel pre-emptively attacked Egyptian, Syrian, and Jordanian air and ground forces, capturing the Sinai Peninsula, the Gaza Strip, the West Bank, East Jerusalem, and the Golan Heights. This quadrupled the territory under Israeli military control and brought over one million Palestinian Arabs under military occupation.',
       },
       pair_share: {
         prompt:

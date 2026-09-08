@@ -1199,63 +1199,124 @@ allDirs.forEach((unitId) => {
         };
 
         if (lesson.extended && lesson.extended.question) {
-          if (lesson.extended.source_a || lesson.extended.source_b) {
-            html += `<div style="display: flex; gap: 20px; margin-top: 15px; margin-bottom: 10px; ">`;
-            if (lesson.extended.source_a) {
-              const prov =
-                typeof lesson.extended.source_a === 'string'
-                  ? ''
-                  : lesson.extended.source_a.provenance;
-              const content =
-                typeof lesson.extended.source_a === 'string'
-                  ? lesson.extended.source_a
-                  : lesson.extended.source_a.content;
-              const isImageA =
-                content.toLowerCase().endsWith('.png') || content.toLowerCase().endsWith('.jpg');
-              const renderedA = isImageA
-                ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(content, 2) : `../..${content.startsWith('/') ? content : '/' + content}`}" style="max-width: 100%; max-height: 400px; object-fit: contain; margin: 0 auto; display: block;">`
-                : content.replace(/\n/g, '<br>');
-              html += `<div style="flex: 1; display: flex; flex-direction: column; font-size: 0.95rem; line-height: 1.5;">
-                  <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source A</strong>
-                  ${prov ? `<span style="color: #334155; display: block; margin-bottom: 15px; font-style: italic;">${prov}</span>` : ''}
-                  <div style="border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px;  color: #0f172a; flex-grow: 1;">
-                    ${renderedA}
-                  </div>
-                </div>`;
+          if (unitId === 'cme_new' && lesson.extended.title && lesson.extended.title.toLowerCase().includes('map task')) {
+            const ansImg = lesson.extended.answer_image || '/images/middle_east_map_answers.png';
+            html += `
+            <div style="page-break-before: always; break-before: page; page-break-inside: avoid; break-inside: avoid; margin-top: 20px; margin-bottom: 25px; border: 2px solid #1e3a8a; border-radius: 8px; padding: 15px; background: #ffffff;">
+              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #1e3a8a; padding-bottom: 6px; margin-bottom: 10px;">
+                <h3 style="margin: 0; color: #1e3a8a; font-size: 13pt;">${lesson.extended.title} — Reference Guide</h3>
+                <span style="background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; font-size: 8.5pt; font-weight: bold; padding: 2px 8px; border-radius: 4px;">Teacher & Pupil Reference Key</span>
+              </div>
+              <p style="font-size: 9.5pt; color: #334155; margin-bottom: 12px; line-height: 1.5;">
+                <strong>Geopolitical Overview:</strong> Use this authoritative reference map to verify all 9 sovereign nation-states, 8 regional capitals, and 8 critical maritime waterways/chokepoints. Note how British and French imperial partitions created artificial straight-line borders across historic populations, and how strategic waterways like the Suez Canal and Straits of Tiran repeatedly triggered regional wars.
+              </p>
+              <div style="text-align: center; margin: 10px 0;">
+                <img src="../../${ansImg.replace(/^\//, '')}" style="width: 100%; max-height: 520px; object-fit: contain; border: 1.5px solid #475569; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); background: #ffffff;" alt="Middle East Labeled Reference Map">
+              </div>
+              <div style="margin-top: 8px; font-size: 8.5pt; color: #64748b; font-style: italic; text-align: center;">
+                Figure 1.0: Authoritative Geopolitical Reference Map of the Middle East (Countries, Capitals, and Maritime Chokepoints).
+              </div>
+            </div>
+            `;
+          } else {
+            if (lesson.extended.source_a || lesson.extended.source_b) {
+              html += `<div style="display: flex; gap: 20px; margin-top: 15px; margin-bottom: 10px; ">`;
+              if (lesson.extended.source_a) {
+                const prov =
+                  typeof lesson.extended.source_a === 'string'
+                    ? ''
+                    : lesson.extended.source_a.provenance;
+                const content =
+                  typeof lesson.extended.source_a === 'string'
+                    ? lesson.extended.source_a
+                    : lesson.extended.source_a.content;
+                const isImageA =
+                  content.toLowerCase().endsWith('.png') || content.toLowerCase().endsWith('.jpg');
+                const renderedA = isImageA
+                  ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(content, 2) : `../..${content.startsWith('/') ? content : '/' + content}`}" style="max-width: 100%; max-height: 400px; object-fit: contain; margin: 0 auto; display: block;">`
+                  : content.replace(/\n/g, '<br>');
+                html += `<div style="flex: 1; display: flex; flex-direction: column; font-size: 0.95rem; line-height: 1.5;">
+                    <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source A</strong>
+                    ${prov ? `<span style="color: #334155; display: block; margin-bottom: 15px; font-style: italic;">${prov}</span>` : ''}
+                    <div style="border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px;  color: #0f172a; flex-grow: 1;">
+                      ${renderedA}
+                    </div>
+                  </div>`;
+              }
+              if (lesson.extended.source_b) {
+                const prov =
+                  typeof lesson.extended.source_b === 'string'
+                    ? ''
+                    : lesson.extended.source_b.provenance;
+                const content =
+                  typeof lesson.extended.source_b === 'string'
+                    ? lesson.extended.source_b
+                    : lesson.extended.source_b.content;
+                const isImageB =
+                  content.toLowerCase().endsWith('.png') || content.toLowerCase().endsWith('.jpg');
+                const renderedB = isImageB
+                  ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(content, 2) : `../..${content.startsWith('/') ? content : '/' + content}`}" style="max-width: 100%; max-height: 400px; object-fit: contain; margin: 0 auto; display: block;">`
+                  : content.replace(/\n/g, '<br>');
+                html += `<div style="flex: 1; display: flex; flex-direction: column; font-size: 0.95rem; line-height: 1.5;">
+                    <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source B</strong>
+                    ${prov ? `<span style="color: #334155; display: block; margin-bottom: 15px; font-style: italic;">${prov}</span>` : ''}
+                    <div style="border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px;  color: #0f172a; flex-grow: 1;">
+                      ${renderedB}
+                    </div>
+                  </div>`;
+              }
+              html += `</div>`;
             }
-            if (lesson.extended.source_b) {
-              const prov =
-                typeof lesson.extended.source_b === 'string'
-                  ? ''
-                  : lesson.extended.source_b.provenance;
-              const content =
-                typeof lesson.extended.source_b === 'string'
-                  ? lesson.extended.source_b
-                  : lesson.extended.source_b.content;
-              const isImageB =
-                content.toLowerCase().endsWith('.png') || content.toLowerCase().endsWith('.jpg');
-              const renderedB = isImageB
-                ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(content, 2) : `../..${content.startsWith('/') ? content : '/' + content}`}" style="max-width: 100%; max-height: 400px; object-fit: contain; margin: 0 auto; display: block;">`
-                : content.replace(/\n/g, '<br>');
-              html += `<div style="flex: 1; display: flex; flex-direction: column; font-size: 0.95rem; line-height: 1.5;">
-                  <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source B</strong>
-                  ${prov ? `<span style="color: #334155; display: block; margin-bottom: 15px; font-style: italic;">${prov}</span>` : ''}
-                  <div style="border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px;  color: #0f172a; flex-grow: 1;">
-                    ${renderedB}
-                  </div>
-                </div>`;
-            }
-            html += `</div>`;
-          }
 
-          if (lesson.extended.provenance_clue) {
-            html += `<div style="margin-top: 15px; margin-bottom: 15px; padding-top: 12px; padding-bottom: 12px;  border: 1px solid #bfdbfe; border-radius: 6px; "><strong style="color: #1e3a8a;">Provenance Scaffolding:</strong><p style="margin: 5px 0 0 0; color: #1e40af; font-style: italic;">${formatText(lesson.extended.provenance_clue)}</p></div>`;
+            if (lesson.extended.provenance_clue) {
+              html += `<div style="margin-top: 15px; margin-bottom: 15px; padding-top: 12px; padding-bottom: 12px;  border: 1px solid #bfdbfe; border-radius: 6px; "><strong style="color: #1e3a8a;">Provenance Scaffolding:</strong><p style="margin: 5px 0 0 0; color: #1e40af; font-style: italic;">${formatText(lesson.extended.provenance_clue)}</p></div>`;
+            }
+            html += `<div style="margin-top: 15px;"><strong>Q${globalQNum++}. ${formatText(lesson.extended.question)}</strong></div>`;
+            if (!lesson.extended.title || !lesson.extended.title.toLowerCase().includes('map task')) {
+              renderLines(lesson.extended.question);
+            }
+            html += `<br>`;
           }
-          html += `<div style="margin-top: 15px;"><strong>Q${globalQNum++}. ${formatText(lesson.extended.question)}</strong></div>`;
-          if (!lesson.extended.title || !lesson.extended.title.toLowerCase().includes('map task')) {
-            renderLines(lesson.extended.question);
-          }
-          html += `<br>`;
+        }
+
+        if (unitId === 'cme_new' && lesson.secondary_map) {
+          const sm = lesson.secondary_map;
+          const smAnsImg = sm.answer_image || '/images/israel_zoomed_map_answers.png';
+          const smMacroImg = sm.macro_map || '/images/palestine_1967_six_day_war_map.png';
+          html += `
+          <div style="page-break-before: always; break-before: always; margin-top: 20px; margin-bottom: 25px;">
+            <div style="page-break-inside: avoid; break-inside: avoid; border: 2px solid #1e3a8a; border-radius: 8px; padding: 15px; background: #ffffff;">
+              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #1e3a8a; padding-bottom: 6px; margin-bottom: 10px;">
+                <h3 style="margin: 0; color: #1e3a8a; font-size: 13pt;">${sm.title} — Reference Key</h3>
+                <span style="background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; font-size: 8.5pt; font-weight: bold; padding: 2px 8px; border-radius: 4px;">Territorial Outcomes Post-1967</span>
+              </div>
+              <p style="font-size: 9.5pt; color: #334155; margin-bottom: 12px; line-height: 1.5;">
+                <strong>Historical Context:</strong> ${sm.historical_notes || ''}
+              </p>
+              
+              <div style="display: flex; gap: 14px; align-items: stretch; margin: 15px 0;">
+                <div style="flex: 1.1; text-align: center; border: 1px solid #cbd5e1; border-radius: 6px; padding: 8px; background: #f8fafc;">
+                  <div style="font-weight: bold; color: #1e293b; font-size: 9.5pt; margin-bottom: 6px;">Israel & Occupied Territories (Reference Shading)</div>
+                  <img src="../../${smAnsImg.replace(/^\//, '')}" style="width: 100%; max-height: 470px; object-fit: contain; border: 1px solid #94a3b8; border-radius: 4px; background: #fff;" alt="Israel & Occupied Territories Labeled">
+                  <div style="margin-top: 6px; font-size: 8pt; color: #64748b; font-style: italic;">
+                    Regional reference map showing 1949 Green Line, West Bank (Jordan), Gaza Strip & Sinai (Egypt), and Golan Heights (Syria).
+                  </div>
+                </div>
+                <div style="flex: 0.9; text-align: center; border: 1px solid #cbd5e1; border-radius: 6px; padding: 8px; background: #f8fafc;">
+                  <div style="font-weight: bold; color: #1e293b; font-size: 9.5pt; margin-bottom: 6px;">1967 Six-Day War Macro Territorial Shift</div>
+                  <img src="../../${smMacroImg.replace(/^\//, '')}" style="width: 100%; max-height: 470px; object-fit: contain; border: 1px solid #94a3b8; border-radius: 4px; background: #fff;" alt="Six-Day War Historical Map">
+                  <div style="margin-top: 6px; font-size: 8pt; color: #64748b; font-style: italic;">
+                    Authentic historical map showing pre-1967 Israel (blue) and newly occupied Egyptian, Syrian, and Jordanian lands (orange).
+                  </div>
+                </div>
+              </div>
+
+              <div style="background: #f1f5f9; border-left: 4px solid #1e3a8a; padding: 10px 14px; border-radius: 0 6px 6px 0; font-size: 9pt; color: #334155; line-height: 1.45;">
+                <strong>Pedagogical Check:</strong> Pupils should use these two reference maps to ensure their workbook maps correctly differentiate pre-1967 sovereign Israeli territory from the four newly occupied territories. Highlight that East Jerusalem and the Golan Heights were later unilaterally annexed, while Sinai was returned to Egypt under the 1979 Camp David Accords.
+              </div>
+            </div>
+          </div>
+          `;
         }
 
         if (lesson.sources && lesson.sources.length > 0 && isGCSE) {

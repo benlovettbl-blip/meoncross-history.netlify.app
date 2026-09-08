@@ -1916,97 +1916,162 @@ allDirs.forEach((unitId) => {
         }
 
         if (lesson.extended && lesson.extended.question) {
-          let letterA = 'A';
-          let letterB = 'B';
-          if (lesson.extended.source_a || lesson.extended.source_b) {
-            letterA = String.fromCharCode(sourceCharCode++);
-            if (lesson.extended.source_b) letterB = String.fromCharCode(sourceCharCode++);
-
-            if (lesson.extended.question) {
-              lesson.extended.question = lesson.extended.question.replace(
-                /Sources\s+A\s+and\s+B/g,
-                'Sources ' + letterA + ' and ' + letterB,
-              );
-              lesson.extended.question = lesson.extended.question.replace(
-                /Source\s+A/g,
-                'Source ' + letterA,
-              );
-              lesson.extended.question = lesson.extended.question.replace(
-                /Source\s+B/g,
-                'Source ' + letterB,
-              );
+          if (unitId === 'cme_new' && lesson.extended.title && lesson.extended.title.toLowerCase().includes('map task')) {
+            html += `<div class="task-box" style="page-break-before: always; break-before: page; page-break-inside: avoid; break-inside: avoid; margin-top: 15px; margin-bottom: 20px; border: 2px solid #1e3a8a; border-radius: 8px; padding: 14px; background: #ffffff;">`;
+            html += `<h3 style="margin-top: 0; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 6px; font-size: 12.5pt;">${lesson.extended.title}</h3>`;
+            html += `<p style="font-size: 9.5pt; color: #334155; margin-bottom: 10px; line-height: 1.45;">${lesson.extended.instructions || lesson.extended.question}</p>`;
+            
+            if (lesson.extended.checklist) {
+              const cl = lesson.extended.checklist;
+              html += `<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px 12px; margin-bottom: 12px; font-size: 9pt; line-height: 1.5;">`;
+              html += `<div style="font-weight: bold; color: #1e293b; margin-bottom: 6px; text-transform: uppercase; font-size: 8.5pt; letter-spacing: 0.5px;">Pupil Task Checklist:</div>`;
+              html += `<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 14px;">`;
+              if (cl.countries) {
+                html += `<div><strong style="color: #1e3a8a;">🌍 Countries (9):</strong><br>${cl.countries.map(c => `<span style="display: inline-block; margin-right: 8px; font-family: monospace;">&#9633; ${c}</span>`).join(' ')}</div>`;
+              }
+              if (cl.capitals) {
+                html += `<div><strong style="color: #1e3a8a;">🏛️ Capitals (8):</strong><br>${cl.capitals.map(c => `<span style="display: inline-block; margin-right: 8px; font-family: monospace;">&#9633; ${c}</span>`).join(' ')}</div>`;
+              }
+              if (cl.waterways) {
+                html += `<div style="grid-column: 1 / -1; margin-top: 4px; border-top: 1px dashed #cbd5e1; padding-top: 6px;"><strong style="color: #1e3a8a;">🌊 Waterways & Chokepoints (8):</strong><br>${cl.waterways.map(w => `<span style="display: inline-block; margin-right: 10px; font-family: monospace;">&#9633; ${w}</span>`).join(' ')} <span style="display: inline-block; margin-right: 10px; font-family: monospace; font-weight: bold; color: #9a3412;">&#9633; Sinai Peninsula</span></div>`;
+              }
+              html += `</div></div>`;
             }
 
-            html += `<div style="display: flex; gap: 20px; margin-top: 15px; margin-bottom: 10px; ">`;
-            if (lesson.extended.source_a) {
-              const prov =
-                typeof lesson.extended.source_a === 'string'
-                  ? ''
-                  : lesson.extended.source_a.provenance;
-              const content =
-                typeof lesson.extended.source_a === 'string'
-                  ? lesson.extended.source_a
-                  : lesson.extended.source_a.content;
-              const isImageA =
-                content.toLowerCase().endsWith('.png') || content.toLowerCase().endsWith('.jpg');
-              const renderedA = isImageA
-                ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(content, 2) : `../..${content.startsWith('/') ? content : '/' + content}`}" style="max-width: 100%; max-height: 400px; object-fit: contain; margin: 0 auto; display: block;">`
-                : content.replace(/\n/g, '<br>');
-              html += `<div style="flex: 1; display: flex; flex-direction: column; font-size: 0.95rem; line-height: 1.5;">
-                  <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source ${letterA}</strong>
-                  ${prov ? `<span style="color: #334155; display: block; margin-bottom: 15px; font-style: italic;">${prov}</span>` : ''}
-                  <div style="border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px;  color: #0f172a; flex-grow: 1;">
-                    ${renderedA}
-                  </div>
-                </div>`;
-            }
-            if (lesson.extended.source_b) {
-              const prov =
-                typeof lesson.extended.source_b === 'string'
-                  ? ''
-                  : lesson.extended.source_b.provenance;
-              const content =
-                typeof lesson.extended.source_b === 'string'
-                  ? lesson.extended.source_b
-                  : lesson.extended.source_b.content;
-              const isImageB =
-                content.toLowerCase().endsWith('.png') || content.toLowerCase().endsWith('.jpg');
-              const renderedB = isImageB
-                ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(content, 2) : `../..${content.startsWith('/') ? content : '/' + content}`}" style="max-width: 100%; max-height: 400px; object-fit: contain; margin: 0 auto; display: block;">`
-                : content.replace(/\n/g, '<br>');
-              html += `<div style="flex: 1; display: flex; flex-direction: column; font-size: 0.95rem; line-height: 1.5;">
-                  <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source ${letterB}</strong>
-                  ${prov ? `<span style="color: #334155; display: block; margin-bottom: 15px; font-style: italic;">${prov}</span>` : ''}
-                  <div style="border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px;  color: #0f172a; flex-grow: 1;">
-                    ${renderedB}
-                  </div>
-                </div>`;
-            }
+            const mapImg = typeof lesson.extended.source_a === 'string' ? lesson.extended.source_a : (lesson.extended.source_a ? lesson.extended.source_a.content : '/images/middle_east_map.png');
+            html += `<div style="text-align: center; margin: 8px 0;">`;
+            html += `<img src="../../${mapImg.replace(/^\//, '')}" style="width: 100%; max-height: 480px; object-fit: contain; border: 1.5px solid #475569; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); background: #ffffff;" alt="Middle East Blank Outline Map">`;
             html += `</div>`;
+            html += `</div>`;
+          } else {
+            if (lesson.extended.source_a || lesson.extended.source_b) {
+              let letterA = String.fromCharCode(sourceCharCode++);
+              let letterB =
+                lesson.extended.source_b && lesson.extended.source_a
+                  ? String.fromCharCode(sourceCharCode++)
+                  : '';
+              if (letterB) {
+                lesson.extended.question = lesson.extended.question.replace(
+                  /Sources\s+A\s+and\s+B/g,
+                  'Sources ' + letterA + ' and ' + letterB,
+                );
+                lesson.extended.question = lesson.extended.question.replace(
+                  /Source\s+A/g,
+                  'Source ' + letterA,
+                );
+                lesson.extended.question = lesson.extended.question.replace(
+                  /Source\s+B/g,
+                  'Source ' + letterB,
+                );
+              }
+
+              html += `<div style="display: flex; gap: 20px; margin-top: 15px; margin-bottom: 10px; ">`;
+              if (lesson.extended.source_a) {
+                const prov =
+                  typeof lesson.extended.source_a === 'string'
+                    ? ''
+                    : lesson.extended.source_a.provenance;
+                const content =
+                  typeof lesson.extended.source_a === 'string'
+                    ? lesson.extended.source_a
+                    : lesson.extended.source_a.content;
+                const isImageA =
+                  content.toLowerCase().endsWith('.png') || content.toLowerCase().endsWith('.jpg');
+                const renderedA = isImageA
+                  ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(content, 2) : `../..${content.startsWith('/') ? content : '/' + content}`}" style="max-width: 100%; max-height: 400px; object-fit: contain; margin: 0 auto; display: block;">`
+                  : content.replace(/\n/g, '<br>');
+                html += `<div style="flex: 1; display: flex; flex-direction: column; font-size: 0.95rem; line-height: 1.5;">
+                    <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source ${letterA}</strong>
+                    ${prov ? `<span style="color: #334155; display: block; margin-bottom: 15px; font-style: italic;">${prov}</span>` : ''}
+                    <div style="border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px;  color: #0f172a; flex-grow: 1;">
+                      ${renderedA}
+                    </div>
+                  </div>`;
+              }
+              if (lesson.extended.source_b) {
+                const prov =
+                  typeof lesson.extended.source_b === 'string'
+                    ? ''
+                    : lesson.extended.source_b.provenance;
+                const content =
+                  typeof lesson.extended.source_b === 'string'
+                    ? lesson.extended.source_b
+                    : lesson.extended.source_b.content;
+                const isImageB =
+                  content.toLowerCase().endsWith('.png') || content.toLowerCase().endsWith('.jpg');
+                const renderedB = isImageB
+                  ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(content, 2) : `../..${content.startsWith('/') ? content : '/' + content}`}" style="max-width: 100%; max-height: 400px; object-fit: contain; margin: 0 auto; display: block;">`
+                  : content.replace(/\n/g, '<br>');
+                html += `<div style="flex: 1; display: flex; flex-direction: column; font-size: 0.95rem; line-height: 1.5;">
+                    <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1.1rem;">Source ${letterB}</strong>
+                    ${prov ? `<span style="color: #334155; display: block; margin-bottom: 15px; font-style: italic;">${prov}</span>` : ''}
+                    <div style="border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px;  color: #0f172a; flex-grow: 1;">
+                      ${renderedB}
+                    </div>
+                  </div>`;
+              }
+              html += `</div>`;
+            }
+
+            if (lesson.extended.provenance_clue) {
+              html += `<div style="margin-top: 15px; margin-bottom: 15px; padding-top: 12px; padding-bottom: 12px;  border: 1px solid #bfdbfe; border-radius: 6px; "><strong style="color: #1e3a8a;">Provenance Scaffolding:</strong><p style="margin: 5px 0 0 0; color: #1e40af; font-style: italic;">${formatText(lesson.extended.provenance_clue)}</p></div>`;
+            }
+            if (lesson.extended.hints && lesson.extended.hints.length > 0) {
+              html += `<div style="margin-top: 15px; margin-bottom: 15px; padding: 15px; background: #f0fdf4; border: 2px solid #22c55e; border-radius: 8px;">`;
+              html += `<strong style="color: #166534; font-size: 11pt;">Scaffolding & Hints:</strong>`;
+              html += `<ul style="margin: 8px 0 0 0; padding-left: 20px; color: #15803d; font-size: 10pt;">`;
+              lesson.extended.hints.forEach((hint) => {
+                html += `<li style="margin-bottom: 4px;">${formatText(hint)}</li>`;
+              });
+              html += `</ul></div>`;
+            }
+            let _extInfo = processTaskTextWithTariff(lesson.extended.question, true);
+            html += `<div style="margin-top: 15px;"><strong>Q${globalQNum++}. ${_extInfo.cleanText}</strong></div>`;
+            if (_extInfo.badgeHtml) {
+              html += _extInfo.badgeHtml;
+            }
+            if (!lesson.extended.title || !lesson.extended.title.toLowerCase().includes('map task')) {
+              renderLines(lesson.extended.question, lesson.extended.lines);
+            }
+            html += `<br>`;
+          }
+        }
+
+        if (unitId === 'cme_new' && lesson.secondary_map) {
+          const sm = lesson.secondary_map;
+          html += `<div style="page-break-before: always; break-before: always; margin-top: 20px;">`;
+          html += `<div class="task-box" style="page-break-inside: avoid; break-inside: avoid; border: 2px solid #1e3a8a; border-radius: 8px; padding: 14px; background: #ffffff;">`;
+          html += `<h3 style="margin-top: 0; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 6px; font-size: 12.5pt;">${sm.title}</h3>`;
+          html += `<p style="font-size: 9.5pt; color: #334155; margin-bottom: 10px; line-height: 1.45;">${sm.instructions}</p>`;
+
+          if (sm.checklist) {
+            html += `<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px 12px; margin-bottom: 12px; font-size: 9pt; line-height: 1.5;">`;
+            html += `<div style="font-weight: bold; color: #1e293b; margin-bottom: 6px; text-transform: uppercase; font-size: 8.5pt; letter-spacing: 0.5px;">Pupil Task Checklist:</div>`;
+            html += `<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 14px;">`;
+            if (sm.checklist.neighbours) {
+              html += `<div><strong style="color: #1e3a8a;">🚩 4 Immediate Neighbours:</strong><br>${sm.checklist.neighbours.map(n => `<div style="font-family: monospace; margin: 1px 0;">&#9633; ${n}</div>`).join('')}</div>`;
+            }
+            if (sm.checklist.waterways) {
+              html += `<div><strong style="color: #1e3a8a;">💧 Strategic Water Bodies:</strong><br>${sm.checklist.waterways.map(w => `<div style="font-family: monospace; margin: 1px 0;">&#9633; ${w}</div>`).join('')}</div>`;
+            }
+            if (sm.checklist.occupied_territories) {
+              html += `<div style="grid-column: 1 / -1; margin-top: 4px; border-top: 1px dashed #cbd5e1; padding-top: 6px;">`;
+              html += `<strong style="color: #dc2626;">🖍️ Occupied Territories (June 1967):</strong> <span style="font-style: italic; color: #475569;">(Shade with diagonal lines /// and label)</span><br>`;
+              html += `<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 14px; margin-top: 3px;">`;
+              html += sm.checklist.occupied_territories.map(ot => `<div style="font-family: monospace;">&#9633; ${ot}</div>`).join('');
+              html += `</div>`;
+              html += `<div style="margin-top: 5px; font-family: monospace; font-weight: bold; color: #1e3a8a;">&#9633; Jerusalem ★ (Mark with a star on the 1949 Green Line)</div>`;
+              html += `</div>`;
+            }
+            html += `</div></div>`;
           }
 
-          if (lesson.extended.provenance_clue) {
-            html += `<div style="margin-top: 15px; margin-bottom: 15px; padding-top: 12px; padding-bottom: 12px;  border: 1px solid #bfdbfe; border-radius: 6px; "><strong style="color: #1e3a8a;">Provenance Scaffolding:</strong><p style="margin: 5px 0 0 0; color: #1e40af; font-style: italic;">${formatText(lesson.extended.provenance_clue)}</p></div>`;
-          }
-          if (lesson.extended.hints && lesson.extended.hints.length > 0) {
-            html += `<div style="margin-top: 15px; margin-bottom: 15px; padding: 15px; background: #f0fdf4; border: 2px solid #22c55e; border-radius: 8px;">`;
-            html += `<strong style="color: #166534; font-size: 11pt;">Scaffolding & Hints:</strong>`;
-            html += `<ul style="margin: 8px 0 0 0; padding-left: 20px; color: #15803d; font-size: 10pt;">`;
-            lesson.extended.hints.forEach((hint) => {
-              html += `<li style="margin-bottom: 4px;">${formatText(hint)}</li>`;
-            });
-            html += `</ul></div>`;
-          }
-          let _extInfo = processTaskTextWithTariff(lesson.extended.question, true);
-          html += `<div style="margin-top: 15px;"><strong>Q${globalQNum++}. ${_extInfo.cleanText}</strong></div>`;
-          if (_extInfo.badgeHtml) {
-            html += _extInfo.badgeHtml;
-          }
-          if (!lesson.extended.title || !lesson.extended.title.toLowerCase().includes('map task')) {
-            renderLines(lesson.extended.question, lesson.extended.lines);
-          }
-          html += `<br>`;
+          const smMapImg = typeof sm.source_a === 'string' ? sm.source_a : (sm.source_a ? sm.source_a.content : '/images/israel_zoomed_map.png');
+          html += `<div style="text-align: center; margin: 8px 0;">`;
+          html += `<img src="../../${smMapImg.replace(/^\//, '')}" style="width: 100%; max-height: 520px; object-fit: contain; border: 1.5px solid #475569; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); background: #ffffff;" alt="Israel and Frontiers Outline Map">`;
+          html += `</div>`;
         }
+
 
         if (lesson.gcse_task) {
           html += `<div class="task-box" style="margin-bottom: 15px; page-break-inside: auto; border-top: none; padding-top: 0; margin-top: 0;">`;
