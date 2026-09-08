@@ -2693,11 +2693,11 @@ export const unitData = {
           ],
           source: {
             title: 'Source B: Palestinian Refugees Leaving Their Villages (1948 Nakba)',
-            src: '/images/cme_palestinian_refugees_1948.jpg',
+            src: '/images/cme_palestinian_refugees_leaving_gaza.webp',
             caption:
-              'Authentic UN Archival Photograph: Palestinian families carrying bundles of clothing and food as they flee their homes in 1948.',
+              'Authentic Historical Photograph: Palestinian families wading through coastal waters carrying trunks and possessions as they flee the fighting during the 1948 Nakba.',
             question:
-              'Source Detective: How did the displacement of over 700,000 Palestinians create an unresolved humanitarian and territorial crisis that shaped every subsequent conflict?',
+              'Source Detective: Study the possessions and families fleeing in the photograph. What does this reveal about the suddenness of their flight and the immense humanitarian crisis created across the region?',
           },
         },
         {
