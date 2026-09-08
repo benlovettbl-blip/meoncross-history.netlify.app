@@ -1928,6 +1928,20 @@ export function renderLesson(lesson) {
 
   if (lesson.pair_share) {
     const ps = lesson.pair_share;
+    const thinkText = ps.think || 'Consider the key historical factors discussed in this lesson.';
+    const pairText =
+      ps.pair ||
+      'Discuss your ideas with your partner. Compare your reasons and evidence, and refine your explanation.';
+    const shareText =
+      ps.share ||
+      'Be prepared to share your argument with the class using analytical sentence starters.';
+    const startersHtml =
+      ps.starters && ps.starters.length > 0
+        ? `<div style="margin-top: 15px; background: white; padding: 12px 16px; border-radius: 6px; border-left: 4px solid #10b981; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+             <strong style="color: #065f46; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">Sentence Starters:</strong>
+             ${ps.starters.map((s) => `<div style="font-size: 0.95rem; color: #166534; margin-top: 4px;">• <em>${s}</em></div>`).join('')}
+           </div>`
+        : '';
     htmlPairShare += `
         <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 15px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);" closed>
             <summary style="padding: 10px 15px; cursor: pointer; color: #059669; font-weight: bold; font-size: 1.05rem; background: #ecfdf5; list-style: none; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #a7f3d0;">
@@ -1941,17 +1955,18 @@ export function renderLesson(lesson) {
                     <span><i class="fa-solid fa-brain"></i> 1. Think</span>
                     <button data-action="start-tps-timer" style="background: #10b981; color: white; border: none; border-radius: 4px; padding: 3px 8px; cursor: pointer; font-size: 0.85rem; font-weight: bold;"><i class="fa-regular fa-clock"></i> 60s</button>
                   </div>
-                  <p style="margin: 0; font-size: 0.95rem; color: #475569;">${ps.think}</p>
+                  <p style="margin: 0; font-size: 0.95rem; color: #475569;">${thinkText}</p>
                 </div>
                 <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
                   <div style="font-weight: bold; color: #059669; margin-bottom: 8px;"><i class="fa-solid fa-comments"></i> 2. Pair</div>
-                  <p style="margin: 0; font-size: 0.95rem; color: #475569;">${ps.pair}</p>
+                  <p style="margin: 0; font-size: 0.95rem; color: #475569;">${pairText}</p>
                 </div>
                 <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
                   <div style="font-weight: bold; color: #059669; margin-bottom: 8px;"><i class="fa-solid fa-users"></i> 3. Share</div>
-                  <p style="margin: 0; font-size: 0.95rem; color: #475569;">${ps.share}</p>
+                  <p style="margin: 0; font-size: 0.95rem; color: #475569;">${shareText}</p>
                  </div>
               </div>
+              ${startersHtml}
             </div>
           </details>
       `;

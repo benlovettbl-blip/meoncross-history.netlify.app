@@ -753,7 +753,8 @@ allDirs.forEach((unitId) => {
                 if (src.toLowerCase().endsWith('.svg')) {
                   html += `<img src="${src}" style="width: 85%; max-width: 650px; height: auto; display:block; margin: 25px auto 5px auto; border-radius: 8px; border: 1.5px solid #475569; padding-top: 10px; padding-bottom: 10px; ">`;
                 } else {
-                  html += `<img src="${src}" style="max-width:100%; max-height: 250px; display:block; margin: 15px auto 5px auto; border-radius: 6px; border: 1px solid #ccc;">`;
+                  const maxH = unitId === 'cme_new' && lessonIndex === 0 ? '180px' : '250px';
+                  html += `<img src="${src}" style="max-width:100%; max-height: ${maxH}; display:block; margin: 12px auto 5px auto; border-radius: 6px; border: 1px solid #ccc;">`;
                 }
                 if (caption || inlineSourceHtml) {
                   html += `<div style="text-align: center; font-size: 10pt; font-style: italic; color: #555; margin-bottom: 15px;">${inlineSourceHtml}${caption}</div>`;
@@ -952,11 +953,12 @@ allDirs.forEach((unitId) => {
                     html += `<h4 style="margin-top: 0;">Q${globalQNum++} ${task.text || task.question || task.instruction || task.title || ''}</h4>`;
                     html += `<table   style="page-break-inside: avoid; page-break-inside: avoid;" style="width:100%; border:none;"><tbody>`;
                     const rightMixed = [...task.pairs].sort(() => Math.random() - 0.5);
+                    const cellPad = unitId === 'cme_new' ? '6px' : '10px';
                     task.pairs.forEach((p, i) => {
                       html += `<tr>
-                     <td style="border:1px solid #333; padding:10px; width:40%;">${(p.left || '').replace(/\n/g, '<br>')}</td>
+                     <td style="border:1px solid #333; padding:${cellPad}; width:40%;">${(p.left || '').replace(/\n/g, '<br>')}</td>
                      <td style="width:20%; text-align:center;">&bull; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &bull;</td>
-                     <td style="border:1px solid #333; padding:10px; width:40%;">${(rightMixed[i].right || '').replace(/\n/g, '<br>')}</td>
+                     <td style="border:1px solid #333; padding:${cellPad}; width:40%;">${(rightMixed[i].right || '').replace(/\n/g, '<br>')}</td>
                    </tr>`;
                     });
                     html += `</tbody></table></div>`;
@@ -1065,10 +1067,23 @@ allDirs.forEach((unitId) => {
 
       // Pair Share
       if (lesson.pair_share) {
-        html += `<div class="task-box" style="page-break-inside: avoid; margin-bottom: 15px;">`;
-        html += `<h3 style="margin-top: 0; color: #1e3a8a;">Pair & Share Activity</h3>`;
-        html += `<p style="font-weight: bold; margin-bottom: 10px;">Q${globalQNum++}. ${lesson.pair_share.prompt}</p>`;
-        html += `</div>`;
+        if (unitId === 'cme_new') {
+          html += `<div class="task-box" style="page-break-inside: avoid; margin-top: 8px; margin-bottom: 10px; border: 1.5px solid #0f766e; border-radius: 6px; padding: 8px 12px; background: #ffffff;">`;
+          html += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">`;
+          html += `<h4 style="margin: 0; color: #0f766e; font-size: 10pt; text-transform: uppercase; letter-spacing: 0.5px;">✍️ Consolidation & Discussion</h4>`;
+          html += `<span style="font-size: 8pt; background: #ccfbf1; color: #0f766e; padding: 1px 6px; border-radius: 9999px; font-weight: 600;">Recall & Analysis</span>`;
+          html += `</div>`;
+          html += `<p style="font-weight: bold; font-size: 9.5pt; margin: 0 0 4px 0; color: #0f172a; line-height: 1.3;">Q${globalQNum++}. ${lesson.pair_share.prompt}</p>`;
+          if (lesson.pair_share.think) {
+            html += `<p style="font-size: 8pt; font-style: italic; color: #475569; margin: 0; line-height: 1.25;"><strong>Guidance:</strong> ${lesson.pair_share.think}</p>`;
+          }
+          html += `</div>`;
+        } else {
+          html += `<div class="task-box" style="page-break-inside: avoid; margin-bottom: 15px;">`;
+          html += `<h3 style="margin-top: 0; color: #1e3a8a;">Pair & Share Activity</h3>`;
+          html += `<p style="font-weight: bold; margin-bottom: 10px;">Q${globalQNum++}. ${lesson.pair_share.prompt}</p>`;
+          html += `</div>`;
+        }
       }
 
       // Phase 1: Standard Tasks

@@ -691,6 +691,19 @@ export const unitData = {
         historical_notes:
           'During the Six-Day War (5–10 June 1967), Israel pre-emptively attacked Egyptian, Syrian, and Jordanian air and ground forces, capturing the Sinai Peninsula, the Gaza Strip, the West Bank, East Jerusalem, and the Golan Heights. This quadrupled the territory under Israeli military control and brought over one million Palestinian Arabs under military occupation.',
       },
+      pair_share: {
+        prompt:
+          'Explain two reasons why the physical geography and strategic waterways of the Middle East repeatedly triggered military conflict between Israel and its Arab neighbours.',
+        think:
+          'Consider maritime bottlenecks like the Straits of Tiran and Suez Canal (where naval blockades threatened vital trade and oil supplies), alongside elevated high ground like the Golan Heights (commanding artillery sightlines over civilian settlements) and scarce freshwater sources like the River Jordan.',
+        pair: 'Discuss your two chosen geographic factors with your partner. Compare whether maritime chokepoints or elevated topographical high ground posed the more immediate threat to national survival, and refine your causal explanations.',
+        share:
+          'Share your analytical points with the class using the sentence starters below, explaining precisely how geography made military pre-emption so tempting.',
+        starters: [
+          'One reason is that control of maritime chokepoints like the Straits of Tiran was considered an immediate casus belli (act of war) because...',
+          'Another reason is that elevated topographical features like the Golan Heights created severe military instability because...',
+        ],
+      },
       consolidation: 'Why is the geography of the Middle East so geopolitically important?',
       exit_ticket: {
         type: 'ranking_ladder',
