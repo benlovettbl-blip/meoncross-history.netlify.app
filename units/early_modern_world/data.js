@@ -956,6 +956,28 @@ const early_modern_world = {
         ],
       },
       banner: '/images/early_mod_l1_banner.jpg',
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=pfXc9LTqg-Y',
+          title: "Silk Road: The history behind key global trade region & China's renewed interest - BBC World Service",
+          duration: '14 mins 9 secs',
+          viewing_task:
+            'How did the ancient and medieval Silk Road trade routes connect Asian powers with Europe, and why was control over these overland routes so lucrative?',
+          model_answer:
+            'The Silk Road functioned as an interconnected web of overland trade networks linking China and Central Asia to the Mediterranean. It allowed goods like silk, porcelain, and spices to travel west while silver and gold flowed east, making the empires that controlled the transit points extraordinarily wealthy.',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=prdfejAsrNI',
+          title: "Curators' Tour of Silk Roads exhibition at the British Museum",
+          duration: '25 mins 57 secs',
+          viewing_task:
+            'According to British Museum curators, how does surviving material culture prove that global exchange flourished centuries before European overseas exploration?',
+          model_answer:
+            'Archaeological artifacts show that luxury goods, religious ideas, and technologies moved seamlessly across thousands of miles through Central Asian trading hubs, demonstrating that civilizations in Asia, the Middle East, and Africa were far wealthier and more internationally connected than medieval Europe.',
+        },
+      ],
       lesson_assessment: {
         question: 'Explain why Europe was NOT the center of global wealth and power in 1450.',
         hints:
