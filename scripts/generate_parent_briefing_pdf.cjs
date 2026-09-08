@@ -23,8 +23,6 @@ function getBase64Image(relPath) {
 function getHtmlContent() {
   const qrBase64 = getBase64Image('images/tour_app_qr.png');
   const tabletBase64 = getBase64Image('images/stubbington_memorial_2.jpg');
-  const lowryWilliamBase64 = getBase64Image('images/lowry_william.png');
-  const lowryEricBase64 = getBase64Image('images/lowry_auriol.png');
 
   return `
 <!DOCTYPE html>
@@ -165,13 +163,13 @@ function getHtmlContent() {
       line-height: 1.3;
     }
 
-    /* Heritage Hook Box */
+    /* Core Mission Box */
     .heritage-box {
       background: #fefce8;
       border: 1px solid #fef08a;
       border-left: 4.5px solid #d97706;
       border-radius: 7px;
-      padding: 9px 12px;
+      padding: 9px 13px;
       margin-bottom: 9px;
     }
 
@@ -179,7 +177,7 @@ function getHtmlContent() {
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
     }
 
     .heritage-tag {
@@ -200,62 +198,9 @@ function getHtmlContent() {
     }
 
     .heritage-content {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-    }
-
-    .heritage-text {
-      flex: 1;
-      font-size: 8.2pt;
+      font-size: 8.4pt;
       color: #451a03;
-      line-height: 1.35;
-    }
-
-    .heritage-quote {
-      font-style: italic;
-      font-weight: 600;
-      color: #92400e;
-      margin-top: 4px;
-      padding-left: 8px;
-      border-left: 2px solid #f59e0b;
-    }
-
-    .heritage-thumbs {
-      display: flex;
-      gap: 8px;
-      flex-shrink: 0;
-    }
-
-    .heritage-thumb-card {
-      background: #ffffff;
-      padding: 3px;
-      border: 1px solid #cbd5e1;
-      border-radius: 6px;
-      text-align: center;
-      width: 62px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-    }
-
-    .heritage-thumb-card img {
-      width: 100%;
-      height: 46px;
-      object-fit: cover;
-      border-radius: 3px;
-      display: block;
-    }
-
-    .heritage-thumb-card img.crop-top {
-      object-position: 50% 6%;
-    }
-
-    .heritage-thumb-card span {
-      font-size: 6pt;
-      font-weight: 700;
-      color: #334155;
-      display: block;
-      margin-top: 2px;
-      line-height: 1.1;
+      line-height: 1.4;
     }
 
     /* Itinerary Cards */
@@ -263,7 +208,7 @@ function getHtmlContent() {
       font-size: 10pt;
       color: #1e3a8a;
       font-weight: 800;
-      margin-bottom: 4px;
+      margin-bottom: 5px;
       display: flex;
       align-items: center;
       gap: 6px;
@@ -274,22 +219,22 @@ function getHtmlContent() {
     .itinerary-grid {
       display: flex;
       flex-direction: column;
-      gap: 5px;
-      margin-bottom: 6px;
+      gap: 6px;
+      margin-bottom: 8px;
     }
 
     .day-card {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-radius: 6px;
-      padding: 5px 9px;
+      padding: 6px 10px;
       display: flex;
-      gap: 10px;
+      gap: 12px;
     }
 
     .day-pill {
       flex-shrink: 0;
-      width: 62px;
+      width: 64px;
       background: #1e3a8a;
       color: #ffffff;
       border-radius: 5px;
@@ -307,27 +252,84 @@ function getHtmlContent() {
     .day-pill .d-date { font-size: 6.2pt; font-weight: 600; text-transform: uppercase; margin-top: 2px; }
 
     .day-details { flex: 1; }
-    .day-title { font-size: 9pt; font-weight: 700; color: #0f172a; margin-bottom: 1px; }
-    .day-summary { font-size: 7.8pt; color: #334155; line-height: 1.3; }
-    .day-highlights { font-size: 7.4pt; color: #64748b; margin-top: 2px; }
-    .day-highlights strong { color: #1e293b; }
+    .day-title { font-size: 9.2pt; font-weight: 700; color: #0f172a; margin-bottom: 2px; }
+    .day-schedule {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .day-schedule li {
+      font-size: 7.9pt;
+      color: #334155;
+      line-height: 1.35;
+      margin-bottom: 2px;
+      position: relative;
+      padding-left: 12px;
+    }
+    .day-schedule li::before {
+      content: "•";
+      position: absolute;
+      left: 2px;
+      color: #2563eb;
+      font-weight: bold;
+    }
+    .day-schedule li strong {
+      color: #0f172a;
+    }
+
+    /* Key Expedition Highlights */
+    .highlights-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .highlight-pill-card {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 6px 8px;
+      text-align: center;
+    }
+
+    .highlight-pill-card .icon {
+      font-size: 11pt;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .highlight-pill-card .hl-title {
+      font-size: 8pt;
+      font-weight: 800;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .highlight-pill-card .hl-desc {
+      font-size: 7.2pt;
+      color: #475569;
+      line-height: 1.25;
+      margin-top: 2px;
+    }
 
     /* App Callout Banner */
     .app-callout {
       background: #eff6ff;
       border: 1.5px solid #bfdbfe;
       border-radius: 7px;
-      padding: 6px 10px;
+      padding: 7px 11px;
       display: flex;
       align-items: center;
       gap: 12px;
     }
 
     .app-qr {
-      width: 56px;
-      height: 56px;
+      width: 58px;
+      height: 58px;
       background: #ffffff;
-      padding: 2px;
+      padding: 3px;
       border: 1px solid #cbd5e1;
       border-radius: 6px;
       flex-shrink: 0;
@@ -341,81 +343,8 @@ function getHtmlContent() {
 
     .app-text { flex: 1; }
     .app-heading { font-size: 9.2pt; font-weight: 800; color: #1e3a8a; margin-bottom: 1px; font-family: 'Playfair Display', serif; }
-    .app-desc { font-size: 7.5pt; color: #334155; line-height: 1.25; }
-    .app-url { font-size: 7.6pt; font-weight: 700; color: #2563eb; margin-top: 2px; }
-
-    /* 3-Star Effort Rubric Callout */
-    .rubric-callout {
-      background: #f8fafc;
-      border: 1.5px solid #cbd5e1;
-      border-left: 4px solid #1e3a8a;
-      border-radius: 6px;
-      padding: 7px 10px;
-      margin-bottom: 8px;
-    }
-
-    .rubric-header {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 5px;
-    }
-
-    .rubric-badge {
-      background: #1e3a8a;
-      color: #ffffff;
-      font-size: 6.5pt;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 2px 6px;
-      border-radius: 3px;
-    }
-
-    .rubric-title {
-      font-size: 8.5pt;
-      font-weight: 700;
-      color: #0f172a;
-    }
-
-    .rubric-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 8px;
-    }
-
-    .rubric-item {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 5px;
-      padding: 5px 7px;
-    }
-
-    .rubric-item.star3 { border-top: 2.5px solid #16a34a; }
-    .rubric-item.star2 { border-top: 2.5px solid #d97706; }
-    .rubric-item.star1 { border-top: 2.5px solid #dc2626; }
-
-    .star-rating {
-      font-size: 7.8pt;
-      font-weight: 800;
-      color: #0f172a;
-      margin-bottom: 1px;
-    }
-
-    .star-label {
-      font-size: 6.8pt;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: #475569;
-      margin-bottom: 2px;
-    }
-
-    .star-desc {
-      font-size: 6.8pt;
-      color: #334155;
-      line-height: 1.25;
-    }
+    .app-desc { font-size: 7.6pt; color: #334155; line-height: 1.28; }
+    .app-url { font-size: 7.8pt; font-weight: 700; color: #2563eb; margin-top: 2px; }
 
     /* Footer Strip */
     .footer-bar {
@@ -578,7 +507,7 @@ function getHtmlContent() {
         </div>
         <div class="partner-pill">
           <div class="brand">The History Boys</div>
-          <div class="lead">Mr B. Lovett &amp; Mr J. Garrett · Accomp: Dr Kirkup &amp; Mrs Lushey</div>
+          <div class="lead">Mr B. Lovett &amp; Mr J. Garrett · Accompanied by 2 Meoncross Staff</div>
         </div>
       </div>
 
@@ -594,34 +523,14 @@ function getHtmlContent() {
         </div>
       </div>
 
-      <!-- Heritage Hook (Lowry Brothers & Village Fallen) -->
+      <!-- Core Mission Box -->
       <div class="heritage-box">
         <div class="heritage-header">
           <span class="heritage-tag">The Core Mission</span>
-          <span class="heritage-title">Connecting Our Village to the Memorial Walls of Flanders</span>
+          <span class="heritage-title">Connecting Our Village Community to Flanders Fields</span>
         </div>
         <div class="heritage-content">
-          <div class="heritage-text">
-            On this expedition, our pupils are not passive tourists—they are field historians carrying a profound local mission. Back home inside <strong>Holy Rood Church, Stubbington</strong>, carved into the marble Great War Memorial Tablet and the oak tie-beams of the village lychgate, are the names of three brothers from Manor Way Grange, Lee-on-the-Solent: <strong>William, Cyril, and Eric Lowry</strong>. All three gave their lives across different fronts.
-            <div class="heritage-quote">
-              "How did three sons from one coastal Hampshire family answer the call across Gallipoli, Arras, and the Somme—and how did six young men from our quiet village come to rest upon the ramparts and mud of Flanders?"
-            </div>
-            During our 3 days, pupils will physically locate and touch the carved names of our local fallen—including <strong>Sgt. Frank Rogers</strong> on Menin Gate Panel 35, and <strong>Pte Muckett</strong>, <strong>Pte Rye</strong>, <strong>LCpl Ward</strong>, and <strong>Pte Warland</strong> on the rear panels of Tyne Cot.
-          </div>
-          <div class="heritage-thumbs">
-            <div class="heritage-thumb-card">
-              <img src="${tabletBase64}" alt="Holy Rood Tablet">
-              <span>Crofton Tablet</span>
-            </div>
-            <div class="heritage-thumb-card">
-              <img src="${lowryWilliamBase64}" alt="William Lowry" class="crop-top">
-              <span>2nd Lt Lowry</span>
-            </div>
-            <div class="heritage-thumb-card">
-              <img src="${lowryEricBase64}" alt="Eric Lowry">
-              <span>Lt Col Lowry</span>
-            </div>
-          </div>
+          On this expedition, our pupils are not passive tourists—they are field historians carrying a profound local mission. Carved into the Great War memorials back home across Stubbington and Lee-on-the-Solent are the names of young men who once walked our familiar streets before answering the call. Over these three days, pupils will bridge classroom history with village memory, physically locating and honouring our local fallen—including <strong>Sgt. Frank Rogers</strong> on Menin Gate Panel 35, and our village soldiers commemorated upon the memorial panels of Tyne Cot.
         </div>
       </div>
 
@@ -636,12 +545,14 @@ function getHtmlContent() {
           </div>
           <div class="day-details">
             <div class="day-title">Departure, North Salient &amp; Mine Warfare</div>
-            <div class="day-summary">
-              <strong>06:15</strong> meet at Meoncross School (06:30 coach departure) via Jet Connect executive coach to Folkestone Eurotunnel crossing. Transit to France/Belgium via Le Shuttle. Visit <strong>Essex Farm Advanced Dressing Station</strong> (14:30; John McCrae dugout and 15-year-old Valentine Strudwick), the somber <em>Studentenfriedhof</em> at <strong>Langemarck German Military Cemetery</strong> (15:15), and the preserved frontline trenches and mine craters at <strong>Hooge Crater Museum</strong> (16:00).
-            </div>
-            <div class="day-highlights">
-              <strong>Evening:</strong> 17:45 check-in at Peace Village Hostel, Mesen. 18:15 2-course dinner, followed by 19:15 classroom debrief (workbook completion and 8-mark Medicine source question).
-            </div>
+            <ul class="day-schedule">
+              <li><strong>06:15</strong> Meet at Meoncross School (06:30 sharp departure) via executive coach to Folkestone.</li>
+              <li><strong>Transit:</strong> Eurotunnel Le Shuttle crossing to Calais, arriving in Belgium early afternoon.</li>
+              <li><strong>14:30 Essex Farm ADS:</strong> John McCrae dugout ('In Flanders Fields') &amp; 15-year-old Pte Strudwick.</li>
+              <li><strong>15:15 Langemarck German Cemetery:</strong> The somber <em>Studentenfriedhof</em> and contrast in commemoration.</li>
+              <li><strong>16:00 Hooge Crater Museum:</strong> Preserved frontline trenches, deep mine craters, and battlefield archaeology.</li>
+              <li><strong>17:45 Check-in &amp; Evening:</strong> Peace Village Hostel; 18:15 2-course dinner followed by evening study debrief.</li>
+            </ul>
           </div>
         </div>
 
@@ -653,12 +564,15 @@ function getHtmlContent() {
           </div>
           <div class="day-details">
             <div class="day-title">Passchendaele Ridge, Medical Evacuation &amp; The Menin Gate</div>
-            <div class="day-summary">
-              Examine the First Gas Attack at <strong>Vancouver Corner</strong> (09:15), followed by the preserved frontline trenches at <strong>Sanctuary Wood (Hill 62)</strong> (09:45; alternative footwear advised). Supervised supermarket lunch stop at Aldi in Ypres (11:30). Afternoon pilgrimage to <strong>Tyne Cot British War Cemetery</strong> (13:00) to locate our village fallen, followed by <strong>Lijssenthoek Military Cemetery</strong> (14:15) and the 20ft underground dugout experience at <strong>Memorial Museum Passchendaele 1917</strong> in Zonnebeke (15:45).
-            </div>
-            <div class="day-highlights">
-              <strong>Evening Highlight:</strong> 18:00 dinner at Peace Village, before departing for the solemn <strong>8:00 PM Last Post Ceremony at the Menin Gate</strong> (arrive 19:20), where Meoncross pupils lay an official wreath and locate Sgt. Frank Rogers on Panel 35.
-            </div>
+            <ul class="day-schedule">
+              <li><strong>09:15 Vancouver Corner:</strong> The Brooding Soldier memorial; analysing the first gas attacks of 1915.</li>
+              <li><strong>09:45 Sanctuary Wood (Hill 62):</strong> Authentic preserved frontline British trench system and tunnels.</li>
+              <li><strong>11:30 Supermarket Lunch:</strong> Supervised lunch stop at Aldi in Ypres (pupils select fresh items using Euros).</li>
+              <li><strong>13:00 Tyne Cot British War Cemetery:</strong> World's largest CWGC cemetery; locating our village fallen.</li>
+              <li><strong>14:15 Lijssenthoek Military Cemetery:</strong> Casualty Clearing Station medical evacuation &amp; Nurse Nellie Spindler.</li>
+              <li><strong>15:45 Passchendaele 1917 Museum:</strong> Walk-through 20ft underground dugout system and recreated trenches.</li>
+              <li><strong>20:00 Menin Gate Ceremony:</strong> Solemn Last Post Ceremony; Meoncross wreath-laying &amp; Panel 35 tribute.</li>
+            </ul>
           </div>
         </div>
 
@@ -670,38 +584,33 @@ function getHtmlContent() {
           </div>
           <div class="day-details">
             <div class="day-title">Menin Gate Daylight, Civilian Rebirth &amp; Poperinge Sanctuaries</div>
-            <div class="day-summary">
-              Daytime study of the <strong>Menin Gate</strong> memorial panels and morning walk along the historic <strong>Ypres Ramparts &amp; Moat</strong> (09:15). Supervised visit to <strong>De Groote’s Chocolatier</strong> on the rebuilt Grote Markt (10:30; €30–€40 cash envelope). Drive to Poperinge to experience <strong>Talbot House</strong>—the legendary British soldiers' club where 'rank was abandoned' (11:20). Supervised lunch in Poperinge town centre (12:45), followed by an on-site visit to the preserved <strong>Town Hall Death Cells &amp; Execution Post</strong> (13:30). Depart for Calais at 14:30.
-            </div>
-            <div class="day-highlights">
-              <strong>Return:</strong> 17:50 Eurotunnel Le Shuttle crossing to Folkestone (arrives 17:30 UK time); approximate arrival back at Meoncross School at <strong>20:00</strong> (live WhatsApp updates sent en route).
-            </div>
+            <ul class="day-schedule">
+              <li><strong>09:15 Daylight Menin Gate:</strong> Detailed architectural study and morning walk atop Ypres Ramparts.</li>
+              <li><strong>10:30 Grote Markt &amp; Chocolatier:</strong> Supervised visit to De Groote’s artisan chocolatier for gift shopping.</li>
+              <li><strong>11:20 Talbot House (Poperinge):</strong> The famous 'Every Man’s Club' where rank was strictly abandoned.</li>
+              <li><strong>12:45 Town Centre Lunch &amp; Death Cells:</strong> Supervised lunch; visiting preserved Town Hall execution cells.</li>
+              <li><strong>14:30 Return Journey:</strong> Depart for Calais; 17:50 Le Shuttle crossing (17:30 UK arrival); ~20:00 back at school.</li>
+            </ul>
           </div>
         </div>
       </div>
 
-      <!-- Mastery & Spaced Retrieval 3-Star Rubric Callout -->
-      <div class="rubric-callout">
-        <div class="rubric-header">
-          <span class="rubric-badge">Spaced Retrieval Practice</span>
-          <span class="rubric-title">Parent Validation Stamp: The 3-Star Effort Guide</span>
+      <!-- Key Reassurance Highlights -->
+      <div class="highlights-bar">
+        <div class="highlight-pill-card">
+          <span class="icon">🛡️</span>
+          <div class="hl-title">Dedicated Care</div>
+          <div class="hl-desc">High 1:8 staff ratio, 24/7 leadership support, and private executive coach throughout.</div>
         </div>
-        <div class="rubric-grid">
-          <div class="rubric-item star3">
-            <div class="star-rating">⭐⭐⭐ 3 Stars</div>
-            <div class="star-label">Full Mastery</div>
-            <div class="star-desc">Completed under exam conditions without glancing at notes or Knowledge Vault. Total independent recall.</div>
-          </div>
-          <div class="rubric-item star2">
-            <div class="star-rating">⭐⭐ 2 Stars</div>
-            <div class="star-label">Consolidating</div>
-            <div class="star-desc">Required 1–2 hints from the Knowledge Vault, but demonstrated sound foundational understanding.</div>
-          </div>
-          <div class="rubric-item star1">
-            <div class="star-rating">⭐ 1 Star</div>
-            <div class="star-label">Needs Intervention</div>
-            <div class="star-desc">Rushed, mind went blank, or completed with notes open. Target facts must be hunted down and re-tested.</div>
-          </div>
+        <div class="highlight-pill-card">
+          <span class="icon">📖</span>
+          <div class="hl-title">Specialist Historians</div>
+          <div class="hl-desc">Every cemetery and trench led on-site by experienced GCSE &amp; KS3 History specialists.</div>
+        </div>
+        <div class="highlight-pill-card">
+          <span class="icon">🎖️</span>
+          <div class="hl-title">Bespoke Field Packs</div>
+          <div class="hl-desc">Every pupil receives a printed investigative field workbook and digital companion app.</div>
         </div>
       </div>
 
@@ -852,7 +761,7 @@ function getHtmlContent() {
       <div style="background: #0f172a; color: #ffffff; padding: 7px 12px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; font-size: 7.6pt;">
         <div>
           <span style="color: #fbbf24; font-weight: 700;">Expedition Staff:</span>
-          Mr B. Lovett &amp; Mr J. Garrett (Tour Leaders) · Dr Kirkup &amp; Mrs Lushey (Accompanying Staff)
+          Mr B. Lovett &amp; Mr J. Garrett (Tour Leaders) · Accompanied by Two Meoncross Staff
         </div>
         <div>
           <span style="color: #94a3b8;">School Base 24/7 Emergency:</span>
