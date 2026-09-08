@@ -1801,23 +1801,10 @@ allDirs.forEach((unitId) => {
             }
             html += `</div>`;
           } else {
-            let consolHtml = '';
-            if (unitId === 'cme_new' && lesson.exit_ticket) {
-              const et = lesson.exit_ticket;
-              consolHtml = `<div style="background: #f8fafc; border: 2px solid #3b82f6; border-radius: 6px; padding: 12px; margin-bottom: 15px;">
-                <div style="font-weight: bold; color: #1e3a8a; font-size: 11pt; margin-bottom: 6px; text-transform: uppercase;">
-                  ${et.title || 'Exit Ticket'} (${et.type_label || 'Closure'})
-                </div>
-                <p style="margin: 0 0 8px 0; font-size: 10pt; color: #1e293b; line-height: 1.4;">${et.prompt}</p>
-                ${et.options && et.options.length > 0 ? `<div style="font-size: 9.5pt; color: #334155; margin-bottom: 8px;">${et.options.map((o) => `<div>• ${o}</div>`).join('')}</div>` : ''}
-              </div>`;
-            } else {
-              const consolText =
-                lesson.consolidation ||
-                "Reflect on today's learning and answer your teacher's final challenge.";
-              consolHtml = `<p style="font-weight: bold; margin-bottom: 15px;">${consolText}</p>`;
-            }
-            html += consolHtml;
+            const consolText =
+              lesson.consolidation ||
+              "Reflect on today's learning and answer your teacher's final challenge.";
+            html += `<p style="font-weight: bold; margin-bottom: 15px;">${consolText}</p>`;
           }
 
           for (let i = 0; i < 15; i++) {
@@ -1825,26 +1812,6 @@ allDirs.forEach((unitId) => {
           }
           html += `</div>`;
         }
-      }
-
-      // Render Exit Ticket for cme_new before GCSE Exam Practice
-      if (unitId === 'cme_new' && lesson.exit_ticket) {
-        const et = lesson.exit_ticket;
-        html += `<div class="exit-ticket-box" style="page-break-inside: avoid; margin-top: 25px; border-top: 2px solid #e2e8f0; padding-top: 15px;">`;
-        html += `<div style="background: #f8fafc; border: 2px solid #3b82f6; border-radius: 6px; padding: 12px; margin-bottom: 12px;">
-          <div style="font-weight: bold; color: #1e3a8a; font-size: 11pt; margin-bottom: 6px; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center;">
-            <span><i class="fa-solid fa-door-open"></i> ${et.title || 'Exit Ticket'}</span>
-            <span style="font-size: 8.5pt; background: #dbeafe; color: #1e40af; padding: 2px 8px; border-radius: 9999px; font-weight: 600;">${et.type_label || 'Closure Activity'}</span>
-          </div>
-          <p style="margin: 0 0 8px 0; font-size: 10pt; color: #1e293b; line-height: 1.4; font-weight: 500;">${formatText(et.prompt)}</p>
-          ${et.options && et.options.length > 0 ? `<div style="font-size: 9.5pt; color: #334155; margin-bottom: 8px; background: white; border: 1px solid #cbd5e1; border-radius: 4px; padding: 8px;">${et.options.map((o) => `<div style="margin-bottom: 4px;">• ${formatText(o)}</div>`).join('')}</div>` : ''}
-          ${et.guidance ? `<p style="margin: 0; font-size: 9pt; color: #64748b; font-style: italic;"><strong>Teacher Guidance:</strong> ${formatText(et.guidance)}</p>` : ''}
-        </div>`;
-        html += `<div style="font-size: 9.5pt; font-weight: bold; color: #475569; margin-bottom: 6px;">Pupil Response:</div>`;
-        for (let i = 0; i < 6; i++) {
-          html += `<div class="task-lines-large"></div>`;
-        }
-        html += `</div>`;
       }
 
       // GCSE Task
@@ -2494,31 +2461,50 @@ allDirs.forEach((unitId) => {
       flatQuestions.sort((a, b) => a.qNum - b.qNum);
       flatQuestions.forEach((q) => (html += q.html));
 
-      // --- PUPIL VOICE (ROTATING DISCIPLINARY DEBRIEF ACROSS ALL UNITS) ---
-      const debriefQuestions = [
-        "What was the most significant event or decision in today's lesson, and what was its major historical consequence?",
-        'What was the most important change that occurred during this period, and what remained continuous (the same)?',
-        'How did the events or developments studied today affect different groups of people in contrasting ways?',
-        "What piece of historical evidence (e.g. government record, personal diary, photograph) would be most valuable to investigate today's enquiry, and why?",
-        "Was the main outcome of today's lesson inevitable, or was there a crucial turning point where events could have taken a different path?",
-        'How might two different historians interpret the motives or actions of the key figures or governments studied today?',
-        'How does what we studied today connect to, build upon, or challenge an earlier period or theme in history?',
-      ];
+      // --- EXIT TICKET (LESSON CLOSURE) FOR CME_NEW / PUPIL VOICE FOR OTHER UNITS ---
+      if (unitId === 'cme_new' && lesson.exit_ticket) {
+        const et = lesson.exit_ticket;
+        html += `<div class="exit-ticket-box" style="page-break-inside: avoid; margin-top: 25px; border: 2px solid #3b82f6; border-radius: 8px; padding: 15px; background: #f8fafc;">`;
+        html += `<div style="margin-bottom: 12px;">
+          <div style="font-weight: bold; color: #1e3a8a; font-size: 11pt; margin-bottom: 6px; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center;">
+            <span>🚪 ${et.title || 'Exit Ticket'}</span>
+            <span style="font-size: 8.5pt; background: #dbeafe; color: #1e40af; padding: 2px 8px; border-radius: 9999px; font-weight: 600;">${et.type_label || 'Closure Activity'}</span>
+          </div>
+          <p style="margin: 0 0 8px 0; font-size: 10pt; color: #1e293b; line-height: 1.4; font-weight: 500;">${formatText(et.prompt)}</p>
+          ${et.options && et.options.length > 0 ? `<div style="font-size: 9.5pt; color: #334155; margin-bottom: 8px; background: white; border: 1px solid #cbd5e1; border-radius: 4px; padding: 8px;">${et.options.map((o) => `<div style="margin-bottom: 4px;">• ${formatText(o)}</div>`).join('')}</div>` : ''}
+          ${et.guidance ? `<p style="margin: 0; font-size: 9pt; color: #64748b; font-style: italic;"><strong>Teacher Guidance:</strong> ${formatText(et.guidance)}</p>` : ''}
+        </div>`;
+        html += `<div style="font-size: 9.5pt; font-weight: bold; color: #475569; margin-bottom: 6px;">Pupil Response:</div>`;
+        for (let i = 0; i < 6; i++) {
+          html += `<div class="task-lines-large"></div>`;
+        }
+        html += `</div>`;
+      } else if (unitId !== 'cme_new') {
+        // --- PUPIL VOICE (ROTATING DISCIPLINARY DEBRIEF ACROSS OTHER UNITS) ---
+        const debriefQuestions = [
+          "What was the most significant event or decision in today's lesson, and what was its major historical consequence?",
+          'What was the most important change that occurred during this period, and what remained continuous (the same)?',
+          'How did the events or developments studied today affect different groups of people in contrasting ways?',
+          "What piece of historical evidence (e.g. government record, personal diary, photograph) would be most valuable to investigate today's enquiry, and why?",
+          "Was the main outcome of today's lesson inevitable, or was there a crucial turning point where events could have taken a different path?",
+          'How might two different historians interpret the motives or actions of the key figures or governments studied today?',
+          'How does what we studied today connect to, build upon, or challenge an earlier period or theme in history?',
+        ];
 
-      const q = debriefQuestions[lessonIndex % debriefQuestions.length];
+        const q = debriefQuestions[lessonIndex % debriefQuestions.length];
 
-      html += `<div style="margin-top: 20px; page-break-inside: avoid; border: 1.5px solid #1e3a8a; border-radius: 8px; padding: 15px; background-color: #f0fdf4;">
-        <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 11pt; font-family: 'Playfair Display', serif; display: flex; align-items: center;">
-          <span style="font-size: 14pt; margin-right: 8px;">🗣️</span> Pupil Voice
-        </h4>
-        <div style="font-weight: 600; font-size: 9.5pt; margin-bottom: 12px; color: #0f172a;">
-          ${q}
-        </div>
-        <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-        <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-        <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-      </div>`;
-      // --- END PUPIL VOICE ---
+        html += `<div style="margin-top: 20px; page-break-inside: avoid; border: 1.5px solid #1e3a8a; border-radius: 8px; padding: 15px; background-color: #f0fdf4;">
+          <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 11pt; font-family: 'Playfair Display', serif; display: flex; align-items: center;">
+            <span style="font-size: 14pt; margin-right: 8px;">🗣️</span> Pupil Voice
+          </h4>
+          <div style="font-weight: 600; font-size: 9.5pt; margin-bottom: 12px; color: #0f172a;">
+            ${q}
+          </div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
+        </div>`;
+      }
 
       // Inject General Notes Box
       html += `

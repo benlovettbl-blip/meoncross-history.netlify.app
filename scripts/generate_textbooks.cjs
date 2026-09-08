@@ -1390,6 +1390,20 @@ allDirs.forEach((unitId) => {
           html += `</div>`;
         }
 
+        // Render Exit Ticket for cme_new in Textbook (matching web app)
+        if (unitId === 'cme_new' && lesson.exit_ticket) {
+          const et = lesson.exit_ticket;
+          html += `<div class="task-box exit-ticket-box" style="page-break-inside: avoid; margin-top: 25px; border: 2px solid #3b82f6; border-radius: 8px; padding: 15px; background: #f8fafc;">
+            <div style="font-weight: bold; color: #1e3a8a; font-size: 11pt; margin-bottom: 8px; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center;">
+              <span>🚪 ${et.title || 'Exit Ticket'}</span>
+              <span style="font-size: 8.5pt; background: #dbeafe; color: #1e40af; padding: 2px 8px; border-radius: 9999px; font-weight: 600;">${et.type_label || 'Closure Activity'}</span>
+            </div>
+            <p style="margin: 0 0 8px 0; font-size: 10pt; color: #1e293b; line-height: 1.4; font-weight: 500;">${formatText(et.prompt)}</p>
+            ${et.options && et.options.length > 0 ? `<div style="font-size: 9.5pt; color: #334155; margin-bottom: 8px; background: white; border: 1px solid #cbd5e1; border-radius: 4px; padding: 8px;">${et.options.map((o) => `<div style="margin-bottom: 4px;">• ${formatText(o)}</div>`).join('')}</div>` : ''}
+            ${et.guidance ? `<p style="margin: 0; font-size: 9pt; color: #64748b; font-style: italic;"><strong>Teacher Guidance:</strong> ${formatText(et.guidance)}</p>` : ''}
+          </div>`;
+        }
+
         // Removed Exam Practice
         html += `</div>`;
       }
