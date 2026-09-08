@@ -355,6 +355,236 @@ export function initGlossaryPopover() {
   window.addEventListener('resize', hidePopover, { passive: true });
 }
 
+// --- Historical Figures Popover Cards ---
+let figurePopover = null;
+let activeFigureElement = null;
+
+const KNOWN_HISTORICAL_FIGURES = {
+  niccolo_barbaro: {
+    name: 'Niccolò Barbaro',
+    role: 'Venetian Doctor & Merchant',
+    lifespan: 'c. 1420 – 1494',
+    bio: 'A Venetian eyewitness who kept a detailed daily diary during the 1453 Ottoman siege of Constantinople.',
+    image: '/images/individuals/niccol_barbaro.jpg',
+  },
+  barbaro: {
+    name: 'Niccolò Barbaro',
+    role: 'Venetian Doctor & Merchant',
+    lifespan: 'c. 1420 – 1494',
+    bio: 'A Venetian eyewitness who kept a detailed daily diary during the 1453 Ottoman siege of Constantinople.',
+    image: '/images/individuals/niccol_barbaro.jpg',
+  },
+  mehmed_ii: {
+    name: 'Sultan Mehmed II',
+    role: 'Ottoman Sultan',
+    lifespan: '1432 – 1481',
+    bio: 'The 21-year-old Ottoman conqueror who captured Constantinople in 1453, transforming it into Istanbul.',
+    image: '/images/individuals/sultan_mehmed_ii.jpg',
+  },
+  sultan_mehmed_ii: {
+    name: 'Sultan Mehmed II',
+    role: 'Ottoman Sultan',
+    lifespan: '1432 – 1481',
+    bio: 'The 21-year-old Ottoman conqueror who captured Constantinople in 1453, transforming it into Istanbul.',
+    image: '/images/individuals/sultan_mehmed_ii.jpg',
+  },
+  queen_nanny: {
+    name: 'Queen Nanny',
+    role: 'Jamaican Maroon Military Leader',
+    lifespan: 'c. 1686 – c. 1755',
+    bio: 'A brilliant military strategist who led the Maroons in guerrilla warfare, forcing the British to sign a peace treaty in 1739.',
+    image: '/images/individuals/queen_nanny_nanny_of_the_maroons.jpg',
+  },
+  nanny: {
+    name: 'Queen Nanny',
+    role: 'Jamaican Maroon Military Leader',
+    lifespan: 'c. 1686 – c. 1755',
+    bio: 'A brilliant military strategist who led the Maroons in guerrilla warfare, forcing the British to sign a peace treaty in 1739.',
+    image: '/images/individuals/queen_nanny_nanny_of_the_maroons.jpg',
+  },
+  mansa_musa: {
+    name: 'Mansa Musa',
+    role: 'Emperor of Mali',
+    lifespan: 'c. 1280 – 1337',
+    bio: 'The wealthy ruler of Mali whose 1324 pilgrimage to Mecca displayed West Africa’s colossal gold wealth.',
+    image: '/images/individuals/mansa_musa.jpg',
+  },
+  william_wilberforce: {
+    name: 'William Wilberforce',
+    role: 'British Politician & Abolitionist',
+    lifespan: '1759 – 1833',
+    bio: 'A British MP who led the parliamentary campaign to abolish the transatlantic slave trade (1807).',
+    image: '/images/william_wilberforce.jpg',
+  },
+  olaudah_equiano: {
+    name: 'Olaudah Equiano',
+    role: 'Freed Slave, Author & Abolitionist',
+    lifespan: 'c. 1745 – 1797',
+    bio: 'A formerly enslaved African whose bestselling 1789 autobiography exposed the horrors of the Middle Passage.',
+    image: '/images/equiano.jpg',
+  },
+};
+
+export function initHistoricalFigurePopover() {
+  if (typeof document === 'undefined') return;
+  if (!document.getElementById('global-figure-popover')) {
+    figurePopover = document.createElement('div');
+    figurePopover.id = 'global-figure-popover';
+    document.body.appendChild(figurePopover);
+  } else {
+    figurePopover = document.getElementById('global-figure-popover');
+  }
+
+  const showFigurePopover = (e) => {
+    const target = e.target.closest('.historical-figure');
+    if (!target) return;
+
+    const personKey = (target.getAttribute('data-person') || '').toLowerCase().trim();
+    let name = target.getAttribute('data-name') || target.textContent.trim();
+    let role = target.getAttribute('data-role') || 'Historical Figure';
+    let lifespan = target.getAttribute('data-dates') || target.getAttribute('data-lifespan') || '';
+    let bio = target.getAttribute('data-bio') || '';
+    let image = target.getAttribute('data-image') || '';
+
+    if (!bio || !image) {
+      if (personKey && KNOWN_HISTORICAL_FIGURES[personKey]) {
+        const known = KNOWN_HISTORICAL_FIGURES[personKey];
+        name = name || known.name;
+        role = role !== 'Historical Figure' ? role : known.role;
+        lifespan = lifespan || known.lifespan;
+        bio = bio || known.bio;
+        image = image || known.image;
+      } else {
+        let unitIndividuals = null;
+        if (window.appStore?.state?.activeUnitData?.key_individuals) {
+          unitIndividuals = window.appStore.state.activeUnitData.key_individuals;
+        } else if (window.db && window.currentUnitId && window.db[window.currentUnitId]) {
+          const u = window.db[window.currentUnitId].data || window.db[window.currentUnitId];
+          unitIndividuals = u?.key_individuals || u?.biographies;
+        }
+        if (unitIndividuals) {
+          const match = unitIndividuals.find(
+            (p) =>
+              (personKey && p.id === personKey) ||
+              (p.name && p.name.toLowerCase() === name.toLowerCase()) ||
+              (personKey && p.name && p.name.toLowerCase().includes(personKey.replace(/_/g, ' '))),
+          );
+          if (match) {
+            name = match.name || name;
+            role = match.role || role;
+            lifespan = match.lifespan || lifespan;
+            bio = match.bio || bio;
+            image = match.image || match.img || image;
+          }
+        }
+      }
+    }
+
+    if (!bio) {
+      bio = `${name} is an influential historical figure studied in this enquiry.`;
+    }
+
+    activeFigureElement = target;
+    target.classList.add('active');
+
+    const imageHtml = image
+      ? `<img src="${image}" alt="${name}" style="width: 52px; height: 52px; border-radius: 8px; object-fit: cover; border: 1.5px solid #a855f7; flex-shrink: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.3);" onerror="this.style.display='none'" />`
+      : `<div style="width: 52px; height: 52px; border-radius: 8px; background: rgba(168,85,247,0.2); border: 1.5px solid #a855f7; display: flex; align-items: center; justify-content: center; color: #d8b4fe; font-size: 1.3rem; flex-shrink: 0;"><i class="fa-solid fa-user"></i></div>`;
+
+    figurePopover.innerHTML = `
+      <div style="display: flex; gap: 12px; align-items: flex-start; text-align: left;">
+        ${imageHtml}
+        <div style="flex: 1; min-width: 0;">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 2px;">
+            <strong style="color: #f5f3ff; font-size: 0.95rem; line-height: 1.25; font-weight: 700;">${name}</strong>
+            <span style="background: rgba(168, 85, 247, 0.25); color: #e9d5ff; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; padding: 2px 6px; border-radius: 6px; border: 1px solid rgba(168,85,247,0.4); white-space: nowrap;">Key Figure</span>
+          </div>
+          <div style="font-size: 0.74rem; color: #c084fc; margin-bottom: 5px; font-weight: 600;">${role}${lifespan ? ' · ' + lifespan : ''}</div>
+          <div style="font-size: 0.82rem; color: #e2e8f0; line-height: 1.4;">${bio}</div>
+        </div>
+      </div>
+    `;
+    figurePopover.classList.add('visible');
+
+    // Calculate position
+    const rect = target.getBoundingClientRect();
+    const popoverRect = figurePopover.getBoundingClientRect();
+
+    let top = rect.top - popoverRect.height - 10;
+    let left = rect.left + rect.width / 2 - popoverRect.width / 2;
+
+    let arrowLeft = '50%';
+    figurePopover.classList.remove('arrow-top');
+
+    if (top < 10) {
+      top = rect.bottom + 10;
+      figurePopover.classList.add('arrow-top');
+    }
+
+    if (left < 10) {
+      const overflow = 10 - left;
+      left = 10;
+      arrowLeft = `calc(50% - ${overflow}px)`;
+    } else if (left + popoverRect.width > window.innerWidth - 10) {
+      const overflow = left + popoverRect.width - (window.innerWidth - 10);
+      left = window.innerWidth - 10 - popoverRect.width;
+      arrowLeft = `calc(50% + ${overflow}px)`;
+    }
+
+    figurePopover.style.top = `${top}px`;
+    figurePopover.style.left = `${left}px`;
+
+    let arrowStyle = document.getElementById('figure-popover-arrow-style');
+    if (!arrowStyle) {
+      arrowStyle = document.createElement('style');
+      arrowStyle.id = 'figure-popover-arrow-style';
+      document.head.appendChild(arrowStyle);
+    }
+    arrowStyle.innerHTML = `#global-figure-popover::after { left: ${arrowLeft}; }`;
+  };
+
+  const hideFigurePopover = () => {
+    if (figurePopover && figurePopover.classList.contains('visible')) {
+      figurePopover.classList.remove('visible');
+      if (activeFigureElement) {
+        activeFigureElement.classList.remove('active');
+        activeFigureElement = null;
+      }
+    }
+  };
+
+  document.body.addEventListener('mouseover', showFigurePopover);
+  document.body.addEventListener('mouseout', (e) => {
+    if (e.target.closest('.historical-figure')) hideFigurePopover();
+  });
+
+  document.body.addEventListener('click', (e) => {
+    const target = e.target.closest('.historical-figure');
+    if (target) {
+      if (activeFigureElement === target) {
+        hideFigurePopover();
+      } else {
+        hideFigurePopover();
+        showFigurePopover(e);
+      }
+    } else {
+      hideFigurePopover();
+    }
+  });
+
+  window.addEventListener('scroll', hideFigurePopover, { passive: true });
+  window.addEventListener('resize', hideFigurePopover, { passive: true });
+}
+
+// Auto-initialize figure popover
+if (typeof document !== 'undefined') {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHistoricalFigurePopover);
+  } else {
+    initHistoricalFigurePopover();
+  }
+}
+
 window.openKeyInfoModal = function () {
   const info = window.currentUnitData && window.currentUnitData.key_info;
   if (!info) return;
