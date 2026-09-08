@@ -235,6 +235,9 @@ body {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: hidden;
   background: linear-gradient(
     -45deg,
     var(--bg-app),
@@ -244,6 +247,13 @@ body {
   );
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
+}
+
+.content-container {
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 @keyframes gradientBG {
