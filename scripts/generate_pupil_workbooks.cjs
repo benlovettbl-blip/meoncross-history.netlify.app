@@ -1238,7 +1238,7 @@ allDirs.forEach((unitId) => {
       // Pair Share (Hidden for Great War units here, moved to later)
       if (lesson.pair_share && !(unitId === 'great_war' || unitId === 'great_war_part2')) {
         if (unitId === 'cme_new') {
-          html += `<div class="task-box" style="margin-top: 10px; margin-bottom: 12px; border: 1.5px solid #0f766e; border-radius: 8px; padding: 10px 14px; background: #ffffff; page-break-inside: avoid;">`;
+          html += `<div class="task-box" style="box-sizing: border-box; width: 100%; margin-top: 10px; margin-bottom: 12px; border: 1.5px solid #0f766e; border-radius: 8px; padding: 10px 14px 14px 14px; background: #ffffff; page-break-inside: avoid;">`;
           html += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">`;
           html += `<h3 style="margin: 0; color: #0f766e; font-size: 11pt; text-transform: uppercase; letter-spacing: 0.5px;">✍️ Written Consolidation & Recall</h3>`;
           html += `<span style="font-size: 8pt; background: #ccfbf1; color: #0f766e; padding: 2px 7px; border-radius: 9999px; font-weight: 600;">Recall & Analysis</span>`;
@@ -1256,9 +1256,11 @@ allDirs.forEach((unitId) => {
             html += `</div>`;
           }
           html += `<div style="font-size: 8.5pt; font-weight: bold; color: #0f766e; margin-bottom: 4px;">Pupil Response:</div>`;
+          html += `<div style="margin-bottom: 4px;">`;
           for (let i = 0; i < 4; i++) {
             html += `<div class="task-lines-large"></div>`;
           }
+          html += `</div>`;
           html += `</div>`;
         } else {
           html += `<div class="task-box" style="  ">`;
@@ -1882,7 +1884,8 @@ allDirs.forEach((unitId) => {
               html += `<div class="task-lines-large"></div>`;
             }
           } else if (text.includes('8 marks')) {
-            for (let i = 0; i < 32; i++) {
+            let count = unitId === 'cme_new' ? 56 : 32;
+            for (let i = 0; i < count; i++) {
               html += `<div class="task-lines-large"></div>`;
             }
           } else if (text.includes('2 marks')) {
@@ -2340,7 +2343,7 @@ allDirs.forEach((unitId) => {
             let lines = 8;
             if (qText.includes('16 marks')) lines = 96;
             else if (qText.includes('12 marks') || qText.includes('Explain why')) lines = 64;
-            else if (qText.includes('8 marks')) lines = 32;
+            else if (qText.includes('8 marks')) lines = unitId === 'cme_new' ? 56 : 32;
             else if (
               qText.includes('4 marks') ||
               qText.includes('Explain one way') ||
@@ -2512,7 +2515,7 @@ allDirs.forEach((unitId) => {
 
           questionsBefore.forEach((item, qIdx) => renderQuestionItem(item, true, qIdx));
 
-          if (epStimulus && epStimulus.length > 0) {
+          if (epStimulus && epStimulus.length > 0 && unitId !== 'cme_new') {
             html += `</div>`; // Close the initial task-box
             html += `<div style="page-break-before: always; page-break-inside: auto; margin-top: 20px;">`; // Force new page for sources
             html += `<h2 style="margin-top: 15px; margin-bottom: 15px; color: #1a237e; font-size: 14pt; border-bottom: none;">Exam Sources & Interpretations</h2>`;
@@ -2738,6 +2741,14 @@ allDirs.forEach((unitId) => {
     if (unitId === 'cme_new') {
       let allExamTasksHtml = '';
       periodLessons.forEach((lesson) => {
+        // Skip foundational pre-1945 lessons (KT 1.0) because the GCSE specification strictly begins in 1945
+        if (
+          lesson.id === 'cme_kt1_l0' ||
+          (lesson.title &&
+            (lesson.title.includes('KT 1.0') || lesson.title.includes('Foundational')))
+        ) {
+          return;
+        }
         let hasExamTask =
           lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
         if (hasExamTask) {
@@ -2814,8 +2825,8 @@ allDirs.forEach((unitId) => {
 
         let examPagesCount = 4;
         if (unitId === 'cme_new') {
-          if (period.name === 'KT2') examPagesCount = 5;
-          if (period.name === 'KT3') examPagesCount = 6;
+          if (period.name === 'KT2') examPagesCount = 6;
+          if (period.name === 'KT3') examPagesCount = 7;
         }
         for (let p = 0; p < examPagesCount; p++) {
           html += `<div style="page-break-before: always; padding-top: 20px;">`;
