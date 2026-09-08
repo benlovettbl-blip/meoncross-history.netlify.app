@@ -1291,21 +1291,51 @@ allDirs.forEach((unitId) => {
             lesson.extended.title &&
             lesson.extended.title.toLowerCase().includes('map task')
           ) {
-            const ansImg = lesson.extended.answer_image || '/images/middle_east_map_answers.png';
+            const ansImg =
+              lesson.extended.answer_image || '/images/middle_east_map_cia_reference.jpg';
             html += `
-            <div style="page-break-before: always; break-before: page; page-break-inside: avoid; break-inside: avoid; margin-top: 20px; margin-bottom: 25px; border: 2px solid #1e3a8a; border-radius: 8px; padding: 15px; background: #ffffff;">
-              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #1e3a8a; padding-bottom: 6px; margin-bottom: 10px;">
-                <h3 style="margin: 0; color: #1e3a8a; font-size: 13pt;">${lesson.extended.title} — Reference Guide</h3>
-                <span style="background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; font-size: 8.5pt; font-weight: bold; padding: 2px 8px; border-radius: 4px;">Teacher & Pupil Reference Key</span>
+            <div style="page-break-before: always; break-before: page; page-break-inside: avoid; break-inside: avoid; margin-top: 15px; margin-bottom: 20px; border: 2px solid #1e3a8a; border-radius: 8px; padding: 10px 14px; background: #ffffff;">
+              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 6px;">
+                <h3 style="margin: 0; color: #1e3a8a; font-size: 12pt;">${lesson.extended.title} — Reference Guide</h3>
+                <span style="background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; font-size: 8pt; font-weight: bold; padding: 2px 7px; border-radius: 4px;">Teacher & Pupil Reference Key</span>
               </div>
-              <p style="font-size: 9.5pt; color: #334155; margin-bottom: 12px; line-height: 1.5;">
+              <p style="font-size: 8.5pt; color: #334155; margin-bottom: 6px; line-height: 1.35;">
                 <strong>Geopolitical Overview:</strong> Use this authoritative reference map to verify all 9 sovereign nation-states, 8 regional capitals, and 8 critical maritime waterways/chokepoints. Note how British and French imperial partitions created artificial straight-line borders across historic populations, and how strategic waterways like the Suez Canal and Straits of Tiran repeatedly triggered regional wars.
               </p>
-              <div style="text-align: center; margin: 10px 0;">
-                <img src="../../${ansImg.replace(/^\//, '')}" style="width: 100%; max-height: 520px; object-fit: contain; border: 1.5px solid #475569; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); background: #ffffff;" alt="Middle East Labeled Reference Map">
+              <div style="text-align: center; margin: 4px 0;">
+                <img src="../../${ansImg.replace(/^\//, '')}" style="width: 100%; max-height: 420px; object-fit: contain; border: 1.5px solid #475569; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); background: #ffffff;" alt="Middle East Labeled Reference Map">
               </div>
-              <div style="margin-top: 8px; font-size: 8.5pt; color: #64748b; font-style: italic; text-align: center;">
-                Figure 1.0: Authoritative Geopolitical Reference Map of the Middle East (Countries, Capitals, and Maritime Chokepoints).
+              <div style="margin-top: 4px; margin-bottom: 6px; font-size: 8pt; color: #64748b; font-style: italic; text-align: center;">
+                Figure 1.0: Authoritative Geopolitical Reference Map of the Middle East (CIA World Factbook / Official Public Domain Cartography).
+              </div>
+              <div style="margin-top: 8px; border-top: 1px solid #cbd5e1; padding-top: 6px;">
+                <div style="font-weight: bold; font-size: 8.5pt; color: #1e3a8a; text-transform: uppercase; margin-bottom: 4px;">Geopolitical Reference Key:</div>
+                <table style="width: 100%; border-collapse: collapse; font-size: 8pt; line-height: 1.3;">
+                  <thead>
+                    <tr style="background: #1e3a8a; color: white;">
+                      <th style="padding: 3px 6px; width: 28%;">Sovereign State & Capital</th>
+                      <th style="padding: 3px 6px; width: 28%;">Key Maritime Waterways</th>
+                      <th style="padding: 3px 6px; width: 44%;">Strategic GCSE Significance</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="padding: 3px 6px; border-bottom: 1px solid #e2e8f0;"><strong>Egypt</strong> — Cairo ★<br><strong>Israel</strong> — Jerusalem ★ / Tel Aviv</td>
+                      <td style="padding: 3px 6px; border-bottom: 1px solid #e2e8f0;"><strong>Suez Canal</strong><br><strong>Straits of Tiran</strong></td>
+                      <td style="padding: 3px 6px; border-bottom: 1px solid #e2e8f0;">Nationalised in 1956; Egyptian blockade of Tiran in 1967 triggered the Six Day War.</td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 3px 6px; border-bottom: 1px solid #e2e8f0;"><strong>Jordan</strong> — Amman ★<br><strong>Syria</strong> — Damascus ★</td>
+                      <td style="padding: 3px 6px; border-bottom: 1px solid #e2e8f0;"><strong>River Jordan</strong><br><strong>Sea of Galilee</strong></td>
+                      <td style="padding: 3px 6px; border-bottom: 1px solid #e2e8f0;">Disputes over River Jordan headwaters fueled border clashes; West Bank and Golan Heights captured in 1967.</td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 3px 6px;"><strong>Lebanon</strong> — Beirut ★<br><strong>Iraq</strong> — Baghdad ★<br><strong>Saudi Arabia</strong> — Riyadh ★</td>
+                      <td style="padding: 3px 6px;"><strong>Persian Gulf</strong><br><strong>Gulf of Aqaba & Suez</strong><br><strong>Red Sea</strong></td>
+                      <td style="padding: 3px 6px;">Southern Lebanon was base for PLO operations leading to 1982 invasion; Gulf oil routes triggered 1973 OPEC embargo.</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
             `;

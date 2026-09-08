@@ -2982,7 +2982,7 @@
               "provenance": "Student Copy for Pupil Workbook",
               "content": "/images/middle_east_map.png"
             },
-            "answer_image": "/images/middle_east_map_answers.png",
+            "answer_image": "/images/middle_east_map_cia_reference.jpg",
             "model_answer": "Fully labeled reference map of the Middle East displaying all 9 sovereign states, 8 national capitals, and 8 critical strategic waterways and maritime chokepoints."
           },
           "vocabulary": [
@@ -3722,7 +3722,12 @@
             }
           ],
           "pair_share": {
-            "prompt": "If you were the British government in 1945, exhausted by WWII and facing attacks from Jewish paramilitaries, what would you have done with the Mandate?"
+            "prompt": "Explain two reasons why the British government decided to hand the Palestine Mandate to the United Nations in 1947.",
+            "think": "Consider the financial and military exhaustion of Britain after World War Two, and the escalating guerrilla attacks by Zionist underground groups (Irgun and Lehi) such as the King David Hotel bombing.",
+            "starters": [
+              "Firstly, Britain was financially and militarily exhausted after World War Two, meaning...",
+              "Secondly, Britain could no longer control escalating violence and attacks, such as..."
+            ]
           },
           "learning_objective": "To understand how the British Mandate collapsed and the State of Israel was created.",
           "learning_objectives": {
@@ -5191,7 +5196,12 @@
             "1949: Armistice agreements were signed, but no Arab state officially recognised Israel's right to exist."
           ],
           "pair_share": {
-            "prompt": "Why do you think the well-equipped Arab armies were defeated by the newly formed Israeli Defense Forces?"
+            "prompt": "Explain two reasons why the Israeli Defence Forces were able to defeat the Arab armies in the 1948–49 War.",
+            "think": "Focus on Arab disunity and rivalries between Arab leaders compared to Israel's unified military command, high motivation, and secret influx of modern Czechoslovakian arms.",
+            "starters": [
+              "One reason for Israel's victory was superior organisation and supplies, such as...",
+              "Another crucial factor was Arab disunity and competing political goals, because..."
+            ]
           },
           "extra_videos": [
             {
@@ -6215,7 +6225,12 @@
             "Superpower Intervention: The US and Soviet Union forced Britain, France, and Israel to withdraw, humiliating the old empires."
           ],
           "pair_share": {
-            "prompt": "Why was the Suez Canal so important to Britain and France that they were willing to go to war over it?"
+            "prompt": "Explain why the Suez Canal was of vital strategic and economic importance to Britain and France in 1956.",
+            "think": "Consider Western Europe's heavy economic dependence on Middle Eastern oil shipped through the canal, and Britain's need to maintain a maritime highway to its remaining empire in Asia.",
+            "starters": [
+              "Economically, Britain and France relied heavily on the Suez Canal because...",
+              "Strategically, losing control of the waterway to President Nasser threatened them because..."
+            ]
           },
           "consolidation": "Exit Ticket — The Causal Balance Scale: Was the 1956 Suez Crisis a military defeat (0) or a political victory (10) for Egypt? State your score and write your single decisive piece of historical evidence justifying your answer.",
           "exam_clinic": [
@@ -7219,7 +7234,12 @@
             "Sinai Peninsula: Israel conquered the vast Sinai desert, creating a huge buffer zone between themselves and Egypt."
           ],
           "pair_share": {
-            "prompt": "Was Israel justified in launching a pre-emptive strike against Egypt? Discuss both perspectives."
+            "prompt": "Was Israel justified in launching Operation Focus on 5 June 1967? Explain one reason supporting Israel's decision, and one reason criticising it.",
+            "think": "Consider Nasser's provocative actions in May 1967 (closing the Straits of Tiran and ordering UN peacekeepers out) versus the fact that Israel struck first and destroyed Egypt's air force before any Arab invasion began.",
+            "starters": [
+              "Israel argued the pre-emptive strike was justified self-defence because...",
+              "On the other hand, Arab states argued Israel was guilty of unprovoked aggression because..."
+            ]
           },
           "consolidation": "Exit Ticket — Split-Perspective Headlines: Write two 6-word front-page headlines capturing the outcome of the Six-Day War on 10 June 1967: Headline A from the Israeli perspective (The Jerusalem Post, focusing on Jerusalem and new strategic depth) and Headline B from the Arab perspective (Al-Ahram, focusing on the shock of the 'Naksa' and lost lands). Ensure each headline is strictly 6 words.",
           "exam_clinic": [
@@ -8205,7 +8225,12 @@
             "East Jerusalem: Israel unilaterally annexed the eastern half of the holy city, a move not recognised internationally."
           ],
           "pair_share": {
-            "prompt": "Why did the spectacular Israeli victory in 1967 actually make a long-term peace agreement more difficult?"
+            "prompt": "Explain two reasons why Israel's victory in 1967 created new obstacles to peace.",
+            "think": "Focus on the reaction of Arab leaders at the Khartoum Summit ('Three No's') and why Palestinians turned to independent armed struggle under the PLO rather than trusting Arab armies.",
+            "starters": [
+              "Firstly, peace became harder because Arab leaders at Khartoum declared...",
+              "Secondly, peace was blocked because the Palestinian PLO decided that..."
+            ]
           },
           "consolidation": "Exit Ticket — Paper 2 Speed-Run: Spend 3 minutes writing a 4-mark PEEL paragraph explaining one consequence of the PLO's adoption of international terrorism (such as the 1972 Munich Olympics attack). State your Point clearly, cite specific historical Evidence [e.g., Black September, 11 Israeli athletes, global television audience, or Operation Wrath of God], and Explain the impact on international awareness or Israeli counter-terrorism.",
           "exam_clinic": [
@@ -9231,7 +9256,12 @@
             "Oil Embargo: Arab oil-producing states stopped selling oil to countries supporting Israel, causing a global economic crisis."
           ],
           "pair_share": {
-            "prompt": "How did the Yom Kippur War change the psychological balance of power between Israel and the Arab states?"
+            "prompt": "How did the 1973 Yom Kippur War change the confidence and attitudes of both Egypt and Israel?",
+            "think": "Consider why crossing the Bar-Lev line restored Egyptian honour and pride, and why the surprise attack shattered Israel's belief that it was invincible.",
+            "starters": [
+              "For Egypt and the Arab world, the war restored pride and confidence because...",
+              "For Israel, the surprise attack shattered their sense of security because..."
+            ]
           },
           "consolidation": "Exit Ticket — The Golden Sentence: Write ONE historical sentence explaining why Anwar Sadat signed the 1979 Egypt-Israel Peace Treaty. Must contain all 3 required ingredients: Ingredient 1 (Date / Stat: October 1973, 1978, 13 days at Camp David, or the return of the entire Sinai Peninsula), Ingredient 2 (Leader: Anwar Sadat, Menachem Begin, or Jimmy Carter), and Ingredient 3 (Causal Conjunction: in order to, resulting in, despite, or whereby).",
           "exam_clinic": [
@@ -10177,7 +10207,12 @@
             "Assassination: Sadat was viewed as a traitor by many Arabs and was assassinated by Islamic extremists in 1981."
           ],
           "pair_share": {
-            "prompt": "Was Anwar Sadat a courageous visionary or a traitor to the Arab cause? Justify your view."
+            "prompt": "Why did people hold contrasting views on President Anwar Sadat's decision to sign the 1979 peace treaty with Israel?",
+            "think": "Contrast the Egyptian perspective (regained the Sinai Peninsula without further casualties) against other Arab nations and Palestinians who felt Sadat signed a separate peace and abandoned the Palestinian cause.",
+            "starters": [
+              "Supporters viewed Sadat as a courageous peacemaker because...",
+              "However, many in the Arab world condemned Sadat because..."
+            ]
           },
           "consolidation": "Exit Ticket — Spot the Imposter: Identify the false statement regarding the Sabra and Shatila massacres (Statement B) and write the 1-sentence historical correction.",
           "exam_clinic": [
@@ -11273,7 +11308,12 @@
             "Hamas: Formed during the Intifada, this militant Islamic group emerged as a rival to the secular PLO."
           ],
           "pair_share": {
-            "prompt": "Why was the First Intifada more damaging to Israel's international reputation than their previous wars with Arab armies?"
+            "prompt": "Explain why international television broadcasts of the First Intifada damaged Israel's reputation across the world.",
+            "think": "Contrast television footage of heavily armed Israeli soldiers using tear gas and live ammunition against Palestinian teenagers and children armed only with stones.",
+            "starters": [
+              "The First Intifada damaged Israel’s global reputation because TV news showed...",
+              "This shifted world opinion because, unlike previous wars where Israel was seen as the underdog, Israel was now seen as..."
+            ]
           },
           "consolidation": "Exit Ticket — The Causal Balance Scale: Was the First Intifada purely a grassroots uprising (0) or directed by the PLO in exile (10)? State your score and provide one piece of historical evidence.",
           "exam_clinic": [
@@ -12282,7 +12322,12 @@
             "Assassination of Rabin (1995): A right-wing Israeli extremist assassinated Yitzhak Rabin, severely derailing the peace process."
           ],
           "pair_share": {
-            "prompt": "Looking at the assassination of Rabin, why are peace agreements sometimes more dangerous for leaders than declaring war?"
+            "prompt": "Why did leaders who compromised for peace—such as Yitzhak Rabin and Anwar Sadat—face extreme danger from extremists on their own side?",
+            "think": "Both leaders were assassinated not by their foreign adversaries, but by religious and political extremists from their own people who viewed territorial concessions as treason.",
+            "starters": [
+              "Peacemakers like Rabin and Sadat faced assassination because...",
+              "Extremists on their own side opposed compromise because..."
+            ]
           },
           "consolidation": "Exit Ticket — Split-Perspective Headlines: Write one 6-word headline reflecting the historic hope of the Oslo handshake, and one 6-word headline reflecting the furious opposition of extremists who saw it as betrayal.",
           "exam_clinic": [

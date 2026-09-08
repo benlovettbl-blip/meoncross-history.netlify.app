@@ -1237,44 +1237,69 @@ allDirs.forEach((unitId) => {
 
       // Pair Share (Hidden for Great War units here, moved to later)
       if (lesson.pair_share && !(unitId === 'great_war' || unitId === 'great_war_part2')) {
-        html += `<div class="task-box" style="  ">`;
-        html += `<h3 style="margin-top: 0; color: #0f766e;">Pair & Share Activity</h3>`;
+        if (unitId === 'cme_new') {
+          html += `<div class="task-box" style="margin-top: 10px; margin-bottom: 12px; border: 1.5px solid #0f766e; border-radius: 8px; padding: 10px 14px; background: #ffffff; page-break-inside: avoid;">`;
+          html += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">`;
+          html += `<h3 style="margin: 0; color: #0f766e; font-size: 11pt; text-transform: uppercase; letter-spacing: 0.5px;">✍️ Written Consolidation & Recall</h3>`;
+          html += `<span style="font-size: 8pt; background: #ccfbf1; color: #0f766e; padding: 2px 7px; border-radius: 9999px; font-weight: 600;">Recall & Analysis</span>`;
+          html += `</div>`;
+          html += `<p style="font-weight: bold; font-size: 10pt; margin: 0 0 6px 0; color: #0f172a; line-height: 1.35;">Q${globalQNum++}. ${lesson.pair_share.prompt}</p>`;
+          if (lesson.pair_share.think) {
+            html += `<p style="font-size: 8.5pt; font-style: italic; color: #475569; margin: 0 0 6px 0; line-height: 1.3;"><strong>Guidance:</strong> ${lesson.pair_share.think}</p>`;
+          }
+          if (lesson.pair_share.starters && lesson.pair_share.starters.length > 0) {
+            html += `<div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 6px 10px; margin-bottom: 8px; font-size: 8.5pt; color: #166534; line-height: 1.35;">`;
+            html += `<strong style="display: block; margin-bottom: 2px; font-size: 8pt; text-transform: uppercase;">Sentence Starters:</strong>`;
+            lesson.pair_share.starters.forEach((s) => {
+              html += `<div style="margin-top: 1px;">• <em>${s}</em></div>`;
+            });
+            html += `</div>`;
+          }
+          html += `<div style="font-size: 8.5pt; font-weight: bold; color: #0f766e; margin-bottom: 4px;">Pupil Response:</div>`;
+          for (let i = 0; i < 4; i++) {
+            html += `<div class="task-lines-large"></div>`;
+          }
+          html += `</div>`;
+        } else {
+          html += `<div class="task-box" style="  ">`;
+          html += `<h3 style="margin-top: 0; color: #0f766e;">Pair & Share Activity</h3>`;
 
-        if (lesson.pair_share.sources) {
-          let sourceHTML = '<div style="display: flex; gap: 20px; margin-bottom: 10px;">';
-          lesson.pair_share.sources.forEach((srcObj) => {
-            sourceHTML +=
-              '<div style="flex: 1; border: 1px solid #0d9488; padding-top: 5px; padding-bottom: 5px; text-align: left; ">';
-            if (
-              (srcObj.type === 'visual' || srcObj.src || srcObj.source || srcObj.image) &&
-              unitId !== 'cme_new'
-            ) {
-              let imgSrc =
-                typeof resolveAssetPath === 'function'
-                  ? resolveAssetPath(srcObj.src || srcObj.source || srcObj.image, 2)
-                  : srcObj.src || srcObj.source || srcObj.image;
-              sourceHTML += `<img src="${imgSrc}" style="max-width: 100%; max-height: 250px;">`;
-            }
-            if (srcObj.text || srcObj.content) {
-              sourceHTML += `<blockquote style="font-size: 11pt; font-style: italic; margin: 0 0 10px 0;">${srcObj.text}</blockquote>`;
-            }
-            if (srcObj.title)
-              sourceHTML += `<p style="font-size: 10pt; font-weight: bold; margin-top: 5px;">\</p>`;
+          if (lesson.pair_share.sources) {
+            let sourceHTML = '<div style="display: flex; gap: 20px; margin-bottom: 10px;">';
+            lesson.pair_share.sources.forEach((srcObj) => {
+              sourceHTML +=
+                '<div style="flex: 1; border: 1px solid #0d9488; padding-top: 5px; padding-bottom: 5px; text-align: left; ">';
+              if (
+                (srcObj.type === 'visual' || srcObj.src || srcObj.source || srcObj.image) &&
+                unitId !== 'cme_new'
+              ) {
+                let imgSrc =
+                  typeof resolveAssetPath === 'function'
+                    ? resolveAssetPath(srcObj.src || srcObj.source || srcObj.image, 2)
+                    : srcObj.src || srcObj.source || srcObj.image;
+                sourceHTML += `<img src="${imgSrc}" style="max-width: 100%; max-height: 250px;">`;
+              }
+              if (srcObj.text || srcObj.content) {
+                sourceHTML += `<blockquote style="font-size: 11pt; font-style: italic; margin: 0 0 10px 0;">${srcObj.text}</blockquote>`;
+              }
+              if (srcObj.title)
+                sourceHTML += `<p style="font-size: 10pt; font-weight: bold; margin-top: 5px;">\</p>`;
+              sourceHTML += '</div>';
+            });
             sourceHTML += '</div>';
-          });
-          sourceHTML += '</div>';
-          html += sourceHTML;
-        }
+            html += sourceHTML;
+          }
 
-        html += `<p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px;">Q${globalQNum++}. Prompt: ${lesson.pair_share.prompt}</p>`;
-        if (lesson.pair_share.think)
-          html += `<p style="font-size: 12pt; font-style: italic; margin-top: 0;">Think: ${lesson.pair_share.think}</p>`;
-        html += `<div style="margin-top: 15px; border-left: 4px solid #0f766e; padding-left: 15px;"><strong>Your Notes:</strong>`;
-        for (let i = 0; i < 6; i++) {
-          html += `<div class="task-lines-large"></div>`;
+          html += `<p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px;">Q${globalQNum++}. Prompt: ${lesson.pair_share.prompt}</p>`;
+          if (lesson.pair_share.think)
+            html += `<p style="font-size: 12pt; font-style: italic; margin-top: 0;">Think: ${lesson.pair_share.think}</p>`;
+          html += `<div style="margin-top: 15px; border-left: 4px solid #0f766e; padding-left: 15px;"><strong>Your Notes:</strong>`;
+          for (let i = 0; i < 6; i++) {
+            html += `<div class="task-lines-large"></div>`;
+          }
+          html += `</div>`;
+          html += `</div>`;
         }
-        html += `</div>`;
-        html += `</div>`;
       }
 
       // Phase 1: Standard Tasks
@@ -2787,7 +2812,12 @@ allDirs.forEach((unitId) => {
             ${allExamTasksHtml}
           </div>`;
 
-        for (let p = 0; p < 4; p++) {
+        let examPagesCount = 4;
+        if (unitId === 'cme_new') {
+          if (period.name === 'KT2') examPagesCount = 5;
+          if (period.name === 'KT3') examPagesCount = 6;
+        }
+        for (let p = 0; p < examPagesCount; p++) {
           html += `<div style="page-break-before: always; padding-top: 20px;">`;
           html += `<h3 style="margin-top: 0; color: #64748b; margin-bottom: 20px;">Exam Practice Space (Page ${p + 1})</h3>`;
           for (let i = 0; i < 32; i++) {
