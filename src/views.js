@@ -607,12 +607,22 @@ export function renderInteractiveQuiz() {
                       ? workbooks
                           .map((wb, i) => {
                             const wbId = wb.name || wb.id;
-                            const matching = lessons.filter(
-                              (l) =>
+                            const normWbId = (wbId || '').replace(/\s+/g, '').toLowerCase();
+                            const normPrefix = (wb.prefix || wbId || '')
+                              .replace(/\s+/g, '')
+                              .toLowerCase();
+                            const matching = lessons.filter((l) => {
+                              const normTitle = (l.title || '').replace(/\s+/g, '').toLowerCase();
+                              const normId = (l.id || '').replace(/\s+/g, '').toLowerCase();
+                              return (
                                 l.workbook === wbId ||
                                 (l.title && l.title.startsWith(wb.prefix || wbId)) ||
-                                (l.id && l.id.startsWith(wb.prefix || wbId)),
-                            );
+                                (l.id && l.id.startsWith(wb.prefix || wbId)) ||
+                                normTitle.startsWith(normPrefix) ||
+                                normId.startsWith(normPrefix) ||
+                                normTitle.startsWith(normWbId)
+                              );
+                            });
                             return `
                               <optgroup label="${wb.title || `Key Topic ${i + 1}`}">
                                 <option value="${wbId}:all">⭐ Complete ${wb.id || `Key Topic ${i + 1}`} Deck (${matching.length * 20 || 60}+ Cards)</option>

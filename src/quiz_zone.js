@@ -365,10 +365,13 @@ export function renderQuizZone(container, unitData) {
         const filter = pill.dataset.filter;
         const levelCards = uiContainer.querySelectorAll('.quiz-level-card');
         levelCards.forEach((c) => {
+          const normFilter = filter.replace(/\s+/g, '').toLowerCase();
+          const normPrefix = (c.dataset.prefix || '').replace(/\s+/g, '').toLowerCase();
+          const normTitle = (c.dataset.title || '').replace(/\s+/g, '').toLowerCase();
           if (
             filter === 'all' ||
-            (c.dataset.prefix && c.dataset.prefix.startsWith(filter)) ||
-            (c.dataset.title && c.dataset.title.includes(filter))
+            normPrefix.startsWith(normFilter) ||
+            normTitle.includes(normFilter)
           ) {
             c.style.display = 'block';
           } else {

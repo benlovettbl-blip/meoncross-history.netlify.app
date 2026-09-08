@@ -2833,13 +2833,6 @@
             {
               "type": "narrative",
               "theme_heading": "1. The Imperial Dismemberment: The Collapse of the Ottoman Empire & Sykes-Picot (1916)",
-              "images": [
-                {
-                  "src": "/images/cme_sykes_picot_1916_map.jpg",
-                  "caption": "Primary Source: The original signed Sykes-Picot Agreement map (8 May 1916). British and French diplomats used a ruler to carve the Ottoman Middle East into European zones of control.",
-                  "alt": "Map of the Sykes-Picot Agreement 1916"
-                }
-              ],
               "image_context": "Primary map of the secret Sykes-Picot Agreement signed on 8 May 1916 by Sir Mark Sykes and François Georges-Picot, dividing the Ottoman Middle East into British and French zones. **Hinge Question:** Why did British and French diplomats believe drawing straight lines across tribal, ethnic, and religious lands would remain stable, and why did this arbitrary imperial partition create over a century of chronic conflict?",
               "text": "For over four centuries leading up to the First World War, the Middle East was ruled as part of the vast Turkish <strong>Ottoman Empire</strong>. The region was not divided into modern nation-states like Lebanon, Syria, Jordan, or Iraq; instead, it was administered as imperial provinces under the Ottoman Sultan in Constantinople.<br><br>\nWhen the Ottoman Empire joined World War One on the side of Germany in October 1914, Britain and France seized the opportunity to dismember the Turkish empire and expand their imperial dominance. In May 1916, British diplomat Sir Mark Sykes and French diplomat François Georges-Picot drew up the secret <strong>Sykes-Picot Agreement</strong>. Using a ruler across a map, they partitioned the region:\n<ul>\n  <li><strong>French Sphere:</strong> Syria and Lebanon (coastal blue zone and Area A).</li>\n  <li><strong>British Sphere:</strong> Mesopotamia (modern Iraq) and Transjordan (Area B and red zone), securing oil routes to the Persian Gulf.</li>\n  <li><strong>Brown Zone (Palestine):</strong> Designated for international administration due to the religious sensitivity of Christian, Muslim, and Jewish holy sites in Jerusalem.</li>\n</ul>\nFollowing Allied victory in 1918, the newly formed <strong>League of Nations</strong> formalised this partition through the <strong>Mandates System</strong> at the San Remo Conference (1920). These straight-line borders completely ignored traditional tribal boundaries, religious sects (Sunni, Shia, Christian, Druze, Jewish), and natural geography. This artificial map sowed the seeds of chronic regional instability that persists to this day.",
               "tasks": [
@@ -2859,11 +2852,6 @@
               "type": "narrative",
               "theme_heading": "2. Contradictory Imperial Pledges: The McMahon-Hussein Correspondence vs The Balfour Declaration (1915–1917)",
               "images": [
-                {
-                  "src": "/images/cme_balfour_declaration_1917.jpg",
-                  "caption": "Primary Source: The Balfour Declaration (2 November 1917). British Foreign Secretary Arthur Balfour conveyed the British government’s support for a Jewish national home in Palestine to Lord Walter Rothschild.",
-                  "alt": "The Balfour Declaration 1917"
-                },
                 {
                   "src": "/images/cme_allenby_jerusalem_1917.jpg",
                   "caption": "General Edmund Allenby entering Jerusalem on foot through the Jaffa Gate (11 December 1917) out of religious respect, marking the end of 400 years of Ottoman Turkish rule.",
@@ -2891,10 +2879,10 @@
                 }
               ],
               "source": {
-                "title": "Source A: The Sykes-Picot Agreement Partition Map (May 1916)",
-                "src": "/images/cme_sykes_picot_1916_map.jpg",
-                "caption": "The original partition map signed by Sir Mark Sykes and François Georges-Picot dividing the Ottoman Empire into British (red/B) and French (blue/A) spheres of control, placing Palestine under international administration.",
-                "question": "Source Detective: Study the map. How did the secret partition into French (Zone A) and British (Zone B) spheres directly contradict the promises of an independent Arab kingdom made to Sharif Hussein in the McMahon-Hussein Correspondence?"
+                "title": "Source B: The Original Balfour Declaration Letter (2 November 1917)",
+                "src": "/images/cme_balfour_declaration_1917.jpg",
+                "caption": "Official letter from British Foreign Secretary Arthur Balfour to Lord Rothschild expressing British support for a national home for the Jewish people in Palestine.",
+                "question": "Source Detective: Study the 1917 Balfour Declaration letter (Source B). How did Britain’s commitment to a \"national home for the Jewish people\" directly contradict the wartime promises of Arab sovereignty made to Sharif Hussein in the McMahon-Hussein Correspondence?"
               }
             },
             {
@@ -3605,6 +3593,7 @@
               "id": "cme_king_david_hotel_1946",
               "title": "Source A: The Ruins of the King David Hotel, Jerusalem (July 1946)",
               "date": "22 July 1946",
+              "src": "/assets/cme_new_king_david_ruins.png",
               "image": "/assets/cme_new_king_david_ruins.png",
               "caption": "The south-west wing of the King David Hotel collapsed after the Irgun bomb detonation, killing 91 British, Arab, and Jewish personnel.",
               "source_context": "The King David Hotel housed the central Secretariat of the Government of Palestine and the Headquarters of the British Forces in Palestine. The Irgun disguised explosives inside milk churns in the basement.",
@@ -3615,6 +3604,7 @@
               "id": "cme_sergeants_affair_1947",
               "title": "Source B: The Sergeants Affair, Netanya (July 1947)",
               "date": "31 July 1947",
+              "src": "/images/cme_sergeants_affair_1947.jpg",
               "image": "/images/cme_sergeants_affair_1947.jpg",
               "caption": "British Army Intelligence Corps sergeants Clifford Martin and Mervyn Paice hanged by the Irgun in a eucalyptus grove near Netanya.",
               "source_context": "Abducted as hostages to prevent the British execution of three Irgun fighters, the two British sergeants were hanged and one body was booby-trapped with an anti-personnel mine. The photo caused national outrage in Britain. **Hinge Question:** Why was this photograph more politically damaging to British morale than the King David Hotel bombing?",
@@ -3626,6 +3616,7 @@
               "id": "cme_exodus_haifa_1947",
               "title": "Source C: The SS Exodus Intercepted off Palestine (July 1947)",
               "date": "18 July 1947",
+              "src": "/units/cme_new/assets/cme_exodus.jpeg",
               "image": "/units/cme_new/assets/cme_exodus.jpeg",
               "caption": "The SS Exodus carrying 4,500 Holocaust survivors intercepted by the Royal Navy and returned to displaced persons camps in Germany.",
               "source_context": "The British decision to forcibly return Holocaust survivors to camps in Germany was an international public relations disaster that destroyed British diplomatic standing in the US and swayed the UN Partition vote.",
@@ -4725,9 +4716,9 @@
               ],
               "source": {
                 "title": "Source B: Palestinian Refugees Leaving Their Villages (1948 Nakba)",
-                "src": "/images/cme_palestinian_refugees_1948.jpg",
-                "caption": "Authentic UN Archival Photograph: Palestinian families carrying bundles of clothing and food as they flee their homes in 1948.",
-                "question": "Source Detective: How did the displacement of over 700,000 Palestinians create an unresolved humanitarian and territorial crisis that shaped every subsequent conflict?"
+                "src": "/images/cme_palestinian_refugees_leaving_gaza.webp",
+                "caption": "Authentic Historical Photograph: Palestinian families wading through coastal waters carrying trunks and possessions as they flee the fighting during the 1948 Nakba.",
+                "question": "Source Detective: Study the possessions and families fleeing in the photograph. What does this reveal about the suddenness of their flight and the immense humanitarian crisis created across the region?"
               }
             },
             {
@@ -4805,16 +4796,17 @@
                 }
               ],
               "source": {
-                "title": "Source D: Palestinian Refugee Camps (UNRWA, 1949)",
-                "src": "/units/cme_new/assets/palestinian_refugees_1948.jpg",
-                "caption": "Palestinian refugees displaced by the 1948 war, who would later be supported by UNRWA.",
+                "title": "Source C: Maritime Chokepoints & The Sinai Peninsula (Blockade of Tiran)",
+                "src": "/images/cme_sinai_peninsula_map.jpg",
+                "caption": "Topographical map of the Sinai Peninsula, highlighting the narrow Straits of Tiran and the entrance to the Gulf of Aqaba, which Egypt blockaded against Israeli shipping in the 1950s.",
+                "question": "Source Detective: Locate the Straits of Tiran at the southern tip of the Sinai Peninsula. Why was Egypt’s naval blockade here considered an act of war (casus belli) by Israel?",
                 "teacher_notes": {
-                  "primer": "Explain the creation of permanent refugee camps in Gaza, the West Bank, and neighboring countries.",
+                  "primer": "Focus pupils on the strategic bottleneck of the Straits of Tiran at the mouth of the Gulf of Aqaba, illustrating why maritime access to the Red Sea was an economic lifeline for Israel.",
                   "objectives": [
                     {
-                      "objective": "Identify international responses",
-                      "primer": "Discuss how the refugee issue became a permanent feature of the conflict.",
-                      "question": "What does this source reveal about international attempts to manage the Palestinian refugee crisis?"
+                      "objective": "Analyse geo-strategic flashpoints in the Sinai Peninsula",
+                      "primer": "Guide students to identify how geographic chokepoints transformed political disputes into direct military crises.",
+                      "question": "Hinge Question: Why did control of the Straits of Tiran grant Egypt decisive leverage over Israel’s southern sea trade, and why did Israel warn that closing them would trigger war?"
                     }
                   ]
                 }
@@ -5917,9 +5909,9 @@
               "level_4": "The fragile status quo established by the 1949 armistice was permanently shattered by political upheavals inside Egypt. Nasser quickly positioned himself as the champion of Pan-Arabism—a powerful political ideology aimed at uniting Arab nations to throw off Western colonial influence, secure Arab dignity, and avenge the humiliating 1948 defeat by Israel.",
               "source": {
                 "title": "Source A: President Gamal Abdel Nasser (1956)",
-                "src": "/images/cme_alahram_suez_1956.jpg",
-                "caption": "Front page of Egyptian newspaper Al-Ahram (27 July 1956) reporting President Nasser’s speech in Alexandria nationalising the Suez Canal Company.",
-                "question": "Source Detective: Look at the celebratory front page: why was the nationalisation of the canal seen across the Arab world as a historic victory over Western imperialism?"
+                "src": "/images/cme_nasser_1956.jpg",
+                "caption": "Official portrait of Colonel Gamal Abdel Nasser, President of Egypt (1954–1970) and leader of the Pan-Arab movement.",
+                "question": "Source Detective: Study the portrait of Nasser. Why did his charismatic leadership and anti-colonial stance inspire such widespread devotion across the Arab world?"
               }
             },
             {

@@ -4096,11 +4096,11 @@ export const unitData = {
             'The fragile status quo established by the 1949 armistice was permanently shattered by political upheavals inside Egypt. Nasser quickly positioned himself as the champion of Pan-Arabism—a powerful political ideology aimed at uniting Arab nations to throw off Western colonial influence, secure Arab dignity, and avenge the humiliating 1948 defeat by Israel.',
           source: {
             title: 'Source A: President Gamal Abdel Nasser (1956)',
-            src: '/images/cme_alahram_suez_1956.jpg',
+            src: '/images/cme_nasser_1956.jpg',
             caption:
-              'Front page of Egyptian newspaper Al-Ahram (27 July 1956) reporting President Nasser’s speech in Alexandria nationalising the Suez Canal Company.',
+              'Official portrait of Colonel Gamal Abdel Nasser, President of Egypt (1954–1970) and leader of the Pan-Arab movement.',
             question:
-              'Source Detective: Look at the celebratory front page: why was the nationalisation of the canal seen across the Arab world as a historic victory over Western imperialism?',
+              'Source Detective: Study the portrait of Nasser. Why did his charismatic leadership and anti-colonial stance inspire such widespread devotion across the Arab world?',
           },
         },
         {

@@ -60,9 +60,17 @@ export function sampleDiagnosticQuestions(unitId, unitData) {
     // Multi-topic GCSE unit (e.g. Medicine, Elizabethan England, Weimar Germany)
     workbooks.forEach((wb, wbIdx) => {
       const prefix = wb.prefix || wb.id;
-      const matchingLessons = lessons.filter(
-        (l) => (l.id && l.id.startsWith(prefix)) || (l.title && l.title.startsWith(prefix)),
-      );
+      const matchingLessons = lessons.filter((l) => {
+        if ((l.id && l.id.startsWith(prefix)) || (l.title && l.title.startsWith(prefix)))
+          return true;
+        if (unitData.id === 'cme_new' || window.currentUnitId === 'cme_new') {
+          const normPrefix = (prefix || '').replace(/\s+/g, '').toLowerCase();
+          const normTitle = (l.title || '').replace(/\s+/g, '').toLowerCase();
+          const normId = (l.id || '').replace(/\s+/g, '').toLowerCase();
+          return normTitle.startsWith(normPrefix) || normId.startsWith(normPrefix);
+        }
+        return false;
+      });
       eras.push({
         id: wb.id || `era_${wbIdx}`,
         title: wb.title || wb.name || `Key Topic ${wbIdx + 1}`,

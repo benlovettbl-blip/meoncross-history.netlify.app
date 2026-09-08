@@ -110,28 +110,28 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
         {
           id: 'KT1',
           title: 'Key Topic 1: The Birth of Israel',
-          prefix: 'KT1',
+          prefix: 'KT 1',
           gradient: 'linear-gradient(135deg, #1e3a8a, #3b82f6)',
           border: '#3b82f6',
-          image: 'assets/cme_new_kt1_cover.png',
+          image: '/assets/cme_new_kt1_cover.png',
           enquiry: 'How and why was the state of Israel established?',
         },
         {
           id: 'KT2',
           title: 'Key Topic 2: Escalating Conflict',
-          prefix: 'KT2',
+          prefix: 'KT 2',
           gradient: 'linear-gradient(135deg, #7f1d1d, #ef4444)',
           border: '#ef4444',
-          image: 'assets/cme_new_yom_kippur_crossing.png',
+          image: '/assets/cme_new_yom_kippur_crossing.png',
           enquiry: 'What drove the major conflicts in the Middle East from 1967-1973?',
         },
         {
           id: 'KT3',
           title: 'Key Topic 3: Attempts at Peace',
-          prefix: 'KT3',
+          prefix: 'KT 3',
           gradient: 'linear-gradient(135deg, #064e3b, #10b981)',
           border: '#10b981',
-          image: 'assets/cme_new_camp_david_accords.png',
+          image: '/assets/cme_new_camp_david_accords.png',
           enquiry: 'Why has lasting peace in the Middle East been so difficult to achieve?',
           bgPos: 'center 20%',
         },
@@ -283,10 +283,25 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
 
       let foundAny = false;
       unitData.lessons.forEach((lesson, index) => {
-        if (
+        let isMatch =
           (lesson.id && lesson.id.startsWith(p.prefix)) ||
-          (lesson.title && lesson.title.startsWith(p.prefix))
-        ) {
+          (lesson.title && lesson.title.startsWith(p.prefix));
+
+        if (!isMatch && currentUnitId === 'cme_new') {
+          const normPrefix = (p.prefix || '').replace(/\s+/g, '').toLowerCase();
+          const normTitle = (lesson.title || '').replace(/\s+/g, '').toLowerCase();
+          const normId = (lesson.id || '').replace(/\s+/g, '').toLowerCase();
+          const normKt = (lesson.key_topic || '').replace(/\s+/g, '').toLowerCase();
+          const normWb = (lesson.workbook || '').replace(/\s+/g, '').toLowerCase();
+
+          isMatch =
+            normTitle.startsWith(normPrefix) ||
+            normId.startsWith(normPrefix) ||
+            normKt.startsWith(normPrefix) ||
+            normWb === normPrefix;
+        }
+
+        if (isMatch) {
           foundAny = true;
           lessonsHTML += `
             <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${index}" style="position: relative; background: white; border: 1px solid #e2e8f0; border-left: 5px solid ${p.border}; border-radius: 8px; padding: 12px 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.05)';">
