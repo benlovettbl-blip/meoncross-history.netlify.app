@@ -9,6 +9,7 @@ export function cleanQuestionText(text) {
   return (
     text
       // 1. Remove specific pedagogical prefixes
+      .replace(/^Source Detective[:.]?\s*/i, '')
       .replace(/^Recall from (last|previous) lesson(s)?:\s*/i, '')
       .replace(/^PAST TOPIC:\s*/i, '')
       .replace(/^Enquiry:\s*/i, '')

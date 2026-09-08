@@ -566,7 +566,14 @@ allDirs.forEach((unitId) => {
           ${lesson.primary_source.title ? `<strong>${badgeSource(lesson.primary_source.title, getSourceOverride())}</strong><br>` : ''}
           <div style="display: flex; justify-content: center; gap: 10px; margin: 10px 0;">${imgTags}</div>
           ${lesson.primary_source.caption ? `<div class="source-caption">${lesson.primary_source.caption}</div>` : ''}
-          ${lesson.primary_source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${globalQNum++}. ${lesson.primary_source.question.replace('Enquiry: ', '')}</strong></div>` : ''}
+          ${
+            lesson.primary_source.question
+              ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${globalQNum++}. ${lesson.primary_source.question
+                  .replace('Enquiry: ', '')
+                  .replace(/^Source Detective[:.]?\s*/i, '')
+                  .replace(/^Q\d+[\.\:]\s*/i, '')}</strong></div>`
+              : ''
+          }
           
         </div>
       `;
@@ -777,7 +784,7 @@ allDirs.forEach((unitId) => {
               ${block.source.src || block.source.source ? `<img src="${typeof resolveAssetPath === 'function' ? resolveAssetPath(block.source.src || block.source.source, 2) : block.source.src || block.source.source}" alt="Source" style="max-width: 100%; max-height: 250px;">` : ''}
               ${block.source.content ? `<blockquote style="text-align: left; font-size: 11pt; margin-top: 10px; font-style: italic;">${typeof formatText === 'function' ? formatText(block.source.content) : block.source.content}</blockquote>` : ''}
               ${block.source.caption ? `<div class="source-caption">${block.source.caption}</div>` : ''}
-              ${block.source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${globalQNum++} ${block.source.question}</strong></div>` : ''}
+              ${block.source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${globalQNum++}. ${block.source.question.replace(/^Source Detective[:.]?\s*/i, '').replace(/^Q\d+[\.\:]\s*/i, '')}</strong></div>` : ''}
             </div>
           `;
           }

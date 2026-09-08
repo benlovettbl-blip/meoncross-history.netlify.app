@@ -69,16 +69,31 @@ async function verifySourceSync() {
       }
       seenLetters.add(actualLetter);
 
+      // Check forbidden phrase: "Source Detective"
+      if (/Source\s*Detective/i.test(s.title) || /Source\s*Detective/i.test(s.question || '')) {
+        console.error(
+          `  ❌ [${item.location}] Contains forbidden phrase 'Source Detective'! Title: "${s.title}", Q: "${s.question}"`,
+        );
+        totalErrors++;
+      }
+
       // Check question
       if (!s.question || typeof s.question !== 'string' || !s.question.trim()) {
         console.error(`  ❌ [${item.location}] Missing question for Source ${actualLetter}!`);
         totalErrors++;
       } else {
+        if (!s.question.startsWith(`Study Source ${actualLetter}.`)) {
+          console.error(
+            `  ❌ [${item.location}] Question must start with 'Study Source ${actualLetter}.'! Found: "${s.question.slice(0, 60)}..."`,
+          );
+          totalErrors++;
+        }
+
         // If question references "Source X" or "Study Source X" (where X is a single letter A-Z), verify X matches actualLetter
         const qMatches = [...s.question.matchAll(/(?:Study\s+)?Source\s+([A-Z])\b/gi)];
         qMatches.forEach((match) => {
           const qLetter = match[1].toUpperCase();
-          if (qLetter !== 'DETECTIVE' && qLetter !== actualLetter) {
+          if (qLetter !== actualLetter) {
             console.error(
               `  ❌ [${item.location}] Question refers to 'Source ${qLetter}', but source title is 'Source ${actualLetter}'! Question: "${s.question.slice(0, 80)}..."`,
             );

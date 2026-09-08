@@ -1167,7 +1167,7 @@ allDirs.forEach((unitId) => {
           ${renderImages && lesson.primary_source.title ? `<strong>${badgeSource(lesson.primary_source.title, unitId === 'cme_new' ? null : String.fromCharCode(sourceCharCode++))}</strong><br>` : ''}
           <div style="${srcs.length > 1 ? 'display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px;' : 'display: flex; justify-content: center; gap: 10px;'} margin: 15px 0;">${imgTags}</div>
           ${renderImages && lesson.primary_source.caption ? `<div class="source-caption">${lesson.primary_source.caption}</div>` : ''}
-          ${lesson.primary_source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${globalQNum++}. ${lesson.primary_source.question.replace('Enquiry: ', '')}${lesson.primary_source.page ? ` [p. ${lesson.primary_source.page}]` : ''}</strong></div><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>` : ''}
+          ${lesson.primary_source.question ? `<div style="margin-top: 15px; text-align: left;"><strong>Q${globalQNum++}. ${lesson.primary_source.question.replace('Enquiry: ', '').replace(/^Source Detective[:.]?\s*/i, '')}${lesson.primary_source.page ? ` [p. ${lesson.primary_source.page}]` : ''}</strong></div><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>` : ''}
         </div>
       `;
       }
@@ -1383,11 +1383,10 @@ allDirs.forEach((unitId) => {
             }
 
             if (block.source && block.source.question) {
-              let cleanQuestion = block.source.question.replace(/^Q\d+[\.\:]\s*/i, '');
-              let prefix =
-                cleanQuestion.startsWith('Source Detective') || !cleanQuestion.startsWith(' ')
-                  ? '. '
-                  : ' ';
+              let cleanQuestion = block.source.question
+                .replace(/^Q\d+[\.\:]\s*/i, '')
+                .replace(/^Source Detective[:.]?\s*/i, '');
+              let prefix = !cleanQuestion.startsWith(' ') ? '. ' : ' ';
               _nbHtml += `<div class="task-box">`;
               _nbHtml += `<h4 style="margin-top: 10px; margin-bottom: 15px;">Q${globalQNum++}${prefix}${cleanQuestion}${block.source.page ? ` [p. ${block.source.page}]` : ''}</h4>`;
               for (let i = 0; i < 4; i++) {

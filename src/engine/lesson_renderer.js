@@ -39,10 +39,22 @@ window.formatBold = function (text) {
   // Handle italics (after lists so we don't conflict with bullet points)
   parsed = parsed.replace(/\*([^\*]+)\*/g, '<i>$1</i>');
 
+  // Isolate table newline stripping to cme_new to prevent large whitespace before tables
+  if (window.currentUnitId === 'cme_new') {
+    parsed = parsed.replace(/<table[\s\S]*?<\/table>/gi, (tableHtml) =>
+      tableHtml.replace(/\r?\n\s*/g, ' '),
+    );
+  }
+
   if (!parsed.trim().startsWith('<table') && !parsed.trim().startsWith('<div')) {
     parsed = parsed.replace(/\n/g, '<br>');
   }
   // Clean up <br> around elements
+  if (window.currentUnitId === 'cme_new') {
+    parsed = parsed
+      .replace(/(?:<br\s*\/?>\s*)+(<table)/gi, '$1')
+      .replace(/(<\/table>)(?:\s*<br\s*\/?>)+/gi, '$1');
+  }
   parsed = parsed
     .replace(/<br><ul/g, '<ul')
     .replace(/<\/ul><br>/g, '</ul>')
@@ -603,8 +615,23 @@ export function renderLesson(lesson) {
   if (lesson.sources && lesson.sources.length > 0) {
     htmlSources1 += `<div class="sources-grid" style="margin-top: 20px;">`;
     lesson.sources.forEach((source) => {
+      const sLetterMatch = (source.title || '').match(/Source\s+([A-Z])/i);
+      const sLetter = sLetterMatch ? sLetterMatch[1].toUpperCase() : '';
+      const cardIdAttr =
+        sLetter && window.currentUnitId === 'cme_new'
+          ? `id="source-card-${sLetter}" data-source-letter="${sLetter}"`
+          : '';
+      const qClassAttr =
+        sLetter && window.currentUnitId === 'cme_new'
+          ? 'source-inquiry-box source-inquiry-interactive'
+          : '';
+      const qDataAttr =
+        sLetter && window.currentUnitId === 'cme_new'
+          ? `data-target-source="${sLetter}" title="Hover or click to highlight Source ${sLetter}"`
+          : '';
+
       htmlSources1 += `
-            <div class="source-card" style="background: #ffffff; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px; text-align: center;">
+            <div class="source-card" ${cardIdAttr} style="background: #ffffff; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px; text-align: center; transition: all 0.3s ease;">
               ${source.title ? `<h4 style="color: var(--primary); margin-top: 0; text-align: left;">${source.title}</h4>` : ''}
               
               ${
@@ -642,7 +669,7 @@ export function renderLesson(lesson) {
               ${
                 source.question
                   ? `
-                <div style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px; border-radius: 0 4px 4px 0; text-align: left; margin-top: 15px;">
+                <div class="${qClassAttr}" ${qDataAttr} style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px; border-radius: 0 4px 4px 0; text-align: left; margin-top: 15px;">
                   <p style="margin-bottom: 0; font-size: 1.1rem; color: #1e3a8a;"><strong>${source.qNum ? `Q${source.qNum}. ` : ''}${formatQuestion(source.question, !source.qNum)}</strong></p>
                 </div>
               `
@@ -1586,8 +1613,23 @@ export function renderLesson(lesson) {
                  `;
         }
 
+        const bLetterMatch = (block.source.title || '').match(/Source\s+([A-Z])/i);
+        const bLetter = bLetterMatch ? bLetterMatch[1].toUpperCase() : '';
+        const bCardIdAttr =
+          bLetter && window.currentUnitId === 'cme_new'
+            ? `id="source-card-${bLetter}" data-source-letter="${bLetter}"`
+            : '';
+        const bQClassAttr =
+          bLetter && window.currentUnitId === 'cme_new'
+            ? 'source-inquiry-box source-inquiry-interactive'
+            : '';
+        const bQDataAttr =
+          bLetter && window.currentUnitId === 'cme_new'
+            ? `data-target-source="${bLetter}" title="Hover or click to highlight Source ${bLetter}"`
+            : '';
+
         blockSourceHtml = `
-              <div class="gcse-source-container" style="background: #ffffff; border: 2px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: left;">
+              <div class="gcse-source-container" ${bCardIdAttr} style="background: #ffffff; border: 2px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: left; transition: all 0.3s ease;">
                 ${
                   window.currentUnitId === 'cme_new' && block.source.title
                     ? `<h4 style="color: #1e3a8a; margin-top: 0; margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; line-height: 1.4;">
@@ -1633,7 +1675,7 @@ export function renderLesson(lesson) {
                 }
                 ${
                   block.source.question
-                    ? `<div style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px; border-radius: 0 4px 4px 0; text-align: left; margin-top: 15px;">
+                    ? `<div class="${bQClassAttr}" ${bQDataAttr} style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px; border-radius: 0 4px 4px 0; text-align: left; margin-top: 15px;">
                   <p style="margin-bottom: 0; font-size: 1.1rem; color: #1e3a8a;"><strong>${block.source.qNum ? `Q${block.source.qNum}. ` : ''}${formatQuestion(block.source.question, !block.source.qNum)}</strong></p>
                 </div>`
                     : ''
@@ -3391,11 +3433,71 @@ ${poem.poem_text}
     html += `</div>`;
   });
 
+  if (window.currentUnitId === 'cme_new') {
+    html += `
+      <style>
+        @keyframes sourceHighlightGlow {
+          0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); outline: 3px solid #3b82f6; transform: translateY(-2px); }
+          50% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0.25); outline: 3px solid #2563eb; transform: translateY(-3px); }
+          100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); outline: 3px solid #3b82f6; transform: translateY(-2px); }
+        }
+        .source-card-highlighted {
+          animation: sourceHighlightGlow 1.5s infinite ease-in-out !important;
+          border-color: #3b82f6 !important;
+          transition: all 0.25s ease-in-out !important;
+        }
+        .source-inquiry-interactive {
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+        .source-inquiry-interactive:hover {
+          filter: brightness(0.97);
+          box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2) !important;
+        }
+      </style>
+    `;
+  }
+
   html += `
       </div>
     </div>
   `;
   return html;
+}
+
+if (typeof window !== 'undefined' && !window._cmeSourceHighlightBound) {
+  window._cmeSourceHighlightBound = true;
+  document.addEventListener('mouseover', (e) => {
+    if (window.currentUnitId !== 'cme_new') return;
+    const box = e.target.closest('[data-target-source]');
+    if (box) {
+      const letter = box.getAttribute('data-target-source');
+      const card = document.getElementById(`source-card-${letter}`);
+      if (card) card.classList.add('source-card-highlighted');
+    }
+  });
+  document.addEventListener('mouseout', (e) => {
+    if (window.currentUnitId !== 'cme_new') return;
+    const box = e.target.closest('[data-target-source]');
+    if (box) {
+      const letter = box.getAttribute('data-target-source');
+      const card = document.getElementById(`source-card-${letter}`);
+      if (card) card.classList.remove('source-card-highlighted');
+    }
+  });
+  document.addEventListener('click', (e) => {
+    if (window.currentUnitId !== 'cme_new') return;
+    const box = e.target.closest('[data-target-source]');
+    if (box) {
+      const letter = box.getAttribute('data-target-source');
+      const card = document.getElementById(`source-card-${letter}`);
+      if (card) {
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        card.classList.add('source-card-highlighted');
+        setTimeout(() => card.classList.remove('source-card-highlighted'), 3000);
+      }
+    }
+  });
 }
 
 export function toggleAllAnswers(btnOrContainer) {
