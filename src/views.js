@@ -15,6 +15,7 @@ import { getAssetUrl } from './engine/assets.js';
 import './engine/modals.js'; // Side-effect: registers window.renderQuizQuestion, openGallery, etc.
 import { renderDiagnosticLauncherHTML } from './diagnostic_benchmark.js';
 export { renderCompetitionsView } from './competitions_zone.js';
+export { renderChessHubView } from './chess_zone.js';
 
 export function getUnits() {
   if (!window.db) return [];
@@ -126,27 +127,54 @@ export function renderDashboard() {
     <div style="max-width: 1150px; margin: 0 auto; padding: 0 20px;">
   `;
 
-  // Young Historian & Competitions Spotlight Banner
+  // Co-Curricular & Enrichment Dual Spotlight (Competitions + Chess Club)
   html += `
-    <div style="background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 1.5px solid #fde68a; border-radius: 14px; padding: 18px 22px; margin-bottom: 24px; box-shadow: 0 4px 14px rgba(245, 158, 11, 0.09); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
-      <div style="display: flex; align-items: center; gap: 14px; min-width: 280px; flex: 1;">
-        <div style="width: 48px; height: 48px; border-radius: 12px; background: #f59e0b; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1.35rem; flex-shrink: 0; box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);">
-          <i class="fa-solid fa-trophy"></i>
-        </div>
-        <div>
-          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 2px;">
-            <span style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; background: #d97706; color: #ffffff; padding: 2px 8px; border-radius: 12px;">Young Historians Spotlight</span>
-            <span style="font-size: 0.75rem; font-weight: 700; color: #92400e;">Hampshire Archives Trust Competition 2026–27</span>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-bottom: 24px;">
+      
+      <!-- Competition Spotlight -->
+      <div style="background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 1.5px solid #fde68a; border-radius: 14px; padding: 18px 20px; box-shadow: 0 4px 14px rgba(245, 158, 11, 0.09); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
+        <div style="display: flex; align-items: center; gap: 12px; min-width: 220px; flex: 1;">
+          <div style="width: 44px; height: 44px; border-radius: 10px; background: #f59e0b; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0; box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);">
+            <i class="fa-solid fa-trophy"></i>
           </div>
-          <div style="font-size: 0.96rem; font-weight: 700; color: #78350f;">
-            Win £100 student cash &amp; £300 for Meoncross History Department
+          <div>
+            <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 2px;">
+              <span style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; background: #d97706; color: #ffffff; padding: 2px 7px; border-radius: 10px;">Enrichment</span>
+              <span style="font-size: 0.72rem; font-weight: 700; color: #92400e;">Hampshire History Awards</span>
+            </div>
+            <div style="font-size: 0.92rem; font-weight: 700; color: #78350f;">
+              Win £100 cash &amp; £300 for Department
+            </div>
           </div>
         </div>
+        <button class="btn-pedagogy-primary" onclick="window.switchView('competitions')" style="background: #d97706; border-color: #b45309; padding: 8px 14px; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; border-radius: 6px; cursor: pointer; color: #ffffff; flex-shrink: 0;">
+          <span>Explore</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
       </div>
-      <button class="btn-pedagogy-primary" onclick="window.switchView('competitions')" style="background: #d97706; border-color: #b45309; padding: 9px 18px; font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; border-radius: 8px; cursor: pointer; color: #ffffff; flex-shrink: 0;">
-        <span>Explore Competition &amp; Ideas</span>
-        <i class="fa-solid fa-arrow-right"></i>
-      </button>
+
+      <!-- Chess Club Spotlight -->
+      <div style="background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%); border: 1.5px solid #ddd6fe; border-radius: 14px; padding: 18px 20px; box-shadow: 0 4px 14px rgba(139, 92, 246, 0.09); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
+        <div style="display: flex; align-items: center; gap: 12px; min-width: 220px; flex: 1;">
+          <div style="width: 44px; height: 44px; border-radius: 10px; background: #8b5cf6; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0; box-shadow: 0 4px 10px rgba(139, 92, 246, 0.3);">
+            <i class="fa-solid fa-chess-knight"></i>
+          </div>
+          <div>
+            <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 2px;">
+              <span style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; background: #7c3aed; color: #ffffff; padding: 2px 7px; border-radius: 10px;">Thursdays P6</span>
+              <span style="font-size: 0.72rem; font-weight: 700; color: #6d28d9;">Meoncross Chess Club</span>
+            </div>
+            <div style="font-size: 0.92rem; font-weight: 700; color: #4c1d95;">
+              House League · Every Game Earns Points
+            </div>
+          </div>
+        </div>
+        <button class="btn-pedagogy-primary" onclick="window.switchView('chess')" style="background: #7c3aed; border-color: #6d28d9; padding: 8px 14px; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; border-radius: 6px; cursor: pointer; color: #ffffff; flex-shrink: 0;">
+          <span>Chess Hub</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
     </div>
   `;
 

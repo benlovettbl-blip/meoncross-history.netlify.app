@@ -17,6 +17,7 @@ import {
   renderIndividualsView,
   renderReadingView,
   renderCompetitionsView,
+  renderChessHubView,
 } from './views.js'; // Trigger HMR
 import { renderCurriculumMap } from './curriculum_map.js';
 
@@ -59,6 +60,7 @@ export function initNavigationUI() {
         if (viewName === 'profile') displayName = 'Student Profile';
         if (viewName === 'curriculum') displayName = 'Curriculum Overview';
         if (viewName === 'competitions') displayName = 'History Competitions & Awards';
+        if (viewName === 'chess') displayName = 'Meoncross Chess Club';
 
         breadcrumbs.innerHTML = `
           <span data-action="switch-view" data-view="dashboard" style="cursor: pointer; text-decoration: underline; color: var(--primary);">Dashboard</span>
@@ -191,7 +193,8 @@ export async function switchView(viewName, param = null, skipHistory = false) {
     viewName === 'dashboard' ||
     viewName === 'profile' ||
     viewName === 'curriculum' ||
-    viewName === 'competitions'
+    viewName === 'competitions' ||
+    viewName === 'chess'
   ) {
     [
       'nav-lessons',
@@ -245,6 +248,8 @@ export async function switchView(viewName, param = null, skipHistory = false) {
     await renderCurriculumMap();
   } else if (viewName === 'competitions') {
     renderCompetitionsView();
+  } else if (viewName === 'chess') {
+    renderChessHubView();
   }
 
   // Secondary tick to ensure newly injected DOM content stays at top

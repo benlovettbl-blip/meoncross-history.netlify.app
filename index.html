@@ -72,6 +72,10 @@
             <i class="fa-solid fa-trophy" style="color: #f59e0b"></i>
             <span>Competitions &amp; Awards</span>
           </div>
+          <div class="nav-item" id="nav-chess" onclick="window.switchView('chess')">
+            <i class="fa-solid fa-chess-knight" style="color: #60a5fa"></i>
+            <span>Meoncross Chess Club</span>
+          </div>
           <div class="nav-item" id="nav-lessons" style="display: none">
             <i class="fa-solid fa-book-open"></i>
             <span>Study Lessons</span>
@@ -125,6 +129,83 @@
             <!-- Units injected here -->
           </div>
         </nav>
+
+        <!-- Bottom-Left Chess Club Quick Access Card -->
+        <div
+          class="sidebar-chess-badge"
+          onclick="window.switchView('chess')"
+          style="
+            margin: auto 12px 16px;
+            padding: 10px 12px;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            transition:
+              transform 0.15s ease,
+              border-color 0.15s ease;
+          "
+        >
+          <div
+            style="
+              width: 36px;
+              height: 36px;
+              border-radius: 8px;
+              background: linear-gradient(135deg, #2563eb, #1d4ed8);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #fff;
+              font-size: 1.1rem;
+              flex-shrink: 0;
+              box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
+            "
+          >
+            <i class="fa-solid fa-chess-knight"></i>
+          </div>
+          <div style="flex: 1; min-width: 0">
+            <div
+              style="
+                font-size: 0.7rem;
+                font-weight: 700;
+                color: #93c5fd;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+              "
+            >
+              <span>Period 6 Club</span>
+              <span
+                style="
+                  display: inline-block;
+                  width: 6px;
+                  height: 6px;
+                  border-radius: 50%;
+                  background: #22c55e;
+                "
+              ></span>
+            </div>
+            <div
+              style="
+                font-size: 0.8rem;
+                font-weight: 600;
+                color: #f8fafc;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              "
+            >
+              Chess League &amp; Ladder
+            </div>
+            <div style="font-size: 0.68rem; color: #94a3b8">Thursdays · House Points</div>
+          </div>
+        </div>
 
         <!-- Theme Controls moved to header -->
       </aside>
