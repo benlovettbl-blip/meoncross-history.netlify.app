@@ -118,7 +118,11 @@ export function openTaskWhiteboard() {
   const cards = [];
 
   const addQuestionCard = (qNum, questionText, answerText) => {
-    cards.push({ qNum, questionText, answerText });
+    if (typeof questionText === 'object' && questionText !== null) {
+      questionText = questionText.text || questionText.question || questionText.prompt || '';
+    }
+    if (typeof questionText !== 'string' || !questionText.trim()) return;
+    cards.push({ qNum, questionText: questionText.trim(), answerText: answerText || '' });
   };
 
   if (activeLesson.do_now) {
@@ -166,11 +170,30 @@ export function openTaskWhiteboard() {
         });
       }
       if (block.hinge_question) {
-        addQuestionCard(
-          block.hinge_question.qNum,
-          block.hinge_question.question || block.hinge_question,
-          block.hinge_question.model_answer || '',
-        );
+        const hq = block.hinge_question;
+        const qText = typeof hq === 'string' ? hq : hq.text || hq.question || hq.prompt || '';
+        if (qText) {
+          let aText = hq.model_answer || hq.model || hq.answer || '';
+          if (!aText && Array.isArray(hq.options)) {
+            const cIdx =
+              typeof hq.correct_index === 'number'
+                ? hq.correct_index
+                : typeof hq.answer === 'number'
+                  ? hq.answer
+                  : -1;
+            if (cIdx >= 0 && hq.options[cIdx]) {
+              aText = `<strong>Correct Answer:</strong> Option ${String.fromCharCode(65 + cIdx)}: ${hq.options[cIdx]}`;
+              if (hq.explanation) {
+                aText += `<br><br><strong>Explanation:</strong> ${hq.explanation}`;
+              }
+            }
+          }
+          addQuestionCard(
+            hq.qNum || 'Hinge Question',
+            qText,
+            aText || 'Formative checkpoint question for class discussion.',
+          );
+        }
       }
     });
   }
@@ -239,13 +262,19 @@ export function openTaskWhiteboard() {
   });
 
   cards.forEach(({ qNum, questionText, answerText }) => {
-    const finalAnswer = window.formatBold(answerText) || 'Model answer to be discussed in class.';
+    const finalAnswer =
+      (typeof window.formatBold === 'function' ? window.formatBold(answerText) : answerText) ||
+      'Model answer to be discussed in class.';
     const prefix =
-      qNum && qNum !== '-' && qNum !== 'Do Now'
+      typeof qNum === 'number'
         ? `Q${qNum}. `
         : qNum === 'Do Now'
           ? '<strong>[Do Now]</strong> '
-          : '';
+          : qNum === 'Hinge Question'
+            ? '<strong>[Hinge Question]</strong> '
+            : qNum && qNum !== '-'
+              ? `<strong>[${qNum}]</strong> `
+              : '';
     html += `
         <div class="wb-question-card" style="cursor:pointer;" data-action="toggle-wb-answer" title="Click to reveal answer">
           <div style="font-weight: bold;">${prefix}${questionText}</div>
