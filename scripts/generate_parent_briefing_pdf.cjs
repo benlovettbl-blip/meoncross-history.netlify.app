@@ -658,14 +658,16 @@ function getHtmlContent() {
         <div class="info-card">
           <div class="info-card-header">
             <span class="icon">🥾</span>
-            <span class="title">Footwear &amp; Weather Protection</span>
+            <span class="title">Footwear &amp; Sanctuary Wood Prep</span>
           </div>
           <ul class="checklist">
-            <li><strong>Sturdy Walking Boots / Waterproof Shoes:</strong> Essential. Broken-in with good grip. Cemetery lawns and trench duckboards are slippery when damp. No flat canvas trainers.</li>
+            <li><strong>Sanctuary Wood Trenches (Crucial):</strong> At Sanctuary Wood (Hill 62), pupils will explore real, preserved, deep frontline trenches. These trenches are notoriously muddy and wet.</li>
+            <li><strong>Separate Pair of Shoes / Wellington Boots:</strong> Pupils <strong>MUST bring a separate pair of wellington boots or sturdy walking boots</strong> specifically for walking in the muddy trenches, plus a clean, separate pair of shoes/trainers to change into afterwards.</li>
+            <li><strong>Sturdy Plastic Bag (Essential):</strong> Every pupil must pack a strong plastic carrier bag (or bin bag) in their daypack to seal away their muddy, wet boots before re-boarding the coach and entering the hostel!</li>
             <li><strong>Waterproof &amp; Windproof Coat:</strong> Hooded rain jacket. We will be outdoors regardless of light rain.</li>
             <li><strong>Warm Fleece / Layers:</strong> Autumn in Belgium can be chilly and breezy on exposed ridges.</li>
             <li><strong>Warm Hat &amp; Gloves:</strong> Mandatory for all pupils. Standing still on the stone ramparts for the 8:00 PM Menin Gate ceremony gets extremely cold.</li>
-            <li><strong>Socks:</strong> At least 4 pairs of comfortable walking socks.</li>
+            <li><strong>Socks:</strong> At least 4–5 pairs of comfortable walking socks.</li>
           </ul>
         </div>
 
@@ -673,13 +675,14 @@ function getHtmlContent() {
         <div class="info-card">
           <div class="info-card-header">
             <span class="icon">🎒</span>
-            <span class="title">Luggage &amp; Daily Bag Rules</span>
+            <span class="title">Luggage, Towels &amp; Toiletries</span>
           </div>
           <ul class="checklist">
+            <li><strong>TOWELS (Mandatory):</strong> Pupils <strong>MUST bring their own bath/shower towels</strong>! The hostel does not provide towels for school groups.</li>
+            <li><strong>Washbag &amp; Shower Gel:</strong> Shower gel, shampoo, soap, toothbrush, toothpaste, roll-on deodorant only (strictly NO aerosol cans allowed on coach or in hostel).</li>
             <li><strong>1 Main Holdall / Medium Suitcase:</strong> Placed in coach luggage hold until arrival at hostel. Please label clearly with student's full name. Maximum 15kg.</li>
-            <li><strong>1 Small Daypack (Rucksack):</strong> Stays with student inside the coach. Must contain waterproof coat, water bottle, Day 1 packed lunch, and notebook/pen.</li>
+            <li><strong>1 Small Daypack (Rucksack):</strong> Stays with student inside the coach. Must contain waterproof coat, plastic bag for muddy boots, water bottle, Day 1 packed lunch, and notebook/pen.</li>
             <li><strong>Comfortable Casual Clothes:</strong> Practical, comfortable clothing for downtime and evening activities at the hostel (jeans, joggers, hoodies, t-shirts). No formal or restaurant clothing required.</li>
-            <li><strong>Washbag &amp; Towel:</strong> Toothbrush, personal toiletries, roll-on deodorant only (strictly NO aerosol cans allowed on coach).</li>
           </ul>
         </div>
 

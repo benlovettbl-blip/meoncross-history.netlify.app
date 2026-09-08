@@ -231,7 +231,7 @@ s1.addText(
       options: { bold: true, color: '0F172A', fontSize: 9.5 },
     },
     {
-      text: '• Sturdy walking boots / waterproof shoes.\n• Waterproof hooded rain jacket & warm fleece.\n• Warm hat & gloves (vital for evening ceremony!).\n• Casual clothes for evenings (no formal wear).\n• 1 medium holdall/case + 1 small daypack.\n\n',
+      text: '• Sanctuary Wood: boots/wellies + spare shoes & plastic bag.\n• Bath towels & washbag (shower gel; roll-on only).\n• Waterproof hooded jacket, warm fleece, hat & gloves.\n• Casual clothes for evenings (no formal wear).\n• 1 medium holdall/case + 1 small daypack.\n\n',
       options: { color: '334155', fontSize: 8.5 },
     },
     { text: 'Travel Documents & Tech:\n', options: { bold: true, color: '0F172A', fontSize: 9.5 } },
@@ -358,7 +358,7 @@ s2.addShape(pptx.ShapeType.roundRect, {
   fill: { color: 'FFFFFF' },
   line: { color: 'CBD5E1', width: 1 },
 });
-s2.addText('🥾 FOOTWEAR & WEATHER PROTECTION', {
+s2.addText('🥾 FOOTWEAR & SANCTUARY WOOD PREPARATION', {
   x: 0.8,
   y: 1.15,
   w: 3.9,
@@ -370,11 +370,13 @@ s2.addText('🥾 FOOTWEAR & WEATHER PROTECTION', {
 });
 s2.addText(
   [
-    { text: '• Walking Boots / Shoes: ', options: { bold: true } },
-    { text: 'Must be sturdy, comfortable & broken-in. Flanders mud can be slippery.\n' },
+    { text: '• Sanctuary Wood Trenches: ', options: { bold: true } },
+    { text: 'Real, muddy frontline trenches. Must bring boots/wellies!\n' },
+    { text: '• Separate Footwear & Plastic Bag: ', options: { bold: true } },
+    { text: 'Bring spare clean shoes/trainers + carrier bag for muddy boots.\n' },
     { text: '• Waterproof Raincoat: ', options: { bold: true } },
     { text: 'Windproof with hood. We tour regardless of light rain.\n' },
-    { text: '• Warm Fleece / Mid-layer: ', options: { bold: true } },
+    { text: '• Warm Fleece & Layers: ', options: { bold: true } },
     { text: 'Temperatures drop quickly on exposed ridges.\n' },
     { text: '• Hat & Gloves: ', options: { bold: true } },
     { text: 'Crucial for standing still during the 8:00 PM Menin Gate ceremony.' },
@@ -384,10 +386,10 @@ s2.addText(
     y: 1.42,
     w: 3.9,
     h: 1.45,
-    fontSize: 9,
+    fontSize: 8.5,
     fontFace: 'Arial',
     color: '334155',
-    lineSpacingMultiple: 1.08,
+    lineSpacingMultiple: 1.05,
   },
 );
 
@@ -401,7 +403,7 @@ s2.addShape(pptx.ShapeType.roundRect, {
   fill: { color: 'FFFFFF' },
   line: { color: 'CBD5E1', width: 1 },
 });
-s2.addText('🎒 LUGGAGE & DAYPACK RULES', {
+s2.addText('🎒 LUGGAGE, TOWELS & WASHBAG', {
   x: 5.3,
   y: 1.15,
   w: 3.9,
@@ -413,26 +415,26 @@ s2.addText('🎒 LUGGAGE & DAYPACK RULES', {
 });
 s2.addText(
   [
-    { text: '• 1 Main Holdall / Medium Suitcase: ', options: { bold: true } },
-    { text: 'Goes underneath in coach hold until arrival at hostel.\n' },
+    { text: '• TOWELS (Mandatory): ', options: { bold: true } },
+    { text: 'Pupils must bring their own bath/shower towel! (None provided).\n' },
+    { text: '• Washbag & Shower Gel: ', options: { bold: true } },
+    { text: 'Shower gel, shampoo, toothbrush, roll-on deodorant (no aerosols).\n' },
+    { text: '• 1 Main Holdall / Case: ', options: { bold: true } },
+    { text: 'Goes underneath in coach hold until arrival at hostel (max 15kg).\n' },
     { text: '• 1 Small Daypack: ', options: { bold: true } },
-    {
-      text: 'Stays with student on coach. Contains waterproofs, water bottle, Day 1 packed lunch & phone.\n',
-    },
+    { text: 'Stays on coach. Holds waterproofs, plastic bag, packed lunch & water.\n' },
     { text: '• Casual Clothes: ', options: { bold: true } },
-    { text: 'Practical, comfortable clothing for downtime at hostel. No restaurant wear.\n' },
-    { text: '• Nightwear & Washbag: ', options: { bold: true } },
-    { text: 'Towel, toothbrush, roll-on deodorant (no aerosols).' },
+    { text: 'Comfortable clothing for downtime at hostel. No restaurant wear.' },
   ],
   {
     x: 5.3,
     y: 1.42,
     w: 3.9,
     h: 1.45,
-    fontSize: 9,
+    fontSize: 8.5,
     fontFace: 'Arial',
     color: '334155',
-    lineSpacingMultiple: 1.08,
+    lineSpacingMultiple: 1.05,
   },
 );
 

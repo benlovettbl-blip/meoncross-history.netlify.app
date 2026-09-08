@@ -306,23 +306,27 @@ export const unitData = {
           theme_heading: 'Essential Kit Checklist & Weather Protection',
           text: `
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 24px;">
-              <div style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; padding: 18px; box-shadow: 0 2px 4px rgba(0,0,0,0.04);">
-                <h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 1.05rem;"><i class="fa-solid fa-boot"></i> Footwear &amp; Outerwear</h4>
-                <ul style="margin: 0; padding-left: 18px; color: #334155; font-size: 0.92rem; line-height: 1.5;">
-                  <li><strong>Sturdy Walking Boots / Waterproof Shoes:</strong> Essential and broken-in. Flanders mud and grass slopes are slippery. No thin canvas trainers.</li>
+              <div style="background: white; border: 1.5px solid #cbd5e1; border-top: 4px solid #1e3a8a; border-radius: 8px; padding: 18px; box-shadow: 0 2px 4px rgba(0,0,0,0.04);">
+                <h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 1.05rem;"><i class="fa-solid fa-boot"></i> Footwear &amp; Sanctuary Wood Preparation</h4>
+                <ul style="margin: 0; padding-left: 18px; color: #334155; font-size: 0.92rem; line-height: 1.55;">
+                  <li><strong>Sanctuary Wood Trenches (Crucial):</strong> At Sanctuary Wood (Hill 62), pupils will walk through real, preserved, deep frontline trenches. These trenches are notoriously muddy and wet.</li>
+                  <li><strong>Separate Pair of Shoes / Wellington Boots:</strong> Pupils <strong>MUST bring a separate pair of wellington boots or sturdy walking boots</strong> specifically for walking in the muddy trenches, plus a clean, separate pair of shoes/trainers to change into afterwards.</li>
+                  <li><strong>Sturdy Plastic Bag (Essential):</strong> Every pupil must pack a strong plastic carrier bag (or bin bag) in their daypack to seal away their muddy, wet boots before re-boarding the coach and entering the hostel!</li>
                   <li><strong>Waterproof &amp; Windproof Raincoat:</strong> Hooded jacket. We tour regardless of light rain.</li>
                   <li><strong>Warm Fleece / Layers:</strong> Temperatures drop quickly on exposed ridges like Passchendaele.</li>
                   <li><strong>Warm Winter Hat &amp; Gloves:</strong> Mandatory! Standing still on stone ramparts during the 8:00 PM Menin Gate ceremony gets extremely cold in October.</li>
+                  <li><strong>Socks:</strong> At least 4–5 pairs of thick walking socks.</li>
                 </ul>
               </div>
 
-              <div style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; padding: 18px; box-shadow: 0 2px 4px rgba(0,0,0,0.04);">
-                <h4 style="margin: 0 0 8px 0; color: #b45309; font-size: 1.05rem;"><i class="fa-solid fa-suitcase-rolling"></i> Luggage &amp; Daily Bag</h4>
-                <ul style="margin: 0; padding-left: 18px; color: #334155; font-size: 0.92rem; line-height: 1.5;">
+              <div style="background: white; border: 1.5px solid #cbd5e1; border-top: 4px solid #b45309; border-radius: 8px; padding: 18px; box-shadow: 0 2px 4px rgba(0,0,0,0.04);">
+                <h4 style="margin: 0 0 8px 0; color: #b45309; font-size: 1.05rem;"><i class="fa-solid fa-suitcase-rolling"></i> Luggage, Towels &amp; Washbag</h4>
+                <ul style="margin: 0; padding-left: 18px; color: #334155; font-size: 0.92rem; line-height: 1.55;">
+                  <li><strong>TOWELS (Mandatory):</strong> Pupils <strong>MUST bring their own bath/shower towels</strong>! The hostel does not provide towels for school groups.</li>
+                  <li><strong>Washbag &amp; Toiletries:</strong> Shower gel, shampoo, soap, toothbrush, toothpaste, and roll-on deodorant only (strictly NO aerosol sprays permitted on coach or in hostel rooms).</li>
                   <li><strong>1 Main Holdall / Medium Suitcase:</strong> Stored under coach during travel (max 15kg).</li>
-                  <li><strong>1 Small Daypack (Rucksack):</strong> Kept on coach seats with student. Contains rain jacket, water bottle, Day 1 packed lunch, and notebook/pen.</li>
+                  <li><strong>1 Small Daypack (Rucksack):</strong> Kept on coach seats with student. Contains rain jacket, plastic bag for muddy boots, water bottle, Day 1 packed lunch, and notebook/pen.</li>
                   <li><strong>Comfortable Casual Clothing:</strong> Practical, comfortable clothing for hostel downtime (jeans, joggers, hoodies, t-shirts; no formal clothes needed).</li>
-                  <li><strong>Washbag:</strong> Roll-on deodorant only (strictly NO aerosol sprays permitted on coach).</li>
                   <li><strong>Mobile Phones:</strong> Permitted during the day; collected each evening in a dedicated staff phone bag at curfew for a restful night.</li>
                 </ul>
               </div>
