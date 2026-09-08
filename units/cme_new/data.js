@@ -5003,7 +5003,7 @@ export const unitData = {
         {
           term: 'Fatah',
           definition:
-            'A radical guerrilla movement founded by  that believed in using irregular armed resistance to liberate Palestine.',
+            'A radical guerrilla movement founded by Yasser Arafat that believed in using irregular armed resistance to liberate Palestine.',
         },
         {
           term: 'Pre-emptive Strike',
@@ -5069,7 +5069,7 @@ export const unitData = {
         {
           term: 'Fatah',
           definition:
-            'Palestinian guerrilla group founded in 1959 by , became dominant military faction in the PLO.',
+            'Palestinian guerrilla group founded in 1959 by Yasser Arafat, became dominant military faction in the PLO.',
         },
         {
           term: 'Samu Raid',
@@ -7598,7 +7598,7 @@ export const unitData = {
           tasks: [
             {
               type: 'written',
-              text: 'Why did  believe he desperately needed to secure the return of the Sinai Peninsula? (P5)',
+              text: 'Why did Anwar Sadat believe he desperately needed to secure the return of the Sinai Peninsula? (P5)',
               model:
                 "Sadat needed to return the Sinai and reopen the Suez Canal to revive Egypt's collapsing economy and send home his one million mobilized soldiers, who were straining the country's resources.",
             },
