@@ -1216,10 +1216,16 @@ allDirs.forEach((unitId) => {
 
       // Extended Scholarship
       if (lesson.extended && lesson.extended.paragraphs) {
-        html += `<h3 style="margin-top: 40px; page-break-before: auto;">${lesson.extended.title}</h3>`;
-        lesson.extended.paragraphs.forEach((para) => {
-          html += `<p class="narrative-block" style="font-size: 12pt; color: #444;">${formatText(para)}</p>`;
-        });
+        if (!(
+          unitId === 'cme_new' &&
+          lesson.extended.title &&
+          lesson.extended.title.toLowerCase().includes('map task')
+        )) {
+          html += `<h3 style="margin-top: 40px; page-break-before: auto;">${lesson.extended.title}</h3>`;
+          lesson.extended.paragraphs.forEach((para) => {
+            html += `<p class="narrative-block" style="font-size: 12pt; color: #444;">${formatText(para)}</p>`;
+          });
+        }
       }
 
       // Narrative
@@ -1916,33 +1922,45 @@ allDirs.forEach((unitId) => {
         }
 
         if (lesson.extended && lesson.extended.question) {
-          if (unitId === 'cme_new' && lesson.extended.title && lesson.extended.title.toLowerCase().includes('map task')) {
-            html += `<div class="task-box" style="page-break-before: always; break-before: page; page-break-inside: avoid; break-inside: avoid; margin-top: 15px; margin-bottom: 20px; border: 2px solid #1e3a8a; border-radius: 8px; padding: 14px; background: #ffffff;">`;
-            html += `<h3 style="margin-top: 0; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 6px; font-size: 12.5pt;">${lesson.extended.title}</h3>`;
-            html += `<p style="font-size: 9.5pt; color: #334155; margin-bottom: 10px; line-height: 1.45;">${lesson.extended.instructions || lesson.extended.question}</p>`;
-            
+          if (
+            unitId === 'cme_new' &&
+            lesson.extended.title &&
+            lesson.extended.title.toLowerCase().includes('map task')
+          ) {
+            html += `<div class="task-box" style="margin-top: 10px; margin-bottom: 15px; border: 2px solid #1e3a8a; border-radius: 8px; padding: 10px 14px; background: #ffffff; page-break-inside: avoid;">`;
+            if (lesson.extended.paragraphs && lesson.extended.paragraphs.length > 0) {
+              html += `<div style="font-size: 9pt; color: #475569; margin-bottom: 8px; line-height: 1.35;">${lesson.extended.paragraphs.map((p) => formatText(p)).join(' ')}</div>`;
+            }
+            html += `<p style="font-size: 9.5pt; color: #1e293b; font-weight: 500; margin-bottom: 8px; line-height: 1.4;">${lesson.extended.instructions || lesson.extended.question}</p>`;
+
             if (lesson.extended.checklist) {
               const cl = lesson.extended.checklist;
-              html += `<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px 12px; margin-bottom: 12px; font-size: 9pt; line-height: 1.5;">`;
-              html += `<div style="font-weight: bold; color: #1e293b; margin-bottom: 6px; text-transform: uppercase; font-size: 8.5pt; letter-spacing: 0.5px;">Pupil Task Checklist:</div>`;
-              html += `<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 14px;">`;
+              html += `<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 8px 12px; margin-bottom: 8px; font-size: 8.5pt; line-height: 1.45;">`;
+              html += `<div style="font-weight: bold; color: #1e293b; margin-bottom: 4px; text-transform: uppercase; font-size: 8pt; letter-spacing: 0.5px;">Pupil Task Checklist:</div>`;
+              html += `<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 14px;">`;
               if (cl.countries) {
-                html += `<div><strong style="color: #1e3a8a;">🌍 Countries (9):</strong><br>${cl.countries.map(c => `<span style="display: inline-block; margin-right: 8px; font-family: monospace;">&#9633; ${c}</span>`).join(' ')}</div>`;
+                html += `<div><strong style="color: #1e3a8a;">🌍 Countries (9):</strong><br>${cl.countries.map((c) => `<span style="display: inline-block; margin-right: 8px; font-family: monospace;">&#9633; ${c}</span>`).join(' ')}</div>`;
               }
               if (cl.capitals) {
-                html += `<div><strong style="color: #1e3a8a;">🏛️ Capitals (8):</strong><br>${cl.capitals.map(c => `<span style="display: inline-block; margin-right: 8px; font-family: monospace;">&#9633; ${c}</span>`).join(' ')}</div>`;
+                html += `<div><strong style="color: #1e3a8a;">🏛️ Capitals (8):</strong><br>${cl.capitals.map((c) => `<span style="display: inline-block; margin-right: 8px; font-family: monospace;">&#9633; ${c}</span>`).join(' ')}</div>`;
               }
               if (cl.waterways) {
-                html += `<div style="grid-column: 1 / -1; margin-top: 4px; border-top: 1px dashed #cbd5e1; padding-top: 6px;"><strong style="color: #1e3a8a;">🌊 Waterways & Chokepoints (8):</strong><br>${cl.waterways.map(w => `<span style="display: inline-block; margin-right: 10px; font-family: monospace;">&#9633; ${w}</span>`).join(' ')} <span style="display: inline-block; margin-right: 10px; font-family: monospace; font-weight: bold; color: #9a3412;">&#9633; Sinai Peninsula</span></div>`;
+                html += `<div style="grid-column: 1 / -1; margin-top: 3px; border-top: 1px dashed #cbd5e1; padding-top: 4px;"><strong style="color: #1e3a8a;">🌊 Waterways & Chokepoints (8):</strong><br>${cl.waterways.map((w) => `<span style="display: inline-block; margin-right: 10px; font-family: monospace;">&#9633; ${w}</span>`).join(' ')} <span style="display: inline-block; margin-right: 10px; font-family: monospace; font-weight: bold; color: #9a3412;">&#9633; Sinai Peninsula</span></div>`;
               }
               html += `</div></div>`;
             }
 
-            const mapImg = typeof lesson.extended.source_a === 'string' ? lesson.extended.source_a : (lesson.extended.source_a ? lesson.extended.source_a.content : '/images/middle_east_map.png');
-            html += `<div style="text-align: center; margin: 8px 0;">`;
-            html += `<img src="../../${mapImg.replace(/^\//, '')}" style="width: 100%; max-height: 480px; object-fit: contain; border: 1.5px solid #475569; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); background: #ffffff;" alt="Middle East Blank Outline Map">`;
+            const mapImg =
+              typeof lesson.extended.source_a === 'string'
+                ? lesson.extended.source_a
+                : lesson.extended.source_a
+                  ? lesson.extended.source_a.content
+                  : '/images/middle_east_map.png';
+            html += `<div style="text-align: center; margin: 4px 0;">`;
+            html += `<img src="../../${mapImg.replace(/^\//, '')}" style="width: 100%; max-height: 440px; object-fit: contain; border: 1.5px solid #475569; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); background: #ffffff;" alt="Middle East Blank Outline Map">`;
             html += `</div>`;
-            html += `</div>`;
+            html += `</div>`; // Close task-box
+            html += `</div>`; // Close Map Task 1 page wrapper
           } else {
             if (lesson.extended.source_a || lesson.extended.source_b) {
               let letterA = String.fromCharCode(sourceCharCode++);
@@ -2030,7 +2048,10 @@ allDirs.forEach((unitId) => {
             if (_extInfo.badgeHtml) {
               html += _extInfo.badgeHtml;
             }
-            if (!lesson.extended.title || !lesson.extended.title.toLowerCase().includes('map task')) {
+            if (
+              !lesson.extended.title ||
+              !lesson.extended.title.toLowerCase().includes('map task')
+            ) {
               renderLines(lesson.extended.question, lesson.extended.lines);
             }
             html += `<br>`;
@@ -2040,38 +2061,46 @@ allDirs.forEach((unitId) => {
         if (unitId === 'cme_new' && lesson.secondary_map) {
           const sm = lesson.secondary_map;
           html += `<div style="page-break-before: always; break-before: always; margin-top: 20px;">`;
-          html += `<div class="task-box" style="page-break-inside: avoid; break-inside: avoid; border: 2px solid #1e3a8a; border-radius: 8px; padding: 14px; background: #ffffff;">`;
-          html += `<h3 style="margin-top: 0; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 6px; font-size: 12.5pt;">${sm.title}</h3>`;
-          html += `<p style="font-size: 9.5pt; color: #334155; margin-bottom: 10px; line-height: 1.45;">${sm.instructions}</p>`;
+          html += `<h2 style="margin-top: 0; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 5px;">${sm.title}</h2>`;
+          html += `<div class="task-box" style="page-break-inside: avoid; break-inside: avoid; border: 2px solid #1e3a8a; border-radius: 8px; padding: 10px 14px; background: #ffffff; margin-top: 10px; margin-bottom: 15px;">`;
+          html += `<p style="font-size: 9.5pt; color: #334155; margin-bottom: 8px; line-height: 1.4;">${sm.instructions}</p>`;
 
           if (sm.checklist) {
-            html += `<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px 12px; margin-bottom: 12px; font-size: 9pt; line-height: 1.5;">`;
-            html += `<div style="font-weight: bold; color: #1e293b; margin-bottom: 6px; text-transform: uppercase; font-size: 8.5pt; letter-spacing: 0.5px;">Pupil Task Checklist:</div>`;
-            html += `<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 14px;">`;
+            html += `<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 8px 12px; margin-bottom: 8px; font-size: 8.5pt; line-height: 1.45;">`;
+            html += `<div style="font-weight: bold; color: #1e293b; margin-bottom: 4px; text-transform: uppercase; font-size: 8pt; letter-spacing: 0.5px;">Pupil Task Checklist:</div>`;
+            html += `<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 14px;">`;
             if (sm.checklist.neighbours) {
-              html += `<div><strong style="color: #1e3a8a;">🚩 4 Immediate Neighbours:</strong><br>${sm.checklist.neighbours.map(n => `<div style="font-family: monospace; margin: 1px 0;">&#9633; ${n}</div>`).join('')}</div>`;
+              html += `<div><strong style="color: #1e3a8a;">🚩 4 Immediate Neighbours:</strong><br>${sm.checklist.neighbours.map((n) => `<div style="font-family: monospace; margin: 1px 0;">&#9633; ${n}</div>`).join('')}</div>`;
             }
             if (sm.checklist.waterways) {
-              html += `<div><strong style="color: #1e3a8a;">💧 Strategic Water Bodies:</strong><br>${sm.checklist.waterways.map(w => `<div style="font-family: monospace; margin: 1px 0;">&#9633; ${w}</div>`).join('')}</div>`;
+              html += `<div><strong style="color: #1e3a8a;">💧 Strategic Water Bodies:</strong><br>${sm.checklist.waterways.map((w) => `<div style="font-family: monospace; margin: 1px 0;">&#9633; ${w}</div>`).join('')}</div>`;
             }
             if (sm.checklist.occupied_territories) {
-              html += `<div style="grid-column: 1 / -1; margin-top: 4px; border-top: 1px dashed #cbd5e1; padding-top: 6px;">`;
+              html += `<div style="grid-column: 1 / -1; margin-top: 3px; border-top: 1px dashed #cbd5e1; padding-top: 4px;">`;
               html += `<strong style="color: #dc2626;">🖍️ Occupied Territories (June 1967):</strong> <span style="font-style: italic; color: #475569;">(Shade with diagonal lines /// and label)</span><br>`;
-              html += `<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 14px; margin-top: 3px;">`;
-              html += sm.checklist.occupied_territories.map(ot => `<div style="font-family: monospace;">&#9633; ${ot}</div>`).join('');
+              html += `<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 3px 14px; margin-top: 2px;">`;
+              html += sm.checklist.occupied_territories
+                .map((ot) => `<div style="font-family: monospace;">&#9633; ${ot}</div>`)
+                .join('');
               html += `</div>`;
-              html += `<div style="margin-top: 5px; font-family: monospace; font-weight: bold; color: #1e3a8a;">&#9633; Jerusalem ★ (Mark with a star on the 1949 Green Line)</div>`;
+              html += `<div style="margin-top: 4px; font-family: monospace; font-weight: bold; color: #1e3a8a;">&#9633; Jerusalem ★ (Mark with a star on the 1949 Green Line)</div>`;
               html += `</div>`;
             }
             html += `</div></div>`;
           }
 
-          const smMapImg = typeof sm.source_a === 'string' ? sm.source_a : (sm.source_a ? sm.source_a.content : '/images/israel_zoomed_map.png');
-          html += `<div style="text-align: center; margin: 8px 0;">`;
-          html += `<img src="../../${smMapImg.replace(/^\//, '')}" style="width: 100%; max-height: 520px; object-fit: contain; border: 1.5px solid #475569; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); background: #ffffff;" alt="Israel and Frontiers Outline Map">`;
+          const smMapImg =
+            typeof sm.source_a === 'string'
+              ? sm.source_a
+              : sm.source_a
+                ? sm.source_a.content
+                : '/images/israel_zoomed_map.png';
+          html += `<div style="text-align: center; margin: 4px 0;">`;
+          html += `<img src="../../${smMapImg.replace(/^\//, '')}" style="width: 100%; max-height: 480px; object-fit: contain; border: 1.5px solid #475569; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); background: #ffffff;" alt="Israel and Frontiers Outline Map">`;
           html += `</div>`;
+          html += `</div>`; // close task-box
+          html += `</div>`; // close Map Task 2 page wrapper
         }
-
 
         if (lesson.gcse_task) {
           html += `<div class="task-box" style="margin-bottom: 15px; page-break-inside: auto; border-top: none; padding-top: 0; margin-top: 0;">`;
@@ -2256,7 +2285,11 @@ allDirs.forEach((unitId) => {
           epStimulus = lesson.exam_practice.stimulus || [];
         }
         if (epArray && epArray.length > 0) {
-          html += `<div class="task-box" style="margin-bottom: 10px; page-break-inside: auto; border-top: none; padding-top: 0; margin-top: 0;">`;
+          if (unitId === 'cme_new' && lesson.secondary_map) {
+            html += `<div style="page-break-before: always; margin-top: 20px;">`;
+            html += `<h2 style="margin-top: 0; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 5px;">GCSE Exam Practice</h2>`;
+          }
+          html += `<div class="task-box" style="margin-bottom: 10px; page-break-inside: avoid; border-top: none; padding-top: 0; margin-top: 0;">`;
 
           let questionsBefore = [];
           let questionsAfter = [];
@@ -2502,7 +2535,9 @@ allDirs.forEach((unitId) => {
           questionsAfter.forEach((item, qIdx) => renderQuestionItem(item, false, qIdx));
           html += `</div>`;
         }
-        html += `</div>`;
+        if (!(unitId === 'cme_new' && lesson.secondary_map)) {
+          html += `</div>`;
+        }
       }
 
       // Full Page Map
@@ -2529,21 +2564,26 @@ allDirs.forEach((unitId) => {
       // --- EXIT TICKET (LESSON CLOSURE) FOR CME_NEW / PUPIL VOICE FOR OTHER UNITS ---
       if (unitId === 'cme_new' && lesson.exit_ticket) {
         const et = lesson.exit_ticket;
-        html += `<div class="exit-ticket-box" style="page-break-inside: avoid; margin-top: 25px; border: 2px solid #3b82f6; border-radius: 8px; padding: 15px; background: #f8fafc;">`;
-        html += `<div style="margin-bottom: 12px;">
-          <div style="font-weight: bold; color: #1e3a8a; font-size: 11pt; margin-bottom: 6px; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center;">
+        const etMargin = lesson.secondary_map ? '12px' : '20px';
+        html += `<div class="exit-ticket-box" style="page-break-inside: avoid; margin-top: ${etMargin}; border: 2px solid #3b82f6; border-radius: 8px; padding: 10px 14px; background: #f8fafc;">`;
+        html += `<div style="margin-bottom: 8px;">
+          <div style="font-weight: bold; color: #1e3a8a; font-size: 10pt; margin-bottom: 4px; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center;">
             <span>🚪 ${et.title || 'Exit Ticket'}</span>
-            <span style="font-size: 8.5pt; background: #dbeafe; color: #1e40af; padding: 2px 8px; border-radius: 9999px; font-weight: 600;">${et.type_label || 'Closure Activity'}</span>
+            <span style="font-size: 8pt; background: #dbeafe; color: #1e40af; padding: 2px 7px; border-radius: 9999px; font-weight: 600;">${et.type_label || 'Closure Activity'}</span>
           </div>
-          <p style="margin: 0 0 8px 0; font-size: 10pt; color: #1e293b; line-height: 1.4; font-weight: 500;">${formatText(et.prompt)}</p>
-          ${et.options && et.options.length > 0 ? `<div style="font-size: 9.5pt; color: #334155; margin-bottom: 8px; background: white; border: 1px solid #cbd5e1; border-radius: 4px; padding: 8px;">${et.options.map((o) => `<div style="margin-bottom: 4px;">• ${formatText(o)}</div>`).join('')}</div>` : ''}
-          ${et.guidance ? `<p style="margin: 0; font-size: 9pt; color: #64748b; font-style: italic;"><strong>Teacher Guidance:</strong> ${formatText(et.guidance)}</p>` : ''}
+          <p style="margin: 0 0 6px 0; font-size: 9pt; color: #1e293b; line-height: 1.35; font-weight: 500;">${formatText(et.prompt)}</p>
+          ${et.options && et.options.length > 0 ? `<div style="font-size: 8.5pt; color: #334155; margin-bottom: 6px; background: white; border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 8px; line-height: 1.3;">${et.options.map((o) => `<div style="margin-bottom: 3px;">• ${formatText(o)}</div>`).join('')}</div>` : ''}
+          ${et.guidance ? `<p style="margin: 0; font-size: 8pt; color: #64748b; font-style: italic;"><strong>Teacher Guidance:</strong> ${formatText(et.guidance)}</p>` : ''}
         </div>`;
-        html += `<div style="font-size: 9.5pt; font-weight: bold; color: #475569; margin-bottom: 6px;">Pupil Response:</div>`;
-        for (let i = 0; i < 6; i++) {
+        html += `<div style="font-size: 8.5pt; font-weight: bold; color: #475569; margin-bottom: 4px;">Pupil Response:</div>`;
+        for (let i = 0; i < 4; i++) {
           html += `<div class="task-lines-large"></div>`;
         }
         html += `</div>`;
+
+        if (unitId === 'cme_new' && lesson.secondary_map) {
+          html += `</div>`; // closes the GCSE Exam Practice + Exit Ticket page wrapper
+        }
       } else if (unitId !== 'cme_new') {
         // --- PUPIL VOICE (ROTATING DISCIPLINARY DEBRIEF ACROSS OTHER UNITS) ---
         const debriefQuestions = [
@@ -2572,14 +2612,16 @@ allDirs.forEach((unitId) => {
       }
 
       // Inject General Notes Box
-      html += `
-      <div style="page-break-before: always; margin-top: 20px;">
-        <h3 style="margin-top: 0; color: #334155;">General Notes</h3>
-    `;
-      for (let i = 0; i < 18; i++) {
-        html += `<div class="task-lines-large"></div>`;
+      if (unitId !== 'cme_new') {
+        html += `
+        <div style="page-break-before: always; margin-top: 20px;">
+          <h3 style="margin-top: 0; color: #334155;">General Notes</h3>
+      `;
+        for (let i = 0; i < 18; i++) {
+          html += `<div class="task-lines-large"></div>`;
+        }
+        html += `</div>`;
       }
-      html += `</div>`;
 
       // Inject Discreet Grading Footer for the Lesson (KS3 ONLY)
       const isGCSEUnit = ['weimar_nazi_germany', 'cme_new', 'edexcel_medicine', 'eee'].includes(
