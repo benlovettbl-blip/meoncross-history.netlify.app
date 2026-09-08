@@ -212,6 +212,12 @@ export async function switchView(viewName, param = null, skipHistory = false) {
     });
   }
 
+  // Map direct unit view aliases
+  if (viewName === 'usa' || viewName === 'gcse_usa' || viewName === 'gcse_usa_1954_1975') {
+    viewName = 'lessons';
+    param = 'usa';
+  }
+
   // Handle view rendering
   if (viewName === 'dashboard') {
     renderDashboard();
@@ -340,8 +346,8 @@ async function loadUnit(unitId) {
     ) {
       state.activeUnitData.timelineEvents = state.activeUnitData.timeline.map((t) => ({
         year: t.date || t.year,
-        text: t.description || t.text,
-        title: t.title || '',
+        text: t.detail || t.description || t.text || '',
+        title: t.title || t.event || '',
       }));
     }
 

@@ -305,7 +305,7 @@ export function bindEvents() {
     sidebarUnitsContainer.appendChild(header9);
     sidebarUnitsContainer.appendChild(content9);
 
-    renderAccordionGroup('Year 10', year10Units, false);
-    renderAccordionGroup('Year 11', year11Units, false);
+    renderAccordionGroup('Year 10 (GCSE)', year10Units, true);
+    renderAccordionGroup('Year 11 (GCSE)', year11Units, true);
   }
 }

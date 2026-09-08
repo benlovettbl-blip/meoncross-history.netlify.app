@@ -1,0 +1,7 @@
+# Netlify Redirects for Legacy GCSE Sub-Apps
+/usa/*    /?view=lessons&unit=usa    302!
+/usa      /?view=lessons&unit=usa    302!
+/cme/*    /?view=lessons&unit=cme_new 302!
+/cme      /?view=lessons&unit=cme_new 302!
+/eee/*    /?view=lessons&unit=eee     302!
+/eee      /?view=lessons&unit=eee     302!

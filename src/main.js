@@ -45,8 +45,17 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   // Load view based on URL or fallback to dashboard
   const urlParams = new URLSearchParams(window.location.search);
-  const view = urlParams.get('view') || 'dashboard';
-  const unit = urlParams.get('unit');
+  let view = urlParams.get('view');
+  let unit = urlParams.get('unit');
+
+  if (view === 'usa' || view === 'gcse_usa' || view === 'gcse_usa_1954_1975') {
+    view = 'lessons';
+    unit = 'usa';
+  } else if (!view && unit) {
+    view = 'lessons';
+  } else if (!view) {
+    view = 'dashboard';
+  }
 
   switchView(view, unit, true).then(() => {
     if (window.location.hash && window.location.hash.includes('-section')) {

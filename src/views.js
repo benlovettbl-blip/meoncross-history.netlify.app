@@ -954,17 +954,19 @@ export function renderTimeline() {
       <h3 style="margin-bottom: 24px;"><i class="fa-solid fa-timeline text-primary"></i> Interactive Chronology Timeline</h3>
       <div class="timeline-wrapper">
         ${sortedEvents
-          .map(
-            (evt, idx) => `
+          .map((evt, idx) => {
+            const eventTitle = evt.title || evt.event || '';
+            const eventDetail = evt.text || evt.detail || evt.description || '';
+            return `
           <div class="timeline-item ${idx % 2 === 0 ? 'left' : 'right'}">
             <div class="timeline-badge">${evt.year}</div>
             <div class="timeline-panel">
-              <h4>${evt.year}</h4>
-              <p>${evt.text}</p>
+              <h4>${evt.year}${eventTitle ? ` · ${eventTitle}` : ''}</h4>
+              <p>${eventDetail}</p>
             </div>
           </div>
-        `,
-          )
+        `;
+          })
           .join('')}
       </div>
     </div>
