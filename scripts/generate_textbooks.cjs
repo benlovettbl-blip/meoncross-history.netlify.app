@@ -198,6 +198,23 @@ allDirs.forEach((unitId) => {
     .grade-box { display: flex; align-items: center; gap: 5px; }
     .grade-box input[type="checkbox"] { -webkit-appearance: none; appearance: none; width: 12px; height: 12px; border: 1px solid #777; border-radius: 2px;  }
     .teacher-comment { border-bottom: 1px solid #777; width: 100%; height: 20px; display: inline-block; margin-top: 5px; }
+    ${
+      unitId === 'cme_new'
+        ? `
+    /* Middle East GCSE Publication Quality Overrides */
+    .do-now-box { border-top: 2px solid #cbd5e1; padding-top: 10px; margin-top: 10px; margin-bottom: 12px; width: 100%; page-break-inside: avoid !important; break-inside: avoid !important; }
+    .source-container { border-top: 1.5px solid #cbd5e1; padding-top: 10px; margin-top: 10px; margin-bottom: 12px; text-align: center; page-break-inside: avoid !important; break-inside: avoid !important; }
+    .source-container img { max-height: 200px !important; object-fit: contain !important; display: block; margin: 0 auto; }
+    .task-box { page-break-inside: avoid !important; break-inside: avoid !important; margin-top: 10px; margin-bottom: 12px; }
+    @media print {
+      .do-now-box { page-break-inside: avoid !important; break-inside: avoid !important; }
+      .source-container { page-break-inside: avoid !important; break-inside: avoid !important; }
+      .task-box { page-break-inside: avoid !important; break-inside: avoid !important; }
+      h1, h2, h3, h4, h5, h6 { page-break-after: avoid !important; break-after: avoid !important; }
+    }
+    `
+        : ''
+    }
     @media print { body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; } * { box-shadow: none !important; border-radius: 0 !important; }
         img:not([src$=".svg"]) { max-width: 100% !important; object-fit: contain !important;  }
         .source-container { page-break-inside: auto; }
@@ -208,8 +225,6 @@ allDirs.forEach((unitId) => {
         button[onclick*="display='none'"] { display: none !important; }
       }
       img:not([src$=".svg"]) { max-width: 100% !important; object-fit: contain !important;  }
-      .source-container {  }
-    }
 </style>
 </head>
 <body>
@@ -257,18 +272,70 @@ allDirs.forEach((unitId) => {
           : `../..${bannerImageSrc.startsWith('/') ? bannerImageSrc : '/' + bannerImageSrc}`;
     }
 
-    html += `
-    <div class="cover-page" style="page-break-after: always; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px; height: 95vh; box-sizing: border-box; overflow: hidden; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border: 8px solid #1e3a8a; border-radius: 20px;">
-      <h1 style="font-size: 42pt; margin-bottom: 20px; color: #1e3a8a; font-weight: 800; letter-spacing: -1px; text-transform: uppercase;">${periodTitle}</h1>
-      ${(periodTitle || '').trim().toLowerCase() !== (unitData.title || '').trim().toLowerCase() ? `<h2 style="font-size: 20pt; margin-bottom: 40px; color: #334155; font-weight: 600; border: none;">${unitData.title}</h2>` : '<div style="margin-bottom: 40px;"></div>'}
-      ${bannerImageSrc ? `<div style="margin-bottom: 20px;"><img src="${bannerImageSrc}" style="max-height: 350px; max-width: 100%; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 2px solid #e2e8f0;"></div>` : ''}
-      
-      <div style="margin-top: 15px; width: 100%; max-width: 700px; text-align: center; padding: 30px; border: 1px solid #cbd5e1; border-radius: 16px; background-color: #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
-        <h3 style="margin-top: 0; color: #1e3a8a; margin-bottom: 15px; font-size: 22pt; text-transform: uppercase; letter-spacing: 1px;"><i class="fa-solid fa-book-open"></i> Course Textbook</h3>
-        ${unitData.enquiry ? `<p style="font-size: 14pt; color: #475569; font-style: italic; line-height: 1.5; margin-bottom: 0;"><strong>Enquiry:</strong> ${unitData.enquiry}</p>` : ''}
+    if (unitId === 'cme_new') {
+      html += `
+      <div class="cover-page" style="page-break-after: always; text-align: center; display: flex; flex-direction: column; justify-content: space-between; align-items: center; padding: 40px 35px; min-height: 94vh; box-sizing: border-box; background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%); border: 4px solid #3b82f6; border-radius: 14px; color: #ffffff;">
+        <div style="width: 100%;">
+          <div style="display: inline-block; background: #1e3a8a; border: 1.5px solid #60a5fa; color: #93c5fd; font-weight: 700; font-size: 9.5pt; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 18px; border-radius: 999px; margin-bottom: 20px;">
+            Edexcel GCSE (9–1) History &bull; Option 26/27
+          </div>
+          <h1 style="font-family: 'Playfair Display', serif; font-size: 32pt; margin: 0 0 8px 0; color: #ffffff; font-weight: 800; letter-spacing: -0.5px; text-transform: uppercase; line-height: 1.15;">
+            Conflict in the Middle East
+          </h1>
+          <div style="font-size: 15pt; color: #38bdf8; font-weight: 600; letter-spacing: 2px; margin-bottom: 12px; text-transform: uppercase;">
+            1945–1995
+          </div>
+          <div style="width: 80px; height: 3px; background: #f59e0b; margin: 0 auto 16px auto; border-radius: 2px;"></div>
+          <h2 style="font-family: 'Outfit', sans-serif; font-size: 16pt; color: #f8fafc; font-weight: 600; margin: 0 0 10px 0; border: none; padding: 0;">
+            ${periodTitle}
+          </h2>
+        </div>
+
+        ${
+          bannerImageSrc
+            ? `
+        <div style="width: 100%; max-width: 620px; margin: 10px 0;">
+          <img src="${bannerImageSrc}" style="width: 100%; max-height: 330px; object-fit: cover; border-radius: 8px; box-shadow: 0 12px 30px rgba(0,0,0,0.5); border: 2px solid #475569; display: block;" alt="Key Historical Source">
+          <div style="font-size: 8pt; color: #94a3b8; font-style: italic; margin-top: 6px;">
+            David Ben-Gurion reads the Declaration of Independence beneath the portrait of Theodor Herzl (Tel Aviv, 14 May 1948).
+          </div>
+        </div>
+        `
+            : ''
+        }
+
+        <div style="width: 100%; max-width: 640px; text-align: center; padding: 18px 24px; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(8px); box-shadow: 0 10px 25px rgba(0,0,0,0.3);">
+          <div style="color: #60a5fa; font-size: 12pt; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 6px;">
+            Official Course Textbook
+          </div>
+          ${
+            unitData.enquiry
+              ? `
+          <div style="font-size: 11pt; color: #e2e8f0; font-style: italic; line-height: 1.4;">
+            <strong>Enquiry:</strong> &ldquo;${unitData.enquiry}&rdquo;
+          </div>
+          `
+              : ''
+          }
+        </div>
       </div>
-    </div>
-    
+      `;
+    } else {
+      html += `
+      <div class="cover-page" style="page-break-after: always; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px; height: 95vh; box-sizing: border-box; overflow: hidden; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border: 8px solid #1e3a8a; border-radius: 20px;">
+        <h1 style="font-size: 42pt; margin-bottom: 20px; color: #1e3a8a; font-weight: 800; letter-spacing: -1px; text-transform: uppercase;">${periodTitle}</h1>
+        ${(periodTitle || '').trim().toLowerCase() !== (unitData.title || '').trim().toLowerCase() ? `<h2 style="font-size: 20pt; margin-bottom: 40px; color: #334155; font-weight: 600; border: none;">${unitData.title}</h2>` : '<div style="margin-bottom: 40px;"></div>'}
+        ${bannerImageSrc ? `<div style="margin-bottom: 20px;"><img src="${bannerImageSrc}" style="max-height: 350px; max-width: 100%; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 2px solid #e2e8f0;"></div>` : ''}
+        
+        <div style="margin-top: 15px; width: 100%; max-width: 700px; text-align: center; padding: 30px; border: 1px solid #cbd5e1; border-radius: 16px; background-color: #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
+          <h3 style="margin-top: 0; color: #1e3a8a; margin-bottom: 15px; font-size: 22pt; text-transform: uppercase; letter-spacing: 1px;"><i class="fa-solid fa-book-open"></i> Course Textbook</h3>
+          ${unitData.enquiry ? `<p style="font-size: 14pt; color: #475569; font-style: italic; line-height: 1.5; margin-bottom: 0;"><strong>Enquiry:</strong> ${unitData.enquiry}</p>` : ''}
+        </div>
+      </div>
+      `;
+    }
+
+    html += `
     <div style="margin-top: 25px; padding: 25px; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
       <h2 style="margin-top: 0; font-family: 'Playfair Display', serif; color: #1e3a8a; font-size: 22pt; border-bottom: 2px solid #93c5fd; padding-bottom: 10px; text-align: center;">Contents</h2>
       <table   style="page-break-inside: avoid; width: 100%; border: none; margin-top: 15px;">
@@ -553,14 +620,25 @@ allDirs.forEach((unitId) => {
           (!lesson.do_now.type && (lesson.do_now.items || lesson.do_now.questions))
         ) {
           let items = lesson.do_now.items || lesson.do_now.questions;
-          html += `<div class="do-now-box" style="padding: 5px; margin-bottom: 5px;">
+          html += `<div class="do-now-box" style="padding: 5px; margin-bottom: 5px; page-break-inside: avoid !important; break-inside: avoid !important;">
                    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 5px;">
-                     <h3 style="margin: 0; font-size: 11pt;">Do Now Activity</h3>
+                     <h3 style="margin: 0; font-size: 11pt;">${lesson.do_now.title || 'Do Now Activity (Prior Knowledge Recall)'}</h3>
                    </div>`;
           if (items) {
+            let useGrid = items.length > 5;
+            if (useGrid) {
+              html += `<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 15px;">`;
+            }
             items.forEach((item, index) => {
-              html += `<div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">${item.question}</div>`;
+              let qText = item.question || item.q || item;
+              if (typeof qText === 'string' && !qText.match(/^\d+\./)) {
+                qText = `<strong>${index + 1}.</strong> ${qText}`;
+              }
+              html += `<div class="do-now-q" style="font-size: 9pt; margin-bottom: 4px; line-height: 1.35;">${qText}</div>`;
             });
+            if (useGrid) {
+              html += `</div>`;
+            }
           }
           html += `</div>`;
         }
@@ -963,10 +1041,19 @@ allDirs.forEach((unitId) => {
 
       // Extended Scholarship
       if (lesson.extended && lesson.extended.paragraphs) {
-        html += `<h3 style="margin-top: 40px; page-break-before: auto;">${lesson.extended.title}</h3>`;
-        lesson.extended.paragraphs.forEach((para) => {
-          html += `<p class="narrative-block" style="font-size: 12pt; color: #444;">${formatText(para)}</p>`;
-        });
+        if (
+          unitId === 'cme_new' &&
+          lesson.extended.title &&
+          lesson.extended.title.toLowerCase().includes('map task')
+        ) {
+          // In cme_new, Map Task 1 has its own dedicated full-page reference guide and map layout
+          // Do not render duplicate heading and paragraphs here before Pair & Share
+        } else {
+          html += `<h3 style="margin-top: 40px; page-break-before: auto;">${lesson.extended.title}</h3>`;
+          lesson.extended.paragraphs.forEach((para) => {
+            html += `<p class="narrative-block" style="font-size: 12pt; color: #444;">${formatText(para)}</p>`;
+          });
+        }
       }
 
       // Narrative
@@ -1199,7 +1286,11 @@ allDirs.forEach((unitId) => {
         };
 
         if (lesson.extended && lesson.extended.question) {
-          if (unitId === 'cme_new' && lesson.extended.title && lesson.extended.title.toLowerCase().includes('map task')) {
+          if (
+            unitId === 'cme_new' &&
+            lesson.extended.title &&
+            lesson.extended.title.toLowerCase().includes('map task')
+          ) {
             const ansImg = lesson.extended.answer_image || '/images/middle_east_map_answers.png';
             html += `
             <div style="page-break-before: always; break-before: page; page-break-inside: avoid; break-inside: avoid; margin-top: 20px; margin-bottom: 25px; border: 2px solid #1e3a8a; border-radius: 8px; padding: 15px; background: #ffffff;">
@@ -1272,7 +1363,10 @@ allDirs.forEach((unitId) => {
               html += `<div style="margin-top: 15px; margin-bottom: 15px; padding-top: 12px; padding-bottom: 12px;  border: 1px solid #bfdbfe; border-radius: 6px; "><strong style="color: #1e3a8a;">Provenance Scaffolding:</strong><p style="margin: 5px 0 0 0; color: #1e40af; font-style: italic;">${formatText(lesson.extended.provenance_clue)}</p></div>`;
             }
             html += `<div style="margin-top: 15px;"><strong>Q${globalQNum++}. ${formatText(lesson.extended.question)}</strong></div>`;
-            if (!lesson.extended.title || !lesson.extended.title.toLowerCase().includes('map task')) {
+            if (
+              !lesson.extended.title ||
+              !lesson.extended.title.toLowerCase().includes('map task')
+            ) {
               renderLines(lesson.extended.question);
             }
             html += `<br>`;
@@ -1319,7 +1413,7 @@ allDirs.forEach((unitId) => {
           `;
         }
 
-        if (lesson.sources && lesson.sources.length > 0 && isGCSE) {
+        if (lesson.sources && lesson.sources.length > 0 && isGCSE && unitId !== 'cme_new') {
           html += `<div style="page-break-inside: auto; margin-bottom: 15px; margin-top: 20px;">`;
           if (unitId === 'cme_new') {
             html += `<div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-evenly;">`;
