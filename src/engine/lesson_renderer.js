@@ -600,6 +600,30 @@ export function renderLesson(lesson) {
     }
   }
 
+  if (unitId === 'industrialisation_and_empire' && lesson.primary_source_dossier) {
+    const psd = lesson.primary_source_dossier;
+    htmlSources1 += `
+      <div class="primary-source-dossier-banner" style="background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%); border-radius: 12px; padding: 20px 24px; color: #ffffff; margin: 20px 0 24px 0; box-shadow: 0 4px 15px rgba(30, 58, 138, 0.2); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div style="flex: 1 1 320px;">
+          <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(245, 158, 11, 0.2); border: 1px solid rgba(245, 158, 11, 0.4); padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px;">
+            <i class="fa-solid fa-box-archive"></i> Hampshire Archives Research Pack
+          </div>
+          <h3 style="margin: 0 0 6px 0; font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #ffffff; font-weight: 700;">
+            ${psd.title || 'Primary Source Archival Dossier'}
+          </h3>
+          <p style="margin: 0; font-size: 0.92rem; color: #cbd5e1; line-height: 1.5;">
+            ${psd.description || 'Download our authentic 1-page primary source research dossier to investigate historical records, maps, and official reports.'}
+          </p>
+        </div>
+        <div style="flex-shrink: 0;">
+          <a href="${psd.pdf}" target="_blank" download style="display: inline-flex; align-items: center; gap: 8px; background: #f59e0b; color: #000; font-weight: 800; font-size: 0.9rem; padding: 12px 20px; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3); transition: transform 0.15s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+            <i class="fa-solid fa-file-pdf"></i> Download Starter Pack (PDF)
+          </a>
+        </div>
+      </div>
+    `;
+  }
+
   if (lesson.sources && lesson.sources.length > 0) {
     htmlSources1 += `<div class="sources-grid" style="margin-top: 20px;">`;
     lesson.sources.forEach((source) => {
@@ -1265,7 +1289,10 @@ export function renderLesson(lesson) {
             htmlNarrative += `<div class="embedded-tasks-container" style="margin-bottom: 25px; padding: 15px; background: #fffbeb; border: 2px dashed #fcd34d; border-radius: 6px;">`;
             block.tasks.forEach((task) => {
               const qNumPrefix = task.qNum ? `Q${task.qNum}. ` : '';
-              const cleanTaskText = (task.text || task.question || '').replace(/^Q\d+[\.\:]\s*/i, '');
+              const cleanTaskText = (task.text || task.question || '').replace(
+                /^Q\d+[\.\:]\s*/i,
+                '',
+              );
               htmlNarrative += `
                 <div class="task-box" style="margin-bottom: 12px; background: white; padding: 12px 15px; border-radius: 6px; border: 1px solid #fde68a;">
                   <strong style="color: #92400e; font-size: 1.05rem;">${qNumPrefix}${cleanTaskText}</strong>

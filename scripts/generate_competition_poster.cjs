@@ -1,9 +1,27 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
+const QRCode = require('qrcode');
 
 async function generatePoster() {
-  console.log('🎨 Generating Hampshire Archives Trust Competition A4 Poster...');
+  console.log('🎨 Generating Hampshire Archives Trust Competition A4 Poster with QR codes...');
+
+  // Generate QR Codes as base64 Data URLs
+  const portalUrl =
+    'https://meoncross-history.netlify.app/?view=lessons&unit=industrialisation_and_empire&lesson=0';
+  const archivesUrl = 'https://www.hampshirearchivestrust.co.uk/education/';
+
+  const qrPortalDataUrl = await QRCode.toDataURL(portalUrl, {
+    margin: 1,
+    width: 200,
+    color: { dark: '#0f172a', light: '#ffffff' },
+  });
+
+  const qrArchivesDataUrl = await QRCode.toDataURL(archivesUrl, {
+    margin: 1,
+    width: 200,
+    color: { dark: '#0f172a', light: '#ffffff' },
+  });
 
   const htmlContent = `<!DOCTYPE html>
 <html lang="en">
@@ -39,7 +57,7 @@ async function generatePoster() {
     .poster-frame {
       width: 210mm;
       height: 297mm;
-      padding: 10mm 12mm;
+      padding: 9mm 11mm;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -50,19 +68,19 @@ async function generatePoster() {
     /* Elegant double border */
     .inner-border {
       position: absolute;
-      top: 6mm;
-      left: 6mm;
-      right: 6mm;
-      bottom: 6mm;
+      top: 5mm;
+      left: 5mm;
+      right: 5mm;
+      bottom: 5mm;
       border: 2px solid #1e3a8a;
       pointer-events: none;
     }
     .inner-border-thin {
       position: absolute;
-      top: 7.5mm;
-      left: 7.5mm;
-      right: 7.5mm;
-      bottom: 7.5mm;
+      top: 6.5mm;
+      left: 6.5mm;
+      right: 6.5mm;
+      bottom: 6.5mm;
       border: 1px solid #d97706;
       pointer-events: none;
     }
@@ -70,7 +88,7 @@ async function generatePoster() {
     /* Header */
     .header-box {
       text-align: center;
-      padding-top: 4mm;
+      padding-top: 2mm;
       position: relative;
       z-index: 2;
     }
@@ -80,37 +98,37 @@ async function generatePoster() {
       gap: 6px;
       background: #1e3a8a;
       color: #ffffff;
-      padding: 4px 14px;
+      padding: 3.5px 14px;
       border-radius: 20px;
       font-size: 8.5pt;
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      margin-bottom: 3mm;
+      margin-bottom: 2mm;
     }
     .main-title {
       font-family: 'Cinzel', 'Playfair Display', serif;
-      font-size: 24pt;
+      font-size: 23pt;
       font-weight: 900;
       color: #0f172a;
       line-height: 1.15;
-      margin: 0 0 2mm 0;
+      margin: 0 0 1.5mm 0;
       letter-spacing: -0.01em;
     }
     .main-subtitle {
       font-family: 'Playfair Display', serif;
-      font-size: 13pt;
+      font-size: 12.5pt;
       font-weight: 700;
       color: #b45309;
-      margin: 0 0 3mm 0;
+      margin: 0 0 2mm 0;
     }
     .year-eligibility {
       display: inline-block;
       background: #f1f5f9;
       border: 1px solid #cbd5e1;
-      padding: 3px 12px;
+      padding: 3px 14px;
       border-radius: 6px;
-      font-size: 9pt;
+      font-size: 8.8pt;
       font-weight: 700;
       color: #334155;
     }
@@ -119,39 +137,39 @@ async function generatePoster() {
     .prize-banner {
       background: linear-gradient(135deg, #1e3a8a 0%, #172554 100%);
       border-radius: 8px;
-      padding: 4mm 5mm;
+      padding: 3.5mm 4mm;
       color: #ffffff;
       box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
       display: grid;
-      grid-template-columns: 1fr 1.2fr 1fr;
+      grid-template-columns: 1fr 1.25fr 1fr;
       gap: 3mm;
-      margin: 3mm 0;
+      margin: 2mm 0;
       text-align: center;
     }
     .prize-box {
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 6px;
-      padding: 3mm 2mm;
+      padding: 2.5mm 2mm;
     }
     .prize-label {
-      font-size: 7.5pt;
+      font-size: 7.2pt;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: #93c5fd;
       font-weight: 700;
-      margin-bottom: 1mm;
+      margin-bottom: 0.8mm;
     }
     .prize-val {
       font-family: 'Cinzel', serif;
-      font-size: 15pt;
+      font-size: 14.5pt;
       font-weight: 800;
       color: #fbbf24;
       line-height: 1;
-      margin-bottom: 1mm;
+      margin-bottom: 0.8mm;
     }
     .prize-sub {
-      font-size: 7.2pt;
+      font-size: 7pt;
       color: #e2e8f0;
       line-height: 1.2;
     }
@@ -162,74 +180,74 @@ async function generatePoster() {
       border: 1.5px solid #cbd5e1;
       border-left: 5px solid #0284c7;
       border-radius: 6px;
-      padding: 3mm 4mm;
-      margin: 2mm 0;
+      padding: 2.8mm 3.5mm;
+      margin: 1.5mm 0;
     }
     .mission-title {
-      font-size: 10pt;
+      font-size: 9.5pt;
       font-weight: 800;
       color: #0369a1;
       display: flex;
       align-items: center;
       gap: 6px;
-      margin-bottom: 1.5mm;
+      margin-bottom: 1.2mm;
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
     .mission-desc {
-      font-size: 8.5pt;
+      font-size: 8.2pt;
       color: #334155;
-      line-height: 1.45;
+      line-height: 1.4;
       margin: 0;
     }
 
     /* Local Sparks / Meoncross Connections */
     .sparks-section {
-      margin: 2mm 0;
+      margin: 1.5mm 0;
     }
     .section-heading {
       font-family: 'Cinzel', serif;
-      font-size: 10.5pt;
+      font-size: 10pt;
       font-weight: 800;
       color: #1e3a8a;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 2mm;
+      margin-bottom: 1.5mm;
       border-bottom: 1.5px solid #e2e8f0;
-      padding-bottom: 1mm;
+      padding-bottom: 0.8mm;
     }
     .sparks-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2.5mm;
+      gap: 2.2mm;
     }
     .spark-card {
       background: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 6px;
-      padding: 2.5mm 3mm;
+      padding: 2.2mm 2.8mm;
       box-shadow: 0 1px 3px rgba(0,0,0,0.04);
     }
     .spark-tag {
-      font-size: 6.8pt;
+      font-size: 6.5pt;
       font-weight: 800;
       text-transform: uppercase;
       color: #d97706;
-      margin-bottom: 1mm;
+      margin-bottom: 0.8mm;
       display: inline-block;
     }
     .spark-title {
-      font-size: 8.8pt;
+      font-size: 8.5pt;
       font-weight: 800;
       color: #0f172a;
-      margin-bottom: 1mm;
-      line-height: 1.25;
+      margin-bottom: 0.8mm;
+      line-height: 1.2;
     }
     .spark-text {
-      font-size: 7.5pt;
+      font-size: 7.2pt;
       color: #475569;
-      line-height: 1.35;
+      line-height: 1.3;
       margin: 0;
     }
 
@@ -241,65 +259,95 @@ async function generatePoster() {
       background: #f1f5f9;
       border: 1px solid #cbd5e1;
       border-radius: 6px;
-      padding: 2.5mm 3mm;
-      margin: 2mm 0;
+      padding: 2mm 3mm;
+      margin: 1.5mm 0;
     }
     .format-item {
       text-align: center;
       flex: 1;
     }
     .format-item i {
-      font-size: 10pt;
+      font-size: 9.5pt;
       color: #1e3a8a;
-      margin-bottom: 1mm;
+      margin-bottom: 0.8mm;
       display: block;
     }
     .format-item span {
-      font-size: 7.2pt;
+      font-size: 6.8pt;
       font-weight: 700;
       color: #334155;
       display: block;
     }
 
-    /* Footer & How to Enter */
+    /* Footer & How to Enter with QR codes */
     .footer-box {
       background: #0f172a;
       border-radius: 8px;
-      padding: 3.5mm 5mm;
+      padding: 3mm 4mm;
       color: #ffffff;
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 4mm;
       align-items: center;
-      margin-top: 2mm;
+      margin-top: 1.5mm;
     }
     .deadline-badge {
-      background: #ef4444;
+      background: #dc2626;
       color: #ffffff;
-      padding: 2.5mm 4mm;
+      padding: 2.2mm 3.5mm;
       border-radius: 6px;
       text-align: center;
       flex-shrink: 0;
     }
     .deadline-title {
-      font-size: 7.5pt;
+      font-size: 7pt;
       text-transform: uppercase;
       font-weight: 800;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
     }
     .deadline-date {
       font-family: 'Cinzel', serif;
-      font-size: 11pt;
+      font-size: 10.5pt;
       font-weight: 900;
-      line-height: 1.2;
+      line-height: 1.15;
     }
     .contact-info {
-      padding-left: 4mm;
-      font-size: 8.2pt;
+      font-size: 7.8pt;
       color: #cbd5e1;
-      line-height: 1.4;
+      line-height: 1.35;
     }
     .contact-info strong {
       color: #ffffff;
+    }
+    .qr-group {
+      display: flex;
+      gap: 3.5mm;
+      align-items: center;
+    }
+    .qr-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: #ffffff;
+      padding: 2mm;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+    .qr-item img {
+      width: 17mm;
+      height: 17mm;
+      display: block;
+    }
+    .qr-label {
+      font-size: 5.5pt;
+      font-weight: 800;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-top: 1mm;
+      max-width: 17mm;
+      line-height: 1.15;
     }
   </style>
 </head>
@@ -315,9 +363,9 @@ async function generatePoster() {
         <i class="fa-solid fa-landmark-dome"></i> Hampshire Archives Trust · County Schools Competition
       </div>
       <h1 class="main-title">Hampshire History Awards</h1>
-      <div class="main-subtitle">Annual Schools &amp; Colleges History Competition 2026–27</div>
+      <div class="main-subtitle">Annual Schools History Competition 2026–27</div>
       <div class="year-eligibility">
-        Open to All Students in <strong>Years 7–9 (KS3)</strong> · <strong>Years 10–11 (GCSE)</strong> · <strong>Sixth Form</strong>
+        Open to All Students in <strong>Years 7–9 (Key Stage 3)</strong> &amp; <strong>Years 10–11 (GCSE)</strong>
       </div>
     </div>
 
@@ -326,16 +374,16 @@ async function generatePoster() {
       <div class="prize-box">
         <div class="prize-label">Individual Student</div>
         <div class="prize-val">£100 CASH</div>
-        <div class="prize-sub">Awarded directly to student winners in each year category</div>
+        <div class="prize-sub">Awarded directly to student winners in KS3 &amp; GCSE categories</div>
       </div>
       <div class="prize-box" style="border-color: #f59e0b; background: rgba(245, 158, 11, 0.15);">
         <div class="prize-label" style="color: #fde68a;">School / Group Winner</div>
         <div class="prize-val" style="color: #fef08a;">£300 + TROPHY</div>
-        <div class="prize-sub">Department resource grant &amp; Winner's Trophy kept at Meoncross</div>
+        <div class="prize-sub">Department grant &amp; Winner’s Trophy displayed at Meoncross</div>
       </div>
       <div class="prize-box">
         <div class="prize-label">Runners-Up &amp; Ceremony</div>
-        <div class="prize-val" style="font-size: 11.5pt; padding-top: 2px;">WINCHESTER</div>
+        <div class="prize-val" style="font-size: 11pt; padding-top: 2px;">WINCHESTER</div>
         <div class="prize-sub">Presented by the Lord Lieutenant at his Winchester offices</div>
       </div>
     </div>
@@ -346,7 +394,7 @@ async function generatePoster() {
         <i class="fa-solid fa-box-archive"></i> The Core Challenge: Discover Hampshire Archives
       </div>
       <p class="mission-desc">
-        Explore <strong>any aspect of Hampshire history</strong>—your village, school, family ancestry, or a famous local event. Projects will be judged primarily on the <strong>demonstrated use of authentic primary archives</strong>: historic maps, parish records, census returns, old newspapers, wartime diaries, letters, photographs, military service rolls, or oral recordings.
+        Explore <strong>any aspect of Hampshire history</strong>—your local village, school, family ancestry, or a famous local event. Projects will be judged primarily on the <strong>demonstrated use of authentic primary archives</strong>: historic maps, parish records, census returns, old newspapers, wartime diaries, letters, photographs, military service rolls, or oral recordings.
       </p>
     </div>
 
@@ -354,7 +402,7 @@ async function generatePoster() {
     <div class="sparks-section">
       <div class="section-heading">
         <span><i class="fa-solid fa-lightbulb" style="color: #d97706;"></i> Meoncross Hampshire Research Sparks</span>
-        <span style="font-size: 7.5pt; font-family: 'Inter', sans-serif; font-weight: 600; color: #64748b;">Direct Links to our History Portal Lessons</span>
+        <span style="font-size: 7.2pt; font-family: 'Inter', sans-serif; font-weight: 600; color: #64748b;">Direct Links to our History Portal Lessons</span>
       </div>
       <div class="sparks-grid">
         
@@ -384,7 +432,7 @@ async function generatePoster() {
 
         <div class="spark-card" style="border-left: 3.5mm solid #8b5cf6;">
           <span class="spark-tag">Year 8 &amp; GCSE · Maritime Hampshire</span>
-          <div class="spark-title">Portsmouth Dockyard &amp; Solent Embarkation</div>
+          <div class="spark-title">Portsmouth Dockyard &amp; Solent Heritage</div>
           <p class="spark-text">
             Examine the maritime heritage of the Solent—from Elizabethan privateers and HMS Warrior to Southampton's Titanic crew logs and the secret D-Day troop embarkations of June 1944.
           </p>
@@ -395,7 +443,7 @@ async function generatePoster() {
 
     <!-- Any Medium Accepted -->
     <div>
-      <div style="font-size: 8pt; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1.5mm; display: flex; align-items: center; gap: 5px;">
+      <div style="font-size: 7.5pt; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1.2mm; display: flex; align-items: center; gap: 5px;">
         <i class="fa-solid fa-shapes" style="color: #1e3a8a;"></i> Flexible Formats: Present Your Research In Any Medium
       </div>
       <div class="formats-bar">
@@ -426,17 +474,29 @@ async function generatePoster() {
       </div>
     </div>
 
-    <!-- How to Enter & Footer -->
+    <!-- How to Enter & Footer with QR Codes -->
     <div class="footer-box">
       <div class="deadline-badge">
         <div class="deadline-title">Deadline</div>
         <div class="deadline-date">19 MARCH 2027</div>
       </div>
+      
       <div class="contact-info">
         <div><strong>How to Enter:</strong> Individual or Group submissions via Meoncross School. Free entry.</div>
         <div>Speak to <strong>Mr Lovett (Head of History)</strong> to register your topic and get archival support.</div>
         <div style="margin-top: 1mm; color: #38bdf8;">
-          <i class="fa-solid fa-globe"></i> Portal &amp; Archive Guides: <strong>hampshirearchivestrust.co.uk/education</strong>
+          <i class="fa-solid fa-mobile-screen"></i> Scan the QR codes on your phone to open our lesson portal &amp; archive guidelines!
+        </div>
+      </div>
+
+      <div class="qr-group">
+        <div class="qr-item">
+          <img src="${qrPortalDataUrl}" alt="History Portal QR">
+          <div class="qr-label">Henry Cort Lesson Portal</div>
+        </div>
+        <div class="qr-item">
+          <img src="${qrArchivesDataUrl}" alt="Archives Guide QR">
+          <div class="qr-label">Archives Guide</div>
         </div>
       </div>
     </div>

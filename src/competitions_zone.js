@@ -29,7 +29,8 @@ export function renderCompetitionsView() {
       return c.targetYears.includes('Years 7–9') || c.targetYears.includes('Key Stage 3');
     if (currentFilter === 'gcse')
       return c.targetYears.includes('Years 10–11') || c.targetYears.includes('GCSE');
-    if (currentFilter === 'sixth_form') return c.targetYears.includes('Sixth Form');
+    if (currentFilter === 'advanced')
+      return c.id === 'julia_wood_oxford_2027' || c.targetYears.includes('Sixth Form');
     return true;
   });
 
@@ -55,7 +56,7 @@ export function renderCompetitionsView() {
       <!-- Filter Controls Bar -->
       <div style="display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; align-items: center; background: #ffffff; padding: 8px 12px; border-radius: 10px; border: 1.5px solid #e2e8f0; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
         <span style="font-size: 0.8rem; font-weight: 700; color: #64748b; margin-right: 6px; text-transform: uppercase; letter-spacing: 0.05em;">
-          <i class="fa-solid fa-filter" style="color: #2563eb;"></i> Filter By Year Group:
+          <i class="fa-solid fa-filter" style="color: #2563eb;"></i> Filter By Category:
         </span>
         <button class="comp-filter-btn ${currentFilter === 'all' ? 'active' : ''}" onclick="window.filterCompetitions('all')" style="${getFilterBtnStyle(currentFilter === 'all')}">
           All Awards (${competitionsData.length})
@@ -66,8 +67,8 @@ export function renderCompetitionsView() {
         <button class="comp-filter-btn ${currentFilter === 'gcse' ? 'active' : ''}" onclick="window.filterCompetitions('gcse')" style="${getFilterBtnStyle(currentFilter === 'gcse')}">
           Years 10–11 (GCSE)
         </button>
-        <button class="comp-filter-btn ${currentFilter === 'sixth_form' ? 'active' : ''}" onclick="window.filterCompetitions('sixth_form')" style="${getFilterBtnStyle(currentFilter === 'sixth_form')}">
-          Sixth Form (Years 12–13)
+        <button class="comp-filter-btn ${currentFilter === 'advanced' ? 'active' : ''}" onclick="window.filterCompetitions('advanced')" style="${getFilterBtnStyle(currentFilter === 'advanced')}">
+          Advanced Extension (Oxford Prize)
         </button>
       </div>
 

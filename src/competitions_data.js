@@ -12,7 +12,7 @@ export const competitionsData = [
     badge: 'County Competition · Primary Archives',
     badgeColor: '#f59e0b',
     status: 'Open for Entries',
-    targetYears: 'Years 7–9 · Years 10–11 · Sixth Form',
+    targetYears: 'Years 7–9 (Key Stage 3) · Years 10–11 (GCSE)',
     deadline: 'Friday 19th March 2027',
     ceremony: 'Summer Term 2027 at the Lord Lieutenant of Hampshire’s offices in Winchester',
     posterPdfUrl: '/pdfs/hampshire_archives_competition_poster.pdf',
