@@ -1,6 +1,6 @@
 /**
  * Co-Curricular Competitions & Young Historian Awards Data
- * Add future history competitions, essay prizes, and awards to this registry.
+ * Central registry of regional, national, and university historical competitions.
  */
 
 export const competitionsData = [
@@ -9,18 +9,20 @@ export const competitionsData = [
     title: 'Hampshire Archives Trust History Competition 2026–27',
     sponsor: 'Hampshire Archives Trust',
     sponsorLogo: 'fa-landmark-dome',
-    badge: 'Official County Competition',
+    badge: 'County Competition · Primary Archives',
     badgeColor: '#f59e0b',
     status: 'Open for Entries',
     targetYears: 'Years 7–9 · Years 10–11 · Sixth Form',
     deadline: 'Friday 19th March 2027',
     ceremony: 'Summer Term 2027 at the Lord Lieutenant of Hampshire’s offices in Winchester',
+    posterPdfUrl: '/pdfs/hampshire_archives_competition_poster.pdf',
+    posterHtmlUrl: '/pdfs/hampshire_competition_poster.html',
     prizes: [
       {
         tier: 'Individual Winner',
         reward: '£100 Cash Prize',
         icon: 'fa-award',
-        desc: 'Cash prize awarded directly to the student winner in each age category, plus an official Winner’s Certificate presented by the Lord Lieutenant.',
+        desc: 'Awarded directly to student winners in each year category, plus an official Winner’s Certificate presented by the Lord Lieutenant.',
       },
       {
         tier: 'School / Group Winner',
@@ -49,28 +51,49 @@ export const competitionsData = [
     ],
     localSparks: [
       {
+        title: 'Henry Cort at Funtley Ironworks (Fareham)',
+        category: 'Year 8 · Industrial Revolution',
+        desc: 'Investigate how Henry Cort pioneered puddling and rolling right here in Funtley in 1783–84, transforming ironmaking and supplying Portsmouth Dockyard with wrought iron for cutting-edge Royal Navy warships like HMS Warrior.',
+        badge: 'In Our Curriculum',
+        unitId: 'industrialisation_and_empire',
+        lessonIndex: 0,
+        lessonLabel: 'View Lesson 1: Henry Cort at Funtley',
+      },
+      {
+        title: 'Fareham Red Bricks & Victorian Child Labour',
+        category: 'Year 8 · Local Social History',
+        desc: 'Uncover 19th-century life in South Hampshire by analysing the 1881 Fareham Census, 10-year-old "pug boys" in the clay pits, and how Fareham Red bricks built Portsmouth Dockyards and London\'s Royal Albert Hall.',
+        badge: 'In Our Curriculum',
+        unitId: 'industrialisation_and_empire',
+        lessonIndex: 2,
+        lessonLabel: 'View Lesson 3: Fareham Red Bricks',
+      },
+      {
         title: 'The Fallen of Stubbington & Lee-on-the-Solent',
-        category: 'First World War & Remembrance',
-        desc: 'Investigate the lives, occupations, and military service of local men named on the Stubbington village war memorial using Commonwealth War Graves Commission (CWGC) archives, local parish registers, and census data.',
-        badge: 'Meoncross Local Connection',
+        category: 'Year 9 & GCSE · Remembrance',
+        desc: 'Investigate the lives, civilian jobs, and wartime service of local Hampshire men commemorated on the Stubbington village war memorial using Commonwealth War Graves Commission (CWGC) archives and census records.',
+        badge: 'In Our Curriculum',
+        unitId: 'trip_ypres',
+        lessonIndex: 0,
+        lessonLabel: 'View Tour App: Stubbington Memorial',
       },
       {
-        title: 'Southampton, the Titanic & Wartime Embarkation',
-        category: 'Maritime & Global Hampshire',
-        desc: 'Explore the maritime social history of the Solent—such as the Southampton crew members of the Titanic (1912) or the secret D-Day embarkations (1944)—using port logs, oral history recordings, and shipping manifests.',
-        badge: 'Solent Heritage',
-      },
-      {
-        title: 'Victorian Poverty & The Fareham Union Workhouse',
-        category: 'Social & Industrial History',
-        desc: 'Uncover 19th-century life in South Hampshire by analysing Fareham Union Workhouse admission records, Poor Law guardian minutes, and census rolls held at the Hampshire Record Office.',
-        badge: 'County Archives',
+        title: 'Portsmouth Dockyard & Solent D-Day Embarkation',
+        category: 'Year 8 & GCSE · Maritime Heritage',
+        desc: 'Explore the maritime social history of the Solent—such as the construction of steam-driven ironclads at Portsmouth Dockyard or the secret June 1944 D-Day embarkations—using naval port logs and veteran oral recordings.',
+        badge: 'In Our Curriculum',
+        unitId: 'industrialisation_and_empire',
+        lessonIndex: 3,
+        lessonLabel: 'View Lesson 4: Portsmouth Dockyard',
       },
       {
         title: 'Sir Walter Raleigh, Privateering & The Solent',
-        category: 'Early Modern England',
-        desc: 'Examine Hampshire’s crucial role in Elizabethan naval expeditions, trade routes, and privateer preparations from Portsmouth harbour using 16th-century naval archives.',
-        badge: 'Tudor History',
+        category: 'Year 8 · Early Modern England',
+        desc: 'Examine Hampshire’s crucial strategic role in Elizabethan maritime expansion, privateering preparations, and trade routes out of Portsmouth and Southampton harbours.',
+        badge: 'In Our Curriculum',
+        unitId: 'early_modern_world',
+        lessonIndex: 0,
+        lessonLabel: 'View Early Modern World Unit',
       },
     ],
     howToEnter: [
@@ -82,6 +105,12 @@ export const competitionsData = [
     ],
     links: [
       {
+        label: 'Download A4 Printable Poster (PDF)',
+        url: '/pdfs/hampshire_archives_competition_poster.pdf',
+        icon: 'fa-file-pdf',
+        isDownload: true,
+      },
+      {
         label: 'Hampshire Archives Trust Education Portal',
         url: 'https://hampshirearchivestrust.co.uk/education',
         icon: 'fa-arrow-up-right-from-square',
@@ -92,6 +121,191 @@ export const competitionsData = [
         icon: 'fa-building-columns',
       },
     ],
-    contact: 'Dr Alistair Dougall (Trustee, Hampshire Archives Trust)',
+    contact: 'Dr Alistair Dougall (Trustee, Hampshire Archives Trust) · Co-ordinated by Mr Lovett',
+  },
+
+  {
+    id: 'ha_young_historian_2027',
+    title: 'Historical Association Young Historian Awards 2026–27',
+    sponsor: 'The Historical Association & The Spirit of Normandy Trust',
+    sponsorLogo: 'fa-book-atlas',
+    badge: 'National UK Competition',
+    badgeColor: '#dc2626',
+    status: 'Annual Summer Awards',
+    targetYears: 'Key Stage 3 (Years 7–9) · GCSE (Years 10–11) · Sixth Form (Years 12–13)',
+    deadline: 'Late June 2027 (Annual Summer Term Deadline)',
+    ceremony: 'National Historical Association Awards Presentation',
+    prizes: [
+      {
+        tier: 'Spirit of Normandy Trust Prize',
+        reward: '£100 Student Prize + School Trophy',
+        icon: 'fa-shield-halved',
+        desc: 'Awarded for outstanding historical enquiry into British involvement in the Second World War or the 1944 D-Day landings (tiers for KS3 and GCSE).',
+      },
+      {
+        tier: 'First World War Prize',
+        reward: '£100 Cash Prize + Certificate',
+        icon: 'fa-medal',
+        desc: 'Awarded to individual students for an exceptional enquiry exploring any aspect of the 1914–1918 conflict.',
+      },
+      {
+        tier: 'Local History Prize',
+        reward: '£100 Cash Prize + Certificate',
+        icon: 'fa-map-location-dot',
+        desc: 'Awarded for an in-depth personal enquiry into any local history topic across Britain (KS3, GCSE, and Post-16 categories).',
+      },
+      {
+        tier: 'GCSE Modern World Prize',
+        reward: '£100 Student Prize + School Trophy',
+        icon: 'fa-trophy',
+        desc: 'Recognising the best individual coursework, extended essay, or independent historical enquiry on any Modern World history topic.',
+      },
+    ],
+    overview:
+      'Organised by the UK’s premier national subject body for history, the Young Historian Awards celebrate rigorous, analytical historical enquiry by pupils across Britain. Entries can draw directly on classroom work, personal coursework, or independent research projects.',
+    keyRequirement:
+      'Rigorous historical enquiry, critical source analysis, nuanced engagement with historical interpretations, and clear analytical prose (typically 1,500–2,500 words for secondary students).',
+    acceptableFormats: [
+      { name: 'Extended Historical Essay', icon: 'fa-file-lines' },
+      { name: 'Independent Enquiry Project', icon: 'fa-folder-open' },
+      { name: 'Class Coursework Submission', icon: 'fa-graduation-cap' },
+    ],
+    localSparks: [
+      {
+        title: 'British Operations in the Great War (Ypres & Somme)',
+        category: 'Year 9 & GCSE · First World War Prize',
+        desc: 'Draw upon our Ypres battlefield tour studies, trench tactical evolution, and casualty evacuation networks to construct a competitive essay on the 1914–18 Western Front.',
+        badge: 'Connects to GCSE Paper 1',
+        unitId: 'great_war_part2',
+        lessonIndex: 0,
+        lessonLabel: 'View The Great War Unit',
+      },
+      {
+        title: 'Solent Embarkation & The Spirit of Normandy (1944)',
+        category: 'KS3 & GCSE · Spirit of Normandy Prize',
+        desc: 'Investigate the massive logistical buildup across Hampshire for Operation Overlord (D-Day), marshalling local camps, Mulberry harbours, and troop embarkations.',
+        badge: 'Normandy Trust Category',
+        unitId: 'second_world_war',
+        lessonIndex: 0,
+        lessonLabel: 'View Second World War Studies',
+      },
+      {
+        title: 'The Holocaust & Resistance: The White Rose Group',
+        category: 'Year 9 & GCSE · Modern World Prize',
+        desc: 'Examine Hans and Sophie Scholl and the White Rose resistance against totalitarian Nazi rule in Munich, evaluating the moral courage of German youth opposition.',
+        badge: 'Connects to Weimar & Nazi Germany',
+        unitId: 'weimar_nazi_germany',
+        lessonIndex: 11,
+        lessonLabel: 'View Nazi Opposition Lesson',
+      },
+    ],
+    howToEnter: [
+      'Select an eligible category: Spirit of Normandy (WW2), First World War, Local History, or GCSE Modern World.',
+      'Produce an extended analytical essay or enquiry project (incorporating primary evidence and historical interpretations).',
+      'Submit your draft to Mr Lovett for review and department endorsement during the Spring / Summer Term.',
+      'Official submission is made through the school prior to the June 2027 deadline.',
+    ],
+    links: [
+      {
+        label: 'Historical Association Young Historian Portal',
+        url: 'https://www.history.org.uk/secondary/categories/436/news/3724/young-historian-awards',
+        icon: 'fa-arrow-up-right-from-square',
+      },
+      {
+        label: 'Spirit of Normandy Trust Education Hub',
+        url: 'https://www.spiritofnormandy.org.uk/',
+        icon: 'fa-shield-halved',
+      },
+    ],
+    contact: 'Co-ordinated by Mr Lovett (Head of History)',
+  },
+
+  {
+    id: 'julia_wood_oxford_2027',
+    title: 'The Julia Wood History Essay Prize (University of Oxford)',
+    sponsor: 'St Hugh’s College, University of Oxford',
+    sponsorLogo: 'fa-graduation-cap',
+    badge: 'Oxford University Sixth Form Prize',
+    badgeColor: '#1e3a8a',
+    status: 'Annual Sixth Form Competition',
+    targetYears: 'Sixth Form (Years 12 & 13 / Under 19)',
+    deadline: 'Late July 2027 (Annual Summer Deadline)',
+    ceremony: 'Academic Reception & Presentation at St Hugh’s College, Oxford',
+    prizes: [
+      {
+        tier: 'First Place Winner',
+        reward: '£400–£500 Cash Prize',
+        icon: 'fa-trophy',
+        desc: 'Prestigious national recognition from Oxford University historians, cash award, and formal invitation to St Hugh’s College.',
+      },
+      {
+        tier: 'Runner-Up Prizes',
+        reward: '£100 Cash / Book Vouchers',
+        icon: 'fa-award',
+        desc: 'Cash awards or academic book grants awarded to highly commended entries demonstrating original scholarship.',
+      },
+      {
+        tier: 'Oxbridge & UCAS Distinction',
+        reward: 'Academic Distinction on Personal Statement',
+        icon: 'fa-scroll',
+        desc: 'One of the most respected academic essay distinctions in the UK for students applying to reading History at Oxford, Cambridge, Russell Group universities, or undertaking the EPQ.',
+      },
+    ],
+    overview:
+      'Established in memory of St Hugh’s College history exhibitioner Julia Wood, this annual competition offers Sixth Form students complete intellectual freedom to write an original, fully referenced academic essay on any historical topic of their choice. Judges actively seek original argument, wide reading, and engagement with historiography.',
+    keyRequirement:
+      'An original, fully referenced academic essay of 2,000 to 4,000 words on any historical subject. Entries must include a complete bibliography, footnotes/citations, and demonstrate independent intellectual enquiry beyond the school exam syllabus.',
+    acceptableFormats: [
+      { name: 'Formal Academic Essay (2,000–4,000 words)', icon: 'fa-file-lines' },
+      { name: 'EPQ (Extended Project) Historical Adaptation', icon: 'fa-book-bookmark' },
+    ],
+    localSparks: [
+      {
+        title: 'The Geopolitics of the Suez Crisis (1956)',
+        category: 'Modern Diplomatic History',
+        desc: 'Evaluate whether the Suez Crisis marked the definitive end of Britain’s status as a global imperial power, exploring Anglo-American relations and Anthony Eden’s miscalculations.',
+        badge: 'Connects to Middle East Unit',
+        unitId: 'cme_new',
+        lessonIndex: 2,
+        lessonLabel: 'View Middle East Crisis Studies',
+      },
+      {
+        title: 'Historiographical Debates: The Origins of the Cold War',
+        category: '20th-Century Historiography',
+        desc: 'Critique the Orthodox, Revisionist, and Post-Revisionist historical schools on whether the breakdown of the Grand Alliance in 1945–47 was inevitable.',
+        badge: 'Super-Curricular Depth',
+        unitId: 'cold_war',
+        lessonIndex: 0,
+        lessonLabel: 'View Cold War Curriculum',
+      },
+      {
+        title: 'Henry Cort, Imperial Metallurgy & Exploitation',
+        category: 'Industrial Economic History',
+        desc: 'Investigate the tension between technological innovation (Cort’s puddling furnace in Hampshire) and the systemic colonial de-industrialisation of Indian textile production.',
+        badge: 'Local to Global Synthesis',
+        unitId: 'industrialisation_and_empire',
+        lessonIndex: 7,
+        lessonLabel: 'View 19th-Century Synthesis Lesson',
+      },
+    ],
+    howToEnter: [
+      'Open to all Sixth Form students who have not been in Sixth Form education for more than two years.',
+      'Formulate your own original enquiry question on any historical period or theme.',
+      'Write a 2,000–4,000 word scholarly essay with rigorous footnotes and a full bibliography.',
+      'Submit directly via the St Hugh’s College online portal or through the History Department by late July 2027.',
+    ],
+    links: [
+      {
+        label: 'St Hugh’s College Oxford Essay Competitions',
+        url: 'https://www.st-hughs.ox.ac.uk/',
+        icon: 'fa-building-columns',
+      },
+      {
+        label: 'Oxford History Faculty Undergraduate Admissions',
+        url: 'https://www.history.ox.ac.uk/undergraduate-study',
+        icon: 'fa-arrow-up-right-from-square',
+      },
+    ],
+    contact: 'St Hugh’s College Admissions · Mentored by Mr Lovett',
   },
 ];
