@@ -1523,43 +1523,28 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
     if (practiceBtn) {
       practiceBtn.addEventListener('click', async () => {
         modal.classList.remove('open');
-        const contentArea = document.getElementById('content-area');
+        const contentArea =
+          document.getElementById('main-content') || document.getElementById('content-area');
         if (contentArea) {
           const { renderExamPracticeZone } = await import('./exam_practice_zone.js');
-          const activeUnitData = window.currentUnitData || {};
-          renderExamPracticeZone(contentArea, activeUnitData);
-
-          // Scroll to top
+          const activeUnitData =
+            (window.db && window.db[unitId] && window.db[unitId].data) ||
+            window.currentUnitData ||
+            {};
+          renderExamPracticeZone(contentArea, activeUnitData, {
+            year: q.year,
+            q_number: q.q_number,
+            tariff: q.tariff || 16,
+            marks: q.tariff || 16,
+            question_text: q.question_text,
+            stimulus: q.stimulus,
+            pitfall_warning: q.pitfall_warning,
+            indicative_content: q.indicative_content,
+            model_answer: q.indicative_content,
+            source_context: q.source_context,
+            unitId: unitId,
+          });
           window.scrollTo({ top: 0, behavior: 'smooth' });
-
-          // Pre-populate question into display area
-          setTimeout(() => {
-            const displayArea = document.getElementById('epz-question-display');
-            const controls = document.getElementById('epz-controls');
-            const qMeta = document.getElementById('epz-q-meta');
-            const qText = document.getElementById('epz-q-text');
-            const qStimulus = document.getElementById('epz-q-stimulus');
-            const wagollPanel = document.getElementById('epz-wagoll-panel');
-            const wagollBtn = document.getElementById('epz-wagoll-btn');
-
-            if (displayArea && qText) {
-              if (controls) controls.style.display = 'none';
-              displayArea.style.display = 'block';
-              qMeta.textContent = `${q.year} Past Paper • ${q.q_number} • ${q.tariff} Marks`;
-              qText.textContent = q.question_text;
-              if (qStimulus && q.stimulus) {
-                qStimulus.style.display = 'block';
-                qStimulus.textContent = q.stimulus;
-              }
-              if (wagollPanel && q.indicative_content) {
-                const points = Array.isArray(q.indicative_content)
-                  ? q.indicative_content.join('\n\n• ')
-                  : q.indicative_content;
-                wagollPanel.textContent = 'MARK SCHEME INDICATIVE CONTENT:\n\n• ' + points;
-                if (wagollBtn) wagollBtn.style.display = 'inline-block';
-              }
-            }
-          }, 100);
         }
       });
     }
@@ -1705,39 +1690,28 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
     if (practice3dBtn && q3d) {
       practice3dBtn.addEventListener('click', async () => {
         modal.classList.remove('open');
-        const contentArea = document.getElementById('content-area');
+        const contentArea =
+          document.getElementById('main-content') || document.getElementById('content-area');
         if (contentArea) {
           const { renderExamPracticeZone } = await import('./exam_practice_zone.js');
-          const activeUnitData = window.currentUnitData || {};
-          renderExamPracticeZone(contentArea, activeUnitData);
+          const activeUnitData =
+            (window.db && window.db[unitId] && window.db[unitId].data) ||
+            window.currentUnitData ||
+            {};
+          renderExamPracticeZone(contentArea, activeUnitData, {
+            year: q3d.year,
+            q_number: q3d.q_number,
+            tariff: q3d.tariff || 16,
+            marks: q3d.tariff || 16,
+            question_text: q3d.question_text,
+            stimulus: q3d.stimulus,
+            pitfall_warning: q3d.pitfall_warning,
+            indicative_content: q3d.indicative_content,
+            model_answer: q3d.indicative_content,
+            source_context: q3d.source_context,
+            unitId: unitId,
+          });
           window.scrollTo({ top: 0, behavior: 'smooth' });
-          setTimeout(() => {
-            const displayArea = document.getElementById('epz-question-display');
-            const controls = document.getElementById('epz-controls');
-            const qMeta = document.getElementById('epz-q-meta');
-            const qText = document.getElementById('epz-q-text');
-            const qStimulus = document.getElementById('epz-q-stimulus');
-            const wagollPanel = document.getElementById('epz-wagoll-panel');
-            const wagollBtn = document.getElementById('epz-wagoll-btn');
-
-            if (displayArea && qText) {
-              if (controls) controls.style.display = 'none';
-              displayArea.style.display = 'block';
-              qMeta.textContent = `${q3d.year} Past Paper • ${q3d.q_number} • ${q3d.tariff} Marks + 4 SPaG`;
-              qText.textContent = q3d.question_text;
-              if (qStimulus && q3d.stimulus) {
-                qStimulus.style.display = 'block';
-                qStimulus.textContent = q3d.stimulus;
-              }
-              if (wagollPanel && q3d.indicative_content) {
-                const pts = Array.isArray(q3d.indicative_content)
-                  ? q3d.indicative_content.join('\n\n• ')
-                  : q3d.indicative_content;
-                wagollPanel.textContent = 'MARK SCHEME INDICATIVE CONTENT:\n\n• ' + pts;
-                if (wagollBtn) wagollBtn.style.display = 'inline-block';
-              }
-            }
-          }, 100);
         }
       });
     }
@@ -1931,39 +1905,28 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
     if (medPracticeBtn && q2a) {
       medPracticeBtn.addEventListener('click', async () => {
         modal.classList.remove('open');
-        const contentArea = document.getElementById('content-area');
+        const contentArea =
+          document.getElementById('main-content') || document.getElementById('content-area');
         if (contentArea) {
           const { renderExamPracticeZone } = await import('./exam_practice_zone.js');
-          const activeUnitData = window.currentUnitData || {};
-          renderExamPracticeZone(contentArea, activeUnitData);
+          const activeUnitData =
+            (window.db && window.db[unitId] && window.db[unitId].data) ||
+            window.currentUnitData ||
+            {};
+          renderExamPracticeZone(contentArea, activeUnitData, {
+            year: q2a.year,
+            q_number: q2a.q_number,
+            tariff: q2a.tariff || 8,
+            marks: q2a.tariff || 8,
+            question_text: q2a.question_text,
+            stimulus: q2a.stimulus,
+            pitfall_warning: q2a.pitfall_warning,
+            indicative_content: q2a.indicative_content,
+            model_answer: q2a.indicative_content,
+            source_context: q2a.source_context,
+            unitId: unitId,
+          });
           window.scrollTo({ top: 0, behavior: 'smooth' });
-          setTimeout(() => {
-            const displayArea = document.getElementById('epz-question-display');
-            const controls = document.getElementById('epz-controls');
-            const qMeta = document.getElementById('epz-q-meta');
-            const qText = document.getElementById('epz-q-text');
-            const qStimulus = document.getElementById('epz-q-stimulus');
-            const wagollPanel = document.getElementById('epz-wagoll-panel');
-            const wagollBtn = document.getElementById('epz-wagoll-btn');
-
-            if (displayArea && qText) {
-              if (controls) controls.style.display = 'none';
-              displayArea.style.display = 'block';
-              qMeta.textContent = `${q2a.year} Past Paper • ${q2a.q_number} • ${q2a.tariff} Marks`;
-              qText.textContent = q2a.question_text;
-              if (qStimulus && q2a.stimulus) {
-                qStimulus.style.display = 'block';
-                qStimulus.textContent = q2a.stimulus;
-              }
-              if (wagollPanel && q2a.indicative_content) {
-                const pts = Array.isArray(q2a.indicative_content)
-                  ? q2a.indicative_content.join('\n\n• ')
-                  : q2a.indicative_content;
-                wagollPanel.textContent = 'MARK SCHEME INDICATIVE CONTENT:\n\n• ' + pts;
-                if (wagollBtn) wagollBtn.style.display = 'inline-block';
-              }
-            }
-          }, 100);
         }
       });
     }

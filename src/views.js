@@ -1917,6 +1917,19 @@ export async function renderMockExamsView() {
         renderExamTrendMatrix(trendContainer, unitId);
       }
     });
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const targetTab = urlParams.get('tab');
+    const curView = urlParams.get('view');
+    if (
+      targetTab === 'radar' ||
+      targetTab === 'trend' ||
+      targetTab === 'matrix' ||
+      curView === 'trend-radar' ||
+      curView === 'matrix'
+    ) {
+      tabBtnTrend.click();
+    }
   }
 
   if (window.scrollToTop) window.scrollToTop(true);

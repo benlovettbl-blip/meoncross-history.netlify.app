@@ -1,4 +1,4 @@
-export function renderExamPracticeZone(container, unitData) {
+export function renderExamPracticeZone(container, unitData, initialQuestion = null) {
   // 1. Flatten the exam_practice from lessons into a master list of questions
   let examBank = [];
 
@@ -304,6 +304,7 @@ export function renderExamPracticeZone(container, unitData) {
             </div>
             <div id="epz-timer-presets" style="display: flex; gap: 6px; font-size: 0.75rem; flex-wrap: wrap; justify-content: flex-end;">
               <button type="button" id="epz-btn-reset-q" style="background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; border-radius: 12px; padding: 2px 8px; cursor: pointer; font-weight: 600;" title="Reset timer to question marks">Question Tariff</button>
+              <button type="button" id="epz-btn-add-5m" style="background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; border-radius: 12px; padding: 2px 8px; cursor: pointer; font-weight: 700;" title="Add 5 minutes extra time or planning time">+5m Extra</button>
               <button type="button" id="epz-btn-set-80m" style="background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 12px; padding: 2px 8px; cursor: pointer; font-weight: 700;" title="Full 80m Paper 1 Clock with 25m Section A Chime">80m Exam</button>
               <button type="button" id="epz-btn-set-25m" style="background: #fef3c7; color: #b45309; border: 1px solid #fde68a; border-radius: 12px; padding: 2px 8px; cursor: pointer; font-weight: 600;" title="25m Section A (Western Front)">25m Sec A</button>
               <button type="button" id="epz-btn-set-55m" style="background: #f3e8ff; color: #7e22ce; border: 1px solid #e9d5ff; border-radius: 12px; padding: 2px 8px; cursor: pointer; font-weight: 600;" title="55m Section B (Thematic Study)">55m Sec B</button>
@@ -384,6 +385,7 @@ export function renderExamPracticeZone(container, unitData) {
   const timerToggle = document.getElementById('epz-timer-toggle');
   const pacingNotice = document.getElementById('epz-pacing-notice');
   const btnResetQ = document.getElementById('epz-btn-reset-q');
+  const btnAdd5m = document.getElementById('epz-btn-add-5m');
   const btnSet80m = document.getElementById('epz-btn-set-80m');
   const btnSet25m = document.getElementById('epz-btn-set-25m');
   const btnSet55m = document.getElementById('epz-btn-set-55m');
@@ -454,7 +456,17 @@ export function renderExamPracticeZone(container, unitData) {
   };
 
   if (btnResetQ) {
-    btnResetQ.addEventListener('click', () => setTimerDuration(questionTariffSeconds || 600));
+    btnResetQ.addEventListener('click', () =>
+      setTimerDuration(
+        questionTariffSeconds || (currentQuestion?.marks ? currentQuestion.marks * 90 : 600),
+      ),
+    );
+  }
+  if (btnAdd5m) {
+    btnAdd5m.addEventListener('click', () => {
+      timeLeft += 300;
+      updateTimerDisplay();
+    });
   }
   if (btnSet80m) {
     btnSet80m.addEventListener('click', () => setTimerDuration(4800)); // 80 mins
@@ -500,12 +512,17 @@ export function renderExamPracticeZone(container, unitData) {
   // Interactions
   backBtn.addEventListener('click', () => {
     stopTimer();
-    const links = Array.from(document.querySelectorAll('.lesson-link'));
-    const homeLink = links.find((l) => l.innerHTML.includes('Unit Homepage'));
-    if (homeLink) {
-      homeLink.click();
+    if (initialQuestion && initialQuestion.unitId && window.switchView) {
+      window.switchView('mock-exams', initialQuestion.unitId);
+      setTimeout(() => {
+        const tabBtnTrend = document.getElementById('tab-btn-trend-radar');
+        if (tabBtnTrend) tabBtnTrend.click();
+      }, 150);
     } else {
-      window.location.href = '/';
+      const controls = document.getElementById('epz-controls');
+      if (controls) controls.style.display = 'block';
+      displayArea.style.display = 'none';
+      backBtn.style.display = 'none';
     }
   });
 
@@ -577,7 +594,11 @@ export function renderExamPracticeZone(container, unitData) {
 
     // Reset UI
     stopTimer();
+    const controls = document.getElementById('epz-controls');
+    if (controls) controls.style.display = 'none';
     displayArea.style.display = 'block';
+    backBtn.style.display = 'block';
+    backBtn.innerHTML = '<i class="fa-solid fa-arrow-left"></i> Change Question';
     hintPanel.style.display = 'none';
     wagollPanel.style.display = 'none';
     qImages.innerHTML = '';
@@ -664,6 +685,112 @@ export function renderExamPracticeZone(container, unitData) {
 
   // Initialize specific questions list on load
   populateSpecificQuestions();
+
+  // 5. Pre-load Initial Question if provided (e.g. from Past Paper Matrix)
+  if (initialQuestion) {
+    const controls = document.getElementById('epz-controls');
+    if (controls) controls.style.display = 'none';
+    displayArea.style.display = 'block';
+    backBtn.style.display = 'block';
+    backBtn.innerHTML = '<i class="fa-solid fa-arrow-left"></i> Return to Question Matrix';
+
+    const marks = initialQuestion.tariff || initialQuestion.marks || 16;
+    currentQuestion = {
+      ...initialQuestion,
+      question: initialQuestion.question_text || initialQuestion.question || '',
+      blockTitle:
+        initialQuestion.blockTitle ||
+        `${initialQuestion.year ? initialQuestion.year + ' Past Paper' : ''} ${initialQuestion.q_number || ''}`.trim(),
+      type: `${marks}-mark`,
+      marks: marks,
+      stimulus: initialQuestion.stimulus,
+      model_answer: initialQuestion.indicative_content || initialQuestion.model_answer,
+      pitfall_warning: initialQuestion.pitfall_warning,
+      provenance_clue: initialQuestion.provenance_clue,
+    };
+
+    // Set Timer duration based on tariff (1.5 mins per mark)
+    questionTariffSeconds = marks * 90;
+    setTimerDuration(questionTariffSeconds);
+
+    qMeta.innerHTML = `<i class="fa-solid fa-graduation-cap"></i> ${initialQuestion.year ? initialQuestion.year + ' Past Paper &bull; ' : ''}${initialQuestion.q_number ? initialQuestion.q_number + ' &bull; ' : ''}${marks} Marks (${marks * 1.5} Mins)`;
+    qText.textContent = currentQuestion.question;
+
+    if (currentQuestion.stimulus) {
+      if (Array.isArray(currentQuestion.stimulus)) {
+        qStimulus.innerHTML =
+          `<strong>Stimulus Provided in Exam:</strong><br>` +
+          currentQuestion.stimulus
+            .map((stim) => {
+              if (typeof stim === 'string') return `&bull; ${stim}`;
+              if (typeof stim === 'object') {
+                return `<strong>${stim.title || ''}</strong><br>${stim.content || ''}`;
+              }
+              return '';
+            })
+            .join('<br>');
+      } else {
+        qStimulus.innerHTML =
+          `<strong>Stimulus Provided in Exam:</strong><br>` + currentQuestion.stimulus;
+      }
+      qStimulus.style.display = 'block';
+    } else {
+      qStimulus.innerHTML = '';
+      qStimulus.style.display = 'none';
+    }
+
+    if (currentQuestion.pitfall_warning || currentQuestion.provenance_clue) {
+      qProvText.innerHTML = `<strong>Pitfall Warning:</strong> ${currentQuestion.pitfall_warning || currentQuestion.provenance_clue}`;
+      qProv.style.display = 'block';
+    } else {
+      qProv.style.display = 'none';
+    }
+
+    const structureStrips = {
+      16: `<strong>16-Mark Essay Structure Strip (PEEL):</strong>
+<ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
+  <li><strong>Introduction:</strong> Define key concepts, outline criteria for evaluation, and state your provisional thesis.</li>
+  <li><strong>Paragraph 1 (Stimulus Point 1):</strong> Point &bull; Precise contextual evidence &bull; Explain significance &bull; Link to thesis.</li>
+  <li><strong>Paragraph 2 (Stimulus Point 2):</strong> Point &bull; Precise contextual evidence &bull; Direct comparison with paragraph 1.</li>
+  <li><strong>Paragraph 3 (Own Knowledge Factor — Mandatory!):</strong> Point from outside the stimulus &bull; In-depth evidence &bull; Evaluative weight.</li>
+  <li><strong>Conclusion:</strong> Sustained judgement directly answering 'How far do you agree?'. Explain relative weight of factors.</li>
+</ul>`,
+      12: `<strong>12-Mark 'Explain Why' Structure Strip (PEEL):</strong>
+<ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
+  <li><strong>Cause 1 (Stimulus):</strong> Clear reason identified &bull; Specific dates/names &bull; Explain <em>how/why</em> this led to the outcome.</li>
+  <li><strong>Cause 2 (Stimulus):</strong> Second cause &bull; Detailed supporting facts &bull; Explain relative importance.</li>
+  <li><strong>Cause 3 (Own Knowledge — Mandatory!):</strong> Distinct cause not in stimulus &bull; Precise evidence &bull; Analytical link.</li>
+  <li><strong>Synthesis Link:</strong> Explain how these causes interacted (e.g. underlying catalyst vs immediate trigger).</li>
+</ul>`,
+      8: `<strong>8-Mark Question Structure Strip:</strong>
+<ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
+  <li><strong>Point 1 (4 Marks):</strong> Identify first feature / consequence / usefulness aspect with precise contextual knowledge.</li>
+  <li><strong>Point 2 (4 Marks):</strong> Identify second feature / consequence / usefulness aspect with independent supporting knowledge.</li>
+</ul>`,
+      4: `<strong>4-Mark Question Structure Strip:</strong>
+<ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
+  <li><strong>Feature/Inference 1 (2 Marks):</strong> State feature clearly [1 mark] + add specific supporting detail [1 mark].</li>
+  <li><strong>Feature/Inference 2 (2 Marks):</strong> State second distinct feature [1 mark] + add specific supporting detail [1 mark].</li>
+</ul>`,
+    };
+
+    const stripHtml = structureStrips[marks] || structureStrips[16];
+    hintPanel.innerHTML = stripHtml;
+    hintBtn.style.display = 'block';
+
+    if (currentQuestion.model_answer) {
+      wagollBtn.style.display = 'block';
+      let ans = currentQuestion.model_answer;
+      if (Array.isArray(ans)) {
+        wagollPanel.innerHTML = `<strong>MARK SCHEME INDICATIVE CONTENT:</strong><br><br><ul style="padding-left: 20px; margin: 0; line-height: 1.6;">${ans.map((pt) => `<li style="margin-bottom: 8px;">${pt}</li>`).join('')}</ul>`;
+      } else {
+        wagollPanel.innerHTML =
+          `<strong>MARK SCHEME INDICATIVE CONTENT:</strong><br><br>` + ans.replace(/\n/g, '<br>');
+      }
+    } else {
+      wagollBtn.style.display = 'none';
+    }
+  }
 
   // Render Mock Exams Section
   if (unitData.mock_exams && unitData.mock_exams.length > 0) {
