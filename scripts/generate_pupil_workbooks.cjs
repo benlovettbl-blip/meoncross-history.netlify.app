@@ -595,142 +595,204 @@ function generateConceptualTriadPage(lesson, unitId) {
   const hippoPillar = ct.pillars.find((p) => p.id === 'hippocrates') || ct.pillars[1];
   const galenPillar = ct.pillars.find((p) => p.id === 'galen') || ct.pillars[2];
   const et = ct.exam_task || {};
+  const q3 = et.q3 || null;
+  const q4 = et.q4 || (et.question ? et : null);
 
   return `
   <!-- PAGE 1: FULL VISUAL REVISION GUIDE (LEFT-HAND PAGE) -->
-  <div class="creative-triad-page creative-triad-left-page" style="page-break-before: always; page-break-after: always; box-sizing: border-box; padding: 12px 16px; font-family: 'Inter', sans-serif;">
-    <!-- Top Header -->
-    <div style="border-bottom: 2px solid #1e293b; padding-bottom: 5px; margin-bottom: 7px;">
-      <div style="display: flex; justify-content: space-between; align-items: baseline;">
-        <span style="font-size: 8pt; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.5px;">
-          Edexcel GCSE (9–1) History &bull; Paper 1: Medicine in Britain (c.1250–present)
-        </span>
-        <span style="font-size: 8pt; font-weight: 700; color: #1e293b; background: #f1f5f9; padding: 2px 8px; border-radius: 4px; border: 1px solid #cbd5e1;">
-          Topic 1 &bull; Visual Revision Guide
-        </span>
-      </div>
-      <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 14pt; color: #0f172a; margin: 3px 0 4px 0; border: none; padding: 0;">
-        ${ct.title}
-      </h2>
-      <div style="font-size: 8pt; color: #334155; background: #f8fafc; border-left: 3px solid #475569; padding: 4px 8px; border-radius: 3px; line-height: 1.35;">
-        <strong>Historical Context:</strong> ${ct.briefing}
-      </div>
-    </div>
-
-    <!-- Marginal Keywords HUD -->
-    <div style="display: flex; flex-wrap: wrap; gap: 4px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; margin-bottom: 7px; align-items: center;">
-      <span style="font-size: 7.2pt; font-weight: 800; color: #334155; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 4px;">
-        High-Yield Terminology:
-      </span>
-      ${ct.keywords.map((kw) => `<span style="font-size: 6.9pt; background: #e2e8f0; color: #0f172a; padding: 1px 5px; border-radius: 3px; font-weight: 600;">${kw}</span>`).join(' ')}
-    </div>
-
-    <!-- APEX PILLAR: The Catholic Church -->
-    <div style="background: #ffffff; border: 1.5px solid #334155; border-radius: 6px; padding: 7px 10px; margin-bottom: 7px;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-        <div>
-          <strong style="font-size: 9pt; color: #0f172a;">${churchPillar.name}</strong>
-          <span style="font-size: 7.2pt; color: #475569; margin-left: 6px;">(${churchPillar.dates})</span>
+  <div class="creative-triad-page creative-triad-left-page" style="page-break-before: always; page-break-after: always; box-sizing: border-box; padding: 16px 20px; font-family: 'Inter', sans-serif; background-color: #ffffff; display: flex; flex-direction: column; justify-content: space-between; height: 1123px;">
+    <div>
+      <!-- Top Header -->
+      <div style="border-bottom: 2px solid #1e293b; padding-bottom: 5px; margin-bottom: 8px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span style="font-size: 8pt; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.5px;">
+            Edexcel GCSE (9–1) History &bull; Paper 1: Medicine in Britain (c.1250–present)
+          </span>
+          <span style="font-size: 8pt; font-weight: 700; color: #1e293b; background: #f1f5f9; padding: 2px 8px; border-radius: 4px; border: 1px solid #cbd5e1;">
+            Topic 1 &bull; Comprehensive Knowledge Masterclass
+          </span>
         </div>
-        <span style="font-size: 7pt; font-weight: 700; color: #1e293b; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 1px 6px; border-radius: 3px;">
-          ${churchPillar.badge}
+        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 14.5pt; color: #0f172a; margin: 3px 0 4px 0; border: none; padding: 0;">
+          ${ct.title}
+        </h2>
+        <div style="font-size: 7.8pt; color: #334155; background: #f8fafc; border-left: 3.5px solid #475569; padding: 4px 10px; border-radius: 3px; line-height: 1.35;">
+          <strong>Core Historical Context:</strong> ${ct.briefing}
+        </div>
+      </div>
+
+      <!-- Marginal Keywords HUD -->
+      <div style="display: flex; flex-wrap: wrap; gap: 4px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 5px; padding: 4px 8px; margin-bottom: 9px; align-items: center;">
+        <span style="font-size: 7.2pt; font-weight: 800; color: #334155; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 4px;">
+          High-Yield Terminology:
         </span>
+        ${(ct.keywords || []).map((kw) => `<span style="font-size: 6.9pt; background: #e2e8f0; color: #0f172a; padding: 1.5px 6px; border-radius: 3px; font-weight: 600;">${kw}</span>`).join(' ')}
       </div>
-      <div style="font-size: 7.2pt; font-weight: 700; color: #334155; margin-bottom: 4px;">
-        Core Function: ${churchPillar.role}
+
+      <!-- SECTION 1: THE INTELLECTUAL TRIAD -->
+      <!-- APEX PILLAR: The Catholic Church -->
+      <div style="background: #ffffff; border: 1.5px solid #334155; border-radius: 6px; padding: 8px 12px; margin-bottom: 8px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
+          <div>
+            <strong style="font-size: 9.5pt; color: #0f172a;">${churchPillar.name}</strong>
+            <span style="font-size: 7.5pt; color: #475569; margin-left: 6px;">(${churchPillar.dates})</span>
+          </div>
+          <span style="font-size: 7.2pt; font-weight: 700; color: #1e293b; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 2px 7px; border-radius: 3px;">
+            ${churchPillar.badge}
+          </span>
+        </div>
+        <div style="font-size: 7.4pt; font-weight: 700; color: #334155; margin-bottom: 5px;">
+          Institutional Control: ${churchPillar.role}
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+          ${churchPillar.core_knowledge
+            .map(
+              (ck) => `
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 5px 8px;">
+              <div style="font-size: 7.3pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">${ck.q}</div>
+              <div style="font-size: 7pt; color: #334155; line-height: 1.3;">${ck.a}</div>
+            </div>
+          `,
+            )
+            .join('')}
+        </div>
       </div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-        ${churchPillar.core_knowledge
+
+      <!-- CAUSAL TRANSMISSION VECTORS -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; margin-bottom: 8px;">
+        ${ct.vectors
           .map(
-            (ck) => `
-          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 5px 7px;">
-            <div style="font-size: 7.2pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">${ck.q}</div>
-            <div style="font-size: 6.9pt; color: #334155; line-height: 1.3;">${ck.a}</div>
+            (vec) => `
+          <div style="background: #ffffff; border: 1.2px solid #cbd5e1; border-radius: 5px; padding: 5px 8px;">
+            <div style="font-size: 7.2pt; font-weight: 700; color: #0f172a; margin-bottom: 2px; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
+              ${vec.label}
+            </div>
+            <div style="font-size: 6.9pt; color: #334155; line-height: 1.25;">${vec.text}</div>
           </div>
         `,
           )
           .join('')}
       </div>
-    </div>
 
-    <!-- CAUSAL TRANSMISSION VECTORS -->
-    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-bottom: 7px;">
-      ${ct.vectors
-        .map(
-          (vec) => `
-        <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 5px; padding: 5px 7px;">
-          <div style="font-size: 7.2pt; font-weight: 700; color: #0f172a; margin-bottom: 2px; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
-            ${vec.label}
+      <!-- BOTTOM PILLARS: Hippocrates (Left) & Galen (Right) -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 9px;">
+        <!-- Hippocrates -->
+        <div style="background: #ffffff; border: 1.5px solid #334155; border-radius: 6px; padding: 8px 10px;">
+          <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 5px;">
+            <img src="${hippoPillar.image}" alt="${hippoPillar.name}" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 1.5px solid #334155; flex-shrink: 0;">
+            <div>
+              <strong style="font-size: 9pt; color: #0f172a;">${hippoPillar.name}</strong>
+              <div style="font-size: 7pt; color: #475569;">${hippoPillar.dates} &bull; <span style="font-weight: 700; color: #1e293b;">${hippoPillar.badge}</span></div>
+              <div style="font-size: 7pt; font-weight: 600; color: #334155;">${hippoPillar.role}</div>
+            </div>
           </div>
-          <div style="font-size: 6.8pt; color: #334155; line-height: 1.25;">${vec.text}</div>
-        </div>
-      `,
-        )
-        .join('')}
-    </div>
-
-    <!-- BOTTOM PILLARS: Hippocrates (Left) & Galen (Right) -->
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 7px;">
-      <!-- Hippocrates -->
-      <div style="background: #ffffff; border: 1.5px solid #334155; border-radius: 6px; padding: 7px 9px;">
-        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 5px;">
-          <img src="${hippoPillar.image}" alt="${hippoPillar.name}" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 1.5px solid #334155; flex-shrink: 0;">
-          <div>
-            <strong style="font-size: 8.8pt; color: #0f172a;">${hippoPillar.name}</strong>
-            <div style="font-size: 6.8pt; color: #475569;">${hippoPillar.dates} &bull; <span style="font-weight: 700; color: #1e293b;">${hippoPillar.badge}</span></div>
-            <div style="font-size: 6.8pt; font-weight: 600; color: #334155;">${hippoPillar.role}</div>
+          <div style="display: flex; flex-direction: column; gap: 4px;">
+            ${hippoPillar.core_knowledge
+              .map(
+                (ck) => `
+              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 4px 7px;">
+                <div style="font-size: 7.2pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">${ck.q}</div>
+                <div style="font-size: 6.9pt; color: #334155; line-height: 1.25;">${ck.a}</div>
+              </div>
+            `,
+              )
+              .join('')}
           </div>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 4px;">
-          ${hippoPillar.core_knowledge
+
+        <!-- Galen -->
+        <div style="background: #ffffff; border: 1.5px solid #334155; border-radius: 6px; padding: 8px 10px;">
+          <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 5px;">
+            <img src="${galenPillar.image}" alt="${galenPillar.name}" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 1.5px solid #334155; flex-shrink: 0;">
+            <div>
+              <strong style="font-size: 9pt; color: #0f172a;">${galenPillar.name}</strong>
+              <div style="font-size: 7pt; color: #475569;">${galenPillar.dates} &bull; <span style="font-weight: 700; color: #1e293b;">${galenPillar.badge}</span></div>
+              <div style="font-size: 7pt; font-weight: 600; color: #334155;">${galenPillar.role}</div>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 4px;">
+            ${galenPillar.core_knowledge
+              .map(
+                (ck) => `
+              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 4px 7px;">
+                <div style="font-size: 7.2pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">${ck.q}</div>
+                <div style="font-size: 6.9pt; color: #334155; line-height: 1.25;">${ck.a}</div>
+              </div>
+            `,
+              )
+              .join('')}
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 2: SUPERNATURAL, ASTROLOGICAL & ENVIRONMENTAL CAUSES -->
+      ${
+        ct.supernatural_and_environmental
+          ? `
+      <div style="margin-bottom: 9px;">
+        <div style="font-size: 7.6pt; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+          <span>Medieval Explanations for Disease: Supernatural &amp; Environmental</span>
+          <span style="height: 1px; background: #cbd5e1; flex-grow: 1;"></span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px;">
+          ${ct.supernatural_and_environmental
             .map(
-              (ck) => `
-            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 4px 6px;">
-              <div style="font-size: 7pt; font-weight: 700; color: #0f172a; margin-bottom: 1px;">${ck.q}</div>
-              <div style="font-size: 6.8pt; color: #334155; line-height: 1.25;">${ck.a}</div>
+              (sec) => `
+            <div style="background: #ffffff; border: 1.2px solid #cbd5e1; border-radius: 5px; padding: 6px 8px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+                <strong style="font-size: 7.2pt; color: #0f172a;">${sec.title}</strong>
+                <span style="font-size: 6.4pt; font-weight: 700; color: #475569; background: #f1f5f9; padding: 1px 4px; border-radius: 2px;">${sec.badge}</span>
+              </div>
+              <div style="font-size: 6.9pt; color: #334155; line-height: 1.28;">${sec.text}</div>
             </div>
           `,
             )
             .join('')}
         </div>
       </div>
+      `
+          : ''
+      }
 
-      <!-- Galen -->
-      <div style="background: #ffffff; border: 1.5px solid #334155; border-radius: 6px; padding: 7px 9px;">
-        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 5px;">
-          <img src="${galenPillar.image}" alt="${galenPillar.name}" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 1.5px solid #334155; flex-shrink: 0;">
-          <div>
-            <strong style="font-size: 8.8pt; color: #0f172a;">${galenPillar.name}</strong>
-            <div style="font-size: 6.8pt; color: #475569;">${galenPillar.dates} &bull; <span style="font-weight: 700; color: #1e293b;">${galenPillar.badge}</span></div>
-            <div style="font-size: 6.8pt; font-weight: 600; color: #334155;">${galenPillar.role}</div>
-          </div>
+      <!-- SECTION 3: MEDIEVAL DIAGNOSTIC TOOLKIT & TRAINING -->
+      ${
+        ct.diagnostic_toolkit
+          ? `
+      <div style="margin-bottom: 9px;">
+        <div style="font-size: 7.6pt; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+          <span>The Physician's Diagnostic Toolkit &amp; Academic Training</span>
+          <span style="height: 1px; background: #cbd5e1; flex-grow: 1;"></span>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 4px;">
-          ${galenPillar.core_knowledge
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px;">
+          ${ct.diagnostic_toolkit
             .map(
-              (ck) => `
-            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 4px 6px;">
-              <div style="font-size: 7pt; font-weight: 700; color: #0f172a; margin-bottom: 1px;">${ck.q}</div>
-              <div style="font-size: 6.8pt; color: #334155; line-height: 1.25;">${ck.a}</div>
+              (tool) => `
+            <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-radius: 5px; padding: 6px 8px;">
+              <div style="font-size: 7.2pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">
+                ${tool.title}
+              </div>
+              <div style="font-size: 6.9pt; color: #334155; line-height: 1.28;">${tool.text}</div>
             </div>
           `,
             )
             .join('')}
         </div>
       </div>
+      `
+          : ''
+      }
     </div>
 
-    <!-- BOTTOM SYNTHESIS TAKEAWAYS -->
-    <div style="background: #f8fafc; border: 1.5px solid #1e293b; border-radius: 6px; padding: 6px 10px;">
-      <div style="font-size: 7.8pt; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px;">
-        3 Key Arguments for Exam Success: Why Medical Ideas Stayed the Same (c.1250–c.1500)
+    <!-- BOTTOM SYNTHESIS: 3 CORE EXAM ARGUMENTS -->
+    <div style="background: #f8fafc; border: 1.5px solid #1e293b; border-radius: 6px; padding: 6px 10px; margin-top: auto;">
+      <div style="font-size: 7.6pt; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px;">
+        3 Key Causal Factors: Why Ideas About Cause Remained Stagnant (c.1250–c.1500)
       </div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px;">
         ${ct.takeaway_points
           .map(
             (tp, i) => `
-          <div style="font-size: 6.8pt; color: #334155; line-height: 1.25; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 6px;">
-            <strong style="color: #0f172a; display: block; margin-bottom: 1px;">Point ${i + 1}:</strong>
+          <div style="font-size: 6.9pt; color: #334155; line-height: 1.25; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 7px;">
+            <strong style="color: #0f172a; display: block; margin-bottom: 1px;">Factor ${i + 1}:</strong>
             ${tp}
           </div>
         `,
@@ -741,78 +803,129 @@ function generateConceptualTriadPage(lesson, unitId) {
   </div>
 
   <!-- PAGE 2: DEDICATED EXAM PRACTICE PAGE (RIGHT-HAND PAGE) -->
-  <div class="creative-exam-page creative-triad-right-page" style="page-break-before: always; page-break-after: always; box-sizing: border-box; padding: 14px 18px; font-family: 'Inter', sans-serif;">
-    <!-- Top Header -->
-    <div style="border-bottom: 2px solid #1e293b; padding-bottom: 5px; margin-bottom: 8px;">
-      <div style="display: flex; justify-content: space-between; align-items: baseline;">
-        <span style="font-size: 8pt; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.5px;">
-          ${et.board || 'Edexcel GCSE (9–1) History &bull; Paper 1 (Section B)'}
-        </span>
-        <span style="font-size: 8pt; font-weight: 700; color: #1e293b; background: #f1f5f9; padding: 2px 8px; border-radius: 4px; border: 1px solid #cbd5e1;">
-          ${et.tariff || 'Question 4 &bull; [12 Marks]'}
-        </span>
+  <div class="creative-exam-page creative-triad-right-page" style="page-break-before: always; page-break-after: always; box-sizing: border-box; padding: 16px 22px; font-family: 'Inter', sans-serif; background-color: #ffffff; display: flex; flex-direction: column; justify-content: space-between; height: 1123px;">
+    <div>
+      <!-- Top Header -->
+      <div style="border-bottom: 2px solid #1e293b; padding-bottom: 5px; margin-bottom: 9px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span style="font-size: 8pt; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.5px;">
+            Edexcel GCSE (9–1) History &bull; Paper 1 (Section B): Medicine in Britain
+          </span>
+          <span style="font-size: 8pt; font-weight: 700; color: #1e293b; background: #f1f5f9; padding: 2px 8px; border-radius: 4px; border: 1px solid #cbd5e1;">
+            Assessment Total: 16 Marks
+          </span>
+        </div>
+        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 14.5pt; color: #0f172a; margin: 3px 0 4px 0; border: none; padding: 0;">
+          Exam Practice: Similarity/Difference &amp; Analytical Explanation
+        </h2>
       </div>
-      <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 14pt; color: #0f172a; margin: 3px 0 4px 0; border: none; padding: 0;">
-        Exam Practice: Extended Analytical Explanation
-      </h2>
+
+      <!-- PART A: QUESTION 3 (4 MARKS) -->
+      ${
+        q3
+          ? `
+      <div style="margin-bottom: 10px;">
+        <div style="background: #ffffff; border: 1.5px solid #334155; border-radius: 6px; padding: 7px 12px; margin-bottom: 5px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
+            <strong style="font-size: 8.8pt; color: #0f172a;">${q3.board || 'Question 3'}</strong>
+            <span style="font-size: 7.8pt; font-weight: 800; color: #0f172a; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 2px 7px; border-radius: 3px;">
+              [4 Marks]
+            </span>
+          </div>
+          <div style="font-family: 'Georgia', serif; font-size: 10pt; font-weight: 700; color: #0f172a; line-height: 1.35; margin-bottom: 4px;">
+            ${q3.question}
+          </div>
+          <div style="font-size: 7.2pt; color: #334155; background: #f8fafc; border-left: 3px solid #334155; padding: 3px 8px; border-radius: 3px;">
+            <strong>Strategy:</strong> ${q3.guidance || 'Timing: 5 mins • 1 developed comparative PEEL paragraph with specific knowledge from both eras.'}
+          </div>
+        </div>
+        <!-- Q3 Ruled lines (8 lines) -->
+        <div style="margin-bottom: 6px;">
+          ${Array(8)
+            .fill(
+              '<div class="task-lines" style="height: 20px; border-bottom: 1px dotted #94a3b8; margin-top: 1px;"></div>',
+            )
+            .join('')}
+        </div>
+      </div>
+      `
+          : ''
+      }
+
+      <!-- PART B: QUESTION 4 (12 MARKS) -->
+      ${
+        q4
+          ? `
+      <div style="margin-bottom: 8px;">
+        <div style="background: #ffffff; border: 1.5px solid #1e293b; border-radius: 6px; padding: 7px 12px; margin-bottom: 5px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
+            <strong style="font-size: 8.8pt; color: #0f172a;">${q4.board || 'Question 4'}</strong>
+            <span style="font-size: 7.8pt; font-weight: 800; color: #0f172a; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 2px 7px; border-radius: 3px;">
+              [12 Marks]
+            </span>
+          </div>
+          <div style="font-family: 'Georgia', serif; font-size: 10pt; font-weight: 700; color: #0f172a; line-height: 1.35; margin-bottom: 4px;">
+            ${q4.question}
+          </div>
+          <div style="font-size: 7.6pt; color: #334155; margin-bottom: 2px;">
+            You may use the following in your answer:
+          </div>
+          <div style="display: flex; gap: 18px; font-size: 7.6pt; font-weight: 600; color: #0f172a; margin-bottom: 2px; padding-left: 8px;">
+            ${(q4.stimulus || ['The Catholic Church', 'Galen']).map((s) => `<span>&bull; ${s}</span>`).join('')}
+          </div>
+          <div style="font-size: 7.2pt; color: #475569; font-style: italic; margin-bottom: 4px;">
+            ${q4.note || '(You must also use information of your own.)'} [12 marks]
+          </div>
+          <div style="font-size: 7.2pt; color: #334155; background: #f8fafc; border-left: 3px solid #1e293b; padding: 3px 8px; border-radius: 3px;">
+            <strong>Strategy:</strong> ${q4.guidance || 'Timing: 18 mins • 3 fully developed PEEL paragraphs (P1: Church, P2: Galen, P3: Own Knowledge).'}
+          </div>
+        </div>
+        <!-- Q4 Ruled lines (24 lines) -->
+        <div style="margin-bottom: 6px;">
+          ${Array(24)
+            .fill(
+              '<div class="task-lines" style="height: 20px; border-bottom: 1px dotted #94a3b8; margin-top: 1px;"></div>',
+            )
+            .join('')}
+        </div>
+      </div>
+      `
+          : ''
+      }
     </div>
 
-    <!-- Official Stimulus Question Box -->
-    <div style="background: #ffffff; border: 1.5px solid #1e293b; border-radius: 6px; padding: 8px 12px; margin-bottom: 8px;">
-      <div style="font-family: 'Georgia', serif; font-size: 10.5pt; font-weight: 700; color: #0f172a; line-height: 1.35; margin-bottom: 6px;">
-        ${et.question || 'Explain why there was so little change in medical ideas about the causes of disease between c.1250 and c.1500.'}
+    <!-- EDEXCEL MARK SCHEME RUBRIC & FEEDBACK BOX -->
+    <div style="border: 1.5px solid #cbd5e1; border-radius: 6px; background: #ffffff; padding: 6px 10px; margin-top: auto;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+        <strong style="font-size: 7.5pt; color: #0f172a; text-transform: uppercase;">Edexcel Paper 1 Assessment &bull; Marking Criteria</strong>
+        <div style="display: flex; gap: 10px;">
+          <span style="font-size: 7.8pt; font-weight: 700; color: #0f172a; border: 1px solid #94a3b8; padding: 2px 7px; border-radius: 3px; background: #f8fafc;">
+            Q3: &nbsp;&nbsp;&nbsp;&nbsp; / 4
+          </span>
+          <span style="font-size: 7.8pt; font-weight: 700; color: #0f172a; border: 1px solid #94a3b8; padding: 2px 7px; border-radius: 3px; background: #f8fafc;">
+            Q4: &nbsp;&nbsp;&nbsp;&nbsp; / 12
+          </span>
+          <span style="font-size: 7.8pt; font-weight: 800; color: #0f172a; border: 1.5px solid #1e293b; padding: 2px 9px; border-radius: 3px; background: #f1f5f9;">
+            Total: &nbsp;&nbsp;&nbsp;&nbsp; / 16
+          </span>
+        </div>
       </div>
-      <div style="font-size: 8pt; color: #334155; margin-bottom: 4px;">
-        You may use the following in your answer:
-      </div>
-      <div style="display: flex; gap: 20px; font-size: 8pt; font-weight: 600; color: #0f172a; margin-bottom: 4px; padding-left: 10px;">
-        ${(et.stimulus || ['The Catholic Church', 'Galen']).map((s) => `<span>&bull; ${s}</span>`).join('')}
-      </div>
-      <div style="font-size: 7.5pt; color: #475569; font-style: italic;">
-        ${et.note || '(You must also use information of your own.)'} [12 marks]
-      </div>
-    </div>
-
-    <!-- Exam Strategy Ribbon -->
-    <div style="display: flex; justify-content: space-between; align-items: center; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; margin-bottom: 8px; font-size: 7.2pt; color: #334155;">
-      <span><strong>Suggested Time:</strong> ${et.guidance?.time || '18 minutes'}</span>
-      <span><strong>Target:</strong> 3 developed PEEL paragraphs</span>
-      <span><strong>Top Band:</strong> Link stimulus factors + own knowledge factor</span>
-    </div>
-
-    <!-- Full Lined Answer Canvas (22 ruled lines) -->
-    <div style="margin-bottom: 8px;">
-      ${Array(22)
-        .fill(
-          '<div class="task-lines" style="height: 18px; border-bottom: 1px dotted #94a3b8; margin-top: 1px;"></div>',
-        )
-        .join('')}
-    </div>
-
-    <!-- Edexcel Mark Scheme Rubric & Feedback Box -->
-    <div style="border: 1.5px solid #cbd5e1; border-radius: 5px; background: #ffffff; padding: 5px 8px;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-        <strong style="font-size: 7.5pt; color: #0f172a; text-transform: uppercase;">Edexcel Level Criteria &bull; Question 4 (12 Marks)</strong>
-        <span style="font-size: 8pt; font-weight: 700; color: #0f172a; border: 1.5px solid #1e293b; padding: 1px 8px; border-radius: 3px;">
-          Mark: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 12
-        </span>
-      </div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 4px; font-size: 6.5pt; color: #475569; line-height: 1.2;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 5px; font-size: 6.6pt; color: #475569; line-height: 1.22;">
         <div style="background: #f8fafc; padding: 3px 5px; border-radius: 3px; border: 1px solid #e2e8f0;">
-          <strong style="color: #0f172a; display: block;">L1 (1–3 marks):</strong> Generalised statements; simple points with limited historical knowledge.
+          <strong style="color: #0f172a; display: block;">Q4 L1 (1–3 m):</strong> Generalised statements; simple points with limited knowledge.
         </div>
         <div style="background: #f8fafc; padding: 3px 5px; border-radius: 3px; border: 1px solid #e2e8f0;">
-          <strong style="color: #0f172a; display: block;">L2 (4–6 marks):</strong> Descriptive answer; explains 1–2 factors with basic links to question.
+          <strong style="color: #0f172a; display: block;">Q4 L2 (4–6 m):</strong> Descriptive explanation of 1–2 factors with basic links to question.
         </div>
         <div style="background: #f8fafc; padding: 3px 5px; border-radius: 3px; border: 1px solid #e2e8f0;">
-          <strong style="color: #0f172a; display: block;">L3 (7–9 marks):</strong> Explains at least 2 factors with accurate historical knowledge and clear reasoning.
+          <strong style="color: #0f172a; display: block;">Q4 L3 (7–9 m):</strong> Explains 2 factors with accurate detail and clear causal reasoning.
         </div>
         <div style="background: #f1f5f9; padding: 3px 5px; border-radius: 3px; border: 1px solid #cbd5e1;">
-          <strong style="color: #0f172a; display: block;">L4 (10–12 marks):</strong> Analytical explanation of 3 factors (both stimuli + own); sustained causal line.
+          <strong style="color: #0f172a; display: block;">Q4 L4 (10–12 m):</strong> Analytical explanation of 3 factors (stimuli + own); sustained causal focus.
         </div>
       </div>
-      <div style="margin-top: 4px; font-size: 7pt; color: #334155;">
-        <strong>Teacher / Self Feedback:</strong> <span style="border-bottom: 1px solid #94a3b8; display: inline-block; width: 80%; height: 10px;"></span>
+      <div style="margin-top: 4px; font-size: 7.2pt; color: #334155;">
+        <strong>Teacher / Self Feedback:</strong> <span style="border-bottom: 1px solid #94a3b8; display: inline-block; width: 78%; height: 10px;"></span>
       </div>
     </div>
   </div>

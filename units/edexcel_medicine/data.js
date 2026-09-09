@@ -564,14 +564,14 @@ export const unitData = {
         subtitle:
           'Why did ancient medical dogma freeze European understanding of disease for 1,400 years?',
         briefing:
-          'In medieval Europe, medical authority did not rest upon scientific experiments or clinical trials. Instead, it was anchored to an unshakeable intellectual triad: Ancient Greek philosophy, Imperial Roman anatomy, and Christian theology. Use this visual revision guide to revise the three pillars and their causal connections before answering the 12-mark exam question opposite.',
+          'In medieval Europe, medical authority did not rest upon scientific experiments or clinical trials. Instead, it was anchored to an unshakeable intellectual triad: Ancient Greek philosophy, Imperial Roman anatomy, and Christian theology. Use this visual revision guide to revise all medieval beliefs about disease before answering the Edexcel exam questions opposite.',
         pillars: [
           {
             id: 'church',
             name: 'The Catholic Church',
             dates: 'c. 500 – 1500 AD',
             badge: 'Monopoly on Truth',
-            role: 'Monastic Scriptoria, Universities & Dogma',
+            role: 'Monastic Scriptoria, Universities & Religious Dogma',
             core_knowledge: [
               {
                 q: 'Why did the Church embrace Galen?',
@@ -593,11 +593,11 @@ export const unitData = {
             core_knowledge: [
               {
                 q: 'The Four Humours Theory:',
-                a: 'Blood (Spring/Air), Phlegm (Winter/Water), Yellow Bile (Summer/Fire), Black Bile (Autumn/Earth). Disease was an internal humoural imbalance, treated by restoring equilibrium.',
+                a: 'Blood (Spring/Air/Hot & Wet), Phlegm (Winter/Water/Cold & Wet), Yellow Bile (Summer/Fire/Hot & Dry), Black Bile (Autumn/Earth/Cold & Dry). Sickness was an internal humoural imbalance.',
               },
               {
-                q: 'The Natural Method:',
-                a: 'Revolutionary rejection of spirits and demons. Promoted bedside clinical observation: observing symptoms, monitoring pulse, and inspecting urine charts (uroscopy).',
+                q: 'The Clinical Method & Regimen Sanitatis:',
+                a: 'Revolutionary rejection of spirits and demons. Promoted bedside observation (pulse, symptoms) and balanced lifestyle (diet, rest, exercise) in the Regimen Sanitatis.',
               },
             ],
           },
@@ -615,7 +615,7 @@ export const unitData = {
               },
               {
                 q: 'Anatomical Errors & 1,300-Year Dogma:',
-                a: 'Dissected pigs and Barbary apes due to Roman taboos, claiming the liver had 5 lobes and heart had porous septum. Preserved without challenge because human dissection was restricted to confirming Galen.',
+                a: 'Dissected pigs and Barbary apes due to Roman taboos, claiming the human liver had 5 lobes and jaw had 2 bones. His errors were frozen as sacred truth for 1,300 years.',
               },
             ],
           },
@@ -634,6 +634,40 @@ export const unitData = {
             text: 'With university curricula fixed on Galen and dissent punished as heresy, medical inquiry halted completely until the Renaissance.',
           },
         ],
+        supernatural_and_environmental: [
+          {
+            title: "God's Wrath, Sin & Leprosy",
+            badge: 'Supernatural',
+            text: 'The Church taught that illness was a punishment from God for sins or a test of faith. Lepers were cast out into Lazar houses, forced to ring bells and wear cloaks. Prayer, fasting, pilgrimages, and flagellation were seen as genuine cures.',
+          },
+          {
+            title: 'Astrology & The 1345 Alignment',
+            badge: 'Astrological',
+            text: 'Physicians consulted Almanacs and star charts to check planetary alignments. In 1345, an unusual conjunction of Mars, Jupiter, and Saturn was blamed for the Black Death. Star alignments were believed to directly corrupt the humours.',
+          },
+          {
+            title: 'Miasma & Pestilential Air',
+            badge: 'Environmental',
+            text: 'Bad air from rotting waste, swamps, and filth was believed to poison the body. People burned incense, carried pomanders or sweet herbs, and avoided foul-smelling areas to protect their humoural balance.',
+          },
+        ],
+        diagnostic_toolkit: [
+          {
+            title: 'Uroscopy (The Urine Chart)',
+            icon: 'flask',
+            text: 'The primary diagnostic tool. Physicians examined urine in a glass matula, checking colour, density, smell, and even taste against a 20-shade chart. White/watery urine indicated excess phlegm; deep red indicated excess blood. Cathedral priories hired full-time urine examiners.',
+          },
+          {
+            title: 'The Zodiac Man (Homo Signorum)',
+            icon: 'stars',
+            text: 'Included in every physician’s pocket Vademecum handbook. Illustrated how the 12 star signs governed different bodily organs (e.g. Aries ruled the head; Pisces the feet). Doctors were strictly forbidden to bleed or operate when the Moon was in a body part’s governing sign.',
+          },
+          {
+            title: 'University Dissection Ritual',
+            icon: 'book',
+            text: 'Medical training at Oxford, Paris, and Bologna was based on book learning, not practical treatment. During rare dissections, the professor (Lector) sat in a high chair reading Galen, while an assistant cut. If the body contradicted Galen, the corpse was dismissed as malformed.',
+          },
+        ],
         keywords: [
           'Four Humours',
           'Theory of Opposites',
@@ -643,8 +677,10 @@ export const unitData = {
           'Roger Bacon (1277)',
           'Heresy',
           'Miasma',
-          'Uroscopy',
+          'Uroscopy (Matula)',
           'Zodiac Man',
+          'Lazar House',
+          'Regimen Sanitatis',
         ],
         takeaway_points: [
           'The Catholic Church’s monopoly on education, universities, and hand-copied manuscripts prevented new ideas.',
@@ -652,33 +688,26 @@ export const unitData = {
           'Lack of alternative scientific explanations or technology (no microscopes, no printing press) reinforced reliance on ancient tradition.',
         ],
         exam_task: {
-          tariff: 'Explain Why [12 Marks]',
-          board: 'Edexcel GCSE (9–1) History &bull; Paper 1 (Section B)',
-          question:
-            'Explain why there was so little change in medical ideas about the causes of disease between c.1250 and c.1500.',
-          stimulus: ['The Catholic Church', 'Galen'],
-          note: '(You must also use information of your own.)',
-          guidance: {
-            time: '18 minutes',
-            structure: '3 fully developed PEEL paragraphs (Point, Evidence, Explain, Link)',
+          q3: {
+            tariff: 'Similarity & Difference [4 Marks]',
+            board: 'Edexcel GCSE (9–1) Paper 1 &bull; Question 3',
+            question:
+              'Explain one way in which ideas about the causes of illness in the Medieval period (c.1250–c.1500) were similar to ideas about the causes of illness in the Roman period (c.100–c.500 AD).',
+            guidance:
+              'Timing: 5 mins &bull; Structure: 1 developed comparative PEEL paragraph with specific historical detail from both eras.',
+            lines: 7,
           },
-          peel_prompts: [
-            {
-              p_num: 1,
-              factor: 'The Catholic Church',
-              hint: 'Explain teleology, control of universities/monasteries, and punishment of dissenters (Roger Bacon 1277).',
-            },
-            {
-              p_num: 2,
-              factor: 'Galen & Ancient Medical Authority',
-              hint: 'Explain the Theory of Opposites, respect for ancient authority, and animal dissection errors remaining unchallenged.',
-            },
-            {
-              p_num: 3,
-              factor: 'Own Knowledge Factor (e.g. Hippocrates / Lack of Alternatives)',
-              hint: 'Explain the Four Humours, miasma/astrology, or lack of scientific instruments and printing.',
-            },
-          ],
+          q4: {
+            tariff: 'Explain Why [12 Marks]',
+            board: 'Edexcel GCSE (9–1) Paper 1 &bull; Question 4',
+            question:
+              'Explain why there was so little change in medical ideas about the causes of disease between c.1250 and c.1500.',
+            stimulus: ['The Catholic Church', 'Galen'],
+            note: '(You must also use information of your own.)',
+            guidance:
+              'Timing: 18 mins &bull; Structure: 3 fully developed PEEL paragraphs (P1: Church, P2: Galen, P3: Own Knowledge)',
+            lines: 20,
+          },
         },
       },
       do_now: {
