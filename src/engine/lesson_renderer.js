@@ -612,7 +612,7 @@ export function renderLesson(lesson) {
     }
   }
 
-  if (lesson.sources && lesson.sources.length > 0) {
+  if (lesson.sources && lesson.sources.length > 0 && unitId !== 'cme_new') {
     htmlSources1 += `<div class="sources-grid" style="margin-top: 20px;">`;
     lesson.sources.forEach((source) => {
       const sLetterMatch = (source.title || '').match(/Source\s+([A-Z])/i);
@@ -2596,7 +2596,7 @@ export function renderLesson(lesson) {
       htmlPairShare;
   }
 
-  if (typeof isGCSE !== 'undefined' && isGCSE) {
+  if (typeof isGCSE !== 'undefined' && isGCSE && unitId !== 'cme_new') {
     html += htmlSources1;
   }
   if (
