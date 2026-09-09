@@ -602,6 +602,178 @@ function generateMedievalCastleDraftingPage(lesson) {
   `;
 }
 
+function generateConceptualTriadPage(lesson, unitId) {
+  if (!lesson || !lesson.creative_task) return '';
+  const ct = lesson.creative_task;
+  if (ct.type !== 'conceptual_triad') return '';
+
+  const churchPillar = ct.pillars.find((p) => p.id === 'church') || ct.pillars[1];
+  const hippoPillar = ct.pillars.find((p) => p.id === 'hippocrates') || ct.pillars[0];
+  const galenPillar = ct.pillars.find((p) => p.id === 'galen') || ct.pillars[2];
+
+  return `
+  <div class="creative-triad-page" style="page-break-before: always; page-break-after: always; box-sizing: border-box; padding: 10px 14px; font-family: 'Inter', sans-serif;">
+    <!-- Top Header -->
+    <div style="border-bottom: 2px solid #7c2d12; padding-bottom: 4px; margin-bottom: 6px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <span style="font-size: 8.5pt; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.8px;">
+          <i class="fa-solid fa-brain" style="margin-right: 5px;"></i> Visual Synthesis &bull; Medieval Ideas c.1250–1500
+        </span>
+        <span style="font-size: 8pt; font-weight: 700; color: #7c2d12; background: #fef3c7; padding: 2px 8px; border-radius: 4px; border: 1px solid #fde68a;">
+          Edexcel GCSE Paper 1 &bull; KT 1.1
+        </span>
+      </div>
+      <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 14pt; color: #7c2d12; margin: 2px 0 4px 0; border: none; padding: 0;">
+        ${ct.title}
+      </h2>
+      <div style="font-size: 7.8pt; color: #334155; background: #fffaf0; border-left: 3px solid #d97706; padding: 4px 8px; border-radius: 4px; line-height: 1.35;">
+        <strong>Historical Problem:</strong> ${ct.briefing}
+      </div>
+    </div>
+
+    <!-- Marginal Keywords HUD -->
+    <div style="display: flex; flex-wrap: wrap; gap: 4px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 5px; padding: 4px 8px; margin-bottom: 8px; align-items: center;">
+      <span style="font-size: 7.2pt; font-weight: 800; color: #475569; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 4px;">
+        <i class="fa-solid fa-key" style="color: #d97706;"></i> High-Yield Keywords:
+      </span>
+      ${ct.keywords.map((kw) => `<span style="font-size: 6.8pt; background: #e2e8f0; color: #1e293b; padding: 1px 5px; border-radius: 3px; font-weight: 600;">${kw}</span>`).join(' ')}
+    </div>
+
+    <!-- APEX PILLAR: The Catholic Church (Center Top) -->
+    <div style="background: #fffbeb; border: 2px solid #b45309; border-radius: 6px; padding: 6px 10px; margin-bottom: 6px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <div style="width: 24px; height: 24px; border-radius: 4px; background: #b45309; color: white; display: flex; align-items: center; justify-content: center; font-size: 11pt;">
+            <i class="fa-solid fa-church"></i>
+          </div>
+          <div>
+            <strong style="font-size: 8.8pt; color: #7c2d12;">${churchPillar.name}</strong>
+            <span style="font-size: 7pt; color: #78350f; margin-left: 6px;">(${churchPillar.dates})</span>
+          </div>
+        </div>
+        <span style="font-size: 6.8pt; font-weight: 700; color: #b45309; background: #fef3c7; border: 1px solid #fde68a; padding: 1px 6px; border-radius: 3px;">
+          ${churchPillar.badge}
+        </span>
+      </div>
+      <div style="font-size: 7.2pt; font-weight: 600; color: #92400e; margin-bottom: 4px;">
+        ${churchPillar.role}
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+        ${churchPillar.prompts
+          .map(
+            (pr) => `
+          <div>
+            <div style="font-size: 6.9pt; color: #451a03; line-height: 1.25; margin-bottom: 2px;">${pr}</div>
+            <div class="task-lines" style="height: 11px; margin-top: 2px;"></div>
+            <div class="task-lines" style="height: 11px; margin-top: 2px;"></div>
+          </div>
+        `,
+          )
+          .join('')}
+      </div>
+    </div>
+
+    <!-- CAUSAL TRANSMISSION VECTORS RIBBON -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-bottom: 6px;">
+      ${ct.vectors
+        .map(
+          (vec, vIdx) => `
+        <div style="background: #ffffff; border: 1.5px solid ${vIdx === 0 ? '#0284c7' : vIdx === 1 ? '#d97706' : '#dc2626'}; border-radius: 5px; padding: 4px 6px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-size: 7.2pt; color: ${vIdx === 0 ? '#0369a1' : vIdx === 1 ? '#b45309' : '#b91c1c'};">${vec.label}</strong>
+            <i class="fa-solid fa-arrow-right" style="font-size: 6.5pt; color: #64748b;"></i>
+          </div>
+          <div style="font-size: 6.7pt; color: #334155; line-height: 1.25;">${vec.text}</div>
+        </div>
+      `,
+        )
+        .join('')}
+    </div>
+
+    <!-- BOTTOM PILLARS: Hippocrates (Left) & Galen (Right) -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 6px;">
+      <!-- Hippocrates -->
+      <div style="background: #f8fafc; border: 2px solid #1e3a8a; border-radius: 6px; padding: 6px 8px;">
+        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px;">
+          <img src="${hippoPillar.image}" alt="${hippoPillar.name}" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid #1e3a8a; flex-shrink: 0;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <strong style="font-size: 8.5pt; color: #1e3a8a;">${hippoPillar.name}</strong>
+            </div>
+            <div style="font-size: 6.8pt; color: #64748b;">${hippoPillar.dates} &bull; <span style="font-weight: 700; color: #0284c7;">${hippoPillar.badge}</span></div>
+            <div style="font-size: 6.8pt; font-weight: 600; color: #334155;">${hippoPillar.role}</div>
+          </div>
+        </div>
+        <div>
+          ${hippoPillar.prompts
+            .map(
+              (pr) => `
+            <div style="margin-bottom: 3px;">
+              <div style="font-size: 6.9pt; color: #1e293b; line-height: 1.25; margin-bottom: 2px;">${pr}</div>
+              <div class="task-lines" style="height: 11px; margin-top: 2px;"></div>
+              <div class="task-lines" style="height: 11px; margin-top: 2px;"></div>
+            </div>
+          `,
+            )
+            .join('')}
+        </div>
+      </div>
+
+      <!-- Galen -->
+      <div style="background: #fdfbf7; border: 2px solid #92400e; border-radius: 6px; padding: 6px 8px;">
+        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px;">
+          <img src="${galenPillar.image}" alt="${galenPillar.name}" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid #92400e; flex-shrink: 0;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <strong style="font-size: 8.5pt; color: #92400e;">${galenPillar.name}</strong>
+            </div>
+            <div style="font-size: 6.8pt; color: #64748b;">${galenPillar.dates} &bull; <span style="font-weight: 700; color: #d97706;">${galenPillar.badge}</span></div>
+            <div style="font-size: 6.8pt; font-weight: 600; color: #334155;">${galenPillar.role}</div>
+          </div>
+        </div>
+        <div>
+          ${galenPillar.prompts
+            .map(
+              (pr) => `
+            <div style="margin-bottom: 3px;">
+              <div style="font-size: 6.9pt; color: #1e293b; line-height: 1.25; margin-bottom: 2px;">${pr}</div>
+              <div class="task-lines" style="height: 11px; margin-top: 2px;"></div>
+              <div class="task-lines" style="height: 11px; margin-top: 2px;"></div>
+            </div>
+          `,
+            )
+            .join('')}
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM EXAM SYNTHESIS (Edexcel 12-Mark Hinge) -->
+    ${
+      ct.synthesis
+        ? `
+      <div style="background: #ffffff; border: 1.5px solid #7c2d12; border-radius: 6px; padding: 6px 9px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+          <strong style="font-size: 8pt; color: #7c2d12; text-transform: uppercase; letter-spacing: 0.5px;">
+            <i class="fa-solid fa-graduation-cap" style="color: #b45309; margin-right: 4px;"></i> ${ct.synthesis.title}
+          </strong>
+          <span style="font-size: 6.8pt; font-weight: 700; color: #7c2d12; background: #fef3c7; padding: 1px 5px; border-radius: 3px;">
+            ${ct.synthesis.badge}
+          </span>
+        </div>
+        <div style="font-size: 7.2pt; color: #1e293b; font-weight: 600; margin-bottom: 3px; line-height: 1.25;">
+          ${ct.synthesis.question}
+        </div>
+        ${Array(ct.synthesis.lines || 3)
+          .fill('<div class="task-lines" style="height: 11px; margin-top: 2px;"></div>')
+          .join('')}
+      </div>
+    `
+        : ''
+    }
+  </div>
+  `;
+}
+
 function generateCmeWarTimelineCanvas(lesson) {
   if (!lesson) return '';
   let cfg = null;
@@ -725,7 +897,8 @@ allDirs.forEach((unitId) => {
     !fs.existsSync(dataPath) &&
     (unitId === 'weimar_nazi_germany' ||
       unitId === 'early_modern_world' ||
-      unitId === 'medieval_england')
+      unitId === 'medieval_england' ||
+      unitId === 'edexcel_medicine')
   ) {
     dataPath = path.join(PATHS.ROOT, 'units', unitId, 'data.js');
   }
@@ -3308,6 +3481,11 @@ allDirs.forEach((unitId) => {
       if (unitId === 'medieval_england') {
         const castleCanvas = generateMedievalCastleDraftingPage(lesson);
         if (castleCanvas) html += castleCanvas;
+      }
+
+      if (unitId === 'edexcel_medicine') {
+        const triadCanvas = generateConceptualTriadPage(lesson, unitId);
+        if (triadCanvas) html += triadCanvas;
       }
 
       if (allVideos.length > 0) {

@@ -558,6 +558,91 @@ export const unitData = {
           },
         ],
       },
+      creative_task: {
+        type: 'conceptual_triad',
+        title: 'The Intellectual Triad: Hippocrates, Galen & The Catholic Church',
+        subtitle:
+          'Why did ancient medical dogma freeze European understanding of disease for 1,400 years?',
+        briefing:
+          'In medieval Europe, medical authority did not rest upon scientific experiments or clinical trials. Instead, it was anchored to an unshakeable intellectual triad: Ancient Greek philosophy, Imperial Roman anatomy, and Christian theology. Reconstruct the three pillars and map the causal vectors below to explain why medical thinking froze for 1,400 years.',
+        pillars: [
+          {
+            id: 'hippocrates',
+            name: 'Hippocrates of Kos',
+            dates: 'c. 460 – c. 370 BC',
+            badge: 'Ancient Greek Roots',
+            image: '/images/hippocrates_portrait.jpg',
+            role: 'Clinical Observation & The Four Humours',
+            prompts: [
+              'Explain the Theory of the Four Humours (Blood, Phlegm, Yellow Bile, Black Bile) and how each linked to a season and element.',
+              'Why was Hippocrates revolutionary in rejecting supernatural demons and insisting on natural causes and bedside clinical observation?',
+            ],
+          },
+          {
+            id: 'church',
+            name: 'The Catholic Church',
+            dates: 'c. 500 – 1500 AD',
+            badge: 'Monopoly on Truth',
+            icon: 'fa-church',
+            role: 'Monastic Scriptoria, Universities & Dogma',
+            prompts: [
+              'Why did the Church embrace Galen so passionately? (Hint: Teleology and belief in a single divine Creator matching scripture).',
+              'How did the Church enforce Galen’s authority in universities and monasteries? What happened to critics like Roger Bacon (1277)?',
+            ],
+          },
+          {
+            id: 'galen',
+            name: 'Claudius Galenus (Galen)',
+            dates: 'AD 129 – c. 216',
+            badge: 'Roman Synthesis',
+            image: '/images/galen_portrait.jpg',
+            role: 'Theory of Opposites & Teleological Anatomy',
+            prompts: [
+              'How did Galen develop Hippocrates’ ideas into the Theory of Opposites? Give an example of a cold disease treated with heat.',
+              'Why did Galen make fundamental anatomical mistakes (e.g. two-chambered liver)? Why did nobody correct him for 1,300 years?',
+            ],
+          },
+        ],
+        vectors: [
+          {
+            from: 'Hippocrates',
+            to: 'Galen',
+            label: '1. Adoption & Extension',
+            text: 'Galen adopts the Four Humours and develops the Theory of Opposites; dissects animals to argue organs have a purposeful divine design.',
+          },
+          {
+            from: 'Galen',
+            to: 'The Church',
+            label: '2. Theological Sanctification',
+            text: 'The Church declares Galen’s writings sacred truth; monks copy his Latin manuscripts; human dissection is forbidden or tightly restricted.',
+          },
+          {
+            from: 'The Church',
+            to: 'Hippocrates & Galen',
+            label: '3. The 1,400-Year Freeze',
+            text: 'Challenging Galen or Hippocrates is branded heresy against God; medical inquiry halts completely until Andreas Vesalius (1543).',
+          },
+        ],
+        keywords: [
+          'Four Humours',
+          'Theory of Opposites',
+          'Clinical Observation',
+          'Miasma',
+          'Teleology',
+          'Monastic Infirmary',
+          'Roger Bacon',
+          'Heresy',
+          'Uroscopy',
+          'Votive Offerings',
+        ],
+        synthesis: {
+          title: 'GCSE Exam Masterclass • Explain Why [12 Marks]',
+          badge: 'Edexcel Paper 1 &bull; Q4',
+          question:
+            'Explain why there was so little change in medical ideas about the causes of disease between c.1250 and c.1500. You may use: • The Catholic Church • Galen. (You must also use information of your own). [12 marks]',
+          lines: 3,
+        },
+      },
       do_now: {
         type: 'questions',
         title: 'Have a Guess! (Prior Knowledge Check)',
@@ -669,9 +754,9 @@ export const unitData = {
           tasks: [
             {
               type: 'written',
-              text: "Explain how supernatural and religious beliefs were used to explain the causes of disease in medieval England.",
+              text: 'Explain how supernatural and religious beliefs were used to explain the causes of disease in medieval England.',
               model:
-                "The Catholic Church taught that disease was sent by God as a punishment for sin or a test of faith (such as leprosy in the Bible). Additionally, people used astrology, believing that negative planetary alignments (such as the 1345 alignment of Mars, Jupiter, and Saturn) corrupted the air and caused epidemics like the Black Death. Because people believed God and the stars controlled health, they sought spiritual cures like prayer rather than scientific medicine.",
+                'The Catholic Church taught that disease was sent by God as a punishment for sin or a test of faith (such as leprosy in the Bible). Additionally, people used astrology, believing that negative planetary alignments (such as the 1345 alignment of Mars, Jupiter, and Saturn) corrupted the air and caused epidemics like the Black Death. Because people believed God and the stars controlled health, they sought spiritual cures like prayer rather than scientific medicine.',
             },
           ],
         },
@@ -719,7 +804,7 @@ export const unitData = {
           tasks: [
             {
               type: 'written',
-              text: "Using the Claudius Galen Key Individual card, explain why Galen made anatomical errors, and why these errors remained unchallenged throughout the Middle Ages.",
+              text: 'Using the Claudius Galen Key Individual card, explain why Galen made anatomical errors, and why these errors remained unchallenged throughout the Middle Ages.',
               model:
                 "Galen made anatomical errors because Roman law prohibited the dissection of human corpses, forcing him to dissect animals like pigs and Barbary apes. This caused him to make major anatomical mistakes, such as claiming the human lower jaw consists of two bones, the liver has five lobes, and blood flows through invisible pores in the heart septum. These errors remained unchallenged for over 1,000 years because the Catholic Church held absolute authority over education and universities, outlawed human dissection, and treated Galen's writings as divine dogma, punishing anyone who challenged him.",
             },
