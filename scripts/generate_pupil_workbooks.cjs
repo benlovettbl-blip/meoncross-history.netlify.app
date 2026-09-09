@@ -609,7 +609,9 @@ allDirs.forEach((unitId) => {
     if (fs.existsSync(canonicalCme)) dataPath = canonicalCme;
   } else if (
     !fs.existsSync(dataPath) &&
-    (unitId === 'weimar_nazi_germany' || unitId === 'early_modern_world')
+    (unitId === 'weimar_nazi_germany' ||
+      unitId === 'early_modern_world' ||
+      unitId === 'medieval_england')
   ) {
     dataPath = path.join(PATHS.ROOT, 'units', unitId, 'data.js');
   }
