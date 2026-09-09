@@ -2178,880 +2178,2412 @@ const SPREADS = [
 ];
 
 // Helper: Render Left Page (Visual Revision Masterclass)
+
+// Inject Rich Textbook Deep Knowledge & Vocab Banks into SPREADS
+const ENRICHMENTS_DATA = {
+  lesson_1_1: {
+    deepKnowledgeGrid: [
+      {
+        title: '1. Religious & Supernatural',
+        points: [
+          '<strong>God’s Retribution:</strong> Sickness was sent by God to punish individual sins or test faith (Book of Job).',
+          '<strong>Divine Proof:</strong> Cures were seen as miracles proving God’s existence; questioning this was heresy.',
+          '<strong>Leprosy:</strong> Viewed as an outward sign of sin; patients were segregated in <strong>Lazar houses</strong>, wore cloaks, and rang bells (“Some good, my gentle master”); breath feared contagious.',
+        ],
+      },
+      {
+        title: '2. Astrological Alignments',
+        points: [
+          '<strong>Planetary Movements:</strong> Physicians consulted star charts and <strong>Almanacs</strong> before diagnosing or bleeding.',
+          '<strong>Zodiac Man:</strong> Illustrated which astrological constellations governed which body organs to guide surgical timing.',
+          '<strong>1345 Conjunction:</strong> The alignment of Saturn, Jupiter, and Mars was blamed for corrupting air and causing the Black Death; Church fully embraced astrology post-1348.',
+        ],
+      },
+      {
+        title: '3. Rational Humours & Miasma',
+        points: [
+          '<strong>Four Humours:</strong> Blood (sanguine/spring), Phlegm (phlegmatic/winter), Yellow Bile (choleric/summer), Black Bile (melancholic/autumn).',
+          '<strong>Clinical Observation:</strong> Physicians examined pulse and matched urine against <strong>uroscopy wheels</strong> to detect imbalances.',
+          '<strong>Miasma:</strong> “Corruption of the air” from decaying organic matter, stagnant marshes, and unburied filth; linked directly to spiritual sinfulness.',
+        ],
+      },
+      {
+        title: '4. Scapegoating & Persecution',
+        points: [
+          '<strong>Minority Blame:</strong> In times of catastrophic epidemic, terrified communities sought human culprits to blame.',
+          '<strong>Poisoning Wells:</strong> Jewish communities were falsely accused of poisoning drinking wells to destroy Christendom.',
+          '<strong>1348 Strasbourg Massacre:</strong> Over 2,000 Jewish people were burned alive; demonstrates extreme hysteria and total absence of scientific comprehension.',
+        ],
+      },
+    ],
+    vocabBank: [
+      {
+        term: 'Miasma',
+        def: 'Poisonous, foul-smelling air believed to corrupt bodily humours and transmit epidemic disease.',
+      },
+      {
+        term: 'Humouralism',
+        def: 'Ancient Greek theory that health depends on the balance of blood, phlegm, yellow bile, and black bile.',
+      },
+      {
+        term: 'Teleology',
+        def: 'The philosophical doctrine that organs were deliberately designed by God for a specific purpose.',
+      },
+      {
+        term: 'Lazar House',
+        def: 'A medieval segregation hospital established on town outskirts to isolate lepers.',
+      },
+      {
+        term: 'Heresy',
+        def: 'Holding medical or religious opinions contrary to orthodox Catholic Church dogma.',
+      },
+      {
+        term: 'Flagellation',
+        def: 'Whipping oneself publicly with iron-tipped lashes to atone for sin and ward off plague.',
+      },
+    ],
+    causalFactors: [
+      '<strong>1. Power of the Catholic Church:</strong> Controlled scriptoria, universities, and manuscript copying; Roger Bacon was imprisoned for advocating independent empirical observation.',
+      '<strong>2. Absence of Scientific Technology:</strong> No microscopes, thermometers, or diagnostic instruments existed; doctors could not perceive microorganisms or cellular pathology.',
+      '<strong>3. Extreme Reverence for Ancient Authority:</strong> Hippocratic and Galenic texts were treated as divine, infallible scripture; challenging ancient masters was considered absurd and sinful.',
+    ],
+  },
+  lesson_1_2: {
+    deepKnowledgeGrid: [
+      {
+        title: '1. Humoural Rebalancing',
+        points: [
+          '<strong>Bloodletting (Phlebotomy):</strong> Most common treatment; performed via vein incision, cupping with heated glass, or applying leeches.',
+          '<strong>Purging:</strong> Administering emetics (to vomit) or laxatives and clysters (enemas) to evacuate corrupted humours.',
+          '<strong>Theory of Opposites:</strong> Galenic treatment applying contrasting qualities (e.g. eating hot peppers/cucumber to cure cold/hot illnesses).',
+        ],
+      },
+      {
+        title: '2. Remedies & Regimen Sanitatis',
+        points: [
+          '<strong>Herbal Theriacs:</strong> Complex medicinal jams containing up to 64 ingredients (herbs, opium, crushed snake flesh).',
+          '<strong>Regimen Sanitatis:</strong> Personalized lifestyle guide advising on diet, moderate exercise, sleep patterns, and bathing.',
+          '<strong>Air Purification:</strong> Carrying pomanders filled with ambergris, burning aromatic wood (rosemary, pine), or spreading sweet rushes on floors.',
+        ],
+      },
+      {
+        title: '3. Medical Hierarchy',
+        points: [
+          '<strong>Physicians:</strong> Trained 7–10 years at universities (Oxford, Montpellier); diagnosed via astrology and uroscopy; costly, treating only nobility.',
+          '<strong>Apothecaries:</strong> Trained via guild apprenticeships; compounded herbal remedies, poisons, and charms; far more accessible to commoners.',
+          '<strong>Barber-Surgeons:</strong> Performed tooth extraction, lancing boils, bloodletting, and crude limb amputations without anaesthetic; no university education.',
+        ],
+      },
+      {
+        title: '4. Care in Home & Hospitals',
+        points: [
+          '<strong>Female Domestic Care:</strong> Mothers, wives, and local wise women treated 90% of sickness using family herbals and traditional lore.',
+          '<strong>Monastic Hospitals:</strong> Over 800 hospitals by 1500 (e.g. St Bartholomew’s); run by monks and nuns providing warmth, shelter, and prayer.',
+          '<strong>Spiritual Focus:</strong> Focused on care (hospitality) rather than cure; infectious, terminal, and pregnant patients were routinely excluded.',
+        ],
+      },
+    ],
+    vocabBank: [
+      {
+        term: 'Phlebotomy',
+        def: 'The surgical opening of a vein to withdraw blood and rebalance excess bodily humours.',
+      },
+      {
+        term: 'Theriac',
+        def: 'A complex herbal compound containing numerous antidotes and spices used as a universal remedy.',
+      },
+      {
+        term: 'Clyster',
+        def: 'A medieval enema syringe used to inject liquids into the rectum to purge the bowels.',
+      },
+      {
+        term: 'Regimen Sanitatis',
+        def: 'A set of Latin rules offering health guidance on diet, exercise, and environmental hygiene.',
+      },
+      {
+        term: 'Apothecary',
+        def: 'A medieval tradesperson who prepared and sold medicinal drugs, ointments, and herbs.',
+      },
+      {
+        term: 'Barber-Surgeon',
+        def: 'A medical practitioner who performed minor surgeries, bloodletting, and haircuts.',
+      },
+    ],
+    causalFactors: [
+      '<strong>1. Church Focus on the Soul:</strong> Disease was viewed as spiritual; monks prayed for patient souls rather than treating physical pathology.',
+      '<strong>2. Absence of Anatomical Understanding:</strong> Outlawing dissection meant surgeons had no accurate map of blood vessels, making internal surgery fatal.',
+      '<strong>3. Cost Barriers:</strong> Trained physicians were an elite luxury; ordinary peasants relied entirely on oral domestic herbalism and parish charity.',
+    ],
+  },
+  lesson_1_3: {
+    deepKnowledgeGrid: [
+      {
+        title: '1. Pathology & Outbreak',
+        points: [
+          '<strong>Arrival (June 1348):</strong> Landed at Melcombe Regis (Dorset) via merchant ships; swept through England, killing 30–45% of the population.',
+          '<strong>Bubonic Plague:</strong> Flea-borne <em>Yersinia pestis</em> causing agonizing egg-sized buboes in groin/armpits, black blotches, and internal haemorrhage (50% death rate).',
+          '<strong>Pneumonic Plague:</strong> Airborne droplet infection attacking the lungs; violent coughing of blood; 90–100% fatal within 48 hours.',
+        ],
+      },
+      {
+        title: '2. Believed Causes',
+        points: [
+          '<strong>Divine Retribution:</strong> Overwhelmingly blamed on God’s wrath at English wickedness, pride, and fashionable clothing.',
+          '<strong>Astrological Conjunction:</strong> The unusual 1345 planetary alignment of Saturn, Jupiter, and Mars was cited as the cosmological origin.',
+          '<strong>Pestilential Miasma:</strong> Corrupted air rising from swamps, filthy ditches, and unburied rotting cadavers.',
+        ],
+      },
+      {
+        title: '3. Desperate Treatments',
+        points: [
+          '<strong>Lancing Buboes:</strong> Cutting open swollen lymph nodes to release black, foul-smelling pus.',
+          '<strong>Animal Extraction:</strong> Plucking the feathers from a live chicken or toad and strapping it to buboes to “draw out the venom”.',
+          '<strong>Chemical Ingestion:</strong> Drinking potions of mercury, crushed emeralds, vinegar, and theriac.',
+        ],
+      },
+      {
+        title: '4. Prevention & Public Action',
+        points: [
+          '<strong>Religious Flagellation:</strong> Cults of flagellants marched through towns whipping themselves with iron-tipped cords to appease God.',
+          '<strong>Local Quarantines:</strong> Gloucester closed its gates to outsiders; King Edward III ordered London streets cleared of human excrement.',
+          '<strong>Emergency Burials:</strong> Churchyards overflowed; authorities dug deep communal trenches outside city walls (e.g. East Smithfield).',
+        ],
+      },
+    ],
+    vocabBank: [
+      {
+        term: 'Bubo',
+        def: 'A swollen, inflamed lymph node in the armpit or groin characteristic of bubonic plague.',
+      },
+      {
+        term: 'Yersinia pestis',
+        def: 'The bacterial pathogen responsible for bubonic, pneumonic, and septicaemic plague.',
+      },
+      {
+        term: 'Flagellant',
+        def: 'A medieval religious fanatic who whipped themselves publicly to atone for sin.',
+      },
+      {
+        term: 'Quarantine',
+        def: 'The isolation of people or goods from areas infected with contagious disease.',
+      },
+      {
+        term: 'East Smithfield',
+        def: 'Emergency mass burial trench established outside the walls of London in 1348.',
+      },
+      {
+        term: 'Pneumonic',
+        def: 'A virulent form of plague affecting the respiratory system, spread by airborne droplets.',
+      },
+    ],
+    causalFactors: [
+      '<strong>1. Absolute Ignorance of Microorganisms:</strong> Lacking any concept of bacteria or insect vectors (rat fleas), preventative measures were powerless.',
+      '<strong>2. Ineffective Civic Governance:</strong> Town councils lacked public health budgets, police powers, or administrative systems to enforce quarantines.',
+      '<strong>3. Social & Economic Upheaval:</strong> Severe labour shortages broke the feudal system, triggering the 1351 Statute of Labourers and the 1381 Peasants’ Revolt.',
+    ],
+  },
+  lesson_2_1: {
+    deepKnowledgeGrid: [
+      {
+        title: '1. Humanism & Church Decline',
+        points: [
+          '<strong>Questioning Authority:</strong> The Reformation reduced Catholic Church control; Renaissance Humanism encouraged rediscovering original Greek texts.',
+          '<strong>Direct Observation:</strong> Scholars prioritized direct observation of nature over blind acceptance of established dogma.',
+          '<strong>Secular University Study:</strong> Medical training slowly drifted from religious scholasticism toward anatomical enquiry.',
+        ],
+      },
+      {
+        title: '2. Thomas Sydenham',
+        points: [
+          '<strong>“The English Hippocrates”:</strong> Rejected learning medicine purely from books; stressed observing patients at their bedside.',
+          '<strong>Disease Classification:</strong> First to argue diseases should be classified into specific species (like plants), rather than individual humoural states.',
+          '<strong>Clinical Innovations:</strong> Introduced Laudanum (opium in wine) for pain, cinchona bark (quinine) for malaria, and cool air/rest for smallpox.',
+        ],
+      },
+      {
+        title: '3. The Royal Society (1660)',
+        points: [
+          '<strong>Royal Charter:</strong> Founded in London under King Charles II; brought together Britain’s foremost scientific minds (Newton, Hooke, Boyle).',
+          '<strong>Nullius in Verba:</strong> Official motto (“Take nobody’s word for it”); demanded all scientific claims be proven through public experiments.',
+          '<strong>Philosophical Transactions (1665):</strong> World’s first scientific journal; allowed medical discoveries to be peer-reviewed and spread globally.',
+        ],
+      },
+      {
+        title: '4. The Printing Press (c.1440)',
+        points: [
+          '<strong>Movable Type:</strong> Johannes Gutenberg’s invention took book production away from church monks, slashing publication costs.',
+          '<strong>Accurate Anatomical Plates:</strong> Allowed anatomical drawings to be copied with mathematical precision across thousands of identical volumes.',
+          '<strong>Bypassing Censorship:</strong> Prevented the Church from systematically burning or suppressing radical new medical ideas.',
+        ],
+      },
+    ],
+    vocabBank: [
+      {
+        term: 'Humanism',
+        def: 'A Renaissance intellectual movement focusing on human potential, reason, and empirical observation.',
+      },
+      {
+        term: 'Empiricism',
+        def: 'The philosophical principle that all knowledge must originate from direct sensory experience and experimental evidence.',
+      },
+      {
+        term: 'Nullius in Verba',
+        def: 'Latin motto of the Royal Society meaning “Take nobody’s word for it”.',
+      },
+      {
+        term: 'Observationes Medicae',
+        def: 'Thomas Sydenham’s 1676 medical textbook advocating bedside diagnosis and disease classification.',
+      },
+      {
+        term: 'Laudanum',
+        def: 'An alcoholic tincture of opium popularized by Thomas Sydenham as a standard pain reliever.',
+      },
+      {
+        term: 'Printing Press',
+        def: 'Gutenberg’s mechanical printing machine that enabled the mass dissemination of scientific knowledge.',
+      },
+    ],
+    causalFactors: [
+      '<strong>1. Institutional Patronage:</strong> Royal backing from King Charles II gave scientific enquiry institutional legitimacy and independence from the Church.',
+      '<strong>2. Print Communication:</strong> Discoveries could no longer be lost or corrupted by copyist errors; international scientific discourse accelerated.',
+      '<strong>3. Enduring Miasma:</strong> Despite methodological progress, lack of microscopes meant foul air remained the primary explanation for epidemics.',
+    ],
+  },
+  lesson_2_2: {
+    deepKnowledgeGrid: [
+      {
+        title: '1. Andreas Vesalius & Fabrica',
+        points: [
+          '<strong>Padua Dissections (1543):</strong> Professor of surgery who dissected executed criminals himself, rather than reading from Galen while a barber cut.',
+          '<strong>De Humani Corporis Fabrica:</strong> Masterpiece illustrated by artists from Titian’s workshop, depicting human anatomy in dynamic, lifelike poses.',
+          '<strong>Encouraged Enquiry:</strong> Urged medical students to verify anatomical structures for themselves rather than trusting ancient books.',
+        ],
+      },
+      {
+        title: '2. Correcting Galen’s 300+ Errors',
+        points: [
+          '<strong>Animal Dissection Exposed:</strong> Proved Galen had dissected pigs, dogs, and apes because Roman law prohibited human dissection.',
+          '<strong>Lower Jaw:</strong> Proved the human mandible is a single solid bone, not two bones as Galen claimed (based on dog jaws).',
+          '<strong>The Heart Septum:</strong> Proved the muscular wall separating the ventricles was solid with no invisible pores for blood to filter through.',
+        ],
+      },
+      {
+        title: '3. Continuity in Treatment',
+        points: [
+          '<strong>Zero Immediate Cures:</strong> Vesalius proved Galen’s anatomy wrong, but did not discover any new cures or treatments for disease.',
+          '<strong>Traditional Bleeding:</strong> Ordinary people still demanded bloodletting; Vesalius showed bleeding should occur near the site of infection.',
+          '<strong>Medical Establishment Backlash:</strong> Traditional doctors accused Vesalius of arrogance and claimed the human body had changed since Galen’s day.',
+        ],
+      },
+      {
+        title: '4. New Remedies & Care',
+        points: [
+          '<strong>New World Herbs:</strong> Exploration imported Peruvian bark (quinine for malaria), tobacco (as a cure-all), ipecacuanha, and rhubarb.',
+          '<strong>Iatrochemistry:</strong> Paracelsus promoted chemical remedies (using minerals like mercury, antimony, and sulfur) instead of purely herbal humours.',
+          '<strong>Dissolution of Monasteries (1536):</strong> Henry VIII closed Catholic monastic hospitals; cities took over key sites (e.g. St Bartholomew’s, St Thomas’).',
+        ],
+      },
+    ],
+    vocabBank: [
+      {
+        term: 'Fabrica',
+        def: 'Vesalius’s groundbreaking 1543 anatomical treatise “On the Fabric of the Human Body”.',
+      },
+      {
+        term: 'Dissection',
+        def: 'The surgical cutting apart of an animal or human corpse to study its anatomical structure.',
+      },
+      {
+        term: 'Septum',
+        def: 'The muscular wall dividing the left and right ventricles of the human heart.',
+      },
+      {
+        term: 'Iatrochemistry',
+        def: 'A Renaissance branch of chemistry dedicated to finding chemical and mineral cures for disease.',
+      },
+      {
+        term: 'Quinine',
+        def: 'An alkaloid extracted from the bark of the South American cinchona tree, used to treat malaria.',
+      },
+      {
+        term: 'Dissolution',
+        def: 'The confiscation and closure of Catholic monasteries by King Henry VIII between 1536 and 1541.',
+      },
+    ],
+    causalFactors: [
+      '<strong>1. Dissection Legalisation:</strong> European courts granting permission to dissect executed criminals provided authentic human cadavers.',
+      '<strong>2. Artistic & Technical Synthesis:</strong> Renaissance realism and copperplate printing combined to produce the first anatomically perfect medical atlas.',
+      '<strong>3. Therapeutic Gap:</strong> Understanding the body’s physical layout did not translate into clinical cures until the 19th-century discovery of germs.',
+    ],
+  },
+  lesson_2_3: {
+    deepKnowledgeGrid: [
+      {
+        title: '1. William Harvey’s Discovery (1628)',
+        points: [
+          '<strong>De Motu Cordis:</strong> Court physician to James I and Charles I who proved the heart acts as a mechanical muscular pump.',
+          '<strong>Calculated Blood Volume:</strong> Calculated that the liver would have to produce 540 pints of blood per hour if blood was consumed as fuel (disproving Galen).',
+          '<strong>One-Way Circulation:</strong> Proved that the same blood circulates continuously around the body through a closed network of arteries and veins.',
+        ],
+      },
+      {
+        title: '2. Scientific Experiments & Valves',
+        points: [
+          '<strong>Cold-Blooded Animals:</strong> Dissected live frogs and snakes whose hearts beat slowly to observe the mechanical pumping action of the chambers.',
+          '<strong>Ligature Arm Experiment:</strong> Tied tight bands on human arms to show venous valves only allow blood to flow towards the heart.',
+          '<strong>Predicted Capillaries:</strong> Proved blood passed from arteries to veins via microscopic connections that he could not see without a microscope (proven by Malpighi in 1661).',
+        ],
+      },
+      {
+        title: '3. Professional Backlash',
+        points: [
+          '<strong>The “Circulator” Slur:</strong> Conservative physicians attacked him as a charlatan; many wealthy patients deserted his practice.',
+          '<strong>50-Year Teaching Delay:</strong> Cambridge and Oxford universities took nearly 50 years to replace Galen’s liver theory with Harvey’s circulation.',
+          '<strong>Zero Impact on Cures:</strong> Bloodletting continued unabated because doctors still had no other rational treatments for disease.',
+        ],
+      },
+      {
+        title: '4. The Great Plague (1665)',
+        points: [
+          '<strong>Devastating Mortality:</strong> Swept London in summer 1665, killing ~100,000 people (20% of the city’s population); King Charles II fled to Oxford.',
+          '<strong>Municipal Quarantine:</strong> Lord Mayor ordered infected houses boarded up for 28 days with a red cross and “Lord have mercy upon us” painted on the door.',
+          '<strong>Public Countermeasures:</strong> Plague searchers appointed; fires burned in streets to cleanse air; over 40,000 dogs and 200,000 cats slaughtered (ironically worsening the rat flea problem).',
+        ],
+      },
+    ],
+    vocabBank: [
+      {
+        term: 'Circulation',
+        def: 'The continuous movement of blood through the heart and blood vessels around the body.',
+      },
+      {
+        term: 'De Motu Cordis',
+        def: 'William Harvey’s 1628 book “On the Motion of the Heart and Blood in Animals”.',
+      },
+      {
+        term: 'Venous Valve',
+        def: 'Internal flap in veins preventing the backflow of blood, proving one-way circulation.',
+      },
+      {
+        term: 'Capillaries',
+        def: 'Microscopic blood vessels connecting arterioles and venules, predicted by Harvey in 1628.',
+      },
+      {
+        term: 'Plague Searcher',
+        def: 'Women appointed by London parishes to inspect corpses and certify plague as cause of death.',
+      },
+      {
+        term: 'Bill of Mortality',
+        def: 'Weekly published statistical records listing the numbers and causes of deaths in London.',
+      },
+    ],
+    causalFactors: [
+      '<strong>1. Mechanical Philosophy:</strong> Harvey viewed the human heart as a mechanical water pump, reflecting 17th-century engineering advances.',
+      '<strong>2. Quantitative Mathematics:</strong> Harvey was the first medical researcher to use mathematical calculation to disprove a biological theory.',
+      '<strong>3. Institutional Inertia:</strong> Even when anatomical fact was mathematically undeniable, traditional medicine clung to ancient humoral treatments.',
+    ],
+  },
+  lesson_3_1: {
+    deepKnowledgeGrid: [
+      {
+        title: '1. Spontaneous Generation Orthodox',
+        points: [
+          '<strong>Decay Creates Microbes:</strong> Orthodox belief that rotting meat or fermenting liquid spontaneously generated microorganisms.',
+          '<strong>Microbes as Symptom:</strong> Microbes seen through microscopes were viewed as the *result* of disease rather than the *cause*.',
+          '<strong>British Defense:</strong> Leading physician Dr Henry Bastian published extensive defenses of spontaneous generation well into the 1870s.',
+        ],
+      },
+      {
+        title: '2. Louis Pasteur’s Germ Theory (1861)',
+        points: [
+          '<strong>Beer & Wine Fermentation:</strong> Commissioned by French brewers to find why alcohol turned sour; discovered living yeasts and bacteria.',
+          '<strong>Swan-Neck Flask Experiments:</strong> Boiled broth in S-shaped flasks; broth remained sterile until dust was allowed in, proving airborne microbes cause decay.',
+          '<strong>Published 1861:</strong> Formulated Germ Theory: specific microorganisms cause fermentation and decay, and likely cause disease in animals and humans.',
+        ],
+      },
+      {
+        title: '3. Robert Koch & Bacteriology',
+        points: [
+          '<strong>Identifying Specific Pathogens:</strong> German doctor who linked specific bacteria to specific human diseases, winning the 1905 Nobel Prize.',
+          '<strong>Solid Agar & Staining:</strong> Invented growing pure bacterial cultures on solid agar jelly in Petri dishes; used methyl violet dyes to stain transparent bacteria.',
+          '<strong>Major Discoveries:</strong> Identified the anthrax spore (1876), the tuberculosis bacterium (1882), and the cholera bacterium (1883).',
+        ],
+      },
+      {
+        title: '4. British Resistance & Eventual Triumph',
+        points: [
+          '<strong>Miasma Adherence:</strong> Dr William Farr and the General Board of Health resisted Germ Theory, arguing filth and bad smells caused illness.',
+          '<strong>John Tyndall:</strong> Physicist who championed Pasteur in London lectures, demonstrating how airborne dust carried pathogenic bacteria.',
+          '<strong>Eventual Adoption:</strong> By the late 1870s and 1880s, Koch’s staining proofs forced British medicine to abandon miasma in favour of bacteriology.',
+        ],
+      },
+    ],
+    vocabBank: [
+      {
+        term: 'Germ Theory',
+        def: 'The 1861 scientific theory proving that infectious diseases are caused by microscopic airborne pathogens.',
+      },
+      {
+        term: 'Spontaneous Generation',
+        def: 'The incorrect historical belief that living microorganisms arise spontaneously from decaying matter.',
+      },
+      {
+        term: 'Bacteriology',
+        def: 'The scientific study of bacteria and their relation to medicine and infectious disease.',
+      },
+      {
+        term: 'Swan-Neck Flask',
+        def: 'An S-curved glass flask designed by Pasteur that trapped airborne dust while allowing air in.',
+      },
+      {
+        term: 'Agar Jelly',
+        def: 'A gelatinous seaweed extract used by Robert Koch as a solid medium for culturing bacteria in Petri dishes.',
+      },
+      {
+        term: 'Methyl Violet',
+        def: 'A synthetic chemical dye developed by Koch to stain transparent bacteria so they could be photographed.',
+      },
+    ],
+    causalFactors: [
+      '<strong>1. Optical Technology:</strong> High-powered achromatic microscopes allowed researchers to resolve individual bacterial flagella and spores.',
+      '<strong>2. National Rivalry:</strong> The Franco-Prussian War (1870–71) spurred fierce state-funded competition between Pasteur in Paris and Koch in Berlin.',
+      '<strong>3. Shift from Miasma to Microbes:</strong> Bacteriology gave public health officials a physical, measurable target to eliminate via clean water and antiseptics.',
+    ],
+  },
+  lesson_3_2: {
+    deepKnowledgeGrid: [
+      {
+        title: '1. The Problem of Pain & Anaesthesia',
+        points: [
+          '<strong>Agony of Surgery:</strong> Before 1840, operations were excruciating; patients were strapped down, and surgeons rushed to amputate in under 60 seconds.',
+          '<strong>Early Gases:</strong> Humphry Davy identified nitrous oxide (1799); William Morton used sulphuric ether in Boston (1846), but it irritated lungs and exploded.',
+          '<strong>James Simpson & Chloroform (1847):</strong> Discovered chloroform after testing chemicals at home with friends; Queen Victoria took it for childbirth in 1853.',
+        ],
+      },
+      {
+        title: '2. The “Black Period” of Surgery',
+        points: [
+          '<strong>Rising Death Rates:</strong> Chloroform stopped pain, allowing surgeons to attempt longer, deeper internal operations (e.g. abdominal, chest).',
+          '<strong>Infection Explosion:</strong> Surgeons still wore filthy frock coats stiff with dried blood and pus, operating with unwashed hands and infected sponges.',
+          '<strong>Sepsis & Gangrene:</strong> Sepsis, hospital gangrene, and blood loss killed more patients in the 1850s than during the pre-anaesthetic era.',
+        ],
+      },
+      {
+        title: '3. Joseph Lister & Antiseptics (1865)',
+        points: [
+          '<strong>Carbolic Acid Spray:</strong> Read Pasteur’s Germ Theory; realized wound rot was caused by airborne bacteria; sprayed carbolic acid on incisions.',
+          '<strong>Drastic Mortality Drop:</strong> Used carbolic dressings, catgut ligatures, and aerial spray; reduced his amputation mortality from 46% to 15%.',
+          '<strong>Opposition:</strong> Doctors complained carbolic cracked their hands, slowed operations, and argued Lister was overly obsessed with invisible microbes.',
+        ],
+      },
+      {
+        title: '4. Aseptic Surgery & Nightingale',
+        points: [
+          '<strong>Aseptic Revolution:</strong> Shift from *killing* germs (antiseptic) to *excluding* them: autoclaves (steam sterilization), rubber gloves (Halsted), masks.',
+          '<strong>Florence Nightingale:</strong> Transformed Scutari hospital during Crimean War (1854); slashed death rates from 42% to 2% through ventilation and sanitation.',
+          '<strong>Pavilion Hospital Plan:</strong> Published <em>Notes on Nursing</em> (1859); designed hospitals with separate airy pavilions, large windows, and washable surfaces.',
+        ],
+      },
+    ],
+    vocabBank: [
+      {
+        term: 'Anaesthetic',
+        def: 'A drug administered to induce a temporary loss of sensation or consciousness to eliminate surgical pain.',
+      },
+      {
+        term: 'Chloroform',
+        def: 'An inhaled anaesthetic discovered by James Simpson in 1847, popularized by Queen Victoria.',
+      },
+      {
+        term: 'Antiseptic',
+        def: 'A chemical substance (such as carbolic acid) applied to living tissue to destroy microbes.',
+      },
+      {
+        term: 'Aseptic Surgery',
+        def: 'Surgical practices designed to prevent any germs from entering the operating theatre environment.',
+      },
+      {
+        term: 'Carbolic Acid',
+        def: 'Phenol solution used by Joseph Lister as an antiseptic spray and dressing on surgical wounds.',
+      },
+      {
+        term: 'Pavilion Plan',
+        def: 'Hospital architectural layout designed by Nightingale featuring separate wards to optimize airflow.',
+      },
+    ],
+    causalFactors: [
+      '<strong>1. Dual Technological Breakthroughs:</strong> Surgery required solving both pain (Simpson’s chloroform) and infection (Lister’s carbolic) before survival rose.',
+      '<strong>2. Royal & Military Endorsement:</strong> Queen Victoria’s use of chloroform in 1853 and Nightingale’s Crimean War fame dismantled conservative opposition.',
+      '<strong>3. Professionalisation of Nursing:</strong> Nightingale’s St Thomas’ training school transformed nursing from drunken domestic work into a respected clinical profession.',
+    ],
+  },
+  lesson_3_3: {
+    deepKnowledgeGrid: [
+      {
+        title: '1. Edward Jenner & Smallpox (1796)',
+        points: [
+          '<strong>Lethal Threat:</strong> Smallpox was Britain’s biggest killer; inoculation using live smallpox scabs was expensive and frequently fatal.',
+          '<strong>Milkmaid Observation:</strong> Noticed dairymaids who contracted mild cowpox never caught smallpox; hypothesized cowpox conferred immunity.',
+          '<strong>James Phipps Experiment (1796):</strong> Injected 8-year-old James Phipps with cowpox pus, then inoculated him with lethal smallpox; Phipps remained immune.',
+        ],
+      },
+      {
+        title: '2. Opposition & Compulsory Law',
+        points: [
+          '<strong>Professional Backlash:</strong> Commercial inoculators feared losing lucrative fees; Anti-Vaccination League claimed people turned into cows.',
+          '<strong>Religious Protest:</strong> Church traditionalists argued giving animal diseases to humans contradicted God’s natural order.',
+          '<strong>Government Intervention:</strong> Parliament granted Jenner £30,000 to distribute vaccine; passed 1852 Compulsory Vaccination Act, eradicating smallpox.',
+        ],
+      },
+      {
+        title: '3. John Snow & Cholera in Soho (1854)',
+        points: [
+          '<strong>Broad Street Outbreak:</strong> Cholera struck Golden Square, Soho in August 1854, killing 500 people in 10 days within 250 yards.',
+          '<strong>Epidemiological Spot Map:</strong> Snow marked cholera deaths as black bars on a street map; noticed fatalities clustered around Broad Street pump.',
+          '<strong>Exceptions Prove Rule:</strong> Broad Street brewery workers drank malt liquor and suffered zero deaths; a woman in Hampstead who drank pump water died.',
+        ],
+      },
+      {
+        title: '4. Disproving Miasma & Waterborne Proof',
+        points: [
+          '<strong>Removal of Pump Handle:</strong> Snow convinced the Board of Guardians to remove the pump handle; new cholera cases ceased immediately.',
+          '<strong>Leaking Cesspit Found:</strong> Inspection revealed a cracked underground cesspit 3 feet away had leaked infected baby cholera faeces into the well.',
+          '<strong>Defeated Miasma:</strong> Proved cholera was not transmitted through bad air but was waterborne; paved the way for Bazalgette’s London sewer system.',
+        ],
+      },
+    ],
+    vocabBank: [
+      {
+        term: 'Vaccination',
+        def: 'The administration of antigenic material (e.g. cowpox) to stimulate an individual’s immune system against smallpox.',
+      },
+      {
+        term: 'Inoculation',
+        def: 'The historical practice of scratching live smallpox scab matter into healthy skin, carrying severe risk of fatal infection.',
+      },
+      {
+        term: 'Broad Street Pump',
+        def: 'The Soho water pump identified by John Snow in 1854 as the source of a lethal cholera outbreak.',
+      },
+      {
+        term: 'Spot Map',
+        def: 'An epidemiological mapping technique developed by Snow to visually correlate disease cases with geographic sources.',
+      },
+      {
+        term: 'Waterborne',
+        def: 'Diseases (such as cholera and typhoid) that are transmitted through contaminated drinking water supplies.',
+      },
+      {
+        term: 'Cesspit',
+        def: 'An underground pit used for the temporary storage of human waste, often leaking into adjacent drinking wells.',
+      },
+    ],
+    causalFactors: [
+      '<strong>1. Empirical Epidemiology:</strong> Both Jenner and Snow bypassed theoretical speculation, using statistical data and geographic tracking to uncover truths.',
+      '<strong>2. Transition to State Public Health:</strong> Jenner’s 1852 Act and Snow’s sewer legacy marked the end of laissez-faire, establishing compulsory public hygiene.',
+      '<strong>3. Mechanism Unknown at Discovery:</strong> Neither Jenner nor Snow knew viruses or bacteria existed; their breakthroughs were founded purely on inductive observation.',
+    ],
+  },
+  lesson_4_1: {
+    deepKnowledgeGrid: [
+      {
+        title: '1. Discovery of DNA Structure (1953)',
+        points: [
+          '<strong>Franklin & Wilkins Crystallography:</strong> Rosalind Franklin and Maurice Wilkins used X-ray diffraction at King’s College to photograph DNA fibres.',
+          '<strong>Watson & Crick Double Helix:</strong> Built the double-helix cardboard model at Cambridge (1953), proving genes carry hereditary biochemical code.',
+          '<strong>Revolution in Causation:</strong> Proved hereditary diseases were caused by genetic errors in DNA sequences rather than environmental miasmas.',
+        ],
+      },
+      {
+        title: '2. Human Genome Project (1990–2003)',
+        points: [
+          '<strong>Mapping 3 Billion Base Pairs:</strong> International scientific collaboration mapped the complete human genetic sequence.',
+          '<strong>Targeted Genetic Disorders:</strong> Enabled scientists to identify exact faulty genes causing cystic fibrosis, Down’s syndrome, and sickle-cell anaemia.',
+          '<strong>Cancer Predisposition:</strong> Identified BRCA1 and BRCA2 gene mutations linked to hereditary breast and ovarian cancer, enabling preventative surgery.',
+        ],
+      },
+      {
+        title: '3. Lifestyle & Environmental Causes',
+        points: [
+          '<strong>Smoking & Lung Cancer:</strong> Epidemiological research by Doll and Hill (1950) proved smoking causes 85% of lung cancer cases.',
+          '<strong>Diet, Obesity & Diabetes:</strong> High-sugar diets identified as direct causes of Type 2 diabetes, coronary heart disease, and hypertension.',
+          '<strong>Alcohol & Carcinogens:</strong> Heavy alcohol intake linked to liver cirrhosis; environmental air pollution linked to asthma and cardiovascular deaths.',
+        ],
+      },
+      {
+        title: '4. High-Tech Diagnostic Revolution',
+        points: [
+          '<strong>Medical Scans:</strong> Wilhelm Röntgen discovered X-rays (1895); Godfrey Hounsfield developed CT scans (1972); MRI scans map soft brain tissue.',
+          '<strong>Ultrasound & Endoscopy:</strong> Ultrasound uses sound waves for prenatal monitoring; fibre-optic endoscopes allow direct visual inspection inside organs.',
+          '<strong>Biochemical Diagnostics:</strong> Automated blood tests and home blood-sugar monitors enable immediate, non-invasive tracking of diseases.',
+        ],
+      },
+    ],
+    vocabBank: [
+      {
+        term: 'DNA Double Helix',
+        def: 'The spiral ladder molecular structure of deoxyribonucleic acid discovered by Crick, Watson, and Franklin in 1953.',
+      },
+      {
+        term: 'Human Genome',
+        def: 'The complete set of genetic information encoded within the DNA of a human being, mapped fully in 2003.',
+      },
+      {
+        term: 'Gene Mutation',
+        def: 'A permanent alteration in the DNA sequence that makes up a gene, causing hereditary illness.',
+      },
+      {
+        term: 'CT Scan',
+        def: 'Computed Tomography; an advanced X-ray scan using computers to create cross-sectional 3D images of internal organs.',
+      },
+      {
+        term: 'MRI Scan',
+        def: 'Magnetic Resonance Imaging; non-invasive imaging using magnetic fields and radio waves to visualize soft tissues.',
+      },
+      {
+        term: 'Endoscopy',
+        def: 'The examination of the interior of a bodily canal or hollow organ using a flexible fibre-optic camera.',
+      },
+    ],
+    causalFactors: [
+      '<strong>1. Global Scientific Collaboration:</strong> The Human Genome Project required pooling data from researchers in the UK, USA, France, Germany, Japan, and China.',
+      '<strong>2. Computing & Digital Processing:</strong> Advanced diagnostic scanners (CT, MRI) and DNA sequencing machines were only made possible by modern microchips.',
+      '<strong>3. Preventative Genetic Medicine:</strong> Doctors can now identify disease risks before symptoms appear, shifting medicine from reactive treatment to proactive prevention.',
+    ],
+  },
+  lesson_4_2: {
+    deepKnowledgeGrid: [
+      {
+        title: '1. Chemical Magic Bullets',
+        points: [
+          '<strong>Paul Ehrlich & Salvarsan 606 (1909):</strong> Searched for synthetic chemical dyes that targeted specific microbes without harming host tissue; cured syphilis.',
+          '<strong>Gerhard Domagk & Prontosil (1932):</strong> Red dye derived from coal tar that cured streptococcal septicaemia; saved his own daughter’s arm from amputation.',
+          '<strong>First Synthetic Antibacterials:</strong> Proved man-made laboratory chemicals could act as internal antimicrobials, sparking the pharmaceutical revolution.',
+        ],
+      },
+      {
+        title: '2. Creation of the NHS (1948)',
+        points: [
+          '<strong>Beveridge Report (1942):</strong> Identified “Disease” as one of the Five Giants; recommended a state healthcare service funded by national taxation.',
+          '<strong>Aneurin Bevan:</strong> Minister for Health who overcame fierce resistance to launch the NHS on 5 July 1948, making healthcare free at the point of need.',
+          '<strong>BMA Doctor Opposition:</strong> 90% of doctors initially voted against the NHS; Bevan “stuffed their mouths with gold” by allowing consultants private patients.',
+        ],
+      },
+      {
+        title: '3. Advanced Surgical Advances',
+        points: [
+          '<strong>Organ Transplants:</strong> First successful kidney transplant (1954); Christiaan Barnard performed first human heart transplant in Cape Town (1967).',
+          '<strong>Prosthetics & Joint Replacements:</strong> Sir John Charnley developed the low-friction polyethylene hip replacement in 1962, restoring mobility to millions.',
+          '<strong>Minimally Invasive Surgery:</strong> Keyhole (laparoscopic) surgery uses cameras and tiny incisions; robotic da Vinci systems perform micro-surgery.',
+        ],
+      },
+      {
+        title: '4. Mass State Immunisation',
+        points: [
+          '<strong>Polio & Diphtheria:</strong> Mass national immunisation programs virtually eradicated diphtheria (1940s) and polio (1950s Jonas Salk vaccine).',
+          '<strong>MMR Vaccine (1988):</strong> Combined vaccine protecting against measles, mumps, and rubella distributed free across UK primary care clinics.',
+          '<strong>HPV Vaccine (2008):</strong> National school vaccination programme for teenage girls, slashing cervical cancer rates by nearly 90%.',
+        ],
+      },
+    ],
+    vocabBank: [
+      {
+        term: 'Magic Bullet',
+        def: 'A chemical compound designed to selectively target and destroy specific pathogenic bacteria without poisoning human cells.',
+      },
+      {
+        term: 'Salvarsan 606',
+        def: 'The first synthetic magic bullet, an arsenic compound discovered by Paul Ehrlich in 1909 to treat syphilis.',
+      },
+      {
+        term: 'Prontosil',
+        def: 'A red sulphonamide antibacterial discovered by Gerhard Domagk in 1932 that cured blood poisoning.',
+      },
+      {
+        term: 'Beveridge Report',
+        def: 'A 1942 government report advocating a universal welfare state to tackle the Five Giants: Want, Disease, Ignorance, Squalor, Idleness.',
+      },
+      {
+        term: 'Aneurin Bevan',
+        def: 'Labour Minister for Health who successfully established the National Health Service in 1948.',
+      },
+      {
+        term: 'Laparoscopy',
+        def: 'Keyhole surgery performed through small incisions using a camera and specialized instruments.',
+      },
+    ],
+    causalFactors: [
+      '<strong>1. Post-War Social Consensus:</strong> Shared wartime sacrifice created overwhelming public demand for equality of access to healthcare, birthing the NHS.',
+      '<strong>2. Pharmaceutical Industrialisation:</strong> Large multinational chemical firms invested billions into synthesizing magic bullets and immunosuppressants.',
+      '<strong>3. State Funding Power:</strong> Centralized taxation enabled universal vaccination rollouts, eliminating historic epidemics like polio and diphtheria.',
+    ],
+  },
+  lesson_4_3: {
+    deepKnowledgeGrid: [
+      {
+        title: '1. Alexander Fleming (1928)',
+        points: [
+          '<strong>Serendipitous Discovery:</strong> Returning from holiday to St Mary’s Hospital, noticed mould (<em>Penicillium notatum</em>) on a staphylococcus Petri dish.',
+          '<strong>Clear Halo Zone:</strong> Observed that bacteria around the mould had dissolved; realized the mould produced an active antibacterial chemical.',
+          '<strong>Published 1929:</strong> Tested it on rabbit blood; found it non-toxic; but unable to extract or purify unstable penicillin, abandoning research.',
+        ],
+      },
+      {
+        title: '2. Florey & Chain at Oxford (1938–41)',
+        points: [
+          '<strong>Purification Team:</strong> Pathologist Howard Florey and biochemist Ernst Chain assembled a multidisciplinary team at Oxford University.',
+          '<strong>Mouse Experiment (1940):</strong> Injected eight mice with lethal streptococci; the four treated with purified penicillin survived; four untreated died.',
+          '<strong>Albert Alexander (1941):</strong> Tested on a policeman dying of severe blood poisoning; made dramatic recovery until supply ran out, and he died.',
+        ],
+      },
+      {
+        title: '3. US Wartime Mass Production',
+        points: [
+          '<strong>Wartime Mission (1941):</strong> Florey travelled to the USA; convinced the US War Production Board to fund industrial mass production.',
+          '<strong>Deep-Tank Fermentation:</strong> Discovered a strain of mould on a cantaloupe melon grew 200 times more penicillin; used corn-steep liquor in massive vats.',
+          '<strong>D-Day Miracle (1944):</strong> By June 1944, US pharmaceutical companies produced 2.3 million doses, treating every Allied casualty on D-Day.',
+        ],
+      },
+      {
+        title: '4. Historical Impact & Modern Threat',
+        points: [
+          '<strong>Golden Age of Antibiotics:</strong> Saved an estimated 200 million lives globally; Fleming, Florey, and Chain awarded the 1945 Nobel Prize.',
+          '<strong>Post-War Medicine:</strong> Enabled open-heart surgery, chemotherapy, and organ transplants by controlling deadly secondary bacterial infections.',
+          '<strong>Antibiotic Resistance (MRSA):</strong> Overprescription in agriculture and hospitals led to resistant “superbugs”, presenting a critical 21st-century challenge.',
+        ],
+      },
+    ],
+    vocabBank: [
+      {
+        term: 'Penicillin',
+        def: 'The world’s first effective antibiotic, derived from the mould Penicillium notatum, discovered in 1928.',
+      },
+      {
+        term: 'Antibiotic',
+        def: 'A medicine that inhibits the growth of or destroys microorganisms such as bacteria.',
+      },
+      {
+        term: 'Deep-Tank Fermentation',
+        def: 'An industrial process using massive aerated tanks and corn-steep liquor to mass-produce penicillin.',
+      },
+      {
+        term: 'Albert Alexander',
+        def: 'The first human patient treated with Oxford penicillin in 1941, who showed miraculous initial recovery.',
+      },
+      {
+        term: 'Superbug',
+        def: 'A strain of bacteria that has become resistant to antibiotic drugs, such as MRSA.',
+      },
+      {
+        term: 'Corn-Steep Liquor',
+        def: 'A byproduct of corn milling discovered in Illinois that accelerated the growth rate of penicillin mould.',
+      },
+    ],
+    causalFactors: [
+      '<strong>1. The Catalyst of War:</strong> WWII transformed penicillin from an academic laboratory curiosity into an international industrial priority.',
+      '<strong>2. Interdisciplinary Teamwork:</strong> Florey (pathology), Chain (biochemistry), and Heatley (biochemical engineering) succeeded where Fleming alone failed.',
+      '<strong>3. US Industrial Might:</strong> British factories were under heavy Blitz bombardment; US capital and chemical infrastructure made mass supply possible.',
+    ],
+  },
+  lesson_4_4: {
+    deepKnowledgeGrid: [
+      {
+        title: '1. Epidemic of the 20th Century',
+        points: [
+          '<strong>Surging Mortality:</strong> Lung cancer was rare in 1900, but deaths exploded by 1950, becoming the second most common cancer in Britain.',
+          '<strong>Initial Confusion:</strong> Doctors initially attributed the surge to tarmac dust from new motorways or industrial coal air pollution.',
+          '<strong>Cigarette Popularity:</strong> Mass-produced cigarettes distributed free to soldiers in WWI and WWII made smoking a universal social habit.',
+        ],
+      },
+      {
+        title: '2. Epidemiological Proof (1950)',
+        points: [
+          '<strong>Doll & Hill Study:</strong> Sir Richard Doll and Austin Bradford Hill investigated 40,000 British doctors to correlate habits with illness.',
+          '<strong>Statistical Causation:</strong> Proved individuals smoking 25+ cigarettes a day had a 25-fold higher risk of dying from lung cancer than non-smokers.',
+          '<strong>Royal College Report (1962):</strong> Conclusively confirmed smoking caused lung cancer, bronchitis, and coronary heart disease.',
+        ],
+      },
+      {
+        title: '3. Modern Diagnosis & Treatment',
+        points: [
+          '<strong>Advanced Diagnosis:</strong> Chest X-rays, spiral CT scans, bronchoscopy, PET-CT scans, and lung tissue biopsies pinpoint malignant tumours early.',
+          '<strong>Surgical Interventions:</strong> Lobectomy (removing lung lobe) or pneumonectomy (removing entire lung) combined with targeted keyhole techniques.',
+          '<strong>Oncological Care:</strong> Radiotherapy (linear accelerators), chemotherapy, and cutting-edge immunotherapy drugs that train white blood cells to destroy cancer.',
+        ],
+      },
+      {
+        title: '4. Aggressive State Legislation',
+        points: [
+          '<strong>Advertising Bans:</strong> TV cigarette advertising banned in 1965; all tobacco sports sponsorship banned by 2005.',
+          '<strong>Public Smoking Ban (2007):</strong> The Health Act 2007 made smoking illegal in all enclosed workplaces, pubs, and public transport.',
+          '<strong>Taxation & Packaging:</strong> Astronomical tobacco duty; legal age raised to 18; plain standardized olive-green packaging with graphic health warnings.',
+        ],
+      },
+    ],
+    vocabBank: [
+      {
+        term: 'Epidemiology',
+        def: 'The branch of medicine that deals with the incidence, distribution, and control of diseases in populations.',
+      },
+      {
+        term: 'Doll and Hill',
+        def: 'British researchers who published the landmark 1950 statistical study proving the link between smoking and lung cancer.',
+      },
+      {
+        term: 'Bronchoscopy',
+        def: 'A diagnostic procedure allowing doctors to examine the inside of the lungs and take tissue biopsies.',
+      },
+      {
+        term: 'Immunotherapy',
+        def: 'Modern cancer treatment that uses the body’s own immune system to recognize and attack cancer cells.',
+      },
+      {
+        term: 'Plain Packaging',
+        def: 'Government regulation requiring tobacco products to be sold in standardized packaging with graphic health warnings.',
+      },
+      {
+        term: 'Health Act 2007',
+        def: 'UK legislation that prohibited smoking in enclosed public places and workplaces across England.',
+      },
+    ],
+    causalFactors: [
+      '<strong>1. Statistical Epidemiology:</strong> Proving the lung cancer link required large-scale population data rather than laboratory microscope tests.',
+      '<strong>2. Transition from Treatment to Prevention:</strong> Because lung cancer has a low cure rate, government recognized prevention via legislation was far more effective.',
+      '<strong>3. Overcoming Corporate Resistance:</strong> Tobacco companies spent billions denying the link; it required decisive state action to defeat corporate lobbying.',
+    ],
+  },
+  lesson_5_1: {
+    deepKnowledgeGrid: [
+      {
+        title: '1. The British Sector Context',
+        points: [
+          '<strong>Sector Layout:</strong> British Expeditionary Force (BEF) manned a sector running from Ypres in Flanders down to the Somme in northern France.',
+          '<strong>Ypres Salient:</strong> Vulnerable outward bulge surrounded on three sides by German artillery situated on the higher Messines and Passchendaele ridges.',
+          '<strong>Key Battles:</strong> 1st Ypres (1914), 2nd Ypres (1915, first chlorine gas), Somme (1916, 57,000 casualties on day one), 3rd Ypres/Passchendaele (1917, liquid mud).',
+        ],
+      },
+      {
+        title: '2. Geological & Terrain Hazards',
+        points: [
+          '<strong>Waterlogged Flanders Clay:</strong> Ypres had clay soil that held water; heavy artillery destroyed delicate drainage systems, creating liquid mud.',
+          '<strong>Arras Underground Tunnels:</strong> Chalk terrain allowed British and New Zealand miners to dig 2.5 miles of tunnels with electric light, running water, and a 700-bed hospital.',
+          '<strong>The Somme Chalk:</strong> Deep underground dugouts carved into dry chalk valleys protected troops from bombardment but complicated stretcher carrying.',
+        ],
+      },
+      {
+        title: '3. Transport Breakdown (1914)',
+        points: [
+          '<strong>Horse-Drawn Ambulances:</strong> BEF deployed in 1914 with zero motor ambulances; horse-drawn wagons could not navigate shell holes or mud.',
+          '<strong>Trauma from Shaking:</strong> Jolting over rough roads caused compound femur fractures to sever femoral arteries, inducing fatal haemorrhagic shock.',
+          '<strong>Severe Evacuation Delays:</strong> Wounded men lay stranded in No Man’s Land for days before reaching basic medical dressing stations.',
+        ],
+      },
+      {
+        title: '4. Motorised Ambulance Revolution',
+        points: [
+          '<strong>Times Public Appeal:</strong> In October 1914, the British Red Cross launched an appeal, raising funds for 512 motor ambulances within three weeks.',
+          '<strong>Ambulance Trains & Barges:</strong> Converted hospital trains and French canal barges moved casualties smoothly to Base Hospitals on the coast without jolting.',
+          '<strong>Saved Thousands:</strong> Fast motor transport ensured wounded soldiers reached surgical teams at Casualty Clearing Stations within the critical “golden hour”.',
+        ],
+      },
+    ],
+    vocabBank: [
+      {
+        term: 'Salient',
+        def: 'A military position or battlefield zone that bulges outward into enemy-controlled territory, surrounded on three sides.',
+      },
+      {
+        term: 'Passchendaele',
+        def: 'The 1917 Third Battle of Ypres, notorious for relentless rain that turned the battlefield into deep liquid mud.',
+      },
+      {
+        term: 'Arras Caves',
+        def: 'Underground chalk quarries interconnected by British miners to house 25,000 men and a 700-bed hospital.',
+      },
+      {
+        term: 'Motor Ambulance',
+        def: 'Motorized transport introduced in late 1914 to rapidly evacuate casualties across damaged battlefield terrain.',
+      },
+      {
+        term: 'Ambulance Train',
+        def: 'Specially fitted railway carriages equipped with bunks and operating rooms to transport stable casualties to the coast.',
+      },
+      {
+        term: 'Hospital Barge',
+        def: 'Slow-moving canal boat used to transport wounded men with severe chest or head wounds smoothly without painful jolting.',
+      },
+    ],
+    causalFactors: [
+      '<strong>1. Geological Vulnerability:</strong> Ypres’ low-lying clay soil and high water table made mud the primary obstacle to casualty survival.',
+      '<strong>2. Rapid Mechanisation:</strong> War forced the British military to abandon horse-drawn tradition in favour of motor vehicles and hospital trains.',
+      '<strong>3. Civilian Charitable Mobilisation:</strong> The Red Cross and St John Ambulance raised voluntary funds to bridge military supply shortages.',
+    ],
+  },
+  lesson_5_2: {
+    deepKnowledgeGrid: [
+      {
+        title: '1. Trench Defensive Architecture',
+        points: [
+          '<strong>Three-Tier System:</strong> Frontline trench (fire bays), Support trench (80 yards behind), and Reserve trench (several hundred yards behind).',
+          '<strong>Communication Trenches:</strong> Connected the three parallel lines in a zig-zag pattern to prevent enemy shells blasting straight down the trench.',
+          '<strong>Firestep & Traverses:</strong> Raised ledge (firestep) for shooting over the parapet; right-angle bends (traverses) contained bomb blasts.',
+        ],
+      },
+      {
+        title: '2. Protective Features',
+        points: [
+          '<strong>Sandbags & Parapets:</strong> Reinforced trench walls to absorb shrapnel; barbed wire entanglements up to 30 yards wide in front.',
+          '<strong>Duckboards & Drainage Sumps:</strong> Wooden slats placed over drainage sumps in trench bottoms to keep soldiers’ boots out of water.',
+          '<strong>Deep Dugouts:</strong> Protective chambers carved into trench walls; German dugouts at the Somme were up to 30 feet underground with electric lights.',
+        ],
+      },
+      {
+        title: '3. Daily Environmental Hazards',
+        points: [
+          '<strong>Lice Infestation:</strong> Over 90% of soldiers had body lice, which bred in uniform seams and transmitted debilitating <strong>trench fever</strong>.',
+          '<strong>Trench Rats:</strong> Black and brown rats grew to the size of cats, feeding on corpses and contaminating food rations with leptospirosis.',
+          '<strong>Flooded Latrines:</strong> Latrine pits (buckets or trenches) frequently overflowed in rain or were hit by artillery, causing dysentery.',
+        ],
+      },
+      {
+        title: '4. Routine, Sentry Duty & Stand-To',
+        points: [
+          '<strong>Dawn & Dusk Stand-To:</strong> Troops manned the firestep with fixed bayonets at dawn and dusk when enemy raids were most frequent.',
+          '<strong>Constant Maintenance:</strong> Men spent daylight repairing parapets damaged by shelling, pumping out water, and wiring.',
+          '<strong>Sleep Deprivation:</strong> Prolonged sleeplessness, perpetual dampness, and artillery stress degraded men’s immune systems and mental resilience.',
+        ],
+      },
+    ],
+    vocabBank: [
+      {
+        term: 'Communication Trench',
+        def: 'A trench connecting the frontline to support and reserve trenches, allowing troops and supplies to move under cover.',
+      },
+      {
+        term: 'Duckboard',
+        def: 'Wooden slatted walkways laid in trench floors to provide dry footing above standing water and mud.',
+      },
+      {
+        term: 'Traverse',
+        def: 'A sharp, right-angle bend built into trench walls to contain the blast and shrapnel of an exploding shell.',
+      },
+      {
+        term: 'Parapet',
+        def: 'The front wall of a trench, reinforced with sandbags to protect soldiers from rifle fire and shrapnel.',
+      },
+      {
+        term: 'Firestep',
+        def: 'A raised earthen step in the trench wall that allowed soldiers to see and fire over the parapet into No Man’s Land.',
+      },
+      {
+        term: 'Dugout',
+        def: 'An underground shelter cut into the side of a trench to provide shelter from weather and shellfire.',
+      },
+    ],
+    causalFactors: [
+      '<strong>1. Artillery Dominance:</strong> High-explosive shells forced armies into trenches, which solved the bullet problem but created a crisis of sanitation.',
+      '<strong>2. Static Warfare Pathology:</strong> Months of confinement in stagnant trenches allowed body lice, trench rats, and waterborne bacteria to flourish.',
+      '<strong>3. Drainage Engineering Failure:</strong> Flanders mud continually overwhelmed primitive drainage sumps, turning footwear into vectors for gangrene.',
+    ],
+  },
+  lesson_5_3: {
+    deepKnowledgeGrid: [
+      {
+        title: '1. Environmental Illnesses',
+        points: [
+          '<strong>Trench Foot:</strong> Caused by standing in cold water/mud for days; circulation failed, tissue rotted with fungal gangrene, requiring amputation.',
+          '<strong>Trench Fever:</strong> Caused by <em>Bartonella quintana</em> spread by body lice; caused sudden high fever, headache, and severe aching shins.',
+          '<strong>Shell Shock (NYDN):</strong> Psychological trauma from artillery bombardment; symptoms included mutism, blindness, tremors, and paralysis.',
+        ],
+      },
+      {
+        title: '2. Shrapnel & Explosive Trauma',
+        points: [
+          '<strong>Artillery Supremacy:</strong> High-explosive shells caused 58% of all Western Front wounds; shrapnel balls and jagged steel tore flesh and shattered bone.',
+          '<strong>Compound Fractures:</strong> Jagged bone ends ruptured muscle and severed arteries; pre-1915 femur fracture mortality was 80%.',
+          '<strong>Brodie Helmet (1915):</strong> Steel helmet with wide brim introduced late 1915; reduced fatal head wounds from shrapnel by 80%.',
+        ],
+      },
+      {
+        title: '3. Soil Bacteria & Severe Infection',
+        points: [
+          '<strong>Fertilised Flanders Farmland:</strong> Centuries of manure farming meant Flemish soil was saturated with <em>Clostridium welchii</em> and tetanus spores.',
+          '<strong>Dirty Cloth Implantation:</strong> Shrapnel carried muddy uniform cloth deep into wounds; lack of oxygen caused fatal <strong>gas gangrene</strong> within hours.',
+          '<strong>Tetanus Inoculation:</strong> Routine anti-tetanus serum injections given at aid posts dramatically reduced lockjaw deaths by 1915.',
+        ],
+      },
+      {
+        title: '4. Chemical Warfare: Poison Gas',
+        points: [
+          '<strong>Chlorine Gas (1915):</strong> Green-yellow cloud first used by Germans at 2nd Ypres; suffocated victims by causing lungs to fill with fluid.',
+          '<strong>Phosgene Gas (1915):</strong> Colourless, smelled of mouldy hay; deadlier than chlorine; delayed action meant soldiers collapsed 48 hours later.',
+          '<strong>Mustard Gas (1917):</strong> Blistering agent used at 3rd Ypres; burned skin, caused internal blisters, blinded eyes, and remained active in mud for weeks.',
+        ],
+      },
+    ],
+    vocabBank: [
+      {
+        term: 'Trench Foot',
+        def: 'A medical condition caused by prolonged exposure of feet to damp, cold conditions, leading to gangrene.',
+      },
+      {
+        term: 'Trench Fever',
+        def: 'A debilitating louse-borne viral infection characterized by sudden severe fever, headache, and shin pain.',
+      },
+      {
+        term: 'Shell Shock',
+        def: 'Psychological trauma caused by prolonged exposure to artillery bombardment, initially termed NYDN.',
+      },
+      {
+        term: 'Gas Gangrene',
+        def: 'A lethal, foul-smelling bacterial wound infection caused by soil bacteria producing gas beneath the skin.',
+      },
+      {
+        term: 'Mustard Gas',
+        def: 'An oily, blistering chemical weapon introduced in 1917 that caused severe internal and external chemical burns.',
+      },
+      {
+        term: 'Brodie Helmet',
+        def: 'A British steel combat helmet introduced in 1915 to protect soldiers’ heads from aerial artillery shrapnel.',
+      },
+    ],
+    causalFactors: [
+      '<strong>1. Industrialised Weaponry:</strong> Massive artillery production generated severe polytrauma that civilian medicine had never encountered.',
+      '<strong>2. Highly Fertile Farmland:</strong> Heavy manure fertilization in Flemish agriculture turned soil into a biological hazard that infected open wounds.',
+      '<strong>3. Escalating Chemical Innovation:</strong> The race between toxic gases and protective respirators (urine pads to Box Respirators) saved thousands from gas deaths.',
+    ],
+  },
+  lesson_5_4: {
+    deepKnowledgeGrid: [
+      {
+        title: '1. Regimental Aid Post (RAP)',
+        points: [
+          '<strong>Immediate First Aid:</strong> Located 200 yards behind the frontline in a communication trench dugout or cellar.',
+          '<strong>Staff & Mission:</strong> Staffed by one Regimental Medical Officer (RMO) and 30 stretcher bearers; applied tourniquets, morphine, and bandages.',
+          '<strong>Quick Sorting:</strong> Sent lightly wounded men back to the line; stretcher bearers carried stretcher cases back to dressing stations.',
+        ],
+      },
+      {
+        title: '2. Dressing Stations (ADS & MDS)',
+        points: [
+          '<strong>Advanced Dressing Station:</strong> Located 400 yards behind RAP; Main Dressing Station located 1 mile behind; staffed by Field Ambulance units.',
+          '<strong>Capacity & Tetanus:</strong> Handled up to 150 wounded men; administered anti-tetanus serum; dressed wounds; recorded patient details.',
+          '<strong>Evacuation Links:</strong> Evacuated patients to Casualty Clearing Stations using motor ambulances, horse-drawn carts, or walking.',
+        ],
+      },
+      {
+        title: '3. Casualty Clearing Station (CCS)',
+        points: [
+          '<strong>Critical Surgical Hub:</strong> Located 7–12 miles behind the front, out of direct artillery range, near railway lines or canals.',
+          '<strong>Triage System:</strong> Divided patients into 3 groups: (1) Walking wounded (clean up & return), (2) Immediate surgery needed, (3) Beyond help (made comfortable).',
+          '<strong>Advanced Facilities:</strong> Had operating theatres, mobile X-ray vans, and wards; performed critical surgery for head wounds and compound fractures.',
+        ],
+      },
+      {
+        title: '4. Base Hospitals & Volunteer Units',
+        points: [
+          '<strong>French Coast Facilities:</strong> Huge general hospitals in coastal towns (Boulogne, Étaples); thousands of beds, X-ray departments, and labs.',
+          '<strong>The “Blighty” Return:</strong> Treated patients until stable enough to board hospital ships back to Britain (“Blighty”) for long-term recovery.',
+          '<strong>RAMC & FANY:</strong> RAMC expanded from 3,000 men in 1914 to 130,000 in 1918; FANY women drove ambulances, ran mobile canteens, and administered baths.',
+        ],
+      },
+    ],
+    vocabBank: [
+      {
+        term: 'Chain of Evacuation',
+        def: 'The staged medical system used to move wounded soldiers from the frontline to Base Hospitals in France or Britain.',
+      },
+      {
+        term: 'Regimental Aid Post',
+        def: 'The first frontline medical station, located roughly 200 yards behind the firing line.',
+      },
+      {
+        term: 'Casualty Clearing Station',
+        def: 'The first well-equipped surgical facility on the evacuation route, located 7–12 miles behind the frontline.',
+      },
+      {
+        term: 'Triage',
+        def: 'The clinical system of sorting casualties into priority categories based on their likelihood of survival.',
+      },
+      {
+        term: 'RAMC',
+        def: 'Royal Army Medical Corps; the branch of the British Army responsible for medical treatment and casualty evacuation.',
+      },
+      {
+        term: 'FANY',
+        def: 'First Aid Nursing Yeomanry; an all-women voluntary organization that drove ambulances and provided frontline medical care.',
+      },
+    ],
+    causalFactors: [
+      '<strong>1. Systematic Staging:</strong> The staged evacuation chain ensured casualties received progressively more specialized care as they moved away from danger.',
+      '<strong>2. The Triage Principle:</strong> Prioritizing soldiers who had a strong chance of survival if operated on immediately maximized the survival rate.',
+      '<strong>3. Female Volunteer Integration:</strong> Organizations like FANY broke military gender barriers, taking over vital logistics and ambulance driving.',
+    ],
+  },
+  lesson_5_5: {
+    deepKnowledgeGrid: [
+      {
+        title: '1. The Thomas Splint (1915)',
+        points: [
+          '<strong>Hugh Owen Thomas:</strong> Designed by Welsh orthopaedic pioneer; rigid metal frame that pulled the broken femur in traction.',
+          '<strong>Stopped Bone Grating:</strong> Prevented jagged broken bone ends rubbing together, which previously tore muscle and severed the femoral artery.',
+          '<strong>Stunning 80% to 20% Drop:</strong> Mortality from compound femur fractures plummeted from 80% in 1914 to below 20% by 1916; applied right at the aid post.',
+        ],
+      },
+      {
+        title: '2. Stored Blood & Oswald Robertson',
+        points: [
+          '<strong>Anticoagulation Breakthrough:</strong> Albert Hustin (1914) discovered sodium citrate prevented blood clotting; Rous & Turner added glucose (1916).',
+          '<strong>First Blood Depot (1917):</strong> Captain Oswald Robertson collected type O blood in glass bottles, kept on ice; treated 20 men in shock at Battle of Cambrai.',
+          '<strong>Cured Fatal Shock:</strong> Allowed rapid transfusions directly at Casualty Clearing Stations, transforming treatment of haemorrhagic shock.',
+        ],
+      },
+      {
+        title: '3. Mobile X-Rays & Infection Control',
+        points: [
+          '<strong>Mobile X-Ray Vans:</strong> Mobile vans travelled between CCSs; located jagged shrapnel fragments and bullets inside flesh before surgeons cut.',
+          '<strong>Wound Debridement:</strong> Surgeons learned to cut away all dead, dirty tissue from wounds immediately to deny bacteria food.',
+          '<strong>Carrel-Dakin Method:</strong> Continuous irrigation of deep wounds with sterilized sodium hypochlorite solution; killed gas gangrene bacteria.',
+        ],
+      },
+      {
+        title: '4. Brain & Plastic Surgery Advances',
+        points: [
+          '<strong>Harvey Cushing (Brain Surgery):</strong> Used local anaesthetic rather than general; used magnets to draw shrapnel from brain tissue; cut mortality from 54% to 29%.',
+          '<strong>Harold Gillies (Plastic Surgery):</strong> Pioneer who established specialized hospital at Queen’s Hospital, Sidcup (1917); treated horrific facial shrapnel mutilations.',
+          '<strong>Tube Pedicle Graft:</strong> Kept grafted skin alive with its own blood supply via a rolled flesh tube, rebuilding noses, jaws, and cheeks for over 11,000 men.',
+        ],
+      },
+    ],
+    vocabBank: [
+      {
+        term: 'Thomas Splint',
+        def: 'A rigid traction splint introduced in 1915 that reduced compound femur fracture mortality from 80% to 20%.',
+      },
+      {
+        term: 'Blood Depot',
+        def: 'The world’s first blood bank established by Oswald Robertson at the Battle of Cambrai in 1917.',
+      },
+      {
+        term: 'Sodium Citrate',
+        def: 'A chemical anticoagulant discovered in 1914 that prevented blood from clotting when stored.',
+      },
+      {
+        term: 'Debridement',
+        def: 'The surgical removal of dead, damaged, or infected tissue to prevent the spread of gas gangrene.',
+      },
+      {
+        term: 'Carrel-Dakin Method',
+        def: 'An antiseptic wound irrigation system using sodium hypochlorite solution to flush deep shrapnel wounds.',
+      },
+      {
+        term: 'Tube Pedicle',
+        def: 'A plastic surgery technique invented by Harold Gillies that rolled living skin into a tube to reconstruct facial injuries.',
+      },
+    ],
+    causalFactors: [
+      '<strong>1. Scale of Wounds Driving Innovation:</strong> The unprecedented severity of shrapnel trauma forced surgeons to pioneer radical new procedures.',
+      '<strong>2. Chemistry & Refrigeration:</strong> Storing blood required solving chemical clotting (citrate) and bacterial growth (ice refrigeration).',
+      '<strong>3. Enduring Civilian Legacy:</strong> Techniques perfected under fire—blood banks, traction splints, plastic surgery—transferred directly into peacetime healthcare.',
+    ],
+  },
+};
+const LESSON_KEYS = [
+  'lesson_1_1',
+  'lesson_1_2',
+  'lesson_1_3',
+  'lesson_2_1',
+  'lesson_2_2',
+  'lesson_2_3',
+  'lesson_3_1',
+  'lesson_3_2',
+  'lesson_3_3',
+  'lesson_4_1',
+  'lesson_4_2',
+  'lesson_4_3',
+  'lesson_4_4',
+  'lesson_5_1',
+  'lesson_5_2',
+  'lesson_5_3',
+  'lesson_5_4',
+  'lesson_5_5',
+];
+
+// Map authentic images to pillar IDs across spreads
+const PILLAR_IMAGES = {
+  church: '/images/medieval_church_interior.jpg',
+  hippocrates: '/images/hippocrates_portrait.jpg',
+  galen: '/images/galen_portrait.jpg',
+  vesalius: '/images/vesalius_muscle_men.jpg',
+  harvey: '/images/harvey_veins.jpg',
+  pasteur: '/images/pasteur_lab.jpg',
+  nightingale: '/images/nightingale.jpg',
+  snow: '/images/john_snow_cholera_map.jpg',
+  dna: '/images/dna_structure.jpg',
+  fleming: '/images/fleming_petri_dish.jpg',
+  florey_chain: '/images/penicillin_mould.jpg',
+  mass_production: '/images/penicillin_propaganda.jpg',
+  doll_hill: '/images/lung_cancer_campaign.jpg',
+  somme_arras: '/images/gw_flooded_trench.jpg',
+  gas_gangrene: '/images/brooding_soldier_gas.jpg',
+};
+
+SPREADS.forEach((s, idx) => {
+  const key = LESSON_KEYS[idx];
+  if (ENRICHMENTS_DATA[key]) {
+    s.left.deepKnowledgeGrid = ENRICHMENTS_DATA[key].deepKnowledgeGrid;
+    s.left.vocabBank = ENRICHMENTS_DATA[key].vocabBank;
+    s.left.causalFactors = ENRICHMENTS_DATA[key].causalFactors;
+  }
+  if (s.left && s.left.pillars) {
+    s.left.pillars.forEach((p) => {
+      if (PILLAR_IMAGES[p.id]) {
+        p.image = PILLAR_IMAGES[p.id];
+      }
+    });
+  }
+});
+
+// Attach authentic visual sources to Section A Q2(a)
+if (SPREADS[13] && SPREADS[13].right.q2a) {
+  SPREADS[13].right.q2a.visualSource = {
+    image: '/images/gw_flooded_trench.jpg',
+    title: 'Source A (Visual): Stretcher bearers in mud, Ypres Salient, 1917',
+    caption:
+      'Official British photograph showing four stretcher bearers struggling waist-deep in waterlogged mud near Passchendaele, November 1917.',
+  };
+}
+
+if (SPREADS[15] && SPREADS[15].right.q2a) {
+  SPREADS[15].right.q2a.visualSource = {
+    image: '/images/brooding_soldier_gas.jpg',
+    title: 'Source A (Visual): Blinded British soldiers after mustard gas attack, 1918',
+    caption:
+      'Official photograph showing a line of British soldiers blinded by mustard gas, each with eyes bandaged, holding the shoulder of the man in front.',
+  };
+}
+
+if (SPREADS[17] && SPREADS[17].right.q2a) {
+  SPREADS[17].right.q2a.visualSource = {
+    image: '/images/aerial_trench_ypres.jpg',
+    title: 'Source A (Visual): Aerial survey of flooded trench cratering, Ypres 1917',
+    caption:
+      'British Royal Flying Corps aerial photograph showing the devastated, flooded crater landscape near Passchendaele, illustrating extreme evacuation difficulties.',
+  };
+}
+
+function getImageDataUri(imgPath) {
+  if (!imgPath) return '';
+  const cleanPath = imgPath.startsWith('/') ? imgPath.slice(1) : imgPath;
+  const fullPath = path.join(process.cwd(), 'public', cleanPath);
+  if (fs.existsSync(fullPath)) {
+    const ext = path.extname(fullPath).toLowerCase().replace('.', '');
+    const mime = ext === 'svg' ? 'image/svg+xml' : ext === 'png' ? 'image/png' : 'image/jpeg';
+    const b64 = fs.readFileSync(fullPath).toString('base64');
+    return `data:${mime};base64,${b64}`;
+  }
+  return imgPath;
+}
+
+// Render Left Knowledge Page (Dense Level 4-9 Masterclass)
 function renderLeftPage(data, pageNum) {
-  const { tag, headline, summary, pillars, vectors, middleBox, bottomBox } = data.left;
+  const left = data.left;
+  const deepGrid = left.deepKnowledgeGrid || [];
+  const vocab = left.vocabBank || [];
+  const causal = left.causalFactors || [];
+
+  // Pillars HTML (Top Tier)
+  const pillarsHtml = left.pillars
+    .map((pillar) => {
+      let mediaHtml = '';
+      if (pillar.image) {
+        const dataUri = getImageDataUri(pillar.image);
+        mediaHtml = `<div style="width: 44px; height: 44px; border-radius: 50%; overflow: hidden; border: 1.5px solid #1e3a8a; margin-right: 8px; flex-shrink: 0; background: #e2e8f0;"><img src="${dataUri}" style="width: 100%; height: 100%; object-fit: cover;" alt="${pillar.title}" /></div>`;
+      } else {
+        mediaHtml = `<div style="width: 44px; height: 44px; border-radius: 50%; background: #eff6ff; border: 1.5px solid #1e3a8a; display: flex; align-items: center; justify-content: center; font-size: 16pt; margin-right: 8px; flex-shrink: 0;">${pillar.icon || '🏛️'}</div>`;
+      }
+      const bulletsHtml = pillar.bullets
+        .map((b) => `<li style="margin-bottom: 2px;">${b}</li>`)
+        .join('');
+      return `
+      <div style="background: #ffffff; border: 1.5px solid #1e3a8a; border-radius: 6px; padding: 7px 9px; flex: 1; display: flex; flex-direction: column;">
+        <div style="display: flex; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 4px; margin-bottom: 4px;">
+          ${mediaHtml}
+          <div>
+            <div style="font-size: 8.5pt; font-weight: 800; color: #0f172a; line-height: 1.15;">${pillar.title}</div>
+            <div style="font-size: 6.8pt; font-weight: 700; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px;">${pillar.subtitle || ''}</div>
+          </div>
+        </div>
+        <ul style="margin: 0; padding-left: 14px; font-size: 6.8pt; color: #334155; line-height: 1.35; flex: 1;">
+          ${bulletsHtml}
+        </ul>
+      </div>
+    `;
+    })
+    .join('');
+
+  // Tier 2: Deep Knowledge Grid (4 Columns)
+  let deepGridHtml = '';
+  if (deepGrid && deepGrid.length > 0) {
+    const colsHtml = deepGrid
+      .map((col) => {
+        const ptsHtml = col.points
+          .map((pt) => `<li style="margin-bottom: 3px;">${pt}</li>`)
+          .join('');
+        return `
+        <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 7px;">
+          <div style="font-size: 7.2pt; font-weight: 800; color: #1e3a8a; border-bottom: 1px solid #e2e8f0; padding-bottom: 3px; margin-bottom: 4px;">
+            ${col.title}
+          </div>
+          <ul style="margin: 0; padding-left: 11px; font-size: 6.4pt; color: #1e293b; line-height: 1.3;">
+            ${ptsHtml}
+          </ul>
+        </div>
+      `;
+      })
+      .join('');
+
+    deepGridHtml = `
+      <div style="margin-bottom: 8px; border: 1.5px solid #0f172a; border-radius: 6px; padding: 7px 9px; background: #fafafa;">
+        <div style="font-size: 7.6pt; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; display: flex; justify-content: space-between;">
+          <span>✦ Core Knowledge Matrix &bull; Level 4 to Level 9 Grounded Evidence:</span>
+          <span style="color: #64748b; font-weight: 700;">Textbook Grounded Evidence</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(${deepGrid.length}, 1fr); gap: 6px;">
+          ${colsHtml}
+        </div>
+      </div>
+    `;
+  }
+
+  // Tier 3: Transmission Vectors & Synoptic Bridge
+  let vectorsHtml = '';
+  if (left.vectors && left.vectors.length > 0) {
+    const vList = left.vectors
+      .map(
+        (v) =>
+          `<div style="margin-bottom: 2px;"><strong style="color: #0f172a;">${v.from} &rarr; ${v.to}:</strong> ${v.text || v.desc || ''}</div>`,
+      )
+      .join('');
+    vectorsHtml = `
+      <div style="flex: 1.2; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 5px; padding: 6px 8px; font-size: 6.6pt; line-height: 1.35; color: #334155;">
+        <div style="font-size: 7pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 3px;">
+          Key Transmission Vectors:
+        </div>
+        ${vList}
+      </div>
+    `;
+  }
+
+  let bridgeHtml = '';
+  if (left.middleBox) {
+    const mb = left.middleBox;
+    let linksHtml = '';
+    if (mb.links && mb.links.length > 0) {
+      linksHtml = mb.links
+        .map(
+          (l) => `
+        <div style="margin-bottom: 2px;">
+          <strong style="color: #0f172a;">${l.era} (${l.badge}):</strong> ${l.text}
+        </div>
+      `,
+        )
+        .join('');
+    } else {
+      linksHtml = `
+        <div style="margin-bottom: 2px;"><strong>${mb.item1Title || 'Core Concept'}:</strong> ${mb.item1Text || ''}</div>
+        <div><strong>${mb.item2Title || 'Historical Impact'}:</strong> ${mb.item2Text || ''}</div>
+      `;
+    }
+    bridgeHtml = `
+      <div style="flex: 1.3; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 5px; padding: 6px 8px; font-size: 6.5pt; line-height: 1.35; color: #14532d;">
+        <div style="font-size: 7pt; font-weight: 800; color: #15803d; text-transform: uppercase; margin-bottom: 3px;">
+          ⚡ ${mb.title}
+        </div>
+        ${linksHtml}
+      </div>
+    `;
+  }
+
+  const tier3Html =
+    vectorsHtml || bridgeHtml
+      ? `
+    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+      ${vectorsHtml}
+      ${bridgeHtml}
+    </div>
+  `
+      : '';
+
+  // Tier 4: Vocabulary Bank & Causal Factors / Synoptic Evidence Bank
+  let vocabHtml = '';
+  if (vocab && vocab.length > 0) {
+    const vItems = vocab
+      .map((v) => `<div style="margin-bottom: 2.5px;"><strong>${v.term}:</strong> ${v.def}</div>`)
+      .join('');
+    vocabHtml = `
+      <div style="flex: 1; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 5px; padding: 6px 8px; font-size: 6.5pt; line-height: 1.3; color: #334155;">
+        <div style="font-size: 7pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 3px; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
+          🔑 Grade 8–9 Key Vocabulary Bank:
+        </div>
+        ${vItems}
+      </div>
+    `;
+  }
+
+  let causalOrSynopticHtml = '';
+  if (left.bottomBox && left.bottomBox.type === 'synoptic_bank') {
+    // 16m essay synoptic bank
+    const sb = left.bottomBox;
+    const col1Items = (sb.col1Points || [])
+      .map((p) => `<li style="margin-bottom: 2px;">${p}</li>`)
+      .join('');
+    const col2Items = (sb.col2Points || [])
+      .map((p) => `<li style="margin-bottom: 2px;">${p}</li>`)
+      .join('');
+    causalOrSynopticHtml = `
+      <div style="flex: 1.8; background: #eff6ff; border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 6px 8px; font-size: 6.5pt; line-height: 1.3; color: #1e293b;">
+        <div style="font-size: 7.2pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 3px; border-bottom: 1px solid #bfdbfe; padding-bottom: 2px;">
+          ★ ${sb.title}
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+          <div>
+            <strong style="color: #1e3a8a; display: block; margin-bottom: 2px;">${sb.col1Title}:</strong>
+            <ul style="margin: 0; padding-left: 11px;">${col1Items}</ul>
+          </div>
+          <div>
+            <strong style="color: #1e3a8a; display: block; margin-bottom: 2px;">${sb.col2Title}:</strong>
+            <ul style="margin: 0; padding-left: 11px;">${col2Items}</ul>
+          </div>
+        </div>
+      </div>
+    `;
+  } else if (causal && causal.length > 0) {
+    const cItems = causal.map((c) => `<div style="margin-bottom: 3px;">${c}</div>`).join('');
+    causalOrSynopticHtml = `
+      <div style="flex: 1.4; background: #fffbeb; border: 1px solid #fde68a; border-radius: 5px; padding: 6px 8px; font-size: 6.5pt; line-height: 1.3; color: #78350f;">
+        <div style="font-size: 7pt; font-weight: 800; color: #92400e; text-transform: uppercase; margin-bottom: 3px; border-bottom: 1px solid #fef3c7; padding-bottom: 2px;">
+          ⚖️ Causal Factors &amp; Analysis:
+        </div>
+        ${cItems}
+      </div>
+    `;
+  }
+
+  const tier4Html =
+    vocabHtml || causalOrSynopticHtml
+      ? `
+    <div style="display: flex; gap: 8px;">
+      ${vocabHtml}
+      ${causalOrSynopticHtml}
+    </div>
+  `
+      : '';
+
   return `
-  <div class="page page-left" style="page-break-before: always; page-break-after: always; box-sizing: border-box; width: 100%; height: 1123px; padding: 16px 20px; font-family: 'Inter', sans-serif; background-color: #ffffff; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;">
+  <div class="page page-left" style="box-sizing: border-box; width: 794px; height: 1123px; padding: 22px 24px; font-family: 'Inter', sans-serif; background-color: #ffffff; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;">
     <div>
       <!-- Top Header -->
-      <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 5px; margin-bottom: 8px;">
+      <div style="border-bottom: 2px solid #0f172a; padding-bottom: 4px; margin-bottom: 8px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
-          <span style="font-size: 8pt; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.5px;">
-            Edexcel GCSE (9–1) History &bull; Paper 1: Medicine in Britain &bull; ${data.topic}
+          <span style="font-size: 8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px;">
+            ${left.tag}
           </span>
-          <span style="font-size: 8pt; font-weight: 700; color: #1e3a8a; background: #f1f5f9; padding: 2px 8px; border-radius: 4px; border: 1px solid #cbd5e1;">
-            ${tag}
+          <span style="font-size: 7pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; padding: 2px 6px; border-radius: 3px; border: 1px solid #bfdbfe;">
+            Level 4–9 Knowledge Masterclass
           </span>
         </div>
-        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 14.5pt; color: #0f172a; margin: 3px 0 4px 0; border: none; padding: 0;">
-          ${headline}
-        </h2>
-        <p style="font-size: 8.2pt; color: #334155; margin: 0; line-height: 1.35;">
-          ${summary}
+        <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 15pt; color: #0f172a; margin: 2px 0 1px 0; border: none; padding: 0; font-weight: 900;">
+          ${left.headline}
+        </h1>
+        <p style="font-size: 7.4pt; color: #475569; margin: 0; line-height: 1.35;">
+          ${left.summary}
         </p>
       </div>
 
-      <!-- Core 3 Pillars -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 9px; margin-bottom: 8px;">
-        ${pillars
-          .map(
-            (p) => `
-          <div style="border: 1.5px solid #1e3a8a; border-radius: 6px; padding: 7px; background-color: #f8fafc; display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-              <div style="display: flex; align-items: center; gap: 7px; margin-bottom: 5px; border-bottom: 1px solid #cbd5e1; padding-bottom: 4px;">
-                <div style="width: 36px; height: 36px; border-radius: 50%; overflow: hidden; border: 1.5px solid #1e3a8a; background: #e2e8f0; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
-                  <img src="${p.image}" alt="${p.title}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-                  <span style="display: none; font-size: 16px;">${p.iconFallback}</span>
-                </div>
-                <div>
-                  <h4 style="margin: 0; font-size: 9pt; color: #0f172a; font-weight: 800; line-height: 1.15;">${p.title}</h4>
-                  <span style="font-size: 6.8pt; color: #64748b; font-weight: 600; text-transform: uppercase;">${p.subtitle}</span>
-                </div>
-              </div>
-              <ul style="margin: 0; padding-left: 13px; font-size: 7.2pt; color: #1e293b; line-height: 1.3;">
-                ${p.bullets.map((b) => `<li style="margin-bottom: 3px;">${b.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')}</li>`).join('')}
-              </ul>
-            </div>
-          </div>
-        `,
-          )
-          .join('')}
+      <!-- Tier 1: Core 3 Pillars -->
+      <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+        ${pillarsHtml}
       </div>
 
-      <!-- Transmission Vectors Ribbon -->
-      <div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 5px; padding: 4px 8px; margin-bottom: 8px;">
-        <div style="font-size: 7pt; font-weight: 800; color: #0f172a; text-transform: uppercase; margin-bottom: 2px;">
-          Key Intellectual &amp; Historical Transmission Vectors:
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; font-size: 6.8pt; color: #334155;">
-          ${vectors
-            .map(
-              (v, i) => `
-            <div>
-              <strong style="color: #1e3a8a;">Vector ${i + 1}: ${v.from} &rarr; ${v.to}</strong><br/>
-              ${v.text}
-            </div>
-          `,
-            )
-            .join('')}
-        </div>
-      </div>
+      <!-- Tier 2: Deep Knowledge Grid (4 Columns) -->
+      ${deepGridHtml}
 
-      <!-- Middle Box: Synoptic or Diagnostic Feature -->
-      <div style="border: 1.5px solid #047857; background: #ecfdf5; border-radius: 6px; padding: 6px 10px; margin-bottom: 8px;">
-        <div style="font-size: 7.6pt; font-weight: 800; color: #065f46; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; display: flex; align-items: center; gap: 5px;">
-          <span>⚡</span> ${middleBox.title}
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-          ${middleBox.links
-            .map(
-              (l) => `
-            <div style="background: #ffffff; border: 1px solid #a7f3d0; border-radius: 4px; padding: 4px 7px;">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-                <strong style="font-size: 7.5pt; color: #065f46;">${l.era}</strong>
-                <span style="font-size: 6.5pt; font-weight: 700; color: #065f46; background: #d1fae5; border: 1px solid #a7f3d0; padding: 1px 4px; border-radius: 2px;">${l.badge}</span>
-              </div>
-              <div style="font-size: 7.1pt; color: #1e293b; line-height: 1.3;">${l.text}</div>
-            </div>
-          `,
-            )
-            .join('')}
-        </div>
-      </div>
+      <!-- Tier 3: Transmission Vectors & Synoptic Bridge -->
+      ${tier3Html}
+
+      <!-- Tier 4: Vocabulary Bank & Causal Factors -->
+      ${tier4Html}
     </div>
 
-    <!-- Bottom Box: Synoptic Evidence Bank -->
-    <div style="background: #f8fafc; border: 1.5px solid #1e293b; border-radius: 6px; padding: 6px 10px; margin-top: auto;">
-      <div style="font-size: 7.6pt; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px;">
-        ${bottomBox.title}
-      </div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px;">
-        ${bottomBox.points
-          .map(
-            (p, i) => `
-          <div style="font-size: 7.1pt; color: #334155; line-height: 1.3; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 7px;">
-            <strong style="color: #0f172a; display: block; margin-bottom: 1px;">Evidence ${i + 1}:</strong>
-            ${p.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')}
-          </div>
-        `,
-          )
-          .join('')}
-      </div>
+    <!-- Footer Signoff -->
+    <div style="border-top: 1px solid #cbd5e1; padding-top: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 6.8pt; color: #64748b;">
+      <span>Edexcel GCSE (9–1) History &bull; Paper 1: Medicine in Britain (c.1250–present)</span>
+      <span>Page ${pageNum}</span>
     </div>
   </div>
   `;
 }
 
-// Helper: Render Right Page (Rotated Exam Assessment)
+// Render Right Exam Page (Complete Question Coverage & Ruled Writing Lines)
 function renderRightPage(data, pageNum) {
   const right = data.right;
-  const isSectionA = data.topic.includes('Western Front');
+  const examType = data.examType;
 
-  // Common Header
-  const headerHtml = `
-    <div style="border-bottom: 2px solid #1e293b; padding-bottom: 5px; margin-bottom: 8px;">
-      <div style="display: flex; justify-content: space-between; align-items: baseline;">
-        <span style="font-size: 8pt; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.5px;">
-          Edexcel GCSE (9–1) History &bull; ${isSectionA ? 'Paper 1 (Section A): The Western Front (1914–1918)' : 'Paper 1 (Section B): Medicine in Britain'}
-        </span>
-        <span style="font-size: 8pt; font-weight: 700; color: #1e293b; background: #f1f5f9; padding: 2px 8px; border-radius: 4px; border: 1px solid #cbd5e1;">
-          Assessment Total: ${right.totalMarks} Marks
-        </span>
-      </div>
-      <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 14pt; color: #0f172a; margin: 3px 0 2px 0; border: none; padding: 0;">
-        ${
-          right.type === 'essay_16m'
-            ? 'Section B Capstone: 16-Mark Statement Judgement Essay'
-            : right.type === 'q3_q4'
-              ? 'Section B Practice: Comparative Analysis &amp; Causal Explanation'
-              : right.type === 'features_utility'
-                ? 'Section A Practice: Feature Descriptions &amp; Source Utility Enquiry'
-                : 'Section A Practice: Feature Descriptions &amp; Source Follow-Up Investigation'
-        }
-      </h2>
-    </div>
-  `;
+  // Helper to render dotted writing lines
+  const renderLines = (count) =>
+    Array.from({ length: count })
+      .map(() => '<div style="height: 17.5px; border-bottom: 1px dotted #94a3b8;"></div>')
+      .join('');
 
-  // Pattern 1: Q3 + Q4
-  if (right.type === 'q3_q4') {
-    return `
-    <div class="page page-right" style="page-break-before: always; page-break-after: always; box-sizing: border-box; width: 100%; height: 1123px; padding: 16px 20px; font-family: 'Inter', sans-serif; background-color: #ffffff; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;">
-      <div>
-        ${headerHtml}
-        
-        <!-- Question 3 [4 Marks] -->
-        <div style="background: #ffffff; border: 1.5px solid #334155; border-radius: 6px; padding: 6px 10px; margin-bottom: 4px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-size: 8.5pt; color: #0f172a;">${right.q3.title}</strong>
-            <span style="font-size: 7.5pt; font-weight: 800; color: #0f172a; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 1px 6px; border-radius: 3px;">[4 Marks]</span>
-          </div>
-          <div style="font-family: 'Georgia', serif; font-size: 9.6pt; font-weight: 700; color: #0f172a; line-height: 1.3; margin-bottom: 3px;">
-            ${right.q3.question}
-          </div>
-          <div style="font-size: 7.1pt; color: #334155; background: #f8fafc; border-left: 3px solid #334155; padding: 2.5px 7px; border-radius: 3px;">
-            <strong>Strategy:</strong> ${right.q3.guidance}
-          </div>
-        </div>
-        <!-- 8 ruled lines for Q3 -->
-        <div style="margin-bottom: 8px;">
-          ${Array(right.q3.lines).fill('<div style="height: 18px; border-bottom: 1px dotted #94a3b8; margin-top: 1px;"></div>').join('')}
-        </div>
+  let examContentHtml = '';
 
-        <!-- Question 4 [12 Marks] -->
-        <div style="background: #ffffff; border: 1.5px solid #1e293b; border-radius: 6px; padding: 6px 10px; margin-bottom: 4px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-size: 8.5pt; color: #0f172a;">${right.q4.title}</strong>
-            <span style="font-size: 7.5pt; font-weight: 800; color: #0f172a; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 1px 6px; border-radius: 3px;">[12 Marks]</span>
-          </div>
-          <div style="font-family: 'Georgia', serif; font-size: 9.6pt; font-weight: 700; color: #0f172a; line-height: 1.3; margin-bottom: 3px;">
-            ${right.q4.question}
-          </div>
-          <!-- Stimulus Tracking Checklist -->
-          <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 4px; padding: 3px 6px; margin-bottom: 3px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 4px;">
-            <span style="font-size: 7.1pt; font-weight: 700; color: #1e293b; text-transform: uppercase;">Stimulus Tracking Checklist:</span>
-            <div style="display: flex; gap: 8px; align-items: center;">
-              ${right.q4.stimulus
-                .map(
-                  (s) => `
-                <span style="display: inline-flex; align-items: center; gap: 4px; font-size: 7.2pt; font-weight: 600; color: #0f172a; background: #ffffff; border: 1px solid #94a3b8; padding: 1px 5px; border-radius: 3px;">
-                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #1e293b; border-radius: 2px; background: #ffffff;"></span>
-                  ${s}
-                </span>
-              `,
-                )
-                .join('')}
-              <span style="display: inline-flex; align-items: center; gap: 4px; font-size: 7.2pt; font-weight: 700; color: #0f172a; background: #ffffff; border: 1px solid #94a3b8; padding: 1px 5px; border-radius: 3px;">
-                <span style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #1e293b; border-radius: 2px; background: #ffffff;"></span>
-                Own Knowledge (P3)
-              </span>
-            </div>
-          </div>
-          <div style="font-size: 6.9pt; color: #475569; font-style: italic; margin-bottom: 2px;">
-            ${right.q4.note}
-          </div>
-          <div style="font-size: 7.1pt; color: #334155; background: #f8fafc; border-left: 3px solid #1e293b; padding: 2.5px 7px; border-radius: 3px;">
-            <strong>Strategy:</strong> ${right.q4.guidance}
-          </div>
+  if (examType === 'q3_q4') {
+    const stimulusList = (right.q4.stimulus || [right.q4.stimulus1, right.q4.stimulus2])
+      .filter(Boolean)
+      .join(' &bull; ');
+    examContentHtml = `
+      <!-- Q3 Container [4 Marks] -->
+      <div style="background: #ffffff; border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 7px 9px; margin-bottom: 8px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+          <strong style="font-size: 8.2pt; color: #1e3a8a;">${right.q3.title}</strong>
+          <span style="font-size: 7pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; padding: 1px 5px; border-radius: 2px;">Timing: ~5 mins</span>
         </div>
-        <!-- 23 ruled lines for Q4 -->
-        <div style="margin-bottom: 4px;">
-          ${Array(23).fill('<div style="height: 18px; border-bottom: 1px dotted #94a3b8; margin-top: 1px;"></div>').join('')}
+        <div style="font-size: 7.5pt; font-weight: 800; color: #0f172a; margin-bottom: 3px;">
+          ${right.q3.question}
         </div>
+        <div style="font-size: 6.6pt; color: #475569; font-style: italic; margin-bottom: 4px;">
+          Guidance: 1 developed comparative PEEL paragraph. Link both periods directly with specific evidence.
+        </div>
+        ${renderLines(6)}
       </div>
 
-      <!-- Marking Rubric Footer -->
-      <div style="border: 1.5px solid #cbd5e1; border-radius: 6px; background: #ffffff; padding: 5px 8px; margin-top: auto;">
+      <!-- Q4 Container [12 Marks] -->
+      <div style="background: #ffffff; border: 1.5px solid #0f172a; border-radius: 5px; padding: 7px 9px; margin-bottom: 6px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+          <strong style="font-size: 8.2pt; color: #0f172a;">${right.q4.title}</strong>
+          <span style="font-size: 7pt; font-weight: 700; color: #0f172a; background: #f1f5f9; padding: 1px 5px; border-radius: 2px;">Timing: ~18 mins</span>
+        </div>
+        <div style="font-size: 7.5pt; font-weight: 800; color: #0f172a; margin-bottom: 4px;">
+          ${right.q4.question}
+        </div>
+
+        <!-- Stimulus Box -->
+        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: center;">
+          <div style="font-size: 6.8pt; color: #1e293b;">
+            <strong>You may use in your answer:</strong> &bull; ${stimulusList}
+          </div>
+          <div style="font-size: 6.4pt; font-weight: 800; color: #dc2626; background: #fee2e2; padding: 1px 5px; border-radius: 2px;">
+            ⚠️ MUST include own knowledge beyond stimulus!
+          </div>
+        </div>
+
+        ${renderLines(20)}
+      </div>
+
+      <!-- Marking Criteria Rubric -->
+      <div style="border-top: 1.5px solid #0f172a; padding-top: 4px; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 8px; font-size: 6.6pt; color: #334155; align-items: center;">
+        <div>
+          <strong>Q3 Level 2 (3–4m):</strong> Direct comparative explanation linking both eras.<br/>
+          <strong>Q4 Level 4 (10–12m):</strong> 3 fully developed analytical PEEL paragraphs including own knowledge.
+        </div>
+        <div style="text-align: right;">
+          <strong>Target Time:</strong> ~23 Mins
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 4px;">
+          <div style="border: 1px solid #0f172a; border-radius: 3px; padding: 2px 5px; text-align: center;">
+            <span style="display: block; font-size: 5.5pt; text-transform: uppercase;">Q3 Marks</span>
+            <strong style="font-size: 7pt;">___ / 4</strong>
+          </div>
+          <div style="border: 1px solid #0f172a; border-radius: 3px; padding: 2px 5px; text-align: center;">
+            <span style="display: block; font-size: 5.5pt; text-transform: uppercase;">Q4 Marks</span>
+            <strong style="font-size: 7pt;">___ / 12</strong>
+          </div>
+          <div style="border: 1px solid #1e3a8a; background: #1e3a8a; color: #fff; border-radius: 3px; padding: 2px 6px; text-align: center;">
+            <span style="display: block; font-size: 5.5pt; text-transform: uppercase;">Total</span>
+            <strong style="font-size: 7pt;">___ / 16</strong>
+          </div>
+        </div>
+      </div>
+    `;
+  } else if (examType === 'essay_16m') {
+    const essayStimulus = (right.essay.stimulus || [right.essay.stimulus1, right.essay.stimulus2])
+      .filter(Boolean)
+      .join(' &bull; ');
+    const essayQuestionText = right.essay.statement || right.essay.question || '';
+    const essaySpan = right.essay.spanNote || right.essay.period || '';
+    examContentHtml = `
+      <div style="background: #ffffff; border: 2px solid #0f172a; border-radius: 6px; padding: 8px 10px; margin-bottom: 6px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-          <strong style="font-size: 7.3pt; color: #0f172a; text-transform: uppercase;">Edexcel Paper 1 Marking Criteria &bull; Level Descriptors</strong>
-          <div style="display: flex; gap: 8px;">
-            <span style="font-size: 7.2pt; font-weight: 700; border: 1px solid #94a3b8; padding: 1px 6px; border-radius: 3px; background: #f8fafc;">Q3: &nbsp;&nbsp;&nbsp;&nbsp; / 4</span>
-            <span style="font-size: 7.2pt; font-weight: 700; border: 1px solid #94a3b8; padding: 1px 6px; border-radius: 3px; background: #f8fafc;">Q4: &nbsp;&nbsp;&nbsp;&nbsp; / 12</span>
-            <span style="font-size: 7.2pt; font-weight: 800; border: 1px solid #0f172a; padding: 1px 6px; border-radius: 3px; background: #0f172a; color: #fff;">Total: &nbsp;&nbsp;&nbsp;&nbsp; / 16</span>
+          <strong style="font-size: 8.5pt; color: #0f172a;">${right.essay.title}</strong>
+          <span style="font-size: 7pt; font-weight: 700; color: #ffffff; background: #0f172a; padding: 2px 6px; border-radius: 3px;">Timing: ~25 mins</span>
+        </div>
+        <div style="font-size: 8pt; font-weight: 800; color: #0f172a; line-height: 1.3; margin-bottom: 4px;">
+          ${essayQuestionText}
+        </div>
+
+        <!-- Stimulus & Criteria Box -->
+        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; margin-bottom: 6px; display: grid; grid-template-columns: 1.5fr 1fr; gap: 8px; font-size: 6.6pt;">
+          <div>
+            <strong>You may use in your answer:</strong> &bull; ${essayStimulus}<br/>
+            <span style="color: #dc2626; font-weight: 700;">⚠️ You MUST also use information of your own (${essaySpan}).</span>
+          </div>
+          <div style="border-left: 1px solid #cbd5e1; padding-left: 6px; color: #475569;">
+            <strong>Essay Structure:</strong> Intro &rarr; Agree (PEEL) &rarr; Counter/Alternative (PEEL) &rarr; Third Factor &rarr; Sustained Criteria Judgement.
           </div>
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 5px; font-size: 6.5pt; color: #334155;">
-          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 2px 4px;"><strong>Q4 Level 1 (1–3m):</strong> Simple generalised descriptive points.</div>
-          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 2px 4px;"><strong>Q4 Level 2 (4–6m):</strong> Some explanation; limited own knowledge.</div>
-          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 2px 4px;"><strong>Q4 Level 3 (7–9m):</strong> Developed explanation using both stimulus &amp; own knowledge.</div>
-          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 2px 4px;"><strong>Q4 Level 4 (10–12m):</strong> Multi-causal analytical explanation with direct focus on causation.</div>
+
+        ${renderLines(26)}
+      </div>
+
+      <!-- Essay Marking Rubric -->
+      <div style="border-top: 1.5px solid #0f172a; padding-top: 4px; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 8px; font-size: 6.6pt; color: #334155; align-items: center;">
+        <div>
+          <strong>Level 4 (13–16m):</strong> Analytical throughout; 3 developed cross-era PEEL paragraphs; criteria-based sustained judgement.<br/>
+          <strong>SPaG (1–4m):</strong> Accurate spelling of medical terms, precise punctuation, and formal academic register.
+        </div>
+        <div style="text-align: right;">
+          <strong>Target Time:</strong> ~25 Mins
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 4px;">
+          <div style="border: 1px solid #0f172a; border-radius: 3px; padding: 2px 5px; text-align: center;">
+            <span style="display: block; font-size: 5.5pt; text-transform: uppercase;">Essay Marks</span>
+            <strong style="font-size: 7pt;">___ / 16</strong>
+          </div>
+          <div style="border: 1px solid #0f172a; border-radius: 3px; padding: 2px 5px; text-align: center;">
+            <span style="display: block; font-size: 5.5pt; text-transform: uppercase;">SPaG Marks</span>
+            <strong style="font-size: 7pt;">___ / 4</strong>
+          </div>
+          <div style="border: 1px solid #1e3a8a; background: #1e3a8a; color: #fff; border-radius: 3px; padding: 2px 6px; text-align: center;">
+            <span style="display: block; font-size: 5.5pt; text-transform: uppercase;">Total</span>
+            <strong style="font-size: 7pt;">___ / 20</strong>
+          </div>
         </div>
       </div>
-    </div>
     `;
-  }
+  } else if (examType === 'features_utility') {
+    // Section A: Features + Q2(a) Utility with Side-by-Side Visual Source A + Written Source B
+    let visualSourceHtml = '';
+    if (right.q2a && right.q2a.visualSource) {
+      const vs = right.q2a.visualSource;
+      const vsDataUri = getImageDataUri(vs.image);
+      visualSourceHtml = `
+        <div style="display: grid; grid-template-columns: 1.1fr 1.2fr; gap: 8px; margin-bottom: 5px;">
+          <!-- Visual Source A -->
+          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px; display: flex; flex-direction: column;">
+            <strong style="font-size: 6.8pt; color: #1e3a8a; margin-bottom: 2px;">${vs.title}</strong>
+            <div style="height: 85px; border-radius: 3px; overflow: hidden; border: 1px solid #94a3b8; background: #e2e8f0; margin-bottom: 3px;">
+              <img src="${vsDataUri}" style="width: 100%; height: 100%; object-fit: cover;" alt="${vs.title}" />
+            </div>
+            <div style="font-size: 6.2pt; color: #475569; line-height: 1.25;"><em>${vs.caption}</em></div>
+          </div>
 
-  // Pattern 2: 16-Mark (+4 SPaG) Capstone Essay
-  if (right.type === 'essay_16m') {
-    const e = right.essay;
-    return `
-    <div class="page page-right" style="page-break-before: always; page-break-after: always; box-sizing: border-box; width: 100%; height: 1123px; padding: 16px 20px; font-family: 'Inter', sans-serif; background-color: #ffffff; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;">
-      <div>
-        ${headerHtml}
-
-        <!-- 16-Mark Statement Box -->
-        <div style="background: #ffffff; border: 2px solid #1e3a8a; border-radius: 6px; padding: 7px 11px; margin-bottom: 5px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-size: 8.8pt; color: #1e3a8a;">${e.title}</strong>
-            <span style="font-size: 7.6pt; font-weight: 800; color: #ffffff; background: #1e3a8a; padding: 1.5px 7px; border-radius: 3px;">[16 + 4 SPaG = 20 Marks]</span>
-          </div>
-          <div style="font-size: 7.2pt; font-weight: 700; color: #047857; text-transform: uppercase; margin-bottom: 2px;">
-            ${e.spanNote}
-          </div>
-          <div style="font-family: 'Georgia', serif; font-size: 10pt; font-weight: 700; color: #0f172a; line-height: 1.35; margin-bottom: 4px;">
-            ${e.statement}
-          </div>
-          <!-- Stimulus Tracker -->
-          <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 4px; padding: 3px 6px; margin-bottom: 3px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 4px;">
-            <span style="font-size: 7.1pt; font-weight: 700; color: #1e293b; text-transform: uppercase;">You may use the following in your answer:</span>
-            <div style="display: flex; gap: 8px; align-items: center;">
-              ${e.stimulus
-                .map(
-                  (s) => `
-                <span style="display: inline-flex; align-items: center; gap: 4px; font-size: 7.2pt; font-weight: 600; color: #0f172a; background: #ffffff; border: 1px solid #94a3b8; padding: 1px 5px; border-radius: 3px;">
-                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #1e293b; border-radius: 2px; background: #ffffff;"></span>
-                  ${s}
-                </span>
-              `,
-                )
-                .join('')}
-              <span style="display: inline-flex; align-items: center; gap: 4px; font-size: 7.2pt; font-weight: 700; color: #0f172a; background: #ffffff; border: 1px solid #94a3b8; padding: 1px 5px; border-radius: 3px;">
-                <span style="display: inline-block; width: 9px; height: 9px; border: 1.5px solid #1e293b; border-radius: 2px; background: #ffffff;"></span>
-                Own Knowledge (Required)
-              </span>
+          <!-- Written Source B -->
+          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px;">
+            <strong style="font-size: 6.8pt; color: #1e3a8a; margin-bottom: 2px; display: block;">Source B (Written Contemporary Account):</strong>
+            <div style="font-size: 6.5pt; color: #1e293b; font-style: italic; line-height: 1.3; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 4px; margin-bottom: 3px;">
+              ${right.q2a.sourceB || ''}
             </div>
           </div>
-          <div style="font-size: 6.9pt; color: #334155; background: #f8fafc; border-left: 3px solid #1e3a8a; padding: 2.5px 7px; border-radius: 3px;">
-            <strong>Strategy:</strong> ${e.guidance}
+        </div>
+      `;
+    } else {
+      visualSourceHtml = `
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 5px;">
+          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px; font-size: 6.5pt;">
+            <strong style="color: #1e3a8a;">Source A:</strong> ${right.q2a.sourceA || ''}
+          </div>
+          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px; font-size: 6.5pt;">
+            <strong style="color: #1e3a8a;">Source B:</strong> ${right.q2a.sourceB || ''}
           </div>
         </div>
+      `;
+    }
 
-        <!-- PEEL Essay Architecture Tracking Ribbon -->
-        <div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 4px; padding: 3px 7px; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center;">
-          <span style="font-size: 6.8pt; font-weight: 800; color: #1e293b; text-transform: uppercase;">PEEL Paragraph Tracker:</span>
-          <div style="display: flex; gap: 6px; font-size: 6.8pt; color: #0f172a;">
-            ${e.checklist
-              .map(
-                (c) => `
-              <span style="display: inline-flex; align-items: center; gap: 3px; background: #ffffff; border: 1px solid #94a3b8; padding: 1px 4px; border-radius: 2px;">
-                <span style="display: inline-block; width: 8px; height: 8px; border: 1px solid #1e293b; border-radius: 2px;"></span>
-                ${c}
-              </span>
-            `,
-              )
-              .join('')}
+    examContentHtml = `
+      <!-- Q1(a) & Q1(b) Features -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 6px;">
+        <div style="background: #f8fafc; border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 6px 8px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-size: 7.8pt; color: #1e3a8a;">Question 1(a) [2 Marks]</strong>
+            <span style="font-size: 6.6pt; font-weight: 700; color: #475569;">Feature 1</span>
           </div>
+          <div style="font-size: 7.2pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">${right.q1a.question}</div>
+          <div style="font-size: 6.3pt; color: #64748b; font-style: italic; margin-bottom: 3px;">1 mark feature + 1 mark supporting factual detail. ~2 mins.</div>
+          ${renderLines(3)}
         </div>
-
-        <!-- 28 Ruled Writing Lines -->
-        <div style="margin-bottom: 4px;">
-          ${Array(e.lines).fill('<div style="height: 18px; border-bottom: 1px dotted #94a3b8; margin-top: 1px;"></div>').join('')}
+        <div style="background: #f8fafc; border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 6px 8px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-size: 7.8pt; color: #1e3a8a;">Question 1(b) [2 Marks]</strong>
+            <span style="font-size: 6.6pt; font-weight: 700; color: #475569;">Feature 2</span>
+          </div>
+          <div style="font-size: 7.2pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">${right.q1b.question}</div>
+          <div style="font-size: 6.3pt; color: #64748b; font-style: italic; margin-bottom: 3px;">1 mark feature + 1 mark supporting factual detail. ~2 mins.</div>
+          ${renderLines(3)}
         </div>
       </div>
 
-      <!-- 16-Mark + SPaG Marking Rubric Footer -->
-      <div style="border: 1.5px solid #1e3a8a; border-radius: 6px; background: #ffffff; padding: 5px 8px; margin-top: auto;">
+      <!-- Q2(a) Utility [8 Marks] -->
+      <div style="background: #ffffff; border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 6px 8px; margin-bottom: 6px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+          <strong style="font-size: 8pt; color: #1e3a8a;">${right.q2a.title}</strong>
+          <span style="font-size: 6.8pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; padding: 1px 5px; border-radius: 2px;">Timing: ~12 mins</span>
+        </div>
+        <div style="font-size: 7.4pt; font-weight: 800; color: #0f172a; margin-bottom: 4px;">${right.q2a.question}</div>
+
+        ${visualSourceHtml}
+
+        <!-- Provenance Clue Box -->
+        <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 3px; padding: 3px 6px; margin-bottom: 4px;">
+          <span style="font-size: 6.6pt; font-weight: 800; color: #92400e;">💡 ${right.q2a.provenanceClue || 'Provenance Hints: Consider Nature, Origin, and Motive for both sources and weigh utility for this specific enquiry.'}</span>
+        </div>
+
+        ${renderLines(16)}
+      </div>
+
+      <!-- Section A Rubric -->
+      <div style="border-top: 1.5px solid #1e293b; padding-top: 4px; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 8px; font-size: 6.6pt; color: #334155; align-items: center;">
+        <div>
+          <strong>Level 3 (5–6m):</strong> Evaluates content + knowledge + provenance for both sources.<br/>
+          <strong>Level 4 (7–8m):</strong> Reaches a sustained, criteria-based comparative conclusion on enquiry utility.
+        </div>
+        <div style="text-align: right;"><strong>Time Target:</strong> ~16 Mins</div>
+        <div style="display: flex; justify-content: flex-end; gap: 4px;">
+          <div style="border: 1px solid #0f172a; border-radius: 3px; padding: 2px 5px; text-align: center;">
+            <span style="display: block; font-size: 5.5pt; text-transform: uppercase;">Q1 Features</span>
+            <strong style="font-size: 7pt;">___ / 4</strong>
+          </div>
+          <div style="border: 1px solid #0f172a; border-radius: 3px; padding: 2px 5px; text-align: center;">
+            <span style="display: block; font-size: 5.5pt; text-transform: uppercase;">Q2(a) Utility</span>
+            <strong style="font-size: 7pt;">___ / 8</strong>
+          </div>
+          <div style="border: 1px solid #1e3a8a; background: #1e3a8a; color: #fff; border-radius: 3px; padding: 2px 6px; text-align: center;">
+            <span style="display: block; font-size: 5.5pt; text-transform: uppercase;">Total</span>
+            <strong style="font-size: 7pt;">___ / 12</strong>
+          </div>
+        </div>
+      </div>
+    `;
+  } else if (examType === 'features_followup') {
+    // Section A: Features + Q2(b) 4-Part Official Follow-Up Grid
+    const sourceExcerptHtml = right.q2b.sourceExcerpt
+      ? `
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; font-size: 6.5pt; color: #1e293b; font-style: italic; margin-bottom: 5px;">
+        ${right.q2b.sourceExcerpt}
+      </div>
+    `
+      : '';
+
+    const tableRowsHtml = (
+      right.q2b.tablePhrases || [
+        { label: 'Detail in Source A that I would follow up:' },
+        { label: 'Question I would ask:' },
+        { label: 'What type of source I could use:' },
+        { label: 'How this might help answer my question:' },
+      ]
+    )
+      .map(
+        (row) => `
+      <tr>
+        <td style="width: 240px; padding: 5px 8px; border: 1px solid #cbd5e1; background: #f8fafc; font-weight: 800; color: #0f172a; vertical-align: middle;">
+          ${row.label}
+        </td>
+        <td style="padding: 5px 8px; border: 1px solid #cbd5e1; vertical-align: top;">
+          <div style="height: 18px; border-bottom: 1px dotted #94a3b8;"></div>
+          <div style="height: 18px; border-bottom: 1px dotted #94a3b8;"></div>
+        </td>
+      </tr>
+    `,
+      )
+      .join('');
+
+    examContentHtml = `
+      <!-- Q1(a) & Q1(b) Features -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px;">
+        <div style="background: #f8fafc; border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 6px 8px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-size: 7.8pt; color: #1e3a8a;">Question 1(a) [2 Marks]</strong>
+            <span style="font-size: 6.6pt; font-weight: 700; color: #475569;">Feature 1</span>
+          </div>
+          <div style="font-size: 7.2pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">${right.q1a.question}</div>
+          <div style="font-size: 6.3pt; color: #64748b; font-style: italic; margin-bottom: 3px;">1 mark feature + 1 mark supporting factual detail. ~2 mins.</div>
+          ${renderLines(3)}
+        </div>
+        <div style="background: #f8fafc; border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 6px 8px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-size: 7.8pt; color: #1e3a8a;">Question 1(b) [2 Marks]</strong>
+            <span style="font-size: 6.6pt; font-weight: 700; color: #475569;">Feature 2</span>
+          </div>
+          <div style="font-size: 7.2pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">${right.q1b.question}</div>
+          <div style="font-size: 6.3pt; color: #64748b; font-style: italic; margin-bottom: 3px;">1 mark feature + 1 mark supporting factual detail. ~2 mins.</div>
+          ${renderLines(3)}
+        </div>
+      </div>
+
+      <!-- Q2(b) Follow-Up Investigation Grid [4 Marks] -->
+      <div style="background: #ffffff; border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 8px 10px; margin-bottom: 6px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-          <strong style="font-size: 7.3pt; color: #1e3a8a; text-transform: uppercase;">Edexcel Q5/Q6 Level Descriptors (AO1 Knowledge [6m] &bull; AO2 Judgement [10m] &bull; AO4 SPaG [4m])</strong>
-          <div style="display: flex; gap: 8px;">
-            <span style="font-size: 7.2pt; font-weight: 700; border: 1px solid #94a3b8; padding: 1px 6px; border-radius: 3px; background: #f8fafc;">Content: &nbsp;&nbsp;&nbsp;&nbsp; / 16</span>
-            <span style="font-size: 7.2pt; font-weight: 700; border: 1px solid #94a3b8; padding: 1px 6px; border-radius: 3px; background: #f8fafc;">SPaG: &nbsp;&nbsp;&nbsp;&nbsp; / 4</span>
-            <span style="font-size: 7.2pt; font-weight: 800; border: 1px solid #1e3a8a; padding: 1px 6px; border-radius: 3px; background: #1e3a8a; color: #fff;">Total: &nbsp;&nbsp;&nbsp;&nbsp; / 20</span>
+          <strong style="font-size: 8.2pt; color: #1e3a8a;">${right.q2b.title || 'Question 2(b) [4 Marks] &bull; Follow-Up Enquiry Grid'}</strong>
+          <span style="font-size: 6.8pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; padding: 1px 5px; border-radius: 2px;">Timing: ~8 mins</span>
+        </div>
+        <div style="font-size: 7.4pt; font-weight: 800; color: #0f172a; margin-bottom: 4px;">
+          ${right.q2b.question || 'Study Source A. How could you follow up Source A to find out more about medical treatment on the Western Front?'}
+        </div>
+        ${sourceExcerptHtml}
+        <div style="font-size: 6.4pt; color: #475569; margin-bottom: 6px;">
+          Complete the official 4-part table below. Your question must link directly to the detail selected, and your source must be a specific contemporary historical record type.
+        </div>
+
+        <!-- Official 4-Part Edexcel Grid -->
+        <table style="width: 100%; border-collapse: collapse; font-size: 6.8pt;">
+          ${tableRowsHtml}
+        </table>
+      </div>
+
+      <!-- Section A Q2(b) Rubric -->
+      <div style="border-top: 1.5px solid #1e293b; padding-top: 4px; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 8px; font-size: 6.6pt; color: #334155; align-items: center;">
+        <div>
+          <strong>Marking Rule:</strong> 1 mark per row. Question must be an analytical enquiry question; source type must be specific contemporary record (e.g. RAMC unit war diary, Casualty Clearing Station admission logs, medical officer personal journal).
+        </div>
+        <div style="text-align: right;"><strong>Time Target:</strong> ~12 Mins</div>
+        <div style="display: flex; justify-content: flex-end; gap: 4px;">
+          <div style="border: 1px solid #0f172a; border-radius: 3px; padding: 2px 5px; text-align: center;">
+            <span style="display: block; font-size: 5.5pt; text-transform: uppercase;">Q1 Features</span>
+            <strong style="font-size: 7pt;">___ / 4</strong>
+          </div>
+          <div style="border: 1px solid #0f172a; border-radius: 3px; padding: 2px 5px; text-align: center;">
+            <span style="display: block; font-size: 5.5pt; text-transform: uppercase;">Q2(b) Grid</span>
+            <strong style="font-size: 7pt;">___ / 4</strong>
+          </div>
+          <div style="border: 1px solid #1e3a8a; background: #1e3a8a; color: #fff; border-radius: 3px; padding: 2px 6px; text-align: center;">
+            <span style="display: block; font-size: 5.5pt; text-transform: uppercase;">Total</span>
+            <strong style="font-size: 7pt;">___ / 8</strong>
           </div>
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 5px; font-size: 6.5pt; color: #334155;">
-          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 2px 4px;"><strong>Level 1 (1–4m):</strong> Simple generalized points; lacks cross-era span.</div>
-          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 2px 4px;"><strong>Level 2 (5–8m):</strong> Descriptive comparison; uneven argument balance.</div>
-          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 2px 4px;"><strong>Level 3 (9–12m):</strong> Developed two-sided analytical debate with own knowledge.</div>
-          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 2px 4px;"><strong>Level 4 (13–16m):</strong> Sustained, nuanced judgement weighing criteria across the broad chronological period.</div>
-        </div>
       </div>
-    </div>
     `;
   }
 
-  // Pattern 3: Section A Western Front (Features + Utility Q2a)
-  if (right.type === 'features_utility') {
-    return `
-    <div class="page page-right" style="page-break-before: always; page-break-after: always; box-sizing: border-box; width: 100%; height: 1123px; padding: 16px 20px; font-family: 'Inter', sans-serif; background-color: #ffffff; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;">
-      <div>
-        ${headerHtml}
-
-        <!-- Question 1(a) [2 Marks] -->
-        <div style="background: #ffffff; border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 5px 9px; margin-bottom: 3px;">
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <strong style="font-size: 8.2pt; color: #1e3a8a;">${right.q1a.title}</strong>
-            <span style="font-size: 7.2pt; font-weight: 800; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 1px 5px; border-radius: 3px;">[2 Marks]</span>
-          </div>
-          <div style="font-family: 'Georgia', serif; font-size: 9.2pt; font-weight: 700; color: #0f172a; margin: 2px 0;">
-            ${right.q1a.question}
-          </div>
-        </div>
-        <div style="margin-bottom: 6px;">
-          ${Array(right.q1a.lines).fill('<div style="height: 18px; border-bottom: 1px dotted #94a3b8; margin-top: 1px;"></div>').join('')}
-        </div>
-
-        <!-- Question 1(b) [2 Marks] -->
-        <div style="background: #ffffff; border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 5px 9px; margin-bottom: 3px;">
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <strong style="font-size: 8.2pt; color: #1e3a8a;">${right.q1b.title}</strong>
-            <span style="font-size: 7.2pt; font-weight: 800; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 1px 5px; border-radius: 3px;">[2 Marks]</span>
-          </div>
-          <div style="font-family: 'Georgia', serif; font-size: 9.2pt; font-weight: 700; color: #0f172a; margin: 2px 0;">
-            ${right.q1b.question}
-          </div>
-        </div>
-        <div style="margin-bottom: 8px;">
-          ${Array(right.q1b.lines).fill('<div style="height: 18px; border-bottom: 1px dotted #94a3b8; margin-top: 1px;"></div>').join('')}
-        </div>
-
-        <!-- Question 2(a) Source Utility [8 Marks] -->
-        <div style="background: #ffffff; border: 1.5px solid #334155; border-radius: 6px; padding: 6px 9px; margin-bottom: 4px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-size: 8.5pt; color: #0f172a;">${right.q2a.title}</strong>
-            <span style="font-size: 7.5pt; font-weight: 800; color: #0f172a; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 1px 6px; border-radius: 3px;">[8 Marks]</span>
-          </div>
-          <div style="font-family: 'Georgia', serif; font-size: 9.4pt; font-weight: 700; color: #0f172a; line-height: 1.3; margin-bottom: 3px;">
-            ${right.q2a.question}
-          </div>
-          
-          <!-- Sources A and B Box -->
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 3px;">
-            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; font-size: 6.8pt; color: #1e293b; line-height: 1.25;">
-              ${right.q2a.sourceA.replace('Source A:', '<strong style="color: #1e3a8a;">Source A:</strong>')}
-            </div>
-            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; font-size: 6.8pt; color: #1e293b; line-height: 1.25;">
-              ${right.q2a.sourceB.replace('Source B:', '<strong style="color: #1e3a8a;">Source B:</strong>')}
-            </div>
-          </div>
-
-          <!-- Provenance Clue Box (Strictly per user rule) -->
-          <div style="background: #fef3c7; border: 1px solid #f59e0b; border-radius: 4px; padding: 2.5px 6px; font-size: 6.8pt; color: #92400e; margin-bottom: 2px;">
-            <strong>🔍 Provenance Clue:</strong> ${right.q2a.provenanceClue}
-          </div>
-          <div style="font-size: 6.9pt; color: #334155; background: #f8fafc; border-left: 3px solid #334155; padding: 2px 6px; border-radius: 3px;">
-            <strong>Strategy:</strong> ${right.q2a.guidance}
-          </div>
-        </div>
-        <!-- 16 Ruled Lines for Q2a -->
-        <div style="margin-bottom: 4px;">
-          ${Array(right.q2a.lines).fill('<div style="height: 18px; border-bottom: 1px dotted #94a3b8; margin-top: 1px;"></div>').join('')}
-        </div>
-      </div>
-
-      <!-- Section A Marking Rubric Footer -->
-      <div style="border: 1.5px solid #cbd5e1; border-radius: 6px; background: #ffffff; padding: 4px 8px; margin-top: auto;">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-          <strong style="font-size: 7.2pt; color: #0f172a; text-transform: uppercase;">Edexcel Paper 1 (Section A) Marking Scheme</strong>
-          <div style="display: flex; gap: 8px;">
-            <span style="font-size: 7.2pt; font-weight: 700; border: 1px solid #94a3b8; padding: 1px 6px; border-radius: 3px; background: #f8fafc;">Q1a: &nbsp;&nbsp; / 2</span>
-            <span style="font-size: 7.2pt; font-weight: 700; border: 1px solid #94a3b8; padding: 1px 6px; border-radius: 3px; background: #f8fafc;">Q1b: &nbsp;&nbsp; / 2</span>
-            <span style="font-size: 7.2pt; font-weight: 700; border: 1px solid #94a3b8; padding: 1px 6px; border-radius: 3px; background: #f8fafc;">Q2a: &nbsp;&nbsp; / 8</span>
-            <span style="font-size: 7.2pt; font-weight: 800; border: 1px solid #0f172a; padding: 1px 6px; border-radius: 3px; background: #0f172a; color: #fff;">Total: &nbsp;&nbsp; / 12</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    `;
-  }
-
-  // Pattern 4: Section A Western Front (Features + Follow-Up Grid Q2b)
-  if (right.type === 'features_followup') {
-    return `
-    <div class="page page-right" style="page-break-before: always; page-break-after: always; box-sizing: border-box; width: 100%; height: 1123px; padding: 16px 20px; font-family: 'Inter', sans-serif; background-color: #ffffff; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;">
-      <div>
-        ${headerHtml}
-
-        <!-- Question 1(a) [2 Marks] -->
-        <div style="background: #ffffff; border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 5px 9px; margin-bottom: 3px;">
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <strong style="font-size: 8.2pt; color: #1e3a8a;">${right.q1a.title}</strong>
-            <span style="font-size: 7.2pt; font-weight: 800; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 1px 5px; border-radius: 3px;">[2 Marks]</span>
-          </div>
-          <div style="font-family: 'Georgia', serif; font-size: 9.2pt; font-weight: 700; color: #0f172a; margin: 2px 0;">
-            ${right.q1a.question}
-          </div>
-        </div>
-        <div style="margin-bottom: 6px;">
-          ${Array(right.q1a.lines).fill('<div style="height: 18px; border-bottom: 1px dotted #94a3b8; margin-top: 1px;"></div>').join('')}
-        </div>
-
-        <!-- Question 1(b) [2 Marks] -->
-        <div style="background: #ffffff; border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 5px 9px; margin-bottom: 3px;">
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <strong style="font-size: 8.2pt; color: #1e3a8a;">${right.q1b.title}</strong>
-            <span style="font-size: 7.2pt; font-weight: 800; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 1px 5px; border-radius: 3px;">[2 Marks]</span>
-          </div>
-          <div style="font-family: 'Georgia', serif; font-size: 9.2pt; font-weight: 700; color: #0f172a; margin: 2px 0;">
-            ${right.q1b.question}
-          </div>
-        </div>
-        <div style="margin-bottom: 8px;">
-          ${Array(right.q1b.lines).fill('<div style="height: 18px; border-bottom: 1px dotted #94a3b8; margin-top: 1px;"></div>').join('')}
-        </div>
-
-        <!-- Question 2(b) Follow-Up Investigation Grid [4 Marks] -->
-        <div style="background: #ffffff; border: 1.5px solid #047857; border-radius: 6px; padding: 6px 10px; margin-bottom: 6px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-size: 8.5pt; color: #065f46;">${right.q2b.title}</strong>
-            <span style="font-size: 7.5pt; font-weight: 800; color: #065f46; background: #ecfdf5; border: 1px solid #a7f3d0; padding: 1px 6px; border-radius: 3px;">[4 Marks]</span>
-          </div>
-          <div style="font-family: 'Georgia', serif; font-size: 9.4pt; font-weight: 700; color: #0f172a; line-height: 1.3; margin-bottom: 4px;">
-            ${right.q2b.question}
-          </div>
-          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 7px; font-size: 7.2pt; color: #1e293b; line-height: 1.3; margin-bottom: 6px;">
-            ${right.q2b.sourceExcerpt.replace('Source A:', '<strong style="color: #047857;">Source A:</strong>')}
-          </div>
-          <div style="font-size: 7pt; color: #334155; margin-bottom: 5px;">
-            ${right.q2b.guidance}
-          </div>
-
-          <!-- Official Edexcel 4-Part Table with EXACT Official Phrases -->
-          <div style="border: 1.5px solid #0f172a; border-radius: 5px; overflow: hidden; background: #ffffff;">
-            ${right.q2b.tablePhrases
-              .map(
-                (row, idx) => `
-              <div style="display: grid; grid-template-columns: 240px 1fr; border-bottom: ${idx === 3 ? 'none' : '1px solid #cbd5e1'}; min-height: 38px;">
-                <div style="background: #f1f5f9; border-right: 1px solid #cbd5e1; padding: 7px 9px; font-size: 7.5pt; font-weight: 700; color: #0f172a; display: flex; align-items: center;">
-                  ${row.label}
-                </div>
-                <div style="padding: 6px 9px; font-size: 7.1pt; color: #64748b; font-style: italic; display: flex; flex-direction: column; justify-content: space-between;">
-                  <span>${row.placeholder}</span>
-                  <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 12px;"></div>
-                </div>
-              </div>
-            `,
-              )
-              .join('')}
-          </div>
-        </div>
-      </div>
-
-      <!-- Section A Marking Rubric Footer -->
-      <div style="border: 1.5px solid #cbd5e1; border-radius: 6px; background: #ffffff; padding: 5px 8px; margin-top: auto;">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-          <strong style="font-size: 7.2pt; color: #0f172a; text-transform: uppercase;">Edexcel Paper 1 (Section A) Marking Scheme</strong>
-          <div style="display: flex; gap: 8px;">
-            <span style="font-size: 7.2pt; font-weight: 700; border: 1px solid #94a3b8; padding: 1px 6px; border-radius: 3px; background: #f8fafc;">Q1a: &nbsp;&nbsp; / 2</span>
-            <span style="font-size: 7.2pt; font-weight: 700; border: 1px solid #94a3b8; padding: 1px 6px; border-radius: 3px; background: #f8fafc;">Q1b: &nbsp;&nbsp; / 2</span>
-            <span style="font-size: 7.2pt; font-weight: 700; border: 1px solid #94a3b8; padding: 1px 6px; border-radius: 3px; background: #f8fafc;">Q2b: &nbsp;&nbsp; / 4</span>
-            <span style="font-size: 7.2pt; font-weight: 800; border: 1px solid #0f172a; padding: 1px 6px; border-radius: 3px; background: #0f172a; color: #fff;">Total: &nbsp;&nbsp; / 8</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    `;
-  }
-}
-
-// Helper: Render Cover Page (Page 1)
-function renderCoverPage() {
   return `
-  <div class="page page-cover" style="page-break-before: always; page-break-after: always; box-sizing: border-box; width: 100%; height: 1123px; padding: 40px 35px; font-family: 'Inter', sans-serif; background: #0f172a; color: #ffffff; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; position: relative;">
-    <!-- Decorative border -->
-    <div style="position: absolute; top: 18px; left: 18px; right: 18px; bottom: 18px; border: 2px solid #334155; border-radius: 8px; pointer-events: none;"></div>
-    <div style="position: absolute; top: 22px; left: 22px; right: 22px; bottom: 22px; border: 1px solid #1e293b; border-radius: 6px; pointer-events: none;"></div>
-
-    <div style="position: relative; z-index: 2;">
-      <!-- Exam Board Header -->
-      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #f59e0b; padding-bottom: 12px; margin-bottom: 30px;">
-        <span style="font-size: 9pt; font-weight: 800; color: #f59e0b; letter-spacing: 1.5px; text-transform: uppercase;">
-          Edexcel GCSE (9–1) History &bull; Paper 1 (1HI0/11)
-        </span>
-        <span style="font-size: 8.5pt; font-weight: 700; background: #1e293b; color: #94a3b8; padding: 3px 10px; border-radius: 4px; border: 1px solid #334155;">
-          Official Specification Edition
-        </span>
-      </div>
-
-      <!-- Main Title Block -->
-      <div style="margin-bottom: 25px;">
-        <div style="font-size: 11pt; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">
-          Thematic Study &amp; Historic Environment
+  <div class="page page-right" style="box-sizing: border-box; width: 794px; height: 1123px; padding: 22px 24px; font-family: 'Inter', sans-serif; background-color: #ffffff; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;">
+    <div>
+      <!-- Top Header -->
+      <div style="border-bottom: 2px solid #1e293b; padding-bottom: 4px; margin-bottom: 8px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span style="font-size: 8pt; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.5px;">
+            Edexcel GCSE (9–1) History &bull; Paper 1 Assessment Practice
+          </span>
+          <span style="font-size: 7.5pt; font-weight: 700; color: #1e293b; background: #f1f5f9; padding: 2px 7px; border-radius: 3px; border: 1px solid #cbd5e1;">
+            ${right.totalMarks ? right.totalMarks + ' Marks Total' : 'Exam Practice'}
+          </span>
         </div>
-        <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 32pt; line-height: 1.15; color: #ffffff; margin: 0 0 10px 0; font-weight: 900;">
-          Medicine in Britain<br/>
-          <span style="font-size: 22pt; color: #cbd5e1; font-weight: 400; font-style: italic;">c.1250–present</span>
-        </h1>
-        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 17pt; color: #f59e0b; margin: 0; font-weight: 700;">
-          &amp; The British Sector of the Western Front, 1914–1918
+        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 14pt; color: #0f172a; margin: 2px 0 1px 0; border: none; padding: 0; font-weight: 800;">
+          ${right.title || 'Official Edexcel Exam Questions'}
         </h2>
       </div>
 
-      <!-- Subtitle Banner -->
-      <div style="background: linear-gradient(90deg, #1e3a8a, #0f172a); border-left: 4px solid #f59e0b; padding: 12px 16px; border-radius: 4px; margin-bottom: 35px;">
-        <div style="font-size: 13pt; font-weight: 800; color: #ffffff; letter-spacing: 0.5px;">
-          VISUAL REVISION MASTERCLASSES &amp; EXAM ASSESSMENT GUIDE
-        </div>
-        <div style="font-size: 8.5pt; color: #cbd5e1; margin-top: 3px;">
-          18 Dual-Page Spreads Combining Conceptual Cognitive Mapping with Edexcel Exam Question Mastery
-        </div>
-      </div>
-
-      <!-- Feature Grid -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 30px;">
-        <div style="background: #1e293b; border: 1px solid #334155; border-radius: 6px; padding: 12px 14px;">
-          <div style="font-size: 9pt; font-weight: 800; color: #f59e0b; margin-bottom: 4px;">
-            ✦ Complete Exam Question Rotation
-          </div>
-          <div style="font-size: 7.8pt; color: #cbd5e1; line-height: 1.4;">
-            Every single question type from Paper 1 is systematically practiced: Q3 Similarity, Q3 Difference, Q4 Causal Explanation, Q5/Q6 16-Mark Judgement Essays, Western Front Features, Source Utility, and Follow-Up Investigation Grids.
-          </div>
-        </div>
-
-        <div style="background: #1e293b; border: 1px solid #334155; border-radius: 6px; padding: 12px 14px;">
-          <div style="font-size: 9pt; font-weight: 800; color: #f59e0b; margin-bottom: 4px;">
-            ✦ Synoptic Cross-Era Evidence Banks
-          </div>
-          <div style="font-size: 7.8pt; color: #cbd5e1; line-height: 1.4;">
-            Every 16-mark essay is paired with a dedicated comparative evidence bank on the facing page, giving pupils the direct cross-period evidence (spanning 150–300+ years) needed to achieve Level 4 sustained judgements.
-          </div>
-        </div>
-
-        <div style="background: #1e293b; border: 1px solid #334155; border-radius: 6px; padding: 12px 14px;">
-          <div style="font-size: 9pt; font-weight: 800; color: #f59e0b; margin-bottom: 4px;">
-            ✦ Authentic Historical Sources &amp; Portraits
-          </div>
-          <div style="font-size: 7.8pt; color: #cbd5e1; line-height: 1.4;">
-            Strictly authentic primary source imagery: contemporary portraits, medical tract engravings, Western Front trench diagrams, and epidemiological spot maps. No artificial or AI imagery.
-          </div>
-        </div>
-
-        <div style="background: #1e293b; border: 1px solid #334155; border-radius: 6px; padding: 12px 14px;">
-          <div style="font-size: 9pt; font-weight: 800; color: #f59e0b; margin-bottom: 4px;">
-            ✦ Official Scaffolding &amp; Provenance Clues
-          </div>
-          <div style="font-size: 7.8pt; color: #cbd5e1; line-height: 1.4;">
-            Features official Edexcel stimulus checklists, PEEL paragraph trackers, Western Front 4-part follow-up investigation phrases, and dedicated provenance guidance boxes for source utility.
-          </div>
-        </div>
-      </div>
+      ${examContentHtml}
     </div>
 
-    <!-- Candidate Identification Footer -->
-    <div style="position: relative; z-index: 2; background: #1e293b; border: 1.5px solid #334155; border-radius: 6px; padding: 12px 16px;">
-      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 15px; font-size: 8pt;">
-        <div>
-          <span style="color: #94a3b8; font-weight: 600; display: block; margin-bottom: 2px;">CANDIDATE NAME:</span>
-          <div style="border-bottom: 1px dotted #64748b; height: 18px;"></div>
-        </div>
-        <div>
-          <span style="color: #94a3b8; font-weight: 600; display: block; margin-bottom: 2px;">CANDIDATE NUMBER:</span>
-          <div style="border-bottom: 1px dotted #64748b; height: 18px;"></div>
-        </div>
-        <div>
-          <span style="color: #94a3b8; font-weight: 600; display: block; margin-bottom: 2px;">TARGET GRADE:</span>
-          <div style="border-bottom: 1px dotted #64748b; height: 18px;"></div>
-        </div>
-      </div>
+    <!-- Footer Signoff -->
+    <div style="border-top: 1px solid #cbd5e1; padding-top: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 6.8pt; color: #64748b;">
+      <span>Meoncross History &bull; Edexcel GCSE (9–1) Paper 1 Exam Practice</span>
+      <span>Page ${pageNum}</span>
     </div>
   </div>
   `;
 }
 
-// Helper: Render Inside Front Cover (Page 2)
+// Render Front Cover Page (Page 1)
+function renderCoverPage() {
+  return `
+  <div class="page page-cover" style="box-sizing: border-box; width: 794px; height: 1123px; padding: 32px 36px; font-family: 'Inter', sans-serif; background: #ffffff; color: #0f172a; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; position: relative;">
+    <div style="position: absolute; top: 16px; left: 16px; right: 16px; bottom: 16px; border: 2px solid #0f172a; border-radius: 8px; pointer-events: none;"></div>
+
+    <div style="position: relative; z-index: 2;">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0f172a; padding-bottom: 8px; margin-bottom: 14px;">
+        <span style="font-size: 9pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 1.2px;">
+          Edexcel GCSE (9–1) History &bull; Paper 1 (1HI0/11)
+        </span>
+        <span style="font-size: 8pt; font-weight: 700; color: #475569; background: #f8fafc; border: 1px solid #cbd5e1; padding: 3px 8px; border-radius: 4px;">
+          Thematic Study &amp; Historic Environment
+        </span>
+      </div>
+
+      <div style="margin-bottom: 12px;">
+        <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 28pt; font-weight: 900; line-height: 1.05; margin: 0 0 4px 0; color: #0f172a; letter-spacing: -0.5px;">
+          Medicine in Britain
+        </h1>
+        <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 16pt; font-style: italic; color: #475569; margin-bottom: 6px;">
+          c.1250–present
+        </div>
+        <div style="font-size: 10.5pt; font-weight: 700; color: #1e3a8a; letter-spacing: 0.2px;">
+          &amp; The British Sector of the Western Front, 1914–1918
+        </div>
+      </div>
+
+      <div style="border: 1px solid #cbd5e1; background: #f8fafc; border-radius: 6px; padding: 7px 12px; margin-bottom: 12px;">
+        <div style="font-size: 8.5pt; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px;">
+          Visual Revision Masterclasses &amp; Exam Assessment Guide
+        </div>
+        <div style="font-size: 7.5pt; color: #475569; margin-top: 1px;">
+          18 Comprehensive Dual-Page Knowledge Maps &bull; Complete Edexcel Question Rotation &bull; Level 4–9 Analytical Phrasing
+        </div>
+      </div>
+
+      <div style="border: 1.5px solid #0f172a; border-radius: 6px; padding: 10px 14px; background: #ffffff; margin-bottom: 12px;">
+        <div style="font-size: 8pt; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">
+          Pupil Name: &nbsp;&nbsp;__________________________________________________________________________
+        </div>
+      </div>
+
+      <div style="font-size: 7.8pt; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; display: flex; justify-content: space-between;">
+        <span>Official Edexcel GCSE Paper 1 Specification Content:</span>
+        <span style="color: #64748b; font-weight: 700;">Full Syllabus Overview (Topics 1–4 &amp; Section A)</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 6.8pt; line-height: 1.32; color: #1e293b;">
+        <div>
+          <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 7px 9px; margin-bottom: 8px; background: #ffffff;">
+            <strong style="color: #1e3a8a; display: block; font-size: 7.2pt; margin-bottom: 2px;">
+              TOPIC 1: c1250–c1500 &bull; MEDICINE IN MEDIEVAL ENGLAND
+            </strong>
+            <p style="margin: 0 0 3px 0;"><strong>Ideas about Causes:</strong> Supernatural &amp; religious (God's punishment, devil, testing faith); Astrological alignments (1345 conjunction); Rational Four Humours (Hippocrates); Miasma ('corrupted air').</p>
+            <p style="margin: 0 0 3px 0;"><strong>Approaches to Treatment &amp; Prevention:</strong> Religious actions (prayer, fasting, pilgrimage); Humoural treatments (bloodletting, purging, cupping, leeches); Theory of Opposites (Galen); Traditional herbal remedies &amp; <em>Regimen Sanitatis</em>; Purifying air.</p>
+            <p style="margin: 0 0 3px 0;"><strong>Medical Care:</strong> Home care by female family; Wise women; Apothecaries &amp; barber-surgeons; University-trained physicians; Monastic hospitals (endowed by Church, e.g. St Bartholomew's).</p>
+            <p style="margin: 0;"><strong>Case Study &bull; The Black Death (1348–49):</strong> Beliefs about causes, treatments, and prevention; Local authority responses and quarantine attempts.</p>
+          </div>
+
+          <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 7px 9px; background: #ffffff;">
+            <strong style="color: #1e3a8a; display: block; font-size: 7.2pt; margin-bottom: 2px;">
+              TOPIC 2: c1500–c1700 &bull; THE MEDICAL RENAISSANCE IN ENGLAND
+            </strong>
+            <p style="margin: 0 0 3px 0;"><strong>Ideas about Causes:</strong> Scientific method; Decline of Church monopoly; Continuity in popular belief; Thomas Sydenham (clinical observation, disease classification).</p>
+            <p style="margin: 0 0 3px 0;"><strong>Transmission of Ideas:</strong> The Royal Society (1660, <em>Nullius in Verba</em>; <em>Philosophical Transactions</em>, 1665); The Gutenberg movable printing press.</p>
+            <p style="margin: 0 0 3px 0;"><strong>Treatment &amp; Care:</strong> Continuity in humoural treatments; New World herbal remedies (quinine, ipecacuanha); Iatrochemistry; Dissolution of monasteries (1536).</p>
+            <p style="margin: 0 0 3px 0;"><strong>Key Individuals:</strong> Andreas Vesalius (<em>De Humani Corporis Fabrica</em>, 1543; human dissection correcting Galen's 300+ errors); William Harvey (circulation of blood, mechanical pump, 1628).</p>
+            <p style="margin: 0;"><strong>Case Study &bull; The Great Plague in London (1665):</strong> Comparison with Black Death; quarantine, red cross 'Lord have mercy on us', searchers of the dead.</p>
+          </div>
+        </div>
+
+        <div>
+          <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 7px 9px; margin-bottom: 8px; background: #ffffff;">
+            <strong style="color: #1e3a8a; display: block; font-size: 7.2pt; margin-bottom: 2px;">
+              TOPIC 3: c1700–c1900 &bull; 18th- &amp; 19th-CENTURY MEDICINE
+            </strong>
+            <p style="margin: 0 0 3px 0;"><strong>Ideas about Causes:</strong> Spontaneous generation; Louis Pasteur's Germ Theory (1861); Robert Koch &amp; bacteriology (agar, methyl violet staining, identifying anthrax, TB, cholera).</p>
+            <p style="margin: 0 0 3px 0;"><strong>Prevention &amp; Treatment:</strong> Anaesthetics (nitrous oxide, ether, James Simpson's chloroform, 1847); Antiseptics (Joseph Lister's carbolic acid, 1865); Aseptic surgery (autoclaves, rubber gloves).</p>
+            <p style="margin: 0 0 3px 0;"><strong>Hospital Care &amp; Public Health:</strong> Florence Nightingale (pavilion plan, sanitation, nursing training); Edward Jenner (smallpox vaccine, 1796); 1848 &amp; 1875 Public Health Acts.</p>
+            <p style="margin: 0;"><strong>Case Study &bull; John Snow &amp; Cholera (1854):</strong> Broad Street pump investigation and removal of pump handle.</p>
+          </div>
+
+          <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 7px 9px; margin-bottom: 8px; background: #ffffff;">
+            <strong style="color: #1e3a8a; display: block; font-size: 7.2pt; margin-bottom: 2px;">
+              TOPIC 4: c1900–PRESENT &bull; MEDICINE IN MODERN BRITAIN
+            </strong>
+            <p style="margin: 0 0 3px 0;"><strong>Ideas about Causes:</strong> Genetics (DNA structure 1953, Crick, Watson, Franklin; Human Genome Project 2003); Lifestyle factors (smoking, diet, alcohol).</p>
+            <p style="margin: 0 0 3px 0;"><strong>Diagnosis &amp; Treatment:</strong> Scans (X-rays, CT, MRI, ultrasound); Magic bullets (Salvarsan 606, Prontosil); Penicillin (Fleming, Florey &amp; Chain); NHS (1948); Advanced surgery &amp; mass vaccination.</p>
+            <p style="margin: 0;"><strong>Case Study &bull; Fight Against Lung Cancer:</strong> High-tech diagnosis, radiotherapy/chemo/immunotherapy, state intervention (smoking bans, plain packaging).</p>
+          </div>
+
+          <div style="border: 1px solid #fbcfe8; background: #fdf2f8; border-radius: 5px; padding: 7px 9px;">
+            <strong style="color: #9d174d; display: block; font-size: 7.2pt; margin-bottom: 2px;">
+              SECTION A: THE BRITISH SECTOR OF THE WESTERN FRONT, 1914–1918
+            </strong>
+            <p style="margin: 0 0 3px 0;"><strong>Trenches &amp; Illnesses:</strong> Ypres, Somme, Arras, Cambrai; Trench system layout; Trench foot, trench fever, shell shock; Shrapnel wounds, gas gangrene, poison gases (chlorine, phosgene, mustard).</p>
+            <p style="margin: 0;"><strong>Evacuation &amp; Advances:</strong> Stretcher bearers &rarr; RAP &rarr; ADS/MDS &rarr; CCS (triage) &rarr; Base Hospitals; RAMC &amp; FANY; Thomas Splint; Mobile X-rays; Robertson's stored blood depot (Cambrai, 1917).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="position: relative; z-index: 2; border-top: 1px solid #cbd5e1; padding-top: 6px; display: flex; justify-content: space-between; align-items: center; font-size: 7.2pt; color: #64748b;">
+      <span>Meoncross History &bull; GCSE Masterclass Series</span>
+      <span>Designed strictly to Edexcel Specification 1HI0/11 &bull; 40 Pages Master Volume</span>
+    </div>
+  </div>
+  `;
+}
+
+// Render Inside Front Cover (Page 2)
 function renderInsideCover() {
   return `
-  <div class="page page-inside-front" style="page-break-before: always; page-break-after: always; box-sizing: border-box; width: 100%; height: 1123px; padding: 30px 25px; font-family: 'Inter', sans-serif; background: #ffffff; color: #0f172a; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;">
-    <div>
-      <!-- Header -->
-      <div style="border-bottom: 2px solid #0f172a; padding-bottom: 8px; margin-bottom: 16px;">
-        <span style="font-size: 8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 1px;">
-          Edexcel GCSE (9–1) History &bull; Paper 1 Specification Mastery
-        </span>
-        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 18pt; margin: 4px 0 0 0; color: #0f172a;">
+  <div class="page page-inside-front" style="box-sizing: border-box; width: 794px; height: 1123px; padding: 28px 30px; font-family: 'Inter', sans-serif; background: #ffffff; color: #0f172a; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; position: relative;">
+    <div style="position: absolute; top: 14px; left: 14px; right: 14px; bottom: 14px; border: 1.5px solid #0f172a; border-radius: 6px; pointer-events: none;"></div>
+
+    <div style="position: relative; z-index: 2;">
+      <div style="border-bottom: 2px solid #0f172a; padding-bottom: 6px; margin-bottom: 12px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span style="font-size: 8.5pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 1px;">
+            Edexcel GCSE (9–1) History &bull; Paper 1 Specification &amp; Exam Technique
+          </span>
+          <span style="font-size: 7.5pt; font-weight: 700; color: #475569; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2px 6px; border-radius: 3px;">
+            Paper Code: 1HI0/11
+          </span>
+        </div>
+        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 16pt; margin: 3px 0 0 0; color: #0f172a; font-weight: 800;">
           How Paper 1 is Structured, Timed &amp; Assessed
         </h2>
-        <p style="font-size: 8.5pt; color: #475569; margin: 3px 0 0 0;">
-          Total Exam Duration: <strong>1 Hour 15 Minutes (75 Minutes)</strong> &bull; Total Paper Marks: <strong>52 Marks</strong> (including 4 marks for SPaG)
+        <p style="font-size: 8pt; color: #475569; margin: 2px 0 0 0;">
+          Total Exam Duration: <strong>1 Hour 15 Minutes (75 Minutes)</strong> &bull; Total Paper Marks: <strong>52 Raw Marks</strong> (including 4 marks for SPaG)
         </p>
       </div>
 
-      <!-- Two Main Sections -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 18px;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
         <!-- Section A -->
-        <div style="border: 2px solid #1e3a8a; border-radius: 6px; padding: 12px; background: #f8fafc;">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #1e3a8a; padding-bottom: 6px; margin-bottom: 8px;">
-            <strong style="font-size: 10pt; color: #1e3a8a;">SECTION A: HISTORIC ENVIRONMENT</strong>
-            <span style="font-size: 7.5pt; font-weight: 800; background: #1e3a8a; color: #fff; padding: 2px 6px; border-radius: 3px;">16 Marks (25 mins)</span>
+        <div style="border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 10px; background: #f8fafc;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 6px;">
+            <strong style="font-size: 9pt; color: #1e3a8a;">SECTION A: HISTORIC ENVIRONMENT</strong>
+            <span style="font-size: 7pt; font-weight: 800; background: #1e3a8a; color: #fff; padding: 2px 5px; border-radius: 3px;">16 Marks &bull; 25 mins</span>
           </div>
-          <div style="font-size: 7.8pt; color: #334155; line-height: 1.4; margin-bottom: 8px;">
-            Focuses exclusively on <em>The British Sector of the Western Front, 1914–1918: injuries, treatment and the trenches</em>.
+          <div style="font-size: 7.2pt; color: #334155; line-height: 1.35; margin-bottom: 6px;">
+            Focuses on <em>The British Sector of the Western Front, 1914–1918: injuries, treatment and the trenches</em>. Answer all 3 questions.
           </div>
-          <div style="space-y: 6px;">
-            <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px; margin-bottom: 6px;">
-              <strong style="font-size: 8pt; color: #0f172a;">Q1(a) &amp; Q1(b): Feature Questions [2m + 2m = 4 Marks]</strong>
-              <div style="font-size: 7.2pt; color: #475569; margin-top: 2px;">
-                Describe one feature of... (Award 1 mark for feature, 1 mark for supporting historical detail). Takes ~5 mins total.
-              </div>
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 3px; padding: 5px; margin-bottom: 5px;">
+            <strong style="font-size: 7.5pt; color: #0f172a;">Q1(a) &amp; Q1(b): Feature Questions [2m + 2m = 4 Marks]</strong>
+            <div style="font-size: 6.8pt; color: #475569; margin-top: 1px;">
+              Describe one feature of... (1 mark for valid feature, 1 mark for supporting factual detail). Spend ~5 mins total.
             </div>
-
-            <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px; margin-bottom: 6px;">
-              <strong style="font-size: 8pt; color: #0f172a;">Q2(a): Source Utility Enquiry [8 Marks]</strong>
-              <div style="font-size: 7.2pt; color: #475569; margin-top: 2px;">
-                How useful are Sources A and B for an enquiry into... Requires evaluating Content, Own Knowledge, and Provenance (Nature, Origin, Motive) for BOTH sources. Takes ~12 mins.
-              </div>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 3px; padding: 5px; margin-bottom: 5px;">
+            <strong style="font-size: 7.5pt; color: #0f172a;">Q2(a): Source Utility Enquiry [8 Marks]</strong>
+            <div style="font-size: 6.8pt; color: #475569; margin-top: 1px;">
+              How useful are Sources A and B for an enquiry into... Evaluates Content, Contextual Knowledge, and Provenance (Nature, Origin, Purpose). Spend ~12 mins.
             </div>
-
-            <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px;">
-              <strong style="font-size: 8pt; color: #0f172a;">Q2(b): Follow-Up Investigation Grid [4 Marks]</strong>
-              <div style="font-size: 7.2pt; color: #475569; margin-top: 2px;">
-                Complete the 4-part grid: Detail in Source, Question to ask, Type of source to use (must be authentic contemporary record), and How it helps. Takes ~8 mins.
-              </div>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 3px; padding: 5px;">
+            <strong style="font-size: 7.5pt; color: #0f172a;">Q2(b): Follow-Up Investigation Grid [4 Marks]</strong>
+            <div style="font-size: 6.8pt; color: #475569; margin-top: 1px;">
+              Complete the official 4-part enquiry grid: Detail in Source, Question to ask, Specific Contemporary Source Type, and How it helps. Spend ~8 mins.
             </div>
           </div>
         </div>
 
         <!-- Section B -->
-        <div style="border: 2px solid #0f172a; border-radius: 6px; padding: 12px; background: #f8fafc;">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #0f172a; padding-bottom: 6px; margin-bottom: 8px;">
-            <strong style="font-size: 10pt; color: #0f172a;">SECTION B: THEMATIC STUDY</strong>
-            <span style="font-size: 7.5pt; font-weight: 800; background: #0f172a; color: #fff; padding: 2px 6px; border-radius: 3px;">36 Marks (50 mins)</span>
+        <div style="border: 1.5px solid #0f172a; border-radius: 5px; padding: 10px; background: #f8fafc;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #0f172a; padding-bottom: 4px; margin-bottom: 6px;">
+            <strong style="font-size: 9pt; color: #0f172a;">SECTION B: THEMATIC DEPTH STUDY</strong>
+            <span style="font-size: 7pt; font-weight: 800; background: #0f172a; color: #fff; padding: 2px 5px; border-radius: 3px;">36 Marks &bull; 50 mins</span>
           </div>
-          <div style="font-size: 7.8pt; color: #334155; line-height: 1.4; margin-bottom: 8px;">
-            Focuses on <em>Medicine in Britain, c.1250–present</em> across Medieval, Renaissance, 18th/19th C, and Modern eras.
+          <div style="font-size: 7.2pt; color: #334155; line-height: 1.35; margin-bottom: 6px;">
+            Focuses on <em>Medicine in Britain, c.1250–present</em> across Medieval, Renaissance, Industrial, and Modern eras. Answer 3 questions.
           </div>
-          <div style="space-y: 6px;">
-            <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px; margin-bottom: 6px;">
-              <strong style="font-size: 8pt; color: #0f172a;">Q3: Similarity OR Difference [4 Marks]</strong>
-              <div style="font-size: 7.2pt; color: #475569; margin-top: 2px;">
-                Explain one way in which X in [period 1] was similar to / different from X in [period 2]. Requires 1 developed comparative PEEL paragraph with evidence from both eras. Takes ~5 mins.
-              </div>
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 3px; padding: 5px; margin-bottom: 5px;">
+            <strong style="font-size: 7.5pt; color: #0f172a;">Q3: Similarity OR Difference [4 Marks]</strong>
+            <div style="font-size: 6.8pt; color: #475569; margin-top: 1px;">
+              Explain one similarity / difference between [Period 1] and [Period 2]. Requires 1 developed comparative PEEL paragraph. Spend ~5 mins.
             </div>
-
-            <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px; margin-bottom: 6px;">
-              <strong style="font-size: 8pt; color: #0f172a;">Q4: Multi-Causal Explanation [12 Marks]</strong>
-              <div style="font-size: 7.2pt; color: #475569; margin-top: 2px;">
-                Explain why... Requires 3 developed PEEL paragraphs. Must address the two stimulus points plus one factor of your own knowledge. Takes ~18 mins.
-              </div>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 3px; padding: 5px; margin-bottom: 5px;">
+            <strong style="font-size: 7.5pt; color: #0f172a;">Q4: Multi-Causal Explanation [12 Marks]</strong>
+            <div style="font-size: 6.8pt; color: #475569; margin-top: 1px;">
+              Explain why... Requires 3 fully developed PEEL paragraphs. Must address the two stimulus points plus one factor of own knowledge. Spend ~18 mins.
             </div>
-
-            <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px;">
-              <strong style="font-size: 8pt; color: #0f172a;">Q5 / Q6: Judgement Statement Essay [16 + 4 SPaG = 20 Marks]</strong>
-              <div style="font-size: 7.2pt; color: #475569; margin-top: 2px;">
-                Student chooses between Q5 or Q6. A broad cross-era statement spanning 150–300+ years. Must evaluate both sides and reach a sustained, justified conclusion. Takes ~25 mins.
-              </div>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 3px; padding: 5px;">
+            <strong style="font-size: 7.5pt; color: #0f172a;">Q5 / Q6: Judgement Statement Essay [16 + 4 SPaG = 20 Marks]</strong>
+            <div style="font-size: 6.8pt; color: #475569; margin-top: 1px;">
+              Choice between Q5 or Q6. A broad thematic essay spanning 150–300+ years. Must evaluate both sides and reach a sustained judgement. Spend ~25 mins.
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Assessment Objectives Breakdown -->
-      <div style="border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 10px 14px; background: #ffffff;">
-        <div style="font-size: 8.5pt; font-weight: 800; color: #0f172a; text-transform: uppercase; margin-bottom: 6px;">
+      <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 8px 10px; background: #ffffff; margin-bottom: 12px;">
+        <div style="font-size: 7.8pt; font-weight: 800; color: #0f172a; text-transform: uppercase; margin-bottom: 5px;">
           The Four Assessment Objectives (AOs) You Are Graded On:
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; font-size: 7.2pt;">
-          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 6px;">
-            <strong style="color: #1e3a8a; display: block; margin-bottom: 2px;">AO1: Knowledge (11m)</strong>
-            Demonstrate knowledge and understanding of the key features and characteristics of the periods studied.
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 8px; font-size: 6.8pt;">
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 5px;">
+            <strong style="color: #1e3a8a; display: block; margin-bottom: 2px;">AO1: Knowledge (11m / 21%)</strong>
+            Recall specific historical facts, dates, names, key terms, and chronological developments accurately.
           </div>
-          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 6px;">
-            <strong style="color: #1e3a8a; display: block; margin-bottom: 2px;">AO2: Analysis (25m)</strong>
-            Explain and analyse historical events using second-order concepts: causation, continuity, change, and significance.
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 5px;">
+            <strong style="color: #1e3a8a; display: block; margin-bottom: 2px;">AO2: Concepts (25m / 48%)</strong>
+            Explain causation, consequence, continuity, change, similarity, and significance using structured analytical PEEL chains.
           </div>
-          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 6px;">
-            <strong style="color: #1e3a8a; display: block; margin-bottom: 2px;">AO3: Sources (12m)</strong>
-            Analyse and evaluate primary historical sources to make substantiated judgements regarding their utility.
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 5px;">
+            <strong style="color: #1e3a8a; display: block; margin-bottom: 2px;">AO3: Sources (12m / 23%)</strong>
+            Analyse and evaluate primary sources for utility, weighing content accuracy against provenance (Nature, Origin, Motive).
           </div>
-          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 6px;">
-            <strong style="color: #1e3a8a; display: block; margin-bottom: 2px;">AO4: SPaG (4m)</strong>
-            Spelling, punctuation, grammar, and appropriate use of specialist historical vocabulary (assessed in Q5/Q6).
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 5px;">
+            <strong style="color: #1e3a8a; display: block; margin-bottom: 2px;">AO4: SPaG &amp; Enquiry (4m / 8%)</strong>
+            Spell specialist medical terms correctly, use precise grammar, and formulate valid historical enquiry questions in Q2(b).
+          </div>
+        </div>
+      </div>
+
+      <div style="border: 1.5px solid #0f172a; border-radius: 5px; padding: 10px 12px; background: #fdfdfd;">
+        <div style="font-size: 8.5pt; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; border-bottom: 1px solid #cbd5e1; padding-bottom: 3px; display: flex; justify-content: space-between;">
+          <span>🏆 Grade 7–9 Examiner Golden Rules: Secrets to Top-Band Marks</span>
+          <span style="color: #1e3a8a; font-weight: 700;">Edexcel Paper 1 Strategy</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 6.9pt; line-height: 1.35; color: #1e293b;">
+          <div>
+            <div style="margin-bottom: 5px;">
+              <strong style="color: #1e3a8a;">1. Strict Time Management (1.4 mins per mark):</strong><br/>
+              Spend strictly 25 minutes on Section A and 50 minutes on Section B. Never steal time from Section B. If you run out of time on Q5/Q6, you forfeit up to 20 marks!
+            </div>
+            <div style="margin-bottom: 5px;">
+              <strong style="color: #1e3a8a;">2. The "Rule of Three" for Essays:</strong><br/>
+              Both Q4 (12m) and Q5/Q6 (16m) require THREE distinct, fully developed PEEL paragraphs. An essay with only two paragraphs cannot score Level 4, regardless of quality.
+            </div>
+            <div>
+              <strong style="color: #1e3a8a;">3. The Stimulus Material Rule:</strong><br/>
+              In Q4 and Q5/Q6, you MUST include your own knowledge beyond the two stimulus bullet points. Relying solely on the stimulus points automatically caps your score at Level 2 (max 6/12 or 8/16).
+            </div>
+          </div>
+          <div>
+            <div style="margin-bottom: 5px;">
+              <strong style="color: #1e3a8a;">4. No Generic Source Evaluations in Q2(a):</strong><br/>
+              Never write "Source A is biased because it was written by the government." Instead, evaluate <em>how</em> the author's role, date, or purpose makes the specific detail useful or limited for that specific enquiry.
+            </div>
+            <div style="margin-bottom: 5px;">
+              <strong style="color: #1e3a8a;">5. Sustained Criteria Judgement in 16m Essays:</strong><br/>
+              In Q5/Q6, your conclusion must not simply summarize your paragraphs. Provide a decisive, criteria-driven judgement (e.g. comparing immediate short-term impact vs permanent long-term change).
+            </div>
+            <div>
+              <strong style="color: #1e3a8a;">6. Rotated Q3 Precision:</strong><br/>
+              For Similarity, pinpoint the identical underlying mechanism or belief across both eras; for Difference, ensure you highlight the direct contrast rather than describing two unrelated facts.
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Rule of Thumb Box -->
-    <div style="background: #f1f5f9; border-left: 4px solid #1e3a8a; padding: 8px 12px; border-radius: 4px;">
-      <span style="font-size: 7.8pt; font-weight: 700; color: #1e3a8a;">CRITICAL EXAM TIME-MANAGEMENT RULE:</span>
-      <span style="font-size: 7.5pt; color: #334155; margin-left: 6px;">
-        Allocate roughly <strong>1.4 minutes per mark</strong>. Spend 25 minutes on Section A (Western Front) and 50 minutes on Section B (Thematic Study). Never spend more than 25 minutes on the 16-mark essay!
-      </span>
+    <div style="position: relative; z-index: 2; border-top: 1px solid #cbd5e1; padding-top: 6px; display: flex; justify-content: space-between; align-items: center; font-size: 7.2pt; color: #64748b;">
+      <span>Edexcel GCSE (9–1) History &bull; Paper 1 (1HI0/11)</span>
+      <span>Page 2 &bull; Specification &amp; Assessment Architecture</span>
     </div>
   </div>
   `;
 }
 
-// Helper: Render Contents & Assessment Blueprint Matrix (Page 3)
+// Render Page 3: Pupil Revision Audit & RAG Tracker
 function renderContentsMatrix() {
   return `
-  <div class="page page-contents" style="page-break-before: always; page-break-after: always; box-sizing: border-box; width: 100%; height: 1123px; padding: 25px 22px; font-family: 'Inter', sans-serif; background: #ffffff; color: #0f172a; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;">
-    <div>
-      <div style="border-bottom: 2px solid #0f172a; padding-bottom: 6px; margin-bottom: 10px;">
-        <span style="font-size: 8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 1px;">
-          Master Course Architecture &bull; 18 Dual-Page Spreads
-        </span>
-        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 16pt; margin: 3px 0 0 0; color: #0f172a;">
-          Visual Masterclass &amp; Rotated Assessment Blueprint
+  <div class="page page-contents" style="box-sizing: border-box; width: 794px; height: 1123px; padding: 24px 26px; font-family: 'Inter', sans-serif; background: #ffffff; color: #0f172a; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; position: relative;">
+    <div style="position: absolute; top: 12px; left: 12px; right: 12px; bottom: 12px; border: 1.5px solid #0f172a; border-radius: 6px; pointer-events: none;"></div>
+
+    <div style="position: relative; z-index: 2;">
+      <div style="border-bottom: 2px solid #0f172a; padding-bottom: 5px; margin-bottom: 8px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span style="font-size: 8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 1px;">
+            Edexcel GCSE History Paper 1 &bull; Personalised Progress Tracker
+          </span>
+          <span style="font-size: 7.2pt; font-weight: 700; color: #475569; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2px 6px; border-radius: 3px;">
+            18 Spreads &bull; 40 Pages
+          </span>
+        </div>
+        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 15pt; margin: 2px 0 0 0; color: #0f172a; font-weight: 800;">
+          Paper 1 Revision Audit &amp; Exam Mastery Tracker
         </h2>
+        <p style="font-size: 7.6pt; color: #475569; margin: 1px 0 0 0;">
+          Self-assess your confidence across all 18 Key Topics (🔴 Red / 🟡 Amber / 🟢 Green) and log your completed exam practice.
+        </p>
       </div>
 
-      <!-- Compact 18-Spread Table -->
-      <table style="width: 100%; border-collapse: collapse; font-size: 7pt; line-height: 1.25;">
+      <table style="width: 100%; border-collapse: collapse; font-size: 6.7pt; line-height: 1.25;">
         <thead>
           <tr style="background: #0f172a; color: #ffffff; text-align: left;">
-            <th style="padding: 4px 6px; border: 1px solid #334155; width: 45px;">Spread</th>
-            <th style="padding: 4px 6px; border: 1px solid #334155; width: 50px;">Topic</th>
-            <th style="padding: 4px 6px; border: 1px solid #334155;">Left Page: Visual Masterclass Focus</th>
-            <th style="padding: 4px 6px; border: 1px solid #334155;">Right Page: Rotated Exam Assessment</th>
-            <th style="padding: 4px 6px; border: 1px solid #334155; width: 75px; text-align: center;">Question Type</th>
-            <th style="padding: 4px 6px; border: 1px solid #334155; width: 45px; text-align: center;">Tariff</th>
+            <th style="padding: 4px 6px; border: 1px solid #0f172a; width: 48px;">Spread</th>
+            <th style="padding: 4px 6px; border: 1px solid #0f172a; width: 44px;">Lesson</th>
+            <th style="padding: 4px 6px; border: 1px solid #0f172a;">Topic Focus &amp; Core Content</th>
+            <th style="padding: 4px 6px; border: 1px solid #0f172a; width: 140px;">Exam Practice Target</th>
+            <th style="padding: 4px 6px; border: 1px solid #0f172a; width: 40px; text-align: center;">Tariff</th>
+            <th style="padding: 4px 6px; border: 1px solid #0f172a; width: 90px; text-align: center;">Revision RAG</th>
+            <th style="padding: 4px 6px; border: 1px solid #0f172a; width: 120px; text-align: center;">Exam Completed</th>
           </tr>
         </thead>
         <tbody>
           <!-- Topic 1 -->
-          <tr style="background: #f8fafc;"><td style="padding: 3px 6px; border: 1px solid #cbd5e1; font-weight: 700;">1 (pp.4-5)</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1;">KT 1.1</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Medieval Ideas of Cause: Church, Hippocrates &amp; Galen</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Q3 Similarity (Cause) &amp; Q4 Explain Why (Stagnation)</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700; color: #1e3a8a;">Q3(S) + Q4</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700;">16m</td></tr>
-          <tr style="background: #ffffff;"><td style="padding: 3px 6px; border: 1px solid #cbd5e1; font-weight: 700;">2 (pp.6-7)</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1;">KT 1.2</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Medieval Healers, Bloodletting &amp; Monastic Hospitals</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Q3 Difference (Hospitals) &amp; Q4 Explain Why (Ineffectiveness)</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700; color: #1e3a8a;">Q3(D) + Q4</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700;">16m</td></tr>
-          <tr style="background: #eff6ff;"><td style="padding: 3px 6px; border: 1px solid #93c5fd; font-weight: 700; color: #1e3a8a;">3 (pp.8-9)</td><td style="padding: 3px 6px; border: 1px solid #93c5fd; font-weight: 700; color: #1e3a8a;">KT 1.3</td><td style="padding: 3px 6px; border: 1px solid #93c5fd; font-weight: 700;">The Black Death 1348 + Synoptic Comparative Bank</td><td style="padding: 3px 6px; border: 1px solid #93c5fd; font-weight: 700;">★ Q5/Q6 Capstone Essay: Black Death vs 1665 Plague (c.1348–1665)</td><td style="padding: 3px 6px; border: 1px solid #93c5fd; text-align: center; font-weight: 800; color: #1e3a8a;">16m Essay</td><td style="padding: 3px 6px; border: 1px solid #93c5fd; text-align: center; font-weight: 800; color: #1e3a8a;">20m</td></tr>
+          <tr style="background: #f8fafc;"><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; font-weight: 700;">1 (pp.4-5)</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; font-weight: 700; color: #1e3a8a;">KT 1.1</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1;">Medieval Beliefs on Cause: Church, 4 Humours, Miasma, Astrology</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1;">Q3 Similarity + Q4 Explain Why</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700;">16m</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; text-align: center;">[ ] 🔴 [ ] 🟡 [ ] 🟢</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; font-size: 6pt;">Date: ____ Mark: __/16</td></tr>
+          <tr style="background: #f8fafc;"><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; font-weight: 700;">2 (pp.6-7)</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; font-weight: 700; color: #1e3a8a;">KT 1.2</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1;">Medieval Treatments &amp; Care: Bleeding, Purging, Apothecaries, Hospitals</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1;">Q3 Difference + Q4 Explain Why</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700;">16m</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; text-align: center;">[ ] 🔴 [ ] 🟡 [ ] 🟢</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; font-size: 6pt;">Date: ____ Mark: __/16</td></tr>
+          <tr style="background: #eff6ff;"><td style="padding: 2.5px 5px; border: 1px solid #bfdbfe; font-weight: 800; color: #1e3a8a;">3 (pp.8-9)</td><td style="padding: 2.5px 5px; border: 1px solid #bfdbfe; font-weight: 800; color: #1e3a8a;">KT 1.3</td><td style="padding: 2.5px 5px; border: 1px solid #bfdbfe; font-weight: 700;">The Black Death (1348) &bull; Cross-Era Comparative Evidence Bank</td><td style="padding: 2.5px 5px; border: 1px solid #bfdbfe; font-weight: 800; color: #1e3a8a;">★ 16m Judgement Essay (c.1348–c.1665)</td><td style="padding: 2.5px 5px; border: 1px solid #bfdbfe; text-align: center; font-weight: 800; color: #1e3a8a;">20m</td><td style="padding: 2.5px 5px; border: 1px solid #bfdbfe; text-align: center;">[ ] 🔴 [ ] 🟡 [ ] 🟢</td><td style="padding: 2.5px 5px; border: 1px solid #bfdbfe; font-size: 6pt;">Date: ____ Mark: __/20</td></tr>
 
           <!-- Topic 2 -->
-          <tr style="background: #f8fafc;"><td style="padding: 3px 6px; border: 1px solid #cbd5e1; font-weight: 700;">4 (pp.10-11)</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1;">KT 2.1</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Scientific Shift: Printing Press, Royal Society &amp; Sydenham</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Q3 Similarity (Cause) &amp; Q4 Explain Why (Ideas Spreading)</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700; color: #1e3a8a;">Q3(S) + Q4</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700;">16m</td></tr>
-          <tr style="background: #ffffff;"><td style="padding: 3px 6px; border: 1px solid #cbd5e1; font-weight: 700;">5 (pp.12-13)</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1;">KT 2.2</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Andreas Vesalius: 1543 Fabrica &amp; Anatomical Errors</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Q3 Difference (Dissection) &amp; Q4 Explain Why (Opposition)</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700; color: #1e3a8a;">Q3(D) + Q4</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700;">16m</td></tr>
-          <tr style="background: #eff6ff;"><td style="padding: 3px 6px; border: 1px solid #93c5fd; font-weight: 700; color: #1e3a8a;">6 (pp.14-15)</td><td style="padding: 3px 6px; border: 1px solid #93c5fd; font-weight: 700; color: #1e3a8a;">KT 2.3</td><td style="padding: 3px 6px; border: 1px solid #93c5fd; font-weight: 700;">William Harvey Circulation &amp; Great Plague 1665</td><td style="padding: 3px 6px; border: 1px solid #93c5fd; font-weight: 700;">★ Q5/Q6 Capstone Essay: Individuals vs Institutions (c.1500–1800)</td><td style="padding: 3px 6px; border: 1px solid #93c5fd; text-align: center; font-weight: 800; color: #1e3a8a;">16m Essay</td><td style="padding: 3px 6px; border: 1px solid #93c5fd; text-align: center; font-weight: 800; color: #1e3a8a;">20m</td></tr>
+          <tr style="background: #f8fafc;"><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; font-weight: 700;">4 (pp.10-11)</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; font-weight: 700; color: #1e3a8a;">KT 2.1</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1;">Renaissance Scientific Shift: Royal Society, Sydenham, Printing Press</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1;">Q3 Similarity + Q4 Explain Why</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700;">16m</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; text-align: center;">[ ] 🔴 [ ] 🟡 [ ] 🟢</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; font-size: 6pt;">Date: ____ Mark: __/16</td></tr>
+          <tr style="background: #f8fafc;"><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; font-weight: 700;">5 (pp.12-13)</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; font-weight: 700; color: #1e3a8a;">KT 2.2</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1;">Renaissance Treatments &amp; Vesalius: 1543 Fabrica &amp; 300+ Galen Errors</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1;">Q3 Difference + Q4 Explain Why</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700;">16m</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; text-align: center;">[ ] 🔴 [ ] 🟡 [ ] 🟢</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; font-size: 6pt;">Date: ____ Mark: __/16</td></tr>
+          <tr style="background: #eff6ff;"><td style="padding: 2.5px 5px; border: 1px solid #bfdbfe; font-weight: 800; color: #1e3a8a;">6 (pp.14-15)</td><td style="padding: 2.5px 5px; border: 1px solid #bfdbfe; font-weight: 800; color: #1e3a8a;">KT 2.3</td><td style="padding: 2.5px 5px; border: 1px solid #bfdbfe; font-weight: 700;">William Harvey (1628) &amp; Great Plague 1665 &bull; Synoptic Evidence Bank</td><td style="padding: 2.5px 5px; border: 1px solid #bfdbfe; font-weight: 800; color: #1e3a8a;">★ 16m Judgement Essay (c.1500–c.1800)</td><td style="padding: 2.5px 5px; border: 1px solid #bfdbfe; text-align: center; font-weight: 800; color: #1e3a8a;">20m</td><td style="padding: 2.5px 5px; border: 1px solid #bfdbfe; text-align: center;">[ ] 🔴 [ ] 🟡 [ ] 🟢</td><td style="padding: 2.5px 5px; border: 1px solid #bfdbfe; font-size: 6pt;">Date: ____ Mark: __/20</td></tr>
 
           <!-- Topic 3 -->
-          <tr style="background: #f8fafc;"><td style="padding: 3px 6px; border: 1px solid #cbd5e1; font-weight: 700;">7 (pp.16-17)</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1;">KT 3.1</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Germ Theory Revolution: Pasteur 1861 &amp; Robert Koch</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Q3 Difference (Cause) &amp; Q4 Explain Why (British Delay)</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700; color: #1e3a8a;">Q3(D) + Q4</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700;">16m</td></tr>
-          <tr style="background: #ffffff;"><td style="padding: 3px 6px; border: 1px solid #cbd5e1; font-weight: 700;">8 (pp.18-19)</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1;">KT 3.2</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Surgical Revolution: Simpson, Lister &amp; Nightingale</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Q3 Similarity (Opposition) &amp; Q4 Explain Why (Safer Surgery)</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700; color: #1e3a8a;">Q3(S) + Q4</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700;">16m</td></tr>
-          <tr style="background: #eff6ff;"><td style="padding: 3px 6px; border: 1px solid #93c5fd; font-weight: 700; color: #1e3a8a;">9 (pp.20-21)</td><td style="padding: 3px 6px; border: 1px solid #93c5fd; font-weight: 700; color: #1e3a8a;">KT 3.3</td><td style="padding: 3px 6px; border: 1px solid #93c5fd; font-weight: 700;">Prevention: Edward Jenner 1796 &amp; John Snow 1854</td><td style="padding: 3px 6px; border: 1px solid #93c5fd; font-weight: 700;">★ Q5/Q6 Capstone Essay: Vaccination vs Sanitation (c.1750–present)</td><td style="padding: 3px 6px; border: 1px solid #93c5fd; text-align: center; font-weight: 800; color: #1e3a8a;">16m Essay</td><td style="padding: 3px 6px; border: 1px solid #93c5fd; text-align: center; font-weight: 800; color: #1e3a8a;">20m</td></tr>
+          <tr style="background: #f8fafc;"><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; font-weight: 700;">7 (pp.16-17)</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; font-weight: 700; color: #1e3a8a;">KT 3.1</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1;">Germ Theory: Pasteur 1861, Koch Bacteriology, Defeating Spontaneous Gen</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1;">Q3 Difference + Q4 Explain Why</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700;">16m</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; text-align: center;">[ ] 🔴 [ ] 🟡 [ ] 🟢</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; font-size: 6pt;">Date: ____ Mark: __/16</td></tr>
+          <tr style="background: #f8fafc;"><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; font-weight: 700;">8 (pp.18-19)</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; font-weight: 700; color: #1e3a8a;">KT 3.2</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1;">Surgery &amp; Hospitals: Simpson Chloroform, Lister Carbolic, Nightingale</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1;">Q3 Similarity + Q4 Explain Why</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700;">16m</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; text-align: center;">[ ] 🔴 [ ] 🟡 [ ] 🟢</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; font-size: 6pt;">Date: ____ Mark: __/16</td></tr>
+          <tr style="background: #eff6ff;"><td style="padding: 2.5px 5px; border: 1px solid #bfdbfe; font-weight: 800; color: #1e3a8a;">9 (pp.20-21)</td><td style="padding: 2.5px 5px; border: 1px solid #bfdbfe; font-weight: 800; color: #1e3a8a;">KT 3.3</td><td style="padding: 2.5px 5px; border: 1px solid #bfdbfe; font-weight: 700;">Prevention: Jenner Smallpox 1796 &amp; Snow Cholera 1854 &bull; Evidence Bank</td><td style="padding: 2.5px 5px; border: 1px solid #bfdbfe; font-weight: 800; color: #1e3a8a;">★ 16m Judgement Essay (c.1750–present)</td><td style="padding: 2.5px 5px; border: 1px solid #bfdbfe; text-align: center; font-weight: 800; color: #1e3a8a;">20m</td><td style="padding: 2.5px 5px; border: 1px solid #bfdbfe; text-align: center;">[ ] 🔴 [ ] 🟡 [ ] 🟢</td><td style="padding: 2.5px 5px; border: 1px solid #bfdbfe; font-size: 6pt;">Date: ____ Mark: __/20</td></tr>
 
           <!-- Topic 4 -->
-          <tr style="background: #f8fafc;"><td style="padding: 3px 6px; border: 1px solid #cbd5e1; font-weight: 700;">10 (pp.22-23)</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1;">KT 4.1</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1;">DNA Double Helix (1953), Human Genome &amp; Scanners</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Q3 Difference (Diagnosis) &amp; Q4 Explain Why (DNA Impact)</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700; color: #1e3a8a;">Q3(D) + Q4</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700;">16m</td></tr>
-          <tr style="background: #ffffff;"><td style="padding: 3px 6px; border: 1px solid #cbd5e1; font-weight: 700;">11 (pp.24-25)</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1;">KT 4.2</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Magic Bullets (Salvarsan &amp; Prontosil) + 1948 NHS</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Q3 Similarity (Chemicals) &amp; Q4 Explain Why (BMA Opposition)</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700; color: #1e3a8a;">Q3(S) + Q4</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700;">16m</td></tr>
-          <tr style="background: #f8fafc;"><td style="padding: 3px 6px; border: 1px solid #cbd5e1; font-weight: 700;">12 (pp.26-27)</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1;">KT 4.3</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Penicillin: Fleming 1928, Florey &amp; Chain, US WWII Scale</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Q3 Difference (Funding) &amp; Q4 Explain Why (WWII Production)</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700; color: #1e3a8a;">Q3(D) + Q4</td><td style="padding: 3px 6px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700;">16m</td></tr>
-          <tr style="background: #eff6ff;"><td style="padding: 3px 6px; border: 1px solid #93c5fd; font-weight: 700; color: #1e3a8a;">13 (pp.28-29)</td><td style="padding: 3px 6px; border: 1px solid #93c5fd; font-weight: 700; color: #1e3a8a;">KT 4.4</td><td style="padding: 3px 6px; border: 1px solid #93c5fd; font-weight: 700;">Lung Cancer: Doll &amp; Hill, Anti-Smoking Legislation</td><td style="padding: 3px 6px; border: 1px solid #93c5fd; font-weight: 700;">★ Q5/Q6 Capstone Essay: Government Action in Public Health (c.1850–present)</td><td style="padding: 3px 6px; border: 1px solid #93c5fd; text-align: center; font-weight: 800; color: #1e3a8a;">16m Essay</td><td style="padding: 3px 6px; border: 1px solid #93c5fd; text-align: center; font-weight: 800; color: #1e3a8a;">20m</td></tr>
+          <tr style="background: #f8fafc;"><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; font-weight: 700;">10 (pp.22-23)</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; font-weight: 700; color: #1e3a8a;">KT 4.1</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1;">Modern Ideas: DNA Structure 1953, Human Genome, High-Tech Scanners</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1;">Q3 Difference + Q4 Explain Why</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700;">16m</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; text-align: center;">[ ] 🔴 [ ] 🟡 [ ] 🟢</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; font-size: 6pt;">Date: ____ Mark: __/16</td></tr>
+          <tr style="background: #f8fafc;"><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; font-weight: 700;">11 (pp.24-25)</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; font-weight: 700; color: #1e3a8a;">KT 4.2</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1;">Modern Treatments: Magic Bullets (Salvarsan/Prontosil) &amp; 1948 NHS</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1;">Q3 Similarity + Q4 Explain Why</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700;">16m</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; text-align: center;">[ ] 🔴 [ ] 🟡 [ ] 🟢</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; font-size: 6pt;">Date: ____ Mark: __/16</td></tr>
+          <tr style="background: #f8fafc;"><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; font-weight: 700;">12 (pp.26-27)</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; font-weight: 700; color: #1e3a8a;">KT 4.3</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1;">Penicillin: Fleming 1928, Florey &amp; Chain, US WWII Mass Production</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1;">Q3 Difference + Q4 Explain Why</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; text-align: center; font-weight: 700;">16m</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; text-align: center;">[ ] 🔴 [ ] 🟡 [ ] 🟢</td><td style="padding: 2.5px 5px; border: 1px solid #cbd5e1; font-size: 6pt;">Date: ____ Mark: __/16</td></tr>
+          <tr style="background: #eff6ff;"><td style="padding: 2.5px 5px; border: 1px solid #bfdbfe; font-weight: 800; color: #1e3a8a;">13 (pp.28-29)</td><td style="padding: 2.5px 5px; border: 1px solid #bfdbfe; font-weight: 800; color: #1e3a8a;">KT 4.4</td><td style="padding: 2.5px 5px; border: 1px solid #bfdbfe; font-weight: 700;">Lung Cancer: Doll &amp; Hill, High-Tech Care, Anti-Smoking Legislation</td><td style="padding: 2.5px 5px; border: 1px solid #bfdbfe; font-weight: 800; color: #1e3a8a;">★ 16m Judgement Essay (c.1850–present)</td><td style="padding: 2.5px 5px; border: 1px solid #bfdbfe; text-align: center; font-weight: 800; color: #1e3a8a;">20m</td><td style="padding: 2.5px 5px; border: 1px solid #bfdbfe; text-align: center;">[ ] 🔴 [ ] 🟡 [ ] 🟢</td><td style="padding: 2.5px 5px; border: 1px solid #bfdbfe; font-size: 6pt;">Date: ____ Mark: __/20</td></tr>
 
-          <!-- Topic 5: Western Front -->
-          <tr style="background: #fdf2f8;"><td style="padding: 3px 6px; border: 1px solid #fbcfe8; font-weight: 700; color: #9d174d;">14 (pp.30-31)</td><td style="padding: 3px 6px; border: 1px solid #fbcfe8;">KT 5.1</td><td style="padding: 3px 6px; border: 1px solid #fbcfe8;">Western Front Terrain: Ypres Mud, Somme &amp; Arras Caves</td><td style="padding: 3px 6px; border: 1px solid #fbcfe8;">Q1(a) &amp; Q1(b) Features + Q2(a) Source Utility (Transport)</td><td style="padding: 3px 6px; border: 1px solid #fbcfe8; text-align: center; font-weight: 700; color: #9d174d;">Features + Utility</td><td style="padding: 3px 6px; border: 1px solid #fbcfe8; text-align: center; font-weight: 700;">12m</td></tr>
-          <tr style="background: #fdf2f8;"><td style="padding: 3px 6px; border: 1px solid #fbcfe8; font-weight: 700; color: #9d174d;">15 (pp.32-33)</td><td style="padding: 3px 6px; border: 1px solid #fbcfe8;">KT 5.2</td><td style="padding: 3px 6px; border: 1px solid #fbcfe8;">The Trench Defensive Grid, Dugouts &amp; Vermin Hygiene</td><td style="padding: 3px 6px; border: 1px solid #fbcfe8;">Q1(a) &amp; Q1(b) Features + Q2(b) Follow-Up Grid (Trench Life)</td><td style="padding: 3px 6px; border: 1px solid #fbcfe8; text-align: center; font-weight: 700; color: #9d174d;">Features + Follow-Up</td><td style="padding: 3px 6px; border: 1px solid #fbcfe8; text-align: center; font-weight: 700;">8m</td></tr>
-          <tr style="background: #fdf2f8;"><td style="padding: 3px 6px; border: 1px solid #fbcfe8; font-weight: 700; color: #9d174d;">16 (pp.34-35)</td><td style="padding: 3px 6px; border: 1px solid #fbcfe8;">KT 5.3</td><td style="padding: 3px 6px; border: 1px solid #fbcfe8;">Trench Pathology: Chlorine, Phosgene, Mustard &amp; Trench Foot</td><td style="padding: 3px 6px; border: 1px solid #fbcfe8;">Q1(a) &amp; Q1(b) Features + Q2(a) Source Utility (Poison Gas)</td><td style="padding: 3px 6px; border: 1px solid #fbcfe8; text-align: center; font-weight: 700; color: #9d174d;">Features + Utility</td><td style="padding: 3px 6px; border: 1px solid #fbcfe8; text-align: center; font-weight: 700;">12m</td></tr>
-          <tr style="background: #fdf2f8;"><td style="padding: 3px 6px; border: 1px solid #fbcfe8; font-weight: 700; color: #9d174d;">17 (pp.36-37)</td><td style="padding: 3px 6px; border: 1px solid #fbcfe8;">KT 5.4</td><td style="padding: 3px 6px; border: 1px solid #fbcfe8;">Chain of Evacuation: RAP &rarr; ADS &rarr; CCS &rarr; Base Hospital</td><td style="padding: 3px 6px; border: 1px solid #fbcfe8;">Q1(a) &amp; Q1(b) Features + Q2(b) Follow-Up Grid (CCS Work)</td><td style="padding: 3px 6px; border: 1px solid #fbcfe8; text-align: center; font-weight: 700; color: #9d174d;">Features + Follow-Up</td><td style="padding: 3px 6px; border: 1px solid #fbcfe8; text-align: center; font-weight: 700;">8m</td></tr>
-          <tr style="background: #fdf2f8;"><td style="padding: 3px 6px; border: 1px solid #fbcfe8; font-weight: 700; color: #9d174d;">18 (pp.38-39)</td><td style="padding: 3px 6px; border: 1px solid #fbcfe8;">KT 5.5</td><td style="padding: 3px 6px; border: 1px solid #fbcfe8;">Medical Advances: Thomas Splint, Blood Depots, Plastic Surgery</td><td style="padding: 3px 6px; border: 1px solid #fbcfe8;">Q1(a) &amp; Q1(b) Features + Q2(a) Source Utility (Advances)</td><td style="padding: 3px 6px; border: 1px solid #fbcfe8; text-align: center; font-weight: 700; color: #9d174d;">Features + Utility</td><td style="padding: 3px 6px; border: 1px solid #fbcfe8; text-align: center; font-weight: 700;">12m</td></tr>
+          <!-- Section A -->
+          <tr style="background: #fdf2f8;"><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8; font-weight: 700; color: #9d174d;">14 (pp.30-31)</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8; font-weight: 700; color: #9d174d;">KT 5.1</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8;">Western Front Terrain: Ypres Mud, Somme, Arras Caves, Motor Ambulances</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8;">Q1(a) &amp; Q1(b) Features + Q2(a) Utility</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8; text-align: center; font-weight: 700;">12m</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8; text-align: center;">[ ] 🔴 [ ] 🟡 [ ] 🟢</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8; font-size: 6pt;">Date: ____ Mark: __/12</td></tr>
+          <tr style="background: #fdf2f8;"><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8; font-weight: 700; color: #9d174d;">15 (pp.32-33)</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8; font-weight: 700; color: #9d174d;">KT 5.2</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8;">Trench System Layout: Frontline, Support, Reserve, Dugouts, Duckboards</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8;">Q1(a) &amp; Q1(b) Features + Q2(b) Follow-Up</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8; text-align: center; font-weight: 700;">8m</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8; text-align: center;">[ ] 🔴 [ ] 🟡 [ ] 🟢</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8; font-size: 6pt;">Date: ____ Mark: __/8</td></tr>
+          <tr style="background: #fdf2f8;"><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8; font-weight: 700; color: #9d174d;">16 (pp.34-35)</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8; font-weight: 700; color: #9d174d;">KT 5.3</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8;">Conditions &amp; Wounds: Trench Foot, Shell Shock, Shrapnel, Poison Gas</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8;">Q1(a) &amp; Q1(b) Features + Q2(a) Utility</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8; text-align: center; font-weight: 700;">12m</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8; text-align: center;">[ ] 🔴 [ ] 🟡 [ ] 🟢</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8; font-size: 6pt;">Date: ____ Mark: __/12</td></tr>
+          <tr style="background: #fdf2f8;"><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8; font-weight: 700; color: #9d174d;">17 (pp.36-37)</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8; font-weight: 700; color: #9d174d;">KT 5.4</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8;">Chain of Evacuation: Stretcher Bearers &rarr; RAP &rarr; ADS/MDS &rarr; CCS &rarr; Base</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8;">Q1(a) &amp; Q1(b) Features + Q2(b) Follow-Up</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8; text-align: center; font-weight: 700;">8m</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8; text-align: center;">[ ] 🔴 [ ] 🟡 [ ] 🟢</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8; font-size: 6pt;">Date: ____ Mark: __/8</td></tr>
+          <tr style="background: #fdf2f8;"><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8; font-weight: 700; color: #9d174d;">18 (pp.38-39)</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8; font-weight: 700; color: #9d174d;">KT 5.5</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8;">Medical Advances: Thomas Splint (80% &rarr; 20%), Blood Depots, Plastic Surgery</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8;">Q1(a) &amp; Q1(b) Features + Q2(a) Utility</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8; text-align: center; font-weight: 700;">12m</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8; text-align: center;">[ ] 🔴 [ ] 🟡 [ ] 🟢</td><td style="padding: 2.5px 5px; border: 1px solid #fbcfe8; font-size: 6pt;">Date: ____ Mark: __/12</td></tr>
         </tbody>
       </table>
+
+      <div style="margin-top: 10px; background: #f8fafc; border: 1.5px solid #0f172a; border-radius: 4px; padding: 8px 12px; font-size: 7pt; color: #1e293b;">
+        <div style="font-weight: 800; color: #0f172a; text-transform: uppercase; margin-bottom: 4px;">
+          🎯 Masterclass Revision Milestones:
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
+          <div><strong>🥉 Bronze Milestone:</strong> All 18 knowledge masterclass left pages revised; RAG checkboxes audited.</div>
+          <div><strong>🥈 Silver Milestone:</strong> All 18 exam practice pages completed in full with timed conditions.</div>
+          <div><strong>🥇 Gold Milestone:</strong> All 4 capstone 16-mark essays completed and assessed at Grade 7–9 standard.</div>
+        </div>
+      </div>
     </div>
 
-    <!-- Summary Box -->
-    <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 12px; font-size: 7.2pt; color: #334155; display: flex; justify-content: space-between; align-items: center;">
-      <span><strong>Rotation Summary:</strong> 3x Q3 Similarity [4m] &bull; 4x Q3 Difference [4m] &bull; 7x Q4 Explain Why [12m] &bull; 4x Q5/Q6 Capstone Essays [20m] &bull; 5x Western Front Sets</span>
-      <span style="font-weight: 800; color: #1e3a8a;">Total 40 Pages Master Volume</span>
+    <div style="position: relative; z-index: 2; border-top: 1px solid #cbd5e1; padding-top: 6px; display: flex; justify-content: space-between; align-items: center; font-size: 7.2pt; color: #64748b;">
+      <span>Edexcel GCSE (9–1) History &bull; Paper 1 (1HI0/11)</span>
+      <span>Page 3 &bull; Personalised Progress &amp; Exam Tracker</span>
     </div>
   </div>
   `;
 }
 
-// Helper: Render Back Cover (Page 40)
+// Render Back Cover (Page 40)
 function renderBackCover() {
   return `
-  <div class="page page-back-cover" style="page-break-before: always; page-break-after: always; box-sizing: border-box; width: 100%; height: 1123px; padding: 30px 25px; font-family: 'Inter', sans-serif; background: #0f172a; color: #ffffff; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; position: relative;">
-    <!-- Decorative border -->
-    <div style="position: absolute; top: 18px; left: 18px; right: 18px; bottom: 18px; border: 2px solid #334155; border-radius: 8px; pointer-events: none;"></div>
+  <div class="page page-back-cover" style="box-sizing: border-box; width: 794px; height: 1123px; padding: 28px 30px; font-family: 'Inter', sans-serif; background: #ffffff; color: #0f172a; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; position: relative;">
+    <div style="position: absolute; top: 14px; left: 14px; right: 14px; bottom: 14px; border: 1.5px solid #0f172a; border-radius: 6px; pointer-events: none;"></div>
 
     <div style="position: relative; z-index: 2;">
-      <div style="border-bottom: 2px solid #f59e0b; padding-bottom: 8px; margin-bottom: 16px;">
-        <span style="font-size: 8pt; font-weight: 800; color: #f59e0b; text-transform: uppercase; letter-spacing: 1.5px;">
-          Edexcel GCSE History Exam Masterclass Toolkit
-        </span>
-        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 18pt; margin: 4px 0 0 0; color: #ffffff;">
-          High-Scoring Analytical Connectives &amp; Sentence Stems
+      <div style="border-bottom: 2px solid #0f172a; padding-bottom: 6px; margin-bottom: 10px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span style="font-size: 8.5pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 1px;">
+            Edexcel GCSE History &bull; Paper 1 Complete Exam Technique Guide
+          </span>
+          <span style="font-size: 7.5pt; font-weight: 700; color: #475569; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2px 6px; border-radius: 3px;">
+            Masterclass Playbook
+          </span>
+        </div>
+        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 16pt; margin: 3px 0 0 0; color: #0f172a; font-weight: 800;">
+          How to Answer Every Question Type on Paper 1
         </h2>
+        <p style="font-size: 7.8pt; color: #475569; margin: 2px 0 0 0;">
+          Step-by-step paragraph formulas, examiner trigger phrases, and timing rules for all six questions.
+        </p>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px;">
-        <!-- Box 1: Similarity & Difference (Q3) -->
-        <div style="background: #1e293b; border: 1px solid #334155; border-radius: 6px; padding: 10px 12px;">
-          <strong style="font-size: 8.5pt; color: #f59e0b; display: block; margin-bottom: 4px;">
-            ✦ Q3: Similarity &amp; Difference PEEL Stems
-          </strong>
-          <ul style="margin: 0; padding-left: 14px; font-size: 7.2pt; color: #cbd5e1; line-height: 1.4;">
-            <li>"One key way in which [X in period 1] was similar to [X in period 2] was..."</li>
-            <li>"Similarly, in both periods, medical practitioners relied upon..."</li>
-            <li>"By contrast, a fundamental difference in the [second period] was..."</li>
-            <li>"Whereas medieval physicians focused solely on spiritual care, modern doctors..."</li>
-            <li>"This demonstrates significant continuity / radical change because..."</li>
-          </ul>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
+        <!-- Q1(a) & Q1(b) Features -->
+        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 8px 10px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 3px; margin-bottom: 4px;">
+            <strong style="font-size: 8pt; color: #1e3a8a;">Q1(a) &amp; Q1(b): Feature Questions [2m + 2m = 4m]</strong>
+            <span style="font-size: 6.5pt; font-weight: 700; color: #64748b;">~5 Mins Total</span>
+          </div>
+          <div style="font-size: 6.8pt; color: #1e293b; line-height: 1.3;">
+            &bull; <strong>Formula:</strong> Identify one valid feature [1 mark] + Add specific supporting historical detail [1 mark].<br/>
+            &bull; <strong>Example:</strong> "One feature of the Thomas Splint was that it pulled the broken leg in rigid traction [1m]. This prevented bone ends grating together and reduced mortality from 80% to below 20% [1m]."<br/>
+            &bull; <strong>Golden Rule:</strong> Keep it concise! Two sentences per question is all that is required.
+          </div>
         </div>
 
-        <!-- Box 2: Causation (Q4) -->
-        <div style="background: #1e293b; border: 1px solid #334155; border-radius: 6px; padding: 10px 12px;">
-          <strong style="font-size: 8.5pt; color: #f59e0b; display: block; margin-bottom: 4px;">
-            ✦ Q4: Multi-Causal Explanation Stems
-          </strong>
-          <ul style="margin: 0; padding-left: 14px; font-size: 7.2pt; color: #cbd5e1; line-height: 1.4;">
-            <li>"A primary factor contributing to this breakthrough was..."</li>
-            <li>"Consequently, this directly enabled scientists to..."</li>
-            <li>"Furthermore, the impact of this factor was intensified by..."</li>
-            <li>"This was especially significant because without this technology..."</li>
-            <li>"Therefore, this factor was a vital catalyst in accelerating change..."</li>
-          </ul>
+        <!-- Q2(a) Source Utility -->
+        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 8px 10px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 3px; margin-bottom: 4px;">
+            <strong style="font-size: 8pt; color: #1e3a8a;">Q2(a): Source Utility Enquiry [8 Marks]</strong>
+            <span style="font-size: 6.5pt; font-weight: 700; color: #64748b;">~12 Mins</span>
+          </div>
+          <div style="font-size: 6.8pt; color: #1e293b; line-height: 1.3;">
+            &bull; <strong>Formula:</strong> Evaluate Source A (Content + Knowledge + Provenance) &rarr; Evaluate Source B (Content + Knowledge + Provenance) &rarr; Comparative Conclusion on usefulness for enquiry.<br/>
+            &bull; <strong>Provenance NOP:</strong> Nature (type of record), Origin (who wrote it, when), Purpose (why created).<br/>
+            &bull; <strong>Trigger:</strong> "Source A is useful for an enquiry into [topic] because it reveals... This is corroborated by... However, its utility is shaped by its purpose to..."
+          </div>
         </div>
 
-        <!-- Box 3: Source Utility & Provenance (Q2a) -->
-        <div style="background: #1e293b; border: 1px solid #334155; border-radius: 6px; padding: 10px 12px;">
-          <strong style="font-size: 8.5pt; color: #f59e0b; display: block; margin-bottom: 4px;">
-            ✦ Q2(a): Source Utility &amp; Provenance Evaluation
-          </strong>
-          <ul style="margin: 0; padding-left: 14px; font-size: 7.2pt; color: #cbd5e1; line-height: 1.4;">
-            <li>"Source A is useful for an enquiry into [topic] because it reveals that..."</li>
-            <li>"This content is corroborated by my own knowledge that in 1916..."</li>
-            <li>"However, the provenance affects its utility because, as an official War Office report, its motive was to..."</li>
-            <li>"As a private diary written under fire, the author had no reason to exaggerate..."</li>
-            <li>"Overall, Source A provides valuable insight into the logistical realities..."</li>
-          </ul>
+        <!-- Q2(b) Follow-Up Grid -->
+        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 8px 10px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 3px; margin-bottom: 4px;">
+            <strong style="font-size: 8pt; color: #1e3a8a;">Q2(b): Follow-Up Enquiry Grid [4 Marks]</strong>
+            <span style="font-size: 6.5pt; font-weight: 700; color: #64748b;">~8 Mins</span>
+          </div>
+          <div style="font-size: 6.8pt; color: #1e293b; line-height: 1.3;">
+            &bull; <strong>Row 1: Detail:</strong> Quote directly from the source.<br/>
+            &bull; <strong>Row 2: Question:</strong> Ask an enquiry question linked directly to that detail.<br/>
+            &bull; <strong>Row 3: Source Type:</strong> Must be a specific contemporary record (e.g. RAMC unit war diary, Casualty Clearing Station admission logs, medical officer personal journal).<br/>
+            &bull; <strong>Row 4: How it Helps:</strong> Explain how this source answers your question.
+          </div>
         </div>
 
-        <!-- Box 4: 16-Mark Judgement Essays (Q5/Q6) -->
-        <div style="background: #1e293b; border: 1px solid #334155; border-radius: 6px; padding: 10px 12px;">
-          <strong style="font-size: 8.5pt; color: #f59e0b; display: block; margin-bottom: 4px;">
-            ✦ Q5/Q6: Sustained Judgement &amp; Criteria Stems
-          </strong>
-          <ul style="margin: 0; padding-left: 14px; font-size: 7.2pt; color: #cbd5e1; line-height: 1.4;">
-            <li>"To evaluate how far this statement is accurate, one must assess..."</li>
-            <li>"On the one hand, evidence strongly supporting the statement is..."</li>
-            <li>"On the other hand, this argument is challenged when examining..."</li>
-            <li>"Although individual pioneers made vital breakthroughs, their impact depended upon..."</li>
-            <li>"In conclusion, while [Factor A] was significant in the short term, [Factor B] was the decisive catalyst across the broader period because..."</li>
-          </ul>
+        <!-- Q3 Similarity / Difference -->
+        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 8px 10px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 3px; margin-bottom: 4px;">
+            <strong style="font-size: 8pt; color: #1e3a8a;">Q3: Similarity OR Difference [4 Marks]</strong>
+            <span style="font-size: 6.5pt; font-weight: 700; color: #64748b;">~5 Mins</span>
+          </div>
+          <div style="font-size: 6.8pt; color: #1e293b; line-height: 1.3;">
+            &bull; <strong>Formula:</strong> 1 developed comparative PEEL paragraph.<br/>
+            &bull; <strong>Structure:</strong> Identify common feature/difference &rarr; Give specific evidence from Period 1 &rarr; Give specific evidence from Period 2 &rarr; Explain the comparative link.<br/>
+            &bull; <strong>Trigger:</strong> "One way in which [X in period 1] was similar to [period 2] was... For example, in medieval Britain... Similarly, in the Renaissance... This shows continuity because..."
+          </div>
+        </div>
+
+        <!-- Q4 Multi-Causal Explanation -->
+        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 8px 10px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 3px; margin-bottom: 4px;">
+            <strong style="font-size: 8pt; color: #1e3a8a;">Q4: Multi-Causal Explanation [12 Marks]</strong>
+            <span style="font-size: 6.5pt; font-weight: 700; color: #64748b;">~18 Mins</span>
+          </div>
+          <div style="font-size: 6.8pt; color: #1e293b; line-height: 1.3;">
+            &bull; <strong>Formula:</strong> 3 fully developed PEEL paragraphs. Must address Stimulus Point 1, Stimulus Point 2, and ONE factor of Own Knowledge.<br/>
+            &bull; <strong>Analytical Focus:</strong> Explain <em>why</em> the event occurred, rather than just telling the story. Connect each factor back to the question stem.<br/>
+            &bull; <strong>Trigger:</strong> "A key factor explaining why [outcome] happened was... Consequently, this directly caused... Without this factor..."
+          </div>
+        </div>
+
+        <!-- Q5/Q6 Judgement Essay -->
+        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 8px 10px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 3px; margin-bottom: 4px;">
+            <strong style="font-size: 8pt; color: #1e3a8a;">Q5 / Q6: Judgement Essay [16 + 4 SPaG = 20 Marks]</strong>
+            <span style="font-size: 6.5pt; font-weight: 700; color: #64748b;">~25 Mins</span>
+          </div>
+          <div style="font-size: 6.8pt; color: #1e293b; line-height: 1.3;">
+            &bull; <strong>Formula:</strong> Brief Intro with criteria &rarr; P1: Agree with statement (PEEL) &rarr; P2: Disagree / Alternative Factor (PEEL) &rarr; P3: Third cross-era factor (PEEL) &rarr; Sustained Judgement Conclusion.<br/>
+            &bull; <strong>Cross-Era Breadth:</strong> Must span the full period stated (150–300+ years).<br/>
+            &bull; <strong>Trigger:</strong> "While [Factor A] was significant in the short term, [Factor B] was ultimately more decisive across the period because..."
+          </div>
+        </div>
+      </div>
+
+      <div style="border: 1.5px solid #0f172a; border-radius: 5px; padding: 8px 12px; background: #fdfdfd;">
+        <div style="font-size: 7.8pt; font-weight: 800; color: #0f172a; text-transform: uppercase; margin-bottom: 5px; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px;">
+          💬 Grade 9 Analytical Phrasing Toolkit: Examiner Sentence Starters
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; font-size: 6.6pt; line-height: 1.3; color: #334155;">
+          <div>
+            <strong style="color: #1e3a8a; display: block; margin-bottom: 2px;">Causation &amp; Impact:</strong>
+            &bull; "A primary catalyst accelerating this shift was..."<br/>
+            &bull; "Consequently, this directly enabled..."<br/>
+            &bull; "The impact was intensified by..."<br/>
+            &bull; "Without this breakthrough, progress would have..."
+          </div>
+          <div>
+            <strong style="color: #1e3a8a; display: block; margin-bottom: 2px;">Continuity &amp; Stagnation:</strong>
+            &bull; "This demonstrates profound continuity because..."<br/>
+            &bull; "Despite this development, popular belief remained..."<br/>
+            &bull; "The institutional monopoly of the Church ensured..."<br/>
+            &bull; "Adherence to ancient dogma prevented..."
+          </div>
+          <div>
+            <strong style="color: #1e3a8a; display: block; margin-bottom: 2px;">Sustained Judgement (16m):</strong>
+            &bull; "To evaluate how far this is accurate, one must assess..."<br/>
+            &bull; "Although [Factor A] was prominent, its success depended upon..."<br/>
+            &bull; "When judged against the criteria of long-term impact..."<br/>
+            &bull; "Ultimately, [Factor B] was decisive because..."
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Publisher & Revision Signoff -->
-    <div style="position: relative; z-index: 2; border-top: 1px solid #334155; padding-top: 12px; text-align: center;">
-      <div style="font-size: 8pt; font-weight: 800; color: #f59e0b; letter-spacing: 1px; text-transform: uppercase;">
-        Meoncross History &bull; GCSE Masterclass Series
-      </div>
-      <div style="font-size: 7.2pt; color: #94a3b8; margin-top: 3px;">
-        Designed strictly to the Edexcel GCSE (9–1) History Specification (Paper 1: 1HI0/11) &bull; For classroom, intervention &amp; independent exam revision
-      </div>
+    <div style="position: relative; z-index: 2; border-top: 1px solid #cbd5e1; padding-top: 6px; display: flex; justify-content: space-between; align-items: center; font-size: 7.2pt; color: #64748b;">
+      <span>Meoncross History &bull; GCSE Masterclass Series</span>
+      <span>Page 40 &bull; Complete Exam Technique Guide</span>
     </div>
   </div>
   `;
@@ -3071,6 +4603,9 @@ function generateMasterHtml() {
 <head>
   <meta charset="UTF-8">
   <title>Edexcel GCSE (9–1) History: Medicine in Britain &amp; Western Front — Visual Revision &amp; Assessment Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
   <style>
     @page {
       size: A4 portrait;
