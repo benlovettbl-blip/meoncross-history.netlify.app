@@ -3428,12 +3428,414 @@ const PILLAR_IMAGES = {
   gas_gangrene: '/images/brooding_soldier_gas.jpg',
 };
 
+const EXAMINER_TRAPS_DATA = {
+  lesson_1_1: [
+    {
+      trap: 'Assuming medieval people had "no logic" or were unscientific fools.',
+      correction:
+        'Humoural theory was empirical and internally logical based on observable bodily fluids; physicians carefully studied symptoms, uroscopy charts, and pulse rates.',
+    },
+    {
+      trap: "Confusing Hippocrates with Galen's distinct medical breakthroughs.",
+      correction:
+        'Hippocrates (c.460 BC, Greece) created the 4 Humours and clinical observation; Galen (c.129 AD, Rome) developed the Theory of Opposites and teleological anatomy 600 years later.',
+    },
+    {
+      trap: 'Claiming the Catholic Church opposed classical Roman and Greek medicine.',
+      correction:
+        'The Church fiercely defended Galen because his teaching that the body was created with divine purpose (teleology) supported Christian scripture, banning any questioning of his texts.',
+    },
+    {
+      trap: 'Stating medieval people blamed the Black Death on rats and fleas.',
+      correction:
+        "Medieval people had zero knowledge of bacteria or fleas; they blamed God's wrath for human sin, the 1345 planetary conjunction, miasma, and scapegoated religious minorities.",
+    },
+  ],
+  lesson_1_2: [
+    {
+      trap: 'Believing medieval hospitals were designed to cure medical sickness.',
+      correction:
+        'Monastic hospitals provided spiritual care, shelter, and food ("care, not cure"); infectious patients, pregnant women, and the terminally ill were strictly turned away.',
+    },
+    {
+      trap: 'Assuming university physicians treated the general population.',
+      correction:
+        'Physicians were an unaffordable elite (under 100 in England); over 90% of healthcare was delivered by female family members, wise women, and barber-surgeons.',
+    },
+    {
+      trap: 'Treating bloodletting as random, unguided butchery.',
+      correction:
+        'Phlebotomy followed precise astrological charts (Vein Man) and humoural diagnoses to restore bodily balance using cupping, leeches, or vein incision.',
+    },
+    {
+      trap: 'Overlooking the role of apothecaries in urban communities.',
+      correction:
+        'Apothecaries were trained through practical guilds, dispensing herbal theriacs, ointments, and charms far cheaper than university physicians.',
+    },
+  ],
+  lesson_1_3: [
+    {
+      trap: 'Describing government public health action as well-coordinated and national.',
+      correction:
+        'The King and Parliament fled London; public health responses were local, ad-hoc, and ineffective (e.g. Gloucester shutting its gates too late).',
+    },
+    {
+      trap: 'Omitting religious scapegoating in European context.',
+      correction:
+        'Across continental Europe, Jewish communities were falsely accused of poisoning wells, leading to massacres (e.g. Strasbourg 1348, where over 2,000 Jews were burned).',
+    },
+    {
+      trap: 'Believing herbal remedies offered genuine medical protection.',
+      correction:
+        'Pomanders, posies, and sweet herbs were carried solely to ward off miasma (foul air), providing zero biological protection against Yersinia pestis.',
+    },
+    {
+      trap: 'Assuming the Black Death prompted immediate scientific reform.',
+      correction:
+        'The catastrophe reinforced religious orthodoxy; many believed flagellation and penance were the only hope to appease an angry God.',
+    },
+  ],
+  lesson_2_1: [
+    {
+      trap: 'Claiming the Renaissance brought an immediate revolution in ordinary healthcare.',
+      correction:
+        'Ideas changed among the educated scientific elite, but ordinary people and apothecaries continued to rely on humours and miasma for another 200 years.',
+    },
+    {
+      trap: "Overstating Thomas Sydenham's impact on medical treatments.",
+      correction:
+        'Sydenham revolutionized diagnosis (classifying illnesses into specific external species), but his treatments remained traditional (bleeding, purging, cinchona bark).',
+    },
+    {
+      trap: 'Assuming the Royal Society performed direct clinical surgeries.',
+      correction:
+        'The Royal Society (1660) was a scientific academy promoting experimentation (Nullius in Verba); its journal Philosophical Transactions spread empirical discoveries.',
+    },
+    {
+      trap: 'Underestimating the significance of the printing press.',
+      correction:
+        'Movable type prevented copying errors, reduced book costs, and meant new ideas could not be easily suppressed or controlled by Church authorities.',
+    },
+  ],
+  lesson_2_2: [
+    {
+      trap: 'Claiming Vesalius discovered medical cures for human diseases.',
+      correction:
+        "Vesalius revolutionized human anatomy by correcting over 300 of Galen's animal-based errors, but his work produced zero immediate cures or surgical treatments.",
+    },
+    {
+      trap: 'Assuming Vesalius faced immediate Church arrest or execution.',
+      correction:
+        'Vesalius served as court physician to Holy Roman Emperor Charles V; his main opponents were conservative medical academics who refused to abandon Galen.',
+    },
+    {
+      trap: 'Describing Renaissance surgery as safe or antiseptic.',
+      correction:
+        'Internal surgery remained deadly due to shock, blood loss, and infection; anaesthetics and antiseptics did not exist until the mid-19th century.',
+    },
+    {
+      trap: 'Forgetting the visual quality of De Humani Corporis Fabrica (1543).',
+      correction:
+        "Vesalius employed master Renaissance artists from Titian's workshop, creating precise, layered woodcuts that became the global standard.",
+    },
+  ],
+  lesson_2_3: [
+    {
+      trap: 'Crediting William Harvey with inventing successful blood transfusions.',
+      correction:
+        'Harvey proved the circulation of blood and that the heart acts as a mechanical pump (1628), but transfusions were impossible until blood groups (1901) were discovered.',
+    },
+    {
+      trap: "Assuming Harvey's discovery changed medical practice overnight.",
+      correction:
+        "Harvey's breakthrough was initially rejected by conservative doctors as ridiculous; doctors continued bloodletting for two centuries after his work.",
+    },
+    {
+      trap: 'Treating the 1665 Great Plague response as scientifically modern.',
+      correction:
+        'Although watchmen and red crosses ("Lord have mercy on us") enforced quarantine, causes were still blamed on miasma and divine wrath; 200,000 cats/dogs were uselessly slaughtered.',
+    },
+    {
+      trap: 'Confusing the 1348 Black Death with the 1665 Great Plague.',
+      correction:
+        'In 1665, local government public health was far more organised (searchers of the dead, burial pits, trade bans), but medical understanding of the disease remained identical.',
+    },
+  ],
+  lesson_3_1: [
+    {
+      trap: 'Crediting Louis Pasteur with identifying specific human disease bacteria.',
+      correction:
+        'Pasteur proved microbes caused decay (1861 Germ Theory) and developed vaccines for rabies/anthrax; Robert Koch identified specific human disease bacteria (anthrax, TB, cholera).',
+    },
+    {
+      trap: 'Assuming British doctors immediately welcomed Germ Theory in 1861.',
+      correction:
+        'Prominent physicians like Charlton Bastian fiercely defended Spontaneous Generation and miasma until the late 1870s; acceptance took almost two decades.',
+    },
+    {
+      trap: "Forgetting Robert Koch's critical technological breakthroughs.",
+      correction:
+        'Koch succeeded because he invented solid agar jelly cultures, methyl violet chemical dye stains, and high-resolution industrial photomicrography.',
+    },
+    {
+      trap: 'Confusing vaccination with antimicrobial treatment.',
+      correction:
+        'Pasteur and Koch developed preventative vaccines, but neither discovered antibiotics or chemical cures to treat existing bacterial infections.',
+    },
+  ],
+  lesson_3_2: [
+    {
+      trap: 'Assuming chloroform immediately made surgery safer and reduced deaths.',
+      correction:
+        'Chloroform created the "Black Period" of surgery (1846–70): painless patients allowed deeper, longer surgeries, leading to massive spikes in gangrene and fatal infection.',
+    },
+    {
+      trap: "Conflating Joseph Lister's antiseptics with aseptic surgery.",
+      correction:
+        "Lister's carbolic acid (1865) killed bacteria during surgery; aseptic surgery (1890s, Neuber/von Bergmann) excluded bacteria beforehand using autoclaves and rubber gloves.",
+    },
+    {
+      trap: "Thinking Florence Nightingale believed in Pasteur's Germ Theory.",
+      correction:
+        'Nightingale remained a staunch miasmatist; her pavilion hospital designs worked because fresh air, sanitation, and clean bedding accidentally eliminated lethal bacteria.',
+    },
+    {
+      trap: 'Ignoring religious and medical opposition to anaesthetics.',
+      correction:
+        "Many Calvinist doctors opposed chloroform, claiming pain in childbirth was God's punishment for Eve; opposition only ended when Queen Victoria used it in 1853.",
+    },
+  ],
+  lesson_3_3: [
+    {
+      trap: 'Believing Edward Jenner understood the biological mechanism of vaccination.',
+      correction:
+        'Jenner made an empirical observation connecting cowpox to smallpox (1796); he had zero knowledge of viruses, bacteria, or the immune system.',
+    },
+    {
+      trap: 'Assuming John Snow proved the cholera bacterium in 1854.',
+      correction:
+        'Snow proved cholera was water-borne via epidemiological mapping (Broad Street pump); Robert Koch physically discovered the Vibrio cholerae bacterium 30 years later (1884).',
+    },
+    {
+      trap: 'Confusing the permissive 1848 Public Health Act with the compulsory 1875 Act.',
+      correction:
+        'The 1848 Act was non-compulsory (permissive); the 1875 Public Health Act was compulsory, forcing every local authority to provide clean water, sewers, and health inspectors.',
+    },
+    {
+      trap: "Believing the Board of Health immediately accepted Snow's water theory.",
+      correction:
+        "The Board of Health and William Farr rejected Snow's findings in 1854, clinging to miasma theory until the 1866 East London cholera outbreak proved Snow correct.",
+    },
+  ],
+  lesson_4_1: [
+    {
+      trap: 'Crediting only James Watson and Francis Crick with the discovery of DNA.',
+      correction:
+        "Rosalind Franklin's Photo 51 X-ray crystallography and Maurice Wilkins were vital in proving the double-helix structure at King's College London (1953).",
+    },
+    {
+      trap: 'Assuming the Human Genome Project immediately cured genetic diseases.',
+      correction:
+        'Mapping the human genome (2003) enabled precision diagnostic testing and gene mutation identification (e.g. BRCA1), but genetic gene therapy cures remain in early clinical trials.',
+    },
+    {
+      trap: 'Overlooking the role of lifestyle and epidemiology in modern disease.',
+      correction:
+        'Post-1950 British epidemiological studies (e.g. Doll and Hill on smoking) proved that non-communicable diseases are overwhelmingly driven by lifestyle factors (diet, alcohol, tobacco).',
+    },
+    {
+      trap: 'Confusing medical imaging technologies.',
+      correction:
+        'X-rays reveal high-density bone; CT scans create cross-sectional 3D slices; MRI scans use magnetic fields for soft tissue; PET scans track metabolic cellular activity.',
+    },
+  ],
+  lesson_4_2: [
+    {
+      trap: 'Calling Salvarsan 606 or Prontosil an "antibiotic".',
+      correction:
+        'Salvarsan 606 (Ehrlich, 1909) and Prontosil (Domagk, 1932) are synthetic chemical magic bullets; antibiotics are natural chemical compounds produced by living microorganisms.',
+    },
+    {
+      trap: 'Assuming the British Medical Association (BMA) welcomed the NHS in 1948.',
+      correction:
+        'Over 90% of doctors voted against the NHS initially; Health Minister Aneurin Bevan had to "stuff their mouths with gold" by guaranteeing GP salaries and allowing private practice.',
+    },
+    {
+      trap: 'Believing the NHS immediately eliminated all health inequalities.',
+      correction:
+        'The NHS removed financial barriers to access at the point of delivery, but severe regional inequalities and prescription charges (1951) emerged within three years.',
+    },
+    {
+      trap: 'Forgetting the foundational role of the 1942 Beveridge Report.',
+      correction:
+        'William Beveridge identified the "Five Giants" (Disease, Want, Ignorance, Squalor, Idleness), establishing public consensus for universal welfare healthcare.',
+    },
+  ],
+  lesson_4_3: [
+    {
+      trap: 'Believing Alexander Fleming developed penicillin for medical treatment.',
+      correction:
+        'Fleming made an accidental laboratory discovery in 1928 but failed to purify it and abandoned it; Howard Florey and Ernst Chain isolated and purified it for systemic use in 1940.',
+    },
+    {
+      trap: 'Assuming Britain mass-produced penicillin during World War II.',
+      correction:
+        'British factories were bombed and dedicated to munitions; Florey traveled to the USA (Peoria, Illinois) where US government war loans and beer brewing vats financed deep-tank fermentation.',
+    },
+    {
+      trap: 'Forgetting the tragic Albert Alexander clinical trial (1941).',
+      correction:
+        "Penicillin cleared Alexander's bloodstream infection, but the Oxford team ran out of the drug and he died, conclusively proving the urgent necessity for industrial mass production.",
+    },
+    {
+      trap: 'Ignoring the modern crisis of antibiotic resistance.',
+      correction:
+        'Overuse and agricultural misuse of antibiotics have led to multi-drug resistant superbugs (e.g. MRSA), threatening to return medicine to a pre-antibiotic era.',
+    },
+  ],
+  lesson_4_4: [
+    {
+      trap: 'Stating that chemotherapy or radiotherapy completely prevents lung cancer.',
+      correction:
+        'Chemo/radiotherapy treat existing tumours (with low 5-year survival rates); prevention relies entirely on state health campaigns and smoking legislation.',
+    },
+    {
+      trap: 'Assuming government anti-smoking legislation was implemented swiftly.',
+      correction:
+        'Doll and Hill proved the causal link in 1950, but tobacco tax revenue and industry lobbying delayed decisive legislation (indoor ban in 2007, plain packs in 2016) by over 50 years.',
+    },
+    {
+      trap: 'Overlooking modern high-tech diagnostic tools.',
+      correction:
+        'Standard chest X-rays frequently miss early microscopic tumours; CT scans, PET-CT, and endobronchial ultrasound (EBUS) with biopsy are essential for early detection.',
+    },
+    {
+      trap: 'Confusing targeted biological therapies with traditional chemotherapy.',
+      correction:
+        'Traditional chemotherapy kills all rapidly dividing cells; modern genomic immunotherapy and targeted drugs attack specific cancer cell genetic mutations.',
+    },
+  ],
+  lesson_5_1: [
+    {
+      trap: 'Assuming motor ambulances were deployed effectively from August 1914.',
+      correction:
+        'The British Army initially banned motor ambulances and relied on horse carts; motor ambulances were funded by the British Red Cross in late 1914 because horse carts shook broken limbs terribly.',
+    },
+    {
+      trap: 'Confusing the contrasting terrain of Ypres with Cambrai.',
+      correction:
+        'Ypres was waterlogged Flanders clay where artillery destroyed natural drainage, causing drowning in mud; Cambrai featured dry, undulating chalky ground suitable for mass tank warfare.',
+    },
+    {
+      trap: 'Stating that ambulance trains evacuated casualties from frontline trenches.',
+      correction:
+        'Ambulance trains and canal barges operated exclusively between Casualty Clearing Stations and Base Hospitals along the coast, never at the frontline.',
+    },
+    {
+      trap: 'Overlooking the communication challenges of destroyed telephone cables.',
+      correction:
+        'Constant shellfire severed telephone wires, forcing medical staff to rely on runner messengers, carrier pigeons, and visual flags under heavy artillery fire.',
+    },
+  ],
+  lesson_5_2: [
+    {
+      trap: 'Believing trenches were dug in continuous, straight defensive lines.',
+      correction:
+        'Trenches were constructed in a zigzag (traversed) pattern to compartmentalise artillery blast damage and prevent enemy riflemen firing down the entire length of the trench.',
+    },
+    {
+      trap: 'Assuming frontline trenches were where soldiers lived permanently.',
+      correction:
+        'Soldiers rotated in a strict cycle (typically 4–6 days in front line, 4 in support, 8 in reserve, followed by rest); continuous frontline duty shattered mental and physical health.',
+    },
+    {
+      trap: 'Forgetting the critical role of communications trenches.',
+      correction:
+        'Communications trenches connected the front line to support and reserve lines, allowing stretcher-bearers and medical supplies to move under cover from enemy snipers.',
+    },
+    {
+      trap: 'Confusing the functions of support and reserve trenches.',
+      correction:
+        'Support trenches (80 yards back) housed counter-attack troops; reserve trenches (several hundred yards back) held reserve troops and supplies if the front line was overrun.',
+    },
+  ],
+  lesson_5_3: [
+    {
+      trap: 'Believing poison gas caused the majority of deaths on the Western Front.',
+      correction:
+        'Poison gas caused under 3% of British deaths; artillery shrapnel and high explosive shells caused over 58% of all wounds and fatalities.',
+    },
+    {
+      trap: 'Confusing the medical effects of chlorine, phosgene, and mustard gas.',
+      correction:
+        'Chlorine (1915) and phosgene (1915) suffocated the lungs; mustard gas (1917) was an odourless blistering agent that burned skin, blinded eyes, and contaminated mud for weeks.',
+    },
+    {
+      trap: 'Assuming gas gangrene was caused by poisonous weapon chemicals.',
+      correction:
+        'Gas gangrene was caused by soil bacteria (Clostridium perfringens) in heavily manured Belgian farmland blasted into deep tissue wounds by artillery shrapnel.',
+    },
+    {
+      trap: 'Overlooking the Brodie steel helmet introduced in 1915.',
+      correction:
+        'The soft cloth cap was replaced by the steel Brodie helmet in 1915, cutting fatal head injuries from shrapnel and falling debris by over 80%.',
+    },
+  ],
+  lesson_5_4: [
+    {
+      trap: 'Thinking surgeries were routinely performed at the Regimental Aid Post (RAP).',
+      correction:
+        'RAPs were 200 yards behind the front line providing immediate first aid (dressings, splints, morphine); life-saving surgery was performed at Casualty Clearing Stations (CCS).',
+    },
+    {
+      trap: 'Forgetting the vital triage system at Casualty Clearing Stations.',
+      correction:
+        'The CCS was the most critical surgical hub, dividing casualties into three categories: walking wounded, urgent surgical cases, and moribund (too severely injured to survive).',
+    },
+    {
+      trap: 'Overlooking the role of FANY (First Aid Nursing Yeomanry).',
+      correction:
+        'FANY women drove frontline ambulances, ran mobile canteens, and operated soup kitchens under fire, breaking military resistance to female front-line presence.',
+    },
+    {
+      trap: 'Confusing Field Ambulances with motor vehicles.',
+      correction:
+        'A "Field Ambulance" was not a vehicle; it was a mobile medical unit of the RAMC (around 240 men) that established and staffed Dressing Stations (ADS/MDS).',
+    },
+  ],
+  lesson_5_5: [
+    {
+      trap: 'Crediting Hugh Owen Thomas with inventing the Thomas Splint during WWI.',
+      correction:
+        'Hugh Owen Thomas designed the splint in the 19th century; his nephew Robert Jones introduced it to the Western Front in 1915, cutting compound fracture mortality from 80% to below 20%.',
+    },
+    {
+      trap: 'Believing blood transfusions could be stored indefinitely from 1914.',
+      correction:
+        "Direct transfusions required donor and patient side-by-side; storage was impossible until sodium citrate (1914) and glucose (1916) enabled Oswald Robertson's 1917 Cambrai blood depot.",
+    },
+    {
+      trap: 'Stating that Harold Gillies cured head and brain wounds.',
+      correction:
+        "Gillies pioneered plastic facial reconstruction (Queen's Hospital, Sidcup) for disfigured soldiers using tube pedicle skin grafts; Harvey Cushing pioneered brain surgery techniques.",
+    },
+    {
+      trap: 'Assuming mobile X-ray units were stationed in frontline trenches.',
+      correction:
+        'Mobile X-ray vans operated at Casualty Clearing Stations and Base Hospitals; equipment was fragile and required electricity and darkroom facilities.',
+    },
+  ],
+};
+
 SPREADS.forEach((s, idx) => {
   const key = LESSON_KEYS[idx];
   if (ENRICHMENTS_DATA[key]) {
     s.left.deepKnowledgeGrid = ENRICHMENTS_DATA[key].deepKnowledgeGrid;
     s.left.vocabBank = ENRICHMENTS_DATA[key].vocabBank;
     s.left.causalFactors = ENRICHMENTS_DATA[key].causalFactors;
+  }
+  if (EXAMINER_TRAPS_DATA[key]) {
+    s.left.examinerTraps = EXAMINER_TRAPS_DATA[key];
   }
   if (s.left && s.left.pillars) {
     s.left.pillars.forEach((p) => {
@@ -3485,12 +3887,13 @@ function getImageDataUri(imgPath) {
   return imgPath;
 }
 
-// Render Left Knowledge Page (Dense Level 4-9 Masterclass)
+// Render Left Knowledge Page (Dense Level 4-9 Masterclass with Examiner Traps)
 function renderLeftPage(data, pageNum) {
   const left = data.left;
   const deepGrid = left.deepKnowledgeGrid || [];
   const vocab = left.vocabBank || [];
   const causal = left.causalFactors || [];
+  const traps = left.examinerTraps || [];
 
   // Pillars HTML (Top Tier)
   const pillarsHtml = left.pillars
@@ -3500,7 +3903,7 @@ function renderLeftPage(data, pageNum) {
         const dataUri = getImageDataUri(pillar.image);
         mediaHtml = `<div style="width: 44px; height: 44px; border-radius: 50%; overflow: hidden; border: 1.5px solid #1e3a8a; margin-right: 8px; flex-shrink: 0; background: #e2e8f0;"><img src="${dataUri}" style="width: 100%; height: 100%; object-fit: cover;" alt="${pillar.title}" /></div>`;
       } else {
-        mediaHtml = `<div style="width: 44px; height: 44px; border-radius: 50%; background: #eff6ff; border: 1.5px solid #1e3a8a; display: flex; align-items: center; justify-content: center; font-size: 16pt; margin-right: 8px; flex-shrink: 0;">${pillar.icon || '🏛️'}</div>`;
+        mediaHtml = `<div style="width: 44px; height: 44px; border-radius: 50%; background: #eff6ff; border: 1.5px solid #1e3a8a; display: flex; align-items: center; justify-content: center; font-size: 14pt; margin-right: 8px; flex-shrink: 0;">${pillar.iconFallback || '🏛️'}</div>`;
       }
       const bulletsHtml = pillar.bullets
         .map((b) => `<li style="margin-bottom: 2px;">${b}</li>`)
@@ -3528,14 +3931,14 @@ function renderLeftPage(data, pageNum) {
     const colsHtml = deepGrid
       .map((col) => {
         const ptsHtml = col.points
-          .map((pt) => `<li style="margin-bottom: 3px;">${pt}</li>`)
+          .map((pt) => `<li style="margin-bottom: 2px;">${pt}</li>`)
           .join('');
         return `
         <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 7px;">
-          <div style="font-size: 7.2pt; font-weight: 800; color: #1e3a8a; border-bottom: 1px solid #e2e8f0; padding-bottom: 3px; margin-bottom: 4px;">
+          <div style="font-size: 7.4pt; font-weight: 800; color: #1e3a8a; border-bottom: 1px solid #e2e8f0; padding-bottom: 3px; margin-bottom: 4px;">
             ${col.title}
           </div>
-          <ul style="margin: 0; padding-left: 11px; font-size: 6.4pt; color: #1e293b; line-height: 1.3;">
+          <ul style="margin: 0; padding-left: 11px; font-size: 6.6pt; color: #1e293b; line-height: 1.3;">
             ${ptsHtml}
           </ul>
         </div>
@@ -3544,9 +3947,9 @@ function renderLeftPage(data, pageNum) {
       .join('');
 
     deepGridHtml = `
-      <div style="margin-bottom: 8px; border: 1.5px solid #0f172a; border-radius: 6px; padding: 7px 9px; background: #fafafa;">
-        <div style="font-size: 7.6pt; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; display: flex; justify-content: space-between;">
-          <span>✦ Core Knowledge Matrix &bull; Level 4 to Level 9 Grounded Evidence:</span>
+      <div style="margin-bottom: 7px; border: 1.5px solid #0f172a; border-radius: 6px; padding: 7px 9px; background: #fafafa;">
+        <div style="font-size: 7.8pt; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; display: flex; justify-content: space-between;">
+          <span>Core Knowledge Matrix &bull; Level 4 to Level 9 Grounded Evidence:</span>
           <span style="color: #64748b; font-weight: 700;">Textbook Grounded Evidence</span>
         </div>
         <div style="display: grid; grid-template-columns: repeat(${deepGrid.length}, 1fr); gap: 6px;">
@@ -3596,7 +3999,7 @@ function renderLeftPage(data, pageNum) {
       `;
     }
     bridgeHtml = `
-      <div style="flex: 1.3; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 5px; padding: 6px 8px; font-size: 6.5pt; line-height: 1.35; color: #14532d;">
+      <div style="flex: 1.3; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 5px; padding: 6px 8px; font-size: 6.6pt; line-height: 1.35; color: #14532d;">
         <div style="font-size: 7pt; font-weight: 800; color: #15803d; text-transform: uppercase; margin-bottom: 3px;">
           ⚡ ${mb.title}
         </div>
@@ -3608,7 +4011,7 @@ function renderLeftPage(data, pageNum) {
   const tier3Html =
     vectorsHtml || bridgeHtml
       ? `
-    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+    <div style="display: flex; gap: 8px; margin-bottom: 7px;">
       ${vectorsHtml}
       ${bridgeHtml}
     </div>
@@ -3622,9 +4025,9 @@ function renderLeftPage(data, pageNum) {
       .map((v) => `<div style="margin-bottom: 2.5px;"><strong>${v.term}:</strong> ${v.def}</div>`)
       .join('');
     vocabHtml = `
-      <div style="flex: 1; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 5px; padding: 6px 8px; font-size: 6.5pt; line-height: 1.3; color: #334155;">
+      <div style="flex: 1; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 5px; padding: 6px 8px; font-size: 6.6pt; line-height: 1.3; color: #334155;">
         <div style="font-size: 7pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 3px; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
-          🔑 Grade 8–9 Key Vocabulary Bank:
+          Grade 8–9 Key Vocabulary Bank:
         </div>
         ${vItems}
       </div>
@@ -3642,7 +4045,7 @@ function renderLeftPage(data, pageNum) {
       .map((p) => `<li style="margin-bottom: 2px;">${p}</li>`)
       .join('');
     causalOrSynopticHtml = `
-      <div style="flex: 1.8; background: #eff6ff; border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 6px 8px; font-size: 6.5pt; line-height: 1.3; color: #1e293b;">
+      <div style="flex: 1.8; background: #eff6ff; border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 6px 8px; font-size: 6.6pt; line-height: 1.3; color: #1e293b;">
         <div style="font-size: 7.2pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 3px; border-bottom: 1px solid #bfdbfe; padding-bottom: 2px;">
           ★ ${sb.title}
         </div>
@@ -3659,11 +4062,11 @@ function renderLeftPage(data, pageNum) {
       </div>
     `;
   } else if (causal && causal.length > 0) {
-    const cItems = causal.map((c) => `<div style="margin-bottom: 3px;">${c}</div>`).join('');
+    const cItems = causal.map((c) => `<div style="margin-bottom: 2.5px;">${c}</div>`).join('');
     causalOrSynopticHtml = `
-      <div style="flex: 1.4; background: #fffbeb; border: 1px solid #fde68a; border-radius: 5px; padding: 6px 8px; font-size: 6.5pt; line-height: 1.3; color: #78350f;">
+      <div style="flex: 1.4; background: #fffbeb; border: 1px solid #fde68a; border-radius: 5px; padding: 6px 8px; font-size: 6.6pt; line-height: 1.3; color: #78350f;">
         <div style="font-size: 7pt; font-weight: 800; color: #92400e; text-transform: uppercase; margin-bottom: 3px; border-bottom: 1px solid #fef3c7; padding-bottom: 2px;">
-          ⚖️ Causal Factors &amp; Analysis:
+          Causal Factors &amp; Analysis:
         </div>
         ${cItems}
       </div>
@@ -3680,13 +4083,44 @@ function renderLeftPage(data, pageNum) {
   `
       : '';
 
+  // Tier 5: Examiner Traps & Grade 9 Pitfalls (Clean Professional Styling)
+  let trapsHtml = '';
+  if (traps && traps.length > 0) {
+    const tItems = traps
+      .map(
+        (t) => `
+      <div>
+        <strong>&bull; Common Error:</strong> ${t.trap}<br/>
+        <strong style="color: #1e3a8a;">&rarr; Grade 9 Correction:</strong> ${t.correction}
+      </div>
+    `,
+      )
+      .join('');
+
+    trapsHtml = `
+      <div style="margin-top: 6px; border: 1.5px solid #0f172a; border-radius: 5px; padding: 6px 9px; background: #fafafa;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">
+          <span style="font-size: 7.4pt; font-weight: 800; color: #991b1b; text-transform: uppercase; letter-spacing: 0.5px;">
+            Examiner Traps &amp; Grade 9 Pitfalls:
+          </span>
+          <span style="font-size: 6.5pt; font-weight: 700; color: #475569;">
+            Edexcel Mark Scheme Pitfalls &rarr; Grade 9 Analytical Corrections
+          </span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 10px; font-size: 6.7pt; line-height: 1.32; color: #1e293b;">
+          ${tItems}
+        </div>
+      </div>
+    `;
+  }
+
   return `
   <div class="page page-left" style="box-sizing: border-box; width: 794px; height: 1123px; padding: 22px 24px; font-family: 'Inter', sans-serif; background-color: #ffffff; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;">
     <div>
       <!-- Top Header -->
       <div style="border-bottom: 2px solid #0f172a; padding-bottom: 4px; margin-bottom: 8px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
-          <span style="font-size: 8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px;">
+          <span style="font-size: 8.5pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px;">
             ${left.tag}
           </span>
           <span style="font-size: 7pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; padding: 2px 6px; border-radius: 3px; border: 1px solid #bfdbfe;">
@@ -3696,13 +4130,13 @@ function renderLeftPage(data, pageNum) {
         <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 15pt; color: #0f172a; margin: 2px 0 1px 0; border: none; padding: 0; font-weight: 900;">
           ${left.headline}
         </h1>
-        <p style="font-size: 7.4pt; color: #475569; margin: 0; line-height: 1.35;">
+        <p style="font-size: 7.6pt; color: #475569; margin: 0; line-height: 1.35;">
           ${left.summary}
         </p>
       </div>
 
       <!-- Tier 1: Core 3 Pillars -->
-      <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+      <div style="display: flex; gap: 8px; margin-bottom: 7px;">
         ${pillarsHtml}
       </div>
 
@@ -3714,6 +4148,9 @@ function renderLeftPage(data, pageNum) {
 
       <!-- Tier 4: Vocabulary Bank & Causal Factors -->
       ${tier4Html}
+
+      <!-- Tier 5: Examiner Traps & Grade 9 Pitfalls -->
+      ${trapsHtml}
     </div>
 
     <!-- Footer Signoff -->
@@ -3724,7 +4161,6 @@ function renderLeftPage(data, pageNum) {
   </div>
   `;
 }
-
 // Render Right Exam Page (Complete Question Coverage & Ruled Writing Lines)
 function renderRightPage(data, pageNum) {
   const right = data.right;
@@ -4097,114 +4533,223 @@ function renderRightPage(data, pageNum) {
 // Render Front Cover Page (Page 1)
 function renderCoverPage() {
   return `
-  <div class="page page-cover" style="box-sizing: border-box; width: 794px; height: 1123px; padding: 32px 36px; font-family: 'Inter', sans-serif; background: #ffffff; color: #0f172a; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; position: relative;">
-    <div style="position: absolute; top: 16px; left: 16px; right: 16px; bottom: 16px; border: 2px solid #0f172a; border-radius: 8px; pointer-events: none;"></div>
+  <div class="page page-cover" style="box-sizing: border-box; width: 794px; height: 1123px; padding: 24px 28px; font-family: 'Inter', sans-serif; background: #ffffff; color: #0f172a; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; position: relative;">
+    <div style="position: absolute; top: 12px; left: 12px; right: 12px; bottom: 12px; border: 2px solid #0f172a; border-radius: 8px; pointer-events: none;"></div>
 
-    <div style="position: relative; z-index: 2;">
-      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0f172a; padding-bottom: 8px; margin-bottom: 14px;">
-        <span style="font-size: 9pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 1.2px;">
-          Edexcel GCSE (9–1) History &bull; Paper 1 (1HI0/11)
-        </span>
-        <span style="font-size: 8pt; font-weight: 700; color: #475569; background: #f8fafc; border: 1px solid #cbd5e1; padding: 3px 8px; border-radius: 4px;">
-          Thematic Study &amp; Historic Environment
-        </span>
-      </div>
-
-      <div style="margin-bottom: 12px;">
-        <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 28pt; font-weight: 900; line-height: 1.05; margin: 0 0 4px 0; color: #0f172a; letter-spacing: -0.5px;">
-          Medicine in Britain
-        </h1>
-        <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 16pt; font-style: italic; color: #475569; margin-bottom: 6px;">
-          c.1250–present
+    <div style="position: relative; z-index: 2; display: flex; flex-direction: column; flex: 1; justify-content: space-between;">
+      <div>
+        <!-- Top Bar -->
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0f172a; padding-bottom: 5px; margin-bottom: 8px;">
+          <span style="font-size: 8.8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.8px;">
+            Edexcel GCSE (9–1) History &bull; Paper 1 (1HI0/11)
+          </span>
+          <span style="font-size: 7.5pt; font-weight: 700; color: #475569; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2px 7px; border-radius: 4px;">
+            Thematic Study &amp; Historic Environment
+          </span>
         </div>
-        <div style="font-size: 10.5pt; font-weight: 700; color: #1e3a8a; letter-spacing: 0.2px;">
-          &amp; The British Sector of the Western Front, 1914–1918
-        </div>
-      </div>
 
-      <div style="border: 1px solid #cbd5e1; background: #f8fafc; border-radius: 6px; padding: 7px 12px; margin-bottom: 12px;">
-        <div style="font-size: 8.5pt; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px;">
-          Visual Revision Masterclasses &amp; Exam Assessment Guide
-        </div>
-        <div style="font-size: 7.5pt; color: #475569; margin-top: 1px;">
-          18 Comprehensive Dual-Page Knowledge Maps &bull; Complete Edexcel Question Rotation &bull; Level 4–9 Analytical Phrasing
-        </div>
-      </div>
-
-      <div style="border: 1.5px solid #0f172a; border-radius: 6px; padding: 10px 14px; background: #ffffff; margin-bottom: 12px;">
-        <div style="font-size: 8pt; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">
-          Pupil Name: &nbsp;&nbsp;__________________________________________________________________________
-        </div>
-      </div>
-
-      <div style="font-size: 7.8pt; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; display: flex; justify-content: space-between;">
-        <span>Official Edexcel GCSE Paper 1 Specification Content:</span>
-        <span style="color: #64748b; font-weight: 700;">Full Syllabus Overview (Topics 1–4 &amp; Section A)</span>
-      </div>
-
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 6.8pt; line-height: 1.32; color: #1e293b;">
-        <div>
-          <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 7px 9px; margin-bottom: 8px; background: #ffffff;">
-            <strong style="color: #1e3a8a; display: block; font-size: 7.2pt; margin-bottom: 2px;">
-              TOPIC 1: c1250–c1500 &bull; MEDICINE IN MEDIEVAL ENGLAND
-            </strong>
-            <p style="margin: 0 0 3px 0;"><strong>Ideas about Causes:</strong> Supernatural &amp; religious (God's punishment, devil, testing faith); Astrological alignments (1345 conjunction); Rational Four Humours (Hippocrates); Miasma ('corrupted air').</p>
-            <p style="margin: 0 0 3px 0;"><strong>Approaches to Treatment &amp; Prevention:</strong> Religious actions (prayer, fasting, pilgrimage); Humoural treatments (bloodletting, purging, cupping, leeches); Theory of Opposites (Galen); Traditional herbal remedies &amp; <em>Regimen Sanitatis</em>; Purifying air.</p>
-            <p style="margin: 0 0 3px 0;"><strong>Medical Care:</strong> Home care by female family; Wise women; Apothecaries &amp; barber-surgeons; University-trained physicians; Monastic hospitals (endowed by Church, e.g. St Bartholomew's).</p>
-            <p style="margin: 0;"><strong>Case Study &bull; The Black Death (1348–49):</strong> Beliefs about causes, treatments, and prevention; Local authority responses and quarantine attempts.</p>
+        <!-- Header Row with Title on Left, Pupil Box on Right -->
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 8px; border-bottom: 1.5px solid #0f172a; padding-bottom: 8px;">
+          <div>
+            <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 26pt; font-weight: 900; line-height: 1.05; margin: 0; color: #0f172a; letter-spacing: -0.5px;">
+              Medicine in Britain
+            </h1>
+            <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 13.5pt; font-style: italic; color: #475569; margin: 2px 0 3px 0;">
+              c.1250–present &bull; Thematic Study
+            </div>
+            <div style="font-size: 8.8pt; font-weight: 700; color: #1e3a8a;">
+              &amp; The British Sector of the Western Front, 1914–1918 (Historic Environment)
+            </div>
           </div>
-
-          <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 7px 9px; background: #ffffff;">
-            <strong style="color: #1e3a8a; display: block; font-size: 7.2pt; margin-bottom: 2px;">
-              TOPIC 2: c1500–c1700 &bull; THE MEDICAL RENAISSANCE IN ENGLAND
-            </strong>
-            <p style="margin: 0 0 3px 0;"><strong>Ideas about Causes:</strong> Scientific method; Decline of Church monopoly; Continuity in popular belief; Thomas Sydenham (clinical observation, disease classification).</p>
-            <p style="margin: 0 0 3px 0;"><strong>Transmission of Ideas:</strong> The Royal Society (1660, <em>Nullius in Verba</em>; <em>Philosophical Transactions</em>, 1665); The Gutenberg movable printing press.</p>
-            <p style="margin: 0 0 3px 0;"><strong>Treatment &amp; Care:</strong> Continuity in humoural treatments; New World herbal remedies (quinine, ipecacuanha); Iatrochemistry; Dissolution of monasteries (1536).</p>
-            <p style="margin: 0 0 3px 0;"><strong>Key Individuals:</strong> Andreas Vesalius (<em>De Humani Corporis Fabrica</em>, 1543; human dissection correcting Galen's 300+ errors); William Harvey (circulation of blood, mechanical pump, 1628).</p>
-            <p style="margin: 0;"><strong>Case Study &bull; The Great Plague in London (1665):</strong> Comparison with Black Death; quarantine, red cross 'Lord have mercy on us', searchers of the dead.</p>
+          <div style="border: 1.5px solid #0f172a; border-radius: 6px; padding: 9px 13px; background: #f8fafc; width: 315px; flex-shrink: 0;">
+            <div style="font-size: 7.2pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 5px;">
+              Candidate Information:
+            </div>
+            <div style="font-size: 8.5pt; font-weight: 700; color: #0f172a;">
+              Pupil Name: <span style="display: inline-block; width: 210px; border-bottom: 1.5px solid #0f172a; margin-left: 4px;">&nbsp;</span>
+            </div>
           </div>
         </div>
 
-        <div>
-          <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 7px 9px; margin-bottom: 8px; background: #ffffff;">
-            <strong style="color: #1e3a8a; display: block; font-size: 7.2pt; margin-bottom: 2px;">
-              TOPIC 3: c1700–c1900 &bull; 18th- &amp; 19th-CENTURY MEDICINE
-            </strong>
-            <p style="margin: 0 0 3px 0;"><strong>Ideas about Causes:</strong> Spontaneous generation; Louis Pasteur's Germ Theory (1861); Robert Koch &amp; bacteriology (agar, methyl violet staining, identifying anthrax, TB, cholera).</p>
-            <p style="margin: 0 0 3px 0;"><strong>Prevention &amp; Treatment:</strong> Anaesthetics (nitrous oxide, ether, James Simpson's chloroform, 1847); Antiseptics (Joseph Lister's carbolic acid, 1865); Aseptic surgery (autoclaves, rubber gloves).</p>
-            <p style="margin: 0 0 3px 0;"><strong>Hospital Care &amp; Public Health:</strong> Florence Nightingale (pavilion plan, sanitation, nursing training); Edward Jenner (smallpox vaccine, 1796); 1848 &amp; 1875 Public Health Acts.</p>
-            <p style="margin: 0;"><strong>Case Study &bull; John Snow &amp; Cholera (1854):</strong> Broad Street pump investigation and removal of pump handle.</p>
+        <!-- Syllabus Overview Header Bar -->
+        <div style="display: flex; justify-content: space-between; align-items: center; background: #0f172a; color: #ffffff; padding: 5px 12px; border-radius: 4px; margin-bottom: 8px;">
+          <span style="font-size: 8.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">
+            Official Pearson Edexcel Paper 1 Specification Content
+          </span>
+          <span style="font-size: 7.2pt; color: #cbd5e1;">
+            Full Word-for-Word Syllabus Matrix &bull; Topics 1–4 &amp; Section A
+          </span>
+        </div>
+
+        <!-- 2-Column Specification Grid -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 7.6pt; line-height: 1.34; color: #1e293b;">
+          <!-- Left Column: Unit 1 & Unit 2 -->
+          <div>
+            <!-- Unit 1 -->
+            <div style="border: 1.5px solid #1e3a8a; border-radius: 6px; padding: 9px 12px; margin-bottom: 8px; background: #ffffff;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #bfdbfe; padding-bottom: 3px; margin-bottom: 5px;">
+                <strong style="color: #1e3a8a; font-size: 8.3pt; text-transform: uppercase; letter-spacing: 0.3px;">
+                  Unit 1: c1250–c1500 &bull; Medieval England
+                </strong>
+                <span style="font-size: 6.8pt; font-weight: 800; color: #1e3a8a; background: #eff6ff; padding: 1px 5px; border-radius: 3px;">Section B</span>
+              </div>
+              <div style="margin-bottom: 5px;">
+                <strong style="color: #0f172a; font-size: 7.8pt;">Ideas about the cause of disease and illness:</strong>
+                <div style="padding-left: 8px; margin-top: 2px;">
+                  &bull; Supernatural and religious explanations of the cause of disease.<br/>
+                  &bull; Rational explanations: the Theory of the Four Humours and the miasma theory.<br/>
+                  &bull; The continuing influence in England of Galen.
+                </div>
+              </div>
+              <div style="margin-bottom: 5px;">
+                <strong style="color: #0f172a; font-size: 7.8pt;">Approaches to prevention and treatment:</strong>
+                <div style="padding-left: 8px; margin-top: 2px;">
+                  &bull; Connection with ideas about disease: religious actions, bloodletting and purging, purifying the air.<br/>
+                  &bull; Traditional approaches to treatment and care: the role of the physician, apothecary and barber surgeon; the role of hospitals, care within the community and at home, including the use of herbal remedies.
+                </div>
+              </div>
+              <div>
+                <strong style="color: #0f172a; font-size: 7.8pt;">Case Study:</strong>
+                <div style="padding-left: 8px; margin-top: 2px;">
+                  &bull; <strong>Dealing with the Black Death, 1348–49:</strong> approaches to treatment and attempts to prevent its spread.
+                </div>
+              </div>
+            </div>
+
+            <!-- Unit 2 -->
+            <div style="border: 1.5px solid #1e3a8a; border-radius: 6px; padding: 9px 12px; background: #ffffff;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #bfdbfe; padding-bottom: 3px; margin-bottom: 5px;">
+                <strong style="color: #1e3a8a; font-size: 8.3pt; text-transform: uppercase; letter-spacing: 0.3px;">
+                  Unit 2: c1500–c1700 &bull; The Medical Renaissance
+                </strong>
+                <span style="font-size: 6.8pt; font-weight: 800; color: #1e3a8a; background: #eff6ff; padding: 1px 5px; border-radius: 3px;">Section B</span>
+              </div>
+              <div style="margin-bottom: 5px;">
+                <strong style="color: #0f172a; font-size: 7.8pt;">Ideas about the cause of disease and illness:</strong>
+                <div style="padding-left: 8px; margin-top: 2px;">
+                  &bull; Continuity and change in explanations of the cause of disease and illness.<br/>
+                  &bull; A scientific approach, including the work of Thomas Sydenham in improving diagnosis.<br/>
+                  &bull; The influence of the printing press and the work of the Royal Society on the transmission of ideas.
+                </div>
+              </div>
+              <div style="margin-bottom: 5px;">
+                <strong style="color: #0f172a; font-size: 7.8pt;">Approaches to prevention and treatment:</strong>
+                <div style="padding-left: 8px; margin-top: 2px;">
+                  &bull; Continuity and change in approaches to prevention, treatment and care in the community and in hospitals.<br/>
+                  &bull; Improvements in medical training and the influence in England of the work of Vesalius.
+                </div>
+              </div>
+              <div>
+                <strong style="color: #0f172a; font-size: 7.8pt;">Case Studies:</strong>
+                <div style="padding-left: 8px; margin-top: 2px;">
+                  &bull; <strong>Key individual:</strong> William Harvey and the discovery of the circulation of the blood.<br/>
+                  &bull; <strong>Dealing with the Great Plague in London (1665):</strong> approaches to treatment and attempts to prevent its spread.
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 7px 9px; margin-bottom: 8px; background: #ffffff;">
-            <strong style="color: #1e3a8a; display: block; font-size: 7.2pt; margin-bottom: 2px;">
-              TOPIC 4: c1900–PRESENT &bull; MEDICINE IN MODERN BRITAIN
-            </strong>
-            <p style="margin: 0 0 3px 0;"><strong>Ideas about Causes:</strong> Genetics (DNA structure 1953, Crick, Watson, Franklin; Human Genome Project 2003); Lifestyle factors (smoking, diet, alcohol).</p>
-            <p style="margin: 0 0 3px 0;"><strong>Diagnosis &amp; Treatment:</strong> Scans (X-rays, CT, MRI, ultrasound); Magic bullets (Salvarsan 606, Prontosil); Penicillin (Fleming, Florey &amp; Chain); NHS (1948); Advanced surgery &amp; mass vaccination.</p>
-            <p style="margin: 0;"><strong>Case Study &bull; Fight Against Lung Cancer:</strong> High-tech diagnosis, radiotherapy/chemo/immunotherapy, state intervention (smoking bans, plain packaging).</p>
-          </div>
+          <!-- Right Column: Unit 3, Unit 4 & Section A -->
+          <div>
+            <!-- Unit 3 -->
+            <div style="border: 1.5px solid #1e3a8a; border-radius: 6px; padding: 8px 11px; margin-bottom: 7px; background: #ffffff;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #bfdbfe; padding-bottom: 2px; margin-bottom: 4px;">
+                <strong style="color: #1e3a8a; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.3px;">
+                  Unit 3: c1700–c1900 &bull; 18th- &amp; 19th-Century Britain
+                </strong>
+                <span style="font-size: 6.8pt; font-weight: 800; color: #1e3a8a; background: #eff6ff; padding: 1px 5px; border-radius: 3px;">Section B</span>
+              </div>
+              <div style="margin-bottom: 4px;">
+                <strong style="color: #0f172a; font-size: 7.6pt;">Ideas about cause:</strong>
+                <div style="padding-left: 8px; margin-top: 1px;">
+                  &bull; Continuity and change in explanations of disease cause.<br/>
+                  &bull; The influence of Pasteur's Germ Theory and Koch's work on microbes.
+                </div>
+              </div>
+              <div style="margin-bottom: 4px;">
+                <strong style="color: #0f172a; font-size: 7.6pt;">Care, treatment &amp; prevention:</strong>
+                <div style="padding-left: 8px; margin-top: 1px;">
+                  &bull; Extent of change in care and treatment in hospitals &amp; Florence Nightingale.<br/>
+                  &bull; Improvements in surgery: anaesthetics (Simpson) and antiseptics (Lister).<br/>
+                  &bull; Prevention: smallpox vaccination and the Public Health Act 1875.
+                </div>
+              </div>
+              <div>
+                <strong style="color: #0f172a; font-size: 7.6pt;">Case Studies:</strong>
+                <div style="padding-left: 8px; margin-top: 1px;">
+                  &bull; <strong>Key individual:</strong> Edward Jenner and the development of the smallpox vaccine.<br/>
+                  &bull; <strong>Fighting Cholera in London (1854):</strong> Snow &amp; the Broad Street pump.
+                </div>
+              </div>
+            </div>
 
-          <div style="border: 1px solid #fbcfe8; background: #fdf2f8; border-radius: 5px; padding: 7px 9px;">
-            <strong style="color: #9d174d; display: block; font-size: 7.2pt; margin-bottom: 2px;">
-              SECTION A: THE BRITISH SECTOR OF THE WESTERN FRONT, 1914–1918
-            </strong>
-            <p style="margin: 0 0 3px 0;"><strong>Trenches &amp; Illnesses:</strong> Ypres, Somme, Arras, Cambrai; Trench system layout; Trench foot, trench fever, shell shock; Shrapnel wounds, gas gangrene, poison gases (chlorine, phosgene, mustard).</p>
-            <p style="margin: 0;"><strong>Evacuation &amp; Advances:</strong> Stretcher bearers &rarr; RAP &rarr; ADS/MDS &rarr; CCS (triage) &rarr; Base Hospitals; RAMC &amp; FANY; Thomas Splint; Mobile X-rays; Robertson's stored blood depot (Cambrai, 1917).</p>
+            <!-- Unit 4 -->
+            <div style="border: 1.5px solid #1e3a8a; border-radius: 6px; padding: 8px 11px; margin-bottom: 7px; background: #ffffff;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #bfdbfe; padding-bottom: 2px; margin-bottom: 4px;">
+                <strong style="color: #1e3a8a; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.3px;">
+                  Unit 4: c1900–present &bull; Modern Britain
+                </strong>
+                <span style="font-size: 6.8pt; font-weight: 800; color: #1e3a8a; background: #eff6ff; padding: 1px 5px; border-radius: 3px;">Section B</span>
+              </div>
+              <div style="margin-bottom: 4px;">
+                <strong style="color: #0f172a; font-size: 7.6pt;">Ideas about cause:</strong>
+                <div style="padding-left: 8px; margin-top: 1px;">
+                  &bull; Influence of genetic (DNA structure 1953) and lifestyle factors.<br/>
+                  &bull; Improvements in diagnosis: blood tests, high-tech scans, monitors.
+                </div>
+              </div>
+              <div style="margin-bottom: 4px;">
+                <strong style="color: #0f172a; font-size: 7.6pt;">Care, treatment &amp; prevention:</strong>
+                <div style="padding-left: 8px; margin-top: 1px;">
+                  &bull; Magic bullets (Salvarsan/Prontosil), antibiotics, and high-tech surgery.<br/>
+                  &bull; Impact of NHS (1948) on accessibility; mass vaccinations &amp; lifestyle campaigns.
+                </div>
+              </div>
+              <div>
+                <strong style="color: #0f172a; font-size: 7.6pt;">Case Studies:</strong>
+                <div style="padding-left: 8px; margin-top: 1px;">
+                  &bull; <strong>Key individuals:</strong> Fleming, Florey and Chain's development of penicillin.<br/>
+                  &bull; <strong>Lung cancer in the 21st century:</strong> diagnosis, treatment, government prevention.
+                </div>
+              </div>
+            </div>
+
+            <!-- Section A: Western Front -->
+            <div style="border: 1.5px solid #9d174d; background: #fdf2f8; border-radius: 6px; padding: 8px 11px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #fbcfe8; padding-bottom: 2px; margin-bottom: 4px;">
+                <strong style="color: #9d174d; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.3px;">
+                  Section A: British Sector of Western Front, 1914–18
+                </strong>
+                <span style="font-size: 6.8pt; font-weight: 800; color: #9d174d; background: #fce7f3; padding: 1px 5px; border-radius: 3px;">Historic Environment</span>
+              </div>
+              <div style="font-size: 7.3pt; line-height: 1.32; color: #1e293b;">
+                <div style="margin-bottom: 2px;">
+                  <strong>1. Context:</strong> Early 20th c. medicine (aseptic surgery, x-rays, transfusions/storage); Flanders &amp; northern France (Ypres, Somme, Arras, Cambrai); trench system, terrain &amp; transport problems.
+                </div>
+                <div style="margin-bottom: 2px;">
+                  <strong>2. Conditions:</strong> Ill health (trench foot, trench fever, shell shock); shrapnel, bullet &amp; explosive wounds, gas gangrene; gas attacks (chlorine, phosgene, mustard).
+                </div>
+                <div style="margin-bottom: 2px;">
+                  <strong>3. Evacuation:</strong> Chain of evacuation (RAP &rarr; ADS/MDS &rarr; CCS &rarr; Base Hospital); stretcher bearers, motor/horse ambulances, ambulance trains &amp; barges; Arras underground hospital; RAMC &amp; FANY.
+                </div>
+                <div>
+                  <strong>4. Advances:</strong> Wound debridement, Carrel-Dakin, amputation; Thomas splint; mobile x-rays; Cambrai blood depot; brain &amp; plastic surgery (Cushing, Gillies).
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div style="position: relative; z-index: 2; border-top: 1px solid #cbd5e1; padding-top: 6px; display: flex; justify-content: space-between; align-items: center; font-size: 7.2pt; color: #64748b;">
-      <span>Meoncross History &bull; GCSE Masterclass Series</span>
-      <span>Designed strictly to Edexcel Specification 1HI0/11 &bull; 40 Pages Master Volume</span>
+      <!-- Footer Signoff -->
+      <div style="position: relative; z-index: 2; border-top: 1px solid #cbd5e1; padding-top: 6px; display: flex; justify-content: space-between; align-items: center; font-size: 7.4pt; color: #64748b;">
+        <span>Meoncross History &bull; GCSE Masterclass Series</span>
+        <span>Designed strictly to Pearson Edexcel Specification 1HI0/11 &bull; 40 Pages Master Volume</span>
+      </div>
     </div>
   </div>
   `;
 }
-
 // Render Inside Front Cover (Page 2)
 function renderInsideCover() {
   return `
