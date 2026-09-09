@@ -1,0 +1,527 @@
+const fs = require('fs');
+const path = require('path');
+const puppeteer = require('puppeteer');
+
+async function generatePDF() {
+  const htmlContent = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meoncross School - Ypres Trip 2026 Code of Conduct</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+    @page {
+      size: A4 portrait;
+      margin: 10mm 12mm 10mm 12mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+      color: #0f172a;
+      background: #ffffff;
+      line-height: 1.45;
+      font-size: 9.2pt;
+    }
+
+    .sheet {
+      width: 100%;
+      max-width: 186mm;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 275mm;
+    }
+
+    /* HEADER */
+    .header {
+      border-bottom: 3px solid #1e3a8a;
+      padding-bottom: 10px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .school-crest-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .school-name {
+      font-size: 16pt;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #1e3a8a;
+      line-height: 1.1;
+    }
+
+    .doc-subtitle {
+      font-size: 12pt;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 4px;
+    }
+
+    .header-badge {
+      background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+      color: #ffffff;
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      padding: 7px 14px;
+      border-radius: 6px;
+      text-align: right;
+      box-shadow: 0 2px 5px rgba(30, 58, 138, 0.2);
+    }
+
+    /* PUPIL NAME BAR */
+    .pupil-bar {
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 10px 16px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .pupil-field {
+      display: flex;
+      align-items: center;
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .pupil-line {
+      flex: 1;
+      border-bottom: 1.5px dotted #64748b;
+      margin-left: 8px;
+      height: 18px;
+    }
+
+    /* INTRO CARDS (DUAL COLUMN) */
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .intro-card {
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 8.5pt;
+      line-height: 1.45;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-pupil {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-left: 4.5px solid #2563eb;
+    }
+
+    .card-parent {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 4.5px solid #475569;
+    }
+
+    .intro-title {
+      font-size: 9.2pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .card-pupil .intro-title { color: #1e40af; }
+    .card-parent .intro-title { color: #0f172a; }
+
+    /* RULES SECTION */
+    .rules-header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+      color: #ffffff;
+      padding: 8px 16px;
+      border-radius: 8px 8px 0 0;
+      font-size: 9.5pt;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: 0.3px;
+    }
+
+    .rules-container {
+      border: 1.5px solid #cbd5e1;
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+      padding: 10px 12px;
+      background: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    .rules-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 14px;
+      row-gap: 8px;
+    }
+
+    .rule-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 8.6pt;
+      line-height: 1.35;
+      padding: 6px 8px;
+      border-radius: 6px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+    }
+
+    .rule-num {
+      background: #1e3a8a;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 8pt;
+      width: 21px;
+      height: 21px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .rule-item.highlight-allergy {
+      background: #fffbeb;
+      border-color: #fde68a;
+    }
+
+    .rule-item.highlight-allergy .rule-num {
+      background: #d97706;
+    }
+
+    .rule-item.highlight-enjoy {
+      grid-column: span 2;
+      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+      border-color: #86efac;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 9.2pt;
+      color: #15803d;
+      padding: 8px;
+      margin-top: 3px;
+    }
+
+    .rule-item.highlight-enjoy .rule-num {
+      background: #16a34a;
+    }
+
+    /* SIGNATURE BLOCK */
+    .sign-section {
+      background: #f8fafc;
+      border: 1.5px solid #1e3a8a;
+      border-radius: 8px;
+      padding: 12px 18px;
+      margin-bottom: 8px;
+    }
+
+    .sign-agreement-statement {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #1e3a8a;
+      text-align: center;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e2e8f0;
+      letter-spacing: 0.2px;
+    }
+
+    .sign-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .sign-box {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .sign-box-title {
+      font-size: 9pt;
+      font-weight: 800;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px dashed #cbd5e1;
+      padding-bottom: 4px;
+    }
+
+    .sign-row {
+      display: flex;
+      align-items: flex-end;
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .sign-label {
+      flex-shrink: 0;
+      margin-right: 8px;
+    }
+
+    .sign-under {
+      flex: 1;
+      border-bottom: 1.5px solid #475569;
+      height: 20px;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 7.5pt;
+      color: #64748b;
+      padding-top: 6px;
+      border-top: 1px solid #e2e8f0;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <!-- HEADER -->
+    <div class="header">
+      <div class="school-crest-group">
+        <div class="school-name">Meoncross School</div>
+        <div class="doc-subtitle">Code of Conduct: Ypres Trip 2026</div>
+      </div>
+      <div class="header-badge">
+        Battlefield Tour<br>Ypres &amp; The Salient
+      </div>
+    </div>
+
+    <!-- PUPIL NAME BAR -->
+    <div class="pupil-bar">
+      <div class="pupil-field" style="flex: 2;">
+        Pupil Name: <div class="pupil-line"></div>
+      </div>
+      <div class="pupil-field" style="flex: 1;">
+        Tutor Group / Form: <div class="pupil-line"></div>
+      </div>
+    </div>
+
+    <!-- GUIDANCE CARDS -->
+    <div class="intro-grid">
+      <div class="intro-card card-pupil">
+        <div class="intro-title">📘 For Pupils</div>
+        It is important to appreciate and remember that when on residential visits, you are representing yourself, your school and if travelling abroad, your country also. The way you conduct yourself will have a lasting impression on those with whom you come into contact. It may also have implications for your personal health and safety as well as that of staff and other pupils on the visit. Given this, it is vital that all pupils participating on residential visits agree to and follow the code of conduct. This is especially important as there may be times when a teacher is not in your company and you are not under direct supervision.
+      </div>
+      <div class="intro-card card-parent">
+        <div class="intro-title">🛡️ For Parents / Carers</div>
+        The members of staff on this trip will be acting &lsquo;in loco parentis&rsquo;. They will exercise consideration and care to ensure the safety and well-being of the pupils. The rules on the trip are designed to protect and safeguard your child and ensure an enjoyable trip for all.
+      </div>
+    </div>
+
+    <!-- RULES SECTION -->
+    <div class="rules-wrapper">
+      <div class="rules-header">
+        It is essential that everyone agrees to these simple rules to ensure a safe and enjoyable visit:
+      </div>
+      <div class="rules-container">
+        <div class="rules-grid">
+          <div class="rule-item">
+            <div class="rule-num">1</div>
+            <div>Listen to and follow all instructions or requests from members of staff / officials.</div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-num">2</div>
+            <div>Treat everyone you meet during the visit with courtesy and consideration.</div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-num">3</div>
+            <div>Stay in groups of 3 and in the designated area when allowed independent time.</div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-num">4</div>
+            <div>Stick to timings given by members of staff.</div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-num">5</div>
+            <div>Wear seatbelts on the coach.</div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-num">6</div>
+            <div>Stay in your room after &lsquo;lights out&rsquo; unless a real emergency arises.</div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-num">7</div>
+            <div>Do not open, call out of or lean out of the hotel windows.</div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-num">8</div>
+            <div>Inform a member of staff if you feel unwell or are concerned about somebody else.</div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-num">9</div>
+            <div>Follow staff instruction regarding mobile phone use.</div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-num">10</div>
+            <div>Seek permission from others to appear in photos and do not upload pictures onto social media.</div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-num">11</div>
+            <div>Do not purchase or consume illegal substances.</div>
+          </div>
+          <div class="rule-item highlight-allergy">
+            <div class="rule-num">12</div>
+            <div><strong>Do not purchase or consume any product containing nuts.</strong> (Nut-Safe Policy)</div>
+          </div>
+          <div class="rule-item highlight-enjoy">
+            <div class="rule-num">13</div>
+            <div>Try to enjoy yourself! 🌟</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIGNATURE BLOCK -->
+    <div class="sign-section">
+      <div class="sign-agreement-statement">
+        I agree to abide by these rules.
+      </div>
+      <div class="sign-grid">
+        <div class="sign-box">
+          <div class="sign-box-title">Pupil Agreement</div>
+          <div class="sign-row">
+            <span class="sign-label">Pupil Name (Printed):</span>
+            <div class="sign-under"></div>
+          </div>
+          <div class="sign-row">
+            <span class="sign-label">Signed (Pupil):</span>
+            <div class="sign-under"></div>
+          </div>
+          <div class="sign-row">
+            <span class="sign-label">Date:</span>
+            <div class="sign-under" style="max-width: 140px;"></div>
+          </div>
+        </div>
+        <div class="sign-box">
+          <div class="sign-box-title">Parent / Carer Agreement</div>
+          <div class="sign-row">
+            <span class="sign-label">Parent / Carer Name:</span>
+            <div class="sign-under"></div>
+          </div>
+          <div class="sign-row">
+            <span class="sign-label">Signed (Parent/Carer):</span>
+            <div class="sign-under"></div>
+          </div>
+          <div class="sign-row">
+            <span class="sign-label">Date:</span>
+            <div class="sign-under" style="max-width: 140px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer-note">
+      Meoncross School Residential Visits &bull; Ypres Battlefield Tour 2026 &bull; Please sign and return this completed agreement prior to departure.
+    </div>
+  </div>
+</body>
+</html>`;
+
+  // Write HTML template
+  const htmlPath = path.join(
+    __dirname,
+    '..',
+    'public',
+    'units',
+    'trip_ypres',
+    'code_of_conduct.html',
+  );
+  fs.writeFileSync(htmlPath, htmlContent, 'utf8');
+  console.log('[OK] HTML saved to', htmlPath);
+
+  // Define target PDF paths
+  const drivePdfPath =
+    'G:\\My Drive\\AAMX\\trips\\Somme Oct26\\Ypres trip 2026 Code of Conduct.pdf';
+  const publicPdfDir = path.join(__dirname, '..', 'public', 'pdfs');
+  if (!fs.existsSync(publicPdfDir)) fs.mkdirSync(publicPdfDir, { recursive: true });
+  const localPdfPath = path.join(publicPdfDir, 'Ypres trip 2026 Code of Conduct.pdf');
+
+  // Launch Puppeteer
+  const browser = await puppeteer.launch({
+    headless: 'new',
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  });
+
+  const page = await browser.newPage();
+  await page.setContent(htmlContent, { waitUntil: 'networkidle0' });
+
+  // Generate PDF buffer
+  const pdfBuffer = await page.pdf({
+    format: 'A4',
+    printBackground: true,
+    margin: {
+      top: '8mm',
+      bottom: '8mm',
+      left: '10mm',
+      right: '10mm',
+    },
+  });
+
+  await browser.close();
+
+  // Save to Google Drive location
+  try {
+    fs.writeFileSync(drivePdfPath, pdfBuffer);
+    console.log('[OK] Successfully saved PDF to Google Drive:', drivePdfPath);
+  } catch (err) {
+    console.error('[WARN] Could not write directly to G: drive, will write locally:', err.message);
+  }
+
+  // Save to local project directory
+  fs.writeFileSync(localPdfPath, pdfBuffer);
+  console.log('[OK] Saved local copy to:', localPdfPath);
+
+  // Check page count using pdf-parse if available
+  try {
+    const pdfParse = require('pdf-parse');
+    const data = await pdfParse(pdfBuffer);
+    console.log(`[INFO] PDF generated with ${data.numpages} page(s).`);
+    if (data.numpages === 1) {
+      console.log('✅ PERFECT: The document fits on exactly 1 single A4 page.');
+    } else {
+      console.warn('⚠️ WARNING: PDF spilled onto page ' + data.numpages);
+    }
+  } catch (e) {
+    console.log('[INFO] pdf-parse check skipped:', e.message);
+  }
+}
+
+generatePDF().catch((err) => {
+  console.error('[ERROR]', err);
+  process.exit(1);
+});
