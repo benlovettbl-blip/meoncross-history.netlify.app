@@ -564,8 +564,25 @@ export const unitData = {
         subtitle:
           'Why did ancient medical dogma freeze European understanding of disease for 1,400 years?',
         briefing:
-          'In medieval Europe, medical authority did not rest upon scientific experiments or clinical trials. Instead, it was anchored to an unshakeable intellectual triad: Ancient Greek philosophy, Imperial Roman anatomy, and Christian theology. Reconstruct the three pillars and map the causal vectors below to explain why medical thinking froze for 1,400 years.',
+          'In medieval Europe, medical authority did not rest upon scientific experiments or clinical trials. Instead, it was anchored to an unshakeable intellectual triad: Ancient Greek philosophy, Imperial Roman anatomy, and Christian theology. Use this visual revision guide to revise the three pillars and their causal connections before answering the 12-mark exam question opposite.',
         pillars: [
+          {
+            id: 'church',
+            name: 'The Catholic Church',
+            dates: 'c. 500 – 1500 AD',
+            badge: 'Monopoly on Truth',
+            role: 'Monastic Scriptoria, Universities & Dogma',
+            core_knowledge: [
+              {
+                q: 'Why did the Church embrace Galen?',
+                a: 'Galen argued every organ had a purposeful divine design created by a single Creator (teleology). This aligned perfectly with Genesis, so the Church declared his writings infallible sacred truth.',
+              },
+              {
+                q: 'How was medical dogma enforced?',
+                a: 'Monks controlled manuscript copying; universities taught only Galen and Hippocrates. Questioning dogma was heresy; Roger Bacon was imprisoned in 1277 for advocating experimental science.',
+              },
+            ],
+          },
           {
             id: 'hippocrates',
             name: 'Hippocrates of Kos',
@@ -573,74 +590,95 @@ export const unitData = {
             badge: 'Ancient Greek Roots',
             image: '/images/hippocrates_portrait.jpg',
             role: 'Clinical Observation & The Four Humours',
-            prompts: [
-              'Explain the Theory of the Four Humours (Blood, Phlegm, Yellow Bile, Black Bile) and how each linked to a season and element.',
-              'Why was Hippocrates revolutionary in rejecting supernatural demons and insisting on natural causes and bedside clinical observation?',
-            ],
-          },
-          {
-            id: 'church',
-            name: 'The Catholic Church',
-            dates: 'c. 500 – 1500 AD',
-            badge: 'Monopoly on Truth',
-            icon: 'fa-church',
-            role: 'Monastic Scriptoria, Universities & Dogma',
-            prompts: [
-              'Why did the Church embrace Galen so passionately? (Hint: Teleology and belief in a single divine Creator matching scripture).',
-              'How did the Church enforce Galen’s authority in universities and monasteries? What happened to critics like Roger Bacon (1277)?',
+            core_knowledge: [
+              {
+                q: 'The Four Humours Theory:',
+                a: 'Blood (Spring/Air), Phlegm (Winter/Water), Yellow Bile (Summer/Fire), Black Bile (Autumn/Earth). Disease was an internal humoural imbalance, treated by restoring equilibrium.',
+              },
+              {
+                q: 'The Natural Method:',
+                a: 'Revolutionary rejection of spirits and demons. Promoted bedside clinical observation: observing symptoms, monitoring pulse, and inspecting urine charts (uroscopy).',
+              },
             ],
           },
           {
             id: 'galen',
             name: 'Claudius Galenus (Galen)',
             dates: 'AD 129 – c. 216',
-            badge: 'Roman Synthesis',
+            badge: 'Roman Imperial Synthesis',
             image: '/images/galen_portrait.jpg',
             role: 'Theory of Opposites & Teleological Anatomy',
-            prompts: [
-              'How did Galen develop Hippocrates’ ideas into the Theory of Opposites? Give an example of a cold disease treated with heat.',
-              'Why did Galen make fundamental anatomical mistakes (e.g. two-chambered liver)? Why did nobody correct him for 1,300 years?',
+            core_knowledge: [
+              {
+                q: 'The Theory of Opposites:',
+                a: 'Expanded humoural balance by treating symptoms with their contrary (e.g. cold, wet phlegm treated with hot, dry pepper; excess hot blood treated with cold cucumber or bloodletting).',
+              },
+              {
+                q: 'Anatomical Errors & 1,300-Year Dogma:',
+                a: 'Dissected pigs and Barbary apes due to Roman taboos, claiming the liver had 5 lobes and heart had porous septum. Preserved without challenge because human dissection was restricted to confirming Galen.',
+              },
             ],
           },
         ],
         vectors: [
           {
-            from: 'Hippocrates',
-            to: 'Galen',
-            label: '1. Adoption & Extension',
-            text: 'Galen adopts the Four Humours and develops the Theory of Opposites; dissects animals to argue organs have a purposeful divine design.',
+            label: '1. Ancient Roots to Roman Doctrine',
+            text: 'Galen adopted Hippocrates’ Four Humours, developed the Theory of Opposites, and systematized Greek medicine into 350+ Latin treatises.',
           },
           {
-            from: 'Galen',
-            to: 'The Church',
             label: '2. Theological Sanctification',
-            text: 'The Church declares Galen’s writings sacred truth; monks copy his Latin manuscripts; human dissection is forbidden or tightly restricted.',
+            text: 'Monastic scriptoria translated and hand-copied Galen; the Church declared his teleological writings infallible doctrine alongside scripture.',
           },
           {
-            from: 'The Church',
-            to: 'Hippocrates & Galen',
-            label: '3. The 1,400-Year Freeze',
-            text: 'Challenging Galen or Hippocrates is branded heresy against God; medical inquiry halts completely until Andreas Vesalius (1543).',
+            label: '3. The 1,400-Year Stagnation',
+            text: 'With university curricula fixed on Galen and dissent punished as heresy, medical inquiry halted completely until the Renaissance.',
           },
         ],
         keywords: [
           'Four Humours',
           'Theory of Opposites',
           'Clinical Observation',
-          'Miasma',
           'Teleology',
-          'Monastic Infirmary',
-          'Roger Bacon',
+          'Monastic Scriptoria',
+          'Roger Bacon (1277)',
           'Heresy',
+          'Miasma',
           'Uroscopy',
-          'Votive Offerings',
+          'Zodiac Man',
         ],
-        synthesis: {
-          title: 'GCSE Exam Masterclass • Explain Why [12 Marks]',
-          badge: 'Edexcel Paper 1 &bull; Q4',
+        takeaway_points: [
+          'The Catholic Church’s monopoly on education, universities, and hand-copied manuscripts prevented new ideas.',
+          'Galen’s teleological theory of purposeful design aligned with Christian creation, making his texts sacred and unchallengeable.',
+          'Lack of alternative scientific explanations or technology (no microscopes, no printing press) reinforced reliance on ancient tradition.',
+        ],
+        exam_task: {
+          tariff: 'Explain Why [12 Marks]',
+          board: 'Edexcel GCSE (9–1) History &bull; Paper 1 (Section B)',
           question:
-            'Explain why there was so little change in medical ideas about the causes of disease between c.1250 and c.1500. You may use: • The Catholic Church • Galen. (You must also use information of your own). [12 marks]',
-          lines: 3,
+            'Explain why there was so little change in medical ideas about the causes of disease between c.1250 and c.1500.',
+          stimulus: ['The Catholic Church', 'Galen'],
+          note: '(You must also use information of your own.)',
+          guidance: {
+            time: '18 minutes',
+            structure: '3 fully developed PEEL paragraphs (Point, Evidence, Explain, Link)',
+          },
+          peel_prompts: [
+            {
+              p_num: 1,
+              factor: 'The Catholic Church',
+              hint: 'Explain teleology, control of universities/monasteries, and punishment of dissenters (Roger Bacon 1277).',
+            },
+            {
+              p_num: 2,
+              factor: 'Galen & Ancient Medical Authority',
+              hint: 'Explain the Theory of Opposites, respect for ancient authority, and animal dissection errors remaining unchallenged.',
+            },
+            {
+              p_num: 3,
+              factor: 'Own Knowledge Factor (e.g. Hippocrates / Lack of Alternatives)',
+              hint: 'Explain the Four Humours, miasma/astrology, or lack of scientific instruments and printing.',
+            },
+          ],
         },
       },
       do_now: {

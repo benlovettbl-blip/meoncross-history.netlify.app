@@ -494,54 +494,38 @@ function generateMedievalCastleDraftingPage(lesson) {
   if (ct.type !== 'architectural_drafting') return '';
 
   return `
-  <div class="creative-drafting-page" style="page-break-before: always; page-break-after: always; box-sizing: border-box; padding: 10px 14px; font-family: 'Inter', sans-serif;">
-    <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 5px; margin-bottom: 8px;">
+  <div class="creative-drafting-page" style="page-break-before: always; page-break-after: always; box-sizing: border-box; padding: 12px 16px; font-family: 'Inter', sans-serif;">
+    <div style="border-bottom: 2px solid #1e293b; padding-bottom: 6px; margin-bottom: 8px;">
       <div style="display: flex; justify-content: space-between; align-items: baseline;">
-        <span style="font-size: 8.5pt; font-weight: 800; color: #0284c7; text-transform: uppercase; letter-spacing: 0.8px;">
-          <i class="fa-solid fa-compass-drafting" style="margin-right: 5px;"></i> Tactical Architecture &bull; 1067 Norman Conquest
+        <span style="font-size: 8pt; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.5px;">
+          Key Stage 3 History &bull; The Norman Conquest (1066–1087)
         </span>
-        <span style="font-size: 8pt; font-weight: 700; color: #475569; background: #f1f5f9; padding: 2px 8px; border-radius: 4px; border: 1px solid #cbd5e1;">
-          Year 7 History Mastery &bull; Lesson 2
+        <span style="font-size: 8pt; font-weight: 700; color: #1e293b; background: #f1f5f9; padding: 2px 8px; border-radius: 4px; border: 1px solid #cbd5e1;">
+          Year 7 &bull; Lesson 2
         </span>
       </div>
-      <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 15pt; color: #1e3a8a; margin: 3px 0 4px 0; border: none; padding: 0;">
+      <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 14pt; color: #0f172a; margin: 3px 0 4px 0; border: none; padding: 0;">
         ${ct.title}
       </h2>
-      <div style="font-size: 8pt; color: #334155; background: #eff6ff; border-left: 3px solid #3b82f6; padding: 4px 8px; border-radius: 4px; line-height: 1.35;">
-        <strong>Tactical Briefing:</strong> ${ct.briefing}
+      <div style="font-size: 8pt; color: #334155; background: #f8fafc; border-left: 3px solid #475569; padding: 4px 8px; border-radius: 3px; line-height: 1.35;">
+        <strong>Instructions:</strong> ${ct.briefing}
       </div>
     </div>
 
-    <!-- Central Drafting Blueprint Canvas -->
-    <div style="height: 310px; border: 2px solid #1e3a8a; border-radius: 8px; background-color: #ffffff; background-image: radial-gradient(#94a3b8 1.2px, transparent 1.2px); background-size: 16px 16px; position: relative; margin-bottom: 8px; overflow: hidden; box-shadow: inset 0 0 10px rgba(0,0,0,0.03);">
-      <div style="position: absolute; top: 6px; left: 8px; font-size: 7pt; font-weight: 700; color: #475569; background: rgba(255,255,255,0.92); padding: 2px 6px; border-radius: 3px; border: 1px solid #cbd5e1;">
-        <i class="fa-solid fa-ruler-combined" style="color: #0284c7;"></i> GRID SCALE: ${ct.grid_scale || '1 SQUARE = 5 METRES'}
-      </div>
-      <div style="position: absolute; top: 6px; right: 8px; font-size: 7pt; font-weight: 700; color: #475569; background: rgba(255,255,255,0.92); padding: 2px 6px; border-radius: 3px; border: 1px solid #cbd5e1;">
-        <i class="fa-solid fa-compass" style="color: #0284c7;"></i> COMMAND SECTOR &bull; ELEVATION 30M
-      </div>
-      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; pointer-events: none; opacity: 0.18;">
-        <div style="font-family: 'Playfair Display', serif; font-size: 26pt; font-weight: 900; color: #1e3a8a; letter-spacing: 4px; text-transform: uppercase;">PUPIL DRAFTING CANVAS</div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 9.5pt; font-weight: 600; color: #334155; letter-spacing: 1px; margin-top: 2px;">(Draft Mound, Keep, Palisade, Ditch &amp; Bailey Enclosure)</div>
-      </div>
-      <div style="position: absolute; bottom: 6px; left: 8px; font-size: 7pt; color: #64748b; font-style: italic; background: rgba(255,255,255,0.9); padding: 2px 6px; border-radius: 3px;">
-        Draw clean leader lines linking your sketch to Callouts ① through ⑤ below
-      </div>
-      <div style="position: absolute; bottom: 6px; right: 8px; font-size: 7pt; font-weight: 700; color: #1e3a8a; background: rgba(255,255,255,0.92); padding: 2px 6px; border-radius: 3px; border: 1px solid #cbd5e1;">
-        EST. BUILD TIME: 8–14 DAYS (FORCED SAXON LABOUR)
-      </div>
+    <!-- Central Drawing Canvas: Completely blank white area with clean border -->
+    <div style="height: 290px; border: 1.5px solid #334155; border-radius: 6px; background-color: #ffffff; margin-bottom: 8px;">
     </div>
 
-    <!-- 5 Tactical Callouts Grid -->
+    <!-- 5 Analysis Callouts Grid -->
     <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-bottom: 6px;">
       ${ct.callouts
         .slice(0, 3)
         .map(
-          (c, idx) => `
-        <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-top: 3px solid ${idx === 0 ? '#1e3a8a' : idx === 1 ? '#d97706' : '#059669'}; border-radius: 5px; padding: 5px 7px;">
+          (c) => `
+        <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 5px; padding: 5px 7px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-            <strong style="font-size: 7.8pt; color: ${idx === 0 ? '#1e3a8a' : idx === 1 ? '#b45309' : '#047857'};">${c.num} ${c.label}</strong>
-            <span style="font-size: 6.8pt; font-weight: 700; color: ${idx === 0 ? '#0284c7' : idx === 1 ? '#d97706' : '#059669'}; background: ${idx === 0 ? '#e0f2fe' : idx === 1 ? '#fef3c7' : '#d1fae5'}; padding: 1px 4px; border-radius: 2px;">${c.badge}</span>
+            <strong style="font-size: 7.8pt; color: #0f172a;">${c.num} ${c.label}</strong>
+            <span style="font-size: 6.8pt; font-weight: 700; color: #334155; background: #f1f5f9; padding: 1px 4px; border-radius: 2px; border: 1px solid #e2e8f0;">${c.badge}</span>
           </div>
           <div style="font-size: 7pt; color: #475569; line-height: 1.25; margin-bottom: 3px;">
             ${c.prompt}
@@ -554,15 +538,15 @@ function generateMedievalCastleDraftingPage(lesson) {
         .join('')}
     </div>
 
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 6px;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 8px;">
       ${ct.callouts
         .slice(3, 5)
         .map(
-          (c, idx) => `
-        <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-top: 3px solid ${idx === 0 ? '#7c3aed' : '#dc2626'}; border-radius: 5px; padding: 5px 7px;">
+          (c) => `
+        <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 5px; padding: 5px 7px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-            <strong style="font-size: 7.8pt; color: ${idx === 0 ? '#6d28d9' : '#b91c1c'};">${c.num} ${c.label}</strong>
-            <span style="font-size: 6.8pt; font-weight: 700; color: ${idx === 0 ? '#7c3aed' : '#dc2626'}; background: ${idx === 0 ? '#ede9fe' : '#fee2e2'}; padding: 1px 4px; border-radius: 2px;">${c.badge}</span>
+            <strong style="font-size: 7.8pt; color: #0f172a;">${c.num} ${c.label}</strong>
+            <span style="font-size: 6.8pt; font-weight: 700; color: #334155; background: #f1f5f9; padding: 1px 4px; border-radius: 2px; border: 1px solid #e2e8f0;">${c.badge}</span>
           </div>
           <div style="font-size: 7pt; color: #475569; line-height: 1.25; margin-bottom: 3px;">
             ${c.prompt}
@@ -575,24 +559,24 @@ function generateMedievalCastleDraftingPage(lesson) {
         .join('')}
     </div>
 
-    <!-- Bottom Tactical Synthesis -->
+    <!-- Bottom Evaluation Question (5 generous ruled lines) -->
     ${
       ct.synthesis
         ? `
-      <div style="background: #ffffff; border: 1.5px solid #1e3a8a; border-radius: 6px; padding: 6px 9px;">
+      <div style="background: #ffffff; border: 1.5px solid #1e293b; border-radius: 6px; padding: 6px 9px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-          <strong style="font-size: 8pt; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px;">
-            <i class="fa-solid fa-brain" style="color: #0284c7; margin-right: 4px;"></i> ${ct.synthesis.title}
+          <strong style="font-size: 8pt; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px;">
+            ${ct.synthesis.title}
           </strong>
-          <span style="font-size: 7pt; font-weight: 700; color: #0284c7; background: #e0f2fe; padding: 1px 5px; border-radius: 3px;">
+          <span style="font-size: 7pt; font-weight: 700; color: #334155; background: #f1f5f9; padding: 1px 5px; border-radius: 3px; border: 1px solid #cbd5e1;">
             ${ct.synthesis.badge}
           </span>
         </div>
         <div style="font-size: 7.5pt; color: #1e293b; font-weight: 600; margin-bottom: 4px; line-height: 1.3;">
           ${ct.synthesis.question}
         </div>
-        ${Array(ct.synthesis.lines || 3)
-          .fill('<div class="task-lines" style="height: 11px; margin-top: 2px;"></div>')
+        ${Array(ct.synthesis.lines || 5)
+          .fill('<div class="task-lines" style="height: 11px; margin-top: 3px;"></div>')
           .join('')}
       </div>
     `
@@ -607,65 +591,61 @@ function generateConceptualTriadPage(lesson, unitId) {
   const ct = lesson.creative_task;
   if (ct.type !== 'conceptual_triad') return '';
 
-  const churchPillar = ct.pillars.find((p) => p.id === 'church') || ct.pillars[1];
-  const hippoPillar = ct.pillars.find((p) => p.id === 'hippocrates') || ct.pillars[0];
+  const churchPillar = ct.pillars.find((p) => p.id === 'church') || ct.pillars[0];
+  const hippoPillar = ct.pillars.find((p) => p.id === 'hippocrates') || ct.pillars[1];
   const galenPillar = ct.pillars.find((p) => p.id === 'galen') || ct.pillars[2];
+  const et = ct.exam_task || {};
 
   return `
-  <div class="creative-triad-page" style="page-break-before: always; page-break-after: always; box-sizing: border-box; padding: 10px 14px; font-family: 'Inter', sans-serif;">
+  <!-- PAGE 1: FULL VISUAL REVISION GUIDE (LEFT-HAND PAGE) -->
+  <div class="creative-triad-page creative-triad-left-page" style="page-break-before: always; page-break-after: always; box-sizing: border-box; padding: 12px 16px; font-family: 'Inter', sans-serif;">
     <!-- Top Header -->
-    <div style="border-bottom: 2px solid #7c2d12; padding-bottom: 4px; margin-bottom: 6px;">
+    <div style="border-bottom: 2px solid #1e293b; padding-bottom: 5px; margin-bottom: 7px;">
       <div style="display: flex; justify-content: space-between; align-items: baseline;">
-        <span style="font-size: 8.5pt; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.8px;">
-          <i class="fa-solid fa-brain" style="margin-right: 5px;"></i> Visual Synthesis &bull; Medieval Ideas c.1250–1500
+        <span style="font-size: 8pt; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.5px;">
+          Edexcel GCSE (9–1) History &bull; Paper 1: Medicine in Britain (c.1250–present)
         </span>
-        <span style="font-size: 8pt; font-weight: 700; color: #7c2d12; background: #fef3c7; padding: 2px 8px; border-radius: 4px; border: 1px solid #fde68a;">
-          Edexcel GCSE Paper 1 &bull; KT 1.1
+        <span style="font-size: 8pt; font-weight: 700; color: #1e293b; background: #f1f5f9; padding: 2px 8px; border-radius: 4px; border: 1px solid #cbd5e1;">
+          Topic 1 &bull; Visual Revision Guide
         </span>
       </div>
-      <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 14pt; color: #7c2d12; margin: 2px 0 4px 0; border: none; padding: 0;">
+      <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 14pt; color: #0f172a; margin: 3px 0 4px 0; border: none; padding: 0;">
         ${ct.title}
       </h2>
-      <div style="font-size: 7.8pt; color: #334155; background: #fffaf0; border-left: 3px solid #d97706; padding: 4px 8px; border-radius: 4px; line-height: 1.35;">
-        <strong>Historical Problem:</strong> ${ct.briefing}
+      <div style="font-size: 8pt; color: #334155; background: #f8fafc; border-left: 3px solid #475569; padding: 4px 8px; border-radius: 3px; line-height: 1.35;">
+        <strong>Historical Context:</strong> ${ct.briefing}
       </div>
     </div>
 
     <!-- Marginal Keywords HUD -->
-    <div style="display: flex; flex-wrap: wrap; gap: 4px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 5px; padding: 4px 8px; margin-bottom: 8px; align-items: center;">
-      <span style="font-size: 7.2pt; font-weight: 800; color: #475569; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 4px;">
-        <i class="fa-solid fa-key" style="color: #d97706;"></i> High-Yield Keywords:
+    <div style="display: flex; flex-wrap: wrap; gap: 4px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; margin-bottom: 7px; align-items: center;">
+      <span style="font-size: 7.2pt; font-weight: 800; color: #334155; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 4px;">
+        High-Yield Terminology:
       </span>
-      ${ct.keywords.map((kw) => `<span style="font-size: 6.8pt; background: #e2e8f0; color: #1e293b; padding: 1px 5px; border-radius: 3px; font-weight: 600;">${kw}</span>`).join(' ')}
+      ${ct.keywords.map((kw) => `<span style="font-size: 6.9pt; background: #e2e8f0; color: #0f172a; padding: 1px 5px; border-radius: 3px; font-weight: 600;">${kw}</span>`).join(' ')}
     </div>
 
-    <!-- APEX PILLAR: The Catholic Church (Center Top) -->
-    <div style="background: #fffbeb; border: 2px solid #b45309; border-radius: 6px; padding: 6px 10px; margin-bottom: 6px;">
+    <!-- APEX PILLAR: The Catholic Church -->
+    <div style="background: #ffffff; border: 1.5px solid #334155; border-radius: 6px; padding: 7px 10px; margin-bottom: 7px;">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <div style="width: 24px; height: 24px; border-radius: 4px; background: #b45309; color: white; display: flex; align-items: center; justify-content: center; font-size: 11pt;">
-            <i class="fa-solid fa-church"></i>
-          </div>
-          <div>
-            <strong style="font-size: 8.8pt; color: #7c2d12;">${churchPillar.name}</strong>
-            <span style="font-size: 7pt; color: #78350f; margin-left: 6px;">(${churchPillar.dates})</span>
-          </div>
+        <div>
+          <strong style="font-size: 9pt; color: #0f172a;">${churchPillar.name}</strong>
+          <span style="font-size: 7.2pt; color: #475569; margin-left: 6px;">(${churchPillar.dates})</span>
         </div>
-        <span style="font-size: 6.8pt; font-weight: 700; color: #b45309; background: #fef3c7; border: 1px solid #fde68a; padding: 1px 6px; border-radius: 3px;">
+        <span style="font-size: 7pt; font-weight: 700; color: #1e293b; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 1px 6px; border-radius: 3px;">
           ${churchPillar.badge}
         </span>
       </div>
-      <div style="font-size: 7.2pt; font-weight: 600; color: #92400e; margin-bottom: 4px;">
-        ${churchPillar.role}
+      <div style="font-size: 7.2pt; font-weight: 700; color: #334155; margin-bottom: 4px;">
+        Core Function: ${churchPillar.role}
       </div>
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-        ${churchPillar.prompts
+        ${churchPillar.core_knowledge
           .map(
-            (pr) => `
-          <div>
-            <div style="font-size: 6.9pt; color: #451a03; line-height: 1.25; margin-bottom: 2px;">${pr}</div>
-            <div class="task-lines" style="height: 11px; margin-top: 2px;"></div>
-            <div class="task-lines" style="height: 11px; margin-top: 2px;"></div>
+            (ck) => `
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 5px 7px;">
+            <div style="font-size: 7.2pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">${ck.q}</div>
+            <div style="font-size: 6.9pt; color: #334155; line-height: 1.3;">${ck.a}</div>
           </div>
         `,
           )
@@ -673,17 +653,16 @@ function generateConceptualTriadPage(lesson, unitId) {
       </div>
     </div>
 
-    <!-- CAUSAL TRANSMISSION VECTORS RIBBON -->
-    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-bottom: 6px;">
+    <!-- CAUSAL TRANSMISSION VECTORS -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-bottom: 7px;">
       ${ct.vectors
         .map(
-          (vec, vIdx) => `
-        <div style="background: #ffffff; border: 1.5px solid ${vIdx === 0 ? '#0284c7' : vIdx === 1 ? '#d97706' : '#dc2626'}; border-radius: 5px; padding: 4px 6px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-size: 7.2pt; color: ${vIdx === 0 ? '#0369a1' : vIdx === 1 ? '#b45309' : '#b91c1c'};">${vec.label}</strong>
-            <i class="fa-solid fa-arrow-right" style="font-size: 6.5pt; color: #64748b;"></i>
+          (vec) => `
+        <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 5px; padding: 5px 7px;">
+          <div style="font-size: 7.2pt; font-weight: 700; color: #0f172a; margin-bottom: 2px; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
+            ${vec.label}
           </div>
-          <div style="font-size: 6.7pt; color: #334155; line-height: 1.25;">${vec.text}</div>
+          <div style="font-size: 6.8pt; color: #334155; line-height: 1.25;">${vec.text}</div>
         </div>
       `,
         )
@@ -691,27 +670,24 @@ function generateConceptualTriadPage(lesson, unitId) {
     </div>
 
     <!-- BOTTOM PILLARS: Hippocrates (Left) & Galen (Right) -->
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 6px;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 7px;">
       <!-- Hippocrates -->
-      <div style="background: #f8fafc; border: 2px solid #1e3a8a; border-radius: 6px; padding: 6px 8px;">
-        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px;">
-          <img src="${hippoPillar.image}" alt="${hippoPillar.name}" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid #1e3a8a; flex-shrink: 0;">
+      <div style="background: #ffffff; border: 1.5px solid #334155; border-radius: 6px; padding: 7px 9px;">
+        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 5px;">
+          <img src="${hippoPillar.image}" alt="${hippoPillar.name}" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 1.5px solid #334155; flex-shrink: 0;">
           <div>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <strong style="font-size: 8.5pt; color: #1e3a8a;">${hippoPillar.name}</strong>
-            </div>
-            <div style="font-size: 6.8pt; color: #64748b;">${hippoPillar.dates} &bull; <span style="font-weight: 700; color: #0284c7;">${hippoPillar.badge}</span></div>
+            <strong style="font-size: 8.8pt; color: #0f172a;">${hippoPillar.name}</strong>
+            <div style="font-size: 6.8pt; color: #475569;">${hippoPillar.dates} &bull; <span style="font-weight: 700; color: #1e293b;">${hippoPillar.badge}</span></div>
             <div style="font-size: 6.8pt; font-weight: 600; color: #334155;">${hippoPillar.role}</div>
           </div>
         </div>
-        <div>
-          ${hippoPillar.prompts
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          ${hippoPillar.core_knowledge
             .map(
-              (pr) => `
-            <div style="margin-bottom: 3px;">
-              <div style="font-size: 6.9pt; color: #1e293b; line-height: 1.25; margin-bottom: 2px;">${pr}</div>
-              <div class="task-lines" style="height: 11px; margin-top: 2px;"></div>
-              <div class="task-lines" style="height: 11px; margin-top: 2px;"></div>
+              (ck) => `
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 4px 6px;">
+              <div style="font-size: 7pt; font-weight: 700; color: #0f172a; margin-bottom: 1px;">${ck.q}</div>
+              <div style="font-size: 6.8pt; color: #334155; line-height: 1.25;">${ck.a}</div>
             </div>
           `,
             )
@@ -720,25 +696,22 @@ function generateConceptualTriadPage(lesson, unitId) {
       </div>
 
       <!-- Galen -->
-      <div style="background: #fdfbf7; border: 2px solid #92400e; border-radius: 6px; padding: 6px 8px;">
-        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px;">
-          <img src="${galenPillar.image}" alt="${galenPillar.name}" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid #92400e; flex-shrink: 0;">
+      <div style="background: #ffffff; border: 1.5px solid #334155; border-radius: 6px; padding: 7px 9px;">
+        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 5px;">
+          <img src="${galenPillar.image}" alt="${galenPillar.name}" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 1.5px solid #334155; flex-shrink: 0;">
           <div>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <strong style="font-size: 8.5pt; color: #92400e;">${galenPillar.name}</strong>
-            </div>
-            <div style="font-size: 6.8pt; color: #64748b;">${galenPillar.dates} &bull; <span style="font-weight: 700; color: #d97706;">${galenPillar.badge}</span></div>
+            <strong style="font-size: 8.8pt; color: #0f172a;">${galenPillar.name}</strong>
+            <div style="font-size: 6.8pt; color: #475569;">${galenPillar.dates} &bull; <span style="font-weight: 700; color: #1e293b;">${galenPillar.badge}</span></div>
             <div style="font-size: 6.8pt; font-weight: 600; color: #334155;">${galenPillar.role}</div>
           </div>
         </div>
-        <div>
-          ${galenPillar.prompts
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          ${galenPillar.core_knowledge
             .map(
-              (pr) => `
-            <div style="margin-bottom: 3px;">
-              <div style="font-size: 6.9pt; color: #1e293b; line-height: 1.25; margin-bottom: 2px;">${pr}</div>
-              <div class="task-lines" style="height: 11px; margin-top: 2px;"></div>
-              <div class="task-lines" style="height: 11px; margin-top: 2px;"></div>
+              (ck) => `
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 4px 6px;">
+              <div style="font-size: 7pt; font-weight: 700; color: #0f172a; margin-bottom: 1px;">${ck.q}</div>
+              <div style="font-size: 6.8pt; color: #334155; line-height: 1.25;">${ck.a}</div>
             </div>
           `,
             )
@@ -747,29 +720,101 @@ function generateConceptualTriadPage(lesson, unitId) {
       </div>
     </div>
 
-    <!-- BOTTOM EXAM SYNTHESIS (Edexcel 12-Mark Hinge) -->
-    ${
-      ct.synthesis
-        ? `
-      <div style="background: #ffffff; border: 1.5px solid #7c2d12; border-radius: 6px; padding: 6px 9px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-size: 8pt; color: #7c2d12; text-transform: uppercase; letter-spacing: 0.5px;">
-            <i class="fa-solid fa-graduation-cap" style="color: #b45309; margin-right: 4px;"></i> ${ct.synthesis.title}
-          </strong>
-          <span style="font-size: 6.8pt; font-weight: 700; color: #7c2d12; background: #fef3c7; padding: 1px 5px; border-radius: 3px;">
-            ${ct.synthesis.badge}
-          </span>
-        </div>
-        <div style="font-size: 7.2pt; color: #1e293b; font-weight: 600; margin-bottom: 3px; line-height: 1.25;">
-          ${ct.synthesis.question}
-        </div>
-        ${Array(ct.synthesis.lines || 3)
-          .fill('<div class="task-lines" style="height: 11px; margin-top: 2px;"></div>')
+    <!-- BOTTOM SYNTHESIS TAKEAWAYS -->
+    <div style="background: #f8fafc; border: 1.5px solid #1e293b; border-radius: 6px; padding: 6px 10px;">
+      <div style="font-size: 7.8pt; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px;">
+        3 Key Arguments for Exam Success: Why Medical Ideas Stayed the Same (c.1250–c.1500)
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px;">
+        ${ct.takeaway_points
+          .map(
+            (tp, i) => `
+          <div style="font-size: 6.8pt; color: #334155; line-height: 1.25; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 6px;">
+            <strong style="color: #0f172a; display: block; margin-bottom: 1px;">Point ${i + 1}:</strong>
+            ${tp}
+          </div>
+        `,
+          )
           .join('')}
       </div>
-    `
-        : ''
-    }
+    </div>
+  </div>
+
+  <!-- PAGE 2: DEDICATED EXAM PRACTICE PAGE (RIGHT-HAND PAGE) -->
+  <div class="creative-exam-page creative-triad-right-page" style="page-break-before: always; page-break-after: always; box-sizing: border-box; padding: 14px 18px; font-family: 'Inter', sans-serif;">
+    <!-- Top Header -->
+    <div style="border-bottom: 2px solid #1e293b; padding-bottom: 5px; margin-bottom: 8px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <span style="font-size: 8pt; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.5px;">
+          ${et.board || 'Edexcel GCSE (9–1) History &bull; Paper 1 (Section B)'}
+        </span>
+        <span style="font-size: 8pt; font-weight: 700; color: #1e293b; background: #f1f5f9; padding: 2px 8px; border-radius: 4px; border: 1px solid #cbd5e1;">
+          ${et.tariff || 'Question 4 &bull; [12 Marks]'}
+        </span>
+      </div>
+      <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 14pt; color: #0f172a; margin: 3px 0 4px 0; border: none; padding: 0;">
+        Exam Practice: Extended Analytical Explanation
+      </h2>
+    </div>
+
+    <!-- Official Stimulus Question Box -->
+    <div style="background: #ffffff; border: 1.5px solid #1e293b; border-radius: 6px; padding: 8px 12px; margin-bottom: 8px;">
+      <div style="font-family: 'Georgia', serif; font-size: 10.5pt; font-weight: 700; color: #0f172a; line-height: 1.35; margin-bottom: 6px;">
+        ${et.question || 'Explain why there was so little change in medical ideas about the causes of disease between c.1250 and c.1500.'}
+      </div>
+      <div style="font-size: 8pt; color: #334155; margin-bottom: 4px;">
+        You may use the following in your answer:
+      </div>
+      <div style="display: flex; gap: 20px; font-size: 8pt; font-weight: 600; color: #0f172a; margin-bottom: 4px; padding-left: 10px;">
+        ${(et.stimulus || ['The Catholic Church', 'Galen']).map((s) => `<span>&bull; ${s}</span>`).join('')}
+      </div>
+      <div style="font-size: 7.5pt; color: #475569; font-style: italic;">
+        ${et.note || '(You must also use information of your own.)'} [12 marks]
+      </div>
+    </div>
+
+    <!-- Exam Strategy Ribbon -->
+    <div style="display: flex; justify-content: space-between; align-items: center; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; margin-bottom: 8px; font-size: 7.2pt; color: #334155;">
+      <span><strong>Suggested Time:</strong> ${et.guidance?.time || '18 minutes'}</span>
+      <span><strong>Target:</strong> 3 developed PEEL paragraphs</span>
+      <span><strong>Top Band:</strong> Link stimulus factors + own knowledge factor</span>
+    </div>
+
+    <!-- Full Lined Answer Canvas (22 ruled lines) -->
+    <div style="margin-bottom: 8px;">
+      ${Array(22)
+        .fill(
+          '<div class="task-lines" style="height: 18px; border-bottom: 1px dotted #94a3b8; margin-top: 1px;"></div>',
+        )
+        .join('')}
+    </div>
+
+    <!-- Edexcel Mark Scheme Rubric & Feedback Box -->
+    <div style="border: 1.5px solid #cbd5e1; border-radius: 5px; background: #ffffff; padding: 5px 8px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
+        <strong style="font-size: 7.5pt; color: #0f172a; text-transform: uppercase;">Edexcel Level Criteria &bull; Question 4 (12 Marks)</strong>
+        <span style="font-size: 8pt; font-weight: 700; color: #0f172a; border: 1.5px solid #1e293b; padding: 1px 8px; border-radius: 3px;">
+          Mark: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 12
+        </span>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 4px; font-size: 6.5pt; color: #475569; line-height: 1.2;">
+        <div style="background: #f8fafc; padding: 3px 5px; border-radius: 3px; border: 1px solid #e2e8f0;">
+          <strong style="color: #0f172a; display: block;">L1 (1–3 marks):</strong> Generalised statements; simple points with limited historical knowledge.
+        </div>
+        <div style="background: #f8fafc; padding: 3px 5px; border-radius: 3px; border: 1px solid #e2e8f0;">
+          <strong style="color: #0f172a; display: block;">L2 (4–6 marks):</strong> Descriptive answer; explains 1–2 factors with basic links to question.
+        </div>
+        <div style="background: #f8fafc; padding: 3px 5px; border-radius: 3px; border: 1px solid #e2e8f0;">
+          <strong style="color: #0f172a; display: block;">L3 (7–9 marks):</strong> Explains at least 2 factors with accurate historical knowledge and clear reasoning.
+        </div>
+        <div style="background: #f1f5f9; padding: 3px 5px; border-radius: 3px; border: 1px solid #cbd5e1;">
+          <strong style="color: #0f172a; display: block;">L4 (10–12 marks):</strong> Analytical explanation of 3 factors (both stimuli + own); sustained causal line.
+        </div>
+      </div>
+      <div style="margin-top: 4px; font-size: 7pt; color: #334155;">
+        <strong>Teacher / Self Feedback:</strong> <span style="border-bottom: 1px solid #94a3b8; display: inline-block; width: 80%; height: 10px;"></span>
+      </div>
+    </div>
   </div>
   `;
 }
@@ -889,19 +934,10 @@ function generateCmeMasterRevisionTimeline(periodName) {
 
 allDirs.forEach((unitId) => {
   console.log(`Processing workbooks for unit: ${unitId}`);
-  let dataPath = path.join(publicUnitsDir, unitId, 'data.js');
-  if (unitId === 'cme_new') {
-    const canonicalCme = path.join(PATHS.ROOT, 'units', unitId, 'data.js');
-    if (fs.existsSync(canonicalCme)) dataPath = canonicalCme;
-  } else if (
-    !fs.existsSync(dataPath) &&
-    (unitId === 'weimar_nazi_germany' ||
-      unitId === 'early_modern_world' ||
-      unitId === 'medieval_england' ||
-      unitId === 'edexcel_medicine')
-  ) {
-    dataPath = path.join(PATHS.ROOT, 'units', unitId, 'data.js');
-  }
+  let canonicalPath = path.join(PATHS.ROOT, 'units', unitId, 'data.js');
+  let dataPath = fs.existsSync(canonicalPath)
+    ? canonicalPath
+    : path.join(publicUnitsDir, unitId, 'data.js');
   if (!fs.existsSync(dataPath)) return;
 
   let dataContent;
@@ -1757,7 +1793,7 @@ allDirs.forEach((unitId) => {
                         <span style="font-size: 7.5pt; font-weight: 700; color: #0284c7; background: #ffffff; padding: 2px 6px; border-radius: 3px; border: 1px solid #bfdbfe;">Full-Page Masterclass</span>
                       </div>
                       <p style="margin: 0; font-size: 8.5pt; color: #334155; line-height: 1.3;">
-                        Turn to the dedicated <strong>Motte-and-Bailey Fortress Blueprint Worksheet</strong> at the end of this lesson to complete your annotated architectural drawing and tactical evaluation.
+                        Turn to the dedicated <strong>Motte-and-Bailey Fortress Worksheet</strong> at the end of this lesson to complete your annotated architectural drawing and tactical evaluation.
                       </p>
                     </div>`;
                     return;

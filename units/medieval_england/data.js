@@ -807,12 +807,11 @@ const medieval_england = {
       },
       creative_task: {
         type: 'architectural_drafting',
-        title: 'The Motte-and-Bailey Fortress: Architecture of Conquest',
+        title: 'The Motte-and-Bailey Castle: Norman Control',
         subtitle:
-          "Reconstruct William the Conqueror's primary instrument of military subjugation & psychological terror.",
+          'How William the Conqueror used rapid castle building to secure England after 1066.',
         briefing:
-          "William could not garrison hostile England with only 7,000 knights. Using Source A (textbook reconstruction), draft an annotated tactical cross-section or bird's-eye plan of a timber motte-and-bailey fortress in the blueprint canvas below. Label features ① to ⑤, then complete the 5 tactical analysis callouts.",
-        grid_scale: '1 SQUARE = 5 METRES',
+          "Using Source A (the reconstruction drawing), draw an annotated cross-section or bird's-eye diagram of a timber motte-and-bailey castle in the blank drawing space below. Label features ① to ⑤, then answer the 5 callout questions and the historical evaluation below.",
         callouts: [
           {
             num: '①',
@@ -851,11 +850,11 @@ const medieval_england = {
           },
         ],
         synthesis: {
-          title: 'Tactical Synthesis • Hinge Question',
-          badge: 'Strategic Evaluation',
+          title: 'Historical Evaluation Question',
+          badge: 'Extended Answer',
           question:
-            'Why was building 500 quick, cheap timber motte-and-bailey castles every 20 miles along rivers and Roman roads far more effective in controlling 2 million hostile English than building 5 massive stone fortresses?',
-          lines: 3,
+            'Explain why building hundreds of quick timber motte-and-bailey castles across England was far more effective in controlling 2 million hostile Anglo-Saxons than building just a few massive stone castles.',
+          lines: 5,
         },
       },
       narrative_blocks: [
