@@ -70,8 +70,18 @@ export async function renderCurriculumMap() {
                     background:#334155; color:#fff; border-radius:8px; text-decoration:none;
                     font-weight:600; font-size:0.85rem; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition:all 0.2s;"
              onmouseover="this.style.opacity='0.9'; this.style.transform='translateY(-1px)'"
-             onmouseout="this.style.opacity='1'; this.style.transform='translateY(0)'">
-            <i class="fa-solid fa-file-shield"></i> Marking Policy (PDF)
+             onmouseout="this.style.opacity='1'; this.style.transform='translateY(0)'"
+             title="Version 1: Comprehensive 6-page integrated policy with embedded figures">
+            <i class="fa-solid fa-file-shield"></i> Marking Policy (Full)
+          </a>
+          <a href="/pdfs/history_marking_and_feedback_policy_v2.pdf" target="_blank"
+             style="display:inline-flex; align-items:center; gap:8px; padding:9px 16px;
+                    background:#1e293b; color:#fff; border-radius:8px; text-decoration:none;
+                    font-weight:600; font-size:0.85rem; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition:all 0.2s; border:1px solid #475569;"
+             onmouseover="this.style.opacity='0.9'; this.style.transform='translateY(-1px)'"
+             onmouseout="this.style.opacity='1'; this.style.transform='translateY(0)'"
+             title="Version 2: Concise core policy with visual evidence appendix">
+            <i class="fa-solid fa-file-lines"></i> Marking Policy (Core + Appendix)
           </a>
         </div>
       </div>

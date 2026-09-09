@@ -424,8 +424,8 @@ const htmlContent = `<!DOCTYPE html>
       </div>
 
       <div class="cover-footer">
-        <div><strong>Inspection Ready:</strong> Compliant with EEF Feedback Guidelines & Ofsted Subject Guidance</div>
-        <div>Meoncross School • Revised September 2026</div>
+        <div>Meoncross School • Faculty of Humanities • Department of History</div>
+        <div>Revised for Academic Year 2026–2027</div>
       </div>
     </div>
   </div>
@@ -653,21 +653,21 @@ const htmlContent = `<!DOCTYPE html>
   <!-- ==================== PAGE 6: SECTION 5 - IN-LESSON PRACTICE & ACCORD ==================== -->
   <div class="page">
     <div class="section-header-banner">
-      <h2>5. In-Lesson Practice, Standards & Departmental Workload Accord</h2>
+      <h2>5. In-Lesson Practice, Standards & Quality Assurance</h2>
       <span class="section-badge">Classroom Standards</span>
     </div>
 
     <div class="two-col-grid" style="margin-bottom: 6px;">
       <div>
-        <div class="sub-heading" style="margin-top: 0;">Live Marking & Purple Pen Coaching</div>
+        <div class="sub-heading" style="margin-top: 0;">Live In-The-Moment Feedback</div>
         <p style="font-size: 8.2pt;">
-          During independent writing phases, teachers actively circulate with a <strong>purple pen</strong>. Misconceptions in historical chronology, source inferences, or essay structure are corrected on the spot, allowing students to immediately improve their work in real time.
+          During independent writing phases, teachers actively circulate and review work in progress. Misconceptions in historical chronology, source inferences, or essay structure are addressed immediately, allowing students to refine their work in real time.
         </p>
       </div>
       <div>
-        <div class="sub-heading" style="margin-top: 0;">Whole-Class Feedback & Green Pen DIRT</div>
+        <div class="sub-heading" style="margin-top: 0;">Whole-Class Feedback & Dedicated Reflection (DIRT)</div>
         <p style="font-size: 8.2pt;">
-          Following major written assessments, teachers compile diagnostic findings onto a single <strong>Whole-Class Feedback Sheet</strong> rather than writing repetitive comments. Students complete 15 minutes of <strong>DIRT (Dedicated Improvement & Reflection Time)</strong> in <strong>green pen</strong>, redrafting key paragraphs.
+          Following major written assessments, teachers compile diagnostic findings onto a single <strong>Whole-Class Feedback Sheet</strong> rather than writing repetitive comments in individual books. Students complete dedicated <strong>DIRT</strong>, redrafting key paragraphs and addressing targeted misconceptions.
         </p>
       </div>
     </div>
@@ -760,17 +760,11 @@ const htmlContent = `<!DOCTYPE html>
       </tbody>
     </table>
 
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px;">
-      <div class="col-card" style="font-size: 7.8pt; padding: 6px 10px;">
-        <strong>Quality Assurance & Moderation Schedule:</strong><br>
-        • Termly collaborative work scrutinies evaluating green-pen student response.<br>
-        • Formal GCSE mock standardization against official Pearson Edexcel anchor scripts.<br>
-        • Inside-cover tracking grids shared directly at Parents' Consultations.
-      </div>
-      <div class="warning-box" style="margin: 0; font-size: 7.8pt; line-height: 1.35; padding: 6px 10px;">
-        <strong>Teacher Workload & Well-Being Accord:</strong><br>
-        In strict alignment with DfE / EEF guidelines, teachers are protected from performative 'book looks' requiring routine stamping. The test of feedback quality is the <strong>measurable academic progress and green-pen response demonstrated by the pupil</strong>.
-      </div>
+    <div class="col-card" style="font-size: 8pt; padding: 8px 12px; margin-top: 4px;">
+      <strong>Quality Assurance & Moderation Schedule:</strong><br>
+      • Termly collaborative work scrutinies evaluating student reflection, redrafts, and progress over time.<br>
+      • Formal GCSE mock standardization against official Pearson Edexcel anchor scripts and examiners' reports.<br>
+      • Inside-cover tracking grids shared directly at Parents' Consultations to celebrate effort and attainment.
     </div>
   </div>
 
