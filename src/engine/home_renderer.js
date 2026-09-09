@@ -130,10 +130,46 @@ export function renderHomepage() {
     appStore.state.activeUnitData.type === 'trip' ||
     window.currentUnitId === 'trip_ypres' ||
     (unitData && unitData.type === 'trip');
+
+  let medicineVisualGuideBannerHTML = '';
+  if (window.currentUnitId === 'edexcel_medicine') {
+    medicineVisualGuideBannerHTML = `
+      <div class="med-visual-guide-hub-card" style="margin: 28px 0 20px 0; background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #172554 100%); border-radius: 14px; padding: 24px 28px; color: #ffffff; box-shadow: 0 10px 30px -5px rgba(30, 58, 138, 0.4); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; border: 1.5px solid rgba(255,255,255,0.15); position: relative; overflow: hidden;">
+        <div style="position: absolute; right: -20px; top: -30px; font-size: 13rem; color: rgba(255, 255, 255, 0.03); pointer-events: none; z-index: 0;">
+          <i class="fa-solid fa-book-open"></i>
+        </div>
+        <div style="flex: 1; min-width: 290px; position: relative; z-index: 1;">
+          <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(59, 130, 246, 0.25); border: 1px solid rgba(147, 197, 253, 0.4); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; color: #93c5fd;">
+            <i class="fa-solid fa-star"></i> Featured Revision Masterclass &bull; 40 Pages
+          </div>
+          <h3 style="margin: 0 0 6px 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.6rem; font-weight: 800; color: #ffffff; line-height: 1.25;">
+            40-Page Visual Revision &amp; Exam Assessment Playbook
+          </h3>
+          <p style="margin: 0 0 12px 0; color: #cbd5e1; font-size: 0.94rem; line-height: 1.45; max-width: 680px;">
+            Complete Paper 1 companion: 18 double-page spreads covering Medieval, Renaissance, Industrial, Modern &amp; Western Front, step-by-step paragraph formulas for Q1&ndash;Q6, Grade 9 examiner WAGOLLs, and official 1h 20m exam timing models.
+          </p>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap; font-size: 0.76rem;">
+            <span style="background: rgba(255,255,255,0.12); padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.18);"><i class="fa-regular fa-clock" style="color: #38bdf8;"></i> 1h 20m Pacing Blueprint</span>
+            <span style="background: rgba(255,255,255,0.12); padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.18);"><i class="fa-solid fa-award" style="color: #fbbf24;"></i> Grade 7&ndash;9 Examiner Toolkit</span>
+            <span style="background: rgba(255,255,255,0.12); padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.18);"><i class="fa-solid fa-print" style="color: #a78bfa;"></i> Photocopier Ready</span>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; position: relative; z-index: 1;">
+          <a href="/units/edexcel_medicine/visual_revision_guide.html" target="_blank" class="btn" style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color: #ffffff; padding: 12px 22px; border-radius: 8px; font-weight: 700; font-size: 0.95rem; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4); transition: all 0.2s;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='none';">
+            <i class="fa-solid fa-book-open"></i> Launch Interactive Playbook
+          </a>
+          <a href="/pdfs/edexcel_medicine_visual_revision_and_exam_guide.pdf" target="_blank" class="btn" style="background: rgba(255,255,255,0.12); color: #ffffff; border: 1px solid rgba(255,255,255,0.25); padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.12)'">
+            <i class="fa-solid fa-file-pdf"></i> Download PDF (40 Pages)
+          </a>
+        </div>
+      </div>
+    `;
+  }
+
   contentArea.innerHTML = `
       <div>
         ${topSectionHTML}
-        
+        ${medicineVisualGuideBannerHTML}
         ${isTripUnit ? '' : `<h2 style="margin-top: 40px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Key Topic Lessons</h2>`}
         ${lessonsHTML}
       </div>

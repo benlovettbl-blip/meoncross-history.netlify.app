@@ -247,6 +247,16 @@ export function renderWorkbooksZone(container, unitData) {
   if (state.selectedUnitId === 'edexcel_medicine' || window.currentUnitId === 'edexcel_medicine') {
     const medBooklets = [
       {
+        id: 'VISUAL_PLAYBOOK',
+        title: '40-Page Visual Revision & Exam Assessment Playbook',
+        pages: '40 Pages',
+        badge: 'Visual Masterclass Guide',
+        color: '#2563eb',
+        desc: 'The complete visual revision volume: 18 double-page spreads, complete Paper 1 specification blueprints, Q1–Q6 step-by-step paragraph formulas, Grade 9 examiner WAGOLLs, trigger phrase toolkits, and 1h 20m exam timing models. Designed for double-sided A4 printing!',
+        fileBase: '/units/edexcel_medicine/visual_revision_guide.html',
+        pdfUrl: '/pdfs/edexcel_medicine_visual_revision_and_exam_guide.pdf',
+      },
+      {
         id: 'SEC_A',
         title: 'Section A: The British Sector of the Western Front, 1914–1918',
         pages: '12 Pages',

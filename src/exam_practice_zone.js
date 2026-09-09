@@ -1,15 +1,15 @@
 export function renderExamPracticeZone(container, unitData) {
   // 1. Flatten the exam_practice from lessons into a master list of questions
   let examBank = [];
-  
+
   // Legacy support for older units (if any still exist)
   if (unitData.exam_blocks) {
-    unitData.exam_blocks.forEach(block => {
-      block.questions.forEach(q => {
+    unitData.exam_blocks.forEach((block) => {
+      block.questions.forEach((q) => {
         examBank.push({
           ...q,
           question: q.text || q.question, // unify
-          blockTitle: block.title
+          blockTitle: block.title,
         });
       });
     });
@@ -17,39 +17,43 @@ export function renderExamPracticeZone(container, unitData) {
 
   // Modern support for 'exam_practice' within lessons
   if (unitData.lessons) {
-    unitData.lessons.forEach(l => {
+    unitData.lessons.forEach((l) => {
       if (l.exam_practice) {
         let practices = [];
         if (Array.isArray(l.exam_practice)) {
-            practices = l.exam_practice;
+          practices = l.exam_practice;
         } else if (l.exam_practice.questions) {
-            // New structure: object with questions and stimulus
-            practices = l.exam_practice.questions.map(q => {
-               return {
-                  ...q,
-                  stimulus: q.stimulus || l.exam_practice.stimulus // inherit global stimulus if question doesn't have its own
-               };
-            });
+          // New structure: object with questions and stimulus
+          practices = l.exam_practice.questions.map((q) => {
+            return {
+              ...q,
+              stimulus: q.stimulus || l.exam_practice.stimulus, // inherit global stimulus if question doesn't have its own
+            };
+          });
         } else {
-            // Single question object
-            practices = [l.exam_practice];
+          // Single question object
+          practices = [l.exam_practice];
         }
 
-        practices.forEach(ep => {
+        practices.forEach((ep) => {
           let qText = ep.question || ep.text;
           if (!qText) return; // Skip if no question text
           let type = ep.type;
           if (!type) {
-              if (qText.includes("12 marks")) type = "12-mark";
-              else if (qText.includes("16 marks")) type = "16-mark";
-              else if (qText.includes("2 marks") || qText.includes("4 marks") || qText.includes("8 marks")) {
-                  let m = qText.match(/\((\d+) marks?\)/);
-                  type = m ? `${m[1]}-mark` : "4-mark";
-              } else {
-                  type = "Exam";
-              }
+            if (qText.includes('12 marks')) type = '12-mark';
+            else if (qText.includes('16 marks')) type = '16-mark';
+            else if (
+              qText.includes('2 marks') ||
+              qText.includes('4 marks') ||
+              qText.includes('8 marks')
+            ) {
+              let m = qText.match(/\((\d+) marks?\)/);
+              type = m ? `${m[1]}-mark` : '4-mark';
+            } else {
+              type = 'Exam';
+            }
           }
-          let blockTitle = l.title || "";
+          let blockTitle = l.title || '';
           let ktPrefix = blockTitle.split(':')[0]; // e.g. "KT1.1"
 
           examBank.push({
@@ -57,16 +61,18 @@ export function renderExamPracticeZone(container, unitData) {
             question: qText,
             blockTitle: blockTitle,
             ktPrefix: ktPrefix,
-            type: type
+            type: type,
           });
         });
       }
     });
   }
 
-  let hasAnyAssessments = (unitData.assessments && unitData.assessments.length > 0) || 
-                          (unitData.lessons && unitData.lessons.some(l => (l.assessments && l.assessments.length > 0) || l.gcse_task));
-  let hasMockExams = (unitData.mock_exams && unitData.mock_exams.length > 0);
+  let hasAnyAssessments =
+    (unitData.assessments && unitData.assessments.length > 0) ||
+    (unitData.lessons &&
+      unitData.lessons.some((l) => (l.assessments && l.assessments.length > 0) || l.gcse_task));
+  let hasMockExams = unitData.mock_exams && unitData.mock_exams.length > 0;
   if (examBank.length === 0 && !hasAnyAssessments && !hasMockExams) {
     container.innerHTML = `
       <div style="text-align:center; padding: 40px; background: #fff; border-radius: 12px; color: #64748b; font-size: 1.2rem;">
@@ -78,7 +84,7 @@ export function renderExamPracticeZone(container, unitData) {
   }
 
   // Extract unique types for the filter dropdown
-  const uniqueTypes = [...new Set(examBank.map(q => q.type).filter(Boolean))];
+  const uniqueTypes = [...new Set(examBank.map((q) => q.type).filter(Boolean))];
 
   const isKS3 = unitData.title && unitData.title.includes('KS3');
 
@@ -95,28 +101,33 @@ export function renderExamPracticeZone(container, unitData) {
         <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #1e3a8a; margin-top: 0; margin-bottom: 30px;"><i class="fa-solid fa-pen-nib" style="color: #3b82f6;"></i> Unit Assessments</h2>
         <div style="display: flex; flex-direction: column; gap: 20px;">
     `;
-    
+
     let ks3Assessments = [];
     if (unitData.assessments && Array.isArray(unitData.assessments)) {
-       ks3Assessments.push(...unitData.assessments.map(a => ({...a, lessonTitle: 'End of Unit Assessment'})));
+      ks3Assessments.push(
+        ...unitData.assessments.map((a) => ({ ...a, lessonTitle: 'End of Unit Assessment' })),
+      );
     }
     if (unitData.lessons) {
-      unitData.lessons.forEach(l => {
+      unitData.lessons.forEach((l) => {
         if (l.assessments) {
-           l.assessments.forEach(a => ks3Assessments.push({...a, lessonTitle: l.title}));
+          l.assessments.forEach((a) => ks3Assessments.push({ ...a, lessonTitle: l.title }));
         } else if (l.gcse_task) {
-           ks3Assessments.push({...l.gcse_task, lessonTitle: l.title});
+          ks3Assessments.push({ ...l.gcse_task, lessonTitle: l.title });
         }
       });
     }
-    
+
     if (ks3Assessments.length === 0) {
       assessmentsHtml += `<p style="color: #64748b; font-size: 1.1rem;">No assessments found for this unit.</p>`;
     } else {
-      ks3Assessments.forEach(ass => {
+      ks3Assessments.forEach((ass) => {
         let taskContent = ass.question || ass.text || ass.description || 'Assessment Task';
         if (ass.type === 'timeline' && ass.events) {
-           taskContent += `<ul style="margin-top: 15px; font-size: 1.1rem; color: #475569;">` + ass.events.map(e => `<li><strong>${e.title}</strong>: ${e.detail}</li>`).join('') + `</ul>`;
+          taskContent +=
+            `<ul style="margin-top: 15px; font-size: 1.1rem; color: #475569;">` +
+            ass.events.map((e) => `<li><strong>${e.title}</strong>: ${e.detail}</li>`).join('') +
+            `</ul>`;
         }
         assessmentsHtml += `
           <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-left: 5px solid #3b82f6;">
@@ -124,19 +135,23 @@ export function renderExamPracticeZone(container, unitData) {
             <h3 style="margin-top: 0; color: #0f172a; font-size: 1.3rem; margin-bottom: 15px;">${ass.title && ass.lessonTitle !== 'End of Unit Assessment' ? ass.title + '<br>' : ''}${taskContent}</h3>
             <div style="display: flex; gap: 10px; flex-wrap: wrap;">
               ${ass.hint ? `<button class="main-btn" onclick="alert('${ass.hint.replace(/'/g, "\\'")}')" style="background: #fef3c7; color: #d97706; border: 1px solid #fde68a; padding: 8px 16px; border-radius: 8px; font-weight: 600;"><i class="fa-solid fa-lightbulb"></i> Hint</button>` : ''}
-              ${ass.model_answer ? `<button class="main-btn" onclick="const a = this.nextElementSibling; a.style.display = a.style.display === 'none' ? 'block' : 'none';" style="background: #d1fae5; color: #059669; border: 1px solid #a7f3d0; padding: 8px 16px; border-radius: 8px; font-weight: 600;"><i class="fa-solid fa-star"></i> Show Model</button>
-              <div style="display: none; width: 100%; margin-top: 15px; padding: 15px; background: #f0fdf4; border-left: 4px solid #10b981; color: #064e3b; border-radius: 0 8px 8px 0; white-space: pre-wrap;">${Array.isArray(ass.model_answer) ? ass.model_answer.join('\\n\\n') : ass.model_answer}</div>` : ''}
+              ${
+                ass.model_answer
+                  ? `<button class="main-btn" onclick="const a = this.nextElementSibling; a.style.display = a.style.display === 'none' ? 'block' : 'none';" style="background: #d1fae5; color: #059669; border: 1px solid #a7f3d0; padding: 8px 16px; border-radius: 8px; font-weight: 600;"><i class="fa-solid fa-star"></i> Show Model</button>
+              <div style="display: none; width: 100%; margin-top: 15px; padding: 15px; background: #f0fdf4; border-left: 4px solid #10b981; color: #064e3b; border-radius: 0 8px 8px 0; white-space: pre-wrap;">${Array.isArray(ass.model_answer) ? ass.model_answer.join('\\n\\n') : ass.model_answer}</div>`
+                  : ''
+              }
             </div>
           </div>
         `;
       });
     }
-    
+
     assessmentsHtml += `</div></div>`;
     container.innerHTML = assessmentsHtml;
     return;
   }
-  
+
   // 2. Build the UI wrapper for KS4
   container.innerHTML = `
     <style>
@@ -246,7 +261,7 @@ export function renderExamPracticeZone(container, unitData) {
             <label style="font-weight: 700; color: #1e293b; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.5px;">Target Question Type</label>
             <div id="epz-type-pills" style="display: flex; gap: 10px; flex-wrap: wrap;">
               <button class="epz-pill active" data-type="all">📚 All Question Types</button>
-              ${uniqueTypes.map(t => `<button class="epz-pill" data-type="${t}">${t.charAt(0).toUpperCase() + t.slice(1)}</button>`).join('')}
+              ${uniqueTypes.map((t) => `<button class="epz-pill" data-type="${t}">${t.charAt(0).toUpperCase() + t.slice(1)}</button>`).join('')}
             </div>
           </div>
           
@@ -266,9 +281,18 @@ export function renderExamPracticeZone(container, unitData) {
         
         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 25px;">
           <div id="epz-q-meta" style="font-size: 0.95rem; font-weight: 800; color: #6366f1; text-transform: uppercase; letter-spacing: 1.5px; background: rgba(99, 102, 241, 0.1); padding: 6px 12px; border-radius: 8px;"></div>
-          <div id="epz-timer-container" style="display: flex; align-items: center; gap: 12px; background: linear-gradient(135deg, #0f172a, #1e293b); color: white; padding: 10px 20px; border-radius: 25px; font-family: 'Courier New', monospace; font-size: 1.4rem; font-weight: bold; box-shadow: 0 4px 15px rgba(15, 23, 42, 0.4); border: 1px solid rgba(255,255,255,0.1);">
-            <i class="fa-solid fa-stopwatch" style="color: #38bdf8;"></i> <span id="epz-timer-display" style="letter-spacing: 2px;">00:00</span>
-            <button id="epz-timer-toggle" style="background: rgba(255,255,255,0.1); border: none; color: white; cursor: pointer; padding: 6px 10px; border-radius: 50%; transition: background 0.2s;"><i class="fa-solid fa-play"></i></button>
+          <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 8px;">
+            <div id="epz-timer-container" style="display: flex; align-items: center; gap: 12px; background: linear-gradient(135deg, #0f172a, #1e293b); color: white; padding: 10px 20px; border-radius: 25px; font-family: 'Courier New', monospace; font-size: 1.4rem; font-weight: bold; box-shadow: 0 4px 15px rgba(15, 23, 42, 0.4); border: 1px solid rgba(255,255,255,0.1);">
+              <i class="fa-solid fa-stopwatch" style="color: #38bdf8;"></i> <span id="epz-timer-display" style="letter-spacing: 2px;">00:00</span>
+              <button id="epz-timer-toggle" style="background: rgba(255,255,255,0.1); border: none; color: white; cursor: pointer; padding: 6px 10px; border-radius: 50%; transition: background 0.2s;"><i class="fa-solid fa-play"></i></button>
+            </div>
+            <div id="epz-timer-presets" style="display: flex; gap: 6px; font-size: 0.75rem; flex-wrap: wrap; justify-content: flex-end;">
+              <button type="button" id="epz-btn-reset-q" style="background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; border-radius: 12px; padding: 2px 8px; cursor: pointer; font-weight: 600;" title="Reset timer to question marks">Question Tariff</button>
+              <button type="button" id="epz-btn-set-80m" style="background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 12px; padding: 2px 8px; cursor: pointer; font-weight: 700;" title="Full 80m Paper 1 Clock with 25m Section A Chime">80m Exam</button>
+              <button type="button" id="epz-btn-set-25m" style="background: #fef3c7; color: #b45309; border: 1px solid #fde68a; border-radius: 12px; padding: 2px 8px; cursor: pointer; font-weight: 600;" title="25m Section A (Western Front)">25m Sec A</button>
+              <button type="button" id="epz-btn-set-55m" style="background: #f3e8ff; color: #7e22ce; border: 1px solid #e9d5ff; border-radius: 12px; padding: 2px 8px; cursor: pointer; font-weight: 600;" title="55m Section B (Thematic Study)">55m Sec B</button>
+            </div>
+            <div id="epz-pacing-notice" style="display: none; font-size: 0.8rem; font-weight: 700; color: #b45309; background: #fef3c7; border: 1px solid #fde68a; padding: 4px 10px; border-radius: 6px; max-width: 320px; text-align: right;"></div>
           </div>
         </div>
 
@@ -296,7 +320,34 @@ export function renderExamPracticeZone(container, unitData) {
   let currentQuestion = null;
   let timerInterval = null;
   let timeLeft = 0;
+  let initialTimeLeft = 0;
+  let questionTariffSeconds = 0;
   let timerRunning = false;
+
+  const playPacingChime = (freq = 659.25, duration = 1.0) => {
+    try {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (!AudioCtx) return;
+      const ctx = new AudioCtx();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, ctx.currentTime);
+      gain.gain.setValueAtTime(0.25, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime + duration);
+    } catch (e) {
+      console.warn('Audio chime unavailable', e);
+    }
+  };
+
+  const playDoublePacingChime = () => {
+    playPacingChime(659.25, 0.7);
+    setTimeout(() => playPacingChime(880, 1.2), 300);
+  };
 
   // 4. Elements
   let currentSelectedType = 'all';
@@ -305,17 +356,22 @@ export function renderExamPracticeZone(container, unitData) {
   const generateBtn = document.getElementById('epz-generate-btn');
   const backBtn = document.getElementById('epz-back-btn');
   const displayArea = document.getElementById('epz-question-display');
-  
+
   const qMeta = document.getElementById('epz-q-meta');
   const qText = document.getElementById('epz-q-text');
   const qStimulus = document.getElementById('epz-q-stimulus');
   const qImages = document.getElementById('epz-q-images');
   const qProv = document.getElementById('epz-q-provenance');
   const qProvText = document.getElementById('epz-q-provenance-text');
-  
+
   const timerDisplay = document.getElementById('epz-timer-display');
   const timerToggle = document.getElementById('epz-timer-toggle');
-  
+  const pacingNotice = document.getElementById('epz-pacing-notice');
+  const btnResetQ = document.getElementById('epz-btn-reset-q');
+  const btnSet80m = document.getElementById('epz-btn-set-80m');
+  const btnSet25m = document.getElementById('epz-btn-set-25m');
+  const btnSet55m = document.getElementById('epz-btn-set-55m');
+
   const hintBtn = document.getElementById('epz-hint-btn');
   const wagollBtn = document.getElementById('epz-wagoll-btn');
   const hintPanel = document.getElementById('epz-hint-panel');
@@ -345,8 +401,23 @@ export function renderExamPracticeZone(container, unitData) {
       if (timeLeft > 0) {
         timeLeft--;
         updateTimerDisplay();
+
+        // 25-Minute pacing chime when counting down from 80m (4800s, 3300s left)
+        if (initialTimeLeft === 4800 && timeLeft === 3300) {
+          playDoublePacingChime();
+          if (pacingNotice) {
+            pacingNotice.innerHTML =
+              '🔔 <strong>25 Mins Elapsed:</strong> Section A complete! Move to Section B (55m left).';
+            pacingNotice.style.display = 'block';
+          }
+        }
       } else {
+        playDoublePacingChime();
         stopTimer();
+        if (pacingNotice) {
+          pacingNotice.innerHTML = "⏰ <strong>Time's up!</strong> Pens down.";
+          pacingNotice.style.display = 'block';
+        }
         alert("Time's up! Pens down!");
       }
     }, 1000);
@@ -358,33 +429,54 @@ export function renderExamPracticeZone(container, unitData) {
     clearInterval(timerInterval);
   };
 
+  const setTimerDuration = (seconds) => {
+    stopTimer();
+    timeLeft = seconds;
+    initialTimeLeft = seconds;
+    if (pacingNotice) pacingNotice.style.display = 'none';
+    updateTimerDisplay();
+  };
+
+  if (btnResetQ) {
+    btnResetQ.addEventListener('click', () => setTimerDuration(questionTariffSeconds || 600));
+  }
+  if (btnSet80m) {
+    btnSet80m.addEventListener('click', () => setTimerDuration(4800)); // 80 mins
+  }
+  if (btnSet25m) {
+    btnSet25m.addEventListener('click', () => setTimerDuration(1500)); // 25 mins
+  }
+  if (btnSet55m) {
+    btnSet55m.addEventListener('click', () => setTimerDuration(3300)); // 55 mins
+  }
+
   const populateSpecificQuestions = () => {
     const selectedType = currentSelectedType;
     let filteredBank = examBank;
-    
+
     if (selectedType !== 'all') {
-      filteredBank = filteredBank.filter(q => q.type === selectedType);
+      filteredBank = filteredBank.filter((q) => q.type === selectedType);
     }
-    
+
     // Preserve current selection if it still exists
     const currentVal = specificFilter.value;
-    
+
     let html = '<option value="random">🎲 Random Question (From Filters Above)</option>';
     filteredBank.forEach((q) => {
-        const originalIndex = examBank.indexOf(q);
-        let typeIcon = "📄";
-        let truncatedText = q.question.length > 75 ? q.question.substring(0, 75) + "..." : q.question;
-        let prefix = q.ktPrefix ? `[${q.ktPrefix}] ` : '';
-        html += `<option value="${originalIndex}">${typeIcon} ${prefix}${truncatedText}</option>`;
+      const originalIndex = examBank.indexOf(q);
+      let typeIcon = '📄';
+      let truncatedText = q.question.length > 75 ? q.question.substring(0, 75) + '...' : q.question;
+      let prefix = q.ktPrefix ? `[${q.ktPrefix}] ` : '';
+      html += `<option value="${originalIndex}">${typeIcon} ${prefix}${truncatedText}</option>`;
     });
-    
+
     specificFilter.innerHTML = html;
-    
+
     // Attempt to re-select
-    if (currentVal !== "random") {
-      let optionExists = Array.from(specificFilter.options).some(opt => opt.value === currentVal);
+    if (currentVal !== 'random') {
+      let optionExists = Array.from(specificFilter.options).some((opt) => opt.value === currentVal);
       if (optionExists) {
-          specificFilter.value = currentVal;
+        specificFilter.value = currentVal;
       }
     }
   };
@@ -393,7 +485,7 @@ export function renderExamPracticeZone(container, unitData) {
   backBtn.addEventListener('click', () => {
     stopTimer();
     const links = Array.from(document.querySelectorAll('.lesson-link'));
-    const homeLink = links.find(l => l.innerHTML.includes('Unit Homepage'));
+    const homeLink = links.find((l) => l.innerHTML.includes('Unit Homepage'));
     if (homeLink) {
       homeLink.click();
     } else {
@@ -421,7 +513,7 @@ export function renderExamPracticeZone(container, unitData) {
     typePills.addEventListener('click', (e) => {
       if (e.target.classList.contains('epz-pill')) {
         // Update active class
-        Array.from(typePills.children).forEach(btn => btn.classList.remove('active'));
+        Array.from(typePills.children).forEach((btn) => btn.classList.remove('active'));
         e.target.classList.add('active');
         // Update state and refresh
         currentSelectedType = e.target.getAttribute('data-type');
@@ -432,19 +524,19 @@ export function renderExamPracticeZone(container, unitData) {
 
   generateBtn.addEventListener('click', () => {
     const selectedSpecific = specificFilter ? specificFilter.value : 'random';
-    
+
     if (selectedSpecific !== 'random') {
       currentQuestion = examBank[parseInt(selectedSpecific)];
     } else {
       const selectedType = currentSelectedType;
       let filteredBank = examBank;
-      
+
       if (selectedType !== 'all') {
-        filteredBank = filteredBank.filter(q => q.type === selectedType);
+        filteredBank = filteredBank.filter((q) => q.type === selectedType);
       }
-      
+
       if (filteredBank.length === 0) {
-        alert("No questions found for this filter.");
+        alert('No questions found for this filter.');
         return;
       }
 
@@ -452,35 +544,38 @@ export function renderExamPracticeZone(container, unitData) {
       const randIndex = Math.floor(Math.random() * filteredBank.length);
       currentQuestion = filteredBank[randIndex];
     }
-    
+
     // Reset UI
     stopTimer();
     displayArea.style.display = 'block';
     hintPanel.style.display = 'none';
     wagollPanel.style.display = 'none';
     qImages.innerHTML = '';
-    
+
     // Set Timer (approx 1.5 mins per mark)
-    let marks = currentQuestion.marks || parseInt((currentQuestion.type || "0").replace(/[^0-9]/g, '')) || 0;
+    let marks =
+      currentQuestion.marks || parseInt((currentQuestion.type || '0').replace(/[^0-9]/g, '')) || 0;
     if (marks) {
-        timeLeft = marks * 90; // 1.5 mins per mark
-        updateTimerDisplay();
+      questionTariffSeconds = marks * 90; // 1.5 mins per mark
+      setTimerDuration(questionTariffSeconds);
     }
-    
+
     qMeta.innerHTML = `<i class="fa-solid fa-book-open"></i> ${currentQuestion.blockTitle} &bull; ${currentQuestion.type || 'Exam'} Question`;
     qText.textContent = currentQuestion.question;
-    
+
     if (currentQuestion.stimulus) {
       if (Array.isArray(currentQuestion.stimulus)) {
-          qStimulus.innerHTML = currentQuestion.stimulus.map(stim => {
-              if (typeof stim === 'string') return stim;
-              if (typeof stim === 'object') {
-                  return `<strong>${stim.title}</strong><br>${stim.content}`;
-              }
-              return '';
-          }).join('<br><br>');
+        qStimulus.innerHTML = currentQuestion.stimulus
+          .map((stim) => {
+            if (typeof stim === 'string') return stim;
+            if (typeof stim === 'object') {
+              return `<strong>${stim.title}</strong><br>${stim.content}`;
+            }
+            return '';
+          })
+          .join('<br><br>');
       } else {
-          qStimulus.innerHTML = currentQuestion.stimulus;
+        qStimulus.innerHTML = currentQuestion.stimulus;
       }
       qStimulus.style.display = 'block';
     } else {
@@ -490,8 +585,8 @@ export function renderExamPracticeZone(container, unitData) {
 
     // Handle images / sources
     if (currentQuestion.image) {
-        qImages.style.display = 'flex';
-        qImages.innerHTML += `<img src="${currentQuestion.image}" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">`;
+      qImages.style.display = 'flex';
+      qImages.innerHTML += `<img src="${currentQuestion.image}" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">`;
     }
 
     if (currentQuestion.provenance_clue) {
@@ -502,42 +597,44 @@ export function renderExamPracticeZone(container, unitData) {
     }
 
     if (currentQuestion.structure_strip || currentQuestion.scaffolding) {
-        hintBtn.style.display = 'block';
-        let strip = currentQuestion.structure_strip || currentQuestion.scaffolding;
-        let stripHtml = `<strong>Scaffolding / Structure Strip:</strong><br><br>`;
-        if (typeof strip === 'string') {
-            stripHtml += strip.replace(/\\n/g, '<br>');
-        } else if (Array.isArray(strip)) {
-            stripHtml += `<ul style="padding-left: 20px;">${strip.map(s => `<li>${s}</li>`).join('')}</ul>`;
-        }
-        hintPanel.innerHTML = stripHtml;
+      hintBtn.style.display = 'block';
+      let strip = currentQuestion.structure_strip || currentQuestion.scaffolding;
+      let stripHtml = `<strong>Scaffolding / Structure Strip:</strong><br><br>`;
+      if (typeof strip === 'string') {
+        stripHtml += strip.replace(/\\n/g, '<br>');
+      } else if (Array.isArray(strip)) {
+        stripHtml += `<ul style="padding-left: 20px;">${strip.map((s) => `<li>${s}</li>`).join('')}</ul>`;
+      }
+      hintPanel.innerHTML = stripHtml;
     } else {
-        hintBtn.style.display = 'none';
+      hintBtn.style.display = 'none';
     }
 
     if (currentQuestion.model_answer) {
-        wagollBtn.style.display = 'block';
-        let ans = currentQuestion.model_answer;
-        if (Array.isArray(ans)) ans = ans.join('<br><br>');
-        wagollPanel.innerHTML = ans.replace(/\\n|\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      wagollBtn.style.display = 'block';
+      let ans = currentQuestion.model_answer;
+      if (Array.isArray(ans)) ans = ans.join('<br><br>');
+      wagollPanel.innerHTML = ans
+        .replace(/\\n|\n/g, '<br>')
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
     } else {
-        wagollBtn.style.display = 'none';
+      wagollBtn.style.display = 'none';
     }
   });
 
   // Render legacy assessments container correctly
   const assessmentsContainer = document.createElement('div');
   assessmentsContainer.id = 'legacy-assessments';
-  
+
   if (hasAnyAssessments) {
-      // Logic for legacy assessments could go here.
-      // But since we are extracting ALL exam_practice into examBank,
-      // it handles both workflows cleanly now.
+    // Logic for legacy assessments could go here.
+    // But since we are extracting ALL exam_practice into examBank,
+    // it handles both workflows cleanly now.
   }
 
   // Initialize specific questions list on load
   populateSpecificQuestions();
-  
+
   // Render Mock Exams Section
   if (unitData.mock_exams && unitData.mock_exams.length > 0) {
     const mocksHtml = `
@@ -547,31 +644,56 @@ export function renderExamPracticeZone(container, unitData) {
         </h2>
         <p style="color: #475569; font-size: 1.1rem; margin-bottom: 25px;">Generate completely copyright-free, print-ready PDF replicas of past papers.</p>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-          ${unitData.mock_exams.map(mock => `
+          ${unitData.mock_exams
+            .map(
+              (mock) => `
             <div style="border: 2px solid #e2e8f0; border-radius: 12px; padding: 20px; background: #f8fafc; display: flex; flex-direction: column;">
               <h3 style="margin-top: 0; color: #0f172a; font-size: 1.3rem;">${mock.title}</h3>
-              ${(mock.paper_reference || mock.time_minutes) ? `<p style="color: #64748b; font-size: 1rem; margin-bottom: 20px; flex-grow: 1;">
+              ${
+                mock.paper_reference || mock.time_minutes
+                  ? `<p style="color: #64748b; font-size: 1rem; margin-bottom: 20px; flex-grow: 1;">
                 ${mock.paper_reference ? `<strong>Paper Ref:</strong> ${mock.paper_reference}<br>` : ''}
                 ${mock.time_minutes ? `<strong>Time:</strong> ${mock.time_minutes} minutes<br>` : ''}
                 ${mock.total_marks ? `<strong>Marks:</strong> ${mock.total_marks} marks` : ''}
-              </p>` : '<div style="flex-grow: 1;"></div>'}
+              </p>`
+                  : '<div style="flex-grow: 1;"></div>'
+              }
               <a href="units/${unitData.id || window.currentUnitId}/${mock.id}.html" target="_blank" class="main-btn epz-btn" style="display: block; text-align: center; text-decoration: none; background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 12px 20px; font-size: 1.1rem; border-radius: 8px; font-weight: 600; margin-bottom: 10px;">
                 <i class="fa-solid fa-print"></i> Generate Printable PDF
               </a>
-              ${(mock.has_mark_scheme || (mock.section_b && mock.section_b.questions && mock.section_b.questions.some(q => q.model_answer || (q.type === 'either_or' && (q.q5?.model_answer || q.q6?.model_answer)))) || (mock.questions && mock.questions.some(q => q.model_answer || (q.type === 'essay_choice' && q.options?.some(opt => opt.model_answer))))) ? `
+              ${
+                mock.has_mark_scheme ||
+                (mock.section_b &&
+                  mock.section_b.questions &&
+                  mock.section_b.questions.some(
+                    (q) =>
+                      q.model_answer ||
+                      (q.type === 'either_or' && (q.q5?.model_answer || q.q6?.model_answer)),
+                  )) ||
+                (mock.questions &&
+                  mock.questions.some(
+                    (q) =>
+                      q.model_answer ||
+                      (q.type === 'essay_choice' && q.options?.some((opt) => opt.model_answer)),
+                  ))
+                  ? `
               <a href="units/${unitData.id || window.currentUnitId}/${mock.id}_mark_scheme.html" target="_blank" class="main-btn epz-btn" style="display: block; text-align: center; text-decoration: none; background: linear-gradient(135deg, #002855, #003b7a); color: white; padding: 12px 20px; font-size: 1.1rem; border-radius: 8px; font-weight: 600;">
                 <i class="fa-solid fa-chalkboard-user"></i> Teacher Mark Scheme
               </a>
-              ` : ''}
+              `
+                  : ''
+              }
             </div>
-          `).join('')}
+          `,
+            )
+            .join('')}
         </div>
       </div>
     `;
-    
+
     const wrapper = container.querySelector('.epz-wrapper');
     if (wrapper) {
-        wrapper.insertAdjacentHTML('beforeend', mocksHtml);
+      wrapper.insertAdjacentHTML('beforeend', mocksHtml);
     }
   }
 }
