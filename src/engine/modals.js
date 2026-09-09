@@ -1853,40 +1853,131 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
     }
   }
 
-  const availableUnits = [
+  const unitGroups = [
     {
-      id: 'cme_new',
-      name: 'Conflict in the Middle East (1915–1949)',
-      year: 'Year 10',
-      spec: 'Edexcel GCSE Paper 2',
+      label: 'Year 7 (Key Stage 3)',
+      units: [
+        {
+          id: 'water_and_sanitation',
+          name: 'Water & Sanitation Through Time',
+          year: 'Year 7',
+          spec: 'KS3 Thematic Enquiry',
+        },
+        {
+          id: 'medieval_england',
+          name: 'Medieval England & The Struggle for Power (1066–1485)',
+          year: 'Year 7',
+          spec: 'KS3 History',
+        },
+      ],
     },
     {
-      id: 'edexcel_medicine',
-      name: 'Medicine Through Time (c1250–present)',
-      year: 'Year 11',
-      spec: 'Edexcel GCSE Paper 1',
+      label: 'Year 8 (Key Stage 3)',
+      units: [
+        {
+          id: 'early_modern_world',
+          name: 'The Early Modern World & Global Encounters (1450–1750)',
+          year: 'Year 8',
+          spec: 'KS3 History',
+        },
+        {
+          id: 'industrialisation_and_empire',
+          name: 'Industrialisation, Empire & Power (1750–1900)',
+          year: 'Year 8',
+          spec: 'KS3 History',
+        },
+        {
+          id: 'australia',
+          name: 'History of Australia & First Nations',
+          year: 'Year 8',
+          spec: 'KS3 History',
+        },
+      ],
     },
     {
-      id: 'eee',
-      name: 'Early Elizabethan England (1558–1588)',
-      year: 'Year 11',
-      spec: 'Edexcel GCSE Paper 2',
+      label: 'Year 9 (Key Stage 3)',
+      units: [
+        {
+          id: 'great_war',
+          name: 'Causes of the Great War (1914–1916)',
+          year: 'Year 9',
+          spec: 'KS3 History',
+        },
+        {
+          id: 'great_war_part2',
+          name: 'The Great War (1917–1919)',
+          year: 'Year 9',
+          spec: 'KS3 History',
+        },
+        {
+          id: 'the_shoah',
+          name: 'The Shoah (Holocaust Education)',
+          year: 'Year 9',
+          spec: 'KS3 Enquiry',
+        },
+        { id: 'cold_war', name: 'The Cold War (1945–1991)', year: 'Year 9', spec: 'KS3 History' },
+        {
+          id: 'post_war_britain',
+          name: 'Rights, Protest & Post-War Britain (1900–Present)',
+          year: 'Year 9',
+          spec: 'KS3 History',
+        },
+      ],
     },
     {
-      id: 'weimar_nazi_germany',
-      name: 'Weimar & Nazi Germany (1918–1939)',
-      year: 'Year 10',
-      spec: 'Edexcel GCSE Paper 3',
+      label: 'Year 10 (Edexcel GCSE)',
+      units: [
+        {
+          id: 'cme_new',
+          name: 'Conflict in the Middle East (1915–1949)',
+          year: 'Year 10',
+          spec: 'Edexcel GCSE Paper 2',
+        },
+        {
+          id: 'weimar_nazi_germany',
+          name: 'Weimar & Nazi Germany (1918–1939)',
+          year: 'Year 10',
+          spec: 'Edexcel GCSE Paper 3',
+        },
+      ],
     },
-    { id: 'usa', name: 'The USA, 1954–1975', year: 'Year 11', spec: 'Edexcel GCSE Paper 3' },
-    { id: 'great_war', name: 'The Great War, 1914–1918', year: 'Year 9', spec: 'KS3 History' },
     {
-      id: 'trip_ypres',
-      name: 'Battlefield Tour: Ypres & Somme',
-      year: 'Trip',
-      spec: 'Digital Tour',
+      label: 'Year 11 (Edexcel GCSE)',
+      units: [
+        {
+          id: 'edexcel_medicine',
+          name: 'Medicine Through Time (c1250–present)',
+          year: 'Year 11',
+          spec: 'Edexcel GCSE Paper 1',
+        },
+        {
+          id: 'eee',
+          name: 'Early Elizabethan England (1558–1588)',
+          year: 'Year 11',
+          spec: 'Edexcel GCSE Paper 2',
+        },
+        {
+          id: 'usa',
+          name: 'The USA: Conflict at Home & Abroad (1954–1975)',
+          year: 'Year 11',
+          spec: 'Edexcel GCSE Paper 3',
+        },
+      ],
+    },
+    {
+      label: 'Battlefield Tour',
+      units: [
+        {
+          id: 'trip_ypres',
+          name: 'Battlefield Tour: Ypres & The Somme',
+          year: 'Field Trip',
+          spec: 'Digital Educational Tour',
+        },
+      ],
     },
   ];
+
+  const availableUnits = unitGroups.flatMap((g) => g.units);
 
   let currentUnitId =
     initialUnitId || (state && state.selectedUnitId) || window.currentUnitId || 'cme_new';
@@ -1970,7 +2061,15 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
               <i class="fa-solid fa-book" style="color: #38bdf8; margin-right: 5px;"></i> Teaching Unit
             </label>
             <select id="coverUnitSelect" style="width: 100%; background: #1e293b; border: 1px solid #334155; border-radius: 6px; color: #f8fafc; padding: 8px 10px; font-size: 0.88rem; outline: none; cursor: pointer;">
-              ${availableUnits.map((u) => `<option value="${u.id}" ${u.id === currentUnitId ? 'selected' : ''}>${u.name} (${u.year})</option>`).join('')}
+              ${unitGroups
+                .map(
+                  (g) => `
+                <optgroup label="${g.label}">
+                  ${g.units.map((u) => `<option value="${u.id}" ${u.id === currentUnitId ? 'selected' : ''}>${u.name}</option>`).join('')}
+                </optgroup>
+              `,
+                )
+                .join('')}
             </select>
           </div>
 
