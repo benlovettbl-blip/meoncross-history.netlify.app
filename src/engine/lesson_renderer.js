@@ -329,7 +329,10 @@ export function renderLesson(lesson) {
     htmlNarrative = '',
     htmlPairShare = '',
     htmlHistorian = '',
-    htmlTasks = '';
+    htmlTasks = '',
+    htmlExamPractice = '',
+    htmlVocabDeck = '',
+    htmlExtended = '';
   const formatBold = window.formatBold;
   let globalQuestionNum = 1;
   const formatQuestion = (qText, prependNumber = true) => {
@@ -2218,7 +2221,7 @@ export function renderLesson(lesson) {
     }
 
     if (epQuestions.length > 0 || epStimulus.length > 0) {
-      htmlPairShare += `
+      htmlExamPractice += `
           <div class="phase-card" style="margin-top: 30px; border: 2px solid #3b82f6; border-radius: 8px;">
             <div style="background: #eff6ff; padding: 15px; border-bottom: 2px solid #bfdbfe; border-radius: 6px 6px 0 0; margin: -20px -20px 20px -20px; display: flex; justify-content: space-between; align-items: center;">
               <h3 style="margin: 0; color: #1e3a8a; font-size: 1.2rem;"><i class="fa-solid fa-graduation-cap"></i> Assessment Practice</h3>
@@ -2371,21 +2374,21 @@ export function renderLesson(lesson) {
             (q.question.trim().startsWith('2. ') || q.question.trim().startsWith('Q2.')),
         );
         if (q2Index !== -1) {
-          htmlPairShare += renderQuestion(epQuestions[q2Index], q2Index);
+          htmlExamPractice += renderQuestion(epQuestions[q2Index], q2Index);
         }
       }
 
       if (epStimulus.length > 0) {
-        htmlPairShare += `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-bottom: 20px;">`;
+        htmlExamPractice += `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-bottom: 20px;">`;
         epStimulus.forEach((stim, sIdx) => {
-          htmlPairShare += `
+          htmlExamPractice += `
               <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 15px;">
                 <div style="font-weight: bold; color: #334155; margin-bottom: 10px; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px;">${stim.title}</div>
                 <p style="margin: 0; font-size: 0.95rem; line-height: 1.5; color: #475569; font-style: italic;">${stim.content}</p>
               </div>
             `;
         });
-        htmlPairShare += `</div>`;
+        htmlExamPractice += `</div>`;
       }
 
       if (epQuestions.length > 0) {
@@ -2394,11 +2397,11 @@ export function renderLesson(lesson) {
             q.question &&
             (q.question.trim().startsWith('2. ') || q.question.trim().startsWith('Q2.'));
           if (!isQ2) {
-            htmlPairShare += renderQuestion(q, qIdx);
+            htmlExamPractice += renderQuestion(q, qIdx);
           }
         });
       }
-      htmlPairShare += `</div>`;
+      htmlExamPractice += `</div>`;
     }
   }
 
@@ -2414,7 +2417,7 @@ export function renderLesson(lesson) {
   }
 
   if (deck) {
-    htmlPairShare += `
+    htmlVocabDeck += `
         <div class="phase-card">
           <div class="phase-title">Consolidation & Recall</div>
           <p style="color: #666; margin-bottom: 20px;">Tap a card to flip it and reveal the definition.</p>
@@ -2423,7 +2426,7 @@ export function renderLesson(lesson) {
     deck.forEach((fc) => {
       let t = fc.term || fc.word || fc.title || '';
       let d = fc.definition || fc.meaning || fc.desc || '';
-      htmlPairShare += `
+      htmlVocabDeck += `
           <div class="flashcard-wrapper" data-action="flip-card-wrapper">
             <div class="flashcard-inner">
               <div class="flashcard-face flashcard-front">
@@ -2437,7 +2440,7 @@ export function renderLesson(lesson) {
           </div>
         `;
     });
-    htmlPairShare += `</div></div>`;
+    htmlVocabDeck += `</div></div>`;
   }
 
   if (lesson.extended || lesson.debate_prep) {
@@ -2500,7 +2503,7 @@ export function renderLesson(lesson) {
     extHtml += `</div>`;
 
     if (lesson.debate_prep || (lesson.extended && lesson.extended.paragraphs)) {
-      htmlPairShare += extHtml;
+      htmlExtended += extHtml;
     }
   }
 
@@ -2578,6 +2581,9 @@ export function renderLesson(lesson) {
       htmlPrimary +
       htmlSources1 +
       htmlPairShare +
+      htmlExamPractice +
+      htmlVocabDeck +
+      htmlExtended +
       htmlHistorian;
   } else if (isEarlyModern) {
     html +=
@@ -2586,6 +2592,9 @@ export function renderLesson(lesson) {
       (typeof isGCSE !== 'undefined' && isGCSE ? '' : htmlSources1) +
       htmlNarrative +
       htmlPairShare +
+      htmlExamPractice +
+      htmlVocabDeck +
+      htmlExtended +
       htmlHistorian +
       htmlTasks;
   } else if (unitId === 'water_and_sanitation') {
@@ -2595,8 +2604,22 @@ export function renderLesson(lesson) {
       htmlDoNow +
       htmlNarrative +
       htmlPairShare +
+      htmlExamPractice +
+      htmlVocabDeck +
+      htmlExtended +
       htmlTasks +
       htmlHistorian;
+  } else if (unitId === 'cme_new') {
+    html +=
+      htmlPrimary +
+      htmlDoNow +
+      htmlNarrative +
+      htmlPairShare +
+      htmlTasks +
+      htmlHistorian +
+      htmlExamPractice +
+      htmlVocabDeck +
+      htmlExtended;
   } else {
     html +=
       (typeof isGCSE !== 'undefined' && isGCSE ? '' : htmlSources1) +
@@ -2605,7 +2628,10 @@ export function renderLesson(lesson) {
       htmlNarrative +
       htmlTasks +
       htmlHistorian +
-      htmlPairShare;
+      htmlPairShare +
+      htmlExamPractice +
+      htmlVocabDeck +
+      htmlExtended;
   }
 
   if (
