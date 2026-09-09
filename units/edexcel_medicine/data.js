@@ -668,6 +668,23 @@ export const unitData = {
             text: 'Medical training at Oxford, Paris, and Bologna was based on book learning, not practical treatment. During rare dissections, the professor (Lector) sat in a high chair reading Galen, while an assistant cut. If the body contradicted Galen, the corpse was dismissed as malformed.',
           },
         ],
+        cross_era_links: [
+          {
+            title: 'Continuity: Miasma & Humours in the Renaissance',
+            badge: 'Key Similarity',
+            text: 'Miasma remained the leading explanation for epidemics like the Great Plague (1665). Ordinary people still used bloodletting, purging, and herbal remedies to balance humours throughout the 16th and 17th centuries.',
+          },
+          {
+            title: 'Change: Challenging Galen (Vesalius & Harvey)',
+            badge: 'Anatomical Shift',
+            text: 'Vesalius (1543) proved Galen made human errors (e.g. human lower jaw is 1 bone, not 2). William Harvey (1628) proved blood circulates, disproving Galen’s idea that the liver constantly manufactured new blood.',
+          },
+          {
+            title: 'Change: Thomas Sydenham (1676)',
+            badge: 'Diagnostic Shift',
+            text: 'Known as the "English Hippocrates", Sydenham moved medicine away from individual humoural imbalance toward diagnosing diseases as distinct, external species with fixed symptom patterns.',
+          },
+        ],
         keywords: [
           'Four Humours',
           'Theory of Opposites',
@@ -692,10 +709,10 @@ export const unitData = {
             tariff: 'Similarity & Difference [4 Marks]',
             board: 'Edexcel GCSE (9–1) Paper 1 &bull; Question 3',
             question:
-              'Explain one way in which ideas about the causes of illness in the Medieval period (c.1250–c.1500) were similar to ideas about the causes of illness in the Roman period (c.100–c.500 AD).',
+              'Explain one way in which ideas about the causes of illness in the Medieval period (c.1250–c.1500) were similar to ideas about the causes of illness in the Renaissance period (c.1500–c.1700).',
             guidance:
-              'Timing: 5 mins &bull; Structure: 1 developed comparative PEEL paragraph with specific historical detail from both eras.',
-            lines: 7,
+              'Timing: 5 mins &bull; Structure: 1 developed comparative PEEL paragraph. (e.g. Continued widespread belief in miasma / bad air as a cause of epidemics, or the enduring reliance on humoural imbalance).',
+            lines: 8,
           },
           q4: {
             tariff: 'Explain Why [12 Marks]',
@@ -706,7 +723,7 @@ export const unitData = {
             note: '(You must also use information of your own.)',
             guidance:
               'Timing: 18 mins &bull; Structure: 3 fully developed PEEL paragraphs (P1: Church, P2: Galen, P3: Own Knowledge)',
-            lines: 20,
+            lines: 24,
           },
         },
       },

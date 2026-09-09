@@ -758,7 +758,7 @@ function generateConceptualTriadPage(lesson, unitId) {
         ct.diagnostic_toolkit
           ? `
       <div style="margin-bottom: 9px;">
-        <div style="font-size: 7.6pt; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+        <div style="font-size: 7.8pt; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
           <span>The Physician's Diagnostic Toolkit &amp; Academic Training</span>
           <span style="height: 1px; background: #cbd5e1; flex-grow: 1;"></span>
         </div>
@@ -767,10 +767,39 @@ function generateConceptualTriadPage(lesson, unitId) {
             .map(
               (tool) => `
             <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-radius: 5px; padding: 6px 8px;">
-              <div style="font-size: 7.2pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">
+              <div style="font-size: 7.4pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">
                 ${tool.title}
               </div>
-              <div style="font-size: 6.9pt; color: #334155; line-height: 1.28;">${tool.text}</div>
+              <div style="font-size: 7.1pt; color: #334155; line-height: 1.3;">${tool.text}</div>
+            </div>
+          `,
+            )
+            .join('')}
+        </div>
+      </div>
+      `
+          : ''
+      }
+
+      <!-- SECTION 4: SYNOPTIC CROSS-ERA THEMATIC BRIDGE -->
+      ${
+        ct.cross_era_links
+          ? `
+      <div style="margin-bottom: 9px;">
+        <div style="font-size: 7.8pt; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+          <span>Synoptic Cross-Era Links: Medieval vs. Renaissance (c.1500–c.1700)</span>
+          <span style="height: 1px; background: #cbd5e1; flex-grow: 1;"></span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px;">
+          ${ct.cross_era_links
+            .map(
+              (link) => `
+            <div style="background: #ffffff; border: 1.2px solid #cbd5e1; border-radius: 5px; padding: 6px 8px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+                <strong style="font-size: 7.4pt; color: #0f172a;">${link.title}</strong>
+                <span style="font-size: 6.6pt; font-weight: 700; color: #1e293b; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 1px 4px; border-radius: 2px;">${link.badge}</span>
+              </div>
+              <div style="font-size: 7.1pt; color: #334155; line-height: 1.3;">${link.text}</div>
             </div>
           `,
             )
@@ -783,15 +812,15 @@ function generateConceptualTriadPage(lesson, unitId) {
     </div>
 
     <!-- BOTTOM SYNTHESIS: 3 CORE EXAM ARGUMENTS -->
-    <div style="background: #f8fafc; border: 1.5px solid #1e293b; border-radius: 6px; padding: 6px 10px; margin-top: auto;">
-      <div style="font-size: 7.6pt; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px;">
+    <div style="background: #f8fafc; border: 1.5px solid #1e293b; border-radius: 6px; padding: 7px 10px; margin-top: auto;">
+      <div style="font-size: 7.8pt; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px;">
         3 Key Causal Factors: Why Ideas About Cause Remained Stagnant (c.1250–c.1500)
       </div>
       <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px;">
         ${ct.takeaway_points
           .map(
             (tp, i) => `
-          <div style="font-size: 6.9pt; color: #334155; line-height: 1.25; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 7px;">
+          <div style="font-size: 7.1pt; color: #334155; line-height: 1.3; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 7px;">
             <strong style="color: #0f172a; display: block; margin-bottom: 1px;">Factor ${i + 1}:</strong>
             ${tp}
           </div>
