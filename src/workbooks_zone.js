@@ -1,10 +1,19 @@
 import { state } from './state.js';
 export function renderWorkbooksZone(container, unitData) {
   let html = `
-    <div class="welcome-banner" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); padding: 40px; border-radius: 8px; margin-bottom: 20px;">
+    <div class="welcome-banner" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); padding: 32px 36px; border-radius: 12px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.3);">
+      <div style="flex: 1; min-width: 280px;">
+        <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.18); padding: 3px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; color: #ffffff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">
+          <i class="fa-solid fa-graduation-cap"></i> Teacher Planning Hub
+        </div>
+        <h1 class="welcome-title" style="color: #ffffff; margin-top: 0; margin-bottom: 8px; font-size: 1.85rem; font-weight: 800; letter-spacing: -0.02em;">Print &amp; PDF Hub</h1>
+        <p class="welcome-subtitle" style="color: #e0f2fe; font-size: 1.05rem; margin: 0; max-width: 620px; line-height: 1.4;">Download reading materials, pupil workbooks, mastery packs, or generate last-minute emergency cover sheets with scannable QR codes.</p>
+      </div>
       <div>
-        <h1 class="welcome-title" style="color: #ffffff; margin-top: 0; margin-bottom: 10px;">Print & PDF Hub</h1>
-        <p class="welcome-subtitle" style="color: #e0f2fe; font-size: 1.15rem; margin: 0;">Download or print reading materials and workbooks for this unit.</p>
+        <button id="btnOpenEmergencyCover" style="background: linear-gradient(135deg, #e11d48 0%, #be123c 100%); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 10px; padding: 12px 22px; font-size: 0.98rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 4px 16px rgba(225, 29, 72, 0.4); transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 22px rgba(225, 29, 72, 0.5)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 16px rgba(225, 29, 72, 0.4)';">
+          <i class="fa-solid fa-truck-medical" style="font-size: 1.15rem;"></i>
+          <span>Emergency Cover Generator</span>
+        </button>
       </div>
     </div>
   `;
@@ -440,4 +449,14 @@ export function renderWorkbooksZone(container, unitData) {
   }
 
   container.innerHTML = html;
+
+  const coverBtn = container.querySelector('#btnOpenEmergencyCover');
+  if (coverBtn) {
+    coverBtn.onclick = () => {
+      const uId = state.selectedUnitId || window.currentUnitId || 'cme_new';
+      if (window.openEmergencyCoverModal) {
+        window.openEmergencyCoverModal(uId, unitData);
+      }
+    };
+  }
 }

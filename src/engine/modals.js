@@ -1827,3 +1827,834 @@ window.openTeacherPrintPreview = function (fileBaseName, title, pdfUrl) {
   overlay.style.opacity = '1';
   modalContent.style.transform = 'scale(1)';
 };
+
+/**
+ * ============================================================================
+ * Emergency Cover Generator Modal (Teacher Planning Hub)
+ * Allows the teacher to instantly generate a 1-period or 2-period cover plan
+ * with scannable QR codes, exact workbook page references or paper-only tasks,
+ * printable A4 sheet, and one-click copy text for email/VLE.
+ * ============================================================================
+ */
+window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData) {
+  const existing = document.getElementById('emergencyCoverModal');
+  if (existing) existing.remove();
+
+  // Fetch or retrieve database
+  let db = window.cachedDatabase;
+  if (!db) {
+    try {
+      const res = await fetch('/database.json');
+      db = await res.json();
+      window.cachedDatabase = db;
+    } catch (e) {
+      console.warn('Could not fetch database.json, fallback to activeUnitData:', e);
+      db = {};
+    }
+  }
+
+  const availableUnits = [
+    {
+      id: 'cme_new',
+      name: 'Conflict in the Middle East (1915–1949)',
+      year: 'Year 10',
+      spec: 'Edexcel GCSE Paper 2',
+    },
+    {
+      id: 'edexcel_medicine',
+      name: 'Medicine Through Time (c1250–present)',
+      year: 'Year 11',
+      spec: 'Edexcel GCSE Paper 1',
+    },
+    {
+      id: 'eee',
+      name: 'Early Elizabethan England (1558–1588)',
+      year: 'Year 11',
+      spec: 'Edexcel GCSE Paper 2',
+    },
+    {
+      id: 'weimar_nazi_germany',
+      name: 'Weimar & Nazi Germany (1918–1939)',
+      year: 'Year 10',
+      spec: 'Edexcel GCSE Paper 3',
+    },
+    { id: 'usa', name: 'The USA, 1954–1975', year: 'Year 11', spec: 'Edexcel GCSE Paper 3' },
+    { id: 'great_war', name: 'The Great War, 1914–1918', year: 'Year 9', spec: 'KS3 History' },
+    {
+      id: 'trip_ypres',
+      name: 'Battlefield Tour: Ypres & Somme',
+      year: 'Trip',
+      spec: 'Digital Tour',
+    },
+  ];
+
+  let currentUnitId =
+    initialUnitId || (state && state.selectedUnitId) || window.currentUnitId || 'cme_new';
+  if (!availableUnits.some((u) => u.id === currentUnitId)) {
+    currentUnitId = 'cme_new';
+  }
+
+  let periodType = 'double'; // 'single' or 'double'
+  let resourceMode = currentUnitId === 'cme_new' ? 'paper' : 'workbooks'; // 'workbooks' or 'paper'
+  let lesson1Idx = 0;
+  let lesson2Idx = 1;
+  let supervisorNotes = 'Pupils should sit in their normal seating plan. Silent independent work.';
+  let activeTab = 'preview'; // 'preview' or 'text'
+
+  const getUnitData = (uId) => {
+    if (uId === (state && state.selectedUnitId) && initialUnitData && initialUnitData.lessons) {
+      return initialUnitData;
+    }
+    if (db && db[uId] && db[uId].data) {
+      return db[uId].data;
+    }
+    if (db && db[uId] && db[uId].lessons) {
+      return db[uId];
+    }
+    return { title: 'History Unit', lessons: [] };
+  };
+
+  const overlay = document.createElement('div');
+  overlay.id = 'emergencyCoverModal';
+  overlay.className = 'modal-overlay no-print';
+  overlay.style.cssText =
+    'position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(8px); z-index: 99999; display: flex; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.22s ease; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;';
+
+  overlay.innerHTML = `
+    <div class="modal-content" style="background: #0f172a; border: 1px solid #334155; border-radius: 12px; width: 95vw; max-width: 1400px; height: 93vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.85); transform: scale(0.98); transition: transform 0.22s ease;">
+      
+      <!-- Top Modal Header -->
+      <div style="background: #1e293b; border-bottom: 1px solid #334155; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 38px; height: 38px; border-radius: 8px; background: linear-gradient(135deg, #e11d48 0%, #be123c 100%); display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 1.15rem; box-shadow: 0 2px 10px rgba(225,29,72,0.4);">
+            <i class="fa-solid fa-truck-medical"></i>
+          </div>
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; background: rgba(225, 29, 72, 0.2); color: #fb7185; padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(225, 29, 72, 0.3);">Teacher Planning Hub</span>
+              <span style="font-size: 0.72rem; font-weight: 600; color: #94a3b8;">Emergency Cover Engine</span>
+            </div>
+            <h3 style="margin: 2px 0 0 0; color: #f8fafc; font-size: 1.2rem; font-weight: 700; letter-spacing: -0.01em;">Automated Cover Lesson Generator</h3>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+          <button id="coverTabPreviewBtn" style="background: #334155; color: #ffffff; border: 1px solid #475569; font-weight: 700; font-size: 0.85rem; padding: 7px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s ease;">
+            <i class="fa-solid fa-file-lines"></i> Sheet Preview
+          </button>
+          <button id="coverTabTextBtn" style="background: transparent; color: #94a3b8; border: 1px solid transparent; font-weight: 600; font-size: 0.85rem; padding: 7px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s ease;">
+            <i class="fa-solid fa-envelope"></i> Email / VLE Text
+          </button>
+          <div style="width: 1px; height: 24px; background: #334155; margin: 0 4px;"></div>
+          <button id="coverCopyVleBtn" style="background: linear-gradient(135deg, #059669 0%, #047857 100%); color: #ffffff; border: none; font-weight: 700; font-size: 0.88rem; padding: 8px 16px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 10px rgba(5,150,105,0.3); transition: all 0.2s ease;">
+            <i class="fa-solid fa-copy"></i> Copy Email / VLE Text
+          </button>
+          <button id="coverPrintTriggerBtn" style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: #ffffff; border: none; font-weight: 700; font-size: 0.88rem; padding: 8px 16px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 10px rgba(37,99,235,0.35); transition: all 0.2s ease;">
+            <i class="fa-solid fa-print"></i> Print / Save PDF
+          </button>
+          <button id="coverCloseBtn" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.12); color: #94a3b8; font-size: 1.1rem; width: 34px; height: 34px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Body: Split Settings and Preview -->
+      <div style="flex: 1; display: flex; overflow: hidden; background: #0b1329;">
+        
+        <!-- Left Sidebar: Controls -->
+        <div style="width: 360px; min-width: 320px; background: #111c35; border-right: 1px solid #1e293b; padding: 18px; overflow-y: auto; display: flex; flex-direction: column; gap: 16px;">
+          
+          <!-- Unit Selector -->
+          <div>
+            <label style="display: block; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em; margin-bottom: 6px;">
+              <i class="fa-solid fa-book" style="color: #38bdf8; margin-right: 5px;"></i> Teaching Unit
+            </label>
+            <select id="coverUnitSelect" style="width: 100%; background: #1e293b; border: 1px solid #334155; border-radius: 6px; color: #f8fafc; padding: 8px 10px; font-size: 0.88rem; outline: none; cursor: pointer;">
+              ${availableUnits.map((u) => `<option value="${u.id}" ${u.id === currentUnitId ? 'selected' : ''}>${u.name} (${u.year})</option>`).join('')}
+            </select>
+          </div>
+
+          <!-- Period Format Toggle -->
+          <div>
+            <label style="display: block; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em; margin-bottom: 6px;">
+              <i class="fa-solid fa-clock" style="color: #f59e0b; margin-right: 5px;"></i> Duration / Periods
+            </label>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+              <button id="coverBtnPeriodSingle" type="button" style="background: #1e293b; color: #94a3b8; border: 1px solid #334155; padding: 8px 10px; border-radius: 6px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                <i class="fa-regular fa-clock"></i> Single (55m)
+              </button>
+              <button id="coverBtnPeriodDouble" type="button" style="background: rgba(225, 29, 72, 0.2); color: #fb7185; border: 1px solid #e11d48; padding: 8px 10px; border-radius: 6px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                <i class="fa-solid fa-hourglass-half"></i> Double (110m)
+              </button>
+            </div>
+          </div>
+
+          <!-- Lesson Pickers -->
+          <div id="coverLessonSelectorsContainer" style="display: flex; flex-direction: column; gap: 12px;">
+            <div>
+              <label style="display: block; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em; margin-bottom: 6px;">
+                <span id="coverLesson1Label">Period 1 Lesson:</span>
+              </label>
+              <select id="coverLesson1Select" style="width: 100%; background: #1e293b; border: 1px solid #334155; border-radius: 6px; color: #f8fafc; padding: 8px 10px; font-size: 0.84rem; outline: none; cursor: pointer;"></select>
+            </div>
+
+            <div id="coverLesson2Wrapper">
+              <label style="display: block; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em; margin-bottom: 6px;">
+                Period 2 Lesson:
+              </label>
+              <select id="coverLesson2Select" style="width: 100%; background: #1e293b; border: 1px solid #334155; border-radius: 6px; color: #f8fafc; padding: 8px 10px; font-size: 0.84rem; outline: none; cursor: pointer;"></select>
+            </div>
+          </div>
+
+          <!-- Resource Setting Mode -->
+          <div>
+            <label style="display: block; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em; margin-bottom: 6px;">
+              <i class="fa-solid fa-boxes-stacked" style="color: #10b981; margin-right: 5px;"></i> Classroom Setting Mode
+            </label>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <div id="coverModeWorkbooks" style="background: ${resourceMode === 'workbooks' ? 'rgba(16, 185, 129, 0.15)' : '#1e293b'}; border: 1px solid ${resourceMode === 'workbooks' ? '#10b981' : '#334155'}; border-radius: 6px; padding: 10px; cursor: pointer;">
+                <div style="display: flex; align-items: center; gap: 8px; font-size: 0.84rem; font-weight: 700; color: ${resourceMode === 'workbooks' ? '#34d399' : '#e2e8f0'};">
+                  <i class="fa-solid fa-book-open"></i> Printed Physical Workbooks
+                </div>
+                <div style="font-size: 0.74rem; color: #94a3b8; margin-top: 3px; line-height: 1.3;">
+                  Pupils have their printed physical course booklets in class. Exact page numbers will be referenced.
+                </div>
+              </div>
+
+              <div id="coverModePaper" style="background: ${resourceMode === 'paper' ? 'rgba(245, 158, 11, 0.15)' : '#1e293b'}; border: 1px solid ${resourceMode === 'paper' ? '#f59e0b' : '#334155'}; border-radius: 6px; padding: 10px; cursor: pointer;">
+                <div style="display: flex; align-items: center; gap: 8px; font-size: 0.84rem; font-weight: 700; color: ${resourceMode === 'paper' ? '#fbbf24' : '#e2e8f0'};">
+                  <i class="fa-regular fa-file"></i> Paper Only (No Workbooks in School)
+                </div>
+                <div style="font-size: 0.74rem; color: #94a3b8; margin-top: 3px; line-height: 1.3;">
+                  Pupils use blank/lined A4 paper. Generates structured dual-perspective maps, flowcharts, or timelines.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Supervisor Custom Notes -->
+          <div>
+            <label style="display: block; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em; margin-bottom: 6px;">
+              <i class="fa-solid fa-pencil" style="color: #cbd5e1; margin-right: 5px;"></i> Supervisor Instructions / Room
+            </label>
+            <textarea id="coverSupervisorInput" rows="2" style="width: 100%; background: #1e293b; border: 1px solid #334155; border-radius: 6px; color: #f8fafc; padding: 8px; font-size: 0.82rem; outline: none; resize: vertical;">${supervisorNotes}</textarea>
+          </div>
+
+          <!-- Info Box -->
+          <div style="background: rgba(2, 132, 199, 0.1); border-left: 3px solid #0284c7; padding: 8px 10px; border-radius: 0 4px 4px 0; font-size: 0.74rem; color: #bae6fd; line-height: 1.35;">
+            <strong>💡 Zero-Friction:</strong> Pupils do NOT need logins. Links and QR codes open directly in browser on any device.
+          </div>
+
+        </div>
+
+        <!-- Right Main: Preview or Text -->
+        <div style="flex: 1; display: flex; flex-direction: column; overflow: hidden; background: #334155; position: relative;">
+          
+          <!-- Sheet Preview View -->
+          <div id="coverPreviewContainer" style="flex: 1; overflow-y: auto; padding: 25px; display: flex; justify-content: center; background: #475569;">
+            <div id="coverPaperSheet" style="background: #ffffff; width: 210mm; min-height: 297mm; padding: 10mm 14mm; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border-radius: 2px; color: #1e293b; font-size: 8.8pt; line-height: 1.32; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+              <!-- Dynamic Sheet Content Injected Here -->
+            </div>
+          </div>
+
+          <!-- Plain Text View -->
+          <div id="coverTextContainer" style="flex: 1; overflow-y: auto; padding: 25px; display: none; background: #0f172a;">
+            <div style="max-width: 850px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.85rem; font-weight: 700; color: #94a3b8; text-transform: uppercase;">
+                  Formatted for Outlook, Gmail, or Google Classroom:
+                </span>
+                <button id="coverCopyTextInnerBtn" style="background: #059669; color: white; border: none; padding: 6px 14px; border-radius: 4px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                  <i class="fa-solid fa-copy"></i> Copy Text
+                </button>
+              </div>
+              <textarea id="coverPlainTextArea" readonly style="width: 100%; height: 70vh; background: #1e293b; border: 1px solid #334155; border-radius: 6px; color: #f1f5f9; padding: 14px; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size: 0.82rem; line-height: 1.5; resize: none;"></textarea>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+
+  // References
+  const unitSelect = overlay.querySelector('#coverUnitSelect');
+  const btnPeriodSingle = overlay.querySelector('#coverBtnPeriodSingle');
+  const btnPeriodDouble = overlay.querySelector('#coverBtnPeriodDouble');
+  const lesson1Select = overlay.querySelector('#coverLesson1Select');
+  const lesson2Select = overlay.querySelector('#coverLesson2Select');
+  const lesson2Wrapper = overlay.querySelector('#coverLesson2Wrapper');
+  const modeWorkbooks = overlay.querySelector('#coverModeWorkbooks');
+  const modePaper = overlay.querySelector('#coverModePaper');
+  const supervisorInput = overlay.querySelector('#coverSupervisorInput');
+  const tabPreviewBtn = overlay.querySelector('#coverTabPreviewBtn');
+  const tabTextBtn = overlay.querySelector('#coverTabTextBtn');
+  const previewContainer = overlay.querySelector('#coverPreviewContainer');
+  const textContainer = overlay.querySelector('#coverTextContainer');
+  const paperSheet = overlay.querySelector('#coverPaperSheet');
+  const plainTextArea = overlay.querySelector('#coverPlainTextArea');
+  const copyBtn = overlay.querySelector('#coverCopyVleBtn');
+  const copyInnerBtn = overlay.querySelector('#coverCopyTextInnerBtn');
+  const printBtn = overlay.querySelector('#coverPrintTriggerBtn');
+  const closeBtn = overlay.querySelector('#coverCloseBtn');
+  const modalContent = overlay.querySelector('.modal-content');
+
+  // Populate lessons for current unit
+  const populateLessons = () => {
+    const uData = getUnitData(currentUnitId);
+    const lessons = uData.lessons || [];
+
+    lesson1Select.innerHTML = '';
+    lesson2Select.innerHTML = '';
+
+    if (lessons.length === 0) {
+      lesson1Select.innerHTML = '<option value="0">Lesson 1 (General Overview)</option>';
+      lesson2Select.innerHTML = '<option value="0">Lesson 2 (Application & Review)</option>';
+      return;
+    }
+
+    lessons.forEach((l, idx) => {
+      const opt1 = document.createElement('option');
+      opt1.value = idx;
+      opt1.textContent = `${idx + 1}. ${l.title || 'Lesson ' + (idx + 1)}`;
+      if (idx === lesson1Idx) opt1.selected = true;
+      lesson1Select.appendChild(opt1);
+
+      const opt2 = document.createElement('option');
+      opt2.value = idx;
+      opt2.textContent = `${idx + 1}. ${l.title || 'Lesson ' + (idx + 1)}`;
+      if (idx === lesson2Idx) opt2.selected = true;
+      lesson2Select.appendChild(opt2);
+    });
+
+    if (lesson1Idx >= lessons.length) lesson1Idx = 0;
+    if (lesson2Idx >= lessons.length) lesson2Idx = Math.min(1, lessons.length - 1);
+  };
+
+  // Helper to map page numbers for workbooks
+  const getPageReferences = (uId, lessonIdx) => {
+    if (uId === 'edexcel_medicine') {
+      if (lessonIdx === 0)
+        return { wb: 'Pages 3–6', tb: 'Pages 3–7', doNow: 'Page 3', vocab: 'Page 4' };
+      if (lessonIdx === 1)
+        return { wb: 'Pages 18–21', tb: 'Pages 8–11', doNow: 'Page 18', vocab: 'Page 19' };
+      if (lessonIdx === 2)
+        return { wb: 'Pages 33–37', tb: 'Pages 12–15', doNow: 'Page 33', vocab: 'Page 34' };
+      const wbStart = 3 + lessonIdx * 15;
+      const tbStart = 3 + lessonIdx * 5;
+      return {
+        wb: `Pages ${wbStart}–${wbStart + 3}`,
+        tb: `Pages ${tbStart}–${tbStart + 4}`,
+        doNow: `Page ${wbStart}`,
+        vocab: `Page ${wbStart + 1}`,
+      };
+    }
+    const wbStart = 3 + lessonIdx * 8;
+    return {
+      wb: `Pages ${wbStart}–${wbStart + 3}`,
+      tb: `Pages ${3 + lessonIdx * 4}–${6 + lessonIdx * 4}`,
+      doNow: `Page ${wbStart}`,
+      vocab: `Page ${wbStart + 1}`,
+    };
+  };
+
+  // Render Cover HTML and Plain Text
+  const updateCover = () => {
+    const uData = getUnitData(currentUnitId);
+    const unitMeta = availableUnits.find((u) => u.id === currentUnitId) || {
+      name: uData.title || currentUnitId,
+      year: 'Year 10/11',
+      spec: 'Edexcel GCSE',
+    };
+    const lessons = uData.lessons || [];
+
+    const l1 = lessons[lesson1Idx] || { id: 'lesson_1', title: 'Lesson 1' };
+    const l2 = lessons[lesson2Idx] || { id: 'lesson_2', title: 'Lesson 2' };
+
+    const l1Url = `https://meoncross-history.netlify.app/?view=lessons&unit=${currentUnitId}&lesson=${l1.id || 'lesson_' + (lesson1Idx + 1)}`;
+    const l2Url = `https://meoncross-history.netlify.app/?view=lessons&unit=${currentUnitId}&lesson=${l2.id || 'lesson_' + (lesson2Idx + 1)}`;
+
+    const l1Qr = `https://api.qrserver.com/v1/create-qr-code/?size=100x100&margin=2&data=${encodeURIComponent(l1Url)}`;
+    const l2Qr = `https://api.qrserver.com/v1/create-qr-code/?size=100x100&margin=2&data=${encodeURIComponent(l2Url)}`;
+
+    const p1Refs = getPageReferences(currentUnitId, lesson1Idx);
+    const p2Refs = getPageReferences(currentUnitId, lesson2Idx);
+
+    // Build Sheet HTML
+    let sheetHtml = `
+      <!-- ==================== PERIOD 1 ==================== -->
+      <div style="border-bottom: 2px solid #881337; padding-bottom: 5px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
+        <div style="flex: 1;">
+          <span style="display: inline-block; background: #881337; color: white; font-size: 6.8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; padding: 2px 7px; border-radius: 4px; margin-bottom: 2px;">
+            Mr Lovett's History Hub • ${unitMeta.spec} (${unitMeta.year})
+          </span>
+          <h1 style="font-size: 13pt; margin: 0 0 2px 0; color: #0f172a; font-weight: 800; line-height: 1.2;">
+            ${uData.title || unitMeta.name}
+          </h1>
+          <div style="font-size: 8.5pt; color: #475569; font-weight: 600; margin-bottom: 3px;">
+            Period 1 Cover Task • ${l1.title}
+          </div>
+          <div style="font-size: 7.4pt; color: #881337; background: #fff1f2; padding: 2px 7px; border-radius: 4px; border: 1px solid #fecdd3; display: inline-block;">
+            🌐 <strong>Digital App Link:</strong> <a href="${l1Url}" target="_blank" style="color: #be123c; text-decoration: underline; font-weight: 700;">${l1Url}</a>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; text-align: center; background: #fff1f2; border: 1px solid #fecdd3; border-radius: 6px; padding: 3px 6px; margin-left: 10px;">
+          <img src="${l1Qr}" alt="QR" style="width: 48px; height: 48px; display: block;">
+          <span style="font-size: 5.6pt; font-weight: 700; color: #881337; margin-top: 1px;">LAPTOP CAM QR</span>
+        </div>
+      </div>
+
+      <div style="background: #fff7ed; border-left: 3.5px solid #ea580c; padding: 4px 8px; border-radius: 0 4px 4px 0; margin-bottom: 6px; font-size: 8pt; line-height: 1.35;">
+        <strong>📋 CLASS INSTRUCTIONS (Period 1):</strong> 
+        ${
+          resourceMode === 'workbooks'
+            ? `You have your <strong>printed Course Textbook (${p1Refs.tb})</strong> and <strong>printed Pupil Workbook (${p1Refs.wb})</strong>. Complete all workbook activities in neat pen. Access the digital app for interactive flashcards and visual sources.`
+            : `You will complete your tasks on <strong>1 blank sheet of A4 paper</strong>. Use your laptop/tablet to access the core narrative and visual sources at the link/QR above.`
+        }
+        ${supervisorNotes ? `<br><em>Note: ${supervisorNotes}</em>` : ''}
+      </div>
+
+      <div style="font-size: 9.2pt; font-weight: 800; color: #881337; border-bottom: 1.5px solid #cbd5e1; padding-bottom: 2px; margin: 4px 0 5px 0; display: flex; align-items: center; gap: 6px;">
+        <span style="background: #be123c; color: white; font-size: 6.6pt; font-weight: 700; padding: 1px 5px; border-radius: 3px; text-transform: uppercase;">Period 1</span>
+        <span>${l1.title}</span>
+      </div>
+
+      <!-- Period 1 Tasks -->
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 5px; padding: 6px 9px; margin-bottom: 6px;">
+        <div style="font-weight: 700; color: #0f172a; font-size: 8.5pt; margin-bottom: 3px; display: flex; justify-content: space-between;">
+          <span>Task 1: Retrieval Starter & Vocabulary</span>
+          <span style="font-size: 6.8pt; font-weight: 700; background: #e2e8f0; color: #334155; padding: 1px 5px; border-radius: 3px;">
+            ${resourceMode === 'workbooks' ? 'Workbook: ' + p1Refs.doNow : 'Blank Paper'}
+          </span>
+        </div>
+        <ol style="margin: 2px 0 3px 16px; padding: 0; font-size: 8.2pt;">
+          ${
+            resourceMode === 'workbooks'
+              ? `<li><strong>Do Now Recall:</strong> Turn to <strong>${p1Refs.doNow}</strong> in your workbook. Complete the 10 retrieval questions testing recall from previous lessons.</li>
+               <li><strong>Key Vocabulary:</strong> On <strong>${p1Refs.vocab}</strong>, complete the vocabulary activity (fill-in-the-blank summary or term mapping).</li>`
+              : `<li><strong>Recall Starter (5 mins):</strong> Open the digital lesson. Answer the 5 quick recall starter questions at the top of the blank sheet.</li>
+               <li><strong>Key Terms:</strong> Define 3 essential historical concepts from today's enquiry in full sentences.</li>`
+          }
+        </ol>
+      </div>
+
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 5px; padding: 6px 9px; margin-bottom: 6px;">
+        <div style="font-weight: 700; color: #0f172a; font-size: 8.5pt; margin-bottom: 3px; display: flex; justify-content: space-between;">
+          <span>Task 2: Core Historical Narrative Reading</span>
+          <span style="font-size: 6.8pt; font-weight: 700; background: #e2e8f0; color: #334155; padding: 1px 5px; border-radius: 3px;">
+            ${resourceMode === 'workbooks' ? 'Textbook: ' + p1Refs.tb : 'Digital App Narrative'}
+          </span>
+        </div>
+        <p style="margin: 1px 0 3px 0; font-size: 8pt; color: #334155;">
+          ${
+            resourceMode === 'workbooks'
+              ? `Read through <strong>${p1Refs.tb}</strong> in your textbook or read the <strong>Core Historical Narrative</strong> on the app.`
+              : `Read through the <strong>Core Historical Narrative</strong> on your screen, examining the contemporary sources and maps.`
+          }
+        </p>
+      </div>
+
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 5px; padding: 6px 9px; margin-bottom: 6px;">
+        <div style="font-weight: 700; color: #0f172a; font-size: 8.5pt; margin-bottom: 3px; display: flex; justify-content: space-between;">
+          <span>Task 3: Deep Application Enquiry</span>
+          <span style="font-size: 6.8pt; font-weight: 700; background: #e2e8f0; color: #334155; padding: 1px 5px; border-radius: 3px;">
+            ${resourceMode === 'workbooks' ? 'Workbook: ' + p1Refs.wb : 'A4 Blank Paper Task'}
+          </span>
+        </div>
+        ${
+          resourceMode === 'workbooks'
+            ? `<ol style="margin: 2px 0 3px 16px; padding: 0; font-size: 8.2pt;">
+              <li>Complete the structured enquiry comprehension tasks in your workbook on <strong>${p1Refs.wb}</strong>.</li>
+              <li>Ensure all sentences are written in academic historical prose with precise names, dates, and factors.</li>
+            </ol>`
+            : `<p style="margin: 1px 0 3px 0; font-size: 8pt;">
+              ${
+                currentUnitId === 'cme_new'
+                  ? `<strong>Dual-Perspective Strategic Map Activity:</strong> Sketch the outline of Mandate Palestine. Clearly shade the proposed Jewish state vs Arab state under the 1947 UN Partition Plan (Resolution 181). Around the margins, annotate 3 reasons why Jewish leaders accepted the plan and 3 reasons why Arab leaders rejected it.`
+                  : `<strong>Analytical Concept Matrix:</strong> Divide your blank paper into two columns comparing the core competing historical factors (e.g. Supernatural vs Rational, or Change vs Continuity). Annotate 4 specific pieces of historical evidence in each column.`
+              }
+            </p>`
+        }
+      </div>
+
+      <div style="background: #fff1f2; border: 1px solid #fecdd3; border-radius: 5px; padding: 6px 9px; margin-bottom: 0;">
+        <div style="font-weight: 700; color: #881337; font-size: 8.5pt; margin-bottom: 2px; display: flex; justify-content: space-between;">
+          <span>Task 4: Interactive Quizzing & Plenary Check</span>
+          <span style="font-size: 6.8pt; font-weight: 700; background: #be123c; color: white; padding: 1px 5px; border-radius: 3px;">Digital App</span>
+        </div>
+        <p style="margin: 0; font-size: 7.8pt; color: #4c0519;">
+          Open the <strong>Interactive Quiz Zone</strong> on the lesson app page. Complete the quick-fire questions to check your mastery before Period 2!
+        </p>
+      </div>
+
+      <div style="margin-top: 8px; padding-top: 3px; border-top: 1px solid #e2e8f0; font-size: 6.8pt; color: #64748b; display: flex; justify-content: space-between;">
+        <span>Meoncross History • Mr Lovett</span>
+        <span>${periodType === 'double' ? 'Period 1 Complete — See Next Page for Period 2' : 'Ensure all work is kept safe for review next lesson.'}</span>
+      </div>
+    `;
+
+    if (periodType === 'double') {
+      sheetHtml += `
+        <!-- ==================== PERIOD 2 (PAGE BREAK) ==================== -->
+        <div style="page-break-before: always; break-before: page; margin-top: 15mm;"></div>
+
+        <div style="border-bottom: 2px solid #881337; padding-bottom: 5px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
+          <div style="flex: 1;">
+            <span style="display: inline-block; background: #881337; color: white; font-size: 6.8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; padding: 2px 7px; border-radius: 4px; margin-bottom: 2px;">
+              Mr Lovett's History Hub • ${unitMeta.spec} (${unitMeta.year})
+            </span>
+            <h1 style="font-size: 13pt; margin: 0 0 2px 0; color: #0f172a; font-weight: 800; line-height: 1.2;">
+              ${uData.title || unitMeta.name}
+            </h1>
+            <div style="font-size: 8.5pt; color: #475569; font-weight: 600; margin-bottom: 3px;">
+              Period 2 Cover Task • ${l2.title}
+            </div>
+            <div style="font-size: 7.4pt; color: #881337; background: #fff1f2; padding: 2px 7px; border-radius: 4px; border: 1px solid #fecdd3; display: inline-block;">
+              🌐 <strong>Digital App Link:</strong> <a href="${l2Url}" target="_blank" style="color: #be123c; text-decoration: underline; font-weight: 700;">${l2Url}</a>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; text-align: center; background: #fff1f2; border: 1px solid #fecdd3; border-radius: 6px; padding: 3px 6px; margin-left: 10px;">
+            <img src="${l2Qr}" alt="QR" style="width: 48px; height: 48px; display: block;">
+            <span style="font-size: 5.6pt; font-weight: 700; color: #881337; margin-top: 1px;">LAPTOP CAM QR</span>
+          </div>
+        </div>
+
+        <div style="background: #fff7ed; border-left: 3.5px solid #ea580c; padding: 4px 8px; border-radius: 0 4px 4px 0; margin-bottom: 6px; font-size: 8pt; line-height: 1.35;">
+          <strong>📋 CLASS INSTRUCTIONS (Period 2):</strong> 
+          ${
+            resourceMode === 'workbooks'
+              ? `Turn to <strong>Lesson 2 in your printed textbook (${p2Refs.tb})</strong> and your <strong>printed workbook (${p2Refs.wb})</strong>. Complete all activities before the end of the double period.`
+              : `You will complete Period 2 on <strong>1 lined sheet of A4 paper</strong>. Access the digital app for sources and context.`
+          }
+          ${supervisorNotes ? `<br><em>Note: ${supervisorNotes}</em>` : ''}
+        </div>
+
+        <div style="font-size: 9.2pt; font-weight: 800; color: #881337; border-bottom: 1.5px solid #cbd5e1; padding-bottom: 2px; margin: 4px 0 5px 0; display: flex; align-items: center; gap: 6px;">
+          <span style="background: #be123c; color: white; font-size: 6.6pt; font-weight: 700; padding: 1px 5px; border-radius: 3px; text-transform: uppercase;">Period 2</span>
+          <span>${l2.title}</span>
+        </div>
+
+        <!-- Period 2 Tasks -->
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 5px; padding: 6px 9px; margin-bottom: 6px;">
+          <div style="font-weight: 700; color: #0f172a; font-size: 8.5pt; margin-bottom: 3px; display: flex; justify-content: space-between;">
+            <span>Task 1: Recall Starter & Vocabulary</span>
+            <span style="font-size: 6.8pt; font-weight: 700; background: #e2e8f0; color: #334155; padding: 1px 5px; border-radius: 3px;">
+              ${resourceMode === 'workbooks' ? 'Workbook: ' + p2Refs.doNow : 'Lined Paper'}
+            </span>
+          </div>
+          <ol style="margin: 2px 0 3px 16px; padding: 0; font-size: 8.2pt;">
+            ${
+              resourceMode === 'workbooks'
+                ? `<li><strong>Do Now Retrieval:</strong> Turn to <strong>${p2Refs.doNow}</strong> in your workbook. Complete the 10 recall questions on previous topics.</li>
+                 <li><strong>Vocabulary Mapping:</strong> On <strong>${p2Refs.vocab}</strong>, complete the key terms linking sentence or grid.</li>`
+                : `<li><strong>Retrieval Quick 5:</strong> Write 5 recall starter answers at the top of your lined paper.</li>
+                 <li><strong>Concept Check:</strong> Write down 2 key historical developments from Period 1 that connect directly to Period 2.</li>`
+            }
+          </ol>
+        </div>
+
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 5px; padding: 6px 9px; margin-bottom: 6px;">
+          <div style="font-weight: 700; color: #0f172a; font-size: 8.5pt; margin-bottom: 3px; display: flex; justify-content: space-between;">
+            <span>Task 2: Core Reading & Case Study Analysis</span>
+            <span style="font-size: 6.8pt; font-weight: 700; background: #e2e8f0; color: #334155; padding: 1px 5px; border-radius: 3px;">
+              ${resourceMode === 'workbooks' ? 'Textbook: ' + p2Refs.tb : 'Digital App Narrative'}
+            </span>
+          </div>
+          <p style="margin: 1px 0 3px 0; font-size: 8pt; color: #334155;">
+            Read through ${resourceMode === 'workbooks' ? `<strong>${p2Refs.tb}</strong> in your textbook` : 'the core narrative on your screen'}, focusing on key individuals, government decisions, and consequences.
+          </p>
+        </div>
+
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 5px; padding: 6px 9px; margin-bottom: 6px;">
+          <div style="font-weight: 700; color: #0f172a; font-size: 8.5pt; margin-bottom: 3px; display: flex; justify-content: space-between;">
+            <span>Task 3: Synthesis & Application Task</span>
+            <span style="font-size: 6.8pt; font-weight: 700; background: #e2e8f0; color: #334155; padding: 1px 5px; border-radius: 3px;">
+              ${resourceMode === 'workbooks' ? 'Workbook: ' + p2Refs.wb : 'Lined Paper Timeline / Essay'}
+            </span>
+          </div>
+          ${
+            resourceMode === 'workbooks'
+              ? `<ol style="margin: 2px 0 3px 16px; padding: 0; font-size: 8.2pt;">
+                <li>In your workbook (<strong>${p2Refs.wb}</strong>), complete the comparison activities and source evaluation tables.</li>
+                <li>Write a high-grade conclusion paragraph answering the lesson enquiry question using historical criteria.</li>
+              </ol>`
+              : `<p style="margin: 1px 0 3px 0; font-size: 8pt;">
+                ${
+                  currentUnitId === 'cme_new'
+                    ? `<strong>12-Point Chronological Milestone Timeline:</strong> On lined paper, construct a detailed timeline (1915–1949). For each event (McMahon, Balfour, Arab Revolt, Exodus, 1948 War, 1949 Armistice), write 2 bullet points: (1) What happened, and (2) Why it escalated conflict.`
+                    : `<strong>Chronological Milestone Flowchart:</strong> Construct an annotated timeline or cause-consequence chain of 8 key events from the narrative on your lined paper. Explain the significance of each event.`
+                }
+              </p>`
+          }
+        </div>
+
+        <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 5px; padding: 6px 9px; margin-bottom: 0;">
+          <div style="font-weight: 700; color: #166534; font-size: 8.5pt; margin-bottom: 2px; display: flex; justify-content: space-between;">
+            <span>Task 4: Lesson Mastery Check (Final 10 Mins)</span>
+            <span style="font-size: 6.8pt; font-weight: 700; background: #15803d; color: white; padding: 1px 5px; border-radius: 3px;">Digital App</span>
+          </div>
+          <p style="margin: 0; font-size: 7.8pt; color: #14532d;">
+            Complete the <strong>Lesson Mastery Quiz</strong> on the digital app to lock in your retrieval score. Ensure all work is neatly titled and dated.
+          </p>
+        </div>
+
+        <div style="margin-top: 8px; padding-top: 3px; border-top: 1px solid #e2e8f0; font-size: 6.8pt; color: #64748b; display: flex; justify-content: space-between;">
+          <span>Meoncross School • Department of History • Mr Lovett</span>
+          <span>Ensure workbooks / paper sheets are handed in or stored safely in student folders.</span>
+        </div>
+      `;
+    }
+
+    paperSheet.innerHTML = sheetHtml;
+
+    // Build Plain Text VLE / Email string
+    let plainText = `SUBJECT: GCSE History — ${unitMeta.year} Cover Work (${periodType === 'double' ? 'Double Period' : 'Single Period'})\n`;
+    plainText += `TOPIC: ${uData.title || unitMeta.name}\n`;
+    plainText += `RESOURCES: ${resourceMode === 'workbooks' ? `Pupils have their printed physical Course Textbook and Pupil Workbook.` : `1 sheet of blank A4 paper (Period 1) and 1 sheet of lined A4 paper (Period 2) per pupil.`}\n`;
+    if (supervisorNotes) plainText += `SUPERVISOR NOTE: ${supervisorNotes}\n`;
+    plainText += `\n=========================================\n`;
+    plainText += `PERIOD 1 — ${l1.title}\n`;
+    plainText += `🌐 Digital App: ${l1Url}\n`;
+    if (resourceMode === 'workbooks') {
+      plainText += `1. DO NOW & VOCAB: Open workbook to ${p1Refs.doNow}. Complete the 10 retrieval questions and vocabulary activity on ${p1Refs.vocab}.\n`;
+      plainText += `2. READING: Read textbook ${p1Refs.tb} or the core historical narrative on the app.\n`;
+      plainText += `3. WORKBOOK ENQUIRY: In workbook (${p1Refs.wb}), complete the core enquiry tasks in neat pen.\n`;
+      plainText += `4. CHECK: Complete the 10-question retrieval check on the digital app.\n`;
+    } else {
+      plainText += `1. STARTER: On blank A4 paper, answer the 5 recall starter questions from the top of the lesson app.\n`;
+      plainText += `2. READING: Read the core historical narrative and examine the maps/sources on screen.\n`;
+      plainText += `3. APPLICATION: ${currentUnitId === 'cme_new' ? 'Complete the Dual-Perspective Partition Map Activity on blank paper (sketch Palestine, shade Jewish/Arab zones, annotate 3 reasons for accept/reject).' : 'Complete the Analytical Factor Matrix comparing competing historical arguments on blank paper.'}\n`;
+      plainText += `4. CHECK: Complete the quick digital quiz on the app.\n`;
+    }
+
+    if (periodType === 'double') {
+      plainText += `\n=========================================\n`;
+      plainText += `PERIOD 2 — ${l2.title}\n`;
+      plainText += `🌐 Digital App: ${l2Url}\n`;
+      if (resourceMode === 'workbooks') {
+        plainText += `1. DO NOW & VOCAB: Open workbook to ${p2Refs.doNow} (10 recall questions) and ${p2Refs.vocab} (vocab mapping).\n`;
+        plainText += `2. READING: Read textbook ${p2Refs.tb} or the core narrative on the app.\n`;
+        plainText += `3. WORKBOOK ENQUIRY: In workbook (${p2Refs.wb}), complete the comparison grid and evaluation tasks.\n`;
+        plainText += `4. PLENARY: Complete the Lesson Mastery Quiz on the digital app before the end of the double period.\n`;
+      } else {
+        plainText += `1. RECALL: On lined A4 paper, complete the 5 recall starter questions.\n`;
+        plainText += `2. READING: Read the core narrative for Period 2 on your screen.\n`;
+        plainText += `3. SYNTHESIS: ${currentUnitId === 'cme_new' ? 'Construct a 12-point chronological timeline (1915–1949) on lined paper with 2 bullet points per event (what happened + impact).' : 'Construct an 8-event cause-and-consequence milestone flowchart on lined paper.'}\n`;
+        plainText += `4. PLENARY: Complete the digital multiple-choice mastery quiz on the app. All paper handed in.\n`;
+      }
+    }
+
+    plainTextArea.value = plainText;
+  };
+
+  // Event Handlers
+  unitSelect.onchange = () => {
+    currentUnitId = unitSelect.value;
+    lesson1Idx = 0;
+    lesson2Idx = 1;
+    if (currentUnitId === 'cme_new') {
+      resourceMode = 'paper';
+    } else {
+      resourceMode = 'workbooks';
+    }
+    modeWorkbooks.style.background =
+      resourceMode === 'workbooks' ? 'rgba(16, 185, 129, 0.15)' : '#1e293b';
+    modeWorkbooks.style.borderColor = resourceMode === 'workbooks' ? '#10b981' : '#334155';
+    modePaper.style.background = resourceMode === 'paper' ? 'rgba(245, 158, 11, 0.15)' : '#1e293b';
+    modePaper.style.borderColor = resourceMode === 'paper' ? '#f59e0b' : '#334155';
+    populateLessons();
+    updateCover();
+  };
+
+  btnPeriodSingle.onclick = () => {
+    periodType = 'single';
+    btnPeriodSingle.style.background = 'rgba(225, 29, 72, 0.2)';
+    btnPeriodSingle.style.color = '#fb7185';
+    btnPeriodSingle.style.borderColor = '#e11d48';
+
+    btnPeriodDouble.style.background = '#1e293b';
+    btnPeriodDouble.style.color = '#94a3b8';
+    btnPeriodDouble.style.borderColor = '#334155';
+
+    lesson2Wrapper.style.display = 'none';
+    updateCover();
+  };
+
+  btnPeriodDouble.onclick = () => {
+    periodType = 'double';
+    btnPeriodDouble.style.background = 'rgba(225, 29, 72, 0.2)';
+    btnPeriodDouble.style.color = '#fb7185';
+    btnPeriodDouble.style.borderColor = '#e11d48';
+
+    btnPeriodSingle.style.background = '#1e293b';
+    btnPeriodSingle.style.color = '#94a3b8';
+    btnPeriodSingle.style.borderColor = '#334155';
+
+    lesson2Wrapper.style.display = 'block';
+    updateCover();
+  };
+
+  lesson1Select.onchange = () => {
+    lesson1Idx = parseInt(lesson1Select.value, 10) || 0;
+    if (lesson2Idx <= lesson1Idx) {
+      lesson2Idx = Math.min(lesson1Idx + 1, lesson2Select.options.length - 1);
+      lesson2Select.value = lesson2Idx;
+    }
+    updateCover();
+  };
+
+  lesson2Select.onchange = () => {
+    lesson2Idx = parseInt(lesson2Select.value, 10) || 0;
+    updateCover();
+  };
+
+  modeWorkbooks.onclick = () => {
+    resourceMode = 'workbooks';
+    modeWorkbooks.style.background = 'rgba(16, 185, 129, 0.15)';
+    modeWorkbooks.style.borderColor = '#10b981';
+    modePaper.style.background = '#1e293b';
+    modePaper.style.borderColor = '#334155';
+    updateCover();
+  };
+
+  modePaper.onclick = () => {
+    resourceMode = 'paper';
+    modePaper.style.background = 'rgba(245, 158, 11, 0.15)';
+    modePaper.style.borderColor = '#f59e0b';
+    modeWorkbooks.style.background = '#1e293b';
+    modeWorkbooks.style.borderColor = '#334155';
+    updateCover();
+  };
+
+  supervisorInput.oninput = () => {
+    supervisorNotes = supervisorInput.value;
+    updateCover();
+  };
+
+  // Tab switching
+  tabPreviewBtn.onclick = () => {
+    activeTab = 'preview';
+    tabPreviewBtn.style.background = '#334155';
+    tabPreviewBtn.style.color = '#ffffff';
+    tabPreviewBtn.style.borderColor = '#475569';
+    tabTextBtn.style.background = 'transparent';
+    tabTextBtn.style.color = '#94a3b8';
+    tabTextBtn.style.borderColor = 'transparent';
+
+    previewContainer.style.display = 'flex';
+    textContainer.style.display = 'none';
+  };
+
+  tabTextBtn.onclick = () => {
+    activeTab = 'text';
+    tabTextBtn.style.background = '#334155';
+    tabTextBtn.style.color = '#ffffff';
+    tabTextBtn.style.borderColor = '#475569';
+    tabPreviewBtn.style.background = 'transparent';
+    tabPreviewBtn.style.color = '#94a3b8';
+    tabPreviewBtn.style.borderColor = 'transparent';
+
+    textContainer.style.display = 'flex';
+    previewContainer.style.display = 'none';
+  };
+
+  // Copy plain text handler
+  const handleCopy = () => {
+    navigator.clipboard
+      .writeText(plainTextArea.value)
+      .then(() => {
+        const originalText = copyBtn.innerHTML;
+        copyBtn.innerHTML = '<i class="fa-solid fa-check"></i> Copied to Clipboard!';
+        copyBtn.style.background = '#10b981';
+        setTimeout(() => {
+          copyBtn.innerHTML = originalText;
+          copyBtn.style.background = 'linear-gradient(135deg, #059669 0%, #047857 100%)';
+        }, 2500);
+
+        if (copyInnerBtn) {
+          copyInnerBtn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+          setTimeout(() => {
+            copyInnerBtn.innerHTML = '<i class="fa-solid fa-copy"></i> Copy Text';
+          }, 2500);
+        }
+      })
+      .catch((err) => {
+        console.error('Clipboard copy failed:', err);
+        alert('Could not copy automatically. Please select all in the text box and press Ctrl+C.');
+      });
+  };
+
+  copyBtn.onclick = handleCopy;
+  copyInnerBtn.onclick = handleCopy;
+
+  // Print handler
+  printBtn.onclick = () => {
+    const printFrame = document.createElement('iframe');
+    printFrame.style.position = 'fixed';
+    printFrame.style.top = '-9999px';
+    printFrame.style.left = '-9999px';
+    printFrame.style.width = '0';
+    printFrame.style.height = '0';
+    printFrame.style.border = 'none';
+    document.body.appendChild(printFrame);
+
+    const frameDoc = printFrame.contentDocument || printFrame.contentWindow.document;
+    frameDoc.open();
+    frameDoc.write(`<!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset="utf-8">
+        <title>Cover Lesson - ${currentUnitId}</title>
+        <style>
+          @page { size: A4; margin: 8mm 12mm 8mm 12mm; }
+          * { box-sizing: border-box; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+          body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #1e293b; margin: 0; padding: 0; font-size: 8.8pt; line-height: 1.32; background: #ffffff; }
+          .page-break { page-break-before: always; break-before: page; }
+          a { text-decoration: underline; color: #be123c; }
+        </style>
+      </head>
+      <body>
+        ${paperSheet.innerHTML}
+      </body>
+      </html>
+    `);
+    frameDoc.close();
+
+    setTimeout(() => {
+      printFrame.contentWindow.focus();
+      printFrame.contentWindow.print();
+      setTimeout(() => printFrame.remove(), 2000);
+    }, 400);
+  };
+
+  // Close handler
+  const closeModal = () => {
+    window.removeEventListener('keydown', handleEsc);
+    overlay.style.opacity = '0';
+    modalContent.style.transform = 'scale(0.98)';
+    setTimeout(() => overlay.remove(), 220);
+  };
+
+  const handleEsc = (e) => {
+    if (e.key === 'Escape') closeModal();
+  };
+  window.addEventListener('keydown', handleEsc);
+
+  closeBtn.onclick = closeModal;
+  overlay.onclick = (e) => {
+    if (e.target === overlay) closeModal();
+  };
+
+  // Initial population
+  populateLessons();
+  updateCover();
+
+  // Animate in
+  void overlay.offsetWidth;
+  overlay.style.opacity = '1';
+  modalContent.style.transform = 'scale(1)';
+};
