@@ -11,7 +11,7 @@ const outputPath = path.join(outputDir, 'ypres_2026_parent_briefing.pptx');
 const pptx = new pptxgen();
 pptx.layout = 'LAYOUT_16x9'; // 10 x 5.625 inches
 pptx.author = 'Mr Ben Lovett & Mr James Garrett';
-pptx.company = 'Meoncross School & The History Boys';
+pptx.company = 'Meoncross School and The History Boys';
 pptx.title = 'Ypres 1914-1918 Battlefield Expedition - Parental Briefing';
 
 const QR_PATH = path.join(__dirname, '../public/images/tour_app_qr.png');
@@ -295,7 +295,7 @@ s1.addText(
   },
 );
 
-s1.addText('Emergency School Base: +44 1329 288339', {
+s1.addText('Emergency School Base: +44 (0)1329 662182', {
   x: 7.3,
   y: 5.25,
   w: 2.5,
@@ -685,6 +685,12 @@ pptx
   .writeFile({ fileName: outputPath })
   .then((fileName) => {
     console.log(`✅ PowerPoint created successfully at: ${fileName}`);
+    const gdriveDir = 'G:/My Drive/AAMX/trips/Somme Oct26';
+    if (fs.existsSync(gdriveDir)) {
+      const gdrivePath = path.join(gdriveDir, 'Ypres 2026 Parent Briefing.pptx');
+      fs.copyFileSync(outputPath, gdrivePath);
+      console.log(`✅ Also copied PowerPoint to Google Drive at: ${gdrivePath}`);
+    }
   })
   .catch((err) => {
     console.error('❌ Error creating PowerPoint:', err);

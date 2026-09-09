@@ -13,7 +13,7 @@ export const unitData = {
   cover_caption: 'Meoncross School – Battlefield Tour',
   key_info: {
     emergency_contact:
-      '+44 1329 288339 (Meoncross School Office) / +44 7712 345678 (Trip Emergency Mobile)',
+      '+44 (0)1329 662182 (Meoncross School Office) / +44 7712 345678 (Trip Emergency Mobile)',
     hotel: 'Peace Village Hostel, Nieuwkerkestraat 9aB, 8957 Mesen, Belgium',
     hotel_phone: '+32 57 226 040',
     hotel_email: 'info@peacevillage.be',
@@ -262,7 +262,7 @@ export const unitData = {
                 <a href="/pdfs/ypres_2026_parent_information_pack.pdf" target="_blank" class="btn" style="background: #fefce8; color: #b45309; border: 1.5px solid #fde047; padding: 8px 16px; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
                   <i class="fa-solid fa-file-pdf" style="color: #dc2626; font-size: 1.1rem;"></i> Download Parent Pack (PDF)
                 </a>
-                <a href="/briefings/ypres_2026_parent_briefing.pptx" download class="btn" style="background: #f0fdf4; color: #166534; border: 1.5px solid #bbf7d0; padding: 8px 16px; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                <a href="/briefings/ypres_2026_parent_briefing.pptx" download="ypres_2026_parent_briefing.pptx" target="_blank" class="btn" style="background: #f0fdf4; color: #166534; border: 1.5px solid #bbf7d0; padding: 8px 16px; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
                   <i class="fa-solid fa-file-powerpoint" style="color: #ea580c; font-size: 1.1rem;"></i> Download Briefing Slides (.pptx)
                 </a>
               </div>

@@ -1546,7 +1546,7 @@ window.openParentBriefingModal = function () {
             <a href="/pdfs/ypres_2026_parent_information_pack.pdf" target="_blank" style="background: #fefce8; color: #b45309; border: 1.5px solid #fde047; padding: 7px 14px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
               <i class="fa-solid fa-file-pdf" style="color: #dc2626;"></i> PDF Handout
             </a>
-            <a href="/briefings/ypres_2026_parent_briefing.pptx" download style="background: #f0fdf4; color: #166534; border: 1.5px solid #bbf7d0; padding: 7px 14px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <a href="/briefings/ypres_2026_parent_briefing.pptx" download="ypres_2026_parent_briefing.pptx" target="_blank" style="background: #f0fdf4; color: #166534; border: 1.5px solid #bbf7d0; padding: 7px 14px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
               <i class="fa-solid fa-file-powerpoint" style="color: #ea580c;"></i> Slides (.pptx)
             </a>
             <button id="closeParentBriefingBtn" style="background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); color: #ffffff; width: 36px; height: 36px; border-radius: 50%; font-size: 1.1rem; cursor: pointer; display: flex; justify-content: center; align-items: center; transition: all 0.2s;">
@@ -1658,7 +1658,7 @@ window.openParentBriefingModal = function () {
         <div style="background: #0f172a; color: #ffffff; padding: 12px 24px; border-radius: 0 0 11px 11px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 0.82rem;">
           <div>
             <span style="color: #38bdf8; font-weight: 700;">🌐 Web App:</span> meoncross-history.netlify.app &nbsp;|&nbsp;
-            <span style="color: #fbbf24; font-weight: 700;">24/7 School Base:</span> +44 (0)1329 288339
+            <span style="color: #fbbf24; font-weight: 700;">24/7 School Base:</span> +44 (0)1329 662182
           </div>
           <div style="color: #94a3b8; font-size: 0.78rem;">
             Press <strong>Esc</strong> or click anywhere outside to close this briefing slide

@@ -440,7 +440,7 @@ function getHtmlContent() {
     <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 8px; padding: 7px 12px; display: flex; justify-content: space-between; align-items: center; font-size: 8.2pt; color: #1e3a8a;">
       <div><strong>Expedition Dates:</strong> 1st–3rd October 2026</div>
       <div><strong>Field Base:</strong> Peace Village, Mesen</div>
-      <div><strong>Base Emergency:</strong> +44 (0)1329 288339</div>
+      <div><strong>Base Emergency:</strong> +44 (0)1329 662182</div>
     </div>
 
     <div class="footer-bar">
@@ -1566,7 +1566,7 @@ Her sights and sounds; dreams happy as her day;
         </div>
         <div>
           <span style="color: #94a3b8;">School Base 24/7 Emergency:</span>
-          <strong style="color: #ffffff;">+44 (0)1329 288339</strong>
+          <strong style="color: #ffffff;">+44 (0)1329 662182</strong>
         </div>
       </div>
     </div>

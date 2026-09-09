@@ -759,7 +759,7 @@ function getHtmlContent() {
         </div>
         <div>
           <span style="color: #94a3b8;">School Base 24/7 Emergency:</span>
-          <strong>+44 (0)1329 288339</strong>
+          <strong>+44 (0)1329 662182</strong>
         </div>
       </div>
     </div>

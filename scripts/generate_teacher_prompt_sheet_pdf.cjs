@@ -341,7 +341,7 @@ function getHtml() {
     <div style="display: flex; justify-content: space-between; gap: 10px; font-size: 7.2pt;">
       <div><strong>1. Code of Conduct:</strong> Signed agreement by pupil &amp; parent returned by <strong>Fri 25 Sept</strong>.</div>
       <div><strong>2. Passports &amp; GHIC:</strong> Hand in to Mr Lovett tonight (or School Office this week).</div>
-      <div><strong>3. Emergency Contact:</strong> 24/7 School Base <strong>+44 (0)1329 288339</strong>.</div>
+      <div><strong>3. Emergency Contact:</strong> 24/7 School Base <strong>+44 (0)1329 662182</strong>.</div>
     </div>
   </div>
 

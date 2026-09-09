@@ -377,7 +377,7 @@ function getHtmlContent() {
           </div>
           <div>
             <span style="font-size: 7.8pt; font-weight: 800; color: #166534; text-transform: uppercase; letter-spacing: 0.05em; display: block;">School Base 24/7 Emergency:</span>
-            <span style="font-size: 8.6pt; color: #0f172a; font-weight: 600;">+44 (0)1329 288339</span>
+            <span style="font-size: 8.6pt; color: #0f172a; font-weight: 600;">+44 (0)1329 662182</span>
           </div>
         </div>
       </div>
@@ -1685,7 +1685,7 @@ And laughter, learnt of friends; and gentleness,
         </div>
         <div>
           <span style="color: #94a3b8;">School Base 24/7 Emergency:</span>
-          <strong>+44 (0)1329 288339</strong>
+          <strong>+44 (0)1329 662182</strong>
         </div>
       </div>
     </div>
