@@ -1099,7 +1099,7 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
             <thead>
               <tr>
                 <th style="width: 135px; min-width: 135px; border-right: 2px solid #0f172a;">Question Focus</th>
-                ${years.map((y) => `<th style="text-align: center; width: calc((100% - 135px) / ${years.length});">${y === 2026 ? '2026' : y}</th>`).join('')}
+                ${years.map((y) => `<th style="text-align: center; width: calc((100% - 135px) / ${years.length});">${y === 2026 ? '2026<span style="display:block; font-size: 0.62rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px;">Specimen</span>' : y}</th>`).join('')}
               </tr>
             </thead>
             <tbody>
@@ -1250,7 +1250,10 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
                                 .map((pt) => {
                                   let badgeClass = 'etm-badge-overdue-recent';
                                   let badgeLabel = `Examined in ${pt.last_examined}`;
-                                  if (pt.overdue_status === 'high') {
+                                  if (pt.is_last_specimen || pt.last_examined === 2026) {
+                                    badgeClass = 'etm-badge-overdue-recent';
+                                    badgeLabel = 'In 2026 Specimen Paper';
+                                  } else if (pt.overdue_status === 'high') {
                                     badgeClass = 'etm-badge-overdue-high';
                                     badgeLabel =
                                       pt.last_examined === 'Never'
@@ -1287,13 +1290,21 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
                                           <div style="margin-top: 10px; display: flex; gap: 6px; flex-wrap: wrap; align-items: center;">
                                             <span style="font-size: 0.75rem; color: #64748b; font-weight: 600;">Tested in:</span>
                                             ${pt.matched_questions
-                                              .map(
-                                                (mq) => `
-                                                  <span class="etm-q-card-mini" data-qid="${mq.q_id}" style="cursor: pointer; background: white; border: 1px solid #cbd5e1; border-radius: 6px; padding: 2px 8px; font-size: 0.75rem; font-weight: 700; color: #1e293b;" title="Click to view question">
-                                                    ${mq.year} ${mq.q_number} (${mq.tariff}m)
-                                                  </span>
-                                                `,
-                                              )
+                                              .map((mq) => {
+                                                const isSpec =
+                                                  mq.is_specimen ||
+                                                  mq.year === 2026 ||
+                                                  (mq.series &&
+                                                    mq.series.toLowerCase().includes('specimen'));
+                                                const qChipText = isSpec
+                                                  ? `2026 Specimen ${mq.q_number} (${mq.tariff}m)`
+                                                  : `${mq.year} ${mq.q_number} (${mq.tariff}m)`;
+                                                return `
+                                                    <span class="etm-q-card-mini" data-qid="${mq.q_id}" style="cursor: pointer; background: white; border: 1px solid #cbd5e1; border-radius: 6px; padding: 2px 8px; font-size: 0.75rem; font-weight: 700; color: #1e293b;" title="Click to view question">
+                                                      ${qChipText}
+                                                    </span>
+                                                  `;
+                                              })
                                               .join('')}
                                           </div>
                                         `

@@ -20,10 +20,235 @@ const DATA_DIR = path.join(__dirname, '..', 'data');
 const PUBLIC_DATA_DIR = path.join(__dirname, '..', 'public', 'data');
 
 // ----------------------------------------------------------------------------
+// Dedicated Precision Matcher for Conflict in the Middle East (cme_new)
+// ----------------------------------------------------------------------------
+
+function matchQuestionToCME(q, topicTitle, pointText) {
+  const fullQ = (
+    q.question_text +
+    ' ' +
+    (q.topic || '') +
+    ' ' +
+    (q.spec_topic || '') +
+    ' ' +
+    (q.stimulus || '')
+  ).toLowerCase();
+  const p = pointText.toLowerCase().replace(/[*_]/g, '');
+
+  // KT1.1: British withdrawal & creation of Israel
+  if (p.includes('conflicting interests')) {
+    return fullQ.includes('conflicting interests');
+  }
+  if (p.includes('king david hotel') || p.includes('resolution 181')) {
+    return (
+      fullQ.includes('king david hotel') ||
+      fullQ.includes('resolution 181') ||
+      fullQ.includes('partition of palestine') ||
+      fullQ.includes('end of the british mandate')
+    );
+  }
+  if (p.includes('key events of the arab-israeli war (1948–49)')) {
+    return (
+      fullQ.includes('events of the arab-israeli war') ||
+      fullQ.includes('arab-israeli war (1948-49) for the state') ||
+      (fullQ.includes('arab-israeli war (1948-49)') && fullQ.includes('for the state of israel'))
+    );
+  }
+
+  // KT1.2: Aftermath of 1948-49 war
+  if (p.includes('territorial changes and their impact')) {
+    return fullQ.includes('territorial changes');
+  }
+  if (p.includes('refugee status of palestinian arabs')) {
+    return (
+      fullQ.includes('refugee') ||
+      (fullQ.includes('territorial changes') && fullQ.includes('for palestinians'))
+    );
+  }
+  if (p.includes('israeli defence forces') || p.includes('law of return')) {
+    return (
+      fullQ.includes('law of return') ||
+      fullQ.includes('israeli defence forces') ||
+      fullQ.includes('creation of the idf') ||
+      fullQ.includes('developments in israel in the years 1949–54') ||
+      fullQ.includes('developments in israel in the years 1949-54')
+    );
+  }
+  if (p.includes('us aid to israel')) {
+    return (
+      fullQ.includes('us aid') ||
+      (fullQ.includes('developments in israel in the years 1949') && fullQ.includes('aid'))
+    );
+  }
+  if (p.includes('relations with egypt')) {
+    return (
+      fullQ.includes('relations between israel and egypt in the years 1949') ||
+      fullQ.includes('relations between israel and egypt 1949')
+    );
+  }
+
+  // KT1.3: Increased tension 1955-63
+  if (p.includes('nasser and egypt’s leadership') || p.includes('leadership of the arab world')) {
+    return (
+      fullQ.includes('nasser for leadership') ||
+      (fullQ.includes('nasser') && fullQ.includes('1955–63'))
+    );
+  }
+  if (p.includes('attacks on gaza in 1955')) {
+    return (
+      fullQ.includes('attacks on gaza') ||
+      fullQ.includes('gaza in 1955') ||
+      fullQ.includes('gaza raid') ||
+      fullQ.includes('sinai in 1956')
+    );
+  }
+  if (p.includes('suez crisis (1956)')) {
+    return (
+      fullQ.includes('suez crisis') ||
+      fullQ.includes('suez in 1956') ||
+      fullQ.includes('united arab republic') ||
+      fullQ.includes('uar')
+    );
+  }
+
+  // KT2.1: Six Day War 1967
+  if (p.includes('cairo conference (1964)')) {
+    return fullQ.includes('cairo conference') || fullQ.includes('growth of fatah');
+  }
+  if (p.includes('escalating tension between israel, syria')) {
+    return (
+      fullQ.includes('syria’s support for fatah') ||
+      fullQ.includes("syria's support for fatah") ||
+      fullQ.includes('raid on samu') ||
+      fullQ.includes('7 april 1967')
+    );
+  }
+  if (p.includes('actions of the ussr, nasser and the usa')) {
+    return (
+      fullQ.includes('actions of the ussr') ||
+      (fullQ.includes('superpowers') && fullQ.includes('outbreak of 1967'))
+    );
+  }
+  if (p.includes('key events of the war')) {
+    return (
+      fullQ.includes('key events of the six day war') ||
+      (fullQ.includes('six day war (1967)') &&
+        (fullQ.includes('events') || fullQ.includes('security')))
+    );
+  }
+
+  // KT2.2: Aftermath of the 1967 war
+  if (p.includes('resolution 242') && p.includes('suez canal')) {
+    return fullQ.includes('resolution 242');
+  }
+  if (p.includes('occupied territories: golan heights')) {
+    return (
+      (fullQ.includes('occupied territories') &&
+        (fullQ.includes('1967') || fullQ.includes('six day war'))) ||
+      fullQ.includes('six day war (1967) for israel’s security')
+    );
+  }
+  if (p.includes('pflp airplane hijacks') || p.includes('munich olympics')) {
+    return (
+      fullQ.includes('munich') ||
+      fullQ.includes('black september') ||
+      fullQ.includes('pflp') ||
+      fullQ.includes('airplane hijack') ||
+      (fullQ.includes('palestinian issue') && fullQ.includes('1970-72'))
+    );
+  }
+  if (p.includes('expulsion of the plo from jordan (1970)')) {
+    return (
+      (fullQ.includes('expulsion') && fullQ.includes('jordan')) ||
+      (fullQ.includes('plo in lebanon') && fullQ.includes('expulsion from jordan'))
+    );
+  }
+
+  // KT2.3: Israel and Egypt 1967-73
+  if (p.includes('egyptian relations with israel, the usa, the ussr')) {
+    return (
+      fullQ.includes('egypt’s relations with israel in the years 1973-77') ||
+      (fullQ.includes('yom kippur war') && fullQ.includes('relations between israel and egypt'))
+    );
+  }
+  if (p.includes('consolidation of control of the occupied territories')) {
+    return fullQ.includes('consolidation of control');
+  }
+  if (p.includes('yom kippur war (1973) and its aftermath')) {
+    return fullQ.includes('yom kippur');
+  }
+
+  // KT3.1: Diplomatic negotiations 1974-95
+  if (p.includes('oil crisis')) {
+    return fullQ.includes('oil crisis') || fullQ.includes('opec');
+  }
+  if (p.includes('kissinger') || p.includes('shuttle diplomacy')) {
+    return fullQ.includes('kissinger') || fullQ.includes('shuttle diplomacy');
+  }
+  if (p.includes('sadat’s visit to israel') || p.includes('camp david')) {
+    return (
+      fullQ.includes('sadat’s visit') ||
+      fullQ.includes('camp david') ||
+      fullQ.includes('treaty of washington') ||
+      (fullQ.includes('egypt’s relations with israel in the years 1973-77') &&
+        fullQ.includes('sadat'))
+    );
+  }
+
+  // KT3.2: The Palestinian issue
+  if (p.includes('arafat’s speech to the un (1974)')) {
+    return (
+      fullQ.includes('speech to the un (1974)') ||
+      (fullQ.includes('arafat') && fullQ.includes('1974'))
+    );
+  }
+  if (p.includes('plo activities in lebanon')) {
+    return fullQ.includes('plo in lebanon') || fullQ.includes('plo activities in lebanon');
+  }
+  if (p.includes('invasion of lebanon (1982)')) {
+    return (
+      fullQ.includes('invasion of lebanon') || (fullQ.includes('lebanon') && fullQ.includes('1982'))
+    );
+  }
+  if (p.includes('first palestinian intifada')) {
+    return fullQ.includes('intifada');
+  }
+
+  // KT3.3: Attempts at a solution
+  if (p.includes('renunciation of terrorism in a speech at the un (1988)')) {
+    return (
+      fullQ.includes('renouncing terrorism') ||
+      fullQ.includes('renunciation of terrorism') ||
+      (fullQ.includes('arafat') && fullQ.includes('1988'))
+    );
+  }
+  if (p.includes('changing superpower policies') || p.includes('end of the cold war')) {
+    return (
+      fullQ.includes('end of the cold war') ||
+      fullQ.includes('gulf war (1991)') ||
+      fullQ.includes('madrid conference')
+    );
+  }
+  if (p.includes('oslo accords (1993)') || p.includes('israel-jordan peace treaty')) {
+    return (
+      fullQ.includes('oslo') ||
+      fullQ.includes('israel-jordan peace treaty') ||
+      fullQ.includes('negotiations between israel and the palestinians in the years 1993-95')
+    );
+  }
+
+  return false;
+}
+
+// ----------------------------------------------------------------------------
 // Topic Matchers & Keyword Mappings
 // ----------------------------------------------------------------------------
 
-function matchQuestionToTopic(q, topicTitle, pointText) {
+function matchQuestionToTopic(q, topicTitle, pointText, unitId) {
+  if (unitId === 'cme_new') {
+    return matchQuestionToCME(q, topicTitle, pointText);
+  }
+
   const fullQ = (
     q.question_text +
     ' ' +
@@ -201,104 +426,6 @@ function matchQuestionToTopic(q, topicTitle, pointText) {
   if (fullQ.includes('lifestyle') || fullQ.includes('smoking') || fullQ.includes('anti-smoking')) {
     if (text.includes('lifestyle') || text.includes('smoking') || text.includes('lung cancer'))
       return true;
-  }
-
-  // CME Matching
-  if (fullQ.includes('king david hotel')) {
-    if (text.includes('king david hotel')) return true;
-  }
-  if (fullQ.includes('resolution 181') || fullQ.includes('partition')) {
-    if (text.includes('resolution 181') || text.includes('partition')) return true;
-  }
-  if (
-    fullQ.includes('1948-49') ||
-    fullQ.includes('arab-israeli war (1948') ||
-    fullQ.includes('arab- israeli war')
-  ) {
-    if (
-      text.includes('1948–49') ||
-      text.includes('1948-49') ||
-      text.includes('aftermath of the 1948')
-    )
-      return true;
-  }
-  if (fullQ.includes('refugee') || fullQ.includes('palestinian arabs')) {
-    if (text.includes('refugee') || text.includes('palestinian arabs')) return true;
-  }
-  if (fullQ.includes('law of return')) {
-    if (text.includes('law of return')) return true;
-  }
-  if (fullQ.includes('israeli defence forces') || fullQ.includes('idf')) {
-    if (text.includes('israeli defence forces') || text.includes('idf')) return true;
-  }
-  if (fullQ.includes('suez crisis') || fullQ.includes('1956')) {
-    if (text.includes('suez crisis') || text.includes('1956')) return true;
-  }
-  if (fullQ.includes('nasser') && (fullQ.includes('leadership') || fullQ.includes('tension'))) {
-    if (text.includes('nasser') || text.includes('leadership of the arab world')) return true;
-  }
-  if (fullQ.includes('six day war') || fullQ.includes('1967')) {
-    if (text.includes('six day war') || text.includes('1967')) return true;
-  }
-  if (fullQ.includes('resolution 242')) {
-    if (text.includes('resolution 242')) return true;
-  }
-  if (
-    fullQ.includes('occupied territories') ||
-    fullQ.includes('golan') ||
-    fullQ.includes('west bank')
-  ) {
-    if (
-      text.includes('occupied territories') ||
-      text.includes('golan') ||
-      text.includes('west bank')
-    )
-      return true;
-  }
-  if (
-    fullQ.includes('munich') ||
-    fullQ.includes('black september') ||
-    fullQ.includes('terrorism')
-  ) {
-    if (text.includes('munich') || text.includes('black september') || text.includes('terrorism'))
-      return true;
-  }
-  if (fullQ.includes('airplane hijack') || fullQ.includes('pflp')) {
-    if (text.includes('airplane hijack') || text.includes('pflp')) return true;
-  }
-  if (fullQ.includes('yom kippur') || fullQ.includes('1973')) {
-    if (text.includes('yom kippur') || text.includes('1973')) return true;
-  }
-  if (fullQ.includes('oil crisis') || fullQ.includes('opec')) {
-    if (text.includes('oil crisis') || text.includes('opec')) return true;
-  }
-  if (
-    fullQ.includes('sadat') ||
-    fullQ.includes('camp david') ||
-    fullQ.includes('peace treaty (1979)')
-  ) {
-    if (text.includes('sadat') || text.includes('camp david') || text.includes('peace treaty'))
-      return true;
-  }
-  if (fullQ.includes('kissinger') || fullQ.includes('shuttle diplomacy')) {
-    if (text.includes('kissinger') || text.includes('shuttle diplomacy')) return true;
-  }
-  if (fullQ.includes('lebanon') || fullQ.includes('1982') || fullQ.includes('beirut')) {
-    if (text.includes('lebanon') || text.includes('1982')) return true;
-  }
-  if (fullQ.includes('intifada')) {
-    if (text.includes('intifada')) return true;
-  }
-  if (fullQ.includes('oslo') || fullQ.includes('1993') || fullQ.includes('rabin')) {
-    if (
-      text.includes('oslo') ||
-      text.includes('rabin') ||
-      text.includes('declaration of principles')
-    )
-      return true;
-  }
-  if (fullQ.includes('israel-jordan') || fullQ.includes('1994')) {
-    if (text.includes('israel-jordan') || text.includes('1994')) return true;
   }
 
   // Elizabethan England Matching
@@ -991,7 +1118,9 @@ function analyzeUnit(specFile, pastPapersFile, unitId) {
 
       top.points.forEach((pt, idx) => {
         totalPoints++;
-        const matchedQuestions = allQuestions.filter((q) => matchQuestionToTopic(q, top.title, pt));
+        const matchedQuestions = allQuestions.filter((q) =>
+          matchQuestionToTopic(q, top.title, pt, unitId),
+        );
 
         const yearsAppeared = [...new Set(matchedQuestions.map((q) => q.year))].sort(
           (a, b) => a - b,
@@ -1000,6 +1129,12 @@ function analyzeUnit(specFile, pastPapersFile, unitId) {
         const has12m = matchedQuestions.some((q) => q.tariff === 12);
         const has16m = matchedQuestions.some((q) => q.tariff === 16);
         const lastYear = yearsAppeared.length > 0 ? Math.max(...yearsAppeared) : null;
+        const lastExamQ = matchedQuestions.find((q) => q.year === lastYear);
+        const isLastSpecimen =
+          lastYear === 2026 ||
+          (lastExamQ &&
+            (lastExamQ.season === 'Specimen' ||
+              (lastExamQ.series && lastExamQ.series.toLowerCase().includes('specimen'))));
 
         let overdueStatus = 'high'; // default
         let overdueScore = 100;
@@ -1030,6 +1165,8 @@ function analyzeUnit(specFile, pastPapersFile, unitId) {
         if (lastYear === null) {
           teacherNote =
             '⚠️ UNEXAMINED TOPIC: This specification point has never appeared on an official Edexcel paper since 2018. It is prime territory for an upcoming series.';
+        } else if (isLastSpecimen && lastExamQ) {
+          teacherNote = `📋 SPECIMEN PAPER: Featured in the official 2026 Specimen Paper (${lastExamQ.q_number}, ${lastExamQ.tariff}m). Excellent model for how this topic will be assessed in the current specification.`;
         } else if (overdueStatus === 'high') {
           teacherNote = `🔥 HIGHLY OVERDUE: Last set in ${lastYear}. It has been ${2026 - lastYear} years since students were tested on this topic. Ideal candidate for mocks.`;
         } else if (highTariffGap && tariffs.length > 0) {
@@ -1046,6 +1183,8 @@ function analyzeUnit(specFile, pastPapersFile, unitId) {
           exam_count: matchedQuestions.length,
           years_appeared: yearsAppeared,
           last_examined: lastYear ? lastYear : 'Never',
+          last_examined_series: lastExamQ ? lastExamQ.series || `${lastYear}` : null,
+          is_last_specimen: !!isLastSpecimen,
           tariffs_examined: tariffs,
           has_12m: has12m,
           has_16m: has16m,
@@ -1056,6 +1195,12 @@ function analyzeUnit(specFile, pastPapersFile, unitId) {
             q_id: q.q_id,
             q_number: q.q_number,
             year: q.year,
+            season: q.season,
+            series: q.series || `${q.year}`,
+            is_specimen:
+              q.year === 2026 ||
+              q.season === 'Specimen' ||
+              (q.series && q.series.toLowerCase().includes('specimen')),
             tariff: q.tariff,
             type: q.type,
             question_text: q.question_text,

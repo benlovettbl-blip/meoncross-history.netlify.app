@@ -2,7 +2,7 @@
   "unit_id": "eee",
   "title": "Pearson Edexcel GCSE (9–1) History Specification",
   "subtitle": "Option B4: Early Elizabethan England, 1558–88",
-  "generated_at": "2026-09-09T16:53:33.322Z",
+  "generated_at": "2026-09-09T20:20:55.235Z",
   "total_past_questions": 32,
   "total_series_analyzed": 8,
   "sections": [
@@ -19,6 +19,8 @@
               "exam_count": 0,
               "years_appeared": [],
               "last_examined": "Never",
+              "last_examined_series": null,
+              "is_last_specimen": false,
               "tariffs_examined": [],
               "has_12m": false,
               "has_16m": false,
@@ -37,6 +39,8 @@
                 2022
               ],
               "last_examined": 2022,
+              "last_examined_series": "Summer 2022",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 16
               ],
@@ -50,6 +54,9 @@
                   "q_id": "eliz_2020_q3a",
                   "q_number": "Q3(a)",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘The main cause of tension between Elizabeth and Mary, Queen of Scots, was Mary’s claim to the English throne.’ How far do you agree? Explain your answer."
@@ -58,6 +65,9 @@
                   "q_id": "eliz_2022_q3a",
                   "q_number": "Q3(a)",
                   "year": 2022,
+                  "season": "June",
+                  "series": "Summer 2022",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘The problem of Elizabeth’s legitimacy was the main problem she faced when she became queen in 1558.’ How far do you agree? Explain your answer."
@@ -74,6 +84,8 @@
                 2026
               ],
               "last_examined": 2026,
+              "last_examined_series": "Specimen Paper",
+              "is_last_specimen": true,
               "tariffs_examined": [
                 16
               ],
@@ -87,6 +99,9 @@
                   "q_id": "eliz_2022_q3a",
                   "q_number": "Q3(a)",
                   "year": 2022,
+                  "season": "June",
+                  "series": "Summer 2022",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘The problem of Elizabeth’s legitimacy was the main problem she faced when she became queen in 1558.’ How far do you agree? Explain your answer."
@@ -95,12 +110,15 @@
                   "q_id": "eliz_2026_q3",
                   "q_number": "Q3",
                   "year": 2026,
+                  "season": "Specimen",
+                  "series": "Specimen Paper",
+                  "is_specimen": true,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘Financial weakness was Elizabeth’s main problem when she became queen in 1558.’ How far do you agree? Explain your answer."
                 }
               ],
-              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+              "teacher_note": "📋 SPECIMEN PAPER: Featured in the official 2026 Specimen Paper (Q3, 16m). Excellent model for how this topic will be assessed in the current specification."
             }
           ]
         },
@@ -118,6 +136,8 @@
                 2025
               ],
               "last_examined": 2025,
+              "last_examined_series": "Summer 2025",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 4,
                 12,
@@ -133,6 +153,9 @@
                   "q_id": "eliz_2018_q1a",
                   "q_number": "Q1(a)",
                   "year": 2018,
+                  "season": "June",
+                  "series": "Summer 2018",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "feature",
                   "question_text": "Describe two features of Elizabeth’s religious settlement (1559)."
@@ -141,6 +164,9 @@
                   "q_id": "eliz_2020_q2",
                   "q_number": "Q2",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why the Puritans challenged Elizabeth’s religious settlement."
@@ -149,6 +175,9 @@
                   "q_id": "eliz_2024_q3a",
                   "q_number": "Q3(a)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘The most significant challenge to Elizabeth I’s religious settlement, in the years 1558–68, came from English Catholics.’ How far do you agree? Explain your answer."
@@ -157,6 +186,9 @@
                   "q_id": "eliz_2025_q3",
                   "q_number": "Q3",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘Elizabeth’s religious settlement was successful.’ How far do you agree? Explain your answer."
@@ -172,6 +204,8 @@
                 2020
               ],
               "last_examined": 2020,
+              "last_examined_series": "Autumn 2020",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 4
               ],
@@ -185,6 +219,9 @@
                   "q_id": "eliz_2020_q1a",
                   "q_number": "Q1(a)",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "feature",
                   "question_text": "Describe two features of the role of the Church of England in Early Elizabethan society."
@@ -208,6 +245,8 @@
                 2025
               ],
               "last_examined": 2025,
+              "last_examined_series": "Summer 2025",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 4,
                 12,
@@ -223,6 +262,9 @@
                   "q_id": "eliz_2018_q1a",
                   "q_number": "Q1(a)",
                   "year": 2018,
+                  "season": "June",
+                  "series": "Summer 2018",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "feature",
                   "question_text": "Describe two features of Elizabeth’s religious settlement (1559)."
@@ -231,6 +273,9 @@
                   "q_id": "eliz_2020_q2",
                   "q_number": "Q2",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why the Puritans challenged Elizabeth’s religious settlement."
@@ -239,6 +284,9 @@
                   "q_id": "eliz_2024_q3a",
                   "q_number": "Q3(a)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘The most significant challenge to Elizabeth I’s religious settlement, in the years 1558–68, came from English Catholics.’ How far do you agree? Explain your answer."
@@ -247,6 +295,9 @@
                   "q_id": "eliz_2025_q3",
                   "q_number": "Q3",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘Elizabeth’s religious settlement was successful.’ How far do you agree? Explain your answer."
@@ -266,6 +317,8 @@
                 2025
               ],
               "last_examined": 2025,
+              "last_examined_series": "Summer 2025",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 4,
                 12,
@@ -281,6 +334,9 @@
                   "q_id": "eliz_2018_q1a",
                   "q_number": "Q1(a)",
                   "year": 2018,
+                  "season": "June",
+                  "series": "Summer 2018",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "feature",
                   "question_text": "Describe two features of Elizabeth’s religious settlement (1559)."
@@ -289,6 +345,9 @@
                   "q_id": "eliz_2019_q3a",
                   "q_number": "Q3(a)",
                   "year": 2019,
+                  "season": "June",
+                  "series": "Summer 2019",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘The attitude of the Papacy was the main reason why Catholic opposition to Elizabeth increased in the years 1559-88.’ How far do you agree? Explain your answer."
@@ -297,6 +356,9 @@
                   "q_id": "eliz_2020_q2",
                   "q_number": "Q2",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why the Puritans challenged Elizabeth’s religious settlement."
@@ -305,6 +367,9 @@
                   "q_id": "eliz_2024_q3a",
                   "q_number": "Q3(a)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘The most significant challenge to Elizabeth I’s religious settlement, in the years 1558–68, came from English Catholics.’ How far do you agree? Explain your answer."
@@ -313,6 +378,9 @@
                   "q_id": "eliz_2025_q3",
                   "q_number": "Q3",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘Elizabeth’s religious settlement was successful.’ How far do you agree? Explain your answer."
@@ -334,6 +402,8 @@
                 2023
               ],
               "last_examined": 2023,
+              "last_examined_series": "Summer 2023",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 12,
                 16
@@ -348,6 +418,9 @@
                   "q_id": "eliz_2020_q3a",
                   "q_number": "Q3(a)",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘The main cause of tension between Elizabeth and Mary, Queen of Scots, was Mary’s claim to the English throne.’ How far do you agree? Explain your answer."
@@ -356,6 +429,9 @@
                   "q_id": "eliz_2023_q2",
                   "q_number": "Q2",
                   "year": 2023,
+                  "season": "June",
+                  "series": "Summer 2023",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why Mary, Queen of Scots, was executed in 1587."
@@ -369,6 +445,8 @@
               "exam_count": 0,
               "years_appeared": [],
               "last_examined": "Never",
+              "last_examined_series": null,
+              "is_last_specimen": false,
               "tariffs_examined": [],
               "has_12m": false,
               "has_16m": false,
@@ -398,6 +476,8 @@
                 2026
               ],
               "last_examined": 2026,
+              "last_examined_series": "Specimen Paper",
+              "is_last_specimen": true,
               "tariffs_examined": [
                 12,
                 16
@@ -412,6 +492,9 @@
                   "q_id": "eliz_2022_q3b",
                   "q_number": "Q3(b)",
                   "year": 2022,
+                  "season": "June",
+                  "series": "Summer 2022",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘The Revolt of the Northern Earls was the most significant challenge to Elizabeth’s rule in the years 1569-1586.’ How far do you agree? Explain your answer."
@@ -420,12 +503,15 @@
                   "q_id": "eliz_2026_q2",
                   "q_number": "Q2",
                   "year": 2026,
+                  "season": "Specimen",
+                  "series": "Specimen Paper",
+                  "is_specimen": true,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why the Revolt of the Northern Earls (1569-70) was a threat to Elizabeth I."
                 }
               ],
-              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+              "teacher_note": "📋 SPECIMEN PAPER: Featured in the official 2026 Specimen Paper (Q2, 12m). Excellent model for how this topic will be assessed in the current specification."
             },
             {
               "point_index": 2,
@@ -435,6 +521,8 @@
                 2022
               ],
               "last_examined": 2022,
+              "last_examined_series": "Summer 2022",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 16
               ],
@@ -448,6 +536,9 @@
                   "q_id": "eliz_2022_q3b",
                   "q_number": "Q3(b)",
                   "year": 2022,
+                  "season": "June",
+                  "series": "Summer 2022",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘The Revolt of the Northern Earls was the most significant challenge to Elizabeth’s rule in the years 1569-1586.’ How far do you agree? Explain your answer."
@@ -461,6 +552,8 @@
               "exam_count": 0,
               "years_appeared": [],
               "last_examined": "Never",
+              "last_examined_series": null,
+              "is_last_specimen": false,
               "tariffs_examined": [],
               "has_12m": false,
               "has_16m": false,
@@ -478,6 +571,8 @@
                 2023
               ],
               "last_examined": 2023,
+              "last_examined_series": "Summer 2023",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 12
               ],
@@ -491,6 +586,9 @@
                   "q_id": "eliz_2023_q2",
                   "q_number": "Q2",
                   "year": 2023,
+                  "season": "June",
+                  "series": "Summer 2023",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why Mary, Queen of Scots, was executed in 1587."
@@ -512,6 +610,8 @@
                 2025
               ],
               "last_examined": 2025,
+              "last_examined_series": "Summer 2025",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 12,
                 16
@@ -526,6 +626,9 @@
                   "q_id": "eliz_2023_q3a",
                   "q_number": "Q3(a)",
                   "year": 2023,
+                  "season": "June",
+                  "series": "Summer 2023",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘Political rivalry with Spain was the main reason for direct English involvement in the Netherlands in the years 1585-88.’ How far do you agree? Explain your answer."
@@ -534,6 +637,9 @@
                   "q_id": "eliz_2023_q3b",
                   "q_number": "Q3(b)",
                   "year": 2023,
+                  "season": "June",
+                  "series": "Summer 2023",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘New technology was the main reason why exploration by the English increased in the years 1558-88.’ How far do you agree? Explain your answer."
@@ -542,6 +648,9 @@
                   "q_id": "eliz_2025_q2",
                   "q_number": "Q2",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why relations between England and Spain became worse in the years 1569-88."
@@ -560,6 +669,8 @@
                 2025
               ],
               "last_examined": 2025,
+              "last_examined_series": "Summer 2025",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 12,
                 16
@@ -574,6 +685,9 @@
                   "q_id": "eliz_2019_q3b",
                   "q_number": "Q3(b)",
                   "year": 2019,
+                  "season": "June",
+                  "series": "Summer 2019",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘Drake’s most significant achievement, in the years 1558-88, was the raid on Cadiz.’ How far do you agree? Explain your answer."
@@ -582,6 +696,9 @@
                   "q_id": "eliz_2023_q3a",
                   "q_number": "Q3(a)",
                   "year": 2023,
+                  "season": "June",
+                  "series": "Summer 2023",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘Political rivalry with Spain was the main reason for direct English involvement in the Netherlands in the years 1585-88.’ How far do you agree? Explain your answer."
@@ -590,6 +707,9 @@
                   "q_id": "eliz_2023_q3b",
                   "q_number": "Q3(b)",
                   "year": 2023,
+                  "season": "June",
+                  "series": "Summer 2023",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘New technology was the main reason why exploration by the English increased in the years 1558-88.’ How far do you agree? Explain your answer."
@@ -598,6 +718,9 @@
                   "q_id": "eliz_2024_q2",
                   "q_number": "Q2",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why the Spanish Armada was defeated."
@@ -606,6 +729,9 @@
                   "q_id": "eliz_2025_q2",
                   "q_number": "Q2",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why relations between England and Spain became worse in the years 1569-88."
@@ -627,6 +753,8 @@
                 2025
               ],
               "last_examined": 2025,
+              "last_examined_series": "Summer 2025",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 12,
                 16
@@ -641,6 +769,9 @@
                   "q_id": "eliz_2023_q3a",
                   "q_number": "Q3(a)",
                   "year": 2023,
+                  "season": "June",
+                  "series": "Summer 2023",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘Political rivalry with Spain was the main reason for direct English involvement in the Netherlands in the years 1585-88.’ How far do you agree? Explain your answer."
@@ -649,6 +780,9 @@
                   "q_id": "eliz_2023_q3b",
                   "q_number": "Q3(b)",
                   "year": 2023,
+                  "season": "June",
+                  "series": "Summer 2023",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘New technology was the main reason why exploration by the English increased in the years 1558-88.’ How far do you agree? Explain your answer."
@@ -657,6 +791,9 @@
                   "q_id": "eliz_2025_q2",
                   "q_number": "Q2",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why relations between England and Spain became worse in the years 1569-88."
@@ -673,6 +810,8 @@
                 2024
               ],
               "last_examined": 2024,
+              "last_examined_series": "Summer 2024",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 12,
                 16
@@ -687,6 +826,9 @@
                   "q_id": "eliz_2019_q3b",
                   "q_number": "Q3(b)",
                   "year": 2019,
+                  "season": "June",
+                  "series": "Summer 2019",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘Drake’s most significant achievement, in the years 1558-88, was the raid on Cadiz.’ How far do you agree? Explain your answer."
@@ -695,6 +837,9 @@
                   "q_id": "eliz_2024_q2",
                   "q_number": "Q2",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why the Spanish Armada was defeated."
@@ -716,6 +861,8 @@
                 2024
               ],
               "last_examined": 2024,
+              "last_examined_series": "Summer 2024",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 12,
                 16
@@ -730,6 +877,9 @@
                   "q_id": "eliz_2018_q3a",
                   "q_number": "Q3(a)",
                   "year": 2018,
+                  "season": "June",
+                  "series": "Summer 2018",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘The effective use of naval tactics was the main reason for the English victory over the Spanish Armada.’ How far do you agree? Explain your answer."
@@ -738,6 +888,9 @@
                   "q_id": "eliz_2024_q2",
                   "q_number": "Q2",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why the Spanish Armada was defeated."
@@ -751,6 +904,8 @@
               "exam_count": 0,
               "years_appeared": [],
               "last_examined": "Never",
+              "last_examined_series": null,
+              "is_last_specimen": false,
               "tariffs_examined": [],
               "has_12m": false,
               "has_16m": false,
@@ -781,6 +936,8 @@
                 2024
               ],
               "last_examined": 2024,
+              "last_examined_series": "Summer 2024",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 4,
                 16
@@ -795,6 +952,9 @@
                   "q_id": "eliz_2019_q1a",
                   "q_number": "Q1(a)",
                   "year": 2019,
+                  "season": "June",
+                  "series": "Summer 2019",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "feature",
                   "question_text": "Describe two features of the theatre in early Elizabethan England."
@@ -803,6 +963,9 @@
                   "q_id": "eliz_2020_q3b",
                   "q_number": "Q3(b)",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘There was little change in education in Early Elizabethan England.’ How far do you agree? Explain your answer."
@@ -811,6 +974,9 @@
                   "q_id": "eliz_2024_q1a",
                   "q_number": "Q1(a)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "feature",
                   "question_text": "Describe two features of education in early Elizabethan England."
@@ -828,6 +994,8 @@
                 2024
               ],
               "last_examined": 2024,
+              "last_examined_series": "Summer 2024",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 4,
                 16
@@ -842,6 +1010,9 @@
                   "q_id": "eliz_2019_q1a",
                   "q_number": "Q1(a)",
                   "year": 2019,
+                  "season": "June",
+                  "series": "Summer 2019",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "feature",
                   "question_text": "Describe two features of the theatre in early Elizabethan England."
@@ -850,6 +1021,9 @@
                   "q_id": "eliz_2020_q3b",
                   "q_number": "Q3(b)",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘There was little change in education in Early Elizabethan England.’ How far do you agree? Explain your answer."
@@ -858,6 +1032,9 @@
                   "q_id": "eliz_2024_q1a",
                   "q_number": "Q1(a)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "feature",
                   "question_text": "Describe two features of education in early Elizabethan England."
@@ -880,6 +1057,8 @@
                 2026
               ],
               "last_examined": 2026,
+              "last_examined_series": "Specimen Paper",
+              "is_last_specimen": true,
               "tariffs_examined": [
                 2,
                 12,
@@ -895,6 +1074,9 @@
                   "q_id": "eliz_2018_q3b",
                   "q_number": "Q3(b)",
                   "year": 2018,
+                  "season": "June",
+                  "series": "Summer 2018",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘There was little change in attitudes towards the poor in the years 1558-88.’ How far do you agree? Explain your answer."
@@ -903,6 +1085,9 @@
                   "q_id": "eliz_2022_q2",
                   "q_number": "Q2",
                   "year": 2022,
+                  "season": "June",
+                  "series": "Summer 2022",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why treatment of the poor changed in the period 1558-88."
@@ -911,12 +1096,15 @@
                   "q_id": "eliz_2026_q1a",
                   "q_number": "Q1(a)",
                   "year": 2026,
+                  "season": "Specimen",
+                  "series": "Specimen Paper",
+                  "is_specimen": true,
                   "tariff": 2,
                   "type": "feature",
                   "question_text": "Describe one feature of poverty in early Elizabethan England."
                 }
               ],
-              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+              "teacher_note": "📋 SPECIMEN PAPER: Featured in the official 2026 Specimen Paper (Q1(a), 2m). Excellent model for how this topic will be assessed in the current specification."
             },
             {
               "point_index": 2,
@@ -924,6 +1112,8 @@
               "exam_count": 0,
               "years_appeared": [],
               "last_examined": "Never",
+              "last_examined_series": null,
+              "is_last_specimen": false,
               "tariffs_examined": [],
               "has_12m": false,
               "has_16m": false,
@@ -948,6 +1138,8 @@
                 2025
               ],
               "last_examined": 2025,
+              "last_examined_series": "Summer 2025",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 2,
                 12,
@@ -963,6 +1155,9 @@
                   "q_id": "eliz_2018_q2",
                   "q_number": "Q2",
                   "year": 2018,
+                  "season": "June",
+                  "series": "Summer 2018",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why there was an increase in exploration in the years 1558-88."
@@ -971,6 +1166,9 @@
                   "q_id": "eliz_2023_q3b",
                   "q_number": "Q3(b)",
                   "year": 2023,
+                  "season": "June",
+                  "series": "Summer 2023",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘New technology was the main reason why exploration by the English increased in the years 1558-88.’ How far do you agree? Explain your answer."
@@ -979,6 +1177,9 @@
                   "q_id": "eliz_2025_q1b",
                   "q_number": "Q1(b)",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 2,
                   "type": "feature",
                   "question_text": "Describe one feature of exploration in the years 1558-88."
@@ -998,6 +1199,8 @@
                 2025
               ],
               "last_examined": 2025,
+              "last_examined_series": "Summer 2025",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 2,
                 12,
@@ -1013,6 +1216,9 @@
                   "q_id": "eliz_2018_q2",
                   "q_number": "Q2",
                   "year": 2018,
+                  "season": "June",
+                  "series": "Summer 2018",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why there was an increase in exploration in the years 1558-88."
@@ -1021,6 +1227,9 @@
                   "q_id": "eliz_2019_q3b",
                   "q_number": "Q3(b)",
                   "year": 2019,
+                  "season": "June",
+                  "series": "Summer 2019",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘Drake’s most significant achievement, in the years 1558-88, was the raid on Cadiz.’ How far do you agree? Explain your answer."
@@ -1029,6 +1238,9 @@
                   "q_id": "eliz_2023_q3b",
                   "q_number": "Q3(b)",
                   "year": 2023,
+                  "season": "June",
+                  "series": "Summer 2023",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘New technology was the main reason why exploration by the English increased in the years 1558-88.’ How far do you agree? Explain your answer."
@@ -1037,6 +1249,9 @@
                   "q_id": "eliz_2024_q2",
                   "q_number": "Q2",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why the Spanish Armada was defeated."
@@ -1045,6 +1260,9 @@
                   "q_id": "eliz_2025_q1b",
                   "q_number": "Q1(b)",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 2,
                   "type": "feature",
                   "question_text": "Describe one feature of exploration in the years 1558-88."
@@ -1067,6 +1285,8 @@
                 2026
               ],
               "last_examined": 2026,
+              "last_examined_series": "Specimen Paper",
+              "is_last_specimen": true,
               "tariffs_examined": [
                 2,
                 12,
@@ -1082,6 +1302,9 @@
                   "q_id": "eliz_2019_q2",
                   "q_number": "Q2",
                   "year": 2019,
+                  "season": "June",
+                  "series": "Summer 2019",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why Raleigh’s first colony in Virginia failed."
@@ -1090,6 +1313,9 @@
                   "q_id": "eliz_2024_q3b",
                   "q_number": "Q3(b)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘Poor planning was the main reason why the first colony in Virginia failed.’ How far do you agree? Explain your answer."
@@ -1098,12 +1324,15 @@
                   "q_id": "eliz_2026_q1b",
                   "q_number": "Q1(b)",
                   "year": 2026,
+                  "season": "Specimen",
+                  "series": "Specimen Paper",
+                  "is_specimen": true,
                   "tariff": 2,
                   "type": "feature",
                   "question_text": "Describe one feature of the attempted colonisation of Virginia."
                 }
               ],
-              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+              "teacher_note": "📋 SPECIMEN PAPER: Featured in the official 2026 Specimen Paper (Q1(b), 2m). Excellent model for how this topic will be assessed in the current specification."
             },
             {
               "point_index": 2,
@@ -1115,6 +1344,8 @@
                 2026
               ],
               "last_examined": 2026,
+              "last_examined_series": "Specimen Paper",
+              "is_last_specimen": true,
               "tariffs_examined": [
                 2,
                 12,
@@ -1130,6 +1361,9 @@
                   "q_id": "eliz_2019_q2",
                   "q_number": "Q2",
                   "year": 2019,
+                  "season": "June",
+                  "series": "Summer 2019",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why Raleigh’s first colony in Virginia failed."
@@ -1138,6 +1372,9 @@
                   "q_id": "eliz_2024_q3b",
                   "q_number": "Q3(b)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "judgement-essay",
                   "question_text": "‘Poor planning was the main reason why the first colony in Virginia failed.’ How far do you agree? Explain your answer."
@@ -1146,12 +1383,15 @@
                   "q_id": "eliz_2026_q1b",
                   "q_number": "Q1(b)",
                   "year": 2026,
+                  "season": "Specimen",
+                  "series": "Specimen Paper",
+                  "is_specimen": true,
                   "tariff": 2,
                   "type": "feature",
                   "question_text": "Describe one feature of the attempted colonisation of Virginia."
                 }
               ],
-              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+              "teacher_note": "📋 SPECIMEN PAPER: Featured in the official 2026 Specimen Paper (Q1(b), 2m). Excellent model for how this topic will be assessed in the current specification."
             }
           ]
         }

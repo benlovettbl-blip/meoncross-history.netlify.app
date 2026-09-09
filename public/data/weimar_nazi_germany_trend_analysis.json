@@ -2,7 +2,7 @@
   "unit_id": "weimar_nazi_germany",
   "title": "Pearson Edexcel GCSE (9–1) History Specification",
   "subtitle": "Option 31: Weimar and Nazi Germany, 1918–39",
-  "generated_at": "2026-09-09T16:53:33.394Z",
+  "generated_at": "2026-09-09T20:20:55.296Z",
   "total_past_questions": 56,
   "total_series_analyzed": 9,
   "sections": [
@@ -19,6 +19,8 @@
               "exam_count": 0,
               "years_appeared": [],
               "last_examined": "Never",
+              "last_examined_series": null,
+              "is_last_specimen": false,
               "tariffs_examined": [],
               "has_12m": false,
               "has_16m": false,
@@ -34,6 +36,8 @@
               "exam_count": 0,
               "years_appeared": [],
               "last_examined": "Never",
+              "last_examined_series": null,
+              "is_last_specimen": false,
               "tariffs_examined": [],
               "has_12m": false,
               "has_16m": false,
@@ -56,6 +60,8 @@
                 2021
               ],
               "last_examined": 2021,
+              "last_examined_series": "Autumn 2021",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 12
               ],
@@ -69,6 +75,9 @@
                   "q_id": "germany_2021_q2",
                   "q_number": "Q2",
                   "year": 2021,
+                  "season": "November",
+                  "series": "Autumn 2021",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why the Weimar Republic was unpopular in the years 1919–1923."
@@ -85,6 +94,8 @@
                 2024
               ],
               "last_examined": 2024,
+              "last_examined_series": "Summer 2024",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 8,
                 12
@@ -99,6 +110,9 @@
                   "q_id": "germany_2018_q3a",
                   "q_number": "Q3(a)",
                   "year": 2018,
+                  "season": "June",
+                  "series": "Summer 2018",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into the challenges facing the Weimar Republic in the years 1919–1923?"
@@ -107,6 +121,9 @@
                   "q_id": "germany_2024_q2",
                   "q_number": "Q2",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why the situation in Germany was unstable in the years 1918–1923."
@@ -125,6 +142,8 @@
                 2026
               ],
               "last_examined": 2026,
+              "last_examined_series": "Summer 2026 (Specimen)",
+              "is_last_specimen": true,
               "tariffs_examined": [
                 4,
                 8,
@@ -141,6 +160,9 @@
                   "q_id": "germany_2018_q3a",
                   "q_number": "Q3(a)",
                   "year": 2018,
+                  "season": "June",
+                  "series": "Summer 2018",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into the challenges facing the Weimar Republic in the years 1919–1923?"
@@ -149,6 +171,9 @@
                   "q_id": "germany_2018_q3b",
                   "q_number": "Q3(b)",
                   "year": 2018,
+                  "season": "June",
+                  "series": "Summer 2018",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-difference",
                   "question_text": "Study Interpretations 1 and 2. They give different views about the challenges facing the Weimar Republic in the years 1919–1923. What is the main difference between these views? Explain your answer, using details from both interpretations."
@@ -157,6 +182,9 @@
                   "q_id": "germany_2018_q3c",
                   "q_number": "Q3(c)",
                   "year": 2018,
+                  "season": "June",
+                  "series": "Summer 2018",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-why",
                   "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about the challenges facing the Weimar Republic in the years 1919–1923. You may use Sources B and C to help explain your answer."
@@ -165,6 +193,9 @@
                   "q_id": "germany_2018_q3d",
                   "q_number": "Q3(d)",
                   "year": 2018,
+                  "season": "June",
+                  "series": "Summer 2018",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "interpretation-evaluation",
                   "question_text": "How far do you agree with Interpretation 2 about the challenges facing the Weimar Republic in the years 1919–1923? Explain your answer, using both interpretations, and your knowledge of the historical context."
@@ -173,6 +204,9 @@
                   "q_id": "germany_2024_q2",
                   "q_number": "Q2",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why the situation in Germany was unstable in the years 1918–1923."
@@ -181,6 +215,9 @@
                   "q_id": "germany_2025_q1",
                   "q_number": "Q1",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "inference",
                   "question_text": "Give two things you can infer from Source A about the impact of hyperinflation in Germany in 1923."
@@ -189,6 +226,9 @@
                   "q_id": "germany_2026_q3a",
                   "q_number": "Q3(a)",
                   "year": 2026,
+                  "season": "June",
+                  "series": "Summer 2026 (Specimen)",
+                  "is_specimen": true,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into the problems faced by the Weimar Republic in 1923?"
@@ -197,6 +237,9 @@
                   "q_id": "germany_2026_q3b",
                   "q_number": "Q3(b)",
                   "year": 2026,
+                  "season": "June",
+                  "series": "Summer 2026 (Specimen)",
+                  "is_specimen": true,
                   "tariff": 4,
                   "type": "interpretation-difference",
                   "question_text": "Study Interpretations 1 and 2. They give different views about the problems faced by the Weimar Republic in 1923. What is the main difference between these views? Explain your answer, using details from both interpretations."
@@ -205,6 +248,9 @@
                   "q_id": "germany_2026_q3c",
                   "q_number": "Q3(c)",
                   "year": 2026,
+                  "season": "June",
+                  "series": "Summer 2026 (Specimen)",
+                  "is_specimen": true,
                   "tariff": 4,
                   "type": "interpretation-why",
                   "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about the problems faced by the Weimar Republic in 1923. You may use Sources B and C to help explain your answer."
@@ -213,12 +259,15 @@
                   "q_id": "germany_2026_q3d",
                   "q_number": "Q3(d)",
                   "year": 2026,
+                  "season": "June",
+                  "series": "Summer 2026 (Specimen)",
+                  "is_specimen": true,
                   "tariff": 16,
                   "type": "interpretation-evaluation",
                   "question_text": "How far do you agree with Interpretation 2 about the problems faced by the Weimar Republic in 1923? Explain your answer, using both interpretations and your knowledge of the historical context."
                 }
               ],
-              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+              "teacher_note": "📋 SPECIMEN PAPER: Featured in the official 2026 Specimen Paper (Q3(a), 8m). Excellent model for how this topic will be assessed in the current specification."
             }
           ]
         },
@@ -233,6 +282,8 @@
                 2020
               ],
               "last_examined": 2020,
+              "last_examined_series": "Autumn 2020",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 8,
                 12
@@ -247,6 +298,9 @@
                   "q_id": "germany_2020_q2",
                   "q_number": "Q2",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why the German economy recovered in the years 1924–1929."
@@ -255,6 +309,9 @@
                   "q_id": "germany_2020_q3a",
                   "q_number": "Q3(a)",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into the extent of support for the Nazi regime in the years 1933–1939?"
@@ -270,6 +327,8 @@
                 2020
               ],
               "last_examined": 2020,
+              "last_examined_series": "Autumn 2020",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 8,
                 12
@@ -284,6 +343,9 @@
                   "q_id": "germany_2020_q2",
                   "q_number": "Q2",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why the German economy recovered in the years 1924–1929."
@@ -292,6 +354,9 @@
                   "q_id": "germany_2020_q3a",
                   "q_number": "Q3(a)",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into the extent of support for the Nazi regime in the years 1933–1939?"
@@ -313,6 +378,8 @@
                 2025
               ],
               "last_examined": 2025,
+              "last_examined_series": "Summer 2025",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 4,
                 8,
@@ -329,6 +396,9 @@
                   "q_id": "germany_2018_q2",
                   "q_number": "Q2",
                   "year": 2018,
+                  "season": "June",
+                  "series": "Summer 2018",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why the Nazis were able to reduce unemployment in Germany in the years 1933–1939."
@@ -337,6 +407,9 @@
                   "q_id": "germany_2025_q3a",
                   "q_number": "Q3(a)",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into people’s living standards in Nazi Germany in the years 1933–1939?"
@@ -345,6 +418,9 @@
                   "q_id": "germany_2025_q3b",
                   "q_number": "Q3(b)",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-difference",
                   "question_text": "Study Interpretations 1 and 2. They give different views about people’s living standards in Nazi Germany in the years 1933–1939. What is the main difference between these views? Explain your answer, using details from both interpretations."
@@ -353,6 +429,9 @@
                   "q_id": "germany_2025_q3c",
                   "q_number": "Q3(c)",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-why",
                   "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about people’s living standards in Nazi Germany in the years 1933–1939. You may use Sources B and C to help explain your answer."
@@ -361,6 +440,9 @@
                   "q_id": "germany_2025_q3d",
                   "q_number": "Q3(d)",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "interpretation-evaluation",
                   "question_text": "How far do you agree with Interpretation 2 about people’s living standards in Nazi Germany in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
@@ -376,6 +458,8 @@
                 2026
               ],
               "last_examined": 2026,
+              "last_examined_series": "Summer 2026 (Specimen)",
+              "is_last_specimen": true,
               "tariffs_examined": [
                 12
               ],
@@ -389,12 +473,15 @@
                   "q_id": "germany_2026_q2a",
                   "q_number": "Q2(a)",
                   "year": 2026,
+                  "season": "June",
+                  "series": "Summer 2026 (Specimen)",
+                  "is_specimen": true,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why there were changes in the position of women in society in the years 1924–1939."
                 }
               ],
-              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+              "teacher_note": "📋 SPECIMEN PAPER: Featured in the official 2026 Specimen Paper (Q2(a), 12m). Excellent model for how this topic will be assessed in the current specification."
             },
             {
               "point_index": 3,
@@ -404,6 +491,8 @@
                 2023
               ],
               "last_examined": 2023,
+              "last_examined_series": "Summer 2023",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 4,
                 8,
@@ -419,6 +508,9 @@
                   "q_id": "germany_2023_q3a",
                   "q_number": "Q3(a)",
                   "year": 2023,
+                  "season": "June",
+                  "series": "Summer 2023",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into cultural changes in the Weimar Republic in the years 1924–1929?"
@@ -427,6 +519,9 @@
                   "q_id": "germany_2023_q3b",
                   "q_number": "Q3(b)",
                   "year": 2023,
+                  "season": "June",
+                  "series": "Summer 2023",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-difference",
                   "question_text": "Study Interpretations 1 and 2. They give different views about cultural changes in the Weimar Republic in the years 1924–1929. What is the main difference between these views? Explain your answer, using details from both interpretations."
@@ -435,6 +530,9 @@
                   "q_id": "germany_2023_q3c",
                   "q_number": "Q3(c)",
                   "year": 2023,
+                  "season": "June",
+                  "series": "Summer 2023",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-why",
                   "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about cultural changes in the Weimar Republic in the years 1924–1929. You may use Sources B and C to help explain your answer."
@@ -443,6 +541,9 @@
                   "q_id": "germany_2023_q3d",
                   "q_number": "Q3(d)",
                   "year": 2023,
+                  "season": "June",
+                  "series": "Summer 2023",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "interpretation-evaluation",
                   "question_text": "How far do you agree with Interpretation 2 about cultural changes in the Weimar Republic in the years 1924–1929? Explain your answer, using both interpretations and your knowledge of the historical context."
@@ -470,6 +571,8 @@
                 2024
               ],
               "last_examined": 2024,
+              "last_examined_series": "Summer 2024",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 4
               ],
@@ -483,6 +586,9 @@
                   "q_id": "germany_2019_q1",
                   "q_number": "Q1",
                   "year": 2019,
+                  "season": "June",
+                  "series": "Summer 2019",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "inference",
                   "question_text": "Give two things you can infer from Source A about the early development of the Nazi Party."
@@ -491,6 +597,9 @@
                   "q_id": "germany_2024_q1",
                   "q_number": "Q1",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "inference",
                   "question_text": "Give two things you can infer from Source A about how Hitler increased support for the Nazi Party in the early 1920s."
@@ -507,6 +616,8 @@
                 2024
               ],
               "last_examined": 2024,
+              "last_examined_series": "Summer 2024",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 4
               ],
@@ -520,6 +631,9 @@
                   "q_id": "germany_2019_q1",
                   "q_number": "Q1",
                   "year": 2019,
+                  "season": "June",
+                  "series": "Summer 2019",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "inference",
                   "question_text": "Give two things you can infer from Source A about the early development of the Nazi Party."
@@ -528,6 +642,9 @@
                   "q_id": "germany_2024_q1",
                   "q_number": "Q1",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "inference",
                   "question_text": "Give two things you can infer from Source A about how Hitler increased support for the Nazi Party in the early 1920s."
@@ -549,6 +666,8 @@
                 2023
               ],
               "last_examined": 2023,
+              "last_examined_series": "Summer 2023",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 4,
                 8,
@@ -565,6 +684,9 @@
                   "q_id": "germany_2021_q3a",
                   "q_number": "Q3(a)",
                   "year": 2021,
+                  "season": "November",
+                  "series": "Autumn 2021",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into support for the Nazi Party in the years 1924–1928?"
@@ -573,6 +695,9 @@
                   "q_id": "germany_2021_q3b",
                   "q_number": "Q3(b)",
                   "year": 2021,
+                  "season": "November",
+                  "series": "Autumn 2021",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-difference",
                   "question_text": "Study Interpretations 1 and 2. They give different views about support for the Nazi Party in the years 1924–1928. What is the main difference between these views? Explain your answer, using details from both interpretations."
@@ -581,6 +706,9 @@
                   "q_id": "germany_2021_q3c",
                   "q_number": "Q3(c)",
                   "year": 2021,
+                  "season": "November",
+                  "series": "Autumn 2021",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-why",
                   "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about support for the Nazi Party in the years 1924–1928. You may use Sources B and C to help explain your answer."
@@ -589,6 +717,9 @@
                   "q_id": "germany_2021_q3d",
                   "q_number": "Q3(d)",
                   "year": 2021,
+                  "season": "November",
+                  "series": "Autumn 2021",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "interpretation-evaluation",
                   "question_text": "How far do you agree with Interpretation 2 about support for the Nazi Party in the years 1924–1928? Explain your answer, using both interpretations and your knowledge of the historical context."
@@ -597,6 +728,9 @@
                   "q_id": "germany_2023_q2",
                   "q_number": "Q2",
                   "year": 2023,
+                  "season": "June",
+                  "series": "Summer 2023",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why the Nazi Party was reorganised in the years 1924–1928."
@@ -613,6 +747,8 @@
                 2023
               ],
               "last_examined": 2023,
+              "last_examined_series": "Summer 2023",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 4,
                 8,
@@ -629,6 +765,9 @@
                   "q_id": "germany_2021_q3a",
                   "q_number": "Q3(a)",
                   "year": 2021,
+                  "season": "November",
+                  "series": "Autumn 2021",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into support for the Nazi Party in the years 1924–1928?"
@@ -637,6 +776,9 @@
                   "q_id": "germany_2021_q3b",
                   "q_number": "Q3(b)",
                   "year": 2021,
+                  "season": "November",
+                  "series": "Autumn 2021",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-difference",
                   "question_text": "Study Interpretations 1 and 2. They give different views about support for the Nazi Party in the years 1924–1928. What is the main difference between these views? Explain your answer, using details from both interpretations."
@@ -645,6 +787,9 @@
                   "q_id": "germany_2021_q3c",
                   "q_number": "Q3(c)",
                   "year": 2021,
+                  "season": "November",
+                  "series": "Autumn 2021",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-why",
                   "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about support for the Nazi Party in the years 1924–1928. You may use Sources B and C to help explain your answer."
@@ -653,6 +798,9 @@
                   "q_id": "germany_2021_q3d",
                   "q_number": "Q3(d)",
                   "year": 2021,
+                  "season": "November",
+                  "series": "Autumn 2021",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "interpretation-evaluation",
                   "question_text": "How far do you agree with Interpretation 2 about support for the Nazi Party in the years 1924–1928? Explain your answer, using both interpretations and your knowledge of the historical context."
@@ -661,6 +809,9 @@
                   "q_id": "germany_2023_q2",
                   "q_number": "Q2",
                   "year": 2023,
+                  "season": "June",
+                  "series": "Summer 2023",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why the Nazi Party was reorganised in the years 1924–1928."
@@ -681,6 +832,8 @@
                 2025
               ],
               "last_examined": 2025,
+              "last_examined_series": "Summer 2025",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 12
               ],
@@ -694,6 +847,9 @@
                   "q_id": "germany_2025_q2a",
                   "q_number": "Q2(a)",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why support for the Nazi party grew in the years 1929–1932."
@@ -713,6 +869,8 @@
                 2025
               ],
               "last_examined": 2025,
+              "last_examined_series": "Summer 2025",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 4,
                 8,
@@ -729,6 +887,9 @@
                   "q_id": "germany_2018_q1",
                   "q_number": "Q1",
                   "year": 2018,
+                  "season": "June",
+                  "series": "Summer 2018",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "inference",
                   "question_text": "Give two things you can infer from Source A about the success of the Berlin Olympic Games in 1936."
@@ -737,6 +898,9 @@
                   "q_id": "germany_2019_q3a",
                   "q_number": "Q3(a)",
                   "year": 2019,
+                  "season": "June",
+                  "series": "Summer 2019",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into Nazi policies towards women in the years 1933–1939?"
@@ -745,6 +909,9 @@
                   "q_id": "germany_2022_q2",
                   "q_number": "Q2",
                   "year": 2022,
+                  "season": "June",
+                  "series": "Summer 2022",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why the use of propaganda helped the Nazis to control the attitudes of the German people in the years 1933–1939."
@@ -753,6 +920,9 @@
                   "q_id": "germany_2024_q3a",
                   "q_number": "Q3(a)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into Nazi methods of controlling the German people in the years 1933–1939?"
@@ -761,6 +931,9 @@
                   "q_id": "germany_2024_q3b",
                   "q_number": "Q3(b)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-difference",
                   "question_text": "Study Interpretations 1 and 2. They give different views about Nazi methods of controlling the German people in the years 1933–1939. What is the main difference between these views? Explain your answer, using details from both interpretations."
@@ -769,6 +942,9 @@
                   "q_id": "germany_2024_q3c",
                   "q_number": "Q3(c)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-why",
                   "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about Nazi methods of controlling the German people in the years 1933–1939. You may use Sources B and C to help explain your answer."
@@ -777,6 +953,9 @@
                   "q_id": "germany_2024_q3d",
                   "q_number": "Q3(d)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "interpretation-evaluation",
                   "question_text": "How far do you agree with Interpretation 2 about Nazi methods of controlling the German people in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
@@ -785,6 +964,9 @@
                   "q_id": "germany_2025_q2a",
                   "q_number": "Q2(a)",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why support for the Nazi party grew in the years 1929–1932."
@@ -806,6 +988,8 @@
                 2026
               ],
               "last_examined": 2026,
+              "last_examined_series": "Summer 2026 (Specimen)",
+              "is_last_specimen": true,
               "tariffs_examined": [
                 4,
                 8,
@@ -822,6 +1006,9 @@
                   "q_id": "germany_2022_q3a",
                   "q_number": "Q3(a)",
                   "year": 2022,
+                  "season": "June",
+                  "series": "Summer 2022",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into the reasons why Hitler became Chancellor in 1933?"
@@ -830,6 +1017,9 @@
                   "q_id": "germany_2022_q3b",
                   "q_number": "Q3(b)",
                   "year": 2022,
+                  "season": "June",
+                  "series": "Summer 2022",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-difference",
                   "question_text": "Study Interpretations 1 and 2. They give different views about the reasons why Hitler became Chancellor in 1933. What is the main difference between these views? Explain your answer, using details from both interpretations."
@@ -838,6 +1028,9 @@
                   "q_id": "germany_2022_q3c",
                   "q_number": "Q3(c)",
                   "year": 2022,
+                  "season": "June",
+                  "series": "Summer 2022",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-why",
                   "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about the reasons why Hitler became Chancellor in 1933. You may use Sources B and C to help explain your answer."
@@ -846,6 +1039,9 @@
                   "q_id": "germany_2022_q3d",
                   "q_number": "Q3(d)",
                   "year": 2022,
+                  "season": "June",
+                  "series": "Summer 2022",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "interpretation-evaluation",
                   "question_text": "How far do you agree with Interpretation 2 about the reasons why Hitler became Chancellor in 1933? Explain your answer, using both interpretations and your knowledge of the historical context."
@@ -854,12 +1050,15 @@
                   "q_id": "germany_2026_q2b",
                   "q_number": "Q2(b)",
                   "year": 2026,
+                  "season": "June",
+                  "series": "Summer 2026 (Specimen)",
+                  "is_specimen": true,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why Hitler became Chancellor in 1933."
                 }
               ],
-              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+              "teacher_note": "📋 SPECIMEN PAPER: Featured in the official 2026 Specimen Paper (Q2(b), 12m). Excellent model for how this topic will be assessed in the current specification."
             }
           ]
         }
@@ -880,6 +1079,8 @@
                 2021
               ],
               "last_examined": 2021,
+              "last_examined_series": "Autumn 2021",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 4
               ],
@@ -893,6 +1094,9 @@
                   "q_id": "germany_2021_q1",
                   "q_number": "Q1",
                   "year": 2021,
+                  "season": "November",
+                  "series": "Autumn 2021",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "inference",
                   "question_text": "Give two things you can infer from Source A about how the Nazis reacted to the Reichstag Fire."
@@ -908,6 +1112,8 @@
                 2021
               ],
               "last_examined": 2021,
+              "last_examined_series": "Autumn 2021",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 4
               ],
@@ -921,6 +1127,9 @@
                   "q_id": "germany_2021_q1",
                   "q_number": "Q1",
                   "year": 2021,
+                  "season": "November",
+                  "series": "Autumn 2021",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "inference",
                   "question_text": "Give two things you can infer from Source A about how the Nazis reacted to the Reichstag Fire."
@@ -948,6 +1157,8 @@
                 2025
               ],
               "last_examined": 2025,
+              "last_examined_series": "Summer 2025",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 4,
                 8,
@@ -964,6 +1175,9 @@
                   "q_id": "germany_2018_q1",
                   "q_number": "Q1",
                   "year": 2018,
+                  "season": "June",
+                  "series": "Summer 2018",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "inference",
                   "question_text": "Give two things you can infer from Source A about the success of the Berlin Olympic Games in 1936."
@@ -972,6 +1186,9 @@
                   "q_id": "germany_2018_q3a",
                   "q_number": "Q3(a)",
                   "year": 2018,
+                  "season": "June",
+                  "series": "Summer 2018",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into the challenges facing the Weimar Republic in the years 1919–1923?"
@@ -980,6 +1197,9 @@
                   "q_id": "germany_2019_q2",
                   "q_number": "Q2",
                   "year": 2019,
+                  "season": "June",
+                  "series": "Summer 2019",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why the Nazis were able to create a police state in the years 1933–1939."
@@ -988,6 +1208,9 @@
                   "q_id": "germany_2019_q3a",
                   "q_number": "Q3(a)",
                   "year": 2019,
+                  "season": "June",
+                  "series": "Summer 2019",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into Nazi policies towards women in the years 1933–1939?"
@@ -996,6 +1219,9 @@
                   "q_id": "germany_2019_q3d",
                   "q_number": "Q3(d)",
                   "year": 2019,
+                  "season": "June",
+                  "series": "Summer 2019",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "interpretation-evaluation",
                   "question_text": "How far do you agree with Interpretation 2 about Nazi policies towards women in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
@@ -1004,6 +1230,9 @@
                   "q_id": "germany_2020_q3a",
                   "q_number": "Q3(a)",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into the extent of support for the Nazi regime in the years 1933–1939?"
@@ -1012,6 +1241,9 @@
                   "q_id": "germany_2021_q3a",
                   "q_number": "Q3(a)",
                   "year": 2021,
+                  "season": "November",
+                  "series": "Autumn 2021",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into support for the Nazi Party in the years 1924–1928?"
@@ -1020,6 +1252,9 @@
                   "q_id": "germany_2022_q3a",
                   "q_number": "Q3(a)",
                   "year": 2022,
+                  "season": "June",
+                  "series": "Summer 2022",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into the reasons why Hitler became Chancellor in 1933?"
@@ -1028,6 +1263,9 @@
                   "q_id": "germany_2022_q3d",
                   "q_number": "Q3(d)",
                   "year": 2022,
+                  "season": "June",
+                  "series": "Summer 2022",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "interpretation-evaluation",
                   "question_text": "How far do you agree with Interpretation 2 about the reasons why Hitler became Chancellor in 1933? Explain your answer, using both interpretations and your knowledge of the historical context."
@@ -1036,6 +1274,9 @@
                   "q_id": "germany_2023_q3a",
                   "q_number": "Q3(a)",
                   "year": 2023,
+                  "season": "June",
+                  "series": "Summer 2023",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into cultural changes in the Weimar Republic in the years 1924–1929?"
@@ -1044,6 +1285,9 @@
                   "q_id": "germany_2024_q3a",
                   "q_number": "Q3(a)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into Nazi methods of controlling the German people in the years 1933–1939?"
@@ -1052,6 +1296,9 @@
                   "q_id": "germany_2024_q3b",
                   "q_number": "Q3(b)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-difference",
                   "question_text": "Study Interpretations 1 and 2. They give different views about Nazi methods of controlling the German people in the years 1933–1939. What is the main difference between these views? Explain your answer, using details from both interpretations."
@@ -1060,6 +1307,9 @@
                   "q_id": "germany_2024_q3c",
                   "q_number": "Q3(c)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-why",
                   "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about Nazi methods of controlling the German people in the years 1933–1939. You may use Sources B and C to help explain your answer."
@@ -1068,6 +1318,9 @@
                   "q_id": "germany_2024_q3d",
                   "q_number": "Q3(d)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "interpretation-evaluation",
                   "question_text": "How far do you agree with Interpretation 2 about Nazi methods of controlling the German people in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
@@ -1076,6 +1329,9 @@
                   "q_id": "germany_2025_q2a",
                   "q_number": "Q2(a)",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why support for the Nazi party grew in the years 1929–1932."
@@ -1084,6 +1340,9 @@
                   "q_id": "germany_2025_q2b",
                   "q_number": "Q2(b)",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why there was opposition from some young people towards the Nazis in the years 1933–1939."
@@ -1092,6 +1351,9 @@
                   "q_id": "germany_2025_q3d",
                   "q_number": "Q3(d)",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "interpretation-evaluation",
                   "question_text": "How far do you agree with Interpretation 2 about people’s living standards in Nazi Germany in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
@@ -1114,6 +1376,8 @@
                 2025
               ],
               "last_examined": 2025,
+              "last_examined_series": "Summer 2025",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 4,
                 8,
@@ -1130,6 +1394,9 @@
                   "q_id": "germany_2018_q1",
                   "q_number": "Q1",
                   "year": 2018,
+                  "season": "June",
+                  "series": "Summer 2018",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "inference",
                   "question_text": "Give two things you can infer from Source A about the success of the Berlin Olympic Games in 1936."
@@ -1138,6 +1405,9 @@
                   "q_id": "germany_2018_q3a",
                   "q_number": "Q3(a)",
                   "year": 2018,
+                  "season": "June",
+                  "series": "Summer 2018",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into the challenges facing the Weimar Republic in the years 1919–1923?"
@@ -1146,6 +1416,9 @@
                   "q_id": "germany_2019_q2",
                   "q_number": "Q2",
                   "year": 2019,
+                  "season": "June",
+                  "series": "Summer 2019",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why the Nazis were able to create a police state in the years 1933–1939."
@@ -1154,6 +1427,9 @@
                   "q_id": "germany_2019_q3a",
                   "q_number": "Q3(a)",
                   "year": 2019,
+                  "season": "June",
+                  "series": "Summer 2019",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into Nazi policies towards women in the years 1933–1939?"
@@ -1162,6 +1438,9 @@
                   "q_id": "germany_2019_q3d",
                   "q_number": "Q3(d)",
                   "year": 2019,
+                  "season": "June",
+                  "series": "Summer 2019",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "interpretation-evaluation",
                   "question_text": "How far do you agree with Interpretation 2 about Nazi policies towards women in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
@@ -1170,6 +1449,9 @@
                   "q_id": "germany_2020_q3a",
                   "q_number": "Q3(a)",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into the extent of support for the Nazi regime in the years 1933–1939?"
@@ -1178,6 +1460,9 @@
                   "q_id": "germany_2021_q3a",
                   "q_number": "Q3(a)",
                   "year": 2021,
+                  "season": "November",
+                  "series": "Autumn 2021",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into support for the Nazi Party in the years 1924–1928?"
@@ -1186,6 +1471,9 @@
                   "q_id": "germany_2022_q3a",
                   "q_number": "Q3(a)",
                   "year": 2022,
+                  "season": "June",
+                  "series": "Summer 2022",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into the reasons why Hitler became Chancellor in 1933?"
@@ -1194,6 +1482,9 @@
                   "q_id": "germany_2022_q3d",
                   "q_number": "Q3(d)",
                   "year": 2022,
+                  "season": "June",
+                  "series": "Summer 2022",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "interpretation-evaluation",
                   "question_text": "How far do you agree with Interpretation 2 about the reasons why Hitler became Chancellor in 1933? Explain your answer, using both interpretations and your knowledge of the historical context."
@@ -1202,6 +1493,9 @@
                   "q_id": "germany_2023_q3a",
                   "q_number": "Q3(a)",
                   "year": 2023,
+                  "season": "June",
+                  "series": "Summer 2023",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into cultural changes in the Weimar Republic in the years 1924–1929?"
@@ -1210,6 +1504,9 @@
                   "q_id": "germany_2024_q3a",
                   "q_number": "Q3(a)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into Nazi methods of controlling the German people in the years 1933–1939?"
@@ -1218,6 +1515,9 @@
                   "q_id": "germany_2024_q3b",
                   "q_number": "Q3(b)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-difference",
                   "question_text": "Study Interpretations 1 and 2. They give different views about Nazi methods of controlling the German people in the years 1933–1939. What is the main difference between these views? Explain your answer, using details from both interpretations."
@@ -1226,6 +1526,9 @@
                   "q_id": "germany_2024_q3c",
                   "q_number": "Q3(c)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-why",
                   "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about Nazi methods of controlling the German people in the years 1933–1939. You may use Sources B and C to help explain your answer."
@@ -1234,6 +1537,9 @@
                   "q_id": "germany_2024_q3d",
                   "q_number": "Q3(d)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "interpretation-evaluation",
                   "question_text": "How far do you agree with Interpretation 2 about Nazi methods of controlling the German people in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
@@ -1242,6 +1548,9 @@
                   "q_id": "germany_2025_q2a",
                   "q_number": "Q2(a)",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why support for the Nazi party grew in the years 1929–1932."
@@ -1250,6 +1559,9 @@
                   "q_id": "germany_2025_q2b",
                   "q_number": "Q2(b)",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why there was opposition from some young people towards the Nazis in the years 1933–1939."
@@ -1258,6 +1570,9 @@
                   "q_id": "germany_2025_q3d",
                   "q_number": "Q3(d)",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "interpretation-evaluation",
                   "question_text": "How far do you agree with Interpretation 2 about people’s living standards in Nazi Germany in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
@@ -1281,6 +1596,8 @@
                 2024
               ],
               "last_examined": 2024,
+              "last_examined_series": "Summer 2024",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 4,
                 8,
@@ -1297,6 +1614,9 @@
                   "q_id": "germany_2018_q1",
                   "q_number": "Q1",
                   "year": 2018,
+                  "season": "June",
+                  "series": "Summer 2018",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "inference",
                   "question_text": "Give two things you can infer from Source A about the success of the Berlin Olympic Games in 1936."
@@ -1305,6 +1625,9 @@
                   "q_id": "germany_2019_q3a",
                   "q_number": "Q3(a)",
                   "year": 2019,
+                  "season": "June",
+                  "series": "Summer 2019",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into Nazi policies towards women in the years 1933–1939?"
@@ -1313,6 +1636,9 @@
                   "q_id": "germany_2022_q2",
                   "q_number": "Q2",
                   "year": 2022,
+                  "season": "June",
+                  "series": "Summer 2022",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why the use of propaganda helped the Nazis to control the attitudes of the German people in the years 1933–1939."
@@ -1321,6 +1647,9 @@
                   "q_id": "germany_2024_q3a",
                   "q_number": "Q3(a)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into Nazi methods of controlling the German people in the years 1933–1939?"
@@ -1329,6 +1658,9 @@
                   "q_id": "germany_2024_q3b",
                   "q_number": "Q3(b)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-difference",
                   "question_text": "Study Interpretations 1 and 2. They give different views about Nazi methods of controlling the German people in the years 1933–1939. What is the main difference between these views? Explain your answer, using details from both interpretations."
@@ -1337,6 +1669,9 @@
                   "q_id": "germany_2024_q3c",
                   "q_number": "Q3(c)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-why",
                   "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about Nazi methods of controlling the German people in the years 1933–1939. You may use Sources B and C to help explain your answer."
@@ -1345,6 +1680,9 @@
                   "q_id": "germany_2024_q3d",
                   "q_number": "Q3(d)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "interpretation-evaluation",
                   "question_text": "How far do you agree with Interpretation 2 about Nazi methods of controlling the German people in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
@@ -1364,6 +1702,8 @@
                 2024
               ],
               "last_examined": 2024,
+              "last_examined_series": "Summer 2024",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 4,
                 8,
@@ -1380,6 +1720,9 @@
                   "q_id": "germany_2018_q1",
                   "q_number": "Q1",
                   "year": 2018,
+                  "season": "June",
+                  "series": "Summer 2018",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "inference",
                   "question_text": "Give two things you can infer from Source A about the success of the Berlin Olympic Games in 1936."
@@ -1388,6 +1731,9 @@
                   "q_id": "germany_2019_q3a",
                   "q_number": "Q3(a)",
                   "year": 2019,
+                  "season": "June",
+                  "series": "Summer 2019",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into Nazi policies towards women in the years 1933–1939?"
@@ -1396,6 +1742,9 @@
                   "q_id": "germany_2022_q2",
                   "q_number": "Q2",
                   "year": 2022,
+                  "season": "June",
+                  "series": "Summer 2022",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why the use of propaganda helped the Nazis to control the attitudes of the German people in the years 1933–1939."
@@ -1404,6 +1753,9 @@
                   "q_id": "germany_2023_q3a",
                   "q_number": "Q3(a)",
                   "year": 2023,
+                  "season": "June",
+                  "series": "Summer 2023",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into cultural changes in the Weimar Republic in the years 1924–1929?"
@@ -1412,6 +1764,9 @@
                   "q_id": "germany_2023_q3b",
                   "q_number": "Q3(b)",
                   "year": 2023,
+                  "season": "June",
+                  "series": "Summer 2023",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-difference",
                   "question_text": "Study Interpretations 1 and 2. They give different views about cultural changes in the Weimar Republic in the years 1924–1929. What is the main difference between these views? Explain your answer, using details from both interpretations."
@@ -1420,6 +1775,9 @@
                   "q_id": "germany_2023_q3c",
                   "q_number": "Q3(c)",
                   "year": 2023,
+                  "season": "June",
+                  "series": "Summer 2023",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-why",
                   "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about cultural changes in the Weimar Republic in the years 1924–1929. You may use Sources B and C to help explain your answer."
@@ -1428,6 +1786,9 @@
                   "q_id": "germany_2023_q3d",
                   "q_number": "Q3(d)",
                   "year": 2023,
+                  "season": "June",
+                  "series": "Summer 2023",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "interpretation-evaluation",
                   "question_text": "How far do you agree with Interpretation 2 about cultural changes in the Weimar Republic in the years 1924–1929? Explain your answer, using both interpretations and your knowledge of the historical context."
@@ -1436,6 +1797,9 @@
                   "q_id": "germany_2024_q3a",
                   "q_number": "Q3(a)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into Nazi methods of controlling the German people in the years 1933–1939?"
@@ -1444,6 +1808,9 @@
                   "q_id": "germany_2024_q3b",
                   "q_number": "Q3(b)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-difference",
                   "question_text": "Study Interpretations 1 and 2. They give different views about Nazi methods of controlling the German people in the years 1933–1939. What is the main difference between these views? Explain your answer, using details from both interpretations."
@@ -1452,6 +1819,9 @@
                   "q_id": "germany_2024_q3c",
                   "q_number": "Q3(c)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-why",
                   "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about Nazi methods of controlling the German people in the years 1933–1939. You may use Sources B and C to help explain your answer."
@@ -1460,6 +1830,9 @@
                   "q_id": "germany_2024_q3d",
                   "q_number": "Q3(d)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "interpretation-evaluation",
                   "question_text": "How far do you agree with Interpretation 2 about Nazi methods of controlling the German people in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
@@ -1481,6 +1854,8 @@
                 2026
               ],
               "last_examined": 2026,
+              "last_examined_series": "Summer 2026 (Specimen)",
+              "is_last_specimen": true,
               "tariffs_examined": [
                 4,
                 8,
@@ -1497,6 +1872,9 @@
                   "q_id": "germany_2018_q1",
                   "q_number": "Q1",
                   "year": 2018,
+                  "season": "June",
+                  "series": "Summer 2018",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "inference",
                   "question_text": "Give two things you can infer from Source A about the success of the Berlin Olympic Games in 1936."
@@ -1505,6 +1883,9 @@
                   "q_id": "germany_2019_q3a",
                   "q_number": "Q3(a)",
                   "year": 2019,
+                  "season": "June",
+                  "series": "Summer 2019",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into Nazi policies towards women in the years 1933–1939?"
@@ -1513,6 +1894,9 @@
                   "q_id": "germany_2020_q3a",
                   "q_number": "Q3(a)",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into the extent of support for the Nazi regime in the years 1933–1939?"
@@ -1521,6 +1905,9 @@
                   "q_id": "germany_2020_q3b",
                   "q_number": "Q3(b)",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-difference",
                   "question_text": "Study Interpretations 1 and 2. They give different views about the extent of support for the Nazi regime in the years 1933–1939. What is the main difference between these views? Explain your answer, using details from both interpretations."
@@ -1529,6 +1916,9 @@
                   "q_id": "germany_2020_q3c",
                   "q_number": "Q3(c)",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-why",
                   "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about the extent of support for the Nazi regime in the years 1933–1939. You may use Sources B and C to help explain your answer."
@@ -1537,6 +1927,9 @@
                   "q_id": "germany_2020_q3d",
                   "q_number": "Q3(d)",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "interpretation-evaluation",
                   "question_text": "How far do you agree with Interpretation 2 about the extent of support for the Nazi regime in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
@@ -1545,6 +1938,9 @@
                   "q_id": "germany_2022_q2",
                   "q_number": "Q2",
                   "year": 2022,
+                  "season": "June",
+                  "series": "Summer 2022",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why the use of propaganda helped the Nazis to control the attitudes of the German people in the years 1933–1939."
@@ -1553,6 +1949,9 @@
                   "q_id": "germany_2024_q3a",
                   "q_number": "Q3(a)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into Nazi methods of controlling the German people in the years 1933–1939?"
@@ -1561,6 +1960,9 @@
                   "q_id": "germany_2024_q3b",
                   "q_number": "Q3(b)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-difference",
                   "question_text": "Study Interpretations 1 and 2. They give different views about Nazi methods of controlling the German people in the years 1933–1939. What is the main difference between these views? Explain your answer, using details from both interpretations."
@@ -1569,6 +1971,9 @@
                   "q_id": "germany_2024_q3c",
                   "q_number": "Q3(c)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-why",
                   "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about Nazi methods of controlling the German people in the years 1933–1939. You may use Sources B and C to help explain your answer."
@@ -1577,6 +1982,9 @@
                   "q_id": "germany_2024_q3d",
                   "q_number": "Q3(d)",
                   "year": 2024,
+                  "season": "June",
+                  "series": "Summer 2024",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "interpretation-evaluation",
                   "question_text": "How far do you agree with Interpretation 2 about Nazi methods of controlling the German people in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
@@ -1585,6 +1993,9 @@
                   "q_id": "germany_2025_q2b",
                   "q_number": "Q2(b)",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why there was opposition from some young people towards the Nazis in the years 1933–1939."
@@ -1593,12 +2004,15 @@
                   "q_id": "germany_2026_q1",
                   "q_number": "Q1",
                   "year": 2026,
+                  "season": "June",
+                  "series": "Summer 2026 (Specimen)",
+                  "is_specimen": true,
                   "tariff": 4,
                   "type": "inference",
                   "question_text": "Give two things you can infer from Source A about how the Nazi Party dealt with opposition in the years 1933–1939."
                 }
               ],
-              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+              "teacher_note": "📋 SPECIMEN PAPER: Featured in the official 2026 Specimen Paper (Q1, 4m). Excellent model for how this topic will be assessed in the current specification."
             }
           ]
         },
@@ -1615,6 +2029,8 @@
                 2026
               ],
               "last_examined": 2026,
+              "last_examined_series": "Summer 2026 (Specimen)",
+              "is_last_specimen": true,
               "tariffs_examined": [
                 4,
                 8,
@@ -1631,6 +2047,9 @@
                   "q_id": "germany_2020_q3a",
                   "q_number": "Q3(a)",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into the extent of support for the Nazi regime in the years 1933–1939?"
@@ -1639,6 +2058,9 @@
                   "q_id": "germany_2020_q3b",
                   "q_number": "Q3(b)",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-difference",
                   "question_text": "Study Interpretations 1 and 2. They give different views about the extent of support for the Nazi regime in the years 1933–1939. What is the main difference between these views? Explain your answer, using details from both interpretations."
@@ -1647,6 +2069,9 @@
                   "q_id": "germany_2020_q3c",
                   "q_number": "Q3(c)",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-why",
                   "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about the extent of support for the Nazi regime in the years 1933–1939. You may use Sources B and C to help explain your answer."
@@ -1655,6 +2080,9 @@
                   "q_id": "germany_2020_q3d",
                   "q_number": "Q3(d)",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "interpretation-evaluation",
                   "question_text": "How far do you agree with Interpretation 2 about the extent of support for the Nazi regime in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
@@ -1663,6 +2091,9 @@
                   "q_id": "germany_2025_q2b",
                   "q_number": "Q2(b)",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why there was opposition from some young people towards the Nazis in the years 1933–1939."
@@ -1671,12 +2102,15 @@
                   "q_id": "germany_2026_q1",
                   "q_number": "Q1",
                   "year": 2026,
+                  "season": "June",
+                  "series": "Summer 2026 (Specimen)",
+                  "is_specimen": true,
                   "tariff": 4,
                   "type": "inference",
                   "question_text": "Give two things you can infer from Source A about how the Nazi Party dealt with opposition in the years 1933–1939."
                 }
               ],
-              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+              "teacher_note": "📋 SPECIMEN PAPER: Featured in the official 2026 Specimen Paper (Q1, 4m). Excellent model for how this topic will be assessed in the current specification."
             },
             {
               "point_index": 2,
@@ -1688,6 +2122,8 @@
                 2026
               ],
               "last_examined": 2026,
+              "last_examined_series": "Summer 2026 (Specimen)",
+              "is_last_specimen": true,
               "tariffs_examined": [
                 4,
                 8,
@@ -1704,6 +2140,9 @@
                   "q_id": "germany_2020_q3a",
                   "q_number": "Q3(a)",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into the extent of support for the Nazi regime in the years 1933–1939?"
@@ -1712,6 +2151,9 @@
                   "q_id": "germany_2020_q3b",
                   "q_number": "Q3(b)",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-difference",
                   "question_text": "Study Interpretations 1 and 2. They give different views about the extent of support for the Nazi regime in the years 1933–1939. What is the main difference between these views? Explain your answer, using details from both interpretations."
@@ -1720,6 +2162,9 @@
                   "q_id": "germany_2020_q3c",
                   "q_number": "Q3(c)",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-why",
                   "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about the extent of support for the Nazi regime in the years 1933–1939. You may use Sources B and C to help explain your answer."
@@ -1728,6 +2173,9 @@
                   "q_id": "germany_2020_q3d",
                   "q_number": "Q3(d)",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "interpretation-evaluation",
                   "question_text": "How far do you agree with Interpretation 2 about the extent of support for the Nazi regime in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
@@ -1736,6 +2184,9 @@
                   "q_id": "germany_2025_q2b",
                   "q_number": "Q2(b)",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why there was opposition from some young people towards the Nazis in the years 1933–1939."
@@ -1744,12 +2195,15 @@
                   "q_id": "germany_2026_q1",
                   "q_number": "Q1",
                   "year": 2026,
+                  "season": "June",
+                  "series": "Summer 2026 (Specimen)",
+                  "is_specimen": true,
                   "tariff": 4,
                   "type": "inference",
                   "question_text": "Give two things you can infer from Source A about how the Nazi Party dealt with opposition in the years 1933–1939."
                 }
               ],
-              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+              "teacher_note": "📋 SPECIMEN PAPER: Featured in the official 2026 Specimen Paper (Q1, 4m). Excellent model for how this topic will be assessed in the current specification."
             },
             {
               "point_index": 3,
@@ -1761,6 +2215,8 @@
                 2026
               ],
               "last_examined": 2026,
+              "last_examined_series": "Summer 2026 (Specimen)",
+              "is_last_specimen": true,
               "tariffs_examined": [
                 4,
                 8,
@@ -1777,6 +2233,9 @@
                   "q_id": "germany_2020_q3a",
                   "q_number": "Q3(a)",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into the extent of support for the Nazi regime in the years 1933–1939?"
@@ -1785,6 +2244,9 @@
                   "q_id": "germany_2020_q3b",
                   "q_number": "Q3(b)",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-difference",
                   "question_text": "Study Interpretations 1 and 2. They give different views about the extent of support for the Nazi regime in the years 1933–1939. What is the main difference between these views? Explain your answer, using details from both interpretations."
@@ -1793,6 +2255,9 @@
                   "q_id": "germany_2020_q3c",
                   "q_number": "Q3(c)",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-why",
                   "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about the extent of support for the Nazi regime in the years 1933–1939. You may use Sources B and C to help explain your answer."
@@ -1801,6 +2266,9 @@
                   "q_id": "germany_2020_q3d",
                   "q_number": "Q3(d)",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "interpretation-evaluation",
                   "question_text": "How far do you agree with Interpretation 2 about the extent of support for the Nazi regime in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
@@ -1809,6 +2277,9 @@
                   "q_id": "germany_2025_q2b",
                   "q_number": "Q2(b)",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why there was opposition from some young people towards the Nazis in the years 1933–1939."
@@ -1817,12 +2288,15 @@
                   "q_id": "germany_2026_q1",
                   "q_number": "Q1",
                   "year": 2026,
+                  "season": "June",
+                  "series": "Summer 2026 (Specimen)",
+                  "is_specimen": true,
                   "tariff": 4,
                   "type": "inference",
                   "question_text": "Give two things you can infer from Source A about how the Nazi Party dealt with opposition in the years 1933–1939."
                 }
               ],
-              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+              "teacher_note": "📋 SPECIMEN PAPER: Featured in the official 2026 Specimen Paper (Q1, 4m). Excellent model for how this topic will be assessed in the current specification."
             }
           ]
         }
@@ -1844,6 +2318,8 @@
                 2026
               ],
               "last_examined": 2026,
+              "last_examined_series": "Summer 2026 (Specimen)",
+              "is_last_specimen": true,
               "tariffs_examined": [
                 4,
                 8,
@@ -1860,6 +2336,9 @@
                   "q_id": "germany_2019_q3a",
                   "q_number": "Q3(a)",
                   "year": 2019,
+                  "season": "June",
+                  "series": "Summer 2019",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into Nazi policies towards women in the years 1933–1939?"
@@ -1868,6 +2347,9 @@
                   "q_id": "germany_2019_q3b",
                   "q_number": "Q3(b)",
                   "year": 2019,
+                  "season": "June",
+                  "series": "Summer 2019",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-difference",
                   "question_text": "Study Interpretations 1 and 2. They give different views about Nazi policies towards women. What is the main difference between these views? Explain your answer, using details from both interpretations."
@@ -1876,6 +2358,9 @@
                   "q_id": "germany_2019_q3c",
                   "q_number": "Q3(c)",
                   "year": 2019,
+                  "season": "June",
+                  "series": "Summer 2019",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-why",
                   "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about Nazi policies towards women. You may use Sources B and C to help explain your answer."
@@ -1884,6 +2369,9 @@
                   "q_id": "germany_2019_q3d",
                   "q_number": "Q3(d)",
                   "year": 2019,
+                  "season": "June",
+                  "series": "Summer 2019",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "interpretation-evaluation",
                   "question_text": "How far do you agree with Interpretation 2 about Nazi policies towards women in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
@@ -1892,12 +2380,15 @@
                   "q_id": "germany_2026_q2a",
                   "q_number": "Q2(a)",
                   "year": 2026,
+                  "season": "June",
+                  "series": "Summer 2026 (Specimen)",
+                  "is_specimen": true,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why there were changes in the position of women in society in the years 1924–1939."
                 }
               ],
-              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+              "teacher_note": "📋 SPECIMEN PAPER: Featured in the official 2026 Specimen Paper (Q2(a), 12m). Excellent model for how this topic will be assessed in the current specification."
             },
             {
               "point_index": 2,
@@ -1908,6 +2399,8 @@
                 2026
               ],
               "last_examined": 2026,
+              "last_examined_series": "Summer 2026 (Specimen)",
+              "is_last_specimen": true,
               "tariffs_examined": [
                 4,
                 8,
@@ -1924,6 +2417,9 @@
                   "q_id": "germany_2019_q3a",
                   "q_number": "Q3(a)",
                   "year": 2019,
+                  "season": "June",
+                  "series": "Summer 2019",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into Nazi policies towards women in the years 1933–1939?"
@@ -1932,6 +2428,9 @@
                   "q_id": "germany_2019_q3b",
                   "q_number": "Q3(b)",
                   "year": 2019,
+                  "season": "June",
+                  "series": "Summer 2019",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-difference",
                   "question_text": "Study Interpretations 1 and 2. They give different views about Nazi policies towards women. What is the main difference between these views? Explain your answer, using details from both interpretations."
@@ -1940,6 +2439,9 @@
                   "q_id": "germany_2019_q3c",
                   "q_number": "Q3(c)",
                   "year": 2019,
+                  "season": "June",
+                  "series": "Summer 2019",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-why",
                   "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about Nazi policies towards women. You may use Sources B and C to help explain your answer."
@@ -1948,6 +2450,9 @@
                   "q_id": "germany_2019_q3d",
                   "q_number": "Q3(d)",
                   "year": 2019,
+                  "season": "June",
+                  "series": "Summer 2019",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "interpretation-evaluation",
                   "question_text": "How far do you agree with Interpretation 2 about Nazi policies towards women in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
@@ -1956,12 +2461,15 @@
                   "q_id": "germany_2026_q2a",
                   "q_number": "Q2(a)",
                   "year": 2026,
+                  "season": "June",
+                  "series": "Summer 2026 (Specimen)",
+                  "is_specimen": true,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why there were changes in the position of women in society in the years 1924–1939."
                 }
               ],
-              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+              "teacher_note": "📋 SPECIMEN PAPER: Featured in the official 2026 Specimen Paper (Q2(a), 12m). Excellent model for how this topic will be assessed in the current specification."
             }
           ]
         },
@@ -1977,6 +2485,8 @@
                 2023
               ],
               "last_examined": 2023,
+              "last_examined_series": "Summer 2023",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 4
               ],
@@ -1990,6 +2500,9 @@
                   "q_id": "germany_2022_q1",
                   "q_number": "Q1",
                   "year": 2022,
+                  "season": "June",
+                  "series": "Summer 2022",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "inference",
                   "question_text": "Give two things you can infer from Source A about the Hitler Youth."
@@ -1998,6 +2511,9 @@
                   "q_id": "germany_2023_q1",
                   "q_number": "Q1",
                   "year": 2023,
+                  "season": "June",
+                  "series": "Summer 2023",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "inference",
                   "question_text": "Give two things you can infer from Source A about education in Nazi Germany."
@@ -2014,6 +2530,8 @@
                 2023
               ],
               "last_examined": 2023,
+              "last_examined_series": "Summer 2023",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 4
               ],
@@ -2027,6 +2545,9 @@
                   "q_id": "germany_2022_q1",
                   "q_number": "Q1",
                   "year": 2022,
+                  "season": "June",
+                  "series": "Summer 2022",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "inference",
                   "question_text": "Give two things you can infer from Source A about the Hitler Youth."
@@ -2035,6 +2556,9 @@
                   "q_id": "germany_2023_q1",
                   "q_number": "Q1",
                   "year": 2023,
+                  "season": "June",
+                  "series": "Summer 2023",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "inference",
                   "question_text": "Give two things you can infer from Source A about education in Nazi Germany."
@@ -2056,6 +2580,8 @@
                 2025
               ],
               "last_examined": 2025,
+              "last_examined_series": "Summer 2025",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 4,
                 8,
@@ -2072,6 +2598,9 @@
                   "q_id": "germany_2018_q2",
                   "q_number": "Q2",
                   "year": 2018,
+                  "season": "June",
+                  "series": "Summer 2018",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why the Nazis were able to reduce unemployment in Germany in the years 1933–1939."
@@ -2080,6 +2609,9 @@
                   "q_id": "germany_2025_q3a",
                   "q_number": "Q3(a)",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into people’s living standards in Nazi Germany in the years 1933–1939?"
@@ -2088,6 +2620,9 @@
                   "q_id": "germany_2025_q3b",
                   "q_number": "Q3(b)",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-difference",
                   "question_text": "Study Interpretations 1 and 2. They give different views about people’s living standards in Nazi Germany in the years 1933–1939. What is the main difference between these views? Explain your answer, using details from both interpretations."
@@ -2096,6 +2631,9 @@
                   "q_id": "germany_2025_q3c",
                   "q_number": "Q3(c)",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-why",
                   "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about people’s living standards in Nazi Germany in the years 1933–1939. You may use Sources B and C to help explain your answer."
@@ -2104,6 +2642,9 @@
                   "q_id": "germany_2025_q3d",
                   "q_number": "Q3(d)",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "interpretation-evaluation",
                   "question_text": "How far do you agree with Interpretation 2 about people’s living standards in Nazi Germany in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
@@ -2120,6 +2661,8 @@
                 2025
               ],
               "last_examined": 2025,
+              "last_examined_series": "Summer 2025",
+              "is_last_specimen": false,
               "tariffs_examined": [
                 4,
                 8,
@@ -2136,6 +2679,9 @@
                   "q_id": "germany_2018_q2",
                   "q_number": "Q2",
                   "year": 2018,
+                  "season": "June",
+                  "series": "Summer 2018",
+                  "is_specimen": false,
                   "tariff": 12,
                   "type": "causation",
                   "question_text": "Explain why the Nazis were able to reduce unemployment in Germany in the years 1933–1939."
@@ -2144,6 +2690,9 @@
                   "q_id": "germany_2025_q3a",
                   "q_number": "Q3(a)",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 8,
                   "type": "how-useful",
                   "question_text": "How useful are Sources B and C for an enquiry into people’s living standards in Nazi Germany in the years 1933–1939?"
@@ -2152,6 +2701,9 @@
                   "q_id": "germany_2025_q3b",
                   "q_number": "Q3(b)",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-difference",
                   "question_text": "Study Interpretations 1 and 2. They give different views about people’s living standards in Nazi Germany in the years 1933–1939. What is the main difference between these views? Explain your answer, using details from both interpretations."
@@ -2160,6 +2712,9 @@
                   "q_id": "germany_2025_q3c",
                   "q_number": "Q3(c)",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "interpretation-why",
                   "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about people’s living standards in Nazi Germany in the years 1933–1939. You may use Sources B and C to help explain your answer."
@@ -2168,6 +2723,9 @@
                   "q_id": "germany_2025_q3d",
                   "q_number": "Q3(d)",
                   "year": 2025,
+                  "season": "June",
+                  "series": "Summer 2025",
+                  "is_specimen": false,
                   "tariff": 16,
                   "type": "interpretation-evaluation",
                   "question_text": "How far do you agree with Interpretation 2 about people’s living standards in Nazi Germany in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
@@ -2189,6 +2747,8 @@
                 2026
               ],
               "last_examined": 2026,
+              "last_examined_series": "Summer 2026 (Specimen)",
+              "is_last_specimen": true,
               "tariffs_examined": [
                 4
               ],
@@ -2202,6 +2762,9 @@
                   "q_id": "germany_2020_q1",
                   "q_number": "Q1",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "inference",
                   "question_text": "Give two things you can infer from Source A about the treatment of the Jews during Kristallnacht."
@@ -2210,12 +2773,15 @@
                   "q_id": "germany_2026_q1",
                   "q_number": "Q1",
                   "year": 2026,
+                  "season": "June",
+                  "series": "Summer 2026 (Specimen)",
+                  "is_specimen": true,
                   "tariff": 4,
                   "type": "inference",
                   "question_text": "Give two things you can infer from Source A about how the Nazi Party dealt with opposition in the years 1933–1939."
                 }
               ],
-              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+              "teacher_note": "📋 SPECIMEN PAPER: Featured in the official 2026 Specimen Paper (Q1, 4m). Excellent model for how this topic will be assessed in the current specification."
             },
             {
               "point_index": 2,
@@ -2226,6 +2792,8 @@
                 2026
               ],
               "last_examined": 2026,
+              "last_examined_series": "Summer 2026 (Specimen)",
+              "is_last_specimen": true,
               "tariffs_examined": [
                 4
               ],
@@ -2239,6 +2807,9 @@
                   "q_id": "germany_2020_q1",
                   "q_number": "Q1",
                   "year": 2020,
+                  "season": "November",
+                  "series": "Autumn 2020",
+                  "is_specimen": false,
                   "tariff": 4,
                   "type": "inference",
                   "question_text": "Give two things you can infer from Source A about the treatment of the Jews during Kristallnacht."
@@ -2247,12 +2818,15 @@
                   "q_id": "germany_2026_q1",
                   "q_number": "Q1",
                   "year": 2026,
+                  "season": "June",
+                  "series": "Summer 2026 (Specimen)",
+                  "is_specimen": true,
                   "tariff": 4,
                   "type": "inference",
                   "question_text": "Give two things you can infer from Source A about how the Nazi Party dealt with opposition in the years 1933–1939."
                 }
               ],
-              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+              "teacher_note": "📋 SPECIMEN PAPER: Featured in the official 2026 Specimen Paper (Q1, 4m). Excellent model for how this topic will be assessed in the current specification."
             }
           ]
         }
