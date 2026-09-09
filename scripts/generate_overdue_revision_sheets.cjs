@@ -630,7 +630,43 @@ async function run() {
   }
 
   await browser.close();
-  console.log('\\n🎉 Automated Overdue Revision Sheet Generation Complete!');
+
+  // Verification Audit
+  console.log('\n====================================================');
+  console.log('📊 OVERDUE REVISION BOOSTER VERIFICATION SUMMARY');
+  console.log('====================================================');
+  let allValid = true;
+  for (const unitId of unitsToProcess) {
+    const cfg = CONFIGS[unitId];
+    if (!cfg) continue;
+    const htmlPath = path.join(REVISION_SHEETS_DIR, cfg.htmlFileName);
+    const pdfPath = path.join(PDFS_DIR, cfg.pdfFileName);
+
+    const htmlExists = fs.existsSync(htmlPath);
+    const htmlSize = htmlExists ? fs.statSync(htmlPath).size : 0;
+    const pdfExists = fs.existsSync(pdfPath);
+    const pdfSize = pdfExists ? fs.statSync(pdfPath).size : 0;
+
+    const htmlOk = htmlExists && htmlSize > 1000;
+    const pdfOk = pdfExists && pdfSize > 50000;
+
+    console.log(`Cohort: ${cfg.cohort.padEnd(10)} | Unit: ${cfg.title}`);
+    console.log(
+      `  HTML: ${htmlOk ? '✅ VALID' : '❌ FAILED'} (${(htmlSize / 1024).toFixed(1)} KB) -> ${cfg.htmlFileName}`,
+    );
+    console.log(
+      `  PDF:  ${pdfOk ? '✅ VALID' : '❌ FAILED'} (${(pdfSize / 1024).toFixed(1)} KB) -> ${cfg.pdfFileName}`,
+    );
+
+    if (!htmlOk || !pdfOk) allValid = false;
+  }
+  console.log('====================================================');
+  if (allValid) {
+    console.log('🎉 100% SUCCESS: All revision booster sheets generated and verified cleanly!');
+  } else {
+    console.error('⚠️ WARNING: One or more revision booster sheets failed verification.');
+    process.exit(1);
+  }
 }
 
 run().catch((err) => {

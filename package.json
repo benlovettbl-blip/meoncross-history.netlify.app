@@ -19,6 +19,7 @@
     "sync:curriculum": "node scripts/sync_curriculum_documents.cjs",
     "check:randomization": "node scripts/check_vault_randomization.cjs",
     "clean:temp": "node scripts/clean_cache.cjs",
+    "generate:boosters": "node scripts/generate_overdue_revision_sheets.cjs",
     "prepare": "husky"
   },
   "keywords": [
