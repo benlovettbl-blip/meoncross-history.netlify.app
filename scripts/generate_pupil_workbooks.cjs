@@ -896,13 +896,28 @@ function generateConceptualTriadPage(lesson, unitId) {
           <div style="font-family: 'Georgia', serif; font-size: 10pt; font-weight: 700; color: #0f172a; line-height: 1.35; margin-bottom: 4px;">
             ${q4.question}
           </div>
-          <div style="font-size: 7.6pt; color: #334155; margin-bottom: 2px;">
-            You may use the following in your answer:
+          <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; margin-bottom: 4px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px;">
+            <span style="font-size: 7.3pt; font-weight: 700; color: #1e293b; text-transform: uppercase; letter-spacing: 0.3px;">
+              Stimulus Tracking Checklist:
+            </span>
+            <div style="display: flex; gap: 10px; align-items: center;">
+              ${(q4.stimulus || ['The Catholic Church', 'Galen'])
+                .map(
+                  (s) => `
+                <span style="display: inline-flex; align-items: center; gap: 4px; font-size: 7.4pt; font-weight: 600; color: #0f172a; background: #ffffff; border: 1px solid #94a3b8; padding: 1.5px 6px; border-radius: 3px;">
+                  <span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #1e293b; border-radius: 2px; background: #ffffff;"></span>
+                  ${s}
+                </span>
+              `,
+                )
+                .join('')}
+              <span style="display: inline-flex; align-items: center; gap: 4px; font-size: 7.4pt; font-weight: 700; color: #0f172a; background: #ffffff; border: 1px solid #94a3b8; padding: 1.5px 6px; border-radius: 3px;">
+                <span style="display: inline-block; width: 10px; height: 10px; border: 1.5px solid #1e293b; border-radius: 2px; background: #ffffff;"></span>
+                Own Knowledge (P3)
+              </span>
+            </div>
           </div>
-          <div style="display: flex; gap: 18px; font-size: 7.6pt; font-weight: 600; color: #0f172a; margin-bottom: 2px; padding-left: 8px;">
-            ${(q4.stimulus || ['The Catholic Church', 'Galen']).map((s) => `<span>&bull; ${s}</span>`).join('')}
-          </div>
-          <div style="font-size: 7.2pt; color: #475569; font-style: italic; margin-bottom: 4px;">
+          <div style="font-size: 7.1pt; color: #475569; font-style: italic; margin-bottom: 3px;">
             ${q4.note || '(You must also use information of your own.)'} [12 marks]
           </div>
           <div style="font-size: 7.2pt; color: #334155; background: #f8fafc; border-left: 3px solid #1e293b; padding: 3px 8px; border-radius: 3px;">
