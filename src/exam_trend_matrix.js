@@ -52,13 +52,33 @@ const UNIT_CONFIGS = {
     id: 'weimar_nazi_germany',
     name: 'Paper 3: Weimar and Nazi Germany, 1918–1939',
     code: '1HI0/31',
-    badge: 'Paper 3: Weimar & Nazi Germany',
-    label: '🦅 Germany (31)',
+    badge: 'Paper 3: Weimar & Nazi Germany (Year 10)',
+    label: '🦅 Germany (Yr 10)',
+    cohort: 'Year 10',
     dataFile: '/data/weimar_nazi_germany_past_papers.json',
     trendFile: '/data/weimar_nazi_germany_trend_analysis.json',
     gradient: 'linear-gradient(135deg, #881337 0%, #be123c 50%, #4c0519 100%)',
     primary: '#be123c',
     light: '#ffe4e6',
+    boosterHtml: '/revision_sheets/year10_germany_overdue_booster.html',
+    boosterPdf: '/pdfs/year10_germany_overdue_booster.pdf',
+    guidePdf: null,
+    guideName: null,
+  },
+  usa: {
+    id: 'usa',
+    name: 'Paper 3: Conflict at Home and Abroad: the USA, 1954–75',
+    code: '1HI0/33',
+    badge: 'Paper 3: USA 1954–75 (Year 11)',
+    label: '🇺🇸 USA (Yr 11)',
+    cohort: 'Year 11',
+    dataFile: '/data/usa_past_papers.json',
+    trendFile: '/data/usa_trend_analysis.json',
+    gradient: 'linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #172554 100%)',
+    primary: '#2563eb',
+    light: '#dbeafe',
+    boosterHtml: '/revision_sheets/year11_usa_overdue_booster.html',
+    boosterPdf: '/pdfs/year11_usa_overdue_booster.pdf',
     guidePdf: null,
     guideName: null,
   },
@@ -71,6 +91,7 @@ export function renderExamTrendMatrix(container, unitId = 'edexcel_medicine') {
     else if (activeUnit && (activeUnit.includes('eliz') || activeUnit === 'eee'))
       activeUnit = 'eee';
     else if (activeUnit && activeUnit.includes('germany')) activeUnit = 'weimar_nazi_germany';
+    else if (activeUnit && activeUnit.includes('usa')) activeUnit = 'usa';
     else activeUnit = 'edexcel_medicine';
   }
 
@@ -229,7 +250,81 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
     },
   ];
 
-  const questionRowsGermany = [
+  const isPaper3 = unitId === 'weimar_nazi_germany' || unitId === 'usa';
+  const isSecBExpanded = !!window._etm_secb_expanded;
+
+  const questionRowsGermanyCollapsed = [
+    {
+      label: 'Q1: Source Inference',
+      sub: '4m (Source A Analysis)',
+      match: (q) => q.q_number === 'Q1',
+    },
+    {
+      label: 'Q2: Causation Explanation',
+      sub: '12m (Key Topic 1–4 Causation)',
+      match: (q) => q.q_number.startsWith('Q2'),
+    },
+    {
+      isSectionB: true,
+      label: 'Section B: Sources & Interpretations Enquiry',
+      sub: '32m + 4m SPaG (Enquiry Focus: 3a Utility • 3b Diff • 3c Reasons • 3d Judgement)',
+      match: (q) => q.q_number.startsWith('Q3'),
+    },
+  ];
+
+  const questionRowsGermanyExpanded = [
+    {
+      label: 'Q1: Source Inference',
+      sub: '4m (Source A Analysis)',
+      match: (q) => q.q_number === 'Q1',
+    },
+    {
+      label: 'Q2: Causation Explanation',
+      sub: '12m (Key Topic 1–4 Causation)',
+      match: (q) => q.q_number.startsWith('Q2'),
+    },
+    {
+      label: 'Q3(a): Source Utility',
+      sub: '8m (Sources B & C Enquiry)',
+      match: (q) => q.q_number === 'Q3(a)',
+    },
+    {
+      label: 'Q3(b): Interpretation Difference',
+      sub: '4m (Content & View Analysis)',
+      match: (q) => q.q_number === 'Q3(b)',
+    },
+    {
+      label: 'Q3(c): Why Interpretations Differ',
+      sub: '4m (Historian Weight & Evidence)',
+      match: (q) => q.q_number === 'Q3(c)',
+    },
+    {
+      label: 'Q3(d): Interpretation Evaluation',
+      sub: '16m + 4m SPaG (Extended Judgement)',
+      match: (q) => q.q_number === 'Q3(d)',
+    },
+  ];
+
+  const questionRowsUSACollapsed = [
+    {
+      label: 'Q1: Source Inference',
+      sub: '4m (Source A Analysis)',
+      match: (q) => q.q_number === 'Q1',
+    },
+    {
+      label: 'Q2: Causation Explanation',
+      sub: '12m (Key Topic 1–4 Causation)',
+      match: (q) => q.q_number.startsWith('Q2'),
+    },
+    {
+      isSectionB: true,
+      label: 'Section B: Sources & Interpretations Enquiry',
+      sub: '32m + 4m SPaG (Enquiry Focus: 3a Utility • 3b Diff • 3c Reasons • 3d Judgement)',
+      match: (q) => q.q_number.startsWith('Q3'),
+    },
+  ];
+
+  const questionRowsUSAExpanded = [
     {
       label: 'Q1: Source Inference',
       sub: '4m (Source A Analysis)',
@@ -268,7 +363,9 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
   } else if (unitId === 'cme_new') {
     currentRows = questionRowsCME;
   } else if (unitId === 'weimar_nazi_germany') {
-    currentRows = questionRowsGermany;
+    currentRows = isSecBExpanded ? questionRowsGermanyExpanded : questionRowsGermanyCollapsed;
+  } else if (unitId === 'usa') {
+    currentRows = isSecBExpanded ? questionRowsUSAExpanded : questionRowsUSACollapsed;
   }
 
   const html = `
@@ -541,9 +638,21 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
       <!-- TAB 1: MATRIX VIEW -->
       <div id="etm-view-matrix" class="etm-tab-content">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
-          <p style="margin: 0; color: #475569; font-size: 0.95rem;">
-            Click any question card to inspect the exact prompt, stimulus points, mark scheme indicative content, and chief examiner pitfalls.
-          </p>
+          <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <p style="margin: 0; color: #475569; font-size: 0.95rem;">
+              Click any question card to inspect the prompt, stimulus points, mark scheme indicative content, and examiner pitfalls.
+            </p>
+            ${
+              isPaper3
+                ? `
+              <button id="etm-secb-toggle-btn" style="background: ${isSecBExpanded ? '#ffffff' : cfg.light}; color: ${isSecBExpanded ? '#0f172a' : cfg.primary}; border: 1px solid ${isSecBExpanded ? '#cbd5e1' : cfg.primary}; padding: 6px 14px; border-radius: 8px; font-weight: 700; font-size: 0.78rem; cursor: pointer; display: flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;">
+                <i class="fa-solid ${isSecBExpanded ? 'fa-compress' : 'fa-layer-group'}"></i>
+                <span>${isSecBExpanded ? '▾ Collapse Section B (Unified Enquiry Focus)' : '▸ Expand Section B Sub-Questions (3a–3d)'}</span>
+              </button>
+            `
+                : ''
+            }
+          </div>
           <div style="display: flex; gap: 6px; align-items: center; font-size: 0.8rem; font-weight: 600;">
             <span style="color: #64748b;">Key:</span>
             <span class="etm-tariff-badge etm-tariff-2m">2m</span>
@@ -574,6 +683,36 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
                       ${years
                         .map((yr) => {
                           const yearPaper = papers.find((p) => p.year === yr);
+                          if (row.isSectionB) {
+                            const secB = yearPaper
+                              ? yearPaper.questions.filter((q) => q.q_number.startsWith('Q3'))
+                              : [];
+                            const q3a = secB.find((q) => q.q_number === 'Q3(a)') || secB[0];
+                            if (!q3a) {
+                              return `<td style="color: #cbd5e1; text-align: center; font-size: 0.8rem; font-style: italic;">—</td>`;
+                            }
+                            return `
+                              <td>
+                                <div class="etm-q-card etm-secb-card" data-secb-year="${yr}" data-qid="${q3a.q_id}" title="Click to view full Section B Enquiry Dossier (32m + 4m SPaG)" style="border-left: 4px solid ${cfg.primary}; background: #ffffff;">
+                                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                                    <span style="font-weight: 800; font-size: 0.72rem; color: ${cfg.primary}; text-transform: uppercase; letter-spacing: 0.4px;">
+                                      <i class="fa-solid fa-layer-group"></i> Section B Enquiry
+                                    </span>
+                                    <span class="etm-tariff-badge" style="background: ${cfg.primary}; color: white; font-size: 0.68rem; font-weight: 800; padding: 2px 6px;">32m + 4m SPaG</span>
+                                  </div>
+                                  <div style="font-weight: 800; color: #0f172a; line-height: 1.35; font-size: 0.88rem; margin-bottom: 6px;">
+                                    ${q3a.topic}
+                                  </div>
+                                  <div style="display: flex; gap: 4px; flex-wrap: wrap;">
+                                    <span style="background: #f1f5f9; color: #475569; font-size: 0.68rem; padding: 1px 5px; border-radius: 4px; font-weight: 700;">3a: 8m</span>
+                                    <span style="background: #f1f5f9; color: #475569; font-size: 0.68rem; padding: 1px 5px; border-radius: 4px; font-weight: 700;">3b: 4m</span>
+                                    <span style="background: #f1f5f9; color: #475569; font-size: 0.68rem; padding: 1px 5px; border-radius: 4px; font-weight: 700;">3c: 4m</span>
+                                    <span style="background: #f1f5f9; color: #475569; font-size: 0.68rem; padding: 1px 5px; border-radius: 4px; font-weight: 700;">3d: 16m</span>
+                                  </div>
+                                </div>
+                              </td>
+                            `;
+                          }
                           const matchedQs = yearPaper
                             ? yearPaper.questions.filter((q) => row.match(q))
                             : [];
@@ -616,10 +755,21 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
             <h3 style="margin: 0 0 6px 0; color: #0f172a;">Specification Overdue & Probability Filter</h3>
             <p style="margin: 0; color: #64748b; font-size: 0.95rem;">Filter syllabus sub-topics based on their historical exam frequency and overdue rating.</p>
           </div>
-          <div style="display: flex; gap: 8px; flex-wrap: wrap;" id="etm-radar-filters">
-            <button class="etm-pill active" data-filter="all" style="padding: 7px 16px; border-radius: 20px; border: 1px solid #cbd5e1; background: #0f172a; color: white; cursor: pointer; font-weight: 600; font-size: 0.85rem;">All Topics (${totalPoints})</button>
-            <button class="etm-pill" data-filter="high" style="padding: 7px 16px; border-radius: 20px; border: 1px solid #fca5a5; background: #fee2e2; color: #991b1b; cursor: pointer; font-weight: 700; font-size: 0.85rem;">🔴 Highly Overdue / Unexamined (${overdueCount})</button>
-            <button class="etm-pill" data-filter="gaps" style="padding: 7px 16px; border-radius: 20px; border: 1px solid #fde68a; background: #fef3c7; color: #92400e; cursor: pointer; font-weight: 700; font-size: 0.85rem;">🎯 High-Tariff Essay Gaps (${highTariffGaps})</button>
+          <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+            ${
+              cfg.boosterHtml
+                ? `
+              <a href="${cfg.boosterHtml}" target="_blank" style="background: linear-gradient(135deg, ${cfg.primary}, #0f172a); color: white; text-decoration: none; padding: 7px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; gap: 7px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                <i class="fa-solid fa-file-pdf"></i> Print 2-Page Overdue Booster (${cfg.cohort || 'GCSE'})
+              </a>
+            `
+                : ''
+            }
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;" id="etm-radar-filters">
+              <button class="etm-pill active" data-filter="all" style="padding: 7px 16px; border-radius: 20px; border: 1px solid #cbd5e1; background: #0f172a; color: white; cursor: pointer; font-weight: 600; font-size: 0.85rem;">All Topics (${totalPoints})</button>
+              <button class="etm-pill" data-filter="high" style="padding: 7px 16px; border-radius: 20px; border: 1px solid #fca5a5; background: #fee2e2; color: #991b1b; cursor: pointer; font-weight: 700; font-size: 0.85rem;">🔴 Highly Overdue / Unexamined (${overdueCount})</button>
+              <button class="etm-pill" data-filter="gaps" style="padding: 7px 16px; border-radius: 20px; border: 1px solid #fde68a; background: #fef3c7; color: #92400e; cursor: pointer; font-weight: 700; font-size: 0.85rem;">🎯 High-Tariff Essay Gaps (${highTariffGaps})</button>
+            </div>
           </div>
         </div>
 
@@ -957,16 +1107,196 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
     }
   };
 
+  // Section B Enquiry Dossier Modal (Collapses 3a, 3b, 3c, 3d into a cohesive historical enquiry)
+  const openSectionBModal = (yr) => {
+    const yearPaper = papers.find((p) => p.year === yr);
+    if (!yearPaper) return;
+    const secB = yearPaper.questions.filter(
+      (q) => q.q_number.startsWith('Q3') || q.section === 'Section B',
+    );
+    if (secB.length === 0) return;
+
+    const q3a = secB.find((q) => q.q_number === 'Q3(a)') || secB[0];
+    const q3d = secB.find((q) => q.q_number === 'Q3(d)');
+
+    modalContent.innerHTML = `
+      <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 15px; flex-wrap: wrap;">
+        <span style="background: ${cfg.primary}; color: white; padding: 4px 12px; border-radius: 8px; font-weight: 800; font-size: 0.85rem;">
+          ${yearPaper.series} (${yr})
+        </span>
+        <span style="background: #0f172a; color: white; padding: 4px 12px; border-radius: 8px; font-weight: 700; font-size: 0.85rem;">
+          Section B Enquiry • 32 Marks + 4 SPaG
+        </span>
+        <span style="color: #64748b; font-size: 0.85rem; font-weight: 600;">
+          69% of Total Paper Mark
+        </span>
+      </div>
+
+      <div style="background: linear-gradient(135deg, ${cfg.light}, #ffffff); border: 2px solid ${cfg.primary}; border-radius: 14px; padding: 18px 22px; margin-bottom: 24px;">
+        <div style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: ${cfg.primary}; letter-spacing: 0.5px; margin-bottom: 4px;">
+          Enquiry Focus & Historical Controversy:
+        </div>
+        <h2 style="margin: 0; color: #0f172a; font-size: 1.45rem; line-height: 1.3; font-family: 'Playfair Display', serif;">
+          ${q3a.topic}
+        </h2>
+        <p style="margin: 8px 0 0 0; color: #475569; font-size: 0.9rem; line-height: 1.45;">
+          All four questions in Section B investigate this singular historical controversy using two contemporary Sources (B & C) and two historian Interpretations (1 & 2).
+        </p>
+      </div>
+
+      <!-- 4 SUB QUESTIONS GRID -->
+      <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 25px;">
+        ${secB
+          .map((q) => {
+            const points = q.indicative_content
+              ? Array.isArray(q.indicative_content)
+                ? q.indicative_content
+                : [q.indicative_content]
+              : [];
+            return `
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px 18px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span style="background: #0f172a; color: white; padding: 3px 8px; border-radius: 6px; font-weight: 800; font-size: 0.78rem;">
+                    ${q.q_number}
+                  </span>
+                  <span style="font-weight: 700; color: #334155; font-size: 0.85rem;">
+                    ${
+                      q.q_number === 'Q3(a)'
+                        ? 'Source Utility (Sources B & C)'
+                        : q.q_number === 'Q3(b)'
+                          ? 'Difference of Views (Interpretations 1 & 2)'
+                          : q.q_number === 'Q3(c)'
+                            ? 'Reasons for Difference'
+                            : 'Interpretation Evaluation & Judgement'
+                    }
+                  </span>
+                </div>
+                <span class="etm-tariff-badge etm-tariff-${q.tariff}m" style="font-size: 0.72rem;">${q.tariff} Marks ${q.q_number === 'Q3(d)' ? '+ 4 SPaG' : ''}</span>
+              </div>
+              <p style="margin: 0 0 10px 0; color: #0f172a; font-weight: 600; font-size: 0.95rem; line-height: 1.4;">
+                ${q.question_text}
+              </p>
+              ${
+                q.stimulus
+                  ? `
+                <div style="background: #e2e8f0; padding: 8px 12px; border-radius: 6px; font-size: 0.82rem; color: #334155; margin-bottom: 10px;">
+                  <strong>Stimulus Prompts:</strong> ${q.stimulus}
+                </div>
+              `
+                  : ''
+              }
+              ${
+                points.length > 0
+                  ? `
+                <details style="font-size: 0.82rem; color: #475569; background: white; border: 1px solid #cbd5e1; border-radius: 8px; padding: 8px 12px;">
+                  <summary style="cursor: pointer; font-weight: 700; color: #0f172a;">
+                    View Mark Scheme Indicative Content (${points.length} points)
+                  </summary>
+                  <ul style="margin: 8px 0 0 0; padding-left: 20px; line-height: 1.45;">
+                    ${points.map((pt) => `<li style="margin-bottom: 4px;">${pt}</li>`).join('')}
+                  </ul>
+                </details>
+              `
+                  : ''
+              }
+            </div>
+          `;
+          })
+          .join('')}
+      </div>
+
+      <!-- ACTION BUTTONS -->
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+        ${
+          q3d
+            ? `
+          <button id="etm-modal-practice-3d-btn" style="background: linear-gradient(135deg, ${cfg.primary}, #0f172a); color: white; border: none; padding: 12px 24px; border-radius: 10px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-stopwatch"></i> Practice 16m Essay (Q3d) in Exam Hall
+          </button>
+        `
+            : ''
+        }
+        <button id="etm-modal-close-inner" style="background: #f1f5f9; color: #1e293b; border: 1px solid #cbd5e1; padding: 12px 20px; border-radius: 10px; font-weight: 600; cursor: pointer;">
+          Close Dossier
+        </button>
+      </div>
+    `;
+
+    modal.classList.add('open');
+
+    // Wire close inner button
+    const closeInnerBtn = document.getElementById('etm-modal-close-inner');
+    if (closeInnerBtn) {
+      closeInnerBtn.addEventListener('click', () => modal.classList.remove('open'));
+    }
+
+    // Wire practice 3d button
+    const practice3dBtn = document.getElementById('etm-modal-practice-3d-btn');
+    if (practice3dBtn && q3d) {
+      practice3dBtn.addEventListener('click', async () => {
+        modal.classList.remove('open');
+        const contentArea = document.getElementById('content-area');
+        if (contentArea) {
+          const { renderExamPracticeZone } = await import('./exam_practice_zone.js');
+          const activeUnitData = window.currentUnitData || {};
+          renderExamPracticeZone(contentArea, activeUnitData);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          setTimeout(() => {
+            const displayArea = document.getElementById('epz-question-display');
+            const controls = document.getElementById('epz-controls');
+            const qMeta = document.getElementById('epz-q-meta');
+            const qText = document.getElementById('epz-q-text');
+            const qStimulus = document.getElementById('epz-q-stimulus');
+            const wagollPanel = document.getElementById('epz-wagoll-panel');
+            const wagollBtn = document.getElementById('epz-wagoll-btn');
+
+            if (displayArea && qText) {
+              if (controls) controls.style.display = 'none';
+              displayArea.style.display = 'block';
+              qMeta.textContent = `${q3d.year} Past Paper • ${q3d.q_number} • ${q3d.tariff} Marks + 4 SPaG`;
+              qText.textContent = q3d.question_text;
+              if (qStimulus && q3d.stimulus) {
+                qStimulus.style.display = 'block';
+                qStimulus.textContent = q3d.stimulus;
+              }
+              if (wagollPanel && q3d.indicative_content) {
+                const pts = Array.isArray(q3d.indicative_content)
+                  ? q3d.indicative_content.join('\n\n• ')
+                  : q3d.indicative_content;
+                wagollPanel.textContent = 'MARK SCHEME INDICATIVE CONTENT:\n\n• ' + pts;
+                if (wagollBtn) wagollBtn.style.display = 'inline-block';
+              }
+            }
+          }, 100);
+        }
+      });
+    }
+  };
+
   modalClose.addEventListener('click', () => modal.classList.remove('open'));
   modal.addEventListener('click', (e) => {
     if (e.target === modal) modal.classList.remove('open');
   });
 
+  // Section B expand/collapse button
+  const secbToggleBtn = document.getElementById('etm-secb-toggle-btn');
+  if (secbToggleBtn) {
+    secbToggleBtn.addEventListener('click', () => {
+      window._etm_secb_expanded = !window._etm_secb_expanded;
+      buildTrendMatrixUI(container, pastData, trendData, unitId, cfg);
+    });
+  }
+
   // Attach click to all question cards in table
   container.querySelectorAll('.etm-q-card, .etm-q-card-mini').forEach((card) => {
     card.addEventListener('click', () => {
-      const qid = card.dataset.qid;
-      if (qid) openQuestionModal(qid);
+      if (card.dataset.secbYear) {
+        openSectionBModal(parseInt(card.dataset.secbYear));
+      } else {
+        const qid = card.dataset.qid;
+        if (qid) openQuestionModal(qid);
+      }
     });
   });
 

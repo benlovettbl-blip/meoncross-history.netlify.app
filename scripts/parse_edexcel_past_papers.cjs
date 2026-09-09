@@ -21,6 +21,7 @@ if (!fs.existsSync(OUT_DIR)) {
 
 const ELIZ_PAPERS = require('./data_eliz_past_papers.cjs');
 const GERMANY_PAPERS = require('./data_germany_past_papers.cjs');
+const USA_PAPERS = require('./data_usa_past_papers.cjs');
 
 // ----------------------------------------------------------------------------
 // Curated & Verified Past Paper Database with Exact Indicative Content & Examiner Tips
@@ -2064,20 +2065,32 @@ function saveDatasets() {
     papers: GERMANY_PAPERS,
   };
 
+  const usaData = {
+    unit_id: 'usa',
+    paper_code: '1HI0/33',
+    paper_name: 'Paper 3: Conflict at Home and Abroad: the USA, 1954–75',
+    total_papers_analyzed: USA_PAPERS.length,
+    year_range: '2018–2026',
+    papers: USA_PAPERS,
+  };
+
   const medPath = path.join(OUT_DIR, 'edexcel_medicine_past_papers.json');
   const cmePath = path.join(OUT_DIR, 'cme_new_past_papers.json');
   const elizPath = path.join(OUT_DIR, 'eee_past_papers.json');
   const germanyPath = path.join(OUT_DIR, 'weimar_nazi_germany_past_papers.json');
+  const usaPath = path.join(OUT_DIR, 'usa_past_papers.json');
 
   fs.writeFileSync(medPath, JSON.stringify(medData, null, 2), 'utf8');
   fs.writeFileSync(cmePath, JSON.stringify(cmeData, null, 2), 'utf8');
   fs.writeFileSync(elizPath, JSON.stringify(elizData, null, 2), 'utf8');
   fs.writeFileSync(germanyPath, JSON.stringify(germanyData, null, 2), 'utf8');
+  fs.writeFileSync(usaPath, JSON.stringify(usaData, null, 2), 'utf8');
 
   console.log(`[OK] Saved Medicine Past Papers to ${medPath} (${MEDICINE_PAPERS.length} series)`);
   console.log(`[OK] Saved CME Past Papers to ${cmePath} (${CME_PAPERS.length} series)`);
   console.log(`[OK] Saved Elizabethan Past Papers to ${elizPath} (${ELIZ_PAPERS.length} series)`);
   console.log(`[OK] Saved Germany Past Papers to ${germanyPath} (${GERMANY_PAPERS.length} series)`);
+  console.log(`[OK] Saved USA Past Papers to ${usaPath} (${USA_PAPERS.length} series)`);
 }
 
 saveDatasets();

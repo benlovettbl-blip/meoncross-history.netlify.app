@@ -759,6 +759,185 @@ function matchQuestionToTopic(q, topicTitle, pointText) {
       return true;
   }
 
+  // Keyword rules for USA (1HI0/33)
+  if (
+    fullQ.includes('black panther') ||
+    fullQ.includes('black power') ||
+    fullQ.includes('carmichael') ||
+    fullQ.includes('olympics')
+  ) {
+    if (
+      text.includes('black power') ||
+      text.includes('black panther') ||
+      text.includes('radicalism')
+    )
+      return true;
+  }
+  if (
+    fullQ.includes('montgomery bus boycott') ||
+    fullQ.includes('rosa parks') ||
+    fullQ.includes('browder v. gayle') ||
+    fullQ.includes('mia')
+  ) {
+    if (text.includes('montgomery bus boycott') || text.includes('rosa parks')) return true;
+  }
+  if (
+    fullQ.includes('little rock') ||
+    fullQ.includes('brown v. topeka') ||
+    fullQ.includes('progress in education') ||
+    fullQ.includes('desegregation of little rock')
+  ) {
+    if (
+      text.includes('brown v. topeka') ||
+      text.includes('little rock') ||
+      text.includes('progress in education')
+    )
+      return true;
+  }
+  if (
+    fullQ.includes('opposition to the civil rights movement') ||
+    fullQ.includes('dixiecrats') ||
+    fullQ.includes('white citizens') ||
+    fullQ.includes('ku klux klan') ||
+    fullQ.includes('emmett till')
+  ) {
+    if (
+      text.includes('resistance to desegregation') ||
+      text.includes('dixiecrats') ||
+      text.includes('ku klux klan') ||
+      text.includes('emmett till') ||
+      text.includes('civil rights act of 1957')
+    )
+      return true;
+  }
+  if (
+    fullQ.includes('march on washington') ||
+    fullQ.includes('birmingham') ||
+    fullQ.includes('bull connor') ||
+    fullQ.includes('civil rights act 1964') ||
+    fullQ.includes('civil rights act of 1964') ||
+    fullQ.includes('achievements of martin luther king') ||
+    fullQ.includes('achievements of the civil rights movement')
+  ) {
+    if (
+      text.includes('birmingham') ||
+      text.includes('washington') ||
+      text.includes('civil rights act 1964') ||
+      text.includes('martin luther king')
+    )
+      return true;
+  }
+  if (
+    fullQ.includes('freedom summer') ||
+    fullQ.includes('selma') ||
+    fullQ.includes('voting rights act')
+  ) {
+    if (
+      text.includes('freedom summer') ||
+      text.includes('selma') ||
+      text.includes('voting rights act')
+    )
+      return true;
+  }
+  if (
+    fullQ.includes('sit-in') ||
+    fullQ.includes('greensboro') ||
+    fullQ.includes('freedom ride') ||
+    fullQ.includes('james meredith') ||
+    fullQ.includes('ole miss')
+  ) {
+    if (text.includes('sit-in') || text.includes('freedom ride') || text.includes('james meredith'))
+      return true;
+  }
+  if (
+    fullQ.includes('treatment of black americans') ||
+    fullQ.includes('early 1950s') ||
+    fullQ.includes('jim crow') ||
+    fullQ.includes('segregation')
+  ) {
+    if (
+      text.includes('position of black americans') ||
+      text.includes('racial segregation') ||
+      text.includes('jim crow')
+    )
+      return true;
+  }
+  if (fullQ.includes('tet offensive')) {
+    if (text.includes('tet offensive')) return true;
+  }
+  if (
+    fullQ.includes('strategic hamlet') ||
+    fullQ.includes('domino theory') ||
+    fullQ.includes('escalation of us involvement') ||
+    fullQ.includes('became more involved in the conflict') ||
+    fullQ.includes('reasons for us involvement')
+  ) {
+    if (
+      text.includes('reasons for us involvement') ||
+      text.includes('strategic hamlet') ||
+      text.includes('escalation under johnson') ||
+      text.includes('domino theory')
+    )
+      return true;
+  }
+  if (
+    fullQ.includes('vietcong') ||
+    fullQ.includes('search and destroy') ||
+    fullQ.includes('ho chi minh trail') ||
+    fullQ.includes('agent orange') ||
+    fullQ.includes('booby traps') ||
+    fullQ.includes('guerrilla') ||
+    fullQ.includes('nature of the conflict')
+  ) {
+    if (
+      text.includes('nature of the conflict') ||
+      text.includes('guerrilla tactics') ||
+      text.includes('search and destroy') ||
+      text.includes('ho chi minh trail')
+    )
+      return true;
+  }
+  if (
+    fullQ.includes('opposition in the usa to the vietnam war') ||
+    fullQ.includes('anti-war') ||
+    fullQ.includes('my lai') ||
+    fullQ.includes('kent state')
+  ) {
+    if (
+      text.includes('opposition to the war') ||
+      text.includes('anti-war movement') ||
+      text.includes('my lai')
+    )
+      return true;
+  }
+  if (
+    fullQ.includes('vietnamisation') ||
+    fullQ.includes('president nixon') ||
+    fullQ.includes('nixon doctrine') ||
+    fullQ.includes('cambodia') ||
+    fullQ.includes('bombing of north vietnam')
+  ) {
+    if (
+      text.includes('support for the war and nixon') ||
+      text.includes('vietnamisation') ||
+      text.includes('nixon')
+    )
+      return true;
+  }
+  if (
+    fullQ.includes('peace negotiations') ||
+    fullQ.includes('paris peace accords') ||
+    fullQ.includes('failure of the usa in vietnam') ||
+    fullQ.includes('reasons for the failure')
+  ) {
+    if (
+      text.includes('peace negotiations') ||
+      text.includes('failure of the usa') ||
+      text.includes('consequences')
+    )
+      return true;
+  }
+
   return false;
 }
 
@@ -944,6 +1123,16 @@ function run() {
   console.log(`[OK] Germany Trend Analysis saved to ${germanyOut}`);
   console.log(
     `     Total Spec Points: ${germanyAnalysis.summary_stats.total_specification_points}, Overdue: ${germanyAnalysis.summary_stats.overdue_topics_count} (${germanyAnalysis.summary_stats.overdue_percentage}%)`,
+  );
+
+  const usaSpec = path.join(DATA_DIR, 'usa_spec.json');
+  const usaPast = path.join(PUBLIC_DATA_DIR, 'usa_past_papers.json');
+  const usaAnalysis = analyzeUnit(usaSpec, usaPast, 'usa');
+  const usaOut = path.join(PUBLIC_DATA_DIR, 'usa_trend_analysis.json');
+  fs.writeFileSync(usaOut, JSON.stringify(usaAnalysis, null, 2), 'utf8');
+  console.log(`[OK] USA Trend Analysis saved to ${usaOut}`);
+  console.log(
+    `     Total Spec Points: ${usaAnalysis.summary_stats.total_specification_points}, Overdue: ${usaAnalysis.summary_stats.overdue_topics_count} (${usaAnalysis.summary_stats.overdue_percentage}%)`,
   );
 }
 
