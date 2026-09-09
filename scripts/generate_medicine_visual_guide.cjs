@@ -4191,7 +4191,7 @@ function renderRightPage(data, pageNum) {
         <div style="font-size: 6.6pt; color: #475569; font-style: italic; margin-bottom: 4px;">
           Guidance: 1 developed comparative PEEL paragraph. Link both periods directly with specific evidence.
         </div>
-        ${renderLines(6)}
+        ${renderLines(7)}
       </div>
 
       <!-- Q4 Container [12 Marks] -->
@@ -4214,7 +4214,7 @@ function renderRightPage(data, pageNum) {
           </div>
         </div>
 
-        ${renderLines(20)}
+        ${renderLines(27)}
       </div>
 
       <!-- Marking Criteria Rubric -->
@@ -4269,7 +4269,7 @@ function renderRightPage(data, pageNum) {
           </div>
         </div>
 
-        ${renderLines(26)}
+        ${renderLines(32)}
       </div>
 
       <!-- Essay Marking Rubric -->
@@ -4346,7 +4346,7 @@ function renderRightPage(data, pageNum) {
           </div>
           <div style="font-size: 7.2pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">${right.q1a.question}</div>
           <div style="font-size: 6.3pt; color: #64748b; font-style: italic; margin-bottom: 3px;">1 mark feature + 1 mark supporting factual detail. ~2 mins.</div>
-          ${renderLines(3)}
+          ${renderLines(4)}
         </div>
         <div style="background: #f8fafc; border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 6px 8px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
@@ -4355,7 +4355,7 @@ function renderRightPage(data, pageNum) {
           </div>
           <div style="font-size: 7.2pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">${right.q1b.question}</div>
           <div style="font-size: 6.3pt; color: #64748b; font-style: italic; margin-bottom: 3px;">1 mark feature + 1 mark supporting factual detail. ~2 mins.</div>
-          ${renderLines(3)}
+          ${renderLines(4)}
         </div>
       </div>
 
@@ -4374,7 +4374,7 @@ function renderRightPage(data, pageNum) {
           <span style="font-size: 6.6pt; font-weight: 800; color: #92400e;">💡 ${right.q2a.provenanceClue || 'Provenance Hints: Consider Nature, Origin, and Motive for both sources and weigh utility for this specific enquiry.'}</span>
         </div>
 
-        ${renderLines(16)}
+        ${renderLines(22)}
       </div>
 
       <!-- Section A Rubric -->
@@ -4427,6 +4427,7 @@ function renderRightPage(data, pageNum) {
         <td style="padding: 5px 8px; border: 1px solid #cbd5e1; vertical-align: top;">
           <div style="height: 18px; border-bottom: 1px dotted #94a3b8;"></div>
           <div style="height: 18px; border-bottom: 1px dotted #94a3b8;"></div>
+          <div style="height: 18px; border-bottom: 1px dotted #94a3b8;"></div>
         </td>
       </tr>
     `,
@@ -4443,7 +4444,7 @@ function renderRightPage(data, pageNum) {
           </div>
           <div style="font-size: 7.2pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">${right.q1a.question}</div>
           <div style="font-size: 6.3pt; color: #64748b; font-style: italic; margin-bottom: 3px;">1 mark feature + 1 mark supporting factual detail. ~2 mins.</div>
-          ${renderLines(3)}
+          ${renderLines(4)}
         </div>
         <div style="background: #f8fafc; border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 6px 8px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
@@ -4452,7 +4453,7 @@ function renderRightPage(data, pageNum) {
           </div>
           <div style="font-size: 7.2pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">${right.q1b.question}</div>
           <div style="font-size: 6.3pt; color: #64748b; font-style: italic; margin-bottom: 3px;">1 mark feature + 1 mark supporting factual detail. ~2 mins.</div>
-          ${renderLines(3)}
+          ${renderLines(4)}
         </div>
       </div>
 
@@ -4474,6 +4475,11 @@ function renderRightPage(data, pageNum) {
         <table style="width: 100%; border-collapse: collapse; font-size: 6.8pt;">
           ${tableRowsHtml}
         </table>
+        <div style="margin-top: 6px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; font-size: 6.5pt; color: #334155; line-height: 1.35;">
+          <strong style="color: #1e3a8a;">Grade 9 Examiner Strategy for Question 2(b):</strong><br/>
+          &bull; <strong>Question:</strong> Must link strictly to the detail quoted (e.g. &ldquo;What proportion of casualties suffered from...&rdquo;).<br/>
+          &bull; <strong>Source Type:</strong> Must name a precise, specific contemporary record (e.g. <em>Medical Officer Unit War Diaries</em>, <em>Casualty Clearing Station Admissions Logs</em>, or <em>Army Form W3083 returns</em>). Generic answers score 0 marks!
+        </div>
       </div>
 
       <!-- Section A Q2(b) Rubric -->
