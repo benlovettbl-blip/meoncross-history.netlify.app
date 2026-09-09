@@ -360,36 +360,29 @@ function getHtmlContent() {
     .grid-2x2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin-bottom: 9px;
+      gap: 6px;
+      margin-bottom: 6px;
     }
 
     .info-card {
       background: #ffffff;
       border: 1px solid #cbd5e1;
       border-radius: 6px;
-      padding: 9px 11px;
+      padding: 6px 9px;
     }
 
     .info-card-header {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 6px;
-      padding-bottom: 4px;
-      border-bottom: 1.5px solid #e2e8f0;
-    }
-
-    .info-card-header .icon {
-      font-size: 11pt;
+      margin-bottom: 4px;
+      padding-bottom: 3px;
+      border-bottom: 2px solid #1e3a8a;
     }
 
     .info-card-header .title {
-      font-size: 9pt;
+      font-size: 8.5pt;
       font-weight: 800;
-      color: #0f172a;
+      color: #1e3a8a;
       text-transform: uppercase;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.04em;
     }
 
     .checklist {
@@ -399,12 +392,12 @@ function getHtmlContent() {
     }
 
     .checklist li {
-      font-size: 7.8pt;
+      font-size: 7.4pt;
       color: #334155;
-      margin-bottom: 4px;
-      line-height: 1.3;
+      margin-bottom: 2.5px;
+      line-height: 1.25;
       position: relative;
-      padding-left: 14px;
+      padding-left: 13px;
     }
 
     .checklist li::before {
@@ -412,7 +405,7 @@ function getHtmlContent() {
       position: absolute;
       left: 2px;
       color: #2563eb;
-      font-size: 9pt;
+      font-size: 8.5pt;
       line-height: 1;
     }
 
@@ -425,44 +418,44 @@ function getHtmlContent() {
       border: 1px solid #cbd5e1;
       border-left: 4px solid #1e3a8a;
       border-radius: 6px;
-      padding: 8px 12px;
-      margin-bottom: 8px;
+      padding: 6px 10px;
+      margin-bottom: 6px;
     }
 
     .notice-box h4 {
-      font-size: 9.5pt;
+      font-size: 9pt;
       font-weight: 700;
       color: #1e3a8a;
-      margin-bottom: 3px;
+      margin-bottom: 2px;
     }
 
     .notice-box p {
-      margin: 0 0 4px 0;
-      font-size: 8pt;
+      margin: 0 0 3px 0;
+      font-size: 7.5pt;
       color: #334155;
-      line-height: 1.35;
+      line-height: 1.28;
     }
 
     .action-table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 9px;
-      font-size: 7.8pt;
+      margin-bottom: 6px;
+      font-size: 7.5pt;
     }
 
     .action-table th {
       background: #0f172a;
       color: #ffffff;
-      padding: 5px 8px;
+      padding: 4px 7px;
       text-align: left;
       font-weight: 700;
       text-transform: uppercase;
-      font-size: 7pt;
+      font-size: 6.8pt;
       letter-spacing: 0.05em;
     }
 
     .action-table td {
-      padding: 5px 8px;
+      padding: 3.5px 7px;
       border-bottom: 1px solid #e2e8f0;
       color: #334155;
     }
@@ -519,7 +512,7 @@ function getHtmlContent() {
         </div>
         <div class="title-badge">
           Base: Peace Village Hostel<br>
-          Heuvelland, Belgium
+          Mesen (Messines), Belgium
         </div>
       </div>
 
@@ -656,7 +649,6 @@ function getHtmlContent() {
         <!-- Box 1: Footwear & Weather Kit -->
         <div class="info-card">
           <div class="info-card-header">
-            <span class="icon">🥾</span>
             <span class="title">Footwear &amp; Sanctuary Wood Prep</span>
           </div>
           <ul class="checklist">
@@ -673,7 +665,6 @@ function getHtmlContent() {
         <!-- Box 2: Luggage & Bag Policy -->
         <div class="info-card">
           <div class="info-card-header">
-            <span class="icon">🎒</span>
             <span class="title">Luggage, Towels &amp; Toiletries</span>
           </div>
           <ul class="checklist">
@@ -688,7 +679,6 @@ function getHtmlContent() {
         <!-- Box 3: Food, Catering & Euros -->
         <div class="info-card">
           <div class="info-card-header">
-            <span class="icon">💶</span>
             <span class="title">Catering, Food &amp; Spending Money</span>
           </div>
           <ul class="checklist">
@@ -703,7 +693,6 @@ function getHtmlContent() {
         <!-- Box 4: Travel Documents & Tech -->
         <div class="info-card">
           <div class="info-card-header">
-            <span class="icon">📄</span>
             <span class="title">Travel Documents &amp; Devices</span>
           </div>
           <ul class="checklist">
@@ -718,7 +707,10 @@ function getHtmlContent() {
       <div class="notice-box">
         <h4>Accommodation, Safety &amp; Rooming Allocation Timeline</h4>
         <p>
-          <strong>Expedition Base:</strong> Peace Village Hostel, Kemmelbergweg 43, 8956 Heuvelland, Belgium. A purpose-built, secure rural educational centre set in the Flemish countryside, featuring modern ensuite studios (typically 4 to 7 pupils per room with bunk beds), secure access control, and dedicated dining and recreational spaces.
+          <strong>Expedition Base:</strong> Peace Village Hostel, Nieuwkerkestraat 9aB, 8957 Mesen, Belgium (Tel: +32 57 226 040 · Email: info@peacevillage.be). A purpose-built, secure rural educational centre set in the Flemish countryside at Messines, featuring modern ensuite studios (typically 4 to 7 pupils per room with bunk beds), secure keycard access, and dedicated dining and recreational spaces.
+        </p>
+        <p>
+          <strong>Accommodation FAQs &amp; Facilities:</strong> Parents can view studio layouts, amenities, and visitor FAQs directly on the hostel website at <a href="https://peacevillage.be/en/faqs" target="_blank" style="color: #1e3a8a; font-weight: 700; text-decoration: underline;">www.peacevillage.be/en/faqs</a>.
         </p>
         <p>
           <strong>Rooming Process &amp; Dietary Options:</strong> In approximately <strong>two weeks' time</strong>, Mr Lovett will assemble rooming allocations in school. Pupils will be asked to nominate friends they would like to share with (ensuring every pupil is happily paired). <strong>When this rooming information is sent out, Mr Lovett will also ask parents to confirm any specific dietary requirements (e.g. vegetarian options; note that the school already holds existing medical allergy records).</strong> Staff sleep on the same corridors with active evening checks and a strict curfew.
@@ -804,6 +796,13 @@ async function generatePdf() {
 
   await browser.close();
   console.log('✅ Parent Information Pack PDF successfully created at:', outputPath);
+
+  const gdriveDir = 'G:/My Drive/AAMX/trips/Somme Oct26';
+  if (fs.existsSync(gdriveDir)) {
+    const gdrivePath = path.join(gdriveDir, 'Ypres 2026 Parent Information Pack.pdf');
+    fs.copyFileSync(outputPath, gdrivePath);
+    console.log('✅ Also copied to Google Drive at:', gdrivePath);
+  }
 }
 
 if (require.main === module) {

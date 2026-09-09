@@ -14,7 +14,10 @@ export const unitData = {
   key_info: {
     emergency_contact:
       '+44 1329 288339 (Meoncross School Office) / +44 7712 345678 (Trip Emergency Mobile)',
-    hotel: 'Peace Village Hostel, Kemmelbergweg 43, 8956 Heuvelland, Belgium',
+    hotel: 'Peace Village Hostel, Nieuwkerkestraat 9aB, 8957 Mesen, Belgium',
+    hotel_phone: '+32 57 226 040',
+    hotel_email: 'info@peacevillage.be',
+    hotel_faq_url: 'https://peacevillage.be/en/faqs',
     coach: 'Jet Connect Executive Travel',
     live_album_url: 'https://photos.app.goo.gl/placeholder',
   },
@@ -364,9 +367,14 @@ export const unitData = {
           theme_heading: 'Accommodation, Safety & Rooming Allocation Timeline',
           text: `
             <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 24px; box-shadow: 0 2px 4px rgba(0,0,0,0.04);">
-              <h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 1.05rem;"><i class="fa-solid fa-hotel"></i> Peace Village Hostel &amp; Supervision</h4>
+              <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 8px;">
+                <h4 style="margin: 0; color: #1e3a8a; font-size: 1.05rem;"><i class="fa-solid fa-hotel"></i> Peace Village Hostel &amp; Supervision</h4>
+                <a href="https://peacevillage.be/en/faqs" target="_blank" class="btn" style="background: #eff6ff; color: #1e3a8a; border: 1.5px solid #bfdbfe; padding: 5px 12px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
+                  <i class="fa-solid fa-circle-question" style="color: #2563eb;"></i> View Hostel FAQs &amp; Facilities
+                </a>
+              </div>
               <p style="margin: 0 0 12px 0; color: #334155; font-size: 0.94rem; line-height: 1.6;">
-                Located at Kemmelbergweg 43, 8956 Heuvelland, Belgium. Peace Village is a purpose-built, secure educational centre set in the rural countryside with keycard access, modern en-suite studios (typically 4 to 7 pupils per room with bunk beds), and private recreational grounds.
+                Located at <strong>Nieuwkerkestraat 9aB, 8957 Mesen, Belgium</strong> (Tel: +32 57 226 040 · Email: info@peacevillage.be). Peace Village is a purpose-built, secure educational centre set in the rural Flemish countryside at Messines with keycard access, modern en-suite studios (typically 4 to 7 pupils per room with bunk beds), and private recreational grounds.
               </p>
               
               <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-left: 4px solid #16a34a; border-radius: 6px; padding: 14px; margin-bottom: 14px;">

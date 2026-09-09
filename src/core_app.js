@@ -1607,6 +1607,8 @@ window.openKeyInfoModal = function () {
       <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
         <h4 style="margin: 0 0 5px 0; color: #334155; font-size: 1rem;"><i class="fa-solid fa-hotel" style="width:20px; color:#64748b;"></i> Accommodation</h4>
         <p style="margin: 0; color: #0f172a; font-weight: 600;">${info.hotel}</p>
+        ${info.hotel_phone ? `<p style="margin: 4px 0 0 0; font-size: 0.85rem; color: #475569;"><strong>Tel:</strong> ${info.hotel_phone} · <strong>Email:</strong> ${info.hotel_email || 'info@peacevillage.be'}</p>` : ''}
+        ${info.hotel_faq_url ? `<div style="margin-top: 8px;"><a href="${info.hotel_faq_url}" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; color: #1e3a8a; font-weight: 700; text-decoration: underline;"><i class="fa-solid fa-circle-question" style="color:#2563eb;"></i> View Hostel FAQs &amp; Facilities</a></div>` : ''}
       </div>
       <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; margin-bottom: 25px;">
         <h4 style="margin: 0 0 5px 0; color: #334155; font-size: 1rem;"><i class="fa-solid fa-bus" style="width:20px; color:#64748b;"></i> Transport Provider</h4>
