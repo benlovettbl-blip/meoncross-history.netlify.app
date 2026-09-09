@@ -2,7 +2,7 @@
   "unit_id": "edexcel_medicine",
   "title": "Pearson Edexcel GCSE (9–1) History Specification",
   "subtitle": "Option 11: Medicine in Britain, c1250–present and The British sector of the Western Front, 1914–18: injuries, treatment and the trenches",
-  "generated_at": "2026-09-09T20:20:55.017Z",
+  "generated_at": "2026-09-09T23:04:55.115Z",
   "total_past_questions": 58,
   "total_series_analyzed": 8,
   "sections": [
@@ -36,6 +36,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -182,6 +183,7 @@
                 4,
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
               "high_tariff_gap": false,
@@ -244,9 +246,10 @@
               "last_examined_series": null,
               "is_last_specimen": false,
               "tariffs_examined": [],
+              "has_8m": false,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": false,
+              "high_tariff_gap": true,
               "overdue_status": "high",
               "overdue_score": 100,
               "matched_questions": [],
@@ -269,6 +272,7 @@
                 4,
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
               "high_tariff_gap": false,
@@ -383,6 +387,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -577,9 +582,10 @@
               "last_examined_series": null,
               "is_last_specimen": false,
               "tariffs_examined": [],
+              "has_8m": false,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": false,
+              "high_tariff_gap": true,
               "overdue_status": "high",
               "overdue_score": 100,
               "matched_questions": [],
@@ -607,6 +613,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -735,9 +742,10 @@
               "last_examined_series": null,
               "is_last_specimen": false,
               "tariffs_examined": [],
+              "has_8m": false,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": false,
+              "high_tariff_gap": true,
               "overdue_status": "high",
               "overdue_score": 100,
               "matched_questions": [],
@@ -763,6 +771,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -876,6 +885,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -1063,6 +1073,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -1316,6 +1327,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -1591,6 +1603,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -1841,6 +1854,7 @@
                 4,
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
               "high_tariff_gap": false,
@@ -1903,7 +1917,7 @@
                   "question_text": "Describe two features of the new techniques used in the treatment of wounds on the Western Front."
                 }
               ],
-              "teacher_note": "✅ RECENTLY TESTED: Examined in 2024. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2024. Less likely to appear as an 8-mark utility question in the immediate next series, but still vulnerable to short feature questions."
             },
             {
               "point_index": 2,
@@ -1921,6 +1935,7 @@
                 4,
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
               "high_tariff_gap": false,
@@ -1972,7 +1987,7 @@
                   "question_text": "Describe two features of the new techniques used in the treatment of wounds on the Western Front."
                 }
               ],
-              "teacher_note": "✅ RECENTLY TESTED: Examined in 2024. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2024. Less likely to appear as an 8-mark utility question in the immediate next series, but still vulnerable to short feature questions."
             },
             {
               "point_index": 3,
@@ -1983,9 +1998,10 @@
               "last_examined_series": null,
               "is_last_specimen": false,
               "tariffs_examined": [],
+              "has_8m": false,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": false,
+              "high_tariff_gap": true,
               "overdue_status": "high",
               "overdue_score": 100,
               "matched_questions": [],
@@ -2008,9 +2024,10 @@
                 4,
                 16
               ],
+              "has_8m": false,
               "has_12m": false,
               "has_16m": true,
-              "high_tariff_gap": false,
+              "high_tariff_gap": true,
               "overdue_status": "recent",
               "overdue_score": 15,
               "matched_questions": [
@@ -2084,6 +2101,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -2287,6 +2305,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -2492,9 +2511,10 @@
               "last_examined_series": null,
               "is_last_specimen": false,
               "tariffs_examined": [],
+              "has_8m": false,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": false,
+              "high_tariff_gap": true,
               "overdue_status": "high",
               "overdue_score": 100,
               "matched_questions": [],
@@ -2509,9 +2529,10 @@
               "last_examined_series": null,
               "is_last_specimen": false,
               "tariffs_examined": [],
+              "has_8m": false,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": false,
+              "high_tariff_gap": true,
               "overdue_status": "high",
               "overdue_score": 100,
               "matched_questions": [],
@@ -2547,6 +2568,7 @@
                 12,
                 16
               ],
+              "has_8m": false,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -2645,6 +2667,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -2817,6 +2840,7 @@
               "last_examined_series": null,
               "is_last_specimen": false,
               "tariffs_examined": [],
+              "has_8m": false,
               "has_12m": false,
               "has_16m": false,
               "high_tariff_gap": true,
@@ -2851,6 +2875,7 @@
                 12,
                 16
               ],
+              "has_8m": false,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -2993,6 +3018,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -3196,6 +3222,7 @@
                 12,
                 16
               ],
+              "has_8m": false,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -3299,6 +3326,7 @@
                 12,
                 16
               ],
+              "has_8m": false,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -3379,6 +3407,7 @@
                 4,
                 16
               ],
+              "has_8m": false,
               "has_12m": false,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -3447,6 +3476,7 @@
                 12,
                 16
               ],
+              "has_8m": false,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -3589,6 +3619,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -3895,6 +3926,7 @@
                 12,
                 16
               ],
+              "has_8m": false,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -4041,6 +4073,7 @@
                 4,
                 16
               ],
+              "has_8m": false,
               "has_12m": false,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -4107,6 +4140,7 @@
                 12,
                 16
               ],
+              "has_8m": false,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -4195,6 +4229,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -4458,6 +4493,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -4740,6 +4776,7 @@
                 8,
                 16
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -4899,6 +4936,7 @@
                 4,
                 16
               ],
+              "has_8m": false,
               "has_12m": false,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -4971,7 +5009,7 @@
   "summary_stats": {
     "total_specification_points": 38,
     "overdue_topics_count": 7,
-    "high_tariff_gaps_count": 1,
+    "high_tariff_gaps_count": 8,
     "overdue_percentage": 18
   }
 }

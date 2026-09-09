@@ -2,7 +2,7 @@
   "unit_id": "weimar_nazi_germany",
   "title": "Pearson Edexcel GCSE (9–1) History Specification",
   "subtitle": "Option 31: Weimar and Nazi Germany, 1918–39",
-  "generated_at": "2026-09-09T20:20:55.296Z",
+  "generated_at": "2026-09-09T23:04:55.393Z",
   "total_past_questions": 56,
   "total_series_analyzed": 9,
   "sections": [
@@ -22,6 +22,7 @@
               "last_examined_series": null,
               "is_last_specimen": false,
               "tariffs_examined": [],
+              "has_8m": false,
               "has_12m": false,
               "has_16m": false,
               "high_tariff_gap": true,
@@ -39,6 +40,7 @@
               "last_examined_series": null,
               "is_last_specimen": false,
               "tariffs_examined": [],
+              "has_8m": false,
               "has_12m": false,
               "has_16m": false,
               "high_tariff_gap": true,
@@ -65,6 +67,7 @@
               "tariffs_examined": [
                 12
               ],
+              "has_8m": false,
               "has_12m": true,
               "has_16m": false,
               "high_tariff_gap": false,
@@ -100,6 +103,7 @@
                 8,
                 12
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": false,
               "high_tariff_gap": false,
@@ -150,6 +154,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -288,6 +293,7 @@
                 8,
                 12
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": false,
               "high_tariff_gap": false,
@@ -333,6 +339,7 @@
                 8,
                 12
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": false,
               "high_tariff_gap": false,
@@ -386,6 +393,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -463,6 +471,7 @@
               "tariffs_examined": [
                 12
               ],
+              "has_8m": false,
               "has_12m": true,
               "has_16m": false,
               "high_tariff_gap": false,
@@ -498,6 +507,7 @@
                 8,
                 16
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -576,6 +586,7 @@
               "tariffs_examined": [
                 4
               ],
+              "has_8m": false,
               "has_12m": false,
               "has_16m": false,
               "high_tariff_gap": true,
@@ -621,6 +632,7 @@
               "tariffs_examined": [
                 4
               ],
+              "has_8m": false,
               "has_12m": false,
               "has_16m": false,
               "high_tariff_gap": true,
@@ -674,6 +686,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -755,6 +768,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -837,6 +851,7 @@
               "tariffs_examined": [
                 12
               ],
+              "has_8m": false,
               "has_12m": true,
               "has_16m": false,
               "high_tariff_gap": false,
@@ -877,6 +892,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -996,6 +1012,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -1084,6 +1101,7 @@
               "tariffs_examined": [
                 4
               ],
+              "has_8m": false,
               "has_12m": false,
               "has_16m": false,
               "high_tariff_gap": true,
@@ -1117,6 +1135,7 @@
               "tariffs_examined": [
                 4
               ],
+              "has_8m": false,
               "has_12m": false,
               "has_16m": false,
               "high_tariff_gap": true,
@@ -1165,6 +1184,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -1384,6 +1404,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -1604,6 +1625,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -1710,6 +1732,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -1862,6 +1885,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -2037,6 +2061,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -2130,6 +2155,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -2223,6 +2249,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -2326,6 +2353,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -2407,6 +2435,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -2490,6 +2519,7 @@
               "tariffs_examined": [
                 4
               ],
+              "has_8m": false,
               "has_12m": false,
               "has_16m": false,
               "high_tariff_gap": true,
@@ -2535,6 +2565,7 @@
               "tariffs_examined": [
                 4
               ],
+              "has_8m": false,
               "has_12m": false,
               "has_16m": false,
               "high_tariff_gap": true,
@@ -2588,6 +2619,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -2669,6 +2701,7 @@
                 12,
                 16
               ],
+              "has_8m": true,
               "has_12m": true,
               "has_16m": true,
               "high_tariff_gap": false,
@@ -2752,6 +2785,7 @@
               "tariffs_examined": [
                 4
               ],
+              "has_8m": false,
               "has_12m": false,
               "has_16m": false,
               "high_tariff_gap": true,
@@ -2797,6 +2831,7 @@
               "tariffs_examined": [
                 4
               ],
+              "has_8m": false,
               "has_12m": false,
               "has_16m": false,
               "high_tariff_gap": true,

@@ -1199,7 +1199,7 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
           <span style="color: #cbd5e1;">|</span>
           <span><strong style="color: #0f172a; font-weight: 800;">${overdueCount}</strong> Overdue Topics</span>
           <span style="color: #cbd5e1;">|</span>
-          <span><strong style="color: #0f172a; font-weight: 800;">${highTariffGaps}</strong> High-Tariff Essay Gaps</span>
+          <span><strong style="color: #0f172a; font-weight: 800;">${highTariffGaps}</strong> ${unitId === 'cme_new' ? '8-Mark High-Tariff Gaps' : 'High-Tariff Essay Gaps'}</span>
           <span style="color: #cbd5e1;">|</span>
           <span><strong style="color: #0f172a; font-weight: 800;">${totalPoints}</strong> Syllabus Points Mapped</span>
         </div>
@@ -1388,7 +1388,7 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
             <div style="display: flex; gap: 8px; flex-wrap: wrap;" id="etm-radar-filters">
               <button class="etm-pill active" data-filter="all" style="padding: 7px 16px; border-radius: 20px; border: 1px solid #cbd5e1; background: #0f172a; color: white; cursor: pointer; font-weight: 600; font-size: 0.85rem;">All Topics (${totalPoints})</button>
               <button class="etm-pill" data-filter="high" style="padding: 7px 16px; border-radius: 20px; border: 1px solid #fca5a5; background: #fee2e2; color: #991b1b; cursor: pointer; font-weight: 700; font-size: 0.85rem;">🔴 Highly Overdue / Unexamined (${overdueCount})</button>
-              <button class="etm-pill" data-filter="gaps" style="padding: 7px 16px; border-radius: 20px; border: 1px solid #fde68a; background: #fef3c7; color: #92400e; cursor: pointer; font-weight: 700; font-size: 0.85rem;">🎯 High-Tariff Essay Gaps (${highTariffGaps})</button>
+              <button class="etm-pill" data-filter="gaps" style="padding: 7px 16px; border-radius: 20px; border: 1px solid #fde68a; background: #fef3c7; color: #92400e; cursor: pointer; font-weight: 700; font-size: 0.85rem;">🎯 ${unitId === 'cme_new' ? '8-Mark High-Tariff Gaps' : 'High-Tariff Essay Gaps'} (${highTariffGaps})</button>
             </div>
           </div>
         </div>

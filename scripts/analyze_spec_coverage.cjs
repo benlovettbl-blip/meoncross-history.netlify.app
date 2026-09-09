@@ -1126,6 +1126,7 @@ function analyzeUnit(specFile, pastPapersFile, unitId) {
           (a, b) => a - b,
         );
         const tariffs = [...new Set(matchedQuestions.map((q) => q.tariff))].sort((a, b) => a - b);
+        const has8m = matchedQuestions.some((q) => q.tariff === 8);
         const has12m = matchedQuestions.some((q) => q.tariff === 12);
         const has16m = matchedQuestions.some((q) => q.tariff === 16);
         const lastYear = yearsAppeared.length > 0 ? Math.max(...yearsAppeared) : null;
@@ -1155,9 +1156,21 @@ function analyzeUnit(specFile, pastPapersFile, unitId) {
 
         if (overdueStatus === 'high') totalOverdue++;
 
-        // High tariff gap: tested as 4m or never tested, but no 12m or 16m
-        const isThematicSection = unitId !== 'edexcel_medicine' || sec.id !== 'section-a';
-        const highTariffGap = isThematicSection && !has12m && !has16m;
+        // High tariff gap determination based on unit & section specification:
+        // - Paper 2 Period Study (cme_new): Tariffs are strictly 4m (consequence) & 8m (narrative/importance).
+        //   There are NO 12m or 16m questions. A high tariff gap means it has only appeared as 4m (or unexamined), but never as an 8m question.
+        // - Paper 1 Section A Western Front: Tariffs are 2m, 4m, 8m (utility). High tariff is 8m.
+        // - Thematic & Depth Studies (Medicine Sec B, Elizabethan England, Weimar Germany, USA): High tariff is 12m & 16m essays.
+        const isPeriodStudy = unitId === 'cme_new';
+        const isWesternFront = unitId === 'edexcel_medicine' && sec.id === 'section-a';
+
+        let highTariffGap = false;
+        if (isPeriodStudy || isWesternFront) {
+          highTariffGap = !has8m;
+        } else {
+          highTariffGap = !has12m && !has16m;
+        }
+
         if (highTariffGap) totalHighTariffGaps++;
 
         // Generate tailored teacher pedagogical notes
@@ -1170,9 +1183,21 @@ function analyzeUnit(specFile, pastPapersFile, unitId) {
         } else if (overdueStatus === 'high') {
           teacherNote = `🔥 HIGHLY OVERDUE: Last set in ${lastYear}. It has been ${2026 - lastYear} years since students were tested on this topic. Ideal candidate for mocks.`;
         } else if (highTariffGap && tariffs.length > 0) {
-          teacherNote = `🎯 ESSAY GAP: Examined previously as a ${tariffs.join('m, ')}m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question.`;
+          if (isPeriodStudy) {
+            teacherNote = `🎯 8M HIGH-TARIFF GAP: Examined previously as a 4m consequence question, but NEVER set as an 8m narrative account or importance question. Watch out for an 8-mark question on this topic.`;
+          } else if (isWesternFront) {
+            teacherNote = `🎯 8M UTILITY GAP: Examined previously as a ${tariffs.join('m, ')}m question, but NEVER set as an 8m source utility question. Watch out for an 8-mark utility question on this topic.`;
+          } else {
+            teacherNote = `🎯 ESSAY GAP: Examined previously as a ${tariffs.join('m, ')}m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question.`;
+          }
         } else if (overdueStatus === 'recent') {
-          teacherNote = `✅ RECENTLY TESTED: Examined in ${lastYear}. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions.`;
+          if (isPeriodStudy) {
+            teacherNote = `✅ RECENTLY TESTED: Examined in ${lastYear}. Less likely to appear as an 8-mark question in the immediate next series, but still vulnerable to short 4-mark consequence questions.`;
+          } else if (isWesternFront) {
+            teacherNote = `✅ RECENTLY TESTED: Examined in ${lastYear}. Less likely to appear as an 8-mark utility question in the immediate next series, but still vulnerable to short feature questions.`;
+          } else {
+            teacherNote = `✅ RECENTLY TESTED: Examined in ${lastYear}. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions.`;
+          }
         } else {
           teacherNote = `⚖️ BALANCED ROTATION: Examined in ${lastYear}. Keep in regular retrieval rotation.`;
         }
@@ -1186,6 +1211,7 @@ function analyzeUnit(specFile, pastPapersFile, unitId) {
           last_examined_series: lastExamQ ? lastExamQ.series || `${lastYear}` : null,
           is_last_specimen: !!isLastSpecimen,
           tariffs_examined: tariffs,
+          has_8m: has8m,
           has_12m: has12m,
           has_16m: has16m,
           high_tariff_gap: highTariffGap,

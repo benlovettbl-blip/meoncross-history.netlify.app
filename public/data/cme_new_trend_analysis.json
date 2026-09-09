@@ -2,7 +2,7 @@
   "unit_id": "cme_new",
   "title": "Pearson Edexcel GCSE (9–1) History",
   "subtitle": "Option P5: Conflict in the Middle East, 1945–95",
-  "generated_at": "2026-09-09T20:20:55.222Z",
+  "generated_at": "2026-09-09T23:04:55.321Z",
   "total_past_questions": 42,
   "total_series_analyzed": 8,
   "sections": [
@@ -26,9 +26,10 @@
               "tariffs_examined": [
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": true,
+              "high_tariff_gap": false,
               "overdue_status": "medium",
               "overdue_score": 50,
               "matched_questions": [
@@ -44,7 +45,7 @@
                   "question_text": "Explain the importance of conflicting interests of Jews and Arabs for the end of the British Mandate."
                 }
               ],
-              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+              "teacher_note": "⚖️ BALANCED ROTATION: Examined in 2023. Keep in regular retrieval rotation."
             },
             {
               "point_index": 2,
@@ -63,9 +64,10 @@
                 4,
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": true,
+              "high_tariff_gap": false,
               "overdue_status": "recent",
               "overdue_score": 15,
               "matched_questions": [
@@ -114,7 +116,7 @@
                   "question_text": "Explain one consequence of the bombing of the King David Hotel (1946)."
                 }
               ],
-              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m, 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2025. Less likely to appear as an 8-mark question in the immediate next series, but still vulnerable to short 4-mark consequence questions."
             },
             {
               "point_index": 3,
@@ -129,9 +131,10 @@
               "tariffs_examined": [
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": true,
+              "high_tariff_gap": false,
               "overdue_status": "recent",
               "overdue_score": 15,
               "matched_questions": [
@@ -170,9 +173,10 @@
                 4,
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": true,
+              "high_tariff_gap": false,
               "overdue_status": "recent",
               "overdue_score": 15,
               "matched_questions": [
@@ -210,7 +214,7 @@
                   "question_text": "Explain one consequence of the territorial changes following the 1948-49 Arab-Israeli war."
                 }
               ],
-              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m, 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2025. Less likely to appear as an 8-mark question in the immediate next series, but still vulnerable to short 4-mark consequence questions."
             },
             {
               "point_index": 2,
@@ -225,9 +229,10 @@
               "tariffs_examined": [
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": true,
+              "high_tariff_gap": false,
               "overdue_status": "medium",
               "overdue_score": 50,
               "matched_questions": [
@@ -243,7 +248,7 @@
                   "question_text": "Explain the importance of territorial changes in the aftermath of the 1948-49 war for Palestinians."
                 }
               ],
-              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+              "teacher_note": "⚖️ BALANCED ROTATION: Examined in 2022. Keep in regular retrieval rotation."
             },
             {
               "point_index": 3,
@@ -262,9 +267,10 @@
                 4,
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": true,
+              "high_tariff_gap": false,
               "overdue_status": "recent",
               "overdue_score": 15,
               "matched_questions": [
@@ -328,9 +334,10 @@
               "tariffs_examined": [
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": true,
+              "high_tariff_gap": false,
               "overdue_status": "medium",
               "overdue_score": 50,
               "matched_questions": [
@@ -346,7 +353,7 @@
                   "question_text": "Write a narrative account analysing the developments in Israel in the years 1949-54."
                 }
               ],
-              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+              "teacher_note": "⚖️ BALANCED ROTATION: Examined in 2023. Keep in regular retrieval rotation."
             },
             {
               "point_index": 5,
@@ -361,9 +368,10 @@
               "tariffs_examined": [
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": true,
+              "high_tariff_gap": false,
               "overdue_status": "recent",
               "overdue_score": 15,
               "matched_questions": [
@@ -379,7 +387,7 @@
                   "question_text": "Write a narrative account analysing relations between Israel and Egypt in the years 1949-56."
                 }
               ],
-              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2024. Less likely to appear as an 8-mark question in the immediate next series, but still vulnerable to short 4-mark consequence questions."
             }
           ]
         },
@@ -399,9 +407,10 @@
               "tariffs_examined": [
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": true,
+              "high_tariff_gap": false,
               "overdue_status": "high",
               "overdue_score": 90,
               "matched_questions": [
@@ -432,9 +441,10 @@
               "tariffs_examined": [
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": true,
+              "high_tariff_gap": false,
               "overdue_status": "recent",
               "overdue_score": 15,
               "matched_questions": [
@@ -450,7 +460,7 @@
                   "question_text": "Write a narrative account analysing relations between Israel and Egypt in the years 1949-56."
                 }
               ],
-              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2024. Less likely to appear as an 8-mark question in the immediate next series, but still vulnerable to short 4-mark consequence questions."
             },
             {
               "point_index": 3,
@@ -468,9 +478,10 @@
                 4,
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": true,
+              "high_tariff_gap": false,
               "overdue_status": "recent",
               "overdue_score": 15,
               "matched_questions": [
@@ -530,6 +541,7 @@
               "last_examined_series": null,
               "is_last_specimen": false,
               "tariffs_examined": [],
+              "has_8m": false,
               "has_12m": false,
               "has_16m": false,
               "high_tariff_gap": true,
@@ -551,6 +563,7 @@
               "tariffs_examined": [
                 4
               ],
+              "has_8m": false,
               "has_12m": false,
               "has_16m": false,
               "high_tariff_gap": true,
@@ -569,7 +582,7 @@
                   "question_text": "Explain two consequences of Syria’s support for Fatah in the years 1964-67."
                 }
               ],
-              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+              "teacher_note": "🎯 8M HIGH-TARIFF GAP: Examined previously as a 4m consequence question, but NEVER set as an 8m narrative account or importance question. Watch out for an 8-mark question on this topic."
             },
             {
               "point_index": 3,
@@ -584,9 +597,10 @@
               "tariffs_examined": [
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": true,
+              "high_tariff_gap": false,
               "overdue_status": "high",
               "overdue_score": 85,
               "matched_questions": [
@@ -618,9 +632,10 @@
               "tariffs_examined": [
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": true,
+              "high_tariff_gap": false,
               "overdue_status": "recent",
               "overdue_score": 15,
               "matched_questions": [
@@ -667,9 +682,10 @@
               "tariffs_examined": [
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": true,
+              "high_tariff_gap": false,
               "overdue_status": "recent",
               "overdue_score": 15,
               "matched_questions": [
@@ -685,7 +701,7 @@
                   "question_text": "Explain the importance of UN Resolution 242 (1967) for relations between Israel and the Arab states."
                 }
               ],
-              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2024. Less likely to appear as an 8-mark question in the immediate next series, but still vulnerable to short 4-mark consequence questions."
             },
             {
               "point_index": 2,
@@ -701,9 +717,10 @@
               "tariffs_examined": [
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": true,
+              "high_tariff_gap": false,
               "overdue_status": "recent",
               "overdue_score": 15,
               "matched_questions": [
@@ -730,7 +747,7 @@
                   "question_text": "Explain the importance of the Six Day War (1967) for Israel’s security."
                 }
               ],
-              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2025. Less likely to appear as an 8-mark question in the immediate next series, but still vulnerable to short 4-mark consequence questions."
             },
             {
               "point_index": 3,
@@ -748,9 +765,10 @@
                 4,
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": true,
+              "high_tariff_gap": false,
               "overdue_status": "medium",
               "overdue_score": 50,
               "matched_questions": [
@@ -788,7 +806,7 @@
                   "question_text": "Explain two consequences of the terrorist attack at the Munich Olympics."
                 }
               ],
-              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m, 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+              "teacher_note": "⚖️ BALANCED ROTATION: Examined in 2023. Keep in regular retrieval rotation."
             },
             {
               "point_index": 4,
@@ -804,9 +822,10 @@
               "tariffs_examined": [
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": true,
+              "high_tariff_gap": false,
               "overdue_status": "recent",
               "overdue_score": 15,
               "matched_questions": [
@@ -833,7 +852,7 @@
                   "question_text": "Write a narrative account analysing the key developments of the PLO in Lebanon in the years 1970-82."
                 }
               ],
-              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2025. Less likely to appear as an 8-mark question in the immediate next series, but still vulnerable to short 4-mark consequence questions."
             }
           ]
         },
@@ -853,9 +872,10 @@
               "tariffs_examined": [
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": true,
+              "high_tariff_gap": false,
               "overdue_status": "high",
               "overdue_score": 90,
               "matched_questions": [
@@ -882,6 +902,7 @@
               "last_examined_series": null,
               "is_last_specimen": false,
               "tariffs_examined": [],
+              "has_8m": false,
               "has_12m": false,
               "has_16m": false,
               "high_tariff_gap": true,
@@ -904,9 +925,10 @@
               "tariffs_examined": [
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": true,
+              "high_tariff_gap": false,
               "overdue_status": "medium",
               "overdue_score": 50,
               "matched_questions": [
@@ -933,7 +955,7 @@
                   "question_text": "Explain the importance of the Yom Kippur War (1973) for Israel’s relations with Egypt."
                 }
               ],
-              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+              "teacher_note": "⚖️ BALANCED ROTATION: Examined in 2022. Keep in regular retrieval rotation."
             }
           ]
         }
@@ -959,9 +981,10 @@
               "tariffs_examined": [
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": true,
+              "high_tariff_gap": false,
               "overdue_status": "medium",
               "overdue_score": 50,
               "matched_questions": [
@@ -977,7 +1000,7 @@
                   "question_text": "Explain the importance of the oil crisis (1973-74) for diplomatic negotiations in the Middle East."
                 }
               ],
-              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+              "teacher_note": "⚖️ BALANCED ROTATION: Examined in 2023. Keep in regular retrieval rotation."
             },
             {
               "point_index": 2,
@@ -993,9 +1016,10 @@
               "tariffs_examined": [
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": true,
+              "high_tariff_gap": false,
               "overdue_status": "recent",
               "overdue_score": 15,
               "matched_questions": [
@@ -1040,9 +1064,10 @@
                 4,
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": true,
+              "high_tariff_gap": false,
               "overdue_status": "recent",
               "overdue_score": 15,
               "matched_questions": [
@@ -1096,6 +1121,7 @@
               "last_examined_series": null,
               "is_last_specimen": false,
               "tariffs_examined": [],
+              "has_8m": false,
               "has_12m": false,
               "has_16m": false,
               "high_tariff_gap": true,
@@ -1118,9 +1144,10 @@
               "tariffs_examined": [
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": true,
+              "high_tariff_gap": false,
               "overdue_status": "recent",
               "overdue_score": 15,
               "matched_questions": [
@@ -1147,7 +1174,7 @@
                   "question_text": "Write a narrative account analysing the key developments of the PLO in Lebanon in the years 1970-82."
                 }
               ],
-              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2025. Less likely to appear as an 8-mark question in the immediate next series, but still vulnerable to short 4-mark consequence questions."
             },
             {
               "point_index": 3,
@@ -1163,9 +1190,10 @@
               "tariffs_examined": [
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": true,
+              "high_tariff_gap": false,
               "overdue_status": "recent",
               "overdue_score": 15,
               "matched_questions": [
@@ -1192,7 +1220,7 @@
                   "question_text": "Write a narrative account analysing the key developments of the PLO in Lebanon in the years 1970-82."
                 }
               ],
-              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2025. Less likely to appear as an 8-mark question in the immediate next series, but still vulnerable to short 4-mark consequence questions."
             },
             {
               "point_index": 4,
@@ -1207,6 +1235,7 @@
               "tariffs_examined": [
                 4
               ],
+              "has_8m": false,
               "has_12m": false,
               "has_16m": false,
               "high_tariff_gap": true,
@@ -1245,9 +1274,10 @@
               "tariffs_examined": [
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": true,
+              "high_tariff_gap": false,
               "overdue_status": "recent",
               "overdue_score": 15,
               "matched_questions": [
@@ -1263,7 +1293,7 @@
                   "question_text": "Explain the importance of Arafat renouncing terrorism (1988) for attempts to find a solution in the Middle East."
                 }
               ],
-              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2024. Less likely to appear as an 8-mark question in the immediate next series, but still vulnerable to short 4-mark consequence questions."
             },
             {
               "point_index": 2,
@@ -1278,9 +1308,10 @@
               "tariffs_examined": [
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": true,
+              "high_tariff_gap": false,
               "overdue_status": "high",
               "overdue_score": 90,
               "matched_questions": [
@@ -1314,9 +1345,10 @@
                 4,
                 8
               ],
+              "has_8m": true,
               "has_12m": false,
               "has_16m": false,
-              "high_tariff_gap": true,
+              "high_tariff_gap": false,
               "overdue_status": "recent",
               "overdue_score": 15,
               "matched_questions": [
@@ -1354,7 +1386,7 @@
                   "question_text": "Explain the importance of the Israel-Jordan peace treaty (1994) for peace in the Middle East."
                 }
               ],
-              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m, 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2025. Less likely to appear as an 8-mark question in the immediate next series, but still vulnerable to short 4-mark consequence questions."
             }
           ]
         }
@@ -1364,7 +1396,7 @@
   "summary_stats": {
     "total_specification_points": 32,
     "overdue_topics_count": 8,
-    "high_tariff_gaps_count": 32,
+    "high_tariff_gaps_count": 5,
     "overdue_percentage": 25
   }
 }
