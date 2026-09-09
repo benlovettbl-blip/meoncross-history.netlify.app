@@ -2,9 +2,106 @@ export function getStructureStrip(questionObj, marks, unitId = '') {
   const qText =
     (questionObj && (questionObj.question || questionObj.question_text || questionObj.text)) || '';
   const qType = (questionObj && (questionObj.type || '')).toLowerCase();
+  const qNum = (questionObj && (questionObj.q_number || questionObj.number || '')).toUpperCase();
 
-  // 1. Consequence (4 Marks in Paper 2 Conflict in the Middle East)
-  if (qType.includes('consequence') || /explain (?:one|two) consequence/i.test(qText)) {
+  // 1. Feature Question (2 Marks in Paper 1 Western Front Q1a/Q1b & Paper 2 Early Elizabethan England Q1a/Q1b)
+  if (
+    marks === 2 ||
+    qType.includes('feature') ||
+    /describe (?:one|two) feature/i.test(qText) ||
+    ((qNum.startsWith('Q1(A)') || qNum.startsWith('Q1(B)')) &&
+      (unitId === 'edexcel_medicine' || unitId === 'eee'))
+  ) {
+    return `<strong>2-Mark Feature Structure Strip:</strong>
+<div style="font-size: 0.9rem; margin-top: 4px; color: #475569; font-style: italic;">Edexcel Paper 1 Section A (Western Front) &amp; Paper 2 (Early Elizabethan England) specification format: 2 marks per feature question.</div>
+<ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
+  <li><strong>Feature Identification [1 Mark]:</strong> State one valid historical characteristic or feature clearly and accurately.</li>
+  <li><strong>Supporting Detail [1 Mark]:</strong> Add specific factual evidence or contextual knowledge to develop the feature (e.g. measurements, medical procedures, equipment names, locations, dates, legislation).</li>
+</ul>`;
+  }
+
+  // 2. Follow-Up Enquiry Question (4 Marks in Paper 1 Section A Western Front Q2b)
+  if (
+    qType.includes('follow') ||
+    /follow up|how could you follow up/i.test(qText) ||
+    (qNum.includes('2(B)') && unitId === 'edexcel_medicine')
+  ) {
+    return `<strong>4-Mark Follow-Up Enquiry Structure Strip (Edexcel Paper 1 Section A Q2b):</strong>
+<div style="font-size: 0.9rem; margin-top: 4px; color: #475569; font-style: italic;">Edexcel Paper 1 (Western Front) Historic Environment 4-step enquiry method.</div>
+<ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
+  <li><strong>Detail in Source to Follow Up [1 Mark]:</strong> Select and quote or describe one specific historical detail from the source directly linked to the enquiry.</li>
+  <li><strong>Question to Ask [1 Mark]:</strong> Pose a focused, precise historical question directly arising from that detail (not a vague or unrelated question).</li>
+  <li><strong>Type of Source to Search [1 Mark]:</strong> Name a realistic, authentic contemporary primary record (e.g. RAMC war diary, casualty clearing station admission register, medical officer report, trench logbook). <em>Avoid general answers like 'the internet' or 'a history book'.</em></li>
+  <li><strong>How this Source Would Help [1 Mark]:</strong> Explain specifically how the information in that named source would answer your question and deepen understanding of the enquiry.</li>
+</ul>`;
+  }
+
+  // 3. Source Inference Question (4 Marks in Paper 3 Modern Depth Study Q1: Weimar & Nazi Germany / USA)
+  if (
+    qType.includes('inference') ||
+    /give two things you can infer|infer from source/i.test(qText) ||
+    ((qNum === 'Q1' || qNum === 'Q01') && (unitId === 'weimar_nazi_germany' || unitId === 'usa'))
+  ) {
+    return `<strong>4-Mark Source Inference Structure Strip (Edexcel Paper 3 Q1):</strong>
+<div style="font-size: 0.9rem; margin-top: 4px; color: #475569; font-style: italic;">Edexcel Paper 3 (Weimar &amp; Nazi Germany / USA) Question 1 specification format: 4 marks for two inferences from contemporary Source A.</div>
+<ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
+  <li><strong>Inference 1 [2 Marks]:</strong> State what you can infer / work out from Source A [1 mark] + support with a direct quote or specific detail from the source [1 mark].</li>
+  <li><strong>Inference 2 [2 Marks]:</strong> State a second distinct inference from Source A [1 mark] + support with a different direct quote or detail [1 mark].</li>
+</ul>`;
+  }
+
+  // 4. Interpretation Difference Question (4 Marks in Paper 3 Modern Depth Study Q3b)
+  if (
+    qType.includes('interpretation-difference') ||
+    qType.includes('interp_diff') ||
+    /main difference between these views|difference between the views/i.test(qText) ||
+    qNum.includes('3(B)')
+  ) {
+    return `<strong>4-Mark Interpretation Difference Structure Strip (Edexcel Paper 3 Q3b):</strong>
+<div style="font-size: 0.9rem; margin-top: 4px; color: #475569; font-style: italic;">Edexcel Paper 3 (Modern Depth Study) Question 3(b) specification format.</div>
+<ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
+  <li><strong>Identify Main Difference [1–2 Marks]:</strong> Clearly state the overall contrasting viewpoints or emphasis of the two interpretations (e.g. Interpretation 1 portrays the development as popular/successful, whereas Interpretation 2 stresses repression/failure).</li>
+  <li><strong>Evidence from Both Interpretations [3–4 Marks]:</strong> Quote or closely paraphrase specific evidence from Interpretation 1 [1m] and directly contrast it with specific evidence from Interpretation 2 [1m] to prove the difference.</li>
+</ul>`;
+  }
+
+  // 5. Why Interpretations Differ Question (4 Marks in Paper 3 Modern Depth Study Q3c)
+  if (
+    qType.includes('interpretation-why') ||
+    qType.includes('interp_why') ||
+    /suggest (?:one )?reason why interpretations|reason why interpretations/i.test(qText) ||
+    qNum.includes('3(C)')
+  ) {
+    return `<strong>4-Mark Why Interpretations Differ Structure Strip (Edexcel Paper 3 Q3c):</strong>
+<div style="font-size: 0.9rem; margin-top: 4px; color: #475569; font-style: italic;">Edexcel Paper 3 (Modern Depth Study) Question 3(c) specification format.</div>
+<ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
+  <li><strong>Identify Valid Reason [1–2 Marks]:</strong> State one valid reason why the two historians arrived at different conclusions (e.g. they relied on different contemporary sources such as Source B vs Source C, or investigated different groups/regions/timeframes, or had different areas of historical emphasis).</li>
+  <li><strong>Support with Context &amp; Sources [3–4 Marks]:</strong> Explain how this reason created the difference, linking directly to details in the interpretations and/or supporting Sources B and C.</li>
+</ul>`;
+  }
+
+  // 6. 16-Mark Evaluative Interpretation Essay (+4 SPaG) (Paper 3 Modern Depth Study Q3d)
+  if (
+    marks === 16 &&
+    (qType.includes('interpretation') || /interpretation 2/i.test(qText) || qNum.includes('3(D)'))
+  ) {
+    return `<strong>16-Mark Interpretation Evaluation Essay Structure Strip (Edexcel Paper 3 Q3d + 4 SPaG):</strong>
+<div style="font-size: 0.9rem; margin-top: 4px; color: #475569; font-style: italic;">Edexcel Paper 3 (Modern Depth Study) Question 3(d): Evaluative essay evaluating Interpretation 2 using both interpretations and historical context.</div>
+<ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
+  <li><strong>Introduction:</strong> State the view given in Interpretation 2, contrast with Interpretation 1, and define your criteria for judging 'how far' you agree.</li>
+  <li><strong>Paragraph 1 (Support Interpretation 2):</strong> Detail the view in Interpretation 2 &bull; Quote specific phrasing &bull; Support with detailed own historical knowledge confirming this viewpoint.</li>
+  <li><strong>Paragraph 2 (Challenge Interpretation 2 / Support Interpretation 1):</strong> Detail the alternative view from Interpretation 1 &bull; Quote specific phrasing &bull; Support with own historical knowledge showing why this alternative perspective is valid.</li>
+  <li><strong>Paragraph 3 (Weighing Historical Context):</strong> Assess the strength of both arguments using in-depth context (was one interpretation looking at short-term vs long-term, or different social groups?).</li>
+  <li><strong>Conclusion &amp; Judgement:</strong> Provide a sustained, substantiated judgement explaining <em>which interpretation is more convincing</em> overall and why.</li>
+</ul>`;
+  }
+
+  // 7. Consequence (4 Marks in Paper 2 Conflict in the Middle East)
+  if (
+    qType.includes('consequence') ||
+    /explain (?:one|two) consequence/i.test(qText) ||
+    ((qNum.includes('1(A)') || qNum.includes('1(B)')) && unitId === 'cme_new')
+  ) {
     return `<strong>4-Mark Consequence Question Structure Strip:</strong>
 <div style="font-size: 0.9rem; margin-top: 4px; color: #475569; font-style: italic;">Edexcel Paper 2 specification format: Single direct consequence with detailed historical causation.</div>
 <ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
@@ -13,41 +110,28 @@ export function getStructureStrip(questionObj, marks, unitId = '') {
 </ul>`;
   }
 
-  // 2. Feature Question (2 Marks in Paper 1 Western Front & Paper 2 Early Elizabethan England)
-  if (marks === 2 || qType.includes('feature') || /describe (?:one|two) feature/i.test(qText)) {
-    return `<strong>2-Mark Feature Structure Strip:</strong>
-<div style="font-size: 0.9rem; margin-top: 4px; color: #475569; font-style: italic;">Edexcel Paper 1 (Western Front) &amp; Paper 2 (Early Elizabethan England) specification format: 2 marks per feature.</div>
-<ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
-  <li><strong>Feature Identification [1 Mark]:</strong> State one valid historical characteristic or feature clearly and accurately.</li>
-  <li><strong>Supporting Detail [1 Mark]:</strong> Add specific factual evidence or contextual knowledge to develop the feature (e.g. measurements, medical procedures, equipment names, locations, dates).</li>
-</ul>`;
-  }
-
-  // 3. Source Inference Question (4 Marks in Paper 1 Section A Western Front Q2a)
-  if (qType.includes('inference') || /give two things you can infer|infer/i.test(qText)) {
-    return `<strong>4-Mark Source Inference Structure Strip:</strong>
-<ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
-  <li><strong>Inference 1 [2 Marks]:</strong> State what you can infer / work out from the source [1 mark] + support with a direct quote or specific visual detail from the source [1 mark].</li>
-  <li><strong>Inference 2 [2 Marks]:</strong> State a second distinct inference [1 mark] + support with a different direct quote or specific visual detail [1 mark].</li>
-</ul>`;
-  }
-
-  // 4. Similarity / Difference Question (4 Marks in Paper 1 Section B Q3)
+  // 8. Similarity / Difference Question (4 Marks in Paper 1 Section B Q3)
   if (
     qType.includes('similarity') ||
-    qType.includes('difference') ||
-    /similar|difference/i.test(qText)
+    (marks === 4 && (qType.includes('difference') || /similar|difference/i.test(qText))) ||
+    (qNum === 'Q3' && unitId === 'edexcel_medicine')
   ) {
-    return `<strong>4-Mark Similarity / Difference Structure Strip:</strong>
+    return `<strong>4-Mark Similarity / Difference Structure Strip (Edexcel Paper 1 Section B Q3):</strong>
+<div style="font-size: 0.9rem; margin-top: 4px; color: #475569; font-style: italic;">Edexcel Paper 1 Section B thematic comparison across time periods.</div>
 <ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
   <li><strong>Identify Comparison [1–2 Marks]:</strong> State clearly one valid way in which the two periods/topics were similar or different.</li>
   <li><strong>Support with Evidence from Both Periods [3–4 Marks]:</strong> Provide specific, accurate historical knowledge from <em>both</em> periods to explain and justify the comparison.</li>
 </ul>`;
   }
 
-  // 5. Narrative Account (8 Marks in Paper 2)
-  if (qType.includes('narrative') || /narrative account/i.test(qText)) {
+  // 9. Narrative Account (8 Marks in Paper 2 Q2)
+  if (
+    qType.includes('narrative') ||
+    /narrative account/i.test(qText) ||
+    (qNum === 'Q2' && unitId === 'cme_new')
+  ) {
     return `<strong>8-Mark Narrative Account Structure Strip (Chronological &amp; Causal Flow):</strong>
+<div style="font-size: 0.9rem; margin-top: 4px; color: #475569; font-style: italic;">Edexcel Paper 2 Period Study question format.</div>
 <ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
   <li><strong>Beginning / Catalyst [2–3 Marks]:</strong> Establish the initial situation or starting cause with precise factual detail in correct chronological order.</li>
   <li><strong>Development / Turning Point [4–6 Marks]:</strong> Explain how events unfolded and transitioned, linking causes and effects using explicit connectives (<em>'This led to...', 'As a consequence of this reaction...'</em>).</li>
@@ -56,28 +140,45 @@ export function getStructureStrip(questionObj, marks, unitId = '') {
 </ul>`;
   }
 
-  // 6. Importance Question (8 Marks in Paper 2)
-  if (qType.includes('importance') || /importance of/i.test(qText)) {
+  // 10. Importance Question (8 Marks in Paper 2 Q3)
+  if (
+    qType.includes('importance') ||
+    /importance of/i.test(qText) ||
+    ((qNum.includes('3(A)') || qNum.includes('3(B)')) && unitId === 'cme_new')
+  ) {
     return `<strong>8-Mark Importance Question Structure Strip:</strong>
+<div style="font-size: 0.9rem; margin-top: 4px; color: #475569; font-style: italic;">Edexcel Paper 2 Period Study question format.</div>
 <ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
   <li><strong>Reason 1 [4 Marks]:</strong> Identify a clear reason why the factor was significant + provide detailed contextual evidence + explain its specific impact on the specified issue.</li>
   <li><strong>Reason 2 [4 Marks]:</strong> Identify a second distinct reason why it was important + provide independent contextual knowledge + explain the broader or long-term consequence.</li>
 </ul>`;
   }
 
-  // 7. Source Utility Question (8 Marks in Paper 1 Section A Western Front Q2b)
-  if (qType.includes('utility') || /how useful/i.test(qText)) {
-    return `<strong>8-Mark Source Utility Structure Strip:</strong>
+  // 11. Source Utility Question (8 Marks in Paper 1 Q2a & Paper 3 Q3a)
+  if (
+    qType.includes('utility') ||
+    qType.includes('how-useful') ||
+    /how useful/i.test(qText) ||
+    (marks === 8 && (qNum.includes('2(A)') || qNum.includes('3(A)')))
+  ) {
+    return `<strong>8-Mark Source Utility Structure Strip (Edexcel Paper 1 Q2a &amp; Paper 3 Q3a):</strong>
+<div style="font-size: 0.9rem; margin-top: 4px; color: #475569; font-style: italic;">Assessing two contemporary sources for a specific historical enquiry using content, contextual knowledge, and provenance (Nature, Origin, Purpose).</div>
 <ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
-  <li><strong>Source 1 Evaluation [4 Marks]:</strong> Assess content &amp; accuracy against own historical knowledge [2m] + evaluate Nature, Origin, Purpose (NOP) to explain usefulness/limitations [2m].</li>
-  <li><strong>Source 2 Evaluation [4 Marks]:</strong> Assess content &amp; accuracy against own historical knowledge [2m] + evaluate Nature, Origin, Purpose (NOP) to explain usefulness/limitations [2m].</li>
+  <li><strong>Source 1 Evaluation [4 Marks]:</strong> Assess content &amp; accuracy against own historical knowledge [2m] + evaluate Nature, Origin, Purpose (NOP) to explain usefulness/limitations for this specific enquiry [2m].</li>
+  <li><strong>Source 2 Evaluation [4 Marks]:</strong> Assess content &amp; accuracy against own historical knowledge [2m] + evaluate Nature, Origin, Purpose (NOP) to explain usefulness/limitations for this specific enquiry [2m].</li>
   <li><strong>Judgement on Enquiry:</strong> Synthesise how the two sources complement each other for the specific historical enquiry.</li>
 </ul>`;
   }
 
-  // 8. 12-Mark 'Explain Why' Question
-  if (marks === 12 || qType.includes('explain_why') || /explain why/i.test(qText)) {
+  // 12. 12-Mark 'Explain Why' Question (Causation)
+  if (
+    marks === 12 ||
+    qType.includes('explain_why') ||
+    qType.includes('causation') ||
+    /explain why/i.test(qText)
+  ) {
     return `<strong>12-Mark 'Explain Why' Structure Strip (PEEL):</strong>
+<div style="font-size: 0.9rem; margin-top: 4px; color: #475569; font-style: italic;">Edexcel Paper 1 Q4, Paper 2 Q2 (Elizabeth), and Paper 3 Q2 causation question format.</div>
 <ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
   <li><strong>Cause 1 (Stimulus Point 1):</strong> Clear reason identified &bull; Specific dates/names &bull; Explain <em>how/why</em> this led to the outcome.</li>
   <li><strong>Cause 2 (Stimulus Point 2):</strong> Second cause &bull; Detailed supporting facts &bull; Explain relative importance.</li>
@@ -86,9 +187,15 @@ export function getStructureStrip(questionObj, marks, unitId = '') {
 </ul>`;
   }
 
-  // 9. 16-Mark Essay Question (+4 SPaG)
-  if (marks === 16 || qType.includes('essay') || /how far do you agree|statement/i.test(qText)) {
+  // 13. 16-Mark Essay Question (+4 SPaG)
+  if (
+    marks === 16 ||
+    qType.includes('essay') ||
+    qType.includes('judgement-essay') ||
+    /how far do you agree|statement/i.test(qText)
+  ) {
     return `<strong>16-Mark Essay Structure Strip (PEEL):</strong>
+<div style="font-size: 0.9rem; margin-top: 4px; color: #475569; font-style: italic;">Edexcel Paper 1 Q5/6 and Paper 2 Q3 (Elizabeth) 16-mark evaluative essay format (+4 SPaG).</div>
 <ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
   <li><strong>Introduction:</strong> Define key concepts, outline criteria for evaluation, and state your provisional thesis.</li>
   <li><strong>Paragraph 1 (Stimulus Point 1):</strong> Point &bull; Precise contextual evidence &bull; Explain significance &bull; Link to thesis.</li>
@@ -641,7 +748,15 @@ export function renderExamPracticeZone(container, unitData, initialQuestion = nu
       window.switchView('mock-exams', initialQuestion.unitId);
       setTimeout(() => {
         const tabBtnTrend = document.getElementById('tab-btn-trend-radar');
-        if (tabBtnTrend) tabBtnTrend.click();
+        if (tabBtnTrend) {
+          tabBtnTrend.click();
+          if (initialQuestion.fromRadar) {
+            setTimeout(() => {
+              const radarTabBtn = document.querySelector('.etm-tab-btn[data-tab="radar"]');
+              if (radarTabBtn) radarTabBtn.click();
+            }, 100);
+          }
+        }
       }, 150);
     } else {
       const controls = document.getElementById('epz-controls');
@@ -732,7 +847,10 @@ export function renderExamPracticeZone(container, unitData, initialQuestion = nu
     let marks =
       currentQuestion.marks || parseInt((currentQuestion.type || '0').replace(/[^0-9]/g, '')) || 0;
     let displayQText = currentQuestion.question || '';
-    if (/explain two consequences of/i.test(displayQText)) {
+    if (/describe two features of/i.test(displayQText)) {
+      displayQText = displayQText.replace(/describe two features of/i, 'Describe one feature of');
+      marks = 2;
+    } else if (/explain two consequences of/i.test(displayQText)) {
       displayQText = displayQText.replace(
         /explain two consequences of/i,
         'Explain one consequence of',
@@ -743,6 +861,11 @@ export function renderExamPracticeZone(container, unitData, initialQuestion = nu
       /explain (?:one|two) consequence/i.test(displayQText)
     ) {
       marks = 4;
+    } else if (
+      currentQuestion.type === 'feature' ||
+      /describe (?:one|two) feature/i.test(displayQText)
+    ) {
+      marks = 2;
     }
     if (!marks) marks = 4;
     questionTariffSeconds = marks * 90; // 1.5 mins per mark
@@ -829,15 +952,21 @@ export function renderExamPracticeZone(container, unitData, initialQuestion = nu
     if (controls) controls.style.display = 'none';
     displayArea.style.display = 'block';
     backBtn.style.display = 'block';
-    backBtn.innerHTML = '<i class="fa-solid fa-arrow-left"></i> Return to Question Matrix';
+    backBtn.innerHTML = initialQuestion.fromRadar
+      ? '<i class="fa-solid fa-arrow-left"></i> Return to Overdue Radar'
+      : '<i class="fa-solid fa-arrow-left"></i> Return to Question Matrix';
 
     let rawQuestionText = initialQuestion.question_text || initialQuestion.question || '';
     let marks = initialQuestion.tariff || initialQuestion.marks || 16;
 
-    // Consequence question specification normalization:
-    // In Edexcel Paper 2 Conflict in the Middle East, questions sat as "Explain two consequences of..."
-    // have been reformed to single consequence questions: "Explain one consequence of..." for 4 marks.
-    if (/explain two consequences of/i.test(rawQuestionText)) {
+    // Normalization for modern Edexcel specifications:
+    if (/describe two features of/i.test(rawQuestionText)) {
+      rawQuestionText = rawQuestionText.replace(
+        /describe two features of/i,
+        'Describe one feature of',
+      );
+      marks = 2;
+    } else if (/explain two consequences of/i.test(rawQuestionText)) {
       rawQuestionText = rawQuestionText.replace(
         /explain two consequences of/i,
         'Explain one consequence of',
@@ -848,6 +977,11 @@ export function renderExamPracticeZone(container, unitData, initialQuestion = nu
       /explain (?:one|two) consequence/i.test(rawQuestionText)
     ) {
       marks = 4;
+    } else if (
+      initialQuestion.type === 'feature' ||
+      /describe (?:one|two) feature/i.test(rawQuestionText)
+    ) {
+      marks = 2;
     }
 
     currentQuestion = {

@@ -552,6 +552,168 @@ function openSectionBMockPrintWindow(yearPaper, secB, cfg) {
   }
 }
 
+/**
+ * Constructs an Edexcel-aligned exam practice question prompt directly from a specification radar point.
+ */
+function constructRadarPracticeQuestion(params = {}) {
+  let pointText = '';
+  let topicTitle = '';
+  let secTitle = '';
+  let overdueStatus = '';
+  let lastExamined = 'Never';
+  let highTariffGap = false;
+  let teacherNote = '';
+  let unitId = '';
+
+  if (typeof params === 'object' && params !== null && !Array.isArray(params)) {
+    pointText = params.point_text || params.pointText || '';
+    topicTitle = params.topic_title || params.topicTitle || '';
+    secTitle = params.sec_title || params.secTitle || '';
+    overdueStatus = params.overdue_status || params.overdueStatus || '';
+    lastExamined = params.last_examined || params.lastExamined || params.last || 'Never';
+    highTariffGap = Boolean(params.high_tariff_gap || params.highTariffGap);
+    teacherNote = params.teacher_note || params.teacherNote || '';
+    unitId = params.unitId || '';
+  } else if (typeof params === 'string') {
+    [
+      pointText,
+      topicTitle,
+      secTitle,
+      overdueStatus,
+      lastExamined,
+      highTariffGap,
+      teacherNote,
+      unitId,
+    ] = arguments;
+  }
+  const cleanPoint = pointText.replace(/\*\*/g, '').replace(/:\s*$/, '').trim();
+  const cleanTopic = topicTitle.replace(/^\d+\.?\s*/, '').trim();
+
+  let marks = 4;
+  let type = 'consequence';
+  let questionStem = '';
+
+  if (unitId === 'cme_new') {
+    if (
+      highTariffGap ||
+      cleanPoint.toLowerCase().includes('war') ||
+      cleanPoint.toLowerCase().includes('accord') ||
+      cleanPoint.toLowerCase().includes('crisis') ||
+      cleanPoint.toLowerCase().includes('mandate')
+    ) {
+      marks = 8;
+      type = 'importance';
+      questionStem = `Explain the importance of ${cleanPoint.replace(/\.$/, '')} for developments in the Middle East.`;
+    } else {
+      marks = 4;
+      type = 'consequence';
+      questionStem = `Explain one consequence of ${cleanPoint.replace(/\.$/, '')}.`;
+    }
+  } else if (unitId === 'weimar_nazi_germany' || unitId === 'usa') {
+    if (
+      cleanPoint.toLowerCase().includes('situation') ||
+      cleanPoint.toLowerCase().includes('reasons') ||
+      cleanPoint.toLowerCase().includes('challenges') ||
+      cleanPoint.toLowerCase().includes('growth') ||
+      cleanPoint.toLowerCase().includes('tactics') ||
+      cleanPoint.toLowerCase().includes('campaigns')
+    ) {
+      marks = 12;
+      type = 'causation';
+      questionStem = `Explain why ${cleanPoint.replace(/\.$/, '')} was significant.`;
+    } else if (highTariffGap) {
+      marks = 16;
+      type = 'interpretation-evaluation';
+      questionStem = `How far do you agree with Interpretation 2 that ${cleanPoint.replace(/\.$/, '')}? Explain your answer, using both interpretations and your understanding of the historical context.`;
+    } else {
+      marks = 4;
+      type = 'inference';
+      questionStem = `Give two things you can infer from Source A about ${cleanPoint.replace(/\.$/, '')}.`;
+    }
+  } else if (unitId === 'eee') {
+    if (
+      cleanPoint.toLowerCase().includes('features') ||
+      cleanPoint.toLowerCase().includes('plots') ||
+      cleanPoint.toLowerCase().includes('exploration') ||
+      cleanPoint.toLowerCase().includes('theatre')
+    ) {
+      marks = 2;
+      type = 'feature';
+      questionStem = `Describe one feature of ${cleanPoint.replace(/\.$/, '')}.`;
+    } else if (highTariffGap) {
+      marks = 16;
+      type = 'judgement-essay';
+      questionStem = `'${cleanPoint.replace(/\.$/, '')} was the greatest challenge Elizabeth I faced.' How far do you agree? Explain your answer.`;
+    } else {
+      marks = 12;
+      type = 'causation';
+      questionStem = `Explain why ${cleanPoint.replace(/\.$/, '')} caused problems for Elizabeth I.`;
+    }
+  } else if (unitId === 'edexcel_medicine') {
+    if (secTitle.toLowerCase().includes('western front')) {
+      if (
+        highTariffGap ||
+        cleanPoint.toLowerCase().includes('treatment') ||
+        cleanPoint.toLowerCase().includes('trench') ||
+        cleanPoint.toLowerCase().includes('injuries')
+      ) {
+        marks = 8;
+        type = 'utility';
+        questionStem = `How useful are Sources A and B for an enquiry into ${cleanPoint.replace(/\.$/, '')}?`;
+      } else {
+        marks = 2;
+        type = 'feature';
+        questionStem = `Describe one feature of ${cleanPoint.replace(/\.$/, '')}.`;
+      }
+    } else {
+      if (highTariffGap) {
+        marks = 16;
+        type = 'essay';
+        questionStem = `'${cleanPoint.replace(/\.$/, '')} was the main turning point.' How far do you agree? Explain your answer.`;
+      } else {
+        marks = 12;
+        type = 'causation';
+        questionStem = `Explain why there were changes in ${cleanPoint.replace(/\.$/, '')}.`;
+      }
+    }
+  } else {
+    // General fallback
+    marks = highTariffGap ? 16 : 12;
+    type = highTariffGap ? 'essay' : 'causation';
+    questionStem = `Explain why ${cleanPoint.replace(/\.$/, '')} was historically significant.`;
+  }
+
+  return {
+    year: '🎯 Overdue Radar Gap',
+    q_number: `Radar Practice (${marks}m)`,
+    tariff: marks,
+    marks: marks,
+    type: type,
+    question_text: questionStem,
+    stimulus: `🎯 Specification Target: ${cleanPoint}\n📚 Syllabus Topic: ${cleanTopic} (${secTitle})`,
+    pitfall_warning: `⚠️ RADAR TARGET ALERT: This syllabus specification point is classified as ${lastExamined === 'Never' ? 'NEVER EXAMINED (2018–2026)' : 'OVERDUE (Last sat: ' + lastExamined + ')'}. High probability for upcoming exam series.\nTeacher Note: ${teacherNote}`,
+    indicative_content: [
+      `Directly address the focus: ${cleanPoint}`,
+      `Support with at least two precise, verified historical facts (exact dates, named individuals, key legislation/treaties, statistics).`,
+      `Structure response using clear paragraphs (PEEL) with explicit causal or analytical connectives.`,
+      `Demonstrate precise chronological understanding and historical terminology.`,
+    ],
+    model_answer: [
+      `TARGET SPECIFICATION REVISION GUIDE:`,
+      `• Specification Point: ${cleanPoint}`,
+      `• Historical Context: Review relevant classroom notes and textbook coverage for ${cleanTopic}.`,
+      `• Required Structure: Refer to the Structure Strip Hint for the exact ${marks}-mark Edexcel exam criteria.`,
+    ],
+    source_context: secTitle,
+    provenance_clue:
+      unitId === 'edexcel_medicine' && type === 'utility'
+        ? 'Consider the author, audience, date, and motive of contemporary Western Front records (e.g. RAMC diaries vs published newspaper reports) when evaluating usefulness.'
+        : null,
+    unitId: unitId,
+    fromRadar: true,
+  };
+}
+
 function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
   if (!cfg) cfg = UNIT_CONFIGS[unitId] || UNIT_CONFIGS.edexcel_medicine;
   const papers = pastData.papers || [];
@@ -1277,6 +1439,18 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
                                           <span style="font-size: 0.75rem; font-weight: 700; background: #f1f5f9; color: #475569; padding: 4px 10px; border-radius: 12px;">
                                             ${pt.exam_count}x in Exams
                                           </span>
+                                          <button class="etm-btn-quick-launch" 
+                                                  data-point="${encodeURIComponent(pt.point_text)}" 
+                                                  data-overdue="${pt.overdue_status}" 
+                                                  data-last="${pt.last_examined}"
+                                                  data-gap="${pt.high_tariff_gap ? 'true' : 'false'}"
+                                                  data-topic="${encodeURIComponent(top.title)}"
+                                                  data-sec="${encodeURIComponent(sec.title)}"
+                                                  data-note="${encodeURIComponent(pt.teacher_note || '')}"
+                                                  style="background: ${pt.overdue_status === 'high' ? 'linear-gradient(135deg, #dc2626, #b91c1c)' : 'linear-gradient(135deg, #2563eb, #1d4ed8)'}; color: white; border: none; padding: 4px 12px; border-radius: 8px; font-size: 0.75rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: ${pt.overdue_status === 'high' ? '0 2px 6px rgba(220,38,38,0.25)' : '0 2px 6px rgba(37,99,235,0.2)'}; transition: transform 0.15s ease;"
+                                                  title="Immediately launch this unexamined/overdue syllabus prompt into the timed Exam Practice Zone with structure strip">
+                                            <i class="fa-solid fa-bolt" style="color: #fbbf24;"></i> Quick Practice
+                                          </button>
                                         </div>
                                       </div>
                                       
@@ -1439,6 +1613,44 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
           item.style.display = item.dataset.gap === 'true' ? 'block' : 'none';
         }
       });
+    });
+  });
+
+  // Quick-Launch Radar Question directly into Exam Practice Zone
+  const quickLaunchBtns = container.querySelectorAll('.etm-btn-quick-launch');
+  quickLaunchBtns.forEach((btn) => {
+    btn.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      const pointText = decodeURIComponent(btn.dataset.point || '');
+      const topicTitle = decodeURIComponent(btn.dataset.topic || '');
+      const secTitle = decodeURIComponent(btn.dataset.sec || '');
+      const teacherNote = decodeURIComponent(btn.dataset.note || '');
+      const overdueStatus = btn.dataset.overdue || '';
+      const lastExamined = btn.dataset.last || 'Never';
+      const highTariffGap = btn.dataset.gap === 'true';
+
+      const questionObj = constructRadarPracticeQuestion({
+        point_text: pointText,
+        overdue_status: overdueStatus,
+        last_examined: lastExamined,
+        high_tariff_gap: highTariffGap,
+        teacher_note: teacherNote,
+        topic_title: topicTitle,
+        sec_title: secTitle,
+        unitId: unitId,
+      });
+
+      const contentArea =
+        document.getElementById('main-content') || document.getElementById('content-area');
+      if (contentArea) {
+        const { renderExamPracticeZone } = await import('./exam_practice_zone.js');
+        const activeUnitData =
+          (window.db && window.db[unitId] && window.db[unitId].data) ||
+          window.currentUnitData ||
+          {};
+        renderExamPracticeZone(contentArea, activeUnitData, questionObj);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     });
   });
 
@@ -1655,6 +1867,11 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
               `
                   : ''
               }
+              <div style="margin-top: 10px; display: flex; justify-content: flex-end;">
+                <button class="etm-secb-sub-practice-btn" data-qid="${q.q_id}" style="background: linear-gradient(135deg, ${cfg.primary}, #334155); color: white; border: none; padding: 6px 14px; border-radius: 6px; font-size: 0.78rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s;">
+                  <i class="fa-solid fa-stopwatch"></i> Practice ${q.q_number} (${q.tariff}m) in Exam Hall
+                </button>
+              </div>
             </div>
           `;
           })
@@ -1696,6 +1913,41 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
         openSectionBMockPrintWindow(yearPaper, secB, cfg);
       });
     }
+
+    // Wire sub-question practice buttons in Section B
+    const secbSubBtns = modalContent.querySelectorAll('.etm-secb-sub-practice-btn');
+    secbSubBtns.forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        const qid = btn.dataset.qid;
+        const targetQ = secB.questions.find((q) => q.q_id === qid);
+        if (!targetQ) return;
+        modal.classList.remove('open');
+        const contentArea =
+          document.getElementById('main-content') || document.getElementById('content-area');
+        if (contentArea) {
+          const { renderExamPracticeZone } = await import('./exam_practice_zone.js');
+          const activeUnitData =
+            (window.db && window.db[unitId] && window.db[unitId].data) ||
+            window.currentUnitData ||
+            {};
+          renderExamPracticeZone(contentArea, activeUnitData, {
+            year: yearPaper.year,
+            q_number: targetQ.q_number,
+            tariff: targetQ.tariff || 16,
+            marks: targetQ.tariff || 16,
+            type: targetQ.type,
+            question_text: targetQ.question_text,
+            stimulus: targetQ.stimulus,
+            pitfall_warning: targetQ.pitfall_warning,
+            indicative_content: targetQ.indicative_content,
+            model_answer: targetQ.indicative_content,
+            source_context: targetQ.source_context,
+            unitId: unitId,
+          });
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+    });
 
     // Wire practice 3d button
     const practice3dBtn = document.getElementById('etm-modal-practice-3d-btn');
