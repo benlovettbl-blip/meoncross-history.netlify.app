@@ -321,6 +321,8 @@ export function renderLesson(lesson) {
     unitId === 'edexcel_medicine' ||
     activeUnit.isGCSE ||
     false;
+  const hasInlineNarrativeSources =
+    Array.isArray(lesson.narrative_blocks) && lesson.narrative_blocks.some((b) => b && b.source);
   let htmlDoNow = '',
     htmlPrimary = '',
     htmlSources1 = '',
@@ -612,7 +614,12 @@ export function renderLesson(lesson) {
     }
   }
 
-  if (lesson.sources && lesson.sources.length > 0 && unitId !== 'cme_new') {
+  if (
+    lesson.sources &&
+    lesson.sources.length > 0 &&
+    unitId !== 'cme_new' &&
+    !hasInlineNarrativeSources
+  ) {
     htmlSources1 += `<div class="sources-grid" style="margin-top: 20px;">`;
     lesson.sources.forEach((source) => {
       const sLetterMatch = (source.title || '').match(/Source\s+([A-Z])/i);
@@ -2596,7 +2603,12 @@ export function renderLesson(lesson) {
       htmlPairShare;
   }
 
-  if (typeof isGCSE !== 'undefined' && isGCSE && unitId !== 'cme_new') {
+  if (
+    typeof isGCSE !== 'undefined' &&
+    isGCSE &&
+    unitId !== 'cme_new' &&
+    !hasInlineNarrativeSources
+  ) {
     html += htmlSources1;
   }
   if (
