@@ -150,7 +150,7 @@ export function renderWorkbooksZone(container, unitData) {
         badge: 'KT1 Booklet',
         color: '#0284c7',
         desc: '80 Rapid Recall Questions · Double-Sided Mark Scheme · 3 Rounds of Exam Practice (Stepped Ladder, Dual Track, Exam Pitch) · 100% Spec Coverage Bank',
-        fileBase: 'cme_mastery_pack_KT1',
+        fileBase: '/units/cme_new/booklets/cme_mastery_KT1.html',
         pdfUrl: '/pdfs/cme_new/cme_mastery_pack_KT1.pdf',
       },
       {
@@ -160,7 +160,7 @@ export function renderWorkbooksZone(container, unitData) {
         badge: 'KT2 Booklet',
         color: '#dc2626',
         desc: '60 Rapid Recall Questions · Double-Sided Mark Scheme · 3 Rounds of Exam Practice (Stepped Ladder, Dual Track, Exam Pitch) · 100% Spec Coverage Bank',
-        fileBase: 'cme_mastery_pack_KT2',
+        fileBase: '/units/cme_new/booklets/cme_mastery_KT2.html',
         pdfUrl: '/pdfs/cme_new/cme_mastery_pack_KT2.pdf',
       },
       {
@@ -170,7 +170,7 @@ export function renderWorkbooksZone(container, unitData) {
         badge: 'KT3 Booklet',
         color: '#059669',
         desc: '60 Rapid Recall Questions · Double-Sided Mark Scheme · 3 Rounds of Exam Practice (Stepped Ladder, Dual Track, Exam Pitch) · 100% Spec Coverage Bank',
-        fileBase: 'cme_mastery_pack_KT3',
+        fileBase: '/units/cme_new/booklets/cme_mastery_KT3.html',
         pdfUrl: '/pdfs/cme_new/cme_mastery_pack_KT3.pdf',
       },
       {
@@ -180,7 +180,7 @@ export function renderWorkbooksZone(container, unitData) {
         badge: 'Full Master Suite',
         color: '#1e3a8a',
         desc: 'The complete 36-page revision volume binding KT1, KT2, and KT3 together. Contains all 200 recall questions and 48 exam questions. Print once for the entire term!',
-        fileBase: 'cme_mastery_pack_FULL',
+        fileBase: '/units/cme_new/booklets/cme_mastery_FULL.html',
         pdfUrl: '/pdfs/cme_new/cme_mastery_pack_FULL.pdf',
       },
     ];

@@ -1693,13 +1693,22 @@ window.openParentBriefingModal = function () {
 };
 
 window.openTeacherPrintPreview = function (fileBaseName, title, pdfUrl) {
-  let htmlUrl =
-    fileBaseName.startsWith('/') || fileBaseName.startsWith('http')
-      ? fileBaseName
-      : `/units/cme_new/printables/${fileBaseName}.html`;
+  let htmlUrl = fileBaseName;
+  if (!htmlUrl.startsWith('/') && !htmlUrl.startsWith('http')) {
+    if (fileBaseName.includes('mastery')) {
+      const normalized = fileBaseName.replace('cme_mastery_pack_', 'cme_mastery_');
+      htmlUrl = `/units/cme_new/booklets/${normalized}.html`;
+    } else {
+      htmlUrl = `/units/cme_new/printables/${fileBaseName}.html`;
+    }
+  }
 
   if (!pdfUrl) {
-    pdfUrl = `/pdfs/cme_new/${fileBaseName}.pdf`;
+    const pdfBase = fileBaseName
+      .replace('/units/cme_new/booklets/', '')
+      .replace('.html', '')
+      .replace('cme_mastery_', 'cme_mastery_pack_');
+    pdfUrl = `/pdfs/cme_new/${pdfBase}.pdf`;
   }
 
   // Remove existing modal if any
