@@ -3888,7 +3888,7 @@ function getImageDataUri(imgPath) {
 }
 
 // Render Left Knowledge Page (Dense Level 4-9 Masterclass with Examiner Traps)
-function renderLeftPage(data, pageNum) {
+function renderLeftPage(data, pageNum, spreadIndex) {
   const left = data.left;
   const deepGrid = left.deepKnowledgeGrid || [];
   const vocab = left.vocabBank || [];
@@ -4115,7 +4115,9 @@ function renderLeftPage(data, pageNum) {
   }
 
   return `
-  <div class="page page-left" style="box-sizing: border-box; width: 794px; height: 1123px; padding: 22px 24px; font-family: 'Inter', sans-serif; background-color: #ffffff; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;">
+  <div class="page page-left" id="spread-${spreadIndex}" data-spread="${spreadIndex}" data-page="${pageNum}" data-lesson="${data.id}" style="box-sizing: border-box; width: 794px; height: 1123px; padding: 22px 24px; font-family: 'Inter', sans-serif; background-color: #ffffff; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; scroll-margin-top: 65px; position: relative;">
+    <span id="page-${pageNum}" style="position: absolute; top: 0;"></span>
+    <span id="lesson-${data.id}" style="position: absolute; top: 0;"></span>
     <div>
       <!-- Top Header -->
       <div style="border-bottom: 2px solid #0f172a; padding-bottom: 4px; margin-bottom: 8px;">
@@ -4162,7 +4164,7 @@ function renderLeftPage(data, pageNum) {
   `;
 }
 // Render Right Exam Page (Complete Question Coverage & Ruled Writing Lines)
-function renderRightPage(data, pageNum) {
+function renderRightPage(data, pageNum, spreadIndex) {
   const right = data.right;
   const examType = data.examType;
 
@@ -4507,7 +4509,7 @@ function renderRightPage(data, pageNum) {
   }
 
   return `
-  <div class="page page-right" style="box-sizing: border-box; width: 794px; height: 1123px; padding: 22px 24px; font-family: 'Inter', sans-serif; background-color: #ffffff; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;">
+  <div class="page page-right" id="page-${pageNum}" data-spread="${spreadIndex}" data-page="${pageNum}" style="box-sizing: border-box; width: 794px; height: 1123px; padding: 22px 24px; font-family: 'Inter', sans-serif; background-color: #ffffff; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; scroll-margin-top: 65px; position: relative;">
     <div>
       <!-- Top Header -->
       <div style="border-bottom: 2px solid #1e293b; padding-bottom: 4px; margin-bottom: 8px;">
@@ -4539,7 +4541,7 @@ function renderRightPage(data, pageNum) {
 // Render Front Cover Page (Page 1)
 function renderCoverPage() {
   return `
-  <div class="page page-cover" style="box-sizing: border-box; width: 794px; height: 1123px; padding: 24px 28px; font-family: 'Inter', sans-serif; background: #ffffff; color: #0f172a; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; position: relative;">
+  <div class="page page-cover" id="page-1" style="box-sizing: border-box; width: 794px; height: 1123px; padding: 24px 28px; font-family: 'Inter', sans-serif; background: #ffffff; color: #0f172a; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; position: relative; scroll-margin-top: 65px;">
     <div style="position: absolute; top: 12px; left: 12px; right: 12px; bottom: 12px; border: 2px solid #0f172a; border-radius: 8px; pointer-events: none;"></div>
 
     <div style="position: relative; z-index: 2; display: flex; flex-direction: column; flex: 1; justify-content: space-between;">
@@ -4759,7 +4761,7 @@ function renderCoverPage() {
 // Render Inside Front Cover (Page 2)
 function renderInsideCover() {
   return `
-  <div class="page page-inside-front" style="box-sizing: border-box; width: 794px; height: 1123px; padding: 28px 30px; font-family: 'Inter', sans-serif; background: #ffffff; color: #0f172a; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; position: relative;">
+  <div class="page page-inside-front" id="page-2" style="box-sizing: border-box; width: 794px; height: 1123px; padding: 28px 30px; font-family: 'Inter', sans-serif; background: #ffffff; color: #0f172a; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; position: relative; scroll-margin-top: 65px;">
     <div style="position: absolute; top: 14px; left: 14px; right: 14px; bottom: 14px; border: 1.5px solid #0f172a; border-radius: 6px; pointer-events: none;"></div>
 
     <div style="position: relative; z-index: 2;">
@@ -4913,7 +4915,7 @@ function renderInsideCover() {
 // Render Page 3: Pupil Revision Audit & RAG Tracker
 function renderContentsMatrix() {
   return `
-  <div class="page page-contents" style="box-sizing: border-box; width: 794px; height: 1123px; padding: 24px 26px; font-family: 'Inter', sans-serif; background: #ffffff; color: #0f172a; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; position: relative;">
+  <div class="page page-contents" id="page-3" style="box-sizing: border-box; width: 794px; height: 1123px; padding: 24px 26px; font-family: 'Inter', sans-serif; background: #ffffff; color: #0f172a; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; position: relative; scroll-margin-top: 65px;">
     <div style="position: absolute; top: 12px; left: 12px; right: 12px; bottom: 12px; border: 1.5px solid #0f172a; border-radius: 6px; pointer-events: none;"></div>
 
     <div style="position: relative; z-index: 2;">
@@ -5000,7 +5002,7 @@ function renderContentsMatrix() {
 // Render Back Cover (Page 40)
 function renderBackCover() {
   return `
-  <div class="page page-back-cover" style="box-sizing: border-box; width: 794px; height: 1123px; padding: 28px 30px; font-family: 'Inter', sans-serif; background: #ffffff; color: #0f172a; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; position: relative;">
+  <div class="page page-back-cover" id="page-40" style="box-sizing: border-box; width: 794px; height: 1123px; padding: 28px 30px; font-family: 'Inter', sans-serif; background: #ffffff; color: #0f172a; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; position: relative; scroll-margin-top: 65px;">
     <div style="position: absolute; top: 14px; left: 14px; right: 14px; bottom: 14px; border: 1.5px solid #0f172a; border-radius: 6px; pointer-events: none;"></div>
 
     <div style="position: relative; z-index: 2;">
@@ -5146,7 +5148,9 @@ function generateMasterHtml() {
     // Spread 1 starts on page 4 (even/left), right page is page 5 (odd/right)
     const leftPageNum = (idx + 1) * 2 + 2;
     const rightPageNum = leftPageNum + 1;
-    return renderLeftPage(spread, leftPageNum) + renderRightPage(spread, rightPageNum);
+    return (
+      renderLeftPage(spread, leftPageNum, idx + 1) + renderRightPage(spread, rightPageNum, idx + 1)
+    );
   }).join('\n');
 
   return `<!DOCTYPE html>
@@ -5165,6 +5169,9 @@ function generateMasterHtml() {
     * {
       box-sizing: border-box;
     }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       margin: 0;
       padding: 0;
@@ -5180,25 +5187,292 @@ function generateMasterHtml() {
       background: #ffffff;
       page-break-after: always;
       position: relative;
+      scroll-margin-top: 65px;
     }
+
+    /* Floating Navigation Topbar */
+    .masterclass-topbar {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      background: rgba(15, 23, 42, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      padding: 8px 16px;
+      font-family: 'Inter', sans-serif;
+    }
+    .topbar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .topbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .topbar-badge {
+      background: #1d4ed8;
+      color: #ffffff;
+      font-size: 7.5pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+    }
+    .topbar-title {
+      color: #f8fafc;
+      font-size: 9pt;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+    .topbar-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+      justify-content: center;
+      max-width: 580px;
+    }
+    .topbar-label {
+      color: #94a3b8;
+      font-size: 8pt;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .topbar-select {
+      background: #1e293b;
+      color: #ffffff;
+      border: 1px solid #475569;
+      border-radius: 5px;
+      padding: 5px 10px;
+      font-size: 8pt;
+      font-weight: 600;
+      cursor: pointer;
+      outline: none;
+      width: 100%;
+      max-width: 380px;
+    }
+    .topbar-select:focus {
+      border-color: #38bdf8;
+    }
+    .topbar-select optgroup {
+      background: #0f172a;
+      color: #93c5fd;
+      font-weight: 700;
+    }
+    .topbar-select option {
+      background: #1e293b;
+      color: #ffffff;
+      font-weight: 500;
+    }
+    .topbar-btn-group {
+      display: flex;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+    .topbar-btn {
+      background: #334155;
+      color: #f1f5f9;
+      border: 1px solid #475569;
+      border-radius: 5px;
+      padding: 5px 10px;
+      font-size: 8pt;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+    }
+    .topbar-btn:hover {
+      background: #475569;
+      color: #ffffff;
+    }
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .topbar-btn-primary {
+      background: #2563eb;
+      border-color: #3b82f6;
+      color: #ffffff;
+    }
+    .topbar-btn-primary:hover {
+      background: #1d4ed8;
+    }
+    .topbar-btn-outline {
+      background: transparent;
+      border-color: #64748b;
+      color: #cbd5e1;
+    }
+    .topbar-btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+    }
+
     @media print {
       body {
         background: transparent;
+      }
+      .masterclass-topbar {
+        display: none !important;
       }
       .page {
         margin: 0;
         width: 100%;
         height: 100%;
+        scroll-margin-top: 0 !important;
       }
     }
   </style>
 </head>
 <body>
+  <header class="masterclass-topbar">
+    <div class="topbar-inner">
+      <div class="topbar-brand">
+        <span class="topbar-badge">Edexcel GCSE (9–1)</span>
+        <span class="topbar-title">Medicine &amp; Western Front Masterclass</span>
+      </div>
+      <div class="topbar-nav">
+        <label for="spread-selector" class="topbar-label">Jump to:</label>
+        <select id="spread-selector" class="topbar-select" onchange="window.navigateToSpread(this.value)">
+          <option value="page-1">Page 1: Front Cover</option>
+          <option value="page-2">Page 2: Exam Structure &amp; Timing</option>
+          <option value="page-3">Page 3: Specification Matrix &amp; Tracker</option>
+          <optgroup label="Medieval England (c1250–c1500)">
+            <option value="spread-1">Spread 1 (pp. 4–5): KT 1.1 Medieval Ideas &amp; Causes</option>
+            <option value="spread-2">Spread 2 (pp. 6–7): KT 1.2 Medieval Treatment &amp; Care</option>
+            <option value="spread-3">Spread 3 (pp. 8–9): KT 1.3 Case Study: Black Death</option>
+          </optgroup>
+          <optgroup label="The Medical Renaissance (c1500–c1700)">
+            <option value="spread-4">Spread 4 (pp. 10–11): KT 2.1 Renaissance Ideas &amp; Causes</option>
+            <option value="spread-5">Spread 5 (pp. 12–13): KT 2.2 Renaissance Surgery &amp; Vesalius</option>
+            <option value="spread-6">Spread 6 (pp. 14–15): KT 2.3 Harvey &amp; The Great Plague</option>
+          </optgroup>
+          <optgroup label="18th &amp; 19th Century Britain (c1700–c1900)">
+            <option value="spread-7">Spread 7 (pp. 16–17): KT 3.1 Germ Theory &amp; Microbes</option>
+            <option value="spread-8">Spread 8 (pp. 18–19): KT 3.2 Nightingale, Surgery &amp; Public Health Act</option>
+            <option value="spread-9">Spread 9 (pp. 20–21): KT 3.3 Case Studies: Jenner &amp; Cholera</option>
+          </optgroup>
+          <optgroup label="Modern Britain (c1900–present)">
+            <option value="spread-10">Spread 10 (pp. 22–23): KT 4.1 Genetics, Lifestyle &amp; Diagnosis</option>
+            <option value="spread-11">Spread 11 (pp. 24–25): KT 4.2 Magic Bullets, NHS &amp; Prevention</option>
+            <option value="spread-12">Spread 12 (pp. 26–27): KT 4.3 Case Study: Penicillin</option>
+            <option value="spread-13">Spread 13 (pp. 28–29): KT 4.4 Case Study: Lung Cancer</option>
+          </optgroup>
+          <optgroup label="Western Front, 1914–1918">
+            <option value="spread-14">Spread 14 (pp. 30–31): KT 5.1 Historical Context &amp; Terrain</option>
+            <option value="spread-15">Spread 15 (pp. 32–33): KT 5.2 The Trench System</option>
+            <option value="spread-16">Spread 16 (pp. 34–35): KT 5.3 Conditions, Illnesses &amp; Gas</option>
+            <option value="spread-17">Spread 17 (pp. 36–37): KT 5.4 Evacuation Chain, RAMC &amp; FANY</option>
+            <option value="spread-18">Spread 18 (pp. 38–39): KT 5.5 Medical Advances &amp; Treatments</option>
+          </optgroup>
+          <option value="page-40">Page 40: Grade 9 Exam Technique Playbook</option>
+        </select>
+        <div class="topbar-btn-group">
+          <button class="topbar-btn" onclick="window.navPrev()" title="Previous Spread (Left Arrow)">&larr; Prev</button>
+          <button class="topbar-btn" onclick="window.navNext()" title="Next Spread (Right Arrow)">Next &rarr;</button>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <button class="topbar-btn topbar-btn-primary" onclick="window.print()" title="Print or Save PDF">
+          🖨️ Print / Save PDF
+        </button>
+        <a href="/" class="topbar-btn topbar-btn-outline" title="Return to interactive app">
+          ⬅️ App Menu
+        </a>
+      </div>
+    </div>
+  </header>
+
   ${renderCoverPage()}
   ${renderInsideCover()}
   ${renderContentsMatrix()}
   ${pagesHtml}
   ${renderBackCover()}
+
+  <script>
+    window.navigateToSpread = function(targetId) {
+      const el = document.getElementById(targetId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', '#' + targetId);
+      }
+    };
+
+    const navItems = [
+      'page-1', 'page-2', 'page-3',
+      'spread-1', 'spread-2', 'spread-3',
+      'spread-4', 'spread-5', 'spread-6',
+      'spread-7', 'spread-8', 'spread-9',
+      'spread-10', 'spread-11', 'spread-12',
+      'spread-13', 'spread-14', 'spread-15',
+      'spread-16', 'spread-17', 'spread-18',
+      'page-40'
+    ];
+
+    window.navPrev = function() {
+      const sel = document.getElementById('spread-selector');
+      const curIdx = navItems.indexOf(sel.value);
+      if (curIdx > 0) {
+        sel.value = navItems[curIdx - 1];
+        window.navigateToSpread(navItems[curIdx - 1]);
+      }
+    };
+
+    window.navNext = function() {
+      const sel = document.getElementById('spread-selector');
+      const curIdx = navItems.indexOf(sel.value);
+      if (curIdx >= 0 && curIdx < navItems.length - 1) {
+        sel.value = navItems[curIdx + 1];
+        window.navigateToSpread(navItems[curIdx + 1]);
+      }
+    };
+
+    document.addEventListener('keydown', function(e) {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
+      if (e.key === 'ArrowLeft') {
+        window.navPrev();
+      } else if (e.key === 'ArrowRight') {
+        window.navNext();
+      }
+    });
+
+    // Handle URL hash on load
+    window.addEventListener('DOMContentLoaded', function() {
+      const hash = window.location.hash ? window.location.hash.replace('#', '') : '';
+      if (hash) {
+        let target = document.getElementById(hash);
+        if (!target && hash.startsWith('lesson-')) {
+          target = document.querySelector('[data-lesson=\"' + hash.replace('lesson-', '') + '\"]') || document.querySelector('[data-lesson-id=\"' + hash.replace('lesson-', '') + '\"]');
+        }
+        if (target) {
+          setTimeout(function() {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const sel = document.getElementById('spread-selector');
+            if (sel) {
+              const spreadId = target.id.startsWith('spread-') ? target.id : (target.getAttribute('data-spread') ? 'spread-' + target.getAttribute('data-spread') : target.id);
+              if (spreadId && sel.querySelector('option[value=\"' + spreadId + '\"]')) {
+                sel.value = spreadId;
+              }
+            }
+          }, 150);
+        }
+      }
+    });
+  </script>
 </body>
 </html>`;
 }

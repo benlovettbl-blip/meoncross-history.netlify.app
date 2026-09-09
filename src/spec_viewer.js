@@ -1,9 +1,10 @@
 export function initSpecViewer(container, specUrl) {
-  container.innerHTML = '<div style="padding: 40px; text-align: center;"><i class="fa-solid fa-spinner fa-spin fa-3x" style="color: #3b82f6;"></i><p style="margin-top: 15px; color: #64748b; font-size: 1.1rem;">Loading Specification...</p></div>';
-  
+  container.innerHTML =
+    '<div style="padding: 40px; text-align: center;"><i class="fa-solid fa-spinner fa-spin fa-3x" style="color: #3b82f6;"></i><p style="margin-top: 15px; color: #64748b; font-size: 1.1rem;">Loading Specification...</p></div>';
+
   fetch(specUrl)
-    .then(r => r.json())
-    .then(specData => {
+    .then((r) => r.json())
+    .then((specData) => {
       const formatBold = (text) => {
         if (!text) return '';
         return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
@@ -21,11 +22,81 @@ export function initSpecViewer(container, specUrl) {
             <i class="fa-solid fa-list-check" style="color: #3b82f6; margin-right: 15px;"></i>
             ${specData.title || 'Specification'}
           </h1>
-          ${specData.subtitle ? `<p style="font-size: 1.2rem; color: #64748b; margin-bottom: 30px; font-weight: 500;">${specData.subtitle}</p>` : ''}
+          ${specData.subtitle ? `<p style="font-size: 1.2rem; color: #64748b; margin-bottom: 25px; font-weight: 500;">${specData.subtitle}</p>` : ''}
+          ${
+            specData.exam_structure
+              ? `
+            <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 10px; padding: 20px 24px; margin-bottom: 35px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #1e3a8a; padding-bottom: 8px; margin-bottom: 15px;">
+                <h2 style="color: #1e3a8a; font-size: 1.35rem; margin: 0; font-weight: 800; display: flex; align-items: center; gap: 8px;">
+                  <i class="fa-solid fa-graduation-cap" style="color: #2563eb;"></i> Official Examination Format &amp; Marking Rules
+                </h2>
+                <div style="display: flex; gap: 8px;">
+                  <span style="background: #eff6ff; color: #1e3a8a; font-size: 0.85rem; font-weight: 700; padding: 3px 10px; border-radius: 4px; border: 1px solid #bfdbfe;">
+                    ${specData.exam_structure.duration_minutes} Mins
+                  </span>
+                  <span style="background: #eff6ff; color: #1e3a8a; font-size: 0.85rem; font-weight: 700; padding: 3px 10px; border-radius: 4px; border: 1px solid #bfdbfe;">
+                    ${specData.exam_structure.total_marks} Marks (${specData.exam_structure.weighting || '30%'})
+                  </span>
+                </div>
+              </div>
+              <p style="font-size: 0.95rem; color: #334155; margin-bottom: 16px; line-height: 1.5;">${specData.exam_structure.overview || ''}</p>
+              
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                <!-- Section A Card -->
+                <div style="background: white; border: 1.5px solid #93c5fd; border-radius: 8px; padding: 14px 16px;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px; margin-bottom: 10px;">
+                    <strong style="color: #1e3a8a; font-size: 1rem;">${specData.exam_structure.section_a.title}</strong>
+                    <span style="background: #dbeafe; color: #1d4ed8; font-size: 0.78rem; font-weight: 700; padding: 2px 6px; border-radius: 3px;">${specData.exam_structure.section_a.total_marks} Marks &bull; ${specData.exam_structure.section_a.recommended_time_mins} Mins</span>
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem; color: #334155;">
+                    ${specData.exam_structure.section_a.questions
+                      .map(
+                        (q) => `
+                      <div style="background: #f8fafc; border-left: 3px solid #3b82f6; padding: 6px 10px; border-radius: 0 4px 4px 0;">
+                        <div style="display: flex; justify-content: space-between; font-weight: 700; color: #0f172a; margin-bottom: 2px;">
+                          <span>${q.number}</span>
+                          <span style="color: #2563eb;">[${q.tariff}]</span>
+                        </div>
+                        <div style="font-size: 0.84rem; color: #475569; line-height: 1.4;">${q.focus}</div>
+                      </div>
+                    `,
+                      )
+                      .join('')}
+                  </div>
+                </div>
+
+                <!-- Section B Card -->
+                <div style="background: white; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 14px 16px;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px; margin-bottom: 10px;">
+                    <strong style="color: #0f172a; font-size: 1rem;">${specData.exam_structure.section_b.title}</strong>
+                    <span style="background: #f1f5f9; color: #0f172a; font-size: 0.78rem; font-weight: 700; padding: 2px 6px; border-radius: 3px;">${specData.exam_structure.section_b.total_marks} Marks &bull; ${specData.exam_structure.section_b.recommended_time_mins} Mins</span>
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem; color: #334155;">
+                    ${specData.exam_structure.section_b.questions
+                      .map(
+                        (q) => `
+                      <div style="background: #f8fafc; border-left: 3px solid #0f172a; padding: 6px 10px; border-radius: 0 4px 4px 0;">
+                        <div style="display: flex; justify-content: space-between; font-weight: 700; color: #0f172a; margin-bottom: 2px;">
+                          <span>${q.number}</span>
+                          <span style="color: #0f172a;">[${q.tariff}]</span>
+                        </div>
+                        <div style="font-size: 0.84rem; color: #475569; line-height: 1.4;">${q.focus}</div>
+                      </div>
+                    `,
+                      )
+                      .join('')}
+                  </div>
+                </div>
+              </div>
+            </div>
+          `
+              : ''
+          }
       `;
 
       if (specData.sections) {
-        specData.sections.forEach(section => {
+        specData.sections.forEach((section) => {
           html += `
             <div style="margin-bottom: 40px;">
               <h2 style="color: #0f172a; font-size: 1.7rem; background: #f8fafc; padding: 18px 20px; border-radius: 8px; border-left: 5px solid #3b82f6; margin-bottom: 25px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
@@ -33,7 +104,7 @@ export function initSpecViewer(container, specUrl) {
               </h2>
           `;
           if (section.topics) {
-            section.topics.forEach(topic => {
+            section.topics.forEach((topic) => {
               html += `
                 <div style="margin-bottom: 30px; margin-left: 15px;">
                   <h3 style="color: #1e293b; font-size: 1.35rem; margin-bottom: 15px; border-bottom: 2px solid #f1f5f9; padding-bottom: 8px; display: inline-block;">
@@ -79,43 +150,47 @@ export function initSpecViewer(container, specUrl) {
       // --- RAG State Management ---
       const unitId = window.currentUnitId || 'unknown_unit';
       const ragStorageKey = `spec_rag_${unitId}`;
-      
+
       // Load saved state
       let savedRagState = {};
       try {
-         const stored = localStorage.getItem(ragStorageKey);
-         if (stored) savedRagState = JSON.parse(stored);
-      } catch(e) { console.error("Could not load RAG state", e); }
+        const stored = localStorage.getItem(ragStorageKey);
+        if (stored) savedRagState = JSON.parse(stored);
+      } catch (e) {
+        console.error('Could not load RAG state', e);
+      }
 
       // Apply saved state visually
-      Object.keys(savedRagState).forEach(id => {
-         const color = savedRagState[id];
-         const btn = document.getElementById(`btn-${color}-${id}`);
-         if (btn) btn.style.opacity = '1';
+      Object.keys(savedRagState).forEach((id) => {
+        const color = savedRagState[id];
+        const btn = document.getElementById(`btn-${color}-${id}`);
+        if (btn) btn.style.opacity = '1';
       });
 
       // Global click handler for RAG buttons
-      window.setSpecRag = function(id, color) {
-         // Reset all buttons for this item
-         ['red', 'amber', 'green'].forEach(c => {
-            const btn = document.getElementById(`btn-${c}-${id}`);
-            if (btn) btn.style.opacity = '0.3';
-         });
-         
-         // Set active button
-         const activeBtn = document.getElementById(`btn-${color}-${id}`);
-         if (activeBtn) activeBtn.style.opacity = '1';
+      window.setSpecRag = function (id, color) {
+        // Reset all buttons for this item
+        ['red', 'amber', 'green'].forEach((c) => {
+          const btn = document.getElementById(`btn-${c}-${id}`);
+          if (btn) btn.style.opacity = '0.3';
+        });
 
-         // Save to local storage
-         savedRagState[id] = color;
-         try {
-            localStorage.setItem(ragStorageKey, JSON.stringify(savedRagState));
-         } catch(e) { console.error("Could not save RAG state", e); }
+        // Set active button
+        const activeBtn = document.getElementById(`btn-${color}-${id}`);
+        if (activeBtn) activeBtn.style.opacity = '1';
+
+        // Save to local storage
+        savedRagState[id] = color;
+        try {
+          localStorage.setItem(ragStorageKey, JSON.stringify(savedRagState));
+        } catch (e) {
+          console.error('Could not save RAG state', e);
+        }
       };
-
     })
-    .catch(err => {
+    .catch((err) => {
       console.error('Error loading specification:', err);
-      container.innerHTML = '<div style="padding: 40px; text-align: center; color: #ef4444;"><i class="fa-solid fa-triangle-exclamation fa-3x" style="margin-bottom: 15px;"></i><p style="font-size: 1.2rem;">Failed to load the specification data.</p></div>';
+      container.innerHTML =
+        '<div style="padding: 40px; text-align: center; color: #ef4444;"><i class="fa-solid fa-triangle-exclamation fa-3x" style="margin-bottom: 15px;"></i><p style="font-size: 1.2rem;">Failed to load the specification data.</p></div>';
     });
 }

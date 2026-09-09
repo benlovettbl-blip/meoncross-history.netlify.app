@@ -476,6 +476,11 @@ export function renderLesson(lesson) {
               <button class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.88rem; background: white; color: #1e3a8a; border: 1.5px solid #cbd5e1; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); cursor: pointer;" data-action="switch-view" data-view="lessons" data-unit="${appStore.state.selectedUnitId || window.currentUnitId || 'trip_ypres'}"><i class="fa-solid fa-arrow-left" style="margin-right: 6px;"></i> Itinerary</button>
             `
               : `
+              ${
+                unitId === 'edexcel_medicine' && currentIndex >= 0
+                  ? `<a href="/units/edexcel_medicine/visual_revision_guide.html#spread-${currentIndex + 1}" target="_blank" class="btn" style="padding: 6px 12px; font-size: 0.88rem; background: #eff6ff; color: #1e3a8a; border: 1.5px solid #bfdbfe; font-weight: 700; text-decoration: none; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: inline-flex; align-items: center; gap: 6px;" title="Jump directly to this lesson's visual revision spread and exam model in the Masterclass Guide"><i class="fa-solid fa-book-open"></i> Revision Masterclass (Spread ${currentIndex + 1})</a>`
+                  : ''
+              }
               <button class="btn" style="padding: 6px 12px; font-size: 0.9rem; background: white; color: #0f172a; border: 1px solid rgba(0,0,0,0.1); font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.05);" data-action="open-debate-modal"><i class="fa-solid fa-comments" style="color: #3b82f6;"></i> Class Debate</button>
               <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem; background: white; border: 1px solid rgba(0,0,0,0.1); box-shadow: 0 2px 5px rgba(0,0,0,0.05);" data-action="open-task-whiteboard" title="Teacher Whiteboard / Live Marking"><i class="fa-solid fa-person-chalkboard" style="color: #0284c7;"></i> Whiteboard</button>
               <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem; background: white; border: 1px solid rgba(0,0,0,0.1);" data-action="switch-view" data-view="lessons" data-unit="${appStore.state.selectedUnitId || window.currentUnitId || 'gcse_usa_1954_1975'}"><i class="fa-solid fa-arrow-left"></i> Unit Menu</button>

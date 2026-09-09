@@ -285,6 +285,19 @@ export function renderSidebar() {
       (document.getElementById('content-area') || window).scrollTo({ top: 0, behavior: 'smooth' });
     });
     navContainer.appendChild(thematicLink);
+
+    // Visual Revision Masterclass (40-Page Guide) Link
+    const masterclassLink = document.createElement('a');
+    masterclassLink.className = 'lesson-link';
+    masterclassLink.innerHTML =
+      '<i class="fa-solid fa-book-open" style="margin-right: 8px; color: #3b82f6;"></i> 📖 Visual Revision Masterclass (40 Pages)';
+    masterclassLink.style.background = 'rgba(59, 130, 246, 0.1)';
+    masterclassLink.style.borderLeft = '3px solid #3b82f6';
+    masterclassLink.style.fontWeight = '600';
+    masterclassLink.href = '/units/edexcel_medicine/visual_revision_guide.html';
+    masterclassLink.target = '_blank';
+    masterclassLink.title = 'Open the 40-Page Visual Revision & Exam Assessment Masterclass Guide';
+    navContainer.appendChild(masterclassLink);
   }
 
   if (

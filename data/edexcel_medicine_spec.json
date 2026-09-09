@@ -1,6 +1,58 @@
 {
   "title": "Pearson Edexcel GCSE (9–1) History Specification",
   "subtitle": "Option 11: Medicine in Britain, c1250–present and The British sector of the Western Front, 1914–18: injuries, treatment and the trenches",
+  "exam_structure": {
+    "paper_code": "1HI0/11",
+    "paper_name": "Paper 1: Thematic Study and Historic Environment",
+    "total_marks": 52,
+    "duration_minutes": 75,
+    "weighting": "30% of total GCSE",
+    "overview": "Section A tests the Historic Environment (Western Front) through source utility, feature questions, and follow-up enquiry. Section B tests thematic change and continuity across 750 years through similarity/difference, explanation, and an extended judgement essay.",
+    "section_a": {
+      "title": "Section A: Historic Environment — Western Front, 1914–18",
+      "total_marks": 16,
+      "recommended_time_mins": 25,
+      "questions": [
+        {
+          "number": "Question 1(a) & 1(b)",
+          "tariff": "4 marks (2 marks + 2 marks)",
+          "focus": "Describe one feature of... (1 mark for valid feature, 1 mark for specific historical supporting detail). NOTE: Feature questions appear ONLY in Section A on Paper 1."
+        },
+        {
+          "number": "Question 2(a)",
+          "tariff": "8 marks",
+          "focus": "How useful are Sources A and B for an enquiry into... (Evaluate content details, own contextual knowledge, and provenance: Nature, Origin, Purpose for both sources, reaching a sustained comparative judgement)."
+        },
+        {
+          "number": "Question 2(b)",
+          "tariff": "4 marks",
+          "focus": "How could you follow up Source A to find out more about... (4-part table: Detail quoted [1m], Enquiry question [1m], Specific contemporary source type [1m], How it helps [1m])."
+        }
+      ]
+    },
+    "section_b": {
+      "title": "Section B: Thematic Study — Medicine in Britain, c1250–present",
+      "total_marks": 36,
+      "recommended_time_mins": 50,
+      "questions": [
+        {
+          "number": "Question 3",
+          "tariff": "4 marks",
+          "focus": "Explain one way in which [medical theme] in [Period 1] was similar/different to [Period 2]... (1 fully developed comparative PEEL paragraph linking both eras)."
+        },
+        {
+          "number": "Question 4",
+          "tariff": "12 marks",
+          "focus": "Explain why... (3 fully developed analytical PEEL paragraphs: 2 stimulus points + 1 factor of own knowledge beyond stimulus)."
+        },
+        {
+          "number": "Question 5 or Question 6 (Choice)",
+          "tariff": "16 marks + 4 marks SPaG = 20 marks",
+          "focus": "Judgement statement essay spanning 150–300+ years. Introduction with criteria, 3 balanced thematic PEEL paragraphs, and sustained comparative conclusion."
+        }
+      ]
+    }
+  },
   "sections": [
     {
       "id": "section-a",
@@ -9,35 +61,47 @@
         {
           "title": "1. The Context of the British Sector of the Western Front",
           "points": [
-            "**Key Battles and Locations:** The theatre of war in Flanders and northern France, specifically understanding the Ypres salient, the Somme, Arras and Cambrai.",
-            "**The Trench System:** Its organisation and construction, including frontline, support, reserve and communication trenches.",
-            "**Terrain and Transport:** The nature of the terrain (e.g. deep mud, craters) and how this created massive problems for transport and communications infrastructure when moving the wounded."
+            "**The Historical Context of Medicine in the Early Twentieth Century:** The understanding of infection and moves towards aseptic surgery (autoclaves, rubber gloves, surgical gowns); the development of X-rays (Wilhelm Roentgen 1895, early diagnostic use, radiation hazards); blood transfusions and developments in the storage of blood (James Blundell 1818, Karl Landsteiner blood groups A, B, O in 1901 and AB in 1902, problem of coagulation preventing pre-war storage).",
+            "**The Theatre of War in Flanders and Northern France:** The context of the British sector of the Western Front: the vulnerable Ypres salient (surrounded by higher German ridges; First Ypres 1914, Second Ypres 1915 with first poison gas, Third Ypres/Passchendaele 1917 with waterlogged liquid mud; mining at Hill 60), the Somme (July 1916, 57,000 day 1 casualties), Arras (April 1917, chalk quarries and 2.5 miles of tunnels), and Cambrai (November 1917, mass tank deployment).",
+            "**The Trench System — Organisation and Construction:** Frontline firing trenches (firestep, sandbag parapet, parados), support trenches (80m behind), reserve trenches (100m+ behind), and communication trenches linking them for safe movement of troops, supplies, and wounded. Zigzag traverse design to localise artillery shell blasts and prevent enfilade rifle fire.",
+            "**Terrain, Transport, and Communications Infrastructure:** The catastrophic impact of waterlogged clay, destroyed natural drainage, and massive artillery cratering. Problems for medical evacuation: heavy motor ambulances getting bogged down, reliance on 6-horse ambulance wagons, and stretcher-bearers navigating liquid mud under fire. Communication problems: artillery severing telephone cables, forcing medical staff to rely on runner messengers, carrier pigeons, and visual flags under fire."
           ]
         },
         {
           "title": "2. Conditions Requiring Medical Treatment",
           "points": [
-            "**Trench Illnesses:** Ill health arising from the trench environment, specifically Trench Foot, Trench Fever and Shell Shock (NYD.N).",
-            "**Weapons and Wounds:** The nature of wounds caused by rifles and high explosives. The specific problems caused by shrapnel, the high rate of wound infection (such as gas gangrene from the heavily manured soil) and the increased number of head injuries.",
-            "**Gas Attacks:** The effects of different types of poison gas (Chlorine, Phosgene and Mustard gas)."
+            "**Ill Health Arising from the Trench Environment:** Trench foot (cold waterlogged mud, restricted circulation, gangrene; treated with whale oil, dry socks, pair inspections, amputation); Trench fever (pyrexia, body lice in clothing seams, flu-like aches; treated with delousing stations, affected 500,000 men); Shell shock / NYD.N ('Not Yet Diagnosed, Nervous' — severe psychological trauma, tremors, mental collapse; 80,000 casualties treated at Craiglockhart Hospital, Edinburgh).",
+            "**The Nature of Wounds from Modern Weaponry:** High-explosive artillery shells and shrapnel (jagged metal fragments, causing 58% of all wounds and massive trauma); machine guns and rifles (causing 39% of wounds, shattering bones and piercing organs).",
+            "**The Problem of Wound Infection:** Deeply fertilised agricultural soil packed with anaerobic manure bacteria causing lethal tetanus and gas gangrene (rapid tissue necrosis and gas bubbles; anti-tetanus serum introduced late 1914; failure of peacetime antiseptics).",
+            "**Head Injuries and the Brodie Helmet:** High exposure of head in trenches; introduction of the steel Brodie helmet with chin strap in 1915, which reduced fatal head injuries by 80%.",
+            "**The Effects of Poison Gas Attacks:** Chlorine gas (Second Ypres, April 1915, suffocation and pulmonary edema; urine pads used before gas masks); Phosgene gas (December 1915, faster-acting and highly lethal); Mustard gas (1917, odourless blister agent burning skin through clothing and causing temporary blindness). Overall gas mortality kept under 5% by rapid introduction of box respirators."
           ]
         },
         {
           "title": "3. Medical Treatment and the Chain of Evacuation",
           "points": [
-            "**Medical Personnel:** The work of the Royal Army Medical Corps (RAMC) and nursing volunteers like the First Aid Nursing Yeomanry (FANY).",
-            "**Transporting the Wounded:** The roles of stretcher-bearers, horse-drawn ambulances, motor ambulances, and ambulance trains/barges.",
-            "**The Chain of Evacuation:** The specific stages of treatment, including: Regimental Aid Posts (RAP), Field Ambulances and Dressing Stations (ADS/MDS), Casualty Clearing Stations (CCS), Base Hospitals.",
-            "**Specific Facilities:** The fully equipped underground hospital built in the tunnels at Arras."
+            "**The Work of the RAMC and FANY:** The Royal Army Medical Corps (expanded from 9,000 in 1914 to 113,000 in 1918) responsible for medical care and sanitation; First Aid Nursing Yeomanry (FANY, founded 1907, first women's voluntary organisation to drive frontline motor ambulances, run mobile bath units, and operate supply canteens).",
+            "**Transporting the Wounded:** Stretcher-bearers (teams of 4–6 navigating deep mud), horse-drawn ambulance wagons, motor ambulances (512 funded by The Times appeal in October 1914), ambulance trains, and canal barges moving casualties to coastal Base Hospitals.",
+            "**The Stages of the Chain of Evacuation:** (1) Regimental Aid Post (RAP, within 200m of frontline, first aid from Regimental Medical Officer); (2) Field Ambulance & Dressing Stations (ADS/MDS, 400m to half a mile back, temporary triage and emergency treatment); (3) Casualty Clearing Station (CCS, 7–12 miles back near railheads, priority triage into walking wounded, hospital cases, and moribund; performed urgent forward surgery for gas gangrene and compound fractures); (4) Base Hospitals (coastal ports at Calais, Boulogne, Le Havre; specialist wards for head wounds, burns, and gas; evacuation to 'Blighty').",
+            "**Specific Facilities:** The underground hospital at Arras ('Thompson's Cave' inside 800m of chalk tunnels, 700 stretcher beds, operating theatres, mortuary, electricity, and piped water, completely protected from artillery)."
           ]
         },
         {
-          "title": "4. Medical Advances",
+          "title": "4. Medical Advances and Experiments in Surgery",
           "points": [
-            "**The Significance of the Western Front for Experiments in Surgery and Medicine:** New techniques in the treatment of wounds and infection (such as the Carrel-Dakin method and debridement/excision).",
-            "The Thomas splint.",
-            "The use of mobile X-ray units.",
-            "The creation of a blood bank for the Battle of Cambrai."
+            "**New Surgical Techniques for Wounds and Infection:** Debridement (wound excision: surgically cutting away dead, damaged, and infected tissue); the Carrel-Dakin method (continuous irrigation of deep wounds with sterilised sodium hypochlorite solution through rubber tubes); amputation as a last resort against spreading gas gangrene (over 240,000 British amputees).",
+            "**The Thomas Splint:** Introduced to the Western Front in December 1915 by Robert Jones (designed by Hugh Owen Thomas). Held broken femur bones in rigid traction, preventing internal haemorrhage and surgical shock, increasing survival rates from 20% to over 82%.",
+            "**The Use of Mobile X-Ray Units:** Six mobile X-ray vans deployed in the British sector to locate bullets and shrapnel at CCS before surgery; limitations included fragile glass tubes, tube overheating after one hour, and inability to detect embedded uniform cloth.",
+            "**Blood Transfusions and the Cambrai Blood Bank:** Indirect syringe-cannula transfusions (Lawrence Bruce Robertson 1915); chemical anticoagulants: sodium citrate (Richard Lewisohn 1915), refrigerated storage for 2 days (Richard Weil 1915), citrate glucose allowing storage for up to 4 weeks (Francis Rous and James Turner 1916); creation of the world's first blood depot by Oswald Hope Robertson at the Battle of Cambrai (1917, 22 units of stored universal group O blood in ice boxes).",
+            "**Brain Surgery and Plastic Surgery Advances:** Harvey Cushing (pioneered brain surgery techniques at CCS, using local anaesthetic to reduce brain swelling and electromagnets/suction to remove shrapnel, reducing mortality to 29%); Harold Gillies (pioneered facial plastic surgery at Queen's Hospital, Sidcup, developing the tube pedicle skin graft for disfigured soldiers, performing over 11,000 operations)."
+          ]
+        },
+        {
+          "title": "5. Historical Sources and Enquiry Skills (Historic Environment)",
+          "points": [
+            "**Contemporary Records for the Western Front:** National, local, and personal historical sources: Army service records, hospital admission and discharge registers, casualty clearing station operational logs, personal diaries and letters (e.g. Pat Beauchamp, Elmer Cotton, Harvey Cushing), unit war diaries of the RAMC, medical statistics, and official photographs.",
+            "**Evaluating Source Utility:** Analysing primary sources by critically evaluating their content, comparing them against verified contextual knowledge, and examining their provenance (Nature: type of record; Origin: author and date; Purpose: reason for creation and potential bias).",
+            "**Formulating Follow-Up Enquiries:** Methodically following up a source to investigate a specific historical question: (1) Quoting a specific detail directly from the source; (2) Framing a precise, analytical question; (3) Naming a specific contemporary record type; (4) Explaining exactly how that record would help answer the question."
           ]
         }
       ]
@@ -49,48 +113,38 @@
         {
           "title": "Unit 1: Medicine in Medieval England, c1250–c1500",
           "points": [
-            "**Ideas about the Cause of Disease and Illness:** Supernatural and religious explanations of the cause of disease.",
-            "Rational explanations: the Theory of the Four Humours and the miasma theory.",
-            "The continuing influence in England of Galen.",
-            "**Approaches to Prevention and Treatment:** Connection with ideas about disease: religious actions, bloodletting and purging, purifying the air.",
-            "Traditional approaches to treatment and care: the role of the physician, apothecary and barber surgeon; the role of hospitals, care within the community and at home, including the use of herbal remedies.",
-            "**Case Study:** Dealing with the Black Death, 1348–49: approaches to treatment and attempts to prevent its spread."
+            "**Ideas about the Cause of Disease and Illness:** Supernatural and religious explanations: disease as divine retribution from God for sin, test of faith, or demonic influence; astrology and planetary alignments (e.g. 1345 alignment of Mars, Jupiter, and Saturn blamed for Black Death). Rational explanations: Hippocrates' Theory of the Four Humours (blood, phlegm, yellow bile, black bile; illness caused by internal imbalance); the Miasma theory (bad air and poisonous vapours corrupted by rotting matter). The continuing authority of Galen (Theory of Opposites; Church control of universities and monasteries enforcing Galenic dogma; ban on human dissection).",
+            "**Approaches to Prevention and Treatment:** Treatments linked to beliefs: religious actions (prayer, fasting, pilgrimage, flagellation, touching relics); humoural treatments: bloodletting (phlebotomy via venesection, cupping, and leeches) and purging (emetics, laxatives, clysters); purifying the air (pomanders, sweet herbs, street fires); traditional herbal remedies (Theriaca, Materia Medica). Traditional practitioners: university-trained physicians (7–10 years study, urine charts, astrology, expensive, 'care not cure'); apothecaries (herbal mixtures, accessible to ordinary people); barber surgeons (apprenticeship, tooth-pulling, bloodletting, basic amputations). Role of hospitals (c1,100 by 1500, run by Church monks and nuns, hospitality and rest, infectious/terminal patients rejected); care in the community and home by women.",
+            "**Case Study: Dealing with the Black Death, 1348–49:** Arrival of epidemic in 1348, wiping out one-third to half of the population; symptoms (buboes in groin/armpits, fever, spitting blood); beliefs about causes (God's punishment, 1345 astrological alignment, miasma, poisoning of wells); treatment attempts (bloodletting, purging, lancing buboes, strapping toads, herbal theriaca); prevention methods: religious flagellants, carrying posies, street fires, flight ('go quickly, go far, return slowly'); local government action (King Edward III orders to clean streets of dung, early quarantines, shutting houses)."
           ]
         },
         {
           "title": "Unit 2: The Medical Renaissance in England, c1500–c1700",
           "points": [
-            "**Ideas about the Cause of Disease and Illness:** Continuity and change in explanations of the cause of disease and illness.",
-            "A scientific approach, including the work of Thomas Sydenham in improving diagnosis.",
-            "The influence of the printing press and the work of the Royal Society on the transmission of ideas.",
-            "**Approaches to Prevention and Treatment:** Continuity in treatments, the changing role of hospitals, and the work of apothecaries and surgeons.",
-            "Discoveries in anatomy: the work of Andreas Vesalius and William Harvey.",
-            "**Case Study:** Dealing with the Great Plague in London, 1665: approaches to treatment and attempts to prevent its spread."
+            "**Ideas about the Cause of Disease and Illness:** Continuity and change: gradual decline in supernatural beliefs; persistence of humoural and miasma theories among ordinary public and practitioners. Development of a scientific approach: Humanism, empirical observation, and experimentation; work of Thomas Sydenham ('English Hippocrates', bedside observation, classifying illnesses into distinct species, Observationes Medicae 1676). The influence of the printing press (movable type by Gutenberg/Caxton, rapid dissemination of medical texts free from Church censorship); the Royal Society (founded 1660, motto 'Nullius in Verba' — take nobody's word for it; scientific journal Philosophical Transactions 1665).",
+            "**Approaches to Prevention, Treatment, and Care:** Continuity in ordinary treatments (Four Humours, bleeding, purging); new chemical cures (iatrochemistry, Paracelsus) and New World remedies (cinchona bark/quinine for malaria, ipecacuanha, tobacco). Changing role of hospitals: Henry VIII's Dissolution of the Monasteries (1536) closed religious hospitals; secular refoundation of St Bartholomew's and St Thomas's; opening of specialized pest houses for infectious diseases. Improvements in medical training: dissection becoming standard in universities, anatomical theatres.",
+            "**Case Study: Andreas Vesalius and Discoveries in Anatomy:** Andreas Vesalius (De Humani Corporis Fabrica 1543, precise human dissections with Titian's workshop artists; corrected over 300 of Galen's animal-based errors including human jawbone, breastbone, and liver; sparked empirical anatomical inquiry in England despite traditionalist backlash; zero immediate surgical cures).",
+            "**Case Study: William Harvey and the Circulation of Blood:** William Harvey (De Motu Cordis 1628; proved blood circulates continuously pumped by the heart; calculated blood volume; proved veins have one-way valves; disproved Galen's theory that blood was manufactured in the liver and burned up as fuel; short-term limitations: transfusions impossible without blood groups, but established mechanical physiology).",
+            "**Case Study: Dealing with the Great Plague in London, 1665:** Return of epidemic killing 100,000 (20% of London); continuity in beliefs (miasma, God's wrath, alignment of Saturn and Jupiter); treatments: bleeding, purging, plague water, strapping plucked chickens to buboes; government and civic measures: Lord Mayor's orders, red cross painted on doors ('Lord Have Mercy Upon Us'), locking up infected families for 28 days, searchers of the dead, mass burial pits, slaughter of 40,000 dogs and 200,000 cats, burning barrels of pitch, banning theatrical assemblies."
           ]
         },
         {
-          "title": "Unit 3: Medicine in 18th & 19th Century Britain, c1700–c1900",
+          "title": "Unit 3: Medicine in 18th- and 19th-Century Britain, c1700–c1900",
           "points": [
-            "**Ideas about the Cause of Disease and Illness:** Explanations of the cause of disease and illness: the influence of the Enlightenment and spontaneous generation.",
-            "Louis Pasteur’s Germ Theory and its impact.",
-            "Robert Koch’s work on microbes.",
-            "**Approaches to Prevention and Treatment:** The development of hospitals, the work of Florence Nightingale.",
-            "The development of anaesthetics (James Simpson) and antiseptics (Joseph Lister).",
-            "Edward Jenner and the development of the first smallpox vaccination.",
-            "The Public Health Act 1875.",
-            "**Case Study:** Dealing with Cholera in London, 1854: John Snow’s work on the Broad Street pump and its significance."
+            "**Ideas about the Cause of Disease and Illness:** Continuity in early period: spontaneous generation (microbes appear spontaneously in decaying matter) and miasma. Louis Pasteur's Germ Theory (1861, swan-neck flask experiments proved airborne microbes cause decay and fermentation; 1878 germ theory of disease); reception in Britain: initial resistance from Dr Charlton Bastian and traditionalists, gradual acceptance through John Tyndall (1870s) and Joseph Lister. Robert Koch's work on microbes: 'microbe hunting', agar jelly culture plates, industrial chemical dyes to photograph bacteria; isolated specific disease pathogens: anthrax (1876), tuberculosis (1882), and cholera (1883).",
+            "**Approaches to Prevention, Treatment, and Hospital Care:** Improvements in hospitals: Florence Nightingale (Crimean War 1854, Notes on Nursing 1859, pavilion hospital design, sanitation, ventilation, professional nurse training school at St Thomas's; mortality dropped from 40% to 2%). Development of anaesthetics: laughing gas (1844), ether (1846), James Simpson and chloroform (1847); opposition to anaesthetics (pain seen as God's will, danger of overdose); Queen Victoria's use of chloroform in childbirth (1853); surgical 'Black Period' as deeper operations caused infection. Development of antiseptics: Joseph Lister and carbolic acid spray (1865/1867, inspired by Pasteur, cut surgical mortality from 46% to 15%); transition by 1890s to aseptic surgery (autoclaves, rubber gloves, sterile gowns). Public Health reform: Edwin Chadwick's report (1842), Public Health Act 1848 (permissive); Great Stink (1858) and Joseph Bazalgette's London sewer network; Public Health Act 1875 (compulsory provision of clean water, sewers, street lighting, food inspection, medical officers).",
+            "**Case Study: Edward Jenner and Smallpox Vaccination:** Smallpox epidemic devastation and risks of inoculation (Lady Mary Wortley Montagu); Edward Jenner (1796, cowpox giving immunity against smallpox; James Phipps clinical test; published 1798); opposition to vaccination: Anti-Vaccination League, Royal Society skepticism, fear of animal contamination; government support: Parliamentary grants (£30,000 in 1802/1807), compulsory smallpox vaccination in 1852, leading to global eradication.",
+            "**Case Study: John Snow and Fighting Cholera in London, 1854:** Cholera outbreaks in Britain (1831, 1848, 1853–54; rapid death from dehydration); Dr John Snow (1854 Broad Street pump outbreak in Soho; geographic dot mapping of 500+ deaths; proved cholera was waterborne from Broad Street pump contaminated by a leaking cesspool; removed pump handle, ending local outbreak; disproved miasma; led to Bazalgette's sewer construction)."
           ]
         },
         {
           "title": "Unit 4: Medicine in Modern Britain, c1900–present",
           "points": [
-            "**Ideas about the Cause of Disease and Illness:** Advances in understanding the causes of illness and disease: the influence of genetic and lifestyle factors on health.",
-            "Improvements in diagnosis: the impact of the availability of blood tests, scans and monitors.",
-            "**Approaches to Prevention and Treatment:** The extent of change in care and treatment.",
-            "The impact of the NHS and science and technology: improved access to care; advances in medicines, including magic bullets and antibiotics; high-tech medical and surgical treatment in hospitals.",
-            "New approaches to prevention: mass vaccinations and government lifestyle campaigns.",
-            "**Case Study:** Key individuals: Fleming, Florey and Chain’s development of penicillin.",
-            "The fight against lung cancer in the twenty-first century: the use of science and technology in diagnosis and treatment; government action."
+            "**Advances in Understanding Causes: Genetics, Lifestyle, and Diagnosis:** Discovery of DNA and genetics: Gregor Mendel's laws rediscovered; structure of DNA double helix discovered in 1953 by James Watson, Francis Crick, Rosalind Franklin, and Maurice Wilkins; Human Genome Project (1990–2003, mapped 3 billion DNA base pairs, gene therapy, understanding hereditary illnesses like cystic fibrosis and BRCA gene mutations). Influence of lifestyle factors: scientific proof that smoking, excessive alcohol, poor diet, lack of exercise, UV exposure, and recreational drugs directly cause disease. Improvements in diagnostic science: blood tests (cholesterol, blood glucose, biomarkers), high-tech imaging: X-rays, CT scans (Godfrey Hounsfield 1972), MRI scans (1970s), ultrasound, PET-CT scans, endoscopes, and digital home health monitors.",
+            "**Advances in Prevention and Treatment:** The first magic bullets: synthetic chemical compounds targeting specific bacteria without harming healthy human cells: Paul Ehrlich and Salvarsan 606 (1909, syphilis); Gerhard Domagk and Prontosil (1932, sulfonamide cure for streptococcal blood poisoning). Development of synthetic antibiotics. High-tech medical and surgical hospital treatments: radiotherapy, chemotherapy, advanced surgical procedures: kidney transplant (1954), Christian Barnard's human heart transplant (1967), hip replacements (John Charnley 1972), keyhole surgery, robotic surgery (da Vinci system).",
+            "**The National Health Service (NHS) and Government Prevention:** Creation of the NHS (5 July 1948, Health Minister Aneurin Bevan, William Beveridge's 1942 report; universal free healthcare at point of delivery; nationalised 3,000 hospitals; massive surge in GP access for women and children). New approaches to prevention: compulsory/mass vaccination programmes (diphtheria 1940, polio 1956, measles 1968, MMR 1988, HPV 2008); public health education campaigns: AIDS 'Don't Die of Ignorance' (1986), Change4Life, sugar tax, public indoor smoking ban (2007).",
+            "**Case Study: Fleming, Florey, and Chain’s Development of Penicillin:** Alexander Fleming (1928 accidental discovery of Penicillium notatum mold destroying staphylococcus bacteria; published 1929; unable to purify or secure funding); Howard Florey and Ernst Chain at Oxford University (1938–1940, successfully purified penicillin; mouse protection tests; clinical human trial on Albert Alexander 1941); mass production: Florey travelled to the USA in 1941; US government and pharmaceutical firms funded deep-tank fermentation after Pearl Harbor; supplied all Allied D-Day casualties in June 1944; Fleming, Florey, and Chain awarded Nobel Prize in 1945.",
+            "**Case Study: The Fight Against Lung Cancer in the 21st Century:** Epidemiological research: Richard Doll and Austin Bradford Hill (1950 study proving 99% of lung cancer patients were smokers; Royal College of Physicians report 1962). Science and technology in diagnosis: chest X-rays (often miss early tumours), CT scans, PET-CT scans, endobronchial ultrasound (EBUS), and biopsy. Science and technology in treatment: surgery (lobectomy, pneumonectomy), external beam radiotherapy, chemotherapy, immunotherapy, and targeted molecular therapies. Government action to prevent: banning TV cigarette advertising (1965), health warnings on packaging (1971), public indoor smoking ban (2007), raising legal purchase age from 16 to 18 (2007), standardized plain packaging with graphic warnings (2016), escalating tobacco taxation."
           ]
         }
       ]
