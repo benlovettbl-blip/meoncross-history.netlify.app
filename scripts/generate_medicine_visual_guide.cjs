@@ -3887,6 +3887,12 @@ function getImageDataUri(imgPath) {
   return imgPath;
 }
 
+// Helper to convert markdown bold/italics in text
+function formatMd(text) {
+  if (!text) return '';
+  return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*(.*?)\*/g, '<em>$1</em>');
+}
+
 // Render Left Knowledge Page (Dense Level 4-9 Masterclass with Examiner Traps)
 function renderLeftPage(data, pageNum, spreadIndex) {
   const left = data.left;
@@ -3895,29 +3901,19 @@ function renderLeftPage(data, pageNum, spreadIndex) {
   const causal = left.causalFactors || [];
   const traps = left.examinerTraps || [];
 
-  // Pillars HTML (Top Tier)
+  // Pillars HTML (Top Tier) - Clean, authoritative typographic cards without circular avatars
   const pillarsHtml = left.pillars
     .map((pillar) => {
-      let mediaHtml = '';
-      if (pillar.image) {
-        const dataUri = getImageDataUri(pillar.image);
-        mediaHtml = `<div style="width: 44px; height: 44px; border-radius: 50%; overflow: hidden; border: 1.5px solid #1e3a8a; margin-right: 8px; flex-shrink: 0; background: #e2e8f0;"><img src="${dataUri}" style="width: 100%; height: 100%; object-fit: cover;" alt="${pillar.title}" /></div>`;
-      } else {
-        mediaHtml = `<div style="width: 44px; height: 44px; border-radius: 50%; background: #eff6ff; border: 1.5px solid #1e3a8a; display: flex; align-items: center; justify-content: center; font-size: 14pt; margin-right: 8px; flex-shrink: 0;">${pillar.iconFallback || '🏛️'}</div>`;
-      }
       const bulletsHtml = pillar.bullets
-        .map((b) => `<li style="margin-bottom: 2px;">${b}</li>`)
+        .map((b) => `<li style="margin-bottom: 2px;">${formatMd(b)}</li>`)
         .join('');
       return `
-      <div style="background: #ffffff; border: 1.5px solid #1e3a8a; border-radius: 6px; padding: 7px 9px; flex: 1; display: flex; flex-direction: column;">
-        <div style="display: flex; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 4px; margin-bottom: 4px;">
-          ${mediaHtml}
-          <div>
-            <div style="font-size: 8.5pt; font-weight: 800; color: #0f172a; line-height: 1.15;">${pillar.title}</div>
-            <div style="font-size: 6.8pt; font-weight: 700; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px;">${pillar.subtitle || ''}</div>
-          </div>
+      <div style="background: #ffffff; border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 7px 9px; flex: 1; display: flex; flex-direction: column;">
+        <div style="border-bottom: 1px solid #e2e8f0; padding-bottom: 3px; margin-bottom: 4px;">
+          <div style="font-size: 9.2pt; font-weight: 800; color: #0f172a; line-height: 1.2; margin-bottom: 2px;">${pillar.title}</div>
+          <div style="font-size: 6.8pt; font-weight: 700; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px;">${pillar.subtitle || ''}</div>
         </div>
-        <ul style="margin: 0; padding-left: 14px; font-size: 6.8pt; color: #334155; line-height: 1.35; flex: 1;">
+        <ul style="margin: 0; padding-left: 13px; font-size: 6.8pt; color: #334155; line-height: 1.34; flex: 1;">
           ${bulletsHtml}
         </ul>
       </div>
@@ -3931,14 +3927,14 @@ function renderLeftPage(data, pageNum, spreadIndex) {
     const colsHtml = deepGrid
       .map((col) => {
         const ptsHtml = col.points
-          .map((pt) => `<li style="margin-bottom: 2px;">${pt}</li>`)
+          .map((pt) => `<li style="margin-bottom: 2px;">${formatMd(pt)}</li>`)
           .join('');
         return `
-        <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 7px;">
-          <div style="font-size: 7.4pt; font-weight: 800; color: #1e3a8a; border-bottom: 1px solid #e2e8f0; padding-bottom: 3px; margin-bottom: 4px;">
+        <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px 6px;">
+          <div style="font-size: 7.2pt; font-weight: 800; color: #1e3a8a; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px; margin-bottom: 3px;">
             ${col.title}
           </div>
-          <ul style="margin: 0; padding-left: 11px; font-size: 6.6pt; color: #1e293b; line-height: 1.3;">
+          <ul style="margin: 0; padding-left: 10px; font-size: 6.4pt; color: #1e293b; line-height: 1.28;">
             ${ptsHtml}
           </ul>
         </div>
@@ -3947,12 +3943,12 @@ function renderLeftPage(data, pageNum, spreadIndex) {
       .join('');
 
     deepGridHtml = `
-      <div style="margin-bottom: 7px; border: 1.5px solid #0f172a; border-radius: 6px; padding: 7px 9px; background: #fafafa;">
-        <div style="font-size: 7.8pt; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; display: flex; justify-content: space-between;">
+      <div style="border: 1.5px solid #0f172a; border-radius: 5px; padding: 6px 8px; background: #fafafa;">
+        <div style="font-size: 7.6pt; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px; display: flex; justify-content: space-between;">
           <span>Core Knowledge Matrix &bull; Level 4 to Level 9 Grounded Evidence:</span>
           <span style="color: #64748b; font-weight: 700;">Textbook Grounded Evidence</span>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(${deepGrid.length}, 1fr); gap: 6px;">
+        <div style="display: grid; grid-template-columns: repeat(${deepGrid.length}, 1fr); gap: 5px;">
           ${colsHtml}
         </div>
       </div>
@@ -3965,11 +3961,11 @@ function renderLeftPage(data, pageNum, spreadIndex) {
     const vList = left.vectors
       .map(
         (v) =>
-          `<div style="margin-bottom: 2px;"><strong style="color: #0f172a;">${v.from} &rarr; ${v.to}:</strong> ${v.text || v.desc || ''}</div>`,
+          `<div style="margin-bottom: 2px;"><strong style="color: #0f172a;">${v.from} &rarr; ${v.to}:</strong> ${formatMd(v.text || v.desc || '')}</div>`,
       )
       .join('');
     vectorsHtml = `
-      <div style="flex: 1.2; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 5px; padding: 6px 8px; font-size: 6.6pt; line-height: 1.35; color: #334155;">
+      <div style="flex: 1.2; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 5px; padding: 6px 8px; font-size: 6.6pt; line-height: 1.32; color: #334155;">
         <div style="font-size: 7pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 3px;">
           Key Transmission Vectors:
         </div>
@@ -3987,19 +3983,19 @@ function renderLeftPage(data, pageNum, spreadIndex) {
         .map(
           (l) => `
         <div style="margin-bottom: 2px;">
-          <strong style="color: #0f172a;">${l.era} (${l.badge}):</strong> ${l.text}
+          <strong style="color: #0f172a;">${l.era} (${l.badge}):</strong> ${formatMd(l.text)}
         </div>
       `,
         )
         .join('');
     } else {
       linksHtml = `
-        <div style="margin-bottom: 2px;"><strong>${mb.item1Title || 'Core Concept'}:</strong> ${mb.item1Text || ''}</div>
-        <div><strong>${mb.item2Title || 'Historical Impact'}:</strong> ${mb.item2Text || ''}</div>
+        <div style="margin-bottom: 2px;"><strong>${mb.item1Title || 'Core Concept'}:</strong> ${formatMd(mb.item1Text || '')}</div>
+        <div><strong>${mb.item2Title || 'Historical Impact'}:</strong> ${formatMd(mb.item2Text || '')}</div>
       `;
     }
     bridgeHtml = `
-      <div style="flex: 1.3; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 5px; padding: 6px 8px; font-size: 6.6pt; line-height: 1.35; color: #14532d;">
+      <div style="flex: 1.3; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 5px; padding: 6px 8px; font-size: 6.6pt; line-height: 1.32; color: #14532d;">
         <div style="font-size: 7pt; font-weight: 800; color: #15803d; text-transform: uppercase; margin-bottom: 3px;">
           ⚡ ${mb.title}
         </div>
@@ -4011,7 +4007,7 @@ function renderLeftPage(data, pageNum, spreadIndex) {
   const tier3Html =
     vectorsHtml || bridgeHtml
       ? `
-    <div style="display: flex; gap: 8px; margin-bottom: 7px;">
+    <div style="display: flex; gap: 7px;">
       ${vectorsHtml}
       ${bridgeHtml}
     </div>
@@ -4022,7 +4018,10 @@ function renderLeftPage(data, pageNum, spreadIndex) {
   let vocabHtml = '';
   if (vocab && vocab.length > 0) {
     const vItems = vocab
-      .map((v) => `<div style="margin-bottom: 2.5px;"><strong>${v.term}:</strong> ${v.def}</div>`)
+      .map(
+        (v) =>
+          `<div style="margin-bottom: 2px;"><strong>${v.term}:</strong> ${formatMd(v.def)}</div>`,
+      )
       .join('');
     vocabHtml = `
       <div style="flex: 1; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 5px; padding: 6px 8px; font-size: 6.6pt; line-height: 1.3; color: #334155;">
@@ -4039,30 +4038,32 @@ function renderLeftPage(data, pageNum, spreadIndex) {
     // 16m essay synoptic bank
     const sb = left.bottomBox;
     const col1Items = (sb.col1Points || [])
-      .map((p) => `<li style="margin-bottom: 2px;">${p}</li>`)
+      .map((p) => `<li style="margin-bottom: 2px;">${formatMd(p)}</li>`)
       .join('');
     const col2Items = (sb.col2Points || [])
-      .map((p) => `<li style="margin-bottom: 2px;">${p}</li>`)
+      .map((p) => `<li style="margin-bottom: 2px;">${formatMd(p)}</li>`)
       .join('');
     causalOrSynopticHtml = `
       <div style="flex: 1.8; background: #eff6ff; border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 6px 8px; font-size: 6.6pt; line-height: 1.3; color: #1e293b;">
         <div style="font-size: 7.2pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 3px; border-bottom: 1px solid #bfdbfe; padding-bottom: 2px;">
           ★ ${sb.title}
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 7px;">
           <div>
             <strong style="color: #1e3a8a; display: block; margin-bottom: 2px;">${sb.col1Title}:</strong>
-            <ul style="margin: 0; padding-left: 11px;">${col1Items}</ul>
+            <ul style="margin: 0; padding-left: 10px;">${col1Items}</ul>
           </div>
           <div>
             <strong style="color: #1e3a8a; display: block; margin-bottom: 2px;">${sb.col2Title}:</strong>
-            <ul style="margin: 0; padding-left: 11px;">${col2Items}</ul>
+            <ul style="margin: 0; padding-left: 10px;">${col2Items}</ul>
           </div>
         </div>
       </div>
     `;
   } else if (causal && causal.length > 0) {
-    const cItems = causal.map((c) => `<div style="margin-bottom: 2.5px;">${c}</div>`).join('');
+    const cItems = causal
+      .map((c) => `<div style="margin-bottom: 2px;">${formatMd(c)}</div>`)
+      .join('');
     causalOrSynopticHtml = `
       <div style="flex: 1.4; background: #fffbeb; border: 1px solid #fde68a; border-radius: 5px; padding: 6px 8px; font-size: 6.6pt; line-height: 1.3; color: #78350f;">
         <div style="font-size: 7pt; font-weight: 800; color: #92400e; text-transform: uppercase; margin-bottom: 3px; border-bottom: 1px solid #fef3c7; padding-bottom: 2px;">
@@ -4076,7 +4077,7 @@ function renderLeftPage(data, pageNum, spreadIndex) {
   const tier4Html =
     vocabHtml || causalOrSynopticHtml
       ? `
-    <div style="display: flex; gap: 8px;">
+    <div style="display: flex; gap: 7px;">
       ${vocabHtml}
       ${causalOrSynopticHtml}
     </div>
@@ -4089,25 +4090,25 @@ function renderLeftPage(data, pageNum, spreadIndex) {
     const tItems = traps
       .map(
         (t) => `
-      <div>
-        <strong>&bull; Common Error:</strong> ${t.trap}<br/>
-        <strong style="color: #1e3a8a;">&rarr; Grade 9 Correction:</strong> ${t.correction}
+      <div style="margin-bottom: 1.5px;">
+        <strong>&bull; Common Error:</strong> ${formatMd(t.trap)}<br/>
+        <strong style="color: #1e3a8a;">&rarr; Grade 9 Correction:</strong> ${formatMd(t.correction)}
       </div>
     `,
       )
       .join('');
 
     trapsHtml = `
-      <div style="margin-top: 6px; border: 1.5px solid #0f172a; border-radius: 5px; padding: 6px 9px; background: #fafafa;">
+      <div style="border: 1.5px solid #0f172a; border-radius: 5px; padding: 6px 9px; background: #fafafa;">
         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">
-          <span style="font-size: 7.4pt; font-weight: 800; color: #991b1b; text-transform: uppercase; letter-spacing: 0.5px;">
+          <span style="font-size: 7.4pt; font-weight: 800; color: #991b1b; text-transform: uppercase; letter-spacing: 0.4px;">
             Examiner Traps &amp; Grade 9 Pitfalls:
           </span>
           <span style="font-size: 6.5pt; font-weight: 700; color: #475569;">
             Edexcel Mark Scheme Pitfalls &rarr; Grade 9 Analytical Corrections
           </span>
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 10px; font-size: 6.7pt; line-height: 1.32; color: #1e293b;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 10px; font-size: 6.6pt; line-height: 1.3; color: #1e293b;">
           ${tItems}
         </div>
       </div>
@@ -4115,48 +4116,49 @@ function renderLeftPage(data, pageNum, spreadIndex) {
   }
 
   return `
-  <div class="page page-left" id="spread-${spreadIndex}" data-spread="${spreadIndex}" data-page="${pageNum}" data-lesson="${data.id}" style="box-sizing: border-box; width: 794px; height: 1123px; padding: 22px 24px; font-family: 'Inter', sans-serif; background-color: #ffffff; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; scroll-margin-top: 65px; position: relative;">
+  <div class="page page-left" id="spread-${spreadIndex}" data-spread="${spreadIndex}" data-page="${pageNum}" data-lesson="${data.id}" style="box-sizing: border-box; width: 794px; height: 1123px; padding: 18px 24px 16px 24px; font-family: 'Inter', sans-serif; background-color: #ffffff; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; scroll-margin-top: 65px; position: relative;">
     <span id="page-${pageNum}" style="position: absolute; top: 0;"></span>
     <span id="lesson-${data.id}" style="position: absolute; top: 0;"></span>
-    <div>
-      <!-- Top Header -->
-      <div style="border-bottom: 2px solid #0f172a; padding-bottom: 4px; margin-bottom: 8px;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline;">
-          <span style="font-size: 8.5pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px;">
-            ${left.tag}
-          </span>
-          <span style="font-size: 7pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; padding: 2px 6px; border-radius: 3px; border: 1px solid #bfdbfe;">
-            Level 4–9 Knowledge Masterclass
-          </span>
-        </div>
-        <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 15pt; color: #0f172a; margin: 2px 0 1px 0; border: none; padding: 0; font-weight: 900;">
-          ${left.headline}
-        </h1>
-        <p style="font-size: 7.6pt; color: #475569; margin: 0; line-height: 1.35;">
-          ${left.summary}
-        </p>
+    
+    <!-- Top Header -->
+    <div style="border-bottom: 2px solid #0f172a; padding-bottom: 3px; margin-bottom: 6px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <span style="font-size: 8.3pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px;">
+          ${left.tag}
+        </span>
+        <span style="font-size: 6.8pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; padding: 2px 6px; border-radius: 3px; border: 1px solid #bfdbfe;">
+          Level 4–9 Knowledge Masterclass
+        </span>
       </div>
-
-      <!-- Tier 1: Core 3 Pillars -->
-      <div style="display: flex; gap: 8px; margin-bottom: 7px;">
-        ${pillarsHtml}
-      </div>
-
-      <!-- Tier 2: Deep Knowledge Grid (4 Columns) -->
-      ${deepGridHtml}
-
-      <!-- Tier 3: Transmission Vectors & Synoptic Bridge -->
-      ${tier3Html}
-
-      <!-- Tier 4: Vocabulary Bank & Causal Factors -->
-      ${tier4Html}
-
-      <!-- Tier 5: Examiner Traps & Grade 9 Pitfalls -->
-      ${trapsHtml}
+      <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 14.5pt; color: #0f172a; margin: 2px 0 1px 0; border: none; padding: 0; font-weight: 900;">
+        ${left.headline}
+      </h1>
+      <p style="font-size: 7.4pt; color: #475569; margin: 0; line-height: 1.32;">
+        ${left.summary}
+      </p>
     </div>
 
+    <!-- Tier 1: Core 3 Pillars -->
+    <div style="display: flex; gap: 7px; margin-bottom: 6px;">
+      ${pillarsHtml}
+    </div>
+
+    <!-- Tier 2: Deep Knowledge Grid (4 Columns) -->
+    <div style="margin-bottom: 6px;">
+      ${deepGridHtml}
+    </div>
+
+    <!-- Tier 3: Transmission Vectors & Synoptic Bridge -->
+    ${tier3Html ? `<div style="margin-bottom: 6px;">${tier3Html}</div>` : ''}
+
+    <!-- Tier 4: Vocabulary Bank & Causal Factors -->
+    ${tier4Html ? `<div style="margin-bottom: 6px;">${tier4Html}</div>` : ''}
+
+    <!-- Tier 5: Examiner Traps & Grade 9 Pitfalls -->
+    ${trapsHtml ? `<div style="margin-bottom: 4px;">${trapsHtml}</div>` : ''}
+
     <!-- Footer Signoff -->
-    <div style="border-top: 1px solid #cbd5e1; padding-top: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 6.8pt; color: #64748b;">
+    <div style="border-top: 1px solid #cbd5e1; padding-top: 3px; display: flex; justify-content: space-between; align-items: center; font-size: 6.6pt; color: #64748b;">
       <span>Edexcel GCSE (9–1) History &bull; Paper 1: Medicine in Britain (c.1250–present)</span>
       <span>Page ${pageNum}</span>
     </div>
@@ -5498,6 +5500,7 @@ async function run() {
   const page = await browser.newPage();
   await page.setViewport({ width: 794, height: 1123, deviceScaleFactor: 2 });
   await page.goto(pathToFileURL(outHtmlPath).href, { waitUntil: 'networkidle0' });
+  await page.evaluateHandle('document.fonts.ready');
 
   const pdfFilename = 'edexcel_medicine_visual_revision_and_exam_guide.pdf';
   const unitPdfPath = path.join(PATHS.UNITS, 'edexcel_medicine', pdfFilename);
