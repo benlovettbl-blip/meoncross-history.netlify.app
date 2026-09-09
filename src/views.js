@@ -1819,15 +1819,21 @@ export async function renderMockExamsView() {
       mock.mark_scheme_url || `${paperUrl.replace(/\.html$/, '')}_mark_scheme.html`;
     const fullMsUrl = msFileName.startsWith('/') ? msFileName : `/units/${unitId}/${msFileName}`;
 
+    const isRadarMock =
+      mock.title.includes('Radar') ||
+      mock.title.includes('Heat Map') ||
+      mock.title.includes('Forecast');
     const badgeText = mock.title.includes('NotebookLM')
       ? 'Prediction Model'
-      : `Exam Mock ${idx + 1}`;
+      : isRadarMock
+        ? '🎯 Radar Spec Gap'
+        : `Exam Mock ${idx + 1}`;
 
     html += `
-      <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 10px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; gap: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.04); transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.04)';">
+      <div style="background: #ffffff; border: 1.5px solid ${isRadarMock ? '#f59e0b' : '#cbd5e1'}; border-radius: 10px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; gap: 15px; box-shadow: ${isRadarMock ? '0 4px 15px rgba(245, 158, 11, 0.12)' : '0 4px 10px rgba(0,0,0,0.04)'}; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='${isRadarMock ? '0 4px 15px rgba(245, 158, 11, 0.12)' : '0 4px 10px rgba(0,0,0,0.04)'}';">
         <div>
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
-            <span style="font-size: 0.72rem; font-weight: 800; background: ${headerColor}18; color: ${headerColor}; padding: 3px 9px; border-radius: 4px; text-transform: uppercase; border: 1px solid ${headerColor}30;">
+            <span style="font-size: 0.72rem; font-weight: 800; background: ${isRadarMock ? '#fef3c7' : headerColor + '18'}; color: ${isRadarMock ? '#b45309' : headerColor}; padding: 3px 9px; border-radius: 4px; text-transform: uppercase; border: 1px solid ${isRadarMock ? '#fde68a' : headerColor + '30'};">
               ${badgeText}
             </span>
             <span style="font-size: 0.75rem; font-weight: 700; color: #64748b;">
@@ -1838,6 +1844,16 @@ export async function renderMockExamsView() {
           <h3 style="margin: 0 0 10px 0; color: #0f172a; font-size: 1.15rem; line-height: 1.35; font-family: 'Outfit', sans-serif;">
             ${mock.title}
           </h3>
+
+          ${
+            isRadarMock
+              ? `
+            <div style="font-size: 0.78rem; color: #92400e; background: #fef3c7; border: 1px solid #fde68a; border-radius: 6px; padding: 7px 10px; margin-bottom: 12px; line-height: 1.45;">
+              <i class="fa-solid fa-satellite-dish" style="margin-right: 4px; color: #d97706;"></i> <strong>Probabilistic Topic Forecast:</strong> Constructed directly from 100% unexamined syllabus criteria and overdue question patterns across 2018–2026. <em>(Revision forecast — not an official exam guarantee).</em>
+            </div>
+          `
+              : ''
+          }
 
           <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px 12px; font-size: 0.8rem; color: #475569; margin-bottom: 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px;">
             <span><strong>Time:</strong> ${mock.time_minutes ? mock.time_minutes + ' mins' : defaultTime}</span>

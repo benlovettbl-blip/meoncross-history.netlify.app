@@ -1,3 +1,128 @@
+export function getStructureStrip(questionObj, marks, unitId = '') {
+  const qText =
+    (questionObj && (questionObj.question || questionObj.question_text || questionObj.text)) || '';
+  const qType = (questionObj && (questionObj.type || '')).toLowerCase();
+
+  // 1. Consequence (4 Marks in Paper 2 Conflict in the Middle East)
+  if (qType.includes('consequence') || /explain (?:one|two) consequence/i.test(qText)) {
+    return `<strong>4-Mark Consequence Question Structure Strip:</strong>
+<div style="font-size: 0.9rem; margin-top: 4px; color: #475569; font-style: italic;">Edexcel Paper 2 specification format: Single direct consequence with detailed historical causation.</div>
+<ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
+  <li><strong>Identify &amp; State [1–2 Marks]:</strong> State one clear, historically accurate consequence directly resulting from the event. Name specific individuals, organizations, dates, or territories.</li>
+  <li><strong>Explain with Evidence &amp; Causation [3–4 Marks]:</strong> Provide precise historical context and explain <em>how and why</em> this consequence occurred. Use explicit causal connectives (e.g. <em>'As a direct result...', 'This provoked...', 'Consequently...'</em>) to show the escalation or lasting impact.</li>
+</ul>`;
+  }
+
+  // 2. Feature Question (2 Marks in Paper 1 Western Front & Paper 2 Early Elizabethan England)
+  if (marks === 2 || qType.includes('feature') || /describe (?:one|two) feature/i.test(qText)) {
+    return `<strong>2-Mark Feature Structure Strip:</strong>
+<div style="font-size: 0.9rem; margin-top: 4px; color: #475569; font-style: italic;">Edexcel Paper 1 (Western Front) &amp; Paper 2 (Early Elizabethan England) specification format: 2 marks per feature.</div>
+<ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
+  <li><strong>Feature Identification [1 Mark]:</strong> State one valid historical characteristic or feature clearly and accurately.</li>
+  <li><strong>Supporting Detail [1 Mark]:</strong> Add specific factual evidence or contextual knowledge to develop the feature (e.g. measurements, medical procedures, equipment names, locations, dates).</li>
+</ul>`;
+  }
+
+  // 3. Source Inference Question (4 Marks in Paper 1 Section A Western Front Q2a)
+  if (qType.includes('inference') || /give two things you can infer|infer/i.test(qText)) {
+    return `<strong>4-Mark Source Inference Structure Strip:</strong>
+<ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
+  <li><strong>Inference 1 [2 Marks]:</strong> State what you can infer / work out from the source [1 mark] + support with a direct quote or specific visual detail from the source [1 mark].</li>
+  <li><strong>Inference 2 [2 Marks]:</strong> State a second distinct inference [1 mark] + support with a different direct quote or specific visual detail [1 mark].</li>
+</ul>`;
+  }
+
+  // 4. Similarity / Difference Question (4 Marks in Paper 1 Section B Q3)
+  if (
+    qType.includes('similarity') ||
+    qType.includes('difference') ||
+    /similar|difference/i.test(qText)
+  ) {
+    return `<strong>4-Mark Similarity / Difference Structure Strip:</strong>
+<ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
+  <li><strong>Identify Comparison [1–2 Marks]:</strong> State clearly one valid way in which the two periods/topics were similar or different.</li>
+  <li><strong>Support with Evidence from Both Periods [3–4 Marks]:</strong> Provide specific, accurate historical knowledge from <em>both</em> periods to explain and justify the comparison.</li>
+</ul>`;
+  }
+
+  // 5. Narrative Account (8 Marks in Paper 2)
+  if (qType.includes('narrative') || /narrative account/i.test(qText)) {
+    return `<strong>8-Mark Narrative Account Structure Strip (Chronological &amp; Causal Flow):</strong>
+<ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
+  <li><strong>Beginning / Catalyst [2–3 Marks]:</strong> Establish the initial situation or starting cause with precise factual detail in correct chronological order.</li>
+  <li><strong>Development / Turning Point [4–6 Marks]:</strong> Explain how events unfolded and transitioned, linking causes and effects using explicit connectives (<em>'This led to...', 'As a consequence of this reaction...'</em>).</li>
+  <li><strong>Outcome / Resolution [7–8 Marks]:</strong> Explain the final consequence or situation reached at the end of the timeframe.</li>
+  <li><strong>Mandatory Own Knowledge:</strong> Include accurate historical detail that goes beyond the two provided stimulus bullet points.</li>
+</ul>`;
+  }
+
+  // 6. Importance Question (8 Marks in Paper 2)
+  if (qType.includes('importance') || /importance of/i.test(qText)) {
+    return `<strong>8-Mark Importance Question Structure Strip:</strong>
+<ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
+  <li><strong>Reason 1 [4 Marks]:</strong> Identify a clear reason why the factor was significant + provide detailed contextual evidence + explain its specific impact on the specified issue.</li>
+  <li><strong>Reason 2 [4 Marks]:</strong> Identify a second distinct reason why it was important + provide independent contextual knowledge + explain the broader or long-term consequence.</li>
+</ul>`;
+  }
+
+  // 7. Source Utility Question (8 Marks in Paper 1 Section A Western Front Q2b)
+  if (qType.includes('utility') || /how useful/i.test(qText)) {
+    return `<strong>8-Mark Source Utility Structure Strip:</strong>
+<ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
+  <li><strong>Source 1 Evaluation [4 Marks]:</strong> Assess content &amp; accuracy against own historical knowledge [2m] + evaluate Nature, Origin, Purpose (NOP) to explain usefulness/limitations [2m].</li>
+  <li><strong>Source 2 Evaluation [4 Marks]:</strong> Assess content &amp; accuracy against own historical knowledge [2m] + evaluate Nature, Origin, Purpose (NOP) to explain usefulness/limitations [2m].</li>
+  <li><strong>Judgement on Enquiry:</strong> Synthesise how the two sources complement each other for the specific historical enquiry.</li>
+</ul>`;
+  }
+
+  // 8. 12-Mark 'Explain Why' Question
+  if (marks === 12 || qType.includes('explain_why') || /explain why/i.test(qText)) {
+    return `<strong>12-Mark 'Explain Why' Structure Strip (PEEL):</strong>
+<ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
+  <li><strong>Cause 1 (Stimulus Point 1):</strong> Clear reason identified &bull; Specific dates/names &bull; Explain <em>how/why</em> this led to the outcome.</li>
+  <li><strong>Cause 2 (Stimulus Point 2):</strong> Second cause &bull; Detailed supporting facts &bull; Explain relative importance.</li>
+  <li><strong>Cause 3 (Own Knowledge — Mandatory!):</strong> Distinct cause not in stimulus &bull; Precise evidence &bull; Analytical link.</li>
+  <li><strong>Synthesis Link:</strong> Explain how these causes interacted (e.g. underlying catalyst vs immediate trigger).</li>
+</ul>`;
+  }
+
+  // 9. 16-Mark Essay Question (+4 SPaG)
+  if (marks === 16 || qType.includes('essay') || /how far do you agree|statement/i.test(qText)) {
+    return `<strong>16-Mark Essay Structure Strip (PEEL):</strong>
+<ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
+  <li><strong>Introduction:</strong> Define key concepts, outline criteria for evaluation, and state your provisional thesis.</li>
+  <li><strong>Paragraph 1 (Stimulus Point 1):</strong> Point &bull; Precise contextual evidence &bull; Explain significance &bull; Link to thesis.</li>
+  <li><strong>Paragraph 2 (Stimulus Point 2):</strong> Point &bull; Precise contextual evidence &bull; Direct comparison with paragraph 1.</li>
+  <li><strong>Paragraph 3 (Own Knowledge Factor — Mandatory!):</strong> Point from outside the stimulus &bull; In-depth evidence &bull; Evaluative weight.</li>
+  <li><strong>Conclusion:</strong> Sustained judgement directly answering 'How far do you agree?'. Explain relative weight of factors.</li>
+</ul>`;
+  }
+
+  // Fallbacks by tariff
+  if (marks === 4) {
+    return `<strong>4-Mark Question Structure Strip:</strong>
+<ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
+  <li><strong>Point 1 [2 Marks]:</strong> State first key point clearly + add specific supporting detail.</li>
+  <li><strong>Point 2 [2 Marks]:</strong> State second key point clearly + add specific supporting detail.</li>
+</ul>`;
+  }
+
+  if (marks === 8) {
+    return `<strong>8-Mark Question Structure Strip:</strong>
+<ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
+  <li><strong>Section 1 [4 Marks]:</strong> First structured point with detailed contextual knowledge and clear analytical explanation.</li>
+  <li><strong>Section 2 [4 Marks]:</strong> Second structured point with independent contextual knowledge and clear analytical explanation.</li>
+</ul>`;
+  }
+
+  return `<strong>${marks}-Mark Question Structure Strip:</strong>
+<ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
+  <li>Focus directly on the question stem throughout your response.</li>
+  <li>Support every analytical point with precise historical knowledge (dates, names, events).</li>
+  <li>Explain the significance and impact to secure top-band marks.</li>
+</ul>`;
+}
+
 export function renderExamPracticeZone(container, unitData, initialQuestion = null) {
   // 1. Flatten the exam_practice from lessons into a master list of questions
   let examBank = [];
@@ -606,13 +731,25 @@ export function renderExamPracticeZone(container, unitData, initialQuestion = nu
     // Set Timer (approx 1.5 mins per mark)
     let marks =
       currentQuestion.marks || parseInt((currentQuestion.type || '0').replace(/[^0-9]/g, '')) || 0;
-    if (marks) {
-      questionTariffSeconds = marks * 90; // 1.5 mins per mark
-      setTimerDuration(questionTariffSeconds);
+    let displayQText = currentQuestion.question || '';
+    if (/explain two consequences of/i.test(displayQText)) {
+      displayQText = displayQText.replace(
+        /explain two consequences of/i,
+        'Explain one consequence of',
+      );
+      marks = 4;
+    } else if (
+      currentQuestion.type === 'consequence' ||
+      /explain (?:one|two) consequence/i.test(displayQText)
+    ) {
+      marks = 4;
     }
+    if (!marks) marks = 4;
+    questionTariffSeconds = marks * 90; // 1.5 mins per mark
+    setTimerDuration(questionTariffSeconds);
 
-    qMeta.innerHTML = `<i class="fa-solid fa-book-open"></i> ${currentQuestion.blockTitle} &bull; ${currentQuestion.type || 'Exam'} Question`;
-    qText.textContent = currentQuestion.question;
+    qMeta.innerHTML = `<i class="fa-solid fa-book-open"></i> ${currentQuestion.blockTitle} &bull; ${currentQuestion.type || marks + '-mark'} Question`;
+    qText.textContent = displayQText;
 
     if (currentQuestion.stimulus) {
       if (Array.isArray(currentQuestion.stimulus)) {
@@ -647,8 +784,8 @@ export function renderExamPracticeZone(container, unitData, initialQuestion = nu
       qProv.style.display = 'none';
     }
 
+    hintBtn.style.display = 'block';
     if (currentQuestion.structure_strip || currentQuestion.scaffolding) {
-      hintBtn.style.display = 'block';
       let strip = currentQuestion.structure_strip || currentQuestion.scaffolding;
       let stripHtml = `<strong>Scaffolding / Structure Strip:</strong><br><br>`;
       if (typeof strip === 'string') {
@@ -658,7 +795,7 @@ export function renderExamPracticeZone(container, unitData, initialQuestion = nu
       }
       hintPanel.innerHTML = stripHtml;
     } else {
-      hintBtn.style.display = 'none';
+      hintPanel.innerHTML = getStructureStrip(currentQuestion, marks, unitData ? unitData.id : '');
     }
 
     if (currentQuestion.model_answer) {
@@ -694,14 +831,32 @@ export function renderExamPracticeZone(container, unitData, initialQuestion = nu
     backBtn.style.display = 'block';
     backBtn.innerHTML = '<i class="fa-solid fa-arrow-left"></i> Return to Question Matrix';
 
-    const marks = initialQuestion.tariff || initialQuestion.marks || 16;
+    let rawQuestionText = initialQuestion.question_text || initialQuestion.question || '';
+    let marks = initialQuestion.tariff || initialQuestion.marks || 16;
+
+    // Consequence question specification normalization:
+    // In Edexcel Paper 2 Conflict in the Middle East, questions sat as "Explain two consequences of..."
+    // have been reformed to single consequence questions: "Explain one consequence of..." for 4 marks.
+    if (/explain two consequences of/i.test(rawQuestionText)) {
+      rawQuestionText = rawQuestionText.replace(
+        /explain two consequences of/i,
+        'Explain one consequence of',
+      );
+      marks = 4;
+    } else if (
+      initialQuestion.type === 'consequence' ||
+      /explain (?:one|two) consequence/i.test(rawQuestionText)
+    ) {
+      marks = 4;
+    }
+
     currentQuestion = {
       ...initialQuestion,
-      question: initialQuestion.question_text || initialQuestion.question || '',
+      question: rawQuestionText,
       blockTitle:
         initialQuestion.blockTitle ||
         `${initialQuestion.year ? initialQuestion.year + ' Past Paper' : ''} ${initialQuestion.q_number || ''}`.trim(),
-      type: `${marks}-mark`,
+      type: initialQuestion.type || `${marks}-mark`,
       marks: marks,
       stimulus: initialQuestion.stimulus,
       model_answer: initialQuestion.indicative_content || initialQuestion.model_answer,
@@ -746,35 +901,7 @@ export function renderExamPracticeZone(container, unitData, initialQuestion = nu
       qProv.style.display = 'none';
     }
 
-    const structureStrips = {
-      16: `<strong>16-Mark Essay Structure Strip (PEEL):</strong>
-<ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
-  <li><strong>Introduction:</strong> Define key concepts, outline criteria for evaluation, and state your provisional thesis.</li>
-  <li><strong>Paragraph 1 (Stimulus Point 1):</strong> Point &bull; Precise contextual evidence &bull; Explain significance &bull; Link to thesis.</li>
-  <li><strong>Paragraph 2 (Stimulus Point 2):</strong> Point &bull; Precise contextual evidence &bull; Direct comparison with paragraph 1.</li>
-  <li><strong>Paragraph 3 (Own Knowledge Factor — Mandatory!):</strong> Point from outside the stimulus &bull; In-depth evidence &bull; Evaluative weight.</li>
-  <li><strong>Conclusion:</strong> Sustained judgement directly answering 'How far do you agree?'. Explain relative weight of factors.</li>
-</ul>`,
-      12: `<strong>12-Mark 'Explain Why' Structure Strip (PEEL):</strong>
-<ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
-  <li><strong>Cause 1 (Stimulus):</strong> Clear reason identified &bull; Specific dates/names &bull; Explain <em>how/why</em> this led to the outcome.</li>
-  <li><strong>Cause 2 (Stimulus):</strong> Second cause &bull; Detailed supporting facts &bull; Explain relative importance.</li>
-  <li><strong>Cause 3 (Own Knowledge — Mandatory!):</strong> Distinct cause not in stimulus &bull; Precise evidence &bull; Analytical link.</li>
-  <li><strong>Synthesis Link:</strong> Explain how these causes interacted (e.g. underlying catalyst vs immediate trigger).</li>
-</ul>`,
-      8: `<strong>8-Mark Question Structure Strip:</strong>
-<ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
-  <li><strong>Point 1 (4 Marks):</strong> Identify first feature / consequence / usefulness aspect with precise contextual knowledge.</li>
-  <li><strong>Point 2 (4 Marks):</strong> Identify second feature / consequence / usefulness aspect with independent supporting knowledge.</li>
-</ul>`,
-      4: `<strong>4-Mark Question Structure Strip:</strong>
-<ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
-  <li><strong>Feature/Inference 1 (2 Marks):</strong> State feature clearly [1 mark] + add specific supporting detail [1 mark].</li>
-  <li><strong>Feature/Inference 2 (2 Marks):</strong> State second distinct feature [1 mark] + add specific supporting detail [1 mark].</li>
-</ul>`,
-    };
-
-    const stripHtml = structureStrips[marks] || structureStrips[16];
+    const stripHtml = getStructureStrip(currentQuestion, marks, initialQuestion.unitId || '');
     hintPanel.innerHTML = stripHtml;
     hintBtn.style.display = 'block';
 

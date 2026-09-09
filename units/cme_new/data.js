@@ -47,6 +47,16 @@ export const unitData = {
       title: 'Predicted Mock Paper E',
       url: 'cme_mock_e.html',
     },
+    {
+      id: 'cme_mock_radar',
+      title: 'Predicted Radar Mock Paper (Unexamined Spec Gaps & Overdue Topic Forecast)',
+      url: 'cme_mock_radar.html',
+      has_mark_scheme: true,
+      mark_scheme_url: 'cme_mock_radar_mark_scheme.html',
+      paper_reference: '1HI0/22 (Paper 2)',
+      total_marks: 32,
+      time_minutes: 50,
+    },
   ],
   workbooks: [
     {

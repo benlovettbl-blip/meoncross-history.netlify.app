@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predicted Radar Mock Paper (Unexamined Spec Gaps &amp; Overdue Topic Forecast)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+    
+    * {
+      box-sizing: border-box;
+      font-family: 'Open Sans', Arial, sans-serif;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      background: #e0e0e0;
+      color: #000;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      background: white;
+      margin: 20mm auto;
+      padding: 15mm;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      position: relative;
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media print {
+      body { background: white; }
+      .page {
+        margin: 0;
+        padding: 15mm;
+        box-shadow: none;
+        width: 100%;
+        min-height: 100%;
+        page-break-after: always;
+      }
+    }
+
+    /* Cover Page Styles */
+    .top-warning {
+      text-align: center;
+      font-weight: 600;
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+    
+    .cover-box {
+      border: 3px solid #666;
+      border-radius: 15px;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+    }
+    .candidate-info {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    .candidate-info:last-child {
+      margin-bottom: 0;
+    }
+    .input-label {
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+    .input-box {
+      border: 2px solid #666;
+      border-radius: 5px;
+      height: 35px;
+      background: white;
+    }
+    .char-box {
+      border: 2px solid #666;
+      border-radius: 5px;
+      height: 35px;
+      width: 25px;
+      display: inline-block;
+      background: white;
+      margin-right: 2px;
+    }
+    
+    .edexcel-title {
+      font-size: 26px;
+      font-weight: 700;
+      margin: 15px 0 5px 0;
+      letter-spacing: -0.5px;
+    }
+
+    .exam-header {
+      border: 3px solid #666;
+      border-radius: 15px;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    
+    .exam-header-left {
+      flex: 3;
+    }
+    .exam-header-right {
+      flex: 1;
+      background: #555;
+      color: white;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .date-text {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    
+    .time-text {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    
+    .subject-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin: 0;
+    }
+    
+    .booklet-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 5px;
+    }
+
+    .paper-ref-label {
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .paper-ref-val {
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .must-have-box {
+      border: 3px solid #666;
+      border-radius: 15px;
+      padding: 15px 20px;
+      margin-bottom: 25px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .total-marks-box {
+      border: 3px solid #666;
+      border-radius: 10px;
+      width: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .radar-disclaimer-box {
+      border: 2px dashed #b45309;
+      background: #fef3c7;
+      color: #92400e;
+      border-radius: 10px;
+      padding: 10px 15px;
+      margin-bottom: 15px;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .instructions-section {
+      font-size: 14px;
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
+    .instructions-section h3 {
+      font-size: 18px;
+      margin: 0 0 10px 0;
+    }
+    .instructions-section ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .instructions-section li {
+      margin-bottom: 4px;
+    }
+
+    .footer {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 12px;
+    }
+    .turn-over {
+      font-weight: 700;
+      font-size: 14px;
+      font-style: italic;
+    }
+    .pearson-logo {
+      font-size: 24px;
+      font-weight: 700;
+      font-family: serif;
+    }
+
+    /* Inner Page Styles */
+    .page-inner {
+      padding-right: 35mm; /* Space for watermark */
+      flex: 1;
+      position: relative;
+    }
+
+    .inner-header {
+      text-align: center;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .question-block {
+      margin-bottom: 20px;
+    }
+    .question-text {
+      font-weight: 600;
+      font-size: 14px;
+      display: flex;
+    }
+    .question-num {
+      width: 35px;
+      flex-shrink: 0;
+      font-weight: 700;
+    }
+
+    /* Dotted Lines for Handwriting */
+    .dotted-line {
+      border-bottom: 1.5px dotted #999;
+      height: 28px;
+      width: 100%;
+    }
+
+    .choice-box {
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 20px 0;
+    }
+    
+    .checkbox-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+    .checkbox-item:last-child {
+      margin-bottom: 0;
+    }
+    .checkbox-square {
+      width: 16px;
+      height: 16px;
+      border: 1px solid #000;
+      margin-right: 15px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    
+    .bullet-point-box {
+      border: 1px solid #999;
+      border-radius: 10px;
+      padding: 15px 20px;
+      margin: 15px 0 15px 35px;
+      width: 80%;
+      background: #fff;
+    }
+    .bullet-point-box ul {
+      margin: 5px 0 0 0;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cover Page -->
+  <div class="page">
+    <div class="top-warning">
+      Please check the examination details below before entering your candidate information
+    </div>
+    
+    <div class="cover-box">
+      <div class="candidate-info">
+        <div style="flex: 2;">
+          <div class="input-label">Candidate surname</div>
+          <div class="input-box"></div>
+        </div>
+        <div style="flex: 1.5;">
+          <div class="input-label">Other names</div>
+          <div class="input-box"></div>
+        </div>
+      </div>
+      <div class="candidate-info">
+        <div style="flex: 1;">
+          <div class="input-label">Centre Number</div>
+          <div>
+            <div class="char-box"></div><div class="char-box"></div><div class="char-box"></div><div class="char-box"></div><div class="char-box"></div>
+          </div>
+        </div>
+        <div style="flex: 1;">
+          <div class="input-label">Candidate Number</div>
+          <div>
+            <div class="char-box"></div><div class="char-box"></div><div class="char-box"></div><div class="char-box"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="edexcel-title">Pearson Edexcel GCSE (9–1)</div>
+
+    <div class="exam-header">
+      <div class="exam-header-left">
+        <div class="date-text">Specification Gap Radar Mock</div>
+        <div class="time-text">Time: 50 minutes (total time for Booklet P5)</div>
+        <div class="subject-title">History</div>
+        <div class="booklet-title">BOOKLET P5: Conflict in the Middle East, 1945–95</div>
+      </div>
+      <div class="exam-header-right">
+        <div class="paper-ref-label">Paper<br>reference</div>
+        <div class="paper-ref-val">1HI0/P5 (Paper 2)</div>
+      </div>
+    </div>
+
+    <div class="radar-disclaimer-box">
+      <strong>Radar Overdue Forecast Notice:</strong> This mock examination has been scientifically engineered targeting topics that have <em>never been examined</em> (or are the longest overdue) across all official Pearson Edexcel 2018–2026 series. <strong>Note:</strong> This is a targeted revision and gap-closing tool based on historical syllabus distribution, not an official guarantee of future exam content.
+    </div>
+
+    <div style="display: flex; gap: 10px;">
+      <div class="must-have-box" style="flex: 1;">
+        <div>
+          <strong>You must have:</strong><br>
+          The corresponding booklet B (British Depth Study).
+        </div>
+      </div>
+      <div class="total-marks-box">
+        Total Marks<br><strong>32</strong>
+      </div>
+    </div>
+
+    <div class="instructions-section">
+      <h3>Instructions</h3>
+      <ul>
+        <li>Use <strong>black</strong> ink or ball-point pen.</li>
+        <li><strong>Fill in the boxes</strong> at the top of this page with your name, centre number and candidate number.</li>
+        <li>There are two booklets in this question paper. <strong>This is booklet P.</strong></li>
+        <li>Answer <strong>all</strong> questions in this booklet.</li>
+        <li>Check you have the corresponding booklet B.</li>
+        <li>Answer the questions in the spaces provided <em>- there may be more space than you need.</em></li>
+      </ul>
+    </div>
+
+    <div class="instructions-section">
+      <h3>Information</h3>
+      <ul>
+        <li>The total mark for this booklet is 32.</li>
+        <li>The total time for <strong>both</strong> booklets is 1 hour 50 minutes (50–55 mins recommended for booklet P).</li>
+        <li>The marks for <strong>each</strong> question are shown in brackets <em>- use this as a guide as to how much time to spend on each question.</em></li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <div>P84022R<br>&copy;2026 Pearson Education Ltd. Replica Assessment Pack.</div>
+      <div style="display:flex; align-items:center; gap:20px;">
+        <span class="turn-over">Turn over &#9654;</span>
+        <span class="pearson-logo">Pearson</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page 2: Q1(a) and Q1(b) -->
+  <div class="page">
+    <div class="page-inner">
+      <div class="inner-header">Conflict in the Middle East, 1945–95<br><br>Answer ALL questions in this booklet.</div>
+      
+      <!-- Q1(a) -->
+      <div class="question-block">
+        <div class="question-text">
+          <div class="question-num">1 (a)</div>
+          <div style="width: 100%;">
+            Explain one consequence of the Cairo Conference (1964) for the Palestinian nationalist movement.
+            <span style="float: right; font-weight: 400; color: #444;">(4)</span>
+          </div>
+        </div>
+      </div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+
+      <!-- Q1(b) -->
+      <div class="question-block" style="margin-top: 30px;">
+        <div class="question-text">
+          <div class="question-num">1 (b)</div>
+          <div style="width: 100%;">
+            Explain one consequence of Israel's consolidation of control of the occupied territories in the years immediately following 1967.
+            <span style="float: right; font-weight: 400; color: #444;">(4)</span>
+          </div>
+        </div>
+      </div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+    </div>
+    <div class="footer">
+      <div></div>
+      <div class="turn-over">Turn over &#9654;</div>
+    </div>
+  </div>
+
+  <!-- Page 3: Q2 (Narrative Account - Page 1) -->
+  <div class="page">
+    <div class="page-inner">
+      <div class="question-block">
+        <div class="question-text">
+          <div class="question-num">2</div>
+          <div style="width: 100%;">
+            Write a narrative account analysing Egyptian relations with the superpowers and Israel in the years 1967–73.
+            <span style="float: right; font-weight: 400; color: #444;">(8)</span>
+          </div>
+        </div>
+    
+        <div class="bullet-point-box">
+          <em>You <strong>may</strong> use the following in your answer:</em>
+          <ul>
+            <li>Soviet military aid to Egypt</li>
+            <li>the surprise attack on Yom Kippur (1973)</li>
+          </ul>
+          <em style="display:block; margin-top:10px;">You <strong>must</strong> also use information of your own.</em>
+        </div>
+      </div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+    </div>
+    <div class="footer">
+      <div></div>
+      <div class="turn-over">Turn over &#9654;</div>
+    </div>
+  </div>
+
+  <!-- Page 4: Q2 (Narrative Account - Page 2) -->
+  <div class="page">
+    <div class="page-inner">
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+    </div>
+    <div class="footer">
+      <div></div>
+      <div class="turn-over">Turn over &#9654;</div>
+    </div>
+  </div>
+
+  <!-- Page 5: Q3 Choice Presentation -->
+  <div class="page">
+    <div class="page-inner">
+      <div class="inner-header">Conflict in the Middle East, 1945–95<br><br>Answer ALL questions in this booklet.</div>
+      <div class="question-block">
+        <div class="question-text">
+          <div class="question-num">3</div>
+          <div style="width: 100%;">
+            Explain two of the following:
+            <div class="choice-box">
+              <div class="checkbox-item">
+                <div class="checkbox-square"></div>
+                <div>The importance of Nasser's leadership of the Arab world for growing tension between Israel and Egypt in the years 1955–56. <span style="float:right; margin-left:10px;">(16)</span></div>
+              </div>
+              <div class="checkbox-item">
+                <div class="checkbox-square"></div>
+                <div>The importance of Arafat's speech to the UN (1974) for international recognition of the Palestinian cause. <span style="float:right; margin-left:10px;">(16)</span></div>
+              </div>
+              <div class="checkbox-item">
+                <div class="checkbox-square"></div>
+                <div>The importance of the end of the Cold War and the Gulf War (1991) for superpower peace efforts in the Middle East. <span style="float:right; margin-left:10px;">(16)</span></div>
+              </div>
+            </div>
+            <div style="text-align: right; font-weight: bold; margin-bottom: 20px;">(Total for Question 3 = 16 marks)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div></div>
+      <div class="turn-over">Turn over &#9654;</div>
+    </div>
+  </div>
+
+  <!-- Page 6: Q3 First Choice Response -->
+  <div class="page">
+    <div class="page-inner">
+      <div style="text-align: center; font-weight: bold; margin: 10px 0 20px 0;">Indicate your FIRST choice on this page.</div>
+      <div style="font-weight: bold; margin-bottom: 20px; font-size: 14px;">Indicate which question you are answering by marking a cross in the box [X]. If you change your mind, put a line through the box [X] and then indicate your new question with a cross [X].</div>
+    
+      <div class="checkbox-item" style="margin-left: 20px;">
+        <div class="checkbox-square"></div>
+        <div style="font-size: 14px;">The importance of Nasser's leadership of the Arab world for growing tension between Israel and Egypt in the years 1955–56.</div>
+      </div>
+      <div class="checkbox-item" style="margin-left: 20px;">
+        <div class="checkbox-square"></div>
+        <div style="font-size: 14px;">The importance of Arafat's speech to the UN (1974) for international recognition of the Palestinian cause.</div>
+      </div>
+      <div class="checkbox-item" style="margin-left: 20px;">
+        <div class="checkbox-square"></div>
+        <div style="font-size: 14px;">The importance of the end of the Cold War and the Gulf War (1991) for superpower peace efforts in the Middle East.</div>
+      </div>
+      <br>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+    </div>
+    <div class="footer">
+      <div></div>
+      <div class="turn-over">Turn over &#9654;</div>
+    </div>
+  </div>
+
+  <!-- Page 7: Q3 First Choice (Continued) -->
+  <div class="page">
+    <div class="page-inner">
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+    </div>
+    <div class="footer">
+      <div></div>
+      <div class="turn-over">Turn over &#9654;</div>
+    </div>
+  </div>
+
+  <!-- Page 8: Q3 Second Choice Response -->
+  <div class="page">
+    <div class="page-inner">
+      <div style="text-align: center; font-weight: bold; margin: 10px 0 20px 0;">Indicate your SECOND choice on this page.</div>
+      <div style="font-weight: bold; margin-bottom: 20px; font-size: 14px;">Indicate which question you are answering by marking a cross in the box [X]. If you change your mind, put a line through the box [X] and then indicate your new question with a cross [X].</div>
+    
+      <div class="checkbox-item" style="margin-left: 20px;">
+        <div class="checkbox-square"></div>
+        <div style="font-size: 14px;">The importance of Nasser's leadership of the Arab world for growing tension between Israel and Egypt in the years 1955–56.</div>
+      </div>
+      <div class="checkbox-item" style="margin-left: 20px;">
+        <div class="checkbox-square"></div>
+        <div style="font-size: 14px;">The importance of Arafat's speech to the UN (1974) for international recognition of the Palestinian cause.</div>
+      </div>
+      <div class="checkbox-item" style="margin-left: 20px;">
+        <div class="checkbox-square"></div>
+        <div style="font-size: 14px;">The importance of the end of the Cold War and the Gulf War (1991) for superpower peace efforts in the Middle East.</div>
+      </div>
+      <br>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+    </div>
+    <div class="footer">
+      <div></div>
+      <div class="turn-over">Turn over &#9654;</div>
+    </div>
+  </div>
+
+  <!-- Page 9: Q3 Second Choice (Continued) -->
+  <div class="page">
+    <div class="page-inner">
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div class="dotted-line"></div>
+      <div style="text-align: center; font-weight: bold; margin-top: 20px;">TOTAL FOR PAPER = 32 MARKS</div>
+    </div>
+    <div class="footer">
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <script src="/scripts/exam_timer.js"></script>
+</body>
+</html>
