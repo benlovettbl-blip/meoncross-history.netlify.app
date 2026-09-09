@@ -1,0 +1,1167 @@
+{
+  "unit_id": "eee",
+  "title": "Pearson Edexcel GCSE (9–1) History Specification",
+  "subtitle": "Option B4: Early Elizabethan England, 1558–88",
+  "generated_at": "2026-09-09T15:46:33.319Z",
+  "total_past_questions": 32,
+  "total_series_analyzed": 8,
+  "sections": [
+    {
+      "id": "key-topic-1",
+      "title": "Key topic 1: Queen, government and religion, 1558–69",
+      "topics": [
+        {
+          "title": "1. The situation on Elizabeth's accession",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "Elizabethan England in 1558: **society and government**.",
+              "exam_count": 0,
+              "years_appeared": [],
+              "last_examined": "Never",
+              "tariffs_examined": [],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "high",
+              "overdue_score": 100,
+              "matched_questions": [],
+              "teacher_note": "⚠️ UNEXAMINED TOPIC: This specification point has never appeared on an official Edexcel paper since 2018. It is prime territory for an upcoming series."
+            },
+            {
+              "point_index": 2,
+              "point_text": "The Virgin Queen: the problem of her **legitimacy, gender, marriage**. Her character and strengths.",
+              "exam_count": 2,
+              "years_appeared": [
+                2020,
+                2022
+              ],
+              "last_examined": 2022,
+              "tariffs_examined": [
+                16
+              ],
+              "has_12m": false,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "medium",
+              "overdue_score": 50,
+              "matched_questions": [
+                {
+                  "q_id": "eliz_2020_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The main cause of tension between Elizabeth and Mary, Queen of Scots, was Mary’s claim to the English throne.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "eliz_2022_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2022,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The problem of Elizabeth’s legitimacy was the main problem she faced when she became queen in 1558.’ How far do you agree? Explain your answer."
+                }
+              ],
+              "teacher_note": "⚖️ BALANCED ROTATION: Examined in 2022. Keep in regular retrieval rotation."
+            },
+            {
+              "point_index": 3,
+              "point_text": "Challenges at home and from abroad: **financial weaknesses, religious divisions, the French threat**.",
+              "exam_count": 2,
+              "years_appeared": [
+                2022,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                16
+              ],
+              "has_12m": false,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "eliz_2022_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2022,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The problem of Elizabeth’s legitimacy was the main problem she faced when she became queen in 1558.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "eliz_2026_q3",
+                  "q_number": "Q3",
+                  "year": 2026,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘Financial weakness was Elizabeth’s main problem when she became queen in 1558.’ How far do you agree? Explain your answer."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            }
+          ]
+        },
+        {
+          "title": "2. The 'settlement' of religion",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "Elizabeth's **religious settlement (1559)**: its features and impact.",
+              "exam_count": 4,
+              "years_appeared": [
+                2018,
+                2020,
+                2024,
+                2025
+              ],
+              "last_examined": 2025,
+              "tariffs_examined": [
+                4,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "eliz_2018_q1a",
+                  "q_number": "Q1(a)",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of Elizabeth’s religious settlement (1559)."
+                },
+                {
+                  "q_id": "eliz_2020_q2",
+                  "q_number": "Q2",
+                  "year": 2020,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why the Puritans challenged Elizabeth’s religious settlement."
+                },
+                {
+                  "q_id": "eliz_2024_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2024,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The most significant challenge to Elizabeth I’s religious settlement, in the years 1558–68, came from English Catholics.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "eliz_2025_q3",
+                  "q_number": "Q3",
+                  "year": 2025,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘Elizabeth’s religious settlement was successful.’ How far do you agree? Explain your answer."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2025. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 2,
+              "point_text": "The **Church of England**: its role in society.",
+              "exam_count": 1,
+              "years_appeared": [
+                2020
+              ],
+              "last_examined": 2020,
+              "tariffs_examined": [
+                4
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "high",
+              "overdue_score": 80,
+              "matched_questions": [
+                {
+                  "q_id": "eliz_2020_q1a",
+                  "q_number": "Q1(a)",
+                  "year": 2020,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of the role of the Church of England in Early Elizabethan society."
+                }
+              ],
+              "teacher_note": "🔥 HIGHLY OVERDUE: Last set in 2020. It has been 6 years since students were tested on this topic. Ideal candidate for mocks."
+            }
+          ]
+        },
+        {
+          "title": "3. Challenge to the religious settlement",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "The nature and extent of the **Puritan challenge**.",
+              "exam_count": 4,
+              "years_appeared": [
+                2018,
+                2020,
+                2024,
+                2025
+              ],
+              "last_examined": 2025,
+              "tariffs_examined": [
+                4,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "eliz_2018_q1a",
+                  "q_number": "Q1(a)",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of Elizabeth’s religious settlement (1559)."
+                },
+                {
+                  "q_id": "eliz_2020_q2",
+                  "q_number": "Q2",
+                  "year": 2020,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why the Puritans challenged Elizabeth’s religious settlement."
+                },
+                {
+                  "q_id": "eliz_2024_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2024,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The most significant challenge to Elizabeth I’s religious settlement, in the years 1558–68, came from English Catholics.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "eliz_2025_q3",
+                  "q_number": "Q3",
+                  "year": 2025,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘Elizabeth’s religious settlement was successful.’ How far do you agree? Explain your answer."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2025. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 2,
+              "point_text": "The nature and extent of the **Catholic challenge**, including the role of the nobility, Papacy and foreign powers.",
+              "exam_count": 5,
+              "years_appeared": [
+                2018,
+                2019,
+                2020,
+                2024,
+                2025
+              ],
+              "last_examined": 2025,
+              "tariffs_examined": [
+                4,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "eliz_2018_q1a",
+                  "q_number": "Q1(a)",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of Elizabeth’s religious settlement (1559)."
+                },
+                {
+                  "q_id": "eliz_2019_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2019,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The attitude of the Papacy was the main reason why Catholic opposition to Elizabeth increased in the years 1559-88.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "eliz_2020_q2",
+                  "q_number": "Q2",
+                  "year": 2020,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why the Puritans challenged Elizabeth’s religious settlement."
+                },
+                {
+                  "q_id": "eliz_2024_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2024,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The most significant challenge to Elizabeth I’s religious settlement, in the years 1558–68, came from English Catholics.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "eliz_2025_q3",
+                  "q_number": "Q3",
+                  "year": 2025,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘Elizabeth’s religious settlement was successful.’ How far do you agree? Explain your answer."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2025. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            }
+          ]
+        },
+        {
+          "title": "4. The problem of Mary, Queen of Scots",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "**Mary, Queen of Scots**: her claim to the English throne.",
+              "exam_count": 2,
+              "years_appeared": [
+                2020,
+                2023
+              ],
+              "last_examined": 2023,
+              "tariffs_examined": [
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "medium",
+              "overdue_score": 50,
+              "matched_questions": [
+                {
+                  "q_id": "eliz_2020_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The main cause of tension between Elizabeth and Mary, Queen of Scots, was Mary’s claim to the English throne.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "eliz_2023_q2",
+                  "q_number": "Q2",
+                  "year": 2023,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why Mary, Queen of Scots, was executed in 1587."
+                }
+              ],
+              "teacher_note": "⚖️ BALANCED ROTATION: Examined in 2023. Keep in regular retrieval rotation."
+            },
+            {
+              "point_index": 2,
+              "point_text": "Relations between **Elizabeth and Mary, 1568–69**.",
+              "exam_count": 0,
+              "years_appeared": [],
+              "last_examined": "Never",
+              "tariffs_examined": [],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "high",
+              "overdue_score": 100,
+              "matched_questions": [],
+              "teacher_note": "⚠️ UNEXAMINED TOPIC: This specification point has never appeared on an official Edexcel paper since 2018. It is prime territory for an upcoming series."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "key-topic-2",
+      "title": "Key topic 2: Challenges to Elizabeth at home and abroad, 1569–88",
+      "topics": [
+        {
+          "title": "1. Plots and revolts at home",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "The reasons for, and significance of, the **Revolt of the Northern Earls, 1569–70**.",
+              "exam_count": 2,
+              "years_appeared": [
+                2022,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "eliz_2022_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2022,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The Revolt of the Northern Earls was the most significant challenge to Elizabeth’s rule in the years 1569-1586.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "eliz_2026_q2",
+                  "q_number": "Q2",
+                  "year": 2026,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why the Revolt of the Northern Earls (1569-70) was a threat to Elizabeth I."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 2,
+              "point_text": "The features and significance of the **Ridolfi, Throckmorton and Babington plots**.",
+              "exam_count": 1,
+              "years_appeared": [
+                2022
+              ],
+              "last_examined": 2022,
+              "tariffs_examined": [
+                16
+              ],
+              "has_12m": false,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "medium",
+              "overdue_score": 50,
+              "matched_questions": [
+                {
+                  "q_id": "eliz_2022_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2022,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The Revolt of the Northern Earls was the most significant challenge to Elizabeth’s rule in the years 1569-1586.’ How far do you agree? Explain your answer."
+                }
+              ],
+              "teacher_note": "⚖️ BALANCED ROTATION: Examined in 2022. Keep in regular retrieval rotation."
+            },
+            {
+              "point_index": 3,
+              "point_text": "**Walsingham** and the use of spies.",
+              "exam_count": 0,
+              "years_appeared": [],
+              "last_examined": "Never",
+              "tariffs_examined": [],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "high",
+              "overdue_score": 100,
+              "matched_questions": [],
+              "teacher_note": "⚠️ UNEXAMINED TOPIC: This specification point has never appeared on an official Edexcel paper since 2018. It is prime territory for an upcoming series."
+            },
+            {
+              "point_index": 4,
+              "point_text": "The reasons for, and significance of, **Mary Queen of Scots' execution in 1587**.",
+              "exam_count": 1,
+              "years_appeared": [
+                2023
+              ],
+              "last_examined": 2023,
+              "tariffs_examined": [
+                12
+              ],
+              "has_12m": true,
+              "has_16m": false,
+              "high_tariff_gap": false,
+              "overdue_status": "medium",
+              "overdue_score": 50,
+              "matched_questions": [
+                {
+                  "q_id": "eliz_2023_q2",
+                  "q_number": "Q2",
+                  "year": 2023,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why Mary, Queen of Scots, was executed in 1587."
+                }
+              ],
+              "teacher_note": "⚖️ BALANCED ROTATION: Examined in 2023. Keep in regular retrieval rotation."
+            }
+          ]
+        },
+        {
+          "title": "2. Relations with Spain",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "Political, religious and commercial **rivalry**.",
+              "exam_count": 3,
+              "years_appeared": [
+                2023,
+                2025
+              ],
+              "last_examined": 2025,
+              "tariffs_examined": [
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "eliz_2023_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2023,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘Political rivalry with Spain was the main reason for direct English involvement in the Netherlands in the years 1585-88.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "eliz_2023_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2023,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘New technology was the main reason why exploration by the English increased in the years 1558-88.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "eliz_2025_q2",
+                  "q_number": "Q2",
+                  "year": 2025,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why relations between England and Spain became worse in the years 1569-88."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2025. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 2,
+              "point_text": "The significance of **privateering** and the activities of **Drake**.",
+              "exam_count": 5,
+              "years_appeared": [
+                2019,
+                2023,
+                2024,
+                2025
+              ],
+              "last_examined": 2025,
+              "tariffs_examined": [
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "eliz_2019_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2019,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘Drake’s most significant achievement, in the years 1558-88, was the raid on Cadiz.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "eliz_2023_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2023,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘Political rivalry with Spain was the main reason for direct English involvement in the Netherlands in the years 1585-88.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "eliz_2023_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2023,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘New technology was the main reason why exploration by the English increased in the years 1558-88.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "eliz_2024_q2",
+                  "q_number": "Q2",
+                  "year": 2024,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why the Spanish Armada was defeated."
+                },
+                {
+                  "q_id": "eliz_2025_q2",
+                  "q_number": "Q2",
+                  "year": 2025,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why relations between England and Spain became worse in the years 1569-88."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2025. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            }
+          ]
+        },
+        {
+          "title": "3. Outbreak of war with Spain, 1585–88",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "Reasons for deteriorating relations with Spain: English direct involvement in the **Netherlands** and the actions of **Robert Dudley**.",
+              "exam_count": 3,
+              "years_appeared": [
+                2023,
+                2025
+              ],
+              "last_examined": 2025,
+              "tariffs_examined": [
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "eliz_2023_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2023,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘Political rivalry with Spain was the main reason for direct English involvement in the Netherlands in the years 1585-88.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "eliz_2023_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2023,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘New technology was the main reason why exploration by the English increased in the years 1558-88.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "eliz_2025_q2",
+                  "q_number": "Q2",
+                  "year": 2025,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why relations between England and Spain became worse in the years 1569-88."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2025. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 2,
+              "point_text": "**Drake** and the **raid on Cadiz**: 'Singeing the King of Spain's beard'.",
+              "exam_count": 2,
+              "years_appeared": [
+                2019,
+                2024
+              ],
+              "last_examined": 2024,
+              "tariffs_examined": [
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "eliz_2019_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2019,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘Drake’s most significant achievement, in the years 1558-88, was the raid on Cadiz.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "eliz_2024_q2",
+                  "q_number": "Q2",
+                  "year": 2024,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why the Spanish Armada was defeated."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2024. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            }
+          ]
+        },
+        {
+          "title": "4. The Armada",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "Spanish **invasion plans**. Key events of the **Spanish Armada**.",
+              "exam_count": 2,
+              "years_appeared": [
+                2018,
+                2024
+              ],
+              "last_examined": 2024,
+              "tariffs_examined": [
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "eliz_2018_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2018,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The effective use of naval tactics was the main reason for the English victory over the Spanish Armada.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "eliz_2024_q2",
+                  "q_number": "Q2",
+                  "year": 2024,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why the Spanish Armada was defeated."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2024. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 2,
+              "point_text": "The reasons for the **English victory**.",
+              "exam_count": 0,
+              "years_appeared": [],
+              "last_examined": "Never",
+              "tariffs_examined": [],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "high",
+              "overdue_score": 100,
+              "matched_questions": [],
+              "teacher_note": "⚠️ UNEXAMINED TOPIC: This specification point has never appeared on an official Edexcel paper since 2018. It is prime territory for an upcoming series."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "key-topic-3",
+      "title": "Key topic 3: Elizabethan society in the Age of Exploration, 1558–88",
+      "topics": [
+        {
+          "title": "1. Education and leisure",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "**Education** in the home and schools.",
+              "exam_count": 3,
+              "years_appeared": [
+                2019,
+                2020,
+                2024
+              ],
+              "last_examined": 2024,
+              "tariffs_examined": [
+                4,
+                16
+              ],
+              "has_12m": false,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "eliz_2019_q1a",
+                  "q_number": "Q1(a)",
+                  "year": 2019,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of the theatre in early Elizabethan England."
+                },
+                {
+                  "q_id": "eliz_2020_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘There was little change in education in Early Elizabethan England.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "eliz_2024_q1a",
+                  "q_number": "Q1(a)",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of education in early Elizabethan England."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2024. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 2,
+              "point_text": "**Sport, pastimes** and the **theatre**.",
+              "exam_count": 3,
+              "years_appeared": [
+                2019,
+                2020,
+                2024
+              ],
+              "last_examined": 2024,
+              "tariffs_examined": [
+                4,
+                16
+              ],
+              "has_12m": false,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "eliz_2019_q1a",
+                  "q_number": "Q1(a)",
+                  "year": 2019,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of the theatre in early Elizabethan England."
+                },
+                {
+                  "q_id": "eliz_2020_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘There was little change in education in Early Elizabethan England.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "eliz_2024_q1a",
+                  "q_number": "Q1(a)",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of education in early Elizabethan England."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2024. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            }
+          ]
+        },
+        {
+          "title": "2. The 'problem' of the poor",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "The reasons for the increase in **poverty and vagabondage** during these years.",
+              "exam_count": 3,
+              "years_appeared": [
+                2018,
+                2022,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                2,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "eliz_2018_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2018,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘There was little change in attitudes towards the poor in the years 1558-88.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "eliz_2022_q2",
+                  "q_number": "Q2",
+                  "year": 2022,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why treatment of the poor changed in the period 1558-88."
+                },
+                {
+                  "q_id": "eliz_2026_q1a",
+                  "q_number": "Q1(a)",
+                  "year": 2026,
+                  "tariff": 2,
+                  "type": "feature",
+                  "question_text": "Describe one feature of poverty in early Elizabethan England."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 2,
+              "point_text": "The changing **attitudes and policies** towards the poor.",
+              "exam_count": 0,
+              "years_appeared": [],
+              "last_examined": "Never",
+              "tariffs_examined": [],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "high",
+              "overdue_score": 100,
+              "matched_questions": [],
+              "teacher_note": "⚠️ UNEXAMINED TOPIC: This specification point has never appeared on an official Edexcel paper since 2018. It is prime territory for an upcoming series."
+            }
+          ]
+        },
+        {
+          "title": "3. Exploration and voyages of discovery",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "Factors prompting exploration, including the impact of **new technology on ships and sailing** and the drive to **expand trade**.",
+              "exam_count": 3,
+              "years_appeared": [
+                2018,
+                2023,
+                2025
+              ],
+              "last_examined": 2025,
+              "tariffs_examined": [
+                2,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "eliz_2018_q2",
+                  "q_number": "Q2",
+                  "year": 2018,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there was an increase in exploration in the years 1558-88."
+                },
+                {
+                  "q_id": "eliz_2023_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2023,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘New technology was the main reason why exploration by the English increased in the years 1558-88.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "eliz_2025_q1b",
+                  "q_number": "Q1(b)",
+                  "year": 2025,
+                  "tariff": 2,
+                  "type": "feature",
+                  "question_text": "Describe one feature of exploration in the years 1558-88."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2025. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 2,
+              "point_text": "The reasons for, and significance of, **Drake's circumnavigation of the globe**.",
+              "exam_count": 5,
+              "years_appeared": [
+                2018,
+                2019,
+                2023,
+                2024,
+                2025
+              ],
+              "last_examined": 2025,
+              "tariffs_examined": [
+                2,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "eliz_2018_q2",
+                  "q_number": "Q2",
+                  "year": 2018,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there was an increase in exploration in the years 1558-88."
+                },
+                {
+                  "q_id": "eliz_2019_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2019,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘Drake’s most significant achievement, in the years 1558-88, was the raid on Cadiz.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "eliz_2023_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2023,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘New technology was the main reason why exploration by the English increased in the years 1558-88.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "eliz_2024_q2",
+                  "q_number": "Q2",
+                  "year": 2024,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why the Spanish Armada was defeated."
+                },
+                {
+                  "q_id": "eliz_2025_q1b",
+                  "q_number": "Q1(b)",
+                  "year": 2025,
+                  "tariff": 2,
+                  "type": "feature",
+                  "question_text": "Describe one feature of exploration in the years 1558-88."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2025. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            }
+          ]
+        },
+        {
+          "title": "4. Attempted colonisation of Virginia",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "Reasons for the **attempted colonisation of Virginia**, including the significance of **Raleigh**.",
+              "exam_count": 3,
+              "years_appeared": [
+                2019,
+                2024,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                2,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "eliz_2019_q2",
+                  "q_number": "Q2",
+                  "year": 2019,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why Raleigh’s first colony in Virginia failed."
+                },
+                {
+                  "q_id": "eliz_2024_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2024,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘Poor planning was the main reason why the first colony in Virginia failed.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "eliz_2026_q1b",
+                  "q_number": "Q1(b)",
+                  "year": 2026,
+                  "tariff": 2,
+                  "type": "feature",
+                  "question_text": "Describe one feature of the attempted colonisation of Virginia."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 2,
+              "point_text": "Reasons for the **failure of the first settlement** in Virginia.",
+              "exam_count": 3,
+              "years_appeared": [
+                2019,
+                2024,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                2,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "eliz_2019_q2",
+                  "q_number": "Q2",
+                  "year": 2019,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why Raleigh’s first colony in Virginia failed."
+                },
+                {
+                  "q_id": "eliz_2024_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2024,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘Poor planning was the main reason why the first colony in Virginia failed.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "eliz_2026_q1b",
+                  "q_number": "Q1(b)",
+                  "year": 2026,
+                  "tariff": 2,
+                  "type": "feature",
+                  "question_text": "Describe one feature of the attempted colonisation of Virginia."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary_stats": {
+    "total_specification_points": 27,
+    "overdue_topics_count": 6,
+    "high_tariff_gaps_count": 6,
+    "overdue_percentage": 22
+  }
+}

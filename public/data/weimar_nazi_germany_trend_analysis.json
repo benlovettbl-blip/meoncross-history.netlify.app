@@ -1,0 +1,2268 @@
+{
+  "unit_id": "weimar_nazi_germany",
+  "title": "Pearson Edexcel GCSE (9–1) History Specification",
+  "subtitle": "Option 31: Weimar and Nazi Germany, 1918–39",
+  "generated_at": "2026-09-09T15:46:33.380Z",
+  "total_past_questions": 56,
+  "total_series_analyzed": 9,
+  "sections": [
+    {
+      "id": "key-topic-1",
+      "title": "Key topic 1: The Weimar Republic 1918–29",
+      "topics": [
+        {
+          "title": "1 The origins of the Republic, 1918–19",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "The situation in Germany at the end of the War: **political unrest, abdication of the Kaiser, armistice and new republic.**",
+              "exam_count": 0,
+              "years_appeared": [],
+              "last_examined": "Never",
+              "tariffs_examined": [],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "high",
+              "overdue_score": 100,
+              "matched_questions": [],
+              "teacher_note": "⚠️ UNEXAMINED TOPIC: This specification point has never appeared on an official Edexcel paper since 2018. It is prime territory for an upcoming series."
+            },
+            {
+              "point_index": 2,
+              "point_text": "The **strengths and weaknesses** of the new Weimar Constitution.",
+              "exam_count": 0,
+              "years_appeared": [],
+              "last_examined": "Never",
+              "tariffs_examined": [],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "high",
+              "overdue_score": 100,
+              "matched_questions": [],
+              "teacher_note": "⚠️ UNEXAMINED TOPIC: This specification point has never appeared on an official Edexcel paper since 2018. It is prime territory for an upcoming series."
+            }
+          ]
+        },
+        {
+          "title": "2 The early challenges to the Weimar Republic, 1919–23",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "Reasons for the **early unpopularity of the Republic**, including the **'stab in the back' theory** and the key terms of the **Treaty of Versailles**.",
+              "exam_count": 1,
+              "years_appeared": [
+                2021
+              ],
+              "last_examined": 2021,
+              "tariffs_examined": [
+                12
+              ],
+              "has_12m": true,
+              "has_16m": false,
+              "high_tariff_gap": false,
+              "overdue_status": "medium",
+              "overdue_score": 50,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2021_q2",
+                  "q_number": "Q2",
+                  "year": 2021,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why the Weimar Republic was unpopular in the years 1919–1923."
+                }
+              ],
+              "teacher_note": "⚖️ BALANCED ROTATION: Examined in 2021. Keep in regular retrieval rotation."
+            },
+            {
+              "point_index": 2,
+              "point_text": "Challenges to the Republic from Left and Right: **Spartacists, Freikorps, the Kapp Putsch.**",
+              "exam_count": 2,
+              "years_appeared": [
+                2018,
+                2024
+              ],
+              "last_examined": 2024,
+              "tariffs_examined": [
+                8,
+                12
+              ],
+              "has_12m": true,
+              "has_16m": false,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2018_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into the challenges facing the Weimar Republic in the years 1919–1923?"
+                },
+                {
+                  "q_id": "germany_2024_q2",
+                  "q_number": "Q2",
+                  "year": 2024,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why the situation in Germany was unstable in the years 1918–1923."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2024. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 3,
+              "point_text": "The challenges of 1923: **hyperinflation**; the reasons for, and effects of, the **French occupation of the Ruhr**.",
+              "exam_count": 10,
+              "years_appeared": [
+                2018,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2018_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into the challenges facing the Weimar Republic in the years 1919–1923?"
+                },
+                {
+                  "q_id": "germany_2018_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "interpretation-difference",
+                  "question_text": "Study Interpretations 1 and 2. They give different views about the challenges facing the Weimar Republic in the years 1919–1923. What is the main difference between these views? Explain your answer, using details from both interpretations."
+                },
+                {
+                  "q_id": "germany_2018_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "interpretation-why",
+                  "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about the challenges facing the Weimar Republic in the years 1919–1923. You may use Sources B and C to help explain your answer."
+                },
+                {
+                  "q_id": "germany_2018_q3d",
+                  "q_number": "Q3(d)",
+                  "year": 2018,
+                  "tariff": 16,
+                  "type": "interpretation-evaluation",
+                  "question_text": "How far do you agree with Interpretation 2 about the challenges facing the Weimar Republic in the years 1919–1923? Explain your answer, using both interpretations, and your knowledge of the historical context."
+                },
+                {
+                  "q_id": "germany_2024_q2",
+                  "q_number": "Q2",
+                  "year": 2024,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why the situation in Germany was unstable in the years 1918–1923."
+                },
+                {
+                  "q_id": "germany_2025_q1",
+                  "q_number": "Q1",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "inference",
+                  "question_text": "Give two things you can infer from Source A about the impact of hyperinflation in Germany in 1923."
+                },
+                {
+                  "q_id": "germany_2026_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into the problems faced by the Weimar Republic in 1923?"
+                },
+                {
+                  "q_id": "germany_2026_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2026,
+                  "tariff": 4,
+                  "type": "interpretation-difference",
+                  "question_text": "Study Interpretations 1 and 2. They give different views about the problems faced by the Weimar Republic in 1923. What is the main difference between these views? Explain your answer, using details from both interpretations."
+                },
+                {
+                  "q_id": "germany_2026_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2026,
+                  "tariff": 4,
+                  "type": "interpretation-why",
+                  "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about the problems faced by the Weimar Republic in 1923. You may use Sources B and C to help explain your answer."
+                },
+                {
+                  "q_id": "germany_2026_q3d",
+                  "q_number": "Q3(d)",
+                  "year": 2026,
+                  "tariff": 16,
+                  "type": "interpretation-evaluation",
+                  "question_text": "How far do you agree with Interpretation 2 about the problems faced by the Weimar Republic in 1923? Explain your answer, using both interpretations and your knowledge of the historical context."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            }
+          ]
+        },
+        {
+          "title": "3 The 'Golden Years': recovery of the Republic, 1924–29",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "Reasons for economic recovery, including the work of **Stresemann**, the **Rentenmark**, the **Dawes and Young Plans** and American loans and investment.",
+              "exam_count": 2,
+              "years_appeared": [
+                2020
+              ],
+              "last_examined": 2020,
+              "tariffs_examined": [
+                8,
+                12
+              ],
+              "has_12m": true,
+              "has_16m": false,
+              "high_tariff_gap": false,
+              "overdue_status": "high",
+              "overdue_score": 80,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2020_q2",
+                  "q_number": "Q2",
+                  "year": 2020,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why the German economy recovered in the years 1924–1929."
+                },
+                {
+                  "q_id": "germany_2020_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2020,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into the extent of support for the Nazi regime in the years 1933–1939?"
+                }
+              ],
+              "teacher_note": "🔥 HIGHLY OVERDUE: Last set in 2020. It has been 6 years since students were tested on this topic. Ideal candidate for mocks."
+            },
+            {
+              "point_index": 2,
+              "point_text": "Stresemann's achievements in gaining **international acceptance of Germany** abroad through the **Locarno Pact** and joining the **League of Nations**.",
+              "exam_count": 2,
+              "years_appeared": [
+                2020
+              ],
+              "last_examined": 2020,
+              "tariffs_examined": [
+                8,
+                12
+              ],
+              "has_12m": true,
+              "has_16m": false,
+              "high_tariff_gap": false,
+              "overdue_status": "high",
+              "overdue_score": 80,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2020_q2",
+                  "q_number": "Q2",
+                  "year": 2020,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why the German economy recovered in the years 1924–1929."
+                },
+                {
+                  "q_id": "germany_2020_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2020,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into the extent of support for the Nazi regime in the years 1933–1939?"
+                }
+              ],
+              "teacher_note": "🔥 HIGHLY OVERDUE: Last set in 2020. It has been 6 years since students were tested on this topic. Ideal candidate for mocks."
+            }
+          ]
+        },
+        {
+          "title": "4 Changes in society, 1924–29",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "Changes in the **standard of living**.",
+              "exam_count": 5,
+              "years_appeared": [
+                2018,
+                2025
+              ],
+              "last_examined": 2025,
+              "tariffs_examined": [
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2018_q2",
+                  "q_number": "Q2",
+                  "year": 2018,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why the Nazis were able to reduce unemployment in Germany in the years 1933–1939."
+                },
+                {
+                  "q_id": "germany_2025_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into people’s living standards in Nazi Germany in the years 1933–1939?"
+                },
+                {
+                  "q_id": "germany_2025_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "interpretation-difference",
+                  "question_text": "Study Interpretations 1 and 2. They give different views about people’s living standards in Nazi Germany in the years 1933–1939. What is the main difference between these views? Explain your answer, using details from both interpretations."
+                },
+                {
+                  "q_id": "germany_2025_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "interpretation-why",
+                  "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about people’s living standards in Nazi Germany in the years 1933–1939. You may use Sources B and C to help explain your answer."
+                },
+                {
+                  "q_id": "germany_2025_q3d",
+                  "q_number": "Q3(d)",
+                  "year": 2025,
+                  "tariff": 16,
+                  "type": "interpretation-evaluation",
+                  "question_text": "How far do you agree with Interpretation 2 about people’s living standards in Nazi Germany in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2025. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 2,
+              "point_text": "Changes in the **position of women** in work, politics and leisure.",
+              "exam_count": 1,
+              "years_appeared": [
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                12
+              ],
+              "has_12m": true,
+              "has_16m": false,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2026_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2026,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there were changes in the position of women in society in the years 1924–1939."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 3,
+              "point_text": "**Cultural changes**: developments in architecture, art and the cinema.",
+              "exam_count": 4,
+              "years_appeared": [
+                2023
+              ],
+              "last_examined": 2023,
+              "tariffs_examined": [
+                4,
+                8,
+                16
+              ],
+              "has_12m": false,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "medium",
+              "overdue_score": 50,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2023_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2023,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into cultural changes in the Weimar Republic in the years 1924–1929?"
+                },
+                {
+                  "q_id": "germany_2023_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2023,
+                  "tariff": 4,
+                  "type": "interpretation-difference",
+                  "question_text": "Study Interpretations 1 and 2. They give different views about cultural changes in the Weimar Republic in the years 1924–1929. What is the main difference between these views? Explain your answer, using details from both interpretations."
+                },
+                {
+                  "q_id": "germany_2023_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2023,
+                  "tariff": 4,
+                  "type": "interpretation-why",
+                  "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about cultural changes in the Weimar Republic in the years 1924–1929. You may use Sources B and C to help explain your answer."
+                },
+                {
+                  "q_id": "germany_2023_q3d",
+                  "q_number": "Q3(d)",
+                  "year": 2023,
+                  "tariff": 16,
+                  "type": "interpretation-evaluation",
+                  "question_text": "How far do you agree with Interpretation 2 about cultural changes in the Weimar Republic in the years 1924–1929? Explain your answer, using both interpretations and your knowledge of the historical context."
+                }
+              ],
+              "teacher_note": "⚖️ BALANCED ROTATION: Examined in 2023. Keep in regular retrieval rotation."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "key-topic-2",
+      "title": "Key topic 2: Hitler's rise to power, 1919–33",
+      "topics": [
+        {
+          "title": "1 Early development of the Nazi Party, 1920–22",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "Hitler's early career: **joining the German Workers' Party** and **setting up the Nazi Party, 1919–20**.",
+              "exam_count": 2,
+              "years_appeared": [
+                2019,
+                2024
+              ],
+              "last_examined": 2024,
+              "tariffs_examined": [
+                4
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2019_q1",
+                  "q_number": "Q1",
+                  "year": 2019,
+                  "tariff": 4,
+                  "type": "inference",
+                  "question_text": "Give two things you can infer from Source A about the early development of the Nazi Party."
+                },
+                {
+                  "q_id": "germany_2024_q1",
+                  "q_number": "Q1",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "inference",
+                  "question_text": "Give two things you can infer from Source A about how Hitler increased support for the Nazi Party in the early 1920s."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            },
+            {
+              "point_index": 2,
+              "point_text": "The **Twenty-Five Point Programme**. The **role of the SA**.",
+              "exam_count": 2,
+              "years_appeared": [
+                2019,
+                2024
+              ],
+              "last_examined": 2024,
+              "tariffs_examined": [
+                4
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2019_q1",
+                  "q_number": "Q1",
+                  "year": 2019,
+                  "tariff": 4,
+                  "type": "inference",
+                  "question_text": "Give two things you can infer from Source A about the early development of the Nazi Party."
+                },
+                {
+                  "q_id": "germany_2024_q1",
+                  "q_number": "Q1",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "inference",
+                  "question_text": "Give two things you can infer from Source A about how Hitler increased support for the Nazi Party in the early 1920s."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            }
+          ]
+        },
+        {
+          "title": "2 The Munich Putsch and the Nazi Party, 1923–28",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "The reasons for, events and consequences of the **Munich Putsch**; ***Mein Kampf***.",
+              "exam_count": 5,
+              "years_appeared": [
+                2021,
+                2023
+              ],
+              "last_examined": 2023,
+              "tariffs_examined": [
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "medium",
+              "overdue_score": 50,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2021_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2021,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into support for the Nazi Party in the years 1924–1928?"
+                },
+                {
+                  "q_id": "germany_2021_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2021,
+                  "tariff": 4,
+                  "type": "interpretation-difference",
+                  "question_text": "Study Interpretations 1 and 2. They give different views about support for the Nazi Party in the years 1924–1928. What is the main difference between these views? Explain your answer, using details from both interpretations."
+                },
+                {
+                  "q_id": "germany_2021_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2021,
+                  "tariff": 4,
+                  "type": "interpretation-why",
+                  "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about support for the Nazi Party in the years 1924–1928. You may use Sources B and C to help explain your answer."
+                },
+                {
+                  "q_id": "germany_2021_q3d",
+                  "q_number": "Q3(d)",
+                  "year": 2021,
+                  "tariff": 16,
+                  "type": "interpretation-evaluation",
+                  "question_text": "How far do you agree with Interpretation 2 about support for the Nazi Party in the years 1924–1928? Explain your answer, using both interpretations and your knowledge of the historical context."
+                },
+                {
+                  "q_id": "germany_2023_q2",
+                  "q_number": "Q2",
+                  "year": 2023,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why the Nazi Party was reorganised in the years 1924–1928."
+                }
+              ],
+              "teacher_note": "⚖️ BALANCED ROTATION: Examined in 2023. Keep in regular retrieval rotation."
+            },
+            {
+              "point_index": 2,
+              "point_text": "Reasons for **limited support for the Nazi Party, 1924–28**. Party reorganisation, including the **Bamberg Conference of 1926**.",
+              "exam_count": 5,
+              "years_appeared": [
+                2021,
+                2023
+              ],
+              "last_examined": 2023,
+              "tariffs_examined": [
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "medium",
+              "overdue_score": 50,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2021_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2021,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into support for the Nazi Party in the years 1924–1928?"
+                },
+                {
+                  "q_id": "germany_2021_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2021,
+                  "tariff": 4,
+                  "type": "interpretation-difference",
+                  "question_text": "Study Interpretations 1 and 2. They give different views about support for the Nazi Party in the years 1924–1928. What is the main difference between these views? Explain your answer, using details from both interpretations."
+                },
+                {
+                  "q_id": "germany_2021_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2021,
+                  "tariff": 4,
+                  "type": "interpretation-why",
+                  "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about support for the Nazi Party in the years 1924–1928. You may use Sources B and C to help explain your answer."
+                },
+                {
+                  "q_id": "germany_2021_q3d",
+                  "q_number": "Q3(d)",
+                  "year": 2021,
+                  "tariff": 16,
+                  "type": "interpretation-evaluation",
+                  "question_text": "How far do you agree with Interpretation 2 about support for the Nazi Party in the years 1924–1928? Explain your answer, using both interpretations and your knowledge of the historical context."
+                },
+                {
+                  "q_id": "germany_2023_q2",
+                  "q_number": "Q2",
+                  "year": 2023,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why the Nazi Party was reorganised in the years 1924–1928."
+                }
+              ],
+              "teacher_note": "⚖️ BALANCED ROTATION: Examined in 2023. Keep in regular retrieval rotation."
+            }
+          ]
+        },
+        {
+          "title": "3 The growth in support for the Nazis, 1929–32",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "The **growth of unemployment** – its causes and impact. The growth of support for the **Communist Party**.",
+              "exam_count": 1,
+              "years_appeared": [
+                2025
+              ],
+              "last_examined": 2025,
+              "tariffs_examined": [
+                12
+              ],
+              "has_12m": true,
+              "has_16m": false,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2025_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2025,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why support for the Nazi party grew in the years 1929–1932."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2025. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 2,
+              "point_text": "Reasons for the **growth in support for the Nazi Party**, including the **appeal of Hitler and the Nazis**, the **effects of propaganda** and the **work of the SA**.",
+              "exam_count": 8,
+              "years_appeared": [
+                2018,
+                2019,
+                2022,
+                2024,
+                2025
+              ],
+              "last_examined": 2025,
+              "tariffs_examined": [
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2018_q1",
+                  "q_number": "Q1",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "inference",
+                  "question_text": "Give two things you can infer from Source A about the success of the Berlin Olympic Games in 1936."
+                },
+                {
+                  "q_id": "germany_2019_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into Nazi policies towards women in the years 1933–1939?"
+                },
+                {
+                  "q_id": "germany_2022_q2",
+                  "q_number": "Q2",
+                  "year": 2022,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why the use of propaganda helped the Nazis to control the attitudes of the German people in the years 1933–1939."
+                },
+                {
+                  "q_id": "germany_2024_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2024,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into Nazi methods of controlling the German people in the years 1933–1939?"
+                },
+                {
+                  "q_id": "germany_2024_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "interpretation-difference",
+                  "question_text": "Study Interpretations 1 and 2. They give different views about Nazi methods of controlling the German people in the years 1933–1939. What is the main difference between these views? Explain your answer, using details from both interpretations."
+                },
+                {
+                  "q_id": "germany_2024_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "interpretation-why",
+                  "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about Nazi methods of controlling the German people in the years 1933–1939. You may use Sources B and C to help explain your answer."
+                },
+                {
+                  "q_id": "germany_2024_q3d",
+                  "q_number": "Q3(d)",
+                  "year": 2024,
+                  "tariff": 16,
+                  "type": "interpretation-evaluation",
+                  "question_text": "How far do you agree with Interpretation 2 about Nazi methods of controlling the German people in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
+                },
+                {
+                  "q_id": "germany_2025_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2025,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why support for the Nazi party grew in the years 1929–1932."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2025. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            }
+          ]
+        },
+        {
+          "title": "4 How Hitler became Chancellor, 1932–33",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "The **Presidential and Reichstag elections of 1932**; reasons for **Hitler becoming Chancellor in 1933**, including the roles of **Hindenburg** and **von Papen**.",
+              "exam_count": 5,
+              "years_appeared": [
+                2022,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2022_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2022,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into the reasons why Hitler became Chancellor in 1933?"
+                },
+                {
+                  "q_id": "germany_2022_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2022,
+                  "tariff": 4,
+                  "type": "interpretation-difference",
+                  "question_text": "Study Interpretations 1 and 2. They give different views about the reasons why Hitler became Chancellor in 1933. What is the main difference between these views? Explain your answer, using details from both interpretations."
+                },
+                {
+                  "q_id": "germany_2022_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2022,
+                  "tariff": 4,
+                  "type": "interpretation-why",
+                  "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about the reasons why Hitler became Chancellor in 1933. You may use Sources B and C to help explain your answer."
+                },
+                {
+                  "q_id": "germany_2022_q3d",
+                  "q_number": "Q3(d)",
+                  "year": 2022,
+                  "tariff": 16,
+                  "type": "interpretation-evaluation",
+                  "question_text": "How far do you agree with Interpretation 2 about the reasons why Hitler became Chancellor in 1933? Explain your answer, using both interpretations and your knowledge of the historical context."
+                },
+                {
+                  "q_id": "germany_2026_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2026,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why Hitler became Chancellor in 1933."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "key-topic-3",
+      "title": "Key topic 3: Nazi control and dictatorship, 1933–39",
+      "topics": [
+        {
+          "title": "1 The creation of a dictatorship, 1933–34",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "The **Reichstag Fire**. The **Enabling Act** and the **banning of other parties and trade unions**.",
+              "exam_count": 1,
+              "years_appeared": [
+                2021
+              ],
+              "last_examined": 2021,
+              "tariffs_examined": [
+                4
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "medium",
+              "overdue_score": 50,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2021_q1",
+                  "q_number": "Q1",
+                  "year": 2021,
+                  "tariff": 4,
+                  "type": "inference",
+                  "question_text": "Give two things you can infer from Source A about how the Nazis reacted to the Reichstag Fire."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            },
+            {
+              "point_index": 2,
+              "point_text": "The **threat from Röhm and the SA**, the **Night of the Long Knives**. The **death of Hindenburg**. Hitler becomes **Führer**, the **army oath of allegiance**.",
+              "exam_count": 1,
+              "years_appeared": [
+                2021
+              ],
+              "last_examined": 2021,
+              "tariffs_examined": [
+                4
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "medium",
+              "overdue_score": 50,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2021_q1",
+                  "q_number": "Q1",
+                  "year": 2021,
+                  "tariff": 4,
+                  "type": "inference",
+                  "question_text": "Give two things you can infer from Source A about how the Nazis reacted to the Reichstag Fire."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            }
+          ]
+        },
+        {
+          "title": "2 The police state",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "The role of the **Gestapo**, the **SS** and **concentration camps**.",
+              "exam_count": 17,
+              "years_appeared": [
+                2018,
+                2019,
+                2020,
+                2021,
+                2022,
+                2023,
+                2024,
+                2025
+              ],
+              "last_examined": 2025,
+              "tariffs_examined": [
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2018_q1",
+                  "q_number": "Q1",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "inference",
+                  "question_text": "Give two things you can infer from Source A about the success of the Berlin Olympic Games in 1936."
+                },
+                {
+                  "q_id": "germany_2018_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into the challenges facing the Weimar Republic in the years 1919–1923?"
+                },
+                {
+                  "q_id": "germany_2019_q2",
+                  "q_number": "Q2",
+                  "year": 2019,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why the Nazis were able to create a police state in the years 1933–1939."
+                },
+                {
+                  "q_id": "germany_2019_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into Nazi policies towards women in the years 1933–1939?"
+                },
+                {
+                  "q_id": "germany_2019_q3d",
+                  "q_number": "Q3(d)",
+                  "year": 2019,
+                  "tariff": 16,
+                  "type": "interpretation-evaluation",
+                  "question_text": "How far do you agree with Interpretation 2 about Nazi policies towards women in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
+                },
+                {
+                  "q_id": "germany_2020_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2020,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into the extent of support for the Nazi regime in the years 1933–1939?"
+                },
+                {
+                  "q_id": "germany_2021_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2021,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into support for the Nazi Party in the years 1924–1928?"
+                },
+                {
+                  "q_id": "germany_2022_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2022,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into the reasons why Hitler became Chancellor in 1933?"
+                },
+                {
+                  "q_id": "germany_2022_q3d",
+                  "q_number": "Q3(d)",
+                  "year": 2022,
+                  "tariff": 16,
+                  "type": "interpretation-evaluation",
+                  "question_text": "How far do you agree with Interpretation 2 about the reasons why Hitler became Chancellor in 1933? Explain your answer, using both interpretations and your knowledge of the historical context."
+                },
+                {
+                  "q_id": "germany_2023_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2023,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into cultural changes in the Weimar Republic in the years 1924–1929?"
+                },
+                {
+                  "q_id": "germany_2024_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2024,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into Nazi methods of controlling the German people in the years 1933–1939?"
+                },
+                {
+                  "q_id": "germany_2024_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "interpretation-difference",
+                  "question_text": "Study Interpretations 1 and 2. They give different views about Nazi methods of controlling the German people in the years 1933–1939. What is the main difference between these views? Explain your answer, using details from both interpretations."
+                },
+                {
+                  "q_id": "germany_2024_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "interpretation-why",
+                  "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about Nazi methods of controlling the German people in the years 1933–1939. You may use Sources B and C to help explain your answer."
+                },
+                {
+                  "q_id": "germany_2024_q3d",
+                  "q_number": "Q3(d)",
+                  "year": 2024,
+                  "tariff": 16,
+                  "type": "interpretation-evaluation",
+                  "question_text": "How far do you agree with Interpretation 2 about Nazi methods of controlling the German people in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
+                },
+                {
+                  "q_id": "germany_2025_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2025,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why support for the Nazi party grew in the years 1929–1932."
+                },
+                {
+                  "q_id": "germany_2025_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2025,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there was opposition from some young people towards the Nazis in the years 1933–1939."
+                },
+                {
+                  "q_id": "germany_2025_q3d",
+                  "q_number": "Q3(d)",
+                  "year": 2025,
+                  "tariff": 16,
+                  "type": "interpretation-evaluation",
+                  "question_text": "How far do you agree with Interpretation 2 about people’s living standards in Nazi Germany in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2025. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 2,
+              "point_text": "Nazi control of the **legal system**.",
+              "exam_count": 17,
+              "years_appeared": [
+                2018,
+                2019,
+                2020,
+                2021,
+                2022,
+                2023,
+                2024,
+                2025
+              ],
+              "last_examined": 2025,
+              "tariffs_examined": [
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2018_q1",
+                  "q_number": "Q1",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "inference",
+                  "question_text": "Give two things you can infer from Source A about the success of the Berlin Olympic Games in 1936."
+                },
+                {
+                  "q_id": "germany_2018_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into the challenges facing the Weimar Republic in the years 1919–1923?"
+                },
+                {
+                  "q_id": "germany_2019_q2",
+                  "q_number": "Q2",
+                  "year": 2019,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why the Nazis were able to create a police state in the years 1933–1939."
+                },
+                {
+                  "q_id": "germany_2019_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into Nazi policies towards women in the years 1933–1939?"
+                },
+                {
+                  "q_id": "germany_2019_q3d",
+                  "q_number": "Q3(d)",
+                  "year": 2019,
+                  "tariff": 16,
+                  "type": "interpretation-evaluation",
+                  "question_text": "How far do you agree with Interpretation 2 about Nazi policies towards women in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
+                },
+                {
+                  "q_id": "germany_2020_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2020,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into the extent of support for the Nazi regime in the years 1933–1939?"
+                },
+                {
+                  "q_id": "germany_2021_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2021,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into support for the Nazi Party in the years 1924–1928?"
+                },
+                {
+                  "q_id": "germany_2022_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2022,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into the reasons why Hitler became Chancellor in 1933?"
+                },
+                {
+                  "q_id": "germany_2022_q3d",
+                  "q_number": "Q3(d)",
+                  "year": 2022,
+                  "tariff": 16,
+                  "type": "interpretation-evaluation",
+                  "question_text": "How far do you agree with Interpretation 2 about the reasons why Hitler became Chancellor in 1933? Explain your answer, using both interpretations and your knowledge of the historical context."
+                },
+                {
+                  "q_id": "germany_2023_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2023,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into cultural changes in the Weimar Republic in the years 1924–1929?"
+                },
+                {
+                  "q_id": "germany_2024_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2024,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into Nazi methods of controlling the German people in the years 1933–1939?"
+                },
+                {
+                  "q_id": "germany_2024_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "interpretation-difference",
+                  "question_text": "Study Interpretations 1 and 2. They give different views about Nazi methods of controlling the German people in the years 1933–1939. What is the main difference between these views? Explain your answer, using details from both interpretations."
+                },
+                {
+                  "q_id": "germany_2024_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "interpretation-why",
+                  "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about Nazi methods of controlling the German people in the years 1933–1939. You may use Sources B and C to help explain your answer."
+                },
+                {
+                  "q_id": "germany_2024_q3d",
+                  "q_number": "Q3(d)",
+                  "year": 2024,
+                  "tariff": 16,
+                  "type": "interpretation-evaluation",
+                  "question_text": "How far do you agree with Interpretation 2 about Nazi methods of controlling the German people in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
+                },
+                {
+                  "q_id": "germany_2025_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2025,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why support for the Nazi party grew in the years 1929–1932."
+                },
+                {
+                  "q_id": "germany_2025_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2025,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there was opposition from some young people towards the Nazis in the years 1933–1939."
+                },
+                {
+                  "q_id": "germany_2025_q3d",
+                  "q_number": "Q3(d)",
+                  "year": 2025,
+                  "tariff": 16,
+                  "type": "interpretation-evaluation",
+                  "question_text": "How far do you agree with Interpretation 2 about people’s living standards in Nazi Germany in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2025. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            }
+          ]
+        },
+        {
+          "title": "3 Controlling and influencing attitudes",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "**Goebbels** and the **Ministry of Propaganda**: **censorship**, Nazi **use of media, rallies and sport**, including the **Berlin Olympics (1936)**.",
+              "exam_count": 7,
+              "years_appeared": [
+                2018,
+                2019,
+                2022,
+                2024
+              ],
+              "last_examined": 2024,
+              "tariffs_examined": [
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2018_q1",
+                  "q_number": "Q1",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "inference",
+                  "question_text": "Give two things you can infer from Source A about the success of the Berlin Olympic Games in 1936."
+                },
+                {
+                  "q_id": "germany_2019_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into Nazi policies towards women in the years 1933–1939?"
+                },
+                {
+                  "q_id": "germany_2022_q2",
+                  "q_number": "Q2",
+                  "year": 2022,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why the use of propaganda helped the Nazis to control the attitudes of the German people in the years 1933–1939."
+                },
+                {
+                  "q_id": "germany_2024_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2024,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into Nazi methods of controlling the German people in the years 1933–1939?"
+                },
+                {
+                  "q_id": "germany_2024_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "interpretation-difference",
+                  "question_text": "Study Interpretations 1 and 2. They give different views about Nazi methods of controlling the German people in the years 1933–1939. What is the main difference between these views? Explain your answer, using details from both interpretations."
+                },
+                {
+                  "q_id": "germany_2024_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "interpretation-why",
+                  "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about Nazi methods of controlling the German people in the years 1933–1939. You may use Sources B and C to help explain your answer."
+                },
+                {
+                  "q_id": "germany_2024_q3d",
+                  "q_number": "Q3(d)",
+                  "year": 2024,
+                  "tariff": 16,
+                  "type": "interpretation-evaluation",
+                  "question_text": "How far do you agree with Interpretation 2 about Nazi methods of controlling the German people in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2024. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 2,
+              "point_text": "Nazi control of **culture and the arts**, including art, architecture, literature and film.",
+              "exam_count": 11,
+              "years_appeared": [
+                2018,
+                2019,
+                2022,
+                2023,
+                2024
+              ],
+              "last_examined": 2024,
+              "tariffs_examined": [
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2018_q1",
+                  "q_number": "Q1",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "inference",
+                  "question_text": "Give two things you can infer from Source A about the success of the Berlin Olympic Games in 1936."
+                },
+                {
+                  "q_id": "germany_2019_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into Nazi policies towards women in the years 1933–1939?"
+                },
+                {
+                  "q_id": "germany_2022_q2",
+                  "q_number": "Q2",
+                  "year": 2022,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why the use of propaganda helped the Nazis to control the attitudes of the German people in the years 1933–1939."
+                },
+                {
+                  "q_id": "germany_2023_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2023,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into cultural changes in the Weimar Republic in the years 1924–1929?"
+                },
+                {
+                  "q_id": "germany_2023_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2023,
+                  "tariff": 4,
+                  "type": "interpretation-difference",
+                  "question_text": "Study Interpretations 1 and 2. They give different views about cultural changes in the Weimar Republic in the years 1924–1929. What is the main difference between these views? Explain your answer, using details from both interpretations."
+                },
+                {
+                  "q_id": "germany_2023_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2023,
+                  "tariff": 4,
+                  "type": "interpretation-why",
+                  "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about cultural changes in the Weimar Republic in the years 1924–1929. You may use Sources B and C to help explain your answer."
+                },
+                {
+                  "q_id": "germany_2023_q3d",
+                  "q_number": "Q3(d)",
+                  "year": 2023,
+                  "tariff": 16,
+                  "type": "interpretation-evaluation",
+                  "question_text": "How far do you agree with Interpretation 2 about cultural changes in the Weimar Republic in the years 1924–1929? Explain your answer, using both interpretations and your knowledge of the historical context."
+                },
+                {
+                  "q_id": "germany_2024_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2024,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into Nazi methods of controlling the German people in the years 1933–1939?"
+                },
+                {
+                  "q_id": "germany_2024_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "interpretation-difference",
+                  "question_text": "Study Interpretations 1 and 2. They give different views about Nazi methods of controlling the German people in the years 1933–1939. What is the main difference between these views? Explain your answer, using details from both interpretations."
+                },
+                {
+                  "q_id": "germany_2024_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "interpretation-why",
+                  "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about Nazi methods of controlling the German people in the years 1933–1939. You may use Sources B and C to help explain your answer."
+                },
+                {
+                  "q_id": "germany_2024_q3d",
+                  "q_number": "Q3(d)",
+                  "year": 2024,
+                  "tariff": 16,
+                  "type": "interpretation-evaluation",
+                  "question_text": "How far do you agree with Interpretation 2 about Nazi methods of controlling the German people in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2024. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 3,
+              "point_text": "Nazi attempts to control the Catholic and Protestant Churches: the **Concordat** and the **Reich Church**.",
+              "exam_count": 13,
+              "years_appeared": [
+                2018,
+                2019,
+                2020,
+                2022,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2018_q1",
+                  "q_number": "Q1",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "inference",
+                  "question_text": "Give two things you can infer from Source A about the success of the Berlin Olympic Games in 1936."
+                },
+                {
+                  "q_id": "germany_2019_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into Nazi policies towards women in the years 1933–1939?"
+                },
+                {
+                  "q_id": "germany_2020_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2020,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into the extent of support for the Nazi regime in the years 1933–1939?"
+                },
+                {
+                  "q_id": "germany_2020_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2020,
+                  "tariff": 4,
+                  "type": "interpretation-difference",
+                  "question_text": "Study Interpretations 1 and 2. They give different views about the extent of support for the Nazi regime in the years 1933–1939. What is the main difference between these views? Explain your answer, using details from both interpretations."
+                },
+                {
+                  "q_id": "germany_2020_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2020,
+                  "tariff": 4,
+                  "type": "interpretation-why",
+                  "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about the extent of support for the Nazi regime in the years 1933–1939. You may use Sources B and C to help explain your answer."
+                },
+                {
+                  "q_id": "germany_2020_q3d",
+                  "q_number": "Q3(d)",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "interpretation-evaluation",
+                  "question_text": "How far do you agree with Interpretation 2 about the extent of support for the Nazi regime in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
+                },
+                {
+                  "q_id": "germany_2022_q2",
+                  "q_number": "Q2",
+                  "year": 2022,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why the use of propaganda helped the Nazis to control the attitudes of the German people in the years 1933–1939."
+                },
+                {
+                  "q_id": "germany_2024_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2024,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into Nazi methods of controlling the German people in the years 1933–1939?"
+                },
+                {
+                  "q_id": "germany_2024_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "interpretation-difference",
+                  "question_text": "Study Interpretations 1 and 2. They give different views about Nazi methods of controlling the German people in the years 1933–1939. What is the main difference between these views? Explain your answer, using details from both interpretations."
+                },
+                {
+                  "q_id": "germany_2024_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "interpretation-why",
+                  "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about Nazi methods of controlling the German people in the years 1933–1939. You may use Sources B and C to help explain your answer."
+                },
+                {
+                  "q_id": "germany_2024_q3d",
+                  "q_number": "Q3(d)",
+                  "year": 2024,
+                  "tariff": 16,
+                  "type": "interpretation-evaluation",
+                  "question_text": "How far do you agree with Interpretation 2 about Nazi methods of controlling the German people in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
+                },
+                {
+                  "q_id": "germany_2025_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2025,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there was opposition from some young people towards the Nazis in the years 1933–1939."
+                },
+                {
+                  "q_id": "germany_2026_q1",
+                  "q_number": "Q1",
+                  "year": 2026,
+                  "tariff": 4,
+                  "type": "inference",
+                  "question_text": "Give two things you can infer from Source A about how the Nazi Party dealt with opposition in the years 1933–1939."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            }
+          ]
+        },
+        {
+          "title": "4 Opposition, resistance and conformity",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "The **extent of support** for the Nazi regime.",
+              "exam_count": 6,
+              "years_appeared": [
+                2020,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2020_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2020,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into the extent of support for the Nazi regime in the years 1933–1939?"
+                },
+                {
+                  "q_id": "germany_2020_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2020,
+                  "tariff": 4,
+                  "type": "interpretation-difference",
+                  "question_text": "Study Interpretations 1 and 2. They give different views about the extent of support for the Nazi regime in the years 1933–1939. What is the main difference between these views? Explain your answer, using details from both interpretations."
+                },
+                {
+                  "q_id": "germany_2020_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2020,
+                  "tariff": 4,
+                  "type": "interpretation-why",
+                  "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about the extent of support for the Nazi regime in the years 1933–1939. You may use Sources B and C to help explain your answer."
+                },
+                {
+                  "q_id": "germany_2020_q3d",
+                  "q_number": "Q3(d)",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "interpretation-evaluation",
+                  "question_text": "How far do you agree with Interpretation 2 about the extent of support for the Nazi regime in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
+                },
+                {
+                  "q_id": "germany_2025_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2025,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there was opposition from some young people towards the Nazis in the years 1933–1939."
+                },
+                {
+                  "q_id": "germany_2026_q1",
+                  "q_number": "Q1",
+                  "year": 2026,
+                  "tariff": 4,
+                  "type": "inference",
+                  "question_text": "Give two things you can infer from Source A about how the Nazi Party dealt with opposition in the years 1933–1939."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 2,
+              "point_text": "**Opposition from the Churches**, including the role of **Pastor Niemöller**.",
+              "exam_count": 6,
+              "years_appeared": [
+                2020,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2020_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2020,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into the extent of support for the Nazi regime in the years 1933–1939?"
+                },
+                {
+                  "q_id": "germany_2020_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2020,
+                  "tariff": 4,
+                  "type": "interpretation-difference",
+                  "question_text": "Study Interpretations 1 and 2. They give different views about the extent of support for the Nazi regime in the years 1933–1939. What is the main difference between these views? Explain your answer, using details from both interpretations."
+                },
+                {
+                  "q_id": "germany_2020_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2020,
+                  "tariff": 4,
+                  "type": "interpretation-why",
+                  "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about the extent of support for the Nazi regime in the years 1933–1939. You may use Sources B and C to help explain your answer."
+                },
+                {
+                  "q_id": "germany_2020_q3d",
+                  "q_number": "Q3(d)",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "interpretation-evaluation",
+                  "question_text": "How far do you agree with Interpretation 2 about the extent of support for the Nazi regime in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
+                },
+                {
+                  "q_id": "germany_2025_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2025,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there was opposition from some young people towards the Nazis in the years 1933–1939."
+                },
+                {
+                  "q_id": "germany_2026_q1",
+                  "q_number": "Q1",
+                  "year": 2026,
+                  "tariff": 4,
+                  "type": "inference",
+                  "question_text": "Give two things you can infer from Source A about how the Nazi Party dealt with opposition in the years 1933–1939."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 3,
+              "point_text": "**Opposition from the young**, including the **Swing Youth** and the **Edelweiss Pirates**.",
+              "exam_count": 6,
+              "years_appeared": [
+                2020,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2020_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2020,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into the extent of support for the Nazi regime in the years 1933–1939?"
+                },
+                {
+                  "q_id": "germany_2020_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2020,
+                  "tariff": 4,
+                  "type": "interpretation-difference",
+                  "question_text": "Study Interpretations 1 and 2. They give different views about the extent of support for the Nazi regime in the years 1933–1939. What is the main difference between these views? Explain your answer, using details from both interpretations."
+                },
+                {
+                  "q_id": "germany_2020_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2020,
+                  "tariff": 4,
+                  "type": "interpretation-why",
+                  "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about the extent of support for the Nazi regime in the years 1933–1939. You may use Sources B and C to help explain your answer."
+                },
+                {
+                  "q_id": "germany_2020_q3d",
+                  "q_number": "Q3(d)",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "interpretation-evaluation",
+                  "question_text": "How far do you agree with Interpretation 2 about the extent of support for the Nazi regime in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
+                },
+                {
+                  "q_id": "germany_2025_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2025,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there was opposition from some young people towards the Nazis in the years 1933–1939."
+                },
+                {
+                  "q_id": "germany_2026_q1",
+                  "q_number": "Q1",
+                  "year": 2026,
+                  "tariff": 4,
+                  "type": "inference",
+                  "question_text": "Give two things you can infer from Source A about how the Nazi Party dealt with opposition in the years 1933–1939."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "key-topic-4",
+      "title": "Key topic 4: Life in Nazi Germany, 1933–39",
+      "topics": [
+        {
+          "title": "1 Nazi policies towards women",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "Nazi **views on women and the family**.",
+              "exam_count": 5,
+              "years_appeared": [
+                2019,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2019_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into Nazi policies towards women in the years 1933–1939?"
+                },
+                {
+                  "q_id": "germany_2019_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2019,
+                  "tariff": 4,
+                  "type": "interpretation-difference",
+                  "question_text": "Study Interpretations 1 and 2. They give different views about Nazi policies towards women. What is the main difference between these views? Explain your answer, using details from both interpretations."
+                },
+                {
+                  "q_id": "germany_2019_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2019,
+                  "tariff": 4,
+                  "type": "interpretation-why",
+                  "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about Nazi policies towards women. You may use Sources B and C to help explain your answer."
+                },
+                {
+                  "q_id": "germany_2019_q3d",
+                  "q_number": "Q3(d)",
+                  "year": 2019,
+                  "tariff": 16,
+                  "type": "interpretation-evaluation",
+                  "question_text": "How far do you agree with Interpretation 2 about Nazi policies towards women in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
+                },
+                {
+                  "q_id": "germany_2026_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2026,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there were changes in the position of women in society in the years 1924–1939."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 2,
+              "point_text": "Nazi **policies towards women**, including **marriage and family, employment and appearance**.",
+              "exam_count": 5,
+              "years_appeared": [
+                2019,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2019_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into Nazi policies towards women in the years 1933–1939?"
+                },
+                {
+                  "q_id": "germany_2019_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2019,
+                  "tariff": 4,
+                  "type": "interpretation-difference",
+                  "question_text": "Study Interpretations 1 and 2. They give different views about Nazi policies towards women. What is the main difference between these views? Explain your answer, using details from both interpretations."
+                },
+                {
+                  "q_id": "germany_2019_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2019,
+                  "tariff": 4,
+                  "type": "interpretation-why",
+                  "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about Nazi policies towards women. You may use Sources B and C to help explain your answer."
+                },
+                {
+                  "q_id": "germany_2019_q3d",
+                  "q_number": "Q3(d)",
+                  "year": 2019,
+                  "tariff": 16,
+                  "type": "interpretation-evaluation",
+                  "question_text": "How far do you agree with Interpretation 2 about Nazi policies towards women in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
+                },
+                {
+                  "q_id": "germany_2026_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2026,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there were changes in the position of women in society in the years 1924–1939."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            }
+          ]
+        },
+        {
+          "title": "2 Nazi policies towards the young",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "Nazi **aims and policies towards the young**. The **Hitler Youth** and the **League of German Maidens**.",
+              "exam_count": 2,
+              "years_appeared": [
+                2022,
+                2023
+              ],
+              "last_examined": 2023,
+              "tariffs_examined": [
+                4
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "medium",
+              "overdue_score": 50,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2022_q1",
+                  "q_number": "Q1",
+                  "year": 2022,
+                  "tariff": 4,
+                  "type": "inference",
+                  "question_text": "Give two things you can infer from Source A about the Hitler Youth."
+                },
+                {
+                  "q_id": "germany_2023_q1",
+                  "q_number": "Q1",
+                  "year": 2023,
+                  "tariff": 4,
+                  "type": "inference",
+                  "question_text": "Give two things you can infer from Source A about education in Nazi Germany."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            },
+            {
+              "point_index": 2,
+              "point_text": "Nazi **control of the young through education**, including the **curriculum and teachers**.",
+              "exam_count": 2,
+              "years_appeared": [
+                2022,
+                2023
+              ],
+              "last_examined": 2023,
+              "tariffs_examined": [
+                4
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "medium",
+              "overdue_score": 50,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2022_q1",
+                  "q_number": "Q1",
+                  "year": 2022,
+                  "tariff": 4,
+                  "type": "inference",
+                  "question_text": "Give two things you can infer from Source A about the Hitler Youth."
+                },
+                {
+                  "q_id": "germany_2023_q1",
+                  "q_number": "Q1",
+                  "year": 2023,
+                  "tariff": 4,
+                  "type": "inference",
+                  "question_text": "Give two things you can infer from Source A about education in Nazi Germany."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            }
+          ]
+        },
+        {
+          "title": "3 Employment and living standards",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "Nazi **policies to reduce unemployment**: **labour service, autobahns, rearmament** and **invisible unemployment**.",
+              "exam_count": 5,
+              "years_appeared": [
+                2018,
+                2025
+              ],
+              "last_examined": 2025,
+              "tariffs_examined": [
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2018_q2",
+                  "q_number": "Q2",
+                  "year": 2018,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why the Nazis were able to reduce unemployment in Germany in the years 1933–1939."
+                },
+                {
+                  "q_id": "germany_2025_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into people’s living standards in Nazi Germany in the years 1933–1939?"
+                },
+                {
+                  "q_id": "germany_2025_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "interpretation-difference",
+                  "question_text": "Study Interpretations 1 and 2. They give different views about people’s living standards in Nazi Germany in the years 1933–1939. What is the main difference between these views? Explain your answer, using details from both interpretations."
+                },
+                {
+                  "q_id": "germany_2025_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "interpretation-why",
+                  "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about people’s living standards in Nazi Germany in the years 1933–1939. You may use Sources B and C to help explain your answer."
+                },
+                {
+                  "q_id": "germany_2025_q3d",
+                  "q_number": "Q3(d)",
+                  "year": 2025,
+                  "tariff": 16,
+                  "type": "interpretation-evaluation",
+                  "question_text": "How far do you agree with Interpretation 2 about people’s living standards in Nazi Germany in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2025. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 2,
+              "point_text": "Changes in the **standard of living**, especially of German workers. The **Labour Front, Strength Through Joy, Beauty of Labour**.",
+              "exam_count": 5,
+              "years_appeared": [
+                2018,
+                2025
+              ],
+              "last_examined": 2025,
+              "tariffs_examined": [
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2018_q2",
+                  "q_number": "Q2",
+                  "year": 2018,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why the Nazis were able to reduce unemployment in Germany in the years 1933–1939."
+                },
+                {
+                  "q_id": "germany_2025_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources B and C for an enquiry into people’s living standards in Nazi Germany in the years 1933–1939?"
+                },
+                {
+                  "q_id": "germany_2025_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "interpretation-difference",
+                  "question_text": "Study Interpretations 1 and 2. They give different views about people’s living standards in Nazi Germany in the years 1933–1939. What is the main difference between these views? Explain your answer, using details from both interpretations."
+                },
+                {
+                  "q_id": "germany_2025_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "interpretation-why",
+                  "question_text": "Suggest one reason why Interpretations 1 and 2 give different views about people’s living standards in Nazi Germany in the years 1933–1939. You may use Sources B and C to help explain your answer."
+                },
+                {
+                  "q_id": "germany_2025_q3d",
+                  "q_number": "Q3(d)",
+                  "year": 2025,
+                  "tariff": 16,
+                  "type": "interpretation-evaluation",
+                  "question_text": "How far do you agree with Interpretation 2 about people’s living standards in Nazi Germany in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2025. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            }
+          ]
+        },
+        {
+          "title": "4 The persecution of minorities",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "Nazi **racial beliefs and policies** and the treatment of minority groups: **Slavs, Roma and Sinti, homosexuals, and people with disabilities**.",
+              "exam_count": 2,
+              "years_appeared": [
+                2020,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2020_q1",
+                  "q_number": "Q1",
+                  "year": 2020,
+                  "tariff": 4,
+                  "type": "inference",
+                  "question_text": "Give two things you can infer from Source A about the treatment of the Jews during Kristallnacht."
+                },
+                {
+                  "q_id": "germany_2026_q1",
+                  "q_number": "Q1",
+                  "year": 2026,
+                  "tariff": 4,
+                  "type": "inference",
+                  "question_text": "Give two things you can infer from Source A about how the Nazi Party dealt with opposition in the years 1933–1939."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            },
+            {
+              "point_index": 2,
+              "point_text": "The **persecution of Jewish people**, including the **boycott of Jewish shops and businesses (1933)**, the **Nuremberg Laws** and **'Kristallnacht'**.",
+              "exam_count": 2,
+              "years_appeared": [
+                2020,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "germany_2020_q1",
+                  "q_number": "Q1",
+                  "year": 2020,
+                  "tariff": 4,
+                  "type": "inference",
+                  "question_text": "Give two things you can infer from Source A about the treatment of the Jews during Kristallnacht."
+                },
+                {
+                  "q_id": "germany_2026_q1",
+                  "q_number": "Q1",
+                  "year": 2026,
+                  "tariff": 4,
+                  "type": "inference",
+                  "question_text": "Give two things you can infer from Source A about how the Nazi Party dealt with opposition in the years 1933–1939."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary_stats": {
+    "total_specification_points": 35,
+    "overdue_topics_count": 4,
+    "high_tariff_gaps_count": 10,
+    "overdue_percentage": 11
+  }
+}

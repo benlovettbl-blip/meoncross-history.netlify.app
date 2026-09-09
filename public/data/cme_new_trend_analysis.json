@@ -2,7 +2,7 @@
   "unit_id": "cme_new",
   "title": "Pearson Edexcel GCSE (9–1) History",
   "subtitle": "Option P5: Conflict in the Middle East, 1945–95",
-  "generated_at": "2026-09-09T15:30:50.781Z",
+  "generated_at": "2026-09-09T15:46:33.243Z",
   "total_past_questions": 42,
   "total_series_analyzed": 8,
   "sections": [
@@ -16,17 +16,30 @@
             {
               "point_index": 1,
               "point_text": "**Conflicting interests and demands** of Jews and Arabs within the British Mandate.",
-              "exam_count": 0,
-              "years_appeared": [],
-              "last_examined": "Never",
-              "tariffs_examined": [],
+              "exam_count": 1,
+              "years_appeared": [
+                2023
+              ],
+              "last_examined": 2023,
+              "tariffs_examined": [
+                8
+              ],
               "has_12m": false,
               "has_16m": false,
               "high_tariff_gap": true,
-              "overdue_status": "high",
-              "overdue_score": 100,
-              "matched_questions": [],
-              "teacher_note": "⚠️ UNEXAMINED TOPIC: This specification point has never appeared on an official Edexcel paper since 2018. It is prime territory for an upcoming series."
+              "overdue_status": "medium",
+              "overdue_score": 50,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2023_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2023,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of conflicting interests of Jews and Arabs for the end of the British Mandate."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
             },
             {
               "point_index": 2,
@@ -1846,8 +1859,8 @@
   ],
   "summary_stats": {
     "total_specification_points": 32,
-    "overdue_topics_count": 3,
+    "overdue_topics_count": 2,
     "high_tariff_gaps_count": 32,
-    "overdue_percentage": 9
+    "overdue_percentage": 6
   }
 }

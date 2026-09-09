@@ -5,26 +5,87 @@
  * Specification Gap Analysis / Overdue Topic Predictor for History Hub.
  */
 
+const UNIT_CONFIGS = {
+  edexcel_medicine: {
+    id: 'edexcel_medicine',
+    name: 'Paper 1: Medicine in Britain, c1250–present and The British sector of the Western Front, 1914–18',
+    code: '1HI0/11',
+    badge: 'Paper 1: Medicine & Western Front',
+    label: '🩺 Medicine (11)',
+    dataFile: '/data/edexcel_medicine_past_papers.json',
+    trendFile: '/data/edexcel_medicine_trend_analysis.json',
+    gradient: 'linear-gradient(135deg, #064e3b 0%, #0f766e 50%, #042f2e 100%)',
+    primary: '#0d9488',
+    light: '#ccfbf1',
+    guidePdf: '/pdfs/edexcel_medicine_revision_guide.pdf',
+    guideName: 'Open in 40-Page Visual Guide',
+  },
+  eee: {
+    id: 'eee',
+    name: 'Paper 2: Early Elizabethan England, 1558–1588',
+    code: '1HI0/B4',
+    badge: 'Paper 2: Early Elizabethan England',
+    label: '👑 Elizabethan (B4)',
+    dataFile: '/data/eee_past_papers.json',
+    trendFile: '/data/eee_trend_analysis.json',
+    gradient: 'linear-gradient(135deg, #4c1d95 0%, #6d28d9 50%, #2e1065 100%)',
+    primary: '#7c3aed',
+    light: '#ede9fe',
+    guidePdf: null,
+    guideName: null,
+  },
+  cme_new: {
+    id: 'cme_new',
+    name: 'Paper 2: Conflict in the Middle East, 1945–1995',
+    code: '1HI0/P5',
+    badge: 'Paper 2: Middle East 1945–95',
+    label: '🕊️ Middle East (P5)',
+    dataFile: '/data/cme_new_past_papers.json',
+    trendFile: '/data/cme_new_trend_analysis.json',
+    gradient: 'linear-gradient(135deg, #0369a1 0%, #0284c7 50%, #082f49 100%)',
+    primary: '#0284c7',
+    light: '#e0f2fe',
+    guidePdf: null,
+    guideName: null,
+  },
+  weimar_nazi_germany: {
+    id: 'weimar_nazi_germany',
+    name: 'Paper 3: Weimar and Nazi Germany, 1918–1939',
+    code: '1HI0/31',
+    badge: 'Paper 3: Weimar & Nazi Germany',
+    label: '🦅 Germany (31)',
+    dataFile: '/data/weimar_nazi_germany_past_papers.json',
+    trendFile: '/data/weimar_nazi_germany_trend_analysis.json',
+    gradient: 'linear-gradient(135deg, #881337 0%, #be123c 50%, #4c0519 100%)',
+    primary: '#be123c',
+    light: '#ffe4e6',
+    guidePdf: null,
+    guideName: null,
+  },
+};
+
 export function renderExamTrendMatrix(container, unitId = 'edexcel_medicine') {
-  // Normalize unitId
-  const isMedicine = unitId === 'edexcel_medicine';
-  const dataFile = isMedicine
-    ? '/data/edexcel_medicine_past_papers.json'
-    : '/data/cme_new_past_papers.json';
-  const trendFile = isMedicine
-    ? '/data/edexcel_medicine_trend_analysis.json'
-    : '/data/cme_new_trend_analysis.json';
+  let activeUnit = unitId;
+  if (!UNIT_CONFIGS[activeUnit]) {
+    if (activeUnit && activeUnit.includes('cme')) activeUnit = 'cme_new';
+    else if (activeUnit && (activeUnit.includes('eliz') || activeUnit === 'eee'))
+      activeUnit = 'eee';
+    else if (activeUnit && activeUnit.includes('germany')) activeUnit = 'weimar_nazi_germany';
+    else activeUnit = 'edexcel_medicine';
+  }
+
+  const cfg = UNIT_CONFIGS[activeUnit];
 
   container.innerHTML = `
     <div style="display: flex; justify-content: center; align-items: center; min-height: 400px; color: #64748b;">
-      <i class="fa-solid fa-spinner fa-spin fa-2x" style="margin-right: 12px; color: #3b82f6;"></i>
+      <i class="fa-solid fa-spinner fa-spin fa-2x" style="margin-right: 12px; color: ${cfg.primary};"></i>
       <span style="font-size: 1.1rem; font-weight: 600;">Loading Exam Trend Matrix & Specification Radar...</span>
     </div>
   `;
 
   Promise.all([
-    fetch(dataFile).then((r) => (r.ok ? r.json() : null)),
-    fetch(trendFile).then((r) => (r.ok ? r.json() : null)),
+    fetch(cfg.dataFile).then((r) => (r.ok ? r.json() : null)),
+    fetch(cfg.trendFile).then((r) => (r.ok ? r.json() : null)),
   ])
     .then(([pastData, trendData]) => {
       if (!pastData || !trendData) {
@@ -32,12 +93,12 @@ export function renderExamTrendMatrix(container, unitId = 'edexcel_medicine') {
           <div style="padding: 40px; text-align: center; background: white; border-radius: 16px; border: 1px solid #e2e8f0; margin: 20px auto; max-width: 800px;">
             <i class="fa-solid fa-triangle-exclamation fa-3x" style="color: #f59e0b; margin-bottom: 15px;"></i>
             <h2 style="color: #0f172a; margin: 0 0 10px 0;">Data Not Available</h2>
-            <p style="color: #64748b;">Unable to load past exam papers or specification trend analysis for <code>${unitId}</code>.</p>
+            <p style="color: #64748b;">Unable to load past exam papers or specification trend analysis for <code>${activeUnit}</code>.</p>
           </div>
         `;
         return;
       }
-      buildTrendMatrixUI(container, pastData, trendData, unitId);
+      buildTrendMatrixUI(container, pastData, trendData, activeUnit, cfg);
     })
     .catch((err) => {
       console.error('Failed to load exam trend matrix:', err);
@@ -51,8 +112,8 @@ export function renderExamTrendMatrix(container, unitId = 'edexcel_medicine') {
     });
 }
 
-function buildTrendMatrixUI(container, pastData, trendData, unitId) {
-  const isMedicine = unitId === 'edexcel_medicine';
+function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
+  if (!cfg) cfg = UNIT_CONFIGS[unitId] || UNIT_CONFIGS.edexcel_medicine;
   const papers = pastData.papers || [];
   const years = papers.map((p) => p.year);
 
@@ -78,7 +139,7 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId) {
     ? trendData.summary_stats.total_specification_points
     : 0;
 
-  // Distinct question rows
+  // Distinct question rows per specification
   const questionRowsMedicine = [
     {
       label: 'Q1: Feature Questions',
@@ -117,6 +178,29 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId) {
     },
   ];
 
+  const questionRowsEliz = [
+    {
+      label: 'Q1: Feature Questions',
+      sub: '2m / 4m (Early Elizabethan England)',
+      match: (q) => q.q_number.startsWith('Q1'),
+    },
+    {
+      label: 'Q2: Causation Explanation',
+      sub: '12m (Key Topic 1–3 Causation)',
+      match: (q) => q.q_number === 'Q2',
+    },
+    {
+      label: 'Q3(a): Judgement Essay Option A',
+      sub: '16m + 4m SPaG (Extended Evaluation)',
+      match: (q) => q.q_number === 'Q3(a)',
+    },
+    {
+      label: 'Q3(b): Judgement Essay Option B',
+      sub: '16m + 4m SPaG (Extended Evaluation)',
+      match: (q) => q.q_number === 'Q3(b)',
+    },
+  ];
+
   const questionRowsCME = [
     {
       label: 'Q1: Consequence',
@@ -145,7 +229,47 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId) {
     },
   ];
 
-  const currentRows = isMedicine ? questionRowsMedicine : questionRowsCME;
+  const questionRowsGermany = [
+    {
+      label: 'Q1: Source Inference',
+      sub: '4m (Source A Analysis)',
+      match: (q) => q.q_number === 'Q1',
+    },
+    {
+      label: 'Q2: Causation Explanation',
+      sub: '12m (Key Topic 1–4 Causation)',
+      match: (q) => q.q_number.startsWith('Q2'),
+    },
+    {
+      label: 'Q3(a): Source Utility',
+      sub: '8m (Sources B & C Enquiry)',
+      match: (q) => q.q_number === 'Q3(a)',
+    },
+    {
+      label: 'Q3(b): Interpretation Difference',
+      sub: '4m (Content & View Analysis)',
+      match: (q) => q.q_number === 'Q3(b)',
+    },
+    {
+      label: 'Q3(c): Why Interpretations Differ',
+      sub: '4m (Historian Weight & Evidence)',
+      match: (q) => q.q_number === 'Q3(c)',
+    },
+    {
+      label: 'Q3(d): Interpretation Evaluation',
+      sub: '16m + 4m SPaG (Extended Judgement)',
+      match: (q) => q.q_number === 'Q3(d)',
+    },
+  ];
+
+  let currentRows = questionRowsMedicine;
+  if (unitId === 'eee') {
+    currentRows = questionRowsEliz;
+  } else if (unitId === 'cme_new') {
+    currentRows = questionRowsCME;
+  } else if (unitId === 'weimar_nazi_germany') {
+    currentRows = questionRowsGermany;
+  }
 
   const html = `
     <style>
@@ -156,7 +280,7 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId) {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       }
       .etm-hero {
-        background: linear-gradient(135deg, ${isMedicine ? '#064e3b 0%, #0f766e 50%, #042f2e 100%' : '#0369a1 0%, #0284c7 50%, #082f49 100%'});
+        background: ${cfg.gradient};
         border-radius: 20px;
         padding: 35px 40px;
         color: white;
@@ -217,9 +341,10 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId) {
         color: #0f172a;
       }
       .etm-tab-btn.active {
-        color: ${isMedicine ? '#0d9488' : '#0284c7'};
-        border-bottom-color: ${isMedicine ? '#0d9488' : '#0284c7'};
+        color: ${cfg.primary};
+        border-bottom-color: ${cfg.primary};
       }
+
       .etm-table-wrap {
         overflow-x: auto;
         background: white;
@@ -270,7 +395,7 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId) {
       .etm-q-card:hover {
         transform: translateY(-2px);
         background: white;
-        border-color: ${isMedicine ? '#0d9488' : '#0284c7'};
+        border-color: ${cfg.primary};
         box-shadow: 0 8px 16px -4px rgba(0,0,0,0.1);
       }
       .etm-tariff-badge {
@@ -350,10 +475,21 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId) {
             </p>
           </div>
           
-          <div style="display: flex; gap: 10px;">
-            <button id="etm-btn-switch-unit" style="background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); color: white; padding: 10px 18px; border-radius: 10px; font-weight: 600; cursor: pointer; transition: background 0.2s;" title="Switch between Medicine and Middle East">
-              <i class="fa-solid fa-repeat"></i> Switch to ${isMedicine ? 'Middle East (P5)' : 'Medicine (11)'}
-            </button>
+          <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 8px;">
+            <div style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; opacity: 0.85;">Switch GCSE Unit:</div>
+            <div class="etm-unit-pills" style="display: flex; gap: 6px; flex-wrap: wrap; background: rgba(0,0,0,0.28); backdrop-filter: blur(8px); padding: 5px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.25);">
+              ${Object.keys(UNIT_CONFIGS)
+                .map((k) => {
+                  const item = UNIT_CONFIGS[k];
+                  const isActive = k === unitId;
+                  return `
+                  <button class="etm-unit-pill ${isActive ? 'active' : ''}" data-unit="${k}" style="background: ${isActive ? 'white' : 'transparent'}; color: ${isActive ? '#0f172a' : 'white'}; border: none; padding: 7px 12px; border-radius: 8px; font-size: 0.82rem; font-weight: ${isActive ? '800' : '600'}; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s; box-shadow: ${isActive ? '0 2px 8px rgba(0,0,0,0.15)' : 'none'};">
+                    ${item.label}
+                  </button>
+                `;
+                })
+                .join('')}
+            </div>
           </div>
         </div>
 
@@ -500,7 +636,7 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId) {
                       .map((top) => {
                         return `
                           <div style="margin-bottom: 10px;">
-                            <h4 style="margin: 0 0 12px 0; color: #334155; font-size: 1.02rem; border-left: 3px solid ${isMedicine ? '#0d9488' : '#0284c7'}; padding-left: 10px;">${top.title}</h4>
+                            <h4 style="margin: 0 0 12px 0; color: #334155; font-size: 1.02rem; border-left: 3px solid ${cfg.primary}; padding-left: 10px;">${top.title}</h4>
                             <div style="display: flex; flex-direction: column; gap: 10px;">
                               ${top.points
                                 .map((pt) => {
@@ -575,7 +711,7 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId) {
       <!-- TAB 3: OFFICIAL PDF VAULT -->
       <div id="etm-view-vault" class="etm-tab-content" style="display: none;">
         <div style="background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 30px; margin-bottom: 25px;">
-          <h2 style="margin: 0 0 10px 0; color: #0f172a;"><i class="fa-solid fa-book-bookmark" style="color: ${isMedicine ? '#0d9488' : '#0284c7'};"></i> Official Edexcel Exam Archive</h2>
+          <h2 style="margin: 0 0 10px 0; color: #0f172a;"><i class="fa-solid fa-book-bookmark" style="color: ${cfg.primary};"></i> Official Edexcel Exam Archive</h2>
           <p style="color: #64748b; font-size: 1rem; margin-bottom: 25px;">
             The History Hub is synchronized directly with your local Google Drive exam repository. Below are all verified official Question Papers, Mark Schemes, and Examiner Reports.
           </p>
@@ -625,18 +761,19 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId) {
   // Interactivity & Event Handlers
   // --------------------------------------------------------------------------
 
-  // Switch between Medicine and Middle East
-  const btnSwitchUnit = document.getElementById('etm-btn-switch-unit');
-  if (btnSwitchUnit) {
-    btnSwitchUnit.addEventListener('click', () => {
-      const targetUnit = isMedicine ? 'cme_new' : 'edexcel_medicine';
+  // Switch between GCSE units
+  container.querySelectorAll('.etm-unit-pill').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetUnit = btn.dataset.unit;
+      if (targetUnit === unitId) return;
       if (window.switchView) {
         window.switchView('mock-exams', targetUnit);
       } else {
         renderExamTrendMatrix(container, targetUnit);
       }
     });
-  }
+  });
 
   // Tab navigation
   const tabBtns = container.querySelectorAll('.etm-tab-btn');
@@ -697,7 +834,7 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId) {
 
     modalContent.innerHTML = `
       <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 15px; flex-wrap: wrap;">
-        <span style="background: ${isMedicine ? '#0d9488' : '#0284c7'}; color: white; padding: 4px 12px; border-radius: 8px; font-weight: 800; font-size: 0.85rem;">
+        <span style="background: ${cfg.primary}; color: white; padding: 4px 12px; border-radius: 8px; font-weight: 800; font-size: 0.85rem;">
           ${q.series} (${q.year})
         </span>
         <span style="background: #f1f5f9; color: #1e293b; padding: 4px 12px; border-radius: 8px; font-weight: 700; font-size: 0.85rem;">
@@ -760,10 +897,10 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId) {
           <i class="fa-solid fa-stopwatch"></i> Practice in Exam Hall With Timer
         </button>
         ${
-          isMedicine
+          cfg.guidePdf
             ? `
-            <a href="/pdfs/edexcel_medicine_revision_guide.pdf" target="_blank" style="text-decoration: none; background: #f1f5f9; color: #1e293b; border: 1px solid #cbd5e1; padding: 12px 20px; border-radius: 10px; font-weight: 600; display: flex; align-items: center; gap: 8px;">
-              <i class="fa-solid fa-book-open"></i> Open in 40-Page Visual Guide
+            <a href="${cfg.guidePdf}" target="_blank" style="text-decoration: none; background: #f1f5f9; color: #1e293b; border: 1px solid #cbd5e1; padding: 12px 20px; border-radius: 10px; font-weight: 600; display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-book-open"></i> Open in Visual Revision Guide
             </a>
           `
             : ''

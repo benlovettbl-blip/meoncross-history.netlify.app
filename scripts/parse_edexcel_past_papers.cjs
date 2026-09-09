@@ -19,6 +19,9 @@ if (!fs.existsSync(OUT_DIR)) {
   fs.mkdirSync(OUT_DIR, { recursive: true });
 }
 
+const ELIZ_PAPERS = require('./data_eliz_past_papers.cjs');
+const GERMANY_PAPERS = require('./data_germany_past_papers.cjs');
+
 // ----------------------------------------------------------------------------
 // Curated & Verified Past Paper Database with Exact Indicative Content & Examiner Tips
 // ----------------------------------------------------------------------------
@@ -2043,14 +2046,38 @@ function saveDatasets() {
     papers: CME_PAPERS,
   };
 
+  const elizData = {
+    unit_id: 'eee',
+    paper_code: '1HI0/B4',
+    paper_name: 'Paper 2: Early Elizabethan England, 1558–1588',
+    total_papers_analyzed: ELIZ_PAPERS.length,
+    year_range: '2018–2026',
+    papers: ELIZ_PAPERS,
+  };
+
+  const germanyData = {
+    unit_id: 'weimar_nazi_germany',
+    paper_code: '1HI0/31',
+    paper_name: 'Paper 3: Weimar and Nazi Germany, 1918–1939',
+    total_papers_analyzed: GERMANY_PAPERS.length,
+    year_range: '2018–2026',
+    papers: GERMANY_PAPERS,
+  };
+
   const medPath = path.join(OUT_DIR, 'edexcel_medicine_past_papers.json');
   const cmePath = path.join(OUT_DIR, 'cme_new_past_papers.json');
+  const elizPath = path.join(OUT_DIR, 'eee_past_papers.json');
+  const germanyPath = path.join(OUT_DIR, 'weimar_nazi_germany_past_papers.json');
 
   fs.writeFileSync(medPath, JSON.stringify(medData, null, 2), 'utf8');
   fs.writeFileSync(cmePath, JSON.stringify(cmeData, null, 2), 'utf8');
+  fs.writeFileSync(elizPath, JSON.stringify(elizData, null, 2), 'utf8');
+  fs.writeFileSync(germanyPath, JSON.stringify(germanyData, null, 2), 'utf8');
 
   console.log(`[OK] Saved Medicine Past Papers to ${medPath} (${MEDICINE_PAPERS.length} series)`);
   console.log(`[OK] Saved CME Past Papers to ${cmePath} (${CME_PAPERS.length} series)`);
+  console.log(`[OK] Saved Elizabethan Past Papers to ${elizPath} (${ELIZ_PAPERS.length} series)`);
+  console.log(`[OK] Saved Germany Past Papers to ${germanyPath} (${GERMANY_PAPERS.length} series)`);
 }
 
 saveDatasets();

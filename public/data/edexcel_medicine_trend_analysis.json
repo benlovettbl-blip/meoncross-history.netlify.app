@@ -2,7 +2,7 @@
   "unit_id": "edexcel_medicine",
   "title": "Pearson Edexcel GCSE (9–1) History Specification",
   "subtitle": "Option 11: Medicine in Britain, c1250–present and The British sector of the Western Front, 1914–18: injuries, treatment and the trenches",
-  "generated_at": "2026-09-09T15:30:50.682Z",
+  "generated_at": "2026-09-09T15:46:33.043Z",
   "total_past_questions": 58,
   "total_series_analyzed": 8,
   "sections": [
@@ -134,8 +134,9 @@
             {
               "point_index": 2,
               "point_text": "**The Theatre of War in Flanders and Northern France:** The context of the British sector of the Western Front: the vulnerable Ypres salient (surrounded by higher German ridges; First Ypres 1914, Second Ypres 1915 with first poison gas, Third Ypres/Passchendaele 1917 with waterlogged liquid mud; mining at Hill 60), the Somme (July 1916, 57,000 day 1 casualties), Arras (April 1917, chalk quarries and 2.5 miles of tunnels), and Cambrai (November 1917, mass tank deployment).",
-              "exam_count": 3,
+              "exam_count": 4,
               "years_appeared": [
+                2018,
                 2020,
                 2022
               ],
@@ -150,6 +151,14 @@
               "overdue_status": "medium",
               "overdue_score": 50,
               "matched_questions": [
+                {
+                  "q_id": "med_2018_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the treatment of battle injuries by medical staff on the Western Front?"
+                },
                 {
                   "q_id": "med_2020_q2a",
                   "q_number": "Q2(a)",
