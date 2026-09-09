@@ -21037,6 +21037,172 @@
               }
             ]
           },
+          "creative_task": {
+            "type": "conceptual_triad",
+            "title": "The Intellectual Triad: Hippocrates, Galen & The Catholic Church",
+            "subtitle": "Why did ancient medical dogma freeze European understanding of disease for 1,400 years?",
+            "briefing": "In medieval Europe, medical authority did not rest upon scientific experiments or clinical trials. Instead, it was anchored to an unshakeable intellectual triad: Ancient Greek philosophy, Imperial Roman anatomy, and Christian theology. Use this visual revision guide to revise all medieval beliefs about disease before answering the Edexcel exam questions opposite.",
+            "pillars": [
+              {
+                "id": "church",
+                "name": "The Catholic Church",
+                "dates": "c. 500 – 1500 AD",
+                "badge": "Monopoly on Truth",
+                "role": "Monastic Scriptoria, Universities & Religious Dogma",
+                "core_knowledge": [
+                  {
+                    "q": "Why did the Church embrace Galen?",
+                    "a": "Galen argued every organ had a purposeful divine design created by a single Creator (teleology). This aligned perfectly with Genesis, so the Church declared his writings infallible sacred truth."
+                  },
+                  {
+                    "q": "How was medical dogma enforced?",
+                    "a": "Monks controlled manuscript copying; universities taught only Galen and Hippocrates. Questioning dogma was heresy; Roger Bacon was imprisoned in 1277 for advocating experimental science."
+                  }
+                ]
+              },
+              {
+                "id": "hippocrates",
+                "name": "Hippocrates of Kos",
+                "dates": "c. 460 – c. 370 BC",
+                "badge": "Ancient Greek Roots",
+                "image": "/images/hippocrates_portrait.jpg",
+                "role": "Clinical Observation & The Four Humours",
+                "core_knowledge": [
+                  {
+                    "q": "The Four Humours Theory:",
+                    "a": "Blood (Spring/Air/Hot & Wet), Phlegm (Winter/Water/Cold & Wet), Yellow Bile (Summer/Fire/Hot & Dry), Black Bile (Autumn/Earth/Cold & Dry). Sickness was an internal humoural imbalance."
+                  },
+                  {
+                    "q": "The Clinical Method & Regimen Sanitatis:",
+                    "a": "Revolutionary rejection of spirits and demons. Promoted bedside observation (pulse, symptoms) and balanced lifestyle (diet, rest, exercise) in the Regimen Sanitatis."
+                  }
+                ]
+              },
+              {
+                "id": "galen",
+                "name": "Claudius Galenus (Galen)",
+                "dates": "AD 129 – c. 216",
+                "badge": "Roman Imperial Synthesis",
+                "image": "/images/galen_portrait.jpg",
+                "role": "Theory of Opposites & Teleological Anatomy",
+                "core_knowledge": [
+                  {
+                    "q": "The Theory of Opposites:",
+                    "a": "Expanded humoural balance by treating symptoms with their contrary (e.g. cold, wet phlegm treated with hot, dry pepper; excess hot blood treated with cold cucumber or bloodletting)."
+                  },
+                  {
+                    "q": "Anatomical Errors & 1,300-Year Dogma:",
+                    "a": "Dissected pigs and Barbary apes due to Roman taboos, claiming the human liver had 5 lobes and jaw had 2 bones. His errors were frozen as sacred truth for 1,300 years."
+                  }
+                ]
+              }
+            ],
+            "vectors": [
+              {
+                "label": "1. Ancient Roots to Roman Doctrine",
+                "text": "Galen adopted Hippocrates’ Four Humours, developed the Theory of Opposites, and systematized Greek medicine into 350+ Latin treatises."
+              },
+              {
+                "label": "2. Theological Sanctification",
+                "text": "Monastic scriptoria translated and hand-copied Galen; the Church declared his teleological writings infallible doctrine alongside scripture."
+              },
+              {
+                "label": "3. The 1,400-Year Stagnation",
+                "text": "With university curricula fixed on Galen and dissent punished as heresy, medical inquiry halted completely until the Renaissance."
+              }
+            ],
+            "supernatural_and_environmental": [
+              {
+                "title": "God's Wrath, Sin & Leprosy",
+                "badge": "Supernatural",
+                "text": "The Church taught that illness was a punishment from God for sins or a test of faith. Lepers were cast out into Lazar houses, forced to ring bells and wear cloaks. Prayer, fasting, pilgrimages, and flagellation were seen as genuine cures."
+              },
+              {
+                "title": "Astrology & The 1345 Alignment",
+                "badge": "Astrological",
+                "text": "Physicians consulted Almanacs and star charts to check planetary alignments. In 1345, an unusual conjunction of Mars, Jupiter, and Saturn was blamed for the Black Death. Star alignments were believed to directly corrupt the humours."
+              },
+              {
+                "title": "Miasma & Pestilential Air",
+                "badge": "Environmental",
+                "text": "Bad air from rotting waste, swamps, and filth was believed to poison the body. People burned incense, carried pomanders or sweet herbs, and avoided foul-smelling areas to protect their humoural balance."
+              }
+            ],
+            "diagnostic_toolkit": [
+              {
+                "title": "Uroscopy (The Urine Chart)",
+                "icon": "flask",
+                "text": "The primary diagnostic tool. Physicians examined urine in a glass matula, checking colour, density, smell, and even taste against a 20-shade chart. White/watery urine indicated excess phlegm; deep red indicated excess blood. Cathedral priories hired full-time urine examiners."
+              },
+              {
+                "title": "The Zodiac Man (Homo Signorum)",
+                "icon": "stars",
+                "text": "Included in every physician’s pocket Vademecum handbook. Illustrated how the 12 star signs governed different bodily organs (e.g. Aries ruled the head; Pisces the feet). Doctors were strictly forbidden to bleed or operate when the Moon was in a body part’s governing sign."
+              },
+              {
+                "title": "University Dissection Ritual",
+                "icon": "book",
+                "text": "Medical training at Oxford, Paris, and Bologna was based on book learning, not practical treatment. During rare dissections, the professor (Lector) sat in a high chair reading Galen, while an assistant cut. If the body contradicted Galen, the corpse was dismissed as malformed."
+              }
+            ],
+            "cross_era_links": [
+              {
+                "title": "Continuity: Miasma & Humours in the Renaissance",
+                "badge": "Key Similarity",
+                "text": "Miasma remained the leading explanation for epidemics like the Great Plague (1665). Ordinary people still used bloodletting, purging, and herbal remedies to balance humours throughout the 16th and 17th centuries."
+              },
+              {
+                "title": "Change: Challenging Galen (Vesalius & Harvey)",
+                "badge": "Anatomical Shift",
+                "text": "Vesalius (1543) proved Galen made human errors (e.g. human lower jaw is 1 bone, not 2). William Harvey (1628) proved blood circulates, disproving Galen’s idea that the liver constantly manufactured new blood."
+              },
+              {
+                "title": "Change: Thomas Sydenham (1676)",
+                "badge": "Diagnostic Shift",
+                "text": "Known as the \"English Hippocrates\", Sydenham moved medicine away from individual humoural imbalance toward diagnosing diseases as distinct, external species with fixed symptom patterns."
+              }
+            ],
+            "keywords": [
+              "Four Humours",
+              "Theory of Opposites",
+              "Clinical Observation",
+              "Teleology",
+              "Monastic Scriptoria",
+              "Roger Bacon (1277)",
+              "Heresy",
+              "Miasma",
+              "Uroscopy (Matula)",
+              "Zodiac Man",
+              "Lazar House",
+              "Regimen Sanitatis"
+            ],
+            "takeaway_points": [
+              "The Catholic Church’s monopoly on education, universities, and hand-copied manuscripts prevented new ideas.",
+              "Galen’s teleological theory of purposeful design aligned with Christian creation, making his texts sacred and unchallengeable.",
+              "Lack of alternative scientific explanations or technology (no microscopes, no printing press) reinforced reliance on ancient tradition."
+            ],
+            "exam_task": {
+              "q3": {
+                "tariff": "Similarity & Difference [4 Marks]",
+                "board": "Edexcel GCSE (9–1) Paper 1 &bull; Question 3",
+                "question": "Explain one way in which ideas about the causes of illness in the Medieval period (c.1250–c.1500) were similar to ideas about the causes of illness in the Renaissance period (c.1500–c.1700).",
+                "guidance": "Timing: 5 mins &bull; Structure: 1 developed comparative PEEL paragraph. (e.g. Continued widespread belief in miasma / bad air as a cause of epidemics, or the enduring reliance on humoural imbalance).",
+                "lines": 8
+              },
+              "q4": {
+                "tariff": "Explain Why [12 Marks]",
+                "board": "Edexcel GCSE (9–1) Paper 1 &bull; Question 4",
+                "question": "Explain why there was so little change in medical ideas about the causes of disease between c.1250 and c.1500.",
+                "stimulus": [
+                  "The Catholic Church",
+                  "Galen"
+                ],
+                "note": "(You must also use information of your own.)",
+                "guidance": "Timing: 18 mins &bull; Structure: 3 fully developed PEEL paragraphs (P1: Church, P2: Galen, P3: Own Knowledge)",
+                "lines": 24
+              }
+            }
+          },
           "do_now": {
             "type": "questions",
             "title": "Have a Guess! (Prior Knowledge Check)",
@@ -28150,7 +28316,7 @@
           "guided_reading": [],
           "narrative_blocks": [
             {
-              "text": "**The Context of the Western Front**\n\nWhen World War I broke out in 1914, the British Expeditionary Force (BEF) was sent to Northern France. The terrain of the Western Front was primarily flat agricultural land, particularly in the Ypres Salient and the Somme. Constant artillery bombardment destroyed the drainage systems, turning the battlefield into a horrific, muddy swamp.\n\nThe war quickly devolved into a stalemate, with both sides digging hundreds of miles of trenches. This static war of attrition meant that millions of men lived in extremely unhygienic conditions, exposed to the weather, rats, and human waste. The unique environment of the Western Front created unprecedented medical challenges that the Royal Army Medical Corps (RAMC) was initially completely unprepared for."
+              "text": "**The Context of the Western Front**\n\nWhen World War I broke out in 1914, the British Expeditionary Force (BEF) was sent to Northern France. The terrain of the Western Front was primarily flat agricultural land, particularly in the Ypres Salient and the Somme. Constant artillery bombardment destroyed the natural drainage systems, turning the battlefield into a horrific, waterlogged swamp of mud.\n\nThe war quickly devolved into a stalemate, with both sides digging hundreds of miles of trenches. This static war of attrition meant that millions of men lived in extremely unhygienic conditions, exposed to the weather, rats, and human waste. Furthermore, high-explosive artillery fire constantly destroyed impassable roads and severed underground telephone cables, cutting off frontline medical officers. The RAMC was forced to rely on runners, runner-dogs, visual signalling flags, and homing pigeons to send urgent casualty reports or request stretcher-bearers. Runners were frequently killed or delayed traversing shell craters, creating catastrophic delays in moving wounded men away from the front line. The unique environment of the Western Front created unprecedented medical challenges that the Royal Army Medical Corps (RAMC) was initially completely unprepared for."
             },
             {
               "text": "**The Move Towards Aseptic Surgery**\n\nBy the late 1890s, surgeons had moved past Joseph Lister's antiseptic methods (killing germs already in the wound) and towards aseptic surgery, which focused on preventing germs from getting into the operating theatre in the first place.\n\nAll medical staff were required to meticulously wash their hands, faces, and arms before entering the theatre.\n\nSurgeons began wearing sterilised rubber gloves and surgical gowns, which dramatically decreased the rate of infection.\n\nSurgical instruments were steam-sterilised using a machine called an autoclave, invented in 1881 by Charles Chamberland. Some theatres even pumped air over a heating system to sterilise it before it entered the room. By 1900, aseptic surgery was the standard, meaning that complex, intrusive operations could be carried out safely in civilian hospitals without the high risk of fatal postoperative infections.",
@@ -28723,7 +28889,7 @@
               ]
             },
             {
-              "text": "**Significance of the Terrain and Transport Problems**\n\nConstant artillery shelling destroyed the region's roads and natural drainage systems. This left the landscape heavily cratered and filled with deep, waterlogged mud.\n\nHeavy motor ambulances frequently got permanently stuck in the deep mud, meaning the army had to rely heavily on horse-drawn ambulance wagons, which often required six horses to pull them through the sludge. These wagons were violently bumpy and often worsened severe injuries.\n\nStretcher-bearers (working in teams of four to six) faced the exhausting, dangerous task of carrying the wounded through muddy shell-holes in No Man's Land, often under heavy fire or in the dark. Once inside the trenches, it was incredibly difficult to manoeuvre stretchers due to crowded troops moving in opposite directions. The devastated terrain and narrow trench system severely slowed down the evacuation of wounded soldiers; this delay caused men to die from blood loss or shock, and allowed deep infections like gas gangrene to take hold before they could reach a Casualty Clearing Station.",
+              "text": "**Significance of the Terrain, Transport and Communications Infrastructure**\n\nConstant artillery shelling destroyed the region's roads and natural drainage systems. This left the landscape heavily cratered and filled with deep, waterlogged mud.\n\nHeavy motor ambulances frequently got permanently stuck in the deep mud, meaning the army had to rely heavily on horse-drawn ambulance wagons, which often required six horses to pull them through the sludge. These wagons were violently bumpy and often worsened severe injuries.\n\nStretcher-bearers (working in teams of four to six) faced the exhausting, dangerous task of carrying the wounded through muddy shell-holes in No Man's Land, often under heavy fire or in the dark. Once inside the trenches, it was incredibly difficult to manoeuvre stretchers due to crowded troops moving in opposite directions.\n\nProblems with communications infrastructure severely compounded transport difficulties. Constant artillery bombardments severed buried telephone lines, cutting off frontline medical posts from Casualty Clearing Stations. Consequently, medical officers had to rely on runners, runner-dogs, or homing pigeons to send messages. Runners were frequently killed or delayed in shell craters, leaving rear hospitals with no advance warning of mass casualties and causing severe bottlenecks where wounded men lay waiting in cold mud for hours. The devastated terrain and crippled communications severely slowed evacuation; this delay caused men to die from blood loss or shock, and allowed deep infections like gas gangrene to take hold before they could reach surgical treatment.",
               "tasks": [
                 {
                   "type": "written",
@@ -30438,6 +30604,26 @@
             {
               "text": "Oswald Hope Robertson",
               "theme_heading": "Oswald Hope"
+            },
+            {
+              "text": "**The Work of Harvey Cushing and Brain Surgery**\n\nHead wounds caused by high-explosive shrapnel and sniper fire were among the most fatal injuries on the Western Front. At the beginning of the war, penetrating brain wounds carried a mortality rate of over 50%, as removing metal fragments often caused lethal brain swelling, haemorrhaging, or fatal cerebrospinal infections.\n\nDr. Harvey Cushing, an American neurosurgeon working in British base hospitals and Casualty Clearing Stations, pioneered revolutionary surgical techniques for treating head trauma:\n\n1. **Local Anaesthetic:** Cushing discovered that using general anaesthetics caused the brain to swell and bleed uncontrollably. By operating under local anaesthetic, brain pressure remained low, significantly reducing haemorrhage during delicate cranial procedures.\n\n2. **Electromagnets and Suction:** Instead of probing deeply into brain tissue with forceps, which caused irreversible damage, Cushing used a surgical suction tube to clean damaged tissue and carefully drew out metal shrapnel fragments using a powerful electromagnet.\n\n3. **Rapid Forward Surgery:** Cushing demonstrated that operating quickly before infection set in dramatically increased survival. At the Third Battle of Ypres (Passchendaele) in 1917, Cushing operated on 45 consecutive patients with penetrating head wounds, achieving a remarkable survival rate of 71% (reducing mortality to 29%).",
+              "tasks": [
+                {
+                  "type": "written",
+                  "text": "Explain how Harvey Cushing reduced the mortality rate for brain surgery on the Western Front.",
+                  "model": "Cushing used local anaesthetic rather than general anaesthetic to reduce brain swelling, employed electromagnets and suction to extract shrapnel without damaging surrounding brain tissue, and operated rapidly within 24 hours of injury."
+                }
+              ]
+            },
+            {
+              "text": "**The Work of Harold Gillies and Plastic Surgery**\n\nModern industrial weapons, particularly exploding artillery shells, shrapnel, and machine-gun fire, caused catastrophic, disfiguring facial trauma that standard battlefield surgery could not repair. Soldiers surviving with shattered jaws, missing noses, or destroyed facial features suffered intense psychological trauma and social isolation.\n\nDr. Harold Gillies, a New Zealand-born doctor serving in the Royal Army Medical Corps (RAMC), was horrified by the neglect of facial reconstruction and persuaded the army to establish a dedicated specialist hospital. In August 1917, the Queen's Hospital in Sidcup, Kent, was opened as the world's first specialized facial reconstructive surgery centre:\n\n1. **The 'Tube Pedicle' Technique:** Gillies pioneered the 'waltzing tube pedicle' to transplant living skin. A flap of healthy skin from the chest, arm, or neck was cut and rolled into an enclosed tube, leaving one end attached to maintain its own blood supply while the free end was grafted onto the damaged facial area. Once new blood vessels developed, the remaining end was freed and shaped into a new nose, jaw, or cheek, preventing tissue death and infection.\n\n2. **Detailed Medical Records:** Gillies worked closely with artists, photographers, and sculptors (such as Henry Tonks) to create meticulous anatomical drawings and wax models of each patient before, during, and after reconstruction, establishing standardized plastic surgery methodologies.\n\nBy the end of the war, Gillies and his surgical team at Sidcup had performed over 11,000 plastic surgery operations on more than 5,000 soldiers, laying the foundation for modern reconstructive and plastic surgery.",
+              "tasks": [
+                {
+                  "type": "written",
+                  "text": "Describe the 'tube pedicle' technique pioneered by Harold Gillies.",
+                  "model": "Gillies cut a flap of healthy skin from the chest or neck and rolled it into an enclosed tube, keeping one end attached to maintain its blood supply while grafting the other to the face. Once the new blood supply was established, the tube was fully transferred and sculpted."
+                }
+              ]
             }
           ],
           "exam_practice": [
@@ -30815,24 +31001,24 @@
           "details": "Case Studies: The fight against lung cancer in the twenty-first century: the use of science and technology in diagnosis and treatment; government action."
         },
         {
-          "topic": "KT5.1 Western Front 1914-1918: Historical Context",
-          "details": "The context of the British sector of Western Front and the theatre of war in Flanders and northern France: the Ypres salient, the Somme and Arras. The trench system - its construction and organisation, including frontline and support trenches. The use of mines at Hill 60 near Ypres and the expansion of tunnels, caves and quarries at Arras."
+          "topic": "KT5.1 Western Front 1914-1918: Historical Context & Theatre of War",
+          "details": "The historical context of medicine in the early twentieth century: the understanding of infection and moves towards aseptic surgery; the development of x-rays; blood transfusions and developments in the storage of blood. The context of the British sector of Western Front and the theatre of war in Flanders and northern France: the Ypres salient, the Somme, Arras and Cambrai. The trench system - its organisation, including frontline and support trenches. Significance for medical treatment of the nature of the terrain and problems of the transport and communications infrastructure."
         },
         {
           "topic": "KT5.2 Western Front 1914-1918: The Trench Environment",
-          "details": "Conditions requiring medical treatment on the Western Front, including the problems of ill health arising from the trench environment."
+          "details": "Conditions requiring medical treatment on the Western Front, including the problems of ill health arising from the trench environment (trench foot, trench fever, shell shock)."
         },
         {
           "topic": "KT5.3 Western Front 1914-1918: Illnesses & Wounds",
-          "details": "The nature of wounds from rifles and explosives. The problem of shrapnel, wound infection and increased numbers of head injuries. The effects of gas attacks."
+          "details": "The nature of wounds from rifles and explosives. The problem of shrapnel, wound infection and increased numbers of head injuries (and the Brodie helmet). The effects of gas attacks (chlorine, phosgene, mustard gas)."
         },
         {
           "topic": "KT5.4 Western Front 1914-1918: RAMC & Nurses",
-          "details": "The work of the RAMC and FANY. The system of transport: stretcher bearers, horse and motor ambulances. The stages of treatment areas: aid post and field ambulance, dressing station, casualty clearing station, base hospital."
+          "details": "The work of the RAMC and FANY. The system of transport: stretcher-bearers, horse and motor ambulances, ambulance trains and barges. The stages of treatment areas: aid post and field ambulance, dressing station, casualty clearing station, base hospital. The underground hospital at Arras."
         },
         {
           "topic": "KT5.5 Western Front 1914-1918: Medical Advances",
-          "details": "The medical significance of the Western Front. Experiments in surgery and medicine: new techniques in the treatment of wounds and infection, the Thomas splint, the use of mobile x-ray units, the creation of a blood bank for the Battle of Cambrai."
+          "details": "The significance of the Western Front for experiments in surgery and medicine: new techniques in the treatment of wounds and infection (debridement, Carrel-Dakin, amputation), the Thomas splint, the use of mobile x-ray units, the creation of a blood bank for the Battle of Cambrai. The work of Harold Gillies and plastic surgery; Harvey Cushing and brain surgery."
         }
       ],
       "key_individuals": [
@@ -46583,6 +46769,50 @@
                 "question": "Hinge Question: How does the Domesday Book demonstrate that the Norman Conquest was a complete takeover of English wealth?"
               }
             ]
+          },
+          "creative_task": {
+            "type": "architectural_drafting",
+            "title": "The Motte-and-Bailey Castle: Norman Control",
+            "subtitle": "How William the Conqueror used rapid castle building to secure England after 1066.",
+            "briefing": "Using Source A (the reconstruction drawing), draw an annotated cross-section or bird's-eye diagram of a timber motte-and-bailey castle in the blank drawing space below. Label features ① to ⑤, then answer the 5 callout questions and the historical evaluation below.",
+            "callouts": [
+              {
+                "num": "①",
+                "badge": "VANTAGE",
+                "label": "The Motte (Mound)",
+                "prompt": "Why did the steep 5–15m artificial slope make horse charges impossible and give archers clear vantage over dead ground?"
+              },
+              {
+                "num": "②",
+                "badge": "STRONGHOLD",
+                "label": "The Keep (Tower)",
+                "prompt": "Why was timber used rather than stone in 1067? How did defenders protect the wooden walls from Saxon fire-arrows?"
+              },
+              {
+                "num": "③",
+                "badge": "GARRISON",
+                "label": "The Bailey (Yard)",
+                "prompt": "Name 3 functions housed here (stables, barracks, armoury). Why was keeping Destrier warhorses secure vital?"
+              },
+              {
+                "num": "④",
+                "badge": "PERIMETER",
+                "label": "Palisade, Moat & Gatehouse",
+                "prompt": "How did the deep ditch and sharpened stake palisade stop surprise Saxon night raids? Why fortify the gatehouse most?"
+              },
+              {
+                "num": "⑤",
+                "badge": "CHOKEPOINT",
+                "label": "Flying Bridge (Causeway)",
+                "prompt": "If rebels breached the outer bailey, how did this narrow, steep bridge allow defenders to create a deadly bottleneck?"
+              }
+            ],
+            "synthesis": {
+              "title": "Historical Evaluation Question",
+              "badge": "Extended Answer",
+              "question": "Explain why building hundreds of quick timber motte-and-bailey castles across England was far more effective in controlling 2 million hostile Anglo-Saxons than building just a few massive stone castles.",
+              "lines": 5
+            }
           },
           "narrative_blocks": [
             {
