@@ -221,6 +221,7 @@ targetUnits.forEach((unitId) => {
     // Deep clone lesson to prevent mutating database
     const lClone = JSON.parse(JSON.stringify(lesson));
     assignQuestionNumbers(lClone, unitId);
+    const isGreatWar = unitId === 'great_war' || unitId === 'great_war_part2';
     const expected = extractCanonicalWorkbookNumbering(lesson, unitId);
 
     // Collect actual digital question assignments
@@ -248,7 +249,7 @@ targetUnits.forEach((unitId) => {
         }
       });
     }
-    if (lClone.pair_share) {
+    if (lClone.pair_share && !isGreatWar) {
       actual.push({ id: 'pair_share', qNum: lClone.pair_share.qNum });
     }
     if (lClone.tasks) {
@@ -260,6 +261,9 @@ targetUnits.forEach((unitId) => {
     }
     if (lClone.historians_corner?.stretch_question && !lClone.historians_corner.textbook_only) {
       actual.push({ id: 'historians_corner', qNum: lClone.historians_corner.qNum });
+    }
+    if (lClone.pair_share && isGreatWar) {
+      actual.push({ id: 'pair_share', qNum: lClone.pair_share.qNum });
     }
     if (lClone.extended?.question) {
       actual.push({ id: 'extended', qNum: lClone.extended.qNum });
@@ -299,6 +303,34 @@ targetUnits.forEach((unitId) => {
           `   Expected printed Q${exp.qNum} vs Digital runtime Q${act ? act.qNum : 'NONE'}`,
         );
         console.error(`   Question text: "${exp.label}..."\n`);
+      }
+    }
+
+    // Check strict sequential monotonicity (Q1, Q2, Q3... no gaps or duplicate numbers)
+    for (let i = 0; i < expected.length; i++) {
+      if (expected[i].qNum !== i + 1) {
+        unitErrors++;
+        totalErrors++;
+        console.error(
+          `❌ [${unitId}] L${lIdx + 1} ('${lesson.title}'): Monotonic numbering gap in canonical sequence!`,
+        );
+        console.error(
+          `   Expected sequence position ${i + 1} to be Q${i + 1}, but found Q${expected[i].qNum} on '${expected[i].id}'`,
+        );
+      }
+    }
+
+    // Check runtime question numbers strictly ascend without inversions
+    for (let i = 0; i < actual.length - 1; i++) {
+      if (actual[i].qNum >= actual[i + 1].qNum) {
+        unitErrors++;
+        totalErrors++;
+        console.error(
+          `❌ [${unitId}] L${lIdx + 1} ('${lesson.title}'): Runtime question ordering inversion detected!`,
+        );
+        console.error(
+          `   Q${actual[i].qNum} (${actual[i].id}) appears before or equal to Q${actual[i + 1].qNum} (${actual[i + 1].id})`,
+        );
       }
     }
   });
