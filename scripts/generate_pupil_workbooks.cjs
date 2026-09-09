@@ -488,6 +488,120 @@ const cmeMasterTimelines = {
   },
 };
 
+function generateMedievalCastleDraftingPage(lesson) {
+  if (!lesson || !lesson.creative_task) return '';
+  const ct = lesson.creative_task;
+  if (ct.type !== 'architectural_drafting') return '';
+
+  return `
+  <div class="creative-drafting-page" style="page-break-before: always; page-break-after: always; box-sizing: border-box; padding: 10px 14px; font-family: 'Inter', sans-serif;">
+    <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 5px; margin-bottom: 8px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <span style="font-size: 8.5pt; font-weight: 800; color: #0284c7; text-transform: uppercase; letter-spacing: 0.8px;">
+          <i class="fa-solid fa-compass-drafting" style="margin-right: 5px;"></i> Tactical Architecture &bull; 1067 Norman Conquest
+        </span>
+        <span style="font-size: 8pt; font-weight: 700; color: #475569; background: #f1f5f9; padding: 2px 8px; border-radius: 4px; border: 1px solid #cbd5e1;">
+          Year 7 History Mastery &bull; Lesson 2
+        </span>
+      </div>
+      <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 15pt; color: #1e3a8a; margin: 3px 0 4px 0; border: none; padding: 0;">
+        ${ct.title}
+      </h2>
+      <div style="font-size: 8pt; color: #334155; background: #eff6ff; border-left: 3px solid #3b82f6; padding: 4px 8px; border-radius: 4px; line-height: 1.35;">
+        <strong>Tactical Briefing:</strong> ${ct.briefing}
+      </div>
+    </div>
+
+    <!-- Central Drafting Blueprint Canvas -->
+    <div style="height: 310px; border: 2px solid #1e3a8a; border-radius: 8px; background-color: #ffffff; background-image: radial-gradient(#94a3b8 1.2px, transparent 1.2px); background-size: 16px 16px; position: relative; margin-bottom: 8px; overflow: hidden; box-shadow: inset 0 0 10px rgba(0,0,0,0.03);">
+      <div style="position: absolute; top: 6px; left: 8px; font-size: 7pt; font-weight: 700; color: #475569; background: rgba(255,255,255,0.92); padding: 2px 6px; border-radius: 3px; border: 1px solid #cbd5e1;">
+        <i class="fa-solid fa-ruler-combined" style="color: #0284c7;"></i> GRID SCALE: ${ct.grid_scale || '1 SQUARE = 5 METRES'}
+      </div>
+      <div style="position: absolute; top: 6px; right: 8px; font-size: 7pt; font-weight: 700; color: #475569; background: rgba(255,255,255,0.92); padding: 2px 6px; border-radius: 3px; border: 1px solid #cbd5e1;">
+        <i class="fa-solid fa-compass" style="color: #0284c7;"></i> COMMAND SECTOR &bull; ELEVATION 30M
+      </div>
+      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; pointer-events: none; opacity: 0.18;">
+        <div style="font-family: 'Playfair Display', serif; font-size: 26pt; font-weight: 900; color: #1e3a8a; letter-spacing: 4px; text-transform: uppercase;">PUPIL DRAFTING CANVAS</div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 9.5pt; font-weight: 600; color: #334155; letter-spacing: 1px; margin-top: 2px;">(Draft Mound, Keep, Palisade, Ditch &amp; Bailey Enclosure)</div>
+      </div>
+      <div style="position: absolute; bottom: 6px; left: 8px; font-size: 7pt; color: #64748b; font-style: italic; background: rgba(255,255,255,0.9); padding: 2px 6px; border-radius: 3px;">
+        Draw clean leader lines linking your sketch to Callouts ① through ⑤ below
+      </div>
+      <div style="position: absolute; bottom: 6px; right: 8px; font-size: 7pt; font-weight: 700; color: #1e3a8a; background: rgba(255,255,255,0.92); padding: 2px 6px; border-radius: 3px; border: 1px solid #cbd5e1;">
+        EST. BUILD TIME: 8–14 DAYS (FORCED SAXON LABOUR)
+      </div>
+    </div>
+
+    <!-- 5 Tactical Callouts Grid -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-bottom: 6px;">
+      ${ct.callouts
+        .slice(0, 3)
+        .map(
+          (c, idx) => `
+        <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-top: 3px solid ${idx === 0 ? '#1e3a8a' : idx === 1 ? '#d97706' : '#059669'}; border-radius: 5px; padding: 5px 7px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
+            <strong style="font-size: 7.8pt; color: ${idx === 0 ? '#1e3a8a' : idx === 1 ? '#b45309' : '#047857'};">${c.num} ${c.label}</strong>
+            <span style="font-size: 6.8pt; font-weight: 700; color: ${idx === 0 ? '#0284c7' : idx === 1 ? '#d97706' : '#059669'}; background: ${idx === 0 ? '#e0f2fe' : idx === 1 ? '#fef3c7' : '#d1fae5'}; padding: 1px 4px; border-radius: 2px;">${c.badge}</span>
+          </div>
+          <div style="font-size: 7pt; color: #475569; line-height: 1.25; margin-bottom: 3px;">
+            ${c.prompt}
+          </div>
+          <div class="task-lines" style="height: 11px; margin-top: 2px;"></div>
+          <div class="task-lines" style="height: 11px; margin-top: 2px;"></div>
+        </div>
+      `,
+        )
+        .join('')}
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 6px;">
+      ${ct.callouts
+        .slice(3, 5)
+        .map(
+          (c, idx) => `
+        <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-top: 3px solid ${idx === 0 ? '#7c3aed' : '#dc2626'}; border-radius: 5px; padding: 5px 7px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
+            <strong style="font-size: 7.8pt; color: ${idx === 0 ? '#6d28d9' : '#b91c1c'};">${c.num} ${c.label}</strong>
+            <span style="font-size: 6.8pt; font-weight: 700; color: ${idx === 0 ? '#7c3aed' : '#dc2626'}; background: ${idx === 0 ? '#ede9fe' : '#fee2e2'}; padding: 1px 4px; border-radius: 2px;">${c.badge}</span>
+          </div>
+          <div style="font-size: 7pt; color: #475569; line-height: 1.25; margin-bottom: 3px;">
+            ${c.prompt}
+          </div>
+          <div class="task-lines" style="height: 11px; margin-top: 2px;"></div>
+          <div class="task-lines" style="height: 11px; margin-top: 2px;"></div>
+        </div>
+      `,
+        )
+        .join('')}
+    </div>
+
+    <!-- Bottom Tactical Synthesis -->
+    ${
+      ct.synthesis
+        ? `
+      <div style="background: #ffffff; border: 1.5px solid #1e3a8a; border-radius: 6px; padding: 6px 9px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
+          <strong style="font-size: 8pt; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px;">
+            <i class="fa-solid fa-brain" style="color: #0284c7; margin-right: 4px;"></i> ${ct.synthesis.title}
+          </strong>
+          <span style="font-size: 7pt; font-weight: 700; color: #0284c7; background: #e0f2fe; padding: 1px 5px; border-radius: 3px;">
+            ${ct.synthesis.badge}
+          </span>
+        </div>
+        <div style="font-size: 7.5pt; color: #1e293b; font-weight: 600; margin-bottom: 4px; line-height: 1.3;">
+          ${ct.synthesis.question}
+        </div>
+        ${Array(ct.synthesis.lines || 3)
+          .fill('<div class="task-lines" style="height: 11px; margin-top: 2px;"></div>')
+          .join('')}
+      </div>
+    `
+        : ''
+    }
+  </div>
+  `;
+}
+
 function generateCmeWarTimelineCanvas(lesson) {
   if (!lesson) return '';
   let cfg = null;
@@ -768,6 +882,7 @@ allDirs.forEach((unitId) => {
   <meta charset="UTF-8">
   <title>Pupil Workbook - ${unitId}</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
       
     @page { size: A4 portrait; margin: 15mm 15mm 25mm 15mm; }
@@ -1458,6 +1573,22 @@ allDirs.forEach((unitId) => {
                   `;
                 }
                 if (task.type === 'drawing' || task.type === 'draw') {
+                  if (
+                    unitId === 'medieval_england' &&
+                    lesson.title &&
+                    lesson.title.includes('Lesson 2')
+                  ) {
+                    _nbHtml += `<div class="task-box" style="margin-bottom: 12px; border-left: 3.5px solid #1e3a8a; background: #eff6ff; padding: 8px 12px; border-radius: 4px;">
+                      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
+                        <strong style="color: #1e3a8a; font-size: 9.5pt;"><i class="fa-solid fa-compass-drafting" style="color: #0284c7; margin-right: 5px;"></i> Q${globalQNum++}. Architectural Drafting & Fortress Blueprint</strong>
+                        <span style="font-size: 7.5pt; font-weight: 700; color: #0284c7; background: #ffffff; padding: 2px 6px; border-radius: 3px; border: 1px solid #bfdbfe;">Full-Page Masterclass</span>
+                      </div>
+                      <p style="margin: 0; font-size: 8.5pt; color: #334155; line-height: 1.3;">
+                        Turn to the dedicated <strong>Motte-and-Bailey Fortress Blueprint Worksheet</strong> at the end of this lesson to complete your annotated architectural drawing and tactical evaluation.
+                      </p>
+                    </div>`;
+                    return;
+                  }
                   _nbHtml += `<div class="task-box" style="box-sizing: border-box; margin-bottom: 20px; border: 2px dashed #f59e0b; padding: 15px; border-radius: 8px; page-break-inside: avoid;">`;
                   let _t = processTaskTextWithTariff(task.text || task.question);
                   _nbHtml += `<h4 style="margin-top: 0; color: #b45309;">Drawing Task: Q${globalQNum++} ${_t.cleanText}</h4>`;
@@ -3172,6 +3303,11 @@ allDirs.forEach((unitId) => {
       if (unitId === 'cme_new') {
         const warCanvas = generateCmeWarTimelineCanvas(lesson);
         if (warCanvas) html += warCanvas;
+      }
+
+      if (unitId === 'medieval_england') {
+        const castleCanvas = generateMedievalCastleDraftingPage(lesson);
+        if (castleCanvas) html += castleCanvas;
       }
 
       if (allVideos.length > 0) {
