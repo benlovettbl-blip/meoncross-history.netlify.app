@@ -1722,7 +1722,7 @@ export async function renderMockExamsView() {
           <i class="fa-solid fa-file-signature"></i> Official Mock Exam Papers
         </button>
         <button id="tab-btn-trend-radar" class="btn" style="background: transparent; color: #64748b; border: none; padding: 12px 22px; border-radius: 10px 10px 0 0; font-weight: 700; cursor: pointer; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; transition: all 0.2s;">
-          <i class="fa-solid fa-table-cells"></i> 📊 2018–2026 Past Paper Matrix &amp; Overdue Radar
+          <i class="fa-solid fa-table-cells"></i> 2018–2026 Past Paper Matrix &amp; Overdue Radar
         </button>
       </div>
 

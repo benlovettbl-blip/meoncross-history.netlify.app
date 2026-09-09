@@ -11,12 +11,12 @@ const UNIT_CONFIGS = {
     name: 'Paper 1: Medicine in Britain, c1250–present and The British sector of the Western Front, 1914–18',
     code: '1HI0/11',
     badge: 'Paper 1: Medicine & Western Front',
-    label: '🩺 Medicine (11)',
+    label: '1HI0/11 Medicine',
     dataFile: '/data/edexcel_medicine_past_papers.json',
     trendFile: '/data/edexcel_medicine_trend_analysis.json',
-    gradient: 'linear-gradient(135deg, #064e3b 0%, #0f766e 50%, #042f2e 100%)',
-    primary: '#0d9488',
-    light: '#ccfbf1',
+    gradient: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
+    primary: '#0f172a',
+    light: '#f1f5f9',
     guidePdf: '/pdfs/edexcel_medicine_revision_guide.pdf',
     guideName: 'Open in 40-Page Visual Guide',
   },
@@ -25,12 +25,12 @@ const UNIT_CONFIGS = {
     name: 'Paper 2: Early Elizabethan England, 1558–1588',
     code: '1HI0/B4',
     badge: 'Paper 2: Early Elizabethan England',
-    label: '👑 Elizabethan (B4)',
+    label: '1HI0/B4 Elizabethan',
     dataFile: '/data/eee_past_papers.json',
     trendFile: '/data/eee_trend_analysis.json',
-    gradient: 'linear-gradient(135deg, #4c1d95 0%, #6d28d9 50%, #2e1065 100%)',
-    primary: '#7c3aed',
-    light: '#ede9fe',
+    gradient: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
+    primary: '#0f172a',
+    light: '#f1f5f9',
     guidePdf: null,
     guideName: null,
   },
@@ -39,12 +39,12 @@ const UNIT_CONFIGS = {
     name: 'Paper 2: Conflict in the Middle East, 1945–1995',
     code: '1HI0/P5',
     badge: 'Paper 2: Middle East 1945–95',
-    label: '🕊️ Middle East (P5)',
+    label: '1HI0/P5 Middle East',
     dataFile: '/data/cme_new_past_papers.json',
     trendFile: '/data/cme_new_trend_analysis.json',
-    gradient: 'linear-gradient(135deg, #0369a1 0%, #0284c7 50%, #082f49 100%)',
-    primary: '#0284c7',
-    light: '#e0f2fe',
+    gradient: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
+    primary: '#0f172a',
+    light: '#f1f5f9',
     guidePdf: null,
     guideName: null,
   },
@@ -53,13 +53,13 @@ const UNIT_CONFIGS = {
     name: 'Paper 3: Weimar and Nazi Germany, 1918–1939',
     code: '1HI0/31',
     badge: 'Paper 3: Weimar & Nazi Germany (Year 10)',
-    label: '🦅 Germany (Yr 10)',
+    label: '1HI0/31 Germany',
     cohort: 'Year 10',
     dataFile: '/data/weimar_nazi_germany_past_papers.json',
     trendFile: '/data/weimar_nazi_germany_trend_analysis.json',
-    gradient: 'linear-gradient(135deg, #881337 0%, #be123c 50%, #4c0519 100%)',
-    primary: '#be123c',
-    light: '#ffe4e6',
+    gradient: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
+    primary: '#0f172a',
+    light: '#f1f5f9',
     boosterHtml: '/revision_sheets/year10_germany_overdue_booster.html',
     boosterPdf: '/pdfs/year10_germany_overdue_booster.pdf',
     guidePdf: null,
@@ -70,13 +70,13 @@ const UNIT_CONFIGS = {
     name: 'Paper 3: Conflict at Home and Abroad: the USA, 1954–75',
     code: '1HI0/33',
     badge: 'Paper 3: USA 1954–75 (Year 11)',
-    label: '🇺🇸 USA (Yr 11)',
+    label: '1HI0/33 USA',
     cohort: 'Year 11',
     dataFile: '/data/usa_past_papers.json',
     trendFile: '/data/usa_trend_analysis.json',
-    gradient: 'linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #172554 100%)',
-    primary: '#2563eb',
-    light: '#dbeafe',
+    gradient: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
+    primary: '#0f172a',
+    light: '#f1f5f9',
     boosterHtml: '/revision_sheets/year11_usa_overdue_booster.html',
     boosterPdf: '/pdfs/year11_usa_overdue_booster.pdf',
     guidePdf: null,
@@ -826,141 +826,129 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
       .etm-container {
         max-width: 1440px;
         margin: 0 auto;
-        padding: 10px 20px 60px 20px;
+        padding: 5px 15px 40px 15px;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       }
       .etm-hero {
-        background: ${cfg.gradient};
-        border-radius: 20px;
-        padding: 35px 40px;
-        color: white;
-        margin-bottom: 30px;
-        box-shadow: 0 20px 40px -15px rgba(0,0,0,0.3);
-        position: relative;
-        overflow: hidden;
-      }
-      .etm-hero::after {
-        content: '';
-        position: absolute;
-        top: -60px; right: -60px; width: 260px; height: 260px;
-        background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
-        border-radius: 50%;
-      }
-      .etm-metrics-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 15px;
-        margin-top: 25px;
-      }
-      .etm-metric-box {
-        background: rgba(255,255,255,0.12);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        border: 1px solid rgba(255,255,255,0.2);
-        border-radius: 14px;
+        background: #ffffff;
+        border: 1px solid #cbd5e1;
+        border-top: 3px solid #0f172a;
+        border-radius: 8px;
         padding: 16px 20px;
-        display: flex;
-        align-items: center;
-        gap: 15px;
+        color: #0f172a;
+        margin-bottom: 16px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.03);
       }
       .etm-tabs-bar {
         display: flex;
-        gap: 10px;
-        border-bottom: 2px solid #e2e8f0;
-        margin-bottom: 25px;
+        gap: 6px;
+        border-bottom: 2px solid #0f172a;
+        margin-bottom: 14px;
         overflow-x: auto;
-        padding-bottom: 2px;
       }
       .etm-tab-btn {
         background: none;
         border: none;
-        padding: 12px 24px;
-        font-size: 1.05rem;
+        padding: 7px 16px;
+        font-size: 0.88rem;
         font-weight: 700;
         color: #64748b;
         cursor: pointer;
         border-bottom: 3px solid transparent;
         margin-bottom: -2px;
-        transition: all 0.2s;
+        transition: all 0.15s;
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 6px;
         white-space: nowrap;
       }
       .etm-tab-btn:hover {
         color: #0f172a;
       }
       .etm-tab-btn.active {
-        color: ${cfg.primary};
-        border-bottom-color: ${cfg.primary};
+        color: #0f172a;
+        border-bottom-color: #0f172a;
       }
 
       .etm-table-wrap {
         overflow-x: auto;
         background: white;
-        border-radius: 16px;
-        border: 1px solid #e2e8f0;
-        box-shadow: 0 4px 20px -5px rgba(0,0,0,0.05);
+        border-radius: 6px;
+        border: 1.5px solid #0f172a;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
       }
       .etm-table {
         width: 100%;
+        table-layout: fixed;
         border-collapse: collapse;
         text-align: left;
-        min-width: 1100px;
       }
       .etm-table th {
         background: #f8fafc;
-        color: #1e293b;
-        padding: 16px;
-        font-weight: 700;
-        font-size: 0.95rem;
-        border-bottom: 2px solid #cbd5e1;
+        color: #0f172a;
+        padding: 8px 6px;
+        font-weight: 800;
+        font-size: 0.76rem;
+        border-bottom: 2px solid #0f172a;
+        border-right: 1px solid #cbd5e1;
         position: sticky;
         top: 0;
         z-index: 2;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        overflow: hidden;
       }
       .etm-table td {
-        padding: 14px;
+        padding: 4px 4px;
         border-bottom: 1px solid #e2e8f0;
-        border-right: 1px solid #f1f5f9;
+        border-right: 1px solid #e2e8f0;
         vertical-align: top;
+        overflow: hidden;
       }
       .etm-table tr:hover td {
-        background-color: #fafafa;
+        background-color: #fafbfc;
       }
       .etm-q-card {
-        background: #f8fafc;
+        background: #ffffff;
         border: 1px solid #cbd5e1;
-        border-radius: 10px;
-        padding: 10px 12px;
-        font-size: 0.85rem;
-        color: #1e293b;
+        border-radius: 4px;
+        padding: 4px 5px;
+        font-size: 0.71rem;
+        color: #0f172a;
         cursor: pointer;
-        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: all 0.15s ease;
         display: flex;
         flex-direction: column;
-        gap: 6px;
-        margin-bottom: 6px;
+        gap: 2px;
+        margin-bottom: 3px;
+        line-height: 1.2;
+        word-break: break-word;
+        overflow-wrap: break-word;
       }
       .etm-q-card:hover {
-        transform: translateY(-2px);
-        background: white;
-        border-color: ${cfg.primary};
-        box-shadow: 0 8px 16px -4px rgba(0,0,0,0.1);
+        border-color: #0f172a;
+        background: #f8fafc;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.06);
       }
       .etm-tariff-badge {
-        font-size: 0.72rem;
+        font-size: 0.65rem;
         font-weight: 800;
-        padding: 2px 7px;
-        border-radius: 6px;
-        text-transform: uppercase;
+        padding: 1px 4px;
+        border-radius: 3px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        border: 1px solid #cbd5e1;
+        background: #f1f5f9;
+        color: #0f172a;
         align-self: flex-start;
+        white-space: nowrap;
+        display: inline-block;
+        flex-shrink: 0;
       }
-      .etm-tariff-2m { background: #e0e7ff; color: #3730a3; }
-      .etm-tariff-4m { background: #dbeafe; color: #1e40af; }
-      .etm-tariff-8m { background: #fef3c7; color: #92400e; }
-      .etm-tariff-12m { background: #ffedd5; color: #9a3412; }
-      .etm-tariff-16m { background: #fce7f3; color: #9d174d; }
+      .etm-tariff-2m { background: #ffffff; color: #334155; border-color: #cbd5e1; }
+      .etm-tariff-4m { background: #f8fafc; color: #0f172a; border-color: #94a3b8; }
+      .etm-tariff-8m { background: #f1f5f9; color: #0f172a; border-color: #64748b; font-weight: 800; }
+      .etm-tariff-12m { background: #e2e8f0; color: #0f172a; border-color: #334155; font-weight: 800; }
+      .etm-tariff-16m { background: #0f172a; color: #ffffff; border-color: #0f172a; font-weight: 800; }
 
       /* Modal / Drawer */
       .etm-modal-backdrop {
@@ -984,13 +972,14 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
       }
       .etm-modal-card {
         background: white;
-        border-radius: 20px;
+        border-radius: 8px;
+        border: 2px solid #0f172a;
         max-width: 780px;
         width: 100%;
         max-height: 90vh;
         overflow-y: auto;
         box-shadow: 0 25px 50px -12px rgba(0,0,0,0.3);
-        padding: 35px 40px;
+        padding: 30px 35px;
         position: relative;
         transform: translateY(20px);
         transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1012,28 +1001,28 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
     <div class="etm-container">
       <!-- HERO BANNER -->
       <div class="etm-hero">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 14px;">
           <div>
-            <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.15); padding: 5px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">
-              <i class="fa-solid fa-graduation-cap"></i> Pearson Edexcel GCSE (9–1) Archive
+            <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: #475569; margin-bottom: 4px;">
+              Pearson Edexcel GCSE (9–1) History Archive
             </div>
-            <h1 style="margin: 0; font-size: 2.3rem; font-weight: 800; line-height: 1.2;">
-              Past Exam Matrix & Overdue Topic Radar
+            <h1 style="margin: 0; font-size: 1.65rem; font-weight: 800; line-height: 1.25; color: #0f172a; font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+              Past Exam Question Matrix & Specification Gap Radar
             </h1>
-            <p style="margin: 10px 0 0 0; font-size: 1.15rem; opacity: 0.9; max-width: 800px;">
-              ${pastData.paper_name} (${pastData.paper_code}) • Comprehensive 2018–2026 examination history, indicative mark schemes, and syllabus gap predictions.
+            <p style="margin: 4px 0 0 0; font-size: 0.88rem; color: #475569; max-width: 820px;">
+              ${pastData.paper_name} (${pastData.paper_code}) • 2018–2026 series mapping, indicative mark schemes, and syllabus gap predictions.
             </p>
           </div>
           
-          <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 8px;">
-            <div style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; opacity: 0.85;">Switch GCSE Unit:</div>
-            <div class="etm-unit-pills" style="display: flex; gap: 6px; flex-wrap: wrap; background: rgba(0,0,0,0.28); backdrop-filter: blur(8px); padding: 5px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.25);">
+          <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 6px;">
+            <div style="font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: #64748b;">Switch GCSE Specification:</div>
+            <div class="etm-unit-pills" style="display: flex; gap: 4px; flex-wrap: wrap; background: #f8fafc; padding: 3px; border-radius: 6px; border: 1px solid #cbd5e1;">
               ${Object.keys(UNIT_CONFIGS)
                 .map((k) => {
                   const item = UNIT_CONFIGS[k];
                   const isActive = k === unitId;
                   return `
-                  <button class="etm-unit-pill ${isActive ? 'active' : ''}" data-unit="${k}" style="background: ${isActive ? 'white' : 'transparent'}; color: ${isActive ? '#0f172a' : 'white'}; border: none; padding: 7px 12px; border-radius: 8px; font-size: 0.82rem; font-weight: ${isActive ? '800' : '600'}; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s; box-shadow: ${isActive ? '0 2px 8px rgba(0,0,0,0.15)' : 'none'};">
+                  <button class="etm-unit-pill ${isActive ? 'active' : ''}" data-unit="${k}" style="background: ${isActive ? '#0f172a' : 'transparent'}; color: ${isActive ? '#ffffff' : '#334155'}; border: none; padding: 5px 9px; border-radius: 4px; font-size: 0.74rem; font-weight: ${isActive ? '800' : '600'}; cursor: pointer; transition: all 0.15s; font-family: ui-monospace, monospace;">
                     ${item.label}
                   </button>
                 `;
@@ -1043,35 +1032,14 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
           </div>
         </div>
 
-        <div class="etm-metrics-grid">
-          <div class="etm-metric-box">
-            <i class="fa-solid fa-file-lines fa-2x" style="color: #67e8f9;"></i>
-            <div>
-              <div style="font-size: 1.6rem; font-weight: 800;">${totalQuestions} Questions</div>
-              <div style="font-size: 0.82rem; opacity: 0.85;">${papers.length} Exam Series (2018–2026)</div>
-            </div>
-          </div>
-          <div class="etm-metric-box">
-            <i class="fa-solid fa-triangle-exclamation fa-2x" style="color: #fca5a5;"></i>
-            <div>
-              <div style="font-size: 1.6rem; font-weight: 800;">${overdueCount} Overdue</div>
-              <div style="font-size: 0.82rem; opacity: 0.85;">Unexamined or 5+ yrs unexamined</div>
-            </div>
-          </div>
-          <div class="etm-metric-box">
-            <i class="fa-solid fa-bullseye fa-2x" style="color: #fde047;"></i>
-            <div>
-              <div style="font-size: 1.6rem; font-weight: 800;">${highTariffGaps} Essay Gaps</div>
-              <div style="font-size: 0.82rem; opacity: 0.85;">Never set as 12m or 16m essays</div>
-            </div>
-          </div>
-          <div class="etm-metric-box">
-            <i class="fa-solid fa-list-check fa-2x" style="color: #a7f3d0;"></i>
-            <div>
-              <div style="font-size: 1.6rem; font-weight: 800;">${totalPoints} Spec Points</div>
-              <div style="font-size: 0.82rem; opacity: 0.85;">100% Syllabus Coverage Mapped</div>
-            </div>
-          </div>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-top: 12px; padding-top: 10px; border-top: 1px solid #e2e8f0; font-size: 0.8rem; color: #475569;">
+          <span><strong style="color: #0f172a; font-weight: 800;">${totalQuestions}</strong> Questions (${papers.length} Series: 2018–2026)</span>
+          <span style="color: #cbd5e1;">|</span>
+          <span><strong style="color: #0f172a; font-weight: 800;">${overdueCount}</strong> Overdue Topics</span>
+          <span style="color: #cbd5e1;">|</span>
+          <span><strong style="color: #0f172a; font-weight: 800;">${highTariffGaps}</strong> High-Tariff Essay Gaps</span>
+          <span style="color: #cbd5e1;">|</span>
+          <span><strong style="color: #0f172a; font-weight: 800;">${totalPoints}</strong> Syllabus Points Mapped</span>
         </div>
       </div>
 
@@ -1090,15 +1058,15 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
 
       <!-- TAB 1: MATRIX VIEW -->
       <div id="etm-view-matrix" class="etm-tab-content">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
-          <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-            <p style="margin: 0; color: #475569; font-size: 0.95rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
+          <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+            <p style="margin: 0; color: #475569; font-size: 0.85rem;">
               Click any question card to inspect the prompt, stimulus points, mark scheme indicative content, and examiner pitfalls.
             </p>
             ${
               isPaper3
                 ? `
-              <button id="etm-secb-toggle-btn" style="background: ${isSecBExpanded ? '#ffffff' : cfg.light}; color: ${isSecBExpanded ? '#0f172a' : cfg.primary}; border: 1px solid ${isSecBExpanded ? '#cbd5e1' : cfg.primary}; padding: 6px 14px; border-radius: 8px; font-weight: 700; font-size: 0.78rem; cursor: pointer; display: flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;">
+              <button id="etm-secb-toggle-btn" style="background: #ffffff; color: #0f172a; border: 1.5px solid #0f172a; padding: 4px 10px; border-radius: 4px; font-weight: 700; font-size: 0.74rem; cursor: pointer; display: flex; align-items: center; gap: 5px; transition: all 0.15s;">
                 <i class="fa-solid ${isSecBExpanded ? 'fa-compress' : 'fa-layer-group'}"></i>
                 <span>${isSecBExpanded ? '▾ Collapse Section B (Unified Enquiry Focus)' : '▸ Expand Section B Sub-Questions (3a–3d)'}</span>
               </button>
@@ -1108,7 +1076,7 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
             ${
               isMedicine
                 ? `
-              <button id="etm-med-seca-toggle-btn" style="background: ${isMedSecAExpanded ? '#ffffff' : cfg.light}; color: ${isMedSecAExpanded ? '#0f172a' : cfg.primary}; border: 1px solid ${isMedSecAExpanded ? '#cbd5e1' : cfg.primary}; padding: 6px 14px; border-radius: 8px; font-weight: 700; font-size: 0.78rem; cursor: pointer; display: flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;">
+              <button id="etm-med-seca-toggle-btn" style="background: #ffffff; color: #0f172a; border: 1.5px solid #0f172a; padding: 4px 10px; border-radius: 4px; font-weight: 700; font-size: 0.74rem; cursor: pointer; display: flex; align-items: center; gap: 5px; transition: all 0.15s;">
                 <i class="fa-solid ${isMedSecAExpanded ? 'fa-compress' : 'fa-layer-group'}"></i>
                 <span>${isMedSecAExpanded ? '▾ Collapse Section A (Western Front Enquiry Focus)' : '▸ Expand Section A Sub-Questions (Q1, 2a, 2b)'}</span>
               </button>
@@ -1116,13 +1084,13 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
                 : ''
             }
           </div>
-          <div style="display: flex; gap: 6px; align-items: center; font-size: 0.8rem; font-weight: 600;">
-            <span style="color: #64748b;">Key:</span>
-            <span class="etm-tariff-badge etm-tariff-2m">2m</span>
-            <span class="etm-tariff-badge etm-tariff-4m">4m</span>
-            <span class="etm-tariff-badge etm-tariff-8m">8m</span>
-            <span class="etm-tariff-badge etm-tariff-12m">12m</span>
-            <span class="etm-tariff-badge etm-tariff-16m">16m</span>
+          <div style="display: flex; gap: 4px; align-items: center; font-size: 0.75rem; font-weight: 600;">
+            <span style="color: #64748b; margin-right: 2px;">Marks:</span>
+            <span class="etm-tariff-badge etm-tariff-2m">[2m]</span>
+            <span class="etm-tariff-badge etm-tariff-4m">[4m]</span>
+            <span class="etm-tariff-badge etm-tariff-8m">[8m]</span>
+            <span class="etm-tariff-badge etm-tariff-12m">[12m]</span>
+            <span class="etm-tariff-badge etm-tariff-16m">[16m]</span>
           </div>
         </div>
 
@@ -1130,8 +1098,8 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
           <table class="etm-table">
             <thead>
               <tr>
-                <th style="min-width: 220px; width: 220px; border-right: 2px solid #cbd5e1;">Question Focus</th>
-                ${years.map((y) => `<th style="text-align: center; min-width: 140px;">${y === 2026 ? '2026 (Specimen)' : y}</th>`).join('')}
+                <th style="width: 135px; min-width: 135px; border-right: 2px solid #0f172a;">Question Focus</th>
+                ${years.map((y) => `<th style="text-align: center; width: calc((100% - 135px) / ${years.length});">${y === 2026 ? '2026' : y}</th>`).join('')}
               </tr>
             </thead>
             <tbody>
@@ -1139,9 +1107,9 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
                 .map((row) => {
                   return `
                     <tr>
-                      <td style="background: #f8fafc; font-weight: 700; border-right: 2px solid #e2e8f0;">
-                        <div style="color: #0f172a; font-size: 0.95rem;">${row.label}</div>
-                        <div style="color: #64748b; font-size: 0.78rem; font-weight: 500; margin-top: 4px;">${row.sub}</div>
+                      <td style="background: #f8fafc; font-weight: 700; border-right: 2px solid #0f172a; width: 135px; min-width: 135px;">
+                        <div style="color: #0f172a; font-size: 0.82rem; font-weight: 800; line-height: 1.2;">${row.label}</div>
+                        <div style="color: #64748b; font-size: 0.68rem; font-weight: 600; margin-top: 2px; line-height: 1.2;">${row.sub}</div>
                       </td>
                       ${years
                         .map((yr) => {
@@ -1154,25 +1122,23 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
                               : [];
                             const q2a = secA.find((q) => q.q_number === 'Q2(a)') || secA[0];
                             if (!q2a) {
-                              return `<td style="color: #cbd5e1; text-align: center; font-size: 0.8rem; font-style: italic;">—</td>`;
+                              return `<td style="color: #cbd5e1; text-align: center; font-size: 0.75rem; font-style: italic;">—</td>`;
                             }
                             const cleanTopic = q2a.topic.replace(/^Western Front:\s*/i, '');
                             return `
                               <td>
-                                <div class="etm-q-card etm-med-seca-card" data-med-year="${yr}" data-qid="${q2a.q_id}" title="Click to view full Western Front Historic Environment Dossier (16m)" style="border-left: 4px solid ${cfg.primary}; background: #ffffff;">
-                                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-                                    <span style="font-weight: 800; font-size: 0.72rem; color: ${cfg.primary}; text-transform: uppercase; letter-spacing: 0.4px;">
-                                      <i class="fa-solid fa-crosshairs"></i> Western Front Enquiry
+                                <div class="etm-q-card etm-med-seca-card" data-med-year="${yr}" data-qid="${q2a.q_id}" title="Click to view full Western Front Historic Environment Dossier (16m)" style="border-left: 3px solid #0f172a; background: #ffffff;">
+                                  <div style="display: flex; justify-content: space-between; align-items: center; gap: 4px; margin-bottom: 2px;">
+                                    <span style="font-weight: 800; font-size: 0.62rem; color: #0f172a; text-transform: uppercase; letter-spacing: 0.2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                      Section A
                                     </span>
-                                    <span class="etm-tariff-badge" style="background: ${cfg.primary}; color: white; font-size: 0.68rem; font-weight: 800; padding: 2px 6px;">16m (31%)</span>
+                                    <span class="etm-tariff-badge etm-tariff-16m" style="font-size: 0.6rem; padding: 1px 3px;">16m</span>
                                   </div>
-                                  <div style="font-weight: 800; color: #0f172a; line-height: 1.35; font-size: 0.88rem; margin-bottom: 6px;">
+                                  <div style="font-weight: 700; color: #0f172a; line-height: 1.2; font-size: 0.76rem; margin-bottom: 3px;">
                                     ${cleanTopic}
                                   </div>
-                                  <div style="display: flex; gap: 4px; flex-wrap: wrap;">
-                                    <span style="background: #f1f5f9; color: #475569; font-size: 0.68rem; padding: 1px 5px; border-radius: 4px; font-weight: 700;">Q1: 4m</span>
-                                    <span style="background: #f1f5f9; color: #475569; font-size: 0.68rem; padding: 1px 5px; border-radius: 4px; font-weight: 700;">Q2a: 8m</span>
-                                    <span style="background: #f1f5f9; color: #475569; font-size: 0.68rem; padding: 1px 5px; border-radius: 4px; font-weight: 700;">Q2b: 4m</span>
+                                  <div style="display: flex; gap: 3px; font-size: 0.62rem; color: #64748b; font-weight: 700;">
+                                    <span>Q1:4m</span><span>•</span><span>Q2a:8m</span><span>•</span><span>Q2b:4m</span>
                                   </div>
                                 </div>
                               </td>
@@ -1184,25 +1150,22 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
                               : [];
                             const q3a = secB.find((q) => q.q_number === 'Q3(a)') || secB[0];
                             if (!q3a) {
-                              return `<td style="color: #cbd5e1; text-align: center; font-size: 0.8rem; font-style: italic;">—</td>`;
+                              return `<td style="color: #cbd5e1; text-align: center; font-size: 0.75rem; font-style: italic;">—</td>`;
                             }
                             return `
                               <td>
-                                <div class="etm-q-card etm-secb-card" data-secb-year="${yr}" data-qid="${q3a.q_id}" title="Click to view full Section B Enquiry Dossier (32m + 4m SPaG)" style="border-left: 4px solid ${cfg.primary}; background: #ffffff;">
-                                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-                                    <span style="font-weight: 800; font-size: 0.72rem; color: ${cfg.primary}; text-transform: uppercase; letter-spacing: 0.4px;">
-                                      <i class="fa-solid fa-layer-group"></i> Section B Enquiry
+                                <div class="etm-q-card etm-secb-card" data-secb-year="${yr}" data-qid="${q3a.q_id}" title="Click to view full Section B Enquiry Dossier (32m + 4m SPaG)" style="border-left: 3px solid #0f172a; background: #ffffff;">
+                                  <div style="display: flex; justify-content: space-between; align-items: center; gap: 4px; margin-bottom: 2px;">
+                                    <span style="font-weight: 800; font-size: 0.62rem; color: #0f172a; text-transform: uppercase; letter-spacing: 0.2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                      Section B
                                     </span>
-                                    <span class="etm-tariff-badge" style="background: ${cfg.primary}; color: white; font-size: 0.68rem; font-weight: 800; padding: 2px 6px;">32m + 4m SPaG</span>
+                                    <span class="etm-tariff-badge etm-tariff-16m" style="font-size: 0.6rem; padding: 1px 3px;">36m</span>
                                   </div>
-                                  <div style="font-weight: 800; color: #0f172a; line-height: 1.35; font-size: 0.88rem; margin-bottom: 6px;">
+                                  <div style="font-weight: 700; color: #0f172a; line-height: 1.2; font-size: 0.76rem; margin-bottom: 3px;">
                                     ${q3a.topic}
                                   </div>
-                                  <div style="display: flex; gap: 4px; flex-wrap: wrap;">
-                                    <span style="background: #f1f5f9; color: #475569; font-size: 0.68rem; padding: 1px 5px; border-radius: 4px; font-weight: 700;">3a: 8m</span>
-                                    <span style="background: #f1f5f9; color: #475569; font-size: 0.68rem; padding: 1px 5px; border-radius: 4px; font-weight: 700;">3b: 4m</span>
-                                    <span style="background: #f1f5f9; color: #475569; font-size: 0.68rem; padding: 1px 5px; border-radius: 4px; font-weight: 700;">3c: 4m</span>
-                                    <span style="background: #f1f5f9; color: #475569; font-size: 0.68rem; padding: 1px 5px; border-radius: 4px; font-weight: 700;">3d: 16m</span>
+                                  <div style="display: flex; gap: 3px; font-size: 0.62rem; color: #64748b; font-weight: 700;">
+                                    <span>3a:8m</span><span>•</span><span>3b:4m</span><span>•</span><span>3c:4m</span><span>•</span><span>3d:20m</span>
                                   </div>
                                 </div>
                               </td>
@@ -1212,7 +1175,7 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
                             ? yearPaper.questions.filter((q) => row.match(q))
                             : [];
                           if (matchedQs.length === 0) {
-                            return `<td style="color: #cbd5e1; text-align: center; font-size: 0.8rem; font-style: italic;">—</td>`;
+                            return `<td style="color: #cbd5e1; text-align: center; font-size: 0.75rem; font-style: italic;">—</td>`;
                           }
                           return `
                             <td>
@@ -1221,11 +1184,11 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
                                   const tariffClass = `etm-tariff-${q.tariff}m`;
                                   return `
                                     <div class="etm-q-card" data-qid="${q.q_id}" title="Click to view question & mark scheme">
-                                      <div style="display: flex; justify-content: space-between; align-items: center;">
-                                        <span style="font-weight: 800; font-size: 0.75rem; color: #475569;">${q.q_number}</span>
-                                        <span class="etm-tariff-badge ${tariffClass}">${q.tariff} Marks</span>
+                                      <div style="display: flex; justify-content: space-between; align-items: center; gap: 4px;">
+                                        <span style="font-weight: 800; font-size: 0.68rem; color: #475569;">${q.q_number}</span>
+                                        <span class="etm-tariff-badge ${tariffClass}">[${q.tariff}m]</span>
                                       </div>
-                                      <div style="font-weight: 700; color: #0f172a; line-height: 1.3;">${q.topic}</div>
+                                      <div style="font-weight: 600; color: #0f172a; line-height: 1.2; font-size: 0.74rem;">${q.topic}</div>
                                     </div>
                                   `;
                                 })
