@@ -1,0 +1,707 @@
+{
+  "unit_id": "cme_new",
+  "paper_code": "1HI0/P5",
+  "paper_name": "Paper 2: Conflict in the Middle East, 1945–1995",
+  "total_papers_analyzed": 8,
+  "year_range": "2018–2026",
+  "papers": [
+    {
+      "year": 2018,
+      "season": "June",
+      "series": "Summer 2018",
+      "paper_code": "1HI0/P5",
+      "questions": [
+        {
+          "q_id": "cme_2018_q1",
+          "q_number": "Q1",
+          "tariff": 4,
+          "type": "consequence",
+          "topic": "1948-49 War: Territorial Changes",
+          "spec_topic": "KT1.2: Territorial changes and their impact after 1948-49 war",
+          "question_text": "Explain two consequences of the territorial changes following the 1948-49 Arab- Israeli war.",
+          "stimulus": null,
+          "indicative_content": [
+            "Israel expanded its territory by 21% beyond the UN partition borders, securing control of Western Galilee, the coastal plain, and West Jerusalem.",
+            "The remainder of Arab Palestine was absorbed: Jordan annexed the West Bank and East Jerusalem, while Egypt occupied the Gaza Strip, leaving no independent Palestinian state and creating 700,000 refugees."
+          ],
+          "examiner_tips": "Explain two distinct consequences with specific historical detail (e.g. 21% land increase; Jordanian annexation of West Bank)."
+        },
+        {
+          "q_id": "cme_2018_q2",
+          "q_number": "Q2",
+          "tariff": 8,
+          "type": "narrative",
+          "topic": "Egypt-Israel Relations 1973-77",
+          "spec_topic": "KT3.2: Israel and Egypt, 1973-79: Sadat, peace initiative, Camp David",
+          "question_text": "Write a narrative account analysing Egypt’s relations with Israel in the years 1973-77.",
+          "stimulus": "• Yom Kippur War (1973)\n• President Sadat\n• You must also use information of your own.",
+          "indicative_content": [
+            "The Yom Kippur War (1973) broke the myth of Israeli invincibility and restored Arab pride, giving Sadat the political standing to negotiate from strength.",
+            "US Secretary of State Henry Kissinger initiated \"shuttle diplomacy\", leading to the 1974 and 1975 Sinai Disengagement Agreements where Israel withdrew from the Suez Canal and returned oil fields.",
+            "Sadat made a historic visit to Jerusalem in November 1977, addressing the Knesset in person and opening direct peace negotiations."
+          ],
+          "examiner_tips": "Structure chronologically with explicit causal linking phrases (\"This led to\", \"As a consequence\", \"Following this breakthrough\")."
+        },
+        {
+          "q_id": "cme_2018_q3a",
+          "q_number": "Q3(a)",
+          "tariff": 8,
+          "type": "importance",
+          "topic": "Nasser: Leadership of the Arab World",
+          "spec_topic": "KT1.3: Nasser and Egypt’s leadership of the Arab world",
+          "question_text": "Explain the importance of Nasser for leadership of the Arab world.",
+          "stimulus": null,
+          "indicative_content": [
+            "Nasser championed Pan-Arab nationalism and anti-imperialism, inspiring Arab nations by nationalising the Suez Canal (1956) and standing up to Britain, France, and Israel.",
+            "His leadership led to the creation of the United Arab Republic (UAR, 1958) uniting Egypt and Syria, and made Egypt the undisputed diplomatic and military champion of the Palestinian cause."
+          ],
+          "examiner_tips": "Explain the impact on Arab unity, opposition to Western imperialism, and the escalating conflict with Israel."
+        },
+        {
+          "q_id": "cme_2018_q3b",
+          "q_number": "Q3(b)",
+          "tariff": 8,
+          "type": "importance",
+          "topic": "Occupied Territories After Six Day War (1967)",
+          "spec_topic": "KT2.2: Aftermath of the 1967 war: Sinai, Gaza, West Bank, Golan Heights, Jerusalem",
+          "question_text": "Explain the importance of the occupied territories following the Six Day War (1967) for Arab-Israeli relations.",
+          "stimulus": null,
+          "indicative_content": [
+            "Israel gained strategic depth and security buffers by capturing the Sinai, Gaza Strip, West Bank, Golan Heights, and East Jerusalem.",
+            "It hardened Arab hostility, leading to the Arab League’s \"Three No’s\" at Khartoum (No peace, no recognition, no negotiations) and brought 1 million Palestinians under Israeli military occupation."
+          ],
+          "examiner_tips": "Evaluate how capturing the territories created both security buffers for Israel and permanent diplomatic deadlock."
+        },
+        {
+          "q_id": "cme_2018_q3c",
+          "q_number": "Q3(c)",
+          "tariff": 8,
+          "type": "importance",
+          "topic": "End of Cold War & Middle East Peace",
+          "spec_topic": "KT3.3: Attempts to find a solution: end of Cold War, Madrid Conference 1991",
+          "question_text": "Explain the importance of the end of the Cold War for attempts to find a solution in the Middle East.",
+          "stimulus": null,
+          "indicative_content": [
+            "The collapse of the USSR left the USA as the sole global superpower and cut off Soviet military and financial backing for Syria and the PLO.",
+            "Deprived of Soviet support, Arab nations and the PLO were forced to negotiate directly with Israel, paving the way for the Madrid Conference (1991) and the Oslo peace process."
+          ],
+          "examiner_tips": "Focus on superpower balance of power shifting and forcing Arab states towards diplomatic negotiation."
+        }
+      ]
+    },
+    {
+      "year": 2019,
+      "season": "June",
+      "series": "Summer 2019",
+      "paper_code": "1HI0/P5",
+      "questions": [
+        {
+          "q_id": "cme_2019_q1",
+          "q_number": "Q1",
+          "tariff": 4,
+          "type": "consequence",
+          "topic": "Oslo Accords (1993)",
+          "spec_topic": "KT3.3: The Oslo Accords (1993): terms and impact",
+          "question_text": "Explain two consequences of the Oslo Accords (1993).",
+          "stimulus": null,
+          "indicative_content": [
+            "Mutual recognition: Israel recognized the PLO as the legitimate representative of the Palestinian people, and the PLO renounced terrorism and recognized Israel’s right to exist.",
+            "Creation of the Palestinian National Authority (PNA) with limited self-rule over parts of the Gaza Strip and West Bank (Jericho), though final status issues (Jerusalem, refugees, borders) were postponed."
+          ],
+          "examiner_tips": "Explain two distinct consequences: mutual recognition and the establishment of the Palestinian Authority."
+        },
+        {
+          "q_id": "cme_2019_q2",
+          "q_number": "Q2",
+          "tariff": 8,
+          "type": "narrative",
+          "topic": "Suez Crisis (1956)",
+          "spec_topic": "KT1.3: Events and significance of the Suez Crisis (1956)",
+          "question_text": "Write a narrative account analysing the key events of the Suez crisis in 1956.",
+          "stimulus": "• Nasser\n• British and French troops\n• You must also use information of your own.",
+          "indicative_content": [
+            "Nasser nationalised the Suez Canal in July 1956 after the US and UK withdrew funding for the Aswan High Dam.",
+            "Britain, France, and Israel held secret talks at Sèvres, agreeing Israel would invade the Sinai Peninsula and Britain/France would intervene as \"peacekeepers\" to seize the canal.",
+            "Israel invaded on 29 October; British and French paratroopers landed on 5 November, but intense US diplomatic and financial pressure (threatening to collapse the British pound) forced a humiliating withdrawal."
+          ],
+          "examiner_tips": "Sequence the events chronologically: nationalisation -> Sèvres collusion -> military invasion -> US intervention and withdrawal."
+        },
+        {
+          "q_id": "cme_2019_q3a",
+          "q_number": "Q3(a)",
+          "tariff": 8,
+          "type": "importance",
+          "topic": "Creation of the IDF (1948)",
+          "spec_topic": "KT1.2: Creation of the Israeli Defence Forces (IDF)",
+          "question_text": "Explain the importance of the establishment of the Israeli Defence Forces for the protection of the new state of Israel.",
+          "stimulus": null,
+          "indicative_content": [
+            "Unified command: David Ben-Gurion dissolved rival paramilitary factions (Haganah, Irgun, Lehi) into a single national military under state control.",
+            "It established universal military conscription and a doctrine of rapid mobilization and pre-emptive attack that ensured survival in 1948-49 and subsequent conflicts."
+          ],
+          "examiner_tips": "Highlight the removal of factional militias and the creation of an organized, disciplined national army."
+        },
+        {
+          "q_id": "cme_2019_q3b",
+          "q_number": "Q3(b)",
+          "tariff": 8,
+          "type": "importance",
+          "topic": "Superpowers and the Outbreak of 1967 War",
+          "spec_topic": "KT2.1: The actions of the USSR, Nasser and the USA leading to Six Day War",
+          "question_text": "Explain the importance of the actions of the USSR and the USA for the outbreak of the Six Day War (1967).",
+          "stimulus": null,
+          "indicative_content": [
+            "The USSR provided false intelligence to Syria and Egypt that Israel was massing troops on the Syrian border, prompting Nasser to mobilize in the Sinai and expel the UNEF.",
+            "The USA provided political and covert intelligence support to Israel, signaling that Washington would not oppose an Israeli pre-emptive strike if Egyptian forces closed the Straits of Tiran."
+          ],
+          "examiner_tips": "Analyse Soviet false intelligence and American tacit approval of Israel’s pre-emptive strike."
+        },
+        {
+          "q_id": "cme_2019_q3c",
+          "q_number": "Q3(c)",
+          "tariff": 8,
+          "type": "importance",
+          "topic": "PLO Activities in Lebanon (1970-82)",
+          "spec_topic": "KT2.2 & KT3.1: Expulsion from Jordan, PLO in Lebanon, Israeli security",
+          "question_text": "Explain the importance of PLO activities in Lebanon (1970-82) for Israeli security.",
+          "stimulus": null,
+          "indicative_content": [
+            "After expulsion from Jordan in Black September (1970), the PLO established \"Fatahland\" in southern Lebanon, launching cross-border rocket attacks and terrorist raids into northern Israel.",
+            "This forced Israel to launch Operation Litani (1978) and the full-scale 1982 invasion of Lebanon (Operation Peace for Galilee), leading to the Siege of Beirut and the expulsion of the PLO leadership to Tunisia."
+          ],
+          "examiner_tips": "Link PLO cross-border rocket attacks directly to Israel’s military invasions of southern Lebanon in 1978 and 1982."
+        }
+      ]
+    },
+    {
+      "year": 2020,
+      "season": "November",
+      "series": "Autumn 2020",
+      "paper_code": "1HI0/P5",
+      "questions": [
+        {
+          "q_id": "cme_2020_q1",
+          "q_number": "Q1",
+          "tariff": 4,
+          "type": "consequence",
+          "topic": "First Palestinian Intifada (1987–93)",
+          "spec_topic": "KT3.1: The First Intifada: causes, course and consequences",
+          "question_text": "Explain two consequences of the Palestinian Intifada (1987–93).",
+          "stimulus": null,
+          "indicative_content": [
+            "International sympathy shifted towards Palestinians as global media broadcast images of teenage stone-throwers facing heavily armed Israeli soldiers (the \"Iron Fist\" policy).",
+            "It convinced Israeli leaders (Yitzhak Rabin) that military occupation was unsustainable and pushed the PLO towards diplomacy, paving the way for the 1993 Oslo Peace Process."
+          ],
+          "examiner_tips": "Focus on the shift in international public opinion and the realization that a political rather than military solution was required."
+        },
+        {
+          "q_id": "cme_2020_q2",
+          "q_number": "Q2",
+          "tariff": 8,
+          "type": "narrative",
+          "topic": "Palestinian Issue & Terrorism 1970-72",
+          "spec_topic": "KT2.2: The use of terrorism: PFLP airplane hijacks 1970; Munich Olympics 1972",
+          "question_text": "Write a narrative account analysing the key developments in the Palestinian issue in the years 1970-72.",
+          "stimulus": "• PFLP airplane hijacks (1970)\n• Munich Olympics (1972)\n• You must also use information of your own.",
+          "indicative_content": [
+            "In September 1970, the PFLP hijacked four international airliners and flew three to Dawson’s Field in Jordan, blowing up the empty planes on live television.",
+            "King Hussein of Jordan launched Black September (1970), defeating and expelling the PLO from Jordan to Lebanon.",
+            "In September 1972, Black September terrorists infiltrated the Munich Olympic village, taking 11 Israeli athletes hostage; all 11 were murdered during a botched German rescue operation, provoking Israel’s \"Operation Wrath of God\" assassination campaign."
+          ],
+          "examiner_tips": "Show how Dawson’s Field caused the expulsion from Jordan, which in turn spawned Black September and the Munich massacre."
+        },
+        {
+          "q_id": "cme_2020_q3a",
+          "q_number": "Q3(a)",
+          "tariff": 8,
+          "type": "importance",
+          "topic": "UN Resolution 181 (1947)",
+          "spec_topic": "KT1.1: Partition and UN Resolution 181",
+          "question_text": "Explain the importance of UN Resolution 181 for the creation of Israel.",
+          "stimulus": null,
+          "indicative_content": [
+            "It provided international legitimacy by recommending the partition of Palestine into independent Jewish and Arab states with Jerusalem as an international corpus separatum.",
+            "It was accepted by the Jewish Agency but rejected by Arab states, triggering the 1947-48 civil war in Mandatory Palestine and the 1948 Arab-Israeli War upon British withdrawal."
+          ],
+          "examiner_tips": "Emphasise legal international recognition alongside immediate Arab rejection and the outbreak of fighting."
+        },
+        {
+          "q_id": "cme_2020_q3b",
+          "q_number": "Q3(b)",
+          "tariff": 8,
+          "type": "importance",
+          "topic": "Law of Return (1950)",
+          "spec_topic": "KT1.2: The Law of Return (1950) and immigration",
+          "question_text": "Explain the importance of the Law of Return for the development of the state of Israel.",
+          "stimulus": null,
+          "indicative_content": [
+            "It granted every Jewish person anywhere in the world the legal right to settle in Israel and gain immediate citizenship.",
+            "It led to massive mass immigration (doubling the Jewish population from 650,000 to 1.3 million within four years), providing crucial manpower for the economy and the IDF."
+          ],
+          "examiner_tips": "Explain both the demographic doubling of Israel’s population and the economic/military strengthening of the state."
+        },
+        {
+          "q_id": "cme_2020_q3c",
+          "q_number": "Q3(c)",
+          "tariff": 8,
+          "type": "importance",
+          "topic": "Kissinger’s Shuttle Diplomacy (1973-75)",
+          "spec_topic": "KT3.2: Israel and Egypt: Kissinger’s shuttle diplomacy and disengagement agreements",
+          "question_text": "Explain the importance of Kissinger’s ‘shuttle diplomacy’ for diplomatic negotiations in the Middle East.",
+          "stimulus": null,
+          "indicative_content": [
+            "US Secretary of State Henry Kissinger flew back and forth between Cairo, Jerusalem, and Damascus to negotiate separate bilateral disengagement pacts.",
+            "It defused the immediate post-Yom Kippur military confrontation, secured Israeli troop withdrawals in the Sinai and Golan, and proved peaceful compromise was possible between Arabs and Israelis."
+          ],
+          "examiner_tips": "Focus on how bilateral agreements separated Egypt from the broader Arab rejectionist front."
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "season": "June",
+      "series": "Summer 2022",
+      "paper_code": "1HIA/P5",
+      "questions": [
+        {
+          "q_id": "cme_2022_q1",
+          "q_number": "Q1",
+          "tariff": 4,
+          "type": "consequence",
+          "topic": "Syria’s Support for Fatah (1964-67)",
+          "spec_topic": "KT2.1: Syria’s support for Fatah and escalating tension",
+          "question_text": "Explain two consequences of Syria’s support for Fatah in the years 1964-67.",
+          "stimulus": null,
+          "indicative_content": [
+            "Syria allowed Fatah guerrillas to launch armed sabotage raids into northern Israel from Syrian territory, leading to violent Israeli retaliatory strikes (e.g. the dogfight of 7 April 1967 where Israel shot down six Syrian MiGs).",
+            "It escalated regional tensions and prompted Egypt and Syria to sign a mutual defence pact in November 1966, pulling Nasser inexorably into conflict with Israel."
+          ],
+          "examiner_tips": "State two distinct consequences: cross-border retaliation and the Egyptian-Syrian mutual defence alliance."
+        },
+        {
+          "q_id": "cme_2022_q2",
+          "q_number": "Q2",
+          "tariff": 8,
+          "type": "narrative",
+          "topic": "Israel-Palestinian Negotiations 1993-95",
+          "spec_topic": "KT3.3: Oslo Accords, Oslo II (1995), assassination of Rabin",
+          "question_text": "Write a narrative account analysing the key developments in the negotiations between Israel and the Palestinians in the years 1993-95.",
+          "stimulus": "• Arafat\n• Oslo II (1995)\n• You must also use information of your own.",
+          "indicative_content": [
+            "Secret negotiations in Norway led to the signing of the Oslo Accords (Declaration of Principles) in Washington on 13 September 1993, with the famous handshake between Rabin and Arafat.",
+            "In May 1994, the Gaza-Jericho Agreement implemented Palestinian self-rule, and Yasser Arafat returned from exile to head the newly formed Palestinian Authority.",
+            "Oslo II (1995) divided the West Bank into Areas A, B, and C; however, growing extremism culminated in the assassination of Prime Minister Yitzhak Rabin by an Israeli extremist in November 1995."
+          ],
+          "examiner_tips": "Structure chronologically: Oslo I (1993) -> Gaza-Jericho (1994) -> Oslo II (1995) -> Rabin’s assassination."
+        },
+        {
+          "q_id": "cme_2022_q3a",
+          "q_number": "Q3(a)",
+          "tariff": 8,
+          "type": "importance",
+          "topic": "Territorial Changes 1948-49 for Palestinians",
+          "spec_topic": "KT1.2: Refugee status of Palestinian Arabs",
+          "question_text": "Explain the importance of territorial changes in the aftermath of the 1948-49 war for Palestinians.",
+          "stimulus": null,
+          "indicative_content": [
+            "The Nakba (\"Catastrophe\"): over 700,000 Palestinian Arabs became refugees, displaced from their homes into squalid camps in Gaza, the West Bank, Jordan, Syria, and Lebanon.",
+            "Arab Palestine ceased to exist as a political entity: Gaza fell under Egyptian military administration, while the West Bank and East Jerusalem were annexed by Jordan."
+          ],
+          "examiner_tips": "Analyse the humanitarian refugee crisis and the total loss of territorial self-determination."
+        },
+        {
+          "q_id": "cme_2022_q3b",
+          "q_number": "Q3(b)",
+          "tariff": 8,
+          "type": "importance",
+          "topic": "PFLP Airplane Hijacks (1970)",
+          "spec_topic": "KT2.2: PFLP airplane hijacks of 1970 and international attitudes",
+          "question_text": "Explain the importance of the PFLP airplane hijacks (1970) for international attitudes towards the Palestine issue.",
+          "stimulus": null,
+          "indicative_content": [
+            "The dramatic destruction of three jetliners at Dawson’s Field thrust the Palestinian cause onto global front pages and television screens.",
+            "While it publicized Palestinian statelessness, it also led Western nations to brand Palestinian nationalist organizations as dangerous international terrorists."
+          ],
+          "examiner_tips": "Address the dual impact: massive global visibility balanced against the stigma of international air piracy."
+        },
+        {
+          "q_id": "cme_2022_q3c",
+          "q_number": "Q3(c)",
+          "tariff": 8,
+          "type": "importance",
+          "topic": "Yom Kippur War (1973) for Israel-Egypt Relations",
+          "spec_topic": "KT3.2: Yom Kippur War, Sadat, diplomacy",
+          "question_text": "Explain the importance of the Yom Kippur War (1973) for Israel’s relations with Egypt.",
+          "stimulus": null,
+          "indicative_content": [
+            "Egypt’s successful crossing of the Bar-Lev Line shattered Israeli assumptions of permanent military invulnerability and restored Egyptian national honour.",
+            "It convinced both sides that military force could not resolve the conflict, opening the door for Henry Kissinger’s disengagement agreements and ultimately Sadat’s peace treaty."
+          ],
+          "examiner_tips": "Explain why military stalemate created the necessary psychological preconditions for peace talks."
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "season": "June",
+      "series": "Summer 2023",
+      "paper_code": "1HI0/P5",
+      "questions": [
+        {
+          "q_id": "cme_2023_q1",
+          "q_number": "Q1",
+          "tariff": 4,
+          "type": "consequence",
+          "topic": "Munich Olympics Terrorist Attack (1972)",
+          "spec_topic": "KT2.2: Black September and the Munich Olympics (1972)",
+          "question_text": "Explain two consequences of the terrorist attack at the Munich Olympics.",
+          "stimulus": null,
+          "indicative_content": [
+            "Israel launched \"Operation Wrath of God\", a covert Mossad assassination campaign hunting down and assassinating Black September leaders and planners across Europe.",
+            "Israel launched retaliatory airstrikes against Palestinian refugee camps in Lebanon and Syria, killing scores of civilians and militants."
+          ],
+          "examiner_tips": "Explain Mossad’s assassination campaign and massive retaliatory air strikes into Lebanon and Syria."
+        },
+        {
+          "q_id": "cme_2023_q2",
+          "q_number": "Q2",
+          "tariff": 8,
+          "type": "narrative",
+          "topic": "Developments in Israel 1949-54",
+          "spec_topic": "KT1.2: Territorial consolidation, Law of Return, IDF, US aid",
+          "question_text": "Write a narrative account analysing the developments in Israel in the years 1949-54.",
+          "stimulus": "• territory\n• Israeli Defence Forces (IDF)\n• You must also use information of your own.",
+          "indicative_content": [
+            "Following armistice agreements in 1949, Israel consolidated control over its expanded borders and began building agricultural kibbutzim and border defences.",
+            "The Law of Return (1950) triggered unprecedented immigration from post-Holocaust Europe and Arab countries, doubling the population.",
+            "To defend this population, the IDF was professionalized into a modern citizen army, backed by substantial US financial loans and German Holocaust reparations."
+          ],
+          "examiner_tips": "Structure: Armistice consolidation -> immigration wave under Law of Return -> IDF strengthening and US aid."
+        },
+        {
+          "q_id": "cme_2023_q3a",
+          "q_number": "Q3(a)",
+          "tariff": 8,
+          "type": "importance",
+          "topic": "Conflicting Interests of Jews & Arabs in Mandate",
+          "spec_topic": "KT1.1: Conflicting interests and demands of Jews and Arabs in British Mandate",
+          "question_text": "Explain the importance of conflicting interests of Jews and Arabs for the end of the British Mandate.",
+          "stimulus": null,
+          "indicative_content": [
+            "Zionists demanded unrestricted immigration and an independent Jewish homeland, while Arab leaders demanded an end to Jewish land purchases and an independent Arab-majority state.",
+            "The conflicting demands resulted in violent Jewish insurgencies against British rule (bombing of King David Hotel 1946), making Palestine ungovernable and forcing Britain to hand the problem to the UN in 1947."
+          ],
+          "examiner_tips": "Explain how irreconcilable national demands made Britain’s mandate completely untenable."
+        },
+        {
+          "q_id": "cme_2023_q3b",
+          "q_number": "Q3(b)",
+          "tariff": 8,
+          "type": "importance",
+          "topic": "OPEC Oil Crisis (1973-74)",
+          "spec_topic": "KT3.2: The oil crisis (1973-74) and international diplomacy",
+          "question_text": "Explain the importance of the oil crisis (1973-74) for diplomatic negotiations in the Middle East.",
+          "stimulus": null,
+          "indicative_content": [
+            "OPEC Arab oil producers weaponised oil, imposing an embargo on the US and the Netherlands and quadrupling global oil prices.",
+            "This caused severe Western inflation and forced the US and Western European governments to adopt a much more active, balanced diplomatic role in pressuring Israel to negotiate."
+          ],
+          "examiner_tips": "Analyse how the oil shock forced Western powers to push Israel into diplomatic disengagement."
+        },
+        {
+          "q_id": "cme_2023_q3c",
+          "q_number": "Q3(c)",
+          "tariff": 8,
+          "type": "importance",
+          "topic": "Israeli Invasion of Lebanon (1982)",
+          "spec_topic": "KT3.1: The Israeli invasion of Lebanon (1982) and its impact",
+          "question_text": "Explain the importance of the Israeli invasion of Lebanon (1982) for the Palestinian issue.",
+          "stimulus": null,
+          "indicative_content": [
+            "Operation Peace for Galilee besieged Beirut, forcing the PLO and Yasser Arafat to evacuate to distant exile in Tunisia, weakening their direct military threat.",
+            "The Sabra and Shatila massacre of Palestinian refugees by Christian Phalangist allies provoked international outrage and widespread domestic protests inside Israel."
+          ],
+          "examiner_tips": "Address the expulsion of the PLO leadership to Tunisia and the international shock of the Sabra and Shatila massacres."
+        }
+      ]
+    },
+    {
+      "year": 2024,
+      "season": "June",
+      "series": "Summer 2024",
+      "paper_code": "1HI0/P5",
+      "questions": [
+        {
+          "q_id": "cme_2024_q1",
+          "q_number": "Q1",
+          "tariff": 4,
+          "type": "consequence",
+          "topic": "Sadat’s Visit to Jerusalem (1977)",
+          "spec_topic": "KT3.2: Sadat’s visit to Israel (1977) and Camp David Accords",
+          "question_text": "Explain two consequences of President Sadat of Egypt’s visit to Israel (1977).",
+          "stimulus": null,
+          "indicative_content": [
+            "It broke decades of diplomatic taboo by addressing the Israeli Knesset in person, leading directly to the Camp David Accords (1978) and the Egypt-Israel Peace Treaty (1979).",
+            "Egypt was ostracized by the Arab world, expelled from the Arab League, and Sadat was branded a traitor by Arab militants, ultimately leading to his assassination in 1981."
+          ],
+          "examiner_tips": "Highlight the positive breakthrough with Israel (Camp David) and the severe Arab backlash against Egypt."
+        },
+        {
+          "q_id": "cme_2024_q2",
+          "q_number": "Q2",
+          "tariff": 8,
+          "type": "narrative",
+          "topic": "Relations Between Israel and Egypt 1949-56",
+          "spec_topic": "KT1.2 & KT1.3: Relations with Egypt, Farouk, Nasser, Gaza raid, Suez",
+          "question_text": "Write a narrative account analysing relations between Israel and Egypt in the years 1949-56.",
+          "stimulus": "• the abdication of King Farouk of Egypt (1952)\n• the Suez Canal\n• You must also use information of your own.",
+          "indicative_content": [
+            "Following the 1949 armistice, Egypt maintained border tensions and blockaded the Straits of Tiran and Suez Canal to Israeli shipping.",
+            "The 1952 Free Officers revolution overthrew King Farouk, bringing Gamal Abdel Nasser to power with a militant anti-Zionist foreign policy; fedayeen guerrilla raids triggered the bloody Israeli Gaza Raid (1955).",
+            "Nasser secured Soviet weapons in the Czech Arms Deal (1955) and nationalized the Suez Canal in July 1956, prompting the joint Israeli, British, and French military attack in October 1956."
+          ],
+          "examiner_tips": "Narrate the chain: 1949 border friction -> 1952 Free Officers -> 1955 Gaza Raid and arms deal -> 1956 Suez War."
+        },
+        {
+          "q_id": "cme_2024_q3a",
+          "q_number": "Q3(a)",
+          "tariff": 8,
+          "type": "importance",
+          "topic": "End of the British Mandate (1948)",
+          "spec_topic": "KT1.1: End of the British Mandate and creation of Israel",
+          "question_text": "Explain the importance of the end of the British Mandate (1948) for the creation of Israel.",
+          "stimulus": null,
+          "indicative_content": [
+            "The British withdrawal on 14 May 1948 allowed David Ben-Gurion to formally declare the establishment of the State of Israel.",
+            "It removed British military presence that had maintained order, triggering the immediate invasion of Israel by five Arab armies on 15 May 1948."
+          ],
+          "examiner_tips": "Explain how the British departure created the legal power vacuum that enabled the Israeli declaration of statehood."
+        },
+        {
+          "q_id": "cme_2024_q3b",
+          "q_number": "Q3(b)",
+          "tariff": 8,
+          "type": "importance",
+          "topic": "UN Resolution 242 (1967)",
+          "spec_topic": "KT2.2: UN Resolution 242 and \"land for peace\"",
+          "question_text": "Explain the importance of UN Resolution 242 (1967) for relations between Israel and the Arab states.",
+          "stimulus": null,
+          "indicative_content": [
+            "It established the fundamental \"land for peace\" formula, requiring Israeli withdrawal from territories occupied in the recent conflict in exchange for Arab recognition of Israel’s secure borders.",
+            "Ambiguities in the English versus French texts (\"from territories\" vs \"from the territories\") allowed both sides to dispute the scope of withdrawal, stalling peace for years."
+          ],
+          "examiner_tips": "Explain the \"land for peace\" principle and the diplomatic ambiguity over which territories were included."
+        },
+        {
+          "q_id": "cme_2024_q3c",
+          "q_number": "Q3(c)",
+          "tariff": 8,
+          "type": "importance",
+          "topic": "Arafat Renouncing Terrorism (1988)",
+          "spec_topic": "KT3.3: Arafat’s declaration (1988), recognition of Israel",
+          "question_text": "Explain the importance of Arafat renouncing terrorism (1988) for attempts to find a solution in the Middle East.",
+          "stimulus": null,
+          "indicative_content": [
+            "In December 1988, Yasser Arafat accepted UN Resolutions 242 and 338, renounced all forms of terrorism, and recognized Israel’s right to exist in peace.",
+            "This met long-standing US conditions, allowing the United States to open direct diplomatic dialogue with the PLO and setting the diplomatic stage for the Madrid and Oslo peace conferences."
+          ],
+          "examiner_tips": "Focus on how renouncing terrorism made the PLO an acceptable diplomatic negotiating partner for the USA."
+        }
+      ]
+    },
+    {
+      "year": 2025,
+      "season": "June",
+      "series": "Summer 2025",
+      "paper_code": "1HI0/P5",
+      "questions": [
+        {
+          "q_id": "cme_2025_q1a",
+          "q_number": "Q1(a)",
+          "tariff": 4,
+          "type": "consequence",
+          "topic": "King David Hotel Bombing (1946)",
+          "spec_topic": "KT1.1: Significance of the bombing of the King David Hotel (1946)",
+          "question_text": "Explain one consequence of the bombing of the King David Hotel (1946).",
+          "stimulus": null,
+          "indicative_content": [
+            "The Irgun’s bombing destroyed British military and civil headquarters, killing 91 people, shocking British public opinion and convincing the British government that policing the Mandate was too costly in lives and money, accelerating Britain’s decision to hand Palestine to the UN."
+          ],
+          "examiner_tips": "Highlight the collapse of British domestic political will to stay in Palestine."
+        },
+        {
+          "q_id": "cme_2025_q1b",
+          "q_number": "Q1(b)",
+          "tariff": 4,
+          "type": "consequence",
+          "topic": "1948-49 War: Territorial Changes",
+          "spec_topic": "KT1.2: Territorial changes and aftermath of 1948-49 war",
+          "question_text": "Explain one consequence of the territorial changes following the 1948-49 Arab-Israeli war.",
+          "stimulus": null,
+          "indicative_content": [
+            "Israel secured 78% of Mandatory Palestine (an increase of 21% beyond the UN partition plan), establishing a continuous, defensible land corridor to West Jerusalem, while leaving no independent Palestinian Arab state."
+          ],
+          "examiner_tips": "Focus on Israeli territorial expansion and the division of Jerusalem into Jewish West and Jordanian East."
+        },
+        {
+          "q_id": "cme_2025_q2",
+          "q_number": "Q2",
+          "tariff": 8,
+          "type": "narrative",
+          "topic": "PLO in Lebanon 1970-82",
+          "spec_topic": "KT2.2 & KT3.1: Expulsion from Jordan, PLO in Lebanon, Israeli security, 1982 war",
+          "question_text": "Write a narrative account analysing the key developments of the PLO in Lebanon in the years 1970-82.",
+          "stimulus": "• the expulsion of the PLO from Jordan (1970)\n• Israel’s invasion of Lebanon (1982)\n• You must also use information of your own.",
+          "indicative_content": [
+            "After expulsion from Jordan during Black September (1970), the PLO re-established its military bases and headquarters in southern Lebanon and West Beirut.",
+            "From southern Lebanon, the PLO launched cross-border Katyusha rocket attacks and guerrilla raids into northern Israel, provoking Israeli counter-strikes and Operation Litani in 1978.",
+            "In June 1982, Israel launched Operation Peace for Galilee, besieging Beirut and forcing Yasser Arafat and thousands of PLO fighters to evacuate Lebanon for exile in Tunisia."
+          ],
+          "examiner_tips": "Structure chronologically: Black September -> southern Lebanon cross-border raids -> 1982 Israeli invasion and evacuation to Tunisia."
+        },
+        {
+          "q_id": "cme_2025_q3a",
+          "q_number": "Q3(a)",
+          "tariff": 8,
+          "type": "importance",
+          "topic": "Nasser & Middle East Tension 1955-63",
+          "spec_topic": "KT1.3: Nasser and Egypt’s leadership: Gaza 1955, Suez 1956, UAR 1958",
+          "question_text": "Explain the importance of Nasser for tension in the Middle East in the years 1955-63.",
+          "stimulus": null,
+          "indicative_content": [
+            "Nasser escalated conflict with Israel by purchasing Soviet arms in 1955 and nationalising the Suez Canal in 1956, leading directly to the Suez Crisis.",
+            "His Pan-Arab leadership and formation of the United Arab Republic (UAR) in 1958 surrounded Israel with hostile rhetoric and heightened border clashes."
+          ],
+          "examiner_tips": "Link Nasser’s anti-imperialist rhetoric, Soviet arms, and the UAR to rising regional insecurity."
+        },
+        {
+          "q_id": "cme_2025_q3b",
+          "q_number": "Q3(b)",
+          "tariff": 8,
+          "type": "importance",
+          "topic": "Six Day War (1967) for Israel’s Security",
+          "spec_topic": "KT2.1 & KT2.2: Six Day War and aftermath for Israel’s security",
+          "question_text": "Explain the importance of the Six Day War (1967) for Israel’s security.",
+          "stimulus": null,
+          "indicative_content": [
+            "Israel destroyed Egyptian, Syrian, and Jordanian air forces within hours, eliminating the immediate threat of annihilation and establishing regional air supremacy.",
+            "Capturing the Sinai, Golan Heights, and West Bank created massive geographic buffer zones, putting major Israeli cities out of direct artillery range."
+          ],
+          "examiner_tips": "Address both the immediate destruction of hostile air forces and the acquisition of geographic buffer zones."
+        },
+        {
+          "q_id": "cme_2025_q3c",
+          "q_number": "Q3(c)",
+          "tariff": 8,
+          "type": "importance",
+          "topic": "Israel-Jordan Peace Treaty (1994)",
+          "spec_topic": "KT3.3: Israel-Jordan peace treaty (1994)",
+          "question_text": "Explain the importance of the Israel-Jordan peace treaty (1994) for peace in the Middle East.",
+          "stimulus": null,
+          "indicative_content": [
+            "Jordan became only the second Arab state to formally recognize Israel and sign a full peace treaty, securing Israel’s longest land border.",
+            "It resolved water rights, established security cooperation, and reinforced momentum from the Oslo Accords, demonstrating regional normalization was viable."
+          ],
+          "examiner_tips": "Highlight the stabilization of Israel’s eastern border and the momentum it lent to regional diplomacy."
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "season": "Specimen",
+      "series": "Specimen Paper",
+      "paper_code": "1HI0/P5",
+      "questions": [
+        {
+          "q_id": "cme_2026_q1a",
+          "q_number": "Q1(a)",
+          "tariff": 4,
+          "type": "consequence",
+          "topic": "Law of Return (1950)",
+          "spec_topic": "KT1.2: Law of Return (1950) and immigration",
+          "question_text": "Explain one consequence of Israel passing the Law of Return (1950).",
+          "stimulus": null,
+          "indicative_content": [
+            "It caused an unprecedented demographic boom, with hundreds of thousands of Jewish refugees arriving from post-Holocaust Europe and Arab nations, doubling the population within four years and creating the labor and military base for national defence."
+          ],
+          "examiner_tips": "Highlight the doubling of the population and the supply of soldiers for the IDF."
+        },
+        {
+          "q_id": "cme_2026_q1b",
+          "q_number": "Q1(b)",
+          "tariff": 4,
+          "type": "consequence",
+          "topic": "Suez Crisis (1956)",
+          "spec_topic": "KT1.3: Suez Crisis (1956) international consequences",
+          "question_text": "Explain one consequence of the Suez Crisis (1956).",
+          "stimulus": null,
+          "indicative_content": [
+            "It marked the decisive end of Britain and France as dominant imperial powers in the Middle East, leaving the United States and the Soviet Union as the primary rival superpowers in the region."
+          ],
+          "examiner_tips": "Focus on the shift in global power towards the USA and USSR."
+        },
+        {
+          "q_id": "cme_2026_q2",
+          "q_number": "Q2",
+          "tariff": 8,
+          "type": "narrative",
+          "topic": "Six Day War (1967)",
+          "spec_topic": "KT2.1: Key events of the Six Day War (1967)",
+          "question_text": "Write a narrative account analysing the key events of the Six Day War (1967).",
+          "stimulus": "• closing of the Tiran Straits\n• the Golan Heights\n• You must also use information of your own.",
+          "indicative_content": [
+            "In May 1967, Nasser expelled the UN peacekeeping force from the Sinai and closed the Straits of Tiran to Israeli shipping.",
+            "On 5 June, Israel launched Operation Focus, a devastating pre-emptive airstrike that wiped out 90% of the Egyptian air force on the ground, before defeating Jordanian forces in the West Bank and East Jerusalem.",
+            "Israel then turned to the Syrian front, scaling the fortified Golan Heights by 10 June to capture the territory before a UN ceasefire took effect."
+          ],
+          "examiner_tips": "Narrate: Straits of Tiran blockade -> pre-emptive airstrike -> West Bank capture -> Golan Heights offensive."
+        },
+        {
+          "q_id": "cme_2026_q3a",
+          "q_number": "Q3(a)",
+          "tariff": 8,
+          "type": "importance",
+          "topic": "Arab-Israeli War (1948-49) for Israel",
+          "spec_topic": "KT1.1 & KT1.2: Key events and aftermath of 1948-49 war",
+          "question_text": "Explain the importance of the Arab-Israeli war (1948-49) for the state of Israel.",
+          "stimulus": null,
+          "indicative_content": [
+            "It secured the physical survival of the nascent Jewish state against five attacking Arab armies, proving the military capability of the IDF.",
+            "It expanded Israel’s territory by 21% beyond the UN partition plan, establishing defensible borders and a corridor to West Jerusalem."
+          ],
+          "examiner_tips": "Explain both physical survival and the expansion of national territory."
+        },
+        {
+          "q_id": "cme_2026_q3b",
+          "q_number": "Q3(b)",
+          "tariff": 8,
+          "type": "importance",
+          "topic": "Henry Kissinger for Diplomacy",
+          "spec_topic": "KT3.2: Kissinger’s shuttle diplomacy and disengagement",
+          "question_text": "Explain the importance of Henry Kissinger for diplomatic negotiations in the Middle East.",
+          "stimulus": null,
+          "indicative_content": [
+            "Kissinger’s relentless \"shuttle diplomacy\" brokered the 1974 and 1975 Sinai Disengagement Agreements between Israel and Egypt.",
+            "This restored Egyptian control of the Suez Canal, eased military tensions, and built the diplomatic trust that made the 1979 Camp David Peace Treaty possible."
+          ],
+          "examiner_tips": "Focus on how step-by-step disengagement established the precedent for land-for-peace negotiations."
+        },
+        {
+          "q_id": "cme_2026_q3c",
+          "q_number": "Q3(c)",
+          "tariff": 8,
+          "type": "importance",
+          "topic": "Camp David Accords (1978)",
+          "spec_topic": "KT3.2: Camp David Accords (1978) and Peace Treaty (1979)",
+          "question_text": "Explain the importance of the Camp David Accords (1978) for Arab-Israeli relations.",
+          "stimulus": null,
+          "indicative_content": [
+            "It led directly to the 1979 Egypt-Israel Peace Treaty, returning the Sinai to Egypt in exchange for mutual diplomatic recognition and opening trade and embassies.",
+            "It removed the largest and most militarily powerful Arab state from the conflict, fundamentally altering the strategic balance and making a unified Arab war against Israel impossible."
+          ],
+          "examiner_tips": "Explain how neutralizing Egypt permanently transformed the military balance of power in the Middle East."
+        }
+      ]
+    }
+  ]
+}

@@ -1716,25 +1716,36 @@ export async function renderMockExamsView() {
         </p>
       </div>
 
-      <!-- Quick Assessment Specifications & Instructions -->
-      <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 18px 24px; margin-bottom: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-        <div>
-          <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em;">Exam Timing</div>
-          <div style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-top: 2px;"><i class="fa-regular fa-clock" style="color: ${headerColor}; margin-right: 6px;"></i>${defaultTime}</div>
-        </div>
-        <div>
-          <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em;">Total Marks Available</div>
-          <div style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-top: 2px;"><i class="fa-solid fa-award" style="color: ${headerColor}; margin-right: 6px;"></i>${defaultMarks}</div>
-        </div>
-        <div>
-          <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em;">Print Format</div>
-          <div style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-top: 2px;"><i class="fa-solid fa-print" style="color: ${headerColor}; margin-right: 6px;"></i>A4 Booklet / Replicas</div>
-        </div>
-        <div>
-          <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em;">Marking Support</div>
-          <div style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-top: 2px;"><i class="fa-solid fa-chalkboard-user" style="color: ${headerColor}; margin-right: 6px;"></i>Full Model Answers</div>
-        </div>
+      <!-- Sub Navigation Tabs: Mock Papers vs Past Paper Matrix -->
+      <div style="display: flex; gap: 10px; margin-bottom: 25px; border-bottom: 2px solid #e2e8f0; padding-bottom: 2px; overflow-x: auto;">
+        <button id="tab-btn-official-mocks" class="btn" style="background: ${headerColor}; color: white; border: none; padding: 12px 22px; border-radius: 10px 10px 0 0; font-weight: 700; cursor: pointer; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; transition: all 0.2s;">
+          <i class="fa-solid fa-file-signature"></i> Official Mock Exam Papers
+        </button>
+        <button id="tab-btn-trend-radar" class="btn" style="background: transparent; color: #64748b; border: none; padding: 12px 22px; border-radius: 10px 10px 0 0; font-weight: 700; cursor: pointer; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; transition: all 0.2s;">
+          <i class="fa-solid fa-table-cells"></i> 📊 2018–2026 Past Paper Matrix &amp; Overdue Radar
+        </button>
       </div>
+
+      <div id="mock-papers-wrapper">
+        <!-- Quick Assessment Specifications & Instructions -->
+        <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 18px 24px; margin-bottom: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <div>
+            <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em;">Exam Timing</div>
+            <div style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-top: 2px;"><i class="fa-regular fa-clock" style="color: ${headerColor}; margin-right: 6px;"></i>${defaultTime}</div>
+          </div>
+          <div>
+            <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em;">Total Marks Available</div>
+            <div style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-top: 2px;"><i class="fa-solid fa-award" style="color: ${headerColor}; margin-right: 6px;"></i>${defaultMarks}</div>
+          </div>
+          <div>
+            <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em;">Print Format</div>
+            <div style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-top: 2px;"><i class="fa-solid fa-print" style="color: ${headerColor}; margin-right: 6px;"></i>A4 Booklet / Replicas</div>
+          </div>
+          <div>
+            <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em;">Marking Support</div>
+            <div style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-top: 2px;"><i class="fa-solid fa-chalkboard-user" style="color: ${headerColor}; margin-right: 6px;"></i>Full Model Answers</div>
+          </div>
+        </div>
 
       <!-- Digital Exam Hall Clock & Timer Bar -->
       <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #ffffff; border-radius: 10px; padding: 18px 24px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-left: 5px solid #38bdf8;">
@@ -1858,7 +1869,11 @@ export async function renderMockExamsView() {
   });
 
   html += `
-      </div>
+        </div>
+      </div> <!-- End #mock-papers-wrapper -->
+
+      <!-- Past Paper Question Matrix & Overdue Radar Container -->
+      <div id="mock-trend-matrix-container" style="display: none;"></div>
 
       <!-- Bottom Actions Bar -->
       <div style="margin-top: 35px; padding-top: 20px; border-top: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
@@ -1873,6 +1888,37 @@ export async function renderMockExamsView() {
   `;
 
   contentArea.innerHTML = html;
+
+  // Sub Navigation Tabs Logic
+  const tabBtnMocks = document.getElementById('tab-btn-official-mocks');
+  const tabBtnTrend = document.getElementById('tab-btn-trend-radar');
+  const mockWrapper = document.getElementById('mock-papers-wrapper');
+  const trendContainer = document.getElementById('mock-trend-matrix-container');
+
+  if (tabBtnMocks && tabBtnTrend) {
+    tabBtnMocks.addEventListener('click', () => {
+      tabBtnMocks.style.background = headerColor;
+      tabBtnMocks.style.color = 'white';
+      tabBtnTrend.style.background = 'transparent';
+      tabBtnTrend.style.color = '#64748b';
+      if (mockWrapper) mockWrapper.style.display = 'block';
+      if (trendContainer) trendContainer.style.display = 'none';
+    });
+
+    tabBtnTrend.addEventListener('click', async () => {
+      tabBtnTrend.style.background = headerColor;
+      tabBtnTrend.style.color = 'white';
+      tabBtnMocks.style.background = 'transparent';
+      tabBtnMocks.style.color = '#64748b';
+      if (mockWrapper) mockWrapper.style.display = 'none';
+      if (trendContainer) {
+        trendContainer.style.display = 'block';
+        const { renderExamTrendMatrix } = await import('./exam_trend_matrix.js');
+        renderExamTrendMatrix(trendContainer, unitId);
+      }
+    });
+  }
+
   if (window.scrollToTop) window.scrollToTop(true);
   else contentArea.scrollTo({ top: 0, behavior: 'smooth' });
 }

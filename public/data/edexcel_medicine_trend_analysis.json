@@ -1,0 +1,3836 @@
+{
+  "unit_id": "edexcel_medicine",
+  "title": "Pearson Edexcel GCSE (9–1) History Specification",
+  "subtitle": "Option 11: Medicine in Britain, c1250–present and The British sector of the Western Front, 1914–18: injuries, treatment and the trenches",
+  "generated_at": "2026-09-09T15:30:50.682Z",
+  "total_past_questions": 58,
+  "total_series_analyzed": 8,
+  "sections": [
+    {
+      "id": "section-a",
+      "title": "Section A: The British sector of the Western Front, 1914–18: injuries, treatment and the trenches",
+      "topics": [
+        {
+          "title": "1. The Context of the British Sector of the Western Front",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "**The Historical Context of Medicine in the Early Twentieth Century:** The understanding of infection and moves towards aseptic surgery (autoclaves, rubber gloves, surgical gowns); the development of X-rays (Wilhelm Roentgen 1895, early diagnostic use, radiation hazards); blood transfusions and developments in the storage of blood (James Blundell 1818, Karl Landsteiner blood groups A, B, O in 1901 and AB in 1902, problem of coagulation preventing pre-war storage).",
+              "exam_count": 11,
+              "years_appeared": [
+                2018,
+                2020,
+                2022,
+                2023,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                2,
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2018_q1",
+                  "q_number": "Q1",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of blood transfusions on the Western Front during the First World War."
+                },
+                {
+                  "q_id": "med_2018_q6",
+                  "q_number": "Q6",
+                  "year": 2018,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The advances in surgery made in the years c1700-c1900 were more significant than advances in surgery made in the period c1900-present.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2020_q5",
+                  "q_number": "Q5",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The work of Florence Nightingale was the most important development in the care and treatment provided in hospitals in the years c1700–c1900.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2022_q4",
+                  "q_number": "Q4",
+                  "year": 2022,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why attitudes towards surgery changed in the period c1800-present."
+                },
+                {
+                  "q_id": "med_2023_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2023,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into new techniques being used on the Western Front to deal with injuries?"
+                },
+                {
+                  "q_id": "med_2023_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2023,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about new techniques being used on the Western Front to deal with injuries?"
+                },
+                {
+                  "q_id": "med_2024_q1",
+                  "q_number": "Q1",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of the new techniques used in the treatment of wounds on the Western Front."
+                },
+                {
+                  "q_id": "med_2025_q1b",
+                  "q_number": "Q1(b)",
+                  "year": 2025,
+                  "tariff": 2,
+                  "type": "feature",
+                  "question_text": "Describe one feature of the use of blood transfusions on the Western Front."
+                },
+                {
+                  "q_id": "med_2025_q4",
+                  "q_number": "Q4",
+                  "year": 2025,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why Pasteur’s Germ Theory (1861) led to changes in medicine in the years c1861-present."
+                },
+                {
+                  "q_id": "med_2026_q1b",
+                  "q_number": "Q1(b)",
+                  "year": 2026,
+                  "tariff": 2,
+                  "type": "feature",
+                  "question_text": "Describe one feature of developments in the storage of blood on the Western Front."
+                },
+                {
+                  "q_id": "med_2026_q4",
+                  "q_number": "Q4",
+                  "year": 2026,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why hospital care and treatment improved in the period c1700-c1900."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 2,
+              "point_text": "**The Theatre of War in Flanders and Northern France:** The context of the British sector of the Western Front: the vulnerable Ypres salient (surrounded by higher German ridges; First Ypres 1914, Second Ypres 1915 with first poison gas, Third Ypres/Passchendaele 1917 with waterlogged liquid mud; mining at Hill 60), the Somme (July 1916, 57,000 day 1 casualties), Arras (April 1917, chalk quarries and 2.5 miles of tunnels), and Cambrai (November 1917, mass tank deployment).",
+              "exam_count": 3,
+              "years_appeared": [
+                2020,
+                2022
+              ],
+              "last_examined": 2022,
+              "tariffs_examined": [
+                4,
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": false,
+              "overdue_status": "medium",
+              "overdue_score": 50,
+              "matched_questions": [
+                {
+                  "q_id": "med_2020_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2020,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the effects of a gas attack?"
+                },
+                {
+                  "q_id": "med_2020_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2020,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the effects of a gas attack?"
+                },
+                {
+                  "q_id": "med_2022_q1",
+                  "q_number": "Q1",
+                  "year": 2022,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of the underground hospital at Arras."
+                }
+              ],
+              "teacher_note": "⚖️ BALANCED ROTATION: Examined in 2022. Keep in regular retrieval rotation."
+            },
+            {
+              "point_index": 3,
+              "point_text": "**The Trench System — Organisation and Construction:** Frontline firing trenches (firestep, sandbag parapet, parados), support trenches (80m behind), reserve trenches (100m+ behind), and communication trenches linking them for safe movement of troops, supplies, and wounded. Zigzag traverse design to localise artillery shell blasts and prevent enfilade rifle fire.",
+              "exam_count": 0,
+              "years_appeared": [],
+              "last_examined": "Never",
+              "tariffs_examined": [],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": false,
+              "overdue_status": "high",
+              "overdue_score": 100,
+              "matched_questions": [],
+              "teacher_note": "⚠️ UNEXAMINED TOPIC: This specification point has never appeared on an official Edexcel paper since 2018. It is prime territory for an upcoming series."
+            },
+            {
+              "point_index": 4,
+              "point_text": "**Terrain, Transport, and Communications Infrastructure:** The catastrophic impact of waterlogged clay, destroyed natural drainage, and massive artillery cratering. Problems for medical evacuation: heavy motor ambulances getting bogged down, reliance on 6-horse ambulance wagons, and stretcher-bearers navigating liquid mud under fire. Communication problems: artillery severing telephone cables, forcing medical staff to rely on runner messengers, carrier pigeons, and visual flags under fire.",
+              "exam_count": 7,
+              "years_appeared": [
+                2019,
+                2023,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2019_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the work of the stretcher bearers on the Western Front?"
+                },
+                {
+                  "q_id": "med_2019_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2019,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the work of the stretcher bearers on the Western Front?"
+                },
+                {
+                  "q_id": "med_2023_q1",
+                  "q_number": "Q1",
+                  "year": 2023,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of the problems involved in transporting wounded soldiers away from the battleground."
+                },
+                {
+                  "q_id": "med_2025_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the difficulties in caring for the wounded on the Western Front?"
+                },
+                {
+                  "q_id": "med_2025_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source B to find out more about the difficulties in caring for the wounded on the Western Front?"
+                },
+                {
+                  "q_id": "med_2026_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the problems of transporting the wounded along the chain of evacuation on the Western Front?"
+                },
+                {
+                  "q_id": "med_2026_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2026,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the problems of transporting the wounded along the chain of evacuation on the Western Front?"
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            }
+          ]
+        },
+        {
+          "title": "2. Conditions Requiring Medical Treatment",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "**Ill Health Arising from the Trench Environment:** Trench foot (cold waterlogged mud, restricted circulation, gangrene; treated with whale oil, dry socks, pair inspections, amputation); Trench fever (pyrexia, body lice in clothing seams, flu-like aches; treated with delousing stations, affected 500,000 men); Shell shock / NYD.N ('Not Yet Diagnosed, Nervous' — severe psychological trauma, tremors, mental collapse; 80,000 casualties treated at Craiglockhart Hospital, Edinburgh).",
+              "exam_count": 16,
+              "years_appeared": [
+                2018,
+                2019,
+                2020,
+                2022,
+                2023,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2018_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the treatment of battle injuries by medical staff on the Western Front?"
+                },
+                {
+                  "q_id": "med_2018_q3",
+                  "q_number": "Q3",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which care in hospitals in the years c1250-c1500 was different from care in hospitals in the years c1700-c1900."
+                },
+                {
+                  "q_id": "med_2019_q1",
+                  "q_number": "Q1",
+                  "year": 2019,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of ill health among soldiers that arose from the trench environment."
+                },
+                {
+                  "q_id": "med_2019_q5",
+                  "q_number": "Q5",
+                  "year": 2019,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The main reason why medical care and treatment was ineffective during the medieval period was because medical knowledge was based on Galen’s ideas’. How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2020_q5",
+                  "q_number": "Q5",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The work of Florence Nightingale was the most important development in the care and treatment provided in hospitals in the years c1700–c1900.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2022_q1",
+                  "q_number": "Q1",
+                  "year": 2022,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of the underground hospital at Arras."
+                },
+                {
+                  "q_id": "med_2022_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2022,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the problem of trench foot?"
+                },
+                {
+                  "q_id": "med_2022_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2022,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the problem of trench foot?"
+                },
+                {
+                  "q_id": "med_2023_q4",
+                  "q_number": "Q4",
+                  "year": 2023,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why access to medical care and treatment improved in the modern period."
+                },
+                {
+                  "q_id": "med_2023_q6",
+                  "q_number": "Q6",
+                  "year": 2023,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘People’s attitudes about medicine, in the years c1700-c1900, became increasingly positive.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2024_q4",
+                  "q_number": "Q4",
+                  "year": 2024,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there was little change in medicine in England during the medieval period (c1250–c1500)."
+                },
+                {
+                  "q_id": "med_2024_q5",
+                  "q_number": "Q5",
+                  "year": 2024,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘There was significant progress in medical knowledge in England during the Renaissance period (c1500-c1700).’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2025_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source B to find out more about the difficulties in caring for the wounded on the Western Front?"
+                },
+                {
+                  "q_id": "med_2025_q6",
+                  "q_number": "Q6",
+                  "year": 2025,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘In the years c1800-present, the role of the government was the most important factor in improving care and treatment in hospitals.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2026_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the problems of transporting the wounded along the chain of evacuation on the Western Front?"
+                },
+                {
+                  "q_id": "med_2026_q4",
+                  "q_number": "Q4",
+                  "year": 2026,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why hospital care and treatment improved in the period c1700-c1900."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 2,
+              "point_text": "**The Nature of Wounds from Modern Weaponry:** High-explosive artillery shells and shrapnel (jagged metal fragments, causing 58% of all wounds and massive trauma); machine guns and rifles (causing 39% of wounds, shattering bones and piercing organs).",
+              "exam_count": 0,
+              "years_appeared": [],
+              "last_examined": "Never",
+              "tariffs_examined": [],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": false,
+              "overdue_status": "high",
+              "overdue_score": 100,
+              "matched_questions": [],
+              "teacher_note": "⚠️ UNEXAMINED TOPIC: This specification point has never appeared on an official Edexcel paper since 2018. It is prime territory for an upcoming series."
+            },
+            {
+              "point_index": 3,
+              "point_text": "**The Problem of Wound Infection:** Deeply fertilised agricultural soil packed with anaerobic manure bacteria causing lethal tetanus and gas gangrene (rapid tissue necrosis and gas bubbles; anti-tetanus serum introduced late 1914; failure of peacetime antiseptics).",
+              "exam_count": 10,
+              "years_appeared": [
+                2018,
+                2020,
+                2022,
+                2023,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2018_q6",
+                  "q_number": "Q6",
+                  "year": 2018,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The advances in surgery made in the years c1700-c1900 were more significant than advances in surgery made in the period c1900-present.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2020_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2020,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the effects of a gas attack?"
+                },
+                {
+                  "q_id": "med_2020_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2020,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the effects of a gas attack?"
+                },
+                {
+                  "q_id": "med_2020_q5",
+                  "q_number": "Q5",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The work of Florence Nightingale was the most important development in the care and treatment provided in hospitals in the years c1700–c1900.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2022_q4",
+                  "q_number": "Q4",
+                  "year": 2022,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why attitudes towards surgery changed in the period c1800-present."
+                },
+                {
+                  "q_id": "med_2023_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2023,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into new techniques being used on the Western Front to deal with injuries?"
+                },
+                {
+                  "q_id": "med_2023_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2023,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about new techniques being used on the Western Front to deal with injuries?"
+                },
+                {
+                  "q_id": "med_2024_q1",
+                  "q_number": "Q1",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of the new techniques used in the treatment of wounds on the Western Front."
+                },
+                {
+                  "q_id": "med_2025_q4",
+                  "q_number": "Q4",
+                  "year": 2025,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why Pasteur’s Germ Theory (1861) led to changes in medicine in the years c1861-present."
+                },
+                {
+                  "q_id": "med_2026_q4",
+                  "q_number": "Q4",
+                  "year": 2026,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why hospital care and treatment improved in the period c1700-c1900."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 4,
+              "point_text": "**Head Injuries and the Brodie Helmet:** High exposure of head in trenches; introduction of the steel Brodie helmet with chin strap in 1915, which reduced fatal head injuries by 80%.",
+              "exam_count": 0,
+              "years_appeared": [],
+              "last_examined": "Never",
+              "tariffs_examined": [],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": false,
+              "overdue_status": "high",
+              "overdue_score": 100,
+              "matched_questions": [],
+              "teacher_note": "⚠️ UNEXAMINED TOPIC: This specification point has never appeared on an official Edexcel paper since 2018. It is prime territory for an upcoming series."
+            },
+            {
+              "point_index": 5,
+              "point_text": "**The Effects of Poison Gas Attacks:** Chlorine gas (Second Ypres, April 1915, suffocation and pulmonary edema; urine pads used before gas masks); Phosgene gas (December 1915, faster-acting and highly lethal); Mustard gas (1917, odourless blister agent burning skin through clothing and causing temporary blindness). Overall gas mortality kept under 5% by rapid introduction of box respirators.",
+              "exam_count": 7,
+              "years_appeared": [
+                2018,
+                2020,
+                2022,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2018_q6",
+                  "q_number": "Q6",
+                  "year": 2018,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The advances in surgery made in the years c1700-c1900 were more significant than advances in surgery made in the period c1900-present.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2020_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2020,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the effects of a gas attack?"
+                },
+                {
+                  "q_id": "med_2020_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2020,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the effects of a gas attack?"
+                },
+                {
+                  "q_id": "med_2020_q5",
+                  "q_number": "Q5",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The work of Florence Nightingale was the most important development in the care and treatment provided in hospitals in the years c1700–c1900.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2022_q4",
+                  "q_number": "Q4",
+                  "year": 2022,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why attitudes towards surgery changed in the period c1800-present."
+                },
+                {
+                  "q_id": "med_2025_q4",
+                  "q_number": "Q4",
+                  "year": 2025,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why Pasteur’s Germ Theory (1861) led to changes in medicine in the years c1861-present."
+                },
+                {
+                  "q_id": "med_2026_q4",
+                  "q_number": "Q4",
+                  "year": 2026,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why hospital care and treatment improved in the period c1700-c1900."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            }
+          ]
+        },
+        {
+          "title": "3. Medical Treatment and the Chain of Evacuation",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "**The Work of the RAMC and FANY:** The Royal Army Medical Corps (expanded from 9,000 in 1914 to 113,000 in 1918) responsible for medical care and sanitation; First Aid Nursing Yeomanry (FANY, founded 1907, first women's voluntary organisation to drive frontline motor ambulances, run mobile bath units, and operate supply canteens).",
+              "exam_count": 14,
+              "years_appeared": [
+                2018,
+                2019,
+                2023,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                2,
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2018_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the treatment of battle injuries by medical staff on the Western Front?"
+                },
+                {
+                  "q_id": "med_2018_q4",
+                  "q_number": "Q4",
+                  "year": 2018,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there was progress in the prevention of illness in the years c1700–present."
+                },
+                {
+                  "q_id": "med_2019_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the work of the stretcher bearers on the Western Front?"
+                },
+                {
+                  "q_id": "med_2019_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2019,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the work of the stretcher bearers on the Western Front?"
+                },
+                {
+                  "q_id": "med_2019_q6",
+                  "q_number": "Q6",
+                  "year": 2019,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘Providing access to care and treatment has been the most important development in the role of government in medicine in the years c1800-present.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2023_q1",
+                  "q_number": "Q1",
+                  "year": 2023,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of the problems involved in transporting wounded soldiers away from the battleground."
+                },
+                {
+                  "q_id": "med_2024_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2024,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the work of medical staff in the Casualty Clearing Stations (CCS) on the Western Front?"
+                },
+                {
+                  "q_id": "med_2024_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the work of medical staff in the Casualty Clearing Stations (CCS) on the Western Front?"
+                },
+                {
+                  "q_id": "med_2024_q6",
+                  "q_number": "Q6",
+                  "year": 2024,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The role of individuals was the most important factor in the prevention of illness in the years c1700-present.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2025_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the difficulties in caring for the wounded on the Western Front?"
+                },
+                {
+                  "q_id": "med_2025_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source B to find out more about the difficulties in caring for the wounded on the Western Front?"
+                },
+                {
+                  "q_id": "med_2026_q1a",
+                  "q_number": "Q1(a)",
+                  "year": 2026,
+                  "tariff": 2,
+                  "type": "feature",
+                  "question_text": "Describe one feature of a Casualty Clearing Station (CCS)."
+                },
+                {
+                  "q_id": "med_2026_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the problems of transporting the wounded along the chain of evacuation on the Western Front?"
+                },
+                {
+                  "q_id": "med_2026_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2026,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the problems of transporting the wounded along the chain of evacuation on the Western Front?"
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 2,
+              "point_text": "**Transporting the Wounded:** Stretcher-bearers (teams of 4–6 navigating deep mud), horse-drawn ambulance wagons, motor ambulances (512 funded by The Times appeal in October 1914), ambulance trains, and canal barges moving casualties to coastal Base Hospitals.",
+              "exam_count": 20,
+              "years_appeared": [
+                2018,
+                2019,
+                2020,
+                2022,
+                2023,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                2,
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2018_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the treatment of battle injuries by medical staff on the Western Front?"
+                },
+                {
+                  "q_id": "med_2018_q3",
+                  "q_number": "Q3",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which care in hospitals in the years c1250-c1500 was different from care in hospitals in the years c1700-c1900."
+                },
+                {
+                  "q_id": "med_2019_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the work of the stretcher bearers on the Western Front?"
+                },
+                {
+                  "q_id": "med_2019_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2019,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the work of the stretcher bearers on the Western Front?"
+                },
+                {
+                  "q_id": "med_2019_q5",
+                  "q_number": "Q5",
+                  "year": 2019,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The main reason why medical care and treatment was ineffective during the medieval period was because medical knowledge was based on Galen’s ideas’. How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2020_q5",
+                  "q_number": "Q5",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The work of Florence Nightingale was the most important development in the care and treatment provided in hospitals in the years c1700–c1900.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2022_q1",
+                  "q_number": "Q1",
+                  "year": 2022,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of the underground hospital at Arras."
+                },
+                {
+                  "q_id": "med_2023_q1",
+                  "q_number": "Q1",
+                  "year": 2023,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of the problems involved in transporting wounded soldiers away from the battleground."
+                },
+                {
+                  "q_id": "med_2023_q4",
+                  "q_number": "Q4",
+                  "year": 2023,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why access to medical care and treatment improved in the modern period."
+                },
+                {
+                  "q_id": "med_2023_q6",
+                  "q_number": "Q6",
+                  "year": 2023,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘People’s attitudes about medicine, in the years c1700-c1900, became increasingly positive.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2024_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2024,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the work of medical staff in the Casualty Clearing Stations (CCS) on the Western Front?"
+                },
+                {
+                  "q_id": "med_2024_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the work of medical staff in the Casualty Clearing Stations (CCS) on the Western Front?"
+                },
+                {
+                  "q_id": "med_2024_q4",
+                  "q_number": "Q4",
+                  "year": 2024,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there was little change in medicine in England during the medieval period (c1250–c1500)."
+                },
+                {
+                  "q_id": "med_2025_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the difficulties in caring for the wounded on the Western Front?"
+                },
+                {
+                  "q_id": "med_2025_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source B to find out more about the difficulties in caring for the wounded on the Western Front?"
+                },
+                {
+                  "q_id": "med_2025_q6",
+                  "q_number": "Q6",
+                  "year": 2025,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘In the years c1800-present, the role of the government was the most important factor in improving care and treatment in hospitals.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2026_q1a",
+                  "q_number": "Q1(a)",
+                  "year": 2026,
+                  "tariff": 2,
+                  "type": "feature",
+                  "question_text": "Describe one feature of a Casualty Clearing Station (CCS)."
+                },
+                {
+                  "q_id": "med_2026_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the problems of transporting the wounded along the chain of evacuation on the Western Front?"
+                },
+                {
+                  "q_id": "med_2026_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2026,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the problems of transporting the wounded along the chain of evacuation on the Western Front?"
+                },
+                {
+                  "q_id": "med_2026_q4",
+                  "q_number": "Q4",
+                  "year": 2026,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why hospital care and treatment improved in the period c1700-c1900."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 3,
+              "point_text": "**The Stages of the Chain of Evacuation:** (1) Regimental Aid Post (RAP, within 200m of frontline, first aid from Regimental Medical Officer); (2) Field Ambulance & Dressing Stations (ADS/MDS, 400m to half a mile back, temporary triage and emergency treatment); (3) Casualty Clearing Station (CCS, 7–12 miles back near railheads, priority triage into walking wounded, hospital cases, and moribund; performed urgent forward surgery for gas gangrene and compound fractures); (4) Base Hospitals (coastal ports at Calais, Boulogne, Le Havre; specialist wards for head wounds, burns, and gas; evacuation to 'Blighty').",
+              "exam_count": 22,
+              "years_appeared": [
+                2018,
+                2019,
+                2020,
+                2022,
+                2023,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                2,
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2018_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the treatment of battle injuries by medical staff on the Western Front?"
+                },
+                {
+                  "q_id": "med_2018_q3",
+                  "q_number": "Q3",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which care in hospitals in the years c1250-c1500 was different from care in hospitals in the years c1700-c1900."
+                },
+                {
+                  "q_id": "med_2019_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the work of the stretcher bearers on the Western Front?"
+                },
+                {
+                  "q_id": "med_2019_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2019,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the work of the stretcher bearers on the Western Front?"
+                },
+                {
+                  "q_id": "med_2019_q5",
+                  "q_number": "Q5",
+                  "year": 2019,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The main reason why medical care and treatment was ineffective during the medieval period was because medical knowledge was based on Galen’s ideas’. How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2020_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2020,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the effects of a gas attack?"
+                },
+                {
+                  "q_id": "med_2020_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2020,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the effects of a gas attack?"
+                },
+                {
+                  "q_id": "med_2020_q5",
+                  "q_number": "Q5",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The work of Florence Nightingale was the most important development in the care and treatment provided in hospitals in the years c1700–c1900.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2022_q1",
+                  "q_number": "Q1",
+                  "year": 2022,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of the underground hospital at Arras."
+                },
+                {
+                  "q_id": "med_2023_q1",
+                  "q_number": "Q1",
+                  "year": 2023,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of the problems involved in transporting wounded soldiers away from the battleground."
+                },
+                {
+                  "q_id": "med_2023_q4",
+                  "q_number": "Q4",
+                  "year": 2023,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why access to medical care and treatment improved in the modern period."
+                },
+                {
+                  "q_id": "med_2023_q6",
+                  "q_number": "Q6",
+                  "year": 2023,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘People’s attitudes about medicine, in the years c1700-c1900, became increasingly positive.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2024_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2024,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the work of medical staff in the Casualty Clearing Stations (CCS) on the Western Front?"
+                },
+                {
+                  "q_id": "med_2024_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the work of medical staff in the Casualty Clearing Stations (CCS) on the Western Front?"
+                },
+                {
+                  "q_id": "med_2024_q4",
+                  "q_number": "Q4",
+                  "year": 2024,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there was little change in medicine in England during the medieval period (c1250–c1500)."
+                },
+                {
+                  "q_id": "med_2025_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the difficulties in caring for the wounded on the Western Front?"
+                },
+                {
+                  "q_id": "med_2025_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source B to find out more about the difficulties in caring for the wounded on the Western Front?"
+                },
+                {
+                  "q_id": "med_2025_q6",
+                  "q_number": "Q6",
+                  "year": 2025,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘In the years c1800-present, the role of the government was the most important factor in improving care and treatment in hospitals.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2026_q1a",
+                  "q_number": "Q1(a)",
+                  "year": 2026,
+                  "tariff": 2,
+                  "type": "feature",
+                  "question_text": "Describe one feature of a Casualty Clearing Station (CCS)."
+                },
+                {
+                  "q_id": "med_2026_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the problems of transporting the wounded along the chain of evacuation on the Western Front?"
+                },
+                {
+                  "q_id": "med_2026_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2026,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the problems of transporting the wounded along the chain of evacuation on the Western Front?"
+                },
+                {
+                  "q_id": "med_2026_q4",
+                  "q_number": "Q4",
+                  "year": 2026,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why hospital care and treatment improved in the period c1700-c1900."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 4,
+              "point_text": "**Specific Facilities:** The underground hospital at Arras ('Thompson's Cave' inside 800m of chalk tunnels, 700 stretcher beds, operating theatres, mortuary, electricity, and piped water, completely protected from artillery).",
+              "exam_count": 20,
+              "years_appeared": [
+                2018,
+                2019,
+                2020,
+                2022,
+                2023,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                2,
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2018_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the treatment of battle injuries by medical staff on the Western Front?"
+                },
+                {
+                  "q_id": "med_2018_q3",
+                  "q_number": "Q3",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which care in hospitals in the years c1250-c1500 was different from care in hospitals in the years c1700-c1900."
+                },
+                {
+                  "q_id": "med_2019_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the work of the stretcher bearers on the Western Front?"
+                },
+                {
+                  "q_id": "med_2019_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2019,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the work of the stretcher bearers on the Western Front?"
+                },
+                {
+                  "q_id": "med_2019_q5",
+                  "q_number": "Q5",
+                  "year": 2019,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The main reason why medical care and treatment was ineffective during the medieval period was because medical knowledge was based on Galen’s ideas’. How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2020_q5",
+                  "q_number": "Q5",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The work of Florence Nightingale was the most important development in the care and treatment provided in hospitals in the years c1700–c1900.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2022_q1",
+                  "q_number": "Q1",
+                  "year": 2022,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of the underground hospital at Arras."
+                },
+                {
+                  "q_id": "med_2023_q1",
+                  "q_number": "Q1",
+                  "year": 2023,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of the problems involved in transporting wounded soldiers away from the battleground."
+                },
+                {
+                  "q_id": "med_2023_q4",
+                  "q_number": "Q4",
+                  "year": 2023,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why access to medical care and treatment improved in the modern period."
+                },
+                {
+                  "q_id": "med_2023_q6",
+                  "q_number": "Q6",
+                  "year": 2023,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘People’s attitudes about medicine, in the years c1700-c1900, became increasingly positive.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2024_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2024,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the work of medical staff in the Casualty Clearing Stations (CCS) on the Western Front?"
+                },
+                {
+                  "q_id": "med_2024_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the work of medical staff in the Casualty Clearing Stations (CCS) on the Western Front?"
+                },
+                {
+                  "q_id": "med_2024_q4",
+                  "q_number": "Q4",
+                  "year": 2024,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there was little change in medicine in England during the medieval period (c1250–c1500)."
+                },
+                {
+                  "q_id": "med_2025_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the difficulties in caring for the wounded on the Western Front?"
+                },
+                {
+                  "q_id": "med_2025_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source B to find out more about the difficulties in caring for the wounded on the Western Front?"
+                },
+                {
+                  "q_id": "med_2025_q6",
+                  "q_number": "Q6",
+                  "year": 2025,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘In the years c1800-present, the role of the government was the most important factor in improving care and treatment in hospitals.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2026_q1a",
+                  "q_number": "Q1(a)",
+                  "year": 2026,
+                  "tariff": 2,
+                  "type": "feature",
+                  "question_text": "Describe one feature of a Casualty Clearing Station (CCS)."
+                },
+                {
+                  "q_id": "med_2026_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the problems of transporting the wounded along the chain of evacuation on the Western Front?"
+                },
+                {
+                  "q_id": "med_2026_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2026,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the problems of transporting the wounded along the chain of evacuation on the Western Front?"
+                },
+                {
+                  "q_id": "med_2026_q4",
+                  "q_number": "Q4",
+                  "year": 2026,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why hospital care and treatment improved in the period c1700-c1900."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            }
+          ]
+        },
+        {
+          "title": "4. Medical Advances and Experiments in Surgery",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "**New Surgical Techniques for Wounds and Infection:** Debridement (wound excision: surgically cutting away dead, damaged, and infected tissue); the Carrel-Dakin method (continuous irrigation of deep wounds with sterilised sodium hypochlorite solution through rubber tubes); amputation as a last resort against spreading gas gangrene (over 240,000 British amputees).",
+              "exam_count": 5,
+              "years_appeared": [
+                2020,
+                2023,
+                2024
+              ],
+              "last_examined": 2024,
+              "tariffs_examined": [
+                4,
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2020_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2020,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the effects of a gas attack?"
+                },
+                {
+                  "q_id": "med_2020_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2020,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the effects of a gas attack?"
+                },
+                {
+                  "q_id": "med_2023_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2023,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into new techniques being used on the Western Front to deal with injuries?"
+                },
+                {
+                  "q_id": "med_2023_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2023,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about new techniques being used on the Western Front to deal with injuries?"
+                },
+                {
+                  "q_id": "med_2024_q1",
+                  "q_number": "Q1",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of the new techniques used in the treatment of wounds on the Western Front."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2024. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 2,
+              "point_text": "**The Thomas Splint:** Introduced to the Western Front in December 1915 by Robert Jones (designed by Hugh Owen Thomas). Held broken femur bones in rigid traction, preventing internal haemorrhage and surgical shock, increasing survival rates from 20% to over 82%.",
+              "exam_count": 4,
+              "years_appeared": [
+                2020,
+                2023,
+                2024
+              ],
+              "last_examined": 2024,
+              "tariffs_examined": [
+                4,
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2020_q1",
+                  "q_number": "Q1",
+                  "year": 2020,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of the use of the Thomas splint."
+                },
+                {
+                  "q_id": "med_2023_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2023,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into new techniques being used on the Western Front to deal with injuries?"
+                },
+                {
+                  "q_id": "med_2023_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2023,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about new techniques being used on the Western Front to deal with injuries?"
+                },
+                {
+                  "q_id": "med_2024_q1",
+                  "q_number": "Q1",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of the new techniques used in the treatment of wounds on the Western Front."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2024. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 3,
+              "point_text": "**The Use of Mobile X-Ray Units:** Six mobile X-ray vans deployed in the British sector to locate bullets and shrapnel at CCS before surgery; limitations included fragile glass tubes, tube overheating after one hour, and inability to detect embedded uniform cloth.",
+              "exam_count": 0,
+              "years_appeared": [],
+              "last_examined": "Never",
+              "tariffs_examined": [],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": false,
+              "overdue_status": "high",
+              "overdue_score": 100,
+              "matched_questions": [],
+              "teacher_note": "⚠️ UNEXAMINED TOPIC: This specification point has never appeared on an official Edexcel paper since 2018. It is prime territory for an upcoming series."
+            },
+            {
+              "point_index": 4,
+              "point_text": "**Blood Transfusions and the Cambrai Blood Bank:** Indirect syringe-cannula transfusions (Lawrence Bruce Robertson 1915); chemical anticoagulants: sodium citrate (Richard Lewisohn 1915), refrigerated storage for 2 days (Richard Weil 1915), citrate glucose allowing storage for up to 4 weeks (Francis Rous and James Turner 1916); creation of the world's first blood depot by Oswald Hope Robertson at the Battle of Cambrai (1917, 22 units of stored universal group O blood in ice boxes).",
+              "exam_count": 4,
+              "years_appeared": [
+                2018,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                2,
+                4,
+                16
+              ],
+              "has_12m": false,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2018_q1",
+                  "q_number": "Q1",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of blood transfusions on the Western Front during the First World War."
+                },
+                {
+                  "q_id": "med_2018_q6",
+                  "q_number": "Q6",
+                  "year": 2018,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The advances in surgery made in the years c1700-c1900 were more significant than advances in surgery made in the period c1900-present.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2025_q1b",
+                  "q_number": "Q1(b)",
+                  "year": 2025,
+                  "tariff": 2,
+                  "type": "feature",
+                  "question_text": "Describe one feature of the use of blood transfusions on the Western Front."
+                },
+                {
+                  "q_id": "med_2026_q1b",
+                  "q_number": "Q1(b)",
+                  "year": 2026,
+                  "tariff": 2,
+                  "type": "feature",
+                  "question_text": "Describe one feature of developments in the storage of blood on the Western Front."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 5,
+              "point_text": "**Brain Surgery and Plastic Surgery Advances:** Harvey Cushing (pioneered brain surgery techniques at CCS, using local anaesthetic to reduce brain swelling and electromagnets/suction to remove shrapnel, reducing mortality to 29%); Harold Gillies (pioneered facial plastic surgery at Queen's Hospital, Sidcup, developing the tube pedicle skin graft for disfigured soldiers, performing over 11,000 operations).",
+              "exam_count": 15,
+              "years_appeared": [
+                2018,
+                2019,
+                2020,
+                2022,
+                2023,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2018_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the treatment of battle injuries by medical staff on the Western Front?"
+                },
+                {
+                  "q_id": "med_2018_q3",
+                  "q_number": "Q3",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which care in hospitals in the years c1250-c1500 was different from care in hospitals in the years c1700-c1900."
+                },
+                {
+                  "q_id": "med_2018_q6",
+                  "q_number": "Q6",
+                  "year": 2018,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The advances in surgery made in the years c1700-c1900 were more significant than advances in surgery made in the period c1900-present.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2019_q5",
+                  "q_number": "Q5",
+                  "year": 2019,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The main reason why medical care and treatment was ineffective during the medieval period was because medical knowledge was based on Galen’s ideas’. How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2020_q5",
+                  "q_number": "Q5",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The work of Florence Nightingale was the most important development in the care and treatment provided in hospitals in the years c1700–c1900.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2022_q1",
+                  "q_number": "Q1",
+                  "year": 2022,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of the underground hospital at Arras."
+                },
+                {
+                  "q_id": "med_2022_q4",
+                  "q_number": "Q4",
+                  "year": 2022,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why attitudes towards surgery changed in the period c1800-present."
+                },
+                {
+                  "q_id": "med_2023_q4",
+                  "q_number": "Q4",
+                  "year": 2023,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why access to medical care and treatment improved in the modern period."
+                },
+                {
+                  "q_id": "med_2023_q6",
+                  "q_number": "Q6",
+                  "year": 2023,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘People’s attitudes about medicine, in the years c1700-c1900, became increasingly positive.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2024_q4",
+                  "q_number": "Q4",
+                  "year": 2024,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there was little change in medicine in England during the medieval period (c1250–c1500)."
+                },
+                {
+                  "q_id": "med_2024_q5",
+                  "q_number": "Q5",
+                  "year": 2024,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘There was significant progress in medical knowledge in England during the Renaissance period (c1500-c1700).’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2025_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source B to find out more about the difficulties in caring for the wounded on the Western Front?"
+                },
+                {
+                  "q_id": "med_2025_q6",
+                  "q_number": "Q6",
+                  "year": 2025,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘In the years c1800-present, the role of the government was the most important factor in improving care and treatment in hospitals.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2026_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the problems of transporting the wounded along the chain of evacuation on the Western Front?"
+                },
+                {
+                  "q_id": "med_2026_q4",
+                  "q_number": "Q4",
+                  "year": 2026,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why hospital care and treatment improved in the period c1700-c1900."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            }
+          ]
+        },
+        {
+          "title": "5. Historical Sources and Enquiry Skills (Historic Environment)",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "**Contemporary Records for the Western Front:** National, local, and personal historical sources: Army service records, hospital admission and discharge registers, casualty clearing station operational logs, personal diaries and letters (e.g. Pat Beauchamp, Elmer Cotton, Harvey Cushing), unit war diaries of the RAMC, medical statistics, and official photographs.",
+              "exam_count": 17,
+              "years_appeared": [
+                2018,
+                2019,
+                2020,
+                2022,
+                2023,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                2,
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2018_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the treatment of battle injuries by medical staff on the Western Front?"
+                },
+                {
+                  "q_id": "med_2018_q3",
+                  "q_number": "Q3",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which care in hospitals in the years c1250-c1500 was different from care in hospitals in the years c1700-c1900."
+                },
+                {
+                  "q_id": "med_2019_q5",
+                  "q_number": "Q5",
+                  "year": 2019,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The main reason why medical care and treatment was ineffective during the medieval period was because medical knowledge was based on Galen’s ideas’. How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2020_q5",
+                  "q_number": "Q5",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The work of Florence Nightingale was the most important development in the care and treatment provided in hospitals in the years c1700–c1900.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2022_q1",
+                  "q_number": "Q1",
+                  "year": 2022,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of the underground hospital at Arras."
+                },
+                {
+                  "q_id": "med_2023_q4",
+                  "q_number": "Q4",
+                  "year": 2023,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why access to medical care and treatment improved in the modern period."
+                },
+                {
+                  "q_id": "med_2023_q6",
+                  "q_number": "Q6",
+                  "year": 2023,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘People’s attitudes about medicine, in the years c1700-c1900, became increasingly positive.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2024_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2024,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the work of medical staff in the Casualty Clearing Stations (CCS) on the Western Front?"
+                },
+                {
+                  "q_id": "med_2024_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the work of medical staff in the Casualty Clearing Stations (CCS) on the Western Front?"
+                },
+                {
+                  "q_id": "med_2024_q4",
+                  "q_number": "Q4",
+                  "year": 2024,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there was little change in medicine in England during the medieval period (c1250–c1500)."
+                },
+                {
+                  "q_id": "med_2024_q5",
+                  "q_number": "Q5",
+                  "year": 2024,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘There was significant progress in medical knowledge in England during the Renaissance period (c1500-c1700).’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2025_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the difficulties in caring for the wounded on the Western Front?"
+                },
+                {
+                  "q_id": "med_2025_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source B to find out more about the difficulties in caring for the wounded on the Western Front?"
+                },
+                {
+                  "q_id": "med_2025_q6",
+                  "q_number": "Q6",
+                  "year": 2025,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘In the years c1800-present, the role of the government was the most important factor in improving care and treatment in hospitals.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2026_q1a",
+                  "q_number": "Q1(a)",
+                  "year": 2026,
+                  "tariff": 2,
+                  "type": "feature",
+                  "question_text": "Describe one feature of a Casualty Clearing Station (CCS)."
+                },
+                {
+                  "q_id": "med_2026_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the problems of transporting the wounded along the chain of evacuation on the Western Front?"
+                },
+                {
+                  "q_id": "med_2026_q4",
+                  "q_number": "Q4",
+                  "year": 2026,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why hospital care and treatment improved in the period c1700-c1900."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 2,
+              "point_text": "**Evaluating Source Utility:** Analysing primary sources by critically evaluating their content, comparing them against verified contextual knowledge, and examining their provenance (Nature: type of record; Origin: author and date; Purpose: reason for creation and potential bias).",
+              "exam_count": 0,
+              "years_appeared": [],
+              "last_examined": "Never",
+              "tariffs_examined": [],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": false,
+              "overdue_status": "high",
+              "overdue_score": 100,
+              "matched_questions": [],
+              "teacher_note": "⚠️ UNEXAMINED TOPIC: This specification point has never appeared on an official Edexcel paper since 2018. It is prime territory for an upcoming series."
+            },
+            {
+              "point_index": 3,
+              "point_text": "**Formulating Follow-Up Enquiries:** Methodically following up a source to investigate a specific historical question: (1) Quoting a specific detail directly from the source; (2) Framing a precise, analytical question; (3) Naming a specific contemporary record type; (4) Explaining exactly how that record would help answer the question.",
+              "exam_count": 0,
+              "years_appeared": [],
+              "last_examined": "Never",
+              "tariffs_examined": [],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": false,
+              "overdue_status": "high",
+              "overdue_score": 100,
+              "matched_questions": [],
+              "teacher_note": "⚠️ UNEXAMINED TOPIC: This specification point has never appeared on an official Edexcel paper since 2018. It is prime territory for an upcoming series."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "section-b",
+      "title": "Section B: Medicine in Britain, c1250–present",
+      "topics": [
+        {
+          "title": "Unit 1: Medicine in Medieval England, c1250–c1500",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "**Ideas about the Cause of Disease and Illness:** Supernatural and religious explanations: disease as divine retribution from God for sin, test of faith, or demonic influence; astrology and planetary alignments (e.g. 1345 alignment of Mars, Jupiter, and Saturn blamed for Black Death). Rational explanations: Hippocrates' Theory of the Four Humours (blood, phlegm, yellow bile, black bile; illness caused by internal imbalance); the Miasma theory (bad air and poisonous vapours corrupted by rotting matter). The continuing authority of Galen (Theory of Opposites; Church control of universities and monasteries enforcing Galenic dogma; ban on human dissection).",
+              "exam_count": 6,
+              "years_appeared": [
+                2018,
+                2019,
+                2023,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2018_q5",
+                  "q_number": "Q5",
+                  "year": 2018,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘There was little progress in understanding the cause of disease in the years c1250-c1700.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2019_q5",
+                  "q_number": "Q5",
+                  "year": 2019,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The main reason why medical care and treatment was ineffective during the medieval period was because medical knowledge was based on Galen’s ideas’. How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2023_q5",
+                  "q_number": "Q5",
+                  "year": 2023,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The work of Thomas Sydenham was the key turning point in medicine in the years c1500-c1700.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2024_q4",
+                  "q_number": "Q4",
+                  "year": 2024,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there was little change in medicine in England during the medieval period (c1250–c1500)."
+                },
+                {
+                  "q_id": "med_2025_q5",
+                  "q_number": "Q5",
+                  "year": 2025,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘In the years c1250-c1700, medicine was mainly based on the Theory of the Four Humours.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2026_q5",
+                  "q_number": "Q5",
+                  "year": 2026,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘In the medieval period (c1250-c1500), ideas about the cause of illness were mainly based on religion.’ How far do you agree? Explain your answer."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 2,
+              "point_text": "**Approaches to Prevention and Treatment:** Treatments linked to beliefs: religious actions (prayer, fasting, pilgrimage, flagellation, touching relics); humoural treatments: bloodletting (phlebotomy via venesection, cupping, and leeches) and purging (emetics, laxatives, clysters); purifying the air (pomanders, sweet herbs, street fires); traditional herbal remedies (Theriaca, Materia Medica). Traditional practitioners: university-trained physicians (7–10 years study, urine charts, astrology, expensive, 'care not cure'); apothecaries (herbal mixtures, accessible to ordinary people); barber surgeons (apprenticeship, tooth-pulling, bloodletting, basic amputations). Role of hospitals (c1,100 by 1500, run by Church monks and nuns, hospitality and rest, infectious/terminal patients rejected); care in the community and home by women.",
+              "exam_count": 14,
+              "years_appeared": [
+                2018,
+                2019,
+                2020,
+                2022,
+                2023,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2018_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the treatment of battle injuries by medical staff on the Western Front?"
+                },
+                {
+                  "q_id": "med_2018_q3",
+                  "q_number": "Q3",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which care in hospitals in the years c1250-c1500 was different from care in hospitals in the years c1700-c1900."
+                },
+                {
+                  "q_id": "med_2019_q5",
+                  "q_number": "Q5",
+                  "year": 2019,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The main reason why medical care and treatment was ineffective during the medieval period was because medical knowledge was based on Galen’s ideas’. How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2020_q3",
+                  "q_number": "Q3",
+                  "year": 2020,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which the role of the physician in the medieval period was similar to the role of the doctor in the NHS in the modern period."
+                },
+                {
+                  "q_id": "med_2020_q5",
+                  "q_number": "Q5",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The work of Florence Nightingale was the most important development in the care and treatment provided in hospitals in the years c1700–c1900.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2022_q1",
+                  "q_number": "Q1",
+                  "year": 2022,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of the underground hospital at Arras."
+                },
+                {
+                  "q_id": "med_2022_q5",
+                  "q_number": "Q5",
+                  "year": 2022,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘In the years c1250-c1500, the physician was the most important person providing care and treatment.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2023_q4",
+                  "q_number": "Q4",
+                  "year": 2023,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why access to medical care and treatment improved in the modern period."
+                },
+                {
+                  "q_id": "med_2023_q6",
+                  "q_number": "Q6",
+                  "year": 2023,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘People’s attitudes about medicine, in the years c1700-c1900, became increasingly positive.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2024_q4",
+                  "q_number": "Q4",
+                  "year": 2024,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there was little change in medicine in England during the medieval period (c1250–c1500)."
+                },
+                {
+                  "q_id": "med_2025_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source B to find out more about the difficulties in caring for the wounded on the Western Front?"
+                },
+                {
+                  "q_id": "med_2025_q6",
+                  "q_number": "Q6",
+                  "year": 2025,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘In the years c1800-present, the role of the government was the most important factor in improving care and treatment in hospitals.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2026_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the problems of transporting the wounded along the chain of evacuation on the Western Front?"
+                },
+                {
+                  "q_id": "med_2026_q4",
+                  "q_number": "Q4",
+                  "year": 2026,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why hospital care and treatment improved in the period c1700-c1900."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 3,
+              "point_text": "**Case Study: Dealing with the Black Death, 1348–49:** Arrival of epidemic in 1348, wiping out one-third to half of the population; symptoms (buboes in groin/armpits, fever, spitting blood); beliefs about causes (God's punishment, 1345 astrological alignment, miasma, poisoning of wells); treatment attempts (bloodletting, purging, lancing buboes, strapping toads, herbal theriaca); prevention methods: religious flagellants, carrying posies, street fires, flight ('go quickly, go far, return slowly'); local government action (King Edward III orders to clean streets of dung, early quarantines, shutting houses).",
+              "exam_count": 0,
+              "years_appeared": [],
+              "last_examined": "Never",
+              "tariffs_examined": [],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "high",
+              "overdue_score": 100,
+              "matched_questions": [],
+              "teacher_note": "⚠️ UNEXAMINED TOPIC: This specification point has never appeared on an official Edexcel paper since 2018. It is prime territory for an upcoming series."
+            }
+          ]
+        },
+        {
+          "title": "Unit 2: The Medical Renaissance in England, c1500–c1700",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "**Ideas about the Cause of Disease and Illness:** Continuity and change: gradual decline in supernatural beliefs; persistence of humoural and miasma theories among ordinary public and practitioners. Development of a scientific approach: Humanism, empirical observation, and experimentation; work of Thomas Sydenham ('English Hippocrates', bedside observation, classifying illnesses into distinct species, Observationes Medicae 1676). The influence of the printing press (movable type by Gutenberg/Caxton, rapid dissemination of medical texts free from Church censorship); the Royal Society (founded 1660, motto 'Nullius in Verba' — take nobody's word for it; scientific journal Philosophical Transactions 1665).",
+              "exam_count": 10,
+              "years_appeared": [
+                2018,
+                2019,
+                2020,
+                2023,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2018_q5",
+                  "q_number": "Q5",
+                  "year": 2018,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘There was little progress in understanding the cause of disease in the years c1250-c1700.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2019_q4",
+                  "q_number": "Q4",
+                  "year": 2019,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there were improvements in medical knowledge in the years c1500-c1700."
+                },
+                {
+                  "q_id": "med_2019_q5",
+                  "q_number": "Q5",
+                  "year": 2019,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The main reason why medical care and treatment was ineffective during the medieval period was because medical knowledge was based on Galen’s ideas’. How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2020_q6",
+                  "q_number": "Q6",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘There was little improvement in dealing with infectious diseases in the years c1500–c1900.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2023_q5",
+                  "q_number": "Q5",
+                  "year": 2023,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The work of Thomas Sydenham was the key turning point in medicine in the years c1500-c1700.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2024_q4",
+                  "q_number": "Q4",
+                  "year": 2024,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there was little change in medicine in England during the medieval period (c1250–c1500)."
+                },
+                {
+                  "q_id": "med_2024_q5",
+                  "q_number": "Q5",
+                  "year": 2024,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘There was significant progress in medical knowledge in England during the Renaissance period (c1500-c1700).’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2025_q3",
+                  "q_number": "Q3",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which the Great Plague in London (1665) was similar to the cholera epidemic in London (1854)."
+                },
+                {
+                  "q_id": "med_2025_q5",
+                  "q_number": "Q5",
+                  "year": 2025,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘In the years c1250-c1700, medicine was mainly based on the Theory of the Four Humours.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2026_q5",
+                  "q_number": "Q5",
+                  "year": 2026,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘In the medieval period (c1250-c1500), ideas about the cause of illness were mainly based on religion.’ How far do you agree? Explain your answer."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 2,
+              "point_text": "**Approaches to Prevention, Treatment, and Care:** Continuity in ordinary treatments (Four Humours, bleeding, purging); new chemical cures (iatrochemistry, Paracelsus) and New World remedies (cinchona bark/quinine for malaria, ipecacuanha, tobacco). Changing role of hospitals: Henry VIII's Dissolution of the Monasteries (1536) closed religious hospitals; secular refoundation of St Bartholomew's and St Thomas's; opening of specialized pest houses for infectious diseases. Improvements in medical training: dissection becoming standard in universities, anatomical theatres.",
+              "exam_count": 16,
+              "years_appeared": [
+                2018,
+                2019,
+                2020,
+                2022,
+                2023,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2018_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the treatment of battle injuries by medical staff on the Western Front?"
+                },
+                {
+                  "q_id": "med_2018_q3",
+                  "q_number": "Q3",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which care in hospitals in the years c1250-c1500 was different from care in hospitals in the years c1700-c1900."
+                },
+                {
+                  "q_id": "med_2018_q5",
+                  "q_number": "Q5",
+                  "year": 2018,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘There was little progress in understanding the cause of disease in the years c1250-c1700.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2019_q5",
+                  "q_number": "Q5",
+                  "year": 2019,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The main reason why medical care and treatment was ineffective during the medieval period was because medical knowledge was based on Galen’s ideas’. How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2020_q5",
+                  "q_number": "Q5",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The work of Florence Nightingale was the most important development in the care and treatment provided in hospitals in the years c1700–c1900.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2022_q1",
+                  "q_number": "Q1",
+                  "year": 2022,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of the underground hospital at Arras."
+                },
+                {
+                  "q_id": "med_2023_q4",
+                  "q_number": "Q4",
+                  "year": 2023,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why access to medical care and treatment improved in the modern period."
+                },
+                {
+                  "q_id": "med_2023_q5",
+                  "q_number": "Q5",
+                  "year": 2023,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The work of Thomas Sydenham was the key turning point in medicine in the years c1500-c1700.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2023_q6",
+                  "q_number": "Q6",
+                  "year": 2023,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘People’s attitudes about medicine, in the years c1700-c1900, became increasingly positive.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2024_q4",
+                  "q_number": "Q4",
+                  "year": 2024,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there was little change in medicine in England during the medieval period (c1250–c1500)."
+                },
+                {
+                  "q_id": "med_2025_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source B to find out more about the difficulties in caring for the wounded on the Western Front?"
+                },
+                {
+                  "q_id": "med_2025_q5",
+                  "q_number": "Q5",
+                  "year": 2025,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘In the years c1250-c1700, medicine was mainly based on the Theory of the Four Humours.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2025_q6",
+                  "q_number": "Q6",
+                  "year": 2025,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘In the years c1800-present, the role of the government was the most important factor in improving care and treatment in hospitals.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2026_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the problems of transporting the wounded along the chain of evacuation on the Western Front?"
+                },
+                {
+                  "q_id": "med_2026_q4",
+                  "q_number": "Q4",
+                  "year": 2026,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why hospital care and treatment improved in the period c1700-c1900."
+                },
+                {
+                  "q_id": "med_2026_q5",
+                  "q_number": "Q5",
+                  "year": 2026,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘In the medieval period (c1250-c1500), ideas about the cause of illness were mainly based on religion.’ How far do you agree? Explain your answer."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 3,
+              "point_text": "**Case Study: Andreas Vesalius and Discoveries in Anatomy:** Andreas Vesalius (De Humani Corporis Fabrica 1543, precise human dissections with Titian's workshop artists; corrected over 300 of Galen's animal-based errors including human jawbone, breastbone, and liver; sparked empirical anatomical inquiry in England despite traditionalist backlash; zero immediate surgical cures).",
+              "exam_count": 7,
+              "years_appeared": [
+                2019,
+                2023,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2019_q4",
+                  "q_number": "Q4",
+                  "year": 2019,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there were improvements in medical knowledge in the years c1500-c1700."
+                },
+                {
+                  "q_id": "med_2019_q5",
+                  "q_number": "Q5",
+                  "year": 2019,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The main reason why medical care and treatment was ineffective during the medieval period was because medical knowledge was based on Galen’s ideas’. How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2023_q5",
+                  "q_number": "Q5",
+                  "year": 2023,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The work of Thomas Sydenham was the key turning point in medicine in the years c1500-c1700.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2024_q4",
+                  "q_number": "Q4",
+                  "year": 2024,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there was little change in medicine in England during the medieval period (c1250–c1500)."
+                },
+                {
+                  "q_id": "med_2024_q5",
+                  "q_number": "Q5",
+                  "year": 2024,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘There was significant progress in medical knowledge in England during the Renaissance period (c1500-c1700).’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2025_q5",
+                  "q_number": "Q5",
+                  "year": 2025,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘In the years c1250-c1700, medicine was mainly based on the Theory of the Four Humours.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2026_q5",
+                  "q_number": "Q5",
+                  "year": 2026,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘In the medieval period (c1250-c1500), ideas about the cause of illness were mainly based on religion.’ How far do you agree? Explain your answer."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 4,
+              "point_text": "**Case Study: William Harvey and the Circulation of Blood:** William Harvey (De Motu Cordis 1628; proved blood circulates continuously pumped by the heart; calculated blood volume; proved veins have one-way valves; disproved Galen's theory that blood was manufactured in the liver and burned up as fuel; short-term limitations: transfusions impossible without blood groups, but established mechanical physiology).",
+              "exam_count": 5,
+              "years_appeared": [
+                2019,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2019_q5",
+                  "q_number": "Q5",
+                  "year": 2019,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The main reason why medical care and treatment was ineffective during the medieval period was because medical knowledge was based on Galen’s ideas’. How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2024_q4",
+                  "q_number": "Q4",
+                  "year": 2024,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there was little change in medicine in England during the medieval period (c1250–c1500)."
+                },
+                {
+                  "q_id": "med_2024_q5",
+                  "q_number": "Q5",
+                  "year": 2024,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘There was significant progress in medical knowledge in England during the Renaissance period (c1500-c1700).’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2025_q5",
+                  "q_number": "Q5",
+                  "year": 2025,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘In the years c1250-c1700, medicine was mainly based on the Theory of the Four Humours.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2026_q5",
+                  "q_number": "Q5",
+                  "year": 2026,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘In the medieval period (c1250-c1500), ideas about the cause of illness were mainly based on religion.’ How far do you agree? Explain your answer."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 5,
+              "point_text": "**Case Study: Dealing with the Great Plague in London, 1665:** Return of epidemic killing 100,000 (20% of London); continuity in beliefs (miasma, God's wrath, alignment of Saturn and Jupiter); treatments: bleeding, purging, plague water, strapping plucked chickens to buboes; government and civic measures: Lord Mayor's orders, red cross painted on doors ('Lord Have Mercy Upon Us'), locking up infected families for 28 days, searchers of the dead, mass burial pits, slaughter of 40,000 dogs and 200,000 cats, burning barrels of pitch, banning theatrical assemblies.",
+              "exam_count": 3,
+              "years_appeared": [
+                2020,
+                2024,
+                2025
+              ],
+              "last_examined": 2025,
+              "tariffs_examined": [
+                4,
+                16
+              ],
+              "has_12m": false,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2020_q6",
+                  "q_number": "Q6",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘There was little improvement in dealing with infectious diseases in the years c1500–c1900.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2024_q5",
+                  "q_number": "Q5",
+                  "year": 2024,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘There was significant progress in medical knowledge in England during the Renaissance period (c1500-c1700).’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2025_q3",
+                  "q_number": "Q3",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which the Great Plague in London (1665) was similar to the cholera epidemic in London (1854)."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2025. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            }
+          ]
+        },
+        {
+          "title": "Unit 3: Medicine in 18th- and 19th-Century Britain, c1700–c1900",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "**Ideas about the Cause of Disease and Illness:** Continuity in early period: spontaneous generation (microbes appear spontaneously in decaying matter) and miasma. Louis Pasteur's Germ Theory (1861, swan-neck flask experiments proved airborne microbes cause decay and fermentation; 1878 germ theory of disease); reception in Britain: initial resistance from Dr Charlton Bastian and traditionalists, gradual acceptance through John Tyndall (1870s) and Joseph Lister. Robert Koch's work on microbes: 'microbe hunting', agar jelly culture plates, industrial chemical dyes to photograph bacteria; isolated specific disease pathogens: anthrax (1876), tuberculosis (1882), and cholera (1883).",
+              "exam_count": 10,
+              "years_appeared": [
+                2018,
+                2020,
+                2022,
+                2023,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2018_q6",
+                  "q_number": "Q6",
+                  "year": 2018,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The advances in surgery made in the years c1700-c1900 were more significant than advances in surgery made in the period c1900-present.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2020_q5",
+                  "q_number": "Q5",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The work of Florence Nightingale was the most important development in the care and treatment provided in hospitals in the years c1700–c1900.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2020_q6",
+                  "q_number": "Q6",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘There was little improvement in dealing with infectious diseases in the years c1500–c1900.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2022_q4",
+                  "q_number": "Q4",
+                  "year": 2022,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why attitudes towards surgery changed in the period c1800-present."
+                },
+                {
+                  "q_id": "med_2022_q6",
+                  "q_number": "Q6",
+                  "year": 2022,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘In the years c1800-present, the work of Pasteur was the most significant development in understanding the causes of illness.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2023_q6",
+                  "q_number": "Q6",
+                  "year": 2023,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘People’s attitudes about medicine, in the years c1700-c1900, became increasingly positive.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2024_q6",
+                  "q_number": "Q6",
+                  "year": 2024,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The role of individuals was the most important factor in the prevention of illness in the years c1700-present.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2025_q3",
+                  "q_number": "Q3",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which the Great Plague in London (1665) was similar to the cholera epidemic in London (1854)."
+                },
+                {
+                  "q_id": "med_2025_q4",
+                  "q_number": "Q4",
+                  "year": 2025,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why Pasteur’s Germ Theory (1861) led to changes in medicine in the years c1861-present."
+                },
+                {
+                  "q_id": "med_2026_q4",
+                  "q_number": "Q4",
+                  "year": 2026,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why hospital care and treatment improved in the period c1700-c1900."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 2,
+              "point_text": "**Approaches to Prevention, Treatment, and Hospital Care:** Improvements in hospitals: Florence Nightingale (Crimean War 1854, Notes on Nursing 1859, pavilion hospital design, sanitation, ventilation, professional nurse training school at St Thomas's; mortality dropped from 40% to 2%). Development of anaesthetics: laughing gas (1844), ether (1846), James Simpson and chloroform (1847); opposition to anaesthetics (pain seen as God's will, danger of overdose); Queen Victoria's use of chloroform in childbirth (1853); surgical 'Black Period' as deeper operations caused infection. Development of antiseptics: Joseph Lister and carbolic acid spray (1865/1867, inspired by Pasteur, cut surgical mortality from 46% to 15%); transition by 1890s to aseptic surgery (autoclaves, rubber gloves, sterile gowns). Public Health reform: Edwin Chadwick's report (1842), Public Health Act 1848 (permissive); Great Stink (1858) and Joseph Bazalgette's London sewer network; Public Health Act 1875 (compulsory provision of clean water, sewers, street lighting, food inspection, medical officers).",
+              "exam_count": 25,
+              "years_appeared": [
+                2018,
+                2019,
+                2020,
+                2022,
+                2023,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2018_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the treatment of battle injuries by medical staff on the Western Front?"
+                },
+                {
+                  "q_id": "med_2018_q3",
+                  "q_number": "Q3",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which care in hospitals in the years c1250-c1500 was different from care in hospitals in the years c1700-c1900."
+                },
+                {
+                  "q_id": "med_2018_q4",
+                  "q_number": "Q4",
+                  "year": 2018,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there was progress in the prevention of illness in the years c1700–present."
+                },
+                {
+                  "q_id": "med_2018_q6",
+                  "q_number": "Q6",
+                  "year": 2018,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The advances in surgery made in the years c1700-c1900 were more significant than advances in surgery made in the period c1900-present.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2019_q5",
+                  "q_number": "Q5",
+                  "year": 2019,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The main reason why medical care and treatment was ineffective during the medieval period was because medical knowledge was based on Galen’s ideas’. How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2019_q6",
+                  "q_number": "Q6",
+                  "year": 2019,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘Providing access to care and treatment has been the most important development in the role of government in medicine in the years c1800-present.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2020_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2020,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the effects of a gas attack?"
+                },
+                {
+                  "q_id": "med_2020_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2020,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the effects of a gas attack?"
+                },
+                {
+                  "q_id": "med_2020_q5",
+                  "q_number": "Q5",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The work of Florence Nightingale was the most important development in the care and treatment provided in hospitals in the years c1700–c1900.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2020_q6",
+                  "q_number": "Q6",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘There was little improvement in dealing with infectious diseases in the years c1500–c1900.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2022_q1",
+                  "q_number": "Q1",
+                  "year": 2022,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of the underground hospital at Arras."
+                },
+                {
+                  "q_id": "med_2022_q4",
+                  "q_number": "Q4",
+                  "year": 2022,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why attitudes towards surgery changed in the period c1800-present."
+                },
+                {
+                  "q_id": "med_2022_q6",
+                  "q_number": "Q6",
+                  "year": 2022,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘In the years c1800-present, the work of Pasteur was the most significant development in understanding the causes of illness.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2023_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2023,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into new techniques being used on the Western Front to deal with injuries?"
+                },
+                {
+                  "q_id": "med_2023_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2023,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about new techniques being used on the Western Front to deal with injuries?"
+                },
+                {
+                  "q_id": "med_2023_q4",
+                  "q_number": "Q4",
+                  "year": 2023,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why access to medical care and treatment improved in the modern period."
+                },
+                {
+                  "q_id": "med_2023_q6",
+                  "q_number": "Q6",
+                  "year": 2023,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘People’s attitudes about medicine, in the years c1700-c1900, became increasingly positive.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2024_q1",
+                  "q_number": "Q1",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of the new techniques used in the treatment of wounds on the Western Front."
+                },
+                {
+                  "q_id": "med_2024_q4",
+                  "q_number": "Q4",
+                  "year": 2024,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there was little change in medicine in England during the medieval period (c1250–c1500)."
+                },
+                {
+                  "q_id": "med_2024_q6",
+                  "q_number": "Q6",
+                  "year": 2024,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The role of individuals was the most important factor in the prevention of illness in the years c1700-present.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2025_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source B to find out more about the difficulties in caring for the wounded on the Western Front?"
+                },
+                {
+                  "q_id": "med_2025_q4",
+                  "q_number": "Q4",
+                  "year": 2025,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why Pasteur’s Germ Theory (1861) led to changes in medicine in the years c1861-present."
+                },
+                {
+                  "q_id": "med_2025_q6",
+                  "q_number": "Q6",
+                  "year": 2025,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘In the years c1800-present, the role of the government was the most important factor in improving care and treatment in hospitals.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2026_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the problems of transporting the wounded along the chain of evacuation on the Western Front?"
+                },
+                {
+                  "q_id": "med_2026_q4",
+                  "q_number": "Q4",
+                  "year": 2026,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why hospital care and treatment improved in the period c1700-c1900."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 3,
+              "point_text": "**Case Study: Edward Jenner and Smallpox Vaccination:** Smallpox epidemic devastation and risks of inoculation (Lady Mary Wortley Montagu); Edward Jenner (1796, cowpox giving immunity against smallpox; James Phipps clinical test; published 1798); opposition to vaccination: Anti-Vaccination League, Royal Society skepticism, fear of animal contamination; government support: Parliamentary grants (£30,000 in 1802/1807), compulsory smallpox vaccination in 1852, leading to global eradication.",
+              "exam_count": 11,
+              "years_appeared": [
+                2018,
+                2019,
+                2020,
+                2022,
+                2023,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2018_q4",
+                  "q_number": "Q4",
+                  "year": 2018,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there was progress in the prevention of illness in the years c1700–present."
+                },
+                {
+                  "q_id": "med_2018_q5",
+                  "q_number": "Q5",
+                  "year": 2018,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘There was little progress in understanding the cause of disease in the years c1250-c1700.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2019_q4",
+                  "q_number": "Q4",
+                  "year": 2019,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there were improvements in medical knowledge in the years c1500-c1700."
+                },
+                {
+                  "q_id": "med_2020_q6",
+                  "q_number": "Q6",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘There was little improvement in dealing with infectious diseases in the years c1500–c1900.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2022_q3",
+                  "q_number": "Q3",
+                  "year": 2022,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which attempts to prevent the spread of infectious diseases in the period c1500-c1700 were similar to attempts to prevent the spread of infectious diseases in the period c1700―c1900."
+                },
+                {
+                  "q_id": "med_2023_q3",
+                  "q_number": "Q3",
+                  "year": 2023,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which ideas about prevention of illness in the medieval period were similar to ideas about the prevention of illness in the modern period."
+                },
+                {
+                  "q_id": "med_2023_q5",
+                  "q_number": "Q5",
+                  "year": 2023,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The work of Thomas Sydenham was the key turning point in medicine in the years c1500-c1700.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2023_q6",
+                  "q_number": "Q6",
+                  "year": 2023,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘People’s attitudes about medicine, in the years c1700-c1900, became increasingly positive.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2024_q6",
+                  "q_number": "Q6",
+                  "year": 2024,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The role of individuals was the most important factor in the prevention of illness in the years c1700-present.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2025_q4",
+                  "q_number": "Q4",
+                  "year": 2025,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why Pasteur’s Germ Theory (1861) led to changes in medicine in the years c1861-present."
+                },
+                {
+                  "q_id": "med_2026_q3",
+                  "q_number": "Q3",
+                  "year": 2026,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which the prevention of infectious diseases in the Renaissance period (c1500-c1700) was different from the prevention of infectious diseases in the modern period (c1900-present)."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 4,
+              "point_text": "**Case Study: John Snow and Fighting Cholera in London, 1854:** Cholera outbreaks in Britain (1831, 1848, 1853–54; rapid death from dehydration); Dr John Snow (1854 Broad Street pump outbreak in Soho; geographic dot mapping of 500+ deaths; proved cholera was waterborne from Broad Street pump contaminated by a leaking cesspool; removed pump handle, ending local outbreak; disproved miasma; led to Bazalgette's sewer construction).",
+              "exam_count": 3,
+              "years_appeared": [
+                2020,
+                2024,
+                2025
+              ],
+              "last_examined": 2025,
+              "tariffs_examined": [
+                4,
+                16
+              ],
+              "has_12m": false,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2020_q6",
+                  "q_number": "Q6",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘There was little improvement in dealing with infectious diseases in the years c1500–c1900.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2024_q6",
+                  "q_number": "Q6",
+                  "year": 2024,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The role of individuals was the most important factor in the prevention of illness in the years c1700-present.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2025_q3",
+                  "q_number": "Q3",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which the Great Plague in London (1665) was similar to the cholera epidemic in London (1854)."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2025. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            }
+          ]
+        },
+        {
+          "title": "Unit 4: Medicine in Modern Britain, c1900–present",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "**Advances in Understanding Causes: Genetics, Lifestyle, and Diagnosis:** Discovery of DNA and genetics: Gregor Mendel's laws rediscovered; structure of DNA double helix discovered in 1953 by James Watson, Francis Crick, Rosalind Franklin, and Maurice Wilkins; Human Genome Project (1990–2003, mapped 3 billion DNA base pairs, gene therapy, understanding hereditary illnesses like cystic fibrosis and BRCA gene mutations). Influence of lifestyle factors: scientific proof that smoking, excessive alcohol, poor diet, lack of exercise, UV exposure, and recreational drugs directly cause disease. Improvements in diagnostic science: blood tests (cholesterol, blood glucose, biomarkers), high-tech imaging: X-rays, CT scans (Godfrey Hounsfield 1972), MRI scans (1970s), ultrasound, PET-CT scans, endoscopes, and digital home health monitors.",
+              "exam_count": 5,
+              "years_appeared": [
+                2019,
+                2020,
+                2022,
+                2023,
+                2024
+              ],
+              "last_examined": 2024,
+              "tariffs_examined": [
+                4,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2019_q3",
+                  "q_number": "Q3",
+                  "year": 2019,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which ideas about the cause of illness in the years c1700-c1850 were different from ideas about the cause of illness in the years c1900-present."
+                },
+                {
+                  "q_id": "med_2020_q4",
+                  "q_number": "Q4",
+                  "year": 2020,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why developments in science and technology led to rapid progress in medicine in the years c1900–present."
+                },
+                {
+                  "q_id": "med_2022_q6",
+                  "q_number": "Q6",
+                  "year": 2022,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘In the years c1800-present, the work of Pasteur was the most significant development in understanding the causes of illness.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2023_q3",
+                  "q_number": "Q3",
+                  "year": 2023,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which ideas about prevention of illness in the medieval period were similar to ideas about the prevention of illness in the modern period."
+                },
+                {
+                  "q_id": "med_2024_q6",
+                  "q_number": "Q6",
+                  "year": 2024,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The role of individuals was the most important factor in the prevention of illness in the years c1700-present.’ How far do you agree? Explain your answer."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2024. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 2,
+              "point_text": "**Advances in Prevention and Treatment:** The first magic bullets: synthetic chemical compounds targeting specific bacteria without harming healthy human cells: Paul Ehrlich and Salvarsan 606 (1909, syphilis); Gerhard Domagk and Prontosil (1932, sulfonamide cure for streptococcal blood poisoning). Development of synthetic antibiotics. High-tech medical and surgical hospital treatments: radiotherapy, chemotherapy, advanced surgical procedures: kidney transplant (1954), Christian Barnard's human heart transplant (1967), hip replacements (John Charnley 1972), keyhole surgery, robotic surgery (da Vinci system).",
+              "exam_count": 21,
+              "years_appeared": [
+                2018,
+                2019,
+                2020,
+                2022,
+                2023,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                2,
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2018_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the treatment of battle injuries by medical staff on the Western Front?"
+                },
+                {
+                  "q_id": "med_2018_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the treatment of battle injuries by medical staff on the Western Front?"
+                },
+                {
+                  "q_id": "med_2018_q3",
+                  "q_number": "Q3",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which care in hospitals in the years c1250-c1500 was different from care in hospitals in the years c1700-c1900."
+                },
+                {
+                  "q_id": "med_2019_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the work of the stretcher bearers on the Western Front?"
+                },
+                {
+                  "q_id": "med_2019_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2019,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the work of the stretcher bearers on the Western Front?"
+                },
+                {
+                  "q_id": "med_2019_q5",
+                  "q_number": "Q5",
+                  "year": 2019,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The main reason why medical care and treatment was ineffective during the medieval period was because medical knowledge was based on Galen’s ideas’. How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2020_q5",
+                  "q_number": "Q5",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The work of Florence Nightingale was the most important development in the care and treatment provided in hospitals in the years c1700–c1900.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2022_q1",
+                  "q_number": "Q1",
+                  "year": 2022,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of the underground hospital at Arras."
+                },
+                {
+                  "q_id": "med_2023_q4",
+                  "q_number": "Q4",
+                  "year": 2023,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why access to medical care and treatment improved in the modern period."
+                },
+                {
+                  "q_id": "med_2023_q6",
+                  "q_number": "Q6",
+                  "year": 2023,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘People’s attitudes about medicine, in the years c1700-c1900, became increasingly positive.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2024_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2024,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the work of medical staff in the Casualty Clearing Stations (CCS) on the Western Front?"
+                },
+                {
+                  "q_id": "med_2024_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the work of medical staff in the Casualty Clearing Stations (CCS) on the Western Front?"
+                },
+                {
+                  "q_id": "med_2024_q4",
+                  "q_number": "Q4",
+                  "year": 2024,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there was little change in medicine in England during the medieval period (c1250–c1500)."
+                },
+                {
+                  "q_id": "med_2025_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the difficulties in caring for the wounded on the Western Front?"
+                },
+                {
+                  "q_id": "med_2025_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source B to find out more about the difficulties in caring for the wounded on the Western Front?"
+                },
+                {
+                  "q_id": "med_2025_q6",
+                  "q_number": "Q6",
+                  "year": 2025,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘In the years c1800-present, the role of the government was the most important factor in improving care and treatment in hospitals.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2026_q1a",
+                  "q_number": "Q1(a)",
+                  "year": 2026,
+                  "tariff": 2,
+                  "type": "feature",
+                  "question_text": "Describe one feature of a Casualty Clearing Station (CCS)."
+                },
+                {
+                  "q_id": "med_2026_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the problems of transporting the wounded along the chain of evacuation on the Western Front?"
+                },
+                {
+                  "q_id": "med_2026_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2026,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the problems of transporting the wounded along the chain of evacuation on the Western Front?"
+                },
+                {
+                  "q_id": "med_2026_q4",
+                  "q_number": "Q4",
+                  "year": 2026,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why hospital care and treatment improved in the period c1700-c1900."
+                },
+                {
+                  "q_id": "med_2026_q6",
+                  "q_number": "Q6",
+                  "year": 2026,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘Improvements in science and technology is the main reason why there has been progress in medicine in the modern period (c1900-present).’ How far do you agree? Explain your answer."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 3,
+              "point_text": "**The National Health Service (NHS) and Government Prevention:** Creation of the NHS (5 July 1948, Health Minister Aneurin Bevan, William Beveridge's 1942 report; universal free healthcare at point of delivery; nationalised 3,000 hospitals; massive surge in GP access for women and children). New approaches to prevention: compulsory/mass vaccination programmes (diphtheria 1940, polio 1956, measles 1968, MMR 1988, HPV 2008); public health education campaigns: AIDS 'Don't Die of Ignorance' (1986), Change4Life, sugar tax, public indoor smoking ban (2007).",
+              "exam_count": 23,
+              "years_appeared": [
+                2018,
+                2019,
+                2020,
+                2022,
+                2023,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8,
+                12,
+                16
+              ],
+              "has_12m": true,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2018_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the treatment of battle injuries by medical staff on the Western Front?"
+                },
+                {
+                  "q_id": "med_2018_q3",
+                  "q_number": "Q3",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which care in hospitals in the years c1250-c1500 was different from care in hospitals in the years c1700-c1900."
+                },
+                {
+                  "q_id": "med_2018_q4",
+                  "q_number": "Q4",
+                  "year": 2018,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there was progress in the prevention of illness in the years c1700–present."
+                },
+                {
+                  "q_id": "med_2019_q3",
+                  "q_number": "Q3",
+                  "year": 2019,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which ideas about the cause of illness in the years c1700-c1850 were different from ideas about the cause of illness in the years c1900-present."
+                },
+                {
+                  "q_id": "med_2019_q5",
+                  "q_number": "Q5",
+                  "year": 2019,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The main reason why medical care and treatment was ineffective during the medieval period was because medical knowledge was based on Galen’s ideas’. How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2019_q6",
+                  "q_number": "Q6",
+                  "year": 2019,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘Providing access to care and treatment has been the most important development in the role of government in medicine in the years c1800-present.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2020_q3",
+                  "q_number": "Q3",
+                  "year": 2020,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which the role of the physician in the medieval period was similar to the role of the doctor in the NHS in the modern period."
+                },
+                {
+                  "q_id": "med_2020_q5",
+                  "q_number": "Q5",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The work of Florence Nightingale was the most important development in the care and treatment provided in hospitals in the years c1700–c1900.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2020_q6",
+                  "q_number": "Q6",
+                  "year": 2020,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘There was little improvement in dealing with infectious diseases in the years c1500–c1900.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2022_q1",
+                  "q_number": "Q1",
+                  "year": 2022,
+                  "tariff": 4,
+                  "type": "feature",
+                  "question_text": "Describe two features of the underground hospital at Arras."
+                },
+                {
+                  "q_id": "med_2022_q3",
+                  "q_number": "Q3",
+                  "year": 2022,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which attempts to prevent the spread of infectious diseases in the period c1500-c1700 were similar to attempts to prevent the spread of infectious diseases in the period c1700―c1900."
+                },
+                {
+                  "q_id": "med_2023_q3",
+                  "q_number": "Q3",
+                  "year": 2023,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which ideas about prevention of illness in the medieval period were similar to ideas about the prevention of illness in the modern period."
+                },
+                {
+                  "q_id": "med_2023_q4",
+                  "q_number": "Q4",
+                  "year": 2023,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why access to medical care and treatment improved in the modern period."
+                },
+                {
+                  "q_id": "med_2023_q6",
+                  "q_number": "Q6",
+                  "year": 2023,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘People’s attitudes about medicine, in the years c1700-c1900, became increasingly positive.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2024_q4",
+                  "q_number": "Q4",
+                  "year": 2024,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why there was little change in medicine in England during the medieval period (c1250–c1500)."
+                },
+                {
+                  "q_id": "med_2024_q6",
+                  "q_number": "Q6",
+                  "year": 2024,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The role of individuals was the most important factor in the prevention of illness in the years c1700-present.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2025_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source B to find out more about the difficulties in caring for the wounded on the Western Front?"
+                },
+                {
+                  "q_id": "med_2025_q4",
+                  "q_number": "Q4",
+                  "year": 2025,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why Pasteur’s Germ Theory (1861) led to changes in medicine in the years c1861-present."
+                },
+                {
+                  "q_id": "med_2025_q6",
+                  "q_number": "Q6",
+                  "year": 2025,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘In the years c1800-present, the role of the government was the most important factor in improving care and treatment in hospitals.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2026_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the problems of transporting the wounded along the chain of evacuation on the Western Front?"
+                },
+                {
+                  "q_id": "med_2026_q3",
+                  "q_number": "Q3",
+                  "year": 2026,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which the prevention of infectious diseases in the Renaissance period (c1500-c1700) was different from the prevention of infectious diseases in the modern period (c1900-present)."
+                },
+                {
+                  "q_id": "med_2026_q4",
+                  "q_number": "Q4",
+                  "year": 2026,
+                  "tariff": 12,
+                  "type": "causation",
+                  "question_text": "Explain why hospital care and treatment improved in the period c1700-c1900."
+                },
+                {
+                  "q_id": "med_2026_q6",
+                  "q_number": "Q6",
+                  "year": 2026,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘Improvements in science and technology is the main reason why there has been progress in medicine in the modern period (c1900-present).’ How far do you agree? Explain your answer."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 4,
+              "point_text": "**Case Study: Fleming, Florey, and Chain’s Development of Penicillin:** Alexander Fleming (1928 accidental discovery of Penicillium notatum mold destroying staphylococcus bacteria; published 1929; unable to purify or secure funding); Howard Florey and Ernst Chain at Oxford University (1938–1940, successfully purified penicillin; mouse protection tests; clinical human trial on Albert Alexander 1941); mass production: Florey travelled to the USA in 1941; US government and pharmaceutical firms funded deep-tank fermentation after Pearl Harbor; supplied all Allied D-Day casualties in June 1944; Fleming, Florey, and Chain awarded Nobel Prize in 1945.",
+              "exam_count": 12,
+              "years_appeared": [
+                2018,
+                2019,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                2,
+                4,
+                8,
+                16
+              ],
+              "has_12m": false,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2018_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the treatment of battle injuries by medical staff on the Western Front?"
+                },
+                {
+                  "q_id": "med_2018_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the treatment of battle injuries by medical staff on the Western Front?"
+                },
+                {
+                  "q_id": "med_2019_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the work of the stretcher bearers on the Western Front?"
+                },
+                {
+                  "q_id": "med_2019_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2019,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the work of the stretcher bearers on the Western Front?"
+                },
+                {
+                  "q_id": "med_2024_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2024,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the work of medical staff in the Casualty Clearing Stations (CCS) on the Western Front?"
+                },
+                {
+                  "q_id": "med_2024_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the work of medical staff in the Casualty Clearing Stations (CCS) on the Western Front?"
+                },
+                {
+                  "q_id": "med_2025_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the difficulties in caring for the wounded on the Western Front?"
+                },
+                {
+                  "q_id": "med_2025_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source B to find out more about the difficulties in caring for the wounded on the Western Front?"
+                },
+                {
+                  "q_id": "med_2026_q1a",
+                  "q_number": "Q1(a)",
+                  "year": 2026,
+                  "tariff": 2,
+                  "type": "feature",
+                  "question_text": "Describe one feature of a Casualty Clearing Station (CCS)."
+                },
+                {
+                  "q_id": "med_2026_q2a",
+                  "q_number": "Q2(a)",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "how-useful",
+                  "question_text": "How useful are Sources A and B for an enquiry into the problems of transporting the wounded along the chain of evacuation on the Western Front?"
+                },
+                {
+                  "q_id": "med_2026_q2b",
+                  "q_number": "Q2(b)",
+                  "year": 2026,
+                  "tariff": 4,
+                  "type": "follow-up",
+                  "question_text": "How could you follow up Source A to find out more about the problems of transporting the wounded along the chain of evacuation on the Western Front?"
+                },
+                {
+                  "q_id": "med_2026_q6",
+                  "q_number": "Q6",
+                  "year": 2026,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘Improvements in science and technology is the main reason why there has been progress in medicine in the modern period (c1900-present).’ How far do you agree? Explain your answer."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2026. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            },
+            {
+              "point_index": 5,
+              "point_text": "**Case Study: The Fight Against Lung Cancer in the 21st Century:** Epidemiological research: Richard Doll and Austin Bradford Hill (1950 study proving 99% of lung cancer patients were smokers; Royal College of Physicians report 1962). Science and technology in diagnosis: chest X-rays (often miss early tumours), CT scans, PET-CT scans, endobronchial ultrasound (EBUS), and biopsy. Science and technology in treatment: surgery (lobectomy, pneumonectomy), external beam radiotherapy, chemotherapy, immunotherapy, and targeted molecular therapies. Government action to prevent: banning TV cigarette advertising (1965), health warnings on packaging (1971), public indoor smoking ban (2007), raising legal purchase age from 16 to 18 (2007), standardized plain packaging with graphic warnings (2016), escalating tobacco taxation.",
+              "exam_count": 5,
+              "years_appeared": [
+                2019,
+                2020,
+                2022,
+                2023,
+                2024
+              ],
+              "last_examined": 2024,
+              "tariffs_examined": [
+                4,
+                16
+              ],
+              "has_12m": false,
+              "has_16m": true,
+              "high_tariff_gap": false,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "med_2019_q3",
+                  "q_number": "Q3",
+                  "year": 2019,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which ideas about the cause of illness in the years c1700-c1850 were different from ideas about the cause of illness in the years c1900-present."
+                },
+                {
+                  "q_id": "med_2020_q3",
+                  "q_number": "Q3",
+                  "year": 2020,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which the role of the physician in the medieval period was similar to the role of the doctor in the NHS in the modern period."
+                },
+                {
+                  "q_id": "med_2022_q5",
+                  "q_number": "Q5",
+                  "year": 2022,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘In the years c1250-c1500, the physician was the most important person providing care and treatment.’ How far do you agree? Explain your answer."
+                },
+                {
+                  "q_id": "med_2023_q3",
+                  "q_number": "Q3",
+                  "year": 2023,
+                  "tariff": 4,
+                  "type": "similarity-difference",
+                  "question_text": "Explain one way in which ideas about prevention of illness in the medieval period were similar to ideas about the prevention of illness in the modern period."
+                },
+                {
+                  "q_id": "med_2024_q6",
+                  "q_number": "Q6",
+                  "year": 2024,
+                  "tariff": 16,
+                  "type": "judgement-essay",
+                  "question_text": "‘The role of individuals was the most important factor in the prevention of illness in the years c1700-present.’ How far do you agree? Explain your answer."
+                }
+              ],
+              "teacher_note": "✅ RECENTLY TESTED: Examined in 2024. Less likely to appear as a high-tariff essay in the immediate next series, but still vulnerable to short feature/source questions."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary_stats": {
+    "total_specification_points": 38,
+    "overdue_topics_count": 7,
+    "high_tariff_gaps_count": 1,
+    "overdue_percentage": 18
+  }
+}

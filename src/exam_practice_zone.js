@@ -256,6 +256,22 @@ export function renderExamPracticeZone(container, unitData) {
       </div>
 
       <div id="epz-controls" ${examBank.length === 0 ? 'style="display:none;"' : ''}>
+        <!-- Past Paper Trends & Overdue Radar Banner -->
+        <div style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border: 1.5px solid #bfdbfe; border-radius: 14px; padding: 14px 20px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 36px; height: 36px; border-radius: 50%; background: #2563eb; color: white; display: flex; align-items: center; justify-content: center; font-size: 1.05rem;">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <div>
+              <div style="font-weight: 800; color: #1e3a8a; font-size: 0.95rem;">2018–2026 Past Paper Matrix &amp; Overdue Topic Radar</div>
+              <div style="font-size: 0.82rem; color: #1d4ed8;">Explore real exam questions, mark schemes, examiner report warnings, and syllabus gaps.</div>
+            </div>
+          </div>
+          <button type="button" id="epz-btn-view-matrix" class="main-btn epz-btn" style="background: #1e40af; color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+            <i class="fa-solid fa-table-cells"></i> Open Question Matrix
+          </button>
+        </div>
+
         <div style="display: flex; flex-direction: column; gap: 20px; background: #f8fafc; padding: 25px; border-radius: 16px; border: 1px solid #e2e8f0;">
           <div style="display: flex; flex-direction: column; gap: 10px;">
             <label style="font-weight: 700; color: #1e293b; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.5px;">Target Question Type</label>
@@ -508,6 +524,20 @@ export function renderExamPracticeZone(container, unitData) {
   wagollBtn.addEventListener('click', () => {
     wagollPanel.style.display = wagollPanel.style.display === 'none' ? 'block' : 'none';
   });
+
+  const btnViewMatrix = document.getElementById('epz-btn-view-matrix');
+  if (btnViewMatrix) {
+    btnViewMatrix.addEventListener('click', () => {
+      const currentUnit = window.currentUnitId || unitData.id || 'edexcel_medicine';
+      if (window.switchView) {
+        window.switchView('mock-exams', currentUnit);
+        setTimeout(() => {
+          const tabBtnTrend = document.getElementById('tab-btn-trend-radar');
+          if (tabBtnTrend) tabBtnTrend.click();
+        }, 150);
+      }
+    });
+  }
 
   if (typePills) {
     typePills.addEventListener('click', (e) => {

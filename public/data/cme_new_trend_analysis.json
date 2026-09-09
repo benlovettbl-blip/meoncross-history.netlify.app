@@ -1,0 +1,1853 @@
+{
+  "unit_id": "cme_new",
+  "title": "Pearson Edexcel GCSE (9–1) History",
+  "subtitle": "Option P5: Conflict in the Middle East, 1945–95",
+  "generated_at": "2026-09-09T15:30:50.781Z",
+  "total_past_questions": 42,
+  "total_series_analyzed": 8,
+  "sections": [
+    {
+      "id": "key-topic-1",
+      "title": "Key Topic 1: The birth of the state of Israel, 1945–63",
+      "topics": [
+        {
+          "title": "1. The British withdrawal and the creation of Israel",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "**Conflicting interests and demands** of Jews and Arabs within the British Mandate.",
+              "exam_count": 0,
+              "years_appeared": [],
+              "last_examined": "Never",
+              "tariffs_examined": [],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "high",
+              "overdue_score": 100,
+              "matched_questions": [],
+              "teacher_note": "⚠️ UNEXAMINED TOPIC: This specification point has never appeared on an official Edexcel paper since 2018. It is prime territory for an upcoming series."
+            },
+            {
+              "point_index": 2,
+              "point_text": "**Key events leading to the end of the British Mandate**, partition and the creation of Israel, including the **significance of the bombing of the King David Hotel** and **UN Resolution 181**.",
+              "exam_count": 2,
+              "years_appeared": [
+                2020,
+                2025
+              ],
+              "last_examined": 2025,
+              "tariffs_examined": [
+                4,
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2020_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2020,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of UN Resolution 181 for the creation of Israel."
+                },
+                {
+                  "q_id": "cme_2025_q1a",
+                  "q_number": "Q1(a)",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "consequence",
+                  "question_text": "Explain one consequence of the bombing of the King David Hotel (1946)."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m, 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            },
+            {
+              "point_index": 3,
+              "point_text": "**Key events of the Arab-Israeli war (1948–49)**.",
+              "exam_count": 4,
+              "years_appeared": [
+                2018,
+                2022,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2018_q1",
+                  "q_number": "Q1",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "consequence",
+                  "question_text": "Explain two consequences of the territorial changes following the 1948-49 Arab- Israeli war."
+                },
+                {
+                  "q_id": "cme_2022_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2022,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of territorial changes in the aftermath of the 1948-49 war for Palestinians."
+                },
+                {
+                  "q_id": "cme_2025_q1b",
+                  "q_number": "Q1(b)",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "consequence",
+                  "question_text": "Explain one consequence of the territorial changes following the 1948-49 Arab-Israeli war."
+                },
+                {
+                  "q_id": "cme_2026_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the Arab-Israeli war (1948-49) for the state of Israel."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m, 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            }
+          ]
+        },
+        {
+          "title": "2. Aftermath of the 1948–49 war",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "**Territorial changes** and their impact.",
+              "exam_count": 4,
+              "years_appeared": [
+                2018,
+                2022,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2018_q1",
+                  "q_number": "Q1",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "consequence",
+                  "question_text": "Explain two consequences of the territorial changes following the 1948-49 Arab- Israeli war."
+                },
+                {
+                  "q_id": "cme_2022_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2022,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of territorial changes in the aftermath of the 1948-49 war for Palestinians."
+                },
+                {
+                  "q_id": "cme_2025_q1b",
+                  "q_number": "Q1(b)",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "consequence",
+                  "question_text": "Explain one consequence of the territorial changes following the 1948-49 Arab-Israeli war."
+                },
+                {
+                  "q_id": "cme_2026_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the Arab-Israeli war (1948-49) for the state of Israel."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m, 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            },
+            {
+              "point_index": 2,
+              "point_text": "The **refugee status of Palestinian Arabs**.",
+              "exam_count": 4,
+              "years_appeared": [
+                2018,
+                2022,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2018_q1",
+                  "q_number": "Q1",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "consequence",
+                  "question_text": "Explain two consequences of the territorial changes following the 1948-49 Arab- Israeli war."
+                },
+                {
+                  "q_id": "cme_2022_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2022,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of territorial changes in the aftermath of the 1948-49 war for Palestinians."
+                },
+                {
+                  "q_id": "cme_2025_q1b",
+                  "q_number": "Q1(b)",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "consequence",
+                  "question_text": "Explain one consequence of the territorial changes following the 1948-49 Arab-Israeli war."
+                },
+                {
+                  "q_id": "cme_2026_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the Arab-Israeli war (1948-49) for the state of Israel."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m, 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            },
+            {
+              "point_index": 3,
+              "point_text": "The creation of the **Israeli Defence Forces (IDF)** and the **Law of Return (1950)**.",
+              "exam_count": 8,
+              "years_appeared": [
+                2018,
+                2019,
+                2020,
+                2022,
+                2023,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2018_q1",
+                  "q_number": "Q1",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "consequence",
+                  "question_text": "Explain two consequences of the territorial changes following the 1948-49 Arab- Israeli war."
+                },
+                {
+                  "q_id": "cme_2019_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the establishment of the Israeli Defence Forces for the protection of the new state of Israel."
+                },
+                {
+                  "q_id": "cme_2020_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2020,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the Law of Return for the development of the state of Israel."
+                },
+                {
+                  "q_id": "cme_2022_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2022,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of territorial changes in the aftermath of the 1948-49 war for Palestinians."
+                },
+                {
+                  "q_id": "cme_2023_q2",
+                  "q_number": "Q2",
+                  "year": 2023,
+                  "tariff": 8,
+                  "type": "narrative",
+                  "question_text": "Write a narrative account analysing the developments in Israel in the years 1949-54."
+                },
+                {
+                  "q_id": "cme_2025_q1b",
+                  "q_number": "Q1(b)",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "consequence",
+                  "question_text": "Explain one consequence of the territorial changes following the 1948-49 Arab-Israeli war."
+                },
+                {
+                  "q_id": "cme_2026_q1a",
+                  "q_number": "Q1(a)",
+                  "year": 2026,
+                  "tariff": 4,
+                  "type": "consequence",
+                  "question_text": "Explain one consequence of Israel passing the Law of Return (1950)."
+                },
+                {
+                  "q_id": "cme_2026_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the Arab-Israeli war (1948-49) for the state of Israel."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m, 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            },
+            {
+              "point_index": 4,
+              "point_text": "**US aid** to Israel.",
+              "exam_count": 4,
+              "years_appeared": [
+                2018,
+                2022,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2018_q1",
+                  "q_number": "Q1",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "consequence",
+                  "question_text": "Explain two consequences of the territorial changes following the 1948-49 Arab- Israeli war."
+                },
+                {
+                  "q_id": "cme_2022_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2022,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of territorial changes in the aftermath of the 1948-49 war for Palestinians."
+                },
+                {
+                  "q_id": "cme_2025_q1b",
+                  "q_number": "Q1(b)",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "consequence",
+                  "question_text": "Explain one consequence of the territorial changes following the 1948-49 Arab-Israeli war."
+                },
+                {
+                  "q_id": "cme_2026_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the Arab-Israeli war (1948-49) for the state of Israel."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m, 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            },
+            {
+              "point_index": 5,
+              "point_text": "Israel’s **relations with Egypt**.",
+              "exam_count": 4,
+              "years_appeared": [
+                2018,
+                2022,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2018_q1",
+                  "q_number": "Q1",
+                  "year": 2018,
+                  "tariff": 4,
+                  "type": "consequence",
+                  "question_text": "Explain two consequences of the territorial changes following the 1948-49 Arab- Israeli war."
+                },
+                {
+                  "q_id": "cme_2022_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2022,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of territorial changes in the aftermath of the 1948-49 war for Palestinians."
+                },
+                {
+                  "q_id": "cme_2025_q1b",
+                  "q_number": "Q1(b)",
+                  "year": 2025,
+                  "tariff": 4,
+                  "type": "consequence",
+                  "question_text": "Explain one consequence of the territorial changes following the 1948-49 Arab-Israeli war."
+                },
+                {
+                  "q_id": "cme_2026_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the Arab-Israeli war (1948-49) for the state of Israel."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m, 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            }
+          ]
+        },
+        {
+          "title": "3. Increased tension, 1955–63",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "**Nasser** and Egypt’s **leadership of the Arab world**.",
+              "exam_count": 2,
+              "years_appeared": [
+                2018,
+                2025
+              ],
+              "last_examined": 2025,
+              "tariffs_examined": [
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2018_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of Nasser for leadership of the Arab world."
+                },
+                {
+                  "q_id": "cme_2025_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of Nasser for tension in the Middle East in the years 1955-63."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            },
+            {
+              "point_index": 2,
+              "point_text": "The events and significance of **Israeli attacks on Gaza in 1955** and **Sinai in 1956**.",
+              "exam_count": 3,
+              "years_appeared": [
+                2019,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2019_q2",
+                  "q_number": "Q2",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "narrative",
+                  "question_text": "Write a narrative account analysing the key events of the Suez crisis in 1956."
+                },
+                {
+                  "q_id": "cme_2025_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of Nasser for tension in the Middle East in the years 1955-63."
+                },
+                {
+                  "q_id": "cme_2026_q1b",
+                  "q_number": "Q1(b)",
+                  "year": 2026,
+                  "tariff": 4,
+                  "type": "consequence",
+                  "question_text": "Explain one consequence of the Suez Crisis (1956)."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m, 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            },
+            {
+              "point_index": 3,
+              "point_text": "The events and significance of the **Suez Crisis (1956)**, including the **formation of the United Arab Republic (UAR) in 1958**.",
+              "exam_count": 3,
+              "years_appeared": [
+                2019,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2019_q2",
+                  "q_number": "Q2",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "narrative",
+                  "question_text": "Write a narrative account analysing the key events of the Suez crisis in 1956."
+                },
+                {
+                  "q_id": "cme_2025_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of Nasser for tension in the Middle East in the years 1955-63."
+                },
+                {
+                  "q_id": "cme_2026_q1b",
+                  "q_number": "Q1(b)",
+                  "year": 2026,
+                  "tariff": 4,
+                  "type": "consequence",
+                  "question_text": "Explain one consequence of the Suez Crisis (1956)."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m, 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "key-topic-2",
+      "title": "Key Topic 2: The escalating conflict, 1964–73",
+      "topics": [
+        {
+          "title": "1. The Six Day War, 1967",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "The significance of the **Cairo Conference (1964)** and the **growth of Fatah and the PLO**.",
+              "exam_count": 5,
+              "years_appeared": [
+                2018,
+                2019,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2018_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the occupied territories following the Six Day War (1967) for Arab-Israeli relations."
+                },
+                {
+                  "q_id": "cme_2019_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the actions of the USSR and the USA for the outbreak of the Six Day War (1967)."
+                },
+                {
+                  "q_id": "cme_2024_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2024,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of UN Resolution 242 (1967) for relations between Israel and the Arab states."
+                },
+                {
+                  "q_id": "cme_2025_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the Six Day War (1967) for Israel’s security."
+                },
+                {
+                  "q_id": "cme_2026_q2",
+                  "q_number": "Q2",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "narrative",
+                  "question_text": "Write a narrative account analysing the key events of the Six Day War (1967)."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            },
+            {
+              "point_index": 2,
+              "point_text": "**Escalating tension** between Israel, Syria and Jordan: **Syria’s support for Fatah**, **Israel’s raid on Samu** and the **events of 7 April 1967**.",
+              "exam_count": 5,
+              "years_appeared": [
+                2018,
+                2019,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2018_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the occupied territories following the Six Day War (1967) for Arab-Israeli relations."
+                },
+                {
+                  "q_id": "cme_2019_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the actions of the USSR and the USA for the outbreak of the Six Day War (1967)."
+                },
+                {
+                  "q_id": "cme_2024_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2024,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of UN Resolution 242 (1967) for relations between Israel and the Arab states."
+                },
+                {
+                  "q_id": "cme_2025_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the Six Day War (1967) for Israel’s security."
+                },
+                {
+                  "q_id": "cme_2026_q2",
+                  "q_number": "Q2",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "narrative",
+                  "question_text": "Write a narrative account analysing the key events of the Six Day War (1967)."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            },
+            {
+              "point_index": 3,
+              "point_text": "The **actions of the USSR, Nasser and the USA** in the period leading to war.",
+              "exam_count": 7,
+              "years_appeared": [
+                2018,
+                2019,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2018_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of Nasser for leadership of the Arab world."
+                },
+                {
+                  "q_id": "cme_2018_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the occupied territories following the Six Day War (1967) for Arab-Israeli relations."
+                },
+                {
+                  "q_id": "cme_2019_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the actions of the USSR and the USA for the outbreak of the Six Day War (1967)."
+                },
+                {
+                  "q_id": "cme_2024_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2024,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of UN Resolution 242 (1967) for relations between Israel and the Arab states."
+                },
+                {
+                  "q_id": "cme_2025_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of Nasser for tension in the Middle East in the years 1955-63."
+                },
+                {
+                  "q_id": "cme_2025_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the Six Day War (1967) for Israel’s security."
+                },
+                {
+                  "q_id": "cme_2026_q2",
+                  "q_number": "Q2",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "narrative",
+                  "question_text": "Write a narrative account analysing the key events of the Six Day War (1967)."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            },
+            {
+              "point_index": 4,
+              "point_text": "**Key events of the war**.",
+              "exam_count": 5,
+              "years_appeared": [
+                2018,
+                2019,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2018_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the occupied territories following the Six Day War (1967) for Arab-Israeli relations."
+                },
+                {
+                  "q_id": "cme_2019_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the actions of the USSR and the USA for the outbreak of the Six Day War (1967)."
+                },
+                {
+                  "q_id": "cme_2024_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2024,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of UN Resolution 242 (1967) for relations between Israel and the Arab states."
+                },
+                {
+                  "q_id": "cme_2025_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the Six Day War (1967) for Israel’s security."
+                },
+                {
+                  "q_id": "cme_2026_q2",
+                  "q_number": "Q2",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "narrative",
+                  "question_text": "Write a narrative account analysing the key events of the Six Day War (1967)."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            }
+          ]
+        },
+        {
+          "title": "2. Aftermath of the 1967 war",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "**UN Resolution 242** and the **continued dispute over the Suez Canal**.",
+              "exam_count": 5,
+              "years_appeared": [
+                2018,
+                2019,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2018_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the occupied territories following the Six Day War (1967) for Arab-Israeli relations."
+                },
+                {
+                  "q_id": "cme_2019_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the actions of the USSR and the USA for the outbreak of the Six Day War (1967)."
+                },
+                {
+                  "q_id": "cme_2024_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2024,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of UN Resolution 242 (1967) for relations between Israel and the Arab states."
+                },
+                {
+                  "q_id": "cme_2025_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the Six Day War (1967) for Israel’s security."
+                },
+                {
+                  "q_id": "cme_2026_q2",
+                  "q_number": "Q2",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "narrative",
+                  "question_text": "Write a narrative account analysing the key events of the Six Day War (1967)."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            },
+            {
+              "point_index": 2,
+              "point_text": "**Palestinian refugees** and the significance of the **occupied territories**: **Golan Heights, Gaza Strip, West Bank, Sinai and East Jerusalem**.",
+              "exam_count": 6,
+              "years_appeared": [
+                2018,
+                2019,
+                2022,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2018_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the occupied territories following the Six Day War (1967) for Arab-Israeli relations."
+                },
+                {
+                  "q_id": "cme_2019_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the actions of the USSR and the USA for the outbreak of the Six Day War (1967)."
+                },
+                {
+                  "q_id": "cme_2022_q3a",
+                  "q_number": "Q3(a)",
+                  "year": 2022,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of territorial changes in the aftermath of the 1948-49 war for Palestinians."
+                },
+                {
+                  "q_id": "cme_2024_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2024,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of UN Resolution 242 (1967) for relations between Israel and the Arab states."
+                },
+                {
+                  "q_id": "cme_2025_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the Six Day War (1967) for Israel’s security."
+                },
+                {
+                  "q_id": "cme_2026_q2",
+                  "q_number": "Q2",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "narrative",
+                  "question_text": "Write a narrative account analysing the key events of the Six Day War (1967)."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            },
+            {
+              "point_index": 3,
+              "point_text": "The **use of terrorism, Israel’s response and international attitudes** towards the Palestine issue: the **PFLP airplane hijacks of 1970**; **Black September** and the **Munich Olympics**.",
+              "exam_count": 9,
+              "years_appeared": [
+                2018,
+                2019,
+                2020,
+                2022,
+                2023,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2018_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the occupied territories following the Six Day War (1967) for Arab-Israeli relations."
+                },
+                {
+                  "q_id": "cme_2019_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the actions of the USSR and the USA for the outbreak of the Six Day War (1967)."
+                },
+                {
+                  "q_id": "cme_2020_q2",
+                  "q_number": "Q2",
+                  "year": 2020,
+                  "tariff": 8,
+                  "type": "narrative",
+                  "question_text": "Write a narrative account analysing the key developments in the Palestinian issue in the years 1970-72."
+                },
+                {
+                  "q_id": "cme_2022_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2022,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the PFLP airplane hijacks (1970) for international attitudes towards the Palestine issue."
+                },
+                {
+                  "q_id": "cme_2023_q1",
+                  "q_number": "Q1",
+                  "year": 2023,
+                  "tariff": 4,
+                  "type": "consequence",
+                  "question_text": "Explain two consequences of the terrorist attack at the Munich Olympics."
+                },
+                {
+                  "q_id": "cme_2024_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2024,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of UN Resolution 242 (1967) for relations between Israel and the Arab states."
+                },
+                {
+                  "q_id": "cme_2024_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2024,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of Arafat renouncing terrorism (1988) for attempts to find a solution in the Middle East."
+                },
+                {
+                  "q_id": "cme_2025_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the Six Day War (1967) for Israel’s security."
+                },
+                {
+                  "q_id": "cme_2026_q2",
+                  "q_number": "Q2",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "narrative",
+                  "question_text": "Write a narrative account analysing the key events of the Six Day War (1967)."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m, 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            },
+            {
+              "point_index": 4,
+              "point_text": "The **expulsion of the PLO from Jordan (1970)**.",
+              "exam_count": 5,
+              "years_appeared": [
+                2018,
+                2019,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2018_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the occupied territories following the Six Day War (1967) for Arab-Israeli relations."
+                },
+                {
+                  "q_id": "cme_2019_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the actions of the USSR and the USA for the outbreak of the Six Day War (1967)."
+                },
+                {
+                  "q_id": "cme_2024_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2024,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of UN Resolution 242 (1967) for relations between Israel and the Arab states."
+                },
+                {
+                  "q_id": "cme_2025_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the Six Day War (1967) for Israel’s security."
+                },
+                {
+                  "q_id": "cme_2026_q2",
+                  "q_number": "Q2",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "narrative",
+                  "question_text": "Write a narrative account analysing the key events of the Six Day War (1967)."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            }
+          ]
+        },
+        {
+          "title": "3. Israel and Egypt, 1967–73",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "**Egyptian relations** with Israel, the USA, the USSR and other Arab states.",
+              "exam_count": 5,
+              "years_appeared": [
+                2018,
+                2019,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2018_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the occupied territories following the Six Day War (1967) for Arab-Israeli relations."
+                },
+                {
+                  "q_id": "cme_2019_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the actions of the USSR and the USA for the outbreak of the Six Day War (1967)."
+                },
+                {
+                  "q_id": "cme_2024_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2024,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of UN Resolution 242 (1967) for relations between Israel and the Arab states."
+                },
+                {
+                  "q_id": "cme_2025_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the Six Day War (1967) for Israel’s security."
+                },
+                {
+                  "q_id": "cme_2026_q2",
+                  "q_number": "Q2",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "narrative",
+                  "question_text": "Write a narrative account analysing the key events of the Six Day War (1967)."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            },
+            {
+              "point_index": 2,
+              "point_text": "Israel’s **consolidation of control of the occupied territories**.",
+              "exam_count": 5,
+              "years_appeared": [
+                2018,
+                2019,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2018_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the occupied territories following the Six Day War (1967) for Arab-Israeli relations."
+                },
+                {
+                  "q_id": "cme_2019_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the actions of the USSR and the USA for the outbreak of the Six Day War (1967)."
+                },
+                {
+                  "q_id": "cme_2024_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2024,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of UN Resolution 242 (1967) for relations between Israel and the Arab states."
+                },
+                {
+                  "q_id": "cme_2025_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the Six Day War (1967) for Israel’s security."
+                },
+                {
+                  "q_id": "cme_2026_q2",
+                  "q_number": "Q2",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "narrative",
+                  "question_text": "Write a narrative account analysing the key events of the Six Day War (1967)."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            },
+            {
+              "point_index": 3,
+              "point_text": "Key events of the **Yom Kippur War (1973)** and its aftermath.",
+              "exam_count": 9,
+              "years_appeared": [
+                2018,
+                2019,
+                2020,
+                2022,
+                2023,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2018_q2",
+                  "q_number": "Q2",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "narrative",
+                  "question_text": "Write a narrative account analysing Egypt’s relations with Israel in the years 1973-77."
+                },
+                {
+                  "q_id": "cme_2018_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the occupied territories following the Six Day War (1967) for Arab-Israeli relations."
+                },
+                {
+                  "q_id": "cme_2019_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the actions of the USSR and the USA for the outbreak of the Six Day War (1967)."
+                },
+                {
+                  "q_id": "cme_2020_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2020,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of Kissinger’s ‘shuttle diplomacy’ for diplomatic negotiations in the Middle East."
+                },
+                {
+                  "q_id": "cme_2022_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2022,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the Yom Kippur War (1973) for Israel’s relations with Egypt."
+                },
+                {
+                  "q_id": "cme_2023_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2023,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the oil crisis (1973-74) for diplomatic negotiations in the Middle East."
+                },
+                {
+                  "q_id": "cme_2024_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2024,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of UN Resolution 242 (1967) for relations between Israel and the Arab states."
+                },
+                {
+                  "q_id": "cme_2025_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the Six Day War (1967) for Israel’s security."
+                },
+                {
+                  "q_id": "cme_2026_q2",
+                  "q_number": "Q2",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "narrative",
+                  "question_text": "Write a narrative account analysing the key events of the Six Day War (1967)."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "key-topic-3",
+      "title": "Key Topic 3: Attempts at a solution, 1974–95",
+      "topics": [
+        {
+          "title": "1. Diplomatic negotiations",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "The significance of the **oil crisis** and the **involvement of the USA and the USSR**.",
+              "exam_count": 1,
+              "years_appeared": [
+                2023
+              ],
+              "last_examined": 2023,
+              "tariffs_examined": [
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "medium",
+              "overdue_score": 50,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2023_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2023,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the oil crisis (1973-74) for diplomatic negotiations in the Middle East."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            },
+            {
+              "point_index": 2,
+              "point_text": "**Kissinger, ‘shuttle diplomacy’** and the **reopening of the Suez Canal**.",
+              "exam_count": 2,
+              "years_appeared": [
+                2020,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2020_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2020,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of Kissinger’s ‘shuttle diplomacy’ for diplomatic negotiations in the Middle East."
+                },
+                {
+                  "q_id": "cme_2026_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of Henry Kissinger for diplomatic negotiations in the Middle East."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            },
+            {
+              "point_index": 3,
+              "point_text": "**Sadat’s visit to Israel (1977)**, **Begin’s visit to Egypt (1977)**, **US President Carter and Camp David (1978)** and the **Treaty of Washington (1979)**.",
+              "exam_count": 4,
+              "years_appeared": [
+                2018,
+                2022,
+                2024,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2018_q2",
+                  "q_number": "Q2",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "narrative",
+                  "question_text": "Write a narrative account analysing Egypt’s relations with Israel in the years 1973-77."
+                },
+                {
+                  "q_id": "cme_2022_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2022,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the Yom Kippur War (1973) for Israel’s relations with Egypt."
+                },
+                {
+                  "q_id": "cme_2024_q1",
+                  "q_number": "Q1",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "consequence",
+                  "question_text": "Explain two consequences of President Sadat of Egypt’s visit to Israel (1977)."
+                },
+                {
+                  "q_id": "cme_2026_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the Camp David Accords (1978) for Arab-Israeli relations."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m, 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            }
+          ]
+        },
+        {
+          "title": "2. The Palestinian issue",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "**Arafat’s speech to the UN (1974)**.",
+              "exam_count": 0,
+              "years_appeared": [],
+              "last_examined": "Never",
+              "tariffs_examined": [],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "high",
+              "overdue_score": 100,
+              "matched_questions": [],
+              "teacher_note": "⚠️ UNEXAMINED TOPIC: This specification point has never appeared on an official Edexcel paper since 2018. It is prime territory for an upcoming series."
+            },
+            {
+              "point_index": 2,
+              "point_text": "The significance of **PLO activities in Lebanon**.",
+              "exam_count": 3,
+              "years_appeared": [
+                2019,
+                2023,
+                2025
+              ],
+              "last_examined": 2025,
+              "tariffs_examined": [
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2019_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of PLO activities in Lebanon (1970-82) for Israeli security."
+                },
+                {
+                  "q_id": "cme_2023_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2023,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the Israeli invasion of Lebanon (1982) for the Palestinian issue."
+                },
+                {
+                  "q_id": "cme_2025_q2",
+                  "q_number": "Q2",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "narrative",
+                  "question_text": "Write a narrative account analysing the key developments of the PLO in Lebanon in the years 1970-82."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            },
+            {
+              "point_index": 3,
+              "point_text": "**Israeli reprisals, the invasion of Lebanon (1982)** and the results.",
+              "exam_count": 3,
+              "years_appeared": [
+                2019,
+                2023,
+                2025
+              ],
+              "last_examined": 2025,
+              "tariffs_examined": [
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2019_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2019,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of PLO activities in Lebanon (1970-82) for Israeli security."
+                },
+                {
+                  "q_id": "cme_2023_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2023,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the Israeli invasion of Lebanon (1982) for the Palestinian issue."
+                },
+                {
+                  "q_id": "cme_2025_q2",
+                  "q_number": "Q2",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "narrative",
+                  "question_text": "Write a narrative account analysing the key developments of the PLO in Lebanon in the years 1970-82."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            },
+            {
+              "point_index": 4,
+              "point_text": "The **Israeli occupied territories** and the **First Palestinian Intifada (1987–93)**.",
+              "exam_count": 3,
+              "years_appeared": [
+                2018,
+                2020,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2018_q3b",
+                  "q_number": "Q3(b)",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the occupied territories following the Six Day War (1967) for Arab-Israeli relations."
+                },
+                {
+                  "q_id": "cme_2020_q1",
+                  "q_number": "Q1",
+                  "year": 2020,
+                  "tariff": 4,
+                  "type": "consequence",
+                  "question_text": "Explain two consequences of the Palestinian Intifada (1987–93)."
+                },
+                {
+                  "q_id": "cme_2026_q2",
+                  "q_number": "Q2",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "narrative",
+                  "question_text": "Write a narrative account analysing the key events of the Six Day War (1967)."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m, 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            }
+          ]
+        },
+        {
+          "title": "3. Attempts at a solution",
+          "points": [
+            {
+              "point_index": 1,
+              "point_text": "The significance of **Arafat’s renunciation of terrorism** in a speech at the UN (1988).",
+              "exam_count": 3,
+              "years_appeared": [
+                2020,
+                2023,
+                2024
+              ],
+              "last_examined": 2024,
+              "tariffs_examined": [
+                4,
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2020_q2",
+                  "q_number": "Q2",
+                  "year": 2020,
+                  "tariff": 8,
+                  "type": "narrative",
+                  "question_text": "Write a narrative account analysing the key developments in the Palestinian issue in the years 1970-72."
+                },
+                {
+                  "q_id": "cme_2023_q1",
+                  "q_number": "Q1",
+                  "year": 2023,
+                  "tariff": 4,
+                  "type": "consequence",
+                  "question_text": "Explain two consequences of the terrorist attack at the Munich Olympics."
+                },
+                {
+                  "q_id": "cme_2024_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2024,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of Arafat renouncing terrorism (1988) for attempts to find a solution in the Middle East."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m, 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            },
+            {
+              "point_index": 2,
+              "point_text": "**Changing superpower policies** in the Middle East: **US involvement in the Gulf War (1991)**, and the **end of the Cold War**.",
+              "exam_count": 0,
+              "years_appeared": [],
+              "last_examined": "Never",
+              "tariffs_examined": [],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "high",
+              "overdue_score": 100,
+              "matched_questions": [],
+              "teacher_note": "⚠️ UNEXAMINED TOPIC: This specification point has never appeared on an official Edexcel paper since 2018. It is prime territory for an upcoming series."
+            },
+            {
+              "point_index": 3,
+              "point_text": "**Arafat, Rabin and the Oslo Accords (1993)**; the **setting up of the Palestinian National Authority**; the **Israel-Jordan peace treaty (1994)**; **Oslo II (1995)**.",
+              "exam_count": 7,
+              "years_appeared": [
+                2018,
+                2019,
+                2022,
+                2024,
+                2025,
+                2026
+              ],
+              "last_examined": 2026,
+              "tariffs_examined": [
+                4,
+                8
+              ],
+              "has_12m": false,
+              "has_16m": false,
+              "high_tariff_gap": true,
+              "overdue_status": "recent",
+              "overdue_score": 15,
+              "matched_questions": [
+                {
+                  "q_id": "cme_2018_q2",
+                  "q_number": "Q2",
+                  "year": 2018,
+                  "tariff": 8,
+                  "type": "narrative",
+                  "question_text": "Write a narrative account analysing Egypt’s relations with Israel in the years 1973-77."
+                },
+                {
+                  "q_id": "cme_2019_q1",
+                  "q_number": "Q1",
+                  "year": 2019,
+                  "tariff": 4,
+                  "type": "consequence",
+                  "question_text": "Explain two consequences of the Oslo Accords (1993)."
+                },
+                {
+                  "q_id": "cme_2022_q2",
+                  "q_number": "Q2",
+                  "year": 2022,
+                  "tariff": 8,
+                  "type": "narrative",
+                  "question_text": "Write a narrative account analysing the key developments in the negotiations between Israel and the Palestinians in the years 1993-95."
+                },
+                {
+                  "q_id": "cme_2022_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2022,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the Yom Kippur War (1973) for Israel’s relations with Egypt."
+                },
+                {
+                  "q_id": "cme_2024_q1",
+                  "q_number": "Q1",
+                  "year": 2024,
+                  "tariff": 4,
+                  "type": "consequence",
+                  "question_text": "Explain two consequences of President Sadat of Egypt’s visit to Israel (1977)."
+                },
+                {
+                  "q_id": "cme_2025_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2025,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the Israel-Jordan peace treaty (1994) for peace in the Middle East."
+                },
+                {
+                  "q_id": "cme_2026_q3c",
+                  "q_number": "Q3(c)",
+                  "year": 2026,
+                  "tariff": 8,
+                  "type": "importance",
+                  "question_text": "Explain the importance of the Camp David Accords (1978) for Arab-Israeli relations."
+                }
+              ],
+              "teacher_note": "🎯 ESSAY GAP: Examined previously as a 4m, 8m question, but NEVER set as a 12m or 16m essay. Watch out for an extended evaluation question."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary_stats": {
+    "total_specification_points": 32,
+    "overdue_topics_count": 3,
+    "high_tariff_gaps_count": 32,
+    "overdue_percentage": 9
+  }
+}
