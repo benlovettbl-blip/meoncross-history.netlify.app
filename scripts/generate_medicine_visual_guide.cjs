@@ -1288,7 +1288,7 @@ const SPREADS = [
         stimulus: ['Doctors (BMA)', 'Cost of the service'],
         note: '(You must also use information of your own.) [12 marks]',
         guidance:
-          'Timing: 18 mins • Structure: 3 fully developed PEEL paragraphs (P1: BMA fears over income & civil service status, P2: Financial cost & soaring prescription demand, P3: Own knowledge - ideological opposition to state medicine / Bevan’s compromises with consultants).',
+          'Timing: 20 mins • Structure: 3 fully developed PEEL paragraphs (P1: BMA fears over income & civil service status, P2: Financial cost & soaring prescription demand, P3: Own knowledge - ideological opposition to state medicine / Bevan’s compromises with consultants).',
         lines: 24,
       },
     },
@@ -1402,7 +1402,7 @@ const SPREADS = [
         stimulus: ['Howard Florey and Ernst Chain', 'The Second World War'],
         note: '(You must also use information of your own.) [12 marks]',
         guidance:
-          'Timing: 18 mins • Structure: 3 fully developed PEEL paragraphs (P1: Florey and Chain’s purification & mouse trials, P2: The Second World War & military urgency for casualty care, P3: Own knowledge - US War Production Board / Peoria melon strain & deep-tank fermentation).',
+          'Timing: 20 mins • Structure: 3 fully developed PEEL paragraphs (P1: Florey and Chain’s purification & mouse trials, P2: The Second World War & military urgency for casualty care, P3: Own knowledge - US War Production Board / Peoria melon strain & deep-tank fermentation).',
         lines: 24,
       },
     },
@@ -1510,7 +1510,7 @@ const SPREADS = [
         stimulus: ['The 1875 Public Health Act', 'The ban on smoking in public places (2007)'],
         ownKnowledgeNote: '(You must also use information of your own.) [16 marks + 4 marks SPaG]',
         guidance:
-          'Timing: 25 mins • Structure: Criteria Intro → Paragraph 1 (Agree: Role of government legislation like 1875 Act, Bazalgette sewers, 1948 NHS, 2007 smoking ban) → Paragraph 2 (Disagree: Role of scientific individuals & discoveries like Pasteur, Koch, Doll & Hill) → Paragraph 3 (Own Knowledge: Role of technology like CT scans / clean water engineering / mass media education) → Sustained Conclusion weighing whether government intervention was the crucial catalyst that implemented scientific breakthroughs.',
+          'Timing: 30 mins • Structure: Criteria Intro → Paragraph 1 (Agree: Role of government legislation like 1875 Act, Bazalgette sewers, 1948 NHS, 2007 smoking ban) → Paragraph 2 (Disagree: Role of scientific individuals & discoveries like Pasteur, Koch, Doll & Hill) → Paragraph 3 (Own Knowledge: Role of technology like CT scans / clean water engineering / mass media education) → Sustained Conclusion weighing whether government intervention was the crucial catalyst that implemented scientific breakthroughs.',
         checklist: [
           '1. Direct Engagement & Criteria (Define "most important reason" across 170+ years of public health)',
           '2. Argument 1 (Agree: 1875 Public Health Act & 2007 anti-smoking ban ending laissez-faire)',
@@ -1644,7 +1644,7 @@ const SPREADS = [
         provenanceClue:
           'Provenance Hints: Consider Source A’s emotional first-hand perspective under fire versus Source B’s objective administrative logistics report for the War Office.',
         guidance:
-          'Timing: 12 mins • Structure: Evaluate Content, Knowledge context, and Provenance (Nature, Origin, Motive) for Source A, then Source B, with an overall judgement on usefulness.',
+          'Timing: 15 mins • Structure: Evaluate Content, Knowledge context, and Provenance (Nature, Origin, Motive) for Source A, then Source B, with an overall judgement on usefulness.',
         lines: 16,
       },
     },
@@ -1907,7 +1907,7 @@ const SPREADS = [
         provenanceClue:
           'Provenance Hints: Contrast Graves’ vivid post-war literary recollection with the immediate clinical accuracy and statistical focus of the military MO’s operational casualty report.',
         guidance:
-          'Timing: 12 mins • Structure: Evaluate Content, Knowledge context, and Provenance (Nature, Origin, Motive) for Source A, then Source B, with a sustained usefulness judgement.',
+          'Timing: 15 mins • Structure: Evaluate Content, Knowledge context, and Provenance (Nature, Origin, Motive) for Source A, then Source B, with a sustained usefulness judgement.',
         lines: 16,
       },
     },
@@ -2170,7 +2170,7 @@ const SPREADS = [
         provenanceClue:
           'Provenance Hints: Evaluate the objective medical statistical authority of the BMJ professional article against the personal eyewitness technical report of the pioneer who built the first blood depot.',
         guidance:
-          'Timing: 12 mins • Structure: Evaluate Content, Knowledge context, and Provenance (Nature, Origin, Motive) for Source A, then Source B, with a clear comparative usefulness conclusion.',
+          'Timing: 15 mins • Structure: Evaluate Content, Knowledge context, and Provenance (Nature, Origin, Motive) for Source A, then Source B, with a clear comparative usefulness conclusion.',
         lines: 16,
       },
     },
@@ -4202,7 +4202,7 @@ function renderRightPage(data, pageNum, spreadIndex) {
       <div style="background: #ffffff; border: 1.5px solid #0f172a; border-radius: 5px; padding: 7px 9px; margin-bottom: 6px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
           <strong style="font-size: 8.2pt; color: #0f172a;">${right.q4.title}</strong>
-          <span style="font-size: 7pt; font-weight: 700; color: #0f172a; background: #f1f5f9; padding: 1px 5px; border-radius: 2px;">Timing: ~18 mins</span>
+          <span style="font-size: 7pt; font-weight: 700; color: #0f172a; background: #f1f5f9; padding: 1px 5px; border-radius: 2px;">Timing: ~20 mins</span>
         </div>
         <div style="font-size: 7.5pt; font-weight: 800; color: #0f172a; margin-bottom: 4px;">
           ${right.q4.question}
@@ -4228,7 +4228,7 @@ function renderRightPage(data, pageNum, spreadIndex) {
           <strong>Q4 Level 4 (10–12m):</strong> 3 fully developed analytical PEEL paragraphs including own knowledge.
         </div>
         <div style="text-align: right;">
-          <strong>Target Time:</strong> ~23 Mins
+          <strong>Target Time:</strong> ~25 Mins
         </div>
         <div style="display: flex; justify-content: flex-end; gap: 4px;">
           <div style="border: 1px solid #0f172a; border-radius: 3px; padding: 2px 5px; text-align: center;">
@@ -4256,7 +4256,7 @@ function renderRightPage(data, pageNum, spreadIndex) {
       <div style="background: #ffffff; border: 2px solid #0f172a; border-radius: 6px; padding: 8px 10px; margin-bottom: 6px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
           <strong style="font-size: 8.5pt; color: #0f172a;">${right.essay.title}</strong>
-          <span style="font-size: 7pt; font-weight: 700; color: #ffffff; background: #0f172a; padding: 2px 6px; border-radius: 3px;">Timing: ~25 mins</span>
+          <span style="font-size: 7pt; font-weight: 700; color: #ffffff; background: #0f172a; padding: 2px 6px; border-radius: 3px;">Timing: ~30 mins</span>
         </div>
         <div style="font-size: 8pt; font-weight: 800; color: #0f172a; line-height: 1.3; margin-bottom: 4px;">
           ${essayQuestionText}
@@ -4283,7 +4283,7 @@ function renderRightPage(data, pageNum, spreadIndex) {
           <strong>SPaG (1–4m):</strong> Accurate spelling of medical terms, precise punctuation, and formal academic register.
         </div>
         <div style="text-align: right;">
-          <strong>Target Time:</strong> ~25 Mins
+          <strong>Target Time:</strong> ~30 Mins
         </div>
         <div style="display: flex; justify-content: flex-end; gap: 4px;">
           <div style="border: 1px solid #0f172a; border-radius: 3px; padding: 2px 5px; text-align: center;">
@@ -4349,7 +4349,7 @@ function renderRightPage(data, pageNum, spreadIndex) {
             <span style="font-size: 6.6pt; font-weight: 700; color: #475569;">Feature 1</span>
           </div>
           <div style="font-size: 7.2pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">${right.q1a.question}</div>
-          <div style="font-size: 6.3pt; color: #64748b; font-style: italic; margin-bottom: 3px;">1 mark feature + 1 mark supporting factual detail. ~2 mins.</div>
+          <div style="font-size: 6.3pt; color: #64748b; font-style: italic; margin-bottom: 3px;">1 mark feature + 1 mark supporting factual detail. ~2.5 mins.</div>
           ${renderLines(4)}
         </div>
         <div style="background: #f8fafc; border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 6px 8px;">
@@ -4358,7 +4358,7 @@ function renderRightPage(data, pageNum, spreadIndex) {
             <span style="font-size: 6.6pt; font-weight: 700; color: #475569;">Feature 2</span>
           </div>
           <div style="font-size: 7.2pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">${right.q1b.question}</div>
-          <div style="font-size: 6.3pt; color: #64748b; font-style: italic; margin-bottom: 3px;">1 mark feature + 1 mark supporting factual detail. ~2 mins.</div>
+          <div style="font-size: 6.3pt; color: #64748b; font-style: italic; margin-bottom: 3px;">1 mark feature + 1 mark supporting factual detail. ~2.5 mins.</div>
           ${renderLines(4)}
         </div>
       </div>
@@ -4367,7 +4367,7 @@ function renderRightPage(data, pageNum, spreadIndex) {
       <div style="background: #ffffff; border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 6px 8px; margin-bottom: 6px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
           <strong style="font-size: 8pt; color: #1e3a8a;">${right.q2a.title}</strong>
-          <span style="font-size: 6.8pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; padding: 1px 5px; border-radius: 2px;">Timing: ~12 mins</span>
+          <span style="font-size: 6.8pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; padding: 1px 5px; border-radius: 2px;">Timing: ~15 mins</span>
         </div>
         <div style="font-size: 7.4pt; font-weight: 800; color: #0f172a; margin-bottom: 4px;">${right.q2a.question}</div>
 
@@ -4387,7 +4387,7 @@ function renderRightPage(data, pageNum, spreadIndex) {
           <strong>Level 3 (5–6m):</strong> Evaluates content + knowledge + provenance for both sources.<br/>
           <strong>Level 4 (7–8m):</strong> Reaches a sustained, criteria-based comparative conclusion on enquiry utility.
         </div>
-        <div style="text-align: right;"><strong>Time Target:</strong> ~16 Mins</div>
+        <div style="text-align: right;"><strong>Time Target:</strong> ~20 Mins</div>
         <div style="display: flex; justify-content: flex-end; gap: 4px;">
           <div style="border: 1px solid #0f172a; border-radius: 3px; padding: 2px 5px; text-align: center;">
             <span style="display: block; font-size: 5.5pt; text-transform: uppercase;">Q1 Features</span>
@@ -4447,7 +4447,7 @@ function renderRightPage(data, pageNum, spreadIndex) {
             <span style="font-size: 6.6pt; font-weight: 700; color: #475569;">Feature 1</span>
           </div>
           <div style="font-size: 7.2pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">${right.q1a.question}</div>
-          <div style="font-size: 6.3pt; color: #64748b; font-style: italic; margin-bottom: 3px;">1 mark feature + 1 mark supporting factual detail. ~2 mins.</div>
+          <div style="font-size: 6.3pt; color: #64748b; font-style: italic; margin-bottom: 3px;">1 mark feature + 1 mark supporting factual detail. ~2.5 mins.</div>
           ${renderLines(4)}
         </div>
         <div style="background: #f8fafc; border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 6px 8px;">
@@ -4456,7 +4456,7 @@ function renderRightPage(data, pageNum, spreadIndex) {
             <span style="font-size: 6.6pt; font-weight: 700; color: #475569;">Feature 2</span>
           </div>
           <div style="font-size: 7.2pt; font-weight: 700; color: #0f172a; margin-bottom: 2px;">${right.q1b.question}</div>
-          <div style="font-size: 6.3pt; color: #64748b; font-style: italic; margin-bottom: 3px;">1 mark feature + 1 mark supporting factual detail. ~2 mins.</div>
+          <div style="font-size: 6.3pt; color: #64748b; font-style: italic; margin-bottom: 3px;">1 mark feature + 1 mark supporting factual detail. ~2.5 mins.</div>
           ${renderLines(4)}
         </div>
       </div>
@@ -4465,7 +4465,7 @@ function renderRightPage(data, pageNum, spreadIndex) {
       <div style="background: #ffffff; border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 8px 10px; margin-bottom: 6px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
           <strong style="font-size: 8.2pt; color: #1e3a8a;">${right.q2b.title || 'Question 2(b) [4 Marks] &bull; Follow-Up Enquiry Grid'}</strong>
-          <span style="font-size: 6.8pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; padding: 1px 5px; border-radius: 2px;">Timing: ~8 mins</span>
+          <span style="font-size: 6.8pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; padding: 1px 5px; border-radius: 2px;">Timing: ~5 mins</span>
         </div>
         <div style="font-size: 7.4pt; font-weight: 800; color: #0f172a; margin-bottom: 4px;">
           ${right.q2b.question || 'Study Source A. How could you follow up Source A to find out more about medical treatment on the Western Front?'}
@@ -4491,7 +4491,7 @@ function renderRightPage(data, pageNum, spreadIndex) {
         <div>
           <strong>Marking Rule:</strong> 1 mark per row. Question must be an analytical enquiry question; source type must be specific contemporary record (e.g. RAMC unit war diary, Casualty Clearing Station admission logs, medical officer personal journal).
         </div>
-        <div style="text-align: right;"><strong>Time Target:</strong> ~12 Mins</div>
+        <div style="text-align: right;"><strong>Time Target:</strong> ~10 Mins</div>
         <div style="display: flex; justify-content: flex-end; gap: 4px;">
           <div style="border: 1px solid #0f172a; border-radius: 3px; padding: 2px 5px; text-align: center;">
             <span style="display: block; font-size: 5.5pt; text-transform: uppercase;">Q1 Features</span>
@@ -4780,7 +4780,7 @@ function renderInsideCover() {
           How Paper 1 is Structured, Timed &amp; Assessed
         </h2>
         <p style="font-size: 8pt; color: #475569; margin: 2px 0 0 0;">
-          Total Exam Duration: <strong>1 Hour 15 Minutes (75 Minutes)</strong> &bull; Total Paper Marks: <strong>52 Raw Marks</strong> (including 4 marks for SPaG)
+          Total Exam Duration: <strong>1 Hour 20 Minutes (80 Minutes)</strong> &bull; Total Paper Marks: <strong>52 Raw Marks</strong> (including 4 marks for SPaG)
         </p>
       </div>
 
@@ -4803,13 +4803,13 @@ function renderInsideCover() {
           <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 3px; padding: 5px; margin-bottom: 5px;">
             <strong style="font-size: 7.5pt; color: #0f172a;">Q2(a): Source Utility Enquiry [8 Marks]</strong>
             <div style="font-size: 6.8pt; color: #475569; margin-top: 1px;">
-              How useful are Sources A and B for an enquiry into... Evaluates Content, Contextual Knowledge, and Provenance (Nature, Origin, Purpose). Spend ~12 mins.
+              How useful are Sources A and B for an enquiry into... Evaluates Content, Contextual Knowledge, and Provenance (Nature, Origin, Purpose). Spend ~15 mins.
             </div>
           </div>
           <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 3px; padding: 5px;">
             <strong style="font-size: 7.5pt; color: #0f172a;">Q2(b): Follow-Up Investigation Grid [4 Marks]</strong>
             <div style="font-size: 6.8pt; color: #475569; margin-top: 1px;">
-              Complete the official 4-part enquiry grid: Detail in Source, Question to ask, Specific Contemporary Source Type, and How it helps. Spend ~8 mins.
+              Complete the official 4-part enquiry grid: Detail in Source, Question to ask, Specific Contemporary Source Type, and How it helps. Spend ~5 mins.
             </div>
           </div>
         </div>
@@ -4818,7 +4818,7 @@ function renderInsideCover() {
         <div style="border: 1.5px solid #0f172a; border-radius: 5px; padding: 10px; background: #f8fafc;">
           <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #0f172a; padding-bottom: 4px; margin-bottom: 6px;">
             <strong style="font-size: 9pt; color: #0f172a;">SECTION B: THEMATIC DEPTH STUDY</strong>
-            <span style="font-size: 7pt; font-weight: 800; background: #0f172a; color: #fff; padding: 2px 5px; border-radius: 3px;">36 Marks &bull; 50 mins</span>
+            <span style="font-size: 7pt; font-weight: 800; background: #0f172a; color: #fff; padding: 2px 5px; border-radius: 3px;">36 Marks &bull; 55 mins</span>
           </div>
           <div style="font-size: 7.2pt; color: #334155; line-height: 1.35; margin-bottom: 6px;">
             Focuses on <em>Medicine in Britain, c.1250–present</em> across Medieval, Renaissance, Industrial, and Modern eras. Answer 3 questions.
@@ -4832,13 +4832,13 @@ function renderInsideCover() {
           <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 3px; padding: 5px; margin-bottom: 5px;">
             <strong style="font-size: 7.5pt; color: #0f172a;">Q4: Multi-Causal Explanation [12 Marks]</strong>
             <div style="font-size: 6.8pt; color: #475569; margin-top: 1px;">
-              Explain why... Requires 3 fully developed PEEL paragraphs. Must address the two stimulus points plus one factor of own knowledge. Spend ~18 mins.
+              Explain why... Requires 3 fully developed PEEL paragraphs. Must address the two stimulus points plus one factor of own knowledge. Spend ~20 mins.
             </div>
           </div>
           <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 3px; padding: 5px;">
             <strong style="font-size: 7.5pt; color: #0f172a;">Q5 / Q6: Judgement Statement Essay [16 + 4 SPaG = 20 Marks]</strong>
             <div style="font-size: 6.8pt; color: #475569; margin-top: 1px;">
-              Choice between Q5 or Q6. A broad thematic essay spanning 150–300+ years. Must evaluate both sides and reach a sustained judgement. Spend ~25 mins.
+              Choice between Q5 or Q6. A broad thematic essay spanning 150–300+ years. Must evaluate both sides and reach a sustained judgement. Spend ~30 mins.
             </div>
           </div>
         </div>
@@ -4876,8 +4876,8 @@ function renderInsideCover() {
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 6.9pt; line-height: 1.35; color: #1e293b;">
           <div>
             <div style="margin-bottom: 5px;">
-              <strong style="color: #1e3a8a;">1. Strict Time Management (1.4 mins per mark):</strong><br/>
-              Spend strictly 25 minutes on Section A and 50 minutes on Section B. Never steal time from Section B. If you run out of time on Q5/Q6, you forfeit up to 20 marks!
+              <strong style="color: #1e3a8a;">1. Strict Time Management (~1.5 mins per mark):</strong><br/>
+              Spend strictly 25 minutes on Section A and 55 minutes on Section B. Never steal time from Section B. If you run out of time on Q5/Q6, you forfeit up to 20 marks!
             </div>
             <div style="margin-bottom: 5px;">
               <strong style="color: #1e3a8a;">2. The "Rule of Three" for Essays:</strong><br/>
@@ -5043,7 +5043,7 @@ function renderBackCover() {
         <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 8px 10px;">
           <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 3px; margin-bottom: 4px;">
             <strong style="font-size: 8pt; color: #1e3a8a;">Q2(a): Source Utility Enquiry [8 Marks]</strong>
-            <span style="font-size: 6.5pt; font-weight: 700; color: #64748b;">~12 Mins</span>
+            <span style="font-size: 6.5pt; font-weight: 700; color: #64748b;">~15 Mins</span>
           </div>
           <div style="font-size: 6.8pt; color: #1e293b; line-height: 1.3;">
             &bull; <strong>Formula:</strong> Evaluate Source A (Content + Knowledge + Provenance) &rarr; Evaluate Source B (Content + Knowledge + Provenance) &rarr; Comparative Conclusion on usefulness for enquiry.<br/>
@@ -5056,7 +5056,7 @@ function renderBackCover() {
         <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 8px 10px;">
           <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 3px; margin-bottom: 4px;">
             <strong style="font-size: 8pt; color: #1e3a8a;">Q2(b): Follow-Up Enquiry Grid [4 Marks]</strong>
-            <span style="font-size: 6.5pt; font-weight: 700; color: #64748b;">~8 Mins</span>
+            <span style="font-size: 6.5pt; font-weight: 700; color: #64748b;">~5 Mins</span>
           </div>
           <div style="font-size: 6.8pt; color: #1e293b; line-height: 1.3;">
             &bull; <strong>Row 1: Detail:</strong> Quote directly from the source.<br/>
@@ -5083,7 +5083,7 @@ function renderBackCover() {
         <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 8px 10px;">
           <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 3px; margin-bottom: 4px;">
             <strong style="font-size: 8pt; color: #1e3a8a;">Q4: Multi-Causal Explanation [12 Marks]</strong>
-            <span style="font-size: 6.5pt; font-weight: 700; color: #64748b;">~18 Mins</span>
+            <span style="font-size: 6.5pt; font-weight: 700; color: #64748b;">~20 Mins</span>
           </div>
           <div style="font-size: 6.8pt; color: #1e293b; line-height: 1.3;">
             &bull; <strong>Formula:</strong> 3 fully developed PEEL paragraphs. Must address Stimulus Point 1, Stimulus Point 2, and ONE factor of Own Knowledge.<br/>
@@ -5096,7 +5096,7 @@ function renderBackCover() {
         <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 8px 10px;">
           <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 3px; margin-bottom: 4px;">
             <strong style="font-size: 8pt; color: #1e3a8a;">Q5 / Q6: Judgement Essay [16 + 4 SPaG = 20 Marks]</strong>
-            <span style="font-size: 6.5pt; font-weight: 700; color: #64748b;">~25 Mins</span>
+            <span style="font-size: 6.5pt; font-weight: 700; color: #64748b;">~30 Mins</span>
           </div>
           <div style="font-size: 6.8pt; color: #1e293b; line-height: 1.3;">
             &bull; <strong>Formula:</strong> Brief Intro with criteria &rarr; P1: Agree with statement (PEEL) &rarr; P2: Disagree / Alternative Factor (PEEL) &rarr; P3: Third cross-era factor (PEEL) &rarr; Sustained Judgement Conclusion.<br/>
@@ -5502,6 +5502,37 @@ async function run() {
   await page.goto(pathToFileURL(outHtmlPath).href, { waitUntil: 'networkidle0' });
   await page.evaluateHandle('document.fonts.ready');
 
+  // Proactive Layout Guardrail: Assert zero page overflow
+  const overflowReports = await page.evaluate(() => {
+    const pages = Array.from(document.querySelectorAll('.page'));
+    const overflows = [];
+    pages.forEach((p, idx) => {
+      const pageNum = p.getAttribute('data-page') || idx + 1;
+      const scrollHeight = p.scrollHeight;
+      if (scrollHeight > 1124) {
+        overflows.push({
+          pageNum,
+          id: p.id,
+          scrollHeight,
+          overflowBy: scrollHeight - 1123,
+        });
+      }
+    });
+    return { totalPages: pages.length, overflows };
+  });
+
+  console.log(`📐 Page layout check: Total pages = ${overflowReports.totalPages}`);
+  if (overflowReports.overflows.length > 0) {
+    const details = overflowReports.overflows
+      .map(
+        (o) =>
+          `Page ${o.pageNum} (#${o.id}): ${o.scrollHeight}px (overflows by +${o.overflowBy}px)`,
+      )
+      .join('\n');
+    throw new Error(`PDF Generation halted due to page overflow:\n${details}`);
+  }
+  console.log('✅ Automated Overflow Check: All pages fit cleanly within 1123px!');
+
   const pdfFilename = 'edexcel_medicine_visual_revision_and_exam_guide.pdf';
   const unitPdfPath = path.join(PATHS.UNITS, 'edexcel_medicine', pdfFilename);
   const rootPdfPath = path.join(PATHS.PDFS, pdfFilename);
@@ -5522,7 +5553,7 @@ async function run() {
   console.log(`📋 Synced PDF to public/pdfs/: ${rootPdfPath}`);
 
   console.log(
-    '\n🎉 SUCCESS: 36-Page Complete Medicine Visual Revision & Exam Assessment Guide is compiled!',
+    '\n🎉 SUCCESS: 40-Page Complete Medicine Visual Revision & Exam Assessment Guide is compiled!',
   );
 }
 
