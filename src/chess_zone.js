@@ -432,44 +432,44 @@ export function renderChessHubView() {
   let html = `
     <div style="max-width: 1200px; width: 100%; box-sizing: border-box; margin: 0 auto; padding: 0 16px 60px 16px; animation: fadeInUp 0.25s ease-out; font-family: 'Outfit', sans-serif; overflow-x: hidden;">
       
-      <!-- Top Hero Header -->
-      <div style="background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%); border-radius: 16px; padding: 24px 22px; color: #ffffff; margin-bottom: 22px; box-shadow: 0 8px 24px rgba(30, 27, 75, 0.25); position: relative; overflow: hidden; border: 1.5px solid rgba(139, 92, 246, 0.3);">
+      <!-- Top Hero Header: 1960s Tournament Salon Placard -->
+      <div style="background: #1c1917; border-radius: 12px; padding: 26px 24px; color: #ffffff; margin-bottom: 22px; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25); position: relative; overflow: hidden; border: 2px solid #44403c;">
         
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; position: relative; z-index: 2;">
           <div style="max-width: 680px;">
-            <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(168, 85, 247, 0.2); border: 1px solid rgba(168, 85, 247, 0.4); padding: 5px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; color: #c084fc; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px;">
-              <i class="fa-solid fa-clock"></i> Period 6 Thursdays · Meoncross Co-Curricular Club
+            <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(212, 175, 55, 0.12); border: 1px solid rgba(212, 175, 55, 0.35); padding: 4px 12px; border-radius: 4px; font-size: 0.76rem; font-weight: 700; color: #d4af37; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 10px; font-family: 'Playfair Display', Georgia, serif; font-style: italic;">
+              Period VI Thursdays · Meoncross Chess Salon
             </div>
-            <h1 style="font-family: 'Playfair Display', serif; font-size: 1.95rem; margin: 0 0 6px 0; color: #ffffff; font-weight: 800; line-height: 1.2;">
+            <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 2.15rem; margin: 0 0 6px 0; color: #fafaf9; font-weight: 700; letter-spacing: 0.02em; line-height: 1.15;">
               Meoncross Chess Club &amp; House League
             </h1>
-            <p style="margin: 0; font-size: 0.92rem; color: #cbd5e1; line-height: 1.5;">
-              Compete on the master ladder, generate instant tournament pairings, and score vital <strong>House Points</strong> for <strong>Warrior</strong>, <strong>Dreadnought</strong>, <strong>Victory</strong>, and <strong>Invincible</strong>. Every game completed earns points for your House!
+            <p style="margin: 0; font-size: 0.9rem; color: #d6d3d1; line-height: 1.55; font-family: 'Outfit', sans-serif;">
+              Autumn Term tournament ledger and master ladder. Every completed game scores points toward the annual House Championship for <strong>Victory</strong>, <strong>Warrior</strong>, <strong>Dreadnought</strong>, and <strong>Invincible</strong>.
             </p>
           </div>
 
           <!-- Quick Action Buttons -->
           <div style="display: flex; flex-direction: column; gap: 8px; align-items: flex-end;">
             <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end;">
-              <button onclick="window.switchChessTab('signin')" style="background: #10b981; color: #ffffff; border: none; font-weight: 700; font-size: 0.88rem; padding: 9px 16px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 10px rgba(16, 185, 129, 0.35); transition: all 0.15s;">
-                <i class="fa-solid fa-chess"></i> Period 6 Hub &amp; League (${chessState.checkedInPlayerIds.length})
+              <button onclick="window.switchChessTab('signin')" style="background: #faf7f2; color: #1c1917; border: 1.5px solid #e7e2d7; font-weight: 700; font-size: 0.86rem; padding: 9px 18px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.15); transition: all 0.15s;" onmouseover="this.style.background='#ffffff'" onmouseout="this.style.background='#faf7f2'">
+                <span style="font-size: 1.1rem; line-height: 1;">♔</span> Period 6 Hub (${chessState.checkedInPlayerIds.length})
               </button>
-              <button onclick="window.openLogMatchModal()" style="background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%); color: #ffffff; border: none; font-weight: 700; font-size: 0.88rem; padding: 9px 16px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(168, 85, 247, 0.35); transition: all 0.15s;">
-                <i class="fa-solid fa-plus-circle"></i> Log Match Result
+              <button onclick="window.openLogMatchModal()" style="background: #292524; color: #fafaf9; border: 1.5px solid #78716c; font-weight: 700; font-size: 0.86rem; padding: 9px 18px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.25); transition: all 0.15s;" onmouseover="this.style.borderColor='#d4af37';this.style.color='#d4af37'" onmouseout="this.style.borderColor='#78716c';this.style.color='#fafaf9'">
+                <span style="font-size: 1rem; line-height: 1;">⚔</span> Record Game Result
               </button>
             </div>
             <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end;">
-              <button onclick="window.openAssemblySlideModal()" style="background: rgba(245, 158, 11, 0.2); color: #fde047; border: 1.5px solid rgba(245, 158, 11, 0.5); font-weight: 700; font-size: 0.8rem; padding: 6px 12px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
-                <i class="fa-solid fa-file-powerpoint"></i> Assembly Slide
+              <button onclick="window.openAssemblySlideModal()" style="background: rgba(212, 175, 55, 0.12); color: #fef08a; border: 1px solid rgba(212, 175, 55, 0.4); font-weight: 700; font-size: 0.78rem; padding: 6px 12px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+                <span>⚑</span> Assembly Slide
               </button>
-              <button onclick="window.openDataVaultModal()" style="background: rgba(59, 130, 246, 0.25); color: #93c5fd; border: 1.5px solid rgba(59, 130, 246, 0.6); font-weight: 700; font-size: 0.8rem; padding: 6px 12px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Safe Backup, File Restore & Permanent Code Export">
-                <i class="fa-solid fa-vault"></i> 💾 Backup &amp; Data
+              <button onclick="window.openDataVaultModal()" style="background: rgba(255, 255, 255, 0.08); color: #e7e5e4; border: 1px solid #57534e; font-weight: 700; font-size: 0.78rem; padding: 6px 12px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Safe Backup, File Restore & Permanent Code Export">
+                <span>☖</span> Data Vault
               </button>
               ${
                 chessState.players.length === 0 && getBackupInfo()
                   ? `
-                <button onclick="window.restoreChessBackup()" style="background: rgba(59, 130, 246, 0.25); color: #93c5fd; border: 1.5px solid rgba(59, 130, 246, 0.6); font-weight: 700; font-size: 0.78rem; padding: 6px 12px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;" title="Undo reset & restore previous cohort">
-                  <i class="fa-solid fa-arrow-rotate-left"></i> Restore Cohort (${getBackupInfo().playerCount})
+                <button onclick="window.restoreChessBackup()" style="background: rgba(255, 255, 255, 0.08); color: #e7e5e4; border: 1px solid #57534e; font-weight: 700; font-size: 0.78rem; padding: 6px 12px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;" title="Undo reset & restore previous cohort">
+                  <span>↺</span> Restore Cohort (${getBackupInfo().playerCount})
                 </button>
               `
                   : ''
@@ -477,8 +477,8 @@ export function renderChessHubView() {
               ${
                 chessState.players.length > 0
                   ? `
-                <button onclick="window.resetClubDataToCleanSlate()" style="background: rgba(239, 68, 68, 0.15); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); font-weight: 600; font-size: 0.78rem; padding: 6px 10px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;" title="Reset all pupils and points (Emergency backup preserved)">
-                  <i class="fa-solid fa-rotate-left"></i> Reset Slate
+                <button onclick="window.resetClubDataToCleanSlate()" style="background: rgba(220, 38, 38, 0.12); color: #fca5a5; border: 1px solid rgba(220, 38, 38, 0.35); font-weight: 600; font-size: 0.75rem; padding: 5px 10px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;" title="Reset all pupils and points (Emergency backup preserved)">
+                  <span>✕</span> Reset Slate
                 </button>
               `
                   : ''
@@ -487,33 +487,33 @@ export function renderChessHubView() {
           </div>
         </div>
 
-        <!-- House Points Scoring Rule Banner -->
-        <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.12); font-size: 0.82rem; color: #e2e8f0; align-items: center;">
+        <!-- House Points Scoring Rule Banner (Vintage Ledger Style) -->
+        <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 18px; padding-top: 14px; border-top: 1px solid #332e2a; font-size: 0.8rem; color: #d6d3d1; align-items: center;">
           <div style="display: flex; align-items: center; gap: 6px;">
-            <span style="background: #10b981; color: #fff; padding: 2px 7px; border-radius: 4px; font-weight: 800; font-size: 0.72rem;">+${SCORING_RULES.WIN}</span>
+            <span style="background: #292524; border: 1px solid #57534e; color: #fafaf9; padding: 2px 8px; border-radius: 3px; font-weight: 700; font-family: monospace; font-size: 0.75rem;">+${SCORING_RULES.WIN}</span>
             <span>Win</span>
           </div>
           <div style="display: flex; align-items: center; gap: 6px;">
-            <span style="background: #3b82f6; color: #fff; padding: 2px 7px; border-radius: 4px; font-weight: 800; font-size: 0.72rem;">+${SCORING_RULES.DRAW}</span>
+            <span style="background: #292524; border: 1px solid #57534e; color: #fafaf9; padding: 2px 8px; border-radius: 3px; font-weight: 700; font-family: monospace; font-size: 0.75rem;">+${SCORING_RULES.DRAW}</span>
             <span>Draw</span>
           </div>
           <div style="display: flex; align-items: center; gap: 6px;">
-            <span style="background: #64748b; color: #fff; padding: 2px 7px; border-radius: 4px; font-weight: 800; font-size: 0.72rem;">+${SCORING_RULES.PARTICIPATION}</span>
+            <span style="background: #292524; border: 1px solid #57534e; color: #a8a29e; padding: 2px 8px; border-radius: 3px; font-weight: 700; font-family: monospace; font-size: 0.75rem;">+${SCORING_RULES.PARTICIPATION}</span>
             <span>Participation</span>
           </div>
-          <div style="margin-left: auto; font-style: italic; color: #fde047;">
-            <i class="fa-solid fa-crown" style="margin-right: 4px;"></i> Current Leader: <strong>${leadingHouse.name}</strong> (${sortedHouses[0].points} pts)
+          <div style="margin-left: auto; font-family: 'Playfair Display', Georgia, serif; font-style: italic; color: #d4af37; font-size: 0.88rem;">
+            👑 Tournament Leader: <strong>${leadingHouse.name}</strong> (${sortedHouses[0].points} pts)
           </div>
         </div>
       </div>
 
-      <!-- House Championship Podium Grid (Fully Responsive) -->
+      <!-- House Championship Podium Grid (Vintage Collegiate Plaques) -->
       <div style="margin-bottom: 24px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #0f172a; margin: 0; display: flex; align-items: center; gap: 8px; background: #ffffff; padding: 6px 14px; border-radius: 8px; border: 1px solid #e2e8f0;">
-            <i class="fa-solid fa-shield-halved" style="color: #1e3a8a;"></i> House Championship Standings
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 1.25rem; color: #1c1917; margin: 0; display: flex; align-items: center; gap: 8px;">
+            <span>♜</span> House Championship Standings
           </h2>
-          <span style="font-size: 0.82rem; color: #475569; font-weight: 700; background: #ffffff; padding: 6px 12px; border-radius: 8px; border: 1px solid #e2e8f0;">Total Games Logged: ${chessState.matches.length}</span>
+          <span style="font-size: 0.8rem; color: #78716c; font-family: monospace; background: #faf8f5; padding: 5px 12px; border-radius: 4px; border: 1px solid #e7e5e4;">GAMES LOGGED: ${chessState.matches.length}</span>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; width: 100%; box-sizing: border-box;">
@@ -522,31 +522,31 @@ export function renderChessHubView() {
               const houseInfo = HOUSES[hStats.id];
               const isFirst = index === 0 && hStats.points > 0;
               return `
-              <div class="chess-house-card" style="background: #ffffff; border: 1.5px solid ${isFirst ? houseInfo.color : '#e2e8f0'}; border-radius: 12px; padding: 16px 18px; box-shadow: 0 ${isFirst ? '6px 18px rgba(0,0,0,0.06)' : '2px 6px rgba(0,0,0,0.02)'}; position: relative; overflow: hidden;">
-                ${isFirst ? `<div style="position: absolute; top: 0; right: 0; background: ${houseInfo.color}; color: #ffffff; font-size: 0.65rem; font-weight: 800; padding: 3px 8px; border-bottom-left-radius: 6px; text-transform: uppercase; letter-spacing: 0.05em;"><i class="fa-solid fa-trophy"></i> 1st</div>` : ''}
+              <div class="chess-house-card" style="background: #faf8f5; border: 1.5px solid ${isFirst ? '#c5a059' : '#e7e5e4'}; border-radius: 8px; padding: 16px; box-shadow: 0 2px 6px rgba(0,0,0,0.03); position: relative; overflow: hidden;">
+                ${isFirst ? `<div style="position: absolute; top: 0; right: 0; background: #c5a059; color: #1c1917; font-size: 0.62rem; font-weight: 800; padding: 3px 8px; border-bottom-left-radius: 4px; text-transform: uppercase; letter-spacing: 0.08em; font-family: monospace;">★ 1ST PLACE</div>` : ''}
                 
                 <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
-                  <div style="width: 38px; height: 38px; border-radius: 8px; background: ${houseInfo.bgLight}; border: 1.5px solid ${houseInfo.borderColor}; color: ${houseInfo.color}; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;">
-                    <i class="fa-solid ${houseInfo.icon}"></i>
+                  <div style="width: 34px; height: 34px; border-radius: 6px; background: ${houseInfo.bgLight}; border: 1.5px solid ${houseInfo.borderColor}; color: ${houseInfo.color}; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; font-weight: 800;">
+                    ${houseInfo.name.charAt(0)}
                   </div>
                   <div>
-                    <h3 style="margin: 0; font-size: 1.1rem; color: #0f172a; font-weight: 700;">${houseInfo.name}</h3>
-                    <div style="font-size: 0.72rem; color: #64748b; font-style: italic;">${houseInfo.ship}</div>
+                    <h3 style="margin: 0; font-size: 1.05rem; color: #1c1917; font-weight: 700; font-family: 'Playfair Display', Georgia, serif;">${houseInfo.name}</h3>
+                    <div style="font-size: 0.7rem; color: #78716c; font-style: italic;">${houseInfo.ship}</div>
                   </div>
                 </div>
 
                 <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 8px;">
-                  <span style="font-size: 1.85rem; font-weight: 800; color: ${houseInfo.color}; line-height: 1;">${hStats.points}</span>
-                  <span style="font-size: 0.8rem; font-weight: 700; color: #64748b; text-transform: uppercase;">House Points</span>
+                  <span style="font-size: 1.85rem; font-weight: 800; color: #1c1917; font-family: 'Playfair Display', serif; line-height: 1;">${hStats.points}</span>
+                  <span style="font-size: 0.72rem; font-weight: 700; color: #78716c; text-transform: uppercase; letter-spacing: 0.05em; font-family: monospace;">House Pts</span>
                 </div>
 
-                <div style="background: #f1f5f9; height: 6px; border-radius: 3px; overflow: hidden; margin-bottom: 10px;">
-                  <div style="background: ${houseInfo.color}; height: 100%; width: ${Math.min(100, Math.round((hStats.points / (sortedHouses[0].points || 1)) * 100))}%; border-radius: 3px; transition: width 0.4s ease;"></div>
+                <div style="background: #e7e5e4; height: 5px; border-radius: 2px; overflow: hidden; margin-bottom: 10px;">
+                  <div style="background: ${houseInfo.color}; height: 100%; width: ${Math.min(100, Math.round((hStats.points / (sortedHouses[0].points || 1)) * 100))}%; border-radius: 2px; transition: width 0.4s ease;"></div>
                 </div>
 
-                <div style="display: flex; justify-content: space-between; font-size: 0.76rem; color: #475569; border-top: 1px solid #f1f5f9; padding-top: 8px;">
-                  <span><strong>${hStats.playersCount}</strong> Players</span>
-                  <span><strong>${hStats.wins}</strong>W · <strong>${hStats.draws}</strong>D · <strong>${hStats.losses}</strong>L</span>
+                <div style="display: flex; justify-content: space-between; font-size: 0.74rem; color: #78716c; border-top: 1px solid #e7e5e4; padding-top: 8px; font-family: monospace;">
+                  <span>${hStats.playersCount} Players</span>
+                  <span>${hStats.wins}W · ${hStats.draws}D · ${hStats.losses}L</span>
                 </div>
               </div>
             `;
@@ -555,28 +555,28 @@ export function renderChessHubView() {
         </div>
       </div>
 
-      <!-- Main Navigation Tabs (Period 6 Hub Placed First & Fully Responsive) -->
-      <div style="display: flex; gap: 6px; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; padding-bottom: 4px; scrollbar-width: thin;">
+      <!-- Main Navigation Tabs: Classic Typography -->
+      <div style="display: flex; gap: 4px; border-bottom: 2px solid #e7e5e4; margin-bottom: 20px; overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; padding-bottom: 2px; scrollbar-width: thin;">
         <button onclick="window.switchChessTab('signin')" style="${getTabStyle(chessState.activeTab === 'signin')}">
-          <i class="fa-solid fa-chess" style="color: #10b981;"></i> Period 6 Hub &amp; League (${chessState.checkedInPlayerIds.length})
+          <span style="font-size: 1.1rem; line-height: 1;">♔</span> Period 6 Hub (${chessState.checkedInPlayerIds.length})
         </button>
         <button onclick="window.switchChessTab('ladder')" style="${getTabStyle(chessState.activeTab === 'ladder')}">
-          <i class="fa-solid fa-stairs"></i> Master Ladder (${chessState.players.length})
+          <span style="font-size: 1.05rem; line-height: 1;">🪜</span> Master Ladder (${chessState.players.length})
         </button>
         <button onclick="window.switchChessTab('table')" style="${getTabStyle(chessState.activeTab === 'table')}">
-          <i class="fa-solid fa-table-list"></i> Full League Table
+          <span style="font-size: 1.05rem; line-height: 1;">☵</span> League Cross-Table
         </button>
         <button onclick="window.switchChessTab('pairings')" style="${getTabStyle(chessState.activeTab === 'pairings')}">
-          <i class="fa-solid fa-shuffle"></i> Thursday Pairings
+          <span style="font-size: 1.05rem; line-height: 1;">⚔</span> Round Pairings
         </button>
         <button onclick="window.switchChessTab('knockout')" style="${getTabStyle(chessState.activeTab === 'knockout')}">
-          <i class="fa-solid fa-sitemap" style="color: #f59e0b;"></i> Knockout Cup
+          <span style="font-size: 1.05rem; line-height: 1;">♛</span> Championship Cup
         </button>
         <button onclick="window.switchChessTab('drills')" style="${getTabStyle(chessState.activeTab === 'drills')}">
-          <i class="fa-solid fa-stopwatch-20" style="color: #ec4899;"></i> Historical Drills (2-Min)
+          <span style="font-size: 1.05rem; line-height: 1;">📖</span> Master Tactical Drills
         </button>
         <button onclick="window.switchChessTab('matches')" style="${getTabStyle(chessState.activeTab === 'matches')}">
-          <i class="fa-solid fa-clock-rotate-left"></i> Match History (${chessState.matches.length})
+          <span style="font-size: 1.05rem; line-height: 1;">📜</span> Match Ledger (${chessState.matches.length})
         </button>
       </div>
 
@@ -991,10 +991,10 @@ function renderSignInTab(players = []) {
               <div>
                 <label for="reg-house" style="display: block; font-size: 0.8rem; font-weight: 700; color: #334155; margin-bottom: 5px;">School House:</label>
                 <select id="reg-house" required style="width: 100%; box-sizing: border-box; padding: 9px 10px; border-radius: 8px; border: 1.5px solid #cbd5e1; font-size: 0.88rem; font-family: inherit; background: #fff;">
-                  <option value="warrior" selected>Warrior (Green)</option>
-                  <option value="victory">Victory (Blue)</option>
-                  <option value="dreadnought">Dreadnought (Red)</option>
-                  <option value="invincible">Invincible (Gold)</option>
+                  <option value="victory" selected>Victory (Blue)</option>
+                  <option value="warrior">Warrior (Red)</option>
+                  <option value="dreadnought">Dreadnought (Green)</option>
+                  <option value="invincible">Invincible (Yellow)</option>
                 </select>
               </div>
             </div>
@@ -1155,21 +1155,21 @@ function renderSignInTab(players = []) {
           </div>
         `
             : `
-          <div style="overflow-x: auto; border: 1px solid #e2e8f0; border-radius: 8px;">
-            <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.88rem;">
+          <div style="overflow-x: auto; border: 1.5px solid #44403c; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+            <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.88rem; background: #faf8f5;">
               <thead>
-                <tr style="background: #f8fafc; border-bottom: 1.5px solid #e2e8f0; color: #475569; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em;">
-                  <th style="padding: 10px 12px; width: 45px; text-align: center;">Rank</th>
-                  <th style="padding: 10px 12px;">Pupil</th>
+                <tr style="background: #1c1917; color: #fafaf9; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.08em; font-family: monospace;">
+                  <th style="padding: 10px 12px; width: 45px; text-align: center;">POS</th>
+                  <th style="padding: 10px 12px; font-family: 'Playfair Display', Georgia, serif;">Player</th>
                   <th style="padding: 10px 12px;">Year</th>
                   <th style="padding: 10px 12px;">House</th>
-                  <th style="padding: 10px 12px; text-align: center;">Attendance</th>
-                  <th style="padding: 10px 12px; text-align: center;">Played</th>
-                  <th style="padding: 10px 12px; text-align: center;">Won</th>
-                  <th style="padding: 10px 12px; text-align: center;">Drawn</th>
-                  <th style="padding: 10px 12px; text-align: center;">Lost</th>
-                  <th style="padding: 10px 12px; text-align: center;">Rating</th>
-                  <th style="padding: 10px 12px; text-align: right;">League Pts</th>
+                  <th style="padding: 10px 12px; text-align: center;">Session</th>
+                  <th style="padding: 10px 12px; text-align: center;">P</th>
+                  <th style="padding: 10px 12px; text-align: center;">W</th>
+                  <th style="padding: 10px 12px; text-align: center;">D</th>
+                  <th style="padding: 10px 12px; text-align: center;">L</th>
+                  <th style="padding: 10px 12px; text-align: center;">Elo</th>
+                  <th style="padding: 10px 12px; text-align: right;">Pts</th>
                   <th style="padding: 10px 12px; text-align: center;">Action</th>
                 </tr>
               </thead>
@@ -1178,10 +1178,9 @@ function renderSignInTab(players = []) {
                   .map((p, idx) => {
                     const h = HOUSES[p.house] || {
                       name: p.house,
-                      color: '#475569',
-                      bgLight: '#f8fafc',
-                      borderColor: '#cbd5e1',
-                      icon: 'fa-shield-halved',
+                      color: '#44403c',
+                      bgLight: '#f5f2eb',
+                      borderColor: '#d6d3d1',
                     };
                     const isCheckedIn = chessState.checkedInPlayerIds.includes(p.id);
                     const totalPts =
@@ -1190,39 +1189,39 @@ function renderSignInTab(players = []) {
                       p.lost * SCORING_RULES.PARTICIPATION;
                     const rankBadge =
                       idx === 0
-                        ? '<span style="color: #f59e0b; font-size: 1rem;"><i class="fa-solid fa-crown"></i> 1</span>'
+                        ? '<span style="color: #c5a059; font-weight: 800; font-family: monospace;">★ 1</span>'
                         : idx === 1
-                          ? '<span style="color: #64748b; font-weight: 800;">2</span>'
+                          ? '<span style="color: #78716c; font-weight: 800; font-family: monospace;">2</span>'
                           : idx === 2
-                            ? '<span style="color: #b45309; font-weight: 800;">3</span>'
-                            : `<span style="color: #94a3b8; font-weight: 700;">${idx + 1}</span>`;
+                            ? '<span style="color: #a8a29e; font-weight: 800; font-family: monospace;">3</span>'
+                            : `<span style="color: #78716c; font-weight: 600; font-family: monospace;">${idx + 1}</span>`;
 
                     return `
-                    <tr style="border-bottom: 1px solid #f1f5f9; transition: background 0.15s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    <tr style="border-bottom: 1px solid #e7e2d7; transition: background 0.15s ease; background: ${idx % 2 === 0 ? '#ffffff' : '#faf8f5'};" onmouseover="this.style.background='#f3efe6'" onmouseout="this.style.background='${idx % 2 === 0 ? '#ffffff' : '#faf8f5'}'">
                       <td style="padding: 10px 12px; text-align: center;">${rankBadge}</td>
-                      <td style="padding: 10px 12px; font-weight: 700; color: #0f172a;">${p.name}</td>
-                      <td style="padding: 10px 12px; color: #475569;">Year ${p.year}</td>
+                      <td style="padding: 10px 12px; font-weight: 700; color: #1c1917; font-family: 'Playfair Display', Georgia, serif; font-size: 0.95rem;">${p.name}</td>
+                      <td style="padding: 10px 12px; color: #57534e; font-family: monospace; font-size: 0.8rem;">Yr ${p.year}</td>
                       <td style="padding: 10px 12px;">
-                        <span style="background: ${h.bgLight}; color: ${h.color}; border: 1px solid ${h.borderColor}; padding: 2px 7px; border-radius: 12px; font-size: 0.72rem; font-weight: 700;">
-                          <i class="fa-solid ${h.icon}"></i> ${h.name}
+                        <span style="background: ${h.bgLight}; color: ${h.color}; border: 1px solid ${h.borderColor}; padding: 2px 8px; border-radius: 3px; font-size: 0.72rem; font-weight: 700; font-family: monospace;">
+                          ${h.name}
                         </span>
                       </td>
                       <td style="padding: 10px 12px; text-align: center;">
                         ${
                           isCheckedIn
-                            ? `<span style="background: #dcfce7; color: #15803d; font-size: 0.72rem; font-weight: 700; padding: 2px 7px; border-radius: 4px;"><i class="fa-solid fa-check"></i> Present</span>`
-                            : `<button onclick="window.checkInPlayer('${p.id}')" style="background: #f1f5f9; color: #64748b; border: 1px solid #cbd5e1; font-size: 0.72rem; font-weight: 600; padding: 2px 7px; border-radius: 4px; cursor: pointer;">+ Check In</button>`
+                            ? `<span style="background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; font-size: 0.7rem; font-weight: 700; padding: 2px 7px; border-radius: 3px; font-family: monospace;">PRESENT</span>`
+                            : `<button onclick="window.checkInPlayer('${p.id}')" style="background: #faf8f5; color: #57534e; border: 1px solid #d6d3d1; font-size: 0.7rem; font-weight: 600; padding: 2px 7px; border-radius: 3px; cursor: pointer; font-family: monospace;">+ ROLL CALL</button>`
                         }
                       </td>
-                      <td style="padding: 10px 12px; text-align: center; font-weight: 600;">${p.games}</td>
-                      <td style="padding: 10px 12px; text-align: center; color: #16a34a; font-weight: 700;">${p.won}</td>
-                      <td style="padding: 10px 12px; text-align: center; color: #2563eb; font-weight: 700;">${p.drawn}</td>
-                      <td style="padding: 10px 12px; text-align: center; color: #94a3b8;">${p.lost}</td>
-                      <td style="padding: 10px 12px; text-align: center; font-family: monospace; font-weight: 700; color: #334155;">${p.rating}</td>
-                      <td style="padding: 10px 12px; text-align: right; font-weight: 800; color: ${h.color}; font-size: 1rem;">+${totalPts}</td>
+                      <td style="padding: 10px 12px; text-align: center; font-family: monospace; font-weight: 600;">${p.games}</td>
+                      <td style="padding: 10px 12px; text-align: center; color: #166534; font-weight: 700; font-family: monospace;">${p.won}</td>
+                      <td style="padding: 10px 12px; text-align: center; color: #1e40af; font-weight: 700; font-family: monospace;">${p.drawn}</td>
+                      <td style="padding: 10px 12px; text-align: center; color: #78716c; font-family: monospace;">${p.lost}</td>
+                      <td style="padding: 10px 12px; text-align: center; font-family: monospace; font-weight: 700; color: #1c1917;">${p.rating}</td>
+                      <td style="padding: 10px 12px; text-align: right; font-weight: 800; color: #1c1917; font-size: 1rem; font-family: monospace;">+${totalPts}</td>
                       <td style="padding: 10px 12px; text-align: center;">
-                        <button onclick="window.prefillMatchModal('${p.id}', null)" title="Log match with ${p.name}" style="background: #f3e8ff; border: 1px solid #d8b4fe; color: #7e22ce; cursor: pointer; font-size: 0.76rem; padding: 4px 8px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 3px;">
-                          <i class="fa-solid fa-bolt"></i> Match
+                        <button onclick="window.prefillMatchModal('${p.id}', null)" title="Log match with ${p.name}" style="background: #1c1917; border: 1px solid #1c1917; color: #fafaf9; cursor: pointer; font-size: 0.72rem; padding: 4px 10px; border-radius: 3px; font-weight: 700; font-family: monospace; display: inline-flex; align-items: center; gap: 4px;">
+                          <span>♔</span> MATCH
                         </button>
                       </td>
                     </tr>
@@ -1627,20 +1626,22 @@ function renderMatchesTab() {
   `;
 }
 
-// Styling Helpers
+// Styling Helpers: Classic Chess Salon Aesthetic
 function getTabStyle(isActive) {
   return `
     padding: 10px 16px;
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     font-weight: 700;
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: 0.02em;
     border: none;
     background: transparent;
     cursor: pointer;
-    color: ${isActive ? '#8b5cf6' : '#64748b'};
-    border-bottom: 3px solid ${isActive ? '#8b5cf6' : 'transparent'};
+    color: ${isActive ? '#1c1917' : '#78716c'};
+    border-bottom: 2.5px solid ${isActive ? '#1c1917' : 'transparent'};
     display: inline-flex;
     align-items: center;
-    gap: 7px;
+    gap: 8px;
     white-space: nowrap;
     transition: all 0.15s ease;
   `;
@@ -1648,13 +1649,15 @@ function getTabStyle(isActive) {
 
 function getFilterPillStyle(isActive) {
   return `
-    padding: 5px 12px;
-    font-size: 0.8rem;
+    padding: 5px 14px;
+    font-size: 0.78rem;
     font-weight: 700;
-    border-radius: 20px;
-    border: 1.5px solid ${isActive ? '#8b5cf6' : '#cbd5e1'};
-    background: ${isActive ? '#8b5cf6' : '#ffffff'};
-    color: ${isActive ? '#ffffff' : '#475569'};
+    font-family: monospace;
+    letter-spacing: 0.04em;
+    border-radius: 4px;
+    border: 1px solid ${isActive ? '#1c1917' : '#d6d3d1'};
+    background: ${isActive ? '#1c1917' : '#faf8f5'};
+    color: ${isActive ? '#fafaf9' : '#57534e'};
     cursor: pointer;
     transition: all 0.15s ease;
   `;
@@ -2188,24 +2191,24 @@ window.openLogMatchModal = function (
   `;
 
   modalCont.innerHTML = `
-    <div style="position: fixed; inset: 0; background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(3px); display: flex; align-items: center; justify-content: center; z-index: 99999; padding: 16px;" onclick="if(event.target === this) window.closeChessModal();">
-      <div style="background: #ffffff; border-radius: 14px; max-width: 520px; width: 100%; padding: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.25); animation: zoomIn 0.2s ease-out; font-family: 'Outfit', sans-serif;">
+    <div style="position: fixed; inset: 0; background: rgba(28, 25, 23, 0.82); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; z-index: 99999; padding: 16px;" onclick="if(event.target === this) window.closeChessModal();">
+      <div style="background: #faf7f2; border: 2px solid #44403c; border-radius: 10px; max-width: 520px; width: 100%; padding: 26px; box-shadow: 0 20px 45px rgba(0,0,0,0.4); animation: zoomIn 0.2s ease-out; font-family: 'Outfit', sans-serif;">
         
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 12px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 2px solid #e7e2d7; padding-bottom: 12px;">
           <div>
-            <h2 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 1.35rem; color: #0f172a; display: flex; align-items: center; gap: 8px;">
-              <i class="fa-solid fa-trophy" style="color: #8b5cf6;"></i> Quick Match Score
+            <div style="font-family: monospace; font-size: 0.7rem; color: #78716c; text-transform: uppercase; letter-spacing: 0.1em;">Official FIDE Match Scorecard</div>
+            <h2 style="margin: 2px 0 0 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.45rem; color: #1c1917; font-weight: 700; letter-spacing: 0.02em;">
+              Record Match Outcome
             </h2>
-            <div style="font-size: 0.8rem; color: #64748b; margin-top: 2px;">Record game outcome • Automatically updates ladder &amp; House points</div>
           </div>
-          <button onclick="window.closeChessModal()" style="background: #f1f5f9; border: none; font-size: 1.2rem; color: #64748b; cursor: pointer; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">&times;</button>
+          <button onclick="window.closeChessModal()" style="background: #e7e2d7; border: none; font-size: 1.2rem; color: #57534e; cursor: pointer; width: 30px; height: 30px; border-radius: 4px; display: flex; align-items: center; justify-content: center;">&times;</button>
         </div>
 
         ${
           boardNum
             ? `
-          <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; padding: 8px 12px; border-radius: 8px; margin-bottom: 14px; color: #1e40af; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 8px;">
-            <i class="fa-solid fa-chess-board"></i> Board ${boardNum} Session Match
+          <div style="background: #f5f2eb; border: 1px solid #d6d3d1; padding: 8px 12px; border-radius: 6px; margin-bottom: 14px; color: #1c1917; font-family: monospace; font-size: 0.82rem; font-weight: 700;">
+            TABLE / BOARD ${boardNum} · OFFICIAL SESSION MATCH
           </div>
         `
             : ''
@@ -2213,28 +2216,28 @@ window.openLogMatchModal = function (
 
         <form id="chess-match-form" onsubmit="window.handleMatchSubmit(event)">
           
-          <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 14px; margin-bottom: 16px;">
+          <div style="background: #f5f2eb; border: 1.5px solid #e7e2d7; border-radius: 8px; padding: 14px; margin-bottom: 16px;">
             <div style="margin-bottom: 12px;">
-              <label style="display: block; font-weight: 700; font-size: 0.82rem; color: #334155; margin-bottom: 4px;">
-                <i class="fa-solid fa-chess-king" style="color: #cbd5e1; margin-right: 4px;"></i> White Pieces:
+              <label style="display: block; font-weight: 700; font-size: 0.8rem; color: #44403c; margin-bottom: 4px; font-family: monospace; letter-spacing: 0.05em;">
+                ♔ WHITE PIECES:
               </label>
-              <select id="match-white-player" required style="width: 100%; padding: 10px 12px; border-radius: 8px; border: 1.5px solid #cbd5e1; font-size: 0.92rem; background: #ffffff; font-weight: 600;">
+              <select id="match-white-player" required style="width: 100%; padding: 10px 12px; border-radius: 6px; border: 1.5px solid #d6d3d1; font-size: 0.92rem; background: #ffffff; color: #1c1917; font-weight: 600;">
                 <option value="">-- Select White Player --</option>
                 ${playerOptionsHtml}
               </select>
             </div>
 
             <div style="text-align: center; margin: -4px 0 8px;">
-              <button type="button" onclick="window.swapWhiteAndBlack()" style="background: #e2e8f0; border: none; padding: 4px 10px; border-radius: 12px; font-size: 0.72rem; font-weight: 700; color: #475569; cursor: pointer;">
-                <i class="fa-solid fa-arrow-right-arrow-left"></i> Swap Colors
+              <button type="button" onclick="window.swapWhiteAndBlack()" style="background: #e7e2d7; border: 1px solid #d6d3d1; padding: 3px 12px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; color: #44403c; cursor: pointer; font-family: monospace;">
+                ⇄ SWAP COLORS
               </button>
             </div>
 
             <div>
-              <label style="display: block; font-weight: 700; font-size: 0.82rem; color: #334155; margin-bottom: 4px;">
-                <i class="fa-solid fa-chess-king" style="color: #1e293b; margin-right: 4px;"></i> Black Pieces:
+              <label style="display: block; font-weight: 700; font-size: 0.8rem; color: #44403c; margin-bottom: 4px; font-family: monospace; letter-spacing: 0.05em;">
+                ♚ BLACK PIECES:
               </label>
-              <select id="match-black-player" required style="width: 100%; padding: 10px 12px; border-radius: 8px; border: 1.5px solid #cbd5e1; font-size: 0.92rem; background: #ffffff; font-weight: 600;">
+              <select id="match-black-player" required style="width: 100%; padding: 10px 12px; border-radius: 6px; border: 1.5px solid #d6d3d1; font-size: 0.92rem; background: #ffffff; color: #1c1917; font-weight: 600;">
                 <option value="">-- Select Black Player --</option>
                 ${playerOptionsHtml}
               </select>
@@ -2242,38 +2245,38 @@ window.openLogMatchModal = function (
           </div>
 
           <div style="margin-bottom: 16px;">
-            <label style="display: block; font-weight: 700; font-size: 0.82rem; color: #334155; margin-bottom: 6px;">
-              <i class="fa-solid fa-flag-checkered" style="color: #8b5cf6; margin-right: 4px;"></i> Match Outcome:
+            <label style="display: block; font-weight: 700; font-size: 0.8rem; color: #44403c; margin-bottom: 6px; font-family: monospace; letter-spacing: 0.05em;">
+              RESULT / SCORE:
             </label>
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;" id="result-radio-group">
-              <label style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px 6px; border: 2px solid #cbd5e1; border-radius: 8px; cursor: pointer; text-align: center; background: #f8fafc; font-weight: 700; font-size: 0.8rem; color: #1e293b;" class="result-btn-label">
+              <label style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px 6px; border: 1.5px solid #d6d3d1; border-radius: 6px; cursor: pointer; text-align: center; background: #ffffff; color: #1c1917;" class="result-btn-label">
                 <input type="radio" name="match_result_radio" value="1-0" checked style="margin-bottom: 4px;" onchange="document.getElementById('match-result').value = '1-0'">
-                <span>White Won</span>
-                <span style="font-size: 0.68rem; color: #16a34a; font-weight: 600;">+3 / +1 pts</span>
+                <span style="font-weight: 800; font-size: 0.88rem; font-family: monospace;">1 – 0</span>
+                <span style="font-size: 0.68rem; color: #57534e; font-weight: 600;">White Won (+3/+1)</span>
               </label>
-              <label style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px 6px; border: 2px solid #cbd5e1; border-radius: 8px; cursor: pointer; text-align: center; background: #f8fafc; font-weight: 700; font-size: 0.8rem; color: #1e293b;" class="result-btn-label">
+              <label style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px 6px; border: 1.5px solid #d6d3d1; border-radius: 6px; cursor: pointer; text-align: center; background: #ffffff; color: #1c1917;" class="result-btn-label">
                 <input type="radio" name="match_result_radio" value="1/2-1/2" style="margin-bottom: 4px;" onchange="document.getElementById('match-result').value = '1/2-1/2'">
-                <span>Draw</span>
-                <span style="font-size: 0.68rem; color: #ca8a04; font-weight: 600;">+2 / +2 pts</span>
+                <span style="font-weight: 800; font-size: 0.88rem; font-family: monospace;">½ – ½</span>
+                <span style="font-size: 0.68rem; color: #57534e; font-weight: 600;">Draw (+2/+2)</span>
               </label>
-              <label style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px 6px; border: 2px solid #cbd5e1; border-radius: 8px; cursor: pointer; text-align: center; background: #f8fafc; font-weight: 700; font-size: 0.8rem; color: #1e293b;" class="result-btn-label">
+              <label style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px 6px; border: 1.5px solid #d6d3d1; border-radius: 6px; cursor: pointer; text-align: center; background: #ffffff; color: #1c1917;" class="result-btn-label">
                 <input type="radio" name="match_result_radio" value="0-1" style="margin-bottom: 4px;" onchange="document.getElementById('match-result').value = '0-1'">
-                <span>Black Won</span>
-                <span style="font-size: 0.68rem; color: #16a34a; font-weight: 600;">+3 / +1 pts</span>
+                <span style="font-weight: 800; font-size: 0.88rem; font-family: monospace;">0 – 1</span>
+                <span style="font-size: 0.68rem; color: #57534e; font-weight: 600;">Black Won (+3/+1)</span>
               </label>
             </div>
             <input type="hidden" id="match-result" value="1-0">
           </div>
 
           <div style="margin-bottom: 16px;">
-            <label style="display: block; font-weight: 700; font-size: 0.82rem; color: #334155; margin-bottom: 4px;">Opening / Notes (Optional):</label>
-            <input type="text" id="match-opening" placeholder="e.g. Italian Game, Scholar's Mate defence, Rapid End-game" style="width: 100%; padding: 8px 12px; border-radius: 8px; border: 1.5px solid #cbd5e1; font-size: 0.88rem;">
+            <label style="display: block; font-weight: 700; font-size: 0.8rem; color: #44403c; margin-bottom: 4px; font-family: monospace;">OPENING / NOTES (OPTIONAL):</label>
+            <input type="text" id="match-opening" placeholder="e.g. Queen's Gambit, Sicilian Defence, Ruy Lopez" style="width: 100%; box-sizing: border-box; padding: 9px 12px; border-radius: 6px; border: 1.5px solid #d6d3d1; font-size: 0.88rem; background: #ffffff; color: #1c1917;">
           </div>
 
-          <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 18px; border-top: 1px solid #e2e8f0; padding-top: 14px;">
-            <button type="button" onclick="window.closeChessModal()" style="background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; padding: 9px 16px; border-radius: 6px; font-weight: 700; cursor: pointer;">Cancel</button>
-            <button type="submit" style="background: linear-gradient(135deg, #8b5cf6 0%, #7e22ce 100%); color: #ffffff; border: none; padding: 9px 22px; border-radius: 6px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(139, 92, 246, 0.35);">
-              <i class="fa-solid fa-check"></i> Save Match &amp; Points
+          <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 18px; border-top: 1.5px solid #e7e2d7; padding-top: 14px;">
+            <button type="button" onclick="window.closeChessModal()" style="background: #e7e2d7; color: #44403c; border: 1px solid #d6d3d1; padding: 9px 16px; border-radius: 6px; font-weight: 700; font-family: monospace; font-size: 0.8rem; cursor: pointer;">CANCEL</button>
+            <button type="submit" style="background: #1c1917; color: #fafaf9; border: 1.5px solid #1c1917; padding: 9px 22px; border-radius: 6px; font-weight: 700; font-size: 0.88rem; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+              <span>✓</span> Save Match &amp; House Points
             </button>
           </div>
 
@@ -2937,9 +2940,9 @@ window.openAddPlayerModal = function () {
             <label style="display: block; font-weight: 700; font-size: 0.85rem; color: #334155; margin-bottom: 5px;">School House:</label>
             <select id="new-player-house" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1.5px solid #cbd5e1; font-size: 0.95rem;">
               <option value="victory">Victory (Blue)</option>
-              <option value="warrior">Warrior (Green)</option>
-              <option value="dreadnought">Dreadnought (Red)</option>
-              <option value="invincible">Invincible (Gold)</option>
+              <option value="warrior">Warrior (Red)</option>
+              <option value="dreadnought">Dreadnought (Green)</option>
+              <option value="invincible">Invincible (Yellow)</option>
             </select>
           </div>
 
