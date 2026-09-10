@@ -152,6 +152,8 @@ let chessState = {
   showBethHarmonHint: false,
   showBethHarmonSolution: false,
   showStarterPuzzle: true,
+  showAdminDropdown: false,
+  showTeacherGuide: false,
   whiteboardMode: false,
   autoRePairEnabled: true,
   sessionActive: true,
@@ -562,47 +564,52 @@ export function renderChessHubView() {
             </p>
           </div>
 
-          <!-- Quick Action Buttons -->
-          <div style="display: flex; flex-direction: column; gap: 8px; align-items: flex-end;">
-            <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end;">
-              <button onclick="window.toggleWhiteboardMode()" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1.5px solid #38bdf8; font-weight: 700; font-size: 0.86rem; padding: 9px 18px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(14, 165, 233, 0.35); transition: all 0.15s;" title="Open Big Screen Whiteboard Display for Interactive Projector (Press W)">
-                <span style="font-size: 1.1rem; line-height: 1;">📺</span> Big Screen Whiteboard (W)
+          <!-- Clean Primary Teacher Action Buttons -->
+          <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+            <!-- Button 1: Master Whiteboard Launch (Main Projector Screen) -->
+            <button onclick="window.toggleWhiteboardMode()" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1.5px solid #38bdf8; font-weight: 800; font-size: 0.92rem; padding: 11px 20px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 9px; box-shadow: 0 4px 14px rgba(14, 165, 233, 0.4); transition: all 0.15s;" title="Launch Big Screen Whiteboard Display for Interactive Projector (Press W)">
+              <span style="font-size: 1.25rem; line-height: 1;">📺</span> Launch Whiteboard Mode (W)
+            </button>
+
+            <!-- Button 2: Quick Record Result -->
+            <button onclick="window.openLogMatchModal()" style="background: #292524; color: #fafaf9; border: 1.5px solid #78716c; font-weight: 700; font-size: 0.88rem; padding: 11px 18px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.25); transition: all 0.15s;" onmouseover="this.style.borderColor='#d4af37';this.style.color='#d4af37'" onmouseout="this.style.borderColor='#78716c';this.style.color='#fafaf9'">
+              <span style="font-size: 1.05rem; line-height: 1;">⚔</span> Record Game Result
+            </button>
+
+            <!-- Button 3: Clean Teacher Tools Dropdown -->
+            <div style="position: relative; display: inline-block;">
+              <button id="btn-chess-admin-menu" onclick="window.toggleChessAdminDropdown(event)" style="background: rgba(255, 255, 255, 0.08); color: #e7e5e4; border: 1.5px solid #57534e; font-weight: 700; font-size: 0.84rem; padding: 11px 16px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s;" title="Administrative & Backup Tools">
+                <span>⚙️</span> Teacher Tools ▾
               </button>
-              <button onclick="window.switchChessTab('signin')" style="background: #faf7f2; color: #1c1917; border: 1.5px solid #e7e2d7; font-weight: 700; font-size: 0.86rem; padding: 9px 18px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.15); transition: all 0.15s;" onmouseover="this.style.background='#ffffff'" onmouseout="this.style.background='#faf7f2'">
-                <span style="font-size: 1.1rem; line-height: 1;">♔</span> Period 6
-              </button>
-              <button onclick="window.openLogMatchModal()" style="background: #292524; color: #fafaf9; border: 1.5px solid #78716c; font-weight: 700; font-size: 0.86rem; padding: 9px 18px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.25); transition: all 0.15s;" onmouseover="this.style.borderColor='#d4af37';this.style.color='#d4af37'" onmouseout="this.style.borderColor='#78716c';this.style.color='#fafaf9'">
-                <span style="font-size: 1rem; line-height: 1;">⚔</span> Record Game Result
-              </button>
-            </div>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end;">
-              <button onclick="window.toggleAutoRePair()" style="background: ${chessState.autoRePairEnabled ? 'rgba(34, 197, 94, 0.15)' : 'rgba(239, 68, 68, 0.15)'}; color: ${chessState.autoRePairEnabled ? '#86efac' : '#fca5a5'}; border: 1px solid ${chessState.autoRePairEnabled ? '#22c55e' : '#ef4444'}; font-weight: 700; font-size: 0.78rem; padding: 6px 12px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Toggle Continuous Rapid Auto Re-Pairing">
-                <span>⚡</span> Auto Re-Pair: ${chessState.autoRePairEnabled ? 'ON' : 'PAUSED'}
-              </button>
-              <button onclick="window.openAssemblySlideModal()" style="background: rgba(212, 175, 55, 0.12); color: #fef08a; border: 1px solid rgba(212, 175, 55, 0.4); font-weight: 700; font-size: 0.78rem; padding: 6px 12px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
-                <span>⚑</span> Assembly Slide
-              </button>
-              <button onclick="window.openDataVaultModal()" style="background: rgba(255, 255, 255, 0.08); color: #e7e5e4; border: 1px solid #57534e; font-weight: 700; font-size: 0.78rem; padding: 6px 12px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Safe Backup, File Restore & Permanent Code Export">
-                <span>☖</span> Data Vault
-              </button>
-              ${
-                chessState.players.length === 0 && getBackupInfo()
-                  ? `
-                <button onclick="window.restoreChessBackup()" style="background: rgba(255, 255, 255, 0.08); color: #e7e5e4; border: 1px solid #57534e; font-weight: 700; font-size: 0.78rem; padding: 6px 12px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;" title="Undo reset & restore previous cohort">
-                  <span>↺</span> Restore Cohort (${getBackupInfo().playerCount})
+              <div id="chess-admin-dropdown" style="display: ${chessState.showAdminDropdown ? 'block' : 'none'}; position: absolute; right: 0; top: calc(100% + 6px); background: #292524; border: 1.5px solid #57534e; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); z-index: 1000; min-width: 230px; overflow: hidden;">
+                <button type="button" onclick="window.openAssemblySlideModal(); window.toggleChessAdminDropdown();" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: #fef08a; padding: 10px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                  <span>⚑</span> Assembly Presentation Slide
                 </button>
-              `
-                  : ''
-              }
-              ${
-                chessState.players.length > 0
-                  ? `
-                <button onclick="window.resetClubDataToCleanSlate()" style="background: rgba(220, 38, 38, 0.12); color: #fca5a5; border: 1px solid rgba(220, 38, 38, 0.35); font-weight: 600; font-size: 0.75rem; padding: 5px 10px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;" title="Reset all pupils and points (Emergency backup preserved)">
-                  <span>✕</span> Reset Slate
+                <button type="button" onclick="window.toggleAutoRePair(); window.toggleChessAdminDropdown();" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: ${chessState.autoRePairEnabled ? '#86efac' : '#fca5a5'}; padding: 10px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                  <span>⚡</span> Auto Re-Pairing: ${chessState.autoRePairEnabled ? 'Active (ON)' : 'Paused'}
                 </button>
-              `
-                  : ''
-              }
+                <button type="button" onclick="window.openDataVaultModal(); window.toggleChessAdminDropdown();" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: #cbd5e1; padding: 10px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                  <span>💾</span> Backup Data Vault
+                </button>
+                ${
+                  getBackupInfo()
+                    ? `
+                  <button type="button" onclick="window.restoreChessBackup(); window.toggleChessAdminDropdown();" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: #93c5fd; padding: 10px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                    <span>↺</span> Restore Cohort (${getBackupInfo().playerCount})
+                  </button>
+                `
+                    : ''
+                }
+                ${
+                  chessState.players.length > 0
+                    ? `
+                  <button type="button" onclick="window.resetClubDataToCleanSlate(); window.toggleChessAdminDropdown();" style="width: 100%; text-align: left; background: transparent; border: none; color: #fca5a5; padding: 10px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                    <span>✕</span> Reset Roster to Clean Slate
+                  </button>
+                `
+                    : ''
+                }
+              </div>
             </div>
           </div>
         </div>
@@ -673,6 +680,46 @@ export function renderChessHubView() {
             })
             .join('')}
         </div>
+      </div>
+
+      <!-- Teacher Quick-Start Guide (Collapsible Card) -->
+      <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 10px; margin-bottom: 18px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
+        <button type="button" onclick="window.toggleTeacherGuideCollapse()" style="width: 100%; text-align: left; background: #fafaf9; border: none; padding: 12px 18px; font-size: 0.88rem; font-weight: 800; color: #334155; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 1.1rem; color: #2563eb;">ℹ️</span>
+            <span>How Period 6 Works: Quick 3-Step Teacher Rhythm</span>
+            <span style="background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; text-transform: uppercase;">Guide</span>
+          </div>
+          <span style="font-size: 0.85rem; color: #64748b;">${chessState.showTeacherGuide ? '▲ Hide Guide' : '▼ Show Guide'}</span>
+        </button>
+        ${
+          chessState.showTeacherGuide
+            ? `
+          <div style="padding: 16px 20px; border-top: 1px solid #e2e8f0; background: #ffffff;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+              <div style="background: #f8fafc; border-left: 3px solid #10b981; padding: 12px 14px; border-radius: 0 8px 8px 0;">
+                <div style="font-size: 0.85rem; font-weight: 800; color: #065f46; margin-bottom: 4px;">1️⃣ 3:30pm — Pupil Arrival</div>
+                <div style="font-size: 0.8rem; color: #475569; line-height: 1.45;">
+                  Click <strong>[ Check In All ]</strong> to mark regulars present in 1 second. For first-timers, use the quick 5-second registration form. Absent pupils stay unchecked and are never paired!
+                </div>
+              </div>
+              <div style="background: #f8fafc; border-left: 3px solid #0284c7; padding: 12px 14px; border-radius: 0 8px 8px 0;">
+                <div style="font-size: 0.85rem; font-weight: 800; color: #075985; margin-bottom: 4px;">2️⃣ 3:35pm — Launch Whiteboard</div>
+                <div style="font-size: 0.8rem; color: #475569; line-height: 1.45;">
+                  Hit <strong>[ 📺 Launch Whiteboard Mode ]</strong> on your classroom projector. It shows the 60-min countdown clock, live House standings, and active boards for pupils to see.
+                </div>
+              </div>
+              <div style="background: #f8fafc; border-left: 3px solid #8b5cf6; padding: 12px 14px; border-radius: 0 8px 8px 0;">
+                <div style="font-size: 0.85rem; font-weight: 800; color: #5b21b6; margin-bottom: 4px;">3️⃣ 3:35–4:28pm — Hands-Off Play</div>
+                <div style="font-size: 0.8rem; color: #475569; line-height: 1.45;">
+                  When a game finishes, tap <strong>[ White Win ]</strong>, <strong>[ Draw ]</strong>, or <strong>[ Black Win ]</strong> on the screen. The computer auto-pairs idle pupils onto new boards!
+                </div>
+              </div>
+            </div>
+          </div>
+        `
+            : ''
+        }
       </div>
 
       <!-- Main Navigation Tabs: Classic Typography -->
@@ -1906,13 +1953,10 @@ function renderSignInTab(players = []) {
         </div>
 
         <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-          <button onclick="window.openLogMatchModal()" style="background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); color: #fff; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 10px rgba(109, 40, 217, 0.3);">
-            <i class="fa-solid fa-bolt"></i> Log Match Result
-          </button>
           ${
             chessState.players.length > 0
               ? `
-            <button onclick="window.checkInAllPlayers()" style="background: #15803d; color: #fff; border: none; padding: 8px 14px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+            <button onclick="window.checkInAllPlayers()" style="background: #15803d; color: #fff; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 800; font-size: 0.84rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(21, 128, 61, 0.25);">
               <i class="fa-solid fa-users"></i> Check In All (${chessState.players.length})
             </button>
           `
@@ -1921,29 +1965,11 @@ function renderSignInTab(players = []) {
           ${
             checkedInPlayers.length > 0
               ? `
-            <button onclick="window.clearAttendance()" style="background: #ffffff; color: #475569; border: 1px solid #cbd5e1; padding: 8px 14px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
-              <i class="fa-solid fa-clock-rotate-left"></i> Reset Attendance
+            <button onclick="window.clearAttendance()" style="background: #ffffff; color: #475569; border: 1.5px solid #cbd5e1; padding: 8px 14px; border-radius: 6px; font-weight: 700; font-size: 0.84rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Reset today's attendance checklist without losing pupil records or points">
+              <i class="fa-solid fa-clock-rotate-left"></i> Reset Today's Attendance
             </button>
           `
               : ''
-          }
-          <button onclick="window.openDataVaultModal()" style="background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; padding: 8px 14px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Safe Backup, File Restore & Permanent Code Export">
-            <i class="fa-solid fa-vault"></i> 💾 Backup &amp; Data
-          </button>
-          ${
-            chessState.players.length > 0
-              ? `
-            <button onclick="window.resetClubDataToCleanSlate()" style="background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; padding: 8px 14px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Reset all pupils and points (Emergency backup preserved)">
-              <i class="fa-solid fa-trash-can"></i> Reset Slate
-            </button>
-          `
-              : getBackupInfo()
-                ? `
-            <button onclick="window.restoreChessBackup()" style="background: #eff6ff; color: #1e40af; border: 1.5px solid #bfdbfe; padding: 8px 14px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Undo reset & restore previous cohort">
-              <i class="fa-solid fa-arrow-rotate-left"></i> Restore Previous Cohort (${getBackupInfo().playerCount})
-            </button>
-          `
-                : ''
           }
         </div>
       </div>
@@ -1958,10 +1984,10 @@ function renderSignInTab(players = []) {
         <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 22px; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
           <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
             <i class="fa-solid fa-user-plus" style="color: #10b981; font-size: 1.1rem;"></i>
-            <h4 style="margin: 0; font-size: 1.1rem; color: #0f172a; font-weight: 800;">Register New Pupil</h4>
+            <h4 style="margin: 0; font-size: 1.1rem; color: #0f172a; font-weight: 800;">⚡ First Time Today? Quick Registration</h4>
           </div>
           <p style="font-size: 0.84rem; color: #64748b; margin: 0 0 16px 0; line-height: 1.45;">
-            Register once to add pupil to permanent club roster and House (auto-checks in for today):
+            Register once to add pupil to permanent club roster &amp; House (takes 5 seconds · auto-checked in for today):
           </p>
 
           <form id="chess-self-reg-form" onsubmit="event.preventDefault(); window.handleSelfRegister(event); return false;">
@@ -2007,10 +2033,10 @@ function renderSignInTab(players = []) {
         <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 22px; box-shadow: 0 2px 6px rgba(0,0,0,0.02); display: flex; flex-direction: column;">
           <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
             <i class="fa-solid fa-user-check" style="color: #2563eb; font-size: 1.1rem;"></i>
-            <h4 style="margin: 0; font-size: 1.1rem; color: #0f172a; font-weight: 800;">Returning Pupils</h4>
+            <h4 style="margin: 0; font-size: 1.1rem; color: #0f172a; font-weight: 800;">✓ Returning Pupils (1-Click Attendance)</h4>
           </div>
           <p style="font-size: 0.84rem; color: #64748b; margin: 0 0 16px 0; line-height: 1.45;">
-            Tap a pupil's chip to mark them present in today's session:
+            Tap a pupil's badge to mark them present today (absent pupils stay unchecked and are <strong>never</strong> paired):
           </p>
 
           ${
@@ -2853,6 +2879,30 @@ function getFilterPillStyle(isActive) {
     cursor: pointer;
     transition: all 0.15s ease;
   `;
+}
+
+window.toggleChessAdminDropdown = function (e) {
+  if (e && e.stopPropagation) e.stopPropagation();
+  chessState.showAdminDropdown = !chessState.showAdminDropdown;
+  renderChessHubView();
+};
+
+window.toggleTeacherGuideCollapse = function () {
+  chessState.showTeacherGuide = !chessState.showTeacherGuide;
+  renderChessHubView();
+};
+
+if (typeof window !== 'undefined') {
+  window.addEventListener('click', (e) => {
+    if (chessState.showAdminDropdown) {
+      const menu = document.getElementById('chess-admin-dropdown');
+      const btn = document.getElementById('btn-chess-admin-menu');
+      if (menu && !menu.contains(e.target) && btn && !btn.contains(e.target)) {
+        chessState.showAdminDropdown = false;
+        renderChessHubView();
+      }
+    }
+  });
 }
 
 // Navigation Handlers
