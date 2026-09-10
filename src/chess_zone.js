@@ -546,10 +546,10 @@ export function renderChessHubView() {
   filteredPlayers.sort((a, b) => a.rank - b.rank);
 
   let html = `
-    <div style="max-width: 1200px; width: 100%; box-sizing: border-box; margin: 0 auto; padding: 0 16px 60px 16px; animation: fadeInUp 0.25s ease-out; font-family: 'Outfit', sans-serif; overflow-x: hidden;">
+    <div style="max-width: 1200px; width: 100%; box-sizing: border-box; margin: 0 auto; padding: 0 16px 60px 16px; animation: fadeInUp 0.25s ease-out; font-family: 'Outfit', sans-serif;">
       
       <!-- Top Hero Header: 1960s Tournament Salon Placard -->
-      <div style="background: #1c1917; border-radius: 12px; padding: 26px 24px; color: #ffffff; margin-bottom: 22px; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25); position: relative; overflow: hidden; border: 2px solid #44403c;">
+      <div style="background: #1c1917; border-radius: 12px; padding: 26px 24px; color: #ffffff; margin-bottom: 22px; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25); position: relative; overflow: visible; border: 2px solid #44403c; z-index: 50;">
         
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; position: relative; z-index: 2;">
           <div style="max-width: 680px;">
@@ -581,20 +581,20 @@ export function renderChessHubView() {
               <button id="btn-chess-admin-menu" onclick="window.toggleChessAdminDropdown(event)" style="background: rgba(255, 255, 255, 0.08); color: #e7e5e4; border: 1.5px solid #57534e; font-weight: 700; font-size: 0.84rem; padding: 11px 16px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s;" title="Administrative & Backup Tools">
                 <span>⚙️</span> Teacher Tools ▾
               </button>
-              <div id="chess-admin-dropdown" style="display: ${chessState.showAdminDropdown ? 'block' : 'none'}; position: absolute; right: 0; top: calc(100% + 6px); background: #292524; border: 1.5px solid #57534e; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); z-index: 1000; min-width: 230px; overflow: hidden;">
-                <button type="button" onclick="window.openAssemblySlideModal(); window.toggleChessAdminDropdown();" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: #fef08a; padding: 10px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+              <div id="chess-admin-dropdown" style="display: ${chessState.showAdminDropdown ? 'block' : 'none'}; position: absolute; right: 0; top: calc(100% + 8px); background: #292524; border: 1.5px solid #57534e; border-radius: 8px; box-shadow: 0 12px 32px rgba(0,0,0,0.65); z-index: 9999; min-width: 240px; overflow: hidden;">
+                <button type="button" onclick="window.openAssemblySlideModal(); window.toggleChessAdminDropdown();" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: #fef08a; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
                   <span>⚑</span> Assembly Presentation Slide
                 </button>
-                <button type="button" onclick="window.toggleAutoRePair(); window.toggleChessAdminDropdown();" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: ${chessState.autoRePairEnabled ? '#86efac' : '#fca5a5'}; padding: 10px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                <button type="button" onclick="window.toggleAutoRePair(); window.toggleChessAdminDropdown();" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: ${chessState.autoRePairEnabled ? '#86efac' : '#fca5a5'}; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
                   <span>⚡</span> Auto Re-Pairing: ${chessState.autoRePairEnabled ? 'Active (ON)' : 'Paused'}
                 </button>
-                <button type="button" onclick="window.openDataVaultModal(); window.toggleChessAdminDropdown();" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: #cbd5e1; padding: 10px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                <button type="button" onclick="window.openDataVaultModal(); window.toggleChessAdminDropdown();" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: #cbd5e1; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
                   <span>💾</span> Backup Data Vault
                 </button>
                 ${
                   getBackupInfo()
                     ? `
-                  <button type="button" onclick="window.restoreChessBackup(); window.toggleChessAdminDropdown();" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: #93c5fd; padding: 10px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                  <button type="button" onclick="window.restoreChessBackup(); window.toggleChessAdminDropdown();" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: #93c5fd; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
                     <span>↺</span> Restore Cohort (${getBackupInfo().playerCount})
                   </button>
                 `
@@ -603,7 +603,7 @@ export function renderChessHubView() {
                 ${
                   chessState.players.length > 0
                     ? `
-                  <button type="button" onclick="window.resetClubDataToCleanSlate(); window.toggleChessAdminDropdown();" style="width: 100%; text-align: left; background: transparent; border: none; color: #fca5a5; padding: 10px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                  <button type="button" onclick="window.resetClubDataToCleanSlate(); window.toggleChessAdminDropdown();" onmouseover="this.style.background='rgba(239,68,68,0.15)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; color: #fca5a5; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
                     <span>✕</span> Reset Roster to Clean Slate
                   </button>
                 `
