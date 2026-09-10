@@ -138,6 +138,35 @@ function getBackupInfo() {
   }
 }
 
+// Helper to detect initial user role (Safeguard: pupils on phones see read-only Pupil View)
+function getInitialRole() {
+  if (typeof window === 'undefined') return 'pupil';
+  try {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('role') === 'pupil' || params.get('preview') === 'pupil') {
+      return 'pupil';
+    }
+    if (
+      params.get('role') === 'teacher' ||
+      params.get('teacher') === 'lovett' ||
+      params.get('teacher') === 'true' ||
+      params.get('passkey') === 'lovett'
+    ) {
+      localStorage.setItem('meoncross_chess_teacher_auth', 'true');
+      return 'teacher';
+    }
+    if (localStorage.getItem('meoncross_chess_teacher_auth') === 'true') {
+      return 'teacher';
+    }
+    // Auto-authenticate teacher when developing locally
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      localStorage.setItem('meoncross_chess_teacher_auth', 'true');
+      return 'teacher';
+    }
+  } catch (e) {}
+  return 'pupil';
+}
+
 // State container
 let chessState = {
   players: [],
@@ -147,6 +176,8 @@ let chessState = {
   activeTab: 'signin', // 'signin' | 'beginners' | 'ladder' | 'table' | 'pairings' | 'knockout' | 'drills' | 'matches'
   filterYear: 'all', // 'all' | 'ks3' | 'ks4'
   filterHouse: 'all', // 'all' | houseId
+  userRole: getInitialRole(), // 'teacher' | 'pupil'
+  isPupilPreview: false,
   currentPuzzleIdx: 0,
   puzzleCategory: 'grandmaster', // 'grandmaster' | 'beginner'
   showBethHarmonHint: false,
@@ -545,9 +576,31 @@ export function renderChessHubView() {
   }
   filteredPlayers.sort((a, b) => a.rank - b.rank);
 
+  // In Pupil View, prevent attendance tab from showing
+  if (chessState.userRole === 'pupil' && chessState.activeTab === 'signin') {
+    chessState.activeTab = 'beginners';
+  }
+
   let html = `
     <div style="max-width: 1200px; width: 100%; box-sizing: border-box; margin: 0 auto; padding: 0 16px 60px 16px; animation: fadeInUp 0.25s ease-out; font-family: 'Outfit', sans-serif;">
       
+      ${
+        chessState.isPupilPreview
+          ? `
+        <!-- Pupil Preview Top Banner -->
+        <div style="background: #1e3a8a; color: #bfdbfe; border: 1.5px solid #3b82f6; padding: 10px 18px; font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center; border-radius: 8px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); flex-wrap: wrap; gap: 10px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 1.15rem;">👁</span>
+            <span><strong>Pupil Preview Mode:</strong> You are viewing the hub as pupils see it on their phones (teacher tools, match loggers, and attendance are hidden).</span>
+          </div>
+          <button onclick="window.exitPupilPreview()" style="background: #3b82f6; color: #ffffff; border: none; font-weight: 700; padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 6px;">
+            <span>✏️</span> Return to Teacher Mode
+          </button>
+        </div>
+      `
+          : ''
+      }
+
       <!-- Top Hero Header: 1960s Tournament Salon Placard -->
       <div style="background: #1c1917; border-radius: 12px; padding: 26px 24px; color: #ffffff; margin-bottom: 22px; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25); position: relative; overflow: visible; border: 2px solid #44403c; z-index: 50;">
         
@@ -564,54 +617,94 @@ export function renderChessHubView() {
             </p>
           </div>
 
-          <!-- Clean Primary Teacher Action Buttons -->
-          <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
-            <!-- Button 1: Master Whiteboard Launch (Main Projector Screen) -->
-            <button onclick="window.toggleWhiteboardMode()" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1.5px solid #38bdf8; font-weight: 800; font-size: 0.92rem; padding: 11px 20px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 9px; box-shadow: 0 4px 14px rgba(14, 165, 233, 0.4); transition: all 0.15s;" title="Launch Big Screen Whiteboard Display for Interactive Projector (Press W)">
-              <span style="font-size: 1.25rem; line-height: 1;">📺</span> Launch Whiteboard Mode (W)
-            </button>
-
-            <!-- Button 2: Quick Record Result -->
-            <button onclick="window.openLogMatchModal()" style="background: #292524; color: #fafaf9; border: 1.5px solid #78716c; font-weight: 700; font-size: 0.88rem; padding: 11px 18px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.25); transition: all 0.15s;" onmouseover="this.style.borderColor='#d4af37';this.style.color='#d4af37'" onmouseout="this.style.borderColor='#78716c';this.style.color='#fafaf9'">
-              <span style="font-size: 1.05rem; line-height: 1;">⚔</span> Record Game Result
-            </button>
-
-            <!-- Button 3: Clean Teacher Tools Dropdown -->
-            <div style="position: relative; display: inline-block;">
-              <button id="btn-chess-admin-menu" onclick="window.toggleChessAdminDropdown(event)" style="background: rgba(255, 255, 255, 0.08); color: #e7e5e4; border: 1.5px solid #57534e; font-weight: 700; font-size: 0.84rem; padding: 11px 16px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s;" title="Administrative & Backup Tools">
-                <span>⚙️</span> Teacher Tools ▾
+          <!-- Action Controls (Role-Aware: Teacher vs Pupil) -->
+          ${
+            chessState.userRole === 'teacher'
+              ? `
+            <!-- Teacher Action Controls -->
+            <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+              <!-- Button 1: Master Whiteboard Launch (Main Projector Screen) -->
+              <button onclick="window.toggleWhiteboardMode()" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1.5px solid #38bdf8; font-weight: 800; font-size: 0.92rem; padding: 11px 20px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 9px; box-shadow: 0 4px 14px rgba(14, 165, 233, 0.4); transition: all 0.15s;" title="Launch Big Screen Whiteboard Display for Interactive Projector (Press W)">
+                <span style="font-size: 1.25rem; line-height: 1;">📺</span> Launch Whiteboard Mode (W)
               </button>
-              <div id="chess-admin-dropdown" style="display: ${chessState.showAdminDropdown ? 'block' : 'none'}; position: absolute; right: 0; top: calc(100% + 8px); background: #292524; border: 1.5px solid #57534e; border-radius: 8px; box-shadow: 0 12px 32px rgba(0,0,0,0.65); z-index: 9999; min-width: 240px; overflow: hidden;">
-                <button type="button" onclick="window.openAssemblySlideModal(); window.toggleChessAdminDropdown();" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: #fef08a; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
-                  <span>⚑</span> Assembly Presentation Slide
+
+              <!-- Button 2: Quick Record Result -->
+              <button onclick="window.openLogMatchModal()" style="background: #292524; color: #fafaf9; border: 1.5px solid #78716c; font-weight: 700; font-size: 0.88rem; padding: 11px 18px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.25); transition: all 0.15s;" onmouseover="this.style.borderColor='#d4af37';this.style.color='#d4af37'" onmouseout="this.style.borderColor='#78716c';this.style.color='#fafaf9'">
+                <span style="font-size: 1.05rem; line-height: 1;">⚔</span> Record Game Result
+              </button>
+
+              <!-- Button 3: Clean Teacher Tools Dropdown -->
+              <div style="position: relative; display: inline-block;">
+                <button id="btn-chess-admin-menu" onclick="window.toggleChessAdminDropdown(event)" style="background: rgba(255, 255, 255, 0.08); color: #e7e5e4; border: 1.5px solid #57534e; font-weight: 700; font-size: 0.84rem; padding: 11px 16px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s;" title="Administrative & Backup Tools">
+                  <span>⚙️</span> Teacher Tools ▾
                 </button>
-                <button type="button" onclick="window.toggleAutoRePair(); window.toggleChessAdminDropdown();" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: ${chessState.autoRePairEnabled ? '#86efac' : '#fca5a5'}; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
-                  <span>⚡</span> Auto Re-Pairing: ${chessState.autoRePairEnabled ? 'Active (ON)' : 'Paused'}
-                </button>
-                <button type="button" onclick="window.openDataVaultModal(); window.toggleChessAdminDropdown();" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: #cbd5e1; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
-                  <span>💾</span> Backup Data Vault
-                </button>
-                ${
-                  getBackupInfo()
-                    ? `
-                  <button type="button" onclick="window.restoreChessBackup(); window.toggleChessAdminDropdown();" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: #93c5fd; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
-                    <span>↺</span> Restore Cohort (${getBackupInfo().playerCount})
+                <div id="chess-admin-dropdown" style="display: ${chessState.showAdminDropdown ? 'block' : 'none'}; position: absolute; right: 0; top: calc(100% + 8px); background: #292524; border: 1.5px solid #57534e; border-radius: 8px; box-shadow: 0 12px 32px rgba(0,0,0,0.65); z-index: 9999; min-width: 250px; overflow: hidden;">
+                  <button type="button" onclick="window.closeChessAdminDropdownOnly(); window.copyFridayBulletinNotice();" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: #67e8f9; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
+                    <span>📋</span> Copy Friday Bulletin Notice
                   </button>
-                `
-                    : ''
-                }
-                ${
-                  chessState.players.length > 0
-                    ? `
-                  <button type="button" onclick="window.resetClubDataToCleanSlate(); window.toggleChessAdminDropdown();" onmouseover="this.style.background='rgba(239,68,68,0.15)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; color: #fca5a5; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
-                    <span>✕</span> Reset Roster to Clean Slate
+                  <button type="button" onclick="window.closeChessAdminDropdownOnly(); window.openSnapshotExportModal();" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: #fdba74; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
+                    <span>🌐</span> Publish / Export Standings
                   </button>
-                `
-                    : ''
-                }
+                  <button type="button" onclick="window.closeChessAdminDropdownOnly(); window.openAssemblySlideModal();" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: #fef08a; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
+                    <span>⚑</span> Assembly Presentation Slide
+                  </button>
+                  <button type="button" onclick="window.closeChessAdminDropdownOnly(); window.toggleAutoRePair();" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: ${chessState.autoRePairEnabled ? '#86efac' : '#fca5a5'}; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
+                    <span>⚡</span> Auto Re-Pairing: ${chessState.autoRePairEnabled ? 'Active (ON)' : 'Paused'}
+                  </button>
+                  <button type="button" onclick="window.closeChessAdminDropdownOnly(); window.openDataVaultModal();" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: #cbd5e1; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
+                    <span>💾</span> Backup Data Vault
+                  </button>
+                  ${
+                    getBackupInfo()
+                      ? `
+                    <button type="button" onclick="window.closeChessAdminDropdownOnly(); window.restoreChessBackup();" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: #93c5fd; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
+                      <span>↺</span> Restore Cohort (${getBackupInfo().playerCount})
+                    </button>
+                  `
+                      : ''
+                  }
+                  <button type="button" onclick="window.closeChessAdminDropdownOnly(); window.togglePupilPreview();" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: #a5b4fc; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
+                    <span>👁</span> Preview as Pupil
+                  </button>
+                  <button type="button" onclick="window.closeChessAdminDropdownOnly(); window.lockTeacherMode();" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: #fbcfe8; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
+                    <span>🔒</span> Lock Teacher Mode
+                  </button>
+                  ${
+                    chessState.players.length > 0
+                      ? `
+                    <button type="button" onclick="window.closeChessAdminDropdownOnly(); window.resetClubDataToCleanSlate();" onmouseover="this.style.background='rgba(239,68,68,0.15)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; color: #fca5a5; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
+                      <span>✕</span> Reset Roster to Clean Slate
+                    </button>
+                  `
+                      : ''
+                  }
+                </div>
               </div>
+
+              <!-- Preview Pupil View Pill -->
+              <button onclick="window.togglePupilPreview()" style="background: rgba(255, 255, 255, 0.05); color: #cbd5e1; border: 1px solid #57534e; font-weight: 600; font-size: 0.8rem; padding: 11px 14px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s;" title="Preview the hub exactly as seen by pupils on their phones">
+                <span>👁</span> View as Pupil
+              </button>
             </div>
-          </div>
+          `
+              : `
+            <!-- Pupil View Controls: Safe & Clutter-Free -->
+            <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+              <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(212, 175, 55, 0.15); border: 1px solid rgba(212, 175, 55, 0.4); padding: 8px 14px; border-radius: 6px; font-size: 0.82rem; font-weight: 700; color: #d4af37;">
+                <span>🎓</span> Pupil Academy &amp; Standings
+              </div>
+              <button onclick="window.switchChessTab('beginners')" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #ffffff; border: 1.5px solid #34d399; font-weight: 800; font-size: 0.88rem; padding: 10px 18px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);">
+                <span>🌱</span> Rookie Academy
+              </button>
+              <button onclick="window.switchChessTab('ladder')" style="background: #292524; color: #fafaf9; border: 1.5px solid #78716c; font-weight: 700; font-size: 0.88rem; padding: 10px 18px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;">
+                <span>🪜</span> Master Ladder
+              </button>
+              <button onclick="window.promptTeacherUnlock()" style="background: transparent; color: #78716c; border: 1px solid #44403c; font-weight: 600; font-size: 0.76rem; padding: 10px 12px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;" title="Teacher administrative access">
+                <span>🔒</span> Teacher Access
+              </button>
+            </div>
+          `
+          }
         </div>
 
         <!-- House Points Scoring Rule Banner (Vintage Ledger Style) -->
@@ -682,51 +775,63 @@ export function renderChessHubView() {
         </div>
       </div>
 
-      <!-- Teacher Quick-Start Guide (Collapsible Card) -->
-      <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 10px; margin-bottom: 18px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
-        <button type="button" onclick="window.toggleTeacherGuideCollapse()" style="width: 100%; text-align: left; background: #fafaf9; border: none; padding: 12px 18px; font-size: 0.88rem; font-weight: 800; color: #334155; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <span style="font-size: 1.1rem; color: #2563eb;">ℹ️</span>
-            <span>How Period 6 Works: Quick 3-Step Teacher Rhythm</span>
-            <span style="background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; text-transform: uppercase;">Guide</span>
-          </div>
-          <span style="font-size: 0.85rem; color: #64748b;">${chessState.showTeacherGuide ? '▲ Hide Guide' : '▼ Show Guide'}</span>
-        </button>
-        ${
-          chessState.showTeacherGuide
-            ? `
-          <div style="padding: 16px 20px; border-top: 1px solid #e2e8f0; background: #ffffff;">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
-              <div style="background: #f8fafc; border-left: 3px solid #10b981; padding: 12px 14px; border-radius: 0 8px 8px 0;">
-                <div style="font-size: 0.85rem; font-weight: 800; color: #065f46; margin-bottom: 4px;">1️⃣ 3:30pm — Pupil Arrival</div>
-                <div style="font-size: 0.8rem; color: #475569; line-height: 1.45;">
-                  Click <strong>[ Check In All ]</strong> to mark regulars present in 1 second. For first-timers, use the quick 5-second registration form. Absent pupils stay unchecked and are never paired!
+      <!-- Teacher Quick-Start Guide (Collapsible Card — Teacher View Only) -->
+      ${
+        chessState.userRole === 'teacher'
+          ? `
+        <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 10px; margin-bottom: 18px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
+          <button type="button" onclick="window.toggleTeacherGuideCollapse()" style="width: 100%; text-align: left; background: #fafaf9; border: none; padding: 12px 18px; font-size: 0.88rem; font-weight: 800; color: #334155; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 1.1rem; color: #2563eb;">ℹ️</span>
+              <span>How Period 6 Works: Quick 3-Step Teacher Rhythm</span>
+              <span style="background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; text-transform: uppercase;">Guide</span>
+            </div>
+            <span style="font-size: 0.85rem; color: #64748b;">${chessState.showTeacherGuide ? '▲ Hide Guide' : '▼ Show Guide'}</span>
+          </button>
+          ${
+            chessState.showTeacherGuide
+              ? `
+            <div style="padding: 16px 20px; border-top: 1px solid #e2e8f0; background: #ffffff;">
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+                <div style="background: #f8fafc; border-left: 3px solid #10b981; padding: 12px 14px; border-radius: 0 8px 8px 0;">
+                  <div style="font-size: 0.85rem; font-weight: 800; color: #065f46; margin-bottom: 4px;">1️⃣ 3:30pm — Pupil Arrival</div>
+                  <div style="font-size: 0.8rem; color: #475569; line-height: 1.45;">
+                    Click <strong>[ Check In All ]</strong> to mark regulars present in 1 second. For first-timers, use the quick 5-second registration form. Absent pupils stay unchecked and are never paired!
+                  </div>
                 </div>
-              </div>
-              <div style="background: #f8fafc; border-left: 3px solid #0284c7; padding: 12px 14px; border-radius: 0 8px 8px 0;">
-                <div style="font-size: 0.85rem; font-weight: 800; color: #075985; margin-bottom: 4px;">2️⃣ 3:35pm — Launch Whiteboard</div>
-                <div style="font-size: 0.8rem; color: #475569; line-height: 1.45;">
-                  Hit <strong>[ 📺 Launch Whiteboard Mode ]</strong> on your classroom projector. It shows the 60-min countdown clock, live House standings, and active boards for pupils to see.
+                <div style="background: #f8fafc; border-left: 3px solid #0284c7; padding: 12px 14px; border-radius: 0 8px 8px 0;">
+                  <div style="font-size: 0.85rem; font-weight: 800; color: #075985; margin-bottom: 4px;">2️⃣ 3:35pm — Launch Whiteboard</div>
+                  <div style="font-size: 0.8rem; color: #475569; line-height: 1.45;">
+                    Hit <strong>[ 📺 Launch Whiteboard Mode ]</strong> on your classroom projector. It shows the 60-min countdown clock, live House standings, and active boards for pupils to see.
+                  </div>
                 </div>
-              </div>
-              <div style="background: #f8fafc; border-left: 3px solid #8b5cf6; padding: 12px 14px; border-radius: 0 8px 8px 0;">
-                <div style="font-size: 0.85rem; font-weight: 800; color: #5b21b6; margin-bottom: 4px;">3️⃣ 3:35–4:28pm — Hands-Off Play</div>
-                <div style="font-size: 0.8rem; color: #475569; line-height: 1.45;">
-                  When a game finishes, tap <strong>[ White Win ]</strong>, <strong>[ Draw ]</strong>, or <strong>[ Black Win ]</strong> on the screen. The computer auto-pairs idle pupils onto new boards!
+                <div style="background: #f8fafc; border-left: 3px solid #8b5cf6; padding: 12px 14px; border-radius: 0 8px 8px 0;">
+                  <div style="font-size: 0.85rem; font-weight: 800; color: #5b21b6; margin-bottom: 4px;">3️⃣ 3:35–4:28pm — Hands-Off Play</div>
+                  <div style="font-size: 0.8rem; color: #475569; line-height: 1.45;">
+                    When a game finishes, tap <strong>[ White Win ]</strong>, <strong>[ Draw ]</strong>, or <strong>[ Black Win ]</strong> on the screen. The computer auto-pairs idle pupils onto new boards!
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        `
-            : ''
-        }
-      </div>
+          `
+              : ''
+          }
+        </div>
+      `
+          : ''
+      }
 
       <!-- Main Navigation Tabs: Classic Typography -->
       <div style="display: flex; gap: 4px; border-bottom: 2px solid #e7e5e4; margin-bottom: 20px; overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; padding-bottom: 2px; scrollbar-width: thin;">
+        ${
+          chessState.userRole === 'teacher'
+            ? `
         <button onclick="window.switchChessTab('signin')" style="${getTabStyle(chessState.activeTab === 'signin')}">
           <span style="font-size: 1.1rem; line-height: 1;">♔</span> Period 6
         </button>
+        `
+            : ''
+        }
         <button onclick="window.switchChessTab('beginners')" style="${getTabStyle(chessState.activeTab === 'beginners')}">
           <span style="font-size: 1.05rem; line-height: 1;">🌱</span> Rookie Academy
         </button>
@@ -794,9 +899,6 @@ export function renderChessHubView() {
       </div>
 
     </div>
-
-    <!-- Modals (Hidden by default) -->
-    <div id="chess-modal-container"></div>
   `;
 
   container.innerHTML = html;
@@ -2905,6 +3007,69 @@ if (typeof window !== 'undefined') {
   });
 }
 
+// Teacher Authentication & Pupil Safeguard Handlers
+window.promptTeacherUnlock = function () {
+  const passkey = prompt('Enter Teacher Passkey to unlock administrative controls (e.g. lovett):');
+  if (!passkey) return;
+  const clean = passkey.trim().toLowerCase();
+  if (clean === 'lovett' || clean === 'teacher' || clean === 'history' || clean === 'meoncross') {
+    localStorage.setItem('meoncross_chess_teacher_auth', 'true');
+    chessState.userRole = 'teacher';
+    chessState.isPupilPreview = false;
+    showChessToast('🔓 Teacher Mode Unlocked!', 'success');
+    renderChessHubView();
+  } else {
+    showChessToast('Incorrect passkey. Please try again.', 'error');
+  }
+};
+
+window.togglePupilPreview = function () {
+  chessState.isPupilPreview = true;
+  chessState.userRole = 'pupil';
+  if (chessState.activeTab === 'signin') {
+    chessState.activeTab = 'beginners';
+  }
+  showChessToast('👁 Switched to Pupil Preview (Teacher tools hidden)', 'info');
+  renderChessHubView();
+};
+
+window.exitPupilPreview = function () {
+  chessState.isPupilPreview = false;
+  chessState.userRole = 'teacher';
+  chessState.activeTab = 'signin';
+  showChessToast('✏️ Returned to Teacher Mode', 'success');
+  renderChessHubView();
+};
+
+window.lockTeacherMode = function () {
+  localStorage.removeItem('meoncross_chess_teacher_auth');
+  chessState.isPupilPreview = false;
+  chessState.userRole = 'pupil';
+  if (chessState.activeTab === 'signin') {
+    chessState.activeTab = 'beginners';
+  }
+  showChessToast('🔒 Teacher mode locked (Pupil View active)', 'info');
+  renderChessHubView();
+};
+
+window.closeChessAdminDropdownOnly = function () {
+  chessState.showAdminDropdown = false;
+  const menu = document.getElementById('chess-admin-dropdown');
+  if (menu) menu.style.display = 'none';
+};
+
+function getChessModalContainer() {
+  let modalCont = document.getElementById('chess-modal-container');
+  if (!modalCont) {
+    modalCont = document.createElement('div');
+    modalCont.id = 'chess-modal-container';
+    document.body.appendChild(modalCont);
+  } else if (modalCont.parentElement !== document.body) {
+    document.body.appendChild(modalCont);
+  }
+  return modalCont;
+}
+
 // Navigation Handlers
 window.switchChessTab = function (tabName) {
   chessState.activeTab = tabName;
@@ -4342,7 +4507,7 @@ window.openLogMatchModal = function (
     showChessToast('Please register at least 2 pupils before logging matches.', 'warning');
     return;
   }
-  const modalCont = document.getElementById('chess-modal-container');
+  const modalCont = getChessModalContainer();
   if (!modalCont) return;
 
   const checkedInSet = new Set(chessState.checkedInPlayerIds || []);
@@ -4486,7 +4651,7 @@ window.prefillMatchModal = function (wId, bId, boardNum = null) {
 };
 
 window.closeChessModal = function () {
-  const modalCont = document.getElementById('chess-modal-container');
+  const modalCont = getChessModalContainer();
   if (modalCont) modalCont.innerHTML = '';
 };
 
@@ -4567,7 +4732,7 @@ window.handleMatchSubmit = function (e) {
 
 // Modal Handling: Assembly Slide Exporter (16:9 Presentation)
 window.openAssemblySlideModal = function () {
-  const modalCont = document.getElementById('chess-modal-container');
+  const modalCont = getChessModalContainer();
   if (!modalCont) return;
 
   const houseTotals = calculateHouseTotals();
@@ -4780,9 +4945,200 @@ window.downloadAssemblySlidePNG = function () {
   link.click();
 };
 
+// Friday Bulletin & Assembly Notice Generation
+window.generateFridayBulletinText = function () {
+  const houseTotals = calculateHouseTotals();
+  const sortedHouses = Object.values(houseTotals).sort((a, b) => b.points - a.points);
+
+  const playersByRank = [...chessState.players].sort(
+    (a, b) => (b.points || 0) - (a.points || 0) || (b.rating || 1000) - (a.rating || 1000),
+  );
+  const leader = playersByRank[0];
+  const leaderHouseName = leader ? HOUSES[leader.house]?.name || leader.house : '—';
+
+  const h1 = sortedHouses[0]
+    ? `${HOUSES[sortedHouses[0].id]?.name || 'Victory'} (${sortedHouses[0].points} pts)`
+    : 'Victory (0 pts)';
+  const h2 = sortedHouses[1]
+    ? `${HOUSES[sortedHouses[1].id]?.name || 'Warrior'} (${sortedHouses[1].points} pts)`
+    : 'Warrior (0 pts)';
+  const h3 = sortedHouses[2]
+    ? `${HOUSES[sortedHouses[2].id]?.name || 'Dreadnought'} (${sortedHouses[2].points} pts)`
+    : 'Dreadnought (0 pts)';
+  const h4 = sortedHouses[3]
+    ? `${HOUSES[sortedHouses[3].id]?.name || 'Invincible'} (${sortedHouses[3].points} pts)`
+    : 'Invincible (0 pts)';
+
+  return `♟️ MEONCROSS CHESS CLUB & HOUSE LEAGUE — FRIDAY BULLETIN ♟️\n🏆 House Championship Standings:\n   1st: ${h1}  ·  2nd: ${h2}  ·  3rd: ${h3}  ·  4th: ${h4}\n👑 Master Ladder Leader: ${leader ? `${leader.name} (Year ${leader.year} · ${leaderHouseName} · Rating ${leader.rating || 1000})` : 'Autumn Season Underway'}\n⚔ Total Games Completed: ${chessState.matches.length} tournament matches logged this term\n📅 Next Club: Thursday Period 6 in the Senior Block History Room!`;
+};
+
+window.copyFridayBulletinNotice = function () {
+  const text = window.generateFridayBulletinText();
+  if (navigator && navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        showChessToast('📋 Copied Friday Bulletin to clipboard!', 'success');
+      })
+      .catch(() => {});
+  }
+  window.openFridayBulletinModal(text);
+};
+
+window.openFridayBulletinModal = function (bulletinText) {
+  const modalCont = getChessModalContainer();
+  if (!modalCont) return;
+
+  const text = bulletinText || window.generateFridayBulletinText();
+
+  modalCont.innerHTML = `
+    <div style="position: fixed; inset: 0; background: rgba(15, 23, 42, 0.75); display: flex; align-items: center; justify-content: center; z-index: 99999; padding: 20px;" onclick="if(event.target === this) window.closeChessModal();">
+      <div style="background: #ffffff; border-radius: 14px; max-width: 560px; width: 100%; padding: 26px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); animation: zoomIn 0.2s ease-out; font-family: 'Outfit', sans-serif;">
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 10px;">
+          <div>
+            <h2 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+              <span>📋</span> Friday Bulletin &amp; Morning Notices
+            </h2>
+            <div style="font-size: 0.8rem; color: #64748b; margin-top: 2px;">
+              Ready to paste directly into school staff briefings, daily notices, or house newsletters.
+            </div>
+          </div>
+          <button onclick="window.closeChessModal()" style="background: none; border: none; font-size: 1.2rem; color: #64748b; cursor: pointer;">&times;</button>
+        </div>
+
+        <p style="font-size: 0.84rem; color: #475569; margin: 0 0 10px 0; line-height: 1.45;">
+          This 4-line summary highlights the current House Trophy standings and top-ranked player.
+        </p>
+
+        <textarea id="bulletin-notice-text" readonly style="width: 100%; box-sizing: border-box; height: 160px; padding: 12px; font-family: 'Courier New', Courier, monospace; font-size: 0.82rem; line-height: 1.5; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #f8fafc; color: #0f172a; resize: none; margin-bottom: 16px;">${text}</textarea>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;">
+          <span style="font-size: 0.78rem; color: #10b981; font-weight: 700;">✓ Automatically copied to clipboard</span>
+          <div style="display: flex; gap: 8px;">
+            <button type="button" onclick="const ta = document.getElementById('bulletin-notice-text'); if(ta){ ta.select(); document.execCommand('copy'); } window.showChessToast('📋 Copied again!', 'success');" style="background: #1c1917; color: #ffffff; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+              <span>📋</span> Copy to Clipboard
+            </button>
+            <button type="button" onclick="window.closeChessModal()" style="background: #e2e8f0; color: #334155; border: none; padding: 8px 14px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; cursor: pointer;">
+              Close
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  `;
+};
+
+// End-of-Session Snapshot & Publishing System
+window.openSnapshotExportModal = function () {
+  const modalCont = getChessModalContainer();
+  if (!modalCont) return;
+
+  const playerCount = chessState.players.length;
+  const matchCount = chessState.matches.length;
+  const origin = window.location.origin;
+  const pathname = window.location.pathname;
+
+  const exportPayload = {
+    v: 5,
+    t: Date.now(),
+    players: chessState.players,
+    matches: chessState.matches,
+    checkedInPlayerIds: chessState.checkedInPlayerIds,
+    knockoutBracket: chessState.knockoutBracket,
+  };
+  const jsonStr = JSON.stringify(exportPayload);
+  const b64 = btoa(encodeURIComponent(jsonStr));
+  const syncUrl = `${origin}${pathname}?view=chess&chess_sync=${b64}#chess-club`;
+
+  const codeSnippet = `// Meoncross Chess Club Official Snapshot (Updated ${new Date().toLocaleDateString('en-GB')})\nexport const INITIAL_PLAYERS = ${JSON.stringify(chessState.players, null, 2)};\n\nexport const INITIAL_MATCHES = ${JSON.stringify(chessState.matches, null, 2)};`;
+
+  modalCont.innerHTML = `
+    <div style="position: fixed; inset: 0; background: rgba(15, 23, 42, 0.75); display: flex; align-items: center; justify-content: center; z-index: 99999; padding: 20px;" onclick="if(event.target === this) window.closeChessModal();">
+      <div style="background: #ffffff; border-radius: 14px; max-width: 640px; width: 100%; padding: 26px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); animation: zoomIn 0.2s ease-out; font-family: 'Outfit', sans-serif; max-height: 90vh; overflow-y: auto;">
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 10px;">
+          <div>
+            <h2 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 1.35rem; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+              <span>🌐</span> End-of-Session Snapshot &amp; Publishing
+            </h2>
+            <div style="font-size: 0.8rem; color: #64748b; margin-top: 2px;">
+              Share current standings with pupils and parents or bake into the live school website.
+            </div>
+          </div>
+          <button onclick="window.closeChessModal()" style="background: none; border: none; font-size: 1.2rem; color: #64748b; cursor: pointer;">&times;</button>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px;">
+          
+          <!-- Option A: 1-Click Pupil Sync URL -->
+          <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 14px 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <div style="font-weight: 700; color: #0f172a; font-size: 0.95rem; font-family: 'Playfair Display', Georgia, serif;">
+                🔗 Option A: 1-Click Pupil &amp; Parent Link
+              </div>
+              <span style="font-size: 0.72rem; font-weight: 700; background: #e0f2fe; color: #0284c7; padding: 2px 8px; border-radius: 4px;">Zero Login Required</span>
+            </div>
+            <p style="margin: 0 0 10px 0; font-size: 0.8rem; color: #64748b; line-height: 1.45;">
+              Copy this link and post it on Google Classroom, Microsoft Teams, or email. Anyone who opens it sees the live standings, ${playerCount} pupils, and ${matchCount} matches instantly!
+            </p>
+            <div style="display: flex; gap: 8px;">
+              <input type="text" readonly value="${syncUrl}" style="flex: 1; padding: 7px 10px; border-radius: 4px; border: 1px solid #cbd5e1; font-family: monospace; font-size: 0.75rem; background: #ffffff;">
+              <button type="button" onclick="navigator.clipboard.writeText('${syncUrl}').then(() => window.showChessToast('🔗 1-Click Sync Link copied!', 'success'));" style="background: #0284c7; color: #ffffff; border: none; padding: 7px 14px; border-radius: 4px; font-weight: 700; font-size: 0.78rem; cursor: pointer; white-space: nowrap;">
+                Copy Link
+              </button>
+            </div>
+          </div>
+
+          <!-- Option B: Bake Snapshot into Website Code -->
+          <div style="background: #fdf8f6; border: 1.5px solid #fdba74; border-radius: 8px; padding: 14px 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <div style="font-weight: 700; color: #9a3412; font-size: 0.95rem; font-family: 'Playfair Display', Georgia, serif;">
+                ⚡ Option B: Permanent Git &amp; Netlify Snapshot
+              </div>
+              <span style="font-size: 0.72rem; font-weight: 700; background: #ffedd5; color: #c2410c; padding: 2px 8px; border-radius: 4px;">Permanent Website Update</span>
+            </div>
+            <p style="margin: 0 0 10px 0; font-size: 0.8rem; color: #7c2d12; line-height: 1.45;">
+              Click "Copy Code" and ask your AI assistant to update <code>chess_data.js</code>. Once committed, the live Netlify site permanently displays these standings to every pupil worldwide without needing local storage!
+            </p>
+            <textarea id="snapshot-code-snippet" readonly style="width: 100%; box-sizing: border-box; height: 95px; padding: 8px; font-family: 'Courier New', monospace; font-size: 0.72rem; border: 1px solid #fed7aa; border-radius: 4px; background: #fffaf0; color: #431407; resize: none; margin-bottom: 8px;">${codeSnippet}</textarea>
+            <button type="button" onclick="const el = document.getElementById('snapshot-code-snippet'); if(el){ el.select(); document.execCommand('copy'); } window.showChessToast('📋 Snapshot code copied to clipboard!', 'success');" style="background: #ea580c; color: #ffffff; border: none; padding: 7px 16px; border-radius: 4px; font-weight: 700; font-size: 0.78rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+              <span>📋</span> Copy Code Snippet for Git
+            </button>
+          </div>
+
+          <!-- Option C: Download Offline JSON Backup -->
+          <div style="background: #faf8f5; border: 1px solid #d6d3d1; border-radius: 8px; padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+            <div>
+              <div style="font-weight: 700; color: #1c1917; font-size: 0.92rem; font-family: 'Playfair Display', Georgia, serif;">
+                💾 Option C: Download Offline Snapshot (.json)
+              </div>
+              <div style="font-size: 0.76rem; color: #78716c; margin-top: 2px;">
+                Download a timestamped snapshot backup to your tablet for offline records.
+              </div>
+            </div>
+            <button type="button" onclick="window.downloadChessBackupJSON();" style="background: #1c1917; color: #ffffff; border: none; padding: 7px 14px; border-radius: 4px; font-weight: 700; font-size: 0.78rem; cursor: pointer; flex-shrink: 0;">
+              DOWNLOAD JSON
+            </button>
+          </div>
+
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; border-top: 1.5px solid #e2e8f0; padding-top: 12px;">
+          <button type="button" onclick="window.closeChessModal()" style="background: #e2e8f0; color: #334155; border: none; padding: 8px 18px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; cursor: pointer;">
+            Close
+          </button>
+        </div>
+
+      </div>
+    </div>
+  `;
+};
+
 // Modal Handling: Data Vault & Backup Tools
 window.openDataVaultModal = function () {
-  const modalCont = document.getElementById('chess-modal-container');
+  const modalCont = getChessModalContainer();
   if (!modalCont) return;
 
   const playerCount = chessState.players.length;
@@ -5558,7 +5914,7 @@ window.printFidePairingSheet = function () {
 
 // Modal Handling: Register Pupil
 window.openAddPlayerModal = function () {
-  const modalCont = document.getElementById('chess-modal-container');
+  const modalCont = getChessModalContainer();
   if (!modalCont) return;
 
   modalCont.innerHTML = `
