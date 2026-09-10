@@ -1129,30 +1129,6 @@ allDirs.forEach((unitId) => {
           if (lesson.pair_share.think) {
             html += `<p style="font-size: 8pt; font-style: italic; color: #475569; margin: 0; line-height: 1.25;"><strong>Guidance:</strong> ${lesson.pair_share.think}</p>`;
           }
-          if (lesson.pair_share.dilemma_scale) {
-            const ds = lesson.pair_share.dilemma_scale;
-            html += `<div style="margin: 6px 0; padding: 8px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px;">`;
-            html += `<div style="text-align: center; font-weight: bold; font-size: 8.5pt; color: #0f172a; margin-bottom: 4px;">⚖️ ${ds.title || 'Dilemma Scale'}</div>`;
-            html += `<div style="display: flex; gap: 8px; margin-bottom: 6px;">`;
-            html += `<div style="flex: 1; background: #fff; border: 1px solid #94a3b8; border-top: 2.5px solid #0284c7; border-radius: 4px; padding: 5px 7px;">`;
-            html += `<div style="font-weight: bold; font-size: 8pt; color: #0369a1; margin-bottom: 3px;">⬅️ ${ds.left_label}</div>`;
-            html += `<ul style="margin: 0; padding-left: 12px; font-size: 7.5pt; color: #334155; line-height: 1.2;">`;
-            (ds.left_points || []).forEach((p) => {
-              html += `<li style="margin-bottom: 2px;">${p}</li>`;
-            });
-            html += `</ul></div>`;
-            html += `<div style="flex: 1; background: #fff; border: 1px solid #94a3b8; border-top: 2.5px solid #d97706; border-radius: 4px; padding: 5px 7px;">`;
-            html += `<div style="font-weight: bold; font-size: 8pt; color: #b45309; margin-bottom: 3px;">➡️ ${ds.right_label}</div>`;
-            html += `<ul style="margin: 0; padding-left: 12px; font-size: 7.5pt; color: #334155; line-height: 1.2;">`;
-            (ds.right_points || []).forEach((p) => {
-              html += `<li style="margin-bottom: 2px;">${p}</li>`;
-            });
-            html += `</ul></div></div>`;
-            if (ds.fulcrum_note) {
-              html += `<div style="text-align: center; font-size: 7.5pt; font-weight: 600; color: #475569; background: #e2e8f0; padding: 3px 5px; border-radius: 4px;">🎯 Pivot / Fulcrum: ${ds.fulcrum_note}</div>`;
-            }
-            html += `</div>`;
-          }
           html += `</div>`;
         } else {
           html += `<div class="task-box" style="page-break-inside: avoid; margin-bottom: 15px;">`;

@@ -2245,30 +2245,6 @@ allDirs.forEach((unitId) => {
           if (lesson.pair_share.think) {
             html += `<p style="font-size: 8.5pt; font-style: italic; color: #475569; margin: 0 0 6px 0; line-height: 1.3;"><strong>Guidance:</strong> ${lesson.pair_share.think}</p>`;
           }
-          if (lesson.pair_share.dilemma_scale) {
-            const ds = lesson.pair_share.dilemma_scale;
-            html += `<div style="margin: 8px 0; padding: 10px; background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 6px; page-break-inside: avoid;">`;
-            html += `<div style="text-align: center; font-weight: bold; font-size: 9.5pt; color: #0f172a; margin-bottom: 6px;">⚖️ ${ds.title || 'Dilemma Scale'}</div>`;
-            html += `<div style="display: flex; gap: 10px; margin-bottom: 8px;">`;
-            html += `<div style="flex: 1; background: #fff; border: 1px solid #94a3b8; border-top: 3px solid #0284c7; border-radius: 4px; padding: 6px 8px;">`;
-            html += `<div style="font-weight: bold; font-size: 8.5pt; color: #0369a1; margin-bottom: 4px;">⬅️ ${ds.left_label}</div>`;
-            html += `<ul style="margin: 0; padding-left: 14px; font-size: 7.5pt; color: #334155; line-height: 1.25;">`;
-            (ds.left_points || []).forEach((p) => {
-              html += `<li style="margin-bottom: 2px;">${p}</li>`;
-            });
-            html += `</ul></div>`;
-            html += `<div style="flex: 1; background: #fff; border: 1px solid #94a3b8; border-top: 3px solid #d97706; border-radius: 4px; padding: 6px 8px;">`;
-            html += `<div style="font-weight: bold; font-size: 8.5pt; color: #b45309; margin-bottom: 4px;">➡️ ${ds.right_label}</div>`;
-            html += `<ul style="margin: 0; padding-left: 14px; font-size: 7.5pt; color: #334155; line-height: 1.25;">`;
-            (ds.right_points || []).forEach((p) => {
-              html += `<li style="margin-bottom: 2px;">${p}</li>`;
-            });
-            html += `</ul></div></div>`;
-            if (ds.fulcrum_note) {
-              html += `<div style="text-align: center; font-size: 8pt; font-weight: 600; color: #475569; background: #e2e8f0; padding: 4px 6px; border-radius: 4px;">🎯 Pivot / Fulcrum: ${ds.fulcrum_note}</div>`;
-            }
-            html += `</div>`;
-          }
           if (lesson.pair_share.starters && lesson.pair_share.starters.length > 0) {
             html += `<div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 6px 10px; margin-bottom: 8px; font-size: 8.5pt; color: #166534; line-height: 1.35;">`;
             html += `<strong style="display: block; margin-bottom: 2px; font-size: 8pt; text-transform: uppercase;">Sentence Starters:</strong>`;
@@ -2279,7 +2255,8 @@ allDirs.forEach((unitId) => {
           }
           html += `<div style="font-size: 8.5pt; font-weight: bold; color: #0f766e; margin-bottom: 4px;">Pupil Response:</div>`;
           html += `<div style="margin-bottom: 4px;">`;
-          for (let i = 0; i < 4; i++) {
+          const lineCount = lesson.pair_share.lines || (lesson.historians_corner ? 6 : 8);
+          for (let i = 0; i < lineCount; i++) {
             html += `<div class="task-lines-large"></div>`;
           }
           html += `</div>`;
