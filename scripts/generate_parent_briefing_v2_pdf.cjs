@@ -181,22 +181,22 @@ function getHtmlContent() {
     .itinerary-grid {
       display: flex;
       flex-direction: column;
-      gap: 16px;
-      margin-bottom: 16px;
+      gap: 12px;
+      margin-bottom: 14px;
     }
 
     .day-card {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-radius: 7px;
-      padding: 12px 14px;
+      padding: 10px 14px;
       display: flex;
       gap: 12px;
     }
 
     .day-pill {
       flex-shrink: 0;
-      width: 74px;
+      width: 70px;
       background: #1e3a8a;
       color: #ffffff;
       border-radius: 5px;
@@ -210,24 +210,24 @@ function getHtmlContent() {
     .day-pill.day2 { background: #b45309; }
     .day-pill.day3 { background: #0f766e; }
 
-    .day-pill .d-num { font-size: 12.5pt; font-weight: 800; line-height: 1; }
-    .day-pill .d-date { font-size: 8.5pt; font-weight: 700; text-transform: uppercase; margin-top: 3px; }
+    .day-pill .d-num { font-size: 12pt; font-weight: 800; line-height: 1; }
+    .day-pill .d-date { font-size: 8pt; font-weight: 700; text-transform: uppercase; margin-top: 3px; }
 
-    .day-details { flex: 1; }
-    .day-title { font-size: 12pt; font-weight: 800; color: #0f172a; margin-bottom: 4px; }
+    .day-details { flex: 1; min-width: 0; }
+    .day-title { font-size: 11pt; font-weight: 800; color: #0f172a; margin-bottom: 3px; }
     .day-schedule {
       margin: 0;
       padding: 0;
       list-style: none;
     }
     .day-schedule li {
-      font-size: 11.5pt;
+      font-size: 9.6pt;
       color: #334155;
-      line-height: 1.42;
-      margin-bottom: 6px;
+      line-height: 1.38;
+      margin-bottom: 3.5px;
       position: relative;
       padding-left: 13px;
-      white-space: nowrap;
+      overflow-wrap: break-word;
     }
     .day-schedule li:last-child {
       margin-bottom: 0;
