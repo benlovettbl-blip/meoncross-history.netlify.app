@@ -315,8 +315,11 @@ export function initEventDelegation() {
 
         const itinPanel = container.querySelector('#trip-panel-itinerary');
         const fallenPanel = container.querySelector('#trip-panel-fallen');
+        const crummackPanel = container.querySelector('#trip-panel-crummack');
         if (itinPanel) itinPanel.style.display = selectedTab === 'itinerary' ? 'block' : 'none';
         if (fallenPanel) fallenPanel.style.display = selectedTab === 'fallen' ? 'block' : 'none';
+        if (crummackPanel)
+          crummackPanel.style.display = selectedTab === 'crummack' ? 'block' : 'none';
 
         // Provide immediate visual feedback: smooth scroll to the selected content
         if (selectedTab === 'itinerary') {
@@ -328,6 +331,10 @@ export function initEventDelegation() {
         } else if (selectedTab === 'fallen') {
           if (fallenPanel) {
             fallenPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        } else if (selectedTab === 'crummack') {
+          if (crummackPanel) {
+            crummackPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
         }
         break;

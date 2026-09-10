@@ -469,6 +469,8 @@ export function renderLesson(lesson) {
       lessonPrefix = 'Expedition Briefing';
     } else if (lesson.id && lesson.id.startsWith('day_')) {
       lessonPrefix = `Day ${lesson.id.split('_')[1]} · Field Guide`;
+    } else if (lesson.id === 'hero_crummack') {
+      lessonPrefix = 'Pupil Family Archive · Year 10 (Aby)';
     } else if (lesson.id && lesson.id.startsWith('hero_lowry_')) {
       lessonPrefix = 'Home Front Memorial · Manor Way Grange';
     } else if (lesson.id && lesson.id.startsWith('hero_')) {
@@ -3128,6 +3130,8 @@ export function renderLesson(lesson) {
           prevLabel = 'Pre-Trip Briefing';
         } else if (prevLesson.id && prevLesson.id.startsWith('day_')) {
           prevLabel = `Previous Day (${prevLesson.title.split(':')[0]})`;
+        } else if (prevLesson.id === 'hero_crummack') {
+          prevLabel = 'Pupil Family Hero: 2nd Lt Crummack';
         } else if (prevLesson.id && prevLesson.id.startsWith('hero_lowry_')) {
           prevLabel = `Previous Study: ${prevLesson.title.split('(')[0].trim()}`;
         } else if (prevLesson.id && prevLesson.id.startsWith('hero_')) {
@@ -3149,6 +3153,8 @@ export function renderLesson(lesson) {
           nextLabel = 'Pre-Trip Briefing';
         } else if (nextLesson.id && nextLesson.id.startsWith('day_')) {
           nextLabel = `Next Day (${nextLesson.title.split(':')[0]})`;
+        } else if (nextLesson.id === 'hero_crummack') {
+          nextLabel = 'Family Hero: 2nd Lt Crummack';
         } else if (nextLesson.id && nextLesson.id.startsWith('hero_lowry_')) {
           nextLabel = `Home Front: ${nextLesson.title.split('(')[0].trim()}`;
         } else if (nextLesson.id && nextLesson.id.startsWith('hero_')) {

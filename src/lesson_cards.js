@@ -333,6 +333,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
     const meninGateHeroes = [];
     const tyneCotHeroes = [];
     const lowryBrothers = [];
+    let crummackHero = null;
     let prepPack = null;
 
     (targetData.lessons || []).forEach((lesson, index) => {
@@ -346,12 +347,14 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
         tyneCotHeroes.push({ lesson, index });
       } else if (lesson.id && lesson.id.startsWith('hero_lowry_')) {
         lowryBrothers.push({ lesson, index });
+      } else if (lesson.id === 'hero_crummack') {
+        crummackHero = { lesson, index };
       }
     });
 
     lessonsHTML += `
       <div id="trip-hub-container" style="margin-top: 25px;">
-        <!-- Two-Tab Switcher Bar -->
+        <!-- Three-Tab Switcher Bar -->
         <div style="display: flex; gap: 12px; border-bottom: 2px solid #e2e8f0; padding-bottom: 14px; margin-bottom: 25px; flex-wrap: wrap;">
           <button class="btn trip-hub-tab-btn active" data-action="switch-trip-hub-tab" data-tab="itinerary" style="padding: 10px 22px; font-size: 0.95rem; border-radius: 8px; border: 1.5px solid #1e3a8a; background: #1e3a8a; color: #ffffff; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(30, 58, 138, 0.25); transition: all 0.2s;">
             <i class="fa-solid fa-route" style="font-size: 1rem;"></i>
@@ -362,6 +365,11 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
             <i class="fa-solid fa-monument" style="font-size: 1rem;"></i>
             <span>Village Fallen &amp; Memorials</span>
             <span class="tab-badge" style="font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; background: #e2e8f0; color: #475569; margin-left: 4px;">9 Heroes</span>
+          </button>
+          <button class="btn trip-hub-tab-btn" data-action="switch-trip-hub-tab" data-tab="crummack" style="padding: 10px 22px; font-size: 0.95rem; border-radius: 8px; border: 1.5px solid #cbd5e1; background: #f8fafc; color: #475569; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s;">
+            <i class="fa-solid fa-medal" style="font-size: 1rem; color: #d97706;"></i>
+            <span>Pupil Family Hero: 2nd Lt Crummack MC</span>
+            <span class="tab-badge" style="font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; background: #fef3c7; color: #92400e; margin-left: 4px;">Year 10 (Aby)</span>
           </button>
         </div>
 
@@ -387,7 +395,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
               <a href="/pdfs/ypres_1914_1918_teacher_companion.pdf" target="_blank" style="padding: 7px 12px; font-size: 0.8rem; font-weight: 700; background: #f5f3ff; color: #5b21b6; border: 1.5px solid #c4b5fd; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;" onmouseover="this.style.background='#ede9fe';" onmouseout="this.style.background='#f5f3ff';">
                 <i class="fa-solid fa-compass" style="color: #7c3aed;"></i> Tour Companion (PDF)
               </a>
-              <a href="/pdfs/ypres_2026_parent_information_pack_v2.pdf" target="_blank" style="padding: 7px 12px; font-size: 0.8rem; font-weight: 700; background: #fefce8; color: #b45309; border: 1.5px solid #fde047; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;" onmouseover="this.style.background='#fef08a';" onmouseout="this.style.background='#fefce8';">
+              <a href="/pdfs/ypres_2026_parent_information_pack_v2.pdf" target="_blank" style="padding: 7px 12px; font-size: 0.8rem; font-weight: 700; background: #fefce8; color: #b45309; border: 1.5px solid #fde68a; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;" onmouseover="this.style.background='#fef08a';" onmouseout="this.style.background='#fefce8';">
                 <i class="fa-solid fa-file-pdf" style="color: #dc2626;"></i> Parent Pack (PDF)
               </a>
               <a href="/briefings/ypres_2026_parent_briefing.pptx" download="ypres_2026_parent_briefing.pptx" target="_blank" style="padding: 7px 12px; font-size: 0.8rem; font-weight: 700; background: #f0fdf4; color: #166534; border: 1.5px solid #bbf7d0; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s;" onmouseover="this.style.background='#dcfce7';" onmouseout="this.style.background='#f0fdf4';">
@@ -397,6 +405,27 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
                 View Guide &rarr;
               </button>
             </div>
+          </div>
+        </div>
+      `;
+    }
+
+    if (crummackHero) {
+      lessonsHTML += `
+        <div style="margin-bottom: 25px; background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 1.5px solid #fde68a; border-left: 5px solid #d97706; border-radius: 8px; padding: 18px 22px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+          <div style="flex: 1; min-width: 280px; cursor: pointer;" data-action="view-lesson-detail" data-index="${crummackHero.index}">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; flex-wrap: wrap;">
+              <span style="background: #b45309; color: #ffffff; font-size: 0.72rem; font-weight: 800; padding: 2px 8px; border-radius: 10px; text-transform: uppercase;">Pupil Family Archive · Year 10</span>
+              <h3 style="margin: 0; color: #78350f; font-size: 1.18rem; font-family: 'Playfair Display', serif;">2nd Lieutenant Ernest Edward Crummack MC, DCM</h3>
+            </div>
+            <p style="margin: 0; color: #451a03; font-size: 0.88rem; line-height: 1.4;">
+              Family archive of <strong>Aby (Year 10)</strong>, researched by grandfather <strong>Edward Pearson</strong> and shared by mother <strong>Harriet Uwalaka</strong>. Held the Boesinghe canal (Day 1 link); rescued Siegfried Sassoon's friend Marcus Goodall (Somme DCM); awarded MC breaching Hindenburg Line.
+            </p>
+          </div>
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <button class="btn" data-action="view-lesson-detail" data-index="${crummackHero.index}" style="padding: 8px 16px; font-size: 0.82rem; font-weight: 700; background: #d97706; color: #ffffff; border: 1.5px solid #b45309; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 4px rgba(217, 119, 6, 0.25);">
+              <i class="fa-solid fa-medal"></i> Read Full Dossier &rarr;
+            </button>
           </div>
         </div>
       `;
@@ -658,8 +687,131 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
       `;
     }
 
+    // Pupil Family Hero Showcase in Village Fallen tab
+    if (crummackHero) {
+      lessonsHTML += `
+        <div style="margin-top: 35px; background: #fffbeb; border: 1.5px solid #fde68a; border-radius: 10px; padding: 25px;">
+          <div style="border-bottom: 1.5px solid #fde68a; padding-bottom: 12px; margin-bottom: 18px; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px;">
+            <div>
+              <span style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; background: #fbbf24; color: #78350f; padding: 3px 10px; border-radius: 12px; display: inline-block; margin-bottom: 8px;">
+                Pupil Family Archive · Year 10
+              </span>
+              <h3 style="margin: 0 0 6px 0; color: #78350f; font-size: 1.35rem; font-family: 'Playfair Display', serif;">
+                Living Remembrance: 2nd Lieutenant Ernest Edward Crummack MC, DCM
+              </h3>
+              <p style="margin: 0; color: #451a03; font-size: 0.92rem; line-height: 1.5;">
+                Great-great-grandfather of <strong>Aby (Year 10)</strong>. Researched by grandfather <strong>Edward Pearson</strong> (Military Historian) and shared by mother <strong>Harriet Uwalaka</strong> (née Pearson) following the Ypres parent briefing. A coal miner who rose through the ranks to win the DCM, the Russian Medal of St George, and the Military Cross.
+              </p>
+            </div>
+            <button class="btn" data-action="view-lesson-detail" data-index="${crummackHero.index}" style="padding: 9px 18px; font-size: 0.85rem; font-weight: 700; background: #d97706; color: #ffffff; border: 1.5px solid #b45309; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(217, 119, 6, 0.25);">
+              <i class="fa-solid fa-book-open"></i> Open Full Dossier &amp; Archive &rarr;
+            </button>
+          </div>
+
+          <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${crummackHero.index}" style="background: #fff; border: 1.5px solid #fde68a; border-left: 5px solid #d97706; border-radius: 8px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0)';">
+            <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: center;">
+              <div style="flex: 0 0 110px; text-align: center;">
+                <img src="/images/crummack/portrait_sgt_ernest_crummack_1916.jpg" alt="Ernest Crummack" style="width: 100%; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+              </div>
+              <div style="flex: 1; min-width: 250px;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px;">
+                  <h4 style="margin: 0; color: #78350f; font-size: 1.15rem; font-family: 'Playfair Display', serif;">2nd Lieutenant Ernest Edward Crummack MC, DCM</h4>
+                  <span style="font-size: 0.75rem; font-weight: 700; background: #fef3c7; color: #92400e; padding: 3px 9px; border-radius: 10px; border: 1px solid #fde68a;">Survived (1888–1968)</span>
+                </div>
+                <p style="margin: 0 0 6px 0; color: #475569; font-size: 0.88rem; font-weight: 600;">1/5th &amp; 2/4th Battalions, York and Lancaster Regiment (49th &amp; 62nd Divisions)</p>
+                <p style="margin: 0 0 10px 0; color: #334155; font-size: 0.85rem; line-height: 1.4;">
+                  Held the Yser Canal at Boesinghe under the first German phosgene gas attacks (1915); awarded the DCM and Russian Medal of St George for crawling under heavy machine-gun fire at Thiepval Wood to rescue 2nd Lt Marcus Goodall (friend of poet Siegfried Sassoon); commissioned from the ranks and awarded the Military Cross breaching the Hindenburg Line at the Canal du Nord (1918).
+                </p>
+                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed #fde68a; padding-top: 10px; font-size: 0.8rem;">
+                  <span style="color: #92400e; font-weight: 700;"><i class="fa-solid fa-award" style="color: #d97706; margin-right: 4px;"></i> MC, DCM, Russian Medal of St George</span>
+                  <span style="color: #1e3a8a; font-weight: 700;"><i class="fa-solid fa-graduation-cap" style="color: #2563eb; margin-right: 4px;"></i> Aby (Year 10) Family Archive</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
     lessonsHTML += `
         </div>
+    `;
+
+    // Tab 3: Dedicated Pupil Family Hero Panel
+    if (crummackHero) {
+      lessonsHTML += `
+        <div id="trip-panel-crummack" style="display: none; scroll-margin-top: 80px;">
+          <div style="background: linear-gradient(135deg, #fefce8 0%, #fffbeb 50%, #fef3c7 100%); border: 2px solid #f59e0b; border-radius: 12px; padding: 28px; box-shadow: 0 4px 14px rgba(245, 158, 11, 0.15); margin-bottom: 25px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; border-bottom: 1.5px dashed #d97706; padding-bottom: 16px; margin-bottom: 20px;">
+              <div>
+                <span style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; background: #fbbf24; color: #78350f; padding: 3px 10px; border-radius: 12px; display: inline-block; margin-bottom: 8px;">
+                  Pupil Family Archive · Year 10
+                </span>
+                <h3 style="margin: 0 0 6px 0; color: #78350f; font-size: 1.6rem; font-family: 'Playfair Display', serif;">
+                  2nd Lieutenant Ernest Edward Crummack MC, DCM
+                </h3>
+                <p style="margin: 0; color: #451a03; font-size: 0.95rem; line-height: 1.5;">
+                  The Great War Odyssey of a Yorkshire Miner: From the Poison Gas of Boesinghe and Thiepval Wood to the Hindenburg Line.
+                </p>
+              </div>
+              <button class="btn" data-action="view-lesson-detail" data-index="${crummackHero.index}" style="padding: 10px 22px; font-size: 0.92rem; font-weight: 700; background: #d97706; color: #ffffff; border: 1.5px solid #b45309; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(217, 119, 6, 0.3);">
+                <i class="fa-solid fa-book-open"></i> Read Full Illustrated Dossier &rarr;
+              </button>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 22px;">
+              <div style="background: white; border: 1px solid #fde68a; border-radius: 10px; padding: 18px; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
+                <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 1.05rem; font-family: 'Playfair Display', serif;">
+                  <i class="fa-solid fa-users" style="color: #2563eb; margin-right: 6px;"></i> Family Attribution &amp; Lineage
+                </h4>
+                <p style="margin: 0 0 10px 0; color: #334155; font-size: 0.88rem; line-height: 1.5;">
+                  Researched and compiled by grandfather and military historian <strong>Edward Pearson</strong>. Shared with Mr Ben Lovett by mother <strong>Harriet Uwalaka</strong> (née Pearson) following the Ypres parent briefing.
+                </p>
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px; font-size: 0.8rem; color: #475569; line-height: 1.6;">
+                  <strong>Lineage:</strong> 2nd Lt Ernest Crummack MC, DCM &rarr; Edward Crummack &rarr; Edward Pearson &rarr; Harriet Uwalaka &rarr; <strong>Aby (Year 10, middle name Ernest)</strong>.
+                </div>
+              </div>
+
+              <div style="background: white; border: 1px solid #fde68a; border-radius: 10px; padding: 18px; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
+                <h4 style="margin: 0 0 10px 0; color: #92400e; font-size: 1.05rem; font-family: 'Playfair Display', serif;">
+                  <i class="fa-solid fa-feather-pointed" style="color: #d97706; margin-right: 6px;"></i> The Siegfried Sassoon Connection
+                </h4>
+                <p style="margin: 0; color: #334155; font-size: 0.88rem; line-height: 1.5;">
+                  On 3 July 1916 at Thiepval Wood, Sergeant Crummack crawled into No Man's Land under heavy machine-gun fire to rescue wounded officer <strong>2nd Lt Marcus Goodall</strong>, earning the DCM and Russian Medal of St George. Grandfather Edward Pearson's research confirmed Goodall was the beloved close friend of Great War poet <strong>Siegfried Sassoon</strong>, who wrote an elegy for him.
+                </p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; align-items: center; text-align: center;">
+              <div style="flex: 1; min-width: 180px; max-width: 220px; background: white; padding: 10px; border-radius: 8px; border: 1px solid #e2e8f0; cursor: pointer;" data-action="view-lesson-detail" data-index="${crummackHero.index}">
+                <img src="/images/crummack/portrait_sgt_ernest_crummack_1916.jpg" alt="Ernest Crummack 1916" style="width: 100%; height: 140px; object-fit: cover; border-radius: 6px;">
+                <small style="display: block; margin-top: 6px; font-weight: 600; color: #1e3a8a; font-size: 0.78rem;">Sgt Crummack (Somme 1916)</small>
+              </div>
+              <div style="flex: 1; min-width: 180px; max-width: 220px; background: white; padding: 10px; border-radius: 8px; border: 1px solid #e2e8f0; cursor: pointer;" data-action="view-lesson-detail" data-index="${crummackHero.index}">
+                <img src="/images/crummack/portrait_2nd_lt_ernest_crummack.jpg" alt="2nd Lt Crummack 1918" style="width: 100%; height: 140px; object-fit: cover; border-radius: 6px;">
+                <small style="display: block; margin-top: 6px; font-weight: 600; color: #1e3a8a; font-size: 0.78rem;">2nd Lt Crummack (Commissioned 1918)</small>
+              </div>
+              <div style="flex: 1; min-width: 180px; max-width: 220px; background: white; padding: 10px; border-radius: 8px; border: 1px solid #e2e8f0; cursor: pointer;" data-action="view-lesson-detail" data-index="${crummackHero.index}">
+                <img src="/images/crummack/crummack_medals_display.jpg" alt="Six Medals" style="width: 100%; height: 140px; object-fit: cover; border-radius: 6px;">
+                <small style="display: block; margin-top: 6px; font-weight: 600; color: #1e3a8a; font-size: 0.78rem;">Original Mounted 6 Medals</small>
+              </div>
+              <div style="flex: 1; min-width: 180px; max-width: 220px; background: white; padding: 10px; border-radius: 8px; border: 1px solid #e2e8f0; cursor: pointer;" data-action="view-lesson-detail" data-index="${crummackHero.index}">
+                <img src="/images/crummack/map_ypres_boesinghe_1915.jpg" alt="Boesinghe Map" style="width: 100%; height: 140px; object-fit: cover; border-radius: 6px;">
+                <small style="display: block; margin-top: 6px; font-weight: 600; color: #1e3a8a; font-size: 0.78rem;">Boesinghe Canal Map (1915)</small>
+              </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 22px;">
+              <button class="btn" data-action="view-lesson-detail" data-index="${crummackHero.index}" style="padding: 12px 28px; font-size: 1rem; font-weight: 700; background: #1e3a8a; color: #ffffff; border: 1.5px solid #1e3a8a; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 4px 10px rgba(30, 58, 138, 0.25);">
+                <i class="fa-solid fa-book-open"></i> Open Complete Illustrated Dossier &amp; Pupil Tasks &rarr;
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    lessonsHTML += `
       </div>
     `;
 
@@ -688,7 +840,9 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
         }
 
         let cardBadge = `Lesson ${index + 1}`;
-        if (lesson.id && lesson.id.startsWith('hero_')) {
+        if (lesson.id === 'hero_crummack') {
+          cardBadge = 'Pupil Family Archive';
+        } else if (lesson.id && lesson.id.startsWith('hero_')) {
           cardBadge = 'Local Hero';
         } else if (lesson.id === 'day_0') {
           cardBadge = 'Pre-Trip';

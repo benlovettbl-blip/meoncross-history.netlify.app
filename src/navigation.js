@@ -534,7 +534,7 @@ function updateSidebarForUnit(unitId, unitData = {}) {
   const isTrip = unitId === 'trip_ypres' || unitData.type === 'trip';
 
   if (isTrip) {
-    // Battlefield Tour Unit: Only show Tour Itinerary tab
+    // Battlefield Tour Unit: Configure Tour Itinerary tab and Pupil Family Hero tab
     if (navLessons) {
       navLessons.style.display = 'flex';
       navLessons.dataset.action = 'switch-view';
@@ -544,13 +544,30 @@ function updateSidebarForUnit(unitId, unitData = {}) {
         '<i class="fa-solid fa-map-location-dot"></i><span>Tour Itinerary</span>';
       navLessons.onclick = () => switchView('lessons', unitId);
     }
+    if (navIndividuals) {
+      navIndividuals.style.display = 'flex';
+      navIndividuals.dataset.action = 'switch-view';
+      navIndividuals.dataset.view = 'lessons';
+      navIndividuals.dataset.unit = unitId;
+      navIndividuals.innerHTML =
+        '<i class="fa-solid fa-medal" style="color: #f59e0b;"></i><span>Family Hero: 2nd Lt Crummack</span>';
+      navIndividuals.onclick = () => {
+        const uData =
+          state.db && state.db[unitId] ? state.db[unitId] : state.activeUnitData || unitData;
+        const idx = (uData.lessons || []).findIndex((l) => l.id === 'hero_crummack');
+        if (idx !== -1 && typeof window.renderLessonByIndex === 'function') {
+          window.renderLessonByIndex(idx);
+        } else {
+          switchView('lessons', unitId);
+        }
+      };
+    }
     if (navInteractive) navInteractive.style.display = 'none';
     if (navTimeline) navTimeline.style.display = 'none';
     if (navBooklet) navBooklet.style.display = 'none';
     if (navMockExams) navMockExams.style.display = 'none';
     if (navDecisions) navDecisions.style.display = 'none';
     if (navTaboo) navTaboo.style.display = 'none';
-    if (navIndividuals) navIndividuals.style.display = 'none';
     if (navReading) navReading.style.display = 'none';
     return;
   }
