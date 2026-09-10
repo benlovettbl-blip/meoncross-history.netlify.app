@@ -101,3 +101,17 @@ Whenever you fetch, download, or add a new visual source (image) to a lesson, yo
 
 ## No AI Images
 STRICT RULE: Do NOT generate or use AI images (e.g., via generate_image tool) for any historical content, curriculum data, or cover images. You MUST ONLY use authentic, historical photographs or primary source illustrations. This app is for educational purposes and strictly forbids AI-generated historical imagery.
+
+## Global Iconography Policy for Educational Content
+Restrict FontAwesome / decorative icon usage strictly to high-level UI controls (such as the main sidebar navigation, view switchers, modal triggers, print buttons, and audio read-aloud controls). Keep all historical source presentations, reading boxes, and teacher commentary strictly typography-driven (using small-caps `.archival-meta-tag`, classical serif headings `.archival-source-title`, `.archival-shelfmark-stamp`, and structured tabular/footnote data). Never inject colored, playful, or decorative icons (e.g. quote-left, magnifying-glass, bullseye, image icons) inside historical excerpts or academic commentary to preserve an authentic, museum-archive feel throughout all units.
+
+## Archival Watermark & Seal Styling
+In place of colored icons, use a faint, subtle monochrome archival shelfmark stamp (`.archival-shelfmark-stamp`) or simple hairline dividers (`.archival-hairline`) for official school documentation boxes, family archives, and provenance containers to give them an understated, authentic institutional look. For official institutional provenance, use the `.archival-seal` micro-stamp badge.
+
+## Primary Source Citation Box Standard
+Formalize all primary historical excerpts across all units (including Medicine Through Time, Weimar Germany, and the Great War) into the reusable `.archival-source-box` pattern. Each citation box must feature:
+1. An `.archival-source-header` with an `.archival-meta-tag` category label on the left and a boxed `.archival-shelfmark-stamp` (repository and accession shelfmark/gazette issue) on the right.
+2. An `.archival-source-title` with serif styling.
+3. An `.archival-source-body` rendering verbatim primary text in an authentic historical serif face (`Georgia` or `Playfair Display`) with subtle warm archival parchment background.
+4. An `.archival-citation-footer` separated by a 1px hairline divider detailing historical provenance, combat action, date, and publication volume.
+

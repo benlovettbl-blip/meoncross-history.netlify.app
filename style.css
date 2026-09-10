@@ -3559,3 +3559,185 @@ img::after {
   border-bottom-color: #b91c1c;
   color: #991b1b;
 }
+
+/* ==========================================================================
+   Scholarly Archival Design System & Global Iconography Standards
+   ========================================================================== */
+
+/* Standardized primary source container */
+.archival-source-box {
+  background: #fffdfa;
+  border: 1px solid #cbd5e1;
+  border-top: 3.5px solid #1e3a8a;
+  border-radius: 8px;
+  padding: 22px 26px;
+  margin: 20px 0;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+  text-align: left;
+  position: relative;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.archival-source-box:hover {
+  border-color: #94a3b8;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+}
+
+.archival-source-box.accent-amber {
+  border-top-color: #b45309;
+  background: linear-gradient(135deg, #fffdfa 0%, #fefcf7 100%);
+}
+
+.archival-source-box.accent-crimson {
+  border-top-color: #991b1b;
+}
+
+.archival-source-box.accent-slate {
+  border-top-color: #334155;
+}
+
+/* Archival Source Header */
+.archival-source-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Archival Shelfmark Stamp: Monospace/Small-Caps authentic institutional label */
+.archival-shelfmark-stamp {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #475569;
+  padding: 3px 8px;
+  border-radius: 2px;
+  background: #f8fafc;
+  border: 1px solid #94a3b8;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+/* Archival Meta Tag: Small-caps typography micro-badge */
+.archival-meta-tag {
+  font-family:
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #64748b;
+  display: inline-block;
+}
+
+.archival-meta-tag.accent-blue {
+  color: #1e3a8a;
+}
+
+.archival-meta-tag.accent-amber {
+  color: #92400e;
+}
+
+.archival-meta-tag.accent-crimson {
+  color: #991b1b;
+}
+
+.archival-meta-tag.accent-emerald {
+  color: #065f46;
+}
+
+/* Scholarly Title */
+.archival-source-title {
+  margin: 0;
+  color: #0f172a;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+/* Archival Excerpt Body */
+.archival-source-body {
+  font-family: 'Georgia', 'Cambria', serif;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #1e293b;
+  background: #fdfbf7;
+  border: 1px solid #f1ece1;
+  border-left: 3px solid #cbd5e1;
+  padding: 16px 20px;
+  border-radius: 4px;
+  margin-bottom: 14px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+/* Archival Citation Footer */
+.archival-citation-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 10px;
+  margin-top: 12px;
+  border-top: 1px solid #f1f5f9;
+  font-size: 0.82rem;
+  color: #64748b;
+  font-style: normal;
+}
+
+.archival-citation-footer strong {
+  color: #334155;
+  font-weight: 600;
+}
+
+/* Hairline Divider */
+.archival-hairline {
+  border: none;
+  border-top: 1px solid #e2e8f0;
+  margin: 14px 0;
+}
+
+/* Archival Seal Stamp for official school/archival provenance */
+.archival-seal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #64748b;
+  border-radius: 3px;
+  padding: 2px 7px;
+  font-family:
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #334155;
+  background: #f8fafc;
+}
+
+/* Suppress decorative/colored FontAwesome icons in academic historical source boxes and teacher commentary */
+.archival-source-box i.fa-solid:not(.fa-print):not(.fa-volume-high),
+.gcse-source-container i.fa-file-lines,
+.gcse-source-container i.fa-quote-left,
+.teacher-note i.fa-bullseye,
+.teacher-note i.fa-circle-question,
+.teacher-note i.fa-image {
+  display: none !important;
+}

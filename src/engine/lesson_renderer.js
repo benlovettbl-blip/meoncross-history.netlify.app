@@ -627,15 +627,15 @@ export function renderLesson(lesson) {
           ? Object.values(lesson.teacher_notes.source_context).join('<br/><br/>')
           : lesson.teacher_notes.source_context;
       const sourceContext = sourceContextText
-        ? `<div style="font-size: 0.95rem; margin-bottom: 20px; background: rgba(2, 132, 199, 0.2); padding: 15px; border-left: 4px solid #38bdf8; border-radius: 4px;"><strong><i class="fa-solid fa-image"></i> Source Context:</strong><br/>${sourceContextText}</div>`
+        ? `<div style="font-size: 0.95rem; margin-bottom: 20px; background: rgba(2, 132, 199, 0.2); padding: 15px; border-left: 4px solid #38bdf8; border-radius: 4px;"><strong><span class="archival-meta-tag" style="color: #38bdf8; margin-right: 6px;">Source Context</span></strong><br/>${sourceContextText}</div>`
         : '';
       const objectivesHtml = (lesson.teacher_notes.objectives || [])
         .map(
           (note) => `
           <div style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #64748b;">
-            <div style="font-weight: bold; color: #facc15; margin-bottom: 6px; font-size: 0.95rem;"><i class="fa-solid fa-bullseye" style="font-size: 0.8rem; margin-right: 4px;"></i> ${note.objective}</div>
+            <div style="font-weight: bold; color: #facc15; margin-bottom: 6px; font-size: 0.95rem;"><span class="archival-meta-tag" style="color: #facc15; margin-right: 6px;">OBJECTIVE</span> ${note.objective}</div>
             <div style="font-size: 0.95rem; margin-bottom: 0;">${note.primer}</div>
-            ${note.question ? `<div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); color: #38bdf8; font-weight: 600;"><i class="fa-solid fa-circle-question" style="margin-right: 4px;"></i> Hinge Question: ${note.question}</div>` : ''}
+            ${note.question ? `<div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); color: #38bdf8; font-weight: 600;"><span class="archival-meta-tag" style="color: #38bdf8; margin-right: 6px;">HINGE QUESTION:</span> ${note.question}</div>` : ''}
           </div>
         `,
         )
@@ -646,9 +646,9 @@ export function renderLesson(lesson) {
         .map(
           (note) => `
           <div style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 4px; margin-bottom: 10px; border-left: 3px solid #64748b;">
-            <div style="font-weight: bold; color: #facc15; margin-bottom: 6px; font-size: 0.95rem;"><i class="fa-solid fa-bullseye" style="font-size: 0.8rem; margin-right: 4px;"></i> ${note.objective}</div>
+            <div style="font-weight: bold; color: #facc15; margin-bottom: 6px; font-size: 0.95rem;"><span class="archival-meta-tag" style="color: #facc15; margin-right: 6px;">OBJECTIVE</span> ${note.objective}</div>
             <div style="font-size: 0.95rem; margin-bottom: 0;">${note.primer}</div>
-            ${note.question ? `<div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); color: #38bdf8; font-weight: 600;"><i class="fa-solid fa-circle-question" style="margin-right: 4px;"></i> Hinge Question: ${note.question}</div>` : ''}
+            ${note.question ? `<div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); color: #38bdf8; font-weight: 600;"><span class="archival-meta-tag" style="color: #38bdf8; margin-right: 6px;">HINGE QUESTION:</span> ${note.question}</div>` : ''}
           </div>
         `,
         )
@@ -1664,8 +1664,7 @@ export function renderLesson(lesson) {
         let sourceContentHtml = '';
         if (block.source.type === 'written') {
           sourceContentHtml = `
-                   <div style="width: 100%; max-height: 350px; background-color: #fefce8; border: 1px solid #fde047; border-radius: 4px; padding: 20px; overflow-y: auto; margin-bottom: 15px; font-family: 'Playfair Display', serif; font-size: 1.1rem; line-height: 1.6; color: #422006; box-shadow: inset 0 0 10px rgba(0,0,0,0.02);">
-                     <i class="fa-solid fa-quote-left" style="color: #facc15; font-size: 1.5rem; margin-bottom: 10px; display: block;"></i>
+                   <div class="archival-source-body" style="width: 100%; max-height: 350px; overflow-y: auto;">
                      ${block.source.content}
                    </div>
                  `;
@@ -1692,26 +1691,24 @@ export function renderLesson(lesson) {
             ? `data-target-source="${bLetter}" title="Hover or click to highlight Source ${bLetter}"`
             : '';
 
+        const sourceTitle = block.source.title || block.source.caption || '';
+        const sourceHeaderHtml = sourceTitle
+          ? `
+            <div class="archival-source-header">
+              <div>
+                <span class="archival-meta-tag accent-blue" style="display: block; margin-bottom: 3px;">
+                  Primary Historical Evidence ${bLetter ? `· Source ${bLetter}` : ''}
+                </span>
+                <h4 class="archival-source-title">${sourceTitle}</h4>
+              </div>
+              ${block.source.shelfmark ? `<span class="archival-shelfmark-stamp">${block.source.shelfmark}</span>` : bLetter ? `<span class="archival-shelfmark-stamp">SOURCE ${bLetter}</span>` : ''}
+            </div>
+          `
+          : '';
+
         blockSourceHtml = `
-              <div class="gcse-source-container" ${bCardIdAttr} style="background: #ffffff; border: 2px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: left; transition: all 0.3s ease;">
-                ${
-                  window.currentUnitId === 'cme_new' && block.source.title
-                    ? `<h4 style="color: #1e3a8a; margin-top: 0; margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; line-height: 1.4;">
-                  <i class="fa-solid fa-file-lines" style="color: #3b82f6; margin-right: 10px;"></i>
-                  ${block.source.title}
-                </h4>`
-                    : block.source.caption
-                      ? `<h4 style="color: #1e3a8a; margin-top: 0; margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; line-height: 1.4;">
-                  <i class="fa-solid fa-file-lines" style="color: #3b82f6; margin-right: 10px;"></i>
-                  ${block.source.caption}
-                </h4>`
-                      : block.source.title
-                        ? `<h4 style="color: #1e3a8a; margin-top: 0; margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center;">
-                  <i class="fa-solid fa-file-lines" style="color: #3b82f6; margin-right: 10px;"></i>
-                  ${block.source.title}
-                </h4>`
-                        : ''
-                }
+              <div class="gcse-source-container archival-source-box" ${bCardIdAttr} style="text-align: left; transition: all 0.3s ease;">
+                ${sourceHeaderHtml}
                 ${sourceContentHtml}
                 ${
                   window.currentUnitId === 'cme_new' && block.source.title && block.source.caption
@@ -1731,7 +1728,7 @@ export function renderLesson(lesson) {
                   block.source.provenance_clue
                     ? `
                   <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 15px; margin-top: 15px;">
-                    <strong style="color: #166534; display: block; margin-bottom: 5px;"><i class="fa-solid fa-magnifying-glass" style="margin-right: 5px;"></i> Provenance Clue:</strong>
+                    <strong style="color: #166534; display: block; margin-bottom: 5px;"><span class="archival-meta-tag accent-emerald" style="margin-right: 6px;">PROVENANCE CLUE</span></strong>
                     <span style="color: #15803d; font-size: 0.95rem;">${window.formatBold(block.source.provenance_clue)}</span>
                   </div>
                 `
