@@ -12,7 +12,79 @@ import {
 } from './chess_data.js';
 
 const STORAGE_KEY = 'meoncross_chess_club_v5';
+const ARCHIVE_KEY = 'meoncross_chess_master_archive';
 const BACKUP_KEY = 'meoncross_chess_backup_snapshot';
+const LEGACY_STORAGE_KEYS = [
+  'meoncross_chess_club_v5',
+  'meoncross_chess_master_archive',
+  'meoncross_chess_backup_snapshot',
+  'meoncross_chess_club_v4',
+  'meoncross_chess_club_v3',
+  'meoncross_chess_club_v2',
+  'meoncross_chess_club_v1',
+];
+
+// IndexedDB Multi-Layer Vault for Persistent Browser Storage
+const IDB_NAME = 'MeoncrossChessDB';
+const IDB_VERSION = 1;
+const IDB_STORE = 'club_vault';
+
+function getIndexedDB() {
+  return new Promise((resolve) => {
+    if (typeof window === 'undefined' || !window.indexedDB) {
+      resolve(null);
+      return;
+    }
+    try {
+      const request = window.indexedDB.open(IDB_NAME, IDB_VERSION);
+      request.onupgradeneeded = (e) => {
+        const db = e.target.result;
+        if (!db.objectStoreNames.contains(IDB_STORE)) {
+          db.createObjectStore(IDB_STORE, { keyPath: 'id' });
+        }
+      };
+      request.onsuccess = (e) => resolve(e.target.result);
+      request.onerror = () => resolve(null);
+    } catch (err) {
+      resolve(null);
+    }
+  });
+}
+
+async function persistToIndexedDB(state) {
+  try {
+    const db = await getIndexedDB();
+    if (!db) return;
+    const tx = db.transaction(IDB_STORE, 'readwrite');
+    const store = tx.objectStore(IDB_STORE);
+    store.put({
+      id: 'active_state',
+      timestamp: Date.now(),
+      players: state.players,
+      matches: state.matches,
+      checkedInPlayerIds: state.checkedInPlayerIds,
+      knockoutBracket: state.knockoutBracket,
+    });
+  } catch (err) {
+    console.warn('IndexedDB write skipped:', err);
+  }
+}
+
+async function loadFromIndexedDB() {
+  try {
+    const db = await getIndexedDB();
+    if (!db) return null;
+    return new Promise((resolve) => {
+      const tx = db.transaction(IDB_STORE, 'readonly');
+      const store = tx.objectStore(IDB_STORE);
+      const req = store.get('active_state');
+      req.onsuccess = () => resolve(req.result || null);
+      req.onerror = () => resolve(null);
+    });
+  } catch (err) {
+    return null;
+  }
+}
 
 // Pupil Name Auto-Sanitiser: Guarantees "First Name + Last Initial" format (e.g. Leo B.)
 export function sanitizePupilName(rawName) {
@@ -61,14 +133,6 @@ function getBackupInfo() {
     return null;
   }
 }
-
-// Clear legacy dummy cache if present
-try {
-  localStorage.removeItem('meoncross_chess_club_v1');
-  localStorage.removeItem('meoncross_chess_club_v2');
-  localStorage.removeItem('meoncross_chess_club_v3');
-  localStorage.removeItem('meoncross_chess_club_v4');
-} catch (e) {}
 
 // State container
 let chessState = {
@@ -140,7 +204,7 @@ export function showChessToast(message, type = 'success') {
 }
 window.showChessToast = showChessToast;
 
-// Initialize State from localStorage or clean seed
+// Initialize State from localStorage, legacy keys, seed, or IndexedDB
 function initChessState(forceClean = false) {
   if (forceClean) {
     chessState.players = [];
@@ -148,50 +212,123 @@ function initChessState(forceClean = false) {
     chessState.checkedInPlayerIds = [];
     chessState.knockoutBracket = null;
     chessState.activeTab = 'signin';
-    saveChessState();
+    saveChessState(true);
     return;
   }
+
+  let loaded = false;
+
+  // 1. Primary check: STORAGE_KEY
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (raw) {
       const parsed = JSON.parse(raw);
-      chessState.players = Array.isArray(parsed.players) ? parsed.players : [];
-      chessState.matches = Array.isArray(parsed.matches) ? parsed.matches : [];
-      chessState.checkedInPlayerIds = Array.isArray(parsed.checkedInPlayerIds)
-        ? parsed.checkedInPlayerIds
-        : [];
-      chessState.knockoutBracket = parsed.knockoutBracket || null;
-    } else {
-      chessState.players = [];
-      chessState.matches = [];
-      chessState.checkedInPlayerIds = [];
-      chessState.knockoutBracket = null;
-      chessState.activeTab = 'signin';
-      saveChessState();
+      if (Array.isArray(parsed.players) && parsed.players.length > 0) {
+        chessState.players = parsed.players;
+        chessState.matches = Array.isArray(parsed.matches) ? parsed.matches : [];
+        chessState.checkedInPlayerIds = Array.isArray(parsed.checkedInPlayerIds)
+          ? parsed.checkedInPlayerIds
+          : [];
+        chessState.knockoutBracket = parsed.knockoutBracket || null;
+        loaded = true;
+      }
     }
   } catch (e) {
-    console.error('Error loading chess state:', e);
-    chessState.players = [];
-    chessState.matches = [];
+    console.error('Error loading primary chess state:', e);
+  }
+
+  // 2. Legacy Auto-Rescue Check if primary is empty!
+  if (!loaded) {
+    for (const key of LEGACY_STORAGE_KEYS) {
+      if (key === STORAGE_KEY) continue;
+      try {
+        const legacyRaw = localStorage.getItem(key);
+        if (legacyRaw) {
+          const legacyData = JSON.parse(legacyRaw);
+          const candidateState = legacyData.state || legacyData;
+          if (Array.isArray(candidateState.players) && candidateState.players.length > 0) {
+            chessState.players = candidateState.players;
+            chessState.matches = Array.isArray(candidateState.matches)
+              ? candidateState.matches
+              : [];
+            chessState.checkedInPlayerIds = Array.isArray(candidateState.checkedInPlayerIds)
+              ? candidateState.checkedInPlayerIds
+              : [];
+            chessState.knockoutBracket = candidateState.knockoutBracket || null;
+            loaded = true;
+            console.log(
+              `🛡️ Auto-rescued ${candidateState.players.length} pupils from legacy key: ${key}`,
+            );
+            saveChessState(); // Immediately mirror into v5 & master archive!
+            showChessToast(
+              `🛡️ Auto-recovered ${candidateState.players.length} pupils from backup storage!`,
+              'success',
+            );
+            break;
+          }
+        }
+      } catch (err) {}
+    }
+  }
+
+  // 3. Fallback to INITIAL_PLAYERS from chess_data.js if available
+  if (!loaded && Array.isArray(INITIAL_PLAYERS) && INITIAL_PLAYERS.length > 0) {
+    chessState.players = JSON.parse(JSON.stringify(INITIAL_PLAYERS));
+    chessState.matches = Array.isArray(INITIAL_MATCHES)
+      ? JSON.parse(JSON.stringify(INITIAL_MATCHES))
+      : [];
     chessState.checkedInPlayerIds = [];
     chessState.knockoutBracket = null;
+    loaded = true;
+    saveChessState();
+  }
+
+  // 4. Fallback check from IndexedDB offline database if still empty
+  if (!loaded && typeof window !== 'undefined') {
+    loadFromIndexedDB().then((idbData) => {
+      if (
+        idbData &&
+        Array.isArray(idbData.players) &&
+        idbData.players.length > 0 &&
+        chessState.players.length === 0
+      ) {
+        chessState.players = idbData.players;
+        chessState.matches = idbData.matches || [];
+        chessState.checkedInPlayerIds = idbData.checkedInPlayerIds || [];
+        chessState.knockoutBracket = idbData.knockoutBracket || null;
+        saveChessState();
+        renderChessHubView();
+        showChessToast(
+          `🛡️ Auto-recovered ${idbData.players.length} pupils from offline IndexedDB vault!`,
+          'success',
+        );
+      }
+    });
   }
 }
 
-function saveChessState() {
+function saveChessState(isIntentionalReset = false) {
+  const payload = {
+    timestamp: Date.now(),
+    players: chessState.players,
+    matches: chessState.matches,
+    checkedInPlayerIds: chessState.checkedInPlayerIds,
+    knockoutBracket: chessState.knockoutBracket,
+  };
+
   try {
-    localStorage.setItem(
-      STORAGE_KEY,
-      JSON.stringify({
-        players: chessState.players,
-        matches: chessState.matches,
-        checkedInPlayerIds: chessState.checkedInPlayerIds,
-        knockoutBracket: chessState.knockoutBracket,
-      }),
-    );
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+
+    // Guard master archive: only write to archive if there are pupils, or if explicitly intentional
+    if (chessState.players.length > 0 || isIntentionalReset) {
+      localStorage.setItem(ARCHIVE_KEY, JSON.stringify(payload));
+    }
   } catch (e) {
-    console.error('Error saving chess state:', e);
+    console.error('Error saving chess state to localStorage:', e);
   }
+
+  // Mirror to IndexedDB asynchronously
+  persistToIndexedDB(payload);
 }
 
 // Calculate House Totals dynamically
@@ -315,18 +452,18 @@ export function renderChessHubView() {
           <div style="display: flex; flex-direction: column; gap: 8px; align-items: flex-end;">
             <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end;">
               <button onclick="window.switchChessTab('signin')" style="background: #10b981; color: #ffffff; border: none; font-weight: 700; font-size: 0.88rem; padding: 9px 16px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 10px rgba(16, 185, 129, 0.35); transition: all 0.15s;">
-                <i class="fa-solid fa-clipboard-user"></i> Pupil Sign-In (${chessState.checkedInPlayerIds.length})
+                <i class="fa-solid fa-chess"></i> Period 6 Hub &amp; League (${chessState.checkedInPlayerIds.length})
               </button>
               <button onclick="window.openLogMatchModal()" style="background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%); color: #ffffff; border: none; font-weight: 700; font-size: 0.88rem; padding: 9px 16px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(168, 85, 247, 0.35); transition: all 0.15s;">
-                <i class="fa-solid fa-plus-circle"></i> Log Match
+                <i class="fa-solid fa-plus-circle"></i> Log Match Result
               </button>
             </div>
             <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end;">
               <button onclick="window.openAssemblySlideModal()" style="background: rgba(245, 158, 11, 0.2); color: #fde047; border: 1.5px solid rgba(245, 158, 11, 0.5); font-weight: 700; font-size: 0.8rem; padding: 6px 12px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
                 <i class="fa-solid fa-file-powerpoint"></i> Assembly Slide
               </button>
-              <button onclick="window.openBoardQRStandsModal()" style="background: rgba(255, 255, 255, 0.1); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.25); font-weight: 600; font-size: 0.8rem; padding: 6px 12px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
-                <i class="fa-solid fa-qrcode" style="color: #38bdf8;"></i> Board QR Stands
+              <button onclick="window.openDataVaultModal()" style="background: rgba(59, 130, 246, 0.25); color: #93c5fd; border: 1.5px solid rgba(59, 130, 246, 0.6); font-weight: 700; font-size: 0.8rem; padding: 6px 12px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Safe Backup, File Restore & Permanent Code Export">
+                <i class="fa-solid fa-vault"></i> 💾 Backup &amp; Data
               </button>
               ${
                 chessState.players.length === 0 && getBackupInfo()
@@ -418,16 +555,16 @@ export function renderChessHubView() {
         </div>
       </div>
 
-      <!-- Main Navigation Tabs (Sign-In Placed First & Fully Responsive) -->
+      <!-- Main Navigation Tabs (Period 6 Hub Placed First & Fully Responsive) -->
       <div style="display: flex; gap: 6px; border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; padding-bottom: 4px; scrollbar-width: thin;">
         <button onclick="window.switchChessTab('signin')" style="${getTabStyle(chessState.activeTab === 'signin')}">
-          <i class="fa-solid fa-clipboard-user" style="color: #10b981;"></i> Pupil Sign-In (${chessState.checkedInPlayerIds.length})
+          <i class="fa-solid fa-chess" style="color: #10b981;"></i> Period 6 Hub &amp; League (${chessState.checkedInPlayerIds.length})
         </button>
         <button onclick="window.switchChessTab('ladder')" style="${getTabStyle(chessState.activeTab === 'ladder')}">
           <i class="fa-solid fa-stairs"></i> Master Ladder (${chessState.players.length})
         </button>
         <button onclick="window.switchChessTab('table')" style="${getTabStyle(chessState.activeTab === 'table')}">
-          <i class="fa-solid fa-table-list"></i> League Table
+          <i class="fa-solid fa-table-list"></i> Full League Table
         </button>
         <button onclick="window.switchChessTab('pairings')" style="${getTabStyle(chessState.activeTab === 'pairings')}">
           <i class="fa-solid fa-shuffle"></i> Thursday Pairings
@@ -493,22 +630,12 @@ export function renderChessHubView() {
   `;
 
   container.innerHTML = html;
-
-  // Handle board parameter if opened via QR scan
-  const urlParams = new URLSearchParams(window.location.search);
-  const boardParam = urlParams.get('board');
-  if (boardParam && !window._handledBoardParam) {
-    window._handledBoardParam = true;
-    setTimeout(() => {
-      window.openLogMatchModal(null, null, parseInt(boardParam, 10));
-    }, 200);
-  }
 }
 
 // Tab Content Router
 function renderActiveTabContent(filteredPlayers) {
   if (chessState.activeTab === 'signin') {
-    return renderSignInTab();
+    return renderSignInTab(filteredPlayers);
   } else if (chessState.activeTab === 'ladder') {
     return renderLadderTab(filteredPlayers);
   } else if (chessState.activeTab === 'table') {
@@ -741,13 +868,29 @@ function renderLeagueTableTab(players) {
   `;
 }
 
-// 3. Pupil Self-Check-In & Attendance Management
-function renderSignInTab() {
+// 3. Pupil Self-Check-In & Attendance Management (Unified Period 6 Hub)
+function renderSignInTab(players = []) {
   const notCheckedIn = chessState.players.filter(
     (p) => !chessState.checkedInPlayerIds.includes(p.id),
   );
   const checkedInPlayers = chessState.players.filter((p) =>
     chessState.checkedInPlayerIds.includes(p.id),
+  );
+
+  // Sort players for the league standings by total points descending
+  const leaguePlayers = [...(players && players.length > 0 ? players : chessState.players)].sort(
+    (a, b) => {
+      const ptsA =
+        a.won * SCORING_RULES.WIN +
+        a.drawn * SCORING_RULES.DRAW +
+        a.lost * SCORING_RULES.PARTICIPATION;
+      const ptsB =
+        b.won * SCORING_RULES.WIN +
+        b.drawn * SCORING_RULES.DRAW +
+        b.lost * SCORING_RULES.PARTICIPATION;
+      if (ptsB !== ptsA) return ptsB - ptsA;
+      return a.rank - b.rank;
+    },
   );
 
   return `
@@ -760,14 +903,17 @@ function renderSignInTab() {
             <i class="fa-solid fa-clipboard-check"></i>
           </div>
           <div>
-            <h3 style="margin: 0; font-size: 1.18rem; color: #14532d; font-weight: 800;">Thursday Period 6 Pupil Sign-In</h3>
+            <h3 style="margin: 0; font-size: 1.18rem; color: #14532d; font-weight: 800;">Thursday Period 6 Club Session</h3>
             <div style="font-size: 0.88rem; color: #166534; margin-top: 2px;">
-              Currently <strong>${checkedInPlayers.length}</strong> pupil${checkedInPlayers.length === 1 ? '' : 's'} checked in and ready for today's session!
+              Currently <strong>${checkedInPlayers.length}</strong> pupil${checkedInPlayers.length === 1 ? '' : 's'} checked in for today's session · <strong>${chessState.matches.length}</strong> games logged this term!
             </div>
           </div>
         </div>
 
         <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <button onclick="window.openLogMatchModal()" style="background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); color: #fff; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 10px rgba(109, 40, 217, 0.3);">
+            <i class="fa-solid fa-bolt"></i> Log Match Result
+          </button>
           ${
             chessState.players.length > 0
               ? `
@@ -786,11 +932,14 @@ function renderSignInTab() {
           `
               : ''
           }
+          <button onclick="window.openDataVaultModal()" style="background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; padding: 8px 14px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Safe Backup, File Restore & Permanent Code Export">
+            <i class="fa-solid fa-vault"></i> 💾 Backup &amp; Data
+          </button>
           ${
             chessState.players.length > 0
               ? `
             <button onclick="window.resetClubDataToCleanSlate()" style="background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; padding: 8px 14px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Reset all pupils and points (Emergency backup preserved)">
-              <i class="fa-solid fa-trash-can"></i> Clear All Data
+              <i class="fa-solid fa-trash-can"></i> Reset Slate
             </button>
           `
               : getBackupInfo()
@@ -814,7 +963,7 @@ function renderSignInTab() {
             <h4 style="margin: 0; font-size: 1.1rem; color: #0f172a; font-weight: 800;">Register New Pupil</h4>
           </div>
           <p style="font-size: 0.84rem; color: #64748b; margin: 0 0 16px 0; line-height: 1.45;">
-            Enter arriving pupil to immediately add them to their House and mark them present for today:
+            Register once to add pupil to permanent club roster and House (auto-checks in for today):
           </p>
 
           <form id="chess-self-reg-form" onsubmit="event.preventDefault(); window.handleSelfRegister(event); return false;">
@@ -823,7 +972,7 @@ function renderSignInTab() {
               <input type="text" id="reg-name" required placeholder="e.g. Leo B. or Emily T." style="width: 100%; box-sizing: border-box; padding: 10px 12px; border-radius: 8px; border: 1.5px solid #cbd5e1; font-size: 0.95rem; font-family: inherit; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='#10b981'" onblur="this.style.borderColor='#cbd5e1'; if(this.value && window.sanitizePupilName) this.value = window.sanitizePupilName(this.value);">
               <div style="font-size: 0.74rem; color: #64748b; margin-top: 5px; display: flex; align-items: center; gap: 5px; line-height: 1.3;">
                 <i class="fa-solid fa-shield-halved" style="color: #6366f1;"></i>
-                <span><strong>School Privacy:</strong> Please use <strong>First Name + Last Initial</strong> (e.g. <em>Leo B.</em>). Full surnames are auto-sanitised.</span>
+                <span><strong>School Privacy:</strong> First Name + Last Initial (e.g. <em>Leo B.</em>). Full surnames are auto-sanitised.</span>
               </div>
             </div>
 
@@ -863,7 +1012,7 @@ function renderSignInTab() {
             <h4 style="margin: 0; font-size: 1.1rem; color: #0f172a; font-weight: 800;">Returning Pupils</h4>
           </div>
           <p style="font-size: 0.84rem; color: #64748b; margin: 0 0 16px 0; line-height: 1.45;">
-            Pupils already in the club can tap their name chip below to check in with 1 click:
+            Tap a pupil's chip to mark them present in today's session:
           </p>
 
           ${
@@ -910,9 +1059,14 @@ function renderSignInTab() {
               <span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #22c55e;"></span>
               Checked-In Roster for Today's Period 6 (${checkedInPlayers.length})
             </h4>
-            <div style="font-size: 0.82rem; color: #64748b; margin-top: 2px;">These pupils will be automatically seeded into Pairings and the Knockout Cup.</div>
+            <div style="font-size: 0.82rem; color: #64748b; margin-top: 2px;">
+              Tap 'Match' to quickly record a game, or launch auto-pairings:
+            </div>
           </div>
           <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button type="button" onclick="window.openLogMatchModal()" style="background: linear-gradient(135deg, #8b5cf6 0%, #7e22ce 100%); color: #fff; border: none; font-weight: 700; font-size: 0.85rem; padding: 8px 16px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 10px rgba(139, 92, 246, 0.3);">
+              <i class="fa-solid fa-bolt"></i> Log Match Result
+            </button>
             <button type="button" onclick="window.switchChessTab('pairings')" style="background: #0284c7; color: #fff; border: none; font-weight: 700; font-size: 0.85rem; padding: 8px 16px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
               <i class="fa-solid fa-shuffle"></i> Launch Pairings
             </button>
@@ -934,7 +1088,7 @@ function renderSignInTab() {
           </div>
         `
             : `
-          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px;">
             ${checkedInPlayers
               .map((p) => {
                 const h = HOUSES[p.house];
@@ -948,6 +1102,9 @@ function renderSignInTab() {
                     </div>
                   </div>
                   <div style="display: flex; gap: 4px; flex-shrink: 0;">
+                    <button type="button" onclick="window.prefillMatchModal('${p.id}', null)" title="Log match with ${p.name}" style="background: #f3e8ff; border: 1px solid #d8b4fe; color: #7e22ce; cursor: pointer; font-size: 0.78rem; padding: 5px 8px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
+                      <i class="fa-solid fa-bolt"></i> Match
+                    </button>
                     <button type="button" onclick="window.checkOutPlayer('${p.id}')" title="Mark absent / check out for today" style="background: #ffffff; border: 1px solid #cbd5e1; color: #64748b; cursor: pointer; font-size: 0.8rem; padding: 5px 8px; border-radius: 4px; transition: all 0.15s;" onmouseover="this.style.color='#ef4444';this.style.borderColor='#fca5a5'" onmouseout="this.style.color='#64748b';this.style.borderColor='#cbd5e1'">
                       <i class="fa-solid fa-user-minus"></i>
                     </button>
@@ -959,6 +1116,121 @@ function renderSignInTab() {
               `;
               })
               .join('')}
+          </div>
+        `
+        }
+      </div>
+
+      <!-- Live League Standings & Ladder Section (Unified directly into Period 6 Hub!) -->
+      <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 22px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
+          <div>
+            <h4 style="margin: 0; font-size: 1.22rem; color: #0f172a; font-weight: 800; display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-trophy" style="color: #f59e0b;"></i>
+              Current Period 6 League Standings (${leaguePlayers.length} Pupils)
+            </h4>
+            <div style="font-size: 0.84rem; color: #64748b; margin-top: 3px;">
+              Every game completed scores: <strong style="color: #16a34a;">+3 Win</strong> · <strong style="color: #2563eb;">+2 Draw</strong> · <strong style="color: #64748b;">+1 Playing/Loss</strong>. Ranks update immediately!
+            </div>
+          </div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button onclick="window.openLogMatchModal()" style="background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); color: #ffffff; border: none; font-weight: 700; font-size: 0.85rem; padding: 8px 16px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 10px rgba(109, 40, 217, 0.3);">
+              <i class="fa-solid fa-plus-circle"></i> Log Match Result
+            </button>
+            <button onclick="window.switchChessTab('ladder')" style="background: #f8fafc; color: #475569; border: 1px solid #cbd5e1; font-weight: 700; font-size: 0.85rem; padding: 8px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+              <i class="fa-solid fa-stairs"></i> Ladder View
+            </button>
+          </div>
+        </div>
+
+        ${
+          leaguePlayers.length === 0
+            ? `
+          <div style="background: #f8fafc; border: 1.5px dashed #cbd5e1; border-radius: 10px; padding: 36px 20px; text-align: center; color: #64748b;">
+            <i class="fa-solid fa-chess-board" style="font-size: 2.2rem; color: #94a3b8; margin-bottom: 10px; display: block;"></i>
+            <strong style="font-size: 1rem; color: #1e293b;">The League Table is ready for your pupils.</strong><br>
+            <span style="font-size: 0.85rem; color: #64748b; max-width: 440px; display: inline-block; margin-top: 4px;">
+              Register your first pupil above, and they will immediately appear on the league leaderboard!
+            </span>
+          </div>
+        `
+            : `
+          <div style="overflow-x: auto; border: 1px solid #e2e8f0; border-radius: 8px;">
+            <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.88rem;">
+              <thead>
+                <tr style="background: #f8fafc; border-bottom: 1.5px solid #e2e8f0; color: #475569; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                  <th style="padding: 10px 12px; width: 45px; text-align: center;">Rank</th>
+                  <th style="padding: 10px 12px;">Pupil</th>
+                  <th style="padding: 10px 12px;">Year</th>
+                  <th style="padding: 10px 12px;">House</th>
+                  <th style="padding: 10px 12px; text-align: center;">Attendance</th>
+                  <th style="padding: 10px 12px; text-align: center;">Played</th>
+                  <th style="padding: 10px 12px; text-align: center;">Won</th>
+                  <th style="padding: 10px 12px; text-align: center;">Drawn</th>
+                  <th style="padding: 10px 12px; text-align: center;">Lost</th>
+                  <th style="padding: 10px 12px; text-align: center;">Rating</th>
+                  <th style="padding: 10px 12px; text-align: right;">League Pts</th>
+                  <th style="padding: 10px 12px; text-align: center;">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${leaguePlayers
+                  .map((p, idx) => {
+                    const h = HOUSES[p.house] || {
+                      name: p.house,
+                      color: '#475569',
+                      bgLight: '#f8fafc',
+                      borderColor: '#cbd5e1',
+                      icon: 'fa-shield-halved',
+                    };
+                    const isCheckedIn = chessState.checkedInPlayerIds.includes(p.id);
+                    const totalPts =
+                      p.won * SCORING_RULES.WIN +
+                      p.drawn * SCORING_RULES.DRAW +
+                      p.lost * SCORING_RULES.PARTICIPATION;
+                    const rankBadge =
+                      idx === 0
+                        ? '<span style="color: #f59e0b; font-size: 1rem;"><i class="fa-solid fa-crown"></i> 1</span>'
+                        : idx === 1
+                          ? '<span style="color: #64748b; font-weight: 800;">2</span>'
+                          : idx === 2
+                            ? '<span style="color: #b45309; font-weight: 800;">3</span>'
+                            : `<span style="color: #94a3b8; font-weight: 700;">${idx + 1}</span>`;
+
+                    return `
+                    <tr style="border-bottom: 1px solid #f1f5f9; transition: background 0.15s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                      <td style="padding: 10px 12px; text-align: center;">${rankBadge}</td>
+                      <td style="padding: 10px 12px; font-weight: 700; color: #0f172a;">${p.name}</td>
+                      <td style="padding: 10px 12px; color: #475569;">Year ${p.year}</td>
+                      <td style="padding: 10px 12px;">
+                        <span style="background: ${h.bgLight}; color: ${h.color}; border: 1px solid ${h.borderColor}; padding: 2px 7px; border-radius: 12px; font-size: 0.72rem; font-weight: 700;">
+                          <i class="fa-solid ${h.icon}"></i> ${h.name}
+                        </span>
+                      </td>
+                      <td style="padding: 10px 12px; text-align: center;">
+                        ${
+                          isCheckedIn
+                            ? `<span style="background: #dcfce7; color: #15803d; font-size: 0.72rem; font-weight: 700; padding: 2px 7px; border-radius: 4px;"><i class="fa-solid fa-check"></i> Present</span>`
+                            : `<button onclick="window.checkInPlayer('${p.id}')" style="background: #f1f5f9; color: #64748b; border: 1px solid #cbd5e1; font-size: 0.72rem; font-weight: 600; padding: 2px 7px; border-radius: 4px; cursor: pointer;">+ Check In</button>`
+                        }
+                      </td>
+                      <td style="padding: 10px 12px; text-align: center; font-weight: 600;">${p.games}</td>
+                      <td style="padding: 10px 12px; text-align: center; color: #16a34a; font-weight: 700;">${p.won}</td>
+                      <td style="padding: 10px 12px; text-align: center; color: #2563eb; font-weight: 700;">${p.drawn}</td>
+                      <td style="padding: 10px 12px; text-align: center; color: #94a3b8;">${p.lost}</td>
+                      <td style="padding: 10px 12px; text-align: center; font-family: monospace; font-weight: 700; color: #334155;">${p.rating}</td>
+                      <td style="padding: 10px 12px; text-align: right; font-weight: 800; color: ${h.color}; font-size: 1rem;">+${totalPts}</td>
+                      <td style="padding: 10px 12px; text-align: center;">
+                        <button onclick="window.prefillMatchModal('${p.id}', null)" title="Log match with ${p.name}" style="background: #f3e8ff; border: 1px solid #d8b4fe; color: #7e22ce; cursor: pointer; font-size: 0.76rem; padding: 4px 8px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 3px;">
+                          <i class="fa-solid fa-bolt"></i> Match
+                        </button>
+                      </td>
+                    </tr>
+                  `;
+                  })
+                  .join('')}
+              </tbody>
+            </table>
           </div>
         `
         }
@@ -985,9 +1257,6 @@ function renderPairingsTab() {
         </div>
 
         <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-          <button onclick="window.openBoardQRStandsModal()" style="background: #f8fafc; color: #1e3a8a; border: 1.5px solid #cbd5e1; font-weight: 700; font-size: 0.85rem; padding: 9px 14px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
-            <i class="fa-solid fa-qrcode" style="color: #0284c7;"></i> Board QR Stands (PDF)
-          </button>
           <button onclick="window.generateThursdayPairings()" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: none; font-weight: 700; font-size: 0.9rem; padding: 10px 18px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);">
             <i class="fa-solid fa-shuffle"></i> Generate Balanced Pairings
           </button>
@@ -1898,28 +2167,45 @@ window.openLogMatchModal = function (
   const modalCont = document.getElementById('chess-modal-container');
   if (!modalCont) return;
 
-  const playerOptions = chessState.players
-    .map(
-      (p) => `<option value="${p.id}">${p.name} (Year ${p.year}, ${HOUSES[p.house].name})</option>`,
-    )
-    .join('');
+  const checkedInSet = new Set(chessState.checkedInPlayerIds || []);
+  const checkedInList = chessState.players.filter((p) => checkedInSet.has(p.id));
+  const otherList = chessState.players.filter((p) => !checkedInSet.has(p.id));
+
+  const renderPlayerOpt = (p) =>
+    `<option value="${p.id}">${p.name} (Yr ${p.year} • ${HOUSES[p.house]?.name || p.house} • Rtg ${p.rating})</option>`;
+
+  const playerOptionsHtml = `
+    ${
+      checkedInList.length > 0
+        ? `<optgroup label="🟢 Checked-In Today (${checkedInList.length})">
+            ${checkedInList.map(renderPlayerOpt).join('')}
+           </optgroup>`
+        : ''
+    }
+    <optgroup label="All Enrolled Pupils (${chessState.players.length})">
+      ${(checkedInList.length > 0 ? otherList : chessState.players).map(renderPlayerOpt).join('')}
+    </optgroup>
+  `;
 
   modalCont.innerHTML = `
-    <div style="position: fixed; inset: 0; background: rgba(15, 23, 42, 0.7); display: flex; align-items: center; justify-content: center; z-index: 99999; padding: 20px;" onclick="if(event.target === this) window.closeChessModal();">
-      <div style="background: #ffffff; border-radius: 14px; max-width: 520px; width: 100%; padding: 26px; box-shadow: 0 20px 40px rgba(0,0,0,0.25); animation: zoomIn 0.2s ease-out; font-family: 'Outfit', sans-serif;">
+    <div style="position: fixed; inset: 0; background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(3px); display: flex; align-items: center; justify-content: center; z-index: 99999; padding: 16px;" onclick="if(event.target === this) window.closeChessModal();">
+      <div style="background: #ffffff; border-radius: 14px; max-width: 520px; width: 100%; padding: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.25); animation: zoomIn 0.2s ease-out; font-family: 'Outfit', sans-serif;">
         
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 12px;">
-          <h2 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #0f172a; display: flex; align-items: center; gap: 8px;">
-            <i class="fa-solid fa-trophy" style="color: #8b5cf6;"></i> Log Match Result
-          </h2>
-          <button onclick="window.closeChessModal()" style="background: none; border: none; font-size: 1.2rem; color: #64748b; cursor: pointer;">&times;</button>
+          <div>
+            <h2 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 1.35rem; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-trophy" style="color: #8b5cf6;"></i> Quick Match Score
+            </h2>
+            <div style="font-size: 0.8rem; color: #64748b; margin-top: 2px;">Record game outcome • Automatically updates ladder &amp; House points</div>
+          </div>
+          <button onclick="window.closeChessModal()" style="background: #f1f5f9; border: none; font-size: 1.2rem; color: #64748b; cursor: pointer; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">&times;</button>
         </div>
 
         ${
           boardNum
             ? `
           <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; padding: 8px 12px; border-radius: 8px; margin-bottom: 14px; color: #1e40af; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 8px;">
-            <i class="fa-solid fa-chess-board"></i> Official Match at Board ${boardNum}
+            <i class="fa-solid fa-chess-board"></i> Board ${boardNum} Session Match
           </div>
         `
             : ''
@@ -1927,40 +2213,67 @@ window.openLogMatchModal = function (
 
         <form id="chess-match-form" onsubmit="window.handleMatchSubmit(event)">
           
-          <div style="margin-bottom: 14px;">
-            <label style="display: block; font-weight: 700; font-size: 0.85rem; color: #334155; margin-bottom: 5px;">White Player:</label>
-            <select id="match-white-player" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1.5px solid #cbd5e1; font-size: 0.95rem;">
-              <option value="">-- Select White Player --</option>
-              ${playerOptions}
-            </select>
+          <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 14px; margin-bottom: 16px;">
+            <div style="margin-bottom: 12px;">
+              <label style="display: block; font-weight: 700; font-size: 0.82rem; color: #334155; margin-bottom: 4px;">
+                <i class="fa-solid fa-chess-king" style="color: #cbd5e1; margin-right: 4px;"></i> White Pieces:
+              </label>
+              <select id="match-white-player" required style="width: 100%; padding: 10px 12px; border-radius: 8px; border: 1.5px solid #cbd5e1; font-size: 0.92rem; background: #ffffff; font-weight: 600;">
+                <option value="">-- Select White Player --</option>
+                ${playerOptionsHtml}
+              </select>
+            </div>
+
+            <div style="text-align: center; margin: -4px 0 8px;">
+              <button type="button" onclick="window.swapWhiteAndBlack()" style="background: #e2e8f0; border: none; padding: 4px 10px; border-radius: 12px; font-size: 0.72rem; font-weight: 700; color: #475569; cursor: pointer;">
+                <i class="fa-solid fa-arrow-right-arrow-left"></i> Swap Colors
+              </button>
+            </div>
+
+            <div>
+              <label style="display: block; font-weight: 700; font-size: 0.82rem; color: #334155; margin-bottom: 4px;">
+                <i class="fa-solid fa-chess-king" style="color: #1e293b; margin-right: 4px;"></i> Black Pieces:
+              </label>
+              <select id="match-black-player" required style="width: 100%; padding: 10px 12px; border-radius: 8px; border: 1.5px solid #cbd5e1; font-size: 0.92rem; background: #ffffff; font-weight: 600;">
+                <option value="">-- Select Black Player --</option>
+                ${playerOptionsHtml}
+              </select>
+            </div>
           </div>
 
-          <div style="margin-bottom: 14px;">
-            <label style="display: block; font-weight: 700; font-size: 0.85rem; color: #334155; margin-bottom: 5px;">Black Player:</label>
-            <select id="match-black-player" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1.5px solid #cbd5e1; font-size: 0.95rem;">
-              <option value="">-- Select Black Player --</option>
-              ${playerOptions}
-            </select>
+          <div style="margin-bottom: 16px;">
+            <label style="display: block; font-weight: 700; font-size: 0.82rem; color: #334155; margin-bottom: 6px;">
+              <i class="fa-solid fa-flag-checkered" style="color: #8b5cf6; margin-right: 4px;"></i> Match Outcome:
+            </label>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;" id="result-radio-group">
+              <label style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px 6px; border: 2px solid #cbd5e1; border-radius: 8px; cursor: pointer; text-align: center; background: #f8fafc; font-weight: 700; font-size: 0.8rem; color: #1e293b;" class="result-btn-label">
+                <input type="radio" name="match_result_radio" value="1-0" checked style="margin-bottom: 4px;" onchange="document.getElementById('match-result').value = '1-0'">
+                <span>White Won</span>
+                <span style="font-size: 0.68rem; color: #16a34a; font-weight: 600;">+3 / +1 pts</span>
+              </label>
+              <label style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px 6px; border: 2px solid #cbd5e1; border-radius: 8px; cursor: pointer; text-align: center; background: #f8fafc; font-weight: 700; font-size: 0.8rem; color: #1e293b;" class="result-btn-label">
+                <input type="radio" name="match_result_radio" value="1/2-1/2" style="margin-bottom: 4px;" onchange="document.getElementById('match-result').value = '1/2-1/2'">
+                <span>Draw</span>
+                <span style="font-size: 0.68rem; color: #ca8a04; font-weight: 600;">+2 / +2 pts</span>
+              </label>
+              <label style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px 6px; border: 2px solid #cbd5e1; border-radius: 8px; cursor: pointer; text-align: center; background: #f8fafc; font-weight: 700; font-size: 0.8rem; color: #1e293b;" class="result-btn-label">
+                <input type="radio" name="match_result_radio" value="0-1" style="margin-bottom: 4px;" onchange="document.getElementById('match-result').value = '0-1'">
+                <span>Black Won</span>
+                <span style="font-size: 0.68rem; color: #16a34a; font-weight: 600;">+3 / +1 pts</span>
+              </label>
+            </div>
+            <input type="hidden" id="match-result" value="1-0">
           </div>
 
-          <div style="margin-bottom: 14px;">
-            <label style="display: block; font-weight: 700; font-size: 0.85rem; color: #334155; margin-bottom: 5px;">Outcome / Result:</label>
-            <select id="match-result" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1.5px solid #cbd5e1; font-size: 0.95rem;">
-              <option value="1-0">White Won (1 - 0) [+3 pts White, +1 pt Black]</option>
-              <option value="0-1">Black Won (0 - 1) [+3 pts Black, +1 pt White]</option>
-              <option value="1/2-1/2">Draw (½ - ½) [+2 pts White, +2 pts Black]</option>
-            </select>
+          <div style="margin-bottom: 16px;">
+            <label style="display: block; font-weight: 700; font-size: 0.82rem; color: #334155; margin-bottom: 4px;">Opening / Notes (Optional):</label>
+            <input type="text" id="match-opening" placeholder="e.g. Italian Game, Scholar's Mate defence, Rapid End-game" style="width: 100%; padding: 8px 12px; border-radius: 8px; border: 1.5px solid #cbd5e1; font-size: 0.88rem;">
           </div>
 
-          <div style="margin-bottom: 14px;">
-            <label style="display: block; font-weight: 700; font-size: 0.85rem; color: #334155; margin-bottom: 5px;">Opening (Optional):</label>
-            <input type="text" id="match-opening" placeholder="e.g. Italian Game, Queen's Gambit, Sicilian" style="width: 100%; padding: 9px; border-radius: 6px; border: 1.5px solid #cbd5e1; font-size: 0.95rem;">
-          </div>
-
-          <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; border-top: 1px solid #e2e8f0; padding-top: 14px;">
+          <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 18px; border-top: 1px solid #e2e8f0; padding-top: 14px;">
             <button type="button" onclick="window.closeChessModal()" style="background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; padding: 9px 16px; border-radius: 6px; font-weight: 700; cursor: pointer;">Cancel</button>
-            <button type="submit" style="background: #8b5cf6; color: #ffffff; border: none; padding: 9px 20px; border-radius: 6px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
-              <i class="fa-solid fa-check"></i> Save Match &amp; House Points
+            <button type="submit" style="background: linear-gradient(135deg, #8b5cf6 0%, #7e22ce 100%); color: #ffffff; border: none; padding: 9px 22px; border-radius: 6px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(139, 92, 246, 0.35);">
+              <i class="fa-solid fa-check"></i> Save Match &amp; Points
             </button>
           </div>
 
@@ -1977,6 +2290,16 @@ window.openLogMatchModal = function (
   if (defaultBlackId) {
     const bSelect = document.getElementById('match-black-player');
     if (bSelect) bSelect.value = defaultBlackId;
+  }
+};
+
+window.swapWhiteAndBlack = function () {
+  const wSelect = document.getElementById('match-white-player');
+  const bSelect = document.getElementById('match-black-player');
+  if (wSelect && bSelect) {
+    const temp = wSelect.value;
+    wSelect.value = bSelect.value;
+    bSelect.value = temp;
   }
 };
 
@@ -2274,57 +2597,303 @@ window.downloadAssemblySlidePNG = function () {
   link.click();
 };
 
-// Modal Handling: Board QR Stands (Boards 1–10)
-window.openBoardQRStandsModal = function () {
+// Modal Handling: Data Vault & Backup Tools
+window.openDataVaultModal = function () {
   const modalCont = document.getElementById('chess-modal-container');
   if (!modalCont) return;
 
-  let boardsHtml = '';
-  for (let i = 1; i <= 10; i++) {
-    boardsHtml += `
-      <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 12px; text-align: center;">
-        <div style="font-size: 0.72rem; font-weight: 800; color: #2563eb; text-transform: uppercase;">Table Tent</div>
-        <div style="font-size: 1.1rem; font-weight: 800; color: #0f172a; margin: 2px 0;">BOARD ${i}</div>
-        <div style="font-size: 0.72rem; color: #64748b; margin-bottom: 8px;">Scan to log match</div>
-        <a href="/?view=chess&board=${i}" target="_blank" style="font-size: 0.75rem; font-weight: 700; color: #8b5cf6; text-decoration: none;">
-          <i class="fa-solid fa-arrow-up-right-from-square"></i> Test Link
-        </a>
-      </div>
-    `;
-  }
+  const playerCount = chessState.players.length;
+  const matchCount = chessState.matches.length;
+  const backup = getBackupInfo();
 
   modalCont.innerHTML = `
     <div style="position: fixed; inset: 0; background: rgba(15, 23, 42, 0.75); display: flex; align-items: center; justify-content: center; z-index: 99999; padding: 20px;" onclick="if(event.target === this) window.closeChessModal();">
-      <div style="background: #ffffff; border-radius: 14px; max-width: 680px; width: 100%; padding: 26px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); animation: zoomIn 0.2s ease-out; font-family: 'Outfit', sans-serif;">
+      <div style="background: #ffffff; border-radius: 14px; max-width: 580px; width: 100%; padding: 26px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); animation: zoomIn 0.2s ease-out; font-family: 'Outfit', sans-serif;">
         
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 10px;">
           <div>
-            <h2 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 1.35rem; color: #0f172a;">
-              <i class="fa-solid fa-qrcode" style="color: #0284c7;"></i> Board Sign-In QR Stands (Boards 1–10)
+            <h2 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 1.35rem; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-vault" style="color: #2563eb;"></i> Data Vault &amp; Club Safety Backup
             </h2>
-            <div style="font-size: 0.82rem; color: #64748b;">Printable A4 table tents for each chess board in the classroom.</div>
+            <div style="font-size: 0.82rem; color: #64748b;">Guaranteed zero data loss across terms, devices, and browser updates.</div>
           </div>
           <button onclick="window.closeChessModal()" style="background: none; border: none; font-size: 1.2rem; color: #64748b; cursor: pointer;">&times;</button>
         </div>
 
-        <p style="font-size: 0.9rem; color: #334155; line-height: 1.5; margin: 0 0 16px 0;">
-          Place these folded table tent stands at Boards 1 through 10. Pupils sit down, scan the QR code on their phone, and the app instantly opens the Match Logger for that exact board!
-        </p>
+        <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 10px; padding: 14px 16px; margin-bottom: 18px; font-size: 0.86rem; color: #1e40af; line-height: 1.45;">
+          <strong><i class="fa-solid fa-shield-check"></i> Multi-Layer Redundancy Active:</strong> All changes are mirrored across <strong>localStorage</strong>, <strong>IndexedDB</strong>, and an immutable <strong>Master Archive</strong>. Even if your browser cache is purged, your data auto-recovers.
+        </div>
 
-        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 20px;">
-          ${boardsHtml}
+        <!-- 4 Action Cards -->
+        <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
+          
+          <!-- Tool 1: Download JSON Backup -->
+          <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+            <div>
+              <div style="font-weight: 700; color: #0f172a; font-size: 0.95rem;">
+                <i class="fa-solid fa-file-arrow-down" style="color: #10b981; margin-right: 6px;"></i> Download Backup File (.json)
+              </div>
+              <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">
+                Saves current cohort (${playerCount} pupils, ${matchCount} matches) directly to your tablet/PC.
+              </div>
+            </div>
+            <button onclick="window.downloadChessBackupJSON()" style="background: #10b981; color: #ffffff; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; cursor: pointer; flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px;">
+              <i class="fa-solid fa-download"></i> Download
+            </button>
+          </div>
+
+          <!-- Tool 2: Restore from JSON File -->
+          <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+            <div>
+              <div style="font-weight: 700; color: #0f172a; font-size: 0.95rem;">
+                <i class="fa-solid fa-file-arrow-up" style="color: #2563eb; margin-right: 6px;"></i> Restore from Backup File
+              </div>
+              <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">
+                Upload any previously downloaded .json backup file to restore in 1 second.
+              </div>
+            </div>
+            <label style="background: #2563eb; color: #ffffff; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; cursor: pointer; flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px;">
+              <i class="fa-solid fa-upload"></i> Restore
+              <input type="file" accept=".json" onchange="window.handleRestoreBackupFile(event)" style="display: none;">
+            </label>
+          </div>
+
+          <!-- Tool 3: Copy Code for Permanent Git Bake-In -->
+          <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+            <div>
+              <div style="font-weight: 700; color: #0f172a; font-size: 0.95rem;">
+                <i class="fa-solid fa-code" style="color: #8b5cf6; margin-right: 6px;"></i> Copy Roster for Developer / GitHub
+              </div>
+              <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">
+                Copies JavaScript code to clipboard so you can paste it to the assistant to bake into Git forever.
+              </div>
+            </div>
+            <button onclick="window.copyRosterCodeToClipboard()" style="background: #8b5cf6; color: #ffffff; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; cursor: pointer; flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px;">
+              <i class="fa-solid fa-copy"></i> Copy Code
+            </button>
+          </div>
+
+          <!-- Tool 4: Printable Paper Scoresheet -->
+          <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+            <div>
+              <div style="font-weight: 700; color: #0f172a; font-size: 0.95rem;">
+                <i class="fa-solid fa-print" style="color: #475569; margin-right: 6px;"></i> Printable Weekly Scoresheet (A4)
+              </div>
+              <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">
+                Print a physical paper roster and score logging grid for your classroom clipboard.
+              </div>
+            </div>
+            <button onclick="window.printWeeklyChessSheet()" style="background: #475569; color: #ffffff; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; cursor: pointer; flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px;">
+              <i class="fa-solid fa-print"></i> Print Sheet
+            </button>
+          </div>
+
         </div>
 
         <div style="display: flex; justify-content: flex-end; gap: 10px; border-top: 1px solid #e2e8f0; padding-top: 14px;">
-          <button type="button" onclick="window.closeChessModal()" style="background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; padding: 9px 16px; border-radius: 6px; font-weight: 700; cursor: pointer;">Close</button>
-          <a href="/pdfs/meoncross_chess_board_qr_stands.pdf" target="_blank" download style="background: #0284c7; color: #ffffff; text-decoration: none; padding: 9px 20px; border-radius: 6px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px;">
-            <i class="fa-solid fa-file-pdf"></i> Download Printable PDF (10 Stands)
-          </a>
+          <button type="button" onclick="window.closeChessModal()" style="background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; padding: 8px 18px; border-radius: 6px; font-weight: 700; cursor: pointer;">Close</button>
         </div>
 
       </div>
     </div>
   `;
+};
+
+window.downloadChessBackupJSON = function () {
+  const backup = {
+    app: 'Meoncross Chess Club',
+    exportedAt: new Date().toISOString(),
+    playerCount: chessState.players.length,
+    matchCount: chessState.matches.length,
+    state: {
+      players: chessState.players,
+      matches: chessState.matches,
+      checkedInPlayerIds: chessState.checkedInPlayerIds,
+      knockoutBracket: chessState.knockoutBracket,
+    },
+  };
+  const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  const d = new Date();
+  const dateStr = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  a.href = url;
+  a.download = `meoncross_chess_backup_${dateStr}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+  showChessToast('💾 Backup file downloaded successfully!', 'success');
+};
+
+window.handleRestoreBackupFile = function (e) {
+  const file = e.target.files && e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (evt) => {
+    try {
+      const data = JSON.parse(evt.target.result);
+      const incomingState = data.state || data;
+      if (!Array.isArray(incomingState.players)) {
+        showChessToast('Invalid backup file: missing players array.', 'error');
+        return;
+      }
+      chessState.players = incomingState.players;
+      chessState.matches = Array.isArray(incomingState.matches) ? incomingState.matches : [];
+      chessState.checkedInPlayerIds = Array.isArray(incomingState.checkedInPlayerIds)
+        ? incomingState.checkedInPlayerIds
+        : [];
+      chessState.knockoutBracket = incomingState.knockoutBracket || null;
+      saveChessState();
+      window.closeChessModal();
+      renderChessHubView();
+      showChessToast(
+        `🎉 Restored ${chessState.players.length} pupils and ${chessState.matches.length} matches!`,
+        'success',
+      );
+    } catch (err) {
+      console.error('Failed to parse backup JSON:', err);
+      showChessToast('Failed to parse backup file.', 'error');
+    }
+  };
+  reader.readAsText(file);
+};
+
+window.copyRosterCodeToClipboard = function () {
+  if (chessState.players.length === 0) {
+    showChessToast('No pupils to copy yet. Register your pupils first.', 'warning');
+    return;
+  }
+  const cleanPlayers = chessState.players.map((p) => ({
+    id: p.id,
+    name: p.name,
+    year: p.year,
+    house: p.house,
+    rating: p.rating || 1000,
+    games: p.games || 0,
+    won: p.won || 0,
+    drawn: p.drawn || 0,
+    lost: p.lost || 0,
+    rank: p.rank || 1,
+  }));
+  const code = `export const INITIAL_PLAYERS = ${JSON.stringify(cleanPlayers, null, 2)};\n`;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard
+      .writeText(code)
+      .then(() => {
+        showChessToast(
+          '📋 Roster code copied! Send it to the developer to bake into Git.',
+          'success',
+        );
+      })
+      .catch(() => {
+        prompt('Copy the roster code below:', code);
+      });
+  } else {
+    prompt('Copy the roster code below:', code);
+  }
+};
+
+window.printWeeklyChessSheet = function () {
+  const sorted = [...chessState.players].sort((a, b) => a.rank - b.rank);
+  const houseTotals = calculateHouseTotals();
+  const sortedHouses = Object.values(houseTotals).sort((a, b) => b.points - a.points);
+
+  const printWindow = window.open('', '_blank');
+  if (!printWindow) {
+    alert('Please allow popups to view the printable sheet.');
+    return;
+  }
+
+  const d = new Date();
+  const dateFormatted = d.toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
+
+  let rowsHtml = sorted
+    .map(
+      (p) => `
+    <tr>
+      <td style="text-align: center; font-weight: bold;">${p.rank}</td>
+      <td style="font-weight: 600;">${p.name}</td>
+      <td style="text-align: center;">Year ${p.year}</td>
+      <td style="text-align: center; text-transform: uppercase; font-size: 11px; font-weight: bold; color: ${HOUSES[p.house]?.color || '#333'};">${HOUSES[p.house]?.name || p.house}</td>
+      <td style="text-align: center; width: 60px;">[ &nbsp; ]</td>
+      <td style="text-align: center;">${p.games}</td>
+      <td style="text-align: center;">${p.won}W / ${p.drawn}D / ${p.lost}L</td>
+      <td style="text-align: center; font-weight: bold;">${p.won * 3 + p.drawn * 2 + p.lost * 1} pts</td>
+      <td style="width: 140px; border-bottom: 1px solid #ccc;">&nbsp;</td>
+    </tr>
+  `,
+    )
+    .join('');
+
+  printWindow.document.write(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Meoncross Chess Club - Period 6 Roster (${dateFormatted})</title>
+      <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; padding: 24px; color: #1e293b; }
+        h1 { margin: 0 0 4px 0; font-size: 20px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .meta { font-size: 12px; color: #64748b; margin-bottom: 16px; display: flex; justify-content: space-between; border-bottom: 2px solid #0f172a; padding-bottom: 8px; }
+        .standings { display: flex; gap: 12px; margin-bottom: 16px; }
+        .house-box { flex: 1; border: 1px solid #cbd5e1; border-radius: 6px; padding: 8px; text-align: center; }
+        table { width: 100%; border-collapse: collapse; font-size: 12px; }
+        th, td { border: 1px solid #cbd5e1; padding: 6px 8px; }
+        th { background: #f1f5f9; font-weight: 700; text-transform: uppercase; font-size: 10px; }
+        @media print {
+          body { padding: 0; }
+          button { display: none; }
+        }
+      </style>
+    </head>
+    <body>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h1>Meoncross School · Period 6 Chess Club</h1>
+        <button onclick="window.print()" style="padding: 6px 14px; background: #2563eb; color: #fff; border: none; border-radius: 4px; font-weight: bold; cursor: pointer;">Print Sheet</button>
+      </div>
+      <div class="meta">
+        <span>Session Date: <strong>${dateFormatted} (Thursday Period 6)</strong></span>
+        <span>Scoring: <strong>Win = +3 pts | Draw = +2 pts | Loss/Playing = +1 pt</strong></span>
+      </div>
+
+      <div class="standings">
+        ${sortedHouses
+          .map(
+            (h) => `
+          <div class="house-box">
+            <div style="font-size: 10px; font-weight: bold; color: ${HOUSES[h.id].color}; text-transform: uppercase;">${HOUSES[h.id].name}</div>
+            <div style="font-size: 16px; font-weight: bold;">${h.points} pts</div>
+            <div style="font-size: 10px; color: #64748b;">${h.wins}W · ${h.draws}D · ${h.losses}L</div>
+          </div>
+        `,
+          )
+          .join('')}
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 35px;">Rank</th>
+            <th>Pupil Name</th>
+            <th style="width: 70px;">Year</th>
+            <th style="width: 90px;">House</th>
+            <th>Present</th>
+            <th style="width: 50px;">Played</th>
+            <th style="width: 90px;">Record</th>
+            <th style="width: 70px;">Points</th>
+            <th>Today's Result / Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${rowsHtml || '<tr><td colspan="9" style="text-align: center; padding: 20px;">No registered pupils yet.</td></tr>'}
+        </tbody>
+      </table>
+    </body>
+    </html>
+  `);
+  printWindow.document.close();
 };
 
 // Modal Handling: Register Pupil
