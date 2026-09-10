@@ -181,3 +181,75 @@ export const HISTORICAL_CHESS_SPOTLIGHTS = [
     },
   },
 ];
+
+export const BETH_HARMON_PUZZLES = [
+  {
+    id: 'beth_borgov_1968',
+    title: 'Beth Harmon vs. Vasily Borgov (Moscow 1968)',
+    tag: 'The Queen’s Gambit Finale',
+    difficulty: 'Intermediate',
+    toMove: 'White to Move & Deliver Checkmate in 2',
+    intro:
+      'In the climactic finale of The Queen’s Gambit, Beth Harmon looks up at the ceiling of the Moscow tournament hall, visualizing the pieces moving in reverse. She spots the brilliant queen deflection sacrifice that shatters the Soviet fortress.',
+    hint: 'Look for an aggressive queen sacrifice on the h-file that pulls the Black king into an inescapable rook battery.',
+    board: [
+      ['.', '.', '.', 'q', '.', 'r', 'k', '.'], // rank 8
+      ['p', 'p', '.', '.', 'b', 'p', 'p', 'p'], // rank 7
+      ['.', '.', 'p', '.', '.', '.', '.', '.'], // rank 6
+      ['.', '.', '.', '.', '.', '.', '.', '.'], // rank 5
+      ['.', '.', '.', '.', 'Q', '.', '.', '.'], // rank 4
+      ['.', 'P', '.', '.', '.', '.', '.', '.'], // rank 3
+      ['P', '.', '.', '.', '.', 'P', 'P', 'P'], // rank 2
+      ['.', '.', '.', 'R', '.', '.', 'K', '.'], // rank 1
+    ],
+    solutionMoves: '1. Qxh7+! Kxh7 2. Rh4# (or 2. Rh3#)',
+    solutionExplanation:
+      'By boldly sacrificing her queen on h7, Beth forces Borgov’s king onto an open square with zero escape routes, allowing the rook on the open file to deliver an immediate, unavoidable checkmate!',
+  },
+  {
+    id: 'morphy_opera_1858',
+    title: 'Paul Morphy’s Opera Game (Paris 1858)',
+    tag: 'Immortal Masterpiece',
+    difficulty: 'Club Standard',
+    toMove: 'White to Move & Force Checkmate in 2',
+    intro:
+      'Played in a private box during a performance of The Barber of Seville at the Paris Opera. American genius Paul Morphy proved that rapid tactical development beats raw material every time.',
+    hint: 'A queen sacrifice on b8 forces Black’s knight to abandon its post defending the critical d8 back rank.',
+    board: [
+      ['.', '.', '.', 'r', 'k', '.', '.', 'r'], // rank 8
+      ['p', 'p', 'p', 'q', '.', 'p', 'p', 'p'], // rank 7
+      ['.', '.', 'n', '.', '.', '.', '.', '.'], // rank 6
+      ['.', '.', '.', '.', '.', '.', '.', '.'], // rank 5
+      ['.', '.', 'B', '.', 'P', '.', '.', '.'], // rank 4
+      ['.', '.', '.', '.', '.', '.', '.', '.'], // rank 3
+      ['P', 'P', 'P', '.', '.', 'P', 'P', 'P'], // rank 2
+      ['.', '.', '.', 'R', 'K', '.', '.', 'R'], // rank 1
+    ],
+    solutionMoves: '1. Qb8+! Nxb8 2. Rd8#',
+    solutionExplanation:
+      'Morphy’s famous 1. Qb8+! deflects the defending knight, clearing the way for 2. Rd8# where the rook and bishop form an airtight mating net on the back rank.',
+  },
+  {
+    id: 'fischer_1956',
+    title: 'Bobby Fischer’s Game of the Century (New York 1956)',
+    tag: 'Prodigy Windmill',
+    difficulty: 'Advanced',
+    toMove: 'Black (13-Year-Old Fischer) to Play & Win',
+    intro:
+      'At just 13 years of age, Bobby Fischer shocked International Master Donald Byrne with an unfathomable queen sacrifice that became known as the Game of the Century.',
+    hint: 'Leave your queen attacked! Look at Black’s dark-squared bishop pinning White’s king.',
+    board: [
+      ['r', '.', '.', '.', '.', 'r', 'k', '.'], // rank 8
+      ['p', 'p', '.', '.', '.', 'p', 'b', 'p'], // rank 7
+      ['.', '.', 'n', 'p', 'b', 'n', 'p', '.'], // rank 6
+      ['.', '.', '.', '.', '.', '.', '.', '.'], // rank 5
+      ['.', '.', '.', '.', 'P', '.', '.', '.'], // rank 4
+      ['.', '.', 'N', '.', '.', 'N', '.', '.'], // rank 3
+      ['P', 'P', '.', '.', '.', 'P', 'P', 'P'], // rank 2
+      ['R', '.', 'B', 'Q', 'K', '.', '.', 'R'], // rank 1
+    ],
+    solutionMoves: '17... Be6!! 18. Bxb6 Bxc4+ 19. Kg1 Ne2+ 20. Kf1 Nxd4+',
+    solutionExplanation:
+      'Rather than retreating his queen, young Fischer offered it as bait! Once White captured on b6, Fischer launched a legendary discovered check windmill that netted an overwhelming material advantage.',
+  },
+];

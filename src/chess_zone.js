@@ -9,6 +9,7 @@ import {
   INITIAL_PLAYERS,
   INITIAL_MATCHES,
   HISTORICAL_CHESS_SPOTLIGHTS,
+  BETH_HARMON_PUZZLES,
 } from './chess_data.js';
 
 const STORAGE_KEY = 'meoncross_chess_club_v5';
@@ -143,6 +144,10 @@ let chessState = {
   activeTab: 'signin', // 'signin' | 'ladder' | 'table' | 'pairings' | 'knockout' | 'drills' | 'matches'
   filterYear: 'all', // 'all' | 'ks3' | 'ks4'
   filterHouse: 'all', // 'all' | houseId
+  currentPuzzleIdx: 0,
+  showBethHarmonHint: false,
+  showBethHarmonSolution: false,
+  showStarterPuzzle: true,
 };
 
 // Timer State Map for Historical Drills
@@ -217,6 +222,40 @@ function initChessState(forceClean = false) {
   }
 
   let loaded = false;
+
+  // 0. 1-Click URL Sync Key Auto-Importer (?chess_sync=...)
+  if (typeof window !== 'undefined' && window.location.search) {
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const syncParam = urlParams.get('chess_sync');
+      if (syncParam) {
+        let b64 = syncParam.trim();
+        if (b64.startsWith('MEONCROSS-CHESS:')) b64 = b64.replace('MEONCROSS-CHESS:', '');
+        const jsonStr = decodeURIComponent(atob(b64));
+        const syncData = JSON.parse(jsonStr);
+        if (Array.isArray(syncData.players) && syncData.players.length > 0) {
+          chessState.players = syncData.players;
+          chessState.matches = Array.isArray(syncData.matches) ? syncData.matches : [];
+          chessState.checkedInPlayerIds = Array.isArray(syncData.checkedInPlayerIds)
+            ? syncData.checkedInPlayerIds
+            : [];
+          chessState.knockoutBracket = syncData.knockoutBracket || null;
+          loaded = true;
+          saveChessState(true);
+          const cleanUrl = window.location.pathname + window.location.hash;
+          window.history.replaceState({}, document.title, cleanUrl);
+          setTimeout(() => {
+            showChessToast(
+              `🎉 Synchronized ${chessState.players.length} pupils via 1-Click Sync Link!`,
+              'success',
+            );
+          }, 400);
+        }
+      }
+    } catch (err) {
+      console.warn('URL sync param decode error:', err);
+    }
+  }
 
   // 1. Primary check: STORAGE_KEY
   try {
@@ -868,6 +907,211 @@ function renderLeagueTableTab(players) {
   `;
 }
 
+// The Beth Harmon Ceiling Board: Interactive Tactical Starter
+function renderBethHarmonCeilingBoard() {
+  const puzzles =
+    Array.isArray(BETH_HARMON_PUZZLES) && BETH_HARMON_PUZZLES.length > 0 ? BETH_HARMON_PUZZLES : [];
+  if (puzzles.length === 0) return '';
+
+  const puzzleIdx = (chessState.currentPuzzleIdx || 0) % puzzles.length;
+  const puzzle = puzzles[puzzleIdx];
+  const totalPuzzles = puzzles.length;
+  const isCollapsed = chessState.showStarterPuzzle === false;
+
+  const PIECE_GLYPHS = {
+    k: '♚',
+    q: '♛',
+    r: '♜',
+    b: '♝',
+    n: '♞',
+    p: '♟',
+    K: '♔',
+    Q: '♕',
+    R: '♖',
+    B: '♗',
+    N: '♘',
+    P: '♙',
+    '.': '',
+  };
+
+  const boardMatrix = puzzle.board || [];
+
+  let squaresHtml = '';
+  for (let r = 0; r < 8; r++) {
+    for (let c = 0; c < 8; c++) {
+      const isLight = (r + c) % 2 === 0;
+      const pieceCode = (boardMatrix[r] && boardMatrix[r][c]) || '.';
+      const glyph = PIECE_GLYPHS[pieceCode] || '';
+      const isWhitePiece = /[KQBNRP]/.test(pieceCode);
+      const isBlackPiece = /[kqbnrp]/.test(pieceCode);
+
+      const bg = isLight ? '#f2ebe0' : '#785338';
+      const color = isWhitePiece ? '#ffffff' : isBlackPiece ? '#18181b' : 'transparent';
+      const textShadow = isWhitePiece
+        ? '0 1px 2px rgba(0,0,0,0.9), 0 0 1px #000'
+        : '0 1px 2px rgba(255,255,255,0.4)';
+
+      squaresHtml += `
+        <div style="background: ${bg}; display: flex; align-items: center; justify-content: center; font-size: clamp(1.1rem, 2.4vw, 1.85rem); font-family: 'Apple Symbols', 'Segoe UI Symbol', 'DejaVu Sans', serif; color: ${color}; text-shadow: ${textShadow}; user-select: none; position: relative;">
+          ${glyph}
+          ${c === 0 ? `<span style="position: absolute; top: 1px; left: 2px; font-size: 8px; font-family: monospace; font-weight: bold; color: ${isLight ? '#785338' : '#f2ebe0'}; opacity: 0.75;">${8 - r}</span>` : ''}
+          ${r === 7 ? `<span style="position: absolute; bottom: 1px; right: 2px; font-size: 8px; font-family: monospace; font-weight: bold; color: ${isLight ? '#785338' : '#f2ebe0'}; opacity: 0.75;">${String.fromCharCode(97 + c)}</span>` : ''}
+        </div>
+      `;
+    }
+  }
+
+  return `
+    <div style="background: #1c1917; border: 2px solid #44403c; border-radius: 12px; padding: 20px; box-shadow: 0 12px 30px rgba(0,0,0,0.35); color: #fafaf9; margin-bottom: 22px;">
+      
+      <!-- Top Title Bar -->
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; border-bottom: 1.5px solid #38332e; padding-bottom: 12px; margin-bottom: ${isCollapsed ? '0' : '16px'};">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 40px; height: 40px; border-radius: 8px; background: #292524; border: 1px solid #57534e; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: #d4af37;">
+            ♟
+          </div>
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+              <h3 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.22rem; color: #f5f5f4; font-weight: 700; letter-spacing: 0.02em;">
+                The Beth Harmon Ceiling Board
+              </h3>
+              <span style="background: #362f27; color: #d4af37; border: 1px solid #785338; font-size: 0.68rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; text-transform: uppercase; font-family: monospace;">
+                Tactical Starter · Challenge ${puzzleIdx + 1} of ${totalPuzzles}
+              </span>
+            </div>
+            <div style="font-size: 0.8rem; color: #a8a29e; margin-top: 2px;">
+              ${isCollapsed ? 'Click "Expand Board" to calculate the tactical combination.' : 'Visualise the reverse combinations. Solve on your laptop before Period 6 pairings begin!'}
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 8px; align-items: center;">
+          <button type="button" onclick="window.cycleBethHarmonPuzzle(-1)" style="background: #292524; color: #fafaf9; border: 1px solid #57534e; width: 32px; height: 32px; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold;" title="Previous Puzzle">
+            ◀
+          </button>
+          <span style="font-family: monospace; font-size: 0.8rem; color: #d4af37; padding: 0 4px;">
+            ${puzzleIdx + 1}/${totalPuzzles}
+          </span>
+          <button type="button" onclick="window.cycleBethHarmonPuzzle(1)" style="background: #292524; color: #fafaf9; border: 1px solid #57534e; width: 32px; height: 32px; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold;" title="Next Puzzle">
+            ▶
+          </button>
+          <button type="button" onclick="window.toggleStarterPuzzleCollapse()" style="background: #292524; color: #e7e5e4; border: 1px solid #57534e; font-size: 0.76rem; font-weight: 700; padding: 6px 12px; border-radius: 4px; cursor: pointer; margin-left: 6px;">
+            ${isCollapsed ? '▾ Expand Board' : '▴ Collapse'}
+          </button>
+        </div>
+      </div>
+
+      ${
+        isCollapsed
+          ? ''
+          : `
+      <!-- Main Interactive Content: 2-Column Split -->
+      <div style="display: grid; grid-template-columns: minmax(260px, 330px) 1fr; gap: 24px; align-items: start;">
+        
+        <!-- Left: The Visual 8x8 Chessboard -->
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <div style="width: 100%; max-width: 310px; aspect-ratio: 1; display: grid; grid-template-columns: repeat(8, 1fr); grid-template-rows: repeat(8, 1fr); border: 3.5px solid #44403c; border-radius: 4px; box-shadow: 0 8px 24px rgba(0,0,0,0.5); overflow: hidden;">
+            ${squaresHtml}
+          </div>
+          <div style="font-size: 0.72rem; color: #78716c; margin-top: 8px; font-family: monospace; text-align: center;">
+            [White at bottom · Black at top]
+          </div>
+        </div>
+
+        <!-- Right: Story, Clues & Interactive Controls -->
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+              <span style="background: #292524; color: #f59e0b; border: 1px solid #78350f; font-size: 0.72rem; font-weight: 800; padding: 2px 8px; border-radius: 4px;">
+                ${puzzle.tag}
+              </span>
+              <span style="font-size: 0.75rem; color: #a8a29e; font-weight: 600;">
+                Difficulty: <strong style="color: #f5f5f4;">${puzzle.difficulty}</strong>
+              </span>
+            </div>
+            <h4 style="margin: 0 0 6px 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; color: #f5f5f4;">
+              ${puzzle.title}
+            </h4>
+            <div style="font-size: 0.88rem; font-weight: 800; color: #d4af37; font-family: monospace; margin-bottom: 8px;">
+              ⚔ ${puzzle.toMove}
+            </div>
+            <p style="margin: 0; font-size: 0.86rem; color: #d6d3d1; line-height: 1.55;">
+              ${puzzle.intro}
+            </p>
+          </div>
+
+          <!-- Interactive Action Buttons -->
+          <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px;">
+            <button type="button" onclick="window.toggleBethHarmonHint()" style="background: #292524; color: #f59e0b; border: 1px solid #78350f; padding: 8px 14px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+              <span>💡</span> ${chessState.showBethHarmonHint ? 'Hide Hint' : 'Show Tactical Hint'}
+            </button>
+            <button type="button" onclick="window.toggleBethHarmonSolution()" style="background: #292524; color: #22c55e; border: 1px solid #14532d; padding: 8px 14px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+              <span>♛</span> ${chessState.showBethHarmonSolution ? 'Hide Solution' : 'Reveal Grandmaster Solution'}
+            </button>
+          </div>
+
+          <!-- Hint Box -->
+          ${
+            chessState.showBethHarmonHint
+              ? `
+            <div style="background: #292524; border-left: 3px solid #f59e0b; border-radius: 0 6px 6px 0; padding: 10px 14px; font-size: 0.84rem; color: #fef3c7; line-height: 1.45; animation: fadeIn 0.2s ease-out;">
+              <strong>Tactical Clue:</strong> ${puzzle.hint}
+            </div>
+          `
+              : ''
+          }
+
+          <!-- Solution Box -->
+          ${
+            chessState.showBethHarmonSolution
+              ? `
+            <div style="background: #14281d; border: 1px solid #166534; border-left: 3px solid #22c55e; border-radius: 0 6px 6px 0; padding: 12px 14px; animation: fadeIn 0.2s ease-out;">
+              <div style="font-size: 0.76rem; font-weight: 800; color: #86efac; text-transform: uppercase; font-family: monospace; margin-bottom: 4px;">
+                Grandmaster Continuation:
+              </div>
+              <div style="font-size: 1.05rem; font-weight: 900; color: #ffffff; font-family: monospace; margin-bottom: 6px;">
+                ${puzzle.solutionMoves}
+              </div>
+              <div style="font-size: 0.82rem; color: #bbf7d0; line-height: 1.45;">
+                ${puzzle.solutionExplanation}
+              </div>
+            </div>
+          `
+              : ''
+          }
+
+        </div>
+      </div>
+      `
+      }
+    </div>
+  `;
+}
+
+// Window controls for Beth Harmon Ceiling Board
+window.cycleBethHarmonPuzzle = function (delta) {
+  const total = Array.isArray(BETH_HARMON_PUZZLES) ? BETH_HARMON_PUZZLES.length : 1;
+  chessState.currentPuzzleIdx = ((chessState.currentPuzzleIdx || 0) + delta + total) % total;
+  chessState.showBethHarmonHint = false;
+  chessState.showBethHarmonSolution = false;
+  renderChessHubView();
+};
+
+window.toggleBethHarmonHint = function () {
+  chessState.showBethHarmonHint = !chessState.showBethHarmonHint;
+  renderChessHubView();
+};
+
+window.toggleBethHarmonSolution = function () {
+  chessState.showBethHarmonSolution = !chessState.showBethHarmonSolution;
+  renderChessHubView();
+};
+
+window.toggleStarterPuzzleCollapse = function () {
+  chessState.showStarterPuzzle = !chessState.showStarterPuzzle;
+  renderChessHubView();
+};
+
 // 3. Pupil Self-Check-In & Attendance Management (Unified Period 6 Hub)
 function renderSignInTab(players = []) {
   const notCheckedIn = chessState.players.filter(
@@ -952,6 +1196,9 @@ function renderSignInTab(players = []) {
           }
         </div>
       </div>
+
+      <!-- The Beth Harmon Ceiling Board (Quiet Entry Starter / Weekly Challenge) -->
+      ${renderBethHarmonCeilingBoard()}
 
       <!-- Two-Column Form: Quick Check-In vs New Player Registration -->
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
@@ -1259,6 +1506,9 @@ function renderPairingsTab() {
           <button onclick="window.generateThursdayPairings()" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: none; font-weight: 700; font-size: 0.9rem; padding: 10px 18px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);">
             <i class="fa-solid fa-shuffle"></i> Generate Balanced Pairings
           </button>
+          <button onclick="window.printFidePairingSheet()" style="background: #1c1917; color: #d4af37; border: 1.5px solid #44403c; font-weight: 700; font-size: 0.88rem; padding: 10px 16px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);" title="Print official A4 FIDE pairing sheet for classroom whiteboard">
+            <i class="fa-solid fa-print"></i> 🖨 Print FIDE Pairing Sheet (A4)
+          </button>
         </div>
       </div>
 
@@ -1332,6 +1582,12 @@ function renderKnockoutTab() {
   const finalMatch = bracket.rounds[bracket.rounds.length - 1][0];
   if (finalMatch && finalMatch.winner) grandWinner = finalMatch.winner;
 
+  let plateWinner = null;
+  if (bracket.plateRounds && bracket.plateRounds.length > 0) {
+    const plateFinalMatch = bracket.plateRounds[bracket.plateRounds.length - 1][0];
+    if (plateFinalMatch && plateFinalMatch.winner) plateWinner = plateFinalMatch.winner;
+  }
+
   return `
     <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 14px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
       
@@ -1375,7 +1631,7 @@ function renderKnockoutTab() {
           : ''
       }
 
-      <!-- Bracket Tree Horizontal Scroll Container -->
+      <!-- Championship Bracket Tree Horizontal Scroll Container -->
       <div style="display: flex; gap: 28px; overflow-x: auto; padding: 10px 0 20px;">
         ${bracket.rounds
           .map((round, rIdx) => {
@@ -1385,7 +1641,7 @@ function renderKnockoutTab() {
               <div style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: #64748b; margin-bottom: 12px; text-align: center; letter-spacing: 0.05em;">
                 ${roundTitle}
               </div>
-              <div style="display: flex; flex-direction: column; justify-content: space-around; height: 100%; min-height: 380px; gap: 16px;">
+              <div style="display: flex; flex-direction: column; justify-content: space-around; height: 100%; min-height: 340px; gap: 16px;">
                 ${round
                   .map((m, mIdx) => {
                     const p1 = m.p1;
@@ -1447,6 +1703,188 @@ function renderKnockoutTab() {
           .join('')}
       </div>
 
+      <!-- SECTION 2: Challenger Plate / Wooden Spoon Shield (Silver Tier) -->
+      ${
+        bracket.plateRounds && bracket.plateRounds.length > 0
+          ? `
+        <div style="margin-top: 28px; border-top: 2px dashed #cbd5e1; padding-top: 22px;">
+          
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+            <div>
+              <div style="display: inline-flex; align-items: center; gap: 6px; background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase;">
+                🥄 Consolation Bracket · Keep Everyone Playing
+              </div>
+              <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #1e293b; margin: 4px 0 0 0;">
+                The Challenger Plate &amp; Wooden Spoon Shield
+              </h3>
+              <div style="font-size: 0.84rem; color: #64748b; margin-top: 2px;">
+                Losers from Round 1 automatically advance here to compete for the Challenger Plate trophy (+2 House Points)!
+              </div>
+            </div>
+          </div>
+
+          ${
+            plateWinner
+              ? `
+            <div style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border: 2px solid #94a3b8; border-radius: 12px; padding: 18px; margin-bottom: 20px; text-align: center; box-shadow: 0 4px 14px rgba(0,0,0,0.06); animation: zoomIn 0.3s ease-out;">
+              <div style="font-size: 1.8rem; color: #475569; margin-bottom: 4px;">🥄</div>
+              <h3 style="margin: 0 0 4px 0; font-family: 'Playfair Display', serif; font-size: 1.45rem; color: #1e293b; font-weight: 900;">
+                CHALLENGER PLATE CHAMPION: ${plateWinner.name}!
+              </h3>
+              <div style="font-size: 0.95rem; font-weight: 800; color: ${HOUSES[plateWinner.house]?.color || '#475569'}; text-transform: uppercase;">
+                ${HOUSES[plateWinner.house]?.name || plateWinner.house} House (+2 House Points Awarded)
+              </div>
+              <div style="font-size: 0.82rem; color: #64748b; margin-top: 4px;">
+                Fought back with grit and determination through the Wooden Spoon consolation rounds!
+              </div>
+            </div>
+          `
+              : ''
+          }
+
+          <div style="display: flex; gap: 28px; overflow-x: auto; padding: 10px 0 16px;">
+            ${bracket.plateRounds
+              .map((round, rIdx) => {
+                const roundTitle = bracket.plateRoundNames[rIdx] || `Plate Round ${rIdx + 1}`;
+                return `
+                <div style="min-width: 250px; flex: 1;">
+                  <div style="font-size: 0.82rem; font-weight: 800; text-transform: uppercase; color: #64748b; margin-bottom: 10px; text-align: center; letter-spacing: 0.04em;">
+                    ${roundTitle}
+                  </div>
+                  <div style="display: flex; flex-direction: column; justify-content: space-around; height: 100%; min-height: 200px; gap: 14px;">
+                    ${round
+                      .map((m, mIdx) => {
+                        const p1 = m.p1;
+                        const p2 = m.p2;
+                        const h1 = p1 ? HOUSES[p1.house] : null;
+                        const h2 = p2 ? HOUSES[p2.house] : null;
+
+                        return `
+                        <div style="background: #ffffff; border: 1.5px solid ${m.winner ? '#64748b' : '#cbd5e1'}; border-radius: 8px; padding: 10px 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+                          
+                          <!-- P1 Slot -->
+                          <div style="display: flex; justify-content: space-between; align-items: center; padding: 6px 8px; border-radius: 4px; background: ${m.winner && m.winner.id === (p1 && p1.id) ? '#f1f5f9' : '#fafafa'}; margin-bottom: 4px;">
+                            <span style="font-weight: 700; font-size: 0.85rem; color: #0f172a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                              ${p1 ? p1.name : '<span style="color: #94a3b8; font-style: italic;">Awaiting R1 Loser</span>'}
+                            </span>
+                            ${h1 ? `<span style="font-size: 0.7rem; font-weight: 800; color: ${h1.color};">${h1.name}</span>` : ''}
+                          </div>
+
+                          <!-- P2 Slot -->
+                          <div style="display: flex; justify-content: space-between; align-items: center; padding: 6px 8px; border-radius: 4px; background: ${m.winner && m.winner.id === (p2 && p2.id) ? '#f1f5f9' : '#fafafa'};">
+                            <span style="font-weight: 700; font-size: 0.85rem; color: #0f172a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                              ${p2 ? p2.name : '<span style="color: #94a3b8; font-style: italic;">Awaiting R1 Loser</span>'}
+                            </span>
+                            ${h2 ? `<span style="font-size: 0.7rem; font-weight: 800; color: ${h2.color};">${h2.name}</span>` : ''}
+                          </div>
+
+                          <!-- Action Button -->
+                          ${
+                            p1 && p2 && !m.winner
+                              ? `
+                            <div style="display: flex; gap: 6px; margin-top: 8px; border-top: 1px dashed #cbd5e1; padding-top: 6px;">
+                              <button onclick="window.advancePlateWinner(${rIdx}, ${mIdx}, '${p1.id}')" style="flex: 1; background: #f8fafc; border: 1px solid #cbd5e1; font-size: 0.72rem; font-weight: 700; padding: 5px; border-radius: 4px; cursor: pointer; color: ${h1 ? h1.color : '#0f172a'};" title="Plate Win for ${p1.name}">
+                                ${p1.name.split(' ')[0]} Wins
+                              </button>
+                              <button onclick="window.advancePlateWinner(${rIdx}, ${mIdx}, '${p2.id}')" style="flex: 1; background: #f8fafc; border: 1px solid #cbd5e1; font-size: 0.72rem; font-weight: 700; padding: 5px; border-radius: 4px; cursor: pointer; color: ${h2 ? h2.color : '#0f172a'};" title="Plate Win for ${p2.name}">
+                                ${p2.name.split(' ')[0]} Wins
+                              </button>
+                            </div>
+                          `
+                              : ''
+                          }
+                          ${
+                            m.winner
+                              ? `
+                            <div style="font-size: 0.72rem; font-weight: 800; color: #475569; text-align: center; margin-top: 6px; padding-top: 4px; border-top: 1px solid #e2e8f0;">
+                              <i class="fa-solid fa-check"></i> Plate Winner: ${m.winner.name} (+2 pts)
+                            </div>
+                          `
+                              : ''
+                          }
+                        </div>
+                      `;
+                      })
+                      .join('')}
+                  </div>
+                </div>
+              `;
+              })
+              .join('')}
+          </div>
+
+        </div>
+      `
+          : ''
+      }
+
+      <!-- SECTION 3: ⚡ Instant Re-Pairing for Idle Pupils (Casual Rapid Games) -->
+      <div style="margin-top: 28px; background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 18px 20px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 1.1rem; color: #0284c7;">⚡</span>
+              <h4 style="margin: 0; font-size: 1.05rem; color: #0f172a; font-weight: 800;">
+                Period 6 Rapid Re-Pairing (Full 60-Minute Engagement)
+              </h4>
+            </div>
+            <div style="font-size: 0.82rem; color: #64748b; margin-top: 2px;">
+              Pupils finished their game early? Click below to instantly pair all idle pupils for 10-minute rapid games so nobody sits waiting!
+            </div>
+          </div>
+
+          <button onclick="window.repairFreePupilsCasual()" style="background: #0284c7; color: #ffffff; border: none; font-weight: 700; font-size: 0.82rem; padding: 8px 16px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(2, 132, 199, 0.25);">
+            <i class="fa-solid fa-bolt"></i> ⚡ Re-Pair Free Pupils
+          </button>
+        </div>
+
+        ${
+          bracket.casualMatches && bracket.casualMatches.length > 0
+            ? `
+          <div style="margin-top: 14px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px;">
+            ${bracket.casualMatches
+              .map((cm) => {
+                const h1 = HOUSES[cm.p1.house];
+                const h2 = HOUSES[cm.p2.house];
+                return `
+                <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 10px 12px;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; font-size: 0.72rem; font-weight: 800; color: #64748b;">
+                    <span>CASUAL RAPID</span>
+                    <span style="color: #0284c7;">${cm.time}</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; font-weight: 700; margin-bottom: 8px;">
+                    <span style="color: ${h1 ? h1.color : '#0f172a'};">${cm.p1.name}</span>
+                    <span style="color: #94a3b8; font-size: 0.75rem;">vs</span>
+                    <span style="color: ${h2 ? h2.color : '#0f172a'};">${cm.p2.name}</span>
+                  </div>
+                  ${
+                    !cm.winner
+                      ? `
+                    <div style="display: flex; gap: 6px;">
+                      <button onclick="window.advanceCasualMatch('${cm.id}', '${cm.p1.id}')" style="flex: 1; background: #f1f5f9; border: 1px solid #cbd5e1; font-size: 0.7rem; font-weight: 700; padding: 4px; border-radius: 4px; cursor: pointer;">
+                        ${cm.p1.name.split(' ')[0]} Won
+                      </button>
+                      <button onclick="window.advanceCasualMatch('${cm.id}', '${cm.p2.id}')" style="flex: 1; background: #f1f5f9; border: 1px solid #cbd5e1; font-size: 0.7rem; font-weight: 700; padding: 4px; border-radius: 4px; cursor: pointer;">
+                        ${cm.p2.name.split(' ')[0]} Won
+                      </button>
+                    </div>
+                  `
+                      : `
+                    <div style="text-align: center; font-size: 0.72rem; font-weight: 800; color: #15803d; border-top: 1px solid #e2e8f0; padding-top: 4px;">
+                      ✓ Winner: ${cm.winner.name} (+3 pts)
+                    </div>
+                  `
+                  }
+                </div>
+              `;
+              })
+              .join('')}
+          </div>
+        `
+            : ''
+        }
+      </div>
+
     </div>
   `;
 }
@@ -1470,6 +1908,9 @@ function renderDrillsTab() {
           </div>
         </div>
       </div>
+
+      <!-- The Beth Harmon Ceiling Board (Tactical Showcase) -->
+      ${renderBethHarmonCeilingBoard()}
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 20px;">
         ${HISTORICAL_CHESS_SPOTLIGHTS.map((sp) => {
@@ -1915,6 +2356,8 @@ window.generateThursdayPairings = function () {
     });
   }
 
+  chessState.activePairings = pairings;
+
   const box = document.getElementById('pairings-results-box');
   if (!box) return;
 
@@ -1929,8 +2372,8 @@ window.generateThursdayPairings = function () {
           <div style="font-size: 0.8rem; color: #64748b;">Generated for ${presentIds.length} players (${pairings.filter((p) => !p.isBye).length} active boards)</div>
         </div>
 
-        <button onclick="window.print()" style="background: #ffffff; border: 1.5px solid #cbd5e1; color: #1e293b; padding: 6px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
-          <i class="fa-solid fa-print"></i> Print Whiteboard Sheet
+        <button onclick="window.printFidePairingSheet()" style="background: #1c1917; color: #d4af37; border: 1.5px solid #44403c; padding: 6px 14px; border-radius: 6px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+          <i class="fa-solid fa-print"></i> 🖨 Print FIDE Sheet (A4)
         </button>
       </div>
 
@@ -2037,10 +2480,32 @@ window.generateKnockoutTournament = function () {
   }
   rounds.push([{ id: 'ko_final', p1: null, p2: null, winner: null }]);
 
+  // Challenger Plate (Wooden Spoon Shield) Setup:
+  // In an 8-player bracket: 4 losers from Round 1 battle in Plate Semi-Finals -> Wooden Spoon Final
+  // In a 4-player bracket: 2 losers from Round 1 battle in the Wooden Spoon Final directly!
+  let plateRounds = [];
+  let plateRoundNames = [];
+  if (tournamentSize === 8) {
+    plateRoundNames = ['Plate Semi-Finals', 'Wooden Spoon Shield Final'];
+    plateRounds = [
+      [
+        { id: 'plate_sf_0', p1: null, p2: null, winner: null },
+        { id: 'plate_sf_1', p1: null, p2: null, winner: null },
+      ],
+      [{ id: 'plate_final', p1: null, p2: null, winner: null }],
+    ];
+  } else {
+    plateRoundNames = ['Wooden Spoon Shield Final'];
+    plateRounds = [[{ id: 'plate_final', p1: null, p2: null, winner: null }]];
+  }
+
   chessState.knockoutBracket = {
     tournamentSize,
     roundNames,
     rounds,
+    plateRoundNames,
+    plateRounds,
+    casualMatches: [],
   };
 
   saveChessState();
@@ -2053,23 +2518,24 @@ window.advanceKnockoutWinner = function (roundIdx, matchIdx, winnerId) {
   if (!bracket) return;
 
   const match = bracket.rounds[roundIdx][matchIdx];
-  if (!match) return;
+  if (!match || !match.p1 || !match.p2) return;
 
   const winner = match.p1.id === winnerId ? match.p1 : match.p2;
   const loser = match.p1.id === winnerId ? match.p2 : match.p1;
   match.winner = winner;
+  match.loser = loser;
 
   // Record official match in history
   chessState.matches.push({
     id: 'ko_m_' + Date.now(),
-    date: 'Thursday Period 6 Knockout',
-    round: bracket.roundNames[roundIdx],
+    date: 'Thursday Period 6 Championship',
+    round: bracket.roundNames[roundIdx] || 'Championship Match',
     white: match.p1.name,
     black: match.p2.name,
     whiteHouse: match.p1.house,
     blackHouse: match.p2.house,
     result: winner.id === match.p1.id ? '1-0' : '0-1',
-    opening: 'Knockout Cup Match',
+    opening: 'Championship Cup Match',
   });
 
   // Update player stats
@@ -2080,7 +2546,7 @@ window.advanceKnockoutWinner = function (roundIdx, matchIdx, winnerId) {
   loser.games++;
   loser.rating = Math.max(800, loser.rating - 15);
 
-  // If there is a next round, advance winner
+  // Advance winner in the Championship Cup tree
   if (roundIdx + 1 < bracket.rounds.length) {
     const nextMatchIdx = Math.floor(matchIdx / 2);
     const nextMatch = bracket.rounds[roundIdx + 1][nextMatchIdx];
@@ -2093,8 +2559,187 @@ window.advanceKnockoutWinner = function (roundIdx, matchIdx, winnerId) {
     }
   }
 
+  // Route Round 1 losers into the Challenger Plate (Wooden Spoon Shield)
+  if (roundIdx === 0 && bracket.plateRounds && bracket.plateRounds.length > 0) {
+    if (bracket.tournamentSize === 8) {
+      const plateMatchIdx = Math.floor(matchIdx / 2);
+      const plateMatch = bracket.plateRounds[0][plateMatchIdx];
+      if (plateMatch) {
+        if (matchIdx % 2 === 0) {
+          plateMatch.p1 = loser;
+        } else {
+          plateMatch.p2 = loser;
+        }
+      }
+    } else if (bracket.tournamentSize === 4) {
+      const plateFinal = bracket.plateRounds[0][0];
+      if (plateFinal) {
+        if (matchIdx === 0) {
+          plateFinal.p1 = loser;
+        } else {
+          plateFinal.p2 = loser;
+        }
+      }
+    }
+  }
+
   saveChessState();
   renderChessHubView();
+};
+
+window.advancePlateWinner = function (roundIdx, matchIdx, winnerId) {
+  const bracket = chessState.knockoutBracket;
+  if (!bracket || !bracket.plateRounds) return;
+
+  const match = bracket.plateRounds[roundIdx][matchIdx];
+  if (!match || !match.p1 || !match.p2) return;
+
+  const winner = match.p1.id === winnerId ? match.p1 : match.p2;
+  const loser = match.p1.id === winnerId ? match.p2 : match.p1;
+  match.winner = winner;
+  match.loser = loser;
+
+  const roundName = bracket.plateRoundNames[roundIdx] || `Plate Round ${roundIdx + 1}`;
+
+  // Record official match in history
+  chessState.matches.push({
+    id: 'plate_m_' + Date.now(),
+    date: 'Thursday Period 6 Challenger Plate',
+    round: roundName,
+    white: match.p1.name,
+    black: match.p2.name,
+    whiteHouse: match.p1.house,
+    blackHouse: match.p2.house,
+    result: winner.id === match.p1.id ? '1-0' : '0-1',
+    opening: 'Challenger Plate Match',
+  });
+
+  // Update player stats (+2 House points for Plate wins!)
+  winner.won++;
+  winner.games++;
+  winner.rating += 10;
+  loser.lost++;
+  loser.games++;
+  loser.rating = Math.max(800, loser.rating - 10);
+
+  // If there is a next round in the Plate (e.g. from SF to Final in 8-player)
+  if (roundIdx + 1 < bracket.plateRounds.length) {
+    const nextMatchIdx = Math.floor(matchIdx / 2);
+    const nextMatch = bracket.plateRounds[roundIdx + 1][nextMatchIdx];
+    if (nextMatch) {
+      if (matchIdx % 2 === 0) {
+        nextMatch.p1 = winner;
+      } else {
+        nextMatch.p2 = winner;
+      }
+    }
+  }
+
+  saveChessState();
+  renderChessHubView();
+};
+
+window.repairFreePupilsCasual = function () {
+  const bracket = chessState.knockoutBracket;
+  if (!bracket) return;
+
+  const busyIds = new Set();
+  bracket.rounds.forEach((rnd) => {
+    rnd.forEach((m) => {
+      if (m.p1 && m.p2 && !m.winner) {
+        busyIds.add(m.p1.id);
+        busyIds.add(m.p2.id);
+      }
+    });
+  });
+  if (bracket.plateRounds) {
+    bracket.plateRounds.forEach((rnd) => {
+      rnd.forEach((m) => {
+        if (m.p1 && m.p2 && !m.winner) {
+          busyIds.add(m.p1.id);
+          busyIds.add(m.p2.id);
+        }
+      });
+    });
+  }
+  if (bracket.casualMatches) {
+    bracket.casualMatches.forEach((m) => {
+      if (m.p1 && m.p2 && !m.winner) {
+        busyIds.add(m.p1.id);
+        busyIds.add(m.p2.id);
+      }
+    });
+  }
+
+  const pool = chessState.players.filter(
+    (p) => chessState.checkedInPlayerIds.includes(p.id) && !busyIds.has(p.id),
+  );
+
+  if (pool.length < 2) {
+    showChessToast(
+      'Fewer than 2 free pupils available right now (others are in active tournament matches).',
+      'warning',
+    );
+    return;
+  }
+
+  const shuffled = [...pool].sort(() => 0.5 - Math.random());
+  if (!bracket.casualMatches) bracket.casualMatches = [];
+
+  let count = 0;
+  while (shuffled.length >= 2) {
+    const p1 = shuffled.shift();
+    const p2 = shuffled.shift();
+    bracket.casualMatches.push({
+      id: 'casual_' + Date.now() + '_' + count,
+      p1,
+      p2,
+      time: '10-Min Rapid',
+      winner: null,
+    });
+    count++;
+  }
+
+  saveChessState();
+  renderChessHubView();
+  showChessToast(
+    `⚡ Paired ${count * 2} free pupils for 10-minute rapid games! Nobody sits idle.`,
+    'success',
+  );
+};
+
+window.advanceCasualMatch = function (casualId, winnerId) {
+  const bracket = chessState.knockoutBracket;
+  if (!bracket || !bracket.casualMatches) return;
+  const match = bracket.casualMatches.find((m) => m.id === casualId);
+  if (!match || match.winner) return;
+
+  const winner = match.p1.id === winnerId ? match.p1 : match.p2;
+  const loser = match.p1.id === winnerId ? match.p2 : match.p1;
+  match.winner = winner;
+
+  chessState.matches.push({
+    id: 'cas_m_' + Date.now(),
+    date: 'Thursday Period 6 Casual Rapid',
+    round: 'Casual Rapid Match',
+    white: match.p1.name,
+    black: match.p2.name,
+    whiteHouse: match.p1.house,
+    blackHouse: match.p2.house,
+    result: winner.id === match.p1.id ? '1-0' : '0-1',
+    opening: 'Period 6 Rapid Game',
+  });
+
+  winner.won++;
+  winner.games++;
+  winner.rating += 8;
+  loser.lost++;
+  loser.games++;
+  loser.rating = Math.max(800, loser.rating - 8);
+
+  saveChessState();
+  renderChessHubView();
+  showChessToast(`Logged match! ${winner.name} won (+3 House points).`, 'success');
 };
 
 window.resetKnockoutTournament = function () {
@@ -2623,83 +3268,224 @@ window.openDataVaultModal = function () {
           <button onclick="window.closeChessModal()" style="background: none; border: none; font-size: 1.2rem; color: #64748b; cursor: pointer;">&times;</button>
         </div>
 
-        <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 10px; padding: 14px 16px; margin-bottom: 18px; font-size: 0.86rem; color: #1e40af; line-height: 1.45;">
-          <strong><i class="fa-solid fa-shield-check"></i> Multi-Layer Redundancy Active:</strong> All changes are mirrored across <strong>localStorage</strong>, <strong>IndexedDB</strong>, and an immutable <strong>Master Archive</strong>. Even if your browser cache is purged, your data auto-recovers.
+        <div style="background: #faf8f5; border: 1.5px solid #d6d3d1; border-radius: 8px; padding: 14px 16px; margin-bottom: 18px; font-size: 0.86rem; color: #1c1917; line-height: 1.45;">
+          <strong>🛡️ Multi-Layer Redundancy Active:</strong> All changes are mirrored across <strong>localStorage</strong>, <strong>IndexedDB</strong>, and an immutable <strong>Master Archive</strong>.
+        </div>
+
+        <!-- Section: Cross-Device Instant Sync Key -->
+        <div style="background: #f5f2eb; border: 1.5px solid #44403c; border-radius: 8px; padding: 16px; margin-bottom: 18px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <div style="font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 1.05rem; color: #1c1917;">
+              🔑 Cross-Device Instant Sync Key
+            </div>
+            <span style="font-family: monospace; font-size: 0.7rem; background: #1c1917; color: #fafaf9; padding: 2px 6px; border-radius: 3px;">School ↔ Home ↔ iPad</span>
+          </div>
+          <p style="margin: 0 0 12px 0; font-size: 0.8rem; color: #57534e; line-height: 1.45;">
+            Switching between your school laptop, home laptop, or iPad? Use this key to transfer your entire club roster, ratings, and match history in 2 seconds without accounts or logins.
+          </p>
+
+          <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px;">
+            <button type="button" onclick="window.copySyncKey()" style="background: #1c1917; color: #fafaf9; border: 1px solid #1c1917; padding: 8px 14px; border-radius: 4px; font-size: 0.78rem; font-weight: 700; font-family: monospace; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+              <span>📋</span> Copy My Sync Key
+            </button>
+            <button type="button" onclick="window.copySyncLink()" style="background: #ffffff; color: #1c1917; border: 1.5px solid #44403c; padding: 8px 14px; border-radius: 4px; font-size: 0.78rem; font-weight: 700; font-family: monospace; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+              <span>🔗</span> Copy 1-Click Sync Link
+            </button>
+          </div>
+
+          <div style="display: flex; gap: 8px; margin-top: 8px;">
+            <input type="text" id="vault-sync-key-input" placeholder="Paste Sync Key here on this device (e.g. MEONCROSS-CHESS:...)" style="flex: 1; padding: 8px 10px; border-radius: 4px; border: 1px solid #d6d3d1; font-family: monospace; font-size: 0.78rem; background: #ffffff;">
+            <button type="button" onclick="window.applySyncKey()" style="background: #292524; color: #d4af37; border: 1px solid #44403c; padding: 8px 14px; border-radius: 4px; font-weight: 700; font-size: 0.78rem; font-family: monospace; cursor: pointer;">
+              ⚡ SYNC NOW
+            </button>
+          </div>
         </div>
 
         <!-- 4 Action Cards -->
         <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
           
           <!-- Tool 1: Download JSON Backup -->
-          <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+          <div style="background: #faf8f5; border: 1px solid #d6d3d1; border-radius: 8px; padding: 12px 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
             <div>
-              <div style="font-weight: 700; color: #0f172a; font-size: 0.95rem;">
-                <i class="fa-solid fa-file-arrow-down" style="color: #10b981; margin-right: 6px;"></i> Download Backup File (.json)
+              <div style="font-weight: 700; color: #1c1917; font-size: 0.92rem; font-family: 'Playfair Display', serif;">
+                Download Backup File (.json)
               </div>
-              <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">
-                Saves current cohort (${playerCount} pupils, ${matchCount} matches) directly to your tablet/PC.
+              <div style="font-size: 0.76rem; color: #78716c; margin-top: 2px;">
+                Saves current cohort (${playerCount} pupils, ${matchCount} matches) to your device.
               </div>
             </div>
-            <button onclick="window.downloadChessBackupJSON()" style="background: #10b981; color: #ffffff; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; cursor: pointer; flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px;">
-              <i class="fa-solid fa-download"></i> Download
+            <button onclick="window.downloadChessBackupJSON()" style="background: #1c1917; color: #ffffff; border: none; padding: 7px 14px; border-radius: 4px; font-weight: 700; font-size: 0.78rem; cursor: pointer; flex-shrink: 0; font-family: monospace;">
+              DOWNLOAD
             </button>
           </div>
 
           <!-- Tool 2: Restore from JSON File -->
-          <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+          <div style="background: #faf8f5; border: 1px solid #d6d3d1; border-radius: 8px; padding: 12px 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
             <div>
-              <div style="font-weight: 700; color: #0f172a; font-size: 0.95rem;">
-                <i class="fa-solid fa-file-arrow-up" style="color: #2563eb; margin-right: 6px;"></i> Restore from Backup File
+              <div style="font-weight: 700; color: #1c1917; font-size: 0.92rem; font-family: 'Playfair Display', serif;">
+                Restore from Backup File
               </div>
-              <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">
+              <div style="font-size: 0.76rem; color: #78716c; margin-top: 2px;">
                 Upload any previously downloaded .json backup file to restore in 1 second.
               </div>
             </div>
-            <label style="background: #2563eb; color: #ffffff; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; cursor: pointer; flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px;">
-              <i class="fa-solid fa-upload"></i> Restore
+            <label style="background: #ffffff; color: #1c1917; border: 1px solid #44403c; padding: 7px 14px; border-radius: 4px; font-weight: 700; font-size: 0.78rem; cursor: pointer; flex-shrink: 0; font-family: monospace;">
+              UPLOAD FILE
               <input type="file" accept=".json" onchange="window.handleRestoreBackupFile(event)" style="display: none;">
             </label>
           </div>
 
           <!-- Tool 3: Copy Code for Permanent Git Bake-In -->
-          <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+          <div style="background: #faf8f5; border: 1px solid #d6d3d1; border-radius: 8px; padding: 12px 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
             <div>
-              <div style="font-weight: 700; color: #0f172a; font-size: 0.95rem;">
-                <i class="fa-solid fa-code" style="color: #8b5cf6; margin-right: 6px;"></i> Copy Roster for Developer / GitHub
+              <div style="font-weight: 700; color: #1c1917; font-size: 0.92rem; font-family: 'Playfair Display', serif;">
+                Copy Roster Code for Git
               </div>
-              <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">
-                Copies JavaScript code to clipboard so you can paste it to the assistant to bake into Git forever.
+              <div style="font-size: 0.76rem; color: #78716c; margin-top: 2px;">
+                Copies code to clipboard so you can send it to me to bake into Git forever.
               </div>
             </div>
-            <button onclick="window.copyRosterCodeToClipboard()" style="background: #8b5cf6; color: #ffffff; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; cursor: pointer; flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px;">
-              <i class="fa-solid fa-copy"></i> Copy Code
+            <button onclick="window.copyRosterCodeToClipboard()" style="background: #292524; color: #fafaf9; border: 1px solid #44403c; padding: 7px 14px; border-radius: 4px; font-weight: 700; font-size: 0.78rem; cursor: pointer; flex-shrink: 0; font-family: monospace;">
+              COPY CODE
             </button>
           </div>
 
           <!-- Tool 4: Printable Paper Scoresheet -->
-          <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+          <div style="background: #faf8f5; border: 1px solid #d6d3d1; border-radius: 8px; padding: 12px 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
             <div>
-              <div style="font-weight: 700; color: #0f172a; font-size: 0.95rem;">
-                <i class="fa-solid fa-print" style="color: #475569; margin-right: 6px;"></i> Printable Weekly Scoresheet (A4)
+              <div style="font-weight: 700; color: #1c1917; font-size: 0.92rem; font-family: 'Playfair Display', serif;">
+                Printable Weekly Scoresheet (A4)
               </div>
-              <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">
+              <div style="font-size: 0.76rem; color: #78716c; margin-top: 2px;">
                 Print a physical paper roster and score logging grid for your classroom clipboard.
               </div>
             </div>
-            <button onclick="window.printWeeklyChessSheet()" style="background: #475569; color: #ffffff; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; cursor: pointer; flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px;">
-              <i class="fa-solid fa-print"></i> Print Sheet
+            <button onclick="window.printWeeklyChessSheet()" style="background: #57534e; color: #ffffff; border: none; padding: 7px 14px; border-radius: 4px; font-weight: 700; font-size: 0.78rem; cursor: pointer; flex-shrink: 0; font-family: monospace;">
+              PRINT A4
             </button>
           </div>
 
         </div>
 
-        <div style="display: flex; justify-content: flex-end; gap: 10px; border-top: 1px solid #e2e8f0; padding-top: 14px;">
-          <button type="button" onclick="window.closeChessModal()" style="background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; padding: 8px 18px; border-radius: 6px; font-weight: 700; cursor: pointer;">Close</button>
+        <div style="display: flex; justify-content: flex-end; gap: 10px; border-top: 1.5px solid #e7e2d7; padding-top: 14px;">
+          <button type="button" onclick="window.closeChessModal()" style="background: #e7e2d7; color: #1c1917; border: 1px solid #d6d3d1; padding: 8px 18px; border-radius: 4px; font-weight: 700; font-family: monospace; font-size: 0.8rem; cursor: pointer;">CLOSE</button>
         </div>
 
       </div>
     </div>
   `;
+};
+
+// Cross-Device Instant Sync Key Tools
+window.copySyncKey = function () {
+  const exportPayload = {
+    v: 5,
+    t: Date.now(),
+    players: chessState.players,
+    matches: chessState.matches,
+    checkedInPlayerIds: chessState.checkedInPlayerIds,
+    knockoutBracket: chessState.knockoutBracket,
+  };
+  try {
+    const jsonStr = JSON.stringify(exportPayload);
+    const b64 = btoa(encodeURIComponent(jsonStr));
+    const syncKey = `MEONCROSS-CHESS:${b64}`;
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard
+        .writeText(syncKey)
+        .then(() => {
+          showChessToast(
+            '🔑 Sync Key copied! Paste it in the Sync box on your other laptop or iPad.',
+            'success',
+          );
+        })
+        .catch(() => {
+          prompt('Copy your Sync Key below:', syncKey);
+        });
+    } else {
+      prompt('Copy your Sync Key below:', syncKey);
+    }
+  } catch (err) {
+    console.error('Failed to generate Sync Key:', err);
+    showChessToast('Failed to generate Sync Key.', 'error');
+  }
+};
+
+window.copySyncLink = function () {
+  const exportPayload = {
+    v: 5,
+    t: Date.now(),
+    players: chessState.players,
+    matches: chessState.matches,
+    checkedInPlayerIds: chessState.checkedInPlayerIds,
+    knockoutBracket: chessState.knockoutBracket,
+  };
+  try {
+    const jsonStr = JSON.stringify(exportPayload);
+    const b64 = btoa(encodeURIComponent(jsonStr));
+    const origin = window.location.origin;
+    const pathname = window.location.pathname;
+    const syncUrl = `${origin}${pathname}?chess_sync=${b64}#chess`;
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard
+        .writeText(syncUrl)
+        .then(() => {
+          showChessToast(
+            '🔗 1-Click Sync Link copied! Open this link on your other device to sync instantly.',
+            'success',
+          );
+        })
+        .catch(() => {
+          prompt('Copy your 1-Click Sync Link below:', syncUrl);
+        });
+    } else {
+      prompt('Copy your 1-Click Sync Link below:', syncUrl);
+    }
+  } catch (err) {
+    console.error('Failed to generate 1-Click Sync Link:', err);
+    showChessToast('Failed to generate 1-Click Sync Link.', 'error');
+  }
+};
+
+window.applySyncKey = function () {
+  const input = document.getElementById('vault-sync-key-input');
+  if (!input || !input.value.trim()) {
+    showChessToast('Please paste a valid Sync Key into the box first.', 'warning');
+    return;
+  }
+  let raw = input.value.trim();
+  if (raw.startsWith('MEONCROSS-CHESS:')) {
+    raw = raw.replace('MEONCROSS-CHESS:', '');
+  }
+  try {
+    const jsonStr = decodeURIComponent(atob(raw));
+    const syncData = JSON.parse(jsonStr);
+    if (!Array.isArray(syncData.players)) {
+      showChessToast('Invalid Sync Key: missing player records.', 'error');
+      return;
+    }
+    chessState.players = syncData.players;
+    chessState.matches = Array.isArray(syncData.matches) ? syncData.matches : [];
+    chessState.checkedInPlayerIds = Array.isArray(syncData.checkedInPlayerIds)
+      ? syncData.checkedInPlayerIds
+      : [];
+    chessState.knockoutBracket = syncData.knockoutBracket || null;
+    saveChessState(true);
+    window.closeChessModal();
+    renderChessHubView();
+    showChessToast(
+      `🎉 Successfully synchronized ${chessState.players.length} pupils and ${chessState.matches.length} matches!`,
+      'success',
+    );
+  } catch (err) {
+    console.error('Failed to apply Sync Key:', err);
+    showChessToast(
+      'Failed to apply Sync Key. Please check that you copied the complete key.',
+      'error',
+    );
+  }
 };
 
 window.downloadChessBackupJSON = function () {
@@ -2893,6 +3679,342 @@ window.printWeeklyChessSheet = function () {
           ${rowsHtml || '<tr><td colspan="9" style="text-align: center; padding: 20px;">No registered pupils yet.</td></tr>'}
         </tbody>
       </table>
+    </body>
+    </html>
+  `);
+  printWindow.document.close();
+};
+
+window.printFidePairingSheet = function () {
+  let pairings = chessState.activePairings;
+
+  // If no pairings generated yet, build them on the fly
+  if (!pairings || pairings.length === 0) {
+    const presentIds = chessState.checkedInPlayerIds;
+    let pool = chessState.players
+      .filter((p) => (presentIds.length > 0 ? presentIds.includes(p.id) : true))
+      .sort((a, b) => b.rating - a.rating);
+
+    if (pool.length < 2) {
+      showChessToast(
+        'Please register or check in at least 2 pupils to generate a FIDE pairing sheet.',
+        'warning',
+      );
+      return;
+    }
+
+    pairings = [];
+    const tempPool = [...pool];
+    while (tempPool.length >= 2) {
+      const white = tempPool.shift();
+      let bestOpponentIdx = 0;
+      for (let i = 0; i < tempPool.length; i++) {
+        if (tempPool[i].house !== white.house) {
+          bestOpponentIdx = i;
+          break;
+        }
+      }
+      const black = tempPool.splice(bestOpponentIdx, 1)[0];
+      pairings.push({
+        board: pairings.length + 1,
+        white,
+        black,
+      });
+    }
+    if (tempPool.length === 1) {
+      pairings.push({
+        board: pairings.length + 1,
+        white: tempPool[0],
+        black: null,
+        isBye: true,
+      });
+    }
+    chessState.activePairings = pairings;
+  }
+
+  const printWindow = window.open('', '_blank');
+  if (!printWindow) {
+    alert('Please allow popups to view the printable sheet.');
+    return;
+  }
+
+  const d = new Date();
+  const dateFormatted = d.toLocaleDateString('en-GB', {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
+
+  const houseTotals = calculateHouseTotals();
+  const sortedHouses = Object.values(houseTotals).sort((a, b) => b.points - a.points);
+  const totalPlayersCount = pairings.reduce((acc, p) => acc + (p.isBye ? 1 : 2), 0);
+
+  const rowsHtml = pairings
+    .map((p) => {
+      if (p.isBye) {
+        return `
+        <tr style="background: #f8fafc;">
+          <td style="text-align: center; font-weight: 900; font-size: 13px;">Board ${p.board}</td>
+          <td style="font-weight: 700; font-size: 13px; color: #0f172a;">
+            ♔ ${p.white.name} <span style="font-size: 11px; color: #64748b;">(Y${p.white.year})</span>
+            <div style="font-size: 10px; color: ${HOUSES[p.white.house]?.color || '#333'}; font-weight: 800; text-transform: uppercase;">
+              ${HOUSES[p.white.house]?.name || p.white.house} · ELO ${p.white.rating}
+            </div>
+          </td>
+          <td style="text-align: center; font-weight: 800; font-size: 13px; background: #e2e8f0; width: 45px;">BYE</td>
+          <td style="text-align: center; font-weight: 700; font-size: 11px; color: #94a3b8; width: 30px;">—</td>
+          <td style="text-align: center; font-weight: 700; font-size: 11px; color: #94a3b8; width: 45px;">—</td>
+          <td style="font-size: 12px; color: #64748b; font-style: italic;">Assigned Practice Bye (+1 Pt)</td>
+          <td style="text-align: center; font-size: 11px; color: #94a3b8;">N/A</td>
+        </tr>
+      `;
+      }
+
+      const wH = HOUSES[p.white.house];
+      const bH = HOUSES[p.black.house];
+
+      return `
+      <tr>
+        <td style="text-align: center; font-weight: 900; font-size: 14px; background: #fafafa;">
+          Board ${p.board}
+        </td>
+        <td>
+          <div style="font-weight: 700; font-size: 13px; color: #0f172a;">
+            ♔ ${p.white.name} <span style="font-size: 11px; font-weight: 600; color: #64748b;">(Y${p.white.year})</span>
+          </div>
+          <div style="font-size: 10px; font-weight: 800; color: ${wH?.color || '#333'}; text-transform: uppercase;">
+            ${wH?.name || p.white.house} House · ELO ${p.white.rating}
+          </div>
+        </td>
+        <td style="text-align: center; width: 55px; height: 38px; border: 1.5px solid #0f172a; font-size: 14px; font-weight: 800;">
+          &nbsp;
+        </td>
+        <td style="text-align: center; font-weight: 800; font-size: 11px; color: #64748b; width: 30px;">
+          VS
+        </td>
+        <td style="text-align: center; width: 55px; height: 38px; border: 1.5px solid #0f172a; font-size: 14px; font-weight: 800;">
+          &nbsp;
+        </td>
+        <td>
+          <div style="font-weight: 700; font-size: 13px; color: #0f172a;">
+            ♚ ${p.black.name} <span style="font-size: 11px; font-weight: 600; color: #64748b;">(Y${p.black.year})</span>
+          </div>
+          <div style="font-size: 10px; font-weight: 800; color: ${bH?.color || '#333'}; text-transform: uppercase;">
+            ${bH?.name || p.black.house} House · ELO ${p.black.rating}
+          </div>
+        </td>
+        <td style="width: 170px; font-size: 10px; color: #94a3b8; vertical-align: bottom; padding-bottom: 4px;">
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #94a3b8; height: 18px; margin-bottom: 3px;">
+            <span style="font-size: 9px; font-weight: bold; color: #475569;">W:</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #94a3b8; height: 18px;">
+            <span style="font-size: 9px; font-weight: bold; color: #475569;">B:</span>
+          </div>
+        </td>
+      </tr>
+    `;
+    })
+    .join('');
+
+  printWindow.document.write(`
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Meoncross Chess Club - FIDE Round Pairing Sheet (${dateFormatted})</title>
+      <style>
+        @page {
+          size: A4 portrait;
+          margin: 10mm 12mm;
+        }
+        * { box-sizing: border-box; }
+        body {
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+          margin: 0;
+          padding: 10px;
+          color: #0f172a;
+          background: #ffffff;
+        }
+        .header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          border-bottom: 2.5px solid #0f172a;
+          padding-bottom: 8px;
+          margin-bottom: 12px;
+        }
+        h1 {
+          margin: 0;
+          font-size: 19px;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          font-weight: 900;
+        }
+        .subtitle {
+          font-size: 12px;
+          font-weight: 700;
+          color: #475569;
+          margin-top: 2px;
+          text-transform: uppercase;
+          letter-spacing: 0.03em;
+        }
+        .meta-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 8px;
+          background: #f8fafc;
+          border: 1px solid #cbd5e1;
+          border-radius: 4px;
+          padding: 8px 12px;
+          margin-bottom: 12px;
+          font-size: 11px;
+        }
+        .meta-item strong {
+          display: block;
+          font-size: 9px;
+          text-transform: uppercase;
+          color: #64748b;
+          margin-bottom: 1px;
+        }
+        .house-strip {
+          display: flex;
+          gap: 8px;
+          margin-bottom: 12px;
+        }
+        .house-badge {
+          flex: 1;
+          border: 1px solid #cbd5e1;
+          border-radius: 4px;
+          padding: 4px 6px;
+          text-align: center;
+          font-size: 10px;
+        }
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          font-size: 12px;
+        }
+        th, td {
+          border: 1px solid #94a3b8;
+          padding: 6px 8px;
+        }
+        th {
+          background: #f1f5f9;
+          font-weight: 800;
+          text-transform: uppercase;
+          font-size: 10px;
+          letter-spacing: 0.03em;
+        }
+        .instructions {
+          margin-top: 12px;
+          border-top: 1.5px solid #0f172a;
+          padding-top: 8px;
+          font-size: 10px;
+          color: #475569;
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+        }
+        .signoff-box {
+          border: 1px solid #94a3b8;
+          border-radius: 4px;
+          padding: 6px 12px;
+          width: 250px;
+          background: #fafafa;
+        }
+        @media print {
+          body { padding: 0; }
+          .no-print { display: none !important; }
+        }
+      </style>
+    </head>
+    <body>
+      <div class="no-print" style="margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center; background: #eff6ff; border: 1px solid #bfdbfe; padding: 10px 14px; border-radius: 6px;">
+        <div>
+          <strong style="color: #1e40af;">FIDE Pairing Sheet Preview</strong>
+          <div style="font-size: 12px; color: #3b82f6;">Ready for A4 printout or pinning to the classroom whiteboard.</div>
+        </div>
+        <button onclick="window.print()" style="background: #2563eb; color: #ffffff; border: none; font-weight: bold; font-size: 13px; padding: 8px 18px; border-radius: 4px; cursor: pointer;">
+          🖨 Print A4 Sheet
+        </button>
+      </div>
+
+      <div class="header">
+        <div>
+          <h1>Meoncross School Chess Club</h1>
+          <div class="subtitle">Official FIDE-Style Round Pairing &amp; Results Sheet</div>
+        </div>
+        <div style="text-align: right; font-size: 11px; font-weight: 700; color: #334155;">
+          <div>Session: Period 6 (15:30 - 16:30)</div>
+          <div style="color: #64748b;">${dateFormatted}</div>
+        </div>
+      </div>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <strong>Event / Time Control</strong>
+          15-Min Rapid · Swiss Ladder
+        </div>
+        <div class="meta-item">
+          <strong>Scoring Standard</strong>
+          Win = 1 (3 pts) · Draw = ½ (2 pts) · Loss = 0 (1 pt)
+        </div>
+        <div class="meta-item">
+          <strong>Active Boards</strong>
+          ${pairings.filter((p) => !p.isBye).length} Boards (${totalPlayersCount} Players)
+        </div>
+        <div class="meta-item">
+          <strong>Chief Arbiter</strong>
+          Teacher in Charge
+        </div>
+      </div>
+
+      <div class="house-strip">
+        ${sortedHouses
+          .map(
+            (h) => `
+          <div class="house-badge">
+            <strong style="color: ${HOUSES[h.id]?.color || '#333'}; text-transform: uppercase;">${HOUSES[h.id]?.name || h.id}</strong>
+            <span style="font-weight: 800; margin-left: 4px;">${h.points} pts</span>
+            <span style="color: #64748b; font-size: 9px; margin-left: 2px;">(${h.wins}W / ${h.draws}D / ${h.losses}L)</span>
+          </div>
+        `,
+          )
+          .join('')}
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 70px; text-align: center;">Board</th>
+            <th>White Player (♔)</th>
+            <th style="width: 55px; text-align: center;">White</th>
+            <th style="width: 30px; text-align: center;">vs</th>
+            <th style="width: 55px; text-align: center;">Black</th>
+            <th>Black Player (♚)</th>
+            <th style="width: 170px;">Pupil Signatures</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${rowsHtml}
+        </tbody>
+      </table>
+
+      <div class="instructions">
+        <div style="max-width: 520px; line-height: 1.4;">
+          <strong>Instructions for Players:</strong><br>
+          1. Check your board number and locate your assigned chessboard in the room.<br>
+          2. White moves first. Shake hands before beginning the clock or timer.<br>
+          3. When your game concludes, agree on the result (1-0, 0-1, or ½-½), enter the scores in the boxes above, sign your name, and report the result to the Arbiter.
+        </div>
+        <div class="signoff-box">
+          <div style="font-weight: bold; font-size: 9px; text-transform: uppercase; margin-bottom: 12px; color: #475569;">Arbiter Verification &amp; Sign-Off</div>
+          <div style="font-size: 9px; color: #64748b; margin-top: 14px; border-top: 1px solid #cbd5e1; padding-top: 2px;">
+            Teacher Signature / Date
+          </div>
+        </div>
+      </div>
     </body>
     </html>
   `);
