@@ -259,7 +259,7 @@ export const unitData = {
                 <a href="/pdfs/ypres_1914_1918_teacher_companion.pdf" target="_blank" class="btn" style="background: #f5f3ff; color: #5b21b6; border: 1.5px solid #c4b5fd; padding: 8px 16px; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
                   <i class="fa-solid fa-compass" style="color: #7c3aed; font-size: 1.1rem;"></i> Download Tour Leader Companion (PDF)
                 </a>
-                <a href="/pdfs/ypres_2026_parent_information_pack.pdf" target="_blank" class="btn" style="background: #fefce8; color: #b45309; border: 1.5px solid #fde047; padding: 8px 16px; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                <a href="/pdfs/ypres_2026_parent_information_pack_v2.pdf" target="_blank" class="btn" style="background: #fefce8; color: #b45309; border: 1.5px solid #fde047; padding: 8px 16px; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
                   <i class="fa-solid fa-file-pdf" style="color: #dc2626; font-size: 1.1rem;"></i> Download Parent Pack (PDF)
                 </a>
                 <a href="/briefings/ypres_2026_parent_briefing.pptx" download="ypres_2026_parent_briefing.pptx" target="_blank" class="btn" style="background: #f0fdf4; color: #166534; border: 1.5px solid #bbf7d0; padding: 8px 16px; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">

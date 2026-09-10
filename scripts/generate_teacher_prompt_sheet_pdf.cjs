@@ -351,7 +351,7 @@ function getHtml() {
       5. Concluding Words to Parents &amp; Open Q&amp;A (25:00 – 30:00)
     </div>
     <div class="closing-quote">
-      "When your sons and daughters return to Meoncross on Saturday evening, they will be tired, and their boots will have the red clay of Flanders on them. But they will also return with an enduring sense of perspective, having stood where our village boys stood and carried their memory forward. Thank you for entrusting them to us."
+      "When your sons and daughters return to Meoncross on Saturday evening, they will be tired, and their boots will have the Flanders mud on them. But they will also return with an enduring sense of perspective, having stood where our village boys stood and carried their memory forward. Thank you for entrusting them to us."
     </div>
     <div style="font-size: 7.2pt; color: #1e3a8a; font-weight: 700;">
       👉 <em>"I'd now be delighted to open the floor to any questions you or your children may have."</em>
