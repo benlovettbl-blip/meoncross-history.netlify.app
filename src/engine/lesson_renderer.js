@@ -270,15 +270,52 @@ window.renderLessonByIndex = function (index, skipHistory = false) {
     appStore.state.activeUnitData.lessons &&
     appStore.state.activeUnitData.lessons[index]
   ) {
-    if (!skipHistory) {
+    const unitId = appStore.state.selectedUnitId || window.currentUnitId;
+    const lesson = appStore.state.activeUnitData.lessons[index];
+
+    if (!skipHistory && typeof window !== 'undefined' && window.history) {
       try {
+        const currentScroll = window.scrollY || document.documentElement.scrollTop || 0;
+        const currentState = window.history.state || {};
+        window.history.replaceState(
+          {
+            ...currentState,
+            scrollY: currentScroll,
+          },
+          '',
+          window.location.href,
+        );
+
         const url = new URL(window.location);
         url.searchParams.set('lesson', index);
-        history.pushState({ lessonIndex: index }, '', url);
+        if (unitId) url.searchParams.set('unit', unitId);
+        window.history.pushState(
+          {
+            view: 'lessons',
+            unit: unitId,
+            lessonIndex: index,
+            scrollY: 0,
+          },
+          '',
+          url,
+        );
       } catch (e) {
         console.warn('History routing disabled (e.g. file:// protocol):', e);
       }
     }
+
+    if (typeof window.updateBreadcrumbs === 'function') {
+      const lessonTitle = lesson.title || `Lesson ${index + 1}`;
+      const unitTitle = appStore.state.activeUnitData.title
+        ? appStore.state.activeUnitData.title.split(':')[0].trim()
+        : 'Unit';
+      window.updateBreadcrumbs([
+        { label: 'Dashboard', view: 'dashboard' },
+        { label: unitTitle, view: 'lessons', unit: unitId },
+        { label: lessonTitle },
+      ]);
+    }
+
     document.querySelectorAll('.lesson-link').forEach((l) => l.classList.remove('active'));
     // Try to activate the corresponding sidebar link
     const links = document.querySelectorAll('.lesson-link');
@@ -288,7 +325,17 @@ window.renderLessonByIndex = function (index, skipHistory = false) {
       // +1 because the first link is Unit Homepage
       links[index + 1].classList.add('active');
     }
-    renderLesson(appStore.state.activeUnitData.lessons[index]);
+
+    renderLesson(lesson);
+
+    // Auto-save student draft inputs for this lesson
+    if (typeof window.initDraftPreservation === 'function') {
+      window.initDraftPreservation(
+        document.getElementById('content-area') || document,
+        `${unitId}_${lesson.id || index}`,
+      );
+    }
+
     if (window.scrollToTop) window.scrollToTop(true);
     else
       (document.getElementById('content-area') || window).scrollTo({ top: 0, behavior: 'smooth' });

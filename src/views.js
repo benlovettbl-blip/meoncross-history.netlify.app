@@ -1249,9 +1249,58 @@ export async function renderLessonsView() {
     return;
   }
 
-  window.viewLessonDetail = function (index, targetStopId = null) {
+  window.viewLessonDetail = function (index, targetStopId = null, skipPush = false) {
     const lessonsList = data.lessons || data.subtopics;
     const sub = lessonsList[index];
+    if (!sub) return;
+
+    // Snapshot scroll on unit menu and push history state for this lesson
+    if (!skipPush && typeof window !== 'undefined' && window.history) {
+      const currentScroll = window.scrollY || document.documentElement.scrollTop || 0;
+      const currentState = window.history.state || {};
+      try {
+        window.history.replaceState(
+          {
+            ...currentState,
+            view: 'lessons',
+            unit: unitId,
+            lessonIndex: undefined,
+            scrollY: currentScroll,
+          },
+          '',
+          window.location.href,
+        );
+
+        const url = new URL(window.location);
+        url.searchParams.set('view', 'lessons');
+        url.searchParams.set('unit', unitId);
+        url.searchParams.set('lesson', index);
+        window.history.pushState(
+          {
+            view: 'lessons',
+            unit: unitId,
+            lessonIndex: index,
+            scrollY: 0,
+          },
+          '',
+          url,
+        );
+      } catch (err) {}
+    }
+
+    // Update breadcrumbs to show Dashboard > Unit > Lesson Title
+    if (typeof window.updateBreadcrumbs === 'function') {
+      const lessonTitle = sub.title || `Lesson ${index + 1}`;
+      window.updateBreadcrumbs([
+        { label: 'Dashboard', view: 'dashboard' },
+        {
+          label: data.title ? data.title.split(':')[0].trim() : 'Unit',
+          view: 'lessons',
+          unit: unitId,
+        },
+        { label: lessonTitle },
+      ]);
+    }
 
     // Inject the content-area wrapper if it doesn't exist, since the legacy renderer expects it!
     container.innerHTML = `
@@ -1261,6 +1310,15 @@ export async function renderLessonsView() {
 
     // Call the legacy Netlify app's beautifully formatted lesson renderer!
     renderLesson(sub);
+
+    // Attach draft preservation to student response boxes in this lesson
+    if (typeof window.initDraftPreservation === 'function') {
+      window.initDraftPreservation(
+        document.getElementById('content-area'),
+        `${unitId}_${sub.id || index}`,
+      );
+    }
+
     if (targetStopId) {
       setTimeout(() => {
         if (window.jumpToStop) window.jumpToStop(targetStopId);
@@ -1290,7 +1348,7 @@ export async function renderLessonsView() {
       );
     }
     if (targetIndex >= 0 && targetIndex < lessonsList.length) {
-      window.viewLessonDetail(targetIndex);
+      window.viewLessonDetail(targetIndex, null, true);
       return;
     }
   }

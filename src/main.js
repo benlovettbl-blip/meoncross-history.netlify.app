@@ -47,6 +47,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   const urlParams = new URLSearchParams(window.location.search);
   let view = urlParams.get('view');
   let unit = urlParams.get('unit');
+  const initialLesson = urlParams.get('lesson');
 
   if (view === 'usa' || view === 'gcse_usa' || view === 'gcse_usa_1954_1975') {
     view = 'lessons';
@@ -59,6 +60,45 @@ window.addEventListener('DOMContentLoaded', async () => {
     view = 'dashboard';
   }
 
+  // Seed the initial history state so e.state is never null on popstate back to initial landing
+  if (typeof window !== 'undefined' && window.history && window.history.replaceState) {
+    try {
+      window.history.replaceState(
+        {
+          view: view,
+          unit: unit,
+          lessonIndex:
+            initialLesson !== null && !isNaN(parseInt(initialLesson, 10))
+              ? parseInt(initialLesson, 10)
+              : undefined,
+          scrollY: window.scrollY || 0,
+        },
+        '',
+        window.location.href,
+      );
+    } catch (err) {}
+  }
+
+  // Global draft preservation flush before navigation or page unload
+  const flushDraftState = () => {
+    try {
+      const activeEl = document.activeElement;
+      if (
+        activeEl &&
+        (activeEl.classList?.contains('student-answer-input') ||
+          activeEl.classList?.contains('student-task-input') ||
+          activeEl.id === 'epz-user-answer' ||
+          activeEl.classList?.contains('form-control'))
+      ) {
+        const key = activeEl.dataset.draftKey || activeEl.id;
+        if (key && activeEl.value) {
+          localStorage.setItem(key, activeEl.value);
+        }
+      }
+    } catch (err) {}
+  };
+  window.addEventListener('beforeunload', flushDraftState);
+
   switchView(view, unit, true).then(() => {
     if (window.location.hash && window.location.hash.includes('-section')) {
       setTimeout(() => {
@@ -70,20 +110,82 @@ window.addEventListener('DOMContentLoaded', async () => {
     }
   });
 
+  // Intelligent Popstate Handler: URL-Aware & Scroll-Restoring
   window.addEventListener('popstate', (e) => {
-    if (e.state && e.state.view) {
-      switchView(e.state.view, e.state.unit, true);
-    } else {
-      // If triggered by an in-page hash jump (e.g. #year11-section), smoothly scroll to target instead of reloading dashboard
-      if (window.location.hash && window.location.hash.includes('-section')) {
-        const targetEl = document.querySelector(window.location.hash);
-        if (targetEl) {
-          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          return;
+    flushDraftState();
+
+    // Check if triggered by an in-page hash jump (e.g. #year11-section)
+    if (window.location.hash && window.location.hash.includes('-section')) {
+      const targetEl = document.querySelector(window.location.hash);
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+    }
+
+    const currentUrlParams = new URLSearchParams(window.location.search);
+    const urlView = currentUrlParams.get('view');
+    const urlUnit = currentUrlParams.get('unit');
+    const urlLesson = currentUrlParams.get('lesson');
+    const targetScrollY = e.state && typeof e.state.scrollY === 'number' ? e.state.scrollY : 0;
+
+    let targetView = (e.state && e.state.view) || urlView;
+    let targetUnit = e.state && e.state.unit !== undefined ? e.state.unit : urlUnit;
+
+    if (targetView === 'usa' || targetView === 'gcse_usa' || targetView === 'gcse_usa_1954_1975') {
+      targetView = 'lessons';
+      targetUnit = 'usa';
+    } else if (
+      targetView === 'trend-radar' ||
+      targetView === 'matrix' ||
+      targetView === 'exam-matrix'
+    ) {
+      targetView = 'mock-exams';
+    } else if (!targetView && targetUnit) {
+      targetView = 'lessons';
+    } else if (!targetView) {
+      targetView = 'dashboard';
+    }
+
+    switchView(targetView, targetUnit, true, { skipScrollToTop: targetScrollY > 0 }).then(() => {
+      // Restore lesson view if requested
+      const lessonIdx =
+        e.state && e.state.lessonIndex !== undefined
+          ? e.state.lessonIndex
+          : urlLesson !== null && !isNaN(parseInt(urlLesson, 10))
+            ? parseInt(urlLesson, 10)
+            : null;
+
+      if (targetView === 'lessons') {
+        if (lessonIdx !== null && typeof window.renderLessonByIndex === 'function') {
+          window.renderLessonByIndex(lessonIdx, true);
+        } else if (lessonIdx === null && typeof window.renderLessonsView === 'function') {
+          window.renderLessonsView();
         }
       }
-      switchView('dashboard', null, true);
-    }
+
+      // Restore custom tab if requested
+      if (e.state && e.state.customTab) {
+        const links = document.querySelectorAll('.lesson-link');
+        links.forEach((l) => {
+          if (l.innerText.toLowerCase().includes(e.state.customTab.replace('_', ' '))) {
+            l.click();
+          }
+        });
+      }
+
+      // Restore scroll position smoothly
+      if (targetScrollY > 0) {
+        setTimeout(() => {
+          window.scrollTo({ top: targetScrollY, behavior: 'instant' });
+          const contentArea =
+            document.getElementById('content-area') || document.getElementById('main-content');
+          if (contentArea && contentArea.scrollTop !== undefined) {
+            contentArea.scrollTop = targetScrollY;
+          }
+        }, 60);
+      }
+    });
   });
 
   // Offline / Online Connectivity Indicator for Battlefield Tour

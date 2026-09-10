@@ -47,29 +47,7 @@ export function initNavigationUI() {
     }
 
     // Manage Breadcrumbs
-    const breadcrumbs = document.getElementById('header-breadcrumbs');
-    if (breadcrumbs) {
-      if (viewName === 'dashboard') {
-        breadcrumbs.style.display = 'none';
-      } else {
-        let displayName = viewName.toUpperCase();
-        if (viewName === 'interactive') displayName = 'Interactive Quizzing & Spaced Recall';
-        if (viewName === 'timeline') displayName = 'Chronological Timeline';
-        if (viewName === 'booklet') displayName = 'Printable A4 Booklet';
-        if (viewName === 'mock-exams') displayName = 'GCSE Mock Examination Papers';
-        if (viewName === 'profile') displayName = 'Student Profile';
-        if (viewName === 'curriculum') displayName = 'Curriculum Overview';
-        if (viewName === 'competitions') displayName = 'History Competitions & Awards';
-        if (viewName === 'chess') displayName = 'Meoncross Chess Club';
-
-        breadcrumbs.innerHTML = `
-          <span data-action="switch-view" data-view="dashboard" style="cursor: pointer; text-decoration: underline; color: var(--primary);">Dashboard</span>
-          <span style="opacity: 0.5;"> / </span>
-          <span>${displayName}</span>
-        `;
-        breadcrumbs.style.display = 'inline-block';
-      }
-    }
+    updateBreadcrumbs();
 
     // Update active sidebar nav
     document.querySelectorAll('.sidebar-nav .nav-item').forEach((item) => {
@@ -172,9 +150,173 @@ export function scrollToSection(sectionId) {
 }
 window.scrollToSection = scrollToSection;
 
-export async function switchView(viewName, param = null, skipHistory = false) {
-  // Always immediately reset scroll position to top
-  scrollToTop(true);
+export function updateBreadcrumbs(customTrail = null) {
+  const breadcrumbs = document.getElementById('header-breadcrumbs');
+  if (!breadcrumbs) return;
+
+  const viewName = appStore.state.currentView || state.currentView || 'dashboard';
+  const unitId = appStore.state.selectedUnitId || state.selectedUnitId;
+  const unitData = appStore.state.activeUnitData || state.activeUnitData || {};
+
+  if (viewName === 'dashboard') {
+    breadcrumbs.style.display = 'none';
+    breadcrumbs.innerHTML = '';
+    return;
+  }
+
+  let trail = [];
+
+  const getUnitName = (id) => {
+    if (!id) return '';
+    if (unitData && unitData.title) {
+      const clean = unitData.title
+        .split(':')[0]
+        .replace(/^(?:Paper \d+:?|KS3:?)\s*/i, '')
+        .trim();
+      if (clean) return clean;
+    }
+    if (id === 'cme_new') return 'Middle East (1945–95)';
+    if (id === 'edexcel_medicine') return 'Medicine (c1250–present)';
+    if (id === 'eee') return 'Elizabethan England';
+    if (id === 'weimar_nazi_germany') return 'Weimar & Nazi Germany';
+    if (id === 'usa') return 'USA (1954–75)';
+    if (id === 'trip_ypres') return 'Ypres Expedition';
+    if (id === 'great_war') return 'The Great War';
+    return id.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+  };
+
+  if (Array.isArray(customTrail) && customTrail.length > 0) {
+    trail = [...customTrail];
+  } else {
+    trail.push({ label: 'Dashboard', view: 'dashboard' });
+
+    if (
+      unitId &&
+      (viewName === 'lessons' ||
+        viewName === 'interactive' ||
+        viewName === 'timeline' ||
+        viewName === 'booklet' ||
+        viewName === 'mock-exams' ||
+        viewName === 'decisions' ||
+        viewName === 'taboo' ||
+        viewName === 'individuals' ||
+        viewName === 'reading')
+    ) {
+      trail.push({ label: getUnitName(unitId), view: 'lessons', unit: unitId });
+    }
+
+    let currentSectionLabel = '';
+    if (viewName === 'interactive') currentSectionLabel = 'Interactive Quizzing';
+    else if (viewName === 'timeline') currentSectionLabel = 'Chronological Timeline';
+    else if (viewName === 'booklet') currentSectionLabel = 'Printable Booklet';
+    else if (viewName === 'mock-exams') currentSectionLabel = 'GCSE Mock Exams';
+    else if (viewName === 'profile') currentSectionLabel = 'Student Profile';
+    else if (viewName === 'curriculum') currentSectionLabel = 'Curriculum Map';
+    else if (viewName === 'competitions') currentSectionLabel = 'Competitions & Awards';
+    else if (viewName === 'chess') currentSectionLabel = 'Meoncross Chess Club';
+    else if (viewName === 'decisions') currentSectionLabel = 'Decisions Game';
+    else if (viewName === 'taboo') currentSectionLabel = 'Taboo Recall';
+    else if (viewName === 'individuals') currentSectionLabel = 'Key Individuals';
+    else if (viewName === 'reading') currentSectionLabel = 'Guided Reading';
+
+    if (currentSectionLabel) {
+      trail.push({ label: currentSectionLabel });
+    }
+  }
+
+  // Guarantee 'Dashboard' is root
+  if (trail.length === 0 || trail[0].label !== 'Dashboard') {
+    trail.unshift({ label: 'Dashboard', view: 'dashboard' });
+  }
+
+  let html = '';
+  trail.forEach((item, idx) => {
+    const isLast = idx === trail.length - 1;
+    if (idx > 0) {
+      html += `<span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>`;
+    }
+    if (isLast) {
+      html += `<span class="breadcrumb-item active" title="${item.label}">${item.label}</span>`;
+    } else {
+      if (item.action) {
+        html += `<span class="breadcrumb-item clickable" onclick="(${item.action.toString()})()">${item.label}</span>`;
+      } else if (item.view) {
+        const uParam = item.unit ? `'${item.unit}'` : 'null';
+        html += `<span class="breadcrumb-item clickable" onclick="window.switchView('${item.view}', ${uParam})">${item.label}</span>`;
+      } else {
+        html += `<span class="breadcrumb-item">${item.label}</span>`;
+      }
+    }
+  });
+
+  breadcrumbs.innerHTML = html;
+  breadcrumbs.style.display = 'inline-flex';
+}
+window.updateBreadcrumbs = updateBreadcrumbs;
+
+export function initDraftPreservation(container = document, scopeKey = 'global') {
+  if (!container) return;
+  const inputs = container.querySelectorAll(
+    '.student-answer-input, .student-task-input, #epz-user-answer, .form-control',
+  );
+  inputs.forEach((input, idx) => {
+    const fieldId = input.id || input.name || `field_${idx}`;
+    const storageKey = `hh_draft_${scopeKey}_${fieldId}`;
+    input.dataset.draftKey = storageKey;
+
+    try {
+      const saved = localStorage.getItem(storageKey);
+      if (saved && saved.trim()) {
+        input.value = saved;
+        let badge = input.parentElement?.querySelector('.draft-restored-badge');
+        if (!badge) {
+          badge = document.createElement('span');
+          badge.className = 'draft-restored-badge';
+          badge.innerHTML = '<i class="fa-solid fa-floppy-disk"></i> Draft restored';
+          input.parentElement?.insertBefore(badge, input.nextSibling);
+        }
+      }
+    } catch (err) {}
+
+    let saveTimeout = null;
+    input.addEventListener('input', () => {
+      clearTimeout(saveTimeout);
+      saveTimeout = setTimeout(() => {
+        try {
+          if (input.value && input.value.trim()) {
+            localStorage.setItem(storageKey, input.value);
+            let badge = input.parentElement?.querySelector('.draft-restored-badge');
+            if (badge) {
+              badge.innerHTML = '<i class="fa-solid fa-check"></i> Auto-saved';
+            }
+          } else {
+            localStorage.removeItem(storageKey);
+          }
+        } catch (err) {}
+      }, 300);
+    });
+  });
+}
+window.initDraftPreservation = initDraftPreservation;
+
+export async function switchView(viewName, param = null, skipHistory = false, options = {}) {
+  // Snapshot current scroll position into the current state before leaving if history exists
+  if (!skipHistory && typeof window !== 'undefined' && window.history) {
+    const currentScroll = window.scrollY || document.documentElement.scrollTop || 0;
+    const currentState = window.history.state || {};
+    try {
+      window.history.replaceState(
+        { ...currentState, scrollY: currentScroll },
+        '',
+        window.location.href,
+      );
+    } catch (e) {}
+  }
+
+  // Only reset scroll if not skipping scroll reset (e.g. restoring on popstate)
+  if (!options.skipScrollToTop) {
+    scrollToTop(true);
+  }
 
   // Update state; the subscriber will handle UI changes
   appStore.state.currentView = viewName;
@@ -185,7 +327,9 @@ export async function switchView(viewName, param = null, skipHistory = false) {
     if (param) url.searchParams.set('unit', param);
     else url.searchParams.delete('unit');
     url.searchParams.delete('lesson');
-    window.history.pushState({ view: viewName, unit: param }, '', url);
+    try {
+      window.history.pushState({ view: viewName, unit: param, scrollY: 0 }, '', url);
+    } catch (e) {}
   }
 
   // Clean up unit-specific sidebar navigation on global views
@@ -258,8 +402,19 @@ export async function switchView(viewName, param = null, skipHistory = false) {
     renderChessHubView();
   }
 
-  // Secondary tick to ensure newly injected DOM content stays at top
-  requestAnimationFrame(() => scrollToTop(true));
+  // Update dynamic breadcrumbs
+  updateBreadcrumbs();
+
+  // Attach safe draft preservation to newly rendered container
+  const mainContent = document.getElementById('main-content');
+  if (mainContent) {
+    initDraftPreservation(mainContent, `${param || viewName}`);
+  }
+
+  // Secondary tick to ensure newly injected DOM content stays at top if not restoring scroll
+  if (!options.skipScrollToTop) {
+    requestAnimationFrame(() => scrollToTop(true));
+  }
 }
 
 // Dynamically fetch and parse the compiled JSON for a unit
