@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Meoncross School · Field Research Dossier: 2nd Lt Ernest Crummack MC, DCM & Siegfried Sassoon
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @page {
+        size: A4 portrait;
+        margin: 8mm 9mm 8mm 9mm;
+      }
+      * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'EB Garamond', Georgia, serif;
+        color: #1e293b;
+        background: #f8fafc;
+        font-size: 9pt;
+        line-height: 1.35;
+      }
+      .sheet-wrapper {
+        max-width: 210mm;
+        margin: 0 auto;
+        background: #ffffff;
+        padding: 6mm 7mm;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        position: relative;
+      }
+      @media print {
+        body {
+          background: #ffffff;
+        }
+        .sheet-wrapper {
+          box-shadow: none;
+          padding: 0;
+          max-width: 100%;
+        }
+        .no-print {
+          display: none !important;
+        }
+      }
+
+      /* Top Header */
+      .header-table {
+        width: 100%;
+        border-bottom: 2px solid #1e3a8a;
+        padding-bottom: 4px;
+        margin-bottom: 6px;
+      }
+      .badge-top {
+        font-family: 'Inter', sans-serif;
+        font-size: 6.5pt;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        background: #1e3a8a;
+        color: #ffffff;
+        padding: 2px 6px;
+        border-radius: 3px;
+        display: inline-block;
+      }
+      .school-title {
+        font-family: 'Cinzel', serif;
+        font-size: 13pt;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 2px 0 0 0;
+        letter-spacing: 0.02em;
+      }
+      .expedition-subtitle {
+        font-family: 'Inter', sans-serif;
+        font-size: 7.5pt;
+        font-weight: 600;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      /* Provenance Box */
+      .provenance-banner {
+        background: #fffbeb;
+        border: 1px solid #fde68a;
+        border-left: 3.5px solid #d97706;
+        border-radius: 4px;
+        padding: 4px 8px;
+        margin-bottom: 8px;
+        font-size: 8pt;
+        line-height: 1.25;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+      }
+      .provenance-text strong {
+        color: #78350f;
+      }
+      .lineage-badge {
+        font-family: 'Inter', sans-serif;
+        font-size: 6.5pt;
+        font-weight: 700;
+        background: #ffffff;
+        color: #b45309;
+        border: 1px solid #fde68a;
+        padding: 2px 6px;
+        border-radius: 3px;
+        white-space: nowrap;
+      }
+
+      /* Main Two-Column Layout */
+      .columns-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 9px;
+        margin-bottom: 7px;
+      }
+      .col-card {
+        border: 1px solid #cbd5e1;
+        border-radius: 4px;
+        padding: 6px 8px;
+        background: #ffffff;
+      }
+      .col-header {
+        border-bottom: 1.5px solid #e2e8f0;
+        padding-bottom: 3px;
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+      .col-title {
+        font-family: 'Cinzel', serif;
+        font-size: 9.5pt;
+        font-weight: 700;
+        margin: 0;
+      }
+      .col-subtitle {
+        font-family: 'Inter', sans-serif;
+        font-size: 6.5pt;
+        color: #64748b;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      /* Manuscript & Poem Column */
+      .col-sassoon {
+        border-top: 3px solid #7f1d1d;
+      }
+      .col-sassoon .col-title {
+        color: #7f1d1d;
+      }
+      .ms-pair {
+        display: flex;
+        gap: 7px;
+        margin-bottom: 6px;
+        align-items: flex-start;
+      }
+      .ms-img-box {
+        flex: 0 0 100px;
+        text-align: center;
+      }
+      .ms-img-box img {
+        width: 100%;
+        height: auto;
+        border: 1px solid #cbd5e1;
+        border-radius: 2px;
+        display: block;
+      }
+      .ms-caption {
+        font-family: 'Inter', sans-serif;
+        font-size: 5.5pt;
+        color: #64748b;
+        margin-top: 2px;
+        line-height: 1.1;
+      }
+      .poem-box {
+        flex: 1;
+        font-family: 'EB Garamond', Georgia, serif;
+        font-size: 7.6pt;
+        line-height: 1.28;
+        color: #0f172a;
+        white-space: pre-line;
+        background: #fdfefe;
+        padding: 3px 6px;
+        border-left: 2px solid #fecaca;
+      }
+      .paleo-callout {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 3px;
+        padding: 4px 6px;
+        font-size: 7.2pt;
+        line-height: 1.25;
+        color: #334155;
+      }
+      .paleo-callout strong {
+        color: #991b1b;
+        font-family: 'Inter', sans-serif;
+        font-size: 6.8pt;
+      }
+      .paleo-item {
+        margin-top: 2px;
+      }
+      .strike {
+        text-decoration: line-through;
+        color: #64748b;
+      }
+      .revised {
+        font-weight: 700;
+        color: #991b1b;
+      }
+
+      /* Crummack Heroism Column */
+      .col-crummack {
+        border-top: 3px solid #1e3a8a;
+      }
+      .col-crummack .col-title {
+        color: #1e3a8a;
+      }
+      .hero-pair {
+        display: flex;
+        gap: 7px;
+        margin-bottom: 6px;
+        align-items: flex-start;
+      }
+      .hero-img-box {
+        flex: 0 0 95px;
+        text-align: center;
+      }
+      .hero-img-box img {
+        width: 100%;
+        height: auto;
+        border: 1px solid #cbd5e1;
+        border-radius: 2px;
+        display: block;
+      }
+      .hero-bio {
+        flex: 1;
+        font-size: 7.8pt;
+        line-height: 1.28;
+        color: #1e293b;
+      }
+      .citation-box {
+        background: #f1f5f9;
+        border-left: 2.5px solid #0f172a;
+        padding: 3px 6px;
+        margin: 4px 0;
+        font-style: italic;
+        font-size: 7.2pt;
+        line-height: 1.22;
+        color: #1e293b;
+      }
+      .citation-box span {
+        display: block;
+        font-style: normal;
+        font-family: 'Inter', sans-serif;
+        font-size: 6pt;
+        font-weight: 700;
+        color: #475569;
+        margin-top: 2px;
+      }
+      .medals-strip {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        background: #0f172a;
+        color: #ffffff;
+        padding: 3px 6px;
+        border-radius: 3px;
+        font-family: 'Inter', sans-serif;
+        font-size: 6.2pt;
+        margin-top: 4px;
+      }
+      .medals-strip strong {
+        color: #f59e0b;
+      }
+
+      /* Bottom Fieldwork Prompt */
+      .fieldwork-card {
+        background: #0f172a;
+        color: #ffffff;
+        border-radius: 4px;
+        padding: 6px 9px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .fw-col h5 {
+        margin: 0 0 2px 0;
+        font-family: 'Cinzel', serif;
+        font-size: 8.5pt;
+        color: #f59e0b;
+        letter-spacing: 0.03em;
+      }
+      .fw-col p {
+        margin: 0;
+        font-size: 7.2pt;
+        line-height: 1.25;
+        color: #cbd5e1;
+      }
+      .fw-col strong {
+        color: #ffffff;
+      }
+
+      /* Print Floating Button */
+      .print-bar {
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        background: #1e3a8a;
+        color: #ffffff;
+        padding: 8px 16px;
+        border-radius: 25px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        font-family: 'Inter', sans-serif;
+        font-size: 9pt;
+        font-weight: 700;
+        cursor: pointer;
+        border: 1px solid #3b82f6;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        z-index: 1000;
+      }
+      .print-bar:hover {
+        background: #1e40af;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Floating Print Button (Screen only) -->
+    <div class="print-bar no-print" onclick="window.print()">
+      <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z" />
+        <path
+          d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"
+        />
+      </svg>
+      Print Archival Field Sheet (A4)
+    </div>
+
+    <div class="sheet-wrapper">
+      <!-- Header -->
+      <table class="header-table">
+        <tr>
+          <td style="vertical-align: bottom">
+            <span class="badge-top">Meoncross School · GCSE History Fieldwork</span>
+            <h1 class="school-title">2nd Lieutenant Ernest Edward Crummack MC, DCM</h1>
+            <div class="expedition-subtitle">
+              Ypres Salient &amp; Somme Battlefield Expedition 2026 · Special Archival Study
+            </div>
+          </td>
+          <td style="text-align: right; vertical-align: bottom">
+            <div
+              style="
+                font-family: 'Inter', sans-serif;
+                font-size: 7pt;
+                color: #475569;
+                line-height: 1.3;
+              "
+            >
+              <strong>Expedition Resource Dossier</strong><br />
+              Archive Ref: MCP-1918-EC<br />
+              Pupil Cohort: Year 10 GCSE
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <!-- Provenance Banner -->
+      <div class="provenance-banner">
+        <div class="provenance-text">
+          <strong>Pupil Family Provenance:</strong> Shared by <strong>Harriet Uwalaka</strong> (née
+          Pearson) following the 2026 Parent Briefing. Researched and compiled from battalion war
+          diaries and trench maps by military historian <strong>Edward Pearson</strong> (Harriet's
+          father). Dedicated in honour of Year 10 classmate <strong>Aby (Ernest)</strong>.
+        </div>
+        <div class="lineage-badge">
+          5 Generations: 2nd Lt Crummack &rarr; Edw. Crummack &rarr; Edw. Pearson &rarr; Harriet
+          &rarr; Aby
+        </div>
+      </div>
+
+      <!-- Main Two Column Grid -->
+      <div class="columns-grid">
+        <!-- Left Column: Siegfried Sassoon Manuscript & Elegy -->
+        <div class="col-card col-sassoon">
+          <div class="col-header">
+            <div>
+              <h2 class="col-title">Siegfried Sassoon's Autograph Draft</h2>
+              <div class="col-subtitle">
+                Cambridge University Library MS Add.9852/1/7, f. 38r · July 1916
+              </div>
+            </div>
+            <span
+              style="
+                font-family: 'Inter', sans-serif;
+                font-size: 6pt;
+                background: #fee2e2;
+                color: #991b1b;
+                padding: 1px 4px;
+                border-radius: 2px;
+                font-weight: 700;
+              "
+              >Holograph</span
+            >
+          </div>
+
+          <div class="ms-pair">
+            <div class="ms-img-box">
+              <img
+                src="../images/crummack/sassoon_manuscript_elegy_mg.jpg"
+                alt="Sassoon Working Notebook"
+              />
+              <div class="ms-caption">
+                Sassoon's trench notebook f. 38r with live ink corrections
+              </div>
+            </div>
+            <div class="poem-box">
+              <strong style="color: #7f1d1d; font-family: 'Cinzel', serif; font-size: 7.8pt"
+                >Elegy: for M.G. (Marcus Goodall)</strong
+              >
+              Was it for English morning, spilled &amp; glowing, Across gray hummock'd fields, dim
+              cattle showing, Was it for this I longed? — the glittering brass Of rays low on brown
+              roofs &amp; steaming grass, — A garden spiked with blue &amp; splashed with white,
+              <span class="revised">Yellow and red</span> and all the eye's delight; — Was it for
+              these I longed, while you were dead, Your mirth destroyed and from your lolling head
+              The racing thoughts gone out like smoke on air,
+              <span class="revised">Thinning &amp; whirling</span> &amp; subsiding, — where?
+
+              <span class="revised">Sad victim</span>, could you see your body thrown Into a shallow
+              pit along that wood Thronged by the dead? O, there you lie not lone, Under the
+              splinter'd trees; for the brotherhood Of discontented slain, with eyes that scowl, And
+              bristly cheeks &amp; chins all bloody-smears, Will hug their rank red wounds &amp;
+              limp &amp; prowl, Squatting around your grave with moans &amp; tears. But soon, I hope
+              a monster shell will burst, And all such filth be blotted &amp; dispersed: You'll no
+              more need to cling to the <span class="revised">dead clay</span>, Dancing through
+              fields of heaven to meet the day...
+            </div>
+          </div>
+
+          <!-- Forensic Paleography Guide -->
+          <div class="paleo-callout">
+            <strong>Forensic Paleography: Sassoon's Revisions Under Combat Stress</strong>
+            <div class="paleo-item">
+              &bull; <strong>Line 6:</strong> Struck out <span class="strike">Orange</span> &rarr;
+              inserted <span class="revised">Yellow</span> (intensifies luminous English morning vs
+              trench darkness).
+            </div>
+            <div class="paleo-item">
+              &bull; <strong>Line 10:</strong> Crossed out
+              <span class="strike">Following &amp;</span> &rarr; replaced with
+              <span class="revised">Thinning &amp;</span> (evokes dispersing smoke and fading
+              brain).
+            </div>
+            <div class="paleo-item">
+              &bull; <strong>Line 11:</strong> Struck out
+              <span class="strike">Poor victim</span> &rarr; replaced with
+              <span class="revised">Sad victim</span> (rejects helpless pity for tragic dignity).
+            </div>
+            <div class="paleo-item">
+              &bull; <strong>Line 21:</strong> Struck out
+              <span class="strike">wet clay</span> &rarr; substituted
+              <span class="revised">dead clay</span> (personifies the Somme mud with mortal rot).
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Ernest Crummack's Frontline Service -->
+        <div class="col-card col-crummack">
+          <div class="col-header">
+            <div>
+              <h2 class="col-title">2nd Lt Ernest Crummack MC, DCM</h2>
+              <div class="col-subtitle">
+                1/5th &amp; 2/4th York &amp; Lancaster Regt · Ypres, Somme, Cambrai
+              </div>
+            </div>
+            <span
+              style="
+                font-family: 'Inter', sans-serif;
+                font-size: 6pt;
+                background: #dbeafe;
+                color: #1e3a8a;
+                padding: 1px 4px;
+                border-radius: 2px;
+                font-weight: 700;
+              "
+              >Combat Record</span
+            >
+          </div>
+
+          <div class="hero-pair">
+            <div class="hero-img-box">
+              <img
+                src="../images/crummack/portrait_sgt_ernest_crummack_1916.jpg"
+                alt="Sgt Ernest Crummack DCM 1916"
+              />
+              <div style="margin-top: 4px">
+                <img
+                  src="../images/crummack/photo_thiepval_wood_mill_road.jpg"
+                  alt="Mill Road Thiepval Wood"
+                  style="border: 1px solid #cbd5e1; border-radius: 2px"
+                />
+              </div>
+              <div class="ms-caption">
+                Top: Sgt Crummack DCM (1916). Bottom: Mill Road &amp; Pope's Nose.
+              </div>
+            </div>
+            <div class="hero-bio">
+              <strong style="color: #1e3a8a">The Working-Class Warrior:</strong> Born in Barnsley
+              (1888), Ernest worked as an underground coalminer ("ripper") at Dinnington Main
+              Colliery. Enlisting as a Private in Sept 1914, his toughness and instinctive
+              leadership propelled him to Sergeant.
+
+              <div class="citation-box">
+                <strong>The Somme Rescue (3 July 1916 · Mill Road, Thiepval Wood):</strong><br />
+                Hearing that 2nd Lt Marcus Goodall lay mortally wounded in the open, Sgt Crummack
+                climbed out of the British trenches under continuous machine-gun and shell fire. He
+                crawled to Goodall, bandaged his wounds in the dirt, and carried him back to British
+                care.
+                <span
+                  >Awarded: Distinguished Conduct Medal (DCM) &amp; Russian Medal of St George</span
+                >
+              </div>
+
+              <div
+                class="citation-box"
+                style="margin-top: 3px; border-left-color: #d97706; background: #fffbeb"
+              >
+                <strong>Canal du Nord Assault &amp; Military Cross (27–29 Sept 1918):</strong><br />
+                Commissioned as 2nd Lieutenant, Crummack led his platoon across the dry Canal du
+                Nord. When machine guns pinned down the advance east of the canal, he led a daring
+                frontal rush, silenced the gun, and killed the crew.
+                <span>Awarded: Military Cross (MC) · London Gazette Citation</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="medals-strip">
+            <strong>The 6 Decorations:</strong> MC &bull; DCM &bull; 1914–15 Mons Star &bull;
+            British War Medal &bull; Victory Medal &bull; Russian Order of St George
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Fieldwork Investigation Prompt -->
+      <div class="fieldwork-card">
+        <div class="fw-col">
+          <h5>Field Stop 1: Boesinghe &amp; Essex Farm (Day 1)</h5>
+          <p>
+            Stand on the western levee of the Yser Canal at Essex Farm. Gaze north towards
+            <em>The Northern Nip</em> at Boesinghe where Ernest Crummack and the 1/5th York &amp;
+            Lancs endured the deadly <strong>first German Phosgene gas attack</strong> on 19
+            December 1915, donning crude flannel P-helmets to hold the line.
+          </p>
+        </div>
+        <div class="fw-col">
+          <h5>Field Stop 2: Thiepval Wood &amp; Mill Road (Day 2)</h5>
+          <p>
+            Stand at the edge of Thiepval Wood looking across Mill Road towards the Pope's Nose
+            redoubt. Contrast <strong>Sassoon's poetic grief</strong> with
+            <strong>Crummack's physical valor</strong>. Note how Crummack's crawl into No Man's Land
+            proves that British soldiers were not passive victims, but men bonded by extraordinary
+            love and courage.
+          </p>
+        </div>
+      </div>
+
+      <!-- Footer meta -->
+      <div
+        style="
+          margin-top: 5px;
+          border-top: 1px solid #e2e8f0;
+          padding-top: 3px;
+          display: flex;
+          justify-content: space-between;
+          font-family: 'Inter', sans-serif;
+          font-size: 6pt;
+          color: #94a3b8;
+        "
+      >
+        <span
+          >Meoncross School History Hub &bull; Educational Archival Resource &bull; Printed for
+          Expedition Fieldwork</span
+        >
+        <span
+          >&ldquo;We Will Remember Them&rdquo; &bull; In Honor of 2nd Lt E. E. Crummack MC,
+          DCM</span
+        >
+      </div>
+    </div>
+  </body>
+</html>

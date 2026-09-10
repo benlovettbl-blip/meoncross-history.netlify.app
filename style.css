@@ -3391,3 +3391,171 @@ img::after {
     display: none !important;
   }
 }
+
+/* ==========================================================================
+   Trip Ypres: Lesson 13 Interactive Coordinate Pins (Map 13) & Scribal Paleography
+   ========================================================================== */
+@keyframes radar-pulse-crimson {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+}
+@keyframes radar-pulse-blue {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+}
+@keyframes radar-pulse-green {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+}
+
+.map-hotspot-pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.map-hotspot-pin:hover,
+.map-hotspot-pin.active-pin {
+  transform: translate(-50%, -50%) scale(1.15);
+  z-index: 30;
+}
+.pin-pulse {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.pin-pulse-crimson {
+  background: rgba(185, 28, 28, 0.45);
+  animation: radar-pulse-crimson 2.2s infinite ease-out;
+}
+.pin-pulse-blue {
+  background: rgba(29, 78, 216, 0.45);
+  animation: radar-pulse-blue 2.2s infinite ease-out;
+}
+.pin-pulse-green {
+  background: rgba(4, 120, 87, 0.45);
+  animation: radar-pulse-green 2.2s infinite ease-out;
+}
+.pin-marker {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 2;
+  border: 2px solid #ffffff;
+  transition: all 0.2s ease;
+}
+.pin-marker-crimson {
+  background: #b91c1c;
+}
+.pin-marker-blue {
+  background: #1d4ed8;
+}
+.pin-marker-green {
+  background: #047857;
+}
+.pin-core {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+.pin-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: rgba(15, 23, 42, 0.92);
+  padding: 3px 8px;
+  border-radius: 4px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  white-space: nowrap;
+  pointer-events: auto;
+  backdrop-filter: blur(4px);
+  letter-spacing: 0.02em;
+}
+.pin-num {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.22);
+  padding: 0 4px;
+  border-radius: 2px;
+  margin-right: 4px;
+  font-size: 0.68rem;
+}
+.map-hotspot-pin.active-pin .pin-label {
+  border-color: #f59e0b;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.6);
+}
+
+/* Forensic Paleography Styles */
+.scribal-box {
+  position: absolute;
+  border: 1.5px dashed #d97706;
+  background: rgba(217, 119, 6, 0.14);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 5;
+}
+.scribal-box:hover {
+  border-color: #b91c1c;
+  background: rgba(185, 28, 28, 0.22);
+  transform: scale(1.02);
+}
+.scribal-token {
+  cursor: pointer;
+  border-bottom: 2px solid #d97706;
+  background: rgba(254, 243, 199, 0.6);
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-weight: 600;
+  color: #92400e;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+.scribal-token:hover {
+  background: #fee2e2;
+  border-bottom-color: #b91c1c;
+  color: #991b1b;
+}

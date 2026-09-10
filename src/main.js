@@ -100,6 +100,11 @@ window.addEventListener('DOMContentLoaded', async () => {
   window.addEventListener('beforeunload', flushDraftState);
 
   switchView(view, unit, true).then(() => {
+    if (view === 'lessons' && initialLesson !== null && !isNaN(parseInt(initialLesson, 10))) {
+      if (typeof window.renderLessonByIndex === 'function') {
+        window.renderLessonByIndex(parseInt(initialLesson, 10), true);
+      }
+    }
     if (window.location.hash && window.location.hash.includes('-section')) {
       setTimeout(() => {
         const target = document.querySelector(window.location.hash);

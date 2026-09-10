@@ -3285,7 +3285,410 @@ export function renderLesson(lesson) {
         }, 200);
       }
     }
+
+    // Initialize Crummack Lesson 13 Interactive Map Pins & Paleography Features
+    if (unitId === 'trip_ypres' && lesson.id === 'hero_crummack') {
+      initCrummackInteractiveFeatures();
+    }
   }, 100);
+}
+
+export function initCrummackInteractiveFeatures() {
+  if (!document.getElementById('crummack-interactive-styles')) {
+    const styleEl = document.createElement('style');
+    styleEl.id = 'crummack-interactive-styles';
+    styleEl.textContent = `
+      @keyframes radar-pulse-crimson {
+        0% { transform: scale(1); opacity: 0.9; }
+        70% { transform: scale(3.5); opacity: 0; }
+        100% { transform: scale(3.5); opacity: 0; }
+      }
+      @keyframes radar-pulse-blue {
+        0% { transform: scale(1); opacity: 0.9; }
+        70% { transform: scale(3.5); opacity: 0; }
+        100% { transform: scale(3.5); opacity: 0; }
+      }
+      @keyframes radar-pulse-green {
+        0% { transform: scale(1); opacity: 0.9; }
+        70% { transform: scale(3.5); opacity: 0; }
+        100% { transform: scale(3.5); opacity: 0; }
+      }
+
+      .map-hotspot-pin {
+        position: absolute !important;
+        cursor: pointer !important;
+        z-index: 10 !important;
+        pointer-events: auto !important;
+        transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+      }
+      .map-hotspot-pin:hover,
+      .map-hotspot-pin.active-pin {
+        z-index: 30 !important;
+      }
+      .pin-pulse {
+        position: absolute !important;
+        left: 0;
+        top: 0;
+        transform: translate(-50%, -50%);
+        width: 22px !important;
+        height: 22px !important;
+        border-radius: 50% !important;
+        pointer-events: none !important;
+      }
+      .pin-pulse-crimson {
+        background: rgba(185, 28, 28, 0.45) !important;
+        animation: radar-pulse-crimson 2.2s infinite ease-out !important;
+      }
+      .pin-pulse-blue {
+        background: rgba(29, 78, 216, 0.45) !important;
+        animation: radar-pulse-blue 2.2s infinite ease-out !important;
+      }
+      .pin-pulse-green {
+        background: rgba(4, 120, 87, 0.45) !important;
+        animation: radar-pulse-green 2.2s infinite ease-out !important;
+      }
+      .pin-marker {
+        position: absolute !important;
+        left: 0;
+        top: 0;
+        transform: translate(-50%, -50%);
+        width: 22px !important;
+        height: 22px !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.4) !important;
+        z-index: 2 !important;
+        border: 2px solid #ffffff !important;
+        transition: all 0.2s ease !important;
+      }
+      .pin-marker-crimson { background: #b91c1c !important; }
+      .pin-marker-blue { background: #1d4ed8 !important; }
+      .pin-marker-green { background: #047857 !important; }
+      .pin-core {
+        width: 6px !important;
+        height: 6px !important;
+        border-radius: 50% !important;
+        background: #ffffff !important;
+      }
+      .pin-label {
+        position: absolute !important;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-family: 'Inter', sans-serif !important;
+        font-size: 0.72rem !important;
+        font-weight: 700 !important;
+        color: #ffffff !important;
+        background: rgba(15, 23, 42, 0.92) !important;
+        padding: 3px 8px !important;
+        border-radius: 4px !important;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.35) !important;
+        border: 1px solid rgba(255,255,255,0.25) !important;
+        white-space: nowrap !important;
+        pointer-events: auto !important;
+        backdrop-filter: blur(4px) !important;
+        letter-spacing: 0.02em !important;
+      }
+      .pin-num {
+        display: inline-block !important;
+        background: rgba(255,255,255,0.22);
+        padding: 0 4px;
+        border-radius: 2px;
+        margin-right: 4px;
+        font-size: 0.68rem;
+      }
+      .map-hotspot-pin.active-pin .pin-marker {
+        transform: translate(-50%, -50%) scale(1.2) !important;
+        border-color: #f59e0b !important;
+        box-shadow: 0 0 14px rgba(245, 158, 11, 0.8) !important;
+      }
+      .map-hotspot-pin.active-pin .pin-label {
+        border-color: #f59e0b !important;
+        box-shadow: 0 0 12px rgba(245, 158, 11, 0.6) !important;
+      }
+
+      .scribal-box {
+        position: absolute !important;
+        border: 1.5px dashed #d97706 !important;
+        background: rgba(217, 119, 6, 0.14) !important;
+        border-radius: 3px !important;
+        cursor: pointer !important;
+        transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+        z-index: 5 !important;
+      }
+      .scribal-box:hover {
+        border-color: #b91c1c !important;
+        background: rgba(185, 28, 28, 0.22) !important;
+        transform: scale(1.02) !important;
+      }
+      .scribal-token {
+        cursor: pointer !important;
+        border-bottom: 2px solid #d97706 !important;
+        background: rgba(254, 243, 199, 0.6) !important;
+        padding: 1px 4px !important;
+        border-radius: 3px !important;
+        font-weight: 600 !important;
+        color: #92400e !important;
+        transition: all 0.2s ease !important;
+        display: inline-block !important;
+      }
+      .scribal-token:hover {
+        background: #fee2e2 !important;
+        border-bottom-color: #b91c1c !important;
+        color: #991b1b !important;
+      }
+    `;
+    document.head.appendChild(styleEl);
+  }
+
+  const mapData = {
+    1: {
+      name: 'Sains-lez-Marquion · 2nd Lt Crummack MC Action',
+      badge: 'Pin 1 · Primary Attack Axis',
+      badgeColor: '#b91c1c',
+      badgeBg: '#fee2e2',
+      date: '27–29 September 1918',
+      formations: '2/4th Battalion, York & Lancaster Regiment · 62nd (West Riding) Division',
+      coords: 'British Trench Map 51B.N.W. · Square E.14.c (Sains-lez-Marquion)',
+      summary:
+        'Advancing east of the dry canal bed towards Sains-lez-Marquion, the 2/4th York & Lancasters were pinned down by severe, interlocking Maxim machine-gun fire from reinforced cellar positions and sunken road embankments. 2nd Lieutenant Crummack personally led a bombing dash through heavy machine-gun sweeps, killed the enemy crew, captured the gun, and enabled the entire brigade to break into the Hindenburg support trenches.',
+      quote:
+        '"When his company was held up by heavy machine-gun fire, 2nd Lt Crummack led a small party forward with the greatest dash and determination, captured the enemy gun, killed the crew, and enabled the company to advance." — London Gazette Official Citation',
+      cardId: 'tactical-card-1',
+      pinId: 'pin-sains',
+    },
+    2: {
+      name: 'Lock 3 / Dry Canal Crossing · The Funnel Chokepoint',
+      badge: 'Pin 2 · Engineering Obstacle',
+      badgeColor: '#1d4ed8',
+      badgeBg: '#dbeafe',
+      date: '27 September 1918 (Zero Hour: 05:20)',
+      formations: '4th British Division & 1st Canadian Division (General Sir Arthur Currie)',
+      coords: 'Canal du Nord Excavation · Lock 3 (South of Sains-lez-Marquion)',
+      summary:
+        'The Canal du Nord was an unfinished 100-foot-wide excavation. While northern and southern stretches were deeply flooded marshes, a narrow 400-yard dry sector between Lock 3 and Mœuvres presented the only viable crossing. Allied commanders boldly funneled four complete infantry divisions through this narrow gap under creeping barrage cover, spreading fanwise across the eastern bank once across.',
+      quote:
+        '"The crossing of the dry Canal du Nord was an audacious tactical gamble. Had the German artillery found our funnel at Lock 3, the carnage would have been unthinkable; yet the speed and coordination of our advance completely broke the enemy center." — 4th Division War Diary',
+      cardId: 'tactical-card-2',
+      pinId: 'pin-lock3',
+    },
+    3: {
+      name: 'Bourlon Wood Crest · Commanding Observation Post',
+      badge: 'Pin 3 · Strategic Objective',
+      badgeColor: '#047857',
+      badgeBg: '#d1fae5',
+      date: '27 September – 1 October 1918',
+      formations: '4th Canadian Division & 62nd (West Riding) Division',
+      coords: 'High Ground 120m Spot Height · Dominating Cambrai Plains',
+      summary:
+        'Bourlon Wood occupies the highest topographical ridge between Bapaume and Cambrai, offering panoramic observation across the entire German defensive zone. German defenders had fortified the dense woodland with concrete machine-gun pillboxes and tangled wire. Allied combined arms—supported by heavy tank battalions and relentless rolling artillery—swept through the wood on 27 September, depriving the German army of its master observation post.',
+      quote:
+        '"From Bourlon Wood crest, the entire Cambrai basin lay exposed beneath our eyes. Once the wood was taken, the Hindenburg Line was irrevocably cracked." — General Sir Julian Byng, Third Army Commander',
+      cardId: 'tactical-card-3',
+      pinId: 'pin-bourlon',
+    },
+  };
+
+  const scribalData = {
+    1: {
+      line: 'Line 6',
+      title: 'Pastoral English Radiance vs Frontline Mud',
+      original: "Orange and red and all the eye's delight",
+      revised: "Yellow and red and all the eye's delight",
+      paleoAnalysis:
+        'In his pocket notebook in July 1916, Sassoon opened the elegy with a sensory memory of English summertime. Why reject "Orange" for "Yellow"? Yellow evokes the piercing, crystalline sunlight of early morning England ("glittering brass / Of rays low on brown roofs"). In contrast to the filthy, stagnant gray-brown Picardy mud where his friend Marcus Goodall lay bleeding to death along Mill Road, the flash of yellow creates an unbearable emotional dissonance between home and slaughter.',
+      hingeQuestion:
+        'How does Sassoon\'s substitution of "Yellow" for "Orange" intensify the psychological shock of hearing that Marcus Goodall had fallen in Thiepval Wood?',
+    },
+    2: {
+      line: 'Line 10',
+      title: 'Kinetic Dissipation: Somme Smoke & Failing Consciousness',
+      original: 'Following & a whirling & subsiding, — where?',
+      revised: 'Thinning & whirling & subsiding, — where?',
+      paleoAnalysis:
+        'The original line ("Following") was passive and inert. By altering it to "Thinning & whirling & subsiding", Sassoon creates a cinematic, triple-part kinetic description. The line operates on two simultaneous planes: literally describing the acrid smoke of German high-explosive shells dispersing across Mill Road, and metaphorically tracking the racing thoughts of Goodall\'s dying mind thinning into nothingness.',
+      hingeQuestion:
+        'Why is "Thinning" far more effective than "Following" in portraying a young soldier losing consciousness on the battlefield?',
+    },
+    3: {
+      line: 'Line 11',
+      title: 'Rejection of Pity: Dignity in Frontline Sorrow',
+      original: 'Poor victim, could you see your body thrown',
+      revised: 'Sad victim, could you see your body thrown',
+      paleoAnalysis:
+        'This is Sassoon\'s most profound ethical revision in the manuscript. "Poor victim" carried overtones of helpless, patronizing pity—the sentimental language of civilians back in England. Sassoon forcefully struck out "Poor" and substituted "Sad". "Sad victim" restores moral dignity to Marcus Goodall. It acknowledges his tragic sacrifice without reducing a brave subaltern into a pitiable weakling, reflecting the fierce frontline pride of combat subalterns.',
+      hingeQuestion:
+        'Why did frontline combatants like Sassoon detest being pitied as "poor" soldiers by civilians back home?',
+    },
+    4: {
+      line: 'Line 21',
+      title: 'The Mud as a Mortal Grave: "Dead Clay"',
+      original: "You'll no more need to cling to the wet clay",
+      revised: "You'll no more need to cling to the dead clay",
+      paleoAnalysis:
+        'In the final stanza, Sassoon imagines Goodall escaping earthly suffering into heaven. The first draft described "wet clay"—a familiar physical annoyance of trench life. But Sassoon altered it to "dead clay". This single word transforms the Picardy soil: it is no longer merely wet earth, but a necrotic, grasping substance infused with the rot of corpses that clings to the living and dead alike.',
+      hingeQuestion:
+        'How does altering "wet clay" to "dead clay" strip away any lingering romantic illusions about death on the Somme?',
+    },
+  };
+
+  window.selectMapPin = function (pinId) {
+    const data = mapData[pinId];
+    if (!data) return;
+
+    // Update pin elements
+    document
+      .querySelectorAll('.map-hotspot-pin')
+      .forEach((el) => el.classList.remove('active-pin'));
+    const targetPin = document.getElementById(data.pinId);
+    if (targetPin) targetPin.classList.add('active-pin');
+
+    // Update tactical intel banner
+    const banner = document.getElementById('tactical-intel-banner');
+    if (banner) {
+      banner.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 8px;">
+          <div>
+            <span style="font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; background: ${data.badgeBg}; color: ${data.badgeColor}; padding: 2px 8px; border-radius: 4px;">
+              ${data.badge}
+            </span>
+            <h4 style="margin: 4px 0 0 0; color: #ffffff; font-size: 1.15rem; font-family: 'Playfair Display', serif;">
+              ${data.name}
+            </h4>
+          </div>
+          <div style="text-align: right; font-family: 'Inter', sans-serif; font-size: 0.75rem; color: #94a3b8;">
+            <strong style="color: #f59e0b;">${data.date}</strong><br>
+            <span>${data.coords}</span>
+          </div>
+        </div>
+        <p style="margin: 0 0 10px 0; font-size: 0.92rem; color: #cbd5e1; line-height: 1.55;">
+          ${data.summary}
+        </p>
+        <div style="background: rgba(255,255,255,0.06); border-left: 3px solid ${data.badgeColor}; padding: 8px 12px; border-radius: 4px; font-style: italic; font-size: 0.85rem; color: #f1f5f9; line-height: 1.45;">
+          ${data.quote}
+        </div>
+      `;
+    }
+
+    // Update bottom analysis cards
+    document.querySelectorAll('.tactical-analysis-card').forEach((c) => {
+      c.style.borderColor = '#cbd5e1';
+      c.style.boxShadow = 'none';
+      c.style.background = '#ffffff';
+    });
+    const activeCard = document.getElementById(data.cardId);
+    if (activeCard) {
+      activeCard.style.borderColor = data.badgeColor;
+      activeCard.style.boxShadow = `0 4px 12px ${data.badgeColor}33`;
+      activeCard.style.background = '#f8fafc';
+    }
+  };
+
+  window.selectScribalHotspot = function (id) {
+    const data = scribalData[id];
+    if (!data) return;
+
+    // Highlight manuscript bounding box
+    document.querySelectorAll('.scribal-box').forEach((b) => {
+      b.style.border = '1.5px dashed #d97706';
+      b.style.background = 'rgba(217, 119, 6, 0.14)';
+      b.style.transform = 'scale(1)';
+      b.style.boxShadow = 'none';
+    });
+    const targetBox = document.getElementById(`scribal-box-${id}`);
+    if (targetBox) {
+      targetBox.style.border = '2.5px solid #b91c1c';
+      targetBox.style.background = 'rgba(185, 28, 28, 0.28)';
+      targetBox.style.transform = 'scale(1.03)';
+      targetBox.style.boxShadow = '0 0 14px rgba(185, 28, 28, 0.6)';
+    }
+
+    // Highlight transcript tokens
+    document.querySelectorAll('.scribal-token').forEach((t) => {
+      t.style.background = 'rgba(254, 243, 199, 0.6)';
+      t.style.borderColor = '#d97706';
+      t.style.color = '#78350f';
+      t.style.fontWeight = '600';
+    });
+    const targetToken = document.querySelector(`.scribal-token-${id}`);
+    if (targetToken) {
+      targetToken.style.background = '#fee2e2';
+      targetToken.style.borderColor = '#b91c1c';
+      targetToken.style.color = '#991b1b';
+      targetToken.style.fontWeight = '700';
+    }
+
+    // Update buttons
+    document.querySelectorAll('.paleo-nav-btn').forEach((btn) => {
+      btn.style.background = '#ffffff';
+      btn.style.color = '#475569';
+      btn.style.borderColor = '#cbd5e1';
+    });
+    const activeBtn = document.getElementById(`paleo-btn-${id}`);
+    if (activeBtn) {
+      activeBtn.style.background = '#7f1d1d';
+      activeBtn.style.color = '#ffffff';
+      activeBtn.style.borderColor = '#7f1d1d';
+    }
+
+    // Update Inspector content
+    const panel = document.getElementById('scribal-inspector-content');
+    if (panel) {
+      panel.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 12px; flex-wrap: wrap; gap: 6px;">
+          <div>
+            <span style="font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; background: #fee2e2; color: #991b1b; padding: 2px 7px; border-radius: 4px;">
+              ${data.line} · Holograph Revision [${id}/4]
+            </span>
+            <h5 style="margin: 4px 0 0 0; color: #7f1d1d; font-size: 1.1rem; font-family: 'Playfair Display', serif;">
+              ${data.title}
+            </h5>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; font-size: 0.82rem;">
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px 12px;">
+            <strong style="color: #64748b; font-size: 0.72rem; text-transform: uppercase; display: block; margin-bottom: 2px;">Original Holograph Draft:</strong>
+            <span style="text-decoration: line-through; color: #64748b; font-family: 'Georgia', serif; font-size: 0.95rem;">&ldquo;${data.original}&rdquo;</span>
+          </div>
+          <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 6px; padding: 8px 12px;">
+            <strong style="color: #991b1b; font-size: 0.72rem; text-transform: uppercase; display: block; margin-bottom: 2px;">Revised Autograph Text:</strong>
+            <span style="font-weight: 700; color: #991b1b; font-family: 'Georgia', serif; font-size: 0.95rem;">&ldquo;${data.revised}&rdquo;</span>
+          </div>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-left: 3.5px solid #d97706; padding: 10px 14px; border-radius: 4px; margin-bottom: 10px; font-size: 0.88rem; line-height: 1.55; color: #334155;">
+          <strong style="color: #78350f; display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">Forensic Paleographical Analysis:</strong>
+          ${data.paleoAnalysis}
+        </div>
+
+        <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; padding: 10px 14px; font-size: 0.85rem; line-height: 1.5; color: #1e3a8a;">
+          <strong style="display: block; font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 3px; color: #1d4ed8;">Hinge Question for Class Discussion:</strong>
+          ${data.hingeQuestion}
+        </div>
+      `;
+    }
+  };
+
+  let allHotspotsVisible = true;
+  window.toggleAllScribalHotspots = function () {
+    allHotspotsVisible = !allHotspotsVisible;
+    document.querySelectorAll('.scribal-box').forEach((b) => {
+      b.style.opacity = allHotspotsVisible ? '1' : '0.15';
+    });
+    const toggleBtn = document.getElementById('toggle-hotspots-btn');
+    if (toggleBtn) {
+      toggleBtn.innerText = allHotspotsVisible ? 'Hide Overlays' : 'Show All Overlays';
+    }
+  };
+
+  // Initial selection with a slight tick to allow DOM elements to paint
+  setTimeout(() => {
+    if (typeof window.selectMapPin === 'function') window.selectMapPin(1);
+    if (typeof window.selectScribalHotspot === 'function') window.selectScribalHotspot(1);
+  }, 50);
 }
 
 export function assignQuestionNumbers(lesson, targetUnitId) {
