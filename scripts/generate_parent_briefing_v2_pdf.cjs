@@ -181,15 +181,15 @@ function getHtmlContent() {
     .itinerary-grid {
       display: flex;
       flex-direction: column;
-      gap: 9px;
-      margin-bottom: 12px;
+      gap: 16px;
+      margin-bottom: 16px;
     }
 
     .day-card {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
-      border-radius: 6px;
-      padding: 8px 12px;
+      border-radius: 7px;
+      padding: 12px 14px;
       display: flex;
       gap: 12px;
     }
@@ -223,8 +223,8 @@ function getHtmlContent() {
     .day-schedule li {
       font-size: 11.5pt;
       color: #334155;
-      line-height: 1.34;
-      margin-bottom: 3px;
+      line-height: 1.42;
+      margin-bottom: 6px;
       position: relative;
       padding-left: 13px;
       white-space: nowrap;
@@ -248,7 +248,7 @@ function getHtmlContent() {
       background: #eff6ff;
       border: 1.5px solid #bfdbfe;
       border-radius: 7px;
-      padding: 9px 13px;
+      padding: 14px 16px;
       display: flex;
       align-items: center;
       gap: 15px;
