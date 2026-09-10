@@ -22,6 +22,18 @@
       h3 { font-size: 13pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: auto; }
       .narrative-block { margin-bottom: 10pt; text-align: justify; orphans: 3; widows: 3; color: #334155; }
       .task-box { border-top: 2px solid #e2e8f0; padding-top: 10px; margin-top: 10px; margin-bottom: 10px; width: 100%; page-break-inside: auto !important; }
+
+      .task-box.consolidation-box,
+      .consolidation-box,
+      .task-box.historians-corner-box,
+      .task-box.no-break,
+      .task-box[style*="border: 1.5px solid"],
+      .exit-ticket-box,
+      .dirt-box {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+
       .task-lines { border-bottom: 1px solid #94a3b8; height: 16px; margin-top: 5px; }
       .task-lines-large { border-bottom: 1px solid #94a3b8; height: 7mm; margin-top: 0px; box-sizing: border-box; }
       .dirt-box { margin-top: 20px; margin-bottom: 10px; border: 2px dashed #94a3b8; border-radius: 8px; padding: 15px; background-color: #f8fafc; page-break-inside: avoid; }
@@ -59,6 +71,18 @@
           .source-container { page-break-inside: auto; }
           .narrative-block { page-break-inside: auto; }
           .task-box { page-break-inside: auto !important; }
+
+          .task-box.consolidation-box,
+          .consolidation-box,
+          .task-box.historians-corner-box,
+          .task-box.no-break,
+          .task-box[style*="border: 1.5px solid"],
+          .exit-ticket-box,
+          .dirt-box {
+            break-inside: avoid !important;
+            page-break-inside: avoid !important;
+          }
+
           h1, h2, h3, h4, h5, h6 { page-break-after: auto; }
           div[style*="display: block; margin-top: 15px;"] { display: block !important; }
           button[onclick*="display='none'"] { display: block; margin-top: 15px; !important; }
@@ -655,7 +679,7 @@
       </div>
     </div>
     <div
-      class="task-box"
+      class="task-box consolidation-box"
       style="
         box-sizing: border-box;
         width: 100%;
@@ -665,7 +689,8 @@
         border-radius: 8px;
         padding: 10px 14px 14px 14px;
         background: #ffffff;
-        page-break-inside: avoid;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
       "
     >
       <div
@@ -1313,7 +1338,7 @@
     <div class="narrative-block" id="para-17"></div>
     <div class="narrative-block" id="para-18"></div>
     <div
-      class="task-box"
+      class="task-box consolidation-box"
       style="
         box-sizing: border-box;
         width: 100%;
@@ -1323,7 +1348,8 @@
         border-radius: 8px;
         padding: 10px 14px 14px 14px;
         background: #ffffff;
-        page-break-inside: avoid;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
       "
     >
       <div
@@ -2481,7 +2507,7 @@
     </div>
     <div class="narrative-block" id="para-18"></div>
     <div
-      class="task-box"
+      class="task-box consolidation-box"
       style="
         box-sizing: border-box;
         width: 100%;
@@ -2491,7 +2517,8 @@
         border-radius: 8px;
         padding: 10px 14px 14px 14px;
         background: #ffffff;
-        page-break-inside: avoid;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
       "
     >
       <div
@@ -3571,7 +3598,7 @@
         font-family: sans-serif;
       "
     >
-      Generated: 2026-09-10 08:06:00 UTC | Unit: cme_new | Edition: 2026.1
+      Generated: 2026-09-10 08:13:24 UTC | Unit: cme_new | Edition: 2026.1
     </div>
     <script>
       document.addEventListener('DOMContentLoaded', function () {

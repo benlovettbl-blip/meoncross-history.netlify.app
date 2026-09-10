@@ -1260,6 +1260,22 @@ allDirs.forEach((unitId) => {
     h3 { font-size: 13pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: auto; }
     .narrative-block { margin-bottom: 10pt; text-align: justify; orphans: 3; widows: 3; color: #334155; }
     .task-box { border-top: 2px solid #e2e8f0; padding-top: 10px; margin-top: 10px; margin-bottom: 10px; width: 100%; page-break-inside: auto !important; }
+    ${
+      unitId === 'cme_new'
+        ? `
+    .task-box.consolidation-box,
+    .consolidation-box,
+    .task-box.historians-corner-box,
+    .task-box.no-break,
+    .task-box[style*="border: 1.5px solid"],
+    .exit-ticket-box,
+    .dirt-box {
+      break-inside: avoid !important;
+      page-break-inside: avoid !important;
+    }
+    `
+        : ''
+    }
     .task-lines { border-bottom: 1px solid #94a3b8; height: 16px; margin-top: 5px; }
     .task-lines-large { border-bottom: 1px solid #94a3b8; height: 7mm; margin-top: 0px; box-sizing: border-box; }
     .dirt-box { margin-top: 20px; margin-bottom: 10px; border: 2px dashed #94a3b8; border-radius: 8px; padding: 15px; background-color: #f8fafc; page-break-inside: avoid; }
@@ -1301,6 +1317,22 @@ allDirs.forEach((unitId) => {
         .source-container { page-break-inside: auto; }
         .narrative-block { page-break-inside: auto; }
         .task-box { page-break-inside: auto !important; }
+        ${
+          unitId === 'cme_new'
+            ? `
+        .task-box.consolidation-box,
+        .consolidation-box,
+        .task-box.historians-corner-box,
+        .task-box.no-break,
+        .task-box[style*="border: 1.5px solid"],
+        .exit-ticket-box,
+        .dirt-box {
+          break-inside: avoid !important;
+          page-break-inside: avoid !important;
+        }
+        `
+            : ''
+        }
         h1, h2, h3, h4, h5, h6 { page-break-after: auto; }
         div[style*="display: none"] { display: block !important; }
         button[onclick*="display='none'"] { display: none !important; }
@@ -2204,7 +2236,7 @@ allDirs.forEach((unitId) => {
       // Pair Share (Hidden for Great War units here, moved to later)
       if (lesson.pair_share && !(unitId === 'great_war' || unitId === 'great_war_part2')) {
         if (unitId === 'cme_new') {
-          html += `<div class="task-box" style="box-sizing: border-box; width: 100%; margin-top: 10px; margin-bottom: 12px; border: 1.5px solid #0f766e; border-radius: 8px; padding: 10px 14px 14px 14px; background: #ffffff; page-break-inside: avoid;">`;
+          html += `<div class="task-box consolidation-box" style="box-sizing: border-box; width: 100%; margin-top: 10px; margin-bottom: 12px; border: 1.5px solid #0f766e; border-radius: 8px; padding: 10px 14px 14px 14px; background: #ffffff; break-inside: avoid !important; page-break-inside: avoid !important;">`;
           html += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">`;
           html += `<h3 style="margin: 0; color: #0f766e; font-size: 11pt; text-transform: uppercase; letter-spacing: 0.5px;">✍️ Written Consolidation & Recall</h3>`;
           html += `<span style="font-size: 8pt; background: #ccfbf1; color: #0f766e; padding: 2px 7px; border-radius: 9999px; font-weight: 600;">Recall & Analysis</span>`;
@@ -2547,7 +2579,12 @@ allDirs.forEach((unitId) => {
 
       // Phase 2: Historian's Corner
       if (lesson.historians_corner && !lesson.historians_corner.textbook_only) {
-        html += `<div class="task-box" style=" ">`;
+        const hcClass = unitId === 'cme_new' ? 'task-box historians-corner-box' : 'task-box';
+        const hcStyle =
+          unitId === 'cme_new'
+            ? 'break-inside: avoid !important; page-break-inside: avoid !important;'
+            : ' ';
+        html += `<div class="${hcClass}" style="${hcStyle}">`;
         html += `<h3 style="margin-top: 0;">Historian's Corner: ${lesson.historians_corner.title}</h3>`;
         html += `<p style="font-size: 12pt; font-style: italic;">${formatText(lesson.historians_corner.text)}</p>`;
         if (lesson.historians_corner.stretch_question) {

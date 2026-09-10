@@ -172,6 +172,19 @@ function getFileHash(filePath) {
           });
         });
 
+        if (unit === 'cme_new') {
+          await page.evaluate(() => {
+            document
+              .querySelectorAll(
+                '.consolidation-box, .historians-corner-box, .task-box[style*="border: 1.5px solid"]',
+              )
+              .forEach((el) => {
+                el.style.setProperty('break-inside', 'avoid', 'important');
+                el.style.setProperty('page-break-inside', 'avoid', 'important');
+              });
+          });
+        }
+
         let success = false;
         let retries = 3;
         while (!success && retries > 0) {
