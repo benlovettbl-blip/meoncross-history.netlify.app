@@ -2012,7 +2012,8 @@ export const unitData = {
       title: '2nd Lieutenant E. E. Crummack MC, DCM (Pupil Family Hero · Year 10 Aby)',
       enquiry:
         'From Coal Miner to Decorated Officer: The Epic Great War Odyssey of Ernest Edward Crummack',
-      banner: '/images/crummack/portrait_sgt_ernest_crummack_1916.jpg',
+      banner: '/images/crummack/banner_crummack_medals_right.jpg',
+      banner_position: 'center right',
       poetry_dossiers: poetryDossiers.special_studies,
       teacher_notes: {
         primer:
