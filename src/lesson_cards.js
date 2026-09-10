@@ -442,6 +442,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
     `;
 
     days.forEach((d, i) => {
+      const isDay1 = d.lesson && (d.lesson.id === 'day_1' || i === 0);
       lessonsHTML += `
           <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${d.index}" style="background: white; border: 1px solid #e2e8f0; border-top: 4px solid #1e3a8a; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.04); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.04)';">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
@@ -450,6 +451,19 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
             </div>
             <p style="margin: 0; color: #334155; font-weight: 600; font-size: 0.95rem; line-height: 1.4;">${d.lesson.title.replace(/^Day \d+:\s*/, '')}</p>
             <p style="margin: 8px 0 0 0; color: #64748b; font-size: 0.85rem; font-style: italic;">${d.lesson.enquiry || ''}</p>
+            ${
+              isDay1
+                ? `
+              <div style="margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e2e8f0; display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+                <span style="font-size: 0.76rem; color: #78350f; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">
+                  <span style="background: #fef3c7; color: #92400e; padding: 2px 6px; border-radius: 4px; font-size: 0.68rem; font-weight: 800; text-transform: uppercase;">Family Link</span>
+                  Boesinghe &amp; 2nd Lt Crummack
+                </span>
+                <span style="font-size: 0.75rem; color: #1e3a8a; font-weight: 700;">View &rarr;</span>
+              </div>
+            `
+                : ''
+            }
           </div>
       `;
     });

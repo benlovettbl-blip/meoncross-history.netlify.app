@@ -32,11 +32,12 @@ export const BATTLEFIELD_DAYS = [
       {
         id: 'essex_farm',
         headingId: 'essex-farm-the-advanced-dressing-station',
-        title: 'Essex Farm ADS',
+        title: "Essex Farm Cemetery & McCrae's Bunker",
         shortTitle: 'Essex Farm ADS',
         time: '2:30 PM',
         icon: 'fa-hospital',
-        highlight: 'Lt Col John McCrae, In Flanders Fields & Valentine Strudwick (15)',
+        highlight:
+          'Lt Col John McCrae, In Flanders Fields & Valentine Strudwick (15) · Boesinghe DCM Link',
       },
       {
         id: 'langemarck',
@@ -126,7 +127,8 @@ export const BATTLEFIELD_DAYS = [
         shortTitle: 'Menin Gate Last Post',
         time: '7:00 PM',
         icon: 'fa-archway',
-        highlight: 'Official 8:00 PM ceremony, wreath laying & Pte. Franklin & Pte. Ayling (Panel 35)',
+        highlight:
+          'Official 8:00 PM ceremony, wreath laying & Pte. Franklin & Pte. Ayling (Panel 35)',
       },
     ],
   },
