@@ -491,7 +491,7 @@ export function renderChessHubView() {
           <div style="display: flex; flex-direction: column; gap: 8px; align-items: flex-end;">
             <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end;">
               <button onclick="window.switchChessTab('signin')" style="background: #faf7f2; color: #1c1917; border: 1.5px solid #e7e2d7; font-weight: 700; font-size: 0.86rem; padding: 9px 18px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.15); transition: all 0.15s;" onmouseover="this.style.background='#ffffff'" onmouseout="this.style.background='#faf7f2'">
-                <span style="font-size: 1.1rem; line-height: 1;">♔</span> Period 6 Hub (${chessState.checkedInPlayerIds.length})
+                <span style="font-size: 1.1rem; line-height: 1;">♔</span> Period 6
               </button>
               <button onclick="window.openLogMatchModal()" style="background: #292524; color: #fafaf9; border: 1.5px solid #78716c; font-weight: 700; font-size: 0.86rem; padding: 9px 18px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.25); transition: all 0.15s;" onmouseover="this.style.borderColor='#d4af37';this.style.color='#d4af37'" onmouseout="this.style.borderColor='#78716c';this.style.color='#fafaf9'">
                 <span style="font-size: 1rem; line-height: 1;">⚔</span> Record Game Result
@@ -597,7 +597,7 @@ export function renderChessHubView() {
       <!-- Main Navigation Tabs: Classic Typography -->
       <div style="display: flex; gap: 4px; border-bottom: 2px solid #e7e5e4; margin-bottom: 20px; overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; padding-bottom: 2px; scrollbar-width: thin;">
         <button onclick="window.switchChessTab('signin')" style="${getTabStyle(chessState.activeTab === 'signin')}">
-          <span style="font-size: 1.1rem; line-height: 1;">♔</span> Period 6 Hub (${chessState.checkedInPlayerIds.length})
+          <span style="font-size: 1.1rem; line-height: 1;">♔</span> Period 6
         </button>
         <button onclick="window.switchChessTab('ladder')" style="${getTabStyle(chessState.activeTab === 'ladder')}">
           <span style="font-size: 1.05rem; line-height: 1;">🪜</span> Master Ladder (${chessState.players.length})
