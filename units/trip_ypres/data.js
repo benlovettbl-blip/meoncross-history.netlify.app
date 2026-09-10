@@ -13,7 +13,7 @@ export const unitData = {
   cover_caption: 'Meoncross School – Battlefield Tour',
   key_info: {
     emergency_contact:
-      '+44 (0)1329 662182 (Meoncross School Office) / +44 7712 345678 (Trip Emergency Mobile)',
+      '+44 (0)1329 662182 (Meoncross School Office) / 07825 297749 (+44 7825 297749) (Trip Mobile 24/7)',
     hotel: 'Peace Village Hostel, Nieuwkerkestraat 9aB, 8957 Mesen, Belgium',
     hotel_phone: '+32 57 226 040',
     hotel_email: 'info@peacevillage.be',
