@@ -226,13 +226,13 @@ export const unitData = {
       },
       do_now: {
         type: 'timeline',
-        prediction_question: 'Pre-Trip Briefing',
+        prediction_question: 'Pre-Trip Briefing Timeline',
         events: [
           {
             year: '10th Sep',
             title: 'Parent Briefing Meeting',
             detail:
-              '16:15 in the School Hall. Attendance is highly recommended to receive final itineraries and ask any questions. Passports and GHIC/EHIC cards will be checked.',
+              '16:15 in the School Hall. Passports & GHIC cards collected; Medication forms distributed; WhatsApp group QR code shared; 24/7 Trip Mobile (07825 297749) established.',
           },
         ],
       },
@@ -393,6 +393,62 @@ export const unitData = {
                 <p style="margin: 0; color: #7f1d1d; font-size: 0.9rem; line-height: 1.5;">
                   All pupils and parents must sign and return the <strong>Code of Conduct Agreement Form</strong> by <strong>Friday 25th September</strong>. Passports (with >3 months validity) and valid GHIC/EHIC cards will be collected in advance tonight at the Parental Briefing meeting (or to the School Office this week).
                 </p>
+              </div>
+            </div>
+          `,
+        },
+        {
+          type: 'narrative',
+          theme_heading: '24/7 Trip Mobile, Medical Protocols & Trip WhatsApp Group',
+          text: `
+            <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 5px solid #dc2626; border-radius: 8px; padding: 22px; margin-bottom: 24px; box-shadow: 0 2px 5px rgba(0,0,0,0.04);">
+              <h3 style="margin: 0 0 14px 0; color: #0f172a; font-family: 'Playfair Display', serif; font-size: 1.3rem;">
+                Emergency Communications, Medical Safety &amp; Live Tour Updates
+              </h3>
+
+              <div style="background: #fef2f2; border: 1.5px solid #f87171; border-radius: 8px; padding: 16px 20px; margin-bottom: 18px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 8px;">
+                  <span style="font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; background: #fee2e2; color: #991b1b; padding: 4px 10px; border-radius: 6px;">
+                    <i class="fa-solid fa-phone-volume"></i> 24/7 Emergency Line
+                  </span>
+                  <strong style="color: #991b1b; font-size: 1.25rem; font-family: monospace;">07825 297749 <span style="font-size: 0.9rem; font-weight: 500; color: #b91c1c;">(+44 7825 297749)</span></strong>
+                </div>
+                <p style="margin: 0 0 8px 0; color: #7f1d1d; font-size: 0.95rem; line-height: 1.55;">
+                  <strong>Dedicated On-Tour Trip Mobile:</strong> This dedicated phone is held directly by tour leadership at all times during the expedition. It is the number parents can call in a genuine emergency, <em>and crucially, it is also the exact number that staff will call you from</em> if we need to get in touch.
+                </p>
+                <div style="background: #ffffff; border-left: 3px solid #dc2626; padding: 8px 12px; border-radius: 4px; color: #991b1b; font-size: 0.88rem; font-weight: 600;">
+                  ⚠️ Mandatory Requirement: A parent or nominated emergency contact MUST remain contactable 24/7 on your provided mobile numbers throughout the duration of the trip.
+                </div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+                <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-top: 4px solid #16a34a; border-radius: 8px; padding: 16px;">
+                  <h4 style="margin: 0 0 8px 0; color: #166534; font-size: 1.05rem;">
+                    <i class="fa-solid fa-pills"></i> Medication Forms &amp; Packaging Rules
+                  </h4>
+                  <p style="margin: 0 0 10px 0; color: #1e293b; font-size: 0.9rem; line-height: 1.55;">
+                    Formal <strong>Medication Administration Forms</strong> are being provided tonight at the briefing (Thursday 10th September).
+                  </p>
+                  <ul style="margin: 0; padding-left: 18px; color: #1e293b; font-size: 0.88rem; line-height: 1.55;">
+                    <li><strong>Original Packaging Mandatory:</strong> Any medication brought on the trip (prescribed or over-the-counter) must be in its original packaging with original leaflet.</li>
+                    <li><strong>Prescription Label:</strong> Prescribed items must clearly show the pharmacy dispensary label with the <strong>child's name, exact dosage, and administration instructions</strong>.</li>
+                    <li><strong>Handover:</strong> Hand in medication with completed forms to staff at coach departure.</li>
+                  </ul>
+                </div>
+
+                <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-top: 4px solid #2563eb; border-radius: 8px; padding: 16px;">
+                  <h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 1.05rem;">
+                    <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i> Trip WhatsApp Broadcast Group
+                  </h4>
+                  <p style="margin: 0 0 10px 0; color: #1e293b; font-size: 0.9rem; line-height: 1.55;">
+                    We are setting up a private, closed <strong>Trip WhatsApp Group</strong> (joining link and QR code provided on the phone) so tour leaders can share regular updates and photos.
+                  </p>
+                  <ul style="margin: 0; padding-left: 18px; color: #1e293b; font-size: 0.88rem; line-height: 1.55;">
+                    <li><strong>Updates &amp; Photos:</strong> Follow daily visits, travel timings, and cemetery visits as they happen.</li>
+                    <li><strong>Broadcast Only:</strong> Not for general chatter, but parents are warmly encouraged to react to posts and photos (like, love, etc.).</li>
+                    <li><strong>Photo Consent:</strong> If any child does not have general school photo consent, staff will speak with parents to confirm whether you are happy for photos to be shared within this private closed group.</li>
+                  </ul>
+                </div>
               </div>
             </div>
           `,

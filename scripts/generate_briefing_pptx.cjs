@@ -227,25 +227,28 @@ s1.addText('3. ESSENTIAL KIT & NEXT STEPS', {
 s1.addText(
   [
     {
-      text: 'Essential Packing (Autumn in Flanders):\n',
-      options: { bold: true, color: '0F172A', fontSize: 9.5 },
+      text: 'Essential Packing (Autumn Weather):\n',
+      options: { bold: true, color: '0F172A', fontSize: 9.0 },
     },
     {
-      text: '• Sanctuary Wood: boots/wellies + spare shoes & plastic bag.\n• Bath towels & washbag (shower gel; roll-on only).\n• Waterproof hooded jacket, warm fleece, hat & gloves.\n• Casual clothes for evenings (no formal wear).\n• 1 medium holdall/case + 1 small daypack.\n\n',
-      options: { color: '334155', fontSize: 8.5 },
-    },
-    { text: 'Travel Documents & Tech:\n', options: { bold: true, color: '0F172A', fontSize: 9.5 } },
-    {
-      text: '• Passports & GHIC: Collected tonight!\n• Mobiles collected in staff bag each evening.\n• UK-to-EU 2-pin plug adapter for chargers.\n\n',
-      options: { color: '334155', fontSize: 8.5 },
+      text: '• Boots/wellies + spare clean shoes + plastic bag.\n• Bath towel (mandatory) & roll-on toiletries.\n• Waterproof raincoat, warm fleece, hat & gloves.\n• 1 medium case (<15kg) + 1 coach daypack.\n\n',
+      options: { color: '334155', fontSize: 7.8 },
     },
     {
-      text: 'Required Forms to Return:\n',
-      options: { bold: true, color: '0F172A', fontSize: 9.5 },
+      text: 'Documents, Health & Medication:\n',
+      options: { bold: true, color: '0F172A', fontSize: 9.0 },
     },
     {
-      text: '• Code of Conduct Agreement (by Fri 25 Sep).',
-      options: { color: '334155', fontSize: 8.5 },
+      text: "• Passports & GHIC: Collected tonight!\n• Medication forms tonight: original packaging only; prescription must show child's name.\n• Code of Conduct Agreement due Fri 25 Sep.\n\n",
+      options: { color: '334155', fontSize: 7.8 },
+    },
+    {
+      text: 'Communications & 24/7 Emergency:\n',
+      options: { bold: true, color: '0F172A', fontSize: 9.0 },
+    },
+    {
+      text: '• 24/7 Trip Mobile: 07825 297749 (keep lines reachable).\n• WhatsApp Group: Join via QR tonight for tour photos.\n• Student phones collected in staff bag at night.',
+      options: { color: '334155', fontSize: 7.8 },
     },
   ],
   {
@@ -254,7 +257,7 @@ s1.addText(
     w: 2.6,
     h: 3.05,
     fontFace: 'Arial',
-    lineSpacingMultiple: 1.05,
+    lineSpacingMultiple: 1.02,
   },
 );
 
@@ -273,34 +276,31 @@ if (fs.existsSync(QR_PATH)) {
 
 s1.addText('INTERACTIVE DIGITAL FIELD GUIDE:  meoncross-history.netlify.app', {
   x: 1.1,
-  y: 5.16,
-  w: 6.0,
+  y: 5.15,
+  w: 5.2,
   h: 0.2,
-  fontSize: 10.5,
+  fontSize: 10,
   fontFace: 'Arial',
   color: 'FFFFFF',
   bold: true,
 });
 
-s1.addText(
-  'Scan QR or visit URL to explore full 3-day itinerary, poetry anthology, historical dossiers & cemetery maps',
-  {
-    x: 1.1,
-    y: 5.34,
-    w: 7.2,
-    h: 0.18,
-    fontSize: 8.5,
-    fontFace: 'Arial',
-    color: '94A3B8',
-  },
-);
+s1.addText('Scan QR or visit URL · 24/7 Trip Mobile: 07825 297749 (Emergency & calls from staff)', {
+  x: 1.1,
+  y: 5.34,
+  w: 5.2,
+  h: 0.18,
+  fontSize: 8.0,
+  fontFace: 'Arial',
+  color: '94A3B8',
+});
 
-s1.addText('Emergency School Base: +44 (0)1329 662182', {
-  x: 7.3,
-  y: 5.25,
-  w: 2.5,
-  h: 0.22,
-  fontSize: 9,
+s1.addText('🚨 24/7 Mobile: 07825 297749\nSchool Base: 01329 662182', {
+  x: 6.4,
+  y: 5.14,
+  w: 3.4,
+  h: 0.38,
+  fontSize: 8.5,
   fontFace: 'Arial',
   color: 'F59E0B',
   bold: true,
@@ -462,20 +462,26 @@ s2.addText(
   [
     { text: '• Valid UK Passport & GHIC/EHIC: ', options: { bold: true } },
     { text: 'Collected in advance tonight at briefing by Mr Lovett!\n' },
-    { text: '• Travel Adapter: ', options: { bold: true } },
-    { text: 'Standard European 2-pin adapter for phone charging.\n' },
-    { text: '• Mobile Phone Policy: ', options: { bold: true } },
-    { text: 'Permitted by day; collected in dedicated staff phone bag each evening at curfew.' },
+    { text: '• Medication Forms & Rules: ', options: { bold: true } },
+    {
+      text: "Forms distributed tonight. All meds in original packaging; prescribed items must show child's name.\n",
+    },
+    { text: '• Trip WhatsApp Broadcast Group: ', options: { bold: true } },
+    {
+      text: 'Closed group via QR link tonight for live tour updates & visit photos (reactions welcome, no chat). Photo consent checked for all pupils.\n',
+    },
+    { text: '• Adapter & Phone Policy: ', options: { bold: true } },
+    { text: 'EU 2-pin adapter. Phones collected in staff bag each evening at curfew.' },
   ],
   {
     x: 0.8,
-    y: 3.52,
+    y: 3.48,
     w: 3.9,
-    h: 1.45,
-    fontSize: 9,
+    h: 1.5,
+    fontSize: 8.2,
     fontFace: 'Arial',
     color: '334155',
-    lineSpacingMultiple: 1.08,
+    lineSpacingMultiple: 1.04,
   },
 );
 
@@ -526,17 +532,17 @@ s2.addText(
 
 // Slide 2 Footer
 s2.addText(
-  'Expedition Staff: Mr Ben Lovett & Mr James Garrett (Tour Leaders) · Accompanied by Two Meoncross Staff',
+  '🚨 24/7 Dedicated Trip Mobile: 07825 297749 (For emergencies & calls from staff; parents must remain contactable 24/7) · Base: 01329 662182',
   {
-    x: 0.6,
+    x: 0.5,
     y: 5.25,
-    w: 8.8,
+    w: 9.0,
     h: 0.25,
-    fontSize: 9.5,
+    fontSize: 8.5,
     fontFace: 'Arial',
-    color: '64748B',
+    color: 'DC2626',
+    bold: true,
     align: 'center',
-    italic: true,
   },
 );
 

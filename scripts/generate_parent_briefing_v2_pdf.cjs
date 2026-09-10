@@ -57,7 +57,7 @@ function getHtmlContent() {
       width: 210mm;
       height: 297mm;
       box-sizing: border-box;
-      padding: 9mm 11mm;
+      padding: 6mm 10mm;
       position: relative;
       background: #ffffff;
       overflow: hidden;
@@ -81,8 +81,8 @@ function getHtmlContent() {
     /* Header Bar */
     .header-bar {
       border-bottom: 2.5px solid #1e3a8a;
-      padding-bottom: 6px;
-      margin-bottom: 10px;
+      padding-bottom: 4px;
+      margin-bottom: 5px;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
@@ -290,25 +290,25 @@ function getHtmlContent() {
     .grid-2col {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin-bottom: 7px;
+      gap: 7px;
+      margin-bottom: 5px;
     }
 
     .info-card {
       background: #ffffff;
       border: 1px solid #cbd5e1;
       border-radius: 6px;
-      padding: 7px 10px;
+      padding: 5px 8px;
     }
 
     .info-card-header {
-      margin-bottom: 4px;
-      padding-bottom: 3px;
-      border-bottom: 2px solid #1e3a8a;
+      margin-bottom: 3px;
+      padding-bottom: 2px;
+      border-bottom: 1.5px solid #1e3a8a;
     }
 
     .info-card-header .title {
-      font-size: 11.5pt;
+      font-size: 11pt;
       font-weight: 800;
       color: #1e3a8a;
       text-transform: uppercase;
@@ -322,12 +322,12 @@ function getHtmlContent() {
     }
 
     .checklist li {
-      font-size: 11pt;
+      font-size: 9.4pt;
       color: #334155;
-      margin-bottom: 3.5px;
-      line-height: 1.32;
+      margin-bottom: 2px;
+      line-height: 1.25;
       position: relative;
-      padding-left: 13px;
+      padding-left: 12px;
     }
     .checklist li:last-child {
       margin-bottom: 0;
@@ -375,26 +375,27 @@ function getHtmlContent() {
     .action-table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 7px;
-      font-size: 11pt;
+      margin-bottom: 5px;
+      font-size: 10pt;
     }
 
     .action-table th {
       background: #0f172a;
       color: #ffffff;
-      padding: 5px 8px;
+      padding: 3px 6px;
       text-align: left;
       font-weight: 700;
       text-transform: uppercase;
-      font-size: 10pt;
-      letter-spacing: 0.04em;
+      font-size: 8.5pt;
+      letter-spacing: 0.03em;
     }
 
     .action-table td {
-      padding: 4px 8px;
+      padding: 2.2px 6px;
       border-bottom: 1px solid #e2e8f0;
       color: #334155;
-      line-height: 1.25;
+      font-size: 8.8pt;
+      line-height: 1.2;
     }
 
     .action-table tr:nth-child(even) td {
@@ -405,10 +406,10 @@ function getHtmlContent() {
       background: #fef2f2;
       color: #991b1b;
       font-weight: 700;
-      padding: 2px 6px;
-      border-radius: 4px;
+      padding: 1px 5px;
+      border-radius: 3px;
       border: 1px solid #fecaca;
-      font-size: 9.5pt;
+      font-size: 8.2pt;
       display: inline-block;
     }
 
@@ -416,10 +417,10 @@ function getHtmlContent() {
       background: #eff6ff;
       color: #1d4ed8;
       font-weight: 700;
-      padding: 2px 6px;
-      border-radius: 4px;
+      padding: 1px 5px;
+      border-radius: 3px;
       border: 1px solid #bfdbfe;
-      font-size: 9.5pt;
+      font-size: 8.2pt;
       display: inline-block;
     }
   </style>
@@ -582,15 +583,37 @@ function getHtmlContent() {
         </div>
       </div>
 
-      <!-- Accommodation & Rooming Timeline -->
-      <div class="notice-box">
-        <h4>Accommodation, Safety &amp; Rooming Allocation Timeline</h4>
-        <p>
-          <strong>Expedition Base:</strong> Peace Village Hostel, Nieuwkerkestraat 9aB, 8957 Mesen, Belgium (Tel: +32 57 226 040 · info@peacevillage.be). Secure rural centre with keycard access, modern ensuite studios (typically 4–7 pupils with bunk beds), and recreational grounds. View facilities &amp; FAQs at: <a href="https://peacevillage.be/en/practical/faq" target="_blank" style="color: #1e3a8a; font-weight: 700; text-decoration: underline;">peacevillage.be/en/practical/faq</a>.
+      <!-- Accommodation Notice -->
+      <div class="notice-box" style="margin-bottom: 5px; padding: 4px 8px; border-left: 4px solid #1e3a8a; background: #f8fafc; border-radius: 5px;">
+        <h4 style="font-size: 10pt; font-weight: 800; color: #1e3a8a; margin: 0 0 2px 0; text-transform: uppercase; letter-spacing: 0.02em;">Accommodation &amp; Supervision Timeline</h4>
+        <p style="font-size: 8.8pt; line-height: 1.25; margin: 0; color: #334155;">
+          <strong>Expedition Base:</strong> Peace Village Hostel, Mesen, Belgium (+32 57 226 040 · <a href="https://peacevillage.be/en/practical/faq" target="_blank" style="color: #1e3a8a; font-weight: 700; text-decoration: underline;">peacevillage.be</a>). Secure rural centre with keycard access, ensuite studios (4–7 bunks), and staff on same corridors with active evening checks. <strong>Rooming &amp; Diets:</strong> Friend pairings &amp; meal options gathered in ~2 weeks in school.
         </p>
-        <p>
-          <strong>Rooming &amp; Dietary Process (In ~2 Weeks):</strong> In approximately two weeks, pupils will submit rooming friend requests in school (ensuring every pupil is happily paired with close friends). Parents will also confirm specific dietary options (e.g. vegetarian evening meals; medical allergies are already on school records). Staff sleep on the same corridors with active evening checks.
-        </p>
+      </div>
+
+      <!-- 2-Col: Medical Protocol & WhatsApp Broadcast -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 5px;">
+        <!-- Medical Protocol -->
+        <div style="background: #fef2f2; border: 1.2px solid #fecaca; border-left: 4px solid #dc2626; border-radius: 5px; padding: 5px 8px;">
+          <h4 style="font-size: 9.8pt; font-weight: 800; color: #991b1b; margin: 0 0 2px 0; text-transform: uppercase; letter-spacing: 0.02em;">💊 Medical &amp; Prescription Protocol</h4>
+          <p style="margin: 0 0 2px 0; font-size: 8.7pt; color: #7f1d1d; line-height: 1.22;">
+            <strong>Medication Forms:</strong> Provided tonight at the briefing for completion and signature.
+          </p>
+          <p style="margin: 0; font-size: 8.7pt; color: #7f1d1d; line-height: 1.22;">
+            <strong>Strict Packaging Rule:</strong> All meds <strong>MUST be in original packaging</strong>. Prescriptions must clearly display the <strong>child’s name, dosage &amp; instructions</strong>.
+          </p>
+        </div>
+
+        <!-- WhatsApp Broadcast -->
+        <div style="background: #f0fdf4; border: 1.2px solid #bbf7d0; border-left: 4px solid #16a34a; border-radius: 5px; padding: 5px 8px;">
+          <h4 style="font-size: 9.8pt; font-weight: 800; color: #166534; margin: 0 0 2px 0; text-transform: uppercase; letter-spacing: 0.02em;">📱 Trip WhatsApp Updates Group</h4>
+          <p style="margin: 0 0 2px 0; font-size: 8.7pt; color: #14532d; line-height: 1.22;">
+            <strong>Updates &amp; Photos:</strong> Join via link/QR code tonight. Staff will post journey progress and photos (closed group; emoji reactions welcome; not for general chat).
+          </p>
+          <p style="margin: 0; font-size: 8.7pt; color: #14532d; line-height: 1.22;">
+            <strong>Photo Consent:</strong> We will check individually with parents of any child with photo restrictions to confirm comfort with closed-group sharing.
+          </p>
+        </div>
       </div>
 
       <!-- Action Items Table -->
@@ -605,14 +628,24 @@ function getHtmlContent() {
         </thead>
         <tbody>
           <tr>
-            <td><strong>Code of Conduct Form</strong></td>
-            <td>Signed agreement by pupil &amp; parent (Nut &amp; Sesame Policy).</td>
-            <td><span class="badge-urgent">Return by Fri 25 Sep</span></td>
+            <td><strong>Medication Forms &amp; Packaging</strong></td>
+            <td>Complete forms tonight. All meds in original packaging; prescriptions clearly named.</td>
+            <td><span class="badge-urgent">Tonight / Departure</span></td>
           </tr>
           <tr>
             <td><strong>Passport &amp; GHIC Collection</strong></td>
             <td>Hand in valid UK passport (>3m validity) &amp; GHIC card to Mr Lovett.</td>
             <td><span class="badge-urgent">Tonight / This Week</span></td>
+          </tr>
+          <tr>
+            <td><strong>Trip WhatsApp Broadcast Group</strong></td>
+            <td>Join via QR/link tonight for live journey updates &amp; visit photos.</td>
+            <td><span class="badge-urgent">Join Tonight</span></td>
+          </tr>
+          <tr>
+            <td><strong>Code of Conduct Form</strong></td>
+            <td>Signed agreement by pupil &amp; parent (Nut &amp; Sesame Safety Policy).</td>
+            <td><span class="badge-urgent">Return by Fri 25 Sep</span></td>
           </tr>
           <tr>
             <td><strong>Rooming &amp; Dietary Choices</strong></td>
@@ -621,21 +654,27 @@ function getHtmlContent() {
           </tr>
           <tr>
             <td><strong>Euros Currency (€)</strong></td>
-            <td>Provide €30–€40 cash for Fri &amp; Sat supermarket lunches &amp; gifts.</td>
+            <td>Provide €30–€40 cash for Fri &amp; Sat supermarket lunches &amp; chocolates.</td>
             <td><span class="badge-info">For Departure Day</span></td>
           </tr>
         </tbody>
       </table>
 
-      <!-- Contacts & Joint Venture Banner -->
-      <div style="background: #0f172a; color: #ffffff; padding: 7px 12px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; font-size: 10pt; margin-top: 4px;">
-        <div>
-          <span style="color: #fbbf24; font-weight: 700;">Expedition Staff:</span>
-          Mr B. Lovett &amp; Mr J. Garrett (Tour Leaders) · 2 Accompanying Staff
+      <!-- 24/7 Emergency Trip Mobile & Base Banner -->
+      <div style="background: #0f172a; color: #ffffff; padding: 5px 10px; border-radius: 5px; margin-top: 3px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 4px; border-bottom: 1px solid #334155; padding-bottom: 3px; margin-bottom: 2px;">
+          <div>
+            <span style="color: #fbbf24; font-weight: 800; font-size: 8.8pt; text-transform: uppercase; letter-spacing: 0.03em;">🚨 Trip Mobile (On-Tour 24/7):</span>
+            <strong style="color: #38bdf8; font-size: 10.5pt; letter-spacing: 0.5px; margin-left: 5px;">07825 297749</strong>
+            <span style="color: #94a3b8; font-size: 8pt; margin-left: 5px;">(+44 7825 297749)</span>
+          </div>
+          <div>
+            <span style="color: #94a3b8; font-size: 8pt;">School Base Emergency:</span>
+            <strong style="color: #f1f5f9; font-size: 9pt; margin-left: 3px;">+44 (0)1329 662182</strong>
+          </div>
         </div>
-        <div>
-          <span style="color: #94a3b8;">School Base 24/7 Emergency:</span>
-          <strong style="color: #38bdf8;">+44 (0)1329 662182</strong>
+        <div style="font-size: 7.8pt; color: #cbd5e1; line-height: 1.2;">
+          <strong>24/7 Contact Protocol:</strong> Carried by tour leaders at all times. Call in an emergency, and this is the number staff will call you from. <strong>Parents/emergency contacts must ensure someone is contactable 24/7 on designated phone numbers throughout the tour.</strong>
         </div>
       </div>
     </div>
