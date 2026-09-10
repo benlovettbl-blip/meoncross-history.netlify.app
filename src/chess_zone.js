@@ -477,7 +477,7 @@ export function renderChessHubView() {
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; position: relative; z-index: 2;">
           <div style="max-width: 680px;">
             <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(212, 175, 55, 0.12); border: 1px solid rgba(212, 175, 55, 0.35); padding: 4px 12px; border-radius: 4px; font-size: 0.76rem; font-weight: 700; color: #d4af37; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 10px; font-family: 'Playfair Display', Georgia, serif; font-style: italic;">
-              Period VI Thursdays · Meoncross Chess Salon
+              Period VI Thursdays · Senior Block History Room
             </div>
             <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 2.15rem; margin: 0 0 6px 0; color: #fafaf9; font-weight: 700; letter-spacing: 0.02em; line-height: 1.15;">
               Meoncross Chess Club &amp; House League
