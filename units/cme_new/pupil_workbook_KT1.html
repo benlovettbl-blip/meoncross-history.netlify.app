@@ -7,6 +7,10 @@
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <style>
 
       @page { size: A4 portrait; margin: 15mm 15mm 25mm 15mm; }
@@ -40,6 +44,18 @@
       .teacher-comment { border-bottom: 1px solid #777; width: 100%; height: 20px; display: inline-block; margin-top: 5px; }
       @media print { body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; } * { box-shadow: none !important; border-radius: 0 !important; }
           img { max-width: 100% !important; object-fit: contain !important;  }
+
+          .svg-diagram, img[src$=".svg"] {
+            break-inside: avoid !important;
+            page-break-inside: avoid !important;
+            max-height: 480px !important;
+            width: auto !important;
+            max-width: 100% !important;
+            object-fit: contain !important;
+            margin: 10px auto !important;
+            display: block !important;
+          }
+
           .source-container { page-break-inside: auto; }
           .narrative-block { page-break-inside: auto; }
           .task-box { page-break-inside: auto !important; }
@@ -5246,7 +5262,7 @@
         font-family: sans-serif;
       "
     >
-      Generated: 2026-09-09 00:12:01 UTC | Unit: cme_new | Edition: 2026.1
+      Generated: 2026-09-10 07:45:02 UTC | Unit: cme_new | Edition: 2026.1
     </div>
     <script>
       document.addEventListener('DOMContentLoaded', function () {

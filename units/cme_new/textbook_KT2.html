@@ -52,6 +52,18 @@
 
       @media print { body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; } * { box-shadow: none !important; border-radius: 0 !important; }
           img:not([src$=".svg"]) { max-width: 100% !important; object-fit: contain !important;  }
+
+          .svg-diagram, img[src$=".svg"] {
+            break-inside: avoid !important;
+            page-break-inside: avoid !important;
+            max-height: 480px !important;
+            width: auto !important;
+            max-width: 100% !important;
+            object-fit: contain !important;
+            margin: 10px auto !important;
+            display: block !important;
+          }
+
           .source-container { page-break-inside: auto; }
           .narrative-block { page-break-inside: auto; }
           .task-box { page-break-inside: auto; }
@@ -3091,7 +3103,7 @@
         font-family: sans-serif;
       "
     >
-      Generated: 2026-09-09 00:12:01 UTC | Unit: cme_new
+      Generated: 2026-09-10 07:45:02 UTC | Unit: cme_new
     </div>
   </body>
 </html>

@@ -1282,6 +1282,22 @@ allDirs.forEach((unitId) => {
     .teacher-comment { border-bottom: 1px solid #777; width: 100%; height: 20px; display: inline-block; margin-top: 5px; }
     @media print { body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; } * { box-shadow: none !important; border-radius: 0 !important; }
         img { max-width: 100% !important; object-fit: contain !important;  }
+        ${
+          unitId === 'cme_new'
+            ? `
+        .svg-diagram, img[src$=".svg"] {
+          break-inside: avoid !important;
+          page-break-inside: avoid !important;
+          max-height: 480px !important;
+          width: auto !important;
+          max-width: 100% !important;
+          object-fit: contain !important;
+          margin: 10px auto !important;
+          display: block !important;
+        }
+        `
+            : ''
+        }
         .source-container { page-break-inside: auto; }
         .narrative-block { page-break-inside: auto; }
         .task-box { page-break-inside: auto !important; }
