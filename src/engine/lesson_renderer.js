@@ -542,13 +542,19 @@ export function renderLesson(lesson) {
       </div>
     `;
   let bannerPosition = lesson.banner_position || 'center';
+  const isFamilyHero =
+    lesson.id &&
+    (lesson.id.startsWith('hero_') ||
+      lesson.title?.includes('Pupil Family Hero') ||
+      lesson.title?.includes('Local Hero'));
+  const heroExtraClass = isFamilyHero ? ' family-archive-hero' : '';
 
   const existingFloatingBtn = document.getElementById('floating-stop-navigator-btn');
   if (existingFloatingBtn) existingFloatingBtn.remove();
 
   // Full-Bleed Hero Image
   html += `
-      <div class="lesson-hero" style="position: relative; width: calc(100% + 8rem); margin-left: -4rem; margin-top: -1rem; height: 300px; background: url('${heroImage}') ${bannerPosition}/cover no-repeat; margin-bottom: 2rem; border-bottom: 1px solid var(--border-glass); box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+      <div class="lesson-hero${heroExtraClass}" style="position: relative; width: calc(100% + 8rem); margin-left: -4rem; margin-top: -1rem; height: 300px; background: url('${heroImage}') ${bannerPosition}/cover no-repeat; margin-bottom: 2rem; border-bottom: 1px solid var(--border-glass); box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
         <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(15,23,42,0.2), rgba(15,23,42,0.9));"></div>
         <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem 4rem;">
           <span style="color: #cbd5e1; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;">${lessonPrefix}</span>

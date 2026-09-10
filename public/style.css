@@ -3741,3 +3741,26 @@ img::after {
 .teacher-note i.fa-image {
   display: none !important;
 }
+
+/* ==========================================================================
+   FAMILY ARCHIVE & LOCAL HERO PANORAMIC HERO BANNERS (16:4 / 4:1 RATIO)
+   Standardized aspect ratio container for physical primary artifacts
+   ========================================================================== */
+.lesson-hero.family-archive-hero,
+.lesson-hero.panoramic-hero {
+  aspect-ratio: 16 / 4;
+  min-height: 260px;
+  max-height: 360px;
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+  .lesson-hero.family-archive-hero,
+  .lesson-hero.panoramic-hero {
+    aspect-ratio: auto;
+    height: 240px;
+    background-position: right center;
+  }
+}

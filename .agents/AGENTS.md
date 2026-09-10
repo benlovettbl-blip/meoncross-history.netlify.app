@@ -115,3 +115,10 @@ Formalize all primary historical excerpts across all units (including Medicine T
 3. An `.archival-source-body` rendering verbatim primary text in an authentic historical serif face (`Georgia` or `Playfair Display`) with subtle warm archival parchment background.
 4. An `.archival-citation-footer` separated by a 1px hairline divider detailing historical provenance, combat action, date, and publication volume.
 
+## Family Archive Hero Banners: Aspect Ratio & Artifact Standard
+Whenever generating, selecting, or updating hero banners for pupil family heroes (such as local soldiers researched by pupils, the Crummack archive, or the Lowry brothers at Manor Way Grange):
+1. **16:4 / 4:1 Panoramic Aspect Ratio**: Standardize on a wide 16:4 / 4:1 panoramic hero aspect ratio (e.g., 1600x400px or 1600x360px).
+2. **Physical Primary Artifacts Over Portrait Headshots**: Hero banners MUST feature physical primary artifacts (such as mounted combat medals, original trench caps, medals displays, field letters, wartime journals, or trench maps laid horizontally) aligned cleanly to the right (`banner_position: 'center right'`), rather than portrait headshots. Portrait headshots inevitably suffer from extreme zoom distortion, pixelation, and vertical clipping when stretched across wide full-bleed CSS banners (`.lesson-hero`).
+3. **Headshot Placement**: Portrait headshots of soldiers must strictly be placed within dedicated biographical profile cards, narrative sidebar figures, or archival citation boxes in the lesson body, never as the full-bleed hero background.
+
+
