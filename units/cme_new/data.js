@@ -697,6 +697,7 @@ export const unitData = {
           'On the other hand, Jewish leaders and Holocaust survivors pressured Britain because...',
           'This created an impossible dilemma for the British government because...',
         ],
+        connectives: ['Consequently', 'In direct conflict with', 'Caught between', 'Resulted in'],
       },
       consolidation: 'Why is the geography of the Middle East so geopolitically important?',
       exit_ticket: {
