@@ -10,6 +10,9 @@ import {
   INITIAL_MATCHES,
   HISTORICAL_CHESS_SPOTLIGHTS,
   BETH_HARMON_PUZZLES,
+  BEGINNER_ROOKIE_PUZZLES,
+  BEGINNER_PIECES_GUIDE,
+  BEGINNER_GOLDEN_RULES,
 } from './chess_data.js';
 
 const STORAGE_KEY = 'meoncross_chess_club_v5';
@@ -141,10 +144,11 @@ let chessState = {
   matches: [],
   checkedInPlayerIds: [],
   knockoutBracket: null,
-  activeTab: 'signin', // 'signin' | 'ladder' | 'table' | 'pairings' | 'knockout' | 'drills' | 'matches'
+  activeTab: 'signin', // 'signin' | 'beginners' | 'ladder' | 'table' | 'pairings' | 'knockout' | 'drills' | 'matches'
   filterYear: 'all', // 'all' | 'ks3' | 'ks4'
   filterHouse: 'all', // 'all' | houseId
   currentPuzzleIdx: 0,
+  puzzleCategory: 'grandmaster', // 'grandmaster' | 'beginner'
   showBethHarmonHint: false,
   showBethHarmonSolution: false,
   showStarterPuzzle: true,
@@ -676,6 +680,9 @@ export function renderChessHubView() {
         <button onclick="window.switchChessTab('signin')" style="${getTabStyle(chessState.activeTab === 'signin')}">
           <span style="font-size: 1.1rem; line-height: 1;">♔</span> Period 6
         </button>
+        <button onclick="window.switchChessTab('beginners')" style="${getTabStyle(chessState.activeTab === 'beginners')}">
+          <span style="font-size: 1.05rem; line-height: 1;">🌱</span> Rookie Academy
+        </button>
         <button onclick="window.switchChessTab('ladder')" style="${getTabStyle(chessState.activeTab === 'ladder')}">
           <span style="font-size: 1.05rem; line-height: 1;">🪜</span> Master Ladder (${chessState.players.length})
         </button>
@@ -752,6 +759,8 @@ export function renderChessHubView() {
 function renderActiveTabContent(filteredPlayers) {
   if (chessState.activeTab === 'signin') {
     return renderSignInTab(filteredPlayers);
+  } else if (chessState.activeTab === 'beginners') {
+    return renderBeginnersTab();
   } else if (chessState.activeTab === 'ladder') {
     return renderLadderTab(filteredPlayers);
   } else if (chessState.activeTab === 'table') {
@@ -984,10 +993,21 @@ function renderLeagueTableTab(players) {
   `;
 }
 
+// Helper: Get active puzzle collection based on selected category ('grandmaster' vs 'beginner')
+function getActivePuzzles() {
+  if (chessState.puzzleCategory === 'beginner') {
+    return Array.isArray(BEGINNER_ROOKIE_PUZZLES) && BEGINNER_ROOKIE_PUZZLES.length > 0
+      ? BEGINNER_ROOKIE_PUZZLES
+      : [];
+  }
+  return Array.isArray(BETH_HARMON_PUZZLES) && BETH_HARMON_PUZZLES.length > 0
+    ? BETH_HARMON_PUZZLES
+    : [];
+}
+
 // The Beth Harmon Ceiling Board: Interactive Tactical Starter (Movable Pieces & Sandbox Mode)
 function renderBethHarmonCeilingBoard() {
-  const puzzles =
-    Array.isArray(BETH_HARMON_PUZZLES) && BETH_HARMON_PUZZLES.length > 0 ? BETH_HARMON_PUZZLES : [];
+  const puzzles = getActivePuzzles();
   if (puzzles.length === 0) return '';
 
   const puzzleIdx = (chessState.currentPuzzleIdx || 0) % puzzles.length;
@@ -1069,21 +1089,21 @@ function renderBethHarmonCeilingBoard() {
   }
 
   return `
-    <div style="background: #1c1917; border: 2px solid #44403c; border-radius: 12px; padding: 20px; box-shadow: 0 12px 30px rgba(0,0,0,0.35); color: #fafaf9; margin-bottom: 22px;">
+    <div id="chess-interactive-board-container" style="background: #1c1917; border: 2px solid #44403c; border-radius: 12px; padding: 20px; box-shadow: 0 12px 30px rgba(0,0,0,0.35); color: #fafaf9; margin-bottom: 22px;">
       
       <!-- Top Title Bar -->
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; border-bottom: 1.5px solid #38332e; padding-bottom: 12px; margin-bottom: ${isCollapsed ? '0' : '16px'};">
         <div style="display: flex; align-items: center; gap: 12px;">
           <div style="width: 40px; height: 40px; border-radius: 8px; background: #292524; border: 1px solid #57534e; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: #d4af37;">
-            ♟
+            ${chessState.puzzleCategory === 'beginner' ? '🌱' : '♟'}
           </div>
           <div>
             <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
               <h3 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.22rem; color: #f5f5f4; font-weight: 700; letter-spacing: 0.02em;">
-                The Beth Harmon Ceiling Board
+                ${chessState.puzzleCategory === 'beginner' ? '🌱 Rookie Academy: Training Missions' : 'The Beth Harmon Ceiling Board'}
               </h3>
               <span style="background: #362f27; color: #d4af37; border: 1px solid #785338; font-size: 0.68rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; text-transform: uppercase; font-family: monospace;">
-                Tactical Starter · Challenge ${puzzleIdx + 1} of ${totalPuzzles}
+                ${chessState.puzzleCategory === 'beginner' ? 'Rookie Mission' : 'Tactical Starter'} · Challenge ${puzzleIdx + 1} of ${totalPuzzles}
               </span>
               ${
                 chessState.sandboxMode
@@ -1092,12 +1112,22 @@ function renderBethHarmonCeilingBoard() {
               }
             </div>
             <div style="font-size: 0.8rem; color: #a8a29e; margin-top: 2px;">
-              ${isCollapsed ? 'Click "Expand Board" to calculate the tactical combination.' : 'Tap or drag pieces to play the combination. Practice on your screen before Period 6 pairings begin!'}
+              ${isCollapsed ? 'Click "Expand Board" to calculate the tactical combination.' : chessState.puzzleCategory === 'beginner' ? 'Solve interactive challenges designed for beginners and Year 7s! Tap or drag pieces to make your move.' : 'Tap or drag pieces to play the combination. Practice on your screen before Period 6 pairings begin!'}
             </div>
           </div>
         </div>
 
-        <div style="display: flex; gap: 8px; align-items: center;">
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <!-- Category Switcher Pill -->
+          <div style="display: inline-flex; background: #292524; border: 1px solid #57534e; border-radius: 6px; padding: 2px;">
+            <button type="button" onclick="window.setBethHarmonCategory('grandmaster')" style="${chessState.puzzleCategory !== 'beginner' ? 'background: #d4af37; color: #1c1917; font-weight: 800;' : 'background: transparent; color: #a8a29e; font-weight: 600;'} border: none; padding: 4px 10px; border-radius: 4px; font-size: 0.72rem; cursor: pointer; transition: all 0.15s ease;">
+              🏆 Grandmaster Legends
+            </button>
+            <button type="button" onclick="window.setBethHarmonCategory('beginner')" style="${chessState.puzzleCategory === 'beginner' ? 'background: #22c55e; color: #14532d; font-weight: 800;' : 'background: transparent; color: #a8a29e; font-weight: 600;'} border: none; padding: 4px 10px; border-radius: 4px; font-size: 0.72rem; cursor: pointer; transition: all 0.15s ease;">
+              🌱 Rookie Missions (${BEGINNER_ROOKIE_PUZZLES.length})
+            </button>
+          </div>
+
           <button type="button" onclick="window.cycleBethHarmonPuzzle(-1)" style="background: #292524; color: #fafaf9; border: 1px solid #57534e; width: 32px; height: 32px; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold;" title="Previous Puzzle">
             ◀
           </button>
@@ -1199,7 +1229,7 @@ function renderBethHarmonCeilingBoard() {
               <span>💡</span> ${chessState.showBethHarmonHint ? 'Hide Hint' : 'Show Tactical Hint'}
             </button>
             <button type="button" onclick="window.toggleBethHarmonSolution()" style="background: #292524; color: #22c55e; border: 1px solid #14532d; padding: 8px 14px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
-              <span>♛</span> ${chessState.showBethHarmonSolution ? 'Hide Solution' : 'Reveal Grandmaster Solution'}
+              <span>♛</span> ${chessState.showBethHarmonSolution ? 'Hide Solution' : 'Reveal Solution'}
             </button>
           </div>
 
@@ -1220,7 +1250,7 @@ function renderBethHarmonCeilingBoard() {
               ? `
             <div style="background: #14281d; border: 1px solid #166534; border-left: 3px solid #22c55e; border-radius: 0 6px 6px 0; padding: 12px 14px; animation: fadeIn 0.2s ease-out;">
               <div style="font-size: 0.76rem; font-weight: 800; color: #86efac; text-transform: uppercase; font-family: monospace; margin-bottom: 4px;">
-                Grandmaster Continuation:
+                Expected Continuation:
               </div>
               <div style="font-size: 1.05rem; font-weight: 900; color: #ffffff; font-family: monospace; margin-bottom: 6px;">
                 ${puzzle.solutionMoves}
@@ -1241,7 +1271,7 @@ function renderBethHarmonCeilingBoard() {
   `;
 }
 
-// Window controls & handlers for Beth Harmon Ceiling Board
+// Window controls & handlers for Beth Harmon Ceiling Board & Rookie Training Board
 function executeBethMove(fromR, fromC, toR, toC, puzzle) {
   const sourcePiece = chessState.activePuzzleBoard[fromR][fromC];
 
@@ -1285,8 +1315,12 @@ function executeBethMove(fromR, fromC, toR, toC, puzzle) {
   }
 
   if (matchFrom && matchTo) {
-    // Correct Move!
-    chessState.activePuzzleBoard[toR][toC] = sourcePiece;
+    // Correct Move! Auto-promote pawns reaching the back rank
+    let finalPiece = sourcePiece;
+    if (sourcePiece === 'P' && toR === 0) finalPiece = 'Q';
+    if (sourcePiece === 'p' && toR === 7) finalPiece = 'q';
+
+    chessState.activePuzzleBoard[toR][toC] = finalPiece;
     chessState.activePuzzleBoard[fromR][fromC] = '.';
     chessState.selectedSquare = null;
 
@@ -1300,7 +1334,7 @@ function executeBethMove(fromR, fromC, toR, toC, puzzle) {
         const repTo = currentStep.replyTo;
         const repPiece =
           currentStep.replyPiece || chessState.activePuzzleBoard[repFrom[0]][repFrom[1]];
-        chessState.activePuzzleBoard[repTo[0]][repTo[1]] = repPiece;
+        chessState.activePuzzleBoard[repTo][toC] = repPiece;
         chessState.activePuzzleBoard[repFrom[0]][repFrom[1]] = '.';
         chessState.puzzleMoveStep = stepIdx + 1;
         chessState.puzzleFeedback = { text: currentStep.replyMsg, type: 'info' };
@@ -1316,7 +1350,7 @@ function executeBethMove(fromR, fromC, toR, toC, puzzle) {
   } else {
     chessState.selectedSquare = null;
     chessState.puzzleFeedback = {
-      text: `❌ Not quite right! Re-calculate Beth’s tactical variation or view the clue. (Hint: ${puzzle.hint})`,
+      text: `❌ Not quite right! Re-calculate your move or view the clue. (Hint: ${puzzle.hint})`,
       type: 'error',
     };
     renderChessHubView();
@@ -1324,7 +1358,7 @@ function executeBethMove(fromR, fromC, toR, toC, puzzle) {
 }
 
 window.handleBethSquareClick = function (r, c) {
-  const puzzles = Array.isArray(BETH_HARMON_PUZZLES) ? BETH_HARMON_PUZZLES : [];
+  const puzzles = getActivePuzzles();
   const puzzle = puzzles[(chessState.currentPuzzleIdx || 0) % puzzles.length];
   if (!puzzle) return;
 
@@ -1377,18 +1411,18 @@ window.handleBethDrop = function (e, toR, toC) {
     const raw = e.dataTransfer ? e.dataTransfer.getData('text/plain') : null;
     if (!raw) return;
     const { r: fromR, c: fromC } = JSON.parse(raw);
-    const puzzles = Array.isArray(BETH_HARMON_PUZZLES) ? BETH_HARMON_PUZZLES : [];
+    const puzzles = getActivePuzzles();
     const puzzle = puzzles[(chessState.currentPuzzleIdx || 0) % puzzles.length];
     if (puzzle) {
       executeBethMove(fromR, fromC, toR, toC, puzzle);
     }
   } catch (err) {
-    console.warn('Beth Harmon drag-drop error:', err);
+    console.warn('Chess drag-drop error:', err);
   }
 };
 
 window.resetBethHarmonBoard = function () {
-  const puzzles = Array.isArray(BETH_HARMON_PUZZLES) ? BETH_HARMON_PUZZLES : [];
+  const puzzles = getActivePuzzles();
   const puzzle = puzzles[(chessState.currentPuzzleIdx || 0) % puzzles.length];
   if (puzzle) {
     chessState.activePuzzleBoard = JSON.parse(JSON.stringify(puzzle.board));
@@ -1413,7 +1447,7 @@ window.toggleBethHarmonSandbox = function () {
 };
 
 window.cycleBethHarmonPuzzle = function (delta) {
-  const total = Array.isArray(BETH_HARMON_PUZZLES) ? BETH_HARMON_PUZZLES : [];
+  const total = getActivePuzzles();
   const puzzleCount = total.length || 1;
   chessState.currentPuzzleIdx =
     ((chessState.currentPuzzleIdx || 0) + delta + puzzleCount) % puzzleCount;
@@ -1425,6 +1459,37 @@ window.cycleBethHarmonPuzzle = function (delta) {
   chessState.puzzleStatus = 'idle';
   chessState.puzzleFeedback = null;
   renderChessHubView();
+};
+
+window.setBethHarmonCategory = function (category) {
+  chessState.puzzleCategory = category;
+  chessState.currentPuzzleIdx = 0;
+  chessState.activePuzzleBoard = null;
+  chessState.selectedSquare = null;
+  chessState.puzzleMoveStep = 0;
+  chessState.puzzleStatus = 'idle';
+  chessState.puzzleFeedback = null;
+  chessState.showBethHarmonHint = false;
+  chessState.showBethHarmonSolution = false;
+  renderChessHubView();
+};
+
+window.selectRookieMission = function (missionIdx) {
+  chessState.puzzleCategory = 'beginner';
+  chessState.currentPuzzleIdx = missionIdx;
+  chessState.activePuzzleBoard = null;
+  chessState.selectedSquare = null;
+  chessState.puzzleMoveStep = 0;
+  chessState.puzzleStatus = 'idle';
+  chessState.puzzleFeedback = null;
+  chessState.showBethHarmonHint = false;
+  chessState.showBethHarmonSolution = false;
+  chessState.showStarterPuzzle = true;
+  renderChessHubView();
+  const boardEl = document.getElementById('chess-interactive-board-container');
+  if (boardEl) {
+    boardEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
 };
 
 window.toggleBethHarmonHint = function () {
@@ -1441,6 +1506,362 @@ window.toggleStarterPuzzleCollapse = function () {
   chessState.showStarterPuzzle = !chessState.showStarterPuzzle;
   renderChessHubView();
 };
+
+// Mini 5x5 Movement Board Grid for 11-Year-Olds
+function renderMiniMovementGrid(piece) {
+  const targetMap = new Set(piece.matrixCoords.map(([r, c]) => `${r},${c}`));
+  let squares = '';
+  for (let r = 0; r < 5; r++) {
+    for (let c = 0; c < 5; c++) {
+      const isCenter = r === 2 && c === 2;
+      const isTarget = targetMap.has(`${r},${c}`);
+      const isLight = (r + c) % 2 === 0;
+      const bg = isLight ? '#f5ede0' : '#855938';
+
+      let inner = '';
+      if (isCenter) {
+        inner = `<span style="font-size: 1.65rem; line-height: 1; color: #ffffff; text-shadow: 0 1px 3px rgba(0,0,0,0.9); font-family: 'Apple Symbols', 'Segoe UI Symbol', serif;">${piece.symbol}</span>`;
+      } else if (isTarget) {
+        inner = `<div style="width: 12px; height: 12px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 8px #22c55e;"></div>`;
+      }
+
+      squares += `
+        <div style="background: ${isCenter ? '#d97706' : bg}; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; position: relative; border-radius: ${isCenter ? '3px' : '0'};">
+          ${inner}
+        </div>
+      `;
+    }
+  }
+
+  return `
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; flex-shrink: 0;">
+      <div style="width: 130px; aspect-ratio: 1; display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(5, 1fr); border: 2.5px solid #44403c; border-radius: 6px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.15); background: #1c1917;">
+        ${squares}
+      </div>
+      <div style="font-size: 0.68rem; font-weight: 700; color: #78716c; font-family: monospace; text-transform: uppercase; letter-spacing: 0.05em;">
+        Visual Move Map
+      </div>
+    </div>
+  `;
+}
+
+// 2. Rookie Academy View: Complete Beginner Guide for 11-Year-Olds
+function renderBeginnersTab() {
+  return `
+    <div style="display: flex; flex-direction: column; gap: 24px;">
+
+      <!-- Welcoming Hero Banner -->
+      <div style="background: linear-gradient(135deg, #14532d 0%, #166534 60%, #15803d 100%); border-radius: 12px; padding: 24px; color: #ffffff; box-shadow: 0 8px 24px rgba(20, 83, 45, 0.25); position: relative; overflow: hidden;">
+        <div style="position: absolute; right: -20px; bottom: -30px; font-size: 9rem; color: rgba(255,255,255,0.06); font-family: 'Playfair Display', serif; pointer-events: none; user-select: none;">
+          🌱
+        </div>
+        
+        <div style="position: relative; z-index: 2;">
+          <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); padding: 4px 10px; border-radius: 20px; font-size: 0.76rem; font-weight: 700; font-family: monospace; letter-spacing: 0.05em; margin-bottom: 12px; text-transform: uppercase;">
+            <span>🌱</span> Rookie Academy · Year 7 &amp; New Players Hub
+          </div>
+          <h2 style="margin: 0 0 8px 0; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.4rem, 2.5vw, 1.85rem); font-weight: 800; color: #ffffff; line-height: 1.25;">
+            How to Play Chess: Visual Beginner Guide
+          </h2>
+          <p style="margin: 0 0 16px 0; font-size: 0.95rem; color: #dcfce7; line-height: 1.55; max-width: 780px;">
+            Never touched a chess piece before? You are in the right place! Chess is an ancient battle of wits, courage, and clever tactics. Below you’ll find everything explained in <strong>simple picture terms</strong>: how all 6 warriors move, how to set up the board, the lifesaving C-P-R check rule, and interactive missions you can solve right on your screen!
+          </p>
+
+          <!-- Quick Anchor Navigation -->
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <a href="#rookie-warriors" style="background: rgba(255,255,255,0.92); color: #14532d; text-decoration: none; padding: 7px 14px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+              <span>♟</span> The 6 Warriors
+            </a>
+            <a href="#rookie-cpr" style="background: rgba(255,255,255,0.92); color: #14532d; text-decoration: none; padding: 7px 14px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+              <span>🛡</span> C-P-R Check Rule
+            </a>
+            <a href="#rookie-setup" style="background: rgba(255,255,255,0.92); color: #14532d; text-decoration: none; padding: 7px 14px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+              <span>📐</span> Board Setup
+            </a>
+            <a href="#rookie-superpowers" style="background: rgba(255,255,255,0.92); color: #14532d; text-decoration: none; padding: 7px 14px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+              <span>⚡</span> Superpowers
+            </a>
+            <a href="#rookie-training-board" style="background: #fbbf24; color: #1c1917; text-decoration: none; padding: 7px 14px; border-radius: 6px; font-size: 0.8rem; font-weight: 800; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.15);">
+              <span>🎯</span> Interactive Missions (${BEGINNER_ROOKIE_PUZZLES.length})
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 1: Meet the 6 Warriors -->
+      <div id="rookie-warriors">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h3 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.35rem; color: #1c1917; font-weight: 800;">
+              ♟️ Meet the 6 Warriors: Visual Movement Guide
+            </h3>
+            <div style="font-size: 0.84rem; color: #78716c; margin-top: 2px;">
+              Every piece moves in a distinct pattern. Study the green dots on the mini-boards to see legal movement squares!
+            </div>
+          </div>
+          <span style="font-size: 0.78rem; font-weight: 700; color: #166534; background: #dcfce7; border: 1px solid #86efac; padding: 3px 8px; border-radius: 4px; font-family: monospace;">
+            6 Unique Movement Patterns
+          </span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 16px;">
+          ${BEGINNER_PIECES_GUIDE.map((p) => {
+            return `
+            <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: space-between; gap: 14px;">
+              <div>
+                <!-- Piece Header -->
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1.5px solid #f1f5f9; padding-bottom: 10px; margin-bottom: 12px;">
+                  <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 44px; height: 44px; border-radius: 8px; background: #fafaf9; border: 1.5px solid #e7e5e4; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; line-height: 1; flex-shrink: 0; font-family: 'Apple Symbols', 'Segoe UI Symbol', serif; color: #1c1917;">
+                      ${p.symbol}
+                    </div>
+                    <div>
+                      <h4 style="margin: 0; font-size: 1.15rem; color: #0f172a; font-weight: 800;">${p.name}</h4>
+                      <div style="font-size: 0.8rem; font-weight: 700; color: ${p.colorHex}; font-style: italic;">"${p.nickname}"</div>
+                    </div>
+                  </div>
+                  <span style="background: #f8fafc; border: 1px solid #cbd5e1; color: #334155; font-size: 0.74rem; font-weight: 800; padding: 4px 8px; border-radius: 6px; font-family: monospace; white-space: nowrap;">
+                    ⭐ ${p.value}
+                  </span>
+                </div>
+
+                <!-- Split Body: Visual Grid + Rules -->
+                <div style="display: flex; gap: 16px; align-items: flex-start; flex-wrap: wrap;">
+                  ${renderMiniMovementGrid(p)}
+                  
+                  <div style="flex: 1; min-width: 180px;">
+                    <div style="background: #f8fafc; border-left: 3px solid ${p.colorHex}; padding: 8px 12px; border-radius: 0 6px 6px 0; font-size: 0.82rem; font-weight: 700; color: #1e293b; margin-bottom: 10px; line-height: 1.4;">
+                      ${p.movementSummary}
+                    </div>
+
+                    <ul style="margin: 0; padding-left: 18px; font-size: 0.8rem; color: #475569; line-height: 1.45; display: flex; flex-direction: column; gap: 4px;">
+                      ${p.rules.map((r) => `<li>${r}</li>`).join('')}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mnemonic Rhyme Callout -->
+              <div style="background: #fefce8; border: 1px solid #fef08a; border-radius: 6px; padding: 8px 12px; font-size: 0.78rem; color: #854d0e; display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 0.95rem;">💡</span>
+                <div>
+                  <strong>Memory Rhyme:</strong> <em>${p.funMnemonic}</em>
+                </div>
+              </div>
+            </div>
+          `;
+          }).join('')}
+        </div>
+      </div>
+
+      <!-- Section 2: Golden Memory Anchors (CPR, Board Setup, 3 Opening Habits) -->
+      <div>
+        <h3 style="margin: 0 0 14px 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.35rem; color: #1c1917; font-weight: 800;">
+          🛡️ Golden Rules &amp; Lifesaving Habits
+        </h3>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px;">
+          
+          <!-- Card 1: The C-P-R Rule -->
+          <div id="rookie-cpr" style="background: #ffffff; border: 1.5px solid #fecaca; border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+              <div style="width: 38px; height: 38px; border-radius: 8px; background: #fee2e2; color: #dc2626; display: flex; align-items: center; justify-content: center; font-size: 1.15rem; flex-shrink: 0;">
+                <i class="fa-solid fa-shield-heart"></i>
+              </div>
+              <div>
+                <h4 style="margin: 0; font-size: 1.1rem; color: #991b1b; font-weight: 800;">The C-P-R Check Defense</h4>
+                <div style="font-size: 0.75rem; color: #dc2626; font-weight: 700; text-transform: uppercase; font-family: monospace;">When Opponent Says "CHECK!"</div>
+              </div>
+            </div>
+
+            <p style="margin: 0 0 12px 0; font-size: 0.84rem; color: #475569; line-height: 1.45;">
+              When your King is attacked, you are in <strong>CHECK</strong>! You must defend him immediately using C-P-R:
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px;">
+              <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 6px; padding: 8px 12px; font-size: 0.82rem; color: #991b1b;">
+                <strong>C — Capture:</strong> Knock out the enemy piece attacking your King!
+              </div>
+              <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 6px; padding: 8px 12px; font-size: 0.82rem; color: #991b1b;">
+                <strong>P — Protect (Block):</strong> Slide another piece in between like a bodyguard! <em>(Note: You cannot block a jumping Knight!)</em>
+              </div>
+              <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 6px; padding: 8px 12px; font-size: 0.82rem; color: #991b1b;">
+                <strong>R — Run:</strong> Step your King to a safe square with no danger!
+              </div>
+            </div>
+
+            <div style="background: #450a0a; color: #fecaca; border-radius: 6px; padding: 10px 14px; font-size: 0.8rem; font-weight: 700; text-align: center; font-family: monospace;">
+              "If you cannot Capture, Protect, or Run — it is CHECKMATE and the game is won!"
+            </div>
+          </div>
+
+          <!-- Card 2: Board Setup Rules -->
+          <div id="rookie-setup" style="background: #ffffff; border: 1.5px solid #bfdbfe; border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+              <div style="width: 38px; height: 38px; border-radius: 8px; background: #dbeafe; color: #2563eb; display: flex; align-items: center; justify-content: center; font-size: 1.15rem; flex-shrink: 0;">
+                <i class="fa-solid fa-chess-board"></i>
+              </div>
+              <div>
+                <h4 style="margin: 0; font-size: 1.1rem; color: #1e40af; font-weight: 800;">Board Setup: The 2 Golden Tests</h4>
+                <div style="font-size: 0.75rem; color: #2563eb; font-weight: 700; text-transform: uppercase; font-family: monospace;">Pre-Game Ritual</div>
+              </div>
+            </div>
+
+            <p style="margin: 0 0 12px 0; font-size: 0.84rem; color: #475569; line-height: 1.45;">
+              Before making a single move on Thursday, always double-check these two universal rules:
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px;">
+              <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; padding: 8px 12px; font-size: 0.82rem; color: #1e40af;">
+                <strong>1. "White on Right":</strong> Look at the bottom-right corner square closest to your right hand. It <strong>MUST</strong> be a white/light square! If it's dark, rotate your board 90 degrees.
+              </div>
+              <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; padding: 8px 12px; font-size: 0.82rem; color: #1e40af;">
+                <strong>2. "Queen on Her Color":</strong> The White Queen sits on White (d1). The Black Queen sits on Black (d8). Kings sit on the square right beside them!
+              </div>
+            </div>
+
+            <div style="background: #172554; color: #bfdbfe; border-radius: 6px; padding: 10px 14px; font-size: 0.8rem; font-weight: 700; text-align: center; font-family: monospace;">
+              "White on the right, Queen on her color — every single game!"
+            </div>
+          </div>
+
+          <!-- Card 3: 3 Opening Habits -->
+          <div id="rookie-opening" style="background: #ffffff; border: 1.5px solid #fef08a; border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+              <div style="width: 38px; height: 38px; border-radius: 8px; background: #fef9c3; color: #ca8a04; display: flex; align-items: center; justify-content: center; font-size: 1.15rem; flex-shrink: 0;">
+                <i class="fa-solid fa-trophy"></i>
+              </div>
+              <div>
+                <h4 style="margin: 0; font-size: 1.1rem; color: #854d0e; font-weight: 800;">The 3 Golden Opening Habits</h4>
+                <div style="font-size: 0.75rem; color: #ca8a04; font-weight: 700; text-transform: uppercase; font-family: monospace;">First 5–8 Moves of Every Game</div>
+              </div>
+            </div>
+
+            <p style="margin: 0 0 12px 0; font-size: 0.84rem; color: #475569; line-height: 1.45;">
+              Follow these three habits in order to gain a winning start in every match:
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px;">
+              <div style="background: #fefce8; border: 1px solid #fef08a; border-radius: 6px; padding: 8px 12px; font-size: 0.82rem; color: #854d0e;">
+                <strong>1. Claim the Center:</strong> Push your center pawn forward 2 squares (e4 or d4) to control the middle battlefield.
+              </div>
+              <div style="background: #fefce8; border: 1px solid #fef08a; border-radius: 6px; padding: 8px 12px; font-size: 0.82rem; color: #854d0e;">
+                <strong>2. Develop Knights &amp; Bishops:</strong> Bring out your minor pieces toward the center before touching your Queen.
+              </div>
+              <div style="background: #fefce8; border: 1px solid #fef08a; border-radius: 6px; padding: 8px 12px; font-size: 0.82rem; color: #854d0e;">
+                <strong>3. Castle Your King:</strong> Castle within the first 6–8 moves to hide your King safely behind pawns!
+              </div>
+            </div>
+
+            <div style="background: #422006; color: #fef08a; border-radius: 6px; padding: 10px 14px; font-size: 0.8rem; font-weight: 700; text-align: center; font-family: monospace;">
+              "Center, Knights, Castle — that is how Meoncross champions start!"
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Section 3: Special Superpowers Explained -->
+      <div id="rookie-superpowers">
+        <h3 style="margin: 0 0 14px 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.35rem; color: #1c1917; font-weight: 800;">
+          ⚡ Special Chess Superpowers
+        </h3>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
+          
+          <!-- Superpower 1: Castling -->
+          <div style="background: #ffffff; border: 1.5px solid #bbf7d0; border-radius: 12px; padding: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+              <span style="font-size: 1.5rem;">🏰</span>
+              <div>
+                <h4 style="margin: 0; font-size: 1.05rem; color: #14532d; font-weight: 800;">Castling (The King &amp; Castle Dance)</h4>
+                <div style="font-size: 0.72rem; color: #16a34a; font-weight: 700; font-family: monospace;">Move TWO pieces in ONE turn!</div>
+              </div>
+            </div>
+            <p style="margin: 0 0 10px 0; font-size: 0.82rem; color: #475569; line-height: 1.45;">
+              The King moves <strong>TWO squares</strong> towards the corner Rook. The Rook leaps right over the King to sit beside him!
+            </p>
+            <div style="font-size: 0.78rem; color: #166534; background: #f0fdf4; border: 1px solid #bbf7d0; padding: 6px 10px; border-radius: 6px; line-height: 1.4;">
+              ✓ King and Rook must not have moved yet.<br>
+              ✓ Squares between them must be empty.<br>
+              ✓ King cannot castle while in check or through check!
+            </div>
+          </div>
+
+          <!-- Superpower 2: Pawn Promotion -->
+          <div style="background: #ffffff; border: 1.5px solid #fed7aa; border-radius: 12px; padding: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+              <span style="font-size: 1.5rem;">👑</span>
+              <div>
+                <h4 style="margin: 0; font-size: 1.05rem; color: #9a3412; font-weight: 800;">Pawn Promotion (Coronation)</h4>
+                <div style="font-size: 0.72rem; color: #ea580c; font-weight: 700; font-family: monospace;">Transform 1pt into 9pts!</div>
+              </div>
+            </div>
+            <p style="margin: 0 0 10px 0; font-size: 0.82rem; color: #475569; line-height: 1.45;">
+              When a brave 1-point pawn marches across the entire board and touches the 8th rank, it instantly <strong>transforms</strong> into any piece you want!
+            </p>
+            <div style="font-size: 0.78rem; color: #9a3412; background: #fff7ed; border: 1px solid #fed7aa; padding: 6px 10px; border-radius: 6px; line-height: 1.4;">
+              💡 99% of the time, choose a <strong>Queen</strong>! You can have more than one Queen on the board at the same time.
+            </div>
+          </div>
+
+          <!-- Superpower 3: En Passant -->
+          <div style="background: #ffffff; border: 1.5px solid #e9d5ff; border-radius: 12px; padding: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+              <span style="font-size: 1.5rem;">⚔</span>
+              <div>
+                <h4 style="margin: 0; font-size: 1.05rem; color: #6b21a8; font-weight: 800;">En Passant (The Sneaky Passing Catch)</h4>
+                <div style="font-size: 0.72rem; color: #9333ea; font-weight: 700; font-family: monospace;">French for "In Passing"</div>
+              </div>
+            </div>
+            <p style="margin: 0 0 10px 0; font-size: 0.82rem; color: #475569; line-height: 1.45;">
+              If an enemy pawn leaps two squares forward to land directly alongside your pawn on rank 5, you can capture it diagonally on your very next turn as if it only moved one square!
+            </p>
+            <div style="font-size: 0.78rem; color: #6b21a8; background: #faf5ff; border: 1px solid #e9d5ff; padding: 6px 10px; border-radius: 6px; line-height: 1.4;">
+              ⏳ Must be done immediately on the next move, or the superpower vanishes!
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Section 4: Dedicated Interactive Rookie Training Missions -->
+      <div id="rookie-training-board" style="border-top: 2px solid #e7e5e4; padding-top: 20px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h3 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.35rem; color: #1c1917; font-weight: 800;">
+              🎯 Rookie Training Missions: Practice on the Live Board
+            </h3>
+            <div style="font-size: 0.84rem; color: #78716c; margin-top: 2px;">
+              Practice moving the pieces! Click a mission below to load it on the interactive training board:
+            </div>
+          </div>
+          <span style="font-size: 0.78rem; font-weight: 700; color: #854d0e; background: #fef08a; border: 1px solid #fde047; padding: 3px 8px; border-radius: 4px; font-family: monospace;">
+            Movable Pieces &amp; Instant Clues
+          </span>
+        </div>
+
+        <!-- Mission Selector Quick Buttons -->
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px;">
+          ${BEGINNER_ROOKIE_PUZZLES.map((m, idx) => {
+            const isSelected =
+              chessState.puzzleCategory === 'beginner' &&
+              (chessState.currentPuzzleIdx || 0) === idx;
+            return `
+            <button type="button" onclick="window.selectRookieMission(${idx})" style="background: ${isSelected ? '#15803d' : '#ffffff'}; color: ${isSelected ? '#ffffff' : '#334155'}; border: 1.5px solid ${isSelected ? '#15803d' : '#cbd5e1'}; padding: 8px 14px; border-radius: 8px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); transition: all 0.15s ease;">
+              <span>${isSelected ? '★' : '•'}</span> ${m.title.split(':')[0]}: ${m.tag}
+            </button>
+          `;
+          }).join('')}
+        </div>
+
+        <!-- Embedded Interactive Live Board -->
+        ${renderBethHarmonCeilingBoard()}
+      </div>
+
+    </div>
+  `;
+}
 
 // 3. Pupil Self-Check-In & Attendance Management (Unified Period 6 Hub)
 function renderSignInTab(players = []) {
@@ -2437,6 +2858,17 @@ function getFilterPillStyle(isActive) {
 // Navigation Handlers
 window.switchChessTab = function (tabName) {
   chessState.activeTab = tabName;
+  if (tabName === 'beginners') {
+    chessState.puzzleCategory = 'beginner';
+    chessState.currentPuzzleIdx = 0;
+    chessState.activePuzzleBoard = null;
+    chessState.selectedSquare = null;
+    chessState.puzzleMoveStep = 0;
+    chessState.puzzleStatus = 'idle';
+    chessState.puzzleFeedback = null;
+    chessState.showBethHarmonHint = false;
+    chessState.showBethHarmonSolution = false;
+  }
   renderChessHubView();
 };
 
