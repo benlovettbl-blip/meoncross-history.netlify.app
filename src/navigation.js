@@ -546,15 +546,19 @@ function updateSidebarForUnit(unitId, unitData = {}) {
     }
     if (navIndividuals) {
       navIndividuals.style.display = 'flex';
-      navIndividuals.dataset.action = 'switch-view';
-      navIndividuals.dataset.view = 'lessons';
-      navIndividuals.dataset.unit = unitId;
+      delete navIndividuals.dataset.action;
+      delete navIndividuals.dataset.view;
+      delete navIndividuals.dataset.unit;
       navIndividuals.innerHTML =
         '<i class="fa-solid fa-medal" style="color: #f59e0b;"></i><span>Family Hero: 2nd Lt Crummack</span>';
-      navIndividuals.onclick = () => {
-        const uData =
+      navIndividuals.onclick = (e) => {
+        if (e) e.preventDefault();
+        const raw =
           state.db && state.db[unitId] ? state.db[unitId] : state.activeUnitData || unitData;
-        const idx = (uData.lessons || []).findIndex((l) => l.id === 'hero_crummack');
+        const uData = raw && raw.data ? raw.data : raw || {};
+        const lessons =
+          uData.lessons || (state.activeUnitData && state.activeUnitData.lessons) || [];
+        const idx = lessons.findIndex((l) => l.id === 'hero_crummack');
         if (idx !== -1 && typeof window.renderLessonByIndex === 'function') {
           window.renderLessonByIndex(idx);
         } else {

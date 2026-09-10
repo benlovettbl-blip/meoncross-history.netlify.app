@@ -218,16 +218,19 @@ export function renderSidebar() {
   if (appStore.state.activeUnitData.type === 'trip') {
     let prepPack = null;
     const days = [];
+    let crummackPack = null;
 
     appStore.state.activeUnitData.lessons.forEach((lesson, index) => {
       if (lesson.id === 'day_0') prepPack = { lesson, index };
       else if (lesson.id === 'day_1' || lesson.id === 'day_2' || lesson.id === 'day_3')
         days.push({ lesson, index });
+      else if (lesson.id === 'hero_crummack') crummackPack = { lesson, index };
     });
 
     if (prepPack) {
       const prepLink = document.createElement('a');
       prepLink.className = 'lesson-link';
+      prepLink.dataset.index = String(prepPack.index);
       prepLink.innerHTML =
         '<i class="fa-solid fa-suitcase-rolling" style="margin-right: 8px; color: #0284c7;"></i> Pre-Trip Information';
       prepLink.href = '#';
@@ -243,6 +246,7 @@ export function renderSidebar() {
     days.forEach((d) => {
       const dayLink = document.createElement('a');
       dayLink.className = 'lesson-link';
+      dayLink.dataset.index = String(d.index);
       dayLink.innerHTML =
         '<i class="fa-solid fa-map-location-dot" style="margin-right: 8px;"></i> ' +
         (d.lesson.title.split(':')[0] || d.lesson.title);
@@ -255,6 +259,22 @@ export function renderSidebar() {
       };
       navContainer.appendChild(dayLink);
     });
+
+    if (crummackPack) {
+      const crummackLink = document.createElement('a');
+      crummackLink.className = 'lesson-link';
+      crummackLink.dataset.index = String(crummackPack.index);
+      crummackLink.innerHTML =
+        '<i class="fa-solid fa-medal" style="margin-right: 8px; color: #d97706;"></i> 2nd Lt Crummack (Family Hero)';
+      crummackLink.href = '#';
+      crummackLink.onclick = (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.lesson-link').forEach((l) => l.classList.remove('active'));
+        crummackLink.classList.add('active');
+        window.renderLessonByIndex(crummackPack.index);
+      };
+      navContainer.appendChild(crummackLink);
+    }
   }
 
   // The Fallen / Local Heroes Sidebar Accordion (Trips only) - Removed per user request

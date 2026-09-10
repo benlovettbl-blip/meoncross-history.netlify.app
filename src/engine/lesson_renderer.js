@@ -287,6 +287,7 @@ window.renderLessonByIndex = function (index, skipHistory = false) {
         );
 
         const url = new URL(window.location);
+        url.searchParams.set('view', 'lessons');
         url.searchParams.set('lesson', index);
         if (unitId) url.searchParams.set('unit', unitId);
         window.history.pushState(
@@ -318,12 +319,17 @@ window.renderLessonByIndex = function (index, skipHistory = false) {
 
     document.querySelectorAll('.lesson-link').forEach((l) => l.classList.remove('active'));
     // Try to activate the corresponding sidebar link
-    const links = document.querySelectorAll('.lesson-link');
-    const isKS3 =
-      appStore.state.activeUnitData.title && appStore.state.activeUnitData.title.includes('KS3');
-    if (!isKS3 && links.length > index + 1) {
-      // +1 because the first link is Unit Homepage
-      links[index + 1].classList.add('active');
+    const matchLink = document.querySelector(`.lesson-link[data-index="${index}"]`);
+    if (matchLink) {
+      matchLink.classList.add('active');
+    } else {
+      const links = document.querySelectorAll('.lesson-link');
+      const isKS3 =
+        appStore.state.activeUnitData.title && appStore.state.activeUnitData.title.includes('KS3');
+      if (!isKS3 && links.length > index + 1) {
+        // +1 because the first link is Unit Homepage
+        links[index + 1].classList.add('active');
+      }
     }
 
     renderLesson(lesson);
