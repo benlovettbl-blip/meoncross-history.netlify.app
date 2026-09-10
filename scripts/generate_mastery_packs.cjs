@@ -56,8 +56,12 @@ const units = fs
         if (unitId === 'medieval_england' || unitId === 'australia' || wb.id === 'full') {
           matchingLessons = unit.lessons;
         } else {
+          const ktMatch = prefix.match(/^KT(\d+)/i);
+          const ktRegex = ktMatch ? new RegExp('^KT\\s*' + ktMatch[1], 'i') : null;
           matchingLessons = unit.lessons.filter(
-            (l) => (l.id && l.id.startsWith(prefix)) || (l.title && l.title.startsWith(prefix)),
+            (l) =>
+              (l.id && l.id.startsWith(prefix)) ||
+              (l.title && (l.title.startsWith(prefix) || (ktRegex && ktRegex.test(l.title)))),
           );
         }
 
@@ -258,29 +262,6 @@ const units = fs
         @page {
             size: A4;
             margin: 20mm;
-        }
-        @media print {
-            .page-break { page-break-after: always; }
-            body { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-            .vault-bg { background-color: #fffbc8 !important; } /* Pastel yellow for vault */
-            .screen-vault-toolbar,
-            .vault-screen-controls,
-            .leitner-modal-overlay {
-                display: none !important;
-            }
-            .answer-text {
-                background: transparent !important;
-                color: #000000 !important;
-                border: none !important;
-                padding: 0 !important;
-                min-width: 0 !important;
-                min-height: 0 !important;
-                box-shadow: none !important;
-                cursor: default !important;
-            }
-            .answer-text::after {
-                display: none !important;
-            }
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -1988,7 +1969,7 @@ const units = fs
             margin-bottom: 8px;
             font-size: 0.95rem;
             display: flex;
-            align-items: center;
+            align-items: baseline;
         }
         .answer-num {
             font-weight: bold;
@@ -1999,45 +1980,50 @@ const units = fs
         .answer-text {
             font-weight: 600;
             display: inline-block;
-            cursor: pointer;
-            user-select: none;
-            position: relative;
-            background: #e2e8f0;
-            color: transparent !important;
-            border-radius: 6px;
-            padding: 3px 12px;
-            min-height: 24px;
-            min-width: 140px;
-            box-sizing: border-box;
-            border: 1px dashed #94a3b8;
-            transition: all 0.15s ease;
+            color: #0f172a;
         }
-        .answer-text::after {
-            content: '🔒 Tap to Reveal';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.76rem;
-            font-weight: 700;
-            color: #475569;
-            letter-spacing: 0.4px;
-        }
-        .answer-text:hover {
-            background: #cbd5e1;
-        }
-        .answer-text.revealed {
-            background: #ffffff;
-            color: #0f172a !important;
-            border: 1px solid #10b981;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-        }
-        .answer-text.revealed::after {
-            display: none !important;
+        @media screen {
+            .answer-text {
+                cursor: pointer;
+                user-select: none;
+                position: relative;
+                background: #e2e8f0;
+                color: transparent !important;
+                border-radius: 6px;
+                padding: 3px 12px;
+                min-height: 24px;
+                min-width: 140px;
+                box-sizing: border-box;
+                border: 1px dashed #94a3b8;
+                transition: all 0.15s ease;
+            }
+            .answer-text::after {
+                content: '🔒 Tap to Reveal';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.76rem;
+                font-weight: 700;
+                color: #475569;
+                letter-spacing: 0.4px;
+            }
+            .answer-text:hover {
+                background: #cbd5e1;
+            }
+            .answer-text.revealed {
+                background: #ffffff;
+                color: #0f172a !important;
+                border: 1px solid #10b981;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            }
+            .answer-text.revealed::after {
+                display: none !important;
+            }
         }
 
         /* Tracker Page */
@@ -2135,6 +2121,49 @@ const units = fs
             padding: 20px;
             margin-top: 30px;
             min-height: 150px;
+        }
+
+        /* Print Optimization & Vault Answers Guarantee */
+        @media print {
+            .page-break { page-break-after: always; }
+            body { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .vault-bg { background-color: #fffbc8 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .screen-vault-toolbar,
+            .vault-screen-controls,
+            .leitner-modal-overlay {
+                display: none !important;
+            }
+            .answer-item {
+                margin-bottom: 6px !important;
+                display: flex !important;
+                align-items: baseline !important;
+                page-break-inside: avoid !important;
+            }
+            .answer-num {
+                font-weight: bold !important;
+                width: 32px !important;
+                flex-shrink: 0 !important;
+                color: #1e3a8a !important;
+            }
+            .answer-text {
+                background: transparent !important;
+                color: #000000 !important;
+                border: none !important;
+                padding: 0 !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+                box-shadow: none !important;
+                cursor: default !important;
+                display: inline !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                font-size: 0.95rem !important;
+                font-weight: 600 !important;
+            }
+            .answer-text::after {
+                display: none !important;
+                content: none !important;
+            }
         }
     </style>
 </head>

@@ -161,6 +161,17 @@ function getFileHash(filePath) {
           );
         }
 
+        // Ensure all vault answers are fully revealed/visible in exported PDFs
+        await page.evaluate(() => {
+          document.querySelectorAll('.answer-text').forEach((el) => {
+            el.classList.add('revealed');
+            el.style.color = '#000000';
+            el.style.background = 'transparent';
+            el.style.border = 'none';
+            el.style.padding = '0';
+          });
+        });
+
         let success = false;
         let retries = 3;
         while (!success && retries > 0) {
