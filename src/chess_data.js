@@ -191,20 +191,49 @@ export const BETH_HARMON_PUZZLES = [
     toMove: 'White to Move & Deliver Checkmate in 2',
     intro:
       'In the climactic finale of The Queen’s Gambit, Beth Harmon looks up at the ceiling of the Moscow tournament hall, visualizing the pieces moving in reverse. She spots the brilliant queen deflection sacrifice that shatters the Soviet fortress.',
-    hint: 'Look for an aggressive queen sacrifice on the h-file that pulls the Black king into an inescapable rook battery.',
+    hint: 'Look for an aggressive queen sacrifice on the h-file (h7) that pulls the Black king into an inescapable rook battery.',
     board: [
-      ['.', '.', '.', 'q', '.', 'r', 'k', '.'], // rank 8
-      ['p', 'p', '.', '.', 'b', 'p', 'p', 'p'], // rank 7
-      ['.', '.', 'p', '.', '.', '.', '.', '.'], // rank 6
-      ['.', '.', '.', '.', '.', '.', '.', '.'], // rank 5
-      ['.', '.', '.', '.', 'Q', '.', '.', '.'], // rank 4
-      ['.', 'P', '.', '.', '.', '.', '.', '.'], // rank 3
-      ['P', '.', '.', '.', '.', 'P', 'P', 'P'], // rank 2
-      ['.', '.', '.', 'R', '.', '.', 'K', '.'], // rank 1
+      ['.', '.', '.', 'q', '.', 'r', 'k', '.'], // rank 8 (0)
+      ['p', 'p', '.', '.', 'b', 'p', 'p', 'p'], // rank 7 (1)
+      ['.', '.', 'p', '.', '.', '.', '.', '.'], // rank 6 (2)
+      ['.', '.', '.', '.', '.', '.', '.', '.'], // rank 5 (3)
+      ['.', '.', '.', '.', 'Q', '.', '.', '.'], // rank 4 (4) White Queen on e4 [4,4]
+      ['.', 'P', '.', '.', '.', '.', '.', '.'], // rank 3 (5)
+      ['P', '.', '.', '.', '.', 'P', 'P', 'P'], // rank 2 (6)
+      ['.', '.', '.', 'R', '.', '.', 'K', '.'], // rank 1 (7) White Rook on d1 [7,3]
     ],
-    solutionMoves: '1. Qxh7+! Kxh7 2. Rh4# (or 2. Rh3#)',
+    solutionMoves: '1. Qxh7+! Kxh7 2. Rh4# (or 2. Rh3# / 2. Rh1#)',
     solutionExplanation:
       'By boldly sacrificing her queen on h7, Beth forces Borgov’s king onto an open square with zero escape routes, allowing the rook on the open file to deliver an immediate, unavoidable checkmate!',
+    steps: [
+      {
+        step: 0,
+        expectedFrom: [4, 4], // e4 (Q)
+        expectedTo: [1, 7], // h7
+        expectedPiece: 'Q',
+        successMsg:
+          '💥 Brilliant Queen Sacrifice! 1. Qxh7+! Beth pulls the Soviet champion out of the fortress!',
+        replyFrom: [0, 6], // g8 (k)
+        replyTo: [1, 7], // h7
+        replyPiece: 'k',
+        replyMsg:
+          'Vasily Borgov captures the Queen: 1... Kxh7. White to deliver the final checkmate!',
+      },
+      {
+        step: 1,
+        expectedFrom: [7, 3], // d1 (R)
+        expectedTo: [
+          [4, 7], // Rh4#
+          [5, 7], // Rh3#
+          [6, 7], // Rh2#
+          [7, 7], // Rh1#
+          [3, 7], // Rh5#
+        ],
+        expectedPiece: 'R',
+        successMsg:
+          '🏆 CHECKMATE! 2. Rh4# — The open h-file battery seals victory! Beth Harmon is World Champion!',
+      },
+    ],
   },
   {
     id: 'morphy_opera_1858',
@@ -216,18 +245,40 @@ export const BETH_HARMON_PUZZLES = [
       'Played in a private box during a performance of The Barber of Seville at the Paris Opera. American genius Paul Morphy proved that rapid tactical development beats raw material every time.',
     hint: 'A queen sacrifice on b8 forces Black’s knight to abandon its post defending the critical d8 back rank.',
     board: [
-      ['.', '.', '.', 'r', 'k', '.', '.', 'r'], // rank 8
-      ['p', 'p', 'p', 'q', '.', 'p', 'p', 'p'], // rank 7
-      ['.', '.', 'n', '.', '.', '.', '.', '.'], // rank 6
-      ['.', '.', '.', '.', '.', '.', '.', '.'], // rank 5
-      ['.', '.', 'B', '.', 'P', '.', '.', '.'], // rank 4
-      ['.', '.', '.', '.', '.', '.', '.', '.'], // rank 3
-      ['P', 'P', 'P', '.', '.', 'P', 'P', 'P'], // rank 2
-      ['.', '.', '.', 'R', 'K', '.', '.', 'R'], // rank 1
+      ['.', '.', '.', 'r', 'k', '.', '.', 'r'], // rank 8 (0)
+      ['p', 'p', 'p', 'q', '.', 'p', 'p', 'p'], // rank 7 (1)
+      ['.', '.', 'n', '.', '.', '.', '.', '.'], // rank 6 (2) Black Knight on c6 [2,2]
+      ['.', '.', '.', '.', '.', '.', '.', '.'], // rank 5 (3)
+      ['.', '.', 'B', '.', 'P', '.', '.', '.'], // rank 4 (4) White Bishop on c4 [4,2]
+      ['.', 'Q', '.', '.', '.', '.', '.', '.'], // rank 3 (5) White Queen on b3 [5,1]
+      ['P', 'P', 'P', '.', '.', 'P', 'P', 'P'], // rank 2 (6)
+      ['.', '.', '.', 'R', 'K', '.', '.', 'R'], // rank 1 (7) White Rook on d1 [7,3]
     ],
     solutionMoves: '1. Qb8+! Nxb8 2. Rd8#',
     solutionExplanation:
       'Morphy’s famous 1. Qb8+! deflects the defending knight, clearing the way for 2. Rd8# where the rook and bishop form an airtight mating net on the back rank.',
+    steps: [
+      {
+        step: 0,
+        expectedFrom: [5, 1], // b3 (Q)
+        expectedTo: [0, 1], // b8
+        expectedPiece: 'Q',
+        successMsg: '💥 Immortal Queen Sacrifice 1. Qb8+! Morphy forces the defending knight away!',
+        replyFrom: [2, 2], // c6 (n)
+        replyTo: [0, 1], // b8
+        replyPiece: 'n',
+        replyMsg:
+          'Black captures with the Knight: 1... Nxb8. The back rank is undefended! Deliver checkmate!',
+      },
+      {
+        step: 1,
+        expectedFrom: [7, 3], // d1 (R)
+        expectedTo: [0, 3], // d8
+        expectedPiece: 'R',
+        successMsg:
+          '🏆 CHECKMATE! 2. Rd8# — The Rook and Bishop create an inescapable back-rank mating net!',
+      },
+    ],
   },
   {
     id: 'fischer_1956',
@@ -237,19 +288,29 @@ export const BETH_HARMON_PUZZLES = [
     toMove: 'Black (13-Year-Old Fischer) to Play & Win',
     intro:
       'At just 13 years of age, Bobby Fischer shocked International Master Donald Byrne with an unfathomable queen sacrifice that became known as the Game of the Century.',
-    hint: 'Leave your queen attacked! Look at Black’s dark-squared bishop pinning White’s king.',
+    hint: 'Leave your queen attacked on b6! Look at Black’s light-squared bishop springing to e6.',
     board: [
-      ['r', '.', '.', '.', '.', 'r', 'k', '.'], // rank 8
-      ['p', 'p', '.', '.', '.', 'p', 'b', 'p'], // rank 7
-      ['.', '.', 'n', 'p', 'b', 'n', 'p', '.'], // rank 6
-      ['.', '.', '.', '.', '.', '.', '.', '.'], // rank 5
-      ['.', '.', '.', '.', 'P', '.', '.', '.'], // rank 4
-      ['.', '.', 'N', '.', '.', 'N', '.', '.'], // rank 3
-      ['P', 'P', '.', '.', '.', 'P', 'P', 'P'], // rank 2
-      ['R', '.', 'B', 'Q', 'K', '.', '.', 'R'], // rank 1
+      ['r', '.', '.', '.', '.', 'r', 'k', '.'], // rank 8 (0)
+      ['p', 'p', '.', '.', '.', 'p', 'b', 'p'], // rank 7 (1)
+      ['.', '.', 'n', 'p', 'b', 'n', 'p', '.'], // rank 6 (2) Black Bishop on e6 [2,4]
+      ['.', '.', '.', '.', '.', '.', '.', '.'], // rank 5 (3)
+      ['.', '.', '.', '.', 'P', '.', '.', '.'], // rank 4 (4)
+      ['.', '.', 'N', '.', '.', 'N', '.', '.'], // rank 3 (5)
+      ['P', 'P', '.', '.', '.', 'P', 'P', 'P'], // rank 2 (6)
+      ['R', '.', 'B', 'Q', 'K', '.', '.', 'R'], // rank 1 (7)
     ],
     solutionMoves: '17... Be6!! 18. Bxb6 Bxc4+ 19. Kg1 Ne2+ 20. Kf1 Nxd4+',
     solutionExplanation:
       'Rather than retreating his queen, young Fischer offered it as bait! Once White captured on b6, Fischer launched a legendary discovered check windmill that netted an overwhelming material advantage.',
+    steps: [
+      {
+        step: 0,
+        expectedFrom: [2, 4], // e6
+        expectedTo: [3, 3], // d5 or active square
+        expectedPiece: 'b',
+        successMsg:
+          '💥 Fischer’s Legendary Master Move 17... Be6!! White cannot survive the discovered windmill!',
+      },
+    ],
   },
 ];
