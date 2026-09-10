@@ -12,6 +12,55 @@ import {
 } from './chess_data.js';
 
 const STORAGE_KEY = 'meoncross_chess_club_v5';
+const BACKUP_KEY = 'meoncross_chess_backup_snapshot';
+
+// Pupil Name Auto-Sanitiser: Guarantees "First Name + Last Initial" format (e.g. Leo B.)
+export function sanitizePupilName(rawName) {
+  if (!rawName || typeof rawName !== 'string') return '';
+  const trimmed = rawName.trim().replace(/\s+/g, ' ');
+  if (!trimmed) return '';
+
+  const parts = trimmed.split(' ');
+  const formatWord = (w) => {
+    if (!w) return '';
+    return w
+      .split('-')
+      .map((part) => part.charAt(0).toUpperCase() + part.slice(1).toLowerCase())
+      .join('-');
+  };
+
+  if (parts.length === 1) {
+    return formatWord(parts[0]);
+  }
+
+  const firstName = formatWord(parts[0]);
+  const lastPart = parts[parts.length - 1];
+
+  // If last part is already an initial like "B" or "B."
+  if (/^[A-Za-z]\.?$/.test(lastPart)) {
+    return `${firstName} ${lastPart.charAt(0).toUpperCase()}.`;
+  }
+
+  // Full surname: convert to initial with dot (e.g. "Bartholomew" -> "B.")
+  const surnameInitial = lastPart.charAt(0).toUpperCase();
+  return `${firstName} ${surnameInitial}.`;
+}
+if (typeof window !== 'undefined') {
+  window.sanitizePupilName = sanitizePupilName;
+}
+
+// Helper: Inspect emergency recovery backup
+function getBackupInfo() {
+  try {
+    const raw = localStorage.getItem(BACKUP_KEY);
+    if (!raw) return null;
+    const data = JSON.parse(raw);
+    if (data && data.playerCount !== undefined) return data;
+    return null;
+  } catch (e) {
+    return null;
+  }
+}
 
 // Clear legacy dummy cache if present
 try {
@@ -279,9 +328,24 @@ export function renderChessHubView() {
               <button onclick="window.openBoardQRStandsModal()" style="background: rgba(255, 255, 255, 0.1); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.25); font-weight: 600; font-size: 0.8rem; padding: 6px 12px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
                 <i class="fa-solid fa-qrcode" style="color: #38bdf8;"></i> Board QR Stands
               </button>
-              <button onclick="window.resetClubDataToCleanSlate()" style="background: rgba(239, 68, 68, 0.15); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); font-weight: 600; font-size: 0.78rem; padding: 6px 10px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;" title="Reset all pupils and points">
-                <i class="fa-solid fa-rotate-left"></i> Reset Slate
-              </button>
+              ${
+                chessState.players.length === 0 && getBackupInfo()
+                  ? `
+                <button onclick="window.restoreChessBackup()" style="background: rgba(59, 130, 246, 0.25); color: #93c5fd; border: 1.5px solid rgba(59, 130, 246, 0.6); font-weight: 700; font-size: 0.78rem; padding: 6px 12px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;" title="Undo reset & restore previous cohort">
+                  <i class="fa-solid fa-arrow-rotate-left"></i> Restore Cohort (${getBackupInfo().playerCount})
+                </button>
+              `
+                  : ''
+              }
+              ${
+                chessState.players.length > 0
+                  ? `
+                <button onclick="window.resetClubDataToCleanSlate()" style="background: rgba(239, 68, 68, 0.15); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); font-weight: 600; font-size: 0.78rem; padding: 6px 10px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;" title="Reset all pupils and points (Emergency backup preserved)">
+                  <i class="fa-solid fa-rotate-left"></i> Reset Slate
+                </button>
+              `
+                  : ''
+              }
             </div>
           </div>
         </div>
@@ -463,6 +527,7 @@ function renderActiveTabContent(filteredPlayers) {
 
 // 1. Master Ladder View (King of the Hill)
 function renderLadderTab(players) {
+  const backupInfo = getBackupInfo();
   if (players.length === 0) {
     return `
       <div style="background: #ffffff; border: 2px dashed #cbd5e1; border-radius: 12px; padding: 48px 24px; text-align: center; color: #64748b;">
@@ -475,9 +540,29 @@ function renderLadderTab(players) {
         <p style="margin: 0 auto 20px; max-width: 480px; font-size: 0.92rem; color: #64748b; line-height: 1.5;">
           No pupils are currently on the ladder. Sign in arriving pupils in the <strong>Pupil Sign-In</strong> tab to build your club ladder from scratch!
         </p>
-        <button onclick="window.switchChessTab('signin')" style="background: #10b981; color: #ffffff; border: none; font-weight: 700; font-size: 0.9rem; padding: 10px 20px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);">
-          <i class="fa-solid fa-clipboard-user"></i> Go to Pupil Sign-In
-        </button>
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+          <button onclick="window.switchChessTab('signin')" style="background: #10b981; color: #ffffff; border: none; font-weight: 700; font-size: 0.9rem; padding: 10px 20px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);">
+            <i class="fa-solid fa-clipboard-user"></i> Go to Pupil Sign-In
+          </button>
+          ${
+            backupInfo
+              ? `
+            <button onclick="window.restoreChessBackup()" style="background: #ffffff; color: #1e40af; border: 1.5px solid #bfdbfe; font-weight: 700; font-size: 0.9rem; padding: 10px 18px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-arrow-rotate-left"></i> Restore Previous Cohort (${backupInfo.playerCount})
+            </button>
+          `
+              : ''
+          }
+        </div>
+        ${
+          backupInfo
+            ? `
+          <div style="margin-top: 20px; font-size: 0.8rem; color: #64748b;">
+            <i class="fa-solid fa-shield-halved" style="color: #6366f1;"></i> Accidentally clicked Reset Slate? An emergency backup from <strong>${backupInfo.dateStr}</strong> (${backupInfo.playerCount} pupils, ${backupInfo.matchCount} games) is safely preserved.
+          </div>
+        `
+            : ''
+        }
       </div>
     `;
   }
@@ -704,11 +789,17 @@ function renderSignInTab() {
           ${
             chessState.players.length > 0
               ? `
-            <button onclick="window.resetClubDataToCleanSlate()" style="background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; padding: 8px 14px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Reset all pupils and points">
+            <button onclick="window.resetClubDataToCleanSlate()" style="background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; padding: 8px 14px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Reset all pupils and points (Emergency backup preserved)">
               <i class="fa-solid fa-trash-can"></i> Clear All Data
             </button>
           `
-              : ''
+              : getBackupInfo()
+                ? `
+            <button onclick="window.restoreChessBackup()" style="background: #eff6ff; color: #1e40af; border: 1.5px solid #bfdbfe; padding: 8px 14px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Undo reset & restore previous cohort">
+              <i class="fa-solid fa-arrow-rotate-left"></i> Restore Previous Cohort (${getBackupInfo().playerCount})
+            </button>
+          `
+                : ''
           }
         </div>
       </div>
@@ -729,7 +820,11 @@ function renderSignInTab() {
           <form id="chess-self-reg-form" onsubmit="event.preventDefault(); window.handleSelfRegister(event); return false;">
             <div style="margin-bottom: 12px;">
               <label for="reg-name" style="display: block; font-size: 0.8rem; font-weight: 700; color: #334155; margin-bottom: 5px;">Pupil Full Name:</label>
-              <input type="text" id="reg-name" required placeholder="e.g. Samuel K. or Emily T." style="width: 100%; box-sizing: border-box; padding: 10px 12px; border-radius: 8px; border: 1.5px solid #cbd5e1; font-size: 0.95rem; font-family: inherit; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='#10b981'" onblur="this.style.borderColor='#cbd5e1'">
+              <input type="text" id="reg-name" required placeholder="e.g. Leo B. or Emily T." style="width: 100%; box-sizing: border-box; padding: 10px 12px; border-radius: 8px; border: 1.5px solid #cbd5e1; font-size: 0.95rem; font-family: inherit; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='#10b981'" onblur="this.style.borderColor='#cbd5e1'; if(this.value && window.sanitizePupilName) this.value = window.sanitizePupilName(this.value);">
+              <div style="font-size: 0.74rem; color: #64748b; margin-top: 5px; display: flex; align-items: center; gap: 5px; line-height: 1.3;">
+                <i class="fa-solid fa-shield-halved" style="color: #6366f1;"></i>
+                <span><strong>School Privacy:</strong> Please use <strong>First Name + Last Initial</strong> (e.g. <em>Leo B.</em>). Full surnames are auto-sanitised.</span>
+              </div>
             </div>
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
@@ -1377,14 +1472,68 @@ window.removePlayer = function (id) {
 };
 
 window.resetClubDataToCleanSlate = function () {
-  if (
-    confirm(
-      'Are you sure you want to reset all chess club data? This will clear all pupils, match history, and House points to start completely from scratch.',
-    )
-  ) {
+  const count = chessState.players.length;
+  const matchCount = chessState.matches.length;
+
+  const msg =
+    count > 0
+      ? `⚠️ RESET CHESS CLUB SLATE\n\nAre you sure you want to clear the active cohort for the new term/year?\n\n• ${count} pupils on ladder\n• ${matchCount} match records\n• House championship points\n\n🛡️ SAFETY NET: An emergency backup snapshot will be automatically preserved. You can undo or restore this cohort at any time if clicked by accident.`
+      : 'Are you sure you want to reset the club to a clean slate?';
+
+  if (confirm(msg)) {
+    if (count > 0 || matchCount > 0) {
+      try {
+        const backup = {
+          timestamp: Date.now(),
+          dateStr: new Date().toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'short',
+            year: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+          }),
+          playerCount: count,
+          matchCount: matchCount,
+          state: JSON.parse(JSON.stringify(chessState)),
+        };
+        localStorage.setItem(BACKUP_KEY, JSON.stringify(backup));
+      } catch (err) {
+        console.error('Failed to create emergency backup:', err);
+      }
+    }
     initChessState(true);
-    showChessToast('Club reset to clean slate!', 'warning');
     renderChessHubView();
+    showChessToast('Club reset to clean slate. Safety backup created!', 'warning');
+  }
+};
+
+window.restoreChessBackup = function () {
+  try {
+    const raw = localStorage.getItem(BACKUP_KEY);
+    if (!raw) {
+      showChessToast('No previous backup found to restore.', 'warning');
+      return;
+    }
+    const backup = JSON.parse(raw);
+    if (!backup.state || !Array.isArray(backup.state.players)) {
+      showChessToast('Backup archive is invalid or corrupted.', 'error');
+      return;
+    }
+    chessState.players = Array.isArray(backup.state.players) ? backup.state.players : [];
+    chessState.matches = Array.isArray(backup.state.matches) ? backup.state.matches : [];
+    chessState.checkedInPlayerIds = Array.isArray(backup.state.checkedInPlayerIds)
+      ? backup.state.checkedInPlayerIds
+      : [];
+    chessState.knockoutBracket = backup.state.knockoutBracket || null;
+    saveChessState();
+    renderChessHubView();
+    showChessToast(
+      `🎉 Restored previous cohort: ${backup.playerCount} pupils & ${backup.matchCount} games from ${backup.dateStr}!`,
+      'success',
+    );
+  } catch (err) {
+    console.error('Failed to restore chess backup:', err);
+    showChessToast('Error restoring previous cohort.', 'error');
   }
 };
 
@@ -1392,7 +1541,9 @@ window.handleSelfRegister = function (e) {
   if (e && e.preventDefault) e.preventDefault();
   const nameInput = document.getElementById('reg-name');
   if (!nameInput) return false;
-  const name = nameInput.value.trim();
+  const rawName = nameInput.value.trim();
+  const name = sanitizePupilName(rawName);
+  nameInput.value = name;
   const year = parseInt(document.getElementById('reg-year')?.value || '8', 10);
   const house = document.getElementById('reg-house')?.value || 'warrior';
 
@@ -2195,7 +2346,11 @@ window.openAddPlayerModal = function () {
         <form onsubmit="window.handleAddPlayerSubmit(event)">
           <div style="margin-bottom: 14px;">
             <label style="display: block; font-weight: 700; font-size: 0.85rem; color: #334155; margin-bottom: 5px;">Pupil Full Name:</label>
-            <input type="text" id="new-player-name" required placeholder="e.g. Leo B." style="width: 100%; padding: 10px; border-radius: 6px; border: 1.5px solid #cbd5e1; font-size: 0.95rem;">
+            <input type="text" id="new-player-name" required placeholder="e.g. Leo B." style="width: 100%; padding: 10px; border-radius: 6px; border: 1.5px solid #cbd5e1; font-size: 0.95rem;" onblur="if(this.value && window.sanitizePupilName) this.value = window.sanitizePupilName(this.value);">
+            <div style="font-size: 0.74rem; color: #64748b; margin-top: 5px; display: flex; align-items: center; gap: 5px; line-height: 1.3;">
+              <i class="fa-solid fa-shield-halved" style="color: #6366f1;"></i>
+              <span><strong>School Privacy:</strong> Please use <strong>First Name + Last Initial</strong> (e.g. <em>Leo B.</em>). Full surnames are auto-sanitised.</span>
+            </div>
           </div>
 
           <div style="margin-bottom: 14px;">
@@ -2232,7 +2387,8 @@ window.openAddPlayerModal = function () {
 
 window.handleAddPlayerSubmit = function (e) {
   if (e && e.preventDefault) e.preventDefault();
-  const name = document.getElementById('new-player-name')?.value.trim();
+  const rawName = document.getElementById('new-player-name')?.value.trim();
+  const name = sanitizePupilName(rawName);
   const year = parseInt(document.getElementById('new-player-year')?.value, 10);
   const house = document.getElementById('new-player-house')?.value;
 
