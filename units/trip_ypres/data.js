@@ -297,6 +297,10 @@ export const unitData = {
                   <small style="display: block; margin-top: 4px; font-weight: 700; color: #78350f;">2nd Lt William Lowry (25)</small>
                 </div>
                 <div style="flex: 1; min-width: 140px; text-align: center; background: white; padding: 8px; border-radius: 6px; border: 1px solid #fde047;">
+                  <img src="/images/lowry_cyril.png" alt="Capt Cyril Lowry" style="max-width: 100%; height: 110px; object-fit: cover; border-radius: 4px; cursor: zoom-in;" data-action="open-modal" data-src="/images/lowry_cyril.png">
+                  <small style="display: block; margin-top: 4px; font-weight: 700; color: #78350f;">Capt Cyril Lowry (20)</small>
+                </div>
+                <div style="flex: 1; min-width: 140px; text-align: center; background: white; padding: 8px; border-radius: 6px; border: 1px solid #fde047;">
                   <img src="/images/lowry_auriol.png" alt="Lt Col Eric Lowry" style="max-width: 100%; height: 110px; object-fit: cover; border-radius: 4px; cursor: zoom-in;" data-action="open-modal" data-src="/images/lowry_auriol.png">
                   <small style="display: block; margin-top: 4px; font-weight: 700; color: #78350f;">Lt Col Eric Lowry, DSO, MC (25)</small>
                 </div>
