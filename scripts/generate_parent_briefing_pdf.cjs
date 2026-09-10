@@ -710,7 +710,7 @@ function getHtmlContent() {
           <strong>Expedition Base:</strong> Peace Village Hostel, Nieuwkerkestraat 9aB, 8957 Mesen, Belgium (Tel: +32 57 226 040 · Email: info@peacevillage.be). A purpose-built, secure rural educational centre set in the Flemish countryside at Messines, featuring modern ensuite studios (typically 4 to 7 pupils per room with bunk beds), secure keycard access, and dedicated dining and recreational spaces.
         </p>
         <p>
-          <strong>Accommodation FAQs &amp; Facilities:</strong> Parents can view studio layouts, amenities, and visitor FAQs directly on the hostel website at <a href="https://peacevillage.be/en/faqs" target="_blank" style="color: #1e3a8a; font-weight: 700; text-decoration: underline;">www.peacevillage.be/en/faqs</a>.
+          <strong>Accommodation FAQs &amp; Facilities:</strong> Parents can view studio layouts, amenities, and visitor FAQs directly on the hostel website at <a href="https://peacevillage.be/en/practical/faq" target="_blank" style="color: #1e3a8a; font-weight: 700; text-decoration: underline;">peacevillage.be/en/practical/faq</a>.
         </p>
         <p>
           <strong>Rooming Process &amp; Dietary Options:</strong> In approximately <strong>two weeks' time</strong>, Mr Lovett will assemble rooming allocations in school. Pupils will be asked to nominate friends they would like to share with (ensuring every pupil is happily paired). <strong>When this rooming information is sent out, Mr Lovett will also ask parents to confirm any specific dietary requirements (e.g. vegetarian options; note that the school already holds existing medical allergy records).</strong> Staff sleep on the same corridors with active evening checks and a strict curfew.

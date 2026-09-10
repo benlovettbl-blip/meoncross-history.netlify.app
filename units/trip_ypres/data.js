@@ -17,7 +17,7 @@ export const unitData = {
     hotel: 'Peace Village Hostel, Nieuwkerkestraat 9aB, 8957 Mesen, Belgium',
     hotel_phone: '+32 57 226 040',
     hotel_email: 'info@peacevillage.be',
-    hotel_faq_url: 'https://peacevillage.be/en/faqs',
+    hotel_faq_url: 'https://peacevillage.be/en/practical/faq',
     coach: 'Jet Connect Executive Travel',
     live_album_url: 'https://photos.app.goo.gl/placeholder',
   },
@@ -369,7 +369,7 @@ export const unitData = {
             <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 24px; box-shadow: 0 2px 4px rgba(0,0,0,0.04);">
               <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 8px;">
                 <h4 style="margin: 0; color: #1e3a8a; font-size: 1.05rem;"><i class="fa-solid fa-hotel"></i> Peace Village Hostel &amp; Supervision</h4>
-                <a href="https://peacevillage.be/en/faqs" target="_blank" class="btn" style="background: #eff6ff; color: #1e3a8a; border: 1.5px solid #bfdbfe; padding: 5px 12px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
+                <a href="https://peacevillage.be/en/practical/faq" target="_blank" class="btn" style="background: #eff6ff; color: #1e3a8a; border: 1.5px solid #bfdbfe; padding: 5px 12px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
                   <i class="fa-solid fa-circle-question" style="color: #2563eb;"></i> View Hostel FAQs &amp; Facilities
                 </a>
               </div>

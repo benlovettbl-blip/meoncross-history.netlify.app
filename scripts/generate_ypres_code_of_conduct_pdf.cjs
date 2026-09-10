@@ -395,7 +395,7 @@ async function generatePDF() {
           </div>
           <div class="rule-item highlight-allergy">
             <div class="rule-num">12</div>
-            <div><strong>Do not purchase or consume any product containing nuts, sesame, or sesame seeds.</strong> (Nut &amp; Sesame-Safe Policy)</div>
+            <div><strong>Do not purchase or consume any product containing nuts or sesame.</strong> (Nut &amp; Sesame Policy)</div>
           </div>
           <div class="rule-item highlight-enjoy">
             <div class="rule-num">13</div>

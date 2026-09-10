@@ -325,7 +325,7 @@ function getHtml() {
           <li><strong>Spending Money:</strong> <strong>€30 to €40 in cash (Euros)</strong> for supermarket lunches and chocolate gifts.</li>
           <li><strong>Passports &amp; GHIC:</strong> Collect tonight (valid UK passports &gt;3 months validity + GHIC/EHIC cards). European 2-pin adapter for charging phones.</li>
           <li><strong>Mobile Phone Policy:</strong> Allowed by day for photos and app. <strong>Collected every night in staff phone bag at curfew</strong> to ensure proper rest.</li>
-          <li><strong>Accommodation &amp; FAQ:</strong> Peace Village Hostel, <strong>Nieuwkerkestraat 9aB, 8957 Mesen</strong> (+32 57 226 040). Mention website FAQ link (<span style="color:#1e3a8a; font-weight:700;">peacevillage.be/en/faqs</span>).</li>
+          <li><strong>Accommodation &amp; FAQ:</strong> Peace Village Hostel, <strong>Nieuwkerkestraat 9aB, 8957 Mesen</strong> (+32 57 226 040). Mention website FAQ link (<span style="color:#1e3a8a; font-weight:700;">peacevillage.be/en/practical/faq</span>).</li>
           <li><strong>Rooming &amp; Dietaries:</strong> Friend pairing forms and dietary requirements (e.g. vegetarian evening meals) in ~2 weeks.</li>
         </ul>
       </div>
