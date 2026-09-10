@@ -792,4 +792,56 @@ Ah, better that than what was said!`,
       ],
     },
   ],
+  special_studies: [
+    {
+      site_id: 'thiepval_wood_crummack',
+      site_name: 'Thiepval Wood & Mill Road (Somme 1916 · The Crummack Rescue)',
+      stop_time: 'Expedition Special Case Study',
+      poems: [
+        {
+          id: 'sassoon_elegy_mg',
+          title: 'Elegy: for M.G. (Marcus Goodall)',
+          year: 'July 1916',
+          poet: {
+            name: '2nd Lieutenant Siegfried Sassoon, MC',
+            role: '1st Battalion, Royal Welch Fusiliers',
+            lifespan: '1886–1967',
+            portrait: '/images/siegfried_sassoon.jpg',
+          },
+          bio: "Born in Kent and educated at Marlborough and Cambridge, Siegfried Sassoon was one of the foremost British poets of the First World War. Known as 'Mad Jack' for his reckless courage in the trenches, he won the Military Cross on the Somme in June 1916. While serving nearby with the 1st Battalion Royal Welch Fusiliers, Sassoon was devastated to learn that his beloved companion, 2nd Lieutenant Marcus Herbert Goodall, had fallen mortally wounded along Mill Road at Thiepval Wood on 3 July 1916. Goodall was rescued from No Man's Land under intense machine-gun fire by Sergeant Ernest Crummack (earning the DCM). In his pocket trench notebook, Sassoon poured out his raw grief in this heartbreaking elegy.",
+          poem_text: `Was it for English morning, spilled & glowing,
+Across gray hummock'd fields, dim cattle showing,
+Was it for this I longed? — the glittering brass
+Of rays low on brown roofs & steaming grass, —
+A garden spiked with blue & splashed with white,
+Yellow and red and all the eye's delight; —
+Was it for these I longed, while you were dead,
+Your mirth destroyed and from your lolling head
+The racing thoughts gone out like smoke on air,
+Thinning & whirling & subsiding, — where?
+
+Sad victim, could you see your body thrown
+Into a shallow pit along that wood
+Thronged by the dead? O, there you lie not lone,
+Under the splinter'd trees; for the brotherhood
+Of discontented slain, with eyes that scowl,
+And bristly cheeks & chins all bloody-smears,
+Will hug their rank red wounds & limp & prowl,
+Squatting around your grave with moans & tears.
+
+But soon, I hope a monster shell will burst,
+And all such filth be blotted & dispersed:
+You'll no more need to cling to the dead clay,
+Dancing through fields of heaven to meet the day,
+Slow-rising, saintless, jocular and kind,
+Dear, red-faced Father God who lit your mind.`,
+          teacher_commentary: `Contrast the two halves of Sassoon's verse: the luminous, nostalgic memory of an English summer morning against the grim reality of Marcus Goodall lying in a shallow grave under the splintered trees of Thiepval Wood. Point out that grandfather Edward Pearson's research linked this poem directly to Sergeant Ernest Crummack: it was Crummack's heroic crawl across Mill Road that pulled Goodall back into British lines to be cared for rather than abandoned in No Man's Land.`,
+          pedagogical_rationale: {
+            context: `Composed in Sassoon's pocket trench notebook (Cambridge University Library MS Add.9852/1/7) in July 1916, this elegy shows the private grief behind Great War poetry. By juxtaposing Sassoon's verse with Sergeant Crummack's physical rescue, pupils understand how comradeship and frontline courage provided a moral counterweight to the mechanized slaughter of the Somme.`,
+            hinge_question: `Why does Sassoon describe the fallen soldiers in Thiepval Wood as a 'brotherhood of discontented slain', and what does this reveal about his state of mind in July 1916?`,
+          },
+        },
+      ],
+    },
+  ],
 };

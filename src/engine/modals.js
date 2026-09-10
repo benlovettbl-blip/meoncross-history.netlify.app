@@ -730,6 +730,14 @@ window.openAnthologyModal = async function () {
     { title: 'Day 1: Thursday 1st October 2026', stops: dossiers.day_1 || [] },
     { title: 'Day 2: Friday 2nd October 2026', stops: dossiers.day_2 || [] },
     { title: 'Day 3: Saturday 3rd October 2026', stops: dossiers.day_3 || [] },
+    ...(dossiers.special_studies && dossiers.special_studies.length > 0
+      ? [
+          {
+            title: 'Expedition Special Case Study: The Somme & Thiepval Wood',
+            stops: dossiers.special_studies,
+          },
+        ]
+      : []),
   ];
 
   let bodyHtml = '';
