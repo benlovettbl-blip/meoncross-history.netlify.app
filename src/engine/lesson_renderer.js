@@ -1104,8 +1104,8 @@ export function renderLesson(lesson) {
     const vocabTermsList = lesson.vocab.map((v) => (v.term || '').trim()).filter(Boolean);
 
     const wbDrillBtnHtml = `
-      <button type="button" class="btn btn-secondary" data-action="open-vocab-whiteboard" style="font-size: 0.82rem; padding: 4px 10px; background: #eff6ff; color: #1e40af; border: 1.5px solid #bfdbfe; border-radius: 6px; cursor: pointer; font-weight: 600; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;" title="Project this vocabulary challenge on the classroom whiteboard">
-        <i class="fa-solid fa-chalkboard-user"></i> Whiteboard Drill
+      <button type="button" class="btn btn-secondary" data-action="open-vocab-whiteboard" style="font-size: 0.82rem; padding: 4px 10px; background: #eff6ff; color: #1e40af; border: 1.5px solid #bfdbfe; border-radius: 6px; cursor: pointer; font-weight: 600; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;" title="Project this vocabulary challenge on the classroom smartboard">
+        <i class="fa-solid fa-chalkboard-user"></i> Starter Drill
       </button>
     `;
 

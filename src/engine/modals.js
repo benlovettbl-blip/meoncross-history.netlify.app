@@ -90,8 +90,8 @@ export function openTaskWhiteboard() {
           </p>
         </div>
         <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
-          <button class="btn" data-action="open-vocab-whiteboard" id="wb-launch-mwb-btn" style="padding: 8px 16px; font-size: 0.9rem; font-weight: 700; cursor: pointer; background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%); color: white; border: 1.5px solid #818cf8; border-radius: 6px; box-shadow: 0 2px 6px rgba(79, 70, 229, 0.3); display: inline-flex; align-items: center; gap: 7px; transition: all 0.2s ease;" title="Launch Fullscreen Mini-Whiteboard Drill for smartboard projection">
-            <i class="fa-solid fa-chalkboard-user"></i> Mini-Whiteboard Prompt Overlay
+          <button class="btn" data-action="open-vocab-whiteboard" id="wb-launch-mwb-btn" style="padding: 8px 16px; font-size: 0.9rem; font-weight: 700; cursor: pointer; background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%); color: white; border: 1.5px solid #818cf8; border-radius: 6px; box-shadow: 0 2px 6px rgba(79, 70, 229, 0.3); display: inline-flex; align-items: center; gap: 7px; transition: all 0.2s ease;" title="Launch Fullscreen Starter Drill for smartboard projection">
+            <i class="fa-solid fa-chalkboard-user"></i> Starter Prompt Overlay
           </button>
           <button class="btn" data-action="reveal-all-wb-answers" id="wb-reveal-all-btn" style="padding: 8px 16px; font-size: 0.9rem; font-weight: 600; cursor: pointer; background: #0284c7; color: white; border: none; border-radius: 6px; box-shadow: 0 2px 4px rgba(2, 132, 199, 0.25); display: inline-flex; align-items: center; gap: 7px; transition: all 0.2s ease;">
             <i class="fa-solid fa-eye"></i> Reveal All Answers <span style="background: rgba(255,255,255,0.25); padding: 1px 6px; border-radius: 4px; font-size: 0.75rem; font-family: monospace;">A</span>
@@ -176,12 +176,12 @@ export function openTaskWhiteboard() {
       const errStmt =
         activeLesson.vocab_deliberate_error ||
         `A historical commentator claimed that ${termsList[0] || 'key concepts'} had zero effect on the outcome of this era.`;
-      challengePrompt = `Identify the misconception in this historical statement: <em style="color:#b91c1c;">"${errStmt}"</em>. Write the accurate historical correction on your board!<br><div style="margin-top:6px;"><strong>Word Bank:</strong> ${termsBadges}</div>`;
+      challengePrompt = `Identify the misconception in this historical statement: <em style="color:#b91c1c;">"${errStmt}"</em>. Write the accurate historical correction in your workbook!<br><div style="margin-top:6px;"><strong>Word Bank:</strong> ${termsBadges}</div>`;
       modelAnswer = `<strong>Historical Correction:</strong> The claim is historically false. Pupils should contrast this misconception with specific factual evidence from the lesson narrative.`;
     }
 
     addQuestionCard(
-      'Mini-Whiteboard Starter',
+      'Vocabulary Starter',
       `<strong>[${challengeTitle}]</strong> ${challengePrompt}`,
       modelAnswer,
     );
@@ -315,10 +315,10 @@ export function openTaskWhiteboard() {
     );
   }
 
-  // Sort cards: Mini-Whiteboard Starter first, then Do Now, then numerically by assigned qNum, then unnumbered
+  // Sort cards: Vocabulary Starter first, then Do Now, then numerically by assigned qNum, then unnumbered
   cards.sort((a, b) => {
-    if (a.qNum === 'Mini-Whiteboard Starter') return -1;
-    if (b.qNum === 'Mini-Whiteboard Starter') return 1;
+    if (a.qNum === 'Vocabulary Starter') return -1;
+    if (b.qNum === 'Vocabulary Starter') return 1;
     if (a.qNum === 'Do Now') return -1;
     if (b.qNum === 'Do Now') return 1;
     if (typeof a.qNum === 'number' && typeof b.qNum === 'number') return a.qNum - b.qNum;
@@ -334,8 +334,8 @@ export function openTaskWhiteboard() {
     const prefix =
       typeof qNum === 'number'
         ? `Q${qNum}. `
-        : qNum === 'Mini-Whiteboard Starter'
-          ? '<strong>[Mini-Whiteboard Starter]</strong> '
+        : qNum === 'Vocabulary Starter'
+          ? '<strong>[Vocabulary Starter]</strong> '
           : qNum === 'Do Now'
             ? '<strong>[Do Now]</strong> '
             : qNum === 'Hinge Question'
@@ -422,7 +422,7 @@ export function openVocabWhiteboardModal(customLesson) {
         Select <strong style="color: #60a5fa;">THREE</strong> terms from the word bank that share a close historical link. Identify which <strong style="color: #f87171;">ONE</strong> term is the <em>Odd One Out</em>.
       </div>
       <div style="font-size: 1.25rem; color: #94a3b8; margin-top: 12px; font-style: italic;">
-        Write your chosen word and a rigorous historical justification on your mini-whiteboard!
+        Write your chosen word and a rigorous historical justification in your workbook!
       </div>
     `;
     modelAnswerHtml = `
@@ -438,7 +438,7 @@ export function openVocabWhiteboardModal(customLesson) {
     challengeTitle = 'THE GOLDEN SENTENCE';
     challengePromptHtml = `
       <div style="font-size: 1.5rem; line-height: 1.6; color: #f8fafc; font-weight: 500;">
-        Choose <strong style="color: #fbbf24;">TWO</strong> vocabulary terms from the word bank. Write <strong style="color: #38bdf8;">ONE</strong> grammatically sophisticated historical sentence connecting them using:
+        Choose <strong style="color: #fbbf24;">TWO</strong> vocabulary terms from the word bank. Write <strong style="color: #38bdf8;">ONE</strong> grammatically sophisticated historical sentence in your workbook using:
       </div>
       <div style="display: flex; gap: 15px; margin-top: 14px; flex-wrap: wrap;">
         <span style="background: rgba(245, 158, 11, 0.25); border: 2px solid #f59e0b; color: #fef08a; padding: 6px 18px; border-radius: 8px; font-weight: 800; font-size: 1.25rem; letter-spacing: 1px;">BECAUSE</span>
@@ -463,7 +463,7 @@ export function openVocabWhiteboardModal(customLesson) {
     challengeTitle = 'CONCEPTUAL BINARY SORT';
     challengePromptHtml = `
       <div style="font-size: 1.5rem; line-height: 1.6; color: #f8fafc; font-weight: 500;">
-        Divide your mini-whiteboard into <strong style="color: #4ade80;">TWO COLUMNS</strong>:
+        Divide your workbook page into <strong style="color: #4ade80;">TWO COLUMNS</strong>:
       </div>
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 16px;">
         <div style="background: rgba(59, 130, 246, 0.15); border: 2px solid #3b82f6; border-radius: 10px; padding: 14px; text-align: center;">
@@ -474,7 +474,7 @@ export function openVocabWhiteboardModal(customLesson) {
         </div>
       </div>
       <div style="font-size: 1.2rem; color: #cbd5e1; margin-top: 14px;">
-        Sort all 6 words from the bank above into the correct column on your board!
+        Sort all 6 words from the bank above into the correct column in your workbook!
       </div>
     `;
     modelAnswerHtml = `
@@ -499,7 +499,7 @@ export function openVocabWhiteboardModal(customLesson) {
         "${errStmt}"
       </div>
       <div style="font-size: 1.25rem; color: #cbd5e1; margin-top: 14px;">
-        Spot the deliberate error! Write the <strong>accurate historical correction</strong> on your mini-whiteboard.
+        Spot the deliberate error! Write the <strong>accurate historical correction</strong> in your workbook.
       </div>
     `;
     modelAnswerHtml = `
@@ -524,7 +524,7 @@ export function openVocabWhiteboardModal(customLesson) {
         <div>
           <div style="display: flex; align-items: center; gap: 10px;">
             <span style="background: rgba(99, 102, 241, 0.25); color: #a5b4fc; border: 1.5px solid #6366f1; padding: 4px 12px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
-              <i class="fa-solid fa-chalkboard-user"></i> Mini-Whiteboard Prompt Overlay
+              <i class="fa-solid fa-chalkboard-user"></i> Starter Prompt Overlay
             </span>
             <span style="background: rgba(255, 255, 255, 0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">
               ${styleBadge}
@@ -566,7 +566,7 @@ export function openVocabWhiteboardModal(customLesson) {
       <div style="background: linear-gradient(90deg, rgba(79, 70, 229, 0.25) 0%, rgba(14, 165, 233, 0.2) 100%); border: 1.5px solid rgba(129, 140, 248, 0.4); border-radius: 10px; padding: 12px 20px; display: flex; align-items: center; gap: 12px; margin-bottom: 25px;">
         <span style="font-size: 1.6rem;">✍️</span>
         <div style="font-size: 1.15rem; font-weight: 600; color: #e0e7ff;">
-          Mini-Whiteboard Prompt: Write your response in bold marker on your handheld board. Keep your board face-down until <strong>"3, 2, 1, CHIN IT!"</strong>
+          Workbook Task: Write your response clearly in your workbook. When the timer finishes: <strong>"PENS DOWN!"</strong> and be ready to share your answer.
         </div>
       </div>
 
@@ -649,7 +649,7 @@ export function toggleMwbTimer() {
         if (clock) {
           clock.style.color = '#ef4444';
           clock.style.borderColor = '#ef4444';
-          clock.innerHTML = '00:00 - BOARDS UP!';
+          clock.innerHTML = '00:00 - PENS DOWN!';
         }
       }
     }, 1000);
