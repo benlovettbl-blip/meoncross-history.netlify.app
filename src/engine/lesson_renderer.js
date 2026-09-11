@@ -1061,7 +1061,7 @@ export function renderLesson(lesson) {
 
     htmlDoNow += `</div><div class="match-defs" style="display: flex; flex-direction: column; gap: 10px;">`;
 
-    let defs = lesson.vocab.map((v, idx) => ({ def: v.definition, idx: idx }));
+    let defs = lesson.vocab.map((v, idx) => ({ def: v.definition || v.def || '', idx: idx }));
     defs.sort(() => Math.random() - 0.5);
 
     defs.forEach((d) => {

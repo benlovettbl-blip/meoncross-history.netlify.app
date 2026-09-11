@@ -673,15 +673,16 @@ allDirs.forEach((unitId) => {
       // Vocab
       html += `<div>`;
       let vocabTerms =
-        lesson.flashcards && lesson.flashcards.length > (lesson.vocab ? lesson.vocab.length : 0)
-          ? lesson.flashcards
-          : lesson.vocab ||
-            (lesson.glossary
+        lesson.vocab && lesson.vocab.length > 0
+          ? lesson.vocab
+          : lesson.flashcards && lesson.flashcards.length > 0
+            ? lesson.flashcards
+            : lesson.glossary
               ? Object.keys(lesson.glossary).map((k) => ({
                   term: k,
                   definition: lesson.glossary[k],
                 }))
-              : []);
+              : [];
       if (vocabTerms && vocabTerms.length > 0) {
         let vocabStyle = lessonIndex % 3;
         html += `<div class="task-box" style="margin-bottom: 0px; padding: 5px; page-break-inside: avoid;">`;
