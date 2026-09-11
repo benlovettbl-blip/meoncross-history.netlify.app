@@ -1259,7 +1259,7 @@ allDirs.forEach((unitId) => {
     h4 { font-size: 11pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: avoid; }
     h3 { font-size: 13pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: auto; }
     .narrative-block { margin-bottom: 10pt; text-align: justify; orphans: 3; widows: 3; color: #334155; }
-    .task-box { border-top: 2px solid #e2e8f0; padding-top: 10px; margin-top: 10px; margin-bottom: 10px; width: 100%; page-break-inside: auto !important; }
+    .task-box { margin-top: 22px; margin-bottom: 16px; width: 100%; page-break-inside: auto !important; }
     ${
       unitId === 'cme_new'
         ? `
@@ -1276,8 +1276,8 @@ allDirs.forEach((unitId) => {
     `
         : ''
     }
-    .task-lines { border-bottom: 1px solid #94a3b8; height: 16px; margin-top: 5px; }
-    .task-lines-large { border-bottom: 1px solid #94a3b8; height: 7mm; margin-top: 0px; box-sizing: border-box; }
+    .task-lines { border-bottom: 1px solid #cbd5e1; height: 7.5mm; margin-top: 0px; box-sizing: border-box; }
+    .task-lines-large { border-bottom: 1px solid #cbd5e1; height: 8mm; margin-top: 0px; box-sizing: border-box; }
     .dirt-box { margin-top: 20px; margin-bottom: 10px; border: 2px dashed #94a3b8; border-radius: 8px; padding: 15px; background-color: #f8fafc; page-break-inside: avoid; }
     .do-now-box { border-top: 2px solid #e2e8f0; padding-top: 10px; margin-top: 10px; margin-bottom: 10px; width: 100%; page-break-inside: auto; }
     .do-now-q { font-weight: 600; margin-bottom: 8px; color: #0f172a; }
@@ -1827,12 +1827,12 @@ allDirs.forEach((unitId) => {
           // Style 0: The Odd One Out
           html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;"><strong>The Odd One Out:</strong> Select THREE terms that share a close historical connection. Identify which ONE remaining term is the 'Odd One Out' in this lesson, and explain your historical reasoning:</p>`;
           html += wordBox;
-          html += `<div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div>`;
+          html += `<div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>`;
         } else if (vocabStyle === 1) {
           // Style 1: The Golden Sentence (Connect Two)
           html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;"><strong>The Golden Sentence:</strong> Choose TWO terms from the word bank. Write ONE grammatically sophisticated, historically accurate sentence connecting them using a causal conjunction (<em>because</em>, <em>although</em>, or <em>consequently</em>):</p>`;
           html += wordBox;
-          html += `<div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div>`;
+          html += `<div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>`;
         } else if (vocabStyle === 2) {
           // Style 2: Conceptual Binary Sort
           html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;"><strong>Conceptual Classification:</strong> Categorise the terms from the word bank into the two historical boxes below:</p>`;
@@ -1859,12 +1859,12 @@ allDirs.forEach((unitId) => {
           html += wordBox;
           if (lesson.vocab_deliberate_error) {
             html += `<div style="border-left: 3px solid #dc2626; background: #fef2f2; padding: 4px 8px; margin: 4px 0 5px 0; font-size: 9pt; font-style: italic; color: #991b1b; border-radius: 0 4px 4px 0;">"${lesson.vocab_deliberate_error}"</div>`;
-            html += `<div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div>`;
+            html += `<div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>`;
           } else {
             let t1 = vocabTerms[0] ? vocabTerms[0].term : 'Term 1';
             let t2 = vocabTerms[1] ? vocabTerms[1].term : 'Term 2';
             html += `<p style="font-size: 9pt; margin: 3px 0; color: #334155;"><em>Challenge:</em> Write ONE statement containing a deliberate historical misconception using <strong>${t1}</strong> or <strong>${t2}</strong>. Swap with a partner to identify and correct the error:</p>`;
-            html += `<div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div>`;
+            html += `<div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>`;
           }
         }
         html += `</div></div>`;
@@ -1942,7 +1942,7 @@ allDirs.forEach((unitId) => {
               _nbHtml += `<div class="task-box">`;
               _nbHtml += `<h4 style="margin-top: 10px; margin-bottom: 15px;">Q${globalQNum++}${prefix}${cleanQuestion}${block.source.page ? ` [p. ${block.source.page}]` : ''}</h4>`;
               for (let i = 0; i < 4; i++) {
-                _nbHtml += `<div class="task-lines" style="height: 12px; margin-top: 15px;"></div>`;
+                _nbHtml += `<div class="task-lines"></div>`;
               }
               _nbHtml += `</div>`;
             }
@@ -2205,7 +2205,7 @@ allDirs.forEach((unitId) => {
                       _nbHtml += `<div class="task-lines-large"></div>`;
                     }
                   } else {
-                    let linesToDraw = 3;
+                    let linesToDraw = 4;
                     if (task.type === 'extended_writing') {
                       linesToDraw = 18;
                     } else if (
@@ -2216,7 +2216,7 @@ allDirs.forEach((unitId) => {
                       tText.includes('two ') ||
                       tText.length > 60
                     ) {
-                      linesToDraw = 6;
+                      linesToDraw = 4;
                     }
                     for (let i = 0; i < linesToDraw; i++) {
                       _nbHtml += `<div class="task-lines"></div>`;
@@ -2588,7 +2588,7 @@ allDirs.forEach((unitId) => {
         if (lesson.historians_corner.stretch_question) {
           html += `<div style="margin-top: 15px; font-weight: bold;">Q${globalQNum++}. ${lesson.historians_corner.stretch_question}</div>`;
           for (let i = 0; i < 4; i++) {
-            html += `<div class="task-lines" style="height: 12px; margin-top: 15px;"></div>`;
+            html += `<div class="task-lines"></div>`;
           }
         }
         html += `</div>`;

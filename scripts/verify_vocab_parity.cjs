@@ -55,7 +55,14 @@ async function verifyVocabParity() {
 
       // 1. Orphaned vocabulary check
       if (lesson.vocabulary && Array.isArray(lesson.vocabulary)) {
-        errors.push(`Orphaned legacy 'vocabulary' array found (${lesson.vocabulary.length} terms). Remove and consolidate into canonical 'vocab'.`);
+        errors.push(
+          `Orphaned legacy 'vocabulary' array found (${lesson.vocabulary.length} terms). Remove and consolidate into canonical 'vocab'.`,
+        );
+      }
+      if (lesson.key_vocabulary && Array.isArray(lesson.key_vocabulary)) {
+        errors.push(
+          `Orphaned legacy 'key_vocabulary' array found (${lesson.key_vocabulary.length} terms). Remove and consolidate into canonical 'vocab'.`,
+        );
       }
 
       // 2. Canonical vocab check

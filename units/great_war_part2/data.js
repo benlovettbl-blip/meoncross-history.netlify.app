@@ -616,23 +616,6 @@ export default {
           text: '<h3>Consolidation Task</h3>',
         },
       ],
-      key_vocabulary: [
-        {
-          term: "No Man's Land",
-          definition:
-            'The desolate, heavily cratered, and wire-strewn territory situated between the opposing front-line trenches.',
-        },
-        {
-          term: 'Trench Foot',
-          definition:
-            'A painful medical condition caused by prolonged exposure of the feet to cold, damp, and unsanitary conditions, often leading to severe infection and gangrene.',
-        },
-        {
-          term: 'Revisionist Historian',
-          definition:
-            'A historian who re-examines traditional historical interpretations in light of new evidence, perspectives, or analytical methods.',
-        },
-      ],
       quiz: [
         {
           q: 'What was the main cause of the medical condition known as "trench foot" during WWI?',
