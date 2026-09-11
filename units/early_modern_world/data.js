@@ -842,6 +842,11 @@ const early_modern_world = {
         },
         {
           title: 'Macro-History: The Real Centers of Wealth in 1450',
+          image: '/images/silk_route_colored_map.jpg',
+          image_alt:
+            'Map of the Afro-Eurasian Silk Road trade networks connecting Europe, Africa, and Asia',
+          image_caption:
+            'A comprehensive map of the Silk Road trade routes: overland trade routes in red passing through Constantinople and Central Asia, and maritime spice routes in blue traversing the Indian Ocean.',
           text: '<strong>The Ottoman Empire: The Gatekeeper of the East</strong><br>By 1450, the Ottoman Empire had built a dominant superpower spanning Southeastern Europe, Western Asia, and North Africa. By holding Istanbul, Sultan Mehmed II controlled the land routes of the <strong>Silk Road</strong>.<br><br>If an English noble wanted luxury silk, porcelain from Ming Dynasty China, or pepper from India, it had to pass through Ottoman territory. The Sultan slapped heavy taxes on all European merchants. Western Europe was effectively locked out of direct trade with Asia, forced to pay whatever prices the Ottomans demanded.',
         },
         {
@@ -955,12 +960,13 @@ const early_modern_world = {
           'Evaluate why Western Europe was on the periphery (edges) of world trade in 1450.',
         ],
       },
-      banner: '/images/early_mod_l1_banner.jpg',
+      banner: '/images/silk_route_colored_map.jpg',
       video: [
         {
           type: 'youtube',
           url: 'https://www.youtube.com/watch?v=pfXc9LTqg-Y',
-          title: "Silk Road: The history behind key global trade region & China's renewed interest - BBC World Service",
+          title:
+            "Silk Road: The history behind key global trade region & China's renewed interest - BBC World Service",
           duration: '14 mins 9 secs',
           viewing_task:
             'How did the ancient and medieval Silk Road trade routes connect Asian powers with Europe, and why was control over these overland routes so lucrative?',
@@ -2455,6 +2461,7 @@ const early_modern_world = {
             'An anonymous warning letter delivered to Catholic Lord Monteagle in October 1605 that unmasked the Gunpowder Plot and led to Guy Fawkes’ arrest.',
         },
       ],
+      banner: '/images/gunpowder_conspirators_banner.jpg',
     },
     {
       id: 'lesson_4',
@@ -3194,7 +3201,7 @@ const early_modern_world = {
           'Debate who held true power in Britain by 1660: the Monarchy, Parliament, or Atlantic Capitalists.',
         ],
       },
-      banner: '/images/early_mod_l4_banner.jpg',
+      banner: '/images/royal_exchange_courtyard.jpg',
       sources: [
         {
           title: 'The East Offering its Riches to Britannia (1778)',
