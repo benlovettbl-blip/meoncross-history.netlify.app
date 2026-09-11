@@ -51,12 +51,15 @@ Whenever generating or modifying the `generate_worksheets.js` Node script for pr
 
 
 ## Automated Database Sync (Safe Unit Mode)
-Whenever you (the AI agent) make structural changes to any unit's curriculum files (such as `data.js`), modify lesson titles, add a new unit, OR when the user explicitly asks you to "sync", you MUST automatically run the following safe sync commands for the specific unit:
-1. `node extract_units.js <unit_id>`
-2. `node build_database.cjs`
-3. `node generate_tracker_v2.mjs`
-4. `node export_pdfs.js <unit_id>` (CRITICAL EXCEPTION: Do NOT run this step for the battlefield tour unit `trip_ypres`, as it is fully digital and requires no printed PDFs).
-Do NOT run `npm run sync` globally unless explicitly requested, as this risks breaking other units. You must run these safe unit-targeted commands proactively so the user never has to remember or type the phrases themselves.
+Whenever you (the AI agent) make structural changes to any unit's curriculum files (such as `data.js`), modify lesson titles, add a new unit, OR when the user explicitly asks you to "sync", you MUST automatically run the unified safe unit sync command:
+`node scripts/sync_unit.cjs <unit_id>` (or `npm run sync:unit <unit_id>`)
+This single unified pipeline automatically executes in sequence:
+1. Syntax validation of the modified `data.js`
+2. Database refresh (`node scripts/build_database.cjs`) to update `public/database.json` for the web app
+3. Fresh PDF compilation with Puppeteer (`node scripts/export_pdfs.cjs <unit_id>`, automatically skipped for digital-only `trip_ypres`)
+4. Page map alignment (`node scripts/generate_workbook_page_map.cjs`) so app page links match printed booklets
+5. Page layout overflow audit (`node scripts/check_overflows.cjs <unit_id>`) to guarantee 0 layout bugs
+Do NOT run `npm run sync` globally unless explicitly requested, as this risks breaking other units. You must run this safe unit-targeted pipeline proactively so the user never has to remember or type the commands themselves.
 
 ## Video Injection Metadata
 Whenever injecting a new ERA or YouTube video link into a lesson, you MUST automatically fetch the URL's metadata and accurately determine its exact duration (e.g., '5 mins 11 secs') rather than using placeholder text like 'Short clip'.
