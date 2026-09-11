@@ -88,6 +88,62 @@ export function getGoldenSentenceExemplar(lesson, vocabTermsList = []) {
 }
 window.getGoldenSentenceExemplar = getGoldenSentenceExemplar;
 
+export function getOddOneOutExemplars(lesson, vocabTermsList = []) {
+  if (
+    lesson &&
+    Array.isArray(lesson.vocab_odd_one_out_exemplars) &&
+    lesson.vocab_odd_one_out_exemplars.length > 0
+  ) {
+    return lesson.vocab_odd_one_out_exemplars;
+  }
+  const terms =
+    vocabTermsList && vocabTermsList.length > 0
+      ? vocabTermsList
+      : lesson && lesson.vocab
+        ? lesson.vocab.map((v) => (v.term || '').trim()).filter(Boolean)
+        : [];
+
+  if (terms.length < 3) {
+    return [
+      {
+        title: 'Categorical Distinction',
+        trio: terms.slice(0, 3),
+        odd: terms[0] || 'Term 1',
+        reason:
+          'Multiple valid historical criteria can distinguish these terms depending on whether you group by political authority, economic trade, or ideological perspective.',
+      },
+    ];
+  }
+
+  const t0 = terms[0];
+  const t1 = terms[1];
+  const t2 = terms[2];
+  const t3 = terms[3] || terms[0];
+  const last = terms[terms.length - 1];
+
+  return [
+    {
+      title: 'Structural Entity vs Broader Concept / Event',
+      trio: [t0, t1, last],
+      odd: last,
+      reason: `${t0} and ${t1} represent concrete institutions or organized polities of this era, whereas ${last} represents a broader concept, event, or overarching historical perspective.`,
+    },
+    {
+      title: 'Regional / Operational Scope',
+      trio: [t0, t1, t2],
+      odd: t2,
+      reason: `While ${t0} and ${t1} operated primarily within the central political power structures of this period, ${t2} played a distinct economic, religious, or external role.`,
+    },
+    {
+      title: 'Cause vs Systemic Consequence',
+      trio: [t1, t2, t3],
+      odd: t1,
+      reason: `${t1} acted as an initial catalyst, whereas ${t2} and ${t3} were sustained, institutional consequences that developed across multiple generations.`,
+    },
+  ];
+}
+window.getOddOneOutExemplars = getOddOneOutExemplars;
+
 function getRetrievalStarterActions(lesson, currentUnitId) {
   if (currentUnitId === 'cme_new') {
     let kt = 'KT1';
@@ -1122,6 +1178,7 @@ export function renderLesson(lesson) {
 
     if (vocabStyle === 0) {
       // Style 0: The Odd One Out
+      const oddExemplars = getOddOneOutExemplars(lesson, vocabTermsList);
       htmlDoNow += `
         <div id="vocab-cognitive-challenge" style="margin-top: 25px; padding-top: 20px; border-top: 1px dashed #cbd5e1;">
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
@@ -1147,13 +1204,41 @@ export function renderLesson(lesson) {
           <input type="hidden" id="odd-choice" value="">
           <div id="odd-reasoning-box" style="display: none; margin-top: 10px;">
             <textarea placeholder="Explain your historical reasoning: Why is your chosen word the 'Odd One Out' compared to the others?" style="width: 100%; min-height: 70px; padding: 10px; border-radius: 6px; border: 1.5px solid #94a3b8; font-family: inherit; font-size: 0.95rem; box-sizing: border-box;"></textarea>
-            <div style="margin-top: 8px;">
+            <div style="margin-top: 8px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
               <button type="button" class="btn btn-primary" onclick="this.parentElement.nextElementSibling.style.display='block'; this.style.display='none';" style="font-size: 0.9rem; padding: 6px 14px; background: #1e40af; color: white; border: none; border-radius: 6px; cursor: pointer;">
                 <i class="fa-solid fa-check"></i> Submit Justification
               </button>
+              <button type="button" class="btn btn-secondary" onclick="const box = document.getElementById('odd-model-box'); const isVis = box.style.display === 'block'; box.style.display = isVis ? 'none' : 'block'; this.innerHTML = isVis ? '<i class=\\'fa-solid fa-eye\\'></i> Show Model Debates' : '<i class=\\'fa-solid fa-eye-slash\\'></i> Hide Model Debates';" style="font-size: 0.9rem; padding: 6px 14px; background: #ffffff; color: #92400e; border: 1.5px solid #fde68a; border-radius: 6px; cursor: pointer; font-weight: 600; transition: all 0.2s;">
+                <i class="fa-solid fa-eye"></i> Show Model Debates
+              </button>
             </div>
             <div style="display: none; margin-top: 10px; padding: 12px; background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 6px; color: #166534; font-size: 0.95rem;">
-              <strong>Historical Reflection:</strong> In history, multiple terms can be justified as the 'Odd One Out' depending on whether you categorize by political power, social status, geography, or consequence. Compare your reasoning with a partner!
+              <strong>Historical Reflection:</strong> Compare your chosen word and reasoning with a partner! Can they challenge your historical link or offer an alternative Odd One Out?
+            </div>
+            <div id="odd-model-box" style="display: none; margin-top: 10px; padding: 14px 16px; background: #fefce8; border: 1.5px solid #facc15; border-radius: 8px; color: #713f12; font-size: 0.95rem; line-height: 1.6; box-shadow: 0 2px 8px rgba(234, 179, 8, 0.15);">
+              <div style="font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between; color: #854d0e;">
+                <span><i class="fa-solid fa-star" style="color: #eab308;"></i> High-Tariff Discussion Exemplars:</span>
+                <span style="font-size: 0.75rem; background: #fef08a; padding: 2px 8px; border-radius: 10px; text-transform: uppercase;">Teacher Debrief Guide</span>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                ${oddExemplars
+                  .map(
+                    (ex, idx) => `
+                  <div style="background: #ffffff; border: 1px solid #fde047; border-radius: 6px; padding: 10px 14px;">
+                    <div style="font-size: 0.8rem; font-weight: 800; color: #b45309; text-transform: uppercase;">
+                      Option ${String.fromCharCode(65 + idx)}: ${ex.title || 'Historical Link'}
+                    </div>
+                    <div style="font-size: 0.92rem; color: #1e293b; margin: 3px 0;">
+                      <strong>Trio:</strong> ${Array.isArray(ex.trio) ? ex.trio.join(', ') : ex.trio} · <strong>Odd One Out:</strong> <span style="color: #b91c1c; font-weight: 700; background: #fee2e2; padding: 1px 6px; border-radius: 4px;">${ex.odd}</span>
+                    </div>
+                    <div style="font-size: 0.88rem; color: #334155;">
+                      <strong>Why:</strong> ${ex.reason}
+                    </div>
+                  </div>
+                `,
+                  )
+                  .join('')}
+              </div>
             </div>
           </div>
         </div>

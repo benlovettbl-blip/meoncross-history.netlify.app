@@ -434,12 +434,31 @@ export function openVocabWhiteboardModal(customLesson) {
         Write your chosen word and a rigorous historical justification in your workbook!
       </div>
     `;
+    const oddExemplars = window.getOddOneOutExemplars
+      ? window.getOddOneOutExemplars(activeLesson, termsList)
+      : [];
     modelAnswerHtml = `
       <div style="font-size: 1.35rem; font-weight: 700; color: #ca8a04; margin-bottom: 8px;">
-        <i class="fa-solid fa-star" style="color: #eab308;"></i> Teacher Justification Guide
+        <i class="fa-solid fa-star" style="color: #eab308;"></i> High-Tariff Discussion Exemplars
       </div>
-      <div style="font-size: 1.15rem; line-height: 1.6; color: #1e293b;">
-        Multiple terms can be justified as the 'Odd One Out' depending on criteria (e.g. state power vs popular rebellion, religious vs secular, cause vs consequence). Reward pupils whose reasoning cites specific historical dates, figures, or institutional actions.
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        ${oddExemplars
+          .map(
+            (ex, idx) => `
+          <div style="background: rgba(255, 255, 255, 0.95); border: 1.5px solid #fde047; border-radius: 8px; padding: 10px 14px; text-align: left;">
+            <div style="font-size: 0.9rem; font-weight: 800; color: #b45309; text-transform: uppercase;">
+              Option ${String.fromCharCode(65 + idx)}: ${ex.title || 'Historical Link'}
+            </div>
+            <div style="font-size: 1.1rem; color: #1e293b; margin: 3px 0;">
+              <strong>Trio:</strong> ${Array.isArray(ex.trio) ? ex.trio.join(', ') : ex.trio} · <strong>Odd One Out:</strong> <span style="color: #b91c1c; font-weight: 800; background: #fee2e2; padding: 1px 6px; border-radius: 4px;">${ex.odd}</span>
+            </div>
+            <div style="font-size: 1rem; color: #334155;">
+              <strong>Why:</strong> ${ex.reason}
+            </div>
+          </div>
+        `,
+          )
+          .join('')}
       </div>
     `;
   } else if (vocabStyle === 1) {

@@ -687,6 +687,29 @@ const early_modern_world = {
             'The misleading historical bias of viewing world history solely through European perspectives and assuming Europe was always the dominant civilization.',
         },
       ],
+      vocab_odd_one_out_exemplars: [
+        {
+          title: 'Imperial Superpowers vs. Historiographical Bias',
+          trio: ['Ming Dynasty', 'Ottoman Empire', 'Songhai Empire'],
+          odd: 'Eurocentrism',
+          reason:
+            'Ming China, the Ottomans, and Songhai were colossal, sovereign imperial superpowers dominating 15th-century wealth and territory. Eurocentrism is an intellectual bias and modern Western perspective that erases their dominance.',
+        },
+        {
+          title: 'Trans-Eurasian Trade Corridor vs. West African Gold Routes',
+          trio: ['Ming Dynasty', 'Ottoman Empire', 'Silk Roads'],
+          odd: 'Songhai Empire',
+          reason:
+            'Ming China, the Ottomans, and the Silk Roads formed an interconnected Eurasian trade corridor. Songhai was a West African empire whose wealth was founded on trans-Saharan gold and salt trade along the Niger River.',
+        },
+        {
+          title: 'Enduring Polities vs. Decisive Turning-Point Event',
+          trio: ['Ottoman Empire', 'Ming Dynasty', 'Songhai Empire'],
+          odd: 'Fall of Constantinople (1453)',
+          reason:
+            'Three are enduring imperial states that ruled for centuries. The Fall of Constantinople was a single, pivotal military siege that severed overland European access to Asian markets and triggered the Age of Discovery.',
+        },
+      ],
       title: 'Who held global power in 1450?',
       teacher_notes: {
         primer:
