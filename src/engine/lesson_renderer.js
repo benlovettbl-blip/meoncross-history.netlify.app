@@ -71,6 +71,22 @@ window.formatBold = function (text) {
   return parsed;
 };
 
+export function getGoldenSentenceExemplar(lesson, vocabTermsList = []) {
+  if (lesson && lesson.vocab_golden_sentence) {
+    return lesson.vocab_golden_sentence;
+  }
+  const terms =
+    vocabTermsList && vocabTermsList.length > 0
+      ? vocabTermsList
+      : lesson && lesson.vocab
+        ? lesson.vocab.map((v) => (v.term || '').trim()).filter(Boolean)
+        : [];
+  const t1 = terms[0] || 'the initial developments';
+  const t2 = terms[1] || 'subsequent events';
+  return `Although ${t1} significantly shaped the early trajectory of this era, ${t2} proved equally decisive because it fundamentally transformed the social and political balance of power.`;
+}
+window.getGoldenSentenceExemplar = getGoldenSentenceExemplar;
+
 function getRetrievalStarterActions(lesson, currentUnitId) {
   if (currentUnitId === 'cme_new') {
     let kt = 'KT1';
@@ -1087,15 +1103,24 @@ export function renderLesson(lesson) {
     const vocabStyle = currentLessonIdx % 4;
     const vocabTermsList = lesson.vocab.map((v) => (v.term || '').trim()).filter(Boolean);
 
+    const wbDrillBtnHtml = `
+      <button type="button" class="btn btn-secondary" data-action="open-vocab-whiteboard" style="font-size: 0.82rem; padding: 4px 10px; background: #eff6ff; color: #1e40af; border: 1.5px solid #bfdbfe; border-radius: 6px; cursor: pointer; font-weight: 600; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;" title="Project this vocabulary challenge on the classroom whiteboard">
+        <i class="fa-solid fa-chalkboard-user"></i> Whiteboard Drill
+      </button>
+    `;
+
     if (vocabStyle === 0) {
       // Style 0: The Odd One Out
       htmlDoNow += `
         <div id="vocab-cognitive-challenge" style="margin-top: 25px; padding-top: 20px; border-top: 1px dashed #cbd5e1;">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
-            <span style="font-weight: 700; color: #1e3a8a; font-size: 1.05rem;">
-              <i class="fa-solid fa-shapes" style="color: #3b82f6; margin-right: 6px;"></i> Vocabulary Challenge: The Odd One Out
-            </span>
-            <span style="font-size: 0.8rem; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-weight: 600;">Conceptual Categorisation</span>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-weight: 700; color: #1e3a8a; font-size: 1.05rem;">
+                <i class="fa-solid fa-shapes" style="color: #3b82f6; margin-right: 6px;"></i> Vocabulary Challenge: The Odd One Out
+              </span>
+              <span style="font-size: 0.8rem; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-weight: 600;">Conceptual Categorisation</span>
+            </div>
+            ${wbDrillBtnHtml}
           </div>
           <p style="color: #475569; font-size: 0.95rem; margin-bottom: 12px;">
             Select <strong>THREE</strong> terms below that share a close historical connection. Click which <strong>ONE</strong> term is the 'Odd One Out' in this lesson, and explain your historical reasoning:
@@ -1124,13 +1149,17 @@ export function renderLesson(lesson) {
       `;
     } else if (vocabStyle === 1) {
       // Style 1: The Golden Sentence (Connect Two)
+      const goldenExemplar = getGoldenSentenceExemplar(lesson, vocabTermsList);
       htmlDoNow += `
         <div id="vocab-cognitive-challenge" style="margin-top: 25px; padding-top: 20px; border-top: 1px dashed #cbd5e1;">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
-            <span style="font-weight: 700; color: #1e3a8a; font-size: 1.05rem;">
-              <i class="fa-solid fa-pen-fancy" style="color: #3b82f6; margin-right: 6px;"></i> Vocabulary Challenge: The Golden Sentence
-            </span>
-            <span style="font-size: 0.8rem; background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 12px; font-weight: 600;">Syntactic Precision</span>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-weight: 700; color: #1e3a8a; font-size: 1.05rem;">
+                <i class="fa-solid fa-pen-fancy" style="color: #3b82f6; margin-right: 6px;"></i> Vocabulary Challenge: The Golden Sentence
+              </span>
+              <span style="font-size: 0.8rem; background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 12px; font-weight: 600;">Syntactic Precision</span>
+            </div>
+            ${wbDrillBtnHtml}
           </div>
           <p style="color: #475569; font-size: 0.95rem; margin-bottom: 12px;">
             Choose <strong>TWO</strong> terms from the word bank below. Write <strong>ONE</strong> single, grammatically sophisticated historical sentence connecting them using a causal conjunction (<strong>because</strong>, <strong>although</strong>, or <strong>consequently</strong>):
@@ -1144,23 +1173,40 @@ export function renderLesson(lesson) {
               .join('')}
           </div>
           <textarea id="golden-sentence-input" placeholder="Write your Golden Sentence here using because, although, or consequently..." style="width: 100%; min-height: 70px; padding: 10px; border-radius: 6px; border: 1.5px solid #94a3b8; font-family: inherit; font-size: 0.95rem; box-sizing: border-box;"></textarea>
-          <div style="margin-top: 8px;">
+          <div style="margin-top: 8px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <button type="button" class="btn btn-primary" onclick="const val = (document.getElementById('golden-sentence-input').value || '').toLowerCase(); const feedback = document.getElementById('golden-feedback'); feedback.style.display='block'; if (val.includes('because') || val.includes('although') || val.includes('consequently')) { feedback.style.background='#f0fdf4'; feedback.style.borderColor='#86efac'; feedback.style.color='#166534'; feedback.innerHTML='<strong>Excellent Syntactic Construction!</strong> You successfully deployed a causal conjunction to establish a sophisticated historical link.'; } else { feedback.style.background='#fffbeb'; feedback.style.borderColor='#fde68a'; feedback.style.color='#92400e'; feedback.innerHTML='<strong>Tip:</strong> Ensure you include one of the target causal conjunctions: <em>because</em>, <em>although</em>, or <em>consequently</em> to elevate your sentence.'; }" style="font-size: 0.9rem; padding: 6px 14px; background: #1e40af; color: white; border: none; border-radius: 6px; cursor: pointer;">
               <i class="fa-solid fa-sparkles"></i> Check Sentence
             </button>
+            <button type="button" class="btn btn-secondary" onclick="const box = document.getElementById('golden-model-box'); const isVis = box.style.display === 'block'; box.style.display = isVis ? 'none' : 'block'; this.innerHTML = isVis ? '<i class=\\'fa-solid fa-eye\\'></i> Show Model Sentence' : '<i class=\\'fa-solid fa-eye-slash\\'></i> Hide Model Sentence';" style="font-size: 0.9rem; padding: 6px 14px; background: #ffffff; color: #92400e; border: 1.5px solid #fde68a; border-radius: 6px; cursor: pointer; font-weight: 600; transition: all 0.2s;">
+              <i class="fa-solid fa-eye"></i> Show Model Sentence
+            </button>
           </div>
           <div id="golden-feedback" style="display: none; margin-top: 10px; padding: 12px; border: 1.5px solid #cbd5e1; border-radius: 6px; font-size: 0.95rem;"></div>
+          <div id="golden-model-box" style="display: none; margin-top: 10px; padding: 14px 16px; background: #fefce8; border: 1.5px solid #facc15; border-radius: 6px; color: #713f12; font-size: 0.95rem; line-height: 1.6; box-shadow: 0 2px 6px rgba(234, 179, 8, 0.15);">
+            <div style="font-weight: 700; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; color: #854d0e;">
+              <i class="fa-solid fa-star" style="color: #eab308;"></i> Model Golden Sentence:
+            </div>
+            <div style="font-style: italic; font-family: 'Playfair Display', Georgia, serif; font-size: 1.05rem; color: #1e293b;">
+              "${goldenExemplar}"
+            </div>
+            <div style="margin-top: 6px; font-size: 0.82rem; color: #a16207;">
+              <strong>Teacher Note:</strong> Demonstrates syntactic embedding of two curriculum terms connected by a causal conjunction.
+            </div>
+          </div>
         </div>
       `;
     } else if (vocabStyle === 2) {
       // Style 2: Conceptual Binary Sort
       htmlDoNow += `
         <div id="vocab-cognitive-challenge" style="margin-top: 25px; padding-top: 20px; border-top: 1px dashed #cbd5e1;">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
-            <span style="font-weight: 700; color: #1e3a8a; font-size: 1.05rem;">
-              <i class="fa-solid fa-layer-group" style="color: #3b82f6; margin-right: 6px;"></i> Vocabulary Challenge: Conceptual Classification
-            </span>
-            <span style="font-size: 0.8rem; background: #dcfce7; color: #166534; padding: 2px 8px; border-radius: 12px; font-weight: 600;">Conceptual Sorting</span>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-weight: 700; color: #1e3a8a; font-size: 1.05rem;">
+                <i class="fa-solid fa-layer-group" style="color: #3b82f6; margin-right: 6px;"></i> Vocabulary Challenge: Conceptual Classification
+              </span>
+              <span style="font-size: 0.8rem; background: #dcfce7; color: #166534; padding: 2px 8px; border-radius: 12px; font-weight: 600;">Conceptual Sorting</span>
+            </div>
+            ${wbDrillBtnHtml}
           </div>
           <p style="color: #475569; font-size: 0.95rem; margin-bottom: 12px;">
             Click on each term below to sort it into <strong>Power, Governance & Warfare</strong> or <strong>Economy, Trade & Society</strong>:
@@ -1198,11 +1244,14 @@ export function renderLesson(lesson) {
 
       htmlDoNow += `
         <div id="vocab-cognitive-challenge" style="margin-top: 25px; padding-top: 20px; border-top: 1px dashed #cbd5e1;">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
-            <span style="font-weight: 700; color: #1e3a8a; font-size: 1.05rem;">
-              <i class="fa-solid fa-triangle-exclamation" style="color: #ef4444; margin-right: 6px;"></i> Vocabulary Challenge: Spot the Deliberate Error!
-            </span>
-            <span style="font-size: 0.8rem; background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 12px; font-weight: 600;">Critical Reading</span>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-weight: 700; color: #1e3a8a; font-size: 1.05rem;">
+                <i class="fa-solid fa-triangle-exclamation" style="color: #ef4444; margin-right: 6px;"></i> Vocabulary Challenge: Spot the Deliberate Error!
+              </span>
+              <span style="font-size: 0.8rem; background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 12px; font-weight: 600;">Critical Reading</span>
+            </div>
+            ${wbDrillBtnHtml}
           </div>
           <p style="color: #475569; font-size: 0.95rem; margin-bottom: 12px;">
             The statement below contains a <strong>deliberate historical misconception</strong>. Identify the false claim and write the accurate historical correction below:

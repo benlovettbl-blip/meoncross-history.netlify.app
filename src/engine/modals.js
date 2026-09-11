@@ -1,5 +1,9 @@
 import { appStore } from './store.js';
-import { renderLesson, assignQuestionNumbers } from './lesson_renderer.js';
+import {
+  renderLesson,
+  assignQuestionNumbers,
+  getGoldenSentenceExemplar,
+} from './lesson_renderer.js';
 import { getAssetUrl } from './assets.js';
 
 let glossaryPopover = null;
@@ -85,7 +89,10 @@ export function openTaskWhiteboard() {
             Click or tap any question card to reveal the model answer for whole-class review.
           </p>
         </div>
-        <div style="display: flex; gap: 10px; align-items: center;">
+        <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+          <button class="btn" data-action="open-vocab-whiteboard" id="wb-launch-mwb-btn" style="padding: 8px 16px; font-size: 0.9rem; font-weight: 700; cursor: pointer; background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%); color: white; border: 1.5px solid #818cf8; border-radius: 6px; box-shadow: 0 2px 6px rgba(79, 70, 229, 0.3); display: inline-flex; align-items: center; gap: 7px; transition: all 0.2s ease;" title="Launch Fullscreen Mini-Whiteboard Drill for smartboard projection">
+            <i class="fa-solid fa-chalkboard-user"></i> Mini-Whiteboard Prompt Overlay
+          </button>
           <button class="btn" data-action="reveal-all-wb-answers" id="wb-reveal-all-btn" style="padding: 8px 16px; font-size: 0.9rem; font-weight: 600; cursor: pointer; background: #0284c7; color: white; border: none; border-radius: 6px; box-shadow: 0 2px 4px rgba(2, 132, 199, 0.25); display: inline-flex; align-items: center; gap: 7px; transition: all 0.2s ease;">
             <i class="fa-solid fa-eye"></i> Reveal All Answers <span style="background: rgba(255,255,255,0.25); padding: 1px 6px; border-radius: 4px; font-size: 0.75rem; font-family: monospace;">A</span>
           </button>
@@ -124,6 +131,61 @@ export function openTaskWhiteboard() {
     if (typeof questionText !== 'string' || !questionText.trim()) return;
     cards.push({ qNum, questionText: questionText.trim(), answerText: answerText || '' });
   };
+
+  if (activeLesson.vocab && Array.isArray(activeLesson.vocab) && activeLesson.vocab.length > 0) {
+    let currentLessonIdx = 0;
+    const unitDataObj =
+      (appStore && appStore.state && appStore.state.activeUnitData) || window.unitData;
+    if (unitDataObj && Array.isArray(unitDataObj.lessons)) {
+      currentLessonIdx = unitDataObj.lessons.findIndex(
+        (l) => l.id === activeLesson.id || l.title === activeLesson.title,
+      );
+      if (currentLessonIdx === -1) currentLessonIdx = 0;
+    }
+    const vocabStyle = currentLessonIdx % 4;
+    const termsList = activeLesson.vocab.map((v) => (v.term || '').trim()).filter(Boolean);
+    const termsBadges = termsList
+      .map(
+        (t) =>
+          `<span style="display:inline-block; padding:2px 8px; margin:2px 4px; background:#e0e7ff; color:#3730a3; border-radius:10px; font-weight:600; font-size:0.85rem;">${t}</span>`,
+      )
+      .join(' ');
+
+    let challengeTitle = '';
+    let challengePrompt = '';
+    let modelAnswer = '';
+
+    if (vocabStyle === 0) {
+      challengeTitle = 'The Odd One Out';
+      challengePrompt = `Identify <strong>THREE</strong> connected terms from the bank and pick the <strong>ONE</strong> 'Odd One Out'. Explain your historical reasoning.<br><div style="margin-top:6px;"><strong>Word Bank:</strong> ${termsBadges}</div>`;
+      modelAnswer = `Pupils should categorize terms by conceptual theme (e.g. status vs power vs doctrine). Any choice justified with specific historical evidence from the lesson is creditworthy.`;
+    } else if (vocabStyle === 1) {
+      challengeTitle = 'The Golden Sentence';
+      challengePrompt = `Select <strong>TWO</strong> vocabulary terms. Write <strong>ONE</strong> sophisticated sentence connecting them using <strong>because</strong>, <strong>although</strong>, or <strong>consequently</strong>.<br><div style="margin-top:6px;"><strong>Word Bank:</strong> ${termsBadges}</div>`;
+      const exemplar =
+        typeof window.getGoldenSentenceExemplar === 'function'
+          ? window.getGoldenSentenceExemplar(activeLesson, termsList)
+          : `Although ${termsList[0]} played a pivotal role, ${termsList[1]} proved equally critical because it fundamentally altered the long-term balance of power.`;
+      modelAnswer = `<strong>Model Golden Sentence:</strong> "${exemplar}"`;
+    } else if (vocabStyle === 2) {
+      challengeTitle = 'Conceptual Binary Sort';
+      challengePrompt = `Sort the 6 vocabulary terms into two columns: <strong>[Power, Governance & Warfare]</strong> vs <strong>[Economy, Trade & Society]</strong>.<br><div style="margin-top:6px;"><strong>Word Bank:</strong> ${termsBadges}</div>`;
+      modelAnswer = `Ensure terms relating to state authority and conflict are separated from civilian, economic, and cultural developments. Discuss any terms that bridge both categories.`;
+    } else {
+      challengeTitle = 'Spot the Deliberate Error!';
+      const errStmt =
+        activeLesson.vocab_deliberate_error ||
+        `A historical commentator claimed that ${termsList[0] || 'key concepts'} had zero effect on the outcome of this era.`;
+      challengePrompt = `Identify the misconception in this historical statement: <em style="color:#b91c1c;">"${errStmt}"</em>. Write the accurate historical correction on your board!<br><div style="margin-top:6px;"><strong>Word Bank:</strong> ${termsBadges}</div>`;
+      modelAnswer = `<strong>Historical Correction:</strong> The claim is historically false. Pupils should contrast this misconception with specific factual evidence from the lesson narrative.`;
+    }
+
+    addQuestionCard(
+      'Mini-Whiteboard Starter',
+      `<strong>[${challengeTitle}]</strong> ${challengePrompt}`,
+      modelAnswer,
+    );
+  }
 
   if (activeLesson.do_now) {
     if (activeLesson.do_now.type === 'timeline' && activeLesson.do_now.prediction_question) {
@@ -253,8 +315,10 @@ export function openTaskWhiteboard() {
     );
   }
 
-  // Sort cards: Do Now first, then numerically by assigned qNum, then unnumbered
+  // Sort cards: Mini-Whiteboard Starter first, then Do Now, then numerically by assigned qNum, then unnumbered
   cards.sort((a, b) => {
+    if (a.qNum === 'Mini-Whiteboard Starter') return -1;
+    if (b.qNum === 'Mini-Whiteboard Starter') return 1;
     if (a.qNum === 'Do Now') return -1;
     if (b.qNum === 'Do Now') return 1;
     if (typeof a.qNum === 'number' && typeof b.qNum === 'number') return a.qNum - b.qNum;
@@ -270,13 +334,15 @@ export function openTaskWhiteboard() {
     const prefix =
       typeof qNum === 'number'
         ? `Q${qNum}. `
-        : qNum === 'Do Now'
-          ? '<strong>[Do Now]</strong> '
-          : qNum === 'Hinge Question'
-            ? '<strong>[Hinge Question]</strong> '
-            : qNum && qNum !== '-'
-              ? `<strong>[${qNum}]</strong> `
-              : '';
+        : qNum === 'Mini-Whiteboard Starter'
+          ? '<strong>[Mini-Whiteboard Starter]</strong> '
+          : qNum === 'Do Now'
+            ? '<strong>[Do Now]</strong> '
+            : qNum === 'Hinge Question'
+              ? '<strong>[Hinge Question]</strong> '
+              : qNum && qNum !== '-'
+                ? `<strong>[${qNum}]</strong> `
+                : '';
     html += `
         <div class="wb-question-card" style="cursor:pointer;" data-action="toggle-wb-answer" title="Click to reveal answer">
           <div style="font-weight: bold;">${prefix}${questionText}</div>
@@ -306,6 +372,353 @@ export function openTaskWhiteboard() {
 }
 
 window.openTaskWhiteboard = openTaskWhiteboard;
+
+let _mwbTimerInterval = null;
+let _mwbTimerSeconds = 120;
+let _mwbTimerRunning = false;
+
+export function openVocabWhiteboardModal(customLesson) {
+  let modal = document.getElementById('vocab-whiteboard-modal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'vocab-whiteboard-modal';
+    document.body.appendChild(modal);
+  }
+
+  const activeLesson =
+    customLesson ||
+    window.currentActiveLesson ||
+    (appStore &&
+      appStore.state &&
+      appStore.state.activeUnitData &&
+      appStore.state.activeUnitData.lessons &&
+      appStore.state.activeUnitData.lessons[0]) ||
+    (window.unitData && window.unitData.lessons && window.unitData.lessons[0]);
+
+  if (!activeLesson) return;
+
+  const unitDataObj =
+    (appStore && appStore.state && appStore.state.activeUnitData) || window.unitData;
+  let currentLessonIdx = 0;
+  if (unitDataObj && Array.isArray(unitDataObj.lessons)) {
+    currentLessonIdx = unitDataObj.lessons.findIndex(
+      (l) => l.id === activeLesson.id || l.title === activeLesson.title,
+    );
+    if (currentLessonIdx === -1) currentLessonIdx = 0;
+  }
+  const vocabStyle = currentLessonIdx % 4;
+  const termsList = (activeLesson.vocab || []).map((v) => (v.term || '').trim()).filter(Boolean);
+
+  let styleBadge = '';
+  let challengeTitle = '';
+  let challengePromptHtml = '';
+  let modelAnswerHtml = '';
+
+  if (vocabStyle === 0) {
+    styleBadge = 'Style 0 · Conceptual Categorisation';
+    challengeTitle = 'THE ODD ONE OUT';
+    challengePromptHtml = `
+      <div style="font-size: 1.5rem; line-height: 1.6; color: #f8fafc; font-weight: 500;">
+        Select <strong style="color: #60a5fa;">THREE</strong> terms from the word bank that share a close historical link. Identify which <strong style="color: #f87171;">ONE</strong> term is the <em>Odd One Out</em>.
+      </div>
+      <div style="font-size: 1.25rem; color: #94a3b8; margin-top: 12px; font-style: italic;">
+        Write your chosen word and a rigorous historical justification on your mini-whiteboard!
+      </div>
+    `;
+    modelAnswerHtml = `
+      <div style="font-size: 1.35rem; font-weight: 700; color: #ca8a04; margin-bottom: 8px;">
+        <i class="fa-solid fa-star" style="color: #eab308;"></i> Teacher Justification Guide
+      </div>
+      <div style="font-size: 1.15rem; line-height: 1.6; color: #1e293b;">
+        Multiple terms can be justified as the 'Odd One Out' depending on criteria (e.g. state power vs popular rebellion, religious vs secular, cause vs consequence). Reward pupils whose reasoning cites specific historical dates, figures, or institutional actions.
+      </div>
+    `;
+  } else if (vocabStyle === 1) {
+    styleBadge = 'Style 1 · Syntactic Precision';
+    challengeTitle = 'THE GOLDEN SENTENCE';
+    challengePromptHtml = `
+      <div style="font-size: 1.5rem; line-height: 1.6; color: #f8fafc; font-weight: 500;">
+        Choose <strong style="color: #fbbf24;">TWO</strong> vocabulary terms from the word bank. Write <strong style="color: #38bdf8;">ONE</strong> grammatically sophisticated historical sentence connecting them using:
+      </div>
+      <div style="display: flex; gap: 15px; margin-top: 14px; flex-wrap: wrap;">
+        <span style="background: rgba(245, 158, 11, 0.25); border: 2px solid #f59e0b; color: #fef08a; padding: 6px 18px; border-radius: 8px; font-weight: 800; font-size: 1.25rem; letter-spacing: 1px;">BECAUSE</span>
+        <span style="background: rgba(245, 158, 11, 0.25); border: 2px solid #f59e0b; color: #fef08a; padding: 6px 18px; border-radius: 8px; font-weight: 800; font-size: 1.25rem; letter-spacing: 1px;">ALTHOUGH</span>
+        <span style="background: rgba(245, 158, 11, 0.25); border: 2px solid #f59e0b; color: #fef08a; padding: 6px 18px; border-radius: 8px; font-weight: 800; font-size: 1.25rem; letter-spacing: 1px;">CONSEQUENTLY</span>
+      </div>
+    `;
+    const goldenExemplar = getGoldenSentenceExemplar(activeLesson, termsList);
+    modelAnswerHtml = `
+      <div style="font-size: 1.35rem; font-weight: 700; color: #ca8a04; margin-bottom: 8px;">
+        <i class="fa-solid fa-star" style="color: #eab308;"></i> Model Golden Sentence
+      </div>
+      <div style="font-size: 1.35rem; font-family: 'Playfair Display', Georgia, serif; line-height: 1.6; color: #0f172a; font-style: italic;">
+        "${goldenExemplar}"
+      </div>
+      <div style="font-size: 0.95rem; color: #78350f; margin-top: 8px;">
+        <strong>Examiner Insight:</strong> High-tariff syntax directly models Edexcel/AQA causal analytical writing.
+      </div>
+    `;
+  } else if (vocabStyle === 2) {
+    styleBadge = 'Style 2 · Structural Categorisation';
+    challengeTitle = 'CONCEPTUAL BINARY SORT';
+    challengePromptHtml = `
+      <div style="font-size: 1.5rem; line-height: 1.6; color: #f8fafc; font-weight: 500;">
+        Divide your mini-whiteboard into <strong style="color: #4ade80;">TWO COLUMNS</strong>:
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 16px;">
+        <div style="background: rgba(59, 130, 246, 0.15); border: 2px solid #3b82f6; border-radius: 10px; padding: 14px; text-align: center;">
+          <div style="font-size: 1.25rem; font-weight: 800; color: #93c5fd; text-transform: uppercase;">Column A: Power, Governance & Warfare</div>
+        </div>
+        <div style="background: rgba(34, 197, 94, 0.15); border: 2px solid #22c55e; border-radius: 10px; padding: 14px; text-align: center;">
+          <div style="font-size: 1.25rem; font-weight: 800; color: #86efac; text-transform: uppercase;">Column B: Economy, Trade & Society</div>
+        </div>
+      </div>
+      <div style="font-size: 1.2rem; color: #cbd5e1; margin-top: 14px;">
+        Sort all 6 words from the bank above into the correct column on your board!
+      </div>
+    `;
+    modelAnswerHtml = `
+      <div style="font-size: 1.35rem; font-weight: 700; color: #ca8a04; margin-bottom: 8px;">
+        <i class="fa-solid fa-star" style="color: #eab308;"></i> Model Categorisation Discussion
+      </div>
+      <div style="font-size: 1.15rem; line-height: 1.6; color: #1e293b;">
+        Ask pupils to defend terms that have dual characteristics (e.g. warfare funded by economic taxes, or social rebellions challenging royal power).
+      </div>
+    `;
+  } else {
+    styleBadge = 'Style 3 · Critical Reading & Misconceptions';
+    challengeTitle = 'SPOT THE DELIBERATE ERROR!';
+    const errStmt =
+      activeLesson.vocab_deliberate_error ||
+      `A modern historical commentator claimed that ${termsList[0] || 'the main concept'} and ${termsList[1] || 'the event'} were completely trivial, playing no role in shaping the political outcome of this era.`;
+    challengePromptHtml = `
+      <div style="font-size: 1.35rem; color: #f8fafc; font-weight: 500; margin-bottom: 12px;">
+        The statement below contains a <strong style="color: #f87171;">deliberate historical misconception</strong>:
+      </div>
+      <div style="font-size: 1.45rem; line-height: 1.6; color: #fecaca; background: rgba(239, 68, 68, 0.15); border-left: 6px solid #ef4444; border-radius: 0 10px 10px 0; padding: 18px 24px; font-style: italic; font-family: 'Playfair Display', Georgia, serif;">
+        "${errStmt}"
+      </div>
+      <div style="font-size: 1.25rem; color: #cbd5e1; margin-top: 14px;">
+        Spot the deliberate error! Write the <strong>accurate historical correction</strong> on your mini-whiteboard.
+      </div>
+    `;
+    modelAnswerHtml = `
+      <div style="font-size: 1.35rem; font-weight: 700; color: #ca8a04; margin-bottom: 8px;">
+        <i class="fa-solid fa-star" style="color: #eab308;"></i> Accurate Historical Reality
+      </div>
+      <div style="font-size: 1.2rem; line-height: 1.6; color: #1e293b;">
+        Historians must challenge reductive claims. The statement distorts the historical reality by ignoring primary evidence from the period. Pupils must state the factual correction with evidence from today's lesson.
+      </div>
+    `;
+  }
+
+  // Reset timer
+  _mwbTimerSeconds = 120;
+  _mwbTimerRunning = false;
+  if (_mwbTimerInterval) clearInterval(_mwbTimerInterval);
+
+  modal.innerHTML = `
+    <div class="mwb-container">
+      <!-- Presentation Top Bar -->
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid rgba(255,255,255,0.15); padding-bottom: 18px; margin-bottom: 25px; flex-wrap: wrap; gap: 15px;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="background: rgba(99, 102, 241, 0.25); color: #a5b4fc; border: 1.5px solid #6366f1; padding: 4px 12px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+              <i class="fa-solid fa-chalkboard-user"></i> Mini-Whiteboard Prompt Overlay
+            </span>
+            <span style="background: rgba(255, 255, 255, 0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">
+              ${styleBadge}
+            </span>
+          </div>
+          <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; margin: 8px 0 0 0; color: #ffffff; letter-spacing: 0.5px;">
+            ${activeLesson.title}
+          </h1>
+        </div>
+
+        <!-- Timer & Quick Actions -->
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="display: flex; align-items: center; gap: 8px; background: rgba(15,23,42,0.6); padding: 6px 12px; border-radius: 10px; border: 1.5px solid rgba(255,255,255,0.15);">
+            <div id="mwb-clock" class="mwb-timer-display">02:00</div>
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <button id="mwb-btn-play" onclick="window.toggleMwbTimer()" style="background: #0284c7; color: white; border: none; border-radius: 4px; padding: 4px 10px; font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: all 0.15s;" title="Start/Pause Timer (Space)">
+                <i class="fa-solid fa-play" id="mwb-play-icon"></i> Start
+              </button>
+              <button onclick="window.resetMwbTimer()" style="background: rgba(255,255,255,0.15); color: #cbd5e1; border: none; border-radius: 4px; padding: 4px 10px; font-size: 0.8rem; cursor: pointer; transition: all 0.15s;" title="Reset Timer">
+                <i class="fa-solid fa-rotate-left"></i>
+              </button>
+            </div>
+            <button onclick="window.adjustMwbTimer(30)" style="background: rgba(255,255,255,0.15); color: #cbd5e1; border: none; border-radius: 4px; padding: 6px 10px; font-size: 0.85rem; font-weight: 700; cursor: pointer; height: 100%;" title="Add 30 seconds">
+              +30s
+            </button>
+          </div>
+
+          <button id="mwb-toggle-exemplar-btn" onclick="window.toggleVocabWbExemplar()" style="padding: 10px 18px; font-size: 0.95rem; font-weight: 700; cursor: pointer; background: #eab308; color: #713f12; border: 1.5px solid #facc15; border-radius: 8px; box-shadow: 0 4px 14px rgba(234, 179, 8, 0.3); display: inline-flex; align-items: center; gap: 8px; transition: all 0.15s;" title="Show/Hide Model Answer (Press A)">
+            <i class="fa-solid fa-eye" id="mwb-eye-icon"></i> Show Model Answer <span style="background: rgba(0,0,0,0.12); padding: 1px 6px; border-radius: 4px; font-size: 0.75rem; font-family: monospace;">A</span>
+          </button>
+
+          <button onclick="window.closeVocabWhiteboardModal()" style="background: rgba(255,255,255,0.1); color: #ffffff; border: 1.5px solid rgba(255,255,255,0.25); padding: 10px 16px; border-radius: 8px; font-size: 0.95rem; cursor: pointer; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s;" title="Exit Whiteboard Overlay (Esc)">
+            <i class="fa-solid fa-times"></i> Close
+          </button>
+        </div>
+      </div>
+
+      <!-- Classroom Instructions Banner -->
+      <div style="background: linear-gradient(90deg, rgba(79, 70, 229, 0.25) 0%, rgba(14, 165, 233, 0.2) 100%); border: 1.5px solid rgba(129, 140, 248, 0.4); border-radius: 10px; padding: 12px 20px; display: flex; align-items: center; gap: 12px; margin-bottom: 25px;">
+        <span style="font-size: 1.6rem;">✍️</span>
+        <div style="font-size: 1.15rem; font-weight: 600; color: #e0e7ff;">
+          Mini-Whiteboard Prompt: Write your response in bold marker on your handheld board. Keep your board face-down until <strong>"3, 2, 1, CHIN IT!"</strong>
+        </div>
+      </div>
+
+      <!-- Extra-Large Word Bank Display -->
+      <div style="margin-bottom: 30px;">
+        <div style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #38bdf8; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-boxes-stacked"></i> Curriculum Vocabulary Word Bank
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+          ${termsList
+            .map(
+              (t) => `
+            <div class="mwb-word-chip">
+              ${t}
+            </div>
+          `,
+            )
+            .join('')}
+        </div>
+      </div>
+
+      <!-- Big Rotating Challenge Box -->
+      <div style="background: rgba(255, 255, 255, 0.05); border: 2.5px solid rgba(255, 255, 255, 0.18); border-radius: 14px; padding: 28px 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); margin-bottom: 25px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin: 0; color: #facc15; display: flex; align-items: center; gap: 10px;">
+            ${challengeTitle}
+          </h2>
+        </div>
+        ${challengePromptHtml}
+      </div>
+
+      <!-- Model Answer / Exemplar Reveal Drawer -->
+      <div id="vocab-wb-exemplar-box" style="display: none; background: #fefce8; border: 3px solid #eab308; border-radius: 14px; padding: 24px 30px; box-shadow: 0 12px 35px rgba(234, 179, 8, 0.25); animation: fadeIn 0.3s ease;">
+        ${modelAnswerHtml}
+      </div>
+    </div>
+  `;
+
+  modal.classList.add('visible');
+
+  // Key listeners for overlay
+  if (!window._mwbKeyHandlerAttached) {
+    window._mwbKeyHandlerAttached = true;
+    window.addEventListener('keydown', (e) => {
+      const mwb = document.getElementById('vocab-whiteboard-modal');
+      if (!mwb || !mwb.classList.contains('visible')) return;
+      if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
+      if (e.key === ' ' || e.code === 'Space') {
+        e.preventDefault();
+        window.toggleMwbTimer();
+      } else if (e.key === 'a' || e.key === 'A') {
+        e.preventDefault();
+        window.toggleVocabWbExemplar();
+      } else if (e.key === 'Escape') {
+        e.preventDefault();
+        window.closeVocabWhiteboardModal();
+      }
+    });
+  }
+}
+
+export function toggleMwbTimer() {
+  const clock = document.getElementById('mwb-clock');
+  const btn = document.getElementById('mwb-btn-play');
+  const icon = document.getElementById('mwb-play-icon');
+  if (!_mwbTimerRunning) {
+    _mwbTimerRunning = true;
+    if (btn) btn.style.background = '#e11d48';
+    if (icon) icon.className = 'fa-solid fa-pause';
+    if (btn) btn.innerHTML = '<i class="fa-solid fa-pause" id="mwb-play-icon"></i> Pause';
+    _mwbTimerInterval = setInterval(() => {
+      if (_mwbTimerSeconds > 0) {
+        _mwbTimerSeconds--;
+        updateMwbClockDisplay();
+      } else {
+        clearInterval(_mwbTimerInterval);
+        _mwbTimerRunning = false;
+        if (btn) btn.style.background = '#0284c7';
+        if (btn) btn.innerHTML = '<i class="fa-solid fa-play" id="mwb-play-icon"></i> Start';
+        if (clock) {
+          clock.style.color = '#ef4444';
+          clock.style.borderColor = '#ef4444';
+          clock.innerHTML = '00:00 - BOARDS UP!';
+        }
+      }
+    }, 1000);
+  } else {
+    _mwbTimerRunning = false;
+    clearInterval(_mwbTimerInterval);
+    if (btn) btn.style.background = '#0284c7';
+    if (icon) icon.className = 'fa-solid fa-play';
+    if (btn) btn.innerHTML = '<i class="fa-solid fa-play" id="mwb-play-icon"></i> Start';
+  }
+}
+
+export function resetMwbTimer() {
+  if (_mwbTimerInterval) clearInterval(_mwbTimerInterval);
+  _mwbTimerRunning = false;
+  _mwbTimerSeconds = 120;
+  updateMwbClockDisplay();
+  const btn = document.getElementById('mwb-btn-play');
+  if (btn) {
+    btn.style.background = '#0284c7';
+    btn.innerHTML = '<i class="fa-solid fa-play" id="mwb-play-icon"></i> Start';
+  }
+  const clock = document.getElementById('mwb-clock');
+  if (clock) {
+    clock.style.color = '#38bdf8';
+    clock.style.borderColor = '#0284c7';
+  }
+}
+
+export function adjustMwbTimer(deltaSec) {
+  _mwbTimerSeconds = Math.max(10, _mwbTimerSeconds + deltaSec);
+  updateMwbClockDisplay();
+}
+
+function updateMwbClockDisplay() {
+  const clock = document.getElementById('mwb-clock');
+  if (!clock) return;
+  const mins = Math.floor(_mwbTimerSeconds / 60);
+  const secs = _mwbTimerSeconds % 60;
+  clock.innerText = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+}
+
+export function toggleVocabWbExemplar() {
+  const box = document.getElementById('vocab-wb-exemplar-box');
+  const btn = document.getElementById('mwb-toggle-exemplar-btn');
+  if (!box) return;
+  const isVis = box.style.display === 'block';
+  box.style.display = isVis ? 'none' : 'block';
+  if (btn) {
+    btn.innerHTML = isVis
+      ? '<i class="fa-solid fa-eye" id="mwb-eye-icon"></i> Show Model Answer <span style="background: rgba(0,0,0,0.12); padding: 1px 6px; border-radius: 4px; font-size: 0.75rem; font-family: monospace;">A</span>'
+      : '<i class="fa-solid fa-eye-slash" id="mwb-eye-icon"></i> Hide Model Answer <span style="background: rgba(0,0,0,0.12); padding: 1px 6px; border-radius: 4px; font-size: 0.75rem; font-family: monospace;">A</span>';
+    btn.style.background = isVis ? '#eab308' : '#ca8a04';
+  }
+}
+
+export function closeVocabWhiteboardModal() {
+  const modal = document.getElementById('vocab-whiteboard-modal');
+  if (modal) modal.classList.remove('visible');
+  if (_mwbTimerInterval) clearInterval(_mwbTimerInterval);
+  _mwbTimerRunning = false;
+}
+
+window.openVocabWhiteboardModal = openVocabWhiteboardModal;
+window.closeVocabWhiteboardModal = closeVocabWhiteboardModal;
+window.toggleMwbTimer = toggleMwbTimer;
+window.resetMwbTimer = resetMwbTimer;
+window.adjustMwbTimer = adjustMwbTimer;
+window.toggleVocabWbExemplar = toggleVocabWbExemplar;
 
 export function initGlossaryPopover() {
   if (!document.getElementById('global-glossary-popover')) {

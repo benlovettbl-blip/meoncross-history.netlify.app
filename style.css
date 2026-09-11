@@ -1343,6 +1343,63 @@ body.sen-mode .standard-narrative-container span[style*="font-family: 'Playfair 
   display: block;
 }
 
+/* Classroom Mini-Whiteboard Prompt Overlay */
+#vocab-whiteboard-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10005;
+  display: none;
+  background: radial-gradient(circle at 50% 15%, #1e293b 0%, #090d16 100%);
+  color: #f8fafc;
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 35px 50px;
+}
+#vocab-whiteboard-modal.visible {
+  display: block;
+}
+.mwb-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.mwb-timer-display {
+  font-family: 'Courier New', monospace;
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #38bdf8;
+  background: rgba(15, 23, 42, 0.85);
+  border: 2px solid #0284c7;
+  border-radius: 8px;
+  padding: 4px 16px;
+  display: inline-block;
+  min-width: 110px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(2, 132, 199, 0.3);
+}
+.mwb-word-chip {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-size: 1.35rem;
+  font-weight: 700;
+  padding: 12px 22px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+.mwb-word-chip:hover {
+  border-color: #38bdf8;
+  background: rgba(56, 189, 248, 0.15);
+  transform: translateY(-2px);
+}
+
 @media print {
   body {
     font-family: Arial, 'OpenDyslexic', sans-serif !important;

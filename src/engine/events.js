@@ -56,7 +56,9 @@ export function initEventDelegation() {
       if (container) {
         const allSelects = Array.from(container.querySelectorAll('.cloze-blank-select'));
         const allCorrect = allSelects.every(
-          (s) => s.disabled && (s.value || '').trim().toLowerCase() === (s.dataset.answer || '').trim().toLowerCase()
+          (s) =>
+            s.disabled &&
+            (s.value || '').trim().toLowerCase() === (s.dataset.answer || '').trim().toLowerCase(),
         );
         if (allCorrect) {
           const successEl = container.querySelector('#cloze-success');
@@ -322,6 +324,15 @@ export function initEventDelegation() {
         break;
       case 'open-task-whiteboard':
         if (window.openTaskWhiteboard) window.openTaskWhiteboard();
+        break;
+      case 'open-vocab-whiteboard':
+        if (window.openVocabWhiteboardModal) window.openVocabWhiteboardModal();
+        break;
+      case 'close-vocab-whiteboard':
+        if (window.closeVocabWhiteboardModal) window.closeVocabWhiteboardModal();
+        break;
+      case 'toggle-vocab-wb-exemplar':
+        if (window.toggleVocabWbExemplar) window.toggleVocabWbExemplar();
         break;
       case 'open-tour-guide-modal':
         if (window.openTourGuideModal)
