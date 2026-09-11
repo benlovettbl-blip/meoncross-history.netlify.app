@@ -3658,7 +3658,7 @@ allDirs.forEach((unitId) => {
         if (unitId === 'cme_new' && lesson.secondary_map) {
           html += `</div>`; // closes the GCSE Exam Practice + Exit Ticket page wrapper
         }
-      } else if (unitId !== 'cme_new') {
+      } else if (unitId !== 'cme_new' && unitId !== 'early_modern_world') {
         // --- PUPIL VOICE (ROTATING DISCIPLINARY DEBRIEF ACROSS OTHER UNITS) ---
         const debriefQuestions = [
           "What was the most significant event or decision in today's lesson, and what was its major historical consequence?",
