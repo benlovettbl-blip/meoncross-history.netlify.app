@@ -15985,14 +15985,35 @@
             ]
           },
           "extended": {
-            "title": "Assessment Practice",
-            "question": "Explain why Europe was not the center of global wealth and power in 1450.",
+            "title": "Assessment Practice: 12-Mark Explanatory Essay",
+            "question": "Explain why Europe was not the centre of global wealth and power in 1450.",
             "hints": [
-              "Mention the Ming Dynasty (China), the Islamic Empires (Ottoman/Mali), and the Silk Road.",
-              "Sentence Starter: In 1450, the true centers of global wealth were...",
-              "Sentence Starter: This was because they controlled...",
-              "Sentence Starter: By contrast, Europe was relatively isolated because..."
+              "Point 1: Ming Dynasty China — porcelain, silk, Zheng He’s massive treasure fleets, and Indian Ocean economic dominance.",
+              "Point 2: The Islamic World & The Ottomans — Fall of Constantinople (1453) choking European overland access to the Silk Roads.",
+              "Point 3: West African Wealth — Songhai Empire and the immense gold/salt trade passing through Timbuktu.",
+              "Point 4: European Marginality — Peripheral, agrarian, politically fragmented, and desperate to bypass Ottoman taxes."
             ],
+            "teacher_guidance": {
+              "visualiser_prompt": "Model live under the visualiser how to construct a high-tariff causal paragraph. Emphasise how subordinating conjunctions (\"Although...\", \"Whereas...\") instantly elevate a pupil's writing from descriptive narrative to analytical historical argument.",
+              "tiered_stems": [
+                {
+                  "tier": "Tier 1 · Foundation (Descriptive Identification)",
+                  "stem": "In 1450, Europe was not the centre of global wealth because the true superpowers were Ming China and the Ottoman Empire, which controlled...",
+                  "pupil_focus": "Identifies the correct non-European civilisations and describes their commercial dominance."
+                },
+                {
+                  "tier": "Tier 2 · Developing (Causal Contrast)",
+                  "stem": "While European kingdoms were primarily agrarian and politically fragmented, Ming China and West African empires dominated global trade because...",
+                  "pupil_focus": "Draws a direct comparative contrast between European economic limitations and Asian/African wealth."
+                },
+                {
+                  "tier": "Tier 3 · Greater Depth (Complex Evaluative Synthesis)",
+                  "stem": "Although European kingdoms possessed developing merchant cities like Venice and Genoa, Ming China and the Ottoman Empire were far wealthier because Zheng He’s maritime treasure fleets dominated Indian Ocean commerce, whereas European merchants were economically suffocated following the Ottoman capture of Constantinople in 1453.",
+                  "pupil_focus": "Syntactically embeds precise historical evidence (Zheng He, Constantinople, Indian Ocean) into a sophisticated causal argument."
+                }
+              ]
+            },
+            "model": "In 1450, Western Europe was peripheral to world trade, while the true centres of global wealth and power lay in Ming China, the Islamic World, and West Africa.\n\nFirstly, Ming Dynasty China was the world’s most technologically advanced and commercially dominant superpower. Under the early Ming emperors, China produced the world's most sought-after manufactured commodities—including high-grade porcelain, fine silk, and tea. Between 1405 and 1433, Admiral Zheng He commanded seven massive maritime expeditions across the Indian Ocean to East Africa and the Persian Gulf. Zheng He’s armada of over 300 vessels, featuring nine-masted \"Treasure Ships\" four times larger than European caravels, demonstrated that China possessed unmatched naval engineering and economic supremacy without needing to conquer foreign territories by force.\n\nSecondly, the Ottoman Empire and Islamic trading networks controlled the vital economic crossroads between East and West. By conquering Constantinople in 1453 under Sultan Mehmed II, the Ottomans extinguished the Byzantine Empire and established total command over the overland Silk Road transit points and the Black Sea. European merchants from Venice and Genoa were forced to pay heavy customs duties and transit taxes to Ottoman gatekeepers. Europe lacked high-value manufactured goods that Eastern merchants desired, leaving European states with a constant deficit of silver and gold.\n\nFinally, West African kingdoms such as the Songhai and Mali Empires possessed vast mineral wealth that dwarfed European reserves. West Africa supplied the Mediterranean world with two-thirds of its gold through trans-Saharan caravan routes connecting cities like Timbuktu and Gao. By contrast, 15th-century Europe was a politically fractured continent still recovering from the devastation of the Black Death, characterized by localized feudal agriculture rather than global commercial power.\n\nIn conclusion, Europe in 1450 was not the centre of global wealth and power; it was an economically isolated periphery. European oceanic voyages in the late 15th century were launched not out of pre-existing supremacy, but out of desperate necessity to circumvent the Ottoman blockade and access the boundless wealth of Asia and Africa.",
             "lines": 15
           },
           "vocab": [
