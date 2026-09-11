@@ -7,6 +7,43 @@ let activeUtterance = null;
 let activeButton = null;
 let activeChunk = null;
 let speechHeartbeat = null;
+let activeHighlightContainer = null;
+let activeWordSpans = [];
+let activeHighlightedWord = null;
+let activeHighlightedSentenceIdx = null;
+
+let currentSpeechRate = 1.0;
+try {
+  if (typeof window !== 'undefined' && window.localStorage) {
+    const savedRate = localStorage.getItem('speech_rate');
+    if (savedRate) currentSpeechRate = parseFloat(savedRate) || 1.0;
+  }
+} catch (e) {}
+
+/**
+ * Set current speech rate and persist preference (e.g. 0.85, 1.0, 1.15)
+ */
+export function setSpeechRate(rate) {
+  const parsed = parseFloat(rate);
+  if (!isNaN(parsed) && parsed > 0) {
+    currentSpeechRate = parsed;
+    try {
+      if (typeof window !== 'undefined' && window.localStorage) {
+        localStorage.setItem('speech_rate', currentSpeechRate.toString());
+      }
+    } catch (e) {}
+    if (activeUtterance) {
+      activeUtterance.rate = currentSpeechRate;
+    }
+  }
+}
+
+/**
+ * Get current playback speech rate
+ */
+export function getSpeechRate() {
+  return currentSpeechRate;
+}
 
 /**
  * Select the most natural English/British voice available on the device.
@@ -79,13 +116,117 @@ export function getBestVoice() {
 }
 
 /**
- * Reset all active reading UI elements across the DOM.
+ * Tokenize a container's text nodes into synchronized word spans for real-time boundary highlighting.
+ * Preserves the original HTML in rootEl._originalHtml so it can be cleanly restored when reading ends.
+ * @param {HTMLElement} rootEl - The text container to tokenize
+ * @returns {{ spokenText: string, spans: Array<{ el: HTMLElement, start: number, end: number, sentenceIdx: number }> }}
+ */
+function prepareHighlightableText(rootEl) {
+  if (!rootEl) return { spokenText: '', spans: [] };
+
+  // Restore previous if still dirty
+  if (rootEl._originalHtml) {
+    rootEl.innerHTML = rootEl._originalHtml;
+  }
+  rootEl._originalHtml = rootEl.innerHTML;
+
+  const walker = document.createTreeWalker(rootEl, NodeFilter.SHOW_TEXT, {
+    acceptNode(node) {
+      const parent = node.parentElement;
+      if (!parent) return NodeFilter.FILTER_REJECT;
+      if (
+        parent.closest(
+          '.no-print, .print-only, button, style, script, [style*="display: none"], [style*="display:none"]',
+        )
+      ) {
+        return NodeFilter.FILTER_REJECT;
+      }
+      if (!node.nodeValue || !node.nodeValue.trim()) {
+        return NodeFilter.FILTER_SKIP;
+      }
+      return NodeFilter.FILTER_ACCEPT;
+    },
+  });
+
+  const textNodes = [];
+  let currentNode;
+  while ((currentNode = walker.nextNode())) {
+    textNodes.push(currentNode);
+  }
+
+  let spokenText = '';
+  let charOffset = 0;
+  let sentenceIdx = 0;
+  const spans = [];
+
+  textNodes.forEach((node) => {
+    const textVal = node.nodeValue;
+    const tokens = textVal.match(/\S+|\s+/g) || [];
+    const fragment = document.createDocumentFragment();
+
+    tokens.forEach((token) => {
+      if (/^\s+$/.test(token)) {
+        // Space / whitespace token
+        fragment.appendChild(document.createTextNode(token));
+        if (spokenText.length > 0 && !spokenText.endsWith(' ')) {
+          spokenText += ' ';
+          charOffset++;
+        }
+      } else {
+        // Word token
+        if (spokenText.length > 0 && !spokenText.endsWith(' ')) {
+          spokenText += ' ';
+          charOffset++;
+        }
+
+        const start = charOffset;
+        const end = start + token.length;
+        spokenText += token;
+        charOffset = end;
+
+        const span = document.createElement('span');
+        span.className = 'speech-word';
+        span.dataset.start = start;
+        span.dataset.end = end;
+        span.dataset.sentence = sentenceIdx;
+        span.textContent = token;
+
+        fragment.appendChild(span);
+        spans.push({ el: span, start, end, sentenceIdx });
+
+        // Advance sentence index on sentence-ending punctuation
+        if (/[.!?]["']?$/.test(token)) {
+          sentenceIdx++;
+        }
+      }
+    });
+
+    if (node.parentNode) {
+      node.parentNode.replaceChild(fragment, node);
+    }
+  });
+
+  return { spokenText: spokenText.trim(), spans };
+}
+
+/**
+ * Reset all active reading UI elements across the DOM and restore pristine text HTML.
  */
 export function resetActiveSpeech() {
   if (speechHeartbeat) {
     clearInterval(speechHeartbeat);
     speechHeartbeat = null;
   }
+
+  // Restore original pristine DOM without leftover spans
+  if (activeHighlightContainer && activeHighlightContainer._originalHtml) {
+    activeHighlightContainer.innerHTML = activeHighlightContainer._originalHtml;
+    delete activeHighlightContainer._originalHtml;
+  }
+  activeHighlightContainer = null;
+  activeWordSpans = [];
+  activeHighlightedWord = null;
+  activeHighlightedSentenceIdx = null;
 
   if (activeButton) {
     activeButton.classList.remove('reading-active');
@@ -152,23 +293,20 @@ export function readAloudText(btnElement) {
   const textEl =
     chunk.querySelector('.narrative-text') || chunk.querySelector('.archival-source-body') || chunk;
 
-  // Clone node to safely sanitize text without affecting the rendered DOM
-  const clone = textEl.cloneNode(true);
-
-  // Strip non-spoken elements: hidden print markers, print duplicates, interactive buttons, styles, scripts
-  clone
-    .querySelectorAll(
-      '.no-print, .print-only, button, style, script, [style*="display: none"], [style*="display:none"]',
-    )
-    .forEach((el) => el.remove());
-
-  // Extract clean rendered text
-  let rawText = clone.innerText || clone.textContent || '';
-  rawText = rawText.replace(/\s+/g, ' ').trim();
-
-  if (!rawText) return;
+  // Tokenize container text for boundary highlighting
+  const { spokenText, spans } = prepareHighlightableText(textEl);
+  if (!spokenText) {
+    // If tokenization found nothing, revert and exit
+    if (textEl._originalHtml) {
+      textEl.innerHTML = textEl._originalHtml;
+      delete textEl._originalHtml;
+    }
+    return;
+  }
 
   // Set visual active state
+  activeHighlightContainer = textEl;
+  activeWordSpans = spans;
   activeButton = btnElement;
   activeChunk = chunk;
   btnElement.classList.add('reading-active');
@@ -177,7 +315,7 @@ export function readAloudText(btnElement) {
   chunk.classList.add('reading-highlight');
 
   // Create and configure utterance
-  const utterance = new SpeechSynthesisUtterance(rawText);
+  const utterance = new SpeechSynthesisUtterance(spokenText);
   activeUtterance = utterance;
   window._activeSpeechUtterance = utterance; // Keep global reference to avoid Chromium GC bug
 
@@ -189,15 +327,58 @@ export function readAloudText(btnElement) {
     utterance.lang = 'en-GB';
   }
 
-  utterance.rate = 1.0;
+  utterance.rate = currentSpeechRate;
   utterance.pitch = 1.0;
+
+  // Real-time boundary event for word-by-word & sentence highlighting
+  utterance.onboundary = (event) => {
+    if (event.name === 'word' || !event.name) {
+      const charIndex = event.charIndex;
+      if (charIndex === undefined || charIndex === null) return;
+
+      // Find word span containing charIndex or nearest matching
+      let match = spans.find((s) => s.start <= charIndex && charIndex < s.end);
+      if (!match) {
+        match = spans.find((s) => s.start >= charIndex);
+      }
+      if (!match && spans.length > 0) {
+        match = spans[spans.length - 1];
+      }
+      if (!match) return;
+
+      if (activeHighlightedWord !== match.el) {
+        if (activeHighlightedWord) {
+          activeHighlightedWord.classList.remove('speaking-word-highlight');
+        }
+        match.el.classList.add('speaking-word-highlight');
+        activeHighlightedWord = match.el;
+
+        // Update sentence background shading
+        if (activeHighlightedSentenceIdx !== match.sentenceIdx) {
+          if (activeHighlightedSentenceIdx !== null) {
+            spans
+              .filter((s) => s.sentenceIdx === activeHighlightedSentenceIdx)
+              .forEach((s) => s.el.classList.remove('speaking-sentence-highlight'));
+          }
+          activeHighlightedSentenceIdx = match.sentenceIdx;
+          spans
+            .filter((s) => s.sentenceIdx === activeHighlightedSentenceIdx)
+            .forEach((s) => s.el.classList.add('speaking-sentence-highlight'));
+        }
+
+        // Smooth scroll word into view if near boundary of scroll container
+        try {
+          match.el.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        } catch (e) {}
+      }
+    }
+  };
 
   utterance.onend = () => {
     resetActiveSpeech();
   };
 
   utterance.onerror = (e) => {
-    // Interrupted errors happen when cancel() is deliberately called; ignore those
     if (e.error !== 'interrupted' && e.error !== 'canceled') {
       console.warn('Speech synthesis error:', e);
     }
@@ -227,6 +408,8 @@ export function initSpeech() {
 
   window.readAloudText = readAloudText;
   window.cancelSpeech = cancelSpeech;
+  window.setSpeechRate = setSpeechRate;
+  window.getSpeechRate = getSpeechRate;
 
   if ('speechSynthesis' in window) {
     // Prime voices immediately and when changed asynchronously

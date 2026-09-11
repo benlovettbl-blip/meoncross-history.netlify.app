@@ -3746,7 +3746,7 @@ body.sen-mode .narrative-chunk.reading-highlight {
 }
 
 /* Suppress decorative/colored FontAwesome icons in academic historical source boxes and teacher commentary */
-.archival-source-box i.fa-solid:not(.fa-print):not(.fa-volume-high),
+.archival-source-box i.fa-solid:not(.fa-print):not(.fa-volume-high):not(.fa-stop),
 .gcse-source-container i.fa-file-lines,
 .gcse-source-container i.fa-quote-left,
 .teacher-note i.fa-bullseye,
@@ -3775,5 +3775,205 @@ body.sen-mode .narrative-chunk.reading-highlight {
     aspect-ratio: auto;
     height: 240px;
     background-position: right center;
+  }
+}
+
+/* ==========================================================================
+   REAL-TIME READ-ALOUD BOUNDARY HIGHLIGHTING (EAL & DYSLEXIC SUPPORT)
+   ========================================================================== */
+.speech-word {
+  display: inline;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+  border-radius: 2px;
+}
+
+/* Soft Sentence Grouping */
+.speech-word.speaking-sentence-highlight {
+  background-color: rgba(254, 240, 138, 0.45);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* Vibrant Word Focus */
+.speech-word.speaking-word-highlight {
+  background-color: #fde047 !important;
+  color: #0f172a !important;
+  font-weight: 700;
+  border-radius: 3px;
+  padding: 1px 3px;
+  box-shadow: 0 1px 4px rgba(234, 179, 8, 0.45);
+}
+
+/* Dyslexia / SEN Mode Highlighting Overrides */
+body.sen-mode .speech-word.speaking-sentence-highlight {
+  background-color: rgba(253, 230, 138, 0.7) !important;
+  color: #000000 !important;
+}
+
+body.sen-mode .speech-word.speaking-word-highlight {
+  background-color: #f59e0b !important;
+  color: #ffffff !important;
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  box-shadow: 0 2px 6px rgba(217, 119, 6, 0.4);
+}
+
+/* ==========================================================================
+   ACCESSIBILITY CONTROLS TOOLBAR & PLAYBACK SPEED SELECTOR
+   ========================================================================== */
+.header-accessibility-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* SEN / Dyslexia Button */
+.header-tool-btn.btn-dyslexia {
+  background: var(--bg-card, #f8fafc);
+  border: 1.5px solid var(--border-glass, #e2e8f0);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-primary, #1e293b);
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.header-tool-btn.btn-dyslexia:hover {
+  border-color: var(--primary, #1e3a8a);
+  background: var(--bg-card-hover, #f1f5f9);
+}
+
+.header-tool-btn.btn-dyslexia.active {
+  background: #1e3a8a;
+  color: #ffffff;
+  border-color: #1e3a8a;
+  box-shadow: 0 2px 6px rgba(30, 58, 138, 0.25);
+}
+
+body.sen-mode .header-tool-btn.btn-dyslexia.active {
+  background: #d97706 !important;
+  color: #ffffff !important;
+  border-color: #b45309 !important;
+}
+
+/* Read-Aloud Playback Speed Selector */
+.speech-rate-selector {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  background: var(--bg-card, #f8fafc);
+  border: 1.5px solid var(--border-glass, #e2e8f0);
+  border-radius: 8px;
+  padding: 3px 5px;
+  transition: border-color 0.2s ease;
+}
+
+.speech-rate-selector:hover {
+  border-color: var(--primary, #1e3a8a);
+}
+
+.speech-rate-selector .speed-label {
+  font-size: 0.72rem;
+  color: var(--text-muted, #64748b);
+  padding: 0 4px 0 2px;
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.8;
+}
+
+.speech-rate-selector .speed-btn {
+  background: transparent;
+  border: none;
+  border-radius: 5px;
+  padding: 3px 6px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--text-primary, #334155);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+  line-height: 1.2;
+}
+
+.speech-rate-selector .speed-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--primary, #1e3a8a);
+}
+
+.speech-rate-selector .speed-btn.active {
+  background: var(--primary, #1e3a8a);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 1px 3px rgba(30, 58, 138, 0.2);
+}
+
+body.sen-mode .speech-rate-selector .speed-btn.active {
+  background: #d97706 !important;
+  color: #ffffff !important;
+}
+
+/* Primary Source Box Read-Aloud Button */
+.archival-source-box .read-aloud-btn {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  border-radius: 5px;
+  padding: 5px 8px;
+  font-size: 0.78rem;
+  transition: all 0.2s ease;
+}
+
+.archival-source-box .read-aloud-btn:hover {
+  background: #eff6ff;
+  border-color: #3b82f6;
+  color: #1e3a8a;
+}
+
+.archival-source-box .read-aloud-btn.reading-active {
+  background: #ef4444 !important;
+  border-color: #dc2626 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.3) !important;
+}
+
+.archival-source-box.reading-highlight {
+  box-shadow:
+    0 0 0 3px rgba(59, 130, 246, 0.35),
+    0 6px 18px rgba(59, 130, 246, 0.12) !important;
+  border-color: #3b82f6 !important;
+  background-color: #fbfdff !important;
+}
+
+body.sen-mode .archival-source-box.reading-highlight {
+  border-color: #d97706 !important;
+  background-color: #fffdf5 !important;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.35) !important;
+}
+
+@media (max-width: 640px) {
+  .header-accessibility-bar {
+    gap: 4px;
+  }
+  .header-tool-btn.btn-dyslexia .btn-text {
+    display: none;
+  }
+  .header-tool-btn.btn-dyslexia {
+    padding: 6px 8px;
+  }
+  .speech-rate-selector {
+    padding: 2px 3px;
+  }
+  .speech-rate-selector .speed-btn {
+    padding: 2px 4px;
+    font-size: 0.7rem;
   }
 }

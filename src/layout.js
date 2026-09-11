@@ -129,6 +129,55 @@ export function bindEvents() {
     if (label) label.textContent = names[savedTheme] || 'Theme';
   }
 
+  // SEN / Dyslexia Mode Toggle Button in Header
+  const btnDyslexia = document.getElementById('btn-dyslexia');
+  if (btnDyslexia) {
+    // Restore initial state from localStorage
+    const savedSen = localStorage.getItem('sen_mode') === 'true';
+    if (savedSen) {
+      document.body.classList.add('sen-mode');
+      btnDyslexia.classList.add('active');
+      btnDyslexia.title = 'SEN / Dyslexia Mode: ACTIVE (Click to return to Standard Mode)';
+    }
+
+    btnDyslexia.addEventListener('click', () => {
+      document.body.classList.toggle('sen-mode');
+      const isSen = document.body.classList.contains('sen-mode');
+      localStorage.setItem('sen_mode', isSen ? 'true' : 'false');
+      btnDyslexia.classList.toggle('active', isSen);
+      btnDyslexia.title = isSen
+        ? 'SEN / Dyslexia Mode: ACTIVE (Click to return to Standard Mode)'
+        : 'Toggle SEN / Dyslexia Mode (Soft cream background & high-legibility font)';
+    });
+  }
+
+  // Read-Aloud Playback Speed Selector in Header
+  const speedGroup = document.getElementById('speech-rate-selector');
+  if (speedGroup) {
+    const savedRate = localStorage.getItem('speech_rate') || '1.0';
+    // Highlight initial active rate button
+    speedGroup.querySelectorAll('.speed-btn').forEach((btn) => {
+      if (btn.getAttribute('data-rate') === savedRate) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+
+      btn.addEventListener('click', (e) => {
+        const rate = e.currentTarget.getAttribute('data-rate');
+        if (window.setSpeechRate) {
+          window.setSpeechRate(rate);
+        } else {
+          try {
+            localStorage.setItem('speech_rate', rate);
+          } catch (err) {}
+        }
+        speedGroup.querySelectorAll('.speed-btn').forEach((b) => b.classList.remove('active'));
+        e.currentTarget.classList.add('active');
+      });
+    });
+  }
+
   // Mobile navigation drawer toggle
   const menuToggle = document.getElementById('sidebar-toggle-btn');
   const sidebar = document.getElementById('app-sidebar');

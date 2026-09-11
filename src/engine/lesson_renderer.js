@@ -1708,6 +1708,13 @@ export function renderLesson(lesson) {
             : '';
 
         const sourceTitle = block.source.title || block.source.caption || '';
+        const isWrittenSource =
+          block.source.type === 'written' ||
+          (block.source.content && !block.source.source && !block.source.src);
+        const sourceAudioBtnHtml = isWrittenSource
+          ? `<button class="btn btn-secondary no-print read-aloud-btn" data-action="read-aloud" style="padding: 5px 9px; flex-shrink: 0; margin-left: 8px; cursor: pointer;" title="Read Aloud Primary Source Excerpt"><i class="fa-solid fa-volume-high"></i></button>`
+          : '';
+
         const sourceHeaderHtml = sourceTitle
           ? `
             <div class="archival-source-header">
@@ -1717,10 +1724,19 @@ export function renderLesson(lesson) {
                 </span>
                 <h4 class="archival-source-title">${sourceTitle}</h4>
               </div>
-              ${block.source.shelfmark ? `<span class="archival-shelfmark-stamp">${block.source.shelfmark}</span>` : bLetter ? `<span class="archival-shelfmark-stamp">SOURCE ${bLetter}</span>` : ''}
+              <div style="display: flex; align-items: center; gap: 8px;">
+                ${block.source.shelfmark ? `<span class="archival-shelfmark-stamp">${block.source.shelfmark}</span>` : bLetter ? `<span class="archival-shelfmark-stamp">SOURCE ${bLetter}</span>` : ''}
+                ${sourceAudioBtnHtml}
+              </div>
             </div>
           `
-          : '';
+          : isWrittenSource
+            ? `
+            <div class="archival-source-header" style="display: flex; justify-content: flex-end;">
+              ${sourceAudioBtnHtml}
+            </div>
+          `
+            : '';
 
         blockSourceHtml = `
               <div class="gcse-source-container archival-source-box" ${bCardIdAttr} style="text-align: left; transition: all 0.3s ease;">
@@ -3303,7 +3319,57 @@ export function renderLesson(lesson) {
     if (unitId === 'trip_ypres' && lesson.id === 'hero_crummack') {
       initCrummackInteractiveFeatures();
     }
+
+    // Auto-inject read-aloud buttons into all primary source excerpt cards
+    injectArchivalAudioButtons();
   }, 100);
+}
+
+/**
+ * Automatically inject read-aloud audio buttons into all archival primary source boxes
+ * containing readable excerpt text (.archival-source-body).
+ */
+export function injectArchivalAudioButtons(container = document) {
+  if (!container || !container.querySelectorAll) return;
+  const sourceBoxes = container.querySelectorAll('.archival-source-box');
+  sourceBoxes.forEach((box) => {
+    const body = box.querySelector('.archival-source-body');
+    if (!body || !body.textContent.trim()) return;
+
+    // Skip if button is already present
+    if (box.querySelector('[data-action="read-aloud"], .read-aloud-btn')) return;
+
+    const btn = document.createElement('button');
+    btn.className = 'btn btn-secondary no-print read-aloud-btn';
+    btn.setAttribute('data-action', 'read-aloud');
+    btn.setAttribute('title', 'Read Aloud Primary Source Excerpt');
+    btn.style.cssText = 'padding: 5px 9px; flex-shrink: 0; margin-left: 8px; cursor: pointer;';
+    btn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+
+    const header = box.querySelector('.archival-source-header');
+    if (header) {
+      // If header has a right-aligned container or stamp, append next to it, or append to header
+      let rightContainer = header.querySelector('.archival-shelfmark-stamp')?.parentElement;
+      if (
+        rightContainer &&
+        rightContainer !== header &&
+        rightContainer.style.display?.includes('flex')
+      ) {
+        rightContainer.appendChild(btn);
+      } else {
+        const wrap = document.createElement('div');
+        wrap.style.cssText = 'display: inline-flex; align-items: center; margin-left: auto;';
+        wrap.appendChild(btn);
+        header.appendChild(wrap);
+      }
+    } else {
+      const topBar = document.createElement('div');
+      topBar.className = 'archival-audio-bar no-print';
+      topBar.style.cssText = 'display: flex; justify-content: flex-end; margin-bottom: 8px;';
+      topBar.appendChild(btn);
+      box.insertBefore(topBar, box.firstChild);
+    }
+  });
 }
 
 export function initCrummackInteractiveFeatures() {
