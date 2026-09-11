@@ -2617,6 +2617,19 @@ img::after {
   color: white !important;
   border-color: #dc2626 !important;
 }
+.narrative-chunk.reading-highlight {
+  box-shadow:
+    0 0 0 3px rgba(59, 130, 246, 0.35),
+    0 6px 16px rgba(59, 130, 246, 0.12) !important;
+  border-left-color: #2563eb !important;
+  background-color: #eff6ff !important;
+  transition: all 0.25s ease;
+}
+body.sen-mode .narrative-chunk.reading-highlight {
+  background-color: #fef3c7 !important;
+  border-left-color: #d97706 !important;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.35) !important;
+}
 .sidebar {
   background: #0f172a !important;
   border-right: none !important;

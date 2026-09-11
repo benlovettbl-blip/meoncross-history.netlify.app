@@ -300,6 +300,11 @@ export function initDraftPreservation(container = document, scopeKey = 'global')
 window.initDraftPreservation = initDraftPreservation;
 
 export async function switchView(viewName, param = null, skipHistory = false, options = {}) {
+  // Stop active speech playback on view transition
+  if (typeof window !== 'undefined' && typeof window.cancelSpeech === 'function') {
+    window.cancelSpeech();
+  }
+
   // Snapshot current scroll position into the current state before leaving if history exists
   if (!skipHistory && typeof window !== 'undefined' && window.history) {
     const currentScroll = window.scrollY || document.documentElement.scrollTop || 0;

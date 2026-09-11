@@ -9,12 +9,14 @@ import { bindEvents } from './layout.js';
 import { switchView, initNavigationUI } from './navigation.js';
 import { state } from './state.js';
 import { initEventDelegation } from './engine/events.js';
+import { initSpeech, cancelSpeech } from './engine/speech.js';
 import './langemarck_myth.js';
 
 window.addEventListener('DOMContentLoaded', async () => {
   // Initialize UI subscribers
   initNavigationUI();
   initEventDelegation();
+  initSpeech();
 
   // Bind global helper routing
   window.switchView = switchView;
@@ -97,7 +99,10 @@ window.addEventListener('DOMContentLoaded', async () => {
       }
     } catch (err) {}
   };
-  window.addEventListener('beforeunload', flushDraftState);
+  window.addEventListener('beforeunload', () => {
+    cancelSpeech();
+    flushDraftState();
+  });
 
   switchView(view, unit, true).then(() => {
     if (view === 'lessons' && initialLesson !== null && !isNaN(parseInt(initialLesson, 10))) {

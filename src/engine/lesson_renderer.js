@@ -265,6 +265,10 @@ window.toggleDoNowTimer = function (timerId, action) {
 };
 
 window.renderLessonByIndex = function (index, skipHistory = false) {
+  if (typeof window !== 'undefined' && typeof window.cancelSpeech === 'function') {
+    window.cancelSpeech();
+  }
+
   if (
     appStore.state.activeUnitData &&
     appStore.state.activeUnitData.lessons &&
