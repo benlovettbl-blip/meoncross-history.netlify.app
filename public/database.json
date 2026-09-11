@@ -15829,79 +15829,48 @@
           },
           "narrative_blocks": [
             {
-              "title": "Visual Analysis: The Silk Road (1375)",
-              "image": "/images/caravane_marco_polo.jpg",
-              "image_alt": "Detail from the Catalan Atlas (1375) showing Marco Polo's caravan on the Silk Road",
+              "title": "Act 1: The Outpost on the Edge: Western Europe in 1450",
+              "text": "If a traveler from another planet had visited Earth in the year 1450, Western Europe would not have looked like the center of the world. In fact, it would have appeared as an impoverished, cold, and isolated periphery on the outer western edge of Eurasia.<br><br>While later generations assumed Europe was always powerful, the mid-15th century reality was stark: England and France were exhausted after the hundred-year conflict of the Hundred Years' War, and populations were still recovering from the devastation of the Black Death. An ordinary European peasant lived in a dark, smokey, single-room hut made of wattle and daub (woven sticks covered in mud) with a thatched roof, sharing the dirt floor with pigs and chickens to stay warm during freezing winters. Their diet was monotonous, consisting almost entirely of 'pottage'—a thick, bland stew of boiled cabbage, peas, and oats.<br><br>Ordinary Europeans rarely traveled more than five miles from their birthplace. European kingdoms had few precious minerals, limited manufacturing, and produced almost nothing that merchants in Asia or Africa wished to buy.",
+              "image": "/images/sidequest_peasant.jpg",
+              "image_alt": "15th-century manuscript illumination of English peasants working the land",
               "source_letter": "A",
-              "image_caption": "A detail from the famous Catalan Atlas of 1375, depicting Marco Polo's caravan travelling along the Silk Road. For centuries, this massive network of overland trade routes was the artery of global wealth, connecting Europe to the riches of Asia.",
+              "image_caption": "Source A: A 15th-century English manuscript illumination showing peasant agricultural laborers toiling in the fields. The vast majority of Europeans lived in localized poverty, completely oblivious to global trade.",
               "tasks": [
                 {
                   "type": "source_analysis",
-                  "question": "Study Source A. What does this 1375 map detail suggest about how trade was conducted between Europe and Asia before the discovery of sea routes?",
-                  "model_answer": "Source A shows merchants traveling in large caravans using camels and horses. This suggests that trade before 1450 relied on slow, grueling overland journeys across massive continents, requiring pack animals to transport luxury goods like silk and spices."
+                  "question": "Study Source A. What does this contemporary illumination suggest about the daily reality and living standards of ordinary people in Western Europe around 1450?",
+                  "model_answer": "Source A shows peasants performing grueling manual labor in open fields with simple hand tools. This suggests that life in 1450 Western Europe was impoverished, localized, and focused entirely on subsistence agriculture, contrasting sharply with the wealthy commercial courts of Asia and Africa."
                 }
               ]
             },
             {
-              "title": "Micro-History: A Venetian Merchant’s Shock (May 1453)",
-              "text": "In May 1453, a Venetian merchant named <span class=\"historical-figure\" data-person=\"niccolo_barbaro\">Niccolò Barbaro</span> stood on the stone ramparts of Constantinople, watching in terror as massive iron cannonballs shattered the thickest walls in Christendom.<br><br>For over a thousand years, the Byzantine Empire had stood as Europe’s great eastern shield. But the army outside the walls was not European—it was the military machine of 21-year-old <span class=\"historical-figure\" data-person=\"mehmed_ii\">Sultan Mehmed II</span> of the Ottoman Empire. When Constantinople fell on 29 May 1453, Mehmed did not destroy the city; he renamed it <strong>Istanbul</strong>, transformed it into the jewel of the Islamic world, and took control of the ultimate prize: the vital crossroads connecting European trade to Asia.<br><br><div style=\"display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 30px 0; font-family: sans-serif; text-align: center;\"><div style=\"background-color: #f8fafc; border: 2px solid #cbd5e1; padding: 15px; border-radius: 8px; font-weight: bold; color: #475569; flex: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.05);\">🌍 Western Europe<br><span style=\"font-size: 0.8em; font-weight: normal; color: #64748b;\">(Desperate for Spices)</span></div><div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; position: relative;\"><div style=\"width: 100%; height: 4px; background-color: #e2e8f0; position: absolute; top: 50%; z-index: 0;\"></div><div style=\"background-color: #ef4444; color: white; padding: 6px 12px; border-radius: 20px; font-weight: bold; text-transform: uppercase; font-size: 0.8em; z-index: 1; box-shadow: 0 2px 4px rgba(239,68,68,0.3); border: 2px solid white;\">Blocked by Ottomans ❌</div></div><div style=\"background-color: #fef3c7; border: 2px solid #f59e0b; padding: 15px; border-radius: 8px; font-weight: bold; color: #92400e; flex: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.05);\">🐪 The Silk Road<br><span style=\"font-size: 0.8em; font-weight: normal; color: #b45309;\">(Vast Global Wealth)</span></div></div>For merchants in London, Paris, or Venice, this was catastrophic. Europe did not rule the world in 1450. In fact, if a traveler from another planet had visited Earth in the 15th century, Western Europe would have looked like an isolated, impoverished backwater compared to the colossal wealth of Asia and Africa.",
+              "title": "Act 2: The Gatekeeper: The Ottoman Empire & The Fall of Constantinople (1453)",
+              "text": "Although ordinary Europeans lived in poverty, wealthy monarchs, nobles, and churchmen were desperate for luxury goods from the East: fine silk and porcelain from China, and exotic spices like pepper, cloves, and cinnamon from India and the Moluccas. For centuries, these goods traveled overland along the ancient <strong>Silk Roads</strong>.<br><br>However, directly between Western Europe and Asia stood the rising superpower of the Islamic world: the <strong>Ottoman Empire</strong>. On 29 May 1453, 21-year-old Sultan Mehmed II shattered the ancient stone walls of Constantinople using massive bronze cannons. Mehmed transformed the city into <strong>Istanbul</strong>, the jewel of the Muslim world, and seized control of the ultimate crossroads connecting European trade to the East.<br><br><div style=\"display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 25px 0; font-family: sans-serif; text-align: center;\"><div style=\"background-color: #f8fafc; border: 2px solid #cbd5e1; padding: 15px; border-radius: 8px; font-weight: bold; color: #475569; flex: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.05);\">🌍 Western Europe<br><span style=\"font-size: 0.8em; font-weight: normal; color: #64748b;\">(Desperate for Spices)</span></div><div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; position: relative;\"><div style=\"width: 100%; height: 4px; background-color: #e2e8f0; position: absolute; top: 50%; z-index: 0;\"></div><div style=\"background-color: #ef4444; color: white; padding: 6px 12px; border-radius: 20px; font-weight: bold; text-transform: uppercase; font-size: 0.8em; z-index: 1; box-shadow: 0 2px 4px rgba(239,68,68,0.3); border: 2px solid white;\">Blocked by Ottomans ❌</div></div><div style=\"background-color: #fef3c7; border: 2px solid #f59e0b; padding: 15px; border-radius: 8px; font-weight: bold; color: #92400e; flex: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.05);\">🐪 The Silk Road<br><span style=\"font-size: 0.8em; font-weight: normal; color: #b45309;\">(Vast Global Wealth)</span></div></div>For European merchants in Venice, Genoa, and London, this was a disaster. The Ottomans slapped heavy taxes on European traders and restricted access to Asian routes. Western Europe was effectively locked out.",
+              "image": "/images/silk_route_colored_map.jpg",
+              "image_alt": "Map of the Silk Road trade routes connecting Europe, Africa, and Asia",
+              "image_caption": "The Silk Road trade network: overland caravan routes in red connecting Central Asia to Constantinople, and maritime spice routes in blue. The Ottoman capture of Constantinople cut Europe off from overland transit."
+            },
+            {
+              "title": "Analyzing Source B: The Venetian Eyewitness (1453)",
+              "text": "<div class='scaffold-box'><strong>Source B: Eyewitness Diary of Nicolò Barbaro (May 1453)</strong><br><em>\"On the twenty-ninth of May, 1453, the last day of the siege, our Lord God decided to deliver the city into the hands of the Turks... The blood flowed in the city like rainwater in the gutters after a sudden storm. The corpses were thrown into the sea like melons floating along a canal... The Turks entered with such fury that all Christians who resisted were put to the sword.\"</em><br>— Adapted from the diary of <strong>Nicolò Barbaro</strong>, a Venetian merchant trapped inside Constantinople.</div>",
               "tasks": [
                 {
                   "type": "source_analysis",
-                  "source_title": "Source C: Eyewitness Diary of Nicolò Barbaro (May 1453)",
-                  "source_text": "\"On the twenty-ninth of May, 1453, the last day of the siege, our Lord God decided to deliver the city into the hands of the pagans... The blood flowed in the city like rainwater in the gutters after a sudden storm. The corpses of the Christians were thrown into the sea like melons floating along a canal...\"\n— Adapted from the diary of Nicolò Barbaro, a Venetian eye-witness.",
-                  "provenance_clue": "Provenance Clue: Consider who Nicolò Barbaro was (a Venetian Christian merchant whose trade depended on Christian control) and where he was during the siege (trapped inside the collapsing city). How might his religion, nationality, and sheer terror shape the way he describes the Ottoman forces?",
-                  "question": "Source Analysis (Provenance): Why might a Venetian merchant like Nicolò Barbaro have a biased or particularly panicked view of the Ottoman siege of Constantinople?",
-                  "model_answer": "Nicolò Barbaro was a Venetian Christian merchant trapped inside Constantinople as it was bombarded and captured. His view would be heavily biased and panicked for several reasons: First, as a devout Christian, he viewed the Muslim Ottoman Turks as religious enemies (\"pagans\") invading Christendom. Second, as a Venetian merchant, his personal wealth and future livelihood depended entirely on free trade through Christian Constantinople—the Ottoman conquest threatened ruinous taxes and trade disruption for Venice. Finally, witnessing the traumatic, violent collapse of the city first-hand under terrifying artillery bombardment naturally caused extreme panic and emotional exaggeration in his diary entries."
+                  "provenance_clue": "Provenance Clue: Consider who Nicolò Barbaro was (a Venetian Christian merchant whose entire livelihood depended on Christian trade in Constantinople) and where he was during the siege (witnessing the traumatic collapse of the city first-hand). How would his religious prejudice and commercial terror shape his account?",
+                  "question": "Study Source B. Why might a Venetian merchant like Nicolò Barbaro have had a biased and particularly panicked view of the Ottoman capture of Constantinople?",
+                  "model_answer": "Nicolò Barbaro was a Venetian Christian merchant trapped inside Constantinople as it fell. His account would be heavily biased and panicked for three key reasons: First, as a devout Christian, he viewed the Muslim Ottomans as mortal religious enemies invading Christendom. Second, as a Venetian merchant, his wealth and trading privileges depended on Christian control of Constantinople—the Ottoman victory meant financial ruin through trade blockades and heavy taxes. Finally, witnessing violent urban combat and artillery bombardment first-hand naturally produced intense shock and emotional exaggeration in his diary."
                 },
                 {
                   "type": "multiple_choice",
+                  "question": "Knowledge Check: The Ottoman Gatekeeper",
                   "questions": [
                     {
-                      "q": "Why was the fall of Constantinople catastrophic for merchants in Western Europe?",
+                      "q": "Why was the Fall of Constantinople in 1453 catastrophic for merchants in Western Europe?",
                       "options": [
-                        "It blocked the Silk Road trade routes",
-                        "It destroyed all European ships",
-                        "It ended the Renaissance",
-                        "It forced them to pay higher taxes to the Pope"
-                      ]
-                    }
-                  ],
-                  "question": "Knowledge Check: Review the events of 1450."
-                }
-              ]
-            },
-            {
-              "title": "Analyzing the Evidence: The Fall of Constantinople",
-              "text": "<div class='scaffold-box'><strong>Source B: An Eyewitness Account of Sultan Mehmed II entering Constantinople (1453)</strong><br><em>\"The Sultan entered the city with great pomp... He inspected the great church of Hagia Sophia and commanded that it immediately be converted into a mosque. His armies were disciplined, his power absolute, and the rulers of Europe quaked with fear at his name.\"</em><br>— <strong>George Sphrantzes</strong>, a Greek scholar writing in 1454.</div><br><br><strong>A Contrast in Living (1450)</strong><br>In 1450, a typical European peasant lived in a tiny, one-room hut made of wattle and daub (woven sticks covered in mud) with a thatched straw roof, sharing the dirt floor with their livestock to stay warm. In contrast, the Oba (King) of Benin lived in a sprawling palace complex covering miles, featuring immense courtyards, wooden pillars coated in bronze, and roofs topped with cast-copper birds. Meanwhile, the Ming Emperor in China commanded the vast 'Forbidden City', a staggering complex of 980 buildings with sweeping golden-yellow glazed roof tiles and red pillars.<br><br>",
-              "tasks": [
-                {
-                  "type": "source_analysis",
-                  "question": "Study Source B. What does the eyewitness account suggest about the power of the Ottoman Empire compared to Christian Europe in 1453?",
-                  "model_answer": "Source B suggests the Ottoman Empire was vastly more powerful, disciplined, and wealthy than Christian Europe. The mention of the Sultan's 'great pomp', 'absolute' power, and the fact that European rulers 'quaked with fear' highlights the severe power imbalance."
-                },
-                {
-                  "type": "drawing",
-                  "lines": 10,
-                  "question": "Drawing Task: Draw a quick sketch comparing a poor European peasant's hut in 1450 with the grand palace of the Ming Emperor or Oba of Benin."
-                }
-              ]
-            },
-            {
-              "title": "Macro-History: The Wealth of the East",
-              "text": "Before 1750, European powers did not dominate the world. The true economic superpowers were Asian empires like Qing China and Mughal India. European merchants were desperate to access the silk, tea, and porcelain of China, but the Chinese Emperor severely restricted their access. European traders were forced to live and work in small, heavily regulated zones on the edge of the Pearl River in Canton, closely watched by Chinese authorities.",
-              "tasks": [
-                {
-                  "type": "multiple_choice",
-                  "question": "Knowledge Check: Global Power in 1450",
-                  "questions": [
-                    {
-                      "q": "How does the reality of the Thirteen Factories in Canton challenge the idea that Europeans dominated global trade in the 1700s?",
-                      "options": [
-                        "Europeans were forced to stay in small, confined trading posts",
-                        "Europeans owned the entire city of Canton",
-                        "The Chinese refused to trade entirely",
-                        "Europeans had stronger armies than the Ming Emperor"
+                        "The Ottomans took control of the Silk Road crossroads and blocked direct European trade with Asia",
+                        "It destroyed all European sailing ships in the Atlantic",
+                        "It ended the Renaissance across Italy",
+                        "It forced European kings to surrender their armies to the Pope"
                       ]
                     }
                   ]
@@ -15909,99 +15878,42 @@
               ]
             },
             {
-              "title": "Macro-History: The Real Centers of Wealth in 1450",
-              "image": "/images/silk_route_colored_map.jpg",
-              "image_alt": "Map of the Afro-Eurasian Silk Road trade networks connecting Europe, Africa, and Asia",
-              "image_caption": "A comprehensive map of the Silk Road trade routes: overland trade routes in red passing through Constantinople and Central Asia, and maritime spice routes in blue traversing the Indian Ocean.",
-              "text": "<strong>The Ottoman Empire: The Gatekeeper of the East</strong><br>By 1450, the Ottoman Empire had built a dominant superpower spanning Southeastern Europe, Western Asia, and North Africa. By holding Istanbul, Sultan Mehmed II controlled the land routes of the <strong>Silk Road</strong>.<br><br>If an English noble wanted luxury silk, porcelain from Ming Dynasty China, or pepper from India, it had to pass through Ottoman territory. The Sultan slapped heavy taxes on all European merchants. Western Europe was effectively locked out of direct trade with Asia, forced to pay whatever prices the Ottomans demanded."
+              "title": "Act 3: The True Superpowers: West Africa and Ming China",
+              "text": "If Western Europe was an impoverished outpost, where was global wealth and power concentrated in 1450?<br><br><strong>1. West Africa: Kingdoms of Gold and Bronze</strong><br>Sub-Saharan Africa was home to sophisticated, fabulously wealthy civilizations. The <strong>Empire of Mali</strong> sat atop vast gold reserves that supplied the Mediterranean world. Just a century earlier, Mali's emperor, <strong>Mansa Musa</strong>, undertook a pilgrimage to Mecca with dozens of camels bearing pure gold, giving away so much in Cairo that the value of gold plummeted for a decade. Further south in modern Nigeria, the Oba (King) of the <strong>Kingdom of Benin</strong> ruled an immense metropolis protected by thousands of miles of earthwork walls—structures larger than the Great Wall of China. Benin's royal artisans produced world-famous cast-bronze plaques using the intricate lost-wax technique.<br><br><strong>2. Ming Dynasty China: The Industrial Giant</strong><br>At the eastern end of the globe lay <strong>Ming China</strong>, a state of over 100 million people. China was the technological and manufacturing powerhouse of the earth, producing silk, porcelain, and cast iron. Centuries before Europe, China invented gunpowder, paper money, movable-type printing, and the magnetic compass. Between 1405 and 1433, <strong>Admiral Zheng He</strong> commanded seven colossal imperial 'Treasure Fleets'—vessels five times larger than Columbus's <em>Santa Maria</em>—patrolling the Indian Ocean and trading as far as East Africa.",
+              "image": "/images/mansa_musa_catalan.jpg",
+              "image_alt": "Detail of Mansa Musa from the Catalan Atlas (1375)",
+              "source_letter": "C",
+              "image_caption": "Source C: A detail from the Catalan Atlas (1375) showing Mansa Musa, Emperor of Mali, holding a golden sceptre and a massive gold nugget. European cartographers acknowledged West Africa as the undisputed fountain of global gold.",
+              "tasks": []
             },
             {
-              "title": "Analyzing Source C",
-              "image": "/images/ottoman_1453.jpg",
-              "image_alt": "Fresco of the Siege of Constantinople (1537)",
+              "title": "Analyzing Source D: Royal Art of Benin",
+              "image": "/images/benin_bronze.jpg",
+              "image_alt": "16th-century Benin Bronze relief plaque",
               "source_letter": "D",
+              "image_caption": "Source D: An authentic 16th-century cast-bronze relief plaque from the royal palace of the Oba of Benin, displaying advanced metallurgical casting and regal court hierarchy.",
               "tasks": [
                 {
                   "type": "source_analysis",
-                  "question": "Study Source D. How does the artist use scale, chaos, and religious imagery to emphasize the sheer trauma of the Fall of Constantinople for Christian Europe?",
-                  "model_answer": "The artist likely exaggerates the size of the invading forces, depicts chaotic slaughter, and shows religious symbols being destroyed or overwhelmed to evoke a deep sense of despair, making the defeat look like an apocalyptic disaster for Christendom rather than just a military loss."
-                },
-                {
-                  "question": "Study Source D (Fresco of the Siege of Constantinople). What military technologies or tactics are visible in this depiction of the 1537 siege?",
-                  "model_answer": "This visual source is significant as it provides contemporary evidence of 16th-century siege warfare, likely illustrating the use of heavy artillery, fortified walls, and the massive logistical scale of Ottoman military campaigns during this period."
-                }
-              ],
-              "image_caption": "Fresco of the Siege of Constantinople (1537)"
-            },
-            {
-              "title": "West Africa: Kingdoms of Gold and Brass",
-              "text": "Far to the south, sub-Saharan Africa boasted civilizations whose wealth rivaled anything in Europe.<br><ul><li><strong>The Kingdom of Benin (Edo Empire):</strong> In modern-day Nigeria, the Oba (King) of Benin ruled a sprawling, highly organized state protected by thousands of miles of earthwork walls—structures larger than the Great Wall of China. Benin’s craftsmen produced world-famous bronze relief sculptures using the complex lost-wax casting technique, depicting a sophisticated courtly culture.</li><li><strong>The Empire of Mali:</strong> Built on vast trans-Saharan trade routes, Mali was world-renowned for its gold reserves. Just a century earlier, Mali’s emperor, Mansa Musa, made a pilgrimage to Mecca carrying so much gold that he gave it away in Cairo, causing hyperinflation and knocking down the value of gold across the Middle East for a decade.</li></ul>"
-            },
-            {
-              "title": "Analyzing Source D",
-              "image": "/images/benin_bronze.jpg",
-              "image_alt": "16th-Century Benin Bronze Plaque",
-              "source_letter": "E",
-              "image_caption": "16th-Century Benin Bronze Plaque",
-              "tasks": [
-                {
-                  "question": "Study Source E (the 16th-Century Benin Bronze Plaque). How does this artifact challenge traditional European assumptions about pre-colonial African societies?",
-                  "model_answer": "The intricate craftsmanship of the Benin Bronze Plaque proves the existence of a highly sophisticated, technologically advanced, and wealthy civilization in West Africa long before European colonization, directly challenging racist assumptions of African \"backwardness\"."
+                  "question": "Study Sources C and D. How do these two sources challenge traditional Eurocentric assumptions that pre-colonial Africa was 'uncivilized' or poor?",
+                  "model_answer": "Sources C and D prove that West Africa possessed immense wealth, global prestige, and advanced technology long before European colonization. Source C shows European mapmakers recognizing Mansa Musa as the richest monarch on earth, whose gold fueled Mediterranean trade. Source D demonstrates world-class metallurgical engineering and artistic sophistication in Benin that rivalled or exceeded Renaissance European craftsmanship, directly refuting racist assumptions of African backwardness."
                 }
               ]
             },
             {
-              "title": "Analyzing the Evidence: The Wealth of West Africa",
-              "text": "<div class='scaffold-box'><strong>Source E: A European Description of the Wealth of West Africa</strong><br><em>\"In this land there is so much gold that the King’s horses wear bridles made of pure gold... The merchants of Cairo, Venice, and Genoa travel across the burning sands of the desert just to buy a fraction of their wealth.\"</em><br>— <strong>Adapted from the Catalan Atlas</strong>, created in Majorca, 1375.</div>"
-            },
-            {
-              "title": "Analyzing Source E",
-              "image": "/images/mansa_musa_catalan.jpg",
-              "image_alt": "Catalan Atlas (1375) - Mansa Musa",
-              "source_letter": "F",
+              "title": "Act 4: The Historical Verdict: Why Did Europe Sail?",
+              "text": "For generations, older school textbooks claimed that European explorers sailed across the oceans after 1492 because Europe was intellectually superior, uniquely adventurous, or destined to 'discover' the world. Modern historians strongly challenge this Eurocentric myth:<br><br><div class='scaffold-box'><strong>Historian Perspective: Professor Peter Frankopan (The Silk Roads, 2015)</strong><br><em>\"For thousands of years, the pulse of the earth beat not in Europe, but along the Silk Roads... Europe was an outpost, a small region on the edge of the great continent of Eurasia. In 1450, the true wealth, science, and military power of the world lay firmly in the East and in Africa.\"</em></div><br><br><strong>The Core Truth: Exploration Out of Desperation</strong><br>Understanding 1450 fundamentally reframes world history. Western Europe did not launch maritime expeditions because it was wealthy or dominant; <strong>Europe sailed out of sheer economic desperation</strong>. Blockaded by the formidable Ottoman Empire and starving for African gold and Asian spices, Europeans were forced to take desperate risks across uncharted oceans to find a maritime backdoor to the riches of the East.",
               "tasks": [
                 {
-                  "type": "comprehension",
-                  "question": "What impression do Sources E and F give about the balance of power between Europe and the rest of the world in the 15th century?",
-                  "model_answer": "Both sources suggest that Europe was relatively weak and poor compared to non-European powers. Source F (Benin Bronze) shows highly advanced metallurgical skills that rivalled Europe, while Source F highlights how European merchants were desperate to travel vast distances just to obtain a 'fraction' of West Africa's staggering wealth."
-                }
-              ],
-              "image_caption": "Catalan Atlas (1375) - Mansa Musa"
-            },
-            {
-              "title": "The Silk Road & Ming China: The World's Industrial Engine",
-              "text": "At the far eastern end of the globe lay <strong>Ming Dynasty China</strong>, home to roughly 100 million people. China was the economic powerhouse of the world:<br><ul><li>They invented gunpowder, paper money, the magnetic compass, and printing presses centuries before Europe.</li><li>Between 1405 and 1433, Zheng He commanded a massive imperial fleet of \"treasure ships\"—vessels five times larger than Christopher Columbus’s <em>Santa Maria</em>—exploring the Indian Ocean and trading as far as East Africa.</li></ul>"
-            },
-            {
-              "title": "Historical Interpretations: The Eurocentric Myth",
-              "text": "For generations, older history textbooks began modern world history with European explorers \"discovering\" the globe after 1492. Modern historians heavily challenge this traditional view:<br><br><div class='scaffold-box'><strong>Historian Perspective: Peter Frankopan (The Silk Roads, 2015)</strong><br><em>\"For thousands of years, the pulse of the earth beat not in Europe, but along the Silk Roads... Europe was an outpost, a small region on the edge of the great continent of Eurasia. In 1450, the true wealth, science, and military power of the world lay firmly in the East and in Africa.\"</em></div><br><br><strong>Why does this matter?</strong><br>Understanding 1450 changes how we view the rest of world history. Western Europe did not launch voyages of exploration in the late 1400s because they were superior; <strong>they did it out of desperation</strong>. Trapped by the Ottoman Empire and desperate for African gold and Asian spices, Europeans were forced onto the dangerous Atlantic Ocean to find a new route to the riches of the East.",
-              "tasks": [
-                {
-                  "type": "think_pair_share",
-                  "question": "Class Debate: Based on Professor Frankopan's argument, why might traditional European textbooks have deliberately ignored the wealth of the East in 1450?",
-                  "model_answer": "Traditional textbooks may have minimized Eastern wealth to justify later European imperialism, creating a narrative where Europe 'civilized' the rest of the world rather than acknowledging that Europe was initially an isolated, desperate outpost seeking access to superior Eastern economies."
+                  "type": "explanation",
+                  "question": "Consolidation Task: Explain TWO reasons why a global traveler in 1450 would have considered Asia and Africa far more powerful and wealthy than Western Europe.",
+                  "scaffold": [
+                    "Reason 1 (Economic Wealth & Manufacturing): Mention African gold (Mansa Musa) or Chinese industrial output (porcelain, silk, Zheng He's fleets).",
+                    "Reason 2 (Military Dominance & Strategic Control): Mention the Ottoman capture of Constantinople or European poverty on the periphery."
+                  ],
+                  "model_answer": "First, Asia and Africa commanded colossal economic wealth and industrial output compared to Europe. Ming China was the manufacturing powerhouse of the world, producing luxury porcelain and silk and launching massive Treasure Fleets, while West African kingdoms like Mali and Benin controlled the trans-Saharan gold trade and created sophisticated bronze art. Second, non-European empires held supreme military and geopolitical dominance. In 1453, the Ottoman Empire shattered Constantinople's defenses and seized control of the Silk Road transit points, completely locking Europe out. By contrast, Western Europe was an impoverished agricultural outpost where ordinary peasants lived in cold mud huts, forcing European kings to take desperate maritime gambles on the Atlantic."
                 }
               ]
-            },
-            {
-              "title": "Lesson Reflection"
-            },
-            {
-              "title": "Side Quest: The English Peasant's Pottage",
-              "text": "<details class=\"side-quest-box\">\n  <summary>⚔️ Side Quest: The English Peasant's Pottage</summary>\n  \n<div style=\"text-align:center; margin:15px 0;\">\n  <img src=\"/images/sidequest_peasant.jpg\" style=\"max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;\" onclick=\"window.openModal && window.openModal(this.src)\"/>\n  <br/>\n  <i style=\"font-size:0.9em; color:#64748b;\"><strong>Source F:</strong> An authentic 15th-century manuscript illumination showing peasants performing grueling manual agricultural labor.</i>\n</div>\n<p>While the Oba of Benin commissioned magnificent bronze plaques and Ming Emperors wore silk, the vast majority of people in 1450 England were destitute peasant farmers. An ordinary English peasant lived in a dark, smokey, single-room wattle-and-daub hut shared with their livestock. Their diet was incredibly monotonous, consisting almost entirely of 'pottage'—a thick, bland stew of boiled cabbage, peas, and oats. They rarely travelled more than five miles from their birthplace and were completely oblivious to the vast riches flowing through the Silk Road or the trans-Saharan trade networks. Europe in 1450 was not the center of the world; for the average peasant, it was a cold, isolated struggle for survival.</p>\n</details>",
-              "tasks": [
-                {
-                  "type": "comprehension",
-                  "question": "How does the evidence in Source F and the description of the peasant's 'pottage' contrast with the lives of the Oba of Benin or the Ming Emperor?",
-                  "model_answer": "Unlike the Oba of Benin with his bronze plaques or the Ming Emperor in silk, the English peasant lived in poverty in a dark mud hut, relying on a bland stew just to survive."
-                },
-                {
-                  "type": "comprehension",
-                  "question": "Why does this evidence support the idea that Europe was an 'isolated outpost' in 1450?",
-                  "model_answer": "It shows that ordinary Europeans were completely oblivious to the vast wealth of the Silk Road or African trade networks, rarely traveling far from their poor, localized villages."
-                }
-              ],
-              "source_letter": "F"
             }
           ],
           "learning_objectives": {
@@ -16077,7 +15989,7 @@
               "definition": "The misleading historical bias of viewing world history solely through European perspectives and assuming Europe was always the dominant civilization."
             }
           ],
-          "vocab_cloze_text": "In 1450, global power and wealth lay firmly in the East rather than Europe. In Asia, the [Ming Dynasty] governed a sophisticated economy, while overland trade flourished across the ancient [Silk Roads]. In West Africa, the [Songhai Empire] controlled lucrative gold and salt routes. Meanwhile, the rising power of the [Ottoman Empire] culminated in the dramatic [Fall of Constantinople (1453)], cutting Christian Europe off from eastern trade and challenging modern [Eurocentrism].",
+          "vocab_cloze_text": "In the mid-fifteenth century, world trade was interconnected by the overland [Silk Roads], carrying luxury goods from the East. True economic power lay with the [Ming Dynasty] in China and the wealthy [Songhai Empire] in West Africa. However, European trade was thrown into crisis in 1453 following the [Fall of Constantinople (1453)], when the victorious [Ottoman Empire] seized the crossroads between Europe and Asia. Challenging traditional [Eurocentrism], modern historians recognize that European voyages of exploration began not out of superiority, but out of desperation to reach Eastern riches.",
           "quiz": [
             {
               "question": "Which imperial dynasty ruled China in 1450, renowned for its immense wealth, porcelain, and global prestige?",

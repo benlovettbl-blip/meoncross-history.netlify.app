@@ -1816,36 +1816,57 @@ allDirs.forEach((unitId) => {
                 }))
               : [];
       if (vocabTerms && vocabTerms.length > 0) {
-        let vocabStyle = lessonIndex % 3;
+        let vocabStyle = lessonIndex % 4;
         html += `<div class="task-box" style="margin-bottom: 0px; padding: 5px; page-break-inside: avoid;">`;
         html += `<div style="break-inside: avoid; page-break-inside: avoid;"><h3 style="margin-top: 0; margin-bottom: 5px; font-size: 11pt;">Vocabulary Check</h3>`;
 
+        let words = vocabTerms.map((v) => v.term).join(' &nbsp;|&nbsp; ');
+        let wordBox = `<div style="border: 1px solid #cbd5e1; background: #f8fafc; padding: 4px; margin-bottom: 5px; text-align: center; font-weight: bold; font-size: 9.5pt; border-radius: 4px;">${words}</div>`;
+
         if (vocabStyle === 0) {
+          // Style 0: Contextual Cloze
           if (lesson.vocab_cloze_text) {
-            html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Fill in the blanks using the vocabulary words below.</p>`;
-            let words = vocabTerms.map((v) => v.term).join(' &nbsp;|&nbsp; ');
-            html += `<div style="border: 1px solid #ccc; padding: 4px; margin-bottom: 5px; text-align: center; font-weight: bold; font-size: 9.5pt;">${words}</div>`;
+            html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Complete the historical summary by placing terms from the word bank into the correct blanks:</p>`;
+            html += wordBox;
             let cloze = lesson.vocab_cloze_text.replace(/\[.*?\]/g, ' [ . . . . . . . . ] ');
             html += `<p style="line-height: 1.6; font-size: 9.5pt; margin: 5px 0;">${cloze}</p>`;
           } else {
-            html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Write a short paragraph using at least ${vocabTerms.length >= 3 ? 'THREE' : vocabTerms.length === 2 ? 'TWO' : 'ONE'} of the vocabulary words below correctly.</p>`;
-            let words = vocabTerms.map((v) => v.term).join(' &nbsp;|&nbsp; ');
-            html += `<div style="border: 1px solid #ccc; padding: 4px; margin-bottom: 5px; text-align: center; font-weight: bold; font-size: 9.5pt;">${words}</div>`;
+            html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Write a short historical paragraph using at least THREE of the vocabulary words below accurately:</p>`;
+            html += wordBox;
             for (let i = 0; i < 4; i++) {
               html += `<div class="task-lines" style="height: 12px; margin-top: 3px;"></div>`;
             }
           }
         } else if (vocabStyle === 1) {
-          html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Write a historically accurate sentence connecting two terms from the glossary box below.</p>`;
-          let words = vocabTerms.map((v) => v.term).join(' &nbsp;|&nbsp; ');
-          html += `<div style="border: 1px solid #ccc; padding: 4px; margin-bottom: 5px; text-align: center; font-weight: bold; font-size: 9.5pt;">${words}</div>`;
-          html += `<strong style="font-size: 9.5pt;">Your Sentence:</strong><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div>`;
+          // Style 1: The Golden Sentence (Connect Two)
+          html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;"><strong>The Golden Sentence:</strong> Choose TWO terms from the word bank. Write ONE grammatically sophisticated, historically accurate sentence connecting them using a causal conjunction (<em>because</em>, <em>although</em>, or <em>consequently</em>):</p>`;
+          html += wordBox;
+          html += `<div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div>`;
         } else if (vocabStyle === 2) {
-          let focusWord = vocabTerms[0].term;
-          html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Write a clear definition and a historically accurate sentence for the term: <strong>${focusWord}</strong></p>`;
+          // Style 2: The Odd One Out
+          html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;"><strong>The Odd One Out:</strong> Select THREE terms that share a close historical connection. Identify which ONE remaining term is the 'Odd One Out' in this lesson, and explain your historical reasoning:</p>`;
+          html += wordBox;
+          html += `<div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div>`;
+        } else if (vocabStyle === 3) {
+          // Style 3: Conceptual Binary Sort
+          html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;"><strong>Conceptual Classification:</strong> Categorise the terms from the word bank into the two historical boxes below:</p>`;
+          html += wordBox;
           html += `
-          <div class="task-lines" style="height: 12px; margin-top: 15px;"></div><div class="task-lines" style="height: 12px; margin-top: 15px;"></div><div class="task-lines" style="height: 12px; margin-top: 15px;"></div><div class="task-lines" style="height: 12px; margin-top: 15px;"></div>
-        `;
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 5px;">
+              <div style="border: 1px solid #94a3b8; border-radius: 4px; padding: 4px;">
+                <strong style="font-size: 9pt; display: block; text-align: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px; color: #1e3a8a;">Power, Governance & Warfare</strong>
+                <div class="task-lines" style="height: 10px; margin-top: 2px;"></div>
+                <div class="task-lines" style="height: 10px; margin-top: 2px;"></div>
+                <div class="task-lines" style="height: 10px; margin-top: 2px;"></div>
+              </div>
+              <div style="border: 1px solid #94a3b8; border-radius: 4px; padding: 4px;">
+                <strong style="font-size: 9pt; display: block; text-align: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px; color: #047857;">Economy, Trade & Society</strong>
+                <div class="task-lines" style="height: 10px; margin-top: 2px;"></div>
+                <div class="task-lines" style="height: 10px; margin-top: 2px;"></div>
+                <div class="task-lines" style="height: 10px; margin-top: 2px;"></div>
+              </div>
+            </div>
+          `;
         }
         html += `</div></div>`;
       }
