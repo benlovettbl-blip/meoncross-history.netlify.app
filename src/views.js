@@ -8,6 +8,7 @@ import { getProfile, setMockUser } from './auth.js';
 import { getMasteryStatus, updateLeitnerBox, toggleBookmark, saveProgress } from './storage.js';
 import { renderCoverSourcesHTML } from './cover_sources.js';
 import { renderKeyTopicLessonsHTML } from './lesson_cards.js';
+import { renderUnitSynopsis } from './unit_synopses.js';
 import { renderLesson } from './engine/lesson_renderer.js'; // force-refresh
 import { initKeyIndividualsTask } from './key_individuals.js';
 import { initGuidedReadingTask } from './guided_reading.js';
@@ -1432,9 +1433,10 @@ export async function renderLessonsView() {
               </button>
             </div>
           </div>
-          <p class="text-muted" style="margin-bottom: 24px;">Read through the core steps, historical sources, and historian's tips for each lesson before testing yourself.</p>
         `
         }
+        
+        ${renderUnitSynopsis(data, unitId)}
         
         ${renderKeyTopicLessonsHTML(data, unitId, data)}
       </div>
