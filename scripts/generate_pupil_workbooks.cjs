@@ -3654,35 +3654,9 @@ allDirs.forEach((unitId) => {
           html += `<div class="task-lines-large"></div>`;
         }
         html += `</div>`;
-
         if (unitId === 'cme_new' && lesson.secondary_map) {
           html += `</div>`; // closes the GCSE Exam Practice + Exit Ticket page wrapper
         }
-      } else if (unitId !== 'cme_new' && unitId !== 'early_modern_world') {
-        // --- PUPIL VOICE (ROTATING DISCIPLINARY DEBRIEF ACROSS OTHER UNITS) ---
-        const debriefQuestions = [
-          "What was the most significant event or decision in today's lesson, and what was its major historical consequence?",
-          'What was the most important change that occurred during this period, and what remained continuous (the same)?',
-          'How did the events or developments studied today affect different groups of people in contrasting ways?',
-          "What piece of historical evidence (e.g. government record, personal diary, photograph) would be most valuable to investigate today's enquiry, and why?",
-          "Was the main outcome of today's lesson inevitable, or was there a crucial turning point where events could have taken a different path?",
-          'How might two different historians interpret the motives or actions of the key figures or governments studied today?',
-          'How does what we studied today connect to, build upon, or challenge an earlier period or theme in history?',
-        ];
-
-        const q = debriefQuestions[lessonIndex % debriefQuestions.length];
-
-        html += `<div style="margin-top: 20px; page-break-inside: avoid; border: 1.5px solid #1e3a8a; border-radius: 8px; padding: 15px; background-color: #f0fdf4;">
-          <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 11pt; font-family: 'Playfair Display', serif; display: flex; align-items: center;">
-            <span style="font-size: 14pt; margin-right: 8px;">🗣️</span> Pupil Voice
-          </h4>
-          <div style="font-weight: 600; font-size: 9.5pt; margin-bottom: 12px; color: #0f172a;">
-            ${q}
-          </div>
-          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-        </div>`;
       }
 
       // Inject General Notes Box
