@@ -1,0 +1,879 @@
+{
+  "australia": {
+    "lesson_1": {
+      "page": 3,
+      "booklet": "Pupil Workbook",
+      "unitId": "australia",
+      "lessonIndex": 0
+    },
+    "lesson_2": {
+      "page": 9,
+      "booklet": "Pupil Workbook",
+      "unitId": "australia",
+      "lessonIndex": 1
+    },
+    "lesson_3": {
+      "page": 14,
+      "booklet": "Pupil Workbook",
+      "unitId": "australia",
+      "lessonIndex": 2
+    },
+    "lesson_4": {
+      "page": 19,
+      "booklet": "Pupil Workbook",
+      "unitId": "australia",
+      "lessonIndex": 3
+    },
+    "lesson_5": {
+      "page": 27,
+      "booklet": "Pupil Workbook",
+      "unitId": "australia",
+      "lessonIndex": 4
+    }
+  },
+  "cme_new": {
+    "lesson_1": {
+      "page": 3,
+      "booklet": "Key Topic 1 Booklet",
+      "unitId": "cme_new",
+      "lessonIndex": 0
+    },
+    "lesson_2": {
+      "page": 10,
+      "booklet": "Key Topic 1 Booklet",
+      "unitId": "cme_new",
+      "lessonIndex": 1
+    },
+    "lesson_3": {
+      "page": 18,
+      "booklet": "Key Topic 1 Booklet",
+      "unitId": "cme_new",
+      "lessonIndex": 2
+    },
+    "lesson_4": {
+      "page": 25,
+      "booklet": "Key Topic 1 Booklet",
+      "unitId": "cme_new",
+      "lessonIndex": 3
+    },
+    "lesson_5": {
+      "page": 3,
+      "booklet": "Key Topic 2 Booklet",
+      "unitId": "cme_new",
+      "lessonIndex": 4
+    },
+    "lesson_6": {
+      "page": 10,
+      "booklet": "Key Topic 2 Booklet",
+      "unitId": "cme_new",
+      "lessonIndex": 5
+    },
+    "lesson_7": {
+      "page": 17,
+      "booklet": "Key Topic 2 Booklet",
+      "unitId": "cme_new",
+      "lessonIndex": 6
+    },
+    "lesson_8": {
+      "page": 3,
+      "booklet": "Key Topic 3 Booklet",
+      "unitId": "cme_new",
+      "lessonIndex": 7
+    },
+    "lesson_9": {
+      "page": 9,
+      "booklet": "Key Topic 3 Booklet",
+      "unitId": "cme_new",
+      "lessonIndex": 8
+    },
+    "lesson_10": {
+      "page": 18,
+      "booklet": "Key Topic 3 Booklet",
+      "unitId": "cme_new",
+      "lessonIndex": 9
+    }
+  },
+  "cold_war": {
+    "lesson_1": {
+      "page": 3,
+      "booklet": "Pupil Workbook",
+      "unitId": "cold_war",
+      "lessonIndex": 0
+    },
+    "lesson_2": {
+      "page": 6,
+      "booklet": "Pupil Workbook",
+      "unitId": "cold_war",
+      "lessonIndex": 1
+    },
+    "lesson_3": {
+      "page": 9,
+      "booklet": "Pupil Workbook",
+      "unitId": "cold_war",
+      "lessonIndex": 2
+    },
+    "lesson_4": {
+      "page": 12,
+      "booklet": "Pupil Workbook",
+      "unitId": "cold_war",
+      "lessonIndex": 3
+    },
+    "lesson_5": {
+      "page": 15,
+      "booklet": "Pupil Workbook",
+      "unitId": "cold_war",
+      "lessonIndex": 4
+    },
+    "lesson_6": {
+      "page": 18,
+      "booklet": "Pupil Workbook",
+      "unitId": "cold_war",
+      "lessonIndex": 5
+    },
+    "lesson_7": {
+      "page": 21,
+      "booklet": "Pupil Workbook",
+      "unitId": "cold_war",
+      "lessonIndex": 6
+    }
+  },
+  "early_modern_world": {
+    "lesson_1": {
+      "page": 3,
+      "booklet": "Pupil Workbook",
+      "unitId": "early_modern_world",
+      "lessonIndex": 0
+    },
+    "lesson_2": {
+      "page": 9,
+      "booklet": "Pupil Workbook",
+      "unitId": "early_modern_world",
+      "lessonIndex": 1
+    },
+    "lesson_3": {
+      "page": 15,
+      "booklet": "Pupil Workbook",
+      "unitId": "early_modern_world",
+      "lessonIndex": 2
+    },
+    "lesson_4": {
+      "page": 21,
+      "booklet": "Pupil Workbook",
+      "unitId": "early_modern_world",
+      "lessonIndex": 3
+    },
+    "lesson_5": {
+      "page": 26,
+      "booklet": "Pupil Workbook",
+      "unitId": "early_modern_world",
+      "lessonIndex": 4
+    },
+    "lesson_6": {
+      "page": 32,
+      "booklet": "Pupil Workbook",
+      "unitId": "early_modern_world",
+      "lessonIndex": 5
+    },
+    "lesson_7": {
+      "page": 36,
+      "booklet": "Pupil Workbook",
+      "unitId": "early_modern_world",
+      "lessonIndex": 6
+    },
+    "lesson_8": {
+      "page": 42,
+      "booklet": "Pupil Workbook",
+      "unitId": "early_modern_world",
+      "lessonIndex": 7
+    },
+    "lesson_9": {
+      "page": 49,
+      "booklet": "Pupil Workbook",
+      "unitId": "early_modern_world",
+      "lessonIndex": 8
+    }
+  },
+  "edexcel_medicine": {
+    "lesson_1_1": {
+      "page": 3,
+      "booklet": "Medieval Booklet",
+      "unitId": "edexcel_medicine",
+      "lessonIndex": 0
+    },
+    "lesson_1_2": {
+      "page": 18,
+      "booklet": "Medieval Booklet",
+      "unitId": "edexcel_medicine",
+      "lessonIndex": 1
+    },
+    "lesson_1_3": {
+      "page": 33,
+      "booklet": "Medieval Booklet",
+      "unitId": "edexcel_medicine",
+      "lessonIndex": 2
+    },
+    "lesson_2_1": {
+      "page": 3,
+      "booklet": "Renaissance Booklet",
+      "unitId": "edexcel_medicine",
+      "lessonIndex": 3
+    },
+    "lesson_2_2": {
+      "page": 19,
+      "booklet": "Renaissance Booklet",
+      "unitId": "edexcel_medicine",
+      "lessonIndex": 4
+    },
+    "lesson_2_3": {
+      "page": 34,
+      "booklet": "Renaissance Booklet",
+      "unitId": "edexcel_medicine",
+      "lessonIndex": 5
+    },
+    "lesson_3_1": {
+      "page": 3,
+      "booklet": "18th & 19th C Booklet",
+      "unitId": "edexcel_medicine",
+      "lessonIndex": 6
+    },
+    "lesson_3_2": {
+      "page": 16,
+      "booklet": "18th & 19th C Booklet",
+      "unitId": "edexcel_medicine",
+      "lessonIndex": 7
+    },
+    "lesson_3_3": {
+      "page": 32,
+      "booklet": "18th & 19th C Booklet",
+      "unitId": "edexcel_medicine",
+      "lessonIndex": 8
+    },
+    "lesson_4_1": {
+      "page": 3,
+      "booklet": "Modern Booklet",
+      "unitId": "edexcel_medicine",
+      "lessonIndex": 9
+    },
+    "lesson_4_2": {
+      "page": 16,
+      "booklet": "Modern Booklet",
+      "unitId": "edexcel_medicine",
+      "lessonIndex": 10
+    },
+    "lesson_4_3": {
+      "page": 32,
+      "booklet": "Modern Booklet",
+      "unitId": "edexcel_medicine",
+      "lessonIndex": 11
+    },
+    "lesson_4_4": {
+      "page": 47,
+      "booklet": "Modern Booklet",
+      "unitId": "edexcel_medicine",
+      "lessonIndex": 12
+    },
+    "lesson_5_1": {
+      "page": 3,
+      "booklet": "Western Front Booklet",
+      "unitId": "edexcel_medicine",
+      "lessonIndex": 13
+    },
+    "lesson_5_2": {
+      "page": 11,
+      "booklet": "Western Front Booklet",
+      "unitId": "edexcel_medicine",
+      "lessonIndex": 14
+    },
+    "lesson_5_3": {
+      "page": 20,
+      "booklet": "Western Front Booklet",
+      "unitId": "edexcel_medicine",
+      "lessonIndex": 15
+    },
+    "lesson_5_4": {
+      "page": 29,
+      "booklet": "Western Front Booklet",
+      "unitId": "edexcel_medicine",
+      "lessonIndex": 16
+    },
+    "lesson_5_5": {
+      "page": 37,
+      "booklet": "Western Front Booklet",
+      "unitId": "edexcel_medicine",
+      "lessonIndex": 17
+    }
+  },
+  "eee": {
+    "lesson_1_1": {
+      "page": 3,
+      "booklet": "Key Topic 1 Booklet",
+      "unitId": "eee",
+      "lessonIndex": 0
+    },
+    "lesson_1_2": {
+      "page": 13,
+      "booklet": "Key Topic 1 Booklet",
+      "unitId": "eee",
+      "lessonIndex": 1
+    },
+    "lesson_1_3": {
+      "page": 21,
+      "booklet": "Key Topic 1 Booklet",
+      "unitId": "eee",
+      "lessonIndex": 2
+    },
+    "lesson_1_4": {
+      "page": 31,
+      "booklet": "Key Topic 1 Booklet",
+      "unitId": "eee",
+      "lessonIndex": 3
+    },
+    "lesson_2_1": {
+      "page": 3,
+      "booklet": "Key Topic 2 Booklet",
+      "unitId": "eee",
+      "lessonIndex": 4
+    },
+    "lesson_2_2": {
+      "page": 13,
+      "booklet": "Key Topic 2 Booklet",
+      "unitId": "eee",
+      "lessonIndex": 5
+    },
+    "lesson_2_3": {
+      "page": 21,
+      "booklet": "Key Topic 2 Booklet",
+      "unitId": "eee",
+      "lessonIndex": 6
+    },
+    "lesson_2_4": {
+      "page": 21,
+      "booklet": "Key Topic 2 Booklet",
+      "unitId": "eee",
+      "lessonIndex": 7
+    },
+    "lesson_3_1": {
+      "page": 3,
+      "booklet": "Key Topic 3 Booklet",
+      "unitId": "eee",
+      "lessonIndex": 8
+    },
+    "lesson_3_2": {
+      "page": 11,
+      "booklet": "Key Topic 3 Booklet",
+      "unitId": "eee",
+      "lessonIndex": 9
+    },
+    "lesson_3_3": {
+      "page": 19,
+      "booklet": "Key Topic 3 Booklet",
+      "unitId": "eee",
+      "lessonIndex": 10
+    },
+    "lesson_3_4": {
+      "page": 27,
+      "booklet": "Key Topic 3 Booklet",
+      "unitId": "eee",
+      "lessonIndex": 11
+    }
+  },
+  "great_war": {
+    "lesson_0": {
+      "page": 3,
+      "booklet": "Pupil Workbook",
+      "unitId": "great_war",
+      "lessonIndex": 0
+    },
+    "lesson_1": {
+      "page": 7,
+      "booklet": "Pupil Workbook",
+      "unitId": "great_war",
+      "lessonIndex": 1
+    },
+    "lesson_2": {
+      "page": 14,
+      "booklet": "Pupil Workbook",
+      "unitId": "great_war",
+      "lessonIndex": 2
+    },
+    "lesson_3": {
+      "page": 22,
+      "booklet": "Pupil Workbook",
+      "unitId": "great_war",
+      "lessonIndex": 3
+    },
+    "lesson_4": {
+      "page": 30,
+      "booklet": "Pupil Workbook",
+      "unitId": "great_war",
+      "lessonIndex": 4
+    },
+    "lesson_5": {
+      "page": 38,
+      "booklet": "Pupil Workbook",
+      "unitId": "great_war",
+      "lessonIndex": 5
+    },
+    "lesson_6": {
+      "page": 45,
+      "booklet": "Pupil Workbook",
+      "unitId": "great_war",
+      "lessonIndex": 6
+    }
+  },
+  "great_war_part2": {
+    "lesson_1": {
+      "page": 3,
+      "booklet": "Pupil Workbook",
+      "unitId": "great_war_part2",
+      "lessonIndex": 0
+    },
+    "lesson_2": {
+      "page": 9,
+      "booklet": "Pupil Workbook",
+      "unitId": "great_war_part2",
+      "lessonIndex": 1
+    },
+    "lesson_3": {
+      "page": 15,
+      "booklet": "Pupil Workbook",
+      "unitId": "great_war_part2",
+      "lessonIndex": 2
+    },
+    "lesson_4": {
+      "page": 20,
+      "booklet": "Pupil Workbook",
+      "unitId": "great_war_part2",
+      "lessonIndex": 3
+    },
+    "lesson_5": {
+      "page": 25,
+      "booklet": "Pupil Workbook",
+      "unitId": "great_war_part2",
+      "lessonIndex": 4
+    },
+    "lesson_6": {
+      "page": 29,
+      "booklet": "Pupil Workbook",
+      "unitId": "great_war_part2",
+      "lessonIndex": 5
+    },
+    "lesson_7": {
+      "page": 44,
+      "booklet": "Pupil Workbook",
+      "unitId": "great_war_part2",
+      "lessonIndex": 6
+    }
+  },
+  "industrialisation_and_empire": {
+    "lesson_1": {
+      "page": 3,
+      "booklet": "Pupil Workbook",
+      "unitId": "industrialisation_and_empire",
+      "lessonIndex": 0
+    },
+    "lesson_2": {
+      "page": 9,
+      "booklet": "Pupil Workbook",
+      "unitId": "industrialisation_and_empire",
+      "lessonIndex": 1
+    },
+    "lesson_3": {
+      "page": 16,
+      "booklet": "Pupil Workbook",
+      "unitId": "industrialisation_and_empire",
+      "lessonIndex": 2
+    },
+    "lesson_4": {
+      "page": 21,
+      "booklet": "Pupil Workbook",
+      "unitId": "industrialisation_and_empire",
+      "lessonIndex": 3
+    },
+    "lesson_5": {
+      "page": 26,
+      "booklet": "Pupil Workbook",
+      "unitId": "industrialisation_and_empire",
+      "lessonIndex": 4
+    },
+    "lesson_6": {
+      "page": 30,
+      "booklet": "Pupil Workbook",
+      "unitId": "industrialisation_and_empire",
+      "lessonIndex": 5
+    },
+    "lesson_7": {
+      "page": 35,
+      "booklet": "Pupil Workbook",
+      "unitId": "industrialisation_and_empire",
+      "lessonIndex": 6
+    },
+    "lesson_8": {
+      "page": 40,
+      "booklet": "Pupil Workbook",
+      "unitId": "industrialisation_and_empire",
+      "lessonIndex": 7
+    }
+  },
+  "medieval_england": {
+    "lesson_1": {
+      "page": 3,
+      "booklet": "Pupil Workbook",
+      "unitId": "medieval_england",
+      "lessonIndex": 0
+    },
+    "lesson_2": {
+      "page": 10,
+      "booklet": "Pupil Workbook",
+      "unitId": "medieval_england",
+      "lessonIndex": 1
+    },
+    "lesson_3": {
+      "page": 16,
+      "booklet": "Pupil Workbook",
+      "unitId": "medieval_england",
+      "lessonIndex": 2
+    },
+    "lesson_4": {
+      "page": 21,
+      "booklet": "Pupil Workbook",
+      "unitId": "medieval_england",
+      "lessonIndex": 3
+    },
+    "lesson_5": {
+      "page": 26,
+      "booklet": "Pupil Workbook",
+      "unitId": "medieval_england",
+      "lessonIndex": 4
+    },
+    "lesson_6": {
+      "page": 31,
+      "booklet": "Pupil Workbook",
+      "unitId": "medieval_england",
+      "lessonIndex": 5
+    },
+    "lesson_7": {
+      "page": 36,
+      "booklet": "Pupil Workbook",
+      "unitId": "medieval_england",
+      "lessonIndex": 6
+    },
+    "lesson_8": {
+      "page": 41,
+      "booklet": "Pupil Workbook",
+      "unitId": "medieval_england",
+      "lessonIndex": 7
+    },
+    "lesson_9": {
+      "page": 45,
+      "booklet": "Pupil Workbook",
+      "unitId": "medieval_england",
+      "lessonIndex": 8
+    }
+  },
+  "post_war_britain": {
+    "lesson_1": {
+      "page": 3,
+      "booklet": "Pupil Workbook",
+      "unitId": "post_war_britain",
+      "lessonIndex": 0
+    },
+    "lesson_2": {
+      "page": 6,
+      "booklet": "Pupil Workbook",
+      "unitId": "post_war_britain",
+      "lessonIndex": 1
+    },
+    "lesson_3": {
+      "page": 9,
+      "booklet": "Pupil Workbook",
+      "unitId": "post_war_britain",
+      "lessonIndex": 2
+    },
+    "lesson_4": {
+      "page": 12,
+      "booklet": "Pupil Workbook",
+      "unitId": "post_war_britain",
+      "lessonIndex": 3
+    },
+    "lesson_5": {
+      "page": 15,
+      "booklet": "Pupil Workbook",
+      "unitId": "post_war_britain",
+      "lessonIndex": 4
+    },
+    "lesson_6": {
+      "page": 18,
+      "booklet": "Pupil Workbook",
+      "unitId": "post_war_britain",
+      "lessonIndex": 5
+    }
+  },
+  "the_shoah": {
+    "lesson_1": {
+      "page": 3,
+      "booklet": "Pupil Workbook",
+      "unitId": "the_shoah",
+      "lessonIndex": 0
+    },
+    "lesson_2": {
+      "page": 6,
+      "booklet": "Pupil Workbook",
+      "unitId": "the_shoah",
+      "lessonIndex": 1
+    },
+    "lesson_3": {
+      "page": 9,
+      "booklet": "Pupil Workbook",
+      "unitId": "the_shoah",
+      "lessonIndex": 2
+    },
+    "lesson_4": {
+      "page": 12,
+      "booklet": "Pupil Workbook",
+      "unitId": "the_shoah",
+      "lessonIndex": 3
+    },
+    "lesson_5": {
+      "page": 15,
+      "booklet": "Pupil Workbook",
+      "unitId": "the_shoah",
+      "lessonIndex": 4
+    },
+    "lesson_6": {
+      "page": 18,
+      "booklet": "Pupil Workbook",
+      "unitId": "the_shoah",
+      "lessonIndex": 5
+    },
+    "lesson_7": {
+      "page": 21,
+      "booklet": "Pupil Workbook",
+      "unitId": "the_shoah",
+      "lessonIndex": 6
+    }
+  },
+  "trip_ypres": {
+    "day_0": {
+      "page": 3,
+      "booklet": "Pupil Workbook",
+      "unitId": "trip_ypres",
+      "lessonIndex": 0
+    },
+    "day_1": {
+      "page": 6,
+      "booklet": "Pupil Workbook",
+      "unitId": "trip_ypres",
+      "lessonIndex": 1
+    },
+    "day_2": {
+      "page": 11,
+      "booklet": "Pupil Workbook",
+      "unitId": "trip_ypres",
+      "lessonIndex": 2
+    },
+    "day_3": {
+      "page": 16,
+      "booklet": "Pupil Workbook",
+      "unitId": "trip_ypres",
+      "lessonIndex": 3
+    },
+    "hero_0": {
+      "page": 19,
+      "booklet": "Pupil Workbook",
+      "unitId": "trip_ypres",
+      "lessonIndex": 4
+    },
+    "hero_1": {
+      "page": 22,
+      "booklet": "Pupil Workbook",
+      "unitId": "trip_ypres",
+      "lessonIndex": 5
+    },
+    "hero_2": {
+      "page": 25,
+      "booklet": "Pupil Workbook",
+      "unitId": "trip_ypres",
+      "lessonIndex": 6
+    },
+    "hero_3": {
+      "page": 28,
+      "booklet": "Pupil Workbook",
+      "unitId": "trip_ypres",
+      "lessonIndex": 7
+    },
+    "hero_4": {
+      "page": 31,
+      "booklet": "Pupil Workbook",
+      "unitId": "trip_ypres",
+      "lessonIndex": 8
+    },
+    "hero_5": {
+      "page": 34,
+      "booklet": "Pupil Workbook",
+      "unitId": "trip_ypres",
+      "lessonIndex": 9
+    },
+    "hero_lowry_william": {
+      "page": 37,
+      "booklet": "Pupil Workbook",
+      "unitId": "trip_ypres",
+      "lessonIndex": 10
+    },
+    "hero_lowry_auriol": {
+      "page": 40,
+      "booklet": "Pupil Workbook",
+      "unitId": "trip_ypres",
+      "lessonIndex": 11
+    },
+    "hero_lowry_cyril": {
+      "page": 43,
+      "booklet": "Pupil Workbook",
+      "unitId": "trip_ypres",
+      "lessonIndex": 12
+    },
+    "hero_crummack": {
+      "page": 46,
+      "booklet": "Pupil Workbook",
+      "unitId": "trip_ypres",
+      "lessonIndex": 13
+    }
+  },
+  "usa": {},
+  "water_and_sanitation": {
+    "lesson_1": {
+      "page": 3,
+      "booklet": "Pupil Workbook",
+      "unitId": "water_and_sanitation",
+      "lessonIndex": 0
+    },
+    "lesson_2": {
+      "page": 9,
+      "booklet": "Pupil Workbook",
+      "unitId": "water_and_sanitation",
+      "lessonIndex": 1
+    },
+    "lesson_3": {
+      "page": 14,
+      "booklet": "Pupil Workbook",
+      "unitId": "water_and_sanitation",
+      "lessonIndex": 2
+    },
+    "lesson_4": {
+      "page": 19,
+      "booklet": "Pupil Workbook",
+      "unitId": "water_and_sanitation",
+      "lessonIndex": 3
+    },
+    "lesson_5": {
+      "page": 24,
+      "booklet": "Pupil Workbook",
+      "unitId": "water_and_sanitation",
+      "lessonIndex": 4
+    },
+    "lesson_6": {
+      "page": 29,
+      "booklet": "Pupil Workbook",
+      "unitId": "water_and_sanitation",
+      "lessonIndex": 5
+    }
+  },
+  "weimar_nazi_germany": {
+    "lesson_1_1": {
+      "page": 3,
+      "booklet": "Key Topic 1 Booklet",
+      "unitId": "weimar_nazi_germany",
+      "lessonIndex": 0
+    },
+    "lesson_1_2": {
+      "page": 17,
+      "booklet": "Key Topic 1 Booklet",
+      "unitId": "weimar_nazi_germany",
+      "lessonIndex": 1
+    },
+    "lesson_1_3": {
+      "page": 30,
+      "booklet": "Key Topic 1 Booklet",
+      "unitId": "weimar_nazi_germany",
+      "lessonIndex": 2
+    },
+    "lesson_1_4": {
+      "page": 43,
+      "booklet": "Key Topic 1 Booklet",
+      "unitId": "weimar_nazi_germany",
+      "lessonIndex": 3
+    },
+    "lesson_2_1": {
+      "page": 3,
+      "booklet": "Key Topic 2 Booklet",
+      "unitId": "weimar_nazi_germany",
+      "lessonIndex": 4
+    },
+    "lesson_2_2": {
+      "page": 16,
+      "booklet": "Key Topic 2 Booklet",
+      "unitId": "weimar_nazi_germany",
+      "lessonIndex": 5
+    },
+    "lesson_2_3": {
+      "page": 29,
+      "booklet": "Key Topic 2 Booklet",
+      "unitId": "weimar_nazi_germany",
+      "lessonIndex": 6
+    },
+    "lesson_2_4": {
+      "page": 42,
+      "booklet": "Key Topic 2 Booklet",
+      "unitId": "weimar_nazi_germany",
+      "lessonIndex": 7
+    },
+    "lesson_3_1": {
+      "page": 3,
+      "booklet": "Key Topic 3 Booklet",
+      "unitId": "weimar_nazi_germany",
+      "lessonIndex": 8
+    },
+    "lesson_3_2": {
+      "page": 16,
+      "booklet": "Key Topic 3 Booklet",
+      "unitId": "weimar_nazi_germany",
+      "lessonIndex": 9
+    },
+    "lesson_3_3": {
+      "page": 29,
+      "booklet": "Key Topic 3 Booklet",
+      "unitId": "weimar_nazi_germany",
+      "lessonIndex": 10
+    },
+    "lesson_3_4": {
+      "page": 42,
+      "booklet": "Key Topic 3 Booklet",
+      "unitId": "weimar_nazi_germany",
+      "lessonIndex": 11
+    },
+    "lesson_4_1": {
+      "page": 3,
+      "booklet": "Key Topic 4 Booklet",
+      "unitId": "weimar_nazi_germany",
+      "lessonIndex": 12
+    },
+    "lesson_4_2": {
+      "page": 16,
+      "booklet": "Key Topic 4 Booklet",
+      "unitId": "weimar_nazi_germany",
+      "lessonIndex": 13
+    },
+    "lesson_4_3": {
+      "page": 29,
+      "booklet": "Key Topic 4 Booklet",
+      "unitId": "weimar_nazi_germany",
+      "lessonIndex": 14
+    },
+    "lesson_4_4": {
+      "page": 43,
+      "booklet": "Key Topic 4 Booklet",
+      "unitId": "weimar_nazi_germany",
+      "lessonIndex": 15
+    }
+  }
+}

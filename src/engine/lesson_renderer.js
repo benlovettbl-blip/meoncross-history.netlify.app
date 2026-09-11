@@ -2,6 +2,7 @@ import { cleanQuestionText } from '../data_parser.js';
 import { generateKeyIndividualEmbedHTML } from '../key_individuals.js';
 import { appStore } from './store.js';
 import { getAssetUrl } from './assets.js';
+import { getWorkbookPageAnchor } from './workbook_page_map.js';
 
 // Module-level fallback to ensure isGCSE never throws ReferenceError
 var isGCSE = false;
@@ -1095,18 +1096,28 @@ export function renderLesson(lesson) {
     // Rotating cognitive vocabulary challenge widget
     let currentLessonIdx = 0;
     if (typeof unitData !== 'undefined' && unitData && Array.isArray(unitData.lessons)) {
-      currentLessonIdx = unitData.lessons.findIndex(
-        (l) => l.id === lesson.id || l.title === lesson.title,
+      currentLessonIdx = unitData.lessons.findIndex((l) =>
+        l.id && lesson.id ? l.id === lesson.id : l.title === lesson.title,
       );
       if (currentLessonIdx === -1) currentLessonIdx = 0;
     }
+    const currentUnitId =
+      (appStore && appStore.state && appStore.state.currentUnitId) || window.currentUnitId || '';
+    const pageAnchor = getWorkbookPageAnchor(currentUnitId, lesson, currentLessonIdx);
     const vocabStyle = currentLessonIdx % 4;
     const vocabTermsList = lesson.vocab.map((v) => (v.term || '').trim()).filter(Boolean);
 
+    const wbAnchorBadge = pageAnchor
+      ? `<span class="wb-page-pill" style="font-size: 0.8rem; font-weight: 700; color: #0369a1; background: #e0f2fe; border: 1px solid #bae6fd; padding: 3px 8px; border-radius: 6px; display: inline-flex; align-items: center; gap: 5px;" title="Corresponding page in printed pupil workbook"><i class="fa-solid fa-book-open"></i> ${pageAnchor.label}</span>`
+      : '';
+
     const wbDrillBtnHtml = `
-      <button type="button" class="btn btn-secondary" data-action="open-vocab-whiteboard" style="font-size: 0.82rem; padding: 4px 10px; background: #eff6ff; color: #1e40af; border: 1.5px solid #bfdbfe; border-radius: 6px; cursor: pointer; font-weight: 600; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;" title="Project this vocabulary challenge on the classroom smartboard">
-        <i class="fa-solid fa-chalkboard-user"></i> Starter Drill
-      </button>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        ${wbAnchorBadge}
+        <button type="button" class="btn btn-secondary" data-action="open-vocab-whiteboard" style="font-size: 0.82rem; padding: 4px 10px; background: #eff6ff; color: #1e40af; border: 1.5px solid #bfdbfe; border-radius: 6px; cursor: pointer; font-weight: 600; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;" title="Project this vocabulary challenge on the classroom smartboard">
+          <i class="fa-solid fa-chalkboard-user"></i> Starter Drill
+        </button>
+      </div>
     `;
 
     if (vocabStyle === 0) {

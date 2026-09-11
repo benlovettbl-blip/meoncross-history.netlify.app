@@ -5,6 +5,9 @@ import {
   getGoldenSentenceExemplar,
 } from './lesson_renderer.js';
 import { getAssetUrl } from './assets.js';
+import { getWorkbookPageAnchor } from './workbook_page_map.js';
+
+window.getWorkbookPageAnchor = getWorkbookPageAnchor;
 
 let glossaryPopover = null;
 let activeVocabElement = null;
@@ -401,11 +404,17 @@ export function openVocabWhiteboardModal(customLesson) {
     (appStore && appStore.state && appStore.state.activeUnitData) || window.unitData;
   let currentLessonIdx = 0;
   if (unitDataObj && Array.isArray(unitDataObj.lessons)) {
-    currentLessonIdx = unitDataObj.lessons.findIndex(
-      (l) => l.id === activeLesson.id || l.title === activeLesson.title,
+    currentLessonIdx = unitDataObj.lessons.findIndex((l) =>
+      l.id && activeLesson.id ? l.id === activeLesson.id : l.title === activeLesson.title,
     );
     if (currentLessonIdx === -1) currentLessonIdx = 0;
   }
+  const currentUnitId =
+    (appStore && appStore.state && appStore.state.currentUnitId) ||
+    window.currentUnitId ||
+    (unitDataObj && unitDataObj.id) ||
+    '';
+  const pageAnchor = getWorkbookPageAnchor(currentUnitId, activeLesson, currentLessonIdx);
   const vocabStyle = currentLessonIdx % 4;
   const termsList = (activeLesson.vocab || []).map((v) => (v.term || '').trim()).filter(Boolean);
 
@@ -522,17 +531,37 @@ export function openVocabWhiteboardModal(customLesson) {
       <!-- Presentation Top Bar -->
       <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid rgba(255,255,255,0.15); padding-bottom: 18px; margin-bottom: 25px; flex-wrap: wrap; gap: 15px;">
         <div>
-          <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
             <span style="background: rgba(99, 102, 241, 0.25); color: #a5b4fc; border: 1.5px solid #6366f1; padding: 4px 12px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
               <i class="fa-solid fa-chalkboard-user"></i> Starter Prompt Overlay
             </span>
             <span style="background: rgba(255, 255, 255, 0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">
               ${styleBadge}
             </span>
+            ${
+              pageAnchor
+                ? `
+              <span class="mwb-page-anchor-pill" style="background: rgba(14, 165, 233, 0.25); color: #7dd3fc; border: 1.5px solid #0284c7; padding: 4px 12px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px;">
+                <i class="fa-solid fa-book-open" style="color: #38bdf8;"></i> ${pageAnchor.label}
+              </span>
+            `
+                : ''
+            }
           </div>
-          <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; margin: 8px 0 0 0; color: #ffffff; letter-spacing: 0.5px;">
-            ${activeLesson.title}
-          </h1>
+          <div style="display: flex; align-items: baseline; flex-wrap: wrap; gap: 16px; margin-top: 8px;">
+            <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; margin: 0; color: #ffffff; letter-spacing: 0.5px; display: inline-block;">
+              ${activeLesson.title}
+            </h1>
+            ${
+              pageAnchor
+                ? `
+              <span class="wb-page-anchor-tag" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; padding: 5px 14px; border-radius: 8px; font-size: 1.15rem; font-weight: 700; font-family: 'Inter', sans-serif; letter-spacing: 0.5px; box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4); border: 1.5px solid #38bdf8; vertical-align: middle;">
+                <i class="fa-solid fa-book-open" style="color: #7dd3fc;"></i> ${pageAnchor.label}
+              </span>
+            `
+                : ''
+            }
+          </div>
         </div>
 
         <!-- Timer & Quick Actions -->
@@ -566,7 +595,7 @@ export function openVocabWhiteboardModal(customLesson) {
       <div style="background: linear-gradient(90deg, rgba(79, 70, 229, 0.25) 0%, rgba(14, 165, 233, 0.2) 100%); border: 1.5px solid rgba(129, 140, 248, 0.4); border-radius: 10px; padding: 12px 20px; display: flex; align-items: center; gap: 12px; margin-bottom: 25px;">
         <span style="font-size: 1.6rem;">✍️</span>
         <div style="font-size: 1.15rem; font-weight: 600; color: #e0e7ff;">
-          Workbook Task: Write your response clearly in your workbook. When the timer finishes: <strong>"PENS DOWN!"</strong> and be ready to share your answer.
+          Workbook Task${pageAnchor ? ` (<strong>${pageAnchor.label}</strong>)` : ''}: Write your response clearly in your workbook. When the timer finishes: <strong>"PENS DOWN!"</strong> and be ready to share your answer.
         </div>
       </div>
 
