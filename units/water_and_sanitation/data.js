@@ -42,33 +42,6 @@ const water_and_sanitation = {
         "Explain how the Roman Empire's centralised power enabled large-scale public health projects",
         'Evaluate the significance of Roman public health by assessing whether it represented genuine medical understanding or imperial prestige',
       ],
-      vocabulary: [
-        {
-          term: 'Aqueduct',
-          definition:
-            'An artificial channel built by the Romans to transport fresh water from rivers and springs into towns and cities.',
-        },
-        {
-          term: 'Empire',
-          definition:
-            'A large political unit where one powerful state controls many different peoples and territories, such as the Roman Empire.',
-        },
-        {
-          term: 'Public health',
-          definition:
-            'The health of the population as a whole, including access to clean water, sanitation, and disease prevention.',
-        },
-        {
-          term: 'Sanitation',
-          definition:
-            'Systems for keeping places clean, especially the removal of waste and sewage to prevent disease.',
-        },
-        {
-          term: 'Continuity',
-          definition:
-            'When things stay the same over a long period of time, without significant change.',
-        },
-      ],
       video: {
         type: 'era',
         url: 'https://era.org.uk/streaming-service-resource/learning-zone-public-baths-in-roman-britain-bbc-two/',
@@ -492,7 +465,7 @@ const water_and_sanitation = {
         },
       ],
       vocab_cloze_text:
-        'The Romans built massive aqueducts that acted as a [conduit] for fresh water. For waste, they used a [cesspit] or went to a communal [latrine] where water flushed the waste away.',
+        'The Romans engineered the monumental [Aqueduct] system to channel clean water from mountain springs, directing fresh supplies through lead [Conduit] pipes into town centers. Underfloor furnace heat from the [Hypocaust] warmed communal bathhouses where citizens scraped dirt using a curved [Strigil]. Waste was flushed through a stone public [Latrine] or deposited into a domestic [Cesspit].',
       pair_share: {
         prompt:
           'Discuss with your partner: Why would the Romans spend so much money on public health?',
@@ -528,33 +501,6 @@ const water_and_sanitation = {
         'Explain how the collapse of Roman imperial power led to the decline of organised public health systems',
         'Describe the role of the medieval Church in shaping attitudes to disease and sanitation',
         'Assess the significance of the Black Death (1348) as a turning point in medieval public health',
-      ],
-      vocabulary: [
-        {
-          term: 'Monarchy',
-          definition:
-            'A system of government where a king or queen holds supreme power, inherited through a royal family.',
-        },
-        {
-          term: 'Church',
-          definition:
-            'In medieval context, the Catholic Church — the dominant religious institution that influenced all aspects of life.',
-        },
-        {
-          term: 'Causation',
-          definition:
-            'The relationship between causes and effects — understanding why something happened.',
-        },
-        {
-          term: 'Miasma',
-          definition:
-            "The medieval theory that disease was caused by 'bad air' or foul-smelling vapours rising from rotting matter.",
-        },
-        {
-          term: 'Significance',
-          definition:
-            'The importance or impact of a historical event, person, or development — why it matters.',
-        },
       ],
       do_now: {
         type: 'questions',
@@ -943,7 +889,7 @@ const water_and_sanitation = {
         },
       ],
       vocab_cloze_text:
-        'During the Middle Ages, people feared [miasma] (bad air) caused disease. Without sewers, waste went into a [cesspit] or a simple [privy], which was eventually emptied by a [gongfermer]. The cleanest places were usually a [monastery] where monks lived.',
+        'During the Middle Ages, widespread belief in [Miasma Theory] meant people feared foul air caused deadly plagues like the [Black Death (1348)]. Waste was collected in a simple domestic [Privy], which had to be emptied at night by a [Gongfermer]. The highest hygiene standards were maintained in a religious [Monastery], where fresh running water was supplied through an artificial [Leat].',
       pair_share: {
         prompt:
           'Discuss with your partner: Who had better public health, a Roman soldier or a Medieval monk?',
@@ -981,33 +927,6 @@ const water_and_sanitation = {
         'Describe the public health challenges caused by rapid urbanisation in Early Modern towns',
         'Explain why governments failed to act despite growing evidence of poor sanitation',
         'Evaluate the extent to which continuity, rather than change, defined public health between 1500 and 1750',
-      ],
-      vocabulary: [
-        {
-          term: 'Urbanisation',
-          definition:
-            'The growth of towns and cities as people move from rural areas to urban centres.',
-        },
-        {
-          term: 'Cesspit',
-          definition:
-            'A pit for the disposal of liquid waste and sewage, common in Early Modern towns.',
-        },
-        {
-          term: 'Plague',
-          definition:
-            'A devastating infectious disease, such as the bubonic plague, that caused mass death in medieval and early modern England.',
-        },
-        {
-          term: 'Change',
-          definition:
-            'When things become different over time — a key concept in understanding historical development.',
-        },
-        {
-          term: 'Privy',
-          definition:
-            'An outdoor toilet, often shared by multiple families, that emptied into a cesspit or river.',
-        },
       ],
       do_now: {
         type: 'questions',
@@ -1384,7 +1303,7 @@ const water_and_sanitation = {
         },
       ],
       vocab_cloze_text:
-        'As [urbanisation] grew, towns became overcrowded. People still blamed [miasma] for illness. Waste went into a [cesspit] cleaned by a [gong farmer]. Sometimes water flowed through a [conduit], but only the rich had a new [water closet].',
+        'Rapid [Urbanisation] in the 17th century severely strained town infrastructure, making conditions ripe for disasters like the [Great Plague of 1665]. Clean drinking water was supplied through a public [Conduit System], while street filth was cleared by a parish [Scavenger]. Domestic waste pits were emptied of [Night Soil] after dark, while wealthy aristocrats experimented with Sir John Harington\'s invention, the [Water Closet (1596)].',
       pair_share: {
         prompt:
           "Discuss with your partner: Why didn't Sir John Harington's flush toilet become popular instantly?",
@@ -1418,37 +1337,6 @@ const water_and_sanitation = {
         'Explain how industrialisation and mass migration to cities created unprecedented public health crises',
         'Describe the role of key individuals (John Snow, Edwin Chadwick) in challenging existing beliefs about disease',
         'Analyse the significance of the 1848 Public Health Act as an example of government intervention driven by causation evidence',
-      ],
-      vocabulary: [
-        {
-          term: 'Industrialisation',
-          definition:
-            'The transformation of an economy from agriculture to factory-based manufacturing, as occurred in Britain from the late 1700s.',
-        },
-        {
-          term: 'Migration',
-          definition:
-            'The movement of people from one place to another, often from rural to urban areas in search of work.',
-        },
-        {
-          term: 'Cholera',
-          definition:
-            'A deadly waterborne disease caused by contaminated drinking water, which devastated industrial towns.',
-        },
-        {
-          term: 'Parliament',
-          definition:
-            'The law-making body of the United Kingdom, responsible for debating and passing laws.',
-        },
-        {
-          term: 'Laissez-faire',
-          definition:
-            "A philosophy that the government should not interfere in the economy or people's lives — a barrier to public health reform.",
-        },
-        {
-          term: 'Revolution',
-          definition: 'A dramatic and fundamental change in society, politics, or technology.',
-        },
       ],
       do_now: {
         type: 'questions',
@@ -1826,7 +1714,7 @@ const water_and_sanitation = {
         },
       ],
       vocab_cloze_text:
-        'Rapid [urbanization] meant cities grew too fast. The government believed in [laissez-faire], doing nothing to help. This led to a terrible [epidemic] of [cholera], forcing people to finally take [public health] seriously.',
+        'Industrial factory towns were packed with cramped [Back-to-back Housing] where unpaved courtyards suffered constant [Cesspool Overflow]. Because Parliament maintained a strict policy of [Laissez-faire], authorities took little action until repeated epidemics of [Cholera (1831)] struck Britain. Campaigner [Edwin Chadwick] published his shocking sanitary report, finally prompting Parliament to pass the [Public Health Act 1848].',
       pair_share: {
         prompt:
           "Discuss with your partner: Was it fair for the government to follow a 'laissez-faire' attitude?",
@@ -1863,32 +1751,6 @@ const water_and_sanitation = {
         'Explain why it took Parliament so long to act on public health reform despite mounting evidence',
         "Describe how the 'Great Stink' of 1858 became a turning point that forced government action",
         "Evaluate the significance of Joseph Bazalgette's sewer system as a landmark of change in public health",
-      ],
-      vocabulary: [
-        {
-          term: 'The Great Stink',
-          definition:
-            'The crisis of summer 1858 when the smell of sewage in the River Thames became so overwhelming that Parliament was forced to act.',
-        },
-        {
-          term: 'Germ theory',
-          definition:
-            "The scientific understanding (proved by Louis Pasteur in 1861) that diseases are caused by microscopic organisms, not 'bad air'.",
-        },
-        {
-          term: 'Turning point',
-          definition:
-            'A moment in history after which things changed significantly and permanently.',
-        },
-        {
-          term: 'Reform',
-          definition: 'A change made to improve something, often through new laws or policies.',
-        },
-        {
-          term: 'Infrastructure',
-          definition:
-            'The basic physical systems of a society, such as roads, sewers, water supplies, and buildings.',
-        },
       ],
       do_now: {
         type: 'questions',
@@ -2298,7 +2160,7 @@ const water_and_sanitation = {
         },
       ],
       vocab_cloze_text:
-        "The Great Stink forced the government to build a new [sewer] system to carry away [sewage]. This huge [civil engineering] project improved the city's [infrastructure]. Later, Pasteur's [germ theory] finally proved exactly why the dirty water was making people sick.",
+        "During [The Great Stink (1858)], Parliament was paralyzed by the stench rising from the polluted [River Thames]. Engineer [Sir Joseph Bazalgette] solved the crisis by constructing miles of brick [Intercepting Sewers] to redirect urban waste. The scientific breakthrough of [Germ Theory (1861)] proved that microbes caused disease, leading directly to the compulsory [Public Health Act 1875].",
       pair_share: {
         prompt: 'Discuss with your partner: What finally forced Parliament to act?',
         think: 'Spend 1 minute quietly considering the question and forming your own opinion.',
@@ -2378,6 +2240,8 @@ const water_and_sanitation = {
             'The gradual transition from government non-intervention to state regulation ensuring clean water, sanitation, and compulsory hygiene laws.',
         },
       ],
+      vocab_cloze_text:
+        'In 1854, [Dr John Snow] investigated the cholera outbreak by pioneering [Epidemiological Mapping] across the streets of Soho. By charting deaths, he proved cholera was a [Waterborne Disease] centered around the contaminated [Broad Street Pump]. His breakthrough shattered the long-standing [Miasma Myth] and laid the foundation for modern [Public Health Reform].',
       flashcards: [
         {
           term: 'Dr John Snow',

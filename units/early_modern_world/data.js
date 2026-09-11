@@ -688,32 +688,7 @@ const early_modern_world = {
         },
       ],
       title: 'Who held global power in 1450?',
-      vocabulary: [
-        {
-          term: 'Empire',
-          definition:
-            'A large political unit controlling many territories — in 1450, the Ottoman, Ming, and Songhai empires were dominant.',
-        },
-        {
-          term: 'Trade',
-          definition:
-            'The exchange of goods — the Silk Roads and Indian Ocean trade networks connected civilisations.',
-        },
-        {
-          term: 'Imperialism',
-          definition:
-            'The policy of extending power through conquest, colonisation, or economic exploitation.',
-        },
-        {
-          term: 'Power',
-          definition: 'Who held political, economic, and military power in the world of 1450?',
-        },
-        {
-          term: 'Civilisation',
-          definition: 'A complex society with advanced cultural, political, and economic systems.',
-        },
-      ],
-      teacher_notes: {
+            teacher_notes: {
         primer:
           'This lesson challenges Eurocentric narratives by showing that in 1450, true global wealth and power were held by the Ottoman Empire, the Silk Road networks, and African Kingdoms.',
         objectives: [
@@ -1037,6 +1012,8 @@ const early_modern_world = {
             'The misleading historical bias of viewing world history solely through European perspectives and assuming Europe was always the dominant civilization.',
         },
       ],
+      vocab_cloze_text:
+        "In 1450, global power and wealth lay firmly in the East rather than Europe. In Asia, the [Ming Dynasty] governed a sophisticated economy, while overland trade flourished across the ancient [Silk Roads]. In West Africa, the [Songhai Empire] controlled lucrative gold and salt routes. Meanwhile, the rising power of the [Ottoman Empire] culminated in the dramatic [Fall of Constantinople (1453)], cutting Christian Europe off from eastern trade and challenging modern [Eurocentrism].",
       quiz: [
         {
           question:
@@ -1201,33 +1178,7 @@ const early_modern_world = {
         },
       ],
       title: 'How did religious conflict trigger global exploration (1517–1588)?',
-      vocabulary: [
-        {
-          term: 'Reformation',
-          definition:
-            'The 16th-century religious movement that split Christianity into Catholic and Protestant branches.',
-        },
-        {
-          term: 'Exploration',
-          definition:
-            'The voyages of discovery by European nations seeking new trade routes and territories.',
-        },
-        {
-          term: 'Church',
-          definition:
-            'The Catholic Church — the dominant religious institution in Europe until the Reformation.',
-        },
-        {
-          term: 'Change',
-          definition:
-            'The Reformation caused profound religious, political, and social change across Europe.',
-        },
-        {
-          term: 'Continuity',
-          definition: 'Despite the Reformation, some aspects of religious life stayed the same.',
-        },
-      ],
-      teacher_notes: {
+            teacher_notes: {
         primer:
           'This lesson explores the causal link between the domestic and European religious upheaval of the Protestant Reformation and the subsequent global naval conflict between England and Spain. The objective is to help students understand how religious ideology directly fueled early imperialism and exploration.',
         objectives: [
@@ -1320,6 +1271,8 @@ const early_modern_world = {
             'The act of sailing completely around the globe, first achieved by Ferdinand Magellan’s expedition (1519–1522) and later by Sir Francis Drake (1577–1580).',
         },
       ],
+      vocab_cloze_text:
+        "In 1517, Martin Luther's attack on the Catholic sale of each [Indulgence] sparked the religious upheaval of the [Protestant Reformation]. Catholic Spain and Portugal had previously divided the globe under the [Treaty of Tordesillas (1494)], but Protestant English seamen challenged their monopoly. Men like Francis Drake operated as a licensed [Privateer], achieving fame through global [Circumnavigation]. Religious rivalry reached a climax when England defeated the invading [Spanish Armada (1588)].",
       narrative_blocks: [
         {
           title: 'Micro-History: San Juan de Ulúa (September 1568)',
@@ -1674,34 +1627,7 @@ const early_modern_world = {
         },
       ],
       title: 'Trade or takeover: How did early encounters turn into empire?',
-      vocabulary: [
-        {
-          term: 'Colonisation',
-          definition:
-            'The process of establishing control over foreign territories and their peoples.',
-        },
-        {
-          term: 'Trade',
-          definition:
-            'Early European encounters often began as trade but evolved into full-scale imperial conquest.',
-        },
-        {
-          term: 'Empire',
-          definition:
-            'European powers like Spain, Portugal, and England built global empires from the 1500s.',
-        },
-        {
-          term: 'Causation',
-          definition:
-            'Understanding why European exploration led to colonisation and empire-building.',
-        },
-        {
-          term: 'Propaganda',
-          definition:
-            'European accounts of discovery were often propaganda justifying the seizure of other peoples lands.',
-        },
-      ],
-      teacher_notes: {
+            teacher_notes: {
         primer:
           'This lesson compares two contrasting forms of early English colonial expansion: desperate territorial settlement in North America (Roanoke/Jamestown) and polite mercantile trade with the powerful Mughal Empire in India. It aims to show students that the British Empire was not a monolithic, pre-planned military conquest, but a varied process driven by joint-stock capitalism that opportunistically shifted from trade to takeover.',
         objectives: [
@@ -1794,6 +1720,8 @@ const early_modern_world = {
             'The first permanent English settlement in North America, established in Virginia, which survived economically through the commercial cultivation of tobacco.',
         },
       ],
+      vocab_cloze_text:
+        "Early English expansion was financed through the pioneering invention of the [Joint-Stock Company], which spread financial risk among multiple investors. In 1600, Queen Elizabeth I granted a prestigious [Royal Charter] to establish the [East India Company (EIC)]. In Asia, merchants established fortified coastal trade centers known as a [Factory (Trading Post)] with the permission of the wealthy [Mughal Empire]. Across the Atlantic, English settlers founded their first permanent North American colony at [Jamestown (1607)].",
       narrative_blocks: [
         {
           title: 'Micro-History: Matoaka in London (1616)',
@@ -2097,33 +2025,7 @@ const early_modern_world = {
     {
       id: 'lesson_4',
       title: 'James I and the Gunpowder Plot: Why was religious division so volatile?',
-      vocabulary: [
-        {
-          term: 'Religion',
-          definition:
-            'The clash between Catholicism and Protestantism shaped English politics for over a century.',
-        },
-        {
-          term: 'Parliament',
-          definition:
-            'The institution that made laws — James I clashed with Parliament over royal and religious power.',
-        },
-        {
-          term: 'Gunpowder Plot',
-          definition: 'The 1605 Catholic conspiracy to blow up Parliament and kill King James I.',
-        },
-        {
-          term: 'Significance',
-          definition:
-            'The plots significance lies in how it deepened anti-Catholic sentiment and strengthened Parliament.',
-        },
-        {
-          term: 'Treason',
-          definition:
-            'The crime of betraying ones country — the plotters were convicted of high treason.',
-        },
-      ],
-      narrative_blocks: [
+            narrative_blocks: [
         {
           title: 'The Roots of Volatility',
           text: 'In seventeenth-century England, religion was not a private matter of personal conscience; it was central to daily life, guiding morals, behaviour, and major milestones such as birth, marriage, and death. Decades of religious upheaval following the Reformation had created deep division. As England switched between Protestant and Catholic monarchs, each side accused the other of being in league with the Devil, reinforcing public fears and suspicion. Roman Catholics who refused to accept the Church of England were branded as recusants. Heavily concentrated in northern regions like Yorkshire, Durham, and Lancashire, Catholics were viewed by Protestant authorities as a permanent security threat who might obey foreign powers or stage rebellions.',
@@ -2429,6 +2331,8 @@ const early_modern_world = {
             'An anonymous warning letter delivered to Catholic Lord Monteagle in October 1605 that unmasked the Gunpowder Plot and led to Guy Fawkes’ arrest.',
         },
       ],
+      vocab_cloze_text:
+        "Under King James I, English Catholics faced heavy persecution and financial penalties known as [Recusancy Fines]. James firmly asserted his royal authority through the [Divine Right of Kings], which declared monarchs answerable only to God. Deep religious resentment led Robert Catesby and Catholic conspirators to mastermind the [Gunpowder Plot (1605)]. Aided by clandestine [Jesuit] priests, the plotters aimed to blow up Parliament, but their conspiracy of high [Treason] was exposed by the anonymous [Monteagle Letter].",
       flashcards: [
         {
           term: 'Recusancy Fines',
@@ -2464,7 +2368,7 @@ const early_modern_world = {
       banner: '/images/gunpowder_conspirators_banner.jpg',
     },
     {
-      id: 'lesson_4',
+      id: 'lesson_5',
       flashcards: [
         {
           term: 'English Civil War (1642–1651)',
@@ -2498,34 +2402,7 @@ const early_modern_world = {
         },
       ],
       title: 'Who controlled Britain? The Ideological Battle',
-      vocabulary: [
-        {
-          term: 'Power',
-          definition:
-            'The central question: who should hold supreme power — the monarchy or Parliament?',
-        },
-        {
-          term: 'Monarchy',
-          definition:
-            'Rule by a king or queen — the Stuarts believed in the Divine Right of Kings.',
-        },
-        {
-          term: 'Parliament',
-          definition:
-            'The assembly of elected representatives that challenged the kings absolute authority.',
-        },
-        {
-          term: 'Civil War',
-          definition:
-            'An armed conflict between opposing groups within the same country — Englands Civil War (1642-1651).',
-        },
-        {
-          term: 'Democracy',
-          definition:
-            'Government by the people — the Civil War raised radical questions about political power.',
-        },
-      ],
-      teacher_notes: {
+            teacher_notes: {
         primer:
           'This lesson explores the domestic constitutional crisis of the English Civil War, but uniquely connects it to the emerging Atlantic colonial wealth (sugar/tobacco). Students will evaluate whether political ideals or economic profits were the true drivers of Parliamentary victory and the Commonwealth.',
         objectives: [
@@ -2618,7 +2495,7 @@ const early_modern_world = {
         },
       ],
       vocab_cloze_text:
-        'King Charles I believed in the [Divine Right of Kings], which angered Parliament. After losing the Civil War to the [New Model Army], the monarchy was abolished and replaced by the [Commonwealth]. Meanwhile, wealthy merchants who funded Parliament grew rich from Caribbean [Plantation] slavery. They then passed the [Navigation Acts] to ensure all this wealth flowed directly into English ships.',
+        "Conflict between Charles I and Parliament over taxation and religion ignited the devastating [English Civil War (1642–1651)]. Parliament formed a disciplined, merit-based fighting force called the [New Model Army], driven by radical religious zeal and strict [Puritanism]. Following Charles I's trial and [Regicide] in 1649, the monarchy was abolished in favor of a republic known as [The Commonwealth]. However, political instability grew as radical democratic soldiers called the [Levellers] demanded universal manhood suffrage.",
       narrative_blocks: [
         {
           title: 'Micro-History: The Executioner’s Block (27 January 1649)',
@@ -2893,7 +2770,7 @@ const early_modern_world = {
       disciplinary_focus: "Causation - Analyzing the reasons for the Spanish Armada's defeat.",
     },
     {
-      id: 'lesson_5',
+      id: 'lesson_6',
       flashcards: [
         {
           term: 'Mercantilism',
@@ -2927,34 +2804,7 @@ const early_modern_world = {
         },
       ],
       title: 'Who controlled Britain? The Economic Shift',
-      vocabulary: [
-        {
-          term: 'Trade',
-          definition:
-            'Global trade transformed Englands economy and helped shift power from the monarchy to merchants.',
-        },
-        {
-          term: 'Revolution',
-          definition:
-            'The Glorious Revolution of 1688 permanently transferred power from the Crown to Parliament.',
-        },
-        {
-          term: 'Slavery',
-          definition:
-            'The enslavement of millions of Africans was central to the economic transformation of the early modern world.',
-        },
-        {
-          term: 'Change',
-          definition:
-            'The economic shift from feudal agriculture to global trade was a fundamental change.',
-        },
-        {
-          term: 'Continuity',
-          definition:
-            'Despite political revolutions, many ordinary peoples lives showed significant continuity.',
-        },
-      ],
-      teacher_notes: {
+            teacher_notes: {
         primer:
           'This lesson explores the domestic constitutional crisis of the English Civil War, but uniquely connects it to the emerging Atlantic colonial wealth (sugar/tobacco). Students will evaluate whether political ideals or economic profits were the true drivers of Parliamentary victory and the Commonwealth.',
         objectives: [
@@ -3037,7 +2887,7 @@ const early_modern_world = {
         },
       ],
       vocab_cloze_text:
-        'King Charles I believed in the [Divine Right of Kings], which angered Parliament. After losing the Civil War to the [New Model Army], the monarchy was abolished and replaced by the [Commonwealth]. Meanwhile, wealthy merchants who funded Parliament grew rich from Caribbean [Plantation] slavery. They then passed the [Navigation Acts] to ensure all this wealth flowed directly into English ships.',
+        "In the late 17th century, British policy embraced the economic theory of [Mercantilism], which held that national power depended on accumulating trade wealth. To ensure colonial trade enriched English shipping, Parliament passed the protective [Navigation Acts (1651)]. Crown involvement in transatlantic human trafficking deepened with the founding of the [Royal African Company (RAC)]. To finance constant overseas wars, Britain transformed into a powerful [Fiscal-Military State], supported by the creation of the [Bank of England (1694)] and public demand during the [Consumer Revolution].",
       narrative_blocks: [
         {
           title: 'Macro-History: The Financial Hub',
@@ -3254,36 +3104,9 @@ const early_modern_world = {
         'Change and Continuity - Tracing the economic shift towards global trade.',
     },
     {
-      id: 'lesson_6',
+      id: 'lesson_7',
       title: 'What were the mechanics of the Transatlantic Slave Trade?',
-      vocabulary: [
-        {
-          term: 'Transatlantic Slave Trade',
-          definition:
-            'The forced transportation of millions of Africans to the Americas to work as enslaved labourers.',
-        },
-        {
-          term: 'Slavery',
-          definition:
-            'The ownership of human beings as property — a moral catastrophe at the heart of early modern trade.',
-        },
-        {
-          term: 'Trade',
-          definition:
-            'The Triangular Trade connected Europe, Africa, and the Americas in a brutal economic system.',
-        },
-        {
-          term: 'Middle Passage',
-          definition:
-            'The horrific sea journey across the Atlantic endured by enslaved Africans in appalling conditions.',
-        },
-        {
-          term: 'Profit',
-          definition:
-            'The slave trade was driven by the desire for profit — human suffering was treated as a business.',
-        },
-      ],
-      teacher_notes: {
+            teacher_notes: {
         primer:
           'This lesson unpacks the brutal mechanics of the Transatlantic Slave Trade, focusing on the Triangular Trade system and how plantation economics generated immense wealth that shaped modern Britain.',
         objectives: [
@@ -3334,6 +3157,8 @@ const early_modern_world = {
             'The cruel practice of burning a red-hot metal iron mark into the flesh of an enslaved person to register ownership by an empire, merchant, or company.',
         },
       ],
+      vocab_cloze_text:
+        "The transatlantic economy was organized around the brutal three-legged system known as the [Triangular Trade]. Captured Africans were bought and sold as absolute property under the legal status of [Chattel Slavery]. Before being loaded onto slave ships, captives were imprisoned on the African coast in a fortified [Barracoon] and subjected to painful identification through [Branding]. Millions endured the horrific oceanic crossing termed the [Middle Passage] before being forced to labor in the brutal agricultural regime of the American [Plantation Complex].",
       learning_objectives: {
         overarching: 'What were the mechanics of the Transatlantic Slave Trade?',
         scaffolded: [
@@ -3705,37 +3530,10 @@ const early_modern_world = {
       ],
     },
     {
-      id: 'lesson_7',
+      id: 'lesson_8',
       banner: '/images/brookes_ship.jpg',
       title: 'How did enslaved Africans resist the Transatlantic Slave Trade?',
-      vocabulary: [
-        {
-          term: 'Resistance',
-          definition:
-            'Enslaved Africans resisted their captivity through rebellion, escape, cultural preservation, and sabotage.',
-        },
-        {
-          term: 'Abolition',
-          definition:
-            'The movement to end the slave trade and slavery — achieved in the British Empire in 1807/1833.',
-        },
-        {
-          term: 'Propaganda',
-          definition:
-            'Abolitionists used powerful propaganda to turn public opinion against slavery.',
-        },
-        {
-          term: 'Significance',
-          definition:
-            'The abolition movement is significant as one of the first successful human rights campaigns.',
-        },
-        {
-          term: 'Agency',
-          definition:
-            'The ability to act independently — enslaved people showed agency through their resistance.',
-        },
-      ],
-      teacher_notes: {
+            teacher_notes: {
         primer:
           'This lesson aims to dismantle the passive victim narrative of enslaved people by centering their active resistance (both covert and overt) against their enslavers.',
         objectives: [
@@ -3785,6 +3583,8 @@ const early_modern_world = {
             'The political, social, and moral movement to outlaw the slave trade and legally emancipate all enslaved people worldwide.',
         },
       ],
+      vocab_cloze_text:
+        "Enslaved people refused to accept dehumanization, engaging in a wide [Spectrum of Resistance]. Escaped captives formed independent mountain communities known as [Maroons] who waged guerrilla war against colonial authorities. Daily acts of quiet sabotage, slowdowns, and spiritual practices like [Obeah] represented essential forms of [Covert Resistance]. Open revolts also shook colonies, notably the 1739 [Stono Rebellion (1739)] in South Carolina, ultimately inspiring the growing British movement of [Abolitionism].",
       learning_objectives: {
         overarching: 'How did enslaved Africans resist the Transatlantic Slave Trade?',
         scaffolded: [
@@ -4222,7 +4022,7 @@ const early_modern_world = {
       ],
     },
     {
-      id: 'lesson_8',
+      id: 'lesson_9',
       quiz: [
         {
           question:
@@ -4362,32 +4162,7 @@ const early_modern_world = {
           'Circle your effort level (1-5) and set a specific target for the next unit.',
         ],
       },
-      vocabulary: [
-        {
-          term: 'Synthesis',
-          definition:
-            'Bringing together knowledge from across the entire unit to form an overall judgement.',
-        },
-        {
-          term: 'Power',
-          definition: 'By 1750, power had shifted dramatically from the monarchy to Parliament.',
-        },
-        {
-          term: 'Empire',
-          definition:
-            'Britain had become a major global empire through trade, colonisation, and the slave trade.',
-        },
-        {
-          term: 'Revolution',
-          definition:
-            'Political, religious, and economic revolutions transformed Britain between 1450 and 1750.',
-        },
-        {
-          term: 'Change',
-          definition: 'The central question: how much had Britain really changed by 1750?',
-        },
-      ],
-      teacher_notes: {
+            teacher_notes: {
         primer:
           "This is the final assessment lesson for the 1450-1750 unit. It requires students to weigh the 'pro-modern' elements (finance, empire, infrastructure) against the 'un-modern' realities (poverty, slavery, political inequality) and synthesize them into an essay.",
         objectives: [
@@ -4473,7 +4248,7 @@ const early_modern_world = {
         },
       ],
       vocab_cloze_text:
-        "To write a successful [Comprehensive] essay, historians must evaluate both progress and backwardness. By 1750, Britain's [Modernity] was visible in its global trade network and the creation of a [National Debt] managed by the Bank of England. However, this wealth contrasted sharply with brutal domestic laws like [The Bloody Code] and an unfair political system where corrupt [Rotten Borough] seats allowed wealthy elites to buy their way into Parliament.",
+        "By 1750, the Glorious Revolution had transformed Britain into a [Constitutional Monarchy] where royal power was limited by law. Rapid economic growth fueled widespread [Urbanisation], though rapid city growth sparked social panics like the [Gin Craze]. Parliament responded to rising property crime by expanding [The Bloody Code] to impose the death penalty for minor offenses. Meanwhile, elite thinkers embraced the reason of the [Enlightenment], even as elections were marred by corrupt parliamentary seats known as a [Rotten Borough].",
       narrative_blocks: [
         {
           title: 'Micro-History: The Contrast of London Bridge (1750)',

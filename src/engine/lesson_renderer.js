@@ -1074,6 +1074,37 @@ export function renderLesson(lesson) {
               <div id="unlock-success" style="display: none; margin-top: 20px; padding: 15px; background: #ecfdf5; border: 2px solid #10b981; border-radius: 8px; color: #047857; font-weight: bold; text-align: center; font-size: 1.2rem;">
                 <i class="fa-solid fa-star"></i> Vocabulary Mastered!
               </div>
+    `;
+
+    if (lesson.vocab_cloze_text && typeof lesson.vocab_cloze_text === 'string') {
+      const vocabTerms = lesson.vocab.map((v) => (v.term || '').trim()).filter(Boolean);
+      const shuffledOptions = [...vocabTerms].sort(() => Math.random() - 0.5);
+
+      const clozeHtml = lesson.vocab_cloze_text.replace(/\[(.*?)\]/g, (match, term) => {
+        const cleanTerm = term.trim();
+        let options = `<option value="">-- select term --</option>`;
+        shuffledOptions.forEach((opt) => {
+          options += `<option value="${opt.replace(/"/g, '&quot;')}">${opt}</option>`;
+        });
+        return `<select class="cloze-blank-select" data-answer="${cleanTerm.replace(/"/g, '&quot;')}" style="display: inline-block; vertical-align: middle; padding: 4px 10px; margin: 2px 4px; font-family: inherit; font-size: 0.95rem; font-weight: 600; border: 2px solid #cbd5e1; border-radius: 6px; background-color: #ffffff; color: #1e293b; cursor: pointer; transition: all 0.2s; max-width: 100%;">${options}</select>`;
+      });
+
+      htmlDoNow += `
+              <div id="vocab-cloze-challenge" style="margin-top: 25px; padding-top: 20px; border-top: 1px dashed #cbd5e1;">
+                <p style="color: #475569; margin-bottom: 12px; font-size: 1.05rem;">
+                  <strong>Contextual Challenge:</strong> Complete the historical summary below by selecting the correct vocabulary term for each blank.
+                </p>
+                <div class="cloze-paragraph" style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 18px 20px; font-size: 1.05rem; line-height: 2.3; color: #1e293b;">
+                  ${clozeHtml}
+                </div>
+                <div id="cloze-success" style="display: none; margin-top: 15px; padding: 12px; background: #ecfdf5; border: 2px solid #10b981; border-radius: 8px; color: #047857; font-weight: bold; text-align: center; font-size: 1.1rem;">
+                  Cloze Challenge Mastered! All historical terms placed accurately in context.
+                </div>
+              </div>
+      `;
+    }
+
+    htmlDoNow += `
             </div>
           </details>
       `;

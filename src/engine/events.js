@@ -30,6 +30,54 @@ export function initEventDelegation() {
   };
   window.resetVocabSelection = resetVocabSelection;
 
+  // Digital Cloze Challenge Handler
+  document.body.addEventListener('change', (e) => {
+    const select = e.target.closest('.cloze-blank-select');
+    if (!select) return;
+
+    const answer = (select.dataset.answer || '').trim();
+    const value = (select.value || '').trim();
+
+    if (!value) {
+      select.style.borderColor = '#cbd5e1';
+      select.style.backgroundColor = '#ffffff';
+      select.style.color = '#1e293b';
+      return;
+    }
+
+    if (value.toLowerCase() === answer.toLowerCase()) {
+      select.style.borderColor = '#10b981';
+      select.style.backgroundColor = '#ecfdf5';
+      select.style.color = '#047857';
+      select.style.fontWeight = 'bold';
+      select.disabled = true;
+
+      const container = select.closest('#vocab-cloze-challenge');
+      if (container) {
+        const allSelects = Array.from(container.querySelectorAll('.cloze-blank-select'));
+        const allCorrect = allSelects.every(
+          (s) => s.disabled && (s.value || '').trim().toLowerCase() === (s.dataset.answer || '').trim().toLowerCase()
+        );
+        if (allCorrect) {
+          const successEl = container.querySelector('#cloze-success');
+          if (successEl) successEl.style.display = 'block';
+        }
+      }
+    } else {
+      select.style.borderColor = '#ef4444';
+      select.style.backgroundColor = '#fef2f2';
+      select.style.color = '#b91c1c';
+      setTimeout(() => {
+        if (!select.disabled) {
+          select.value = '';
+          select.style.borderColor = '#cbd5e1';
+          select.style.backgroundColor = '#ffffff';
+          select.style.color = '#1e293b';
+        }
+      }, 750);
+    }
+  });
+
   document.body.addEventListener('click', (e) => {
     // 1. Vocabulary Matching Game Handlers
     const termBtn = e.target.closest('.match-term-btn');

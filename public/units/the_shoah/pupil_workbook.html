@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Pupil Workbook - the_shoah</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
       
     @page { size: A4 portrait; margin: 15mm 15mm 25mm 15mm; }
@@ -15,6 +16,7 @@
     h3 { font-size: 13pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: auto; }
     .narrative-block { margin-bottom: 10pt; text-align: justify; orphans: 3; widows: 3; color: #334155; }
     .task-box { border-top: 2px solid #e2e8f0; padding-top: 10px; margin-top: 10px; margin-bottom: 10px; width: 100%; page-break-inside: auto !important; }
+    
     .task-lines { border-bottom: 1px solid #94a3b8; height: 16px; margin-top: 5px; }
     .task-lines-large { border-bottom: 1px solid #94a3b8; height: 7mm; margin-top: 0px; box-sizing: border-box; }
     .dirt-box { margin-top: 20px; margin-bottom: 10px; border: 2px dashed #94a3b8; border-radius: 8px; padding: 15px; background-color: #f8fafc; page-break-inside: avoid; }
@@ -37,9 +39,11 @@
     .teacher-comment { border-bottom: 1px solid #777; width: 100%; height: 20px; display: inline-block; margin-top: 5px; }
     @media print { body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; } * { box-shadow: none !important; border-radius: 0 !important; }
         img { max-width: 100% !important; object-fit: contain !important;  }
+        
         .source-container { page-break-inside: auto; }
         .narrative-block { page-break-inside: auto; }
         .task-box { page-break-inside: auto !important; }
+        
         h1, h2, h3, h4, h5, h6 { page-break-after: auto; }
         div[style*="display: block; margin-top: 15px;"] { display: block !important; }
         button[onclick*="display='none'"] { display: block; margin-top: 15px; !important; }
@@ -54,8 +58,9 @@
     <div class="cover-page" style="page-break-after: always; display: flex; flex-direction: column; justify-content: flex-start; align-items: stretch; padding: 0; height: 95vh; box-sizing: border-box; background: #fff; border: 4px solid #1e293b; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); position: relative;">
       
       
-      <div style="background-color: #1e293b; color: #ffffff; padding: 8px 20px; font-size: 11pt; letter-spacing: 2px; text-transform: uppercase; text-align: center; font-weight: bold; width: 100%; box-sizing: border-box;">
-        Meoncross School | History Department
+      <div style="background-color: #1e293b; color: #ffffff; padding: 8px 20px; font-size: 11pt; letter-spacing: 2px; text-transform: uppercase; text-align: center; font-weight: bold; width: 100%; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center;">
+        <span style="flex: 1; text-align: center;">Meoncross School | History Department</span>
+        <span style="font-size: 8.5pt; font-weight: 600; letter-spacing: 1px; opacity: 0.9; background: rgba(255,255,255,0.18); padding: 2px 8px; border-radius: 4px; white-space: nowrap;">Edition 2026.1</span>
       </div>
       
       <div style="padding: 20px 30px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: flex-start;">
@@ -81,6 +86,7 @@
       </div>
     </div>
     <div style="page-break-after: always; page-break-inside: avoid; display: flex; flex-direction: column; height: 95vh; overflow: hidden;">
+      
       <h2 style="margin: 0; color: #1e3a8a; font-size: 16pt; text-transform: uppercase; letter-spacing: 1px;">PROGRESS & ASSESSMENT TRACKER <span style="float: right; font-size: 0.8em; font-weight: normal; color: #333;">Target Grade: _________</span></h2>
       
       <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.85em; line-height: 1.2; margin-bottom: 8px;">
@@ -128,19 +134,19 @@
       </div>
     </div>
     <h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L1: Anti-Semitism: How did centuries of prejudice pave the way for Nazi ideology?</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 5px; padding-bottom: 5px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Understand the core concepts of Anti-Semitism: How did centuries of prejudice pave the way for Nazi ideology?</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div></div><div></div></div><div class="narrative-block" id="para-1"></div><div class="task-box" style="  "><h3 style="margin-top: 0; color: #0f766e;">Pair & Share Activity</h3><p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px;">Q1. Prompt: Discuss with your partner: Did centuries of European anti-Semitism make the Holocaust inevitable?</p><p style="font-size: 12pt; font-style: italic; margin-top: 0;">Think: Spend 1 minute quietly considering the question and forming your own opinion.</p><div style="margin-top: 15px; border-left: 4px solid #0f766e; padding-left: 15px;"><strong>Your Notes:</strong><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div></div><div style="page-break-inside: auto; margin-top: 30px; border-top: 2px solid #e2e8f0; padding-top: 20px;"><h2 style="margin-top: 0; color: #1e3a8a;"><i class="fa-solid fa-pen-nib"></i> Lesson Consolidation</h2><p style="font-weight: bold; margin-bottom: 15px;">Reflect on today's learning and answer your teacher's final challenge.</p><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div><div style="margin-top: 20px; page-break-inside: avoid; border: 1.5px solid #1e3a8a; border-radius: 8px; padding: 15px; background-color: #f0fdf4;">
-        <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 11pt; font-family: 'Playfair Display', serif; display: flex; align-items: center;">
-          <span style="font-size: 14pt; margin-right: 8px;">🗣️</span> Pupil Voice
-        </h4>
-        <div style="font-weight: 600; font-size: 9.5pt; margin-bottom: 12px; color: #0f172a;">
-          How did the events of today's lesson make you feel, and why?
+          <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 11pt; font-family: 'Playfair Display', serif; display: flex; align-items: center;">
+            <span style="font-size: 14pt; margin-right: 8px;">🗣️</span> Pupil Voice
+          </h4>
+          <div style="font-weight: 600; font-size: 9.5pt; margin-bottom: 12px; color: #0f172a;">
+            What was the most significant event or decision in today's lesson, and what was its major historical consequence?
+          </div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
         </div>
-        <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-        <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-        <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-      </div>
-      <div style="page-break-before: always; margin-top: 20px;">
-        <h3 style="margin-top: 0; color: #334155;">General Notes</h3>
-    <div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div>
+        <div style="page-break-before: always; margin-top: 20px;">
+          <h3 style="margin-top: 0; color: #334155;">General Notes</h3>
+      <div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div>
         <div style="margin-top: 10px;"></div>
         <div class="grading-footer">
           <div class="grading-boxes">
@@ -153,19 +159,19 @@
           <div>Teacher Comment: <span class="teacher-comment"></span></div>
         </div>
       <h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L2: 1933–1939: How were German Jews progressively stripped of citizenship and rights?</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 5px; padding-bottom: 5px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Understand the core concepts of 1933–1939: How were German Jews progressively stripped of citizenship and rights?</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div></div><div></div></div><div class="narrative-block" id="para-1"></div><div class="task-box" style="  "><h3 style="margin-top: 0; color: #0f766e;">Pair & Share Activity</h3><p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px;">Q1. Prompt: Discuss with your partner: Why did so few people protest the gradual stripping of Jewish rights between 1933 and 1939?</p><p style="font-size: 12pt; font-style: italic; margin-top: 0;">Think: Spend 1 minute quietly considering the question and forming your own opinion.</p><div style="margin-top: 15px; border-left: 4px solid #0f766e; padding-left: 15px;"><strong>Your Notes:</strong><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div></div><div style="page-break-inside: auto; margin-top: 30px; border-top: 2px solid #e2e8f0; padding-top: 20px;"><h2 style="margin-top: 0; color: #1e3a8a;"><i class="fa-solid fa-pen-nib"></i> Lesson Consolidation</h2><p style="font-weight: bold; margin-bottom: 15px;">Reflect on today's learning and answer your teacher's final challenge.</p><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div><div style="margin-top: 20px; page-break-inside: avoid; border: 1.5px solid #1e3a8a; border-radius: 8px; padding: 15px; background-color: #f0fdf4;">
-        <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 11pt; font-family: 'Playfair Display', serif; display: flex; align-items: center;">
-          <span style="font-size: 14pt; margin-right: 8px;">🗣️</span> Pupil Voice
-        </h4>
-        <div style="font-weight: 600; font-size: 9.5pt; margin-bottom: 12px; color: #0f172a;">
-          Which part of today's lesson did you find the most difficult or confusing, and what did you do to overcome it?
+          <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 11pt; font-family: 'Playfair Display', serif; display: flex; align-items: center;">
+            <span style="font-size: 14pt; margin-right: 8px;">🗣️</span> Pupil Voice
+          </h4>
+          <div style="font-weight: 600; font-size: 9.5pt; margin-bottom: 12px; color: #0f172a;">
+            What was the most important change that occurred during this period, and what remained continuous (the same)?
+          </div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
         </div>
-        <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-        <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-        <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-      </div>
-      <div style="page-break-before: always; margin-top: 20px;">
-        <h3 style="margin-top: 0; color: #334155;">General Notes</h3>
-    <div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div>
+        <div style="page-break-before: always; margin-top: 20px;">
+          <h3 style="margin-top: 0; color: #334155;">General Notes</h3>
+      <div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div>
         <div style="margin-top: 10px;"></div>
         <div class="grading-footer">
           <div class="grading-boxes">
@@ -178,19 +184,19 @@
           <div>Teacher Comment: <span class="teacher-comment"></span></div>
         </div>
       <h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L3: The Ghettos and the Einsatzgruppen: How did persecution turn into systematic mass murder?</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 5px; padding-bottom: 5px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Understand the core concepts of The Ghettos and the Einsatzgruppen: How did persecution turn into systematic mass murder?</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div></div><div></div></div><div class="narrative-block" id="para-1"></div><div class="task-box" style="  "><h3 style="margin-top: 0; color: #0f766e;">Pair & Share Activity</h3><p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px;">Q1. Prompt: Discuss with your partner: How did the invasion of the Soviet Union change the nature of the persecution?</p><p style="font-size: 12pt; font-style: italic; margin-top: 0;">Think: Spend 1 minute quietly considering the question and forming your own opinion.</p><div style="margin-top: 15px; border-left: 4px solid #0f766e; padding-left: 15px;"><strong>Your Notes:</strong><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div></div><div style="page-break-inside: auto; margin-top: 30px; border-top: 2px solid #e2e8f0; padding-top: 20px;"><h2 style="margin-top: 0; color: #1e3a8a;"><i class="fa-solid fa-pen-nib"></i> Lesson Consolidation</h2><p style="font-weight: bold; margin-bottom: 15px;">Reflect on today's learning and answer your teacher's final challenge.</p><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div><div style="margin-top: 20px; page-break-inside: avoid; border: 1.5px solid #1e3a8a; border-radius: 8px; padding: 15px; background-color: #f0fdf4;">
-        <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 11pt; font-family: 'Playfair Display', serif; display: flex; align-items: center;">
-          <span style="font-size: 14pt; margin-right: 8px;">🗣️</span> Pupil Voice
-        </h4>
-        <div style="font-weight: 600; font-size: 9.5pt; margin-bottom: 12px; color: #0f172a;">
-          If you were teaching this lesson to Year 6, what is the ONE most important thing you would make sure they remembered?
+          <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 11pt; font-family: 'Playfair Display', serif; display: flex; align-items: center;">
+            <span style="font-size: 14pt; margin-right: 8px;">🗣️</span> Pupil Voice
+          </h4>
+          <div style="font-weight: 600; font-size: 9.5pt; margin-bottom: 12px; color: #0f172a;">
+            How did the events or developments studied today affect different groups of people in contrasting ways?
+          </div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
         </div>
-        <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-        <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-        <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-      </div>
-      <div style="page-break-before: always; margin-top: 20px;">
-        <h3 style="margin-top: 0; color: #334155;">General Notes</h3>
-    <div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div>
+        <div style="page-break-before: always; margin-top: 20px;">
+          <h3 style="margin-top: 0; color: #334155;">General Notes</h3>
+      <div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div>
         <div style="margin-top: 10px;"></div>
         <div class="grading-footer">
           <div class="grading-boxes">
@@ -203,19 +209,19 @@
           <div>Teacher Comment: <span class="teacher-comment"></span></div>
         </div>
       <h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L4: The 'Final Solution': How did the death camps operate as industrialised extermination?</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 5px; padding-bottom: 5px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Understand the core concepts of The 'Final Solution': How did the death camps operate as industrialised extermination?</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div></div><div></div></div><div class="narrative-block" id="para-1"></div><div class="task-box" style="  "><h3 style="margin-top: 0; color: #0f766e;">Pair & Share Activity</h3><p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px;">Q1. Prompt: Discuss with your partner: Why did the Nazis shift from shooting to the industrialized extermination of the death camps?</p><p style="font-size: 12pt; font-style: italic; margin-top: 0;">Think: Spend 1 minute quietly considering the question and forming your own opinion.</p><div style="margin-top: 15px; border-left: 4px solid #0f766e; padding-left: 15px;"><strong>Your Notes:</strong><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div></div><div style="page-break-inside: auto; margin-top: 30px; border-top: 2px solid #e2e8f0; padding-top: 20px;"><h2 style="margin-top: 0; color: #1e3a8a;"><i class="fa-solid fa-pen-nib"></i> Lesson Consolidation</h2><p style="font-weight: bold; margin-bottom: 15px;">Reflect on today's learning and answer your teacher's final challenge.</p><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div><div style="margin-top: 20px; page-break-inside: avoid; border: 1.5px solid #1e3a8a; border-radius: 8px; padding: 15px; background-color: #f0fdf4;">
-        <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 11pt; font-family: 'Playfair Display', serif; display: flex; align-items: center;">
-          <span style="font-size: 14pt; margin-right: 8px;">🗣️</span> Pupil Voice
-        </h4>
-        <div style="font-weight: 600; font-size: 9.5pt; margin-bottom: 12px; color: #0f172a;">
-          What is one question about today's topic that we didn't answer, that you'd like to research further?
+          <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 11pt; font-family: 'Playfair Display', serif; display: flex; align-items: center;">
+            <span style="font-size: 14pt; margin-right: 8px;">🗣️</span> Pupil Voice
+          </h4>
+          <div style="font-weight: 600; font-size: 9.5pt; margin-bottom: 12px; color: #0f172a;">
+            What piece of historical evidence (e.g. government record, personal diary, photograph) would be most valuable to investigate today's enquiry, and why?
+          </div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
         </div>
-        <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-        <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-        <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-      </div>
-      <div style="page-break-before: always; margin-top: 20px;">
-        <h3 style="margin-top: 0; color: #334155;">General Notes</h3>
-    <div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div>
+        <div style="page-break-before: always; margin-top: 20px;">
+          <h3 style="margin-top: 0; color: #334155;">General Notes</h3>
+      <div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div>
         <div style="margin-top: 10px;"></div>
         <div class="grading-footer">
           <div class="grading-boxes">
@@ -228,19 +234,19 @@
           <div>Teacher Comment: <span class="teacher-comment"></span></div>
         </div>
       <h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L5: Resistance, Rescue, and Complicity: Did anyone stand up to the perpetrators?</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 5px; padding-bottom: 5px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Understand the core concepts of Resistance, Rescue, and Complicity: Did anyone stand up to the perpetrators?</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div></div><div></div></div><div class="narrative-block" id="para-1"></div><div class="task-box" style="  "><h3 style="margin-top: 0; color: #0f766e;">Pair & Share Activity</h3><p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px;">Q1. Prompt: Discuss with your partner: Why is it so important to highlight acts of resistance and rescue during the Holocaust?</p><p style="font-size: 12pt; font-style: italic; margin-top: 0;">Think: Spend 1 minute quietly considering the question and forming your own opinion.</p><div style="margin-top: 15px; border-left: 4px solid #0f766e; padding-left: 15px;"><strong>Your Notes:</strong><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div></div><div style="page-break-inside: auto; margin-top: 30px; border-top: 2px solid #e2e8f0; padding-top: 20px;"><h2 style="margin-top: 0; color: #1e3a8a;"><i class="fa-solid fa-pen-nib"></i> Lesson Consolidation</h2><p style="font-weight: bold; margin-bottom: 15px;">Reflect on today's learning and answer your teacher's final challenge.</p><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div><div style="margin-top: 20px; page-break-inside: avoid; border: 1.5px solid #1e3a8a; border-radius: 8px; padding: 15px; background-color: #f0fdf4;">
-        <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 11pt; font-family: 'Playfair Display', serif; display: flex; align-items: center;">
-          <span style="font-size: 14pt; margin-right: 8px;">🗣️</span> Pupil Voice
-        </h4>
-        <div style="font-weight: 600; font-size: 9.5pt; margin-bottom: 12px; color: #0f172a;">
-          Summarise today's lesson in exactly three words.
+          <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 11pt; font-family: 'Playfair Display', serif; display: flex; align-items: center;">
+            <span style="font-size: 14pt; margin-right: 8px;">🗣️</span> Pupil Voice
+          </h4>
+          <div style="font-weight: 600; font-size: 9.5pt; margin-bottom: 12px; color: #0f172a;">
+            Was the main outcome of today's lesson inevitable, or was there a crucial turning point where events could have taken a different path?
+          </div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
         </div>
-        <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-        <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-        <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-      </div>
-      <div style="page-break-before: always; margin-top: 20px;">
-        <h3 style="margin-top: 0; color: #334155;">General Notes</h3>
-    <div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div>
+        <div style="page-break-before: always; margin-top: 20px;">
+          <h3 style="margin-top: 0; color: #334155;">General Notes</h3>
+      <div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div>
         <div style="margin-top: 10px;"></div>
         <div class="grading-footer">
           <div class="grading-boxes">
@@ -253,19 +259,19 @@
           <div>Teacher Comment: <span class="teacher-comment"></span></div>
         </div>
       <h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L6: Liberation and Legacy: What does survivor testimony teach us about humanity and memory?</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 5px; padding-bottom: 5px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Understand the core concepts of Liberation and Legacy: What does survivor testimony teach us about humanity and memory?</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div></div><div></div></div><div class="narrative-block" id="para-1"></div><div class="task-box" style="  "><h3 style="margin-top: 0; color: #0f766e;">Pair & Share Activity</h3><p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px;">Q1. Prompt: Discuss with your partner: What is the most important lesson we can learn from survivor testimony?</p><p style="font-size: 12pt; font-style: italic; margin-top: 0;">Think: Spend 1 minute quietly considering the question and forming your own opinion.</p><div style="margin-top: 15px; border-left: 4px solid #0f766e; padding-left: 15px;"><strong>Your Notes:</strong><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div></div><div style="page-break-inside: auto; margin-top: 30px; border-top: 2px solid #e2e8f0; padding-top: 20px;"><h2 style="margin-top: 0; color: #1e3a8a;"><i class="fa-solid fa-pen-nib"></i> Lesson Consolidation</h2><p style="font-weight: bold; margin-bottom: 15px;">Reflect on today's learning and answer your teacher's final challenge.</p><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div><div style="margin-top: 20px; page-break-inside: avoid; border: 1.5px solid #1e3a8a; border-radius: 8px; padding: 15px; background-color: #f0fdf4;">
-        <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 11pt; font-family: 'Playfair Display', serif; display: flex; align-items: center;">
-          <span style="font-size: 14pt; margin-right: 8px;">🗣️</span> Pupil Voice
-        </h4>
-        <div style="font-weight: 600; font-size: 9.5pt; margin-bottom: 12px; color: #0f172a;">
-          If you could interview one historical person from today's lesson, who would it be and what would you ask them?
+          <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 11pt; font-family: 'Playfair Display', serif; display: flex; align-items: center;">
+            <span style="font-size: 14pt; margin-right: 8px;">🗣️</span> Pupil Voice
+          </h4>
+          <div style="font-weight: 600; font-size: 9.5pt; margin-bottom: 12px; color: #0f172a;">
+            How might two different historians interpret the motives or actions of the key figures or governments studied today?
+          </div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
         </div>
-        <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-        <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-        <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-      </div>
-      <div style="page-break-before: always; margin-top: 20px;">
-        <h3 style="margin-top: 0; color: #334155;">General Notes</h3>
-    <div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div>
+        <div style="page-break-before: always; margin-top: 20px;">
+          <h3 style="margin-top: 0; color: #334155;">General Notes</h3>
+      <div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div>
         <div style="margin-top: 10px;"></div>
         <div class="grading-footer">
           <div class="grading-boxes">
@@ -278,19 +284,19 @@
           <div>Teacher Comment: <span class="teacher-comment"></span></div>
         </div>
       <h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L7: Assessment: The Shoah Enquiry</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 5px; padding-bottom: 5px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Understand the core concepts of Assessment: The Shoah Enquiry</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div></div><div></div></div><div class="narrative-block" id="para-1"></div><div class="task-box" style="  "><h3 style="margin-top: 0; color: #0f766e;">Pair & Share Activity</h3><p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px;">Q1. Prompt: Discuss with your partner: Can a tragedy on the scale of the Shoah ever happen again?</p><p style="font-size: 12pt; font-style: italic; margin-top: 0;">Think: Spend 1 minute quietly considering the question and forming your own opinion.</p><div style="margin-top: 15px; border-left: 4px solid #0f766e; padding-left: 15px;"><strong>Your Notes:</strong><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div></div><div style="page-break-inside: auto; margin-top: 30px; border-top: 2px solid #e2e8f0; padding-top: 20px;"><h2 style="margin-top: 0; color: #1e3a8a;"><i class="fa-solid fa-pen-nib"></i> Lesson Consolidation</h2><p style="font-weight: bold; margin-bottom: 15px;">Reflect on today's learning and answer your teacher's final challenge.</p><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div><div style="margin-top: 20px; page-break-inside: avoid; border: 1.5px solid #1e3a8a; border-radius: 8px; padding: 15px; background-color: #f0fdf4;">
-        <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 11pt; font-family: 'Playfair Display', serif; display: flex; align-items: center;">
-          <span style="font-size: 14pt; margin-right: 8px;">🗣️</span> Pupil Voice
-        </h4>
-        <div style="font-weight: 600; font-size: 9.5pt; margin-bottom: 12px; color: #0f172a;">
-          How does what we learned today connect to anything else you've learned in history before?
+          <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 11pt; font-family: 'Playfair Display', serif; display: flex; align-items: center;">
+            <span style="font-size: 14pt; margin-right: 8px;">🗣️</span> Pupil Voice
+          </h4>
+          <div style="font-weight: 600; font-size: 9.5pt; margin-bottom: 12px; color: #0f172a;">
+            How does what we studied today connect to, build upon, or challenge an earlier period or theme in history?
+          </div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
+          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
         </div>
-        <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-        <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-        <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-      </div>
-      <div style="page-break-before: always; margin-top: 20px;">
-        <h3 style="margin-top: 0; color: #334155;">General Notes</h3>
-    <div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div>
+        <div style="page-break-before: always; margin-top: 20px;">
+          <h3 style="margin-top: 0; color: #334155;">General Notes</h3>
+      <div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div>
         <div style="margin-top: 10px;"></div>
         <div class="grading-footer">
           <div class="grading-boxes">
@@ -305,7 +311,7 @@
       <div style="page-break-before: always; padding: 18px 20px; border: 2px solid #1b365d; border-radius: 8px;">
         <div style="text-align: center; margin-bottom: 14px;">
           <h2 style="font-family: 'Playfair Display', serif; color: #1b365d; font-size: 20pt; margin: 0; border-bottom: 2px solid #facc15; display: inline-block; padding-bottom: 4px;">End of Unit Reflection & Pupil Voice</h2>
-          <p style="color: #475569; font-style: italic; margin-top: 6px; margin-bottom: 0; font-size: 10pt;">Unit: The Shoah</p>
+          <p style="color: #475569; font-style: italic; margin-top: 6px; margin-bottom: 0; font-size: 10pt;">Unit: The Shoah & World War II</p>
         </div>
 
         <p style="font-size: 10pt; margin-bottom: 14px;"><strong>Instructions:</strong> Now that you have completed your final assessment, take 10 minutes to reflect on your learning across this entire unit. Be honest—this is your chance to use your <strong>Pupil Voice</strong> to help your teacher plan future lessons.</p>
@@ -335,7 +341,7 @@
         <p style="font-size: 9pt; color: #64748b; margin-top: 0; margin-bottom: 5px;">(To be completed during live marking / feedback lessons)</p>
         <div style="border: 2px solid #fde68a; height: 120px; background: #fef3c7; border-radius: 4px;"></div>
 
-      </div><div style="text-align: center; margin-top: 50px; font-size: 8pt; color: #94a3b8;  border-top: 1px solid #e2e8f0; padding-top: 10px; font-family: sans-serif;">Generated: 2026-09-03 19:22:22 UTC | Unit: the_shoah</div><script>
+      </div><div style="text-align: center; margin-top: 50px; font-size: 8pt; color: #94a3b8;  border-top: 1px solid #e2e8f0; padding-top: 10px; font-family: sans-serif;">Generated: 2026-09-11 15:43:49 UTC | Unit: the_shoah | Edition: 2026.1</div><script>
   document.addEventListener("DOMContentLoaded", function() {
     if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
     function replaceLines(className) {
