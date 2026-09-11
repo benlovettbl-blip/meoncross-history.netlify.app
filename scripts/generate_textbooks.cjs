@@ -692,34 +692,17 @@ allDirs.forEach((unitId) => {
         let wordBox = `<div style="border: 1px solid #cbd5e1; background: #f8fafc; padding: 4px; margin-bottom: 5px; text-align: center; font-weight: bold; font-size: 9.5pt; border-radius: 4px;">${words}</div>`;
 
         if (vocabStyle === 0) {
-          // Style 0: Contextual Cloze
-          if (lesson.vocab_cloze_text) {
-            html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Complete the historical summary by placing terms from the word bank into the correct blanks:</p>`;
-            html += wordBox;
-            let cloze = lesson.vocab_cloze_text.replace(
-              /\[.*?\]/g,
-              '<span style="display:inline-block; width: 80px; border-bottom: 1px solid black;">&nbsp;</span>',
-            );
-            html += `<p style="line-height: 1.6; font-size: 9.5pt; margin: 5px 0;">${cloze}</p>`;
-          } else {
-            html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Write a short historical paragraph using at least THREE of the vocabulary words below accurately:</p>`;
-            html += wordBox;
-            for (let i = 0; i < 4; i++) {
-              html += ``;
-            }
-          }
+          // Style 0: The Odd One Out
+          html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;"><strong>The Odd One Out:</strong> Select THREE terms that share a close historical connection. Identify which ONE remaining term is the 'Odd One Out' in this lesson, and explain your historical reasoning:</p>`;
+          html += wordBox;
+          html += `<strong style="font-size: 9.5pt;">Teacher Model / Pupil Reasoning:</strong>`;
         } else if (vocabStyle === 1) {
           // Style 1: The Golden Sentence (Connect Two)
           html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;"><strong>The Golden Sentence:</strong> Choose TWO terms from the word bank. Write ONE grammatically sophisticated, historically accurate sentence connecting them using a causal conjunction (<em>because</em>, <em>although</em>, or <em>consequently</em>):</p>`;
           html += wordBox;
-          html += `<strong style="font-size: 9.5pt;">Your Sentence:</strong>`;
+          html += `<strong style="font-size: 9.5pt;">Teacher Model / Pupil Sentence:</strong>`;
         } else if (vocabStyle === 2) {
-          // Style 2: The Odd One Out
-          html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;"><strong>The Odd One Out:</strong> Select THREE terms that share a close historical connection. Identify which ONE remaining term is the 'Odd One Out' in this lesson, and explain your historical reasoning:</p>`;
-          html += wordBox;
-          html += `<strong style="font-size: 9.5pt;">Your Analysis:</strong>`;
-        } else if (vocabStyle === 3) {
-          // Style 3: Conceptual Binary Sort
+          // Style 2: Conceptual Binary Sort
           html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;"><strong>Conceptual Classification:</strong> Categorise the terms from the word bank into the two historical boxes below:</p>`;
           html += wordBox;
           html += `
@@ -732,6 +715,19 @@ allDirs.forEach((unitId) => {
               </div>
             </div>
           `;
+        } else if (vocabStyle === 3) {
+          // Style 3: Spot the Deliberate Historical Error!
+          html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;"><strong>Spot the Deliberate Error:</strong> Read the statement below. One historical fact or vocabulary concept has been deliberately falsified. Underline the error and explain the accurate historical reality below:</p>`;
+          html += wordBox;
+          if (lesson.vocab_deliberate_error) {
+            html += `<div style="border-left: 3px solid #dc2626; background: #fef2f2; padding: 4px 8px; margin: 4px 0 5px 0; font-size: 9pt; font-style: italic; color: #991b1b; border-radius: 0 4px 4px 0;">"${lesson.vocab_deliberate_error}"</div>`;
+            html += `<strong style="font-size: 9.5pt;">Teacher Model / Historical Correction:</strong>`;
+          } else {
+            let t1 = vocabTerms[0] ? vocabTerms[0].term : 'Term 1';
+            let t2 = vocabTerms[1] ? vocabTerms[1].term : 'Term 2';
+            html += `<p style="font-size: 9pt; margin: 3px 0; color: #334155;"><em>Challenge:</em> Write ONE statement containing a deliberate historical misconception using <strong>${t1}</strong> or <strong>${t2}</strong>. Identify and correct the error:</p>`;
+            html += `<strong style="font-size: 9.5pt;">Teacher Model / Historical Correction:</strong>`;
+          }
         }
         html += `</div>`;
       }

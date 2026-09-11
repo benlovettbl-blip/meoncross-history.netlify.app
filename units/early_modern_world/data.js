@@ -2231,6 +2231,8 @@ const early_modern_world = {
       ],
       vocab_cloze_text:
         'Under King James I, English Catholics faced heavy persecution and financial penalties known as [Recusancy Fines]. James firmly asserted his royal authority through the [Divine Right of Kings], which declared monarchs answerable only to God. Deep religious resentment led Robert Catesby and Catholic conspirators to mastermind the [Gunpowder Plot (1605)]. Aided by clandestine [Jesuit] priests, the plotters aimed to blow up Parliament, but their conspiracy of high [Treason] was exposed by the anonymous [Monteagle Letter].',
+      vocab_deliberate_error:
+        'In 1605, English Catholics universally praised the Divine Right of Kings because James I had abolished all Recusancy Fines, leading Jesuit priests to publicly reward Robert Catesby for his loyalty to Parliament.',
       flashcards: [
         {
           term: 'Recusancy Fines',
@@ -3483,6 +3485,8 @@ const early_modern_world = {
       ],
       vocab_cloze_text:
         'Enslaved people refused to accept dehumanization, engaging in a wide [Spectrum of Resistance]. Escaped captives formed independent mountain communities known as [Maroons] who waged guerrilla war against colonial authorities. Daily acts of quiet sabotage, slowdowns, and spiritual practices like [Obeah] represented essential forms of [Covert Resistance]. Open revolts also shook colonies, notably the 1739 [Stono Rebellion (1739)] in South Carolina, ultimately inspiring the growing British movement of [Abolitionism].',
+      vocab_deliberate_error:
+        'Historians agree that enslaved Africans rarely engaged in resistance, accepting plantation life passively until white British politicians invented Abolitionism without any Black involvement.',
       learning_objectives: {
         overarching: 'How did enslaved Africans resist the Transatlantic Slave Trade?',
         scaffolded: [

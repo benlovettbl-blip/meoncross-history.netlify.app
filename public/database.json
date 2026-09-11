@@ -17220,6 +17220,7 @@
             }
           ],
           "vocab_cloze_text": "Under King James I, English Catholics faced heavy persecution and financial penalties known as [Recusancy Fines]. James firmly asserted his royal authority through the [Divine Right of Kings], which declared monarchs answerable only to God. Deep religious resentment led Robert Catesby and Catholic conspirators to mastermind the [Gunpowder Plot (1605)]. Aided by clandestine [Jesuit] priests, the plotters aimed to blow up Parliament, but their conspiracy of high [Treason] was exposed by the anonymous [Monteagle Letter].",
+          "vocab_deliberate_error": "In 1605, English Catholics universally praised the Divine Right of Kings because James I had abolished all Recusancy Fines, leading Jesuit priests to publicly reward Robert Catesby for his loyalty to Parliament.",
           "flashcards": [
             {
               "term": "Recusancy Fines",
@@ -18353,6 +18354,7 @@
             }
           ],
           "vocab_cloze_text": "Enslaved people refused to accept dehumanization, engaging in a wide [Spectrum of Resistance]. Escaped captives formed independent mountain communities known as [Maroons] who waged guerrilla war against colonial authorities. Daily acts of quiet sabotage, slowdowns, and spiritual practices like [Obeah] represented essential forms of [Covert Resistance]. Open revolts also shook colonies, notably the 1739 [Stono Rebellion (1739)] in South Carolina, ultimately inspiring the growing British movement of [Abolitionism].",
+          "vocab_deliberate_error": "Historians agree that enslaved Africans rarely engaged in resistance, accepting plantation life passively until white British politicians invented Abolitionism without any Black involvement.",
           "learning_objectives": {
             "overarching": "How did enslaved Africans resist the Transatlantic Slave Trade?",
             "scaffolded": [
@@ -22924,6 +22926,7 @@
             }
           ],
           "vocab_cloze_text": "The Renaissance fostered the intellectual movement of [Humanism], inspiring scholars to question ancient dogma rather than blindly accepting classical texts. Flemish anatomist [Andreas Vesalius] carried out human dissections that corrected Galen's anatomical errors, publishing his revolutionary diagrams with the aid of the [Printing Press]. In 1660, the establishment of the [Royal Society] popularized the motto [Nullius in Verba], emphasizing experimental proof. Soon after, Leeuwenhoek used magnifying lenses to discover microscopic [Animalcules], opening up a previously invisible biological world.",
+          "vocab_deliberate_error": "During the Renaissance, the Royal Society adopted the motto Nullius in Verba to strictly enforce Galen's ancient medical texts, ordering Andreas Vesalius to burn all anatomical diagrams printed on the Printing Press.",
           "pair_share": {
             "prompt": "In the period c1500-c1700, was the work of individual physicians like Thomas Sydenham more important in challenging traditional medical beliefs than institutional developments like the founding of the Royal Society?",
             "think": "Jot down your choice and one piece of evidence from the sources (e.g., Sydenham's Observationes Medicae classifying diseases like scarlet fever vs. the Royal Society publishing Leeuwenhoek's discoveries in Philosophical Transactions).",
@@ -25056,6 +25059,7 @@
             }
           ],
           "vocab_cloze_text": "During the nineteenth century, British authorities gradually abandoned their traditional [Laissez-faire] attitude, culminating in the 1875 Public Health Act which made clean water and sewers [Compulsory] for local councils. In military and civilian hospitals, [Florence Nightingale] proved that clean wards and proper ventilation slashed mortality rates. Inside operating theatres, Scottish doctor [James Simpson] introduced chloroform as a reliable anaesthetic, while English surgeon [Joseph Lister] developed carbolic antiseptic techniques, paving the way for modern [Aseptic surgery].",
+          "vocab_deliberate_error": "In nineteenth-century Britain, strict Laissez-faire government policy immediately made Aseptic surgery compulsory in all workhouses, leading Joseph Lister to completely abandon carbolic acid.",
           "pair_share": {
             "prompt": "Was the introduction of anaesthetics (James Simpson's Chloroform) or antiseptics (Joseph Lister's Carbolic Acid) a more significant turning point for patients undergoing surgery in the 19th century?",
             "think": "Jot down your choice and one piece of evidence (e.g., Chloroform solved patient pain but initially led to the 'Black Period' of higher death rates, while Carbolic Acid solved postoperative infection and dropped mortality rates from 46% to 15% but relied on Pasteur's Germ Theory).",
@@ -27218,6 +27222,7 @@
             }
           ],
           "vocab_cloze_text": "In 1928, Scottish scientist [Alexander Fleming] observed that penicillium mould had contaminated a petri dish, successfully destroying surrounding bacteria. Because Fleming could not extract the pure chemical from the [Culture Medium], research stalled until Oxford scientists [Florey and Chain] successfully isolated and tested [Penicillin] on infected mice and humans. During the Second World War, American factories pioneered deep-tank fermentation for [Mass Production], saving countless wounded soldiers, though modern doctors now battle rising [Antibiotic Resistance].",
+          "vocab_deliberate_error": "In 1928, Alexander Fleming successfully achieved the global Mass Production of Penicillin on his own, proving that Florey and Chain had no role in developing antibiotics.",
           "pair_share": {
             "prompt": "Who deserves the most credit for the penicillin breakthrough: Alexander Fleming for his accidental discovery in 1928, or Howard Florey and Ernst Chain for their scientific development and therapeutic isolation of the drug in the 1940s?",
             "think": "Jot down your choice and one piece of evidence from the sources (e.g., Fleming recognizing and publishing the mould's bacteria-killing properties in 1928, or the Oxford team actually turning it into a usable drug and proving its clinical effectiveness on humans).",
@@ -29446,6 +29451,7 @@
             }
           ],
           "vocab_cloze_text": "Industrialised warfare unleashed devastating physical injuries on soldiers. Exploding artillery shells produced jagged [Shrapnel], driving dirt deep into flesh and causing virulent [Gas Gangrene] from bacteria in the manured soil. To protect troops from flying shell fragments, the army introduced the steel [Brodie Helmet] in 1915. WWI also introduced terrifying chemical warfare: the Germans first released suffocation-inducing [Chlorine Gas] in 1915, followed by the deadlier delayed-action [Phosgene Gas], and finally the horrific skin-blistering [Mustard Gas] in 1917.",
+          "vocab_deliberate_error": "On the Western Front, the introduction of the steel Brodie Helmet provided complete immunity against Chlorine Gas and prevented all cases of Gas Gangrene in manured trench soil.",
           "pair_share": {
             "prompt": "Which posed a more difficult medical challenge for the Royal Army Medical Corps (RAMC) on the Western Front: the physical injuries caused by industrial weaponry (such as shrapnel wounds and head trauma) or the environmental infections caused by the Flanders terrain (such as gas gangrene, tetanus, and trench foot)?",
             "think": "Jot down your choice and one piece of evidence from the sources, such as the introduction of the Brodie helmet reducing head wounds vs. the manured soil causing gas gangrene infections that standard antiseptics couldn't treat.",
@@ -33047,6 +33053,7 @@
             }
           ],
           "vocab_cloze_text": "Following the explosive murder of her husband [Lord Darnley] in 1567, Scottish Protestant lords forced Mary Stuart to [Abdicate] her crown in favour of her infant son. Fleeing south to seek English protection, Mary claimed royal immunity under the [Divine Right of Kings]. Because Mary was the Catholic [Heir Presumptive] to the English throne, Elizabeth placed her in custody and opened the [Conference of York]. The Scottish regents produced the disputed [Casket Letters] to implicate Mary in assassination, preventing her return to power.",
+          "vocab_deliberate_error": "At the Conference of York, Elizabeth I officially confirmed Mary, Queen of Scots as her legitimate Heir Presumptive because the Casket Letters proved Mary was innocent of murdering Lord Darnley.",
           "flashcards": [
             {
               "term": "Abdicate",
@@ -35049,7 +35056,8 @@
             "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
             "share": "Share your pair's combined conclusion with the class."
           },
-          "vocab_cloze_text": "In July 1588, Philip II's grand [Armada] entered the English Channel under the leadership of the [Duke of Medina Sidonia]. English commanders utilized their smaller, faster [Galleon] ships to harass the Spanish fleet from distance. Off Calais, the English unleashed terrifying [Fireships] at midnight, forcing Spanish captains to cut anchor cables and break formation. The following morning, the English triumphed at the [Battle of Gravelines]. Finally, a relentless storm known as the [Protestant Wind] wrecked Spanish ships on the rocky coasts of Scotland and Ireland."
+          "vocab_cloze_text": "In July 1588, Philip II's grand [Armada] entered the English Channel under the leadership of the [Duke of Medina Sidonia]. English commanders utilized their smaller, faster [Galleon] ships to harass the Spanish fleet from distance. Off Calais, the English unleashed terrifying [Fireships] at midnight, forcing Spanish captains to cut anchor cables and break formation. The following morning, the English triumphed at the [Battle of Gravelines]. Finally, a relentless storm known as the [Protestant Wind] wrecked Spanish ships on the rocky coasts of Scotland and Ireland.",
+          "vocab_deliberate_error": "In July 1588, the Duke of Medina Sidonia successfully conquered England after Spanish Galleons easily destroyed English Fireships at the Battle of Gravelines."
         },
         {
           "id": "lesson_3_1",
@@ -36432,6 +36440,7 @@
             }
           ],
           "vocab_cloze_text": "In 1584, Queen Elizabeth issued Walter Raleigh a [Royal Charter] granting him rights to colonise lands in North America. Raleigh claimed the territory, naming it [Virginia] in honour of his sovereign, and dispatched an expedition to [Roanoke] Island. The English made initial contact with the local [Algonquian] tribes, bringing back [Manteo and Wanchese] to advise court investors. However, internal discord and supply failures doomed the settlement, and when rescuers returned in 1590, they discovered the deserted ruins of the [Lost Colony].",
+          "vocab_deliberate_error": "Sir Walter Raleigh's Royal Charter established a thriving, permanent English metropolis at Roanoke that maintained uninterrupted peace with the local Algonquian tribes.",
           "narrative_blocks": [
             {
               "theme_heading": "The Significance of Walter Raleigh",
@@ -38439,6 +38448,7 @@
             "source_context": "Launched in 1906, HMS Dreadnought was so heavily armored and carried such massive guns that it instantly made every older battleship in the world obsolete. Ironically, while intended to secure British naval supremacy, it effectively reset the naval arms race to zero, allowing Germany to start building their own Dreadnoughts on an equal footing. **Hinge Question:** Why did the launch of a single ship effectively reset the global balance of naval power?"
           },
           "vocab_cloze_text": "Britain's historic [Naval Supremacy] was vital for defending its empire, which was guaranteed by the [Two-Power Standard]. However, German [Militarism] challenged this balance when Admiral von Tirpitz launched the ambitious [Tirpitz Plan] to build a high-seas fleet. The resulting [Arms Race] escalated dramatically in 1906 with the launch of HMS [Dreadnought], an all-big-gun warship that rendered all older battleships obsolete.",
+          "vocab_deliberate_error": "In 1906, Britain abandoned its Two-Power Standard and conceded Naval Supremacy to Germany because the Tirpitz Plan made the Royal Navy dismantle all HMS Dreadnought battleships.",
           "video": [
             {
               "type": "youtube",
@@ -41664,7 +41674,8 @@
               "model_answer": "The initial rush of volunteers had dried up by 1915, and due to massive casualties on the Western Front, the government had to force men to join the army (conscription) to keep the military functioning."
             }
           ],
-          "vocab_cloze_text": "The First World War became Britain's first experience of modern [Total War]. In August 1914, Parliament passed the [Defence of the Realm Act (DORA)], introducing strict [Censorship] over the press and soldiers' mail. When voluntary recruitment fell, the government enacted universal [Conscription] in 1916, imprisoning any [Conscientious Objector] who refused combat duties. To combat German U-boat blockades that threatened starvation, the Ministry of Food introduced mandatory [Rationing] for sugar, butter, and meat in 1918."
+          "vocab_cloze_text": "The First World War became Britain's first experience of modern [Total War]. In August 1914, Parliament passed the [Defence of the Realm Act (DORA)], introducing strict [Censorship] over the press and soldiers' mail. When voluntary recruitment fell, the government enacted universal [Conscription] in 1916, imprisoning any [Conscientious Objector] who refused combat duties. To combat German U-boat blockades that threatened starvation, the Ministry of Food introduced mandatory [Rationing] for sugar, butter, and meat in 1918.",
+          "vocab_deliberate_error": "Under the Defence of the Realm Act (DORA), the British government banned all Conscription and abolished wartime Rationing, allowing Conscientious Objectors to publish anti-war newspapers without any state Censorship."
         },
         {
           "id": "lesson_5",
@@ -47860,7 +47871,8 @@
             "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
             "share": "Share your pair's combined conclusion with the class."
           },
-          "vocab_cloze_text": "King John faced bankruptcy trying to defend his vast [Angevin Empire] against King Philip Augustus of France. John angered his barons by extorting excessive [Scutage] and provoked Innocent III into placing England under a devastating [Papal Interdict]. Facing open armed rebellion in 1215, John was forced to sign [Magna Carta] at Runnymede. Its most famous guarantee, [Clause 39], laid the foundation for civil liberties and the principle of [Habeas Corpus], ensuring that the king was not above the law."
+          "vocab_cloze_text": "King John faced bankruptcy trying to defend his vast [Angevin Empire] against King Philip Augustus of France. John angered his barons by extorting excessive [Scutage] and provoked Innocent III into placing England under a devastating [Papal Interdict]. Facing open armed rebellion in 1215, John was forced to sign [Magna Carta] at Runnymede. Its most famous guarantee, [Clause 39], laid the foundation for civil liberties and the principle of [Habeas Corpus], ensuring that the king was not above the law.",
+          "vocab_deliberate_error": "In 1215, King John willingly signed Magna Carta to grant universal liberty to all English peasants, abolishing Scutage and establishing modern Habeas Corpus for the Angevin Empire."
         },
         {
           "title": "Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?",
@@ -49513,7 +49525,8 @@
             "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
             "share": "Share your pair's combined conclusion with the class."
           },
-          "vocab_cloze_text": "The Wars of the Roses was a thirty-year civil conflict between two rival branches of the Plantagenet [Dynasty]. The struggle pitted the red rose of the [House of Lancaster] against the white rose of the [House of York]. Both sides repeatedly sought to [Usurp] the crown through bloody coups and assassinations. The devastating war concluded in 1485 at the [Battle of Bosworth], where the last Plantagenet king fell and Henry VII founded the enduring [Tudor] dynasty."
+          "vocab_cloze_text": "The Wars of the Roses was a thirty-year civil conflict between two rival branches of the Plantagenet [Dynasty]. The struggle pitted the red rose of the [House of Lancaster] against the white rose of the [House of York]. Both sides repeatedly sought to [Usurp] the crown through bloody coups and assassinations. The devastating war concluded in 1485 at the [Battle of Bosworth], where the last Plantagenet king fell and Henry VII founded the enduring [Tudor] dynasty.",
+          "vocab_deliberate_error": "The Wars of the Roses concluded in 1485 when the House of York decisively crushed Henry Tudor at the Battle of Bosworth, allowing Richard III to secure an enduring Yorkist Dynasty."
         },
         {
           "title": "Lesson 9: Assessment: How powerful was a medieval monarch?",
@@ -62767,6 +62780,7 @@
             }
           ],
           "vocab_cloze_text": "During the 'Golden Age', Germany's [Standard of Living] improved for many, supported by progressive welfare reforms like the [Unemployment Insurance Act (1927)]. Women were granted equal voting rights under [Article 109], paving the way for the socially liberated, independent [New Woman (Neue Frau)] who embraced modern fashion and work. Culturally, Berlin became a vibrant hub of [Avant-garde] experimentation; artists embraced the realism of [New Objectivity (Neue Sachlichkeit)], while the revolutionary [Bauhaus] movement transformed architecture and design with its sleek, functional aesthetic.",
+          "vocab_deliberate_error": "Under Article 109 of the Weimar Constitution, the German government outlawed the New Woman and banned all Bauhaus architecture to prevent improvements in the Standard of Living.",
           "utility_starters": null,
           "tasks": [
             {
@@ -64573,6 +64587,7 @@
             }
           ],
           "vocab_cloze_text": "By 1932, the ageing President [Paul von Hindenburg] was heavily influenced by a small group of advisors known as [The Camarilla]. After the fall of Brüning, the President appointed the conservative [Franz von Papen] as Chancellor, but he lacked support. Following the brief and disastrous Chancellorship of [Kurt von Schleicher], Papen engaged in [Backstairs Intrigue]—secretly plotting to make Hitler Chancellor. The elites severely underestimated Hitler; they believed that by restricting the number of Nazis in the [Cabinet], they could easily control him.",
+          "vocab_deliberate_error": "In January 1933, President Paul von Hindenburg appointed Adolf Hitler Chancellor following a nationwide democratic election victory, rejecting all Backstairs Intrigue from Franz von Papen and the Camarilla.",
           "quiz": [
             {
               "question": "Which Chancellor was forced to resign in May 1932 after angering President Hindenburg with his land reform proposals?",
@@ -66649,6 +66664,7 @@
             }
           ],
           "vocab_cloze_text": "While fear of the Gestapo ensured widespread [Conformity] across society, many citizens expressed quiet dissent through [Passive Resistance], such as telling political jokes or refusing the Nazi salute. The banned Social Democrats gathered evidence of genuine public opinion through underground [Sopade Reports]. Far fewer risked their lives in open [Active Resistance]. Among the young, rebellion was cultural: middle-class teenagers formed the jazz-loving [Swing Youth], while working-class youths joined the rebellious [Edelweiss Pirates] to beat up Hitler Youth members.",
+          "vocab_deliberate_error": "Between 1933 and 1939, youth groups like the Edelweiss Pirates and Swing Youth showed absolute Conformity to the Nazi police state by enthusiastically marching alongside the Gestapo.",
           "narrative_blocks": [
             {
               "text": "**1. The Illusion of Total Support: Why did most people conform?**\nLooking back, it is easy to ask why millions of Germans didn't rise up against Hitler. The reality is that active opposition was incredibly dangerous. Most Germans conformed for two main reasons:\n\n* **Genuine Support:** By 1939, Hitler was genuinely popular with many Germans. He had smashed the hated Treaty of Versailles, rebuilt the army, and seemingly created an 'economic miracle' by drastically reducing unemployment. Many were willing to turn a blind eye to the brutality of the police state because they felt the Nazis were restoring national pride.\n* **Fear and the Scale of Repression:** The Gestapo and the block wardens terrified people into submission. Between 1933 and 1939, approximately **1.3 million Germans** were sent to concentration camps for political offenses, and another 300,000 fled the country entirely.<br><br>> **Lived Experience: Hans Scholl (Leader of the White Rose student resistance, Munich University 1942)**<br>> \"Our present state is the dictatorship of evil. We must offer passive resistance wherever we can, before the last young German is sacrificed to the senseless bloodlust of the regime.\"",
@@ -68271,6 +68287,7 @@
             }
           ],
           "vocab_cloze_text": "The Nazi regime envisioned a racially pure [Volksgemeinschaft] (People's Community) built entirely upon the pseudo-scientific principles of [Social Darwinism] and [Eugenics]. Anyone who did not fit this ideal, including the disabled, homosexuals, and vagrants, were branded as [Asocials] and subjected to forced sterilization or imprisonment. However, the most extreme persecution was driven by virulent [Anti-Semitism], as the Nazis targeted Jews as subhuman [Untermenschen], systematically stripping their wealth and businesses through a process of forced [Aryanisation].",
+          "vocab_deliberate_error": "Nazi racial policy defined the Volksgemeinschaft as an inclusive democratic community that protected Asocials and banned all Anti-Semitism and Aryanisation.",
           "narrative_blocks": [
             {
               "text": "**1. The Foundation: Nazi Racial Ideology**\nHitler's worldview, laid out in 'Mein Kampf', was built on **Social Darwinism**. He believed history was a biological struggle between the 'Master Race' (Aryans) and 'Sub-humans' ('Untermenschen'). He argued the German bloodline had to be kept pure. This ideology created two distinct targets: those who were biologically 'inferior', and those who were socially 'useless' (Asocials).<br><br>> **Lived Experience: Ruth Klüger (Jewish schoolchild in Vienna, recalling the November Pogrom (Kristallnacht) 1938)**<br>> \"The street was littered with jagged shards of glass that crunched underfoot. The synagogue was in flames, and the fire brigade stood by, only spraying water on the neighboring German houses to protect them.\"",

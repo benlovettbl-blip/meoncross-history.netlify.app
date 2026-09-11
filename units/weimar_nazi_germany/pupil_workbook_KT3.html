@@ -1,328 +1,2603 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Pupil Workbook - weimar_nazi_germany</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <style>
-      
-    @page { size: A4 portrait; margin: 15mm 15mm 25mm 15mm; }
-    body { font-family: 'Georgia', 'Garamond', serif; font-size: 11pt; line-height: 1.4; color: #1e293b;  }
-    h1, h2, h3, h4, h5, h6, strong, .do-now-q, th { font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif; }
-    h1 { font-family: 'Playfair Display', serif; font-size: 30pt; text-align: center; margin-top: 80px; color: #0f172a; text-transform: uppercase; letter-spacing: 1px; }
-    h2 { font-size: 18pt; color: #1e3a8a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 15px; page-break-after: auto; }
-    h4 { font-size: 11pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: avoid; }
-    h3 { font-size: 13pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: auto; }
-    .narrative-block { margin-bottom: 10pt; text-align: justify; orphans: 3; widows: 3; color: #334155; }
-    .task-box { border-top: 2px solid #e2e8f0; padding-top: 10px; margin-top: 10px; margin-bottom: 10px; width: 100%; page-break-inside: auto !important; }
-    
-    .task-lines { border-bottom: 1px solid #94a3b8; height: 16px; margin-top: 5px; }
-    .task-lines-large { border-bottom: 1px solid #94a3b8; height: 7mm; margin-top: 0px; box-sizing: border-box; }
-    .dirt-box { margin-top: 20px; margin-bottom: 10px; border: 2px dashed #94a3b8; border-radius: 8px; padding: 15px; background-color: #f8fafc; page-break-inside: avoid; }
-    .do-now-box { border-top: 2px solid #e2e8f0; padding-top: 10px; margin-top: 10px; margin-bottom: 10px; width: 100%; page-break-inside: auto; }
-    .do-now-q { font-weight: 600; margin-bottom: 8px; color: #0f172a; }
-    .source-container { border-top: 2px solid #e2e8f0; padding-top: 10px; margin-top: 10px; margin-bottom: 10px; text-align: center; page-break-inside: auto; }
-    .source-container img { max-height: 250px !important; object-fit: contain !important; display: block; margin: 0 auto; }
-    .source-caption { font-size: 9.5pt; color: #64748b; font-style: italic; margin-top: 10px; text-align: center; font-family: 'Inter', sans-serif; }
-    .cover-image { width: 100%; max-width: 600px; height: auto; margin: 40px auto; display: block; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; }
-    table { page-break-inside: avoid; width: 100%; border-collapse: separate; border-spacing: 0; border-radius: 8px; overflow: hidden; border: 1px solid #cbd5e1; }
-    th {  color: white; padding-top: 12px; padding-bottom: 12px; font-weight: 600; text-align: left; border-right: 1px solid #3b82f6; }
-    td { border-bottom: 1px solid #cbd5e1; border-right: 1px solid #cbd5e1; padding-top: 5px; padding-bottom: 5px; }
-    tr:last-child td { border-bottom: none; }
-    td:last-child, th:last-child { border-right: none; }
-    tbody tr:nth-child(even) {  }
-    .grading-footer { margin-top: 30px; padding-top: 15px; font-size: 9.5pt; color: #555; display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #ccc; page-break-inside: auto; }
-    .grading-boxes { display: flex; justify-content: space-between; }
-    .grade-box { display: flex; align-items: center; gap: 5px; }
-    .grade-box input[type="checkbox"] { -webkit-appearance: none; appearance: none; width: 12px; height: 12px; border: 1px solid #777; border-radius: 2px;  }
-    .teacher-comment { border-bottom: 1px solid #777; width: 100%; height: 20px; display: inline-block; margin-top: 5px; }
-    @media print { body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; } * { box-shadow: none !important; border-radius: 0 !important; }
-        img { max-width: 100% !important; object-fit: contain !important;  }
-        
-        .source-container { page-break-inside: auto; }
-        .narrative-block { page-break-inside: auto; }
-        .task-box { page-break-inside: auto !important; }
-        
-        h1, h2, h3, h4, h5, h6 { page-break-after: auto; }
-        div[style*="display: block; margin-top: 15px;"] { display: block !important; }
-        button[onclick*="display='none'"] { display: block; margin-top: 15px; !important; }
-      }
-      img { max-width: 100% !important; object-fit: contain !important;  }
-      .source-container {  }
-    }
-</style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pupil Workbook - weimar_nazi_germany</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <style>
 
-    <div class="cover-page" style="page-break-after: always; display: flex; flex-direction: column; justify-content: flex-start; align-items: stretch; padding: 0; height: 95vh; box-sizing: border-box; background: #fff; border: 4px solid #1e293b; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); position: relative;">
-      <img src="../../images/weimar_kt3_cover.jpg" style="max-height: 40vh; max-width: 100%; object-fit: contain; margin: 0 auto; display: block;">
-      
-      <div style="background-color: #1e293b; color: #ffffff; padding: 8px 20px; font-size: 11pt; letter-spacing: 2px; text-transform: uppercase; text-align: center; font-weight: bold; width: 100%; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center;">
-        <span style="flex: 1; text-align: center;">Meoncross School | History Department</span>
-        <span style="font-size: 8.5pt; font-weight: 600; letter-spacing: 1px; opacity: 0.9; background: rgba(255,255,255,0.18); padding: 2px 8px; border-radius: 4px; white-space: nowrap;">Edition 2026.1</span>
+      @page { size: A4 portrait; margin: 15mm 15mm 25mm 15mm; }
+      body { font-family: 'Georgia', 'Garamond', serif; font-size: 11pt; line-height: 1.4; color: #1e293b;  }
+      h1, h2, h3, h4, h5, h6, strong, .do-now-q, th { font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif; }
+      h1 { font-family: 'Playfair Display', serif; font-size: 30pt; text-align: center; margin-top: 80px; color: #0f172a; text-transform: uppercase; letter-spacing: 1px; }
+      h2 { font-size: 18pt; color: #1e3a8a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 15px; page-break-after: auto; }
+      h4 { font-size: 11pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: avoid; }
+      h3 { font-size: 13pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: auto; }
+      .narrative-block { margin-bottom: 10pt; text-align: justify; orphans: 3; widows: 3; color: #334155; }
+      .task-box { border-top: 2px solid #e2e8f0; padding-top: 10px; margin-top: 10px; margin-bottom: 10px; width: 100%; page-break-inside: auto !important; }
+
+      .task-lines { border-bottom: 1px solid #94a3b8; height: 16px; margin-top: 5px; }
+      .task-lines-large { border-bottom: 1px solid #94a3b8; height: 7mm; margin-top: 0px; box-sizing: border-box; }
+      .dirt-box { margin-top: 20px; margin-bottom: 10px; border: 2px dashed #94a3b8; border-radius: 8px; padding: 15px; background-color: #f8fafc; page-break-inside: avoid; }
+      .do-now-box { border-top: 2px solid #e2e8f0; padding-top: 10px; margin-top: 10px; margin-bottom: 10px; width: 100%; page-break-inside: auto; }
+      .do-now-q { font-weight: 600; margin-bottom: 8px; color: #0f172a; }
+      .source-container { border-top: 2px solid #e2e8f0; padding-top: 10px; margin-top: 10px; margin-bottom: 10px; text-align: center; page-break-inside: auto; }
+      .source-container img { max-height: 250px !important; object-fit: contain !important; display: block; margin: 0 auto; }
+      .source-caption { font-size: 9.5pt; color: #64748b; font-style: italic; margin-top: 10px; text-align: center; font-family: 'Inter', sans-serif; }
+      .cover-image { width: 100%; max-width: 600px; height: auto; margin: 40px auto; display: block; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; }
+      table { page-break-inside: avoid; width: 100%; border-collapse: separate; border-spacing: 0; border-radius: 8px; overflow: hidden; border: 1px solid #cbd5e1; }
+      th {  color: white; padding-top: 12px; padding-bottom: 12px; font-weight: 600; text-align: left; border-right: 1px solid #3b82f6; }
+      td { border-bottom: 1px solid #cbd5e1; border-right: 1px solid #cbd5e1; padding-top: 5px; padding-bottom: 5px; }
+      tr:last-child td { border-bottom: none; }
+      td:last-child, th:last-child { border-right: none; }
+      tbody tr:nth-child(even) {  }
+      .grading-footer { margin-top: 30px; padding-top: 15px; font-size: 9.5pt; color: #555; display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #ccc; page-break-inside: auto; }
+      .grading-boxes { display: flex; justify-content: space-between; }
+      .grade-box { display: flex; align-items: center; gap: 5px; }
+      .grade-box input[type="checkbox"] { -webkit-appearance: none; appearance: none; width: 12px; height: 12px; border: 1px solid #777; border-radius: 2px;  }
+      .teacher-comment { border-bottom: 1px solid #777; width: 100%; height: 20px; display: inline-block; margin-top: 5px; }
+      @media print { body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; } * { box-shadow: none !important; border-radius: 0 !important; }
+          img { max-width: 100% !important; object-fit: contain !important;  }
+
+          .source-container { page-break-inside: auto; }
+          .narrative-block { page-break-inside: auto; }
+          .task-box { page-break-inside: auto !important; }
+
+          h1, h2, h3, h4, h5, h6 { page-break-after: auto; }
+          div[style*="display: block; margin-top: 15px;"] { display: block !important; }
+          button[onclick*="display='none'"] { display: block; margin-top: 15px; !important; }
+        }
+        img { max-width: 100% !important; object-fit: contain !important;  }
+        .source-container {  }
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="cover-page"
+      style="
+        page-break-after: always;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        padding: 0;
+        height: 95vh;
+        box-sizing: border-box;
+        background: #fff;
+        border: 4px solid #1e293b;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        position: relative;
+      "
+    >
+      <img
+        src="../../images/weimar_kt3_cover.jpg"
+        style="
+          max-height: 40vh;
+          max-width: 100%;
+          object-fit: contain;
+          margin: 0 auto;
+          display: block;
+        "
+      />
+
+      <div
+        style="
+          background-color: #1e293b;
+          color: #ffffff;
+          padding: 8px 20px;
+          font-size: 11pt;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          text-align: center;
+          font-weight: bold;
+          width: 100%;
+          box-sizing: border-box;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <span style="flex: 1; text-align: center">Meoncross School | History Department</span>
+        <span
+          style="
+            font-size: 8.5pt;
+            font-weight: 600;
+            letter-spacing: 1px;
+            opacity: 0.9;
+            background: rgba(255, 255, 255, 0.18);
+            padding: 2px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
+          "
+          >Edition 2026.1</span
+        >
       </div>
-      
-      <div style="padding: 20px 30px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: flex-start;">
-        <h1 class="unit-title" style="font-family: 'Playfair Display', 'Garamond', serif; font-size: 28pt; margin: 10px 0; color: #0f172a; font-weight: 800; line-height: 1.1;">
-            From Democracy to Dictatorship: How did Hitler destroy the Weimar Republic?
-          </h1>
-        <h2 style="font-family: 'Playfair Display', 'Garamond', serif; font-size: 20pt; margin: 0 0 15px 0; color: #475569; font-weight: 600; font-style: italic; border: none; padding-bottom: 0;">
-          Paper 3: Weimar and Nazi Germany, 1918-39  - Key Topic 3: Nazi Control and Dictatorship
+
+      <div
+        style="
+          padding: 20px 30px;
+          text-align: center;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+        "
+      >
+        <h1
+          class="unit-title"
+          style="
+            font-family: 'Playfair Display', 'Garamond', serif;
+            font-size: 28pt;
+            margin: 10px 0;
+            color: #0f172a;
+            font-weight: 800;
+            line-height: 1.1;
+          "
+        >
+          From Democracy to Dictatorship: How did Hitler destroy the Weimar Republic?
+        </h1>
+        <h2
+          style="
+            font-family: 'Playfair Display', 'Garamond', serif;
+            font-size: 20pt;
+            margin: 0 0 15px 0;
+            color: #475569;
+            font-weight: 600;
+            font-style: italic;
+            border: none;
+            padding-bottom: 0;
+          "
+        >
+          Paper 3: Weimar and Nazi Germany, 1918-39 - Key Topic 3: Nazi Control and Dictatorship
         </h2>
-        
-        
-        
-        <div class="student-details" style="background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 25px 40px 45px 40px; margin: auto auto 10px auto; width: 75%; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); text-align: center;">
-            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 20px;">
-                <span style="font-weight: 600; color: #334155; font-size: 13pt;">Scholar:</span>
-                <span style="border-bottom: 1.5px solid #94a3b8; width: 75%; display: inline-block;"></span>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: flex-end;">
-                <span style="font-weight: 600; color: #334155; font-size: 13pt;">Class:</span>
-                <span style="border-bottom: 1.5px solid #94a3b8; width: 75%; display: inline-block;"></span>
-            </div>
+
+        <div
+          class="student-details"
+          style="
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            padding: 25px 40px 45px 40px;
+            margin: auto auto 10px auto;
+            width: 75%;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+            text-align: center;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-end;
+              margin-bottom: 20px;
+            "
+          >
+            <span style="font-weight: 600; color: #334155; font-size: 13pt">Scholar:</span>
+            <span
+              style="border-bottom: 1.5px solid #94a3b8; width: 75%; display: inline-block"
+            ></span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-end">
+            <span style="font-weight: 600; color: #334155; font-size: 13pt">Class:</span>
+            <span
+              style="border-bottom: 1.5px solid #94a3b8; width: 75%; display: inline-block"
+            ></span>
+          </div>
         </div>
       </div>
     </div>
-    <div style="page-break-after: always; page-break-inside: avoid; display: flex; flex-direction: column; height: 95vh; overflow: hidden;">
-      
-      <h2 style="margin: 0; color: #1e3a8a; font-size: 16pt; text-transform: uppercase; letter-spacing: 1px;">PROGRESS & ASSESSMENT TRACKER <span style="float: right; font-size: 0.8em; font-weight: normal; color: #333;">Target Grade: _________</span></h2>
-      
-      <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.85em; line-height: 1.2; margin-bottom: 8px;">
-        <tbody>
+    <div
+      style="
+        page-break-after: always;
+        page-break-inside: avoid;
+        display: flex;
+        flex-direction: column;
+        height: 95vh;
+        overflow: hidden;
+      "
+    >
+      <h2
+        style="
+          margin: 0;
+          color: #1e3a8a;
+          font-size: 16pt;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        "
+      >
+        PROGRESS & ASSESSMENT TRACKER
+        <span style="float: right; font-size: 0.8em; font-weight: normal; color: #333"
+          >Target Grade: _________</span
+        >
+      </h2>
 
-          
+      <table
+        style="
+          width: 100%;
+          border-collapse: collapse;
+          text-align: left;
+          font-size: 0.85em;
+          line-height: 1.2;
+          margin-bottom: 8px;
+        "
+      >
+        <tbody>
           <tr>
-            <td style="border: 1px solid #333; padding: 4px 6px; font-weight: bold; background-color: #f1f5f9;">Grade</td>
-            <td style="border: 1px solid #333; padding: 4px 6px;" colspan="4">9-1 GCSE Grading Scale</td>
+            <td
+              style="
+                border: 1px solid #333;
+                padding: 4px 6px;
+                font-weight: bold;
+                background-color: #f1f5f9;
+              "
+            >
+              Grade
+            </td>
+            <td style="border: 1px solid #333; padding: 4px 6px" colspan="4">
+              9-1 GCSE Grading Scale
+            </td>
           </tr>
-          
         </tbody>
       </table>
 
-      <div style="width: 100%; display: flex; justify-content: center; flex: 1; min-height: 0; overflow: hidden;">
-        <table style="page-break-inside: avoid; width: 100%; height: 100%; border-collapse: collapse; text-align: left; font-size: 0.85em; line-height: 1.2; background-color: #ffffff; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 8px;">
+      <div
+        style="
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          flex: 1;
+          min-height: 0;
+          overflow: hidden;
+        "
+      >
+        <table
+          style="
+            page-break-inside: avoid;
+            width: 100%;
+            height: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.85em;
+            line-height: 1.2;
+            background-color: #ffffff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 8px;
+          "
+        >
           <thead>
-            <tr style="background-color: #1a237e; color: white;">
-              <th style="border: 1px solid #333; padding: 4px 6px; width: 35%;">Lesson / Assessment Title</th>
-              <th style="border: 1px solid #333; padding: 4px 6px; width: 10%; text-align: center;">Effort</th>
-              <th style="border: 1px solid #333; padding: 4px 6px; width: 10%; text-align: center;">Level</th>
-              <th style="border: 1px solid #333; padding: 4px 6px; width: 45%;">Teacher Comments</th>
+            <tr style="background-color: #1a237e; color: white">
+              <th style="border: 1px solid #333; padding: 4px 6px; width: 35%">
+                Lesson / Assessment Title
+              </th>
+              <th style="border: 1px solid #333; padding: 4px 6px; width: 10%; text-align: center">
+                Effort
+              </th>
+              <th style="border: 1px solid #333; padding: 4px 6px; width: 10%; text-align: center">
+                Level
+              </th>
+              <th style="border: 1px solid #333; padding: 4px 6px; width: 45%">Teacher Comments</th>
             </tr>
           </thead>
           <tbody>
-            <tr style="background-color: #f1f5f9;"><td style="border: 1px solid #333; padding: 4px 6px; font-weight:bold;">L1: Key Topic 3.1: The Creation of a Dictatorship, 1933–1934</td><td style="border: 1px solid #333; padding: 4px 6px;"></td><td style="border: 1px solid #333; padding: 4px 6px;"></td><td style="border: 1px solid #333; padding: 4px 6px;"></td></tr>
-<tr style="background-color: #f1f5f9;"><td style="border: 1px solid #333; padding: 4px 6px; font-weight:bold;">L2: Key Topic 3.2: The Police State and Religion, 1933–1939</td><td style="border: 1px solid #333; padding: 4px 6px;"></td><td style="border: 1px solid #333; padding: 4px 6px;"></td><td style="border: 1px solid #333; padding: 4px 6px;"></td></tr>
-<tr style="background-color: #f1f5f9;"><td style="border: 1px solid #333; padding: 4px 6px; font-weight:bold;">L3: Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939</td><td style="border: 1px solid #333; padding: 4px 6px;"></td><td style="border: 1px solid #333; padding: 4px 6px;"></td><td style="border: 1px solid #333; padding: 4px 6px;"></td></tr>
-<tr style="background-color: #f1f5f9;"><td style="border: 1px solid #333; padding: 4px 6px; font-weight:bold;">L4: Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939</td><td style="border: 1px solid #333; padding: 4px 6px;"></td><td style="border: 1px solid #333; padding: 4px 6px;"></td><td style="border: 1px solid #333; padding: 4px 6px;"></td></tr>
+            <tr style="background-color: #f1f5f9">
+              <td style="border: 1px solid #333; padding: 4px 6px; font-weight: bold">
+                L1: Key Topic 3.1: The Creation of a Dictatorship, 1933–1934
+              </td>
+              <td style="border: 1px solid #333; padding: 4px 6px"></td>
+              <td style="border: 1px solid #333; padding: 4px 6px"></td>
+              <td style="border: 1px solid #333; padding: 4px 6px"></td>
+            </tr>
+            <tr style="background-color: #f1f5f9">
+              <td style="border: 1px solid #333; padding: 4px 6px; font-weight: bold">
+                L2: Key Topic 3.2: The Police State and Religion, 1933–1939
+              </td>
+              <td style="border: 1px solid #333; padding: 4px 6px"></td>
+              <td style="border: 1px solid #333; padding: 4px 6px"></td>
+              <td style="border: 1px solid #333; padding: 4px 6px"></td>
+            </tr>
+            <tr style="background-color: #f1f5f9">
+              <td style="border: 1px solid #333; padding: 4px 6px; font-weight: bold">
+                L3: Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939
+              </td>
+              <td style="border: 1px solid #333; padding: 4px 6px"></td>
+              <td style="border: 1px solid #333; padding: 4px 6px"></td>
+              <td style="border: 1px solid #333; padding: 4px 6px"></td>
+            </tr>
+            <tr style="background-color: #f1f5f9">
+              <td style="border: 1px solid #333; padding: 4px 6px; font-weight: bold">
+                L4: Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939
+              </td>
+              <td style="border: 1px solid #333; padding: 4px 6px"></td>
+              <td style="border: 1px solid #333; padding: 4px 6px"></td>
+              <td style="border: 1px solid #333; padding: 4px 6px"></td>
+            </tr>
 
-            <tr style=" font-weight: bold;">
-              <td style="border: 1px solid #333; padding: 4px 6px; text-align: right;">Final Unit Grade:</td>
-              <td style="border: 1px solid #333; padding: 4px 6px; background:#eee;"></td>
-              <td style="border: 1px solid #333; padding: 4px 6px; background:#eee;"></td>
-              <td style="border: 1px solid #333; padding: 4px 6px;"></td>
+            <tr style="font-weight: bold">
+              <td style="border: 1px solid #333; padding: 4px 6px; text-align: right">
+                Final Unit Grade:
+              </td>
+              <td style="border: 1px solid #333; padding: 4px 6px; background: #eee"></td>
+              <td style="border: 1px solid #333; padding: 4px 6px; background: #eee"></td>
+              <td style="border: 1px solid #333; padding: 4px 6px"></td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
-    <h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L1: Key Topic 3.1: The Creation of a Dictatorship, 1933–1934</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 5px; padding-bottom: 5px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Demonstrate precise chronological knowledge of the rapid steps Hitler took to secure power between January 1933 and August 1934.</div></div><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Analyse how Hitler used the Reichstag Fire and the Enabling Act to legally destroy political opposition and civil liberties.</div></div><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Evaluate the significance of the Night of the Long Knives and the Army Oath in eliminating internal threats and securing absolute power as Führer.</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div><div class="do-now-box" style="padding: 5px; margin-bottom: 5px;">
-                   <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 5px;">
-                     <h3 style="margin: 0; font-size: 11pt;">Do Now Activity</h3>
-                     <div style=" padding: 3px 10px; font-weight: bold; font-size: 10pt; border-radius: 4px; ">Score: &nbsp;&nbsp;&nbsp;&nbsp; / 10</div>
-                   </div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">What was the original name of the Nazi Party?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">What was the 25-Point Programme (1920)?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">Who were the SA (Sturmabteilung)?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">What was the Munich Putsch (1923)?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">What was the result of the Munich Putsch for Hitler?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">What was the Kellogg-Briand Pact?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">When did Germany join the League of Nations?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">What new currency ended hyperinflation?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">What was the Dawes Plan?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">Who led the Spartacist Uprising?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div></div></div><div><div class="task-box" style="margin-bottom: 0px; padding: 5px; page-break-inside: avoid;"><div style="break-inside: avoid; page-break-inside: avoid;"><h3 style="margin-top: 0; margin-bottom: 5px; font-size: 11pt;">Vocabulary Check</h3><p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Fill in the blanks using the vocabulary words below.</p><div style="border: 1px solid #ccc; padding: 4px; margin-bottom: 5px; text-align: center; font-weight: bold; font-size: 9.5pt;">The Reichstag Fire &nbsp;|&nbsp; The Enabling Act (1933) &nbsp;|&nbsp; Gleichschaltung &nbsp;|&nbsp; Trade Unions &nbsp;|&nbsp; The Night of the Long Knives (1934) &nbsp;|&nbsp; Führer</div><p style="line-height: 1.6; font-size: 9.5pt; margin: 5px 0;">In February 1933, the Nazi consolidation of absolute power began with  [ . . . . . . . . ] , which Hitler exploited to suspend fundamental civil liberties. Soon after, Hitler bullied the Reichstag into passing  [ . . . . . . . . ] , allowing him to rule by decree without parliamentary approval. Through the process of  [ . . . . . . . . ] , all German institutions were brought under strict Nazi control. In May 1933, the Nazis abolished independent  [ . . . . . . . . ]  and banned rival political parties. To eliminate internal rivals like Ernst Röhm, Hitler staged a murderous purge during  [ . . . . . . . . ] . Following Hindenburg's death, Hitler merged the offices of Chancellor and President to declare himself supreme  [ . . . . . . . . ] .</p></div></div></div></div><div class="narrative-block" id="para-1"></div><div class="narrative-block" id="para-2"></div><div class="narrative-block" id="para-3"></div><div class="narrative-block" id="para-4"></div><div class="narrative-block" id="para-5"></div><div class="narrative-block" id="para-6"></div><div class="narrative-block" id="para-7"></div><div class="narrative-block" id="para-8"></div><div class="task-box" style="  "><h3 style="margin-top: 0; color: #0f766e;">Pair & Share Activity</h3><p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px;">Q1. Prompt: Discuss with your partner: Which event was more crucial in creating the dictatorship: the Reichstag Fire or the Enabling Act?</p><p style="font-size: 12pt; font-style: italic; margin-top: 0;">Think: Spend 1 minute quietly considering the question and forming your own opinion.</p><div style="margin-top: 15px; border-left: 4px solid #0f766e; padding-left: 15px;"><strong>Your Notes:</strong><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div></div><div class="task-box" style="page-break-inside: auto;"><h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em;">The 'But/Because/So' Strategy</h4><div style="font-weight: bold; margin-top: 0; margin-bottom: 5px;">Q2. Complete the following sentences based on the lesson narrative:<br>1. In January 1933, Hitler became Chancellor BUT...<br>2. The Enabling Act was passed in March 1933 BECAUSE...<br>3. The Night of the Long Knives occurred in June 1934 SO...</div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div><div class="task-box" style="page-break-inside: auto;"><h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em;">Vocabulary in Context</h4><div style="font-weight: bold; margin-top: 0; margin-bottom: 5px;">Q3. Use the following five keywords in a short paragraph (3-5 sentences) that accurately describes a key step in Hitler's consolidation of power, demonstrating your understanding of their meaning and historical context: *Reichstag Fire, Emergency Decree, Enabling Act, Gleichschaltung, One-party state*.</div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div><div class="task-box" style="page-break-inside: auto;"><h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em;">Causal Linkage</h4><div style="font-weight: bold; margin-top: 0; margin-bottom: 5px;">Q4. Explain the causal chain linking the growing power of the SA under Ernst Röhm, the concerns of the German Army, and the event known as the Night of the Long Knives. Your answer should clearly articulate how each factor contributed to the next.</div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div><div class="task-box" style="page-break-inside: auto;"><h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em;">Counter-Factual History</h4><div style="font-weight: bold; margin-top: 0; margin-bottom: 5px;">Q5. Imagine that President Paul von Hindenburg had lived for another five years beyond August 1934. How might this have altered the pace and nature of Hitler's consolidation of power and the establishment of a totalitarian dictatorship? Consider at least two specific ways Hindenburg's continued presence could have impacted events.</div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div><div style="page-break-before: always; margin-top: 20px;"><h2 style="margin-top: 0; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 5px;">GCSE Exam Practice</h2><div class="task-box" style="margin-bottom: 10px; page-break-inside: avoid; border-top: none; padding-top: 0; margin-top: 0;"></div><div style="page-break-before: always; page-break-inside: auto; margin-top: 20px;"><h2 style="margin-top: 15px; margin-bottom: 15px; color: #1a237e; font-size: 14pt; border-bottom: none;">Exam Sources & Interpretations</h2><div style="display: flex; gap: 15px; margin-top: 15px; margin-bottom: 15px;"><div style="flex: 1; display: flex; flex-direction: column; font-size: 0.9rem; line-height: 1.3;">
-                      <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1rem;">Source A: Extract from the 'Decree for the Protection of the People and the State' (Reichstag Fire Decree), 28 February 1933.</strong>
-                      <div style="border: 1px solid #cbd5e1; border-radius: 6px; padding-top: 5px; padding-bottom: 5px;  color: #0f172a; flex-grow: 1;">
-                        "Restrictions on personal liberty, on the right of free expression of opinion, including freedom of the press, on the right of assembly and the right of association, and violations of the privacy of postal, telegraphic, and telephonic communications... are permissible."
-                      </div>
-                    </div></div></div><div class="task-box" style="margin-bottom: 10px;   page-break-inside: auto;"><div style="margin-top: 20px; margin-bottom: 10px; padding-left: 15px; border-left: 4px solid #3b82f6;"><strong>Q6. 1. Give two things you can infer from Source A about how the Nazi government used the Reichstag Fire. <br><br>(i) What I can infer:<br>Details in the source that tell me this:<br><br>(ii) What I can infer:<br>Details in the source that tell me this:</strong></div><div style="margin-top: 5px; margin-bottom: 15px; margin-left: 15px;"><span style="display: inline-block; background-color: #f1f5f9; border: 1px solid #cbd5e1; color: #334155; font-size: 10pt; padding: 2px 8px; border-radius: 12px; font-weight: normal; vertical-align: middle;">[4 marks &bull; 5 mins]</span></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div></div><div style="margin-top: 20px; page-break-inside: avoid; border: 1.5px solid #1e3a8a; border-radius: 8px; padding: 15px; background-color: #f0fdf4;">
-          <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 11pt; font-family: 'Playfair Display', serif; display: flex; align-items: center;">
-            <span style="font-size: 14pt; margin-right: 8px;">🗣️</span> Pupil Voice
-          </h4>
-          <div style="font-weight: 600; font-size: 9.5pt; margin-bottom: 12px; color: #0f172a;">
-            What was the most significant event or decision in today's lesson, and what was its major historical consequence?
-          </div>
-          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
+    <h2
+      style="
+        margin-top: 40px;
+        border-top: 3px solid #1e3a8a;
+        padding-top: 20px;
+        margin-bottom: 5px;
+        page-break-before: always;
+        page-break-after: auto;
+      "
+    >
+      L1: Key Topic 3.1: The Creation of a Dictatorship, 1933–1934
+    </h2>
+    <div style="margin-bottom: 10px"></div>
+    <div
+      style="
+        margin-bottom: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+      "
+    >
+      <h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase">
+        Learning Objectives
+      </h4>
+      <div style="display: flex; align-items: flex-start; margin-bottom: 4px">
+        <div
+          style="
+            width: 12px;
+            height: 12px;
+            border: 1.5px solid #64748b;
+            border-radius: 2px;
+            margin-right: 8px;
+            margin-top: 2px;
+            flex-shrink: 0;
+          "
+        ></div>
+        <div style="font-size: 9.5pt; color: #334155; line-height: 1.2">
+          Demonstrate precise chronological knowledge of the rapid steps Hitler took to secure power
+          between January 1933 and August 1934.
         </div>
-        <div style="page-break-before: always; margin-top: 20px;">
-          <h3 style="margin-top: 0; color: #334155;">General Notes</h3>
-      <div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div><h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L2: Key Topic 3.2: The Police State and Religion, 1933–1939</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 5px; padding-bottom: 5px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Demonstrate precise knowledge of the different, overlapping branches of the Nazi police state, distinguishing between the roles of the SS, SD, and Gestapo.</div></div><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Analyse how the Nazis completely removed the independence of the German legal system to ensure the courts always ruled in Hitler's favour.</div></div><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Evaluate the varying successes and failures of Nazi policies towards the Catholic and Protestant churches.</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div><div class="do-now-box" style="padding: 5px; margin-bottom: 5px;">
-                   <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 5px;">
-                     <h3 style="margin: 0; font-size: 11pt;">Do Now Activity</h3>
-                     <div style=" padding: 3px 10px; font-weight: bold; font-size: 10pt; border-radius: 4px; ">Score: &nbsp;&nbsp;&nbsp;&nbsp; / 10</div>
-                   </div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">What was the Wall Street Crash (1929)?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">How did the Wall Street Crash affect Germany?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">How many Germans were unemployed by 1932?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">How did the Weimar government react to the Depression?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">Why did Nazi support surge during the Depression?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">What was the 25-Point Programme?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">Who were the SA?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">What book did Hitler write in prison?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">What was the Munich Putsch?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">Why did the 'Golden Age' end?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div></div></div><div><div class="task-box" style="margin-bottom: 0px; padding: 5px; page-break-inside: avoid;"><div style="break-inside: avoid; page-break-inside: avoid;"><h3 style="margin-top: 0; margin-bottom: 5px; font-size: 11pt;">Vocabulary Check</h3><p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Write a historically accurate sentence connecting two terms from the glossary box below.</p><div style="border: 1px solid #ccc; padding: 4px; margin-bottom: 5px; text-align: center; font-weight: bold; font-size: 9.5pt;">SS (Schutzstaffel) &nbsp;|&nbsp; SD (Sicherheitsdienst) &nbsp;|&nbsp; Gestapo &nbsp;|&nbsp; Schutzhaft (Protective Custody) &nbsp;|&nbsp; The Concordat (1933) &nbsp;|&nbsp; Reich Church &nbsp;|&nbsp; Confessional Church</div><strong style="font-size: 9.5pt;">Your Sentence:</strong><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div></div></div></div></div><div class="narrative-block" id="para-1"></div><div class="narrative-block" id="para-2"></div><div class="narrative-block" id="para-3"></div><div class="narrative-block" id="para-4"></div><div class="narrative-block" id="para-5"></div><div class="narrative-block" id="para-6"></div><div class="task-box" style="  "><h3 style="margin-top: 0; color: #0f766e;">Pair & Share Activity</h3><p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px;">Q1. Prompt: Discuss with your partner: Why was the Gestapo so terrifying despite being relatively small?</p><p style="font-size: 12pt; font-style: italic; margin-top: 0;">Think: Spend 1 minute quietly considering the question and forming your own opinion.</p><div style="margin-top: 15px; border-left: 4px solid #0f766e; padding-left: 15px;"><strong>Your Notes:</strong><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div></div><div class="task-box" style="page-break-inside: auto;"><h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em;">The 'But/Because/So' Strategy</h4><div style="font-weight: bold; margin-top: 0; margin-bottom: 5px;">Q2. Complete these sentences based on the lesson narrative: 1) Hitler signed the Concordat with the Catholic Church in 1933 BUT... 2) Hitler attempted to create a unified 'Reich Church' BECAUSE... 3) The Gestapo arrested many priests and pastors SO...</div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div><div class="task-box" style="page-break-inside: auto;"><h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em;">Vocabulary in Context</h4><div style="font-weight: bold; margin-top: 0; margin-bottom: 5px;">Q3. Write a short paragraph (5-7 sentences) explaining how the Nazi regime attempted to control and suppress religious institutions between 1933 and 1939. You must accurately use ALL of the following keywords: SS, SD, Gestapo, Schutzhaft, The Concordat (1933), Reich Church, Confessional Church.</div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div><div class="task-box" style="page-break-inside: auto;"><h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em;">Causal Linkage</h4><div style="font-weight: bold; margin-top: 0; margin-bottom: 5px;">Q4. Explain the chain of events that led to the formation of the Confessional Church and the subsequent Nazi response. Your explanation should clearly link each cause to its effect.</div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div><div class="task-box" style="page-break-inside: auto;"><h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em;">Counter-Factual History</h4><div style="font-weight: bold; margin-top: 0; margin-bottom: 5px;">Q5. Imagine the Nazi regime, from 1933, had chosen a policy of *immediate and complete suppression* of all religious institutions (Catholic and Protestant), rather than the historical path of initial conciliation (Concordat) and gradual subversion. Analyze the potential short-term and long-term consequences of this alternative policy for the Nazi regime's power, international standing, and public support within Germany, compared to the actual historical path.</div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div><div style="page-break-before: always; margin-top: 20px;"><h2 style="margin-top: 0; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 5px;">GCSE Exam Practice</h2><div class="task-box" style="margin-bottom: 10px; page-break-inside: avoid; border-top: none; padding-top: 0; margin-top: 0;"><div style="margin-top: 15px; margin-bottom: 10px; padding-left: 15px; border-left: 4px solid #3b82f6;"><strong>Q6. 2. Explain why the Nazi police state was able to maintain control in Germany between 1933 and 1939 .<br><br>You may use the following in your answer:<ul style="margin-top: 5px; margin-bottom: 10px;"><li>The Gestapo</li><li>Block Wardens</li></ul>You must also use information of your own.</strong></div><div style="margin-top: 5px; margin-bottom: 15px; margin-left: 15px;"><span style="display: inline-block; background-color: #f1f5f9; border: 1px solid #cbd5e1; color: #334155; font-size: 10pt; padding: 2px 8px; border-radius: 12px; font-weight: normal; vertical-align: middle;">[12 marks &bull; 15 mins]</span></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div></div><div style="margin-top: 20px; page-break-inside: avoid; border: 1.5px solid #1e3a8a; border-radius: 8px; padding: 15px; background-color: #f0fdf4;">
-          <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 11pt; font-family: 'Playfair Display', serif; display: flex; align-items: center;">
-            <span style="font-size: 14pt; margin-right: 8px;">🗣️</span> Pupil Voice
-          </h4>
-          <div style="font-weight: 600; font-size: 9.5pt; margin-bottom: 12px; color: #0f172a;">
-            What was the most important change that occurred during this period, and what remained continuous (the same)?
-          </div>
-          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
+      </div>
+      <div style="display: flex; align-items: flex-start; margin-bottom: 4px">
+        <div
+          style="
+            width: 12px;
+            height: 12px;
+            border: 1.5px solid #64748b;
+            border-radius: 2px;
+            margin-right: 8px;
+            margin-top: 2px;
+            flex-shrink: 0;
+          "
+        ></div>
+        <div style="font-size: 9.5pt; color: #334155; line-height: 1.2">
+          Analyse how Hitler used the Reichstag Fire and the Enabling Act to legally destroy
+          political opposition and civil liberties.
         </div>
-        <div style="page-break-before: always; margin-top: 20px;">
-          <h3 style="margin-top: 0; color: #334155;">General Notes</h3>
-      <div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div><h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L3: Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 5px; padding-bottom: 5px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Demonstrate precise knowledge of the methods Goebbels used to censor the press, literature, and radio.</div></div><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Analyse how the Nazis utilised mass rallies, the 1936 Berlin Olympics, and cheap technology (like the Volksempfänger) as tools of indoctrination.</div></div><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Evaluate the ways in which the Nazis crushed independent thought by controlling art, architecture, and music through the Reich Chamber of Culture.</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div><div class="do-now-box" style="padding: 5px; margin-bottom: 5px;">
-                   <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 5px;">
-                     <h3 style="margin: 0; font-size: 11pt;">Do Now Activity</h3>
-                     <div style=" padding: 3px 10px; font-weight: bold; font-size: 10pt; border-radius: 4px; ">Score: &nbsp;&nbsp;&nbsp;&nbsp; / 10</div>
-                   </div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">Who was Paul von Hindenburg?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">Who were the three chancellors before Hitler (1930-1932)?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">Why did Hindenburg appoint Hitler as Chancellor in January 1933?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">What percentage of the vote did the Nazis get in July 1932?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">What was the Wall Street Crash?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">How many Germans were unemployed by 1932?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">How did Brüning try to fix the Depression?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">Who was the first President of the Weimar Republic?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">What was Article 48?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">What was the Dawes Plan?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div></div></div><div><div class="task-box" style="margin-bottom: 0px; padding: 5px; page-break-inside: avoid;"><div style="break-inside: avoid; page-break-inside: avoid;"><h3 style="margin-top: 0; margin-bottom: 5px; font-size: 11pt;">Vocabulary Check</h3><p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Write a clear definition and a historically accurate sentence for the term: <strong>Censorship</strong></p>
-          <div class="task-lines" style="height: 12px; margin-top: 15px;"></div><div class="task-lines" style="height: 12px; margin-top: 15px;"></div><div class="task-lines" style="height: 12px; margin-top: 15px;"></div><div class="task-lines" style="height: 12px; margin-top: 15px;"></div>
-        </div></div></div></div><div class="narrative-block" id="para-1"></div><div class="narrative-block" id="para-2"></div><div class="narrative-block" id="para-3"></div><div class="narrative-block" id="para-4"></div><div class="narrative-block" id="para-5"></div><div class="task-box" style="  "><h3 style="margin-top: 0; color: #0f766e;">Pair & Share Activity</h3><p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px;">Q1. Prompt: Discuss with your partner: Was Goebbels' propaganda or Himmler's terror more effective in controlling Germany?</p><p style="font-size: 12pt; font-style: italic; margin-top: 0;">Think: Spend 1 minute quietly considering the question and forming your own opinion.</p><div style="margin-top: 15px; border-left: 4px solid #0f766e; padding-left: 15px;"><strong>Your Notes:</strong><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div></div><div class="task-box" style="page-break-inside: auto;"><h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em;">The 'But/Because/So' Strategy</h4><div style="font-weight: bold; margin-top: 0; margin-bottom: 5px;">Q2. Complete these sentences based on the lesson's narrative: <br>1) The Nazi regime established the Ministry of Public Enlightenment and Propaganda in March 1933, BUT...<br>2) Joseph Goebbels was appointed head of this Ministry BECAUSE...<br>3) The Nazis immediately began to control all forms of media, SO...</div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div><div class="task-box" style="page-break-inside: auto;"><h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em;">Vocabulary in Context</h4><div style="font-weight: bold; margin-top: 0; margin-bottom: 5px;">Q3. Using at least three of the keywords (Censorship, Propaganda, Ministry of Public Enlightenment and Propaganda, Volksempfänger, Reich Chamber of Culture, Entartete Kunst), write a short paragraph explaining how the Nazis controlled and influenced attitudes in Germany.</div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div><div class="task-box" style="page-break-inside: auto;"><h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em;">Causal Linkage</h4><div style="font-weight: bold; margin-top: 0; margin-bottom: 5px;">Q4. Explain how the Nazi regime's control over culture and media, through institutions like the Ministry of Public Enlightenment and Propaganda and the Reich Chamber of Culture, contributed to the consolidation of their power and the stability of the regime by 1939.</div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div><div class="task-box" style="page-break-inside: auto;"><div style="font-weight: bold; margin-top: 0; margin-bottom: 5px;">Q5. The 'What If' Challenge (Counter-Factual History): What if the Nazi regime had *failed* to establish effective control over radio and film in the early years (1933-1935)? How might this have significantly altered the trajectory of Nazi Germany's consolidation of power and public support by 1939?</div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div><div style="page-break-before: always; margin-top: 20px;"><h2 style="margin-top: 0; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 5px;">GCSE Exam Practice</h2><div class="task-box" style="margin-bottom: 10px; page-break-inside: avoid; border-top: none; padding-top: 0; margin-top: 0;"></div><div style="page-break-before: always; page-break-inside: auto; margin-top: 20px;"><h2 style="margin-top: 15px; margin-bottom: 15px; color: #1a237e; font-size: 14pt; border-bottom: none;">Exam Sources & Interpretations</h2><div style="display: flex; gap: 15px; margin-top: 15px; margin-bottom: 15px;"><div style="flex: 1; display: flex; flex-direction: column; font-size: 0.9rem; line-height: 1.3;">
-                      <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1rem;">Source B (Contemporary Written Source):</strong>
-                      <div style="border: 1px solid #cbd5e1; border-radius: 6px; padding-top: 5px; padding-bottom: 5px;  color: #0f172a; flex-grow: 1;">
-                        From Goebbels' written instructions to Nazi party speakers, July 1935.<br>"The finest kind of propaganda does not reveal itself; it works invisibly, penetrating every cell of life so that the public has no idea of its goals. For Wednesday’s broadcast of the Leader's speech, all factory owners, offices, and shops must install speakers. The entire workforce must be gathered to listen, and the press must discuss this decision as the only possible path for Germany."
-                      </div>
-                    </div><div style="flex: 1; display: flex; flex-direction: column; font-size: 0.9rem; line-height: 1.3;">
-                      <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1rem;">Source C (Contemporary Written Source):</strong>
-                      <div style="border: 1px solid #cbd5e1; border-radius: 6px; padding-top: 5px; padding-bottom: 5px;  color: #0f172a; flex-grow: 1;">
-                        From a private letter written by an ordinary citizen in Hamburg, 1937.<br>"Every evening on the radio, we are subjected to the same repetitive speeches, military marches, and achievements of the state. The newspapers contain only approved Nazi articles, and we are expected to attend massive local rallies. While everyone stands and salutes to avoid trouble, behind closed doors, my family simply turns off the wireless, tired of the endless, mind-numbing propaganda."
-                      </div>
-                    </div></div></div><div class="task-box" style="margin-bottom: 10px;   page-break-inside: auto;"><div style="margin-top: 20px; margin-bottom: 10px; padding-left: 15px; border-left: 4px solid #3b82f6;"><strong>Q6. 3a. How useful are Sources B and C for an enquiry into controlling and influencing attitudes?</strong></div><div style="margin-top: 5px; margin-bottom: 15px; margin-left: 15px;"><span style="display: inline-block; background-color: #f1f5f9; border: 1px solid #cbd5e1; color: #334155; font-size: 10pt; padding: 2px 8px; border-radius: 12px; font-weight: normal; vertical-align: middle;">[8 marks &bull; 10 mins]</span></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div></div><div style="margin-top: 20px; page-break-inside: avoid; border: 1.5px solid #1e3a8a; border-radius: 8px; padding: 15px; background-color: #f0fdf4;">
-          <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 11pt; font-family: 'Playfair Display', serif; display: flex; align-items: center;">
-            <span style="font-size: 14pt; margin-right: 8px;">🗣️</span> Pupil Voice
-          </h4>
-          <div style="font-weight: 600; font-size: 9.5pt; margin-bottom: 12px; color: #0f172a;">
-            How did the events or developments studied today affect different groups of people in contrasting ways?
-          </div>
-          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
+      </div>
+      <div style="display: flex; align-items: flex-start; margin-bottom: 4px">
+        <div
+          style="
+            width: 12px;
+            height: 12px;
+            border: 1.5px solid #64748b;
+            border-radius: 2px;
+            margin-right: 8px;
+            margin-top: 2px;
+            flex-shrink: 0;
+          "
+        ></div>
+        <div style="font-size: 9.5pt; color: #334155; line-height: 1.2">
+          Evaluate the significance of the Night of the Long Knives and the Army Oath in eliminating
+          internal threats and securing absolute power as Führer.
         </div>
-        <div style="page-break-before: always; margin-top: 20px;">
-          <h3 style="margin-top: 0; color: #334155;">General Notes</h3>
-      <div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div><h2 style="margin-top: 40px; border-top: 3px solid #1e3a8a; padding-top: 20px; margin-bottom: 5px; page-break-before: always; page-break-after: auto;">L4: Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939</h2><div style="margin-bottom: 10px;"></div><div style="margin-bottom: 15px; padding-top: 5px; padding-bottom: 5px; border: 1px solid #cbd5e1; border-radius: 8px;  "><h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase;">Learning Objectives</h4><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Demonstrate precise knowledge of the different youth opposition groups, distinguishing between the working-class Edelweiss Pirates and the middle-class Swing Youth.</div></div><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Analyse the methods used by underground political networks, industrial workers, and lone-wolf attackers to resist the Nazi state.</div></div><div style="display: flex; align-items: flex-start; margin-bottom: 4px;"><div style="width: 12px; height: 12px; border: 1.5px solid #64748b; border-radius: 2px; margin-right: 8px; margin-top: 2px; flex-shrink: 0; "></div><div style="font-size: 9.5pt; color: #334155; line-height: 1.2;">Evaluate the reasons why the vast majority of the German population conformed to Nazi rule rather than actively opposing it.</div></div></div><div style="width: 100%; margin-bottom: 10px;"><div><div class="do-now-box" style="padding: 5px; margin-bottom: 5px;">
-                   <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 5px;">
-                     <h3 style="margin: 0; font-size: 11pt;">Do Now Activity</h3>
-                     <div style=" padding: 3px 10px; font-weight: bold; font-size: 10pt; border-radius: 4px; ">Score: &nbsp;&nbsp;&nbsp;&nbsp; / 10</div>
-                   </div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">What happened to the Reichstag building in February 1933?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">What was the Decree for the Protection of the People and State?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">What was the Enabling Act (March 1933)?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">What did Hitler do to trade unions in May 1933?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">What was the Night of the Long Knives (June 1934)?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">What title did Hitler take upon Hindenburg's death in 1934?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">Who appointed Hitler as Chancellor?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">Who convinced Hindenburg to appoint Hitler?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">What was the SA?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div><div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">What was the 25-Point Programme?</div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div class="task-lines" style="height: 12px; margin-top: 3px;"></div><div style="height: 6px;"></div></div></div><div><div class="task-box" style="margin-bottom: 0px; padding: 5px; page-break-inside: avoid;"><div style="break-inside: avoid; page-break-inside: avoid;"><h3 style="margin-top: 0; margin-bottom: 5px; font-size: 11pt;">Vocabulary Check</h3><p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;">Fill in the blanks using the vocabulary words below.</p><div style="border: 1px solid #ccc; padding: 4px; margin-bottom: 5px; text-align: center; font-weight: bold; font-size: 9.5pt;">Conformity &nbsp;|&nbsp; Passive Resistance &nbsp;|&nbsp; Active Resistance &nbsp;|&nbsp; Sopade Reports &nbsp;|&nbsp; Edelweiss Pirates &nbsp;|&nbsp; Swing Youth</div><p style="line-height: 1.6; font-size: 9.5pt; margin: 5px 0;">While fear of the Gestapo ensured widespread  [ . . . . . . . . ]  across society, many citizens expressed quiet dissent through  [ . . . . . . . . ] , such as telling political jokes or refusing the Nazi salute. The banned Social Democrats gathered evidence of genuine public opinion through underground  [ . . . . . . . . ] . Far fewer risked their lives in open  [ . . . . . . . . ] . Among the young, rebellion was cultural: middle-class teenagers formed the jazz-loving  [ . . . . . . . . ] , while working-class youths joined the rebellious  [ . . . . . . . . ]  to beat up Hitler Youth members.</p></div></div></div></div><div class="narrative-block" id="para-1"></div><div class="narrative-block" id="para-2"></div><div class="narrative-block" id="para-3"></div><div class="narrative-block" id="para-4"></div><div class="narrative-block" id="para-5"></div><div class="narrative-block" id="para-6"></div><div class="task-box" style="  "><h3 style="margin-top: 0; color: #0f766e;">Pair & Share Activity</h3><p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px;">Q1. Prompt: Discuss with your partner: Why was there so little resistance to the Nazi regime?</p><p style="font-size: 12pt; font-style: italic; margin-top: 0;">Think: Spend 1 minute quietly considering the question and forming your own opinion.</p><div style="margin-top: 15px; border-left: 4px solid #0f766e; padding-left: 15px;"><strong>Your Notes:</strong><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div></div><div class="task-box" style="page-break-inside: auto;"><h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em;">The 'But/Because/So' Strategy</h4><div style="font-weight: bold; margin-top: 0; margin-bottom: 5px;">Q2. Complete the following sentences based on the lesson narrative:<br>1) Early opposition groups like the SPD and KPD were quickly suppressed BUT...<br>2) The Confessional Church and Catholic Church resisted the Nazis BECAUSE...<br>3) Most Germans conformed to Nazi rule SO...</div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div><div class="task-box" style="page-break-inside: auto;"><h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em;">Vocabulary in Context</h4><div style="font-weight: bold; margin-top: 0; margin-bottom: 5px;">Q3. Write a short paragraph (approximately 100 words) explaining the different forms of opposition to the Nazi regime between 1933-1939, using at least five of the following keywords correctly: Conformity, Passive Resistance, Active Resistance, Sopade Reports, Sabotage, Edelweiss Pirates, Swing Youth.</div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div><div class="task-box" style="page-break-inside: auto;"><h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em;">Causal Linkage</h4><div style="font-weight: bold; margin-top: 0; margin-bottom: 5px;">Q4. Explain how a combination of Nazi policies and the nature of opposition led to widespread conformity rather than successful resistance in Germany between 1933 and 1939.</div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div><div class="task-box" style="page-break-inside: auto;"><h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em;">Counter-Factual History</h4><div style="font-weight: bold; margin-top: 0; margin-bottom: 5px;">Q5. Imagine a scenario where the SPD and KPD had managed to form a unified, underground resistance movement immediately after 1933, receiving significant support from the Confessional Church and trade unions. How might this have altered the nature and effectiveness of opposition to the Nazi regime by 1939, and what challenges would such a movement still have faced?</div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div><div style="page-break-before: always; margin-top: 20px;"><h2 style="margin-top: 0; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 5px;">GCSE Exam Practice</h2><div class="task-box" style="margin-bottom: 10px; page-break-inside: avoid; border-top: none; padding-top: 0; margin-top: 0;"></div><div style="page-break-before: always; page-break-inside: auto; margin-top: 20px;"><h2 style="margin-top: 15px; margin-bottom: 15px; color: #1a237e; font-size: 14pt; border-bottom: none;">Exam Sources & Interpretations</h2><div style="display: flex; gap: 15px; margin-top: 15px; margin-bottom: 15px;"><div style="flex: 1; display: flex; flex-direction: column; font-size: 0.9rem; line-height: 1.3;">
-                      <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1rem;">Interpretation 1 (The Brave Resistance View):</strong>
-                      <div style="border: 1px solid #cbd5e1; border-radius: 6px; padding-top: 5px; padding-bottom: 5px;  color: #0f172a; flex-grow: 1;">
-                        The Christian Churches in Germany were largely successful in resisting the Nazi regime's attempts to achieve total control over religious life. Despite intense pressure, both the Catholic and Protestant Churches prevented the total Nazification of their institutions. The creation of the Confessing Church by thousands of brave pastors successfully defended theological independence, proving that religious faith remained a powerful barrier to totalitarian control.
-                      </div>
-                    </div><div style="flex: 1; display: flex; flex-direction: column; font-size: 0.9rem; line-height: 1.3;">
-                      <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1rem;">Interpretation 2 (The Limited Conformity View):</strong>
-                      <div style="border: 1px solid #cbd5e1; border-radius: 6px; padding-top: 5px; padding-bottom: 5px;  color: #0f172a; flex-grow: 1;">
-                        Christian opposition to the Nazi regime was extremely limited, narrow, and ultimately failed to challenge the wider atrocities of the state. The vast majority of church leaders conformed because they shared Hitler’s hatred of communism and feared the destruction of their institutions. When pastors spoke out, their protests were strictly limited to defending church administration; they remained entirely silent during the persecution of minorities and the destruction of democracy.
-                      </div>
-                    </div></div></div><div class="task-box" style="margin-bottom: 10px;   page-break-inside: auto;"><div style="margin-top: 20px; margin-bottom: 10px; padding-left: 15px; border-left: 4px solid #3b82f6;"><strong>Q6. 3b. Study Interpretations 1 and 2. They give different views about religious opposition to the Nazi regime. What is the main difference between these views?</strong></div><div style="margin-top: 5px; margin-bottom: 15px; margin-left: 15px;"><span style="display: inline-block; background-color: #f1f5f9; border: 1px solid #cbd5e1; color: #334155; font-size: 10pt; padding: 2px 8px; border-radius: 12px; font-weight: normal; vertical-align: middle;">[4 marks &bull; 5 mins]</span></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div style="margin-top: 20px; margin-bottom: 10px; padding-left: 15px; border-left: 4px solid #3b82f6;"><strong>Q7. 3c. Suggest one reason why Interpretations 1 and 2 give different views about religious opposition to the Nazi regime. You may use Sources B and C to help explain your answer.</strong></div><div style="margin-top: 5px; margin-bottom: 15px; margin-left: 15px;"><span style="display: inline-block; background-color: #f1f5f9; border: 1px solid #cbd5e1; color: #334155; font-size: 10pt; padding: 2px 8px; border-radius: 12px; font-weight: normal; vertical-align: middle;">[4 marks &bull; 5 mins]</span></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div style="margin-top: 20px; margin-bottom: 10px; padding-left: 15px; border-left: 4px solid #3b82f6;"><strong>Q8. 3d. How far do you agree with Interpretation 2 about religious opposition to the Nazi regime? Explain your answer, using both interpretations and your knowledge of the historical context.</strong></div><div style="margin-top: 5px; margin-bottom: 15px; margin-left: 15px;"><span style="display: inline-block; background-color: #f1f5f9; border: 1px solid #cbd5e1; color: #334155; font-size: 10pt; padding: 2px 8px; border-radius: 12px; font-weight: normal; vertical-align: middle;">[16 marks &bull; 20 mins]</span></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div>
-          <div class="dirt-box" style="margin-top: 20px; margin-bottom: 15px; border: 2px dashed #94a3b8; border-radius: 8px; padding: 12px 16px; background-color: #f8fafc; page-break-inside: avoid; break-inside: avoid;">
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #cbd5e1; padding-bottom: 6px; margin-bottom: 10px;">
-              <h4 style="margin: 0; color: #1e3a8a; text-transform: uppercase; font-size: 10pt; letter-spacing: 0.5px; font-family: 'Inter', sans-serif;">Teacher Feedback &amp; D.I.R.T.</h4>
-              <div style="font-size: 9.5pt; color: #334155;">
-                <strong>Mark:</strong> &nbsp;______ / 16 (+4 SPaG) &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <strong>Effort:</strong> &nbsp;1 &nbsp;2 &nbsp;3 &nbsp;4 &nbsp;5
+      </div>
+    </div>
+    <div style="width: 100%; margin-bottom: 10px">
+      <div>
+        <div class="do-now-box" style="padding: 5px; margin-bottom: 5px">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-end;
+              margin-bottom: 5px;
+            "
+          >
+            <h3 style="margin: 0; font-size: 11pt">Do Now Activity</h3>
+            <div style="padding: 3px 10px; font-weight: bold; font-size: 10pt; border-radius: 4px">
+              Score: &nbsp;&nbsp;&nbsp;&nbsp; / 10
+            </div>
+          </div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            What was the original name of the Nazi Party?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            What was the 25-Point Programme (1920)?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            Who were the SA (Sturmabteilung)?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            What was the Munich Putsch (1923)?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            What was the result of the Munich Putsch for Hitler?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            What was the Kellogg-Briand Pact?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            When did Germany join the League of Nations?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            What new currency ended hyperinflation?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            What was the Dawes Plan?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            Who led the Spartacist Uprising?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+        </div>
+      </div>
+      <div>
+        <div class="task-box" style="margin-bottom: 0px; padding: 5px; page-break-inside: avoid">
+          <div style="break-inside: avoid; page-break-inside: avoid">
+            <h3 style="margin-top: 0; margin-bottom: 5px; font-size: 11pt">Vocabulary Check</h3>
+            <p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0">
+              <strong>The Odd One Out:</strong> Select THREE terms that share a close historical
+              connection. Identify which ONE remaining term is the 'Odd One Out' in this lesson, and
+              explain your historical reasoning:
+            </p>
+            <div
+              style="
+                border: 1px solid #cbd5e1;
+                background: #f8fafc;
+                padding: 4px;
+                margin-bottom: 5px;
+                text-align: center;
+                font-weight: bold;
+                font-size: 9.5pt;
+                border-radius: 4px;
+              "
+            >
+              The Reichstag Fire &nbsp;|&nbsp; The Enabling Act (1933) &nbsp;|&nbsp; Gleichschaltung
+              &nbsp;|&nbsp; Trade Unions &nbsp;|&nbsp; The Night of the Long Knives (1934)
+              &nbsp;|&nbsp; Führer
+            </div>
+            <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+            <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+            <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+            <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="narrative-block" id="para-1"></div>
+    <div class="narrative-block" id="para-2"></div>
+    <div class="narrative-block" id="para-3"></div>
+    <div class="narrative-block" id="para-4"></div>
+    <div class="narrative-block" id="para-5"></div>
+    <div class="narrative-block" id="para-6"></div>
+    <div class="narrative-block" id="para-7"></div>
+    <div class="narrative-block" id="para-8"></div>
+    <div class="task-box" style="">
+      <h3 style="margin-top: 0; color: #0f766e">Pair & Share Activity</h3>
+      <p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px">
+        Q1. Prompt: Discuss with your partner: Which event was more crucial in creating the
+        dictatorship: the Reichstag Fire or the Enabling Act?
+      </p>
+      <p style="font-size: 12pt; font-style: italic; margin-top: 0">
+        Think: Spend 1 minute quietly considering the question and forming your own opinion.
+      </p>
+      <div style="margin-top: 15px; border-left: 4px solid #0f766e; padding-left: 15px">
+        <strong>Your Notes:</strong>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+      </div>
+    </div>
+    <div class="task-box" style="page-break-inside: auto">
+      <h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em">
+        The 'But/Because/So' Strategy
+      </h4>
+      <div style="font-weight: bold; margin-top: 0; margin-bottom: 5px">
+        Q2. Complete the following sentences based on the lesson narrative:<br />1. In January 1933,
+        Hitler became Chancellor BUT...<br />2. The Enabling Act was passed in March 1933
+        BECAUSE...<br />3. The Night of the Long Knives occurred in June 1934 SO...
+      </div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+    </div>
+    <div class="task-box" style="page-break-inside: auto">
+      <h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em">
+        Vocabulary in Context
+      </h4>
+      <div style="font-weight: bold; margin-top: 0; margin-bottom: 5px">
+        Q3. Use the following five keywords in a short paragraph (3-5 sentences) that accurately
+        describes a key step in Hitler's consolidation of power, demonstrating your understanding of
+        their meaning and historical context: *Reichstag Fire, Emergency Decree, Enabling Act,
+        Gleichschaltung, One-party state*.
+      </div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+    </div>
+    <div class="task-box" style="page-break-inside: auto">
+      <h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em">
+        Causal Linkage
+      </h4>
+      <div style="font-weight: bold; margin-top: 0; margin-bottom: 5px">
+        Q4. Explain the causal chain linking the growing power of the SA under Ernst Röhm, the
+        concerns of the German Army, and the event known as the Night of the Long Knives. Your
+        answer should clearly articulate how each factor contributed to the next.
+      </div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+    </div>
+    <div class="task-box" style="page-break-inside: auto">
+      <h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em">
+        Counter-Factual History
+      </h4>
+      <div style="font-weight: bold; margin-top: 0; margin-bottom: 5px">
+        Q5. Imagine that President Paul von Hindenburg had lived for another five years beyond
+        August 1934. How might this have altered the pace and nature of Hitler's consolidation of
+        power and the establishment of a totalitarian dictatorship? Consider at least two specific
+        ways Hindenburg's continued presence could have impacted events.
+      </div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+    </div>
+    <div style="page-break-before: always; margin-top: 20px">
+      <h2
+        style="margin-top: 0; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 5px"
+      >
+        GCSE Exam Practice
+      </h2>
+      <div
+        class="task-box"
+        style="
+          margin-bottom: 10px;
+          page-break-inside: avoid;
+          border-top: none;
+          padding-top: 0;
+          margin-top: 0;
+        "
+      ></div>
+      <div style="page-break-before: always; page-break-inside: auto; margin-top: 20px">
+        <h2
+          style="
+            margin-top: 15px;
+            margin-bottom: 15px;
+            color: #1a237e;
+            font-size: 14pt;
+            border-bottom: none;
+          "
+        >
+          Exam Sources & Interpretations
+        </h2>
+        <div style="display: flex; gap: 15px; margin-top: 15px; margin-bottom: 15px">
+          <div
+            style="
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              font-size: 0.9rem;
+              line-height: 1.3;
+            "
+          >
+            <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1rem"
+              >Source A: Extract from the 'Decree for the Protection of the People and the State'
+              (Reichstag Fire Decree), 28 February 1933.</strong
+            >
+            <div
+              style="
+                border: 1px solid #cbd5e1;
+                border-radius: 6px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                color: #0f172a;
+                flex-grow: 1;
+              "
+            >
+              "Restrictions on personal liberty, on the right of free expression of opinion,
+              including freedom of the press, on the right of assembly and the right of association,
+              and violations of the privacy of postal, telegraphic, and telephonic communications...
+              are permissible."
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="task-box" style="margin-bottom: 10px; page-break-inside: auto">
+        <div
+          style="
+            margin-top: 20px;
+            margin-bottom: 10px;
+            padding-left: 15px;
+            border-left: 4px solid #3b82f6;
+          "
+        >
+          <strong
+            >Q6. 1. Give two things you can infer from Source A about how the Nazi government used
+            the Reichstag Fire. <br /><br />(i) What I can infer:<br />Details in the source that
+            tell me this:<br /><br />(ii) What I can infer:<br />Details in the source that tell me
+            this:</strong
+          >
+        </div>
+        <div style="margin-top: 5px; margin-bottom: 15px; margin-left: 15px">
+          <span
+            style="
+              display: inline-block;
+              background-color: #f1f5f9;
+              border: 1px solid #cbd5e1;
+              color: #334155;
+              font-size: 10pt;
+              padding: 2px 8px;
+              border-radius: 12px;
+              font-weight: normal;
+              vertical-align: middle;
+            "
+            >[4 marks &bull; 5 mins]</span
+          >
+        </div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+      </div>
+    </div>
+    <div
+      style="
+        margin-top: 20px;
+        page-break-inside: avoid;
+        border: 1.5px solid #1e3a8a;
+        border-radius: 8px;
+        padding: 15px;
+        background-color: #f0fdf4;
+      "
+    >
+      <h4
+        style="
+          margin: 0 0 10px 0;
+          color: #1e3a8a;
+          font-size: 11pt;
+          font-family: 'Playfair Display', serif;
+          display: flex;
+          align-items: center;
+        "
+      >
+        <span style="font-size: 14pt; margin-right: 8px">🗣️</span> Pupil Voice
+      </h4>
+      <div style="font-weight: 600; font-size: 9.5pt; margin-bottom: 12px; color: #0f172a">
+        What was the most significant event or decision in today's lesson, and what was its major
+        historical consequence?
+      </div>
+      <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px"></div>
+      <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px"></div>
+      <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px"></div>
+    </div>
+    <div style="page-break-before: always; margin-top: 20px">
+      <h3 style="margin-top: 0; color: #334155">General Notes</h3>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+    </div>
+    <h2
+      style="
+        margin-top: 40px;
+        border-top: 3px solid #1e3a8a;
+        padding-top: 20px;
+        margin-bottom: 5px;
+        page-break-before: always;
+        page-break-after: auto;
+      "
+    >
+      L2: Key Topic 3.2: The Police State and Religion, 1933–1939
+    </h2>
+    <div style="margin-bottom: 10px"></div>
+    <div
+      style="
+        margin-bottom: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+      "
+    >
+      <h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase">
+        Learning Objectives
+      </h4>
+      <div style="display: flex; align-items: flex-start; margin-bottom: 4px">
+        <div
+          style="
+            width: 12px;
+            height: 12px;
+            border: 1.5px solid #64748b;
+            border-radius: 2px;
+            margin-right: 8px;
+            margin-top: 2px;
+            flex-shrink: 0;
+          "
+        ></div>
+        <div style="font-size: 9.5pt; color: #334155; line-height: 1.2">
+          Demonstrate precise knowledge of the different, overlapping branches of the Nazi police
+          state, distinguishing between the roles of the SS, SD, and Gestapo.
+        </div>
+      </div>
+      <div style="display: flex; align-items: flex-start; margin-bottom: 4px">
+        <div
+          style="
+            width: 12px;
+            height: 12px;
+            border: 1.5px solid #64748b;
+            border-radius: 2px;
+            margin-right: 8px;
+            margin-top: 2px;
+            flex-shrink: 0;
+          "
+        ></div>
+        <div style="font-size: 9.5pt; color: #334155; line-height: 1.2">
+          Analyse how the Nazis completely removed the independence of the German legal system to
+          ensure the courts always ruled in Hitler's favour.
+        </div>
+      </div>
+      <div style="display: flex; align-items: flex-start; margin-bottom: 4px">
+        <div
+          style="
+            width: 12px;
+            height: 12px;
+            border: 1.5px solid #64748b;
+            border-radius: 2px;
+            margin-right: 8px;
+            margin-top: 2px;
+            flex-shrink: 0;
+          "
+        ></div>
+        <div style="font-size: 9.5pt; color: #334155; line-height: 1.2">
+          Evaluate the varying successes and failures of Nazi policies towards the Catholic and
+          Protestant churches.
+        </div>
+      </div>
+    </div>
+    <div style="width: 100%; margin-bottom: 10px">
+      <div>
+        <div class="do-now-box" style="padding: 5px; margin-bottom: 5px">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-end;
+              margin-bottom: 5px;
+            "
+          >
+            <h3 style="margin: 0; font-size: 11pt">Do Now Activity</h3>
+            <div style="padding: 3px 10px; font-weight: bold; font-size: 10pt; border-radius: 4px">
+              Score: &nbsp;&nbsp;&nbsp;&nbsp; / 10
+            </div>
+          </div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            What was the Wall Street Crash (1929)?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            How did the Wall Street Crash affect Germany?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            How many Germans were unemployed by 1932?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            How did the Weimar government react to the Depression?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            Why did Nazi support surge during the Depression?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            What was the 25-Point Programme?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">Who were the SA?</div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            What book did Hitler write in prison?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            What was the Munich Putsch?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            Why did the 'Golden Age' end?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+        </div>
+      </div>
+      <div>
+        <div class="task-box" style="margin-bottom: 0px; padding: 5px; page-break-inside: avoid">
+          <div style="break-inside: avoid; page-break-inside: avoid">
+            <h3 style="margin-top: 0; margin-bottom: 5px; font-size: 11pt">Vocabulary Check</h3>
+            <p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0">
+              <strong>The Golden Sentence:</strong> Choose TWO terms from the word bank. Write ONE
+              grammatically sophisticated, historically accurate sentence connecting them using a
+              causal conjunction (<em>because</em>, <em>although</em>, or <em>consequently</em>):
+            </p>
+            <div
+              style="
+                border: 1px solid #cbd5e1;
+                background: #f8fafc;
+                padding: 4px;
+                margin-bottom: 5px;
+                text-align: center;
+                font-weight: bold;
+                font-size: 9.5pt;
+                border-radius: 4px;
+              "
+            >
+              SS (Schutzstaffel) &nbsp;|&nbsp; SD (Sicherheitsdienst) &nbsp;|&nbsp; Gestapo
+              &nbsp;|&nbsp; Schutzhaft (Protective Custody) &nbsp;|&nbsp; The Concordat (1933)
+              &nbsp;|&nbsp; Reich Church &nbsp;|&nbsp; Confessional Church
+            </div>
+            <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+            <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+            <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+            <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="narrative-block" id="para-1"></div>
+    <div class="narrative-block" id="para-2"></div>
+    <div class="narrative-block" id="para-3"></div>
+    <div class="narrative-block" id="para-4"></div>
+    <div class="narrative-block" id="para-5"></div>
+    <div class="narrative-block" id="para-6"></div>
+    <div class="task-box" style="">
+      <h3 style="margin-top: 0; color: #0f766e">Pair & Share Activity</h3>
+      <p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px">
+        Q1. Prompt: Discuss with your partner: Why was the Gestapo so terrifying despite being
+        relatively small?
+      </p>
+      <p style="font-size: 12pt; font-style: italic; margin-top: 0">
+        Think: Spend 1 minute quietly considering the question and forming your own opinion.
+      </p>
+      <div style="margin-top: 15px; border-left: 4px solid #0f766e; padding-left: 15px">
+        <strong>Your Notes:</strong>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+      </div>
+    </div>
+    <div class="task-box" style="page-break-inside: auto">
+      <h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em">
+        The 'But/Because/So' Strategy
+      </h4>
+      <div style="font-weight: bold; margin-top: 0; margin-bottom: 5px">
+        Q2. Complete these sentences based on the lesson narrative: 1) Hitler signed the Concordat
+        with the Catholic Church in 1933 BUT... 2) Hitler attempted to create a unified 'Reich
+        Church' BECAUSE... 3) The Gestapo arrested many priests and pastors SO...
+      </div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+    </div>
+    <div class="task-box" style="page-break-inside: auto">
+      <h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em">
+        Vocabulary in Context
+      </h4>
+      <div style="font-weight: bold; margin-top: 0; margin-bottom: 5px">
+        Q3. Write a short paragraph (5-7 sentences) explaining how the Nazi regime attempted to
+        control and suppress religious institutions between 1933 and 1939. You must accurately use
+        ALL of the following keywords: SS, SD, Gestapo, Schutzhaft, The Concordat (1933), Reich
+        Church, Confessional Church.
+      </div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+    </div>
+    <div class="task-box" style="page-break-inside: auto">
+      <h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em">
+        Causal Linkage
+      </h4>
+      <div style="font-weight: bold; margin-top: 0; margin-bottom: 5px">
+        Q4. Explain the chain of events that led to the formation of the Confessional Church and the
+        subsequent Nazi response. Your explanation should clearly link each cause to its effect.
+      </div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+    </div>
+    <div class="task-box" style="page-break-inside: auto">
+      <h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em">
+        Counter-Factual History
+      </h4>
+      <div style="font-weight: bold; margin-top: 0; margin-bottom: 5px">
+        Q5. Imagine the Nazi regime, from 1933, had chosen a policy of *immediate and complete
+        suppression* of all religious institutions (Catholic and Protestant), rather than the
+        historical path of initial conciliation (Concordat) and gradual subversion. Analyze the
+        potential short-term and long-term consequences of this alternative policy for the Nazi
+        regime's power, international standing, and public support within Germany, compared to the
+        actual historical path.
+      </div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+    </div>
+    <div style="page-break-before: always; margin-top: 20px">
+      <h2
+        style="margin-top: 0; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 5px"
+      >
+        GCSE Exam Practice
+      </h2>
+      <div
+        class="task-box"
+        style="
+          margin-bottom: 10px;
+          page-break-inside: avoid;
+          border-top: none;
+          padding-top: 0;
+          margin-top: 0;
+        "
+      >
+        <div
+          style="
+            margin-top: 15px;
+            margin-bottom: 10px;
+            padding-left: 15px;
+            border-left: 4px solid #3b82f6;
+          "
+        >
+          <strong
+            >Q6. 2. Explain why the Nazi police state was able to maintain control in Germany
+            between 1933 and 1939 .<br /><br />You may use the following in your answer:
+            <ul style="margin-top: 5px; margin-bottom: 10px">
+              <li>The Gestapo</li>
+              <li>Block Wardens</li>
+            </ul>
+            You must also use information of your own.</strong
+          >
+        </div>
+        <div style="margin-top: 5px; margin-bottom: 15px; margin-left: 15px">
+          <span
+            style="
+              display: inline-block;
+              background-color: #f1f5f9;
+              border: 1px solid #cbd5e1;
+              color: #334155;
+              font-size: 10pt;
+              padding: 2px 8px;
+              border-radius: 12px;
+              font-weight: normal;
+              vertical-align: middle;
+            "
+            >[12 marks &bull; 15 mins]</span
+          >
+        </div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+      </div>
+    </div>
+    <div
+      style="
+        margin-top: 20px;
+        page-break-inside: avoid;
+        border: 1.5px solid #1e3a8a;
+        border-radius: 8px;
+        padding: 15px;
+        background-color: #f0fdf4;
+      "
+    >
+      <h4
+        style="
+          margin: 0 0 10px 0;
+          color: #1e3a8a;
+          font-size: 11pt;
+          font-family: 'Playfair Display', serif;
+          display: flex;
+          align-items: center;
+        "
+      >
+        <span style="font-size: 14pt; margin-right: 8px">🗣️</span> Pupil Voice
+      </h4>
+      <div style="font-weight: 600; font-size: 9.5pt; margin-bottom: 12px; color: #0f172a">
+        What was the most important change that occurred during this period, and what remained
+        continuous (the same)?
+      </div>
+      <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px"></div>
+      <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px"></div>
+      <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px"></div>
+    </div>
+    <div style="page-break-before: always; margin-top: 20px">
+      <h3 style="margin-top: 0; color: #334155">General Notes</h3>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+    </div>
+    <h2
+      style="
+        margin-top: 40px;
+        border-top: 3px solid #1e3a8a;
+        padding-top: 20px;
+        margin-bottom: 5px;
+        page-break-before: always;
+        page-break-after: auto;
+      "
+    >
+      L3: Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939
+    </h2>
+    <div style="margin-bottom: 10px"></div>
+    <div
+      style="
+        margin-bottom: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+      "
+    >
+      <h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase">
+        Learning Objectives
+      </h4>
+      <div style="display: flex; align-items: flex-start; margin-bottom: 4px">
+        <div
+          style="
+            width: 12px;
+            height: 12px;
+            border: 1.5px solid #64748b;
+            border-radius: 2px;
+            margin-right: 8px;
+            margin-top: 2px;
+            flex-shrink: 0;
+          "
+        ></div>
+        <div style="font-size: 9.5pt; color: #334155; line-height: 1.2">
+          Demonstrate precise knowledge of the methods Goebbels used to censor the press,
+          literature, and radio.
+        </div>
+      </div>
+      <div style="display: flex; align-items: flex-start; margin-bottom: 4px">
+        <div
+          style="
+            width: 12px;
+            height: 12px;
+            border: 1.5px solid #64748b;
+            border-radius: 2px;
+            margin-right: 8px;
+            margin-top: 2px;
+            flex-shrink: 0;
+          "
+        ></div>
+        <div style="font-size: 9.5pt; color: #334155; line-height: 1.2">
+          Analyse how the Nazis utilised mass rallies, the 1936 Berlin Olympics, and cheap
+          technology (like the Volksempfänger) as tools of indoctrination.
+        </div>
+      </div>
+      <div style="display: flex; align-items: flex-start; margin-bottom: 4px">
+        <div
+          style="
+            width: 12px;
+            height: 12px;
+            border: 1.5px solid #64748b;
+            border-radius: 2px;
+            margin-right: 8px;
+            margin-top: 2px;
+            flex-shrink: 0;
+          "
+        ></div>
+        <div style="font-size: 9.5pt; color: #334155; line-height: 1.2">
+          Evaluate the ways in which the Nazis crushed independent thought by controlling art,
+          architecture, and music through the Reich Chamber of Culture.
+        </div>
+      </div>
+    </div>
+    <div style="width: 100%; margin-bottom: 10px">
+      <div>
+        <div class="do-now-box" style="padding: 5px; margin-bottom: 5px">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-end;
+              margin-bottom: 5px;
+            "
+          >
+            <h3 style="margin: 0; font-size: 11pt">Do Now Activity</h3>
+            <div style="padding: 3px 10px; font-weight: bold; font-size: 10pt; border-radius: 4px">
+              Score: &nbsp;&nbsp;&nbsp;&nbsp; / 10
+            </div>
+          </div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            Who was Paul von Hindenburg?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            Who were the three chancellors before Hitler (1930-1932)?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            Why did Hindenburg appoint Hitler as Chancellor in January 1933?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            What percentage of the vote did the Nazis get in July 1932?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            What was the Wall Street Crash?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            How many Germans were unemployed by 1932?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            How did Brüning try to fix the Depression?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            Who was the first President of the Weimar Republic?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            What was Article 48?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            What was the Dawes Plan?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+        </div>
+      </div>
+      <div>
+        <div class="task-box" style="margin-bottom: 0px; padding: 5px; page-break-inside: avoid">
+          <div style="break-inside: avoid; page-break-inside: avoid">
+            <h3 style="margin-top: 0; margin-bottom: 5px; font-size: 11pt">Vocabulary Check</h3>
+            <p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0">
+              <strong>Conceptual Classification:</strong> Categorise the terms from the word bank
+              into the two historical boxes below:
+            </p>
+            <div
+              style="
+                border: 1px solid #cbd5e1;
+                background: #f8fafc;
+                padding: 4px;
+                margin-bottom: 5px;
+                text-align: center;
+                font-weight: bold;
+                font-size: 9.5pt;
+                border-radius: 4px;
+              "
+            >
+              Censorship &nbsp;|&nbsp; Propaganda &nbsp;|&nbsp; Ministry of Public Enlightenment and
+              Propaganda &nbsp;|&nbsp; Volksempfänger (People’s Receiver) &nbsp;|&nbsp; Reich
+              Chamber of Culture &nbsp;|&nbsp; Entartete Kunst (Degenerate Art)
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 5px">
+              <div style="border: 1px solid #94a3b8; border-radius: 4px; padding: 4px">
+                <strong
+                  style="
+                    font-size: 9pt;
+                    display: block;
+                    text-align: center;
+                    border-bottom: 1px solid #cbd5e1;
+                    padding-bottom: 2px;
+                    margin-bottom: 3px;
+                    color: #1e3a8a;
+                  "
+                  >Power, Governance & Warfare</strong
+                >
+                <div class="task-lines" style="height: 10px; margin-top: 2px"></div>
+                <div class="task-lines" style="height: 10px; margin-top: 2px"></div>
+                <div class="task-lines" style="height: 10px; margin-top: 2px"></div>
+              </div>
+              <div style="border: 1px solid #94a3b8; border-radius: 4px; padding: 4px">
+                <strong
+                  style="
+                    font-size: 9pt;
+                    display: block;
+                    text-align: center;
+                    border-bottom: 1px solid #cbd5e1;
+                    padding-bottom: 2px;
+                    margin-bottom: 3px;
+                    color: #047857;
+                  "
+                  >Economy, Trade & Society</strong
+                >
+                <div class="task-lines" style="height: 10px; margin-top: 2px"></div>
+                <div class="task-lines" style="height: 10px; margin-top: 2px"></div>
+                <div class="task-lines" style="height: 10px; margin-top: 2px"></div>
               </div>
             </div>
-            
-            <div style="margin-top: 6px; margin-bottom: 8px; padding: 6px 10px; background-color: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 8.5pt; color: #334155;">
-              <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;">
-                <strong style="color: #1e3a8a;">SPaG Self/Peer Checklist (4 Marks):</strong>
-                <span><input type="checkbox" style="vertical-align: middle; margin-right: 4px;"> Historical terminology spelled accurately</span>
-                <span><input type="checkbox" style="vertical-align: middle; margin-right: 4px;"> Capital letters for proper nouns (e.g. Reichstag, Ebert)</span>
-                <span><input type="checkbox" style="vertical-align: middle; margin-right: 4px;"> Punctuation separates complex clauses</span>
-              </div>
-            </div>
-            <div style="display: flex; gap: 15px; font-size: 9pt; margin-bottom: 8px;">
-              <div style="flex: 1;">
-                <strong style="color: #16a34a;">What Went Well (WWW):</strong>
-                <div style="border-bottom: 1px dotted #94a3b8; height: 18px; margin-top: 4px;"></div>
-                <div style="border-bottom: 1px dotted #94a3b8; height: 18px; margin-top: 4px;"></div>
-              </div>
-              <div style="flex: 1;">
-                <strong style="color: #ea580c;">Even Better If (EBI):</strong>
-                <div style="border-bottom: 1px dotted #94a3b8; height: 18px; margin-top: 4px;"></div>
-                <div style="border-bottom: 1px dotted #94a3b8; height: 18px; margin-top: 4px;"></div>
-              </div>
-            </div>
-            <div style="font-size: 9pt; margin-top: 6px;">
-              <strong style="color: #2563eb;">Student D.I.R.T. Response / Correction:</strong>
-              <div style="border-bottom: 1px dotted #94a3b8; height: 18px; margin-top: 4px;"></div>
-              <div style="border-bottom: 1px dotted #94a3b8; height: 18px; margin-top: 4px;"></div>
-            </div>
-          </div></div></div><div style="margin-top: 20px; page-break-inside: avoid; border: 1.5px solid #1e3a8a; border-radius: 8px; padding: 15px; background-color: #f0fdf4;">
-          <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 11pt; font-family: 'Playfair Display', serif; display: flex; align-items: center;">
-            <span style="font-size: 14pt; margin-right: 8px;">🗣️</span> Pupil Voice
-          </h4>
-          <div style="font-weight: 600; font-size: 9.5pt; margin-bottom: 12px; color: #0f172a;">
-            What piece of historical evidence (e.g. government record, personal diary, photograph) would be most valuable to investigate today's enquiry, and why?
           </div>
-          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
-          <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px;"></div>
         </div>
-        <div style="page-break-before: always; margin-top: 20px;">
-          <h3 style="margin-top: 0; color: #334155;">General Notes</h3>
-      <div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div><div class="task-lines-large"></div></div><div style="page-break-before: always; padding: 18px 20px; border: 2px solid #1b365d; border-radius: 8px;">
-        <div style="text-align: center; margin-bottom: 14px;">
-          <h2 style="font-family: 'Playfair Display', serif; color: #1b365d; font-size: 20pt; margin: 0; border-bottom: 2px solid #facc15; display: inline-block; padding-bottom: 4px;">End of Unit Reflection & Pupil Voice</h2>
-          <p style="color: #475569; font-style: italic; margin-top: 6px; margin-bottom: 0; font-size: 10pt;">Unit: Paper 3: Weimar & Nazi Germany (1918–39)</p>
+      </div>
+    </div>
+    <div class="narrative-block" id="para-1"></div>
+    <div class="narrative-block" id="para-2"></div>
+    <div class="narrative-block" id="para-3"></div>
+    <div class="narrative-block" id="para-4"></div>
+    <div class="narrative-block" id="para-5"></div>
+    <div class="task-box" style="">
+      <h3 style="margin-top: 0; color: #0f766e">Pair & Share Activity</h3>
+      <p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px">
+        Q1. Prompt: Discuss with your partner: Was Goebbels' propaganda or Himmler's terror more
+        effective in controlling Germany?
+      </p>
+      <p style="font-size: 12pt; font-style: italic; margin-top: 0">
+        Think: Spend 1 minute quietly considering the question and forming your own opinion.
+      </p>
+      <div style="margin-top: 15px; border-left: 4px solid #0f766e; padding-left: 15px">
+        <strong>Your Notes:</strong>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+      </div>
+    </div>
+    <div class="task-box" style="page-break-inside: auto">
+      <h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em">
+        The 'But/Because/So' Strategy
+      </h4>
+      <div style="font-weight: bold; margin-top: 0; margin-bottom: 5px">
+        Q2. Complete these sentences based on the lesson's narrative: <br />1) The Nazi regime
+        established the Ministry of Public Enlightenment and Propaganda in March 1933, BUT...<br />2)
+        Joseph Goebbels was appointed head of this Ministry BECAUSE...<br />3) The Nazis immediately
+        began to control all forms of media, SO...
+      </div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+    </div>
+    <div class="task-box" style="page-break-inside: auto">
+      <h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em">
+        Vocabulary in Context
+      </h4>
+      <div style="font-weight: bold; margin-top: 0; margin-bottom: 5px">
+        Q3. Using at least three of the keywords (Censorship, Propaganda, Ministry of Public
+        Enlightenment and Propaganda, Volksempfänger, Reich Chamber of Culture, Entartete Kunst),
+        write a short paragraph explaining how the Nazis controlled and influenced attitudes in
+        Germany.
+      </div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+    </div>
+    <div class="task-box" style="page-break-inside: auto">
+      <h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em">
+        Causal Linkage
+      </h4>
+      <div style="font-weight: bold; margin-top: 0; margin-bottom: 5px">
+        Q4. Explain how the Nazi regime's control over culture and media, through institutions like
+        the Ministry of Public Enlightenment and Propaganda and the Reich Chamber of Culture,
+        contributed to the consolidation of their power and the stability of the regime by 1939.
+      </div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+    </div>
+    <div class="task-box" style="page-break-inside: auto">
+      <div style="font-weight: bold; margin-top: 0; margin-bottom: 5px">
+        Q5. The 'What If' Challenge (Counter-Factual History): What if the Nazi regime had *failed*
+        to establish effective control over radio and film in the early years (1933-1935)? How might
+        this have significantly altered the trajectory of Nazi Germany's consolidation of power and
+        public support by 1939?
+      </div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+    </div>
+    <div style="page-break-before: always; margin-top: 20px">
+      <h2
+        style="margin-top: 0; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 5px"
+      >
+        GCSE Exam Practice
+      </h2>
+      <div
+        class="task-box"
+        style="
+          margin-bottom: 10px;
+          page-break-inside: avoid;
+          border-top: none;
+          padding-top: 0;
+          margin-top: 0;
+        "
+      ></div>
+      <div style="page-break-before: always; page-break-inside: auto; margin-top: 20px">
+        <h2
+          style="
+            margin-top: 15px;
+            margin-bottom: 15px;
+            color: #1a237e;
+            font-size: 14pt;
+            border-bottom: none;
+          "
+        >
+          Exam Sources & Interpretations
+        </h2>
+        <div style="display: flex; gap: 15px; margin-top: 15px; margin-bottom: 15px">
+          <div
+            style="
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              font-size: 0.9rem;
+              line-height: 1.3;
+            "
+          >
+            <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1rem"
+              >Source B (Contemporary Written Source):</strong
+            >
+            <div
+              style="
+                border: 1px solid #cbd5e1;
+                border-radius: 6px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                color: #0f172a;
+                flex-grow: 1;
+              "
+            >
+              From Goebbels' written instructions to Nazi party speakers, July 1935.<br />"The
+              finest kind of propaganda does not reveal itself; it works invisibly, penetrating
+              every cell of life so that the public has no idea of its goals. For Wednesday’s
+              broadcast of the Leader's speech, all factory owners, offices, and shops must install
+              speakers. The entire workforce must be gathered to listen, and the press must discuss
+              this decision as the only possible path for Germany."
+            </div>
+          </div>
+          <div
+            style="
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              font-size: 0.9rem;
+              line-height: 1.3;
+            "
+          >
+            <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1rem"
+              >Source C (Contemporary Written Source):</strong
+            >
+            <div
+              style="
+                border: 1px solid #cbd5e1;
+                border-radius: 6px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                color: #0f172a;
+                flex-grow: 1;
+              "
+            >
+              From a private letter written by an ordinary citizen in Hamburg, 1937.<br />"Every
+              evening on the radio, we are subjected to the same repetitive speeches, military
+              marches, and achievements of the state. The newspapers contain only approved Nazi
+              articles, and we are expected to attend massive local rallies. While everyone stands
+              and salutes to avoid trouble, behind closed doors, my family simply turns off the
+              wireless, tired of the endless, mind-numbing propaganda."
+            </div>
+          </div>
         </div>
-
-        <p style="font-size: 10pt; margin-bottom: 14px;"><strong>Instructions:</strong> Now that you have completed your final assessment, take 10 minutes to reflect on your learning across this entire unit. Be honest—this is your chance to use your <strong>Pupil Voice</strong> to help your teacher plan future lessons.</p>
-
-        <div style="margin-top: 10px;">
-            <h3 style="color: #1e40af; margin-bottom: 3px; font-size: 12pt;">1. What Went Well (WWW)</h3>
-            <p style="font-size: 9pt; color: #64748b; margin-top: 0; margin-bottom: 5px;">What topic or skill did you find most engaging or easiest to understand in this unit?</p>
-            <div style="border: 1px solid #cbd5e1; height: 70px; background: #f8fafc; margin-bottom: 12px;"></div>
+      </div>
+      <div class="task-box" style="margin-bottom: 10px; page-break-inside: auto">
+        <div
+          style="
+            margin-top: 20px;
+            margin-bottom: 10px;
+            padding-left: 15px;
+            border-left: 4px solid #3b82f6;
+          "
+        >
+          <strong
+            >Q6. 3a. How useful are Sources B and C for an enquiry into controlling and influencing
+            attitudes?</strong
+          >
         </div>
-
-        <div style="margin-top: 10px;">
-            <h3 style="color: #1e40af; margin-bottom: 3px; font-size: 12pt;">2. Even Better If (EBI)</h3>
-            <p style="font-size: 9pt; color: #64748b; margin-top: 0; margin-bottom: 5px;">What did you find most challenging? Are there any concepts you are still confused about?</p>
-            <div style="border: 1px solid #cbd5e1; height: 70px; background: #f8fafc; margin-bottom: 12px;"></div>
+        <div style="margin-top: 5px; margin-bottom: 15px; margin-left: 15px">
+          <span
+            style="
+              display: inline-block;
+              background-color: #f1f5f9;
+              border: 1px solid #cbd5e1;
+              color: #334155;
+              font-size: 10pt;
+              padding: 2px 8px;
+              border-radius: 12px;
+              font-weight: normal;
+              vertical-align: middle;
+            "
+            >[8 marks &bull; 10 mins]</span
+          >
         </div>
-
-        <div style="margin-top: 10px;">
-            <h3 style="color: #1e40af; margin-bottom: 3px; font-size: 12pt;">3. Effort & Target Setting</h3>
-            <p style="font-size: 9.5pt; color: #0f172a; margin-top: 0; margin-bottom: 5px;">Circle your effort level for this unit: &nbsp;&nbsp; <strong>1 (Low) &nbsp;&nbsp;&nbsp; 2 &nbsp;&nbsp;&nbsp; 3 &nbsp;&nbsp;&nbsp; 4 &nbsp;&nbsp;&nbsp; 5 (Excellent)</strong></p>
-            <p style="font-size: 9pt; color: #64748b; margin-bottom: 5px; margin-top: 0;">What is one specific target you want to set for yourself in the next unit?</p>
-            <div style="border: 1px solid #cbd5e1; height: 55px; background: #f8fafc; margin-bottom: 14px;"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+      </div>
+    </div>
+    <div
+      style="
+        margin-top: 20px;
+        page-break-inside: avoid;
+        border: 1.5px solid #1e3a8a;
+        border-radius: 8px;
+        padding: 15px;
+        background-color: #f0fdf4;
+      "
+    >
+      <h4
+        style="
+          margin: 0 0 10px 0;
+          color: #1e3a8a;
+          font-size: 11pt;
+          font-family: 'Playfair Display', serif;
+          display: flex;
+          align-items: center;
+        "
+      >
+        <span style="font-size: 14pt; margin-right: 8px">🗣️</span> Pupil Voice
+      </h4>
+      <div style="font-weight: 600; font-size: 9.5pt; margin-bottom: 12px; color: #0f172a">
+        How did the events or developments studied today affect different groups of people in
+        contrasting ways?
+      </div>
+      <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px"></div>
+      <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px"></div>
+      <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px"></div>
+    </div>
+    <div style="page-break-before: always; margin-top: 20px">
+      <h3 style="margin-top: 0; color: #334155">General Notes</h3>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+    </div>
+    <h2
+      style="
+        margin-top: 40px;
+        border-top: 3px solid #1e3a8a;
+        padding-top: 20px;
+        margin-bottom: 5px;
+        page-break-before: always;
+        page-break-after: auto;
+      "
+    >
+      L4: Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939
+    </h2>
+    <div style="margin-bottom: 10px"></div>
+    <div
+      style="
+        margin-bottom: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+      "
+    >
+      <h4 style="margin: 0 0 8px 0; color: #1e3a8a; font-size: 10pt; text-transform: uppercase">
+        Learning Objectives
+      </h4>
+      <div style="display: flex; align-items: flex-start; margin-bottom: 4px">
+        <div
+          style="
+            width: 12px;
+            height: 12px;
+            border: 1.5px solid #64748b;
+            border-radius: 2px;
+            margin-right: 8px;
+            margin-top: 2px;
+            flex-shrink: 0;
+          "
+        ></div>
+        <div style="font-size: 9.5pt; color: #334155; line-height: 1.2">
+          Demonstrate precise knowledge of the different youth opposition groups, distinguishing
+          between the working-class Edelweiss Pirates and the middle-class Swing Youth.
         </div>
+      </div>
+      <div style="display: flex; align-items: flex-start; margin-bottom: 4px">
+        <div
+          style="
+            width: 12px;
+            height: 12px;
+            border: 1.5px solid #64748b;
+            border-radius: 2px;
+            margin-right: 8px;
+            margin-top: 2px;
+            flex-shrink: 0;
+          "
+        ></div>
+        <div style="font-size: 9.5pt; color: #334155; line-height: 1.2">
+          Analyse the methods used by underground political networks, industrial workers, and
+          lone-wolf attackers to resist the Nazi state.
+        </div>
+      </div>
+      <div style="display: flex; align-items: flex-start; margin-bottom: 4px">
+        <div
+          style="
+            width: 12px;
+            height: 12px;
+            border: 1.5px solid #64748b;
+            border-radius: 2px;
+            margin-right: 8px;
+            margin-top: 2px;
+            flex-shrink: 0;
+          "
+        ></div>
+        <div style="font-size: 9.5pt; color: #334155; line-height: 1.2">
+          Evaluate the reasons why the vast majority of the German population conformed to Nazi rule
+          rather than actively opposing it.
+        </div>
+      </div>
+    </div>
+    <div style="width: 100%; margin-bottom: 10px">
+      <div>
+        <div class="do-now-box" style="padding: 5px; margin-bottom: 5px">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-end;
+              margin-bottom: 5px;
+            "
+          >
+            <h3 style="margin: 0; font-size: 11pt">Do Now Activity</h3>
+            <div style="padding: 3px 10px; font-weight: bold; font-size: 10pt; border-radius: 4px">
+              Score: &nbsp;&nbsp;&nbsp;&nbsp; / 10
+            </div>
+          </div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            What happened to the Reichstag building in February 1933?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            What was the Decree for the Protection of the People and State?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            What was the Enabling Act (March 1933)?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            What did Hitler do to trade unions in May 1933?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            What was the Night of the Long Knives (June 1934)?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            What title did Hitler take upon Hindenburg's death in 1934?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            Who appointed Hitler as Chancellor?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            Who convinced Hindenburg to appoint Hitler?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">What was the SA?</div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+          <div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px">
+            What was the 25-Point Programme?
+          </div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          <div style="height: 6px"></div>
+        </div>
+      </div>
+      <div>
+        <div class="task-box" style="margin-bottom: 0px; padding: 5px; page-break-inside: avoid">
+          <div style="break-inside: avoid; page-break-inside: avoid">
+            <h3 style="margin-top: 0; margin-bottom: 5px; font-size: 11pt">Vocabulary Check</h3>
+            <p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0">
+              <strong>Spot the Deliberate Error:</strong> Read the statement below. One historical
+              fact or vocabulary concept has been deliberately falsified. Underline the error and
+              explain the accurate historical reality below:
+            </p>
+            <div
+              style="
+                border: 1px solid #cbd5e1;
+                background: #f8fafc;
+                padding: 4px;
+                margin-bottom: 5px;
+                text-align: center;
+                font-weight: bold;
+                font-size: 9.5pt;
+                border-radius: 4px;
+              "
+            >
+              Conformity &nbsp;|&nbsp; Passive Resistance &nbsp;|&nbsp; Active Resistance
+              &nbsp;|&nbsp; Sopade Reports &nbsp;|&nbsp; Edelweiss Pirates &nbsp;|&nbsp; Swing Youth
+            </div>
+            <div
+              style="
+                border-left: 3px solid #dc2626;
+                background: #fef2f2;
+                padding: 4px 8px;
+                margin: 4px 0 5px 0;
+                font-size: 9pt;
+                font-style: italic;
+                color: #991b1b;
+                border-radius: 0 4px 4px 0;
+              "
+            >
+              "Between 1933 and 1939, youth groups like the Edelweiss Pirates and Swing Youth showed
+              absolute Conformity to the Nazi police state by enthusiastically marching alongside
+              the Gestapo."
+            </div>
+            <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+            <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+            <div class="task-lines" style="height: 12px; margin-top: 3px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="narrative-block" id="para-1"></div>
+    <div class="narrative-block" id="para-2"></div>
+    <div class="narrative-block" id="para-3"></div>
+    <div class="narrative-block" id="para-4"></div>
+    <div class="narrative-block" id="para-5"></div>
+    <div class="narrative-block" id="para-6"></div>
+    <div class="task-box" style="">
+      <h3 style="margin-top: 0; color: #0f766e">Pair & Share Activity</h3>
+      <p style="font-weight: bold; font-size: 12pt; margin-bottom: 5px">
+        Q1. Prompt: Discuss with your partner: Why was there so little resistance to the Nazi
+        regime?
+      </p>
+      <p style="font-size: 12pt; font-style: italic; margin-top: 0">
+        Think: Spend 1 minute quietly considering the question and forming your own opinion.
+      </p>
+      <div style="margin-top: 15px; border-left: 4px solid #0f766e; padding-left: 15px">
+        <strong>Your Notes:</strong>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+      </div>
+    </div>
+    <div class="task-box" style="page-break-inside: auto">
+      <h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em">
+        The 'But/Because/So' Strategy
+      </h4>
+      <div style="font-weight: bold; margin-top: 0; margin-bottom: 5px">
+        Q2. Complete the following sentences based on the lesson narrative:<br />1) Early opposition
+        groups like the SPD and KPD were quickly suppressed BUT...<br />2) The Confessional Church
+        and Catholic Church resisted the Nazis BECAUSE...<br />3) Most Germans conformed to Nazi
+        rule SO...
+      </div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+    </div>
+    <div class="task-box" style="page-break-inside: auto">
+      <h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em">
+        Vocabulary in Context
+      </h4>
+      <div style="font-weight: bold; margin-top: 0; margin-bottom: 5px">
+        Q3. Write a short paragraph (approximately 100 words) explaining the different forms of
+        opposition to the Nazi regime between 1933-1939, using at least five of the following
+        keywords correctly: Conformity, Passive Resistance, Active Resistance, Sopade Reports,
+        Sabotage, Edelweiss Pirates, Swing Youth.
+      </div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+    </div>
+    <div class="task-box" style="page-break-inside: auto">
+      <h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em">
+        Causal Linkage
+      </h4>
+      <div style="font-weight: bold; margin-top: 0; margin-bottom: 5px">
+        Q4. Explain how a combination of Nazi policies and the nature of opposition led to
+        widespread conformity rather than successful resistance in Germany between 1933 and 1939.
+      </div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+    </div>
+    <div class="task-box" style="page-break-inside: auto">
+      <h4 style="margin-top: 0; color: #0284c7; margin-bottom: 8px; font-size: 1.1em">
+        Counter-Factual History
+      </h4>
+      <div style="font-weight: bold; margin-top: 0; margin-bottom: 5px">
+        Q5. Imagine a scenario where the SPD and KPD had managed to form a unified, underground
+        resistance movement immediately after 1933, receiving significant support from the
+        Confessional Church and trade unions. How might this have altered the nature and
+        effectiveness of opposition to the Nazi regime by 1939, and what challenges would such a
+        movement still have faced?
+      </div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+    </div>
+    <div style="page-break-before: always; margin-top: 20px">
+      <h2
+        style="margin-top: 0; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 5px"
+      >
+        GCSE Exam Practice
+      </h2>
+      <div
+        class="task-box"
+        style="
+          margin-bottom: 10px;
+          page-break-inside: avoid;
+          border-top: none;
+          padding-top: 0;
+          margin-top: 0;
+        "
+      ></div>
+      <div style="page-break-before: always; page-break-inside: auto; margin-top: 20px">
+        <h2
+          style="
+            margin-top: 15px;
+            margin-bottom: 15px;
+            color: #1a237e;
+            font-size: 14pt;
+            border-bottom: none;
+          "
+        >
+          Exam Sources & Interpretations
+        </h2>
+        <div style="display: flex; gap: 15px; margin-top: 15px; margin-bottom: 15px">
+          <div
+            style="
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              font-size: 0.9rem;
+              line-height: 1.3;
+            "
+          >
+            <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1rem"
+              >Interpretation 1 (The Brave Resistance View):</strong
+            >
+            <div
+              style="
+                border: 1px solid #cbd5e1;
+                border-radius: 6px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                color: #0f172a;
+                flex-grow: 1;
+              "
+            >
+              The Christian Churches in Germany were largely successful in resisting the Nazi
+              regime's attempts to achieve total control over religious life. Despite intense
+              pressure, both the Catholic and Protestant Churches prevented the total Nazification
+              of their institutions. The creation of the Confessing Church by thousands of brave
+              pastors successfully defended theological independence, proving that religious faith
+              remained a powerful barrier to totalitarian control.
+            </div>
+          </div>
+          <div
+            style="
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              font-size: 0.9rem;
+              line-height: 1.3;
+            "
+          >
+            <strong style="color: #1e3a8a; display: block; margin-bottom: 8px; font-size: 1rem"
+              >Interpretation 2 (The Limited Conformity View):</strong
+            >
+            <div
+              style="
+                border: 1px solid #cbd5e1;
+                border-radius: 6px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                color: #0f172a;
+                flex-grow: 1;
+              "
+            >
+              Christian opposition to the Nazi regime was extremely limited, narrow, and ultimately
+              failed to challenge the wider atrocities of the state. The vast majority of church
+              leaders conformed because they shared Hitler’s hatred of communism and feared the
+              destruction of their institutions. When pastors spoke out, their protests were
+              strictly limited to defending church administration; they remained entirely silent
+              during the persecution of minorities and the destruction of democracy.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="task-box" style="margin-bottom: 10px; page-break-inside: auto">
+        <div
+          style="
+            margin-top: 20px;
+            margin-bottom: 10px;
+            padding-left: 15px;
+            border-left: 4px solid #3b82f6;
+          "
+        >
+          <strong
+            >Q6. 3b. Study Interpretations 1 and 2. They give different views about religious
+            opposition to the Nazi regime. What is the main difference between these views?</strong
+          >
+        </div>
+        <div style="margin-top: 5px; margin-bottom: 15px; margin-left: 15px">
+          <span
+            style="
+              display: inline-block;
+              background-color: #f1f5f9;
+              border: 1px solid #cbd5e1;
+              color: #334155;
+              font-size: 10pt;
+              padding: 2px 8px;
+              border-radius: 12px;
+              font-weight: normal;
+              vertical-align: middle;
+            "
+            >[4 marks &bull; 5 mins]</span
+          >
+        </div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div
+          style="
+            margin-top: 20px;
+            margin-bottom: 10px;
+            padding-left: 15px;
+            border-left: 4px solid #3b82f6;
+          "
+        >
+          <strong
+            >Q7. 3c. Suggest one reason why Interpretations 1 and 2 give different views about
+            religious opposition to the Nazi regime. You may use Sources B and C to help explain
+            your answer.</strong
+          >
+        </div>
+        <div style="margin-top: 5px; margin-bottom: 15px; margin-left: 15px">
+          <span
+            style="
+              display: inline-block;
+              background-color: #f1f5f9;
+              border: 1px solid #cbd5e1;
+              color: #334155;
+              font-size: 10pt;
+              padding: 2px 8px;
+              border-radius: 12px;
+              font-weight: normal;
+              vertical-align: middle;
+            "
+            >[4 marks &bull; 5 mins]</span
+          >
+        </div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div
+          style="
+            margin-top: 20px;
+            margin-bottom: 10px;
+            padding-left: 15px;
+            border-left: 4px solid #3b82f6;
+          "
+        >
+          <strong
+            >Q8. 3d. How far do you agree with Interpretation 2 about religious opposition to the
+            Nazi regime? Explain your answer, using both interpretations and your knowledge of the
+            historical context.</strong
+          >
+        </div>
+        <div style="margin-top: 5px; margin-bottom: 15px; margin-left: 15px">
+          <span
+            style="
+              display: inline-block;
+              background-color: #f1f5f9;
+              border: 1px solid #cbd5e1;
+              color: #334155;
+              font-size: 10pt;
+              padding: 2px 8px;
+              border-radius: 12px;
+              font-weight: normal;
+              vertical-align: middle;
+            "
+            >[16 marks &bull; 20 mins]</span
+          >
+        </div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div class="task-lines-large"></div>
+        <div
+          class="dirt-box"
+          style="
+            margin-top: 20px;
+            margin-bottom: 15px;
+            border: 2px dashed #94a3b8;
+            border-radius: 8px;
+            padding: 12px 16px;
+            background-color: #f8fafc;
+            page-break-inside: avoid;
+            break-inside: avoid;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              border-bottom: 1.5px solid #cbd5e1;
+              padding-bottom: 6px;
+              margin-bottom: 10px;
+            "
+          >
+            <h4
+              style="
+                margin: 0;
+                color: #1e3a8a;
+                text-transform: uppercase;
+                font-size: 10pt;
+                letter-spacing: 0.5px;
+                font-family: 'Inter', sans-serif;
+              "
+            >
+              Teacher Feedback &amp; D.I.R.T.
+            </h4>
+            <div style="font-size: 9.5pt; color: #334155">
+              <strong>Mark:</strong> &nbsp;______ / 16 (+4 SPaG)
+              &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <strong>Effort:</strong> &nbsp;1 &nbsp;2 &nbsp;3
+              &nbsp;4 &nbsp;5
+            </div>
+          </div>
 
-        <hr style="border: 0; border-top: 2px dashed #cbd5e1; margin: 14px 0;">
+          <div
+            style="
+              margin-top: 6px;
+              margin-bottom: 8px;
+              padding: 6px 10px;
+              background-color: #f1f5f9;
+              border: 1px solid #cbd5e1;
+              border-radius: 6px;
+              font-size: 8.5pt;
+              color: #334155;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 6px;
+              "
+            >
+              <strong style="color: #1e3a8a">SPaG Self/Peer Checklist (4 Marks):</strong>
+              <span
+                ><input type="checkbox" style="vertical-align: middle; margin-right: 4px" />
+                Historical terminology spelled accurately</span
+              >
+              <span
+                ><input type="checkbox" style="vertical-align: middle; margin-right: 4px" /> Capital
+                letters for proper nouns (e.g. Reichstag, Ebert)</span
+              >
+              <span
+                ><input type="checkbox" style="vertical-align: middle; margin-right: 4px" />
+                Punctuation separates complex clauses</span
+              >
+            </div>
+          </div>
+          <div style="display: flex; gap: 15px; font-size: 9pt; margin-bottom: 8px">
+            <div style="flex: 1">
+              <strong style="color: #16a34a">What Went Well (WWW):</strong>
+              <div style="border-bottom: 1px dotted #94a3b8; height: 18px; margin-top: 4px"></div>
+              <div style="border-bottom: 1px dotted #94a3b8; height: 18px; margin-top: 4px"></div>
+            </div>
+            <div style="flex: 1">
+              <strong style="color: #ea580c">Even Better If (EBI):</strong>
+              <div style="border-bottom: 1px dotted #94a3b8; height: 18px; margin-top: 4px"></div>
+              <div style="border-bottom: 1px dotted #94a3b8; height: 18px; margin-top: 4px"></div>
+            </div>
+          </div>
+          <div style="font-size: 9pt; margin-top: 6px">
+            <strong style="color: #2563eb">Student D.I.R.T. Response / Correction:</strong>
+            <div style="border-bottom: 1px dotted #94a3b8; height: 18px; margin-top: 4px"></div>
+            <div style="border-bottom: 1px dotted #94a3b8; height: 18px; margin-top: 4px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style="
+        margin-top: 20px;
+        page-break-inside: avoid;
+        border: 1.5px solid #1e3a8a;
+        border-radius: 8px;
+        padding: 15px;
+        background-color: #f0fdf4;
+      "
+    >
+      <h4
+        style="
+          margin: 0 0 10px 0;
+          color: #1e3a8a;
+          font-size: 11pt;
+          font-family: 'Playfair Display', serif;
+          display: flex;
+          align-items: center;
+        "
+      >
+        <span style="font-size: 14pt; margin-right: 8px">🗣️</span> Pupil Voice
+      </h4>
+      <div style="font-weight: 600; font-size: 9.5pt; margin-bottom: 12px; color: #0f172a">
+        What piece of historical evidence (e.g. government record, personal diary, photograph) would
+        be most valuable to investigate today's enquiry, and why?
+      </div>
+      <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px"></div>
+      <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px"></div>
+      <div style="width: 100%; border-bottom: 1px dotted #94a3b8; height: 18px"></div>
+    </div>
+    <div style="page-break-before: always; margin-top: 20px">
+      <h3 style="margin-top: 0; color: #334155">General Notes</h3>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+      <div class="task-lines-large"></div>
+    </div>
+    <div
+      style="
+        page-break-before: always;
+        padding: 18px 20px;
+        border: 2px solid #1b365d;
+        border-radius: 8px;
+      "
+    >
+      <div style="text-align: center; margin-bottom: 14px">
+        <h2
+          style="
+            font-family: 'Playfair Display', serif;
+            color: #1b365d;
+            font-size: 20pt;
+            margin: 0;
+            border-bottom: 2px solid #facc15;
+            display: inline-block;
+            padding-bottom: 4px;
+          "
+        >
+          End of Unit Reflection & Pupil Voice
+        </h2>
+        <p
+          style="
+            color: #475569;
+            font-style: italic;
+            margin-top: 6px;
+            margin-bottom: 0;
+            font-size: 10pt;
+          "
+        >
+          Unit: Paper 3: Weimar & Nazi Germany (1918–39)
+        </p>
+      </div>
 
-        <h3 style="color: #92400e; margin-bottom: 3px; font-size: 12pt;">Teacher Feedback & Coaching</h3>
-        <p style="font-size: 9pt; color: #64748b; margin-top: 0; margin-bottom: 5px;">(To be completed during live marking / feedback lessons)</p>
-        <div style="border: 2px solid #fde68a; height: 120px; background: #fef3c7; border-radius: 4px;"></div>
+      <p style="font-size: 10pt; margin-bottom: 14px">
+        <strong>Instructions:</strong> Now that you have completed your final assessment, take 10
+        minutes to reflect on your learning across this entire unit. Be honest—this is your chance
+        to use your <strong>Pupil Voice</strong> to help your teacher plan future lessons.
+      </p>
 
-      </div><div style="text-align: center; margin-top: 50px; font-size: 8pt; color: #94a3b8;  border-top: 1px solid #e2e8f0; padding-top: 10px; font-family: sans-serif;">Generated: 2026-09-11 15:59:32 UTC | Unit: weimar_nazi_germany | Edition: 2026.1</div><script>
-  document.addEventListener("DOMContentLoaded", function() {
-    if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
-    function replaceLines(className) {
-      const lines = document.querySelectorAll('.' + className);
-      if (lines.length === 0) return;
-      let group = [];
-      lines.forEach((line, i) => {
-        group.push(line);
-        const next = lines[i + 1];
-        if (!next || line.nextElementSibling !== next) {
-          const wrapper = document.createElement('textarea');
-          wrapper.className = 'interactive-textarea';
-          wrapper.style.width = '100%';
-          wrapper.style.height = (group.length * line.offsetHeight) + 'px';
-          wrapper.style.border = '2px dashed #94a3b8';
-          wrapper.style.borderRadius = '6px';
-          wrapper.style.padding = '12px';
-          wrapper.style.boxSizing = 'border-box';
-          wrapper.style.fontFamily = 'Outfit, sans-serif';
-          wrapper.style.fontSize = '1.1rem';
-          wrapper.style.resize = 'vertical';
-          wrapper.style.marginTop = group[0].style.marginTop || '10px';
-          wrapper.style.marginBottom = '10px';
-          wrapper.style.background = '#f8fafc';
-          wrapper.placeholder = 'Type your answer here...';
-          group[0].parentNode.insertBefore(wrapper, group[0]);
-          group.forEach(l => l.remove());
-          group = [];
+      <div style="margin-top: 10px">
+        <h3 style="color: #1e40af; margin-bottom: 3px; font-size: 12pt">1. What Went Well (WWW)</h3>
+        <p style="font-size: 9pt; color: #64748b; margin-top: 0; margin-bottom: 5px">
+          What topic or skill did you find most engaging or easiest to understand in this unit?
+        </p>
+        <div
+          style="border: 1px solid #cbd5e1; height: 70px; background: #f8fafc; margin-bottom: 12px"
+        ></div>
+      </div>
+
+      <div style="margin-top: 10px">
+        <h3 style="color: #1e40af; margin-bottom: 3px; font-size: 12pt">2. Even Better If (EBI)</h3>
+        <p style="font-size: 9pt; color: #64748b; margin-top: 0; margin-bottom: 5px">
+          What did you find most challenging? Are there any concepts you are still confused about?
+        </p>
+        <div
+          style="border: 1px solid #cbd5e1; height: 70px; background: #f8fafc; margin-bottom: 12px"
+        ></div>
+      </div>
+
+      <div style="margin-top: 10px">
+        <h3 style="color: #1e40af; margin-bottom: 3px; font-size: 12pt">
+          3. Effort & Target Setting
+        </h3>
+        <p style="font-size: 9.5pt; color: #0f172a; margin-top: 0; margin-bottom: 5px">
+          Circle your effort level for this unit: &nbsp;&nbsp;
+          <strong
+            >1 (Low) &nbsp;&nbsp;&nbsp; 2 &nbsp;&nbsp;&nbsp; 3 &nbsp;&nbsp;&nbsp; 4
+            &nbsp;&nbsp;&nbsp; 5 (Excellent)</strong
+          >
+        </p>
+        <p style="font-size: 9pt; color: #64748b; margin-bottom: 5px; margin-top: 0">
+          What is one specific target you want to set for yourself in the next unit?
+        </p>
+        <div
+          style="border: 1px solid #cbd5e1; height: 55px; background: #f8fafc; margin-bottom: 14px"
+        ></div>
+      </div>
+
+      <hr style="border: 0; border-top: 2px dashed #cbd5e1; margin: 14px 0" />
+
+      <h3 style="color: #92400e; margin-bottom: 3px; font-size: 12pt">
+        Teacher Feedback & Coaching
+      </h3>
+      <p style="font-size: 9pt; color: #64748b; margin-top: 0; margin-bottom: 5px">
+        (To be completed during live marking / feedback lessons)
+      </p>
+      <div
+        style="border: 2px solid #fde68a; height: 120px; background: #fef3c7; border-radius: 4px"
+      ></div>
+    </div>
+    <div
+      style="
+        text-align: center;
+        margin-top: 50px;
+        font-size: 8pt;
+        color: #94a3b8;
+        border-top: 1px solid #e2e8f0;
+        padding-top: 10px;
+        font-family: sans-serif;
+      "
+    >
+      Generated: 2026-09-11 18:42:36 UTC | Unit: weimar_nazi_germany | Edition: 2026.1
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        if (
+          navigator.userAgent.includes('HeadlessChrome') ||
+          navigator.userAgent.includes('Puppeteer')
+        )
+          return;
+        function replaceLines(className) {
+          const lines = document.querySelectorAll('.' + className);
+          if (lines.length === 0) return;
+          let group = [];
+          lines.forEach((line, i) => {
+            group.push(line);
+            const next = lines[i + 1];
+            if (!next || line.nextElementSibling !== next) {
+              const wrapper = document.createElement('textarea');
+              wrapper.className = 'interactive-textarea';
+              wrapper.style.width = '100%';
+              wrapper.style.height = group.length * line.offsetHeight + 'px';
+              wrapper.style.border = '2px dashed #94a3b8';
+              wrapper.style.borderRadius = '6px';
+              wrapper.style.padding = '12px';
+              wrapper.style.boxSizing = 'border-box';
+              wrapper.style.fontFamily = 'Outfit, sans-serif';
+              wrapper.style.fontSize = '1.1rem';
+              wrapper.style.resize = 'vertical';
+              wrapper.style.marginTop = group[0].style.marginTop || '10px';
+              wrapper.style.marginBottom = '10px';
+              wrapper.style.background = '#f8fafc';
+              wrapper.placeholder = 'Type your answer here...';
+              group[0].parentNode.insertBefore(wrapper, group[0]);
+              group.forEach((l) => l.remove());
+              group = [];
+            }
+          });
         }
+        // replaceLines('task-lines');
+        // replaceLines('task-lines-large');
+        document
+          .querySelectorAll('.dirt-box, .hint-box')
+          .forEach((b) => (b.contentEditable = true));
       });
-    }
-    // replaceLines('task-lines');
-    // replaceLines('task-lines-large');
-    document.querySelectorAll('.dirt-box, .hint-box').forEach(b => b.contentEditable = true);
-  });
-</script></body></html>
+    </script>
+  </body>
+</html>
