@@ -12,7 +12,7 @@ export const unitData = {
   title: 'Paper 2: Conflict in the Middle East, 1945-1995',
   cover_caption: 'Camp David Accords',
   enquiry_question: 'Why has peace proved so difficult to achieve in the Middle East?',
-  homepage_background: '/images/israeli_troops_wall.jpg',
+  homepage_background: '/images/cme_cover.jpg',
   enquiry: 'Why has peace proved so elusive in the Middle East?',
   category: 'Edexcel GCSE',
   yearGroup: 'GCSE',

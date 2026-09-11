@@ -1,6 +1,6 @@
 export default {
   title: 'KS3: The Great War (1914-1919)',
-  homepage_background: '/images/armistice_1918.jpg',
+  homepage_background: '/images/bg_great_war_part2.jpg',
   enquiry:
     'How did a single spark in Sarajevo ignite a global conflict that transformed the modern world?',
   cover_image: '/images/bg_great_war_part2.jpg',

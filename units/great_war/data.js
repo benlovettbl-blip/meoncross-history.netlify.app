@@ -27,7 +27,7 @@ const great_war = {
   ],
   specification_file: '/data/great_war_overview.json',
   title: 'KS3: Causes of the Great War',
-  homepage_background: 'assets/somme_trench_1916.jpg',
+  homepage_background: '/images/great_war_cover.jpg',
   enquiry: 'How did decades of imperial rivalry and fear culminate in thirty days of madness?',
   cover_image: '/images/great_war_cover.jpg',
   workbooks: [

@@ -19,7 +19,7 @@ const water_and_sanitation = {
   id: 'water_and_sanitation',
   edition: '2026.1',
   title: 'KS3: Water and Sanitation Through Time',
-  homepage_background: '/units/water_and_sanitation/assets/court_for_king_cholera.png',
+  homepage_background: '/images/john_snow_cholera_map.jpg',
   color: '#0288d1',
   enquiry: 'Why did it take so long to clean up Britain?',
   cover_image: '/images/john_snow_cholera_map.jpg',
@@ -35,6 +35,8 @@ const water_and_sanitation = {
     {
       id: 'lesson_1',
       title: 'How much progress did the Romans make in public health?',
+      cover_image: '/images/roman_aqueduct.jpg',
+      banner: '/images/roman_aqueduct.jpg',
       learning_objectives: [
         'Describe the key features of Roman public health infrastructure, including aqueducts, bathhouses, and sewers',
         "Explain how the Roman Empire's centralised power enabled large-scale public health projects",
@@ -520,6 +522,8 @@ const water_and_sanitation = {
     {
       id: 'lesson_2',
       title: 'Why did public health decline during the Middle Ages?',
+      cover_image: '/images/black_death.jpg',
+      banner: '/images/black_death.jpg',
       learning_objectives: [
         'Explain how the collapse of Roman imperial power led to the decline of organised public health systems',
         'Describe the role of the medieval Church in shaping attitudes to disease and sanitation',
@@ -971,6 +975,8 @@ const water_and_sanitation = {
     {
       id: 'lesson_3',
       title: 'To what extent did towns become filthier during the Early Modern period?',
+      cover_image: '/images/harington_toilet.jpg',
+      banner: '/images/harington_toilet.jpg',
       learning_objectives: [
         'Describe the public health challenges caused by rapid urbanisation in Early Modern towns',
         'Explain why governments failed to act despite growing evidence of poor sanitation',
@@ -1406,6 +1412,8 @@ const water_and_sanitation = {
     {
       id: 'lesson_4',
       title: 'How did the Industrial Revolution lead to a public health crisis?',
+      cover_image: '/images/victorian_slum.jpg',
+      banner: '/images/victorian_slum.jpg',
       learning_objectives: [
         'Explain how industrialisation and mass migration to cities created unprecedented public health crises',
         'Describe the role of key individuals (John Snow, Edwin Chadwick) in challenging existing beliefs about disease',
@@ -1849,6 +1857,8 @@ const water_and_sanitation = {
     {
       id: 'lesson_5',
       title: "Why did it take the 'Great Stink' to finally clean up Britain's streets?",
+      cover_image: '/images/bazalgette_sewer.jpg',
+      banner: '/images/bazalgette_sewer.jpg',
       learning_objectives: [
         'Explain why it took Parliament so long to act on public health reform despite mounting evidence',
         "Describe how the 'Great Stink' of 1858 became a turning point that forced government action",
@@ -2315,6 +2325,8 @@ const water_and_sanitation = {
     {
       id: 'lesson_6',
       title: 'End of Unit Assessment: Cholera Investigation',
+      cover_image: '/images/john_snow_cholera_map.jpg',
+      banner: '/images/john_snow_cholera_map.jpg',
       lesson_reflection: {
         prompt:
           'You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.',

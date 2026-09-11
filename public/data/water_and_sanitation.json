@@ -16,7 +16,7 @@
     ],
     "id": "water_and_sanitation",
     "title": "KS3: Water and Sanitation Through Time",
-    "homepage_background": "/units/water_and_sanitation/assets/court_for_king_cholera.png",
+    "homepage_background": "/images/john_snow_cholera_map.jpg",
     "color": "#0288d1",
     "enquiry": "Why did it take so long to clean up Britain?",
     "specification_file": "/data/water_and_sanitation_overview.json",
@@ -269,7 +269,9 @@
           "text": "<strong>Simon Schama</strong> argues:\n\n\"The Romans were the first to provide their citizens with the basic requirements of public health. Rather than just building spectacular temples, they poured staggering amounts of money, engineering brilliance, and state resources into aqueducts, public bathhouses, and flushing latrines. It was not merely about hygiene, but about Roman identity; to be 'Roman' meant participating in the civilized, communal bathing culture that separated them from the so-called 'barbarians'. However, we must be careful not to overstate this progress: while the wealthy enjoyed luxurious private hypocausts, the vast majority of ordinary citizens still lived in crowded, smoke-filled insulae, sharing public latrines that were breeding grounds for intestinal parasites.\"",
           "stretch_question": "According to Schama, was Roman public health purely about stopping disease, or was there another motivation?",
           "stretch_model": "According to Schama, Roman public health was not just about stopping disease, but also about 'Roman identity'. Participating in communal bathing culture was a way for Romans to feel 'civilized' and distinguish themselves from the 'barbarians'. However, he also points out that the reality was uneven, as the poor still suffered from parasites in communal latrines."
-        }
+        },
+        "cover_image": "/images/roman_aqueduct.jpg",
+        "banner": "/images/roman_aqueduct.jpg"
       },
       {
         "id": "lesson_2",
@@ -505,7 +507,9 @@
           "text": "**Carole Rawcliffe** argues:\n\n\"Medieval towns were not entirely filthy; many had local laws requiring citizens to clean the street outside their house.\"",
           "stretch_question": "How does Rawcliffe challenge the idea that all medieval towns were completely disgusting?",
           "stretch_model": "The historian argues that..."
-        }
+        },
+        "cover_image": "/images/black_death.jpg",
+        "banner": "/images/black_death.jpg"
       },
       {
         "id": "lesson_3",
@@ -727,7 +731,9 @@
           "text": "**Roy Porter** argues:\n\n\"The rapid growth of London meant that traditional methods of waste disposal simply could not cope.\"",
           "stretch_question": "What does Porter say was the main reason towns became so filthy?",
           "stretch_model": "The historian argues that..."
-        }
+        },
+        "cover_image": "/images/harington_toilet.jpg",
+        "banner": "/images/harington_toilet.jpg"
       },
       {
         "id": "lesson_4",
@@ -949,7 +955,9 @@
           "text": "**Steven Johnson** argues:\n\n\"John Snow's map of the Broad Street cholera outbreak was a triumph of medical detective work.\"",
           "stretch_question": "Why does Johnson call Snow's work 'detective work'?",
           "stretch_model": "The historian argues that..."
-        }
+        },
+        "cover_image": "/images/victorian_slum.jpg",
+        "banner": "/images/victorian_slum.jpg"
       },
       {
         "id": "lesson_5",
@@ -1185,7 +1193,9 @@
           "text": "**The Observer Newspaper, 1861** argues:\n\n\"Bazalgette's sewer system was the most extensive and wonderful work of modern times.\"",
           "stretch_question": "How did the media at the time view Bazalgette's sewers?",
           "stretch_model": "The historian argues that..."
-        }
+        },
+        "cover_image": "/images/bazalgette_sewer.jpg",
+        "banner": "/images/bazalgette_sewer.jpg"
       }
     ],
     "quizPack": [
@@ -1973,7 +1983,8 @@
         "image": "/images/pepys.jpg",
         "bio": "Kept a detailed diary during the 1660s, documenting the filthy conditions of London and the Great Plague of 1665."
       }
-    ]
+    ],
+    "cover_image": "/images/john_snow_cholera_map.jpg"
   },
   "biographies": [
     {
