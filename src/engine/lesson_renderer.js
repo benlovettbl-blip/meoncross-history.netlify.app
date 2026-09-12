@@ -2688,7 +2688,7 @@ export function renderLesson(lesson) {
             sc.connectives_bank && sc.connectives_bank.length > 0
               ? `
             <div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center;">
-              <span style="font-size: 0.8rem; font-weight: bold; color: #64748b; text-transform: uppercase;">Connectives:</span>
+              <span style="font-size: 0.8rem; font-weight: bold; color: #64748b; text-transform: uppercase;">Causal Connective Bank:</span>
               ${sc.connectives_bank.map((conn) => `<span style="background: #e2e8f0; color: #1e293b; font-size: 0.8rem; font-weight: 600; padding: 2px 8px; border-radius: 12px;">${conn}</span>`).join('')}
             </div>
           `
@@ -2722,10 +2722,10 @@ export function renderLesson(lesson) {
             <div style="margin: 12px 0 16px 0;">
               <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
                 <span style="background: #eff6ff; border: 1px solid #93c5fd; color: #1e40af; font-size: 0.85rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.5px;">
-                  <i class="fa-solid fa-layer-group" style="margin-right: 6px;"></i> ${sc.acronym || 'Structure Strip'}
+                  <i class="fa-solid fa-layer-group" style="margin-right: 6px;"></i> ${sc.acronym || 'PEE/PEEL Structure Strip'}
                 </span>
                 <button class="btn btn-pedagogy btn-pedagogy-sm" data-action="toggle-element" data-target-id="ep-scaffold-${qIdx}" style="background: #f1f5f9; color: #1e3a8a; border: 1px solid #cbd5e1; font-weight: 600;">
-                  <i class="fa-solid fa-wand-magic-sparkles" style="color: #2563eb;"></i> Structure Strip &amp; Tips
+                  <i class="fa-solid fa-wand-magic-sparkles" style="color: #2563eb;"></i> PEE/PEEL Structure Strip &amp; Tips
                 </button>
               </div>
               <div id="ep-scaffold-${qIdx}" class="scaffold-box" style="display: block; background: #f8fafc; border: 1.5px solid #93c5fd; border-radius: 8px; padding: 16px; margin-top: 8px;">
@@ -2752,7 +2752,7 @@ export function renderLesson(lesson) {
           stampHtml = `
             <div class="edexcel-peel-stamp" style="margin: 10px 0 16px 0; border: 2px solid #0284c7; border-radius: 8px; background: #f0f9ff; padding: 12px 16px;">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; border-bottom: 1.5px solid #bae6fd; padding-bottom: 6px;">
-                <span style="font-weight: 800; font-size: 0.92rem; color: #0369a1; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-stamp" style="margin-right: 6px;"></i> Edexcel 4-Mark Consequence Formula Stamp</span>
+                <span style="font-weight: 800; font-size: 0.92rem; color: #0369a1; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-stamp" style="margin-right: 6px;"></i> Edexcel 4-Mark Consequence PEE Structure Strip</span>
                 <span style="background: #0284c7; color: white; font-size: 0.78rem; font-weight: 700; padding: 2px 8px; border-radius: 12px;">[4 marks &bull; 5 mins]</span>
               </div>
               <div style="display: grid; grid-template-columns: auto 1fr; gap: 8px 12px; font-size: 0.88rem; line-height: 1.4; color: #0f172a;">

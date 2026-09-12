@@ -2839,6 +2839,7 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
           resourceMode === 'workbooks'
             ? `<ol style="margin: 2px 0 3px 16px; padding: 0; font-size: 8.2pt;">
               <li>Complete the structured enquiry comprehension tasks in your workbook on <strong>${p1Refs.wb}</strong>.</li>
+              <li>Structure written responses using <strong>PEE/PEEL Structure Strips</strong> and deploy terms from the <strong>Causal Connective Bank</strong>.</li>
               <li>Ensure all sentences are written in academic historical prose with precise names, dates, and factors.</li>
             </ol>`
             : `<p style="margin: 1px 0 3px 0; font-size: 8pt;">
@@ -2950,7 +2951,7 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
             resourceMode === 'workbooks'
               ? `<ol style="margin: 2px 0 3px 16px; padding: 0; font-size: 8.2pt;">
                 <li>In your workbook (<strong>${p2Refs.wb}</strong>), complete the comparison activities and source evaluation tables.</li>
-                <li>Write a high-grade conclusion paragraph answering the lesson enquiry question using historical criteria.</li>
+                <li>Write a high-grade conclusion paragraph answering the lesson enquiry question using <strong>PEE/PEEL Structure Strips</strong> and the <strong>Causal Connective Bank</strong>.</li>
               </ol>`
               : `<p style="margin: 1px 0 3px 0; font-size: 8pt;">
                 ${
@@ -2992,7 +2993,7 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
     if (resourceMode === 'workbooks') {
       plainText += `1. DO NOW & VOCAB: Open workbook to ${p1Refs.doNow}. Complete the 10 retrieval questions and vocabulary activity on ${p1Refs.vocab}.\n`;
       plainText += `2. READING: Read textbook ${p1Refs.tb} or the core historical narrative on the app.\n`;
-      plainText += `3. WORKBOOK ENQUIRY: In workbook (${p1Refs.wb}), complete the core enquiry tasks in neat pen.\n`;
+      plainText += `3. WORKBOOK ENQUIRY: In workbook (${p1Refs.wb}), complete the core enquiry tasks in neat pen using PEE/PEEL Structure Strips and Causal Connective Banks.\n`;
       plainText += `4. CHECK: Complete the 10-question retrieval check on the digital app.\n`;
     } else {
       plainText += `1. STARTER: On blank A4 paper, answer the 5 recall starter questions from the top of the lesson app.\n`;
@@ -3008,7 +3009,7 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
       if (resourceMode === 'workbooks') {
         plainText += `1. DO NOW & VOCAB: Open workbook to ${p2Refs.doNow} (10 recall questions) and ${p2Refs.vocab} (vocab mapping).\n`;
         plainText += `2. READING: Read textbook ${p2Refs.tb} or the core narrative on the app.\n`;
-        plainText += `3. WORKBOOK ENQUIRY: In workbook (${p2Refs.wb}), complete the comparison grid and evaluation tasks.\n`;
+        plainText += `3. WORKBOOK ENQUIRY: In workbook (${p2Refs.wb}), complete the comparison grid and evaluation tasks using PEE/PEEL Structure Strips and Causal Connective Banks.\n`;
         plainText += `4. PLENARY: Complete the Lesson Mastery Quiz on the digital app before the end of the double period.\n`;
       } else {
         plainText += `1. RECALL: On lined A4 paper, complete the 5 recall starter questions.\n`;

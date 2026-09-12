@@ -553,7 +553,7 @@ const htmlContent = `<!DOCTYPE html>
     </div>
 
     <p style="font-size: 8.8pt;">
-      GCSE History requires pupils to master complex, divergent exam tariffs ranging from 2-mark recall features to 16+4-mark thematic judgement essays. The department employs a systematic, 3-stage scaffolding architecture within our bespoke <strong>GCSE Section B Mastery Booklets</strong>:
+      GCSE History requires pupils to master complex, divergent exam tariffs ranging from 2-mark recall features to 16+4-mark thematic judgement essays. The department employs systematic PEE/PEEL Structure Strips and Causal Connective Banks within our bespoke <strong>GCSE Section B Mastery Booklets</strong>:
     </p>
 
     <div class="figure-container" style="margin: 4px 0 8px 0;">
@@ -568,14 +568,14 @@ const htmlContent = `<!DOCTYPE html>
       <div class="col-card">
         <div class="sub-heading" style="margin-top: 0;">Systematic 3-Round Progression</div>
         <ul style="font-size: 8.2pt; padding-left: 14px; margin: 0; color: #334155;">
-          <li style="margin-bottom: 3px;"><strong>Round 1 (Stepped Enquiries):</strong> Scaffolded writing frames, PEEL structure strips, and model answers across Q3 (4m), Q4 (12m), and Q5/Q6 (16+4m).</li>
-          <li style="margin-bottom: 3px;"><strong>Round 2 (Dual-Track Enquiries):</strong> Differentiated choice between guided scaffolding (Track A) or independent exam conditions (Track B) targeting Grades 7–9.</li>
+          <li style="margin-bottom: 3px;"><strong>Round 1 (Stepped Enquiries):</strong> PEE/PEEL Structure Strips, Causal Connective Banks, and model answers across Q3 (4m), Q4 (12m), and Q5/Q6 (16+4m).</li>
+          <li style="margin-bottom: 3px;"><strong>Round 2 (Dual-Track Enquiries):</strong> Differentiated choice between guided PEE/PEEL Structure Strips (Track A) or independent exam conditions (Track B) targeting Grades 7–9.</li>
           <li style="margin-bottom: 3px;"><strong>Round 3 (Exam Simulation):</strong> Timed 55-minute assessment trial replicating exact Edexcel mark scheme standards.</li>
         </ul>
       </div>
 
       <div class="col-card">
-        <div class="sub-heading" style="margin-top: 0;">Specification-Specific Scaffolding Rules</div>
+        <div class="sub-heading" style="margin-top: 0;">Specification-Specific PEE/PEEL Structure Strips</div>
         <ul style="font-size: 8.2pt; padding-left: 14px; margin: 0; color: #334155;">
           <li style="margin-bottom: 3px;"><strong>Paper 1 Western Front (Section A):</strong> Feature questions exist <em>strictly</em> as two separate 2-mark questions: Q1(a) [2m] and Q1(b) [2m].</li>
           <li style="margin-bottom: 3px;"><strong>Paper 2 Early Elizabethan England:</strong> Feature questions strictly structured as two distinct 2-mark questions: Q1(a) [2m] and Q1(b) [2m].</li>
@@ -584,7 +584,7 @@ const htmlContent = `<!DOCTYPE html>
       </div>
     </div>
 
-    <div class="sub-heading">Source Provenance Scaffolding ('How Useful' Questions)</div>
+    <div class="sub-heading">Source Provenance Prompts & Structure Strips ('How Useful' Questions)</div>
     <p style="font-size: 8.2pt;">
       Source provenance is the single most common stumbling block for GCSE candidates. In all source-utility assessments, the department embeds explicit <strong>Provenance Clue Boxes</strong> prompting students to dissect:
     </p>
@@ -753,7 +753,7 @@ const htmlContent = `<!DOCTYPE html>
         </tr>
         <tr>
           <td><span class="badge-green">Emerging (EM)</span></td>
-          <td>Fragmented knowledge, requires frequent scaffolding to complete tasks.</td>
+          <td>Fragmented knowledge, requires frequent PEE/PEEL Structure Strips to complete tasks.</td>
           <td><strong>10% – 29%</strong></td>
           <td><strong>Grades 1 – 2</strong></td>
         </tr>

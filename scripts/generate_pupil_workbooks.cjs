@@ -3089,11 +3089,11 @@ allDirs.forEach((unitId) => {
             html += `</div>`;
 
             if (lesson.extended.provenance_clue) {
-              html += `<div style="margin-top: 10px; margin-bottom: 12px; padding: 10px 14px; border: 1px solid #bfdbfe; border-radius: 6px; background: #eff6ff;"><strong style="color: #1e3a8a;">Provenance Scaffolding:</strong><p style="margin: 4px 0 0 0; color: #1e40af; font-style: italic;">${formatText(lesson.extended.provenance_clue)}</p></div>`;
+              html += `<div style="margin-top: 10px; margin-bottom: 12px; padding: 10px 14px; border: 1px solid #bfdbfe; border-radius: 6px; background: #eff6ff;"><strong style="color: #1e3a8a;">Provenance PEE/PEEL Structure Strip:</strong><p style="margin: 4px 0 0 0; color: #1e40af; font-style: italic;">${formatText(lesson.extended.provenance_clue)}</p></div>`;
             }
             if (lesson.extended.hints && lesson.extended.hints.length > 0) {
               html += `<div style="margin-top: 10px; margin-bottom: 15px; padding: 12px 16px; background: #f0fdf4; border: 2px solid #22c55e; border-radius: 8px;">`;
-              html += `<strong style="color: #166534; font-size: 10.5pt;">Scaffolding & Hints:</strong>`;
+              html += `<strong style="color: #166534; font-size: 10.5pt;">PEE/PEEL Structure Strip & Hints:</strong>`;
               html += `<ul style="margin: 6px 0 0 0; padding-left: 20px; color: #15803d; font-size: 9.5pt;">`;
               lesson.extended.hints.forEach((hint) => {
                 html += `<li style="margin-bottom: 3px;">${formatText(hint)}</li>`;
@@ -3510,7 +3510,7 @@ allDirs.forEach((unitId) => {
               scaffoldBoxHtml += `
                 <div style="margin: 8px 0 10px 0; border: 1.5px solid #0284c7; border-radius: 6px; background: #f0f9ff; padding: 8px 12px; page-break-inside: avoid;">
                   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; border-bottom: 1px solid #bae6fd; padding-bottom: 4px;">
-                    <span style="font-weight: 800; font-size: 8.5pt; color: #0369a1; text-transform: uppercase; letter-spacing: 0.5px;">🎯 Edexcel 4-Mark Consequence Formula Stamp</span>
+                    <span style="font-weight: 800; font-size: 8.5pt; color: #0369a1; text-transform: uppercase; letter-spacing: 0.5px;">🎯 Edexcel 4-Mark Consequence PEE Structure Strip</span>
                     <span style="background: #0284c7; color: white; font-size: 7.5pt; font-weight: bold; padding: 1px 6px; border-radius: 8px;">[4 marks &bull; 5 mins]</span>
                   </div>
                   <div style="display: grid; grid-template-columns: auto 1fr; gap: 4px 8px; font-size: 7.8pt; line-height: 1.3; color: #0f172a;">
@@ -3544,7 +3544,7 @@ allDirs.forEach((unitId) => {
                     ${sc.guidance ? `<div style="font-style: italic; color: #475569; margin-bottom: 6px;">${sc.guidance}</div>` : ''}
                     <div style="margin-bottom: 6px;">${stepsText}</div>
                     ${startersText ? `<div style="margin-top: 4px; border-top: 1px dashed #cbd5e1; padding-top: 4px; color: #1e40af;"><strong>Sentence Starters:</strong><br>${startersText}</div>` : ''}
-                    ${connectivesText ? `<div style="margin-top: 4px; color: #64748b;"><strong>Causal Connectives:</strong> ${connectivesText}</div>` : ''}
+                    ${connectivesText ? `<div style="margin-top: 4px; color: #64748b;"><strong>Causal Connective Bank:</strong> ${connectivesText}</div>` : ''}
                   </div>
                 </div>
               `;

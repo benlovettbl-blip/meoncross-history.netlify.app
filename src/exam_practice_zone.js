@@ -102,7 +102,7 @@ export function getStructureStrip(questionObj, marks, unitId = '') {
     /explain (?:one|two) consequence/i.test(qText) ||
     ((qNum.includes('1(A)') || qNum.includes('1(B)')) && unitId === 'cme_new')
   ) {
-    return `<strong>4-Mark Consequence Question Structure Strip:</strong>
+    return `<strong>4-Mark Consequence PEE Structure Strip:</strong>
 <div style="font-size: 0.9rem; margin-top: 4px; color: #475569; font-style: italic;">Edexcel Paper 2 specification format: Single direct consequence with detailed historical causation.</div>
 <ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
   <li><strong>Identify &amp; State [1–2 Marks]:</strong> State one clear, historically accurate consequence directly resulting from the event. Name specific individuals, organizations, dates, or territories.</li>
@@ -550,10 +550,10 @@ export function renderExamPracticeZone(container, unitData, initialQuestion = nu
         
         <div id="epz-q-images" style="display: none; margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px;"></div>
 
-        <div id="epz-q-provenance" style="display: none; margin-top: 15px; padding: 15px; background: #fef08a; border-left: 5px solid #ca8a04; color: #854d0e; font-size: 1.1rem; border-radius: 8px;"><i class="fa-solid fa-lightbulb"></i> <strong>Scaffolding:</strong> <span id="epz-q-provenance-text"></span></div>
+        <div id="epz-q-provenance" style="display: none; margin-top: 15px; padding: 15px; background: #fef08a; border-left: 5px solid #ca8a04; color: #854d0e; font-size: 1.1rem; border-radius: 8px;"><i class="fa-solid fa-lightbulb"></i> <strong>PEE/PEEL Structure Strip &amp; Clues:</strong> <span id="epz-q-provenance-text"></span></div>
 
         <div style="margin-top: 35px; display: flex; gap: 15px; flex-wrap: wrap;">
-          <button id="epz-hint-btn" class="main-btn epz-btn" style="display: none; background: linear-gradient(135deg, #f59e0b, #ea580c); color: white; padding: 12px 24px; font-size: 1.1rem; border: none; border-radius: 8px; font-weight: 600;"><i class="fa-solid fa-lightbulb"></i> Structure Strip Hint</button>
+          <button id="epz-hint-btn" class="main-btn epz-btn" style="display: none; background: linear-gradient(135deg, #f59e0b, #ea580c); color: white; padding: 12px 24px; font-size: 1.1rem; border: none; border-radius: 8px; font-weight: 600;"><i class="fa-solid fa-lightbulb"></i> PEE/PEEL Structure Strip</button>
           <button id="epz-wagoll-btn" class="main-btn epz-btn" style="display: none; background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 12px 24px; font-size: 1.1rem; border: none; border-radius: 8px; font-weight: 600;"><i class="fa-solid fa-star"></i> Show Model Answer</button>
         </div>
 
@@ -910,7 +910,7 @@ export function renderExamPracticeZone(container, unitData, initialQuestion = nu
     hintBtn.style.display = 'block';
     if (currentQuestion.structure_strip || currentQuestion.scaffolding) {
       let strip = currentQuestion.structure_strip || currentQuestion.scaffolding;
-      let stripHtml = `<strong>Scaffolding / Structure Strip:</strong><br><br>`;
+      let stripHtml = `<strong>PEE/PEEL Structure Strip &amp; Causal Connective Bank:</strong><br><br>`;
       if (typeof strip === 'string') {
         stripHtml += strip.replace(/\\n/g, '<br>');
       } else if (Array.isArray(strip)) {

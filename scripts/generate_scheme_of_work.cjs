@@ -684,7 +684,7 @@ function generateSOWHTML(db, yearGroup, unitIds) {
             <div style="margin-bottom: 14px;">
                 <h2 style="color: #1b365d; border-bottom: 2px solid #facc15; padding-bottom: 5px; font-size: 13pt;">3. Adaptive Teaching, Dual Coding &amp; Inclusion</h2>
                 <p style="margin-top: 0; font-size: 8.5pt; color: #475569; line-height: 1.4;">
-                    Pupils work through bespoke printed A4 workbooks closely paired with our digital learning portal. Standardized 3-tier scaffolding (Bronze sentence starters, Silver connectives, Gold historiographical analysis), consistent dual coding, and digital accessibility features offload working memory, ensuring all SEND and lower-attaining pupils achieve ambitious historical progress with zero cognitive overload.
+                    Pupils work through bespoke printed A4 workbooks closely paired with our digital learning portal. Standardized PEE/PEEL Structure Strips, Causal Connective Banks, consistent dual coding, and digital accessibility features offload working memory, ensuring all SEND and lower-attaining pupils achieve ambitious historical progress with zero cognitive overload.
                 </p>
             </div>
         </div>

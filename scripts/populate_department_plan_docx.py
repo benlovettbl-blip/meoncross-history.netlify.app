@@ -2,8 +2,11 @@ import zipfile
 import xml.etree.ElementTree as ET
 import os
 
-DOCX_PATH = r"G:\My Drive\AAMX\Dep File\Development Plan Template History Dep.docx"
-COMPLETED_PATH = r"G:\My Drive\AAMX\Dep File\Development Plan History Dep 2026-27 (Completed).docx"
+WORKING_DIR = r"G:\My Drive\AAMX\Dep File\00_Department_Admin_and_Policies\Working Documents & Templates"
+DOCX_PATH = os.path.join(WORKING_DIR, "Development Plan Template History Dep.docx")
+if not os.path.exists(DOCX_PATH):
+    DOCX_PATH = r"G:\My Drive\AAMX\Dep File\Development Plan Template History Dep.docx"
+COMPLETED_PATH = os.path.join(WORKING_DIR, "Development Plan History Dep 2026-27 (Completed).docx")
 
 W_NS = "http://schemas.openxmlformats.org/wordprocessingml/2006/main"
 ET.register_namespace('w', W_NS)
@@ -139,11 +142,11 @@ def update_docx():
         ("(Linked to SIP Strategic Aim 1 & 2: Inclusive Practice & High Expectations)", False, True, "18")
     ])
     set_cell_content(t2_rows[4].findall(f".//{{{W_NS}}}tc")[1], [
-        ("1. Use printed workbooks paired with digital resources to support SEND pupils with 3-tier scaffolding (Bronze sentence starters, Silver connectives, Gold evaluation).", False, False, "18"),
+        ("1. Use printed workbooks paired with digital resources to support SEND pupils with PEE/PEEL Structure Strips and Causal Connective Banks.", False, False, "18"),
         ("2. Utilize digital accessibility tools (SEN dyslexia mode, adjustable read-aloud speed, visual dual coding) to offload working memory.", False, False, "18")
     ])
     set_cell_content(t2_rows[4].findall(f".//{{{W_NS}}}tc")[2], [
-        ("• SEND pupils access curriculum tasks with appropriate scaffolding.", False, False, "18"),
+        ("• SEND pupils access curriculum tasks with targeted PEE/PEEL Structure Strips and Causal Connective Banks.", False, False, "18"),
         ("• Reduced teacher planning workload through pre-formatted, standardized resources.", False, False, "18")
     ])
     set_cell_content(t2_rows[4].findall(f".//{{{W_NS}}}tc")[3], [

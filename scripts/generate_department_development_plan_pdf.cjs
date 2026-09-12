@@ -121,13 +121,13 @@ const ddpData = [
     sipBadge: 'SIP Strategic Aim 1 & 2',
     sipBadgeSub: 'Inclusive Practice & High Expectations',
     sipBadgeColor: '#b45309',
-    aim: 'Ensure all SEND and lower-attaining pupils access challenging historical content effectively through embedded structural scaffolding and dual coding, with zero extra teacher planning workload.',
+    aim: 'Ensure all SEND and lower-attaining pupils access challenging historical content effectively through embedded PEE/PEEL Structure Strips, Causal Connective Banks, and dual coding, with zero extra teacher planning workload.',
     actions: [
-      'Embed structured writing scaffolds directly into printed workbooks and revision guides (model sentence starters, causal connective banks, and step-by-step PEE/PEEL structure strips) to build written fluency and independence.',
+      'Embed PEE/PEEL Structure Strips and Causal Connective Banks directly into printed workbooks and revision guides (model sentence starters, causal connectives, and step-by-step paragraph frameworks) to build written fluency and independence.',
       'Utilize digital accessibility tools (built-in SEN mode, adjustable read-aloud speed, visual dual coding) to offload working memory.',
     ],
     criteria: [
-      'SEND pupils access curriculum tasks successfully with appropriate scaffolding.',
+      'SEND pupils access curriculum tasks successfully with targeted PEE/PEEL Structure Strips and Causal Connective Banks.',
       'Teacher planning workload minimized through standardized, pre-formatted resources.',
     ],
     evidenceLinks: [
