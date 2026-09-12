@@ -121,9 +121,9 @@ const ddpData = [
     sipBadge: 'SIP Strategic Aim 1 & 2',
     sipBadgeSub: 'Inclusive Practice & High Expectations',
     sipBadgeColor: '#b45309',
-    aim: 'Ensure all SEND and lower-attaining pupils access challenging historical content effectively through pre-formatted dual coding and 3-tier scaffolding, with zero extra paper planning.',
+    aim: 'Ensure all SEND and lower-attaining pupils access challenging historical content effectively through embedded structural scaffolding and dual coding, with zero extra teacher planning workload.',
     actions: [
-      'Use printed workbooks paired with digital resources to support SEND pupils with 3-tier scaffolding (Bronze starters, Silver connectives, Gold evaluation).',
+      'Embed structured writing scaffolds directly into printed workbooks and revision guides (model sentence starters, causal connective banks, and step-by-step PEE/PEEL structure strips) to build written fluency and independence.',
       'Utilize digital accessibility tools (built-in SEN mode, adjustable read-aloud speed, visual dual coding) to offload working memory.',
     ],
     criteria: [

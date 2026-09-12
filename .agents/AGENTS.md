@@ -140,10 +140,10 @@ Whenever authoring or refactoring lesson content across KS3 and GCSE units, you 
    - Sub-indices (`Source A1`, `Source A2`, `Source B2`) are STRICTLY FORBIDDEN.
    - Zero duplicate letters and zero skips per lesson.
    - Geographical reference maps must be labeled `Reference Map: ...` or `Map A: ...` to avoid colliding with primary sources.
-4. **Three-Tier Differentiated Scaffolding**:
-   - Bronze: Sentence starters and core recall.
-   - Silver: Analytical conjunctions (`Consequently`, `Furthermore`, `This directly resulted in...`).
-   - Gold: Historiographical evaluation, complex causation, and balance of power.
+4. **Structured Writing Scaffolding**:
+   - Model sentence starters and evidence stems to support initial access and recall.
+   - Analytical causal connectives (`Consequently`, `Furthermore`, `This directly resulted in...`) to develop historical explanation.
+   - Evaluative criteria prompts to structure high-level judgements and historiographical balance.
    - Every task must include a rigorous, detailed model answer (zero placeholders).
 5. **Pedagogical Recall Isolation ("Do Now" Bell-Ringers)**:
    - "Do Now" activities must strictly test recall from *prior* lessons or units. They must NEVER test content from the current lesson.
