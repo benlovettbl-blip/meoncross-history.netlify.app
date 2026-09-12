@@ -115,9 +115,9 @@ function buildTimelineHTML(unitData) {
         'SS Exodus',
         'UN Resolution 181',
         'IDF Founded',
-        'Law of Return (1950)',
-        'Al-Nakba (700k Refugees)',
-        '1949 Green Line Armistice',
+        '1949 Armistice Agreements',
+        'Territorial Changes',
+        '700,000 Palestinian Refugees',
       ],
       milestones: [
         {
@@ -196,17 +196,17 @@ function buildTimelineHTML(unitData) {
         },
         {
           date: '1948–1949',
-          title: 'The Palestinian Nakba, Law of Return & The 1949 Armistice Green Line',
-          specTag: 'Permanent Displacement & The Green Line',
+          title: 'The Results of the 1948–49 War: Territorial Changes & Refugee Crisis',
+          specTag: 'Territorial Changes & The Refugee Problem',
           image: resolveSourceImg(3, 'refugees', '/images/cme_palestinian_refugees_1948.jpg'),
           caption:
-            'Palestinian refugees fleeing their ancestral villages during the 1948 Nakba (Catastrophe).',
+            'Palestinian refugees fleeing during the 1948–49 war; over 700,000 were displaced from their homes.',
           trigger:
-            'Intense military fighting, Plan Dalet clearing operations, and panic following massacres (e.g. Deir Yassin).',
+            'Arab military disunity and the June 1948 UN truce enabled the newly formed IDF to rearm with foreign weapons and launch decisive counter-offensives.',
           action:
-            'Over 700,000 Palestinian Arabs were expelled or fled into exile (known as *Al-Nakba*); Israel passed the 1950 **Law of Return** for worldwide Jewish immigration.',
+            'The 1949 Armistice Agreements redrew borders: Israel expanded to hold 78% of Mandatory Palestine; Jordan annexed the West Bank and Egypt held Gaza.',
           consequence:
-            'UN Armistice Agreements established the **Green Line**: Israel held 78% of Palestine; Gaza held by Egypt; West Bank annexed by Jordan; refugee crisis became permanent.',
+            'Over 700,000 Palestinian Arabs became refugees in neighbouring Arab states; Israel refused their return, while Arab states refused permanent integration, creating an enduring crisis.',
         },
       ],
       narrativeChain: [
@@ -227,8 +227,8 @@ function buildTimelineHTML(unitData) {
           desc: 'May 1948 declaration of Israel triggered invasion by 5 Arab armies.',
         },
         {
-          title: '5. Nakba & Green Line',
-          desc: 'IDF victory expanded borders to 78%, creating 700,000 refugees and the 1949 armistice line.',
+          title: '5. Results of 1948–49 War',
+          desc: '1949 armistice agreements gave Israel 78% of territory, creating 700,000 displaced Palestinian refugees.',
         },
       ],
       glossary: [
@@ -241,12 +241,12 @@ function buildTimelineHTML(unitData) {
           def: 'Administrative authority granted by the League of Nations to Britain to govern Palestine (1922–1948).',
         },
         {
-          term: 'Al-Nakba',
-          def: 'Arabic for "The Catastrophe": the expulsion and flight of 700,000+ Palestinians during the 1948 war.',
+          term: 'Armistice Agreements',
+          def: 'The 1949 treaties establishing formal ceasefire borders between Israel and Egypt, Jordan, Lebanon, and Syria.',
         },
         {
-          term: 'Green Line',
-          def: 'The 1949 armistice border separating Israel from Jordanian-held West Bank and Egyptian-held Gaza.',
+          term: 'Refugee Problem',
+          def: 'The displacement of over 700,000 Palestinian Arabs who fled or were expelled during the 1948–49 war.',
         },
       ],
     },
