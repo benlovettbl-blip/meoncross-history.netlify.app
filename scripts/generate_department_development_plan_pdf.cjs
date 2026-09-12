@@ -30,10 +30,25 @@ const ddpData = [
     actions: [
       'Embed revised Edexcel exam question formats into teaching: 4-mark Consequence stamps (PEE), 8-mark Narrative flowcharts, and 8-mark Importance frameworks in Conflict in the Middle East and Elizabethan England.',
       'Use low-stakes recall quizzes (Do Nows and Flashcard Vault) at the start of lessons to reinforce core knowledge and retention.',
+      'Deploy 36-page Visual Revision & Exam Guides across Paper 1 (Medicine) and Paper 3 (USA) with balanced 4-4-4-4 question mastery.',
     ],
     criteria: [
       'Consistent student completion of structured exam practice in workbooks.',
       'Revised Edexcel exam question frameworks (4-mark Consequence, 8-mark Narrative, 8-mark Importance) embedded in KS4 lessons.',
+    ],
+    evidenceLinks: [
+      {
+        title: 'USA Exam & Revision Guide (36pp)',
+        url: 'https://meoncross-history.netlify.app/pdfs/edexcel_usa_visual_revision_and_exam_guide.pdf',
+      },
+      {
+        title: 'Medicine Exam & Revision Guide (36pp)',
+        url: 'https://meoncross-history.netlify.app/pdfs/edexcel_medicine_visual_revision_and_exam_guide.pdf',
+      },
+      {
+        title: 'Department Marking & Feedback Policy',
+        url: 'https://meoncross-history.netlify.app/pdfs/history_marking_and_feedback_policy_v2.pdf',
+      },
     ],
     dates: 'Ongoing 2026–27',
     owner: 'BL',
@@ -52,6 +67,20 @@ const ddpData = [
       'Department Schemes of Work published and followed across all year groups.',
       'Pupils demonstrate secure chronological understanding and positive engagement with local historical context.',
     ],
+    evidenceLinks: [
+      {
+        title: 'Whole-School Curriculum Overview (PDF)',
+        url: 'https://meoncross-history.netlify.app/pdfs/whole_school_curriculum_overview.pdf',
+      },
+      {
+        title: '5-Year Chronological Sequence Map',
+        url: 'https://meoncross-history.netlify.app/pdfs/curriculum_overview_tabular.pdf',
+      },
+      {
+        title: 'Henry Cort Funtley Primary Source Pack',
+        url: 'https://meoncross-history.netlify.app/pdfs/henry_cort_funtley_primary_source_pack.pdf',
+      },
+    ],
     dates: 'Ongoing 2026–27',
     owner: 'BL',
   },
@@ -63,12 +92,26 @@ const ddpData = [
     aim: 'Broaden pupil horizons and foster historical curiosity, strategic thinking, and leadership through extra-curricular activities and experiential field trips.',
     actions: [
       'Run the weekly Meoncross Chess Club, encouraging house participation, ladder progression, and tactical skill.',
-      'Plan and deliver the biannual GCSE Ypres Battlefield Tour to support Paper 1 Western Front depth study.',
+      'Plan and deliver the GCSE Ypres Battlefield Study Visit (October 2026) to support Paper 1 Western Front depth study.',
       'Support interested pupils in submitting research entries to the annual Hampshire Archives Local History Competition.',
     ],
     criteria: [
       'Regular pupil attendance and house engagement at Chess Club.',
-      'Successful delivery of the 2026 GCSE Ypres Battlefield Tour.',
+      'Successful delivery of the October 2026 Ypres Battlefield Study Visit.',
+    ],
+    evidenceLinks: [
+      {
+        title: 'Ypres Pupil Field Guide (32pp)',
+        url: 'https://meoncross-history.netlify.app/pdfs/ypres_1914_1918_pupil_field_guide.pdf',
+      },
+      {
+        title: 'Ypres 2026 Parent Information Pack',
+        url: 'https://meoncross-history.netlify.app/pdfs/ypres_2026_parent_information_pack_v2.pdf',
+      },
+      {
+        title: 'Chess Club QR Board Stand Resources',
+        url: 'https://meoncross-history.netlify.app/pdfs/meoncross_chess_board_qr_stands.pdf',
+      },
     ],
     dates: 'Ongoing 2026–27',
     owner: 'BL',
@@ -87,6 +130,16 @@ const ddpData = [
       'SEND pupils access curriculum tasks successfully with appropriate scaffolding.',
       'Teacher planning workload minimized through standardized, pre-formatted resources.',
     ],
+    evidenceLinks: [
+      {
+        title: 'Live History Hub (Digital SEN Mode)',
+        url: 'https://meoncross-history.netlify.app/?view=booklet&unit=eee',
+      },
+      {
+        title: 'Sample A4 Differentiated Workbook (EEE)',
+        url: 'https://meoncross-history.netlify.app/pdfs/eee_pupil_workbook_KT1_FINAL_V17.pdf',
+      },
+    ],
     dates: 'Embedded in practice',
     owner: 'BL',
   },
@@ -103,6 +156,12 @@ const ddpData = [
     criteria: [
       'Key topics recorded on Gridmaker as required for whole-school auditing.',
       'Pupils engage thoughtfully with ethical and moral questions during classroom discussions.',
+    ],
+    evidenceLinks: [
+      {
+        title: 'Gridmaker SMSC Curriculum Mapping',
+        url: 'https://meoncross-history.netlify.app/pdfs/curriculum_overview_tabular.pdf',
+      },
     ],
     dates: 'Termly as needed',
     owner: 'BL',
@@ -125,12 +184,12 @@ function generateHTML() {
       padding: 0;
       background: #ffffff;
       color: #0f172a;
-      font-size: 8.5pt;
-      line-height: 1.45;
+      font-size: 8.2pt;
+      line-height: 1.35;
     }
 
     .page {
-      padding: 24px 30px;
+      padding: 14px 22px;
       page-break-after: always;
       position: relative;
     }
@@ -140,24 +199,24 @@ function generateHTML() {
     .header {
       background: linear-gradient(135deg, #1b365d 0%, #0f172a 100%);
       color: #ffffff;
-      padding: 16px 22px;
-      border-radius: 8px;
-      border-bottom: 4px solid #facc15;
+      padding: 10px 18px;
+      border-radius: 6px;
+      border-bottom: 3px solid #facc15;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 14px;
+      margin-bottom: 8px;
     }
     .header h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 19pt;
-      margin: 0 0 3px 0;
+      font-size: 16pt;
+      margin: 0 0 1px 0;
       color: #ffffff;
       letter-spacing: 0.5px;
     }
     .header p {
       margin: 0;
-      font-size: 9pt;
+      font-size: 8.4pt;
       color: #93c5fd;
       font-weight: 500;
     }
@@ -165,25 +224,25 @@ function generateHTML() {
     .meta-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-      margin-bottom: 14px;
+      gap: 8px;
+      margin-bottom: 8px;
     }
     .meta-box {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
-      border-radius: 6px;
-      padding: 7px 10px;
+      border-radius: 5px;
+      padding: 4px 8px;
     }
     .meta-label {
-      font-size: 7pt;
+      font-size: 6.5pt;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: #64748b;
       font-weight: 700;
-      margin-bottom: 2px;
+      margin-bottom: 1px;
     }
     .meta-val {
-      font-size: 9pt;
+      font-size: 8.2pt;
       font-weight: 700;
       color: #1b365d;
     }
@@ -192,7 +251,7 @@ function generateHTML() {
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
       table-layout: fixed;
     }
     th {
@@ -200,95 +259,141 @@ function generateHTML() {
       color: #ffffff;
       font-family: 'Outfit', sans-serif;
       font-weight: 700;
-      font-size: 8.5pt;
+      font-size: 7.8pt;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      padding: 8px 12px;
+      padding: 6px 8px;
       text-align: left;
       border: 1px solid #1b365d;
     }
     td {
-      padding: 9px 12px;
+      padding: 6px 8px;
       border: 1px solid #cbd5e1;
       vertical-align: top;
-      font-size: 8.2pt;
-      line-height: 1.4;
+      font-size: 7.6pt;
+      line-height: 1.32;
       color: #1e293b;
     }
     tr:nth-child(even) td {
       background-color: #f8fafc;
     }
 
-    .col-obj { width: 24%; }
-    .col-act { width: 36%; }
-    .col-crt { width: 24%; }
-    .col-dat { width: 11%; font-weight: 600; color: #1e40af; }
+    .col-obj { width: 23%; }
+    .col-act { width: 34%; }
+    .col-crt { width: 27%; }
+    .col-dat { width: 11%; font-weight: 600; color: #1e40af; font-size: 7.4pt; }
     .col-own { width: 5%; text-align: center; font-weight: 800; color: #1e3a8a; }
 
     .obj-title {
       font-family: 'Playfair Display', serif;
       font-weight: 700;
-      font-size: 9.5pt;
+      font-size: 8.8pt;
       color: #1b365d;
-      margin-bottom: 4px;
-      line-height: 1.25;
+      margin-bottom: 2px;
+      line-height: 1.22;
     }
     .sip-badge {
       display: inline-block;
-      font-size: 6.8pt;
+      font-size: 6.4pt;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      padding: 2px 7px;
-      border-radius: 4px;
+      padding: 1.5px 5px;
+      border-radius: 3px;
       color: #ffffff;
-      margin-bottom: 5px;
+      margin-bottom: 3px;
     }
     .obj-aim {
       color: #475569;
-      font-size: 7.8pt;
-      line-height: 1.35;
+      font-size: 7.2pt;
+      line-height: 1.28;
     }
 
     ol.actions-list {
       margin: 0;
-      padding-left: 14px;
+      padding-left: 12px;
     }
     ol.actions-list li {
-      margin-bottom: 5px;
+      margin-bottom: 3px;
     }
     ul.criteria-list {
       margin: 0;
-      padding-left: 12px;
+      padding-left: 10px;
     }
     ul.criteria-list li {
-      margin-bottom: 4px;
+      margin-bottom: 2.5px;
+    }
+
+    /* Executive Evidence Badges / Micro-links */
+    .evidence-box {
+      margin-top: 4px;
+      padding-top: 4px;
+      border-top: 1px dashed #cbd5e1;
+    }
+    .evidence-tag {
+      display: block;
+      font-size: 6.2pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #64748b;
+      margin-bottom: 2px;
+    }
+    .evidence-chips-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .evidence-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 5px;
+      padding: 1.5px 5px;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-left: 3px solid #1b365d;
+      border-radius: 3px;
+      text-decoration: none;
+      font-size: 6.5pt;
+      font-weight: 600;
+      color: #1e3a8a;
+    }
+    .evidence-chip:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+      border-left-color: #0284c7;
+    }
+    .evidence-chip-arrow {
+      font-size: 6.8pt;
+      color: #0284c7;
+      font-weight: 800;
     }
 
     /* Executive Workload & Pedagogical Footnote */
     .workload-card {
       background: #fdfdfd;
       border: 1px solid #cbd5e1;
-      border-radius: 6px;
-      padding: 10px 14px;
-      margin-top: 14px;
+      border-radius: 5px;
+      padding: 7px 10px;
+      margin-top: 8px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      font-size: 7.8pt;
+      gap: 10px;
+      font-size: 7.2pt;
       color: #475569;
     }
     .workload-pillar strong {
       display: block;
       color: #1b365d;
-      font-size: 8.2pt;
-      margin-bottom: 3px;
+      font-size: 7.6pt;
+      margin-bottom: 2px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Single Page / Clean 2-Page Format -->
+  <!-- Page 1: Priorities 1-3 -->
   <div class="page">
     <div class="header">
       <div>
@@ -296,9 +401,12 @@ function generateHTML() {
         <p>Department Development Plan (DDP) 2026–2027</p>
       </div>
       <div style="text-align: right;">
-        <span style="background: #facc15; color: #1b365d; font-weight: 800; padding: 5px 12px; border-radius: 4px; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.5px;">
+        <span style="background: #facc15; color: #1b365d; font-weight: 800; padding: 3px 8px; border-radius: 3px; font-size: 7.6pt; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block;">
           Operational Master
         </span>
+        <div style="margin-top: 3px;">
+          <a href="https://meoncross-history.netlify.app" target="_blank" style="color: #93c5fd; font-size: 7.0pt; text-decoration: none; font-weight: 600;">Live Portal: meoncross-history.netlify.app ↗</a>
+        </div>
       </div>
     </div>
 
@@ -351,6 +459,27 @@ function generateHTML() {
               <ul class="criteria-list">
                 ${row.criteria.map((c) => `<li>${c}</li>`).join('')}
               </ul>
+              ${
+                row.evidenceLinks && row.evidenceLinks.length > 0
+                  ? `
+                <div class="evidence-box">
+                  <span class="evidence-tag">Verified Department Evidence:</span>
+                  <div class="evidence-chips-list">
+                    ${row.evidenceLinks
+                      .map(
+                        (link) => `
+                      <a href="${link.url}" target="_blank" class="evidence-chip" title="Click to view published digital resource">
+                        <span>${link.title}</span>
+                        <span class="evidence-chip-arrow">↗</span>
+                      </a>
+                    `,
+                      )
+                      .join('')}
+                  </div>
+                </div>
+              `
+                  : ''
+              }
             </td>
             <td class="col-dat">${row.dates}</td>
             <td class="col-own">${row.owner}</td>
@@ -362,13 +491,14 @@ function generateHTML() {
     </table>
   </div>
 
+  <!-- Page 2: Priorities 4-5 -->
   <div class="page">
-    <div class="header" style="margin-bottom: 12px; padding: 12px 20px;">
+    <div class="header" style="margin-bottom: 8px; padding: 8px 16px;">
       <div>
-        <h1 style="font-size: 15pt;">Meoncross School History Department Development Plan</h1>
-        <p style="font-size: 8.5pt;">Priorities 4–5: Adaptive Teaching &amp; SMSC / British Values</p>
+        <h1 style="font-size: 13pt;">Meoncross School History Department Development Plan</h1>
+        <p style="font-size: 7.8pt;">Priorities 4–5: Adaptive Teaching &amp; SMSC / British Values</p>
       </div>
-      <span style="background: rgba(255,255,255,0.15); color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 8pt; font-weight: 600;">
+      <span style="background: rgba(255,255,255,0.15); color: #fff; padding: 3px 6px; border-radius: 3px; font-size: 7.4pt; font-weight: 600;">
         Page 2 of 2
       </span>
     </div>
@@ -403,6 +533,27 @@ function generateHTML() {
               <ul class="criteria-list">
                 ${row.criteria.map((c) => `<li>${c}</li>`).join('')}
               </ul>
+              ${
+                row.evidenceLinks && row.evidenceLinks.length > 0
+                  ? `
+                <div class="evidence-box">
+                  <span class="evidence-tag">Verified Department Evidence:</span>
+                  <div class="evidence-chips-list">
+                    ${row.evidenceLinks
+                      .map(
+                        (link) => `
+                      <a href="${link.url}" target="_blank" class="evidence-chip" title="Click to view published digital resource">
+                        <span>${link.title}</span>
+                        <span class="evidence-chip-arrow">↗</span>
+                      </a>
+                    `,
+                      )
+                      .join('')}
+                  </div>
+                </div>
+              `
+                  : ''
+              }
             </td>
             <td class="col-dat">${row.dates}</td>
             <td class="col-own">${row.owner}</td>
@@ -447,6 +598,7 @@ async function exportPDF() {
 
   try {
     const page = await browser.newPage();
+    await page.setViewport({ width: 1123, height: 794 });
     await page.goto(require('url').pathToFileURL(HTML_OUT_PUBLIC).href, {
       waitUntil: 'networkidle0',
     });
