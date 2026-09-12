@@ -42048,7 +42048,7 @@
             },
             {
               "title": "Act 4: The Historical Verdict: Location vs. Innovation & The Imperial Capital Debate",
-              "text": "<span class=\"para-ref\">[4.1]</span> When evaluating why the Funtley Ironworks succeeded in unlocking the Industrial Revolution, historians clash over two competing explanations. Proponents of <strong>Geographical Proximity</strong> argue that Cort's location near Fareham and Portsmouth Dockyard was the decisive factor. In an era before railway networks, moving heavy pig iron and coal overland was prohibitively expensive; Funtley offered navigable river transport via the Meon and Fareham Creek directly to Portsmouth—the single largest consumer of naval iron on Earth. Without this massive, guaranteed military customer on his doorstep, Cort would have lacked the financial incentive or trial facilities to develop his ideas.<br><br><span class=\"para-ref\">[4.2]</span> Conversely, proponents of <strong>Technological Innovation</strong> argue that geography was merely passive backdrop. Hundreds of ironworks existed near British ports, yet none could produce wrought iron from British pit coal. The Royal Navy had rejected British iron for over a century; only Cort's personal genius in mastering the chemical thermodynamics of the reverberatory furnace and automating the rolling mill solved the crisis. Furthermore, modern historians inject a broader global dimension into this debate: the <strong>Imperial Capital Nexus</strong>. The staggering wealth required to establish large-scale ironworks like Funtley was inextricably tied to Britain's colonial trade networks and the profits of the Transatlantic Slave Trade, which provided the liquid capital that funded 18th-century British financial institutions and industrial ventures.",
+              "text": "<span class=\"para-ref\">[4.1]</span> When evaluating why the Funtley Ironworks succeeded in unlocking the Industrial Revolution, historians clash over competing explanations. Proponents of <strong>Geographical Proximity</strong> argue that Cort's location near Fareham and Portsmouth Dockyard was the decisive factor. In an era before railway networks, moving heavy pig iron and coal overland was prohibitively expensive; Funtley offered navigable river transport via the Meon and Fareham Creek directly to Portsmouth—the single largest consumer of naval iron on Earth. Without this massive, guaranteed military customer on his doorstep, Cort would have lacked the financial incentive or trial facilities to develop his ideas.<br><br><span class=\"para-ref\">[4.2]</span> Conversely, proponents of <strong>Technological Innovation</strong> argue that geography was merely passive backdrop. Hundreds of ironworks existed near British ports, yet none could produce wrought iron from British pit coal. The Royal Navy had rejected British iron for over a century; only Cort's personal experimentation in mastering the chemical thermodynamics of the reverberatory furnace and automating the grooved rolling mill solved the crisis.<br><br><span class=\"para-ref\">[4.3]</span> <strong>The Atlantic Controversy: Jamaican Enslaved Metallurgists & Technological Appropriation:</strong> In 2023, a groundbreaking historical investigation by Dr Jenny Bulstrode (University College London) challenged the traditional \"lone English genius\" narrative. Bulstrode revealed that years before Cort's patents, an ironworks in Morant Bay, Jamaica (Reeder's Pen), operated by 76 enslaved Black metallurgists trafficked from West Africa—home to centuries of sophisticated metallurgy—was turning scrap into high-grade malleable iron using grooved rollers adapted from sugar cane mills, netting over £4,000 annually. In official records, owner John Reeder admitted he was \"quite ignorant of such a business,\" testifying that the enslaved Africans were \"perfect in every branch of the Iron Manufactory.\" In 1782, amid invasion panics and fears of an armed slave insurrection, the British military razed the foundry, and shipping records suggest equipment and scrap were transported to Portsmouth, where Cort struggled with Navy scrap contracts. While historians such as Oliver Jelf (2025) argue that Cort developed his puddling independently in Hampshire and dispute the shipping link, this fierce academic controversy highlights how the Industrial Revolution was inextricably intertwined with global Atlantic colonial networks and African technological agency.",
               "image": "/images/henry_cort.jpg",
               "image_alt": "Contemporary dedication engraving of Henry Cort as Tubal Cain",
               "image_caption": "Source D: Contemporary dedication portrait of Henry Cort, inscribed: “HENRY CORT: The Tubal Cain of our Century and of our Country, Dedicated to the Iron Trade of Great Britain” (British Museum). Contemporaries recognized Cort as an industrial patriarch who gave Britain mastership of iron.",
@@ -42058,20 +42058,23 @@
                   "question": "Enquiry Essay: \"To what extent was the success of Henry Cort at Funtley Ironworks driven more by geographical proximity to Portsmouth Dockyard than by technological innovation?\"",
                   "scaffolding": {
                     "structure_strip": [
-                      "PEE Paragraph 1 (Geography): Argue that location near Portsmouth Dockyard provided the vital customer, naval testing facilities, and Solent water transport.",
-                      "PEE Paragraph 2 (Innovation): Counter-argue that Cort's technological genius (puddling furnace and rolling mill) solved the chemical crisis that geography alone could never fix.",
-                      "Historiographical Verdict: Reach a balanced conclusion weighing whether geography provided the opportunity, but innovation provided the national transformation."
+                      "PEE Paragraph 1 (Geography & Naval Demand): Argue that location near Portsmouth Dockyard provided the vital customer, naval testing facilities, and Solent water transport [2.1, 4.1].",
+                      "PEE Paragraph 2 (Technological Innovation): Argue that Cort's chemical mastery of reverberatory thermodynamics at Funtley overcame the pig iron bottleneck [2.3, 4.2].",
+                      "PEE Paragraph 3 (The Atlantic Controversy): Evaluate Dr Bulstrode's thesis that grooved rolling was appropriated from 76 enslaved Black metallurgists at Morant Bay, Jamaica [4.3].",
+                      "Historiographical Verdict: Reach a nuanced conclusion weighing domestic innovation, naval state demand, and global colonial networks."
                     ],
                     "connective_bank": [
                       "On one hand, geographical proximity was essential because...",
                       "As evidenced in paragraph [2.1] and Source C...",
                       "This directly provided Cort with...",
-                      "Conversely, technological innovation was the decisive catalyst because...",
+                      "Conversely, technological innovation was a vital catalyst because...",
                       "As demonstrated in paragraph [2.3] and Source B...",
-                      "Ultimately, it is clear that while geography provided the strategic opportunity..."
+                      "However, this traditional narrative is complicated by recent scholarship...",
+                      "As highlighted in paragraph [4.3], Dr Jenny Bulstrode argues that...",
+                      "Ultimately, it is clear that Britain's industrial transformation was forged not in isolation, but through..."
                     ]
                   },
-                  "model_answer": "On one hand, geographical proximity to Portsmouth Dockyard was an indispensable condition for the success of Funtley Ironworks. In the late eighteenth century, transporting heavy materials overland was extraordinarily slow and costly; Funtley's position along the River Meon with tidal access to Fareham Creek allowed coal and iron to be barged directly into Portsmouth Harbour [2.2]. Furthermore, Portsmouth Dockyard was the largest industrial consumer of wrought iron on the planet, possessing the specialized master smiths, testing rigs, and naval capital necessary to conduct the decisive 1787 trials (Source C). Without this guaranteed military market on his doorstep, Cort would have lacked both the customer base and the institutional validation required to transform his experiments into national policy.<br><br>Conversely, it would be deeply mistaken to view location as the primary cause of his success. Hundreds of forge sites dotted the English coast, yet British iron remained universally despised as brittle \"pig iron\" for decades. The Royal Navy's problem was chemical, not logistical: pit coal contaminated iron with sulphur, and manual forge hammers were far too slow to meet wartime demand [1.3]. Only Henry Cort's technological genius in inventing the reverberatory puddling furnace (chemically burning off impurities with reflected heat) and the grooved rolling mill (automating the shaping process fifteen-fold) overcame this fundamental scientific barrier (Source B) [2.3]. Portsmouth Dockyard could not buy iron that did not exist; Cort's metallurgical innovation created the product that satisfied their needs.<br><br>Ultimately, while proximity to Portsmouth provided the strategic catalyst and guaranteed customer, technological innovation was the decisive factor. Location offered the economic opportunity, but it was Cort's metallurgical brilliance in mastering the chemistry of puddling that conquered the iron crisis, powered British naval supremacy at Trafalgar, and laid the foundations of the global Industrial Revolution."
+                  "model_answer": "On one hand, geographical proximity to Portsmouth Dockyard was an indispensable condition for the success of Funtley Ironworks. In the late eighteenth century, transporting heavy materials overland was extraordinarily slow and costly; Funtley's position along the River Meon with tidal access to Fareham Creek allowed coal and iron to be barged directly into Portsmouth Harbour [2.2]. Furthermore, Portsmouth Dockyard was the largest industrial consumer of wrought iron on the planet, possessing the specialized master smiths, testing rigs, and naval capital necessary to conduct the decisive 1787 trials (Source C). Without this guaranteed military market on his doorstep, Cort would have lacked both the customer base and the institutional validation required to transform his experiments into national policy.<br><br>Conversely, traditional industrial historians argue that technological innovation was the true catalyst. Hundreds of forge sites dotted the English coast, yet British iron remained brittle \"pig iron\" for decades. The Royal Navy's problem was chemical, not logistical: pit coal contaminated iron with sulphur, and manual forge hammers were far too slow to meet wartime demand [1.3]. Cort's chemical mastery in designing the reverberatory puddling furnace (burning off impurities with reflected heat) and automating production with grooved rollers fifteen-fold overcame this fundamental barrier (Source B) [2.3]. Portsmouth Dockyard could not purchase iron that did not exist; domestic metallurgy created the product that satisfied naval defence.<br><br>However, this traditional English narrative is fundamentally challenged by the Atlantic controversy revealed by Dr Jenny Bulstrode (2023) [4.3]. Evidence demonstrates that years prior to Cort's patents, seventy-six enslaved Black metallurgists at Morant Bay, Jamaica, were already transforming scrap metal into high-grade iron using grooved rollers adapted from sugar cane mills. Owner John Reeder admitted his own ignorance, attesting that his enslaved workforce was \"perfect in every branch of the Iron Manufactory.\" When the Jamaican foundry was dismantled by the British military in 1782, equipment was shipped to Portsmouth precisely when Cort was struggling with naval scrap contracts. While historians like Oliver Jelf debate the direct chain of transmission, this controversy proves that the \"Cort process\" cannot be understood purely as an isolated Hampshire invention, but was deeply entangled with imperial networks and the uncredited technological intellectual property of enslaved Africans.<br><br>Ultimately, Britain's iron breakthrough was not the work of a lone English genius. It was an imperial synthesis: state military necessity at Portsmouth Dockyard provided the urgency, Hampshire geography provided the operational base, and global Atlantic networks—potentially appropriating the sophisticated metallurgical knowledge of enslaved Africans—provided the vital industrial momentum that powered the Industrial Revolution."
                 }
               ]
             }
@@ -42381,141 +42384,153 @@
           "id": "lesson_2",
           "title": "Was industrial work progress or punishment?",
           "teacher_notes": {
-            "primer": "This lesson evaluates the human cost of the Industrial Revolution, moving beyond simple narratives by introducing primary sources and historiographical debate. It grounds the national issue of child labour in the local geography of Hampshire by examining the Funtley Clay Pits and Fareham Brickfields.",
+            "primer": "This enquiry investigates the human and social impact of industrialisation, moving beyond simplistic narratives by contrasting northern steam-powered textile mills with the local Hampshire industrial economy of the Fareham Red Brick Boom. Pupils examine the shift from task-oriented domestic handcraft to the relentless machine-clock discipline of the factory system. Through Act 3, students contrast qualitative national parliamentary testimony (the 1832 Sadler Committee) with quantitative local parish census data (1881 Fareham and Funtley clay pits), discovering that child labour was not an isolated northern phenomenon but a direct reality in rural Hampshire. Act 4 introduces the central historiographical debate of modern British social history: the Optimist vs. Pessimist clash over the working-class standard of living.",
             "objectives": [
               {
-                "objective": "Understand the working conditions of the early Industrial Revolution with historical nuance.",
-                "primer": "Ensure students realise that pre-industrial life (the domestic system) was also grueling and reliant on child labour; the key change was the scale, strict discipline, and unique physical dangers of the factory system.",
-                "question": "Was the 'domestic system' a golden age of easy work before the factories arrived?"
+                "objective": "Explain how the transition from the domestic system to steam-powered factories transformed working life, discipline, and physical danger.",
+                "primer": "Direct pupils to paragraphs [1.1] and [1.2]. Contrast the seasonal rhythm and familial independence of the domestic system with the tyrannical factory clock and unguarded drive machinery.",
+                "question": "Why was working under a steam-powered factory machine radically more dangerous and exhausting than working in a domestic cottage workshop?"
               },
               {
-                "objective": "Evaluate primary sources regarding child labour.",
-                "primer": "Guide students to compare a qualitative national source (a government committee interview) with quantitative local evidence (a census return) to build a complete picture of child labour.",
-                "question": "How does a census return tell a different story to a personal interview?"
+                "objective": "Analyse how Victorian urbanization triggered the Fareham Red Brick Boom and the exploitation of child labour in local Hampshire clay pits.",
+                "primer": "Examine paragraphs [2.1]–[2.3], Source B, and paragraphs [3.2]–[3.3]. Trace the causal link between London's population explosion, Fareham's rich Reading Formation clay geology, and the grueling employment of local \"pug boys\" and brick turners at Funtley.",
+                "question": "How does the fact that 6 million Fareham Red bricks built the Royal Albert Hall prove that Victorian architectural splendour was built upon local child labour?"
               },
               {
-                "objective": "Analyse the 'Optimist vs. Pessimist' historical debate.",
-                "primer": "Bridge the gap to GCSE by having students weigh two competing historical interpretations of industrialisation's overall impact on the working class.",
-                "question": "Can an event be a catastrophe for one generation but a triumph for the next?"
+                "objective": "Evaluate the Optimist vs. Pessimist historical debate regarding whether industrial work represented societal progress or human punishment.",
+                "primer": "Guide students through Act 4, contrasting E.P. Thompson's critique of working-class exploitation with R.M. Hartwell's argument regarding rising real wages, consumer goods, and parliamentary Factory Acts.",
+                "question": "Can an industrial system be a brutal punishment for the generation that lived through it, yet represent immense progress for their grandchildren?"
               }
             ],
-            "source_context": "The image provides a visual representation of the crowded and dangerous environment of a 19th-century factory/mill where young children worked. What specific dangers or difficulties can you identify in this workplace that would make it a harsh environment for a child? (Hinge Question)"
+            "source_context": "Source A (Thomas Allom, Powerloom Weaving, 1835) illustrates the deafening, machine-dominated landscape of a Lancashire cotton mill, showing children working as scavengers beneath clattering looms. Source B displays the Royal Albert Hall in London, built using over six million Fareham Red bricks manufactured in the Funtley and Uplands clay pits. Source C provides the harrowing eyewitness testimony of child worker Matthew Crabtree before Michael Sadler's 1832 Parliamentary Committee. Source D provides the official 1881 Hampshire Census return for Fareham, documenting 10-year-old local boys working as \"pug boys\" and \"brick labourers.\" **Hinge Question:** How does comparing national parliamentary testimony with local Fareham census records prove that child exploitation was a nationwide foundation of the British Industrial Revolution rather than just a northern mill problem?"
+          },
+          "learning_objectives": {
+            "overarching": "Was industrial work progress or punishment?",
+            "scaffolded": [
+              "Explain how steam-powered factories replaced domestic handcraft with machine discipline and child exploitation.",
+              "Analyse how the Fareham Red Brick Boom connected local Hampshire clay pits to national imperial architecture like the Royal Albert Hall.",
+              "Evaluate whether the Industrial Revolution was primarily human punishment or societal progress using the Optimist vs. Pessimist debate."
+            ]
           },
           "do_now": {
-            "title": "Do Now: Recall",
+            "title": "Do Now: Retrieval Practice",
             "type": "questions",
             "items": [
               {
-                "question": "What two major iron-making processes did Henry Cort patent at the Funtley Ironworks in the 1780s?",
-                "answer": "The Puddling Process (stirring molten iron to remove impurities) and the Rolling Mill (using grooved rollers to shape the iron)."
+                "question": "What Hampshire ironworks did Henry Cort lease in 1775 to develop his naval iron innovations?",
+                "answer": "Funtley Ironworks (situated along the River Meon near Fareham)."
               },
               {
-                "question": "Why did Henry Cort specifically choose to locate his ironworks near Fareham?",
-                "answer": "Because it was perfectly located to supply high-quality iron to the massive Royal Navy dockyards in nearby Portsmouth."
+                "question": "What two metallurgical processes did Henry Cort patent in 1783–1784 that transformed brittle pig iron into tough naval wrought iron?",
+                "answer": "The Reverberatory Puddling Furnace (1783) and the Grooved Rolling Mill (1784)."
               },
               {
-                "question": "What tragic event caused Henry Cort to lose his patents and die in poverty?",
-                "answer": "His business partner, Adam Jellicoe, embezzled money from the Royal Navy. When Jellicoe died, the government seized Cort's patents to recover the stolen funds."
+                "question": "Why was Portsmouth Royal Navy Dockyard the primary customer for Henry Cort's iron?",
+                "answer": "Portsmouth was the largest industrial base in Britain, needing thousands of tons of flawless iron for warship anchors, bolts, and hoops for ships like HMS Victory."
               },
               {
-                "question": "What was the primary cause of the English Civil War?",
-                "answer": "A power struggle between King Charles I and Parliament over how the country should be ruled."
+                "question": "Which Scottish engineer patented the separate condenser in 1769, allowing steam engines to produce rotary motion anywhere coal was available?",
+                "answer": "James Watt."
               },
               {
-                "question": "What was the result of the Spanish Armada in 1588?",
-                "answer": "The Spanish fleet was defeated by the English navy and severe storms, securing Elizabeth I's throne."
+                "question": "What financial scandal ruined Henry Cort in 1789 despite his world-changing innovations?",
+                "answer": "His partner Adam Jellicoe embezzled £27,000 in Royal Navy funds, causing the Crown to confiscate Cort's patents."
               }
             ]
           },
-          "vocab": [
-            {
-              "term": "Fareham Reds",
-              "definition": "Famous, durable red clay bricks manufactured in Fareham and used in buildings across the Victorian Empire, including the Royal Albert Hall."
-            },
-            {
-              "term": "Pug Mill",
-              "definition": "A horse- or steam-driven machine with rotating blades used to grind and mix raw clay with water."
-            },
-            {
-              "term": "Child Labour",
-              "definition": "The widespread employment of young children in hazardous mines, brickfields, and textile mills."
-            },
-            {
-              "term": "Factory Acts",
-              "definition": "A series of parliamentary laws passed from 1833 onwards to regulate working hours and age limits for child workers."
-            },
-            {
-              "term": "Textile Mill",
-              "definition": "Large steam-powered factories where cotton and wool were spun and woven into cloth by industrial machines."
-            },
-            {
-              "term": "Workhouse",
-              "definition": "Grim institutions established under the Poor Law where the destitute endured harsh labor in exchange for food."
-            }
-          ],
           "narrative_blocks": [
             {
-              "title": "The Rise of the Machines (and the Domestic Reality)",
-              "text": "Before the 1700s, most goods were manufactured by hand in people's homes, known as the 'domestic system'. It is a common myth that this was a relaxed, golden age; in reality, working at home was backbreaking, poorly paid, and children worked long hours weaving or spinning. However, the transition to the 'factory system' completely transformed the scale and danger of British life.  As steam engines became more powerful, massive factories were built, causing rapid urbanisation. On a national level, this was incredible progress: Britain became the 'workshop of the world'. But for the workers, the reality was a brutal shock. The machines now dictated the pace of life. Shifts lasted 12 to 14 hours, six days a week. The noise was deafening, the air was polluted, and heavy machinery lacked safety guards, leading to horrific, unprecedented injuries.",
-              "level_4": "Before factories, people made things at home. This was still very hard work, and children had to help. But when steam engines were invented, huge factories were built.  Millions moved to cities to work. This made Britain very rich. However, factory work was completely different to working at home. People worked up to 14 hours a day. The factories were noisy, dirty, and very dangerous because fast machines had no safety guards.",
+              "title": "Act 1: The Baseline: The Domestic Workshop vs. The Factory Clock (1750–1830)",
+              "text": "<span class=\"para-ref\">[1.1]</span> Prior to the nineteenth century, British manufacturing was anchored in the <strong>domestic system</strong>. Across countryside cottages, handloom weavers, wool carders, and blacksmiths worked at their own pace. Life was not an idyllic rural paradise—cottages were damp, pay was modest, and young children assisted with carding wool or winding bobbins from an early age. Yet despite its hardships, the domestic system possessed one defining quality: human autonomy. Families worked by natural daylight and task-orientation rather than strict clock time. Workers controlled their own meal breaks, paused during seasonal harvest cycles, and celebrated \"Saint Monday\"—taking the first day of the week off to recover from Sunday festivities.<br><br><span class=\"para-ref\">[1.2]</span> The introduction of steam power obliterated this ancient autonomy. When Richard Arkwright built the first water-powered spinning mill at Cromford in 1771, followed by James Watt's rotary steam engines, industrialists constructed multi-storey brick factories containing hundreds of synchronized power looms. Because steam boilers consumed massive amounts of coal whether machines were running or idle, factory owners demanded continuous, uninterrupted operation. The natural rhythm of human muscle was replaced by the tyranny of the <strong>factory clock</strong>. Shifts stretched from 5:00 am to 8:00 pm—up to fifteen hours a day, six days a week.<br><br><span class=\"para-ref\">[1.3]</span> The factory environment was deliberately engineered for mechanical speed rather than human safety. Looms and spinning frames clattered at deafening volumes, making verbal communication impossible. Air was thick with airborne cotton fluff and coal smoke, causing chronic lung diseases such as byssinosis (\"brown lung\"). Drive shafts, leather pulleys, and heavy iron gears turned at blistering speeds without wire guards or safety shut-offs. A single second of exhaustion or distraction could result in a worker's hair or apron being dragged into revolving cogs, tearing off scalps, crushing limbs, or causing instant death.",
+              "image": "/images/19th_century_mill.jpg",
+              "image_alt": "Thomas Allom, Powerloom Weaving in 1835",
+              "image_caption": "Source A: Thomas Allom, Powerloom Weaving (1835, Science Museum). Workers and young child assistants tending rows of steam-driven powerlooms in a Lancashire cotton mill under the watchful eye of an adult overseer, illustrating the deafening, machine-dominated discipline of the factory system.",
               "tasks": [
                 {
-                  "type": "short_answer",
-                  "qNum": 1,
-                  "question": "What was the main difference between the child labour used in the 'domestic system' compared to the new 'factory system'?",
-                  "model_answer": "While children worked hard in both systems (showing continuity), the main change was the scale of danger and strict discipline. In the factory system, the pace of work was dictated by fast, unguarded steam-powered machines in a deafening and polluted environment, which caused horrific injuries that did not happen at home."
+                  "type": "source_analysis",
+                  "question": "Study Source A and read Act 1. Using paragraphs [1.1] and [1.2], explain how the transition from the domestic system to steam-powered factories fundamentally transformed the pace, discipline, and daily autonomy of British workers.",
+                  "starter": "The transition from the domestic system to steam-powered factories fundamentally altered working life because, as described in paragraph [1.1], domestic workers previously controlled...",
+                  "causal_connectives": [
+                    "In sharp contrast",
+                    "Because steam boilers consumed continuous fuel",
+                    "This directly resulted in",
+                    "Consequently"
+                  ],
+                  "model_answer": "The transition from the domestic system to steam-powered factories fundamentally dismantled worker autonomy and transformed the nature of labour [1.1]. In the domestic system, families worked at home based on task-orientation and natural daylight, controlling their own breaks and celebrating \"Saint Monday.\" In sharp contrast, the introduction of steam power forced workers into massive, synchronized mills where machines dictated the pace of life [1.2]. Because expensive steam engines burned coal continuously, factory masters imposed ruthless clock discipline, demanding 14- to 15-hour shifts from dawn to dusk (Source A). Consequently, workers lost all personal control over their time and labour, becoming subordinate extensions of fast-moving, unguarded machinery."
                 }
               ]
             },
             {
-              "title": "The Stolen Childhoods (The Sadler Report)",
-              "text": "Factory and mine owners actively sought out child workers. Children were cheap (paid 10% of an adult's wage), easier to discipline, and small enough to crawl under moving machinery.  In 1832, Parliament sent Michael Sadler to investigate these conditions. His official report shocked the nation. One textile worker, Matthew Crabtree, was interviewed: 'I began work at eight years old... our common time was from six in the morning till half-past eight at night... we were frequently strapped [beaten] if we were too late or started to fall asleep.' The economic success of the early Industrial Revolution was largely built on the broken backs of these children.",
-              "level_4": "Factory owners loved hiring children because they were cheap to pay, easy to boss around, and small enough to fit under machines.  In 1832, a man named Michael Sadler investigated this for the government. He interviewed a boy named Matthew Crabtree, who said he started work at 8 years old, worked 14 hours a day, and was beaten with a strap if he fell asleep. The country's wealth was built on these children's suffering.",
+              "title": "Act 2: The Local Catalyst: The Fareham Red Brick Boom & Hampshire Clay Pits (1800–1880)",
+              "text": "<span class=\"para-ref\">[2.1]</span> The dramatic transformations of the Industrial Revolution were not confined to the cotton mills of Manchester or the coal pits of Newcastle. In southern Hampshire, industrialisation sparked an extraordinary manufacturing boom grounded in local geology. As the British Empire expanded, London's population exploded from 1 million in 1801 to over 4.5 million by 1881. This urban explosion created an insatiable national hunger for durable, weather-resistant building materials to construct railway viaducts, imperial government ministries, suburban terraces, and naval barracks.<br><br><span class=\"para-ref\">[2.2]</span> Fareham sat directly atop a geological goldmine: the dense, iron-rich clays of the <strong>Reading Formation</strong> along the Meon Valley. In the 1830s and 1840s, local landowners and entrepreneurs established massive commercial brickworks across Funtley, Uplands, and Fontley. The unique mineral composition of local Hampshire clay, when fired in coal-burning kilns at temperatures exceeding 1,000°C, produced a brick of extraordinary hardness, smooth texture, and an unmistakable, deep crimson hue. These bricks became internationally celebrated as <strong>\"Fareham Reds\"</strong>.<br><br><span class=\"para-ref\">[2.3]</span> The opening of the London & South Western Railway through Fareham in 1841, combined with tidal barge transport down Fareham Creek into Portsmouth Harbour, transformed Fareham into a national industrial brickmaking powerhouse. Over 20 million Fareham Reds were manufactured annually. Victorian architects recognized them as the premier structural brick of the empire: they were chosen to construct the colossal <strong>Royal Albert Hall</strong> in South Kensington (using over 6 million Fareham bricks), the imposing Portsmouth Royal Naval Barracks, and London's landmark St Pancras railway terminus. Hampshire's local earth was literally building the architectural masterpieces of the Victorian modern world.",
+              "image": "/images/royal_albert_hall.jpg",
+              "image_alt": "The Royal Albert Hall in South Kensington, London, built with Fareham Red bricks",
+              "image_caption": "Source B: The Royal Albert Hall in South Kensington, London (opened 1871). The iconic crimson exterior of this world-famous imperial concert hall was constructed using over six million \"Fareham Red\" bricks, hand-moulded in Hampshire clay pits and transported to London via the newly constructed railway network.",
               "tasks": [
                 {
-                  "type": "short_answer",
-                  "qNum": 2,
-                  "question": "How useful is the 1832 Sadler Report for a historian studying the reality of child labour?",
-                  "model_answer": "The Sadler Report is highly useful because it is a primary source containing direct eyewitness testimony from real child workers like Matthew Crabtree. It provides specific details about the grueling 14-hour days and the physical abuse (being 'strapped') used by overseers to maintain discipline, giving a highly accurate insight into the brutal reality of factory conditions."
+                  "type": "local_connection",
+                  "question": "Study Source B and read Act 2. Using paragraphs [2.1]–[2.3], trace the chain of causation that connected the population explosion of London to the expansion of clay pits in Fareham and the construction of the Royal Albert Hall.",
+                  "starter": "The boom in Fareham brickmaking was triggered by rapid urban growth. As explained in paragraph [2.1], London's population surged to 4.5 million, which created...",
+                  "causal_connectives": [
+                    "To satisfy this urgent demand",
+                    "Because Fareham possessed",
+                    "Furthermore, the arrival of the railway allowed",
+                    "As a direct consequence"
+                  ],
+                  "model_answer": "The boom in Fareham brickmaking began with rapid 19th-century urbanization. As London's population exploded from one million to over 4.5 million, an insatiable demand was created for millions of high-grade building materials to construct imperial infrastructure [2.1]. To satisfy this demand, entrepreneurs expanded the Funtley and Uplands clay pits because Fareham sat atop rich, iron-bearing Reading Formation clay that fired into exceptionally durable, weather-resistant \"Fareham Reds\" [2.2]. Furthermore, the construction of the London & South Western Railway in 1841 and water transport via Fareham Creek allowed these heavy bricks to be transported rapidly and cheaply directly into the capital [2.3]. As a direct consequence of this industrial supply chain, over six million Fareham Red bricks were selected by Victorian architects to construct the prestigious Royal Albert Hall in South Kensington (Source B)."
                 }
               ]
             },
             {
-              "title": "The Fareham Brick Boom",
-              "text": "The Industrial Revolution didn't just happen in northern cotton mills; it radically changed the landscape of Hampshire. As cities like London exploded in size, they desperately needed building materials. Fareham sat on a geological goldmine: deep deposits of high-quality clay. During the 19th century, the Funtley Clay Pits and Fareham Brickfields expanded massively. The unique clay produced a brilliant, vibrant red brick famously known as 'Fareham Reds'.  These bricks were so highly prized by Victorian architects that they were transported by the newly built railways to construct prestigious buildings in the British Empire, including the Royal Albert Hall in London. Fareham's local mud was literally building the modern world.",
-              "level_4": "The Industrial Revolution also changed Hampshire. Big cities like London needed bricks to build new houses and factories. Fareham had lots of special clay in the ground. When baked, this clay made beautiful red bricks known as 'Fareham Reds'.  These bricks were famous and were put on trains to London to build famous places like the Royal Albert Hall.",
+              "title": "Act 3: Forensic Archival Evidence: The Children of the Mills & Clay Pits (1832–1881)",
+              "text": "<span class=\"para-ref\">[3.1]</span> Behind the architectural splendour of the Royal Albert Hall and Britain's global industrial wealth lay a brutal human reality: the systematic exploitation of children. Industrialists actively recruited young children because they were cheap—paid barely ten to twenty percent of an adult male's wage—easier to intimidate through corporal punishment, and small enough to crawl into cramped, hazardous spaces. In textile mills, young boys and girls worked as \"scavengers\", crawling on hands and knees beneath moving looms to sweep up flammable cotton waste, and as \"piecers\", leaning over clattering spindles to tie broken threads.<br><br><span class=\"para-ref\">[3.2]</span> In 1832, mounting public concern prompted Parliament to establish a Royal Commission chaired by MP Michael Sadler to investigate child labour. The resulting <strong>Sadler Committee Report</strong> (Source C) horrified the British public with direct eyewitness testimonies. Witnesses described eight-year-old children working fourteen-hour shifts from 6:00 am to 8:30 pm, kept awake by overseers wielding heavy leather straps (\"strapping\"). Constant standing on hard wooden floors for years caused widespread physical deformities, including curved spines, collapsed foot arches, and severe rickets (bowed legs) caused by malnutrition and lack of sunlight.<br><br><span class=\"para-ref\">[3.3]</span> Crucially, archival evidence reveals that child exploitation was not merely a northern textile phenomenon; it was the foundation of our local Hampshire economy. In the Funtley and Fareham brickfields, whole families laboured under exhausting conditions. Official 1881 Census returns for Fareham (Source D) reveal boys as young as ten and eleven employed in the clay pits. Young children worked as \"pug boys\", driving blindfolded horses in endless circles to power the heavy iron pug mills that ground raw clay and water. Other children laboured as \"turners\" and \"barrowers\", walking up to fifteen miles a day along outdoor drying hacks, manually turning and stacking thousands of wet, six-pound clay bricks under scorching sun or winter sleet.",
+              "archival_source": {
+                "title": "Minutes of Evidence before the Committee on the Bill to Regulate the Labour of Children (The Sadler Report, 1832)",
+                "shelfmark": "PARLIAMENTARY PAPERS · HOUSE OF COMMONS · 1831–32 (706) XV",
+                "text": "“I began work at Bradley Mills near Huddersfield at eight years old... our common hours of labour were from six in the morning till half-past eight at night... fourteen hours and a half of actual labour. We had no time allowed for breakfast or afternoon refreshment; we had to eat our meals as we could, before the machines. If we were a minute too late, we were beaten with a leather strap; I have been severely strapped myself. At that time, if we were tired and sat down, we were beaten... my limbs are deformed from standing so long.”",
+                "citation": "Official testimony of Matthew Crabtree (aged 22), former factory child worker, given before Parliament on 15 March 1832."
+              },
               "tasks": [
                 {
-                  "type": "short_answer",
-                  "qNum": 3,
-                  "question": "Sort the following factors into the correct chronological order to explain the boom in Fareham's economy: A) Railways are built to transport heavy goods, B) London's population explodes, C) Fareham Reds are used to build the Royal Albert Hall, D) Massive demand for building materials is created.",
-                  "model_answer": "The correct chronological chain of causation is: B (London's population explodes) -> D (Massive demand for building materials is created) -> A (Railways are built to transport heavy goods) -> C (Fareham Reds are used to build the Royal Albert Hall)."
+                  "type": "forensic_evaluation",
+                  "question": "Study the Archival Excerpts (Source C and Source D) and read Act 3. Using paragraphs [3.2] and [3.3], explain why a historian must examine BOTH national parliamentary reports AND local parish census returns to understand the full reality of 19th-century child labour.",
+                  "starter": "A historian must cross-reference both national reports and local census returns because, while Source C provides...",
+                  "causal_connectives": [
+                    "In complement to this",
+                    "As evidenced in paragraph [3.3]",
+                    "This reveals that child labour was not",
+                    "By combining both qualitative and quantitative sources"
+                  ],
+                  "model_answer": "A historian must examine both national parliamentary reports and local census returns because they provide complementary qualitative and quantitative historical evidence [3.2, 3.3]. The 1832 Sadler Report (Source C) provides vital qualitative, firsthand emotional testimony regarding the visceral daily reality of child labour—revealing the 14-hour days, physical beatings with leather straps, and bodily deformities suffered by young workers like Matthew Crabtree. In complement to this, local census returns like the 1881 Fareham Census (Source D) provide quantitative, factual proof that child labour was not an isolated northern factory issue, but a structural reality across rural Hampshire. As evidenced in paragraph [3.3], official census records prove ten-year-old local boys were employed as \"pug boys\" and brick labourers in the Funtley clay pits. By combining both qualitative national testimonies and quantitative local records, historians prove that child exploitation was a pervasive, nationwide foundation of Victorian industrial prosperity."
                 }
               ]
             },
             {
-              "title": "Children of the Clay Pits (Local Evidence)",
-              "text": "While the Fareham Reds brought great wealth to the brickyard owners, the reality for the workers was grueling. In the Funtley brickfields, whole families worked together. Young boys and girls were employed as 'pug boys', driving the horses that turned the pug mills to crush the heavy clay.  Others worked as 'carriers', lugging wet clay, or as 'turners', walking up and down long outdoor drying hacks to manually flip thousands of heavy bricks so they dried evenly. We know this wasn't just happening in the north of England; if a historian looks at the 1881 Census returns for the Fareham area, they will find numerous local children, some as young as 10, officially listed with occupations like 'brickmaker's labourer' or 'pug boy', proving the local economy relied heavily on child exploitation.",
-              "level_4": "Making Fareham Red bricks was very hard work. Young children worked in the Funtley clay pits. Some led horses that crushed the clay in machines called pug mills.  Others carried heavy, wet clay or turned thousands of bricks by hand so they would dry. We know this is true because official government census records from 1881 show 10-year-old boys in Fareham listed as 'pug boys' and 'brick labourers'.",
+              "title": "Act 4: The Historical Verdict: Progress or Punishment? The Historiographical Debate",
+              "text": "<span class=\"para-ref\">[4.1]</span> The horrific evidence revealed by the Sadler Report and newspaper exposes forced Parliament to intervene, passing the landmark <strong>1833 Factory Act</strong> (banning factory work for children under nine, limiting hours for ages 9–13, and requiring two hours of compulsory schooling daily) and the 1844 Factory Act. Yet among modern historians, the central question of the Industrial Revolution remains intensely debated: was this transformation an engine of progress, or a system of human punishment?<br><br><span class=\"para-ref\">[4.2]</span> <strong>The \"Pessimist\" Historical School</strong> (championed by E.P. Thompson, Eric Hobsbawm, and Friedrich Engels) argues that industrialisation was an unmitigated social disaster for the working classes. They contend that traditional artisan pride was destroyed, workers were reduced to expendable \"hands\", and generations of children suffered permanent physical deformities, chronic disease, and premature death in mills and clay pits for capitalist profit. In their view, national statistics of rising GDP disguised the brutal destruction of working-class health, family life, and human dignity.<br><br><span class=\"para-ref\">[4.3]</span> Conversely, <strong>The \"Optimist\" Historical School</strong> (led by T.S. Ashton, R.M. Hartwell, and Sir John Clapham) argues that the Industrial Revolution ultimately represented immense societal progress. They point out that pre-industrial agrarian life was plagued by periodic famine, crushing rural poverty, and domestic child labour from age five. By creating mass-production factories, Britain unlocked unprecedented economic growth that eventually led to rising real wages, cheaper food, factory-made clothing, cleaner water infrastructure, and the legislative framework of the modern welfare state. In the Optimist view, while the initial transition involved severe suffering, it created the modern wealth that liberated future generations from agrarian poverty.",
+              "image": "/images/child_labour.jpg",
+              "image_alt": "Engraving of child labour in a factory from Frances Trollope's 1840 novel",
+              "image_caption": "Source D: Contemporary 1840 engraving depicting child scavengers and piecers working under spinning machinery while overseers watch (The Life and Adventures of Michael Armstrong, the Factory Boy). Contemporaries used such visual exposés to demand government intervention.",
               "tasks": [
                 {
-                  "type": "short_answer",
-                  "qNum": 4,
-                  "question": "Why might a historian need to look at BOTH a national interview (like the Sadler Report) AND a local document (like the 1881 Fareham Census) to fully understand child labour?",
-                  "model_answer": "A historian needs both because they provide different types of evidence. The Sadler Report provides the qualitative, emotional reality of the work (the pain, the beatings, the long hours), while the local Fareham Census provides quantitative, factual proof that this wasn't an isolated incident—it proves exactly how old the children were and that child labour was a widespread reality right across the country, even in rural Hampshire."
-                }
-              ]
-            },
-            {
-              "title": "Progress or Punishment? The Historians' Debate",
-              "text": "As the 19th century progressed, the horrific human cost disgusted the public, leading Parliament to pass 'Factory Acts' to restrict child labour and mandate schooling. But historians still fiercely debate the overall impact of the Industrial Revolution. 'Pessimist' historians (like E.P. Thompson) argue that industrialisation was a catastrophe that punished the working class, destroying their traditional way of life and exploiting children for decades. Conversely, 'Optimist' historians (like R.M. Hartwell) argue that while the initial transition was harsh, it ultimately represented massive progress; it created the wealth, medical advancements, and eventual higher wages that dramatically increased the life expectancy and standard of living for everyone in the 20th century.",
-              "level_4": "Eventually, the government passed laws called Factory Acts to stop very young children from working and force them to go to school. Today, historians still argue about whether factories were good or bad. 'Pessimist' historians say the factories were a disaster that cruelly punished poor people and children. 'Optimist' historians say that even though it was hard at first, the factories created the wealth and medicine that eventually gave everyone a much better and longer life.",
-              "tasks": [
-                {
-                  "type": "short_answer",
-                  "qNum": 5,
-                  "question": "Write a structured paragraph answering: 'To what extent was the Industrial Revolution a punishment rather than progress for the working classes?'",
-                  "model_answer": "To a significant extent, the early Industrial Revolution was a harsh punishment for the working classes, though it eventually led to progress. 'Pessimist' historians correctly point out that the initial cost was catastrophic; primary evidence like the Sadler Report and Fareham census data show children were brutally exploited, working 14-hour days in dangerous conditions for poverty wages. However, 'Optimist' historians offer a valid counter-perspective: without this harsh initial phase, Britain would not have generated the vast wealth and technological progress required to eventually pass the Factory Acts, build modern infrastructure, and improve the long-term standard of living for future generations."
+                  "type": "extended_writing",
+                  "question": "Enquiry Essay: \"To what extent was industrial work in 19th-century Britain an engine of human punishment rather than societal progress for the working classes?\"",
+                  "scaffolding": {
+                    "structure_strip": [
+                      "PEE Paragraph 1 (Pessimist / Punishment): Argue that factory and brickfield labour was a brutal punishment, citing 14-hour days, physical beatings, deformities, and the exploitation of children in northern mills and Fareham clay pits [1.3, 3.2, 3.3].",
+                      "PEE Paragraph 2 (Optimist / Progress): Counter-argue that industrial work generated societal progress, citing the creation of mass national wealth, rising real wages, consumer goods, and parliamentary reform like the 1833 Factory Act [2.3, 4.3].",
+                      "Historiographical Verdict: Weigh the competing arguments to reach a balanced judgment on whether short-term generational sacrifice outweighed long-term societal advancement."
+                    ],
+                    "connective_bank": [
+                      "From a \"Pessimist\" historical perspective, industrial work was unquestionably a system of punishment because...",
+                      "As evidenced in paragraph [1.3] and Source C...",
+                      "Furthermore, in local Hampshire brickfields, archival evidence proves...",
+                      "Conversely, \"Optimist\" historians provide a powerful counter-interpretation, arguing that...",
+                      "As demonstrated in paragraph [4.3], industrial mechanization enabled...",
+                      "Ultimately, in evaluating whether industrialisation represented progress or punishment, one must distinguish between..."
+                    ]
+                  },
+                  "model_answer": "From a \"Pessimist\" historical perspective, industrial work in nineteenth-century Britain was undeniably an engine of human punishment for the working classes. As documented in the 1832 Sadler Report (Source C) and paragraph [1.3], the factory system subordinated human beings to relentless machine-clock discipline, forcing eight-year-old children to labour for up to fifteen hours a day amid deafening noise, toxic dust, and unguarded machinery. Overseers enforced discipline through brutal physical violence (\"strapping\"), and years of continuous standing resulted in severe physical deformities such as collapsed arches and rickets. Furthermore, local archival evidence demonstrates that this exploitation was not confined to northern cotton mills: in the Funtley and Fareham clay pits, children as young as ten were employed as \"pug boys\" and brick turners, walking miles daily under extreme weather conditions to produce building materials for imperial London [3.3]. For the generations that endured these conditions, industrialisation destroyed traditional artisan independence and physically broke their bodies for capitalist profit.<br><br>Conversely, \"Optimist\" historians present a compelling counter-argument that industrial work was the indispensable catalyst for long-term societal progress. Prior to the Industrial Revolution, agrarian Britain was trapped in rural poverty, where periodic crop failures caused widespread starvation and children laboured from infancy without legal protection [1.1, 4.3]. The explosion of manufacturing—exemplified by Fareham producing over twenty million durable red bricks annually to construct vital national infrastructure like the Royal Albert Hall (Source B)—unlocked unprecedented national wealth [2.3]. Over time, this economic growth directly funded higher real wages, cheaper mass-produced clothing, improved domestic sanitation, and medical advancements. Crucially, the public outcry over working conditions forced Parliament to pass the landmark 1833 and 1844 Factory Acts, establishing the legal precedent for state regulation of child labour, mandatory schooling, and the modern welfare state [4.1].<br><br>Ultimately, in evaluating whether the Industrial Revolution represented progress or punishment, a historian must distinguish between the catastrophic short-term human cost and the undeniable long-term societal outcome. For the early nineteenth-century working classes who lived through the factory boom and Fareham clay pits, industrial labour was a brutal and traumatic punishment that exploited their labour without adequate compensation. However, for subsequent generations, that traumatic sacrifice laid the technological, architectural, and legislative foundations of the modern world. Therefore, industrialisation was a harrowing human punishment that ultimately generated profound civilizational progress."
                 }
               ]
             }
@@ -42524,18 +42539,47 @@
             {
               "title": "Source A: Powerloom Weaving in 1835",
               "src": "/images/19th_century_mill.jpg",
-              "caption": "A 19th-century engraving depicting child labour in an early industrial textile mill."
+              "caption": "Source A: Thomas Allom, Powerloom Weaving (1835, Science Museum). A steam-driven Lancashire textile mill showing children working as scavengers beneath clattering powerlooms under the supervision of an overseer.",
+              "question": "What does Source A reveal about the working conditions and dangers faced by children employed in steam-powered textile mills?",
+              "model_answer": "Source A shows young children crawling beneath moving, belt-driven powerlooms to sweep up loose cotton fibres, while adult overseers patrol the narrow aisles. This reveals that child workers were placed in immediate physical danger from unguarded, fast-moving machinery in a crowded, noisy, and high-pressure factory environment.",
+              "qNum": 1
+            },
+            {
+              "title": "Source B: The Royal Albert Hall, London (1871)",
+              "src": "/images/royal_albert_hall.jpg",
+              "caption": "Source B: The Royal Albert Hall in South Kensington, London (opened 1871). The iconic exterior of this world-famous concert hall was constructed using over six million \"Fareham Red\" bricks manufactured in Hampshire clay pits.",
+              "question": "How does Source B prove that local Hampshire industrial manufacturing played a direct role in constructing the architectural masterpieces of the Victorian British Empire?",
+              "model_answer": "Source B shows the grand exterior of the Royal Albert Hall, one of the most prestigious architectural landmarks of Victorian Britain. Because over six million Fareham Red bricks were specifically chosen by architects for its construction, it proves that Hampshire brickfields like Funtley and Uplands were not minor local craft sites, but major industrial suppliers building the physical fabric of the empire.",
+              "qNum": 2
+            },
+            {
+              "title": "Source C: Parliamentary Sadler Committee Report (1832)",
+              "caption": "Source C: Minutes of Evidence before the Parliamentary Select Committee on the Labour of Factory Children, 15 March 1832 (Testimony of 22-year-old former child worker Matthew Crabtree).",
+              "content": "“I began work at eight years old... our common hours of labour were from six in the morning till half-past eight at night... fourteen hours and a half of actual labour. We had no time allowed for breakfast or afternoon refreshment; we had to eat our meals before the machines. If we were a minute too late, we were beaten with a leather strap; I have been severely strapped myself... my limbs are deformed from standing so long.”",
+              "question": "Why is the eyewitness testimony in Source C such powerful historical evidence of the physical punishment inflicted on child factory workers?",
+              "model_answer": "Source C is primary evidence given under oath to Parliament by a real survivor of child labour. It provides specific, visceral details about 14.5-hour working days without meal breaks, regular physical beatings with a leather strap for being minutes late, and lifelong physical limb deformities caused by standing constantly before machines.",
+              "qNum": 3,
+              "hinge_question": "Why would British parliamentarians in 1832 be shocked by this testimony if child labour had already existed for centuries in farming cottages?"
+            },
+            {
+              "title": "Source D: Contemporary Engraving of Factory Child Labour (1840)",
+              "src": "/images/child_labour.jpg",
+              "caption": "Source D: Contemporary 1840 illustration from Frances Trollope’s novel The Life and Adventures of Michael Armstrong, depicting child scavengers crawling under spinning machinery as an overseer looks on.",
+              "question": "How does the artist in Source D use visual details to criticize the cruelty of the factory system toward young children?",
+              "model_answer": "The artist shows small, barefoot, ragged children crouching directly beneath fast-moving spinning machinery in danger of being crushed, while a well-dressed adult overseer stands threateningly above them. This stark visual contrast emphasizes the helplessness of child workers and condemns the greed and cruelty of factory masters.",
+              "qNum": 4,
+              "hinge_question": "How did visual illustrations like Source D help convince the British public that child labour was a moral crime that Parliament needed to ban?"
             }
           ],
           "exam_practice": {
             "questions": [
               {
                 "type": "explain",
-                "question": "Explain why child labour was so prevalent during the early Industrial Revolution.",
+                "question": "Explain why child labour was so prevalent during the early Industrial Revolution in both northern mills and local Hampshire brickfields.",
                 "marks": 8,
                 "hints": [
-                  "Sentence Starter: One reason child labour was prevalent was because they were much cheaper to employ...",
-                  "Sentence Starter: Furthermore, children were considered useful for specific jobs because..."
+                  "Sentence Starter: One reason child labour was prevalent was because factory masters and brickfield owners could pay children a fraction of adult wages...",
+                  "Sentence Starter: Furthermore, children were physically suited for specific dangerous tasks, such as working as scavengers under machinery or pug boys in clay pits..."
                 ]
               }
             ]
@@ -42622,140 +42666,158 @@
               "answer": "It banned all work for children under nine years old and limited 9-13 year-olds to eight hours per day"
             },
             {
-              "question": "Why was the 1833 Factory Act significantly more effective than earlier factory legislation?",
+              "question": "What famous building in London was constructed using over 6 million Fareham Red bricks?",
               "options": [
-                "It created the first independent government factory inspectors to inspect mills and enforce the law",
-                "It offered free housing to all factory apprentices",
-                "It was drafted and signed by the factory workers themselves",
-                "All mill owners voluntarily agreed to close their factories on weekends"
+                "The Tower of London",
+                "Buckingham Palace",
+                "The Royal Albert Hall",
+                "The Houses of Parliament"
               ],
-              "answer": "It created the first independent government factory inspectors to inspect mills and enforce the law"
+              "answer": "The Royal Albert Hall"
             },
             {
-              "question": "Who was the evangelical social reformer in Parliament who championed the Ten Hours Act and fought tirelessly against child exploitation?",
+              "question": "What machine was used in Hampshire brickfields to crush and mix raw clay with water?",
               "options": [
-                "Arthur Wellesley (Duke of Wellington)",
-                "William Pitt",
-                "Lord Shaftesbury (Lord Ashley)",
-                "Robert Peel"
+                "A blast furnace",
+                "A puddling hearth",
+                "A pug mill",
+                "A spinning jenny"
               ],
-              "answer": "Lord Shaftesbury (Lord Ashley)"
+              "answer": "A pug mill"
             },
             {
-              "question": "What term was used to describe weavers and textile artisans who smashed power looms in protest against wage cuts and automation in the 1810s?",
+              "question": "What was the role of a \"pug boy\" in the Funtley and Fareham clay pits?",
               "options": [
-                "Chartists",
-                "Suffragettes",
-                "Levellers",
-                "Luddites"
+                "To deliver hot tea to the managers",
+                "To drive horses in circles to turn the pug mill and mix heavy clay",
+                "To load finished bricks onto railway freight wagons",
+                "To dig coal from deep underground mines"
               ],
-              "answer": "Luddites"
+              "answer": "To drive horses in circles to turn the pug mill and mix heavy clay"
             },
             {
-              "question": "What was a major respiratory health hazard faced by cotton mill workers due to inhaling airborne fibres in unventilated rooms?",
+              "question": "Why were \"Fareham Reds\" so highly prized by Victorian architects across the British Empire?",
               "options": [
-                "Malaria",
-                "Byssinosis (brown lung disease)",
-                "Smallpox",
-                "Scurvy"
+                "They were painted with gold leaf",
+                "They were exceptionally dense, durable, and weather-resistant with a vibrant crimson color",
+                "They were made entirely of lightweight dried straw",
+                "They were the only bricks legally permitted by Parliament"
               ],
-              "answer": "Byssinosis (brown lung disease)"
+              "answer": "They were exceptionally dense, durable, and weather-resistant with a vibrant crimson color"
             },
             {
-              "question": "What system did parish workhouses use to send orphaned or destitute children to work in distant northern cotton mills?",
+              "question": "What transport network allowed millions of Fareham bricks to be moved cheaply to London after 1841?",
               "options": [
-                "Trade guild election",
-                "Parish apprentice system",
-                "Royal navy press gang",
-                "University scholarship scheme"
+                "Motorway highways",
+                "The London & South Western Railway",
+                "Supersonic air transport",
+                "Horse trails through the New Forest"
               ],
-              "answer": "Parish apprentice system"
+              "answer": "The London & South Western Railway"
             },
             {
-              "question": "In coal mines, what was the job of a young 'trapper' child?",
+              "question": "Which parliamentary committee gathered harrowing eyewitness testimony about child labour in 1832?",
               "options": [
-                "To survey the underground seams using maps",
-                "To catch wild rabbits for the miners' lunch",
-                "To blast rocks using gunpowder",
-                "To sit alone in the dark for 12 hours opening and shutting air ventilation doors as coal carts passed"
+                "The Sadler Committee",
+                "The Beveridge Commission",
+                "The Gladstone Report",
+                "The Cort Inquiry"
               ],
-              "answer": "To sit alone in the dark for 12 hours opening and shutting air ventilation doors as coal carts passed"
+              "answer": "The Sadler Committee"
             },
             {
-              "question": "What prompted Parliament to pass the Mines Act of 1842, which banned all women and boys under ten from underground coal mining?",
+              "question": "What historical document from 1881 proves that young children were working in the Fareham clay pits?",
               "options": [
-                "The shocking evidence and graphic illustrations of the 1842 Royal Commission on Children's Employment in Mines",
-                "A sudden decline in the demand for coal across Europe",
-                "A mass strike by wealthy mine owners",
-                "A total collapse of all British coal seams"
+                "The Magna Carta",
+                "The 1881 Fareham Census return",
+                "The Domesday Book",
+                "The Treaty of Versailles"
               ],
-              "answer": "The shocking evidence and graphic illustrations of the 1842 Royal Commission on Children's Employment in Mines"
+              "answer": "The 1881 Fareham Census return"
             },
             {
-              "question": "Which Welsh textile manufacturer established a model village at New Lanark with an 8-hour workday, free schooling, and no children under ten working?",
+              "question": "What do \"Pessimist\" historians (like E.P. Thompson) argue about the Industrial Revolution?",
               "options": [
-                "Titus Salt",
-                "George Cadbury",
-                "Robert Owen",
-                "William Lever"
+                "That it was a golden age of peace and relaxation for workers",
+                "That it was a social catastrophe that punished workers and exploited children for profit",
+                "That machines had zero impact on British society",
+                "That the domestic system was worse than modern factories in every way"
               ],
-              "answer": "Robert Owen"
+              "answer": "That it was a social catastrophe that punished workers and exploited children for profit"
             },
             {
-              "question": "What was the purpose of 'clocking in' and the factory bell during the Industrial Revolution?",
+              "question": "What do \"Optimist\" historians (like R.M. Hartwell) argue about the long-term impact of industrialisation?",
               "options": [
-                "To warn workers of incoming pirate attacks",
-                "To impose strict artificial 'clock-time' discipline on workers, replacing natural agrarian daylight rhythms",
-                "To signal the arrival of fresh fruit at the factory canteen",
-                "To remind workers to attend daily church services"
+                "That Britain should have remained entirely agricultural",
+                "That the factory system created modern wealth, higher living standards, and medical advances",
+                "That child labour should never have been abolished",
+                "That steam power was an economic failure"
               ],
-              "answer": "To impose strict artificial 'clock-time' discipline on workers, replacing natural agrarian daylight rhythms"
+              "answer": "That the factory system created modern wealth, higher living standards, and medical advances"
             },
             {
-              "question": "What did the Ten Hours Act of 1847 legally establish?",
+              "question": "What practice did domestic handloom weavers celebrate on Mondays before the factory clock was introduced?",
               "options": [
-                "It forced all factories to operate for ten hours every night",
-                "It required workers to sleep for ten hours every Sunday",
-                "It banned all employment of women in Britain",
-                "It restricted the working day for women and teenagers under 18 in textile factories to a maximum of 10 hours"
+                "Saint Monday (taking the day off)",
+                "The Monday Shift",
+                "The Clock Bell",
+                "The Steam Festival"
               ],
-              "answer": "It restricted the working day for women and teenagers under 18 in textile factories to a maximum of 10 hours"
+              "answer": "Saint Monday (taking the day off)"
             },
             {
-              "question": "Why were unguarded gears, leather transmission belts, and flying shuttles so catastrophic for mill children?",
+              "question": "What lung disease commonly afflicted cotton textile mill workers due to inhaling airborne fibres?",
               "options": [
-                "They produced sparks that ruined the children's clothes",
-                "They made too much noise, distracting the children from reading",
-                "Loose clothing and hair were frequently caught, leading to gruesome scalpings, crushed limbs, and death",
-                "They caused the temperature in the mill to drop below freezing"
+                "Scurvy",
+                "Byssinosis (brown lung)",
+                "Rickets",
+                "Cholera"
               ],
-              "answer": "Loose clothing and hair were frequently caught, leading to gruesome scalpings, crushed limbs, and death"
+              "answer": "Byssinosis (brown lung)"
             },
             {
-              "question": "How did early trade unionists attempt to organize despite the restrictive Combination Acts of 1799-1800?",
+              "question": "What was the age limit below which children were legally banned from working in textile mills by the 1833 Factory Act?",
               "options": [
-                "Through secret oaths, friendly societies, and underground strike funds",
-                "By forming officially recognized political parties in Parliament",
-                "By advertising their meetings in national newspapers",
-                "By appealing directly to the French Emperor Napoleon"
+                "Under six years old",
+                "Under nine years old",
+                "Under sixteen years old",
+                "Under twenty-one years old"
               ],
-              "answer": "Through secret oaths, friendly societies, and underground strike funds"
+              "answer": "Under nine years old"
             }
           ],
-          "learning_objectives": {
-            "overarching": "To explore: Was industrial work progress or punishment",
-            "scaffolded": [
-              "Understand the working conditions of the early Industrial Revolution with historical nuance.",
-              "Evaluate primary sources regarding child labour.",
-              "Analyse the 'Optimist vs. Pessimist' historical debate."
-            ]
-          },
           "pair_share": {
             "prompt": "Discuss with your partner: Was factory work progress or punishment?",
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
             "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
             "share": "Share your pair's combined conclusion with the class."
           },
+          "vocab": [
+            {
+              "term": "Fareham Reds",
+              "definition": "Famous, durable red clay bricks manufactured in Fareham and used in buildings across the Victorian Empire, including the Royal Albert Hall."
+            },
+            {
+              "term": "Pug Mill",
+              "definition": "A horse- or steam-driven machine with rotating blades used to grind and mix raw clay with water."
+            },
+            {
+              "term": "Child Labour",
+              "definition": "The widespread employment of young children in hazardous mines, brickfields, and textile mills."
+            },
+            {
+              "term": "Factory Acts",
+              "definition": "A series of parliamentary laws passed from 1833 onwards to regulate working hours and age limits for child workers."
+            },
+            {
+              "term": "Textile Mill",
+              "definition": "Large steam-powered factories where cotton and wool were spun and woven into cloth by industrial machines."
+            },
+            {
+              "term": "Workhouse",
+              "definition": "Grim institutions established under the Poor Law where the destitute endured harsh labor in exchange for food."
+            }
+          ],
           "vocab_cloze_text": "Victorian urban expansion was built upon industrial brickyards and mills. In Hampshire, workers produced millions of [Fareham Reds], mixing clay in a heavy [Pug Mill]. Throughout early factories and every northern [Textile Mill], employers relied heavily on cheap [Child Labour] to clean spinning machines. Desperate families took these hazardous jobs to avoid starvation in the dreaded [Workhouse]. Public outrage gradually forced Parliament to pass the [Factory Acts], legally restricting hours for young factory hands."
         },
         {
