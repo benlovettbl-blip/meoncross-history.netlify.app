@@ -11,7 +11,7 @@ const PDF_OUT_PUBLIC = path.join(
 );
 const PDF_OUT_GDRIVE = path.join(
   'G:\\My Drive\\AAMX\\Dep File',
-  '1. Department Operations & Handbook',
+  '00_Department_Admin_and_Policies',
   'History Department Development Plan 2026-2027.pdf',
 );
 const HTML_OUT_PUBLIC = path.join(
