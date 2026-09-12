@@ -438,9 +438,9 @@ function buildTimelineHTML(unitData) {
         'Camp David Accords (1978)',
         'Sinai Demilitarisation',
         'Treaty of Washington (1979)',
-        'Arab League Boycott (Tunis)',
+        'Arab League Boycott',
         'Sadat Assassination (1981)',
-        'Hosni Mubarak & "Cold Peace"',
+        'Peace Treaty Survives',
       ],
       milestones: [
         {
@@ -515,16 +515,15 @@ function buildTimelineHTML(unitData) {
         {
           date: '6 October 1981',
           title: 'The Assassination of Anwar Sadat & The Arab Boycott',
-          specTag: 'The Fatal Domestic Cost of Peace',
+          specTag: 'Consequences of the 1979 Peace Treaty',
           image: '/images/cme_sadat_memorial_1981.jpg',
-          caption:
-            'The Cairo reviewing stand and memorial where President Sadat was assassinated during a military parade.',
+          caption: 'Site where President Anwar Sadat was assassinated in October 1981.',
           trigger:
-            'The Arab League imposed a total economic and diplomatic boycott on Egypt; Islamist extremists viewed the peace treaty with Israel as treason.',
+            'Arab nations strongly condemned Egypt for signing a separate peace that ignored the Palestinians, expelling Egypt from the Arab League.',
           action:
-            'During a military parade celebrating the 1973 canal crossing, Egyptian Islamic Jihad militants opened fire, assassinating President Sadat.',
+            'In October 1981, President Anwar Sadat was assassinated by Egyptian soldiers who fiercely opposed the peace treaty with Israel.',
           consequence:
-            'Vice President **Hosni Mubarak** assumed power, preserving a fragile "cold peace" with Israel; demonstrated that peace without solving Palestine was precarious.',
+            'Despite Sadat’s assassination and Arab boycotts, the peace treaty held, permanently ending the threat of a major multi-front war for Israel.',
         },
       ],
       narrativeChain: [
@@ -545,8 +544,8 @@ function buildTimelineHTML(unitData) {
           desc: 'Carter brokered historic treaty (1979): full Sinai return in exchange for full recognition.',
         },
         {
-          title: '5. Arab Boycott & Sadat Murder',
-          desc: 'Egypt expelled by Arab League; Sadat assassinated by extremists, leaving Palestine issue unresolved.',
+          title: '5. Arab Boycott & Sadat Assassination',
+          desc: 'Egypt was expelled from the Arab League and Sadat was assassinated (1981), but the peace treaty with Israel survived.',
         },
       ],
       glossary: [

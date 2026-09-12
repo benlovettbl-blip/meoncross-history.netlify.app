@@ -157,3 +157,9 @@ Whenever generating, updating, or refactoring a 16-spread (36-page) Edexcel GCSE
    - **4x `interpretation_eval`**: Section B: Q3(d) Evaluative Essay with Criteria Judgement [16+4m] (1 per Key Topic)
 2. Every single Key Topic (KT1, KT2, KT3, KT4) must contain exactly one spread dedicated to each of the four exam question formats, guaranteeing completely balanced, high-yield exam mastery across Section A and Section B.
 3. **Weimar & Nazi Germany Note**: Do NOT build the Weimar and Nazi Germany guide until the user explicitly requests it. When built, it must enforce this exact 4-4-4-4 architecture.
+
+## GCSE Depth of Knowledge (DoK) Calibration & Specification Guardrails
+Whenever authoring, enriching, or refactoring curriculum data, revision guides, timelines, or flashcards for Edexcel GCSE units (such as Paper 2 Conflict in the Middle East, Paper 1 Medicine, Paper 2 Early Elizabethan England, Paper 3 USA, or Weimar & Nazi Germany):
+1. **Strict Specification Anchoring:** Content must strictly adhere to the official Pearson Edexcel GCSE History specification bullet points and standard GCSE textbooks (e.g. Pearson / Hodder).
+2. **Eliminate University-Level / Peripheral Over-Detail:** NEVER inject obscure historical trivia, secondary political figures (e.g. Hosni Mubarak), specific extremist cell factions (e.g. Egyptian Islamic Jihad), or niche diplomatic terminology (e.g. "cold peace") that are not in the GCSE specification or textbooks.
+3. **The 2-to-3 High-Yield Points Rule:** For any historical event, cause, or consequence, provide strictly 2 or 3 high-yield, punchy points that directly support the specification bullet points. This prevents pupil cognitive overload, avoids confusing teachers, and ensures revision materials directly maximize exam marks.
