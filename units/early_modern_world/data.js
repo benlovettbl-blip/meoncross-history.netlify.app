@@ -1112,33 +1112,35 @@ const early_modern_world = {
       title: 'How did religious conflict trigger global exploration (1517–1588)?',
       teacher_notes: {
         primer:
-          'This lesson explores the causal link between the domestic and European religious upheaval of the Protestant Reformation and the subsequent global naval conflict between England and Spain. The objective is to help students understand how religious ideology directly fueled early imperialism and exploration.',
+          'This lesson explores the direct causal link between the European religious upheaval of the Protestant Reformation (1517) and the emergence of England as an aggressive maritime empire. By tracing the progression from Martin Luther’s religious revolt and papal trade monopolies (Treaty of Tordesillas) through to state-sponsored privateering ("El Draque") and the climactic defeat of the Spanish Armada (1588), students discover that early British imperial exploration was fundamentally driven by ideological warfare and anti-Catholic rivalry rather than mere commercial curiosity.',
         objectives: [
           {
             objective:
-              'Explain how the Protestant Reformation shattered European unity after 1517.',
+              'Explain how the Protestant Reformation shattered European unity after 1517 and turned overseas exploration into an ideological war.',
             primer:
-              'Direct students to the Macro-History section on Martin Luther and the 95 Theses. Emphasize how this split created a geopolitical divide that spilled into the New World.',
+              'Direct students to Act 1. Emphasize that when Henry VIII broke from Rome in 1534, England found itself ideologically isolated against Catholic superpowers Spain and Portugal, who claimed the entire New World under the 1494 Treaty of Tordesillas.',
             question:
-              "How did Martin Luther's actions in 1517 directly contribute to the later naval conflict between England and Spain?",
+              "Why did England's conversion to Protestantism make conflict with Spain over the New World inevitable?",
           },
           {
             objective:
-              "Analyze the role of Elizabethan privateers in challenging Catholic Spain's global monopoly.",
+              "Analyze the role of Elizabethan privateers in challenging Catholic Spain's global silver monopoly.",
             primer:
-              "Use the Micro-History of San Juan de Ulúa and the section on Protestant Privateers to show how Drake's personal vendetta aligned with Elizabeth's need to challenge Spain cheaply.",
+              "Guide students through Act 2. Focus on Drake’s personal vendetta following the 1568 ambush at San Juan de Ulúa and Elizabeth's strategic use of Letters of Marque to wage cheap, deniable economic warfare against King Philip II.",
             question:
-              'Why did Queen Elizabeth I choose to use privateers like Francis Drake rather than sending an official Royal Navy fleet to challenge Spain in the Americas?',
+              'Why did Queen Elizabeth I rely on privateers like Francis Drake rather than an official Royal Navy fleet to challenge Spanish power in the Americas?',
           },
           {
             objective:
-              'Evaluate how the Spanish Armada (1588) marked a turning point in Britain’s imperial ambitions.',
+              'Evaluate how the defeat of the Spanish Armada (1588) marked a turning point in Britain’s imperial ambitions.',
             primer:
-              'Focus on the visual analysis of the Armada Portrait and the historical interpretations to debate whether the victory was a divine miracle or a result of tactical superiority.',
+              'Focus on Act 3 and Act 4. Contrast English tactics (fireships at Calais, long-range guns) and the "Protestant Wind" with Spanish logistical blunders, and guide pupils to analyze the imperial propaganda embedded in The Armada Portrait.',
             question:
-              "Based on the visual evidence in the Armada Portrait, how did the defeat of the Spanish Armada change England's self-image and future ambitions?",
+              'Based on visual evidence in The Armada Portrait, how did the defeat of the Spanish Armada transform England’s self-image and global ambitions?',
           },
         ],
+        source_context:
+          "The Armada Portrait of Queen Elizabeth I (c. 1588, attributed to George Gower, Woburn Abbey / National Maritime Museum). Painted to commemorate the miraculous English victory over Philip II's invading fleet, this masterpiece of Elizabethan visual propaganda projects imperial authority: Elizabeth's hand rests firmly over North America on a globe, her pearl-embroidered gowns signify purity and oceanic wealth, while the dual background windows contrast the calm English fleet with shattered Spanish galleons drowning in stormy seas. **Hinge Question:** Does the Armada Portrait depict the victory of 1588 as a triumph of military naval technology, or as proof of God's divine favor for Protestant England?",
       },
       do_now: {
         title: 'Do Now: Previous Knowledge',
@@ -1207,192 +1209,101 @@ const early_modern_world = {
         "In 1517, Martin Luther's attack on the Catholic sale of each [Indulgence] sparked the religious upheaval of the [Protestant Reformation]. Catholic Spain and Portugal had previously divided the globe under the [Treaty of Tordesillas (1494)], but Protestant English seamen challenged their monopoly. Men like Francis Drake operated as a licensed [Privateer], achieving fame through global [Circumnavigation]. Religious rivalry reached a climax when England defeated the invading [Spanish Armada (1588)].",
       narrative_blocks: [
         {
-          title: 'Micro-History: San Juan de Ulúa (September 1568)',
-          text: 'On the muggy morning of 23 September 1568, off the coast of modern-day Mexico, a young English sea captain named Francis Drake listened to the thunder of Spanish naval cannons shattering his fleet.<br><br>Drake and his cousin, John Hawkins, had sailed into the Spanish port of San Juan de Ulúa to repair their battered ships. Spain claimed exclusive control over the entire Americas by papal decree—no Protestant English ships were legally allowed to trade or anchor in these waters. Despite a written truce signed by the Spanish Viceroy, Spanish warships ambushed the small English squadron.<br><br>Drake barely escaped aboard his small ship, the *Judith*, leaving behind dozens of English sailors to be captured, interrogated, or executed by the Spanish Inquisition.<br><br>Drake did not view this ambush merely as a commercial dispute. To him, it was a holy war. He vowed personal revenge against King Philip II of Spain and the Catholic Church. For the next twenty years, Drake’s personal quest for vengeance would turn the Atlantic Ocean into a global battlefield, transforming England from a weak island nation into an aggressive maritime power.',
-          tasks: [
-            {
-              type: 'comprehension',
-              question:
-                'Why did the Spanish attack Francis Drake and  at San Juan de Ulúa despite having signed a truce?',
-              model_answer:
-                'The Spanish believed they had exclusive control over the Americas by papal decree, making any Protestant English ships trading or anchoring there illegal.',
-            },
-          ],
-          images: [
-            {
-              image: '/images/early_mod_l2_banner.jpg',
-              image_alt: 'Map of the Spanish Armada Route (1588)',
-              image_context:
-                "Trace the chaotic route of the Spanish fleet around the rugged coasts of Scotland and Ireland. This map highlights how the Armada was defeated not just by English naval tactics, but by disastrous weather (the 'Protestant Wind') and poor logistical planning. **Hinge Question:** Does this map suggest the English victory was due to superior skill, or lucky geography and weather?",
-              image_caption:
-                'An expedition map showing the route of the Spanish Armada in 1588. King Philip II of Spain launched the massive fleet to overthrow the Protestant Queen Elizabeth I, but it was defeated by English naval tactics and severe storms.',
-              source_letter: 'A',
-            },
-            {
-              image: '/images/francis_drake.jpg',
-              image_alt: 'Portrait of Sir Francis Drake (1591)',
-              image_context:
-                "Notice Drake's confident posture and the hand resting on a globe. To the English, he was a heroic explorer and a symbol of their growing naval power. To the Spanish, however, he was 'El Draque' (The Dragon)—a ruthless pirate who terrorized their galleons. **Hinge Question:** How can the exact same historical figure be remembered as both a national hero and a criminal pirate?",
-              image_caption:
-                'Portrait of Sir Francis Drake (1591), attributed to Marcus Gheeraerts the Younger. Drake was an English privateer whose raiding of Spanish treasure ships and successful circumnavigation of the globe (1577–1580) helped transform England into a formidable maritime power.',
-              source_letter: 'B',
-            },
-          ],
-        },
-        {
-          title: 'Macro-History: Navigating the Unknown',
-          text: "Driven by religious competition and a desperate need for resources, European sailors began charting the massive, terrifying unknown of the global oceans. Mapmakers like Gerardus Mercator developed revolutionary new map projections that helped sailors navigate the vast distances of the Atlantic and Pacific, shrinking the world and connecting isolated continents for the first time.<br><br><strong>The Invincible Armada (1588)</strong><br>In 1588, Philip II sent the 'Invincible Armada' to invade England. The Spanish ships sailed in a massive, tightly packed <strong>crescent (half-moon) formation</strong>, making them almost impossible to attack. However, when the Armada anchored off Calais, the English launched a devastating night attack. They set eight of their own ships on fire (<strong>fireships</strong>) and let the wind blow these floating infernos directly into the crowded Spanish fleet, causing mass panic and breaking their defensive crescent.",
-        },
-        {
-          title: 'Examining the Evidence',
-          image: '/images/global_mercator.jpg',
-          image_alt: 'Portrait of Gerardus Mercator (1574)',
-          tasks: [
-            {
-              type: 'drawing',
-              lines: 10,
-              question:
-                'Drawing Task: Sketch the crescent formation of the Spanish Armada being attacked by English fireships.',
-            },
-            {
-              question:
-                "Study Source A (Portrait of Gerardus Mercator). Why was Mercator's 1569 map projection a revolutionary development for early modern sailors?",
-              model_answer:
-                "Mercator's projection was revolutionary because it represented sailing courses of constant bearing as straight lines. This made oceanic navigation significantly easier and more accurate, directly enabling the global expansion of European empires.",
-            },
-          ],
-          image_caption: 'Portrait of Gerardus Mercator (1574)',
-        },
-        {
-          title: 'Macro-History: The Reformation (1517)',
-          text: '<strong>The Reformation Shatters Europe (1517)</strong><br>To understand why Drake was fighting in Mexico, we have to look back to Germany in 1517. A monk named Martin Luther nailed his <strong>95 Theses</strong> to a church door, protesting corrupt practices in the Catholic Church—specifically the sale of "indulgences" (paying money to buy forgiveness for sins).<br><br>Luther’s protest ignited the <strong>Protestant Reformation</strong>. Europe fractured into two hostile religious camps:<br><br><ul><li><strong>Catholic Powers:</strong> Led by the wealthy Spanish Empire and the Pope in Rome.</li><li><strong>Protestant Powers:</strong> Small German states, the Netherlands, and eventually England after King Henry VIII broke away from Rome in 1534.</li></ul>',
-        },
-        {
-          title: 'Analyzing Source B',
-          image: '/images/martin_luther_portrait.jpg',
-          image_alt: 'Portrait of Martin Luther (1529)',
-          source_letter: 'B',
-          image_caption: 'Portrait of Martin Luther (1529)',
-        },
-        {
-          title: 'Macro-History: The New World Monopoly & Privateers',
-          text: '<strong>The New World Monopoly and the Papal Bull</strong><br>In 1494,  issued the <strong>Treaty of Tordesillas</strong>, drawing an imaginary line down the Atlantic Ocean. The Pope declared that all newly discovered lands to the west belonged exclusively to Catholic Spain, while lands to the east belonged to Catholic Portugal.<br><br>By 1550, gold and silver fleets were pouring out of South America, funding King Philip II’s armies in Europe. Catholic Spain claimed a complete monopoly over global trade.<br><br><strong>Protestant Privateers: Pirates with a Royal License</strong><br>When Protestant  took the English throne in 1558, England was financially weak and lacked a large navy. Elizabeth could not afford a direct war against Spain. Instead, she used <strong>privateers</strong>.<br><br>A privateer was an armed merchant captain given a official letter of license—a <strong>Letter of Marque</strong>—by the monarch. This document allowed them to attack and plunder enemy ships legally during wartime. To the Spanish, privateers like Francis Drake, John Hawkins, and Walter Raleigh were illegal pirates (<em>el Draque</em>, "The Dragon"). To Elizabeth, they were cheap, effective freedom fighters who brought massive wealth back to London.<br><br>Between 1577 and 1580, Drake sailed around the world on his ship, the <em>Golden Hind</em>. He raided Spanish ports along the Pacific coast of South America, captured the Spanish treasure galleon <em>Cacafuego</em> carrying 26 tons of silver, and claimed land in California ("New Albion") for Elizabeth. When he returned, Elizabeth knighted him on the deck of his ship—a direct insult to King Philip II.',
-        },
-        {
-          title: 'Analyzing Source C',
+          title: 'Act 1: The Spark: The Reformation & The Shattered World (1517–1568)',
+          text: 'To understand why English sailors risked their lives in the uncharted waters of the Atlantic, we have to look back to Germany in 1517. A Catholic monk named <strong>Martin Luther</strong> nailed his <strong>95 Theses</strong> to a church door in Wittenberg, protesting rampant corruption within the Catholic Church—particularly the sale of <strong>indulgences</strong> (certificates sold to forgive sins and shorten time in Purgatory).<br><br>Luther’s defiance ignited the <strong>Protestant Reformation</strong>, shattering European religious unity and dividing the continent into two mortal enemies:<br><ul><li><strong>Catholic Powers:</strong> Dominated by the vast Spanish Empire of the Habsburgs and the Papacy in Rome, possessing immense wealth and colossal armies.</li><li><strong>Protestant Powers:</strong> A collection of northern European territories, Dutch rebels, and eventually England after <strong>King Henry VIII</strong> broke with the Pope in 1534 to establish the Church of England.</li></ul><br>This religious fracture immediately spilled into the global oceans. Back in 1494, Pope Alexander VI had brokered the <strong>Treaty of Tordesillas</strong>, drawing an imaginary line down the Atlantic Ocean. The Pope declared that all newly discovered lands to the west belonged exclusively to Catholic Spain, while lands to the east belonged to Catholic Portugal. Catholic Spain claimed a complete, divine monopoly over the wealth of the Americas.<br><br>As a Protestant nation, England flatly rejected papal authority. English merchants and captains refused to accept that the Pope had the right to lock them out of the New World. In September 1568, this brewing hostility erupted into bloodshed at the Mexican port of <strong>San Juan de Ulúa</strong>. English captains <strong>Francis Drake</strong> and <strong>John Hawkins</strong> sailed into the port to repair their storm-damaged ships under a signed truce with the Spanish Viceroy. Viewing all Protestant Englishmen in American waters as illegal heretics, the Spanish ambushed the squadron with heavy naval artillery. Drake barely escaped aboard the battered *Judith*, leaving dozens of English sailors to be executed or imprisoned by the Spanish Inquisition. Drake did not view this ambush as a business dispute; he saw it as a holy war. He vowed personal vengeance against King Philip II and the Catholic Church, turning the Atlantic into an ideological battleground.',
           image: '/images/tordesillas_map.png',
           image_alt: 'Map of the Treaty of Tordesillas (1494)',
-          source_letter: 'C',
+          image_caption:
+            'Source A: Map of the Treaty of Tordesillas (1494). Mediated by Pope Alexander VI, this treaty drew a meridian dividing the entire non-European world exclusively between Catholic Spain (west) and Catholic Portugal (east).',
           tasks: [
             {
               type: 'source_analysis',
               question:
-                'Look at Source C. Why would a map showing the Pope dividing the entire undiscovered world between Spain and Portugal absolutely infuriate Protestant monarchs like Queen Elizabeth I?',
+                "Study Source A and read Act 1. Why did the Protestant Reformation and the Pope's division of the world make violent naval conflict between England and Spain inevitable?",
+              starter:
+                "The Protestant Reformation made violent conflict between England and Spain inevitable because Protestant England rejected the Pope's authority to grant...",
               model_answer:
-                "As a Protestant, Elizabeth did not recognize the Pope's authority. Seeing the Catholic Church claim the power to hand over the entire globe to her Catholic rivals (Spain and Portugal) would have been deeply insulting and politically unacceptable, motivating her to challenge their monopoly.",
-            },
-            {
-              type: 'analysis',
-              question:
-                'How did Queen Elizabeth I use privateers as a strategic tool against Spain?',
-              model_answer:
-                "Elizabeth used privateers because England lacked the funds and navy for a direct war. Privateers were a cheap and effective way to challenge Spain's monopoly, steal immense wealth to enrich England, and harass Spanish forces without officially declaring war.",
-            },
-          ],
-          image_caption: 'Map of the Treaty of Tordesillas (1494)',
-        },
-        {
-          title: 'The Climax: The Spanish Armada (1588)',
-          text: 'Furious at English privateering, Elizabeth\'s support for Protestant rebels in the Netherlands, and the execution of the Catholic , King Philip II decided to invade England.<br><br>In May 1588, Philip launched the <strong>Spanish Armada</strong>: 130 warships carrying 30,000 soldiers designed to overthrow Elizabeth and force England back to Catholicism.<br><br>The English navy, using smaller, faster ships equipped with long-range cannons, harassed the Armada up the English Channel. Off Calais, the English unleashed drifting <strong>fire ships</strong> (vessels packed with pitch and gunpowder set ablaze), forcing the panicked Spanish ships to cut their anchors and scatter. A disastrous storm—termed the "Protestant Wind"—blew the remaining Spanish fleet around the rocky coasts of Scotland and Ireland, destroying over half their ships.',
-          tasks: [
-            {
-              type: 'comprehension',
-              question:
-                'Describe the two main reasons the Spanish Armada failed to invade England.',
-              model_answer:
-                "The Armada failed due to English tactics, such as using faster ships with long-range cannons and launching fire ships that scattered the Spanish fleet at Calais, and bad weather—the 'Protestant Wind' that destroyed fleeing Spanish ships on the rocky coasts of Scotland and Ireland.",
+                'The Protestant Reformation made conflict inevitable for two fundamental reasons. First, the ideological divide meant that Protestant England did not recognize the authority of the Pope in Rome. Consequently, English monarchs and sea captains flatly rejected the 1494 Treaty of Tordesillas, which claimed to hand the entire Americas and its trade exclusively to Catholic Spain and Portugal. Second, Spain viewed Protestant sailors not merely as trade rivals, but as heretical enemies of the Catholic Church who had no legal right to exist in the New World—as demonstrated by the brutal Spanish ambush of Francis Drake and John Hawkins at San Juan de Ulúa in 1568. Because Spain enforced its papal monopoly with military violence and the Inquisition, English mariners believed the only way to trade and explore was through armed conflict.',
             },
           ],
         },
         {
-          title: 'Opposing Views: A Queen and a Captive (Part 1)',
-          text: '<blockquote><strong>Source B: An Excerpt from Queen Elizabeth I\'s Speech at Tilbury (August 1588)</strong><br><em>"I know I have the body of a weak and feeble woman; but I have the heart and stomach of a king, and of a king of England too, and think foul scorn that Parma or Spain, or any prince of Europe, should dare to invade the borders of my realm... We shall shortly have a famous victory over these enemies of my God, of my kingdom, and of my people."</em></blockquote><br><br><blockquote><strong>Source C: A Spanish Catholic Account of English Privateers (1579)</strong><br><em>"This Francisco Drake is a thief, a heretic, and a minister of the Devil. He robs churches, desecrates holy images, and steals the treasure that belongs by divine right to His Catholic Majesty King Philip. He does not fight for trade; he fights to destroy the Holy Mother Church."</em><br>— <strong>Adapted from a letter by </strong>, a Spanish captain captured by Drake.</blockquote>',
+          title: "Act 2: The Cold War at Sea: Elizabethan Privateers & 'El Draque' (1568–1585)",
+          text: 'When <strong>Queen Elizabeth I</strong> took the English throne, she faced an existential dilemma. England was deeply divided, financially impoverished, and lacked a standing royal navy capable of matching Spain’s colossal fleet. Meanwhile, King Philip II of Spain was extracting tons of silver from the mines of Potosí in Bolivia, using this imperial wealth to fund Catholic armies across Europe.<br><br>Elizabeth could not afford an open, declared war against Spain. Instead, she waged an asymmetric "cold war" at sea using <strong>privateers</strong>. A privateer was an armed merchant captain granted a royal license—known as a <strong>Letter of Marque</strong>—empowering them to attack, board, and plunder enemy vessels during wartime. To Elizabeth, privateers like Francis Drake, John Hawkins, and Walter Raleigh were cheap, patriotic freedom fighters who filled her empty treasury with captured silver while draining Spain’s military budget. To King Philip II and the Spanish, they were ruthless Protestant pirates and heretics led by the terrifying <strong><em>El Draque</em></strong> ("The Dragon").<br><br>Between 1577 and 1580, Drake pulled off the most daring naval raid in history. Sailing into the Pacific on the <em>Golden Hind</em>, where Spanish galleons sailed completely unarmed because they felt totally safe, Drake plundered Spanish ports along Peru and Chile. Off the coast of Ecuador, he captured the Spanish treasure galleon <em>Nuestra Señora de la Concepción</em> (nicknamed the <em>Cacafuego</em>), seizing 26 tons of silver bullion, 80 pounds of gold, and thirteen chests of royal coins. Drake then completed the second circumnavigation of the globe in human history. When he dropped anchor in Plymouth in 1580, Elizabeth boarded his ship and knighted him on deck—a direct, calculated insult to King Philip II.',
+          image: '/images/francis_drake.jpg',
+          image_alt: 'Portrait of Sir Francis Drake (1591) by Marcus Gheeraerts the Younger',
+          image_caption:
+            'Source B: Portrait of Sir Francis Drake (1591) by Marcus Gheeraerts the Younger. Drake rests his hand on a terrestrial globe, wearing the "Drake Jewel" presented to him by Queen Elizabeth I.',
           tasks: [
             {
               type: 'source_analysis',
+              provenance_clue:
+                'Consider who wrote each account: Source B shows the English court celebrating Drake as a knighted national hero and global explorer, while Spanish accounts (like Captain Don Francisco de Zárate, captured by Drake in 1579) viewed him as a blasphemous pirate stealing the King of Spain’s divinely ordained silver.',
               question:
-                'How does the author’s perspective in Source C differ from Source B regarding Francis Drake and the conflict?',
+                'Study Source B and the written evidence. How did the Spanish Catholic perspective of Francis Drake differ from the English Protestant perspective, and what does this reveal about the religious nature of the conflict?',
+              starter:
+                'From the Spanish Catholic perspective, Francis Drake was condemned as..., whereas English Protestants celebrated him as...',
               model_answer:
-                "Source B frames the conflict as a holy defense of England against 'enemies of my God', portraying the English as righteous defenders. Source C, written by a Spanish Catholic, views Drake as a 'thief' and a 'heretic' fighting to destroy the Catholic Church, focusing on his piracy and religious desecration rather than legitimate warfare.",
+                'The two sides viewed Francis Drake through completely opposing ideological lenses. From the Spanish Catholic perspective, Drake was "El Draque"—an illegal, bloodthirsty pirate and heretic who raided peaceful colonies, desecrated Catholic churches, and stole silver that belonged by divine right to King Philip II under papal decree. Conversely, from the English Protestant perspective, Drake was a heroic patriot, brilliant navigator, and God-fearing champion of Protestant freedom who broke Spain\'s tyrannical monopoly. This stark contrast reveals that the struggle for overseas trade was never just economic; it was viewed as a cosmic religious battle between the true Protestant faith and the "tyranny" of Catholic Rome.',
             },
           ],
         },
         {
-          title: 'Visual Analysis: The Armada Portrait (1588)',
-          text: "Look closely at <strong>The Armada Portrait</strong> painted shortly after the defeat of the Spanish fleet:<br><br><ul><li><strong>The Right Hand on the Globe:</strong> Elizabeth’s hand rests directly over North America, signaling England's intent to challenge Catholic Spain for global empire.</li><li><strong>The Background Windows:</strong> The left window shows the calm English fleet; the right window shows the shattered Spanish Armada crashing against rocky shores in a storm.</li><li><strong>The Mermaid:</strong> A carved mermaid on the imperial chair symbolizes the English control of the seas and the temptation/destruction of foreign fleets.</li></ul>",
+          title: 'Act 3: The Climax: The Spanish Armada & The Battle of Gravelines (1588)',
+          text: 'By 1587, King Philip II’s patience ran out. Enraged by Drake’s relentless piracy, Elizabeth’s military support for Dutch Protestant rebels, and the execution of the Catholic <strong>Mary, Queen of Scots</strong> in 1587, Philip decided to conquer England once and for all.<br><br>In May 1588, Philip launched the <strong>Spanish Armada</strong> (the *Grande y Felicísima Armada*): 130 massive warships carrying 30,000 soldiers and 2,400 cannons. Philip’s master plan was to sail up the English Channel, join forces with the Duke of Parma’s veteran Spanish army in the Spanish Netherlands, land in Kent, overthrow Elizabeth, and restore England to Catholicism by force.<br><br>The Armada sailed in a formidable, tightly packed <strong>crescent (half-moon) formation</strong> that made boarding actions nearly impossible. However, the English countered with superior naval tactics. Commanded by Lord Howard of Effingham and Sir Francis Drake, English ships were lower, faster "race-built" galleons carrying heavy, long-range naval guns that could reload much faster than Spanish cannons.<br><br>The turning point came on the midnight of 7 August 1588 off Calais. The English unleashed eight <strong>fireships</strong>—old wooden vessels packed with tar, pitch, and gunpowder set ablaze—and allowed the tide to carry them directly into the crowded Spanish fleet. Terrified Spanish captains cut their heavy anchor cables in panic and scattered into the darkness. The following morning, at the <strong>Battle of Gravelines</strong>, the English battered the disorganised Spanish ships with close-range broadsides.<br><br>Defeated and unable to turn back against southwest winds, the surviving Armada fled north around the jagged coasts of Scotland and Ireland. Ferocious Atlantic gales—celebrated by Protestants as the miraculous <strong>"Protestant Wind"</strong>—smashed dozens of Spanish ships against the rocks. Fewer than half of Philip’s ships and only 10,000 men ever returned to Spain.',
+          image: '/images/spanish_armada_battle.jpg',
+          image_alt: 'Expedition Map of the Route of the Spanish Armada (1588) by Robert Adams',
+          image_caption:
+            'Source C: Contemporary map (1588) by Robert Adams showing the Armada’s voyage up the Channel, the scattering off Calais, and the disastrous retreat around the stormy coasts of Scotland and Ireland.',
+          tasks: [
+            {
+              type: 'explanation',
+              scaffold: [
+                "Factor 1 (English Naval Tactics & Technology): Mention faster 'race-built' galleons, long-range guns, and the fireships at Calais.",
+                "Factor 2 (Spanish Failures & The Weather): Mention cut anchor cables, lack of communication with Parma, and the 'Protestant Wind' storms.",
+              ],
+              question:
+                'Explain TWO main reasons why the Spanish Armada failed to invade England in 1588, evaluating whether the defeat was caused primarily by English tactical skill or Spanish misfortune.',
+              starter:
+                'One primary reason the Spanish Armada failed was English tactical superiority, such as..., whereas a second decisive factor was...',
+              model_answer:
+                'First, the Armada was defeated by superior English naval tactics and technology. English shipwrights had designed nimble, low-lying "race-built" galleons that could sail closer to the wind and outmaneuver the towering Spanish vessels. Furthermore, English cannons were mounted on four-wheeled truck carriages that allowed crews to reload in minutes, whereas Spanish guns were cumbersome and slow. The decisive masterstroke was the deployment of eight fireships off Calais, which panicked the Spanish commanders into cutting their anchor ropes, permanently breaking their impenetrable crescent formation and leaving them vulnerable at Gravelines.\n\nSecond, the invasion collapsed due to fatal Spanish logistical flaws combined with catastrophic Atlantic weather. Philip II’s plan required the Armada to rendezvous with the Duke of Parma’s army in the Netherlands, but Parma lacked a deep-water port, making a rapid embarkation impossible under English naval harassment. Once scattered, the anchorless Spanish ships were driven north into violent North Atlantic storms—the famed "Protestant Wind"—which smashed over 50 galleons onto the rocky coasts of Scotland and Ireland. While English tactics broke the Armada’s cohesion, severe weather and Spanish logistical blunders guaranteed its utter destruction.',
+            },
+          ],
         },
         {
-          title: 'Analyzing Source F',
+          title: 'Act 4: The Imperial Turning Point: The Armada Portrait & The Birth of Empire',
+          text: 'The defeat of the Spanish Armada was a profound psychological and geopolitical watershed. While the Anglo-Spanish war dragged on until 1604, the victory of 1588 shattered the myth of Spanish naval invincibility and unleashed an explosion of English national pride and imperial ambition.<br><br>No historical artifact captures this moment better than <strong>The Armada Portrait of Queen Elizabeth I</strong> (c. 1588, attributed to George Gower). Commissioned to celebrate the victory, the painting is packed with sophisticated political and religious iconography:<br><ul><li><strong>The Globe and North America:</strong> Elizabeth’s right hand rests purposefully on the globe, with her fingers spread directly over North America. The message was unmistakable: England was no longer content to stay on its island; it was claiming the right to colonize the Americas and challenge Spain for global dominion.</li><li><strong>The Contrasting Windows:</strong> The window behind her right shoulder shows the English fleet sailing in calm, golden sunlight, while the window behind her left shoulder shows the Spanish Armada being battered and wrecked against stormy rocks by God’s "Protestant Wind".</li><li><strong>The Crown and the Mermaid:</strong> An imperial closed crown sits beside her, asserting that England was an empire answerable to no foreign Pope or Emperor, while a carved mermaid on her throne symbolizes mastery over the wild oceans.</li><li><strong>The Pearls:</strong> Elizabeth’s dress is encrusted with over 800 pearls, symbolizing virginity, purity, and the precious oceanic wealth brought back by global privateers.</li></ul><br>For centuries, British historians celebrated 1588 as a divine miracle that founded the British Empire. Modern historians, however, emphasize that the Armada did not instantly create an empire—England still had no permanent American colonies. Instead, 1588 gave the English the <em>confidence</em> and the <em>ideological justification</em> to build one. As writer Richard Hakluyt argued, colonisation was now England’s sacred duty: to spread Protestantism, liberate Indigenous peoples from Spanish brutality, and bring glory to the realm.',
           image: '/images/armada_portrait.jpg',
           image_alt: 'The Armada Portrait of Queen Elizabeth I (c. 1588)',
-          source_letter: 'F',
+          image_caption:
+            'Source D: The Armada Portrait of Queen Elizabeth I (c. 1588, attributed to George Gower, Woburn Abbey version). Packed with imperial symbolism, it depicts Elizabeth claiming global mastery following the defeat of Spain.',
           tasks: [
             {
-              type: 'analysis',
+              type: 'source_analysis',
               question:
-                "What message was the artist of the Armada Portrait trying to convey about England's future?",
+                "Study Source D (The Armada Portrait). How does the artist use specific visual symbols in this painting to project Elizabeth's royal authority and announce England's arrival as a global maritime empire?",
+              starter:
+                "The artist uses several powerful visual symbols in the Armada Portrait to project Elizabeth's imperial authority, most notably...",
               model_answer:
-                'The artist was conveying that England, having destroyed the mighty Spanish Armada (shown in the background), was now destined to become a dominant global and maritime empire, explicitly claiming the Americas (shown by her hand resting on the globe).',
-            },
-            {
-              question:
-                "Study Source F (The Armada Portrait of Queen Elizabeth I). How does the artist use symbolism in this painting to project Elizabeth's power following the defeat of the Spanish Armada?",
-              model_answer:
-                "The portrait is filled with imperial symbolism. Elizabeth's hand rests on a globe, symbolizing England's growing global ambitions, while the background scenes explicitly contrast the destruction of the Spanish fleet with the calm strength of the English navy.",
+                "The artist employs three primary visual symbols to project Elizabeth's imperial majesty and global ambitions. First, her right hand rests deliberately over North America on a terrestrial globe. This signifies that England was boldly asserting its right to explore, trade, and colonize the New World, directly challenging Spain's papal monopoly. Second, the contrasting windows in the background construct a powerful ideological narrative: the calm, orderly English fleet on the left basks in clear skies, while the Spanish Armada on the right is violently shattered by the stormy 'Protestant Wind', symbolizing that God Himself favored Elizabeth's Protestant realm over Catholic Spain. Finally, the imperial closed crown beside her and the mermaid carved into her chair proclaim that Elizabeth was an absolute sovereign whose naval power commanded the oceans of the world.",
             },
           ],
-          image_caption: 'The Armada Portrait of Queen Elizabeth I (c. 1588)',
-        },
-        {
-          title:
-            'Historical Interpretations: Was the Armada Defeat a Religious Miracle or Tactical Failure?',
-          text: '<blockquote><strong>Historian Perspective A: Traditional View (19th Century)</strong><br><em>"The defeat of the Armada was a miraculous victory for Protestantism and freedom. God sent a divine storm to scatter the Catholic tyrant’s fleet, paving the way for the rise of the British Empire."</em></blockquote><br><br><blockquote><strong>Historian Perspective B: Revisionist View (Geoffrey Parker, 2013)</strong><br><em>"Philip II’s invasion failed due to structural flaws: poor communications between Spain and the Netherlands, rigid tactics, and terrible naval logistics. The \'Protestant Wind\' simply finished off a fleet that had already been outmaneuvered by superior English ship design and artillery."</em></blockquote>',
-          tasks: [
-            {
-              type: 'comprehension',
-              question:
-                "How does the revisionist view (Perspective B) challenge the traditional view (Perspective A) of the Armada's defeat?",
-              model_answer:
-                "Perspective A argues the defeat was a divine, miraculous event driven by the 'Protestant Wind' sent by God. Perspective B challenges this by arguing it was actually caused by human errors and Spanish structural flaws—such as poor logistics, rigid tactics, and superior English ship design—with the weather only playing a secondary role at the end.",
-            },
-          ],
-        },
-        {
-          title: 'Lesson Reflection',
         },
         {
           title: 'Side Quest: The Horrors of Scurvy',
-          text: '<details class="side-quest-box">\n  <summary>⚔️ Side Quest: The Horrors of Scurvy</summary>\n  \n<div style="text-align:center; margin:15px 0;">\n  <img src="/images/sidequest_scurvy.jpg" style="max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;" onclick="window.openModal && window.openModal(this.src)"/>\n  <br/>\n  <i style="font-size:0.9em; color:#64748b;"><strong>Source G:</strong> Historical medical documentation illustrating the horrifying effects of scurvy on a sailor\'s gums and teeth.</i>\n</div>\n<p>The \'Golden Age of Exploration\' is often painted as a heroic era of brave captains claiming glory. But for the ordinary sailors on ships like Francis Drake\'s Golden Hind, life was a living nightmare of disease and malnutrition. The greatest enemy was not the Spanish navy, but scurvy—a terrifying disease caused by a severe lack of Vitamin C on long voyages. Because fresh fruit spoiled quickly, sailors survived on rock-hard, maggot-infested biscuits and salted beef that had often turned green. Without Vitamin C, a sailor\'s gums would swell and rot, their teeth would fall out, old wounds would miraculously rip open again, and they would slowly bleed to death internally. On many Elizabethan voyages, more than half the crew died of scurvy before ever seeing combat.</p>\n</details>',
+          text: '<details class="side-quest-box">\n  <summary>⚔️ Side Quest: The Horrors of Scurvy</summary>\n  \n<div style="text-align:center; margin:15px 0;">\n  <img src="/images/sidequest_scurvy.jpg" style="max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;" onclick="window.openModal && window.openModal(this.src)"/>\n  <br/>\n  <i style="font-size:0.9em; color:#64748b;"><strong>Source E:</strong> Historical medical documentation illustrating the horrifying effects of scurvy on a sailor\'s gums and teeth.</i>\n</div>\n<p>The "Golden Age of Exploration" is often painted as a heroic era of brave captains claiming glory. But for the ordinary sailors on ships like Francis Drake\'s <em>Golden Hind</em>, life was a living nightmare of disease and malnutrition. The greatest enemy was not the Spanish navy, but <strong>scurvy</strong>—a terrifying disease caused by a severe lack of Vitamin C on voyages lasting months without fresh fruit or vegetables. Because fresh supplies spoiled quickly, sailors survived on rock-hard, weevil-infested "hard tack" biscuits and salted beef that had often turned green. Without Vitamin C, the human body cannot produce collagen: a sailor\'s gums would swell, turn purple, and rot; their teeth would fall out; old healed scars would miraculously rip open again; and they would slowly bleed to death internally. On many Elizabethan expeditions, over half the crew died of scurvy before ever engaging the enemy in combat.</p>\n</details>',
           tasks: [
             {
               type: 'think_pair_share',
               question:
-                "Why might history textbooks prefer to focus on the 'glory' of Francis Drake rather than the reality of scurvy?",
+                "Why did Elizabethan propaganda and later history textbooks emphasize the 'patriotic glory' of captains like Francis Drake, while ignoring the grim reality that over half of ordinary sailors died from scurvy and malnutrition?",
+              starter:
+                'Propaganda and historical accounts prioritized the glorious narrative of Drake and the Armada because...',
               model_answer:
-                'Textbooks often focus on the heroic, patriotic narrative of exploration and victory, rather than the grim, unglamorous suffering of ordinary sailors.',
-            },
-            {
-              type: 'sorting',
-              events: [
-                'The Spanish Armada is defeated by the English fleet and bad weather.',
-                'Martin Luther pins his 95 Theses to the door, beginning the Protestant Reformation.',
-                'Francis Drake circumnavigates the globe and raids Spanish treasure ships.',
-                "The Pope splits the 'New World' between Spain and Portugal.",
-              ],
-              question: 'Number these events from 1 to 4 in the order they happened.',
+                'Elizabethan propaganda and patriotic history books deliberately emphasized military triumphs, daring captains, and divine favor because their purpose was to foster national pride, legitimize royal power, and inspire recruitment for future dangerous naval expeditions. Acknowledging that the majority of sailors died agonizing, unglamorous deaths from rotting gums and rotten rations would have undermined the myth of English exceptionalism and exposed the brutal human cost of early imperial expansion.',
             },
           ],
-          source_letter: 'F',
         },
       ],
       quiz: [
@@ -1430,7 +1341,7 @@ const early_modern_world = {
           explanation: 'A Letter of Marque',
         },
         {
-          question: 'What nickname did the Spanish give to ?',
+          question: 'What nickname did the Spanish give to Francis Drake?',
           options: [
             'The Pirate King',
             'The Heretic',
@@ -1441,7 +1352,8 @@ const early_modern_world = {
           explanation: 'El Draque ("The Dragon")',
         },
         {
-          question: 'Name the flagship on which  circumnavigated the globe between 1577 and 1580.',
+          question:
+            'Name the flagship on which Francis Drake circumnavigated the globe between 1577 and 1580.',
           options: ['The Golden Hind', 'The Mayflower', 'The Mary Rose', 'The Victory'],
           answer: 0,
           explanation: 'The Golden Hind',
@@ -1505,23 +1417,49 @@ const early_modern_world = {
         ],
       },
       extended: {
-        title: 'Assessment Practice',
+        title: 'Assessment Practice: 12-Mark Explanatory Essay',
         question:
-          'How did the Protestant Reformation push England into global exploration and conflict with Spain?',
+          'Explain how religious conflict between Catholics and Protestants pushed England into global exploration and naval rivalry with Spain between 1517 and 1588.',
         hints: [
-          'Mention Henry VIII, the Pope, privateers (Francis Drake), and the Spanish Armada.',
-          'Sentence Starter: When England became Protestant, it created conflict with Catholic Spain because...',
-          'Sentence Starter: To challenge Spain’s wealth in the New World, English monarchs encouraged...',
-          'Sentence Starter: This rivalry culminated in...',
+          'Point 1: The Protestant Reformation & Papal Monopoly (1517–1534) — Martin Luther, Henry VIII’s break with Rome, and papal decrees (Treaty of Tordesillas 1494) locking Protestant England out of the New World.',
+          'Point 2: Elizabethan Privateering as Holy War (1568–1585) — San Juan de Ulúa ambush, Francis Drake’s circumnavigation on the Golden Hind, and raiding Spanish silver fleets with royal Letters of Marque.',
+          'Point 3: The Climax of the Spanish Armada (1588) — King Philip II launching 130 warships to restore Catholicism, shattered by English fireships off Calais and the "Protestant Wind".',
+          'Point 4: Ideological & Imperial Rebirth — The Armada Portrait symbolizing England’s claim over North America and Richard Hakluyt’s call to establish a Protestant overseas empire.',
         ],
+        teacher_guidance: {
+          visualiser_prompt:
+            'Model live under the visualiser how to construct a causal link between religious ideology (the Reformation) and material action (privateering and colonization). Emphasize how connective stems ("Consequently...", "Driven by religious conviction...") show historical causation rather than simple chronological storytelling.',
+          tiered_stems: [
+            {
+              tier: 'Tier 1 · Foundation (Descriptive Identification)',
+              stem: 'Religious conflict pushed England into global exploration because Protestant England rejected Catholic Spain’s monopoly, leading Queen Elizabeth I to encourage privateers like Francis Drake to...',
+              pupil_focus:
+                'Identifies the religious divide between Protestant England and Catholic Spain and describes how English privateers attacked Spanish treasure fleets.',
+            },
+            {
+              tier: 'Tier 2 · Developing (Causal Contrast)',
+              stem: 'While the Pope had granted the Americas exclusively to Catholic Spain in the Treaty of Tordesillas, England’s break from Rome meant Elizabeth I refused to recognize this decree, using state-sponsored privateers to challenge Spanish wealth because...',
+              pupil_focus:
+                'Draws a clear causal link between England’s rejection of papal authority and the strategic use of privateering to wage undeclared economic warfare.',
+            },
+            {
+              tier: 'Tier 3 · Greater Depth (Complex Evaluative Synthesis)',
+              stem: 'Although economic greed for silver was a powerful catalyst, religious conflict was the primary driver of English global expansion, as the ideological divide of the Reformation transformed state-sponsored privateering into a righteous crusade to dismantle Spain’s papal monopoly, culminating in the 1588 defeat of the Armada which established England’s divine self-image as a global maritime empire.',
+              pupil_focus:
+                'Syntactically embeds nuanced causation, demonstrating how religious ideology legitimized economic piracy and propelled England into global imperial competition.',
+            },
+          ],
+        },
+        model:
+          'Between 1517 and 1588, religious conflict was the primary catalyst that propelled England from an isolated island into an aggressive global maritime power. The ideological fracture of the Protestant Reformation directly drove naval rivalry, state-sponsored privateering, and imperial ambitions against Catholic Spain.\n\nFirstly, the Reformation shattered the diplomatic consensus of Europe and created irreconcilable geopolitical divisions. When Martin Luther launched the Protestant Reformation in 1517 and King Henry VIII broke from Rome in 1534, England became a Protestant state surrounded by hostile Catholic powers. Decades earlier, Pope Alexander VI had brokered the Treaty of Tordesillas (1494), granting the entire Americas exclusively to Catholic Spain and Portugal. Because Protestant England rejected papal supremacy, English monarchs and mariners refused to recognise Spain’s divine trade monopoly. Consequently, English sailors viewed oceanic voyages not merely as commercial ventures, but as an assertion of their religious right to navigate the globe.\n\nSecondly, this religious animosity transformed oceanic raiding into an act of holy war. Following the Spanish ambush of Francis Drake and John Hawkins at San Juan de Ulúa in 1568, English seamen viewed Catholic Spain as an existential, persecuting enemy. Lacking the treasury to fight an open war against King Philip II, Queen Elizabeth I licensed privateers with Letters of Marque. Captains like Francis Drake raided Spanish treasure ships—most famously capturing 26 tons of silver from the Cacafuego during his 1577–1580 circumnavigation. While the Spanish condemned Drake as "El Draque", an illegal pirate, English Protestants celebrated him as a national hero dismantling the wealth of the "Antichrist of Rome". State-sponsored piracy provided the capital, ships, and navigational expertise that laid the foundations for a global navy.\n\nFinally, the religious conflict culminated in the launch and defeat of the Spanish Armada in 1588. King Philip II launched 130 warships to depose Elizabeth and return England to the Catholic fold. The decisive defeat of the Armada—achieved through English fireships off Calais, superior gunnery at Gravelines, and devastating Atlantic storms—shattered the myth of Spanish invincibility. In England, the victory was interpreted as divine intervention: God had sent the "Protestant Wind" to defend his chosen people. As immortalised in The Armada Portrait, where Elizabeth rests her hand on the globe over North America, the victory gave England the psychological confidence to envision itself as a global empire.\n\nIn conclusion, religious conflict was the fundamental engine of early English exploration. It supplied the ideological justification to defy Spain’s papal monopoly, transformed commercial raiding into patriotic duty, and produced the naval triumph of 1588 that launched England’s maritime destiny.',
         lines: 15,
       },
       disciplinary_focus:
-        'Change and Continuity - Examining the impact of the printing press on society.',
+        'Causation and Consequence - Evaluating how religious ideology fueled naval rivalry and global expansion.',
       formative_assessment: {
         type: 'PEEL Paragraph',
         question:
-          'PEEL Paragraph (Change & Continuity): How did the printing press revolutionize the spread of ideas?',
+          'PEEL Paragraph (Causation): How did religious conflict directly cause the expansion of English maritime power between 1517 and 1588?',
       },
     },
     {

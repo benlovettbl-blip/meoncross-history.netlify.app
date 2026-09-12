@@ -9,6 +9,23 @@ var isGCSE = false;
 
 window.formatBold = function (text) {
   if (!text) return '';
+  if (typeof text !== 'string') {
+    if (typeof text === 'object') {
+      if (text.stem) {
+        return (
+          (text.tier ? '<strong>' + text.tier + ':</strong> ' : '') +
+          window.formatBold(text.stem) +
+          (text.pupil_focus
+            ? ' <span style="display:block; font-size:0.85em; opacity:0.85; margin-top:2px;">(' +
+              text.pupil_focus +
+              ')</span>'
+            : '')
+        );
+      }
+      return '';
+    }
+    text = String(text);
+  }
   let parsed = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
   // Handle blockquotes
