@@ -379,7 +379,7 @@ const SPREADS = [
     id: 'lesson_1_3',
     topic: 'Key Topic 1 • Civil Rights 1954–1960',
     title: 'KT 1.3: How did the Montgomery Bus Boycott happen, and why did it succeed?',
-    examType: 'inference_causation',
+    examType: 'interpretation_diff_why',
     left: {
       tag: 'KT 1.3 • Deep Knowledge',
       headline: 'The 381-Day Economic Siege: Grassroots Unity, Non-Violence & Legal Victory',
@@ -498,21 +498,23 @@ const SPREADS = [
       ],
     },
     right: {
-      q1: {
-        title: 'Question 1: Source Inference [4 Marks]',
-        sourceTitle: 'Source A: Rosa Parks riding a desegregated Montgomery bus, December 1956',
-        sourceImage: 'units/usa/assets/sources/rosa-parks-bus-1956.jpg',
-        sourceCaption:
-          'Iconic photograph of Rosa Parks seated calmly at the front of a Montgomery bus next to a white passenger on the first day of integration.',
-        question:
-          'Give two things you can infer from Source A about the success of the Montgomery Bus Boycott.',
+      int1: {
+        author: "Historian Danielle L. McGuire, 'At the Dark End of the Street' (2010)",
+        text: '"The Montgomery Bus Boycott was fundamentally the accomplishment of organized Black women and working-class domestic workers. Jo Ann Robinson and the Women\'s Political Council mobilized the community within hours of Rosa Parks\' arrest, distributing 35,000 leaflets overnight and managing an intricate 300-car dispatch network. For over a year, thousands of maids and labourers walked miles daily, starving the municipal bus company of over 70% of its revenue. It was this sustained economic sacrifice and grassroots community solidarity that created an intolerable crisis for the city."',
       },
-      q2: {
-        title: 'Question 2: Causation Essay [12 Marks]',
-        question: 'Explain why the Montgomery Bus Boycott succeeded in achieving its aims.',
-        stimulus: ['Carpool system', 'Supreme Court ruling (Browder v. Gayle)'],
-        spanNote: '1955–1956',
-        lines: 24,
+      int2: {
+        author: "Historian David L. Lewis, 'King: A Critical Biography' (1970)",
+        text: '"While grassroots logistics provided the skeleton of the protest, the boycott achieved national prominence and ultimate victory because of the charismatic oratory and spiritual leadership of Dr Martin Luther King Jr. King gave the movement its unshakeable Christian non-violent philosophy, uniting disparate factions and attracting crucial northern financial and media support. Furthermore, local economic pressure could never legally force integration; only the decisive federal intervention of the Supreme Court in Browder v. Gayle compelled Montgomery to yield."',
+      },
+      q3b: {
+        question:
+          'Study Interpretations 1 and 2. They give different views about the main reason why the Montgomery Bus Boycott was successful. What is the main difference between these views? Explain your answer, using details from both interpretations.',
+        lines: 12,
+      },
+      q3c: {
+        question:
+          'Suggest one reason why Interpretations 1 and 2 give different views about the main reason why the Montgomery Bus Boycott succeeded. You may use information from your own knowledge to help explain your answer.',
+        lines: 13,
       },
     },
   },
@@ -1554,7 +1556,7 @@ const SPREADS = [
     id: 'lesson_3_3',
     topic: 'Key Topic 3 • US Involvement in Vietnam 1954–1975',
     title: 'KT 3.3: Why did US military tactics fail to defeat the Vietcong?',
-    examType: 'inference_causation',
+    examType: 'interpretation_diff_why',
     left: {
       tag: 'KT 3.3 • Deep Knowledge',
       headline: 'Asymmetric Attrition: High-Tech Firepower vs Guerrilla Survival',
@@ -1673,24 +1675,24 @@ const SPREADS = [
       ],
     },
     right: {
-      q1: {
-        title: 'Question 1: Source Inference [4 Marks]',
-        sourceTitle: 'Source A: US Army UH-1 Huey helicopters inserting troops under fire, 1970',
-        sourceImage: 'images/huey_combat_landing_vietnam.jpg',
-        sourceCaption:
-          'Combat photograph showing American soldiers leaping from helicopter skids onto an exposed jungle landing zone while under enemy fire.',
-        question:
-          'Give two things you can infer from Source A about the methods and dangers of US combat tactics in the Vietnam War.',
+      int1: {
+        author:
+          "Historian Christian G. Appy, 'Working-Class War: American Combat Soldiers and Vietnam' (1993)",
+        text: '"American military tactics failed because heavy conventional firepower was fundamentally counterproductive in an asymmetric guerrilla war. General Westmoreland\'s reliance on massive B-52 carpet bombing, toxic defoliants like Agent Orange, and aggressive search-and-destroy missions devastated the civilian countryside. By burning peasant villages with Zippo lighters and killing innocent farmers to inflate the body count, US forces alienated the very rural population they were sent to protect, actively driving thousands of recruits into the Vietcong."',
       },
-      q2: {
-        title: 'Question 2: Causation Essay [12 Marks]',
-        question: 'Explain why US military tactics failed to defeat the Vietcong.',
-        stimulus: [
-          'Vietcong tunnel networks and booby traps',
-          'Chemical weapons (Agent Orange and Napalm)',
-        ],
-        spanNote: '1965–1972',
-        lines: 24,
+      int2: {
+        author: "Historian Mark Moyar, 'Triumph Forsaken: The Vietnam War, 1954–1965' (2006)",
+        text: '"The failure of US tactics was primarily caused by the extraordinary resilience, subterranean ingenuity, and logistical tenacity of the communist forces. Through the vast Cu Chi tunnel complexes, invisible booby traps, and the endless supplies flowing down the Ho Chi Minh Trail, the Vietcong successfully neutralized American technological and air superiority. Commanded by dedicated cadres and shielded by neutral sanctuaries in Laos and Cambodia, the guerrillas dictated the terms of combat, fighting only when they possessed the advantage."',
+      },
+      q3b: {
+        question:
+          'Study Interpretations 1 and 2. They give different views about the main reason why US military tactics failed to defeat the Vietcong. What is the main difference between these views? Explain your answer, using details from both interpretations.',
+        lines: 12,
+      },
+      q3c: {
+        question:
+          'Suggest one reason why Interpretations 1 and 2 give different views about why US military tactics failed to defeat the Vietcong. You may use information from your own knowledge to help explain your answer.',
+        lines: 13,
       },
     },
   },

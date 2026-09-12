@@ -148,5 +148,12 @@ Whenever authoring or refactoring lesson content across KS3 and GCSE units, you 
 5. **Pedagogical Recall Isolation ("Do Now" Bell-Ringers)**:
    - "Do Now" activities must strictly test recall from *prior* lessons or units. They must NEVER test content from the current lesson.
 
-
-
+## Edexcel GCSE Paper 3 Visual Revision Guides: The 4-4-4-4 Question Matrix
+Whenever generating, updating, or refactoring a 16-spread (36-page) Edexcel GCSE Paper 3 Visual Revision & Exam Guide (such as for USA 1954–75, and crucially when authoring the future **Weimar and Nazi Germany** guide):
+1. **The 4-4-4-4 Matrix Standard**: The 16 double-page spreads across the 4 Key Topics MUST strictly follow an even 4-4-4-4 question distribution:
+   - **4x `inference_causation`**: Section A: Q1 Inference [4m] + Q2 Explain Why [12m] (1 per Key Topic)
+   - **4x `source_utility`**: Section B: Q3(a) Utility of Sources B and C [8m] (1 per Key Topic)
+   - **4x `interpretation_diff_why`**: Section B: Q3(b) Differences in Views [4m] + Q3(c) Suggest Reasons for Difference [4m] (1 per Key Topic)
+   - **4x `interpretation_eval`**: Section B: Q3(d) Evaluative Essay with Criteria Judgement [16+4m] (1 per Key Topic)
+2. Every single Key Topic (KT1, KT2, KT3, KT4) must contain exactly one spread dedicated to each of the four exam question formats, guaranteeing completely balanced, high-yield exam mastery across Section A and Section B.
+3. **Weimar & Nazi Germany Note**: Do NOT build the Weimar and Nazi Germany guide until the user explicitly requests it. When built, it must enforce this exact 4-4-4-4 architecture.
