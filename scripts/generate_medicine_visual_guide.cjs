@@ -1642,7 +1642,7 @@ const SPREADS = [
         sourceB:
           'Source B: From an official report by a Royal Army Medical Corps (RAMC) senior officer to the War Office, December 1916: "Motor ambulance convoys have proved invaluable on hard roads, but between the Regimental Aid Posts and Dressing Stations, mechanical transport cannot move across the churned mud. We have had to fall back on horse-drawn carts and manual stretcher parties."',
         provenanceClue:
-          'Provenance Hints: Consider Source A’s emotional first-hand perspective under fire versus Source B’s objective administrative logistics report for the War Office.',
+          'Provenance Hints: Evaluate the photographic evidence of stretcher bearers struggling in Passchendaele mud against Source B’s objective administrative logistics report for the War Office.',
         guidance:
           'Timing: 15 mins • Structure: Evaluate Content, Knowledge context, and Provenance (Nature, Origin, Motive) for Source A, then Source B, with an overall judgement on usefulness.',
         lines: 16,
@@ -1905,7 +1905,7 @@ const SPREADS = [
         sourceB:
           'Source B: From an official report by a medical officer at a Casualty Clearing Station near Ypres, May 1915: "We received 300 gas cases today following a German cloud discharge. The majority were cyanosed [blue-skinned] and suffering intense dyspnoea [shortness of breath]. Oxygen cylinders provided temporary relief, but 42 died within eight hours of admission from acute pulmonary oedema."',
         provenanceClue:
-          'Provenance Hints: Contrast Graves’ vivid post-war literary recollection with the immediate clinical accuracy and statistical focus of the military MO’s operational casualty report.',
+          'Provenance Hints: Contrast the visual evidence of blinded soldiers awaiting treatment in Source A with the immediate clinical accuracy and statistical focus of the medical officer’s operational casualty report in Source B.',
         guidance:
           'Timing: 15 mins • Structure: Evaluate Content, Knowledge context, and Provenance (Nature, Origin, Motive) for Source A, then Source B, with a sustained usefulness judgement.',
         lines: 16,
@@ -2168,7 +2168,7 @@ const SPREADS = [
         sourceB:
           'Source B: From a personal account by Captain Oswald Robertson, describing his work at the Battle of Cambrai, November 1917: "We kept the blood in glass quart bottles packed in ice. When the wounded arrived in severe shock, pulseless and pale as death, we warmed the blood and infused it directly into their veins. Within minutes, colour returned to their lips and their pulse strengthened. Men who would certainly have died survived to reach the operating theatre."',
         provenanceClue:
-          'Provenance Hints: Evaluate the objective medical statistical authority of the BMJ professional article against the personal eyewitness technical report of the pioneer who built the first blood depot.',
+          'Provenance Hints: Evaluate the visual, objective evidence of frontline diagnostic X-ray technology against the first-hand technical testimony of Captain Robertson pioneering stored blood transfusions at Cambrai.',
         guidance:
           'Timing: 15 mins • Structure: Evaluate Content, Knowledge context, and Provenance (Nature, Origin, Motive) for Source A, then Source B, with a clear comparative usefulness conclusion.',
         lines: 16,
@@ -3424,8 +3424,8 @@ const PILLAR_IMAGES = {
   florey_chain: '/images/penicillin_mould.jpg',
   mass_production: '/images/penicillin_propaganda.jpg',
   doll_hill: '/images/lung_cancer_campaign.jpg',
-  somme_arras: '/images/gw_flooded_trench.jpg',
-  gas_gangrene: '/images/brooding_soldier_gas.jpg',
+  somme_arras: '/images/stretcher_bearers_passchendaele_1917.jpg',
+  gas_gangrene: '/images/blinded_soldiers_gas_1918.jpg',
 };
 
 const EXAMINER_TRAPS_DATA = {
@@ -3849,16 +3849,16 @@ SPREADS.forEach((s, idx) => {
 // Attach authentic visual sources to Section A Q2(a)
 if (SPREADS[13] && SPREADS[13].right.q2a) {
   SPREADS[13].right.q2a.visualSource = {
-    image: '/images/gw_flooded_trench.jpg',
+    image: '/images/stretcher_bearers_passchendaele_1917.jpg',
     title: 'Source A (Visual): Stretcher bearers in mud, Ypres Salient, 1917',
     caption:
-      'Official British photograph showing four stretcher bearers struggling waist-deep in waterlogged mud near Passchendaele, November 1917.',
+      'Official British photograph showing stretcher bearers struggling through deep, waterlogged mud near Passchendaele, 1917.',
   };
 }
 
 if (SPREADS[15] && SPREADS[15].right.q2a) {
   SPREADS[15].right.q2a.visualSource = {
-    image: '/images/brooding_soldier_gas.jpg',
+    image: '/images/blinded_soldiers_gas_1918.jpg',
     title: 'Source A (Visual): Blinded British soldiers after mustard gas attack, 1918',
     caption:
       'Official photograph showing a line of British soldiers blinded by mustard gas, each with eyes bandaged, holding the shoulder of the man in front.',
@@ -3867,10 +3867,10 @@ if (SPREADS[15] && SPREADS[15].right.q2a) {
 
 if (SPREADS[17] && SPREADS[17].right.q2a) {
   SPREADS[17].right.q2a.visualSource = {
-    image: '/images/aerial_trench_ypres.jpg',
-    title: 'Source A (Visual): Aerial survey of flooded trench cratering, Ypres 1917',
+    image: '/images/mobile_xray_field_hospital_1917.jpg',
+    title: 'Source A (Visual): Mobile X-ray unit locating a bullet at a field hospital, 1917',
     caption:
-      'British Royal Flying Corps aerial photograph showing the devastated, flooded crater landscape near Passchendaele, illustrating extreme evacuation difficulties.',
+      'Official contemporary photograph showing military medical staff operating mobile radiographic equipment powered by a vehicle engine to locate embedded bullets in a wounded soldier.',
   };
 }
 
