@@ -42035,6 +42035,29 @@
               ]
             },
             {
+              "type": "photo_slider",
+              "title": "Cartographic Forensic Slider: 1890s Ordnance Survey vs. Modern Funtley",
+              "description": "Slide back and forth to compare the late Victorian Ordnance Survey 25-inch (1:2,500) map against modern Funtley. Observe how the 1890s survey preserves the exact anatomy of Henry Cort’s industrial ironworks: the extensive Mill Pond (complete with marsh reeds and sluice gates), the mill race aqueduct, the forge workshops (plot 316), and Samuel Jellicoe’s Georgian residence at Fontley House.",
+              "before_image": "/images/funtley/funtley_historic_os_map_1890s.jpg",
+              "before_label": "1890s OS 25-Inch Map (Forge Mill & Sluices)",
+              "after_image": "/images/funtley/funtley_modern_map.jpg",
+              "after_label": "Modern Street Map (Iron Mill Lane & Meon)",
+              "satellite_image": "/images/funtley/funtley_modern_satellite.jpg",
+              "satellite_label": "Modern Satellite Aerial View",
+              "links": [
+                {
+                  "label": "NLS Side-by-Side Map Viewer (Full Screen)",
+                  "url": "https://maps.nls.uk/geo/explore/side-by-side/#zoom=17.0&lat=50.8708&lon=-1.2205&layers=168&right=osm",
+                  "icon": "fa-solid fa-table-columns"
+                },
+                {
+                  "label": "NLS Interactive Spyglass Lens",
+                  "url": "https://maps.nls.uk/geo/explore/spy/#zoom=17.0&lat=50.8708&lon=-1.2205&layers=168&b=1",
+                  "icon": "fa-solid fa-circle-dot"
+                }
+              ]
+            },
+            {
               "title": "Act 3: The Archival Evidence: The Portsmouth Dockyard Trials & The Tragic Fall (1787–1800)",
               "text": "<span class=\"para-ref\">[3.1]</span> Cort knew that patenting his process was meaningless unless he could convince the most demanding, sceptical customer in the world: the British Admiralty. In March 1787, Cort invited the Navy Board to conduct rigorous, definitive trials at Portsmouth Royal Navy Dockyard. In the presence of dockyard commissioners and master smiths, naval artisans subjected Funtley wrought iron to punishing stress tests: bars were twisted into corkscrews, hammered cold back upon themselves, punched with holes, and drawn into heavy ship anchors.<br><br><span class=\"para-ref\">[3.2]</span> The official Admiralty trial report (Source C) delivered an emphatic verdict: Funtley wrought iron was superior in toughness, flexibility, and tensile strength to any iron ever manufactured in the British realm, and fully matched the world's finest Swedish Orgrounds iron. The breakthrough freed the Royal Navy from strategic dependency on foreign powers. Within two decades, British iron production multiplied by 400%, from 68,000 tons in 1788 to over 250,000 tons by 1806, providing the iron plates, structural knees, and cannons that secured naval supremacy against Napoleon at the Battle of Trafalgar (1805). Cort was hailed as \"the father of the iron trade.\"<br><br><span class=\"para-ref\">[3.3]</span> Yet Cort's world-changing success ended in personal tragedy. To finance the massive expansion of the Funtley works, Cort had entered into a partnership with Adam Jellicoe, the Deputy Paymaster of the Royal Navy. When Jellicoe died suddenly in August 1789, naval auditors uncovered a monstrous scandal: Jellicoe had secretly embezzled £27,000 from naval tax funds and invested it into Cort's ironworks. The Crown moved with ruthless speed, seizing Cort's Funtley lease, confiscating his patents, and freezing his accounts. Without patents, ironmasters across Wales, Shropshire, and Scotland freely adopted Cort's puddling process without paying him a penny in royalties. Cort was plunged into financial ruin and died in impoverished obscurity in May 1800, having generated billions in national wealth while retaining nothing for himself.",
               "archival_source": {
