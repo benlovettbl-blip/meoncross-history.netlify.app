@@ -3061,6 +3061,21 @@ export function renderLesson(lesson) {
       if (lesson.extended.hints && lesson.extended.hints.length > 0) {
         hintsHtml = `<div style="margin-top: 15px; padding: 10px; background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px;"><strong style="color: #d97706;">Hints:</strong><ul style="margin: 5px 0 0 0; padding-left: 20px; color: #92400e;">${lesson.extended.hints.map((h) => `<li>${formatBold(h)}</li>`).join('')}</ul></div>`;
       }
+      if (
+        lesson.extended.teacher_guidance &&
+        lesson.extended.teacher_guidance.tiered_stems &&
+        lesson.extended.teacher_guidance.tiered_stems.length > 0
+      ) {
+        hintsHtml += `
+          <div style="margin-top: 12px; padding: 12px 16px; background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 6px;">
+            <strong style="color: #166534; display: flex; align-items: center; gap: 8px; font-size: 0.95rem;">
+              <i class="fa-solid fa-pen-fancy"></i> Sentence Starters:
+            </strong>
+            <ul style="margin: 8px 0 0 0; padding-left: 20px; color: #15803d; line-height: 1.6; font-size: 0.92rem;">
+              ${lesson.extended.teacher_guidance.tiered_stems.map((s) => `<li>${formatBold(s)}</li>`).join('')}
+            </ul>
+          </div>`;
+      }
 
       let sourceHtml = '';
       if (lesson.extended.source_a || lesson.extended.source_b) {

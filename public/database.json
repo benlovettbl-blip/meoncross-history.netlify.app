@@ -37411,9 +37411,10 @@
           },
           "sources": [
             {
-              "title": "Map A: Alsace-Lorraine Border Region (1871)",
-              "src": "/units/great_war/assets/alsace_lorraine_simple_map.svg",
-              "caption": "Simplified map showing Alsace-Lorraine on the border between France and the new German Empire."
+              "title": "Map A: The Annexation of Alsace-Lorraine (Treaty of Frankfurt, 1871)",
+              "src": "/units/great_war/assets/alsace_lorraine_1871_map.png",
+              "caption": "Map showing the strategic borderland of Alsace-Lorraine (Reichsland Elsaß-Lothringen), seized from France by Otto von Bismarck following the Franco-Prussian War of 1870–71.",
+              "context": "Following their victory in 1871, the Germans annexed Alsace and northern Lorraine. This was an economic and psychological catastrophe for France: the region contained 80% of France’s iron ore, vital coal deposits, and major textile factories, while placing 1.5 million French citizens under German military control. For the next 44 years, French school children were taught that Alsace-Lorraine was a \"stolen child,\" and the statue representing Strasbourg in Paris was draped in black mourning cloth until 1918. This annexation made permanent peace between France and Germany impossible, driving France into the arms of Russia and Britain and creating the rigid alliance system of 1914. **Hinge Question:** Why did Bismarck’s annexation of Alsace-Lorraine make a future war between France and Germany virtually inevitable?"
             }
           ],
           "vocab": [
@@ -37443,8 +37444,24 @@
             }
           ],
           "extended": {
+            "title": "Assessment Practice: Explanatory Essay",
             "question": "Evaluate how the change in leadership from Bismarck to Kaiser Wilhelm II fundamentally altered Germany's strategic position in Europe.",
-            "model_answer": "Bismarck's defensive web of alliances, specifically the Reinsurance Treaty with Russia, successfully isolated France and prevented a two-front war. Wilhelm II's aggressive ambition and dismissal of Bismarck led him to foolishly drop the Russian treaty, pushing Russia into an alliance with France. This completely destroyed Germany's diplomatic safety net, creating the exact 'encirclement' nightmare Bismarck had spent 20 years avoiding."
+            "hints": [
+              "Point 1: Bismarck’s Isolation of France — Created the Reinsurance Treaty with Russia and Triple Alliance to avoid a two-front war.",
+              "Point 2: Wilhelm II’s Reckless Ambition — Dismissed Bismarck in 1890, pursued aggressive Weltpolitik, and allowed the Russian treaty to lapse.",
+              "Point 3: The Franco-Russian Alliance (1894) — Pushed isolated France and Tsarist Russia together, creating the exact encirclement Bismarck feared.",
+              "Point 4: The Path to 1914 — Divided Europe into two armed camps, turning local Balkan disputes into an inevitable continental clash."
+            ],
+            "teacher_guidance": {
+              "visualiser_prompt": "Model live under the visualiser how to write a high-tariff causation paragraph. Emphasise how Bismarck built a diplomatic safety net, and show students how Wilhelm II's erratic decision-making dismantled it piece by piece.",
+              "tiered_stems": [
+                "Under Bismarck, Germany avoided a two-front war by...",
+                "However, when Kaiser Wilhelm II took power, he fundamentally changed this policy because...",
+                "Consequently, this shift destroyed Bismarck’s diplomatic safety net by..."
+              ]
+            },
+            "model_answer": "Bismarck's defensive web of alliances, specifically the Reinsurance Treaty with Russia, successfully isolated France and prevented a two-front war. Wilhelm II's aggressive ambition and dismissal of Bismarck led him to foolishly drop the Russian treaty, pushing Russia into an alliance with France. This completely destroyed Germany's diplomatic safety net, creating the exact 'encirclement' nightmare Bismarck had spent 20 years avoiding.",
+            "lines": 15
           },
           "do_now": {
             "type": "timeline",
@@ -37483,20 +37500,20 @@
             "prediction_question": "Predict: Looking at this long-term timeline, which factor do you think was the most dangerous necessary cause of the war?"
           },
           "primary_source": {
-            "title": "Source A: A painting by Anton von Werner from 1885 showing the Proclamation of the German Empire at Versailles.",
+            "title": "Source A: Anton von Werner’s Masterwork — The Proclamation of the German Empire (Versailles, 18 January 1871)",
             "src": "/units/great_war/assets/was_germany_unification.png",
-            "caption": "This painting depicts the official birth of the unified German Empire inside the Hall of Mirrors at the Palace of Versailles in 1871. France was defeated and forced to host this ceremony in its own royal palace. This created a deep, lasting feeling of humiliation and anger in France, leading to a desire for revenge (<em>revanche</em>) that would eventually help spark WWI.",
+            "caption": "Anton von Werner’s famous 1885 painting depicting the official birth of the unified German Empire inside the Hall of Mirrors at the Palace of Versailles. Chancellor Otto von Bismarck stands prominently in the centre in his gleaming white cuirassier uniform, surrounded by German princes and generals cheering Kaiser Wilhelm I on the dais with raised sabres. Holding this triumphal coronation in the historic heart of French royal power was a calculated national humiliation of France that sparked decades of burning French resentment (revanche).",
             "question": "Enquiry: What are the two opposing figures doing in this 1871 painting by Anton von Werner, and why is this event significant?",
             "tasks": [
               {
                 "type": "draw",
                 "text": "Task 1: Draw an arrow to Kaiser Wilhelm I and Chancellor Otto von Bismarck at the center of the cheering military crowd.",
-                "model_answer": "A detailed historical explanation using specific chronology and evidence from the lesson."
+                "model_answer": "Kaiser Wilhelm I stands elevated on the dais as Emperor, while Chancellor Otto von Bismarck stands prominently in the center wearing a bright white cuirassier uniform and holding the proclamation document."
               },
               {
                 "type": "draw",
                 "text": "Task 2: Circle the surrounding architecture of the French Royal Palace, noting where this ceremony took place.",
-                "model_answer": "A detailed historical explanation using specific chronology and evidence from the lesson."
+                "model_answer": "The ceremony took place inside the Hall of Mirrors at the Palace of Versailles, the historic seat of French royal supremacy, chosen deliberately by Bismarck to humiliate defeated France."
               }
             ],
             "model_answer": "The painting depicts the coronation of Kaiser Wilhelm I as Emperor of a newly united Germany. Crucially, this ceremony is taking place inside the Palace of Versailles (the traditional seat of French royal power) after Germany defeated France in the Franco-Prussian War. This was a deliberate humiliation of France, which fueled a burning French desire for revenge (revanche) that lasted until the outbreak of WWI in 1914."
