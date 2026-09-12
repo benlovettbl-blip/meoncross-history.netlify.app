@@ -112,6 +112,9 @@ def populate_risk_assessment():
     # 1. Update Premises / Site Name & Room ID
     for p in root.iter(f"{{{W_NS}}}p"):
         p_text = "".join([t.text for t in p.iter(f"{{{W_NS}}}t") if t.text])
+    # 1. Update Premises / Site Name & Room ID
+    for p in root.iter(f"{{{W_NS}}}p"):
+        p_text = "".join([t.text for t in p.iter(f"{{{W_NS}}}t") if t.text])
         if "Premises/Site Name" in p_text and "Meoncross" in p_text:
             print("Found premises header paragraph. Updating...")
             for child in list(p):
@@ -122,120 +125,103 @@ def populate_risk_assessment():
             p.append(make_run("Premises/Site Name: ", bold=True, size="20"))
             p.append(make_run("Meoncross School", bold=False, size="20"))
             p.append(make_run("               Risk Assessment ID: ", bold=True, size="20"))
-            p.append(make_run("RA-HIST-01 (History Room / Classroom)", bold=True, size="20"))
+            p.append(make_run("History Room", bold=True, size="20"))
             break
             
     # 2. Table 0: Populate Hazard Rows
     tbl0 = root.findall(f".//{{{W_NS}}}tbl")[0]
-    rows = tbl0.findall(f"{{{W_NS}}}tr")
     
-    # Define the 4 hazard entries
+    # Define the 4 concise, teacher-authentic hazard entries
     # Hazard 1: Classroom Windows
     h1_name = [
-        [("Classroom Windows & Ventilation", True, False, "18")],
-        [("Risk of falls or finger trapping from opened window frames.", False, False, "16")]
+        [("Windows / ventilation", True, False, "18")]
     ]
     h1_who = [
-        [("Pupils and staff.", True, False, "17")],
-        [("Injury from falls or finger pinch if windows open too wide.", False, False, "16")]
+        [("Pupils & staff (finger pinch / fall risk)", False, False, "17")]
     ]
     h1_existing = [
-        [("All windows in the History room are fitted with safety latches / restrictors to prevent over-opening.", False, False, "17")],
-        [("Windows only operated under teacher supervision; pupils instructed not to tamper with restrictor catches.", False, False, "16")]
+        [("Safety restrictor latches fitted on all windows to prevent over-opening. Teacher supervision.", False, False, "17")]
     ]
     h1_further = [
-        [("Visual inspection each term to verify window restrictors and latches remain securely fastened and undamaged.", False, False, "17")]
+        [("Visual check each term.", False, False, "17")]
     ]
     h1_whom = [
-        [("Head of History / Site Team (Andy)", False, False, "16")]
+        [("BL / Site Team", False, False, "16")]
     ]
     h1_when = [
-        [("Termly (Ongoing)", False, False, "16")]
+        [("Termly", False, False, "16")]
     ]
     h1_done = [
-        [("Ongoing", False, True, "16")]
+        [("Ongoing", False, False, "16")]
     ]
 
-    # Hazard 2: Classroom Fire Door (User's specific request)
+    # Hazard 2: Classroom Fire Door (Reflecting whole-staff INSET mention)
     h2_name = [
-        [("Classroom Fire Door & Pupil Flow", True, False, "18")],
-        [("High pupil traffic at lesson changeover requires holding door open; propping door open breaches fire separation.", False, False, "16")]
+        [("Classroom fire door / pupil movement", True, False, "18")]
     ]
     h2_who = [
-        [("Pupils and staff.", True, False, "17")],
-        [("Risk of fire/smoke spread if improperly wedged open; finger trap or impact injury from heavy self-closing door.", False, False, "16")]
+        [("Pupils & staff (door closing on pupils, or smoke/fire if wedged open)", False, False, "17")]
     ]
     h2_existing = [
-        [("Door is a certified fire door with an overhead closer.", False, False, "17")],
-        [("Strict ban on wooden wedges or furniture propping door open.", False, False, "16")],
-        [("Teacher holds door open manually during pupil entry/exit.", False, False, "16")]
+        [("Fire door with overhead closer fitted. No wedges or furniture used to hold open. Teacher holds door during busy changeovers.", False, False, "17")]
     ]
     h2_further = [
-        [("ACTION REQUESTED TO SITE TEAM (Andy):", True, False, "17", "yellow")],
-        [("Supply and fit a floor-mounted automatic acoustic-release fire door retainer (e.g. Dorgard / Agrippa plunger).", True, False, "17")],
-        [("Pushes down to safely hold the door open for free pupil circulation; automatically releases and shuts upon sounding of the fire alarm.", False, False, "16")]
+        [("Request floor-mounted auto-release door stop from Site Team (Andy mentioned at whole-staff INSET that these can be requested for classrooms).", False, False, "17")]
     ]
     h2_whom = [
-        [("Site Team (Andy) / Head of History", True, False, "16")]
+        [("Andy (Site Team) / BL", False, False, "16")]
     ]
     h2_when = [
-        [("Autumn Term 2026 (By 30 Sept 2026)", False, False, "16")]
+        [("Sept 2026", False, False, "16")]
     ]
     h2_done = [
-        [("Requested (Pending install)", True, True, "16")]
+        [("Requested", False, False, "16")]
     ]
 
     # Hazard 3: Slips, Trips & Circulation (Bags & Cables)
     h3_name = [
-        [("Slips, Trips & Circulation", True, False, "18")],
-        [("Pupil bags, coats on floor, or trailing cables around teaching desk.", False, False, "16")]
+        [("Bags, coats & cables", True, False, "18")]
     ]
     h3_who = [
-        [("Pupils, staff, and visitors.", True, False, "17")],
-        [("Minor injuries, bruising or sprains from tripping over clutter.", False, False, "16")]
+        [("Pupils & staff (trips / falls)", False, False, "17")]
     ]
     h3_existing = [
-        [("Classroom rule: all bags and coats stored neatly under desks or on pegs.", False, False, "17")],
-        [("Main aisles, walkways, and exit routes kept completely clear.", False, False, "16")],
-        [("Teacher PC and display cables enclosed in protective trunking.", False, False, "16")]
+        [("Bags and coats kept under desks. Walkways and exit door kept clear. AV cables tucked into trunking.", False, False, "17")]
     ]
     h3_further = [
-        [("Maintain regular start-of-lesson checks for clear aisles. Report any damaged flooring or loose trunking to Site Team.", False, False, "17")]
+        [("Routine check at start of each lesson.", False, False, "17")]
     ]
     h3_whom = [
-        [("Classroom Teacher / Pupils", False, False, "16")]
+        [("BL", False, False, "16")]
     ]
     h3_when = [
-        [("Daily / Ongoing", False, False, "16")]
+        [("Daily", False, False, "16")]
     ]
     h3_done = [
-        [("Ongoing", False, True, "16")]
+        [("Ongoing", False, False, "16")]
     ]
 
     # Hazard 4: Electrical Equipment & Display Screen
     h4_name = [
-        [("Electrical Equipment & Screen", True, False, "18")],
-        [("Teacher PC, interactive screen, projector (shock or overheating).", False, False, "16")]
+        [("PC, projector & screen", True, False, "18")]
     ]
     h4_who = [
-        [("Staff and pupils.", True, False, "17")],
-        [("Electric shock or minor burns from faulty equipment/cables.", False, False, "16")]
+        [("Pupils & staff (electric shock)", False, False, "17")]
     ]
     h4_existing = [
-        [("All electrical equipment is PAT tested annually by the school.", False, False, "17")],
-        [("Visual pre-use check by teacher. Switched off at wall daily.", False, False, "16")]
+        [("Annual PAT testing by school. Visual check by teacher. Switched off at wall daily.", False, False, "17")]
     ]
     h4_further = [
-        [("Continue annual school PAT testing cycle. Immediately isolate and report any damaged plugs/cords to Site Team (Andy).", False, False, "17")]
+        [("Report any damaged leads to Site Team.", False, False, "17")]
     ]
     h4_whom = [
-        [("Site Team (Andy) / Head of History", False, False, "16")]
+        [("BL / Andy", False, False, "16")]
     ]
     h4_when = [
-        [("Annual (Due July 2027)", False, False, "16")]
+        [("Ongoing", False, False, "16")]
     ]
     h4_done = [
-        [("Current", False, True, "16")]
+        [("Current", False, False, "16")]
     ]
 
     # Find the index of the header row ('What is the hazard?')
@@ -301,8 +287,8 @@ def populate_risk_assessment():
     c_hsr.append(make_p([("HAZARD SEVERITY RATING (HSR)", True, False, "18")]))
     c_hsr.append(make_p([
         ("1   ", False, False, "18"),
-        ("[ 2 ]", True, False, "20", "yellow"),
-        ("   3   4   5  (Marginal - slight injury)", False, False, "16")
+        ("[2]", True, False, "18"),
+        ("   3   4   5  (Marginal)", False, False, "16")
     ]))
     
     # Cell 1: HPR
@@ -312,8 +298,8 @@ def populate_risk_assessment():
     c_hpr.append(make_p([("HAZARD PROBABILITY RATING (HPR)", True, False, "18")]))
     c_hpr.append(make_p([
         ("1   ", False, False, "18"),
-        ("[ 2 ]", True, False, "20", "yellow"),
-        ("   3   4   5  (Remote but possible)", False, False, "16")
+        ("[2]", True, False, "18"),
+        ("   3   4   5  (Remote)", False, False, "16")
     ]))
     
     # Cell 2: Calculated Risk
@@ -323,7 +309,7 @@ def populate_risk_assessment():
     c_calc.append(make_p([("CALCULATED RISK RATING", True, False, "18")]))
     c_calc.append(make_p([
         ("(HSR 2) X (HPR 2) = ", False, False, "18"),
-        ("4  (INSIGNIFICANT)", True, False, "20", "yellow")
+        ("4  (Insignificant)", True, False, "18")
     ]))
     
     # Row 8 (Scale of Risk)
@@ -350,7 +336,7 @@ def populate_risk_assessment():
             sp.set(f"{{{W_NS}}}after", "80")
             sp.set(f"{{{W_NS}}}line", "260")
             p.append(make_run("Signed: (Manager) Name: ", bold=True, size="20"))
-            p.append(make_run("B. Lovett (Head of History)   ", bold=False, size="20"))
+            p.append(make_run("B. Lovett   ", bold=False, size="20"))
             p.append(make_run("Signature: ", bold=True, size="20"))
             p.append(make_run("B. Lovett   ", bold=True, italic=True, size="20"))
             p.append(make_run("Date: ", bold=True, size="20"))
