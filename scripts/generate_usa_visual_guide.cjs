@@ -2437,7 +2437,7 @@ const SPREADS = [
 ];
 
 // Helper to render the Left-Hand Knowledge Page (Dense Specification Masterclass)
-function renderLeftPage(data, pageNum) {
+function renderLeftPage(data, pageNum, spreadNum) {
   const left = data.left;
   const deepGrid = left.deepKnowledgeGrid || [];
   const vocab = left.vocabBank || [];
@@ -2470,7 +2470,7 @@ function renderLeftPage(data, pageNum) {
         .join('');
       return `
       <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 7px 8px;">
-        <div style="font-size: 7.6pt; font-weight: 800; color: #1e3a8a; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px; margin-bottom: 4px;">
+        <div style="font-size: 7.6pt; font-weight: 800; color: #1e3a8a; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px; margin-bottom: 3px;">
           ${col.title}
         </div>
         <ul style="margin: 0; padding-left: 11px; font-size: 7.2pt; color: #1e293b; line-height: 1.35;">
@@ -2532,19 +2532,22 @@ function renderLeftPage(data, pageNum) {
     .join('');
 
   const trapsHtml = `
-    <div style="border: 1.5px solid #0f172a; border-radius: 5px; padding: 8px 10px; background: #f8fafc; font-size: 7.2pt; line-height: 1.34; color: #0f172a;">
-      <div style="font-size: 7.8pt; font-weight: 800; color: #0f172a; text-transform: uppercase; margin-bottom: 4px; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; display: flex; justify-content: space-between;">
-        <span>Common Errors to Avoid:</span>
-        <span style="color: #b91c1c; font-weight: 800;">High-Yield Revision</span>
+    <div style="background: #ffffff; border: 1.5px solid #b91c1c; border-radius: 5px; padding: 8px 11px; font-size: 7.2pt; line-height: 1.36; color: #1e293b;">
+      <div style="font-size: 7.8pt; font-weight: 800; color: #b91c1c; text-transform: uppercase; margin-bottom: 4px; display: flex; justify-content: space-between;">
+        <span>Examiner Pitfalls &amp; High-Yield Distinction Corrections:</span>
+        <span style="font-size: 6.8pt; color: #7f1d1d;">Avoid Generalised Assertions</span>
       </div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 9px;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
         ${tItems}
       </div>
     </div>
   `;
 
   return `
-    <div class="page" id="${data.id}_left" data-page="${pageNum}">
+    <div class="page" id="spread-${spreadNum}" data-page="${pageNum}" data-spread="${spreadNum}">
+      <span id="page_${pageNum}" style="display:none;"></span>
+      <span id="${data.id}_left" style="display:none;"></span>
+      <span id="${data.id}" style="display:none;"></span>
       <div class="page-header">
         <div>
           <span class="archival-tag">${data.topic}</span>
@@ -2582,7 +2585,7 @@ function renderLeftPage(data, pageNum) {
 }
 
 // Helper to render the Right-Hand Exam Assessment Page
-function renderRightPage(data, pageNum) {
+function renderRightPage(data, pageNum, spreadNum) {
   const right = data.right;
   let examContentHtml = '';
 
@@ -2881,7 +2884,9 @@ function renderRightPage(data, pageNum) {
   }
 
   return `
-    <div class="page" id="${data.id}_right" data-page="${pageNum}">
+    <div class="page" id="page_${pageNum}" data-page="${pageNum}" data-spread="${spreadNum}">
+      <span id="${data.id}_right" style="display:none;"></span>
+      <span id="page-${pageNum}" style="display:none;"></span>
       <div class="page-header">
         <div>
           <span class="archival-tag">Edexcel GCSE (9–1) History &bull; Paper 3 Exam Practice</span>
@@ -3334,8 +3339,9 @@ function generateFullHTML() {
   SPREADS.forEach((spread, idx) => {
     const leftPageNum = 3 + idx * 2;
     const rightPageNum = 4 + idx * 2;
-    contentPagesHtml += renderLeftPage(spread, leftPageNum);
-    contentPagesHtml += renderRightPage(spread, rightPageNum);
+    const spreadNum = idx + 1;
+    contentPagesHtml += renderLeftPage(spread, leftPageNum, spreadNum);
+    contentPagesHtml += renderRightPage(spread, rightPageNum, spreadNum);
   });
 
   // Page 35: Master Chronology Timeline
