@@ -68,6 +68,8 @@ export default {
               "Why would the creation of the German Empire and the annexation of Alsace-Lorraine terrify Germany's neighbors?",
           },
         ],
+        source_context:
+          "The 1871 map demonstrates how German unification created a massive, heavily populated geopolitical bloc right in the centre of Europe. Surrounded by rival great powers (France, Russia, Austria-Hungary), Germany's central geographical position created a persistent fear of encirclement, while its neighbours feared German industrial and military dominance. **Hinge Question:** Why did the geographical position of the new German Empire in Central Europe make a future two-front war such a terrifying prospect for German military planners?",
       },
       do_now: {
         title: 'Do Now: Geography of Europe',
@@ -312,6 +314,8 @@ export default {
             {
               type: 'comprehension',
               text: "Task 1: Interpreting 'Blood and Iron'. In your own words, explain what Otto von Bismarck meant when he said Germany would be united by 'blood and iron'. How did Prussia use its industrial and military power to prove Bismarck’s speech right between 1864 and 1871?",
+              starter:
+                "When Bismarck stated Germany would be united by 'blood and iron', he meant that...",
               model_answer:
                 "By 'blood and iron', Bismarck meant that unification would be achieved through warfare (blood) and industrial/military strength (iron), rather than through peaceful democratic speeches or votes. Prussia proved this right by building a modernized army with advanced railways and artillery, and then using this military machine to crush Denmark, Austria, and France in rapid succession between 1864 and 1871.",
             },
@@ -324,8 +328,9 @@ export default {
             {
               type: 'comprehension',
               text: 'Task 2: The Steps to Unification. Create a three-step staircase diagram in your book to show how Bismarck built the German Empire. For each step, write down: 1. The name of the country Prussia defeated. 2. The year of the war. 3. How this war helped Prussia achieve its ultimate goal of unification.',
+              starter: 'Step 1 of German unification was the defeat of Denmark in 1864, which...',
               model_answer:
-                'Step 1: Denmark (1864) - Showed off military coordination. Step 2: Austria (1866) - Excluded Austria from German affairs, making Prussia the undisputed leader. Step 3: France (1870-1871) - Provided a common enemy to convince the southern German states to join the union, completing the creation of the German Empire.',
+                "Step 1: Denmark (1864) — Prussia and Austria seized Schleswig-Holstein, testing Prussian military coordination. Step 2: Austria (1866) — Prussia defeated Austria in the Seven Weeks' War, expelling Austria from German affairs and establishing the North German Confederation. Step 3: France (1870–1871) — Bismarck provoked France into declaring war, uniting the independent southern German kingdoms alongside Prussia and leading to the proclamation of the German Empire.",
             },
             {
               type: 'drag_drop_timeline',
@@ -355,23 +360,30 @@ export default {
           title: "4. Crowning a Kaiser in the Enemy's Palace",
           text: "Having defeated France, Bismarck successfully united the remaining independent northern and southern German states into a single, massive German Empire (the *Kaiserreich*).\n\nTo add ultimate humiliation to France's defeat, Bismarck arranged for the King of Prussia, Wilhelm I, to be officially proclaimed the first German Emperor (Kaiser) on 18 January 1871 inside the Hall of Mirrors at the Palace of Versailles—the historic home of French kings.\n\nAs part of the peace treaty, Germany also seized Alsace-Lorraine, a highly valuable French industrial region rich in coal and iron. While Germany celebrated its spectacular unification, French citizens looked on with deep bitterness. This land grab created a furious, long-term rivalry between Germany and France that would eventually help spark the First World War forty years later.",
         },
-        {
-          title: 'Consolidation Task',
-          tasks: [
-            {
-              type: 'extended_writing',
-              question:
-                "Explain why Bismarck's policy of 'Blood and Iron' was successful in uniting Germany.",
-              hints: [
-                "Sentence Starter: Bismarck's policy was successful because it relied on military strength rather than...",
-                'Sentence Starter: For example, he modernized the Prussian army and used it to...',
-                'Sentence Starter: This resulted in a unified German Empire that was built on military victories over...',
-              ],
-            },
-          ],
-          text: '<h3>Consolidation Task</h3>',
-        },
       ],
+      extended: {
+        title: 'Assessment Practice: Explanatory Causation Paragraph',
+        question:
+          "Explain why Otto von Bismarck's policy of 'Blood and Iron' was successful in unifying Germany by 1871.",
+        hints: [
+          'Point 1: Rejection of Liberalism — Bismarck bypassed parliament and funded the army unilaterally to prioritize military force over democratic debate.',
+          'Point 2: Industrial & Military Modernisation — Prussian railways for rapid mobilization and Krupp steel breach-loading artillery.',
+          'Point 3: Three Decisive Wars (1864, 1866, 1870) — Defeating Denmark, excluding Austria, and uniting southern German states against a common French enemy.',
+          'Point 4: Crowned at Versailles — Proclamation of the Kaiserreich on 18 January 1871, permanently shifting the European balance of power.',
+        ],
+        teacher_guidance: {
+          visualiser_prompt:
+            "Model under the visualiser how to link the 'iron' (Ruhr industrialisation, Krupp cannons, strategic railways) directly to the 'blood' (military victories at Königgrätz and Sedan), proving that German unity was built from above by military triumph rather than popular democracy.",
+          tiered_stems: [
+            '<strong>Bronze (Identifying Causes):</strong> Bismarck’s policy of "Blood and Iron" was successful in uniting Germany because he relied on military force rather than democratic speeches, specifically by...',
+            '<strong>Silver (Explaining Mechanism):</strong> This policy succeeded because the Prussian military harnessed superior industrial technology, such as... which allowed them to defeat Austria in 1866 and France in 1871 by...',
+            '<strong>Gold (Complex Causation & Balance of Power):</strong> Ultimately, "Blood and Iron" unified Germany "from above" rather than "from below" because Bismarck manufactured external crises to rally patriotic nationalist sentiment, resulting in...',
+          ],
+        },
+        model_answer:
+          "Bismarck's policy of 'Blood and Iron' was highly successful in unifying Germany because it abandoned ineffective parliamentary debate in favour of calculated military force and industrial superiority. First, Bismarck modernised the Prussian army using Krupp steel artillery and an advanced railway network, enabling rapid troop mobilisation. Second, he orchestrated three short, decisive conflicts between 1864 and 1871: defeating Denmark alongside Austria, crushing Austria in the Seven Weeks' War of 1866 to exclude the Habsburgs from German affairs, and finally baiting France into the 1870 Franco-Prussian War using the edited Ems Telegram. By creating a shared foreign enemy, Bismarck compelled the wary southern German kingdoms (such as Bavaria and Württemberg) to rally behind Prussian leadership. The policy culminated on 18 January 1871 with the coronation of Kaiser Wilhelm I in the Hall of Mirrors at Versailles, proving that Germany was forged not through liberal consensus, but through Prussian military dominance.",
+        lines: 15,
+      },
       primary_source: {
         title:
           'Source A: A map from 1871 showing the newly created German Empire compared to modern Germany.',
@@ -384,14 +396,18 @@ export default {
           {
             type: 'short_answer',
             text: "Task 3: Analyzing the Seeds of Future Conflict. Write a short analysis explaining why Bismarck’s decision to take Alsace-Lorraine from France in 1871 was highly successful for Germany's economy in the short term, but incredibly dangerous for Germany's security in the long term.",
+            starter:
+              "In the short term, annexing Alsace-Lorraine boosted Germany's economy because... however, in the long term it endangered security because...",
             model_answer:
               "In the short term, taking Alsace-Lorraine was an economic success for Germany because the region was rich in coal and iron, fueling Germany's industrial growth. However, in the long term, it was incredibly dangerous for Germany's security because it created a permanent, bitter rivalry with France. France would seek revenge and the return of its territory, leading to tensions that ultimately helped spark the First World War.",
           },
           {
             type: 'short_answer',
             text: 'Task 4: Spot the Difference (Geography). Compare the 1871 German Empire map with the modern-day Germany map. Identify two major territories that belonged to the German Empire but are no longer part of modern Germany.',
+            starter:
+              'Two major historical territories included in the 1871 German Empire that are not part of modern Germany are...',
             model_answer:
-              'Students should identify territories such as Alsace-Lorraine (now back in France) and East Prussia/Silesia/Pomerania (now in Poland and Russia).',
+              'Two major territories are: 1. Alsace-Lorraine in the west (returned to France after World War I), and 2. East Prussia and Silesia in the east (which became parts of modern-day Poland and Russia following World War II).',
           },
         ],
       },
@@ -496,29 +512,6 @@ export default {
             'The 1871 peace treaty ending the Franco-Prussian War that imposed severe financial and territorial penalties on France.',
         },
       ],
-      extended: {
-        title: 'Assessment Practice: Explanatory Essay',
-        question:
-          "Evaluate how the change in leadership from Bismarck to Kaiser Wilhelm II fundamentally altered Germany's strategic position in Europe.",
-        hints: [
-          'Point 1: Bismarck’s Isolation of France — Created the Reinsurance Treaty with Russia and Triple Alliance to avoid a two-front war.',
-          'Point 2: Wilhelm II’s Reckless Ambition — Dismissed Bismarck in 1890, pursued aggressive Weltpolitik, and allowed the Russian treaty to lapse.',
-          'Point 3: The Franco-Russian Alliance (1894) — Pushed isolated France and Tsarist Russia together, creating the exact encirclement Bismarck feared.',
-          'Point 4: The Path to 1914 — Divided Europe into two armed camps, turning local Balkan disputes into an inevitable continental clash.',
-        ],
-        teacher_guidance: {
-          visualiser_prompt:
-            "Model live under the visualiser how to write a high-tariff causation paragraph. Emphasise how Bismarck built a diplomatic safety net, and show students how Wilhelm II's erratic decision-making dismantled it piece by piece.",
-          tiered_stems: [
-            'Under Bismarck, Germany avoided a two-front war by...',
-            'However, when Kaiser Wilhelm II took power, he fundamentally changed this policy because...',
-            'Consequently, this shift destroyed Bismarck’s diplomatic safety net by...',
-          ],
-        },
-        model_answer:
-          "Bismarck's defensive web of alliances, specifically the Reinsurance Treaty with Russia, successfully isolated France and prevented a two-front war. Wilhelm II's aggressive ambition and dismissal of Bismarck led him to foolishly drop the Russian treaty, pushing Russia into an alliance with France. This completely destroyed Germany's diplomatic safety net, creating the exact 'encirclement' nightmare Bismarck had spent 20 years avoiding.",
-        lines: 15,
-      },
       do_now: {
         type: 'timeline',
         events: [
@@ -632,6 +625,19 @@ export default {
           },
         ],
         topic: 'the reasons for French hatred of Germany after 1871',
+        scaffolding: {
+          provenance_clues: [
+            '<strong>Nature & Origin:</strong> Source A is an excerpt from an 1885 French school textbook published in Paris, 14 years after the defeat. Source B is an excerpt from a confidential diplomatic letter written in 1872 by German Chancellor Otto von Bismarck.',
+            '<strong>Purpose & Motive:</strong> Source A was designed to educate and politically indoctrinate French schoolboys into recovering the lost provinces (revanche). Source B is private realpolitik analysis—Bismarck assessing the certainty of French vengeance without public propaganda.',
+            "<strong>Contextual Accuracy:</strong> Does Source A match historical knowledge of the 5 billion franc indemnity, loss of Alsace-Lorraine, and militarised civic education? Does Source B match Bismarck's subsequent foreign policy (Triple Alliance, Reinsurance Treaty) to isolate France?",
+          ],
+          utility_stems: [
+            '<strong>Step 1 (Source A Utility):</strong> "Source A is useful for an enquiry into French hatred because it reveals... specifically where it says..."',
+            '<strong>Step 2 (Source A Provenance):</strong> "This is particularly useful because as a French school textbook, its purpose is to... which proves that hatred was..."',
+            '<strong>Step 3 (Source B Utility & Provenance):</strong> "Source B is also useful because it provides the German perspective, acknowledging that... Because this is a private letter from Bismarck, it is valuable because..."',
+            '<strong>Step 4 (Context & Judgment):</strong> "From my own knowledge, this accurately reflects... Overall, both sources are highly useful together because..."',
+          ],
+        },
         model_answer:
           '<strong>Source A is highly useful for revealing the deep, emotional humiliation felt by the French people;</strong> <strong style="color: #0284c7;">it highlights the "bleeding wounds of Alsace and Lorraine" and the desire to "take back what was stolen".</strong> <strong style="color: #9333ea;">The fact that this is a school textbook makes it incredibly useful for showing purpose: the French government was actively indoctrinating the next generation for a war of revenge, proving that the hatred was deeply embedded in French culture.</strong> <strong style="color: #16a34a;">This is supported by our contextual knowledge that France was forced to pay a crushing 5 billion franc ransom after the disastrous Franco-Prussian War of 1871, sparking a permanent desire for revanche.</strong><br><br><strong>Source B is also extremely useful because it provides the German perspective on this hostility.</strong> <strong style="color: #0284c7;">Bismarck openly acknowledges that taking Alsace-Lorraine has guaranteed a "French war of revenge" and argues that Germany must ensure France "never finds an ally".</strong> <strong style="color: #9333ea;">Because this is a private letter to a fellow diplomat, its nature makes it a highly reliable reflection of Germany\'s genuine strategic fears without any public censorship.</strong> <strong style="color: #16a34a;">This is accurate to the context, as Bismarck spent the next 20 years building a complex defensive web of alliances (such as the Dual Alliance) specifically to keep France isolated and prevent a two-front war.</strong>',
       },
@@ -669,118 +675,59 @@ export default {
         'In 1870, Bismarck edited the controversial [Ems Telegram] to provoke Napoleon III into declaring war. After the Prussian army subjected Paris to a devastating winter [Siege], the French were compelled to accept humiliating peace terms under the [Treaty of Frankfurt]. Germany demanded massive financial [Reparations] and annexed the industrial provinces of [Alsace-Lorraine], fueling a bitter French desire for vengeance known as [Revanchism].',
       narrative_blocks: [
         {
-          text: '**Bismarck vs. Wilhelm: A Clash of Strategy**\n\nFollowing the crushing defeat of France in 1871, German Chancellor Otto von Bismarck understood that France would never forgive the loss of Alsace-Lorraine. His greatest fear was that France would form an alliance with another major European power"specifically Russia"which would force Germany to fight a devastating "two-front war" if conflict ever broke out.\n\nTo prevent this, Bismarck spent the next twenty years weaving a complex, dizzying web of alliances and secret treaties designed entirely to keep France diplomatically isolated. He formed the Triple Alliance with Austria-Hungary and Italy, and signed a secret Reinsurance Treaty with Russia. Bismarck\'s diplomatic genius lay in his ability to juggle these competing empires, ensuring that Germany always had more friends than enemies.\n\nHowever, when a young, ambitious Kaiser Wilhelm II took the throne in 1888, he dismissed Bismarck and foolishly allowed the treaty with Russia to expire. Within years, Bismarck\'s nightmare became a reality: France and Russia signed a military alliance. The brilliant diplomatic safety net that Bismarck had built was gone, leaving Germany surrounded and forcing the German military to start planning for the exact scenario Bismarck had dreaded.',
-        },
-        {
           theme_heading: 'A Fragmented Germany',
           text: "There was no country called Germany until 1871. Instead, central Europe was a fragmented collection of independent small states loosely joined only by language and local customs. The most powerful, heavily militaristic state among them was the northern kingdom of Prussia. Desiring to unite these states, Prussia's brilliant, ruthless Chancellor Otto von Bismarck first grouped the northern states into the <strong>North German Confederation</strong>. To complete his dream of a single, mighty empire, Bismarck desperately needed the independent southern German states to unite with the north. He realized that nothing would unite these separate states faster than a shared national enemy.",
           level_4:
             'There was no country called Germany until 1871. He realized that nothing would unite these separate states faster than a shared national enemy.',
-          tasks: [
-            {
-              type: 'comprehension',
-              text: 'To what extent did the maps of central Europe fundamentally change prior to 1871? Use the term "North German Confederation" in your answer.',
-              starter:
-                'Prior to 1871, the political map of central Europe changed fundamentally because...',
-              model_answer:
-                'Before 1871, central Europe was a fragmented collection of small, independent states. Bismarck first united the northern states into the North German Confederation. By 1871, after defeating France, he successfully brought the independent southern states into the fold, fundamentally changing the map by creating a single, massive, and powerful German Empire.',
-            },
-          ],
         },
         {
+          theme_heading: 'Ems Telegram Provokes War',
           text: "Bismarck's opportunity arrived in July 1870, when King Wilhelm sent him a holiday dispatch describing a friendly meeting with the French ambassador. Bismarck carefully edited and shortened the text of this message—now famously known as the <strong>Ems Telegram</strong>—before releasing it to the international press. The edited text read as though the Prussian King had explicitly insulted the French government. Horrified at this public blow to their national pride, France predictably declared war on 19 July 1870. Bismarck’s trap worked flawlessly: the independent southern German states immediately united behind Prussia.",
           level_4:
             "Bismarck's opportunity arrived in July 1870, when King Wilhelm sent him a holiday dispatch describing a friendly meeting with the French ambassador. Bismarck’s trap worked flawlessly: the independent southern German states immediately united behind Prussia.",
-          tasks: [
-            {
-              type: 'comprehension',
-              text: 'Describe the diplomatic trick Chancellor Otto von Bismarck used to manufacture a war with France in 1870.',
-              starter: 'In July 1870, Chancellor Bismarck manufactured a war with France by...',
-              model_answer:
-                'In July 1870, Bismarck took a friendly message from the Prussian King, known as the Ems Telegram, and carefully edited it. He shortened the text to make it sound as if the King had explicitly insulted the French ambassador. Bismarck then released this edited version to the press, horrifying the French and tricking them into declaring war.',
-            },
-          ],
-          theme_heading: 'Ems Telegram Provokes War',
         },
         {
+          theme_heading: "Prussia's Military Dominance",
           text: "Prussia's military strategy relied on two distinct advantages. First, they utilized an <strong>advanced railway network</strong> to mobilise and deploy 500,000 highly trained troops with astonishing speed. Second, they equipped their forces with <strong>Krupp steel artillery</strong>, which fired much faster and further than French guns. The smaller French force of 180,000 was completely caught off guard. During the terrible Siege of Metz, the best French troops were entirely surrounded. When the remaining French forces attempted to break the lines at the Battle of Sedan on 1 September, they suffered 17,000 casualties and over 21,000 soldiers were captured—including the French Emperor Napoleon III. Following a brutal four-month winter siege of Paris, the capital surrendered on 28 January 1871.",
           level_4:
             "Prussia's military strategy relied on two distinct advantages. Following a brutal four-month winter siege of Paris, the capital surrendered on 28 January 1871.",
           tasks: [
             {
               type: 'comprehension',
-              text: 'Identify two distinct military advantages that allowed the Prussian-led German army to quickly defeat the conventional French forces.',
+              text: "Explain how Bismarck used the Ems Telegram and Prussia's military advantages (railways and Krupp artillery) to provoke and rapidly defeat France in 1870–71.",
               starter:
-                'Two key military advantages that enabled the Prussian-led army to defeat France quickly were...',
+                'Bismarck provoked the Franco-Prussian War by editing the Ems Telegram to make it appear that...',
               model_answer:
-                'First, the Prussian army used an advanced railway network to mobilize and deploy 500,000 highly trained troops extremely quickly. Second, they were equipped with modern Krupp steel artillery, which fired much faster and further than the French guns.',
+                'Bismarck provoked the war by shortening and editing the Ems Telegram so it sounded like King Wilhelm I had insulted the French ambassador, baiting France into declaring war. Once war began, Prussia defeated France rapidly through two key military advantages: an advanced railway network that mobilised 500,000 troops with speed, and modern Krupp steel artillery that outranged French guns at Sedan and during the Siege of Paris.',
             },
           ],
-          theme_heading: "Prussia'",
         },
         {
+          theme_heading: "France's Humiliation & The Treaty of Frankfurt",
           text: 'The war permanently transformed the balance of power. In a final, agonizing humiliation for France, the German Empire was officially proclaimed inside the Hall of Mirrors at the Palace of Versailles—the historic home of French royalty. The peace treaty forced three severe penalties upon France: it ceded the strategic industrial border provinces of <strong>Alsace-Lorraine</strong>, was forced to pay a crushing war fine of <strong>5 billion francs</strong> over five years, and was forced to <strong>host a German occupation army</strong>. This deep humiliation shattered French national pride and planted a bitter seed of resentment. Fearing eventual French revenge, German Field Marshal Alfred von Schlieffen began drawing up a military master plan in 1897 to quickly knock out France first if Germany ever faced a simultaneous war with Russia.',
           level_4:
             'The war permanently transformed the balance of power. Fearing eventual French revenge, German Field Marshal Alfred von Schlieffen began drawing up a military master plan in 1897 to quickly knock out France first if Germany ever faced a simultaneous war with Russia.',
           tasks: [
             {
               type: 'comprehension',
-              text: 'List the three severe penalties forced upon France by the victorious German Empire in the 1871 peace treaty.',
-              starter:
-                'The three severe penalties forced upon France in the 1871 peace treaty were...',
+              text: 'Explain the three severe penalties forced upon France in 1871 and why crowning the Kaiser inside the Palace of Versailles created a lasting legacy of hatred.',
+              starter: 'The Treaty of Frankfurt imposed three severe penalties on France: first...',
               model_answer:
-                'The 1871 peace treaty forced France to cede the strategic industrial provinces of Alsace-Lorraine, pay a crushing war fine of 5 billion francs over five years, and host a German occupation army.',
+                'The 1871 Treaty of Frankfurt forced France to cede the industrial border territory of Alsace-Lorraine, pay a massive 5 billion franc indemnity, and host a German occupation army. Crowning Kaiser Wilhelm I inside the Hall of Mirrors at Versailles—the historic palace of French royalty—was a calculated insult that shattered French national pride and ignited an unquenchable desire for revenge (revanche).',
             },
           ],
-          theme_heading: "France's Humiliation",
         },
         {
-          text: 'Following the crushing defeat of France in 1871, German Chancellor Otto von Bismarck understood that France would never forgive the loss of Alsace-Lorraine. His greatest fear was that France would form an alliance with another major European power—specifically Russia—which would force Germany to fight a devastating "two-front war" if conflict ever broke out.',
+          theme_heading: "Bismarck's Diplomatic Safety Net",
+          text: 'Following the crushing defeat of France in 1871, German Chancellor Otto von Bismarck understood that France would never forgive the loss of Alsace-Lorraine. His greatest fear was that France would form an alliance with another major European power—specifically Russia—which would force Germany to fight a devastating "two-front war" if conflict ever broke out.\n\nTo prevent this, Bismarck spent the next twenty years weaving a complex, dizzying web of alliances and secret treaties designed entirely to keep France diplomatically isolated. He formed the Triple Alliance with Austria-Hungary and Italy, and signed a secret Reinsurance Treaty with Russia. Bismarck\'s diplomatic genius lay in his ability to juggle these competing empires, ensuring that Germany always had more friends than enemies.',
           level_4:
             'Following the crushing defeat of France in 1871, German Chancellor Otto von Bismarck understood that France would never forgive the loss of Alsace-Lorraine. His greatest fear was that France would form an alliance with another major European power—specifically Russia—which would force Germany to fight a devastating "two-front war" if conflict ever broke out.',
-          tasks: [
-            {
-              type: 'comprehension',
-              text: 'Explain why the loss of Alsace-Lorraine and the ceremony at Versailles created a long-term "nightmare" for European peace.',
-              starter:
-                'The loss of Alsace-Lorraine and the Versailles coronation created a long-term nightmare because...',
-              model_answer:
-                'The loss of Alsace-Lorraine and the humiliation of the German Empire being proclaimed inside the French Royal Palace of Versailles shattered French national pride. This created a bitter desire for revenge (revanche), forcing Bismarck to create a complex web of defensive alliances to isolate France, which ultimately set the stage for World War I.',
-            },
-          ],
-          theme_heading: "Bismarck'",
         },
         {
-          text: "To prevent this, Bismarck spent the next twenty years weaving a complex, dizzying web of alliances and secret treaties designed entirely to keep France diplomatically isolated. He formed the Triple Alliance with Austria-Hungary and Italy, and signed a secret Reinsurance Treaty with Russia. Bismarck's diplomatic genius lay in his ability to juggle these competing empires, ensuring that Germany always had more friends than enemies.",
-          level_4:
-            "To prevent this, Bismarck spent the next twenty years weaving a complex, dizzying web of alliances and secret treaties designed entirely to keep France diplomatically isolated. Bismarck's diplomatic genius lay in his ability to juggle these competing empires, ensuring that Germany always had more friends than enemies.",
-          theme_heading: "Bismarck's Alliance Web",
-        },
-        {
-          text: "However, when a young, ambitious Kaiser Wilhelm II took the throne in 1888, he dismissed Bismarck and foolishly allowed the treaty with Russia to expire. Within years, Bismarck's nightmare became a reality: France and Russia signed a military alliance. The brilliant diplomatic safety net that Bismarck had built was gone, leaving Germany surrounded and forcing the German military to start planning for the exact scenario Bismarck had dreaded.",
+          theme_heading: 'Kaiser Wilhelm II Dismantles the Peace',
+          text: "However, when a young, ambitious Kaiser Wilhelm II took the throne in 1888, he dismissed Bismarck in 1890 and foolishly allowed the secret Reinsurance Treaty with Russia to expire. Within four years, Bismarck's worst nightmare became reality: isolated France and Tsarist Russia signed a defensive military alliance in 1894. The brilliant diplomatic safety net that Bismarck had built was gone, leaving Germany surrounded and forcing the German military to rely entirely on the rigid Schlieffen Plan.",
           level_4:
             'However, when a young, ambitious Kaiser Wilhelm II took the throne in 1888, he dismissed Bismarck and foolishly allowed the treaty with Russia to expire. The brilliant diplomatic safety net that Bismarck had built was gone, leaving Germany surrounded and forcing the German military to start planning for the exact scenario Bismarck had dreaded.',
-          theme_heading: 'Wilhelm Undoes Bismarck',
-        },
-        {
-          title: 'Consolidation Task',
-          tasks: [
-            {
-              type: 'extended_writing',
-              question:
-                'Explain why the Franco-Prussian War created a lasting legacy of hatred between France and Germany.',
-              starter:
-                'The Franco-Prussian War created a lasting legacy of hatred primarily because...',
-              hints: [
-                'Point 1: Humiliating peace treaty — 5 billion franc indemnity and German military occupation.',
-                'Point 2: The Stolen Child — Annexation of Alsace-Lorraine depriving France of 80% of its iron ore.',
-                'Point 3: Cultural Revanche — The Hall of Mirrors coronation and decades of patriotic education in French schools.',
-              ],
-              model_answer:
-                'The Franco-Prussian War created a lasting legacy of hatred primarily because of the deep national humiliation inflicted on France under the 1871 Treaty of Frankfurt. First, Germany seized the vital industrial borderland of Alsace-Lorraine, placing 1.5 million French citizens under foreign military rule and stripping France of 80% of its iron ore. Second, Germany forced France to pay an astronomical war indemnity of 5 billion francs and crowned Kaiser Wilhelm I inside the Hall of Mirrors at Versailles—the historic heart of French royal prestige. These actions sparked an unquenchable desire for revenge (revanche) across France, ensuring that permanent peace in Europe was impossible and compelling Bismarck to build the rigid alliance system that ultimately dragged the continent into the First World War in 1914.',
-            },
-          ],
-          text: '<h3>Consolidation Task</h3>',
         },
       ],
       quiz: [
@@ -1037,10 +984,27 @@ export default {
         },
       ],
       extended: {
+        title: 'Assessment Practice: Narrative Account (8 Marks - Chronology & Causation)',
         question:
-          "Explain why Kaiser Wilhelm's strategy of testing the Entente Cordiale during the Moroccan Crises was a massive strategic failure for Germany.",
+          'Write a narrative account analysing how the Moroccan Crises (1905 and 1911) led to rising tension between Germany, France, and Britain.\n\nYou may use the following in your answer:\n• The Kaiser’s visit to Tangier and the Algeciras Conference (1905–06)\n• The Panther at Agadir and British military preparations (1911)\nYou must also use information of your own.',
+        hints: [
+          'Paragraph 1 (The Trigger - 1905): Kaiser Wilhelm II visits Tangier to test the Entente Cordiale and challenge French dominance.',
+          'Paragraph 2 (The Diplomatic Backfire - 1906): The Algeciras Conference where Britain and Russia firmly back France, isolating Germany.',
+          "Paragraph 3 (The Escalation - 1911): The Agadir Crisis, sending SMS Panther, Lloyd George's Mansion House speech, and joint Anglo-French naval planning.",
+          'Causal Connectors: Ensure each paragraph explicitly links to the next using "This directly led to...", "As a consequence...", "This culminated in...".',
+        ],
+        teacher_guidance: {
+          visualiser_prompt:
+            'Model live under the visualiser how to write an Edexcel 8-mark Narrative Account. Emphasise that this is NOT a simple story; it is a causal chain where each event must explicitly trigger the next (Tangier -> Algeciras isolation -> Agadir gunboat -> Anglo-French military coordination).',
+          tiered_stems: [
+            '<strong>Bronze (Chronological Sequence):</strong> The first key event occurred in 1905 when Kaiser Wilhelm II landed at Tangier to challenge France by... This led to the Algeciras Conference of 1906 where...',
+            '<strong>Silver (Causal Linkage):</strong> Wilhelm’s diplomatic defeat at Algeciras directly provoked the second crisis in 1911 because the Kaiser sought revenge by sending the gunboat SMS Panther to Agadir, which caused Britain to...',
+            '<strong>Gold (Complex Significance & Polarisation):</strong> Consequently, the Moroccan Crises transformed European diplomacy from loose colonial understandings into rigid military commitments, culminating in secret Anglo-French naval pacts because...',
+          ],
+        },
         model_answer:
-          'Wilhelm II attempted to test and break the new Entente Cordiale by interfering in French-controlled Morocco. However, his aggressive posturing (such as sending a gunboat in 1911) backfired completely; it convinced Britain that Germany was a genuine military threat, driving Britain and France into a much closer, formal military alliance against Germany.',
+          'The first key event in the escalation of imperial tension was the First Moroccan Crisis of 1905. Following the signing of the Entente Cordiale in 1904, Kaiser Wilhelm II sailed to the Moroccan port of Tangier and declared his support for the Moroccan Sultan, openly challenging French colonial ambitions. The Kaiser gambled that Britain would refuse to fight over North Africa and that the Entente would collapse under diplomatic pressure.<br><br>However, this provocative action directly led to a catastrophic diplomatic defeat for Germany at the Algeciras Conference in 1906. Instead of abandoning France, Britain firmly backed Paris, while only Austria-Hungary supported Germany. This humiliation convinced the German leadership that they were facing deliberate "encirclement" by hostile powers, while simultaneously encouraging Britain and France to begin secret military and staff conversations to plan for a potential European war.<br><br>Consequently, this lingering resentment triggered the Second Moroccan Crisis (the Agadir Crisis) in 1911. When French troops occupied Fez to suppress a rebellion, Germany sent the gunboat SMS Panther to the port of Agadir, demanding the entire French Congo as compensation. This blatant act of "gunboat diplomacy" provoked a fierce British reaction; Chancellor David Lloyd George delivered his famous Mansion House speech warning that Britain would fight rather than see France bullied. The crisis culminated in Germany backing down in exchange for two strips of worthless marshland in the Congo, but the long-term consequence was fatal for European peace: it solidified the Triple Entente and resulted in a secret naval agreement where the British Royal Navy agreed to protect the French Channel coast while the French fleet moved to the Mediterranean.',
+        lines: 15,
       },
       do_now: {
         type: 'questions',
@@ -1103,21 +1067,25 @@ export default {
         tasks: [
           {
             type: 'draw',
-            text: 'Task 1: Draw an arrow to the globe and label what the different slices represent to European leaders.',
+            text: 'Task 1: Draw an arrow to the globe and label what the different slices represent to European leaders, explaining why Germany felt it had been left with the "crumbs".',
+            starter: 'The different slices on the globe represent...',
             model_answer:
-              'A detailed historical explanation using specific chronology and evidence from the lesson.',
+              'The slices represent colonial territories in Africa and the Pacific partitioned during the Scramble for Africa. Britain and France seized the most resource-rich and strategically vital regions (such as Egypt, South Africa, and West Africa) early on, leaving latecomer Germany with smaller, less profitable territories like Togo and Cameroon, which fueled German resentment.',
           },
           {
             type: 'draw',
-            text: 'Task 2: Circle the facial expression of the Kaiser, annotating what this reveals about British fears of German intentions.',
+            text: 'Task 2: Circle the facial expression of the Kaiser/Bismarck, annotating what this reveals about British fears of German intentions.',
+            starter: 'Depicting Bismarck as a greedy boy reveals British anxieties that...',
             model_answer:
-              'A detailed historical explanation using specific chronology and evidence from the lesson.',
+              "The British cartoonist satirizes Bismarck as an undisciplined child grabbing extra pudding to portray German imperial ambitions as illegitimate, unrefined, and insatiable. It reveals British fears that Germany's sudden demand for a global empire (Weltpolitik) would destabilize the existing British-dominated world order and threaten vital imperial sea routes.",
           },
           {
             type: 'draw',
-            text: 'Contrast how British politicians and German politicians viewed Germany\'s right to acquire an empire. Use the word "obstacle" or "encirclement" in your answer.',
+            text: 'Contrast how British politicians and German politicians viewed Germany\'s right to acquire an empire. Use the words "obstacle" and "encirclement" in your answer.',
+            starter:
+              "British and German politicians viewed Germany's imperial ambitions very differently: British leaders saw...",
             model_answer:
-              'A detailed historical explanation using specific chronology and evidence from the lesson.',
+              'British politicians viewed Germany\'s naval and imperial expansion as an aggressive threat designed to undermine British maritime supremacy, regarding the Royal Navy as a necessary shield rather than an obstacle. Conversely, German politicians argued that as a leading industrial superpower, Germany had an undeniable right to a "place in the sun", interpreting British opposition and the Entente Cordiale as a deliberate policy of encirclement designed to stifle legitimate German growth.',
           },
         ],
         model_answer:
@@ -1159,25 +1127,6 @@ export default {
           "Explain how Eckart Kehr's theory connects Germany's aggressive foreign policy to its internal fears of a socialist revolution.",
         stretch_model:
           "Kehr argues that the Kaiser was terrified of the growing working-class support for socialism at home. To prevent a revolution, he used 'Weltpolitik' (aggressive foreign policy) to create external enemies, rallying the German public around nationalism and distracting them from demanding domestic reforms.",
-      },
-      gcse_task: {
-        sources: [
-          {
-            type: 'visual',
-            src: '/units/great_war/assets/was_greedy_boy.png',
-            title:
-              "Source A: Source A: 'The Greedy Boy', a British political cartoon published in 1885 showing German Chancellor Otto von Bismarck.",
-          },
-          {
-            type: 'written',
-            text: '“We do not want to put anyone in the shade, but we too demand our place in the sun.”',
-            title:
-              'Source B: Speech by German Foreign Minister Bernhard von Bülow to the Reichstag, 1897.',
-          },
-        ],
-        topic: 'the impact of Weltpolitik on international relations',
-        model_answer:
-          '<strong>Source A is useful for showing the British perception of Weltpolitik as aggressive and threatening;</strong> <strong style="color: #0284c7;">the cartoon depicts Chancellor Bismarck greedily carving up colonial territories, mocking Germany\'s aggressive desire for a larger empire.</strong> <strong style="color: #9333ea;">As a satirical British cartoon, its purpose is to influence public opinion by exaggerating the Kaiser\'s arrogance, which accurately reflects the growing anti-German anxiety among the British public.</strong> <strong style="color: #16a34a;">This is supported by the context of the Moroccan Crises (1905 and 1911), where Wilhelm\'s aggressive posturing in Africa actually backfired and drove Britain into a closer military alliance with France.</strong><br><br><strong>Source B is highly useful for understanding the genuine German intent behind Weltpolitik.</strong> <strong style="color: #0284c7;">The Chancellor demands Germany\'s "place in the sun", openly declaring their ambition to build a massive overseas empire.</strong> <strong style="color: #9333ea;">As a public speech to the Reichstag, its purpose is to rally domestic nationalist support and justify increased military spending to the German politicians.</strong> <strong style="color: #16a34a;">We know from context that Kaiser Wilhelm II was deeply jealous of the British Empire and believed that for Germany to be a true \'World Power\', it needed vast African colonies, which directly triggered the imperial rivalry that destabilised Europe.</strong>',
       },
       learning_objective:
         'To understand Why did the scramble for colonies turn empires into rivals?',
@@ -1248,9 +1197,6 @@ export default {
       ],
       narrative_blocks: [
         {
-          text: "**The Gamble of Weltpolitik**\n\nIn 1905, the Kaiser arrived in Tangier, Morocco, declaring his support for Moroccan independence against French influence. He expected the Entente Cordiale to fracture under pressure. Instead, the exact opposite happened: at the Algeciras Conference in 1906, Britain firmly backed France, leaving Germany diplomatically humiliated and isolated, supported only by Austria-Hungary.\n\nThe Kaiser repeated this dangerous gamble in 1911 (the Agadir Crisis) by sending the gunboat SMS Panther to the Moroccan coast. Once again, Britain stood by France, and the British navy was even placed on a war footing. Wilhelm’s clumsy attempts at 'gunboat diplomacy' completely backfired. Rather than breaking the Entente Cordiale, his aggression convinced Britain and France that Germany was an unpredictable threat, pushing the two nations into a much tighter military partnership.",
-        },
-        {
           text: "By the turn of the 20th century, the Great Powers of Europe were locked in a fierce, competitive race to conquer and maintain overseas empires. Colonies had become vital status symbols of industrial wealth and global importance. Each territory provided cheap raw materials to feed the factories of the ruling nation, while simultaneously serving as locked-down markets to purchase the home country's manufactured goods. This race had been formalized at the <strong>1884 Berlin Conference</strong>, where European leaders partitioned Africa among themselves without consulting any Africans. Among the territories partitioned, the <strong>Congo Free State</strong> stood out as a site of extreme exploitation, owned personally by King Leopold II of Belgium.",
           level_4:
             'By the turn of the 20th century, the Great Powers of Europe were locked in a fierce, competitive race to conquer and maintain overseas empires. Among the territories partitioned, the <strong>Congo Free State</strong> stood out as a site of extreme exploitation, owned personally by King Leopold II of Belgium.',
@@ -1258,11 +1204,13 @@ export default {
             {
               type: 'comprehension',
               text: 'Explain two distinct economic reasons why possessing overseas colonies was vital to the industrial growth of a Great Power.',
+              starter:
+                'Possessing overseas colonies was vital for industrial growth because, first...',
               model_answer:
                 'Possessing overseas colonies was vital for two economic reasons: first, colonies provided cheap raw materials needed to feed the factories back home; second, they served as locked-down, captive markets where the ruling nation could easily sell its manufactured goods.',
             },
           ],
-          theme_heading: "Imperialism's Global",
+          theme_heading: "Imperialism's Global Race",
         },
         {
           text: 'Great Britain possessed the vastest overseas empire in human history. Because Great Britain was an island nation, its entire imperial network relied heavily on open sea routes. Thousands of British merchant ships sailed the oceans daily, and the Royal Navy was given absolute priority to keep these global sea lanes clear of foreign rivals. Crucially, Britain controlled the <strong>Suez Canal</strong> in Egypt to secure its vital shipping lanes to India. Any challenge to this naval dominance was viewed by British politicians as a direct threat to the survival of the British Empire. France held the second-largest empire, focusing heavily on territories in North and West Africa. Having suffered the bitter humiliation of losing Alsace-Lorraine to Germany in 1871, French politicians fiercely guarded their colonies to protect their remaining international reputation. However, imperial expansion was fraught with danger; in 1898, Britain and France nearly went to war during the <strong>Fashoda Incident</strong>, a tense military standoff over control of the Upper Nile in Sudan.',
@@ -1272,17 +1220,19 @@ export default {
             {
               type: 'comprehension',
               text: 'Why did French politicians feel it was absolutely vital to maintain a firm hold on their remaining global colonies after 1871?',
+              starter:
+                'Following their humiliating defeat in 1871, French politicians felt compelled to maintain their colonies because...',
               model_answer:
                 'After suffering the bitter humiliation of losing the Alsace-Lorraine region to Germany in 1871, French politicians felt they had to fiercely guard their remaining overseas colonies to protect whatever international power and reputation France still had.',
             },
           ],
-          theme_heading: 'Empires',
+          theme_heading: 'The Established Empires: Britain & France',
         },
         {
           text: 'The entire geopolitical landscape destabilized when Germany entered the race. Having only unified in 1871, Germany was a new nation right in the middle of Europe, but its industry was growing rapidly. The ambitious German Kaiser Wilhelm II and his politicians wanted Germany to match the global influence of Britain and France. In a fiery speech to the German parliament on 6 December 1897, Foreign Secretary Bernhard von Bülow announced that Germany would no longer stand aside, famously demanding Germany’s own "place in the sun".',
           level_4:
             'The entire geopolitical landscape destabilized when Germany entered the race. In a fiery speech to the German parliament on 6 December 1897, Foreign Secretary Bernhard von Bülow announced that Germany would no longer stand aside, famously demanding Germany’s own "place in the sun".',
-          theme_heading: "Germany's Global",
+          theme_heading: "Germany's Global Ambition (Weltpolitik)",
         },
         {
           text: 'Germany rapidly seized territories across the globe, including the Cameroons, East Africa, Togo, and the Pacific colony of <strong>Kaiser-Wilhelmsland</strong> in Papua New Guinea. This aggressive push led to direct clashes. In 1911, the <strong>Agadir Crisis</strong> erupted when Germany sent a gunboat, the <strong>SMS Panther</strong>, to the Moroccan port of <strong>Agadir</strong> in an attempt to challenge French influence. The standoff ended when Germany recognized <strong>France</strong> as the protector of Morocco in exchange for minor territories in the Congo. To hold and defend this new empire, German politicians announced plans to construct a massive battle fleet. This move deeply alarmed Great Britain. British politicians regarded Germany’s colonial and naval ambitions as an aggressive attempt to undermine the British Empire, while German leaders increasingly viewed Britain as a hostile obstacle standing in the way of Germany’s legitimate right to historical greatness.',
@@ -1292,57 +1242,44 @@ export default {
             {
               type: 'comprehension',
               text: 'Explain how Germany’s sudden desire to build a naval fleet to protect its new colonies acted as a cause of friction with Great Britain.',
+              starter:
+                'Germany’s decision to construct a battle fleet created friction with Britain because...',
               model_answer:
                 'Because Britain was an island nation, its survival relied on absolute control of the sea lanes. When Germany announced plans to build a massive battle fleet to protect its new empire, British politicians viewed this as a direct, aggressive threat to undermine the Royal Navy and the British Empire.',
             },
             {
               type: 'comprehension',
               text: 'What specific geographical territory did Foreign Secretary Bernhard von Bülow target when he demanded a "place in the sun" for Germany?',
+              starter: 'When Bernhard von Bülow demanded a "place in the sun", he meant...',
               model_answer:
                 "Bülow wasn't targeting one specific territory; demanding a 'place in the sun' meant he wanted Germany to have a massive global empire to match Britain and France, which soon led to Germany aggressively seizing territories like the Cameroons, East Africa, Togo, and Kaiser-Wilhelmsland.",
             },
           ],
-          theme_heading: 'German Ambition Alarms',
+          theme_heading: 'German Ambition Alarms Britain',
         },
         {
           text: 'In 1904, Britain and France ended centuries of bitter rivalry by signing the Entente Cordiale, a friendly agreement to resolve colonial disputes. Kaiser Wilhelm II of Germany was furious; he believed this friendship was designed to encircle Germany. To test the strength of this new bond, the Kaiser decided to deliberately provoke a crisis in North Africa, assuming the British would not actually risk war to defend French interests.',
           level_4:
             'In 1904, Britain and France ended centuries of bitter rivalry by signing the Entente Cordiale, a friendly agreement to resolve colonial disputes. To test the strength of this new bond, the Kaiser decided to deliberately provoke a crisis in North Africa, assuming the British would not actually risk war to defend French interests.',
-          theme_heading: 'Germany Tests New Alliance',
+          theme_heading: 'Testing the Entente Cordiale',
         },
         {
           text: 'In 1905, the Kaiser arrived in Tangier, Morocco, declaring his support for Moroccan independence against French influence. He expected the Entente Cordiale to fracture under pressure. Instead, the exact opposite happened: at the Algeciras Conference in 1906, Britain firmly backed France, leaving Germany diplomatically humiliated and isolated, supported only by Austria-Hungary.',
           level_4:
             'In 1905, the Kaiser arrived in Tangier, Morocco, declaring his support for Moroccan independence against French influence. Instead, the exact opposite happened: at the Algeciras Conference in 1906, Britain firmly backed France, leaving Germany diplomatically humiliated and isolated, supported only by Austria-Hungary.',
-          theme_heading: "Kaiser'",
+          theme_heading: 'The Tangier Crisis & Algeciras (1905–06)',
         },
         {
           text: "The Kaiser repeated this dangerous gamble in 1911 (the Agadir Crisis) by sending the gunboat SMS Panther to the Moroccan coast. Once again, Britain stood by France, and the British navy was even placed on a war footing. Wilhelm’s clumsy attempts at 'gunboat diplomacy' completely backfired. Rather than breaking the Entente Cordiale, his aggression convinced Britain and France that Germany was an unpredictable threat, pushing the two nations into a much tighter military partnership.",
           level_4:
             'The Kaiser repeated this dangerous gamble in 1911 (the Agadir Crisis) by sending the gunboat SMS Panther to the Moroccan coast. Rather than breaking the Entente Cordiale, his aggression convinced Britain and France that Germany was an unpredictable threat, pushing the two nations into a much tighter military partnership.',
-          theme_heading: "Kaiser'",
+          theme_heading: 'The Agadir Crisis (1911)',
         },
         {
           text: '<div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;"><img src="./assets/alliance_system.svg" style="width: 100%; max-width: 350px; display: block; margin: 0 auto;" alt="The European Alliance System (1914)"></div>',
           level_4:
             '<div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;"><img src="./assets/alliance_system.svg" style="width: 100%; max-width: 350px; display: block; margin: 0 auto;" alt="The European Alliance System (1914)"></div>',
-          theme_heading: "Europe's",
-        },
-        {
-          title: 'Consolidation Task',
-          tasks: [
-            {
-              type: 'extended_writing',
-              question:
-                "Explain how the 'Scramble for Africa' increased tension between European powers.",
-              hints: [
-                'Sentence Starter: The Scramble for Africa increased tension because it led to intense imperial competition...',
-                'Sentence Starter: For example, incidents like the Moroccan Crises showed that Germany was trying to...',
-                'Sentence Starter: This resulted in European powers forming tighter alliances and increasing their military readiness to protect their...',
-              ],
-            },
-          ],
-          text: '<h3>Consolidation Task</h3>',
+          theme_heading: "Europe's Armed Camps",
         },
       ],
       quiz: [
@@ -1522,10 +1459,27 @@ export default {
         },
       ],
       extended: {
+        title: "Assessment Practice: Historical Interpretation (Historians' Debate)",
         question:
-          'How did the invention of the HMS Dreadnought ironically endanger British naval supremacy despite being a British invention?',
+          'Historian Paul Kennedy argues that the Anglo-German naval arms race was "the single most decisive factor" that turned Britain from a neutral observer into Germany’s determined enemy.\n\nHow far do you agree with this interpretation of the causes of Anglo-German hostility?\n\nExplain your answer using your own knowledge and evaluating both sides of the debate.',
+        hints: [
+          'Point 1 (Supporting Kennedy): Maritime Island Security — Britain depended entirely on merchant lifelines; Tirpitz’s High Seas Fleet and the 1900 Navy Laws directly challenged the Two-Power Standard and threatened starvation.',
+          'Point 2 (Supporting Kennedy): The Dreadnought Reset & Public Panic — The 1906 Dreadnought reset the race, prompting intense British jingoism, press hysteria, and the 1909 popular campaign ("We want eight, and we won’t wait!").',
+          'Point 3 (Challenging Kennedy): Imperial Provocation — Tensions were already inflamed by Weltpolitik outside Europe: the Kruger Telegram (1896), the Boer War, and German bullying in Morocco (Tangier 1905, Agadir 1911).',
+          "Point 4 (Alternative Factor): Continental Neutrality & Belgium — By 1912, Britain had decisive numerical victory in the naval race (29 Dreadnoughts to 17); what ultimately triggered war was Germany's violation of Belgian neutrality under the 1839 Treaty of London.",
+        ],
+        teacher_guidance: {
+          visualiser_prompt:
+            "Model live under the visualiser how to tackle an Edexcel historical interpretation question. Show pupils how to establish Kennedy's thesis first (naval existential threat to an island empire), provide corroborating evidence (Two-Power Standard, 1909 naval panic), balance it against alternative pressures (Moroccan Crises, Schlieffen Plan), and provide a weighted historical judgment.",
+          tiered_stems: [
+            '<strong>Bronze (Explaining Kennedy’s Argument):</strong> Historian Paul Kennedy argues that the naval arms race was the decisive factor because, as an island nation, Britain’s survival depended on... Consequently, when Germany began building battleships under the Tirpitz Plan...',
+            '<strong>Silver (Balancing with Alternative Pressures):</strong> However, other historians challenge Kennedy’s view by arguing that colonial clashes and continental diplomacy were equally significant, such as when Kaiser Wilhelm provoked...',
+            '<strong>Gold (Complex Historical Judgment):</strong> In conclusion, while Kennedy is correct that the naval race created irreparable public hostility and destroyed "Splendid Isolation", it was not the sole trigger because by 1912 Britain had won the shipbuilding race; instead, the decisive turning point was...',
+          ],
+        },
         model_answer:
-          'The HMS Dreadnought was so technologically advanced—being faster, heavily armored, and armed exclusively with massive long-range guns—that it rendered all previous battleships obsolete. This effectively reset the naval arms race to zero, allowing Germany to start building Dreadnoughts on an equal footing with Britain.',
+          'Historian Paul Kennedy argues convincingly that the Anglo-German naval arms race was the primary catalyst in turning Britain from a detached observer enjoying "Splendid Isolation" into Germany’s committed adversary. For an island nation whose global empire and food security depended entirely on open maritime lifelines, the German Navy Laws of 1898 and 1900 were perceived not as legitimate defense, but as an existential dagger pointed at Britain’s throat. When Britain launched the revolutionary all-big-gun HMS Dreadnought in 1906, it ironically wiped out Britain’s numerical lead, sparking a frantic building competition. By 1909, public alarm peaked with the popular slogan "We want eight, and we won’t wait!", forcing the British government to out-build Germany, completing 29 Dreadnoughts to Germany’s 17.<br><br>However, Kennedy’s interpretation can be challenged by historians who emphasize broader imperial and continental friction. German support for the Boers in the 1896 Kruger Telegram and Kaiser Wilhelm II’s aggressive "gunboat diplomacy" during the Moroccan Crises of 1905 and 1911 alarmed the British Foreign Office long before the Dreadnought race peaked. These imperial crises, rather than naval ships alone, drove Britain into the Entente Cordiale with France (1904) and the Anglo-Russian Convention (1907). Furthermore, by 1912 Germany had effectively abandoned the naval race to redirect expenditure toward expanding its land army, yet relations did not recover.<br><br>Ultimately, while Kennedy overstates the naval race as the sole decisive cause, it was undeniably the psychological engine that poisoned British public and political trust. While imperial disputes could be resolved through diplomacy, Germany’s High Seas Fleet convinced British strategists that Germany harboured aggressive European ambitions, making British intervention in August 1914 inevitable when German troops invaded neutral Belgium.',
+        lines: 15,
       },
       do_now: {
         type: 'questions',
@@ -1591,9 +1545,10 @@ export default {
         tasks: [
           {
             type: 'draw',
-            text: 'Task 1: Draw an arrow to the rotating gun turrets and label the maximum distance their shells could hit an enemy ship.',
+            text: 'Task 1: Draw an arrow to the rotating gun turrets and explain how their range and calibre made all previous naval strategies obsolete.',
+            starter: 'The rotating gun turrets on the blueprint demonstrate that...',
             model_answer:
-              'Students should draw an arrow to the large rotating gun turrets on the blueprint, noting that these guns could hit enemy targets from much further away than older battleships.',
+              'The blueprint illustrates ten 12-inch heavy guns mounted on rotating turrets, capable of firing high-explosive shells accurately over ten miles. Because older pre-dreadnoughts carried a mix of smaller, shorter-range guns, HMS Dreadnought could destroy an enemy warship while remaining safely out of range of retaliatory fire, rendering all existing battleships useless.',
           },
         ],
         model_answer:
@@ -1634,23 +1589,6 @@ export default {
           "Evaluate Paul Kennedy's argument. Why would Britain view a German naval buildup as a greater existential threat than a larger German army?",
         stretch_model:
           "As an island nation, Britain's survival depended entirely on importing food and raw materials by sea. A massive German army was a threat to France and Russia on the continent, but a German navy could blockade Britain, starve its population, and destroy its empire, making it an existential threat to British survival.",
-      },
-      gcse_task: {
-        sources: [
-          {
-            type: 'visual',
-            src: '/units/great_war/assets/was_dreadnought_blueprint.png',
-            title: 'Source A: Official technical blueprint of HMS Dreadnought, 1906.',
-          },
-          {
-            type: 'written',
-            text: "“We want eight, and we won't wait!”",
-            title: 'Source B: Popular British political slogan chanted by the public in 1909.',
-          },
-        ],
-        topic: 'the effects of the Anglo-German naval arms race',
-        model_answer:
-          '<strong>Source A is highly useful for demonstrating the sudden technological leap that triggered the naval arms race;</strong> <strong style="color: #0284c7;">it visually details the massive, all-big-gun armaments of the HMS Dreadnought.</strong> <strong style="color: #9333ea;">As an official naval blueprint, its origin makes it highly reliable, objective evidence of the ship\'s revolutionary, heavily-armored design.</strong> <strong style="color: #16a34a;">This connects to our knowledge that the launch of the Dreadnought in 1906 was so advanced that it rendered all previous battleships obsolete, ironically wiping out Britain\'s naval advantage and allowing Germany to start building Dreadnoughts on an equal footing.</strong><br><br><strong>Source B is extremely useful for revealing the psychological impact of the arms race on the British public.</strong> <strong style="color: #0284c7;">The slogan "We want eight, and we won\'t wait!" shows the intense public demand for more warships.</strong> <strong style="color: #9333ea;">The purpose of this popular slogan was to place immense political pressure on the British government to out-build the Germans during the 1909 naval panic.</strong> <strong style="color: #16a34a;">This is supported by the context of \'Jingoism\'—an aggressive form of patriotism—where the British public viewed naval supremacy as a matter of national survival, leading the government to eventually build 29 Dreadnoughts to Germany\'s 17.</strong>',
       },
       learning_objective: 'To understand Whose Navy Was Biggest and Best? The Arms Race',
       teacher_notes: {
@@ -1721,21 +1659,19 @@ export default {
       ],
       narrative_blocks: [
         {
-          text: "**The Naval Race: A Self-Fulfilling Prophecy?**\n\nThe HMS Dreadnought was a technological marvel. It was faster, heavily armored, and carried ten massive 12-inch guns, making every other battleship on earth instantly obsolete. While the Dreadnought was a triumph of British engineering, it contained a fatal strategic flaw: because all older ships were now worthless, Britain's massive head start in naval numbers was suddenly wiped out.\n\nGermany recognized the opportunity immediately. The naval race was no longer about total ships, but about who could build the most 'Dreadnought-class' vessels. By revolutionizing naval warfare, Britain had essentially hit the reset button on the arms race, giving Germany a realistic chance to challenge British naval supremacy from scratch. The ensuing desperate scramble to build Dreadnoughts consumed the budgets and political rhetoric of both nations up until 1914.",
-        },
-        {
           text: "For nearly a century following the Battle of Trafalgar in 1805, Great Britain had ruled the world's oceans without any major international challenge, possessing the most powerful navy on earth. As an island nation with a massive global empire, Britain relied on its naval supremacy to protect its trade routes, secure resource lifelines, and defend its home shores from European threats. To maintain this supremacy, Britain adhered to the <strong>Two-Power Standard</strong>, a strict naval policy stating that the Royal Navy must always be at least equal to or larger than the next two most powerful navies in the world combined.",
           level_4:
-            "For nearly a century following the Battle of Trafalgar in 1805, Great Britain had ruled the world's oceans without any major international challenge, possessing the most powerful navy on earth. To maintain this supremacy, Britain adhered to the <strong></strong>, a strict naval policy stating that the Royal Navy must always be at least equal to or larger than the next two most powerful navies in the world combined.",
+            "For nearly a century following the Battle of Trafalgar in 1805, Great Britain had ruled the world's oceans without any major international challenge, possessing the most powerful navy on earth. To maintain this supremacy, Britain adhered to the Two-Power Standard, a strict naval policy stating that the Royal Navy must always be at least equal to or larger than the next two most powerful navies in the world combined.",
           tasks: [
             {
               type: 'comprehension',
               text: "Describe the 'Two-Power Standard' and explain why Great Britain adhered to this strict naval policy.",
+              starter: 'The Two-Power Standard was a strict British naval policy stating that...',
               model_answer:
                 'The Two-Power Standard was a strict British naval policy stating that the Royal Navy must always be at least equal to or larger than the next two most powerful navies in the world combined. Britain adhered to this to ensure absolute naval supremacy to protect its island shores and vast global empire.',
             },
           ],
-          theme_heading: 'British Naval Dominance',
+          theme_heading: 'British Naval Dominance & The Two-Power Standard',
         },
         {
           text: "Everything changed fundamentally in 1898 when Germany's new emperor, Kaiser Wilhelm II, announced his clear intention to build a powerful German navy. The Kaiser believed that if Germany was ever to become a true world power, it had to explicitly challenge the global dominance of the British fleet. In 1898 and 1900, the German government passed the historic German Navy Laws, which ordered the rapid construction of a massive fleet, including 19 battleships in the first law and an additional 38 in the second. To back this policy, the German naval chief, Admiral Tirpitz, established the Navy League. This massive organization arranged civilian tours of industrial shipyards and delivered public lectures across Germany to stimulate intense public interest and build a fierce sense of patriotism among ordinary citizens.",
@@ -1745,29 +1681,35 @@ export default {
             {
               type: 'comprehension',
               text: 'Detail what the German Navy Laws of 1898 and 1900 explicitly ordered the German industrial shipyards to construct.',
+              starter:
+                'The German Navy Laws of 1898 and 1900 explicitly ordered the construction of...',
               model_answer:
                 'The German Navy Laws of 1898 and 1900 explicitly ordered the rapid construction of a massive fleet, specifically commanding the building of 19 battleships in the first law and an additional 38 in the second.',
             },
             {
               type: 'comprehension',
               text: "Explain how Admiral Tirpitz used the Navy League to manufacture civilian support and patriotism for Germany's expanding fleet.",
+              starter:
+                'Admiral Tirpitz utilised the Navy League to build civilian patriotism by...',
               model_answer:
                 'Admiral Tirpitz established the Navy League, a massive organization that arranged civilian tours of industrial shipyards and delivered public lectures across Germany. This successfully stimulated intense public interest and built a fierce sense of patriotism and support among ordinary citizens.',
             },
             {
               type: 'comprehension',
               text: 'Explain why maintaining a massive navy was a matter of survival for Great Britain, but was viewed as a matter of status and power for Germany.',
+              starter:
+                'Maintaining a powerful fleet was an existential necessity for Britain because... whereas for Germany it was...',
               model_answer:
                 "As an island nation with a global empire, Britain relied entirely on naval supremacy to protect its trade routes and defend its shores, making the navy a matter of national survival. In contrast, Germany was a land-based power; Kaiser Wilhelm II wanted a fleet to explicitly challenge British dominance and achieve the prestige of being a 'true world power'.",
             },
           ],
-          theme_heading: "Germany's Naval Challenge",
+          theme_heading: "Germany's Naval Challenge & The Tirpitz Plan",
         },
         {
-          text: "British politicians were profoundly alarmed by Germany's actions. They believed that Germany's expanding High Seas Fleet was being designed specifically for a future military conflict with the British Grand Fleet. To explain the danger, British politicians pointed out the fundamental difference in each nation's security needs.",
+          text: "British politicians were profoundly alarmed by Germany's actions. They believed that Germany's expanding High Seas Fleet was being designed specifically for a future military conflict with the British Grand Fleet. To explain the danger, British politicians pointed out the fundamental difference in each nation's security needs: a navy for Britain was a vital shield of survival, but for Germany, with the largest army in Europe, a massive navy was an aggressive luxury.",
           level_4:
-            "British politicians were profoundly alarmed by Germany's actions. To explain the danger, British politicians pointed out the fundamental difference in each nation's security needs.",
-          theme_heading: 'British Fear German Navy',
+            "British politicians were profoundly alarmed by Germany's actions. They believed that Germany's expanding High Seas Fleet was being designed specifically for a future military conflict with the British Grand Fleet.",
+          theme_heading: 'British Fears of the High Seas Fleet',
         },
         {
           text: "Britain's defensive response was to design and construct the most powerful warship ever created: HMS <em>Dreadnought</em>. Launched in 1906, this vessel was so advanced in its speed, armor plating, and long-range rotating turrets that every existing battleship on earth was rendered instantly obsolete overnight. Rather than stopping the competition, HMS <em>Dreadnought</em> inadvertently reset the score to zero, giving Germany a chance to compete on equal terms. Germany immediately responded by manufacturing its own version of the battleship, the <em>SMS Rheinland</em>. The naval arms race was officially underway, with both nations building more and more of these massive, expensive weapons. By 1914, Germany had successfully doubled the size of its navy to become the second-largest naval power in the world, leaving Britain deeply suspicious of its motives.",
@@ -1776,60 +1718,20 @@ export default {
           tasks: [
             {
               type: 'comprehension',
-              text: 'Identify three specific technological features of HMS Dreadnought that made it superior to all previous warships.',
+              text: 'Identify three specific technological features of HMS Dreadnought that made it superior to all previous warships, explaining why it reset the arms race.',
+              starter:
+                'Three revolutionary technological features that made HMS Dreadnought superior were...',
               model_answer:
-                'The HMS Dreadnought was vastly superior because of its increased speed, its advanced heavy armor plating, and its long-range rotating turrets. These features rendered all older battleships instantly obsolete.',
+                'The HMS Dreadnought was vastly superior because of its steam turbine speed (21 knots), its heavy 11-inch armor plating, and its uniform "all-big-gun" battery of ten 12-inch rotating turrets. These features rendered all older battleships instantly obsolete, resetting the naval balance to zero and allowing Germany to compete from a clean slate.',
             },
           ],
-          theme_heading: 'Naval Arms Race Begins',
+          theme_heading: 'The Dreadnought Revolution (1906)',
         },
         {
-          text: 'This competitive race culminated in a highly strategic naval standoff. The British Grand Fleet was stationed at its primary home base at <strong>Scapa Flow</strong> in Scotland, while the German High Seas Fleet was based at <strong>Wilhelmshaven</strong> on the North Sea coast. Both fleets expected a massive, decisive battle in the <strong>North Sea</strong>. To facilitate the rapid movement of its massive new dreadnoughts between the Baltic Sea and the North Sea, Germany widened the <strong>Kiel Canal</strong>, completing the project in 1914 just before the outbreak of war.',
+          text: "This competitive race culminated in a highly strategic naval standoff. The British Grand Fleet was stationed at its primary home base at <strong>Scapa Flow</strong> in Scotland, while the German High Seas Fleet was based at <strong>Wilhelmshaven</strong> on the North Sea coast. Both fleets expected a massive, decisive battle in the <strong>North Sea</strong>. To facilitate the rapid movement of its massive new dreadnoughts between the Baltic Sea and the North Sea, Germany widened the <strong>Kiel Canal</strong>, completing the project in 1914 just before the outbreak of war. By 1914, Britain had constructed 29 dreadnoughts to Germany's 17, preserving a margin of safety, but at the cost of permanent diplomatic estrangement.",
           level_4:
-            'This competitive race culminated in a highly strategic naval standoff. To facilitate the rapid movement of its massive new dreadnoughts between the Baltic Sea and the North Sea, Germany widened the <strong></strong>, completing the project in 1914 just before the outbreak of war.',
-          theme_heading: 'Naval Standoff Prepar',
-        },
-        {
-          text: "Before 1906, Britain ruled the waves with a policy known as the 'Two-Power Standard'—a rule stating the Royal Navy must be at least as large as the next two biggest navies combined. Germany, despite passing ambitious Naval Laws under Admiral von Tirpitz, was struggling to catch up. But in 1906, Britain launched a ship that accidentally leveled the playing field.",
-          level_4:
-            "Before 1906, Britain ruled the waves with a policy known as the 'Two-Power Standard'—a rule stating the Royal Navy must be at least as large as the next two biggest navies combined. But in 1906, Britain launched a ship that accidentally leveled the playing field.",
-          theme_heading: 'Naval Power Shift',
-        },
-        {
-          text: "The HMS Dreadnought was a technological marvel. It was faster, heavily armored, and carried ten massive 12-inch guns, making every other battleship on earth instantly obsolete. While the Dreadnought was a triumph of British engineering, it contained a fatal strategic flaw: because all older ships were now worthless, Britain's massive head start in naval numbers was suddenly wiped out.",
-          level_4:
-            "The HMS Dreadnought was a technological marvel. While the Dreadnought was a triumph of British engineering, it contained a fatal strategic flaw: because all older ships were now worthless, Britain's massive head start in naval numbers was suddenly wiped out.",
-          theme_heading: "Naval Revolution'",
-        },
-        {
-          text: "Germany recognized the opportunity immediately. The naval race was no longer about total ships, but about who could build the most 'Dreadnought-class' vessels. By revolutionizing naval warfare, Britain had essentially hit the reset button on the arms race, giving Germany a realistic chance to challenge British naval supremacy from scratch. The ensuing desperate scramble to build Dreadnoughts consumed the budgets and political rhetoric of both nations up until 1914.",
-          level_4:
-            'Germany recognized the opportunity immediately. The ensuing desperate scramble to build Dreadnoughts consumed the budgets and political rhetoric of both nations up until 1914.',
-          tasks: [
-            {
-              type: 'comprehension',
-              text: 'Explain how the launching of HMS Dreadnought in 1906 represented an industrial turning point in the naval arms race, rather than maintaining the status quo.',
-              model_answer:
-                "The HMS Dreadnought was so technologically advanced that it rendered all previous battleships obsolete. This effectively reset the naval arms race to zero; it wiped out Britain's numerical head start and allowed Germany to start building Dreadnought-class ships on an equal footing with Britain.",
-            },
-          ],
-          theme_heading: 'Dreadnought Arms',
-        },
-        {
-          title: 'Consolidation Task',
-          tasks: [
-            {
-              type: 'extended_writing',
-              question:
-                'Explain why the naval race between Britain and Germany damaged their relations.',
-              hints: [
-                'Sentence Starter: The naval race damaged relations because Britain saw it as a direct threat to...',
-                'Sentence Starter: For example, the launch of HMS Dreadnought in 1906 escalated the competition by...',
-                'Sentence Starter: This resulted in widespread public fear in Britain and the belief that Germany was preparing for...',
-              ],
-            },
-          ],
-          text: '<h3>Consolidation Task</h3>',
+            'This competitive race culminated in a highly strategic naval standoff. Both fleets expected a massive, decisive battle in the North Sea. Germany widened the Kiel Canal, completing the project in 1914 just before the outbreak of war.',
+          theme_heading: 'Strategic Standoff in the North Sea',
         },
       ],
       quiz: [

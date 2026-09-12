@@ -3310,14 +3310,50 @@ export function renderLesson(lesson) {
         });
         gcseHtml += `</div>`;
 
+        if (lesson.gcse_task.scaffolding) {
+          const sc = lesson.gcse_task.scaffolding;
+          gcseHtml += `
+            <div class="provenance-scaffold-box" style="margin: 15px 0 20px 0; padding: 14px 18px; background: #fffbeb; border: 1.5px solid #fcd34d; border-left: 5px solid #d97706; border-radius: 6px;">
+              <strong style="color: #92400e; display: flex; align-items: center; gap: 8px; font-size: 1rem; margin-bottom: 8px;">
+                <i class="fa-solid fa-magnifying-glass"></i> Provenance Clues &amp; Utility Stems (Edexcel 8-Mark Focus)
+              </strong>
+              ${
+                sc.provenance_clues && sc.provenance_clues.length > 0
+                  ? `
+                <div style="margin-bottom: 10px;">
+                  <span style="font-weight: 700; color: #b45309; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.5px;">Provenance Clues (Nature, Origin, Purpose):</span>
+                  <ul style="margin: 4px 0 0 0; padding-left: 20px; color: #78350f; font-size: 0.92rem; line-height: 1.5;">
+                    ${sc.provenance_clues.map((c) => `<li>${formatBold(c)}</li>`).join('')}
+                  </ul>
+                </div>
+              `
+                  : ''
+              }
+              ${
+                sc.utility_stems && sc.utility_stems.length > 0
+                  ? `
+                <div>
+                  <span style="font-weight: 700; color: #b45309; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.5px;">Tiered Sentence Starters:</span>
+                  <ul style="margin: 4px 0 0 0; padding-left: 20px; color: #92400e; font-size: 0.92rem; line-height: 1.5;">
+                    ${sc.utility_stems.map((s) => `<li>${formatBold(s)}</li>`).join('')}
+                  </ul>
+                </div>
+              `
+                  : ''
+              }
+            </div>
+          `;
+        }
+
         let placeholder = isNarrative
           ? 'Write your 8-mark narrative account here...'
           : 'Type your 8-mark utility evaluation here...';
         gcseHtml += `<textarea class="student-answer-input" style="min-height: 200px;" placeholder="${placeholder}" oninput="window.updateProgress()"></textarea>`;
 
-        if (lesson.gcse_task.model) {
+        const gcseModel = lesson.gcse_task.model || lesson.gcse_task.model_answer;
+        if (gcseModel) {
           gcseHtml += `<div style="margin-top: 15px;"><button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-model" data-action="toggle-element" data-target-id="gcse-model-src"><i class="fa-solid fa-check-double"></i> Reveal Model Answer</button></div>`;
-          gcseHtml += `<div id="gcse-model-src" class="scaffold-box model-box" style="display:none; margin-top: 15px;">${formatBold(lesson.gcse_task.model)}</div>`;
+          gcseHtml += `<div id="gcse-model-src" class="scaffold-box model-box" style="display:none; margin-top: 15px;">${formatBold(gcseModel)}</div>`;
         }
       }
     }

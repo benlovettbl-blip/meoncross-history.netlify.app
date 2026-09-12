@@ -2565,6 +2565,16 @@ img::after {
   margin-top: 12px;
   color: #166534;
 }
+.provenance-scaffold-box {
+  background: #fffbeb !important;
+  border: 1.5px solid #fcd34d !important;
+  border-left: 5px solid #d97706 !important;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  color: #78350f;
+}
 .starter-box {
   border-left: 4px solid #2563eb;
 }
