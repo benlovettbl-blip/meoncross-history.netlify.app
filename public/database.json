@@ -41925,164 +41925,191 @@
           "id": "lesson_1",
           "title": "What powered the Industrial Revolution, and how did a Fareham ironmaster change the world?",
           "teacher_notes": {
-            "primer": "This lesson introduces the shift from the domestic system to mass factory production during the Industrial Revolution, focusing on a local history case study of Henry Cort at the Funtley Ironworks. The goal is to connect major national/global shifts (steam, mass production, empire) to local geography and innovation.",
+            "primer": "This enquiry introduces the transition from the domestic system to mechanized industrial production, anchored in the energy shift from wood and water to coal and steam. The lesson centers on a world-class local history study of Fareham ironmaster Henry Cort at the Funtley Ironworks (1775–1784) and the decisive 1787 Portsmouth Royal Navy Dockyard trials. Pupils investigate how local Hampshire metallurgical innovation liberated the Royal Navy from foreign import dependency on the eve of the French Revolutionary Wars, while engaging with historiographical debates surrounding geographical proximity versus technological genius, and the global Atlantic networks that financed industrial capital.",
             "objectives": [
               {
-                "objective": "Understand the difference between the domestic system and the factory system.",
-                "primer": "Use the Core Narrative to explain how steam power freed manufacturing from being reliant on fast-flowing rivers.",
-                "question": "What was the main difference in how goods were made before and after the invention of steam power?"
+                "objective": "Explain how the transition from the domestic system to coal and Watt's steam engine liberated manufacturing from river valleys.",
+                "primer": "Direct pupils to paragraphs [1.1] and [1.2]. Contrast the natural, seasonal limits of water wheels and human muscle with the continuous energy density of coal and Watt's separate condenser.",
+                "question": "Why did James Watt's steam engine allow British factories to move from remote rural rivers into crowded industrial cities?"
               },
               {
-                "objective": "Explain the significance of Henry Cort's puddling and rolling processes.",
-                "primer": "Emphasize how Cort solved the 'pig iron' crisis by burning off carbon impurities, allowing Britain to stop importing expensive Swedish/Russian iron.",
-                "question": "Why was 'pig iron' a major problem for the Royal Navy, and how did the puddling process fix it?"
+                "objective": "Analyse how Henry Cort's twin inventions at Funtley (puddling and rolling) solved the Royal Navy's pig iron crisis.",
+                "primer": "Examine paragraphs [2.1]–[2.3] and Source B. Emphasize how the reverberatory puddling furnace chemically separated coal sulphur from molten iron, while grooved rollers accelerated production fifteen-fold.",
+                "question": "Why was British pig iron previously unusable for Royal Navy warships, and how did the Funtley puddling furnace overcome this chemical flaw?"
               },
               {
-                "objective": "Evaluate the importance of location versus innovation in Cort's success.",
-                "primer": "Guide students through the Paragraph Scaffold, helping them weigh the proximity of Portsmouth dockyards against his technological genius.",
-                "question": "Would Henry Cort's inventions have been as successful if he hadn't been located near Portsmouth?"
+                "objective": "Evaluate whether Henry Cort's triumph was driven primarily by geographical proximity to Portsmouth Dockyard or technological genius.",
+                "primer": "Guide students through Act 4 and the PEE/PEEL Structure Strip. Challenge high-attaining pupils to synthesize how naval military demand provided the customer, but Cort's metallurgy created the national breakthrough.",
+                "question": "Would Henry Cort's puddling process have succeeded if Funtley had been located in northern Scotland rather than beside Portsmouth Dockyard?"
               }
             ],
-            "source_context": "The visual diagram illustrates Henry Cort's revolutionary puddling furnace and grooved rolling process at Funtley Ironworks in Hampshire. By stirring molten pig iron to burn away carbon impurities and rolling it into standardised bars, Cort transformed brittle cast iron into tough malleable wrought iron at industrial scale, powering naval shipbuilding. **Hinge Question:** How does this diagram show that Britain's industrial power was built on transforming raw scientific and chemical processes into mechanical mass production?"
+            "source_context": "Source A (Philipp Jakob de Loutherbourg, Coalbrookdale by Night, 1801) captures the dramatic, almost apocalyptic energy transition of the Industrial Revolution as blast furnaces illuminated the Shropshire countryside. Source B illustrates Cort's patented reverberatory puddling furnace and grooved rolling mill at Funtley Ironworks near Fareham. Source C records the official 1787 Admiralty trial minutes at Portsmouth Royal Navy Dockyard, proving Funtley iron equaled premium Swedish imports. Source D presents the contemporary dedication engraving of Cort as \"The Tubal Cain of our Century\" alongside competing historiographical perspectives on naval geography versus technological innovation. **Hinge Question:** How do these primary sources prove that Britain's industrial supremacy was forged through a direct partnership between private technological innovation and state naval military demand?"
           },
           "learning_objectives": {
-            "overarching": "To explore: What powered the Industrial Revolution, and how did a Fareham ironmaster change the world",
+            "overarching": "What powered the Industrial Revolution, and how did a Fareham ironmaster change the world?",
             "scaffolded": [
-              "Understand the difference between the domestic system and the factory system.",
-              "Explain the significance of Henry Cort's puddling and rolling processes.",
-              "Evaluate the importance of location versus innovation in Cort's success."
+              "Explain how coal and Watt's steam engine replaced the domestic system and water power.",
+              "Analyse how Henry Cort's puddling and rolling processes at Funtley transformed brittle pig iron into tough naval wrought iron.",
+              "Evaluate the relative importance of Portsmouth Dockyard's location versus technological genius in Cort's success."
             ]
           },
           "do_now": {
-            "title": "Do Now: Recall",
+            "title": "Do Now: Retrieval Practice",
             "type": "questions",
             "items": [
               {
-                "question": "Who won the Battle of Hastings in 1066 and became King of England?",
-                "answer": "William the Conqueror (or the Normans)."
+                "question": "What military structure did William the Conqueror build across England after 1066 to intimidate the Anglo-Saxons?",
+                "answer": "Motte and bailey castles (and later stone keeps, such as Portchester Castle)."
               },
               {
-                "question": "What was the Black Death?",
-                "answer": "A deadly plague that spread across Europe and England during the Middle Ages."
+                "question": "What deadly pandemic struck England in 1348, wiping out over a third of the population?",
+                "answer": "The Black Death (Bubonic Plague)."
               },
               {
-                "question": "Who was the famous Tudor King known for having six wives?",
-                "answer": "Henry VIII."
+                "question": "What religious movement did Martin Luther launch in 1517 that divided European Christianity?",
+                "answer": "The Protestant Reformation."
               },
               {
-                "question": "In history, what is the difference between a primary and a secondary source?",
-                "answer": "A primary source was created at the time of the event, while a secondary source was created later."
+                "question": "What major naval invasion fleet sent by Philip II of Spain was defeated by England in 1588?",
+                "answer": "The Spanish Armada."
               },
               {
-                "question": "What is a monarch?",
-                "answer": "A King or Queen who rules a country."
+                "question": "What was the difference between a primary source and a secondary interpretation?",
+                "answer": "A primary source is contemporary evidence created at the time of an event; a secondary interpretation is created later by historians studying evidence."
               }
             ]
           },
           "narrative_blocks": [
             {
-              "title": "What Powered the Revolution?",
-              "text": "Before Britain could build an industrial empire, it needed political and financial stability. This was achieved during the Glorious Revolution of 1688, when Parliament deposed the Catholic King James II and invited William of Orange to rule, on the strict condition that he sign the Bill of Rights (1689). This permanently shifted ultimate power from the Crown to Parliament, creating a Constitutional Monarchy. With this new political stability, Parliament established the Bank of England in 1694, providing the secure financial foundations that would soon fund massive factories, railways, and a globe-spanning empire.<br><br>Before the 1700s, Britain was an agricultural country. Most goods were made by hand in people's homes (the \"domestic system\"), and the only machines that existed were powered by natural, unreliable sources like wind, fast-flowing rivers, or the muscle power of horses. However, beneath Britain's soil lay massive reserves of **coal**—a fuel that burned much hotter than wood.\n\nIn 1712, Thomas Newcomen invented the first practical steam engine, which used burning coal to pump water out of deep mines. Later, in 1769, an engineer named **James Watt** drastically improved the design, making the steam engine much more efficient and powerful. Watt's steam engine changed everything: it meant that massive factories no longer needed to be built next to rivers. They could be built anywhere, powered entirely by coal and steam. This shift from farming and hand-crafting to mass factory production driven by steam power is known as the **Industrial Revolution**.\n\nHowever, to build these enormous new steam engines, factories, railways, and bridges, Britain desperately needed one crucial material: **iron**.",
+              "title": "Act 1: The Baseline: Coal, Steam & The Pig Iron Bottleneck (1750–1780)",
+              "text": "<span class=\"para-ref\">[1.1]</span> Before the mid-eighteenth century, Britain was an agrarian realm where the rhythm of production was dictated by the seasons and natural muscle. Manufacturing operated under the <strong>domestic system</strong>: spinning, weaving, and metalcraft were carried out by hand in cramped cottages. Machines were rare, crude, and enslaved to unpredictable natural forces—water wheels stalled during summer droughts or froze solid in winter frosts, windmills depended on fickle gusts, and draft horses required costly fodder. Production was painfully slow, localized, and strictly limited in scale.<br><br><span class=\"para-ref\">[1.2]</span> The catalyst that shattered this ancient ceiling was fossil fuel. Deep beneath Britain's landscape lay vast, concentrated seams of <strong>coal</strong>, capable of releasing far greater thermal energy than wood timber. In 1712, Thomas Newcomen harnessed coal to power the first atmospheric pump to drain flooded mines. Then, in 1769, Scottish mathematical instrument maker <strong>James Watt</strong> patented his separate steam condenser, radically reducing fuel waste and transforming steam into smooth, rotative motion. Watt's breakthrough severed manufacturing from geography: factories no longer needed to cling to rushing river valleys. Steam engines could power colossal multi-storey mills anywhere coal could be carted, birthing the factory system and rapid urban growth.<br><br><span class=\"para-ref\">[1.3]</span> Yet as factory chimneys multiplied, British industrial expansion slammed directly into a catastrophic materials bottleneck: <strong>iron</strong>. Steam boilers, piston rods, factory gearing, and bridges required vast quantities of tough, flexible <strong>wrought iron</strong>. British blast furnaces, however, could only produce crude <strong>pig iron</strong>—molten metal heavily contaminated with carbon and sulphur from pit coal. Pig iron was brittle and shattered under mechanical shock. To forge naval cannon, warship anchor bolts, and industrial machinery, Britain was forced to import over 50,000 tons of premium wrought iron every year from Sweden and Russia at exorbitant cost, leaving the nation strategically vulnerable on the eve of global conflict.",
+              "image": "/images/coalbrookdale_by_night.jpg",
+              "image_alt": "Coalbrookdale by Night (1801) by Philipp Jakob de Loutherbourg",
+              "image_caption": "Source A: Coalbrookdale by Night (1801), painted by Philipp Jakob de Loutherbourg (Science Museum, London). The blast furnaces of the Madeley Wood ironworks illuminate the Shropshire night with fiery intensity, capturing Britain's dramatic shift from water and wood to a coal-fired industrial economy.",
               "tasks": [
                 {
-                  "type": "short_answer",
-                  "qNum": 1,
-                  "text": "Why was James Watt's improvement of the steam engine so significant for the location of factories?",
-                  "model_answer": "Before Watt's engine, factories had to be built next to fast-flowing rivers for water power. Watt's efficient steam engine allowed factories to be built anywhere, powered by coal."
+                  "type": "source_analysis",
+                  "question": "Study Source A and read Act 1. Using paragraphs [1.2] and [1.3], explain why James Watt's steam engine triggered an urgent national crisis for British iron production, and why relying on Swedish iron imports was a strategic danger for the nation.",
+                  "starter": "James Watt's steam engine triggered an urgent crisis in iron production because, as explained in paragraph [1.2], steam power allowed factories and heavy machinery to expand rapidly, which...",
+                  "causal_connectives": [
+                    "Consequently",
+                    "Furthermore",
+                    "This directly resulted in",
+                    "Because of this vulnerability"
+                  ],
+                  "model_answer": "James Watt's steam engine revolutionized manufacturing by allowing factories, railways, and heavy machinery to be built anywhere, independent of river power [1.2]. However, this rapid mechanical expansion created a severe crisis because steam engines, boilers, and naval warships required enormous volumes of tough, flexible wrought iron. British ironworks could only produce brittle \"pig iron\" that shattered easily due to carbon and sulphur impurities [1.3]. Consequently, Britain was forced to import over 50,000 tons of high-grade iron annually from Sweden and Russia. This reliance created a dangerous strategic bottleneck, because any diplomatic crisis or naval blockade in the Baltic would instantly leave the Royal Navy and British industry without the vital metal needed to defend the empire."
                 }
               ]
             },
             {
-              "title": "The Problem with British Iron",
-              "text": "In the early 1700s, British iron was of terrible quality. It was known as \"pig iron\"—it was brittle and snapped easily because it was full of impurities (carbon). If the Royal Navy wanted strong, flexible iron (known as \"wrought iron\") for its ship masts and cannons, it had to buy it from Sweden or Russia at a massive cost.",
-              "tasks": null
+              "title": "Act 2: The Local Catalyst: Henry Cort at Funtley Ironworks (1775–1784)",
+              "text": "<span class=\"para-ref\">[2.1]</span> The crisis was felt nowhere more acutely than along the Hampshire coastline. Just fifteen miles down the Solent lay <strong>Portsmouth Royal Navy Dockyard</strong>—the largest industrial complex on Earth and the beating military heart of the British Empire. To build, refit, and arm wooden ships of the line like <em>HMS Victory</em>, Royal Navy smiths consumed thousands of tons of flawless wrought iron for hull bolts, keel fastenings, mast hoops, and massive multi-ton anchors. If war broke out with France, a foreign iron embargo could paralyze the fleet in harbour.<br><br><span class=\"para-ref\">[2.2]</span> The man who solved this national vulnerability lived right here in our local area. <strong>Henry Cort</strong> was an energetic Royal Navy agent who recognized that whoever could successfully refine British pig iron into naval-grade wrought iron would secure an immense government fortune. In 1775, Cort leased the <strong>Funtley Ironworks</strong>, situated along the River Meon just north of Fareham. Funtley was uniquely positioned: it possessed water power for bellows, lay within easy carting distance of Portsmouth Dockyard, and had direct coastal water access via Fareham Creek for heavy shipping.<br><br><span class=\"para-ref\">[2.3]</span> Between 1783 and 1784, Cort patented two epoch-making breakthroughs at Funtley that fundamentally altered modern metallurgy:<br>1. <strong>The Reverberatory Puddling Furnace (1783):</strong> Cort designed a furnace with an arched roof that bounced heat and flames down onto molten pig iron without allowing the coal itself to touch the metal, preventing sulphur contamination. Workers vigorously stirred (\"puddled\") the boiling metal with long iron bars through side portals, allowing oxygen to react with and burn away carbon impurities until the iron coagulated into pasty, pure balls of wrought iron.<br>2. <strong>The Grooved Rolling Mill (1784):</strong> Instead of having teams of exhausted blacksmiths slowly hammer the hot iron by hand, Cort fed the glowing blooms directly through pairs of heavy, grooved mechanical rollers. The rollers compressed out remaining liquid slag and squeezed the metal into uniform naval bolts, bars, and railway rails at fifteen times the speed of traditional forge hammers.",
+              "image": "/images/funtley_ironworks.jpg",
+              "image_alt": "Cross-section of Henry Cort's Reverberatory Puddling Furnace at Funtley Ironworks",
+              "image_caption": "Source B: Technical cross-section of Henry Cort's patented reverberatory puddling furnace at Funtley Ironworks, Hampshire (1783). The arched brick roof reverberated intense heat downward onto the shallow hearth, burning off carbon while keeping raw coal smoke away from the refining metal.",
+              "tasks": [
+                {
+                  "type": "technical_analysis",
+                  "question": "Study Source B and read Act 2. Using paragraphs [2.2] and [2.3], explain how Henry Cort's puddling and rolling processes at Funtley transformed iron refining from a slow craft into an industrial mass-production science.",
+                  "starter": "Henry Cort transformed iron manufacturing at Funtley by combining chemical refinement with mechanical automation. As shown in Source B and paragraph [2.3], his puddling furnace...",
+                  "causal_connectives": [
+                    "Specifically",
+                    "By reverberating heat",
+                    "Simultaneously",
+                    "As a direct consequence"
+                  ],
+                  "model_answer": "Henry Cort transformed iron refining from a slow, artisanal craft into an industrial science by solving both the chemical and mechanical bottlenecks of iron production [2.3]. Chemically, his reverberatory puddling furnace used an arched roof to reflect intense heat down onto molten iron, burning away brittle carbon impurities while physically separating the metal from raw coal sulphur (Source B). Mechanically, Cort eliminated slow manual blacksmith hammering by passing the glowing iron blooms through powered grooved rolling mills. This squeezed out toxic slag and formed standardized bars and naval bolts fifteen times faster than traditional methods. Consequently, Funtley proved that Britain could mass-produce pure, uniform wrought iron at unprecedented industrial speed using domestic pit coal."
+                }
+              ]
             },
             {
-              "title": "Local History Case Study: Henry Cort at Funtley Ironworks",
-              "text": "<strong>Source A:</strong> The man who solved this national crisis lived right here in Hampshire. Henry Cort was an ambitious navy agent who realized he could make a fortune if he could figure out how to mass-produce high-quality British iron. In 1775, he took over the **Funtley Ironworks** (just north of Fareham) because it was ideally located to supply the massive Royal Navy dockyards in nearby Portsmouth.\n\nAt Funtley, Cort invented two revolutionary processes in 1783 and 1784:\n\n1. **The Puddling Process:** He invented a new type of furnace where molten iron was stirred (or \"puddled\") with long iron rods to burn off carbon impurities.\n2. **The Rolling Mill:** Instead of hammering the iron into shape by hand, Cort passed the red-hot iron through heavy, grooved rollers to squeeze out the last impurities and shape it into rails and bars.\n\nIn March 1787, Cort invited the Admiralty Navy Board to Portsmouth Royal Navy Dockyard for decisive trials (**Source C**). Navy smiths subjected Funtley iron to rigorous bending and tensile tests, concluding that it surpassed any iron made in Britain and matched the finest Swedish imports. Britain could now build its warships using domestic iron.",
-              "hinge_question": {
-                "qNum": "H1",
-                "question": "What was the primary purpose of the 'Puddling Process' invented by Cort?",
-                "options": [
-                  "To hammer the iron into shape by hand.",
-                  "To stir molten iron and burn off carbon impurities.",
-                  "To make iron brittle and easy to snap.",
-                  "To import iron from Sweden more efficiently."
-                ]
+              "title": "Act 3: The Archival Evidence: The Portsmouth Dockyard Trials & The Tragic Fall (1787–1800)",
+              "text": "<span class=\"para-ref\">[3.1]</span> Cort knew that patenting his process was meaningless unless he could convince the most demanding, sceptical customer in the world: the British Admiralty. In March 1787, Cort invited the Navy Board to conduct rigorous, definitive trials at Portsmouth Royal Navy Dockyard. In the presence of dockyard commissioners and master smiths, naval artisans subjected Funtley wrought iron to punishing stress tests: bars were twisted into corkscrews, hammered cold back upon themselves, punched with holes, and drawn into heavy ship anchors.<br><br><span class=\"para-ref\">[3.2]</span> The official Admiralty trial report (Source C) delivered an emphatic verdict: Funtley wrought iron was superior in toughness, flexibility, and tensile strength to any iron ever manufactured in the British realm, and fully matched the world's finest Swedish Orgrounds iron. The breakthrough freed the Royal Navy from strategic dependency on foreign powers. Within two decades, British iron production multiplied by 400%, from 68,000 tons in 1788 to over 250,000 tons by 1806, providing the iron plates, structural knees, and cannons that secured naval supremacy against Napoleon at the Battle of Trafalgar (1805). Cort was hailed as \"the father of the iron trade.\"<br><br><span class=\"para-ref\">[3.3]</span> Yet Cort's world-changing success ended in personal tragedy. To finance the massive expansion of the Funtley works, Cort had entered into a partnership with Adam Jellicoe, the Deputy Paymaster of the Royal Navy. When Jellicoe died suddenly in August 1789, naval auditors uncovered a monstrous scandal: Jellicoe had secretly embezzled £27,000 from naval tax funds and invested it into Cort's ironworks. The Crown moved with ruthless speed, seizing Cort's Funtley lease, confiscating his patents, and freezing his accounts. Without patents, ironmasters across Wales, Shropshire, and Scotland freely adopted Cort's puddling process without paying him a penny in royalties. Cort was plunged into financial ruin and died in impoverished obscurity in May 1800, having generated billions in national wealth while retaining nothing for himself.",
+              "archival_source": {
+                "title": "Admiralty Navy Board Portsmouth Dockyard Trial Minutes (March 1787)",
+                "shelfmark": "ADMIRALTY PAPERS · ADM 106/2347 · PORTSMOUTH DOCKYARD",
+                "text": "“Pursuant to your directions, we have caused trials to be made of Mr Henry Cort’s iron manufactured at Fontley. We find it to exceed in strength and toughness any iron manufactured in this kingdom, and fully equal to the best Swedish Orgrounds iron for ship bolts, mast hoops, and anchors for His Majesty’s Fleet.”",
+                "citation": "Official Navy Board Report to the Admiralty, Portsmouth Royal Navy Dockyard, March 1787."
               },
               "tasks": [
                 {
-                  "type": "short_answer",
-                  "qNum": 2,
-                  "text": "Why did Henry Cort decide to take over the Funtley Ironworks in 1775?",
-                  "model_answer": "Because it was located near the Portsmouth dockyards, meaning he could easily sell iron to the Royal Navy."
-                },
-                {
-                  "type": "short_answer",
-                  "qNum": 3,
-                  "text": "What two major inventions did Henry Cort patent at Funtley in the 1780s?",
-                  "model_answer": "The Puddling Process (stirring molten iron to remove impurities) and the Rolling Mill (using grooved rollers to shape the iron)."
-                },
-                {
-                  "type": "analysis",
-                  "qNum": 4,
-                  "text": "Study Source A and Source C. How did Cort's experiments at Funtley and the trials at Portsmouth Dockyard solve the Royal Navy's crisis of relying on Swedish iron?",
-                  "model_answer": "Cort's puddling furnace and grooved rollers produced tough, flexible wrought iron at industrial speed. The 1787 Portsmouth Dockyard trials proved Funtley iron was equal in strength to premium Swedish Orgrounds iron, freeing the Royal Navy from foreign import dependency for warship bolts, mast hoops, and anchors."
-                }
-              ]
-            },
-            {
-              "title": "The Impact and the Tragedy",
-              "text": "Cort's inventions at Funtley changed the world. They allowed British iron production to multiply by 400% over the next twenty years, earning Cort the nickname \"the father of the iron trade.\" The rails for the new train networks and the iron for the ships that built the British Empire were made using Cort's methods.\n\nTragically, Cort did not die a wealthy hero. His business partner, Adam Jellicoe, had secretly stolen the money used to fund the Funtley Ironworks from the Royal Navy. When Jellicoe died, the government seized Cort's patents and ruined him. Cort died bankrupt and in poverty, but his local ingenuity powered a global empire.",
-              "tasks": [
-                {
-                  "type": "short_answer",
-                  "qNum": 4,
-                  "text": "Why did Cort die in poverty despite his world-changing inventions?",
-                  "model_answer": "His business partner, Adam Jellicoe, embezzled Navy funds to pay for the ironworks, causing the government to seize Cort's patents and ruin him financially."
-                },
-                {
-                  "type": "analysis",
-                  "qNum": 5,
-                  "text": "Why were Henry Cort's inventions so vital to the growth of the British Empire?",
-                  "model_answer": "Before Cort, British iron was too brittle, and the country relied on expensive imports from Russia and Sweden. Cort's puddling and rolling processes allowed Britain to mass-produce cheap, high-quality wrought iron. This iron was essential for building the steam engines, railways, and naval ships that powered Britain's global dominance in the 19th century."
-                }
-              ]
-            },
-            {
-              "title": "Significance & Judgement",
-              "text": "When assessing why the Funtley Ironworks was so successful in kickstarting the Industrial Revolution's iron industry, historians debate two main factors:\n\n**1. Geographical Luck (Location):** Funtley was situated just a few miles from the Portsmouth Royal Navy dockyards. In the 18th century, before the invention of trains, transporting heavy iron overland was incredibly expensive. Being located right next door to the largest industrial buyer of iron in the world (the Royal Navy) meant Cort had a massive, guaranteed market for his goods. Geography provided the economic opportunity.\n\n**2. Technological Genius (Innovation):** However, location alone wasn't enough. The Royal Navy desperately needed *wrought* iron (flexible and strong) for its ships and cannons, not the brittle British *pig iron* that snapped easily. Without Cort's brilliant inventions—the Puddling Furnace to burn off impurities and the Rolling Mill to speed up shaping—he would have had nothing useful to sell to the Navy. Innovation provided the solution to a national crisis.\n\nHistorians must weigh these two factors to decide which was *more* important to his success.",
-              "tasks": [
-                {
-                  "type": "extended",
-                  "qNum": 6,
-                  "text": "Write a structured paragraph answering the following: \"To what extent was the proximity to the Portsmouth dockyards the most important factor in the success of the Funtley Ironworks?\"",
-                  "hints": [
-                    "Sentence Starter 1: On one hand, the location near Portsmouth dockyards was extremely important because...",
-                    "Sentence Starter 2: However, it can be argued that Cort's technological genius was even more important because...",
-                    "Conclusion: Ultimately, the most important factor was [geography/innovation] because..."
+                  "type": "forensic_evaluation",
+                  "question": "Study the Archival Trial Minutes (Source C) and read Act 3. Using paragraphs [3.1]–[3.3], explain why the 1787 Portsmouth Dockyard trials were a decisive turning point in British naval history, and evaluate why Henry Cort died in poverty despite transforming the national economy.",
+                  "starter": "The 1787 Portsmouth Dockyard trials were a vital turning point because, as recorded in Source C, official naval testing proved that...",
+                  "causal_connectives": [
+                    "Crucially, this meant that",
+                    "This strategic self-sufficiency allowed",
+                    "However, Cort's personal tragedy stemmed from",
+                    "Ultimately"
                   ],
-                  "model_answer": "While proximity to the Portsmouth dockyards provided a vital, guaranteed customer for the iron, the true success of Funtley was driven by technological innovation. Henry Cort's invention of the Puddling Process and the Rolling Mill in 1783-84 solved the national crisis of relying on weak 'pig iron'. However, it would be reductive to ignore the geography; without the massive naval demand just miles away in Portsmouth, Cort would not have had the financial incentive to experiment. Ultimately, location provided the opportunity, but it was Cort's genius in creating the puddling furnace that revolutionized the national economy."
-                },
-                {
-                  "type": "short_answer",
-                  "qNum": 8,
-                  "text": "Chronology Challenge: Place the following in the correct causal order and write one sentence explaining how each led to the next: Watt's Steam Engine, The Domestic System, Cort's Puddling Furnace.",
-                  "model_answer": "1. The Domestic System (slow, hand-made production). 2. Watt's Steam Engine (allowed mass factory production anywhere, but required huge amounts of strong iron to build). 3. Cort's Puddling Furnace (invented to mass-produce the high-quality iron needed for the new steam engines and railways)."
+                  "model_answer": "The 1787 Portsmouth Dockyard trials represented a decisive turning point because they provided indisputable proof that Funtley iron was equal in strength to premium Swedish Orgrounds iron (Source C) [3.2]. Crucially, this severed Britain's reliance on foreign Baltic imports on the eve of the French Revolutionary Wars, ensuring that royal shipyards could construct warship anchors, mast hoops, and bolts entirely from domestic resources. However, despite generating unprecedented national wealth, Cort was ruined when his financial partner Adam Jellicoe died in 1789, exposing £27,000 in embezzled naval funds invested into Funtley [3.3]. The Crown seized Cort's patents, allowing British ironmasters across the country to exploit his puddling methods for free without paying royalties. Ultimately, while Britain achieved global naval and industrial supremacy through Cort's genius, Cort himself died penniless."
                 }
               ]
             },
             {
-              "title": "Historical Controversy: Where Did the Money Come From?",
-              "text": "Building massive ironworks like Funtley and funding the broader Industrial Revolution required unimaginable amounts of capital. Modern historians emphasize that this sudden wealth was intrinsically tied to the profits of the 18th-century Transatlantic Slave Trade. Although Britain abolished the trade in 1807 and slavery itself in 1833, the industrial economy was kickstarted by the immense wealth extracted from enslaved labor on Caribbean sugar plantations, and continued to rely on slave-picked American cotton.",
-              "is_controversy": true,
+              "title": "Act 4: The Historical Verdict: Location vs. Innovation & The Imperial Capital Debate",
+              "text": "<span class=\"para-ref\">[4.1]</span> When evaluating why the Funtley Ironworks succeeded in unlocking the Industrial Revolution, historians clash over two competing explanations. Proponents of <strong>Geographical Proximity</strong> argue that Cort's location near Fareham and Portsmouth Dockyard was the decisive factor. In an era before railway networks, moving heavy pig iron and coal overland was prohibitively expensive; Funtley offered navigable river transport via the Meon and Fareham Creek directly to Portsmouth—the single largest consumer of naval iron on Earth. Without this massive, guaranteed military customer on his doorstep, Cort would have lacked the financial incentive or trial facilities to develop his ideas.<br><br><span class=\"para-ref\">[4.2]</span> Conversely, proponents of <strong>Technological Innovation</strong> argue that geography was merely passive backdrop. Hundreds of ironworks existed near British ports, yet none could produce wrought iron from British pit coal. The Royal Navy had rejected British iron for over a century; only Cort's personal genius in mastering the chemical thermodynamics of the reverberatory furnace and automating the rolling mill solved the crisis. Furthermore, modern historians inject a broader global dimension into this debate: the <strong>Imperial Capital Nexus</strong>. The staggering wealth required to establish large-scale ironworks like Funtley was inextricably tied to Britain's colonial trade networks and the profits of the Transatlantic Slave Trade, which provided the liquid capital that funded 18th-century British financial institutions and industrial ventures.",
+              "image": "/images/henry_cort.jpg",
+              "image_alt": "Contemporary dedication engraving of Henry Cort as Tubal Cain",
+              "image_caption": "Source D: Contemporary dedication portrait of Henry Cort, inscribed: “HENRY CORT: The Tubal Cain of our Century and of our Country, Dedicated to the Iron Trade of Great Britain” (British Museum). Contemporaries recognized Cort as an industrial patriarch who gave Britain mastership of iron.",
               "tasks": [
                 {
-                  "type": "comprehension",
-                  "question": "Why do modern historians argue that the profits from the Transatlantic Slave Trade were essential to the Industrial Revolution?",
-                  "model_answer": "Historians argue that the immense capital required to build massive ironworks and kickstart the industrial economy was largely generated by the wealth extracted from enslaved labor on Caribbean sugar plantations, and British factories continued to rely on slave-picked American cotton."
+                  "type": "extended_writing",
+                  "question": "Enquiry Essay: \"To what extent was the success of Henry Cort at Funtley Ironworks driven more by geographical proximity to Portsmouth Dockyard than by technological innovation?\"",
+                  "scaffolding": {
+                    "structure_strip": [
+                      "PEE Paragraph 1 (Geography): Argue that location near Portsmouth Dockyard provided the vital customer, naval testing facilities, and Solent water transport.",
+                      "PEE Paragraph 2 (Innovation): Counter-argue that Cort's technological genius (puddling furnace and rolling mill) solved the chemical crisis that geography alone could never fix.",
+                      "Historiographical Verdict: Reach a balanced conclusion weighing whether geography provided the opportunity, but innovation provided the national transformation."
+                    ],
+                    "connective_bank": [
+                      "On one hand, geographical proximity was essential because...",
+                      "As evidenced in paragraph [2.1] and Source C...",
+                      "This directly provided Cort with...",
+                      "Conversely, technological innovation was the decisive catalyst because...",
+                      "As demonstrated in paragraph [2.3] and Source B...",
+                      "Ultimately, it is clear that while geography provided the strategic opportunity..."
+                    ]
+                  },
+                  "model_answer": "On one hand, geographical proximity to Portsmouth Dockyard was an indispensable condition for the success of Funtley Ironworks. In the late eighteenth century, transporting heavy materials overland was extraordinarily slow and costly; Funtley's position along the River Meon with tidal access to Fareham Creek allowed coal and iron to be barged directly into Portsmouth Harbour [2.2]. Furthermore, Portsmouth Dockyard was the largest industrial consumer of wrought iron on the planet, possessing the specialized master smiths, testing rigs, and naval capital necessary to conduct the decisive 1787 trials (Source C). Without this guaranteed military market on his doorstep, Cort would have lacked both the customer base and the institutional validation required to transform his experiments into national policy.<br><br>Conversely, it would be deeply mistaken to view location as the primary cause of his success. Hundreds of forge sites dotted the English coast, yet British iron remained universally despised as brittle \"pig iron\" for decades. The Royal Navy's problem was chemical, not logistical: pit coal contaminated iron with sulphur, and manual forge hammers were far too slow to meet wartime demand [1.3]. Only Henry Cort's technological genius in inventing the reverberatory puddling furnace (chemically burning off impurities with reflected heat) and the grooved rolling mill (automating the shaping process fifteen-fold) overcame this fundamental scientific barrier (Source B) [2.3]. Portsmouth Dockyard could not buy iron that did not exist; Cort's metallurgical innovation created the product that satisfied their needs.<br><br>Ultimately, while proximity to Portsmouth provided the strategic catalyst and guaranteed customer, technological innovation was the decisive factor. Location offered the economic opportunity, but it was Cort's metallurgical brilliance in mastering the chemistry of puddling that conquered the iron crisis, powered British naval supremacy at Trafalgar, and laid the foundations of the global Industrial Revolution."
                 }
               ]
+            }
+          ],
+          "sources": [
+            {
+              "title": "Source A: Coalbrookdale by Night (1801)",
+              "src": "/images/coalbrookdale_by_night.jpg",
+              "caption": "Source A: Philipp Jakob de Loutherbourg, Coalbrookdale by Night (1801, Science Museum London). The blast furnaces of Shropshire illuminating the dark landscape, symbolising the dawn of Britain’s coal and steam revolution.",
+              "question": "What does Source A reveal about how the Industrial Revolution transformed the physical landscape of Britain from countryside into a fiery industrial environment?",
+              "model_answer": "Source A shows blast furnaces vomiting fire and smoke into the night sky while horse teams haul heavy metal castings through industrial rubble. This illustrates that the shift to coal and iron violently altered Britain’s landscape, replacing tranquil rural fields with intense, round-the-clock factory production.",
+              "qNum": 1
+            },
+            {
+              "title": "Source B: Cort’s Reverberatory Puddling Furnace (1783)",
+              "src": "/images/funtley_ironworks.jpg",
+              "caption": "Source B: Technical cross-section diagram of Henry Cort’s reverberatory puddling furnace and grooved rolling mill at Funtley Ironworks in Hampshire (Patent No. 1420, 1784).",
+              "question": "How does Source B demonstrate that Funtley Ironworks combined chemical innovation with mechanical mass production?",
+              "model_answer": "Source B shows two distinct breakthroughs: chemically separating fuel impurities through an arched air furnace (puddling) and mechanically shaping the wrought iron using grooved rollers instead of slow blacksmith hammering, allowing mass production for the Royal Navy.",
+              "qNum": 2
+            },
+            {
+              "title": "Source C: Admiralty Navy Board Portsmouth Dockyard Trial Minutes (1787)",
+              "caption": "Source C: Official Navy Board trials conducted at Portsmouth Royal Navy Dockyard in March 1787, testing Funtley wrought iron against imported Swedish Orgrounds iron.",
+              "content": "“Pursuant to your directions, we have caused trials to be made of Mr Henry Cort’s iron manufactured at Fontley. We find it to exceed in strength and toughness any iron manufactured in this kingdom, and fully equal to the best Swedish Orgrounds iron for ship bolts, mast hoops, and anchors for His Majesty’s Fleet.”",
+              "question": "Why was this Admiralty report from Portsmouth Dockyard the ultimate validation of Cort’s local experiments at Funtley?",
+              "model_answer": "The Royal Navy was the most demanding iron customer in the world. Proving that Funtley iron was equal to superior Swedish imports meant Britain could achieve self-sufficiency in naval shipbuilding, providing unbreakable wrought iron anchors, bolts, and hoops for warships like HMS Victory right before the French Revolutionary Wars.",
+              "qNum": 3,
+              "hinge_question": "How does this trial report demonstrate that the industrial revolution was driven as much by naval and military necessity as by commercial profit?"
+            },
+            {
+              "title": "Source D: Contemporary Dedication Portrait of Henry Cort (c. 1780s)",
+              "caption": "Source D: An authentic 18th-century dedication engraving commemorating Henry Cort as “The Tubal Cain of our Century and of our Country, Dedicated to the Iron Trade of Great Britain” (British Museum).",
+              "src": "/images/henry_cort.jpg",
+              "question": "Why would contemporaries compare an 18th-century Hampshire ironmaster to the biblical first metalworker Tubal Cain, and what does this reveal about Britain’s growing industrial pride?",
+              "model_answer": "Comparing Cort to Tubal Cain elevated a humble Hampshire ironmaster into a national hero who mastered metallurgy. It reveals that 18th-century Britons took immense patriotic pride in industrial innovation, recognizing that Cort’s puddling process at Funtley gave Britain global economic and naval mastery.",
+              "qNum": 4,
+              "hinge_question": "Why would contemporaries compare an 18th-century Hampshire ironmaster to an ancient heroic metalworker, and what does this reveal about Britain’s growing industrial pride?"
             }
           ],
           "video": [
@@ -42095,56 +42122,35 @@
           "vocab": [
             {
               "term": "Industrial Revolution",
-              "definition": "The rapid development of industry and manufacturing powered by steam, coal, and iron from 1750."
+              "definition": "The rapid transformation of manufacturing, transportation, and daily life driven by coal, steam, and iron from 1750."
+            },
+            {
+              "term": "Domestic System",
+              "definition": "The traditional method of handcrafting textiles and goods at home using muscle, wind, or seasonal water power."
             },
             {
               "term": "Henry Cort",
-              "definition": "The Hampshire ironmaster from Fareham whose patented inventions revolutionized world iron production."
+              "definition": "The Hampshire naval agent and ironmaster from Fareham whose patented inventions at Funtley revolutionized world metallurgy."
             },
             {
               "term": "Pig Iron",
-              "definition": "Crude, brittle iron produced in a blast furnace that contained high levels of impurities and carbon."
+              "definition": "Crude, brittle iron straight from a blast furnace containing excessive carbon and sulphur impurities that snapped under pressure."
             },
             {
               "term": "Wrought Iron",
-              "definition": "Tough, malleable iron that could be bent and hammered into structural beams, rails, and steam engines."
+              "definition": "Tough, malleable iron with low carbon content that could bend, stretch, and endure heavy shock without shattering."
             },
             {
               "term": "Puddling Process",
-              "definition": "Cort's patented technique of stirring molten pig iron in a reverberatory furnace to burn away impurities."
+              "definition": "Cort's 1783 method of melting pig iron in a reverberatory furnace and stirring it to burn away carbon impurities without coal contact."
             },
             {
-              "term": "Rolling Mill",
-              "definition": "Cort's mechanized grooved rollers that squeezed out slag and formed iron bars fifteen times faster than traditional hammering."
-            }
-          ],
-          "sources": [
-            {
-              "title": "Source A: Cort’s Patent Specification No. 1420 (1784)",
-              "src": "/images/funtley_ironworks.jpg",
-              "caption": "A historical cross-section diagram of Henry Cort’s reverberatory puddling furnace and grooved rolling mill at Funtley Ironworks in Hampshire.",
-              "content": "“My new method and process of preparing, manufacturing and working of iron... by a reverberatory or air furnace heated by common raw pit coal... and rolling the same between grooved rollers without the ancient necessity of repeated hammering by forge hammers.”",
-              "question": "How does Cort’s patent demonstrate that Funtley Ironworks combined chemical innovation with mechanical mass production?",
-              "model_answer": "Cort’s patent shows two distinct breakthroughs: chemically separating the fuel impurities in an air furnace (puddling) and mechanically shaping the wrought iron using grooved rollers instead of slow blacksmith hammering, allowing mass production for the Royal Navy.",
-              "qNum": 2
+              "term": "Grooved Rolling Mill",
+              "definition": "Cort's 1784 mechanized grooved rollers that squeezed out slag and formed iron bars fifteen times faster than forge hammers."
             },
             {
-              "title": "Source B: Contemporary Dedication Portrait of Henry Cort (c. 1780s)",
-              "caption": "An authentic 18th-century dedication engraving commemorating Henry Cort, inscribed: “HENRY CORT: The Tubal Cain of our Century and of our Country, Dedicated to the Iron Trade of Great Britain”.",
-              "src": "/images/henry_cort.jpg",
-              "question": "How does Source B show that Henry Cort was celebrated as a national hero who transformed the British economy?",
-              "model_answer": "Source B compares Cort to “Tubal Cain” (the biblical first metalworker) and dedicates his portrait to the entire British iron trade. This demonstrates that contemporaries viewed his puddling furnace and rolling mills at Funtley as a revolutionary industrial triumph that rescued Britain from relying on foreign iron.",
-              "qNum": 3,
-              "hinge_question": "Why would contemporaries compare an 18th-century Hampshire ironmaster to an ancient heroic metalworker, and what does this reveal about Britain’s growing industrial pride?"
-            },
-            {
-              "title": "Source C: Admiralty Navy Board Portsmouth Dockyard Trial Minutes (1787)",
-              "caption": "Official Navy Board trials conducted at Portsmouth Royal Navy Dockyard testing Cort’s Funtley iron against imported Swedish Orgrounds iron for royal warships.",
-              "content": "“Pursuant to your directions, we have caused trials to be made of Mr Henry Cort’s iron manufactured at Fontley. We find it to exceed in strength and toughness any iron manufactured in this kingdom, and fully equal to the best Swedish Orgrounds iron for ship bolts, mast hoops, and anchors for His Majesty’s Fleet.”",
-              "question": "Why was this Admiralty report from Portsmouth Dockyard the ultimate validation of Cort’s local experiments at Funtley?",
-              "model_answer": "The Royal Navy was the most demanding iron customer in the world. Proving that Funtley iron was equal to superior Swedish imports meant Britain could achieve self-sufficiency in naval shipbuilding, providing unbreakable wrought iron anchors, bolts, and hoops for warships like HMS Victory right before the French Revolutionary Wars.",
-              "qNum": 4,
-              "hinge_question": "How does this trial report demonstrate that the industrial revolution was driven as much by naval and military necessity as by commercial profit?"
+              "term": "Portsmouth Dockyard",
+              "definition": "The royal naval complex on the Solent that served as the world's largest industrial site and primary customer for Cort's iron."
             }
           ],
           "exam_practice": {
@@ -42156,7 +42162,7 @@
               },
               {
                 "type": "features",
-                "question": "Describe one feature of Henry Cort's puddling process.",
+                "question": "Describe one feature of Henry Cort's puddling process at Funtley.",
                 "marks": 2
               }
             ]
@@ -42336,8 +42342,8 @@
               "question": "What did Henry Cort's grooved rolling process achieve compared to traditional blacksmith hammering?",
               "options": [
                 "It painted the iron red to protect it from rust",
-                "It made the iron brittle so it could be easily shattered",
                 "It rolled malleable iron into standard bars and plates fifteen times faster than manual hammers",
+                "It made the iron brittle so it could be easily shattered",
                 "It reduced the weight of iron by over 90%"
               ],
               "answer": "It rolled malleable iron into standard bars and plates fifteen times faster than manual hammers"
