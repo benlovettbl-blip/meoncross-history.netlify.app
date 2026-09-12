@@ -64,6 +64,16 @@ const PDF_MAPPINGS = [
     dest: 'Edexcel GCSE Medicine Visual Revision and Exam Guide.pdf',
     category: 'GCSE Revision Guide',
   },
+  {
+    src: 'edexcel_usa_visual_revision_and_exam_guide.pdf',
+    dest: 'Edexcel GCSE USA Visual Revision and Exam Guide.pdf',
+    category: 'GCSE Revision Guide',
+  },
+  {
+    src: 'cme_new_timeline.pdf',
+    dest: 'Conflict in the Middle East Visual Timeline.pdf',
+    category: 'GCSE Timeline & Revision',
+  },
 ];
 
 function syncAdminPdfsToDrive() {
