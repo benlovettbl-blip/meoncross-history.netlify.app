@@ -385,7 +385,7 @@ function getHtmlContent() {
       <!-- Peace Village Base Camp Protocol Box -->
       <div style="max-width: 540px; margin: 0 auto; background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 8px; padding: 9px 15px; text-align: left;">
         <div style="font-size: 8.5pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
-          🏡 Peace Village Base Camp Protocol (Mesen)
+     Peace Village Base Camp Protocol (Mesen)
         </div>
         <div style="font-size: 8.1pt; color: #1e293b; line-height: 1.42;">
           Nightly academic debriefs held in Seminar Room A (19:15–20:30). Staff room allocations, emergency first-aid post, and evening student curfew (22:00) managed on-site by accompanying Meoncross staff.
@@ -526,7 +526,7 @@ function getHtmlContent() {
 
       <div class="grid-2col" style="gap: 8px; margin-bottom: 8px;">
         <div class="talking-points-box" style="margin-bottom: 0;">
-          <div class="box-header">📋 Staff Supervisory Protocol</div>
+     <div class="box-header">Staff Supervisory Protocol</div>
           <div style="font-size: 7.8pt; color: #334155; line-height: 1.4;">
             • Strict headcounts at every coach departure &amp; cemetery gate.<br>
             • Accompanying Meoncross staff manage the rear sweep.<br>
@@ -536,7 +536,7 @@ function getHtmlContent() {
         </div>
         <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 7px; padding: 9px 12px;">
           <div style="font-size: 8.3pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 3px;">
-            📝 Daily Academic Rhythm &amp; Fieldwork
+      Daily Academic Rhythm &amp; Fieldwork
           </div>
           <div style="font-size: 7.8pt; color: #1e293b; line-height: 1.4;">
             • Pupils complete Field Companion tasks at each site.<br>
@@ -549,7 +549,7 @@ function getHtmlContent() {
 
       <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 7px; padding: 8px 12px;">
         <div style="font-size: 8.2pt; font-weight: 800; color: #0f172a; text-transform: uppercase; margin-bottom: 2px;">
-          🚍 Coach Pacing, Parking Directives &amp; Driver Hours
+     Coach Pacing, Parking Directives &amp; Driver Hours
         </div>
         <div style="font-size: 7.7pt; color: #475569; line-height: 1.38;">
           Our Jet Connect coach driver operates under strict EU tachograph driving hours. Please ensure prompt group boarding 10 minutes prior to scheduled departure times. Designated parking at Ypres is at the Lille Gate coach bays; Poperinge drop-off is near the Grote Markt.
@@ -579,7 +579,7 @@ function getHtmlContent() {
       </div>
 
       <div class="talking-points-box" style="margin-bottom: 11px; padding: 11px 15px;">
-        <div class="box-header">🎤 Tour Leader Talking Points: The Lowry Family of Lee-on-the-Solent</div>
+    <div class="box-header">Tour Leader Talking Points: The Lowry Family of Lee-on-the-Solent</div>
         <div style="font-size: 8.5pt; color: #334155; line-height: 1.48;">
           <strong>Local Connection:</strong> William and Annie Lowry of Manor Way Grange, Lee-on-the-Solent, sent all three of their sons to Stubbington House School. All three boys answered the call in 1914, held officer commissions, and all three were killed in action across three different theatres: Gallipoli (William), the Somme (Cyril), and Arras (Eric).<br>
           <strong>Pedagogical Goal:</strong> Connect grand tactical movements to individual boys from our local parish paths. Emphasise that William and Cyril have no known graves, while Eric lies at La Targette near Arras. In grief, William Lowry funded and built the Lowry Memorial Hall in Lee-on-the-Solent to preserve his sons' memory in their home community.
@@ -601,7 +601,7 @@ function getHtmlContent() {
             </p>
           </div>
           <div style="background: #f1f5f9; padding: 6px; border-radius: 4px; font-size: 7.6pt; color: #1e293b; font-weight: 700; margin-top: 8px; text-align: center;">
-            📍 Helles Memorial, Gallipoli
+      Helles Memorial, Gallipoli
           </div>
         </div>
 
@@ -619,7 +619,7 @@ function getHtmlContent() {
             </p>
           </div>
           <div style="background: #fef3c7; padding: 6px; border-radius: 4px; font-size: 7.6pt; color: #92400e; font-weight: 700; margin-top: 8px; text-align: center;">
-            📍 Pozières Memorial, Somme
+      Pozières Memorial, Somme
           </div>
         </div>
 
@@ -637,14 +637,14 @@ function getHtmlContent() {
             </p>
           </div>
           <div style="background: #fee2e2; padding: 6px; border-radius: 4px; font-size: 7.6pt; color: #991b1b; font-weight: 700; margin-top: 8px; text-align: center;">
-            📍 La Targette British Cemetery (Plot I. C. 2)
+      La Targette British Cemetery (Plot I. C. 2)
           </div>
         </div>
       </div>
 
       <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #2563eb; border-radius: 7px; padding: 12px 16px; margin-bottom: 11px;">
         <div style="font-size: 8.8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 3px;">
-          🏛️ Local Parish Connection: The Lowry Memorial Hall &amp; Crofton Tablet
+     ️ Local Parish Connection: The Lowry Memorial Hall &amp; Crofton Tablet
         </div>
         <div style="font-size: 8.3pt; color: #1e293b; line-height: 1.46;">
           Devastated by the loss of all three sons, their father William Lowry funded and built the <strong>Lowry Memorial Hall</strong> in Lee-on-the-Solent in 1920 so his boys would never be forgotten. On the marble tablet inside Holy Rood Church, the three brothers' names are inscribed together in Column 2 under the Army roll. Point out to pupils how their physical graves span thousands of miles—from Turkey to the Somme and Arras—yet our parish memorials reunite them forever in our home community.
@@ -652,7 +652,7 @@ function getHtmlContent() {
       </div>
 
       <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 12px 16px; margin-bottom: 11px;">
-        <h4 style="font-size: 9pt; color: #1e3a8a; margin-bottom: 4px;">🎯 Staff Action Points at Tyne Cot &amp; In The Field</h4>
+    <h4 style="font-size: 9pt; color: #1e3a8a; margin-bottom: 4px;">Staff Action Points at Tyne Cot &amp; In The Field</h4>
         <div style="font-size: 8.2pt; color: #334155; line-height: 1.45;">
           1. Lead pupils along the central avenue directly to the Cross of Sacrifice built atop the captured German pillbox.<br>
           2. Guide students along the rear memorial wall to locate our parish fallen (such as L/Cpl Arthur Newman, Royal Engineers).<br>
@@ -663,7 +663,7 @@ function getHtmlContent() {
 
       <div style="background: #fffbeb; border: 1.5px solid #fde68a; border-left: 5px solid #d97706; border-radius: 7px; padding: 11px 16px;">
         <div style="font-size: 8.6pt; font-weight: 800; color: #92400e; text-transform: uppercase; margin-bottom: 2px;">
-          💡 Pedagogical Debrief &amp; Targeted Hinge Question
+     Pedagogical Debrief &amp; Targeted Hinge Question
         </div>
         <div style="font-size: 8.2pt; color: #451a03; line-height: 1.45;">
           <strong>Hinge Question for Pupils:</strong> <em>"How does the loss of three sons from a single local household in Lee-on-the-Solent challenge or reinforce the historical concept of a 'Lost Generation'?"</em><br>
@@ -751,7 +751,7 @@ function getHtmlContent() {
       </div>
 
       <div class="talking-points-box" style="margin-bottom: 10px; padding: 11px 15px;">
-        <div class="box-header">🎤 Tour Leader Talking Points: Boy Soldier Valentine Strudwick</div>
+    <div class="box-header">Tour Leader Talking Points: Boy Soldier Valentine Strudwick</div>
         <div style="font-size: 8.4pt; color: #334155; line-height: 1.46;">
           <strong>Location:</strong> Essex Farm Cemetery, Plot I. U. 8 (facing canal bank).<br>
           <strong>The Story:</strong> Enlisted at 14 claiming he was 19; sent to the Western Front with the 8th Rifle Brigade; killed in action by heavy shellfire on 14 January 1916 aged 15 years and 11 months.<br>
@@ -770,7 +770,7 @@ function getHtmlContent() {
 
       <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 7px; padding: 11px 15px; margin-bottom: 10px;">
         <div style="font-size: 8.6pt; font-weight: 800; color: #0f172a; text-transform: uppercase; margin-bottom: 2px;">
-          ❄️ The 8th Rifle Brigade on the Boezinge Canal Bank (Winter 1915–1916)
+     ️ The 8th Rifle Brigade on the Boezinge Canal Bank (Winter 1915–1916)
         </div>
         <div style="font-size: 8.1pt; color: #334155; line-height: 1.42;">
           Valentine served during one of the coldest winters of the war. Standing waist-deep in freezing canal slush, men suffered rampant trench foot and frostbite. On 14 January 1916, a direct hit from an 8-inch high-explosive shell obliterated his section's dugout. Fellow soldiers recovered his remains and buried him at Essex Farm by lantern light.
@@ -779,7 +779,7 @@ function getHtmlContent() {
 
       <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 7px; padding: 11px 15px; margin-bottom: 10px;">
         <div style="font-size: 8.6pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
-          💡 Underage Enlistment Enquiry &amp; Targeted Hinge Question
+     Underage Enlistment Enquiry &amp; Targeted Hinge Question
         </div>
         <div style="font-size: 8.2pt; color: #1e293b; line-height: 1.46;">
           <strong>Context:</strong> An estimated 250,000 underage British boys enlisted in 1914–1915 due to recruiting sergeant bounties, patriotic fever, and lack of birth certificates.<br>
@@ -789,7 +789,7 @@ function getHtmlContent() {
 
       <div style="background: #f0fdf4; border: 1.5px solid #bbf7d0; border-left: 5px solid #16a34a; border-radius: 7px; padding: 10px 14px;">
         <div style="font-size: 8.5pt; font-weight: 800; color: #166534; text-transform: uppercase; margin-bottom: 2px;">
-          📍 Teacher Field Protocol: Memorial Roll Student Allocation
+     Teacher Field Protocol: Memorial Roll Student Allocation
         </div>
         <div style="font-size: 8pt; color: #14532d; line-height: 1.42;">
           Ensure each student pair checks the service numbers, units, and family details of their allocated soldier in their Pupil Field Guide before arriving at Essex Farm and Tyne Cot. Prompt them to locate their soldier's specific panel during personal reflection time.
@@ -826,7 +826,7 @@ function getHtmlContent() {
 
         <div class="talking-points-box" style="display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 0;">
           <div>
-            <div class="box-header">🎤 Tour Leader Briefing: Headstone Anatomy</div>
+      <div class="box-header">Tour Leader Briefing: Headstone Anatomy</div>
             <div style="font-size: 8.3pt; color: #334155; line-height: 1.48;">
               <strong>1. Badge:</strong> Regimental heraldry; absolute equality across officer and private.<br>
               <strong>2. Text:</strong> Service number, rank, name, honours, and regiment.<br>
@@ -842,7 +842,7 @@ function getHtmlContent() {
       </div>
 
       <div class="talking-points-box" style="margin-bottom: 10px; padding: 11px 15px;">
-        <div class="box-header">🎤 Tour Leader Script: Topography of the Salient</div>
+    <div class="box-header">Tour Leader Script: Topography of the Salient</div>
         <div style="font-size: 8.4pt; color: #334155; line-height: 1.48;">
           <strong>The Ridge:</strong> Stand with students looking east from Ypres. The land rises barely 45 metres towards Passchendaele, but in flat Flanders, that low ridge commanded complete artillery domination.<br>
           <strong>Converging Arcs:</strong> German batteries positioned along the arc could shell British rear areas from three directions. Reinforcements had to march into the bulge under continuous observation.<br>
@@ -853,7 +853,7 @@ function getHtmlContent() {
       <div class="grid-2col" style="margin-bottom: 10px;">
         <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 7px; padding: 11px 14px;">
           <div style="font-size: 8.6pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 3px;">
-            🏛️ Sir Fabian Ware &amp; The CWGC Principles
+      ️ Sir Fabian Ware &amp; The CWGC Principles
           </div>
           <div style="font-size: 8.1pt; color: #1e293b; line-height: 1.45;">
             Founded 1917: <strong>Equality in death</strong> (uniform Portland stone for privates and lords); <strong>permanence</strong> in foreign soil; <strong>no repatriation</strong>. Over 1.7 million commemorated worldwide.
@@ -861,7 +861,7 @@ function getHtmlContent() {
         </div>
         <div style="background: #f0fdf4; border: 1.5px solid #bbf7d0; border-radius: 7px; padding: 11px 14px;">
           <div style="font-size: 8.6pt; font-weight: 800; color: #166534; text-transform: uppercase; margin-bottom: 3px;">
-            ⚔️ Lutyens vs Blomfield Architecture
+      ️ Lutyens vs Blomfield Architecture
           </div>
           <div style="font-size: 8.1pt; color: #14532d; line-height: 1.45;">
             <strong>Stone of Memory:</strong> Lutyens' secular altar (<em>"Their Name Liveth For Evermore"</em>).<br>
@@ -873,7 +873,7 @@ function getHtmlContent() {
       <!-- Tour Leader Guide: Hampshire Inscriptions Typology -->
       <div style="background: #fefce8; border: 1.5px solid #fde047; border-left: 5px solid #ca8a04; border-radius: 7px; padding: 11px 15px; margin-bottom: 10px;">
         <div style="font-size: 8.6pt; font-weight: 800; color: #854d0e; text-transform: uppercase; margin-bottom: 3px;">
-          🏷️ Tour Leader Guide: Deciphering Hampshire Inscription Typologies
+     ️ Tour Leader Guide: Deciphering Hampshire Inscription Typologies
         </div>
         <div style="font-size: 8.1pt; color: #713f12; line-height: 1.45;">
           Prompt pupils to classify family epitaphs on Hampshire Regiment stones into four distinct typologies: (1) <strong>Christian Consolation</strong> (<em>"Thy Will Be Done"</em> / <em>"Sleeping in Peace"</em>); (2) <strong>Classical Duty</strong> (<em>"For King and Country"</em> / <em>"Dulce et Decorum Est"</em>); (3) <strong>Raw Maternal Grief</strong> (<em>"A Day of Memory Sad to Recall, Without Goodbye He Left Us All"</em>); and (4) <strong>Stoic Resignation</strong> (<em>"Duty Nobly Done"</em>).
@@ -883,7 +883,7 @@ function getHtmlContent() {
       <!-- CWGC Architecture Hinge Question -->
       <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #2563eb; border-radius: 7px; padding: 10px 15px; margin-bottom: 10px;">
         <div style="font-size: 8.6pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
-          💡 CWGC Commemorative Enquiry &amp; Targeted Hinge Question
+     CWGC Commemorative Enquiry &amp; Targeted Hinge Question
         </div>
         <div style="font-size: 8.2pt; color: #1e293b; line-height: 1.44;">
           <strong>Hinge Question for Pupils:</strong> <em>"Why did the Imperial War Graves Commission strictly forbid wealthy families from erecting private marble crosses, yet permit them to choose and pay for a personal inscription?"</em>
@@ -892,7 +892,7 @@ function getHtmlContent() {
 
       <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 7px; padding: 10px 15px;">
         <div style="font-size: 8.5pt; font-weight: 800; color: #0f172a; text-transform: uppercase; margin-bottom: 2px;">
-          🤝 Staff Management at Cemeteries &amp; Decorum Standards
+     Staff Management at Cemeteries &amp; Decorum Standards
         </div>
         <div style="font-size: 8pt; color: #475569; line-height: 1.42;">
           Remind students that these are active cemeteries visited by grieving relatives and international pilgrims. Walk strictly on grass pathways; no running, shouting, or leaning against headstones. Ensure students conduct pencil rubbings gently with non-abrasive paper.
@@ -923,11 +923,11 @@ function getHtmlContent() {
 
       <div class="grid-2col" style="margin-bottom: 10px;">
         <div class="talking-points-box" style="margin-bottom: 0;">
-          <div class="box-header">🎤 Stop 1 Tour Script: Essex Farm ADS</div>
+     <div class="box-header">Stop 1 Tour Script: Essex Farm ADS</div>
           <div style="font-size: 8.2pt; color: #334155; line-height: 1.45;">
             <strong>Where We Stand:</strong> Concrete bunkers built into the Yser canal embankment. An Advanced Dressing Station where Canadian surgeons triaged thousands during Second Ypres.<br>
             <strong>Alexis Helmer:</strong> On 2 May 1915, McCrae's 22-year-old friend was blown to pieces by an 8-inch shell. McCrae performed the burial by lantern light; next morning he sat on the ambulance step and composed <em>In Flanders Fields</em>.<br>
-            <strong>Evacuation Chain:</strong> Regimental Aid Post (RAP) ➔ Advanced Dressing Station (ADS) ➔ Casualty Clearing Station (CCS) ➔ Base Hospital.
+      <strong>Evacuation Chain:</strong> Regimental Aid Post (RAP) Advanced Dressing Station (ADS) Casualty Clearing Station (CCS) Base Hospital.
           </div>
         </div>
 
@@ -939,7 +939,7 @@ function getHtmlContent() {
 
       <div class="grid-2col" style="margin-bottom: 10px; align-items: stretch;">
         <div class="talking-points-box" style="margin-bottom: 0;">
-          <div class="box-header">🎤 Stop 2 Tour Script: Yorkshire Trench</div>
+     <div class="box-header">Stop 2 Tour Script: Yorkshire Trench</div>
           <div style="font-size: 8.2pt; color: #334155; line-height: 1.45;">
             <strong>Discovery:</strong> Unearthed in 1992 by amateur archaeologists ("The Diggers") in a modern industrial zone.<br>
             <strong>What to Notice:</strong> The wooden A-frames, fire-bays, deep dugout entrance (holding 200 men), and the high water table requiring constant pump drainage.<br>
@@ -978,7 +978,7 @@ We shall not sleep, though poppies grow
       <!-- Poppy Symbolism & Botanical Context -->
       <div style="background: #f0fdf4; border: 1.5px solid #bbf7d0; border-left: 5px solid #16a34a; border-radius: 7px; padding: 11px 15px; margin-bottom: 10px;">
         <div style="font-size: 8.6pt; font-weight: 800; color: #166534; text-transform: uppercase; margin-bottom: 2px;">
-          🌿 McCrae's Botanical Observation &amp; Poppy Symbolism
+     McCrae's Botanical Observation &amp; Poppy Symbolism
         </div>
         <div style="font-size: 8.2pt; color: #14532d; line-height: 1.45;">
           Explain to pupils why the common field poppy (<em>Papaver rhoeas</em>) flourished across the torn fields of Flanders: its seeds lie dormant for decades and only germinate when heavy artillery bombardment churns the lime-rich chalk and clay soil. McCrae observed them blooming amidst fresh graves within days of intense shellfire, transforming a weed into an enduring global symbol.
@@ -987,7 +987,7 @@ We shall not sleep, though poppies grow
 
       <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 7px; padding: 11px 15px; margin-bottom: 10px;">
         <div style="font-size: 8.6pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
-          🎯 Teacher Field Directives at Essex Farm
+     Teacher Field Directives at Essex Farm
         </div>
         <div style="font-size: 8.2pt; color: #334155; line-height: 1.44;">
           Prompt a designated student to read all three stanzas of <em>In Flanders Fields</em> standing directly outside Bunker 4. Then lead the group into the cemetery to observe Valentine Strudwick's headstone (Plot I. U. 8). Have pupils examine how close the frontline medical triage was to active artillery fire.
@@ -996,7 +996,7 @@ We shall not sleep, though poppies grow
 
       <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 7px; padding: 11px 15px;">
         <div style="font-size: 8.6pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
-          💡 Medical Evacuation Enquiry &amp; Targeted Hinge Question
+     Medical Evacuation Enquiry &amp; Targeted Hinge Question
         </div>
         <div style="font-size: 8.2pt; color: #1e293b; line-height: 1.44;">
           <strong>Hinge Question:</strong> <em>"Why was rapid evacuation to an Advanced Dressing Station the critical factor in preventing gas gangrene and hypovolemic shock on the Western Front?"</em><br>
@@ -1027,7 +1027,7 @@ We shall not sleep, though poppies grow
       </div>
 
       <div class="talking-points-box" style="margin-bottom: 10px; padding: 11px 15px;">
-        <div class="box-header">🎤 Stop 3 Tour Script: Langemarck &amp; The Student Myth</div>
+    <div class="box-header">Stop 3 Tour Script: Langemarck &amp; The Student Myth</div>
         <div style="font-size: 8.3pt; color: #334155; line-height: 1.46;">
           <strong>The Myth of Langemarck:</strong> In November 1914, German army communiqués claimed young, enthusiastic student regiments charged into British lines singing <em>"Deutschland über alles"</em>. In historical reality, poorly trained schoolboys were cut to ribbons by regular British riflemen delivering rapid "mad minute" volleys.<br>
           <strong>Kameradengrab (Comrades' Grave):</strong> 24,917 soldiers buried in a single mass grave behind the oak gatehouse.<br>
@@ -1081,7 +1081,7 @@ Great death has made all his for evermore.
       <!-- Historical Analysis of the Student Myth -->
       <div style="background: #fefce8; border: 1.5px solid #fde047; border-left: 5px solid #ca8a04; border-radius: 7px; padding: 11px 15px; margin-bottom: 10px;">
         <div style="font-size: 8.6pt; font-weight: 800; color: #854d0e; text-transform: uppercase; margin-bottom: 3px;">
-          🥀 The Myth of Langemarck: Propaganda vs Military Reality
+     The Myth of Langemarck: Propaganda vs Military Reality
         </div>
         <div style="font-size: 8.2pt; color: #713f12; line-height: 1.45;">
           German wartime propaganda mythologized the slaughter of 10,000 university and secondary students as an act of willing heroic patriotism. In post-war Germany, this narrative was seized upon by nationalists to argue that the youth had been betrayed by home-front defeatists ('stab-in-the-back' myth). Contrast this state myth with the bleak, unadorned grief expressed in Krieger's statues.
@@ -1090,7 +1090,7 @@ Great death has made all his for evermore.
 
       <div style="background: #fffbeb; border: 1.5px solid #fde68a; border-left: 5px solid #d97706; border-radius: 7px; padding: 11px 15px; margin-bottom: 10px;">
         <div style="font-size: 8.6pt; font-weight: 800; color: #92400e; text-transform: uppercase; margin-bottom: 3px;">
-          💡 Comparative Cemetery Analysis &amp; Targeted Hinge Question
+     Comparative Cemetery Analysis &amp; Targeted Hinge Question
         </div>
         <div style="font-size: 8.2pt; color: #451a03; line-height: 1.45;">
           <strong>Hinge Question:</strong> <em>"How does the deliberate gloom, dark granite, and mass grave architecture of Langemarck produce a fundamentally different emotional impact than the open lawns and white Portland stone of CWGC sites?"</em><br>
@@ -1100,7 +1100,7 @@ Great death has made all his for evermore.
 
       <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 7px; padding: 10px 15px;">
         <div style="font-size: 8.5pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
-          🚍 Logistical Transfer to Peace Village Hostel (Mesen)
+     Logistical Transfer to Peace Village Hostel (Mesen)
         </div>
         <div style="font-size: 8pt; color: #334155; line-height: 1.42;">
           Depart Langemarck at 17:15. Coach journey south across the Salient to Peace Village Hostel in Mesen takes approx. 35 mins. On arrival: room keys, baggage drop, 18:15 evening meal, followed by 19:15 evening debrief session.
@@ -1131,7 +1131,7 @@ Great death has made all his for evermore.
 
       <div class="grid-2col" style="margin-bottom: 10px;">
         <div class="talking-points-box" style="margin-bottom: 0;">
-          <div class="box-header">🎤 Stop 4 Tour Script: Vancouver Corner</div>
+     <div class="box-header">Stop 4 Tour Script: Vancouver Corner</div>
           <div style="font-size: 8.2pt; color: #334155; line-height: 1.44;">
             <strong>22 April 1915:</strong> The first lethal use of poison gas in history. 168 tons of chlorine released by German forces against French Algerian troops.<br>
             <strong>The Canadian Stand:</strong> Canadian troops held the 4-mile gap by urinating on handkerchiefs to neutralise chlorine. Commemorated by Chapman Clemesha's 33ft <em>Brooding Soldier</em> monument.<br>
@@ -1140,7 +1140,7 @@ Great death has made all his for evermore.
         </div>
 
         <div class="talking-points-box" style="margin-bottom: 0;">
-          <div class="box-header">🎤 Stop 5 Tour Script: Hooge Crater</div>
+     <div class="box-header">Stop 5 Tour Script: Hooge Crater</div>
           <div style="font-size: 8.2pt; color: #334155; line-height: 1.44;">
             <strong>Underground War:</strong> Tunnelling companies dug deep into blue Flemish clay to detonate ammonal charges beneath German trenches.<br>
             <strong>The Hooge Crater:</strong> Detonated on 19 July 1915 (1,700lb ammonal), creating a 120ft wide crater. First German flamethrower attack occurred here 11 days later against the 8th Rifle Brigade.<br>
@@ -1186,7 +1186,7 @@ Hurled through still heavens?
       <!-- Flamethrower & Tactical Evolution -->
       <div style="background: #fffbeb; border: 1.5px solid #fde68a; border-left: 5px solid #d97706; border-radius: 7px; padding: 11px 15px; margin-bottom: 10px;">
         <div style="font-size: 8.6pt; font-weight: 800; color: #92400e; text-transform: uppercase; margin-bottom: 2px;">
-          🔥 Stop 5 Museum Focus: The 8th Rifle Brigade Flamethrower Attack (30 July 1915)
+     Stop 5 Museum Focus: The 8th Rifle Brigade Flamethrower Attack (30 July 1915)
         </div>
         <div style="font-size: 8.2pt; color: #451a03; line-height: 1.45;">
           Guide pupils through the museum's preserved flamethrower artifacts. On 30 July 1915, German forces unleashed portable <em>Flammenwerfer</em> jetting burning oil 30 yards into British trenches here, catching the 8th Rifle Brigade completely unprepared. Explain how defensive psychology changed when fire and chemical agents were introduced as frontline weapons.
@@ -1195,7 +1195,7 @@ Hurled through still heavens?
 
       <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 7px; padding: 11px 15px; margin-bottom: 10px;">
         <div style="font-size: 8.6pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
-          💡 Technology &amp; Warfare Enquiry · Targeted Hinge Question
+     Technology &amp; Warfare Enquiry · Targeted Hinge Question
         </div>
         <div style="font-size: 8.2pt; color: #1e293b; line-height: 1.45;">
           <strong>Hinge Question:</strong> <em>"How did the simultaneous introduction of industrial weapons—chlorine gas, flamethrowers, and deep subterranean mines—completely shatter pre-war conceptions of heroic soldiering?"</em><br>
@@ -1205,7 +1205,7 @@ Hurled through still heavens?
 
       <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 7px; padding: 10px 15px;">
         <div style="font-size: 8.5pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
-          🥪 Supervised Field Lunch &amp; Boarding Directives
+     Supervised Field Lunch &amp; Boarding Directives
         </div>
         <div style="font-size: 8pt; color: #334155; line-height: 1.42;">
           Eat packed picnic lunches at Hooge Crater Museum picnic area. Restroom break and museum shop visit. Prompt boarding at 12:45 for transfer to Tyne Cot Commonwealth Cemetery.
@@ -1236,7 +1236,7 @@ Hurled through still heavens?
 
       <div class="grid-2col" style="margin-bottom: 10px;">
         <div class="talking-points-box" style="margin-bottom: 0;">
-          <div class="box-header">🎤 Stop 6 Tour Script: The Scale of Tyne Cot</div>
+     <div class="box-header">Stop 6 Tour Script: The Scale of Tyne Cot</div>
           <div style="font-size: 8.2pt; color: #334155; line-height: 1.45;">
             <strong>The Scale:</strong> Largest Commonwealth war cemetery in the world. 11,961 burials, of which 8,369 are unidentified ('Known Unto God').<br>
             <strong>Herbert Baker's Architecture:</strong> Baker preserved three German concrete machine-gun pillboxes inside the cemetery. He deliberately mounted Sir Reginald Blomfield's Great Cross of Sacrifice directly atop the central bunker, leaving an observation slit open to reveal the concrete beneath.<br>
@@ -1291,7 +1291,7 @@ They sleep beyond England's foam.
       <!-- Siting the Cross of Sacrifice Box -->
       <div style="background: #f0fdf4; border: 1.5px solid #bbf7d0; border-left: 5px solid #16a34a; border-radius: 7px; padding: 11px 15px; margin-bottom: 10px;">
         <div style="font-size: 8.6pt; font-weight: 800; color: #166534; text-transform: uppercase; margin-bottom: 2px;">
-          🎖️ Siting the Cross of Sacrifice atop the German Bunker
+     ️ Siting the Cross of Sacrifice atop the German Bunker
         </div>
         <div style="font-size: 8.2pt; color: #14532d; line-height: 1.45;">
           King George V visited Tyne Cot during construction in 1922 and suggested preserving the central German bunker. Sir Herbert Baker enclosed it within the base of Blomfield's Great Cross of Sacrifice, leaving an observation slit visible at ground level. Emphasise to pupils how British architects literally erected Christian sacrifice atop the concrete machinery of war.
@@ -1300,7 +1300,7 @@ They sleep beyond England's foam.
 
       <div style="background: #fffbeb; border: 1.5px solid #fde68a; border-left: 5px solid #d97706; border-radius: 7px; padding: 11px 15px; margin-bottom: 10px;">
         <div style="font-size: 8.6pt; font-weight: 800; color: #92400e; text-transform: uppercase; margin-bottom: 3px;">
-          💡 Passchendaele Tactical Enquiry &amp; Targeted Hinge Question
+     Passchendaele Tactical Enquiry &amp; Targeted Hinge Question
         </div>
         <div style="font-size: 8.2pt; color: #451a03; line-height: 1.45;">
           <strong>Hinge Question:</strong> <em>"Why did Field Marshal Haig persist with the Passchendaele offensive for three months when rain and artillery fire had reduced the low ridge to an impassable swamp?"</em><br>
@@ -1310,7 +1310,7 @@ They sleep beyond England's foam.
 
       <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 7px; padding: 10px 15px;">
         <div style="font-size: 8.5pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
-          🚍 Next Stops: Lijssenthoek &amp; Passchendaele Museum
+     Next Stops: Lijssenthoek &amp; Passchendaele Museum
         </div>
         <div style="font-size: 8pt; color: #334155; line-height: 1.42;">
           Board coach at 14:00 sharp. Drive to Lijssenthoek Military Cemetery (Stop 7) to study the Casualty Clearing Station evacuation chain and Nurse Nellie Spindler, followed by Passchendaele 1917 Museum (Stop 8).
@@ -1341,7 +1341,7 @@ They sleep beyond England's foam.
 
       <div class="grid-2col" style="margin-bottom: 10px;">
         <div class="talking-points-box" style="margin-bottom: 0;">
-          <div class="box-header">🎤 Stop 9 Tour Script: The Menin Gate</div>
+     <div class="box-header">Stop 9 Tour Script: The Menin Gate</div>
           <div style="font-size: 8.2pt; color: #334155; line-height: 1.45;">
             <strong>54,395 Names:</strong> Inscribed with Commonwealth soldiers missing in the Salient prior to 16 August 1917. Designed by Sir Reginald Blomfield as a classical triumphal arch.<br>
             <strong>The Last Post Ceremony:</strong> Sounded every night at 20:00 by volunteer fire brigade buglers without fail since 1928 (suspended only during WWII occupation).<br>
@@ -1397,7 +1397,7 @@ Rise and deride this sepulchre of crime.
       <!-- The Last Post Association Context Box -->
       <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #2563eb; border-radius: 7px; padding: 11px 15px; margin-bottom: 10px;">
         <div style="font-size: 8.6pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
-          🎺 The Last Post Association &amp; The Civic Buglers
+     The Last Post Association &amp; The Civic Buglers
         </div>
         <div style="font-size: 8.2pt; color: #1e293b; line-height: 1.45;">
           Explain to pupils the extraordinary history of the ceremony: founded in 1928 by local Ypres police commissioner Pierre Vandenbraambussche to honour British soldiers who defended the town. Except for the period of German occupation from May 1940 to September 1944 (when it was sounded instead at Brookwood in England), the volunteer buglers of the Ypres Fire Brigade have sounded the call every night at 20:00 without fail.
@@ -1406,7 +1406,7 @@ Rise and deride this sepulchre of crime.
 
       <div style="background: #fffbeb; border: 1.5px solid #fde68a; border-left: 5px solid #d97706; border-radius: 7px; padding: 11px 15px; margin-bottom: 10px;">
         <div style="font-size: 8.6pt; font-weight: 800; color: #92400e; text-transform: uppercase; margin-bottom: 3px;">
-          💡 Sassoon's Anti-Monument Critique &amp; Targeted Hinge Question
+     Sassoon's Anti-Monument Critique &amp; Targeted Hinge Question
         </div>
         <div style="font-size: 8.2pt; color: #451a03; line-height: 1.45;">
           <strong>Hinge Question:</strong> <em>"Why was Siegfried Sassoon so repulsed by Blomfield's triumphal arch, calling it a 'sepulchre of crime', while grieving families found immense comfort in seeing their sons' names carved in stone?"</em><br>
@@ -1416,7 +1416,7 @@ Rise and deride this sepulchre of crime.
 
       <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 7px; padding: 10px 15px;">
         <div style="font-size: 8.5pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
-          🌙 Evening Return to Peace Village &amp; Night Protocol
+     Evening Return to Peace Village &amp; Night Protocol
         </div>
         <div style="font-size: 8pt; color: #334155; line-height: 1.42;">
           Depart Menin Gate at 20:45. Arrive hostel 21:15. Evening drinks, cookies, and reflective briefing. Curfew and phone collection in corridor at 22:00 sharp. Staff overnight watch roster active.
@@ -1455,7 +1455,7 @@ Rise and deride this sepulchre of crime.
         </div>
 
         <div class="talking-points-box" style="margin-bottom: 0; padding: 9px 13px;">
-          <div class="box-header">🎤 Stop 10 Tour Script: The Rebirth of Ypres</div>
+     <div class="box-header">Stop 10 Tour Script: The Rebirth of Ypres</div>
           <div style="font-size: 8pt; color: #334155; line-height: 1.42;">
             <strong>Total Destruction:</strong> By 1918, Ypres was rubble; Winston Churchill wanted the ruins left untouched as a British national monument. Instead, Belgian citizens rebuilt stone-for-stone.<br>
             <strong>The Lakenhalle:</strong> Built in 1304; meticulously reconstructed over 40 years.<br>
@@ -1474,7 +1474,7 @@ Rise and deride this sepulchre of crime.
         </div>
 
         <div class="talking-points-box" style="margin-bottom: 0; padding: 9px 13px;">
-          <div class="box-header">🎤 Stop 12 Tour Script: Talbot House (Toc H)</div>
+     <div class="box-header">Stop 12 Tour Script: Talbot House (Toc H)</div>
           <div style="font-size: 8pt; color: #334155; line-height: 1.42;">
             <strong>The Haven Behind the Lines:</strong> Army Chaplain Tubby Clayton opened this house in Poperinge as an alternative to pubs and brothels.<br>
             <strong>"All rank abandon ye who enter here":</strong> Officers and privates drank tea from identical mugs, played the piano, and conversed as human equals.<br>
@@ -1512,7 +1512,7 @@ And laughter, learnt of friends; and gentleness,
       <!-- Upper Room Chapel Box -->
       <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #2563eb; border-radius: 7px; padding: 9px 14px; margin-bottom: 8px;">
         <div style="font-size: 8.5pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
-          🕊️ Talbot House: The Upper Room Hop-Loft Chapel
+     ️ Talbot House: The Upper Room Hop-Loft Chapel
         </div>
         <div style="font-size: 8.1pt; color: #1e293b; line-height: 1.42;">
           Take pupils in small groups up the steep attic staircase to the 'Upper Room'. Clayton converted the hops drying loft into a quiet haven of prayer, using an old carpenter's bench as the altar and candlelight. Men carved their names and regimental numbers into the wooden posts before returning to the trenches.
@@ -1521,7 +1521,7 @@ And laughter, learnt of friends; and gentleness,
 
       <div style="background: #fef2f2; border: 1.5px solid #fecaca; border-left: 5px solid #dc2626; border-radius: 7px; padding: 9px 14px;">
         <div style="font-size: 8.5pt; font-weight: 800; color: #991b1b; text-transform: uppercase; margin-bottom: 2px;">
-          ⚖️ Stop 13 Briefing: Poperinge Town Hall Death Cells &amp; Shot at Dawn
+     ️ Stop 13 Briefing: Poperinge Town Hall Death Cells &amp; Shot at Dawn
         </div>
         <div style="font-size: 8.1pt; color: #450a0a; line-height: 1.42;">
           <strong>Context:</strong> Physical visit to the cramped brick holding cells and wooden execution post in the Town Hall courtyard.<br>
@@ -1656,7 +1656,7 @@ And laughter, learnt of friends; and gentleness,
       <!-- Tour Leader Kit & Equipment Checklist -->
       <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #2563eb; border-radius: 7px; padding: 10px 14px; margin-bottom: 10px;">
         <div style="font-size: 8.5pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
-          🎒 Tour Leader Equipment Checklist &amp; On-Site Kit
+     Tour Leader Equipment Checklist &amp; On-Site Kit
         </div>
         <div style="font-size: 8.1pt; color: #1e293b; line-height: 1.44;">
           • <strong>School First Aid Kits:</strong> Carried by accompanying Meoncross staff at all times (including travel sickness meds).<br>
@@ -1668,7 +1668,7 @@ And laughter, learnt of friends; and gentleness,
 
       <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 7px; padding: 10px 14px; margin-bottom: 10px;">
         <div style="font-size: 8.6pt; font-weight: 800; color: #0f172a; text-transform: uppercase; margin-bottom: 2px;">
-          🤝 Code of Conduct &amp; Expedition Standards
+     Code of Conduct &amp; Expedition Standards
         </div>
         <div style="font-size: 8.1pt; color: #475569; line-height: 1.44;">
           1. <strong>Quiet Respect:</strong> Cemeteries are active places of mourning. Walk strictly on grass paths; do not sit on headstones or climb on memorial panels.<br>

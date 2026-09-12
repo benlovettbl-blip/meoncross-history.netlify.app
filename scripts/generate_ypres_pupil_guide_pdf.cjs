@@ -580,7 +580,7 @@ function getHtmlContent() {
 
       <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #2563eb; border-radius: 7px; padding: 6px 10px;">
         <div style="font-size: 8.4pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
-          🎒 Essential Field Guidelines for Pupils
+     Essential Field Guidelines for Pupils
         </div>
         <div style="font-size: 7.8pt; color: #1e293b; line-height: 1.35;">
           Wear sturdy walking boots and waterproof layers. Keep this guide, a pencil, and your phone in a secure daypack. At each site, listen carefully to staff orientations before beginning your personal observations.
@@ -631,7 +631,7 @@ function getHtmlContent() {
             </p>
           </div>
           <div style="background: #f1f5f9; padding: 5px; border-radius: 4px; font-size: 7.6pt; color: #1e293b; font-weight: 700; margin-top: 7px; text-align: center;">
-            📍 Helles Memorial, Gallipoli
+      Helles Memorial, Gallipoli
           </div>
         </div>
 
@@ -649,7 +649,7 @@ function getHtmlContent() {
             </p>
           </div>
           <div style="background: #fef3c7; padding: 5px; border-radius: 4px; font-size: 7.6pt; color: #92400e; font-weight: 700; margin-top: 7px; text-align: center;">
-            📍 Pozières Memorial, Somme
+      Pozières Memorial, Somme
           </div>
         </div>
 
@@ -667,20 +667,20 @@ function getHtmlContent() {
             </p>
           </div>
           <div style="background: #fee2e2; padding: 5px; border-radius: 4px; font-size: 7.6pt; color: #991b1b; font-weight: 700; margin-top: 7px; text-align: center;">
-            📍 La Targette British Cemetery (Plot I. C. 2)
+      La Targette British Cemetery (Plot I. C. 2)
           </div>
         </div>
       </div>
 
       <div class="inquiry-box" style="margin-bottom: 11px; padding: 12px 16px;">
-        <div class="inquiry-header">🔍 Historical Inquiry: The Concentrated Grief of Sibling Enlistment</div>
+    <div class="inquiry-header">Historical Inquiry: The Concentrated Grief of Sibling Enlistment</div>
         <div class="inquiry-content" style="font-size: 9pt; line-height: 1.5;">
           The tragedy of the Lowry brothers illustrates how the Great War shattered entire households. Rather than casualties spreading evenly across populations, sibling enlistment and Pals Battalions meant that catastrophic losses were concentrated in specific families. How does investigating the Lowrys help us grasp the profound, localized grief experienced across communities like Stubbington and Lee-on-the-Solent?
         </div>
       </div>
 
       <div class="field-focus-box" style="margin-top: 0; margin-bottom: 11px; padding: 12px 16px;">
-        <div class="focus-header">🏛️ Local Parish Connection: The Lowry Memorial Hall &amp; Crofton Tablet</div>
+    <div class="focus-header">️ Local Parish Connection: The Lowry Memorial Hall &amp; Crofton Tablet</div>
         <div class="focus-content" style="font-size: 9pt; line-height: 1.5;">
           Devastated by the loss of all three sons, their father William Lowry funded and built the <strong>Lowry Memorial Hall</strong> in Lee-on-the-Solent so his boys would never be forgotten. On the marble tablet inside Holy Rood Church, the three brothers' names are inscribed together in Column 2 under the Army section. Note how their resting places span thousands of miles—from Turkey to the Somme and Arras—yet local parish memorials reunite them forever in their home community.
         </div>
@@ -688,7 +688,7 @@ function getHtmlContent() {
 
       <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 11px 15px;">
         <div style="font-size: 9.2pt; font-weight: 800; color: #1e3a8a; margin-bottom: 3px;">
-          📖 Memorial Record: Stubbington War Memorial Inscription
+     Memorial Record: Stubbington War Memorial Inscription
         </div>
         <div style="font-size: 8.8pt; color: #475569; line-height: 1.48;">
           On the North Beam of the wooden pump shelter in the village square, locate the names: <em>"LIEUT. W. A. H. LOWRY · CAPT. C. J. P. LOWRY · LT. COL. A. E. E. LOWRY, M.C., D.S.O."</em> Reflect on how village memorials served as surrogate tombstones for families whose sons lay in distant or unmarked graves.
@@ -791,7 +791,7 @@ function getHtmlContent() {
       </div>
 
       <div class="field-focus-box" style="margin-top: 0; margin-bottom: 11px; padding: 12px 16px;">
-        <div class="focus-header">🔍 Historical Analysis: Underage Enlistment &amp; The 'Boy Soldiers'</div>
+    <div class="focus-header">Historical Analysis: Underage Enlistment &amp; The 'Boy Soldiers'</div>
         <div class="focus-content" style="font-size: 9pt; line-height: 1.5;">
           An estimated 250,000 British boys under the legal fighting age of 19 served in the First World War. Driven by peer pressure, patriotic propaganda, economic hardship, and recruiting sergeants who received a cash bounty of half-a-crown for every volunteer enrolled, teenagers like Valentine Strudwick altered their birth certificates to reach the frontlines. Standing before Strudwick's headstone at Essex Farm, reflect on his age (15) compared to your own life today, and how industrial shellfire wiped out an entire generation before their adult lives could begin.
         </div>
@@ -799,7 +799,7 @@ function getHtmlContent() {
 
       <div style="background: #f1f5f9; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 11px 15px;">
         <div style="font-size: 9.2pt; font-weight: 800; color: #1e3a8a; margin-bottom: 3px;">
-          📍 Locating Parish Fallen in the Salient
+     Locating Parish Fallen in the Salient
         </div>
         <div style="font-size: 8.8pt; color: #475569; line-height: 1.46;">
           When arriving at Menin Gate, locate <strong>Thomas Franklin</strong> and <strong>William Ayling</strong> on Panel 35 under Hampshire Regiment. At Tyne Cot, inspect the rear stone wall panels for <strong>Sydney Muckett</strong> and our local fallen. Notice how individual identification bridges the gap between massive casualty rolls and human memory.
@@ -878,7 +878,7 @@ function getHtmlContent() {
       </div>
 
       <div class="field-focus-box" style="margin-top: 0; margin-bottom: 11px; padding: 12px 16px;">
-        <div class="focus-header">🏷️ Field Study Focus: Royal Hampshire Regiment Badges &amp; Inscriptions</div>
+    <div class="focus-header">️ Field Study Focus: Royal Hampshire Regiment Badges &amp; Inscriptions</div>
         <div class="focus-content" style="font-size: 9pt; line-height: 1.52;">
           As we examine CWGC headstones across the Salient, search for the <strong>Royal Tiger and Hampshire Rose</strong> badge of our local county regiment. Note the personal inscriptions carved at the foot of each stone—chosen and paid for by grieving parents and widows back in Stubbington, Fareham, and Portsmouth. Observe how some express steadfast Christian hope (<em>"Thy Will Be Done"</em>), others classical Roman duty (<em>"Dulce et Decorum Est"</em>), and some profound personal heartbreak: <em>"A Day of Memory Sad to Recall, Without Goodbye He Left Us All."</em>
         </div>
@@ -887,7 +887,7 @@ function getHtmlContent() {
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
         <div style="background: #f0fdf4; border: 1.5px solid #bbf7d0; border-left: 5px solid #16a34a; border-radius: 8px; padding: 11px 15px;">
           <div style="font-size: 9.2pt; font-weight: 800; color: #166534; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 3px;">
-            ⚖️ The Radical Equality of CWGC
+      ️ The Radical Equality of CWGC
           </div>
           <div style="font-size: 8.6pt; color: #14532d; line-height: 1.46;">
             Founder <strong>Sir Fabian Ware</strong> established three non-negotiable principles: (1) no distinction of rank; (2) uniform headstones; and (3) no repatriation, ensuring generals and privates lie together forever in the Flemish soil.
@@ -896,7 +896,7 @@ function getHtmlContent() {
 
         <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #2563eb; border-radius: 8px; padding: 11px 15px;">
           <div style="font-size: 9.2pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 3px;">
-            🎯 Field Observation Hinge Question
+      Field Observation Hinge Question
           </div>
           <div style="font-size: 8.6pt; color: #1e293b; line-height: 1.46;">
             The CWGC charged families 3½d per letter for personal inscriptions, but paid for the stone. Why allow individual family epitaphs while strictly enforcing uniform stone design and banning private crosses?
@@ -973,7 +973,7 @@ We shall not sleep, though poppies grow
       </div>
 
       <div class="field-focus-box" style="margin-top: 0; margin-bottom: 10px;">
-        <div class="focus-header">🏥 Medical Triage Analysis: The Chain of Evacuation</div>
+    <div class="focus-header">Medical Triage Analysis: The Chain of Evacuation</div>
         <div class="focus-content">
           Essex Farm operated as an Advanced Dressing Station (ADS) cut directly into the canal bank, mere hundreds of yards behind frontline communication saps. Medical officers performed desperate emergency triage—arresting catastrophic hemorrhages, applying field splints, and administering morphine—before stretcher-bearers evacuated wounded men in horse-drawn or motor ambulances to Casualty Clearing Stations (CCS) at Brandhoek and Base Hospitals on the French coast.
         </div>
@@ -981,7 +981,7 @@ We shall not sleep, though poppies grow
 
       <div style="background: #f0fdf4; border: 1.5px solid #bbf7d0; border-left: 5px solid #16a34a; border-radius: 8px; padding: 10px 14px;">
         <div style="font-size: 9pt; font-weight: 800; color: #166534; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 3px;">
-          ⛏️ Stop 2 Archaeological Insight: Yorkshire Trench Restoration
+     ️ Stop 2 Archaeological Insight: Yorkshire Trench Restoration
         </div>
         <div style="font-size: 8.5pt; color: #14532d; line-height: 1.45;">
           Discovered by amateur Belgian archaeologists ('The Diggers') in 1992 in an expanding industrial zone, Yorkshire Trench preserves original 1915 British frontlines. Notice the timber A-frames supporting duckboards above waterlogged clay, recessed fire-steps, and the deep entrance shafts to the 1917 dugout shelter deep below the water table.
@@ -1057,7 +1057,7 @@ Great death has made all his for evermore.
       </div>
 
       <div class="field-focus-box" style="margin-top: 0; margin-bottom: 10px;">
-        <div class="focus-header">⚖️ Comparative Historiography: German vs Commonwealth Commemoration</div>
+    <div class="focus-header">️ Comparative Historiography: German vs Commonwealth Commemoration</div>
         <div class="focus-content">
           Notice the stark architectural contrast between Langemarck and Commonwealth cemeteries. Whereas British CWGC sites celebrate radical individual equality with white Portland stone and manicured English cottage borders, the German War Graves Commission utilized dark volcanic basalt, collective mass graves (the <em>Kameradengrab</em> holding 24,917 men), and sheltering oak trees to express communal tragedy, somber defeat, and the heavy weight of national grief.
         </div>
@@ -1065,7 +1065,7 @@ Great death has made all his for evermore.
 
       <div style="background: #fefce8; border: 1.5px solid #fde047; border-left: 5px solid #ca8a04; border-radius: 8px; padding: 10px 14px;">
         <div style="font-size: 9pt; font-weight: 800; color: #854d0e; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 3px;">
-          🥀 The Myth of Langemarck: Propaganda vs Reality
+     The Myth of Langemarck: Propaganda vs Reality
         </div>
         <div style="font-size: 8.5pt; color: #713f12; line-height: 1.45;">
           German wartime communiqués claimed thousands of young student volunteers charged across the beet fields towards British lines singing <em>"Deutschland über alles"</em>. In reality, untrained youths were sent forward in dense columns directly into devastating British rapid rifle fire (the 'Old Contemptibles'). Interwar propagandists mythologized their slaughter as heroic self-sacrifice.
@@ -1138,7 +1138,7 @@ Just a little white with the dust.
       </div>
 
       <div class="field-focus-box" style="margin-top: 0; margin-bottom: 10px;">
-        <div class="focus-header">⚡ Technological Revolution: Gas Warfare &amp; Underground Mining</div>
+    <div class="focus-header">Technological Revolution: Gas Warfare &amp; Underground Mining</div>
         <div class="focus-content">
           The Ypres Salient served as the terrifying testbed of modern industrial warfare. At Vancouver Corner on 22 April 1915, the German Army released 168 metric tons of chlorine gas, creating a deadly green cloud four miles wide that devastated Algerian and French colonial divisions before Canadian units heroically plugged the breach. At Hooge Crater, British tunneling companies dug hundreds of feet beneath German lines to detonate enormous ammonal mine charges, forever transforming the ridge.
         </div>
@@ -1146,7 +1146,7 @@ Just a little white with the dust.
 
       <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #2563eb; border-radius: 8px; padding: 10px 14px;">
         <div style="font-size: 9pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 3px;">
-          🍁 Stop 4 Focus: Vancouver Corner &amp; 'The Brooding Soldier'
+     Stop 4 Focus: Vancouver Corner &amp; 'The Brooding Soldier'
         </div>
         <div style="font-size: 8.5pt; color: #1e293b; line-height: 1.45;">
           Sculpted by Frederick Chapman Clemesha, the 33-foot granite bust of <em>The Brooding Soldier</em> towers over Vancouver Corner with hands resting on reversed arms and head bowed in solemn grief. It honors 2,000 Canadians of the 1st Canadian Division who fell holding the frontline during the world's first large-scale chemical weapons attack.
@@ -1219,7 +1219,7 @@ We will remember them.
       </div>
 
       <div class="field-focus-box" style="margin-top: 0; margin-bottom: 10px;">
-        <div class="focus-header">🏛️ Architectural Symbolism: The Cross Over the Pillbox</div>
+    <div class="focus-header">️ Architectural Symbolism: The Cross Over the Pillbox</div>
         <div class="focus-content">
           While <strong>Sir Reginald Blomfield</strong> designed the universal CWGC Cross of Sacrifice pattern, cemetery architect <strong>Sir Herbert Baker</strong> made the inspired decision to site Tyne Cot's great Portland stone Cross directly atop a captured German concrete machine-gun bunker in the centre of the cemetery. The bronze broadsword points downward upon the captured pillbox, symbolizing the ultimate triumph of sacrifice and peace over instruments of war. Along the sweeping curved flint memorial wall behind the cross, Baker had carved the names of 34,984 soldiers with no known grave who fell in the catastrophic mud of Passchendaele.
         </div>
@@ -1227,7 +1227,7 @@ We will remember them.
 
       <div style="background: #fdf2f8; border: 1.5px solid #fbcfe8; border-left: 5px solid #db2777; border-radius: 8px; padding: 10px 14px;">
         <div style="font-size: 9pt; font-weight: 800; color: #9d174d; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 3px;">
-          🌹 Stubbington Parish Fallen at Tyne Cot: L/Cpl Arthur Newman
+     Stubbington Parish Fallen at Tyne Cot: L/Cpl Arthur Newman
         </div>
         <div style="font-size: 8.5pt; color: #831843; line-height: 1.45;">
           Locate Panel 8 on the Memorial Wall for <strong>Lance Corporal Arthur Newman</strong> (Royal Engineers 153rd Field Company), born and raised in Stubbington. He fell during the Third Battle of Ypres. Like thousands of his comrades, his body was swallowed by the Passchendaele quagmire and never found. Reflect on how this wall restores his name to perpetual memory.
@@ -1299,7 +1299,7 @@ Rise and deride this sepulchre of crime.
       </div>
 
       <div class="field-focus-box" style="margin-top: 0; margin-bottom: 10px;">
-        <div class="focus-header">🎺 The Daily Act of Remembrance: The Menin Gate Tradition</div>
+    <div class="focus-header">The Daily Act of Remembrance: The Menin Gate Tradition</div>
         <div class="focus-content">
           Every evening at exactly 20:00, traffic halts completely beneath the Menin Gate as buglers from the Ypres Volunteer Fire Brigade sound the <em>Last Post</em>. Initiated in 1928, this solemn act of gratitude has continued unbroken through the decades (interrupted only during German WWII occupation, when it was sounded in Surrey, England). As the bugle notes reverberate beneath the vaulted arch bearing 54,395 names of the missing, consider Siegfried Sassoon's bitter protest against glorification alongside Laurence Binyon's eternal pledge: <em>"We will remember them."</em>
         </div>
@@ -1307,7 +1307,7 @@ Rise and deride this sepulchre of crime.
 
       <div style="background: #fef2f2; border: 1.5px solid #fecaca; border-left: 5px solid #dc2626; border-radius: 8px; padding: 10px 14px;">
         <div style="font-size: 9pt; font-weight: 800; color: #991b1b; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 3px;">
-          🌺 Meoncross School Wreath Laying Ceremony Protocol
+     Meoncross School Wreath Laying Ceremony Protocol
         </div>
         <div style="font-size: 8.5pt; color: #7f1d1d; line-height: 1.45;">
           At 19:45, our designated student wreath-bearers will take their positions under the central vault alongside staff. When invited forward by the master of ceremonies, step in unison, place the poppy wreath upon the plinth on behalf of Meoncross School and the parish of Stubbington, take two paces back, and bow heads in silent remembrance.
@@ -1391,7 +1391,7 @@ Her sights and sounds; dreams happy as her day;
       </div>
 
       <div class="field-focus-box" style="margin-top: 0; margin-bottom: 10px;">
-        <div class="focus-header">🕊️ Social History &amp; Rebirth: The Sanctuary of Toc H</div>
+    <div class="focus-header">️ Social History &amp; Rebirth: The Sanctuary of Toc H</div>
         <div class="focus-content">
           In Poperinge, Rev. Philip 'Tubby' Clayton opened Talbot House in December 1915 with an extraordinary rule: <em>"All rank abandon, ye who enter here."</em> Officers and privates drank tea together, played piano, and climbed to the upper hop-loft chapel for quiet communion behind the lines. Following the Armistice, Winston Churchill advocated preserving the shattered Cloth Hall of Ypres as a permanent ruins monument, but the Flemish citizens chose to painstakingly reconstruct their medieval city brick by brick, symbolising enduring resurrection.
         </div>
@@ -1399,7 +1399,7 @@ Her sights and sounds; dreams happy as her day;
 
       <div style="background: #fdf4ff; border: 1.5px solid #f0abfc; border-left: 5px solid #c026d3; border-radius: 8px; padding: 10px 14px;">
         <div style="font-size: 9pt; font-weight: 800; color: #86198f; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 3px;">
-          ⛪ The Upper Room: The 'Hop-Loft' Chapel
+     The Upper Room: The 'Hop-Loft' Chapel
         </div>
         <div style="font-size: 8.5pt; color: #701a75; line-height: 1.45;">
           Climbing the steep attic stairs of Talbot House, soldiers found a sanctuary made from an old carpenter's bench converted into an altar, illuminated by candles in brass shell-casings. Over 100,000 men took communion here before moving up the Menin Road. Inscribed on the wall: <em>"All rank abandon ye who enter here."</em>
@@ -1493,7 +1493,7 @@ Her sights and sounds; dreams happy as her day;
       <!-- Chronology of the 5 Battles of Ypres -->
       <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 9px 13px; margin-bottom: 10px;">
         <h4 style="font-size: 9.5pt; color: #1e3a8a; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.04em;">
-          ⚔️ Chronology: The Five Battles of the Ypres Salient (1914–1918)
+     ️ Chronology: The Five Battles of the Ypres Salient (1914–1918)
         </h4>
         <table class="companion-table" style="font-size: 8.2pt;">
           <thead>
@@ -1549,7 +1549,7 @@ Her sights and sounds; dreams happy as her day;
 
       <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #1e3a8a; border-radius: 7px; padding: 8px 12px; margin-bottom: 10px;">
         <div style="font-size: 8.6pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2px;">
-          🤝 Code of Conduct &amp; Pupil Expedition Standards
+     Code of Conduct &amp; Pupil Expedition Standards
         </div>
         <div style="font-size: 7.8pt; color: #1e293b; line-height: 1.36;">
           1. <strong>Quiet Respect:</strong> Cemeteries are active places of international mourning. Walk strictly on grass paths; never sit on headstones.<br>

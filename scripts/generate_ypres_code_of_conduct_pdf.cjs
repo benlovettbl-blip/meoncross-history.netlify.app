@@ -333,11 +333,11 @@ async function generatePDF() {
     <!-- GUIDANCE CARDS -->
     <div class="intro-grid">
       <div class="intro-card card-pupil">
-        <div class="intro-title">📘 For Pupils</div>
+    <div class="intro-title">For Pupils</div>
         It is important to appreciate and remember that when on residential visits, you are representing yourself, your school and if travelling abroad, your country also. The way you conduct yourself will have a lasting impression on those with whom you come into contact. It may also have implications for your personal health and safety as well as that of staff and other pupils on the visit. Given this, it is vital that all pupils participating on residential visits agree to and follow the code of conduct. This is especially important as there may be times when a teacher is not in your company and you are not under direct supervision.
       </div>
       <div class="intro-card card-parent">
-        <div class="intro-title">🛡️ For Parents / Carers</div>
+    <div class="intro-title">️ For Parents / Carers</div>
         The members of staff on this trip will be acting &lsquo;in loco parentis&rsquo;. They will exercise consideration and care to ensure the safety and well-being of the pupils. The rules on the trip are designed to protect and safeguard your child and ensure an enjoyable trip for all.
       </div>
     </div>
@@ -399,7 +399,7 @@ async function generatePDF() {
           </div>
           <div class="rule-item highlight-enjoy">
             <div class="rule-num">13</div>
-            <div>Try to enjoy yourself! 🌟</div>
+      <div>Try to enjoy yourself! </div>
           </div>
         </div>
       </div>

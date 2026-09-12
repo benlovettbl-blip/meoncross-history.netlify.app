@@ -403,14 +403,14 @@ export const unitData = {
               </p>
               
               <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-left: 4px solid #16a34a; border-radius: 6px; padding: 14px; margin-bottom: 14px;">
-                <strong style="color: #166534; font-size: 0.95rem; display: block; margin-bottom: 4px;">📅 Rooming &amp; Dietary Process (Approx. Two Weeks):</strong>
+        <strong style="color: #166534; font-size: 0.95rem; display: block; margin-bottom: 4px;">Rooming &amp; Dietary Process (Approx. Two Weeks):</strong>
                 <p style="margin: 0; color: #1e293b; font-size: 0.9rem; line-height: 1.5;">
                   Pupils will complete rooming friend preference requests and confirm dietary options (e.g. vegetarian evening meals) in school in approximately two weeks' time (all medical allergies are already logged on school records). Mr Lovett and staff will review all choices to ensure every pupil is happily placed with close friends in a comfortable, supportive room. Staff sleep on the same corridors with active evening checks and a strict lights-out policy.
                 </p>
               </div>
 
               <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 6px; padding: 14px;">
-                <strong style="color: #991b1b; font-size: 0.95rem; display: block; margin-bottom: 4px;">📋 Code of Conduct &amp; Passport Collection:</strong>
+        <strong style="color: #991b1b; font-size: 0.95rem; display: block; margin-bottom: 4px;">Code of Conduct &amp; Passport Collection:</strong>
                 <p style="margin: 0; color: #7f1d1d; font-size: 0.9rem; line-height: 1.5;">
                   All pupils and parents must sign and return the <strong>Code of Conduct Agreement Form</strong> by <strong>Friday 25th September</strong>. Passports (with >3 months validity) and valid GHIC/EHIC cards will be collected in advance tonight at the Parental Briefing meeting (or to the School Office this week).
                 </p>
@@ -438,7 +438,7 @@ export const unitData = {
                   <strong>Dedicated On-Tour Trip Mobile:</strong> This dedicated phone is held directly by tour leadership at all times during the expedition. It is the number parents can call in a genuine emergency, <em>and crucially, it is also the exact number that staff will call you from</em> if we need to get in touch.
                 </p>
                 <div style="background: #ffffff; border-left: 3px solid #dc2626; padding: 8px 12px; border-radius: 4px; color: #991b1b; font-size: 0.88rem; font-weight: 600;">
-                  ⚠️ Mandatory Requirement: A parent or nominated emergency contact MUST remain contactable 24/7 on your provided mobile numbers throughout the duration of the trip.
+         ️ Mandatory Requirement: A parent or nominated emergency contact MUST remain contactable 24/7 on your provided mobile numbers throughout the duration of the trip.
                 </div>
               </div>
 
@@ -543,7 +543,7 @@ export const unitData = {
             year: '14:30',
             title: "Essex Farm Cemetery & McCrae's Bunker",
             detail:
-              'Historical introduction to wartime medical care and Commonwealth war graves.<div class="archival-badge" style="margin-top: 10px; padding: 8px 12px; background: #fffbeb; border: 1.5px solid #fde68a; border-left: 4px solid #b45309; border-radius: 6px; font-size: 0.84rem; color: #78350f; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;"><span style="line-height: 1.4;"><strong style="color: #92400e; text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.06em; display: block;">🎖️ Local Connection</strong>2nd Lt Crummack won his DCM at the Boesinghe canal bank, 800m north</span><button type="button" class="btn" onclick="window.renderLessonByIndex(13); return false;" data-action="view-lesson-detail" data-index="13" style="background: #b45309; color: #ffffff; border: 1px solid #92400e; padding: 4px 10px; border-radius: 4px; font-weight: 700; font-size: 0.78rem; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; box-shadow: 0 1px 3px rgba(180,83,9,0.25);">Read Dossier &rarr;</button></div>',
+              'Historical introduction to wartime medical care and Commonwealth war graves.<div class="archival-badge" style="margin-top: 10px; padding: 8px 12px; background: #fffbeb; border: 1.5px solid #fde68a; border-left: 4px solid #b45309; border-radius: 6px; font-size: 0.84rem; color: #78350f; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;"><span style="line-height: 1.4;"><strong style="color: #92400e; text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.06em; display: block;">️ Local Connection</strong>2nd Lt Crummack won his DCM at the Boesinghe canal bank, 800m north</span><button type="button" class="btn" onclick="window.renderLessonByIndex(13); return false;" data-action="view-lesson-detail" data-index="13" style="background: #b45309; color: #ffffff; border: 1px solid #92400e; padding: 4px 10px; border-radius: 4px; font-weight: 700; font-size: 0.78rem; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; box-shadow: 0 1px 3px rgba(180,83,9,0.25);">Read Dossier &rarr;</button></div>',
             lat: 50.871,
             lng: 2.872,
           },
