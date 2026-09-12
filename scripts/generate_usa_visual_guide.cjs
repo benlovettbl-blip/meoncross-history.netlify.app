@@ -509,12 +509,12 @@ const SPREADS = [
       q3b: {
         question:
           'Study Interpretations 1 and 2. They give different views about the main reason why the Montgomery Bus Boycott was successful. What is the main difference between these views? Explain your answer, using details from both interpretations.',
-        lines: 12,
+        lines: 5,
       },
       q3c: {
         question:
           'Suggest one reason why Interpretations 1 and 2 give different views about the main reason why the Montgomery Bus Boycott succeeded. You may use information from your own knowledge to help explain your answer.',
-        lines: 13,
+        lines: 5,
       },
     },
   },
@@ -949,12 +949,12 @@ const SPREADS = [
       q3b: {
         question:
           'Study Interpretations 1 and 2. They give different views about the main factor responsible for the passage of the landmark civil rights legislation of 1964 and 1965. What is the main difference between these views? Explain your answer, using details from both interpretations.',
-        lines: 12,
+        lines: 5,
       },
       q3c: {
         question:
           'Suggest one reason why Interpretations 1 and 2 give different views about the main factor responsible for the civil rights legislation. You may use information from your own knowledge to help explain your answer.',
-        lines: 13,
+        lines: 5,
       },
     },
   },
@@ -1687,12 +1687,12 @@ const SPREADS = [
       q3b: {
         question:
           'Study Interpretations 1 and 2. They give different views about the main reason why US military tactics failed to defeat the Vietcong. What is the main difference between these views? Explain your answer, using details from both interpretations.',
-        lines: 12,
+        lines: 5,
       },
       q3c: {
         question:
           'Suggest one reason why Interpretations 1 and 2 give different views about why US military tactics failed to defeat the Vietcong. You may use information from your own knowledge to help explain your answer.',
-        lines: 13,
+        lines: 5,
       },
     },
   },
@@ -2131,12 +2131,12 @@ const SPREADS = [
       q3b: {
         question:
           "Study Interpretations 1 and 2. They give different views about the nature and motivations of support for the Vietnam War and the 'Silent Majority'. What is the main difference between these views? Explain your answer, using details from both interpretations.",
-        lines: 12,
+        lines: 5,
       },
       q3c: {
         question:
           'Suggest one reason why Interpretations 1 and 2 give different views about the support for the war and the Silent Majority. You may use information from your own knowledge to help explain your answer.',
-        lines: 13,
+        lines: 5,
       },
     },
   },
