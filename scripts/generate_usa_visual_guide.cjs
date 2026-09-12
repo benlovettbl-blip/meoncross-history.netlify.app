@@ -2769,30 +2769,30 @@ function renderRightPage(data, pageNum) {
       <div style="background: #ffffff; border: 1.5px solid #0f172a; border-radius: 5px; padding: 6px 8px; margin-bottom: 6px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
           <strong style="font-size: 8.4pt; color: #0f172a;">Question 3(b): Difference in Views [4 Marks]</strong>
-          <span style="font-size: 6.8pt; font-weight: 700; color: #475569;">Timing: ~6 mins</span>
+          <span style="font-size: 6.8pt; font-weight: 700; color: #475569;">Timing: ~5 mins &bull; Target: 4–5 Lines</span>
         </div>
         <div style="font-size: 7.6pt; font-weight: 800; color: #0f172a; margin-bottom: 3px;">
           ${right.q3b.question}
         </div>
-        <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 3px; padding: 3px 7px; margin-bottom: 4px; font-size: 6.5pt; color: #1e3a8a;">
-          <strong>How to answer:</strong> Contrast the specific focus or argument. Directly cite Interpretation 1 vs Interpretation 2.
+        <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 3px; padding: 3px 7px; margin-bottom: 4px; font-size: 6.4pt; color: #1e3a8a;">
+          <strong>Exam Technique Formula (4–5 Lines Max):</strong> [1] State the core difference in view ➔ [2] Direct detail from Interpretation 1 ➔ [3] Contrasting detail from Interpretation 2.
         </div>
-        ${renderLines(Math.max(right.q3b.lines || 0, 16))}
+        ${renderLines(5)}
       </div>
 
       <!-- Q3(c) Reasons for Difference Container [4 Marks] -->
       <div style="background: #ffffff; border: 1.5px solid #0f172a; border-radius: 5px; padding: 6px 8px; margin-bottom: 6px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
           <strong style="font-size: 8.4pt; color: #0f172a;">Question 3(c): Suggest Reasons for Difference [4 Marks]</strong>
-          <span style="font-size: 6.8pt; font-weight: 700; color: #475569;">Timing: ~6 mins</span>
+          <span style="font-size: 6.8pt; font-weight: 700; color: #475569;">Timing: ~5 mins &bull; Target: 4–5 Lines</span>
         </div>
         <div style="font-size: 7.6pt; font-weight: 800; color: #0f172a; margin-bottom: 3px;">
           ${right.q3c.question}
         </div>
-        <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 3px; padding: 3px 7px; margin-bottom: 4px; font-size: 6.5pt; color: #1e3a8a;">
-          <strong>How to answer:</strong> Give ONE clear reason why they differ (e.g. consulted different evidence, different timeframes, or different ideological emphasis).
+        <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 3px; padding: 3px 7px; margin-bottom: 4px; font-size: 6.4pt; color: #1e3a8a;">
+          <strong>Exam Technique Formula (4–5 Lines Max):</strong> [1] State ONE reason why they differ (e.g. authors gave weight to different sources, timeframes, or criteria) ➔ [2] Explain using specific details.
         </div>
-        ${renderLines(Math.max(right.q3c.lines || 0, 16))}
+        ${renderLines(5)}
       </div>
 
       <!-- Rubric -->

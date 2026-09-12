@@ -113,9 +113,10 @@ function buildTimelineHTML(unitData) {
       themeColor: '#1b365d',
       lightBg: '#eff6ff',
       borderColor: '#93c5fd',
-      eraTitle: 'ERA 1: British Mandate, UN Partition & The War of Creation (1917–1949)',
+      eraTitle: 'KEY TOPIC 1: The End of the British Mandate & The Creation of Israel, 1945–1949',
       specFocus:
-        'Key Topic 1: The End of the British Mandate & The Creation of the State of Israel',
+        'Lessons KT 1.0, KT 1.1 & KT 1.2 • Imperial Borders, UN Partition & The 1948–49 War of Creation',
+      badgeText: 'KEY TOPIC 1',
       specPills: [
         'Zionism',
         'Balfour Declaration',
@@ -244,8 +245,10 @@ function buildTimelineHTML(unitData) {
       themeColor: '#991b1b',
       lightBg: '#fef2f2',
       borderColor: '#fca5a5',
-      eraTitle: 'ERA 2: The Decades of Total War & Arab Nationalism (1955–1973)',
-      specFocus: 'Key Topic 1 & 2: The Suez Crisis, The Six-Day War & The Yom Kippur War',
+      eraTitle: 'KEY TOPIC 2: Increased Tension, Crises and Conflict, 1955–1973',
+      specFocus:
+        'Lessons KT 1.3, KT 2.1, KT 2.2 & KT 2.3 • Suez Crisis, Six-Day War, Rise of Palestinian Resistance & Yom Kippur War',
+      badgeText: 'KEY TOPIC 2',
       specPills: [
         'Pan-Arabism',
         'Suez Nationalisation',
@@ -357,9 +360,11 @@ function buildTimelineHTML(unitData) {
       themeColor: '#166534',
       lightBg: '#f0fdf4',
       borderColor: '#86efac',
-      eraTitle: 'ERA 3: Cold War Diplomacy, Shuttle Diplomacy & Camp David (1974–1979)',
+      eraTitle:
+        'KEY TOPIC 3 (Part 1): Diplomatic Negotiations: From Shuttle Diplomacy to Camp David, 1974–1979',
       specFocus:
-        'Key Topic 3: Diplomatic Negotiations: From Shuttle Diplomacy to the 1979 Peace Treaty',
+        'Lesson KT 3.1 • Yasser Arafat at the UN, Kissinger’s Shuttle Diplomacy & The Egypt-Israel Peace Treaty',
+      badgeText: 'KEY TOPIC 3A',
       specPills: [
         'Shuttle Diplomacy',
         'Yasser Arafat at UN',
@@ -471,9 +476,11 @@ function buildTimelineHTML(unitData) {
       themeColor: '#b45309',
       lightBg: '#fffbeb',
       borderColor: '#fcd34d',
-      eraTitle: 'ERA 4: Lebanon Invasion, First Intifada & The Oslo Peace Process (1982–1995)',
+      eraTitle:
+        'KEY TOPIC 3 (Part 2): The Palestinian Issue, The 1982 Lebanon War & Attempts at a Solution to 1995',
       specFocus:
-        'Key Topic 3: The Palestinian Issue: Lebanon, The First Intifada, and Attempts at a Solution to 1995',
+        'Lessons KT 3.2 & KT 3.3 • Operation Peace for Galilee, Sabra & Shatila, First Intifada & The Oslo Accords',
+      badgeText: 'KEY TOPIC 3B',
       specPills: [
         'Operation Peace for Galilee',
         'Ariel Sharon',
@@ -611,15 +618,15 @@ function buildTimelineHTML(unitData) {
             
             <div class="rhythm-box">
               <div class="rhythm-line">
-                <span class="rhythm-label trigger-label">⚡ TRIGGER:</span>
+                <span class="rhythm-label trigger-label">TRIGGER:</span>
                 <span class="rhythm-text">${formatMd(m.trigger)}</span>
               </div>
               <div class="rhythm-line">
-                <span class="rhythm-label action-label">💥 ACTION:</span>
+                <span class="rhythm-label action-label">ACTION:</span>
                 <span class="rhythm-text">${formatMd(m.action)}</span>
               </div>
               <div class="rhythm-line">
-                <span class="rhythm-label consequence-label">🎯 CONSEQUENCE:</span>
+                <span class="rhythm-label consequence-label">CONSEQUENCE:</span>
                 <span class="rhythm-text">${formatMd(m.consequence)}</span>
               </div>
             </div>
@@ -672,8 +679,8 @@ function buildTimelineHTML(unitData) {
               <div class="era-subheading">${era.specFocus}</div>
             </div>
             <div class="page-badge-box" style="border: 1.5px solid ${era.themeColor}; background: ${era.lightBg};">
-              <span class="badge-era" style="color: ${era.themeColor};">PAGE ${era.page} OF 4</span>
-              <span class="badge-sub">MASTER TIMELINE</span>
+              <span class="badge-era" style="color: ${era.themeColor};">${era.badgeText}</span>
+              <span class="badge-sub">PAGE ${era.page} OF 4</span>
             </div>
           </div>
 
