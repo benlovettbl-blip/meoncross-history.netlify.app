@@ -2084,26 +2084,42 @@ export function renderLesson(lesson) {
       }
 
       let blockSourceHtml = '';
-      if (block.source) {
+      const rawSource =
+        block.source ||
+        (block.archival_source
+          ? {
+              type: 'written',
+              title: block.archival_source.title,
+              shelfmark: block.archival_source.shelfmark,
+              content: block.archival_source.text || block.archival_source.content || '',
+              citation: block.archival_source.citation || '',
+              source_context:
+                block.archival_source.source_context || block.archival_source.context || '',
+              question: block.archival_source.question || '',
+              qNum: block.archival_source.qNum || '',
+            }
+          : null);
+
+      if (rawSource) {
         let sourceContentHtml = '';
         if (
-          block.source.type === 'written' ||
-          (block.source.content && !block.source.source && !block.source.src && !block.source.image)
+          rawSource.type === 'written' ||
+          (rawSource.content && !rawSource.source && !rawSource.src && !rawSource.image)
         ) {
           sourceContentHtml = `
-                   <div class="archival-source-body" style="width: 100%; max-height: 350px; overflow-y: auto;">
-                     ${block.source.content}
+                   <div class="archival-source-body" style="width: 100%; max-height: 350px; overflow-y: auto; font-family: 'Georgia', serif; font-style: italic; font-size: 1.05rem; line-height: 1.75; color: #1e293b; background: #fffdfa; padding: 14px 18px; border-left: 4px solid #1e3a8a; border-radius: 4px;">
+                     ${rawSource.content}
                    </div>
                  `;
         } else {
           sourceContentHtml = `
                     <div style="width: 100%; max-height: 400px; background-color: #000; border-radius: 4px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center;">
-                      <img src="${getAssetUrl(block.source.source || block.source.src)}" alt="Source" style="max-width: 100%; max-height: 100%; object-fit: contain; cursor: zoom-in;" data-action="open-modal" data-src="${getAssetUrl(block.source.source || block.source.src)}">
+                      <img src="${getAssetUrl(rawSource.source || rawSource.src)}" alt="Source" style="max-width: 100%; max-height: 100%; object-fit: contain; cursor: zoom-in;" data-action="open-modal" data-src="${getAssetUrl(rawSource.source || rawSource.src)}">
                     </div>
                  `;
         }
 
-        const bLetterMatch = (block.source.title || '').match(/Source\s+([A-Z])/i);
+        const bLetterMatch = (rawSource.title || '').match(/Source\s+([A-Z])/i);
         const bLetter = bLetterMatch ? bLetterMatch[1].toUpperCase() : '';
         const bCardIdAttr =
           bLetter && window.currentUnitId === 'cme_new'
@@ -2118,10 +2134,10 @@ export function renderLesson(lesson) {
             ? `data-target-source="${bLetter}" title="Hover or click to highlight Source ${bLetter}"`
             : '';
 
-        const sourceTitle = block.source.title || block.source.caption || '';
+        const sourceTitle = rawSource.title || rawSource.caption || '';
         const isWrittenSource =
-          block.source.type === 'written' ||
-          (block.source.content && !block.source.source && !block.source.src);
+          rawSource.type === 'written' ||
+          (rawSource.content && !rawSource.source && !rawSource.src);
         const sourceAudioBtnHtml = isWrittenSource
           ? `<button class="btn btn-secondary no-print read-aloud-btn" data-action="read-aloud" style="padding: 5px 9px; flex-shrink: 0; margin-left: 8px; cursor: pointer;" title="Read Aloud Primary Source Excerpt"><i class="fa-solid fa-volume-high"></i></button>`
           : '';
@@ -2136,7 +2152,7 @@ export function renderLesson(lesson) {
                 <h4 class="archival-source-title">${sourceTitle}</h4>
               </div>
               <div style="display: flex; align-items: center; gap: 8px;">
-                ${block.source.shelfmark ? `<span class="archival-shelfmark-stamp">${block.source.shelfmark}</span>` : bLetter ? `<span class="archival-shelfmark-stamp">SOURCE ${bLetter}</span>` : ''}
+                ${rawSource.shelfmark ? `<span class="archival-shelfmark-stamp">${rawSource.shelfmark}</span>` : bLetter ? `<span class="archival-shelfmark-stamp">SOURCE ${bLetter}</span>` : ''}
                 ${sourceAudioBtnHtml}
               </div>
             </div>
@@ -2150,37 +2166,45 @@ export function renderLesson(lesson) {
             : '';
 
         blockSourceHtml = `
-              <div class="gcse-source-container archival-source-box" ${bCardIdAttr} style="text-align: left; transition: all 0.3s ease;">
+              <div class="gcse-source-container archival-source-box" ${bCardIdAttr} style="text-align: left; transition: all 0.3s ease; margin: 20px 0;">
                 ${sourceHeaderHtml}
                 ${sourceContentHtml}
                 ${
-                  window.currentUnitId === 'cme_new' && block.source.title && block.source.caption
-                    ? `<div style="font-size: 0.95rem; color: #475569; margin-top: -5px; margin-bottom: 15px; font-style: italic;">${block.source.caption}</div>`
+                  rawSource.citation
+                    ? `<div class="archival-citation-footer" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: 8px;">
+                        <span><strong>Provenance:</strong> ${rawSource.citation}</span>
+                        <span class="archival-seal" style="border: 1px solid #94a3b8; color: #475569; padding: 2px 6px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em;">ARCHIVE RECORD</span>
+                      </div>`
                     : ''
                 }
                 ${
-                  block.source.source_context
+                  window.currentUnitId === 'cme_new' && rawSource.title && rawSource.caption
+                    ? `<div style="font-size: 0.95rem; color: #475569; margin-top: -5px; margin-bottom: 15px; font-style: italic;">${rawSource.caption}</div>`
+                    : ''
+                }
+                ${
+                  rawSource.source_context
                     ? `
                   <div style="background: #f8fafc; border-left: 4px solid #64748b; padding: 15px; border-radius: 0 4px 4px 0; margin-top: 15px; color: #334155; font-size: 1.05rem; line-height: 1.6;">
-                    <strong>Historical Context:</strong> ${window.formatBold(block.source.source_context)}
+                    <strong>Historical Context:</strong> ${window.formatBold(rawSource.source_context)}
                   </div>
                 `
                     : ''
                 }
                 ${
-                  block.source.provenance_clue
+                  rawSource.provenance_clue
                     ? `
                   <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 15px; margin-top: 15px;">
                     <strong style="color: #166534; display: block; margin-bottom: 5px;"><span class="archival-meta-tag accent-emerald" style="margin-right: 6px;">PROVENANCE CLUE</span></strong>
-                    <span style="color: #15803d; font-size: 0.95rem;">${window.formatBold(block.source.provenance_clue)}</span>
+                    <span style="color: #15803d; font-size: 0.95rem;">${window.formatBold(rawSource.provenance_clue)}</span>
                   </div>
                 `
                     : ''
                 }
                 ${
-                  block.source.question
+                  rawSource.question
                     ? `<div class="${bQClassAttr}" ${bQDataAttr} style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px; border-radius: 0 4px 4px 0; text-align: left; margin-top: 15px;">
-                  <p style="margin-bottom: 0; font-size: 1.1rem; color: #1e3a8a;"><strong>${block.source.qNum ? `Q${block.source.qNum}. ` : ''}${formatQuestion(block.source.question, !block.source.qNum)}</strong></p>
+                  <p style="margin-bottom: 0; font-size: 1.1rem; color: #1e3a8a;"><strong>${rawSource.qNum ? `Q${rawSource.qNum}. ` : ''}${formatQuestion(rawSource.question, !rawSource.qNum)}</strong></p>
                 </div>`
                     : ''
                 }
