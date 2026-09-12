@@ -137,16 +137,16 @@ def populate_risk_assessment():
         [("Windows / ventilation", True, False, "18")]
     ]
     h1_who = [
-        [("Pupils & staff (finger pinch / fall risk)", False, False, "17")]
+        [("Pupils & staff", False, False, "17")]
     ]
     h1_existing = [
-        [("Safety restrictor latches fitted on all windows to prevent over-opening. Teacher supervision.", False, False, "17")]
+        [("Safety restrictors fitted to all opening windows.", False, False, "17")]
     ]
     h1_further = [
-        [("Visual check each term.", False, False, "17")]
+        [("Termly catch check.", False, False, "17")]
     ]
     h1_whom = [
-        [("BL / Site Team", False, False, "16")]
+        [("BL", False, False, "16")]
     ]
     h1_when = [
         [("Termly", False, False, "16")]
@@ -155,21 +155,21 @@ def populate_risk_assessment():
         [("Ongoing", False, False, "16")]
     ]
 
-    # Hazard 2: Classroom Fire Door (Reflecting whole-staff INSET mention)
+    # Hazard 2: Classroom Fire Door (Andy's staff INSET offer)
     h2_name = [
-        [("Classroom fire door / pupil movement", True, False, "18")]
+        [("Classroom fire door", True, False, "18")]
     ]
     h2_who = [
-        [("Pupils & staff (door closing on pupils, or smoke/fire if wedged open)", False, False, "17")]
+        [("Pupils & staff (finger trap / door closing in crowd)", False, False, "17")]
     ]
     h2_existing = [
-        [("Fire door with overhead closer fitted. No wedges or furniture used to hold open. Teacher holds door during busy changeovers.", False, False, "17")]
+        [("Overhead closer fitted. No wedges used. Door held open by teacher during changeovers.", False, False, "17")]
     ]
     h2_further = [
-        [("Request floor-mounted auto-release door stop from Site Team (Andy mentioned at whole-staff INSET that these can be requested for classrooms).", False, False, "17")]
+        [("Request acoustic door stop (as offered by Andy at staff INSET).", False, False, "17")]
     ]
     h2_whom = [
-        [("Andy (Site Team) / BL", False, False, "16")]
+        [("Andy / BL", False, False, "16")]
     ]
     h2_when = [
         [("Sept 2026", False, False, "16")]
@@ -178,18 +178,18 @@ def populate_risk_assessment():
         [("Requested", False, False, "16")]
     ]
 
-    # Hazard 3: Slips, Trips & Circulation (Bags & Cables)
+    # Hazard 3: Slips & Trips (Bags & Coats)
     h3_name = [
-        [("Bags, coats & cables", True, False, "18")]
+        [("Bags & coats (trips)", True, False, "18")]
     ]
     h3_who = [
-        [("Pupils & staff (trips / falls)", False, False, "17")]
+        [("Pupils & staff", False, False, "17")]
     ]
     h3_existing = [
-        [("Bags and coats kept under desks. Walkways and exit door kept clear. AV cables tucked into trunking.", False, False, "17")]
+        [("Bags kept under desks. Main gangways kept clear.", False, False, "17")]
     ]
     h3_further = [
-        [("Routine check at start of each lesson.", False, False, "17")]
+        [("Routine reminder at start of lesson.", False, False, "17")]
     ]
     h3_whom = [
         [("BL", False, False, "16")]
@@ -201,18 +201,18 @@ def populate_risk_assessment():
         [("Ongoing", False, False, "16")]
     ]
 
-    # Hazard 4: Electrical Equipment & Display Screen
+    # Hazard 4: Electrical Equipment
     h4_name = [
         [("PC, projector & screen", True, False, "18")]
     ]
     h4_who = [
-        [("Pupils & staff (electric shock)", False, False, "17")]
+        [("Pupils & staff", False, False, "17")]
     ]
     h4_existing = [
-        [("Annual PAT testing by school. Visual check by teacher. Switched off at wall daily.", False, False, "17")]
+        [("Annual PAT tested. Cables in trunking. Switched off at wall.", False, False, "17")]
     ]
     h4_further = [
-        [("Report any damaged leads to Site Team.", False, False, "17")]
+        [("Report any damage to Site Team.", False, False, "17")]
     ]
     h4_whom = [
         [("BL / Andy", False, False, "16")]
