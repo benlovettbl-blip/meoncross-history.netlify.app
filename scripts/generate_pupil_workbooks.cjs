@@ -1384,9 +1384,6 @@ allDirs.forEach((unitId) => {
     let heroHtml = heroImgSrc
       ? `<img src="${heroImgSrc}" style="max-height: 40vh; max-width: 100%; object-fit: contain; margin: 0 auto; display: block;">`
       : '';
-    if (unitId === 'early_modern_world') {
-      heroHtml += `<div style="text-align: center; font-size: 14pt; margin-top: 15px;"><strong>Scholar:</strong> [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] &nbsp;&nbsp;&nbsp;&nbsp; <strong>Class:</strong> [____]</div>`;
-    }
     if (unitId === 'edexcel_medicine') {
       // Period-specific authentic cover images
       const medicinePanoMap = {
