@@ -37,348 +37,281 @@ export default {
     {
       id: 'lesson_1',
       title: 'Why were young men so desperate to join the slaughter of 1914?',
-      learning_objectives: [
-        'Describe how propaganda, imperial loyalty, and alliance obligations drove mass enlistment across the British Empire',
-        'Explain why trench warfare on the Western Front created a devastating stalemate',
-        "Evaluate the extent to which soldiers' expectations of war matched the reality of industrial-scale conflict",
+      learning_objectives: {
+        overarching:
+          'To analyze how propaganda, imperial patriotism, social coercion, and economic pragmatism drove mass voluntary enlistment in Britain in 1914.',
+        scaffolded: [
+          'Explain why Britain’s lack of conscription forced the government to rely on Lord Kitchener’s recruitment campaign.',
+          'Analyze the concept of "Pals Battalions" and evaluate their tragic vulnerability using the local example of the Pompey Pals.',
+          'Evaluate the historiographical debate between traditional "naive victim" interpretations and revisionist arguments on moral duty (Pennell) and economic pragmatism (Sheffield).',
+        ],
+      },
+      extended: {
+        title: 'Assessment Practice: Explaining Causation & Enlistment (12 Marks)',
+        question:
+          'Explain why so many young British men volunteered to join the armed forces in 1914. (12 marks)',
+        hints: [
+          'Point 1: The powerful appeal of "Pals Battalions", allowing friends, workmates, and sports teams to enlist and serve together (e.g. the Pompey Pals).',
+          'Point 2: Widespread moral outrage over the German invasion of neutral Belgium and a sense of patriotic duty to defend the Empire.',
+          'Point 3: Economic pragmatism and pre-war poverty, where the army offered steady pay ("the King’s Shilling"), hot meals, and warm clothing.',
+          'Point 4: Psychological coercion and social peer pressure, including government propaganda posters and the civilian White Feather campaign.',
+        ],
+        teacher_guidance: {
+          tiered_stems: {
+            bronze:
+              'One reason why young men volunteered in 1914 was... For example, the government created "Pals Battalions" which... This led to high enlistment because...',
+            silver:
+              'A major factor driving enlistment was social and psychological pressure. For instance, posters like "Women of Britain Say GO!" weaponized guilt... Furthermore, economic factors were decisive because...',
+            gold: 'While traditional historians emphasize that volunteers were naively deceived by patriotic jingoism and Kitchener’s propaganda, revisionist historians demonstrate that enlistment was driven by a complex combination of genuine moral outrage over Belgium (Pennell) and calculated economic pragmatism among the working classes (Sheffield)...',
+          },
+        },
+        model_answer:
+          'In August 1914, the British Empire witnessed the largest voluntary mobilization in its history, with over 750,000 men enlisting within eight weeks and nearly 2.5 million volunteering by late 1915. This mass stampede to the recruiting offices was driven by a powerful combination of communal camaraderie, moral conviction, economic necessity, and psychological coercion.\n\nFirst and foremost, recruitment was propelled by the creation of "Pals Battalions", which harnessed intense local and peer solidarity [2.1]. Conceived by military planners to overcome the British Army’s lack of conscription [1.1], the War Office promised that friends, workmates, and sports teams could enlist, train, and fight together. In Hampshire, the formation of the 14th and 15th Battalions of the Hampshire Regiment—the "Pompey Pals"—saw hundreds of dockworkers, clerks, and farm labourers from Portsmouth, Fareham, and Stubbington volunteer as a collective body [2.2]. Enlisting beside lifelong friends transformed military service from an intimidating leap into the unknown into an exciting communal adventure, creating irresistible social momentum where refusing to join meant being ostracized by one’s peer group.\n\nSecondly, modern revisionist historians like Catriona Pennell emphasize that enlistment was underpinned by genuine moral outrage and a sense of civic duty [4.2]. The British public was deeply shocked by imperial Germany’s violation of the 1839 Treaty of London and the brutal invasion of neutral Belgium. Graphic press reports of German atrocities—the "Rape of Belgium"—convinced hundreds of thousands of educated and working-class men that Britain was fighting a righteous, defensive crusade to uphold international law and protect civilization against Prussian militarism. Rather than acting as mindless dupes, many volunteers made a conscious, moral decision to risk their lives in defence of a vulnerable neighbour.\n\nFurthermore, military historian Gary Sheffield highlights the decisive role of "economic pragmatism" among the British working classes [1.3, 4.3]. In 1914, Britain possessed no modern welfare state, and millions lived in precarious poverty following a period of industrial stagnation. For young men trapped in low-paid textile mills, damp coal mines, or insecure agricultural labour, the army offered guaranteed daily wages ("the King’s Shilling"—1s 2d per day), three square meals, sturdy boots, and warm woollen uniforms. For many destitute families, government separation allowances provided a higher and more reliable household income than casual civilian employment.\n\nFinally, voluntary enlistment was aggressively compelled by psychological coercion and social shame [3.1, 3.2]. Official propaganda, such as the Parliamentary Recruiting Committee’s "Women of Britain Say GO!" poster (Source A), ruthlessly weaponized Victorian gender norms, implying that men who stayed behind were cowards failing their duty as protectors. This was reinforced by civilian vigilante campaigns like the Order of the White Feather, which subjected civilian-clothed men to humiliating public mockery on street corners [3.2]. Terrified of being branded cowards by their sweethearts and neighbours, thousands of boys as young as fifteen lied about their age to enlist.\n\nIn conclusion, British voluntary enlistment in 1914 was not the result of naive ignorance alone, but the culmination of interlocking pressures [4.1, 4.3]. Communal loyalty via Pals Battalions, genuine moral indignation over Belgium, grinding economic hardship, and intense domestic peer pressure combined to turn Kitchener’s recruitment appeal into an irresistible national movement.',
+      },
+      sources: [
+        {
+          title:
+            'Reference Map: British Expeditionary Force Deployment & Major Recruitment Hubs (1914)',
+          src: '/units/great_war_part2/assets/map_lesson1.png',
+          caption:
+            'Map showing the cross-Channel deployment of the British Expeditionary Force (BEF) to France and Belgium in August 1914, alongside the major regional recruiting depots across Great Britain.',
+          context:
+            'When Britain declared war on 4 August 1914, its small professional army of 120,000 men had to be transported across the English Channel to hold the Allied left flank at Mons and the Marne. Unlike continental powers that relied on millions of conscripts, Britain was forced to recruit, uniform, arm, and train a volunteer force of millions from regional recruitment depots. **Hinge Question:** Why did Britain’s traditional reliance on naval supremacy leave its military so dangerously under-resourced on land in August 1914?',
+        },
+        {
+          title:
+            'Source A: "Women of Britain Say GO!" Propaganda Poster (Parliamentary Recruiting Committee, 1915)',
+          src: '/images/gw_women_say_go.jpg',
+          caption:
+            'Official British recruitment poster No. 75, designed by E.J. Kealey and published in 1915 by the Parliamentary Recruiting Committee. It depicts two women and a child gazing out of a domestic window as British soldiers march bravely into the distance.',
+          context:
+            'Published in 1915 as voluntary enlistment numbers began to decline, this poster deliberately leveraged domestic emotional pressure and gender roles to shame men into enlisting. By showing women watching soldiers march away with pride, it sent an unmistakable message: a woman’s patriotic duty was to send her men to war, and any man remaining at home was failing as a masculine protector. **Hinge Question:** How does this poster prove that the British government used domestic emotional blackmail rather than military facts to mobilize soldiers?',
+        },
+        {
+          title: 'Source C: The White Feather Campaign: Public Shaming of Civilian Men (1914)',
+          src: '/images/gw_alliance_map.png',
+          caption:
+            'Illustration showing civilian women presenting white feathers—the traditional symbol of cowardice—to young men in civilian clothing on the streets of London in 1914.',
+          context:
+            'Founded in August 1914 by Admiral Charles Fitzgerald in Folkestone, the Order of the White Feather aimed to humiliate men of military age who had not enlisted. Groups of women patrolled public transport, parks, and restaurants, pinning white feathers onto the lapels of men in civilian suits. The campaign caused acute distress, driving thousands of underage teenagers and medically unfit men into recruiting offices simply to escape public disgrace. **Hinge Question:** Why was civilian peer pressure often far more coercive than official government legislation in driving enlistment?',
+        },
+        {
+          title: 'Source D: Photograph of Jessie Pope, Pro-War Journalist and Poet (1915)',
+          src: '/images/gw_jessie_pope.jpg',
+          caption:
+            'Studio portrait of English journalist and poet Jessie Pope (1868–1941), whose jingoistic verses in newspapers like the Daily Mail framed the war as a lighthearted athletic contest.',
+          context:
+            'Jessie Pope was Britain’s foremost civilian pro-war versifier. Her simple, rhyming poems used metaphors from rugby, cricket, and public school sports to shame young men into joining up. Frontline soldiers like Wilfred Owen reacted with incandescent fury to her work, famously addressing his horrific anti-war masterpiece "Dulce et Decorum Est" directly to Pope, whom he termed "my friend... telling with such high zest / To children ardent for some desperate glory". **Hinge Question:** Why did frontline combatants view civilian patriotic poetry like Pope’s as an insulting and dangerous lie?',
+        },
       ],
-      teacher_notes: {
-        primer:
-          "Introduce the outbreak of WWI, focusing on the assassination in Sarajevo and the alliance system, leading to the massive volunteer movement (Pals' Battalions).",
-        objectives: [
-          {
-            objective:
-              'Describe how propaganda, imperial loyalty, and alliance obligations drove mass enlistment across the British Empire',
-            primer:
-              "Focus on the role of Lord Kitchener's campaign and how peer pressure and patriotism forced many young men to sign up.",
-            question:
-              'What were the main social and political pressures that led young men to enlist in 1914?',
-          },
-          {
-            objective:
-              'Explain why trench warfare on the Western Front created a devastating stalemate',
-            primer:
-              'Highlight the failure of the Schlieffen Plan and how the introduction of machine guns and artillery made defensive positions impenetrable.',
-            question:
-              'How did modern industrial weaponry create the stalemate of the trench system?',
-          },
-          {
-            objective:
-              "Evaluate the extent to which soldiers' expectations of war matched the reality of industrial-scale conflict",
-            primer:
-              "Contrast the romantic ideas of a short 'over by Christmas' adventure with the miserable realities of trench foot, shell shock, and mass casualties.",
-            question:
-              'In what ways did the reality of fighting on the Western Front differ from what volunteers expected in 1914?',
-          },
-        ],
-        source_context:
-          "The visual sources in this lesson (such as the map of alliances and the recruitment posters) highlight the two phases of the outbreak: the geopolitical trap of the alliance system, and the psychological manipulation of the British public. The propaganda posters in particular reveal how the government ruthlessly leveraged gender roles and peer pressure to feed the war machine. **Hinge Question:** Look closely at the 'Women of Britain Say GO!' poster; why was emotional blackmail considered more effective than simply ordering men to fight in 1914?",
-      },
-      do_now: {
-        title: 'Do Now: Recall',
-        type: 'quiz',
-        questions: [
-          {
-            question: 'Which of these was a long-term cause of WWI?',
-            options: [
-              'The Alliance System',
-              'The Treaty of Versailles',
-              'The assassination of Archduke Franz Ferdinand',
-              'The Schlieffen Plan failing',
-            ],
-            answer: 2,
-            explanation:
-              'The alliance system had divided Europe into two armed camps over decades.',
-          },
-        ],
-      },
-      enquiry: 'Why were young men so desperate to join the slaughter of 1914?',
       vocab: [
         {
-          term: 'Propaganda',
+          term: 'British Expeditionary Force',
           definition:
-            'Biased or misleading information published to shape public opinion and promote wartime recruitment.',
+            'The small, highly trained professional British army sent to France and Belgium in August 1914, comprising approximately 120,000 men.',
         },
         {
           term: 'Lord Kitchener',
           definition:
-            'The British Secretary of State for War whose famous pointing finger poster mobilized millions of volunteers.',
+            'The British Secretary of State for War in 1914 who foresaw a long war and launched the famous "Your Country Needs You" recruitment drive.',
         },
         {
           term: 'Pals Battalions',
           definition:
-            'Special battalions of friends, neighbors, and workmates who enlisted together, promising to serve together.',
+            'Specially formed British army units composed of friends, neighbours, and work colleagues who enlisted and served together.',
         },
         {
-          term: 'Conscription',
+          term: 'White Feather',
           definition:
-            'Compulsory military service enforced by law, introduced in Britain in 1916 for unmarried men aged 18 to 41.',
-        },
-        {
-          term: 'Jingoism',
-          definition:
-            'Extreme, aggressive patriotism characterized by enthusiastic support for warlike foreign policy.',
+            'A traditional symbol of cowardice handed out by civilian women to young men out of uniform to shame them into enlisting.',
         },
         {
           term: 'Pragmatism',
           definition:
-            'Making decisions based on practical real-world circumstances rather than rigid ideological principles.',
+            'Making choices based on practical material benefits—such as guaranteed wages, hot food, and boots—rather than romantic ideals.',
+        },
+        {
+          term: 'Jingoism',
+          definition:
+            'Extreme, aggressive patriotism characterized by enthusiastic support for war and imperial prestige.',
         },
       ],
+      do_now: {
+        type: 'questions',
+        items: [
+          {
+            question:
+              '1. What military plan did Germany devise to knock France out within six weeks before fighting Russia?',
+            answer: 'The Schlieffen Plan',
+          },
+          {
+            question:
+              '2. Which neutral country did Germany invade on 4 August 1914, compelling Britain to declare war?',
+            answer: 'Belgium',
+          },
+          {
+            question:
+              '3. Which three nations formed the Triple Entente diplomatic coalition by 1907?',
+            answer: 'Great Britain, France, and Russia',
+          },
+          {
+            question:
+              '4. What revolutionary British battleship was launched in 1906, rendering older warships obsolete?',
+            answer: 'HMS Dreadnought',
+          },
+          {
+            question:
+              '5. What unconditional diplomatic pledge did Kaiser Wilhelm II give Austria-Hungary on 5 July 1914?',
+            answer: 'The "Blank Cheque"',
+          },
+          {
+            question:
+              '6. Who fired the fatal shots that assassinated Archduke Franz Ferdinand in Sarajevo on 28 June 1914?',
+            answer: 'Gavrilo Princip',
+          },
+          {
+            question:
+              '7. What secret Serbian nationalist society supplied the assassins with weapons and cyanide in 1914?',
+            answer: 'The Black Hand (Union or Death)',
+          },
+          {
+            question:
+              '8. What German word describes the acute fear of being surrounded by hostile France and Russia?',
+            answer: 'Einkreisung (Encirclement)',
+          },
+          {
+            question:
+              '9. Which two provinces did France lose to Germany following the Franco-Prussian War in 1871?',
+            answer: 'Alsace and Lorraine',
+          },
+          {
+            question:
+              '10. What was Britain’s traditional 19th-century policy of avoiding peacetime European alliances called?',
+            answer: 'Splendid Isolation',
+          },
+        ],
+      },
+      primary_source: {
+        title:
+          'Source A: "Women of Britain Say GO!" Propaganda Poster (Parliamentary Recruiting Committee, 1915)',
+        src: '/images/gw_women_say_go.jpg',
+        caption:
+          'Official British recruitment poster No. 75, designed by E.J. Kealey and published in 1915 by the Parliamentary Recruiting Committee. It depicts two women and a child gazing out of a domestic window as British soldiers march bravely into the distance.',
+        question:
+          'Enquiry: Study Source A. How does this poster use emotional manipulation and gender expectations to pressure men into volunteering?',
+        tasks: [
+          {
+            type: 'draw',
+            text: 'Task 1: Draw an arrow to the women in the window and label what emotion this poster is designed to provoke in a civilian man viewing it.',
+            starter:
+              'An arrow points to the women in the window because the poster provokes feelings of...',
+            model_answer:
+              '(Draw an arrow to the women at the window. Label: Provokes intense guilt and shame, implying that real men protect their families and that women want them to fight.)',
+          },
+          {
+            type: 'draw',
+            text: 'Task 2: Circle the departing soldiers in the distance and annotate what contrast is created between the domestic home and military duty.',
+            starter: 'The departing soldiers in the background create a visual contrast between...',
+            model_answer:
+              '(Circle the marching soldiers. Annotation: Contrasts the safety of the civilian home with the heroic duty of combat, making any man staying indoors look cowardly and unmanly.)',
+          },
+        ],
+        model_answer:
+          'Source A uses sophisticated emotional manipulation by weaponizing traditional Victorian gender roles. By placing women and a young child inside the domestic sphere gazing outward, the poster implies that a woman’s highest patriotic duty is to send her sons and husband to war ("Women of Britain Say GO!"). For young civilian men viewing the poster, it created intense social guilt and emasculation, suggesting that remaining at home while other men marched away was an act of shameful cowardice that disappointed their mothers, sisters, and wives.',
+      },
       flashcards: [
         {
-          question:
-            'What was the main reason the British military had to rely on volunteers in August 1914?',
-          options: [
-            'Britain had no conscription law and possessed a small professional army.',
-            'Parliament ran out of money to pay soldiers.',
-            'The King banned the use of regular soldiers.',
-          ],
-          answer: 1,
+          term: 'British Expeditionary Force',
+          definition:
+            'The small, highly trained professional British army of ~120,000 men sent to France in August 1914.',
         },
         {
-          question:
-            'Which local Hampshire regiment battalions were heavily recruited from the Stubbington and Portsmouth areas in 1914?',
-          options: [
-            'The Stubbington Guards.',
-            'The 14th and 15th Battalions of the Hampshire Regiment (The Pompey Pals).',
-            "Kitchener's Fareham Conscripts.",
-          ],
-          answer: 2,
+          term: 'Lord Kitchener',
+          definition:
+            'British Secretary of State for War who launched the iconic pointing-finger recruitment campaign.',
         },
         {
-          question:
-            'Which statement best explains why white feathers were such a powerful recruitment tool?',
-          options: [
-            'They weaponized social shame and humiliation within close-knit local communities.',
-            'They carried legal force and resulted in a heavy fine.',
-            'They were official government warnings that a man was about to be arrested.',
-          ],
-          answer: 0,
+          term: 'Pals Battalions',
+          definition:
+            'Units of friends, work colleagues, and sports teammates who enlisted and served together in 1914.',
         },
         {
-          question:
-            "Why do modern historians like Gary Sheffield argue that many working-class men joined the army for 'pragmatic' reasons?",
-          options: [
-            'They were promised free houses in London after the war ended.',
-            'The army offered guaranteed daily pay, regular meals, and clothing during a time of poverty.',
-            'They were tricked by romanticized stories of quick, glorious victories.',
-          ],
-          answer: 0,
+          term: 'White Feather',
+          definition:
+            'A symbol of cowardice handed to civilian men by women to pressure them into joining the army.',
         },
         {
-          question:
-            "According to historian Catriona Pennell, what was a key 'moral' reason for British enlistment in 1914?",
-          options: [
-            'The need to escape the boring, repetitive work of the textile mills.',
-            'The fear of being fired by an employer who demanded they join.',
-            'The desire to protect international law and civilization after Germany invaded neutral Belgium.',
-          ],
-          answer: 1,
+          term: 'Pragmatism',
+          definition:
+            'Joining the army for practical economic benefits like regular wages, hot food, and boots.',
+        },
+        {
+          term: 'Jingoism',
+          definition:
+            'Aggressive, enthusiastic patriotism characterized by eagerness for military conflict.',
         },
       ],
-      narrative_blocks: [
-        {
-          title: 'The Spark & The Stampede',
-          text: "In the summer of 1914, Europe resembled a giant tinderbox waiting for a spark.\n\n<strong>The Arms Race and Imperial Rivalry</strong><br>\nTo understand why Europe was so tense by 1914, we must look at the intense military and imperial competition between the Great Powers. A massive naval arms race was triggered in 1906 when Britain launched the <em>HMS Dreadnought</em>. This revolutionary battleship was heavily armoured with steel 28 cm thick, carried a crew of 800 sailors, and possessed huge guns that could blow up enemy ships from 32 km away. This made all older ships instantly obsolete. A frantic race began: between 1906 and 1914, Britain built 29 Dreadnoughts while Germany built 17.<br><br>Tensions were further pushed to breaking point by imperial clashes in North Africa. During the Second Moroccan Crisis in 1911, Germany sent the gunboat <em>SMS Panther</em> to the port of Agadir to aggressively challenge French control of the region, deeply alarming the British navy.\n\n<br><br><strong>The July Days: The Countdown to War</strong><br>\nThe assassination of Archduke Franz Ferdinand on 28 June 1914 triggered a rapid chain reaction known as the 'July Days'. On 23 July, Austria-Hungary sent a strict list of demands to Serbia, including a demand to let Austrian officials run the assassination inquiry. When Serbia refused this demand to protect its independence, Austria-Hungary declared war on 28 July. The alliance system then activated like clockwork: Germany warned Russia not to intervene, and when Russia mobilised its army, Germany declared war on Russia on 1 August. On 3 August, Germany declared war on France, and on 4 August, Britain declared war on Germany after German troops invaded neutral Belgium.<br><br>When Great Britain declared war on Germany on August 4, 1914, the British military faced an immediate crisis. Unlike its European rivals, Britain did not have conscription. Its small professional army was vastly outnumbered. To build a massive fighting force from scratch, Secretary of State for War Lord Horatio Kitchener launched the most famous recruitment campaign in British history. By the end of September 1914, over 750,000 British men had volunteered.",
-          tasks: [
-            {
-              type: 'short_answer',
-              text: "What was the 'spark' that triggered the outbreak of the First World War in 1914?",
-              model_answer:
-                'The assassination of Archduke Franz Ferdinand in Sarajevo on June 28, 1914.',
-            },
-            {
-              type: 'short_answer',
-              text: 'Why did Great Britain desperately need volunteers to fight when war was declared?',
-              model_answer:
-                'Britain did not have a conscription law, meaning its regular professional army was too small to fight a massive continental war.',
-            },
-          ],
-          image: '/images/gw_alliance_map.png',
-          image_alt:
-            'Source A: A map of the European Alliance System in 1914, dividing the continent into two heavily armed camps: the Triple Entente (Britain, France, Russia) and the Triple Alliance (Germany, Austria-Hungary, Italy). These mutual defense treaties acted as tripwires, ensuring any local conflict would drag all of Europe into war.',
-          image_caption:
-            'Source A: A map of the European Alliance System in 1914, dividing the continent into two heavily armed camps: the Triple Entente (Britain, France, Russia) and the Triple Alliance (Germany, Austria-Hungary, Italy). These mutual defense treaties acted as tripwires, ensuring any local conflict would drag all of Europe into war.',
-        },
-        {
-          title: 'Local History: The Pompey Pals',
-          text: 'To encourage recruitment, the government promised that friends, sports teammates, and work colleagues could enlist and fight side-by-side in "Pals Battalions." <div class="local-history-spotlight"><strong>Local History: The Pompey Pals</strong><br>For men living in Stubbington, Fareham, and Portsmouth, the call to arms was answered locally with overwhelming enthusiasm. In August 1914, the Portsmouth Citizens Patriotic Recruiting Committee formed the 14th and 15th Battalions of the Hampshire Regiment, famously known as the "Pompey Pals". Men who had grown up on the same streets, worked in the same dockyards, and supported the same football teams now trained together, sharing tents and rations before crossing the Channel to France.<br><br>Tragically, the fatal flaw of the Pals Battalions was that industrialized slaughter could wipe out the male population of entire streets in a single afternoon. At the Battle of the Somme on September 3, 1916, 587 men from the 1st Pompey Pals went "over the top" near the River Ancre. Facing heavily fortified German machine guns, 457 of them became casualties (killed, wounded, or missing) in a single day. The devastating news arrived in Portsmouth via telegraph, shattering local families and leaving a deep, enduring scar on the community.</div>',
-          tasks: [
-            {
-              type: 'short_answer',
-              text: "Who were the 'Pompey Pals'?",
-              model_answer:
-                'The 14th and 15th Battalions of the Hampshire Regiment, made up of men from Portsmouth, Fareham, Stubbington, and surrounding areas who volunteered to fight together in August 1914.',
-            },
-            {
-              type: 'short_answer',
-              text: 'What happened to the 1st Pompey Pals on September 3, 1916?',
-              model_answer:
-                'During the Battle of the Somme, 587 men from the battalion went over the top, and 457 became casualties, devastating the local community.',
-            },
-          ],
-          image: '/images/gw_gavrilo_princip.jpg',
-          image_alt:
-            "Source B: A photograph of Gavrilo Princip, the 19-year-old Serbian nationalist and member of the Black Hand secret society. On June 28, 1914, his assassination of Archduke Franz Ferdinand in Sarajevo provided the 'spark' that ignited the First World War.",
-          image_caption:
-            "Source B: A photograph of Gavrilo Princip, the 19-year-old Serbian nationalist and member of the Black Hand secret society. On June 28, 1914, his assassination of Archduke Franz Ferdinand in Sarajevo provided the 'spark' that ignited the First World War.",
-        },
-        {
-          title: 'Source Spotlight: Propaganda & Peer Pressure',
-          text: "The British government needed millions of men, and they used every psychological trick available to get them. <br><br><strong>'Women of Britain Say GO!' Poster (1915)</strong><br>This famous propaganda poster featured women and children looking out of a window as soldiers marched away. It was designed to weaponize guilt and masculinity, implying that real men protected women and children, and that women wanted their men to fight.<br><br><strong>The White Feather Campaign</strong><br>If official propaganda didn't work, social peer pressure often did. Admiral Charles Fitzgerald founded the 'Order of the White Feather' in 1914. He encouraged women to hand out white feathers—a traditional symbol of cowardice—to any young man seen out of uniform in public. This weaponized social shame. Many teenage boys, terrified of being humiliated in front of their friends or girlfriends, lied about their age to escape the shame, joining the army at just 15 or 16 years old.",
-          tasks: [
-            {
-              text: 'Describe one feature of the European Alliance System in 1914. (2 marks)',
-              model_answer:
-                'One feature of the European Alliance System was that it split Europe into two rival armed camps. For example, the Triple Entente allied Britain, France, and Russia against the Triple Alliance of Germany, Austria-Hungary, and Italy, meaning any small conflict could pull all major powers into war.',
-            },
-            {
-              question:
-                'Study Source C (the "Women of Britain Say GO!" poster). How does this piece of propaganda attempt to emotionally manipulate young men into volunteering?',
-              model_answer:
-                'The poster attempts to manipulate men by implying that their mothers, sisters, and wives expected them to fight. It leverages traditional concepts of masculinity and intense peer pressure, suggesting that staying at home while women watch them leave would be deeply shameful.',
-            },
-          ],
-          image: '/images/gw_women_say_go.jpg',
-          image_alt:
-            "Source C: The famous 'Women of Britain Say GO!' propaganda poster, published in 1915. It emotionally manipulated men into volunteering by implying that their mothers, sisters, and wives expected them to fight, leveraging peer pressure and traditional masculinity.",
-          image_caption:
-            "Source C: The famous 'Women of Britain Say GO!' propaganda poster, published in 1915. It emotionally manipulated men into volunteering by implying that their mothers, sisters, and wives expected them to fight, leveraging peer pressure and traditional masculinity.",
-        },
-        {
-          title: 'Poetry as Propaganda: Jessie Pope',
-          text: "Propaganda wasn't just found on posters; it was printed in popular newspapers in the form of jingoistic poetry. <strong>Jessie Pope</strong> was one of the most famous pro-war poets of 1914. Her poem <em>'Who's for the Game?'</em> was specifically written to pressure young men into enlisting by comparing the war to a friendly game of rugby.<br><br><blockquote><em>Who's for the game, the biggest that's played,<br>The red crashing game of a fight?<br>Who'll grip and tackle the job unafraid?<br>And who thinks he'd rather sit tight?...<br>Come along, lads—But you'll come on all right—<br>For there's only one course to pursue,<br>Your country is up to her neck in a fight,<br>And she's looking and calling for you.</em></blockquote><br>Pope's poetry weaponized masculinity, essentially calling anyone who didn't enlist a coward who 'thought he'd rather sit tight'. However, this romanticised view of war was later fiercely criticized by frontline soldiers and famous war poets like Wilfred Owen, who experienced the true, unglamorous horror of the trenches.",
-          image: '/images/gw_jessie_pope.jpg',
-          image_alt:
-            'Source D: A photograph of Jessie Pope, a popular pro-war poet and journalist whose aggressively patriotic verses shamed young men into enlisting. Her simplistic, jingoistic poetry was later fiercely criticized by frontline soldiers like Wilfred Owen.',
-          tasks: [
-            {
-              text: "How does Jessie Pope use the metaphor of a 'game' to manipulate young men into joining the army? What reality is she deliberately hiding?",
-              model_answer:
-                "Pope compares war to a 'red crashing game' (like rugby) to make it sound exciting, physical, and like a team sport. She manipulates young men by implying that joining the army is just playing a fun game with their 'lads'. She deliberately hides the horrific reality of industrialized slaughter, machine guns, and death, because if she told the truth, nobody would volunteer.",
-            },
-            {
-              question:
-                'Study Source D (the photograph of Jessie Pope). Why might frontline soldiers, such as Wilfred Owen, have fiercely criticized the patriotic poetry produced by writers like Pope?',
-              model_answer:
-                'Frontline soldiers criticized writers like Jessie Pope because her aggressive, jingoistic poetry promoted romantic illusions of war. To soldiers suffering the horrific, gritty realities of trench warfare, her simplistic verses felt deeply insulting and disconnected from the true trauma they were enduring.',
-            },
-          ],
-          image_caption:
-            'Source D: A photograph of Jessie Pope, a popular pro-war poet and journalist whose aggressively patriotic verses shamed young men into enlisting. Her simplistic, jingoistic poetry was later fiercely criticized by frontline soldiers like Wilfred Owen.',
-        },
-        {
-          title: 'Historical Interpretations: Why did they go?',
-          text: '<ul><li><strong>The Traditional View:</strong> For decades, the popular narrative suggested these young men were simply naive. It was argued they were tricked by aggressive propaganda posters, bullied by women handing out white feathers (symbols of cowardice), or were simply seeking a cheap adventure to escape boring factory life, believing the war would be "over by Christmas."</li><li><strong>The Revisionist View (Modern Historians):</strong> Historians like Catriona Pennell and Gary Sheffield challenge this "gullible volunteer" myth. Pennell argues that volunteers were not blindly enthusiastic; they made rational choices driven by genuine moral outrage over Germany\'s invasion of "Brave Little Belgium" and believed they were defending civilization. Sheffield highlights economic pragmatism: for working-class men, the army offered guaranteed daily pay (a shilling a day), regular meals, and a warm coat during a time of economic hardship.</li></ul>',
-          tasks: [
-            {
-              type: 'short_answer',
-              text: 'Study Source C and Source D. Which method of recruitment do you think was more effective in convincing a 16-year-old boy to lie about his age and enlist: the official government poster, or the threat of a white feather? Explain your reasoning.',
-              model_answer:
-                'The white feather was likely more effective because it weaponized direct, personal social shame. While the poster appealed to a sense of national duty, a 16-year-old boy would be terrified of being humiliated in public by women in his own community, making the peer pressure impossible to ignore.',
-            },
-            {
-              type: 'short_answer',
-              text: 'Categorize the following reasons for enlistment into "Push Factors" (negative things driving them away from home) and "Pull Factors" (positive things attracting them to the army): <em>The threat of receiving a white feather, the promise of a shilling a day, grinding poverty at home, defending \'Brave Little Belgium\', government propaganda.</em>',
-              model_answer:
-                'Push Factors = Threat of a white feather, grinding poverty at home.<br><br>Pull Factors = A shilling a day, defending Belgium, government propaganda.',
-            },
-            {
-              type: 'short_answer',
-              text: "How does historian Catriona Pennell's view of WWI volunteers differ from the traditional view?",
-              model_answer:
-                'While the traditional view argues men were naive and tricked by propaganda, Pennell argues they were rational and joined out of genuine moral duty and outrage over the German invasion of Belgium.',
-            },
-            {
-              type: 'short_answer',
-              text: 'Explain what historian Gary Sheffield means when he suggests volunteers were motivated by "economic pragmatism."',
-              model_answer:
-                "Sheffield means that working-class men weren't just looking for adventure; they practically needed the guaranteed food, clothing, and daily pay the army provided.",
-            },
-          ],
-        },
-        {
-          title: 'Pair & Share Activity',
-          text: '',
-          tasks: [
-            {
-              type: 'think_pair_share',
-              question: 'Why were young men so eager to enlist in 1914?',
-            },
-          ],
-        },
-        {
-          title: 'Consolidation Task',
-          tasks: [
-            {
-              type: 'extended_writing',
-              question:
-                'Explain why so many young British men eagerly volunteered for the army in 1914.',
-              hints: [
-                'Sentence Starter: Many young men volunteered because they were influenced by government propaganda...',
-                'Sentence Starter: For example, posters like Lord Kitchener\'s "Your Country Needs You" used...',
-                'Sentence Starter: Furthermore, societal pressure from women, such as the White Feather campaign, resulted in...',
-              ],
-              scaffolding:
-                'Structure your answer using the IDEA framework:\n- **Identify:** State your main point clearly.\n- **Describe:** Give historical evidence and facts.\n- **Explain:** Show how the evidence supports your point.\n- **Analyse:** Link back to the question and assess its importance.',
-            },
-          ],
-          text: '<h3>Consolidation Task</h3>',
-        },
-      ],
-      quiz: [
-        {
-          q: 'What was the name of the revolutionary British battleship launched in 1906 that sparked a naval arms race?',
-          a: 'HMS Dreadnought',
-          options: ['RMS Lusitania', 'HMS Victory', 'HMS Dreadnought', 'SMS Panther'],
-        },
-        {
-          q: 'Which Serbian nationalist group assassinated Archduke Franz Ferdinand in Sarajevo?',
-          a: 'The Black Hand',
-          options: ['The Red Baron', 'The Black Hand', 'The White Rose', 'The Balkan Brotherhood'],
-        },
-        {
-          q: 'Which European empire declared war on Serbia first during the July Days?',
-          a: 'Austria-Hungary',
-          options: ['Germany', 'Russia', 'Great Britain', 'Austria-Hungary'],
-        },
-        {
-          q: 'Who was the British Secretary of State for War who launched a massive recruitment campaign in 1914?',
-          a: 'Lord Horatio Kitchener',
-          options: [
-            'David Lloyd George',
-            'Douglas Haig',
-            'Lord Horatio Kitchener',
-            'Winston Churchill',
-          ],
-        },
-        {
-          q: 'What was the nickname given to battalions made up of friends, colleagues, and neighbors who enlisted together?',
-          a: 'Pals Battalions',
-          options: ['Pals Battalions', 'Buddy Brigades', 'Comrade Companies', 'Mates Regiments'],
-        },
-      ],
+      pair_share: {
+        prompt:
+          'Look at the three main reasons young men enlisted in 1914: patriotic adventure, peer pressure/guilt, and economic survival. Which factor do you think was the most influential for an ordinary working-class teenager?',
+        think: 'Rank the three factors from most to least influential in your notes.',
+        pair: 'Compare your rankings with your partner and explain your #1 choice.',
+        share: 'Be prepared to justify your top factor to the class using historical evidence.',
+      },
+      historians_corner: {
+        title: 'The Myth of the Gullible Volunteer: Pennell vs The Traditional View',
+        text: 'For decades, popular history portrayed the volunteers of 1914 as naive simpletons who were tricked by lying propaganda posters and jingoistic poetry into throwing their lives away. However, modern revisionist historian Catriona Pennell (A Kingdom United, 2012) argues that British volunteers were rational actors who made sober decisions based on genuine moral outrage over Germany’s invasion of Belgium. Alongside this, military historian Gary Sheffield demonstrates that millions enlisted out of economic pragmatism, seeking stable wages, clothing, and food during a time of widespread poverty.',
+        stretch_question:
+          'Does the evidence of the "Pals Battalions" support the traditional view of naive volunteers, or the revisionist view of rational community solidarity?',
+        stretch_model:
+          'The Pals Battalions support both interpretations. On one hand, volunteers were genuinely naive about the destructive nature of industrial artillery and machine guns, expecting a glorious adventure that would be over by Christmas. On the other hand, Pennell and Sheffield show that joining a Pals Battalion was a rational act of communal solidarity: men trusted their friends, wanted to support their local community, and secured reliable military pay and separation allowances for their families.',
+      },
+      learning_objective:
+        'To understand why millions of British men voluntarily enlisted in 1914, balancing state propaganda and social coercion against genuine moral conviction and economic pragmatism.',
+      teacher_notes: {
+        primer:
+          'This lesson opens the second Great War unit by examining the massive volunteer mobilization of 1914. Students must move beyond the simplistic myth that men were merely "tricked" by propaganda posters. Guide pupils to see the interplay of four distinct drivers: the imperial volunteer crisis (no conscription), the psychological power of Pals Battalions, social coercion (White Feathers and Jessie Pope), and working-class economic pragmatism.',
+        objectives: [
+          {
+            objective:
+              "Explain how the BEF's small size compelled Britain to rely on voluntary recruitment and Lord Kitchener’s New Armies.",
+            primer:
+              'Guide pupils through paragraphs [1.1] to [1.3] and the causal domino task. Emphasize that Britain was the only major European power without conscription in August 1914, making voluntary persuasion an existential national necessity.',
+            question:
+              'If Britain had possessed a compulsory conscription law in August 1914 like Germany and France, would the government have needed to create the Pals Battalions?',
+          },
+          {
+            objective:
+              'Analyze how the "Pals Battalions" mobilized local communities like the Pompey Pals, and evaluate their tragic vulnerability to industrial warfare.',
+            primer:
+              'Focus on paragraphs [2.1] to [2.3] and the local history of the 14th & 15th Hampshires. Contrast the communal exhilaration of enlisting with friends against the catastrophic reality of 3 September 1916 at the Somme (457 casualties in hours).',
+            question:
+              'Why was the very feature that made Pals Battalions so successful in 1914—local concentration—the exact reason they caused such devastation in 1916?',
+          },
+          {
+            objective:
+              'Evaluate the historiographical debate between traditional "naive victim" interpretations and revisionist arguments on moral duty (Pennell) and economic pragmatism (Sheffield).',
+            primer:
+              'Direct pupils to paragraphs [3.1] to [3.3] and [4.1] to [4.3]. Have them interrogate Jessie Pope’s sports metaphor (Source B) and complete the push/pull ledger audit before tackling the 12-mark essay.',
+            question:
+              'Was a volunteer in August 1914 acting primarily out of moral patriotism, economic calculation, or fear of public shame?',
+          },
+        ],
+        source_context:
+          'Published in 1915 by the Parliamentary Recruiting Committee, Source A represents the weaponization of domesticity. Rather than depicting military glory or battlefields, it frames the decision to fight inside the front room of a home, leveraging female expectation to compel male enlistment. **Hinge Question:** Why did the British government believe that emotional blackmail from wives and mothers would be more persuasive to a working-class man than an appeal to imperial glory?',
+      },
+      vocab_cloze_text:
+        'In August 1914, Britain entered the conflict with a small professional army known as the [British Expeditionary Force]. To meet the demand for millions of soldiers, War Secretary [Lord Kitchener] launched an unprecedented recruitment drive. Enthusiastic [Jingoism] swept the nation as entire towns formed [Pals Battalions] to fight side-by-side. Behind the patriotic fanfare, however, civilian groups weaponized social shame by handing out the [White Feather] to men out of uniform, while working-class recruits often volunteered out of economic [Pragmatism] to escape grinding factory poverty.',
       video: [
-        {
-          type: 'era',
-          url: 'https://era.org.uk/streaming-service-resource/wwi-a-z-a-is-for-archduke-franz-ferdinand-bbc-two/',
-          title: 'A is for Archduke Franz Ferdinand | WWI A-Z',
-          duration: '2 mins 30 secs',
-          viewing_task:
-            'Watch this quick summary and note down exactly how the assassination in Sarajevo triggered the outbreak of war.',
-          model_answer:
-            'The assassination of Archduke Franz Ferdinand by Gavrilo Princip caused Austria-Hungary to declare war on Serbia, which dragged in Russia, Germany, and eventually Britain due to the alliance system.',
-        },
         {
           type: 'era',
           url: 'https://era.org.uk/streaming-service-resource/wwi-a-z-y-is-for-your-country-needs-you-bbc-two/',
           title: 'Y is for Your Country Needs You | WWI A-Z',
           duration: '3 mins',
           viewing_task:
-            "How was Lord Kitchener's famous poster used to drum up initial excitement for the war?",
+            'Watch this clip explaining Lord Kitchener’s recruitment campaign. Note down how his image created direct personal pressure on young men.',
           model_answer:
-            'The poster used direct eye contact and a pointing finger to make young men feel personally responsible and pressured into joining the army, making them feel it was their patriotic duty.',
+            'The poster used direct eye contact and a pointing finger to break down crowd anonymity, making individual men feel personally singled out and morally obliged to enlist.',
         },
         {
           type: 'era',
@@ -386,13 +319,283 @@ export default {
           title: 'B is for Battalions | WWI A-Z',
           duration: '3 mins',
           viewing_task:
-            "Explain what a 'Pals Battalion' was and why it was an effective recruitment tactic.",
+            'Explain what a "Pals Battalion" was and why it proved so effective in driving recruitment in 1914.',
           model_answer:
-            "A Pals Battalion allowed groups of friends, neighbors, and workmates to join up and serve together. It was effective because men didn't want to be left behind while all their friends went off to fight.",
+            'Pals Battalions promised that friends, colleagues, and neighbours could serve together. It eliminated the fear of isolation and leveraged peer group loyalty, meaning men enlisted to avoid being left behind by their mates.',
         },
       ],
-      vocab_cloze_text:
-        'In August 1914, enthusiastic [Jingoism] swept across Britain as young men rushed to enlist. Persuaded by persuasive [Propaganda] posters featuring [Lord Kitchener], entire communities joined [Pals Battalions] to fight alongside their friends. Many men volunteered out of [Pragmatism] to escape low factory wages rather than sheer bloodlust. However, catastrophic losses on the Western Front dried up voluntary recruitment, forcing the government to introduce mandatory [Conscription] in early 1916.',
+      narrative_blocks: [
+        {
+          title:
+            'Act 1: Context & Catalyst: The Rush to the Colours & Kitchener’s Call (August–September 1914)',
+          text: '<span class="para-ref">[1.1]</span> When Great Britain declared war on imperial Germany at 11:00 PM on 4 August 1914, the British military confronted an unprecedented strategic emergency. Unlike the great continental empires—Germany, France, and Russia—which maintained millions of conscripted reservists trained through compulsory military service, Britain had steadfastly preserved an anti-militarist tradition. The nation possessed only a tiny professional force of approximately 120,000 soldiers: the <strong>British Expeditionary Force (BEF)</strong>. Kaiser Wilhelm II famously disparaged this small force as a "contemptible little army". While British naval dominance commanded the oceans, the government possessed almost no army to deploy on the battlefields of Europe. As the German military swept through neutral Belgium under the Schlieffen Plan, Britain faced an existential dilemma: it had to build an army of millions entirely from voluntary recruits.<br><br><span class="para-ref">[1.2]</span> Appointed Secretary of State for War on 5 August, Field Marshal <strong>Lord Horatio Kitchener</strong> was the only military leader in London who saw through the popular illusion that the war would be "over by Christmas". Kitchener warned the Cabinet that the conflict would last at least three years, demand vast industrial mobilization, and require thirty new divisions of infantry. Bypassing traditional bureaucratic channels, Kitchener launched the most aggressive recruitment campaign in modern history. Alfred Leete’s iconic poster—featuring Kitchener’s stern features, piercing gaze, pointing finger, and the commanding slogan <em>"Your Country Needs You"</em>—was plastered across railway stations, factory gates, post offices, and town halls. The public response was an unprecedented patriotic stampede: within eight weeks, <strong>750,000 men enlisted</strong>; by late 1915, nearly 2.5 million British citizens had volunteered for "Kitchener’s New Armies".<br><br><span class="para-ref">[1.3]</span> What propelled millions of young men to rush to the recruitment offices? While patriotic enthusiasm and imperial pride were widespread, modern historians emphasize that enlistment was also driven by hard economic realities. In 1914, Britain was enduring a period of industrial stagnation without a welfare state. For young men trapped in low-paid, repetitive jobs in cotton mills, damp coal mines, or impoverished rural fields, the army represented an enticing escape. The army promised steady employment, regular pay (<strong>"the King’s Shilling"</strong>—1 shilling and 2 pence per day), three hot meals a day, sturdy leather boots, and warm clothing. Alongside this economic pragmatism was a powerful moral outrage: British newspapers were filled with sensationalized reports of the "Rape of Belgium", depicting German atrocities against innocent civilians. Hundreds of thousands of volunteers genuinely believed they were embarking on a righteous crusade to defend European democracy and international law against brutal militarism.',
+          tasks: [
+            {
+              type: 'causal_domino',
+              title:
+                'Causal Domino: From the BEF Crisis to the Volunteer Stampede (August–September 1914)',
+              text: 'The Recruitment Domino: Trace how Britain’s lack of a conscript army transformed into the largest voluntary mobilization in British history. Complete Step 4.',
+              instruction:
+                'Using paragraphs [1.1] to [1.3], trace the chain reaction from the outbreak of war to the rush to the recruiting offices, completing the missing causal explanation in Step 4.',
+              steps: [
+                {
+                  stage: 'Step 1: Vulnerability',
+                  year: '4 August 1914',
+                  title: 'The Contemptible Little Army',
+                  desc: 'Britain enters the war with only 120,000 professional soldiers (the BEF) and zero conscription.',
+                },
+                {
+                  stage: 'Step 2: Strategy',
+                  year: '5 August 1914',
+                  title: 'Kitchener’s Grand Prediction',
+                  desc: 'Lord Kitchener warns the war will last years and demands an army of millions built entirely from volunteers.',
+                },
+                {
+                  stage: 'Step 3: Mobilization',
+                  year: 'August 1914',
+                  title: 'The Propaganda Campaign',
+                  desc: 'Iconic pointing-finger posters and moral outrage over the invasion of Belgium trigger nationwide recruitment drives.',
+                },
+                {
+                  stage: 'Step 4: Stampede',
+                  year: 'September 1914',
+                  title: 'The Volunteer Rush',
+                  desc: 'Over 750,000 men enlist within eight weeks, motivated by patriotism, adventure, and economic pragmatism.',
+                  blank: true,
+                  prompt:
+                    'Explain why working-class young men viewed joining Kitchener’s army as both a moral duty and a practical economic opportunity:',
+                },
+              ],
+              model_answer:
+                'Working-class men saw enlistment as a moral duty to defend "Brave Little Belgium" against German aggression, but it was equally an act of economic pragmatism. In 1914, poverty and low wages were widespread; the army offered guaranteed daily pay, regular hot food, warm clothing, and separation allowances for dependents, providing security that factory or agricultural labour could not match.',
+            },
+          ],
+        },
+        {
+          title:
+            'Act 2: Escalation & Conflict: The Pals Battalions & The Tragedy of the Pompey Pals (1914–1916)',
+          text: '<span class="para-ref">[2.1]</span> By late August 1914, the initial rush of volunteers began to strain traditional military structures. To sustain enlistment, General Sir Henry Rawlinson proposed a revolutionary psychological idea: allowing men to enlist and serve side-by-side with their friends, work colleagues, and neighbours in specially designated <strong>"Pals Battalions"</strong>. Rawlinson recognized that young men who were terrified of joining an impersonal army would eagerly enlist if they were guaranteed they would never be separated from their mates. Across the country, towns, industries, and social clubs mobilized en masse: railway workers, stockbrokers, cricket teams, and church choirs signed up together. In London, city clerks formed the "Public Schools Battalion"; in Yorkshire, miners formed the "Accrington Pals"; and in Hampshire, local pride coalesced around the famous <strong>"Pompey Pals"</strong>.<br><br><span class="para-ref">[2.2]</span> For the men of Portsmouth, Fareham, and surrounding villages like Stubbington, the call was answered with fervent enthusiasm. In August 1914, the Portsmouth Citizens Patriotic Recruiting Committee formed the 14th and 15th (Service) Battalions of the Hampshire Regiment—the Pompey Pals. Dockyard shipwrights, clerks from Commercial Road, and farm labourers from the Meon Valley queued for hours outside the Portsmouth Town Hall. They were issued temporary blue uniforms, drilled on Southsea Common, and cheered by tens of thousands as they paraded through the streets before departing for training camps in the New Forest. The camaraderie was intoxicating: serving alongside childhood friends transformed military service from an individual ordeal into an exhilarating community crusade.<br><br><span class="para-ref">[2.3]</span> However, the Pals Battalion concept contained a fatal, tragic flaw that military strategists completely failed to anticipate: by concentrating the young male population of specific streets, villages, and workplaces into single fighting units, the mechanized violence of modern industrial warfare could wipe out an entire community in an afternoon. On <strong>3 September 1916</strong>, during the Battle of the Somme, the 1st Pompey Pals (14th Hampshires) were ordered to assault heavily fortified German trenches at Hamel near the River Ancre. Facing interlocking German machine-gun nests and devastating artillery barrages, 587 Pompey Pals advanced across No Man’s Land. Within hours, <strong>457 men became casualties</strong>—killed, wounded, or missing. In a single day, Portsmouth and surrounding communities lost an entire generation of young men. When telegrams arrived, whole streets were plunged into mourning, shuttering shopfronts and shattering families forever.',
+          tasks: [
+            {
+              type: 'significance_diamond',
+              title: 'Priority Diamond: Ranking the Primary Drivers of British Enlistment in 1914',
+              text: 'Priority Diamond: Rank the four pivotal factors driving voluntary recruitment from most decisive (Top Driver #1) to least decisive (#4) for a working-class teenager in 1914.',
+              instruction:
+                'Using paragraphs [1.3], [2.1], and [2.2], write factor letters (A–D) into the diamond hierarchy, then justify your top choice.',
+              factors: [
+                'Factor A: Pals Battalion Camaraderie — The promise to train, live, and fight side-by-side with mates.',
+                'Factor B: Economic Pragmatism — Guaranteed wages ("the King’s Shilling"), hot food, and boots escaping poverty.',
+                'Factor C: Moral Outrage over Belgium — Defending international law and outrage over reported German atrocities.',
+                'Factor D: State Propaganda & Jingoism — Lord Kitchener’s pointing finger and popular newspaper excitement.',
+              ],
+              justification_prompt:
+                'Explain why your #1 factor was the most powerful motivation in persuading young men to risk their lives:',
+              starter:
+                'Factor [   ] was the most decisive driver of enlistment because for a young working-class man...',
+              model_answer:
+                'Factor A (Pals Battalion Camaraderie) was the most decisive driver because it converted abstract patriotism into immediate, unavoidable social pressure. While propaganda posters appealed to duty, the decision of a young man’s brothers, workmates, and sports teammates to enlist together created an overwhelming fear of missing out and social cowardice. Men volunteered because staying at home while all their friends marched off together was socially impossible in close-knit communities.',
+            },
+          ],
+        },
+        {
+          title:
+            'Act 3: Primary Sources & Forensic Evidence: Propaganda, The White Feather & Jessie Pope (1914–1915)',
+          text: '<span class="para-ref">[3.1]</span> As the horrific casualty reports from the Western Front mounted throughout 1915, the initial euphoric rush of volunteers began to falter. In response, the British government and civil society turned to aggressive psychological manipulation to coerce remaining eligible men into uniform. In 1915, the Parliamentary Recruiting Committee published one of the most famous and manipulative propaganda posters of the war: <strong>"Women of Britain Say GO!"</strong> (Source A). The poster depicted two fashionable women and a small child standing by a window, watching a column of soldiers marching off to the front. The visual design was a masterclass in domestic guilt: it weaponized traditional Victorian gender roles, implying that real women expected their husbands, sons, and brothers to fight, and that any man remaining at home was a selfish coward failing his duty as a masculine protector.<br><br><span class="para-ref">[3.2]</span> Where official posters used subtle psychological guilt, civilian vigilante groups deployed ruthless public humiliation. In August 1914, retired Admiral Charles Fitzgerald founded the <strong>Order of the White Feather</strong> in Folkestone (Source C). Fitzgerald organized groups of young women to patrol streets, promenades, restaurants, and omnibuses, handing out white feathers—the universal symbol of cowardice—to any man of military age not wearing uniform. The campaign inflicted devastating emotional trauma: young teenagers under eighteen, men with hidden physical disabilities, workers in reserved wartime industries (like dockyards and railways), and soldiers home on convalescent leave after being wounded were publicly taunted and humiliated. Desperate to escape this unbearable social stigma, thousands of boys as young as fifteen lied about their age to enlist.<br><br><span class="para-ref">[3.3]</span> This social hysteria was reinforced by popular culture, particularly jingoistic poetry published in national newspapers. Writers like <strong>Jessie Pope</strong> produced cheerful, rhyming verses that trivialized the horrors of industrialized combat into a schoolyard rugby match (Source B). In poems like <em>"Who’s for the Game?"</em> (1915), Pope compared trench slaughter to athletic sport: <em>"Who’ll grip and tackle the job unafraid? / And who thinks he’d rather sit tight?"</em> Pope’s shallow rhetoric deliberately concealed the horrific reality of gangrene, poison gas, machine guns, and artillery shrapnel. To soldiers enduring the filthy, shell-blasted trenches of France, civilian poetry like Pope’s was an insulting, murderous lie. Trench poet <strong>Wilfred Owen</strong> was so enraged by Pope’s verses that he originally dedicated his masterpiece <em>Dulce et Decorum Est</em> directly to her, branding her simplistic slogan—"It is sweet and fitting to die for one’s country"—as "the old Lie".',
+          source: {
+            type: 'written',
+            title: 'Source B: Jessie Pope, "Who’s for the Game?" (Daily Mail, London, 1915)',
+            shelfmark: 'BRITISH LIBRARY · NEWSPAPER ARCHIVE · DAILY MAIL COLLECTION 1915',
+            content:
+              '“Who’s for the game, the biggest that’s played,\nThe red crashing game of a fight?\nWho’ll grip and tackle the job unafraid?\nAnd who thinks he’d rather sit tight?...\nCome along, lads—\nFor there’s only one course to pursue,\nYour country is up to her neck in a fight,\nAnd she’s looking and calling for you.”',
+            citation: 'Jessie Pope, War Poems, published by Grant Richards Ltd, London, 1915.',
+          },
+          archival_source: {
+            title: 'Source B: Jessie Pope, "Who’s for the Game?" (Daily Mail, London, 1915)',
+            shelfmark: 'BRITISH LIBRARY · NEWSPAPER ARCHIVE · DAILY MAIL COLLECTION 1915',
+            text: '“Who’s for the game, the biggest that’s played,\nThe red crashing game of a fight?\nWho’ll grip and tackle the job unafraid?\nAnd who thinks he’d rather sit tight?...\nCome along, lads—\nFor there’s only one course to pursue,\nYour country is up to her neck in a fight,\nAnd she’s looking and calling for you.”',
+            citation: 'Jessie Pope, War Poems, published by Grant Richards Ltd, London, 1915.',
+          },
+          tasks: [
+            {
+              type: 'word_scalpel',
+              title: 'Forensic Scalpel: Jessie Pope’s Sporting Metaphor (1915)',
+              text: 'Forensic Scalpel: Interrogate Source B (Jessie Pope’s Poem). Extract the exact phrase where Pope reduces industrial war into an athletic rugby match.',
+              instruction:
+                'Use your analytical scalpel on Source B to extract the exact phrase proving Pope framed military combat as a sporting game, then explain why frontline soldiers like Wilfred Owen were enraged by it.',
+              source_excerpt:
+                'Who’s for the game, the biggest that’s played, / The red crashing game of a fight? / Who’ll grip and tackle the job unafraid? / And who thinks he’d rather sit tight?',
+              model_quote: 'The red crashing game of a fight',
+              justification_prompt:
+                'Why did comparing trench combat to a "red crashing game" make Pope’s poetry such effective recruitment propaganda while horrifying soldiers who actually fought?',
+              starter:
+                'By comparing warfare to a "red crashing game", Pope made combat sound like a noble sport because...',
+              model_answer:
+                'By describing combat as a "red crashing game", Pope borrowed the familiar, physical language of rugby and football, making war sound exciting, honourable, and athletic rather than deadly. She deliberately concealed the horrific reality of machine-gun slaughter, barbed wire, and poison gas. Frontline soldiers like Wilfred Owen were enraged because her cheerful civilian verses insulted their agony and encouraged thousands of naive young boys to volunteer for mechanized butchery.',
+            },
+            {
+              type: 'ledger_audit',
+              title: 'Forensic Ledger: Push Factors vs Pull Factors for Enlistment (1914–1915)',
+              text: 'Forensic Ledger: Complete the balance sheet below auditing the negative domestic pressures driving men away from home against the positive incentives attracting them into the army.',
+              instruction:
+                'Using paragraphs [1.3], [2.1], [3.1], and [3.2], audit the balance sheet below comparing Push Factors against Pull Factors.',
+              col1: {
+                title: 'Push Factors (Domestic Pressure & Fear)',
+                hints: [
+                  '• Threat of the White Feather campaign and public shaming',
+                  '• Moral blackmail from posters like "Women of Britain Say GO!"',
+                  '• Grinding pre-war industrial poverty, low wages, and unemployment',
+                ],
+              },
+              col2: {
+                title: 'Pull Factors (Patriotism & Opportunity)',
+                hints: [
+                  '• Camaraderie and excitement of joining Pals Battalions with friends',
+                  '• Moral outrage over the invasion of neutral Belgium and defence of empire',
+                  '• Guaranteed daily pay ("the King’s Shilling"), hot food, boots, and clothing',
+                ],
+              },
+              rows: 3,
+              model_answer:
+                'Enlistment in 1914 was driven by a powerful balance of negative push factors and positive pull factors. Push factors included the intense fear of social disgrace from white feathers, emotional guilt from posters like "Women of Britain Say GO!", and the grinding misery of factory poverty. In contrast, pull factors included the intoxicating camaraderie of joining Pals Battalions with friends, moral conviction to avenge Belgium, and the tangible economic benefit of guaranteed pay, hot food, and warm uniforms.',
+            },
+          ],
+        },
+        {
+          title:
+            'Act 4: The Historical Verdict: Were British Volunteers Naive Victims or Rational Patriots?',
+          text: '<span class="para-ref">[4.1]</span> For over a century, the popular perception of the 1914 volunteers has been defined by the tragic myth of the "naive victim". Popularized in 1960s plays like <em>Oh! What a Lovely War</em> and television comedies like <em>Blackadder Goes Forth</em>, this traditional interpretation contends that an entire generation of innocent, impressionable young men was brainwashed by jingoistic propaganda, duped by war poets like Jessie Pope, or bullied by white feathers into marching to their deaths. According to this view, the volunteers were naive schoolboys who treated war as a summer picnic that would be "over by Christmas", completely blind to the industrialized butcher’s shop that awaited them in France.<br><br><span class="para-ref">[4.2]</span> In recent decades, however, modern revisionist historians have fundamentally challenged this simplistic caricature. In <em>A Kingdom United</em> (2012), historian <strong>Catriona Pennell</strong> examined thousands of personal diaries, regional letters, and provincial newspapers from 1914. Pennell proves that British citizens were neither wildly enthusiastic nor blindly foolish. Volunteers were fully aware that war was dangerous and destructive; they enlisted because of a profound, rational moral conviction. The British public felt genuine outrage over Germany’s violation of Belgian neutrality and the documented atrocities committed against Belgian civilians. Men joined not out of bloodlust, but out of a sober sense of duty to defend international law, uphold British honour, and protect small European democracies from Prussian autocracy.<br><br><span class="para-ref">[4.3]</span> Furthermore, military historian <strong>Gary Sheffield</strong> demonstrates that enlistment was underpinned by <strong>economic pragmatism</strong>. In the hardscrabble working-class districts of northern England and Hampshire, joining the army was a practical financial decision. The army offered guaranteed wages, hot food, and family separation allowances that provided greater economic security than casual labour in depression-hit civilian industries. Ultimately, the volunteers of 1914 were neither brainwashed dupes nor heroic cartoon cutouts: they were complex, rational human beings responding to an extraordinary convergence of moral principle, communal solidarity, economic necessity, and societal pressure.',
+          tasks: [
+            {
+              type: 'extended_writing',
+              question:
+                'Explain why so many young British men volunteered to join the armed forces in 1914. (12 marks)',
+              scaffolding: {
+                structure_strip: [
+                  'PEE Paragraph 1 (Pals Battalions & Peer Solidarity): Explain how the creation of Pals Battalions (such as the Pompey Pals) turned enlistment into a communal movement, where men joined to stay with friends [2.1, 2.2].',
+                  'PEE Paragraph 2 (Moral Outrage & Belgian Neutrality): Explain how the German invasion of neutral Belgium generated genuine moral outrage and a sense of duty to protect small nations (Pennell’s thesis) [1.3, 4.2].',
+                  'PEE Paragraph 3 (Economic Pragmatism & Poverty): Explain how pre-war poverty and the guarantee of the King’s Shilling, regular meals, and boots made enlistment a practical financial choice (Sheffield’s thesis) [1.3, 4.3].',
+                  'PEE Paragraph 4 (Psychological Coercion & White Feathers): Explain how propaganda posters like "Women of Britain Say GO!" (Source A) and the White Feather campaign weaponized guilt and shame to force men into uniform [3.1, 3.2].',
+                  'Historiographical Conclusion: Evaluate whether volunteers were naive victims tricked by propaganda or rational citizens balancing duty and economic reality [4.1, 4.3].',
+                ],
+                connective_bank: [
+                  'Initially, the primary engine driving voluntary recruitment was the creation of "Pals Battalions", which...',
+                  'As demonstrated in paragraph [2.1], military planners recognized that young men were eager to enlist if...',
+                  'Furthermore, modern historians like Catriona Pennell emphasize that enlistment was driven by genuine moral duty...',
+                  'This was reinforced by graphic reports of German atrocities in Belgium, which convinced volunteers that...',
+                  'Equally decisive, as Gary Sheffield highlights, was the factor of economic pragmatism, where...',
+                  'Conversely, voluntary enlistment was also compelled by intense social coercion and domestic shame...',
+                  'For example, posters like "Women of Britain Say GO!" (Source A) and the White Feather campaign weaponized...',
+                  'Ultimately, while traditional myths portray volunteers as naive dupes, historical evidence reveals that...',
+                ],
+              },
+              model_answer:
+                'In August 1914, Great Britain witnessed an extraordinary voluntary mobilization, with over 750,000 men enlisting within eight weeks and nearly 2.5 million volunteering by late 1915 [1.2]. This massive stampede to the recruiting offices was driven by an interlocking combination of local peer camaraderie, moral outrage, economic pragmatism, and intense psychological coercion.\n\nFirst and foremost, recruitment was propelled by the brilliant psychological invention of "Pals Battalions" [2.1]. Conceived by General Sir Henry Rawlinson to overcome Britain’s lack of a conscript army [1.1], the War Office promised that workmates, sports teammates, and neighbours could enlist, train, and fight side-by-side. In Hampshire, the formation of the 14th and 15th Battalions of the Hampshire Regiment—the "Pompey Pals"—saw hundreds of dockyard apprentices, clerks, and farm labourers from Portsmouth, Fareham, and Stubbington volunteer collectively [2.2]. Enlisting beside lifelong friends transformed military service from an intimidating ordeal into an exciting communal adventure, creating overwhelming local peer momentum where refusing to join meant facing social exclusion.\n\nSecondly, modern revisionist historians like Catriona Pennell emphasize that enlistment was grounded in genuine moral conviction and civic duty [4.2]. The British public was deeply shocked by imperial Germany’s violation of Belgian neutrality under the 1839 Treaty of London. Newspaper reports of German atrocities—the "Rape of Belgium"—convinced hundreds of thousands of men that Britain had an inescapable moral obligation to defend small nations and uphold international law against Prussian autocracy. Rather than acting as naive simpletons, many volunteers made a conscious, principled decision to risk their lives for European freedom.\n\nFurthermore, military historian Gary Sheffield highlights the crucial role of "economic pragmatism" [1.3, 4.3]. In 1914, Britain lacked a modern welfare state, and millions of working-class families endured precarious poverty. For young men trapped in low-wage textile mills, coal pits, or agricultural labour, the army offered guaranteed daily pay ("the King’s Shilling"—1s 2d per day), three hot meals, sturdy leather boots, and warm woollen uniforms. For destitute families, government separation allowances provided a more reliable household income than casual civilian employment.\n\nFinally, voluntary enlistment was aggressively compelled by psychological coercion and public shame [3.1, 3.2]. Official propaganda, such as the Parliamentary Recruiting Committee’s "Women of Britain Say GO!" poster (Source A), ruthlessly weaponized Victorian gender roles, implying that men remaining in civilian clothes were cowards failing their duty as masculine protectors. This was reinforced by civilian vigilante groups like the Order of the White Feather, which publicly humiliated civilian-clothed men on street corners [3.2]. Terrified of being branded cowards by their families and neighbours, thousands of boys as young as fifteen lied about their age to enlist.\n\nIn conclusion, British voluntary enlistment in 1914 was not the result of naive ignorance alone, but the culmination of interlocking pressures [4.1, 4.3]. Communal loyalty via Pals Battalions, genuine moral indignation over Belgium, grinding economic hardship, and intense domestic peer pressure combined to turn Kitchener’s recruitment appeal into an irresistible national crusade.',
+            },
+          ],
+        },
+      ],
+      quiz: [
+        {
+          q: 'Approximately how many men made up the British Expeditionary Force (BEF) in August 1914?',
+          a: '120,000 men',
+          options: ['120,000 men', '1,500,000 men', '500,000 men', '25,000 men'],
+          explanation:
+            'Unlike European powers with millions of conscripts, Britain relied on a small, highly trained professional army of around 120,000 men known as the British Expeditionary Force (BEF).',
+        },
+        {
+          q: 'Who was appointed British Secretary of State for War on 5 August 1914?',
+          a: 'Lord Horatio Kitchener',
+          options: [
+            'David Lloyd George',
+            'Douglas Haig',
+            'Lord Horatio Kitchener',
+            'Winston Churchill',
+          ],
+          explanation:
+            'Field Marshal Lord Horatio Kitchener correctly predicted that the war would last years and demand millions of men, launching the famous "Your Country Needs You" recruitment drive.',
+        },
+        {
+          q: 'What was the nickname given to battalions of friends, neighbours, and workmates who enlisted together?',
+          a: 'Pals Battalions',
+          options: ['Pals Battalions', 'Buddy Brigades', 'Comrade Companies', 'Citizen Divisions'],
+          explanation:
+            'Conceived by General Henry Rawlinson, Pals Battalions allowed men from the same towns, clubs, or workplaces to serve together, driving massive voluntary enlistment.',
+        },
+        {
+          q: 'Which Hampshire regiment battalions were known locally as the "Pompey Pals"?',
+          a: 'The 14th and 15th Battalions',
+          options: [
+            'The 1st and 2nd Battalions',
+            'The 14th and 15th Battalions',
+            'The 8th and 9th Battalions',
+            'The Royal Stubbington Rifles',
+          ],
+          explanation:
+            'The 14th and 15th (Service) Battalions of the Hampshire Regiment were recruited locally from Portsmouth, Fareham, Stubbington, and surrounding areas in August 1914.',
+        },
+        {
+          q: 'What catastrophic casualty rate did the 1st Pompey Pals suffer at the Somme on 3 September 1916?',
+          a: '457 casualties out of 587 men',
+          options: [
+            '50 casualties out of 587 men',
+            '100 casualties out of 587 men',
+            '457 casualties out of 587 men',
+            'All 587 men were unharmed',
+          ],
+          explanation:
+            'Attacking fortified German positions at Hamel near the River Ancre, 457 of the 587 Pompey Pals became casualties within hours, devastating the local Portsmouth community.',
+        },
+        {
+          q: 'What symbol was handed out to civilian-clothed men by the Order of the White Feather?',
+          a: 'A white feather (symbolizing cowardice)',
+          options: [
+            'A white feather (symbolizing cowardice)',
+            'A red poppy',
+            'A black ribbon',
+            'A silver coin',
+          ],
+          explanation:
+            'Founded by Admiral Fitzgerald in 1914, the Order of the White Feather used young women to hand out white feathers to civilian men in public to shame them into enlisting.',
+        },
+        {
+          q: 'What popular pro-war poet compared the First World War to a game of rugby in "Who’s for the Game?"?',
+          a: 'Jessie Pope',
+          options: ['Wilfred Owen', 'Siegfried Sassoon', 'Jessie Pope', 'Rupert Brooke'],
+          explanation:
+            'Jessie Pope published cheerful patriotic verses in the Daily Mail framing industrialized warfare as a lighthearted athletic contest, which was fiercely condemned by frontline soldiers.',
+        },
+        {
+          q: 'Which famous war poet wrote "Dulce et Decorum Est" to attack Jessie Pope’s pro-war poetry?',
+          a: 'Wilfred Owen',
+          options: ['Wilfred Owen', 'John McCrae', 'Rudyard Kipling', 'Lord Kitchener'],
+          explanation:
+            'Wilfred Owen wrote "Dulce et Decorum Est" in response to Jessie Pope, describing a horrific gas attack and calling the idea that dying for one’s country is sweet "the old Lie".',
+        },
+        {
+          q: 'What does historian Gary Sheffield argue was a key "pragmatic" reason for working-class enlistment?',
+          a: 'Guaranteed pay ("the King’s Shilling"), food, boots, and clothing',
+          options: [
+            'A desire to travel to America',
+            'Guaranteed pay ("the King’s Shilling"), food, boots, and clothing',
+            'Free land given to every soldier',
+            'Fear of being sent to prison',
+          ],
+          explanation:
+            'Sheffield emphasizes that in an era of poverty and no welfare state, the army offered steady wages (1s 2d/day), hot meals, and clothing, making enlistment a rational financial choice.',
+        },
+        {
+          q: 'According to historian Catriona Pennell, what moral reason drove British enlistment in 1914?',
+          a: 'Outrage over the German invasion of neutral Belgium ("the Rape of Belgium")',
+          options: [
+            'A desire to conquer colonies in Africa',
+            'Outrage over the German invasion of neutral Belgium ("the Rape of Belgium")',
+            'Hatred of the French army',
+            'Boredom with cricket matches',
+          ],
+          explanation:
+            'Pennell demonstrates that British volunteers were motivated by genuine moral duty to defend international treaties and protect Belgian civilians from German aggression.',
+        },
+      ],
     },
     {
       id: 'lesson_2',
