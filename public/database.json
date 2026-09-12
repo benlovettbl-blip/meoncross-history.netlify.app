@@ -15891,21 +15891,6 @@
                   "provenance_clue": "Provenance Clue: Consider who Nicolò Barbaro was (a Venetian Christian merchant whose entire livelihood depended on Christian trade in Constantinople) and where he was during the siege (witnessing the traumatic collapse of the city first-hand). How would his religious prejudice and commercial terror shape his account?",
                   "question": "Study Source B. Why might a Venetian merchant like Nicolò Barbaro have had a biased and particularly panicked view of the Ottoman capture of Constantinople?",
                   "model_answer": "Nicolò Barbaro was a Venetian Christian merchant trapped inside Constantinople as it fell. His account would be heavily biased and panicked for three key reasons: First, as a devout Christian, he viewed the Muslim Ottomans as mortal religious enemies invading Christendom. Second, as a Venetian merchant, his wealth and trading privileges depended on Christian control of Constantinople—the Ottoman victory meant financial ruin through trade blockades and heavy taxes. Finally, witnessing violent urban combat and artillery bombardment first-hand naturally produced intense shock and emotional exaggeration in his diary."
-                },
-                {
-                  "type": "multiple_choice",
-                  "question": "Knowledge Check: The Ottoman Gatekeeper",
-                  "questions": [
-                    {
-                      "q": "Why was the Fall of Constantinople in 1453 catastrophic for merchants in Western Europe?",
-                      "options": [
-                        "The Ottomans took control of the Silk Road crossroads and blocked direct European trade with Asia",
-                        "It destroyed all European sailing ships in the Atlantic",
-                        "It ended the Renaissance across Italy",
-                        "It forced European kings to surrender their armies to the Pope"
-                      ]
-                    }
-                  ]
                 }
               ]
             },

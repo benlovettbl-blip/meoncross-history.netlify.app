@@ -2037,7 +2037,8 @@ allDirs.forEach((unitId) => {
                   _nbHtml += `<h4 style="margin-top: 0;">Q${globalQNum++} ${_t.cleanText}</h4>`;
                   if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
                   task.questions.forEach((q, qIdx) => {
-                    _nbHtml += `<p style="font-weight:bold; margin-bottom:5px;">${qIdx + 1}. ${q.q}</p><ul style="list-style-type:none; padding-left:10px; margin-top:0;">`;
+                    const qLabel = task.questions.length > 1 ? `${qIdx + 1}. ` : '';
+                    _nbHtml += `<p style="font-weight:bold; margin-bottom:5px;">${qLabel}${q.q}</p><ul style="list-style-type:none; padding-left:10px; margin-top:0;">`;
                     q.options.forEach((opt) => {
                       _nbHtml += `<li style="margin-bottom: 5px;"><input type="checkbox" style="margin-right:8px; position:relative; top:2px;">${opt}</li>`;
                     });
