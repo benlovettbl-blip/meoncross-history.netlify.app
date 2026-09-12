@@ -1646,35 +1646,100 @@ export function renderLesson(lesson) {
       }
 
       if (block.type === 'photo_slider') {
+        const sliderId = 'slider-' + Math.random().toString(36).substr(2, 9);
+        const hasSat = !!block.satellite_image;
         htmlNarrative += `
-            <div class="photo-slider-container" style="margin: 30px 0; background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-              <h3 style="margin-top: 0; color: #1e293b; font-family: 'Playfair Display', serif;"><i class="fa-solid fa-camera-rotate"></i> Then & Now</h3>
-              <div style="position: relative; width: 100%; max-width: 800px; margin: 0 auto; height: 400px; overflow: hidden; border-radius: 8px; border: 1px solid #e2e8f0; background: #e2e8f0;">
-                <!-- After (Bottom) Image -->
-                <img src="${getAssetUrl(block.after_image)}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none;" alt="${block.after_label || 'After'}">
+            <div class="photo-slider-container" id="${sliderId}-container" style="margin: 32px 0; background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 24px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+              <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 6px;">
+                <span class="archival-meta-tag" style="background: #e0e7ff; color: #3730a3; padding: 3px 10px; border-radius: 4px; font-weight: 700; font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppercase;">Ordnance Survey Cartography</span>
+              </div>
+              <h3 style="margin: 6px 0 10px 0; color: #0f172a; font-family: 'Playfair Display', Georgia, serif; font-size: 1.45rem;">
+                <i class="fa-solid fa-map-location-dot" style="margin-right: 8px; color: #1e3a8a;"></i> ${block.title || 'Then & Now: Map Slider'}
+              </h3>
+              ${block.description ? `<p style="font-size: 0.92rem; color: #475569; margin: 0 auto 16px auto; max-width: 760px; line-height: 1.5;">${block.description}</p>` : ''}
+              
+              ${
+                hasSat
+                  ? `
+              <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 14px;">
+                <button type="button" class="btn btn-sm" id="${sliderId}-btn-street" onclick="
+                  const container = document.getElementById('${sliderId}-container');
+                  const baseImg = container.querySelector('.slider-base-img');
+                  baseImg.src = '${getAssetUrl(block.after_image)}';
+                  container.querySelector('#${sliderId}-after-text').innerHTML = '${block.after_label || 'Modern Street Map'} <i class=\\'fa-solid fa-arrow-right\\' style=\\'margin-left: 4px;\\'></i>';
+                  this.style.background = '#1e3a8a'; this.style.color = '#fff';
+                  document.getElementById('${sliderId}-btn-sat').style.background = '#f1f5f9';
+                  document.getElementById('${sliderId}-btn-sat').style.color = '#475569';
+                " style="padding: 6px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; background: #1e3a8a; color: #ffffff; border: 1px solid #1e3a8a; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
+                  <i class="fa-solid fa-road"></i> Modern Street Map
+                </button>
+                <button type="button" class="btn btn-sm" id="${sliderId}-btn-sat" onclick="
+                  const container = document.getElementById('${sliderId}-container');
+                  const baseImg = container.querySelector('.slider-base-img');
+                  baseImg.src = '${getAssetUrl(block.satellite_image)}';
+                  container.querySelector('#${sliderId}-after-text').innerHTML = '${block.satellite_label || 'Modern Satellite Aerial'} <i class=\\'fa-solid fa-arrow-right\\' style=\\'margin-left: 4px;\\'></i>';
+                  this.style.background = '#1e3a8a'; this.style.color = '#fff';
+                  document.getElementById('${sliderId}-btn-street').style.background = '#f1f5f9';
+                  document.getElementById('${sliderId}-btn-street').style.color = '#475569';
+                " style="padding: 6px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
+                  <i class="fa-solid fa-satellite"></i> Satellite Aerial Photo
+                </button>
+              </div>`
+                  : ''
+              }
+
+              <!-- Viewport -->
+              <div style="position: relative; width: 100%; max-width: 720px; aspect-ratio: 1 / 1; margin: 0 auto; overflow: hidden; border-radius: 10px; border: 2px solid #94a3b8; background: #0f172a; box-shadow: 0 4px 14px rgba(0,0,0,0.18); user-select: none;">
+                <!-- After (Base) Image -->
+                <img class="slider-base-img" src="${getAssetUrl(block.after_image)}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none;" alt="${block.after_label || 'After'}">
                 
-                <!-- Before (Top) Image Wrapper -->
-                <div class="slider-before-wrapper" style="position: absolute; top: 0; left: 0; width: 50%; height: 100%; overflow: hidden; border-right: 3px solid white; box-shadow: 2px 0 10px rgba(0,0,0,0.3);">
-                  <img src="${getAssetUrl(block.before_image)}" style="position: absolute; top: 0; left: 0; width: 100vw; max-width: 800px; height: 100%; object-fit: cover; pointer-events: none;" alt="${block.before_label || 'Before'}">
-                </div>
+                <!-- Before (Top) Image clipped -->
+                <img class="slider-before-img" src="${getAssetUrl(block.before_image)}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; clip-path: inset(0 50% 0 0); -webkit-clip-path: inset(0 50% 0 0);" alt="${block.before_label || 'Before'}">
                 
+                <!-- Center Divider Line -->
+                <div class="slider-divider" style="position: absolute; top: 0; bottom: 0; left: 50%; width: 3px; background: #2563eb; box-shadow: 0 0 10px rgba(0,0,0,0.6); pointer-events: none; z-index: 2;"></div>
+
                 <!-- Slider Handle Visual -->
-                <div class="slider-handle" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; background: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 2px 6px rgba(0,0,0,0.3); pointer-events: none; z-index: 2;">
-                  <i class="fa-solid fa-arrows-left-right" style="color: #334155;"></i>
+                <div class="slider-handle" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 44px; height: 44px; background: #ffffff; border: 2.5px solid #2563eb; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 3px 12px rgba(0,0,0,0.45); pointer-events: none; z-index: 3;">
+                  <i class="fa-solid fa-arrows-left-right" style="color: #2563eb; font-size: 15px;"></i>
                 </div>
 
-                <!-- Invisible Range Input -->
-                <input type="range" min="0" max="100" value="50" class="photo-range-slider" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; z-index: 3;" oninput="
-                  const wrapper = this.parentElement.querySelector('.slider-before-wrapper');
-                  const handle = this.parentElement.querySelector('.slider-handle');
-                  wrapper.style.width = this.value + '%';
-                  handle.style.left = this.value + '%';
+                <!-- Invisible Range Input covering entire viewport -->
+                <input type="range" min="0" max="100" value="50" class="photo-range-slider" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; z-index: 4; margin: 0; padding: 0;" oninput="
+                  const p = this.parentElement;
+                  const before = p.querySelector('.slider-before-img');
+                  const div = p.querySelector('.slider-divider');
+                  const h = p.querySelector('.slider-handle');
+                  const v = this.value;
+                  before.style.clipPath = 'inset(0 ' + (100 - v) + '% 0 0)';
+                  before.style.webkitClipPath = 'inset(0 ' + (100 - v) + '% 0 0)';
+                  div.style.left = v + '%';
+                  h.style.left = v + '%';
                 ">
               </div>
-              <div style="display: flex; justify-content: space-between; max-width: 800px; margin: 10px auto 0 auto; color: #64748b; font-weight: bold;">
-                <span>${block.before_label || 'Before'}</span>
-                <span>${block.after_label || 'After'}</span>
+
+              <!-- Labels Bar -->
+              <div style="display: flex; justify-content: space-between; max-width: 720px; margin: 12px auto 0 auto; color: #1e293b; font-size: 0.88rem; font-weight: 700;">
+                <span style="color: #1e3a8a;"><i class="fa-solid fa-arrow-left" style="margin-right: 4px;"></i> ${block.before_label || 'Before'}</span>
+                <span id="${sliderId}-after-text" style="color: #0f172a;">${block.after_label || 'After'} <i class="fa-solid fa-arrow-right" style="margin-left: 4px;"></i></span>
               </div>
+
+              ${
+                block.links && block.links.length
+                  ? `
+              <div style="margin-top: 16px; padding-top: 14px; border-top: 1px dashed #cbd5e1; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+                ${block.links
+                  .map(
+                    (l) => `
+                  <a href="${l.url}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 600; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 6px 12px; border-radius: 6px; text-decoration: none; transition: all 0.15s ease;" onmouseover="this.style.background='#dbeafe';" onmouseout="this.style.background='#eff6ff';">
+                    <i class="${l.icon || 'fa-solid fa-arrow-up-right-from-square'}"></i> ${l.label}
+                  </a>
+                `,
+                  )
+                  .join('')}
+              </div>`
+                  : ''
+              }
             </div>
           `;
         return;
