@@ -561,12 +561,16 @@ export default {
           {
             type: 'draw',
             text: 'Task 1: Draw an arrow to Kaiser Wilhelm I and Chancellor Otto von Bismarck at the center of the cheering military crowd.',
+            starter:
+              'An arrow points to the dais where Kaiser Wilhelm I stands beside Chancellor Bismarck, who...',
             model_answer:
               'Kaiser Wilhelm I stands elevated on the dais as Emperor, while Chancellor Otto von Bismarck stands prominently in the center wearing a bright white cuirassier uniform and holding the proclamation document.',
           },
           {
             type: 'draw',
             text: 'Task 2: Circle the surrounding architecture of the French Royal Palace, noting where this ceremony took place.',
+            starter:
+              'The opulent arched mirrors and gilded chandeliers identify the location as...',
             model_answer:
               'The ceremony took place inside the Hall of Mirrors at the Palace of Versailles, the historic seat of French royal supremacy, chosen deliberately by Bismarck to humiliate defeated France.',
           },
@@ -1918,10 +1922,26 @@ export default {
         },
       ],
       extended: {
+        title: 'Assessment Practice: Multi-Causation Essay (16 Marks)',
         question:
-          "Was the 'Blank Check' a reckless mistake by the Kaiser, or a calculated move by the German military to trigger a necessary war? Use historical reasoning to justify your stance.",
+          '"The alliance system was the primary reason why a European war broke out in 1914." How far do you agree with this statement? Explain your answer. (16 marks)',
+        hints: [
+          'Factor 1 (Agreed): The rigid domino effect of the Triple Alliance and Triple Entente mutual defence treaties, which ensured a regional Balkan dispute escalated uncontrollably into a general European conflict.',
+          'Factor 2 (Agreed): German paranoia regarding "encirclement" and the rigid requirements of the Schlieffen Plan, meaning German railway mobilization was legally equivalent to an act of war.',
+          'Factor 3 (Alternative): German aggressive militarism and the unconditional "Blank Cheque" (5 July 1914) that gave Austria-Hungary the confidence to declare war on Serbia.',
+          'Factor 4 (Alternative / Counter): Long-term imperial rivalries and the Anglo-German naval arms race that had already poisoned European relations and created two irreconcilable armed camps.',
+        ],
+        teacher_guidance: {
+          tiered_stems: {
+            bronze:
+              'One reason why the alliance system caused the war was... For example, the Triple Entente linked... This made war more likely because...',
+            silver:
+              'On the one hand, the alliance system acted as a dangerous "doomsday machine" because... However, it can also be argued that German militarism and the "Blank Cheque" were more decisive because...',
+            gold: "While the rigid division of Europe into two armed camps created the combustible structural conditions for a general conflict, the alliance system was ultimately a mechanism rather than the sole catalyst; the war was actively triggered by the German High Command's calculated exploitation of the crisis to wage a preventative war against Russia...",
+          },
+        },
         model_answer:
-          "While some historians claim the Kaiser acted impulsively out of grief, the evidence heavily suggests a calculated military gamble. The German High Command knew Russia was rapidly modernizing and would soon be too strong to defeat. By writing the 'Blank Check', Germany deliberately encouraged Austria to crush Serbia, knowing it would provoke Russia. They saw 1914 as their last best chance to win a preventative war against the Franco-Russian alliance before it was too late.",
+          'Historians remain divided over whether the European alliance system was the primary catalyst for the First World War or merely a diplomatic conveyor belt that transmitted deeper structural rivalries. On the one hand, strong evidence indicates that the rigid network of mutual defence pacts made a continental conflagration virtually inevitable once a crisis erupted. By 1907, Europe was decisively bifurcated into two armed coalitions: the Triple Alliance (Germany, Austria-Hungary, and Italy) and the Triple Entente (Britain, France, and Russia). Rather than preserving peace through deterrence as intended, these treaties created a terrifying domino effect. When Austria-Hungary declared war on Serbia in July 1914, Russia felt treaty-bound to mobilize in defence of its Slavic neighbour, which in turn triggered German mobilization obligations to Austria. Because these treaties were backed by inflexible railway mobilization timetables, diplomatic maneuvering was curtailed; as A.J.P. Taylor famously argued, Europe suffered "war by timetable".\\n\\nFurthermore, the alliance system intensified acute strategic paranoia, particularly within the German High Command. German planners lived in existential dread of Einkreisung (encirclement)—being crushed simultaneously between French revanchism in the west and Russia\'s rapidly industrializing military steamroller in the east. This structural anxiety directly produced the Schlieffen Plan, an inflexible military doctrine stipulating that Germany must pre-emptively violate Belgian neutrality to knock France out within six weeks before pivoting to face Russia. Consequently, the moment Russia mobilized, the alliance matrix forced Germany to attack France immediately, dragging Britain into the conflict under the 1839 Treaty of London. In this sense, the interlocking alliances transformed a localized Balkan murder into a catastrophic global war.\\n\\nOn the other hand, it can be cogently argued that the alliance system was not the primary cause, but rather an underlying condition that was activated by aggressive German militarism and calculated risk-taking. As Fritz Fischer demonstrated, the German leadership actively sought a diplomatic showdown in 1914 before Russian military reforms made victory impossible. By issuing the unconditional "Blank Cheque" on 5 July 1914, Kaiser Wilhelm II and Chancellor Bethmann Hollweg gave Austro-Hungarian hawks the decisive impetus to draft an impossibly harsh ultimatum to Serbia. Without this explicit German encouragement, Vienna would never have risked confronting Russia alone. Moreover, long-term imperialist rivalries—such as the Moroccan Crises (1905, 1911) and the Anglo-German Dreadnought naval race—had already poisoned international diplomacy, fostering the militaristic mindset that war was both noble and inevitable.\\n\\nIn conclusion, while the alliance system provided the fatal structural mechanism that dragged the Great Powers into conflict simultaneously, it was not the primary cause of the war itself. Secret defensive alliances had successfully existed since 1879 without causing a continental war. Instead, it was the reckless willingness of German and Austro-Hungarian leaders to gamble on a localized preventative war via the "Blank Cheque", combined with militarism and unyielding mobilization timetables, that deliberately detonated the European powder keg.',
       },
       do_now: {
         type: 'questions',
@@ -1989,12 +2009,14 @@ export default {
           {
             type: 'draw',
             text: 'Task 1: Identify which figure represents Germany and explain how you know.',
+            starter: 'The figure representing Germany can be identified because...',
             model_answer:
               'The large, aggressive figure second from the right, wearing the spiked Pickelhaube helmet, represents Germany threatening Russia.',
           },
           {
             type: 'written',
             text: 'Task 2: Draw an arrow to the figure representing Russia and annotate why they are getting involved.',
+            starter: 'Russia is intervening in this chain reaction because...',
             model_answer:
               'Russia (the third figure from the left) is getting involved to protect its smaller Slavic ally, Serbia, from being crushed by Austria-Hungary.',
           },
@@ -2038,25 +2060,6 @@ export default {
           'Do you agree with Richard Evans that war was "inevitable" in the Balkans, or could diplomacy have dismantled the "doomsday machine"?',
         stretch_model:
           "While the alliance system certainly turned the Balkans into a 'doomsday machine', war was not strictly inevitable. The Great Powers had successfully used diplomacy to diffuse earlier Balkan crises in 1912 and 1913. However, by 1914, leaders were too fearful of losing prestige and too constrained by rigid military timetables to stop the domino effect once it started.",
-      },
-      gcse_task: {
-        sources: [
-          {
-            type: 'visual',
-            src: '/units/great_war/assets/balkans_1914_simple_map.png',
-            title:
-              'Source A: Map of the Balkans showing the borders of Serbia and the Austro-Hungarian Empire in 1914.',
-          },
-          {
-            type: 'written',
-            text: '“Serbia is a viper that must be crushed. If we do not destroy them now, our empire will be torn apart by Slavic nationalism.”',
-            title:
-              'Source B: Diary entry of the Austro-Hungarian Chief of Staff, Conrad von Hötzendorf, 1913.',
-          },
-        ],
-        topic: 'the threat posed by Serbia to Austria-Hungary',
-        model_answer:
-          '<strong>Source A is useful for illustrating why Austria-Hungary felt physically threatened in the Balkans;</strong> <strong style="color: #0284c7;">the map shows how Serbia nearly doubled its territory after the Balkan Wars of 1912-1913.</strong> <strong style="color: #9333ea;">As a geographical map, its nature provides objective, factual evidence of Serbia\'s dramatic expansion southward.</strong> <strong style="color: #16a34a;">This matches our contextual knowledge that a larger, stronger Serbia acted as a powerful magnet for Slavic nationalism, deeply terrifying the Austro-Hungarian Empire, which contained millions of Serbs who wanted to break away and join this new \'Greater Serbia\'.</strong><br><br><strong>Source B is crucial for understanding the aggressive mindset of the Austro-Hungarian military.</strong> <strong style="color: #0284c7;">The diary describes Serbia as a "viper that must be crushed" to prevent the empire from being "torn apart by Slavic nationalism".</strong> <strong style="color: #9333ea;">Because it is a private diary entry written by the Chief of Staff, its origin makes it an incredibly reliable, unfiltered record of the military command\'s genuine panic and their desire for a preventative war.</strong> <strong style="color: #16a34a;">This is historically accurate, as the Austro-Hungarian leadership viewed the 1914 assassination of Archduke Franz Ferdinand not just as a tragedy, but as the perfect political excuse to finally invade and destroy Serbia before it grew too powerful.</strong>',
       },
       learning_objective:
         'To understand How did the alliance system turn a local Balkan crisis into a global war?',
@@ -2116,10 +2119,7 @@ export default {
       ],
       narrative_blocks: [
         {
-          text: "**The Powder Keg: Nationalism vs. Empire**\n\nThis 'Blank Check' is one of the most debated actions in modern history. Some historians argue the Kaiser was acting out of impulsive loyalty to his murdered friend, not expecting the crisis to escalate beyond a localized Balkan war. They point to the fact that Wilhelm went on a sailing cruise immediately after giving the promise, suggesting he did not believe a global conflict was imminent.\n\nHowever, other historians argue that the German High Command deliberately used the 'Blank Check' to push Austria into war. Knowing that Russia's military was rapidly modernizing and would soon be too powerful to defeat, German generals believed that if a European war was inevitable, it was better to fight it in 1914 rather than wait. By giving Austria unconditional support, Germany ensured the crisis would explode into a continental conflict.",
-        },
-        {
-          text: 'As European empires expanded and resources grew tightly contested, nations looked for ways to keep themselves safe from sudden attack by their rivals. The primary strategy chosen by European monarchs and statesmen was the construction of binding military alliances. Gradually, over several decades, Europe was carved up into two massively armed, opposing camps.',
+          text: 'As European empires expanded and colonial resources grew tightly contested, nations looked for diplomatic and military mechanisms to safeguard themselves from sudden aggression by their rivals. The primary strategy chosen by European monarchs and statesmen was the construction of binding mutual defence alliances. Gradually, over several decades, the continent was carved up into two massively armed, opposing coalitions.',
           level_4:
             'As European empires expanded and resources grew tightly contested, nations looked for ways to keep themselves safe from sudden attack by their rivals. Gradually, over several decades, Europe was carved up into two massively armed, opposing camps.',
           theme_heading: "Europe's Alliance System",
@@ -2132,12 +2132,15 @@ export default {
             {
               type: 'comprehension',
               text: 'Identify the specific member countries that made up the Triple Alliance and the Triple Entente by 1907.',
+              starter:
+                'By 1907, the Triple Alliance consisted of... while the opposing Triple Entente united...',
               model_answer:
                 'By 1907, the Triple Alliance consisted of Germany, Austria-Hungary, and Italy. The opposing Triple Entente united Great Britain, France, and Russia.',
             },
             {
               type: 'comprehension',
               text: 'Explain the diplomatic logic of how the alliance system was theoretically supposed to keep European nations safe from a outbreak of war.',
+              starter: 'The diplomatic logic of deterrence behind the alliance system was that...',
               model_answer:
                 'The diplomatic logic was that going to war against just one member of an alliance would instantly trigger a massive war against the entire opposing bloc. Politicians believed that the sheer terror of such a massive conflict would prevent anyone from being reckless enough to start a war, thereby keeping everyone safe.',
             },
@@ -2152,6 +2155,8 @@ export default {
             {
               type: 'comprehension',
               text: 'According to Germany\'s military leaders, explain why a European war was considered "inevitable and necessary" rather than avoidable.',
+              starter:
+                'German military leaders viewed a major European war as inevitable and necessary because...',
               model_answer:
                 "German military leaders believed that Russia's rapid industrialization and military growth would soon make Russia too powerful to defeat. Therefore, they viewed a massive European war as inevitable and felt it was necessary to launch a preventative war immediately to crush their enemies before Russia became overwhelmingly strong.",
             },
@@ -2166,51 +2171,19 @@ export default {
             {
               type: 'comprehension',
               text: 'Detail how the massive expansion of steel production and railway tracks across Europe altered the speed and scale of army mobilization.',
+              starter:
+                'The massive expansion of steel production and railway infrastructure fundamentally transformed mobilization by...',
               model_answer:
                 'The massive expansion of steel production allowed countries to forge huge quantities of heavy artillery and armaments. Simultaneously, millions of kilometers of railway tracks were laid down, allowing nations to mobilize and transport hundreds of thousands of soldiers to the front lines within mere hours of a crisis.',
-            },
-            {
-              type: 'extended_writing',
-              text: 'Explain how the transformation of Europe into two "armed camps" by 1914 represented a dangerous change in international relations compared to the traditional balance of power. <br><br><em>Use the <abbr title="Identify, Describe, Explain, Analyse">IDEA framework</abbr> to structure your response.</em>',
-              model_answer:
-                'Unlike the traditional balance of power where conflicts remained localized, dividing Europe into two heavily armed, rigid camps turned the continent into a highly volatile powder keg. This meant that any small, local dispute could act as a spark that would automatically drag all the Great Powers into a massive global war.',
             },
           ],
           theme_heading: "Europe's Industrial War Machine",
         },
         {
-          text: "Following the assassination of Archduke Franz Ferdinand, Austria-Hungary wanted to crush Serbia but feared Russian intervention. To proceed safely, Austria needed a guarantee of German support. On July 5th, 1914, Kaiser Wilhelm II issued what historians call the 'Blank Check'—an unconditional promise that Germany would stand by Austria-Hungary, even if their actions provoked a war with Russia.",
+          text: "Following the assassination of Archduke Franz Ferdinand in Sarajevo on 28 June 1914, the alliance network acted as a fatal tripwire. Desperate to crush Serbia once and for all, Austro-Hungarian leaders sought ironclad assurances from Berlin. On 5 July 1914, Kaiser Wilhelm II issued the fateful 'Blank Cheque'—an unconditional pledge of full German military backing. While some historians view the Kaiser's pledge as an impulsive gesture of loyalty to a murdered friend, the German General Staff saw it as a calculated opportunity. Believing that Russia's army would be unbeatable by 1917, German generals gambled that 1914 was their last best chance to fight and win a preventative war. Emboldened by Berlin's guarantee, Austria-Hungary drafted an impossible ultimatum to Serbia, activating the mutual defence clauses of the alliance system and setting Europe on an irreversible path to world war.",
           level_4:
-            "Following the assassination of Archduke Franz Ferdinand, Austria-Hungary wanted to crush Serbia but feared Russian intervention. On July 5th, 1914, Kaiser Wilhelm II issued what historians call the 'Blank Check'—an unconditional promise that Germany would stand by Austria-Hungary, even if their actions provoked a war with Russia.",
-          theme_heading: "Germany's Blank Check",
-        },
-        {
-          text: "This 'Blank Check' is one of the most debated actions in modern history. Some historians argue the Kaiser was acting out of impulsive loyalty to his murdered friend, not expecting the crisis to escalate beyond a localized Balkan war. They point to the fact that Wilhelm went on a sailing cruise immediately after giving the promise, suggesting he did not believe a global conflict was imminent.",
-          level_4:
-            "This 'Blank Check' is one of the most debated actions in modern history. They point to the fact that Wilhelm went on a sailing cruise immediately after giving the promise, suggesting he did not believe a global conflict was imminent.",
-          theme_heading: "Kaiser's Motives",
-        },
-        {
-          text: "However, other historians argue that the German High Command deliberately used the 'Blank Check' to push Austria into war. Knowing that Russia's military was rapidly modernizing and would soon be too powerful to defeat, German generals believed that if a European war was inevitable, it was better to fight it in 1914 rather than wait. By giving Austria unconditional support, Germany ensured the crisis would explode into a continental conflict.",
-          level_4:
-            "However, other historians argue that the German High Command deliberately used the 'Blank Check' to push Austria into war. By giving Austria unconditional support, Germany ensured the crisis would explode into a continental conflict.",
-          theme_heading: "Germany's Calculated War",
-        },
-        {
-          title: 'Consolidation Task',
-          tasks: [
-            {
-              type: 'extended_writing',
-              question:
-                'Explain how the Alliance System contributed to the outbreak of the First World War.',
-              hints: [
-                'Sentence Starter: The Alliance System contributed to the war by dividing Europe into two armed camps...',
-                'Sentence Starter: For example, if one country was attacked, its allies were obligated to...',
-                'Sentence Starter: This resulted in a local conflict in the Balkans rapidly escalating into a...',
-              ],
-            },
-          ],
-          text: '<h3>Consolidation Task</h3>',
+            "On 5 July 1914, Kaiser Wilhelm II issued the fateful 'Blank Cheque'—an unconditional pledge of full German military backing. Emboldened by Berlin's guarantee, Austria-Hungary drafted an impossible ultimatum to Serbia, activating the mutual defence clauses of the alliance system and setting Europe on an irreversible path to world war.",
+          theme_heading: "The 'Blank Cheque' and July Crisis",
         },
       ],
       quiz: [
@@ -2344,6 +2317,28 @@ export default {
           'Analyze whether the resulting war was inevitable or accidental.',
         ],
       },
+      extended: {
+        title: 'Assessment Practice: Explaining Causation & The Spark (12 Marks)',
+        question:
+          'Explain why the assassination of Archduke Franz Ferdinand in Sarajevo led to the outbreak of the First World War in August 1914. (12 marks)',
+        hints: [
+          'Point 1: The assassination on 28 June 1914 provided the Austro-Hungarian military with a long-desired pretext to crush Serbian nationalism once and for all.',
+          'Point 2: The German "Blank Cheque" (5 July) provided unconditional backing, emboldening Austria-Hungary to issue an impossibly harsh 48-hour ultimatum to Serbia.',
+          'Point 3: The Russian decision to order general mobilisation to protect its Slavic ally Serbia activated the reciprocal alliances of the Triple Entente.',
+          'Point 4: The rigidity of the German Schlieffen Plan required an immediate pre-emptive invasion through neutral Belgium, compelling Great Britain to enter the war.',
+        ],
+        teacher_guidance: {
+          tiered_stems: {
+            bronze:
+              'One reason why the assassination caused the war was... This led to war because... As a result...',
+            silver:
+              'The assassination acted as a crucial catalyst because it provided the pretext for Austria-Hungary to... However, this only became a world war because Germany issued the "Blank Cheque", which...',
+            gold: 'While the assassination of Franz Ferdinand provided the immediate spark, it only ignited a general European war because it activated structural tripwires: Austria\'s existential fear of Slavic nationalism, the unconditional German "Blank Cheque", and the inflexible railway mobilization timetables of the Schlieffen Plan...',
+          },
+        },
+        model_answer:
+          'The assassination of Archduke Franz Ferdinand in Sarajevo on 28 June 1914 was the immediate catalyst that ignited the First World War. However, the murder of the heir to the Austro-Hungarian throne only produced a global conflict because it activated a complex network of preexisting rivalries, unconditional alliances, and rigid military timetables during the July Crisis.\\n\\nFirst and foremost, the assassination provided the Austro-Hungarian military with a long-sought pretext to crush Serbia. Austria-Hungary was an unstable, multi-ethnic empire desperately terrified of Pan-Slavic nationalism, which threatened to tear its southern provinces away to join a "Greater Serbia". Key figures in Vienna, notably Chief of the General Staff Conrad von Hötzendorf, had long advocated for a preventative war against Belgrade. Princip\'s bullets gave Austro-Hungarian hawks the political justification they needed. On 23 July, Vienna presented Serbia with a deliberately humiliating ten-point ultimatum designed to be rejected. When Serbia accepted nine of the ten points but refused to allow Austrian police to operate on sovereign Serbian soil, Austria-Hungary declared war on 28 July and began shelling Belgrade.\\n\\nSecondly, the crisis escalated into a wider European war because of Germany\'s unconditional diplomatic and military support—the fateful "Blank Cheque" of 5 July 1914. Kaiser Wilhelm II and Chancellor Bethmann Hollweg guaranteed that Germany would stand firmly by Austria-Hungary, even if military action provoked the Russian Empire. German military planners viewed 1914 as a fleeting strategic window: Russia was rapidly modernizing its railways and expanding its army under the "Great Programme", which would render Russia unbeatable by 1917. Consequently, the German General Staff deliberately encouraged Austria to act aggressively, gambling that a swift localized victory would either break the Triple Entente or allow Germany to fight and win a preventative war against Russia while it still enjoyed military superiority.\\n\\nFinally, the assassination triggered the outbreak of a general European war due to the interlocking mechanisms of the alliance system and inflexible military mobilization plans. In response to Austria\'s bombardment of Serbia, Tsar Nicholas II ordered general mobilization on 30 July to defend his Slavic ally. This Russian move panicked Berlin because Germany\'s sole war plan—the Schlieffen Plan—relied on defeating France within six weeks before the Russian army could fully assemble. Mobilization in 1914 was not merely a threat; it dictated military action because railway timetables could not be altered without leaving armies vulnerable. When Russia refused to halt mobilization, Germany declared war on Russia on 1 August and on France on 3 August. To outflank French border fortifications, the German army invaded neutral Belgium on 4 August, violating the 1839 Treaty of London and forcing Great Britain to declare war on Germany.\\n\\nIn conclusion, while the assassination in Sarajevo provided the initial spark, it led to the First World War because it unleashed the underlying forces of Austro-Hungarian imperial insecurity, aggressive German preventative war calculations, and the uncontrollable conveyor belt of military mobilization timetables.',
+      },
       sources: [
         {
           title: 'Diagram A: The July Crisis Domino Effect',
@@ -2457,12 +2452,16 @@ export default {
           {
             type: 'draw',
             text: 'Task 1: Draw an arrow to the figure representing Austria-Hungary and label what its main fear was regarding the Balkans.',
+            starter:
+              'An arrow points to the Austro-Hungarian figure on the lid because its primary fear was...',
             model_answer:
               "(Draw an arrow to the Austro-Hungarian figure on the lid. Label: 'Fearful that rising Balkan nationalism and Slavic independence movements would cause their multi-ethnic empire to collapse.')",
           },
           {
             type: 'draw',
             text: 'Task 2: Circle the steam escaping from the pot and annotate what specific short-term force this steam represents.',
+            starter:
+              'The steam escaping from the boiling pot represents the short-term explosive tension of...',
             model_answer:
               "(Circle the steam. Annotation: 'The steam represents the explosive, short-term tension of the July Crisis and the assassination of Archduke Franz Ferdinand.')",
           },
@@ -2506,25 +2505,6 @@ export default {
         stretch_model:
           "By giving Austria unconditional support (the 'Blank Cheque') to attack Serbia, Germany knew it would almost certainly provoke Russia to intervene. Fischer argues that Germany did this deliberately because they wanted a preventive war against Russia before the Russian army fully modernized, hoping to secure German dominance in Europe.",
       },
-      gcse_task: {
-        sources: [
-          {
-            type: 'visual',
-            src: '/units/great_war/assets/was_boiling_point.png',
-            title:
-              "Source A: 'The Boiling Point', a British cartoon published in Punch Magazine, 1912.",
-          },
-          {
-            type: 'written',
-            text: '“You may rest assured that His Majesty will faithfully stand by Austria-Hungary, as is required by the obligations of his alliance and of his ancient friendship.”',
-            title:
-              "Source B: The 'Blank Cheque' telegram sent from Germany to Austria-Hungary, 5 July 1914.",
-          },
-        ],
-        topic: 'the causes of the outbreak of World War I',
-        model_answer:
-          '<strong>Source A is useful for showing the extreme volatility of the July Crisis;</strong> <strong style="color: #0284c7;">it depicts the European leaders desperately trying to keep the lid on the boiling \'Balkan Troubles\' pot.</strong> <strong style="color: #9333ea;">As a satirical cartoon published in Britain, its purpose is to warn the public that the Great Powers were rapidly losing control of the diplomatic situation.</strong> <strong style="color: #16a34a;">This reflects the historical reality that, due to the rigid Alliance System, the leaders knew that a local war in the Balkans would inevitably drag the entire continent into a catastrophic global conflict.</strong><br><br><strong>Source B is extremely useful for explaining the short-term trigger that turned the crisis into a war.</strong> <strong style="color: #0284c7;">The telegram guarantees that the Kaiser will "faithfully stand by Austria-Hungary" regardless of the consequences.</strong> <strong style="color: #9333ea;">As an official diplomatic communication (the \'Blank Check\'), its nature makes it undeniable proof of Germany\'s unconditional military support for Austria.</strong> <strong style="color: #16a34a;">This is vital contextual knowledge, as it was precisely this promise of German backing that gave Austria-Hungary the confidence to issue a deliberately unacceptable ultimatum to Serbia, knowing it would provoke Russia and trigger the First World War.</strong>',
-      },
       learning_objective: 'To understand how a wrong turn in Sarajevo triggered a world war.',
       teacher_notes: {
         primer:
@@ -2559,126 +2539,75 @@ export default {
         'Fierce Slavic [Nationalism] destabilised the Balkans, culminating on 28 June 1914 with the [Assassination] of Archduke Franz Ferdinand by the Serbian [Black Hand]. Confident after receiving a unconditional [Blank Cheque] of support from Germany, Austria-Hungary sent an aggressive [Ultimatum] to Serbia. When Serbia rejected key demands, Russia ordered full military [Mobilisation], triggering the alliance network and plunging Europe into total war.',
       narrative_blocks: [
         {
-          text: 'The region of south-east Europe known as the Balkans had once been ruled securely by the Turkish Ottoman Empire. However, as Turkish power weakened across the 19th and early 20th centuries, the Ottoman Empire lost control. Different Balkan states began fiercely demanding their own independence, sparking a series of local Balkan Wars that left the entire area a hotbed of hatred, suspicion, and aggressive militarism.',
+          text: 'The region of south-east Europe known as the Balkans had once been ruled securely by the Ottoman Empire. However, as Ottoman power decayed across the 19th century, newly liberated Balkan states emerged, fiercely competing for land and independence. For the neighbouring Austro-Hungarian Empire, this rising <strong>Pan-Slavism</strong> represented an existential nightmare. Austria-Hungary was a fragile multi-ethnic patchwork empire; its rulers terrified that if Serbian nationalism expanded unchecked, the millions of Serbs and South Slavs within their borders would revolt and join a "Greater Serbia". Tensions boiled over in 1908 when Austria formally annexed Bosnia and Herzegovina, absorbing thousands of hostile Serbs. In response, radical Serbian army officers formed a clandestine terrorist network dedicated to unifying all South Slavs by force: the Black Hand.',
           level_4:
-            'The region of south-east Europe known as the Balkans had once been ruled securely by the Turkish Ottoman Empire. Different Balkan states began fiercely demanding their own independence, sparking a series of local Balkan Wars that left the entire area a hotbed of hatred, suspicion, and aggressive militarism.',
-          theme_heading: 'Balkans Ignite Conflict',
-        },
-        {
-          text: 'For the neighboring empire of Austria-Hungary, this <strong>Pan-Slavism</strong> was an absolute nightmare. Austria-Hungary was a vast empire containing many different nationalities who wanted independence. Its politicians deeply feared that if Serbian nationalism rose unchecked, the millions of Serbs living inside the Austro-Hungarian borders would rebel, causing the entire empire to collapse. Tensions exploded in 1908 when Austria officially <strong>annexed</strong> the provinces of Bosnia and Herzegovina, directly absorbing thousands of furious Serbs into its territory. In response, a group of radical Serbian army officers formed a secret terrorist society dedicated to uniting all Serbs by force: the Black Hand.',
-          level_4:
-            'For the neighboring empire of Austria-Hungary, this <strong></strong> was an absolute nightmare. In response, a group of radical Serbian army officers formed a secret terrorist society dedicated to uniting all Serbs by force: the Black Hand.',
+            'The Balkans was a hotbed of ethnic and nationalistic tensions known as the "Powder Keg of Europe". Austria-Hungary deeply feared that Serbian nationalism would tear their multi-ethnic empire apart.',
           tasks: [
             {
               type: 'comprehension',
-              text: 'Explain why the rise of independent Balkan states and Serbian nationalism represented a catastrophic nightmare for the Austro-Hungarian Empire.',
+              text: 'Explain why the rise of independent Balkan states and Pan-Slavic nationalism represented an existential threat to the Austro-Hungarian Empire.',
+              starter:
+                'Pan-Slavic nationalism represented an existential crisis for the Austro-Hungarian Empire because...',
               model_answer:
-                'Austria-Hungary was a vast empire containing many different nationalities. Its politicians feared that if Serbian nationalism rose unchecked, the millions of Serbs living inside Austro-Hungarian borders would rebel, causing the entire empire to collapse.',
+                'Austria-Hungary was a vast, fragile empire composed of many different ethnic groups. Its leaders feared that if Serbian nationalism expanded unchecked, the millions of Serbs and Slavs living under Austro-Hungarian rule would rebel and break away to join a "Greater Serbia", causing the entire empire to collapse.',
             },
           ],
-          theme_heading: "Empire's Serbian",
+          theme_heading: 'The Balkan Powder Keg',
         },
         {
-          text: "By June 1914, the Balkan powder keg was ready to blow. To show the rebellious Serbs who was boss, the heir to the Austro-Hungarian throne, Archduke Franz Ferdinand, scheduled a high-profile state visit to Sarajevo, the capital of Bosnia. The date chosen was June 28—the sacred national day of the Serbian people. Thanks to extensive press publicity, the Black Hand knew exactly where the Archduke's open-top car would drive along the river-front <strong>Appel Quay</strong>. Six young assassins positioned themselves along the quay armed with bombs, pistols, and suicide capsules.",
+          text: "By June 1914, the Balkan powder keg was primed to explode. To demonstrate imperial authority over the restless Bosnians, Archduke Franz Ferdinand, heir to the Austro-Hungarian throne, scheduled an official visit to Sarajevo on 28 June—Vidovdan, the sacred national day of the Serbian people. Armed by the Black Hand with bombs, pistols, and cyanide capsules, six young conspirators lined the riverfront Appel Quay. The initial attempts were complete fiascoes: one assassin lost his nerve, another threw a bomb that bounced off the Archduke's convertible and detonated under the following car. Unharmed, Franz Ferdinand canceled the remainder of his itinerary to visit the wounded officers in hospital. However, his drivers were not informed of the revised route and mistakenly turned onto Franz Josef Street. Realising the blunder, the driver slammed on the brakes to reverse. The open-top car stalled directly in front of Schiller's Delicatessen—where 19-year-old Gavrilo Princip happened to be standing. Princip stepped forward and fired two shots at point-blank range, fatally wounding both the Archduke and Duchess Sophie.",
           level_4:
-            'By June 1914, the Balkan powder keg was ready to blow. Six young assassins positioned themselves along the quay armed with bombs, pistols, and suicide capsules.',
-          theme_heading: "Ferdinand'",
-        },
-        {
-          text: "The initial assassination attempts failed completely. One terrorist couldn't get his gun out, another went home out of pity, and a third threw a bomb that bounced off the Archduke's car and exploded under the vehicle behind. Furious, Franz Ferdinand canceled the rest of his itinerary and decided to head back to the train station, ordering his driver to stop by the hospital first to visit the wounded officers. However, the route map was altered and the drivers took a critical wrong turn onto Franz Josef Street. Realizing the error, the drivers stopped and attempted to reverse.",
-          level_4:
-            'The initial assassination attempts failed completely. Realizing the error, the drivers stopped and attempted to reverse.',
+            "On 28 June 1914 in Sarajevo, after an initial bomb attack failed, the Archduke's car took a mistaken wrong turn and stalled directly in front of 19-year-old Black Hand assassin Gavrilo Princip, who shot Franz Ferdinand and his wife Sophie at point-blank range.",
           tasks: [
             {
               type: 'comprehension',
-              text: 'Detail how the structural failure of the first bomb plot inadvertently led to the exact scenario where Gavrilo Princip was able to shoot the Archduke.',
+              text: 'Detail how the initial failure of the bomb plot inadvertently placed Archduke Franz Ferdinand directly in front of Gavrilo Princip.',
+              starter:
+                "Following the failure of the initial bomb attack along the Appel Quay, the Archduke's driver...",
               model_answer:
-                'The first assassin threw a bomb that bounced off the car and exploded behind them. Because of this, the driver later changed the route to visit the injured in the hospital. However, the driver took a wrong turn and stopped the car to reverse right in front of where Gavrilo Princip was standing, giving him a point-blank shot.',
+                "After the initial bomb bounced off the car and wounded military officers, the Archduke decided to alter his itinerary to visit the injured men in hospital. However, his driver was not properly informed of the route change and mistakenly turned onto Franz Josef Street. When the driver braked to reverse, the car stalled directly in front of Schiller's delicatessen, where Gavrilo Princip was standing, giving him a point-blank opportunity to shoot both the Archduke and Duchess Sophie.",
             },
           ],
-          theme_heading: 'A Fateful Wrong Turn',
+          theme_heading: 'The Sarajevo Assassination',
         },
         {
-          text: "The car ground to a halt a fraction of a second away from where 19-year-old Black Hand assassin Gavrilo Princip was standing. Seizing his unexpected luck, Princip stepped forward, pulled his pistol, and fired twice into the car. One bullet tore through the Archduke's throat; the second struck his wife, Sophie, in the stomach. Both died within minutes.",
+          text: "The double murder sparked the frantic 37-day diplomatic crisis known as the July Crisis. Backed by Germany's unconditional 'Blank Cheque' on 5 July, Austria-Hungary sent an aggressive 48-hour ultimatum to Serbia on 23 July, deliberately drafted to be unacceptable. When Serbia rejected key clauses encroaching on its sovereignty, Austria declared war on 28 July and bombarded Belgrade. In response, Tsar Nicholas II ordered general Russian mobilization on 30 July to protect Serbia. Desperate, personal telegrams between cousins Kaiser Wilhelm and Tsar Nicholas—the 'Willy-Nicky Telegrams'—failed to halt the escalation because military commanders on both sides argued that freezing mobilization would leave their nations defenseless against surprise invasion.",
           level_4:
-            'The car ground to a halt a fraction of a second away from where 19-year-old Black Hand assassin Gavrilo Princip was standing. Both died within minutes.',
-          theme_heading: "Princip's Fatal",
-        },
-        {
-          text: "This local double-murder triggered a rapid, unstoppable countdown to global war. Backed by Germany's unconditional promise of absolute military support—known as the 'blank cheque'—Austria-Hungary issued a harsh, unacceptable ultimatum to Serbia on July 23. Blaming Serbia for the assassination, they subsequently declared war on July 28, shelling Belgrade. Russia immediately mobilised its massive army to protect its fellow Slavic state, Serbia. Because the German Schlieffen Plan required an immediate land invasion of France through neutral Belgium, Great Britain was bound by the <strong>Treaty of London (1839)</strong> to honor its promise to protect Belgian neutrality. On August 4, 1914, Britain declared war on Germany. The complex system of long-term alliances, imperial greed, and land arms races had successfully dragged the entire world down the path to an unprecedented slaughter.",
-          level_4:
-            'This local double-murder triggered a rapid, unstoppable countdown to global war. The complex system of long-term alliances, imperial greed, and land arms races had successfully dragged the entire world down the path to an unprecedented slaughter.',
+            "Backed by Germany's 'Blank Cheque', Austria declared war on Serbia on 28 July. Russia mobilized to defend Serbia, activating the rigid alliance commitments.",
           tasks: [
             {
               type: 'comprehension',
               text: 'Outline the chronological sequence of events from July 23 to August 4, 1914, that transformed a local Balkan assassination into a total European war.',
+              starter:
+                'The escalation from a local assassination to a global conflict began when Austria-Hungary...',
               model_answer:
-                'Austria-Hungary issued a harsh ultimatum to Serbia on July 23, declaring war on July 28. Russia mobilised its army to defend Serbia. Germany declared war on Russia, and then invaded neutral Belgium to attack France. This forced Britain to declare war on Germany on August 4.',
+                'On 23 July, Austria-Hungary sent a harsh 48-hour ultimatum to Serbia, declaring war on 28 July. Russia mobilized its armed forces to protect Serbia. Germany declared war on Russia on 1 August and on France on 3 August, invading neutral Belgium to execute the Schlieffen Plan. This violation of Belgian neutrality compelled Great Britain to declare war on Germany on 4 August under the 1839 Treaty of London.',
             },
-          ],
-          theme_heading: 'War Erupts Globally',
-        },
-        {
-          text: 'The 37 days between the assassination in Sarajevo and the outbreak of war are known as the July Crisis. During this frenzied period, diplomats and monarchs across Europe scrambled to react as the rigid alliance system began pulling their nations toward the abyss. What makes the July Crisis so tragic is how many desperate, last-minute attempts were made to hit the brakes.',
-          level_4:
-            'The 37 days between the assassination in Sarajevo and the outbreak of war are known as the July Crisis. What makes the July Crisis so tragic is how many desperate, last-minute attempts were made to hit the brakes.',
-          theme_heading: 'July Crisis: Descent',
-        },
-        {
-          text: "The most famous of these attempts was the 'Willy-Nicky Telegrams'—a series of deeply personal, frantic messages exchanged between Kaiser Wilhelm II and Tsar Nicholas II of Russia, who were cousins. Both monarchs pleaded with each other to stop military mobilizations, signing their telegrams with familiar nicknames. However, neither leader was willing to be the first to stand their armies down, fearing they would be left defenseless if the other attacked.",
-          level_4:
-            "The most famous of these attempts was the 'Willy-Nicky Telegrams'—a series of deeply personal, frantic messages exchanged between Kaiser Wilhelm II and Tsar Nicholas II of Russia, who were cousins. However, neither leader was willing to be the first to stand their armies down, fearing they would be left defenseless if the other attacked.",
-          tasks: [
             {
               type: 'comprehension',
               text: "What does the desperate tone of the 'Willy-Nicky Telegrams' reveal about the monarchs' control over the escalating July Crisis?",
+              starter:
+                "The frantic 'Willy-Nicky Telegrams' reveal that while Kaiser Wilhelm and Tsar Nicholas personally...",
               model_answer:
-                'The telegrams reveal that both Kaiser Wilhelm and Tsar Nicholas desperately wanted to avoid war but felt completely trapped. They were too afraid to stop their military mobilizations in case the other attacked, showing that civilian leaders had lost control to their military generals.',
+                'The telegrams reveal that both Kaiser Wilhelm and Tsar Nicholas genuinely feared a catastrophic war and pleaded with each other to stop the escalation. However, both monarchs felt completely trapped by their respective military commanders, who insisted that stopping railway mobilization would leave their nations defenseless, proving that civilian rulers had lost control to rigid military timetables.',
             },
           ],
-          theme_heading: "Cousins' Failed Peace",
+          theme_heading: 'The July Crisis Domino Effect',
         },
         {
-          text: "Ultimately, the crisis revealed a terrifying reality: the civilian politicians and monarchs had lost control of the situation to their military generals. Military timetables, such as Germany's rigid Schlieffen Plan and Russia's immense mobilization schedules, were so inflexible that once the train of war started moving, it could not be stopped. The alliance system, intended as a deterrent, had instead become a doomsday machine.",
+          text: 'Once the railway mobilization timetables were activated, civilian leaders lost all control to military doctrine. Because the German Schlieffen Plan assumed war on two fronts, Germany could not mobilize against Russia without simultaneously invading France through neutral Belgium. When German divisions crossed the Belgian frontier on 4 August, Great Britain honoured the 1839 Treaty of London and declared war on Germany. Moreover, because European powers commanded vast global empires, the war instantly pulled in millions of colonial soldiers and labourers across Africa, India, and the West Indies, transforming a localized Balkan assassination into the first global war in human history.',
           level_4:
-            'Ultimately, the crisis revealed a terrifying reality: the civilian politicians and monarchs had lost control of the situation to their military generals. The alliance system, intended as a deterrent, had instead become a doomsday machine.',
+            'Once railway timetables started, war could not be stopped. Germany invaded Belgium under the Schlieffen Plan, forcing Britain to enter the war on 4 August 1914.',
           tasks: [
             {
               type: 'comprehension',
-              text: "Explain why it is historically inaccurate to describe the First World War strictly as a 'European' conflict in 1914.",
+              text: 'Explain why the First World War rapidly expanded into a global conflict rather than remaining a strictly European war.',
+              starter: 'The First World War rapidly expanded into a global conflict because...',
               model_answer:
-                "Because of the aggressive 'Scramble for Colonies' by European empires, millions of colonized people across Africa, Asia, and the Middle East were dragged into the conflict to fight and provide labour, making it a truly global war.",
+                'Because the European combatants possessed extensive overseas empires, millions of colonized subjects across Africa, India, and the Caribbean were conscripted to fight, transport supplies, and construct defensive works, while colonial territories themselves became battlegrounds.',
             },
           ],
-          theme_heading: 'Military Control Unleashes',
-        },
-        {
-          text: 'When war broke out in 1914, it was not just a European conflict. Because of the aggressive Scramble for Colonies (Lesson 2), millions of colonized people across Africa, Asia, and the Middle East were dragged into a war they had no part in causing. Without the immense sacrifices of these colonial troops and laborers, the European empires would have collapsed.',
-          level_4:
-            'When war broke out in 1914, it was not just a European conflict. Without the immense sacrifices of these colonial troops and laborers, the European empires would have collapsed.',
-          theme_heading: 'Colonies Join World War',
-        },
-        {
-          text: '<div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;"><img src="./assets/july_crisis.svg" style="width: 100%; max-width: 350px; display: block; margin: 0 auto;" alt="The July Crisis (1914) - The Domino Effect"></div>',
-          level_4:
-            '<div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;"><img src="./assets/july_crisis.svg" style="width: 100%; max-width: 350px; display: block; margin: 0 auto;" alt="The July Crisis (1914) - The Domino Effect"></div>',
-          theme_heading: 'Dominoes',
-        },
-        {
-          title: 'Consolidation Task',
-          tasks: [
-            {
-              type: 'extended_writing',
-              question:
-                'Explain why the assassination of Archduke Franz Ferdinand led to the outbreak of the First World War.',
-              hints: [
-                'Sentence Starter: The assassination led to war because it provided Austria-Hungary with the perfect excuse to...',
-                'Sentence Starter: For example, Austria-Hungary issued an impossible ultimatum to Serbia, knowing that...',
-                'Sentence Starter: This resulted in the activation of the alliance system, drawing Russia and then Germany into the...',
-              ],
-            },
-          ],
-          text: '<h3>Consolidation Task</h3>',
+          theme_heading: 'Military Timetables and Global Conflict',
         },
       ],
       quiz: [
@@ -2955,6 +2884,36 @@ export default {
         },
       ],
       title: "End of Unit Assessment: The Historians' Debate",
+      teacher_notes: {
+        primer:
+          'The overarching pedagogical goal of this assessment lesson is to equip pupils with the analytical discipline required for Edexcel GCSE History Paper 3 interpretations questions. Pupils synthesize the entire unit\'s learning to evaluate why historians disagree over the causes of the Great War, contrasting the "Sleepwalkers" thesis (Christopher Clark) with the "German War Guilt" thesis (Fritz Fischer).',
+        objectives: [
+          {
+            objective:
+              'Identify the core difference in argument between Interpretation 1 and Interpretation 2 regarding war guilt.',
+            primer:
+              'Direct pupils to focus on agency and blame. Interpretation 1 portrays European leaders blundering helplessly into war through mutual paranoia and the alliance system, whereas Interpretation 2 portrays deliberate German aggression and calculated opportunism.',
+            question:
+              'Does Interpretation 1 blame one country more than the others, or does it spread the blame equally across all Great Powers?',
+          },
+          {
+            objective:
+              'Explain why two historians might reach differing conclusions using primary source evidence (Sources B and C).',
+            primer:
+              'Guide pupils to analyze provenance and motive. Source B reflects a defeated German Chancellor attempting to deflect blame onto encirclement, while Source C reflects victorious Allied leaders imposing sole moral guilt at Versailles.',
+            question:
+              'Why would a German Chancellor writing his memoirs in 1919 give a completely different version of 1914 compared to the victorious British and French leaders who wrote the Treaty of Versailles?',
+          },
+          {
+            objective:
+              'Write a balanced, 16-mark essay evaluating how far they agree with the Fischer thesis using contextual knowledge.',
+            primer:
+              'Ensure pupils structure their essay with two balanced sides: evidence supporting German culpability (Blank Cheque, Schlieffen Plan) versus wider systemic factors (Alliance System, Balkan nationalism, Russian mobilization, Imperialism).',
+            question:
+              'If Germany had not issued the "Blank Cheque" on 5 July, could a European war still have broken out in 1914?',
+          },
+        ],
+      },
       exam_practice: {
         sources: [
           {
@@ -2975,24 +2934,103 @@ export default {
           },
         ],
         stimulus: [
-          '**Interpretation 1**: No single nation can be entirely blamed for starting the First World War. The spark was the tragic assassination in Sarajevo, but the real problem was the rigid system of alliances. When the crisis erupted, leaders across all major powers blundered into a war they did not want, dragged along by secret treaties and the fear of being attacked first.',
-          "**Interpretation 2**: The outbreak of the First World War was entirely the fault of Germany's aggressive militarism. The German leadership deliberately encouraged Austria to attack Serbia, giving them a 'blank cheque' of support. Germany used the assassination in Sarajevo as a convenient excuse to launch a massive war and conquer Europe.",
+          {
+            title: "Interpretation 1: Christopher Clark, 'The Sleepwalkers' (2012)",
+            content:
+              'No single nation can be entirely blamed for starting the First World War. The spark was the tragic assassination in Sarajevo, but the real problem was the rigid system of alliances. When the crisis erupted, leaders across all major powers blundered into a war they did not want, dragged along by secret treaties and the fear of being attacked first. The protagonists of 1914 were sleepwalkers, watchful but unseeing, blind to the reality of the horror they were about to bring into the world.',
+          },
+          {
+            title:
+              "Interpretation 2: Fritz Fischer, 'Germany's Aims in the First World War' (1961)",
+            content:
+              'The outbreak of the First World War was entirely the fault of Germany\'s aggressive militarism. The German leadership deliberately encouraged Austria to attack Serbia, giving them a "blank cheque" of support. Germany used the assassination in Sarajevo as a convenient excuse to launch a massive war and conquer Europe. The German military elite deliberately risked a continental war in 1914 in order to break their encirclement and achieve world power status before Russia became too strong.',
+          },
         ],
         questions: [
           {
             question:
               '1. What is the main difference between Interpretation 1 and Interpretation 2 regarding who was to blame for the war? (4 marks)',
             marks: 4,
+            model:
+              'The main difference is that Interpretation 1 argues that no single nation was to blame, whereas Interpretation 2 argues that the outbreak of war was entirely Germany\'s fault.<br><br>Interpretation 1 states that European leaders "blundered into a war they did not want" like "sleepwalkers", dragged along by fear and the rigid alliance system. In direct contrast, Interpretation 2 asserts that German leaders acted with premeditated aggression, arguing they "deliberately encouraged Austria to attack Serbia" and used the Sarajevo assassination as an "excuse to launch a massive war and conquer Europe". Thus, Interpretation 1 portrays a collective diplomatic accident, while Interpretation 2 portrays calculated German expansionism.',
           },
           {
             question:
               '2. Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You may use Sources B and C to help explain your answer. (4 marks)',
             marks: 4,
+            model:
+              'One reason why the interpretations differ is that the historians have relied on different primary evidence with contrasting national perspectives and motives.<br><br>For example, Interpretation 1 aligns closely with Source B, the 1919 memoirs of German Chancellor Bethmann Hollweg, who claimed that Germany "did not want this war" and was merely defending itself against the "aggressive alliances of our enemies" and Russian mobilization. Bethmann Hollweg had a strong motive to deflect blame from his government after defeat.<br><br>Conversely, Interpretation 2 is supported by evidence like Source C, Article 231 of the Treaty of Versailles, which declared that the war was "forced upon the world solely by the aggression of Germany". The victorious Allies had a clear motive to place sole guilt on Germany to justify heavy reparations. Because the historians have prioritized these different contemporary viewpoints and sources, their conclusions about responsibility are fundamentally opposed.',
           },
           {
             question:
               '3. How far do you agree with Interpretation 2 about the causes of the Great War? (16 marks)',
             marks: 16,
+            scaffolding: {
+              acronym: 'PEEL EVALUATION',
+              acronym_title: 'Edexcel 16-Mark Interpretation Evaluation Formula',
+              guidance:
+                'Evaluate Interpretation 2 using both interpretations and your contextual knowledge of Bismarck, the naval race, the alliance system, and the July Crisis.',
+              steps: [
+                {
+                  letter: 'P',
+                  name: 'Point & Direct Evaluation',
+                  prompt:
+                    'State clearly how far you agree with Interpretation 2 (Fischer thesis) and outline your core thesis.',
+                  starter:
+                    'I partially agree with Interpretation 2 because while German militarism played a decisive role in escalating the July Crisis...',
+                },
+                {
+                  letter: 'E',
+                  name: 'Evidence for Interpretation 2',
+                  prompt:
+                    'Deploy specific historical evidence supporting the claim that Germany deliberately sought war (Blank Cheque, Schlieffen Plan, fear of Russian modernization).',
+                  starter:
+                    'In support of Interpretation 2, German actions during the July Crisis clearly demonstrate calculated risk-taking. On 5 July 1914, Germany issued the unconditional "Blank Cheque"...',
+                },
+                {
+                  letter: 'E',
+                  name: 'Evidence for Interpretation 1 / Alternative Factors',
+                  prompt:
+                    'Examine alternative long-term and structural causes (Alliance System, Pan-Slavic nationalism in the Balkans, Dreadnought naval race, mobilization timetables).',
+                  starter:
+                    'On the other hand, Interpretation 1 rightly emphasizes that the outbreak of war cannot be attributed solely to German ambition. The structural flaw was the rigid Alliance System...',
+                },
+                {
+                  letter: 'L',
+                  name: 'Link & Sustained Conclusion',
+                  prompt:
+                    'Reach a nuanced final judgment balancing German agency against systemic European tensions.',
+                  starter:
+                    'In conclusion, I agree with Interpretation 2 only to a moderate extent. While Germany was not solely to blame for the long-term division of Europe...',
+                },
+              ],
+              sentence_starters: [
+                'Interpretation 2 is persuasive because evidence shows the German General Staff viewed 1914 as a "preventative war" window before Russia completed its military reforms...',
+                'However, Interpretation 1 provides a vital counterweight by showing that all Great Powers were trapped by inflexible railway timetables...',
+                'Overall, while Interpretation 1 explains the combustible environment, Interpretation 2 correctly identifies who lit the match...',
+              ],
+              connectives_bank: [
+                'Furthermore',
+                'In direct contrast',
+                'Crucially',
+                'Consequently',
+                'Nevertheless',
+                'On balance',
+              ],
+              red_flags: [
+                'Do not simply describe the story of the assassination without evaluating the interpretations.',
+                'Do not agree completely with one interpretation without analyzing the strengths of the opposing view.',
+                'Ensure you integrate precise historical facts (e.g. Blank Cheque 5 July, Schlieffen Plan 1905, Treaty of London 1839).',
+              ],
+              checklist: [
+                'Evaluated both Interpretation 1 (Clark) and Interpretation 2 (Fischer).',
+                'Used contextual knowledge not found in the extracts.',
+                'Made a clear, sustained judgment throughout the essay.',
+                'Maintained accurate historical terminology and SPaG.',
+              ],
+            },
+            model:
+              'Interpretation 2 argues that the outbreak of the First World War was entirely the product of aggressive German militarism and a calculated gamble for European hegemony. While there is compelling historical evidence that the German High Command deliberately exploited the Sarajevo assassination to wage a preventative war, I only agree with Interpretation 2 to a moderate extent. The catastrophe of 1914 was fundamentally the result of a combustible combination of systemic structural factors—as highlighted in Interpretation 1—and aggressive German opportunism.<br><br>In support of Interpretation 2, German diplomatic and military maneuvers in July 1914 provide clear proof of calculated escalation. When Kaiser Wilhelm II and Chancellor Bethmann Hollweg issued the unconditional "Blank Cheque" on 5 July, they gave Austro-Hungarian hawks the absolute backing needed to draft an intentionally unacceptable ultimatum to Serbia. German Chief of Staff Helmuth von Moltke and his generals believed that a European war was not only inevitable, but desirable to fight in 1914 rather than later. Russia was undertaking its massive "Great Military Programme", which would modernize its strategic railways and expand its army by 1917, rendering Russia unbeatable. German planners therefore saw the July Crisis as their final opportunity to break out of their perceived "encirclement" and defeat France and Russia simultaneously. Furthermore, the German war plan—the Schlieffen Plan—was inherently aggressive, requiring an immediate unprovoked invasion of neutral Belgium that directly forced Great Britain into the war under the 1839 Treaty of London. These facts strongly support Fischer\'s thesis that German leadership was ready to gamble on a world war to achieve global dominance.<br><br>On the other hand, Interpretation 1 correctly argues that no single nation bears sole responsibility, as the rigid alliance system and widespread strategic paranoia turned Europe into a "doomsday machine". Long before 1914, Europe had been bifurcated into two armed camps: the Triple Alliance and the Triple Entente. While intended as defensive deterrents, these alliances created a fatal domino effect: an attack on Serbia triggered Russian mobilization, which in turn forced German mobilization. As historian Christopher Clark asserts in Interpretation 1, European leaders acted like "sleepwalkers", genuinely fearing that a failure to mobilize immediately would leave their nations open to catastrophic defeat. In Russia, Pan-Slavic nationalism and the fear of losing imperial prestige in the Balkans compelled Tsar Nicholas II to order general mobilization on 30 July, despite knowing it would provoke Germany. Similarly, Austria-Hungary\'s existential fear of its multi-ethnic empire collapsing from Slavic nationalism meant Vienna was eager to crush Serbia regardless of Berlin\'s urging. The imperialist rivalries during the Scramble for Africa (Moroccan Crises of 1905 and 1911) and the Anglo-German Dreadnought naval race had already created an atmosphere of deep-seated distrust across all Great Powers.<br><br>In conclusion, while Interpretation 2 accurately exposes Germany\'s reckless willingness to risk a continental war to secure world power, it oversimplifies the origins of 1914 by dismissing the broader European context. The leaders of 1914 were operating within a flawed international architecture of secret treaties, rigid railway mobilization schedules, and unyielding military doctrines. Therefore, while Germany lit the fuse during the July Crisis, the explosive powder keg had been constructed collaboratively by all the Great Powers over four decades of imperial rivalry, militarism, and alliance diplomacy.',
           },
         ],
       },

@@ -2783,13 +2783,52 @@ export function renderLesson(lesson) {
         }
       }
 
-      if (epStimulus.length > 0) {
-        htmlExamPractice += `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-bottom: 20px;">`;
-        epStimulus.forEach((stim, sIdx) => {
+      if (lesson.exam_practice.sources && lesson.exam_practice.sources.length > 0) {
+        htmlExamPractice += `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-bottom: 20px;">`;
+        lesson.exam_practice.sources.forEach((src, sIdx) => {
           htmlExamPractice += `
-              <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 15px;">
-                <div style="font-weight: bold; color: #334155; margin-bottom: 10px; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px;">${stim.title}</div>
-                <p style="margin: 0; font-size: 0.95rem; line-height: 1.5; color: #475569; font-style: italic;">${stim.content}</p>
+            <div class="archival-source-box" style="margin-bottom: 0; background: #fffcf8; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 14px 18px;">
+              <div class="archival-source-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px;">
+                <span class="archival-meta-tag" style="font-weight: 700; color: #1e3a8a; font-size: 0.85rem; letter-spacing: 0.5px; text-transform: uppercase;">${src.id || 'Source ' + String.fromCharCode(65 + sIdx)}</span>
+                <span class="archival-shelfmark-stamp" style="font-family: monospace; font-size: 0.75rem; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">ARCHIVAL RECORD</span>
+              </div>
+              <div class="archival-source-body" style="font-family: Georgia, 'Playfair Display', serif; font-size: 0.95rem; line-height: 1.6; color: #1e293b; margin-bottom: 10px; font-style: italic;">
+                "${src.text || src.content || ''}"
+              </div>
+              <div class="archival-citation-footer" style="font-size: 0.82rem; color: #475569; border-top: 1px solid #e2e8f0; padding-top: 8px; line-height: 1.4;">
+                <div><strong>Provenance:</strong> ${src.provenance || ''}</div>
+                ${src.provenance_clue ? `<div style="margin-top: 4px; color: #b45309; font-style: italic;"><strong>Provenance Clue:</strong> ${src.provenance_clue}</div>` : ''}
+              </div>
+            </div>
+          `;
+        });
+        htmlExamPractice += `</div>`;
+      }
+
+      if (epStimulus.length > 0) {
+        htmlExamPractice += `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-bottom: 20px;">`;
+        epStimulus.forEach((stim, sIdx) => {
+          let stimTitle = '';
+          let stimContent = '';
+          if (typeof stim === 'string') {
+            const parts = stim.split('**:');
+            if (parts.length > 1) {
+              stimTitle = parts[0].replace(/\*\*/g, '').trim();
+              stimContent = parts.slice(1).join('**:').trim();
+            } else {
+              stimTitle = `Interpretation ${sIdx + 1}`;
+              stimContent = stim;
+            }
+          } else {
+            stimTitle = stim.title || `Interpretation ${sIdx + 1}`;
+            stimContent = stim.content || stim.text || '';
+          }
+          htmlExamPractice += `
+              <div style="background: #f8fafc; border: 1.5px solid #94a3b8; border-radius: 8px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                <div style="font-weight: 700; color: #0f172a; margin-bottom: 8px; border-bottom: 1.5px solid #cbd5e1; padding-bottom: 6px; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
+                  <i class="fa-solid fa-book-open" style="color: #2563eb;"></i> ${stimTitle}
+                </div>
+                <p style="margin: 0; font-size: 0.92rem; line-height: 1.6; color: #334155; font-style: italic;">${stimContent}</p>
               </div>
             `;
         });
