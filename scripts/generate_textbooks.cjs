@@ -768,6 +768,39 @@ allDirs.forEach((unitId) => {
       // Narrative Blocks & Tasks
       if (lesson.narrative_blocks) {
         lesson.narrative_blocks.forEach((block, bIdx) => {
+          if (unitId === 'cme_new' && block.type === 'photo_slider') {
+            let beforeSrc =
+              typeof resolveAssetPath === 'function'
+                ? resolveAssetPath(block.before_image, 2)
+                : `../../${(block.before_image || '').replace(/^\//, '')}`;
+            let afterSrc =
+              typeof resolveAssetPath === 'function'
+                ? resolveAssetPath(block.after_image, 2)
+                : `../../${(block.after_image || '').replace(/^\//, '')}`;
+
+            html += `
+            <div class="cartographic-comparison-box" style="page-break-inside: avoid; break-inside: avoid; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 12px; margin: 16px 0; background: #f8fafc;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; border-bottom: 1.5px solid #cbd5e1; padding-bottom: 6px;">
+                <span style="font-family: 'Outfit', sans-serif; font-size: 8.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #1e3a8a; background: #e0e7ff; padding: 2px 8px; border-radius: 4px;">${block.tag || 'Comparative Cartography'}</span>
+                <span style="font-size: 8.5pt; color: #64748b; font-style: italic;">Before / After Geopolitical Analysis</span>
+              </div>
+              <h3 style="margin: 4px 0 6px 0; color: #0f172a; font-size: 11pt; font-family: 'Playfair Display', serif;">${block.title || 'Cartographic Comparison'}</h3>
+              ${block.description ? `<p style="font-size: 9pt; color: #334155; line-height: 1.35; margin: 0 0 8px 0;">${block.description}</p>` : ''}
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 6px;">
+                <div style="text-align: center; border: 1px solid #cbd5e1; border-radius: 6px; padding: 6px; background: #ffffff;">
+                  <div style="font-weight: 700; font-size: 8.5pt; color: #1e3a8a; margin-bottom: 4px;">${block.before_label || 'Before'}</div>
+                  <img src="${beforeSrc}" style="width: 100%; max-height: 250px; object-fit: contain; border-radius: 4px; display: block; margin: 0 auto;" alt="${block.before_label || 'Before'}">
+                </div>
+                <div style="text-align: center; border: 1px solid #cbd5e1; border-radius: 6px; padding: 6px; background: #ffffff;">
+                  <div style="font-weight: 700; font-size: 8.5pt; color: #0f172a; margin-bottom: 4px;">${block.after_label || 'After'}</div>
+                  <img src="${afterSrc}" style="width: 100%; max-height: 250px; object-fit: contain; border-radius: 4px; display: block; margin: 0 auto;" alt="${block.after_label || 'After'}">
+                </div>
+              </div>
+            </div>
+            `;
+            return;
+          }
+
           // Support for new 'images' array schema
           if (block.images && Array.isArray(block.images)) {
             block.images.forEach((imgObj) => {

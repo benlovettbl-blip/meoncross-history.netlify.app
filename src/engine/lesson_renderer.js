@@ -1651,7 +1651,7 @@ export function renderLesson(lesson) {
         htmlNarrative += `
             <div class="photo-slider-container" id="${sliderId}-container" style="margin: 32px 0; background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 24px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
               <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 6px;">
-                <span class="archival-meta-tag" style="background: #e0e7ff; color: #3730a3; padding: 3px 10px; border-radius: 4px; font-weight: 700; font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppercase;">Ordnance Survey Cartography</span>
+                <span class="archival-meta-tag" style="background: #e0e7ff; color: #3730a3; padding: 3px 10px; border-radius: 4px; font-weight: 700; font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppercase;">${block.tag || 'Cartographic Analysis'}</span>
               </div>
               <h3 style="margin: 6px 0 10px 0; color: #0f172a; font-family: 'Playfair Display', Georgia, serif; font-size: 1.45rem;">
                 <i class="fa-solid fa-map-location-dot" style="margin-right: 8px; color: #1e3a8a;"></i> ${block.title || 'Then & Now: Map Slider'}
@@ -1689,12 +1689,12 @@ export function renderLesson(lesson) {
               }
 
               <!-- Viewport -->
-              <div style="position: relative; width: 100%; max-width: 720px; aspect-ratio: 1 / 1; margin: 0 auto; overflow: hidden; border-radius: 10px; border: 2px solid #94a3b8; background: #0f172a; box-shadow: 0 4px 14px rgba(0,0,0,0.18); user-select: none;">
+              <div style="position: relative; width: 100%; max-width: 720px; aspect-ratio: ${block.aspect_ratio || '1 / 1'}; margin: 0 auto; overflow: hidden; border-radius: 10px; border: 2px solid #94a3b8; background: #0f172a; box-shadow: 0 4px 14px rgba(0,0,0,0.18); user-select: none;">
                 <!-- After (Base) Image -->
-                <img class="slider-base-img" src="${getAssetUrl(block.after_image)}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none;" alt="${block.after_label || 'After'}">
+                <img class="slider-base-img" src="${getAssetUrl(block.after_image)}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: ${block.object_fit || 'cover'}; pointer-events: none;" alt="${block.after_label || 'After'}">
                 
                 <!-- Before (Top) Image clipped -->
-                <img class="slider-before-img" src="${getAssetUrl(block.before_image)}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; clip-path: inset(0 50% 0 0); -webkit-clip-path: inset(0 50% 0 0);" alt="${block.before_label || 'Before'}">
+                <img class="slider-before-img" src="${getAssetUrl(block.before_image)}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: ${block.object_fit || 'cover'}; pointer-events: none; clip-path: inset(0 50% 0 0); -webkit-clip-path: inset(0 50% 0 0);" alt="${block.before_label || 'Before'}">
                 
                 <!-- Center Divider Line -->
                 <div class="slider-divider" style="position: absolute; top: 0; bottom: 0; left: 50%; width: 3px; background: #2563eb; box-shadow: 0 0 10px rgba(0,0,0,0.6); pointer-events: none; z-index: 2;"></div>

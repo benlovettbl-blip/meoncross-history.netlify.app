@@ -3418,23 +3418,43 @@ allDirs.forEach((unitId) => {
             html += `<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 8px 12px; margin-bottom: 8px; font-size: 8.5pt; line-height: 1.45;">`;
             html += `<div style="font-weight: bold; color: #1e293b; margin-bottom: 4px; text-transform: uppercase; font-size: 8pt; letter-spacing: 0.5px;">Pupil Task Checklist:</div>`;
             html += `<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 14px;">`;
-            if (sm.checklist.neighbours) {
-              html += `<div><strong style="color: #1e3a8a;">🚩 4 Immediate Neighbours:</strong><br>${sm.checklist.neighbours.map((n) => `<div style="font-family: monospace; margin: 1px 0;">&#9633; ${n}</div>`).join('')}</div>`;
-            }
-            if (sm.checklist.waterways) {
-              html += `<div><strong style="color: #1e3a8a;">💧 Strategic Water Bodies:</strong><br>${sm.checklist.waterways.map((w) => `<div style="font-family: monospace; margin: 1px 0;">&#9633; ${w}</div>`).join('')}</div>`;
-            }
-            if (sm.checklist.occupied_territories) {
-              html += `<div style="grid-column: 1 / -1; margin-top: 3px; border-top: 1px dashed #cbd5e1; padding-top: 4px;">`;
-              html += `<strong style="color: #dc2626;">🖍️ Occupied Territories (June 1967):</strong> <span style="font-style: italic; color: #475569;">(Shade with diagonal lines /// and label)</span><br>`;
-              html += `<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 3px 14px; margin-top: 2px;">`;
-              html += sm.checklist.occupied_territories
-                .map((ot) => `<div style="font-family: monospace;">&#9633; ${ot}</div>`)
-                .join('');
-              html += `</div>`;
-              html += `<div style="margin-top: 4px; font-family: monospace; font-weight: bold; color: #1e3a8a;">&#9633; Jerusalem ★ (Mark with a star on the 1949 Green Line)</div>`;
-              html += `</div>`;
-            }
+
+            Object.entries(sm.checklist).forEach(([catKey, items]) => {
+              if (!Array.isArray(items) || items.length === 0) return;
+              let title = catKey.replace(/_/g, ' ');
+              title = title.charAt(0).toUpperCase() + title.slice(1);
+              let icon = '📌';
+              let titleColor = '#1e3a8a';
+              if (catKey.includes('neighbour')) {
+                icon = '🚩';
+              } else if (catKey.includes('water')) {
+                icon = '💧';
+              } else if (catKey.includes('occupied') || catKey.includes('territor')) {
+                icon = '🖍️';
+                titleColor = '#dc2626';
+              } else if (catKey.includes('zone') || catKey.includes('area')) {
+                icon = '🗺️';
+              } else if (catKey.includes('theatre') || catKey.includes('front')) {
+                icon = '⚔️';
+              } else if (catKey.includes('landmark') || catKey.includes('cit')) {
+                icon = '★';
+              }
+
+              const isFullWidth =
+                items.length > 3 || catKey.includes('occupied') || catKey.includes('instruction');
+              const colStyle = isFullWidth
+                ? 'grid-column: 1 / -1; margin-top: 2px;'
+                : 'margin-top: 1px;';
+
+              html += `<div style="${colStyle}">`;
+              html += `<strong style="color: ${titleColor};">${icon} ${title}:</strong><br>`;
+              html += `<div style="${isFullWidth ? 'display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px 14px;' : ''}">`;
+              items.forEach((item) => {
+                html += `<div style="font-family: monospace; margin: 1px 0;">&#9633; ${item}</div>`;
+              });
+              html += `</div></div>`;
+            });
+
             html += `</div></div>`;
           }
 
@@ -3444,11 +3464,41 @@ allDirs.forEach((unitId) => {
               : sm.source_a
                 ? sm.source_a.content
                 : '/images/israel_zoomed_map.png';
-          html += `<div style="text-align: center; margin: 4px 0;">`;
-          html += `<img src="../../${smMapImg.replace(/^\//, '')}" style="width: 100%; max-height: 480px; object-fit: contain; border: 1.5px solid #475569; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); background: #ffffff;" alt="Israel and Frontiers Outline Map">`;
-          html += `</div>`;
+
+          if (sm.reference_map) {
+            // Comparative side-by-side: Reference map on left, pupil shading task on right
+            html += `<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 6px;">`;
+            html += `<div style="text-align: center; border: 1px solid #94a3b8; border-radius: 6px; padding: 4px; background: #ffffff;">`;
+            html += `<div style="font-weight: bold; font-size: 8.5pt; color: #1e3a8a; margin-bottom: 4px;">${sm.reference_label || 'Reference Map (1947 UN Partition)'}</div>`;
+            html += `<img src="../../${sm.reference_map.replace(/^\//, '')}" style="width: 100%; max-height: 440px; object-fit: contain; border-radius: 4px;" alt="Reference Map">`;
+            html += `</div>`;
+            html += `<div style="text-align: center; border: 1.5px solid #1e3a8a; border-radius: 6px; padding: 4px; background: #ffffff;">`;
+            html += `<div style="font-weight: bold; font-size: 8.5pt; color: #dc2626; margin-bottom: 4px;">${sm.task_label || 'Pupil Shading Task (1949 Green Line)'}</div>`;
+            html += `<img src="../../${smMapImg.replace(/^\//, '')}" style="width: 100%; max-height: 440px; object-fit: contain; border-radius: 4px;" alt="Pupil Map">`;
+            html += `</div>`;
+            html += `</div>`;
+          } else if (sm.secondary_image) {
+            // Dual-theatre layout: Two operational theatres side-by-side
+            html += `<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 6px;">`;
+            html += `<div style="text-align: center; border: 1.5px solid #1e3a8a; border-radius: 6px; padding: 4px; background: #ffffff;">`;
+            html += `<div style="font-weight: bold; font-size: 8.5pt; color: #1e3a8a; margin-bottom: 4px;">${sm.primary_label || 'Sinai Front'}</div>`;
+            html += `<img src="../../${smMapImg.replace(/^\//, '')}" style="width: 100%; max-height: 440px; object-fit: contain; border-radius: 4px;" alt="Primary Theatre">`;
+            html += `</div>`;
+            html += `<div style="text-align: center; border: 1.5px solid #1e3a8a; border-radius: 6px; padding: 4px; background: #ffffff;">`;
+            html += `<div style="font-weight: bold; font-size: 8.5pt; color: #1e3a8a; margin-bottom: 4px;">${sm.secondary_label || 'Golan Heights Front'}</div>`;
+            html += `<img src="../../${sm.secondary_image.replace(/^\//, '')}" style="width: 100%; max-height: 440px; object-fit: contain; border-radius: 4px;" alt="Secondary Theatre">`;
+            html += `</div>`;
+            html += `</div>`;
+          } else {
+            // Standard single map
+            const maxH = sm.max_height || '480px';
+            html += `<div style="text-align: center; margin: 4px 0;">`;
+            html += `<img src="../../${smMapImg.replace(/^\//, '')}" style="width: 100%; max-height: ${maxH}; object-fit: contain; border: 1.5px solid #475569; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); background: #ffffff;" alt="${sm.title || 'Israel and Frontiers Outline Map'}">`;
+            html += `</div>`;
+          }
+
           html += `</div>`; // close task-box
-          html += `</div>`; // close Map Task 2 page wrapper
+          html += `</div>`; // close Map Task page wrapper
         }
 
         if (lesson.gcse_task) {
