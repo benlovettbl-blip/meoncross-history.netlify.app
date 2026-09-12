@@ -37415,6 +37415,12 @@
               "src": "/units/great_war/assets/alsace_lorraine_1871_map.png",
               "caption": "Map showing the strategic borderland of Alsace-Lorraine (Reichsland Elsaß-Lothringen), seized from France by Otto von Bismarck following the Franco-Prussian War of 1870–71.",
               "context": "Following their victory in 1871, the Germans annexed Alsace and northern Lorraine. This was an economic and psychological catastrophe for France: the region contained 80% of France’s iron ore, vital coal deposits, and major textile factories, while placing 1.5 million French citizens under German military control. For the next 44 years, French school children were taught that Alsace-Lorraine was a \"stolen child,\" and the statue representing Strasbourg in Paris was draped in black mourning cloth until 1918. This annexation made permanent peace between France and Germany impossible, driving France into the arms of Russia and Britain and creating the rigid alliance system of 1914. **Hinge Question:** Why did Bismarck’s annexation of Alsace-Lorraine make a future war between France and Germany virtually inevitable?"
+            },
+            {
+              "title": "Source B: The Black Spot (La Tache Noire) by Albert Bettannier (1887)",
+              "src": "/units/great_war/assets/la_tache_noire_1887.jpg",
+              "caption": "Albert Bettannier’s iconic 1887 painting (Musée d’Orsay) showing a French schoolmaster in a black coat pointing with a wooden pointer to the blacked-out region of Alsace-Lorraine on a classroom map of France. A young French boy in a cadet uniform stands attentively beside him while solemn schoolmates look on, illustrating how an entire generation of French schoolchildren was educated to prepare for revenge (revanche) against Germany.",
+              "context": "Painted in 1887, this masterpiece captures the intense patriotic indoctrination in French schools under the Third Republic. Following the humiliation of 1871, school textbooks taught French boys that Alsace-Lorraine was a sacred territory stolen by the German Empire. Physical education and military drill were introduced into elementary schools so that pupils would grow into soldiers ready to reconquer the lost provinces. Notice the military medal on the student on the right and the drums in the corner. This relentless cultural focus on revanche meant that no French politician could ever accept permanent German control over the borderlands. **Hinge Question:** How does Bettannier use the classroom setting to prove that the Franco-Prussian War of 1871 had not truly ended?"
             }
           ],
           "vocab": [
@@ -37599,6 +37605,7 @@
                 {
                   "type": "comprehension",
                   "text": "To what extent did the maps of central Europe fundamentally change prior to 1871? Use the term \"North German Confederation\" in your answer.",
+                  "starter": "Prior to 1871, the political map of central Europe changed fundamentally because...",
                   "model_answer": "Before 1871, central Europe was a fragmented collection of small, independent states. Bismarck first united the northern states into the North German Confederation. By 1871, after defeating France, he successfully brought the independent southern states into the fold, fundamentally changing the map by creating a single, massive, and powerful German Empire."
                 }
               ]
@@ -37610,6 +37617,7 @@
                 {
                   "type": "comprehension",
                   "text": "Describe the diplomatic trick Chancellor Otto von Bismarck used to manufacture a war with France in 1870.",
+                  "starter": "In July 1870, Chancellor Bismarck manufactured a war with France by...",
                   "model_answer": "In July 1870, Bismarck took a friendly message from the Prussian King, known as the Ems Telegram, and carefully edited it. He shortened the text to make it sound as if the King had explicitly insulted the French ambassador. Bismarck then released this edited version to the press, horrifying the French and tricking them into declaring war."
                 }
               ],
@@ -37622,6 +37630,7 @@
                 {
                   "type": "comprehension",
                   "text": "Identify two distinct military advantages that allowed the Prussian-led German army to quickly defeat the conventional French forces.",
+                  "starter": "Two key military advantages that enabled the Prussian-led army to defeat France quickly were...",
                   "model_answer": "First, the Prussian army used an advanced railway network to mobilize and deploy 500,000 highly trained troops extremely quickly. Second, they were equipped with modern Krupp steel artillery, which fired much faster and further than the French guns."
                 }
               ],
@@ -37634,6 +37643,7 @@
                 {
                   "type": "comprehension",
                   "text": "List the three severe penalties forced upon France by the victorious German Empire in the 1871 peace treaty.",
+                  "starter": "The three severe penalties forced upon France in the 1871 peace treaty were...",
                   "model_answer": "The 1871 peace treaty forced France to cede the strategic industrial provinces of Alsace-Lorraine, pay a crushing war fine of 5 billion francs over five years, and host a German occupation army."
                 }
               ],
@@ -37646,6 +37656,7 @@
                 {
                   "type": "comprehension",
                   "text": "Explain why the loss of Alsace-Lorraine and the ceremony at Versailles created a long-term \"nightmare\" for European peace.",
+                  "starter": "The loss of Alsace-Lorraine and the Versailles coronation created a long-term nightmare because...",
                   "model_answer": "The loss of Alsace-Lorraine and the humiliation of the German Empire being proclaimed inside the French Royal Palace of Versailles shattered French national pride. This created a bitter desire for revenge (revanche), forcing Bismarck to create a complex web of defensive alliances to isolate France, which ultimately set the stage for World War I."
                 }
               ],
@@ -37667,11 +37678,13 @@
                 {
                   "type": "extended_writing",
                   "question": "Explain why the Franco-Prussian War created a lasting legacy of hatred between France and Germany.",
+                  "starter": "The Franco-Prussian War created a lasting legacy of hatred primarily because...",
                   "hints": [
-                    "Sentence Starter: The war created hatred because of the humiliating terms of the peace treaty...",
-                    "Sentence Starter: For example, France was forced to pay a massive indemnity and lost the territory of...",
-                    "Sentence Starter: This resulted in a strong French desire for 'Revanche' (revenge) that lasted until..."
-                  ]
+                    "Point 1: Humiliating peace treaty — 5 billion franc indemnity and German military occupation.",
+                    "Point 2: The Stolen Child — Annexation of Alsace-Lorraine depriving France of 80% of its iron ore.",
+                    "Point 3: Cultural Revanche — The Hall of Mirrors coronation and decades of patriotic education in French schools."
+                  ],
+                  "model_answer": "The Franco-Prussian War created a lasting legacy of hatred primarily because of the deep national humiliation inflicted on France under the 1871 Treaty of Frankfurt. First, Germany seized the vital industrial borderland of Alsace-Lorraine, placing 1.5 million French citizens under foreign military rule and stripping France of 80% of its iron ore. Second, Germany forced France to pay an astronomical war indemnity of 5 billion francs and crowned Kaiser Wilhelm I inside the Hall of Mirrors at Versailles—the historic heart of French royal prestige. These actions sparked an unquenchable desire for revenge (revanche) across France, ensuring that permanent peace in Europe was impossible and compelling Bismarck to build the rigid alliance system that ultimately dragged the continent into the First World War in 1914."
                 }
               ],
               "text": "<h3>Consolidation Task</h3>"

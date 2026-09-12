@@ -2556,6 +2556,15 @@ img::after {
   margin-top: 12px;
   font-size: 0.95rem;
 }
+.scaffolding-box {
+  background: #f0fdf4 !important;
+  border: 1.5px solid #86efac !important;
+  border-left: 5px solid #16a34a !important;
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-top: 12px;
+  color: #166534;
+}
 .starter-box {
   border-left: 4px solid #2563eb;
 }

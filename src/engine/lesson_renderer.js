@@ -1769,10 +1769,13 @@ export function renderLesson(lesson) {
                 /^Q\d+[\.\:]\s*/i,
                 '',
               );
+              const taskStarter = task.starter || task.sentence_starter;
+              const taskModel = task.model || task.model_answer;
               htmlNarrative += `
                 <div class="task-box" style="margin-bottom: 12px; background: white; padding: 12px 15px; border-radius: 6px; border: 1px solid #fde68a;">
                   <strong style="color: #92400e; font-size: 1.05rem;">${qNumPrefix}${cleanTaskText}</strong>
-                  ${task.model ? `<details style="margin-top: 8px;"><summary style="cursor: pointer; color: #b45309; font-weight: 600; font-size: 0.9rem;">View Model Answer</summary><div style="margin-top: 8px; padding: 10px; background: #fef3c7; border-radius: 4px; font-size: 0.95rem; color: #78350f;">${task.model}</div></details>` : ''}
+                  ${taskStarter ? `<details style="margin-top: 8px;"><summary style="cursor: pointer; color: #0284c7; font-weight: 600; font-size: 0.9rem;"><i class="fa-solid fa-pen"></i> Sentence Starter</summary><div class="scaffold-box starter-box" style="margin-top: 8px; padding: 10px; background: #f0f9ff; border-left: 3px solid #0284c7; border-radius: 4px; font-size: 0.95rem; color: #0c4a6e; font-style: italic;">${taskStarter}</div></details>` : ''}
+                  ${taskModel ? `<details style="margin-top: 8px;"><summary style="cursor: pointer; color: #b45309; font-weight: 600; font-size: 0.9rem;"><i class="fa-solid fa-eye"></i> View Model Answer</summary><div class="scaffold-box model-box" style="margin-top: 8px; padding: 10px; background: #fef3c7; border-left: 3px solid #b45309; border-radius: 4px; font-size: 0.95rem; color: #78350f;">${taskModel}</div></details>` : ''}
                 </div>
               `;
             });
@@ -2333,11 +2336,12 @@ export function renderLesson(lesson) {
           }
           const qPrefix = task.qNum ? `Q${task.qNum}. ` : '';
           const ansId = `ans-emb-${index}-${tIdx}`;
-          const starterBtn = task.starter
+          const starterText = task.starter || task.sentence_starter;
+          const starterBtn = starterText
             ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-starter" data-action="toggle-element" data-target-id="starter-${ansId}"><i class="fa-solid fa-pen"></i> Starter</button>`
             : '';
-          const starterDiv = task.starter
-            ? `<div class="starter-box" id="starter-${ansId}" style="display: none; margin-top: 8px; background: #f0f9ff; padding: 10px; border-left: 3px solid #0284c7; font-style: italic; color: #0c4a6e; transition: all 0.3s ease;">${task.starter}</div>`
+          const starterDiv = starterText
+            ? `<div class="starter-box" id="starter-${ansId}" style="display: none; margin-top: 8px; background: #f0f9ff; padding: 10px; border-left: 3px solid #0284c7; font-style: italic; color: #0c4a6e; transition: all 0.3s ease;">${starterText}</div>`
             : '';
           let flowchartHtml = '';
           if (task.flowchart) {
@@ -2849,7 +2853,7 @@ export function renderLesson(lesson) {
         <div class="phase-card">
           <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20px;">
             <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">Extended Scholarship</div>
-            ${lesson.extended && (lesson.extended.model || lesson.extended.answer) ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-model" data-action="toggle-element" data-target-id="extended-model-${lesson.id}"><i class="fa-solid fa-check-double"></i> Reveal Model Answer</button>` : ''}
+            ${lesson.extended && (lesson.extended.model || lesson.extended.model_answer || lesson.extended.answer) ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-model" data-action="toggle-element" data-target-id="extended-model-${lesson.id}"><i class="fa-solid fa-check-double"></i> Reveal Model Answer</button>` : ''}
           </div>
       `;
 
@@ -3148,7 +3152,7 @@ export function renderLesson(lesson) {
             <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
               ${lesson.extended.qNum ? `Q${lesson.extended.qNum}. ` : ''}${formatQuestion(lesson.extended.question, !lesson.extended.qNum)}
               <span style="display: inline-flex; vertical-align: middle; gap: 6px;">
-                ${lesson.extended.model || lesson.extended.answer ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-icon-only btn-pedagogy-model" title="Reveal Model Answer" data-action="toggle-element" data-target-id="extended-model-${lesson.id}"><i class="fa-solid fa-check-double"></i></button>` : ''}
+                ${lesson.extended.model || lesson.extended.model_answer || lesson.extended.answer ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-icon-only btn-pedagogy-model" title="Reveal Model Answer" data-action="toggle-element" data-target-id="extended-model-${lesson.id}"><i class="fa-solid fa-check-double"></i></button>` : ''}
                 ${lesson.extended.answer_image ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-model" title="Reveal Reference Map" data-action="toggle-element" data-target-id="extended-map-answer-${lesson.id}"><i class="fa-solid fa-map-location-dot"></i> Reveal Reference Map</button>` : ''}
                 ${lesson.extended.title && lesson.extended.title.toLowerCase().includes('map task') ? `<button class="btn btn-pedagogy btn-pedagogy-sm" style="background: #0284c7; color: #ffffff; border: 1px solid #0369a1;" title="Interactive Classroom Map" data-action="toggle-element" data-target-id="extended-map-interactive-${lesson.id}"><i class="fa-solid fa-earth-americas"></i> Interactive Classroom Map</button>` : ''}
               </span>
@@ -3191,7 +3195,7 @@ export function renderLesson(lesson) {
                 : ''
             }
             <textarea class="student-answer-input" style="min-height: 200px;" placeholder="Write your extended response here..." oninput="window.updateProgress()"></textarea>
-            ${lesson.extended.model || lesson.extended.answer ? `<div id="extended-model-${lesson.id}" class="scaffold-box model-box" style="display:none; margin-top: 15px;">${formatBold(lesson.extended.model || lesson.extended.answer)}</div>` : ''}
+            ${lesson.extended.model || lesson.extended.model_answer || lesson.extended.answer ? `<div id="extended-model-${lesson.id}" class="scaffold-box model-box" style="display:none; margin-top: 15px;">${formatBold(lesson.extended.model || lesson.extended.model_answer || lesson.extended.answer)}</div>` : ''}
           </div>
         `;
     }
