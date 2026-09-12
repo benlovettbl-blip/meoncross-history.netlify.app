@@ -151,19 +151,42 @@ const industrialisation_and_empire = {
             "Source A: Coalbrookdale by Night (1801), painted by Philipp Jakob de Loutherbourg (Science Museum, London). The blast furnaces of the Madeley Wood ironworks illuminate the Shropshire night with fiery intensity, capturing Britain's dramatic shift from water and wood to a coal-fired industrial economy.",
           tasks: [
             {
-              type: 'source_analysis',
-              question:
-                "Study Source A and read Act 1. Using paragraphs [1.2] and [1.3], explain why James Watt's steam engine triggered an urgent national crisis for British iron production, and why relying on Swedish iron imports was a strategic danger for the nation.",
-              starter:
-                "James Watt's steam engine triggered an urgent crisis in iron production because, as explained in paragraph [1.2], steam power allowed factories and heavy machinery to expand rapidly, which...",
-              causal_connectives: [
-                'Consequently',
-                'Furthermore',
-                'This directly resulted in',
-                'Because of this vulnerability',
+              type: 'causal_domino',
+              title: 'Causal Chain: The Iron Bottleneck & Strategic Crisis',
+              text: 'The Iron Bottleneck: Trace the kinetic chain from Watt’s steam engine to Britain’s strategic crisis. Complete the missing causal link in Step 3.',
+              instruction:
+                'Using paragraphs [1.2] and [1.3], trace how steam innovation led directly to a dangerous national dependence on foreign imports.',
+              steps: [
+                {
+                  stage: 'Step 1: Catalyst',
+                  year: '1776',
+                  title: "Watt's Steam Engine",
+                  desc: 'Rotative steam engines power mechanized textile mills, mines, and heavy machinery across Britain.',
+                },
+                {
+                  stage: 'Step 2: Crisis',
+                  year: '1780',
+                  title: 'Brittle Pig Iron',
+                  desc: 'British coke blast furnaces produce brittle, high-carbon "pig iron" that shatters under high-pressure steam.',
+                },
+                {
+                  stage: 'Step 3: Bottleneck',
+                  year: '1783',
+                  title: 'Baltic Import Bottleneck',
+                  desc: 'Britain imports 50,000 tons of malleable iron annually from Sweden and Russia.',
+                  blank: true,
+                  prompt:
+                    'Explain why relying on Swedish imports was a lethal danger for the Royal Navy during wartime:',
+                },
+                {
+                  stage: 'Step 4: Breakthrough',
+                  year: '1784',
+                  title: "Cort's Funtley Process",
+                  desc: 'Henry Cort masters the puddling furnace and grooved rollers on the River Meon, securing domestic self-sufficiency.',
+                },
               ],
               model_answer:
-                'James Watt\'s steam engine revolutionized manufacturing by allowing factories, railways, and heavy machinery to be built anywhere, independent of river power [1.2]. However, this rapid mechanical expansion created a severe crisis because steam engines, boilers, and naval warships required enormous volumes of tough, flexible wrought iron. British ironworks could only produce brittle "pig iron" that shattered easily due to carbon and sulphur impurities [1.3]. Consequently, Britain was forced to import over 50,000 tons of high-grade iron annually from Sweden and Russia. This reliance created a dangerous strategic bottleneck, because any diplomatic crisis or naval blockade in the Baltic would instantly leave the Royal Navy and British industry without the vital metal needed to defend the empire.',
+                "Relying on Sweden for 80% of Britain's malleable naval iron was a lethal vulnerability because any Baltic blockade or war with France would immediately paralyze Portsmouth Dockyard, leaving the Royal Navy without ship bolts, mast hoops, and anchors to defend the empire.",
             },
           ],
         },
@@ -177,34 +200,50 @@ const industrialisation_and_empire = {
             "Source B: Technical cross-section of Henry Cort's patented reverberatory puddling furnace at Funtley Ironworks, Hampshire (1783). The arched brick roof reverberated intense heat downward onto the shallow hearth, burning off carbon while keeping raw coal smoke away from the refining metal.",
           tasks: [
             {
-              type: 'technical_analysis',
-              question:
-                "Study Source B and read Act 2. Using paragraphs [2.2] and [2.3], explain how Henry Cort's puddling and rolling processes at Funtley transformed iron refining from a slow craft into an industrial mass-production science.",
-              starter:
-                'Henry Cort transformed iron manufacturing at Funtley by combining chemical refinement with mechanical automation. As shown in Source B and paragraph [2.3], his puddling furnace...',
-              causal_connectives: [
-                'Specifically',
-                'By reverberating heat',
-                'Simultaneously',
-                'As a direct consequence',
+              type: 'visual_annotation',
+              title:
+                "Visual Blueprint & Archival Anatomy: Cort's Reverberatory Puddling Furnace (1783)",
+              text: "Visual Blueprint: Identify and annotate the 4 key chemical and mechanical features of Henry Cort's 1783 Funtley Puddling Furnace.",
+              instruction:
+                'Using paragraph [2.3] and the 1783 technical cross-section (Source B), annotate each numbered feature to explain how Cort solved the iron crisis.',
+              image: '/images/funtley_ironworks.jpg',
+              caption:
+                "Source B: Patent drawing cross-section of Cort's reverberatory puddling furnace at Funtley.",
+              annotations: [
+                {
+                  num: 1,
+                  label: 'Coal Combustion Firebox',
+                  prompt: 'What burns here, and why was coal previously banned from touching iron?',
+                  starter: 'Raw pit coal burns here; coal sulfur was separated because...',
+                  model:
+                    'Pit coal combustion chamber. Cort physically separated the coal fuel from the metal to prevent sulfur impurities from making the iron brittle.',
+                },
+                {
+                  num: 2,
+                  label: 'Arched Reverberatory Roof',
+                  prompt:
+                    'How did the curved brick ceiling heat the iron without direct fuel contact?',
+                  starter: 'The arched brick ceiling reflects and bounces radiant heat...',
+                  model:
+                    'The curved masonry ceiling reflects (reverberates) heat and flame downwards onto the metal, melting the iron purely through radiant thermal energy.',
+                },
+                {
+                  num: 3,
+                  label: 'The Fire Bridge (D)',
+                  prompt: 'What was the vital function of this raised brick baffle?',
+                  starter: 'The brick fire bridge acted as a physical barrier to...',
+                  model:
+                    'A raised brick baffle wall that stops unburnt coal ash and sulfur fumes from spilling into the puddling hearth.',
+                },
+                {
+                  num: 4,
+                  label: 'Puddling Hearth & Stirring Basin (A)',
+                  prompt: 'What physical action did the puddler perform through the side portal?',
+                  starter: 'Workers vigorously stirred ("puddled") boiling iron with...',
+                  model:
+                    'The concave refining hearth where the puddler used long iron rabbles to stir the molten iron, allowing oxygen to burn away carbon until pure wrought balls formed.',
+                },
               ],
-              model_answer:
-                'Henry Cort transformed iron refining from a slow, artisanal craft into an industrial science by solving both the chemical and mechanical bottlenecks of iron production [2.3]. Chemically, his reverberatory puddling furnace used an arched roof to reflect intense heat down onto molten iron, burning away brittle carbon impurities while physically separating the metal from raw coal sulphur (Source B). Mechanically, Cort eliminated slow manual blacksmith hammering by passing the glowing iron blooms through powered grooved rolling mills. This squeezed out toxic slag and formed standardized bars and naval bolts fifteen times faster than traditional methods. Consequently, Funtley proved that Britain could mass-produce pure, uniform wrought iron at unprecedented industrial speed using domestic pit coal.',
-            },
-            {
-              type: 'archaeological_enquiry',
-              question:
-                'Fieldwork & Archaeological Analysis: Compare the 1784 watercolour of Fontley Iron Mills with modern fieldwork photographs of the River Meon weir and iron slag wall. Using paragraphs [2.4] and [2.5], explain what physical evidence proves that Funtley was once an intensive heavy industrial site, and evaluate how Cort harnessed both natural hydraulics and chemical refining to produce naval iron.',
-              starter:
-                'Physical and visual evidence confirms that Funtley was an intensive heavy industrial complex. As shown in the 1784 watercolour and surviving river landscape [2.4], Cort harnessed natural hydraulics by...',
-              causal_connectives: [
-                'Furthermore, archaeological evidence reveals',
-                'By diverting water over the masonry weir',
-                'This physical residue proves that',
-                'Consequently',
-              ],
-              model_answer:
-                'Physical and visual evidence provides conclusive proof that Funtley was an intensive heavy industrial site. The 1784 watercolour depicts a bustling 18th-century industrial complex with smoke pouring from reverberatory puddling chimneys and water rushing through a mill race to power the forge [2.4]. This active layout is corroborated by modern fieldwork along the River Meon, where the surviving masonry weir and circular brick waterwheel housing reveal exactly where Cort harnessed the natural kinetic flow of water to drive his heavy grooved rollers. Furthermore, forensic archaeological evidence survives in the form of dense, glassy iron puddling slag (clinker) excavated from the grounds [2.5]. Squeezed out of the molten metal during refining, these heavy residues were used by the property owner to construct Hampshire’s only iron slag wall. Combined with the Fareham "Tallboy" chimney pots atop Samuel Jellicoe’s Fontley House, these physical artifacts demonstrate that Cort successfully wedded Hampshire’s natural hydraulic energy to revolutionary chemical metallurgy to supply the Royal Navy.',
             },
           ],
         },
@@ -254,19 +293,20 @@ const industrialisation_and_empire = {
           },
           tasks: [
             {
-              type: 'forensic_evaluation',
-              question:
-                'Study the Archival Trial Minutes (Source C) and read Act 3. Using paragraphs [3.1]–[3.3], explain why the 1787 Portsmouth Dockyard trials were a decisive turning point in British naval history, and evaluate why Henry Cort died in poverty despite transforming the national economy.',
+              type: 'word_scalpel',
+              title: 'Forensic Scalpel: The Admiralty Portsmouth Dockyard Report (1787)',
+              text: 'Forensic Scalpel: Interrogate Source C (Admiralty Papers ADM 106/2347). Extract the exact 3–6 word phrase that convinced naval commissioners to adopt Funtley iron.',
+              instruction:
+                'Use your analytical scalpel on the Navy Board trial minutes. Extract the exact phrase certifying that Funtley iron equalled the gold standard of international metallurgy.',
+              source_excerpt:
+                'We find it to exceed in strength and toughness any iron manufactured in this kingdom, and fully equal to the best Swedish Orgrounds iron for ship bolts, mast hoops, and anchors for His Majesty’s Fleet.',
+              model_quote: 'fully equal to the best Swedish Orgrounds iron',
+              justification_prompt:
+                'Why did this specific comparative phrase guarantee that the Royal Navy would endorse Cort’s Funtley ironworks?',
               starter:
-                'The 1787 Portsmouth Dockyard trials were a vital turning point because, as recorded in Source C, official naval testing proved that...',
-              causal_connectives: [
-                'Crucially, this meant that',
-                'This strategic self-sufficiency allowed',
-                "However, Cort's personal tragedy stemmed from",
-                'Ultimately',
-              ],
+                'This phrase was decisive because Swedish Orgrounds iron was the world gold standard for warships; proving Funtley matched it meant...',
               model_answer:
-                "The 1787 Portsmouth Dockyard trials represented a decisive turning point because they provided indisputable proof that Funtley iron was equal in strength to premium Swedish Orgrounds iron (Source C) [3.2]. Crucially, this severed Britain's reliance on foreign Baltic imports on the eve of the French Revolutionary Wars, ensuring that royal shipyards could construct warship anchors, mast hoops, and bolts entirely from domestic resources. However, despite generating unprecedented national wealth, Cort was ruined when his financial partner Adam Jellicoe died in 1789, exposing £27,000 in embezzled naval funds invested into Funtley [3.3]. The Crown seized Cort's patents, allowing British ironmasters across the country to exploit his puddling methods for free without paying royalties. Ultimately, while Britain achieved global naval and industrial supremacy through Cort's genius, Cort himself died penniless.",
+                'Swedish Orgrounds iron was universally recognized as the finest naval wrought iron on Earth. By certifying that Funtley iron was "fully equal to the best Swedish Orgrounds iron," the Navy Board gave the Admiralty scientific and military justification to replace foreign Baltic imports with British iron, guaranteeing naval security on the eve of the French Revolutionary Wars.',
             },
           ],
         },

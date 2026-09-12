@@ -2443,6 +2443,277 @@ export function renderLesson(lesson) {
                </div>`;
             return;
           }
+          if (task.type === 'visual_annotation' || task.type === 'diagram_annotation') {
+            const rawImg = task.image || task.src || (block && block.image ? block.image : null);
+            const imgSrc = rawImg ? getAssetUrl(rawImg) : '';
+            extrasHtml += `
+              <div class="task-box visual-annotation-interactive" style="margin-bottom: 25px; background: #ffffff; padding: 20px; border-radius: 10px; border: 2px solid #0f172a; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px;">
+                  <h4 style="margin: 0; color: #0f172a; font-size: 1.15rem;"><i class="fa-solid fa-microscope" style="color: #0284c7; margin-right: 8px;"></i> ${task.text || task.question || 'Visual Blueprint & Archival Anatomy'}</h4>
+                  <span style="background: #0f172a; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Visual Anatomy</span>
+                </div>
+                ${task.instruction ? `<p style="font-size: 0.95rem; color: #475569; font-style: italic; margin-top: 0; margin-bottom: 15px;">${task.instruction}</p>` : ''}
+                ${
+                  imgSrc
+                    ? `
+                  <div style="text-align: center; margin-bottom: 20px; background: #0f172a; border-radius: 8px; padding: 10px; position: relative;">
+                    <img src="${imgSrc}" alt="Historical Diagram" style="max-height: 380px; max-width: 100%; object-fit: contain; border-radius: 4px; cursor: zoom-in;" data-action="open-modal" data-src="${imgSrc}" title="Click to zoom">
+                    ${task.caption ? `<div style="color: #94a3b8; font-size: 0.85rem; font-style: italic; margin-top: 8px;">${task.caption}</div>` : ''}
+                  </div>
+                `
+                    : ''
+                }
+                ${
+                  task.annotations && task.annotations.length > 0
+                    ? `
+                  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
+                    ${task.annotations
+                      .map((ann, aIdx) => {
+                        const num = ann.num || aIdx + 1;
+                        return `
+                        <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 14px;">
+                          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                            <span style="background: #0f172a; color: #ffffff; font-weight: 800; font-size: 0.85rem; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;">${num}</span>
+                            <strong style="color: #1e293b; font-size: 0.95rem;">${ann.label || ann.target || 'Feature ' + num}</strong>
+                          </div>
+                          <p style="font-size: 0.88rem; color: #475569; margin: 0 0 10px 0; line-height: 1.4;">${ann.prompt || ann.question || 'Identify and explain significance:'}</p>
+                          <textarea style="width: 100%; box-sizing: border-box; min-height: 55px; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.9rem; font-family: inherit; resize: vertical;" placeholder="${ann.starter || 'Type your notes / label here...'}"></textarea>
+                          ${
+                            ann.model
+                              ? `
+                            <details style="margin-top: 8px;">
+                              <summary style="cursor: pointer; color: #b45309; font-weight: 600; font-size: 0.82rem;"><i class="fa-solid fa-eye"></i> View Expert Historical Note</summary>
+                              <div style="margin-top: 6px; padding: 8px 10px; background: #fef3c7; border-left: 3px solid #b45309; border-radius: 4px; font-size: 0.85rem; color: #78350f;">${ann.model}</div>
+                            </details>
+                          `
+                              : ''
+                          }
+                        </div>
+                      `;
+                      })
+                      .join('')}
+                  </div>
+                `
+                    : ''
+                }
+              </div>
+            `;
+            return;
+          }
+          if (task.type === 'causal_domino') {
+            extrasHtml += `
+              <div class="task-box causal-domino-interactive" style="margin-bottom: 25px; background: #f0f9ff; padding: 20px; border-radius: 10px; border: 2px solid #0284c7; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.1);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #bae6fd; padding-bottom: 10px;">
+                  <h4 style="margin: 0; color: #0369a1; font-size: 1.15rem;"><i class="fa-solid fa-cubes-stacked" style="color: #0284c7; margin-right: 8px;"></i> ${task.text || task.question || 'Causal Domino Chain'}</h4>
+                  <span style="background: #0284c7; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Causal Chain</span>
+                </div>
+                ${task.instruction ? `<p style="font-size: 0.95rem; color: #075985; font-style: italic; margin-top: 0; margin-bottom: 15px;">${task.instruction}</p>` : ''}
+                ${
+                  task.steps && task.steps.length > 0
+                    ? `
+                  <div style="display: flex; flex-direction: column; gap: 12px;">
+                    ${task.steps
+                      .map(
+                        (step, sIdx) => `
+                      <div style="background: #ffffff; border: 1.5px solid ${step.blank ? '#0284c7' : '#cbd5e1'}; border-left: 5px solid ${sIdx === 0 ? '#0284c7' : sIdx === task.steps.length - 1 ? '#0369a1' : '#0ea5e9'}; border-radius: 8px; padding: 14px; display: flex; align-items: flex-start; gap: 14px;">
+                        <div style="background: #e0f2fe; color: #0369a1; font-weight: 800; font-size: 0.9rem; padding: 4px 10px; border-radius: 6px; white-space: nowrap;">
+                          ${step.stage || 'Step ' + (sIdx + 1)}
+                        </div>
+                        <div style="flex: 1;">
+                          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                            <strong style="color: #0f172a; font-size: 1rem;">${step.title || ''}</strong>
+                            ${step.year ? `<span style="font-size: 0.85rem; color: #64748b; font-weight: 600;">${step.year}</span>` : ''}
+                          </div>
+                          ${step.desc ? `<p style="margin: 0 0 8px 0; font-size: 0.92rem; color: #475569; line-height: 1.4;">${step.desc}</p>` : ''}
+                          ${
+                            step.blank
+                              ? `
+                            <textarea style="width: 100%; box-sizing: border-box; min-height: 50px; padding: 8px; border: 1.5px dashed #0284c7; border-radius: 6px; font-size: 0.9rem; font-family: inherit; resize: vertical; background: #f8fafc;" placeholder="${step.prompt || 'Explain the causal link connecting this step...'}"></textarea>
+                          `
+                              : ''
+                          }
+                        </div>
+                      </div>
+                    `,
+                      )
+                      .join('')}
+                  </div>
+                `
+                    : ''
+                }
+              </div>
+            `;
+            return;
+          }
+          if (task.type === 'word_scalpel' || task.type === 'forensic_autopsy') {
+            extrasHtml += `
+              <div class="task-box word-scalpel-interactive" style="margin-bottom: 25px; background: #fffbeb; padding: 20px; border-radius: 10px; border: 2px solid #d97706; box-shadow: 0 4px 12px rgba(217, 119, 6, 0.1);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #fed7aa; padding-bottom: 10px;">
+                  <h4 style="margin: 0; color: #92400e; font-size: 1.15rem;"><i class="fa-solid fa-scissors" style="color: #d97706; margin-right: 8px;"></i> ${task.text || task.question || 'Forensic Scalpel: Micro-Quotation Extraction'}</h4>
+                  <span style="background: #d97706; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Forensic Scalpel</span>
+                </div>
+                ${task.instruction ? `<p style="font-size: 0.95rem; color: #78350f; font-style: italic; margin-top: 0; margin-bottom: 12px;">${task.instruction}</p>` : ''}
+                ${
+                  task.source_excerpt
+                    ? `
+                  <div style="font-family: Georgia, serif; font-size: 1rem; color: #1e293b; font-style: italic; background: #ffffff; border-left: 4px solid #d97706; padding: 12px 16px; margin-bottom: 15px; border-radius: 0 6px 6px 0; line-height: 1.6;">
+                    &ldquo;${task.source_excerpt}&rdquo;
+                  </div>
+                `
+                    : ''
+                }
+                <div style="background: #ffffff; border: 2px dashed #b45309; border-radius: 8px; padding: 14px; margin-bottom: 14px;">
+                  <div style="font-size: 0.88rem; font-weight: 700; color: #92400e; margin-bottom: 6px;">Extract the Exact 3–6 Word "Smoking Gun" Quote:</div>
+                  <input type="text" style="width: 100%; box-sizing: border-box; padding: 10px 14px; font-family: Georgia, serif; font-size: 1.05rem; border: 1px solid #fed7aa; border-radius: 6px; color: #1e293b;" placeholder='e.g. "[ . . . 3 to 6 words . . . ]"'>
+                </div>
+                ${
+                  task.justification_prompt
+                    ? `
+                  <div style="margin-bottom: 10px;">
+                    <label style="display: block; font-size: 0.9rem; font-weight: 700; color: #78350f; margin-bottom: 6px;">Why is this phrase decisive? ${task.justification_prompt}</label>
+                    <textarea style="width: 100%; box-sizing: border-box; min-height: 60px; padding: 8px; border: 1px solid #fed7aa; border-radius: 6px; font-size: 0.9rem; font-family: inherit; resize: vertical;" placeholder="${task.starter || 'Type your justification here...'}"></textarea>
+                  </div>
+                `
+                    : ''
+                }
+                ${
+                  task.model_quote
+                    ? `
+                  <details style="margin-top: 10px;">
+                    <summary style="cursor: pointer; color: #b45309; font-weight: 600; font-size: 0.85rem;"><i class="fa-solid fa-eye"></i> Reveal Historian's Scalpel Selection</summary>
+                    <div style="margin-top: 6px; padding: 10px 14px; background: #fef3c7; border-left: 3px solid #b45309; border-radius: 4px; font-size: 0.92rem; color: #78350f;">
+                      <strong>Smoking Gun:</strong> <em>&ldquo;${task.model_quote}&rdquo;</em><br>
+                      ${task.model_answer ? `<span style="font-size: 0.88rem; display: block; margin-top: 4px;">${task.model_answer}</span>` : ''}
+                    </div>
+                  </details>
+                `
+                    : ''
+                }
+              </div>
+            `;
+            return;
+          }
+          if (task.type === 'ledger_audit' || task.type === 'balance_sheet') {
+            const col1 = task.col1 || { title: 'Column A' };
+            const col2 = task.col2 || { title: 'Column B' };
+            const rowCount = task.rows || 3;
+            extrasHtml += `
+              <div class="task-box ledger-audit-interactive" style="margin-bottom: 25px; background: #f8fafc; padding: 20px; border-radius: 10px; border: 2px solid #475569; box-shadow: 0 4px 12px rgba(71, 85, 105, 0.1);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #cbd5e1; padding-bottom: 10px;">
+                  <h4 style="margin: 0; color: #1e293b; font-size: 1.15rem;"><i class="fa-solid fa-scale-balanced" style="color: #475569; margin-right: 8px;"></i> ${task.text || task.question || 'Forensic Ledger'}</h4>
+                  <span style="background: #475569; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Forensic Ledger</span>
+                </div>
+                ${task.instruction ? `<p style="font-size: 0.95rem; color: #475569; font-style: italic; margin-top: 0; margin-bottom: 15px;">${task.instruction}</p>` : ''}
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                  <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 14px;">
+                    <h5 style="margin: 0 0 10px 0; color: #0f172a; font-size: 1rem; border-bottom: 2px solid #cbd5e1; padding-bottom: 6px;">${col1.title}</h5>
+                    ${Array.from({ length: rowCount })
+                      .map(
+                        (_, r) => `
+                      <input type="text" style="width: 100%; box-sizing: border-box; margin-bottom: 8px; padding: 8px; border: 1px solid #e2e8f0; border-radius: 4px; font-size: 0.88rem;" placeholder="${col1.hints && col1.hints[r] ? col1.hints[r] : 'Evidence point ' + (r + 1)}">
+                    `,
+                      )
+                      .join('')}
+                  </div>
+                  <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 14px;">
+                    <h5 style="margin: 0 0 10px 0; color: #0f172a; font-size: 1rem; border-bottom: 2px solid #cbd5e1; padding-bottom: 6px;">${col2.title}</h5>
+                    ${Array.from({ length: rowCount })
+                      .map(
+                        (_, r) => `
+                      <input type="text" style="width: 100%; box-sizing: border-box; margin-bottom: 8px; padding: 8px; border: 1px solid #e2e8f0; border-radius: 4px; font-size: 0.88rem;" placeholder="${col2.hints && col2.hints[r] ? col2.hints[r] : 'Evidence point ' + (r + 1)}">
+                    `,
+                      )
+                      .join('')}
+                  </div>
+                </div>
+              </div>
+            `;
+            return;
+          }
+          if (task.type === 'historiographical_spectrum' || task.type === 'spectrum') {
+            const leftPole = task.pole_left || 'Interpretation A';
+            const rightPole = task.pole_right || 'Interpretation B';
+            const specId = `spec-slider-${index}-${tIdx}`;
+            extrasHtml += `
+              <div class="task-box spectrum-interactive" style="margin-bottom: 25px; background: #faf5ff; padding: 20px; border-radius: 10px; border: 2px solid #7c3aed; box-shadow: 0 4px 12px rgba(124, 58, 237, 0.1);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #ddd6fe; padding-bottom: 10px;">
+                  <h4 style="margin: 0; color: #5b21b6; font-size: 1.15rem;"><i class="fa-solid fa-arrows-left-right" style="color: #7c3aed; margin-right: 8px;"></i> ${task.text || task.question || 'Historiographical Spectrum'}</h4>
+                  <span style="background: #7c3aed; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Interpretation Spectrum</span>
+                </div>
+                ${task.instruction ? `<p style="font-size: 0.95rem; color: #6b21a8; font-style: italic; margin-top: 0; margin-bottom: 15px;">${task.instruction}</p>` : ''}
+                <div style="background: #ffffff; border: 1px solid #ddd6fe; border-radius: 8px; padding: 18px; margin-bottom: 15px;">
+                  <div style="display: flex; justify-content: space-between; font-size: 0.95rem; font-weight: 700; color: #4c1d95; margin-bottom: 12px;">
+                    <span style="max-width: 45%;">${leftPole}</span>
+                    <span style="max-width: 45%; text-align: right;">${rightPole}</span>
+                  </div>
+                  <input type="range" min="0" max="100" value="50" id="${specId}" style="width: 100%; cursor: pointer;" oninput="document.getElementById('${specId}-val').innerText = this.value + '%';">
+                  <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #6b7280; margin-top: 6px;">
+                    <span>0%</span><span>25%</span><span id="${specId}-val" style="font-weight: bold; color: #7c3aed;">50%</span><span>75%</span><span>100%</span>
+                  </div>
+                </div>
+                <div style="margin-bottom: 10px;">
+                  <label style="display: block; font-size: 0.9rem; font-weight: 700; color: #5b21b6; margin-bottom: 6px;">Justify your placement along this spectrum:</label>
+                  <textarea style="width: 100%; box-sizing: border-box; min-height: 55px; padding: 8px; border: 1px solid #ddd6fe; border-radius: 6px; font-size: 0.9rem; font-family: inherit; resize: vertical;" placeholder="${task.starter || 'I have placed this at... because...'}"></textarea>
+                </div>
+              </div>
+            `;
+            return;
+          }
+          if (task.type === 'crucible_fork') {
+            extrasHtml += `
+              <div class="task-box crucible-fork-interactive" style="margin-bottom: 25px; background: #fff7ed; padding: 20px; border-radius: 10px; border: 2px solid #ea580c; box-shadow: 0 4px 12px rgba(234, 88, 12, 0.1);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #fed7aa; padding-bottom: 10px;">
+                  <h4 style="margin: 0; color: #9a3412; font-size: 1.15rem;"><i class="fa-solid fa-code-branch" style="color: #ea580c; margin-right: 8px;"></i> ${task.text || task.question || 'The Crucible Fork: Decision Dilemma'}</h4>
+                  <span style="background: #ea580c; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Decision Dilemma</span>
+                </div>
+                ${task.instruction ? `<p style="font-size: 0.95rem; color: #c2410c; font-style: italic; margin-top: 0; margin-bottom: 15px;">${task.instruction}</p>` : ''}
+                ${
+                  task.options && task.options.length > 0
+                    ? `
+                  <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 15px;">
+                    ${task.options
+                      .map(
+                        (opt, oIdx) => `
+                      <label style="background: #ffffff; border: 1.5px solid #fed7aa; border-radius: 8px; padding: 12px; display: flex; align-items: flex-start; gap: 10px; cursor: pointer; transition: all 0.2s ease;">
+                        <input type="radio" name="fork-${index}-${tIdx}" value="${oIdx}" style="margin-top: 3px;">
+                        <div>
+                          <strong style="color: #9a3412; font-size: 0.95rem;">Option ${String.fromCharCode(65 + oIdx)}: ${opt.title}</strong>
+                          <p style="margin: 4px 0 0 0; font-size: 0.88rem; color: #475569; line-height: 1.4;">${opt.desc}</p>
+                        </div>
+                      </label>
+                    `,
+                      )
+                      .join('')}
+                  </div>
+                `
+                    : ''
+                }
+                ${
+                  task.risk_prompt
+                    ? `
+                  <div style="margin-bottom: 10px;">
+                    <label style="display: block; font-size: 0.9rem; font-weight: 700; color: #9a3412; margin-bottom: 6px;">Calculated Risk: ${task.risk_prompt}</label>
+                    <textarea style="width: 100%; box-sizing: border-box; min-height: 50px; padding: 8px; border: 1px solid #fed7aa; border-radius: 6px; font-size: 0.9rem; font-family: inherit; resize: vertical;" placeholder="${task.starter || 'The primary risk of this decision was...'}"></textarea>
+                  </div>
+                `
+                    : ''
+                }
+                ${
+                  task.historical_outcome
+                    ? `
+                  <details style="margin-top: 10px;">
+                    <summary style="cursor: pointer; color: #ea580c; font-weight: 600; font-size: 0.85rem;"><i class="fa-solid fa-clock-rotate-left"></i> Reveal Historical Reality</summary>
+                    <div style="margin-top: 6px; padding: 10px 14px; background: #ffedd5; border-left: 3px solid #ea580c; border-radius: 4px; font-size: 0.92rem; color: #9a3412;">
+                      <strong>What Actually Happened:</strong> ${task.historical_outcome}
+                    </div>
+                  </details>
+                `
+                    : ''
+                }
+              </div>
+            `;
+            return;
+          }
           const qPrefix = task.qNum ? `Q${task.qNum}. ` : '';
           const ansId = `ans-emb-${index}-${tIdx}`;
           const starterText = task.starter || task.sentence_starter;

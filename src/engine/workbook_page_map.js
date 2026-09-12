@@ -410,13 +410,13 @@ export const WORKBOOK_PAGE_MAP = {
       lessonIndex: 4,
     },
     lesson_5: {
-      page: 34,
+      page: 33,
       booklet: 'Pupil Workbook',
       unitId: 'great_war',
       lessonIndex: 5,
     },
     lesson_6: {
-      page: 43,
+      page: 42,
       booklet: 'Pupil Workbook',
       unitId: 'great_war',
       lessonIndex: 6,

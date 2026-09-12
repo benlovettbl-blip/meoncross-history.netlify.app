@@ -312,12 +312,31 @@ export default {
           text: 'In 1862, a brilliant and fiercely conservative nobleman named Otto von Bismarck was appointed Chancellor of Prussia. Bismarck had a clear and single-minded goal: to exclude Austria from German affairs once and for all and unite the remaining German states under Prussian leadership.\n\nBismarck despised the slow, democratic methods of speeches and parliaments. In his very first speech as Chancellor, he warned the Prussian parliament of his plans:\n\n> *"Germany is not looking to Prussia’s liberalism, but to her power... The great questions of the day will not be decided by speeches and resolutions of majorities... but by **blood and iron**."*\n\nBy "blood," Bismarck meant the lives of soldiers; by "iron," he meant the advanced technology of Prussia’s military machine, including its modern railways, artillery, and rapid-firing guns. From the mid-nineteenth century, Prussia built up a massive, exceptionally well-trained, and highly disciplined army. Bismarck was ready to unleash it.',
           tasks: [
             {
-              type: 'comprehension',
-              text: "Task 1: Interpreting 'Blood and Iron'. In your own words, explain what Otto von Bismarck meant when he said Germany would be united by 'blood and iron'. How did Prussia use its industrial and military power to prove Bismarck’s speech right between 1864 and 1871?",
+              type: 'crucible_fork',
+              title: "The Crucible Fork: Bismarck’s 'Blood and Iron' Dilemma (1862)",
+              text: 'Decision Dilemma: You are Otto von Bismarck in September 1862. The Prussian parliament refuses to fund the army. Choose your path.',
+              instruction:
+                'Evaluate the three historical choices facing Bismarck in 1862. Decide how to proceed and identify the calculated risk.',
+              options: [
+                {
+                  title: 'Surrender to Parliament (Liberal Consensus)',
+                  desc: 'Obey the liberal majority in parliament, cancel army expansion, and attempt to unite Germany through peaceful speeches and elections.',
+                },
+                {
+                  title: 'Resign and Retreat (Austrian Dominance)',
+                  desc: 'Resign as Minister President, allowing the Catholic Austrian Empire to remain the undisputed diplomatic master of the German Confederation.',
+                },
+                {
+                  title: 'Rule by Decree & Unleash Blood and Iron (The Autocratic Path)',
+                  desc: 'Bypass parliament, collect taxes unilaterally, rapidly modernize the army with Krupp artillery, and prepare to forge unity through war.',
+                },
+              ],
+              risk_prompt:
+                'What was the colossal calculated risk of choosing Option C (unilateral military expansion)?',
               starter:
-                "When Bismarck stated Germany would be united by 'blood and iron', he meant that...",
-              model_answer:
-                "By 'blood and iron', Bismarck meant that unification would be achieved through warfare (blood) and industrial/military strength (iron), rather than through peaceful democratic speeches or votes. Prussia proved this right by building a modernized army with advanced railways and artillery, and then using this military machine to crush Denmark, Austria, and France in rapid succession between 1864 and 1871.",
+                'The primary risk was that if Prussia lost a war against Austria or France, Bismarck would face...',
+              historical_outcome:
+                "Bismarck boldly executed Option C. He ignored parliament, collected taxes without consent, and built Europe's most formidable industrial army, declaring that great questions are decided 'not by speeches... but by blood and iron'.",
             },
           ],
         },
@@ -326,11 +345,39 @@ export default {
           text: 'To unite Germany, Bismarck orchestrated three short, decisive wars over a seven-year period:\n\n*   **War 1: The Danish War (1864):** Prussia teamed up with Austria to quickly defeat Denmark in a dispute over territory, showing off their military coordination.\n*   **War 2: The Austro-Prussian War (1866):** Bismarck turned on his former ally, Austria. The modernized Prussian army crushed the Austrian forces in just seven weeks. Following this defeat, Austria was completely excluded from German affairs, leaving Prussia as the undisputed leader of the German states.\n*   **War 3: The Franco-Prussian War (1870–1871):** To convince the southern German states (who were wary of Prussian dominance) to join his new union, Bismarck needed a common enemy. He cleverly provoked a war with France. The Prussian military machine invaded France, totally destroyed the French armies, and captured the French Emperor.',
           tasks: [
             {
-              type: 'comprehension',
-              text: 'Task 2: The Steps to Unification. Create a three-step staircase diagram in your book to show how Bismarck built the German Empire. For each step, write down: 1. The name of the country Prussia defeated. 2. The year of the war. 3. How this war helped Prussia achieve its ultimate goal of unification.',
-              starter: 'Step 1 of German unification was the defeat of Denmark in 1864, which...',
+              type: 'causal_domino',
+              title: 'Causal Chain: The Three Wars to Empire (1864–1871)',
+              text: 'The Three Wars: Trace the kinetic domino chain that eliminated Prussia’s rivals and forged the German Empire.',
+              instruction:
+                'Trace the 3 sequential wars orchestrated by Bismarck. Note how each victory removed a foreign obstacle to unification.',
+              steps: [
+                {
+                  stage: 'War 1',
+                  year: '1864',
+                  title: 'The Danish War',
+                  desc: 'Prussia and Austria defeat Denmark; Prussia seizes Schleswig to test its modernized railway logistics.',
+                },
+                {
+                  stage: 'War 2',
+                  year: '1866',
+                  title: 'Austro-Prussian War',
+                  desc: 'Prussia crushes Austria in just 7 weeks; Austria is expelled from German affairs, creating the North German Confederation.',
+                },
+                {
+                  stage: 'War 3',
+                  year: '1870–71',
+                  title: 'Franco-Prussian War',
+                  desc: 'Bismarck baits Napoleon III into war; southern German kingdoms rally behind Prussia to defeat France.',
+                },
+                {
+                  stage: 'Empire',
+                  year: '1871',
+                  title: 'Proclamation of Kaiserreich',
+                  desc: 'The German Empire is proclaimed at Versailles, shattering the European balance of power.',
+                },
+              ],
               model_answer:
-                "Step 1: Denmark (1864) — Prussia and Austria seized Schleswig-Holstein, testing Prussian military coordination. Step 2: Austria (1866) — Prussia defeated Austria in the Seven Weeks' War, expelling Austria from German affairs and establishing the North German Confederation. Step 3: France (1870–1871) — Bismarck provoked France into declaring war, uniting the independent southern German kingdoms alongside Prussia and leading to the proclamation of the German Empire.",
+                'Bismarck systematically eliminated foreign opposition: first neutralizing Denmark (1864), then expelling Austria (1866), and finally uniting northern and southern German states against France (1870–71).',
             },
             {
               type: 'drag_drop_timeline',
@@ -359,6 +406,59 @@ export default {
         {
           title: "4. Crowning a Kaiser in the Enemy's Palace",
           text: "Having defeated France, Bismarck successfully united the remaining independent northern and southern German states into a single, massive German Empire (the *Kaiserreich*).\n\nTo add ultimate humiliation to France's defeat, Bismarck arranged for the King of Prussia, Wilhelm I, to be officially proclaimed the first German Emperor (Kaiser) on 18 January 1871 inside the Hall of Mirrors at the Palace of Versailles—the historic home of French kings.\n\nAs part of the peace treaty, Germany also seized Alsace-Lorraine, a highly valuable French industrial region rich in coal and iron. While Germany celebrated its spectacular unification, French citizens looked on with deep bitterness. This land grab created a furious, long-term rivalry between Germany and France that would eventually help spark the First World War forty years later.",
+          tasks: [
+            {
+              type: 'visual_annotation',
+              title:
+                "Visual Blueprint & Historical Anatomy: Anton von Werner's Proclamation of the German Empire (1871)",
+              text: "Visual Anatomy: Study Anton von Werner's painting of the 1871 Versailles proclamation. Identify the 4 key figures and militaristic symbols.",
+              instruction:
+                "Anton von Werner depicted the coronation of Wilhelm I inside the Hall of Mirrors at Versailles. Annotate the 4 key details below to explain how this painting reveals that Germany was forged by 'blood and iron'.",
+              image: '/images/werner_versailles_1871_highres.jpg',
+              caption:
+                'Anton von Werner, Proclamation of the German Empire at Versailles, 18 January 1871 (Friedrichsruh version, 1885).',
+              annotations: [
+                {
+                  num: 1,
+                  label: 'Otto von Bismarck (Center in White)',
+                  prompt:
+                    'Why is Bismarck wearing a brilliant white uniform in the dead center, rather than the Kaiser?',
+                  starter: 'Bismarck is placed dead center in pristine white to show that...',
+                  model:
+                    'Bismarck wears a white cuirassier uniform in the absolute visual center, signaling that he was the true mastermind and ruler who engineered the empire.',
+                },
+                {
+                  num: 2,
+                  label: 'Kaiser Wilhelm I on the Dais',
+                  prompt:
+                    'Who stands on the elevated platform on the left, and who is acclaiming him?',
+                  starter:
+                    'Kaiser Wilhelm I stands elevated beside the Grand Duke of Baden, who...',
+                  model:
+                    'King Wilhelm I of Prussia stands on the dais beside his son and the Grand Duke of Baden, who leads the imperial cheer.',
+                },
+                {
+                  num: 3,
+                  label: 'The Hall of Mirrors (Versailles)',
+                  prompt:
+                    'Why was holding this coronation inside France’s royal palace a deliberate geopolitical insult?',
+                  starter: 'The Hall of Mirrors was the palace of French kings; holding it here...',
+                  model:
+                    'Versailles was the palace of Louis XIV and the heart of French royal glory. Proclaiming the German Empire here was a calculated act to humiliate France.',
+                },
+                {
+                  num: 4,
+                  label: 'Raised Spiked Helmets (Pickelhauben)',
+                  prompt:
+                    'What does the crowd of cheering generals and drawn sabres reveal about the new state?',
+                  starter:
+                    'The sea of raised swords and spiked helmets demonstrates that Germany was unified by...',
+                  model:
+                    'Prussian officers cheering with drawn swords and Pickelhauben proves the empire was created through autocratic militarism rather than democratic consent.',
+                },
+              ],
+            },
+          ],
         },
       ],
       extended: {
@@ -394,12 +494,30 @@ export default {
           'Enquiry: Look at the A4 map provided. Why might the geographical location of the new German Empire cause fear for both Germany and its neighbors?',
         tasks: [
           {
-            type: 'short_answer',
-            text: "Task 3: Analyzing the Seeds of Future Conflict. Write a short analysis explaining why Bismarck’s decision to take Alsace-Lorraine from France in 1871 was highly successful for Germany's economy in the short term, but incredibly dangerous for Germany's security in the long term.",
-            starter:
-              "In the short term, annexing Alsace-Lorraine boosted Germany's economy because... however, in the long term it endangered security because...",
+            type: 'ledger_audit',
+            title: 'Forensic Ledger: The Annexation of Alsace-Lorraine (1871)',
+            text: 'Forensic Ledger: Contrast Germany’s short-term economic gains against its long-term geopolitical perils from seizing Alsace-Lorraine.',
+            instruction:
+              'Complete the balance sheet below comparing the immediate benefits against the strategic dangers of annexing French territory in 1871.',
+            col1: {
+              title: 'Short-Term German Economic Gains',
+              hints: [
+                '• Rich iron ore deposits in Lorraine',
+                '• Extensive coal reserves to fuel industrial growth',
+                '• Advanced textile factories incorporated into Germany',
+              ],
+            },
+            col2: {
+              title: 'Long-Term Geopolitical Perils',
+              hints: [
+                '• Permanent French thirst for revenge ("revanche")',
+                '• Deep hostility made Franco-German peace impossible',
+                '• Danger of France allying with Russia (two-front war)',
+              ],
+            },
+            rows: 3,
             model_answer:
-              "In the short term, taking Alsace-Lorraine was an economic success for Germany because the region was rich in coal and iron, fueling Germany's industrial growth. However, in the long term, it was incredibly dangerous for Germany's security because it created a permanent, bitter rivalry with France. France would seek revenge and the return of its territory, leading to tensions that ultimately helped spark the First World War.",
+              'In the short term, Germany gained immense mineral wealth (coal and iron ore) to propel its industrial revolution. In the long term, however, the theft of Alsace-Lorraine guaranteed unrelenting French enmity, setting the diplomatic trap that eventually triggered World War One.',
           },
           {
             type: 'short_answer',

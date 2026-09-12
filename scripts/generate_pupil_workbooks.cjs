@@ -2004,6 +2004,233 @@ allDirs.forEach((unitId) => {
                     </div>
                   `;
                 }
+                if (task.type === 'visual_annotation' || task.type === 'diagram_annotation') {
+                  let _t = processTaskTextWithTariff(
+                    task.text || task.question || task.instruction || task.title || '',
+                  );
+                  _nbHtml += `<div class="task-box" style="margin-bottom: 12px; border: 1.5px solid #0f172a; border-radius: 6px; padding: 8px 10px; background: #ffffff; page-break-inside: avoid;">`;
+                  _nbHtml += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">`;
+                  _nbHtml += `<strong style="color: #0f172a; font-size: 8.5pt;">Q${globalQNum++}. ${_t.cleanText}</strong>`;
+                  _nbHtml += `<span style="font-size: 6.8pt; font-weight: bold; background: #0f172a; color: #ffffff; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Visual Anatomy</span>`;
+                  _nbHtml += `</div>`;
+                  if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
+                  if (task.instruction && task.instruction !== task.text) {
+                    _nbHtml += `<p style="font-size: 7.3pt; color: #475569; margin: 0 0 5px 0; font-style: italic;">${task.instruction}</p>`;
+                  }
+
+                  const rawImg =
+                    task.image || task.src || (block && block.image ? block.image : null);
+                  if (rawImg) {
+                    const imgSrc =
+                      typeof resolveAssetPath === 'function'
+                        ? resolveAssetPath(rawImg, 2)
+                        : `../..${rawImg.startsWith('/') ? rawImg : '/' + rawImg}`;
+                    _nbHtml += `<div style="text-align: center; margin: 4px 0; background: #f8fafc; padding: 3px; border: 1px solid #e2e8f0; border-radius: 4px;">`;
+                    _nbHtml += `<img src="${imgSrc}" style="max-height: 170px; max-width: 100%; object-fit: contain; border-radius: 3px; display: inline-block;" alt="Visual Diagram">`;
+                    if (task.caption) {
+                      _nbHtml += `<div style="font-size: 6.8pt; color: #64748b; font-style: italic; margin-top: 2px;">${task.caption}</div>`;
+                    }
+                    _nbHtml += `</div>`;
+                  }
+
+                  if (task.annotations && task.annotations.length > 0) {
+                    _nbHtml += `<div style="display: flex; flex-wrap: wrap; gap: 5px; margin-top: 5px;">`;
+                    task.annotations.forEach((ann, aIdx) => {
+                      const num = ann.num || aIdx + 1;
+                      _nbHtml += `
+                        <div style="flex: 1 1 45%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 6px;">
+                          <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 2px;">
+                            <span style="background: #0f172a; color: #ffffff; font-weight: bold; font-size: 7pt; width: 15px; height: 15px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;">${num}</span>
+                            <strong style="font-size: 7.4pt; color: #1e293b;">${ann.label || ann.target || 'Feature ' + num}</strong>
+                          </div>
+                          <div style="font-size: 6.8pt; color: #475569; margin-bottom: 2px; line-height: 1.2;">${ann.prompt || ann.question || 'Identify and explain significance:'}</div>
+                          <div style="min-height: 22px; background: #ffffff; border: 1px dashed #94a3b8; border-radius: 3px; padding: 2px 4px; font-size: 7pt; color: #64748b;">${ann.starter || ''}</div>
+                        </div>
+                      `;
+                    });
+                    _nbHtml += `</div>`;
+                  }
+                  _nbHtml += `</div>`;
+                  return;
+                }
+                if (task.type === 'causal_domino') {
+                  let _t = processTaskTextWithTariff(
+                    task.text || task.question || task.instruction || task.title || '',
+                  );
+                  _nbHtml += `<div class="task-box" style="margin-bottom: 12px; border: 1.5px solid #0284c7; border-radius: 6px; padding: 8px 10px; background: #f0f9ff; page-break-inside: avoid;">`;
+                  _nbHtml += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">`;
+                  _nbHtml += `<strong style="color: #0369a1; font-size: 8.5pt;">Q${globalQNum++}. ${_t.cleanText}</strong>`;
+                  _nbHtml += `<span style="font-size: 6.8pt; font-weight: bold; background: #0284c7; color: #ffffff; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Causal Chain</span>`;
+                  _nbHtml += `</div>`;
+                  if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
+                  if (task.instruction && task.instruction !== task.text) {
+                    _nbHtml += `<p style="font-size: 7.3pt; color: #075985; margin: 0 0 5px 0; font-style: italic;">${task.instruction}</p>`;
+                  }
+
+                  if (task.steps && task.steps.length > 0) {
+                    _nbHtml += `<div style="display: flex; align-items: stretch; gap: 4px; margin-top: 5px;">`;
+                    task.steps.forEach((step, sIdx) => {
+                      if (sIdx > 0) {
+                        _nbHtml += `<div style="display: flex; align-items: center; justify-content: center; font-size: 10pt; color: #0284c7; font-weight: bold; flex-shrink: 0; padding: 0 1px;">&#10140;</div>`;
+                      }
+                      _nbHtml += `
+                        <div style="flex: 1; background: #ffffff; border: 1.2px solid ${step.blank ? '#0284c7' : '#bae6fd'}; border-top: 3px solid ${sIdx === 0 ? '#0284c7' : sIdx === task.steps.length - 1 ? '#0369a1' : '#0ea5e9'}; border-radius: 4px; padding: 4px 6px; display: flex; flex-direction: column;">
+                          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+                            <span style="font-size: 6.5pt; font-weight: bold; color: #0369a1; text-transform: uppercase;">${step.stage || 'Step ' + (sIdx + 1)}</span>
+                            ${step.year ? `<span style="font-size: 6.5pt; color: #64748b; font-weight: 600;">${step.year}</span>` : ''}
+                          </div>
+                          <div style="font-weight: bold; font-size: 7.2pt; color: #0f172a; margin-bottom: 2px; line-height: 1.2;">${step.title || ''}</div>
+                          ${step.desc ? `<div style="font-size: 6.6pt; color: #475569; line-height: 1.2; margin-bottom: 2px;">${step.desc}</div>` : ''}
+                          ${step.blank ? `<div style="flex: 1; min-height: 28px; background: #f8fafc; border: 1px dashed #0284c7; border-radius: 3px; padding: 2px; font-size: 6.6pt; color: #0369a1; margin-top: 2px;"><em>${step.prompt || 'Fill in the causal link:'}</em></div>` : ''}
+                        </div>
+                      `;
+                    });
+                    _nbHtml += `</div>`;
+                  }
+                  _nbHtml += `</div>`;
+                  return;
+                }
+                if (task.type === 'word_scalpel' || task.type === 'forensic_autopsy') {
+                  let _t = processTaskTextWithTariff(
+                    task.text || task.question || task.instruction || task.title || '',
+                  );
+                  _nbHtml += `<div class="task-box" style="margin-bottom: 12px; border: 1.5px solid #d97706; border-radius: 6px; padding: 8px 10px; background: #fffbeb; page-break-inside: avoid;">`;
+                  _nbHtml += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">`;
+                  _nbHtml += `<strong style="color: #92400e; font-size: 8.5pt;">Q${globalQNum++}. ${_t.cleanText}</strong>`;
+                  _nbHtml += `<span style="font-size: 6.8pt; font-weight: bold; background: #d97706; color: #ffffff; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Forensic Scalpel</span>`;
+                  _nbHtml += `</div>`;
+                  if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
+                  if (task.source_excerpt) {
+                    _nbHtml += `<div style="font-family: Georgia, serif; font-size: 7.5pt; color: #334155; font-style: italic; background: #ffffff; border-left: 3px solid #d97706; padding: 4px 7px; margin-bottom: 5px; line-height: 1.3;">&ldquo;${task.source_excerpt}&rdquo;</div>`;
+                  }
+                  _nbHtml += `<div style="background: #ffffff; border: 1.2px dashed #b45309; border-radius: 4px; padding: 5px 7px; margin-bottom: 5px;">`;
+                  _nbHtml += `<div style="font-size: 7pt; font-weight: bold; color: #92400e; margin-bottom: 2px;">Extract the Exact 3–6 Word "Smoking Gun" Quote:</div>`;
+                  _nbHtml += `<div style="min-height: 20px; font-family: Georgia, serif; font-size: 8pt; color: #1e293b; padding: 2px 3px;">[ &ldquo; . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . &rdquo; ]</div>`;
+                  _nbHtml += `</div>`;
+                  if (task.justification_prompt) {
+                    _nbHtml += `<div style="font-size: 7pt; color: #78350f; margin-bottom: 2px;"><strong>Why is this phrase decisive?</strong> ${task.justification_prompt}</div>`;
+                    _nbHtml += `<div style="min-height: 22px; background: #ffffff; border: 1px solid #fed7aa; border-radius: 3px; padding: 3px 5px; font-size: 7pt; color: #94a3b8;">${task.starter || ''}</div>`;
+                  }
+                  _nbHtml += `</div>`;
+                  return;
+                }
+                if (task.type === 'ledger_audit' || task.type === 'balance_sheet') {
+                  let _t = processTaskTextWithTariff(
+                    task.text || task.question || task.instruction || task.title || '',
+                  );
+                  _nbHtml += `<div class="task-box" style="margin-bottom: 12px; border: 1.5px solid #475569; border-radius: 6px; padding: 8px 10px; background: #f8fafc; page-break-inside: avoid;">`;
+                  _nbHtml += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">`;
+                  _nbHtml += `<strong style="color: #1e293b; font-size: 8.5pt;">Q${globalQNum++}. ${_t.cleanText}</strong>`;
+                  _nbHtml += `<span style="font-size: 6.8pt; font-weight: bold; background: #475569; color: #ffffff; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Forensic Ledger</span>`;
+                  _nbHtml += `</div>`;
+                  if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
+                  if (task.instruction && task.instruction !== task.text) {
+                    _nbHtml += `<p style="font-size: 7.3pt; color: #475569; margin: 0 0 5px 0; font-style: italic;">${task.instruction}</p>`;
+                  }
+
+                  const col1 = task.col1 || { title: 'Column A' };
+                  const col2 = task.col2 || { title: 'Column B' };
+                  const rowCount = task.rows || 3;
+
+                  _nbHtml += `
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 4px; font-size: 7.3pt;">
+                      <thead>
+                        <tr>
+                          <th style="width: 50%; border: 1px solid #cbd5e1; background: #e2e8f0; padding: 4px 6px; color: #0f172a; text-align: left;">${col1.title}</th>
+                          <th style="width: 50%; border: 1px solid #cbd5e1; background: #e2e8f0; padding: 4px 6px; color: #0f172a; text-align: left;">${col2.title}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                  `;
+                  for (let r = 0; r < rowCount; r++) {
+                    const c1Hint = col1.hints && col1.hints[r] ? col1.hints[r] : '&bull; ';
+                    const c2Hint = col2.hints && col2.hints[r] ? col2.hints[r] : '&bull; ';
+                    _nbHtml += `
+                      <tr>
+                        <td style="border: 1px solid #cbd5e1; background: #ffffff; padding: 5px 6px; height: 28px; vertical-align: top; color: #475569; font-size: 7pt;">${c1Hint}</td>
+                        <td style="border: 1px solid #cbd5e1; background: #ffffff; padding: 5px 6px; height: 28px; vertical-align: top; color: #475569; font-size: 7pt;">${c2Hint}</td>
+                      </tr>
+                    `;
+                  }
+                  _nbHtml += `</tbody></table></div>`;
+                  return;
+                }
+                if (task.type === 'historiographical_spectrum' || task.type === 'spectrum') {
+                  let _t = processTaskTextWithTariff(
+                    task.text || task.question || task.instruction || task.title || '',
+                  );
+                  _nbHtml += `<div class="task-box" style="margin-bottom: 12px; border: 1.5px solid #7c3aed; border-radius: 6px; padding: 8px 10px; background: #faf5ff; page-break-inside: avoid;">`;
+                  _nbHtml += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">`;
+                  _nbHtml += `<strong style="color: #5b21b6; font-size: 8.5pt;">Q${globalQNum++}. ${_t.cleanText}</strong>`;
+                  _nbHtml += `<span style="font-size: 6.8pt; font-weight: bold; background: #7c3aed; color: #ffffff; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Interpretation Spectrum</span>`;
+                  _nbHtml += `</div>`;
+                  if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
+                  if (task.instruction && task.instruction !== task.text) {
+                    _nbHtml += `<p style="font-size: 7.3pt; color: #6b21a8; margin: 0 0 5px 0; font-style: italic;">${task.instruction}</p>`;
+                  }
+
+                  const leftPole = task.pole_left || 'Interpretation A';
+                  const rightPole = task.pole_right || 'Interpretation B';
+
+                  _nbHtml += `
+                    <div style="margin: 6px 0; padding: 6px 8px; background: #ffffff; border: 1px solid #ddd6fe; border-radius: 4px;">
+                      <div style="display: flex; justify-content: space-between; font-size: 7.2pt; font-weight: bold; color: #4c1d95; margin-bottom: 3px;">
+                        <span style="max-width: 46%;">${leftPole}</span>
+                        <span style="max-width: 46%; text-align: right;">${rightPole}</span>
+                      </div>
+                      <div style="position: relative; height: 14px; display: flex; align-items: center; margin: 5px 0;">
+                        <div style="width: 100%; height: 3px; background: #c4b5fd; border-radius: 2px;"></div>
+                        <div style="position: absolute; left: 0%; width: 7px; height: 7px; background: #7c3aed; border-radius: 50%; transform: translateX(-50%);"></div>
+                        <div style="position: absolute; left: 25%; width: 5px; height: 5px; background: #a78bfa; border-radius: 50%; transform: translateX(-50%);"></div>
+                        <div style="position: absolute; left: 50%; width: 7px; height: 7px; background: #7c3aed; border-radius: 50%; transform: translateX(-50%);"></div>
+                        <div style="position: absolute; left: 75%; width: 5px; height: 5px; background: #a78bfa; border-radius: 50%; transform: translateX(-50%);"></div>
+                        <div style="position: absolute; left: 100%; width: 7px; height: 7px; background: #7c3aed; border-radius: 50%; transform: translateX(-50%);"></div>
+                      </div>
+                      <div style="display: flex; justify-content: space-between; font-size: 6.5pt; color: #6b7280;">
+                        <span>0%</span><span>25%</span><span>50% (Equally Balanced)</span><span>75%</span><span>100%</span>
+                      </div>
+                    </div>
+                    <div style="font-size: 7pt; color: #5b21b6; margin-bottom: 2px;"><strong>Plot your position with an &lsquo;X&rsquo; and justify in one sentence:</strong></div>
+                    <div style="min-height: 22px; background: #ffffff; border: 1px dashed #c4b5fd; border-radius: 3px; padding: 3px 5px; font-size: 7pt; color: #6b7280;">${task.starter || ''}</div>
+                  `;
+                  _nbHtml += `</div>`;
+                  return;
+                }
+                if (task.type === 'crucible_fork') {
+                  let _t = processTaskTextWithTariff(
+                    task.text || task.question || task.instruction || task.title || '',
+                  );
+                  _nbHtml += `<div class="task-box" style="margin-bottom: 12px; border: 1.5px solid #ea580c; border-radius: 6px; padding: 8px 10px; background: #fff7ed; page-break-inside: avoid;">`;
+                  _nbHtml += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">`;
+                  _nbHtml += `<strong style="color: #9a3412; font-size: 8.5pt;">Q${globalQNum++}. ${_t.cleanText}</strong>`;
+                  _nbHtml += `<span style="font-size: 6.8pt; font-weight: bold; background: #ea580c; color: #ffffff; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Decision Dilemma</span>`;
+                  _nbHtml += `</div>`;
+                  if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
+                  if (task.instruction && task.instruction !== task.text) {
+                    _nbHtml += `<p style="font-size: 7.3pt; color: #c2410c; margin: 0 0 5px 0; font-style: italic;">${task.instruction}</p>`;
+                  }
+                  if (task.options && task.options.length > 0) {
+                    _nbHtml += `<div style="display: flex; flex-direction: column; gap: 4px; margin-top: 4px;">`;
+                    task.options.forEach((opt, oIdx) => {
+                      _nbHtml += `
+                        <div style="background: #ffffff; border: 1px solid #fed7aa; border-radius: 4px; padding: 4px 6px; display: flex; align-items: flex-start; gap: 5px;">
+                          <div style="width: 13px; height: 13px; border: 1.5px solid #ea580c; border-radius: 3px; margin-top: 1px; flex-shrink: 0;"></div>
+                          <div style="flex: 1;">
+                            <strong style="font-size: 7.3pt; color: #9a3412;">Option ${String.fromCharCode(65 + oIdx)}: ${opt.title}</strong>
+                            <div style="font-size: 6.8pt; color: #475569; line-height: 1.2;">${opt.desc}</div>
+                          </div>
+                        </div>
+                      `;
+                    });
+                    _nbHtml += `</div>`;
+                  }
+                  if (task.risk_prompt) {
+                    _nbHtml += `<div style="margin-top: 4px; font-size: 7pt; color: #9a3412;"><strong>Calculated Risk:</strong> ${task.risk_prompt}</div>`;
+                    _nbHtml += `<div style="min-height: 20px; background: #ffffff; border: 1px dashed #fdba74; border-radius: 3px; padding: 2px 4px; font-size: 7pt; color: #94a3b8;">${task.starter || ''}</div>`;
+                  }
+                  _nbHtml += `</div>`;
+                  return;
+                }
                 if (task.type === 'drawing' || task.type === 'draw') {
                   if (
                     unitId === 'medieval_england' &&
