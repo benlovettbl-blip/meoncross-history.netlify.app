@@ -2038,13 +2038,16 @@ allDirs.forEach((unitId) => {
                     task.annotations.forEach((ann, aIdx) => {
                       const num = ann.num || aIdx + 1;
                       _nbHtml += `
-                        <div style="flex: 1 1 45%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 6px;">
+                        <div style="flex: 1 1 45%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px 7px;">
                           <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 2px;">
                             <span style="background: #0f172a; color: #ffffff; font-weight: bold; font-size: 7pt; width: 15px; height: 15px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;">${num}</span>
                             <strong style="font-size: 7.4pt; color: #1e293b;">${ann.label || ann.target || 'Feature ' + num}</strong>
                           </div>
-                          <div style="font-size: 6.8pt; color: #475569; margin-bottom: 2px; line-height: 1.2;">${ann.prompt || ann.question || 'Identify and explain significance:'}</div>
-                          <div style="min-height: 22px; background: #ffffff; border: 1px dashed #94a3b8; border-radius: 3px; padding: 2px 4px; font-size: 7pt; color: #64748b;">${ann.starter || ''}</div>
+                          <div style="font-size: 6.8pt; color: #475569; margin-bottom: 3px; line-height: 1.2;">${ann.prompt || ann.question || 'Identify and explain significance:'}</div>
+                          <div style="min-height: 26px; background: #ffffff; border: 1px dashed #94a3b8; border-radius: 3px; padding: 3px 5px; font-size: 7pt; color: #475569;">
+                            <span style="color: #94a3b8; font-style: italic;">${ann.starter || ''}</span>
+                            <div style="border-bottom: 1px dotted #cbd5e1; height: 13px; margin-top: 2px;"></div>
+                          </div>
                         </div>
                       `;
                     });
@@ -2081,7 +2084,7 @@ allDirs.forEach((unitId) => {
                           </div>
                           <div style="font-weight: bold; font-size: 7.2pt; color: #0f172a; margin-bottom: 2px; line-height: 1.2;">${step.title || ''}</div>
                           ${step.desc ? `<div style="font-size: 6.6pt; color: #475569; line-height: 1.2; margin-bottom: 2px;">${step.desc}</div>` : ''}
-                          ${step.blank ? `<div style="flex: 1; min-height: 28px; background: #f8fafc; border: 1px dashed #0284c7; border-radius: 3px; padding: 2px; font-size: 6.6pt; color: #0369a1; margin-top: 2px;"><em>${step.prompt || 'Fill in the causal link:'}</em></div>` : ''}
+                          ${step.blank ? `<div style="flex: 1; min-height: 32px; background: #f8fafc; border: 1.2px dashed #0284c7; border-radius: 3px; padding: 3px 5px; font-size: 6.6pt; color: #0369a1; margin-top: 2px;"><em>${step.prompt || 'Complete with pen:'}</em><div style="border-bottom: 1px dotted #93c5fd; height: 14px; margin-top: 2px;"></div></div>` : ''}
                         </div>
                       `;
                     });
@@ -2104,12 +2107,12 @@ allDirs.forEach((unitId) => {
                     _nbHtml += `<div style="font-family: Georgia, serif; font-size: 7.5pt; color: #334155; font-style: italic; background: #ffffff; border-left: 3px solid #d97706; padding: 4px 7px; margin-bottom: 5px; line-height: 1.3;">&ldquo;${task.source_excerpt}&rdquo;</div>`;
                   }
                   _nbHtml += `<div style="background: #ffffff; border: 1.2px dashed #b45309; border-radius: 4px; padding: 5px 7px; margin-bottom: 5px;">`;
-                  _nbHtml += `<div style="font-size: 7pt; font-weight: bold; color: #92400e; margin-bottom: 2px;">Extract the Exact 3–6 Word "Smoking Gun" Quote:</div>`;
-                  _nbHtml += `<div style="min-height: 20px; font-family: Georgia, serif; font-size: 8pt; color: #1e293b; padding: 2px 3px;">[ &ldquo; . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . &rdquo; ]</div>`;
+                  _nbHtml += `<div style="font-size: 7pt; font-weight: bold; color: #92400e; margin-bottom: 2px;">Underline in the source text above, then copy the exact 3–6 word "smoking gun" quote:</div>`;
+                  _nbHtml += `<div style="min-height: 20px; font-family: Georgia, serif; font-size: 8pt; color: #1e293b; padding: 2px 3px; border-bottom: 1px dotted #d97706;">[ &ldquo; . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . &rdquo; ]</div>`;
                   _nbHtml += `</div>`;
                   if (task.justification_prompt) {
                     _nbHtml += `<div style="font-size: 7pt; color: #78350f; margin-bottom: 2px;"><strong>Why is this phrase decisive?</strong> ${task.justification_prompt}</div>`;
-                    _nbHtml += `<div style="min-height: 22px; background: #ffffff; border: 1px solid #fed7aa; border-radius: 3px; padding: 3px 5px; font-size: 7pt; color: #94a3b8;">${task.starter || ''}</div>`;
+                    _nbHtml += `<div style="min-height: 26px; background: #ffffff; border: 1px solid #fed7aa; border-radius: 3px; padding: 3px 5px; font-size: 7pt; color: #475569;"><span style="color: #94a3b8; font-style: italic;">${task.starter || ''}</span><div style="border-bottom: 1px dotted #fdba74; height: 13px; margin-top: 2px;"></div></div>`;
                   }
                   _nbHtml += `</div>`;
                   return;
@@ -2147,8 +2150,14 @@ allDirs.forEach((unitId) => {
                     const c2Hint = col2.hints && col2.hints[r] ? col2.hints[r] : '&bull; ';
                     _nbHtml += `
                       <tr>
-                        <td style="border: 1px solid #cbd5e1; background: #ffffff; padding: 5px 6px; height: 28px; vertical-align: top; color: #475569; font-size: 7pt;">${c1Hint}</td>
-                        <td style="border: 1px solid #cbd5e1; background: #ffffff; padding: 5px 6px; height: 28px; vertical-align: top; color: #475569; font-size: 7pt;">${c2Hint}</td>
+                        <td style="border: 1px solid #cbd5e1; background: #ffffff; padding: 5px 6px; height: 28px; vertical-align: top; color: #475569; font-size: 7pt;">
+                          <div>${c1Hint}</div>
+                          <div style="border-bottom: 1px dotted #e2e8f0; height: 12px; margin-top: 2px;"></div>
+                        </td>
+                        <td style="border: 1px solid #cbd5e1; background: #ffffff; padding: 5px 6px; height: 28px; vertical-align: top; color: #475569; font-size: 7pt;">
+                          <div>${c2Hint}</div>
+                          <div style="border-bottom: 1px dotted #e2e8f0; height: 12px; margin-top: 2px;"></div>
+                        </td>
                       </tr>
                     `;
                   }
@@ -2190,8 +2199,8 @@ allDirs.forEach((unitId) => {
                         <span>0%</span><span>25%</span><span>50% (Equally Balanced)</span><span>75%</span><span>100%</span>
                       </div>
                     </div>
-                    <div style="font-size: 7pt; color: #5b21b6; margin-bottom: 2px;"><strong>Plot your position with an &lsquo;X&rsquo; and justify in one sentence:</strong></div>
-                    <div style="min-height: 22px; background: #ffffff; border: 1px dashed #c4b5fd; border-radius: 3px; padding: 3px 5px; font-size: 7pt; color: #6b7280;">${task.starter || ''}</div>
+                    <div style="font-size: 7pt; color: #5b21b6; margin-bottom: 2px;"><strong>Plot your position with an &lsquo;X&rsquo; on the line, then explain your reasoning:</strong></div>
+                    <div style="min-height: 26px; background: #ffffff; border: 1px dashed #c4b5fd; border-radius: 3px; padding: 3px 5px; font-size: 7pt; color: #475569;"><span style="color: #9ca3af; font-style: italic;">${task.starter || ''}</span><div style="border-bottom: 1px dotted #ddd6fe; height: 13px; margin-top: 2px;"></div></div>
                   `;
                   _nbHtml += `</div>`;
                   return;
@@ -2214,7 +2223,7 @@ allDirs.forEach((unitId) => {
                     task.options.forEach((opt, oIdx) => {
                       _nbHtml += `
                         <div style="background: #ffffff; border: 1px solid #fed7aa; border-radius: 4px; padding: 4px 6px; display: flex; align-items: flex-start; gap: 5px;">
-                          <div style="width: 13px; height: 13px; border: 1.5px solid #ea580c; border-radius: 3px; margin-top: 1px; flex-shrink: 0;"></div>
+                          <div style="width: 14px; height: 14px; border: 1.5px solid #ea580c; border-radius: 3px; margin-top: 1px; flex-shrink: 0; background: #ffffff;"></div>
                           <div style="flex: 1;">
                             <strong style="font-size: 7.3pt; color: #9a3412;">Option ${String.fromCharCode(65 + oIdx)}: ${opt.title}</strong>
                             <div style="font-size: 6.8pt; color: #475569; line-height: 1.2;">${opt.desc}</div>
@@ -2226,7 +2235,7 @@ allDirs.forEach((unitId) => {
                   }
                   if (task.risk_prompt) {
                     _nbHtml += `<div style="margin-top: 4px; font-size: 7pt; color: #9a3412;"><strong>Calculated Risk:</strong> ${task.risk_prompt}</div>`;
-                    _nbHtml += `<div style="min-height: 20px; background: #ffffff; border: 1px dashed #fdba74; border-radius: 3px; padding: 2px 4px; font-size: 7pt; color: #94a3b8;">${task.starter || ''}</div>`;
+                    _nbHtml += `<div style="min-height: 24px; background: #ffffff; border: 1px dashed #fdba74; border-radius: 3px; padding: 3px 5px; font-size: 7pt; color: #475569;"><span style="color: #94a3b8; font-style: italic;">${task.starter || ''}</span><div style="border-bottom: 1px dotted #fdba74; height: 13px; margin-top: 2px;"></div></div>`;
                   }
                   _nbHtml += `</div>`;
                   return;
@@ -2265,29 +2274,29 @@ allDirs.forEach((unitId) => {
                       <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; background: #ffffff; border: 1px solid #6ee7b7; border-radius: 4px; padding: 4px;">
                         <div style="text-align: center;">
                           <div style="font-size: 6pt; font-weight: bold; color: #047857; text-transform: uppercase;">Top Catalyst</div>
-                          <div style="width: 50px; height: 18px; border: 1.5px solid #059669; background: #d1fae5; border-radius: 3px; margin: 0 auto; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 7.5pt; color: #065f46;">#1</div>
+                          <div style="width: 55px; height: 18px; border: 1.5px solid #059669; background: #d1fae5; border-radius: 3px; margin: 0 auto; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 7.2pt; color: #065f46;">#1 [ &nbsp;&nbsp;&nbsp; ]</div>
                         </div>
                         <div style="display: flex; gap: 6px; justify-content: center;">
                           <div style="text-align: center;">
                             <div style="font-size: 5.8pt; color: #047857;">Contributing</div>
-                            <div style="width: 45px; height: 16px; border: 1px dashed #059669; background: #f0fdf4; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 7pt; color: #047857;">#2</div>
+                            <div style="width: 48px; height: 16px; border: 1px dashed #059669; background: #f0fdf4; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 6.8pt; color: #047857;">#2 [ &nbsp;&nbsp; ]</div>
                           </div>
                           <div style="text-align: center;">
                             <div style="font-size: 5.8pt; color: #047857;">Contributing</div>
-                            <div style="width: 45px; height: 16px; border: 1px dashed #059669; background: #f0fdf4; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 7pt; color: #047857;">#3</div>
+                            <div style="width: 48px; height: 16px; border: 1px dashed #059669; background: #f0fdf4; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 6.8pt; color: #047857;">#3 [ &nbsp;&nbsp; ]</div>
                           </div>
                         </div>
                         <div style="text-align: center;">
                           <div style="font-size: 5.8pt; color: #6b7280;">Minor</div>
-                          <div style="width: 45px; height: 16px; border: 1px dashed #9ca3af; background: #f9fafb; border-radius: 3px; margin: 0 auto; display: flex; align-items: center; justify-content: center; font-size: 7pt; color: #6b7280;">#4</div>
+                          <div style="width: 48px; height: 16px; border: 1px dashed #9ca3af; background: #f9fafb; border-radius: 3px; margin: 0 auto; display: flex; align-items: center; justify-content: center; font-size: 6.8pt; color: #6b7280;">#4 [ &nbsp;&nbsp; ]</div>
                         </div>
                       </div>
                     `;
                     _nbHtml += `</div>`;
                   }
                   if (task.justification_prompt || task.starter) {
-                    _nbHtml += `<div style="font-size: 7pt; color: #047857; margin: 3px 0 2px 0;"><strong>Justification:</strong> ${task.justification_prompt || 'Explain in one sentence why your #1 choice was the most decisive factor:'}</div>`;
-                    _nbHtml += `<div style="min-height: 20px; background: #ffffff; border: 1px dashed #6ee7b7; border-radius: 3px; padding: 2px 4px; font-size: 7pt; color: #6b7280;">${task.starter || ''}</div>`;
+                    _nbHtml += `<div style="font-size: 7pt; color: #047857; margin: 3px 0 2px 0;"><strong>Write factor letters (A, B, C, D) in the podium slots above, then justify #1:</strong></div>`;
+                    _nbHtml += `<div style="min-height: 26px; background: #ffffff; border: 1px dashed #6ee7b7; border-radius: 3px; padding: 3px 5px; font-size: 7pt; color: #475569;"><span style="color: #9ca3af; font-style: italic;">${task.starter || 'Factor A was the decisive catalyst because...'}</span><div style="border-bottom: 1px dotted #a7f3d0; height: 13px; margin-top: 2px;"></div></div>`;
                   }
                   _nbHtml += `</div>`;
                   return;
