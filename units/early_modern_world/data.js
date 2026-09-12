@@ -822,7 +822,7 @@ const early_modern_world = {
             {
               type: 'explanation',
               question:
-                'Consolidation Task: Explain TWO reasons why a global traveler in 1450 would have considered Asia and Africa far more powerful and wealthy than Western Europe.',
+                'Explain TWO reasons why a global traveler in 1450 would have considered Asia and Africa far more powerful and wealthy than Western Europe.',
               scaffold: [
                 "Reason 1 (Economic Wealth & Manufacturing): Mention African gold (Mansa Musa) or Chinese industrial output (porcelain, silk, Zheng He's fleets).",
                 'Reason 2 (Military Dominance & Strategic Control): Mention the Ottoman capture of Constantinople or European poverty on the periphery.',

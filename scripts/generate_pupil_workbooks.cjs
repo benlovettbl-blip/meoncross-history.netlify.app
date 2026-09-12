@@ -3081,22 +3081,24 @@ allDirs.forEach((unitId) => {
               html += `</div>`;
             }
 
-            if (lesson.extended.provenance_clue) {
-              html += `<div style="margin-top: 15px; margin-bottom: 15px; padding-top: 12px; padding-bottom: 12px;  border: 1px solid #bfdbfe; border-radius: 6px; "><strong style="color: #1e3a8a;">Provenance Scaffolding:</strong><p style="margin: 5px 0 0 0; color: #1e40af; font-style: italic;">${formatText(lesson.extended.provenance_clue)}</p></div>`;
-            }
-            if (lesson.extended.hints && lesson.extended.hints.length > 0) {
-              html += `<div style="margin-top: 15px; margin-bottom: 15px; padding: 15px; background: #f0fdf4; border: 2px solid #22c55e; border-radius: 8px;">`;
-              html += `<strong style="color: #166534; font-size: 11pt;">Scaffolding & Hints:</strong>`;
-              html += `<ul style="margin: 8px 0 0 0; padding-left: 20px; color: #15803d; font-size: 10pt;">`;
-              lesson.extended.hints.forEach((hint) => {
-                html += `<li style="margin-bottom: 4px;">${formatText(hint)}</li>`;
-              });
-              html += `</ul></div>`;
-            }
             let _extInfo = processTaskTextWithTariff(lesson.extended.question, true);
-            html += `<div style="margin-top: 15px;"><strong>Q${globalQNum++}. ${_extInfo.cleanText}</strong></div>`;
+            html += `<div style="margin-top: 15px; margin-bottom: 10px;"><strong>Q${globalQNum++}. ${_extInfo.cleanText}</strong>`;
             if (_extInfo.badgeHtml) {
               html += _extInfo.badgeHtml;
+            }
+            html += `</div>`;
+
+            if (lesson.extended.provenance_clue) {
+              html += `<div style="margin-top: 10px; margin-bottom: 12px; padding: 10px 14px; border: 1px solid #bfdbfe; border-radius: 6px; background: #eff6ff;"><strong style="color: #1e3a8a;">Provenance Scaffolding:</strong><p style="margin: 4px 0 0 0; color: #1e40af; font-style: italic;">${formatText(lesson.extended.provenance_clue)}</p></div>`;
+            }
+            if (lesson.extended.hints && lesson.extended.hints.length > 0) {
+              html += `<div style="margin-top: 10px; margin-bottom: 15px; padding: 12px 16px; background: #f0fdf4; border: 2px solid #22c55e; border-radius: 8px;">`;
+              html += `<strong style="color: #166534; font-size: 10.5pt;">Scaffolding & Hints:</strong>`;
+              html += `<ul style="margin: 6px 0 0 0; padding-left: 20px; color: #15803d; font-size: 9.5pt;">`;
+              lesson.extended.hints.forEach((hint) => {
+                html += `<li style="margin-bottom: 3px;">${formatText(hint)}</li>`;
+              });
+              html += `</ul></div>`;
             }
             if (
               !lesson.extended.title ||
