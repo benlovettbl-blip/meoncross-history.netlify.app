@@ -775,6 +775,16 @@ const early_modern_world = {
         },
         {
           title: 'Analyzing Source B: The Venetian Eyewitness (1453)',
+          source_letter: 'B',
+          source: {
+            type: 'written',
+            title: 'Source B: Eyewitness Diary of Nicolò Barbaro (May 1453)',
+            shelfmark: 'Biblioteca Marciana, Venice, MS Ital. VII, 224',
+            content:
+              'On the twenty-ninth of May, 1453, the last day of the siege, our Lord God decided to deliver the city into the hands of the Turks... The blood flowed in the city like rainwater in the gutters after a sudden storm. The corpses were thrown into the sea like melons floating along a canal... The Turks entered with such fury that all Christians who resisted were put to the sword.',
+            provenance:
+              'Adapted from the eyewitness diary of Nicolò Barbaro, a Venetian merchant trapped inside Constantinople during the Ottoman siege.',
+          },
           text: '<div class=\'scaffold-box\'><strong>Source B: Eyewitness Diary of Nicolò Barbaro (May 1453)</strong><br><em>"On the twenty-ninth of May, 1453, the last day of the siege, our Lord God decided to deliver the city into the hands of the Turks... The blood flowed in the city like rainwater in the gutters after a sudden storm. The corpses were thrown into the sea like melons floating along a canal... The Turks entered with such fury that all Christians who resisted were put to the sword."</em><br>— Adapted from the diary of <strong>Nicolò Barbaro</strong>, a Venetian merchant trapped inside Constantinople.</div>',
           tasks: [
             {
@@ -2058,8 +2068,7 @@ const early_modern_world = {
           source: {
             type: 'written',
             shelfmark: 'National Archives SP 14/19/1',
-            title:
-              'Source C Transcript: The Anonymous Warning Letter to Lord Monteagle (26 October 1605)',
+            title: 'Transcript: The Anonymous Warning Letter to Lord Monteagle (26 October 1605)',
             content:
               'my lord out of the love i beare to some of youere frends i have a caer of youre preservacion. therfor i would advyse yowe as yowe tender youre lyf to devyse some excuse to shift of youre attendance at this parleament for god and man hathe concurred to punishe the wickednes of this tyme and thinke not slightlye of this advertisment but retyere youre self into youre contri wheare yowe maye expect the event in safti for thowghe theare be no apparance of anni stir yet i saye they shall receyve a terrible blowe this parleament and yet they shall not seie who hurts them. this councel is not to be contemned because it maye do yowe goode and can do yowe no harme for the dangere is passed as soon as yowe have burnt the letter...',
             provenance:

@@ -625,7 +625,7 @@ export const unitData = {
         model_answer:
           'Fully labeled reference map of the Middle East displaying all 9 sovereign states, 8 national capitals, and 8 critical strategic waterways and maritime chokepoints.',
       },
-            hide_phase_titles: true,
+      hide_phase_titles: true,
       secondary_map: {
         title: 'Map Task 2: Israel & The Contested Territories (Post-1967)',
         instructions:
@@ -708,56 +708,68 @@ export const unitData = {
       ],
       vocab: [
         {
-          term: "Sykes-Picot Agreement",
-          definition: "A secret 1916 pact between Britain and France dividing Ottoman Arab lands into European spheres of influence.",
+          term: 'Sykes-Picot Agreement',
+          definition:
+            'A secret 1916 pact between Britain and France dividing Ottoman Arab lands into European spheres of influence.',
         },
         {
-          term: "Mandate",
-          definition: "An authorization granted by the League of Nations to a European power to govern a former Ottoman territory until independence.",
+          term: 'Mandate',
+          definition:
+            'An authorization granted by the League of Nations to a European power to govern a former Ottoman territory until independence.',
         },
         {
-          term: "Balfour Declaration",
-          definition: "A 1917 letter from British Foreign Secretary Arthur Balfour declaring support for a Jewish national home in Palestine.",
+          term: 'Balfour Declaration',
+          definition:
+            'A 1917 letter from British Foreign Secretary Arthur Balfour declaring support for a Jewish national home in Palestine.',
         },
         {
-          term: "Zionism",
-          definition: "The nationalist movement advocating for the re-establishment and protection of a Jewish nation state in their ancestral homeland.",
+          term: 'Zionism',
+          definition:
+            'The nationalist movement advocating for the re-establishment and protection of a Jewish nation state in their ancestral homeland.',
         },
         {
-          term: "Arab Nationalism",
-          definition: "A nationalist ideology celebrating the glorious heritage of the Arab world and demanding independence from imperial control.",
+          term: 'Arab Nationalism',
+          definition:
+            'A nationalist ideology celebrating the glorious heritage of the Arab world and demanding independence from imperial control.',
         },
         {
-          term: "Chokepoint",
-          definition: "A narrow, strategic maritime passage (like the Suez Canal or Straits of Tiran) whose closure can cripple trade and cause war.",
+          term: 'Chokepoint',
+          definition:
+            'A narrow, strategic maritime passage (like the Suez Canal or Straits of Tiran) whose closure can cripple trade and cause war.',
         },
       ],
       vocab_cloze_text:
-        "During the First World War, European imperial interests led to the secret [Sykes-Picot Agreement], which partitioned Ottoman lands. Britain also promised support for [Arab Nationalism] to spark revolt against the Turks, while simultaneously issuing the [Balfour Declaration] favoring a Jewish national home in Palestine rooted in [Zionism]. After the war, the League of Nations established a [Mandate] system, giving Britain control over strategic territory and vital maritime trade routes near the Suez [Chokepoint].",
+        'During the First World War, European imperial interests led to the secret [Sykes-Picot Agreement], which partitioned Ottoman lands. Britain also promised support for [Arab Nationalism] to spark revolt against the Turks, while simultaneously issuing the [Balfour Declaration] favoring a Jewish national home in Palestine rooted in [Zionism]. After the war, the League of Nations established a [Mandate] system, giving Britain control over strategic territory and vital maritime trade routes near the Suez [Chokepoint].',
       flashcards: [
         {
-          term: "Sykes-Picot Agreement",
-          definition: "A secret 1916 pact between Britain and France dividing Ottoman Arab lands into European spheres of influence.",
+          term: 'Sykes-Picot Agreement',
+          definition:
+            'A secret 1916 pact between Britain and France dividing Ottoman Arab lands into European spheres of influence.',
         },
         {
-          term: "Mandate",
-          definition: "An authorization granted by the League of Nations to a European power to govern a former Ottoman territory until independence.",
+          term: 'Mandate',
+          definition:
+            'An authorization granted by the League of Nations to a European power to govern a former Ottoman territory until independence.',
         },
         {
-          term: "Balfour Declaration",
-          definition: "A 1917 letter from British Foreign Secretary Arthur Balfour declaring support for a Jewish national home in Palestine.",
+          term: 'Balfour Declaration',
+          definition:
+            'A 1917 letter from British Foreign Secretary Arthur Balfour declaring support for a Jewish national home in Palestine.',
         },
         {
-          term: "Zionism",
-          definition: "The nationalist movement advocating for the re-establishment and protection of a Jewish nation state in their ancestral homeland.",
+          term: 'Zionism',
+          definition:
+            'The nationalist movement advocating for the re-establishment and protection of a Jewish nation state in their ancestral homeland.',
         },
         {
-          term: "Arab Nationalism",
-          definition: "A nationalist ideology celebrating the glorious heritage of the Arab world and demanding independence from imperial control.",
+          term: 'Arab Nationalism',
+          definition:
+            'A nationalist ideology celebrating the glorious heritage of the Arab world and demanding independence from imperial control.',
         },
         {
-          term: "Chokepoint",
-          definition: "A narrow, strategic maritime passage (like the Suez Canal or Straits of Tiran) whose closure can cripple trade and cause war.",
+          term: 'Chokepoint',
+          definition:
+            'A narrow, strategic maritime passage (like the Suez Canal or Straits of Tiran) whose closure can cripple trade and cause war.',
         },
       ],
       exam_clinic: [
@@ -1396,32 +1408,38 @@ export const unitData = {
       ],
       vocab: [
         {
-          term: "Mandate",
-          definition: "An authorization granted by the League of Nations to govern a territory until it was deemed ready for independence.",
+          term: 'Mandate',
+          definition:
+            'An authorization granted by the League of Nations to govern a territory until it was deemed ready for independence.',
         },
         {
-          term: "Zionism",
-          definition: "A nationalist movement that emerged in the 19th century supporting the creation of a Jewish homeland in the territory defined as the Land of Israel.",
+          term: 'Zionism',
+          definition:
+            'A nationalist movement that emerged in the 19th century supporting the creation of a Jewish homeland in the territory defined as the Land of Israel.',
         },
         {
-          term: "Irgun",
-          definition: "A right-wing Zionist paramilitary organization that used militant tactics against British forces and Arab populations.",
+          term: 'Irgun',
+          definition:
+            'A right-wing Zionist paramilitary organization that used militant tactics against British forces and Arab populations.',
         },
         {
-          term: "Nakba",
-          definition: "Meaning \"The Catastrophe\" in Arabic, referring to the permanent displacement and dispossession of over 700,000 Palestinians during the 1948 war.",
+          term: 'Nakba',
+          definition:
+            'Meaning "The Catastrophe" in Arabic, referring to the permanent displacement and dispossession of over 700,000 Palestinians during the 1948 war.',
         },
         {
-          term: "Dual Obligation",
-          definition: "Britain's conflicting commitment under the Mandate to both establish a Jewish national home and protect the civil and religious rights of existing non-Jewish communities.",
+          term: 'Dual Obligation',
+          definition:
+            "Britain's conflicting commitment under the Mandate to both establish a Jewish national home and protect the civil and religious rights of existing non-Jewish communities.",
         },
         {
-          term: "UN Resolution 181",
-          definition: "The November 1947 UN Partition Plan proposing to divide Palestine into separate Jewish and Arab states, with Jerusalem under international control.",
+          term: 'UN Resolution 181',
+          definition:
+            'The November 1947 UN Partition Plan proposing to divide Palestine into separate Jewish and Arab states, with Jerusalem under international control.',
         },
       ],
       vocab_cloze_text:
-        "Following World War II, Britain struggled to maintain its [Dual Obligation] to both Arabs and Jews under the League of Nations [Mandate]. Rising support for [Zionism] and violent guerrilla attacks by militant groups like the [Irgun] forced Britain to hand Palestine to the United Nations. The General Assembly voted for partition in [UN Resolution 181]. War erupted immediately, resulting in the establishment of Israel alongside the Palestinian catastrophe known as the [Nakba].",
+        'Following World War II, Britain struggled to maintain its [Dual Obligation] to both Arabs and Jews under the League of Nations [Mandate]. Rising support for [Zionism] and violent guerrilla attacks by militant groups like the [Irgun] forced Britain to hand Palestine to the United Nations. The General Assembly voted for partition in [UN Resolution 181]. War erupted immediately, resulting in the establishment of Israel alongside the Palestinian catastrophe known as the [Nakba].',
       historians_corner: {
         title: 'The Debate over Plan Dalet',
         text: "Historians sharply disagree on the nature of Plan D. Traditional Israeli historians argue it was a purely defensive necessity to secure besieged Jewish settlements before the Arab armies invaded. However, 'New Historians' like Ilan Pappé argue the text of Plan D proves it was a deliberate blueprint for the systematic ethnic cleansing of Palestinian Arabs from the future Jewish state.",
@@ -1496,28 +1514,34 @@ export const unitData = {
       },
       flashcards: [
         {
-          term: "Mandate",
-          definition: "An authorization granted by the League of Nations to govern a territory until it was deemed ready for independence.",
+          term: 'Mandate',
+          definition:
+            'An authorization granted by the League of Nations to govern a territory until it was deemed ready for independence.',
         },
         {
-          term: "Zionism",
-          definition: "A nationalist movement that emerged in the 19th century supporting the creation of a Jewish homeland in the territory defined as the Land of Israel.",
+          term: 'Zionism',
+          definition:
+            'A nationalist movement that emerged in the 19th century supporting the creation of a Jewish homeland in the territory defined as the Land of Israel.',
         },
         {
-          term: "Irgun",
-          definition: "A right-wing Zionist paramilitary organization that used militant tactics against British forces and Arab populations.",
+          term: 'Irgun',
+          definition:
+            'A right-wing Zionist paramilitary organization that used militant tactics against British forces and Arab populations.',
         },
         {
-          term: "Nakba",
-          definition: "Meaning \"The Catastrophe\" in Arabic, referring to the permanent displacement and dispossession of over 700,000 Palestinians during the 1948 war.",
+          term: 'Nakba',
+          definition:
+            'Meaning "The Catastrophe" in Arabic, referring to the permanent displacement and dispossession of over 700,000 Palestinians during the 1948 war.',
         },
         {
-          term: "Dual Obligation",
-          definition: "Britain's conflicting commitment under the Mandate to both establish a Jewish national home and protect the civil and religious rights of existing non-Jewish communities.",
+          term: 'Dual Obligation',
+          definition:
+            "Britain's conflicting commitment under the Mandate to both establish a Jewish national home and protect the civil and religious rights of existing non-Jewish communities.",
         },
         {
-          term: "UN Resolution 181",
-          definition: "The November 1947 UN Partition Plan proposing to divide Palestine into separate Jewish and Arab states, with Jerusalem under international control.",
+          term: 'UN Resolution 181',
+          definition:
+            'The November 1947 UN Partition Plan proposing to divide Palestine into separate Jewish and Arab states, with Jerusalem under international control.',
         },
       ],
       pair_share: {
@@ -1598,25 +1622,25 @@ export const unitData = {
             "Angered by Bevin's strict immigration restrictions, Zionist organizations in Palestine abandoned the wartime truce they had maintained with the British. On 1 November 1945, the unified factions executed the Night of the Trains, blowing up the Palestine railway system in 153 places to paralyze British communications.",
         },
         {
-          text: "**The Escalating Insurgency & Martial Law:** Over the next two years, the insurgency intensified. Paramilitary groups bombed bridges, sabotaged oil pipelines, raided military airfields, destroyed radio stations, and assassinated British personnel. In 1946 alone, 73 British troops were killed. To destroy British military morale, Begin’s Irgun engaged in psychological warfare; when two Irgun members were sentenced to caning in December 1946, Begin ordered the kidnapping and public whipping of four British soldiers in retaliation. The single deadliest act of the insurgency occurred on 22 July 1946, when the Irgun bombed the King David Hotel in Jerusalem. The hotel's southern wing housed the central administrative headquarters of the British Mandate and the military command of the British Army in Palestine. Under the cover of midday deliveries, Irgun fighters disguised as Arab workers rolled milk churns packed with TNT into the basement kitchen of the southern wing.",
+          text: '**The Escalating Insurgency & Martial Law:** Over the next two years, the insurgency intensified. Paramilitary groups bombed bridges, sabotaged oil pipelines, raided military airfields, destroyed radio stations, and assassinated British personnel. In 1946 alone, 73 British troops were killed. To destroy British military morale, Begin’s Irgun engaged in psychological warfare; when two Irgun members were sentenced to caning in December 1946, Begin ordered the kidnapping and public whipping of four British soldiers in retaliation.',
           level_4:
-            'Over the next two years, the insurgency intensified. Under the cover of midday deliveries, Irgun fighters disguised as Arab workers rolled milk churns packed with TNT into the basement kitchen of the southern wing.',
+            'Over the next two years, the insurgency intensified. Paramilitary groups bombed bridges, sabotaged oil pipelines, raided military airfields, destroyed radio stations, and assassinated British personnel.',
           tasks: [
             {
               type: 'written',
-              text: 'Explain how the bombing of the King David Hotel (July 1946) and the Sergeants Affair (July 1947) pressured the British government to abandon Palestine. (P4)',
-              starter: 'These violent insurgent attacks pressured Britain because...',
+              text: 'Explain two methods used by Zionist paramilitary groups during the Jewish Insurgency to undermine British control in Palestine. (P3)',
+              starter: 'Zionist paramilitary groups undermined British control by...',
               model:
-                "The Irgun's bombing of the King David Hotel destroyed the British military and administrative headquarters, killing 91 people and exposing Britain's inability to maintain order. The subsequent hanging of two British intelligence sergeants by the Irgun in retaliation for British executions triggered anti-Semitic riots in UK cities and furious public demands to 'bring our boys home', convincing Prime Minister Attlee that the financial and human costs of the Mandate were unsustainable.",
+                'Zionist groups like the Irgun and Lehi carried out widespread sabotage against British infrastructure, including blowing up railways, bombing oil pipelines, and raiding airfields to paralyze communications. Additionally, they waged psychological warfare against British troops, such as carrying out the retaliatory kidnapping and public flogging of British soldiers to humiliate the authorities and shatter military morale.',
               model_answer:
-                "The Irgun's bombing of the King David Hotel destroyed the British military and administrative headquarters, killing 91 people and exposing Britain's inability to maintain order. The subsequent hanging of two British intelligence sergeants by the Irgun in retaliation for British executions triggered anti-Semitic riots in UK cities and furious public demands to 'bring our boys home', convincing Prime Minister Attlee that the financial and human costs of the Mandate were unsustainable.",
+                'Zionist groups like the Irgun and Lehi carried out widespread sabotage against British infrastructure, including blowing up railways, bombing oil pipelines, and raiding airfields to paralyze communications. Additionally, they waged psychological warfare against British troops, such as carrying out the retaliatory kidnapping and public flogging of British soldiers to humiliate the authorities and shatter military morale.',
             },
           ],
         },
         {
           text: "**The King David Hotel Bombing (July 1946) & The Sergeants Affair (July 1947):** The Jewish underground insurgency struck with devastating lethality. On 22 July 1946, the Irgun, commanded by future Prime Minister Menachem Begin, smuggled 225 kilograms of explosives inside milk cans into the basement of the King David Hotel in Jerusalem—the headquarters of the British civil administration and military command. The resulting detonation collapsed the entire south-western wing of the six-storey building, killing 91 British, Arab, and Jewish staff. A year later, in July 1947, the crisis reached a psychological boiling point in the **Sergeants Affair**. After three Irgun members were sentenced to death by a British military court, the Irgun kidnapped two 20-year-old British Army intelligence field sergeants, Clifford Martin and Mervyn Paice, in Netanya. When the British carried out the executions in Acre prison, the Irgun hanged both British sergeants in an orange grove and booby-trapped one of the hanging bodies with a concealed landmine that injured a British officer attempting to cut it down. The gruesome incident sparked anti-Jewish riots across major British cities (including London, Liverpool, and Manchester) and destroyed the British public's willingness to sacrifice British soldiers to maintain the Mandate.",
           level_4:
-            'At 12:37 PM, a colossal explosion ripped through the building, causing the entire six-story southern wing to collapse into rubble. Despite desperate pleas from their families and a massive manhunt, the Irgun hanged both men and suspended their booby-trapped bodies in an olive grove.',
+            'In July 1946, the Irgun bombed the King David Hotel in Jerusalem—the British civil and military headquarters—killing 91 people. In July 1947, during the Sergeants Affair, the Irgun hanged two kidnapped British sergeants and booby-trapped their bodies, destroying British public support for policing the Mandate.',
           source: {
             title: 'Source B: The Sergeants Affair (July 1947)',
             src: '/images/cme_sergeants_affair_1947.jpg',
@@ -1631,6 +1655,17 @@ export const unitData = {
             model_answer:
               'Source B was decisive because the graphic visual evidence of British conscripts being abducted, executed, and booby-trapped by Zionist insurgents destroyed domestic support for the Mandate. After the immense sacrifices of the Second World War, the British public and press refused to endure young soldiers dying in a brutal colonial quagmire. The resulting anti-Jewish riots across British cities and fierce political backlash in Parliament convinced Prime Minister Attlee and Foreign Secretary Bevin that Palestine was completely ungovernable, precipitating the decision to surrender the Mandate to the United Nations.',
           },
+          tasks: [
+            {
+              type: 'written',
+              text: 'Explain how the bombing of the King David Hotel (July 1946) and the Sergeants Affair (July 1947) pressured the British government to abandon Palestine. (P4)',
+              starter: 'These violent insurgent attacks pressured Britain because...',
+              model:
+                "The Irgun's bombing of the King David Hotel destroyed the British military and administrative headquarters, killing 91 people and exposing Britain's inability to maintain order. The subsequent hanging of two British intelligence sergeants by the Irgun in retaliation for British executions triggered anti-Semitic riots in UK cities and furious public demands to 'bring our boys home', convincing Prime Minister Attlee that the financial and human costs of the Mandate were unsustainable.",
+              model_answer:
+                "The Irgun's bombing of the King David Hotel destroyed the British military and administrative headquarters, killing 91 people and exposing Britain's inability to maintain order. The subsequent hanging of two British intelligence sergeants by the Irgun in retaliation for British executions triggered anti-Semitic riots in UK cities and furious public demands to 'bring our boys home', convincing Prime Minister Attlee that the financial and human costs of the Mandate were unsustainable.",
+            },
+          ],
         },
         {
           text: "**The SS Exodus & British Abdication:** The public reaction in Britain was explosive. Angry anti-Semitic riots erupted in major British cities. Faced with a war-weary public demanding that the government 'bring the boys home,' Prime Minister Attlee and Foreign Secretary Bevin admitted that Palestine had become ungovernable. Unable to find a compromise that satisfied both Jewish and Arab demands, Britain formally referred the entire problem to the newly created United Nations (UN) in February 1947. The United Nations Special Committee on Palestine (UNSCOP) concluded that the only viable solution was the partition of the territory into separate Jewish and Arab states, with Jerusalem administered as an international zone (corpus separatum) under UN control. On 29 November 1947, the UN General Assembly voted on Resolution 181. The US and Soviet Union both supported partition, hoping to expand their own influence.",
@@ -2467,32 +2502,38 @@ export const unitData = {
         'To understand the consequences of the 1948-49 war for Palestinians, Israelis, and regional borders.',
       vocab: [
         {
-          term: "Green Line",
-          definition: "The 1949 armistice borders drawn in green ink, giving Israel 79% of mandate Palestine.",
+          term: 'Green Line',
+          definition:
+            'The 1949 armistice borders drawn in green ink, giving Israel 79% of mandate Palestine.',
         },
         {
-          term: "UNRWA",
-          definition: "United Nations agency created in 1949 to provide relief for Palestinian refugees.",
+          term: 'UNRWA',
+          definition:
+            'United Nations agency created in 1949 to provide relief for Palestinian refugees.',
         },
         {
-          term: "Law of Return",
-          definition: "1950 Israeli law granting any Jew the right to immigrate to Israel and receive automatic citizenship.",
+          term: 'Law of Return',
+          definition:
+            '1950 Israeli law granting any Jew the right to immigrate to Israel and receive automatic citizenship.',
         },
         {
-          term: "Fedayeen",
-          definition: "Palestinian guerrilla fighters who launched cross-border raids into Israel from the Gaza Strip.",
+          term: 'Fedayeen',
+          definition:
+            'Palestinian guerrilla fighters who launched cross-border raids into Israel from the Gaza Strip.',
         },
         {
-          term: "Armistice Agreements",
-          definition: "1949 bilateral agreements between Israel and Egypt, Lebanon, Jordan, and Syria formally ending the 1948 war hostilities.",
+          term: 'Armistice Agreements',
+          definition:
+            '1949 bilateral agreements between Israel and Egypt, Lebanon, Jordan, and Syria formally ending the 1948 war hostilities.',
         },
         {
-          term: "Resolution 194",
-          definition: "1948 UN General Assembly resolution asserting the right of Palestinian refugees to return to their homes or receive compensation.",
+          term: 'Resolution 194',
+          definition:
+            '1948 UN General Assembly resolution asserting the right of Palestinian refugees to return to their homes or receive compensation.',
         },
       ],
       vocab_cloze_text:
-        "Following the 1948–49 Arab-Israeli War, formal fighting ended with bilateral [Armistice Agreements], establishing temporary borders known as the [Green Line]. To manage the humanitarian crisis of hundreds of thousands of displaced persons, the UN passed [Resolution 194] and founded [UNRWA] to operate refugee camps. Inside the new state, Israel passed the [Law of Return] to absorb global Jewish immigration, while displaced Palestinians formed armed [Fedayeen] groups to raid across the frontier.",
+        'Following the 1948–49 Arab-Israeli War, formal fighting ended with bilateral [Armistice Agreements], establishing temporary borders known as the [Green Line]. To manage the humanitarian crisis of hundreds of thousands of displaced persons, the UN passed [Resolution 194] and founded [UNRWA] to operate refugee camps. Inside the new state, Israel passed the [Law of Return] to absorb global Jewish immigration, while displaced Palestinians formed armed [Fedayeen] groups to raid across the frontier.',
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval (Lesson 2: British Withdrawal & 1948 War)',
@@ -2583,28 +2624,34 @@ export const unitData = {
       },
       flashcards: [
         {
-          term: "Green Line",
-          definition: "The 1949 armistice borders drawn in green ink, giving Israel 79% of mandate Palestine.",
+          term: 'Green Line',
+          definition:
+            'The 1949 armistice borders drawn in green ink, giving Israel 79% of mandate Palestine.',
         },
         {
-          term: "UNRWA",
-          definition: "United Nations agency created in 1949 to provide relief for Palestinian refugees.",
+          term: 'UNRWA',
+          definition:
+            'United Nations agency created in 1949 to provide relief for Palestinian refugees.',
         },
         {
-          term: "Law of Return",
-          definition: "1950 Israeli law granting any Jew the right to immigrate to Israel and receive automatic citizenship.",
+          term: 'Law of Return',
+          definition:
+            '1950 Israeli law granting any Jew the right to immigrate to Israel and receive automatic citizenship.',
         },
         {
-          term: "Fedayeen",
-          definition: "Palestinian guerrilla fighters who launched cross-border raids into Israel from the Gaza Strip.",
+          term: 'Fedayeen',
+          definition:
+            'Palestinian guerrilla fighters who launched cross-border raids into Israel from the Gaza Strip.',
         },
         {
-          term: "Armistice Agreements",
-          definition: "1949 bilateral agreements between Israel and Egypt, Lebanon, Jordan, and Syria formally ending the 1948 war hostilities.",
+          term: 'Armistice Agreements',
+          definition:
+            '1949 bilateral agreements between Israel and Egypt, Lebanon, Jordan, and Syria formally ending the 1948 war hostilities.',
         },
         {
-          term: "Resolution 194",
-          definition: "1948 UN General Assembly resolution asserting the right of Palestinian refugees to return to their homes or receive compensation.",
+          term: 'Resolution 194',
+          definition:
+            '1948 UN General Assembly resolution asserting the right of Palestinian refugees to return to their homes or receive compensation.',
         },
       ],
       narrative_blocks: [
@@ -3906,32 +3953,38 @@ export const unitData = {
         'To understand the causes and consequences of the 1956 Suez Crisis and its impact on the Middle East.',
       vocab: [
         {
-          term: "Pan-Arabism",
-          definition: "A political movement aimed at uniting all Arab nations to throw off Western colonial influence and secure Arab independence.",
+          term: 'Pan-Arabism',
+          definition:
+            'A political movement aimed at uniting all Arab nations to throw off Western colonial influence and secure Arab independence.',
         },
         {
-          term: "Czech Arms Deal",
-          definition: "A 1955 agreement where the Soviet bloc supplied Egypt with massive amounts of advanced weaponry, shocking the West.",
+          term: 'Czech Arms Deal',
+          definition:
+            'A 1955 agreement where the Soviet bloc supplied Egypt with massive amounts of advanced weaponry, shocking the West.',
         },
         {
-          term: "Nationalisation",
-          definition: "The transfer of a major branch of industry or commerce from private to state ownership or control (e.g., the Suez Canal).",
+          term: 'Nationalisation',
+          definition:
+            'The transfer of a major branch of industry or commerce from private to state ownership or control (e.g., the Suez Canal).',
         },
         {
-          term: "Protocol of Sèvres",
-          definition: "A secret agreement in 1956 between Britain, France, and Israel to militarily invade Egypt and retake the Suez Canal.",
+          term: 'Protocol of Sèvres',
+          definition:
+            'A secret agreement in 1956 between Britain, France, and Israel to militarily invade Egypt and retake the Suez Canal.',
         },
         {
-          term: "UNEF",
-          definition: "The United Nations Emergency Force, deployed in 1956 to act as a buffer between Israel and Egypt in the Sinai Desert.",
+          term: 'UNEF',
+          definition:
+            'The United Nations Emergency Force, deployed in 1956 to act as a buffer between Israel and Egypt in the Sinai Desert.',
         },
         {
-          term: "Straits of Tiran",
-          definition: "A narrow maritime passage into the Gulf of Aqaba blockaded by Egypt, threatening Israel's southern port of Eilat.",
+          term: 'Straits of Tiran',
+          definition:
+            "A narrow maritime passage into the Gulf of Aqaba blockaded by Egypt, threatening Israel's southern port of Eilat.",
         },
       ],
       vocab_cloze_text:
-        "Driven by the ideology of [Pan-Arabism], President Nasser sought to modernize Egypt. Following the 1955 [Czech Arms Deal], Western funding was pulled, prompting Nasser to proclaim the [Nationalisation] of the Suez Canal and close the strategic [Straits of Tiran] to Israeli ships. In response, Britain, France, and Israel devised the clandestine [Protocol of Sèvres] to invade Egypt, an imperial crisis that ended only after international pressure and the arrival of [UNEF] peacekeepers.",
+        'Driven by the ideology of [Pan-Arabism], President Nasser sought to modernize Egypt. Following the 1955 [Czech Arms Deal], Western funding was pulled, prompting Nasser to proclaim the [Nationalisation] of the Suez Canal and close the strategic [Straits of Tiran] to Israeli ships. In response, Britain, France, and Israel devised the clandestine [Protocol of Sèvres] to invade Egypt, an imperial crisis that ended only after international pressure and the arrival of [UNEF] peacekeepers.',
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval (Lesson 3: 1948-49 War & Aftermath)',
@@ -4017,28 +4070,34 @@ export const unitData = {
       },
       flashcards: [
         {
-          term: "Pan-Arabism",
-          definition: "A political movement aimed at uniting all Arab nations to throw off Western colonial influence and secure Arab independence.",
+          term: 'Pan-Arabism',
+          definition:
+            'A political movement aimed at uniting all Arab nations to throw off Western colonial influence and secure Arab independence.',
         },
         {
-          term: "Czech Arms Deal",
-          definition: "A 1955 agreement where the Soviet bloc supplied Egypt with massive amounts of advanced weaponry, shocking the West.",
+          term: 'Czech Arms Deal',
+          definition:
+            'A 1955 agreement where the Soviet bloc supplied Egypt with massive amounts of advanced weaponry, shocking the West.',
         },
         {
-          term: "Nationalisation",
-          definition: "The transfer of a major branch of industry or commerce from private to state ownership or control (e.g., the Suez Canal).",
+          term: 'Nationalisation',
+          definition:
+            'The transfer of a major branch of industry or commerce from private to state ownership or control (e.g., the Suez Canal).',
         },
         {
-          term: "Protocol of Sèvres",
-          definition: "A secret agreement in 1956 between Britain, France, and Israel to militarily invade Egypt and retake the Suez Canal.",
+          term: 'Protocol of Sèvres',
+          definition:
+            'A secret agreement in 1956 between Britain, France, and Israel to militarily invade Egypt and retake the Suez Canal.',
         },
         {
-          term: "UNEF",
-          definition: "The United Nations Emergency Force, deployed in 1956 to act as a buffer between Israel and Egypt in the Sinai Desert.",
+          term: 'UNEF',
+          definition:
+            'The United Nations Emergency Force, deployed in 1956 to act as a buffer between Israel and Egypt in the Sinai Desert.',
         },
         {
-          term: "Straits of Tiran",
-          definition: "A narrow maritime passage into the Gulf of Aqaba blockaded by Egypt, threatening Israel's southern port of Eilat.",
+          term: 'Straits of Tiran',
+          definition:
+            "A narrow maritime passage into the Gulf of Aqaba blockaded by Egypt, threatening Israel's southern port of Eilat.",
         },
       ],
       narrative_blocks: [
@@ -4855,32 +4914,38 @@ export const unitData = {
       },
       vocab: [
         {
-          term: "PLO",
-          definition: "Palestine Liberation Organisation; founded in 1964 to unite Palestinian resistance groups and establish an independent state.",
+          term: 'PLO',
+          definition:
+            'Palestine Liberation Organisation; founded in 1964 to unite Palestinian resistance groups and establish an independent state.',
         },
         {
-          term: "Fatah",
-          definition: "The dominant Palestinian guerrilla movement founded by Yasser Arafat, committed to armed struggle to liberate Palestine.",
+          term: 'Fatah',
+          definition:
+            'The dominant Palestinian guerrilla movement founded by Yasser Arafat, committed to armed struggle to liberate Palestine.',
         },
         {
-          term: "Samu Raid",
-          definition: "A massive 1966 Israeli military raid into the Jordanian-controlled West Bank that escalated regional tensions.",
+          term: 'Samu Raid',
+          definition:
+            'A massive 1966 Israeli military raid into the Jordanian-controlled West Bank that escalated regional tensions.',
         },
         {
-          term: "Pre-emptive Strike",
-          definition: "A surprise military attack launched to destroy enemy forces before they can launch an imminent offensive.",
+          term: 'Pre-emptive Strike',
+          definition:
+            'A surprise military attack launched to destroy enemy forces before they can launch an imminent offensive.',
         },
         {
-          term: "Casus Belli",
-          definition: "A Latin legal term meaning an act or event that provokes or justifies a declaration of war.",
+          term: 'Casus Belli',
+          definition:
+            'A Latin legal term meaning an act or event that provokes or justifies a declaration of war.',
         },
         {
-          term: "Operation Focus",
-          definition: "The surprise Israeli air strike on 5 June 1967 that wiped out the Egyptian, Syrian, and Jordanian air forces on the ground.",
+          term: 'Operation Focus',
+          definition:
+            'The surprise Israeli air strike on 5 June 1967 that wiped out the Egyptian, Syrian, and Jordanian air forces on the ground.',
         },
       ],
       vocab_cloze_text:
-        "In the 1960s, Palestinian nationalism organized under the [PLO] and its dominant armed guerrilla faction, [Fatah]. Cross-border tensions escalated after the 1966 Israeli [Samu Raid] into Jordan. When Egypt expelled UN peacekeepers and closed the Straits of Tiran, Israel viewed the blockade as a [Casus Belli]. On 5 June 1967, Israel launched a decisive [Pre-emptive Strike] codenamed [Operation Focus], annihilating Arab air forces on the ground.",
+        'In the 1960s, Palestinian nationalism organized under the [PLO] and its dominant armed guerrilla faction, [Fatah]. Cross-border tensions escalated after the 1966 Israeli [Samu Raid] into Jordan. When Egypt expelled UN peacekeepers and closed the Straits of Tiran, Israel viewed the blockade as a [Casus Belli]. On 5 June 1967, Israel launched a decisive [Pre-emptive Strike] codenamed [Operation Focus], annihilating Arab air forces on the ground.',
       learning_objective: 'To understand the causes and immediate consequences of the Six Day War.',
       learning_objectives: {
         overarching:
@@ -4925,28 +4990,34 @@ export const unitData = {
       },
       flashcards: [
         {
-          term: "PLO",
-          definition: "Palestine Liberation Organisation; founded in 1964 to unite Palestinian resistance groups and establish an independent state.",
+          term: 'PLO',
+          definition:
+            'Palestine Liberation Organisation; founded in 1964 to unite Palestinian resistance groups and establish an independent state.',
         },
         {
-          term: "Fatah",
-          definition: "The dominant Palestinian guerrilla movement founded by Yasser Arafat, committed to armed struggle to liberate Palestine.",
+          term: 'Fatah',
+          definition:
+            'The dominant Palestinian guerrilla movement founded by Yasser Arafat, committed to armed struggle to liberate Palestine.',
         },
         {
-          term: "Samu Raid",
-          definition: "A massive 1966 Israeli military raid into the Jordanian-controlled West Bank that escalated regional tensions.",
+          term: 'Samu Raid',
+          definition:
+            'A massive 1966 Israeli military raid into the Jordanian-controlled West Bank that escalated regional tensions.',
         },
         {
-          term: "Pre-emptive Strike",
-          definition: "A surprise military attack launched to destroy enemy forces before they can launch an imminent offensive.",
+          term: 'Pre-emptive Strike',
+          definition:
+            'A surprise military attack launched to destroy enemy forces before they can launch an imminent offensive.',
         },
         {
-          term: "Casus Belli",
-          definition: "A Latin legal term meaning an act or event that provokes or justifies a declaration of war.",
+          term: 'Casus Belli',
+          definition:
+            'A Latin legal term meaning an act or event that provokes or justifies a declaration of war.',
         },
         {
-          term: "Operation Focus",
-          definition: "The surprise Israeli air strike on 5 June 1967 that wiped out the Egyptian, Syrian, and Jordanian air forces on the ground.",
+          term: 'Operation Focus',
+          definition:
+            'The surprise Israeli air strike on 5 June 1967 that wiped out the Egyptian, Syrian, and Jordanian air forces on the ground.',
         },
       ],
       narrative_blocks: [
@@ -6147,56 +6218,68 @@ export const unitData = {
       },
       vocab: [
         {
-          term: "UN Resolution 242",
-          definition: "1967 UN resolution establishing the \"land for peace\" formula, calling for Israeli withdrawal from occupied territories in exchange for recognized boundaries.",
+          term: 'UN Resolution 242',
+          definition:
+            '1967 UN resolution establishing the "land for peace" formula, calling for Israeli withdrawal from occupied territories in exchange for recognized boundaries.',
         },
         {
-          term: "Three Nos of Khartoum",
-          definition: "The September 1967 Arab League resolution declaring: no peace with Israel, no recognition of Israel, and no negotiations with Israel.",
+          term: 'Three Nos of Khartoum',
+          definition:
+            'The September 1967 Arab League resolution declaring: no peace with Israel, no recognition of Israel, and no negotiations with Israel.',
         },
         {
-          term: "PFLP",
-          definition: "Popular Front for the Liberation of Palestine; a Marxist-Leninist guerrilla faction that pioneered international airline hijackings.",
+          term: 'PFLP',
+          definition:
+            'Popular Front for the Liberation of Palestine; a Marxist-Leninist guerrilla faction that pioneered international airline hijackings.',
         },
         {
           term: "Dawson's Field",
-          definition: "A remote desert airfield in Jordan where the PFLP blew up hijacked Western airliners in September 1970, sparking the Black September civil war.",
+          definition:
+            'A remote desert airfield in Jordan where the PFLP blew up hijacked Western airliners in September 1970, sparking the Black September civil war.',
         },
         {
-          term: "Black September",
-          definition: "The violent civil war in September 1970 when King Hussein of Jordan crushed and expelled the PLO from Jordanian territory.",
+          term: 'Black September',
+          definition:
+            'The violent civil war in September 1970 when King Hussein of Jordan crushed and expelled the PLO from Jordanian territory.',
         },
         {
-          term: "Operation Wrath of God",
-          definition: "A covert Mossad assassination campaign authorized by Golda Meir to eliminate the perpetrators of the 1972 Munich Olympic massacre.",
+          term: 'Operation Wrath of God',
+          definition:
+            'A covert Mossad assassination campaign authorized by Golda Meir to eliminate the perpetrators of the 1972 Munich Olympic massacre.',
         },
       ],
       vocab_cloze_text:
         "In the aftermath of the Six-Day War, the international community passed [UN Resolution 242], calling for Israeli withdrawal from captured territories in exchange for peace. However, Arab leaders firmly rejected negotiations by issuing the [Three Nos of Khartoum]. As conventional war failed, Palestinian militant groups like the [PFLP] turned to international terrorism, notably hijacking planes to [Dawson's Field] and killing Israeli athletes during the [Black September] Munich Olympics. In response, Israel launched [Operation Wrath of God] to hunt down and assassinate those responsible.",
       flashcards: [
         {
-          term: "UN Resolution 242",
-          definition: "1967 UN resolution establishing the \"land for peace\" formula, calling for Israeli withdrawal from occupied territories in exchange for recognized boundaries.",
+          term: 'UN Resolution 242',
+          definition:
+            '1967 UN resolution establishing the "land for peace" formula, calling for Israeli withdrawal from occupied territories in exchange for recognized boundaries.',
         },
         {
-          term: "Three Nos of Khartoum",
-          definition: "The September 1967 Arab League resolution declaring: no peace with Israel, no recognition of Israel, and no negotiations with Israel.",
+          term: 'Three Nos of Khartoum',
+          definition:
+            'The September 1967 Arab League resolution declaring: no peace with Israel, no recognition of Israel, and no negotiations with Israel.',
         },
         {
-          term: "PFLP",
-          definition: "Popular Front for the Liberation of Palestine; a Marxist-Leninist guerrilla faction that pioneered international airline hijackings.",
+          term: 'PFLP',
+          definition:
+            'Popular Front for the Liberation of Palestine; a Marxist-Leninist guerrilla faction that pioneered international airline hijackings.',
         },
         {
           term: "Dawson's Field",
-          definition: "A remote desert airfield in Jordan where the PFLP blew up hijacked Western airliners in September 1970, sparking the Black September civil war.",
+          definition:
+            'A remote desert airfield in Jordan where the PFLP blew up hijacked Western airliners in September 1970, sparking the Black September civil war.',
         },
         {
-          term: "Black September",
-          definition: "The violent civil war in September 1970 when King Hussein of Jordan crushed and expelled the PLO from Jordanian territory.",
+          term: 'Black September',
+          definition:
+            'The violent civil war in September 1970 when King Hussein of Jordan crushed and expelled the PLO from Jordanian territory.',
         },
         {
-          term: "Operation Wrath of God",
-          definition: "A covert Mossad assassination campaign authorized by Golda Meir to eliminate the perpetrators of the 1972 Munich Olympic massacre.",
+          term: 'Operation Wrath of God',
+          definition:
+            'A covert Mossad assassination campaign authorized by Golda Meir to eliminate the perpetrators of the 1972 Munich Olympic massacre.',
         },
       ],
       narrative_blocks: [
@@ -7287,56 +7370,68 @@ export const unitData = {
       },
       vocab: [
         {
-          term: "War of Attrition",
-          definition: "A grinding 1969–1970 conflict along the Suez Canal where Egypt and Israel exchanged continuous artillery fire and airstrikes.",
+          term: 'War of Attrition',
+          definition:
+            'A grinding 1969–1970 conflict along the Suez Canal where Egypt and Israel exchanged continuous artillery fire and airstrikes.',
         },
         {
-          term: "Bar Lev Line",
-          definition: "A massive 20-meter-high sand wall fortification constructed by Israel along the eastern bank of the Suez Canal.",
+          term: 'Bar Lev Line',
+          definition:
+            'A massive 20-meter-high sand wall fortification constructed by Israel along the eastern bank of the Suez Canal.',
         },
         {
-          term: "Operation Badr",
-          definition: "The surprise Egyptian military assault crossing the Suez Canal and storming the Bar Lev Line on Yom Kippur, 6 October 1973.",
+          term: 'Operation Badr',
+          definition:
+            'The surprise Egyptian military assault crossing the Suez Canal and storming the Bar Lev Line on Yom Kippur, 6 October 1973.',
         },
         {
-          term: "SAM-3 Missiles",
-          definition: "Advanced Soviet-supplied surface-to-air missiles that created a defensive air umbrella protecting advancing Arab infantry in 1973.",
+          term: 'SAM-3 Missiles',
+          definition:
+            'Advanced Soviet-supplied surface-to-air missiles that created a defensive air umbrella protecting advancing Arab infantry in 1973.',
         },
         {
-          term: "Operation Nickel Grass",
-          definition: "A massive American emergency military airlift in October 1973 that resupplied Israel with vital weapons and munitions.",
+          term: 'Operation Nickel Grass',
+          definition:
+            'A massive American emergency military airlift in October 1973 that resupplied Israel with vital weapons and munitions.',
         },
         {
-          term: "OPEC Oil Weapon",
-          definition: "An embargo and production cut imposed by Arab oil producers in October 1973 that quadrupled global petroleum prices to punish Israel's allies.",
+          term: 'OPEC Oil Weapon',
+          definition:
+            "An embargo and production cut imposed by Arab oil producers in October 1973 that quadrupled global petroleum prices to punish Israel's allies.",
         },
       ],
       vocab_cloze_text:
-        "Following the 1967 defeat, Egypt engaged in a grinding [War of Attrition] against Israel, shelling the heavily fortified [Bar Lev Line]. On Yom Kippur 1973, Egyptian forces launched surprise [Operation Badr], crossing the Suez Canal under a defensive umbrella of Soviet-supplied [SAM-3 Missiles]. Faced with acute shortages, Israel was reinforced by the US airlift [Operation Nickel Grass]. In retaliation, Arab oil ministers deployed the devastating [OPEC Oil Weapon] to economically punish the West.",
+        'Following the 1967 defeat, Egypt engaged in a grinding [War of Attrition] against Israel, shelling the heavily fortified [Bar Lev Line]. On Yom Kippur 1973, Egyptian forces launched surprise [Operation Badr], crossing the Suez Canal under a defensive umbrella of Soviet-supplied [SAM-3 Missiles]. Faced with acute shortages, Israel was reinforced by the US airlift [Operation Nickel Grass]. In retaliation, Arab oil ministers deployed the devastating [OPEC Oil Weapon] to economically punish the West.',
       flashcards: [
         {
-          term: "War of Attrition",
-          definition: "A grinding 1969–1970 conflict along the Suez Canal where Egypt and Israel exchanged continuous artillery fire and airstrikes.",
+          term: 'War of Attrition',
+          definition:
+            'A grinding 1969–1970 conflict along the Suez Canal where Egypt and Israel exchanged continuous artillery fire and airstrikes.',
         },
         {
-          term: "Bar Lev Line",
-          definition: "A massive 20-meter-high sand wall fortification constructed by Israel along the eastern bank of the Suez Canal.",
+          term: 'Bar Lev Line',
+          definition:
+            'A massive 20-meter-high sand wall fortification constructed by Israel along the eastern bank of the Suez Canal.',
         },
         {
-          term: "Operation Badr",
-          definition: "The surprise Egyptian military assault crossing the Suez Canal and storming the Bar Lev Line on Yom Kippur, 6 October 1973.",
+          term: 'Operation Badr',
+          definition:
+            'The surprise Egyptian military assault crossing the Suez Canal and storming the Bar Lev Line on Yom Kippur, 6 October 1973.',
         },
         {
-          term: "SAM-3 Missiles",
-          definition: "Advanced Soviet-supplied surface-to-air missiles that created a defensive air umbrella protecting advancing Arab infantry in 1973.",
+          term: 'SAM-3 Missiles',
+          definition:
+            'Advanced Soviet-supplied surface-to-air missiles that created a defensive air umbrella protecting advancing Arab infantry in 1973.',
         },
         {
-          term: "Operation Nickel Grass",
-          definition: "A massive American emergency military airlift in October 1973 that resupplied Israel with vital weapons and munitions.",
+          term: 'Operation Nickel Grass',
+          definition:
+            'A massive American emergency military airlift in October 1973 that resupplied Israel with vital weapons and munitions.',
         },
         {
-          term: "OPEC Oil Weapon",
-          definition: "An embargo and production cut imposed by Arab oil producers in October 1973 that quadrupled global petroleum prices to punish Israel's allies.",
+          term: 'OPEC Oil Weapon',
+          definition:
+            "An embargo and production cut imposed by Arab oil producers in October 1973 that quadrupled global petroleum prices to punish Israel's allies.",
         },
       ],
       narrative_blocks: [
@@ -8805,56 +8900,68 @@ export const unitData = {
       },
       vocab: [
         {
-          term: "Stagflation",
-          definition: "An economic crisis combining soaring inflation and stagnant growth, triggered across Western nations by the 1973 OPEC oil shock.",
+          term: 'Stagflation',
+          definition:
+            'An economic crisis combining soaring inflation and stagnant growth, triggered across Western nations by the 1973 OPEC oil shock.',
         },
         {
-          term: "Shuttle Diplomacy",
-          definition: "US Secretary of State Henry Kissinger's mediation technique of flying continuously between Cairo, Damascus, and Jerusalem to broker disengagement.",
+          term: 'Shuttle Diplomacy',
+          definition:
+            "US Secretary of State Henry Kissinger's mediation technique of flying continuously between Cairo, Damascus, and Jerusalem to broker disengagement.",
         },
         {
-          term: "Sinai II Agreement",
-          definition: "A 1975 diplomatic pact where Israel surrendered the strategic Gidi and Mitla passes and oil fields to Egypt in exchange for peaceful transit.",
+          term: 'Sinai II Agreement',
+          definition:
+            'A 1975 diplomatic pact where Israel surrendered the strategic Gidi and Mitla passes and oil fields to Egypt in exchange for peaceful transit.',
         },
         {
-          term: "Likud",
-          definition: "The right-wing Israeli political coalition led by Menachem Begin that ended three decades of Labor dominance by winning the 1977 election.",
+          term: 'Likud',
+          definition:
+            'The right-wing Israeli political coalition led by Menachem Begin that ended three decades of Labor dominance by winning the 1977 election.',
         },
         {
-          term: "Camp David Accords",
-          definition: "The landmark 1978 framework for Middle East peace negotiated by Carter, Sadat, and Begin during thirteen days of secluded summitry.",
+          term: 'Camp David Accords',
+          definition:
+            'The landmark 1978 framework for Middle East peace negotiated by Carter, Sadat, and Begin during thirteen days of secluded summitry.',
         },
         {
-          term: "Treaty of Washington",
-          definition: "The historic March 1979 peace treaty where Israel withdrew completely from the Sinai Peninsula in exchange for Egyptian diplomatic recognition.",
+          term: 'Treaty of Washington',
+          definition:
+            'The historic March 1979 peace treaty where Israel withdrew completely from the Sinai Peninsula in exchange for Egyptian diplomatic recognition.',
         },
       ],
       vocab_cloze_text:
-        "In the years following the 1973 oil shock, Western economies struggled with severe [Stagflation]. US Secretary of State Henry Kissinger engaged in intensive [Shuttle Diplomacy], mediating the 1975 [Sinai II Agreement] between Egypt and Israel. In 1977, the right-wing [Likud] party came to power in Israel under Menachem Begin. Secluded summit talks led to the landmark 1978 [Camp David Accords], culminating in the historic 1979 [Treaty of Washington] which secured peace between Egypt and Israel.",
+        'In the years following the 1973 oil shock, Western economies struggled with severe [Stagflation]. US Secretary of State Henry Kissinger engaged in intensive [Shuttle Diplomacy], mediating the 1975 [Sinai II Agreement] between Egypt and Israel. In 1977, the right-wing [Likud] party came to power in Israel under Menachem Begin. Secluded summit talks led to the landmark 1978 [Camp David Accords], culminating in the historic 1979 [Treaty of Washington] which secured peace between Egypt and Israel.',
       flashcards: [
         {
-          term: "Stagflation",
-          definition: "An economic crisis combining soaring inflation and stagnant growth, triggered across Western nations by the 1973 OPEC oil shock.",
+          term: 'Stagflation',
+          definition:
+            'An economic crisis combining soaring inflation and stagnant growth, triggered across Western nations by the 1973 OPEC oil shock.',
         },
         {
-          term: "Shuttle Diplomacy",
-          definition: "US Secretary of State Henry Kissinger's mediation technique of flying continuously between Cairo, Damascus, and Jerusalem to broker disengagement.",
+          term: 'Shuttle Diplomacy',
+          definition:
+            "US Secretary of State Henry Kissinger's mediation technique of flying continuously between Cairo, Damascus, and Jerusalem to broker disengagement.",
         },
         {
-          term: "Sinai II Agreement",
-          definition: "A 1975 diplomatic pact where Israel surrendered the strategic Gidi and Mitla passes and oil fields to Egypt in exchange for peaceful transit.",
+          term: 'Sinai II Agreement',
+          definition:
+            'A 1975 diplomatic pact where Israel surrendered the strategic Gidi and Mitla passes and oil fields to Egypt in exchange for peaceful transit.',
         },
         {
-          term: "Likud",
-          definition: "The right-wing Israeli political coalition led by Menachem Begin that ended three decades of Labor dominance by winning the 1977 election.",
+          term: 'Likud',
+          definition:
+            'The right-wing Israeli political coalition led by Menachem Begin that ended three decades of Labor dominance by winning the 1977 election.',
         },
         {
-          term: "Camp David Accords",
-          definition: "The landmark 1978 framework for Middle East peace negotiated by Carter, Sadat, and Begin during thirteen days of secluded summitry.",
+          term: 'Camp David Accords',
+          definition:
+            'The landmark 1978 framework for Middle East peace negotiated by Carter, Sadat, and Begin during thirteen days of secluded summitry.',
         },
         {
-          term: "Treaty of Washington",
-          definition: "The historic March 1979 peace treaty where Israel withdrew completely from the Sinai Peninsula in exchange for Egyptian diplomatic recognition.",
+          term: 'Treaty of Washington',
+          definition:
+            'The historic March 1979 peace treaty where Israel withdrew completely from the Sinai Peninsula in exchange for Egyptian diplomatic recognition.',
         },
       ],
       narrative_blocks: [
@@ -9960,56 +10067,68 @@ export const unitData = {
       },
       vocab: [
         {
-          term: "UN Resolution 3236",
-          definition: "A 1974 UN General Assembly resolution formally recognizing the inalienable rights of the Palestinian people to national self-determination.",
+          term: 'UN Resolution 3236',
+          definition:
+            'A 1974 UN General Assembly resolution formally recognizing the inalienable rights of the Palestinian people to national self-determination.',
         },
         {
-          term: "Fatahland",
-          definition: "The militarized semi-autonomous enclave established by the PLO in southern Lebanon used to launch cross-border attacks into northern Israel.",
+          term: 'Fatahland',
+          definition:
+            'The militarized semi-autonomous enclave established by the PLO in southern Lebanon used to launch cross-border attacks into northern Israel.',
         },
         {
-          term: "Operation Peace for Galilee",
-          definition: "The June 1982 full-scale Israeli military invasion of Lebanon commanded by Ariel Sharon to destroy the PLO's military infrastructure.",
+          term: 'Operation Peace for Galilee',
+          definition:
+            "The June 1982 full-scale Israeli military invasion of Lebanon commanded by Ariel Sharon to destroy the PLO's military infrastructure.",
         },
         {
-          term: "Sabra and Shatila",
-          definition: "Two Palestinian refugee camps in Beirut where Lebanese Christian Phalangist militias massacred hundreds of civilians in September 1982.",
+          term: 'Sabra and Shatila',
+          definition:
+            'Two Palestinian refugee camps in Beirut where Lebanese Christian Phalangist militias massacred hundreds of civilians in September 1982.',
         },
         {
-          term: "First Intifada",
-          definition: "A sustained grassroots civilian uprising (\"The Shaking Off\") against Israeli military occupation that erupted in Gaza and the West Bank in December 1987.",
+          term: 'First Intifada',
+          definition:
+            'A sustained grassroots civilian uprising ("The Shaking Off") against Israeli military occupation that erupted in Gaza and the West Bank in December 1987.',
         },
         {
-          term: "Iron Fist Policy",
-          definition: "The Israeli military doctrine enacted by Defence Minister Yitzhak Rabin utilizing curfews, deportations, and physical force to suppress the Intifada.",
+          term: 'Iron Fist Policy',
+          definition:
+            'The Israeli military doctrine enacted by Defence Minister Yitzhak Rabin utilizing curfews, deportations, and physical force to suppress the Intifada.',
         },
       ],
       vocab_cloze_text:
         "In 1974, the PLO gained international recognition when [UN Resolution 3236] acknowledged the right of Palestinians to self-determination. In southern Lebanon, the PLO created a fortified enclave known as [Fatahland], launching cross-border attacks that provoked Israel's 1982 invasion, [Operation Peace for Galilee]. Global outrage followed the massacre of civilians by Phalangist militias at [Sabra and Shatila]. By 1987, decades of military occupation ignited the grassroots civilian uprising known as the [First Intifada], which the Israeli military met with a harsh [Iron Fist Policy].",
       flashcards: [
         {
-          term: "UN Resolution 3236",
-          definition: "A 1974 UN General Assembly resolution formally recognizing the inalienable rights of the Palestinian people to national self-determination.",
+          term: 'UN Resolution 3236',
+          definition:
+            'A 1974 UN General Assembly resolution formally recognizing the inalienable rights of the Palestinian people to national self-determination.',
         },
         {
-          term: "Fatahland",
-          definition: "The militarized semi-autonomous enclave established by the PLO in southern Lebanon used to launch cross-border attacks into northern Israel.",
+          term: 'Fatahland',
+          definition:
+            'The militarized semi-autonomous enclave established by the PLO in southern Lebanon used to launch cross-border attacks into northern Israel.',
         },
         {
-          term: "Operation Peace for Galilee",
-          definition: "The June 1982 full-scale Israeli military invasion of Lebanon commanded by Ariel Sharon to destroy the PLO's military infrastructure.",
+          term: 'Operation Peace for Galilee',
+          definition:
+            "The June 1982 full-scale Israeli military invasion of Lebanon commanded by Ariel Sharon to destroy the PLO's military infrastructure.",
         },
         {
-          term: "Sabra and Shatila",
-          definition: "Two Palestinian refugee camps in Beirut where Lebanese Christian Phalangist militias massacred hundreds of civilians in September 1982.",
+          term: 'Sabra and Shatila',
+          definition:
+            'Two Palestinian refugee camps in Beirut where Lebanese Christian Phalangist militias massacred hundreds of civilians in September 1982.',
         },
         {
-          term: "First Intifada",
-          definition: "A sustained grassroots civilian uprising (\"The Shaking Off\") against Israeli military occupation that erupted in Gaza and the West Bank in December 1987.",
+          term: 'First Intifada',
+          definition:
+            'A sustained grassroots civilian uprising ("The Shaking Off") against Israeli military occupation that erupted in Gaza and the West Bank in December 1987.',
         },
         {
-          term: "Iron Fist Policy",
-          definition: "The Israeli military doctrine enacted by Defence Minister Yitzhak Rabin utilizing curfews, deportations, and physical force to suppress the Intifada.",
+          term: 'Iron Fist Policy',
+          definition:
+            'The Israeli military doctrine enacted by Defence Minister Yitzhak Rabin utilizing curfews, deportations, and physical force to suppress the Intifada.',
         },
       ],
       narrative_blocks: [
@@ -10957,56 +11076,68 @@ export const unitData = {
       },
       vocab: [
         {
-          term: "Two-State Solution",
-          definition: "A diplomatic framework proposing the partition of historical Palestine into an independent Palestinian state alongside a secure State of Israel.",
+          term: 'Two-State Solution',
+          definition:
+            'A diplomatic framework proposing the partition of historical Palestine into an independent Palestinian state alongside a secure State of Israel.',
         },
         {
-          term: "Madrid Conference",
-          definition: "A historic October 1991 international peace summit co-sponsored by the US and USSR that initiated direct face-to-face Arab-Israeli negotiations.",
+          term: 'Madrid Conference',
+          definition:
+            'A historic October 1991 international peace summit co-sponsored by the US and USSR that initiated direct face-to-face Arab-Israeli negotiations.',
         },
         {
-          term: "Oslo I Accords",
-          definition: "The September 1993 Declaration of Principles creating the Palestinian National Authority and granting interim self-government in Gaza and Jericho.",
+          term: 'Oslo I Accords',
+          definition:
+            'The September 1993 Declaration of Principles creating the Palestinian National Authority and granting interim self-government in Gaza and Jericho.',
         },
         {
-          term: "Oslo II Accords",
-          definition: "The September 1995 agreement expanding Palestinian interim self-rule and dividing the West Bank into three administrative zones.",
+          term: 'Oslo II Accords',
+          definition:
+            'The September 1995 agreement expanding Palestinian interim self-rule and dividing the West Bank into three administrative zones.',
         },
         {
-          term: "Area A, B, C",
-          definition: "The tripartite division of the West Bank under Oslo II, dictating civil and security administration across zones.",
+          term: 'Area A, B, C',
+          definition:
+            'The tripartite division of the West Bank under Oslo II, dictating civil and security administration across zones.',
         },
         {
-          term: "Yigal Amir",
-          definition: "The radical right-wing Jewish extremist who assassinated Israeli Prime Minister Yitzhak Rabin on 4 November 1995 in Tel Aviv to halt the peace process.",
+          term: 'Yigal Amir',
+          definition:
+            'The radical right-wing Jewish extremist who assassinated Israeli Prime Minister Yitzhak Rabin on 4 November 1995 in Tel Aviv to halt the peace process.',
         },
       ],
       vocab_cloze_text:
-        "Following the Intifada, international diplomacy pursued a permanent [Two-State Solution] where Israel and Palestine could coexist. Direct negotiations commenced at the 1991 [Madrid Conference], paving the way for secret talks and the 1993 [Oslo I Accords] establishing Palestinian self-rule. In 1995, the subsequent [Oslo II Accords] divided the West Bank into [Area A, B, C] zones under differing levels of civil and military control. However, peace efforts suffered a catastrophic blow when Israeli Prime Minister Yitzhak Rabin was assassinated by Jewish extremist [Yigal Amir].",
+        'Following the Intifada, international diplomacy pursued a permanent [Two-State Solution] where Israel and Palestine could coexist. Direct negotiations commenced at the 1991 [Madrid Conference], paving the way for secret talks and the 1993 [Oslo I Accords] establishing Palestinian self-rule. In 1995, the subsequent [Oslo II Accords] divided the West Bank into [Area A, B, C] zones under differing levels of civil and military control. However, peace efforts suffered a catastrophic blow when Israeli Prime Minister Yitzhak Rabin was assassinated by Jewish extremist [Yigal Amir].',
       flashcards: [
         {
-          term: "Two-State Solution",
-          definition: "A diplomatic framework proposing the partition of historical Palestine into an independent Palestinian state alongside a secure State of Israel.",
+          term: 'Two-State Solution',
+          definition:
+            'A diplomatic framework proposing the partition of historical Palestine into an independent Palestinian state alongside a secure State of Israel.',
         },
         {
-          term: "Madrid Conference",
-          definition: "A historic October 1991 international peace summit co-sponsored by the US and USSR that initiated direct face-to-face Arab-Israeli negotiations.",
+          term: 'Madrid Conference',
+          definition:
+            'A historic October 1991 international peace summit co-sponsored by the US and USSR that initiated direct face-to-face Arab-Israeli negotiations.',
         },
         {
-          term: "Oslo I Accords",
-          definition: "The September 1993 Declaration of Principles creating the Palestinian National Authority and granting interim self-government in Gaza and Jericho.",
+          term: 'Oslo I Accords',
+          definition:
+            'The September 1993 Declaration of Principles creating the Palestinian National Authority and granting interim self-government in Gaza and Jericho.',
         },
         {
-          term: "Oslo II Accords",
-          definition: "The September 1995 agreement expanding Palestinian interim self-rule and dividing the West Bank into three administrative zones.",
+          term: 'Oslo II Accords',
+          definition:
+            'The September 1995 agreement expanding Palestinian interim self-rule and dividing the West Bank into three administrative zones.',
         },
         {
-          term: "Area A, B, C",
-          definition: "The tripartite division of the West Bank under Oslo II, dictating civil and security administration across zones.",
+          term: 'Area A, B, C',
+          definition:
+            'The tripartite division of the West Bank under Oslo II, dictating civil and security administration across zones.',
         },
         {
-          term: "Yigal Amir",
-          definition: "The radical right-wing Jewish extremist who assassinated Israeli Prime Minister Yitzhak Rabin on 4 November 1995 in Tel Aviv to halt the peace process.",
+          term: 'Yigal Amir',
+          definition:
+            'The radical right-wing Jewish extremist who assassinated Israeli Prime Minister Yitzhak Rabin on 4 November 1995 in Tel Aviv to halt the peace process.',
         },
       ],
       narrative_blocks: [
@@ -11180,7 +11311,7 @@ export const unitData = {
         {
           text: '**Oslo II / The Taba Agreement (September 1995): Dividing the West Bank into Areas A, B, and C:** Despite the escalating violence, Rabin and Arafat pushed forward. On 28 September 1995, they signed the **Interim Agreement on the West Bank and Gaza Strip (Oslo II)** in Washington. Under **Oslo II Areas A B C** were established to divide West Bank jurisdiction into three distinct zones:\n<ul>\n  <li><strong>Area A (18% of land, 55% of Palestinian population):</strong> Complete Palestinian Authority control over civilian administration and internal security (covering major Palestinian cities: Ramallah, Nablus, Jenin, Tulkarm, Qalqilya, Bethlehem, and Hebron).</li>\n  <li><strong>Area B (22% of land, 41% of Palestinian population):</strong> Palestinian Authority civil control (education, health, commerce), but joint Israeli-Palestinian security control.</li>\n  <li><strong>Area C (60% of land, 4% of Palestinian population):</strong> Complete Israeli military and civil administration (encompassing all 140 Jewish settlements, military bases, bypass roads, the Jordan Valley border, and water aquifers).</li>\n</ul>\nPalestinians were deeply disillusioned: the West Bank was fractured into isolated enclaves surrounded by Israeli checkpoints, while Jewish settlements continued to expand. Right-wing Israelis were equally furious that ancestral biblical lands had been handed over to the PLO.',
           level_4:
-            '<img src="/units/cme_new/assets/oslo2.svg" class="svg-diagram" style="width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;" alt="oslo2">',
+            'While Oslo II was celebrated, the division triggered a massive political backlash. Right-wing Israelis were outraged by Rabin\'s concessions.\n<img src="/units/cme_new/assets/oslo2.svg" class="svg-diagram" style="width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;" alt="oslo2">',
           source: {
             title:
               'Source D: Peace Rally in Tel Aviv Moments Before the Assassination of Yitzhak Rabin (4 November 1995)',
@@ -11205,11 +11336,6 @@ export const unitData = {
             model_answer:
               'Source D captures the fragile climax of the peace movement. Over 100,000 Israelis gathered under the banner "Yes to Peace, No to Violence" to demonstrate public support for Rabin amid escalating venomous opposition from right-wing nationalist and religious groups who accused Rabin of treason for ceding biblical land. Minutes after singing "The Song for Peace", Rabin was shot dead by Yigal Amir, a religious Jewish extremist who believed killing the Prime Minister was divinely sanctioned to stop the peace accords. Rabin\'s assassination shattered the momentum of the Oslo peace process, demonstrating that internal violent extremism within both Israeli and Palestinian societies possessed the power to derail peace.',
           },
-        },
-        {
-          text: '**Oslo II / The Taba Agreement (September 1995): Partitioning the West Bank into Areas A, B, and C:** Despite the escalating violence, Rabin and Arafat pushed forward. On 28 September 1995, they signed the **Interim Agreement on the West Bank and Gaza Strip (Oslo II)** in Washington. Oslo II partitioned the West Bank into a patchwork archipelago of three administrative zones:\n<ul>\n  <li><strong>Area A (18% of land, 55% of Palestinian population):</strong> Complete Palestinian Authority control over civilian administration and internal security (covering major Palestinian cities: Ramallah, Nablus, Jenin, Tulkarm, Qalqilya, Bethlehem, and Hebron).</li>\n  <li><strong>Area B (22% of land, 41% of Palestinian population):</strong> Palestinian Authority civil control (education, health, commerce), but joint Israeli-Palestinian security control.</li>\n  <li><strong>Area C (60% of land, 4% of Palestinian population):</strong> Complete Israeli military and civil administration (encompassing all 140 Jewish settlements, military bases, bypass roads, the Jordan Valley border, and water aquifers).</li>\n</ul>\nPalestinians were deeply disillusioned: the West Bank was fractured into isolated enclaves surrounded by Israeli checkpoints, while Jewish settlements continued to expand. Right-wing Israelis were equally furious that ancestral biblical lands had been handed over to the PLO.',
-          level_4:
-            "While Oslo II was celebrated, the division triggered a massive political backlash. Right-wing Israelis were outraged by Rabin's concessions.",
           tasks: [
             {
               type: 'written',
@@ -11223,18 +11349,13 @@ export const unitData = {
           ],
         },
         {
-          text: '**The Tragic Climax: The Assassination of Yitzhak Rabin (4 November 1995):** Opposition to the Oslo Accords reached a fever pitch in Israel. Right-wing opposition parties, led by Likud leader Benjamin Netanyahu, staged massive, furious street rallies. Hardline rabbis denounced Rabin as a traitor and invoked ancient theological concepts like *din rodef* (the religious law of the pursuer, which permitted the extrajudicial killing of someone endangering Jewish lives). On the evening of 4 November 1995, over 100,000 Israelis gathered at a massive peace rally in Kings of Israel Square, Tel Aviv, chanting *"Yes to Peace, No to Violence."* Rabin sang the peace anthem *Shir LaShalom* ("A Song for Peace"), folded the lyric sheet into his breast pocket, and walked down the steps to his waiting car. At 9:30 PM, **Yigal Amir**, a 25-year-old radical Orthodox Jewish law student, stepped from the shadows and fired three point-blank hollow-point rounds into Rabin’s spine and chest. With **Rabin assassinated**, he died on the operating table an hour later. The assassination dealt a catastrophic, mortal blow to the Oslo peace process. With Rabin gone, mutual trust collapsed, extremism surged on both sides, and the dream of an enduring Arab-Israeli peace began its tragic, agonizing unraveling.',
-          level_4:
-            '<img src="/units/cme_new/assets/deadlock.svg" class="svg-diagram" style="width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;" alt="deadlock">',
-        },
-        {
           text: '**The Tragic Climax: The Assassination of Yitzhak Rabin (4 November 1995):** Opposition to the Oslo Accords reached a fever pitch in Israel. Right-wing opposition parties, led by Likud leader Benjamin Netanyahu, staged massive, furious street rallies. Hardline rabbis denounced Rabin as a traitor and invoked ancient theological concepts like *din rodef* (the religious law of the pursuer, which permitted the extrajudicial killing of someone endangering Jewish lives). On the evening of 4 November 1995, over 100,000 Israelis gathered at a massive peace rally in Kings of Israel Square, Tel Aviv, chanting *"Yes to Peace, No to Violence."* Rabin sang the peace anthem *Shir LaShalom* ("A Song for Peace"), folded the lyric sheet into his breast pocket, and walked down the steps to his waiting car. At 9:30 PM, **Yigal Amir**, a 25-year-old radical Orthodox Jewish law student, stepped from the shadows and fired three point-blank hollow-point rounds into Rabin’s spine and chest. Rabin died on the operating table an hour later. The assassination of Yitzhak Rabin dealt a catastrophic, mortal blow to the Oslo peace process. With Rabin gone, mutual trust collapsed, extremism surged on both sides, and the dream of an enduring Arab-Israeli peace began its tragic, agonizing unraveling.',
           level_4:
-            'On 4 November 1995, Yitzhak Rabin was assassinated at a peace rally in Tel Aviv by Yigal Amir, a radical right-wing Jewish law student. The assassination dealt a fatal blow to the peace process, leaving the "permanent status" issues completely unresolved.',
+            'On 4 November 1995, Yitzhak Rabin was assassinated at a peace rally in Tel Aviv by Yigal Amir, a radical right-wing Jewish law student. The assassination dealt a fatal blow to the peace process, leaving the "permanent status" issues completely unresolved.\n<img src="/units/cme_new/assets/deadlock.svg" class="svg-diagram" style="width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;" alt="deadlock">',
           tasks: [
             {
               type: 'written',
-              text: 'How did extremists on both sides—Hamas suicide bombers and Jewish ultranationalists—attempt to sabotage the peace process between 1994 and 1995? (P16)',
+              text: 'How did extremists on both sides—Hamas suicide bombers and Jewish ultranationalists—attempt to sabotage the peace process between 1994 and 1995? (P15)',
               starter: 'Extremists attempted to destroy the peace process through...',
               model:
                 'In February 1994, Baruch Goldstein, a radical Jewish settler, murdered 29 Palestinians in Hebron. Hamas exploited this to launch a wave of devastating suicide bus bombings inside Israeli cities, killing dozens of civilians and swaying Israeli public opinion against concessions. The cycle of hatred culminated on 4 November 1995, when Israeli Prime Minister Yitzhak Rabin was assassinated at a Tel Aviv peace rally by Yigal Amir, a right-wing Jewish extremist, dealing a fatal blow to the momentum of the Oslo peace process.',

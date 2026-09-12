@@ -10,11 +10,18 @@ const puppeteer = require('puppeteer');
   const arg = process.argv[2] || 'water_and_sanitation';
   const path = require('path');
 
+  const fs = require('fs');
   let htmlPath;
   if (arg.endsWith('.html')) {
     htmlPath = path.resolve(arg);
   } else {
-    htmlPath = path.join(__dirname, '..', 'public', 'units', arg, 'pupil_workbook.html');
+    const defaultPath = path.join(__dirname, '..', 'public', 'units', arg, 'pupil_workbook.html');
+    const kt1Path = path.join(__dirname, '..', 'public', 'units', arg, 'pupil_workbook_KT1.html');
+    if (!fs.existsSync(defaultPath) && fs.existsSync(kt1Path)) {
+      htmlPath = kt1Path;
+    } else {
+      htmlPath = defaultPath;
+    }
   }
 
   const LOCAL_URL = require('url').pathToFileURL(htmlPath).href;

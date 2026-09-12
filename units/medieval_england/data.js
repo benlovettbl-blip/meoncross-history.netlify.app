@@ -3760,7 +3760,7 @@ export default {
             content:
               '"I have seen many men burst forth into tears and lamentations when mention was made of him [Edward V] after his removal from men\'s sight; and already there was a suspicion that he had been done away with. Whether, however, he has been done away with, and by what manner of death, so far I have not at all discovered."',
             caption:
-              "Source A: An extract from the contemporary account 'How Richard III Made Himself King' by the Italian traveler Dominic Mancini, written in the summer of 1483.",
+              "Source C: An extract from the contemporary account 'How Richard III Made Himself King' by the Italian traveler Dominic Mancini, written in the summer of 1483.",
             source_context:
               "Mancini was in London in 1483 and recorded the rumors and panic surrounding the sudden confinement and disappearance of Edward IV's young sons in the Tower of London.",
             provenance_clue:
@@ -3774,7 +3774,7 @@ export default {
             type: 'image',
             src: '/images/richard_iii.png',
             caption:
-              'Source B: A portrait of King Richard III, painted by an unknown artist in the sixteenth century.',
+              'Source D: A portrait of King Richard III, painted by an unknown artist in the sixteenth century.',
             source_context:
               'This painting shows Richard III wearing heavy, luxurious fur-lined robes, adjusting a ring on his finger, with a tense, serious expression on his face.',
             provenance_clue:

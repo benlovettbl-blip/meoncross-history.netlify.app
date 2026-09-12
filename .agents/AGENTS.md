@@ -124,4 +124,29 @@ Whenever generating, selecting, or updating hero banners for pupil family heroes
 2. **Physical Primary Artifacts Over Portrait Headshots**: Hero banners MUST feature physical primary artifacts (such as mounted combat medals, original trench caps, medals displays, field letters, wartime journals, or trench maps laid horizontally) aligned cleanly to the right (`banner_position: 'center right'`), rather than portrait headshots. Portrait headshots inevitably suffer from extreme zoom distortion, pixelation, and vertical clipping when stretched across wide full-bleed CSS banners (`.lesson-hero`).
 3. **Headshot Placement**: Portrait headshots of soldiers must strictly be placed within dedicated biographical profile cards, narrative sidebar figures, or archival citation boxes in the lesson body, never as the full-bleed hero background.
 
+## Master Pedagogical Blueprint & Lesson Architecture
+Whenever authoring or refactoring lesson content across KS3 and GCSE units, you MUST adhere to the following standards:
+1. **Four-Act Dramatic Structure**:
+   - **Act 1: Context & Catalyst (The Outpost / Setting the Stage):** Establishes baseline reality and geopolitical mindset before the crisis (`Source A`).
+   - **Act 2: Escalation & Conflict (The Boiling Point):** Core historical mechanism, geopolitical maneuver, or military clash (`Source B`).
+   - **Act 3: Primary Sources & Forensic Evidence (The Archival Core):** Immersive primary dispatches, intercepted letters, or courtroom confessions (`Source C` & `Source D`).
+   - **Act 4: The Historical Verdict & Historiographical Debate:** Competing academic interpretations (e.g., Fraser vs Edwards, Seeley vs Tharoor) and 3-Tier scaffolded extended writing.
+2. **Pure Paragraph Indexing Standard (`[Act.Paragraph]` Notation)**:
+   - Index **paragraphs only** using `<span class="para-ref">[1.1]</span>`, `<span class="para-ref">[2.1]</span>`, `<span class="para-ref">[3.1]</span>`.
+   - NEVER index individual sentences (`[1.1]`, `[1.2]`, `[1.3]`), as this causes cognitive clutter.
+   - All tasks must explicitly signpost pupils to exact paragraphs (e.g., *"Using paragraphs [3.1]–[3.3], explain how..."* or `(P4)`).
+3. **Universal Source Lettering & Zero Sub-Indices**:
+   - Sources within every lesson must follow a strictly sequential single-letter sequence: `Source A`, `Source B`, `Source C`...
+   - Sub-indices (`Source A1`, `Source A2`, `Source B2`) are STRICTLY FORBIDDEN.
+   - Zero duplicate letters and zero skips per lesson.
+   - Geographical reference maps must be labeled `Reference Map: ...` or `Map A: ...` to avoid colliding with primary sources.
+4. **Three-Tier Differentiated Scaffolding**:
+   - Bronze: Sentence starters and core recall.
+   - Silver: Analytical conjunctions (`Consequently`, `Furthermore`, `This directly resulted in...`).
+   - Gold: Historiographical evaluation, complex causation, and balance of power.
+   - Every task must include a rigorous, detailed model answer (zero placeholders).
+5. **Pedagogical Recall Isolation ("Do Now" Bell-Ringers)**:
+   - "Do Now" activities must strictly test recall from *prior* lessons or units. They must NEVER test content from the current lesson.
+
+
 
