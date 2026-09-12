@@ -1499,33 +1499,35 @@ const early_modern_world = {
       title: 'Trade or takeover: How did early encounters turn into empire?',
       teacher_notes: {
         primer:
-          'This lesson compares two contrasting forms of early English colonial expansion: desperate territorial settlement in North America (Roanoke/Jamestown) and polite mercantile trade with the powerful Mughal Empire in India. It aims to show students that the British Empire was not a monolithic, pre-planned military conquest, but a varied process driven by joint-stock capitalism that opportunistically shifted from trade to takeover.',
+          'This lesson compares two contrasting forms of early English corporate expansion between 1600 and 1750: desperate territorial colonization in North America (Jamestown) and polite mercantile diplomacy in wealthy Mughal India. The core inquiry helps students understand that the British Empire was not a monolithic, pre-planned military conquest, but a varied, opportunistic process driven by private joint-stock capitalism that shifted from trade into takeover depending on the local balance of military and economic power.',
         objectives: [
           {
             objective:
               'Explain how joint-stock corporations (like the East India Company and Virginia Company) funded early English expansion.',
             primer:
-              'Highlight the Macro-History section on Joint-Stock Capital. Ensure students grasp that the Crown was poor, so private capitalism and shared risk drove the expansion.',
+              'Highlight Act 1. Ensure students grasp that the English Crown was cash-strapped, meaning private investors pooled capital in joint-stock corporations to fund high-risk overseas trade without royal bankruptcy.',
             question:
-              'Why did the English rely on joint-stock companies rather than royal armies to explore and trade overseas?',
+              'Why did the English Crown rely on private joint-stock companies rather than royal armies to explore and trade overseas?',
           },
           {
             objective:
-              'Compare the early English colonial encounters in North America (Roanoke and Jamestown) with mercantile trade in Mughal India.',
+              'Compare the early English colonial encounters in North America (Jamestown) with mercantile trade in Mughal India.',
             primer:
-              'Use the Jamestown and Mughal India sections to draw a stark contrast. The English were aggressive and desperate in America, but submissive and polite in wealthy India.',
+              'Use Acts 2 and 3 to draw a stark historical contrast. In Virginia, English settlers aggressively built fortified triangular palisades to seize land for tobacco, whereas in India, Sir Thomas Roe was forced to act as a humble, submissive petitioner before the vastly wealthier Mughal Emperor Jahangir.',
             question:
-              "How did Sir Thomas Roe's behavior at the Mughal Court differ from the behavior of the English settlers in Virginia, and why?",
+              'How and why did English behavior in Virginia differ so dramatically from their behavior at the Mughal Court in India?',
           },
           {
             objective:
-              'Evaluate the turning point where peaceful commercial trade shifted into territorial takeover and subjugation.',
+              'Evaluate the turning point where peaceful commercial trade shifted into territorial takeover and empire.',
             primer:
-              "Discuss the Historical Interpretations section, particularly Tharoor's argument that joint-stock companies were always designed to extract wealth and subjugate when the opportunity arose.",
+              'Discuss Act 4 and the historical interpretations. Contrast Seeley’s traditional view of "accidental" empire with Tharoor’s critique of corporate greed and military conquest following the Battle of Plassey (1757).',
             question:
-              'At what point did the East India Company transform from humble traders into a conquering force, and what allowed this to happen?',
+              'At what point did the East India Company transform from humble trading merchants into an imperial conquering army, and what caused this shift?',
           },
         ],
+        source_context:
+          "Mughal Miniature Portrait of Emperor Jahangir (c. 1615–1620, Victoria and Albert Museum / Chester Beatty Library). Depicted with a radiant golden halo, heavy pearl necklaces, and jewel-encrusted robes, this portrait embodies the colossal wealth and political supremacy of the Mughal Empire, which commanded 25% of the global economy when English diplomat Sir Thomas Roe arrived begging for a trade treaty. **Hinge Question:** What does Emperor Jahangir's opulent portrait and Sir Thomas Roe's submissive posture prove about the true balance of global power between England and Asia in 1615?",
       },
       do_now: {
         title: 'Do Now: Previous Knowledge',
@@ -1594,258 +1596,190 @@ const early_modern_world = {
         'Early English expansion was financed through the pioneering invention of the [Joint-Stock Company], which spread financial risk among multiple investors. In 1600, Queen Elizabeth I granted a prestigious [Royal Charter] to establish the [East India Company (EIC)]. In Asia, merchants established fortified coastal trade centers known as a [Factory (Trading Post)] with the permission of the wealthy [Mughal Empire]. Across the Atlantic, English settlers founded their first permanent North American colony at [Jamestown (1607)].',
       narrative_blocks: [
         {
-          title: 'Micro-History: Matoaka in London (1616)',
-          text: 'In the winter of 1616, a 21-year-old Algonquin woman named Matoaka—popularly known as Pocahontas—arrived at the court of King James I in London.<br><br>She was dressed not in the traditional deer skins of her Powhatan homeland in North America, but in heavy English velvet, lace ruffles, and a tall felt hat. Rechristened "Rebecca Rolfe" following her conversion to Christianity and marriage to English tobacco planter John Rolfe, she was brought to England by the <strong>Virginia Company</strong> as a living advertisement.<br><br>To the rich investors of London, Matoaka was proof that native populations in the "New World" could be tamed, converted, and integrated into a profitable English empire. But the reality back in North America was far grim. Matoaka had been kidnapped three years earlier by English colonists during a bloody border war. Within months of her court appearance in London, as she boarded a ship to return home, she fell ill and died at Gravesend on the River Thames.<br><br>Matoaka’s tragic life encapsulated the reality of early British expansion: what began as desperate, fragile trade encounters between unequal powers rapidly hardened into violent land seizures and permanent imperial domination.',
-          tasks: [
-            {
-              type: 'cloze',
-              question: 'Why was Matoaka brought to the court of King James I in London?',
-              model_answer:
-                'She was brought by the Virginia Company as a living advertisement to prove to rich investors that native populations could be converted to Christianity, civilized, and integrated into a profitable English empire.',
-              text: 'Fill in the blanks using the words provided to summarize the story of Matoaka (Pocahontas).',
-              cloze_text:
-                "Matoaka, often known as [Pocahontas], was brought to the court of King [James I] in London. The Virginia Company used her as a living piece of [propaganda] to convince wealthy investors that the indigenous people of America could be 'civilized' and [converted] to Christianity, hiding the brutal reality of the early colonial encounters.",
-              words: ['propaganda', 'James I', 'converted', 'Pocahontas'],
-            },
-          ],
-          images: [
-            {
-              image: 'The Thirteen Factories at Canton (Guangzhou), China.',
-              image_alt: 'The Thirteen Factories at Canton',
-              image_context:
-                'Observe the national flags flying outside the trading posts (including Denmark, Spain, USA, Sweden, Britain, and the Netherlands) along the Pearl River. Unlike the militarised forts in India, Qing dynasty authorities strictly prohibited foreign merchants from building military fortifications or stationing troops here. These were purely commercial leased warehouses. **Hinge Question:** What does the presence of multiple international flags, rather than a single European military fort, suggest about who held the real power in Canton?',
-              src: '/images/early_mod_l3_banner.jpg',
-              image_caption:
-                'An early 19th-century painting showing the Thirteen Factories in Canton (Guangzhou). This was a designated trading enclave where foreign merchants were permitted to do business, strictly controlled by Chinese authorities without any European military fortifications.',
-              source_letter: 'A',
-            },
-            {
-              image: '/images/pocahontas.jpg',
-              image_alt: 'Engraving of Pocahontas (1616)',
-              image_context:
-                "Notice that  is dressed entirely in elite, formal English aristocratic clothing, not traditional Powhatan attire. This engraving was deliberately circulated in London as propaganda to prove that Native Americans could be 'civilized' and assimilated into English culture, encouraging more investment in the Virginia colony. **Hinge Question:** Does this portrait tell us more about 's actual identity, or about what the English wanted to see?",
-              image_caption:
-                "A 1616 engraving of Matoaka (Pocahontas) by Simon van de Passe. She was dressed in English court fashion and presented to London society as 'Lady Rebecca'—a deliberate piece of propaganda by the Virginia Company to project success and secure financial investment for the struggling Jamestown colony.",
-              source_letter: 'B',
-            },
-          ],
-        },
-        {
-          title: 'Macro-History: The Big Picture',
-          text: 'Unlike Catholic Spain, where the King directly funded conquistadors and royal armies, early English expansion was driven by <strong>private enterprise and capitalism</strong>.<br><br>The English Crown was too poor to fund risky overseas voyages. Instead, wealthy merchants formed <strong>Joint-Stock Companies</strong>. Multiple investors pooled their capital to buy shares in a trading venture. If a ship sank or a colony failed, no single merchant was ruined; if it succeeded, the profits were divided proportional to their shares.<br><br><strong>The American Frontier: From Lost Colony to Cash Crop</strong><br>In the 1580s, Sir Walter Raleigh organized the first English attempt to colonize North America on <strong>Roanoke Island</strong> (modern-day North Carolina). It ended in total failure. When supply ships returned in 1590, the entire colony of 115 men, women, and children had vanished, leaving behind only the single word carved into a wooden post: <em>"CROATOAN"</em>.<br><br>Undeterred, the <strong>Virginia Company</strong> launched a new venture in 1607, founding <strong>Jamestown</strong>. The early years were disastrous:<br><ul><li><strong>The Starving Time (1609–1610):</strong> Over 80% of the settlers died of dysentery, malaria, and starvation.</li><li><strong>The Powhatan Confederacy:</strong> The local indigenous population, led by Chief Powhatan, initially kept the inept English alive by trading maize.</li><li><strong>Tobacco Saved the Colony:</strong> In 1612, John Rolfe introduced a sweet Caribbean tobacco strain. Tobacco became Virginia’s "green gold."</li></ul><br>To grow tobacco at scale, the colonists needed vast land and cheap labor. The English abandoned peaceful trade with the Powhatan and launched aggressive land seizures, sparking decades of brutal warfare. To defend themselves from Spanish ships and Powhatan attacks, the settlers built James Fort in a unique <strong>triangular shape</strong>. The fort had high wooden palisade walls made of vertically buried logs. At each of the three corners stood a raised watchtower called a bulwark, mounted with heavy cannons facing both the James River and the dense inland woods. Inside the triangle, they built a church, a storehouse, and rows of simple wooden barracks.<br><br><strong>Mughal India: Bowing Before the Peacock Throne</strong><br>While the English were seizing land in America, their presence in Asia looked completely different.<br><br>In 1600, Queen Elizabeth I granted a royal charter to the <strong>Governor and Company of Merchants of London Trading into the East Indies</strong>—better known as the <strong>East India Company (EIC)</strong>. When EIC merchant ships arrived in India, they encountered the vast <strong>Mughal Empire</strong>, ruled by Emperor Jahangir.<br><br>The Mughal Empire held 25% of world GDP, possessed massive armies, and produced the world\'s finest cotton textiles. The English could not conquer India by force.<br><br>In 1615, King James I sent diplomat <strong>Sir Thomas Roe</strong> to Jahangir’s court. Roe spent three years bowing before the Emperor, offering bribes and gifts, and begging for a <em>firman</em> (imperial decree) allowing the EIC to build fortified trading posts (<em>factories</em>) along the coast. For 150 years, the EIC remained humble traders paying taxes to the Mughals. But as Mughal central power began to fracture in the early 1700s, the EIC transformed its private corporate security guards into a ruthless private army—laying the groundwork for the total military conquest of India.',
-        },
-        {
-          title: 'Examining the Evidence',
-          image: '/images/sir_thomas_roe.jpg',
-          image_alt: 'Sir Thomas Roe at the Mughal Court (1615)',
-          tasks: [
-            {
-              type: 'analysis',
-              question:
-                'How did the funding of early English colonial expansion differ from the Spanish model?',
-              model_answer:
-                'Unlike Spain, which used royal armies funded directly by the King, English expansion was driven by private capitalism. Wealthy merchants formed joint-stock companies to pool their money and share the financial risk of overseas voyages, as the English Crown was too poor to fund them.',
-            },
-            {
-              type: 'drawing',
-              lines: 10,
-              question:
-                "Drawing Task: Based on the text, draw a bird's-eye view of the fortified Jamestown settlement and label its defenses.",
-            },
-            {
-              question:
-                'Study Source A (Sir Thomas Roe at the Mughal Court). What does this image suggest about the balance of power between English ambassadors and the Mughal Empire in 1615?',
-              model_answer:
-                'The image suggests that the Mughal Empire was vastly wealthier and more powerful than England at this time. Sir Thomas Roe is depicted as a minor supplicant seeking trading privileges from a dominant and magnificent imperial court.',
-            },
-          ],
-          image_caption: 'Sir Thomas Roe at the Mughal Court (1615)',
-        },
-        {
-          title: 'Justifying Empire: Religion vs. Profit',
-          text: '<blockquote><strong>Source B: From the First Charter of the Virginia Company (1606)</strong><br><em>"We greatly commend their desires for the furtherance of so noble a work, which may, by the Providence of Almighty God, hereafter tend to the Glory of His Divine Majesty, in propagating of Christian Religion to such People as yet live in Ignorance and miserable Barbarism, and may in time bring the infidels and savages living in those parts to human civility..."</em></blockquote><br><br><blockquote><strong>Source C: From the Journal of Sir Thomas Roe at the Mughal Court (1616)</strong><br><em>"The Emperor Jahangir hath rich carpets, thrones of solid gold, and jewels beyond counting. He treats our King’s letters with polite indifference, viewing us as small traders from a cold, poor island... He cares nothing for our goods, save for clockwork toys and English hunting dogs, but he permits us to trade so long as we pay our taxes and remain obedient subjects."</em></blockquote>',
+          title:
+            'Act 1: The Corporate Engine: Joint-Stock Companies & The Royal Charter (1600–1606)',
+          text: 'Unlike the Spanish Empire, where the King directly financed conquistadors and royal invasion fleets, early English global expansion was fundamentally commercial and corporate. In the early seventeenth century, the English Crown was cash-strapped and deeply in debt. English monarchs could not afford to finance expensive transatlantic voyages or overseas armies from the royal treasury.<br><br>To solve this problem, wealthy English merchants developed a revolutionary financial invention: the <strong>Joint-Stock Company</strong>. Instead of one wealthy merchant risking total ruin if a ship sank, hundreds of private investors pooled their capital to buy shares in a corporate venture. If a voyage succeeded, profits were divided among shareholders; if a ship sank, each investor lost only their initial investment. This dramatically spread financial risk and mobilized unprecedented private capital.<br><br>To protect these investments, the Crown issued formal legal decrees known as <strong>Royal Charters</strong>. A Royal Charter granted a company a strict legal monopoly over trade in a specific part of the world, along with extraordinary semi-governmental powers: the right to establish colonies, mint private currency, build armed fortresses, and raise private security forces. On 31 December 1600, Queen Elizabeth I chartered the <strong>East India Company (EIC)</strong>, granting a 15-year monopoly on all English trade in Asia. Six years later, in 1606, King James I chartered the <strong>Virginia Company of London</strong> to establish settlements in North America.<br><br>To convince cautious London aristocrats to invest in these ventures, chartered companies launched aggressive marketing campaigns. In 1616, the Virginia Company brought <strong>Matoaka</strong> (known to the English as Pocahontas), daughter of the paramount chief of the Powhatan Confederacy, to London. Dressed in high-status Jacobean silk and an aristocratic lace ruff, she was presented to King James I and depicted in engravings as a living advertisement, demonstrating to wealthy investors that Virginia was a "civilized", peaceful, and commercially viable land worthy of their gold.',
+          image: '/images/pocahontas.jpg',
+          image_alt:
+            'Engraving of Matoaka (Pocahontas) in Jacobean dress (1616) by Simon van de Passe',
+          image_caption:
+            'Source A: Engraving of Matoaka (Pocahontas) in London (1616) by Simon van de Passe. Commissioned by the Virginia Company, this portrait was designed as corporate propaganda to persuade English investors that the colony was civilized and profitable.',
           tasks: [
             {
               type: 'source_analysis',
               question:
-                'What was the primary motivation stated in Source B for colonizing Virginia, and why might the Virginia Company emphasize religious duty over profit?',
+                'Study Source A and read Act 1. Why did the English Crown rely on private joint-stock companies (like the Virginia Company and East India Company) to explore the world, and how did these companies market their ventures to investors?',
+              starter:
+                'The English Crown relied on private joint-stock corporations rather than royal armies because..., while companies marketed their ventures by...',
               model_answer:
-                'Source B states that the primary motivation was to spread the Christian religion to "savages" and bring them to "human civility". The Virginia Company likely emphasized this religious duty to gain moral and royal approval, masking their underlying desire for profit and making the colonial venture seem like a noble, God-ordained mission.',
-            },
-            {
-              type: 'source_analysis',
-              question:
-                'Using Source C, explain why the East India Company was forced to act politely toward Mughal rulers in 1616, whereas English settlers in Virginia acted aggressively toward Native Americans.',
-              model_answer: 'Source C shows that the Mughal Empire was incredibly wealthy...',
+                'First, the English Crown relied on joint-stock companies because monarchs like Elizabeth I and James I lacked the vast wealth of Spain and could not afford to finance risky overseas expeditions from the royal purse. The joint-stock business model allowed private investors to pool their money and spread the financial risk, ensuring that a sunken ship did not bankrupt any single merchant while raising colossal private capital for global expansion.\n\nSecond, companies had to market their overseas ventures aggressively to attract investors and settlers. Source A demonstrates this corporate marketing in action: the Virginia Company brought Matoaka (Pocahontas) to London in 1616, dressed her in lavish Jacobean court clothing, and commissioned engravings of her. This created a visual impression of English cultural triumph and peaceful assimilation, reassuring nervous investors that Virginia was safe, civilized, and ripe for commercial profit.',
             },
           ],
         },
         {
-          title: 'Analyzing Source F',
+          title:
+            'Act 2: The Atlantic Encounter: Jamestown, Tobacco, and Territorial Fortresses (1607–1622)',
+          text: 'In May 1607, three Virginia Company ships carrying 104 men and boys sailed up the James River in Chesapeake Bay and established <strong>Jamestown</strong>—England\'s first permanent settlement in North America. The early years of the colony were a catastrophic struggle for survival. Chosen for its defensibility against Spanish naval raids, the site was a swampy peninsula plagued by mosquitoes, malaria, and brackish, undrinkable water. Most of the original settlers were "gentlemen" who refused to perform manual labour or farm, expecting to find gold just as the Spanish had in Peru.<br><br>During the horrific winter of 1609–1610—known as the <strong>"Starving Time"</strong>—relations with the indigenous Powhatan Confederacy collapsed. The Powhatan cut off food trade and besieged the settlement. Trapped inside their wooden fort, settlers starved: only 60 of the 500 colonists survived the winter, surviving on horses, dogs, rats, snakes, shoe leather, and, in documented cases, cannibalism.<br><br>The colony was ultimately rescued by two developments. First, in 1612, settler John Rolfe introduced sweet Spanish tobacco seeds, discovering that Virginia\'s soil was ideally suited for tobacco cultivation. Tobacco became a lucrative cash-crop that flooded European markets with addictive "brown gold", ensuring the Virginia Company\'s financial survival. Second, to defend their valuable crop and protect against Powhatan archers, the settlers constructed <strong>James Fort</strong>: a heavy, triangular wooden palisade with circular corner bastions mounting heavy cannons.<br><br>However, tobacco cultivation required vast amounts of fertile land and quickly exhausted the soil. As tobacco profits soared, settlers cleared forests, invaded native hunting grounds, and seized agricultural land. Despite the brief peace that followed the marriage of John Rolfe and Matoaka in 1614, English land hunger made peace impossible. In North America, English expansion became an aggressive <strong>territorial takeover</strong>: building defensive forts, clearing forests, and violently displacing Indigenous populations to secure land.',
+          image: '/images/jamestown_fort.jpg',
+          image_alt: 'Architectural Sketch of James Fort in Virginia (1608) from the Zúñiga Map',
+          image_caption:
+            'Source B: Architectural plan of James Fort (1608), sketched by Spanish spy Pedro de Zúñiga. The triangular wooden palisade featured raised corner bastions with artillery, showing that settlers prioritized defense and military fortification.',
+          tasks: [
+            {
+              type: 'source_analysis',
+              question:
+                'Study Source B (Plan of James Fort) and read Act 2. What does the triangular, heavily armed design of James Fort reveal about why early English encounters in North America rapidly shifted from trade into territorial takeover?',
+              starter:
+                'The heavily fortified triangular design of James Fort reveals that the English settlers viewed their encounter not as peaceful trade, but as...',
+              model_answer:
+                'Source B reveals that English settlers from the very beginning viewed North America as a hostile combat zone rather than a peaceful trading partner. The triangular wooden palisade, high timber walls, and fortified circular bastions mounting cannons at every corner demonstrate that the English prioritized military fortification and territorial permanence over mutual diplomacy. While the Virginia Company initially hoped to trade with the Powhatan Confederacy, the explosive profitability of tobacco created an insatiable hunger for land. Because tobacco rapidly ruined the soil, settlers had to expand outwards, clearing native forests and planting fortified settlements. The design of James Fort proves that early English expansion was built on armed territorial enclosure, ensuring that trade with Native Americans was quickly replaced by military confrontation and land seizure.',
+            },
+          ],
+        },
+        {
+          title: 'Act 3: The Submissive Merchant: Sir Thomas Roe at the Mughal Court (1615–1619)',
+          text: "While English settlers in Virginia were aggressively seizing land and building wooden fortresses, the East India Company was experiencing a completely different reality on the other side of the globe. In 1600, India was ruled by the colossal <strong>Mughal Empire</strong>—one of the wealthiest and most sophisticated superpowers in world history. The Mughal Empire ruled over 100 million subjects, commanded armies with thousands of war elephants and cannons, and produced a staggering 25% of the entire world's manufactured output, particularly luxury calico cottons, fine silks, and spices.<br><br>By comparison, Stuart England was a minor, peripheral island with a population of just 4 million and an economy contributing less than 2% of world GDP. English mariners who sailed into the Indian Ocean had zero military advantage. They could not threaten, conquer, or seize territory from the mighty Mughal emperors.<br><br>In 1615, King James I dispatched diplomat <strong>Sir Thomas Roe</strong> as England's first official ambassador to the court of Mughal Emperor <strong>Jahangir</strong> at Ajmer. When Roe arrived, he was overwhelmed by the breathtaking magnificence of the Mughal court. Jahangir sat on imperial thrones draped in emeralds, rubies, and pearls, wearing cloth-of-gold robes that made English courtiers look impoverished.<br><br>Recognizing England's total military and economic inferiority, Sir Thomas Roe understood that conquest was impossible. Instead, Roe had to adopt a strategy of humble, polite subservience. For four years, Roe prostrated himself before Jahangir, presented European gifts (clocks, fine English mastiff hunting dogs, and world maps), and flattered the Emperor. In 1619, Jahangir finally granted Roe a <em>firman</em> (royal decree) permitting English merchants to establish a small, rented coastal warehouse—known as a <strong>factory (trading post)</strong>—at the port of Surat. In India, the English could not act as conquerors; they were humble merchants begging for permission to trade.",
+          image: '/images/emperor_jahangir.jpg',
+          image_alt: 'Mughal Miniature of Emperor Jahangir (c. 1615–1620)',
+          image_caption:
+            'Source C: Mughal miniature portrait of Emperor Jahangir (c. 1615–1620). Depicted with an imperial golden halo and opulent pearl necklaces, this image reflects the immense wealth and authority of the Mughal Empire when Sir Thomas Roe arrived as an ambassador.',
+          tasks: [
+            {
+              type: 'source_analysis',
+              provenance_clue:
+                'Consider the balance of wealth and military power in 1615: Jamestown was a desperate wooden palisade where settlers had recently starved, whereas Emperor Jahangir ruled an empire producing a quarter of the world’s wealth. How did this power dynamic dictate English behaviour?',
+              question:
+                'Compare Source B (James Fort in Virginia) and Source C (Emperor Jahangir). Why did early English encounters in North America result in immediate fortified takeover, whereas in Mughal India the English were forced to remain humble, polite traders?',
+              starter:
+                'Early English encounters differed dramatically between North America and India because while in Virginia the English faced..., in India they encountered...',
+              model_answer:
+                "The contrasting balance of military and economic power completely determined English behaviour in the two regions. In North America (Source B), the English encountered Indigenous populations who lacked gunpowder weapons, ocean-going ships, and immunity to European epidemic diseases. Consequently, the English had the military capability to construct fortified timber forts (James Fort), seize land by force, and displace the Powhatan to clear fields for tobacco.\n\nIn sharp contrast, Mughal India (Source C) was a colossal economic and military superpower. Emperor Jahangir ruled over 100 million people, commanded massive artillery regiments, and controlled 25% of the world's economy. England had no military leverage on the subcontinent; a single Mughal province was wealthier than the entire Kingdom of England. As Sir Thomas Roe quickly discovered, attempting a military takeover would have meant instant destruction. Therefore, the English were forced to adopt a policy of submissive mercantile diplomacy, presenting gifts and begging for permission to rent a small coastal trading warehouse (factory) at Surat.",
+            },
+          ],
+        },
+        {
+          title: 'Act 4: The Imperial Turning Point: How Trade Turned into Takeover (1650–1757)',
+          text: 'For over a century, the East India Company adhered strictly to Sir Thomas Roe\'s advice: <em>"A war and traffic [trade] are incompatible... Let this be received as a rule, that if you will profit, seek it at sea, and in quiet trade."</em> Throughout the seventeenth century, English merchants remained confined to fortified coastal warehouses—such as Bombay, Madras, and Calcutta in India, and the famous <strong>Thirteen Factories</strong> in Canton, China, where European merchants were strictly locked outside the city walls by Qing imperial authorities.<br><br>However, in the mid-eighteenth century, the geopolitical landscape changed radically. Following the death of Mughal Emperor Aurangzeb in 1707, the central authority of the Mughal Empire fractured into dozens of rival, warring regional kingdoms. Sensing an opportunity to eliminate their French commercial rivals and secure tax revenues, the East India Company began militarizing its trading posts. The EIC recruited and trained thousands of Indian soldiers—known as <strong>sepoys</strong>—equipping them with modern European flintlock muskets and field artillery.<br><br>The decisive turning point occurred in 1757 at the <strong>Battle of Plassey</strong>. Commanded by Robert Clive, a small army of 3,000 British troops and sepoys defeated the 50,000-strong army of Siraj ud-Daulah, the Nawab of Bengal, after bribing the Nawab\'s chief commander, Mir Jafar. In 1765, the shattered Mughal Emperor was forced to sign the Treaty of Allahabad, granting the private East India Company the <strong>Diwani</strong>: the legal right to collect all agricultural taxes from 20 million people in Bengal.<br><br>Historians fiercely debate the nature of this transition. In 1883, imperial historian Sir John Robert Seeley famously claimed that the British Empire was acquired <em>"in a fit of absence of mind"</em>—arguing that peaceful merchants were accidentally dragged into Indian politics to protect trade. Modern historians, such as Shashi Tharoor (<em>Inglorious Empire</em>, 2017), strongly reject this, arguing that the East India Company was always an aggressive, profit-driven capitalist machine that used bribery, military violence, and economic exploitation to ruthlessly conquer India for corporate gain.',
           image: '/images/global_canton.jpg',
           image_alt: 'View of the Thirteen Factories in Canton (c. 1800)',
-          source_letter: 'F',
+          image_caption:
+            'Source D: View of the Thirteen Factories in Canton, China (c. 1800). For centuries, European merchants were strictly confined to narrow coastal warehouses ("factories") outside Chinese city walls, showing that early global trade was negotiated on Asian terms.',
           tasks: [
             {
-              type: 'comprehension',
+              type: 'source_analysis',
               question:
-                'How does the reality of the Thirteen Factories in Canton challenge the idea that Europeans dominated global trade in the 1700s?',
+                'Study Source D and read Act 4. How do historians disagree over whether the British Empire developed "accidentally" through peaceful trade, or as an "inevitable takeover" driven by corporate greed and military force?',
+              starter:
+                'Historians disagree over the transition from trade to empire because while traditional historians like Sir John Seeley argue that..., modern historians like Shashi Tharoor contend that...',
               model_answer:
-                'It shows that Europeans did not dominate trade; instead, they were forced into small, heavily regulated zones (the Thirteen Factories) by the powerful Chinese Emperor, showing that Asian empires held the true economic power and dictated the terms of trade.',
+                'Historians hold fundamentally opposing views on how early English trade transformed into empire. Traditional 19th-century imperial historians, represented by Sir John Seeley, argued that the British Empire was acquired "in a fit of absence of mind"—suggesting that British merchants initially had no grand masterplan to conquer India. In this view, peaceful trading companies (Source D) were reluctantly pulled into local conflicts only to defend their coastal warehouses against French rivals and restore regional stability after the Mughal Empire collapsed.\n\nConversely, modern revisionist historians like Shashi Tharoor argue that the takeover was neither accidental nor benevolent. They contend that the East India Company was an aggressive, capitalist corporation whose relentless drive for shareholder profits naturally led to military expansion. Once the Mughal Empire weakened, the EIC ruthlessly exploited political divisions, hired private armies of sepoys, and used military violence at battles like Plassey (1757) to seize tax revenues (the Diwani) and establish a predatory corporate empire.',
             },
           ],
-          image_caption: 'View of the Thirteen Factories in Canton (c. 1800)',
         },
         {
-          title: 'Visual Analysis: The Jamestown Triangular Fort Plan (1607)',
-          text: 'Examine the 1607 architectural plan of James Fort in Virginia:<br><br><ul><li><strong>The Triangular Shape:</strong> Designed for maximum defense with minimal men. A cannon bastioned at each of the three corners provided 360-degree crossfire.</li><li><strong>River Orientation:</strong> The fort sat directly on the James River, allowing quick escape or resupply by sea, but surrounded by stagnant marshland filled with malarial mosquitoes.</li><li><strong>Palisade Walls:</strong> High wooden walls built from felled timber shielded the storehouses and chapel, turning the settlement into an armed military outpost rather than a peaceful civilian farm.</li></ul>',
-        },
-        {
-          title: 'Analyzing Source D',
-          image: '/images/jamestown_fort.jpg',
-          image_alt: 'Plan of James Fort in Virginia (1607)',
-          source_letter: 'D',
-          tasks: [
-            {
-              type: 'analysis',
-              question:
-                'What does the design of the Jamestown Fort suggest about the relationship between the English settlers and the local indigenous population?',
-              model_answer:
-                'The triangular design, high palisade walls, and corner cannons suggest that the English settlers felt highly vulnerable and expected hostile attacks. It shows that the relationship was characterized by fear, mistrust, and military conflict rather than peaceful cooperation and trade.',
-            },
-          ],
-          image_caption: 'Plan of James Fort in Virginia (1607)',
-        },
-        {
-          title: 'Historical Interpretations: Was the British Empire Planned or Accidental?',
-          text: '<blockquote><strong>Historian Perspective A: John Robert Seeley (The Expansion of England, 1883)</strong><br><em>"We seem, as it were, to have conquered and peopled half the world in a fit of absence of mind... The British Empire was not planned by kings or generals; it grew organically through small merchants, traders, and adventurers seeking honest commercial trade."</em></blockquote><br><br><blockquote><strong>Historian Perspective B: Shashi Tharoor (Inglorious Empire, 2017)</strong><br><em>"There was nothing \'accidental\' about the corporate greed of the East India Company or the Virginia Company. From their inception, joint-stock corporations were designed with royal backing to extract wealth, monopolize global trade, and subjugate local populations whenever commercial trade turned into territorial opportunity."</em></blockquote>',
+          title: 'Side Quest: The Invasion of the Pigs',
+          text: '<details class="side-quest-box">\n  <summary>⚔️ Side Quest: The Invasion of the Pigs</summary>\n  \n<div style="text-align:center; margin:15px 0;">\n  <img src="/images/sidequest_secotan.jpg" style="max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;" onclick="window.openModal && window.openModal(this.src)"/>\n  <br/>\n  <i style="font-size:0.9em; color:#64748b;"><strong>Source E:</strong> John White\'s authentic 1585 watercolor painting of the Algonquian village of Secotan, showing their carefully managed, unfenced corn fields.</i>\n</div>\n<p>When history textbooks discuss the English colonization of North America, they focus almost entirely on muskets, land treaties, and tobacco. But one of the most destructive biological weapons the English brought to Virginia was the domesticated pig. The Algonquian Powhatan people did not build fences; they carefully managed open forest lands and planted unfenced polyculture fields of maize, beans, and squash. The English settlers, however, allowed their livestock to roam freely in the woods. Hundreds of feral pigs multiplied rapidly, invading native villages, rooting up delicate native edible plants, devouring winter seed stores, and trampling coastal clam beds that Native Americans depended on for winter protein. For the Indigenous peoples, English colonization was not merely a political or military invasion; it was an ecological catastrophe that literally consumed their food supply from the ground up.</p>\n</details>',
           tasks: [
             {
               type: 'think_pair_share',
               question:
-                'How do Perspective A and Perspective B disagree on the origins of the British Empire?',
+                'How does this ecological detail ("The Invasion of the Pigs") change our historical understanding of why Native Americans became hostile toward the Jamestown settlers?',
+              starter:
+                'This ecological detail reveals that Native American hostility was driven not just by cultural differences, but by...',
               model_answer:
-                'Perspective A argues the Empire was an "accidental" and organic growth created by small merchants just seeking honest trade, without any grand military plan. Perspective B strongly disagrees, arguing the Empire was a deliberate, greedy corporate strategy from the start, designed to extract wealth and subjugate local populations whenever possible.',
+                'This ecological evidence reveals that Native American hostility was a desperate response to biological survival rather than unprovoked aggression. While traditional narratives focus on political treaties or religious tension, the free-roaming English pigs literally devoured the Powhatan food supply by consuming unfenced crops, edible roots, and coastal clam beds. Indigenous attacks on English settlements were therefore a direct attempt to halt the environmental destruction of their habitat and prevent mass winter starvation caused by invasive European livestock.',
             },
           ],
-        },
-        {
-          title: 'Lesson Reflection',
-        },
-        {
-          title: 'Side Quest: The Invasion of the Pigs',
-          text: '<details class="side-quest-box">\n  <summary>⚔️ Side Quest: The Invasion of the Pigs</summary>\n  \n<div style="text-align:center; margin:15px 0;">\n  <img src="/images/sidequest_secotan.jpg" style="max-width:100%; max-height:300px; border-radius:8px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: zoom-in;" onclick="window.openModal && window.openModal(this.src)"/>\n  <br/>\n  <i style="font-size:0.9em; color:#64748b;"><strong>Source E:</strong> John White\'s authentic 1585 watercolor painting of the Algonquian village of Secotan, showing their carefully managed, unfenced corn fields.</i>\n</div>\n<p>When textbooks talk about the English colonization of North America, they focus on guns, land treaties, and tobacco. But one of the most destructive weapons the English brought to Jamestown was the common pig. The Algonquian Powhatan people did not use fences; they carefully managed open forests and planted complex, exposed fields of corn, beans, and squash. The English, however, let their livestock roam wild. Hundreds of English pigs invaded the forests, devouring the natives\' crops, destroying the roots of native plants, and wrecking the delicate ecological balance that the Powhatan relied on for survival. For the Indigenous people, the English were not just a military threat; they were an ecological disaster that literally ate the local food supply.</p>\n</details>',
-          tasks: [
-            {
-              type: 'comprehension',
-              question:
-                "How does this 'ground-up' detail change our understanding of why Native Americans became hostile to the Jamestown settlers?",
-              model_answer:
-                "It shows that hostility wasn't just about politics or land ownership; it was a desperate reaction to an ecological disaster that was literally eating their food supply.",
-            },
-          ],
-          source_letter: 'G',
-        },
-        {
-          title: 'Plenary Check',
-          text: "Let's test your understanding of how early trade turned into empire.",
         },
       ],
       quiz: [
         {
           question:
-            'What type of business model allowed multiple investors to pool their money to fund risky overseas colonial ventures?',
+            'What type of business model allowed English investors to pool capital and share financial risk for overseas trade?',
           options: [
-            'Feudal Guilds',
-            'State-Owned Enterprises',
-            'Royal Monopolies',
-            'Joint-Stock Companies',
+            'A Feudal Guild',
+            'A Joint-Stock Company',
+            'A Crown Monopoly',
+            'A Merchant Bank',
           ],
-          answer: 3,
-          explanation: 'Joint-Stock Companies',
-        },
-        {
-          question:
-            'On which island was the famous "Lost Colony" of 1585 founded by Sir Walter Raleigh?',
-          options: ['Roanoke Island', 'Manhattan Island', 'Bermuda', 'Jamestown Island'],
-          answer: 0,
-          explanation: 'Roanoke Island',
-        },
-        {
-          question:
-            'What single word was found carved into a wooden post when supply ships returned to Roanoke in 1590?',
-          options: ['ABANDONED', 'DANGER', 'CROATOAN', 'FAMINE'],
-          answer: 2,
-          explanation: 'CROATOAN',
-        },
-        {
-          question:
-            'What was the name of the first permanent English settlement established in North America in 1607?',
-          options: ['Williamsburg', 'Jamestown', 'Plymouth', 'Boston'],
           answer: 1,
-          explanation: 'Jamestown',
+          explanation: 'A Joint-Stock Company',
         },
         {
           question:
-            'Which cash crop introduced by John Rolfe saved the Jamestown colony from economic ruin?',
-          options: ['Indigo', 'Tobacco', 'Cotton', 'Sugar'],
+            'In what year did Queen Elizabeth I grant a Royal Charter to found the East India Company?',
+          options: ['1588', '1600', '1607', '1615'],
           answer: 1,
-          explanation: 'Tobacco',
-        },
-        {
-          question:
-            'What was the title of the native ruler who led the Powhatan Confederacy when the English arrived in Virginia?',
-          options: [
-            'Chief Powhatan (Wahunsenacawh)',
-            'Chief Sitting Bull',
-            'Chief Pontiac',
-            'Chief Tecumseh',
-          ],
-          answer: 0,
-          explanation: 'Chief Powhatan (Wahunsenacawh)',
-        },
-        {
-          question:
-            'In what year was the English East India Company (EIC) granted its royal charter by Queen Elizabeth I?',
-          options: ['1492', '1588', '1620', '1600'],
-          answer: 3,
           explanation: '1600',
         },
         {
           question:
-            'Which powerful Muslim empire ruled India during the 17th century when the English first arrived?',
-          options: [
-            'The Ottoman Empire',
-            'The Safavid Empire',
-            'The Mughal Empire',
-            'The Maratha Empire',
-          ],
+            'What was the name of the first permanent English settlement in North America, founded in 1607?',
+          options: ['Roanoke', 'Plymouth', 'Jamestown', 'Boston'],
           answer: 2,
-          explanation: 'The Mughal Empire',
+          explanation: 'Jamestown',
         },
         {
           question:
-            'Name the English ambassador sent by King James I to bow before Emperor Jahangir in 1615.',
+            'What cash-crop, introduced by John Rolfe in 1612, saved the Jamestown colony economically?',
+          options: ['Sugar', 'Cotton', 'Tobacco', 'Tea'],
+          answer: 2,
+          explanation: 'Tobacco',
+        },
+        {
+          question:
+            'Who was the English ambassador sent by King James I to the Mughal Court in 1615?',
           options: [
-            'Sir Walter Raleigh',
             'Sir Francis Drake',
-            'Sir John Hawkins',
+            'Sir Walter Raleigh',
             'Sir Thomas Roe',
+            'Captain John Smith',
           ],
-          answer: 3,
+          answer: 2,
           explanation: 'Sir Thomas Roe',
         },
         {
+          question: 'Which Mughal Emperor did Sir Thomas Roe negotiate with between 1615 and 1619?',
+          options: ['Emperor Akbar', 'Emperor Jahangir', 'Emperor Shah Jahan', 'Emperor Aurangzeb'],
+          answer: 1,
+          explanation: 'Emperor Jahangir',
+        },
+        {
           question:
-            'What term was used to describe the fortified warehouse trading posts established by the EIC along the Indian coast?',
-          options: ['Factories', 'Fortresses', 'Emporiums', 'Citadels'],
-          answer: 0,
-          explanation: 'Factories',
+            'What was the historical term for an English fortified trading post and warehouse established in foreign ports?',
+          options: ['A Plantation', 'A Factory', 'A Mission', 'A Presidio'],
+          answer: 1,
+          explanation: 'A Factory',
+        },
+        {
+          question:
+            "In what year did the Battle of Plassey take place, marking the EIC's transition to territorial rule?",
+          options: ['1600', '1688', '1757', '1776'],
+          answer: 2,
+          explanation: '1757',
+        },
+        {
+          question:
+            'What name was given to native Indian soldiers recruited and trained by the East India Company?',
+          options: ['Conquistadors', 'Sepoys', 'Privateers', 'Janissaries'],
+          answer: 1,
+          explanation: 'Sepoys',
+        },
+        {
+          question:
+            'Which imperial historian famously wrote in 1883 that the British Empire was acquired "in a fit of absence of mind"?',
+          options: [
+            'Thomas Babington Macaulay',
+            'Sir John Robert Seeley',
+            'Edward Said',
+            'Shashi Tharoor',
+          ],
+          answer: 1,
+          explanation: 'Sir John Robert Seeley',
         },
       ],
       learning_objectives: {
-        overarching:
-          'How did early encounters turn into empire? (East India Company, Jamestown/Roanoke)',
+        overarching: 'Trade or takeover: How did early encounters turn into empire?',
         scaffolded: [
           'Explain how joint-stock corporations (like the East India Company and Virginia Company) funded early English expansion.',
           'Compare the early English colonial encounters in North America (Roanoke and Jamestown) with mercantile trade in Mughal India.',
@@ -1865,31 +1799,60 @@ const early_modern_world = {
       ],
       lesson_assessment: {
         question:
-          'Explain how the creation of the East India Company (EIC) transformed British trade.',
-        hints: 'Mention joint-stock companies, monopolies, violence, and Asian spices/textiles.',
+          'Explain why early English global encounters between 1600 and 1750 shifted from peaceful mercantile trade into armed takeover and empire.',
+        hints:
+          'Mention joint-stock companies, Jamestown and tobacco, Sir Thomas Roe at the Mughal court, and the Battle of Plassey.',
         sentence_starters: [
-          'Before the EIC, individual merchants struggled to trade in Asia because...',
-          "The EIC solved this by using a 'joint-stock' model, which meant...",
-          "However, they often used violence to secure a 'monopoly', allowing them to...",
+          'Early English expansion began with commercial trade because...',
+          'In Virginia, trade quickly became a territorial takeover because...',
+          'In contrast, in Mughal India, the English were forced to...',
+          'Ultimately, trade turned into empire after 1757 because...',
         ],
       },
       extended: {
-        title: 'Assessment Practice',
+        title: 'Assessment Practice: 12-Mark Explanatory Essay',
         question:
-          'Explain how the creation of the East India Company (EIC) transformed British trade.',
+          'Explain why early English global encounters between 1600 and 1750 shifted from peaceful mercantile trade into armed takeover and empire.',
         hints: [
-          'Mention joint-stock companies, monopolies, violence, and Asian spices/textiles.',
-          'Sentence Starter: Before the EIC, individual merchants struggled to trade in Asia because...',
-          "Sentence Starter: The EIC solved this by using a 'joint-stock' model, which meant...",
-          "Sentence Starter: However, they often used violence to secure a 'monopoly', allowing them to...",
+          'Point 1: The Joint-Stock Corporation & Commercial Motive (1600–1606) — Virginia Company and East India Company pooling private capital and needing constant financial returns for shareholders.',
+          'Point 2: The North American Model (Jamestown 1607) — Land hunger for tobacco farming, fortified palisades (James Fort), and displacing the Powhatan Confederacy.',
+          'Point 3: The Asian Model (Mughal India 1615) — Initial mercantile subservience under Sir Thomas Roe, coastal factories at Surat, and respecting Mughal economic and military superpower status.',
+          "Point 4: The Tipping Point to Territorial Conquest (1707–1757) — The collapse of central Mughal authority, private company armies (sepoys), and Clive's victory at Plassey (1757) seizing Bengal's tax revenues (the Diwani).",
         ],
+        teacher_guidance: {
+          visualiser_prompt:
+            'Model live under the visualiser how to construct a comparative causal paragraph. Show pupils how to contrast the English posture in Virginia (territorial land-seizure) with their posture in Mughal India (mercantile deference), emphasizing that "trade or takeover" depended on the balance of military and economic power.',
+          tiered_stems: [
+            {
+              tier: 'Tier 1 · Foundation (Descriptive Identification)',
+              stem: 'Early English encounters shifted from trade into empire because companies like the East India Company and Virginia Company were driven by profit, leading settlers to take land in Virginia for tobacco, while in India...',
+              pupil_focus:
+                'Identifies the commercial motive of joint-stock companies and describes how English encounters differed between Virginia and India.',
+            },
+            {
+              tier: 'Tier 2 · Developing (Comparative Explanation)',
+              stem: 'While the English initially sought commercial trade through joint-stock corporations, their strategy varied depending on local power: in Virginia, they used fortified settlements to displace Native Americans for tobacco farming, whereas in Mughal India, they acted as submissive merchants until the Mughal Empire weakened, allowing them to...',
+              pupil_focus:
+                'Explains the causal contrast between immediate territorial colonization in the Americas and gradual mercantile-to-military takeover in India.',
+            },
+            {
+              tier: 'Tier 3 · Greater Depth (Complex Evaluative Synthesis)',
+              stem: 'Although early English global expansion originated as commercial trade funded by private joint-stock companies, it inevitably turned into territorial takeover because capitalist profit demands required the secure control of land and commodities—prompting rapid colonization in North America where Indigenous populations could be militarily displaced, and opportunistic territorial conquest in India once the Mughal Empire began to fracture.',
+              pupil_focus:
+                'Syntactically synthesizes the overarching causal drivers, evaluating how private corporate capitalism, local power balances, and military opportunities produced territorial empire.',
+            },
+          ],
+        },
+        model:
+          "Between 1600 and 1750, early English global encounters were transformed from modest, peaceful mercantile trade into armed territorial conquest and empire. This profound shift was driven by the commercial demands of joint-stock capitalism, the localized balance of military power, and opportunistic exploitation of geopolitical decline.\n\nFirstly, English expansion was initiated not by royal conquest, but by private corporate capitalism. Because the English Crown lacked the treasury to finance overseas armadas, monarchs like Elizabeth I and James I granted Royal Charters to private joint-stock enterprises, such as the East India Company (1600) and the Virginia Company (1606). These corporations pooled capital from private investors who demanded relentless financial returns. While their original purpose was commercial exchange—seeking spices in Asia and gold in America—the legal charters granted companies sovereign powers, including raising private security forces and building armed forts. Consequently, commercial trade was militarized from its inception, providing the structural machinery for later territorial conquest.\n\nSecondly, in North America, commercial trade rapidly evolved into violent territorial takeover due to the economics of tobacco cultivation. When Virginia Company settlers founded Jamestown in 1607, they were dependent on trade with the Powhatan Confederacy for food. However, following John Rolfe's introduction of sweet Spanish tobacco in 1612, the colony's economic survival became tied to cash-crop agriculture. Tobacco rapidly depleted the soil, creating an insatiable hunger for new land. As symbolized by the heavily armed triangular palisade of James Fort, English settlers abandoned peaceful trade in favour of armed territorial expansion, clearing forests and forcibly displacing Native American communities. In the Americas, where Indigenous populations were vulnerable to European diseases and lacked artillery, trade shifted almost immediately into settler colonization.\n\nThirdly, in Mughal India, the English were initially forced to remain peaceful, submissive merchants because of the overwhelming power of the Mughal Empire. In 1615, when Sir Thomas Roe arrived at the court of Emperor Jahangir, the Mughal Empire commanded 25% of the world's economy and immense armies. England possessed zero military leverage. Roe explicitly advised the EIC that war and trade were incompatible, pursuing a policy of humble diplomacy to secure permission to rent simple coastal warehouses (\"factories\") at Surat and Bombay. For over a century, the English operated strictly within Asian rules, demonstrating that early English policy was dictated by the local balance of power.\n\nFinally, the decisive shift from trade to takeover occurred in the mid-eighteenth century when the Mughal Empire fractured. Following the death of Emperor Aurangzeb in 1707, regional civil wars erupted across India. Sensing an opportunity to eliminate French commercial rivals and secure tax revenues, the East India Company militarized its operations, recruiting thousands of Indian soldiers (sepoys). At the Battle of Plassey (1757), Robert Clive defeated the Nawab of Bengal. In 1765, the Company seized the Diwani—the right to collect all taxes from 20 million people in Bengal. In doing so, a private trading corporation transformed into an imperial sovereign.\n\nIn conclusion, early English encounters shifted from trade to takeover because corporate profit motives incentivized armed control of commodities and land. Where local populations were vulnerable, as in Virginia, takeover was immediate; where empires were powerful, as in Mughal India, the English waited until local imperial fractures allowed them to convert corporate commerce into imperial dominion.",
         lines: 15,
       },
-      disciplinary_focus: 'Causation - Investigating the causes of the Reformation.',
+      disciplinary_focus:
+        'Similarity and Difference / Causation - Contrasting mercantile diplomacy in Mughal India with territorial colonization in the Americas.',
       formative_assessment: {
         type: 'PEEL Paragraph',
         question:
-          'Formative Question (Causation): Identify three major causes of the Protestant Reformation.',
+          'PEEL Paragraph (Comparison): How did the English encounter with the Mughal Empire differ from their encounter with Native Americans in Virginia?',
       },
     },
     {
