@@ -65,11 +65,11 @@ function generateTabularHTML(curriculumMeta) {
       }
       body {
         font-family: 'Outfit', sans-serif;
-        font-size: 8.5pt;
+        font-size: 7.5pt;
         color: #1e293b;
         margin: 0;
         padding: 0;
-        line-height: 1.45;
+        line-height: 1.32;
       }
 
       .cover-page {
@@ -80,18 +80,18 @@ function generateTabularHTML(curriculumMeta) {
         align-items: center;
         text-align: center;
         background: #f8fafc;
-        border: 10px solid #facc15;
-        padding: 40px;
+        border: 8px solid #facc15;
+        padding: 30px;
       }
       .cover-title {
         font-family: 'Playfair Display', serif;
-        font-size: 42pt;
+        font-size: 38pt;
         font-weight: 700;
         color: #1b365d;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
       }
       .cover-subtitle {
-        font-size: 20pt;
+        font-size: 18pt;
         color: #facc15;
         font-family: 'Outfit', sans-serif;
         font-weight: 300;
@@ -99,8 +99,8 @@ function generateTabularHTML(curriculumMeta) {
         letter-spacing: 3px;
       }
       .cover-info {
-        margin-top: 30px;
-        font-size: 13pt;
+        margin-top: 25px;
+        font-size: 11pt;
         color: #475569;
       }
 
@@ -108,15 +108,15 @@ function generateTabularHTML(curriculumMeta) {
         page-break-before: always;
       }
       .container {
-        padding: 15px 20px;
+        padding: 0;
       }
 
       .year-header {
         background: #1b365d;
         color: #fff;
-        padding: 12px 20px;
-        border-radius: 6px;
-        margin-bottom: 15px;
+        padding: 8px 16px;
+        border-radius: 4px;
+        margin-bottom: 8px;
         border-bottom: 3px solid #facc15;
         text-align: center;
       }
@@ -124,26 +124,26 @@ function generateTabularHTML(curriculumMeta) {
         font-family: 'Playfair Display', serif;
         color: #fff;
         margin: 0;
-        font-size: 16pt;
+        font-size: 14pt;
       }
       .year-header .ks {
         font-family: 'Outfit', sans-serif;
         color: #facc15;
-        font-size: 9pt;
+        font-size: 8pt;
         text-transform: uppercase;
         letter-spacing: 2px;
-        margin-top: 3px;
+        margin-top: 2px;
       }
 
       table {
         width: 100%;
         border-collapse: collapse;
-        margin-bottom: 20px;
+        margin-bottom: 0;
       }
       th,
       td {
         border: 1px solid #cbd5e1;
-        padding: 7px 9px;
+        padding: 4.5px 7px;
         vertical-align: top;
       }
       th {
@@ -151,15 +151,15 @@ function generateTabularHTML(curriculumMeta) {
         color: #fff;
         text-align: center;
         font-weight: 600;
-        font-size: 9pt;
+        font-size: 8pt;
         letter-spacing: 0.5px;
       }
       .row-header {
         background: #e8edf5;
         font-weight: 700;
-        width: 11%;
+        width: 10%;
         text-align: left;
-        font-size: 8pt;
+        font-size: 7.5pt;
         color: #0f172a;
         vertical-align: middle;
       }
@@ -176,11 +176,11 @@ function generateTabularHTML(curriculumMeta) {
         color: #1b365d;
       }
       td ul {
-        padding-left: 14px;
-        margin: 2px 0;
+        padding-left: 12px;
+        margin: 1px 0;
       }
       td li {
-        margin-bottom: 2px;
+        margin-bottom: 1px;
       }
 
       tr.topic-row td {
@@ -189,7 +189,7 @@ function generateTabularHTML(curriculumMeta) {
       }
       tr.topic-row td strong {
         color: #1d4ed8;
-        font-size: 9.5pt;
+        font-size: 8.5pt;
       }
   `;
 
@@ -317,7 +317,7 @@ console.log('   ✅ public/curriculum_overview_tabular.html generated successful
       format: 'A4',
       landscape: true,
       printBackground: true,
-      margin: { top: '10mm', right: '10mm', bottom: '10mm', left: '10mm' },
+      margin: { top: '8mm', right: '8mm', bottom: '8mm', left: '8mm' },
     });
     console.log('   ✅ Success! Tabular Overview PDF saved to:', tabularPdfPath);
     await page.close();

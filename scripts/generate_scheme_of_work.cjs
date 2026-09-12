@@ -30,53 +30,202 @@ const enquiryPatchMap = {
     'Why did the ideological clash between Capitalism and Communism bring the world to the brink of nuclear destruction?',
 };
 
+const unitCurriculumOutlines = {
+  the_shoah: [
+    {
+      title: 'Pre-War Jewish Life & Roots of Antisemitism',
+      obj: 'Analyse pre-1933 Jewish European diversity; differentiate religious vs Nazi racial antisemitism.',
+      hinge:
+        'Why did the Nazis shift from traditional prejudice to pseudoscientific racial ideology?',
+      tasks:
+        'Primary source evaluation of pre-war community archives; comparative prejudice matrix.',
+    },
+    {
+      title: 'Escalation of Nazi Persecution (1933–1939)',
+      obj: 'Trace legal and social exclusion from 1933 anti-Jewish decrees to the Nuremberg Laws and Kristallnacht.',
+      hinge: 'How did state decrees and street violence work together to isolate German Jews?',
+      tasks:
+        'Decree chronology analysis; PEEL paragraph on the domestic consequences of Kristallnacht.',
+    },
+    {
+      title: 'War, Ghettos & The Einsatzgruppen (1939–1941)',
+      obj: 'Examine sealed ghettos in occupied Poland and the mass shootings of the mobile Einsatzgruppen.',
+      hinge: 'How did the invasion of the USSR mark a radical shift toward systematic murder?',
+      tasks:
+        'Warsaw Ghetto diary extract analysis; map analysis of Eastern European killing sites.',
+    },
+    {
+      title: 'The "Final Solution" & Extermination Camps (1942–1945)',
+      obj: 'Assess the Wannsee Conference and the industrialised murder network at Auschwitz-Birkenau.',
+      hinge: 'What differentiated Nazi extermination camps from conventional wartime prisons?',
+      tasks: 'Perpetrator bureaucracy vs survivor testimony evaluation; dehumanisation reflection.',
+    },
+    {
+      title: 'Jewish Resistance, Liberation & Legacy',
+      obj: 'Investigate armed/spiritual resistance (Warsaw Uprising); evaluate the Nuremberg Trials and legacy.',
+      hinge:
+        'How do historians balance intentionalist vs functionalist explanations for the Holocaust?',
+      tasks:
+        'Historical interpretation debate; extended evaluative essay on personal and state responsibility.',
+    },
+  ],
+  cold_war: [
+    {
+      title: 'Collapse of the Grand Alliance (1943–1945)',
+      obj: 'Compare Capitalism vs Communism; analyse superpower tensions at Tehran, Yalta, and Potsdam.',
+      hinge: 'Was Cold War hostility inevitable once Nazi Germany was defeated?',
+      tasks: 'Ideological comparison matrix; cartoon analysis of Churchill’s Iron Curtain speech.',
+    },
+    {
+      title: 'Containment & Crisis: Truman to Berlin (1947–1949)',
+      obj: 'Explain the Truman Doctrine, Marshall Aid, and the causes and outcome of the Berlin Blockade.',
+      hinge: 'Why did Stalin choose a blockade rather than military invasion of West Berlin?',
+      tasks:
+        'Causation flowchart; source utility analysis of Soviet vs American Airlift propaganda.',
+    },
+    {
+      title: 'Nuclear Arms Race & Cuban Missile Crisis (1950–1962)',
+      obj: 'Evaluate Mutually Assured Destruction (MAD); analyse Kennedy and Khrushchev during October 1962.',
+      hinge: 'Which leader made the decisive concession that averted nuclear war in 1962?',
+      tasks:
+        'Crisis decision-making log; 8-mark explanation on why the crisis was resolved peacefully.',
+    },
+    {
+      title: 'Détente & Proxy Conflicts (1963–1979)',
+      obj: 'Examine superpower treaties (SALT I, Helsinki) and proxy war dynamics (Vietnam, Afghanistan).',
+      hinge: 'Did Détente represent genuine peace or tactical delay by the superpowers?',
+      tasks: 'Treaty timeline; PEEL paragraph evaluating whether proxy wars compromised Détente.',
+    },
+    {
+      title: 'Fall of the Berlin Wall & End of USSR (1980–1991)',
+      obj: 'Analyse Gorbachev’s Glasnost and Perestroika; explain the collapse of the Berlin Wall and the USSR.',
+      hinge:
+        'Did internal economic failure or Western pressure cause the fall of Soviet Communism?',
+      tasks:
+        'Contemporary television dispatch analysis; extended essay on the end of the Cold War.',
+    },
+  ],
+  second_world_war: [
+    {
+      title: 'Outbreak of Global Conflict & Blitzkrieg (1939–1940)',
+      obj: 'Examine the invasion of Poland and the fall of France; assess the evacuation at Dunkirk.',
+      hinge: 'How did German Blitzkrieg tactics overcome French defensive fortifications?',
+      tasks:
+        'Military campaign map interrogation; source utility of Churchill’s "Fight on the beaches" speech.',
+    },
+    {
+      title: 'The Battle of Britain & The Blitz (1940–1941)',
+      obj: 'Investigate the RAF’s defense in the Battle of Britain; evaluate civilian morale under the Blitz.',
+      hinge: 'Why did the Luftwaffe fail to establish air superiority over southern England?',
+      tasks:
+        'Oral history interview analysis; PEEL paragraph on civilian resilience in London and Portsmouth.',
+    },
+    {
+      title: 'Turning Points: Barbarossa & Stalingrad (1941–1943)',
+      obj: 'Analyse Hitler’s invasion of the USSR and the catastrophic German defeat at Stalingrad.',
+      hinge:
+        'Why was the Battle of Stalingrad the decisive strategic turning point in the European war?',
+      tasks:
+        'Strategic resource analysis; military causation diagram of German Eastern Front collapse.',
+    },
+    {
+      title: 'Total War, Empire Troops & Atlantic War',
+      obj: 'Uncover the vital contributions of Indian, African, and Commonwealth forces; explore U-boat war.',
+      hinge: 'How crucial were Allied convoy supply lines to sustaining Britain’s war effort?',
+      tasks:
+        'Commonwealth contribution case studies; contemporary merchant navy dispatch analysis.',
+    },
+    {
+      title: 'D-Day, Defeat of Nazism & Atomic Bomb (1944–1945)',
+      obj: 'Examine Normandy Landings (Operation Overlord); assess the decision to use the atomic bomb on Japan.',
+      hinge: 'Was the dropping of the atomic bomb military necessity or geopolitical signalling?',
+      tasks: 'Normandy beachhead source evaluation; historiographical essay on the atomic bomb.',
+    },
+  ],
+  post_war_britain: [
+    {
+      title: 'The Welfare State & The Birth of the NHS (1945–1951)',
+      obj: 'Examine the Beveridge Report; investigate the founding of the NHS in 1948 by Aneurin Bevan.',
+      hinge:
+        'Why did the British public reject Churchill in 1945 in favour of Labour’s welfare reforms?',
+      tasks: 'Political cartoon analysis; PEEL paragraph on the social significance of the NHS.',
+    },
+    {
+      title: 'The Empire Windrush & Post-War Migration',
+      obj: 'Investigate the arrival of HMT Empire Windrush (1948); assess Caribbean contributions and prejudice.',
+      hinge:
+        'How did British immigration policy contrast with the lived experiences of arriving migrants?',
+      tasks: 'Oral history evaluation; source interrogation of Windrush passenger interviews.',
+    },
+    {
+      title: '1960s Social Revolution & Civil Rights in Britain',
+      obj: 'Explore youth culture, legalisation reforms, and the 1963 Bristol Bus Boycott.',
+      hinge: 'How did the Bristol Bus Boycott directly catalyse Britain’s 1965 Race Relations Act?',
+      tasks:
+        'Comparative study with US Civil Rights; evaluation of legislative vs grassroots protest.',
+    },
+    {
+      title: 'Deindustrialisation & Winter of Discontent (1970–1979)',
+      obj: 'Analyse economic crisis, trade union disputes, and the political fallout of 1978–79.',
+      hinge: 'What caused the breakdown of post-war consensus politics during the 1970s?',
+      tasks: 'Newspaper headline analysis; causation chart of 1970s stagflation.',
+    },
+    {
+      title: 'Thatcherism & The Making of Modern Britain (1979–2000)',
+      obj: 'Evaluate Thatcher’s economic revolution (privatisation, Miners’ Strike); assess multicultural Britain.',
+      hinge: 'How far did Thatcherism permanently redefine British society and economic life?',
+      tasks:
+        'Academic interpretation debate; extended evaluative essay on post-war change and continuity.',
+    },
+  ],
+};
+
 const commonHead = `
     <head>
         <meta charset="UTF-8">
         <title>Meoncross School History Department</title>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap');
-            body { font-family: 'Outfit', sans-serif; color: #1e293b; background: #fff; margin: 0; padding: 0; font-size: 11pt; line-height: 1.5; }
+            body { font-family: 'Outfit', sans-serif; color: #1e293b; background: #fff; margin: 0; padding: 0; font-size: 8.5pt; line-height: 1.35; }
             h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: #1b365d; margin-top: 0; }
-            .cover-page { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #f8fafc; border: 10px solid #facc15; padding: 40px; box-sizing: border-box; }
-            .cover-title { font-size: 48pt; font-weight: 700; color: #1b365d; margin-bottom: 20px; }
-            .cover-subtitle { font-size: 24pt; color: #facc15; font-family: 'Outfit', sans-serif; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; }
+            .cover-page { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #f8fafc; border: 8px solid #facc15; padding: 30px; box-sizing: border-box; }
+            .cover-title { font-size: 38pt; font-weight: 700; color: #1b365d; margin-bottom: 14px; }
+            .cover-subtitle { font-size: 20pt; color: #facc15; font-family: 'Outfit', sans-serif; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; }
             .page-break { page-break-before: always; }
-            .container { padding: 40px 60px; }
-            .header-banner { background: #1b365d; color: #fff; padding: 20px; text-align: center; border-radius: 8px; margin-bottom: 30px; border-bottom: 4px solid #facc15; }
-            .header-banner h1 { color: #fff; margin: 0; font-size: 24pt; }
-            .year-section { margin-bottom: 40px; }
-            .year-title { background: #facc15; color: #1b365d; padding: 10px 20px; border-radius: 4px; font-size: 18pt; margin-bottom: 20px; display: inline-block; font-family: 'Outfit', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-            .unit-card { page-break-inside: avoid; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; margin-bottom: 20px; background: #f1f5f9; border-left: 5px solid #1b365d; }
-            .unit-card h3 { font-size: 16pt; margin-bottom: 10px; color: #1b365d; }
-            .unit-card .enquiry { font-weight: 600; color: #b89c30; font-size: 12pt; margin-bottom: 10px; }
-            .unit-card .desc { font-size: 11pt; color: #475569; }
+            .container { padding: 15px 25px; }
+            .header-banner { background: #1b365d; color: #fff; padding: 12px 18px; text-align: center; border-radius: 6px; margin-bottom: 16px; border-bottom: 3px solid #facc15; }
+            .header-banner h1 { color: #fff; margin: 0; font-size: 16pt; }
+            .year-section { margin-bottom: 16px; }
+            .year-title { background: #facc15; color: #1b365d; padding: 5px 12px; border-radius: 4px; font-size: 11pt; margin-bottom: 8px; display: inline-block; font-family: 'Outfit', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+            .unit-card { page-break-inside: avoid; border: 1px solid #cbd5e1; border-radius: 6px; padding: 8px 12px; margin-bottom: 8px; background: #f8fafc; border-left: 4px solid #1b365d; }
+            .unit-card h3 { font-size: 11pt; margin: 0 0 3px 0; color: #1b365d; }
+            .unit-card .enquiry { font-weight: 600; color: #b89c30; font-size: 8.5pt; margin-bottom: 3px; }
+            .unit-card .desc { font-size: 8pt; color: #475569; margin: 0; line-height: 1.3; }
             
             /* SOW Styles */
-            .sow-unit-container { margin-bottom: 50px; page-break-inside: auto; }
-            .sow-unit-header { background: #1b365d; color: #fff; padding: 20px; border-radius: 8px 8px 0 0; border-bottom: 4px solid #facc15; margin-bottom: 20px; }
-            .sow-unit-header h2 { color: #fff; margin: 0 0 10px 0; font-size: 22pt; }
-            .sow-unit-header p { margin: 0; color: #e2e8f0; font-family: 'Outfit', sans-serif; font-size: 12pt; }
-            .primer-box { background: #fef3c7; border: 1px solid #fde68a; border-left: 4px solid #d97706; padding: 15px; border-radius: 4px; margin-bottom: 25px; }
-            .primer-box h4 { margin: 0 0 10px 0; color: #92400e; font-family: 'Outfit', sans-serif; text-transform: uppercase; font-size: 10pt; letter-spacing: 1px; }
+            .sow-unit-container { margin-bottom: 25px; page-break-inside: auto; }
+            .sow-unit-header { background: #1b365d; color: #fff; padding: 10px 16px; border-radius: 6px 6px 0 0; border-bottom: 3px solid #facc15; margin-bottom: 12px; }
+            .sow-unit-header h2 { color: #fff; margin: 0 0 4px 0; font-size: 16pt; }
+            .sow-unit-header p { margin: 0; color: #e2e8f0; font-family: 'Outfit', sans-serif; font-size: 9.5pt; }
+            .primer-box { background: #fef3c7; border: 1px solid #fde68a; border-left: 4px solid #d97706; padding: 8px 12px; border-radius: 4px; margin-bottom: 12px; font-size: 8pt; line-height: 1.35; }
+            .primer-box h4 { margin: 0 0 4px 0; color: #92400e; font-family: 'Outfit', sans-serif; text-transform: uppercase; font-size: 8.5pt; letter-spacing: 1px; }
             
-            table { width: 100%; border-collapse: collapse; margin-bottom: 30px; page-break-inside: auto; }
+            table { width: 100%; border-collapse: collapse; margin-bottom: 16px; page-break-inside: auto; font-size: 8pt; }
             tr { page-break-inside: avoid; page-break-after: auto; border-bottom: 1px solid #e2e8f0; }
             tr:nth-child(even) { background-color: #f8fafc; }
-            th { background: #0f172a; color: #ffffff; text-align: left; padding: 14px; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 10.5pt; border: none; }
-            td { padding: 14px; border: none; vertical-align: top; font-size: 10pt; color: #334155; }
+            th { background: #0f172a; color: #ffffff; text-align: left; padding: 7px 9px; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 8pt; border: none; }
+            td { padding: 6px 8px; border: none; vertical-align: top; font-size: 7.8pt; line-height: 1.3; color: #334155; }
             
-            .lesson-num { font-weight: 700; color: #1b365d; white-space: nowrap; }
-            .lesson-title { font-weight: 700; margin-bottom: 5px; color: #1e40af; font-size: 11pt; }
+            .lesson-num { font-weight: 700; color: #1b365d; white-space: nowrap; font-size: 8pt; }
+            .lesson-title { font-weight: 700; margin-bottom: 2px; color: #1e40af; font-size: 8.5pt; }
             
-            .hinge-question { color: #b91c1c; font-style: italic; font-weight: 600; margin-top: 8px; display: block; border-left: 2px solid #ef4444; padding-left: 8px; }
+            .hinge-question { color: #b91c1c; font-style: italic; font-weight: 600; margin-top: 4px; display: block; border-left: 2px solid #ef4444; padding-left: 6px; font-size: 7.5pt; }
             
-            ul.obj-list { margin: 5px 0 0 0; padding-left: 20px; }
-            ul.obj-list li { margin-bottom: 5px; }
+            ul.obj-list { margin: 2px 0 0 0; padding-left: 14px; font-size: 7.8pt; }
+            ul.obj-list li { margin-bottom: 2px; }
             
-            .task-list { margin: 0; padding-left: 20px; color: #334155; }
-            .task-list li { margin-bottom: 4px; }
-            
+            .task-list { margin: 0; padding-left: 14px; color: #334155; font-size: 7.8pt; }
+            .task-list li { margin-bottom: 2px; }
         </style>
     </head>
 `;
@@ -88,12 +237,12 @@ function generateOverviewHTML(db) {
         <div class="cover-page">
             <div class="cover-title">Meoncross School History Department</div>
             <div class="cover-subtitle">5-Year Curriculum Overview (2026-2027)</div>
-            <div style="margin-top: 40px; font-size: 14pt; color: #475569;">Key Stage 3 & 4 (Years 7 - 11)</div>
+            <div style="margin-top: 30px; font-size: 12pt; color: #475569;">Key Stages 3 &amp; 4 (Years 7 – 11)</div>
         </div>
         <div class="page-break"></div>
         <div class="container">
             <div class="header-banner">
-                <h1>History Curriculum Map</h1>
+                <h1>History Curriculum Map &amp; Enquiry Architecture</h1>
             </div>
     `;
 
@@ -139,118 +288,137 @@ function generateSOWHTML(db, yearGroup, unitIds) {
         <div class="cover-page">
             <div class="cover-title">Meoncross School History Department</div>
             <div class="cover-subtitle">${yearGroup} Scheme of Work (2026-2027)</div>
-            <div style="margin-top: 40px; font-size: 14pt; color: #475569;">Teacher Companion Guide</div>
+            <div style="margin-top: 30px; font-size: 12pt; color: #475569;">Curriculum Planning &amp; Lesson Companion</div>
         </div>
     `;
 
-  html += `
+  const isKS4 = yearGroup === 'Year 10' || yearGroup === 'Year 11';
+
+  if (!isKS4) {
+    // Key Stage 3 Preamble: Exactly 1 clean, authoritative, positive page
+    html += `
         <div class="page-break"></div>
-        <div class="container" style="padding-top: 60px;">
+        <div class="container" style="padding-top: 25px;">
             <div class="header-banner">
-                <h1>Curriculum Evaluation & Pedagogical Strengths</h1>
+                <h1>Key Stage 3 Curriculum Intent &amp; Pedagogical Architecture</h1>
             </div>
             
-            <div style="margin-bottom: 30px;">
-                <h2 style="color: #1b365d; border-bottom: 2px solid #facc15; padding-bottom: 10px;">Strengths & Commendable Practices</h2>
-                
-                <h3 style="color: #1e40af; margin-bottom: 5px;">Strong Local History Connections</h3>
-                <p style="margin-top: 0;">Integrating local context into national and global events serves as a fantastic pedagogical hook. Mentions of the "Fareham ironmaster" in the Industrialisation unit and the profound impact of the "Lost Generation" on the "village of Stubbington" directly ground the history for our pupils. This makes the narrative tangible and relevant to their lived environment, fostering deeper engagement.</p>
-                
-                <h3 style="color: #1e40af; margin-bottom: 5px;">Thematic GCSE Preparation</h3>
-                <p style="margin-top: 0;">The inclusion of <em>Water and Sanitation Through Time</em> acts as an excellent, low-stakes conceptual primer for the Edexcel GCSE <em>Medicine Through Time</em> thematic study. It introduces pupils to broad chronology (Roman to Industrial) and core concepts of change, continuity, and significance long before they hit the rigor of GCSE, ensuring a seamless transition.</p>
-
-                <h3 style="color: #1e40af; margin-bottom: 5px;">Solid Chronological Foundation</h3>
-                <p style="margin-top: 0;">By correctly sequencing the curriculum to transition from the broad sweep of <em>Water and Sanitation</em> directly into <em>Medieval England (1066-1485)</em>, pupils gain the vital contextual bedrock (feudalism, Church power, the monarchy) needed to understand the complex religious and power shifts of the Early Modern era.</p>
-
-                <h3 style="color: #1e40af; margin-bottom: 5px;">De-centering the British Narrative</h3>
-                <p style="margin-top: 0;">Starting with, or heavily featuring, the <em>History of Australia</em> and framing the Early Modern unit as <em>Global Encounters (1450–1750)</em> is a very modern, progressive approach. It intentionally moves away from the traditional, purely anglocentric Tudor/Stuart narrative to look critically at the mechanics of early empire, global trade, and the Transatlantic Slave Trade, creating a more diverse and inclusive curriculum.</p>
-                
-                <h3 style="color: #1e40af; margin-bottom: 5px;">Deep Dive on World War I</h3>
-                <p style="margin-top: 0;">Splitting the Great War into two distinct units (Causes vs. The War) allows for rigorous historical debate (e.g., the Anglo-German naval race, alliance systems). This ensures pupils aren't just learning the "mud and blood" narrative, but are actively grappling with complex geopolitical causation.</p>
+            <div style="margin-bottom: 16px;">
+                <h2 style="color: #1b365d; border-bottom: 2px solid #facc15; padding-bottom: 5px; font-size: 13pt;">1. Curriculum Rationale &amp; Local Maritime Heritage</h2>
+                <p style="margin-top: 0; font-size: 8.5pt; color: #475569; line-height: 1.4;">
+                    Our Key Stage 3 history curriculum is intentionally constructed to link national and global historical narratives with the distinctive maritime geography and lived environment of Meoncross pupils. From the industrial revolution of the Fareham ironmaster (Henry Cort at Funtley) to the strategic supremacy of Portsmouth Royal Dockyard and the profound sacrifices recorded on the Stubbington village war memorials, history is made tangible, relevant, and deeply rooted in our coastal community.
+                </p>
             </div>
 
-            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 5px solid #d97706; padding: 20px; border-radius: 4px;">
-                <h2 style="color: #92400e; margin-top: 0; border-bottom: 1px solid #fcd34d; padding-bottom: 10px;">Points for Improvement for 2026/2027</h2>
-                
-                <h4 style="margin-bottom: 5px; color: #1b365d;">1. Overweighting the 20th Century</h4>
-                <p style="margin-top: 0; font-size: 10pt;">Currently, there are two whole units dedicated to the Great War, plus units mapped out for the Second World War, the Shoah, the Cold War, and Post-War Britain. While vital, this risks creating a "modern-heavy" curriculum, sometimes at the expense of early world history.</p>
-                
-                <h4 style="margin-bottom: 5px; color: #1b365d;">2. Pre-1450 Global Diversity</h4>
-                <p style="margin-top: 0; font-size: 10pt;">The curriculum would benefit from a deep dive into non-European civilizations before European contact. Exploring the Islamic Golden Age, the Mali Empire, or the Silk Roads <em>before</em> looking at European "Global Encounters" in 1450 would give pupils a much more balanced view of global history, rather than encountering diverse cultures primarily through the lens of European colonization.</p>
-            </div>
-            ${
-              yearGroup === 'Year 9'
-                ? `
-            <div style="margin-top: 30px; background: #eff6ff; border: 1px solid #bfdbfe; border-left: 5px solid #3b82f6; padding: 20px; border-radius: 4px;">
-                <h2 style="color: #1e3a8a; margin-top: 0;">Notice on Year 9 Curriculum Development</h2>
-                <p style="margin: 0; color: #1e40af; font-weight: 600; font-size: 11pt;">Please note that the Year 9 units are currently incomplete. These units (including The Second World War, The Shoah, and The Cold War) will be fully built and mapped out over the next few months to ensure they meet our high pedagogical standards.</p>
-            </div>
-            `
-                : ''
-            }
-        </div>
-
-        <div class="page-break"></div>
-        <div class="container" style="padding-top: 60px;">
-            <div class="header-banner">
-                <h1>Evidence of Impact & Curriculum Mapping</h1>
-            </div>
-            
-            <div style="margin-bottom: 30px;">
-                <h2 style="color: #1b365d; border-bottom: 2px solid #facc15; padding-bottom: 10px;">1. Local Context & Coastal Connections</h2>
-                <p style="margin-top: 0; font-size: 11pt; color: #475569;">As a coastal school, our curriculum is intentionally designed to root global and national historical events in the maritime geography and lived environment of our pupils.</p>
-                <ul style="color: #334155; font-size: 10.5pt; line-height: 1.6;">
-                    <li style="margin-bottom: 8px;"><strong>Oceanic Voyages & Penal Colonies:</strong> The Year 8 Australia unit is deeply tied to maritime history, the brutality of ocean voyages, and the establishment of coastal settlements like Botany Bay.</li>
-                    <li style="margin-bottom: 8px;"><strong>Maritime Trade & Naval Dominance:</strong> Our Early Modern World unit explicitly links global power to mastery of the oceans, naval exploration, and control of the Transatlantic Slave Trade.</li>
-                    <li style="margin-bottom: 8px;"><strong>The Anglo-German Naval Race:</strong> The Year 8 Great War unit features a dedicated study on HMS <em>Dreadnought</em>, proving how a contest for control of the sea directly sparked global conflict.</li>
-                    <li style="margin-bottom: 8px;"><strong>Local Coastal Impact:</strong> We explicitly study the "Fareham ironmaster" and the impact of the "Lost Generation" on the coastal village of Stubbington, bridging global events with local geography.</li>
+            <div style="margin-bottom: 16px;">
+                <h2 style="color: #1b365d; border-bottom: 2px solid #facc15; padding-bottom: 5px; font-size: 13pt;">2. Disciplinary Progression &amp; Historical Enquiry</h2>
+                <p style="margin-top: 0; font-size: 8.5pt; color: #475569; line-height: 1.4;">
+                    Across Years 7, 8, and 9, disciplinary thinking progresses sequentially to secure the foundational skills required for GCSE excellence:
+                </p>
+                <ul style="color: #334155; font-size: 8pt; line-height: 1.4; margin: 4px 0 0 0; padding-left: 18px;">
+                    <li style="margin-bottom: 4px;"><strong>Chronological Rigour &amp; Global Encounters:</strong> De-centering traditional anglocentric narratives by examining early global trade, Indigenous perspectives in Australia, and African resistance to the Transatlantic Slave Trade alongside British social transformations.</li>
+                    <li style="margin-bottom: 4px;"><strong>Causation &amp; Consequence:</strong> Moving from simple direct triggers in Year 7 to evaluating multi-tiered, long-term geopolitical catalysts (e.g. European alliance systems, naval arms races).</li>
+                    <li style="margin-bottom: 4px;"><strong>Source Utility &amp; Forensic Evidence:</strong> Progressing from basic comprehension to rigorous interrogation of provenance, evaluating authorial motive, audience, and historical reliability.</li>
+                    <li style="margin-bottom: 4px;"><strong>Historiographical Debate:</strong> Engaging pupils with active academic debates (e.g., assessing the Magna Carta, or challenging the 'Lions led by Donkeys' narrative of the Great War) grounded in historical evidence.</li>
                 </ul>
             </div>
 
-            <div style="margin-bottom: 30px;">
-                <h2 style="color: #1b365d; border-bottom: 2px solid #facc15; padding-bottom: 10px;">2. Historical Skills Progression</h2>
-                <p style="margin-top: 0; font-size: 11pt; color: #475569;">Our curriculum ensures rigorous, sequential development of disciplinary thinking from Year 7 through to Year 9, preparing pupils for GCSE demands.</p>
-                <ul style="color: #334155; font-size: 10.5pt; line-height: 1.6;">
-                    <li style="margin-bottom: 8px;"><strong>Source Utility:</strong> Moves from basic comprehension in Year 7 to evaluating provenance, motive, and audience (e.g., analyzing WWI propaganda and recruitment posters) in Year 8.</li>
-                    <li style="margin-bottom: 8px;"><strong>Historical Interpretations:</strong> Progresses from identifying differing views to critically evaluating opposing academic debates (e.g., assessing modern vs. traditional interpretations of the Magna Carta or the 'Lions led by Donkeys' WWI debate) using contextual knowledge.</li>
-                    <li style="margin-bottom: 8px;"><strong>Argumentation (PEEL):</strong> Pupils progress from supported, structured paragraphs to independent, multi-causal essays evaluating 'significance' and 'change over time'.</li>
-                    <li style="margin-bottom: 8px;"><strong>Causation:</strong> Transitions from identifying simple triggers to categorizing long-term vs. short-term causes (e.g., the complex alliance systems and naval race of 1914).</li>
-                </ul>
-            </div>
-
-            <div style="margin-bottom: 30px;">
-                <h2 style="color: #1b365d; border-bottom: 2px solid #facc15; padding-bottom: 10px;">3. Diversity, Equity & Representation</h2>
-                <p style="margin-top: 0; font-size: 11pt; color: #475569;">We are committed to delivering a curriculum that de-centers traditional anglocentric narratives, elevating the voices of the marginalized and giving pupils a truly global perspective.</p>
-                <ul style="color: #334155; font-size: 10.5pt; line-height: 1.6;">
-                    <li style="margin-bottom: 8px;"><strong>Indigenous Perspectives:</strong> The History of Australia unit critically examines the impact of British settlement on Indigenous peoples, moving beyond the traditional 'discovery' narrative.</li>
-                    <li style="margin-bottom: 8px;"><strong>Enslaved Voices:</strong> The Early Modern World unit focuses on the mechanics of the Transatlantic Slave Trade and actively highlights how enslaved Africans resisted.</li>
-                    <li style="margin-bottom: 8px;"><strong>The 'Ordinary' Voice:</strong> The Industrialisation unit explores how ordinary working-class people, rather than just monarchs, fought for a voice and the expansion of democracy.</li>
-                    <li style="margin-bottom: 8px;"><strong>The Forgotten Armies:</strong> The Great War unit deliberately questions how much of a 'World' war it was by uncovering the forgotten contributions of the Empire's troops.</li>
-                    <li style="margin-bottom: 8px;"><strong>Experiential Learning (Ypres Trip):</strong> The upcoming Year 9 Battlefields Trip to Ypres provides an invaluable opportunity for pupils to walk the ground of the Great War, cementing their classroom learning with powerful lived experience.</li>
-                </ul>
-            </div>
-
-            <div style="margin-bottom: 30px;">
-                <h2 style="color: #1b365d; border-bottom: 2px solid #facc15; padding-bottom: 10px;">4. Pedagogical Strengths (SEND & Accessibility)</h2>
-                <p style="margin-top: 0; font-size: 11pt; color: #475569;">The integrated use of the Meoncross School History Department app alongside printed A4 workbooks and textbooks is deliberately designed to provide maximum support for SEND pupils:</p>
-                <ul style="color: #334155; font-size: 10.5pt; line-height: 1.6;">
-                    <li style="margin-bottom: 8px;"><strong>Cognitive Offloading:</strong> The combination of guided workbooks directly matched to structured digital tasks significantly reduces working memory strain, allowing pupils to focus entirely on historical thinking.</li>
-                    <li style="margin-bottom: 8px;"><strong>Dual Coding & Scaffolding:</strong> The app utilizes consistent visual layouts, dual-coded images for vocabulary, and highly structured scaffolding (like sentence starters and PEEL frameworks) to support pupils with dyslexia or processing needs.</li>
-                    <li style="margin-bottom: 8px;"><strong>Multimodal Engagement:</strong> By seamlessly transitioning between interactive digital tasks and focused reading from printed textbooks, the curriculum caters to diverse learning profiles while preventing screen fatigue.</li>
-                </ul>
-            </div>
-
-            <div style="margin-bottom: 30px;">
-                <h2 style="color: #1b365d; border-bottom: 2px solid #facc15; padding-bottom: 10px;">5. Substantive Concept Mapping</h2>
-                <p style="margin-top: 0; font-size: 11pt; color: #475569;">In line with modern KS3 history pedagogy, we actively track and weave substantive concepts ("big ideas" like Empire, Religion, and Power) across different periods. Rather than teaching these as isolated definitions, pupils build complex mental schemas by encountering them in varied contexts—from the power of the Medieval Church, through to the ideological clashes of the Cold War.</p>
-            </div>
-
-            <div style="margin-bottom: 30px;">
-                <h2 style="color: #1b365d; border-bottom: 2px solid #facc15; padding-bottom: 10px;">6. "Worldbuilding" & Cultural Literacy</h2>
-                <p style="margin-top: 0; font-size: 11pt; color: #475569;">Before pupils can effectively tackle abstract disciplinary concepts (such as causation or source utility), they require a rich "picture of the past". Our curriculum deliberately immerses pupils in the sensory and lived experiences of historical periods—such as daily life in a medieval village or the harsh realities of a WW1 trench—ensuring a secure cultural and chronological grounding prior to high-level analysis.</p>
+            <div style="margin-bottom: 14px;">
+                <h2 style="color: #1b365d; border-bottom: 2px solid #facc15; padding-bottom: 5px; font-size: 13pt;">3. Adaptive Teaching, Dual Coding &amp; Inclusion</h2>
+                <p style="margin-top: 0; font-size: 8.5pt; color: #475569; line-height: 1.4;">
+                    Pupils work through bespoke printed A4 workbooks closely paired with our digital learning portal. Standardized 3-tier scaffolding (Bronze sentence starters, Silver connectives, Gold historiographical analysis), consistent dual coding, and digital accessibility features offload working memory, ensuring all SEND and lower-attaining pupils achieve ambitious historical progress with zero cognitive overload.
+                </p>
             </div>
         </div>
     `;
+  } else {
+    // Key Stage 4 (GCSE) Preamble: Exactly 1 clean, authoritative Edexcel specification framework page
+    html += `
+        <div class="page-break"></div>
+        <div class="container" style="padding-top: 25px;">
+            <div class="header-banner">
+                <h1>Key Stage 4 Curriculum Architecture &amp; Edexcel GCSE Specification</h1>
+            </div>
+            
+            <div style="margin-bottom: 14px;">
+                <h2 style="color: #1b365d; border-bottom: 2px solid #facc15; padding-bottom: 4px; font-size: 12pt;">Pearson Edexcel GCSE (9–1) History Specification (1HI0)</h2>
+                <p style="margin-top: 0; font-size: 8pt; color: #475569; line-height: 1.35;">
+                    Meoncross School delivers a balanced 4-unit curriculum covering thematic development, British depth, period conflict, and modern world history:
+                </p>
+                <table style="font-size: 7.8pt; margin-bottom: 10px;">
+                    <thead>
+                        <tr>
+                            <th style="width: 28%;">Exam Paper &amp; Topic</th>
+                            <th style="width: 18%;">Assessment Focus</th>
+                            <th style="width: 14%;">Weighting</th>
+                            <th style="width: 20%;">Format &amp; Marks</th>
+                            <th style="width: 20%;">Taught Cohort</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Paper 1 (1HI0/11):</strong><br>Medicine in Britain (c.1250–present) &amp; Western Front (1914–18)</td>
+                            <td>Thematic Study &amp; Historic Environment</td>
+                            <td><strong>30%</strong> of GCSE</td>
+                            <td>1 hr 15 mins<br>52 marks (incl. 4 SPaG)</td>
+                            <td>Year 11</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Paper 2 (1HI0/26):</strong><br>Conflict in the Middle East (1945–1995)</td>
+                            <td>Period Study</td>
+                            <td><strong>20%</strong> of GCSE</td>
+                            <td>50 mins<br>32 marks</td>
+                            <td>Year 10</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Paper 2 (1HI0/26):</strong><br>Early Elizabethan England (1558–1588)</td>
+                            <td>British Depth Study</td>
+                            <td><strong>20%</strong> of GCSE</td>
+                            <td>55 mins<br>32 marks</td>
+                            <td>Year 11</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Paper 3 (1HI0/31):</strong><br>Weimar and Nazi Germany (1918–1939)</td>
+                            <td>Modern Depth Study</td>
+                            <td><strong>30%</strong> of GCSE</td>
+                            <td>1 hr 20 mins<br>52 marks (incl. 4 SPaG)</td>
+                            <td>Year 10</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 10px;">
+                <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 4px solid #1b365d; padding: 8px 10px; border-radius: 4px;">
+                    <h3 style="color: #1b365d; margin: 0 0 3px 0; font-size: 9pt;">Assessment Objectives (AOs)</h3>
+                    <ul style="font-size: 7.5pt; line-height: 1.3; margin: 0; padding-left: 12px; color: #334155;">
+                        <li><strong>AO1 (35%):</strong> Demonstrate knowledge and understanding of key features.</li>
+                        <li><strong>AO2 (35%):</strong> Explain and analyse events, causes, consequences, and change.</li>
+                        <li><strong>AO3 (15%):</strong> Analyse, evaluate, and use contemporary sources.</li>
+                        <li><strong>AO4 (15%):</strong> Analyse and evaluate historical interpretations in context.</li>
+                    </ul>
+                </div>
+                <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 4px solid #d97706; padding: 8px 10px; border-radius: 4px;">
+                    <h3 style="color: #92400e; margin: 0 0 3px 0; font-size: 9pt;">Standardized Question Frameworks</h3>
+                    <ul style="font-size: 7.5pt; line-height: 1.3; margin: 0; padding-left: 12px; color: #334155;">
+                        <li><strong>4-mark Consequence:</strong> PEE structure (immediate &amp; long-term).</li>
+                        <li><strong>8-mark Narrative:</strong> 3-phase chronological causal flowchart.</li>
+                        <li><strong>8-mark Importance:</strong> Analytical criteria for historical impact.</li>
+                        <li><strong>2+2 Features:</strong> Concisely identifying and developing features.</li>
+                        <li><strong>8-mark Utility:</strong> Evaluating content and provenance (Author/Audience/Motive).</li>
+                        <li><strong>16+4 Judgement Essays:</strong> Evaluative criteria with sustained balance.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="background: #eff6ff; border: 1px solid #bfdbfe; padding: 7px 10px; border-radius: 4px;">
+                <p style="margin: 0; font-size: 7.8pt; color: #1e40af; line-height: 1.3;">
+                    <strong>Mastery Methodology:</strong> GCSE pupils utilize printed Edexcel Mastery Booklets featuring 3-tier models, formula stamps, and walking-talking mock rehearsals, ensuring complete familiarity with mark schemes and timing constraints prior to the final examinations.
+                </p>
+            </div>
+        </div>
+    `;
+  }
 
   for (const uid of unitIds) {
     const unitData = db[uid]?.data;
@@ -285,31 +453,16 @@ function generateSOWHTML(db, yearGroup, unitIds) {
                 `;
     }
 
-    if (['cold_war', 'second_world_war', 'the_shoah'].includes(uid)) {
+    const outlineLessons = unitCurriculumOutlines[uid];
+
+    if (unitData.lessons && unitData.lessons.length > 0) {
       html += `
-                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px; font-size: 9pt;">
+                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 8pt;">
                         <thead>
                             <tr>
-                                <th style="width: 25%">Lesson Number & Title</th>
-                                <th style="width: 30%">Learning Objectives</th>
-                                <th style="width: 45%">Core Assessment & Tasks</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td colspan="3" style="text-align: center; font-style: italic; color: #64748b; font-size: 14pt; padding: 20px;">Unit in Development – Content TBC</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                `;
-    } else if (unitData.lessons && unitData.lessons.length > 0) {
-      html += `
-                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px; font-size: 9pt;">
-                        <thead>
-                            <tr>
-                                <th style="width: 25%">Lesson Number & Title</th>
-                                <th style="width: 30%">Learning Objectives</th>
-                                <th style="width: 45%">Core Assessment & Tasks</th>
+                                <th style="width: 25%">Lesson Number &amp; Title</th>
+                                <th style="width: 35%">Learning Objectives</th>
+                                <th style="width: 40%">Core Assessment &amp; Tasks</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -562,6 +715,36 @@ function generateSOWHTML(db, yearGroup, unitIds) {
       });
 
       html += `</tbody></table>`;
+    } else if (outlineLessons && outlineLessons.length > 0) {
+      html += `
+                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 8pt;">
+                        <thead>
+                            <tr>
+                                <th style="width: 25%">Lesson Number &amp; Title</th>
+                                <th style="width: 35%">Learning Objectives &amp; Enquiry</th>
+                                <th style="width: 40%">Core Assessment &amp; Disciplinary Tasks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                `;
+      outlineLessons.forEach((l, lIdx) => {
+        html += `
+                        <tr>
+                            <td>
+                                <div class="lesson-num">Lesson ${lIdx + 1}</div>
+                                <div class="lesson-title">${l.title}</div>
+                            </td>
+                            <td>
+                                <ul class="obj-list"><li>${l.obj}</li></ul>
+                                <span class="hinge-question">Hinge Q: ${l.hinge}</span>
+                            </td>
+                            <td>
+                                <ul class="task-list"><li>${l.tasks}</li></ul>
+                            </td>
+                        </tr>
+                    `;
+      });
+      html += `</tbody></table>`;
     }
 
     if (vocabulary && vocabulary.length > 0) {
@@ -574,11 +757,11 @@ function generateSOWHTML(db, yearGroup, unitIds) {
 
       if (uniqueWords.length > 0) {
         html += `
-                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 15px; border-radius: 6px; margin-top: 30px; margin-bottom: 30px;">
-                            <strong style="color: #0f172a; font-family: 'Outfit', sans-serif;">Key Vocabulary:</strong> 
-                            <span style="color: #475569;">${uniqueWords.join(', ')}</span>
-                        </div>
-                    `;
+            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 3px solid #1b365d; padding: 5px 8px; border-radius: 4px; margin: 6px 0 12px 0; font-size: 7.5pt;">
+                <strong style="color: #1b365d;">Unit Key Vocabulary:</strong> 
+                <span style="color: #475569;">${uniqueWords.join(' • ')}</span>
+            </div>
+        `;
       }
     }
 
@@ -644,8 +827,8 @@ function generateSOWHTML(db, yearGroup, unitIds) {
     displayHeaderFooter: true,
     headerTemplate: '<div></div>',
     footerTemplate:
-      '<div style="font-size:10px; width:100%; text-align:center; font-family: sans-serif; color: #94a3b8;">Meoncross School History Department - Curriculum Overview | Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>',
-    margin: { top: '15mm', right: '15mm', bottom: '25mm', left: '15mm' },
+      '<div style="font-size:8pt; width:100%; text-align:center; font-family: sans-serif; color: #94a3b8;">Meoncross School History Department - Curriculum Overview | Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>',
+    margin: { top: '8mm', right: '10mm', bottom: '12mm', left: '10mm' },
   });
   console.log('✅ Success! Overview PDF saved to: ' + overviewPdfPath);
 
@@ -667,8 +850,8 @@ function generateSOWHTML(db, yearGroup, unitIds) {
         printBackground: true,
         displayHeaderFooter: true,
         headerTemplate: '<div></div>',
-        footerTemplate: `<div style="font-size:10px; width:100%; text-align:center; font-family: sans-serif; color: #94a3b8;">Meoncross School History Department - ${yearGroup} Scheme of Work | Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>`,
-        margin: { top: '15mm', right: '15mm', bottom: '25mm', left: '15mm' },
+        footerTemplate: `<div style="font-size:8pt; width:100%; text-align:center; font-family: sans-serif; color: #94a3b8;">Meoncross School History Department - ${yearGroup} Scheme of Work | Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>`,
+        margin: { top: '8mm', right: '10mm', bottom: '12mm', left: '10mm' },
       });
       console.log(`✅ Success! ${yearGroup} Scheme of Work PDF saved to: ` + pdfPath);
       await page.close();
