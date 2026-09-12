@@ -9,8 +9,11 @@ const PDF_OUT_PUBLIC = path.join(
   'pdfs',
   'history_department_development_plan_2026_2027.pdf',
 );
-const PDF_OUT_GDRIVE =
-  'G:\\My Drive\\AAMX\\Dep File\\History Department Development Plan 2026-2027.pdf';
+const PDF_OUT_GDRIVE = path.join(
+  'G:\\My Drive\\AAMX\\Dep File',
+  '1. Department Operations & Handbook',
+  'History Department Development Plan 2026-2027.pdf',
+);
 const HTML_OUT_PUBLIC = path.join(
   __dirname,
   '..',
@@ -458,6 +461,10 @@ async function exportPDF() {
     console.log('[SUCCESS] Department Development Plan PDF saved to public/pdfs:', PDF_OUT_PUBLIC);
 
     try {
+      const driveDir = path.dirname(PDF_OUT_GDRIVE);
+      if (!fs.existsSync(driveDir)) {
+        fs.mkdirSync(driveDir, { recursive: true });
+      }
       fs.copyFileSync(PDF_OUT_PUBLIC, PDF_OUT_GDRIVE);
       console.log(
         '[SUCCESS] Department Development Plan PDF copied to Google Drive:',

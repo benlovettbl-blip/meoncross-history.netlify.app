@@ -38,8 +38,12 @@ const PDF_OUT_UNIT = path.join(
   'usa',
   'edexcel_usa_visual_revision_and_exam_guide.pdf',
 );
-const PDF_OUT_GDRIVE =
-  'G:\\My Drive\\AAMX\\Dep File\\Edexcel GCSE USA Visual Revision and Exam Guide.pdf';
+const PDF_OUT_GDRIVE = path.join(
+  'G:\\My Drive\\AAMX\\Dep File',
+  'Year 11 (GCSE)',
+  'Paper 3 - USA 1954-75',
+  'Edexcel GCSE USA Visual Revision and Exam Guide.pdf',
+);
 const HTML_OUT_PUBLIC = path.join(
   __dirname,
   '..',
@@ -3873,6 +3877,10 @@ async function run() {
 
   // Copy to Google Drive Department File
   try {
+    const driveDir = path.dirname(PDF_OUT_GDRIVE);
+    if (!fs.existsSync(driveDir)) {
+      fs.mkdirSync(driveDir, { recursive: true });
+    }
     fs.copyFileSync(PDF_OUT_UNIT, PDF_OUT_GDRIVE);
     console.log(`💾 Synced PDF to Google Drive Department File:\n   ${PDF_OUT_GDRIVE}`);
   } catch (err) {
