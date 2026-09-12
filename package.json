@@ -20,6 +20,7 @@
     "verify:lettering": "node scripts/verify_source_lettering.cjs",
     "export:pdf": "node scripts/export_pdfs.cjs && node scripts/generate_scheme_of_work.cjs",
     "sync:curriculum": "node scripts/sync_curriculum_documents.cjs",
+    "sync:drive": "node scripts/sync_admin_pdfs_to_drive.cjs",
     "check:randomization": "node scripts/check_vault_randomization.cjs",
     "clean:temp": "node scripts/clean_cache.cjs",
     "generate:boosters": "node scripts/generate_overdue_revision_sheets.cjs",

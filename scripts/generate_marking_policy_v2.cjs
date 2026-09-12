@@ -522,4 +522,12 @@ const htmlContent = `<!DOCTYPE html>
   console.log('✅ Success! Version 2 Policy PDF compiled cleanly to:', pdfPath);
 
   await browser.close();
+
+  // Synchronize updated Marking Policy PDF to Google Drive Department File if available
+  try {
+    const { syncAdminPdfsToDrive } = require('./sync_admin_pdfs_to_drive.cjs');
+    syncAdminPdfsToDrive();
+  } catch (err) {
+    // Non-fatal if Google Drive is unmounted
+  }
 })();

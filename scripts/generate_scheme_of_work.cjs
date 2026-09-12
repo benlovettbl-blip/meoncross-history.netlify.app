@@ -676,4 +676,12 @@ function generateSOWHTML(db, yearGroup, unitIds) {
   }
 
   await browser.close();
+
+  // Synchronize updated SOW PDFs to Google Drive Department File if available
+  try {
+    const { syncAdminPdfsToDrive } = require('./sync_admin_pdfs_to_drive.cjs');
+    syncAdminPdfsToDrive();
+  } catch (err) {
+    // Non-fatal if Google Drive is unmounted
+  }
 })();

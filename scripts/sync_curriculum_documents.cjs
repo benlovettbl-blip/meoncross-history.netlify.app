@@ -378,6 +378,15 @@ console.log('   ✅ public/curriculum_overview_tabular.html generated successful
     process.exit(1);
   }
 
+  // 8. Synchronize Admin PDFs to Google Drive Department File
+  console.log('\n📂 Step 8: Syncing Admin PDFs to Google Drive Department File...');
+  try {
+    const { syncAdminPdfsToDrive } = require('./sync_admin_pdfs_to_drive.cjs');
+    syncAdminPdfsToDrive();
+  } catch (err) {
+    console.warn('⚠️ Warning syncing to Google Drive:', err.message);
+  }
+
   console.log('\n====================================================');
   console.log('🎉 UNIFIED CURRICULUM SYNC COMPLETED SUCCESSFULLY!');
   console.log('====================================================\n');
