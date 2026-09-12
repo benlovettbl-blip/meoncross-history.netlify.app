@@ -12,3 +12,5 @@ scratch/
 *temp*
 public/pdfs/
 pdfs/
+admin_internal/
+*department_development_plan*

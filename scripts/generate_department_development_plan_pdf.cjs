@@ -2,11 +2,13 @@ const fs = require('fs');
 const path = require('path');
 const puppeteer = require('puppeteer');
 
-const PDF_OUT_PUBLIC = path.join(
-  __dirname,
-  '..',
-  'public',
-  'pdfs',
+const ADMIN_DIR = path.join(__dirname, '..', 'admin_internal');
+if (!fs.existsSync(ADMIN_DIR)) {
+  fs.mkdirSync(ADMIN_DIR, { recursive: true });
+}
+
+const PDF_OUT_ADMIN = path.join(
+  ADMIN_DIR,
   'history_department_development_plan_2026_2027.pdf',
 );
 const PDF_OUT_GDRIVE = path.join(
@@ -14,10 +16,8 @@ const PDF_OUT_GDRIVE = path.join(
   '00_Department_Admin_and_Policies',
   'History Department Development Plan 2026-2027.pdf',
 );
-const HTML_OUT_PUBLIC = path.join(
-  __dirname,
-  '..',
-  'public',
+const HTML_OUT_ADMIN = path.join(
+  ADMIN_DIR,
   'history_department_development_plan_2026_2027.html',
 );
 
@@ -586,9 +586,9 @@ function generateHTML() {
 }
 
 async function exportPDF() {
-  console.log('Generating Department Development Plan HTML...');
+  console.log('Generating Department Development Plan HTML in admin_internal...');
   const htmlContent = generateHTML();
-  fs.writeFileSync(HTML_OUT_PUBLIC, htmlContent);
+  fs.writeFileSync(HTML_OUT_ADMIN, htmlContent);
 
   console.log('Launching Puppeteer for A4 Landscape rendering...');
   const browser = await puppeteer.launch({
@@ -599,25 +599,25 @@ async function exportPDF() {
   try {
     const page = await browser.newPage();
     await page.setViewport({ width: 1123, height: 794 });
-    await page.goto(require('url').pathToFileURL(HTML_OUT_PUBLIC).href, {
+    await page.goto(require('url').pathToFileURL(HTML_OUT_ADMIN).href, {
       waitUntil: 'networkidle0',
     });
 
     await page.pdf({
-      path: PDF_OUT_PUBLIC,
+      path: PDF_OUT_ADMIN,
       format: 'A4',
       landscape: true,
       printBackground: true,
       margin: { top: '8mm', right: '8mm', bottom: '8mm', left: '8mm' },
     });
-    console.log('[SUCCESS] Department Development Plan PDF saved to public/pdfs:', PDF_OUT_PUBLIC);
+    console.log('[SUCCESS] Department Development Plan PDF saved to admin_internal:', PDF_OUT_ADMIN);
 
     try {
       const driveDir = path.dirname(PDF_OUT_GDRIVE);
       if (!fs.existsSync(driveDir)) {
         fs.mkdirSync(driveDir, { recursive: true });
       }
-      fs.copyFileSync(PDF_OUT_PUBLIC, PDF_OUT_GDRIVE);
+      fs.copyFileSync(PDF_OUT_ADMIN, PDF_OUT_GDRIVE);
       console.log(
         '[SUCCESS] Department Development Plan PDF copied to Google Drive:',
         PDF_OUT_GDRIVE,
