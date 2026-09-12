@@ -2007,7 +2007,7 @@ const SPREADS = [
       pillars: [
         {
           title: 'The "Silent Majority" Speech (1969)',
-          subtitle: "Nixon's Masterclass in Political Populism",
+          subtitle: "Nixon's Strategy of Political Populism",
           bullets: [
             'On November 3, 1969, Nixon addressed the nation: **"And so tonight—to you, the great silent majority of my fellow Americans—I ask for your support."**',
             'Warned that immediate withdrawal would result in a bloodbath in Vietnam and humiliate the US globally.',
@@ -3124,7 +3124,7 @@ function generateFullHTML() {
           <div style="border: 1.5px solid #0f172a; border-radius: 5px; padding: 8px 12px; background: #f8fafc; margin-top: 8px;">
             <div style="font-size: 7.8pt; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; display: flex; justify-content: space-between;">
               <span>How to Use This Visual Revision &amp; Exam Assessment Guide:</span>
-              <span style="color: #1e3a8a; font-weight: 700;">16 Double-Page Masterclasses &bull; Complete GCSE Preparation</span>
+              <span style="color: #1e3a8a; font-weight: 700;">16 Double-Page Study Spreads &bull; Complete GCSE Preparation</span>
             </div>
             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; font-size: 6.8pt; line-height: 1.32; color: #334155;">
               <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px 8px;">

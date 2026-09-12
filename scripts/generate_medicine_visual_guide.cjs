@@ -4026,7 +4026,7 @@ function renderLeftPage(data, pageNum, spreadIndex) {
     vocabHtml = `
       <div style="flex: 1; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 5px; padding: 6px 8px; font-size: 6.6pt; line-height: 1.3; color: #334155;">
         <div style="font-size: 7pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 3px; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
-          Grade 8–9 Key Vocabulary Bank:
+          Key Analytical Vocabulary Bank:
         </div>
         ${vItems}
       </div>
@@ -4084,7 +4084,7 @@ function renderLeftPage(data, pageNum, spreadIndex) {
   `
       : '';
 
-  // Tier 5: Examiner Traps & Grade 9 Pitfalls (Clean Professional Styling)
+  // Tier 5: Common Errors to Avoid & How to Improve (Clean Professional Styling)
   let trapsHtml = '';
   if (traps && traps.length > 0) {
     const tItems = traps
@@ -4092,7 +4092,7 @@ function renderLeftPage(data, pageNum, spreadIndex) {
         (t) => `
       <div style="margin-bottom: 1.5px;">
         <strong>&bull; Common Error:</strong> ${formatMd(t.trap)}<br/>
-        <strong style="color: #1e3a8a;">&rarr; Grade 9 Correction:</strong> ${formatMd(t.correction)}
+        <strong style="color: #1e3a8a;">&rarr; How to improve:</strong> ${formatMd(t.correction)}
       </div>
     `,
       )
@@ -4102,10 +4102,10 @@ function renderLeftPage(data, pageNum, spreadIndex) {
       <div style="border: 1.5px solid #0f172a; border-radius: 5px; padding: 6px 9px; background: #fafafa;">
         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">
           <span style="font-size: 7.4pt; font-weight: 800; color: #991b1b; text-transform: uppercase; letter-spacing: 0.4px;">
-            Examiner Traps &amp; Grade 9 Pitfalls:
+            Common Errors to Avoid:
           </span>
           <span style="font-size: 6.5pt; font-weight: 700; color: #475569;">
-            Edexcel Mark Scheme Pitfalls &rarr; Grade 9 Analytical Corrections
+            Edexcel Mark Scheme Pitfalls &rarr; How to Improve
           </span>
         </div>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 10px; font-size: 6.6pt; line-height: 1.3; color: #1e293b;">
@@ -4127,7 +4127,7 @@ function renderLeftPage(data, pageNum, spreadIndex) {
           ${left.tag}
         </span>
         <span style="font-size: 6.8pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; padding: 2px 6px; border-radius: 3px; border: 1px solid #bfdbfe;">
-          Level 4–9 Knowledge Masterclass
+          Specification Deep Knowledge
         </span>
       </div>
       <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 14.5pt; color: #0f172a; margin: 2px 0 1px 0; border: none; padding: 0; font-weight: 900;">
@@ -4154,7 +4154,7 @@ function renderLeftPage(data, pageNum, spreadIndex) {
     <!-- Tier 4: Vocabulary Bank & Causal Factors -->
     ${tier4Html ? `<div style="margin-bottom: 6px;">${tier4Html}</div>` : ''}
 
-    <!-- Tier 5: Examiner Traps & Grade 9 Pitfalls -->
+    <!-- Tier 5: Common Errors to Avoid & How to Improve -->
     ${trapsHtml ? `<div style="margin-bottom: 4px;">${trapsHtml}</div>` : ''}
 
     <!-- Footer Signoff -->
@@ -4480,7 +4480,7 @@ function renderRightPage(data, pageNum, spreadIndex) {
           ${tableRowsHtml}
         </table>
         <div style="margin-top: 6px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; font-size: 6.5pt; color: #334155; line-height: 1.35;">
-          <strong style="color: #1e3a8a;">Grade 9 Examiner Strategy for Question 2(b):</strong><br/>
+          <strong style="color: #1e3a8a;">Examiner Advice for Question 2(b):</strong><br/>
           &bull; <strong>Question:</strong> Must link strictly to the detail quoted (e.g. &ldquo;What proportion of casualties suffered from...&rdquo;).<br/>
           &bull; <strong>Source Type:</strong> Must name a precise, specific contemporary record (e.g. <em>Medical Officer Unit War Diaries</em>, <em>Casualty Clearing Station Admissions Logs</em>, or <em>Army Form W3083 returns</em>). Generic answers score 0 marks!
         </div>
@@ -4870,7 +4870,7 @@ function renderInsideCover() {
 
       <div style="border: 1.5px solid #0f172a; border-radius: 5px; padding: 10px 12px; background: #fdfdfd;">
         <div style="font-size: 8.5pt; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; border-bottom: 1px solid #cbd5e1; padding-bottom: 3px; display: flex; justify-content: space-between;">
-          <span>🏆 Grade 7–9 Examiner Golden Rules: Secrets to Top-Band Marks</span>
+          <span>🏆 Examiner Golden Rules: Secrets to High-Mark Responses</span>
           <span style="color: #1e3a8a; font-weight: 700;">Edexcel Paper 1 Strategy</span>
         </div>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 6.9pt; line-height: 1.35; color: #1e293b;">
@@ -4908,7 +4908,7 @@ function renderInsideCover() {
 
     <div style="position: relative; z-index: 2; border-top: 1px solid #cbd5e1; padding-top: 6px; display: flex; justify-content: space-between; align-items: center; font-size: 7.2pt; color: #64748b;">
       <span>Edexcel GCSE (9–1) History &bull; Paper 1 (1HI0/11)</span>
-      <span>Page 2 &bull; Specification &amp; Assessment Architecture</span>
+      <span>Page 2 &bull; Specification &amp; Assessment Structure</span>
     </div>
   </div>
   `;
@@ -4983,12 +4983,12 @@ function renderContentsMatrix() {
 
       <div style="margin-top: 10px; background: #f8fafc; border: 1.5px solid #0f172a; border-radius: 4px; padding: 8px 12px; font-size: 7pt; color: #1e293b;">
         <div style="font-weight: 800; color: #0f172a; text-transform: uppercase; margin-bottom: 4px;">
-          🎯 Masterclass Revision Milestones:
+          🎯 Essential Revision Milestones:
         </div>
         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
-          <div><strong>🥉 Bronze Milestone:</strong> All 18 knowledge masterclass left pages revised; RAG checkboxes audited.</div>
+          <div><strong>🥉 Bronze Milestone:</strong> All 18 core knowledge left pages revised; RAG checkboxes audited.</div>
           <div><strong>🥈 Silver Milestone:</strong> All 18 exam practice pages completed in full with timed conditions.</div>
-          <div><strong>🥇 Gold Milestone:</strong> All 4 capstone 16-mark essays completed and assessed at Grade 7–9 standard.</div>
+          <div><strong>🥇 Gold Milestone:</strong> All 4 capstone 16-mark essays completed and assessed at full examination standard.</div>
         </div>
       </div>
     </div>
@@ -5108,7 +5108,7 @@ function renderBackCover() {
 
       <div style="border: 1.5px solid #0f172a; border-radius: 5px; padding: 8px 12px; background: #fdfdfd;">
         <div style="font-size: 7.8pt; font-weight: 800; color: #0f172a; text-transform: uppercase; margin-bottom: 5px; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px;">
-          💬 Grade 9 Analytical Phrasing Toolkit: Examiner Sentence Starters
+          💬 Analytical Phrasing Toolkit: Examiner Sentence Starters
         </div>
         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; font-size: 6.6pt; line-height: 1.3; color: #334155;">
           <div>
@@ -5381,7 +5381,7 @@ function generateMasterHtml() {
             <option value="spread-17">Spread 17 (pp. 36–37): KT 5.4 Evacuation Chain, RAMC &amp; FANY</option>
             <option value="spread-18">Spread 18 (pp. 38–39): KT 5.5 Medical Advances &amp; Treatments</option>
           </optgroup>
-          <option value="page-40">Page 40: Grade 9 Exam Technique Playbook</option>
+          <option value="page-40">Page 40: Exam Technique Playbook</option>
         </select>
         <div class="topbar-btn-group">
           <button class="topbar-btn" onclick="window.navPrev()" title="Previous Spread (Left Arrow)">&larr; Prev</button>
