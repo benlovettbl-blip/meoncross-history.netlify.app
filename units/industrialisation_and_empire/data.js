@@ -82,11 +82,11 @@ const industrialisation_and_empire = {
           },
           {
             objective:
-              "Analyse how Henry Cort's twin inventions at Funtley (puddling and rolling) solved the Royal Navy's pig iron crisis.",
+              "Analyse how Henry Cort's twin inventions at Funtley (puddling and rolling) solved the Royal Navy's pig iron crisis, and evaluate the surviving physical archaeology at the site.",
             primer:
-              'Examine paragraphs [2.1]–[2.3] and Source B. Emphasize how the reverberatory puddling furnace chemically separated coal sulphur from molten iron, while grooved rollers accelerated production fifteen-fold.',
+              'Examine paragraphs [2.1]–[2.5], Source B, and the Funtley fieldwork dossier. Emphasize how the reverberatory puddling furnace chemically separated coal sulphur from molten iron, while grooved rollers accelerated production fifteen-fold. Guide pupils to analyze the 1784 watercolour alongside the modern River Meon weir and the homeowner’s slag wall.',
             question:
-              'Why was British pig iron previously unusable for Royal Navy warships, and how did the Funtley puddling furnace overcome this chemical flaw?',
+              'How does the physical archaeology of the River Meon weir and puddling slag wall at Funtley demonstrate both the hydraulic power and chemical residue of Cort’s ironworks?',
           },
           {
             objective:
@@ -98,14 +98,14 @@ const industrialisation_and_empire = {
           },
         ],
         source_context:
-          'Source A (Philipp Jakob de Loutherbourg, Coalbrookdale by Night, 1801) captures the dramatic, almost apocalyptic energy transition of the Industrial Revolution as blast furnaces illuminated the Shropshire countryside. Source B illustrates Cort\'s patented reverberatory puddling furnace and grooved rolling mill at Funtley Ironworks near Fareham. Source C records the official 1787 Admiralty trial minutes at Portsmouth Royal Navy Dockyard, proving Funtley iron equaled premium Swedish imports. Source D presents the contemporary dedication engraving of Cort as "The Tubal Cain of our Century" alongside competing historiographical perspectives on naval geography versus technological innovation. **Hinge Question:** How do these primary sources prove that Britain\'s industrial supremacy was forged through a direct partnership between private technological innovation and state naval military demand?',
+          'Source A (Philipp Jakob de Loutherbourg, Coalbrookdale by Night, 1801) captures the dramatic, almost apocalyptic energy transition of the Industrial Revolution as blast furnaces illuminated the Shropshire countryside. Source B illustrates Cort\'s patented reverberatory puddling furnace and grooved rolling mill at Funtley Ironworks near Fareham. The Funtley Fieldwork Dossier pairs the rare 1784 contemporary watercolour of Fontley Iron Mills with modern archaeological photography of the surviving River Meon weir, waterwheel housing, and Hampshire’s only slag wall. Source C records the official 1787 Admiralty trial minutes at Portsmouth Royal Navy Dockyard, proving Funtley iron equaled premium Swedish imports. Source D presents the contemporary dedication engraving of Cort as "The Tubal Cain of our Century" alongside competing historiographical perspectives on naval geography versus technological innovation. **Hinge Question:** How do these primary sources and physical landscape relics prove that Britain\'s industrial supremacy was forged through a direct partnership between private technological innovation and state naval military demand?',
       },
       learning_objectives: {
         overarching:
           'What powered the Industrial Revolution, and how did a Fareham ironmaster change the world?',
         scaffolded: [
           "Explain how coal and Watt's steam engine replaced the domestic system and water power.",
-          "Analyse how Henry Cort's puddling and rolling processes at Funtley transformed brittle pig iron into tough naval wrought iron.",
+          "Analyse how Henry Cort's puddling and rolling processes at Funtley transformed brittle pig iron into tough naval wrought iron, evaluating surviving physical archaeology along the River Meon.",
           "Evaluate the relative importance of Portsmouth Dockyard's location versus technological genius in Cort's success.",
         ],
       },
@@ -169,7 +169,7 @@ const industrialisation_and_empire = {
         },
         {
           title: 'Act 2: The Local Catalyst: Henry Cort at Funtley Ironworks (1775–1784)',
-          text: '<span class="para-ref">[2.1]</span> The crisis was felt nowhere more acutely than along the Hampshire coastline. Just fifteen miles down the Solent lay <strong>Portsmouth Royal Navy Dockyard</strong>—the largest industrial complex on Earth and the beating military heart of the British Empire. To build, refit, and arm wooden ships of the line like <em>HMS Victory</em>, Royal Navy smiths consumed thousands of tons of flawless wrought iron for hull bolts, keel fastenings, mast hoops, and massive multi-ton anchors. If war broke out with France, a foreign iron embargo could paralyze the fleet in harbour.<br><br><span class="para-ref">[2.2]</span> The man who solved this national vulnerability lived right here in our local area. <strong>Henry Cort</strong> was an energetic Royal Navy agent who recognized that whoever could successfully refine British pig iron into naval-grade wrought iron would secure an immense government fortune. In 1775, Cort leased the <strong>Funtley Ironworks</strong>, situated along the River Meon just north of Fareham. Funtley was uniquely positioned: it possessed water power for bellows, lay within easy carting distance of Portsmouth Dockyard, and had direct coastal water access via Fareham Creek for heavy shipping.<br><br><span class="para-ref">[2.3]</span> Between 1783 and 1784, Cort patented two epoch-making breakthroughs at Funtley that fundamentally altered modern metallurgy:<br>1. <strong>The Reverberatory Puddling Furnace (1783):</strong> Cort designed a furnace with an arched roof that bounced heat and flames down onto molten pig iron without allowing the coal itself to touch the metal, preventing sulphur contamination. Workers vigorously stirred ("puddled") the boiling metal with long iron bars through side portals, allowing oxygen to react with and burn away carbon impurities until the iron coagulated into pasty, pure balls of wrought iron.<br>2. <strong>The Grooved Rolling Mill (1784):</strong> Instead of having teams of exhausted blacksmiths slowly hammer the hot iron by hand, Cort fed the glowing blooms directly through pairs of heavy, grooved mechanical rollers. The rollers compressed out remaining liquid slag and squeezed the metal into uniform naval bolts, bars, and railway rails at fifteen times the speed of traditional forge hammers.',
+          text: '<span class="para-ref">[2.1]</span> The crisis was felt nowhere more acutely than along the Hampshire coastline. Just fifteen miles down the Solent lay <strong>Portsmouth Royal Navy Dockyard</strong>—the largest industrial complex on Earth and the beating military heart of the British Empire. To build, refit, and arm wooden ships of the line like <em>HMS Victory</em>, Royal Navy smiths consumed thousands of tons of flawless wrought iron for hull bolts, keel fastenings, mast hoops, and massive multi-ton anchors. If war broke out with France, a foreign iron embargo could paralyze the fleet in harbour.<br><br><span class="para-ref">[2.2]</span> The man who solved this national vulnerability lived right here in our local area. <strong>Henry Cort</strong> was an energetic Royal Navy agent who recognized that whoever could successfully refine British pig iron into naval-grade wrought iron would secure an immense government fortune. In 1775, Cort leased the <strong>Funtley Ironworks</strong>, situated along the River Meon just north of Fareham. Funtley was uniquely positioned: it possessed continuous water power for bellows and rollers, lay within easy carting distance of Portsmouth Dockyard, and had direct coastal water access via Fareham Creek for heavy shipping.<br><br><span class="para-ref">[2.3]</span> Between 1783 and 1784, Cort patented two epoch-making breakthroughs at Funtley that fundamentally altered modern metallurgy:<br>1. <strong>The Reverberatory Puddling Furnace (1783):</strong> Cort designed a furnace with an arched roof that bounced heat and flames down onto molten pig iron without allowing the coal itself to touch the metal, preventing sulphur contamination. Workers vigorously stirred ("puddled") the boiling metal with long iron bars through side portals, allowing oxygen to react with and burn away carbon impurities until the iron coagulated into pasty, pure balls of wrought iron.<br>2. <strong>The Grooved Rolling Mill (1784):</strong> Instead of having teams of exhausted blacksmiths slowly hammer the hot iron by hand, Cort fed the glowing blooms directly through pairs of heavy, grooved mechanical rollers. The rollers compressed out remaining liquid slag and squeezed the metal into uniform naval bolts, bars, and railway rails at fifteen times the speed of traditional forge hammers.<br><br><span class="para-ref">[2.4]</span> <strong>Fieldwork Archaeology: The Surviving Hydraulic Footprint:</strong> Although the ironworks were dismantled following Cort\'s financial ruin, the physical anatomy of the 18th-century forge remains etched into the landscape along the River Meon at Funtley. When historians compare the framed 1784 contemporary watercolour of Fontley Iron Mills against modern fieldwork photographs, the site\'s industrial layout becomes clear. The 1784 painting depicts an active, smoking forge: dense black plumes rise from the reverberatory puddling furnace chimney, workers maneuver glowing metal, and water surges into the mill race. Today, the River Meon still plunges over the surviving 18th-century stone weir and sluice gate that directed hydraulic energy into the works. Directly beside the waterfall, the curved circular brick housing marks the exact position of Cort\'s massive waterwheel, which supplied the horsepower needed to drive his patented grooved rolling mill.<br><br><span class="para-ref">[2.5]</span> <strong>Forensic Metallurgy: Puddling Slag & Hampshire\'s Only Slag Wall:</strong> The chemical reality of Cort\'s puddling process left an indestructible archaeological fingerprint: <strong>iron slag</strong> (clinker). As molten iron was stirred and squeezed through rollers, glassy silicate impurities were separated and discarded in massive mounds around the forge. Over two centuries later, the owner of the surviving mill property excavated tons of this heavy, dark, pitted clinker from the soil and built a dry-stone perimeter wall bordering the lawn—creating the <strong>only iron slag wall in Hampshire</strong>. Nearby stands <strong>Fontley House</strong>, the Georgian red-brick residence of Cort\'s business partner Samuel Jellicoe. Crowning its roofline are authentic 18th-century chimney pots known as <strong>Fareham "Tallboys"</strong>, crafted from the region\'s famous vibrant red terracotta clay with distinctive crimped white-slip collars. Together, these landscape relics prove how local Hampshire geography, natural hydraulics, and innovative metallurgy combined to create a world-changing industrial powerhouse.',
           image: '/images/funtley_ironworks.jpg',
           image_alt:
             "Cross-section of Henry Cort's Reverberatory Puddling Furnace at Funtley Ironworks",
@@ -190,6 +190,21 @@ const industrialisation_and_empire = {
               ],
               model_answer:
                 'Henry Cort transformed iron refining from a slow, artisanal craft into an industrial science by solving both the chemical and mechanical bottlenecks of iron production [2.3]. Chemically, his reverberatory puddling furnace used an arched roof to reflect intense heat down onto molten iron, burning away brittle carbon impurities while physically separating the metal from raw coal sulphur (Source B). Mechanically, Cort eliminated slow manual blacksmith hammering by passing the glowing iron blooms through powered grooved rolling mills. This squeezed out toxic slag and formed standardized bars and naval bolts fifteen times faster than traditional methods. Consequently, Funtley proved that Britain could mass-produce pure, uniform wrought iron at unprecedented industrial speed using domestic pit coal.',
+            },
+            {
+              type: 'archaeological_enquiry',
+              question:
+                'Fieldwork & Archaeological Analysis: Compare the 1784 watercolour of Fontley Iron Mills with modern fieldwork photographs of the River Meon weir and iron slag wall. Using paragraphs [2.4] and [2.5], explain what physical evidence proves that Funtley was once an intensive heavy industrial site, and evaluate how Cort harnessed both natural hydraulics and chemical refining to produce naval iron.',
+              starter:
+                'Physical and visual evidence confirms that Funtley was an intensive heavy industrial complex. As shown in the 1784 watercolour and surviving river landscape [2.4], Cort harnessed natural hydraulics by...',
+              causal_connectives: [
+                'Furthermore, archaeological evidence reveals',
+                'By diverting water over the masonry weir',
+                'This physical residue proves that',
+                'Consequently',
+              ],
+              model_answer:
+                'Physical and visual evidence provides conclusive proof that Funtley was an intensive heavy industrial site. The 1784 watercolour depicts a bustling 18th-century industrial complex with smoke pouring from reverberatory puddling chimneys and water rushing through a mill race to power the forge [2.4]. This active layout is corroborated by modern fieldwork along the River Meon, where the surviving masonry weir and circular brick waterwheel housing reveal exactly where Cort harnessed the natural kinetic flow of water to drive his heavy grooved rollers. Furthermore, forensic archaeological evidence survives in the form of dense, glassy iron puddling slag (clinker) excavated from the grounds [2.5]. Squeezed out of the molten metal during refining, these heavy residues were used by the property owner to construct Hampshire’s only iron slag wall. Combined with the Fareham "Tallboy" chimney pots atop Samuel Jellicoe’s Fontley House, these physical artifacts demonstrate that Cort successfully wedded Hampshire’s natural hydraulic energy to revolutionary chemical metallurgy to supply the Royal Navy.',
             },
           ],
         },
@@ -312,6 +327,12 @@ const industrialisation_and_empire = {
       ],
       video: [
         {
+          url: '/images/funtley/funtley_weir_hydraulic_flow.mp4',
+          title:
+            'Funtley Ironworks: River Meon Hydraulic Weir & Mill Race Flow (Fieldwork Footage)',
+          duration: '0 mins 6 secs',
+        },
+        {
           url: 'https://era.org.uk/streaming-service-resource/bbc-two-black-and-british-a-forgotten-history-moral-mission-mississippi-cotton/',
           title: 'Black and British: Moral Mission (Mississippi Cotton)',
           duration: '10 mins 15 secs',
@@ -357,6 +378,21 @@ const industrialisation_and_empire = {
           term: 'Portsmouth Dockyard',
           definition:
             "The royal naval complex on the Solent that served as the world's largest industrial site and primary customer for Cort's iron.",
+        },
+        {
+          term: 'Iron Slag',
+          definition:
+            'The heavy, glassy silicate waste residue squeezed out of molten iron during puddling and rolling.',
+        },
+        {
+          term: 'Mill Race & Weir',
+          definition:
+            'A channel and masonry barrier designed to direct fast-flowing river water onto a waterwheel to generate mechanical horsepower.',
+        },
+        {
+          term: 'Fareham Tallboys',
+          definition:
+            'Distinctive tall terracotta chimney pots crafted from local Fareham Red clay featuring a crimped white slip collar.',
         },
       ],
       exam_practice: {
