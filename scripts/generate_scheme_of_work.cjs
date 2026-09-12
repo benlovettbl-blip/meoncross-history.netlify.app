@@ -601,7 +601,9 @@ function generateSOWHTML(db, yearGroup, unitIds) {
       if (['cold_war', 'second_world_war', 'the_shoah'].includes(uid)) {
         continue; // Do not parse their data.js files
       }
-      const dataPath = path.join(publicDir, 'units', uid, 'data.js');
+      const rootDataPath = path.join(__dirname, '..', 'units', uid, 'data.js');
+      const pubDataPath = path.join(publicDir, 'units', uid, 'data.js');
+      const dataPath = fs.existsSync(rootDataPath) ? rootDataPath : pubDataPath;
       if (fs.existsSync(dataPath)) {
         try {
           // Dynamically import the ES module

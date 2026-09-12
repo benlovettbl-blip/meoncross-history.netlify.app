@@ -65,23 +65,14 @@ export async function renderCurriculumMap() {
              onmouseout="this.style.opacity='1'; this.style.transform='translateY(0)'">
             <i class="fa-solid fa-book-open"></i> Full SOW (PDF)
           </a>
-          <a href="/pdfs/history_marking_and_feedback_policy.pdf" target="_blank"
-             style="display:inline-flex; align-items:center; gap:8px; padding:9px 16px;
-                    background:#334155; color:#fff; border-radius:8px; text-decoration:none;
-                    font-weight:600; font-size:0.85rem; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition:all 0.2s;"
-             onmouseover="this.style.opacity='0.9'; this.style.transform='translateY(-1px)'"
-             onmouseout="this.style.opacity='1'; this.style.transform='translateY(0)'"
-             title="Version 1: Comprehensive 6-page integrated policy with embedded figures">
-            <i class="fa-solid fa-file-shield"></i> Marking Policy (Full)
-          </a>
           <a href="/pdfs/history_marking_and_feedback_policy_v2.pdf" target="_blank"
              style="display:inline-flex; align-items:center; gap:8px; padding:9px 16px;
                     background:#1e293b; color:#fff; border-radius:8px; text-decoration:none;
                     font-weight:600; font-size:0.85rem; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition:all 0.2s; border:1px solid #475569;"
              onmouseover="this.style.opacity='0.9'; this.style.transform='translateY(-1px)'"
              onmouseout="this.style.opacity='1'; this.style.transform='translateY(0)'"
-             title="Version 2: Concise core policy with visual evidence appendix">
-            <i class="fa-solid fa-file-lines"></i> Marking Policy (Core + Appendix)
+             title="Department Policy: Core principles with visual marking evidence and standards appendix">
+            <i class="fa-solid fa-file-circle-check"></i> Marking &amp; Feedback Policy (with Visual Appendix)
           </a>
         </div>
       </div>
@@ -205,16 +196,15 @@ async function renderSequenceView() {
         ${isRevision ? 'opacity:0.8; background: #f1f5f9;' : ''}
       `;
 
-      // Make KS3 unit titles clickable to navigate to that unit
-      const titleLink =
-        !isRevision && !isGCSE
-          ? `<a href="#" onclick="event.preventDefault(); window.switchView('lessons','${unit.uid}');" 
+      // Make unit titles clickable to navigate to that unit
+      const titleLink = !isRevision
+        ? `<a href="#" onclick="event.preventDefault(); window.switchView('lessons','${unit.uid}');" 
              style="color:${colours.bg}; text-decoration:none; font-weight:700; font-size:0.95rem; 
                     font-family:'Playfair Display',serif; line-height:1.3; display:block;
                     transition:color 0.2s;" 
              onmouseover="this.style.color='var(--primary)'" 
              onmouseout="this.style.color='${colours.bg}'">${unit.shortTitle}</a>`
-          : `<span style="color:${colours.bg}; font-weight:700; font-size:0.95rem; font-family:'Playfair Display',serif; line-height:1.3;">${unit.shortTitle}</span>`;
+        : `<span style="color:${colours.bg}; font-weight:700; font-size:0.95rem; font-family:'Playfair Display',serif; line-height:1.3;">${unit.shortTitle}</span>`;
 
       card.innerHTML = `
         <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
