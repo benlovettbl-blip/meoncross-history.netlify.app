@@ -43,7 +43,7 @@ Act as an experienced app builder and an experienced history teacher. Whenever c
 Whenever generating or modifying the `generate_worksheets.js` Node script for printed A4 workbooks, you MUST ensure that the vocabulary exercises dynamically rotate between three distinct pedagogical styles (e.g., based on the lesson index: `lessonIndex % 3`):
 1. **Contextual Cloze:** A fill-in-the-blank summary using the words.
 2. **Vocabulary Mapping:** A task asking the student to write a historically accurate sentence connecting two terms from a provided glossary box.
-3. **Mini-Frayer Model:** A grid for 1-2 words requiring a definition, historical example, and non-example/sketch.
+3. **Dual-Term Analytical Distinction:** A task asking the student to explain the crucial historical difference between two easily confused terms (e.g., *Wrought Iron vs. Pig Iron*, *Nationalism vs. Imperialism*). DO NOT use Frayer models.
 This prevents pupil fatigue and ensures diverse cognitive engagement.
 
 ## Printed Workbook Timeline Tasks

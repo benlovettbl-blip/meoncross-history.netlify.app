@@ -534,7 +534,7 @@ const htmlContent = `<!DOCTYPE html>
         <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 5px 8px; border-radius: 4px; font-size: 7.8pt; margin-bottom: 6px; line-height: 1.35;">
           <div><strong>1. Contextual Cloze:</strong> High-yield retrieval summaries targeting key terms.</div>
           <div><strong>2. Vocabulary Mapping:</strong> Synthesizing two terms into a causal sentence.</div>
-          <div><strong>3. Mini-Frayer Models:</strong> Definition, historical example, and non-example grid.</div>
+          <div><strong>3. Dual-Term Analytical Distinction:</strong> Explaining critical differences between confusable concepts.</div>
         </div>
 
         <div class="sub-heading">Domino Flowchart Chronology</div>

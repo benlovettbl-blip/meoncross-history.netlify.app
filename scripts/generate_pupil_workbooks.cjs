@@ -2231,6 +2231,67 @@ allDirs.forEach((unitId) => {
                   _nbHtml += `</div>`;
                   return;
                 }
+                if (
+                  task.type === 'significance_diamond' ||
+                  task.type === 'priority_matrix' ||
+                  task.type === 'factor_hierarchy'
+                ) {
+                  let _t = processTaskTextWithTariff(
+                    task.text || task.question || task.instruction || task.title || '',
+                  );
+                  _nbHtml += `<div class="task-box" style="margin-bottom: 12px; border: 1.5px solid #059669; border-radius: 6px; padding: 8px 10px; background: #ecfdf5; page-break-inside: avoid;">`;
+                  _nbHtml += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">`;
+                  _nbHtml += `<strong style="color: #065f46; font-size: 8.5pt;">Q${globalQNum++}. ${_t.cleanText}</strong>`;
+                  _nbHtml += `<span style="font-size: 6.8pt; font-weight: bold; background: #059669; color: #ffffff; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Priority Diamond</span>`;
+                  _nbHtml += `</div>`;
+                  if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
+                  if (task.instruction && task.instruction !== task.text) {
+                    _nbHtml += `<p style="font-size: 7.3pt; color: #047857; margin: 0 0 5px 0; font-style: italic;">${task.instruction}</p>`;
+                  }
+                  if (task.factors && task.factors.length > 0) {
+                    _nbHtml += `<div style="display: flex; gap: 8px; margin: 5px 0; align-items: stretch;">`;
+                    _nbHtml += `<div style="flex: 1.2; display: flex; flex-direction: column; gap: 3px;">`;
+                    task.factors.forEach((f, fIdx) => {
+                      const tag = String.fromCharCode(65 + fIdx);
+                      _nbHtml += `
+                        <div style="background: #ffffff; border: 1px solid #a7f3d0; border-radius: 3px; padding: 3px 6px; display: flex; align-items: center; gap: 5px;">
+                          <span style="background: #059669; color: #ffffff; font-weight: bold; font-size: 6.8pt; width: 14px; height: 14px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;">${tag}</span>
+                          <span style="font-size: 7pt; color: #065f46; font-weight: 600;">${typeof f === 'string' ? f : f.title || f.name}</span>
+                        </div>
+                      `;
+                    });
+                    _nbHtml += `</div>`;
+                    _nbHtml += `
+                      <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; background: #ffffff; border: 1px solid #6ee7b7; border-radius: 4px; padding: 4px;">
+                        <div style="text-align: center;">
+                          <div style="font-size: 6pt; font-weight: bold; color: #047857; text-transform: uppercase;">Top Catalyst</div>
+                          <div style="width: 50px; height: 18px; border: 1.5px solid #059669; background: #d1fae5; border-radius: 3px; margin: 0 auto; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 7.5pt; color: #065f46;">#1</div>
+                        </div>
+                        <div style="display: flex; gap: 6px; justify-content: center;">
+                          <div style="text-align: center;">
+                            <div style="font-size: 5.8pt; color: #047857;">Contributing</div>
+                            <div style="width: 45px; height: 16px; border: 1px dashed #059669; background: #f0fdf4; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 7pt; color: #047857;">#2</div>
+                          </div>
+                          <div style="text-align: center;">
+                            <div style="font-size: 5.8pt; color: #047857;">Contributing</div>
+                            <div style="width: 45px; height: 16px; border: 1px dashed #059669; background: #f0fdf4; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 7pt; color: #047857;">#3</div>
+                          </div>
+                        </div>
+                        <div style="text-align: center;">
+                          <div style="font-size: 5.8pt; color: #6b7280;">Minor</div>
+                          <div style="width: 45px; height: 16px; border: 1px dashed #9ca3af; background: #f9fafb; border-radius: 3px; margin: 0 auto; display: flex; align-items: center; justify-content: center; font-size: 7pt; color: #6b7280;">#4</div>
+                        </div>
+                      </div>
+                    `;
+                    _nbHtml += `</div>`;
+                  }
+                  if (task.justification_prompt || task.starter) {
+                    _nbHtml += `<div style="font-size: 7pt; color: #047857; margin: 3px 0 2px 0;"><strong>Justification:</strong> ${task.justification_prompt || 'Explain in one sentence why your #1 choice was the most decisive factor:'}</div>`;
+                    _nbHtml += `<div style="min-height: 20px; background: #ffffff; border: 1px dashed #6ee7b7; border-radius: 3px; padding: 2px 4px; font-size: 7pt; color: #6b7280;">${task.starter || ''}</div>`;
+                  }
+                  _nbHtml += `</div>`;
+                  return;
+                }
                 if (task.type === 'drawing' || task.type === 'draw') {
                   if (
                     unitId === 'medieval_england' &&

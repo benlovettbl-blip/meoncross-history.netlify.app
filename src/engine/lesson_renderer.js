@@ -2714,6 +2714,69 @@ export function renderLesson(lesson) {
             `;
             return;
           }
+          if (
+            task.type === 'significance_diamond' ||
+            task.type === 'priority_matrix' ||
+            task.type === 'factor_hierarchy'
+          ) {
+            extrasHtml += `
+              <div class="task-box significance-diamond-interactive" style="margin-bottom: 25px; background: #ecfdf5; padding: 20px; border-radius: 10px; border: 2px solid #059669; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.1);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #a7f3d0; padding-bottom: 10px;">
+                  <h4 style="margin: 0; color: #065f46; font-size: 1.15rem;"><i class="fa-solid fa-gem" style="color: #059669; margin-right: 8px;"></i> ${task.text || task.question || 'The Significance Diamond: Prioritising Catalysts'}</h4>
+                  <span style="background: #059669; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Priority Diamond</span>
+                </div>
+                ${task.instruction ? `<p style="font-size: 0.95rem; color: #047857; font-style: italic; margin-top: 0; margin-bottom: 15px;">${task.instruction}</p>` : ''}
+                ${
+                  task.factors && task.factors.length > 0
+                    ? `
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                    <div style="background: #ffffff; border: 1.5px solid #a7f3d0; border-radius: 8px; padding: 12px;">
+                      <strong style="color: #065f46; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 8px;">Historical Factors Bank:</strong>
+                      <div style="display: flex; flex-direction: column; gap: 6px;">
+                        ${task.factors
+                          .map(
+                            (f, fIdx) => `
+                          <div style="background: #f0fdf4; border: 1px solid #6ee7b7; border-radius: 6px; padding: 8px 10px; display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: #065f46;">
+                            <span style="background: #059669; color: #ffffff; font-weight: bold; font-size: 0.75rem; width: 20px; height: 20px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;">${String.fromCharCode(65 + fIdx)}</span>
+                            <span>${typeof f === 'string' ? f : f.title || f.name}</span>
+                          </div>
+                        `,
+                          )
+                          .join('')}
+                      </div>
+                    </div>
+                    <div style="background: #ffffff; border: 1.5px solid #a7f3d0; border-radius: 8px; padding: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;">
+                      <div style="text-align: center; width: 100%;">
+                        <div style="font-size: 0.72rem; font-weight: 700; color: #047857; text-transform: uppercase;">Top Catalyst (#1 Decisive)</div>
+                        <div style="max-width: 180px; margin: 4px auto 0 auto; height: 32px; border: 2px solid #059669; background: #d1fae5; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #065f46; font-size: 0.88rem;">#1 (Slot Factor)</div>
+                      </div>
+                      <div style="display: flex; gap: 10px; width: 100%; justify-content: center;">
+                        <div style="text-align: center; flex: 1;">
+                          <div style="font-size: 0.7rem; color: #047857;">Contributing Factor</div>
+                          <div style="height: 30px; border: 1.5px dashed #059669; background: #f0fdf4; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.82rem; color: #047857;">#2</div>
+                        </div>
+                        <div style="text-align: center; flex: 1;">
+                          <div style="font-size: 0.7rem; color: #047857;">Contributing Factor</div>
+                          <div style="height: 30px; border: 1.5px dashed #059669; background: #f0fdf4; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.82rem; color: #047857;">#3</div>
+                        </div>
+                      </div>
+                      <div style="text-align: center; width: 100%;">
+                        <div style="font-size: 0.7rem; color: #64748b;">Marginal / Secondary Factor</div>
+                        <div style="max-width: 180px; margin: 4px auto 0 auto; height: 30px; border: 1.5px dashed #94a3b8; background: #f8fafc; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.82rem; color: #64748b;">#4</div>
+                      </div>
+                    </div>
+                  </div>
+                `
+                    : ''
+                }
+                <div style="margin-top: 10px;">
+                  <label style="display: block; font-size: 0.9rem; font-weight: 700; color: #065f46; margin-bottom: 6px;">Evaluative Justification: ${task.justification_prompt || 'Explain why your #1 factor outweighs the others:'}</label>
+                  <textarea style="width: 100%; box-sizing: border-box; min-height: 55px; padding: 8px; border: 1px solid #a7f3d0; border-radius: 6px; font-size: 0.9rem; font-family: inherit; resize: vertical;" placeholder="${task.starter || 'Factor A was the decisive catalyst because...'}"></textarea>
+                </div>
+              </div>
+            `;
+            return;
+          }
           const qPrefix = task.qNum ? `Q${task.qNum}. ` : '';
           const ansId = `ans-emb-${index}-${tIdx}`;
           const starterText = task.starter || task.sentence_starter;
