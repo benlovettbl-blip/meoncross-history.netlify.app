@@ -81,10 +81,10 @@ export default {
           {
             question: 'Which of these was a long-term cause of WWI?',
             options: [
-              'The Schlieffen Plan failing',
               'The Alliance System',
-              'The assassination of Archduke Franz Ferdinand',
               'The Treaty of Versailles',
+              'The assassination of Archduke Franz Ferdinand',
+              'The Schlieffen Plan failing',
             ],
             answer: 2,
             explanation:
@@ -140,8 +140,8 @@ export default {
           question:
             'Which local Hampshire regiment battalions were heavily recruited from the Stubbington and Portsmouth areas in 1914?',
           options: [
-            'The 14th and 15th Battalions of the Hampshire Regiment (The Pompey Pals).',
             'The Stubbington Guards.',
+            'The 14th and 15th Battalions of the Hampshire Regiment (The Pompey Pals).',
             "Kitchener's Fareham Conscripts.",
           ],
           answer: 2,
@@ -151,8 +151,8 @@ export default {
             'Which statement best explains why white feathers were such a powerful recruitment tool?',
           options: [
             'They weaponized social shame and humiliation within close-knit local communities.',
-            'They were official government warnings that a man was about to be arrested.',
             'They carried legal force and resulted in a heavy fine.',
+            'They were official government warnings that a man was about to be arrested.',
           ],
           answer: 0,
         },
@@ -161,8 +161,8 @@ export default {
             "Why do modern historians like Gary Sheffield argue that many working-class men joined the army for 'pragmatic' reasons?",
           options: [
             'They were promised free houses in London after the war ended.',
-            'They were tricked by romanticized stories of quick, glorious victories.',
             'The army offered guaranteed daily pay, regular meals, and clothing during a time of poverty.',
+            'They were tricked by romanticized stories of quick, glorious victories.',
           ],
           answer: 0,
         },
@@ -170,9 +170,9 @@ export default {
           question:
             "According to historian Catriona Pennell, what was a key 'moral' reason for British enlistment in 1914?",
           options: [
-            'The desire to protect international law and civilization after Germany invaded neutral Belgium.',
-            'The fear of being fired by an employer who demanded they join.',
             'The need to escape the boring, repetitive work of the textile mills.',
+            'The fear of being fired by an employer who demanded they join.',
+            'The desire to protect international law and civilization after Germany invaded neutral Belgium.',
           ],
           answer: 1,
         },
@@ -336,19 +336,19 @@ export default {
         {
           q: 'Which Serbian nationalist group assassinated Archduke Franz Ferdinand in Sarajevo?',
           a: 'The Black Hand',
-          options: ['The Balkan Brotherhood', 'The Black Hand', 'The White Rose', 'The Red Baron'],
+          options: ['The Red Baron', 'The Black Hand', 'The White Rose', 'The Balkan Brotherhood'],
         },
         {
           q: 'Which European empire declared war on Serbia first during the July Days?',
           a: 'Austria-Hungary',
-          options: ['Great Britain', 'Russia', 'Germany', 'Austria-Hungary'],
+          options: ['Germany', 'Russia', 'Great Britain', 'Austria-Hungary'],
         },
         {
           q: 'Who was the British Secretary of State for War who launched a massive recruitment campaign in 1914?',
           a: 'Lord Horatio Kitchener',
           options: [
-            'Douglas Haig',
             'David Lloyd George',
+            'Douglas Haig',
             'Lord Horatio Kitchener',
             'Winston Churchill',
           ],
@@ -632,34 +632,34 @@ export default {
           a: 'German soldiers survived safely inside deep, concrete-reinforced underground bunkers.',
           options: [
             'The British artillery fired in the wrong direction due to poor maps.',
-            'The British simply ran out of ammunition.',
             'The German army used giant electric magnets to deflect the shells.',
+            'The British simply ran out of ammunition.',
             'German soldiers survived safely inside deep, concrete-reinforced underground bunkers.',
           ],
         },
         {
           q: 'On which date did the infamous first day of the Battle of the Somme occur?',
           a: 'July 1, 1916',
-          options: ['July 1, 1916', 'November 11, 1918', 'June 28, 1914', 'August 4, 1914'],
+          options: ['July 1, 1916', 'June 28, 1914', 'August 4, 1914', 'November 11, 1918'],
         },
         {
           q: 'What name is given to the popular historical viewpoint that brave British troops were commanded by foolish, incompetent generals?',
           a: 'Lions led by Donkeys',
           options: [
-            'The Kitchener Stampede',
+            'The Silent Front',
             'The Grand Illusion',
             'Lions led by Donkeys',
-            'The Silent Front',
+            'The Kitchener Stampede',
           ],
         },
         {
           q: 'How did modern "revisionist" historians change the historical debate surrounding General Douglas Haig?',
           a: 'They argued he was a determined leader who successfully learned how to win an unprecedented modern war.',
           options: [
-            'They proved that he never actually visited the Western Front during the war.',
-            'They argued he was a determined leader who successfully learned how to win an unprecedented modern war.',
-            'They claimed he deliberately tried to lose the war to help France.',
             'They discovered that he was secretly a double agent working for the German Empire.',
+            'They argued he was a determined leader who successfully learned how to win an unprecedented modern war.',
+            'They proved that he never actually visited the Western Front during the war.',
+            'They claimed he deliberately tried to lose the war to help France.',
           ],
         },
       ],
@@ -973,16 +973,16 @@ export default {
         {
           q: 'Approximately how many men from the British Empire and its dominions served in the First World War?',
           a: '3 million',
-          options: ['3 million', '100,000', '500,000', '10 million'],
+          options: ['3 million', '10 million', '100,000', '500,000'],
         },
         {
           q: 'Which imperial army sent over 1.5 million men to fight in the war?',
           a: 'The British Indian Army',
           options: [
-            'The Canadian Army',
-            'The South African Defence Force',
-            'The British Indian Army',
             'The Australian Imperial Force',
+            'The Canadian Army',
+            'The British Indian Army',
+            'The South African Defence Force',
           ],
         },
         {
@@ -999,10 +999,10 @@ export default {
           q: 'Despite their massive sacrifices, how were imperial troops often treated in the official post-war victory celebrations?',
           a: 'They were largely forgotten and excluded from events like the London Victory Parade.',
           options: [
-            'They were granted immediate independence for their home countries.',
-            'They were given the highest honors and led the parades.',
-            'They were largely forgotten and excluded from events like the London Victory Parade.',
             'They were all given British citizenship and land.',
+            'They were granted immediate independence for their home countries.',
+            'They were largely forgotten and excluded from events like the London Victory Parade.',
+            'They were given the highest honors and led the parades.',
           ],
         },
       ],
@@ -1255,7 +1255,7 @@ export default {
         {
           q: 'What term describes a conflict where the boundary between soldiers and civilians vanishes?',
           a: 'Total War',
-          options: ['Total War', 'Absolute War', 'Unlimited War', 'Civilian Warfare'],
+          options: ['Total War', 'Civilian Warfare', 'Absolute War', 'Unlimited War'],
         },
         {
           q: 'What law gave the British government sweeping emergency powers in August 1914?',
@@ -1263,14 +1263,14 @@ export default {
           options: [
             'The Conscription Act',
             'The Defense of the Realm Act (DORA)',
-            'The Civilian Control Order',
             'The Emergency Powers Act',
+            'The Civilian Control Order',
           ],
         },
         {
           q: 'What nickname was given to women who worked in munitions factories and suffered from yellow skin due to toxic TNT?',
           a: 'Canary Girls',
-          options: ['TNT Ladies', 'Canary Girls', 'Explosive Girls', 'Yellow Women'],
+          options: ['Explosive Girls', 'Canary Girls', 'Yellow Women', 'TNT Ladies'],
         },
         {
           q: 'What term describes men who refused to fight in the war on moral, political, or religious grounds?',
@@ -1278,17 +1278,17 @@ export default {
           options: [
             'Conscientious Objectors',
             'Pacifist Resisters',
-            'Cowardly Dodgers',
             'Anti-War Rebels',
+            'Cowardly Dodgers',
           ],
         },
         {
           q: 'How did the British government respond to the severe food shortages caused by German U-boat attacks in 1918?',
           a: 'They introduced rationing to ensure fair distribution of food.',
           options: [
-            'They surrendered to Germany.',
-            'They forced citizens to grow their own food or face prison.',
             'They imported all their food from America.',
+            'They forced citizens to grow their own food or face prison.',
+            'They surrendered to Germany.',
             'They introduced rationing to ensure fair distribution of food.',
           ],
         },
@@ -1517,7 +1517,7 @@ export default {
         {
           q: 'What date was the Treaty of Versailles officially signed by Allied and German leaders?',
           a: 'June 28, 1919',
-          options: ['January 1, 1914', 'September 1, 1939', 'June 28, 1919', 'November 11, 1918'],
+          options: ['November 11, 1918', 'January 1, 1914', 'June 28, 1919', 'September 1, 1939'],
         },
         {
           q: "Which US President proposed the 'Fourteen Points' and wanted to create a League of Nations?",
@@ -1533,9 +1533,9 @@ export default {
           q: 'What was the name of Article 231 of the Treaty of Versailles?',
           a: 'The War Guilt Clause',
           options: [
-            'The Reparation Standard',
             'The Armistice Agreement',
             'The Demilitarization Act',
+            'The Reparation Standard',
             'The War Guilt Clause',
           ],
         },
@@ -1544,19 +1544,19 @@ export default {
           a: 'Because Germany remained intact as a wealthy state, and the terms were lighter than what Germany had forced on Russia.',
           options: [
             'Because Germany remained intact as a wealthy state, and the terms were lighter than what Germany had forced on Russia.',
-            'Because Germany was allowed to keep a massive 1 million man army.',
             "Because the Allies forgave Germany's debt in 1920.",
             'Because Britain and France gave Germany new colonies in Africa to help them recover.',
+            'Because Germany was allowed to keep a massive 1 million man army.',
           ],
         },
         {
           q: "Why did the German people call the Treaty of Versailles a 'Diktat'?",
           a: 'They were completely excluded from the peace talks and forced to sign it.',
           options: [
-            "The entire treaty was written in a secret code they couldn't read.",
+            'It was dictated directly by Adolf Hitler.',
             'It was signed in a railway carriage in the middle of a German forest.',
             'They were completely excluded from the peace talks and forced to sign it.',
-            'It was dictated directly by Adolf Hitler.',
+            "The entire treaty was written in a secret code they couldn't read.",
           ],
         },
       ],
@@ -1808,26 +1808,26 @@ export default {
         {
           q: 'In what year was the Stubbington War Memorial erected?',
           a: '1922',
-          options: ['1939', '1922', '1918', '1914'],
+          options: ['1914', '1922', '1939', '1918'],
         },
         {
           q: 'What physical structure does the Stubbington War Memorial cover?',
           a: 'The local village pump.',
           options: [
             'The local village pump.',
-            'An old artillery gun brought back from France.',
             'The village post office.',
             'The entrance to the local church.',
+            'An old artillery gun brought back from France.',
           ],
         },
         {
           q: 'Who proposed and designed the memorial in Stubbington?',
           a: 'The mother of the only woman commemorated among the fallen.',
           options: [
-            'A famous London architect.',
             'The Mayor of Fareham.',
-            'The mother of the only woman commemorated among the fallen.',
             'Lord Kitchener.',
+            'The mother of the only woman commemorated among the fallen.',
+            'A famous London architect.',
           ],
         },
         {
@@ -1838,7 +1838,7 @@ export default {
         {
           q: 'What historical term describes the study of a specific family, like the Lowry brothers, to understand a larger global event?',
           a: 'Micro-history',
-          options: ['Macro-economics', 'Historiography', 'Micro-history', 'Demographics'],
+          options: ['Historiography', 'Macro-economics', 'Micro-history', 'Demographics'],
         },
       ],
       video: [
@@ -1989,12 +1989,12 @@ export default {
         {
           q: 'Which country was NOT part of the Triple Entente?',
           a: 'Germany',
-          options: ['Russia', 'France', 'Britain', 'Germany'],
+          options: ['Britain', 'France', 'Russia', 'Germany'],
         },
         {
           q: 'What condition was caused by standing in cold, flooded trenches?',
           a: 'Trench Foot',
-          options: ['Shell Shock', 'Trench Foot', 'Cholera', 'Spanish Flu'],
+          options: ['Shell Shock', 'Trench Foot', 'Spanish Flu', 'Cholera'],
         },
         {
           q: 'How many men from the British Empire and Dominions served in the war?',
@@ -2004,7 +2004,7 @@ export default {
         {
           q: 'What was the nickname given to women working with TNT in factories?',
           a: 'Canary Girls',
-          options: ['Doughboys', 'Canary Girls', 'Tommies', 'Land Girls'],
+          options: ['Tommies', 'Canary Girls', 'Doughboys', 'Land Girls'],
         },
       ],
       teacher_notes: {
@@ -2063,9 +2063,9 @@ export default {
         a: 'Because women were paid less than men, fired immediately after the war ended, and the youngest factory workers were denied the vote.',
         options: [
           'Because women were paid less than men, fired immediately after the war ended, and the youngest factory workers were denied the vote.',
+          'Because women refused to leave their homes and do any industrial work.',
           'Because the government made it illegal for women to earn their own money.',
           'Because women were not allowed to join the military.',
-          'Because women refused to leave their homes and do any industrial work.',
         ],
       },
       {
@@ -2082,9 +2082,9 @@ export default {
         q: 'How did the government treat Conscientious Objectors who refused to do any form of military work?',
         a: 'They were sent to harsh labor prisons and stripped of their voting rights.',
         options: [
-          'They were exempted from all taxes and given free houses.',
-          'They were sent to harsh labor prisons and stripped of their voting rights.',
           'They were forced to join the royal court as political advisors.',
+          'They were sent to harsh labor prisons and stripped of their voting rights.',
+          'They were exempted from all taxes and given free houses.',
           'They were exiled to Australia.',
         ],
       },

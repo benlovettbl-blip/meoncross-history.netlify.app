@@ -394,17 +394,17 @@ export default {
       quiz: [
         {
           question: 'How old was Elizabeth when she ascended to the throne in 1558?',
-          options: ['25', '19', '30', '21'],
+          options: ['25', '19', '21', '30'],
           answer: 0,
         },
         {
           question:
             "What phrase describes the rigid social hierarchy of Elizabethan England where everyone 'knew their place'?",
           options: [
-            'The Feudal System',
             'The Divine Right',
-            'The Great Chain of Being',
             'The Patronage System',
+            'The Great Chain of Being',
+            'The Feudal System',
           ],
           answer: 2,
         },
@@ -416,17 +416,17 @@ export default {
         {
           question:
             'What system did the monarch use to maintain control by rewarding loyalty with land, titles, and monopolies?',
-          options: ['Feudalism', 'Divine Right', 'The Privy Council', 'Patronage'],
+          options: ['The Privy Council', 'Divine Right', 'Feudalism', 'Patronage'],
           answer: 3,
         },
         {
           question: 'Roughly how many trusted nobles and advisers made up the Privy Council?',
-          options: ['50', '100', '19', '9'],
+          options: ['9', '100', '19', '50'],
           answer: 2,
         },
         {
           question: "Who was Elizabeth's most important minister and Secretary of State?",
-          options: ['William Cecil', 'Robert Dudley', 'Thomas Cromwell', 'Francis Walsingham'],
+          options: ['William Cecil', 'Thomas Cromwell', 'Francis Walsingham', 'Robert Dudley'],
           answer: 0,
         },
         {
@@ -447,48 +447,48 @@ export default {
         {
           question:
             'What term was used to describe a female ruler with actual power, rather than just a figurehead?',
-          options: ['Queen Mother', 'Queen Consort', 'Empress', 'Queen Regnant'],
+          options: ['Queen Consort', 'Queen Mother', 'Empress', 'Queen Regnant'],
           answer: 3,
         },
         {
           question: 'Why was Elizabeth reluctant to marry?',
           options: [
             'Her husband would be expected to govern the country, reducing her power',
-            'Parliament forbade her from marrying a foreigner',
             'She was already secretly married to William Cecil',
+            'Parliament forbade her from marrying a foreigner',
             'There were no suitable Catholic princes',
           ],
           answer: 0,
         },
         {
           question: 'How much debt did Elizabeth inherit in 1558?',
-          options: ['£100,000', '£300,000', '£200,000', '£500,000'],
+          options: ['£100,000', '£300,000', '£500,000', '£200,000'],
           answer: 1,
         },
         {
           question: "What was the Crown's annual revenue when Elizabeth became queen?",
-          options: ['£500,000', '£150,000', '£286,667', '£400,000'],
+          options: ['£150,000', '£400,000', '£286,667', '£500,000'],
           answer: 2,
         },
         {
           question: 'How much money was owed to the Antwerp Exchange?',
-          options: ['£50,000', '£200,000', '£300,000', '£100,000'],
+          options: ['£300,000', '£200,000', '£50,000', '£100,000'],
           answer: 3,
         },
         {
           question:
             'What interest rate did the foreign moneylenders at the Antwerp Exchange charge?',
-          options: ['5%', '14%', '10%', '20%'],
+          options: ['10%', '14%', '5%', '20%'],
           answer: 1,
         },
         {
           question:
             'What economic process implemented by previous monarchs caused massive inflation?',
           options: [
-            'The selling of monopolies',
+            'Over-taxation',
             'The dissolution of the monasteries',
             'Debasement of the coinage',
-            'Over-taxation',
+            'The selling of monopolies',
           ],
           answer: 2,
         },
@@ -516,26 +516,26 @@ export default {
           question: 'What was the name of the traditional alliance between France and Scotland?',
           options: [
             'The Auld Alliance',
-            'The Northern Alliance',
             'The Catholic League',
             'The Treaty of Berwick',
+            'The Northern Alliance',
           ],
           answer: 0,
         },
         {
           question:
             'Which Catholic monarch had a strong claim to the English throne and was married to the French heir?',
-          options: ['Mary I', 'Mary of Guise', 'Catherine of Aragon', 'Mary, Queen of Scots'],
+          options: ['Mary I', 'Catherine of Aragon', 'Mary of Guise', 'Mary, Queen of Scots'],
           answer: 3,
         },
         {
           question:
             'What 1564 treaty did Elizabeth sign to avoid further war with France by permanently recognising their claim to Calais?',
           options: [
-            'Treaty of Cateau-Cambrésis',
             'Treaty of Joinville',
-            'Peace of Troyes',
             'Treaty of Edinburgh',
+            'Peace of Troyes',
+            'Treaty of Cateau-Cambrésis',
           ],
           answer: 2,
         },
@@ -812,16 +812,16 @@ export default {
       quiz: [
         {
           question: 'What year did Elizabeth introduce her Religious Settlement?',
-          options: ['1570', '1559', '1558', '1566'],
+          options: ['1558', '1559', '1570', '1566'],
           answer: 1,
         },
         {
           question:
             "What term is used to describe Elizabeth's political compromise to satisfy both Protestants and Catholics?",
           options: [
-            'The Auld Alliance',
-            'The Royal Supremacy',
             'The Great Chain of Being',
+            'The Royal Supremacy',
+            'The Auld Alliance',
             "The 'Middle Way'",
           ],
           answer: 3,
@@ -830,8 +830,8 @@ export default {
           question:
             "Which specific Act made Elizabeth the 'Supreme Governor' rather than the 'Supreme Head' of the Church?",
           options: [
-            'The Act of Uniformity',
             'The Royal Injunctions',
+            'The Act of Uniformity',
             'The Act of Supremacy',
             'The Treaty of Cateau-Cambrésis',
           ],
@@ -842,9 +842,9 @@ export default {
             'Which Act dictated that the English Book of Common Prayer must be used in all churches?',
           options: [
             'The Act of Uniformity',
-            'The Royal Injunctions',
-            'The Book of Advertisements',
             'The Act of Supremacy',
+            'The Book of Advertisements',
+            'The Royal Injunctions',
           ],
           answer: 0,
         },
@@ -852,8 +852,8 @@ export default {
           question:
             'What were the strict instructions issued by William Cecil detailing exactly how to worship and govern the Church called?',
           options: [
-            'The Act of Uniformity',
             'The Act of Supremacy',
+            'The Act of Uniformity',
             'The Royal Injunctions',
             'The Book of Advertisements',
           ],
@@ -864,9 +864,9 @@ export default {
             'Aside from religious services, name one crucial social function of the parish church.',
           options: [
             'Providing charity for the poor / enforcing social control',
+            'Appointing Justices of the Peace',
             'Collecting national taxes for the Crown',
             'Training the local militia',
-            'Appointing Justices of the Peace',
           ],
           answer: 0,
         },
@@ -890,13 +890,13 @@ export default {
         {
           question:
             'Who were the radical Protestants that wanted to eradicate all Catholic "superstitions" from the Church?',
-          options: ['Jesuits', 'Recusants', 'Anglicans', 'Puritans'],
+          options: ['Recusants', 'Anglicans', 'Jesuits', 'Puritans'],
           answer: 3,
         },
         {
           question:
             'Which Catholic item did Puritans demand be removed from churches, leading to a major controversy where Elizabeth backed down?',
-          options: ['Crucifixes', 'Bibles', 'Stained glass windows', 'Altars'],
+          options: ['Crucifixes', 'Altars', 'Stained glass windows', 'Bibles'],
           answer: 0,
         },
         {
@@ -913,19 +913,19 @@ export default {
         {
           question:
             'How many Puritan priests in London were dismissed for refusing to wear the mandated vestments?',
-          options: ['300', '19', '37', '100'],
+          options: ['100', '300', '37', '19'],
           answer: 2,
         },
         {
           question:
             'What term describes Catholics who actively refused to attend the new Protestant Church services?',
-          options: ['Puritans', 'Jesuits', 'Heretics', 'Recusants'],
+          options: ['Heretics', 'Puritans', 'Jesuits', 'Recusants'],
           answer: 3,
         },
         {
           question:
             'In what year did the Pope explicitly order English Catholics not to attend the new Church of England services?',
-          options: ['1559', '1566', '1568', '1570'],
+          options: ['1568', '1566', '1559', '1570'],
           answer: 1,
         },
         {
@@ -943,18 +943,18 @@ export default {
           question:
             'Which Catholic figurehead arrived in England in 1568, giving disgruntled Catholics a legitimate rival to rally around?',
           options: [
-            'Mary of Guise',
+            'Philip II of Spain',
             'Catherine of Aragon',
             'Mary, Queen of Scots',
-            'Philip II of Spain',
+            'Mary of Guise',
           ],
           answer: 2,
         },
         {
           question: 'What severe action did the Pope take against Elizabeth in 1570?',
           options: [
-            'He declared her a witch',
             'He ordered an invasion of England',
+            'He declared her a witch',
             'He excommunicated her',
             'He refused to recognise her marriage',
           ],
@@ -963,10 +963,10 @@ export default {
         {
           question: 'How did the 1570 excommunication change the behaviour of English Catholics?',
           options: [
-            'It caused them to flee to France',
+            'It made them support the Puritans',
             'It absolved them of their loyalty to the Queen / weaponised them into treason',
             'It forced them to become Protestants',
-            'It made them support the Puritans',
+            'It caused them to flee to France',
           ],
           answer: 1,
         },
@@ -986,9 +986,9 @@ export default {
             'Why was the Catholic challenge ultimately more dangerous to Elizabeth than the Puritan challenge?',
           options: [
             'Catholics had the backing of foreign militaries, the Papacy, and a rival queen to replace Elizabeth',
-            'Catholics refused to pay any taxes',
             'Catholics controlled the English navy',
             'Catholics were the majority in Parliament',
+            'Catholics refused to pay any taxes',
           ],
           answer: 0,
         },
@@ -1253,8 +1253,8 @@ export default {
             'What was the main objection of the Puritans regarding the 1559 Religious Settlement?',
           options: [
             "They believed it kept too many Catholic elements and wanted to 'purify' the Church",
-            'They believed the Church was too poor',
             'They wanted the Pope to be the head of the Church',
+            'They believed the Church was too poor',
             'They wanted services in Latin',
           ],
           answer: 0,
@@ -1262,15 +1262,15 @@ export default {
         {
           question:
             'What objects did Puritans demand be removed from churches because they viewed them as superstitious idols?',
-          options: ['Pews', 'Crucifixes', 'Bibles', 'Altars'],
+          options: ['Bibles', 'Crucifixes', 'Altars', 'Pews'],
           answer: 1,
         },
         {
           question: 'Why did Elizabeth back down during the Crucifix Controversy?',
           options: [
             'The Pope ordered her to back down',
-            'Parliament passed a law banning crucifixes',
             'She secretly agreed with the Puritans',
+            'Parliament passed a law banning crucifixes',
             'Several powerful Puritan bishops threatened to resign',
           ],
           answer: 3,
@@ -1280,9 +1280,9 @@ export default {
             'What controversy in 1566 involved Puritans refusing to wear special clerical robes (surplices)?',
           options: [
             'The Northern Rebellion',
-            'The Crucifix Controversy',
-            'The Vestment Controversy',
             'The Prayer Book Rebellion',
+            'The Vestment Controversy',
+            'The Crucifix Controversy',
           ],
           answer: 2,
         },
@@ -1300,16 +1300,16 @@ export default {
         {
           question:
             'How many London priests were dismissed for refusing to wear the mandated vestments?',
-          options: ['100', '300', '10', '37'],
+          options: ['100', '10', '300', '37'],
           answer: 3,
         },
         {
           question:
             'Who was the ultimate authority for Catholics, making their loyalty to Elizabeth suspect?',
           options: [
-            'The King of Spain',
-            'The Pope',
             'Mary, Queen of Scots',
+            'The Pope',
+            'The King of Spain',
             'The Archbishop of Canterbury',
           ],
           answer: 1,
@@ -1317,13 +1317,13 @@ export default {
         {
           question:
             'What term describes Catholics who actively refused to attend the new Protestant Church of England services?',
-          options: ['Heretics', 'Jesuits', 'Recusants', 'Puritans'],
+          options: ['Puritans', 'Jesuits', 'Recusants', 'Heretics'],
           answer: 2,
         },
         {
           question:
             'In which region of England was traditional Catholic support and noble resistance the strongest?',
-          options: ['London', 'The South-East', 'Wales', 'The North / North-West'],
+          options: ['Wales', 'London', 'The South-East', 'The North / North-West'],
           answer: 3,
         },
         {
@@ -1331,9 +1331,9 @@ export default {
             'Why did Elizabeth initially avoid strictly enforcing recusancy fines against Catholics?',
           options: [
             'She did not want to create Catholic martyrs or provoke a rebellion',
-            'She did not need the money',
-            'She was secretly Catholic',
             'The Privy Council advised against it',
+            'She was secretly Catholic',
+            'She did not need the money',
           ],
           answer: 0,
         },
@@ -1351,10 +1351,10 @@ export default {
           question:
             "What was the Catholic Church's Europe-wide campaign to reverse the Protestant Reformation called?",
           options: [
-            'The Crusades',
+            'The Inquisition',
             'The Marian Persecutions',
             'The Counter-Reformation',
-            'The Inquisition',
+            'The Crusades',
           ],
           answer: 2,
         },
@@ -1362,18 +1362,18 @@ export default {
           question: 'What instruction did the Pope give to English Catholics in 1566?',
           options: [
             'Not to attend Church of England services',
-            'To flee to France',
             'To assassinate Elizabeth',
             'To pay their recusancy fines',
+            'To flee to France',
           ],
           answer: 0,
         },
         {
           question: 'What catastrophic action did Pope Pius V take against Elizabeth in 1570?',
           options: [
-            'He refused to recognise her marriage',
-            'He excommunicated her / issued a Papal Bull',
             'He declared her a witch',
+            'He excommunicated her / issued a Papal Bull',
+            'He refused to recognise her marriage',
             'He ordered an invasion of England',
           ],
           answer: 1,
@@ -1382,8 +1382,8 @@ export default {
           question: 'What did the 1570 Papal Bull explicitly tell English Catholics?',
           options: [
             'That they should flee to Spain',
-            'That they must convert to Protestantism',
             'That they must pay taxes to the Pope',
+            'That they must convert to Protestantism',
             'That it was no longer a sin to rebel against her and they were absolved of their loyalty',
           ],
           answer: 3,
@@ -1392,10 +1392,10 @@ export default {
           question:
             'Which Catholic figurehead fled to England in 1568, becoming the focus of plots against Elizabeth?',
           options: [
-            'Philip II of Spain',
             'Mary of Guise',
-            'Mary, Queen of Scots',
             'Catherine of Aragon',
+            'Mary, Queen of Scots',
+            'Philip II of Spain',
           ],
           answer: 2,
         },
@@ -1403,8 +1403,8 @@ export default {
           question:
             'Which two major European superpowers posed a direct military threat to Protestant England?',
           options: [
-            'The Holy Roman Empire and Italy',
             'Portugal and the Netherlands',
+            'The Holy Roman Empire and Italy',
             'Spain and France',
             'Scotland and Ireland',
           ],
@@ -1413,17 +1413,17 @@ export default {
         {
           question:
             'Where was the Catholic seminary located that trained priests to be secretly sent into England?',
-          options: ['Madrid, Spain', 'Rome, Italy', 'Paris, France', 'Douai, in the Netherlands'],
+          options: ['Paris, France', 'Madrid, Spain', 'Rome, Italy', 'Douai, in the Netherlands'],
           answer: 3,
         },
         {
           question:
             'Name one prominent Puritan leader who actively opposed the Elizabethan settlement.',
           options: [
-            'Thomas Cromwell',
-            'John Foxe / Thomas Cartwright',
-            'William Cecil',
             'Thomas Cranmer',
+            'John Foxe / Thomas Cartwright',
+            'Thomas Cromwell',
+            'William Cecil',
           ],
           answer: 1,
         },
@@ -1432,9 +1432,9 @@ export default {
             'Why was the Catholic challenge considered vastly more dangerous than the Puritan challenge?',
           options: [
             'Catholics had the backing of foreign military powers, the Papacy, and had Mary, Queen of Scots as an alternative monarch',
-            'Catholics were the majority in Parliament',
-            'Catholics controlled the English navy',
             'Catholics refused to pay any taxes',
+            'Catholics controlled the English navy',
+            'Catholics were the majority in Parliament',
           ],
           answer: 0,
         },
@@ -1706,24 +1706,24 @@ export default {
         {
           question: 'How was Mary, Queen of Scots related to Elizabeth I?',
           options: [
-            'She was her niece',
-            'She was her second cousin',
             'She was her half-sister',
+            'She was her second cousin',
             'She was her aunt',
+            'She was her niece',
           ],
           answer: 1,
         },
         {
           question: 'From which English King did Mary derive her claim to the throne?',
-          options: ['King Henry VII', 'King Henry VIII', 'King Richard III', 'King Edward VI'],
+          options: ['King Henry VII', 'King Henry VIII', 'King Edward VI', 'King Richard III'],
           answer: 0,
         },
         {
           question: 'Why did many Catholics believe Elizabeth was illegitimate?',
           options: [
             'They believed women could not rule England',
-            'They believed Elizabeth was secretly adopted',
             'They thought Elizabeth had abdicated',
+            'They believed Elizabeth was secretly adopted',
             "They did not recognise Henry VIII's divorce, meaning his marriage to Anne Boleyn was invalid",
           ],
           answer: 3,
@@ -1736,10 +1736,10 @@ export default {
         {
           question: "What was the name of Mary's second husband, who was murdered in 1567?",
           options: [
-            'The Duke of Norfolk',
+            'The Earl of Bothwell',
             'King Francis II',
             'Lord Darnley',
-            'The Earl of Bothwell',
+            'The Duke of Norfolk',
           ],
           answer: 2,
         },
@@ -1758,9 +1758,9 @@ export default {
             'What did the Scottish Protestant lords force Mary to do after capturing her in 1567?',
           options: [
             'Abdicate the throne',
-            'Marry the Earl of Bothwell',
             'Flee to France',
             'Convert to Protestantism',
+            'Marry the Earl of Bothwell',
           ],
           answer: 0,
         },
@@ -1768,24 +1768,24 @@ export default {
           question: 'In whose favour was Mary forced to abdicate?',
           options: [
             'The Scottish Parliament',
-            'Her cousin, Elizabeth I',
             'Her husband, Bothwell',
+            'Her cousin, Elizabeth I',
             'Her infant son, James VI',
           ],
           answer: 3,
         },
         {
           question: 'In what year did Mary flee Scotland and arrive in England?',
-          options: ['1558', '1569', '1570', '1568'],
+          options: ['1569', '1558', '1570', '1568'],
           answer: 3,
         },
         {
           question: 'Why did Elizabeth refuse to help Mary regain her throne by force?',
           options: [
             'The Pope told her not to',
-            'She secretly hated Mary',
-            'It would anger the friendly Protestant Scottish lords and ruin relations with Scotland',
             "She didn't have an army",
+            'It would anger the friendly Protestant Scottish lords and ruin relations with Scotland',
+            'She secretly hated Mary',
           ],
           answer: 2,
         },
@@ -1794,19 +1794,19 @@ export default {
             'Why was Elizabeth reluctant to hand Mary over to the Scottish lords for punishment?',
           options: [
             'She believed in the Divine Right of Kings and did not want to support subjects overthrowing an anointed monarch',
-            'The Scottish lords refused to take her back',
-            'She thought Mary was completely innocent',
             'She wanted to execute Mary herself',
+            'She thought Mary was completely innocent',
+            'The Scottish lords refused to take her back',
           ],
           answer: 0,
         },
         {
           question: "Why couldn't Elizabeth simply allow Mary to travel to France or Spain?",
           options: [
-            'Elizabeth wanted Mary as a hostage for ransom',
+            'The French King hated Mary',
             'She feared Mary would raise a foreign Catholic army to invade England',
             'Mary refused to leave England',
-            'The French King hated Mary',
+            'Elizabeth wanted Mary as a hostage for ransom',
           ],
           answer: 1,
         },
@@ -1825,20 +1825,20 @@ export default {
           question:
             "What evidence was produced by the Scottish lords to try and prove Mary's guilt?",
           options: [
-            'A confession from Bothwell',
-            "The 'Casket Letters'",
             'A bloody dagger',
+            "The 'Casket Letters'",
             'Eyewitness testimonies',
+            'A confession from Bothwell',
           ],
           answer: 1,
         },
         {
           question: 'What did the Casket Letters allegedly contain?',
           options: [
-            'Love letters to the Pope',
+            'Secret Catholic prayers',
             'Maps of England for an invasion',
             "Letters and poems plotting Darnley's murder",
-            'Secret Catholic prayers',
+            'Love letters to the Pope',
           ],
           answer: 2,
         },
@@ -1855,8 +1855,8 @@ export default {
         {
           question: "What was Elizabeth's final verdict regarding Mary's guilt?",
           options: [
-            'She ordered her immediate execution',
             'She completely exonerated her',
+            'She ordered her immediate execution',
             'She found her guilty of murder',
             'She stated that her guilt was "not proven" / neither guilty nor innocent',
           ],
@@ -1875,10 +1875,10 @@ export default {
         {
           question: 'Why was keeping Mary in England a massive risk for Elizabeth?',
           options: [
-            'The public loved Mary more than Elizabeth',
-            'It made Mary a focal point for English Catholics and plotters to rally around',
             'It cost too much money to feed her',
+            'It made Mary a focal point for English Catholics and plotters to rally around',
             'Mary was highly contagious',
+            'The public loved Mary more than Elizabeth',
           ],
           answer: 1,
         },
@@ -1886,9 +1886,9 @@ export default {
           question: "What major uprising occurred in England just one year after Mary's arrival?",
           options: [
             'The Pilgrimage of Grace',
-            'The Spanish Armada',
-            'The Revolt of the Northern Earls in 1569',
             'The Babington Plot',
+            'The Revolt of the Northern Earls in 1569',
+            'The Spanish Armada',
           ],
           answer: 2,
         },
@@ -2202,14 +2202,14 @@ export default {
       quiz: [
         {
           question: 'Which Protestant Bishop of Durham did the Northern Earls strongly resent?',
-          options: ['James Pilkington', 'John Whitgift', 'Matthew Parker', 'Edmund Grindal'],
+          options: ['James Pilkington', 'John Whitgift', 'Edmund Grindal', 'Matthew Parker'],
           answer: 0,
         },
         {
           question: 'Which two Catholic nobles led the Revolt of the Northern Earls in 1569?',
           options: [
-            'The Earl of Southampton and Earl of Sussex',
             'The Earl of Leicester and Earl of Essex',
+            'The Earl of Southampton and Earl of Sussex',
             'The Duke of Norfolk and Earl of Arundel',
             'The Earl of Northumberland and the Earl of Westmorland',
           ],
@@ -2229,35 +2229,35 @@ export default {
         {
           question:
             "Roughly how many rebels did Elizabeth execute after the Northern Earls' revolt?",
-          options: ['800', '1,200', '450', '150'],
+          options: ['1,200', '800', '450', '150'],
           answer: 2,
         },
         {
           question: 'What was the theological meaning of the 1570 Papal excommunication?',
           options: [
-            'Being stripped of all royal titles by the Catholic Church',
             'Being forced to pay a massive fine to the Pope',
-            'Being formally excluded from the Catholic Church and unable to receive sacraments',
             'Being ordered to travel to Rome for a trial',
+            'Being formally excluded from the Catholic Church and unable to receive sacraments',
+            'Being stripped of all royal titles by the Catholic Church',
           ],
           answer: 2,
         },
         {
           question: 'What strict law was passed in 1581 regarding Catholic conversions?',
           options: [
-            'It became a minor offence punishable by a fine',
-            'It became high treason to convert anyone to Catholicism',
-            'Converting to Catholicism resulted in immediate deportation',
             'It was completely legal as long as it was done in private',
+            'It became high treason to convert anyone to Catholicism',
+            'It became a minor offence punishable by a fine',
+            'Converting to Catholicism resulted in immediate deportation',
           ],
           answer: 1,
         },
         {
           question: 'Who was the Italian banker that orchestrated a plot in 1571?',
           options: [
-            'William Parry',
-            'Francis Throckmorton',
             'Anthony Babington',
+            'Francis Throckmorton',
+            'William Parry',
             'Roberto Ridolfi',
           ],
           answer: 3,
@@ -2277,9 +2277,9 @@ export default {
           question:
             'Which high-ranking English nobleman was executed in 1572 for his involvement in the Ridolfi Plot?',
           options: [
-            'The Duke of Suffolk',
             'The Earl of Northumberland',
             'The Earl of Essex',
+            'The Duke of Suffolk',
             'The Duke of Norfolk',
           ],
           answer: 3,
@@ -2288,10 +2288,10 @@ export default {
           question:
             'Which plot in 1583 involved the French Duke of Guise invading England with Spanish money?',
           options: [
-            'The Babington Plot',
             'The Ridolfi Plot',
-            'The Throckmorton Plot',
             'The Parry Plot',
+            'The Throckmorton Plot',
+            'The Babington Plot',
           ],
           answer: 2,
         },
@@ -2319,13 +2319,13 @@ export default {
         {
           question:
             'What term is used for spies, like Gilbert Gifford, who secretly encourage others to commit treason?',
-          options: ['Agents provocateurs', 'Informants', 'Double agents', 'Pursuivants'],
+          options: ['Agents provocateurs', 'Double agents', 'Informants', 'Pursuivants'],
           answer: 0,
         },
         {
           question:
             "Who was the expert cryptographer that deciphered Mary's letters for Walsingham?",
-          options: ['John Dee', 'Thomas Cromwell', 'Francis Bacon', 'Thomas Phelippes'],
+          options: ['Francis Bacon', 'John Dee', 'Thomas Cromwell', 'Thomas Phelippes'],
           answer: 3,
         },
         {
@@ -2333,9 +2333,9 @@ export default {
             "Which 1586 plot provided the final, irrefutable written proof of Mary's guilt?",
           options: [
             'The Northern Rebellion',
-            'The Ridolfi Plot',
-            'The Babington Plot',
             'The Throckmorton Plot',
+            'The Babington Plot',
+            'The Ridolfi Plot',
           ],
           answer: 2,
         },
@@ -2345,14 +2345,14 @@ export default {
           options: [
             'The Act of Supremacy',
             'The Act for the Preservation of the Queen’s Safety',
-            'The Treason Act of 1571',
             'The Act of Attainder',
+            'The Treason Act of 1571',
           ],
           answer: 1,
         },
         {
           question: 'In what year was Mary, Queen of Scots executed?',
-          options: ['1588', '1586', '1585', '1587'],
+          options: ['1585', '1586', '1588', '1587'],
           answer: 3,
         },
         {
@@ -2360,9 +2360,9 @@ export default {
             'Name two "new men" at court whose rise to power angered the old northern nobility.',
           options: [
             'William Cecil, Robert Dudley, or John Forster',
+            'The Earl of Westmorland and Earl of Sussex',
             'Charles Neville and Thomas Percy',
             'The Duke of Norfolk and Earl of Northumberland',
-            'The Earl of Westmorland and Earl of Sussex',
           ],
           answer: 0,
         },
@@ -2370,8 +2370,8 @@ export default {
           question:
             "What did Walsingham find in Francis Throckmorton's house that caused immense panic?",
           options: [
-            'A map of English coastal defences',
             'A stash of Spanish gold',
+            'A map of English coastal defences',
             'A list of Catholic sympathisers / proof of the "enemy within"',
             'A collection of illegal Catholic Bibles',
           ],
@@ -2380,7 +2380,7 @@ export default {
         {
           question:
             'Which Spanish Ambassador was expelled following the discovery of the Throckmorton Plot?',
-          options: ['De Quadra', 'Mendoza', 'De Spes', 'Gondomar'],
+          options: ['Gondomar', 'Mendoza', 'De Quadra', 'De Spes'],
           answer: 1,
         },
       ],
@@ -2668,28 +2668,28 @@ export default {
         {
           question:
             'What term describes sailors officially licensed by the government to rob enemy ships?',
-          options: ['Mercenaries', 'Privateers', 'Corsairs', 'Pirates'],
+          options: ['Corsairs', 'Privateers', 'Pirates', 'Mercenaries'],
           answer: 1,
         },
         {
           question:
             'Which famous English privateer stole roughly £400,000 of Spanish treasure during his circumnavigation?',
-          options: ['Sir Walter Raleigh', 'Martin Frobisher', 'Sir Francis Drake', 'John Hawkins'],
+          options: ['John Hawkins', 'Martin Frobisher', 'Sir Francis Drake', 'Sir Walter Raleigh'],
           answer: 2,
         },
         {
           question: 'What region did Spain control that Elizabeth sent troops to support in 1585?',
-          options: ['The Netherlands', 'Portugal', 'Italy', 'France'],
+          options: ['The Netherlands', 'Portugal', 'France', 'Italy'],
           answer: 0,
         },
         {
           question:
             'What was the name of the 1585 treaty where Elizabeth officially supported the Dutch rebels?',
           options: [
-            'The Treaty of Cateau-Cambrésis',
-            'The Treaty of Edinburgh',
-            'The Treaty of Nonsuch',
             'The Treaty of Troyes',
+            'The Treaty of Cateau-Cambrésis',
+            'The Treaty of Nonsuch',
+            'The Treaty of Edinburgh',
           ],
           answer: 2,
         },
@@ -2697,8 +2697,8 @@ export default {
           question: 'Which English commander was sent to the Netherlands with 7,400 troops?',
           options: [
             'The Earl of Leicester / Robert Dudley',
-            'Sir Francis Drake',
             'The Duke of Norfolk',
+            'Sir Francis Drake',
             'William Cecil',
           ],
           answer: 0,
@@ -2707,38 +2707,38 @@ export default {
           question:
             'What 1587 event removed the Catholic alternative to the English throne, prompting Philip to invade?',
           options: [
-            'The death of the Pope',
             'The Northern Rebellion',
             'The Babington Plot',
+            'The death of the Pope',
             'The execution of Mary, Queen of Scots',
           ],
           answer: 3,
         },
         {
           question: 'In what year did Francis Drake raid Cadiz to delay the Armada?',
-          options: ['1588', '1587', '1585', '1570'],
+          options: ['1588', '1587', '1570', '1585'],
           answer: 1,
         },
         {
           question: "What famous phrase was used to describe Drake's raid on Cadiz?",
           options: [
             '"Singeing the King of Spain\'s beard"',
-            '"Burning the Spanish purse"',
             '"Breaking the Spanish shield"',
+            '"Burning the Spanish purse"',
             '"Clipping the King of Spain\'s wings"',
           ],
           answer: 0,
         },
         {
           question: 'In what year did the Spanish Armada set sail?',
-          options: ['1589', '1588', '1587', '1585'],
+          options: ['1587', '1588', '1585', '1589'],
           answer: 1,
         },
         {
           question: 'Who was the inexperienced Spanish commander of the Armada?',
           options: [
-            'The Duke of Parma',
             'King Philip II',
+            'The Duke of Parma',
             'The Duke of Medina Sidonia',
             'The Duke of Alba',
           ],
@@ -2747,9 +2747,9 @@ export default {
         {
           question: 'Whose army was the Armada supposed to pick up from the Netherlands?',
           options: [
-            "The Duke of Alba's army",
             'The French army',
             "The Pope's army",
+            "The Duke of Alba's army",
             "The Duke of Parma's army",
           ],
           answer: 3,
@@ -2759,8 +2759,8 @@ export default {
             'What defensive shape did the Spanish fleet sail in as they travelled up the English Channel?',
           options: [
             'A crescent formation',
-            'A straight line',
             'A diamond formation',
+            'A straight line',
             'A square block',
           ],
           answer: 0,
@@ -2772,23 +2772,23 @@ export default {
         },
         {
           question: 'Where did the Spanish mistakenly drop their anchors, making them vulnerable?',
-          options: ['Dover', 'Gravelines', 'Plymouth', 'Calais'],
+          options: ['Plymouth', 'Gravelines', 'Dover', 'Calais'],
           answer: 3,
         },
         {
           question:
             'What devastating tactic did the English use at midnight to break the Spanish formation at Calais?',
-          options: ['Submarines', 'Fireships', 'Cannons', 'Boarding parties'],
+          options: ['Submarines', 'Fireships', 'Boarding parties', 'Cannons'],
           answer: 1,
         },
         {
           question:
             'What major naval battle took place immediately after the fireships scattered the Spanish fleet?',
           options: [
-            'The Battle of Calais',
-            'The Battle of Gravelines',
             'The Battle of Trafalgar',
+            'The Battle of Gravelines',
             'The Battle of Langside',
+            'The Battle of Calais',
           ],
           answer: 1,
         },
@@ -2796,9 +2796,9 @@ export default {
           question: "Why couldn't the Armada pick up the Spanish army in the Netherlands?",
           options: [
             'The Duke of Parma was dead',
-            'They went to the wrong port',
-            "Poor communication / Parma's army was not ready in time",
             'The English sunk their ships',
+            "Poor communication / Parma's army was not ready in time",
+            'They went to the wrong port',
           ],
           answer: 2,
         },
@@ -2806,9 +2806,9 @@ export default {
           question: 'Which way was the Armada forced to sail to get home?',
           options: [
             'North, around the coasts of Scotland and Ireland',
-            'East, to the Netherlands',
-            'West, to the Americas',
             'South, straight back through the English Channel',
+            'West, to the Americas',
+            'East, to the Netherlands',
           ],
           answer: 0,
         },
@@ -2816,9 +2816,9 @@ export default {
           question:
             'What destroyed the majority of the Spanish ships as they tried to return home?',
           options: [
-            'Starvation',
-            'Disease',
             'English cannons',
+            'Disease',
+            'Starvation',
             'Fierce storms / The weather / The "Protestant Wind"',
           ],
           answer: 3,
@@ -3078,16 +3078,16 @@ export default {
       quiz: [
         {
           question: 'Under which previous monarch were England and Spain actually allies?',
-          options: ['Edward VI', 'Henry VIII', 'Mary Tudor', 'Henry VII'],
+          options: ['Henry VIII', 'Henry VII', 'Mary Tudor', 'Edward VI'],
           answer: 2,
         },
         {
           question:
             'What did Elizabeth seize from Italian ships sheltering in English ports in 1568?',
           options: [
-            'The French Fleet',
-            'The Genoese Loan',
             'The Spanish Armada',
+            'The Genoese Loan',
+            'The French Fleet',
             'The Papal Treasury',
           ],
           answer: 1,
@@ -3095,26 +3095,26 @@ export default {
         {
           question:
             'How much Spanish gold and silver did Francis Drake capture between 1577 and 1580?',
-          options: ['£100,000', '£1,000,000', '£800,000', '£400,000'],
+          options: ['£1,000,000', '£800,000', '£100,000', '£400,000'],
           answer: 3,
         },
         {
           question: 'Which Dutch Protestant rebel leader was assassinated in 1584?',
           options: [
             'William of Orange',
-            'The Duke of Parma',
             'Don John of Austria',
             'Count Egmont',
+            'The Duke of Parma',
           ],
           answer: 0,
         },
         {
           question: 'Which 1584 treaty allied Catholic France and Spain together?',
           options: [
-            'The Treaty of Troyes',
+            'The Treaty of Nonsuch',
             'The Treaty of Cateau-Cambrésis',
             'The Treaty of Joinville',
-            'The Treaty of Nonsuch',
+            'The Treaty of Troyes',
           ],
           answer: 2,
         },
@@ -3137,8 +3137,8 @@ export default {
         {
           question: 'Which English commander was sent to lead the troops in the Netherlands?',
           options: [
-            'Sir Walter Raleigh',
             'Sir Francis Drake',
+            'Sir Walter Raleigh',
             'The Duke of Norfolk',
             'Robert Dudley, Earl of Leicester',
           ],
@@ -3148,9 +3148,9 @@ export default {
           question:
             'What title did Robert Dudley accept in the Netherlands that infuriated Elizabeth?',
           options: [
+            'Lord Protector',
             'Supreme Commander',
             'King of the Netherlands',
-            'Lord Protector',
             'Governor General',
           ],
           answer: 3,
@@ -3160,54 +3160,54 @@ export default {
             'Name one of the English officers who defected to the Spanish side, damaging Dutch trust.',
           options: [
             'William Stanley or Rowland York',
-            'Robert Dudley',
             'Sir John Hawkins',
             'Sir Francis Drake',
+            'Robert Dudley',
           ],
           answer: 0,
         },
         {
           question:
             'What deep-water port did Dudley successfully prevent the Spanish from capturing?',
-          options: ['Rotterdam', 'Antwerp', 'Ostend', 'Calais'],
+          options: ['Calais', 'Antwerp', 'Ostend', 'Rotterdam'],
           answer: 2,
         },
         {
           question: "Why was the defense of Ostend so important for England's future?",
           options: [
-            'It gave English ships a place to hide during storms',
+            'It was where Mary Queen of Scots was planning to land',
             "It meant the Spanish Armada wouldn't have a deep-water port to pick up troops from a year later",
             'It was the only port that traded in English cloth',
-            'It was where Mary Queen of Scots was planning to land',
+            'It gave English ships a place to hide during storms',
           ],
           answer: 1,
         },
         {
           question: 'In what month and year did Francis Drake launch his preemptive raid on Cadiz?',
-          options: ['October 1587', 'July 1588', 'April 1587', 'January 1586'],
+          options: ['January 1586', 'October 1587', 'April 1587', 'July 1588'],
           answer: 2,
         },
         {
           question: "What famous phrase was used to describe Drake's raid on Cadiz?",
           options: [
             '"Singeing the King of Spain\'s beard"',
-            '"Breaking the Spanish shield"',
             '"Clipping the King of Spain\'s wings"',
+            '"Breaking the Spanish shield"',
             '"Burning the Spanish purse"',
           ],
           answer: 0,
         },
         {
           question: 'Roughly how many Spanish ships did Drake destroy in Cadiz harbour?',
-          options: ['60 ships', '30 ships', '10 ships', '130 ships'],
+          options: ['10 ships', '30 ships', '60 ships', '130 ships'],
           answer: 1,
         },
         {
           question:
             'What crucial supply item did Drake destroy at Cadiz that later caused Spanish food to rot?',
           options: [
-            'Canvas sails',
             'Ship anchors',
+            'Canvas sails',
             'Gunpowder reserves',
             'Seasoned wooden barrel staves',
           ],
@@ -3215,15 +3215,15 @@ export default {
         },
         {
           question: "How long did Drake's raid on Cadiz delay the launch of the Spanish Armada?",
-          options: ['By one month', 'By three years', 'By roughly one year', 'By five years'],
+          options: ['By five years', 'By one month', 'By roughly one year', 'By three years'],
           answer: 2,
         },
         {
           question: "Why was this delay so significant for Elizabeth's government?",
           options: [
-            'It gave them time to build a new alliance with France',
-            'It bought England vital time to prepare their navy and coastal defences',
             'It allowed them to assassinate King Philip II',
+            'It bought England vital time to prepare their navy and coastal defences',
+            'It gave them time to build a new alliance with France',
             'It meant the Spanish went bankrupt',
           ],
           answer: 1,
@@ -3511,25 +3511,25 @@ export default {
           question: 'Who had Elizabeth rejected a marriage proposal from in 1559?',
           options: [
             'King Philip II of Spain',
+            'The King of France',
             'The Duke of Anjou',
             'King Eric of Sweden',
-            'The King of France',
           ],
           answer: 0,
         },
         {
           question:
             'Which Pope gave his blessing to the Armada, turning it into a Catholic crusade?',
-          options: ['Pope Pius V', 'Pope Gregory XIII', 'Pope Paul IV', 'Pope Sixtus V'],
+          options: ['Pope Pius V', 'Pope Paul IV', 'Pope Gregory XIII', 'Pope Sixtus V'],
           answer: 3,
         },
         {
           question: 'How much money did the Pope promise Philip if the Armada was successful?',
           options: [
-            '100,000 gold ducats',
+            '500,000 gold ducats',
             'One million gold ducats',
             '5 million gold ducats',
-            '500,000 gold ducats',
+            '100,000 gold ducats',
           ],
           answer: 1,
         },
@@ -3537,8 +3537,8 @@ export default {
           question:
             'What 1584 treaty between France and Spain isolated England and pushed Philip closer to war?',
           options: [
-            'The Treaty of Blois',
             'The Treaty of Nonsuch',
+            'The Treaty of Blois',
             'The Treaty of Cateau-Cambrésis',
             'The Treaty of Joinville',
           ],
@@ -3559,33 +3559,33 @@ export default {
           question:
             'What was the name of the inexperienced commander chosen by Philip to lead the Armada?',
           options: [
-            'The Marquis of Santa Cruz',
+            'Don John of Austria',
             'The Duke of Parma',
             'The Duke of Medina Sidonia',
-            'Don John of Austria',
+            'The Marquis of Santa Cruz',
           ],
           answer: 2,
         },
         {
           question: 'How many ships made up the Spanish Armada?',
-          options: ['250', '60', '130', '400'],
+          options: ['400', '250', '130', '60'],
           answer: 2,
         },
         {
           question: 'What highly effective, defensive shape did the Spanish fleet sail in?',
           options: [
-            'A diamond formation',
-            'A crescent formation',
             'A straight line',
+            'A crescent formation',
             'A V-shape formation',
+            'A diamond formation',
           ],
           answer: 1,
         },
         {
           question: 'Who commanded the Spanish land army waiting in the Netherlands?',
           options: [
-            'The Duke of Alba',
             'The Duke of Medina Sidonia',
+            'The Duke of Alba',
             'Don John of Austria',
             'The Duke of Parma',
           ],
@@ -3594,29 +3594,29 @@ export default {
         {
           question:
             'What type of small rebel ships blockaded the Spanish army in the shallow coastal waters?',
-          options: ['Dutch flyboats', 'English galleons', 'French frigates', 'Spanish galleys'],
+          options: ['Dutch flyboats', 'Spanish galleys', 'English galleons', 'French frigates'],
           answer: 0,
         },
         {
           question:
             'At which port did the Armada mistakenly drop anchor to wait for the land army?',
-          options: ['Calais', 'Ostend', 'Antwerp', 'Rotterdam'],
+          options: ['Calais', 'Antwerp', 'Ostend', 'Rotterdam'],
           answer: 0,
         },
         {
           question:
             'What devastating tactic did the English use at midnight to break the Spanish formation?',
           options: [
-            'Sneak boarding parties',
+            'Firing grappling hooks',
             'Fireships',
             'Exploding underwater mines',
-            'Firing grappling hooks',
+            'Sneak boarding parties',
           ],
           answer: 1,
         },
         {
           question: 'How many fireships did the English send into the Spanish fleet?',
-          options: ['Fifteen', 'Three', 'Eight', 'Twenty'],
+          options: ['Twenty', 'Fifteen', 'Eight', 'Three'],
           answer: 2,
         },
         {
@@ -3624,8 +3624,8 @@ export default {
             'What was the name of the major naval battle that took place the day after the fireships were used?',
           options: [
             'The Battle of Lepanto',
-            'The Battle of Trafalgar',
             'The Battle of Cadiz',
+            'The Battle of Trafalgar',
             'The Battle of Gravelines',
           ],
           answer: 3,
@@ -3634,9 +3634,9 @@ export default {
           question:
             'Why were English cannons able to fire more quickly than the Spanish during this battle?',
           options: [
-            'They used pre-packaged gunpowder cartridges',
-            'They were mounted on smaller gun carriages, allowing them space to recoil and reload',
             'They had twice as many men loading each cannon',
+            'They were mounted on smaller gun carriages, allowing them space to recoil and reload',
+            'They used pre-packaged gunpowder cartridges',
             'The Spanish ran out of gunpowder completely',
           ],
           answer: 1,
@@ -3645,9 +3645,9 @@ export default {
           question: 'Which way was the Armada forced to sail to escape the English fleet?',
           options: [
             'Northwards, around Scotland and Ireland',
-            'West, across the Atlantic Ocean',
-            'East, towards the Netherlands',
             'South, back through the English Channel',
+            'East, towards the Netherlands',
+            'West, across the Atlantic Ocean',
           ],
           answer: 0,
         },
@@ -3655,9 +3655,9 @@ export default {
           question:
             'What nickname did the English give to the storms that destroyed the fleeing Spanish ships?',
           options: [
-            'The "Spanish Curse"',
             'The "Divine Storm"',
             'The "Elizabethan Gale"',
+            'The "Spanish Curse"',
             'The "Protestant Wind"',
           ],
           answer: 3,
@@ -3671,9 +3671,9 @@ export default {
         {
           question: 'What famous piece of propaganda was painted to celebrate the victory?',
           options: [
-            'The Ditchley Portrait',
-            'The Rainbow Portrait',
             'The Coronation Portrait',
+            'The Rainbow Portrait',
+            'The Ditchley Portrait',
             'The Armada Portrait',
           ],
           answer: 3,
@@ -3963,18 +3963,18 @@ export default {
         {
           question:
             'What intellectual movement acted as a catalyst for educational reform in Elizabethan England?',
-          options: ['Scholasticism', 'Romanticism', 'Humanism', 'The Enlightenment'],
+          options: ['The Enlightenment', 'Scholasticism', 'Humanism', 'Romanticism'],
           answer: 2,
         },
         {
           question: "Which prominent Humanist scholar was Queen Elizabeth's personal tutor?",
-          options: ['Roger Ascham', 'Thomas More', 'John Dee', 'Francis Bacon'],
+          options: ['Roger Ascham', 'John Dee', 'Thomas More', 'Francis Bacon'],
           answer: 0,
         },
         {
           question:
             'What invention significantly helped increase literacy by making books cheaper?',
-          options: ['The spinning jenny', 'The printing press', 'The quill pen', 'The telegraph'],
+          options: ['The telegraph', 'The printing press', 'The spinning jenny', 'The quill pen'],
           answer: 1,
         },
         {
@@ -3991,26 +3991,26 @@ export default {
         {
           question:
             'What wooden object covered in a transparent layer was used to teach children the alphabet?',
-          options: ['A parchment scroll', 'A slate', 'A hornbook', 'A wax tablet'],
+          options: ['A slate', 'A wax tablet', 'A hornbook', 'A parchment scroll'],
           answer: 2,
         },
         {
           question:
             'What type of school did the sons of the gentry and merchants attend from age seven?',
-          options: ['A Grammar School', 'A Petty School', 'A Chantry School', 'A Dame School'],
+          options: ['A Grammar School', 'A Dame School', 'A Petty School', 'A Chantry School'],
           answer: 0,
         },
         {
           question: 'Which language dominated the curriculum of the Elizabethan Grammar school?',
-          options: ['Latin', 'Greek', 'English', 'French'],
+          options: ['Latin', 'French', 'Greek', 'English'],
           answer: 0,
         },
         {
           question:
             'Roughly what percentage of men, and what percentage of women, were literate by 1603?',
           options: [
-            '70% of men, 50% of women',
             '10% of men, 2% of women',
+            '70% of men, 50% of women',
             '50% of men, 25% of women',
             '30% of men, 10% of women',
           ],
@@ -4021,8 +4021,8 @@ export default {
           options: [
             'Archery',
             'Real tennis / Hawking / Fencing / Hunting on horseback',
-            'Bear-baiting',
             'Mob football',
+            'Bear-baiting',
           ],
           answer: 1,
         },
@@ -4045,39 +4045,39 @@ export default {
         {
           question: "What was the Queen's personal attitude towards bear-baiting?",
           options: [
-            'She thought it was a sin and refused to watch it',
-            'She loved it and frequently ordered private exhibitions',
-            'She banned it across the country',
             'She only allowed the lower classes to watch it',
+            'She loved it and frequently ordered private exhibitions',
+            'She thought it was a sin and refused to watch it',
+            'She banned it across the country',
           ],
           answer: 1,
         },
         {
           question:
             'What type of plays did Elizabeth ban in the 1570s to avoid religious conflict?',
-          options: ['Historical plays', 'Tragedies', 'Religious mystery plays', 'Comedies'],
+          options: ['Comedies', 'Tragedies', 'Religious mystery plays', 'Historical plays'],
           answer: 2,
         },
         {
           question: 'Name one famous pioneering Elizabethan playwright other than Shakespeare.',
-          options: ['Geoffrey Chaucer', 'John Milton', 'Charles Dickens', 'Christopher Marlowe'],
+          options: ['John Milton', 'Charles Dickens', 'Geoffrey Chaucer', 'Christopher Marlowe'],
           answer: 3,
         },
         {
           question: 'In what year was the first purpose-built theatre (The Theatre) constructed?',
-          options: ['1599', '1588', '1576', '1558'],
+          options: ['1558', '1588', '1576', '1599'],
           answer: 2,
         },
         {
           question:
             'What was the nickname given to the poorest theatre-goers who stood in the open-air pit?',
-          options: ['Peasants', 'Commoners', 'Vagabonds', 'Groundlings'],
+          options: ['Vagabonds', 'Peasants', 'Commoners', 'Groundlings'],
           answer: 3,
         },
         {
           question:
             'Which religious group furiously opposed the theatre, believing it was the work of the devil?',
-          options: ['The Anglicans', 'The Puritans', 'The Catholics', 'The Humanists'],
+          options: ['The Catholics', 'The Puritans', 'The Anglicans', 'The Humanists'],
           answer: 1,
         },
         {
@@ -4085,9 +4085,9 @@ export default {
             "What 1572 law meant actors could be whipped if they didn't have a noble license?",
           options: [
             'The Vagabonds Act',
-            'The Poor Relief Act',
             'The Act of Uniformity',
             'The Treason Act',
+            'The Poor Relief Act',
           ],
           answer: 0,
         },
@@ -4095,9 +4095,9 @@ export default {
           question:
             'Name one famous acting company sponsored by powerful nobility to protect them from the law.',
           options: [
-            "The Queen's Players",
-            "The Lord Chamberlain's Men / The Earl of Leicester's Men",
             'The Globe Actors',
+            "The Lord Chamberlain's Men / The Earl of Leicester's Men",
+            "The Queen's Players",
             "The King's Men",
           ],
           answer: 1,
@@ -4107,9 +4107,9 @@ export default {
             'Why did the location of the theatres (outside the City walls) exacerbate opposition from authorities?',
           options: [
             'They blocked the main trade routes into London',
-            'They were funded by Spanish spies',
-            "They attracted crime/prostitutes beyond the Mayor's control and spread the Bubonic Plague",
             'They were built on sacred church land',
+            "They attracted crime/prostitutes beyond the Mayor's control and spread the Bubonic Plague",
+            'They were funded by Spanish spies',
           ],
           answer: 2,
         },
@@ -4362,8 +4362,8 @@ export default {
         {
           question: 'What happened to the population of England between 1551 and 1601?',
           options: [
-            'It remained completely stable',
             'It decreased as people migrated to America',
+            'It remained completely stable',
             'It fell drastically due to the Plague',
             'It grew rapidly from roughly 3 million to over 4 million',
           ],
@@ -4373,24 +4373,24 @@ export default {
           question: 'What economic problem was caused by demand for food outstripping supply?',
           options: [
             'Rapid inflation (prices rising much faster than wages)',
-            'A total collapse of the banking system',
-            'Deflation',
             'Economic recession',
+            'Deflation',
+            'A total collapse of the banking system',
           ],
           answer: 0,
         },
         {
           question: 'What agricultural practice involved landlords fencing off common fields?',
-          options: ['Crop rotation', 'Strip farming', 'Enclosure', 'Subsistence farming'],
+          options: ['Strip farming', 'Subsistence farming', 'Enclosure', 'Crop rotation'],
           answer: 2,
         },
         {
           question: 'Why did landlords prefer breeding sheep over traditional crop farming?',
           options: [
-            'Sheep were easier to protect from wolves',
-            'The European wool trade was more lucrative and it required fewer workers to pay',
             'Crop farming had been banned by the government',
+            'The European wool trade was more lucrative and it required fewer workers to pay',
             'The King ordered them to provide wool for uniforms',
+            'Sheep were easier to protect from wolves',
           ],
           answer: 1,
         },
@@ -4399,8 +4399,8 @@ export default {
             'What happened to unemployed rural workers after they were evicted due to enclosure?',
           options: [
             'They migrated to towns and cities looking for work, becoming vagrants/vagabonds',
-            'They were given a free house by the government',
             'They were immediately drafted into the army',
+            'They were given a free house by the government',
             'They were hired by local monasteries',
           ],
           answer: 0,
@@ -4408,17 +4408,17 @@ export default {
         {
           question:
             'Which major European port city placed a trade embargo on English cloth, causing mass unemployment?',
-          options: ['Paris', 'Amsterdam', 'Calais', 'Antwerp'],
+          options: ['Amsterdam', 'Paris', 'Calais', 'Antwerp'],
           answer: 3,
         },
         {
           question:
             "What term was used to describe the 'deserving' poor (the sick, elderly, and orphans)?",
           options: [
-            'The Able-bodied Poor',
             'The Idle Poor',
-            'The Impotent Poor',
             'The Vulnerable Poor',
+            'The Impotent Poor',
+            'The Able-bodied Poor',
           ],
           answer: 2,
         },
@@ -4426,10 +4426,10 @@ export default {
           question:
             "What term was used to describe the 'undeserving' poor who were physically capable of working?",
           options: [
-            'The Worthy Poor',
-            'The Able-bodied Poor',
             'The Impotent Poor',
+            'The Able-bodied Poor',
             'The Sturdy Beggars',
+            'The Worthy Poor',
           ],
           answer: 1,
         },
@@ -4452,15 +4452,15 @@ export default {
         {
           question:
             'Who wrote a famous pamphlet warning the public about the tricks used by vagabonds?',
-          options: ['Thomas Harman', 'John Foxe', 'Francis Bacon', 'William Shakespeare'],
+          options: ['Thomas Harman', 'Francis Bacon', 'William Shakespeare', 'John Foxe'],
           answer: 0,
         },
         {
           question: "What was a 'Counterfeit Crank'?",
           options: [
-            'A vagabond who forged official government licenses',
-            'A criminal who printed fake money',
             'A beggar who faked being deaf to steal money',
+            'A criminal who printed fake money',
+            'A vagabond who forged official government licenses',
             'A beggar who faked epileptic fits using soap to get sympathy money',
           ],
           answer: 3,
@@ -4480,10 +4480,10 @@ export default {
           question:
             'Under the 1572 Act, what was the punishment for being caught as a vagabond a third time?',
           options: [
-            'Deportation to America',
-            'Execution',
             'Having a hand cut off',
+            'Execution',
             'Life imprisonment',
+            'Deportation to America',
           ],
           answer: 1,
         },
@@ -4491,24 +4491,24 @@ export default {
           question:
             'What highly significant financial system did the 1572 Act introduce to help the impotent poor?',
           options: [
-            'The Royal Subsidy',
+            'The Church Tithe',
             'The national Poor Rate',
             'The Wealth Tax',
-            'The Church Tithe',
+            'The Royal Subsidy',
           ],
           answer: 1,
         },
         {
           question: 'Who was responsible for collecting the Poor Rate in local areas?',
-          options: ['Justices of the Peace / JPs', 'The Mayor', 'The Parish Priest', 'The Sheriff'],
+          options: ['Justices of the Peace / JPs', 'The Sheriff', 'The Mayor', 'The Parish Priest'],
           answer: 0,
         },
         {
           question: 'What major economic reality did the 1576 Poor Relief Act finally recognise?',
           options: [
-            'That charity from the Church was completely useless',
-            'That inflation was caused by Spanish silver',
             'That landlords were exploiting the poor',
+            'That inflation was caused by Spanish silver',
+            'That charity from the Church was completely useless',
             "That some able-bodied people wanted to work but simply couldn't find employment",
           ],
           answer: 3,
@@ -4516,17 +4516,17 @@ export default {
         {
           question: 'What did the 1576 Act order JPs to provide for the genuinely unemployed?',
           options: [
-            'Free housing',
             'Money for food and clothing',
-            'Raw materials, like wool and hemp, to work with and sell',
             'A free education for their children',
+            'Raw materials, like wool and hemp, to work with and sell',
+            'Free housing',
           ],
           answer: 2,
         },
         {
           question:
             'What institutions were created under the 1576 Act to punish those who refused to work?',
-          options: ['Monasteries', 'Prisons', 'Houses of Correction', "Debtors' Gaols"],
+          options: ["Debtors' Gaols", 'Monasteries', 'Houses of Correction', 'Prisons'],
           answer: 2,
         },
         {
@@ -4534,9 +4534,9 @@ export default {
             'Why did the government ultimately transition from brutal punishment to national poor relief?',
           options: [
             'They realised the sheer scale of the crisis could lead to starvation and a massive peasant rebellion if left ignored',
-            'They had a massive budget surplus to spend',
             "The Pope threatened to excommunicate them if they didn't",
             'The Queen was deeply sympathetic to the poor',
+            'They had a massive budget surplus to spend',
           ],
           answer: 0,
         },
@@ -4792,8 +4792,8 @@ export default {
           options: [
             'The Baltic timber market',
             'The Antwerp cloth market',
-            'The French spice market',
             'The Spanish wine trade',
+            'The French spice market',
           ],
           answer: 1,
         },
@@ -4805,13 +4805,13 @@ export default {
         },
         {
           question: 'What type of new, highly manoeuvrable warship was developed by the English?',
-          options: ['The Caravel', 'The Frigate', 'The Galleon', 'The Carrack'],
+          options: ['The Frigate', 'The Carrack', 'The Galleon', 'The Caravel'],
           answer: 2,
         },
         {
           question:
             'What term describes a sailor officially licensed by the Queen to attack Spanish ships?',
-          options: ['A mercenary', 'A pirate', 'A buccaneer', 'Privateer'],
+          options: ['A buccaneer', 'A pirate', 'A mercenary', 'Privateer'],
           answer: 3,
         },
         {
@@ -4822,40 +4822,40 @@ export default {
         {
           question:
             'What area of North America (modern-day California) did Drake claim for Elizabeth?',
-          options: ['New England', 'Nova Albion', 'Virginia', 'Roanoke'],
+          options: ['Virginia', 'Nova Albion', 'New England', 'Roanoke'],
           answer: 1,
         },
         {
           question: 'Roughly how much Spanish treasure did Drake bring back to England?',
-          options: ['£50,000', '£400,000', '£1,000,000', '£100,000'],
+          options: ['£50,000', '£400,000', '£100,000', '£1,000,000'],
           answer: 1,
         },
         {
           question: 'On which ship was Francis Drake knighted by Queen Elizabeth?',
-          options: ['The Golden Hind', 'The Revenge', 'The Mary Rose', 'The Tiger'],
+          options: ['The Golden Hind', 'The Revenge', 'The Tiger', 'The Mary Rose'],
           answer: 0,
         },
         {
           question:
             'Which English nobleman was given a royal charter in 1584 to colonise North America?',
-          options: ['Francis Drake', 'Martin Frobisher', 'John Hawkins', 'Sir Walter Raleigh'],
+          options: ['John Hawkins', 'Martin Frobisher', 'Francis Drake', 'Sir Walter Raleigh'],
           answer: 3,
         },
         {
           question: 'What name was given to the new territory in honour of Elizabeth?',
-          options: ['Georgia', 'Maryland', 'Virginia', 'Carolina'],
+          options: ['Carolina', 'Georgia', 'Virginia', 'Maryland'],
           answer: 2,
         },
         {
           question:
             'On which specific island off the coast of North America did the colonists land?',
-          options: ['Jamestown Island', 'Manhattan Island', 'Newfoundland', 'Roanoke Island'],
+          options: ['Manhattan Island', 'Jamestown Island', 'Newfoundland', 'Roanoke Island'],
           answer: 3,
         },
         {
           question:
             "What was the name of the flagship that hit a sandbank, ruining the colony's food and seeds?",
-          options: ['The Golden Hind', 'The Tiger', 'The Revenge', 'The Mayflower'],
+          options: ['The Revenge', 'The Tiger', 'The Golden Hind', 'The Mayflower'],
           answer: 1,
         },
         {
@@ -4863,9 +4863,9 @@ export default {
             'Name one of the aggressive military leaders of the 1585 expedition who caused conflict.',
           options: [
             'Walter Raleigh',
-            'John White',
-            'Ralph Lane (or Richard Grenville)',
             'Francis Drake',
+            'Ralph Lane (or Richard Grenville)',
+            'John White',
           ],
           answer: 2,
         },
@@ -4879,8 +4879,8 @@ export default {
           question: 'Why did Native Americans turn against the English settlers?',
           options: [
             'They discovered the English were allied with the Spanish',
-            'The English refused to trade with them',
             'The English tried to force them into slavery',
+            'The English refused to trade with them',
             'English demands for food, aggressive behaviour, and the spread of deadly European diseases',
           ],
           answer: 3,
@@ -4888,13 +4888,13 @@ export default {
         {
           question:
             'In what year was the second attempt to establish a colony (which included women and children) launched?',
-          options: ['1587', '1584', '1590', '1585'],
+          options: ['1587', '1584', '1585', '1590'],
           answer: 0,
         },
         {
           question:
             'Who was the leader of the 1587 expedition who returned to England for supplies?',
-          options: ['Walter Raleigh', 'Ralph Lane', 'John White', 'Thomas Harriot'],
+          options: ['Thomas Harriot', 'Walter Raleigh', 'John White', 'Ralph Lane'],
           answer: 2,
         },
         {
@@ -4902,14 +4902,14 @@ export default {
           options: [
             'The Spanish navy blockaded the English Channel',
             'All English ships were requisitioned to fight the Spanish Armada',
-            'The Queen refused to pay for them',
             'They were destroyed by a massive storm',
+            'The Queen refused to pay for them',
           ],
           answer: 1,
         },
         {
           question: 'How long were the 1587 colonists left without any supplies or communication?',
-          options: ['Five years', 'Ten years', 'One year', 'Three years'],
+          options: ['One year', 'Ten years', 'Five years', 'Three years'],
           answer: 3,
         },
         {
@@ -4918,8 +4918,8 @@ export default {
           options: [
             "The 'Lost Colony'",
             'The Ghost Colony',
-            'The Starving Time',
             'The Doomed Colony',
+            'The Starving Time',
           ],
           answer: 0,
         },
@@ -5174,7 +5174,7 @@ export default {
       quiz: [
         {
           question: 'In what year did Queen Elizabeth grant Walter Raleigh a Royal Charter?',
-          options: ['1585', '1584', '1577', '1588'],
+          options: ['1588', '1584', '1577', '1585'],
           answer: 1,
         },
         {
@@ -5182,25 +5182,25 @@ export default {
             'What traditional European English trade market had collapsed, encouraging New World expansion?',
           options: [
             'The French wine market',
-            'The Spanish wool trade',
-            'The Antwerp cloth market',
             'The Baltic grain market',
+            'The Antwerp cloth market',
+            'The Spanish wool trade',
           ],
           answer: 2,
         },
         {
           question:
             'What name was given to the new territory in North America in honour of Elizabeth?',
-          options: ['New England', 'Maryland', 'Carolina', 'Virginia'],
+          options: ['Maryland', 'Carolina', 'New England', 'Virginia'],
           answer: 3,
         },
         {
           question: 'Did Walter Raleigh personally lead the expeditions to North America?',
           options: [
             'No, Elizabeth refused to let him leave court',
-            'No, he died before they set sail',
             'Yes, but only the 1585 expedition',
             'Yes, he led both expeditions',
+            'No, he died before they set sail',
           ],
           answer: 0,
         },
@@ -5218,16 +5218,16 @@ export default {
         {
           question: 'Strategically, what did the English hope to use a colony in Virginia for?',
           options: [
-            'To mine massive amounts of gold',
+            'To convert the Native Americans to Catholicism',
             'As a hidden base for privateers to attack Spanish treasure ships',
             'To deport English criminals',
-            'To convert the Native Americans to Catholicism',
+            'To mine massive amounts of gold',
           ],
           answer: 1,
         },
         {
           question: 'On which specific island was the colony established?',
-          options: ['Bermuda', 'Hatteras Island', 'Roanoke Island', 'Jamestown Island'],
+          options: ['Jamestown Island', 'Bermuda', 'Roanoke Island', 'Hatteras Island'],
           answer: 2,
         },
         {
@@ -5237,13 +5237,13 @@ export default {
         },
         {
           question: 'Who was the brilliant mathematician and mapmaker on the 1585 expedition?',
-          options: ['Francis Bacon', 'William Cecil', 'John Dee', 'Thomas Harriot'],
+          options: ['John Dee', 'William Cecil', 'Francis Bacon', 'Thomas Harriot'],
           answer: 3,
         },
         {
           question:
             'What was the name of the flagship that hit a sandbank, ruining the food and seeds?',
-          options: ['The Mary Rose', 'The Tiger', 'The Revenge', 'The Golden Hind'],
+          options: ['The Mary Rose', 'The Tiger', 'The Golden Hind', 'The Revenge'],
           answer: 1,
         },
         {
@@ -5251,30 +5251,30 @@ export default {
           options: [
             'They were mostly soldiers and gentlemen with no farming skills',
             'They were convicts sent as punishment',
-            'They were mostly elderly scholars',
             'They were entirely wealthy noblemen',
+            'They were mostly elderly scholars',
           ],
           answer: 0,
         },
         {
           question:
             'Which Native American Chief turned against the English and was killed by Ralph Lane?',
-          options: ['Chief Manteo', 'Chief Wanchese', 'Chief Wingina', 'Chief Powhatan'],
+          options: ['Chief Powhatan', 'Chief Wanchese', 'Chief Wingina', 'Chief Manteo'],
           answer: 2,
         },
         {
           question: 'Apart from violence, what unwittingly killed many Native Americans?',
           options: [
-            'Starvation caused by failed crops',
-            'European diseases to which they had no immunity',
             'Poisonous plants they were forced to eat',
+            'European diseases to which they had no immunity',
             'Attacks by wild animals',
+            'Starvation caused by failed crops',
           ],
           answer: 1,
         },
         {
           question: 'Who rescued the surviving 1585 colonists and took them back to England?',
-          options: ['John Hawkins', 'Martin Frobisher', 'Walter Raleigh', 'Francis Drake'],
+          options: ['Martin Frobisher', 'John Hawkins', 'Walter Raleigh', 'Francis Drake'],
           answer: 3,
         },
         {
@@ -5282,23 +5282,23 @@ export default {
             'How did the demographics of the 1587 expedition differ from the 1585 expedition?',
           options: [
             'It only included professional soldiers',
-            'It included Spanish mercenaries',
-            'It included families, women, and children with farming skills',
             'It included thousands of prisoners',
+            'It included families, women, and children with farming skills',
+            'It included Spanish mercenaries',
           ],
           answer: 2,
         },
         {
           question: 'Who was the leader of the 1587 expedition?',
-          options: ['Walter Raleigh', 'John White', 'Thomas Harriot', 'Ralph Lane'],
+          options: ['Walter Raleigh', 'John White', 'Ralph Lane', 'Thomas Harriot'],
           answer: 1,
         },
         {
           question: 'Why were the Native Americans immediately hostile to the 1587 colonists?',
           options: [
             "Because of the violence and murders committed by Ralph Lane's men in 1585",
-            'The colonists refused to trade any weapons with them',
             'The colonists stole their holy relics',
+            'The colonists refused to trade any weapons with them',
             'The colonists allied with their enemies',
           ],
           answer: 0,
@@ -5307,20 +5307,20 @@ export default {
           question: 'Why was John White unable to return to Virginia with supplies in 1588?',
           options: [
             'He ran out of money to buy supplies',
-            'He was arrested for treason',
             'His ship sank on the way',
+            'He was arrested for treason',
             'Elizabeth banned all ships from leaving England to fight the Spanish Armada',
           ],
           answer: 3,
         },
         {
           question: 'How long was John White stranded in England?',
-          options: ['Five years', 'Three years / until 1590', 'One year', 'Two years'],
+          options: ['Two years', 'Three years / until 1590', 'Five years', 'One year'],
           answer: 1,
         },
         {
           question: 'What single word was found carved into a post when White finally returned?',
-          options: ['CROATOAN', 'DANGER', 'VIRGINIA', 'ROANOKE'],
+          options: ['CROATOAN', 'VIRGINIA', 'ROANOKE', 'DANGER'],
           answer: 0,
         },
       ],

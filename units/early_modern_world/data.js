@@ -950,7 +950,7 @@ const early_modern_world = {
         {
           question:
             'Which imperial dynasty ruled China in 1450, renowned for its immense wealth, porcelain, and global prestige?',
-          options: ['Han Dynasty', 'Song Dynasty', 'Qing Dynasty', 'Ming Dynasty'],
+          options: ['Qing Dynasty', 'Han Dynasty', 'Song Dynasty', 'Ming Dynasty'],
           answer: 'Ming Dynasty',
           a: 'Ming Dynasty',
           q: 'Which imperial dynasty ruled China in 1450, renowned for its immense wealth, porcelain, and global prestige?',
@@ -959,7 +959,7 @@ const early_modern_world = {
         {
           question:
             'Who was the legendary Chinese Muslim admiral who commanded seven massive treasure fleet expeditions across the Indian Ocean between 1405 and 1433?',
-          options: ['Kublai Khan', 'Sun Tzu', 'Zheng He', 'Qin Shi Huang'],
+          options: ['Sun Tzu', 'Kublai Khan', 'Zheng He', 'Qin Shi Huang'],
           answer: 'Zheng He',
           a: 'Zheng He',
           q: 'Who was the legendary Chinese Muslim admiral who commanded seven massive treasure fleet expeditions across the Indian Ocean between 1405 and 1433?',
@@ -969,10 +969,10 @@ const early_modern_world = {
           question:
             'Which transformative historical event took place in May 1453, ending the Byzantine Empire and shifting Eurasian trade dynamics?',
           options: [
-            'The Siege of Vienna',
+            'The Sack of Rome',
             'The Fall of Constantinople',
             'The Battle of Lepanto',
-            'The Sack of Rome',
+            'The Siege of Vienna',
           ],
           answer: 'The Fall of Constantinople',
           a: 'The Fall of Constantinople',
@@ -982,7 +982,7 @@ const early_modern_world = {
         {
           question:
             'Which Ottoman Sultan successfully led the siege and conquest of Constantinople in 1453 at just 21 years of age?',
-          options: ['Mehmed II (The Conqueror)', 'Suleiman the Magnificent', 'Selim I', 'Osman I'],
+          options: ['Mehmed II (The Conqueror)', 'Suleiman the Magnificent', 'Osman I', 'Selim I'],
           answer: 'Mehmed II (The Conqueror)',
           a: 'Mehmed II (The Conqueror)',
           q: 'Which Ottoman Sultan successfully led the siege and conquest of Constantinople in 1453 at just 21 years of age?',
@@ -993,8 +993,8 @@ const early_modern_world = {
             'What ancient overland trade network connecting China, Central Asia, and the Middle East to Europe was heavily taxed and controlled by the Ottomans after 1453?',
           options: [
             'The Royal Road',
-            'The Amber Road',
             'The Trans-Saharan Highway',
+            'The Amber Road',
             'The Silk Roads',
           ],
           answer: 'The Silk Roads',
@@ -1007,9 +1007,9 @@ const early_modern_world = {
             'Which powerful West African empire dominated the trans-Saharan gold and salt trade routes during the 15th and 16th centuries?',
           options: [
             'The Songhai Empire',
-            'The Kingdom of Aksum',
             'The Kingdom of Benin',
             'The Zulu Empire',
+            'The Kingdom of Aksum',
           ],
           answer: 'The Songhai Empire',
           a: 'The Songhai Empire',
@@ -1019,7 +1019,7 @@ const early_modern_world = {
         {
           question:
             'Which West African trading city became globally celebrated as a prestigious center of Islamic scholarship, universities, and book production?',
-          options: ['Cairo', 'Timbuktu', 'Alexandria', 'Marrakech'],
+          options: ['Marrakech', 'Timbuktu', 'Alexandria', 'Cairo'],
           answer: 'Timbuktu',
           a: 'Timbuktu',
           q: 'Which West African trading city became globally celebrated as a prestigious center of Islamic scholarship, universities, and book production?',
@@ -1029,8 +1029,8 @@ const early_modern_world = {
           question:
             'Why did Ottoman control of Eastern Mediterranean trade routes compel Western European monarchs to sponsor risky ocean voyages?',
           options: [
-            'European rulers wanted to conquer the Ottoman capital of Constantinople directly by sea',
             'European navigators were trying to escape religious warfare by migrating to Antarctica',
+            'European rulers wanted to conquer the Ottoman capital of Constantinople directly by sea',
             'European merchants sought direct sea routes to Asia to bypass Ottoman customs tariffs and middlemen',
             'European traders were forbidden by the Pope from trading in any luxury goods',
           ],
@@ -1044,7 +1044,7 @@ const early_modern_world = {
         {
           question:
             'What term describes the historical misconception of viewing all world events exclusively through European lenses and assuming Europe was inherently superior?',
-          options: ['Eurocentrism', 'Feudalism', 'Absolutism', 'Mercantilism'],
+          options: ['Eurocentrism', 'Absolutism', 'Feudalism', 'Mercantilism'],
           answer: 'Eurocentrism',
           a: 'Eurocentrism',
           q: 'What term describes the historical misconception of viewing all world events exclusively through European lenses and assuming Europe was inherently superior?',
@@ -1054,9 +1054,9 @@ const early_modern_world = {
           question:
             'In 1450, how did the urbanization, commercial wealth, and technological prowess of China and the Ottoman Empire compare to Western Europe?',
           options: [
-            'Western Europe was far more industrialized and possessed much larger metropolitan cities than Asia',
-            'China and the Ottoman Empire had far larger cities, wealthier economies, and superior technological innovations than Western Europe',
             'China and the Islamic world were impoverished agrarian lands with no major trade networks',
+            'China and the Ottoman Empire had far larger cities, wealthier economies, and superior technological innovations than Western Europe',
+            'Western Europe was far more industrialized and possessed much larger metropolitan cities than Asia',
             'Western European navies completely dominated all trade across the Indian Ocean',
           ],
           answer:
@@ -1310,14 +1310,14 @@ const early_modern_world = {
         {
           question:
             'In what year did Martin Luther post his 95 Theses, starting the Protestant Reformation?',
-          options: ['1588', '1534', '1492', '1517'],
+          options: ['1492', '1534', '1588', '1517'],
           answer: 3,
           explanation: '1517',
         },
         {
           question:
             'Which English monarch broke away from the Catholic Church in 1534 to establish the Church of England?',
-          options: ['Elizabeth I', 'Mary I', 'Henry VIII', 'Edward VI'],
+          options: ['Mary I', 'Edward VI', 'Henry VIII', 'Elizabeth I'],
           answer: 2,
           explanation: 'Henry VIII',
         },
@@ -1325,9 +1325,9 @@ const early_modern_world = {
           question:
             'What was the name of the 1494 papal agreement that divided the Americas between Spain and Portugal?',
           options: [
-            'The Magna Carta',
-            'The Treaty of Tordesillas',
             'The Treaty of Versailles',
+            'The Treaty of Tordesillas',
+            'The Magna Carta',
             'The Edict of Nantes',
           ],
           answer: 1,
@@ -1336,7 +1336,7 @@ const early_modern_world = {
         {
           question:
             'What official document gave privateers legal permission from a monarch to attack foreign ships?',
-          options: ['A Papal Bull', 'A Royal Charter', 'An Indulgence', 'A Letter of Marque'],
+          options: ['A Royal Charter', 'An Indulgence', 'A Papal Bull', 'A Letter of Marque'],
           answer: 3,
           explanation: 'A Letter of Marque',
         },
@@ -1344,9 +1344,9 @@ const early_modern_world = {
           question: 'What nickname did the Spanish give to Francis Drake?',
           options: [
             'The Pirate King',
-            'The English Devil',
-            'El Draque ("The Dragon")',
             'The Heretic',
+            'El Draque ("The Dragon")',
+            'The English Devil',
           ],
           answer: 2,
           explanation: 'El Draque ("The Dragon")',
@@ -1354,7 +1354,7 @@ const early_modern_world = {
         {
           question:
             'Name the flagship on which Francis Drake circumnavigated the globe between 1577 and 1580.',
-          options: ['The Golden Hind', 'The Mary Rose', 'The Victory', 'The Mayflower'],
+          options: ['The Golden Hind', 'The Victory', 'The Mayflower', 'The Mary Rose'],
           answer: 0,
           explanation: 'The Golden Hind',
         },
@@ -1363,9 +1363,9 @@ const early_modern_world = {
             'Which English naval tactic shattered the Spanish fleet formation while anchored off Calais in 1588?',
           options: [
             'Boarding parties',
-            'Cannon bombardment from shore',
-            'Fire ships',
             'Submarine warfare',
+            'Fire ships',
+            'Cannon bombardment from shore',
           ],
           answer: 2,
           explanation: 'Fire ships',
@@ -1373,7 +1373,7 @@ const early_modern_world = {
         {
           question:
             'Who was the Catholic King of Spain who launched the Armada against England in 1588?',
-          options: ['King Louis XIV', 'King Philip II', 'King Ferdinand II', 'King Charles V'],
+          options: ['King Charles V', 'King Philip II', 'King Ferdinand II', 'King Louis XIV'],
           answer: 1,
           explanation: 'King Philip II',
         },
@@ -1383,8 +1383,8 @@ const early_modern_world = {
           options: [
             'The Protestant Wind',
             'The Armada Storm',
-            'The Divine Tempest',
             'The English Channel Gale',
+            'The Divine Tempest',
           ],
           answer: 0,
           explanation: 'The Protestant Wind',
@@ -1392,7 +1392,7 @@ const early_modern_world = {
         {
           question:
             "What continent does Queen Elizabeth's hand rest upon in the famous 1588 Armada Portrait?",
-          options: ['Europe', 'Africa', 'Asia', 'North America'],
+          options: ['Asia', 'Europe', 'Africa', 'North America'],
           answer: 3,
           explanation: 'North America',
         },
@@ -1698,8 +1698,8 @@ const early_modern_world = {
             'What type of business model allowed English investors to pool capital and share financial risk for overseas trade?',
           options: [
             'A Feudal Guild',
-            'A Merchant Bank',
             'A Crown Monopoly',
+            'A Merchant Bank',
             'A Joint-Stock Company',
           ],
           answer: 3,
@@ -1715,14 +1715,14 @@ const early_modern_world = {
         {
           question:
             'What was the name of the first permanent English settlement in North America, founded in 1607?',
-          options: ['Plymouth', 'Roanoke', 'Jamestown', 'Boston'],
+          options: ['Roanoke', 'Plymouth', 'Jamestown', 'Boston'],
           answer: 2,
           explanation: 'Jamestown',
         },
         {
           question:
             'What cash-crop, introduced by John Rolfe in 1612, saved the Jamestown colony economically?',
-          options: ['Sugar', 'Tobacco', 'Tea', 'Cotton'],
+          options: ['Sugar', 'Tobacco', 'Cotton', 'Tea'],
           answer: 1,
           explanation: 'Tobacco',
         },
@@ -1740,28 +1740,28 @@ const early_modern_world = {
         },
         {
           question: 'Which Mughal Emperor did Sir Thomas Roe negotiate with between 1615 and 1619?',
-          options: ['Emperor Jahangir', 'Emperor Shah Jahan', 'Emperor Aurangzeb', 'Emperor Akbar'],
+          options: ['Emperor Jahangir', 'Emperor Aurangzeb', 'Emperor Akbar', 'Emperor Shah Jahan'],
           answer: 0,
           explanation: 'Emperor Jahangir',
         },
         {
           question:
             'What was the historical term for an English fortified trading post and warehouse established in foreign ports?',
-          options: ['A Mission', 'A Plantation', 'A Presidio', 'A Factory'],
+          options: ['A Plantation', 'A Mission', 'A Presidio', 'A Factory'],
           answer: 3,
           explanation: 'A Factory',
         },
         {
           question:
             "In what year did the Battle of Plassey take place, marking the EIC's transition to territorial rule?",
-          options: ['1688', '1600', '1757', '1776'],
+          options: ['1600', '1688', '1757', '1776'],
           answer: 2,
           explanation: '1757',
         },
         {
           question:
             'What name was given to native Indian soldiers recruited and trained by the East India Company?',
-          options: ['Janissaries', 'Privateers', 'Conquistadors', 'Sepoys'],
+          options: ['Conquistadors', 'Privateers', 'Janissaries', 'Sepoys'],
           answer: 3,
           explanation: 'Sepoys',
         },
@@ -2058,7 +2058,8 @@ const early_modern_world = {
           source: {
             type: 'written',
             shelfmark: 'National Archives SP 14/19/1',
-            title: 'The Anonymous Warning Letter to Lord Monteagle (26 October 1605)',
+            title:
+              'Source C Transcript: The Anonymous Warning Letter to Lord Monteagle (26 October 1605)',
             content:
               'my lord out of the love i beare to some of youere frends i have a caer of youre preservacion. therfor i would advyse yowe as yowe tender youre lyf to devyse some excuse to shift of youre attendance at this parleament for god and man hathe concurred to punishe the wickednes of this tyme and thinke not slightlye of this advertisment but retyere youre self into youre contri wheare yowe maye expect the event in safti for thowghe theare be no apparance of anni stir yet i saye they shall receyve a terrible blowe this parleament and yet they shall not seie who hurts them. this councel is not to be contemned because it maye do yowe goode and can do yowe no harme for the dangere is passed as soon as yowe have burnt the letter...',
             provenance:
@@ -2251,7 +2252,7 @@ const early_modern_world = {
           },
         ],
         source_context:
-          'Source B is a famous contemporary broadsheet engraving published in Germany and the Netherlands in February 1649, immediately following the public execution of King Charles I outside Whitehall Banqueting House on 30 January 1649. The print captures the staggering drama of the scene: the masked executioner holding up the severed royal head to the crowd, the massive ring of New Model Army cavalry holding back thousands of stunned spectators, and ladies in the foreground swooning in horror. European monarchs reacted with utter revulsion, viewing the English regicides as murderous blasphemers who had shattered the sacred order of Christian kingship. Hinge Question: How does this European print reflect the deep psychological shock that gripped seventeenth-century society when an anointed king was publicly executed by his own subjects?',
+          'Source D is a famous contemporary broadsheet engraving published in Germany and the Netherlands in February 1649, immediately following the public execution of King Charles I outside Whitehall Banqueting House on 30 January 1649. The print captures the staggering drama of the scene: the masked executioner holding up the severed royal head to the crowd, the massive ring of New Model Army cavalry holding back thousands of stunned spectators, and ladies in the foreground swooning in horror. European monarchs reacted with utter revulsion, viewing the English regicides as murderous blasphemers who had shattered the sacred order of Christian kingship. Hinge Question: How does this European print reflect the deep psychological shock that gripped seventeenth-century society when an anointed king was publicly executed by his own subjects?',
       },
       do_now: {
         type: 'standard',
@@ -2396,11 +2397,11 @@ const early_modern_world = {
           image: '/images/charles_i_execution.jpg',
           image_alt: 'Contemporary German print of the Execution of King Charles I (1649)',
           image_caption:
-            'Source C: Contemporary broadsheet print published in Frankfurt (1649) depicting the execution of King Charles I outside Whitehall Banqueting House. Thousands of stunned spectators watch as the executioner raises the severed head, surrounded by heavy cavalry.',
+            'Source D: Contemporary broadsheet print published in Frankfurt (1649) depicting the execution of King Charles I outside Whitehall Banqueting House. Thousands of stunned spectators watch as the executioner raises the severed head, surrounded by heavy cavalry.',
           source: {
             type: 'written',
             shelfmark: 'House of Lords Record Office, HL/PO/JO/10/1/297',
-            title: 'Death Warrant of King Charles I (29 January 1649)',
+            title: 'Source C: Death Warrant of King Charles I (29 January 1649)',
             content:
               'Whereas Charles Stuart, King of England, is and standeth convicted, attainted and condemned of High Treason and other high Crimes, and sentence upon Saturday last was pronounced against him by this Court to be put to death by the severing of his head from his body, of which sentence execution yet remaineth to be done: These are therefore to will and require you to see the said sentence executed in the open street before Whitehall upon the morrow, being the thirtieth day of this instant month of January, between the hours of ten in the morning and five in the afternoon of the same day with full effect...',
             provenance:
@@ -2410,11 +2411,11 @@ const early_modern_world = {
             {
               type: 'source_analysis',
               question:
-                'Study Source C and read the Death Warrant extract alongside Act 3. Using paragraphs [3.1] and [3.2], explain Charles I’s constitutional defence during his trial, and analyse why the execution sent shockwaves across Europe.',
+                'Study Sources C and D alongside Act 3. Using paragraphs [3.1] and [3.2], explain Charles I’s constitutional defence during his trial, and analyse why the execution sent shockwaves across Europe.',
               starter:
-                'During his trial in Westminster Hall, Charles I mounted a powerful constitutional defence, as seen in paragraph [3.2], by arguing that..., while the execution in Source C shocked European powers because...',
+                'During his trial in Westminster Hall, Charles I mounted a powerful constitutional defence against the court (Source C), as seen in paragraph [3.2], by arguing that..., while the execution in Source D shocked European powers because...',
               model_answer:
-                'During his trial in January 1649, King Charles I mounted an incisive and legally formidable constitutional defence. As explained in paragraph [3.2], Charles fundamentally challenged the legal jurisdiction of the High Court of Justice, refusing to enter a plea because under English law, the monarch was the supreme source of judicial authority. Charles eloquently argued that an unauthorized tribunal created by a purged minority of MPs ("Pride’s Purge" in [3.1]) possessed no lawful standing, famously equating their power to that of "thieves and robbers by the highways" [3.2]. He maintained that if a king’s rights could be trampled by military force, no English citizen’s property or liberties were safe. Consequently, as captured visually in Source C and the Death Warrant, his execution sent violent shockwaves throughout European royal courts. To seventeenth-century Europeans steeped in the Divine Right of Kings, putting an anointed monarch on public trial and executing him like a common criminal was terrifying and blasphemous. It shattered the inviolable sanctity of Christian monarchy and established a dangerous precedent: that sovereign rulers could be held criminally accountable by their own subjects.',
+                'During his trial in January 1649, King Charles I mounted an incisive and legally formidable constitutional defence. As explained in paragraph [3.2], Charles fundamentally challenged the legal jurisdiction of the High Court of Justice, refusing to enter a plea because under English law, the monarch was the supreme source of judicial authority. Charles eloquently argued that an unauthorized tribunal created by a purged minority of MPs ("Pride’s Purge" in [3.1]) possessed no lawful standing, famously equating their power to that of "thieves and robbers by the highways" [3.2]. He maintained that if a king’s rights could be trampled by military force, no English citizen’s property or liberties were safe. Consequently, as captured in the Death Warrant (Source C) and visually in Source D, his execution sent violent shockwaves throughout European royal courts. To seventeenth-century Europeans steeped in the Divine Right of Kings, putting an anointed monarch on public trial and executing him like a common criminal was terrifying and blasphemous. It shattered the inviolable sanctity of Christian monarchy and established a dangerous precedent: that sovereign rulers could be held criminally accountable by their own subjects.',
             },
           ],
         },
@@ -2733,7 +2734,7 @@ const early_modern_world = {
             type: 'written',
             shelfmark: 'Bank of England Archives, Royal Charter 1694, MS 214/1',
             title:
-              'Royal Charter of the Governor and Company of the Bank of England (27 July 1694)',
+              'Source C: Royal Charter of the Governor and Company of the Bank of England (27 July 1694)',
             content:
               'William and Mary, by the Grace of God, King and Queen of England, Scotland, France and Ireland... Know ye, that We, in pursuance of the late Act of Parliament entitled "An Act for granting to their Majesties several Rates and Duties upon Tunnage of Ships and Vessels, and upon Beer, Ale, and other Liquors, for securing certain Recompenses and Advantages to such persons as shall voluntarily advance the sum of Fifteen Hundred Thousand Pounds"... Do hereby create, constitute, declare, and appoint that the said Subscribers shall be one Body Politick and Corporate, by the Name of The Governor and Company of the Bank of England...',
             provenance:
@@ -2743,11 +2744,11 @@ const early_modern_world = {
             {
               type: 'source_analysis',
               question:
-                'Read the Bank of England Royal Charter extract alongside Act 3. Using paragraphs [3.1] and [3.2], explain why the founding of the Bank of England and the creation of the National Debt gave Britain a military and financial advantage over its European rivals.',
+                'Read Source C (The Bank of England Royal Charter extract) alongside Act 3. Using paragraphs [3.1] and [3.2], explain why the founding of the Bank of England and the creation of the National Debt gave Britain a military and financial advantage over its European rivals.',
               starter:
-                'The founding of the Bank of England in 1694 and the National Debt gave Britain a decisive advantage because, as explained in paragraph [3.1], modern warfare required massive funding, and paragraph [3.2] reveals that Parliament backed the loans by...',
+                'Source C (The Bank of England Royal Charter) and the creation of the National Debt in 1694 gave Britain a decisive advantage because, as explained in paragraph [3.1], modern warfare required massive funding, and paragraph [3.2] reveals that Parliament backed the loans by...',
               model_answer:
-                'The founding of the Bank of England in 1694 and the creation of the National Debt provided Britain with an extraordinary financial advantage that enabled it to defeat far larger continental rivals. As noted in paragraph [3.1], late seventeenth-century warfare against Louis XIV’s France was extraordinarily costly, demanding vast standing armies and fleets of battleships that overwhelmed traditional royal tax revenues. Unlike French monarchs who relied on extortionate taxes and frequently defaulted on royal debts, Britain pioneered the National Debt [3.2]. As shown in the 1694 Royal Charter, the £1.2 million loan was secured not by the fragile personal word of the monarch, but by parliamentary legislation and dedicated tax revenues. This parliamentary guarantee gave merchants and international investors absolute confidence, allowing the British state to borrow immense sums rapidly at low, reliable interest rates [3.2]. Supported by the issue of paper banknotes, this transformed Britain into a Fiscal-Military State capable of funding the Royal Navy and out-lasting wealthier rivals in prolonged global wars.',
+                'The founding of the Bank of England in 1694 (Source C) and the creation of the National Debt provided Britain with an extraordinary financial advantage that enabled it to defeat far larger continental rivals. As noted in paragraph [3.1], late seventeenth-century warfare against Louis XIV’s France was extraordinarily costly, demanding vast standing armies and fleets of battleships that overwhelmed traditional royal tax revenues. Unlike French monarchs who relied on extortionate taxes and frequently defaulted on royal debts, Britain pioneered the National Debt [3.2]. As shown in the 1694 Royal Charter (Source C), the £1.2 million loan was secured not by the fragile personal word of the monarch, but by parliamentary legislation and dedicated tax revenues. This parliamentary guarantee gave merchants and international investors absolute confidence, allowing the British state to borrow immense sums rapidly at low, reliable interest rates [3.2]. Supported by the issue of paper banknotes, this transformed Britain into a Fiscal-Military State capable of funding the Royal Navy and out-lasting wealthier rivals in prolonged global wars.',
             },
           ],
         },
@@ -2915,7 +2916,7 @@ const early_modern_world = {
             objective:
               'Evaluate the utility of contemporary sources and plantation records for investigating the dehumanisation and industrial exploitation of enslaved people in the Caribbean.',
             primer:
-              'Focus students on Acts 3 and 4, alongside the extended assessment practice. Contrast the humiliation of the "scramble" auction in Act 3 with the deadly 18-hour shifts on sugar plantations in Act 4. Scaffold the 8-mark utility question by guiding students through the provenance, strengths, and limitations of both Source B and Source C.',
+              'Focus students on Acts 3 and 4, alongside the extended assessment practice. Contrast the humiliation of the "scramble" auction in Act 3 with the deadly 18-hour shifts on sugar plantations in Act 4. Scaffold the 8-mark utility question by guiding students through the provenance, strengths, and limitations of both Source B and Source D.',
             question:
               'Hinge Question: What are the limitations of relying solely on European diagrams and overseers’ drawings when trying to understand the lived reality of enslaved Africans?',
           },
@@ -3036,18 +3037,18 @@ const early_modern_world = {
               image: '/images/triangular_trade.png',
               image_alt: 'Map of the Triangular Trade routes across the Atlantic Ocean',
               image_caption:
-                'Source A2: Diagram of the Triangular Trade: British manufactured goods (Leg 1) traded for captive Africans (Leg 2 / Middle Passage), who produced sugar, tobacco, and cotton shipped back to Britain (Leg 3).',
+                'Reference Map: Diagram of the Triangular Trade routes across the Atlantic Ocean: British manufactured goods (Leg 1) traded for captive Africans (Leg 2 / Middle Passage), who produced sugar, tobacco, and cotton shipped back to Britain (Leg 3).',
             },
           ],
           tasks: [
             {
               type: 'source_analysis',
               question:
-                'Study Sources A and A2 and read Act 1. Using paragraphs [1.1], [1.2], and [1.3], explain how the mechanics of the First Leg and coastal slave castles transformed captive human beings into trade commodities.',
+                'Study Source A and the Triangular Trade reference map alongside Act 1. Using paragraphs [1.1], [1.2], and [1.3], explain how the mechanics of the First Leg and coastal slave castles transformed captive human beings into trade commodities.',
               starter:
                 'The mechanics of the First Leg and coastal slave castles transformed human beings into commodities because, as detailed in [1.1] and [1.2], British merchants exchanged manufactured goods and muskets for..., while paragraph [1.3] describes how captives were systematically dehumanised by...',
               model_answer:
-                'The mechanics of the First Leg and the operations at coastal slave castles like Cape Coast Castle (Source A) formed a systematic apparatus designed to strip human beings of their identity and commodify them for international commerce. As outlined in paragraphs [1.1] and [1.2], British ships arrived laden with industrial manufactured goods—notably iron, textiles, and muskets—which were exchanged with local African merchants for captives captured in warfare. The introduction of firearms created an escalating cycle of militarized raids that generated an endless supply of prisoners [1.2]. Once delivered to coastal fortresses, captives underwent a calculated process of dehumanisation [1.3]: they were physically inspected like livestock, subjected to agonizing branding with red-hot irons displaying corporate marks like "RAC", and locked in subterranean barracoons in pitch darkness for months. Chained without sanitation and forcibly marched through the "Door of No Return" onto ships, enslaved Africans were legally and physically reduced to commercial cargo within the Triangular Trade network (Source A2).',
+                'The mechanics of the First Leg and the operations at coastal slave castles like Cape Coast Castle (Source A) formed a systematic apparatus designed to strip human beings of their identity and commodify them for international commerce. As outlined in paragraphs [1.1] and [1.2], British ships arrived laden with industrial manufactured goods—notably iron, textiles, and muskets—which were exchanged with local African merchants for captives captured in warfare. The introduction of firearms created an escalating cycle of militarized raids that generated an endless supply of prisoners [1.2]. Once delivered to coastal fortresses, captives underwent a calculated process of dehumanisation [1.3]: they were physically inspected like livestock, subjected to agonizing branding with red-hot irons displaying corporate marks like "RAC", and locked in subterranean barracoons in pitch darkness for months. Chained without sanitation and forcibly marched through the "Door of No Return" onto ships, enslaved Africans were legally and physically reduced to commercial cargo within the Triangular Trade network (as illustrated in the reference map).',
             },
           ],
         },
@@ -3078,7 +3079,7 @@ const early_modern_world = {
           source: {
             type: 'written',
             shelfmark: 'Bodleian Library, Oxford, MS. Don. c. 152',
-            title: 'Eyewitness Account of a Kingston Slave Scramble (c. 1770s)',
+            title: 'Source C: Eyewitness Account of a Kingston Slave Scramble (c. 1770s)',
             content:
               'The ship being anchored, a day is appointed for the sale. The scramble is the most usual method: the buyers agree upon a price per head for the men, women, and boys. A signal being given by the firing of a gun, the doors of the yard are thrown open, and the purchasers rush in at once with ferocity, with cords in their hands, seizing upon the poor wretches they like best. The confusion and noise is not to be described, and the astonishment and terror of the negroes is painted on their faces. Many families were on this occasion separated: wives were torn from their husbands, and children from their mothers, screaming and clinging to one another in an agony of grief...',
             provenance:
@@ -3088,11 +3089,11 @@ const early_modern_world = {
             {
               type: 'source_analysis',
               question:
-                'Read the eyewitness account of the Kingston slave scramble alongside Act 3. Using paragraphs [3.1], [3.2], and [3.3], explain how slave auctions and the Barbados Slave Act completed the legal and psychological transformation of humans into chattel property.',
+                'Read Source C (Eyewitness Account of a Kingston Slave Scramble) alongside Act 3. Using paragraphs [3.1], [3.2], and [3.3], explain how slave auctions and the Barbados Slave Act completed the legal and psychological transformation of humans into chattel property.',
               starter:
-                'Slave auctions and the Barbados Slave Act completed the transformation of humans into chattel property because, as shown in paragraph [3.2] and the source, the scramble auction treated people like..., while paragraph [3.3] explains that the law formally classified them as...',
+                'Slave auctions and the Barbados Slave Act completed the transformation of humans into chattel property because, as shown in Source C and paragraph [3.2], the scramble auction treated people like..., while paragraph [3.3] explains that the law formally classified them as...',
               model_answer:
-                'Slave auctions and colonial legal statutes completed the total commodification of enslaved Africans, destroying both their legal rights and human connections. As described in the eyewitness account and paragraph [3.2], the "scramble" auction was a frenzied spectacle where human beings were herded like cattle into dockside yards, terrorized by firing guns and shouting buyers who rushed in with ropes to claim their purchases. This process inflicted catastrophic psychological trauma by deliberately severing family units, separating husbands from wives and children from parents with total indifference [3.2]. Furthermore, as explained in paragraph [3.3], the Barbados Slave Act of 1661 codified this dehumanisation into rigid law. Enslaved people were stripped of their African names and legally defined as "chattel"—equivalent to farm animals or household furniture. Because colonial law decreed that killing an enslaved person during punishment was not murder, owners and overseers held unchecked, absolute power of life and death over their human property.',
+                'Slave auctions and colonial legal statutes completed the total commodification of enslaved Africans, destroying both their legal rights and human connections. As described in Source C and paragraph [3.2], the "scramble" auction was a frenzied spectacle where human beings were herded like cattle into dockside yards, terrorized by firing guns and shouting buyers who rushed in with ropes to claim their purchases. This process inflicted catastrophic psychological trauma by deliberately severing family units, separating husbands from wives and children from parents with total indifference [3.2]. Furthermore, as explained in paragraph [3.3], the Barbados Slave Act of 1661 codified this dehumanisation into rigid law. Enslaved people were stripped of their African names and legally defined as "chattel"—equivalent to farm animals or household furniture. Because colonial law decreed that killing an enslaved person during punishment was not murder, owners and overseers held unchecked, absolute power of life and death over their human property.',
             },
           ],
         },
@@ -3102,16 +3103,16 @@ const early_modern_world = {
           image: '/images/plantation.jpg',
           image_alt: 'Slaves cutting sugar cane under the whip on an Antigua plantation',
           image_caption:
-            'Source C: 18th-century engraving of enslaved men and women cutting sugar cane under the watchful eye of an armed overseer with a whip on an Antigua plantation. The image depicts the disciplined gang system and physical exhaustion of harvest work.',
+            'Source D: 18th-century engraving of enslaved men and women cutting sugar cane under the watchful eye of an armed overseer with a whip on an Antigua plantation. The image depicts the disciplined gang system and physical exhaustion of harvest work.',
           tasks: [
             {
               type: 'historical_explanation',
               question:
-                'Study Source C and read Act 4. Using paragraphs [4.1], [4.2], and [4.3], explain why sugar plantations were described as "agro-industrial factories", and explain why the death rate of enslaved laborers was so catastrophic.',
+                'Study Source D and read Act 4. Using paragraphs [4.1], [4.2], and [4.3], explain why sugar plantations were described as "agro-industrial factories", and explain why the death rate of enslaved laborers was so catastrophic.',
               starter:
-                'Sugar plantations were described as agro-industrial factories, as seen in Source C and paragraphs [4.1]–[4.2], because labor was organized through..., while paragraph [4.3] explains that the catastrophic death rate was caused by...',
+                'Sugar plantations were described as agro-industrial factories, as seen in Source D and paragraphs [4.1]–[4.2], because labor was organized through..., while paragraph [4.3] explains that the catastrophic death rate was caused by...',
               model_answer:
-                'Sugar plantations in the eighteenth-century Caribbean were rightly characterized as agro-industrial factories because they fused intensive agricultural fieldwork with mechanized, 24-hour industrial manufacturing. As depicted in Source C and paragraph [4.1], agricultural labor was structured into an unyielding "gang system" driven by armed overseers armed with cart-whips. During the continuous five-month harvest season [4.2], field laborers engaged in grueling physical cutting, while inside boiling houses, workers operated dangerous iron crushing rollers and stirred cauldrons of scalding molasses under deadly, suffocating conditions. As explained in paragraph [4.3], this intense industrial exploitation generated a catastrophic death rate. British planters operated under a cold financial rationale: calculating that purchasing newly imported captives from the Middle Passage was cheaper than sustaining enslaved workers, owners subjected their laborers to starvation rations, brutal corporal punishment, and 18-hour shifts. Consequently, mortality rates far exceeded birth rates, requiring the continuous importation of hundreds of thousands of Africans to replenish a workforce literally worked to death.',
+                'Sugar plantations in the eighteenth-century Caribbean were rightly characterized as agro-industrial factories because they fused intensive agricultural fieldwork with mechanized, 24-hour industrial manufacturing. As depicted in Source D and paragraph [4.1], agricultural labor was structured into an unyielding "gang system" driven by armed overseers armed with cart-whips. During the continuous five-month harvest season [4.2], field laborers engaged in grueling physical cutting, while inside boiling houses, workers operated dangerous iron crushing rollers and stirred cauldrons of scalding molasses under deadly, suffocating conditions. As explained in paragraph [4.3], this intense industrial exploitation generated a catastrophic death rate. British planters operated under a cold financial rationale: calculating that purchasing newly imported captives from the Middle Passage was cheaper than sustaining enslaved workers, owners subjected their laborers to starvation rations, brutal corporal punishment, and 18-hour shifts. Consequently, mortality rates far exceeded birth rates, requiring the continuous importation of hundreds of thousands of Africans to replenish a workforce literally worked to death.',
             },
           ],
         },
@@ -3119,12 +3120,12 @@ const early_modern_world = {
       extended: {
         title: 'Assessment Practice: Source Utility (8 Marks - Edexcel Paper 1 Format)',
         question:
-          'How useful are Source B (The Brookes Slave Ship Diagram) and Source C (The Antigua Sugar Plantation Engraving) for an enquiry into the brutal mechanics of the Transatlantic Slave Trade? [8 marks]',
+          'How useful are Source B (The Brookes Slave Ship Diagram) and Source D (The Antigua Sugar Plantation Engraving) for an enquiry into the brutal mechanics of the Transatlantic Slave Trade? [8 marks]',
         hints: [
-          'Evaluate BOTH sources thoroughly using a balanced structure: one detailed paragraph on Source B, one detailed paragraph on Source C, and an overarching comparative conclusion.',
+          'Evaluate BOTH sources thoroughly using a balanced structure: one detailed paragraph on Source B, one detailed paragraph on Source D, and an overarching comparative conclusion.',
           'For each source, assess three crucial dimensions: (1) Content (what specific historical information does the source provide?), (2) Provenance (who made it, when, why, and how does its purpose affect its usefulness?), and (3) Contextual Knowledge (deploy specific facts about tight-packing, diseases, mortality rates, and plantation gangs to test the source’s accuracy).',
           'For Source B (Brookes Diagram): Note that while commissioned by the Plymouth Abolitionist Society to mobilize anti-slave trade campaigning, its dimensions were based on official parliamentary surveys by Captain Parrey under the 1788 Act, giving it immense technical reliability.',
-          'For Source C (Plantation Engraving): Note that it shows the gang labor system and whip, but point out what it omits: it presents an orderly, sanitized tropical scene, concealing the horrific reality of boiling house mutilations and the brutal mortality rate.',
+          'For Source D (Plantation Engraving): Note that it shows the gang labor system and whip, but point out what it omits: it presents an orderly, sanitized tropical scene, concealing the horrific reality of boiling house mutilations and the brutal mortality rate.',
         ],
         scaffolding: [
           {
@@ -3135,19 +3136,19 @@ const early_modern_world = {
           },
           {
             tier: 'Tier 2: Intermediate Analysis',
-            stem: 'However, a historian must consider the provenance of Source B. It was published in 1788 by the Plymouth Abolitionist Society to shock the British public into banning the trade. Despite this campaigning motive, it is extraordinarily reliable because its measurements came directly from...',
+            stem: 'Turning to Source D, it is useful for showing the organization of the gang labor system under armed overseers on an Antigua sugar plantation. However, its utility is limited by its European artistic perspective, which sanitizes the gruesome reality of boiling house amputations and catastrophic mortality rates...',
             pupil_focus:
-              'Analyse the strengths and potential limitations of Source B’s abolitionist origin and official survey data.',
+              'Analyse the strengths and potential limitations of Source D’s perspective and omissions.',
           },
           {
             tier: 'Tier 3: Advanced Historiographical Scholarship',
-            stem: 'Turning to Source C, it is useful for showing the organization of the gang labor system under armed overseers on an Antigua sugar plantation. However, its utility is limited by its European artistic perspective, which sanitizes the gruesome reality of boiling house amputations and catastrophic mortality rates...',
+            stem: 'In conclusion, both sources are highly valuable and complementary for this enquiry. Source B is an indispensable, forensically accurate technical record of the claustrophobic horror of the Middle Passage, while Source D illustrates the hierarchical gang labor structure of the plantation complex...',
             pupil_focus:
-              'Critique Source C’s visual omissions, compare the complementary value of both sources, and reach a definitive judgement on utility.',
+              'Compare the complementary value of both sources and reach a definitive judgement on utility.',
           },
         ],
         model:
-          '**Exemplar Model Answer (8 Marks - Source Utility on the Transatlantic Slave Trade)**\n\nSource B is exceptionally useful for an enquiry into the brutal mechanics of the Transatlantic Slave Trade, specifically regarding the maritime logistics of the Middle Passage. In terms of content, the diagram provides a precise visual and technical breakdown of "tight-packing" aboard the Liverpool slave vessel *Brookes*. It depicts 482 captive Africans crammed into tiered wooden shelves on the lower decks, showing how captives were forced to lie side-by-side with less than sixteen inches of shoulder space and under three feet of vertical headroom, precluding sitting upright or moving. This content is powerfully corroborated by historical knowledge: British captains routinely packed holds to capacity, calculating that volume outweighed high mortality from dysentery, smallpox, and suffocation. In terms of provenance, Source B was published in 1788 by the Plymouth Abolitionist Committee to campaign for the abolition of the slave trade. While its purpose was undeniably political and polemical—seeking to shock the British public into moral outrage—its utility is reinforced, rather than diminished, by its origin. The diagram was directly based on forensic architectural measurements taken by government surveyor Captain Parrey under the 1788 Slave Trade Act. Therefore, it is not an exaggerated artist’s fantasy, but an extraordinarily reliable, officially verified technical record of how British naval architecture engineered human commodification.\n\nSource C is also useful, though in a more limited capacity, for investigating the agricultural mechanics of chattel slavery on Caribbean sugar plantations. In terms of content, the engraving depicts the rigid "gang system" in operation on an Antigua estate: enslaved men and women are shown cutting cane in disciplined rows with billhooks, closely monitored by an armed white overseer holding a heavy cart-whip. This reflects accurate historical knowledge of harvest season, when laborers worked continuous 18-hour shifts under constant threat of corporal punishment to prevent the fermentation of freshly cut cane. However, Source C’s utility is significantly constrained by its provenance and perspective. Created as a European decorative print, the image presents an orderly, sanitized depiction of plantation labor: the sky is serene, the workers appear physically intact, and the background depicts a tidy neoclassical mill. The source completely omits the gruesome, lethal realities of sugar production: the horrific boiling house accidents where workers’ limbs were crushed by iron rollers, the excruciating third-degree burns from scalding molasses vats, and the ruthless calculation that worked enslaved people to death within a decade.\n\nIn conclusion, both sources are highly valuable and complementary for this enquiry. Source B is an indispensable, forensically accurate technical record of the claustrophobic horror of the Middle Passage, while Source C illustrates the hierarchical gang labor structure of the plantation complex. Together, they demonstrate how the Transatlantic Slave Trade functioned as a ruthless, integrated industrial machine that spanned the Atlantic ocean.',
+          '**Exemplar Model Answer (8 Marks - Source Utility on the Transatlantic Slave Trade)**\n\nSource B is exceptionally useful for an enquiry into the brutal mechanics of the Transatlantic Slave Trade, specifically regarding the maritime logistics of the Middle Passage. In terms of content, the diagram provides a precise visual and technical breakdown of "tight-packing" aboard the Liverpool slave vessel *Brookes*. It depicts 482 captive Africans crammed into tiered wooden shelves on the lower decks, showing how captives were forced to lie side-by-side with less than sixteen inches of shoulder space and under three feet of vertical headroom, precluding sitting upright or moving. This content is powerfully corroborated by historical knowledge: British captains routinely packed holds to capacity, calculating that volume outweighed high mortality from dysentery, smallpox, and suffocation. In terms of provenance, Source B was published in 1788 by the Plymouth Abolitionist Committee to campaign for the abolition of the slave trade. While its purpose was undeniably political and polemical—seeking to shock the British public into moral outrage—its utility is reinforced, rather than diminished, by its origin. The diagram was directly based on forensic architectural measurements taken by government surveyor Captain Parrey under the 1788 Slave Trade Act. Therefore, it is not an exaggerated artist’s fantasy, but an extraordinarily reliable, officially verified technical record of how British naval architecture engineered human commodification.\n\nSource D is also useful, though in a more limited capacity, for investigating the agricultural mechanics of chattel slavery on Caribbean sugar plantations. In terms of content, the engraving depicts the rigid "gang system" in operation on an Antigua estate: enslaved men and women are shown cutting cane in disciplined rows with billhooks, closely monitored by an armed white overseer holding a heavy cart-whip. This reflects accurate historical knowledge of harvest season, when laborers worked continuous 18-hour shifts under constant threat of corporal punishment to prevent the fermentation of freshly cut cane. However, Source D’s utility is significantly constrained by its provenance and perspective. Created as a European decorative print, the image presents an orderly, sanitized depiction of plantation labor: the sky is serene, the workers appear physically intact, and the background depicts a tidy neoclassical mill. The source completely omits the gruesome, lethal realities of sugar production: the horrific boiling house accidents where workers’ limbs were crushed by iron rollers, the excruciating third-degree burns from scalding molasses vats, and the ruthless calculation that worked enslaved people to death within a decade.\n\nIn conclusion, both sources are highly valuable and complementary for this enquiry. Source B is an indispensable, forensically accurate technical record of the claustrophobic horror of the Middle Passage, while Source D illustrates the hierarchical gang labor structure of the plantation complex. Together, they demonstrate how the Transatlantic Slave Trade functioned as a ruthless, integrated industrial machine that spanned the Atlantic ocean.',
       },
       quiz: [
         {
@@ -3241,7 +3242,7 @@ const early_modern_world = {
             objective:
               'Analyse the "spectrum of resistance" and explain how covert defiance, cultural preservation, and work slowdowns enabled enslaved people to maintain their humanity.',
             primer:
-              'Direct pupils to Act 1. Examine the diary excerpts of Jamaican planter Thomas Thistlewood in paragraphs [1.1]–[1.3] to reveal how daily sabotage, botanical poisoning, and spiritual traditions (Obeah) were vital methods of survival that systematically undermined planter profits.',
+              'Direct pupils to Act 1. Examine the diary excerpts of Jamaican overseer Thomas Thistlewood (Source A) in paragraphs [1.1]–[1.3] to reveal how daily sabotage, botanical poisoning, and spiritual traditions (Obeah) were vital methods of survival that systematically undermined planter profits.',
             question:
               'Hinge Question: Why did plantation owners fear subtle daily sabotage (like breaking tools or poisoning livestock) just as much as open armed rebellions?',
           },
@@ -3249,7 +3250,7 @@ const early_modern_world = {
             objective:
               'Evaluate the military significance of Queen Nanny and the Jamaican Maroons, who forced the British Empire into signing peace treaties in 1739.',
             primer:
-              'Guide students through Act 2. Analyse Source A and paragraphs [2.1]–[2.3]. Focus on Queen Nanny’s tactical innovations: utilizing the impenetrable Cockpit Country, camouflage techniques, and communicating via the abeng horn. Emphasize the historical significance of the 1739 British Maroon Treaty recognizing self-governing Black sovereignty inside a British colony.',
+              'Guide students through Act 2. Analyse Source B and paragraphs [2.1]–[2.3]. Focus on Queen Nanny’s tactical innovations: utilizing the impenetrable Cockpit Country, camouflage techniques, and communicating via the abeng horn. Emphasize the historical significance of the 1739 British Maroon Treaty recognizing self-governing Black sovereignty inside a British colony.',
             question:
               'Hinge Question: How did the topography of Jamaica’s Blue Mountains enable the Maroons to defeat conventional European military tactics?',
           },
@@ -3257,13 +3258,13 @@ const early_modern_world = {
             objective:
               'Assess the historical agency of Black abolitionists, focusing on Olaudah Equiano and the Sons of Africa, in shifting British public opinion against the slave trade.',
             primer:
-              'Focus pupils on Act 4 and the extended assessment practice. Contrast the role of parliamentarians like Wilberforce (Source C) with the first-person lived testimony of Olaudah Equiano (Source B). Help students articulate that Wilberforce’s parliamentary campaign was only possible because Equiano’s autobiography provided irrefutable moral evidence that galvanized the British public.',
+              'Focus pupils on Act 4 and the extended assessment practice. Contrast the role of parliamentarians like Wilberforce (Source D) with the first-person lived testimony of Olaudah Equiano (Source C). Help students articulate that Wilberforce’s parliamentary campaign was only possible because Equiano’s autobiography provided irrefutable moral evidence that galvanized the British public.',
             question:
               'Hinge Question: Why was Olaudah Equiano’s first-person published autobiography far more effective at changing British public attitudes than speeches delivered by white politicians?',
           },
         ],
         source_context:
-          'Source A is an 18th-century engraving titled "Maroons in Ambush on the Island of Jamaica", published in London to illustrate the Second Maroon War. It depicts Jamaican Maroon warriors concealed within the dense tropical foliage and limestone ravines of the Cockpit Country, holding muskets and ambush positions against advancing British redcoat infantry. Conventional British soldiers, burdened by heavy woollen uniforms and rigid line formations, were ambushed by Maroons disguised in tree branches and vines, who communicated across valleys using cow-horn bugles (abengs). The print illustrates the psychological terror experienced by the British Army when confronting indigenous and guerrilla fighters on unfamiliar terrain. Hinge Question: How does this depiction of Maroon guerrilla warfare expose the complete failure of European battlefield tactics against self-liberated African communities in the Caribbean?',
+          'Source B is an 18th-century engraving titled "Maroons in Ambush on the Island of Jamaica", published in London to illustrate the Second Maroon War. It depicts Jamaican Maroon warriors concealed within the dense tropical foliage and limestone ravines of the Cockpit Country, holding muskets and ambush positions against advancing British redcoat infantry. Conventional British soldiers, burdened by heavy woollen uniforms and rigid line formations, were ambushed by Maroons disguised in tree branches and vines, who communicated across valleys using cow-horn bugles (abengs). The print illustrates the psychological terror experienced by the British Army when confronting indigenous and guerrilla fighters on unfamiliar terrain. Hinge Question: How does this depiction of Maroon guerrilla warfare expose the complete failure of European battlefield tactics against self-liberated African communities in the Caribbean?',
       },
       do_now: {
         type: 'standard',
@@ -3312,7 +3313,7 @@ const early_modern_world = {
             'Subtle, non-violent acts of daily defiance—such as feigning sickness, working slowly, breaking field tools, sabotaging boiling machinery, and secretly practicing African religious rites.',
         },
         {
-          term: 'Guerilla Warfare',
+          term: 'Guerrilla Warfare',
           definition:
             'Unconventional combat tactics—including surprise ambushes, camouflage, hit-and-run raids, and exploiting difficult terrain—used by Maroons against conventional British military formations.',
         },
@@ -3328,9 +3329,9 @@ const early_modern_world = {
         },
       ],
       vocab_cloze_text:
-        'Enslaved Africans engaged in a diverse [Spectrum of Resistance] to maintain their dignity. Daily defiance often took the form of [Covert Resistance], such as working slowly or breaking tools to drain planter profits. In the mountains of Jamaica, free communities known as [Maroons] waged successful [Guerilla Warfare] against the British Army. Later in London, self-liberated Africans formed the [Sons of Africa] to spearhead the moral campaign of [Abolitionism] in Parliament.',
+        'Enslaved Africans engaged in an extensive [Spectrum of Resistance] against chattel slavery. Rather than submitting to total subjugation, workers engaged in daily [Covert Resistance] by breaking tools and working slowly. In Jamaica, self-liberated communities known as [Maroons] established free societies in the mountains, deploying brilliant [Guerrilla Warfare] under Queen Nanny to defeat British soldiers. Later in London, educated African intellectuals founded the [Sons of Africa], galvanizing the moral campaign of [Abolitionism] through firsthand memoirs.',
       vocab_deliberate_error:
-        'Enslaved Africans never engaged in the Spectrum of Resistance, while the Maroons supported the British Army to ban Abolitionism across the Caribbean.',
+        'Enslaved Africans submitted passively to their conditions without resistance, and the Maroons were loyal British soldiers who helped plantation owners enforce strict order.',
       flashcards: [
         {
           term: 'Spectrum of Resistance',
@@ -3348,7 +3349,7 @@ const early_modern_world = {
             'Subtle, non-violent acts of daily defiance—such as feigning sickness, working slowly, breaking field tools, sabotaging boiling machinery, and secretly practicing African religious rites.',
         },
         {
-          term: 'Guerilla Warfare',
+          term: 'Guerrilla Warfare',
           definition:
             'Unconventional combat tactics—including surprise ambushes, camouflage, hit-and-run raids, and exploiting difficult terrain—used by Maroons against conventional British military formations.',
         },
@@ -3370,7 +3371,7 @@ const early_modern_world = {
           source: {
             type: 'written',
             shelfmark: 'Lincolnshire Archives, MON 31/1, Thistlewood Papers',
-            title: 'Diary of Jamaican Overseer Thomas Thistlewood (Excerpts, 1750–1760)',
+            title: 'Source A: Diary of Jamaican Overseer Thomas Thistlewood (Excerpts, 1750–1760)',
             content:
               'July 14, 1751: Caught Cudjoe having feigned sickness three days together; he had hid his hoe in the brush... November 3, 1753: The Great Mill broke down this afternoon; found an iron bolt jammed in the cog, undoubtedly thrown in by design to stop the boiling... March 18, 1756: Phibbah informs me that the negroes held a secret Obeah dance in the woods last night, singing songs in the Coromantee tongue. Threatened them with thirty lashes each if repeated...',
             provenance:
@@ -3380,11 +3381,11 @@ const early_modern_world = {
             {
               type: 'source_analysis',
               question:
-                'Read the extract from Thomas Thistlewood’s diary alongside Act 1. Using paragraphs [1.1], [1.2], and [1.3], explain why covert resistance was essential for the psychological survival of enslaved people and how it undermined the plantation economy.',
+                'Read Source A (Thomas Thistlewood’s diary excerpts) alongside Act 1. Using paragraphs [1.1], [1.2], and [1.3], explain why covert resistance was essential for the psychological survival of enslaved people and how it undermined the plantation economy.',
               starter:
-                'Covert resistance was vital for enslaved people, as shown in Thistlewood’s diary and paragraph [1.1], because open armed rebellion carried lethal risks, so workers used subtle methods like..., which undermined planter profits by...',
+                'Covert resistance was vital for enslaved people, as shown in Source A (Thistlewood’s diary) and paragraph [1.1], because open armed rebellion carried lethal risks, so workers used subtle methods like..., which undermined planter profits by...',
               model_answer:
-                'Covert resistance was an essential strategy of survival and economic warfare for enslaved Africans in the Caribbean. As noted in paragraph [1.1], open violent insurrection against heavily armed planters and militias almost invariably led to brutal execution, torture, or being broken on the wheel. Consequently, as evidenced in Thomas Thistlewood’s diary and paragraph [1.2], enslaved people engaged in daily non-violent sabotage: feigning illness, hiding farming hoes, and deliberately throwing iron bolts into sugar-crushing machinery to halt harvest boiling. This calculated sabotage inflicted severe financial losses on owners by destroying expensive equipment and delaying sugar production during time-sensitive harvests. Furthermore, as explained in paragraph [1.3], covert cultural resistance—such as holding secret Obeah rituals, speaking ancestral Coromantee dialects, and singing subversive spirituals—provided psychological resilience. It allowed enslaved people to resist total dehumanisation, maintain communal solidarity, and assert their cultural identity despite living under a totalitarian regime of chattel slavery.',
+                'Covert resistance was an essential strategy of survival and economic warfare for enslaved Africans in the Caribbean. As noted in paragraph [1.1], open violent insurrection against heavily armed planters and militias almost invariably led to brutal execution, torture, or being broken on the wheel. Consequently, as evidenced in Thomas Thistlewood’s diary (Source A) and paragraph [1.2], enslaved people engaged in daily non-violent sabotage: feigning illness, hiding farming hoes, and deliberately throwing iron bolts into sugar-crushing machinery to halt harvest boiling. This calculated sabotage inflicted severe financial losses on owners by destroying expensive equipment and delaying sugar production during time-sensitive harvests. Furthermore, as explained in paragraph [1.3], covert cultural resistance—such as holding secret Obeah rituals, speaking ancestral Coromantee dialects, and singing subversive spirituals—provided psychological resilience. It allowed enslaved people to resist total dehumanisation, maintain communal solidarity, and assert their cultural identity despite living under a totalitarian regime of chattel slavery.',
             },
           ],
         },
@@ -3394,16 +3395,16 @@ const early_modern_world = {
           image: '/images/jamaica_maroons.jpg',
           image_alt: 'Maroons in Ambush on the Island of Jamaica (18th Century Engraving)',
           image_caption:
-            'Source A: Contemporary 18th-century engraving "Maroons in Ambush on the Island of Jamaica". Maroon warriors concealed in dense tropical foliage ambush advancing British infantry, highlighting the power of guerrilla tactics in rugged terrain.',
+            'Source B: Contemporary 18th-century engraving "Maroons in Ambush on the Island of Jamaica". Maroon warriors concealed in dense tropical foliage ambush advancing British infantry, highlighting the power of guerrilla tactics in rugged terrain.',
           tasks: [
             {
               type: 'source_analysis',
               question:
-                'Study Source A and read Act 2. Using paragraphs [2.1], [2.2], and [2.3], explain how Queen Nanny and the Jamaican Maroons utilized guerrilla tactics to defeat the British Army, and evaluate the historical significance of the 1739 peace treaty.',
+                'Study Source B and read Act 2. Using paragraphs [2.1], [2.2], and [2.3], explain how Queen Nanny and the Jamaican Maroons utilized guerrilla tactics to defeat the British Army, and evaluate the historical significance of the 1739 peace treaty.',
               starter:
-                'Queen Nanny and the Maroons defeated the British Army using guerrilla tactics, as depicted in Source A and paragraph [2.2], by employing camouflage and..., which resulted in the 1739 treaty that was historically significant because...',
+                'Queen Nanny and the Maroons defeated the British Army using guerrilla tactics, as depicted in Source B and paragraph [2.2], by employing camouflage and..., which resulted in the 1739 treaty that was historically significant because...',
               model_answer:
-                'Queen Nanny and the Jamaican Maroons executed a masterclass in guerrilla warfare that utterly neutralised the conventional military superiority of the British Empire. As illustrated in Source A and paragraph [2.2], Maroon fighters completely exploited the treacherous mountainous geography of Jamaica’s interior. Under Queen Nanny’s brilliant tactical leadership, warriors utilized natural leaf camouflage to blend invisibly into the rainforest, deployed acoustic abeng horns to transmit instant coded tactical signals across mountain peaks, and ambushed rigid British infantry columns trapped in narrow limestone ravines. British redcoats, encumbered by heavy equipment and vulnerable to tropical diseases, suffered catastrophic defeats in the First Maroon War [2.3]. The historical significance of the resulting 1739 peace treaty was immense: for the first time, the mighty British Empire was forced to admit military defeat to formerly enslaved Africans, legally acknowledging the Maroons as free, self-governing people and ceding them sovereign land within a major British slave colony [2.3].',
+                'Queen Nanny and the Jamaican Maroons executed a masterclass in guerrilla warfare that utterly neutralised the conventional military superiority of the British Empire. As illustrated in Source B and paragraph [2.2], Maroon fighters completely exploited the treacherous mountainous geography of Jamaica’s interior. Under Queen Nanny’s brilliant tactical leadership, warriors utilized natural leaf camouflage to blend invisibly into the rainforest, deployed acoustic abeng horns to transmit instant coded tactical signals across mountain peaks, and ambushed rigid British infantry columns trapped in narrow limestone ravines. British redcoats, encumbered by heavy equipment and vulnerable to tropical diseases, suffered catastrophic defeats in the First Maroon War [2.3]. The historical significance of the resulting 1739 peace treaty was immense: for the first time, the mighty British Empire was forced to admit military defeat to formerly enslaved Africans, legally acknowledging the Maroons as free, self-governing people and ceding them sovereign land within a major British slave colony [2.3].',
             },
           ],
         },
@@ -3430,24 +3431,24 @@ const early_modern_world = {
               image: '/images/equiano.jpg',
               image_alt: 'Portrait of Olaudah Equiano holding an open Bible (1789)',
               image_caption:
-                'Source B: Frontispiece portrait of Olaudah Equiano from his autobiography (1789). Depicted as a dignified, literate Christian gentleman holding an open Bible, Equiano directly dismantled pro-slavery racist propaganda.',
+                'Source C: Frontispiece portrait of Olaudah Equiano from his autobiography (1789). Depicted as a dignified, literate Christian gentleman holding an open Bible, Equiano directly dismantled pro-slavery racist propaganda.',
             },
             {
               image: '/images/william_wilberforce.jpg',
               image_alt: 'Portrait of William Wilberforce MP by Karl Anton Hickel',
               image_caption:
-                'Source C: Portrait of William Wilberforce MP, who led the parliamentary campaign to abolish the slave trade, heavily relying upon the eyewitness evidence gathered by Equiano and the Sons of Africa.',
+                'Source D: Portrait of William Wilberforce MP, who led the parliamentary campaign to abolish the slave trade, heavily relying upon the eyewitness evidence gathered by Equiano and the Sons of Africa.',
             },
           ],
           tasks: [
             {
               type: 'source_analysis',
               question:
-                'Study Sources B and C alongside Act 4. Using paragraphs [4.1], [4.2], and [4.3], explain the significance of Olaudah Equiano and the Sons of Africa in shifting British public attitudes, and analyse how their eyewitness testimonies supported the parliamentary campaign.',
+                'Study Sources C and D alongside Act 4. Using paragraphs [4.1], [4.2], and [4.3], explain the significance of Olaudah Equiano and the Sons of Africa in shifting British public attitudes, and analyse how their eyewitness testimonies supported the parliamentary campaign.',
               starter:
-                'Olaudah Equiano (Source B) and the Sons of Africa were of paramount historical significance because, as explained in paragraphs [4.1] and [4.2], they provided first-person evidence, which supported parliamentary figures like Wilberforce (Source C) by...',
+                'Olaudah Equiano (Source C) and the Sons of Africa were of paramount historical significance because, as explained in paragraphs [4.1] and [4.2], they provided first-person evidence, which supported parliamentary figures like Wilberforce (Source D) by...',
               model_answer:
-                'Olaudah Equiano and the Sons of Africa played an indispensable, historically decisive role in shifting British public opinion and dismantling the transatlantic slave trade. As illustrated in Source B and paragraph [4.1], Equiano was a self-liberated African whose lived experience as an enslaved person lent him unmatched moral authority. In paragraph [4.2], Equiano and Ottobah Cugoano formed the Sons of Africa, launching an intellectual offensive through petitions, newspaper articles, and public lectures. When Equiano published his bestselling autobiography in 1789 [4.3], he shattered centuries of racist pro-slavery myths that portrayed Africans as culturally inferior or naturally suited for enslavement. By vividly exposing the atrocities of the Middle Passage and Caribbean auctions through eloquent first-hand testimony, Equiano provided the crucial evidentiary foundation upon which white parliamentary campaigners like William Wilberforce (Source C) depended. Wilberforce could argue policy in Parliament, but Equiano’s nationwide lecture tours galvanized the British public into a massive popular movement, proving that African agency was central to the destruction of the slave trade.',
+                'Olaudah Equiano and the Sons of Africa played an indispensable, historically decisive role in shifting British public opinion and dismantling the transatlantic slave trade. As illustrated in Source C and paragraph [4.1], Equiano was a self-liberated African whose lived experience as an enslaved person lent him unmatched moral authority. In paragraph [4.2], Equiano and Ottobah Cugoano formed the Sons of Africa, launching an intellectual offensive through petitions, newspaper articles, and public lectures. When Equiano published his bestselling autobiography in 1789 [4.3], he shattered centuries of racist pro-slavery myths that portrayed Africans as culturally inferior or naturally suited for enslavement. By vividly exposing the atrocities of the Middle Passage and Caribbean auctions through eloquent first-hand testimony, Equiano provided the crucial evidentiary foundation upon which white parliamentary campaigners like William Wilberforce (Source D) depended. Wilberforce could argue policy in Parliament, but Equiano’s nationwide lecture tours galvanized the British public into a massive popular movement, proving that African agency was central to the destruction of the slave trade.',
             },
           ],
         },
@@ -3458,8 +3459,8 @@ const early_modern_world = {
           'Explain the significance of enslaved resistance (both covert defiance and Maroon guerrilla warfare) in challenging the British plantation complex before 1750. [12 marks]',
         hints: [
           'Structure your response into three substantive PEEL paragraphs and a sustained, criteria-based conclusion: (1) Covert daily resistance and economic sabotage, (2) The military brilliance and autonomy of the Jamaican Maroons under Queen Nanny, and (3) Armed insurrections (Middle Passage mutinies and Stono Rebellion) challenging white authority.',
-          'For Paragraph 1, deploy specific historical details: work slowdowns, tool breakage, poisoning of overseers, and spiritual resistance through Obeah recorded in overseer journals like Thomas Thistlewood’s.',
-          'For Paragraph 2, analyze the significance of the First Maroon War: Queen Nanny’s use of camouflage and the abeng horn, guerrilla warfare in the Cockpit Country, and the monumental 1739 treaty conceding Black freedom and self-governance.',
+          'For Paragraph 1, deploy specific historical details: work slowdowns, tool breakage, poisoning of overseers, and spiritual resistance through Obeah recorded in overseer journals like Thomas Thistlewood’s (Source A).',
+          'For Paragraph 2, analyze the significance of the First Maroon War: Queen Nanny’s use of camouflage and the abeng horn depicted in Source B, guerrilla warfare in the Cockpit Country, and the monumental 1739 treaty conceding Black freedom and self-governance.',
           'For Paragraph 3, evaluate the psychological and physical impact of open rebellions: the statistic that 1 in 10 slave ships experienced mutinies, and Jemmy’s 1739 Stono Rebellion prompting the repressive Negro Act of 1740.',
           'In your conclusion, assess historical agency: directly challenge the myth of passive victimhood, arguing that constant African resistance forced the British Empire to expend massive military and financial resources merely to sustain the slave system.',
         ],
@@ -3484,7 +3485,7 @@ const early_modern_world = {
           },
         ],
         model:
-          '**Exemplar Model Answer (12 Marks - Significance of Enslaved Resistance)**\n\nThroughout the seventeenth and eighteenth centuries, enslaved Africans engaged in an extensive and determined spectrum of resistance that systematically challenged, destabilised, and undermined the British plantation complex. Rather than being passive victims who waited for European abolitionists, enslaved people exercised profound historical agency. This resistance was profoundly significant across three crucial dimensions: subtle covert economic sabotage that bled planter profits, armed military guerrilla warfare that forced the British Empire to concede sovereign territory, and violent insurrections that kept white colonial societies in perpetual terror.\n\nFirstly, daily covert resistance was immensely significant because it enabled enslaved people to wage unceasing economic warfare while preserving their psychological humanity. As documented in the plantation journals of Jamaican overseers like Thomas Thistlewood, enslaved workers engaged in coordinated "go-slows," hid or damaged valuable field tools, and deliberately jammed heavy iron spikes into sugar-crushing machinery during the crucial harvest season. Enslaved women weaponised botanical knowledge to brew abortifacients to save unborn children from chattel slavery, while others secretly poisoned overseers’ meals and livestock with cassava toxins. Furthermore, enslaved people preserved West African spiritual practices like Obeah, traditional burial rites, and drumming in defiance of brutal floggings. This covert resistance was of enormous historical importance: it proved that despite totalitarian physical control and the legal fiction of chattel property, enslaved Africans never accepted mental subjugation and continuously drained the commercial profitability of the estates.\n\nSecondly, the guerrilla warfare waged by the Jamaican Maroons under the leadership of Queen Nanny was of monumental military and political significance. Escaping from British plantations into the mountainous interior of Jamaica, the Windward and Leeward Maroons established fortified, autonomous communities in the Blue Mountains and Cockpit Country. During the First Maroon War of the 1720s and 1730s, Queen Nanny pioneered masterclass guerrilla tactics: Maroon warriors utilized natural plant camouflage to blend invisibly into the dense jungle, transmitted rapid tactical warnings across valleys using carved abeng horns, and ambushed British redcoat regiments trapped in steep ravines. The significance of this resistance culminated in the historic 1739 Peace Treaty: for the first time in Atlantic history, the mighty British Crown was compelled to admit military defeat to formerly enslaved Africans, legally recognizing Maroon freedom and granting them 1,500 acres of self-governing sovereign land inside a crown colony.\n\nThirdly, armed insurrections on slave vessels and on colonial plantations shattered white security and exposed the inherent fragility of the slave trade. Historical records indicate that one in every ten transatlantic slave voyages experienced a violent shipboard mutiny, forcing merchants to invest heavily in barricadoes, swivel guns, and extra crew, significantly reducing voyage profits. On land, the 1739 Stono Rebellion in South Carolina, led by an enslaved Angolan named Jemmy, demonstrated the capacity of Africans to coordinate armed risings, marching with military drums and banners toward freedom before being suppressed. The terrifying impact of this rebellion led directly to the paranoid Negro Act of 1740, which banned slave literacy and assemblies, proving that white authority rested on naked fear.\n\nIn conclusion, enslaved resistance was of paramount historical significance. It conclusively disproves the outdated, Eurocentric narrative that Africans were passive recipients of freedom granted by white politicians. By waging continuous daily sabotage, achieving sovereign military victories in Jamaica, and launching courageous rebellions, enslaved Africans demonstrated indomitable agency, driving up the financial and military costs of slavery and laying the essential groundwork for its eventual destruction.',
+          '**Exemplar Model Answer (12 Marks - Significance of Enslaved Resistance)**\n\nThroughout the seventeenth and eighteenth centuries, enslaved Africans engaged in an extensive and determined spectrum of resistance that systematically challenged, destabilised, and undermined the British plantation complex. Rather than being passive victims who waited for European abolitionists, enslaved people exercised profound historical agency. This resistance was profoundly significant across three crucial dimensions: subtle covert economic sabotage that bled planter profits, armed military guerrilla warfare that forced the British Empire to concede sovereign territory, and violent insurrections that kept white colonial societies in perpetual terror.\n\nFirstly, daily covert resistance was immensely significant because it enabled enslaved people to wage unceasing economic warfare while preserving their psychological humanity. As documented in the plantation journals of Jamaican overseers like Thomas Thistlewood (Source A), enslaved workers engaged in coordinated "go-slows," hid or damaged valuable field tools, and deliberately jammed heavy iron spikes into sugar-crushing machinery during the crucial harvest season. Enslaved women weaponised botanical knowledge to brew abortifacients to save unborn children from chattel slavery, while others secretly poisoned overseers’ meals and livestock with cassava toxins. Furthermore, enslaved people preserved West African spiritual practices like Obeah, traditional burial rites, and drumming in defiance of brutal floggings. This covert resistance was of enormous historical importance: it proved that despite totalitarian physical control and the legal fiction of chattel property, enslaved Africans never accepted mental subjugation and continuously drained the commercial profitability of the estates.\n\nSecondly, the guerrilla warfare waged by the Jamaican Maroons under the leadership of Queen Nanny was of monumental military and political significance. Escaping from British plantations into the mountainous interior of Jamaica, the Windward and Leeward Maroons established fortified, autonomous communities in the Blue Mountains and Cockpit Country. During the First Maroon War of the 1720s and 1730s, Queen Nanny pioneered masterclass guerrilla tactics: Maroon warriors utilized natural plant camouflage to blend invisibly into the dense jungle, transmitted rapid tactical warnings across valleys using carved abeng horns, and ambushed British redcoat regiments trapped in steep ravines (as captured in Source B). The significance of this resistance culminated in the historic 1739 Peace Treaty: for the first time in Atlantic history, the mighty British Crown was compelled to admit military defeat to formerly enslaved Africans, legally recognizing Maroon freedom and granting them 1,500 acres of self-governing sovereign land inside a crown colony.\n\nThirdly, armed insurrections on slave vessels and on colonial plantations shattered white security and exposed the inherent fragility of the slave trade. Historical records indicate that one in every ten transatlantic slave voyages experienced a violent shipboard mutiny, forcing merchants to invest heavily in barricadoes, swivel guns, and extra crew, significantly reducing voyage profits. On land, the 1739 Stono Rebellion in South Carolina, led by an enslaved Angolan named Jemmy, demonstrated the capacity of Africans to coordinate armed risings, marching with military drums and banners toward freedom before being suppressed. The terrifying impact of this rebellion led directly to the paranoid Negro Act of 1740, which banned slave literacy and assemblies, proving that white authority rested on naked fear.\n\nIn conclusion, enslaved resistance was of paramount historical significance. It conclusively disproves the outdated, Eurocentric narrative that Africans were passive recipients of freedom granted by white politicians. By waging continuous daily sabotage, achieving sovereign military victories in Jamaica, and launching courageous rebellions, enslaved Africans demonstrated indomitable agency, driving up the financial and military costs of slavery and laying the essential groundwork for its eventual destruction.',
       },
       quiz: [
         {
@@ -3583,7 +3584,7 @@ const early_modern_world = {
             objective:
               'Synthesise political transformations from absolute divine monarchy to constitutional parliamentary oligarchy following the 1689 Bill of Rights.',
             primer:
-              'Direct students to Act 1. Contrast the absolutist claims of James I and Charles I with the constitutional constraints of the 1689 Bill of Rights in paragraph [1.1]. Guide pupils to examine paragraph [1.2] to evaluate why this "modern" parliament remained an aristocratic oligarchy dominated by "rotten boroughs" where less than 5% of adult men could vote.',
+              'Direct students to Act 1. Contrast the absolutist claims of James I and Charles I with the constitutional constraints of the 1689 Bill of Rights (Source A) in paragraph [1.1]. Guide pupils to examine paragraph [1.2] to evaluate why this "modern" parliament remained an aristocratic oligarchy dominated by "rotten boroughs" where less than 5% of adult men could vote.',
             question:
               'Hinge Question: Why did the 1689 Glorious Revolution create a parliamentary oligarchy for the wealthy rather than a modern democracy for the people?',
           },
@@ -3591,7 +3592,7 @@ const early_modern_world = {
             objective:
               'Contrast the extraordinary imperial, mercantile, and financial power of London with acute domestic poverty, the Bloody Code, and the Gin Craze.',
             primer:
-              'Guide students through Act 2 and Act 3. Contrast the triumphalist imperial allegory of Britannia in Source B with the devastating social squalor of William Hogarth’s Gin Lane in Source A and John Rocque’s 1746 Map of London. Ensure pupils grasp how urbanisation outpaced sanitation and social care.',
+              'Guide students through Act 2 and Act 3. Contrast the triumphalist imperial allegory of Britannia in Source B with the devastating social squalor of William Hogarth’s Gin Lane in Source C and John Rocque’s 1746 Map of London in Source D. Ensure pupils grasp how urbanisation outpaced sanitation and social care.',
             question:
               'Hinge Question: How does Hogarth’s Gin Lane challenge the triumphalist claim that 18th-century Britain was an enlightened, civilized society?',
           },
@@ -3605,7 +3606,7 @@ const early_modern_world = {
           },
         ],
         source_context:
-          'Source A is William Hogarth’s celebrated satirical copperplate engraving "Gin Lane", published in London in February 1751 to campaign in support of the Gin Act. Set in the impoverished parish of St Giles in central London, the print presents an apocalyptic portrait of urban collapse, alcoholism, and social breakdown caused by the "Gin Craze". In the foreground, a syphilitic, drunken mother drops her nursing baby over a stair railing into a cellar while taking a pinch of snuff. In the background, pawnbrokers thrive while houses collapse, an emaciated ballad-seller starves to death, and a corpse is loaded into a coffin. Hogarth deliberately juxtaposed the staggering commercial wealth of London’s merchants with the misery, infant mortality, and squalor endured by the urban working poor. Hinge Question: How does Hogarth use visual satire in Gin Lane to expose the devastating social consequences of unchecked commercial expansion in eighteenth-century London?',
+          'Source C is William Hogarth’s celebrated satirical copperplate engraving "Gin Lane", published in London in February 1751 to campaign in support of the Gin Act. Set in the impoverished parish of St Giles in central London, the print presents an apocalyptic portrait of urban collapse, alcoholism, and social breakdown caused by the "Gin Craze". In the foreground, a syphilitic, drunken mother drops her nursing baby over a stair railing into a cellar while taking a pinch of snuff. In the background, pawnbrokers thrive while houses collapse, an emaciated ballad-seller starves to death, and a corpse is loaded into a coffin. Hogarth deliberately juxtaposed the staggering commercial wealth of London’s merchants with the misery, infant mortality, and squalor endured by the urban working poor. Hinge Question: How does Hogarth use visual satire in Gin Lane to expose the devastating social consequences of unchecked commercial expansion in eighteenth-century London?',
       },
       do_now: {
         type: 'standard',
@@ -3664,15 +3665,15 @@ const early_modern_world = {
             'The dramatic demographic movement of people from rural villages into densely crowded commercial and industrial towns, transforming London into Europe’s largest metropolis.',
         },
         {
-          term: 'The Enlightenment',
+          term: 'Enlightenment',
           definition:
             'An 18th-century intellectual and philosophical movement emphasizing reason, scientific experimentation, individual liberty, and religious toleration over tradition and superstition.',
         },
       ],
       vocab_cloze_text:
-        'Following 1689, Britain established a [Constitutional Monarchy], though Parliament remained undemocratic due to corrupt voting districts called a [Rotten Borough]. While elite thinkers celebrated [The Enlightenment], rapid [Urbanisation] created catastrophic squalor in London. Paranoia among wealthy landowners led to the draconian laws of [The Bloody Code], while the poorest quarters succumbed to the addiction and social despair of the [Gin Craze].',
+        'Following 1689, Britain established a [Constitutional Monarchy], but democracy remained flawed as wealthy landowners controlled corrupt [Rotten Borough] seats. Parliament protected its property through the brutal [The Bloody Code], hanging thousands for minor offenses. Meanwhile, rapid [Urbanisation] overcrowded London slums, triggering the devastating social epidemic of the [Gin Craze]. Despite claiming to lead the European [Enlightenment], British society was scarred by intense domestic inequality and colonial slavery.',
       vocab_deliberate_error:
-        'Under Constitutional Monarchy, the Enlightenment completely abolished the Bloody Code and Rotten Boroughs, eradicating the Gin Craze across urban Britain.',
+        'By 1750, Britain was a fully democratic republic where all citizens could vote, and Parliament abolished capital punishment to demonstrate Enlightenment tolerance.',
       flashcards: [
         {
           term: 'Constitutional Monarchy',
@@ -3700,7 +3701,7 @@ const early_modern_world = {
             'The dramatic demographic movement of people from rural villages into densely crowded commercial and industrial towns, transforming London into Europe’s largest metropolis.',
         },
         {
-          term: 'The Enlightenment',
+          term: 'Enlightenment',
           definition:
             'An 18th-century intellectual and philosophical movement emphasizing reason, scientific experimentation, individual liberty, and religious toleration over tradition and superstition.',
         },
@@ -3712,7 +3713,7 @@ const early_modern_world = {
           source: {
             type: 'written',
             shelfmark: 'Parliamentary Archives, HL/PO/PU/1/1688/1W&Mn2s2',
-            title: 'The Bill of Rights (1689, Key Clauses)',
+            title: 'Source A: The Bill of Rights (1689, Key Clauses)',
             content:
               'That the pretended power of suspending of laws, or the execution of laws, by regal authority, without consent of parliament, is illegal... That levying money for or to the use of the crown, by pretence of prerogative, without grant of parliament, is illegal... That the raising or keeping a standing army within the kingdom in time of peace, unless it be with consent of parliament, is against law... That the freedom of speech, and debates or proceedings in parliament, ought not to be impeached or questioned in any court or place out of parliament...',
             provenance:
@@ -3722,11 +3723,11 @@ const early_modern_world = {
             {
               type: 'source_analysis',
               question:
-                'Read the Bill of Rights extract alongside Act 1. Using paragraphs [1.1], [1.2], and [1.3], explain how Britain’s constitutional settlement created political stability while simultaneously entrenching aristocratic privilege and social control.',
+                'Read Source A (The Bill of Rights extract) alongside Act 1. Using paragraphs [1.1], [1.2], and [1.3], explain how Britain’s constitutional settlement created political stability while simultaneously entrenching aristocratic privilege and social control.',
               starter:
-                'The 1689 Bill of Rights established political stability, as noted in paragraph [1.1], by legally limiting the power of the Crown, but paragraphs [1.2] and [1.3] reveal that it entrenched privilege because...',
+                'Source A (The 1689 Bill of Rights) established political stability, as noted in paragraph [1.1], by legally limiting the power of the Crown, but paragraphs [1.2] and [1.3] reveal that it entrenched privilege because...',
               model_answer:
-                'The 1689 constitutional settlement created a remarkably stable, yet deeply exclusionary and repressive, political architecture. As shown in the Bill of Rights extract and paragraph [1.1], the statute permanently dismantled royal absolutism: it legally barred monarchs from levying taxes, suspending laws, or maintaining armies without the explicit consent of Parliament, creating Europe’s first enduring constitutional monarchy and protecting the rule of law. However, as detailed in paragraph [1.2], this settlement was designed to empower an aristocratic oligarchy rather than the general public. Less than 5% of adult men could vote, and Parliament was dominated by corrupt "rotten boroughs" like Old Sarum, which allowed wealthy landlords to buy and sell parliamentary seats. Furthermore, as explained in paragraph [1.3], this wealthy elite weaponised parliament to protect their private property through the "Bloody Code", expanding capital hanging crimes to over 200 minor offenses. Therefore, while Britain achieved modern constitutional limits on royal tyranny, political power remained firmly concentrated in the hands of a privileged class that governed through judicial terror.',
+                'The 1689 constitutional settlement created a remarkably stable, yet deeply exclusionary and repressive, political architecture. As shown in the Bill of Rights extract (Source A) and paragraph [1.1], the statute permanently dismantled royal absolutism: it legally barred monarchs from levying taxes, suspending laws, or maintaining armies without the explicit consent of Parliament, creating Europe’s first enduring constitutional monarchy and protecting the rule of law. However, as detailed in paragraph [1.2], this settlement was designed to empower an aristocratic oligarchy rather than the general public. Less than 5% of adult men could vote, and Parliament was dominated by corrupt "rotten boroughs" like Old Sarum, which allowed wealthy landlords to buy and sell parliamentary seats. Furthermore, as explained in paragraph [1.3], this wealthy elite weaponised parliament to protect their private property through the "Bloody Code", expanding capital hanging crimes to over 200 minor offenses. Therefore, while Britain achieved modern constitutional limits on royal tyranny, political power remained firmly concentrated in the hands of a privileged class that governed through judicial terror.',
             },
           ],
         },
@@ -3757,24 +3758,24 @@ const early_modern_world = {
               image: '/images/gin_lane.jpg',
               image_alt: 'William Hogarth, Gin Lane (1751)',
               image_caption:
-                'Source A: William Hogarth’s scathing satirical engraving Gin Lane (1751). Set in the impoverished slum of St Giles, London, it depicts social collapse, neglect, infant mortality, and despair during the peak of the Gin Craze.',
+                'Source C: William Hogarth’s scathing satirical engraving Gin Lane (1751). Set in the impoverished slum of St Giles, London, it depicts social collapse, neglect, infant mortality, and despair during the peak of the Gin Craze.',
             },
             {
               image: '/images/rocque_map.jpg',
               image_alt: 'John Rocque’s Map of London (1746)',
               image_caption:
-                'Source A2: Excerpt from John Rocque’s 1746 Map of London, revealing the rapid urban sprawl, dense alleyways, and cramped courts that fueled social squalor and uncontrolled disease.',
+                'Source D: Excerpt from John Rocque’s 1746 Map of London, revealing the rapid urban sprawl, dense alleyways, and cramped courts that fueled social squalor and uncontrolled disease.',
             },
           ],
           tasks: [
             {
               type: 'source_analysis',
               question:
-                'Study Sources A and A2 alongside Act 3. Using paragraphs [3.1], [3.2], and [3.3], analyse how William Hogarth’s Gin Lane exposes the "dark side" of eighteenth-century urbanisation and commercial expansion.',
+                'Study Sources C and D alongside Act 3. Using paragraphs [3.1], [3.2], and [3.3], analyse how William Hogarth’s Gin Lane (Source C) and John Rocque’s map (Source D) expose the "dark side" of eighteenth-century urbanisation and commercial expansion.',
               starter:
-                'William Hogarth’s Gin Lane (Source A) exposes the dark side of 18th-century urbanisation, described in paragraphs [3.1] and [3.2], by illustrating that rapid urban growth led to..., while the social despair of the Gin Craze is captured by...',
+                'William Hogarth’s Gin Lane (Source C) and John Rocque’s map (Source D) expose the dark side of 18th-century urbanisation, described in paragraphs [3.1] and [3.2], by illustrating that rapid urban growth led to..., while the social despair of the Gin Craze is captured by...',
               model_answer:
-                'William Hogarth’s Gin Lane (Source A) delivers a scathing visual indictment of the social squalor, inequality, and human misery lurking beneath Britain’s commercial prosperity. As described in paragraph [3.1] and mapped in Rocque’s 1746 survey (Source A2), uncontrolled urbanisation flooded London with destitute rural laborers, creating densely overcrowded slums that completely lacked sewage, sanitation, or clean water. In paragraph [3.2], this pervasive misery fueled the "Gin Craze", where cheap, toxic spirits became a desperate coping mechanism for the urban poor. Hogarth visually captures this catastrophic social collapse: in the foreground, an emaciated, syphilitic mother heedlessly drops her infant over a parapet while reaching for snuff, while surrounding figures pawn their vital tools, starve on steps, or hang themselves in ruined buildings [3.3]. By exposing infant mortality rates exceeding 75% and total communal breakdown, Hogarth proved that while imperial merchants enriched themselves, the domestic working class was abandoned to horrific poverty and despair.',
+                'William Hogarth’s Gin Lane (Source C) delivers a scathing visual indictment of the social squalor, inequality, and human misery lurking beneath Britain’s commercial prosperity. As described in paragraph [3.1] and mapped in Rocque’s 1746 survey (Source D), uncontrolled urbanisation flooded London with destitute rural laborers, creating densely overcrowded slums that completely lacked sewage, sanitation, or clean water. In paragraph [3.2], this pervasive misery fueled the "Gin Craze", where cheap, toxic spirits became a desperate coping mechanism for the urban poor. Hogarth visually captures this catastrophic social collapse: in the foreground, an emaciated, syphilitic mother heedlessly drops her infant over a parapet while reaching for snuff, while surrounding figures pawn their vital tools, starve on steps, or hang themselves in ruined buildings [3.3]. By exposing infant mortality rates exceeding 75% and total communal breakdown, Hogarth proved that while imperial merchants enriched themselves, the domestic working class was abandoned to horrific poverty and despair.',
             },
           ],
         },
@@ -3799,7 +3800,7 @@ const early_modern_world = {
         question:
           '‘By 1750, Britain had become an enlightened, modern global superpower.’ How far do you agree with this statement? [16 marks + 4 SPaG]',
         hints: [
-          'Structure your response into four balanced analytical sections and a sustained conclusion: (1) Political & Institutional Modernity (Constitutional Monarchy, Bill of Rights, Bank of England), (2) Global Maritime Supremacy (Royal Navy, East India Company, colonial commerce), (3) Counter-argument: Domestic Inequality & Squalor (Rotten Boroughs, The Bloody Code, Hogarth’s Gin Lane), and (4) Counter-argument: Transatlantic Chattel Slavery (Royal African Company, Middle Passage, Caribbean sugar plantations).',
+          "Structure your response into four balanced analytical sections and a sustained conclusion: (1) Political & Institutional Modernity (Constitutional Monarchy, Bill of Rights Source A, Bank of England), (2) Global Maritime Supremacy (Royal Navy, East India Company, colonial commerce Source B), (3) Counter-argument: Domestic Inequality & Squalor (Rotten Boroughs, The Bloody Code, Hogarth’s Gin Lane Source C, Rocque's Map Source D), and (4) Counter-argument: Transatlantic Chattel Slavery (Royal African Company, Middle Passage, Caribbean sugar plantations).",
           'Deploy precise historical facts throughout: the 1689 Bill of Rights, Old Sarum, over 200 hanging offenses under the Bloody Code, 14 gallons of gin consumed per year in the Gin Craze, the 1694 Bank of England charter, and the 212,000 captive Africans trafficked by the Royal African Company.',
           'Explicitly deconstruct the word "modern": does modernity mean financial and naval sophistication, or does it require human rights, democracy, and equality?',
           'In your conclusion, reach a nuanced, criteria-based historical judgement: evaluate whether Britain was truly modern, or whether its modernity was a thin veneer built on top of domestic inequality and imperial violence.',
@@ -3807,106 +3808,105 @@ const early_modern_world = {
         scaffolding: [
           {
             tier: 'Tier 1: Core Scaffolding',
-            stem: 'I agree to some extent that Britain had become a modern superpower by 1750 because it developed a constitutional monarchy and a powerful global empire. For example, the 1689 Bill of Rights limited the power of the King and the Royal Navy controlled global trade...',
-            pupil_focus:
-              'Explain the evidence for political and naval power, showing how Britain differed from 1450.',
+            stem: 'On the one hand, Britain could be seen as modern in 1750 because of its political system. For example, the Bill of Rights in 1689 meant that the King could not rule without Parliament, which created...',
+            pupil_focus: 'Explain the evidence supporting political and constitutional modernity.',
           },
           {
             tier: 'Tier 2: Intermediate Analysis',
-            stem: 'However, this statement overlooks the severe domestic inequality and social squalor that existed in 1750. In cities like London, rapid urbanisation led to the Gin Craze and extreme poverty shown in Hogarth’s Gin Lane, while the law used the Bloody Code to...',
+            stem: 'However, this modernity was severely limited by severe domestic inequality and corruption. Despite having a parliament, less than 5% of men could vote due to rotten boroughs like Old Sarum, and the Bloody Code punished minor property thefts with hanging, showing that...',
             pupil_focus:
-              'Contrast commercial wealth with domestic poverty, lack of democracy, and capital punishment.',
+              'Analyse domestic counter-arguments focusing on political exclusion and legal violence.',
           },
           {
             tier: 'Tier 3: Advanced Historiographical Scholarship',
-            stem: 'Most decisively, the claim that Britain was an "enlightened" society collapses when examining the transatlantic slave trade. Britain’s commercial boom and consumer revolution were fundamentally powered by the brutal forced labor of over two million enslaved Africans, proving that Britain’s modernity was deeply compromised...',
+            stem: 'Most decisively, evaluating Britain’s global empire exposes the profound moral hypocrisy of claims to "modernity." As Revisionist historians emphasise, London’s financial sophistication and consumer wealth were built directly upon the barbarism of the transatlantic slave trade and plantation slavery...',
             pupil_focus:
-              'Synthesize the moral, economic, and political contradictions to deliver a high-level evaluative judgement.',
+              'Synthesize domestic progress with imperial exploitation to formulate a sophisticated criteria-based verdict.',
           },
         ],
         model:
-          '**Exemplar Model Answer (16 Marks + 4 SPaG - The Modernity of Britain by 1750)**\n\nThe proposition that by 1750 Britain had become an enlightened, modern global superpower represents one of the most enduring and fiercely contested debates in British historiography. When contrasted with the medieval, war-ravaged, and peripheral kingdom of 1450, Britain had undeniably undergone a spectacular institutional, commercial, and maritime transformation. However, while Britain possessed the sophisticated financial and military apparatus of a modern global superpower, the claim that it was an "enlightened" or genuinely "modern" society is profoundly undermined by severe domestic disenfranchisement, judicial brutality, and its complete economic reliance upon the horrific institution of transatlantic chattel slavery.\n\nOn one hand, substantive historical evidence supports the view that Britain had achieved remarkable institutional and geopolitical modernity. Following the Glorious Revolution of 1688 and the 1689 Bill of Rights, Britain became Europe’s premier constitutional monarchy, permanently dismantling royal absolutism and establishing the supremacy of parliament and the rule of law. Economically, the Financial Revolution—anchored by the founding of the Bank of England in 1694 and the creation of the National Debt—transformed Britain into a formidable Fiscal-Military State. Supported by paper credit and low-interest state loans, the Royal Navy commanded the world’s oceans, winning key global territories in the 1713 Treaty of Utrecht and shielding merchant fleets that made London the commercial crossroads of the globe. Furthermore, Britain was an intellectual epicenter of the European Enlightenment, pioneering scientific enquiry through Sir Isaac Newton and the Royal Society. In terms of state finance, commerce, and naval hegemony, Britain in 1750 functioned as the world’s first truly modern superpower.\n\nHowever, this triumphalist narrative is severely challenged by the acute domestic squalor, political corruption, and social inequality of eighteenth-century Britain. Politically, the nation was far from a modern democracy: power was monopolised by a wealthy Whig and Tory oligarchy, with fewer than 5% of adult males eligible to vote, and representation distorted by corrupt "rotten boroughs" like Old Sarum. To safeguard their property against the impoverished majority, this elite enacted the draconian "Bloody Code," expanding the death penalty to over 200 petty property crimes, including stealing livestock or cutting down trees. Furthermore, uncontrolled urbanisation converted London into a squalid metropolis lacking sanitation, where 75% of infants died before age five. As graphically depicted in William Hogarth’s scathing 1751 print *Gin Lane*, despair drove the working class into devastating alcoholism during the Gin Craze. A society that hanged destitute children to protect property and abandoned its urban poor to deadly squalor cannot convincingly be termed "enlightened."\n\nMost decisively, the claim of enlightenment collapses entirely when examining the violent foundation of Britain’s commercial prosperity: the transatlantic slave trade. Britain’s celebrated Consumer Revolution—the widespread availability of sugar, tobacco, and rum—was directly subsidized by the violent dehumanisation of millions of human beings. Through chartered monopolies like the Royal African Company, British merchants transported over 200,000 captive Africans across the lethal Middle Passage, branding them like cattle and forcing them into brutal gang labor on Jamaican and Antiguan sugar plantations. Plantations were lethal agro-industrial factories where enslaved people were routinely worked to death within seven to ten years under the whip. The colossal fortunes that built London’s Georgian townhouses, capitalized banks, and funded the Royal Navy were literally purchased with African blood.\n\nIn conclusion, I agree only to a partial extent that Britain was a modern global superpower by 1750. Britain had certainly pioneered modern institutional finance, constitutional limitations on monarchy, and global naval hegemony. However, this modernity was a privileged veneer. In reality, early modern Britain was a deeply contradictory society whose commercial modernity and naval supremacy were inextricably bound to, and funded by, pre-modern barbarism: the systemic torture of chattel slavery abroad and ruthless judicial terror at home. By 1750, Britain was an imperial superpower, but it remained centuries away from becoming an enlightened, genuinely modern society.',
+          '**Exemplar Model Answer (16 Marks + 4 SPaG - Capstone Synthesis)**\n\nThe proposition that Britain had become an enlightened, modern global superpower by 1750 is one of the most contentious debates in early modern historiography. When evaluating this statement, a historian must distinguish between institutional and technological sophistication on the one hand, and moral, democratic, and humanitarian progress on the other. While Whig historians traditionally celebrated Britain’s constitutional stability, financial revolution, and global naval dominance as the dawn of the modern world, a critical examination reveals that this "modernity" was an elite veneer fundamentally underpinned by archaic domestic inequality, state judicial terror, and the grotesque brutality of colonial chattel slavery.\n\nOn the one hand, compelling historical evidence supports the view that Britain developed institutional and constitutional modernity. As established in the Bill of Rights 1689 (Source A), Britain decisively rejected royal absolutism, creating Europe’s first enduring constitutional monarchy where sovereigns were legally bound by parliamentary consent, free elections, and the rule of law. This political stability fostered an unprecedented Financial Revolution: the founding of the Bank of England in 1694 and the establishment of the National Debt allowed Britain to borrow vast capital at low interest rates, transforming the nation into a formidable Fiscal-Military State. Supported by the Scientific Revolution and the Royal Navy, Britain dominated global trade routes, as illustrated in the triumphant allegory of Britannia (Source B), importing tea from Asia, tobacco from Virginia, and sugar from the West Indies. To contemporary European observers like Voltaire and Montesquieu, eighteenth-century Britain was indeed an enlightened, remarkably sophisticated commercial superpower.\n\nOn the other hand, Britain’s domestic social and political realities sharply contradict the definition of an enlightened society. Politically, eighteenth-century Britain was not a democracy, but a corrupt aristocratic oligarchy. Less than 5% of the adult male population possessed the franchise, and parliamentary representation was deformed by "rotten boroughs" such as Old Sarum—where an abandoned hill fort with seven voters sent two MPs to Westminster, while booming industrial centres like Manchester had none. Socially, rapid, unplanned urbanisation plunged hundreds of thousands of working-class citizens into squalor, vividly exposed in John Rocque’s 1746 map (Source D) and William Hogarth’s scathing engraving Gin Lane (Source C). With infant mortality exceeding 75% in London slums and cheap spirits fueling the deadly Gin Craze, the British state offered no social welfare. Instead, Parliament protected aristocratic property through the "Bloody Code," expanding capital offenses to over 200 hanging crimes for minor offenses like stealing a handkerchief. A society that executed impoverished children to protect private property can hardly be characterised as enlightened.\n\nMost damningly, Britain’s global wealth and commercial superpower status were built directly upon the violent commodification of human beings in the transatlantic slave trade. Between 1672 and 1731, the Royal African Company forcibly shipped over 212,000 captive Africans, and by 1750, British vessels transported over 40,000 enslaved people annually across the Atlantic. On Caribbean sugar plantations, enslaved men and women were worked to death under brutal gang systems, with mortality rates so catastrophic that hundreds of thousands of fresh captives had to be imported continuously. The refined consumer luxuries consumed in London coffee houses—sugar, rum, tobacco, and mahogany—were literally paid for in human blood. Britain’s celebrated naval and mercantile mastery was inextricably bound to human subjugation.\n\nIn conclusion, I largely disagree with the statement that Britain had become an enlightened, modern superpower by 1750. While Britain undoubtedly pioneered modern financial, naval, and constitutional institutions that outstripped its European rivals, this progress was neither enlightened nor democratic. True modernity cannot be measured solely by maritime tonnage, corporate capital, or parliamentary sovereignty for the rich. Because Britain’s domestic order rested upon the judicial terror of the Bloody Code and its global wealth was subsidized by the barbaric cruelty of transatlantic chattel slavery, Britain in 1750 was not an enlightened modern superpower, but a wealthy mercantile empire trapped in profound moral and social contradictions.',
       },
       quiz: [
         {
           question:
-            'Which 1689 constitutional statute permanently ended royal absolutism in England by barring monarchs from levying taxes or keeping armies without Parliament?',
+            'What landmark 1689 constitutional statute permanently limited the powers of the Crown and established Parliament’s legislative authority?',
           options: [
-            'The Petition of Right',
+            'The Magna Carta',
             'The Bill of Rights',
-            'Magna Carta',
+            'The Petition of Right',
             'The Act of Settlement',
           ],
           answer: 'The Bill of Rights',
           a: 'The Bill of Rights',
-          q: 'Which 1689 constitutional statute permanently ended royal absolutism in England by barring monarchs from levying taxes or keeping armies without Parliament?',
+          q: 'What landmark 1689 constitutional statute permanently limited the powers of the Crown and established Parliament’s legislative authority?',
           explanation:
-            'The Bill of Rights of 1689 legally limited the monarch’s powers and established constitutional monarchy.',
+            'The 1689 Bill of Rights established a constitutional monarchy by requiring parliamentary approval for taxes and laws.',
         },
         {
           question:
-            'What term described corrupt parliamentary constituencies with minuscule electorates (like Old Sarum) controlled by wealthy landowners?',
-          options: ['Rotten Boroughs', 'Crown Baronies', 'Charter Hundreds', 'Pocket Shires'],
+            'What term described corrupt parliamentary constituencies with minuscule electorates controlled by wealthy aristocratic landlords?',
+          options: ['Rotten Boroughs', 'Pocket Shires', 'Royal Demesnes', 'Feudal Cantons'],
           answer: 'Rotten Boroughs',
           a: 'Rotten Boroughs',
-          q: 'What term described corrupt parliamentary constituencies with minuscule electorates (like Old Sarum) controlled by wealthy landowners?',
+          q: 'What term described corrupt parliamentary constituencies with minuscule electorates controlled by wealthy aristocratic landlords?',
           explanation:
-            'Rotten boroughs were depopulated parliamentary seats controlled by aristocratic patrons.',
+            'Rotten boroughs like Old Sarum had very few voters but sent Members of Parliament to Westminster.',
         },
         {
           question:
-            'What was the term for the vast expansion of English criminal law making over 200 minor property offenses punishable by public hanging?',
+            'What was the popular name for the expansion of English criminal law that made over 200 property offenses punishable by hanging?',
           options: [
+            'The Star Chamber',
             'The Black Acts',
-            'The Common Law Assize',
-            'The Tyburn Statutes',
+            'The Treason Statutes',
             'The Bloody Code',
           ],
           answer: 'The Bloody Code',
           a: 'The Bloody Code',
-          q: 'What was the term for the vast expansion of English criminal law making over 200 minor property offenses punishable by public hanging?',
+          q: 'What was the popular name for the expansion of English criminal law that made over 200 property offenses punishable by hanging?',
           explanation:
-            'The Bloody Code imposed capital punishment for over 200 offenses to protect private property.',
+            'The Bloody Code aggressively expanded capital punishment to protect private property during the 18th century.',
         },
         {
           question:
-            'Which celebrated British satirical artist published the scathing engraving Gin Lane in 1751 to expose urban squalor and alcohol addiction in London?',
-          options: [
-            'Thomas Gainsborough',
-            'Joshua Reynolds',
-            'William Hogarth',
-            'George Cruikshank',
-          ],
-          answer: 'William Hogarth',
-          a: 'William Hogarth',
-          q: 'Which celebrated British satirical artist published the scathing engraving Gin Lane in 1751 to expose urban squalor and alcohol addiction in London?',
+            'Which famous 1751 William Hogarth engraving exposed the social collapse, alcoholism, and infant neglect of the London slums?',
+          options: ['Industry and Idleness', 'Beer Street', 'Gin Lane', 'The Rake’s Progress'],
+          answer: 'Gin Lane',
+          a: 'Gin Lane',
+          q: 'Which famous 1751 William Hogarth engraving exposed the social collapse, alcoholism, and infant neglect of the London slums?',
           explanation:
-            'William Hogarth engraved Gin Lane (1751) to campaign for the regulation of spirits during the Gin Craze.',
+            'Gin Lane depicted the devastation of the Gin Craze in the impoverished parish of St Giles.',
         },
         {
           question:
-            'What 1707 legislation formally united the kingdoms of England and Scotland into the single realm of Great Britain under the Union Flag?',
+            'What 1707 parliamentary statute formally united the kingdoms of England and Scotland into Great Britain?',
           options: [
             'The Act of Union',
             'The Navigation Act',
             'The Settlement Act',
-            'The Treaty of Edinburgh',
+            'The Treaty of Utrecht',
           ],
           answer: 'The Act of Union',
           a: 'The Act of Union',
-          q: 'What 1707 legislation formally united the kingdoms of England and Scotland into the single realm of Great Britain under the Union Flag?',
+          q: 'What 1707 parliamentary statute formally united the kingdoms of England and Scotland into Great Britain?',
           explanation:
-            'The 1707 Act of Union joined England and Scotland into the unified kingdom of Great Britain.',
+            'The 1707 Act of Union merged England and Scotland under a single parliament and flag.',
         },
         {
           question:
-            'Approximately what percentage of the adult male population was legally entitled to vote in general elections in Britain in 1750?',
-          options: ['Over 75%', 'Around 25%', 'Less than 5%', 'Around 50%'],
-          answer: 'Less than 5%',
-          a: 'Less than 5%',
-          q: 'Approximately what percentage of the adult male population was legally entitled to vote in general elections in Britain in 1750?',
+            'What 1713 treaty concession granted Britain the monopoly right to supply 4,800 enslaved Africans annually to the Spanish Empire?',
+          options: [
+            'The Navigation Accord',
+            'The Tordesillas Grant',
+            'The Asiento',
+            'The Concordat',
+          ],
+          answer: 'The Asiento',
+          a: 'The Asiento',
+          q: 'What 1713 treaty concession granted Britain the monopoly right to supply 4,800 enslaved Africans annually to the Spanish Empire?',
           explanation:
-            'Voting was restricted by strict property qualifications, leaving fewer than 5% of adult men eligible to vote.',
+            'The Asiento was a lucrative slave trading contract secured by Britain after the War of the Spanish Succession.',
         },
       ],
     },
@@ -3915,21 +3915,21 @@ const early_modern_world = {
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/niccol_barbaro.jpg',
-      options: ['Pope Alexander VI', 'Sultan Mehmed II', 'Chief Powhatan', 'Niccolò Barbaro'],
+      options: ['Sultan Mehmed II', 'Pope Alexander VI', 'Chief Powhatan', 'Niccolò Barbaro'],
       answer: 3,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/sultan_mehmed_ii.jpg',
-      options: ['Professor Eric Williams', 'Sultan Mehmed II', 'Chief Powhatan', 'Olaudah Equiano'],
+      options: ['Chief Powhatan', 'Sultan Mehmed II', 'Professor Eric Williams', 'Olaudah Equiano'],
       answer: 1,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/mansa_musa.jpg',
-      options: ['Mansa Musa', 'Shashi Tharoor', 'John Hawkins', 'John Bradshaw'],
+      options: ['Mansa Musa', 'John Hawkins', 'Shashi Tharoor', 'John Bradshaw'],
       answer: 0,
       source: 'Key Individuals',
     },
@@ -3937,9 +3937,9 @@ const early_modern_world = {
       q: 'Who is this historical figure?',
       img: '/images/individuals/admiral_zheng_he.jpg',
       options: [
-        'Professor Peter Frankopan',
-        'Admiral Zheng He',
         'King Charles II',
+        'Admiral Zheng He',
+        'Professor Peter Frankopan',
         'Sir Walter Raleigh',
       ],
       answer: 1,
@@ -3949,8 +3949,8 @@ const early_modern_world = {
       q: 'Who is this historical figure?',
       img: '/images/individuals/christopher_columbus.jpg',
       options: [
-        'Mary, Queen of Scots',
         'Henry Fielding',
+        'Mary, Queen of Scots',
         'Christopher Columbus',
         'Sir Walter Raleigh',
       ],
@@ -3961,8 +3961,8 @@ const early_modern_world = {
       q: 'Who is this historical figure?',
       img: '/images/individuals/martin_luther.jpg',
       options: [
-        'Sir Walter Raleigh',
         'Mary, Queen of Scots',
+        'Sir Walter Raleigh',
         'Professor Eric Williams',
         'Martin Luther',
       ],
@@ -3972,77 +3972,77 @@ const early_modern_world = {
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/pope_alexander_vi.jpg',
-      options: ['Pope Alexander VI', 'Niccolò Barbaro', 'Christopher Columbus', 'Henry Fielding'],
+      options: ['Pope Alexander VI', 'Christopher Columbus', 'Niccolò Barbaro', 'Henry Fielding'],
       answer: 0,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/king_philip_ii.jpg',
-      options: ['Shashi Tharoor', 'John Rolfe', 'King Philip II', 'Admiral Zheng He'],
+      options: ['John Rolfe', 'Shashi Tharoor', 'King Philip II', 'Admiral Zheng He'],
       answer: 2,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/queen_elizabeth_i.jpg',
-      options: ['Chief Powhatan', 'Queen Elizabeth I', 'King George II', 'Mary, Queen of Scots'],
+      options: ['King George II', 'Queen Elizabeth I', 'Chief Powhatan', 'Mary, Queen of Scots'],
       answer: 1,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/mary_queen_of_scots.jpg',
-      options: ['Sir Walter Raleigh', 'King Philip II', 'Martin Luther', 'Mary, Queen of Scots'],
+      options: ['King Philip II', 'Sir Walter Raleigh', 'Martin Luther', 'Mary, Queen of Scots'],
       answer: 3,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/henry_viii.jpg',
-      options: ['Henry VIII', 'King Philip II', 'Oliver Cromwell', 'King Charles I'],
+      options: ['Henry VIII', 'Oliver Cromwell', 'King Philip II', 'King Charles I'],
       answer: 0,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/francis_drake.jpg',
-      options: ['Olaudah Equiano', 'King Philip II', 'Oliver Cromwell', 'Francis Drake'],
+      options: ['King Philip II', 'Olaudah Equiano', 'Oliver Cromwell', 'Francis Drake'],
       answer: 3,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/john_hawkins.JPG',
-      options: ['Mary, Queen of Scots', 'John Hawkins', 'Henry Fielding', 'Sultan Mehmed II'],
+      options: ['Henry Fielding', 'John Hawkins', 'Mary, Queen of Scots', 'Sultan Mehmed II'],
       answer: 1,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/sir_walter_raleigh.jpg',
-      options: ['Olaudah Equiano', 'Henry Fielding', 'Sir Walter Raleigh', 'Francis Drake'],
+      options: ['Henry Fielding', 'Olaudah Equiano', 'Sir Walter Raleigh', 'Francis Drake'],
       answer: 2,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/chief_powhatan.jpg',
-      options: ['Oliver Cromwell', 'William Hogarth', 'Chief Powhatan', 'Christopher Columbus'],
+      options: ['William Hogarth', 'Oliver Cromwell', 'Chief Powhatan', 'Christopher Columbus'],
       answer: 2,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/john_rolfe.jpg',
-      options: ['John Rolfe', 'King James I', 'William Hogarth', 'Chief Powhatan'],
+      options: ['John Rolfe', 'William Hogarth', 'King James I', 'Chief Powhatan'],
       answer: 0,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/king_james_i.jpg',
-      options: ['Pierre-Jean Grosley', 'King James I', 'Martin Luther', 'Oliver Cromwell'],
+      options: ['Martin Luther', 'King James I', 'Pierre-Jean Grosley', 'Oliver Cromwell'],
       answer: 1,
       source: 'Key Individuals',
     },
@@ -4050,8 +4050,8 @@ const early_modern_world = {
       q: 'Who is this historical figure?',
       img: '/images/individuals/sir_thomas_roe.jpg',
       options: [
-        'Christopher Columbus',
         'King Charles II',
+        'Christopher Columbus',
         'Professor Eric Williams',
         'Sir Thomas Roe',
       ],
@@ -4061,7 +4061,7 @@ const early_modern_world = {
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/emperor_jahangir.jpeg',
-      options: ['Professor Eric Williams', 'King Philip II', 'Emperor Jahangir', 'King James I'],
+      options: ['King Philip II', 'Professor Eric Williams', 'Emperor Jahangir', 'King James I'],
       answer: 2,
       source: 'Key Individuals',
     },
@@ -4069,9 +4069,9 @@ const early_modern_world = {
       q: 'Who is this historical figure?',
       img: '/images/individuals/king_charles_i.jpg',
       options: [
-        'Professor Eric Williams',
-        'King Charles I',
         'Pierre-Jean Grosley',
+        'King Charles I',
+        'Professor Eric Williams',
         'William Hogarth',
       ],
       answer: 1,
@@ -4082,8 +4082,8 @@ const early_modern_world = {
       img: '/images/individuals/oliver_cromwell.jpg',
       options: [
         'Oliver Cromwell',
-        'Henry VIII',
         'Queen Nanny (Nanny of the Maroons)',
+        'Henry VIII',
         'Sultan Mehmed II',
       ],
       answer: 0,
@@ -4092,7 +4092,7 @@ const early_modern_world = {
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/john_bradshaw.png',
-      options: ['Niccolò Barbaro', 'Sultan Mehmed II', 'John Rolfe', 'John Bradshaw'],
+      options: ['Sultan Mehmed II', 'Niccolò Barbaro', 'John Rolfe', 'John Bradshaw'],
       answer: 3,
       source: 'Key Individuals',
     },
@@ -4101,8 +4101,8 @@ const early_modern_world = {
       img: '/images/individuals/king_charles_ii.jpg',
       options: [
         'King Charles II',
-        'Professor Peter Frankopan',
         'Mary, Queen of Scots',
+        'Professor Peter Frankopan',
         'Martin Luther',
       ],
       answer: 0,
@@ -4112,9 +4112,9 @@ const early_modern_world = {
       q: 'Who is this historical figure?',
       img: '/images/individuals/queen_nanny_nanny_of_the_maroons.jpg',
       options: [
-        'King Philip II',
-        'Queen Nanny (Nanny of the Maroons)',
         'Pope Alexander VI',
+        'Queen Nanny (Nanny of the Maroons)',
+        'King Philip II',
         'Sir Thomas Roe',
       ],
       answer: 1,
@@ -4123,56 +4123,56 @@ const early_modern_world = {
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/olaudah_equiano.png',
-      options: ['King James I', 'Emperor Jahangir', 'Professor Eric Williams', 'Olaudah Equiano'],
+      options: ['Emperor Jahangir', 'King James I', 'Professor Eric Williams', 'Olaudah Equiano'],
       answer: 3,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/king_george_ii.jpg',
-      options: ['John Hawkins', 'King Charles I', 'King George II', 'John Rolfe'],
+      options: ['King Charles I', 'John Hawkins', 'King George II', 'John Rolfe'],
       answer: 2,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/pierre_jean_grosley.jpg',
-      options: ['John Hawkins', 'Sir Walter Raleigh', 'Pierre-Jean Grosley', 'Oliver Cromwell'],
+      options: ['Sir Walter Raleigh', 'John Hawkins', 'Pierre-Jean Grosley', 'Oliver Cromwell'],
       answer: 2,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/henry_fielding.jpg',
-      options: ['King George II', 'Henry Fielding', 'Emperor Jahangir', 'Chief Powhatan'],
+      options: ['Emperor Jahangir', 'Henry Fielding', 'King George II', 'Chief Powhatan'],
       answer: 1,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/william_hogarth.jpg',
-      options: ['William Hogarth', 'Henry Fielding', 'Professor Eric Williams', 'Mansa Musa'],
+      options: ['William Hogarth', 'Professor Eric Williams', 'Henry Fielding', 'Mansa Musa'],
       answer: 0,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/professor_peter_frankopan.JPG',
-      options: ['Chief Powhatan', 'Martin Luther', 'King Charles I', 'Professor Peter Frankopan'],
+      options: ['Martin Luther', 'Chief Powhatan', 'King Charles I', 'Professor Peter Frankopan'],
       answer: 3,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/shashi_tharoor.jpg',
-      options: ['Professor Peter Frankopan', 'Henry Fielding', 'King James I', 'Shashi Tharoor'],
+      options: ['Henry Fielding', 'Professor Peter Frankopan', 'King James I', 'Shashi Tharoor'],
       answer: 3,
       source: 'Key Individuals',
     },
     {
       q: 'Who is this historical figure?',
       img: '/images/individuals/professor_eric_williams.jpg',
-      options: ['Professor Eric Williams', 'John Hawkins', 'Francis Drake', 'Admiral Zheng He'],
+      options: ['Professor Eric Williams', 'Francis Drake', 'John Hawkins', 'Admiral Zheng He'],
       answer: 0,
       source: 'Key Individuals',
     },

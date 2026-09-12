@@ -467,7 +467,7 @@ export default {
           q: 'Who were the native people living in England before 1066?',
           answer: 'The Anglo-Saxons.',
           a: 'The Anglo-Saxons.',
-          options: ['The Normans.', 'The Vikings.', 'The Anglo-Saxons.', 'The Romans.'],
+          options: ['The Vikings.', 'The Romans.', 'The Anglo-Saxons.', 'The Normans.'],
           explanation:
             'The Anglo-Saxons were Germanic peoples who settled in England following the collapse of Roman rule in the 5th century. By 1066, they had established a sophisticated, prosperous Christian kingdom with developed administrative shires.',
         },
@@ -487,8 +487,8 @@ export default {
           a: 'The person legally next in line to become king or queen.',
           options: [
             'The person legally next in line to become king or queen.',
-            'A military commander of the royal army.',
             'The leader of the church in a country.',
+            'A military commander of the royal army.',
             'A powerful lord who advises the king.',
           ],
           explanation:
@@ -501,8 +501,8 @@ export default {
           a: 'Edward the Confessor.',
           options: [
             'Harald Hardrada.',
-            'Harold Godwinson.',
             'William the Conqueror.',
+            'Harold Godwinson.',
             'Edward the Confessor.',
           ],
           explanation:
@@ -514,10 +514,10 @@ export default {
           answer: 'The council of powerful English lords and bishops.',
           a: 'The council of powerful English lords and bishops.',
           options: [
-            'A religious book used by the church.',
-            'A tax collected to pay off the Vikings.',
-            'The council of powerful English lords and bishops.',
             "The king's personal bodyguards.",
+            'A religious book used by the church.',
+            'The council of powerful English lords and bishops.',
+            'A tax collected to pay off the Vikings.',
           ],
           explanation:
             "The Witan (or Witenagemot) was the royal assembly of leading Anglo-Saxon earls, thegns, and bishops who advised the king. Following Edward's death, the Witan exercised its customary constitutional authority by electing Harold Godwinson as king.",
@@ -527,7 +527,7 @@ export default {
           q: 'Which group of people were famous for raiding England in longships?',
           answer: 'The Vikings.',
           a: 'The Vikings.',
-          options: ['The Vikings.', 'The Normans.', 'The Romans.', 'The Franks.'],
+          options: ['The Vikings.', 'The Romans.', 'The Franks.', 'The Normans.'],
           explanation:
             'Norse Vikings raided and colonized parts of northern and eastern England from the late 8th century onward, establishing the Danelaw. In 1066, Norwegian King Harald Hardrada launched a major invasion to reclaim the English throne.',
         },
@@ -539,8 +539,8 @@ export default {
           options: [
             'In southern England.',
             'In northern France.',
-            'In eastern Spain.',
             'In western Germany.',
+            'In eastern Spain.',
           ],
           explanation:
             "Normandy is a duchy situated in northern France along the English Channel, founded by Viking Norsemen under Rollo in 911. Duke William utilized Normandy's formidable knightly cavalry and shipbuilding yards to launch his cross-channel invasion.",
@@ -551,10 +551,10 @@ export default {
           answer: 'To assert that you have the right to be the next monarch.',
           a: 'To assert that you have the right to be the next monarch.',
           options: [
-            'To lead an army against the king.',
+            'To steal the crown jewels.',
             'To assert that you have the right to be the next monarch.',
             "To physically sit on the king's chair.",
-            'To steal the crown jewels.',
+            'To lead an army against the king.',
           ],
           explanation:
             "Claiming the throne meant formally presenting legal, dynastic, or oath-bound arguments justifying one's right to royal power. In 1066, four different leaders asserted competing legitimate claims to rule England.",
@@ -566,8 +566,8 @@ export default {
           a: 'A situation where a government has no identifiable central authority or leader.',
           options: [
             'A situation where a government has no identifiable central authority or leader.',
-            'A disease that wiped out the population.',
             'A powerful weapon used in medieval warfare.',
+            'A disease that wiped out the population.',
             'A room in a castle where the king ruled.',
           ],
           explanation:
@@ -579,10 +579,10 @@ export default {
           answer: 'Harold Godwinson',
           a: 'Harold Godwinson',
           options: [
-            'William of Normandy',
-            'Edward the Confessor',
-            'Harold Godwinson',
             'Harald Hardrada',
+            'William of Normandy',
+            'Harold Godwinson',
+            'Edward the Confessor',
           ],
           explanation:
             'Harold Godwinson was the Earl of Wessex and the richest, most influential Anglo-Saxon nobleman in the realm. The Witan chose him because he possessed military experience and native English noble backing.',
@@ -593,8 +593,8 @@ export default {
           answer: 'Harald Hardrada',
           a: 'Harald Hardrada',
           options: [
-            'William of Normandy',
             'Harold Godwinson',
+            'William of Normandy',
             'Tostig Godwinson',
             'Harald Hardrada',
           ],
@@ -608,10 +608,10 @@ export default {
           answer: 'That William would be the next king',
           a: 'That William would be the next king',
           options: [
-            'That William would be given land in Scotland',
-            'That William would command the English army',
-            'That William would be the next king',
             'That William would receive large amounts of gold',
+            'That William would be given land in Scotland',
+            'That William would be the next king',
+            'That William would command the English army',
           ],
           explanation:
             "Duke William maintained that during Edward the Confessor's Norman exile, the childless king had personally promised him the succession. William regarded Harold Godwinson's coronation as an illegal usurpation of this sacred promise.",
@@ -622,9 +622,9 @@ export default {
           answer: 'They had just marched rapidly from a battle in the north',
           a: 'They had just marched rapidly from a battle in the north',
           options: [
-            'They had fought a long battle against the French',
             'They were sick with the plague',
             'They had been starving for weeks',
+            'They had fought a long battle against the French',
             'They had just marched rapidly from a battle in the north',
           ],
           explanation:
@@ -635,7 +635,7 @@ export default {
           q: 'What defensive tactic did the English use at the top of Senlac Hill?',
           answer: 'A shield wall',
           a: 'A shield wall',
-          options: ['A trench system', 'A shield wall', 'A cavalry charge', 'A ring of fire'],
+          options: ['A ring of fire', 'A shield wall', 'A trench system', 'A cavalry charge'],
           explanation:
             'The Anglo-Saxon army locked their heavy wooden, leather-rimmed shields together atop Senlac Hill to form an impenetrable shield wall. This defensive wall repeatedly repelled Norman infantry and cavalry charges for several hours.',
         },
@@ -646,9 +646,9 @@ export default {
           a: 'By faking a retreat to lure them down the hill',
           options: [
             'By faking a retreat to lure them down the hill',
-            'By bribing the English lords',
-            'By using gunpowder cannons',
             'By attacking them at night',
+            'By using gunpowder cannons',
+            'By bribing the English lords',
           ],
           explanation:
             'Seeing rumors of his death panic his men, William removed his helmet to rally his cavalry and ordered feigned retreats. By pretending to flee, the Normans lured undisciplined English militia down the hill, breaking their protective shield wall.',
@@ -660,8 +660,8 @@ export default {
           a: 'He was shot in the eye by an arrow',
           options: [
             'He was shot in the eye by an arrow',
-            'He was trampled by a horse',
             'He drowned in a river',
+            'He was trampled by a horse',
             'He was poisoned by a spy',
           ],
           explanation:
@@ -673,8 +673,8 @@ export default {
           answer: 'The Bayeux Tapestry',
           a: 'The Bayeux Tapestry',
           options: [
-            'The Westminster Scroll',
             'The Magna Carta',
+            'The Westminster Scroll',
             'The Domesday Book',
             'The Bayeux Tapestry',
           ],
@@ -689,9 +689,9 @@ export default {
           a: 'The death of Edward the Confessor without a clear heir',
           options: [
             'The signing of Magna Carta',
-            'The outbreak of the Black Death',
-            'The death of Edward the Confessor without a clear heir',
             'The murder of Thomas Becket',
+            'The death of Edward the Confessor without a clear heir',
+            'The outbreak of the Black Death',
           ],
           explanation:
             "Edward the Confessor's failure to produce an undisputed heir broke the dynastic line of the House of Wessex. His death directly ignited the invasion of Harald Hardrada and Duke William, forever ending Anglo-Saxon rule.",
@@ -702,10 +702,10 @@ export default {
           answer: 'They had archers and cavalry on horseback',
           a: 'They had archers and cavalry on horseback',
           options: [
-            'They had more men',
-            'They had archers and cavalry on horseback',
-            'They were immune to English diseases',
             'They were fighting on their home territory',
+            'They had archers and cavalry on horseback',
+            'They had more men',
+            'They were immune to English diseases',
           ],
           explanation:
             "While Harold's army fought strictly on foot with battleaxes and spears, William brought heavily armored mounted knights and massed archers. Combined-arms coordination between archers and cavalry ultimately gave William the tactical victory.",
@@ -1065,7 +1065,7 @@ export default {
           q: 'Which Viking warrior claimed the throne based on an old treaty?',
           answer: 'Harald Hardrada.',
           a: 'Harald Hardrada.',
-          options: ['Ragnar Lothbrok.', 'Cnut the Great.', 'Harald Hardrada.', 'Sweyn Forkbeard.'],
+          options: ['Sweyn Forkbeard.', 'Cnut the Great.', 'Harald Hardrada.', 'Ragnar Lothbrok.'],
           explanation:
             "Harald Hardrada's claim rested on an agreement made in 1038 between Danish King Harthacnut and King Magnus of Norway, stating that if either died childless, the other would inherit their realm. Hardrada declared that this treaty applied to England.",
         },
@@ -1076,9 +1076,9 @@ export default {
           a: 'William, Duke of Normandy.',
           options: [
             'William, Duke of Normandy.',
-            'Philip II of France.',
-            'Henry Plantagenet.',
             'Robert Curthose.',
+            'Henry Plantagenet.',
+            'Philip II of France.',
           ],
           explanation:
             "William insisted that around 1064, Harold Godwinson was shipwrecked in Ponthieu and swore a holy oath over sacred relics to support William's claim to England. Breaking this oath rendered Harold an apostate and perjurer in the eyes of the Church.",
@@ -1089,9 +1089,9 @@ export default {
           answer: 'Stamford Bridge (in the north).',
           a: 'Stamford Bridge (in the north).',
           options: [
-            'Pevensey (on the coast).',
             'London (in the center).',
             'Hastings (in the south).',
+            'Pevensey (on the coast).',
             'Stamford Bridge (in the north).',
           ],
           explanation:
@@ -1104,9 +1104,9 @@ export default {
           a: 'King Harold Godwinson.',
           options: [
             'King Harold Godwinson.',
+            'Edward the Confessor.',
             'Harald Hardrada.',
             'William the Conqueror.',
-            'Edward the Confessor.',
           ],
           explanation:
             'Harold Godwinson achieved a crushing tactical victory at Stamford Bridge on 25 September 1066, killing both Harald Hardrada and Tostig Godwinson. The Viking slaughter was so total that only 24 of the 300 invasion ships were needed to carry survivors home.',
@@ -1132,9 +1132,9 @@ export default {
           a: 'Pevensey, on the south coast.',
           options: [
             'York, in the north.',
-            'Dover, on the east coast.',
-            'Pevensey, on the south coast.',
             'Bristol, in the west.',
+            'Pevensey, on the south coast.',
+            'Dover, on the east coast.',
           ],
           explanation:
             "Taking advantage of southerly winds that shifted on 27 September, William's fleet sailed across the Channel and landed unopposed at Pevensey Bay in Sussex. They immediately fortified the Roman ruins of Pevensey Castle and raided surrounding farmland.",
@@ -1160,9 +1160,9 @@ export default {
           a: 'The Battle of Hastings.',
           options: [
             'The Battle of Hastings.',
+            'The Battle of Fulford.',
             'The Battle of Agincourt.',
             'The Battle of Stamford Bridge.',
-            'The Battle of Fulford.',
           ],
           explanation:
             "The Battle of Hastings was fought on 14 October 1066 at Senlac Hill, lasting an unusually long nine hours. William's eventual victory ended five centuries of Anglo-Saxon dominance and began Norman rule.",
@@ -1182,9 +1182,9 @@ export default {
           answer: 'A large mound of earth with a wooden tower on top',
           a: 'A large mound of earth with a wooden tower on top',
           options: [
-            'An enclosed courtyard at the base',
-            'A deep ditch filled with water',
             'A strong stone wall',
+            'A deep ditch filled with water',
+            'An enclosed courtyard at the base',
             'A large mound of earth with a wooden tower on top',
           ],
           explanation:
@@ -1210,8 +1210,8 @@ export default {
           answer: 'They were quick to build and visually intimidating',
           a: 'They were quick to build and visually intimidating',
           options: [
-            'They were cheap because stone was unavailable',
             'The Anglo-Saxons had taught them the design',
+            'They were cheap because stone was unavailable',
             'They were quick to build and visually intimidating',
             'They were completely fireproof',
           ],
@@ -1223,7 +1223,7 @@ export default {
           q: "In what year did the 'Harrying of the North' take place?",
           answer: '1069',
           a: '1069',
-          options: ['1069', '1066', '1086', '1215'],
+          options: ['1069', '1066', '1215', '1086'],
           explanation:
             'The Harrying of the North took place during the harsh winter of 1069–1070 in retaliation for persistent northern rebellions and Danish invasions. William methodically destroyed Yorkshire and neighboring counties to ensure they could never rise again.',
         },
@@ -1233,10 +1233,10 @@ export default {
           answer: 'Mass starvation and widespread deaths among the northern population',
           a: 'Mass starvation and widespread deaths among the northern population',
           options: [
-            'The Vikings were invited back to rule',
-            'Mass starvation and widespread deaths among the northern population',
             'William granted northern lands to English lords',
+            'Mass starvation and widespread deaths among the northern population',
             'The North became the richest part of England',
+            'The Vikings were invited back to rule',
           ],
           explanation:
             "William's knights burned villages, slaughtered livestock, salted agricultural fields, and destroyed food stores across the north. Contemporary chronicler Orderic Vitalis recorded that over 100,000 people died of famine, with reports of cannibalism.",
@@ -1246,7 +1246,7 @@ export default {
           q: 'What language did the new Norman aristocracy speak?',
           answer: 'French',
           a: 'French',
-          options: ['Old English', 'Latin', 'Viking Norse', 'French'],
+          options: ['Viking Norse', 'Old English', 'Latin', 'French'],
           explanation:
             'The Norman invaders introduced Anglo-Norman French as the official language of the court, aristocracy, and legal system, while Latin remained the language of the Church. Native Old English was demoted to the vernacular of illiterate peasants.',
         },
@@ -1272,8 +1272,8 @@ export default {
           options: [
             'Because its decisions were as final as the Day of Judgement (Doomsday)',
             'Because it doomed all English lords to death',
-            'Because it was bound in black leather',
             'Because William named it after his favorite castle',
+            'Because it was bound in black leather',
           ],
           explanation:
             "The Anglo-Saxons called the survey 'Domesday' because its verdicts on landownership and tax obligations were as absolute and inescapable as the Day of Judgement. No appeal against the king's commissioners was permitted.",
@@ -1284,7 +1284,7 @@ export default {
           q: 'Under the feudal system, what did a knight provide to a baron in exchange for land?',
           answer: 'Military service',
           a: 'Military service',
-          options: ['Religious prayers', 'Military service', 'Farm labor', 'Gold coins'],
+          options: ['Gold coins', 'Military service', 'Religious prayers', 'Farm labor'],
           explanation:
             'Under the feudal hierarchy, knights held manors (fiefs) from barons in return for a contracted term of military service (usually 40 days per year). This system supplied the Norman monarchy with a permanent, standing strike force of cavalry.',
         },
@@ -1294,10 +1294,10 @@ export default {
           answer: 'That he retained ultimate ownership and control over all land in England',
           a: 'That he retained ultimate ownership and control over all land in England',
           options: [
-            'That all people were treated equally under the law',
             'That peasants could eventually buy their freedom',
-            'That he retained ultimate ownership and control over all land in England',
             'That the Church had no power',
+            'That he retained ultimate ownership and control over all land in England',
+            'That all people were treated equally under the law',
           ],
           explanation:
             'William declared that by right of conquest, all land in England belonged exclusively to the Crown. He confiscated estates from Anglo-Saxon thegns and redistributed them to approximately 200 Norman tenants-in-chief on conditions of feudal loyalty.',
@@ -1516,7 +1516,7 @@ export default {
           q: 'Who won the Battle of Hastings to become King of England?',
           answer: 'William the Conqueror.',
           a: 'William the Conqueror.',
-          options: ['William the Conqueror.', 'Harald Hardrada.', 'Harold Godwinson.', 'Henry II.'],
+          options: ['William the Conqueror.', 'Henry II.', 'Harald Hardrada.', 'Harold Godwinson.'],
           explanation:
             'Duke William of Normandy defeated Harold Godwinson at Hastings and was crowned King of England at Westminster Abbey on Christmas Day 1066. His victory earned him the historic title William the Conqueror.',
         },
@@ -1526,9 +1526,9 @@ export default {
           answer: 'Motte and bailey castles.',
           a: 'Motte and bailey castles.',
           options: [
-            'Star forts.',
-            'Square keeps.',
             'Concentric stone castles.',
+            'Square keeps.',
+            'Star forts.',
             'Motte and bailey castles.',
           ],
           explanation:
@@ -1540,10 +1540,10 @@ export default {
           answer: 'A large, hand-dug mound of earth.',
           a: 'A large, hand-dug mound of earth.',
           options: [
-            'The fenced compound for soldiers.',
+            'The wooden tower on top.',
             'A large, hand-dug mound of earth.',
             'The defensive ditch filled with water.',
-            'The wooden tower on top.',
+            'The fenced compound for soldiers.',
           ],
           explanation:
             'The motte was a steep, circular earth mound, often surrounded by a ditch, requiring immense manual labor to pile up soil and rock. Atop the motte stood a wooden lookout tower that served as the final redoubt if the bailey fell.',
@@ -1554,10 +1554,10 @@ export default {
           answer: 'The Harrying of the North.',
           a: 'The Harrying of the North.',
           options: [
-            "The Peasant's Revolt.",
+            'The Domesday Survey.',
             'The Feudal System.',
             'The Harrying of the North.',
-            'The Domesday Survey.',
+            "The Peasant's Revolt.",
           ],
           explanation:
             'William carried out the Harrying of the North with merciless brutality, systematically burning crops, destroying farming implements, and slaughtering herds. It left wide tracts of northern England desolate for generations, as reflected in Domesday records.',
@@ -1568,9 +1568,9 @@ export default {
           answer: 'To survey the wealth of the country for taxation.',
           a: 'To survey the wealth of the country for taxation.',
           options: [
+            'To write the history of the Norman Conquest.',
             'To record the laws of the land.',
             'To list all the knights in the army.',
-            'To write the history of the Norman Conquest.',
             'To survey the wealth of the country for taxation.',
           ],
           explanation:
@@ -1582,9 +1582,9 @@ export default {
           answer: 'Harald Hardrada.',
           a: 'Harald Hardrada.',
           options: [
-            'William the Conqueror.',
-            'Harald Hardrada.',
             'Sweyn Forkbeard.',
+            'Harald Hardrada.',
+            'William the Conqueror.',
             'Harold Godwinson.',
           ],
           explanation:
@@ -1595,7 +1595,7 @@ export default {
           q: 'What material were the first Norman castles made from?',
           answer: 'Wood.',
           a: 'Wood.',
-          options: ['Stone.', 'Iron.', 'Wood.', 'Brick.'],
+          options: ['Stone.', 'Brick.', 'Wood.', 'Iron.'],
           explanation:
             'The initial castles built by Norman conquerors were constructed entirely from wood and earthen ramparts for speed of construction. Only after securing regional control did the Normans rebuild them in permanent stone, like the Tower of London.',
         },
@@ -1607,8 +1607,8 @@ export default {
           options: [
             'The fenced compound where soldiers lived and horses were stabled.',
             'The large mound of earth.',
-            'The tall wooden tower.',
             'The bridge over the moat.',
+            'The tall wooden tower.',
           ],
           explanation:
             'The bailey was the lower enclosed compound connected to the motte by a wooden drawbridge or steep stairway. It served as the bustling nerve center of castle life, containing granaries, kitchens, smithies, and barracks.',
@@ -1619,9 +1619,9 @@ export default {
           answer: 'A system where land is given in exchange for military service or labour.',
           a: 'A system where land is given in exchange for military service or labour.',
           options: [
+            'A system where the church controls all wealth.',
             'A system where peasants vote for their lords.',
             'A system where the king owns nothing.',
-            'A system where the church controls all wealth.',
             'A system where land is given in exchange for military service or labour.',
           ],
           explanation:
@@ -1642,10 +1642,10 @@ export default {
           answer: 'They gave much lighter punishments to priests who committed crimes',
           a: 'They gave much lighter punishments to priests who committed crimes',
           options: [
-            'They were held entirely in Latin',
+            'They forced the King to pay taxes to them',
             'They gave much lighter punishments to priests who committed crimes',
             'They executed too many innocent people',
-            'They forced the King to pay taxes to them',
+            'They were held entirely in Latin',
           ],
           explanation:
             'Henry II resented Church courts because they claimed exclusive jurisdiction over clergy, preventing royal judges from executing common law punishments. Church courts could not impose the death penalty, often giving light penances for serious crimes.',
@@ -1658,9 +1658,9 @@ export default {
           a: 'They were close friends and drinking companions',
           options: [
             'They were close friends and drinking companions',
+            'They did not know each other',
             'They were bitter enemies',
             'They were brothers',
-            'They did not know each other',
           ],
           explanation:
             "Before Becket's elevation to the church hierarchy, he served as Henry II's brilliant Chancellor, close confidant, and extravagant companion. Henry assumed that appointing his best friend would give him total royal control over the Church.",
@@ -1672,10 +1672,10 @@ export default {
           answer: 'A scratchy hair shirt to show religious devotion',
           a: 'A scratchy hair shirt to show religious devotion',
           options: [
-            'A secret royal seal',
-            'A scratchy hair shirt to show religious devotion',
-            'A golden cross given by the Pope',
             'A chainmail shirt for protection',
+            'A scratchy hair shirt to show religious devotion',
+            'A secret royal seal',
+            'A golden cross given by the Pope',
           ],
           explanation:
             'Upon becoming Archbishop of Canterbury in 1162, Becket underwent an astonishing spiritual conversion, adopting an ascetic lifestyle of fasting and prayer. He discarded his fine silks for a rough horsehair shirt crawling with lice to demonstrate holy piety.',
@@ -1700,7 +1700,7 @@ export default {
           q: 'How long was Thomas Becket in exile in France?',
           answer: 'Six years',
           a: 'Six years',
-          options: ['Six years', 'One year', 'Ten years', 'Six months'],
+          options: ['Six years', 'Ten years', 'Six months', 'One year'],
           explanation:
             "Fearing royal imprisonment and treason charges, Becket fled to France in disguise in 1164 and lived in monastic exile for six years under King Louis VII's protection. The dispute paralyzed diplomatic relations between England, France, and the Papacy.",
         },
@@ -1710,10 +1710,10 @@ export default {
           answer: 'He excommunicated the bishops who had supported the King',
           a: 'He excommunicated the bishops who had supported the King',
           options: [
-            "He burned the King's new laws",
+            'He ordered an attack on a royal castle',
             'He crowned a rival king',
             'He excommunicated the bishops who had supported the King',
-            'He ordered an attack on a royal castle',
+            "He burned the King's new laws",
           ],
           explanation:
             "Upon returning to England in December 1170, Becket immediately published papal bulls excommunicating the Archbishop of York and two other bishops who had officiated at the coronation of Henry's son. This deliberate defiance enraged Henry II.",
@@ -1726,8 +1726,8 @@ export default {
           a: "'Will no one rid me of this turbulent priest?'",
           options: [
             "'Burn him at the stake!'",
-            "'Arrest him immediately!'",
             "'Off with his head!'",
+            "'Arrest him immediately!'",
             "'Will no one rid me of this turbulent priest?'",
           ],
           explanation:
@@ -1754,9 +1754,9 @@ export default {
           a: 'It became one of the most important pilgrimage sites in Europe',
           options: [
             'It became one of the most important pilgrimage sites in Europe',
+            "It was burned down by the King's men",
             'It was abandoned by the monks',
             'The Pope closed the cathedral permanently',
-            "It was burned down by the King's men",
           ],
           explanation:
             "Following his martyr's death, reports of miraculous healings transformed Becket's tomb into one of the wealthiest and most visited pilgrimage destinations in Christendom. Geoffrey Chaucer's 'Canterbury Tales' was later set on this famous pilgrimage.",
@@ -1996,7 +1996,7 @@ export default {
           q: 'Which king introduced common law and royal courts in 1154?',
           answer: 'King Henry II.',
           a: 'King Henry II.',
-          options: ['King Richard I.', 'King Edward I.', 'King John.', 'King Henry II.'],
+          options: ['King Edward I.', 'King John.', 'King Richard I.', 'King Henry II.'],
           explanation:
             'King Henry II (reigned 1154–1189) transformed English governance by creating the Common Law system, sending itinerant royal judges on circuit to administer standard justice across all shires. This replaced local feudal customs with uniform law.',
         },
@@ -2015,10 +2015,10 @@ export default {
           answer: "Over the power of Church courts and 'criminous clerks'.",
           a: "Over the power of Church courts and 'criminous clerks'.",
           options: [
-            "Over the king's marriage.",
-            "Over the power of Church courts and 'criminous clerks'.",
-            'Over the amount of taxes the Church paid.',
             'Over who should be the next Pope.',
+            "Over the power of Church courts and 'criminous clerks'.",
+            "Over the king's marriage.",
+            'Over the amount of taxes the Church paid.',
           ],
           explanation:
             "Henry II and Becket clashed primarily over the legal privilege of 'benefit of clergy', which shielded clergymen from royal criminal courts. Henry argued that criminous clerks guilty of murder or robbery escaped proper secular punishment.",
@@ -2029,10 +2029,10 @@ export default {
           answer: "He was murdered by four of the King's knights in Canterbury Cathedral.",
           a: "He was murdered by four of the King's knights in Canterbury Cathedral.",
           options: [
-            'He fled to France and never returned.',
             'He died of the plague.',
-            "He was murdered by four of the King's knights in Canterbury Cathedral.",
             'He was executed by the king in London.',
+            "He was murdered by four of the King's knights in Canterbury Cathedral.",
+            'He fled to France and never returned.',
           ],
           explanation:
             'On 29 December 1170, four royal knights—Reginald FitzUrse, Hugh de Moreville, William de Tracy, and Richard le Breton—hacked Becket to death in Canterbury Cathedral. The murder shocked all of Christian Europe and made Becket an international martyr.',
@@ -2043,9 +2043,9 @@ export default {
           answer: 'He threatened him with excommunication, forcing Henry to do penance.',
           a: 'He threatened him with excommunication, forcing Henry to do penance.',
           options: [
+            'He made him pay a massive fine.',
             'He forced him to abdicate the throne.',
             'He launched a crusade against England.',
-            'He made him pay a massive fine.',
             'He threatened him with excommunication, forcing Henry to do penance.',
           ],
           explanation:
@@ -2056,7 +2056,7 @@ export default {
           q: 'Who won the Battle of Hastings?',
           answer: 'William the Conqueror.',
           a: 'William the Conqueror.',
-          options: ['Henry II.', 'William the Conqueror.', 'Harold Godwinson.', 'Harald Hardrada.'],
+          options: ['Harold Godwinson.', 'William the Conqueror.', 'Henry II.', 'Harald Hardrada.'],
           explanation:
             "William the Conqueror's decisive victory at Hastings secured the English crown for the Norman dynasty. He instituted a thorough replacement of the Anglo-Saxon ruling elite with continental barons.",
         },
@@ -2066,10 +2066,10 @@ export default {
           answer: 'A massive survey used to maximize taxation in 1086.',
           a: 'A massive survey used to maximize taxation in 1086.',
           options: [
-            'A book of religious prayers.',
-            'A collection of medieval laws.',
-            'A massive survey used to maximize taxation in 1086.',
             'A record of the Norman Conquest.',
+            'A book of religious prayers.',
+            'A massive survey used to maximize taxation in 1086.',
+            'A collection of medieval laws.',
           ],
           explanation:
             'The Domesday Book of 1086 provided William I with an exhaustive statistical audit of all taxable estates, ploughlands, woodland, and mill revenue in the kingdom. It cemented royal fiscal control over the aristocracy.',
@@ -2081,9 +2081,9 @@ export default {
           a: 'A member of the clergy accused of a serious crime like murder.',
           options: [
             'A member of the clergy accused of a serious crime like murder.',
-            'A knight who refused to fight.',
-            'A peasant who broke the law.',
             'A scribe who stole from the king.',
+            'A peasant who broke the law.',
+            'A knight who refused to fight.',
           ],
           explanation:
             "A 'criminous clerk' was an ordained priest, deacon, or lower cleric accused of committing serious secular crimes such as murder, theft, or rape. Because they claimed benefit of clergy, they could only be tried in lenient Church courts.",
@@ -2095,8 +2095,8 @@ export default {
           a: "As public penance for his role in Becket's murder.",
           options: [
             "As public penance for his role in Becket's murder.",
-            'To show his humility before God.',
             'Because he had lost a war.',
+            'To show his humility before God.',
             'To celebrate his coronation.',
           ],
           explanation:
@@ -2108,9 +2108,9 @@ export default {
           answer: 'An early wooden castle built by the Normans.',
           a: 'An early wooden castle built by the Normans.',
           options: [
+            'A farming technique.',
             'A type of medieval weapon.',
             'A legal document.',
-            'A farming technique.',
             'An early wooden castle built by the Normans.',
           ],
           explanation:
@@ -2123,9 +2123,9 @@ export default {
           a: "Most of England's lands in France, including Normandy",
           options: [
             'Scotland and Wales',
-            'London and York',
-            "Most of England's lands in France, including Normandy",
             'Ireland and Cornwall',
+            "Most of England's lands in France, including Normandy",
+            'London and York',
           ],
           explanation:
             "Between 1202 and 1204, French King Philip Augustus defeated King John's forces and confiscated the ancestral duchy of Normandy, Maine, and Anjou. Losing Normandy dealt a catastrophic blow to John's prestige and treasury.",
@@ -2138,8 +2138,8 @@ export default {
           options: [
             "John's hatred of farming",
             "John's failure to inherit significant lands compared to his older brothers",
-            "John's inability to buy land in London",
             "John's policy of giving away royal forests",
+            "John's inability to buy land in London",
           ],
           explanation:
             "King John was nicknamed 'Lackland' because as the youngest of Henry II's sons, he originally received no substantial continental estates. Later in his reign, his critics mockingly revived the name after he lost Normandy to the French.",
@@ -2151,9 +2151,9 @@ export default {
           a: 'By imposing massive, arbitrary taxes on the barons',
           options: [
             'By imposing massive, arbitrary taxes on the barons',
+            'By selling royal castles',
             'By borrowing money from the peasants',
             'By digging for gold in Wales',
-            'By selling royal castles',
           ],
           explanation:
             'To finance his expensive military campaigns to reclaim lost French territories, John levied arbitrary scutage (shield money) payments eleven times in sixteen years. These excessive financial exactions alienated his leading barons.',
@@ -2166,8 +2166,8 @@ export default {
           options: [
             'He crowned a new king in his place',
             'He excommunicated John and banned church services in England',
-            'He sent a crusader army to attack him',
             'He forced John to go on a Crusade',
+            'He sent a crusader army to attack him',
           ],
           explanation:
             'During an intense dispute over the appointment of Stephen Langton as Archbishop of Canterbury, Pope Innocent III placed England under an interdict in 1208 and excommunicated John in 1209. Church bells fell silent and dead bodies were buried in unhallowed ditches.',
@@ -2177,7 +2177,7 @@ export default {
           q: 'Where did the barons confront King John to force him to seal Magna Carta?',
           answer: 'Runnymede',
           a: 'Runnymede',
-          options: ['Hastings', 'Canterbury', 'Bosworth Field', 'Runnymede'],
+          options: ['Hastings', 'Bosworth Field', 'Canterbury', 'Runnymede'],
           explanation:
             'On 15 June 1215, rebel barons assembled in arms and confronted King John at Runnymede meadow near Windsor Castle. John was compelled to attach the Great Seal to the 63 clauses of Magna Carta.',
         },
@@ -2187,10 +2187,10 @@ export default {
           answer: 'The Great Charter',
           a: 'The Great Charter',
           options: [
-            'The Royal Promise',
+            "The King's Law",
             'The Book of Rights',
             'The Great Charter',
-            "The King's Law",
+            'The Royal Promise',
           ],
           explanation:
             "'Magna Carta' is Latin for 'The Great Charter', so named to distinguish it from the smaller Charter of the Forest issued shortly after. It became the foundational document of English constitutional liberties.",
@@ -2201,10 +2201,10 @@ export default {
           answer: 'No free man shall be imprisoned without a fair trial',
           a: 'No free man shall be imprisoned without a fair trial',
           options: [
-            'All peasants must be freed immediately',
+            'The Church must pay taxes to the King',
             'No free man shall be imprisoned without a fair trial',
             'The King cannot have an army',
-            'The Church must pay taxes to the King',
+            'All peasants must be freed immediately',
           ],
           explanation:
             "Clause 39 of Magna Carta famously declared: 'No free man shall be seized or imprisoned... except by the lawful judgement of his equals or by the law of the land.' This clause established the right to due process and trial by jury.",
@@ -2216,9 +2216,9 @@ export default {
           a: 'The unfree peasants (villeins) who made up the majority of the population',
           options: [
             'The unfree peasants (villeins) who made up the majority of the population',
-            'The Church bishops',
-            'The wealthy merchants',
             'The barons',
+            'The wealthy merchants',
+            'The Church bishops',
           ],
           explanation:
             'Magna Carta was drafted primarily by and for wealthy barons, knights, and free burgesses, offering almost no legal protections to unfree serfs (villeins). Villeins remained subject to the arbitrary authority of their feudal manorial courts.',
@@ -2229,9 +2229,9 @@ export default {
           answer: 'He complained to the Pope and had the document declared void',
           a: 'He complained to the Pope and had the document declared void',
           options: [
+            'He abdicated the throne',
             'He arrested all the barons who forced him to seal it',
             'He freed all the villeins in England',
-            'He abdicated the throne',
             'He complained to the Pope and had the document declared void',
           ],
           explanation:
@@ -2245,9 +2245,9 @@ export default {
           a: "The First Barons' War",
           options: [
             'The Wars of the Roses',
-            'The English Civil War',
-            "The First Barons' War",
             "The Hundred Years' War",
+            "The First Barons' War",
+            'The English Civil War',
           ],
           explanation:
             "John's repudiation of Magna Carta triggered the First Barons' War (1215–1217), with rebel barons offering the English crown to Prince Louis of France. The war ended only after John's sudden death from dysentery in October 1216.",
@@ -2466,7 +2466,7 @@ export default {
           q: 'What percentage of the population in medieval England lived in rural farming communities?',
           answer: 'Over 90%',
           a: 'Over 90%',
-          options: ['Less than 20%', 'Around 50%', 'Over 90%', 'Exactly 10%'],
+          options: ['Exactly 10%', 'Around 50%', 'Over 90%', 'Less than 20%'],
           explanation:
             "Over 90% of England's medieval population lived in agrarian rural villages, labouring on manorial estates to produce food. Towns were small and housed only a tiny mercantile and administrative minority.",
         },
@@ -2476,10 +2476,10 @@ export default {
           answer: 'An unfree peasant tied to the land',
           a: 'An unfree peasant tied to the land',
           options: [
-            'A wealthy landowner',
-            'An unfree peasant tied to the land',
             'A priest in a parish church',
+            'An unfree peasant tied to the land',
             'A knight who fought for the king',
+            'A wealthy landowner',
           ],
           explanation:
             "A villein was an unfree peasant bound to the lord's manor, required to perform heavy labor services (week-work and boon-work) on the lord's demesne land. In return, they held small strips of land in the open fields to feed their families.",
@@ -2491,8 +2491,8 @@ export default {
           answer: 'Leave the village or marry',
           a: 'Leave the village or marry',
           options: [
-            'Go to church on Sunday',
             "Breathe the lord's air",
+            'Go to church on Sunday',
             'Speak to other peasants',
             'Leave the village or marry',
           ],
@@ -2506,9 +2506,9 @@ export default {
           a: 'Single-room wattle-and-daub huts',
           options: [
             'Single-room wattle-and-daub huts',
+            'Brick terraced houses',
             'Wooden castles',
             'Large stone manor houses',
-            'Brick terraced houses',
           ],
           explanation:
             'Peasant dwellings were simple single-room huts constructed from timber frames, woven hazel branches (wattle), and daubed with mud, clay, and animal dung. A central open hearth vented smoke through a thatch roof.',
@@ -2534,8 +2534,8 @@ export default {
           a: 'The seasons',
           options: [
             "The local merchant's demands",
-            "The King's daily orders",
             'The phases of the moon',
+            "The King's daily orders",
             'The seasons',
           ],
           explanation:
@@ -2548,9 +2548,9 @@ export default {
           a: 'Harvesting crops',
           options: [
             'Harvesting crops',
+            'Building new huts',
             'Ploughing fields',
             'Slaughtering animals',
-            'Building new huts',
           ],
           explanation:
             'The late summer harvest (August–September) was the most critical moment of the year, requiring every man, woman, and child to gather wheat, rye, and barley before autumn rains rotted the crops. A ruined harvest meant famine.',
@@ -2561,10 +2561,10 @@ export default {
           answer: "A tax requiring 1/10th of a peasant's produce to go to the Church",
           a: "A tax requiring 1/10th of a peasant's produce to go to the Church",
           options: [
-            'A tax paid directly to the King',
-            "A tax requiring 1/10th of a peasant's produce to go to the Church",
-            'A fine for leaving the village',
             'A fee paid to the lord to grind wheat',
+            "A tax requiring 1/10th of a peasant's produce to go to the Church",
+            'A tax paid directly to the King',
+            'A fine for leaving the village',
           ],
           explanation:
             'The tithe was a mandatory ecclesiastical tax requiring every parishioner to surrender one-tenth of their annual agricultural produce, wool, and livestock to the parish church. The grain was stored in massive manorial tithe barns.',
@@ -2574,7 +2574,7 @@ export default {
           q: 'Who controlled the minds and spiritual lives of the peasants?',
           answer: 'The Catholic Church',
           a: 'The Catholic Church',
-          options: ['The village elders', 'The King', 'The local lord', 'The Catholic Church'],
+          options: ['The King', 'The village elders', 'The local lord', 'The Catholic Church'],
           explanation:
             'The Roman Catholic Church exerted total control over medieval spiritual life, worldview, and moral behavior. The Church was the sole authority explaining the universe, salvation, sin, and the afterlife.',
         },
@@ -2585,9 +2585,9 @@ export default {
           a: 'They feared eternal damnation in Hell',
           options: [
             'The lord would execute them',
-            'The King’s army would attack them',
-            'They feared eternal damnation in Hell',
             'They had plenty of extra food',
+            'They feared eternal damnation in Hell',
+            'The King’s army would attack them',
           ],
           explanation:
             "Peasants paid tithes religiously because they genuinely believed that refusing to support the Church would doom their souls to eternal torment in Hell. Priests warned that crop failures and illnesses were God's punishment for withholding tithes.",
@@ -2612,9 +2612,9 @@ export default {
           answer: 'Because the vast majority of peasants were illiterate',
           a: 'Because the vast majority of peasants were illiterate',
           options: [
-            'Because the Pope banned written books',
-            'Because the vast majority of peasants were illiterate',
             'To make the churches look colorful',
+            'Because the vast majority of peasants were illiterate',
+            'Because the Pope banned written books',
             'Because paint was very cheap',
           ],
           explanation:
@@ -2627,8 +2627,8 @@ export default {
           a: 'They were welcomed into Heaven by angels',
           options: [
             'They were welcomed into Heaven by angels',
-            'They were sent to Purgatory forever',
             'They were given gold by the priest',
+            'They were sent to Purgatory forever',
             'They were reborn as nobles',
           ],
           explanation:
@@ -2641,8 +2641,8 @@ export default {
           a: 'Naked and being dragged by demons into Hell',
           options: [
             'Sleeping peacefully',
-            'Sitting on clouds',
             'Working in fields for eternity',
+            'Sitting on clouds',
             'Naked and being dragged by demons into Hell',
           ],
           explanation:
@@ -2654,8 +2654,8 @@ export default {
           answer: 'A place of suffering before Heaven',
           a: 'A place of suffering before Heaven',
           options: [
-            'The lowest level of Hell',
             'A garden in the monastery',
+            'The lowest level of Hell',
             'A place of suffering before Heaven',
             "The local lord's dungeon",
           ],
@@ -2668,9 +2668,9 @@ export default {
           answer: 'By obeying the priest and paying tithes',
           a: 'By obeying the priest and paying tithes',
           options: [
-            'By fighting in a war',
-            'By obeying the priest and paying tithes',
             'By learning how to read',
+            'By obeying the priest and paying tithes',
+            'By fighting in a war',
             'By refusing to work for the lord',
           ],
           explanation:
@@ -2681,7 +2681,7 @@ export default {
           q: "What building was the 'stone heart' of every medieval village?",
           answer: 'The parish church',
           a: 'The parish church',
-          options: ['The local pub', 'The parish church', "The lord's castle", 'The manor house'],
+          options: ['The manor house', 'The parish church', 'The local pub', "The lord's castle"],
           explanation:
             'The parish church was the sole stone structure in most medieval villages, standing as a physical sanctuary and communal hub. In addition to daily Mass, churchyards served as community markets and celebration grounds on saint days.',
         },
@@ -2691,10 +2691,10 @@ export default {
           answer: 'In the autumn',
           a: 'In the autumn',
           options: [
-            'In the spring',
-            'On Christmas Day',
-            'In the autumn',
             'During the summer harvest',
+            'In the spring',
+            'In the autumn',
+            'On Christmas Day',
           ],
           explanation:
             'Peasants slaughtered most of their cattle and pigs in late autumn (November) because they could not afford to feed them on scarce hay during winter. Meat was heavily salted or smoked to preserve it for winter consumption.',
@@ -2706,9 +2706,9 @@ export default {
           a: 'The village would face starvation',
           options: [
             'The village would face starvation',
-            'The king would send free grain',
             "They would hunt deer in the lord's forest",
             'They would buy food from other countries',
+            'The king would send free grain',
           ],
           explanation:
             'Medieval agriculture had very low yields and virtually no surplus storage from year to year. A single cold, wet summer that destroyed the harvest caused widespread starvation, nutritional diseases, and child mortality across the village.',
@@ -2718,7 +2718,7 @@ export default {
           q: "What material was typically used to build a peasant's hut?",
           answer: 'Wattle-and-daub',
           a: 'Wattle-and-daub',
-          options: ['Red bricks', 'Imported oak timber', 'Cut stone blocks', 'Wattle-and-daub'],
+          options: ['Cut stone blocks', 'Red bricks', 'Imported oak timber', 'Wattle-and-daub'],
           explanation:
             'Peasant huts were built using wattle-and-daub—woven wooden lattices smeared with a paste of wet soil, clay, straw, and cow dung. Floors were beaten earth strewn with reeds and rushes that harbored pests.',
         },
@@ -2928,7 +2928,7 @@ export default {
           q: 'What mocking nickname was given to King John?',
           answer: 'Softsword.',
           a: 'Softsword.',
-          options: ['Longshanks.', 'Lionheart.', 'Lackland.', 'Softsword.'],
+          options: ['Lackland.', 'Lionheart.', 'Longshanks.', 'Softsword.'],
           explanation:
             "English chroniclers mockingly called King John 'Softsword' due to his military failures on the continent and inability to protect his ancestral lands in France. It contrasted sharply with his brother Richard the Lionheart's military reputation.",
         },
@@ -2939,9 +2939,9 @@ export default {
           a: 'He imposed heavy taxes (scutage) and lost wars.',
           options: [
             'He imposed heavy taxes (scutage) and lost wars.',
-            'He married a French princess.',
             'He gave too much power to the Church.',
             'He refused to go on crusade.',
+            'He married a French princess.',
           ],
           explanation:
             'The English barons rebelled because John imposed extortionate scutage taxes, abused feudal wardships, and imprisoned noble opponents without fair trials to pay for his wars. His arbitrary financial tyranny pushed the nobility to take up arms.',
@@ -2966,8 +2966,8 @@ export default {
           answer: 'That no one, not even the King, is above the law.',
           a: 'That no one, not even the King, is above the law.',
           options: [
-            'That the barons can choose the next king.',
             'That all peasants are free.',
+            'That the barons can choose the next king.',
             'That no one, not even the King, is above the law.',
             'That the King must obey the Pope.',
           ],
@@ -2980,10 +2980,10 @@ export default {
           answer: 'Canterbury Cathedral.',
           a: 'Canterbury Cathedral.',
           options: [
-            'Westminster Abbey.',
-            'Canterbury Cathedral.',
             'The Tower of London.',
+            'Canterbury Cathedral.',
             'Winchester Cathedral.',
+            'Westminster Abbey.',
           ],
           explanation:
             'Thomas Becket was assassinated inside Canterbury Cathedral on 29 December 1170 by four overzealous knights of Henry II. His death caused a European-wide scandal that forced Henry to abandon his legal campaign against Church courts.',
@@ -2995,8 +2995,8 @@ export default {
           a: 'Being officially thrown out of the Catholic Church.',
           options: [
             'Being officially thrown out of the Catholic Church.',
-            'Being sent to prison.',
             'Being forced to pay a massive fine.',
+            'Being sent to prison.',
             'Being executed by the King.',
           ],
           explanation:
@@ -3007,7 +3007,7 @@ export default {
           q: 'Who built the first motte and bailey castles in England?',
           answer: 'William the Conqueror.',
           a: 'William the Conqueror.',
-          options: ['Henry II.', 'Edward I.', 'King John.', 'William the Conqueror.'],
+          options: ['Edward I.', 'King John.', 'Henry II.', 'William the Conqueror.'],
           explanation:
             'William the Conqueror introduced motte-and-bailey fortifications to England immediately after landing at Pevensey in September 1066. These earthwork castles could be constructed in a matter of weeks to enforce military dominance.',
         },
@@ -3017,10 +3017,10 @@ export default {
           answer: "William's brutal destruction of crops to stop northern rebellions.",
           a: "William's brutal destruction of crops to stop northern rebellions.",
           options: [
-            'The invasion of England by the Vikings.',
-            "William's brutal destruction of crops to stop northern rebellions.",
-            'A plague that wiped out the north.',
             'A rebellion by the peasants.',
+            "William's brutal destruction of crops to stop northern rebellions.",
+            'The invasion of England by the Vikings.',
+            'A plague that wiped out the north.',
           ],
           explanation:
             "The Harrying of the North in the winter of 1069–1070 was William's scorched-earth response to northern rebellions. Norman troops salted fields, burned crops, and slaughtered herds, causing widespread famine that depopulated the region.",
@@ -3031,9 +3031,9 @@ export default {
           answer: 'Giving lenient punishments to criminous clerks.',
           a: 'Giving lenient punishments to criminous clerks.',
           options: [
-            'Owning land in England.',
             'Appointing their own bishops.',
             'Collecting taxes from the peasants.',
+            'Owning land in England.',
             'Giving lenient punishments to criminous clerks.',
           ],
           explanation:
@@ -3060,9 +3060,9 @@ export default {
           a: 'A painfully swollen lymph node, usually in the armpit or groin',
           options: [
             'A painfully swollen lymph node, usually in the armpit or groin',
-            'A type of flea that carried the disease',
-            'A medieval medicine made of herbs',
             "A type of plague doctor's mask",
+            'A medieval medicine made of herbs',
+            'A type of flea that carried the disease',
           ],
           explanation:
             'A bubo is an agonizingly tender, inflamed lymph node that swells to the size of an apple in the groin, armpit, or neck. It was the hallmark clinical symptom of bubonic plague, caused by the bacterium Yersinia pestis.',
@@ -3075,9 +3075,9 @@ export default {
           a: 'Strapping a live toad or chicken to the buboes',
           options: [
             'Strapping a live toad or chicken to the buboes',
-            'Bathing in milk every day',
             'Eating only raw meat',
             'Drinking boiled ocean water',
+            'Bathing in milk every day',
           ],
           explanation:
             "Desperate medieval healers attempted bizarre folk cures, including strapping plucked live chickens or toads to buboes to 'draw out the venom', or burning aromatic wood. Without knowledge of bacteria, none of these remedies worked.",
@@ -3088,9 +3088,9 @@ export default {
           answer: 'The medieval belief that bad smells and corrupt air caused disease',
           a: 'The medieval belief that bad smells and corrupt air caused disease',
           options: [
-            'A type of rat that carried the plague',
             'A religious prayer to stop the sickness',
             'The Latin word for death',
+            'A type of rat that carried the plague',
             'The medieval belief that bad smells and corrupt air caused disease',
           ],
           explanation:
@@ -3103,10 +3103,10 @@ export default {
             "Religious zealots who whipped themselves to earn God's forgiveness and stop the plague",
           a: "Religious zealots who whipped themselves to earn God's forgiveness and stop the plague",
           options: [
-            'Doctors who specialized in cutting open buboes',
             'Lords who fled the cities to hide in the countryside',
-            "Religious zealots who whipped themselves to earn God's forgiveness and stop the plague",
             'Gravediggers who buried the plague victims',
+            "Religious zealots who whipped themselves to earn God's forgiveness and stop the plague",
+            'Doctors who specialized in cutting open buboes',
           ],
           explanation:
             "Flagellants were bands of religious zealots who walked through European towns whipping themselves with iron-tipped leather scourges to appease God's wrath. They believed voluntary suffering would earn divine mercy and halt the pestilence.",
@@ -3132,10 +3132,10 @@ export default {
           answer: 'They demanded higher wages and better working conditions',
           a: 'They demanded higher wages and better working conditions',
           options: [
-            'They willingly gave their lands to the Church',
-            'They refused to farm and all became merchants',
-            'They demanded higher wages and better working conditions',
             'They voluntarily worked twice as hard for the same pay',
+            'They willingly gave their lands to the Church',
+            'They demanded higher wages and better working conditions',
+            'They refused to farm and all became merchants',
           ],
           explanation:
             'Recognizing that their labor was desperately needed to prevent harvest collapse, surviving peasants demanded double or triple their pre-plague wages. Many threatened to leave their home manors unless their lords granted freedom and cash wages.',
@@ -3147,8 +3147,8 @@ export default {
           a: 'A law passed by the government to freeze peasant wages at pre-plague levels',
           options: [
             'A law guaranteeing peasants the right to strike',
-            'A royal decree granting freedom to all villeins',
             'A new tax placed only on wealthy merchants',
+            'A royal decree granting freedom to all villeins',
             'A law passed by the government to freeze peasant wages at pre-plague levels',
           ],
           explanation:
@@ -3161,8 +3161,8 @@ export default {
           a: 'Lords had to start paying villeins or risk them running away to rival lords',
           options: [
             'Lords had to start paying villeins or risk them running away to rival lords',
-            'Knights refused to fight in wars anymore',
             'The Church took over all farming operations',
+            'Knights refused to fight in wars anymore',
             'The King lost all his castles to the peasants',
           ],
           explanation:
@@ -3176,10 +3176,10 @@ export default {
             "Because priests were dying just like everyone else, and their prayers hadn't stopped the disease",
           a: "Because priests were dying just like everyone else, and their prayers hadn't stopped the disease",
           options: [
-            'Because the priests ran away to France',
+            'Because the Pope ordered them to stop going to church',
             "Because priests were dying just like everyone else, and their prayers hadn't stopped the disease",
             'Because the Church claimed the plague was a blessing',
-            'Because the Pope ordered them to stop going to church',
+            'Because the priests ran away to France',
           ],
           explanation:
             'Because holy prayers and church rituals proved entirely powerless to halt the plague, and thousands of priests abandoned their parishes or died of infection, popular confidence in the clergy was severely shaken. This disillusionment helped spawn early reform movements like the Lollards.',
@@ -3388,7 +3388,7 @@ export default {
           q: 'In what year did the Black Death arrive in England?',
           answer: '1348.',
           a: '1348.',
-          options: ['1348.', '1381.', '1215.', '1066.'],
+          options: ['1348.', '1215.', '1381.', '1066.'],
           explanation:
             'The Black Death first struck England in the summer of 1348 at Melcombe Regis (Dorset), having originated in Central Asia and swept across Mediterranean trade routes. It decimated English communities over the next eighteen months.',
         },
@@ -3397,7 +3397,7 @@ export default {
           q: 'What fraction of the English population was killed by the plague?',
           answer: 'Roughly one third.',
           a: 'Roughly one third.',
-          options: ['Around one tenth.', 'Roughly one third.', 'Nearly half.', 'About two thirds.'],
+          options: ['Around one tenth.', 'Roughly one third.', 'About two thirds.', 'Nearly half.'],
           explanation:
             "Demographic historians estimate that the Black Death killed roughly one-third to one-half of England's population, reducing it from roughly 4–5 million to under 2.5 million. Entire villages were wiped out or permanently abandoned.",
         },
@@ -3408,8 +3408,8 @@ export default {
           a: 'Agonizing, pus-filled swellings caused by the bubonic plague.',
           options: [
             'The masks worn to prevent infection.',
-            'The doctors who treated the sick.',
             'The fleas that carried the disease.',
+            'The doctors who treated the sick.',
             'Agonizing, pus-filled swellings caused by the bubonic plague.',
           ],
           explanation:
@@ -3422,9 +3422,9 @@ export default {
           a: 'Because germ theory did not exist yet.',
           options: [
             "Because they didn't have enough money.",
-            'Because the King banned all medicine.',
-            'Because germ theory did not exist yet.',
             'Because they refused to treat the poor.',
+            'Because germ theory did not exist yet.',
+            'Because the King banned all medicine.',
           ],
           explanation:
             'Medieval medicine lacked any knowledge of germ theory or microscopic bacteria, which were not discovered until the 19th century. Doctors relied on ancient Greek humoral theory, bleeding patients and burning herbs to little effect.',
@@ -3436,9 +3436,9 @@ export default {
           a: 'They believed it was a divine punishment sent by God.',
           options: [
             'They believed it was a divine punishment sent by God.',
+            'They believed it was caused by comets.',
             'They blamed it on witchcraft.',
             'They thought it was a curse from the Vikings.',
-            'They believed it was caused by comets.',
           ],
           explanation:
             "In the deeply religious medieval worldview, the pandemic was universally interpreted as a divine retribution sent by an angry God to punish humanity's sins. Communities organized penitential processions and prayed for divine forgiveness.",
@@ -3449,10 +3449,10 @@ export default {
           answer: 'Magna Carta.',
           a: 'Magna Carta.',
           options: [
-            'The Domesday Book.',
+            'The Statute of Labourers.',
             'Magna Carta.',
             'The Bill of Rights.',
-            'The Statute of Labourers.',
+            'The Domesday Book.',
           ],
           explanation:
             'Magna Carta was sealed by King John at Runnymede in June 1215 under pressure from armed rebel barons. It established that royal power was subject to law and protected noble liberties from arbitrary monarchical abuse.',
@@ -3462,7 +3462,7 @@ export default {
           q: 'Who was murdered by four knights in 1170?',
           answer: 'Thomas Becket.',
           a: 'Thomas Becket.',
-          options: ['Wat Tyler.', 'King John.', 'Thomas Becket.', 'Harold Godwinson.'],
+          options: ['King John.', 'Wat Tyler.', 'Thomas Becket.', 'Harold Godwinson.'],
           explanation:
             'Thomas Becket was murdered in Canterbury Cathedral on 29 December 1170 by four knights after defying King Henry II over the jurisdiction of Church courts. His murder shocked Europe and made his shrine the premier pilgrimage site in England.',
         },
@@ -3472,9 +3472,9 @@ export default {
           answer: 'To fund his failed wars to recapture Normandy.',
           a: 'To fund his failed wars to recapture Normandy.',
           options: [
+            'To build more castles.',
             'To bribe the Pope.',
             'To pay for a crusade.',
-            'To build more castles.',
             'To fund his failed wars to recapture Normandy.',
           ],
           explanation:
@@ -3500,9 +3500,9 @@ export default {
           answer: 'Harold Godwinson.',
           a: 'Harold Godwinson.',
           options: [
-            'William the Conqueror.',
-            'Harold Godwinson.',
             'Edward the Confessor.',
+            'Harold Godwinson.',
+            'William the Conqueror.',
             'Harald Hardrada.',
           ],
           explanation:
@@ -3517,8 +3517,8 @@ export default {
           options: [
             'It charged every person the exact same amount, meaning it hit the poor much harder than the rich',
             'It required peasants to give up their best farm animals',
-            'It was only charged on food and clothing',
             'It only applied to peasants who lived in the north',
+            'It was only charged on food and clothing',
           ],
           explanation:
             'The Poll Tax of 1380 was deeply hated because it levied an identical flat rate of three groats (12 pence) on every person over fifteen, regardless of wealth. This meant impoverished serfs paid the exact same tax as wealthy aristocrats.',
@@ -3529,9 +3529,9 @@ export default {
           answer: 'A radical priest who preached that all men were created equal by God',
           a: 'A radical priest who preached that all men were created equal by God',
           options: [
-            'The Archbishop of Canterbury',
-            "The King's main tax collector",
             'A wealthy baron who funded the rebels',
+            "The King's main tax collector",
+            'The Archbishop of Canterbury',
             'A radical priest who preached that all men were created equal by God',
           ],
           explanation:
@@ -3543,9 +3543,9 @@ export default {
           answer: "'When Adam delved and Eve span, who was then the gentleman?'",
           a: "'When Adam delved and Eve span, who was then the gentleman?'",
           options: [
+            "'Remember, remember the fifth of November'",
             "'The King is in his counting house, counting out his money'",
             "'Ring a ring o' roses, a pocket full of posies'",
-            "'Remember, remember the fifth of November'",
             "'When Adam delved and Eve span, who was then the gentleman?'",
           ],
           explanation:
@@ -3557,10 +3557,10 @@ export default {
           answer: 'They burned down the Savoy Palace and opened the prisons',
           a: 'They burned down the Savoy Palace and opened the prisons',
           options: [
-            'They built a new motte and bailey castle',
-            "They immediately surrendered to the King's guards",
-            'They burned down the Savoy Palace and opened the prisons',
             'They peacefully protested outside Parliament',
+            'They built a new motte and bailey castle',
+            'They burned down the Savoy Palace and opened the prisons',
+            "They immediately surrendered to the King's guards",
           ],
           explanation:
             "Upon entering London on 13 June 1381, the rebel army burned John of Gaunt's magnificent Savoy Palace, threw tax records into bonfires, and opened the Fleet and Marshalsea prisons. They executed royal tax collectors but prohibited looting.",
@@ -3572,10 +3572,10 @@ export default {
           answer: 'The Archbishop of Canterbury and the Lord Treasurer',
           a: 'The Archbishop of Canterbury and the Lord Treasurer',
           options: [
-            'The King and the Queen',
+            'The Duke of Lancaster and the French Ambassador',
             'The Archbishop of Canterbury and the Lord Treasurer',
             'The Mayor of London and the Chief Judge',
-            'The Duke of Lancaster and the French Ambassador',
+            'The King and the Queen',
           ],
           explanation:
             'On 14 June, rebels breached the Tower of London and executed Simon of Sudbury, Archbishop of Canterbury and Chancellor, alongside Sir Robert Hales, the Lord Treasurer. Their severed heads were paraded on pikes across London Bridge.',
@@ -3594,7 +3594,7 @@ export default {
           q: 'Where did King Richard II ride out to meet Wat Tyler?',
           answer: 'Smithfield',
           a: 'Smithfield',
-          options: ['Runnymede', 'Hastings', 'Smithfield', 'Bosworth'],
+          options: ['Runnymede', 'Bosworth', 'Smithfield', 'Hastings'],
           explanation:
             'On 15 June 1381, Richard II agreed to meet Wat Tyler and thousands of armed rebels at Smithfield, outside the London city walls. Tyler rode forward alone to present his sweeping demands for the abolition of serfdom.',
         },
@@ -3606,8 +3606,8 @@ export default {
           options: [
             'The total abolition of serfdom and the feudal system',
             'For England to surrender to France',
-            'The execution of all Norman lords',
             'The right for peasants to vote in Parliament',
+            'The execution of all Norman lords',
           ],
           explanation:
             'Wat Tyler demanded the total abolition of serfdom and feudal dues, freedom of contract for all laborers, the confiscation and redistribution of Church lands, and a single legal system across England. It was the most radical social manifesto of the Middle Ages.',
@@ -3617,7 +3617,7 @@ export default {
           q: 'Who stabbed Wat Tyler during the meeting with the King?',
           answer: 'The Mayor of London',
           a: 'The Mayor of London',
-          options: ['King Richard II himself', 'The Mayor of London', 'A French spy', 'John Ball'],
+          options: ['King Richard II himself', 'The Mayor of London', 'John Ball', 'A French spy'],
           explanation:
             "During the tense meeting, Tyler insolently spat on the ground and rinsed his mouth before the King, provoking an altercation with royal escorts. William Walworth, the Mayor of London, drew his cutlass and fatally slashed Tyler's neck.",
         },
@@ -3627,9 +3627,9 @@ export default {
           answer: 'He rode toward the angry mob and convinced them he would be their leader',
           a: 'He rode toward the angry mob and convinced them he would be their leader',
           options: [
+            'He ordered his archers to massacre the crowd',
             'He was captured and held hostage by the peasants',
             'He fled back to the Tower of London in terror',
-            'He ordered his archers to massacre the crowd',
             'He rode toward the angry mob and convinced them he would be their leader',
           ],
           explanation:
@@ -3808,10 +3808,10 @@ export default {
           answer: 'The Wars of the Roses',
           a: 'The Wars of the Roses',
           options: [
-            "The Barons' War",
             'The English Civil War',
-            'The Wars of the Roses',
             "The Hundred Years' War",
+            'The Wars of the Roses',
+            "The Barons' War",
           ],
           explanation:
             'The Wars of the Roses (1455–1487) was a series of intermittent civil wars fought for control of the English throne between rival cadet branches of the royal House of Plantagenet. The conflict ended the Plantagenet dynasty.',
@@ -3844,7 +3844,7 @@ export default {
           q: 'What flower symbolized the House of York?',
           answer: 'A white rose',
           a: 'A white rose',
-          options: ['A white rose', 'A red rose', 'A blue lily', 'A white boar'],
+          options: ['A white rose', 'A white boar', 'A blue lily', 'A red rose'],
           explanation:
             "The white rose of York was the personal heraldic badge adopted by Richard, Duke of York, and his son King Edward IV. It gave the civil conflict its romanticized 19th-century name, 'The Wars of the Roses'.",
         },
@@ -3854,10 +3854,10 @@ export default {
           answer: 'King Henry VI was a weak, mentally unstable ruler',
           a: 'King Henry VI was a weak, mentally unstable ruler',
           options: [
-            'The King refused to sign the Magna Carta',
-            'King Henry VI was a weak, mentally unstable ruler',
-            'The peasants revolted against the poll tax',
             'The Pope excommunicated the King',
+            'King Henry VI was a weak, mentally unstable ruler',
+            'The King refused to sign the Magna Carta',
+            'The peasants revolted against the poll tax',
           ],
           explanation:
             'The civil wars erupted primarily due to the mental incapacity and political weakness of Lancastrian King Henry VI, who suffered bouts of catatonic mental illness. Powerful nobles exploited his weakness, sparking violent private feuds.',
@@ -3867,7 +3867,7 @@ export default {
           q: 'What territory had King Henry VI lost before the Wars of the Roses began?',
           answer: "England's lands in France",
           a: "England's lands in France",
-          options: ['Wales', 'Ireland', "England's lands in France", 'Scotland'],
+          options: ['Ireland', 'Scotland', "England's lands in France", 'Wales'],
           explanation:
             "Under the incompetent rule of Henry VI, England lost virtually all its continental possessions won by Henry V in the Hundred Years' War, retaining only Calais by 1453. Returning defeated soldiers and angry barons destabilized domestic politics.",
         },
@@ -3878,8 +3878,8 @@ export default {
           a: 'The Yorkist King Edward IV',
           options: [
             'Henry Tudor',
-            'Richard of Gloucester',
             'The Lancastrian King Henry VI',
+            'Richard of Gloucester',
             'The Yorkist King Edward IV',
           ],
           explanation:
@@ -3892,9 +3892,9 @@ export default {
           a: 'Richard of Gloucester (later Richard III)',
           options: [
             'Richard of Gloucester (later Richard III)',
-            'King John',
-            'Thomas Becket',
             'Henry Tudor',
+            'Thomas Becket',
+            'King John',
           ],
           explanation:
             "Richard, Duke of Gloucester, was the younger brother of Edward IV and had served loyally as Lord of the North. Upon Edward IV's death, he acted swiftly to seize physical custody of young Edward V from the boy's maternal Woodville relatives.",
@@ -3908,8 +3908,8 @@ export default {
           options: [
             'Windsor Castle',
             'The Tower of London',
-            'Westminster Abbey',
             'Canterbury Cathedral',
+            'Westminster Abbey',
           ],
           explanation:
             'Richard of Gloucester placed 12-year-old Edward V and his younger brother, 9-year-old Richard of Shrewsbury, Duke of York, in royal apartments within the Tower of London, ostensibly to prepare for the coronation. The Tower was both a royal palace and fortress.',
@@ -3921,8 +3921,8 @@ export default {
           a: 'They were never seen in public again',
           options: [
             'They were crowned as joint kings',
-            'They escaped to France',
             'They defeated their uncle in battle',
+            'They escaped to France',
             'They were never seen in public again',
           ],
           explanation:
@@ -3935,9 +3935,9 @@ export default {
           a: 'He crowned himself King of England',
           options: [
             'He crowned himself King of England',
-            'He gave the throne to Henry Tudor',
             'He fled to France',
             'He became Archbishop of Canterbury',
+            'He gave the throne to Henry Tudor',
           ],
           explanation:
             "In June 1483, Richard declared that Edward IV's marriage to Elizabeth Woodville was invalid due to a pre-contract, rendering the princes illegitimate. Parliament passed the Titulus Regius, and Richard was crowned as King Richard III.",
@@ -3948,8 +3948,8 @@ export default {
           answer: 'It shocked the country and turned many nobles against him',
           a: 'It shocked the country and turned many nobles against him',
           options: [
-            'It made him incredibly popular with the peasants',
             'It convinced the Pope to make him a saint',
+            'It made him incredibly popular with the peasants',
             'It shocked the country and turned many nobles against him',
             'It stopped the Wars of the Roses immediately',
           ],
@@ -3975,7 +3975,7 @@ export default {
           q: 'In what year did the Battle of Bosworth take place?',
           answer: '1485',
           a: '1485',
-          options: ['1215', '1381', '1485', '1066'],
+          options: ['1381', '1066', '1485', '1215'],
           explanation:
             'The Battle of Bosworth took place on 22 August 1485. It marked the violent overthrow of the Yorkist monarchy and the birth of the early modern Tudor state under King Henry VII.',
         },
@@ -3984,7 +3984,7 @@ export default {
           q: 'Who invaded England to challenge Richard III for the throne at Bosworth?',
           answer: 'Henry Tudor',
           a: 'Henry Tudor',
-          options: ['William the Conqueror', 'Wat Tyler', 'King Philip of France', 'Henry Tudor'],
+          options: ['William the Conqueror', 'King Philip of France', 'Wat Tyler', 'Henry Tudor'],
           explanation:
             'Henry Tudor, Earl of Richmond, was an exiled Welsh nobleman with a tenuous Lancastrian claim to the throne through his mother, Margaret Beaufort. He sailed from France with French and Scottish mercenaries to challenge Richard III.',
         },
@@ -3995,9 +3995,9 @@ export default {
           answer: 'Several of his key allies betrayed him and refused to fight',
           a: 'Several of his key allies betrayed him and refused to fight',
           options: [
-            'He fell off his horse before the battle began',
-            'Several of his key allies betrayed him and refused to fight',
             'His army was hit by the Black Death',
+            'Several of his key allies betrayed him and refused to fight',
+            'He fell off his horse before the battle began',
             'Henry Tudor used gunpowder cannons to destroy his army',
           ],
           explanation:
@@ -4009,9 +4009,9 @@ export default {
           answer: 'He was the last English king to die in battle',
           a: 'He was the last English king to die in battle',
           options: [
-            'He was the only king to never wear a crown',
-            'He was the last English king to die in battle',
             'He ruled the longest',
+            'He was the last English king to die in battle',
+            'He was the only king to never wear a crown',
             'He was the first Tudor king',
           ],
           explanation:
@@ -4022,7 +4022,7 @@ export default {
           q: "Who was crowned King of England after Richard III's death?",
           answer: 'Henry VII',
           a: 'Henry VII',
-          options: ['Edward V', 'Edward VI', 'Henry VII', 'Henry VIII'],
+          options: ['Edward V', 'Henry VIII', 'Henry VII', 'Edward VI'],
           explanation:
             "Following Richard's death on the battlefield, Lord Stanley retrieved the fallen king's crown from a thorn bush and placed it upon Henry Tudor's head, proclaiming him King Henry VII. Henry ruled for 24 years, establishing the Tudor dynasty.",
         },
@@ -4033,8 +4033,8 @@ export default {
           a: 'He married a princess from the House of York',
           options: [
             'He married a princess from the House of York',
-            'He banned the use of rose symbols',
             'He moved the capital to York',
+            'He banned the use of rose symbols',
             'He executed all remaining nobles',
           ],
           explanation:
@@ -4048,8 +4048,8 @@ export default {
           a: 'The Middle Ages',
           options: [
             'The Victorian Era',
-            'The Roman Empire',
             'The Industrial Revolution',
+            'The Roman Empire',
             'The Middle Ages',
           ],
           explanation:
@@ -4239,10 +4239,10 @@ export default {
             'Which battle in October 1066 established Norman rule over Anglo-Saxon England?',
           q: 'Which battle in October 1066 established Norman rule over Anglo-Saxon England?',
           options: [
-            'The Battle of Lewes',
+            'The Battle of Stamford Bridge',
             'The Battle of Fulford',
             'The Battle of Hastings',
-            'The Battle of Stamford Bridge',
+            'The Battle of Lewes',
           ],
           answer: 'The Battle of Hastings',
           a: 'The Battle of Hastings',
@@ -4254,10 +4254,10 @@ export default {
             'What type of early wooden castles did William the Conqueror rapidly construct across England to enforce military control?',
           q: 'What type of early wooden castles did William the Conqueror rapidly construct across England to enforce military control?',
           options: [
-            'Palaces',
+            'Concentric stone castles',
             'Motte-and-bailey castles',
             'Star forts',
-            'Concentric stone castles',
+            'Palaces',
           ],
           answer: 'Motte-and-bailey castles',
           a: 'Motte-and-bailey castles',
@@ -4271,8 +4271,8 @@ export default {
           options: [
             'The Harrying of the North',
             'The Peasant Crusade',
-            'The Wars of the Roses',
             'The Pilgrimage of Grace',
+            'The Wars of the Roses',
           ],
           answer: 'The Harrying of the North',
           a: 'The Harrying of the North',
@@ -4284,8 +4284,8 @@ export default {
             'What was the hierarchical social and landholding system introduced by the Normans where all land belonged to the Crown?',
           q: 'What was the hierarchical social and landholding system introduced by the Normans where all land belonged to the Crown?',
           options: [
-            'Parliamentary Democracy',
             'The Guild System',
+            'Parliamentary Democracy',
             'The Manorial Republic',
             'The Feudal System',
           ],
@@ -4299,8 +4299,8 @@ export default {
             'In the Feudal System, what did the King grant to his leading barons (tenants-in-chief) in return for loyalty and military service?',
           q: 'In the Feudal System, what did the King grant to his leading barons (tenants-in-chief) in return for loyalty and military service?',
           options: [
-            'Absolute immunity from royal laws',
             'Gold pensions',
+            'Absolute immunity from royal laws',
             'Fiefs (land)',
             'Papal crowns',
           ],
@@ -4315,9 +4315,9 @@ export default {
           q: 'What comprehensive survey was commissioned by William I at Christmas 1085 to record wealth and landholding for taxation?',
           options: [
             'The Domesday Book',
-            'The Bayeux Tapestry',
-            'The Anglo-Saxon Chronicle',
             'The Magna Carta',
+            'The Anglo-Saxon Chronicle',
+            'The Bayeux Tapestry',
           ],
           answer: 'The Domesday Book',
           a: 'The Domesday Book',
@@ -4328,7 +4328,7 @@ export default {
           question:
             'Which Archbishop of Canterbury was assassinated in his cathedral in 1170 after quarreling with King Henry II over the legal power of Church courts?',
           q: 'Which Archbishop of Canterbury was assassinated in his cathedral in 1170 after quarreling with King Henry II over the legal power of Church courts?',
-          options: ['Thomas Wolsey', 'Thomas Becket', 'Stephen Langton', 'Anselm of Canterbury'],
+          options: ['Anselm of Canterbury', 'Thomas Becket', 'Stephen Langton', 'Thomas Wolsey'],
           answer: 'Thomas Becket',
           a: 'Thomas Becket',
           explanation:
@@ -4338,7 +4338,7 @@ export default {
           question:
             'What ultimate religious penalty could the Pope inflict upon a medieval monarch, cutting them off from Church sacraments and releasing subjects from their oaths of loyalty?',
           q: 'What ultimate religious penalty could the Pope inflict upon a medieval monarch, cutting them off from Church sacraments and releasing subjects from their oaths of loyalty?',
-          options: ['Recusancy', 'Interdict', 'Heresy trial', 'Excommunication'],
+          options: ['Heresy trial', 'Recusancy', 'Interdict', 'Excommunication'],
           answer: 'Excommunication',
           a: 'Excommunication',
           explanation:
@@ -4348,7 +4348,7 @@ export default {
           question:
             'In what year did rebel barons force King John to attach his seal to Magna Carta at Runnymede?',
           q: 'In what year did rebel barons force King John to attach his seal to Magna Carta at Runnymede?',
-          options: ['1348', '1381', '1066', '1215'],
+          options: ['1381', '1066', '1348', '1215'],
           answer: '1215',
           a: '1215',
           explanation:
@@ -4359,9 +4359,9 @@ export default {
             'What fundamental constitutional principle was established by Clause 39 of Magna Carta?',
           q: 'What fundamental constitutional principle was established by Clause 39 of Magna Carta?',
           options: [
-            'Peasants were immediately granted freedom from villeinage',
-            'No free man could be imprisoned or punished except by the lawful judgment of his peers or the law of the land',
             'The King possessed absolute and divine authority over all courts',
+            'No free man could be imprisoned or punished except by the lawful judgment of his peers or the law of the land',
+            'Peasants were immediately granted freedom from villeinage',
             'Barons were exempt from paying any military taxes forever',
           ],
           answer:
@@ -4376,8 +4376,8 @@ export default {
           q: 'Which council of 25 barons created under Clause 61 of Magna Carta marked the earliest ancestor of parliamentary oversight of the monarchy?',
           options: [
             "The Barons' Council",
-            'The House of Commons',
             'The Privy Council',
+            'The House of Commons',
             'The Star Chamber',
           ],
           answer: "The Barons' Council",
@@ -4389,7 +4389,7 @@ export default {
           question:
             'What catastrophic pandemic struck England in 1348, killing approximately one-third to one-half of the population?',
           q: 'What catastrophic pandemic struck England in 1348, killing approximately one-third to one-half of the population?',
-          options: ['Spanish Influenza', 'The Great Plague', 'The Black Death', 'Cholera'],
+          options: ['Cholera', 'Spanish Influenza', 'The Black Death', 'The Great Plague'],
           answer: 'The Black Death',
           a: 'The Black Death',
           explanation:
@@ -4416,9 +4416,9 @@ export default {
             'What restrictive 1351 legislation was passed by King Edward III and the landowning Parliament in an attempt to freeze wages at pre-plague rates?',
           q: 'What restrictive 1351 legislation was passed by King Edward III and the landowning Parliament in an attempt to freeze wages at pre-plague rates?',
           options: [
-            'The Sumptuary Act',
-            'The Statute of Labourers',
             'The Poor Law',
+            'The Statute of Labourers',
+            'The Sumptuary Act',
             'The Act of Supremacy',
           ],
           answer: 'The Statute of Labourers',
@@ -4430,7 +4430,7 @@ export default {
           question:
             "What hated regressive tax sparked the outbreak of the Peasants' Revolt in Essex and Kent in May–June 1381?",
           q: "What hated regressive tax sparked the outbreak of the Peasants' Revolt in Essex and Kent in May–June 1381?",
-          options: ['Danegeld', 'The Tithe', 'Ship Money', 'The Poll Tax'],
+          options: ['The Tithe', 'Danegeld', 'Ship Money', 'The Poll Tax'],
           answer: 'The Poll Tax',
           a: 'The Poll Tax',
           explanation:
@@ -4440,7 +4440,7 @@ export default {
           question:
             "Who was the rebel leader who marched on London during the Peasants' Revolt and presented demands to King Richard II at Mile End and Smithfield?",
           q: "Who was the rebel leader who marched on London during the Peasants' Revolt and presented demands to King Richard II at Mile End and Smithfield?",
-          options: ['Wat Tyler', 'William Wallace', 'Simon de Montfort', 'Jack Straw'],
+          options: ['Wat Tyler', 'Jack Straw', 'Simon de Montfort', 'William Wallace'],
           answer: 'Wat Tyler',
           a: 'Wat Tyler',
           explanation:
@@ -4460,7 +4460,7 @@ export default {
           question:
             'How old was King Richard II when he famously rode out to confront the angry rebels at Smithfield after Wat Tyler was killed?',
           q: 'How old was King Richard II when he famously rode out to confront the angry rebels at Smithfield after Wat Tyler was killed?',
-          options: ['9 years old', '14 years old', '35 years old', '25 years old'],
+          options: ['25 years old', '14 years old', '35 years old', '9 years old'],
           answer: '14 years old',
           a: '14 years old',
           explanation:
@@ -4471,10 +4471,10 @@ export default {
             "What was the long-term impact of the Black Death and the Peasants' Revolt on English feudal serfdom (villeinage)?",
           q: "What was the long-term impact of the Black Death and the Peasants' Revolt on English feudal serfdom (villeinage)?",
           options: [
-            'The monarchy abolished private property entirely',
-            'Serfdom was brutally expanded and lasted until the Victorian era',
-            'Serfdom steadily disintegrated as landlords found it more profitable to rent land to free tenant farmers for money wages',
             'All English peasants were immediately executed',
+            'The monarchy abolished private property entirely',
+            'Serfdom steadily disintegrated as landlords found it more profitable to rent land to free tenant farmers for money wages',
+            'Serfdom was brutally expanded and lasted until the Victorian era',
           ],
           answer:
             'Serfdom steadily disintegrated as landlords found it more profitable to rent land to free tenant farmers for money wages',
@@ -4488,9 +4488,9 @@ export default {
           q: "Overall, why is it historically inaccurate to view medieval English monarchs as having 'absolute' power?",
           options: [
             'Medieval kings relied constantly on the cooperation of armed barons, the moral and legal authority of the Catholic Church, and the consent of Parliament for taxation',
-            'English monarchs were ruled directly by the King of France',
             'Medieval peasants could vote their kings out of office in annual general elections',
             'Medieval monarchs were strictly figureheads with zero real authority',
+            'English monarchs were ruled directly by the King of France',
           ],
           answer:
             'Medieval kings relied constantly on the cooperation of armed barons, the moral and legal authority of the Catholic Church, and the consent of Parliament for taxation',
