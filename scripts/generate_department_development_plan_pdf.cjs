@@ -30,7 +30,7 @@ const ddpData = [
     ],
     criteria: [
       'Consistent student completion of structured exam practice in workbooks.',
-      'Positive GCSE outcomes in line with school and departmental target projections.',
+      'Revised Edexcel exam question frameworks (4-mark Consequence, 8-mark Narrative, 8-mark Importance) embedded in KS4 lessons.',
     ],
     dates: 'Ongoing 2026–27',
     owner: 'BL',

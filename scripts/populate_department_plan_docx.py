@@ -89,7 +89,7 @@ def update_docx():
     ])
     set_cell_content(t2_rows[1].findall(f".//{{{W_NS}}}tc")[2], [
         ("• Consistent student completion of structured exam practice in workbooks.", False, False, "18"),
-        ("• Positive GCSE outcomes in line with school targets.", False, False, "18")
+        ("• Revised Edexcel exam question frameworks (4-mark Consequence, 8-mark Narrative, 8-mark Importance) embedded in KS4 lessons.", False, False, "18")
     ])
     set_cell_content(t2_rows[1].findall(f".//{{{W_NS}}}tc")[3], [
         ("Ongoing 2026-27", False, False, "18")
