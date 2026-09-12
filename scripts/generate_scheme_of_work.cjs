@@ -37,36 +37,57 @@ const unitCurriculumOutlines = {
       obj: 'Analyse pre-1933 Jewish European diversity; differentiate religious vs Nazi racial antisemitism.',
       hinge:
         'Why did the Nazis shift from traditional prejudice to pseudoscientific racial ideology?',
-      tasks:
-        'Primary source evaluation of pre-war community archives; comparative prejudice matrix.',
+      evidence:
+        'Pre-1933 Jewish community archives & family photographs; 19th-century European pseudoscientific racial charts.',
+      debate:
+        'Functionalist vs Intentionalist origins: Long-standing European prejudice vs Hitler’s ideological radicalism.',
+      assessment:
+        '[8 Marks] Explain the difference between traditional religious anti-Judaism and Nazi racial antisemitism.',
     },
     {
       title: 'Escalation of Nazi Persecution (1933–1939)',
       obj: 'Trace legal and social exclusion from 1933 anti-Jewish decrees to the Nuremberg Laws and Kristallnacht.',
       hinge: 'How did state decrees and street violence work together to isolate German Jews?',
-      tasks:
-        'Decree chronology analysis; PEEL paragraph on the domestic consequences of Kristallnacht.',
+      evidence:
+        'Official 1935 Nuremberg Laws legislation text; Contemporary Berliner Tageblatt reports on the 1938 Kristallnacht pogrom.',
+      debate:
+        'Cumulative radicalisation: Grassroots SA street violence vs top-down bureaucratic and judicial exclusion.',
+      assessment:
+        '[PEEL Paragraph] Explain why the Nuremberg Laws marked a decisive turning point in Nazi persecution.',
     },
     {
       title: 'War, Ghettos & The Einsatzgruppen (1939–1941)',
       obj: 'Examine sealed ghettos in occupied Poland and the mass shootings of the mobile Einsatzgruppen.',
       hinge: 'How did the invasion of the USSR mark a radical shift toward systematic murder?',
-      tasks:
-        'Warsaw Ghetto diary extract analysis; map analysis of Eastern European killing sites.',
+      evidence:
+        'Emanuel Ringelblum’s Warsaw Ghetto underground archive (Oyneg Shabes); Einsatzgruppen execution field reports.',
+      debate:
+        'Christopher Browning vs Daniel Goldhagen debate: Peer conformity in "Ordinary Men" vs eliminationist antisemitism.',
+      assessment:
+        '[8 Marks] How useful are Warsaw Ghetto diaries for investigating civilian survival and resistance?',
     },
     {
       title: 'The "Final Solution" & Extermination Camps (1942–1945)',
       obj: 'Assess the Wannsee Conference and the industrialised murder network at Auschwitz-Birkenau.',
       hinge: 'What differentiated Nazi extermination camps from conventional wartime prisons?',
-      tasks: 'Perpetrator bureaucracy vs survivor testimony evaluation; dehumanisation reflection.',
+      evidence:
+        '1942 Wannsee Conference Protocol (Heydrich); Auschwitz-Birkenau railway transport manifests and blueprints.',
+      debate:
+        'Hannah Arendt’s "Banality of Evil" and state bureaucracy vs deliberate ideological fanaticism.',
+      assessment:
+        '[Evaluative Essay] Explain why the Wannsee Conference accelerated the transition to extermination camps.',
     },
     {
       title: 'Jewish Resistance, Liberation & Legacy',
       obj: 'Investigate armed/spiritual resistance (Warsaw Uprising); evaluate the Nuremberg Trials and legacy.',
       hinge:
         'How do historians balance intentionalist vs functionalist explanations for the Holocaust?',
-      tasks:
-        'Historical interpretation debate; extended evaluative essay on personal and state responsibility.',
+      evidence:
+        'Sobibor and Treblinka prisoner revolt testimonies; 1945–46 Nuremberg Military Tribunal indictment documents.',
+      debate:
+        'Historiographical verdict: The "twisted road" to Auschwitz vs deliberate long-term master planning.',
+      assessment:
+        '[12-Mark Essay] To what extent was the "Final Solution" planned from the inception of the Nazi regime?',
     },
   ],
   cold_war: [
@@ -74,35 +95,57 @@ const unitCurriculumOutlines = {
       title: 'Collapse of the Grand Alliance (1943–1945)',
       obj: 'Compare Capitalism vs Communism; analyse superpower tensions at Tehran, Yalta, and Potsdam.',
       hinge: 'Was Cold War hostility inevitable once Nazi Germany was defeated?',
-      tasks: 'Ideological comparison matrix; cartoon analysis of Churchill’s Iron Curtain speech.',
+      evidence:
+        'Tehran, Yalta, and Potsdam conference minutes (1943–45); Winston Churchill’s 1946 "Iron Curtain" speech transcript.',
+      debate:
+        'Orthodox (Soviet expansionism) vs Revisionist (US atomic diplomacy) vs Post-Revisionist (mutual misperception).',
+      assessment:
+        '[8 Marks] Explain why tensions between the Grand Alliance increased following the 1945 Potsdam Conference.',
     },
     {
       title: 'Containment & Crisis: Truman to Berlin (1947–1949)',
       obj: 'Explain the Truman Doctrine, Marshall Aid, and the causes and outcome of the Berlin Blockade.',
       hinge: 'Why did Stalin choose a blockade rather than military invasion of West Berlin?',
-      tasks:
-        'Causation flowchart; source utility analysis of Soviet vs American Airlift propaganda.',
+      evidence:
+        'President Truman’s Address to Congress (1947); Soviet Ministry of Foreign Affairs cables on the Berlin Blockade (1948).',
+      debate:
+        'Containment policy: Defensive national security perimeter vs aggressive imperialist economic expansion.',
+      assessment:
+        '[8 Marks] Explain the importance of the Berlin Airlift (1948–49) for Cold War superpower relations.',
     },
     {
       title: 'Nuclear Arms Race & Cuban Missile Crisis (1950–1962)',
       obj: 'Evaluate Mutually Assured Destruction (MAD); analyse Kennedy and Khrushchev during October 1962.',
       hinge: 'Which leader made the decisive concession that averted nuclear war in 1962?',
-      tasks:
-        'Crisis decision-making log; 8-mark explanation on why the crisis was resolved peacefully.',
+      evidence:
+        'CIA U-2 reconnaissance aerial photography of San Cristóbal (Oct 1962); Declassified correspondence between JFK and Khrushchev.',
+      debate:
+        'Crisis decision-making: Rational diplomatic conflict management vs near-fatal military miscalculation and luck.',
+      assessment:
+        '[12-Mark Essay] Explain why the Cuban Missile Crisis was resolved without direct military conflict.',
     },
     {
       title: 'Détente & Proxy Conflicts (1963–1979)',
       obj: 'Examine superpower treaties (SALT I, Helsinki) and proxy war dynamics (Vietnam, Afghanistan).',
       hinge: 'Did Détente represent genuine peace or tactical delay by the superpowers?',
-      tasks: 'Treaty timeline; PEEL paragraph evaluating whether proxy wars compromised Détente.',
+      evidence:
+        'Strategic Arms Limitation Treaty (SALT I) text (1972); Helsinki Final Act agreements on European human rights (1975).',
+      debate:
+        'Détente: Genuine international stabilization breakthrough vs cynical tactical breathing space during the arms race.',
+      assessment:
+        '[8 Marks] Explain one consequence of the Helsinki Accords (1975) for international diplomacy.',
     },
     {
       title: 'Fall of the Berlin Wall & End of USSR (1980–1991)',
       obj: 'Analyse Gorbachev’s Glasnost and Perestroika; explain the collapse of the Berlin Wall and the USSR.',
       hinge:
         'Did internal economic failure or Western pressure cause the fall of Soviet Communism?',
-      tasks:
-        'Contemporary television dispatch analysis; extended essay on the end of the Cold War.',
+      evidence:
+        'Mikhail Gorbachev’s Perestroika reform addresses (1986); International television news dispatches on the Berlin Wall (Nov 1989).',
+      debate:
+        'Triumphalist (Reagan defense buildup) vs Structuralist (systemic Soviet economic bankruptcy) historiographical debate.',
+      assessment:
+        '[16-Mark Essay] "Internal economic failure was the main reason for the collapse of Soviet rule." How far do you agree?',
     },
   ],
   second_world_war: [
@@ -110,36 +153,57 @@ const unitCurriculumOutlines = {
       title: 'Outbreak of Global Conflict & Blitzkrieg (1939–1940)',
       obj: 'Examine the invasion of Poland and the fall of France; assess the evacuation at Dunkirk.',
       hinge: 'How did German Blitzkrieg tactics overcome French defensive fortifications?',
-      tasks:
-        'Military campaign map interrogation; source utility of Churchill’s "Fight on the beaches" speech.',
+      evidence:
+        'Wehrmacht tactical operational maps (Fall Gelb, 1940); Churchill’s wartime parliamentary address ("Fight on the beaches").',
+      debate:
+        'Military historiography: Revolutionary tactical doctrine (Blitzkrieg) vs Allied doctrinal rigidity and French command paralysis.',
+      assessment:
+        '[PEEL Paragraph] Explain why the evacuation of Dunkirk was portrayed as a psychological victory in Britain.',
     },
     {
       title: 'The Battle of Britain & The Blitz (1940–1941)',
       obj: 'Investigate the RAF’s defense in the Battle of Britain; evaluate civilian morale under the Blitz.',
       hinge: 'Why did the Luftwaffe fail to establish air superiority over southern England?',
-      tasks:
-        'Oral history interview analysis; PEEL paragraph on civilian resilience in London and Portsmouth.',
+      evidence:
+        'Fighter Command Dowding System radar interception logs; Mass-Observation civilian diaries during the London and Portsmouth Blitz.',
+      debate:
+        'The "Myth of the Blitz": Unbroken civilian unity and resilience vs suppressed industrial strikes and social panic.',
+      assessment:
+        '[8 Marks] How useful are Mass-Observation diaries for investigating civilian morale during the 1940 Blitz?',
     },
     {
       title: 'Turning Points: Barbarossa & Stalingrad (1941–1943)',
       obj: 'Analyse Hitler’s invasion of the USSR and the catastrophic German defeat at Stalingrad.',
       hinge:
         'Why was the Battle of Stalingrad the decisive strategic turning point in the European war?',
-      tasks:
-        'Strategic resource analysis; military causation diagram of German Eastern Front collapse.',
+      evidence:
+        'Field Marshal Paulus’s 6th Army encirclement communiqués; Soviet Red Army combat orders (Order No. 227: "Not one step back!").',
+      debate:
+        'Eastern Front historiography: German logistical and climate failure vs Soviet industrial mobilization and deep battle doctrine.',
+      assessment:
+        '[12-Mark Essay] Explain why the Battle of Stalingrad was the decisive turning point in the European war.',
     },
     {
       title: 'Total War, Empire Troops & Atlantic War',
       obj: 'Uncover the vital contributions of Indian, African, and Commonwealth forces; explore U-boat war.',
       hinge: 'How crucial were Allied convoy supply lines to sustaining Britain’s war effort?',
-      tasks:
-        'Commonwealth contribution case studies; contemporary merchant navy dispatch analysis.',
+      evidence:
+        'Photographic archives of the 4th Indian Division in North Africa; Admiralty Atlantic convoy casualty and tonnage logs.',
+      debate:
+        'Imperial historiography: De-centering anglocentric narratives to evaluate Commonwealth and Indian manpower as decisive catalysts.',
+      assessment:
+        '[8 Marks] Explain the importance of Commonwealth and Empire troops to the Allied war effort in 1940–1943.',
     },
     {
       title: 'D-Day, Defeat of Nazism & Atomic Bomb (1944–1945)',
       obj: 'Examine Normandy Landings (Operation Overlord); assess the decision to use the atomic bomb on Japan.',
       hinge: 'Was the dropping of the atomic bomb military necessity or geopolitical signalling?',
-      tasks: 'Normandy beachhead source evaluation; historiographical essay on the atomic bomb.',
+      evidence:
+        'Supreme Allied Headquarters Overlord assault maps; President Truman’s Potsdam decision log on the Manhattan Project (1945).',
+      debate:
+        'The Atomic Bomb debate: Gar Alperovitz (Cold War atomic diplomacy) vs traditional military necessity (saving invasion lives).',
+      assessment:
+        '[16-Mark Essay] To what extent was the atomic bomb dropped to intimidate the Soviet Union rather than defeat Japan?',
     },
   ],
   post_war_britain: [
@@ -148,34 +212,57 @@ const unitCurriculumOutlines = {
       obj: 'Examine the Beveridge Report; investigate the founding of the NHS in 1948 by Aneurin Bevan.',
       hinge:
         'Why did the British public reject Churchill in 1945 in favour of Labour’s welfare reforms?',
-      tasks: 'Political cartoon analysis; PEEL paragraph on the social significance of the NHS.',
+      evidence:
+        'Sir William Beveridge’s 1942 Report ("Five Giants"); 1948 Ministry of Health public information leaflets for the NHS.',
+      debate:
+        'Post-war consensus: Universalist socialist transformation vs cross-party pragmatic compromise to avoid social unrest.',
+      assessment:
+        '[PEEL Paragraph] Explain why the British electorate voted for Attlee’s Labour government over Churchill in 1945.',
     },
     {
       title: 'The Empire Windrush & Post-War Migration',
       obj: 'Investigate the arrival of HMT Empire Windrush (1948); assess Caribbean contributions and prejudice.',
       hinge:
         'How did British immigration policy contrast with the lived experiences of arriving migrants?',
-      tasks: 'Oral history evaluation; source interrogation of Windrush passenger interviews.',
+      evidence:
+        'Original passenger manifests of HMT Empire Windrush (June 1948); Contemporary Pathé newsreel dispatches at Tilbury Docks.',
+      debate:
+        'Post-colonial migration: British Nationality Act 1948 citizenship rights vs institutional hostility and colour bars.',
+      assessment:
+        '[8 Marks] How useful are oral history testimonies for an enquiry into the experiences of the Windrush generation?',
     },
     {
       title: '1960s Social Revolution & Civil Rights in Britain',
       obj: 'Explore youth culture, legalisation reforms, and the 1963 Bristol Bus Boycott.',
       hinge: 'How did the Bristol Bus Boycott directly catalyse Britain’s 1965 Race Relations Act?',
-      tasks:
-        'Comparative study with US Civil Rights; evaluation of legislative vs grassroots protest.',
+      evidence:
+        'Paul Stephenson’s Bristol Bus Boycott press statements (1963); Hansard parliamentary debates on the Race Relations Act 1965.',
+      debate:
+        'Grassroots direct action vs legislative reform: Assessing whether public boycotts or political elites drove racial equality laws.',
+      assessment:
+        '[8 Marks] Explain the significance of the 1963 Bristol Bus Boycott for modern British civil rights.',
     },
     {
       title: 'Deindustrialisation & Winter of Discontent (1970–1979)',
       obj: 'Analyse economic crisis, trade union disputes, and the political fallout of 1978–79.',
       hinge: 'What caused the breakdown of post-war consensus politics during the 1970s?',
-      tasks: 'Newspaper headline analysis; causation chart of 1970s stagflation.',
+      evidence:
+        'Daily Mail and Sun front-page headlines ("Crisis? What Crisis?"); Trade Union Congress strike ballots and picket photographs.',
+      debate:
+        'Economic crisis historiography: Militant trade union disruption vs systemic capitalist industrial obsolescence.',
+      assessment:
+        '[PEEL Paragraph] Explain how the Winter of Discontent (1978–79) paved the way for Margaret Thatcher’s election victory.',
     },
     {
       title: 'Thatcherism & The Making of Modern Britain (1979–2000)',
       obj: 'Evaluate Thatcher’s economic revolution (privatisation, Miners’ Strike); assess multicultural Britain.',
       hinge: 'How far did Thatcherism permanently redefine British society and economic life?',
-      tasks:
-        'Academic interpretation debate; extended evaluative essay on post-war change and continuity.',
+      evidence:
+        'National Coal Board pit closure schedules (1984); Conservative election manifestos on council house sales ("Right to Buy").',
+      debate:
+        'The Thatcherite Legacy: Necessary modernisation of a stagnant economy vs catastrophic destruction of working-class communities.',
+      assessment:
+        '[16-Mark Essay] "Margaret Thatcher’s economic policies did more harm than good to British society." How far do you agree?',
     },
   ],
 };
@@ -224,11 +311,282 @@ const commonHead = `
             ul.obj-list { margin: 2px 0 0 0; padding-left: 14px; font-size: 7.8pt; }
             ul.obj-list li { margin-bottom: 2px; }
             
-            .task-list { margin: 0; padding-left: 14px; color: #334155; font-size: 7.8pt; }
-            .task-list li { margin-bottom: 2px; }
+            /* SOW 3-Tier Task Extractor Styles */
+            .sow-three-tier { display: flex; flex-direction: column; gap: 4.5px; }
+            .tier-box { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 4px 7px; box-shadow: 0 1px 2px rgba(0,0,0,0.02); }
+            .tier-label { font-size: 6.8pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; }
+            .tier-evidence { border-left: 3.5px solid #1e3a8a; }
+            .tier-evidence .tier-label { color: #1e3a8a; }
+            .tier-debate { border-left: 3.5px solid #b45309; }
+            .tier-debate .tier-label { color: #b45309; }
+            .tier-assessment { border-left: 3.5px solid #0f766e; }
+            .tier-assessment .tier-label { color: #0f766e; }
+            .tier-content { font-size: 7.3pt; color: #1e293b; line-height: 1.28; }
+            .tier-assessment .tier-content { font-weight: 600; color: #0f172a; }
         </style>
     </head>
 `;
+
+function cleanText(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/<[^>]+>/g, '')
+    .replace(/\\n/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function extractLessonThreeTier(lesson, uid, unitData, idx) {
+  // 1. Primary Evidence & Source Analysis
+  const sources = [];
+
+  // Dedicated known primary sources per unit & lesson for maximum pedagogical precision
+  const curatedSources = {
+    water_and_sanitation: {
+      0: [
+        "Housesteads Fort Roman communal latrines (Hadrian's Wall)",
+        "Seneca's moral treatise on Roman baths",
+        'Fishbourne Roman Palace mosaics',
+      ],
+      1: [
+        'Canterbury Cathedral Waterworks Plan (c. 1165)',
+        'City of London Sanitary Ordinance of 1357',
+        'Monastic reredorter latrine architecture',
+      ],
+      2: [
+        "Sir John Harington's 1596 'Ajax' Toilet Diagram",
+        "Samuel Pepys' 1660 Diary on cellar privies",
+        'The Cowdray Engraving of Tudor Portsmouth (1545)',
+      ],
+      3: [
+        "Chadwick's 1842 Report on the Sanitary Condition of the Labouring Population",
+        "Dr John Snow's Broad Street Cholera Spot Map (1854)",
+        'Portsmouth cholera burial registers',
+      ],
+      4: [
+        "Punch Cartoon 'The Silent Highwayman' (1858 Great Stink)",
+        "Bazalgette's Victorian intercepting sewer blueprints (1859–1865)",
+      ],
+      5: [
+        "Dr John Snow's 1854 Broad Street Cholera Spot Map",
+        'Soho mortality records & Eley Brothers percussion cap factory logs',
+      ],
+    },
+    great_war: {
+      0: [
+        'Source A: Map of the newly created German Empire (1871)',
+        "Bismarck's 'Blood and Iron' speech transcript (1862)",
+      ],
+      1: [
+        'Map A: The Annexation of Alsace-Lorraine (Treaty of Frankfurt, 1871)',
+        'Source B: The Black Spot (La Tache Noire) by Albert Bettannier (1887)',
+        "Source A: Anton von Werner's Proclamation of the German Empire at Versailles",
+      ],
+      2: [
+        'Source A: The 1879 Dual Alliance Treaty between Germany and Austria-Hungary',
+        "Punch Cartoon 'Dropping the Pilot' (1890)",
+        "Kaiser Wilhelm II's 'Place in the Sun' declaration",
+      ],
+      3: [
+        'Source A: Blueprint of HMS Dreadnought (1906)',
+        'German Navy Laws propaganda poster (Tirpitz)',
+        "British Daily Mail 'We Want Eight and We Won't Wait' articles",
+      ],
+      4: [
+        'Source A: Map of European Strategic Railway Timetables (1914)',
+        "Source B: General Alfred von Schlieffen's war memorandum (1905)",
+        'Belgian diplomatic protest over violation of neutrality',
+      ],
+      5: [
+        'Source A: Trench map of the Ypres Salient (1914)',
+        'Private soldier field postcards & 1st Battalion Hampshire Regiment war diaries',
+        'Contemporary aerial reconnaissance photography of trench systems',
+      ],
+      6: [
+        'Source A: The Western Mail front page on the Christmas Truce (1914)',
+        'Letter from Captain Sir Edward Hulse (Scots Guards, 1914)',
+        'Imperial War Museum oral history recordings of Saxon and British soldiers',
+      ],
+    },
+  };
+
+  if (curatedSources[uid] && curatedSources[uid][idx]) {
+    sources.push(...curatedSources[uid][idx]);
+  }
+
+  // Check lesson.sources
+  if (lesson.sources && Array.isArray(lesson.sources)) {
+    lesson.sources.forEach((s) => {
+      const title = s.title || s.caption || s.provenance;
+      if (title) sources.push(cleanText(title));
+    });
+  }
+
+  // Check lesson.primary_source
+  if (lesson.primary_source) {
+    const ps = lesson.primary_source.title || lesson.primary_source.caption;
+    if (ps) sources.push(cleanText(ps));
+  }
+
+  // Check gcse_task.sources
+  if (lesson.gcse_task?.sources && Array.isArray(lesson.gcse_task.sources)) {
+    lesson.gcse_task.sources.forEach((s) => {
+      if (s.title) sources.push(cleanText(s.title));
+    });
+  }
+
+  // Check lesson.exam_practice.stimulus
+  if (lesson.exam_practice?.stimulus && Array.isArray(lesson.exam_practice.stimulus)) {
+    lesson.exam_practice.stimulus.forEach((s) => {
+      if (s.title) sources.push(cleanText(s.title));
+    });
+  }
+
+  // Check narrative_blocks
+  if (lesson.narrative_blocks && Array.isArray(lesson.narrative_blocks)) {
+    lesson.narrative_blocks.forEach((b) => {
+      if (b.source?.title) sources.push(cleanText(b.source.title));
+      else if (b.source?.caption) sources.push(cleanText(b.source.caption));
+      else if (typeof b.source === 'string' && b.source.startsWith('Source'))
+        sources.push(cleanText(b.source));
+
+      if (
+        b.image_alt &&
+        (b.image_alt.includes('Source') ||
+          b.image_alt.includes('1') ||
+          b.image_alt.includes('cartoon') ||
+          b.image_alt.includes('photograph') ||
+          b.image_alt.includes('map') ||
+          b.image_alt.includes('Treaty') ||
+          b.image_alt.includes('Statute') ||
+          b.image_alt.includes('engraving'))
+      ) {
+        let alt = cleanText(b.image_alt);
+        if (alt.length > 90) alt = alt.slice(0, 87) + '...';
+        sources.push(alt);
+      }
+    });
+  }
+
+  // Deduplicate and filter sources
+  const cleanSources = Array.from(new Set(sources))
+    .filter(
+      (s) =>
+        s &&
+        s.length > 5 &&
+        !s.toLowerCase().includes('quiz') &&
+        !s.toLowerCase().includes('portrait card') &&
+        !s.toLowerCase().includes('local link'),
+    )
+    .slice(0, 3);
+
+  // 2. Disciplinary Debate / Historian Focus
+  let debate = '';
+
+  const curatedDebates = {
+    water_and_sanitation: {
+      0: 'Roman engineering triumphalism vs lived public health reality: lead piping & parasite transmission',
+      1: 'Medieval hygiene myths: Religious purity and monastic engineering vs urban municipal paralysis',
+      2: 'Laissez-faire policy debate & Roy Porter on early modern infrastructure limits; technological innovation vs municipal failure',
+      3: 'Industrial urbanisation: Miasma theory vs early contagionist epidemiology; laissez-faire vs state health intervention',
+      4: 'The Great Stink of 1858: Parliamentary self-interest and physical stench vs municipal laissez-faire ideology',
+      5: "Snow's empirical epidemiological mapping vs the entrenched medical establishment and Board of Health",
+    },
+  };
+
+  if (curatedDebates[uid] && curatedDebates[uid][idx]) {
+    debate = curatedDebates[uid][idx];
+  } else if (lesson.historians_corner?.title) {
+    debate =
+      `${cleanText(lesson.historians_corner.title)}: ${cleanText(lesson.historians_corner.text || '')}`.slice(
+        0,
+        150,
+      );
+  } else if (lesson.historical_interpretations) {
+    const hi = lesson.historical_interpretations;
+    const title =
+      hi.title ||
+      (typeof hi === 'string'
+        ? hi
+        : 'Evaluating competing academic interpretations and historiographical perspectives');
+    debate = cleanText(title);
+  } else if (lesson.teacher_notes?.objectives) {
+    const debObj = lesson.teacher_notes.objectives.find(
+      (o) =>
+        o.objective &&
+        (o.objective.toLowerCase().includes('debate') ||
+          o.objective.toLowerCase().includes('evaluate') ||
+          o.objective.toLowerCase().includes('extent') ||
+          o.objective.toLowerCase().includes('interpret') ||
+          o.objective.toLowerCase().includes('contrast')),
+    );
+    if (debObj) {
+      debate = cleanText(debObj.objective);
+    }
+  }
+
+  if (!debate) {
+    const concept =
+      lesson.disciplinary_concept ||
+      lesson.disciplinary_focus ||
+      lesson.historical_concept ||
+      'Historical Enquiry';
+    debate = `Core Disciplinary Concept: ${concept} & Causal Argumentation`;
+  }
+
+  // 3. Core Written Assessment
+  let assessment = '';
+
+  if (lesson.extended?.question) {
+    assessment = cleanText(lesson.extended.question);
+  } else if (lesson.gcse_task?.topic) {
+    assessment = `[8 Marks] How useful are Sources A and B for an enquiry into ${cleanText(lesson.gcse_task.topic)}?`;
+  } else if (lesson.exam_practice) {
+    const qList = Array.isArray(lesson.exam_practice)
+      ? lesson.exam_practice
+      : lesson.exam_practice.questions || [];
+    if (qList.length > 0) {
+      assessment = qList
+        .map((q) => {
+          const m = q.marks ? `[${q.marks} Marks] ` : '';
+          return `${m}${cleanText(q.question)}`;
+        })
+        .join(' • ');
+    }
+  } else if (lesson.peel_paragraph?.question) {
+    assessment = `[PEEL Paragraph] ${cleanText(lesson.peel_paragraph.question)}`;
+  } else if (lesson.formative_assessment?.question) {
+    assessment = `[Assessment Task] ${cleanText(lesson.formative_assessment.question)}`;
+  } else if (lesson.lesson_assessment?.question) {
+    assessment = `[Assessment Task] ${cleanText(lesson.lesson_assessment.question)}`;
+  } else if (lesson.narrative_blocks) {
+    const writtenTask = lesson.narrative_blocks
+      .flatMap((b) => b.tasks || [])
+      .find((t) => t.type === 'extended_writing' || t.type === 'peel_paragraph');
+    if (writtenTask) {
+      assessment = `[Written Task] ${cleanText(writtenTask.question || writtenTask.text || writtenTask.instruction)}`;
+    }
+  }
+
+  if (!assessment) {
+    assessment = `[Written Synthesis] Complete structured analytical enquiry response in pupil workbook.`;
+  }
+
+  if (assessment.length > 190) {
+    assessment = assessment.slice(0, 187) + '...';
+  }
+
+  const evidenceText =
+    cleanSources.length > 0
+      ? cleanSources.join('; ')
+      : 'Contemporary primary excerpts and archival evidence.';
+  return {
+    evidence: evidenceText,
+    sources: evidenceText,
+    debate,
+    assessment,
+  };
+}
 
 function generateOverviewHTML(db) {
   let html = `<!DOCTYPE html><html lang="en">${commonHead}<body>`;
@@ -460,9 +818,9 @@ function generateSOWHTML(db, yearGroup, unitIds) {
                     <table style="width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 8pt;">
                         <thead>
                             <tr>
-                                <th style="width: 25%">Lesson Number &amp; Title</th>
-                                <th style="width: 35%">Learning Objectives</th>
-                                <th style="width: 40%">Core Assessment &amp; Tasks</th>
+                                <th style="width: 20%">Lesson Number &amp; Title</th>
+                                <th style="width: 32%">Learning Objectives &amp; Enquiry</th>
+                                <th style="width: 48%">Curriculum Rigour: Evidence, Debate &amp; Assessment</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -517,184 +875,7 @@ function generateSOWHTML(db, yearGroup, unitIds) {
           if (hingeObj) hinge = hingeObj.question;
         }
 
-        // Extract Disciplinary Focus
-        let discFocus =
-          lesson.disciplinary_concept ||
-          lesson.disciplinary_focus ||
-          lesson.historical_concept ||
-          '';
-        if (!discFocus) {
-          // Check source_tasks from lesson data OR from metadata fallback
-          const metaLesson = sourcePeelMeta[uid]?.lessons?.[idx];
-          const hasSourceTasks =
-            lesson.source_tasks ||
-            (metaLesson && metaLesson.source_task_count > 0) ||
-            (lesson.formative_assessment && lesson.formative_assessment.type === 'source_utility');
-
-          if (hasSourceTasks) discFocus = 'Source Utility';
-          else if (lesson.peel_paragraph) discFocus = 'Historical Argumentation';
-          else if (lesson.exam_practice && lesson.exam_practice.length > 0)
-            discFocus = 'Historical Enquiry & Exam Skills';
-          else {
-            // Bespoke labels to avoid repetitive "Historical Knowledge & Understanding"
-            const bespokeLabels = {
-              medieval_england: 'Medieval Society & Power',
-              industrialisation_and_empire: 'Empire & Societal Shift',
-              great_war: 'Geopolitical Context',
-              great_war_part2: 'Modern Warfare Dynamics',
-              water_and_sanitation: 'Chronological Frameworks',
-              early_modern_world: 'Global Trade & Colonisation',
-              australia: 'Indigenous Encounters & Settlement',
-            };
-            discFocus = bespokeLabels[uid] || 'Knowledge & Schema Building';
-          }
-        }
-
-        // Extract Core Assessment & Tasks
-        let tasks = [];
-
-        // Formative Assessments
-        if (lesson.formative_assessment) {
-          const faArray = Array.isArray(lesson.formative_assessment)
-            ? lesson.formative_assessment
-            : [lesson.formative_assessment];
-          faArray.forEach((fa) => {
-            if (fa.question) {
-              tasks.push(`Assessment: ${fa.question}`);
-            } else if (fa.type === 'source_utility') {
-              tasks.push(`Source Utility Analysis`);
-            } else {
-              tasks.push(`Formative Assessment Activity`);
-            }
-          });
-        }
-
-        // PEEL Paragraph
-        if (lesson.peel_paragraph) {
-          if (lesson.peel_paragraph.question) {
-            let concept = 'Argumentation';
-            if (discFocus.toLowerCase().includes('causation')) concept = 'Causation';
-            else if (discFocus.toLowerCase().includes('change')) concept = 'Change & Continuity';
-            else if (discFocus.toLowerCase().includes('significance')) concept = 'Significance';
-
-            tasks.push(`PEEL Paragraph (${concept}): ${lesson.peel_paragraph.question}`);
-          } else {
-            tasks.push(`PEEL Paragraph Analysis`);
-          }
-        }
-
-        // GCSE Exam Practice
-        if (lesson.exam_practice && lesson.exam_practice.length > 0) {
-          lesson.exam_practice.forEach((ep) => {
-            if (ep.question) {
-              tasks.push(`Exam Practice (${ep.marks} marks): ${ep.question}`);
-            } else if (ep.marks) {
-              tasks.push(`GCSE Exam Practice (${ep.marks} marks)`);
-            } else {
-              tasks.push(`GCSE Exam Practice`);
-            }
-          });
-        }
-
-        // Comprehension & Sources
-        if (lesson.comprehension && lesson.comprehension.length > 0) {
-          const quizLabels = [
-            'Knowledge Recall Quiz',
-            'Comprehension Activity',
-            'Core Knowledge Check',
-            `Recall Quiz (${lesson.comprehension.length} questions)`,
-          ];
-          tasks.push(quizLabels[idx % quizLabels.length]);
-        }
-
-        // Interpretations
-        if (lesson.historical_interpretations) {
-          tasks.push(
-            `Historical Interpretations: ${lesson.historical_interpretations.title || 'Evaluating Historians'}`,
-          );
-        }
-
-        // Extract heavy tasks from narrative_blocks
-        // Skip if formative_assessment already provided a clean assessment question
-        const hasCleanAssessment =
-          lesson.formative_assessment &&
-          (lesson.formative_assessment.question ||
-            (Array.isArray(lesson.formative_assessment) &&
-              lesson.formative_assessment.some((fa) => fa.question)));
-
-        if (!hasCleanAssessment && lesson.narrative_blocks) {
-          lesson.narrative_blocks.forEach((block) => {
-            if (block.tasks) {
-              block.tasks.forEach((t) => {
-                if (t.type === 'extended_writing' || t.type === 'peel_paragraph') {
-                  let q = t.question || t.instruction || 'Extended Writing';
-                  // Sanitize: strip HTML tags, newline escapes, and limit length
-                  q = q
-                    .replace(/<[^>]+>/g, '')
-                    .replace(/\\n/g, ' ')
-                    .split('\n')[0]
-                    .replace(/^Task\s+\d+:\s*/i, '')
-                    .trim();
-                  if (q.length > 150) q = q.substring(0, 147) + '...';
-
-                  let concept = 'Argumentation';
-                  if (discFocus.toLowerCase().includes('causation')) concept = 'Causation';
-                  else if (discFocus.toLowerCase().includes('change'))
-                    concept = 'Change & Continuity';
-                  else if (discFocus.toLowerCase().includes('significance'))
-                    concept = 'Significance';
-                  else if (discFocus.toLowerCase().includes('utility')) concept = 'Source Utility';
-
-                  tasks.push(`PEEL Paragraph (${concept}): ${q}`);
-                } else if (t.type === 'creative_writing') {
-                  let q = t.question || t.instruction || 'Creative Writing';
-                  q = q
-                    .replace(/<[^>]+>/g, '')
-                    .replace(/\\n/g, ' ')
-                    .split('\n')[0]
-                    .replace(/^Task\s+\d+:\s*/i, '')
-                    .trim();
-                  if (q.length > 150) q = q.substring(0, 147) + '...';
-                  tasks.push(`Creative Task: ${q}`);
-                }
-              });
-            }
-          });
-        }
-
-        // Source tasks from data.js or metadata fallback
-        const metaL = sourcePeelMeta[uid]?.lessons?.[idx];
-        const hasSourceTasks =
-          lesson.source_tasks?.length > 0 || (metaL && metaL.source_task_count > 0);
-        const hasPeelTasks = metaL && metaL.peel_task_count > 0;
-
-        if (hasSourceTasks) {
-          const sourceLabels = [
-            'Evaluating Primary Evidence',
-            'Interrogating Historical Sources',
-            'Primary Source Analysis',
-            'Working with Contemporary Accounts',
-          ];
-          tasks.push(sourceLabels[idx % sourceLabels.length]);
-        }
-        if (hasPeelTasks) {
-          const peelLabels = [
-            'Extended Writing (PEEL)',
-            'Structured Paragraph',
-            'Exam Practice Writing',
-            'Analytical Essay',
-          ];
-          tasks.push(peelLabels[idx % peelLabels.length]);
-        }
-
-        let tasksHTML =
-          tasks.length > 0
-            ? `<ul class="task-list">` +
-              Array.from(new Set(tasks))
-                .map((t) => `<li>${t}</li>`)
-                .join('') +
-              `</ul>`
-            : '<span style="color:#94a3b8; font-style:italic;">Narrative exploration and class discussion</span>';
+        const tier = extractLessonThreeTier(lesson, uid, unitData, idx);
 
         html += `
                         <tr>
@@ -706,9 +887,21 @@ function generateSOWHTML(db, yearGroup, unitIds) {
                                 ${objsHTML}
                                 ${hinge ? `<span class="hinge-question">Hinge Q: ${hinge}</span>` : ''}
                             </td>
-                            
                             <td>
-                                ${tasksHTML}
+                                <div class="sow-three-tier">
+                                    <div class="tier-box tier-evidence">
+                                        <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                                        <div class="tier-content">${tier.evidence}</div>
+                                    </div>
+                                    <div class="tier-box tier-debate">
+                                        <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                                        <div class="tier-content">${tier.debate}</div>
+                                    </div>
+                                    <div class="tier-box tier-assessment">
+                                        <div class="tier-label">✍️ Core Written Assessment:</div>
+                                        <div class="tier-content">${tier.assessment}</div>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                     `;
@@ -720,9 +913,9 @@ function generateSOWHTML(db, yearGroup, unitIds) {
                     <table style="width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 8pt;">
                         <thead>
                             <tr>
-                                <th style="width: 25%">Lesson Number &amp; Title</th>
-                                <th style="width: 35%">Learning Objectives &amp; Enquiry</th>
-                                <th style="width: 40%">Core Assessment &amp; Disciplinary Tasks</th>
+                                <th style="width: 20%">Lesson Number &amp; Title</th>
+                                <th style="width: 32%">Learning Objectives &amp; Enquiry</th>
+                                <th style="width: 48%">Curriculum Rigour: Evidence, Debate &amp; Assessment</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -739,7 +932,20 @@ function generateSOWHTML(db, yearGroup, unitIds) {
                                 <span class="hinge-question">Hinge Q: ${l.hinge}</span>
                             </td>
                             <td>
-                                <ul class="task-list"><li>${l.tasks}</li></ul>
+                                <div class="sow-three-tier">
+                                    <div class="tier-box tier-evidence">
+                                        <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                                        <div class="tier-content">${l.evidence || 'Contemporary primary excerpts and archival evidence.'}</div>
+                                    </div>
+                                    <div class="tier-box tier-debate">
+                                        <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                                        <div class="tier-content">${l.debate || 'Historiographical interpretation and historical debate.'}</div>
+                                    </div>
+                                    <div class="tier-box tier-assessment">
+                                        <div class="tier-label">✍️ Core Written Assessment:</div>
+                                        <div class="tier-content">${l.assessment || l.tasks || 'Structured written assessment.'}</div>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                     `;
@@ -791,13 +997,14 @@ function generateSOWHTML(db, yearGroup, unitIds) {
         try {
           // Dynamically import the ES module
           const dataModule = await import(require('url').pathToFileURL(dataPath).href);
-          if (dataModule && dataModule.unitData) {
+          const uData = dataModule?.unitData || dataModule?.default;
+          if (uData) {
             if (!db[uid]) db[uid] = { data: {} };
-            if (dataModule.unitData.lessons) {
-              db[uid].data.lessons = dataModule.unitData.lessons;
+            if (uData.lessons) {
+              db[uid].data.lessons = uData.lessons;
             }
-            if (dataModule.unitData.teacher_notes) {
-              db[uid].data.teacher_notes = dataModule.unitData.teacher_notes;
+            if (uData.teacher_notes) {
+              db[uid].data.teacher_notes = uData.teacher_notes;
             }
           }
         } catch (e) {

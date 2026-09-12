@@ -221,14 +221,52 @@
         margin-bottom: 2px;
       }
 
-      .task-list {
-        margin: 0;
-        padding-left: 14px;
-        color: #334155;
-        font-size: 7.8pt;
+      /* SOW 3-Tier Task Extractor Styles */
+      .sow-three-tier {
+        display: flex;
+        flex-direction: column;
+        gap: 4.5px;
       }
-      .task-list li {
+      .tier-box {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 4px;
+        padding: 4px 7px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+      }
+      .tier-label {
+        font-size: 6.8pt;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
         margin-bottom: 2px;
+      }
+      .tier-evidence {
+        border-left: 3.5px solid #1e3a8a;
+      }
+      .tier-evidence .tier-label {
+        color: #1e3a8a;
+      }
+      .tier-debate {
+        border-left: 3.5px solid #b45309;
+      }
+      .tier-debate .tier-label {
+        color: #b45309;
+      }
+      .tier-assessment {
+        border-left: 3.5px solid #0f766e;
+      }
+      .tier-assessment .tier-label {
+        color: #0f766e;
+      }
+      .tier-content {
+        font-size: 7.3pt;
+        color: #1e293b;
+        line-height: 1.28;
+      }
+      .tier-assessment .tier-content {
+        font-weight: 600;
+        color: #0f172a;
       }
     </style>
   </head>
@@ -409,9 +447,9 @@
       <table style="width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 8pt">
         <thead>
           <tr>
-            <th style="width: 25%">Lesson Number &amp; Title</th>
-            <th style="width: 35%">Learning Objectives</th>
-            <th style="width: 40%">Core Assessment &amp; Tasks</th>
+            <th style="width: 20%">Lesson Number &amp; Title</th>
+            <th style="width: 32%">Learning Objectives &amp; Enquiry</th>
+            <th style="width: 48%">Curriculum Rigour: Evidence, Debate &amp; Assessment</th>
           </tr>
         </thead>
         <tbody>
@@ -431,14 +469,26 @@
                 <li>Analyse the rational, natural theories of disease used in medieval England.</li>
               </ul>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (12 marks): Explain why there was so little change in ideas about
-                  the cause of disease in the years c.1250-c.1500.
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">Source A: The Four Humours</div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The Debate over the Medieval Church's Impact on Medicine: For decades,
+                    traditional historians portrayed the medieval Catholic Church as a dogmatic ins
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    Describe two features of Galen's Theory of Opposites. (4 marks)
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
 
@@ -461,14 +511,26 @@
                 </li>
               </ul>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (12 marks): Explain why there was little change in the care provided
-                  by hospitals in the period c.1250-c.1500.
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">Source A: Medieval Bloodletting</div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The Debate over the Effectiveness of Medieval Hospitals: Traditional historical
+                    accounts often dismissed medieval hospitals as dirty, unhygienic place
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    Describe two features of the role of the medieval apothecary. (4 marks)
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
 
@@ -486,16 +548,27 @@
                 </li>
               </ul>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (16 marks): 'The main reason why medical care and treatment was
-                  ineffective during the medieval period (c1250-c1500) was because medical knowledge
-                  was based on Galen's ideas.' How far do you agree? Explain your answer. (16 marks
-                  + 4 marks for SPaG)
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">Source A: The Black Death</div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The Debate over the Socio-Economic Impact of the Black Death: Historians are
+                    deeply divided over the long-term impact of the Black Death on medieval E
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    Describe two features of how medieval people tried to prevent the spread of the
+                    Black Death. (4 marks)
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
 
@@ -518,15 +591,27 @@
                 </li>
               </ul>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (12 marks): Explain why there were changes in the way ideas about
-                  the causes of disease and illness were communicated in the period c1500-c1700. (12
-                  marks)
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">Source A: The Printing Press</div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The Debate over the Pace of Change in Renaissance Medicine: Historians often
+                    debate the extent to which the Renaissance c1500-c1700 represented a genu
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [12 Marks] Explain why there were changes in the way ideas about the causes of
+                    disease and illness were communicated in the period c1500-c1700. (12 marks)
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
 
@@ -547,14 +632,27 @@
                 </li>
               </ul>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (12 marks): Explain why there was rapid progress in anatomical
-                  knowledge in the Renaissance period (c1500-c1700). (12 marks)
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">Source A: Pare and Paracelsus</div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The Debate over Renaissance Progress: Breakthrough or Backstep?: Historians
+                    actively debate whether the Renaissance represented genuine progress in pa
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [12 Marks] Explain why there was rapid progress in anatomical knowledge in the
+                    Renaissance period (c1500-c1700). (12 marks)
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
 
@@ -577,15 +675,28 @@
                 </li>
               </ul>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (16 marks): 'The most effective method of preventing the spread of
-                  the Great Plague (1665) was the use of quarantine.' How far do you agree? Explain
-                  your answer. (16 marks + 4 marks for SPaG)
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">Source A: Harvey on the Heart</div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The Debate over the Significance of William Harvey: Historians often debate
+                    whether William Harvey represents a sudden turning point or a very gradual
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [16 Marks] 'The most effective method of preventing the spread of the Great
+                    Plague (1665) was the use of quarantine.' How far do you agree? Explain your
+                    answer. (16 marks + 4 marks for SPaG)
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
 
@@ -604,15 +715,27 @@
                 </li>
               </ul>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (16 marks): 'Louis Pasteur's publication of the Germ Theory was the
-                  biggest turning point in understanding the causes of disease.' How far do you
-                  agree? Explain your answer.
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">Source A: Pasteur in the Lab</div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The Debate over the Pace of the Germ Theory Revolution: Historians actively
+                    debate how quickly Germ Theory transformed medical beliefs in Britain. Whi
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    Describe two features of Robert Koch's scientific methods for identifying
+                    bacteria. (4 marks)
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
 
@@ -639,15 +762,28 @@
                 </li>
               </ul>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (16 marks): 'The discovery of Carbolic Acid was the most significant
-                  turning point in surgery in the years c1700-c1900.' How far do you agree? Explain
-                  your answer. (16 marks + 4 marks for SPaG)
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">Source A: Florence Nightingale</div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The Debate over the 'Black Period' of Surgery: Historians frequently debate the
+                    immediate consequences of James Simpson's 1847 discovery of chloroform
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [16 Marks] 'The discovery of Carbolic Acid was the most significant turning
+                    point in surgery in the years c1700-c1900.' How far do you agree? Explain your
+                    answer. (16 marks + 4 marks for ...
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
 
@@ -670,14 +806,27 @@
                 </li>
               </ul>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (12 marks): Explain why there was rapid progress in public health in
-                  the second half of the nineteenth century (c1850-c1900). (12 marks)
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">Source A: The Broad Street Pump</div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The Debate over the Catalysts for Victorian Public Health Reform: Historians
+                    debate the extent to which John Snow's 1854 Broad Street investigation wa
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [12 Marks] Explain why there was rapid progress in public health in the second
+                    half of the nineteenth century (c1850-c1900). (12 marks)
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
 
@@ -700,15 +849,28 @@
                 </li>
               </ul>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (16 marks): 'The discovery of DNA was the most significant
-                  breakthrough in understanding the causes of illness in the period c.1900-present.'
-                  How far do you agree? Explain your answer.
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">Source A: DNA Structure</div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The Debate over the Significance of DNA vs. Germ Theory: GCSE historians
+                    frequently debate whether the 1953 discovery of the structure of DNA represen
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    'The discovery of DNA was the most significant breakthrough in understanding the
+                    causes of illness in the period c1900-present.' How far do you agree? Explain
+                    your answer. (16 marks) You ...
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
 
@@ -731,14 +893,27 @@
                 </li>
               </ul>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (12 marks): Explain why there was rapid progress in disease
-                  prevention in the period c1900-present. (12 marks)
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">Source A: The NHS Established</div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The Debate over the Significance of the Beveridge Report in the Foundation of
+                    the NHS: Historians debate the extent to which the 1942 Beveridge Report
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [12 Marks] Explain why there was rapid progress in disease prevention in the
+                    period c1900-present. (12 marks)
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
 
@@ -761,15 +936,28 @@
                 </li>
               </ul>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (16 marks): 'Alexander Fleming was the most important individual in
-                  the development of penicillin.' How far do you agree? Explain your answer. (16
-                  marks + 4 marks for SPaG)
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">Source A: Fleming and Penicillin</div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The Debate over the 'Myth' of Fleming and the Penicillin Breakthrough: For
+                    decades, popular historical accounts portrayed Alexander Fleming as the sol
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [16 Marks] 'Alexander Fleming was the most important individual in the
+                    development of penicillin.' How far do you agree? Explain your answer. (16 marks
+                    + 4 marks for SPaG)
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
 
@@ -792,14 +980,27 @@
                 </li>
               </ul>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (12 marks): Explain why the government took action to improve public
-                  health in the period c1900-present. (12 marks)
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">Source A: Anti-Smoking Campaign</div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The Debate over the Motives for Modern Public Health Interventions: Historians
+                    of modern medicine actively debate what primarily drove the British gov
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [12 Marks] Explain why the government took action to improve public health in
+                    the period c1900-present. (12 marks)
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
 
@@ -818,31 +1019,28 @@
                 </li>
               </ul>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (2 marks): Describe one feature of aseptic surgery in the early 20th
-                  century. (2 marks)
-                </li>
-                <li>
-                  Exam Practice (2 marks): Describe one feature of early x-ray machines. (2 marks)
-                </li>
-                <li>
-                  Exam Practice (8 marks):
-                  <strong
-                    >How useful are Sources A and B for an enquiry into the state of medical
-                    technology available to British doctors on the eve of the First World
-                    War?</strong
-                  >
-                  Explain your answer, using Sources A and B and your knowledge of the historical
-                  context.
-                </li>
-                <li>
-                  Exam Practice (4 marks): How could you follow up Source A to find out more about
-                  the problem of storing blood before the First World War?
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">Source A: The Western Front</div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The Debate over the Source of Medical Innovation in World War I: Historians of
+                    military medicine debate whether the rapid medical advances of the Firs
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    1 (a). How useful are Sources A and B for an enquiry into the problem of storing
+                    blood for transfusions before the First World War? Explain your answer, using
+                    Sources A and B and your kno...
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
 
@@ -865,35 +1063,28 @@
                 </li>
               </ul>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (2 marks): Describe one feature of the support trench system on the
-                  Western Front. (2 marks)
-                </li>
-                <li>
-                  Exam Practice (2 marks): Describe one feature of the problems involved in
-                  transporting wounded soldiers away from the battleground. (2 marks)
-                </li>
-                <li>
-                  Exam Practice (8 marks):
-                  <strong
-                    >How useful are Sources A and B for an enquiry into the difficulties faced by
-                    soldiers in the trench system of the Western Front?</strong
-                  >
-                  Explain your answer, using Sources A and B and your knowledge of the historical
-                  context.
-                </li>
-                <li>
-                  Exam Practice (4 marks): How could you follow up Source A to find out more about
-                  the work of the stretcher bearers on the Western Front?
-                </li>
-                <li>
-                  Exam Practice (4 marks): How could you follow up Source A to find out more about
-                  the problem of trench foot?
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">Source A: Map of the Somme Offensive</div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The Debate over the Treatment and Diagnosis of Shell Shock (NYD.N): Historians
+                    of military medicine actively debate the British Army's evolving respon
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    2 (a). How useful are Sources A and B for an enquiry into the impact of the
+                    terrain on the transport of the wounded on the Western Front? Explain your
+                    answer, using Sources A and B and yo...
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
 
@@ -916,27 +1107,30 @@
                 </li>
               </ul>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (2 marks): Describe one feature of poison gas attacks on the Western
-                  Front. (2 marks)
-                </li>
-                <li>
-                  Exam Practice (2 marks): Describe one feature of the fighting on the Western Front
-                  that led to a high number of injuries. (2 marks)
-                </li>
-                <li>
-                  Exam Practice (8 marks): How useful are Sources A and B for an enquiry into the
-                  problem of ill health arising from the trench environment? Explain your answer,
-                  using Sources A and B and your knowledge of the historical context.
-                </li>
-                <li>
-                  Exam Practice (4 marks): How could you follow up Source A to find out more about
-                  the treatment and prevention of the effects of gas attacks?
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Source A: The devastated, muddy terrain of Passchendaele
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The Debate over the Diagnosis and Treatment of Shell Shock (NYD.N): Historians
+                    of military medicine are deeply divided over the British Army's respons
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    2 (a). How useful are Sources A and B for an enquiry into the effects of poison
+                    gas attacks on soldiers on the Western Front? Explain your answer, using Sources
+                    A and B and your knowledge...
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
 
@@ -959,28 +1153,30 @@
                 </li>
               </ul>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (2 marks): Describe one feature of the underground hospital at
-                  Arras. (2 marks)
-                </li>
-                <li>
-                  Exam Practice (2 marks): Describe one feature of the work of the FANY on the
-                  Western Front. (2 marks)
-                </li>
-                <li>
-                  Exam Practice (8 marks): How useful are Sources A and B for an enquiry into the
-                  work of medical staff in the Casualty Clearing Stations (CCS) on the Western
-                  Front? Explain your answer, using Sources A and B and your knowledge of the
-                  historical context.
-                </li>
-                <li>
-                  Exam Practice (4 marks): How could you follow up Source A to find out more about
-                  the work of medical staff in the Casualty Clearing Stations?
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Contemporary primary excerpts and archival evidence.
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The Debate over the Primary Role of Casualty Clearing Stations: Historians of
+                    military medicine actively debate how the roles of Casualty Clearing Sta
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    2 (a). How useful are Sources A and B for an enquiry into the problems of
+                    transporting the wounded on the Western Front? Explain your answer, using
+                    Sources A and B and your knowledge of t...
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
 
@@ -1003,31 +1199,30 @@
                 </li>
               </ul>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (2 marks): Describe one feature of the Thomas Splint. (2 marks)
-                </li>
-                <li>
-                  Exam Practice (2 marks): Describe one feature of the medical advances in blood
-                  transfusions on the Western Front. (2 marks)
-                </li>
-                <li>
-                  Exam Practice (8 marks):
-                  <strong
-                    >How useful are Sources A and B for an enquiry into the effectiveness of new
-                    medical developments used to treat wounded soldiers on the Western
-                    Front?</strong
-                  >
-                  Explain your answer, using Sources A and B and your knowledge of the historical
-                  context.
-                </li>
-                <li>
-                  Exam Practice (4 marks): How could you follow up Source A to find out more about
-                  new techniques being used on the Western Front to deal with injuries?
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Contemporary primary excerpts and archival evidence.
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The Debate over the Western Front as a Catalyst for Medical Innovation: Military
+                    and social historians actively debate the true significance of the Fi
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    2 (a). How useful are Sources A and B for an enquiry into the effectiveness of
+                    new medical developments used to treat wounded soldiers on the Western Front?
+                    Explain your answer, using Sou...
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
         </tbody>
@@ -1045,9 +1240,9 @@
       <table style="width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 8pt">
         <thead>
           <tr>
-            <th style="width: 25%">Lesson Number &amp; Title</th>
-            <th style="width: 35%">Learning Objectives</th>
-            <th style="width: 40%">Core Assessment &amp; Tasks</th>
+            <th style="width: 20%">Lesson Number &amp; Title</th>
+            <th style="width: 32%">Learning Objectives &amp; Enquiry</th>
+            <th style="width: 48%">Curriculum Rigour: Evidence, Debate &amp; Assessment</th>
           </tr>
         </thead>
         <tbody>
@@ -1059,45 +1254,29 @@
             <td>
               <span style="color: #94a3b8; font-style: italic">Historical Enquiry</span>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of Elizabethan society in
-                  1558.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of Elizabethan government in
-                  1558.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of the financial weaknesses
-                  Elizabeth faced upon her accession in 1558.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of the French threat to
-                  England in 1558.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Explain why Elizabeth's legitimacy was questioned
-                  when she became queen in 1558. Stimulus: Her parents' marriage / Mary, Queen of
-                  Scots
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Explain why Elizabeth was reluctant to marry when
-                  she became queen. Stimulus: Royal power / Foreign suitors
-                </li>
-                <li>
-                  Exam Practice (undefined marks): ‘The problem of Elizabeth’s legitimacy was the
-                  main problem she faced when she became queen in 1558.’ How far do you agree?
-                  Stimulus: Royal finances / The French threat
-                </li>
-                <li>
-                  Exam Practice (undefined marks): ‘Financial weakness was Elizabeth’s main problem
-                  when she became queen in 1558.’ How far do you agree? Stimulus: The Crown’s debt /
-                  Elizabeth’s legitimacy
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">Source A: The Religious Divide</div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    Evaluate the interconnected domestic and foreign threats facing England in 1558,
+                    specifically severe financial weaknesses, the loss of Calais, and the dangerous
+                    'Auld Alliance' between France and Scotland.
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    Describe one feature of Elizabethan society in 1558. • Describe one feature of
+                    Elizabethan government in 1558. • Describe one feature of the financial
+                    weaknesses Elizabeth faced upon her ...
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
 
@@ -1109,35 +1288,29 @@
             <td>
               <span style="color: #94a3b8; font-style: italic">Historical Enquiry</span>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of the Act of Supremacy
-                  (1559).
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of the Act of Uniformity
-                  (1559).
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of the role of the Church of
-                  England in society.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of the Royal Injunctions of
-                  1559.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Explain why Elizabeth introduced a Religious
-                  Settlement in 1559. Stimulus: Religious divisions in England / The 'Middle Way'
-                </li>
-                <li>
-                  Exam Practice (undefined marks): ‘Elizabeth’s religious settlement was
-                  successful.’ How far do you agree? Stimulus: The 'middle way' / Catholic rebels in
-                  England
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">Source A: The Act of Supremacy</div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    Evaluate the nature and extent of the Puritan and Catholic challenges to the
+                    religious settlement, including the role of the nobility, the Papacy, and
+                    foreign powers.
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    Describe one feature of the Act of Supremacy (1559). • Describe one feature of
+                    the Act of Uniformity (1559). • Describe one feature of the role of the Church
+                    of England in society. • Desc...
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
 
@@ -1149,35 +1322,28 @@
             <td>
               <span style="color: #94a3b8; font-style: italic">Historical Enquiry</span>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of the Puritan challenge to
-                  the Religious Settlement.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of the Catholic challenge to
-                  the Religious Settlement.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of recusancy in early
-                  Elizabethan England.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Explain why the Puritans challenged Elizabeth’s
-                  religious settlement. Stimulus: Vestments / Crucifixes
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Explain why English Catholics challenged
-                  Elizabeth's religious settlement. Stimulus: Papal authority / Catholic nobility
-                </li>
-                <li>
-                  Exam Practice (undefined marks): ‘The most significant challenge to Elizabeth I’s
-                  religious settlement, in the years 1558–68, came from English Catholics.’ How far
-                  do you agree? Stimulus: Recusancy fines / The Puritan campaign against crucifixes
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">Source A: Papal Bull</div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    Understand the nature and extent of the Puritan challenge, focusing on their
+                    theological objections, the Crucifix Controversy, and the Vestment Controversy.
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    Describe one feature of the Puritan challenge to the Religious Settlement. •
+                    Describe one feature of the Catholic challenge to the Religious Settlement. •
+                    Describe one feature of recusanc...
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
 
@@ -1189,33 +1355,27 @@
             <td>
               <span style="color: #94a3b8; font-style: italic">Historical Enquiry</span>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of Mary, Queen of Scots'
-                  claim to the English throne.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of the relations between
-                  Elizabeth and Mary, Queen of Scots, in the years 1568–69.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Explain why Mary, Queen of Scots' arrival in
-                  England in 1568 created problems for Elizabeth. Stimulus: Legitimacy / Catholic
-                  alternative
-                </li>
-                <li>
-                  Exam Practice (undefined marks): ‘Mary Queen of Scots was the greatest threat to
-                  Elizabeth’s rule.’ How far do you agree? Stimulus: Catholic plots / Foreign
-                  intervention
-                </li>
-                <li>
-                  Exam Practice (undefined marks): ‘The main cause of tension between Elizabeth and
-                  Mary, Queen of Scots, was Mary’s claim to the English throne.’ How far do you
-                  agree? Stimulus: Elizabeth’s legitimacy / Plots
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">Source A: Mary Queen of Scots</div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    Core Disciplinary Concept: Historical Enquiry & Causal Argumentation
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    Describe one feature of Mary, Queen of Scots' claim to the English throne. •
+                    Describe one feature of the relations between Elizabeth and Mary, Queen of
+                    Scots, in the years 1568–69. • Expl...
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
 
@@ -1231,44 +1391,28 @@
                 <li>Explain how Walsingham used spies to catch plotters.</li>
               </ul>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of the Revolt of the
-                  Northern Earls, 1569–70.
-                </li>
-                <li>Exam Practice (undefined marks): Describe one feature of the Ridolfi plot.</li>
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of the Throckmorton plot.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of the Babington plot.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of Sir Francis Walsingham’s
-                  use of spies.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Explain why the Revolt of the Northern Earls took
-                  place in 1569. Stimulus: Loss of political power / Religion
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Explain why Mary, Queen of Scots, was executed in
-                  1587. [Aligned to Spec Topic] Stimulus: The Babington Plot / Sir Francis
-                  Walsingham
-                </li>
-                <li>
-                  Exam Practice (undefined marks): ‘The main reason for the failure of Catholic
-                  plots against Elizabeth was the work of Sir Francis Walsingham.’ How far do you
-                  agree? Stimulus: Spies / Lack of foreign support
-                </li>
-                <li>
-                  Exam Practice (undefined marks): ‘The Revolt of the Northern Earls was the most
-                  significant challenge to Elizabeth’s rule in the years 1569–86.’ How far do you
-                  agree? Stimulus: Earl of Northumberland / Babington’s execution (1586)
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">Source A: The Northern Earls</div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    Evaluate the methods used by Sir Francis Walsingham and his use of spies to
+                    uncover treason.
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    Describe one feature of the Revolt of the Northern Earls, 1569–70. • Describe
+                    one feature of the Ridolfi plot. • Describe one feature of the Throckmorton
+                    plot. • Describe one feature of t...
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
 
@@ -1280,32 +1424,28 @@
             <td>
               <span style="color: #94a3b8; font-style: italic">Historical Enquiry</span>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of English privateering in
-                  the New World.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of the religious rivalry
-                  between England and Spain.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of Sir Francis Drake's
-                  activities in the Americas.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Explain why relations between England and Spain
-                  became worse in the years 1569–88. Stimulus: Catholic rebels in England / English
-                  trade in the Netherlands
-                </li>
-                <li>
-                  Exam Practice (undefined marks): ‘Commercial rivalry was the main cause of the
-                  growing tension between England and Spain in the years 1570–88.’ How far do you
-                  agree? Stimulus: Privateering / Religious differences
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">Source A: Philip II of Spain</div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    Evaluate the reasons for the Armada's catastrophic failure, weighing English
+                    tactics against Spanish mistakes and the weather.
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    Describe one feature of English privateering in the New World. • Describe one
+                    feature of the religious rivalry between England and Spain. • Describe one
+                    feature of Sir Francis Drake's act...
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
 
@@ -1321,31 +1461,28 @@
                 <li>Explain how Francis Drake's raid on Cadiz helped England.</li>
               </ul>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of English involvement in
-                  the Netherlands, 1585–88.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of Drake’s raid on Cadiz in
-                  1587.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of Robert Dudley's actions
-                  in the Netherlands.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Explain why Elizabeth signed the Treaty of
-                  Nonsuch in 1585. Stimulus: The Netherlands / Dutch Protestant rebels
-                </li>
-                <li>
-                  Exam Practice (undefined marks): ‘Drake's raid on Cadiz was the most important
-                  reason for the delay of the Spanish Armada.’ How far do you agree? Stimulus:
-                  Wooden barrel staves / Financial impact on Spain
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">Source A: Francis Drake</div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    Evaluate the strategic impact of Francis Drake's preemptive raid on Cadiz in
+                    1587 ('Singeing the King of Spain's beard').
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    Describe one feature of English involvement in the Netherlands, 1585–88. •
+                    Describe one feature of Drake’s raid on Cadiz in 1587. • Describe one feature of
+                    Robert Dudley's actions in the ...
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
 
@@ -1362,30 +1499,28 @@
                 <li>Describe what happened after the Armada was defeated.</li>
               </ul>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of the Spanish invasion
-                  plans for the Armada.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of English tactics used to
-                  defeat the Spanish Armada.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of the Battle of Gravelines.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Explain why the Spanish Armada was defeated in
-                  1588. Stimulus: Fireships / English ship design
-                </li>
-                <li>
-                  Exam Practice (undefined marks): ‘The English defeated the Spanish Armada because
-                  of superior ship design and naval tactics.’ How far do you agree? Stimulus:
-                  Long-range culverins / The 'Protestant Wind'
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">Source A: The Spanish Armada</div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    Evaluate the intersecting reasons for the English victory, weighing English
+                    tactics against Spanish mistakes and the weather.
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    Describe one feature of the Spanish invasion plans for the Armada. • Describe
+                    one feature of English tactics used to defeat the Spanish Armada. • Describe one
+                    feature of the Battle of Gra...
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
 
@@ -1401,40 +1536,28 @@
                 <li>Explain why the theatre was popular and why some people hated it.</li>
               </ul>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of education in Elizabethan
-                  Grammar Schools.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of Elizabethan Petty
-                  Schools.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of the Elizabethan theatre.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of Elizabethan sport and
-                  pastimes.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Explain why there was an increase in the number
-                  of schools in early Elizabethan England. Stimulus: Humanism / Growth of trade and
-                  business
-                </li>
-                <li>
-                  Exam Practice (undefined marks): ‘The theatre was the most popular form of
-                  entertainment for all classes.’ How far do you agree? Stimulus: The groundlings /
-                  Royal patronage
-                </li>
-                <li>
-                  Exam Practice (undefined marks): ‘There was little change in education in Early
-                  Elizabethan England.’ How far do you agree? Stimulus: Petty schools / Education
-                  for girls
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">Source A: Elizabethan Theatre</div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    Evaluate the reasons for the sudden explosion of the Elizabethan theatre and why
+                    it provoked such fierce opposition from Puritans and city authorities.
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    Describe one feature of education in Elizabethan Grammar Schools. • Describe one
+                    feature of Elizabethan Petty Schools. • Describe one feature of the Elizabethan
+                    theatre. • Describe one fe...
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
 
@@ -1451,28 +1574,28 @@
                 <li>Describe the difference between the 1572 and 1576 Poor Laws.</li>
               </ul>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of the 1572 Vagabonds Act.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of the 1576 Poor Relief Act.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of the Houses of Correction.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Explain why there was an increase in poverty in
-                  the years 1558–88. Stimulus: Unemployment / Bad harvests
-                </li>
-                <li>
-                  Exam Practice (undefined marks): ‘The main reason for the increase in poverty in
-                  the years 1558–88 was the increasing population of England.’ How far do you agree?
-                  Stimulus: Demand for food / Enclosure and sheep farming
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">Source A: The Poor Law</div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    Evaluate the significance of Elizabeth's changing policies, specifically the
+                    1572 Vagabonds Act and the 1576 Poor Relief Act.
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    Describe one feature of the 1572 Vagabonds Act. • Describe one feature of the
+                    1576 Poor Relief Act. • Describe one feature of the Houses of Correction. •
+                    Explain why there was an increase...
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
 
@@ -1489,32 +1612,29 @@
                 <li>Describe the reasons why the Virginia colony completely failed.</li>
               </ul>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of Francis Drake’s
-                  circumnavigation of the globe.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of the impact of new
-                  technology on Elizabethan exploration.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Explain why exploration by the English increased
-                  in the years 1558–88. Stimulus: Navigational instruments / Drive to expand trade
-                </li>
-                <li>
-                  Exam Practice (undefined marks): ‘New technology was the main reason why
-                  exploration by the English increased in the years 1558–88.’ How far do you agree?
-                  Stimulus: Quadrant and astrolabe / Privateering profits
-                </li>
-                <li>
-                  Exam Practice (undefined marks): ‘Drake’s most significant achievement, in the
-                  years 1558–88, was his circumnavigation of the globe.’ How far do you agree?
-                  Stimulus: The Golden Hind / Raid on Cadiz
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">Source A: The Golden Hind</div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    Evaluate the intersecting reasons for the catastrophic failure of the Virginia
+                    colonies, weighing poor planning against Native American resistance and the
+                    Spanish war.
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    Describe one feature of Francis Drake’s circumnavigation of the globe. •
+                    Describe one feature of the impact of new technology on Elizabethan exploration.
+                    • Explain why exploration by the ...
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
 
@@ -1530,31 +1650,29 @@
                 <li>Describe the problems faced by the 1585 and 1587 colonies.</li>
               </ul>
             </td>
-
             <td>
-              <ul class="task-list">
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of the failure of the first
-                  Virginia colony.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Describe one feature of Sir Walter Raleigh's role
-                  in the attempted colonisation of Virginia.
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Explain why the first colony in Virginia failed.
-                  Stimulus: Native Americans / Damage to The Tiger
-                </li>
-                <li>
-                  Exam Practice (undefined marks): Explain why there was an attempt to colonise
-                  Virginia in 1585. Stimulus: Sir Walter Raleigh / New trade routes
-                </li>
-                <li>
-                  Exam Practice (undefined marks): ‘Poor planning was the main reason why the first
-                  colony in Virginia failed.’ How far do you agree? Stimulus: The choice of
-                  colonists / Lack of food supplies
-                </li>
-              </ul>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">Source A: Roanoke Colony</div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    Evaluate the intersecting reasons for the catastrophic failure of the 1585 and
+                    1587 expeditions, weighing poor planning against Native American resistance and
+                    the Spanish Armada.
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    Describe one feature of the failure of the first Virginia colony. • Describe one
+                    feature of Sir Walter Raleigh's role in the attempted colonisation of Virginia.
+                    • Explain why the first co...
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
         </tbody>

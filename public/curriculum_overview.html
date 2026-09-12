@@ -221,14 +221,52 @@
         margin-bottom: 2px;
       }
 
-      .task-list {
-        margin: 0;
-        padding-left: 14px;
-        color: #334155;
-        font-size: 7.8pt;
+      /* SOW 3-Tier Task Extractor Styles */
+      .sow-three-tier {
+        display: flex;
+        flex-direction: column;
+        gap: 4.5px;
       }
-      .task-list li {
+      .tier-box {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 4px;
+        padding: 4px 7px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+      }
+      .tier-label {
+        font-size: 6.8pt;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
         margin-bottom: 2px;
+      }
+      .tier-evidence {
+        border-left: 3.5px solid #1e3a8a;
+      }
+      .tier-evidence .tier-label {
+        color: #1e3a8a;
+      }
+      .tier-debate {
+        border-left: 3.5px solid #b45309;
+      }
+      .tier-debate .tier-label {
+        color: #b45309;
+      }
+      .tier-assessment {
+        border-left: 3.5px solid #0f766e;
+      }
+      .tier-assessment .tier-label {
+        color: #0f766e;
+      }
+      .tier-content {
+        font-size: 7.3pt;
+        color: #1e293b;
+        line-height: 1.28;
+      }
+      .tier-assessment .tier-content {
+        font-weight: 600;
+        color: #0f172a;
       }
     </style>
   </head>
