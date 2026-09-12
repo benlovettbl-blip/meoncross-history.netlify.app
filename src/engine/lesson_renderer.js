@@ -2021,7 +2021,10 @@ export function renderLesson(lesson) {
       let blockSourceHtml = '';
       if (block.source) {
         let sourceContentHtml = '';
-        if (block.source.type === 'written') {
+        if (
+          block.source.type === 'written' ||
+          (block.source.content && !block.source.source && !block.source.src && !block.source.image)
+        ) {
           sourceContentHtml = `
                    <div class="archival-source-body" style="width: 100%; max-height: 350px; overflow-y: auto;">
                      ${block.source.content}

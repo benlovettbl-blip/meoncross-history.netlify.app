@@ -4053,3 +4053,45 @@ body.sen-mode .archival-source-box.reading-highlight {
     font-size: 0.7rem;
   }
 }
+
+/* Pedagogical Navigation Coordinates (Smartboard & Booklet Scaffolding) */
+.sentence-ref {
+  display: inline-block;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.72em;
+  font-weight: 700;
+  color: #94a3b8;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 3px;
+  padding: 0px 4px;
+  margin-right: 4px;
+  vertical-align: 1px;
+  user-select: none;
+}
+
+.para-ref {
+  display: inline-block;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.74em;
+  font-weight: 700;
+  color: #475569;
+  background: #f1f5f9;
+  border-left: 3px solid #0284c7;
+  border-radius: 2px 4px 4px 2px;
+  padding: 1px 6px;
+  margin-right: 6px;
+  user-select: none;
+}
+
+.source-line-num {
+  display: inline-block;
+  width: 24px;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.72em;
+  font-weight: 600;
+  color: #94a3b8;
+  text-align: right;
+  margin-right: 12px;
+  user-select: none;
+}
