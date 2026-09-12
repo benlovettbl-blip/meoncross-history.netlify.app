@@ -881,7 +881,7 @@ const early_modern_world = {
         hints: [
           'Point 1: Ming Dynasty China — porcelain, silk, Zheng He’s massive treasure fleets, and Indian Ocean economic dominance.',
           'Point 2: The Islamic World & The Ottomans — Fall of Constantinople (1453) choking European overland access to the Silk Roads.',
-          'Point 3: West African Wealth — Songhai Empire and the immense gold/salt trade passing through Timbuktu.',
+          'Point 3: West African Wealth — The Empire of Mali (Mansa Musa’s vast gold reserves) and the Kingdom of Benin (world-class bronze metallurgy).',
           'Point 4: European Marginality — Peripheral, agrarian, politically fragmented, and desperate to bypass Ottoman taxes.',
         ],
         teacher_guidance: {

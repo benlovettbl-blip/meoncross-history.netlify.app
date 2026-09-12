@@ -1105,7 +1105,7 @@ export function renderLesson(lesson) {
       const cardId = `donow-card-${index}`;
       htmlDoNow += `
           <div class="do-now-card" id="do-now-card-${index}" data-action="toggle-element" data-target-id="${cardId}" style="cursor: pointer;">
-            <div style="font-weight: 700; margin-bottom: 8px;">Task ${index + 1}</div>
+            <div style="font-weight: 700; margin-bottom: 8px; color: #1e3a8a;">Question ${index + 1}</div>
             <div>${qText}</div>
             <div class="answer" id="${cardId}" style="display: none; margin-top: 10px; padding: 10px; background: #f8fafc; border-left: 4px solid #3b82f6; border-radius: 4px;">${aText}</div>
           </div>
