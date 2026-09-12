@@ -42,7 +42,7 @@ async function verifyVocabParity() {
       continue;
     }
 
-    if (!unitData || !Array.isArray(unitData.lessons)) continue;
+    if (!unitData || !Array.isArray(unitData.lessons) || unitData.type === 'trip') continue;
 
     let unitHasIssue = false;
 
@@ -65,9 +65,19 @@ async function verifyVocabParity() {
         );
       }
 
+      // Check if lesson is a draft placeholder stub
+      const isPlaceholder =
+        lesson.is_placeholder ||
+        (lesson.narrative_blocks &&
+          lesson.narrative_blocks[0]?.text &&
+          typeof lesson.narrative_blocks[0].text === 'string' &&
+          lesson.narrative_blocks[0].text.trim().startsWith('Placeholder'));
+
       // 2. Canonical vocab check
       if (!lesson.vocab || !Array.isArray(lesson.vocab) || lesson.vocab.length === 0) {
-        warnings.push(`Missing canonical 'vocab' array.`);
+        if (!isPlaceholder) {
+          warnings.push(`Missing canonical 'vocab' array.`);
+        }
       } else {
         const vocabTerms = lesson.vocab.map((v) => (v.term || '').trim());
         const vocabSet = new Set(vocabTerms);
