@@ -11,25 +11,26 @@ const lessonConfigs = [
   {
     // Lesson 1: Henry Cort & Energy
     genre: 'Genre 2: Historical Significance',
+    skill: 'Significance',
     genreNum: 2,
     enquiryQuestion:
       'Enquiry: How significant was Henry Cort’s puddling process to British industrial and naval supremacy?',
     structureStrip: [
       {
-        col: '1. IMMEDIATE SCALE',
-        text: 'Analyse how Cort’s puddling process and grooved rollers at Funtley transformed British iron output 15-fold and solved the Royal Navy’s reliance on foreign imports.',
+        col: '1. IMMEDIATE IMPACT',
+        text: 'Explain how Cort’s puddling furnace and grooved rollers boosted British iron production 15 times and stopped Britain relying on foreign iron.',
       },
       {
-        col: '2. LONG-TERM DURATION',
-        text: 'Evaluate the enduring structural legacy: how cheap naval-grade wrought iron powered steam boilers, railways, and ironclad warships.',
+        col: '2. LONG-TERM CHANGES',
+        text: 'Explain how cheap, strong iron changed Britain over time—making it possible to build steam engines, railways, and iron warships.',
       },
       {
-        col: '3. SIGNIFICANCE VERDICT',
-        text: 'Reach a substantiated verdict using Partington’s criteria (Scale, Duration, Transformation) weighing Cort against Watt and geography.',
+        col: '3. OVERALL JUDGMENT',
+        text: 'Give your final judgment: was Cort’s breakthrough the main reason Britain became an industrial power, or were coal and steam more important?',
       },
     ],
     connectives:
-      'The immediate breakthrough was... • Furthermore, the enduring structural legacy... • Crucially, this transformed... • In terms of scale... • Ultimately, its significance lies in...',
+      'The immediate breakthrough was... • Over time, this changed Britain because... • Crucially, this transformed... • In terms of importance... • Overall, Cort was significant because...',
     vocabTask: {
       type: 'distinction',
       termA: 'Pig Iron',
@@ -40,39 +41,38 @@ const lessonConfigs = [
     bridgeTask: {
       type: 'draw_label',
       badge: 'Technical Blueprint & Archival Anatomy',
-      title:
-        'Task 4: Draw & Label Henry Cort’s Reverberatory Puddling Furnace & Grooved Rollers (1784)',
-      instruction:
-        'Sketch Cort’s reverberatory puddling furnace and grooved rolling mill in the blueprint canvas below. Label and annotate all 4 mandatory metallurgical features.',
+      title: 'Task 4: Draw & Label Henry Cort’s Puddling Furnace & Grooved Rollers (1784)',
+      instruction: 'Sketch the furnace and rollers in the box below, then label the 4 key parts:',
       checklist:
-        '<strong>Required Blueprint Annotations:</strong> ① <em>Firebox</em> (separating raw coal from metal) &bull; ② <em>Arched masonry roof</em> (reflecting heat down) &bull; ③ <em>Puddling bar</em> (worker stirring out carbon) &bull; ④ <em>Grooved rollers</em> (compressing out slag)',
-      clue: '<em>Low-Floor Clue:</em> Notice how the coal fuel never touches the iron directly—only the reverberating heat melts the metal, keeping it free of brittle sulphur.',
+        '① <strong>Firebox</strong> (keeps coal separate from iron) &bull; ② <strong>Arched roof</strong> (bounces heat down onto iron) &bull; ③ <strong>Puddling bar</strong> (worker stirs out carbon) &bull; ④ <strong>Grooved rollers</strong> (squeezes out impurities)',
+      clue: '<em>Low-Floor Clue:</em> Notice how the coal fuel never touches the iron directly—only the heat melts the metal, keeping it pure and strong.',
       scholarsEdge:
-        '<strong>★ Scholar’s Edge:</strong> Why did Britain’s ability to mass-produce coal-fired wrought iron give it an insurmountable naval advantage over timber-dependent France?',
+        '<strong>★ Scholar’s Edge:</strong> Why did Britain’s ability to mass-produce coal-fired wrought iron give it a huge naval advantage over France?',
     },
   },
   {
     // Lesson 2: Industrial Work
     genre: 'Genre 3: Change & Continuity',
+    skill: 'Change & Continuity',
     genreNum: 3,
     enquiryQuestion:
       'Enquiry: Was industrial work a triumph of human progress or a catastrophe of punishment for the working class?',
     structureStrip: [
       {
-        col: '1. RADICAL SHIFTS',
-        text: 'Analyse the profound transformation from domestic cottage autonomy to the relentless discipline of the factory clock and mechanized pacing.',
+        col: '1. WHAT CHANGED?',
+        text: 'Explain how daily life changed when workers moved from cottage farming to long hours ruled by the factory clock and loud machines.',
       },
       {
-        col: '2. PERSISTENT CONTINUITIES',
-        text: 'Examine stubborn continuities: pervasive child exploitation in Hampshire clay pits and northern mills; reliance on manual muscle.',
+        col: '2. WHAT STAYED THE SAME?',
+        text: 'Explain what stayed the same: dangerous physical work, long shifts, and children working hard in brickworks and textile mills.',
       },
       {
-        col: '3. EXTENT OF PROGRESS',
-        text: 'Reach an evaluative judgment: did higher national wealth and cheaper goods outweigh the catastrophic degradation of physical health?',
+        col: '3. WAS IT PROGRESS?',
+        text: 'Give your judgment: did cheaper goods and higher national wealth make up for the harsh and dangerous working conditions?',
       },
     ],
     connectives:
-      'A profound shift occurred in... • Yet beneath the surface... • In direct contrast to the domestic system... • Continuity persisted in... • Consequently, while material output soared...',
+      'A major change for workers was... • However, conditions stayed the same because... • On the one hand... • On the other hand... • Overall, I judge that...',
     vocabTask: {
       type: 'mapping',
       termA: 'Pug Mill',
@@ -85,48 +85,49 @@ const lessonConfigs = [
       badge: 'Analytical Conflict Ledger',
       title: 'Task 4: The Balance Sheet of Industrial Labour: Progress vs. Punishment',
       instruction:
-        'Complete the two-column forensic ledger below, directly contrasting the factory owner’s argument for progress against the worker’s lived reality.',
-      col1Title: 'The Optimist Case (Industrial Progress)',
+        'Complete the two-column ledger below, contrasting the factory owner’s argument for progress against the worker’s lived reality.',
+      col1Title: 'The Case for Progress (Factory Owners)',
       col1Prompts: [
-        'Higher nominal cash wages compared to agricultural labour.',
-        'Production of cheap, machine-made cotton & iron consumer goods.',
-        'Technological breakthroughs in steam-powered labour productivity.',
-        'Elimination of devastating seasonal famines and rural isolation.',
+        'Higher cash wages compared to agricultural farm work.',
+        'Production of cheap, machine-made clothes and iron goods.',
+        'Steam-powered machines producing far more goods than hands.',
+        'Fewer seasonal famines and better trade between towns.',
       ],
-      col2Title: 'The Pessimist Case (Human Degradation)',
+      col2Title: 'The Case for Hardship (Workers & Children)',
       col2Prompts: [
-        '14-hour working shifts under relentless factory clock surveillance.',
-        'Pervasive child labour in Hampshire clay pits & spinning mules.',
-        'Catastrophic occupational deformities, scalping, & lung disease.',
-        'Destruction of artisan pride, independence, and family life.',
+        '14-hour work days strictly ruled by the factory clock.',
+        'Widespread child labour in Hampshire clay pits and mills.',
+        'Terrible accidents: lost fingers, broken bones, and lung disease.',
+        'Loss of independence and family time at home.',
       ],
-      clue: '<em>Low-Floor Clue:</em> Contrast the clock tower at the mill gates against the freedom of cottage weavers taking "Saint Monday" off.',
+      clue: '<em>Low-Floor Clue:</em> Contrast the clock tower at the factory gates against the freedom of cottage workers choosing their own hours.',
       scholarsEdge:
-        '<strong>★ Scholar’s Edge:</strong> E.P. Thompson argued that the factory system was not just an economic change, but a violent psychological assault on human nature. How far do you agree?',
+        '<strong>★ Scholar’s Edge:</strong> Did factory work bring genuine progress to ordinary people, or did it sacrifice their health for industrial profit?',
     },
   },
   {
     // Lesson 3: Industrial Towns & Public Health
     genre: 'Genre 6: Source Utility & Forensic Evaluation',
+    skill: 'Source Evaluation',
     genreNum: 6,
     enquiryQuestion:
       'Enquiry: How useful is Edwin Chadwick’s 1842 Sanitary Report for investigating living conditions in Victorian industrial towns?',
     structureStrip: [
       {
-        col: '1. CONTENT & KNOWLEDGE',
-        text: 'Evaluate what the report accurately reveals about cesspools, typhus, and life expectancy. Corroborate with own knowledge of miasma and water pumps.',
+        col: '1. WHAT THE REPORT SAYS',
+        text: 'Explain what Chadwick’s report reveals about filthy streets, overflowing cesspools, and low life expectancy in industrial towns.',
       },
       {
-        col: '2. PROVENANCE & MOTIVE (NOP)',
-        text: 'Interrogate Chadwick’s nature, origin, and purpose: an official Benthamite reformer determined to shock Parliament into sanitary spending.',
+        col: '2. WHO WROTE IT & WHY?',
+        text: 'Explain who Chadwick was and why he wrote it: he used shocking examples to force Parliament to spend money on clean water and sewers.',
       },
       {
-        col: '3. UTILITY VERDICT',
-        text: 'Reach a substantiated judgment: explain why deliberate exaggeration or statistical shock value actually increases its historical utility.',
+        col: '3. HOW USEFUL IS IT?',
+        text: 'Give your judgment: why is this report still useful to a historian, even if Chadwick focused only on the worst slums?',
       },
     ],
     connectives:
-      'The source is exceptionally useful because... • This is directly corroborated by... • However, Chadwick’s motive was deliberately to... • Consequently, its utility is heightened because...',
+      'The report is useful because it shows... • This matches what I know about... • Chadwick’s main purpose was to... • Overall, this source helps a historian understand...',
     vocabTask: {
       type: 'cloze',
       prompt:
@@ -143,35 +144,36 @@ const lessonConfigs = [
       sourceText:
         '“The annual loss of life from filth and bad ventilation are greater than the loss from death or wounds in any modern war. In the cellar dwellings of Manchester and Leeds, human excrement oozes through walls, and whole families sleep upon damp dung. The average age at death of the working class in Manchester is 17 years, compared to 38 years for the rural gentry.”',
       instruction:
-        '1. Underline the shocking statistical comparison Chadwick uses to provoke Parliament.<br>2. In the lines below, explain why an historian must consider Chadwick’s utilitarian motive when judging the accuracy of these figures:',
+        '1. Underline the shocking statistical comparison Chadwick uses to provoke Parliament.<br>2. In the lines below, explain why an historian must consider Chadwick’s motive when judging the accuracy of these figures:',
       lines: 8,
-      clue: '<em>Low-Floor Clue:</em> Notice the comparison between industrial disease and military warfare—why would a government official frame it this way?',
+      clue: '<em>Low-Floor Clue:</em> Notice the comparison between disease in towns and battle in war—why would a government reformer write it this way?',
       scholarsEdge:
-        '<strong>★ Scholar’s Edge:</strong> How did the persistent belief in the "miasma theory" (bad air) both motivate sanitary reform and delay the scientific eradication of waterborne cholera?',
+        '<strong>★ Scholar’s Edge:</strong> How did the belief in "miasma" (bad smells causing disease) encourage cleaning streets while delaying clean drinking water?',
     },
   },
   {
     // Lesson 4: The British Empire
     genre: 'Genre 1: Causal Weighting & Prioritisation',
+    skill: 'Causation',
     genreNum: 1,
     enquiryQuestion:
       'Enquiry: Was the expansion of the British Empire primarily driven by naval military power or commercial profit?',
     structureStrip: [
       {
-        col: '1. FACTOR 1: NAVAL SUPREMACY',
-        text: 'Argue that the Royal Navy (dockyards at Portsmouth, global coaling stations, global blockades) provided the indispensable military backbone.',
+        col: '1. WARSHIPS & NAVAL POWER',
+        text: 'Explain how the Royal Navy and dockyards like Portsmouth helped Britain conquer lands, guard trade routes, and defeat rivals.',
       },
       {
-        col: '2. FACTOR 2: COMMERCIAL CAPITAL',
-        text: 'Argue that chartered monopolies (East India Company), transatlantic triangular trade profits, and merchant capital drove conquest.',
+        col: '2. TRADE & MAKING MONEY',
+        text: 'Explain how merchants and companies like the East India Company expanded the empire to make huge profits from tea, spices, and textiles.',
       },
       {
-        col: '3. RELATIVE WEIGHTING',
-        text: 'Reach a definitive verdict: did military might enable commercial trade, or did mercantile profit finance naval supremacy?',
+        col: '3. WHICH MATTERED MORE?',
+        text: 'Give your judgment: was the British Empire built mainly by military warships, or was the search for trade and profits more important?',
       },
     ],
     connectives:
-      'On one hand, naval supremacy was the primary driver because... • Crucially, this was demonstrated by... • Conversely, commercial capital acted as the true catalyst... • Ultimately, naval power was merely the instrument, whereas...',
+      'The Royal Navy was vital because... • At the same time, trade drove expansion because... • However, without warships... • Overall, the main driving force was...',
     vocabTask: {
       type: 'distinction',
       termA: 'Chartered Monopoly (EIC)',
@@ -212,31 +214,32 @@ const lessonConfigs = [
       lines: 8,
       clue: '<em>Low-Floor Clue:</em> Think about what happened to British trading posts whenever the Royal Navy lost control of the English Channel or Atlantic.',
       scholarsEdge:
-        '<strong>★ Scholar’s Edge:</strong> Did the British Empire acquire its global territories through a coherent grand strategy, or "in a fit of absence of mind" (Sir John Seeley)?',
+        '<strong>★ Scholar’s Edge:</strong> Did the British Empire grow through a clear government plan, or through traders chasing private wealth?',
     },
   },
   {
     // Lesson 5: 1857 Indian Rebellion
     genre: 'Genre 5: Analytical Narrative',
+    skill: 'Causation & Narrative',
     genreNum: 5,
     enquiryQuestion:
       'Enquiry: Explain the sequence of events that transformed a military mutiny in Meerut into the 1857 Indian Rebellion.',
     structureStrip: [
       {
-        col: '1. PRECONDITION & TRIGGER',
-        text: 'Analyse how long-term annexation grievances (Doctrine of Lapse) and religious fears were ignited by the Enfield rifle cartridge crisis.',
+        col: '1. WHY ANGER BOILED OVER',
+        text: 'Explain why people in India were angry: the British taking over kingdoms and soldiers fearing greased cartridges offended their religion.',
       },
       {
-        col: '2. ESCALATING SPREAD',
-        text: 'Explain the critical pivot: the march to Delhi, the restoration of Bahadur Shah II, and the widespread civilian uprisings across Awadh.',
+        col: '2. HOW THE REBELLION SPREAD',
+        text: 'Explain how a soldiers’ mutiny at Meerut quickly grew into a massive rebellion joined by princes and ordinary people across northern India.',
       },
       {
-        col: '3. OUTCOME & LEGACY',
-        text: 'Explain the decisive resolution: brutal British military suppression, the dismantling of the EIC, and direct Victorian Crown rule (1858).',
+        col: '3. WHAT HAPPENED NEXT?',
+        text: 'Explain how Britain crushed the rebellion with harsh punishment, abolished the East India Company, and gave direct control to Queen Victoria.',
       },
     ],
     connectives:
-      'The initial crisis was precipitated by... • This immediately escalated when... • The decisive turning point occurred with... • Consequently, this compelled the British Crown to...',
+      'Anger first broke out because... • This quickly spread across India when... • The turning point came when... • As a result, the British government decided to...',
     vocabTask: {
       type: 'mapping',
       termA: 'Doctrine of Lapse',
@@ -261,25 +264,26 @@ const lessonConfigs = [
   {
     // Lesson 6: Working Class Protest & Peterloo
     genre: 'Genre 6: Source Utility & Forensic Evaluation',
+    skill: 'Source Evaluation',
     genreNum: 6,
     enquiryQuestion:
       'Enquiry: How useful is the Manchester Magistrates’ official report for an enquiry into the events of the Peterloo Massacre (1819)?',
     structureStrip: [
       {
-        col: '1. CONTENT & KNOWLEDGE',
-        text: 'Evaluate what the report claims about the size, discipline, and banners of the 60,000 crowd at St Peter’s Field. Corroborate with the Corn Laws.',
+        col: '1. WHAT THE REPORT SAYS',
+        text: 'Explain what the magistrates claimed about the huge crowd of 60,000 peaceful protestors, their marching, and their political banners.',
       },
       {
-        col: '2. PROVENANCE & MOTIVE (NOP)',
-        text: 'Interrogate the magistrates’ perspective: wealthy Tory landowners terrified of a British Jacobin revolution following the Napoleonic Wars.',
+        col: '2. WHY WERE THEY PANICKED?',
+        text: 'Explain who the magistrates were and why they were frightened: wealthy landowners terrified that a French-style revolution would happen in Britain.',
       },
       {
-        col: '3. UTILITY VERDICT',
-        text: 'Reach a substantiated judgment: how the magistrates’ terrified exaggerations make the report invaluable for understanding elite paranoia.',
+        col: '3. HOW USEFUL IS IT?',
+        text: 'Give your judgment: is this report useful for showing why the ruling class panicked and sent armed soldiers into a peaceful crowd?',
       },
     ],
     connectives:
-      'The magistrate report is highly useful because it demonstrates... • This panic was rooted in the historical reality of... • However, the magistrates’ motive was explicitly to justify... • Paradoxically, this bias increases its utility by revealing...',
+      'The report tells us that the crowd was... • However, the magistrates were terrified because... • This explains why they sent in the cavalry because... • Overall, the source is useful for showing...',
     vocabTask: {
       type: 'cloze',
       prompt:
@@ -317,25 +321,26 @@ const lessonConfigs = [
   {
     // Lesson 7: The 1832 Great Reform Act
     genre: 'Genre 1: Causal Weighting & Prioritisation',
+    skill: 'Causation',
     genreNum: 1,
     enquiryQuestion:
       'Enquiry: Why was the Great Reform Act passed in 1832? Was it conceded out of fear of revolution or granted as a principled reform?',
     structureStrip: [
       {
-        col: '1. FACTOR 1: FEAR OF REVOLUTION',
-        text: 'Analyse popular violence from below: the Swing Riots, burning of Nottingham Castle, Bristol riots, and the "Days of May" run on the banks.',
+        col: '1. FEAR OF VIOLENT RIOTS',
+        text: 'Explain how working-class riots, burned castles, and threats to pull all money from banks pushed Britain close to a revolution.',
       },
       {
-        col: '2. FACTOR 2: WHIG SELF-PRESERVATION',
-        text: 'Analyse elite strategy from above: Earl Grey’s goal to "reform in order to preserve", enfranchising the middle class to divide them from workers.',
+        col: '2. THE GOVERNMENT’S PLAN',
+        text: 'Explain why politicians passed the Act: giving the vote to middle-class men to keep them happy and stop them joining with workers.',
       },
       {
-        col: '3. RELATIVE WEIGHTING',
-        text: 'Reach a definitive verdict: would Parliament ever have passed the Act without the imminent threat of violent civil war?',
+        col: '3. WHAT WAS THE REAL REASON?',
+        text: 'Give your judgment: did politicians pass the 1832 Act because they believed in democracy, or because they were scared of a civil war?',
       },
     ],
     connectives:
-      'The overriding catalyst was the imminent threat of revolution because... • This was vividly illustrated by... • On the other hand, Whig politicians strategically sought to... • Ultimately, the Reform Act was conceded not out of democratic principle, but...',
+      'One main reason for the Reform Act was... • Politicians were especially scared when... • On the other hand, the government wanted to... • In conclusion, Parliament only acted because...',
     vocabTask: {
       type: 'distinction',
       termA: 'Rotten Borough',
@@ -374,31 +379,32 @@ const lessonConfigs = [
       lines: 8,
       clue: '<em>Low-Floor Clue:</em> What would happen to the wealthy landowners if the British banking system completely collapsed?',
       scholarsEdge:
-        '<strong>★ Scholar’s Edge:</strong> Did the 1832 Great Reform Act represent the birth of British democracy, or a cynical aristocratic masterstroke that entrenched property rule?',
+        '<strong>★ Scholar’s Edge:</strong> Did the 1832 Great Reform Act represent the birth of British democracy, or a clever move by landowners to protect their power?',
     },
   },
   {
     // Lesson 8: Capstone Synoptic Evaluation
     genre: 'Genre 4: Historiographical Debate (Capstone Essay)',
+    skill: 'Historical Interpretations',
     genreNum: 4,
     enquiryQuestion:
       'Enquiry: Who truly benefited from the Industrial Revolution? Evaluate the competing claims of the Optimists and the Pessimists.',
     structureStrip: [
       {
-        col: '1. THE OPTIMIST INTERPRETATION',
-        text: 'Present the argument of Hartwell & Macaulay: rising real wages, consumer goods, life-saving sanitation, and the elimination of famine.',
+        col: '1. THE POSITIVE VIEW',
+        text: 'Explain the positive argument: factory goods became cheaper, trains allowed travel, and wages slowly rose, creating modern life.',
       },
       {
-        col: '2. THE PESSIMIST INTERPRETATION',
-        text: 'Present the argument of Hobsbawm & Thompson: catastrophic slum degradation, alienation of labour, colonial drain, and surging inequality.',
+        col: '2. THE NEGATIVE VIEW',
+        text: 'Explain the negative argument: workers lived in filthy slums, died young from disease, and were punished by dangerous factory work.',
       },
       {
-        col: '3. SUBSTANTIATED ADJUDICATION',
-        text: 'Reach a mature synoptic verdict: weigh short-term generational catastrophe against long-term structural human progress.',
+        col: '3. YOUR FINAL VERDICT',
+        text: 'Give your judgment: did the Industrial Revolution do more good or more harm to the ordinary people who lived through it?',
       },
     ],
     connectives:
-      'Optimist historians contend that... • As evidenced by the dramatic expansion of... • Conversely, pessimist historians demonstrate that... • This critique is reinforced by... • In the final analysis, while the short-term reality was...',
+      'Some historians argue life improved because... • In contrast, other historians point out that... • For example, ordinary families suffered from... • Ultimately, I judge that...',
     vocabTask: {
       type: 'mapping',
       termA: 'Optimist School',
@@ -411,24 +417,24 @@ const lessonConfigs = [
       badge: 'Historiographical Synthesis Ledger',
       title: 'Task 4: The Great Standard of Living Debate: Optimists vs. Pessimists',
       instruction:
-        'Complete the historiographical audit below, synthesizing the strongest historical evidence supporting each academic school of thought.',
-      col1Title: 'The Optimist School (e.g. T.S. Ashton, R.M. Hartwell)',
+        'Complete the audit below, organizing the strongest historical evidence for each viewpoint.',
+      col1Title: 'The Optimist View (Things Got Better)',
       col1Prompts: [
-        'Cheaper mass-produced clothing, soap, tea & railway travel.',
-        'Eventual rise in real wages after 1850; Factory Act protections.',
-        'Foundation of modern democratic institutions and medical science.',
-        'Transition from unpredictable famine to reliable industrial abundance.',
+        'Cheaper mass-produced clothes, soap, tea, and train travel.',
+        'Wages slowly rose after 1850; new laws protected children.',
+        'Created modern hospitals, schools, and democratic rights.',
+        'Fewer famines and more reliable food supplies.',
       ],
-      col2Title: 'The Pessimist School (e.g. E.J. Hobsbawm, E.P. Thompson)',
+      col2Title: 'The Pessimist View (Things Got Worse)',
       col2Prompts: [
-        'Brutal destruction of traditional artisan communities and dignity.',
-        'Catastrophic urban squalor, stunted children, and cholera deaths.',
-        'Enormous private fortunes accumulated through colonial exploitation.',
-        'Severe psychological trauma under the tyranny of the factory clock.',
+        'Cottage workers lost their independence and dignity.',
+        'Dirty urban slums, stunted children, and deadly cholera.',
+        'Huge wealth created by exploiting workers and colonies.',
+        'Long, exhausting hours under the tyranny of the factory clock.',
       ],
       clue: '<em>Low-Floor Clue:</em> Distinguish between what happened to the first generation of factory workers (1780–1830) versus their grandchildren (after 1860).',
       scholarsEdge:
-        '<strong>★ Scholar’s Edge:</strong> Is it historically valid to justify forty years of working-class misery and colonial suffering by pointing to the modern high living standards that eventually followed?',
+        '<strong>★ Scholar’s Edge:</strong> Is it fair to say forty years of misery for early workers was worth it because our lives are better today?',
     },
   },
 ];
@@ -720,7 +726,6 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
               L${lIdx + 1}: ${formatText(lesson.title)}
             </h2>
           </div>
-          <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe; flex-shrink: 0;">Evidence Launch</span>
         </div>
 
         <!-- Learning Objectives (Compact 3-bullets, 8.5pt) -->
@@ -735,49 +740,47 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
           </ul>
         </div>
 
-        <!-- Do Now Spaced Retrieval Strip (5 Recall Questions Projected on Board) -->
+        <!-- Do Now Recall Strip -->
         <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; margin-bottom: 6px; background: #ffffff;">
           <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 3px; margin-bottom: 4px;">
             <div style="display: flex; align-items: center; gap: 8px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.6px; color: #0f172a;">Do Now: Spaced Retrieval</strong>
-              <span style="font-size: 7.8pt; color: #64748b; font-family: 'Inter', sans-serif;">(5 Recall Questions Projected on Board)</span>
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.6px; color: #0f172a;">Do Now: Recall</strong>
             </div>
             <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 1px 7px; border-radius: 3px;">Score: &nbsp; &nbsp; / 5</span>
           </div>
           <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px;">
             <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">[1] Last Lesson</div>
-              <div class="task-line-dotted" style="height: 5.2mm;"></div>
-              <div class="task-line-dotted" style="height: 5.2mm;"></div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q1</div>
+              <div class="task-line-dotted" style="height: 5.5mm;"></div>
+              <div class="task-line-dotted" style="height: 5.5mm;"></div>
             </div>
             <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">[2] Two Ago</div>
-              <div class="task-line-dotted" style="height: 5.2mm;"></div>
-              <div class="task-line-dotted" style="height: 5.2mm;"></div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q2</div>
+              <div class="task-line-dotted" style="height: 5.5mm;"></div>
+              <div class="task-line-dotted" style="height: 5.5mm;"></div>
             </div>
             <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">[3] Prior Unit</div>
-              <div class="task-line-dotted" style="height: 5.2mm;"></div>
-              <div class="task-line-dotted" style="height: 5.2mm;"></div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q3</div>
+              <div class="task-line-dotted" style="height: 5.5mm;"></div>
+              <div class="task-line-dotted" style="height: 5.5mm;"></div>
             </div>
             <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">[4] Prior Unit</div>
-              <div class="task-line-dotted" style="height: 5.2mm;"></div>
-              <div class="task-line-dotted" style="height: 5.2mm;"></div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q4</div>
+              <div class="task-line-dotted" style="height: 5.5mm;"></div>
+              <div class="task-line-dotted" style="height: 5.5mm;"></div>
             </div>
             <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">[5] Big Picture</div>
-              <div class="task-line-dotted" style="height: 5.2mm;"></div>
-              <div class="task-line-dotted" style="height: 5.2mm;"></div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q5</div>
+              <div class="task-line-dotted" style="height: 5.5mm;"></div>
+              <div class="task-line-dotted" style="height: 5.5mm;"></div>
             </div>
           </div>
         </div>
 
-        <!-- Disciplinary Vocabulary Active Application (Rotating Task + Ruled Lines) -->
+        <!-- Core Vocabulary -->
         <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; margin-bottom: 6px; background: #fdfbf7;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; color: #0f172a; letter-spacing: 0.5px;">Disciplinary Vocabulary Active Application</strong>
-            <span style="font-size: 7.5pt; color: #854d0e; font-family: 'Inter', sans-serif; font-weight: 600;">Active Disciplinary Mastery</span>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; color: #0f172a; letter-spacing: 0.5px;">Core Vocabulary</strong>
           </div>
     `;
 
@@ -809,11 +812,10 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
     html += `
         </div>
 
-        <!-- TASK 4: THE PREPARATION BRIDGE TASK -->
+        <!-- TASK 4: APPLICATION & SYNTHESIS -->
         <div style="border: 1.5px solid #0f172a; border-radius: 5px; padding: 7px 9px; background: #ffffff; margin-bottom: 4px;">
           <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #0f172a; padding-bottom: 3px; margin-bottom: 5px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #0f172a; text-transform: uppercase;">${cfg.bridgeTask.title}</strong>
-            <span class="archival-badge" style="background: #0f172a; color: #ffffff; border: none;">The Preparation Bridge</span>
           </div>
           <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #334155; margin-bottom: 5px; line-height: 1.35;">
             ${cfg.bridgeTask.instruction}
@@ -823,9 +825,7 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
     // Render task body based on type
     if (cfg.bridgeTask.type === 'draw_label') {
       html += `
-          <div style="height: 355px; border: 1.5px solid #64748b; border-radius: 4px; background: #ffffff; position: relative; margin-bottom: 5px; box-sizing: border-box;">
-            <div style="position: absolute; bottom: 6px; right: 8px; font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.8px;">Technical Blueprint & Annotation Canvas (Funtley Ironworks, 1784)</div>
-          </div>
+          <div style="height: 360px; border: 1.5px solid #64748b; border-radius: 4px; background: #ffffff; position: relative; margin-bottom: 5px; box-sizing: border-box;"></div>
           <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #1e293b; background: #f1f5f9; padding: 5px 8px; border-radius: 4px; margin-bottom: 4px; border: 1px solid #cbd5e1;">
             ${cfg.bridgeTask.checklist}
           </div>
@@ -967,8 +967,8 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
         <!-- Enquiry Question Header (Natural Archival School Typography) -->
         <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 5px; margin-bottom: 7px; display: flex; justify-content: space-between; align-items: flex-end;">
           <div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 1px; color: #64748b; font-weight: 600;">
-              Independent Historical Argument &bull; ${cfg.genre}
+            <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 1px; color: #1e3a8a; font-weight: 700;">
+              Historical Skill: ${cfg.skill}
             </div>
             <h3 style="font-family: 'Playfair Display', serif; font-size: 13pt; color: #0f172a; margin: 3px 0 0 0; line-height: 1.25;">
               ${cfg.enquiryQuestion}
@@ -993,16 +993,16 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
           </div>
           
           <div style="border-top: 1px dashed #cbd5e1; padding-top: 3px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 8.2pt;">
-            <span style="color: #475569;"><strong>Academic Connective Bank:</strong> ${cfg.connectives}</span>
+            <span style="color: #475569;"><strong>Sentence Starters &amp; Connectives:</strong> ${cfg.connectives}</span>
           </div>
         </div>
 
-        <!-- PEEL Writing Framework Strip (Abolishing Bronze/Silver/Gold) -->
+        <!-- PEEL Writing Framework Strip -->
         <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; margin-bottom: 6px; display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #1e293b;">
-          <span><strong style="color: #1e3a8a;">[P] Point:</strong> Authoritative claim answering enquiry.</span>
-          <span><strong style="color: #1e3a8a;">[E] Evidence:</strong> Specific historical facts from Page ${leftPageNum}.</span>
-          <span><strong style="color: #1e3a8a;">[E] Explanation:</strong> Causal reasoning & connectives.</span>
-          <span><strong style="color: #1e3a8a;">[L] Link:</strong> Evaluative verdict answering question.</span>
+          <span><strong style="color: #1e3a8a;">[P] Point:</strong> Clear sentence answering enquiry.</span>
+          <span><strong style="color: #1e3a8a;">[E] Evidence:</strong> Specific facts from Page ${leftPageNum}.</span>
+          <span><strong style="color: #1e3a8a;">[E] Explanation:</strong> Explain how and why this happened.</span>
+          <span><strong style="color: #1e3a8a;">[L] Link:</strong> Link back to answer the question.</span>
         </div>
 
         <!-- Ruled Writing Lines (22 Clean Full-Width Lines, 7.6mm Line Height) -->
@@ -1026,7 +1026,7 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
         </div>
         
         <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px; margin-top: 3px;">
-          <span>Enquiry Write-Up &bull; ${cfg.genre}</span>
+          <span>Enquiry Write-Up &bull; Historical Skill: ${cfg.skill}</span>
           <span>Page ${rightPageNum} (Facing Spread Right)</span>
         </div>
       </div>
