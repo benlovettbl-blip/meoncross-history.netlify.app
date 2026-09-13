@@ -48,6 +48,8 @@ Below is a complete index of the individual documents generated for each major p
 | **05** | [\`2026-09-12_05_Pedagogical_Architecture_4Act_Structure_NonProse_Tasks.md\`](./2026-09-12_05_Pedagogical_Architecture_4Act_Structure_NonProse_Tasks.md) | **Pedagogical Masterclass: 4-Act Structure & Non-Prose Tasks**<br>Eliminated Frayer models, added Dual-Term Distinctions, pen guides & unlined paper. | Unit refactors: \`great_war\` & \`great_war_part2\` (all 7 lessons)<br>Updated \`.agents/AGENTS.md\` |
 | **06** | [\`2026-09-12_06_GCSE_Middle_East_5_Master_Cartographic_Spreads.md\`](./2026-09-12_06_GCSE_Middle_East_5_Master_Cartographic_Spreads.md) | **GCSE Conflict in the Middle East: 5 Master Cartographic Spreads**<br>Before/after sliders, comparative workbooks, and safe unit pipeline sync. | 5 interactive sliders in digital lessons (L1, L2, L5, L7, L8/10)<br>All 6 PDFs re-compiled in \`public/pdfs/\` (0 overflows)<br>Git commit \`06b274d7\` |
 | **07** | [\`2026-09-12_07_Complete_Session_Transcript_Log.md\`](./2026-09-12_07_Complete_Session_Transcript_Log.md) | **Complete Verbatim Session Transcript**<br>All 28 conversational exchanges, audio prompts, technical logs, and answers. | Permanent transcript record from Antigravity session |
+| **08** | [\`2026-09-13_08_GCSE_Exam_Practice_Recalibration_Middle_East.md\`](./2026-09-13_08_GCSE_Exam_Practice_Recalibration_Middle_East.md) | **Edexcel GCSE History Exam Calibration**<br>Recalibrated all 10 exam practice questions and model answers to Pearson Edexcel standards. | \`units/cme_new/data.js\`<br>Git commit \`7963292c\` |
+| **09** | [\`2026-09-13_09_Global_Mastery_Packs_Whiteboard_Pupil_Quiz_Rollout.md\`](./2026-09-13_09_Global_Mastery_Packs_Whiteboard_Pupil_Quiz_Rollout.md) | **Global Mastery Suite Rollout (All 26 Packs)**<br>Unified Whiteboard Rapid-Fire and Pupil Recall Quiz across all 12 units. | All 26 Mastery Packs recompiled<br>Git commit \`20432c8a\` |
 
 ---
 
@@ -349,4 +351,57 @@ ${exchangesTxt}
 `;
 writeDoc('2026-09-12_07_Complete_Session_Transcript_Log.md', doc07);
 
-console.log('🎉 All 7 progress documents + master dashboard written successfully!');
+// =========================================================================
+// DOCUMENT 08: GCSE EXAM PRACTICE RECALIBRATION
+// =========================================================================
+const doc08 = `# 08. Edexcel GCSE History Exam Calibration: Middle East (1945–1995)
+**Date:** 13 September 2026  
+**Author:** Antigravity AI Assistant & Mr B. Lovett (Head of History)  
+**Target Unit:** \`cme_new\` (Paper 2: Conflict in the Middle East, 1945–1995)  
+**Git Checkpoint:** \`7963292c\` (recalibrate all 10 exam practice questions and model answers)
+
+---
+
+## 1. Specification Alignment Overview
+To ensure all pupils are trained strictly to Pearson Edexcel GCSE standards, all 10 lesson exam practice sections were audited and upgraded:
+1. **Single 4-mark Consequence (Specification Update):** Updated questions from legacy 8-mark "two consequences" to the current specification format: **"Explain one consequence of [X]" [4 marks]**.
+2. **Standard 8-mark Narrative Accounts:** Lessons 2, 4, 5, and 7 feature full 8-mark analytical narrative questions with 3-phase chronologically linked model answers using explicit causal signposting (\`Initial Spark / Catalyst\` -> \`Operational Escalation\` -> \`Strategic Outcome\`).
+3. **8-mark Importance Questions:** Lessons 8 and 10 feature 8-mark importance questions evaluated with distinct analytical criteria.
+4. **Pedagogical Scaffolding:** Each exam practice item provides:
+   - **Target Formula Stem:** (e.g. \`P-F-C\` for Consequence, \`C-C-O\` for Narrative).
+   - **Crucial Historical Evidence Checklist:** Exact dates, casualty figures, and treaty articles required.
+   - **Full Mark-Scheme Model Answer:** Historically rigorous, zero generic placeholders.
+   - **Examiner's Secret / Pitfall Warning:** High-yield examiner tips to avoid common student pitfalls.
+`;
+writeDoc('2026-09-13_08_GCSE_Exam_Practice_Recalibration_Middle_East.md', doc08);
+
+// =========================================================================
+// DOCUMENT 09: GLOBAL MASTERY SUITE STREAMLINING
+// =========================================================================
+const doc09 = `# 09. Global Mastery Suite Streamlining: Whiteboard Rapid-Fire & Pupil Recall Quiz
+**Date:** 13 September 2026  
+**Author:** Antigravity AI Assistant & Mr B. Lovett (Head of History)  
+**Scope:** Curriculum-wide (All 12 Units, 26 Mastery Packs)  
+**Git Checkpoint:** \`20432c8a\` (globally unify Whiteboard Rapid-Fire and Pupil Recall Quiz across all units)
+
+---
+
+## 1. Strategic Rationale
+Following successful piloting on \`cme_new\`, the department unified all 26 Mastery Packs across KS3 and GCSE units:
+- **Eliminated Choice Paralysis:** Removed confusing printables modals and redundant buttons in the digital toolbar.
+- **Dedicated Teacher Presentation Mode (⚡ Whiteboard Rapid-Fire):**
+  - Full-screen high-contrast dark theme (\`#ffffff\` questions, \`#fef08a\` answers) designed for classroom projectors and interactive whiteboards.
+  - Built-in 15-second retrieval timer with keyboard controls (\`Space\` to flip, \`T\` to toggle presentation, \`R\` to reset timer).
+- **Pupil Independent Revision (🎯 Pupil Recall Quiz):**
+  - Replaced obsolete subjective 3-box Leitner sorting with an instant-feedback binary self-check loop (\`❌ Needs Review\` vs. \`✅ Got It (+1)\`).
+  - Added live score counter (\`Mastery Score: X / Y (Z%)\`) that updates in real time.
+  - Added dynamic \`🔁 Review Missed (N)\` filter allowing pupils to isolate and re-drill only the questions they struggled with until 100% mastery is achieved.
+
+## 2. Global Compilation & Verification
+- Recompiled all 26 Mastery Packs across all units via \`node scripts/generate_mastery_packs.cjs\`.
+- Screen overlays and modals are hidden during print (\`@media print { display: none !important; }\`), ensuring zero impact on printed A4/A3 booklets.
+- Verified via browser subagent on \`edexcel_medicine\` (Medieval) and \`cme_new\` (KT1) with 0 layout overflows and flawless interactive scoring.
+`;
+writeDoc('2026-09-13_09_Global_Mastery_Packs_Whiteboard_Pupil_Quiz_Rollout.md', doc09);
+
+console.log('🎉 All 9 progress documents + master dashboard written successfully!');
