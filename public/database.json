@@ -47943,35 +47943,25 @@
               "title": "Source A: Coalbrookdale by Night (1801)",
               "src": "/images/coalbrookdale_by_night.jpg",
               "caption": "Source A: Philipp Jakob de Loutherbourg, Coalbrookdale by Night (1801, Science Museum London). The blast furnaces of Shropshire illuminating the dark landscape, symbolising the dawn of Britain’s coal and steam revolution.",
-              "question": "What does Source A reveal about how the Industrial Revolution transformed the physical landscape of Britain from countryside into a fiery industrial environment?",
-              "model_answer": "Source A shows blast furnaces vomiting fire and smoke into the night sky while horse teams haul heavy metal castings through industrial rubble. This illustrates that the shift to coal and iron violently altered Britain’s landscape, replacing tranquil rural fields with intense, round-the-clock factory production.",
-              "qNum": 1
+              "context": "Philipp Jakob de Loutherbourg’s 1801 painting captures the violent energy transition of the Industrial Revolution in Shropshire. Blast furnaces replaced tranquil rural darkness with 24-hour smoke and fire. **Hinge Question:** Why did the shift from water power to coal-fired blast furnaces transform both Britain’s physical landscape and the daily autonomy of its workers?"
             },
             {
               "title": "Source B: Cort’s Reverberatory Puddling Furnace (1783)",
               "src": "/images/funtley_ironworks.jpg",
               "caption": "Source B: Technical cross-section diagram of Henry Cort’s reverberatory puddling furnace and grooved rolling mill at Funtley Ironworks in Hampshire (Patent No. 1420, 1784).",
-              "question": "How does Source B demonstrate that Funtley Ironworks combined chemical innovation with mechanical mass production?",
-              "model_answer": "Source B shows two distinct breakthroughs: chemically separating fuel impurities through an arched air furnace (puddling) and mechanically shaping the wrought iron using grooved rollers instead of slow blacksmith hammering, allowing mass production for the Royal Navy.",
-              "qNum": 2
+              "context": "Patent drawing cross-section of Henry Cort’s 1783 reverberatory puddling furnace at Funtley Ironworks, Hampshire. By reverberating flame from an arched brick ceiling down onto the hearth, Cort separated molten metal from sulphur-rich coal, solving Britain’s pig iron crisis. **Hinge Question:** How did separating coal fuel from refining metal in an arched air furnace solve the Royal Navy’s materials crisis?"
             },
             {
               "title": "Source C: Admiralty Navy Board Portsmouth Dockyard Trial Minutes (1787)",
               "caption": "Source C: Official Navy Board trials conducted at Portsmouth Royal Navy Dockyard in March 1787, testing Funtley wrought iron against imported Swedish Orgrounds iron.",
               "content": "“Pursuant to your directions, we have caused trials to be made of Mr Henry Cort’s iron manufactured at Fontley. We find it to exceed in strength and toughness any iron manufactured in this kingdom, and fully equal to the best Swedish Orgrounds iron for ship bolts, mast hoops, and anchors for His Majesty’s Fleet.”",
-              "question": "Why was this Admiralty report from Portsmouth Dockyard the ultimate validation of Cort’s local experiments at Funtley?",
-              "model_answer": "The Royal Navy was the most demanding iron customer in the world. Proving that Funtley iron was equal to superior Swedish imports meant Britain could achieve self-sufficiency in naval shipbuilding, providing unbreakable wrought iron anchors, bolts, and hoops for warships like HMS Victory right before the French Revolutionary Wars.",
-              "qNum": 3,
-              "hinge_question": "How does this trial report demonstrate that the industrial revolution was driven as much by naval and military necessity as by commercial profit?"
+              "context": "Official Navy Board trials conducted at Portsmouth Dockyard in March 1787 testing Funtley wrought iron against imported Swedish Orgrounds iron (ADM 106/2347). Proving that domestic iron equaled Swedish ore secured Royal Navy self-sufficiency before the French Revolutionary Wars. **Hinge Question:** How does this trial report demonstrate that the Industrial Revolution was driven as much by naval military necessity as commercial profit?"
             },
             {
               "title": "Source D: Contemporary Dedication Portrait of Henry Cort (c. 1780s)",
               "caption": "Source D: An authentic 18th-century dedication engraving commemorating Henry Cort as “The Tubal Cain of our Century and of our Country, Dedicated to the Iron Trade of Great Britain” (British Museum).",
               "src": "/images/henry_cort.jpg",
-              "question": "Why would contemporaries compare an 18th-century Hampshire ironmaster to the biblical first metalworker Tubal Cain, and what does this reveal about Britain’s growing industrial pride?",
-              "model_answer": "Comparing Cort to Tubal Cain elevated a humble Hampshire ironmaster into a national hero who mastered metallurgy. It reveals that 18th-century Britons took immense patriotic pride in industrial innovation, recognizing that Cort’s puddling process at Funtley gave Britain global economic and naval mastery.",
-              "qNum": 4,
-              "hinge_question": "Why would contemporaries compare an 18th-century Hampshire ironmaster to an ancient heroic metalworker, and what does this reveal about Britain’s growing industrial pride?"
+              "context": "An authentic 18th-century dedication engraving commemorating Henry Cort as \"The Tubal Cain of our Century and of our Country, Dedicated to the Iron Trade of Great Britain\". **Hinge Question:** Why would contemporaries compare an 18th-century Hampshire ironmaster to an ancient heroic metalworker, and what does this reveal about Britain’s growing industrial pride?"
             }
           ],
           "video": [
@@ -48323,16 +48313,39 @@
               "image_caption": "Source A: Thomas Allom, Powerloom Weaving (1835, Science Museum). Workers and young child assistants tending rows of steam-driven powerlooms in a Lancashire cotton mill under the watchful eye of an adult overseer, illustrating the deafening, machine-dominated discipline of the factory system.",
               "tasks": [
                 {
-                  "type": "source_analysis",
-                  "question": "Study Source A and read Act 1. Using paragraphs [1.1] and [1.2], explain how the transition from the domestic system to steam-powered factories fundamentally transformed the pace, discipline, and daily autonomy of British workers.",
-                  "starter": "The transition from the domestic system to steam-powered factories fundamentally altered working life because, as described in paragraph [1.1], domestic workers previously controlled...",
-                  "causal_connectives": [
-                    "In sharp contrast",
-                    "Because steam boilers consumed continuous fuel",
-                    "This directly resulted in",
-                    "Consequently"
+                  "type": "causal_domino",
+                  "title": "Causal Chain: From Cottage Autonomy to the Factory Clock (1750–1830)",
+                  "text": "The Factory System: Trace the kinetic chain from cottage industry to the loss of worker autonomy under steam power. Complete the missing causal link in Step 3.",
+                  "instruction": "Using paragraphs [1.1] and [1.2], trace how steam mechanization dismantled traditional worker autonomy.",
+                  "steps": [
+                    {
+                      "stage": "Step 1: Baseline",
+                      "year": "1750",
+                      "title": "The Domestic System",
+                      "desc": "Families work in cottages by daylight and natural muscle, task-oriented and celebrating \"Saint Monday\"."
+                    },
+                    {
+                      "stage": "Step 2: Catalyst",
+                      "year": "1771",
+                      "title": "Continuous Steam Power",
+                      "desc": "Rotary steam engines consume coal continuously, requiring constant machinery operation to justify costs."
+                    },
+                    {
+                      "stage": "Step 3: Imposition",
+                      "year": "1800",
+                      "title": "The Factory Clock",
+                      "desc": "Factory masters impose 14- to 15-hour shifts, enforcing strict punctuality with fines and corporal punishment.",
+                      "blank": true,
+                      "prompt": "Explain why continuous steam engine fuel costs forced mill owners to impose relentless clock discipline:"
+                    },
+                    {
+                      "stage": "Step 4: Consequence",
+                      "year": "1830",
+                      "title": "Industrial Subordination",
+                      "desc": "Workers lose all autonomy over their time, becoming subordinate extensions of fast-moving, unguarded machinery."
+                    }
                   ],
-                  "model_answer": "The transition from the domestic system to steam-powered factories fundamentally dismantled worker autonomy and transformed the nature of labour [1.1]. In the domestic system, families worked at home based on task-orientation and natural daylight, controlling their own breaks and celebrating \"Saint Monday.\" In sharp contrast, the introduction of steam power forced workers into massive, synchronized mills where machines dictated the pace of life [1.2]. Because expensive steam engines burned coal continuously, factory masters imposed ruthless clock discipline, demanding 14- to 15-hour shifts from dawn to dusk (Source A). Consequently, workers lost all personal control over their time and labour, becoming subordinate extensions of fast-moving, unguarded machinery."
+                  "model_answer": "Because expensive steam engines consumed continuous coal whether running or idle, factory masters could not afford machine downtime. Consequently, they replaced natural daylight rhythms with the tyrannical factory clock, imposing fines and physical beatings to enforce maximum, continuous machine output."
                 }
               ]
             },
@@ -48344,16 +48357,31 @@
               "image_caption": "Source B: The Royal Albert Hall in South Kensington, London (opened 1871). The iconic crimson exterior of this world-famous imperial concert hall was constructed using over six million \"Fareham Red\" bricks, hand-moulded in Hampshire clay pits and transported to London via the newly constructed railway network.",
               "tasks": [
                 {
-                  "type": "local_connection",
-                  "question": "Study Source B and read Act 2. Using paragraphs [2.1]–[2.3], trace the chain of causation that connected the population explosion of London to the expansion of clay pits in Fareham and the construction of the Royal Albert Hall.",
-                  "starter": "The boom in Fareham brickmaking was triggered by rapid urban growth. As explained in paragraph [2.1], London's population surged to 4.5 million, which created...",
-                  "causal_connectives": [
-                    "To satisfy this urgent demand",
-                    "Because Fareham possessed",
-                    "Furthermore, the arrival of the railway allowed",
-                    "As a direct consequence"
+                  "type": "significance_diamond",
+                  "title": "Priority Diamond: Key Drivers of the Fareham Red Brick Boom",
+                  "text": "Evaluate and rank the four decisive factors that transformed local Hampshire clay pits into an imperial manufacturing powerhouse.",
+                  "instruction": "Using paragraphs [2.1]–[2.3], rank the four drivers from Most Decisive (Rank 1) to Supporting (Rank 4). Justify your top choice.",
+                  "factors": [
+                    {
+                      "id": "london_demand",
+                      "label": "London Population Explosion (Insatiable imperial demand from 4.5m residents for building materials)"
+                    },
+                    {
+                      "id": "geological_clay",
+                      "label": "Reading Formation Clay Geology (Iron-rich Hampshire clay firing into weather-resistant \"Fareham Reds\")"
+                    },
+                    {
+                      "id": "railway_transport",
+                      "label": "1841 London & South Western Railway (Rapid, low-cost freight link directly connecting Fareham to London)"
+                    },
+                    {
+                      "id": "kiln_technology",
+                      "label": "Coal-Fired Kiln Technology (High-temperature 1,000°C firing creating extraordinary structural hardness)"
+                    }
                   ],
-                  "model_answer": "The boom in Fareham brickmaking began with rapid 19th-century urbanization. As London's population exploded from one million to over 4.5 million, an insatiable demand was created for millions of high-grade building materials to construct imperial infrastructure [2.1]. To satisfy this demand, entrepreneurs expanded the Funtley and Uplands clay pits because Fareham sat atop rich, iron-bearing Reading Formation clay that fired into exceptionally durable, weather-resistant \"Fareham Reds\" [2.2]. Furthermore, the construction of the London & South Western Railway in 1841 and water transport via Fareham Creek allowed these heavy bricks to be transported rapidly and cheaply directly into the capital [2.3]. As a direct consequence of this industrial supply chain, over six million Fareham Red bricks were selected by Victorian architects to construct the prestigious Royal Albert Hall in South Kensington (Source B)."
+                  "justification_prompt": "Justify your Rank 1 selection: Why was this factor the primary catalyst for Fareham’s industrial boom?",
+                  "starter": "London’s explosive population growth was the primary catalyst because without...",
+                  "model_answer": "London’s rapid population surge to 4.5 million was the most decisive driver because without that colossal urban market and imperial construction boom (exemplified by the Royal Albert Hall), Fareham’s natural clay and railway connections would have lacked the commercial demand required to support commercial brick manufacturing at an industrial scale of twenty million bricks per year."
                 }
               ]
             },
@@ -48375,16 +48403,27 @@
               },
               "tasks": [
                 {
-                  "type": "forensic_evaluation",
-                  "question": "Study the Archival Excerpts (Source C and Source D) and read Act 3. Using paragraphs [3.2] and [3.3], explain why a historian must examine BOTH national parliamentary reports AND local parish census returns to understand the full reality of 19th-century child labour.",
-                  "starter": "A historian must cross-reference both national reports and local census returns because, while Source C provides...",
-                  "causal_connectives": [
-                    "In complement to this",
-                    "As evidenced in paragraph [3.3]",
-                    "This reveals that child labour was not",
-                    "By combining both qualitative and quantitative sources"
+                  "type": "ledger_audit",
+                  "title": "Forensic Ledger: The Reality of 19th-Century Child Labour",
+                  "text": "Audit qualitative national eyewitness testimony against quantitative local parish census records.",
+                  "instruction": "Using Source C, Source D, and paragraphs [3.2]–[3.3], cross-reference national parliamentary testimony with local Fareham census evidence.",
+                  "left_title": "Qualitative National Testimony (1832 Sadler Report)",
+                  "right_title": "Quantitative Local Evidence (1881 Fareham Census)",
+                  "left_points": [
+                    "Firsthand testimony given under oath by former child worker Matthew Crabtree.",
+                    "Exhausting 14.5-hour shifts (6:00 am – 8:30 pm) without formal meal intervals.",
+                    "Systematic corporal punishment with leather straps (\"strapping\") for minor lateness.",
+                    "Lifelong skeletal deformities, collapsed arches, and rickets from continuous standing."
                   ],
-                  "model_answer": "A historian must examine both national parliamentary reports and local census returns because they provide complementary qualitative and quantitative historical evidence [3.2, 3.3]. The 1832 Sadler Report (Source C) provides vital qualitative, firsthand emotional testimony regarding the visceral daily reality of child labour—revealing the 14-hour days, physical beatings with leather straps, and bodily deformities suffered by young workers like Matthew Crabtree. In complement to this, local census returns like the 1881 Fareham Census (Source D) provide quantitative, factual proof that child labour was not an isolated northern factory issue, but a structural reality across rural Hampshire. As evidenced in paragraph [3.3], official census records prove ten-year-old local boys were employed as \"pug boys\" and brick labourers in the Funtley clay pits. By combining both qualitative national testimonies and quantitative local records, historians prove that child exploitation was a pervasive, nationwide foundation of Victorian industrial prosperity."
+                  "right_points": [
+                    "Official parish census returns for Fareham and Funtley brickmaking districts.",
+                    "Documentation of local boys aged 10 and 11 working as \"pug boys\" in clay pits.",
+                    "Children driving blindfolded horses to grind dense Reading Formation clay.",
+                    "Young \"turners\" walking up to 15 miles daily moving heavy 6lb wet bricks along hacks."
+                  ],
+                  "synthesis_prompt": "Historical Audit: Why must a historian cross-reference BOTH national parliamentary reports AND local parish census returns to understand child labour?",
+                  "starter": "A historian must examine both source types because while the Sadler Report provides...",
+                  "model_answer": "A historian must examine both source types because they provide complementary qualitative and quantitative historical evidence [3.2, 3.3]. The 1832 Sadler Report provides vital qualitative, firsthand emotional testimony regarding the visceral daily cruelty of child labour—revealing the 14-hour days, physical beatings with leather straps, and bodily deformities. In complement to this, local census returns like the 1881 Fareham Census provide quantitative, factual proof that child labour was not an isolated northern textile problem, but a structural reality embedded in rural Hampshire clay pits, employing local 10-year-olds as pug boys and brick turners."
                 }
               ]
             },
@@ -48423,35 +48462,25 @@
               "title": "Source A: Powerloom Weaving in 1835",
               "src": "/images/19th_century_mill.jpg",
               "caption": "Source A: Thomas Allom, Powerloom Weaving (1835, Science Museum). A steam-driven Lancashire textile mill showing children working as scavengers beneath clattering powerlooms under the supervision of an overseer.",
-              "question": "What does Source A reveal about the working conditions and dangers faced by children employed in steam-powered textile mills?",
-              "model_answer": "Source A shows young children crawling beneath moving, belt-driven powerlooms to sweep up loose cotton fibres, while adult overseers patrol the narrow aisles. This reveals that child workers were placed in immediate physical danger from unguarded, fast-moving machinery in a crowded, noisy, and high-pressure factory environment.",
-              "qNum": 1
+              "context": "Thomas Allom’s 1835 engraving captures the deafening, machine-dominated landscape of a steam-driven cotton mill. Small children work as scavengers and piecers under fast-moving, unguarded drive belts and looms. **Hinge Question:** How does the physical danger of child labour in steam factories illustrate the human cost of industrial mechanization?"
             },
             {
               "title": "Source B: The Royal Albert Hall, London (1871)",
               "src": "/images/royal_albert_hall.jpg",
               "caption": "Source B: The Royal Albert Hall in South Kensington, London (opened 1871). The iconic exterior of this world-famous concert hall was constructed using over six million \"Fareham Red\" bricks manufactured in Hampshire clay pits.",
-              "question": "How does Source B prove that local Hampshire industrial manufacturing played a direct role in constructing the architectural masterpieces of the Victorian British Empire?",
-              "model_answer": "Source B shows the grand exterior of the Royal Albert Hall, one of the most prestigious architectural landmarks of Victorian Britain. Because over six million Fareham Red bricks were specifically chosen by architects for its construction, it proves that Hampshire brickfields like Funtley and Uplands were not minor local craft sites, but major industrial suppliers building the physical fabric of the empire.",
-              "qNum": 2
+              "context": "The Royal Albert Hall in London, opened in 1871, was constructed using over six million Fareham Red bricks manufactured in the clay pits of Funtley and Uplands. Dense iron-bearing Reading Formation clay fired into durable crimson bricks transported via the newly opened London & South Western Railway. **Hinge Question:** How does the construction of the Royal Albert Hall prove that Victorian imperial architecture relied directly on local Hampshire industrial manufacturing?"
             },
             {
               "title": "Source C: Parliamentary Sadler Committee Report (1832)",
               "caption": "Source C: Minutes of Evidence before the Parliamentary Select Committee on the Labour of Factory Children, 15 March 1832 (Testimony of 22-year-old former child worker Matthew Crabtree).",
               "content": "“I began work at eight years old... our common hours of labour were from six in the morning till half-past eight at night... fourteen hours and a half of actual labour. We had no time allowed for breakfast or afternoon refreshment; we had to eat our meals before the machines. If we were a minute too late, we were beaten with a leather strap; I have been severely strapped myself... my limbs are deformed from standing so long.”",
-              "question": "Why is the eyewitness testimony in Source C such powerful historical evidence of the physical punishment inflicted on child factory workers?",
-              "model_answer": "Source C is primary evidence given under oath to Parliament by a real survivor of child labour. It provides specific, visceral details about 14.5-hour working days without meal breaks, regular physical beatings with a leather strap for being minutes late, and lifelong physical limb deformities caused by standing constantly before machines.",
-              "qNum": 3,
-              "hinge_question": "Why would British parliamentarians in 1832 be shocked by this testimony if child labour had already existed for centuries in farming cottages?"
+              "context": "Minutes of Evidence before Michael Sadler’s 1832 Parliamentary Committee on child labour. Matthew Crabtree testified under oath regarding fourteen-hour shifts, lack of meal breaks, corporal punishment with leather straps, and physical limb deformities. **Hinge Question:** Why did firsthand testimonies before the Sadler Committee shock the British public into demanding parliamentary factory legislation?"
             },
             {
               "title": "Source D: Contemporary Engraving of Factory Child Labour (1840)",
               "src": "/images/child_labour.jpg",
               "caption": "Source D: Contemporary 1840 illustration from Frances Trollope’s novel The Life and Adventures of Michael Armstrong, depicting child scavengers crawling under spinning machinery as an overseer looks on.",
-              "question": "How does the artist in Source D use visual details to criticize the cruelty of the factory system toward young children?",
-              "model_answer": "The artist shows small, barefoot, ragged children crouching directly beneath fast-moving spinning machinery in danger of being crushed, while a well-dressed adult overseer stands threateningly above them. This stark visual contrast emphasizes the helplessness of child workers and condemns the greed and cruelty of factory masters.",
-              "qNum": 4,
-              "hinge_question": "How did visual illustrations like Source D help convince the British public that child labour was a moral crime that Parliament needed to ban?"
+              "context": "An 1840 illustration from Frances Trollope’s Michael Armstrong, the Factory Boy. Visual exposés published in Victorian popular fiction campaigned alongside parliamentary reports to mobilize public outrage against child labour. **Hinge Question:** Why were visual depictions of child labour often more politically powerful in shifting public opinion than dry statistical reports?"
             }
           ],
           "exam_practice": {
