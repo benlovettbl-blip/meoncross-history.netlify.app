@@ -40,6 +40,18 @@ const PDF_MAPPINGS = [
     dest: 'Whole School History Curriculum Overview (Tabular).pdf',
     category: 'Admin',
   },
+  {
+    folder: '00_Department_Admin_and_Policies',
+    src: 'AI Guide for Family Military Historians (Edward Pearson).pdf',
+    dest: 'AI Guide for Family Military Historians (Edward Pearson).pdf',
+    category: 'Admin',
+  },
+  {
+    folder: '00_Department_Admin_and_Policies',
+    src: 'AI Guide for Family Military Historians (Edward Pearson).docx',
+    dest: 'AI Guide for Family Military Historians (Edward Pearson).docx',
+    category: 'Admin',
+  },
 
   // 01 - Schemes of Work (All 5 in one dedicated folder for 1-click batch upload)
   {
@@ -604,6 +616,18 @@ const PDF_MAPPINGS = [
     folder: path.join('Trips', 'Battlefield Tour - Ypres'),
     src: 'trip_ypres_textbook_FINAL_V17.pdf',
     dest: 'Ypres Battlefield Master Textbook.pdf',
+    category: 'Trips',
+  },
+  {
+    folder: path.join('Trips', 'Battlefield Tour - Ypres'),
+    src: 'AI Guide for Family Military Historians (Edward Pearson).pdf',
+    dest: 'AI Guide for Family Military Historians (Edward Pearson).pdf',
+    category: 'Trips',
+  },
+  {
+    folder: path.join('Trips', 'Battlefield Tour - Ypres'),
+    src: 'AI Guide for Family Military Historians (Edward Pearson).docx',
+    dest: 'AI Guide for Family Military Historians (Edward Pearson).docx',
     category: 'Trips',
   },
 
