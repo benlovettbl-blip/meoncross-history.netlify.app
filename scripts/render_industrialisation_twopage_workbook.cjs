@@ -114,20 +114,20 @@ const lessonConfigs = [
       'Enquiry: How useful is Edwin Chadwick’s 1842 Sanitary Report for investigating living conditions in Victorian industrial towns?',
     structureStrip: [
       {
-        col: '1. WHAT THE REPORT SAYS',
-        text: 'Explain what Chadwick’s report reveals about filthy streets, overflowing cesspools, and low life expectancy in industrial towns.',
+        col: '1. CONTENT & CONTEXT',
+        text: 'Explain what Chadwick’s report reveals about filthy streets, overflowing cesspools, and low life expectancy, confirmed by your own knowledge of slum conditions.',
       },
       {
-        col: '2. WHO WROTE IT & WHY?',
-        text: 'Explain who Chadwick was and why he wrote it: he used shocking examples to force Parliament to spend money on clean water and sewers.',
+        col: '2. PROVENANCE (NOP)',
+        text: 'Interrogate Nature, Origin & Purpose: Chadwick was a campaigning reformer using shocking statistics to force Parliament to fund sewers and abandon laissez-faire.',
       },
       {
-        col: '3. HOW USEFUL IS IT?',
-        text: 'Give your judgment: why is this report still useful to a historian, even if Chadwick focused only on the worst slums?',
+        col: '3. EVALUATIVE UTILITY',
+        text: 'Give your final verdict: why is this report exceptionally useful to a historian, even if Chadwick deliberately focused only on the worst cellar dwellings?',
       },
     ],
     connectives:
-      'The report is useful because it shows... • This matches what I know about... • Chadwick’s main purpose was to... • Overall, this source helps a historian understand...',
+      'In terms of Content, the report reveals... • This matches my contextual knowledge of... • Analysing Provenance, the Nature of this source is an official report whose Purpose was to... • Consequently, this makes the source highly useful for...',
     vocabTask: {
       type: 'cloze',
       prompt:
@@ -270,20 +270,20 @@ const lessonConfigs = [
       'Enquiry: How useful is the Manchester Magistrates’ official report for an enquiry into the events of the Peterloo Massacre (1819)?',
     structureStrip: [
       {
-        col: '1. WHAT THE REPORT SAYS',
-        text: 'Explain what the magistrates claimed about the huge crowd of 60,000 peaceful protestors, their marching, and their political banners.',
+        col: '1. CONTENT & CONTEXT',
+        text: 'Explain what the magistrates claimed about 60,000 protestors marching in military drill, contrasting against your own knowledge of the peaceful Sunday crowd.',
       },
       {
-        col: '2. WHY WERE THEY PANICKED?',
-        text: 'Explain who the magistrates were and why they were frightened: wealthy landowners terrified that a French-style revolution would happen in Britain.',
+        col: '2. PROVENANCE (NOP)',
+        text: 'Interrogate Nature, Origin & Purpose: Written by terrified Tory magistrates just 4 years after Waterloo, with the purpose of justifying their panic reading of the Riot Act and cavalry charge.',
       },
       {
-        col: '3. HOW USEFUL IS IT?',
-        text: 'Give your judgment: is this report useful for showing why the ruling class panicked and sent armed soldiers into a peaceful crowd?',
+        col: '3. EVALUATIVE UTILITY',
+        text: 'Give your final verdict: why is this report exceptionally useful for understanding elite paranoia, even if it is completely unreliable about the crowd’s peaceful intentions?',
       },
     ],
     connectives:
-      'The report tells us that the crowd was... • However, the magistrates were terrified because... • This explains why they sent in the cavalry because... • Overall, the source is useful for showing...',
+      'In terms of Content, the magistrates report that... • However, contextual evidence proves that... • Evaluating Provenance, the Author’s Purpose was to justify... • Overall, the source is exceptionally useful for revealing elite panic rather than crowd violence.',
     vocabTask: {
       type: 'cloze',
       prompt:
@@ -352,6 +352,8 @@ const lessonConfigs = [
       type: 'causal_pivot',
       badge: 'Causal Pivot & Catalyst Chain',
       title: 'Task 4: The 1832 Reform Crisis: From Rotten Boroughs to Compromise',
+      instruction:
+        'Track the escalation of the 1832 Reform crisis from parliamentary deadlock to the King’s intervention below:',
       steps: [
         {
           stage: '1. The Stagnation',
@@ -826,15 +828,20 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
           <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #0f172a; padding-bottom: 3px; margin-bottom: 5px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #0f172a; text-transform: uppercase;">${cfg.bridgeTask.title}</strong>
           </div>
+          ${
+            cfg.bridgeTask.instruction
+              ? `
           <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #334155; margin-bottom: 5px; line-height: 1.35;">
             ${cfg.bridgeTask.instruction}
-          </div>
+          </div>`
+              : ''
+          }
     `;
 
     // Render task body based on type
     if (cfg.bridgeTask.type === 'draw_label') {
       html += `
-          <div style="height: 360px; border: 1.5px solid #64748b; border-radius: 4px; background: #ffffff; position: relative; margin-bottom: 5px; box-sizing: border-box;"></div>
+          <div class="auto-fill-drawing-box" style="height: 360px; border: 1.5px solid #64748b; border-radius: 4px; background: #ffffff; position: relative; margin-bottom: 5px; box-sizing: border-box;"></div>
           <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #1e293b; background: #f1f5f9; padding: 5px 8px; border-radius: 4px; margin-bottom: 4px; border: 1px solid #cbd5e1;">
             ${cfg.bridgeTask.checklist}
           </div>
@@ -847,7 +854,7 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
       `;
     } else if (cfg.bridgeTask.type === 'ledger') {
       html += `
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 5px;">
+          <div class="auto-fill-ledger" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 5px;">
             <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 7px; background: #f8fafc;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0369a1; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">${cfg.bridgeTask.col1Title}</strong>
               <ul style="margin: 0 0 5px 0; padding-left: 15px; font-family: 'Inter', sans-serif; font-size: 8pt; color: #475569; line-height: 1.35;">
@@ -856,11 +863,13 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
               <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 600; color: #0369a1; border-top: 1px dashed #cbd5e1; padding-top: 3px; margin: 4px 0 2px 0;">
                 ✍️ Synthesise their perspective in 2–3 sentences:
               </div>
-              <div class="task-line-dotted" style="height: 5.6mm;"></div>
-              <div class="task-line-dotted" style="height: 5.6mm;"></div>
-              <div class="task-line-dotted" style="height: 5.6mm;"></div>
-              <div class="task-line-dotted" style="height: 5.6mm;"></div>
-              <div class="task-line-dotted" style="height: 5.6mm;"></div>
+              <div class="ledger-col-1">
+                <div class="task-line-dotted" style="height: 5.6mm;"></div>
+                <div class="task-line-dotted" style="height: 5.6mm;"></div>
+                <div class="task-line-dotted" style="height: 5.6mm;"></div>
+                <div class="task-line-dotted" style="height: 5.6mm;"></div>
+                <div class="task-line-dotted" style="height: 5.6mm;"></div>
+              </div>
             </div>
             <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 7px; background: #f8fafc;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #b91c1c; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">${cfg.bridgeTask.col2Title}</strong>
@@ -870,11 +879,13 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
               <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 600; color: #b91c1c; border-top: 1px dashed #cbd5e1; padding-top: 3px; margin: 4px 0 2px 0;">
                 ✍️ Synthesise their perspective in 2–3 sentences:
               </div>
-              <div class="task-line-dotted" style="height: 5.6mm;"></div>
-              <div class="task-line-dotted" style="height: 5.6mm;"></div>
-              <div class="task-line-dotted" style="height: 5.6mm;"></div>
-              <div class="task-line-dotted" style="height: 5.6mm;"></div>
-              <div class="task-line-dotted" style="height: 5.6mm;"></div>
+              <div class="ledger-col-2">
+                <div class="task-line-dotted" style="height: 5.6mm;"></div>
+                <div class="task-line-dotted" style="height: 5.6mm;"></div>
+                <div class="task-line-dotted" style="height: 5.6mm;"></div>
+                <div class="task-line-dotted" style="height: 5.6mm;"></div>
+                <div class="task-line-dotted" style="height: 5.6mm;"></div>
+              </div>
             </div>
           </div>
           <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #64748b; margin-bottom: 3px;">
@@ -889,9 +900,11 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
           <div style="border: 1px solid #cbd5e1; border-left: 3px solid #1e3a8a; background: #fdfbf7; padding: 7px 10px; font-size: 8.5pt; font-style: italic; color: #1e293b; margin-bottom: 5px; line-height: 1.4;">
             ${cfg.bridgeTask.sourceText}
           </div>
-          ${Array(cfg.bridgeTask.lines || 8)
-            .fill('<div class="task-line" style="height: 6.8mm;"></div>')
-            .join('')}
+          <div class="auto-fill-lines" data-line-height="6.8" data-line-type="task-line">
+            ${Array(cfg.bridgeTask.lines || 8)
+              .fill('<div class="task-line" style="height: 6.8mm;"></div>')
+              .join('')}
+          </div>
           <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #64748b; margin-top: 4px; margin-bottom: 2px;">
             ${cfg.bridgeTask.clue}
           </div>
@@ -924,9 +937,11 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
           <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #1e293b; margin-bottom: 3px;">
             <strong>Synthesis:</strong> ${cfg.bridgeTask.prompt}
           </div>
-          ${Array(cfg.bridgeTask.lines || 8)
-            .fill('<div class="task-line" style="height: 6.8mm;"></div>')
-            .join('')}
+          <div class="auto-fill-lines" data-line-height="6.8" data-line-type="task-line">
+            ${Array(cfg.bridgeTask.lines || 8)
+              .fill('<div class="task-line" style="height: 6.8mm;"></div>')
+              .join('')}
+          </div>
           <div style="font-family: 'Georgia', serif; font-size: 8.5pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-top: 3px;">
             ${cfg.bridgeTask.scholarsEdge}
           </div>
@@ -948,9 +963,11 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
           <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #1e293b; margin-bottom: 3px;">
             <strong>Causal Analysis:</strong> ${cfg.bridgeTask.prompt}
           </div>
-          ${Array(cfg.bridgeTask.lines || 8)
-            .fill('<div class="task-line" style="height: 6.8mm;"></div>')
-            .join('')}
+          <div class="auto-fill-lines" data-line-height="6.8" data-line-type="task-line">
+            ${Array(cfg.bridgeTask.lines || 8)
+              .fill('<div class="task-line" style="height: 6.8mm;"></div>')
+              .join('')}
+          </div>
           <div style="font-family: 'Georgia', serif; font-size: 8.5pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-top: 3px;">
             ${cfg.bridgeTask.scholarsEdge}
           </div>
@@ -1008,13 +1025,24 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
           </div>
         </div>
 
-        <!-- PEEL Writing Framework Strip -->
+        <!-- Disciplinary Writing Framework Strip (Source Utility NOP vs PEEL) -->
+        ${
+          cfg.genreNum === 6
+            ? `
+        <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; margin-bottom: 6px; display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #1e293b;">
+          <span><strong style="color: #1e3a8a;">[C] Content:</strong> Specific details from Source C.</span>
+          <span><strong style="color: #1e3a8a;">[O] Own Knowledge:</strong> Corroborating historical context.</span>
+          <span><strong style="color: #1e3a8a;">[P] Provenance (NOP):</strong> Author, motive, purpose, audience.</span>
+          <span><strong style="color: #1e3a8a;">[U] Utility Verdict:</strong> Weigh strengths &amp; limitations.</span>
+        </div>`
+            : `
         <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; margin-bottom: 6px; display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #1e293b;">
           <span><strong style="color: #1e3a8a;">[P] Point:</strong> Clear sentence answering enquiry.</span>
           <span><strong style="color: #1e3a8a;">[E] Evidence:</strong> Specific facts from Page ${leftPageNum}.</span>
           <span><strong style="color: #1e3a8a;">[E] Explanation:</strong> Explain how and why this happened.</span>
           <span><strong style="color: #1e3a8a;">[L] Link:</strong> Link back to answer the question.</span>
-        </div>
+        </div>`
+        }
 
         <!-- Ruled Writing Lines (22 Clean Full-Width Lines, 7.6mm Line Height) -->
         <div style="width: 100%; margin-bottom: 6px;">
@@ -1022,7 +1050,7 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      <!-- Teacher Grading & Assessment Footer (PEEL Mastery) -->
+      <!-- Teacher Grading & Assessment Footer (Bespoke Disciplinary Mastery) -->
       <div>
         <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; background: #f8fafc; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #334155;">
           <div>
@@ -1032,7 +1060,11 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
             Disciplinary Analysis: [ 1 &bull; 2 &bull; 3 &bull; 4 ]
           </div>
           <div>
-            <strong>PEEL Mastery:</strong> [ &nbsp; ] P &nbsp; [ &nbsp; ] E &nbsp; [ &nbsp; ] E &nbsp; [ &nbsp; ] L
+            ${
+              cfg.genreNum === 6
+                ? '<strong>Source Utility Mastery:</strong> [ &nbsp; ] C &nbsp; [ &nbsp; ] O &nbsp; [ &nbsp; ] P (NOP) &nbsp; [ &nbsp; ] U'
+                : '<strong>PEEL Mastery:</strong> [ &nbsp; ] P &nbsp; [ &nbsp; ] E &nbsp; [ &nbsp; ] E &nbsp; [ &nbsp; ] L'
+            }
           </div>
         </div>
         
@@ -1105,6 +1137,89 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
   `;
 
   html += `
+  <script>
+    (function() {
+      function autoFillPages() {
+        const leftPages = [4, 6, 8, 10, 12, 14, 16, 18];
+        leftPages.forEach(function(pageNum) {
+          const page = document.getElementById('page-' + pageNum);
+          if (!page) return;
+          const topDiv = page.firstElementChild;
+          const footerDiv = page.lastElementChild;
+          if (!topDiv || !footerDiv) return;
+
+          function getGap() {
+            return page.clientHeight - (topDiv.offsetHeight + footerDiv.offsetHeight);
+          }
+
+          // 1. Single column ruled lines
+          const linesContainer = page.querySelector('.auto-fill-lines');
+          if (linesContainer) {
+            const lineH = parseFloat(linesContainer.getAttribute('data-line-height') || '6.8');
+            const lineHPx = lineH * 3.7795;
+            let safety = 0;
+            while (getGap() > (lineHPx + 4) && safety < 35) {
+              const newLine = document.createElement('div');
+              newLine.className = 'task-line';
+              newLine.style.height = lineH + 'mm';
+              linesContainer.appendChild(newLine);
+              safety++;
+            }
+            while (getGap() < 0 && linesContainer.children.length > 1) {
+              linesContainer.removeChild(linesContainer.lastElementChild);
+            }
+            return;
+          }
+
+          // 2. Ledger (two-column dotted lines)
+          const col1 = page.querySelector('.ledger-col-1');
+          const col2 = page.querySelector('.ledger-col-2');
+          if (col1 && col2) {
+            const lineHPx = 5.6 * 3.7795;
+            let safety = 0;
+            while (getGap() > (lineHPx + 4) && safety < 35) {
+              const line1 = document.createElement('div');
+              line1.className = 'task-line-dotted';
+              line1.style.height = '5.6mm';
+              col1.appendChild(line1);
+
+              const line2 = document.createElement('div');
+              line2.className = 'task-line-dotted';
+              line2.style.height = '5.6mm';
+              col2.appendChild(line2);
+              safety++;
+            }
+            while (getGap() < 0 && col1.children.length > 1 && col2.children.length > 1) {
+              col1.removeChild(col1.lastElementChild);
+              col2.removeChild(col2.lastElementChild);
+            }
+            return;
+          }
+
+          // 3. Drawing canvas (Lesson 1, Page 4)
+          const drawBox = page.querySelector('.auto-fill-drawing-box');
+          if (drawBox) {
+            let gap = getGap();
+            if (gap > 16) {
+              const currentH = drawBox.offsetHeight;
+              drawBox.style.height = (currentH + gap - 16) + 'px';
+            }
+            while (getGap() < 6 && drawBox.offsetHeight > 150) {
+              drawBox.style.height = (drawBox.offsetHeight - 5) + 'px';
+            }
+            return;
+          }
+        });
+      }
+
+      if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        autoFillPages();
+      } else {
+        window.addEventListener('DOMContentLoaded', autoFillPages);
+      }
+      window.addEventListener('load', autoFillPages);
+    })();
+  </script>
 </body>
 </html>
 `;
