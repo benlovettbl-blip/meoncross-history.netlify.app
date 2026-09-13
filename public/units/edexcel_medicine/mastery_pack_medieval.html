@@ -844,146 +844,146 @@
             color: #2563eb;
         }
 
-        /* CME Dual-Tier & Printable Revision Suite Styles */
-        .toolbar-btn.printables {
-            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-            color: #ffffff;
-            font-weight: 800;
-            box-shadow: 0 2px 8px rgba(217, 119, 6, 0.4);
-        }
-        .toolbar-btn.printables:hover {
-            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
-        }
-
-        /* Printables Suite Modal */
-        .printables-modal-overlay {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(6px);
-            z-index: 100000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px;
-            box-sizing: border-box;
-            font-family: 'Outfit', sans-serif;
-            animation: leitnerFadeIn 0.2s ease-out;
-        }
-        .printables-modal-card {
-            background: #ffffff;
-            width: 100%;
-            max-width: 820px;
-            max-height: 90vh;
-            border-radius: 14px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.45);
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-        .printables-modal-header {
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
-            color: #ffffff;
-            padding: 16px 22px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .printables-modal-header h3 {
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-        }
-        .printables-modal-body {
-            padding: 20px;
-            overflow-y: auto;
-        }
-        .printables-modal-sub {
-            font-size: 0.95rem;
-            color: #475569;
-            margin: 0 0 16px 0;
-            line-height: 1.4;
-        }
-        .printables-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 16px;
-        }
-        .printable-card {
-            background: #f8fafc;
-            border: 1px solid #cbd5e1;
-            border-radius: 10px;
-            padding: 16px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: all 0.2s ease;
-        }
-        .printable-card:hover {
-            border-color: #3b82f6;
-            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15);
-            transform: translateY(-2px);
-        }
-        .printable-card-icon {
-            font-size: 2rem;
-            margin-bottom: 8px;
-        }
-        .printable-card h4 {
-            margin: 0 0 8px 0;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.98rem;
-            color: #0f172a;
-        }
-        .printable-card p {
-            font-size: 0.82rem;
-            color: #64748b;
-            line-height: 1.4;
-            margin: 0 0 16px 0;
-            flex-grow: 1;
-        }
-        .printable-links {
-            display: flex;
-            gap: 8px;
-        }
-        .print-link-btn {
-            flex: 1;
-            padding: 8px 10px;
-            border-radius: 6px;
-            font-size: 0.76rem;
-            font-weight: 700;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.15s ease;
-        }
-        .print-link-btn.web {
-            background: #e0f2fe;
-            color: #0369a1;
-            border: 1px solid #bae6fd;
-        }
-        .print-link-btn.web:hover {
-            background: #bae6fd;
-        }
-        .print-link-btn.pdf {
-            background: #fef2f2;
-            color: #b91c1c;
-            border: 1px solid #fecaca;
-        }
-        .print-link-btn.pdf:hover {
-            background: #fee2e2;
-        }
-        .print-link-btn.preview {
+        /* CME Whiteboard & Instant-Feedback Recall Quiz Styles */
+        .toolbar-btn.whiteboard {
             background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
             color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            cursor: pointer;
-            box-shadow: 0 2px 6px rgba(2, 132, 199, 0.3);
+            font-weight: 800;
+            box-shadow: 0 2px 8px rgba(2, 132, 199, 0.4);
         }
-        .print-link-btn.preview:hover {
+        .toolbar-btn.whiteboard:hover {
             background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
             transform: translateY(-1px);
+        }
+        .toolbar-btn.quiz {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #ffffff;
+            font-weight: 800;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+        }
+        .toolbar-btn.quiz:hover {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            transform: translateY(-1px);
+        }
+
+        /* CME Instant-Feedback Recall Quiz & Binary Score Bar */
+        .quiz-score-bar {
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            font-family: 'Outfit', sans-serif;
+            flex-wrap: wrap;
+        }
+        .quiz-score-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 6px 14px;
+            border-radius: 9999px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #1e293b;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .quiz-score-pill strong {
+            color: #0284c7;
+            font-size: 0.95rem;
+        }
+        .quiz-review-missed-btn {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fca5a5;
+            padding: 6px 14px;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
+        }
+        .quiz-review-missed-btn:hover {
+            background: #fee2e2;
+            transform: translateY(-1px);
+        }
+        .quiz-review-missed-btn.active {
+            background: #dc2626;
+            color: #ffffff;
+            border-color: #b91c1c;
+        }
+        .quiz-reset-score-btn {
+            background: transparent;
+            color: #64748b;
+            border: 1px solid #cbd5e1;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .quiz-reset-score-btn:hover {
+            background: #f1f5f9;
+            color: #0f172a;
+        }
+        .quiz-binary-bar {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            padding: 12px 20px;
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+        }
+        .quiz-rate-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+            font-family: 'Outfit', sans-serif;
+        }
+        .quiz-rate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .quiz-rate-btn .btn-title {
+            font-size: 1rem;
+            font-weight: 800;
+            margin-bottom: 2px;
+        }
+        .quiz-rate-btn .btn-sub {
+            font-size: 0.76rem;
+            font-weight: 500;
+            opacity: 0.85;
+        }
+        .quiz-rate-btn.btn-needs-review {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            color: #991b1b;
+        }
+        .quiz-rate-btn.btn-needs-review:hover {
+            background: #fee2e2;
+            border-color: #ef4444;
+        }
+        .quiz-rate-btn.btn-got-it {
+            background: #f0fdf4;
+            border-color: #86efac;
+            color: #166534;
+        }
+        .quiz-rate-btn.btn-got-it:hover {
+            background: #dcfce7;
+            border-color: #22c55e;
         }
 
         /* Dual-Tier Leitner Switcher Bar */
@@ -1192,7 +1192,9 @@
         }
         .leitner-modal-overlay.teacher-mode .leitner-streak-bar,
         .leitner-modal-overlay.teacher-mode .leitner-box-stats,
-        .leitner-modal-overlay.teacher-mode .leitner-tools-toggle-btn {
+        .leitner-modal-overlay.teacher-mode .leitner-tools-toggle-btn,
+        .leitner-modal-overlay.teacher-mode .quiz-score-bar,
+        .leitner-modal-overlay.teacher-mode .quiz-binary-bar {
             display: none !important;
         }
         .leitner-modal-overlay.teacher-mode .leitner-filter-row {
@@ -2064,10 +2066,9 @@
             
             <button id="open-leitner-btn" class="toolbar-btn primary" onclick="openLeitnerModal()">🗂️ Leitner Flashcards</button>
             <a href="#the-vault" class="toolbar-btn secondary">🔓 The Vault</a>
+            
         </div>
     </div>
-
-    
 
     <!-- Cover Page -->
     <div class="page cover page-break">
@@ -3906,12 +3907,12 @@
         </div>
     </div>
 
-    <!-- Interactive Leitner 3-Box Practice Modal -->
+    <!-- Interactive Practice & Whiteboard Modal -->
     <div id="leitner-modal" class="leitner-modal-overlay" style="display: none;">
         <div class="leitner-modal-card">
             <div class="leitner-modal-header">
                 <div class="leitner-header-title">
-                    <h3>⚡ Leitner Spaced Practice</h3>
+                    <h3 id="leitner-modal-title">⚡ Leitner Spaced Practice</h3>
                     <p class="leitner-unit-subtitle">Paper 1: Medicine Through Time with the Western Front · Medieval</p>
                 </div>
                 <div class="leitner-header-actions">
@@ -3923,8 +3924,9 @@
 
             
 
-            <!-- Collapsible Spaced Retrieval Tools Drawer (Permanently Open on Desktop, Toggleable on Mobile) -->
+            <!-- Collapsible Spaced Retrieval Tools Drawer -->
             <div id="leitner-tools-drawer" class="leitner-tools-drawer">
+                
                 <!-- Daily Spaced Retrieval Streak & 7-Day Heatmap -->
                 <div class="leitner-streak-bar">
                     <div class="streak-badge-wrap">
@@ -3963,6 +3965,7 @@
                         <span>All Cards</span>
                     </button>
                 </div>
+                
 
                 <div class="leitner-filter-row">
                     <label for="leitner-topic-select">Filter Topic:</label>
@@ -3994,6 +3997,8 @@
                 </div>
             </div>
 
+            
+
             <!-- Flashcard Area -->
             <div class="leitner-card-container">
                 <div class="leitner-card" id="leitner-flashcard" onclick="flipCurrentCard()">
@@ -4022,6 +4027,7 @@
                 </div>
             </div>
 
+            
             <!-- Rating Actions (Leitner 3-Box Movement) -->
             <div class="leitner-action-bar">
                 <button class="leitner-rate-btn btn-box-1" onclick="rateCurrentCard(1)">
@@ -4037,6 +4043,7 @@
                     <span class="btn-sub">Mastered (Instant)</span>
                 </button>
             </div>
+            
 
             <!-- Navigation Footer -->
             <div class="leitner-modal-footer">
@@ -4073,6 +4080,12 @@
     let timerRemainingMs = 15000;
     let timerEndTime = 0;
     let isTimerRunning = false;
+    let quizScore = {
+      correct: 0,
+      answered: 0,
+      missedIds: new Set()
+    };
+    let isReviewingMissed = false;
 
     function getLocalDateString(d) {
       const year = d.getFullYear();
@@ -4226,12 +4239,22 @@
       const boxText = 'Box ' + cardBox + ' (' + (cardBox === 1 ? 'Daily' : cardBox === 2 ? '3-Day' : 'Weekly') + ')';
 
       if (boxBadge) {
-        boxBadge.className = boxClass;
-        boxBadge.textContent = boxText;
+        if (IS_CME_NEW) {
+          boxBadge.style.display = 'none';
+        } else {
+          boxBadge.style.display = '';
+          boxBadge.className = boxClass;
+          boxBadge.textContent = boxText;
+        }
       }
       if (boxBadgeBack) {
-        boxBadgeBack.className = boxClass;
-        boxBadgeBack.textContent = boxText;
+        if (IS_CME_NEW) {
+          boxBadgeBack.style.display = 'none';
+        } else {
+          boxBadgeBack.style.display = '';
+          boxBadgeBack.className = boxClass;
+          boxBadgeBack.textContent = boxText;
+        }
       }
 
       const qText = document.getElementById('card-question-text');
@@ -4347,14 +4370,125 @@
       });
     }
 
-    window.openPrintablesModal = function() {
-      const modal = document.getElementById('printables-modal');
-      if (modal) modal.style.display = 'flex';
+    window.openTeacherWhiteboardModal = function() {
+      openLeitnerModal();
+      if (!isTeacherMode) {
+        toggleTeacherMode();
+      }
+      const titleEl = document.getElementById('leitner-modal-title');
+      if (titleEl) titleEl.textContent = '⚡ Whiteboard Rapid-Fire Recall';
     };
 
-    window.closePrintablesModal = function() {
-      const modal = document.getElementById('printables-modal');
-      if (modal) modal.style.display = 'none';
+    window.openPupilQuizModal = function() {
+      openLeitnerModal();
+      if (isTeacherMode) {
+        toggleTeacherMode();
+      }
+      const titleEl = document.getElementById('leitner-modal-title');
+      if (titleEl) titleEl.textContent = '🎯 Pupil Recall Quiz · Instant Feedback';
+      stopRapidFireTimer();
+    };
+
+    window.rateBinaryCard = function(isCorrect) {
+      if (currentDeck.length === 0) return;
+      const card = currentDeck[currentIndex];
+
+      if (isCorrect) {
+        quizScore.correct++;
+        quizScore.answered++;
+        quizScore.missedIds.delete(card.id);
+        userBoxes[card.id] = 3;
+      } else {
+        quizScore.answered++;
+        quizScore.missedIds.add(card.id);
+        userBoxes[card.id] = 1;
+      }
+
+      saveLeitnerProgress();
+      recordLeitnerActivity();
+      updateQuizScoreDisplay();
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      setTimeout(() => {
+        if (isReviewingMissed && isCorrect) {
+          currentDeck = currentDeck.filter(c => c.id !== card.id);
+          if (currentDeck.length === 0) {
+            alert('🎉 Outstanding! You have mastered all of your missed questions!');
+            isReviewingMissed = false;
+            currentDeck = [...ALL_DECK];
+            currentIndex = 0;
+            renderCurrentCard();
+            updateQuizScoreDisplay();
+            return;
+          }
+          if (currentIndex >= currentDeck.length) currentIndex = 0;
+          renderCurrentCard();
+        } else {
+          currentIndex = (currentIndex + 1) % currentDeck.length;
+          renderCurrentCard();
+        }
+      }, 120);
+    };
+
+    function updateQuizScoreDisplay() {
+      if (!IS_CME_NEW) return;
+      const scoreText = document.getElementById('quiz-score-text');
+      const missedBtn = document.getElementById('btn-review-missed');
+      const missedCount = document.getElementById('missed-count');
+
+      const pct = quizScore.answered > 0 ? Math.round((quizScore.correct / quizScore.answered) * 100) : 0;
+      if (scoreText) {
+        scoreText.textContent = quizScore.correct + ' / ' + quizScore.answered + ' (' + pct + '%)';
+      }
+
+      const missedTotal = quizScore.missedIds.size;
+      if (missedCount) missedCount.textContent = missedTotal;
+      if (missedBtn) {
+        missedBtn.style.display = missedTotal > 0 ? 'inline-flex' : 'none';
+        if (isReviewingMissed) {
+          missedBtn.classList.add('active');
+          missedBtn.innerHTML = '🔁 Exit Missed Review (' + missedTotal + ')';
+        } else {
+          missedBtn.classList.remove('active');
+          missedBtn.innerHTML = '🔁 Review Missed (' + missedTotal + ')';
+        }
+      }
+    }
+
+    window.filterMissedQuestions = function() {
+      if (!IS_CME_NEW) return;
+      if (isReviewingMissed) {
+        isReviewingMissed = false;
+        currentDeck = [...ALL_DECK];
+        currentIndex = 0;
+        renderCurrentCard();
+        updateQuizScoreDisplay();
+        return;
+      }
+
+      if (quizScore.missedIds.size === 0) {
+        alert('No missed questions! You have 100% mastery so far.');
+        return;
+      }
+
+      isReviewingMissed = true;
+      currentDeck = ALL_DECK.filter(c => quizScore.missedIds.has(c.id));
+      currentIndex = 0;
+      renderCurrentCard();
+      updateQuizScoreDisplay();
+    };
+
+    window.resetQuizScore = function() {
+      if (confirm('Restart quiz and reset your current score?')) {
+        quizScore = { correct: 0, answered: 0, missedIds: new Set() };
+        isReviewingMissed = false;
+        currentDeck = [...ALL_DECK];
+        currentIndex = 0;
+        renderCurrentCard();
+        updateQuizScoreDisplay();
+      }
     };
 
     window.flipCurrentCard = function() {
@@ -4383,10 +4517,12 @@
       isTeacherMode = !isTeacherMode;
       const modal = document.getElementById('leitner-modal');
       const btn = document.getElementById('teacher-mode-btn');
+      const titleEl = document.getElementById('leitner-modal-title');
       if (modal) {
         if (isTeacherMode) {
           modal.classList.add('teacher-mode');
-          if (btn) btn.textContent = '✖️ Exit Presentation (T)';
+          if (btn) btn.textContent = '✖️ Exit Whiteboard (T)';
+          if (titleEl) titleEl.textContent = '⚡ Whiteboard Rapid-Fire Recall';
           if (modal.requestFullscreen) {
             modal.requestFullscreen().catch(() => {});
           } else if (document.documentElement.requestFullscreen) {
@@ -4396,6 +4532,9 @@
         } else {
           modal.classList.remove('teacher-mode');
           if (btn) btn.textContent = '📽️ Teacher Mode';
+          if (titleEl) {
+            titleEl.textContent = IS_CME_NEW ? '🎯 Pupil Recall Quiz · Instant Feedback' : '⚡ Leitner Spaced Practice';
+          }
           if (document.fullscreenElement) {
             document.exitFullscreen().catch(() => {});
           }
@@ -4633,7 +4772,13 @@
 
         if (hash.includes('teacher=true') && !isTeacherMode) {
           toggleTeacherMode();
+        } else if (IS_CME_NEW) {
+          const titleEl = document.getElementById('leitner-modal-title');
+          if (titleEl && !isTeacherMode) {
+            titleEl.textContent = '🎯 Pupil Recall Quiz · Instant Feedback';
+          }
         }
+        updateQuizScoreDisplay();
       }
     };
 
@@ -4647,22 +4792,6 @@
         if (window.location.hash.startsWith('#practice-mode')) {
           history.replaceState(null, null, ' ');
         }
-      }
-    };
-
-    window.openPrintablesModal = function() {
-      const modal = document.getElementById('printables-modal');
-      if (modal) {
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-      }
-    };
-
-    window.closePrintablesModal = function() {
-      const modal = document.getElementById('printables-modal');
-      if (modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = '';
       }
     };
 
@@ -4758,15 +4887,18 @@
 
             if (absX > 50 && absX > absY * 1.3) {
               if (deltaX > 0) {
-                // Swiped Right -> Mastered (Box 3)
-                rateCurrentCard(3);
+                // Swiped Right -> Got It / Mastered
+                if (IS_CME_NEW) rateBinaryCard(true);
+                else rateCurrentCard(3);
               } else {
-                // Swiped Left -> Needs Work (Box 1)
-                rateCurrentCard(1);
+                // Swiped Left -> Needs Review / Needs Work
+                if (IS_CME_NEW) rateBinaryCard(false);
+                else rateCurrentCard(1);
               }
             } else if (deltaY < -45 && absY > absX * 1.3) {
-              // Swiped Upwards -> Got It (Box 2)
-              rateCurrentCard(2);
+              // Swiped Upwards -> Got It
+              if (IS_CME_NEW) rateBinaryCard(true);
+              else rateCurrentCard(2);
             }
           }
         }
@@ -4792,9 +4924,17 @@
       else if (e.key === 't' || e.key === 'T') { e.preventDefault(); toggleTeacherMode(); }
       else if (e.key === 'e' || e.key === 'E') { e.preventDefault(); if (IS_CME_NEW) switchPracticeTier(currentTier === 'rapid' ? 'exam' : 'rapid'); }
       else if (e.key === 'r' || e.key === 'R') { e.preventDefault(); resetRapidFireTimer(true); }
-      else if (e.key === '1') rateCurrentCard(1);
-      else if (e.key === '2') rateCurrentCard(2);
-      else if (e.key === '3') rateCurrentCard(3);
+      else if (e.key === '1') {
+        if (IS_CME_NEW && !isTeacherMode) rateBinaryCard(false);
+        else rateCurrentCard(1);
+      }
+      else if (e.key === '2') {
+        if (IS_CME_NEW && !isTeacherMode) rateBinaryCard(true);
+        else rateCurrentCard(2);
+      }
+      else if (e.key === '3') {
+        if (!IS_CME_NEW) rateCurrentCard(3);
+      }
       else if (e.key === 'ArrowRight') nextCard();
       else if (e.key === 'ArrowLeft') prevCard();
     });
