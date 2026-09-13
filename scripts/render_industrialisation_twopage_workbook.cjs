@@ -556,63 +556,71 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
   `;
 
   // ==========================================
-  // PAGE 2: PROGRESS TRACKER (Verso, Left Page)
+  // PAGE 2: PROGRESS & ASSESSMENT TRACKER (Verso, Left Page)
   // ==========================================
   html += `
-  <div class="page page-container" id="page-2" style="padding: 10px 0;">
+  <div class="page page-container" id="page-2" style="padding: 10px 0; display: flex; flex-direction: column; height: 260mm; justify-content: space-between;">
     <div>
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #0f172a; padding-bottom: 5px; margin-bottom: 12px;">
-        <h2 style="margin: 0; font-size: 14pt; color: #0f172a; text-transform: uppercase;">Scholar Progress & Disciplinary Writing Record</h2>
-        <span class="archival-badge">PEEL Writing Record</span>
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #1a237e; padding-bottom: 4px; margin-bottom: 8px;">
+        <h2 style="margin: 0; color: #1e3a8a; font-size: 15pt; text-transform: uppercase; letter-spacing: 1px;">PROGRESS & ASSESSMENT TRACKER</h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 8.8pt; font-weight: normal; color: #333;">Target Grade: _________</span>
       </div>
-      <p style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #475569; margin: 0 0 10px 0; line-height: 1.35;">
-        Track your progress across the 6 Disciplinary Writing Genres. After each extended enquiry write-up, record your teacher feedback, effort rating, and PEEL mastery:
-      </p>
       
-      <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 8.2pt; border: 1px solid #cbd5e1;">
+      <table style="width: 100%; border-collapse: collapse; text-align: left; font-family: 'Inter', sans-serif; font-size: 7.8pt; line-height: 1.25; margin-bottom: 8px;">
+        <tbody>
+          <tr>
+            <td style="border: 1px solid #333; padding: 4px 6px; font-weight: bold; background-color: #f1f5f9; width: 12%;">Level</td>
+            <td style="border: 1px solid #333; padding: 4px 6px; width: 22%;">Emerging (1-2)</td>
+            <td style="border: 1px solid #333; padding: 4px 6px; width: 22%;">Emerging+ (3)</td>
+            <td style="border: 1px solid #333; padding: 4px 6px; width: 22%;">Expected (4-5)</td>
+            <td style="border: 1px solid #333; padding: 4px 6px; width: 22%;">Expected+ (6-7) / Greater Depth (8-9)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="width: 100%; display: flex; justify-content: center; flex: 1; min-height: 0; margin-bottom: 4px;">
+      <table style="page-break-inside: avoid; width: 100%; height: 100%; border-collapse: collapse; text-align: left; font-family: 'Inter', sans-serif; font-size: 8pt; line-height: 1.25; background-color: #ffffff;">
         <thead>
-          <tr style="background: #0f172a; color: #ffffff;">
-            <th style="padding: 6px 8px; text-align: left; width: 8%;">L#</th>
-            <th style="padding: 6px 8px; text-align: left; width: 40%;">Inquiry Title</th>
-            <th style="padding: 6px 8px; text-align: left; width: 26%;">Disciplinary Genre</th>
-            <th style="padding: 6px 8px; text-align: center; width: 14%;">PEEL Mastery</th>
-            <th style="padding: 6px 8px; text-align: center; width: 12%;">Effort (1–4)</th>
+          <tr style="background-color: #1a237e; color: white;">
+            <th style="border: 1px solid #333; padding: 4px 6px; width: 38%;">Lesson / Assessment Title</th>
+            <th style="border: 1px solid #333; padding: 4px 6px; width: 10%; text-align: center;">Effort</th>
+            <th style="border: 1px solid #333; padding: 4px 6px; width: 10%; text-align: center;">Level</th>
+            <th style="border: 1px solid #333; padding: 4px 6px; width: 42%;">Teacher Comments</th>
           </tr>
         </thead>
         <tbody>
   `;
 
   unitData.lessons.forEach((l, i) => {
-    const cfg = lessonConfigs[i];
+    const isAssessment = l.title && l.title.startsWith('End of Unit Assessment');
+    const label = isAssessment ? `Assessment: ${l.title}` : `L${i + 1}: ${l.title}`;
+    const bg = isAssessment ? '' : 'background-color: #f1f5f9;';
     html += `
-          <tr style="border-bottom: 1px solid #cbd5e1; background: ${i % 2 === 0 ? '#ffffff' : '#f8fafc'};">
-            <td style="padding: 5px 8px; font-weight: 700; color: #1e3a8a;">L${i + 1}</td>
-            <td style="padding: 5px 8px; color: #334155;">${formatText(l.title)
-              .replace(/^What powered.*?change the world\?/i, 'Energy, Coal & Fareham Ironmaster')
-              .replace(
-                /^Was industrial work.*?punishment\?/i,
-                'Industrial Work: Progress or Punishment?',
-              )}</td>
-            <td style="padding: 5px 8px; font-size: 7.8pt; color: #0f172a; font-weight: 600;">${cfg.genre.replace('Genre ', 'G')}</td>
-            <td style="padding: 5px 8px; text-align: center; border-left: 1px solid #cbd5e1; border-right: 1px solid #cbd5e1; font-size: 7.5pt; color: #1e3a8a; font-weight: 600;">[ P &bull; E &bull; E &bull; L ]</td>
-            <td style="padding: 5px 8px; text-align: center; font-size: 7.5pt;">[ 1 &bull; 2 &bull; 3 &bull; 4 ]</td>
+          <tr style="${bg}">
+            <td style="border: 1px solid #333; padding: 4px 6px; font-weight: bold;">${label}</td>
+            <td style="border: 1px solid #333; padding: 4px 6px; text-align: center;"></td>
+            <td style="border: 1px solid #333; padding: 4px 6px; text-align: center;"></td>
+            <td style="border: 1px solid #333; padding: 4px 6px;"></td>
           </tr>
     `;
   });
 
   html += `
+          <tr>
+            <td style="border: 1px solid #333; padding: 4px 6px; font-weight: bold;">Assessment: End of Unit Assessment: Industrialisation & Empire</td>
+            <td style="border: 1px solid #333; padding: 4px 6px; text-align: center;"></td>
+            <td style="border: 1px solid #333; padding: 4px 6px; text-align: center;"></td>
+            <td style="border: 1px solid #333; padding: 4px 6px;"></td>
+          </tr>
+          <tr style="font-weight: bold;">
+            <td style="border: 1px solid #333; padding: 4px 6px; text-align: right;">Final Unit Grade:</td>
+            <td style="border: 1px solid #333; padding: 4px 6px; background: #eee;"></td>
+            <td style="border: 1px solid #333; padding: 4px 6px; background: #eee;"></td>
+            <td style="border: 1px solid #333; padding: 4px 6px;"></td>
+          </tr>
         </tbody>
       </table>
-    </div>
-
-    <div style="border: 1.2px solid #cbd5e1; border-radius: 6px; padding: 12px 14px; background: #fafaf9; margin-top: 14px;">
-      <h4 style="margin: 0 0 6px 0; font-size: 9.2pt; color: #0f172a; text-transform: uppercase;">Departmental PEEL Disciplinary Writing Standards:</h4>
-      <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #334155; line-height: 1.45;">
-        <strong>&bull; [P] Point (Clear Enquiry Claim):</strong> An authoritative, precise opening thesis statement directly answering the historical enquiry question.<br>
-        <strong>&bull; [E] Evidence (Archival Data & Corroboration):</strong> Specific, named historical evidence (figures, dates, statistics, legislation) drawn directly from the facing evidence page.<br>
-        <strong>&bull; [E] Explanation (Causal & Analytical Reasoning):</strong> In-depth historical reasoning using disciplinary connectives to explain <em>how</em> and <em>why</em> this factor was significant, transformative, or consequential.<br>
-        <strong>&bull; [L] Link (Evaluative Verdict):</strong> A substantiated conclusion directly linking arguments back to the enquiry question and reaching a justified historical judgement.
-      </div>
     </div>
   </div>
   `;
@@ -621,18 +629,19 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
   // PAGE 3: COURSE MAP & TIMELINE (Recto, Right Page)
   // ==========================================
   html += `
-  <div class="page page-container" id="page-3" style="padding: 10px 0;">
-    <div>
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #0f172a; padding-bottom: 5px; margin-bottom: 12px;">
-        <h2 style="margin: 0; font-size: 14pt; color: #0f172a; text-transform: uppercase;">Curriculum Roadmap & Chronological Spine</h2>
+  <div class="page page-container" id="page-3" style="padding: 10px 0; display: flex; flex-direction: column; height: 260mm; justify-content: space-between;">
+    <div style="flex-shrink: 0;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #0f172a; padding-bottom: 4px; margin-bottom: 6px;">
+        <h2 style="margin: 0; font-size: 14.5pt; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px;">Curriculum Roadmap & Chronological Spine</h2>
         <span class="archival-badge">1750 – 1900</span>
       </div>
-      <p style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #475569; margin: 0 0 12px 0;">
+      <p style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #475569; margin: 0; line-height: 1.35;">
         Follow Britain's dual transformation: the domestic industrial revolution at home and the expansion of imperial power abroad.
       </p>
+    </div>
 
-      <!-- Visual Chronological Spine -->
-      <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px;">
+    <!-- Visual Chronological Spine (Spaced out to use entirety of page) -->
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin: 8px 0; padding: 4px 0;">
   `;
 
   const timelineItems = [
@@ -675,28 +684,28 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
 
   timelineItems.forEach((item) => {
     html += `
-        <div style="display: flex; gap: 12px; align-items: flex-start; border-left: 3px solid #1e3a8a; padding-left: 10px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 700; color: #1e3a8a; width: 75px; flex-shrink: 0;">${item.year}</div>
-          <div>
-            <strong style="font-size: 8.5pt; color: #0f172a; display: block;">${item.title}</strong>
-            <span style="font-size: 8pt; color: #475569; font-family: 'Inter', sans-serif;">${item.desc}</span>
-          </div>
+      <div style="display: flex; gap: 14px; align-items: flex-start; border-left: 3.5px solid #1e3a8a; padding-left: 14px; position: relative;">
+        <div style="position: absolute; left: -6px; top: 4px; width: 9px; height: 9px; border-radius: 50%; background: #1e3a8a; border: 2px solid #ffffff;"></div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 800; color: #1e3a8a; width: 84px; flex-shrink: 0; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 4px; padding: 3px 5px; text-align: center;">${item.year}</div>
+        <div style="flex: 1;">
+          <strong style="font-size: 9.2pt; color: #0f172a; display: block; margin-bottom: 1px;">${item.title}</strong>
+          <span style="font-size: 8.2pt; color: #334155; font-family: 'Inter', sans-serif; line-height: 1.4; display: block;">${item.desc}</span>
         </div>
+      </div>
     `;
   });
 
   html += `
-      </div>
-
-      <div style="border: 1.2px solid #bae6fd; background: #f0f9ff; border-radius: 6px; padding: 10px;">
-        <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0369a1; display: block; margin-bottom: 4px;">Hampshire Local History Connection:</strong>
-        <p style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #334155; margin: 0; line-height: 1.35;">
-          Our curriculum directly anchors national events into our local Hampshire landscape: from <strong>Henry Cort’s surviving puddling weir and slag wall at Funtley</strong>, to <strong>Fareham Red brick clay pits</strong>, and the <strong>Portsmouth Royal Navy Dockyard</strong> industrial complex.
-        </p>
-      </div>
     </div>
 
-    <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #64748b; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 6px;">
+    <div style="flex-shrink: 0; border: 1.5px solid #bae6fd; background: #f0f9ff; border-radius: 6px; padding: 8px 12px; margin-bottom: 6px;">
+      <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0369a1; display: block; margin-bottom: 3px;">🏛️ Hampshire Local History Connection:</strong>
+      <p style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #1e293b; margin: 0; line-height: 1.35;">
+        Our curriculum directly anchors national events into our local Hampshire landscape: from <strong>Henry Cort’s surviving puddling weir and iron slag wall at Funtley</strong>, to <strong>Fareham Red brick clay pits</strong>, and the <strong>Portsmouth Royal Navy Dockyard</strong> industrial complex.
+      </p>
+    </div>
+
+    <div style="flex-shrink: 0; font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 600; color: #475569; text-align: center; border-top: 1px solid #cbd5e1; padding-top: 5px;">
       Turn overleaf to begin <strong>Lesson 1 (Pages 4–5 Facing Spread)</strong> ➔
     </div>
   </div>
@@ -844,26 +853,28 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
               <ul style="margin: 0 0 5px 0; padding-left: 15px; font-family: 'Inter', sans-serif; font-size: 8pt; color: #475569; line-height: 1.35;">
                 ${cfg.bridgeTask.col1Prompts.map((p) => `<li>${p}</li>`).join('')}
               </ul>
-              <div class="task-line-dotted" style="height: 5.8mm;"></div>
-              <div class="task-line-dotted" style="height: 5.8mm;"></div>
-              <div class="task-line-dotted" style="height: 5.8mm;"></div>
-              <div class="task-line-dotted" style="height: 5.8mm;"></div>
-              <div class="task-line-dotted" style="height: 5.8mm;"></div>
-              <div class="task-line-dotted" style="height: 5.8mm;"></div>
-              <div class="task-line-dotted" style="height: 5.8mm;"></div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 600; color: #0369a1; border-top: 1px dashed #cbd5e1; padding-top: 3px; margin: 4px 0 2px 0;">
+                ✍️ Synthesise their perspective in 2–3 sentences:
+              </div>
+              <div class="task-line-dotted" style="height: 5.6mm;"></div>
+              <div class="task-line-dotted" style="height: 5.6mm;"></div>
+              <div class="task-line-dotted" style="height: 5.6mm;"></div>
+              <div class="task-line-dotted" style="height: 5.6mm;"></div>
+              <div class="task-line-dotted" style="height: 5.6mm;"></div>
             </div>
             <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 7px; background: #f8fafc;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #b91c1c; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">${cfg.bridgeTask.col2Title}</strong>
               <ul style="margin: 0 0 5px 0; padding-left: 15px; font-family: 'Inter', sans-serif; font-size: 8pt; color: #475569; line-height: 1.35;">
                 ${cfg.bridgeTask.col2Prompts.map((p) => `<li>${p}</li>`).join('')}
               </ul>
-              <div class="task-line-dotted" style="height: 5.8mm;"></div>
-              <div class="task-line-dotted" style="height: 5.8mm;"></div>
-              <div class="task-line-dotted" style="height: 5.8mm;"></div>
-              <div class="task-line-dotted" style="height: 5.8mm;"></div>
-              <div class="task-line-dotted" style="height: 5.8mm;"></div>
-              <div class="task-line-dotted" style="height: 5.8mm;"></div>
-              <div class="task-line-dotted" style="height: 5.8mm;"></div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 600; color: #b91c1c; border-top: 1px dashed #cbd5e1; padding-top: 3px; margin: 4px 0 2px 0;">
+                ✍️ Synthesise their perspective in 2–3 sentences:
+              </div>
+              <div class="task-line-dotted" style="height: 5.6mm;"></div>
+              <div class="task-line-dotted" style="height: 5.6mm;"></div>
+              <div class="task-line-dotted" style="height: 5.6mm;"></div>
+              <div class="task-line-dotted" style="height: 5.6mm;"></div>
+              <div class="task-line-dotted" style="height: 5.6mm;"></div>
             </div>
           </div>
           <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #64748b; margin-bottom: 3px;">
