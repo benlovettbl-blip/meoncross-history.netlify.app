@@ -1,5 +1,5 @@
-const CACHE_NAME = 'history-hub-cache-v15';
-const DYNAMIC_CACHE = 'history-hub-dynamic-v15';
+const CACHE_NAME = 'history-hub-cache-v16';
+const DYNAMIC_CACHE = 'history-hub-dynamic-v16';
 
 const CORE_ASSETS = [
   '/',
@@ -34,6 +34,9 @@ const CORE_ASSETS = [
   '/images/lowry_william.png',
   '/images/lowry_auriol.png',
   '/images/lowry_cyril.png',
+  '/images/crummack/map_canal_du_nord_cambrai_1918.jpg',
+  '/images/crummack/map_canal_du_nord_modern_map.jpg',
+  '/images/crummack/map_canal_du_nord_modern_satellite.jpg',
 ];
 
 // Install Event: Precache core assets with resilient per-item handling
