@@ -39,6 +39,18 @@ async function runSync() {
     return false;
   }
 
+  // Step 1b: Task Uniformity & Anti-Duplication Linter
+  console.log(`\n[Step 1b/5] 🛡️ Auditing task uniformity, source formatting & anti-duplication...`);
+  try {
+    execSync(`node scripts/lint_task_uniformity.cjs ${unitId}`, {
+      stdio: 'inherit',
+      cwd: ROOT_DIR,
+    });
+  } catch (err) {
+    console.error(`❌ Task uniformity linter failed for ${unitId}:`, err.message);
+    return false;
+  }
+
   // Step 2: Rebuild Global Database
   console.log(`\n[Step 2/5] 🗄️ Updating public/database.json for digital app...`);
   try {
@@ -53,10 +65,14 @@ async function runSync() {
   if (unitId === 'trip_ypres') {
     console.log(`\n[Step 3/5] ⏭️ Unit ${unitId} is fully digital. Skipping PDF export.`);
   } else {
-    console.log(`\n[Step 3/5] 📄 Compiling fresh HTML & PDFs with Puppeteer...`);
+    console.log(`\n[Step 3/5] 📄 Compiling fresh HTML workbooks & PDFs with Puppeteer...`);
     try {
+      execSync(`node scripts/generate_pupil_workbooks.cjs ${unitId}`, {
+        stdio: 'inherit',
+        cwd: ROOT_DIR,
+      });
       execSync(`node scripts/export_pdfs.cjs ${unitId}`, { stdio: 'inherit', cwd: ROOT_DIR });
-      console.log(`✅ PDFs exported and verified in public/pdfs/.`);
+      console.log(`✅ Pupil workbooks and PDFs exported and verified in public/pdfs/.`);
     } catch (err) {
       console.error(`❌ PDF export failed:`, err.message);
       return false;

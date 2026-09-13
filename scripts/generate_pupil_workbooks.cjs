@@ -1251,15 +1251,20 @@ allDirs.forEach((unitId) => {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
       
-    @page { size: A4 portrait; margin: 15mm 15mm 25mm 15mm; }
-    body { font-family: 'Georgia', 'Garamond', serif; font-size: 11pt; line-height: 1.4; color: #1e293b;  }
+    *, *:before, *:after { box-sizing: border-box; }
+    ${
+      unitId === 'industrialisation_and_empire'
+        ? `@page { size: A4 portrait; margin: 15mm 20mm 22mm 20mm; }`
+        : `@page { size: A4 portrait; margin: 15mm 15mm 25mm 15mm; }`
+    }
+    body { font-family: 'Georgia', 'Garamond', serif; font-size: 11pt; line-height: 1.4; color: #1e293b; margin: 0; padding: 0; }
     h1, h2, h3, h4, h5, h6, strong, .do-now-q, th { font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif; }
     h1 { font-family: 'Playfair Display', serif; font-size: 30pt; text-align: center; margin-top: 80px; color: #0f172a; text-transform: uppercase; letter-spacing: 1px; }
     h2 { font-size: 18pt; color: #1e3a8a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 15px; page-break-after: auto; }
     h4 { font-size: 11pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: avoid; }
     h3 { font-size: 13pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: auto; }
     .narrative-block { margin-bottom: 10pt; text-align: justify; orphans: 3; widows: 3; color: #334155; }
-    .task-box { margin-top: 22px; margin-bottom: 16px; width: 100%; page-break-inside: auto !important; }
+    .task-box { margin-top: 22px; margin-bottom: 16px; width: 100%; max-width: 100%; box-sizing: border-box; page-break-inside: auto !important; }
     ${
       unitId === 'cme_new'
         ? `
@@ -2071,20 +2076,20 @@ allDirs.forEach((unitId) => {
                   }
 
                   if (task.steps && task.steps.length > 0) {
-                    _nbHtml += `<div style="display: flex; align-items: stretch; gap: 4px; margin-top: 5px;">`;
+                    _nbHtml += `<div style="display: flex; align-items: stretch; gap: 4px; margin-top: 5px; width: 100%; box-sizing: border-box;">`;
                     task.steps.forEach((step, sIdx) => {
                       if (sIdx > 0) {
                         _nbHtml += `<div style="display: flex; align-items: center; justify-content: center; font-size: 10pt; color: #0284c7; font-weight: bold; flex-shrink: 0; padding: 0 1px;">&#10140;</div>`;
                       }
                       _nbHtml += `
-                        <div style="flex: 1; background: #ffffff; border: 1.2px solid ${step.blank ? '#0284c7' : '#bae6fd'}; border-top: 3px solid ${sIdx === 0 ? '#0284c7' : sIdx === task.steps.length - 1 ? '#0369a1' : '#0ea5e9'}; border-radius: 4px; padding: 4px 6px; display: flex; flex-direction: column;">
+                        <div style="flex: 1; min-width: 0; box-sizing: border-box; background: #ffffff; border: 1.2px solid ${step.blank ? '#0284c7' : '#bae6fd'}; border-top: 3px solid ${sIdx === 0 ? '#0284c7' : sIdx === task.steps.length - 1 ? '#0369a1' : '#0ea5e9'}; border-radius: 4px; padding: 4px 6px; display: flex; flex-direction: column; word-break: break-word;">
                           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
                             <span style="font-size: 6.5pt; font-weight: bold; color: #0369a1; text-transform: uppercase;">${step.stage || 'Step ' + (sIdx + 1)}</span>
                             ${step.year ? `<span style="font-size: 6.5pt; color: #64748b; font-weight: 600;">${step.year}</span>` : ''}
                           </div>
                           <div style="font-weight: bold; font-size: 7.2pt; color: #0f172a; margin-bottom: 2px; line-height: 1.2;">${step.title || ''}</div>
                           ${step.desc ? `<div style="font-size: 6.6pt; color: #475569; line-height: 1.2; margin-bottom: 2px;">${step.desc}</div>` : ''}
-                          ${step.blank ? `<div style="flex: 1; min-height: 32px; background: #f8fafc; border: 1.2px dashed #0284c7; border-radius: 3px; padding: 3px 5px; font-size: 6.6pt; color: #0369a1; margin-top: 2px;"><em>${step.prompt || 'Complete with pen:'}</em><div style="border-bottom: 1px dotted #93c5fd; height: 14px; margin-top: 2px;"></div></div>` : ''}
+                          ${step.blank ? `<div style="flex: 1; min-height: 32px; background: #f8fafc; border: 1.2px dashed #0284c7; border-radius: 3px; padding: 3px 5px; font-size: 6.6pt; color: #0369a1; margin-top: 2px; box-sizing: border-box;"><em>${step.prompt || 'Complete with pen:'}</em><div style="border-bottom: 1px dotted #93c5fd; height: 14px; margin-top: 2px;"></div></div>` : ''}
                         </div>
                       `;
                     });
@@ -2121,7 +2126,7 @@ allDirs.forEach((unitId) => {
                   let _t = processTaskTextWithTariff(
                     task.text || task.question || task.instruction || task.title || '',
                   );
-                  _nbHtml += `<div class="task-box" style="margin-bottom: 12px; border: 1.5px solid #475569; border-radius: 6px; padding: 8px 10px; background: #f8fafc; page-break-inside: avoid;">`;
+                  _nbHtml += `<div class="task-box" style="margin-bottom: 12px; border: 1.5px solid #475569; border-radius: 6px; padding: 8px 10px; background: #f8fafc; page-break-inside: avoid; box-sizing: border-box; width: 100%;">`;
                   _nbHtml += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">`;
                   _nbHtml += `<strong style="color: #1e293b; font-size: 8.5pt;">Q${globalQNum++}. ${_t.cleanText}</strong>`;
                   _nbHtml += `<span style="font-size: 6.8pt; font-weight: bold; background: #475569; color: #ffffff; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Forensic Ledger</span>`;
@@ -2131,44 +2136,52 @@ allDirs.forEach((unitId) => {
                     _nbHtml += `<p style="font-size: 7.3pt; color: #475569; margin: 0 0 5px 0; font-style: italic;">${task.instruction}</p>`;
                   }
 
-                  const col1 = task.col1 || { title: 'Column A' };
-                  const col2 = task.col2 || { title: 'Column B' };
-                  const rowCount = task.rows || 3;
+                  const col1Title = (task.col1 && task.col1.title) || task.left_title || 'Column A';
+                  const col2Title =
+                    (task.col2 && task.col2.title) || task.right_title || 'Column B';
+                  const col1Hints = (task.col1 && task.col1.hints) || task.left_points || [];
+                  const col2Hints = (task.col2 && task.col2.hints) || task.right_points || [];
+                  const rowCount = task.rows || Math.max(col1Hints.length, col2Hints.length, 3);
 
                   _nbHtml += `
-                    <table style="width: 100%; border-collapse: collapse; margin-top: 4px; font-size: 7.3pt;">
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 4px; font-size: 7.3pt; table-layout: fixed; box-sizing: border-box;">
                       <thead>
                         <tr>
-                          <th style="width: 50%; border: 1px solid #cbd5e1; background: #e2e8f0; padding: 4px 6px; color: #0f172a; text-align: left;">${col1.title}</th>
-                          <th style="width: 50%; border: 1px solid #cbd5e1; background: #e2e8f0; padding: 4px 6px; color: #0f172a; text-align: left;">${col2.title}</th>
+                          <th style="width: 50%; border: 1px solid #cbd5e1; background: #e2e8f0; padding: 4px 6px; color: #0f172a; text-align: left; word-break: break-word;">${col1Title}</th>
+                          <th style="width: 50%; border: 1px solid #cbd5e1; background: #e2e8f0; padding: 4px 6px; color: #0f172a; text-align: left; word-break: break-word;">${col2Title}</th>
                         </tr>
                       </thead>
                       <tbody>
                   `;
                   for (let r = 0; r < rowCount; r++) {
-                    const c1Hint = col1.hints && col1.hints[r] ? col1.hints[r] : '&bull; ';
-                    const c2Hint = col2.hints && col2.hints[r] ? col2.hints[r] : '&bull; ';
+                    const c1Hint = col1Hints[r] ? `&bull; ${col1Hints[r]}` : '&bull; ';
+                    const c2Hint = col2Hints[r] ? `&bull; ${col2Hints[r]}` : '&bull; ';
                     _nbHtml += `
                       <tr>
-                        <td style="border: 1px solid #cbd5e1; background: #ffffff; padding: 5px 6px; height: 28px; vertical-align: top; color: #475569; font-size: 7pt;">
+                        <td style="border: 1px solid #cbd5e1; background: #ffffff; padding: 4px 6px; vertical-align: top; color: #334155; font-size: 7pt; line-height: 1.25; word-break: break-word;">
                           <div>${c1Hint}</div>
-                          <div style="border-bottom: 1px dotted #e2e8f0; height: 12px; margin-top: 2px;"></div>
+                          <div style="border-bottom: 1px dotted #cbd5e1; height: 12px; margin-top: 2px;"></div>
                         </td>
-                        <td style="border: 1px solid #cbd5e1; background: #ffffff; padding: 5px 6px; height: 28px; vertical-align: top; color: #475569; font-size: 7pt;">
+                        <td style="border: 1px solid #cbd5e1; background: #ffffff; padding: 4px 6px; vertical-align: top; color: #334155; font-size: 7pt; line-height: 1.25; word-break: break-word;">
                           <div>${c2Hint}</div>
-                          <div style="border-bottom: 1px dotted #e2e8f0; height: 12px; margin-top: 2px;"></div>
+                          <div style="border-bottom: 1px dotted #cbd5e1; height: 12px; margin-top: 2px;"></div>
                         </td>
                       </tr>
                     `;
                   }
-                  _nbHtml += `</tbody></table></div>`;
+                  _nbHtml += `</tbody></table>`;
+                  if (task.synthesis_prompt || task.starter) {
+                    _nbHtml += `<div style="font-size: 7pt; color: #1e293b; margin: 5px 0 2px 0;"><strong>${task.synthesis_prompt || 'Synthesise your forensic findings:'}</strong></div>`;
+                    _nbHtml += `<div style="min-height: 24px; background: #ffffff; border: 1px dashed #94a3b8; border-radius: 3px; padding: 3px 5px; font-size: 7pt; color: #475569; box-sizing: border-box;"><span style="color: #94a3b8; font-style: italic;">${task.starter || ''}</span><div style="border-bottom: 1px dotted #cbd5e1; height: 12px; margin-top: 2px;"></div></div>`;
+                  }
+                  _nbHtml += `</div>`;
                   return;
                 }
                 if (task.type === 'historiographical_spectrum' || task.type === 'spectrum') {
                   let _t = processTaskTextWithTariff(
                     task.text || task.question || task.instruction || task.title || '',
                   );
-                  _nbHtml += `<div class="task-box" style="margin-bottom: 12px; border: 1.5px solid #7c3aed; border-radius: 6px; padding: 8px 10px; background: #faf5ff; page-break-inside: avoid;">`;
+                  _nbHtml += `<div class="task-box" style="margin-bottom: 12px; border: 1.5px solid #7c3aed; border-radius: 6px; padding: 8px 10px; background: #faf5ff; page-break-inside: avoid; box-sizing: border-box; width: 100%;">`;
                   _nbHtml += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">`;
                   _nbHtml += `<strong style="color: #5b21b6; font-size: 8.5pt;">Q${globalQNum++}. ${_t.cleanText}</strong>`;
                   _nbHtml += `<span style="font-size: 6.8pt; font-weight: bold; background: #7c3aed; color: #ffffff; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Interpretation Spectrum</span>`;
@@ -2182,7 +2195,7 @@ allDirs.forEach((unitId) => {
                   const rightPole = task.pole_right || 'Interpretation B';
 
                   _nbHtml += `
-                    <div style="margin: 6px 0; padding: 6px 8px; background: #ffffff; border: 1px solid #ddd6fe; border-radius: 4px;">
+                    <div style="margin: 6px 0; padding: 6px 8px; background: #ffffff; border: 1px solid #ddd6fe; border-radius: 4px; box-sizing: border-box;">
                       <div style="display: flex; justify-content: space-between; font-size: 7.2pt; font-weight: bold; color: #4c1d95; margin-bottom: 3px;">
                         <span style="max-width: 46%;">${leftPole}</span>
                         <span style="max-width: 46%; text-align: right;">${rightPole}</span>
@@ -2200,7 +2213,7 @@ allDirs.forEach((unitId) => {
                       </div>
                     </div>
                     <div style="font-size: 7pt; color: #5b21b6; margin-bottom: 2px;"><strong>Plot your position with an &lsquo;X&rsquo; on the line, then explain your reasoning:</strong></div>
-                    <div style="min-height: 26px; background: #ffffff; border: 1px dashed #c4b5fd; border-radius: 3px; padding: 3px 5px; font-size: 7pt; color: #475569;"><span style="color: #9ca3af; font-style: italic;">${task.starter || ''}</span><div style="border-bottom: 1px dotted #ddd6fe; height: 13px; margin-top: 2px;"></div></div>
+                    <div style="min-height: 26px; background: #ffffff; border: 1px dashed #c4b5fd; border-radius: 3px; padding: 3px 5px; font-size: 7pt; color: #475569; box-sizing: border-box;"><span style="color: #9ca3af; font-style: italic;">${task.starter || ''}</span><div style="border-bottom: 1px dotted #ddd6fe; height: 13px; margin-top: 2px;"></div></div>
                   `;
                   _nbHtml += `</div>`;
                   return;
@@ -2209,7 +2222,7 @@ allDirs.forEach((unitId) => {
                   let _t = processTaskTextWithTariff(
                     task.text || task.question || task.instruction || task.title || '',
                   );
-                  _nbHtml += `<div class="task-box" style="margin-bottom: 12px; border: 1.5px solid #ea580c; border-radius: 6px; padding: 8px 10px; background: #fff7ed; page-break-inside: avoid;">`;
+                  _nbHtml += `<div class="task-box" style="margin-bottom: 12px; border: 1.5px solid #ea580c; border-radius: 6px; padding: 8px 10px; background: #fff7ed; page-break-inside: avoid; box-sizing: border-box; width: 100%;">`;
                   _nbHtml += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">`;
                   _nbHtml += `<strong style="color: #9a3412; font-size: 8.5pt;">Q${globalQNum++}. ${_t.cleanText}</strong>`;
                   _nbHtml += `<span style="font-size: 6.8pt; font-weight: bold; background: #ea580c; color: #ffffff; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Decision Dilemma</span>`;
@@ -2219,12 +2232,12 @@ allDirs.forEach((unitId) => {
                     _nbHtml += `<p style="font-size: 7.3pt; color: #c2410c; margin: 0 0 5px 0; font-style: italic;">${task.instruction}</p>`;
                   }
                   if (task.options && task.options.length > 0) {
-                    _nbHtml += `<div style="display: flex; flex-direction: column; gap: 4px; margin-top: 4px;">`;
+                    _nbHtml += `<div style="display: flex; flex-direction: column; gap: 4px; margin-top: 4px; width: 100%; box-sizing: border-box;">`;
                     task.options.forEach((opt, oIdx) => {
                       _nbHtml += `
-                        <div style="background: #ffffff; border: 1px solid #fed7aa; border-radius: 4px; padding: 4px 6px; display: flex; align-items: flex-start; gap: 5px;">
+                        <div style="background: #ffffff; border: 1px solid #fed7aa; border-radius: 4px; padding: 4px 6px; display: flex; align-items: flex-start; gap: 5px; box-sizing: border-box;">
                           <div style="width: 14px; height: 14px; border: 1.5px solid #ea580c; border-radius: 3px; margin-top: 1px; flex-shrink: 0; background: #ffffff;"></div>
-                          <div style="flex: 1;">
+                          <div style="flex: 1; min-width: 0; box-sizing: border-box;">
                             <strong style="font-size: 7.3pt; color: #9a3412;">Option ${String.fromCharCode(65 + oIdx)}: ${opt.title}</strong>
                             <div style="font-size: 6.8pt; color: #475569; line-height: 1.2;">${opt.desc}</div>
                           </div>
@@ -2235,7 +2248,7 @@ allDirs.forEach((unitId) => {
                   }
                   if (task.risk_prompt) {
                     _nbHtml += `<div style="margin-top: 4px; font-size: 7pt; color: #9a3412;"><strong>Calculated Risk:</strong> ${task.risk_prompt}</div>`;
-                    _nbHtml += `<div style="min-height: 24px; background: #ffffff; border: 1px dashed #fdba74; border-radius: 3px; padding: 3px 5px; font-size: 7pt; color: #475569;"><span style="color: #94a3b8; font-style: italic;">${task.starter || ''}</span><div style="border-bottom: 1px dotted #fdba74; height: 13px; margin-top: 2px;"></div></div>`;
+                    _nbHtml += `<div style="min-height: 24px; background: #ffffff; border: 1px dashed #fdba74; border-radius: 3px; padding: 3px 5px; font-size: 7pt; color: #475569; box-sizing: border-box;"><span style="color: #94a3b8; font-style: italic;">${task.starter || ''}</span><div style="border-bottom: 1px dotted #fdba74; height: 13px; margin-top: 2px;"></div></div>`;
                   }
                   _nbHtml += `</div>`;
                   return;
@@ -2248,7 +2261,7 @@ allDirs.forEach((unitId) => {
                   let _t = processTaskTextWithTariff(
                     task.text || task.question || task.instruction || task.title || '',
                   );
-                  _nbHtml += `<div class="task-box" style="margin-bottom: 12px; border: 1.5px solid #059669; border-radius: 6px; padding: 8px 10px; background: #ecfdf5; page-break-inside: avoid;">`;
+                  _nbHtml += `<div class="task-box" style="margin-bottom: 12px; border: 1.5px solid #059669; border-radius: 6px; padding: 8px 10px; background: #ecfdf5; page-break-inside: avoid; box-sizing: border-box; width: 100%;">`;
                   _nbHtml += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">`;
                   _nbHtml += `<strong style="color: #065f46; font-size: 8.5pt;">Q${globalQNum++}. ${_t.cleanText}</strong>`;
                   _nbHtml += `<span style="font-size: 6.8pt; font-weight: bold; background: #059669; color: #ffffff; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Priority Diamond</span>`;
@@ -2258,20 +2271,22 @@ allDirs.forEach((unitId) => {
                     _nbHtml += `<p style="font-size: 7.3pt; color: #047857; margin: 0 0 5px 0; font-style: italic;">${task.instruction}</p>`;
                   }
                   if (task.factors && task.factors.length > 0) {
-                    _nbHtml += `<div style="display: flex; gap: 8px; margin: 5px 0; align-items: stretch;">`;
-                    _nbHtml += `<div style="flex: 1.2; display: flex; flex-direction: column; gap: 3px;">`;
+                    _nbHtml += `<div style="display: flex; gap: 8px; margin: 5px 0; align-items: stretch; width: 100%; box-sizing: border-box;">`;
+                    _nbHtml += `<div style="flex: 1.2; min-width: 0; display: flex; flex-direction: column; gap: 3px; box-sizing: border-box;">`;
                     task.factors.forEach((f, fIdx) => {
                       const tag = String.fromCharCode(65 + fIdx);
+                      const fText =
+                        typeof f === 'string' ? f : f.label || f.title || f.name || f.desc || '';
                       _nbHtml += `
-                        <div style="background: #ffffff; border: 1px solid #a7f3d0; border-radius: 3px; padding: 3px 6px; display: flex; align-items: center; gap: 5px;">
+                        <div style="background: #ffffff; border: 1px solid #a7f3d0; border-radius: 3px; padding: 3px 6px; display: flex; align-items: center; gap: 5px; box-sizing: border-box; word-break: break-word;">
                           <span style="background: #059669; color: #ffffff; font-weight: bold; font-size: 6.8pt; width: 14px; height: 14px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;">${tag}</span>
-                          <span style="font-size: 7pt; color: #065f46; font-weight: 600;">${typeof f === 'string' ? f : f.title || f.name}</span>
+                          <span style="font-size: 7pt; color: #065f46; font-weight: 600; line-height: 1.2;">${fText}</span>
                         </div>
                       `;
                     });
                     _nbHtml += `</div>`;
                     _nbHtml += `
-                      <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; background: #ffffff; border: 1px solid #6ee7b7; border-radius: 4px; padding: 4px;">
+                      <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; background: #ffffff; border: 1px solid #6ee7b7; border-radius: 4px; padding: 4px; box-sizing: border-box;">
                         <div style="text-align: center;">
                           <div style="font-size: 6pt; font-weight: bold; color: #047857; text-transform: uppercase;">Top Catalyst</div>
                           <div style="width: 55px; height: 18px; border: 1.5px solid #059669; background: #d1fae5; border-radius: 3px; margin: 0 auto; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 7.2pt; color: #065f46;">#1 [ &nbsp;&nbsp;&nbsp; ]</div>
@@ -2295,8 +2310,8 @@ allDirs.forEach((unitId) => {
                     _nbHtml += `</div>`;
                   }
                   if (task.justification_prompt || task.starter) {
-                    _nbHtml += `<div style="font-size: 7pt; color: #047857; margin: 3px 0 2px 0;"><strong>Write factor letters (A, B, C, D) in the podium slots above, then justify #1:</strong></div>`;
-                    _nbHtml += `<div style="min-height: 26px; background: #ffffff; border: 1px dashed #6ee7b7; border-radius: 3px; padding: 3px 5px; font-size: 7pt; color: #475569;"><span style="color: #9ca3af; font-style: italic;">${task.starter || 'Factor A was the decisive catalyst because...'}</span><div style="border-bottom: 1px dotted #a7f3d0; height: 13px; margin-top: 2px;"></div></div>`;
+                    _nbHtml += `<div style="font-size: 7pt; color: #047857; margin: 3px 0 2px 0;"><strong>${task.justification_prompt ? task.justification_prompt : 'Write factor letters (A, B, C, D) in the podium slots above, then justify #1:'}</strong></div>`;
+                    _nbHtml += `<div style="min-height: 26px; background: #ffffff; border: 1px dashed #6ee7b7; border-radius: 3px; padding: 3px 5px; font-size: 7pt; color: #475569; box-sizing: border-box;"><span style="color: #9ca3af; font-style: italic;">${task.starter || 'Factor A was the decisive catalyst because...'}</span><div style="border-bottom: 1px dotted #a7f3d0; height: 13px; margin-top: 2px;"></div></div>`;
                   }
                   _nbHtml += `</div>`;
                   return;
@@ -2488,6 +2503,27 @@ allDirs.forEach((unitId) => {
                     if (task.type === 'extended_writing' && task.instructions) {
                       _nbHtml += `<p style="font-style: italic; color: #334155; margin-bottom: 5px; margin-top: 5px; font-size: 10pt;">${task.instructions}</p>`;
                     }
+                    if (task.type === 'extended_writing' && task.scaffolding) {
+                      const sc = task.scaffolding;
+                      _nbHtml += `<div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 8px 10px; margin-bottom: 10px; font-size: 7.3pt; box-sizing: border-box; width: 100%;">`;
+                      if (sc.structure_strip && sc.structure_strip.length > 0) {
+                        _nbHtml += `<div style="font-weight: 700; color: #1e3a8a; margin-bottom: 4px; text-transform: uppercase; font-size: 6.8pt; letter-spacing: 0.5px;">Analytical Structure Guide:</div>`;
+                        _nbHtml += `<div style="display: flex; flex-direction: column; gap: 3px; margin-bottom: 6px;">`;
+                        sc.structure_strip.forEach((s) => {
+                          _nbHtml += `<div style="background: #ffffff; border: 1px solid #e2e8f0; border-left: 3px solid #3b82f6; padding: 3px 6px; color: #334155; line-height: 1.25;"><strong>&bull;</strong> ${s}</div>`;
+                        });
+                        _nbHtml += `</div>`;
+                      }
+                      if (sc.connective_bank && sc.connective_bank.length > 0) {
+                        _nbHtml += `<div style="font-weight: 700; color: #047857; margin-bottom: 3px; text-transform: uppercase; font-size: 6.8pt; letter-spacing: 0.5px;">Sentence Starters &amp; Causal Connectives:</div>`;
+                        _nbHtml += `<div style="background: #ffffff; border: 1px dashed #a7f3d0; border-radius: 4px; padding: 4px 6px; color: #065f46; font-style: italic; font-size: 7pt; line-height: 1.3;">`;
+                        _nbHtml += sc.connective_bank
+                          .map((c) => `&ldquo;${c}&rdquo;`)
+                          .join(' &bull; ');
+                        _nbHtml += `</div>`;
+                      }
+                      _nbHtml += `</div>`;
+                    }
                   }
 
                   let tText = (task.text || task.question || '').toLowerCase();
@@ -2502,7 +2538,7 @@ allDirs.forEach((unitId) => {
                   } else {
                     let linesToDraw = 4;
                     if (task.type === 'extended_writing') {
-                      linesToDraw = 18;
+                      linesToDraw = task.scaffolding ? 14 : 18;
                     } else if (
                       task.type === 'analysis' ||
                       task.type === 'debate' ||
