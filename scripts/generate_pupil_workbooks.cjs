@@ -1253,7 +1253,7 @@ allDirs.forEach((unitId) => {
       
     *, *:before, *:after { box-sizing: border-box; }
     ${
-      unitId === 'industrialisation_and_empire'
+      ['industrialisation_and_empire', 'early_modern_world', 'medieval_england'].includes(unitId)
         ? `@page { size: A4 portrait; margin: 15mm 20mm 22mm 20mm; }`
         : `@page { size: A4 portrait; margin: 15mm 15mm 25mm 15mm; }`
     }
