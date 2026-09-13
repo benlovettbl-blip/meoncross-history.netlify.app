@@ -113,6 +113,8 @@ const units = fs
               'usa',
               'early_modern_world',
               'industrialisation_and_empire',
+              'great_war',
+              'great_war_part2',
             ].includes(unitId)
           ) {
             // Units where every lesson has a standardized 20-question quiz array
@@ -2671,6 +2673,7 @@ const units = fs
         explanation: [
           'cme_new',
           'great_war',
+          'great_war_part2',
           'medieval_england',
           'usa',
           'early_modern_world',

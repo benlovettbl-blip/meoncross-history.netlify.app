@@ -1,4 +1,4 @@
-export default {
+export const unitData = {
   lesson_reflection: {
     prompt:
       'You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.',
@@ -1625,126 +1625,291 @@ export default {
       ],
       quiz: [
         {
-          q: 'What term describes the rapid colonization of Africa by European powers in the late 19th century?',
-          a: 'The Scramble for Africa',
+          question:
+            'What term describes the rapid colonization and partition of Africa by European powers between 1881 and 1914?',
+          q: 'What term describes the rapid colonization and partition of Africa by European powers between 1881 and 1914?',
           options: [
-            'The Great Game',
+            'The Continental System',
             'The Scramble for Africa',
             'Manifest Destiny',
-            'The African Partition',
+            'The Great Game',
           ],
+          answer: 'The Scramble for Africa',
+          a: 'The Scramble for Africa',
           explanation:
-            "The 'Scramble for Africa' saw European empires divide nearly the entire African continent between 1881 and 1914. Colonial rivalries generated intense diplomatic friction, military standoffs, and nationalistic pride.",
+            'The "Scramble for Africa" saw European empires divide nearly the entire African continent between 1881 and 1914, driven by industrial resource demands, strategic rivalries, and national prestige.',
         },
         {
-          q: "Which German leader famously stated that Germany wanted its 'place in the sun'?",
-          a: 'Kaiser Wilhelm II',
+          question:
+            'Which European monarch claimed the Congo Free State as his personal private property, brutally exploiting it for rubber and ivory?',
+          q: 'Which European monarch claimed the Congo Free State as his personal private property, brutally exploiting it for rubber and ivory?',
           options: [
+            'Kaiser Wilhelm I of Germany',
+            'King Victor Emmanuel II of Italy',
+            'King Leopold II of Belgium',
+            'King Alfonso XIII of Spain',
+          ],
+          answer: 'King Leopold II of Belgium',
+          a: 'King Leopold II of Belgium',
+          explanation:
+            'King Leopold II established the Congo Free State as his personal fiefdom in 1885, instituting a reign of terror, forced labour, and mutilation to maximize rubber profits.',
+        },
+        {
+          question:
+            'In which year did Otto von Bismarck convene the Berlin Conference to establish ground rules for European colonization in Africa?',
+          q: 'In which year did Otto von Bismarck convene the Berlin Conference to establish ground rules for European colonization in Africa?',
+          options: ['1871', '1905', '1898', '1884'],
+          answer: '1884',
+          a: '1884',
+          explanation:
+            'The 1884–1885 Berlin Conference established the principle of "effective occupation", requiring European powers to physically occupy territory to claim sovereignty.',
+        },
+        {
+          question:
+            "Which German leader launched Weltpolitik and famously demanded Germany's 'place in the sun' in Africa and beyond?",
+          q: "Which German leader launched Weltpolitik and famously demanded Germany's 'place in the sun' in Africa and beyond?",
+          options: [
+            'Emperor Franz Joseph I',
+            'Field Marshal Helmuth von Moltke',
+            'Chancellor Otto von Bismarck',
             'Kaiser Wilhelm II',
-            'Adolf Hitler',
-            'Paul von Hindenburg',
-            'Otto von Bismarck',
           ],
+          answer: 'Kaiser Wilhelm II',
+          a: 'Kaiser Wilhelm II',
           explanation:
-            "Kaiser Wilhelm II declared that Germany demanded its 'place in the sun', arguing that a great industrial power required a global colonial empire. This aggressive posture alienated Britain and fueled European imperial tensions.",
+            'Wilhelm II, who ascended the throne in 1888 and dismissed Bismarck in 1890, pursued an aggressive expansionist foreign policy known as Weltpolitik to challenge British and French dominance.',
         },
         {
-          q: 'In which year did the First Moroccan Crisis occur?',
+          question:
+            'Which European power controlled the largest and most commercially valuable empire in Africa by 1914?',
+          q: 'Which European power controlled the largest and most commercially valuable empire in Africa by 1914?',
+          options: ['Belgium', 'Great Britain', 'Portugal', 'Germany'],
+          answer: 'Great Britain',
+          a: 'Great Britain',
+          explanation:
+            'Great Britain held the most lucrative colonial territories, including South Africa, Egypt, Nigeria, and Kenya, securing vital sea routes to India.',
+        },
+        {
+          question:
+            'In which year did Kaiser Wilhelm II land in Tangier, sparking the First Moroccan Crisis?',
+          q: 'In which year did Kaiser Wilhelm II land in Tangier, sparking the First Moroccan Crisis?',
+          options: ['1911', '1898', '1902', '1905'],
+          answer: '1905',
           a: '1905',
-          options: ['1914', '1898', '1905', '1911'],
           explanation:
-            'The First Moroccan Crisis erupted in 1905 when Kaiser Wilhelm II landed at Tangier to challenge growing French influence. His provocation backfired completely, cementing Anglo-French military coordination instead of splitting them.',
+            'In March 1905, the Kaiser arrived in Tangier to challenge French influence in Morocco and test the strength of the newly signed Anglo-French Entente Cordiale.',
         },
         {
-          q: 'What was the purpose of the 1884 Berlin Conference?',
-          a: 'To regulate European colonization and trade in Africa',
+          question:
+            'What did Kaiser Wilhelm II publicly declare during his dramatic 1905 visit to Tangier?',
+          q: 'What did Kaiser Wilhelm II publicly declare during his dramatic 1905 visit to Tangier?',
           options: [
-            'To form a military alliance against Britain',
-            'To divide Asia among European powers',
-            'To ban slavery worldwide',
-            'To regulate European colonization and trade in Africa',
+            'He offered to sell German dreadnoughts to the Moroccan navy',
+            'He demanded the immediate withdrawal of British naval forces from Gibraltar',
+            'He declared support for Moroccan independence and the Sultan as a free sovereign ruler',
+            'He announced the annexation of Morocco into the German Empire',
           ],
+          answer:
+            'He declared support for Moroccan independence and the Sultan as a free sovereign ruler',
+          a: 'He declared support for Moroccan independence and the Sultan as a free sovereign ruler',
           explanation:
-            "Hosted by Bismarck in 1884–85, the Berlin Conference established the principle of 'effective occupation' for claiming African territory. It aimed to prevent European wars over African resources, but accelerated the colonial land grab.",
+            'By declaring Sultan Abdelaziz an independent ruler, Wilhelm sought to disrupt French colonial plans and force an international conference.',
         },
         {
-          q: 'Which European power controlled the largest empire in Africa by 1914?',
-          a: 'Britain',
-          options: ['Britain', 'Belgium', 'Germany', 'France'],
-          explanation:
-            'By 1914, Britain ruled the largest empire in history, covering a quarter of the globe and controlling key African territories from Cairo to the Cape. This vast global presence made Britain protective of its maritime trade lanes.',
-        },
-        {
-          q: "Why did Kaiser Wilhelm II demand a 'place in the sun'?",
-          a: 'He wanted Germany to have a global empire like Britain and France',
+          question: 'What was the primary outcome of the 1906 Algeciras Conference for Germany?',
+          q: 'What was the primary outcome of the 1906 Algeciras Conference for Germany?',
           options: [
-            'He wanted a holiday home in Africa',
-            'He wanted to conquer South America',
-            'He wanted to control the Mediterranean Sea',
-            'He wanted Germany to have a global empire like Britain and France',
+            'Germany was diplomatically isolated, with only Austria-Hungary supporting its position',
+            'The Entente Cordiale between Britain and France completely collapsed',
+            'France surrendered all colonial claims across North Africa',
+            'Germany was awarded full control over the port of Tangier',
           ],
+          answer:
+            'Germany was diplomatically isolated, with only Austria-Hungary supporting its position',
+          a: 'Germany was diplomatically isolated, with only Austria-Hungary supporting its position',
           explanation:
-            "Wilhelm II felt humiliated that Germany possessed only modest colonies compared to the vast empires of Britain and France. His demand for overseas colonies ('Weltpolitik') was intended to prove Germany's arrival as a global superpower.",
+            'At Algeciras, Britain, Russia, Italy, and Spain backed France. Germany was deeply humiliated, demonstrating that the Entente Cordiale was surprisingly resilient.',
         },
         {
-          q: 'What happened during the First Moroccan Crisis (1905)?',
-          a: 'The Kaiser visited Tangier and declared support for Moroccan independence',
+          question:
+            'What aggressive German military action triggered the Second Moroccan Crisis (Agadir Crisis) in July 1911?',
+          q: 'What aggressive German military action triggered the Second Moroccan Crisis (Agadir Crisis) in July 1911?',
           options: [
-            'Germany invaded Morocco',
-            'The Kaiser visited Tangier and declared support for Moroccan independence',
-            'France surrendered Morocco to Britain',
-            'The local sultan defeated the French army',
+            'Mining the entrance to the Suez Canal',
+            'Bombarding the French naval base at Toulon',
+            'Dispatching the gunboat SMS Panther to the Moroccan port of Agadir',
+            'Invading the British colony of Sierra Leone',
           ],
+          answer: 'Dispatching the gunboat SMS Panther to the Moroccan port of Agadir',
+          a: 'Dispatching the gunboat SMS Panther to the Moroccan port of Agadir',
           explanation:
-            "In March 1905, the Kaiser arrived in Tangier on a white stallion and gave a provocative speech supporting the Sultan of Morocco's independence. His goal was to test the newly signed Anglo-French Entente and isolate France.",
+            'Germany sent the gunboat SMS Panther under the pretext of protecting German firms, in a blatant display of "gunboat diplomacy" to coerce colonial concessions from France.',
         },
         {
-          q: 'What was the main result of the Algeciras Conference (1906)?',
-          a: 'Germany was humiliated and France was given control of Moroccan police',
+          question:
+            'How was the 1911 Agadir Crisis officially resolved between France and Germany?',
+          q: 'How was the 1911 Agadir Crisis officially resolved between France and Germany?',
           options: [
-            'Britain took over Morocco',
-            'Morocco became fully independent',
-            'Germany was humiliated and France was given control of Moroccan police',
-            'Germany gained full control of Morocco',
+            'Germany took full sovereign control of Morocco as a German colony',
+            'Britain declared war on Germany and blockaded Hamburg',
+            'France surrendered the Suez Canal to the German High Seas Fleet',
+            'Germany recognized France’s Moroccan protectorate in exchange for ceding a strip of French Congo to German Kamerun',
           ],
+          answer:
+            'Germany recognized France’s Moroccan protectorate in exchange for ceding a strip of French Congo to German Kamerun',
+          a: 'Germany recognized France’s Moroccan protectorate in exchange for ceding a strip of French Congo to German Kamerun',
           explanation:
-            'At the 1906 Algeciras Conference, only Austria-Hungary supported Germany, while Britain, Russia, and the US backed France. The conference gave France control over Moroccan police and banking, leaving Germany bitterly isolated.',
+            'Under the November 1911 Treaty of Fez, Germany accepted French dominance in Morocco in return for 100,000 square miles of territory in Central Africa (Neukamerun).',
         },
         {
-          q: 'What sparked the Second Moroccan Crisis (Agadir Crisis) in 1911?',
-          a: 'Germany sent the gunboat Panther to the port of Agadir',
+          question:
+            'By 1914, approximately what percentage of the African continent had been brought under European colonial control?',
+          q: 'By 1914, approximately what percentage of the African continent had been brought under European colonial control?',
           options: [
-            'Britain blockaded the Moroccan coast',
-            'Germany sent the gunboat Panther to the port of Agadir',
-            'France declared war on Germany',
-            'Moroccans attacked German tourists',
+            'Approximately 90% (up from 10% in 1870)',
+            'Approximately 50%',
+            '100% (every single square mile without exception)',
+            'Approximately 25%',
           ],
+          answer: 'Approximately 90% (up from 10% in 1870)',
+          a: 'Approximately 90% (up from 10% in 1870)',
           explanation:
-            "In July 1911, Germany dispatched the naval gunboat Panther to the Moroccan port of Agadir to contest French troop deployments. Known as the Panther's Leap, this aggressive gunboat diplomacy ignited the Second Moroccan Crisis.",
+            'In 1870, European powers controlled barely 10% of Africa, mostly coastal trade ports; by 1914, through violent conquest and partition, European empires controlled nearly 90%.',
         },
         {
-          q: 'How did the Agadir Crisis end?',
-          a: 'Germany backed down after being given a small strip of the Congo',
+          question:
+            'Which German Foreign Secretary delivered the famous 1897 Reichstag speech declaring that Germany demanded its "place in the sun"?',
+          q: 'Which German Foreign Secretary delivered the famous 1897 Reichstag speech declaring that Germany demanded its "place in the sun"?',
           options: [
-            'Germany backed down after being given a small strip of the Congo',
-            'Britain declared war on Germany',
-            'Germany successfully conquered Morocco',
-            'France was forced to leave Africa',
+            'Bernhard von Bülow',
+            'Theobald von Bethmann-Hollweg',
+            'Leo von Caprivi',
+            'Alfred von Tirpitz',
           ],
+          answer: 'Bernhard von Bülow',
+          a: 'Bernhard von Bülow',
           explanation:
-            "Faced with stern British warnings in David Lloyd George's Mansion House speech, Germany backed down in exchange for a slice of French Congo. The crisis heightened German military resentment and domestic nationalist pressure.",
+            'Bernhard von Bülow declared on 6 December 1897 that Germany would not permit any foreign power to exclude it from global trade or colonial empire, demanding a "Platz an der Sonne".',
         },
         {
-          q: 'What effect did the Moroccan Crises have on Anglo-French relations?',
-          a: 'It pushed Britain and France closer together in a strong alliance',
+          question:
+            'How did the First Moroccan Crisis paradoxically affect the diplomatic relationship between Great Britain and France?',
+          q: 'How did the First Moroccan Crisis paradoxically affect the diplomatic relationship between Great Britain and France?',
           options: [
-            'It caused a war between them',
-            'It made Britain ally with Germany instead',
-            'It pushed Britain and France closer together in a strong alliance',
-            'It led to Britain abandoning its empire',
+            'It drove France into a secret military alliance with Germany',
+            'It converted the informal 1904 Entente Cordiale into a robust, coordinated military and naval partnership',
+            'It caused Britain and France to sign a treaty partitioning Spain',
+            'It forced Britain to leave Europe and return to Splendid Isolation',
           ],
+          answer:
+            'It converted the informal 1904 Entente Cordiale into a robust, coordinated military and naval partnership',
+          a: 'It converted the informal 1904 Entente Cordiale into a robust, coordinated military and naval partnership',
           explanation:
-            'The Moroccan Crises convinced Britain and France that Germany was an aggressive rogue power intent on European dominance. Secret Anglo-French staff talks began, transforming the loose 1904 diplomatic entente into a de facto military alliance.',
+            'Rather than breaking the Entente as Berlin hoped, the crisis prompted secret joint Anglo-French military staff talks, solidifying their alignment against German aggression.',
+        },
+        {
+          question:
+            'How did Kaiser Wilhelm II physically arrive in Tangier in 1905 to maximize spectacle and challenge French authority?',
+          q: 'How did Kaiser Wilhelm II physically arrive in Tangier in 1905 to maximize spectacle and challenge French authority?',
+          options: [
+            'Arriving secretly disguised as a local merchant on a camel',
+            'Riding through the streets on a white horse surrounded by an armed escort to meet the Sultan’s representatives',
+            'Leading an amphibious assault with 5,000 Prussian marine infantry',
+            'Parachuting from a Zeppelin airship into the central market',
+          ],
+          answer:
+            'Riding through the streets on a white horse surrounded by an armed escort to meet the Sultan’s representatives',
+          a: 'Riding through the streets on a white horse surrounded by an armed escort to meet the Sultan’s representatives',
+          explanation:
+            'Wilhelm staged a theatrical royal procession on a white charger through Tangier’s narrow streets, deliberately projecting imperial majesty to defy the French diplomat Eugène Regnault.',
+        },
+        {
+          question:
+            'Which senior British minister delivered the defiant Mansion House speech in July 1911, warning Germany that Britain would not be treated as of no account?',
+          q: 'Which senior British minister delivered the defiant Mansion House speech in July 1911, warning Germany that Britain would not be treated as of no account?',
+          options: [
+            'Herbert Asquith (Prime Minister)',
+            'Winston Churchill (Home Secretary)',
+            'David Lloyd George (Chancellor of the Exchequer)',
+            'Sir Edward Grey (Foreign Secretary)',
+          ],
+          answer: 'David Lloyd George (Chancellor of the Exchequer)',
+          a: 'David Lloyd George (Chancellor of the Exchequer)',
+          explanation:
+            'Lloyd George warned Germany that if Britain were treated as of no account where its vital interests were affected, "peace at that price would be a humiliation intolerable for a great country like ours."',
+        },
+        {
+          question:
+            'What name was given to the territory in Central Africa ceded by France to German Kamerun to settle the 1911 Agadir Crisis?',
+          q: 'What name was given to the territory in Central Africa ceded by France to German Kamerun to settle the 1911 Agadir Crisis?',
+          options: [
+            'South West Africa',
+            'Togoland',
+            'Neukamerun (New Cameroon)',
+            'German East Africa',
+          ],
+          answer: 'Neukamerun (New Cameroon)',
+          a: 'Neukamerun (New Cameroon)',
+          explanation:
+            'Under the Treaty of Fez, Germany received Neukamerun—two strips of marshy land granting access to the Congo and Ubangi rivers—which German nationalists condemned as worthless swampland.',
+        },
+        {
+          question:
+            'What economic interpretation of the Scramble for Africa was famously advanced by Marxist theorist V.I. Lenin in 1916?',
+          q: 'What economic interpretation of the Scramble for Africa was famously advanced by Marxist theorist V.I. Lenin in 1916?',
+          options: [
+            'Imperialism was the highest stage of capitalism, driven by monopolies desperately seeking raw materials, captive markets, and outlets for surplus capital',
+            'The Scramble was an accidental humanitarian effort to end domestic African conflicts',
+            'Colonial empires were unprofitable burdens that weakened industrial economies',
+            'Colonial expansion was purely driven by religious missionary zeal with no economic motives',
+          ],
+          answer:
+            'Imperialism was the highest stage of capitalism, driven by monopolies desperately seeking raw materials, captive markets, and outlets for surplus capital',
+          a: 'Imperialism was the highest stage of capitalism, driven by monopolies desperately seeking raw materials, captive markets, and outlets for surplus capital',
+          explanation:
+            'Lenin argued that industrial capitalism inevitably created imperial rivalries that made general European war unavoidable as colonial territories were exhausted.',
+        },
+        {
+          question:
+            'What counter-argument do revisionist historians such as A.J.P. Taylor make regarding colonial rivalries in Africa as a cause of the First World War?',
+          q: 'What counter-argument do revisionist historians such as A.J.P. Taylor make regarding colonial rivalries in Africa as a cause of the First World War?',
+          options: [
+            'African armies launched an invasion of Europe that caused the Great War',
+            'No European powers possessed colonies in Africa prior to August 1914',
+            'Colonial disputes in Africa were all resolved through peaceful diplomatic bargaining and did not directly trigger the war of 1914',
+            'Germany conquered the entire African continent before Britain could react',
+          ],
+          answer:
+            'Colonial disputes in Africa were all resolved through peaceful diplomatic bargaining and did not directly trigger the war of 1914',
+          a: 'Colonial disputes in Africa were all resolved through peaceful diplomatic bargaining and did not directly trigger the war of 1914',
+          explanation:
+            'Taylor and other revisionists note that Britain, France, and Germany settled all their African border disputes peacefully; the war actually began in the Balkans over European power balances.',
+        },
+        {
+          question:
+            'What strategic waterway in Egypt, opened in 1869, made British control of North and East Africa an essential imperial priority?',
+          q: 'What strategic waterway in Egypt, opened in 1869, made British control of North and East Africa an essential imperial priority?',
+          options: ['The Panama Canal', 'The Kiel Canal', 'The Suez Canal', 'The Bosphorus Strait'],
+          answer: 'The Suez Canal',
+          a: 'The Suez Canal',
+          explanation:
+            'The Suez Canal slashed travel time between Britain and India by thousands of miles, making British control of Egypt and the Red Sea maritime lifeline vital to imperial survival.',
+        },
+        {
+          question:
+            'According to modern historian Margaret MacMillan, what was the primary lasting danger of the Moroccan Crises?',
+          q: 'According to modern historian Margaret MacMillan, what was the primary lasting danger of the Moroccan Crises?',
+          options: [
+            'They caused the dissolution of the British Empire in 1911',
+            'They convinced German leaders that future diplomatic negotiations were useless and only military strength could achieve prestige',
+            'They convinced France to disband its army and rely entirely on diplomacy',
+            'They caused the United States to colonize North Africa',
+          ],
+          answer:
+            'They convinced German leaders that future diplomatic negotiations were useless and only military strength could achieve prestige',
+          a: 'They convinced German leaders that future diplomatic negotiations were useless and only military strength could achieve prestige',
+          explanation:
+            'MacMillan argues that the humiliation of Algeciras and Agadir created a fatal sense in Berlin that Germany was being encircled, making military leaders more willing to risk general war in 1914.',
         },
       ],
     },
@@ -2217,126 +2382,300 @@ export default {
       ],
       quiz: [
         {
-          q: 'What revolutionary British battleship was launched in 1906?',
+          question:
+            'What revolutionary all-big-gun British battleship was launched in December 1906, transforming global naval warfare?',
+          q: 'What revolutionary all-big-gun British battleship was launched in December 1906, transforming global naval warfare?',
+          options: ['HMS Iron Duke', 'HMS Victory', 'HMS Invincible', 'HMS Dreadnought'],
+          answer: 'HMS Dreadnought',
           a: 'HMS Dreadnought',
-          options: ['HMS Belfast', 'HMS Victory', 'HMS Invincible', 'HMS Dreadnought'],
           explanation:
-            'Launched in 1906, HMS Dreadnought revolutionized naval warfare with its uniform battery of ten 12-inch heavy guns and steam turbine propulsion. Its superior speed and devastating firepower instantly made all previous battleships obsolete.',
+            'HMS Dreadnought featured a uniform battery of ten 12-inch heavy guns and steam turbine engines, rendering every existing battleship in the world instantly obsolete.',
         },
         {
-          q: 'Which German Admiral was in charge of expanding the German Navy?',
-          a: 'Admiral von Tirpitz',
-          options: ['Admiral Scheer', 'Admiral Hipper', 'Kaiser Wilhelm II', 'Admiral von Tirpitz'],
-          explanation:
-            "Grand Admiral Alfred von Tirpitz headed the Imperial German Naval Office, directing Germany's massive naval buildup through successive Navy Laws. He aimed to build a fleet capable of challenging British command of the North Sea.",
-        },
-        {
-          q: 'What policy dictated that the British Royal Navy must be as large as the next two largest navies combined?',
-          a: 'Two-Power Standard',
+          question:
+            'Which German Admiral was appointed State Secretary of the Imperial Navy Office in 1897 to build Germany’s High Seas Fleet?',
+          q: 'Which German Admiral was appointed State Secretary of the Imperial Navy Office in 1897 to build Germany’s High Seas Fleet?',
           options: [
-            'Dreadnought Rule',
-            'Naval Supremacy Act',
-            'Two-Power Standard',
-            'Splendid Isolation',
+            'Admiral Alfred von Tirpitz',
+            'Admiral Reinhard Scheer',
+            'Admiral Franz von Hipper',
+            'Admiral Maximilian von Spee',
           ],
+          answer: 'Admiral Alfred von Tirpitz',
+          a: 'Admiral Alfred von Tirpitz',
           explanation:
-            "Britain's 'Two-Power Standard', codified in the Naval Defence Act 1889, required the Royal Navy to maintain a fleet of battleships at least equal to the combined strength of the next two largest navies. It safeguarded Britain's island security and maritime empire.",
+            'Admiral von Tirpitz orchestrated the German Naval Laws of 1898 and 1900, establishing a massive battle fleet to challenge British maritime hegemony.',
         },
         {
-          q: 'Why was the HMS Dreadnought completely revolutionary?',
-          a: "It was faster, heavier armored, and had all 'big-guns'",
+          question:
+            'What traditional British naval doctrine mandated that the Royal Navy must equal the combined strength of the next two largest navies?',
+          q: 'What traditional British naval doctrine mandated that the Royal Navy must equal the combined strength of the next two largest navies?',
           options: [
-            "It was faster, heavier armored, and had all 'big-guns'",
-            'It was completely invisible to radar',
-            'It could launch airplanes',
-            'It was the first submarine',
+            'The Dreadnought Doctrine',
+            'The Two-Power Standard',
+            'Pax Britannica Standard',
+            'The Blue Water Policy',
           ],
+          answer: 'The Two-Power Standard',
+          a: 'The Two-Power Standard',
           explanation:
-            "HMS Dreadnought introduced an 'all-big-gun' armament and steam turbines, allowing it to fire broadsides over twice as heavy as older pre-dreadnoughts at greater range. Its launch rendered previous naval inventories instantly obsolete.",
+            'Established in the Naval Defence Act of 1889, the Two-Power Standard ensured Britain could defeat any hostile coalition of two rival navies (originally France and Russia).',
         },
         {
-          q: "What was the consequence of the Dreadnought's launch?",
-          a: 'It made all older battleships instantly obsolete, resetting the naval race',
-          options: [
-            'Germany immediately surrendered',
-            'It made all older battleships instantly obsolete, resetting the naval race',
-            'Britain stopped building ships',
-            'France allied with Germany',
-          ],
+          question:
+            'What term describes the century of British global maritime dominance between the Battle of Trafalgar (1805) and the early 1900s?',
+          q: 'What term describes the century of British global maritime dominance between the Battle of Trafalgar (1805) and the early 1900s?',
+          options: ['Pax Romana', 'The Concert of Europe', 'Pax Britannica', 'The Gilded Age'],
+          answer: 'Pax Britannica',
+          a: 'Pax Britannica',
           explanation:
-            "By making all existing battleships obsolete, HMS Dreadnought wiped out Britain's vast numerical advantage in capital ships. It handed Germany a level playing field, sparking a frantic race to build new dreadnought-class vessels.",
+            'During Pax Britannica ("British Peace"), the Royal Navy patrolled global trade routes, suppressed piracy, and enforced maritime security without facing a serious naval rival.',
         },
         {
-          q: "What was the German 'Risk Theory' proposed by Admiral Tirpitz?",
-          a: "Building a navy large enough that Britain wouldn't risk fighting it",
+          question:
+            'Why did the launch of HMS Dreadnought inadvertently create a severe strategic dilemma for Great Britain?',
+          q: 'Why did the launch of HMS Dreadnought inadvertently create a severe strategic dilemma for Great Britain?',
           options: [
-            'Attacking Britain immediately',
-            'Building only submarines',
-            'Refusing to build any ships to avoid angering Britain',
-            "Building a navy large enough that Britain wouldn't risk fighting it",
+            'Its guns were defective and could not fire without exploding',
+            'It bankrupt the British economy and forced the government to sell its merchant fleet',
+            'It rendered Britain’s huge fleet of older pre-dreadnought battleships obsolete, resetting the naval race to zero',
+            'It was immediately captured by the German navy during sea trials',
           ],
+          answer:
+            'It rendered Britain’s huge fleet of older pre-dreadnought battleships obsolete, resetting the naval race to zero',
+          a: 'It rendered Britain’s huge fleet of older pre-dreadnought battleships obsolete, resetting the naval race to zero',
           explanation:
-            "Tirpitz's 'Risk Theory' (Risikogedanke) argued that Germany needed a battle fleet so powerful that even the Royal Navy would suffer catastrophic damage fighting it. Tirpitz believed this would force Britain to make diplomatic concessions.",
+            'By making older battleships obsolete, Britain effectively wiped out its own overwhelming numerical superiority, allowing Germany to compete on equal terms ship-for-ship.',
         },
         {
-          q: 'What slogan did the British public chant in 1909 to demand more ships?',
-          a: "'We want eight and we won't wait!'",
+          question:
+            'What was the central principle of Admiral Tirpitz’s "Risk Theory" (Risikogedanke)?',
+          q: 'What was the central principle of Admiral Tirpitz’s "Risk Theory" (Risikogedanke)?',
           options: [
-            "'We want eight and we won't wait!'",
-            "'Rule Britannia!'",
-            "'More dreadnoughts now!'",
-            "'Sink the Kaiser!'",
+            'Refusing to build capital ships and relying entirely on coastal artillery',
+            'Building a German fleet large enough that Britain would not risk attacking it for fear of losing naval supremacy to other powers',
+            'Selling German warships to the United States to provoke a war with Britain',
+            'Relying exclusively on submarines to sink all British civilian shipping',
           ],
+          answer:
+            'Building a German fleet large enough that Britain would not risk attacking it for fear of losing naval supremacy to other powers',
+          a: 'Building a German fleet large enough that Britain would not risk attacking it for fear of losing naval supremacy to other powers',
           explanation:
-            "During the 1909 naval panic, the British public and press campaigned aggressively for increased shipbuilding with the rhyming slogan 'We want eight and we won't wait!'. The British government doubled its construction program to meet public demand.",
+            'Tirpitz calculated that if Germany possessed a fleet two-thirds the size of Britain’s, the Royal Navy would suffer such catastrophic losses in a clash that Britain would become vulnerable to third powers.',
         },
         {
-          q: 'Why did Britain feel so threatened by the German naval expansion?',
-          a: 'Britain is an island and relied entirely on its navy for survival and trade',
+          question:
+            'What popular protest slogan was chanted by British politicians and the public in 1909 demanding eight new dreadnoughts?',
+          q: 'What popular protest slogan was chanted by British politicians and the public in 1909 demanding eight new dreadnoughts?',
           options: [
-            'They had no army at all',
-            'Britain is an island and relied entirely on its navy for survival and trade',
-            'They wanted to attack Germany',
-            'They were worried Germany would steal their ships',
+            '"Rule Britannia, Rule the Waves!"',
+            '"Keep the Seas or Lose the Empire!"',
+            '"We want eight and we won’t wait!"',
+            '"A Ship for a Ship, a Gun for a Gun!"',
           ],
+          answer: '"We want eight and we won’t wait!"',
+          a: '"We want eight and we won’t wait!"',
           explanation:
-            'Because Britain was an island reliant on imported food and raw materials, naval dominance was a matter of national survival. A hostile fleet controlling the English Channel could starve Britain into submission within weeks.',
+            'The 1909 naval scare sparked a nationwide press campaign spearheaded by the Navy League, demanding the Liberal government lay down eight dreadnoughts rather than the proposed four.',
         },
         {
-          q: 'What laws were passed in Germany to fund their massive naval buildup?',
-          a: 'The Naval Laws of 1898 and 1900',
+          question:
+            'Why did British strategists view the expansion of the German High Seas Fleet as an existential threat?',
+          q: 'Why did British strategists view the expansion of the German High Seas Fleet as an existential threat?',
           options: [
-            'The Shipyard Acts',
-            'The Tirpitz Decrees',
-            'The Naval Laws of 1898 and 1900',
-            'The Imperial Fleet Bills',
+            'Germany intended to use its navy to conquer Australia and Canada in 1906',
+            'Britain was an island dependent on maritime imports for two-thirds of its food, whereas Germany had no vital overseas supply lines',
+            'The German fleet was commanded entirely by French naval officers',
+            'Britain had no land army whatsoever to defend London',
           ],
+          answer:
+            'Britain was an island dependent on maritime imports for two-thirds of its food, whereas Germany had no vital overseas supply lines',
+          a: 'Britain was an island dependent on maritime imports for two-thirds of its food, whereas Germany had no vital overseas supply lines',
           explanation:
-            'Between 1898 and 1912, Germany passed five separate Naval Laws authorizing the construction of dozens of modern battleships and cruisers. These laws directly threatened British naval supremacy in home waters.',
+            'Winston Churchill noted that for Britain, a supreme navy was a matter of life and death, whereas for Germany, a battle fleet was essentially a "luxury".',
         },
         {
-          q: 'By 1914, who had won the naval race?',
-          a: "Britain, with 29 dreadnoughts to Germany's 17",
+          question:
+            'Which legislative measures passed in 1898 and 1900 provided the legal and financial framework to build Germany’s battle fleet?',
+          q: 'Which legislative measures passed in 1898 and 1900 provided the legal and financial framework to build Germany’s battle fleet?',
           options: [
-            'They had exactly the same number',
-            "Germany, with 30 dreadnoughts to Britain's 10",
-            "Britain, with 29 dreadnoughts to Germany's 17",
-            'France overtook both of them',
+            'The High Seas Ordinances',
+            'The Imperial Armament Decrees',
+            'The Dreadnought Acts',
+            'The German Naval Laws (Flottengesetze)',
           ],
+          answer: 'The German Naval Laws (Flottengesetze)',
+          a: 'The German Naval Laws (Flottengesetze)',
           explanation:
-            "By 1914, Britain had decisively won the naval construction race, deploying 29 modern dreadnoughts compared to Germany's 17. The British economic base and shipyards proved capable of outbuilding German yards at a two-to-one ratio.",
+            'Tirpitz secured long-term multi-year funding through the Reichstag, shielding German naval construction from annual parliamentary budget cuts.',
         },
         {
-          q: 'How did the naval race affect British foreign policy?',
-          a: "It forced Britain out of 'Splendid Isolation' and into an alliance with France and Russia",
+          question:
+            'By August 1914, what was the final comparative score of dreadnought-class capital ships completed by Britain and Germany?',
+          q: 'By August 1914, what was the final comparative score of dreadnought-class capital ships completed by Britain and Germany?',
           options: [
-            'It made them ally with Germany',
-            "It forced Britain out of 'Splendid Isolation' and into an alliance with France and Russia",
-            'It made them give up their empire',
-            'It caused them to declare war on America',
+            'Britain possessed 50 dreadnoughts while Germany had built only 3',
+            'Both nations possessed exactly 12 dreadnoughts each',
+            'Germany had completed 45 dreadnoughts compared to Britain’s 20',
+            'Britain had completed 29 dreadnoughts compared to Germany’s 17',
           ],
+          answer: 'Britain had completed 29 dreadnoughts compared to Germany’s 17',
+          a: 'Britain had completed 29 dreadnoughts compared to Germany’s 17',
           explanation:
-            "The naval race convinced the British government that Germany represented an existential threat to British security. It pushed Britain to abandon its traditional policy of 'Splendid Isolation' and settle colonial disputes with France and Russia.",
+            'Through massive industrial mobilization and higher spending, Britain comfortably out-built Germany, securing decisive numerical and technological dominance by the outbreak of war.',
+        },
+        {
+          question:
+            'Which visionary and ruthless British Admiral was appointed First Sea Lord in October 1904 and drove the creation of HMS Dreadnought?',
+          q: 'Which visionary and ruthless British Admiral was appointed First Sea Lord in October 1904 and drove the creation of HMS Dreadnought?',
+          options: [
+            'Admiral David Beatty',
+            'Admiral Prince Louis of Battenberg',
+            'Admiral Sir John "Jackie" Fisher',
+            'Admiral John Jellicoe',
+          ],
+          answer: 'Admiral Sir John "Jackie" Fisher',
+          a: 'Admiral Sir John "Jackie" Fisher',
+          explanation:
+            'Fisher was a ferocious reformer whose mottos included "Speed is armor" and "Hit first, hit hard, and keep on hitting", ruthlessly scrapping obsolete warships to modernize the fleet.',
+        },
+        {
+          question:
+            'In what record-breaking construction time was HMS Dreadnought built at Portsmouth Royal Dockyard?',
+          q: 'In what record-breaking construction time was HMS Dreadnought built at Portsmouth Royal Dockyard?',
+          options: [
+            '90 days',
+            'Five years and six months',
+            '366 days (one year and one day)',
+            'Three full years',
+          ],
+          answer: '366 days (one year and one day)',
+          a: '366 days (one year and one day)',
+          explanation:
+            'Laid down in October 1905 and launched in February 1906, Dreadnought’s completion in just over a year stunned the world and proved British shipyard supremacy.',
+        },
+        {
+          question:
+            'What revolutionary propulsion technology was installed in HMS Dreadnought, enabling sustained top speeds of 21 knots?',
+          q: 'What revolutionary propulsion technology was installed in HMS Dreadnought, enabling sustained top speeds of 21 knots?',
+          options: [
+            'Triple-expansion coal engines',
+            'Internal combustion diesel engines',
+            'Parsons steam turbine engines',
+            'Early nuclear propulsion units',
+          ],
+          answer: 'Parsons steam turbine engines',
+          a: 'Parsons steam turbine engines',
+          explanation:
+            'Replacing traditional reciprocating piston engines with steam turbines provided unprecedented reliability, reduced vibration for gunnery, and superior speed.',
+        },
+        {
+          question:
+            'What massive civil engineering project was Imperial Germany forced to undertake between 1907 and 1914 so its dreadnoughts could traverse between the Baltic and North Seas?',
+          q: 'What massive civil engineering project was Imperial Germany forced to undertake between 1907 and 1914 so its dreadnoughts could traverse between the Baltic and North Seas?',
+          options: [
+            'Building the Elbe-Trave Canal',
+            'Widening and deepening the Kiel Canal',
+            'Dredging the Rhine-Danube Canal',
+            'Excavating the Hamburg Ship Channel',
+          ],
+          answer: 'Widening and deepening the Kiel Canal',
+          a: 'Widening and deepening the Kiel Canal',
+          explanation:
+            'The original Kiel Canal was too narrow for beamier dreadnoughts. Germany spent tens of millions of marks widening it; work was completed in June 1914 just weeks before the July Crisis.',
+        },
+        {
+          question:
+            'What diplomatic controversy erupted in October 1908 when Kaiser Wilhelm II publicly declared that the English were "mad as March hares"?',
+          q: 'What diplomatic controversy erupted in October 1908 when Kaiser Wilhelm II publicly declared that the English were "mad as March hares"?',
+          options: [
+            'The Panther Incident',
+            'The Daily Telegraph Affair',
+            'The Tangier Dispatch',
+            'The Zimmermann Telegram',
+          ],
+          answer: 'The Daily Telegraph Affair',
+          a: 'The Daily Telegraph Affair',
+          explanation:
+            'In an unvetted newspaper interview, Wilhelm claimed he was Britain’s friend but that the British public were insane, causing immense outrage in Britain and humiliation in Berlin.',
+        },
+        {
+          question:
+            'Which two radical Liberal ministers initially opposed building eight dreadnoughts in 1909 to protect funding for old age pensions before yielding to cabinet pressure?',
+          q: 'Which two radical Liberal ministers initially opposed building eight dreadnoughts in 1909 to protect funding for old age pensions before yielding to cabinet pressure?',
+          options: [
+            'Arthur Balfour and Joseph Chamberlain',
+            'Ramsay MacDonald and Arthur Henderson',
+            'David Lloyd George and Winston Churchill',
+            'Herbert Asquith and Edward Grey',
+          ],
+          answer: 'David Lloyd George and Winston Churchill',
+          a: 'David Lloyd George and Winston Churchill',
+          explanation:
+            'Lloyd George and Churchill initially argued that money was needed for the "People’s Budget" social reforms, but ultimately compromised on laying down eight battleships.',
+        },
+        {
+          question:
+            'What influential thesis was advanced by historian Paul Kennedy in "The Rise of the Anglo-German Antagonism" (1980)?',
+          q: 'What influential thesis was advanced by historian Paul Kennedy in "The Rise of the Anglo-German Antagonism" (1980)?',
+          options: [
+            'Economic cooperation between Britain and Germany made war impossible',
+            'Naval Determinism: the naval arms race was the single decisive structural cause that permanently destroyed Anglo-German relations and made war inevitable',
+            'Britain was solely to blame for deliberately attacking German merchant ships in peacetime',
+            'The naval race was a minor sideshow orchestrated entirely by American arms manufacturers',
+          ],
+          answer:
+            'Naval Determinism: the naval arms race was the single decisive structural cause that permanently destroyed Anglo-German relations and made war inevitable',
+          a: 'Naval Determinism: the naval arms race was the single decisive structural cause that permanently destroyed Anglo-German relations and made war inevitable',
+          explanation:
+            'Kennedy argued that Germany’s challenge to British sea power directly threatened the core of the British Empire, leaving London no choice but to align with France and Russia.',
+        },
+        {
+          question:
+            'What counter-argument do modern military historians such as Hew Strachan advance regarding the naval race by 1912?',
+          q: 'What counter-argument do modern military historians such as Hew Strachan advance regarding the naval race by 1912?',
+          options: [
+            'Britain dismantled its entire fleet and surrendered naval superiority',
+            'Germany successfully invaded the British coast in 1913',
+            'The dreadnought was proven useless in tests and replaced with wooden sailing ships',
+            'The naval arms race had effectively ended in British victory by 1912, and land army expansions on the Continent became the true driver of 1914 tensions',
+          ],
+          answer:
+            'The naval arms race had effectively ended in British victory by 1912, and land army expansions on the Continent became the true driver of 1914 tensions',
+          a: 'The naval arms race had effectively ended in British victory by 1912, and land army expansions on the Continent became the true driver of 1914 tensions',
+          explanation:
+            'By 1912, Germany had abandoned trying to match the Royal Navy to divert its financial resources to expanding the Kaiser’s land army in response to Russian rearmament.',
+        },
+        {
+          question:
+            'What new naval weapon increasingly threatened dreadnought capital ships before 1914, leading Jackie Fisher to accurately predict that submarines would dominate future warfare?',
+          q: 'What new naval weapon increasingly threatened dreadnought capital ships before 1914, leading Jackie Fisher to accurately predict that submarines would dominate future warfare?',
+          options: [
+            'Sonar-guided depth charges',
+            'Guided anti-ship missiles',
+            'Aircraft carriers',
+            'The automotive torpedo and the submarine (U-boat)',
+          ],
+          answer: 'The automotive torpedo and the submarine (U-boat)',
+          a: 'The automotive torpedo and the submarine (U-boat)',
+          explanation:
+            'Torpodoes fired from submerged submarines or fast destroyers could sink a multi-million-pound battleship in seconds, showing that capital ships were vulnerable.',
+        },
+        {
+          question:
+            'What was the primary geopolitical consequence of the Anglo-German naval rivalry for British foreign policy?',
+          q: 'What was the primary geopolitical consequence of the Anglo-German naval rivalry for British foreign policy?',
+          options: [
+            'It forced Great Britain to abandon Splendid Isolation and conclude defensive ententes with its historic rivals, France and Russia',
+            'Britain declared war on Russia and invaded the Baltic',
+            'Britain surrendered its colonies in Africa and Asia to Germany',
+            'Britain signed a permanent military alliance with the United States',
+          ],
+          answer:
+            'It forced Great Britain to abandon Splendid Isolation and conclude defensive ententes with its historic rivals, France and Russia',
+          a: 'It forced Great Britain to abandon Splendid Isolation and conclude defensive ententes with its historic rivals, France and Russia',
+          explanation:
+            'Facing a hostile German navy across the North Sea, Britain redeployed the bulk of its fleet home and settled overseas colonial disputes with France (1904) and Russia (1907).',
         },
       ],
     },
@@ -2765,121 +3104,287 @@ export default {
       ],
       quiz: [
         {
-          q: 'Which three countries formed the Triple Entente in 1907?',
-          a: 'Britain, France, Russia',
+          question: 'Which three great powers formed the Triple Alliance in 1882?',
+          q: 'Which three great powers formed the Triple Alliance in 1882?',
           options: [
-            'Britain, France, Russia',
-            'Britain, France, Italy',
-            'Germany, Russia, Austria-Hungary',
-            'Germany, Austria-Hungary, Italy',
+            'France, Russia, and Italy',
+            'Britain, France, and Russia',
+            'Germany, Russia, and Austria-Hungary',
+            'Germany, Austria-Hungary, and Italy',
           ],
+          answer: 'Germany, Austria-Hungary, and Italy',
+          a: 'Germany, Austria-Hungary, and Italy',
           explanation:
-            'The Triple Entente of 1907 brought together Britain, France, and Russia in a diplomatic counterweight to the Triple Alliance. Although not a formal military pact, it consolidated mutual security commitments across Europe.',
+            'The Triple Alliance committed Germany, Austria-Hungary, and Italy to mutual military defense if attacked by France or two other great powers.',
         },
         {
-          q: 'Which country left the Triple Alliance and joined the Entente in 1915?',
-          a: 'Italy',
-          options: ['Romania', 'Ottoman Empire', 'Bulgaria', 'Italy'],
+          question: 'Which three nations formed the counterbalancing Triple Entente by 1907?',
+          q: 'Which three nations formed the counterbalancing Triple Entente by 1907?',
+          options: [
+            'Britain, Germany, and Russia',
+            'Great Britain, France, and Russia',
+            'France, Spain, and Russia',
+            'Germany, Austria-Hungary, and Italy',
+          ],
+          answer: 'Great Britain, France, and Russia',
+          a: 'Great Britain, France, and Russia',
           explanation:
-            'Although Italy had been a founding member of the Triple Alliance since 1882, it declared neutrality in 1914 and joined the Entente in 1915 under the secret Treaty of London. Italy coveted Austrian territories in Trentino, Istria, and Dalmatia.',
+            'The Triple Entente linked Britain, France, and Russia through a series of bilateral agreements to counterbalance the growing power of the Triple Alliance.',
         },
         {
-          q: "What was Britain's traditional foreign policy before forming alliances?",
+          question:
+            'What traditional British foreign policy of avoiding long-term continental alliances was abandoned after 1900?',
+          q: 'What traditional British foreign policy of avoiding long-term continental alliances was abandoned after 1900?',
+          options: [
+            'The Two-Power Standard',
+            'Appeasement',
+            'Splendid Isolation',
+            'Gunboat Diplomacy',
+          ],
+          answer: 'Splendid Isolation',
           a: 'Splendid Isolation',
-          options: ['Splendid Isolation', 'Weltpolitik', 'Continental Commitment', 'Appeasement'],
           explanation:
-            "Throughout the late 19th century, Britain pursued 'Splendid Isolation', refusing permanent peacetime continental military alliances. Growing German naval power and diplomatic isolation during the Boer War forced Britain to abandon this policy.",
+            'Under Prime Minister Lord Salisbury, Britain maintained "Splendid Isolation", relying on the Royal Navy and avoiding binding military pacts in Europe.',
         },
         {
-          q: 'Which three countries made up the Triple Alliance of 1882?',
-          a: 'Germany, Austria-Hungary, Italy',
+          question:
+            'What was the primary strategic objective of Otto von Bismarck’s foreign policy following German unification in 1871?',
+          q: 'What was the primary strategic objective of Otto von Bismarck’s foreign policy following German unification in 1871?',
           options: [
-            'Britain, France, Russia',
-            'Germany, Ottoman Empire, Italy',
-            'Germany, Austria-Hungary, Italy',
-            'Germany, Russia, Austria-Hungary',
+            'To keep France diplomatically isolated and prevent Germany from facing a two-front war',
+            'To build the world’s largest navy and destroy Great Britain',
+            'To conquer the Russian Empire and annex Ukraine',
+            'To overthrow the Austro-Hungarian monarchy',
           ],
+          answer:
+            'To keep France diplomatically isolated and prevent Germany from facing a two-front war',
+          a: 'To keep France diplomatically isolated and prevent Germany from facing a two-front war',
           explanation:
-            'The Triple Alliance, formed in 1882, bound Germany, Austria-Hungary, and Italy to assist each other if attacked by France or multiple powers. It formed the central core of the Central Powers in early 20th-century diplomacy.',
+            'Bismarck knew France would seek revenge for the loss of Alsace-Lorraine, so he constructed a web of alliances to ensure France could never find a continental ally.',
         },
         {
-          q: 'Which three countries formed the Triple Entente by 1907?',
-          a: 'Britain, France, Russia',
+          question:
+            'What defensive military alliance was signed between Germany and Austria-Hungary in October 1879?',
+          q: 'What defensive military alliance was signed between Germany and Austria-Hungary in October 1879?',
           options: [
-            'Britain, USA, France',
-            'Germany, Austria-Hungary, Italy',
-            'France, Russia, Italy',
-            'Britain, France, Russia',
+            'The Dual Alliance',
+            'The Reinsurance Treaty',
+            'The Holy Alliance',
+            'The Dreikaiserbund',
           ],
+          answer: 'The Dual Alliance',
+          a: 'The Dual Alliance',
           explanation:
-            'By 1907, the Triple Entente linked Britain, France, and Russia through a series of bilateral accords (Franco-Russian 1894, Entente Cordiale 1904, Anglo-Russian 1907). It surrounded the Central Powers with hostile diplomatic partners.',
+            'The Dual Alliance formed the cornerstone of Central Power diplomacy, promising mutual military assistance if either empire was attacked by Tsarist Russia.',
         },
         {
-          q: 'What was a major flaw of the alliance system?',
-          a: 'A small dispute between two nations could drag all major powers into war',
+          question:
+            'In what year did France and Tsarist Russia conclude their breakthrough military convention, ending French diplomatic isolation?',
+          q: 'In what year did France and Tsarist Russia conclude their breakthrough military convention, ending French diplomatic isolation?',
+          options: ['1904', '1894', '1882', '1890'],
+          answer: '1894',
+          a: '1894',
+          explanation:
+            'The Franco-Russian Alliance of 1894 ended French isolation and guaranteed that Germany would face a catastrophic two-front war if it attacked either nation.',
+        },
+        {
+          question:
+            'What colonial agreement was signed between Great Britain and France in April 1904, settling disputes in Egypt and Morocco?',
+          q: 'What colonial agreement was signed between Great Britain and France in April 1904, settling disputes in Egypt and Morocco?',
           options: [
-            'It forced countries to disarm',
-            'A small dispute between two nations could drag all major powers into war',
-            'It made the armies too small',
-            'It prevented any trade between the blocs',
+            'The Treaty of London',
+            'The Triple Entente Pact',
+            'The Treaty of Paris',
+            'The Entente Cordiale',
           ],
+          answer: 'The Entente Cordiale',
+          a: 'The Entente Cordiale',
           explanation:
-            'The fundamental flaw of the European alliance system was that it created a chain reaction of mutual obligations. A localized regional dispute in the Balkans could automatically pull all major powers into an inescapable continental war.',
+            'The Entente Cordiale ("Cordial Understanding") resolved longstanding colonial frictions, recognizing British paramountcy in Egypt and French influence in Morocco.',
         },
         {
-          q: 'Why did Russia ally with France in 1894?',
-          a: 'Because Kaiser Wilhelm II allowed the Reinsurance Treaty with Russia to lapse',
+          question:
+            'Which 1907 diplomatic convention resolved imperial rivalries in Persia, Afghanistan, and Tibet, completing the Triple Entente?',
+          q: 'Which 1907 diplomatic convention resolved imperial rivalries in Persia, Afghanistan, and Tibet, completing the Triple Entente?',
           options: [
-            'Because Britain attacked them',
-            'Because Kaiser Wilhelm II allowed the Reinsurance Treaty with Russia to lapse',
-            'Because they shared the same religion',
-            'Because France promised them African colonies',
+            'The St. Petersburg Protocol',
+            'The Treaty of Berlin',
+            'The Algeciras Act',
+            'The Anglo-Russian Convention',
           ],
+          answer: 'The Anglo-Russian Convention',
+          a: 'The Anglo-Russian Convention',
           explanation:
-            "When Kaiser Wilhelm II refused to renew Bismarck's Reinsurance Treaty in 1890, Tsar Alexander III turned to democratic France for capital and arms. Their 1894 military convention ensured mutual military mobilization if attacked by Germany.",
+            'The 1907 agreement settled the historic "Great Game" rivalry between Britain and Russia in Central Asia, allowing the two empires to align against Germany.',
         },
         {
-          q: "What was the 'Entente Cordiale' signed in 1904?",
-          a: 'A friendly agreement between Britain and France, settling colonial disputes',
-          options: [
-            'A military alliance between Germany and Russia',
-            'A peace treaty ending a war',
-            'An agreement to build dreadnoughts together',
-            'A friendly agreement between Britain and France, settling colonial disputes',
-          ],
+          question:
+            'What German foreign policy term, meaning "world policy", reflected Kaiser Wilhelm II’s ambition for global imperial status?',
+          q: 'What German foreign policy term, meaning "world policy", reflected Kaiser Wilhelm II’s ambition for global imperial status?',
+          options: ['Weltpolitik', 'Mitteleuropa', 'Realpolitik', 'Kulturkampf'],
+          answer: 'Weltpolitik',
+          a: 'Weltpolitik',
           explanation:
-            'The 1904 Entente Cordiale settled long-standing colonial disputes between Britain and France, recognizing French preeminence in Morocco and British control in Egypt. It was not a military alliance, but established deep diplomatic cooperation.',
+            'Weltpolitik replaced Bismarck’s cautious continental diplomacy (Realpolitik) with an aggressive drive for colonial empire, naval power, and global prestige.',
         },
         {
-          q: 'Why did Britain finally decide to form alliances?',
-          a: "They felt threatened by Germany's growing navy and aggressive Weltpolitik",
-          options: [
-            "They felt threatened by Germany's growing navy and aggressive Weltpolitik",
-            'They wanted to conquer Europe',
-            'They needed money from Russia',
-            'They were invaded by France',
-          ],
-          explanation:
-            "Britain abandoned isolationism after realizing that Germany's naval expansion and aggressive diplomacy threatened European stability. British leaders recognized that a German victory over France would leave one hostile superpower dominating the continent.",
-        },
-        {
-          q: "What does 'Weltpolitik' mean?",
-          a: "World policy (Germany's desire for a global empire)",
-          options: [
-            'Splendid isolation',
-            'Peaceful co-existence',
-            "World policy (Germany's desire for a global empire)",
-            'Naval supremacy',
-          ],
-          explanation:
-            "Wilhelm II's 'Weltpolitik' (World Policy) abandoned Bismarck's cautious continental diplomacy in favor of aggressive overseas expansion, naval buildup, and imperial prestige. It heightened British and French fears of German intentions.",
-        },
-        {
-          q: "Which nation in the Triple Alliance was seen as the 'weak link'?",
+          question:
+            'Which nation was widely regarded as the "weak link" in the Triple Alliance due to its territorial rivalries with Austria-Hungary?',
+          q: 'Which nation was widely regarded as the "weak link" in the Triple Alliance due to its territorial rivalries with Austria-Hungary?',
+          options: ['Germany', 'Austria-Hungary', 'The Ottoman Empire', 'Italy'],
+          answer: 'Italy',
           a: 'Italy',
-          options: ['Britain', 'Italy', 'Austria-Hungary', 'Germany'],
           explanation:
-            "Italy was widely regarded as the weak link in the Triple Alliance due to historic rivalries with Austria-Hungary over unredeemed Italian-speaking lands ('Italia Irredenta'). Italy signed secret non-aggression pacts with France as early as 1902.",
+            'Italy coveted Austro-Hungarian territories in the Trentino and Trieste, and secretly signed neutrality agreements with France, eventually defecting to the Allies in 1915.',
+        },
+        {
+          question:
+            'What secret 1887 treaty pledged neutrality between Germany and Russia, which Kaiser Wilhelm II foolishly allowed to lapse in 1890?',
+          q: 'What secret 1887 treaty pledged neutrality between Germany and Russia, which Kaiser Wilhelm II foolishly allowed to lapse in 1890?',
+          options: [
+            'The League of Three Emperors',
+            'The Reinsurance Treaty',
+            'The Dual Alliance',
+            'The Treaty of San Stefano',
+          ],
+          answer: 'The Reinsurance Treaty',
+          a: 'The Reinsurance Treaty',
+          explanation:
+            'Bismarck considered the Reinsurance Treaty essential to prevent a Franco-Russian alliance; Wilhelm II let it expire in 1890, paving the way for the 1894 Franco-Russian pact.',
+        },
+        {
+          question:
+            'What primary economic motivation compelled autocratic Tsarist Russia to ally with the democratic French Third Republic in 1894?',
+          q: 'What primary economic motivation compelled autocratic Tsarist Russia to ally with the democratic French Third Republic in 1894?',
+          options: [
+            'France offered to surrender its colonies in Indochina to Russia',
+            'Massive French financial loans and capital investment to build Russian railways and modernize heavy industry',
+            'Russia wanted to adopt the French republican constitution',
+            'Tsar Alexander III was married to the French President’s daughter',
+          ],
+          answer:
+            'Massive French financial loans and capital investment to build Russian railways and modernize heavy industry',
+          a: 'Massive French financial loans and capital investment to build Russian railways and modernize heavy industry',
+          explanation:
+            'Despite radical ideological differences, Russian industrialization depended on French bank loans, while France gained a powerful military partner to encircle Germany.',
+        },
+        {
+          question:
+            'What top-secret correspondence between Helmuth von Moltke and Franz Conrad von Hötzendorf in January 1909 converted a defensive alliance into an offensive commitment?',
+          q: 'What top-secret correspondence between Helmuth von Moltke and Franz Conrad von Hötzendorf in January 1909 converted a defensive alliance into an offensive commitment?',
+          options: [
+            'The Moltke-Conrad Dispatches',
+            'The Berlin Memorandum',
+            'The Willy-Nicky Letters',
+            'The Hoyos Mission Papers',
+          ],
+          answer: 'The Moltke-Conrad Dispatches',
+          a: 'The Moltke-Conrad Dispatches',
+          explanation:
+            'Moltke assured Conrad that if Austria invaded Serbia and Russia intervened, Germany would mobilize its army against Russia, effectively turning a defensive pact into an offensive blank cheque.',
+        },
+        {
+          question:
+            'What regional crisis in October 1908 brought Europe to the brink of war when Austria-Hungary formally annexed an Ottoman province?',
+          q: 'What regional crisis in October 1908 brought Europe to the brink of war when Austria-Hungary formally annexed an Ottoman province?',
+          options: [
+            'The Fashoda Incident',
+            'The Agadir Crisis',
+            'The Bosnian Annexation Crisis',
+            'The First Balkan War',
+          ],
+          answer: 'The Bosnian Annexation Crisis',
+          a: 'The Bosnian Annexation Crisis',
+          explanation:
+            'Austria’s unilateral annexation of Bosnia and Herzegovina enraged Serbia and Russia. Germany backed Austria with an ultimatum to Russia, leaving deep resentment in St. Petersburg.',
+        },
+        {
+          question:
+            'What is the central argument of the "Doomsday Machine" thesis of the alliance system, championed by historians like Sidney Fay and Luigi Albertini?',
+          q: 'What is the central argument of the "Doomsday Machine" thesis of the alliance system, championed by historians like Sidney Fay and Luigi Albertini?',
+          options: [
+            'The interlocking military treaties created an automated chain reaction where a localized Balkan dispute inevitably dragged all European great powers into total war',
+            'Alliances were secret conspiracies orchestrated by arms manufacturers to maximize profits',
+            'Alliances were completely irrelevant because no countries honoured their treaties in 1914',
+            'The Triple Entente was legally bound to surrender if Germany attacked Belgium',
+          ],
+          answer:
+            'The interlocking military treaties created an automated chain reaction where a localized Balkan dispute inevitably dragged all European great powers into total war',
+          a: 'The interlocking military treaties created an automated chain reaction where a localized Balkan dispute inevitably dragged all European great powers into total war',
+          explanation:
+            'According to Fay and Albertini, alliances converted small regional disputes into systemic global conflicts by eliminating diplomatic flexibility and creating rigid obligations.',
+        },
+        {
+          question:
+            'What counter-interpretation do modern historians such as Margaret MacMillan advance regarding the role of alliances in July 1914?',
+          q: 'What counter-interpretation do modern historians such as Margaret MacMillan advance regarding the role of alliances in July 1914?',
+          options: [
+            'Alliances prevented any fighting from taking place outside of the Balkans',
+            'Alliances did not make war inevitable; European leaders made conscious, aggressive political choices to mobilize and declare war rather than acting as helpless victims of treaties',
+            'The alliances were entirely created after the First World War ended',
+            'European leaders had no knowledge of their alliance obligations in 1914',
+          ],
+          answer:
+            'Alliances did not make war inevitable; European leaders made conscious, aggressive political choices to mobilize and declare war rather than acting as helpless victims of treaties',
+          a: 'Alliances did not make war inevitable; European leaders made conscious, aggressive political choices to mobilize and declare war rather than acting as helpless victims of treaties',
+          explanation:
+            'MacMillan argues that alliances had preserved peace for decades; in 1914, statesmen chose war because they feared diplomatic humiliation more than military conflict.',
+        },
+        {
+          question:
+            'What secret agreement did Italy sign with France in 1902, directly undermining its commitments to the Triple Alliance?',
+          q: 'What secret agreement did Italy sign with France in 1902, directly undermining its commitments to the Triple Alliance?',
+          options: [
+            'The Rome Protocols',
+            'The Prinetti-Barrère Agreement',
+            'The Treaty of London',
+            'The Pact of Steel',
+          ],
+          answer: 'The Prinetti-Barrère Agreement',
+          a: 'The Prinetti-Barrère Agreement',
+          explanation:
+            'Italy promised France strict neutrality if France were attacked or provoked into war by Germany, demonstrating that Italy was only nominally aligned with Berlin and Vienna.',
+        },
+        {
+          question:
+            'Why did Field Marshal von Schlieffen calculate that Germany had to knock out France in six weeks before turning to face Russia?',
+          q: 'Why did Field Marshal von Schlieffen calculate that Germany had to knock out France in six weeks before turning to face Russia?',
+          options: [
+            'Britain had promised to remain strictly neutral if France fell within six weeks',
+            'France had no army and was completely undefended',
+            'Russia’s vast geography and underdeveloped railway network meant its military mobilization would take six weeks, creating a temporary window of opportunity',
+            'Russia had signed a treaty promising never to fight Germany',
+          ],
+          answer:
+            'Russia’s vast geography and underdeveloped railway network meant its military mobilization would take six weeks, creating a temporary window of opportunity',
+          a: 'Russia’s vast geography and underdeveloped railway network meant its military mobilization would take six weeks, creating a temporary window of opportunity',
+          explanation:
+            'Schlieffen calculated that Germany could use its superior rail mobilization to crush France quickly, then transport its troops east to defeat the slow-moving Russian steamroller.',
+        },
+        {
+          question:
+            'Which British Foreign Secretary presided over the formation of the Triple Entente and attempted to mediate the July Crisis of 1914?',
+          q: 'Which British Foreign Secretary presided over the formation of the Triple Entente and attempted to mediate the July Crisis of 1914?',
+          options: ['Arthur Balfour', 'Lord Lansdowne', 'Sir Edward Grey', 'Lord Curzon'],
+          answer: 'Sir Edward Grey',
+          a: 'Sir Edward Grey',
+          explanation:
+            'Grey managed British diplomacy from 1905 to 1916, famously observing on the eve of war: "The lamps are going out all over Europe; we shall not see them lit again in our lifetime."',
+        },
+        {
+          question:
+            'For how many consecutive years did the European alliance system maintain general peace among the great powers before 1914?',
+          q: 'For how many consecutive years did the European alliance system maintain general peace among the great powers before 1914?',
+          options: [
+            '12 years',
+            'Only 5 years',
+            '43 years (from the Treaty of Frankfurt in 1871 until August 1914)',
+            '100 years',
+          ],
+          answer: '43 years (from the Treaty of Frankfurt in 1871 until August 1914)',
+          a: '43 years (from the Treaty of Frankfurt in 1871 until August 1914)',
+          explanation:
+            'Between 1871 and 1914, no major war occurred between the great powers of Europe—the longest period of uninterrupted peace in modern European history up to that point.',
         },
       ],
     },
@@ -3359,116 +3864,290 @@ export default {
       ],
       quiz: [
         {
-          q: 'Who assassinated Archduke Franz Ferdinand?',
+          question:
+            'In which Austro-Hungarian provincial capital was Archduke Franz Ferdinand assassinated on 28 June 1914?',
+          q: 'In which Austro-Hungarian provincial capital was Archduke Franz Ferdinand assassinated on 28 June 1914?',
+          options: ['Budapest', 'Belgrade', 'Sarajevo', 'Vienna'],
+          answer: 'Sarajevo',
+          a: 'Sarajevo',
+          explanation:
+            'Franz Ferdinand was assassinated in Sarajevo, the capital of Bosnia and Herzegovina, which had been annexed by Austria-Hungary in 1908.',
+        },
+        {
+          question:
+            'What was the name of the 19-year-old Bosnian Serb nationalist who fired the fatal shots killing Franz Ferdinand and Duchess Sophie?',
+          q: 'What was the name of the 19-year-old Bosnian Serb nationalist who fired the fatal shots killing Franz Ferdinand and Duchess Sophie?',
+          options: ['Gavrilo Princip', 'Nedeljko Čabrinović', 'Danilo Ilić', 'Trifko Grabež'],
+          answer: 'Gavrilo Princip',
           a: 'Gavrilo Princip',
+          explanation:
+            'Princip was a member of the revolutionary nationalist movement Young Bosnia, acting with the support of the Black Hand secret society.',
+        },
+        {
+          question:
+            'What secret Serbian nationalist society supplied the weapons, cyanide, and training for the Sarajevo assassins?',
+          q: 'What secret Serbian nationalist society supplied the weapons, cyanide, and training for the Sarajevo assassins?',
           options: [
-            'Leon Trotsky',
-            'Nedeljko Cabrinovic',
-            'Gavrilo Princip',
-            'Dragutin Dimitrijevic',
+            'The Chetniks',
+            'The Black Hand (Union or Death)',
+            'The Red Hand',
+            'The Young Turks',
           ],
+          answer: 'The Black Hand (Union or Death)',
+          a: 'The Black Hand (Union or Death)',
           explanation:
-            'Gavrilo Princip was a 19-year-old Bosnian Serb student and member of the revolutionary nationalist group Young Bosnia. He fired the fatal pistol shots that killed Archduke Franz Ferdinand and his wife Sophie in Sarajevo.',
+            'The Black Hand was a clandestine terrorist network of Serbian military officers committed to liberating South Slavs from Austro-Hungarian rule to create a Greater Serbia.',
         },
         {
-          q: 'What was the name of the Serbian nationalist group responsible for the assassination?',
-          a: 'The Black Hand',
-          options: ['Young Bosnia', 'The White Rose', 'The Red Guards', 'The Black Hand'],
+          question:
+            'What historic Serbian national holiday fell on 28 June, commemorating the 1389 Battle of Kosovo against the Ottoman Empire?',
+          q: 'What historic Serbian national holiday fell on 28 June, commemorating the 1389 Battle of Kosovo against the Ottoman Empire?',
+          options: ['Vidovdan (St. Vitus Day)', 'Slava Day', 'Orthodox Easter', 'St. George’s Day'],
+          answer: 'Vidovdan (St. Vitus Day)',
+          a: 'Vidovdan (St. Vitus Day)',
           explanation:
-            "The Black Hand ('Union or Death') was a clandestine Serbian military society led by Colonel Dragutin Dimitrijević ('Apis'). It provided weapons, cyanide pills, and training to the assassins to promote a Greater South Slavic state.",
+            'Visiting Sarajevo on Vidovdan was seen by Serbian nationalists as an intolerable imperial insult, as it commemorated Serbia’s historic sacrifice for independence.',
         },
         {
-          q: 'On what exact date was the Archduke assassinated?',
-          a: '28 June 1914',
-          options: ['28 June 1914', '28 July 1914', '4 August 1914', '11 November 1918'],
-          explanation:
-            'Archduke Franz Ferdinand was assassinated on 28 June 1914, St. Vitus Day (Vidovdan), a sacred Serbian national anniversary commemorating the 1389 Battle of Kosovo. Visiting Sarajevo on this sensitive date provoked intense nationalist outrage.',
-        },
-        {
-          q: 'Which empire had annexed Bosnia in 1908, angering Serbian nationalists?',
-          a: 'Austria-Hungary',
-          options: ['Germany', 'Austria-Hungary', 'The Ottoman Empire', 'Russia'],
-          explanation:
-            'In 1908, Austria-Hungary formally annexed the former Ottoman provinces of Bosnia and Herzegovina, which it had occupied since 1878. The annexation sparked the Bosnian Crisis, enraging Serbia and Russia who viewed the territory as Slavic land.',
-        },
-        {
-          q: 'Who was the heir to the Austro-Hungarian throne that visited Sarajevo?',
-          a: 'Archduke Franz Ferdinand',
+          question:
+            'What unconditional diplomatic and military pledge was issued by Kaiser Wilhelm II to Austria-Hungary on 5 July 1914?',
+          q: 'What unconditional diplomatic and military pledge was issued by Kaiser Wilhelm II to Austria-Hungary on 5 July 1914?',
           options: [
-            'Emperor Franz Joseph',
-            'Kaiser Wilhelm II',
-            'Archduke Franz Ferdinand',
-            'Tsar Nicholas II',
+            'The Potsdam Guarantee',
+            'The "Blank Cheque"',
+            'The Dual Mandate',
+            'The Reinsurance Treaty',
           ],
+          answer: 'The "Blank Cheque"',
+          a: 'The "Blank Cheque"',
           explanation:
-            'Archduke Franz Ferdinand was the nephew of Emperor Franz Joseph and heir presumptive to the dual Austro-Hungarian monarchy. His moderate plan to grant Slavs equal political status (trialism) was feared by Serbian nationalists who wanted complete separation.',
+            'Germany assured Austria-Hungary that Berlin would back Vienna unconditionally, even if punitive military action against Serbia dragged Tsarist Russia into war.',
         },
         {
-          q: 'What terrorist group supplied the assassins with weapons?',
-          a: 'The Black Hand',
-          options: ['Young Bosnia', 'The Red Army', 'The Serbian Guard', 'The Black Hand'],
-          explanation:
-            'The Black Hand smuggled Serbian army revolvers, hand grenades, and cyanide vials across the border to the conspirators in Sarajevo. Chief of Serbian military intelligence Colonel Dimitrijević oversaw the conspiracy.',
-        },
-        {
-          q: 'What was the first, failed assassination attempt on the Archduke that morning?',
-          a: 'A bomb was thrown at his car but bounced off',
+          question:
+            'What diplomatic document was delivered by Austria-Hungary to Serbia at 6:00 PM on 23 July 1914?',
+          q: 'What diplomatic document was delivered by Austria-Hungary to Serbia at 6:00 PM on 23 July 1914?',
           options: [
-            'A bomb was thrown at his car but bounced off',
-            'He was shot at but missed',
-            'A bridge was blown up',
-            'His driver was poisoned',
+            'A 10-point ultimatum with a strict 48-hour deadline',
+            'A peace treaty proposing border adjustments',
+            'An offer of imperial federation',
+            'A formal declaration of immediate war',
           ],
+          answer: 'A 10-point ultimatum with a strict 48-hour deadline',
+          a: 'A 10-point ultimatum with a strict 48-hour deadline',
           explanation:
-            'Earlier on the morning of 28 June, conspirator Nedeljko Čabrinović threw a bomb at the imperial motorcade that bounced off the car and wounded bystanders. The Archduke continued his official schedule before deciding to visit wounded officers in hospital.',
+            'The ultimatum was drafted intentionally to be rejected, containing humiliating demands designed to violate Serbian national sovereignty and justify military invasion.',
         },
         {
-          q: "Why was Gavrilo Princip standing outside Schiller's Delicatessen when the Archduke's car stopped?",
-          a: 'By total coincidence, the driver took a wrong turn and stalled the car right in front of him',
-          options: [
-            'Princip had planned the exact route',
-            'By total coincidence, the driver took a wrong turn and stalled the car right in front of him',
-            'The Archduke went in to buy a sandwich',
-            'The police ordered the car to stop there',
-          ],
+          question:
+            'On what date did Austria-Hungary officially declare war on Serbia, beginning the artillery bombardment of Belgrade?',
+          q: 'On what date did Austria-Hungary officially declare war on Serbia, beginning the artillery bombardment of Belgrade?',
+          options: ['28 July 1914', '1 August 1914', '4 August 1914', '28 June 1914'],
+          answer: '28 July 1914',
+          a: '28 July 1914',
           explanation:
-            "While en route to the hospital, the imperial driver took a wrong turn onto Franz Josef Street and attempted to reverse, stalling the open-topped vehicle. Gavrilo Princip was standing outside Schiller's Delicatessen and stepped forward to fire point-blank.",
+            'Exactly one month after the assassination, Austria declared war on Serbia, setting off the irreversible diplomatic and military chain reaction.',
         },
         {
-          q: "What was the 'Blank Cheque'?",
-          a: "Germany's promise of unconditional support to Austria-Hungary against Serbia",
+          question:
+            'What German war plan mandated an immediate, massive strike through neutral Belgium into northern France once mobilization began?',
+          q: 'What German war plan mandated an immediate, massive strike through neutral Belgium into northern France once mobilization began?',
           options: [
-            'The money used to buy the guns',
-            'A bribe paid to the assassins',
-            "Germany's promise of unconditional support to Austria-Hungary against Serbia",
-            'A peace offer from Russia',
+            'Operation Michael',
+            'The Moltke Directive',
+            'The Schlieffen Plan',
+            'Plan XVII',
           ],
+          answer: 'The Schlieffen Plan',
+          a: 'The Schlieffen Plan',
           explanation:
-            "On 5 July 1914, Kaiser Wilhelm II issued the fateful 'Blank Cheque' to Austria-Hungary, promising unconditional German military backing for harsh measures against Serbia. This guaranteed that Austria felt secure enough to issue an ultimatum.",
+            'Designed by Count Alfred von Schlieffen, the plan required violating Belgian neutrality to wheel around French frontier fortifications and capture Paris in 42 days.',
         },
         {
-          q: 'What happened on July 23, 1914?',
-          a: 'Austria-Hungary sent an impossibly harsh ultimatum to Serbia',
+          question:
+            'What 1839 international treaty guaranteed Belgian neutrality, which Britain honoured by declaring war on Germany on 4 August 1914?',
+          q: 'What 1839 international treaty guaranteed Belgian neutrality, which Britain honoured by declaring war on Germany on 4 August 1914?',
           options: [
-            'Russia declared war',
-            'Germany invaded Belgium',
-            'Britain joined the war',
-            'Austria-Hungary sent an impossibly harsh ultimatum to Serbia',
+            'The Treaty of London',
+            'The Treaty of Vienna',
+            'The Treaty of Utrecht',
+            'The Treaty of Ghent',
           ],
+          answer: 'The Treaty of London',
+          a: 'The Treaty of London',
           explanation:
-            'On 23 July 1914, Vienna delivered a 48-hour ultimatum containing ten intentionally humiliating demands designed to violate Serbian sovereignty. Austria-Hungary intended to provoke a war to destroy Serbian regional power once and for all.',
+            'In the 1839 Treaty of London, the European great powers guaranteed Belgium’s neutrality. Britain intervened when German troops crossed the Belgian border on 4 August.',
         },
         {
-          q: 'Why did Britain declare war on Germany on August 4, 1914?',
-          a: 'Germany invaded neutral Belgium, violating the 1839 Treaty of London',
+          question:
+            'What dismissive phrase was used by German Chancellor Bethmann-Hollweg to describe the 1839 Treaty of London to the British ambassador?',
+          q: 'What dismissive phrase was used by German Chancellor Bethmann-Hollweg to describe the 1839 Treaty of London to the British ambassador?',
           options: [
-            'Germany invaded neutral Belgium, violating the 1839 Treaty of London',
-            'Because Germany sank a British ship',
-            'Because of the assassination in Sarajevo',
-            'Because France surrendered',
+            'A "childish superstition"',
+            'A "dead man’s contract"',
+            'A "worthless scrap of ribbon"',
+            'A mere "scrap of paper"',
           ],
+          answer: 'A mere "scrap of paper"',
+          a: 'A mere "scrap of paper"',
           explanation:
-            "Britain entered the war on 4 August 1914 after Germany violated the 1839 Treaty of London by invading neutral Belgium to execute the Schlieffen Plan. German Chancellor Bethmann Hollweg dismissively referred to the treaty as a mere 'scrap of paper'.",
+            'Bethmann-Hollweg expressed astonishment that Britain would go to war against a kindred nation just for a "scrap of paper", outraging British and international public opinion.',
+        },
+        {
+          question:
+            'What initial assassination attempt on Franz Ferdinand failed on the morning of 28 June 1914?',
+          q: 'What initial assassination attempt on Franz Ferdinand failed on the morning of 28 June 1914?',
+          options: [
+            'A landmine planted under the Latin Bridge failed to detonate due to damp gunpowder',
+            'A sniper fired from a clocktower but missed by several yards',
+            'Nedeljko Čabrinović threw a bomb that bounced off the Archduke’s car and exploded beneath the following vehicle',
+            'An assassin attempted to stab the Archduke with a poisoned dagger during a reception',
+          ],
+          answer:
+            'Nedeljko Čabrinović threw a bomb that bounced off the Archduke’s car and exploded beneath the following vehicle',
+          a: 'Nedeljko Čabrinović threw a bomb that bounced off the Archduke’s car and exploded beneath the following vehicle',
+          explanation:
+            'Čabrinović’s grenade bounced off the folded canvas roof of the Archduke’s cabriolet, wounding twenty spectators and officers in the following car; Čabrinović swallowed expired cyanide and jumped into the shallow river.',
+        },
+        {
+          question:
+            'Why was Gavrilo Princip standing outside Schiller’s Delicatessen when Franz Ferdinand’s car unexpectedly stopped right in front of him?',
+          q: 'Why was Gavrilo Princip standing outside Schiller’s Delicatessen when Franz Ferdinand’s car unexpectedly stopped right in front of him?',
+          options: [
+            'The Archduke ordered the driver to halt so he could purchase refreshments',
+            'Princip had bribed the chauffeur to stop the car at that exact intersection',
+            'The Sarajevo police had established a mandatory checkpoint outside the shop',
+            'The driver, Leopold Lojka, took a wrong turn onto Franz Josef Street and stalled the engine while attempting to reverse',
+          ],
+          answer:
+            'The driver, Leopold Lojka, took a wrong turn onto Franz Josef Street and stalled the engine while attempting to reverse',
+          a: 'The driver, Leopold Lojka, took a wrong turn onto Franz Josef Street and stalled the engine while attempting to reverse',
+          explanation:
+            'Following a route change to visit wounded officers in hospital, Lojka mistakenly turned onto the original procession route. When Governor Potiorek shouted at him to stop, Lojka stalled the car right beside Princip.',
+        },
+        {
+          question:
+            'Which head of Serbian Military Intelligence, known by the codename "Apis", secretly orchestrated the Black Hand assassination plot?',
+          q: 'Which head of Serbian Military Intelligence, known by the codename "Apis", secretly orchestrated the Black Hand assassination plot?',
+          options: [
+            'General Stepa Stepanović',
+            'Colonel Dragutin Dimitrijević',
+            'Major Vojislav Tankosić',
+            'General Radomir Putnik',
+          ],
+          answer: 'Colonel Dragutin Dimitrijević',
+          a: 'Colonel Dragutin Dimitrijević',
+          explanation:
+            'Colonel Dimitrijević ("Apis") led the Black Hand and provided weapons from the Serbian state armory in Kragujevac, operating independently of Prime Minister Nikola Pašić’s civilian government.',
+        },
+        {
+          question:
+            'Which specific demand in the Austro-Hungarian ultimatum (Point 6) did Serbia reject as an intolerable violation of sovereign independence?',
+          q: 'Which specific demand in the Austro-Hungarian ultimatum (Point 6) did Serbia reject as an intolerable violation of sovereign independence?',
+          options: [
+            'Paying a cash indemnity of 100 million gold francs to Vienna',
+            'Allowing Austro-Hungarian police and judicial officials to participate in proceedings on Serbian sovereign territory',
+            'Arresting military officers implicated in the assassination plot',
+            'Banning all anti-Austrian propaganda in Serbian school textbooks',
+          ],
+          answer:
+            'Allowing Austro-Hungarian police and judicial officials to participate in proceedings on Serbian sovereign territory',
+          a: 'Allowing Austro-Hungarian police and judicial officials to participate in proceedings on Serbian sovereign territory',
+          explanation:
+            'Serbia agreed to nine of the ten demands, but rejected Austro-Hungarian officials conducting investigations on Serbian soil, viewing it as the destruction of Serbian constitutional sovereignty.',
+        },
+        {
+          question:
+            'Which Austro-Hungarian Chief of General Staff had urged a preventative war against Serbia over twenty-five times since 1906?',
+          q: 'Which Austro-Hungarian Chief of General Staff had urged a preventative war against Serbia over twenty-five times since 1906?',
+          options: [
+            'General Oskar Potiorek',
+            'Archduke Friedrich',
+            'Field Marshal Franz Conrad von Hötzendorf',
+            'Count Leopold Berchtold',
+          ],
+          answer: 'Field Marshal Franz Conrad von Hötzendorf',
+          a: 'Field Marshal Franz Conrad von Hötzendorf',
+          explanation:
+            'Conrad was an uncompromising hawk who believed that only the military destruction of Serbia could halt the disintegrating tide of Pan-Slavism and preserve the Habsburg Empire.',
+        },
+        {
+          question:
+            'What urgent series of personal telegrams were exchanged between the German Kaiser and Russian Tsar between 29 and 31 July 1914 in a desperate bid to avert general war?',
+          q: 'What urgent series of personal telegrams were exchanged between the German Kaiser and Russian Tsar between 29 and 31 July 1914 in a desperate bid to avert general war?',
+          options: [
+            'The Romanov-Hohenzollern Cables',
+            'The Berlin-Petersburg Dispatches',
+            'The "Willy-Nicky" Telegrams',
+            'The Imperial Peace Transcripts',
+          ],
+          answer: 'The "Willy-Nicky" Telegrams',
+          a: 'The "Willy-Nicky" Telegrams',
+          explanation:
+            'Cousins Wilhelm and Nicholas communicated in English as "Willy" and "Nicky", appealing to their personal friendship to halt military mobilizations before the army timetables overwhelmed diplomacy.',
+        },
+        {
+          question:
+            'What calculated diplomatic delay was engineered by Austro-Hungarian Foreign Minister Count Berchtold before delivering the ultimatum on 23 July?',
+          q: 'What calculated diplomatic delay was engineered by Austro-Hungarian Foreign Minister Count Berchtold before delivering the ultimatum on 23 July?',
+          options: [
+            'Waiting for the German harvest to be gathered to prevent famine',
+            'Waiting until Archduke Franz Ferdinand’s funeral was completed in Vienna',
+            'Waiting for the British fleet to leave its Mediterranean bases',
+            'Waiting until French President Raymond Poincaré had finished his state visit to St. Petersburg and boarded his warship home',
+          ],
+          answer:
+            'Waiting until French President Raymond Poincaré had finished his state visit to St. Petersburg and boarded his warship home',
+          a: 'Waiting until French President Raymond Poincaré had finished his state visit to St. Petersburg and boarded his warship home',
+          explanation:
+            'Berchtold waited until Poincaré and Prime Minister Viviani were at sea, unable to coordinate closely with Russian leaders during the critical 48-hour response window.',
+        },
+        {
+          question:
+            'What landmark thesis was published by German historian Fritz Fischer in 1961 ("Griff nach der Weltmacht") regarding the July Crisis?',
+          q: 'What landmark thesis was published by German historian Fritz Fischer in 1961 ("Griff nach der Weltmacht") regarding the July Crisis?',
+          options: [
+            'Tsarist Russia orchestrated the entire assassination to conquer Constantinople',
+            'Imperial Germany deliberately provoked the July Crisis and encouraged Austria to attack Serbia to wage a premeditated war for European hegemony and world power',
+            'No country bore responsibility because the war was an unavoidable economic accident',
+            'Great Britain deliberately engineered the crisis to destroy the German High Seas Fleet',
+          ],
+          answer:
+            'Imperial Germany deliberately provoked the July Crisis and encouraged Austria to attack Serbia to wage a premeditated war for European hegemony and world power',
+          a: 'Imperial Germany deliberately provoked the July Crisis and encouraged Austria to attack Serbia to wage a premeditated war for European hegemony and world power',
+          explanation:
+            'Fischer broke German historical consensus by producing archival proof that German leaders actively sought war in 1914 to break encirclement and establish German continental dominance.',
+        },
+        {
+          question:
+            'How does Australian historian Christopher Clark interpret European leadership in "The Sleepwalkers" (2012)?',
+          q: 'How does Australian historian Christopher Clark interpret European leadership in "The Sleepwalkers" (2012)?',
+          options: [
+            'Britain was solely responsible for attacking Germany without warning',
+            'The war was entirely caused by the secret orders of Emperor Franz Joseph',
+            'World War I was an entirely fictitious conflict created by postwar novelists',
+            'European leaders acted like sleepwalkers, blinded by mutual paranoia and domestic pressures, rather than executing a unilateral German conspiracy',
+          ],
+          answer:
+            'European leaders acted like sleepwalkers, blinded by mutual paranoia and domestic pressures, rather than executing a unilateral German conspiracy',
+          a: 'European leaders acted like sleepwalkers, blinded by mutual paranoia and domestic pressures, rather than executing a unilateral German conspiracy',
+          explanation:
+            'Clark argues for distributed responsibility: European leaders were caught in a volatile multilateral crisis, miscalculating that the other side would back down as they had in previous crises.',
+        },
+        {
+          question:
+            'What critical mobilization order did Tsar Nicholas II sign on the evening of 30 July 1914, making general European war practically unavoidable?',
+          q: 'What critical mobilization order did Tsar Nicholas II sign on the evening of 30 July 1914, making general European war practically unavoidable?',
+          options: [
+            'A formal declaration of unconditional surrender to Austria',
+            'General mobilization of the entire Russian army and navy',
+            'A military alliance with the Ottoman Empire against Germany',
+            'An executive order disbanding the Russian imperial navy',
+          ],
+          answer: 'General mobilization of the entire Russian army and navy',
+          a: 'General mobilization of the entire Russian army and navy',
+          explanation:
+            'After vacillating between partial and general mobilization, the Tsar signed the general mobilization order on 30 July, prompting Germany to issue a 12-hour ultimatum to halt, which Russia refused.',
         },
       ],
     },
@@ -3476,158 +4155,304 @@ export default {
       id: 'lesson_6',
       quiz: [
         {
-          q: 'What was the name of the Austro-Hungarian heir whose assassination on 28 June 1914 sparked the July Crisis?',
-          a: 'Archduke Franz Ferdinand',
           question:
-            'What was the name of the Austro-Hungarian heir whose assassination on 28 June 1914 sparked the July Crisis?',
-          answer: 'Archduke Franz Ferdinand',
+            'What was the name of the Austro-Hungarian heir whose assassination on 28 June 1914 catalyzed the July Crisis?',
+          q: 'What was the name of the Austro-Hungarian heir whose assassination on 28 June 1914 catalyzed the July Crisis?',
           options: [
-            'Tsar Nicholas II',
-            'Emperor Franz Joseph',
+            'Emperor Franz Joseph I',
+            'Archduke Charles',
             'Archduke Franz Ferdinand',
-            'Kaiser Wilhelm II',
+            'Crown Prince Rudolf',
           ],
+          answer: 'Archduke Franz Ferdinand',
+          a: 'Archduke Franz Ferdinand',
           explanation:
-            "Archduke Franz Ferdinand's assassination on 28 June 1914 served as the catalyst that transformed simmering imperial tensions into an active diplomatic crisis. The resulting Austrian desire to punish Serbia triggered the alliance system.",
+            'Archduke Franz Ferdinand’s assassination served as the immediate trigger that transformed simmering imperial tensions into an active, escalating diplomatic crisis.',
         },
         {
-          q: 'Which Serbian nationalist secret society was Gavrilo Princip connected with during the Sarajevo assassination?',
-          a: 'The Black Hand (Union or Death)',
           question:
-            'Which Serbian nationalist secret society was Gavrilo Princip connected with during the Sarajevo assassination?',
-          answer: 'The Black Hand (Union or Death)',
+            'Which Serbian nationalist secret society orchestrated the weapons transfer, training, and border smuggling for the Sarajevo assassins?',
+          q: 'Which Serbian nationalist secret society orchestrated the weapons transfer, training, and border smuggling for the Sarajevo assassins?',
           options: [
             'The Black Hand (Union or Death)',
             'The Young Turks',
-            "The People's Will",
-            'The Chetniks',
+            'The People’s Will',
+            'The White Eagle',
           ],
+          answer: 'The Black Hand (Union or Death)',
+          a: 'The Black Hand (Union or Death)',
           explanation:
-            'The Black Hand was a radical pan-Slavic paramilitary network composed largely of Serbian army officers and civil servants. They aimed to liberate South Slavs from Austro-Hungarian imperial rule to form a unified Greater Serbia.',
+            'The Black Hand was a radical pan-Slavic paramilitary network led by Serbian army officers who aimed to liberate South Slavs from Austro-Hungarian rule.',
         },
         {
-          q: 'Which two major European alliance blocs confronted each other in 1914?',
-          a: 'The Triple Entente and the Triple Alliance',
-          question: 'Which two major European alliance blocs confronted each other in 1914?',
-          answer: 'The Triple Entente and the Triple Alliance',
+          question:
+            'Which two opposing alliance coalitions divided the European balance of power in August 1914?',
+          q: 'Which two opposing alliance coalitions divided the European balance of power in August 1914?',
           options: [
-            'The Warsaw Pact and NATO',
-            'The Axis Powers and the Allied Powers',
-            'The Holy Alliance and the League of Nations',
+            'The Holy Alliance and the Grand Coalition',
             'The Triple Entente and the Triple Alliance',
+            'The Axis and the Allies',
+            'NATO and the Warsaw Pact',
           ],
+          answer: 'The Triple Entente and the Triple Alliance',
+          a: 'The Triple Entente and the Triple Alliance',
           explanation:
-            'By 1914, Europe was polarized into two opposing armed camps: the Triple Entente (Britain, France, Russia) and the Triple Alliance (Germany, Austria-Hungary, Italy). This rigid bipolar structure meant any regional shock threatened general war.',
+            'By 1914, Europe was polarized into the Triple Entente (Britain, France, Russia) and the Triple Alliance (Germany, Austria-Hungary, Italy), creating a rigid bipolar system.',
         },
         {
-          q: 'Which three nations made up the Triple Entente in 1914?',
-          a: 'Britain, France, and Russia',
-          question: 'Which three nations made up the Triple Entente in 1914?',
-          answer: 'Britain, France, and Russia',
-          options: [
-            'Germany, Austria-Hungary, and Italy',
-            'Britain, France, and Russia',
-            'Britain, Germany, and the Ottoman Empire',
-            'France, Spain, and Russia',
-          ],
-          explanation:
-            'The Triple Entente brought together Britain, France, and Russia to deter German continental hegemony. Although not an ironclad military pact, mutual diplomatic coordination and shared military plans bound the three powers together.',
-        },
-        {
-          q: 'What unconditional promise of military support did Germany give to Austria-Hungary on 5 July 1914?',
-          a: "The 'Blank Cheque'",
           question:
-            'What unconditional promise of military support did Germany give to Austria-Hungary on 5 July 1914?',
-          answer: "The 'Blank Cheque'",
+            'What unconditional promise of military support did Imperial Germany extend to Austria-Hungary on 5 July 1914?',
+          q: 'What unconditional promise of military support did Imperial Germany extend to Austria-Hungary on 5 July 1914?',
           options: [
-            'The Reinsurance Treaty',
+            'The "Blank Cheque"',
+            'The Berlin Concordat',
             'The Schlieffen Guarantee',
-            "The 'Blank Cheque'",
-            'The Berlin Protocol',
+            'The Reinsurance Treaty',
           ],
+          answer: 'The "Blank Cheque"',
+          a: 'The "Blank Cheque"',
           explanation:
-            "The 'Blank Cheque' issued by Germany on 5 July assured Vienna of unshakeable military support even if punitive action against Serbia provoked war with Russia. It fatally removed any diplomatic incentive for Austria to show restraint.",
+            'The "Blank Cheque" assured Vienna of unshakeable German military backing, removing any diplomatic incentive for Austria to show restraint against Serbia.',
         },
         {
-          q: 'What German war plan, designed in 1905, aimed to defeat France in six weeks by invading through neutral Belgium before turning to face Russia?',
-          a: 'The Schlieffen Plan',
           question:
-            'What German war plan, designed in 1905, aimed to defeat France in six weeks by invading through neutral Belgium before turning to face Russia?',
-          answer: 'The Schlieffen Plan',
+            'What German war plan, designed by the Chief of the General Staff in 1905, dictated an immediate offensive through Belgium against France?',
+          q: 'What German war plan, designed by the Chief of the General Staff in 1905, dictated an immediate offensive through Belgium against France?',
           options: ['Operation Barbarossa', 'The Moltke Plan', 'Plan XVII', 'The Schlieffen Plan'],
+          answer: 'The Schlieffen Plan',
+          a: 'The Schlieffen Plan',
           explanation:
-            'The Schlieffen Plan required German forces to invade neutral Belgium to wheel around French defenses and capture Paris within 42 days. Its inflexible railway timetables meant German military mobilization was functionally equivalent to declaring war.',
+            'The Schlieffen Plan required German armies to violate Belgian neutrality to encircle Paris within six weeks, before turning east to face Russia.',
         },
         {
-          q: 'What treaty signed in 1839 guaranteed Belgian neutrality and brought Britain into the war when Germany violated it?',
-          a: 'The Treaty of London',
           question:
-            'What treaty signed in 1839 guaranteed Belgian neutrality and brought Britain into the war when Germany violated it?',
-          answer: 'The Treaty of London',
+            'What 1839 international treaty guaranteed Belgian neutrality and served as Britain’s legal casus belli for entering the war?',
+          q: 'What 1839 international treaty guaranteed Belgian neutrality and served as Britain’s legal casus belli for entering the war?',
           options: [
+            'The Treaty of Versailles',
             'The Treaty of Brest-Litovsk',
             'The Treaty of London',
             'The Treaty of Paris',
-            'The Treaty of Berlin',
           ],
+          answer: 'The Treaty of London',
+          a: 'The Treaty of London',
           explanation:
-            'The 1839 Treaty of London was a multilateral treaty in which major European powers guaranteed the perpetual neutrality and independence of Belgium. Britain honoured this obligation when German divisions crossed the Belgian frontier in August 1914.',
+            'The 1839 Treaty of London was a multilateral pact guaranteeing the neutrality of Belgium, which Britain upheld when German divisions invaded on 4 August 1914.',
         },
         {
-          q: "Which prominent German historian published 'Griff nach der Weltmacht' (1961), arguing Germany bore primary responsibility for deliberately planning and provoking the war?",
-          a: 'Fritz Fischer',
           question:
-            "Which prominent German historian published 'Griff nach der Weltmacht' (1961), arguing Germany bore primary responsibility for deliberately planning and provoking the war?",
+            'Which German historian published "Griff nach der Weltmacht" in 1961, arguing Germany bore primary responsibility for deliberately planning and provoking the war?',
+          q: 'Which German historian published "Griff nach der Weltmacht" in 1961, arguing Germany bore primary responsibility for deliberately planning and provoking the war?',
+          options: ['Niall Ferguson', 'Fritz Fischer', 'Christopher Clark', 'A.J.P. Taylor'],
           answer: 'Fritz Fischer',
-          options: ['Fritz Fischer', 'A.J.P. Taylor', 'Niall Ferguson', 'Christopher Clark'],
+          a: 'Fritz Fischer',
           explanation:
-            "In 1961, German historian Fritz Fischer published 'Griff nach der Weltmacht' ('Germany's Aims in the First World War'), arguing Germany deliberately sought continental war in 1914 to break encirclement. Fischer's thesis sparked a revolution in WWI historiography.",
+            'Fritz Fischer revolutionized WWI historiography by proving that Imperial Germany’s leadership deliberately pursued war in 1914 to break encirclement and establish global power.',
         },
         {
-          q: 'What clause of the 1919 Treaty of Versailles (Article 231) forced Germany to accept sole responsibility for causing the war?',
-          a: 'The War Guilt Clause',
           question:
-            'What clause of the 1919 Treaty of Versailles (Article 231) forced Germany to accept sole responsibility for causing the war?',
-          answer: 'The War Guilt Clause',
+            'What controversial clause in the 1919 Treaty of Versailles (Article 231) forced Germany to accept sole responsibility for causing the war?',
+          q: 'What controversial clause in the 1919 Treaty of Versailles (Article 231) forced Germany to accept sole responsibility for causing the war?',
           options: [
-            'The Reparations Clause',
-            'The Disarmament Clause',
-            'The Diktat Clause',
             'The War Guilt Clause',
+            'The Disarmament Clause',
+            'The Diktat Article',
+            'The Reparations Mandate',
           ],
+          answer: 'The War Guilt Clause',
+          a: 'The War Guilt Clause',
           explanation:
-            'Article 231 of the Treaty of Versailles forced Germany to accept sole moral and financial responsibility for causing all loss and damage of the war. Widely resented in Weimar Germany, it became a potent weapon for nationalist propaganda.',
+            'Article 231 forced Germany to accept sole moral and financial responsibility for all loss and damage of the war, generating intense political outrage across Weimar Germany.',
         },
         {
-          q: "Which naval rivalry fueled tension between Britain and Germany from 1898 to 1914, sparked by Admiral Tirpitz's Navy Laws and new all-big-gun battleships?",
-          a: 'The Dreadnought arms race',
           question:
-            "Which naval rivalry fueled tension between Britain and Germany from 1898 to 1914, sparked by Admiral Tirpitz's Navy Laws and new all-big-gun battleships?",
-          answer: 'The Dreadnought arms race',
+            'Which naval arms race from 1898 to 1912 poisoned relations between Great Britain and Imperial Germany?',
+          q: 'Which naval arms race from 1898 to 1912 poisoned relations between Great Britain and Imperial Germany?',
           options: [
+            'The Convoy race',
+            'The Ironclad rivalry',
+            'The U-boat blockade',
             'The Dreadnought arms race',
-            'The U-boat embargo',
-            'The Convoy crisis',
-            'The Ironclad competition',
           ],
+          answer: 'The Dreadnought arms race',
+          a: 'The Dreadnought arms race',
           explanation:
-            'Between 1898 and 1914, Britain and Germany engaged in an expensive naval arms race centered on dreadnought construction. The rivalry heightened strategic paranoia, poisonously convincing British leaders that Germany intended to challenge Royal Navy supremacy.',
+            'The building of all-big-gun battleships and Admiral Tirpitz’s High Seas Fleet created profound strategic paranoia in Britain, convincing London that Germany sought world domination.',
         },
         {
-          q: "How do 'revisionist' historians such as Christopher Clark ('The Sleepwalkers') describe the outbreak of the First World War?",
-          a: 'As a tragic breakdown of diplomacy where European leaders blindly sleepwalked into a catastrophe that none of them truly wanted or anticipated',
           question:
-            "How do 'revisionist' historians such as Christopher Clark ('The Sleepwalkers') describe the outbreak of the First World War?",
-          answer:
-            'As a tragic breakdown of diplomacy where European leaders blindly sleepwalked into a catastrophe that none of them truly wanted or anticipated',
+            'How do revisionist historians such as Christopher Clark ("The Sleepwalkers") characterize the outbreak of the First World War?',
+          q: 'How do revisionist historians such as Christopher Clark ("The Sleepwalkers") characterize the outbreak of the First World War?',
           options: [
+            'As an accidental conflict caused by a Serbian naval mutiny',
+            'As a tragic collective breakdown of diplomacy where European statesmen blindly sleepwalked into a catastrophe that none truly wanted',
             'As a sole British conspiracy to conquer German colonies',
-            'As a tragic breakdown of diplomacy where European leaders blindly sleepwalked into a catastrophe that none of them truly wanted or anticipated',
-            'As a premeditated communist revolution',
-            'As an accidental explosion caused by Serbian naval forces',
+            'As a premeditated Bolshevik revolution orchestrated from Switzerland',
           ],
+          answer:
+            'As a tragic collective breakdown of diplomacy where European statesmen blindly sleepwalked into a catastrophe that none truly wanted',
+          a: 'As a tragic collective breakdown of diplomacy where European statesmen blindly sleepwalked into a catastrophe that none truly wanted',
           explanation:
-            "In 'The Sleepwalkers' (2012), historian Christopher Clark argues that the outbreak of war was not the master plan of a single power, but a complex multilateral diplomatic failure. European leaders acted defensively on flawed assumptions, blindly stumbling into war.",
+            'Clark argues that the outbreak was not the calculated conspiracy of a single state, but a multilateral crisis where leaders misjudged risks and stumbled into catastrophe.',
+        },
+        {
+          question:
+            'What archival document from September 1914 did Fritz Fischer highlight to prove German premeditated expansionist ambitions?',
+          q: 'What archival document from September 1914 did Fritz Fischer highlight to prove German premeditated expansionist ambitions?',
+          options: [
+            'The Berlin Conference Minutes',
+            'The Kruger Telegram',
+            'The "Septemberprogramm" drafted by Chancellor Bethmann-Hollweg, outlining sweeping annexations in Europe and Africa',
+            'The Zimmerman Memorandum',
+          ],
+          answer:
+            'The "Septemberprogramm" drafted by Chancellor Bethmann-Hollweg, outlining sweeping annexations in Europe and Africa',
+          a: 'The "Septemberprogramm" drafted by Chancellor Bethmann-Hollweg, outlining sweeping annexations in Europe and Africa',
+          explanation:
+            'The Septemberprogramm outlined German war aims: subjugating Belgium, annexing French ore fields, creating a German-dominated economic zone (Mitteleuropa), and expanding in Central Africa.',
+        },
+        {
+          question:
+            'What primary cause for the outbreak of war is emphasized by revisionist historian Sean McMeekin in "The Russian Origins of the First World War" (2011)?',
+          q: 'What primary cause for the outbreak of war is emphasized by revisionist historian Sean McMeekin in "The Russian Origins of the First World War" (2011)?',
+          options: [
+            'Tsar Nicholas II’s personal jealousy of King George V’s naval fleet',
+            'Tsarist Russia’s aggressive geopolitical ambition to dismantle the Ottoman Empire and seize Constantinople and the Turkish Straits',
+            'A secret conspiracy between Russian Marxists and the British Admiralty',
+            'Russia’s desire to surrender Poland and Ukraine to Austria-Hungary',
+          ],
+          answer:
+            'Tsarist Russia’s aggressive geopolitical ambition to dismantle the Ottoman Empire and seize Constantinople and the Turkish Straits',
+          a: 'Tsarist Russia’s aggressive geopolitical ambition to dismantle the Ottoman Empire and seize Constantinople and the Turkish Straits',
+          explanation:
+            'McMeekin argues that Russian leaders actively welcomed a European war to fulfill their centuries-old imperial ambition of controlling the Bosphorus and Dardanelles.',
+        },
+        {
+          question:
+            'What controversial argument does British historian Niall Ferguson advance in "The Pity of War" (1998) regarding Britain’s entry into the war?',
+          q: 'What controversial argument does British historian Niall Ferguson advance in "The Pity of War" (1998) regarding Britain’s entry into the war?',
+          options: [
+            'The Royal Navy should have bombarded New York to enforce neutrality',
+            'Great Britain made a catastrophic strategic blunder by intervening, transforming a manageable continental clash into a ruinous global bloodbath',
+            'Britain entered the war too late to save the Russian Empire',
+            'Britain should have formed an offensive alliance with Austria-Hungary against France',
+          ],
+          answer:
+            'Great Britain made a catastrophic strategic blunder by intervening, transforming a manageable continental clash into a ruinous global bloodbath',
+          a: 'Great Britain made a catastrophic strategic blunder by intervening, transforming a manageable continental clash into a ruinous global bloodbath',
+          explanation:
+            'Ferguson contends that had Britain stayed neutral, Germany would have established a continental customs union similar to the modern European Union without the horrific loss of life.',
+        },
+        {
+          question:
+            'According to military historian John Keegan, how did rigid railway mobilization timetables undermine diplomatic crisis management in July 1914?',
+          q: 'According to military historian John Keegan, how did rigid railway mobilization timetables undermine diplomatic crisis management in July 1914?',
+          options: [
+            'Once general mobilization was declared, millions of reservists and train schedules could not be stopped without throwing armies into defenseless chaos',
+            'European armies had no maps of railway routes',
+            'Railroads were sabotaged across Europe by trade unionists',
+            'Trains could only run during daytime hours due to coal strikes',
+          ],
+          answer:
+            'Once general mobilization was declared, millions of reservists and train schedules could not be stopped without throwing armies into defenseless chaos',
+          a: 'Once general mobilization was declared, millions of reservists and train schedules could not be stopped without throwing armies into defenseless chaos',
+          explanation:
+            'Keegan noted that mobilization timetables dictated diplomacy: once Russia mobilized, German generals insisted they had to attack France immediately or lose the war.',
+        },
+        {
+          question:
+            'What interwar revisionist thesis was advanced by American historian Sidney Fay in "The Origins of the World War" (1928)?',
+          q: 'What interwar revisionist thesis was advanced by American historian Sidney Fay in "The Origins of the World War" (1928)?',
+          options: [
+            'No single nation was solely responsible; all European powers were collectively ensnared by secret diplomacy, militarism, nationalism, and economic rivalry',
+            'France had planned the invasion of Germany since 1815',
+            'The United States was the primary instigator of the conflict',
+            'The war was entirely manufactured by Serbian journalists',
+          ],
+          answer:
+            'No single nation was solely responsible; all European powers were collectively ensnared by secret diplomacy, militarism, nationalism, and economic rivalry',
+          a: 'No single nation was solely responsible; all European powers were collectively ensnared by secret diplomacy, militarism, nationalism, and economic rivalry',
+          explanation:
+            'Fay challenged Article 231 of Versailles, arguing that the system of alliances and imperial rivalries shared collective responsibility for the tragedy.',
+        },
+        {
+          question:
+            'What was the central ideological principle of Pan-Slavism that made Russia feel honour-bound to defend Serbia in July 1914?',
+          q: 'What was the central ideological principle of Pan-Slavism that made Russia feel honour-bound to defend Serbia in July 1914?',
+          options: [
+            'A commercial agreement to sell Serbian wheat exclusively to French merchants',
+            'A plan to unite all Slavic territories under the Ottoman Sultan',
+            'The belief that the Russian Empire had a sacred historic duty to protect Slavic peoples and Orthodox Christians in the Balkans from Austro-German domination',
+            'The belief that all Slavic nations should convert to Roman Catholicism',
+          ],
+          answer:
+            'The belief that the Russian Empire had a sacred historic duty to protect Slavic peoples and Orthodox Christians in the Balkans from Austro-German domination',
+          a: 'The belief that the Russian Empire had a sacred historic duty to protect Slavic peoples and Orthodox Christians in the Balkans from Austro-German domination',
+          explanation:
+            'Pan-Slavism was a powerful cultural and political movement in Russia; abandoning Serbia twice (after 1908 and 1913) meant Russia could not back down again in 1914 without losing great power status.',
+        },
+        {
+          question:
+            'Why did the German High Command (Moltke and Falkenhayn) believe that a European war had to be fought in 1914 rather than delayed until 1917?',
+          q: 'Why did the German High Command (Moltke and Falkenhayn) believe that a European war had to be fought in 1914 rather than delayed until 1917?',
+          options: [
+            'Kaiser Wilhelm II was scheduled to abdicate his throne in August 1914',
+            'Russia’s "Great Military Programme" was rapidly modernizing its armed forces and strategic railways, which would make Germany militarily indefensible by 1917',
+            'Germany’s stockpile of coal was predicted to completely run out by 1915',
+            'France had agreed to dismantle all its border fortresses by 1916',
+          ],
+          answer:
+            'Russia’s "Great Military Programme" was rapidly modernizing its armed forces and strategic railways, which would make Germany militarily indefensible by 1917',
+          a: 'Russia’s "Great Military Programme" was rapidly modernizing its armed forces and strategic railways, which would make Germany militarily indefensible by 1917',
+          explanation:
+            'German generals argued for a preventative war: in 1914 Germany still held a qualitative edge, but by 1917 Russian railway construction would negate the Schlieffen Plan.',
+        },
+        {
+          question:
+            'What was the "Short War Illusion" universally shared by European populations and military planners in August 1914?',
+          q: 'What was the "Short War Illusion" universally shared by European populations and military planners in August 1914?',
+          options: [
+            'The mistaken belief that modern industrial firepower would produce a rapid, decisive victory and soldiers would be home by Christmas',
+            'The belief that the war would last exactly twenty years without a single battle',
+            'The assumption that only naval battles would take place in the Atlantic Ocean',
+            'The belief that the war would be fought entirely by diplomatic telegrams without any troops',
+          ],
+          answer:
+            'The mistaken belief that modern industrial firepower would produce a rapid, decisive victory and soldiers would be home by Christmas',
+          a: 'The mistaken belief that modern industrial firepower would produce a rapid, decisive victory and soldiers would be home by Christmas',
+          explanation:
+            'Virtually all leaders and publics believed that modern economic interdependence made a long war impossible, expecting a brief, heroic campaign like the 1870 Franco-Prussian War.',
+        },
+        {
+          question:
+            'What term was widely applied to the volatile Balkan region prior to 1914 because of its extreme ethnic nationalism and competing imperial rivalries?',
+          q: 'What term was widely applied to the volatile Balkan region prior to 1914 because of its extreme ethnic nationalism and competing imperial rivalries?',
+          options: [
+            'The Iron Curtain',
+            'The "Powder Keg of Europe"',
+            'The Buffer Zone',
+            'The Deadlock of Empires',
+          ],
+          answer: 'The "Powder Keg of Europe"',
+          a: 'The "Powder Keg of Europe"',
+          explanation:
+            'As Ottoman control crumbled, conflicting nationalist ambitions and the rivalries of Austria-Hungary and Russia turned the Balkans into a powder keg needing only a spark to explode.',
+        },
+        {
+          question:
+            'In evaluating the four long-term causes of the Great War (M-A-I-N), what do most contemporary historians agree was the decisive mechanism that made war unavoidable?',
+          q: 'In evaluating the four long-term causes of the Great War (M-A-I-N), what do most contemporary historians agree was the decisive mechanism that made war unavoidable?',
+          options: [
+            'A global banking conspiracy that forced monarchs to abdicate',
+            'The lethal intersection of rigid alliance tripwires, uncompromising military mobilization timetables, and reckless brinkmanship during the July Crisis',
+            'A sudden cooling of the European climate that destroyed food crops',
+            'An unprovoked invasion of Great Britain by the Italian navy',
+          ],
+          answer:
+            'The lethal intersection of rigid alliance tripwires, uncompromising military mobilization timetables, and reckless brinkmanship during the July Crisis',
+          a: 'The lethal intersection of rigid alliance tripwires, uncompromising military mobilization timetables, and reckless brinkmanship during the July Crisis',
+          explanation:
+            'While Militarism, Alliances, Imperialism, and Nationalism created structural combustible material, it was the fatal choices and mobilization timetables of July 1914 that lit the fuse.',
         },
       ],
       title: "End of Unit Assessment: The Historians' Debate",
@@ -4442,3 +5267,4 @@ export default {
     },
   ],
 };
+export default unitData;
