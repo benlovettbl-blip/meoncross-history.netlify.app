@@ -517,56 +517,56 @@ export const WORKBOOK_PAGE_MAP = {
     },
   },
   medieval_england: {
-    lesson_1: {
-      page: 3,
+    lesson_1_hastings: {
+      page: 4,
       booklet: 'Pupil Workbook',
       unitId: 'medieval_england',
       lessonIndex: 0,
     },
-    lesson_2: {
-      page: 10,
+    lesson_2_castles_terror_domesday: {
+      page: 6,
       booklet: 'Pupil Workbook',
       unitId: 'medieval_england',
       lessonIndex: 1,
     },
-    lesson_3: {
-      page: 17,
+    lesson_3_crown_vs_church: {
+      page: 8,
       booklet: 'Pupil Workbook',
       unitId: 'medieval_england',
       lessonIndex: 2,
     },
-    lesson_4: {
-      page: 22,
+    lesson_4_magna_carta: {
+      page: 10,
       booklet: 'Pupil Workbook',
       unitId: 'medieval_england',
       lessonIndex: 3,
     },
-    lesson_5: {
-      page: 27,
+    lesson_5_doom_paintings_village: {
+      page: 12,
       booklet: 'Pupil Workbook',
       unitId: 'medieval_england',
       lessonIndex: 4,
     },
-    lesson_6: {
-      page: 32,
+    lesson_6_black_death: {
+      page: 14,
       booklet: 'Pupil Workbook',
       unitId: 'medieval_england',
       lessonIndex: 5,
     },
-    lesson_7: {
-      page: 37,
+    lesson_7_peasants_revolt: {
+      page: 16,
       booklet: 'Pupil Workbook',
       unitId: 'medieval_england',
       lessonIndex: 6,
     },
-    lesson_8: {
-      page: 42,
+    lesson_8_wars_of_the_roses: {
+      page: 18,
       booklet: 'Pupil Workbook',
       unitId: 'medieval_england',
       lessonIndex: 7,
     },
-    lesson_9: {
-      page: 46,
+    lesson_9_capstone_monarchy: {
+      page: 20,
       booklet: 'Pupil Workbook',
       unitId: 'medieval_england',
       lessonIndex: 8,

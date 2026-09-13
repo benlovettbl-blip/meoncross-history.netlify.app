@@ -1,0 +1,1527 @@
+const fs = require('fs');
+const path = require('path');
+
+function formatText(txt) {
+  if (!txt) return '';
+  return txt;
+}
+
+// Bespoke Bridge Tasks, Disciplinary Vocabulary Tasks, and Writing Genres for each of the 9 Medieval England lessons
+const lessonConfigs = [
+  {
+    // Lesson 1: 1066 & The Battle of Hastings
+    genre: 'Genre 1: Causal Weighting & Prioritisation',
+    skill: 'Causation',
+    genreNum: 1,
+    enquiryQuestion: 'Enquiry: Why did William of Normandy win the Battle of Hastings in 1066?',
+    structureStrip: [
+      {
+        col: '1. NORMAN TACTICS',
+        text: 'Explain how Norman cavalry charges, archer elevation, and especially the feigned retreat broke the Saxon shield wall atop Senlac Hill.',
+      },
+      {
+        col: '2. SAXON EXHAUSTION',
+        text: 'Explain how Harold’s army was depleted after marching 250 miles north to Stamford Bridge and 250 miles back south in under 3 weeks.',
+      },
+      {
+        col: '3. WEIGHING THE DECISIVE FACTOR',
+        text: 'Give your final judgment: was William’s military tactics and luck more decisive, or did Harold lose the battle through impatience and exhaustion?',
+      },
+    ],
+    connectives:
+      'A primary reason for William’s victory was... • In direct contrast, Harold’s army was fatally weakened by... • Crucially, the turning point came when... • Weighing the evidence... • Ultimately, I judge that...',
+    vocabTask: {
+      type: 'distinction',
+      termA: 'Housecarl',
+      termB: 'Fyrd',
+      prompt:
+        'Distinguish between elite, full-time warrior <strong>housecarls</strong> (armed with two-handed Danish axes) and the part-time peasant militia (<strong>fyrd</strong>):',
+    },
+    bridgeTask: {
+      type: 'draw_label',
+      badge: 'Tactical Battlefield Blueprint & Terrain Analysis',
+      title: 'Task 4: Tactical Analysis of the Battle of Hastings (14 October 1066)',
+      instruction:
+        'Sketch the battlefield disposition on Senlac Hill below, then label the 4 decisive combat vectors:',
+      checklist:
+        '① <strong>Saxon Shield Wall</strong> (interlocked linden shields atop ridge) &bull; ② <strong>Norman Heavy Cavalry</strong> (stirrup-braced uphill charges) &bull; ③ <strong>The Feigned Retreat</strong> (drawing the undisciplined fyrd downhill) &bull; ④ <strong>High-Angle Archery</strong> (plunging fire blinding Harold)',
+      clue: '<em>Low-Floor Clue:</em> Notice why cavalry could not break the shield wall on steep ground—why was the feigned retreat necessary to lure the Saxon fyrd down?',
+      scholarsEdge:
+        '<strong>★ Scholar’s Edge:</strong> Did William win through military genius, or did Harold lose through tactical recklessness and physical exhaustion after Stamford Bridge?',
+    },
+  },
+  {
+    // Lesson 2: Castles, Terror & The Domesday Book
+    genre: 'Genre 2: Historical Significance & Mechanisms of Power',
+    skill: 'Significance',
+    genreNum: 2,
+    enquiryQuestion:
+      'Enquiry: How did William the Conqueror establish and maintain control over England?',
+    structureStrip: [
+      {
+        col: '1. MILITARY FORTIFICATION',
+        text: 'Explain how building 500 Motte & Bailey castles allowed a tiny Norman elite (under 10,000 men) to garrison and police a hostile Saxon population of 2 million.',
+      },
+      {
+        col: '2. TERROR & SURVEILLANCE',
+        text: 'Contrast the psychological devastation of the Harrying of the North (1069) against the bureaucratic surveillance of the 1086 Domesday Book survey.',
+      },
+      {
+        col: '3. OVERALL EVALUATION',
+        text: 'Give your final judgment: which method was most essential for guaranteeing that the Norman Conquest became permanent rather than temporary?',
+      },
+    ],
+    connectives:
+      'William immediately established physical control by... • Furthermore, he crushed northern rebellion through... • Administratively, the Domesday Book ensured... • Consequently, Norman rule was cemented because...',
+    vocabTask: {
+      type: 'mapping',
+      termA: 'Motte and Bailey',
+      termB: 'Domesday Book',
+      prompt:
+        'Write one historically accurate sentence connecting the rapid construction of <strong>Motte and Bailey castles</strong> to the fiscal control audited in the <strong>Domesday Book</strong>:',
+    },
+    bridgeTask: {
+      type: 'draw_label',
+      badge: 'Defensive Architecture & Garrison Blueprint',
+      title: 'Task 4: Draw & Label a Norman Motte & Bailey Castle (1066–1087)',
+      instruction:
+        'Sketch the castle structure below, labelling the 4 key engineering features that made resistance impossible:',
+      checklist:
+        '① <strong>Motte</strong> (steep artificial earth mound up to 10m high) &bull; ② <strong>Keep / Tower</strong> (wooden lookout tower with 360° sightlines) &bull; ③ <strong>Bailey</strong> (enclosed courtyard for barracks, stables & forge) &bull; ④ <strong>Ditch & Palisade</strong> (steep moat and sharpened oak perimeter wall)',
+      clue: '<em>Low-Floor Clue:</em> A timber castle could be erected in 8–14 days by forced Saxon labour, giving 30 Norman knights total dominance over 5,000 peasants.',
+      scholarsEdge:
+        '<strong>★ Scholar’s Edge:</strong> How did local Hampshire castles like <strong>Portchester Castle</strong> (Norman keep built inside Roman walls) combine military force with bureaucratic tax collection?',
+    },
+  },
+  {
+    // Lesson 3: Crown vs Church: Henry II & Thomas Becket
+    genre: 'Genre 3: Conflict & Power Dynamics',
+    skill: 'Causation',
+    genreNum: 3,
+    enquiryQuestion:
+      'Enquiry: Why did the dispute between Henry II and Thomas Becket escalate into cathedral murder?',
+    structureStrip: [
+      {
+        col: '1. THE LEGAL CLASH',
+        text: 'Explain the Constitutions of Clarendon (1164) and Henry II’s fury that Church courts protected ‘criminous clerks’ from royal hanging using ‘benefit of clergy’.',
+      },
+      {
+        col: '2. ESCALATION & BETRAYAL',
+        text: 'Explain Becket’s unexpected transformation into an ascetic archbishop, his excommunication of royal bishops, and Henry’s fatal outburst at Bures in France.',
+      },
+      {
+        col: '3. FINAL JUDGMENT',
+        text: 'Give your final judgment: was Becket’s murder caused by an unavoidable constitutional clash between Church and State, or two proud men refusing to compromise?',
+      },
+    ],
+    connectives:
+      'The root cause of the conflict was... • Tension escalated dramatically when Becket... • In direct response, Henry II’s fury resulted in... • Consequently, this led to... • Ultimately, I judge that...',
+    vocabTask: {
+      type: 'cloze',
+      prompt:
+        'Complete the summary below using the terms <em>Constitutions of Clarendon</em> and <em>Benefit of Clergy</em>:',
+      clozeText:
+        'Henry II attempted to bring churchmen under royal criminal law through the [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ], but Becket defended the Church’s immunity known as [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ].',
+      followUp: 'Explain why this legal dispute threatened Henry’s royal authority:',
+    },
+    bridgeTask: {
+      type: 'ledger',
+      badge: 'Analytical Conflict Ledger: Crown vs. Church',
+      title: 'Task 4: The Struggle for Supremacy: King Henry II vs. Archbishop Thomas Becket',
+      instruction:
+        'Contrast the competing legal jurisdictions and political claims of the Crown against the Church below.',
+      col1Title: 'King Henry II (Royal Common Law)',
+      col1Prompts: [
+        'One single law for all Englishmen; end Church court leniency.',
+        'Criminous clerks must be defrocked and hung by royal sheriffs.',
+        'No appeals to the Pope in Rome without the King’s explicit permission.',
+        'Reassertion of royal taxes on wealthy episcopal Church estates.',
+      ],
+      col2Title: 'Archbishop Thomas Becket (Canon Law)',
+      col2Prompts: [
+        'Church is sovereign; spiritual authority is higher than earthly kings.',
+        'God’s priests must never be judged or executed by secular men.',
+        'Total obedience owed to Pope Alexander III in Rome above all oaths.',
+        'Excommunication of royal barons and bishops who crowned Prince Henry.',
+      ],
+      clue: '<em>Low-Floor Clue:</em> Becket was Henry’s closest drinking companion and Chancellor—why did his loyalties change so drastically when made Archbishop?',
+      scholarsEdge:
+        '<strong>★ Scholar’s Edge:</strong> Was Becket’s death a genuine constitutional battle over national sovereignty, or a personal tragedy of stubborn pride?',
+    },
+  },
+  {
+    // Lesson 4: Magna Carta (1215)
+    genre: 'Genre 4: Historiographical Interpretation',
+    skill: 'Historical Interpretations',
+    genreNum: 4,
+    enquiryQuestion:
+      'Enquiry: To what extent was Magna Carta (1215) a selfish baronial power grab rather than a charter of liberty?',
+    structureStrip: [
+      {
+        col: '1. SELFISH BARONIAL MOTIVES',
+        text: 'Explain how clauses focused on aristocratic inheritances, relief fees, and baronial debts, ignoring unfree villeins who made up 80% of England.',
+      },
+      {
+        col: '2. FOUNDATIONAL PRINCIPLES',
+        text: 'Explain how Clause 39 established the revolutionary principle that monarchs cannot rule arbitrarily and are subject to the law of the land.',
+      },
+      {
+        col: '3. FINAL HISTORIOGRAPHICAL VERDICT',
+        text: 'Give your final judgment: was Magna Carta primarily a selfish peace treaty between John and his barons, or a milestone in the history of human rights?',
+      },
+    ],
+    connectives:
+      'On the one hand, historians argue the barons acted out of self-interest because... • On the other hand, Clause 39 established a revolutionary precedent by... • In the short term... • However, in the long term... • Overall, I conclude that...',
+    vocabTask: {
+      type: 'distinction',
+      termA: 'Scutage',
+      termB: 'Arbitrary Power',
+      prompt:
+        'Distinguish between ‘shield money’ paid instead of military service (<strong>scutage</strong>) and tyrannical rule without legal limit (<strong>arbitrary power</strong>):',
+    },
+    bridgeTask: {
+      type: 'source_utility',
+      badge: 'Primary Archival Forensic Dissection',
+      title: 'Task 4: Forensic Dissection of Magna Carta: Clauses 12 & 39 (June 1215)',
+      sourceText:
+        '“No scutage nor aid shall be imposed on our kingdom, unless by common counsel of our kingdom... No free man shall be seized or imprisoned, or stripped of his rights or possessions, or outlawed or exiled... except by the lawful judgment of his equals or by the law of the land.”',
+      instruction:
+        '1. Underline the exact phrase that places the King under the rule of law.<br>2. In the lines below, explain who actually counted as a "free man" in 1215, and why this shows the barons were protecting their own estates:',
+      lines: 8,
+      clue: '<em>Low-Floor Clue:</em> Over 80% of medieval English people were unfree villeins bound to the soil—did Clause 39 give them any protection at all?',
+      scholarsEdge:
+        '<strong>★ Scholar’s Edge:</strong> Why did Victorian historians praise Magna Carta as the cradle of English liberty, while modern historians like J.C. Holt view it as a failed baronial pact?',
+    },
+  },
+  {
+    // Lesson 5: Doom Paintings and Tithes: Life in a Medieval Village
+    genre: 'Genre 3: Social Control, Change & Continuity',
+    skill: 'Change & Continuity',
+    genreNum: 3,
+    enquiryQuestion:
+      'Enquiry: How far did the Church and the manor court maintain total control over medieval peasants?',
+    structureStrip: [
+      {
+        col: '1. SPIRITUAL & PSYCHOLOGICAL POLICING',
+        text: 'Explain how tithes (10% of harvest), the Latin Mass, and terrifying Doom paintings enforced obedience through fear of eternal damnation.',
+      },
+      {
+        col: '2. MANORIAL EXPLOITATION',
+        text: 'Explain how forced labour (corvée), mill grinding monopolies, and death duties (‘heriot’) stripped villeins of wealth and personal freedom.',
+      },
+      {
+        col: '3. PEASANT AGENCY & SOLIDARITY',
+        text: 'Evaluate whether peasants were powerless victims or able to exercise agency through village solidarity, brewing ale, and manorial court bargaining.',
+      },
+    ],
+    connectives:
+      'The Church exercised profound psychological control through... • Concurrently, the lord’s manor court policed daily labour by... • Despite this exploitation, villagers found agency when... • In summary, medieval peasant life was defined by...',
+    vocabTask: {
+      type: 'mapping',
+      termA: 'Tithe',
+      termB: 'Doom Painting',
+      prompt:
+        'Write one historically accurate sentence connecting the collection of the Church <strong>tithe</strong> to the terror depicted in the medieval <strong>Doom painting</strong>:',
+    },
+    bridgeTask: {
+      type: 'fresco_analysis',
+      badge: 'Visual Forensic Dissection: The Medieval Mindset',
+      title: 'Task 4: Deconstructing the Medieval Parish Church Doom Fresco',
+      instruction:
+        'Analyse the contemporary Doom painting below, identifying how the visual layout reinforced obedience to the priest and the feudal lord:',
+      labels: [
+        '① <strong>Christ in Majesty:</strong> Sitting on the rainbow of judgment above the chancel arch.',
+        '② <strong>Archangel Michael:</strong> Weighing souls on celestial scales; demons trying to tip the balance.',
+        '③ <strong>The Heavenly Citadel:</strong> St Peter welcoming the righteous, tithe-paying souls into the gates.',
+        '④ <strong>The Mouth of Hell:</strong> Gaping beast jaws (Leviathan) devouring dishonest millers and rebels.',
+      ],
+      prompt:
+        'In 3–4 sentences, explain why this painting was more powerful than written law for an illiterate peasant congregation:',
+      lines: 7,
+      clue: '<em>Low-Floor Clue:</em> Notice who is being dragged into Hell—even bishops and greedy lords are shown, reminding serfs that everyone faces God’s court.',
+      scholarsEdge:
+        '<strong>★ Scholar’s Edge:</strong> How did grand ecclesiastical palaces like <strong>Bishop’s Waltham Palace</strong> in Hampshire demonstrate the immense wealth bishops extracted from local peasant tithes?',
+    },
+  },
+  {
+    // Lesson 6: 1348: The Black Death
+    genre: 'Genre 2: Historical Significance & Catalyst of Change',
+    skill: 'Significance',
+    genreNum: 2,
+    enquiryQuestion:
+      'Enquiry: How far did the Black Death permanently destroy the medieval feudal system?',
+    structureStrip: [
+      {
+        col: '1. DEMOGRAPHIC CRISIS',
+        text: 'Explain the catastrophic demographic collapse (over 40% mortality), untended fields, abandoned villages, and total breakdown of farming in 1348–49.',
+      },
+      {
+        col: '2. ECONOMIC SHIFT & LABOUR POWER',
+        text: 'Explain how severe labour scarcity gave surviving serfs immense bargaining power to demand high cash wages and flee manors for better pay.',
+      },
+      {
+        col: '3. COLLAPSE OF SERFDOM',
+        text: 'Give your judgment: did the plague instantly destroy feudalism, or did it accelerate economic changes that took another century to finish?',
+      },
+    ],
+    connectives:
+      'The initial devastation of the Black Death caused... • Crucially, this created an acute labour shortage which... • Although the Crown attempted to freeze wages with the 1351 Statute of Labourers... • Consequently, the balance of power shifted because... • Ultimately, I judge that...',
+    vocabTask: {
+      type: 'cloze',
+      prompt:
+        'Complete the summary below using the terms <em>Statute of Labourers</em> and <em>Serfdom</em>:',
+      clozeText:
+        'When the acute labour shortage enabled peasants to demand double wages, Parliament attempted to protect [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ] by passing the repressive 1351 [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ].',
+      followUp: 'Explain why landlords secretly broke this law and paid higher wages anyway:',
+    },
+    bridgeTask: {
+      type: 'causal_pivot',
+      badge: 'Causal Pivot & Structural Transformation Chain',
+      title: 'Task 4: The Socio-Economic Domino Chain of the Black Death (1348–1351)',
+      instruction:
+        'Track the transformation of England from pandemic devastation to peasant empowerment below:',
+      steps: [
+        {
+          stage: '1. Mortality Shock',
+          year: '1348–49',
+          text: 'Plague kills 40–50% of the population; crops rot in untended fields across Hampshire.',
+        },
+        {
+          stage: '2. Labour Scarcity',
+          year: '1350',
+          text: 'Surviving villeins realise their labour is invaluable; demand wages in silver pennies.',
+        },
+        {
+          stage: '3. Baronial Panic',
+          year: '1351',
+          text: 'Parliament passes the Statute of Labourers, freezing wages at 1346 rates on pain of prison.',
+        },
+        {
+          stage: '4. Feudal Collapse',
+          year: '1360s+',
+          text: 'Landlords compete for workers by secretly paying high wages; serfs walk off manors.',
+        },
+      ],
+      prompt:
+        'In 3–4 sentences, explain why the 1351 Statute of Labourers failed to stop peasants demanding higher wages and winning their freedom:',
+      lines: 8,
+      clue: '<em>Low-Floor Clue:</em> What would happen to a landlord’s barley and wheat if he refused to pay the higher wages and his neighbours did?',
+      scholarsEdge:
+        '<strong>★ Scholar’s Edge:</strong> Why do modern economic historians call the generation after the Black Death the "Golden Age of the English Peasantry"?',
+    },
+  },
+  {
+    // Lesson 7: 1381: The Peasants' Revolt
+    genre: 'Genre 5: Analytical Narrative & Evaluative Consequence',
+    skill: 'Causation & Evaluation',
+    genreNum: 5,
+    enquiryQuestion: 'Enquiry: Was the Peasants’ Revolt of 1381 a complete failure?',
+    structureStrip: [
+      {
+        col: '1. THE SHORT-TERM FAILURE',
+        text: 'Explain the short-term crushing: Wat Tyler murdered at Smithfield, Richard II’s treachery, revocation of charters, and 1,500 executions.',
+      },
+      {
+        col: '2. THE LONG-TERM SUCCESS',
+        text: 'Explain the long-term triumph: no Poll Tax levied again for 600 years, landlords stopped enforcing villeinage, and serfdom died within 50 years.',
+      },
+      {
+        col: '3. FINAL EVALUATIVE VERDICT',
+        text: 'Give your final judgment: was the 1381 revolt a tragic failure of leadership, or a pivotal historical turning point towards English liberty?',
+      },
+    ],
+    connectives:
+      'In the immediate aftermath, the revolt appeared to be a total failure because... • However, from a long-term perspective, the rebels achieved their core goals because... • The ruling class was profoundly terrified, resulting in... • Ultimately, I conclude that...',
+    vocabTask: {
+      type: 'distinction',
+      termA: 'Poll Tax',
+      termB: 'Villeinage',
+      prompt:
+        'Distinguish between an unfair flat-rate head tax (<strong>Poll Tax</strong>) and the unfree feudal condition of serfdom (<strong>villeinage</strong>):',
+    },
+    bridgeTask: {
+      type: 'ledger',
+      badge: 'The Balance Sheet of Rebellion: Demands vs Retribution',
+      title: 'Task 4: The Balance Sheet of 1381: Revolutionary Demands vs. Royal Retribution',
+      instruction:
+        'Contrast the radical demands made at Mile End and Smithfield against the brutal retribution of King Richard II.',
+      col1Title: 'The Rebel Demands (Wat Tyler & John Ball)',
+      col1Prompts: [
+        'Complete abolition of serfdom, villeinage, and bonded labour.',
+        'Flat land rent of 4 pence per acre; freedom to work anywhere.',
+        'Confiscation and redistribution of wealthy Church bishop estates.',
+        'Equality before the law: "When Adam delved and Eve span, who was then the gentleman?"',
+      ],
+      col2Title: 'The Crown’s Retribution (Richard II & Barons)',
+      col2Prompts: [
+        'Wat Tyler butchered at Smithfield by Mayor Walworth and royal knights.',
+        'Richard II’s betrayal: "Villeins you are, and villeins you shall remain."',
+        'Royal charters of freedom torn up and officially annulled by Parliament.',
+        'Over 1,500 rebels executed without jury trial in Kent, Essex, and London.',
+      ],
+      clue: '<em>Low-Floor Clue:</em> Did the 14-year-old Richard II ever intend to keep the promises he made when surrounded by 20,000 angry peasants?',
+      scholarsEdge:
+        '<strong>★ Scholar’s Edge:</strong> Did the Peasants’ Revolt fail militarily in June 1381, but succeed politically by terrifying the aristocracy out of ever taxing peasants again?',
+    },
+  },
+  {
+    // Lesson 8: The Wars of the Roses (1455–1485)
+    genre: 'Genre 1: Causal Weighting & Instability',
+    skill: 'Causation',
+    genreNum: 1,
+    enquiryQuestion:
+      'Enquiry: Why did England descend into civil war between the Houses of York and Lancaster?',
+    structureStrip: [
+      {
+        col: '1. MONARCHICAL WEAKNESS',
+        text: 'Explain how King Henry VI’s mental catatonia, military humiliation in the Hundred Years War, and favoritism towards Somerset created a power vacuum.',
+      },
+      {
+        col: '2. BASTARD FEUDALISM & PRIVATE ARMIES',
+        text: 'Explain how overmighty nobles with private armies of liveried retainers fought each other for wealth, influence, and regional supremacy.',
+      },
+      {
+        col: '3. FINAL JUDGMENT',
+        text: 'Give your final judgment: was the civil war caused primarily by the personal incompetence of Henry VI, or by the structural flaws of late-medieval feudalism?',
+      },
+    ],
+    connectives:
+      'The primary catalyst for civil war was the weakness of Henry VI, who... • This crisis was intensified by ‘bastard feudalism’, which meant... • Bloodshed erupted into full civil war when... • Overall, royal authority collapsed because...',
+    vocabTask: {
+      type: 'mapping',
+      termA: 'Bastard Feudalism',
+      termB: 'Liveried Retainer',
+      prompt:
+        'Write one analytical sentence connecting <strong>bastard feudalism</strong> (contracts for money) to the private noble armies of armed <strong>liveried retainers</strong>:',
+    },
+    bridgeTask: {
+      type: 'ledger',
+      badge: 'Dynastic Balance Sheet & Bastard Feudalism',
+      title: 'Task 4: The Dynastic Crucible: The Red Rose of Lancaster vs. The White Rose of York',
+      instruction:
+        'Balance the rival claims, military commanders, and strategic vulnerabilities of both warring houses below.',
+      col1Title: 'The House of Lancaster (The Red Rose)',
+      col1Prompts: [
+        'King Henry VI: Pious but completely incompetent; suffered mental breakdowns.',
+        'Queen Margaret of Anjou: Fierce protector of Prince Edward; hated York.',
+        'Catastrophic loss of all English territory in France (except Calais) by 1453.',
+        'Deep financial bankruptcy and reliance on corrupt court favorites (Somerset).',
+      ],
+      col2Title: 'The House of York (The White Rose)',
+      col2Prompts: [
+        'Richard Duke of York: Wealthy, capable general with a stronger bloodline claim.',
+        'Edward IV: Charismatic, towering warrior who won the throne at Towton (1461).',
+        'Richard Neville, Earl of Warwick: "The Kingmaker", wealthiest noble in England.',
+        'Strong military backing from London merchants and southern landowners.',
+      ],
+      clue: '<em>Low-Floor Clue:</em> In "bastard feudalism", knights wore their lord’s badge (e.g. Warwick’s Bear and Ragged Staff) rather than the King’s royal coat of arms.',
+      scholarsEdge:
+        '<strong>★ Scholar’s Edge:</strong> Was the Wars of the Roses an inevitable war between rival bloodlines, or an artificial conflict fought purely for land by 60 noble families?',
+    },
+  },
+  {
+    // Lesson 9: Capstone Synoptic Assessment
+    genre: 'Genre 4: Synoptic Historical Synthesis (Capstone Essay)',
+    skill: 'Historical Synthesis',
+    genreNum: 4,
+    enquiryQuestion:
+      'Enquiry: “A medieval monarch had absolute power.” How far do you agree? (1066–1485)',
+    structureStrip: [
+      {
+        col: '1. THE CASE FOR ABSOLUTE POWER',
+        text: 'Explain the immense authority of kings: summit of the feudal pyramid, ownership of all land, royal courts, military command, and divine legitimacy.',
+      },
+      {
+        col: '2. THE REALITY OF CHECKS & REBELLION',
+        text: 'Explain the checks on kingship: baronial revolts (1215 Magna Carta), Church power (1170 Becket), peasant uprisings (1381), and dynastic overthrow (1485).',
+      },
+      {
+        col: '3. YOUR SYNOPTIC JUDGMENT',
+        text: 'Formulate your sustained thesis: was medieval royal power absolute, or was it always fragile and dependent on keeping the barons and Church satisfied?',
+      },
+    ],
+    connectives:
+      'Proponents of royal supremacy argue that medieval monarchs held absolute power because... • However, this power was strictly conditional, repeatedly limited by... • Looking across the entire period from 1066 to 1485... • In conclusion, medieval kings were not absolute rulers because...',
+    vocabTask: {
+      type: 'distinction',
+      termA: 'Absolute Monarchy',
+      termB: 'Constitutional Monarchy',
+      prompt:
+        'Distinguish between unrestricted rule by royal command (<strong>absolute monarchy</strong>) and rule bounded by legal charters like Magna Carta (<strong>limited monarchy</strong>):',
+    },
+    bridgeTask: {
+      type: 'matrix',
+      badge: 'Synoptic Evidence Vault: The Limits of Monarchical Power',
+      title: 'Task 4: The Royal Power Spectrum: Four Checks on Medieval English Kings (1066–1485)',
+      instruction:
+        'Audit the 4 major forces that successfully checked and limited royal authority across the medieval centuries:',
+      boxes: [
+        {
+          title: '① The Barons (Aristocracy)',
+          evidence:
+            'Magna Carta (1215) restricted arbitrary taxation; Simon de Montfort’s Parliament (1265); Wars of the Roses overthrew Henry VI & Richard III.',
+        },
+        {
+          title: '② The Catholic Church',
+          evidence:
+            'Becket resisted royal courts (1170); Pope Innocent III placed England under Interdict (1208); Church owned 25% of all English land.',
+        },
+        {
+          title: '③ The Peasantry & Economy',
+          evidence:
+            'Black Death labour scarcity (1348) broke feudal bondage; 1381 Peasants’ Revolt marched on London and executed the Archbishop.',
+        },
+        {
+          title: '④ Succession & Warfare',
+          evidence:
+            'William won by force at Hastings (1066); Henry VII took the crown by combat at Bosworth (1485); weak kings were deposed (Edward II, Richard II).',
+        },
+      ],
+      prompt:
+        'In 3–4 sentences, explain which of these four checks was the most dangerous threat to a medieval monarch’s throne:',
+      lines: 7,
+      clue: '<em>Low-Floor Clue:</em> Did a king have more to fear from an armed revolt of his 25 greatest barons, or an excommunication decree from the Pope in Rome?',
+      scholarsEdge:
+        '<strong>★ Scholar’s Edge:</strong> Did medieval kings rule through divine authority and the rule of law, or through the sheer physical threat of castles, swords, and executions?',
+    },
+  },
+];
+
+function buildMedievalTwoPageWorkbook(unitData, period) {
+  let html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pupil Workbook - medieval_england</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <style>
+    *, *:before, *:after { box-sizing: border-box; }
+    @page {
+      size: A4 portrait;
+      margin: 15mm 20mm 15mm 20mm;
+    }
+    body {
+      font-family: 'Georgia', 'Garamond', serif;
+      font-size: 10pt;
+      line-height: 1.35;
+      color: #1e293b;
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+    }
+    h1, h2, h3, h4, h5, h6, strong, th, .sans {
+      font-family: 'Inter', -apple-system, sans-serif;
+    }
+    .page, .page-container {
+      width: 100%;
+      height: 256mm;
+      max-height: 256mm;
+      overflow: hidden;
+      box-sizing: border-box;
+      position: relative;
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .page:last-child, .page-container:last-child {
+      page-break-after: auto;
+    }
+    .task-line {
+      border-bottom: 1px solid #cbd5e1;
+      height: 7.6mm;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .task-line-dotted {
+      border-bottom: 1px dotted #94a3b8;
+      height: 5.6mm;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .archival-badge {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.8pt;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 2.5px 7px;
+      border-radius: 3px;
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid #cbd5e1;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+`;
+
+  // ==========================================
+  // PAGE 1: FRONT COVER (Recto, Right Page)
+  // ==========================================
+  html += `
+  <div class="page page-container" id="page-1" style="padding: 16px 18px; border: 1px solid #cbd5e1; outline: 3.5px double #0f172a; outline-offset: -8px; justify-content: flex-start;">
+    <!-- Institutional Header & Pupil Registration Strip -->
+    <div style="margin-bottom: 10px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 2px; color: #1e3a8a; font-weight: 700;">
+          Meoncross School &bull; Department of History
+        </span>
+        <span style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 1.5px; color: #64748b; font-weight: 600;">
+          Year 7 History &bull; KS3 Core
+        </span>
+      </div>
+
+      <!-- Pupil Name & Class Box at Top -->
+      <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 6px 12px; background: #f8fafc; display: grid; grid-template-columns: 2.2fr 1fr; gap: 18px; align-items: center;">
+        <div style="display: flex; align-items: baseline;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; margin-right: 8px;">Pupil Name:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #334155; height: 14px;"></div>
+        </div>
+        <div style="display: flex; align-items: baseline;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; margin-right: 8px;">Class:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #334155; height: 14px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Title Block -->
+    <div style="text-align: center; border-bottom: 1px solid #cbd5e1; padding: 2px 0 8px 0; margin-bottom: 9px;">
+      <h1 style="font-family: 'Playfair Display', serif; font-size: 22pt; color: #0f172a; margin: 0 0 3px 0; text-transform: uppercase; letter-spacing: 1.2px; line-height: 1.15;">
+        Medieval England &amp; The Struggle for Power
+      </h1>
+      <div style="font-family: 'Inter', sans-serif; font-size: 9.2pt; color: #334155; font-weight: 500; letter-spacing: 0.5px;">
+        Crown, Church, Barons &amp; Peasants: From Hastings to Bosworth (1066–1485)
+      </div>
+    </div>
+
+    <!-- Overarching Enquiry Callout Box -->
+    <div style="border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 9px 16px; background: #f8fafc; margin-bottom: 9px; text-align: center;">
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 1.8px; color: #1e3a8a; font-weight: 700; margin-bottom: 3px;">
+        Overarching Historical Enquiry
+      </div>
+      <div style="font-family: 'Playfair Display', serif; font-size: 13.5pt; color: #0f172a; font-style: italic; font-weight: 600; line-height: 1.25;">
+        “How far did power shift between King, Church, Lords, and Peasants?”
+      </div>
+    </div>
+
+    <!-- Hero Primary Source Presentation -->
+    <div style="border: 1.2px solid #cbd5e1; border-radius: 6px; padding: 7px; background: #ffffff; box-shadow: 0 2px 6px rgba(0,0,0,0.04); margin-bottom: 9px;">
+      <div style="width: 100%; height: 380px; border-radius: 4px; overflow: hidden; border: 1px solid #e2e8f0; background: #f8fafc;">
+        <img src="../../images/battle_of_hastings_bayeux.jpg" style="width: 100%; height: 100%; object-fit: contain; object-position: center; display: block;" alt="Bayeux Tapestry Battle of Hastings">
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 5px; padding: 0 4px; font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #64748b;">
+        <span><strong>Primary Visual Source:</strong> <em>The Bayeux Tapestry (c. 1070s): Norman Cavalry Charging the Anglo-Saxon Shield Wall</em></span>
+        <span style="font-style: italic;">Commissioned by Bishop Odo of Bayeux</span>
+      </div>
+    </div>
+
+    <!-- Historical Context & Synopsis Box -->
+    <div style="border: 1.2px solid #e2e8f0; border-radius: 5px; padding: 8px 12px; background: #fafaf9; margin-bottom: 9px;">
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 1px; color: #0f172a; font-weight: 700; margin-bottom: 3px;">
+        Curriculum Synopsis &bull; The Crucible of Medieval Authority
+      </div>
+      <p style="font-family: 'Georgia', serif; font-size: 8.5pt; color: #334155; line-height: 1.45; margin: 0; text-align: justify;">
+        From the bloody ridge of Senlac Hill in 1066 to the muddy field of Bosworth in 1485, medieval England was defined by a ceaseless struggle for power. Norman conquerors built towering stone keeps and compiled the Domesday survey to subjugate a defeated realm; holy archbishops clashed with iron-willed monarchs over God’s law; rebellious barons forced an extortionate king to seal Magna Carta; and when the Black Death wiped out nearly half the kingdom, ordinary peasants rose in armed revolt to demand an end to serfdom.
+      </p>
+    </div>
+
+    <!-- 9 Core Enquiries Syllabus Roadmap -->
+    <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 7px 10px; background: #f8fafc;">
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; letter-spacing: 1px; color: #1e3a8a; font-weight: 700; margin-bottom: 4px;">
+        The 9 Disciplinary Enquiries:
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #334155; padding: 2.5px 6px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 3px; display: flex; align-items: center;"><strong style="color: #1e3a8a; margin-right: 5px; white-space: nowrap;">L1:</strong> 1066 &amp; The Battle of Hastings</div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #334155; padding: 2.5px 6px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 3px; display: flex; align-items: center;"><strong style="color: #1e3a8a; margin-right: 5px; white-space: nowrap;">L6:</strong> 1348: The Black Death Crisis</div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #334155; padding: 2.5px 6px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 3px; display: flex; align-items: center;"><strong style="color: #1e3a8a; margin-right: 5px; white-space: nowrap;">L2:</strong> Castles, Terror &amp; Domesday</div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #334155; padding: 2.5px 6px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 3px; display: flex; align-items: center;"><strong style="color: #1e3a8a; margin-right: 5px; white-space: nowrap;">L7:</strong> 1381: The Peasants’ Revolt</div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #334155; padding: 2.5px 6px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 3px; display: flex; align-items: center;"><strong style="color: #1e3a8a; margin-right: 5px; white-space: nowrap;">L3:</strong> Crown vs Church: Henry II &amp; Becket</div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #334155; padding: 2.5px 6px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 3px; display: flex; align-items: center;"><strong style="color: #1e3a8a; margin-right: 5px; white-space: nowrap;">L8:</strong> The Wars of the Roses (1455–85)</div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #334155; padding: 2.5px 6px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 3px; display: flex; align-items: center;"><strong style="color: #1e3a8a; margin-right: 5px; white-space: nowrap;">L4:</strong> Magna Carta (1215): Liberty or Grab?</div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #334155; padding: 2.5px 6px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 3px; display: flex; align-items: center;"><strong style="color: #1e3a8a; margin-right: 5px; white-space: nowrap;">L9:</strong> Capstone: How Powerful was a King?</div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #334155; padding: 2.5px 6px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 3px; display: flex; align-items: center; grid-column: span 2;"><strong style="color: #1e3a8a; margin-right: 5px; white-space: nowrap;">L5:</strong> Village Life, Tithes &amp; Doom Paintings</div>
+      </div>
+    </div>
+  </div>
+  `;
+
+  // ==========================================
+  // PAGE 2: PROGRESS & ASSESSMENT TRACKER (Verso, Left Page)
+  // ==========================================
+  html += `
+  <div class="page page-container" id="page-2" style="padding: 10px 0; display: flex; flex-direction: column; height: 260mm; justify-content: space-between;">
+    <div>
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 7px;">
+        <h2 style="margin: 0; color: #1e3a8a; font-size: 14pt; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">
+          Progress &amp; Assessment Tracker
+        </h2>
+        <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 600; color: #334155;">
+          Target Level: <span style="display: inline-block; width: 65px; border-bottom: 1.5px solid #0f172a; margin-left: 4px;"></span>
+        </div>
+      </div>
+      
+      <!-- Grading Criteria Benchmarks -->
+      <table style="width: 100%; border-collapse: collapse; text-align: left; font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.2; margin-bottom: 6px;">
+        <tbody>
+          <tr>
+            <td style="border: 1px solid #94a3b8; padding: 3px 6px; font-weight: 700; background-color: #1e3a8a; color: #ffffff; width: 10%; text-transform: uppercase; letter-spacing: 0.5px;">Criteria</td>
+            <td style="border: 1px solid #cbd5e1; padding: 3px 6px; width: 22.5%; background: #f8fafc;"><strong style="color: #0f172a;">Emerging (1–2):</strong> Recalls isolated facts; basic descriptive narrative of kings/battles.</td>
+            <td style="border: 1px solid #cbd5e1; padding: 3px 6px; width: 22.5%; background: #ffffff;"><strong style="color: #0f172a;">Emerging+ (3):</strong> Identifies causes &amp; consequences with simple explanation.</td>
+            <td style="border: 1px solid #cbd5e1; padding: 3px 6px; width: 22.5%; background: #f8fafc;"><strong style="color: #0f172a;">Expected (4–5):</strong> Structured PEEL arguments; supports claims with specific medieval evidence.</td>
+            <td style="border: 1px solid #cbd5e1; padding: 3px 6px; width: 22.5%; background: #ffffff;"><strong style="color: #0f172a;">Greater Depth (6–9):</strong> Analytical balance; nuanced historical judgements on power.</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #94a3b8; padding: 2.5px 6px; font-weight: 700; background-color: #0f2942; color: #ffffff; width: 10%; text-transform: uppercase; letter-spacing: 0.5px;">Effort</td>
+            <td style="border: 1px solid #cbd5e1; padding: 2.5px 6px; background: #f8fafc;"><strong style="color: #0f172a;">1 • Concern:</strong> Disengaged / incomplete work.</td>
+            <td style="border: 1px solid #cbd5e1; padding: 2.5px 6px; background: #ffffff;"><strong style="color: #0f172a;">2 • Inconsistent:</strong> Requires repeated prompting.</td>
+            <td style="border: 1px solid #cbd5e1; padding: 2.5px 6px; background: #f8fafc;"><strong style="color: #0f172a;">3 • Satisfactory:</strong> Meets baseline expectations.</td>
+            <td style="border: 1px solid #cbd5e1; padding: 2.5px 6px; background: #ffffff;"><strong style="color: #0f172a;">4 • Good / 5 • Exemplary:</strong> Proactive focus; voluntary Scholar’s Edge extension.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="width: 100%; display: flex; justify-content: center; flex: 1; min-height: 0; margin-bottom: 4px;">
+      <table style="page-break-inside: avoid; width: 100%; height: 100%; border-collapse: collapse; text-align: left; font-family: 'Inter', sans-serif; font-size: 7.6pt; line-height: 1.22; background-color: #ffffff; table-layout: fixed;">
+        <thead>
+          <tr style="background-color: #1e3a8a; color: #ffffff;">
+            <th style="border: 1px solid rgba(255,255,255,0.35); padding: 5px 8px; width: 25%; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; font-size: 7.4pt;">Lesson / Enquiry Title</th>
+            <th style="border: 1px solid rgba(255,255,255,0.35); padding: 5px 3px; width: 6.5%; text-align: center; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; font-size: 7.4pt;">Effort (1–5)</th>
+            <th style="border: 1px solid rgba(255,255,255,0.35); padding: 5px 3px; width: 5.5%; text-align: center; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; font-size: 7.4pt;">Level</th>
+            <th style="border: 1px solid rgba(255,255,255,0.35); padding: 5px 10px; width: 63%; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; font-size: 7.4pt;">Teacher Formative Feedback &amp; Next Steps</th>
+          </tr>
+        </thead>
+        <tbody>
+  `;
+
+  lessonConfigs.forEach((cfg, i) => {
+    const bg = i % 2 === 1 ? 'background-color: #f8fafc;' : 'background-color: #ffffff;';
+    html += `
+          <tr style="${bg}">
+            <td style="border: 1px solid #cbd5e1; padding: 4.5px 8px; font-weight: 600; font-size: 7.1pt; color: #0f172a; line-height: 1.2;">
+              <div style="color: #1e3a8a; font-weight: 700; font-size: 7.5pt; text-transform: uppercase; margin-bottom: 1px;">Lesson ${i + 1}</div>
+              <div style="color: #334155; font-weight: 500;">${cfg.enquiryQuestion.replace(/^Enquiry:\s*/i, '')}</div>
+            </td>
+            <td style="border: 1px solid #cbd5e1; padding: 3px; text-align: center; font-weight: 600; font-size: 8.5pt; color: #0f172a;"></td>
+            <td style="border: 1px solid #cbd5e1; padding: 3px; text-align: center; font-weight: 600; font-size: 8.5pt; color: #0f172a;"></td>
+            <td style="border: 1px solid #cbd5e1; padding: 5px 10px; vertical-align: top;"></td>
+          </tr>
+    `;
+  });
+
+  html += `
+          <tr style="background-color: #e2e8f0; font-weight: bold;">
+            <td style="border: 1px solid #94a3b8; padding: 5px 8px; text-align: right; color: #0f172a; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.5px;">
+              Final Unit Level &bull; Target Outcome:
+            </td>
+            <td style="border: 1px solid #94a3b8; padding: 3px; background: #ffffff; text-align: center; font-size: 9.5pt; font-weight: 700; color: #1e3a8a;"></td>
+            <td style="border: 1px solid #94a3b8; padding: 3px; background: #ffffff; text-align: center; font-size: 9.5pt; font-weight: 700; color: #1e3a8a;"></td>
+            <td style="border: 1px solid #94a3b8; padding: 5px 10px; background: #ffffff;"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  `;
+
+  // ==========================================
+  // PAGE 3: COURSE MAP & TIMELINE (Recto, Right Page)
+  // ==========================================
+  html += `
+  <div class="page page-container" id="page-3" style="padding: 10px 0; display: flex; flex-direction: column; height: 260mm; justify-content: space-between;">
+    <div style="flex-shrink: 0;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #0f172a; padding-bottom: 4px; margin-bottom: 6px;">
+        <h2 style="margin: 0; font-size: 14.5pt; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px;">Curriculum Roadmap &amp; Chronological Spine</h2>
+        <span class="archival-badge">1066 – 1485</span>
+      </div>
+      <p style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #475569; margin: 0; line-height: 1.35;">
+        Trace the four-century struggle for authority in medieval England: from Norman military conquest to constitutional charters and peasant rebellion.
+      </p>
+    </div>
+
+    <!-- Visual Chronological Spine -->
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin: 8px 0; padding: 4px 0;">
+  `;
+
+  const timelineItems = [
+    {
+      year: '1066',
+      title: 'The Norman Conquest & Battle of Hastings',
+      desc: 'Edward the Confessor dies; Harold Godwinson defeats Harald Hardrada at Stamford Bridge but falls to William of Normandy at Senlac Hill.',
+    },
+    {
+      year: '1069–1086',
+      title: 'Castles, Terror & The Domesday Survey',
+      desc: 'Harrying of the North leaves 100,000 dead from famine; 500 Motte & Bailey castles built; 1086 Domesday Book audits English wealth.',
+    },
+    {
+      year: '1164–1170',
+      title: 'Crown vs Church: The Becket Martyrdom',
+      desc: 'Henry II issues Constitutions of Clarendon to curtail Church courts; Thomas Becket murdered in Canterbury Cathedral (29 Dec 1170).',
+    },
+    {
+      year: '1215',
+      title: 'Magna Carta Sealed at Runnymede',
+      desc: 'Rebellious barons force King John to seal the Great Charter, establishing for the first time that the monarch is subject to the rule of law.',
+    },
+    {
+      year: '1348–1350',
+      title: 'The Black Death Devastates the Realm',
+      desc: 'Bubonic and pneumonic plague wipes out 40–50% of the population; catastrophic labour scarcity empowers surviving serfs.',
+    },
+    {
+      year: '1381',
+      title: 'The Great Rising / Peasants’ Revolt',
+      desc: 'Wat Tyler and preacher John Ball lead thousands of Kent and Essex peasants on London to demand the abolition of all serfdom and poll taxes.',
+    },
+    {
+      year: '1455–1485',
+      title: 'The Wars of the Roses & Bosworth Field',
+      desc: 'Dynastic civil war between York and Lancaster; Richard III defeated and slain at Bosworth (1485); Henry VII founds the Tudor dynasty.',
+    },
+  ];
+
+  timelineItems.forEach((item) => {
+    html += `
+      <div style="display: flex; gap: 14px; align-items: flex-start; border-left: 3.5px solid #1e3a8a; padding-left: 14px; position: relative;">
+        <div style="position: absolute; left: -6px; top: 4px; width: 9px; height: 9px; border-radius: 50%; background: #1e3a8a; border: 2px solid #ffffff;"></div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 800; color: #1e3a8a; width: 84px; flex-shrink: 0; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 4px; padding: 3px 5px; text-align: center;">${item.year}</div>
+        <div style="flex: 1;">
+          <strong style="font-size: 9.2pt; color: #0f172a; display: block; margin-bottom: 1px;">${item.title}</strong>
+          <span style="font-size: 8.2pt; color: #334155; font-family: 'Inter', sans-serif; line-height: 1.4; display: block;">${item.desc}</span>
+        </div>
+      </div>
+    `;
+  });
+
+  html += `
+    </div>
+
+    <div style="flex-shrink: 0; border: 1.5px solid #bae6fd; background: #f0f9ff; border-radius: 6px; padding: 8px 12px; margin-bottom: 6px;">
+      <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0369a1; display: block; margin-bottom: 3px;">🏛️ Hampshire &amp; Meon Valley Local History Connection:</strong>
+      <p style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #1e293b; margin: 0; line-height: 1.35;">
+        Our curriculum is rooted in our local Hampshire landscape: from <strong>Portchester Castle</strong> (where the Normans built a massive stone keep inside ancient Roman walls) and the Domesday survey of <strong>Fareham, Titchfield, and Stubbington</strong>, to <strong>Bishop’s Waltham Palace</strong>, where the wealthy Bishops of Winchester extracted peasant tithes from the Meon Valley.
+      </p>
+    </div>
+
+    <div style="flex-shrink: 0; font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 600; color: #475569; text-align: center; border-top: 1px solid #cbd5e1; padding-top: 5px;">
+      Turn overleaf to begin <strong>Lesson 1 (Pages 4–5 Facing Spread)</strong> ➔
+    </div>
+  </div>
+  `;
+
+  // ==========================================
+  // LESSONS 1 TO 9: FACING 2-PAGE SPREADS!
+  // ==========================================
+  lessonConfigs.forEach((cfg, lIdx) => {
+    const leftPageNum = lIdx * 2 + 4;
+    const rightPageNum = lIdx * 2 + 5;
+
+    // ----------------------------------------------------
+    // LEFT PAGE (Verso, Even Page Number: 4, 6, 8, 10...)
+    // ----------------------------------------------------
+    html += `
+    <div class="page page-container" id="page-${leftPageNum}">
+      <div>
+        <!-- Lesson Header -->
+        <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: flex-end;">
+          <div>
+            <div style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 1px; color: #64748b; font-weight: 600;">
+              KS3 Medieval England &bull; Lesson ${lIdx + 1}
+            </div>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 13pt; color: #0f172a; margin: 2px 0 0 0; line-height: 1.2;">
+              L${lIdx + 1}: ${cfg.enquiryQuestion.replace(/^Enquiry:\s*/i, '')}
+            </h2>
+          </div>
+        </div>
+
+        <!-- Learning Objectives -->
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 5px 8px; margin-bottom: 6px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; color: #475569; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Core Learning Objectives:</strong>
+          <ul style="margin: 0; padding-left: 16px; font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #334155; line-height: 1.35;">
+            <li>Explain the historical context, key protagonists, and competing perspectives of this enquiry.</li>
+            <li>Deploy precise factual evidence to analyse cause, consequence, or historical significance.</li>
+            <li>Formulate an independent, evaluative historical judgement supported by causal reasoning.</li>
+          </ul>
+        </div>
+
+        <!-- Do Now Recall Strip -->
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; margin-bottom: 6px; background: #ffffff;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 3px; margin-bottom: 4px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.6px; color: #0f172a;">Do Now: Spaced Retrieval</strong>
+            </div>
+            <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 1px 7px; border-radius: 3px;">Score: &nbsp; &nbsp; / 5</span>
+          </div>
+          <div style="grid-template-columns: repeat(5, 1fr); gap: 6px; display: grid;">
+            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q1 (Last)</div>
+              <div class="task-line-dotted" style="height: 5.5mm;"></div>
+              <div class="task-line-dotted" style="height: 5.5mm;"></div>
+            </div>
+            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q2 (Last)</div>
+              <div class="task-line-dotted" style="height: 5.5mm;"></div>
+              <div class="task-line-dotted" style="height: 5.5mm;"></div>
+            </div>
+            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q3 (2 Ago)</div>
+              <div class="task-line-dotted" style="height: 5.5mm;"></div>
+              <div class="task-line-dotted" style="height: 5.5mm;"></div>
+            </div>
+            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q4 (Unit)</div>
+              <div class="task-line-dotted" style="height: 5.5mm;"></div>
+              <div class="task-line-dotted" style="height: 5.5mm;"></div>
+            </div>
+            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q5 (Synoptic)</div>
+              <div class="task-line-dotted" style="height: 5.5mm;"></div>
+              <div class="task-line-dotted" style="height: 5.5mm;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Core Vocabulary -->
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; margin-bottom: 6px; background: #fdfbf7;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; color: #0f172a; letter-spacing: 0.5px;">Core Disciplinary Vocabulary</strong>
+          </div>
+    `;
+
+    if (cfg.vocabTask.type === 'cloze') {
+      html += `
+          <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #334155; margin-bottom: 2px;">
+            ${cfg.vocabTask.prompt}
+          </div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #1e293b; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 4px 6px; margin-bottom: 3px; line-height: 1.35;">
+            ${cfg.vocabTask.clozeText}
+          </div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #475569; margin-bottom: 1px;">
+            <strong>Application:</strong> ${cfg.vocabTask.followUp}
+          </div>
+          <div class="task-line" style="height: 6mm;"></div>
+          <div class="task-line" style="height: 6mm;"></div>
+      `;
+    } else {
+      html += `
+          <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #334155; margin-bottom: 3px; line-height: 1.3;">
+            ${cfg.vocabTask.prompt}
+          </div>
+          <div class="task-line" style="height: 6mm;"></div>
+          <div class="task-line" style="height: 6mm;"></div>
+          <div class="task-line" style="height: 6mm;"></div>
+      `;
+    }
+
+    html += `
+        </div>
+
+        <!-- TASK 4: THE HISTORICAL THINKING PREPARATION BRIDGE -->
+        <div style="border: 1.5px solid #0f172a; border-radius: 5px; padding: 7px 9px; background: #ffffff; margin-bottom: 4px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #0f172a; padding-bottom: 3px; margin-bottom: 5px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #0f172a; text-transform: uppercase;">${cfg.bridgeTask.title}</strong>
+          </div>
+          ${
+            cfg.bridgeTask.instruction
+              ? `
+          <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #334155; margin-bottom: 5px; line-height: 1.35;">
+            ${cfg.bridgeTask.instruction}
+          </div>`
+              : ''
+          }
+    `;
+
+    // Render task body based on type
+    if (cfg.bridgeTask.type === 'draw_label') {
+      html += `
+          <div class="auto-fill-drawing-box" style="height: 330px; border: 1.5px solid #64748b; border-radius: 4px; background: #ffffff; position: relative; margin-bottom: 5px; box-sizing: border-box;"></div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 8.3pt; color: #1e293b; background: #f1f5f9; padding: 5px 8px; border-radius: 4px; margin-bottom: 4px; border: 1px solid #cbd5e1;">
+            ${cfg.bridgeTask.checklist}
+          </div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #64748b; margin-bottom: 3px;">
+            ${cfg.bridgeTask.clue}
+          </div>
+          <div style="font-family: 'Georgia', serif; font-size: 8.5pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px;">
+            ${cfg.bridgeTask.scholarsEdge}
+          </div>
+      `;
+    } else if (cfg.bridgeTask.type === 'ledger') {
+      html += `
+          <div class="auto-fill-ledger" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 5px;">
+            <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 7px; background: #f8fafc;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0369a1; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">${cfg.bridgeTask.col1Title}</strong>
+              <ul style="margin: 0 0 5px 0; padding-left: 15px; font-family: 'Inter', sans-serif; font-size: 8pt; color: #475569; line-height: 1.35;">
+                ${cfg.bridgeTask.col1Prompts.map((p) => `<li>${p}</li>`).join('')}
+              </ul>
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 600; color: #0369a1; border-top: 1px dashed #cbd5e1; padding-top: 3px; margin: 4px 0 2px 0;">
+                ✍️ Synthesise their perspective in 2–3 sentences:
+              </div>
+              <div class="ledger-col-1">
+                <div class="task-line-dotted" style="height: 5.6mm;"></div>
+                <div class="task-line-dotted" style="height: 5.6mm;"></div>
+                <div class="task-line-dotted" style="height: 5.6mm;"></div>
+                <div class="task-line-dotted" style="height: 5.6mm;"></div>
+                <div class="task-line-dotted" style="height: 5.6mm;"></div>
+              </div>
+            </div>
+            <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 7px; background: #f8fafc;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #b91c1c; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">${cfg.bridgeTask.col2Title}</strong>
+              <ul style="margin: 0 0 5px 0; padding-left: 15px; font-family: 'Inter', sans-serif; font-size: 8pt; color: #475569; line-height: 1.35;">
+                ${cfg.bridgeTask.col2Prompts.map((p) => `<li>${p}</li>`).join('')}
+              </ul>
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 600; color: #b91c1c; border-top: 1px dashed #cbd5e1; padding-top: 3px; margin: 4px 0 2px 0;">
+                ✍️ Synthesise their perspective in 2–3 sentences:
+              </div>
+              <div class="ledger-col-2">
+                <div class="task-line-dotted" style="height: 5.6mm;"></div>
+                <div class="task-line-dotted" style="height: 5.6mm;"></div>
+                <div class="task-line-dotted" style="height: 5.6mm;"></div>
+                <div class="task-line-dotted" style="height: 5.6mm;"></div>
+                <div class="task-line-dotted" style="height: 5.6mm;"></div>
+              </div>
+            </div>
+          </div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #64748b; margin-bottom: 3px;">
+            ${cfg.bridgeTask.clue}
+          </div>
+          <div style="font-family: 'Georgia', serif; font-size: 8.5pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px;">
+            ${cfg.bridgeTask.scholarsEdge}
+          </div>
+      `;
+    } else if (cfg.bridgeTask.type === 'source_utility') {
+      html += `
+          <div style="border: 1px solid #cbd5e1; border-left: 3px solid #1e3a8a; background: #fdfbf7; padding: 7px 10px; font-size: 8.5pt; font-style: italic; color: #1e293b; margin-bottom: 5px; line-height: 1.4;">
+            ${cfg.bridgeTask.sourceText}
+          </div>
+          <div class="auto-fill-lines" data-line-height="6.8" data-line-type="task-line">
+            ${Array(cfg.bridgeTask.lines || 8)
+              .fill('<div class="task-line" style="height: 6.8mm;"></div>')
+              .join('')}
+          </div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #64748b; margin-top: 4px; margin-bottom: 2px;">
+            ${cfg.bridgeTask.clue}
+          </div>
+          <div style="font-family: 'Georgia', serif; font-size: 8.5pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px;">
+            ${cfg.bridgeTask.scholarsEdge}
+          </div>
+      `;
+    } else if (cfg.bridgeTask.type === 'causal_pivot') {
+      html += `
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; margin-bottom: 6px;">
+            ${cfg.bridgeTask.steps
+              .map(
+                (s) => `
+              <div style="border: 1px solid #bae6fd; background: #f0f9ff; border-radius: 3px; padding: 5px 6px; font-family: 'Inter', sans-serif;">
+                <span style="font-size: 7.5pt; font-weight: 700; color: #0369a1; display: block; margin-bottom: 2px;">${s.stage} (${s.year})</span>
+                <span style="font-size: 7.5pt; color: #1e293b; line-height: 1.3; display: block;">${s.text}</span>
+              </div>
+            `,
+              )
+              .join('')}
+          </div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #1e293b; margin-bottom: 3px;">
+            <strong>Causal Analysis:</strong> ${cfg.bridgeTask.prompt}
+          </div>
+          <div class="auto-fill-lines" data-line-height="6.8" data-line-type="task-line">
+            ${Array(cfg.bridgeTask.lines || 8)
+              .fill('<div class="task-line" style="height: 6.8mm;"></div>')
+              .join('')}
+          </div>
+          <div style="font-family: 'Georgia', serif; font-size: 8.5pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-top: 3px;">
+            ${cfg.bridgeTask.scholarsEdge}
+          </div>
+      `;
+    } else if (cfg.bridgeTask.type === 'fresco_analysis') {
+      html += `
+          <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 4px; padding: 6px 8px; margin-bottom: 5px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #334155; line-height: 1.35;">
+              ${cfg.bridgeTask.labels.map((l) => `<div>${l}</div>`).join('')}
+            </div>
+          </div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #1e293b; margin-bottom: 3px;">
+            <strong>Visual Forensic Interpretation:</strong> ${cfg.bridgeTask.prompt}
+          </div>
+          <div class="auto-fill-lines" data-line-height="6.8" data-line-type="task-line">
+            ${Array(cfg.bridgeTask.lines || 7)
+              .fill('<div class="task-line" style="height: 6.8mm;"></div>')
+              .join('')}
+          </div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #64748b; margin-top: 3px;">
+            ${cfg.bridgeTask.clue}
+          </div>
+          <div style="font-family: 'Georgia', serif; font-size: 8.5pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-top: 3px;">
+            ${cfg.bridgeTask.scholarsEdge}
+          </div>
+      `;
+    } else if (cfg.bridgeTask.type === 'matrix') {
+      html += `
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 5px;">
+            ${cfg.bridgeTask.boxes
+              .map(
+                (b) => `
+              <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px 7px; background: #f8fafc; font-family: 'Inter', sans-serif;">
+                <strong style="font-size: 8pt; color: #1e3a8a; display: block; margin-bottom: 2px;">${b.title}</strong>
+                <span style="font-size: 7.5pt; color: #334155; line-height: 1.3; display: block;">${b.evidence}</span>
+              </div>
+            `,
+              )
+              .join('')}
+          </div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #1e293b; margin-bottom: 3px;">
+            <strong>Synoptic Synthesis:</strong> ${cfg.bridgeTask.prompt}
+          </div>
+          <div class="auto-fill-lines" data-line-height="6.8" data-line-type="task-line">
+            ${Array(cfg.bridgeTask.lines || 7)
+              .fill('<div class="task-line" style="height: 6.8mm;"></div>')
+              .join('')}
+          </div>
+          <div style="font-family: 'Georgia', serif; font-size: 8.5pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-top: 3px;">
+            ${cfg.bridgeTask.scholarsEdge}
+          </div>
+      `;
+    }
+
+    html += `
+        </div>
+      </div>
+
+      <!-- Left Page Footer -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px;">
+        <span>Meoncross History &bull; KS3 Medieval England (1066–1485)</span>
+        <span>Page ${leftPageNum} (Facing Spread Left)</span>
+      </div>
+    </div>
+    `;
+
+    // ----------------------------------------------------
+    // RIGHT PAGE (Recto, Odd Page Number: 5, 7, 9, 11...)
+    // ----------------------------------------------------
+    html += `
+    <div class="page page-container" id="page-${rightPageNum}">
+      <div>
+        <!-- Enquiry Question Header -->
+        <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 5px; margin-bottom: 7px; display: flex; justify-content: space-between; align-items: flex-end;">
+          <div>
+            <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 1px; color: #1e3a8a; font-weight: 700;">
+              Historical Skill: ${cfg.skill} &bull; Extended Writing
+            </div>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 12.8pt; color: #0f172a; margin: 3px 0 0 0; line-height: 1.25;">
+              ${cfg.enquiryQuestion}
+            </h3>
+          </div>
+          <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe; flex-shrink: 0;">Independent Argument</span>
+        </div>
+
+        <!-- Bespoke Disciplinary Structure Strip (3-Columns, 8.5pt) -->
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 5px; padding: 6px 8px; background: #f8fafc; margin-bottom: 6px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 4px;">
+            ${cfg.structureStrip
+              .map(
+                (s) => `
+              <div style="border: 1px solid #e2e8f0; border-radius: 3px; padding: 5px 6px; background: #ffffff;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #1e3a8a; display: block; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px; margin-bottom: 2px;">${s.col}</strong>
+                <span style="font-family: 'Inter', sans-serif; font-size: 8.3pt; color: #334155; line-height: 1.3; display: block;">${s.text}</span>
+              </div>
+            `,
+              )
+              .join('')}
+          </div>
+          
+          <div style="border-top: 1px dashed #cbd5e1; padding-top: 3px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 8.2pt;">
+            <span style="color: #475569;"><strong>Sentence Starters &amp; Connectives:</strong> ${cfg.connectives}</span>
+          </div>
+        </div>
+
+        <!-- Writing Framework Strip (PEEL vs Source Utility) -->
+        ${
+          cfg.genreNum === 4 && lIdx === 3
+            ? `
+        <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 10px; margin-bottom: 6px; display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #1e293b;">
+          <span><strong style="color: #1e3a8a;">[C] Content:</strong> Specific quotes from Clause 39 or 12.</span>
+          <span><strong style="color: #1e3a8a;">[OK] Own Knowledge:</strong> Feudal extortion &amp; 1215 baronial rebellion.</span>
+          <span><strong style="color: #1e3a8a;">[NOP] Provenance:</strong> Peace treaty between King John &amp; 25 barons.</span>
+        </div>`
+            : `
+        <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; margin-bottom: 6px; display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #1e293b;">
+          <span><strong style="color: #1e3a8a;">[P] Point:</strong> Clear direct answer to enquiry.</span>
+          <span><strong style="color: #1e3a8a;">[E] Evidence:</strong> Specific medieval names, dates &amp; facts.</span>
+          <span><strong style="color: #1e3a8a;">[E] Explanation:</strong> Causal mechanism (why &amp; how).</span>
+          <span><strong style="color: #1e3a8a;">[L] Link:</strong> Direct evaluative conclusion.</span>
+        </div>`
+        }
+
+        <!-- Ruled Writing Lines (Dynamic Auto-Fill, 7.6mm Line Height) -->
+        <div class="auto-fill-writing-lines" data-line-height="7.6" style="width: 100%; margin-bottom: 6px;">
+          ${Array(20).fill('<div class="task-line" style="height: 7.6mm;"></div>').join('')}
+        </div>
+      </div>
+
+      <!-- Teacher Grading & Assessment Footer -->
+      <div>
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; background: #f8fafc; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #334155;">
+          <div>
+            <strong>Teacher Assessment:</strong> &nbsp;
+            Effort: [ 1 &bull; 2 &bull; 3 &bull; 4 &bull; 5 ] &nbsp;|&nbsp; 
+            Subject Knowledge: [ 1 &bull; 2 &bull; 3 &bull; 4 ] &nbsp;|&nbsp; 
+            Disciplinary Analysis: [ 1 &bull; 2 &bull; 3 &bull; 4 ]
+          </div>
+          <div>
+            ${
+              cfg.genreNum === 4 && lIdx === 3
+                ? '<strong>Source Utility:</strong> &nbsp;&nbsp; C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OK &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NOP'
+                : '<strong>PEEL Mastery:</strong> &nbsp;&nbsp; P &nbsp;&nbsp;&nbsp;&nbsp; E &nbsp;&nbsp;&nbsp;&nbsp; E &nbsp;&nbsp;&nbsp;&nbsp; L'
+            }
+          </div>
+        </div>
+        
+        <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px; margin-top: 3px;">
+          <span>Enquiry Write-Up &bull; Historical Skill: ${cfg.skill}</span>
+          <span>Page ${rightPageNum} (Facing Spread Right)</span>
+        </div>
+      </div>
+    </div>
+    `;
+  });
+
+  // ==========================================
+  // PAGE 22: VOCABULARY MASTERY GLOSSARY (Verso, Left Page)
+  // ==========================================
+  html += `
+  <div class="page page-container" id="page-22" style="padding: 12px 16px; display: flex; flex-direction: column; height: 260mm; justify-content: space-between;">
+    <div>
+      <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: baseline;">
+        <h2 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 15pt; color: #0f172a; text-transform: uppercase;">
+          Medieval Disciplinary Vocabulary Mastery Vault
+        </h2>
+        <span class="archival-badge">Key Concepts</span>
+      </div>
+
+      <p style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #475569; margin: 0 0 8px 0;">
+        Mastery of these high-yield disciplinary and substantive concepts is essential for achieving Grade 6–9 in KS3 History extended writing:
+      </p>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 7px;">
+        <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 8px; background: #f8fafc;">
+          <strong style="color: #1e3a8a; font-size: 8.5pt;">Feudal System (Hierarchy):</strong>
+          <p style="font-size: 7.8pt; color: #334155; margin: 2px 0 0 0; line-height: 1.35;">
+            Social pyramid where King granted land (fiefs) to tenants-in-chief (barons/bishops) in return for military service; barons granted land to knights; unfree peasants (villeins) farmed the land.
+          </p>
+        </div>
+        <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 8px; background: #f8fafc;">
+          <strong style="color: #1e3a8a; font-size: 8.5pt;">Domesday Book (1086):</strong>
+          <p style="font-size: 7.8pt; color: #334155; margin: 2px 0 0 0; line-height: 1.35;">
+            Great survey ordered by William I recording every landholding, plough, mill, and pig in England to maximise royal tax revenue and prevent baronial tax evasion.
+          </p>
+        </div>
+        <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 8px; background: #f8fafc;">
+          <strong style="color: #1e3a8a; font-size: 8.5pt;">Benefit of Clergy &amp; Canon Law:</strong>
+          <p style="font-size: 7.8pt; color: #334155; margin: 2px 0 0 0; line-height: 1.35;">
+            The legal privilege whereby churchmen accused of crime were tried only in lenient Church courts governed by papal canon law, escaping royal execution.
+          </p>
+        </div>
+        <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 8px; background: #f8fafc;">
+          <strong style="color: #1e3a8a; font-size: 8.5pt;">Magna Carta (Rule of Law):</strong>
+          <p style="font-size: 7.8pt; color: #334155; margin: 2px 0 0 0; line-height: 1.35;">
+            The 1215 charter forcing King John to concede that royal power is not absolute and that even the monarch is bound by the established law of the land.
+          </p>
+        </div>
+        <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 8px; background: #f8fafc;">
+          <strong style="color: #1e3a8a; font-size: 8.5pt;">Tithe &amp; Doom Paintings:</strong>
+          <p style="font-size: 7.8pt; color: #334155; margin: 2px 0 0 0; line-height: 1.35;">
+            A mandatory 10% tax paid to the Church; reinforced by terrifying murals above the chancel arch depicting sinners pitched into the mouth of Hell.
+          </p>
+        </div>
+        <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 8px; background: #f8fafc;">
+          <strong style="color: #1e3a8a; font-size: 8.5pt;">Statute of Labourers (1351):</strong>
+          <p style="font-size: 7.8pt; color: #334155; margin: 2px 0 0 0; line-height: 1.35;">
+            Repressive parliamentary law attempting to freeze peasant wages at pre-plague rates; completely failed due to economic laws of supply and demand.
+          </p>
+        </div>
+        <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 8px; background: #f8fafc;">
+          <strong style="color: #1e3a8a; font-size: 8.5pt;">Poll Tax &amp; The Great Rising:</strong>
+          <p style="font-size: 7.8pt; color: #334155; margin: 2px 0 0 0; line-height: 1.35;">
+            Regressive flat tax of 12 groats (1 shilling) per person, provoking the 1381 rebellion under Wat Tyler demanding total abolition of serfdom.
+          </p>
+        </div>
+        <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 8px; background: #f8fafc;">
+          <strong style="color: #1e3a8a; font-size: 8.5pt;">Bastard Feudalism:</strong>
+          <p style="font-size: 7.8pt; color: #334155; margin: 2px 0 0 0; line-height: 1.35;">
+            Late-medieval practice where wealthy lords paid cash retainers to maintain private armies wearing their livery badges, sparking the Wars of the Roses.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px;">
+      <span>Vocabulary Vault &bull; Disciplinary Literacy</span>
+      <span>Page 22 (Facing Spread Left)</span>
+    </div>
+  </div>
+  `;
+
+  // ==========================================
+  // PAGE 23: PUPIL VOICE & REFLECTION (Recto, Right Page)
+  // ==========================================
+  html += `
+  <div class="page page-container" id="page-23" style="padding: 12px 16px; display: flex; flex-direction: column; height: 260mm; justify-content: space-between;">
+    <div>
+      <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: baseline;">
+        <div>
+          <h2 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 15pt; color: #0f172a; text-transform: uppercase;">
+            End of Unit Reflection &amp; Pupil Voice
+          </h2>
+          <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #64748b; margin-top: 1px;">
+            Unit: Medieval England &amp; The Struggle for Power &bull; Year 7 History
+          </div>
+        </div>
+        <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe;">Pupil Voice</span>
+      </div>
+
+      <!-- 1. WWW -->
+      <div style="margin-bottom: 9px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #1e3a8a; text-transform: uppercase;">
+            1. What Went Well (WWW)
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #64748b;">Key Strengths &amp; Insights</span>
+        </div>
+        <p style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #475569; margin: 0 0 3px 0;">
+          Which medieval enquiry, historical source, or extended writing skill did you find most compelling or master most successfully?
+        </p>
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; height: 50px; background: #f8fafc;"></div>
+      </div>
+
+      <!-- 2. EBI -->
+      <div style="margin-bottom: 9px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #1e3a8a; text-transform: uppercase;">
+            2. Even Better If (EBI)
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #64748b;">Areas for Growth</span>
+        </div>
+        <p style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #475569; margin: 0 0 3px 0;">
+          Which concept (e.g. feudal contracts, benefit of clergy, or weighing conflicting historical interpretations) did you find most challenging?
+        </p>
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; height: 50px; background: #f8fafc;"></div>
+      </div>
+
+      <!-- 3. Teacher Coaching Dialogue -->
+      <div style="border: 1.5px solid #fcd34d; border-radius: 5px; padding: 8px 12px; background: #fffbeb;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 9.2pt; color: #92400e; text-transform: uppercase;">
+            Teacher Formative Coaching &amp; Next Steps
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #b45309; font-style: italic;">Completed post-assessment</span>
+        </div>
+        <p style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #78350f; margin: 0 0 6px 0;">
+          Teacher feedback confirming unit mastery, validating reflection, and setting next unit targets:
+        </p>
+        <div style="height: 180px; border-radius: 4px; background: #ffffff; border: 1.2px solid #fde68a;"></div>
+      </div>
+    </div>
+
+    <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px;">
+      <span>Pupil Voice Reflection &bull; Year 7 History</span>
+      <span>Page 23 (Facing Spread Right)</span>
+    </div>
+  </div>
+  `;
+
+  // ==========================================
+  // PAGE 24: OUTSIDE BACK COVER (Departmental Marking Policy)
+  // ==========================================
+  html += `
+  <div class="page page-container" id="page-24" style="padding: 14px 18px; display: flex; flex-direction: column; height: 260mm; justify-content: space-between; border: 1px solid #cbd5e1; outline: 3.5px double #0f172a; outline-offset: -8px;">
+    <div>
+      <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 6px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: baseline;">
+        <div>
+          <h2 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 16pt; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px;">
+            Departmental Marking Policy &amp; Code
+          </h2>
+          <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #64748b; margin-top: 2px;">
+            Meoncross School History Department Standard
+          </div>
+        </div>
+        <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe;">Policy</span>
+      </div>
+
+      <!-- Marking Symbols Grid -->
+      <div style="margin-bottom: 12px;">
+        <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #1e3a8a; text-transform: uppercase; display: block; margin-bottom: 4px;">
+          Correction &amp; Proofreading Symbols:
+        </strong>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; font-family: 'Inter', sans-serif; font-size: 8pt;">
+          <div style="border: 1px solid #cbd5e1; padding: 5px; border-radius: 3px; background: #f8fafc;"><strong style="color: #b91c1c;">Sp:</strong> Spelling error</div>
+          <div style="border: 1px solid #cbd5e1; padding: 5px; border-radius: 3px; background: #f8fafc;"><strong style="color: #b91c1c;">P:</strong> Punctuation missing</div>
+          <div style="border: 1px solid #cbd5e1; padding: 5px; border-radius: 3px; background: #f8fafc;"><strong style="color: #b91c1c;">//:</strong> New paragraph needed</div>
+          <div style="border: 1px solid #cbd5e1; padding: 5px; border-radius: 3px; background: #f8fafc;"><strong style="color: #b91c1c;">^:</strong> Word omitted</div>
+        </div>
+      </div>
+
+      <!-- Disciplinary Writing Blueprint -->
+      <div style="border: 1.2px solid #cbd5e1; border-radius: 5px; padding: 10px; background: #fafaf9; margin-bottom: 12px;">
+        <strong style="font-family: 'Inter', sans-serif; font-size: 9pt; color: #0f172a; text-transform: uppercase; display: block; margin-bottom: 6px;">
+          The KS3 Extended Writing Formula (PEEL):
+        </strong>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-family: 'Inter', sans-serif; font-size: 8pt; color: #334155; line-height: 1.35;">
+          <div><strong style="color: #1e3a8a;">[P] Point:</strong> Open with a punchy topic sentence directly answering the enquiry factor.</div>
+          <div><strong style="color: #1e3a8a;">[E] Evidence:</strong> Deploy 2+ precise historical facts (exact dates, named individuals, statistics).</div>
+          <div><strong style="color: #1e3a8a;">[E] Explanation:</strong> Unpack the causal mechanism using analytical connectives (*Consequently, Pivotal*).</div>
+          <div><strong style="color: #1e3a8a;">[L] Link:</strong> Evaluate relative significance and link directly back to the overarching inquiry.</div>
+        </div>
+      </div>
+
+      <!-- Effort Scale Expectations -->
+      <div style="border: 1.2px solid #e2e8f0; border-radius: 5px; padding: 8px 10px; background: #ffffff;">
+        <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f172a; text-transform: uppercase; display: block; margin-bottom: 4px;">
+          Effort Grade Descriptors (1–5 Scale):
+        </strong>
+        <ul style="margin: 0; padding-left: 18px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #475569; line-height: 1.4;">
+          <li><strong>5 • Exemplary:</strong> Proactive scholarship, voluntary Scholar’s Edge extension, impeccable presentation.</li>
+          <li><strong>4 • Good:</strong> Consistent focus, fully completed tasks, accurate deployment of historical vocabulary.</li>
+          <li><strong>3 • Satisfactory:</strong> Baseline requirements met; core tasks completed with standard effort.</li>
+          <li><strong>2 • Inconsistent / 1 • Concern:</strong> Unfinished work, lack of historical detail, intervention required.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Colophon & Seal -->
+    <div style="border-top: 1px solid #cbd5e1; padding-top: 6px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #94a3b8;">
+      <span>Meoncross School &bull; History Department Curriculum Archive</span>
+      <span style="color: #1e3a8a; font-weight: 700; letter-spacing: 1px;">Page 24 &bull; Outside Back Cover</span>
+    </div>
+  </div>
+  `;
+
+  html += `
+  <script>
+    (function() {
+      function autoFillPages() {
+        const leftPages = [4, 6, 8, 10, 12, 14, 16, 18, 20];
+        leftPages.forEach(function(pageNum) {
+          const page = document.getElementById('page-' + pageNum);
+          if (!page) return;
+          const topDiv = page.firstElementChild;
+          const footerDiv = page.lastElementChild;
+          if (!topDiv || !footerDiv) return;
+
+          function getGap() {
+            return page.clientHeight - (topDiv.offsetHeight + footerDiv.offsetHeight);
+          }
+
+          // 1. Single column ruled lines
+          const linesContainer = page.querySelector('.auto-fill-lines');
+          if (linesContainer) {
+            const lineH = parseFloat(linesContainer.getAttribute('data-line-height') || '6.8');
+            const lineHPx = lineH * 3.7795;
+            let safety = 0;
+            while (getGap() > (lineHPx + 28) && safety < 35) {
+              const newLine = document.createElement('div');
+              newLine.className = 'task-line';
+              newLine.style.height = lineH + 'mm';
+              linesContainer.appendChild(newLine);
+              safety++;
+            }
+            while (getGap() < 22 && linesContainer.children.length > 1) {
+              linesContainer.removeChild(linesContainer.lastElementChild);
+            }
+            return;
+          }
+
+          // 2. Ledger (two-column dotted lines)
+          const col1 = page.querySelector('.ledger-col-1');
+          const col2 = page.querySelector('.ledger-col-2');
+          if (col1 && col2) {
+            const lineHPx = 5.6 * 3.7795;
+            let safety = 0;
+            while (getGap() > (lineHPx + 28) && col1.children.length < 7 && safety < 15) {
+              const line1 = document.createElement('div');
+              line1.className = 'task-line-dotted';
+              line1.style.height = '5.6mm';
+              col1.appendChild(line1);
+
+              const line2 = document.createElement('div');
+              line2.className = 'task-line-dotted';
+              line2.style.height = '5.6mm';
+              col2.appendChild(line2);
+              safety++;
+            }
+            while (getGap() < 22 && col1.children.length > 3 && col2.children.length > 3) {
+              col1.removeChild(col1.lastElementChild);
+              col2.removeChild(col2.lastElementChild);
+            }
+            return;
+          }
+
+          // 3. Drawing canvas (Lessons 1 & 2)
+          const drawBox = page.querySelector('.auto-fill-drawing-box');
+          if (drawBox) {
+            let gap = getGap();
+            if (gap > 32) {
+              const currentH = drawBox.offsetHeight;
+              drawBox.style.height = (currentH + gap - 32) + 'px';
+            }
+            while (getGap() < 22 && drawBox.offsetHeight > 150) {
+              drawBox.style.height = (drawBox.offsetHeight - 5) + 'px';
+            }
+            return;
+          }
+        });
+
+        // Right-Hand Writing Spreads Auto-Fill
+        const rightPages = [5, 7, 9, 11, 13, 15, 17, 19, 21];
+        rightPages.forEach(function (pageNum) {
+          const page = document.getElementById('page-' + pageNum);
+          if (!page) return;
+          const topDiv = page.firstElementChild;
+          const footerDiv = page.lastElementChild;
+          if (!topDiv || !footerDiv) return;
+
+          function getGap() {
+            return (
+              page.clientHeight -
+              (topDiv.offsetHeight + footerDiv.offsetHeight)
+            );
+          }
+
+          const writingContainer = page.querySelector('.auto-fill-writing-lines');
+          if (writingContainer) {
+            const lineH = parseFloat(
+              writingContainer.getAttribute('data-line-height') || '7.6',
+            );
+            const lineHPx = lineH * 3.7795;
+            let safety = 0;
+            while (getGap() > lineHPx + 30 && safety < 15) {
+              const newLine = document.createElement('div');
+              newLine.className = 'task-line';
+              newLine.style.height = lineH + 'mm';
+              writingContainer.appendChild(newLine);
+              safety++;
+            }
+            while (getGap() < 24 && writingContainer.children.length > 8) {
+              writingContainer.removeChild(writingContainer.lastElementChild);
+            }
+          }
+        });
+      }
+
+      if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        autoFillPages();
+      } else {
+        window.addEventListener('DOMContentLoaded', autoFillPages);
+      }
+      window.addEventListener('load', autoFillPages);
+    })();
+  </script>
+</body>
+</html>
+`;
+  return html;
+}
+
+module.exports = {
+  buildMedievalTwoPageWorkbook,
+  lessonConfigs,
+};
