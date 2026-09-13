@@ -1122,8 +1122,8 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
           <div>
             ${
               cfg.genreNum === 6
-                ? '<strong>Source Utility Mastery:</strong> &nbsp; [ &nbsp; ] C &nbsp;&nbsp;&nbsp; [ &nbsp; ] OK &nbsp;&nbsp;&nbsp; [ &nbsp; ] NOP'
-                : '<strong>PEEL Mastery:</strong> &nbsp; [ &nbsp; ] P &nbsp;&nbsp;&nbsp; [ &nbsp; ] E &nbsp;&nbsp;&nbsp; [ &nbsp; ] E &nbsp;&nbsp;&nbsp; [ &nbsp; ] L'
+                ? '<strong>Source Utility Mastery:</strong> &nbsp;&nbsp; C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OK &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NOP'
+                : '<strong>PEEL Mastery:</strong> &nbsp;&nbsp; P &nbsp;&nbsp;&nbsp;&nbsp; E &nbsp;&nbsp;&nbsp;&nbsp; E &nbsp;&nbsp;&nbsp;&nbsp; L'
             }
           </div>
         </div>

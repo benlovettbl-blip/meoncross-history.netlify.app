@@ -53,7 +53,7 @@ Each lesson occupies exactly **one double-page spread (2 pages)**:
    - *Bronze (Accessible):* 1 complete PEEL paragraph using Page 1 evidence (8–10 lines).
    - *Silver (Standard):* 2 balanced paragraphs with causal connectives (14–16 lines).
    - *Gold (Scholarship):* Full essay with sustained judgment using the Evaluation Criteria (18–20 lines).
-5. **Discreet Assessment Footer:** `[Effort: 1 2 3 4] [Knowledge: 1 2 3 4] [Analysis: 1 2 3 4]`.
+5. **Discreet Assessment Footer:** `Effort: [ 1 • 2 • 3 • 4 • 5 ] | Knowledge: [ 1 • 2 • 3 • 4 ] | Analysis: [ 1 • 2 • 3 • 4 ] | PEEL: P E E L or Source Utility: C OK NOP`.
 
 ---
 
@@ -61,8 +61,8 @@ Each lesson occupies exactly **one double-page spread (2 pages)**:
 
 | Unit ID | Title | Key Stage | Lessons | Status | Notes / Next Action |
 | :--- | :--- | :---: | :---: | :--- | :--- |
-| **`industrialisation_and_empire`** | Industrialisation, Empire, and Power (1750–1900) | KS3 (Yr 8) | 8 | **Complete (Active Pilot)** | Full 20-page saddle-stitch 2-page spread standard finalized. 0 layout overflows, standardized cover, Page 2 tracker, Task 4 preparation bridges, and Page 20 Pupil Voice reflection. |
-| **`early_modern_world`** | Early Modern World & Global Encounters (1450–1750) | KS3 (Yr 8) | 9 | **4-Act Complete** | Next in queue to migrate from 4-page to 2-page spread standard. |
+| **`industrialisation_and_empire`** | Industrialisation, Empire, and Power (1750–1900) | KS3 (Yr 8) | 8 | **✅ Complete & Production Ready** | Full 20-page saddle-stitch 2-page spread standard finalized. 0 layout overflows, standardized cover, Page 2 tracker (Effort 1–5), Task 4 preparation bridges, bracketless C • OK • NOP source utility mastery, and Page 20 Pupil Voice reflection. |
+| **`early_modern_world`** | Early Modern World & Global Encounters (1450–1750) | KS3 (Yr 8) | 9 | **🟡 Next in Queue (Pending 2-Page Migration)** | 4-Act structure complete. Next unit scheduled to migrate from legacy 4-page to the new 2-page double-page spread standard. |
 | **`great_war`** | Causes of the Great War (1870–1914) | KS3 (Yr 9) | 7 | **4-Act Complete** | Awaiting 2-page spread migration. |
 | **`great_war_part2`** | The Great War (1914–1919) | KS3 (Yr 9) | 7 | **4-Act Complete** | Awaiting 2-page spread migration. |
 | **`medieval_england`** | Medieval England & The Struggle for Power (1066–1485) | KS3 (Yr 7) | 9 | **Pending Conversion** | Uses legacy prose comprehension questions. |
