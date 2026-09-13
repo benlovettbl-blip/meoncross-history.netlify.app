@@ -34,7 +34,12 @@ if (!fs.existsSync(dataJsPath)) {
 }
 
 // Units held to strict 4-Act Master Architecture
-const FOUR_ACT_UNITS = ['great_war', 'great_war_part2', 'industrialisation_and_empire'];
+const FOUR_ACT_UNITS = [
+  'great_war',
+  'great_war_part2',
+  'industrialisation_and_empire',
+  'early_modern_world',
+];
 
 const NON_PROSE_TYPES = new Set([
   'causal_domino',
