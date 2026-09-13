@@ -61,7 +61,7 @@ Each lesson occupies exactly **one double-page spread (2 pages)**:
 
 | Unit ID | Title | Key Stage | Lessons | Status | Notes / Next Action |
 | :--- | :--- | :---: | :---: | :--- | :--- |
-| **`industrialisation_and_empire`** | Industrialisation, Empire, and Power (1750–1900) | KS3 (Yr 8) | 8 | **In Progress (Active Pilot)** | Converting to 2-page spread standard. Lesson 2 Henry Cort Drawing Blueprint in progress. |
+| **`industrialisation_and_empire`** | Industrialisation, Empire, and Power (1750–1900) | KS3 (Yr 8) | 8 | **Complete (Active Pilot)** | Full 20-page saddle-stitch 2-page spread standard finalized. 0 layout overflows, standardized cover, Page 2 tracker, Task 4 preparation bridges, and Page 20 Pupil Voice reflection. |
 | **`early_modern_world`** | Early Modern World & Global Encounters (1450–1750) | KS3 (Yr 8) | 9 | **4-Act Complete** | Next in queue to migrate from 4-page to 2-page spread standard. |
 | **`great_war`** | Causes of the Great War (1870–1914) | KS3 (Yr 9) | 7 | **4-Act Complete** | Awaiting 2-page spread migration. |
 | **`great_war_part2`** | The Great War (1914–1919) | KS3 (Yr 9) | 7 | **4-Act Complete** | Awaiting 2-page spread migration. |
