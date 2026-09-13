@@ -568,6 +568,21 @@
             margin: 15px 0;
             text-align: center;
         }
+        .rapid-card-prompt {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1.35;
+            color: inherit;
+        }
+        .exam-card-prompt {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            line-height: 1.35;
+            color: inherit;
+            margin: 8px 0;
+        }
         .card-answer-text {
             font-family: 'Outfit', sans-serif;
             font-size: 1.25rem;
@@ -576,6 +591,39 @@
             color: #0f172a;
             margin: 15px 0;
             text-align: center;
+        }
+        .card-main-answer {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: inherit;
+            margin-bottom: 0.6rem;
+            line-height: 1.35;
+        }
+        .card-explanation-box {
+            font-size: 0.92rem;
+            font-style: italic;
+            color: #334155;
+            line-height: 1.4;
+            max-width: 550px;
+            margin: 0 auto;
+            background: rgba(241, 245, 249, 0.9);
+            padding: 8px 12px;
+            border-radius: 6px;
+            border-left: 3px solid #3b82f6;
+            text-align: left;
+        }
+        .exam-card-model-answer {
+            font-size: 1.05rem;
+            font-weight: 600;
+            line-height: 1.45;
+            text-align: left;
+            color: #0f172a;
+            background: #ffffff;
+            padding: 12px 14px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 8px;
         }
         .card-prompt-hint {
             font-size: 0.78rem;
@@ -1240,24 +1288,109 @@
             padding: 5px 12px;
         }
         .leitner-modal-overlay.teacher-mode .card-question-text {
-            font-size: 3rem !important; /* ~48pt typography */
+            font-size: 2.8rem !important;
             line-height: 1.25 !important;
             font-weight: 700;
-            color: #ffffff;
+            color: #ffffff !important;
             margin: auto 0;
-            text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+            text-shadow: 0 2px 14px rgba(0,0,0,0.7);
+        }
+        .leitner-modal-overlay.teacher-mode .rapid-card-prompt {
+            font-size: 2.8rem !important;
+            line-height: 1.25 !important;
+            font-weight: 700;
+            color: #ffffff !important;
+            text-shadow: 0 2px 14px rgba(0,0,0,0.7);
+        }
+        .leitner-modal-overlay.teacher-mode .exam-card-prompt {
+            font-size: 2.2rem !important;
+            line-height: 1.3 !important;
+            font-weight: 700;
+            color: #ffffff !important;
+            text-shadow: 0 2px 14px rgba(0,0,0,0.7);
+            margin: 12px 0;
         }
         .leitner-modal-overlay.teacher-mode .card-answer-text {
-            font-size: 3.15rem !important; /* ~48pt+ typography */
+            font-size: 2.6rem !important;
+            line-height: 1.3 !important;
+            font-weight: 800;
+            color: #fef08a !important;
+            margin: auto 0;
+            text-shadow: 0 2px 16px rgba(0,0,0,0.7);
+        }
+        .leitner-modal-overlay.teacher-mode .card-main-answer {
+            font-size: 2.6rem !important;
             line-height: 1.25 !important;
             font-weight: 800;
-            color: #fef08a;
-            margin: auto 0;
-            text-shadow: 0 2px 14px rgba(0,0,0,0.6);
+            color: #fef08a !important;
+            text-shadow: 0 2px 16px rgba(0,0,0,0.7);
+            margin: auto 0 14px 0;
+        }
+        .leitner-modal-overlay.teacher-mode .card-explanation-box {
+            font-size: 1.2rem !important;
+            font-style: normal;
+            color: #f1f5f9 !important;
+            line-height: 1.45 !important;
+            max-width: 920px !important;
+            margin: 0 auto;
+            background: rgba(15, 23, 42, 0.95) !important;
+            padding: 14px 20px !important;
+            border-radius: 10px;
+            border: 1.5px solid #334155;
+            border-left: 5px solid #facc15 !important;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+            text-align: left;
+        }
+        .leitner-modal-overlay.teacher-mode .exam-card-model-answer {
+            font-size: 1.35rem !important;
+            line-height: 1.5 !important;
+            font-weight: 600;
+            color: #0f172a !important;
+            background: #ffffff !important;
+            border: 2px solid #facc15 !important;
+            padding: 16px 22px !important;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            margin-bottom: 12px;
         }
         .leitner-modal-overlay.teacher-mode .card-prompt-hint {
             font-size: 1.05rem;
+            color: #cbd5e1 !important;
+        }
+        .leitner-modal-overlay.teacher-mode .exam-facts-hint {
+            font-size: 1.05rem !important;
+            color: #93c5fd !important;
+            background: rgba(15, 23, 42, 0.85) !important;
+            border: 1.5px dashed #38bdf8 !important;
+            padding: 8px 16px !important;
+        }
+        .leitner-modal-overlay.teacher-mode .facts-checklist {
+            font-size: 1.15rem !important;
+            line-height: 1.45 !important;
+            padding: 12px 18px !important;
+        }
+        .leitner-modal-overlay.teacher-mode .historian-box {
+            font-size: 1.15rem !important;
+            line-height: 1.45 !important;
+            padding: 14px 20px !important;
+        }
+        .leitner-modal-overlay.teacher-mode .stem-filter-label {
             color: #94a3b8;
+        }
+        .leitner-modal-overlay.teacher-mode .stem-pill {
+            background: #1e293b;
+            color: #cbd5e1;
+            border-color: #334155;
+        }
+        .leitner-modal-overlay.teacher-mode .stem-pill:hover {
+            background: #334155;
+            color: #ffffff;
+            border-color: #38bdf8;
+        }
+        .leitner-modal-overlay.teacher-mode .stem-pill.active {
+            background: #0284c7;
+            color: #ffffff;
+            border-color: #38bdf8;
         }
         .leitner-modal-overlay.teacher-mode .leitner-action-bar {
             padding: 10px 32px 14px 32px;
@@ -3391,9 +3524,9 @@
           if (card.specific_facts && card.specific_facts.length > 0) {
             factsHint = '<div class="exam-facts-hint">🧠 Precision Facts Required: ' + card.specific_facts.length + ' specific historical details</div>';
           }
-          qText.innerHTML = metaHtml + '<div style="font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: #0f172a;">' + card.q + '</div>' + factsHint;
+          qText.innerHTML = metaHtml + '<div class="exam-card-prompt">' + card.q + '</div>' + factsHint;
         } else {
-          qText.textContent = card.q;
+          qText.innerHTML = '<div class="rapid-card-prompt">' + card.q + '</div>';
         }
       }
 
@@ -3405,7 +3538,7 @@
             html += '<span class="exam-formula-badge" style="background: #fef3c7; color: #92400e; border-color: #fde68a;">📝 Formula: ' + card.formula + (card.formula_name ? ' (' + card.formula_name + ')' : '') + '</span>';
           }
           html += '</div>';
-          html += '<div style="font-size: 1.05rem; font-weight: 600; line-height: 1.45; text-align: left; color: #0f172a; background: #ffffff; padding: 12px 14px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 8px;">' + card.a + '</div>';
+          html += '<div class="exam-card-model-answer">' + card.a + '</div>';
 
           if (card.specific_facts && card.specific_facts.length > 0) {
             html += '<div class="facts-checklist"><strong>✓ Crucial Historical Evidence Checked:</strong><ul>';
@@ -3420,9 +3553,9 @@
           }
           aText.innerHTML = html;
         } else if (card.explanation) {
-          aText.innerHTML = '<div style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.6rem; color: #0f172a;">' + card.a + '</div><div style="font-size: 0.92rem; font-style: italic; color: #475569; line-height: 1.4; max-width: 550px; margin: 0 auto; background: rgba(241, 245, 249, 0.85); padding: 8px 12px; border-radius: 6px; border-left: 3px solid #3b82f6;">💡 ' + card.explanation + '</div>';
+          aText.innerHTML = '<div class="card-main-answer">' + card.a + '</div><div class="card-explanation-box">💡 ' + card.explanation + '</div>';
         } else {
-          aText.textContent = card.a;
+          aText.innerHTML = '<div class="card-main-answer">' + card.a + '</div>';
         }
       }
 

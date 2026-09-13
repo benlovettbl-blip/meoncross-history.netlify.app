@@ -14,29 +14,6 @@
             size: A4;
             margin: 20mm;
         }
-        @media print {
-            .page-break { page-break-after: always; }
-            body { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-            .vault-bg { background-color: #fffbc8 !important; } /* Pastel yellow for vault */
-            .screen-vault-toolbar,
-            .vault-screen-controls,
-            .leitner-modal-overlay {
-                display: none !important;
-            }
-            .answer-text {
-                background: transparent !important;
-                color: #000000 !important;
-                border: none !important;
-                padding: 0 !important;
-                min-width: 0 !important;
-                min-height: 0 !important;
-                box-shadow: none !important;
-                cursor: default !important;
-            }
-            .answer-text::after {
-                display: none !important;
-            }
-        }
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.15;
@@ -591,6 +568,21 @@
             margin: 15px 0;
             text-align: center;
         }
+        .rapid-card-prompt {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1.35;
+            color: inherit;
+        }
+        .exam-card-prompt {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            line-height: 1.35;
+            color: inherit;
+            margin: 8px 0;
+        }
         .card-answer-text {
             font-family: 'Outfit', sans-serif;
             font-size: 1.25rem;
@@ -599,6 +591,39 @@
             color: #0f172a;
             margin: 15px 0;
             text-align: center;
+        }
+        .card-main-answer {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: inherit;
+            margin-bottom: 0.6rem;
+            line-height: 1.35;
+        }
+        .card-explanation-box {
+            font-size: 0.92rem;
+            font-style: italic;
+            color: #334155;
+            line-height: 1.4;
+            max-width: 550px;
+            margin: 0 auto;
+            background: rgba(241, 245, 249, 0.9);
+            padding: 8px 12px;
+            border-radius: 6px;
+            border-left: 3px solid #3b82f6;
+            text-align: left;
+        }
+        .exam-card-model-answer {
+            font-size: 1.05rem;
+            font-weight: 600;
+            line-height: 1.45;
+            text-align: left;
+            color: #0f172a;
+            background: #ffffff;
+            padding: 12px 14px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 8px;
         }
         .card-prompt-hint {
             font-size: 0.78rem;
@@ -949,6 +974,17 @@
         .print-link-btn.pdf:hover {
             background: #fee2e2;
         }
+        .print-link-btn.preview {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(2, 132, 199, 0.3);
+        }
+        .print-link-btn.preview:hover {
+            background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+            transform: translateY(-1px);
+        }
 
         /* Dual-Tier Leitner Switcher Bar */
         .leitner-tier-switcher {
@@ -1252,24 +1288,109 @@
             padding: 5px 12px;
         }
         .leitner-modal-overlay.teacher-mode .card-question-text {
-            font-size: 3rem !important; /* ~48pt typography */
+            font-size: 2.8rem !important;
             line-height: 1.25 !important;
             font-weight: 700;
-            color: #ffffff;
+            color: #ffffff !important;
             margin: auto 0;
-            text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+            text-shadow: 0 2px 14px rgba(0,0,0,0.7);
+        }
+        .leitner-modal-overlay.teacher-mode .rapid-card-prompt {
+            font-size: 2.8rem !important;
+            line-height: 1.25 !important;
+            font-weight: 700;
+            color: #ffffff !important;
+            text-shadow: 0 2px 14px rgba(0,0,0,0.7);
+        }
+        .leitner-modal-overlay.teacher-mode .exam-card-prompt {
+            font-size: 2.2rem !important;
+            line-height: 1.3 !important;
+            font-weight: 700;
+            color: #ffffff !important;
+            text-shadow: 0 2px 14px rgba(0,0,0,0.7);
+            margin: 12px 0;
         }
         .leitner-modal-overlay.teacher-mode .card-answer-text {
-            font-size: 3.15rem !important; /* ~48pt+ typography */
+            font-size: 2.6rem !important;
+            line-height: 1.3 !important;
+            font-weight: 800;
+            color: #fef08a !important;
+            margin: auto 0;
+            text-shadow: 0 2px 16px rgba(0,0,0,0.7);
+        }
+        .leitner-modal-overlay.teacher-mode .card-main-answer {
+            font-size: 2.6rem !important;
             line-height: 1.25 !important;
             font-weight: 800;
-            color: #fef08a;
-            margin: auto 0;
-            text-shadow: 0 2px 14px rgba(0,0,0,0.6);
+            color: #fef08a !important;
+            text-shadow: 0 2px 16px rgba(0,0,0,0.7);
+            margin: auto 0 14px 0;
+        }
+        .leitner-modal-overlay.teacher-mode .card-explanation-box {
+            font-size: 1.2rem !important;
+            font-style: normal;
+            color: #f1f5f9 !important;
+            line-height: 1.45 !important;
+            max-width: 920px !important;
+            margin: 0 auto;
+            background: rgba(15, 23, 42, 0.95) !important;
+            padding: 14px 20px !important;
+            border-radius: 10px;
+            border: 1.5px solid #334155;
+            border-left: 5px solid #facc15 !important;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+            text-align: left;
+        }
+        .leitner-modal-overlay.teacher-mode .exam-card-model-answer {
+            font-size: 1.35rem !important;
+            line-height: 1.5 !important;
+            font-weight: 600;
+            color: #0f172a !important;
+            background: #ffffff !important;
+            border: 2px solid #facc15 !important;
+            padding: 16px 22px !important;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            margin-bottom: 12px;
         }
         .leitner-modal-overlay.teacher-mode .card-prompt-hint {
             font-size: 1.05rem;
+            color: #cbd5e1 !important;
+        }
+        .leitner-modal-overlay.teacher-mode .exam-facts-hint {
+            font-size: 1.05rem !important;
+            color: #93c5fd !important;
+            background: rgba(15, 23, 42, 0.85) !important;
+            border: 1.5px dashed #38bdf8 !important;
+            padding: 8px 16px !important;
+        }
+        .leitner-modal-overlay.teacher-mode .facts-checklist {
+            font-size: 1.15rem !important;
+            line-height: 1.45 !important;
+            padding: 12px 18px !important;
+        }
+        .leitner-modal-overlay.teacher-mode .historian-box {
+            font-size: 1.15rem !important;
+            line-height: 1.45 !important;
+            padding: 14px 20px !important;
+        }
+        .leitner-modal-overlay.teacher-mode .stem-filter-label {
             color: #94a3b8;
+        }
+        .leitner-modal-overlay.teacher-mode .stem-pill {
+            background: #1e293b;
+            color: #cbd5e1;
+            border-color: #334155;
+        }
+        .leitner-modal-overlay.teacher-mode .stem-pill:hover {
+            background: #334155;
+            color: #ffffff;
+            border-color: #38bdf8;
+        }
+        .leitner-modal-overlay.teacher-mode .stem-pill.active {
+            background: #0284c7;
+            color: #ffffff;
+            border-color: #38bdf8;
         }
         .leitner-modal-overlay.teacher-mode .leitner-action-bar {
             padding: 10px 32px 14px 32px;
@@ -1732,7 +1853,7 @@
             margin-bottom: 8px;
             font-size: 0.95rem;
             display: flex;
-            align-items: center;
+            align-items: baseline;
         }
         .answer-num {
             font-weight: bold;
@@ -1743,45 +1864,50 @@
         .answer-text {
             font-weight: 600;
             display: inline-block;
-            cursor: pointer;
-            user-select: none;
-            position: relative;
-            background: #e2e8f0;
-            color: transparent !important;
-            border-radius: 6px;
-            padding: 3px 12px;
-            min-height: 24px;
-            min-width: 140px;
-            box-sizing: border-box;
-            border: 1px dashed #94a3b8;
-            transition: all 0.15s ease;
+            color: #0f172a;
         }
-        .answer-text::after {
-            content: '🔒 Tap to Reveal';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.76rem;
-            font-weight: 700;
-            color: #475569;
-            letter-spacing: 0.4px;
-        }
-        .answer-text:hover {
-            background: #cbd5e1;
-        }
-        .answer-text.revealed {
-            background: #ffffff;
-            color: #0f172a !important;
-            border: 1px solid #10b981;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-        }
-        .answer-text.revealed::after {
-            display: none !important;
+        @media screen {
+            .answer-text {
+                cursor: pointer;
+                user-select: none;
+                position: relative;
+                background: #e2e8f0;
+                color: transparent !important;
+                border-radius: 6px;
+                padding: 3px 12px;
+                min-height: 24px;
+                min-width: 140px;
+                box-sizing: border-box;
+                border: 1px dashed #94a3b8;
+                transition: all 0.15s ease;
+            }
+            .answer-text::after {
+                content: '🔒 Tap to Reveal';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.76rem;
+                font-weight: 700;
+                color: #475569;
+                letter-spacing: 0.4px;
+            }
+            .answer-text:hover {
+                background: #cbd5e1;
+            }
+            .answer-text.revealed {
+                background: #ffffff;
+                color: #0f172a !important;
+                border: 1px solid #10b981;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            }
+            .answer-text.revealed::after {
+                display: none !important;
+            }
         }
 
         /* Tracker Page */
@@ -1880,6 +2006,49 @@
             margin-top: 30px;
             min-height: 150px;
         }
+
+        /* Print Optimization & Vault Answers Guarantee */
+        @media print {
+            .page-break { page-break-after: always; }
+            body { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .vault-bg { background-color: #fffbc8 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .screen-vault-toolbar,
+            .vault-screen-controls,
+            .leitner-modal-overlay {
+                display: none !important;
+            }
+            .answer-item {
+                margin-bottom: 6px !important;
+                display: flex !important;
+                align-items: baseline !important;
+                page-break-inside: avoid !important;
+            }
+            .answer-num {
+                font-weight: bold !important;
+                width: 32px !important;
+                flex-shrink: 0 !important;
+                color: #1e3a8a !important;
+            }
+            .answer-text {
+                background: transparent !important;
+                color: #000000 !important;
+                border: none !important;
+                padding: 0 !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+                box-shadow: none !important;
+                cursor: default !important;
+                display: inline !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                font-size: 0.95rem !important;
+                font-weight: 600 !important;
+            }
+            .answer-text::after {
+                display: none !important;
+                content: none !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1955,7 +2124,7 @@
 
     <!-- Question Grids -->
     
-    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+    <div class="page grid-page page-break" id="topic-part-0" style="display: flex; flex-direction: column;">
         <h2>Key Topic 4.1: Nazi Policies Towards Women, 1933–1939</h2>
         <table>
             <thead>
@@ -2161,7 +2330,7 @@
         </div>
     </div>
             
-    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+    <div class="page grid-page page-break" id="topic-part-1" style="display: flex; flex-direction: column;">
         <h2>Key Topic 4.1: Nazi Policies Towards Women, 1933–1939</h2>
         <table>
             <thead>
@@ -2367,7 +2536,7 @@
         </div>
     </div>
             
-    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+    <div class="page grid-page page-break" id="topic-part-2" style="display: flex; flex-direction: column;">
         <h2>Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939</h2>
         <table>
             <thead>
@@ -2573,7 +2742,7 @@
         </div>
     </div>
             
-    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+    <div class="page grid-page page-break" id="topic-part-3" style="display: flex; flex-direction: column;">
         <h2>Key Topic 4.3: Employment and Living Standards, 1933–1939</h2>
         <table>
             <thead>
@@ -2779,7 +2948,7 @@
         </div>
     </div>
             
-    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+    <div class="page grid-page page-break" id="topic-part-4" style="display: flex; flex-direction: column;">
         <h2>Key Topic 4.3: Employment and Living Standards, 1933–1939</h2>
         <table>
             <thead>
@@ -2985,7 +3154,7 @@
         </div>
     </div>
             
-    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+    <div class="page grid-page page-break" id="topic-part-5" style="display: flex; flex-direction: column;">
         <h2>Key Topic 4.4: The Persecution of Minorities, 1933–1939</h2>
         <table>
             <thead>
@@ -3191,7 +3360,7 @@
         </div>
     </div>
             
-    <div class="page grid-page page-break" style="display: flex; flex-direction: column;">
+    <div class="page grid-page page-break" id="topic-part-6" style="display: flex; flex-direction: column;">
         <h2>Key Topic 4.4: The Persecution of Minorities, 1933–1939</h2>
         <table>
             <thead>
@@ -4196,8 +4365,6 @@
 </html>
 <script>
   (function() {
-    if (navigator.userAgent.includes("HeadlessChrome") || navigator.userAgent.includes("Puppeteer")) return;
-
     const IS_CME_NEW = false;
     const LEITNER_STORAGE_KEY_RAPID = 'leitner_v1_weimar_nazi_germany_KT4';
     const LEITNER_STORAGE_KEY_EXAM = 'leitner_v1_weimar_nazi_germany_KT4_exam';
@@ -4396,9 +4563,9 @@
           if (card.specific_facts && card.specific_facts.length > 0) {
             factsHint = '<div class="exam-facts-hint">🧠 Precision Facts Required: ' + card.specific_facts.length + ' specific historical details</div>';
           }
-          qText.innerHTML = metaHtml + '<div style="font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: #0f172a;">' + card.q + '</div>' + factsHint;
+          qText.innerHTML = metaHtml + '<div class="exam-card-prompt">' + card.q + '</div>' + factsHint;
         } else {
-          qText.textContent = card.q;
+          qText.innerHTML = '<div class="rapid-card-prompt">' + card.q + '</div>';
         }
       }
 
@@ -4410,7 +4577,7 @@
             html += '<span class="exam-formula-badge" style="background: #fef3c7; color: #92400e; border-color: #fde68a;">📝 Formula: ' + card.formula + (card.formula_name ? ' (' + card.formula_name + ')' : '') + '</span>';
           }
           html += '</div>';
-          html += '<div style="font-size: 1.05rem; font-weight: 600; line-height: 1.45; text-align: left; color: #0f172a; background: #ffffff; padding: 12px 14px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 8px;">' + card.a + '</div>';
+          html += '<div class="exam-card-model-answer">' + card.a + '</div>';
 
           if (card.specific_facts && card.specific_facts.length > 0) {
             html += '<div class="facts-checklist"><strong>✓ Crucial Historical Evidence Checked:</strong><ul>';
@@ -4425,9 +4592,9 @@
           }
           aText.innerHTML = html;
         } else if (card.explanation) {
-          aText.innerHTML = '<div style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.6rem; color: #0f172a;">' + card.a + '</div><div style="font-size: 0.92rem; font-style: italic; color: #475569; line-height: 1.4; max-width: 550px; margin: 0 auto; background: rgba(241, 245, 249, 0.85); padding: 8px 12px; border-radius: 6px; border-left: 3px solid #3b82f6;">💡 ' + card.explanation + '</div>';
+          aText.innerHTML = '<div class="card-main-answer">' + card.a + '</div><div class="card-explanation-box">💡 ' + card.explanation + '</div>';
         } else {
-          aText.textContent = card.a;
+          aText.innerHTML = '<div class="card-main-answer">' + card.a + '</div>';
         }
       }
 
@@ -4740,10 +4907,45 @@
         }
         loadLeitnerProgress();
         updateStreakAndHeatmap();
-        if (window.location.hash.includes('box=1')) {
+
+        // Check if a subtopic or part was requested in the URL hash (e.g. #practice-mode&part=1 or &subtopic=KT1.2)
+        const hash = window.location.hash;
+        const partMatch = hash.match(/(?:part|topic|subtopic)=([^&]+)/i);
+        let appliedPart = false;
+        if (partMatch) {
+          const rawVal = decodeURIComponent(partMatch[1]).trim().toLowerCase();
+          const topicSelect = document.getElementById('leitner-topic-select');
+          if (topicSelect) {
+            let matchedValue = null;
+            if (rawVal === 'all') {
+              matchedValue = 'all';
+            } else if (!isNaN(parseInt(rawVal, 10)) && parseInt(rawVal, 10) < topicSelect.options.length) {
+              matchedValue = parseInt(rawVal, 10).toString();
+            } else {
+              for (let i = 0; i < topicSelect.options.length; i++) {
+                const optText = topicSelect.options[i].textContent.toLowerCase();
+                if (optText.includes(rawVal)) {
+                  matchedValue = topicSelect.options[i].value;
+                  break;
+                }
+              }
+            }
+            if (matchedValue !== null) {
+              topicSelect.value = matchedValue;
+              changeLeitnerTopic(matchedValue);
+              appliedPart = true;
+            }
+          }
+        }
+
+        if (hash.includes('box=1')) {
           filterByLeitnerBox(1);
-        } else {
+        } else if (!appliedPart) {
           renderCurrentCard();
+        }
+
+        if (hash.includes('teacher=true') && !isTeacherMode) {
+          toggleTeacherMode();
         }
       }
     };
@@ -4759,6 +4961,85 @@
           history.replaceState(null, null, ' ');
         }
       }
+    };
+
+    window.openPrintablesModal = function() {
+      const modal = document.getElementById('printables-modal');
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+    };
+
+    window.closePrintablesModal = function() {
+      const modal = document.getElementById('printables-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    };
+
+    window.openPrintPreviewIframe = function(htmlUrl, title, pdfUrl) {
+      const existing = document.getElementById('masteryPrintPreviewModal');
+      if (existing) existing.remove();
+
+      const overlay = document.createElement('div');
+      overlay.id = 'masteryPrintPreviewModal';
+      overlay.className = 'printables-modal-overlay';
+      overlay.style.cssText = 'position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(8px); z-index: 100001; display: flex; justify-content: center; align-items: center;';
+
+      overlay.innerHTML = `
+        <div style="background: #0f172a; border: 1px solid #334155; border-radius: 12px; width: 94vw; max-width: 1350px; height: 92vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7); font-family: 'Outfit', sans-serif;">
+          <div style="background: #1e293b; border-bottom: 1px solid #334155; padding: 14px 22px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <div style="width: 38px; height: 38px; border-radius: 8px; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 1.15rem;">
+                🖨️
+              </div>
+              <div>
+                <span style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; background: rgba(14, 165, 233, 0.2); color: #38bdf8; padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(56, 189, 248, 0.3);">Teacher Planning Hub</span>
+                <h3 style="margin: 2px 0 0 0; color: #f8fafc; font-size: 1.25rem; font-weight: 700;">${title}</h3>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <button id="masteryPrintTriggerBtn" style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: #ffffff; border: none; font-weight: 700; font-size: 0.9rem; padding: 9px 18px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(37,99,235,0.4);">
+                🖨️ Print Class Set
+              </button>
+              <a href="${pdfUrl}" target="_blank" download style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); font-weight: 600; font-size: 0.88rem; padding: 8px 14px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+                📕 High-Res PDF
+              </a>
+              <button id="masteryPrintCloseBtn" style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); color: #94a3b8; font-size: 1.1rem; width: 36px; height: 36px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                ✕
+              </button>
+            </div>
+          </div>
+          <div style="flex: 1; position: relative; background: #334155;">
+            <iframe id="masteryPreviewIframe" src="${htmlUrl}" style="width: 100%; height: 100%; border: none; background: #ffffff;"></iframe>
+          </div>
+          <div style="background: #1e293b; border-top: 1px solid #334155; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; font-size: 0.82rem; color: #94a3b8;">
+            <span>💡 <strong>Teacher Tip:</strong> The print stylesheet automatically handles page sizing (A3 Landscape for Placemats, A4 Portrait for Workouts, A4 Landscape for Trifolds). Ensure <em>"Background graphics"</em> is checked in your browser's print dialog.</span>
+            <span>Press <kbd style="background: #334155; color: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: monospace;">Esc</kbd> to close</span>
+          </div>
+        </div>
+      `;
+
+      document.body.appendChild(overlay);
+
+      const iframe = overlay.querySelector('#masteryPreviewIframe');
+      const close = () => {
+        window.removeEventListener('keydown', handleEsc);
+        overlay.remove();
+      };
+      const handleEsc = (e) => { if (e.key === 'Escape') close(); };
+      window.addEventListener('keydown', handleEsc);
+
+      overlay.querySelector('#masteryPrintCloseBtn').onclick = close;
+      overlay.onclick = (e) => { if (e.target === overlay) close(); };
+      overlay.querySelector('#masteryPrintTriggerBtn').onclick = () => {
+        if (iframe && iframe.contentWindow) {
+          iframe.contentWindow.focus();
+          iframe.contentWindow.print();
+        }
+      };
     };
 
     // Touch Swipe Gestures for Mobile Practice (Left: Box 1, Up: Box 2, Right: Box 3)
@@ -4831,7 +5112,7 @@
       else if (e.key === 'ArrowLeft') prevCard();
     });
 
-    document.addEventListener("DOMContentLoaded", function() {
+    function initLeitner() {
       loadLeitnerProgress();
       updateStreakAndHeatmap();
       if (window.location.hash.startsWith('#practice-mode')) {
@@ -4842,7 +5123,13 @@
           openLeitnerModal();
         }
       });
-    });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener("DOMContentLoaded", initLeitner);
+    } else {
+      initLeitner();
+    }
   })();
 </script>
         
