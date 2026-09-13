@@ -570,7 +570,7 @@ export function renderLesson(lesson) {
     } else if (lesson.id && lesson.id.startsWith('day_')) {
       lessonPrefix = `Day ${lesson.id.split('_')[1]} · Field Guide`;
     } else if (lesson.id === 'hero_crummack') {
-      lessonPrefix = 'Pupil Family Archive · Year 10 (Aby)';
+      lessonPrefix = 'Pupil Family Archive · Year 10 Family';
     } else if (lesson.id && lesson.id.startsWith('hero_lowry_')) {
       lessonPrefix = 'Home Front Memorial · Manor Way Grange';
     } else if (lesson.id && lesson.id.startsWith('hero_')) {
