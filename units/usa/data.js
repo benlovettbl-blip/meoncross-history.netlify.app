@@ -897,6 +897,296 @@ export const usa = {
           },
         ],
       },
+      quiz: [
+        {
+          question:
+            'Which laws enforced racial segregation and discrimination in the Southern states in the 1950s?',
+          q: 'Which laws enforced racial segregation and discrimination in the Southern states in the 1950s?',
+          options: [
+            'Grandfather clauses',
+            'Black Codes',
+            'De jure segregation acts',
+            'Jim Crow laws',
+          ],
+          answer: 'Jim Crow laws',
+          a: 'Jim Crow laws',
+          explanation:
+            'Jim Crow laws legalised segregation in public transport, schools, restaurants, and other public facilities across the South. This institutionalised racial discrimination across the South, forcing Black Americans to endure daily public humiliation and reinforcing their status as second-class citizens.',
+        },
+        {
+          question: 'What does the abbreviation NAACP stand for?',
+          q: 'What does the abbreviation NAACP stand for?',
+          options: [
+            'National Association for the Advancement of Civil Rights',
+            'National Association for the Advancement of Colored People',
+            'National Alliance for the Advocacy of Colored People',
+            'National Coalition for the Advancement of Colored Persons',
+          ],
+          answer: 'National Association for the Advancement of Colored People',
+          a: 'National Association for the Advancement of Colored People',
+          explanation:
+            'Founded in 1909, the NAACP focused on challenging segregation and discrimination through legal action and the courts. This established a highly successful legal framework that systematically challenged and dismantled segregation laws in federal courts.',
+        },
+        {
+          question:
+            'Which civil rights organisation was founded in Chicago in 1942 to champion non-violent direct action?',
+          q: 'Which civil rights organisation was founded in Chicago in 1942 to champion non-violent direct action?',
+          options: [
+            'SNCC (Student Nonviolent Coordinating Committee)',
+            'SCLC (Southern Christian Leadership Conference)',
+            'NAACP (National Association for the Advancement of Colored People)',
+            'CORE (Congress of Racial Equality)',
+          ],
+          answer: 'CORE (Congress of Racial Equality)',
+          a: 'CORE (Congress of Racial Equality)',
+          explanation:
+            'CORE pioneered non-violent tactics, including early sit-ins, and later co-organised the Freedom Rides. This pioneered non-violent direct action tactics, laying the operational foundation for the massive protests of the 1960s.',
+        },
+        {
+          question:
+            'What primary method did the NAACP use in the early 1950s to fight racial inequality?',
+          q: 'What primary method did the NAACP use in the early 1950s to fight racial inequality?',
+          options: [
+            'Non-violent direct action and marches',
+            'Economic boycotts of white businesses',
+            'Armed self-defense and street patrols',
+            'Legal action through the courts',
+          ],
+          answer: 'Legal action through the courts',
+          a: 'Legal action through the courts',
+          explanation:
+            'The NAACP chose to challenge segregation using the judicial system, filing lawsuits to prove that segregated facilities violated the US Constitution. This allowed the movement to secure permanent, legally binding constitutional precedents that Southern state governments could not easily ignore.',
+        },
+        {
+          question:
+            'Why did Black Americans find it almost impossible to register to vote in the South in the early 1950s?',
+          q: 'Why did Black Americans find it almost impossible to register to vote in the South in the early 1950s?',
+          options: [
+            'Due to age restrictions, citizenship requirements, and grandfather clauses',
+            'Due to federal voting laws, state bans, and Supreme Court rulings',
+            'Due to literacy tests, poll taxes, and white intimidation',
+            'Due to strict residency requirements, property ownership tests, and language barriers',
+          ],
+          answer: 'Due to literacy tests, poll taxes, and white intimidation',
+          a: 'Due to literacy tests, poll taxes, and white intimidation',
+          explanation:
+            'Southern states used discriminatory literacy tests, financial poll taxes, and threats of violence or job loss to disenfranchise Black voters. This systematically denied Black communities political power, maintaining white supremacist control of Southern local governments.',
+        },
+        {
+          question:
+            'What was the doctrine established by the 1896 Plessy v. Ferguson Supreme Court ruling?',
+          q: 'What was the doctrine established by the 1896 Plessy v. Ferguson Supreme Court ruling?',
+          options: [
+            'Integration with all deliberate speed',
+            'Separate but equal',
+            'Equal protection under the law',
+            'Freedom of association',
+          ],
+          answer: 'Separate but equal',
+          a: 'Separate but equal',
+          explanation:
+            "Plessy v. Ferguson established the 'separate but equal' doctrine, which legally justified segregation in the South for over fifty years.",
+        },
+        {
+          question:
+            'Why did the Congress of Racial Equality (CORE) choose to use non-violent direct action?',
+          q: 'Why did the Congress of Racial Equality (CORE) choose to use non-violent direct action?',
+          options: [
+            'To raise funds for legal defense fees in landmark Supreme Court cases',
+            'To build political coalitions with Southern Democrats and lobby Congress',
+            'To expose the injustice of segregation to the public and force change',
+            'To protect Black communities from white violence and police brutality',
+          ],
+          answer: 'To expose the injustice of segregation to the public and force change',
+          a: 'To expose the injustice of segregation to the public and force change',
+          explanation:
+            'CORE believed that peaceful boycotts and sit-ins would gain public support, embarrass segregationists, and pressure authorities to act. This strategy aimed to expose the moral injustice of segregation to the national public, forcing the federal government to intervene.',
+        },
+        {
+          question:
+            'Who was the first Black American to head the NAACP Legal Defense and Educational Fund, coordinating early court battles?',
+          q: 'Who was the first Black American to head the NAACP Legal Defense and Educational Fund, coordinating early court battles?',
+          options: [
+            'Charles Hamilton Houston',
+            'W. E. B. Du Bois',
+            'A. Philip Randolph',
+            'Thurgood Marshall',
+          ],
+          answer: 'Thurgood Marshall',
+          a: 'Thurgood Marshall',
+          explanation:
+            'Thurgood Marshall was the chief legal strategist for the NAACP, directing the legal campaign against Jim Crow segregation in public facilities and education. His brilliant litigation strategy led to major Supreme Court victories that legally undermined the entire constitutional basis for segregation.',
+        },
+        {
+          question:
+            'Which US President issued Executive Order 9981 in 1948 to desegregate the United States Armed Forces?',
+          q: 'Which US President issued Executive Order 9981 in 1948 to desegregate the United States Armed Forces?',
+          options: [
+            'Harry S. Truman',
+            'Franklin D. Roosevelt',
+            'Dwight D. Eisenhower',
+            'John F. Kennedy',
+          ],
+          answer: 'Harry S. Truman',
+          a: 'Harry S. Truman',
+          explanation:
+            "President Truman's executive order desegregated the military, representing a landmark early federal action for civil rights. This represented a landmark early federal action for civil rights, demonstrating that the executive branch could bypass Southern congressional obstruction.",
+        },
+        {
+          question:
+            'What constitutional amendment, passed in 1868, contains the Equal Protection Clause used by the NAACP to challenge segregation?',
+          q: 'What constitutional amendment, passed in 1868, contains the Equal Protection Clause used by the NAACP to challenge segregation?',
+          options: ['24th Amendment', '15th Amendment', '13th Amendment', '14th Amendment'],
+          answer: '14th Amendment',
+          a: '14th Amendment',
+          explanation:
+            'The 14th Amendment guarantees equal protection under the law, which the Supreme Court ruled was violated by segregated schools.',
+        },
+        {
+          question:
+            'What term describes the local taxes citizens had to pay in order to vote, used to disenfranchise Black voters?',
+          q: 'What term describes the local taxes citizens had to pay in order to vote, used to disenfranchise Black voters?',
+          options: ['Registration tariffs', 'Property taxes', 'Poll taxes', 'Residency fees'],
+          answer: 'Poll taxes',
+          a: 'Poll taxes',
+          explanation:
+            'Poll taxes disproportionately affected poor Black Americans, preventing them from registering to vote in Southern states.',
+        },
+        {
+          question:
+            'What tests were designed to prevent Black citizens from registering to vote by asking complex questions?',
+          q: 'What tests were designed to prevent Black citizens from registering to vote by asking complex questions?',
+          options: ['Loyalty tests', 'Character tests', 'Literacy tests', 'Residency tests'],
+          answer: 'Literacy tests',
+          a: 'Literacy tests',
+          explanation:
+            'Literacy tests were applied corruptly: Black applicants faced impossible legal questions, while whites were exempted. This corrupt administration of tests effectively blocked the vast majority of Black citizens in the Deep South from registering to vote.',
+        },
+        {
+          question:
+            'What was the main legal method used by the NAACP to challenge segregation in public education?',
+          q: 'What was the main legal method used by the NAACP to challenge segregation in public education?',
+          options: [
+            'Lobbying Southern state legislatures to pass state civil rights laws',
+            'Organising armed self-defense patrols in Southern cities',
+            'Filing lawsuits in federal courts based on the 14th Amendment',
+            'Calling for nationwide industrial strikes by Black workers',
+          ],
+          answer: 'Filing lawsuits in federal courts based on the 14th Amendment',
+          a: 'Filing lawsuits in federal courts based on the 14th Amendment',
+          explanation:
+            'The NAACP Legal Defense Fund focused on systematically filing lawsuits to demonstrate that segregated schools violated the Equal Protection Clause of the 14th Amendment. This method secured legally binding national precedents.',
+        },
+        {
+          question:
+            "Which landmark Supreme Court case struck down the Texas 'white primary' voting restriction in 1944?",
+          q: "Which landmark Supreme Court case struck down the Texas 'white primary' voting restriction in 1944?",
+          options: [
+            'Plessy v. Ferguson',
+            'Smith v. Allwright',
+            'Brown v. Board of Education',
+            'Sweatt v. Painter',
+          ],
+          answer: 'Smith v. Allwright',
+          a: 'Smith v. Allwright',
+          explanation:
+            'The ruling declared that primary elections could not exclude Black voters, a major early legal victory for the NAACP. This ruling established a vital early legal precedent for desegregating the Southern political process and primaries.',
+        },
+        {
+          question:
+            'Why did many Black Americans face severe economic intimidation if they attempted to register to vote in the South?',
+          q: 'Why did many Black Americans face severe economic intimidation if they attempted to register to vote in the South?',
+          options: [
+            'Because federal marshals would refuse to protect them at registration offices',
+            'Because local registrars would publish their names in newspapers to invite violence',
+            'Because white landowners and employers would fire or evict them',
+            'Because state police forces would arrest them on false vagrancy charges',
+          ],
+          answer: 'Because white landowners and employers would fire or evict them',
+          a: 'Because white landowners and employers would fire or evict them',
+          explanation:
+            'White citizens and businesses actively cooperated to punish civil rights activists by firing them from jobs or evicting them from their sharecropping lands. This economic intimidation was highly effective in suppressing grassroots activism by threatening the basic livelihoods of Black families.',
+        },
+        {
+          question:
+            'Which of the following was the primary consequence of Southern states using literacy tests and poll taxes in the early 1950s?',
+          q: 'Which of the following was the primary consequence of Southern states using literacy tests and poll taxes in the early 1950s?',
+          options: [
+            'The systemic disenfranchisement of Black voters, preventing them from electing sympathetic local officials.',
+            'The sudden integration of state legislatures across the Deep South',
+            'The immediate federal abolition of voter registration fees',
+            'The rise of a new wave of Black politicians in local governments',
+          ],
+          answer:
+            'The systemic disenfranchisement of Black voters, preventing them from electing sympathetic local officials.',
+          a: 'The systemic disenfranchisement of Black voters, preventing them from electing sympathetic local officials.',
+          explanation:
+            'Literacy tests and poll taxes were deliberately designed to bypass the 15th Amendment, systematically preventing Black Americans from voting and securing political representation.',
+        },
+        {
+          question:
+            'Which of the following best explains why the NAACP focused heavily on legal challenges through the courts in the early 1950s?',
+          q: 'Which of the following best explains why the NAACP focused heavily on legal challenges through the courts in the early 1950s?',
+          options: [
+            'Because mass direct action was banned by federal law',
+            'Because the President had promised to enforce any Supreme Court ruling immediately',
+            'To establish binding legal precedents that could dismantle segregation nationwide.',
+            'To avoid raising funds from Northern liberal groups',
+          ],
+          answer:
+            'To establish binding legal precedents that could dismantle segregation nationwide.',
+          a: 'To establish binding legal precedents that could dismantle segregation nationwide.',
+          explanation:
+            "The NAACP's legal strategy aimed to challenge the 'separate but equal' doctrine in courts, creating legal precedents (like Brown) that applied to the entire country.",
+        },
+        {
+          question:
+            'Which of the following best describes the significance of the 1896 Plessy v. Ferguson ruling for the lives of Southern Black Americans in the early 1950s?',
+          q: 'Which of the following best describes the significance of the 1896 Plessy v. Ferguson ruling for the lives of Southern Black Americans in the early 1950s?',
+          options: [
+            "It provided legal constitutional justification for segregation under the 'separate but equal' doctrine.",
+            'It forced Southern states to register Black voters on the same terms as white voters.',
+            'It led to immediate federal funding to ensure segregated facilities were truly equal.',
+            'It outlawed de jure segregation in all interstate commerce and public transport.',
+          ],
+          answer:
+            "It provided legal constitutional justification for segregation under the 'separate but equal' doctrine.",
+          a: "It provided legal constitutional justification for segregation under the 'separate but equal' doctrine.",
+          explanation:
+            'By upholding segregation as constitutional, Plessy v. Ferguson allowed Southern states to expand and enforce Jim Crow laws for over half a century, legitimising second-class citizenship.',
+        },
+        {
+          question:
+            'What was a major reason why World War II acted as a catalyst for the Civil Rights Movement in the early 1950s?',
+          q: 'What was a major reason why World War II acted as a catalyst for the Civil Rights Movement in the early 1950s?',
+          options: [
+            'Black veterans returned home determined to fight racism in America after fighting for democracy abroad.',
+            'The US military had completely integrated all training bases in the Deep South during the war.',
+            'Southern governors voluntarily abolished poll taxes to support the war effort.',
+            'Congress had passed the first Voting Rights Act as a reward for wartime service.',
+          ],
+          answer:
+            'Black veterans returned home determined to fight racism in America after fighting for democracy abroad.',
+          a: 'Black veterans returned home determined to fight racism in America after fighting for democracy abroad.',
+          explanation:
+            'Having served in the US military during WWII, many Black veterans rejected returning to the humiliation of Jim Crow segregation and disenfranchisement, accelerating demands for civil rights.',
+        },
+        {
+          question: "What was the 'Double V' campaign popularised during the Second World War?",
+          q: "What was the 'Double V' campaign popularised during the Second World War?",
+          options: [
+            'A legal campaign to win two consecutive Supreme Court civil rights cases.',
+            'A military plan to recruit two segregated Black divisions in Europe.',
+            'A protest demanding double wages for Black war factory workers.',
+            'A campaign for victory over fascism abroad and victory over discrimination at home.',
+          ],
+          answer:
+            'A campaign for victory over fascism abroad and victory over discrimination at home.',
+          a: 'A campaign for victory over fascism abroad and victory over discrimination at home.',
+          explanation:
+            'The Double V campaign was launched by the Pittsburgh Courier in 1942, urging Black Americans to fight for democracy abroad while demanding an end to racial segregation and inequality in the United States.',
+        },
+      ],
     },
     {
       id: 'lesson_1_2',
@@ -1190,6 +1480,288 @@ export const usa = {
           },
         ],
       },
+      quiz: [
+        {
+          question:
+            'Which 1954 Supreme Court case declared segregation in public schools unconstitutional?',
+          q: 'Which 1954 Supreme Court case declared segregation in public schools unconstitutional?',
+          options: [
+            'McLaurin v. Oklahoma State Regents',
+            'Plessy v. Ferguson of New Orleans',
+            'Brown v. Board of Education of Topeka',
+            'Sweatt v. Painter of Austin',
+          ],
+          answer: 'Brown v. Board of Education of Topeka',
+          a: 'Brown v. Board of Education of Topeka',
+          explanation:
+            "The ruling overturned the 1896 'separate but equal' doctrine established by Plessy v. Ferguson, declaring school segregation unlawful.",
+        },
+        {
+          question:
+            'What was the name given to the group of Black students who integrated Central High School in Arkansas in 1957?',
+          q: 'What was the name given to the group of Black students who integrated Central High School in Arkansas in 1957?',
+          options: [
+            'The Little Rock Nine',
+            'The Freedom Riders',
+            'The Greensboro Four',
+            'The Montgomery Boycotters',
+          ],
+          answer: 'The Little Rock Nine',
+          a: 'The Little Rock Nine',
+          explanation:
+            'President Eisenhower had to send federal troops from the 101st Airborne Division to protect the nine students from violent mobs. This intervention proved that the federal government was prepared to deploy military force to uphold civil rights laws against state defiance.',
+        },
+        {
+          question:
+            'Who was the chief justice of the Supreme Court during the Brown v. Board ruling?',
+          q: 'Who was the chief justice of the Supreme Court during the Brown v. Board ruling?',
+          options: ['Fred M. Vinson', 'William O. Douglas', 'Earl Warren', 'Hugo Black'],
+          answer: 'Earl Warren',
+          a: 'Earl Warren',
+          explanation:
+            'Earl Warren wrote the unanimous opinion, declaring that separate educational facilities are inherently unequal.',
+        },
+        {
+          question:
+            'Who was the Governor of Arkansas who defied federal court orders and blocked school integration in 1957?',
+          q: 'Who was the Governor of Arkansas who defied federal court orders and blocked school integration in 1957?',
+          options: ['Allan Shivers', 'Orval Faubus', 'Ross Barnett', 'George Wallace'],
+          answer: 'Orval Faubus',
+          a: 'Orval Faubus',
+          explanation:
+            "Faubus used the state's National Guard to block the Black students from entering Central High School. His open defiance of a federal court order precipitated a major constitutional crisis over state rights versus federal authority.",
+        },
+        {
+          question:
+            'Which elite military division was deployed by President Eisenhower to protect the Little Rock Nine?',
+          q: 'Which elite military division was deployed by President Eisenhower to protect the Little Rock Nine?',
+          options: [
+            '82nd Airborne Division',
+            '101st Airborne Division',
+            '1st Infantry Division',
+            '2nd Armored Division',
+          ],
+          answer: '101st Airborne Division',
+          a: '101st Airborne Division',
+          explanation:
+            'Soldiers guarded the students inside corridors and escorted them to school, asserting federal supremacy over state defiance.',
+        },
+        {
+          question:
+            'Who was the lead NAACP lawyer who successfully argued the Brown case before the Supreme Court?',
+          q: 'Who was the lead NAACP lawyer who successfully argued the Brown case before the Supreme Court?',
+          options: [
+            'James Nabrit',
+            'Archibald Cox',
+            'Charles Hamilton Houston',
+            'Thurgood Marshall',
+          ],
+          answer: 'Thurgood Marshall',
+          a: 'Thurgood Marshall',
+          explanation:
+            "Marshall led the NAACP Legal Defense Fund, using social and legal arguments to dismantle 'separate but equal'. His pioneering social science arguments successfully convinced the Supreme Court that segregated education was psychologically damaging and unconstitutional.",
+        },
+        {
+          question:
+            'Why did President Eisenhower deploy federal troops (101st Airborne Division) to Little Rock in 1957?',
+          q: 'Why did President Eisenhower deploy federal troops (101st Airborne Division) to Little Rock in 1957?',
+          options: [
+            'To arrest state Governor Orval Faubus for treason against the United States',
+            'To protect Black students integrating Central High School from violent white mobs',
+            'To recruit high school students directly into the US military forces',
+            'To close down the school and end all public education in Arkansas',
+          ],
+          answer:
+            'To protect Black students integrating Central High School from violent white mobs',
+          a: 'To protect Black students integrating Central High School from violent white mobs',
+          explanation:
+            'When Governor Faubus defied federal court orders, Eisenhower had to send elite soldiers to protect the Little Rock Nine, demonstrating that the federal government would use force to uphold civil rights laws.',
+        },
+        {
+          question: 'What was the full name of the high school integrated in Little Rock?',
+          q: 'What was the full name of the high school integrated in Little Rock?',
+          options: [
+            'Little Rock High School',
+            'Arkansas State Academy',
+            'Central High School',
+            'Southern Consolidated High',
+          ],
+          answer: 'Central High School',
+          a: 'Central High School',
+          explanation:
+            'Central High School was a prestigious, previously all-white school chosen by the local school board for gradual integration. The integration of this prestigious school became the primary testing ground for federal enforcement of school desegregation.',
+        },
+        {
+          question:
+            'What action did Governor Faubus take in 1958 to prevent further school integration?',
+          q: 'What action did Governor Faubus take in 1958 to prevent further school integration?',
+          options: [
+            'Deported the Little Rock Nine from the state',
+            'Declared martial law and closed the borders',
+            'Closed all Little Rock high schools',
+            'Replaced the school board with segregationists',
+          ],
+          answer: 'Closed all Little Rock high schools',
+          a: 'Closed all Little Rock high schools',
+          explanation:
+            "Rather than integrate, Faubus shut down the city's high schools for the 1958-59 academic year, known as 'The Lost Year'. This desperate measure showed that segregationist politicians were willing to destroy their own public school system to avoid integration.",
+        },
+        {
+          question:
+            'Who was the first Black student to graduate from Little Rock Central High School?',
+          q: 'Who was the first Black student to graduate from Little Rock Central High School?',
+          options: ['Ernest Green', 'Elizabeth Eckford', 'Minnijean Brown', 'Melba Pattillo'],
+          answer: 'Ernest Green',
+          a: 'Ernest Green',
+          explanation:
+            'Green graduated in May 1958. Martin Luther King Jr. attended his graduation ceremony to mark the milestone.',
+        },
+        {
+          question:
+            "What was the name of the 1955 Supreme Court order requiring school desegregation 'with all deliberate speed'?",
+          q: "What was the name of the 1955 Supreme Court order requiring school desegregation 'with all deliberate speed'?",
+          options: [
+            'Ruled that school districts must create separate school systems for Black students',
+            'Decreed that Southern states must desegregate all public transport immediately',
+            'Brown II',
+            'Ordered the immediate arrest of Southern governors who blocked school doors',
+          ],
+          answer: 'Brown II',
+          a: 'Brown II',
+          explanation:
+            'Because Southern states resisted, the Court issued Brown II to enforce implementation, but the wording allowed delays.',
+        },
+        {
+          question:
+            'Which 1950 Supreme Court case ruled that Texas must admit a Black student to its state law school?',
+          q: 'Which 1950 Supreme Court case ruled that Texas must admit a Black student to its state law school?',
+          options: [
+            'Smith v. Allwright',
+            'Plessy v. Ferguson',
+            'Sweatt v. Painter',
+            'Brown v. Board of Education',
+          ],
+          answer: 'Sweatt v. Painter',
+          a: 'Sweatt v. Painter',
+          explanation:
+            'The court ruled the separate law school set up for Black students was physically and academically unequal, paving the way for Brown.',
+        },
+        {
+          question:
+            'Who was the first Black child to integrate an all-white elementary school in the South, in New Orleans in 1960?',
+          q: 'Who was the first Black child to integrate an all-white elementary school in the South, in New Orleans in 1960?',
+          options: ['Ruby Bridges', 'Claudette Colvin', 'Linda Brown', 'Daisy Bates'],
+          answer: 'Ruby Bridges',
+          a: 'Ruby Bridges',
+          explanation:
+            'Bridges had to be escorted to school by federal marshals every day due to fierce white protests and boycotts. Her brave integration of the school highlighted the intense danger and hostility faced by Black children during the integration process.',
+        },
+        {
+          question:
+            'Who was the local leader of the Arkansas NAACP who guided and supported the Little Rock Nine during the crisis?',
+          q: 'Who was the local leader of the Arkansas NAACP who guided and supported the Little Rock Nine during the crisis?',
+          options: ['Daisy Bates', 'Jo Ann Robinson', 'Septima Clark', 'Ella Baker'],
+          answer: 'Daisy Bates',
+          a: 'Daisy Bates',
+          explanation:
+            "Bates' home served as a meeting place and media headquarters for the students, making her a target for white backlash.",
+        },
+        {
+          question:
+            'Why was the 1954 Brown v. Topeka ruling alone insufficient to desegregate Southern schools?',
+          q: 'Why was the 1954 Brown v. Topeka ruling alone insufficient to desegregate Southern schools?',
+          options: [
+            'Because the President refused to support the Supreme Court decision in public',
+            'Because the NAACP lacked the financial resources to bring lawsuits to local courts',
+            'Because the majority of Black parents in the South preferred segregated schools',
+            'Because it lacked a clear enforcement mechanism and timeframe',
+          ],
+          answer: 'Because it lacked a clear enforcement mechanism and timeframe',
+          a: 'Because it lacked a clear enforcement mechanism and timeframe',
+          explanation:
+            "The Supreme Court did not specify a deadline for desegregation, which allowed Southern states to engage in 'Massive Resistance' and delay integration for years.",
+        },
+        {
+          question:
+            'Which of the following best explains why President Eisenhower sent the 101st Airborne Division to Little Rock in 1957?',
+          q: 'Which of the following best explains why President Eisenhower sent the 101st Airborne Division to Little Rock in 1957?',
+          options: [
+            'To assert federal authority and enforce the Supreme Court desegregation order against state-level resistance.',
+            'To implement martial law and shut down the state legislature',
+            'To arrest Governor Orval Faubus for treason',
+            'To support Governor Faubus in maintaining segregation',
+          ],
+          answer:
+            'To assert federal authority and enforce the Supreme Court desegregation order against state-level resistance.',
+          a: 'To assert federal authority and enforce the Supreme Court desegregation order against state-level resistance.',
+          explanation:
+            'Eisenhower was forced to act when Governor Orval Faubus used the National Guard to block desegregation, creating a constitutional crisis between state and federal authority.',
+        },
+        {
+          question:
+            'What was the most significant consequence of the Little Rock Crisis on the civil rights movement?',
+          q: 'What was the most significant consequence of the Little Rock Crisis on the civil rights movement?',
+          options: [
+            'It demonstrated that federal intervention was necessary to overcome active Southern state resistance to integration.',
+            'It forced Governor Faubus to retire from public life',
+            'It caused a split between the SCLC and SNCC over tactics',
+            'It led to the immediate integration of all schools across the Deep South',
+          ],
+          answer:
+            'It demonstrated that federal intervention was necessary to overcome active Southern state resistance to integration.',
+          a: 'It demonstrated that federal intervention was necessary to overcome active Southern state resistance to integration.',
+          explanation:
+            'Little Rock showed that legal rulings alone were not enough; active federal enforcement and military protection were required to overcome segregationist state resistance.',
+        },
+        {
+          question:
+            "What was the main consequence of the Supreme Court's 1955 Brown II ruling, which ordered desegregation to proceed 'with all deliberate speed'?",
+          q: "What was the main consequence of the Supreme Court's 1955 Brown II ruling, which ordered desegregation to proceed 'with all deliberate speed'?",
+          options: [
+            'It allowed Southern authorities to exploit the vague phrasing to delay school integration for years.',
+            'It led to the immediate integration of over 90% of school districts across the Deep South.',
+            'It declared the entire Brown v. Board ruling unconstitutional, restoring Plessy v. Ferguson.',
+            'It authorized federal troops to automatically enforce school integration in all states.',
+          ],
+          answer:
+            'It allowed Southern authorities to exploit the vague phrasing to delay school integration for years.',
+          a: 'It allowed Southern authorities to exploit the vague phrasing to delay school integration for years.',
+          explanation:
+            "By using the ambiguous phrase 'with all deliberate speed' instead of setting a firm deadline, the Supreme Court unintentionally gave Southern school boards the legal leeway to obstruct and delay integration.",
+        },
+        {
+          question:
+            'Which of the following was the primary cause of the Little Rock Central High School crisis in 1957?',
+          q: 'Which of the following was the primary cause of the Little Rock Central High School crisis in 1957?',
+          options: [
+            'President Eisenhower ordered the closure of all public schools in Arkansas.',
+            "Governor Orval Faubus used the state's National Guard to block Black students from entering the school.",
+            'The Supreme Court ruled that public school integration could only occur in Northern states.',
+            'The NAACP withdrew its support for school integration, triggering student riots.',
+          ],
+          answer:
+            "Governor Orval Faubus used the state's National Guard to block Black students from entering the school.",
+          a: "Governor Orval Faubus used the state's National Guard to block Black students from entering the school.",
+          explanation:
+            "In defiance of a federal court order, Governor Faubus deployed the Arkansas National Guard to keep the 'Little Rock Nine' out of Central High, forcing a direct clash between state and federal power.",
+        },
+        {
+          question:
+            'What famous psychological test was presented by Kenneth and Mamie Clark as evidence in Brown v. Board of Education to prove the emotional harm of segregation?',
+          q: 'What famous psychological test was presented by Kenneth and Mamie Clark as evidence in Brown v. Board of Education to prove the emotional harm of segregation?',
+          options: [
+            "The 'doll test', showing Black children preferred white dolls and saw Black dolls as inferior.",
+            'The reading comprehension speed test, comparing segregated school facilities.',
+            'The inkblot Rorschach test, demonstrating fear of Southern law enforcement.',
+            'The Stanford-Binet IQ test, showing equal cognitive ability across races.',
+          ],
+          answer:
+            "The 'doll test', showing Black children preferred white dolls and saw Black dolls as inferior.",
+          a: "The 'doll test', showing Black children preferred white dolls and saw Black dolls as inferior.",
+          explanation:
+            "Psychologists Kenneth and Mamie Clark conducted the 'doll test', showing that racial segregation damaged Black children's self-esteem and internalized feelings of inferiority. Chief Justice Earl Warren cited this psychological harm in the unanimous 1954 ruling.",
+        },
+      ],
     },
     {
       id: 'lesson_1_3',
@@ -1475,6 +2047,268 @@ export const usa = {
           },
         ],
       },
+      quiz: [
+        {
+          question: 'Whose arrest on 1 December 1955 sparked the Montgomery Bus Boycott?',
+          q: 'Whose arrest on 1 December 1955 sparked the Montgomery Bus Boycott?',
+          options: ['Daisy Bates', 'Claudette Colvin', 'Jo Ann Robinson', 'Rosa Parks'],
+          answer: 'Rosa Parks',
+          a: 'Rosa Parks',
+          explanation:
+            'Parks refused to give up her seat on a Montgomery bus to a white passenger, triggering the 381-day protest.',
+        },
+        {
+          question:
+            'Which young minister was chosen to lead the Montgomery Improvement Association (MIA) during the boycott?',
+          q: 'Which young minister was chosen to lead the Montgomery Improvement Association (MIA) during the boycott?',
+          options: [
+            'Roy Wilkins',
+            'Fred Shuttlesworth',
+            'Martin Luther King Jr.',
+            'Ralph Abernathy',
+          ],
+          answer: 'Martin Luther King Jr.',
+          a: 'Martin Luther King Jr.',
+          explanation:
+            'The bus boycott brought Martin Luther King Jr. to national prominence as a primary leader of the civil rights movement.',
+        },
+        {
+          question: 'What does the abbreviation SCLC stand for?',
+          q: 'What does the abbreviation SCLC stand for?',
+          options: [
+            'Southern Christian Leadership Conference',
+            'Student Campaign for Liberation and Equality',
+            'Southern Coalition of Liberated Churches',
+            'State Committee for Law and Civil Rights',
+          ],
+          answer: 'Southern Christian Leadership Conference',
+          a: 'Southern Christian Leadership Conference',
+          explanation:
+            'SCLC was formed in 1957, led by MLK, to coordinate civil rights protests using non-violent resistance through Southern churches. This church-led organization became the central coordinating force for non-violent direct action campaigns across the South.',
+        },
+        {
+          question: 'How many days did the Montgomery Bus Boycott last?',
+          q: 'How many days did the Montgomery Bus Boycott last?',
+          options: ['100 days', '381 days', '250 days', '500 days'],
+          answer: '381 days',
+          a: '381 days',
+          explanation:
+            'The boycott began on 5 December 1955 and ended on 21 December 1956 when desegregation was officially enforced. This prolonged struggle proved the efficiency, discipline, and economic power of organized Black grassroots communities.',
+        },
+        {
+          question:
+            "Who was the Mayor of Montgomery who strongly opposed the boycott and joined the White Citizens' Council?",
+          q: "Who was the Mayor of Montgomery who strongly opposed the boycott and joined the White Citizens' Council?",
+          options: ['Bull Connor', 'George Wallace', 'W. A. Gayle', 'Laurie Pritchett'],
+          answer: 'W. A. Gayle',
+          a: 'W. A. Gayle',
+          explanation:
+            'Mayor Gayle took a hardline stance, refusing to compromise with the MIA and launching a legal crackdown on carpools. His confrontational approach united the Black community and drew wider national attention and sympathy to the boycott.',
+        },
+        {
+          question:
+            'What logistics system did the MIA set up to allow boycotters to travel without using buses?',
+          q: 'What logistics system did the MIA set up to allow boycotters to travel without using buses?',
+          options: [
+            'Free taxi service',
+            'Shuttle train system',
+            'Carpool system',
+            'Bicycle relay system',
+          ],
+          answer: 'Carpool system',
+          a: 'Carpool system',
+          explanation:
+            'The carpool involved over 300 private vehicles and designated pickup stations, running with military-like efficiency. This organized transport network allowed the boycott to survive for over a year despite constant police harassment and legal challenges.',
+        },
+        {
+          question: 'Which 1956 Supreme Court case declared bus segregation unconstitutional?',
+          q: 'Which 1956 Supreme Court case declared bus segregation unconstitutional?',
+          options: [
+            'Browder v. Gayle',
+            'Brown v. Board of Education',
+            'Sweatt v. Painter',
+            'Plessy v. Ferguson',
+          ],
+          answer: 'Browder v. Gayle',
+          a: 'Browder v. Gayle',
+          explanation:
+            'The court ruled that segregated public transit violated the 14th Amendment, forcing Montgomery to desegregate.',
+        },
+        {
+          question:
+            "What percentage of Montgomery's daily bus passengers were Black before the boycott?",
+          q: "What percentage of Montgomery's daily bus passengers were Black before the boycott?",
+          options: ['55%', '40%', '90%', '70%'],
+          answer: '70%',
+          a: '70%',
+          explanation:
+            "Because Black residents made up the vast majority of riders, their boycott devastated the bus company's finances. This severe loss of revenue forced the private bus company to advocate for desegregation to save itself from bankruptcy.",
+        },
+        {
+          question:
+            'Who was the local NAACP president in Montgomery who bailed Rosa Parks out and helped organize the boycott?',
+          q: 'Who was the local NAACP president in Montgomery who bailed Rosa Parks out and helped organize the boycott?',
+          options: ['Fred Shuttlesworth', 'James Farmer', 'E.D. Nixon', 'Ralph Abernathy'],
+          answer: 'E.D. Nixon',
+          a: 'E.D. Nixon',
+          explanation:
+            "Nixon was a union leader who recognized the potential of Parks' arrest to challenge transit segregation laws. His early organizational and financial support was essential to launching the Montgomery Improvement Association.",
+        },
+        {
+          question:
+            'What non-violent strategy did the MIA use to force the bus company to desegregate?',
+          q: 'What non-violent strategy did the MIA use to force the bus company to desegregate?',
+          options: [
+            'Economic boycott',
+            'Armed resistance',
+            'Political lobbying',
+            'Legal petitioning',
+          ],
+          answer: 'Economic boycott',
+          a: 'Economic boycott',
+          explanation:
+            'By depriving the private bus company of fare revenue, the MIA applied financial pressure that eventually forced change.',
+        },
+        {
+          question:
+            'What was the name of the Supreme Court ruling that declared segregation on public buses unconstitutional, ending the Montgomery Bus Boycott?',
+          q: 'What was the name of the Supreme Court ruling that declared segregation on public buses unconstitutional, ending the Montgomery Bus Boycott?',
+          options: [
+            'Brown v. Board of Education',
+            'Plessy v. Ferguson',
+            'Browder v. Gayle',
+            'Smith v. Allwright',
+          ],
+          answer: 'Browder v. Gayle',
+          a: 'Browder v. Gayle',
+          explanation:
+            "The Supreme Court's decision in Browder v. Gayle declared Alabama's state and local laws enforcing bus segregation unconstitutional under the 14th Amendment, marking the legal victory of the boycott.",
+        },
+        {
+          question:
+            'Who was the 15-year-old Black girl arrested in Montgomery for refusing to yield her seat 9 months before Rosa Parks?',
+          q: 'Who was the 15-year-old Black girl arrested in Montgomery for refusing to yield her seat 9 months before Rosa Parks?',
+          options: ['Susie McDonald', 'Mary Louise Smith', 'Claudette Colvin', 'Aurelia Browder'],
+          answer: 'Claudette Colvin',
+          a: 'Claudette Colvin',
+          explanation:
+            'Colvin was arrested in March 1955, but NAACP leaders chose not to use her case due to her pregnancy and youth.',
+        },
+        {
+          question:
+            "Which constitutional amendment's Equal Protection Clause was used to challenge bus segregation in Browder v. Gayle?",
+          q: "Which constitutional amendment's Equal Protection Clause was used to challenge bus segregation in Browder v. Gayle?",
+          options: ['14th Amendment', '19th Amendment', '15th Amendment', '13th Amendment'],
+          answer: '14th Amendment',
+          a: '14th Amendment',
+          explanation:
+            'The 14th Amendment prohibits states from denying any person equal protection of the laws, which segregation violated.',
+        },
+        {
+          question:
+            "Who was the president of the Women's Political Council (WPC) who mimeographed 52,000 leaflets calling for a boycott?",
+          q: "Who was the president of the Women's Political Council (WPC) who mimeographed 52,000 leaflets calling for a boycott?",
+          options: ['Daisy Bates', 'Ella Baker', 'Jo Ann Robinson', 'Rosa Parks'],
+          answer: 'Jo Ann Robinson',
+          a: 'Jo Ann Robinson',
+          explanation:
+            "Robinson and the WPC organized the initial call for the boycott within hours of Rosa Parks' arrest. Her rapid mobilization of the community was the critical catalyst that turned Parks' arrest into a massive, organized boycott.",
+        },
+        {
+          question:
+            "What was the name of the women's political activist group led by Jo Ann Robinson in Montgomery?",
+          q: "What was the name of the women's political activist group led by Jo Ann Robinson in Montgomery?",
+          options: [
+            'Student Nonviolent Coordinating Committee (SNCC)',
+            'Southern Christian Leadership Conference (SCLC)',
+            "Women's Political Council (WPC)",
+            'National Council of Negro Women (NCNW)',
+          ],
+          answer: "Women's Political Council (WPC)",
+          a: "Women's Political Council (WPC)",
+          explanation:
+            'The WPC was a civic group of professional Black women that had complained about bus treatment for years. Their years of political lobbying and research laid the structural foundation for the Montgomery bus boycott.',
+        },
+        {
+          question:
+            'Which of the following was the primary reason for the success of the Montgomery Bus Boycott?',
+          q: 'Which of the following was the primary reason for the success of the Montgomery Bus Boycott?',
+          options: [
+            'The immediate support of the Montgomery city council and mayor',
+            'The lack of white backlash or opposition in the city',
+            'The federal deployment of troops to protect Black bus riders',
+            'The high level of community organization and the economic pressure of sustained Black boycotts.',
+          ],
+          answer:
+            'The high level of community organization and the economic pressure of sustained Black boycotts.',
+          a: 'The high level of community organization and the economic pressure of sustained Black boycotts.',
+          explanation:
+            'The boycott succeeded because the Black community coordinated alternative transport (carpools) and stood united for 381 days, causing massive financial losses to the bus company.',
+        },
+        {
+          question:
+            'What was the most significant political consequence of the Montgomery Bus Boycott?',
+          q: 'What was the most significant political consequence of the Montgomery Bus Boycott?',
+          options: [
+            'It established non-violent direct action as a viable national tactic and elevated MLK to national leadership.',
+            'It forced the immediate passage of the Civil Rights Act of 1957',
+            'It led directly to the formation of the Black Panther Party',
+            'It completely ended segregation on all Southern public transport systems',
+          ],
+          answer:
+            'It established non-violent direct action as a viable national tactic and elevated MLK to national leadership.',
+          a: 'It established non-violent direct action as a viable national tactic and elevated MLK to national leadership.',
+          explanation:
+            'The success of the boycott showed the power of non-violent mass protest and launched the Southern Christian Leadership Conference (SCLC) led by Martin Luther King Jr.',
+        },
+        {
+          question:
+            'Which of the following best describes the significance of the Montgomery Improvement Association (MIA) in the boycott?',
+          q: 'Which of the following best describes the significance of the Montgomery Improvement Association (MIA) in the boycott?',
+          options: [
+            'It coordinated community resources, carpools, and legal representation to sustain the long-term protest.',
+            'It was the first armed civil rights organization to conduct armed security patrols.',
+            'It was a federal agency established by President Eisenhower to investigate voter fraud.',
+            'It was the legal team that defended Rosa Parks in her criminal trial in the Supreme Court.',
+          ],
+          answer:
+            'It coordinated community resources, carpools, and legal representation to sustain the long-term protest.',
+          a: 'It coordinated community resources, carpools, and legal representation to sustain the long-term protest.',
+          explanation:
+            "Under Martin Luther King Jr.'s leadership, the MIA brought together local church networks and activist groups to organize carpools, collect donations, and coordinate legal strategy, making the 381-day protest logistically possible.",
+        },
+        {
+          question:
+            "What was the significance of the Supreme Court's decision in Browder v. Gayle for the Montgomery Bus Boycott?",
+          q: "What was the significance of the Supreme Court's decision in Browder v. Gayle for the Montgomery Bus Boycott?",
+          options: [
+            'It forced the immediate closure of all public transport systems in Alabama.',
+            'It declared that all economic boycotts of private companies were illegal.',
+            "It provided the legal victory that forced Montgomery's buses to integrate, ending the boycott.",
+            'It resulted in Rosa Parks being elected as the mayor of Montgomery.',
+          ],
+          answer:
+            "It provided the legal victory that forced Montgomery's buses to integrate, ending the boycott.",
+          a: "It provided the legal victory that forced Montgomery's buses to integrate, ending the boycott.",
+          explanation:
+            "Although the economic boycott applied massive pressure, it was the Supreme Court's ruling in Browder v. Gayle (affirming that segregated buses violated the 14th Amendment) that provided the binding legal solution to end the boycott.",
+        },
+        {
+          question:
+            'On what date in December 1956 did Black residents of Montgomery officially end their boycott and return to integrated buses?',
+          q: 'On what date in December 1956 did Black residents of Montgomery officially end their boycott and return to integrated buses?',
+          options: [
+            "1 December 1955, immediately following Rosa Parks' arrest.",
+            '21 December 1956, after the Supreme Court injunction took legal effect.',
+            '28 August 1963, after the March on Washington.',
+            '4 July 1957, following the passage of the Civil Rights Act.',
+          ],
+          answer: '21 December 1956, after the Supreme Court injunction took legal effect.',
+          a: '21 December 1956, after the Supreme Court injunction took legal effect.',
+          explanation:
+            "Following the Supreme Court's ruling in Browder v. Gayle, the official federal mandate arrived in Montgomery on 20 December 1956. The next morning, 21 December 1956, Martin Luther King Jr., Ralph Abernathy, and E.D. Nixon boarded the first integrated city bus, bringing the 381-day boycott to a triumphant conclusion.",
+        },
+      ],
     },
     {
       id: 'lesson_1_4',
@@ -1747,6 +2581,284 @@ export const usa = {
           },
         ],
       },
+      quiz: [
+        {
+          question:
+            'What document signed by over 100 Southern congressmen in 1956 urged defiance of school integration?',
+          q: 'What document signed by over 100 Southern congressmen in 1956 urged defiance of school integration?',
+          options: [
+            'The Southern Manifesto',
+            'The Southern Segregation Accord',
+            'The Dixiecrats Manifesto',
+            'The Declaration of Constitutional Defiance',
+          ],
+          answer: 'The Southern Manifesto',
+          a: 'The Southern Manifesto',
+          explanation:
+            'The Manifesto declared the Brown ruling a clear abuse of judicial power and encouraged states to resist it. This document united Southern politicians in their opposition to school integration, encouraging local school boards to delay desegregation indefinitely.',
+        },
+        {
+          question:
+            'Which segregationist group formed in Mississippi in 1954 to apply economic intimidation against civil rights?',
+          q: 'Which segregationist group formed in Mississippi in 1954 to apply economic intimidation against civil rights?',
+          options: [
+            'Anti-Integration Leagues',
+            "White Citizens' Councils",
+            'Patriots for Segregation Guilds',
+            'Southern Rights Associations',
+          ],
+          answer: "White Citizens' Councils",
+          a: "White Citizens' Councils",
+          explanation:
+            'Councils used economic pressure (e.g. firing Black workers, evicting tenants) to prevent challenges to segregation.',
+        },
+        {
+          question:
+            'Which white supremacist organization saw a major resurgence in the mid-1950s, using violence and bombings?',
+          q: 'Which white supremacist organization saw a major resurgence in the mid-1950s, using violence and bombings?',
+          options: [
+            'The Knights of the White Camelia',
+            'The White League',
+            'Ku Klux Klan',
+            'The Southern Knights Guard',
+          ],
+          answer: 'Ku Klux Klan',
+          a: 'Ku Klux Klan',
+          explanation:
+            'The KKK terrorized civil rights workers and Black families with bombings, beatings, and cross-burnings. Their campaign of terror aimed to maintain white supremacy and prevent civil rights reforms through violence and intimidation.',
+        },
+        {
+          question:
+            'Which Southern Senator conducted a record-breaking 24-hour filibuster against the 1957 Civil Rights Act?',
+          q: 'Which Southern Senator conducted a record-breaking 24-hour filibuster against the 1957 Civil Rights Act?',
+          options: ['Strom Thurmond', 'Richard Russell', 'James Eastland', 'Harry F. Byrd'],
+          answer: 'Strom Thurmond',
+          a: 'Strom Thurmond',
+          explanation:
+            'Thurmond spoke for over 24 hours to block the bill, representing the deep political opposition in Congress. His record-setting filibuster highlighted the intense legislative obstruction faced by civil rights bills in the Senate.',
+        },
+        {
+          question:
+            'What was the main purpose of the Southern Manifesto, signed by over 100 Southern politicians in 1956?',
+          q: 'What was the main purpose of the Southern Manifesto, signed by over 100 Southern politicians in 1956?',
+          options: [
+            'To support the civil rights movement and demand federal voting protections',
+            'To oppose school integration and accuse the Supreme Court of abusing its power',
+            'To demand the deployment of federal troops to protect state rights',
+            'To lobby for federal funding for Southern public transport and highways',
+          ],
+          answer: 'To oppose school integration and accuse the Supreme Court of abusing its power',
+          a: 'To oppose school integration and accuse the Supreme Court of abusing its power',
+          explanation:
+            'The Southern Manifesto was signed by 19 Senators and 82 Representatives, pledging to use all lawful means to reverse the Brown v. Board ruling and restore segregation, uniting Southern political resistance.',
+        },
+        {
+          question: 'Which US president signed the Civil Rights Act of 1957 into law?',
+          q: 'Which US president signed the Civil Rights Act of 1957 into law?',
+          options: [
+            'Dwight D. Eisenhower',
+            'Harry S. Truman',
+            'John F. Kennedy',
+            'Lyndon B. Johnson',
+          ],
+          answer: 'Dwight D. Eisenhower',
+          a: 'Dwight D. Eisenhower',
+          explanation:
+            'It was the first civil rights legislation passed since Reconstruction, though it was heavily weakened by Southern amendments. This represented a symbolic breakthrough, showing the first federal civil rights legislation passed since Reconstruction.',
+        },
+        {
+          question:
+            'What parliamentary delaying tactic did Southern senators (Dixiecrats) use to block civil rights bills?',
+          q: 'What parliamentary delaying tactic did Southern senators (Dixiecrats) use to block civil rights bills?',
+          options: ['Gerrymandering', 'Cloture petition', 'Filibuster', 'Pork barreling'],
+          answer: 'Filibuster',
+          a: 'Filibuster',
+          explanation:
+            'Senators would speak indefinitely to prevent a vote on civil rights bills, requiring a supermajority to stop them. This tactic allowed a minority of Southern segregationist senators to successfully block or dilute civil rights bills for years.',
+        },
+        {
+          question: 'What was the primary focus of the Civil Rights Act of 1957?',
+          q: 'What was the primary focus of the Civil Rights Act of 1957?',
+          options: [
+            'Voting rights',
+            'Public transport segregation',
+            'Employment discrimination',
+            'School integration',
+          ],
+          answer: 'Voting rights',
+          a: 'Voting rights',
+          explanation:
+            'The act created the Civil Rights Commission and allowed the Justice Department to seek injunctions against voter discrimination. This legislation established the federal Civil Rights Commission and allowed the Justice Department to seek injunctions against voter discrimination.',
+        },
+        {
+          question: 'What was the main purpose of the Civil Rights Act of 1960?',
+          q: 'What was the main purpose of the Civil Rights Act of 1960?',
+          options: [
+            'Federal inspection of local voter registration records',
+            'Federal funding for integrated schools in the South',
+            'The total desegregation of all public transport facilities',
+            'Protection of civil rights activists against white bombings',
+          ],
+          answer: 'Federal inspection of local voter registration records',
+          a: 'Federal inspection of local voter registration records',
+          explanation:
+            'The act introduced federal penalties for obstructing voter registration and allowed federal judges to appoint voter referees. This act introduced federal penalties for obstructing registration, expanding federal judicial oversight of Southern elections.',
+        },
+        {
+          question: 'How many Southern congressmen signed the Southern Manifesto in 1956?',
+          q: 'How many Southern congressmen signed the Southern Manifesto in 1956?',
+          options: ['50 congressmen', '101 congressmen', '75 congressmen', '120 congressmen'],
+          answer: '101 congressmen',
+          a: '101 congressmen',
+          explanation:
+            'A total of 101 senators and representatives signed the document, showing the unity of the segregationist political bloc. This unified political opposition showed that Southern representatives would fight civil rights reforms as a collective bloc.',
+        },
+        {
+          question:
+            "What was the exact length of Strom Thurmond's record-breaking solo filibuster against the 1957 Civil Rights Act?",
+          q: "What was the exact length of Strom Thurmond's record-breaking solo filibuster against the 1957 Civil Rights Act?",
+          options: [
+            '18 hours and 45 minutes',
+            '30 hours and 12 minutes',
+            '12 hours and 30 minutes',
+            '24 hours and 18 minutes',
+          ],
+          answer: '24 hours and 18 minutes',
+          a: '24 hours and 18 minutes',
+          explanation:
+            "Thurmond read election laws, Washington's farewell address, and recipe books to sustain his record-setting speech. This record-setting filibuster demonstrated the extreme lengths Southern politicians would go to preserve segregation.",
+        },
+        {
+          question:
+            'Why did the murder of Emmett Till in 1955 become a major catalyst for the civil rights movement?',
+          q: 'Why did the murder of Emmett Till in 1955 become a major catalyst for the civil rights movement?',
+          options: [
+            'Because it forced the state government to arrest the killers immediately',
+            'Because it convinced Southern politicians to support the Civil Rights Bill',
+            'Because his mother held an open-casket funeral to expose the brutality of racism',
+            'Because it led to an immediate federal investigation into Southern lynching',
+          ],
+          answer:
+            'Because his mother held an open-casket funeral to expose the brutality of racism',
+          a: 'Because his mother held an open-casket funeral to expose the brutality of racism',
+          explanation:
+            "Mamie Till-Mobley wanted the world to see what was done to her son. The published photographs of Emmett Till's mutilated body shocked the nation and mobilized millions.",
+        },
+        {
+          question:
+            'What term describes the conservative Southern Democrats who organized congressional resistance to civil rights?',
+          q: 'What term describes the conservative Southern Democrats who organized congressional resistance to civil rights?',
+          options: ['Dixiecrats', 'Redeemers', 'Populists', 'Whigs'],
+          answer: 'Dixiecrats',
+          a: 'Dixiecrats',
+          explanation:
+            'Dixiecrats controlled key committee chairmanships in Congress, allowing them to pigeonhole or weaken civil rights bills.',
+        },
+        {
+          question:
+            "What economic warfare method did the White Citizens' Councils use to punish civil rights activists?",
+          q: "What economic warfare method did the White Citizens' Councils use to punish civil rights activists?",
+          options: [
+            'Physical assaults and house burnings of active organizers',
+            'Voter registration purge and literacy re-testing',
+            'Job dismissals and mortgage foreclosures',
+            'State prosecutions and false tax evasion charges',
+          ],
+          answer: 'Job dismissals and mortgage foreclosures',
+          a: 'Job dismissals and mortgage foreclosures',
+          explanation:
+            'By firing activists, denying bank loans, and cancelling insurance policies, the Councils financially ruined integrationists. This economic retaliation was highly effective in suppressing grassroots activism by financially ruining integrationists.',
+        },
+        {
+          question:
+            'Who was the 14-year-old Black boy from Chicago brutally lynched in Mississippi in August 1955 for allegedly whistling at a white woman?',
+          q: 'Who was the 14-year-old Black boy from Chicago brutally lynched in Mississippi in August 1955 for allegedly whistling at a white woman?',
+          options: ['Emmett Till', 'James Chaney', 'Medgar Evers', 'Jimmie Lee Jackson'],
+          answer: 'Emmett Till',
+          a: 'Emmett Till',
+          explanation:
+            "Till's mother held an open-casket funeral in Chicago, exposing the extreme brutality of Southern racism to the world. The international outrage over his brutal murder and the acquittal of his killers galvanized the modern civil rights movement.",
+        },
+        {
+          question:
+            'Which of the following explains why the Civil Rights Act of 1957 was considered weak by civil rights leaders?',
+          q: 'Which of the following explains why the Civil Rights Act of 1957 was considered weak by civil rights leaders?',
+          options: [
+            'It only applied to Northern states, leaving the South untouched',
+            'It was declared unconstitutional by the Supreme Court shortly after passage',
+            'It lacked robust enforcement mechanisms to verify voter registration and protect voters on the ground.',
+            'It did not outlaw desegregation in housing',
+          ],
+          answer:
+            'It lacked robust enforcement mechanisms to verify voter registration and protect voters on the ground.',
+          a: 'It lacked robust enforcement mechanisms to verify voter registration and protect voters on the ground.',
+          explanation:
+            'Although it established the Civil Rights Commission, the Act relied on civil cases rather than federal enforcement, which did not stop Southern voter discrimination.',
+        },
+        {
+          question:
+            'What was the main significance of the formation of the Southern Christian Leadership Conference (SCLC) in 1957?',
+          q: 'What was the main significance of the formation of the Southern Christian Leadership Conference (SCLC) in 1957?',
+          options: [
+            'It was the first student-led civil rights organization',
+            'It focused entirely on legal court challenges, bypassing direct action',
+            "It shifted the movement's focus away from non-violence to armed self-defense",
+            'It provided a coordinated, church-backed network for organizing non-violent protest across the South.',
+          ],
+          answer:
+            'It provided a coordinated, church-backed network for organizing non-violent protest across the South.',
+          a: 'It provided a coordinated, church-backed network for organizing non-violent protest across the South.',
+          explanation:
+            'The SCLC allowed Southern Black churches to pool resources and moral authority, creating a resilient network that could withstand segregationist intimidation.',
+        },
+        {
+          question:
+            "Why was Mamie Till-Mobley's decision to hold an open-casket funeral for her son Emmett Till in 1955 historically significant?",
+          q: "Why was Mamie Till-Mobley's decision to hold an open-casket funeral for her son Emmett Till in 1955 historically significant?",
+          options: [
+            'It led to an immediate federal ban on all funeral fees in the South.',
+            'It convinced Southern politicians to sign the Southern Manifesto.',
+            'It forced the Mississippi jury to immediately convict the murderers.',
+            'It exposed the brutal reality of Southern white supremacy and galvanized national support for civil rights.',
+          ],
+          answer:
+            'It exposed the brutal reality of Southern white supremacy and galvanized national support for civil rights.',
+          a: 'It exposed the brutal reality of Southern white supremacy and galvanized national support for civil rights.',
+          explanation:
+            'By choosing an open casket, Mamie Till-Mobley forced the national and international media to see the mutilated body of her son. The visual evidence of Southern racial violence shocked the nation, inspiring many to join the civil rights struggle.',
+        },
+        {
+          question:
+            "Which of the following was the main cause for the creation of White Citizens' Councils across the South after 1954?",
+          q: "Which of the following was the main cause for the creation of White Citizens' Councils across the South after 1954?",
+          options: [
+            'To help Black students integrate into all-white universities.',
+            "To organize economic and political resistance to the Supreme Court's school desegregation rulings.",
+            'To recruit Northern volunteers to build private integrated schools.',
+            "To support President Eisenhower's federal civil rights legislation.",
+          ],
+          answer:
+            "To organize economic and political resistance to the Supreme Court's school desegregation rulings.",
+          a: "To organize economic and political resistance to the Supreme Court's school desegregation rulings.",
+          explanation:
+            "White Citizens' Councils were formed by middle-class whites to use economic pressure (such as firing or evicting activists) and political lobbying to delay and obstruct school integration ordered by Brown v. Board.",
+        },
+        {
+          question:
+            "In what Mississippi town was the murder trial of Emmett Till's killers held in September 1955, resulting in an all-white jury acquitting them in just over an hour?",
+          q: "In what Mississippi town was the murder trial of Emmett Till's killers held in September 1955, resulting in an all-white jury acquitting them in just over an hour?",
+          options: [
+            'Little Rock, Arkansas.',
+            'Montgomery, Alabama.',
+            'Greensboro, North Carolina.',
+            'Sumner, Mississippi.',
+          ],
+          answer: 'Sumner, Mississippi.',
+          a: 'Sumner, Mississippi.',
+          explanation:
+            "The murder trial of J.W. Milam and Roy Bryant took place in Sumner, Mississippi. Despite eyewitness testimony from Emmett Till's great-uncle Moses Wright, the all-white male jury took just 67 minutes to find the killers not guilty. Months later, the men admitted their guilt in a paid Look magazine interview.",
+        },
+      ],
     },
     {
       id: 'lesson_2_1',
@@ -2097,6 +3209,263 @@ export const usa = {
           },
         ],
       },
+      quiz: [
+        {
+          question: 'In which city did the famous 1960 lunch counter sit-ins begin?',
+          q: 'In which city did the famous 1960 lunch counter sit-ins begin?',
+          options: [
+            'Atlanta, Georgia',
+            'Birmingham, Alabama',
+            'Nashville, Tennessee',
+            'Greensboro, North Carolina',
+          ],
+          answer: 'Greensboro, North Carolina',
+          a: 'Greensboro, North Carolina',
+          explanation:
+            "Four Black college students sat at a Woolworth's lunch counter, launching a wave of sit-ins across the South. This launched a massive wave of student-led lunch counter protests across the South, demonstrating the power of youth-driven direct action.",
+        },
+        {
+          question: 'What does the abbreviation SNCC stand for?',
+          q: 'What does the abbreviation SNCC stand for?',
+          options: [
+            'Southern Negro Youth Congress',
+            'Student Nonviolent Coordinating Committee',
+            'State Network for Civil Reform',
+            'Student Nonviolent Coalition Committee',
+          ],
+          answer: 'Student Nonviolent Coordinating Committee',
+          a: 'Student Nonviolent Coordinating Committee',
+          explanation:
+            'Formed in 1960, SNCC allowed younger student activists to organize sit-ins and voter registration drives. This organization gave young people a primary voice in the civil rights movement, focusing on high-risk grassroots direct action.',
+        },
+        {
+          question:
+            'Which tactic was used by activists in 1961 to test the desegregation of interstate bus terminals?',
+          q: 'Which tactic was used by activists in 1961 to test the desegregation of interstate bus terminals?',
+          options: ['Sit-ins', 'Selma Marches', 'Freedom Rides', 'Freedom Summer'],
+          answer: 'Freedom Rides',
+          a: 'Freedom Rides',
+          explanation:
+            'Freedom Riders rode buses into the Deep South, encountering severe violence that forced federal intervention. The riders faced extreme violence and firebombings, forcing the federal government to actively ban transit terminal segregation.',
+        },
+        {
+          question: 'What was the primary goal of the Freedom Riders in 1961?',
+          q: 'What was the primary goal of the Freedom Riders in 1961?',
+          options: [
+            'To lobby Southern governors to pass state civil rights laws',
+            'To test whether Southern interstate bus terminals were actually integrated',
+            'To raise money for legal defense funds for Martin Luther King Jr.',
+            'To run voter registration workshops in rural Mississippi',
+          ],
+          answer: 'To test whether Southern interstate bus terminals were actually integrated',
+          a: 'To test whether Southern interstate bus terminals were actually integrated',
+          explanation:
+            'Starting in May 1961, the Freedom Riders rode buses into the Deep South to test if local authorities were complying with federal rulings that banned segregation in interstate bus terminals.',
+        },
+        {
+          question: 'Which civil rights organization organized the first Freedom Rides in 1961?',
+          q: 'Which civil rights organization organized the first Freedom Rides in 1961?',
+          options: [
+            'NAACP (National Association for the Advancement of Colored People)',
+            'SCLC (Southern Christian Leadership Conference)',
+            'CORE (Congress of Racial Equality)',
+            'SNCC (Student Nonviolent Coordinating Committee)',
+          ],
+          answer: 'CORE (Congress of Racial Equality)',
+          a: 'CORE (Congress of Racial Equality)',
+          explanation:
+            'CORE planned the original route under director James Farmer, though SNCC students later resumed the rides. Their collaboration showed the growing unity and coordination between national civil rights organizations and young student activists.',
+        },
+        {
+          question:
+            'Who was the first Black student to register and enroll at the University of Mississippi in 1962?',
+          q: 'Who was the first Black student to register and enroll at the University of Mississippi in 1962?',
+          options: ['James Meredith', 'Harvey Gantt', 'Hamilton Holmes', 'James Hood'],
+          answer: 'James Meredith',
+          a: 'James Meredith',
+          explanation:
+            "Meredith's enrollment led to violent riots that required 30,000 federal troops to secure his safety. His enrollment forced the federal government to use military force to integrate Southern universities, demonstrating federal supremacy.",
+        },
+        {
+          question:
+            'Who was the president of the United States during the Freedom Rides and the James Meredith crisis?',
+          q: 'Who was the president of the United States during the Freedom Rides and the James Meredith crisis?',
+          options: [
+            'Dwight D. Eisenhower',
+            'Richard Nixon',
+            'John F. Kennedy',
+            'Lyndon B. Johnson',
+          ],
+          answer: 'John F. Kennedy',
+          a: 'John F. Kennedy',
+          explanation:
+            'Kennedy was forced to send federal marshals and troops to protect activists and enforce court integration orders. His administration was forced to send federal marshals and troops, marking a growing federal commitment to enforcing civil rights laws.',
+        },
+        {
+          question:
+            'Who was the Attorney General who sent federal marshals to protect James Meredith in Mississippi?',
+          q: 'Who was the Attorney General who sent federal marshals to protect James Meredith in Mississippi?',
+          options: ['J. Edgar Hoover', 'Archibald Cox', 'Nicholas Katzenbach', 'Robert Kennedy'],
+          answer: 'Robert Kennedy',
+          a: 'Robert Kennedy',
+          explanation:
+            "Robert Kennedy managed the federal response, ordering marshals and military police to secure the campus. His direct intervention demonstrated the administration's determination to uphold federal law against state defiance.",
+        },
+        {
+          question:
+            'In which Alabama city was a Freedom Riders bus firebombed by a white mob in May 1961?',
+          q: 'In which Alabama city was a Freedom Riders bus firebombed by a white mob in May 1961?',
+          options: ['Anniston', 'Jackson', 'Montgomery', 'Birmingham'],
+          answer: 'Anniston',
+          a: 'Anniston',
+          explanation:
+            'A mob slashed the bus tires, chased it out of town, firebombed the vehicle, and attacked the escaping passengers. The televised images of this firebombing shocked the nation, exposing the extreme violence of segregationist mobs.',
+        },
+        {
+          question:
+            "Which Georgia city was the target of SNCC's first major, though unsuccessful, desegregation campaign in 1961-62?",
+          q: "Which Georgia city was the target of SNCC's first major, though unsuccessful, desegregation campaign in 1961-62?",
+          options: ['Albany', 'Macon', 'Augusta', 'Savannah'],
+          answer: 'Albany',
+          a: 'Albany',
+          explanation:
+            'The Albany Movement failed because Police Chief Pritchett used non-violent arrests and avoided media-sensational violence. This campaign taught civil rights leaders that non-violent protest was only effective when it provoked visible, public opposition.',
+        },
+        {
+          question:
+            'What term describes the integrated groups of white and Black activists who rode interstate buses together in 1961?',
+          q: 'What term describes the integrated groups of white and Black activists who rode interstate buses together in 1961?',
+          options: [
+            'Interstate Desegregationists',
+            'CORE Volunteers',
+            'Freedom Riders',
+            'Freedom Marchers',
+          ],
+          answer: 'Freedom Riders',
+          a: 'Freedom Riders',
+          explanation:
+            "Freedom Riders challenged the non-enforcement of the Supreme Court's Boynton v. Virginia ruling.",
+        },
+        {
+          question:
+            'Who was the National Director of CORE who designed and launched the first Freedom Rides?',
+          q: 'Who was the National Director of CORE who designed and launched the first Freedom Rides?',
+          options: ['Bayard Rustin', 'Roy Wilkins', 'James Farmer', 'John Lewis'],
+          answer: 'James Farmer',
+          a: 'James Farmer',
+          explanation:
+            'Farmer organized the rides to provoke federal enforcement of Supreme Court desegregation rulings. His tactical leadership was critical to utilizing federal desegregation rulings to challenge Southern state laws directly.',
+        },
+        {
+          question:
+            'Why did the Albany Movement (1961–62) fail to achieve its desegregation goals?',
+          q: 'Why did the Albany Movement (1961–62) fail to achieve its desegregation goals?',
+          options: [
+            'Because the organizers ran out of funds to support arrested activists',
+            'Because the local Black community refused to support the protests',
+            'Because the police chief used non-violent arrests and avoided media attention',
+            'Because the federal government refused to send marshals to assist',
+          ],
+          answer: 'Because the police chief used non-violent arrests and avoided media attention',
+          a: 'Because the police chief used non-violent arrests and avoided media attention',
+          explanation:
+            'Police Chief Laurie Pritchett instructed his officers to treat protesters peacefully in public and arrested them without violence, preventing the media outrage that civil rights campaigns relied on.',
+        },
+        {
+          question:
+            'Who was the segregationist Governor of Mississippi who actively defied federal orders to block James Meredith from enrolling in 1962?',
+          q: 'Who was the segregationist Governor of Mississippi who actively defied federal orders to block James Meredith from enrolling in 1962?',
+          options: ['George Wallace', 'Ross Barnett', 'Paul B. Johnson Jr.', 'Orval Faubus'],
+          answer: 'Ross Barnett',
+          a: 'Ross Barnett',
+          explanation:
+            'Governor Ross Barnett physically blocked Meredith from entering the university doors, defying federal integration mandates and prompting a deployment of federal marshals. His actions prompted a direct confrontation between the state of Mississippi and federal authority, forcing Kennedy to deploy troops.',
+        },
+        {
+          question:
+            'Which prominent civil rights adviser and SCLC executive secretary helped student activists organize SNCC in April 1960?',
+          q: 'Which prominent civil rights adviser and SCLC executive secretary helped student activists organize SNCC in April 1960?',
+          options: ['Daisy Bates', 'Ella Baker', 'Jo Ann Robinson', 'Septima Clark'],
+          answer: 'Ella Baker',
+          a: 'Ella Baker',
+          explanation:
+            "Baker encouraged students to form their own independent organization rather than join MLK's SCLC. Her guidance helped SNCC remain independent, preserving its focus on democratic, grassroots community organizing.",
+        },
+        {
+          question:
+            'Which of the following best explains why the Greensboro Sit-ins of 1960 succeeded in desegregating lunch counters?',
+          q: 'Which of the following best explains why the Greensboro Sit-ins of 1960 succeeded in desegregating lunch counters?',
+          options: [
+            'The lack of white opposition or protest in the area',
+            'The immediate intervention of federal marshals to desegregate private businesses',
+            'The economic impact of the boycotts and the national media coverage of peaceful protestors facing violence.',
+            'The swift passage of local desegregation laws by North Carolina',
+          ],
+          answer:
+            'The economic impact of the boycotts and the national media coverage of peaceful protestors facing violence.',
+          a: 'The economic impact of the boycotts and the national media coverage of peaceful protestors facing violence.',
+          explanation:
+            "The combination of economic pressure on Woolworth's and the shocking media coverage of well-dressed students being abused forced business owners to desegregate.",
+        },
+        {
+          question:
+            'What was the primary consequence of the Freedom Rides in 1961 on federal policy?',
+          q: 'What was the primary consequence of the Freedom Rides in 1961 on federal policy?',
+          options: [
+            'It prompted President Kennedy to veto the Civil Rights Bill',
+            'It forced the federal government to actively enforce desegregation rulings on interstate buses and terminals.',
+            'It led to the immediate repeal of the Jim Crow laws by Southern state legislatures',
+            'It caused SNCC to dissolve and join the Black Muslims',
+          ],
+          answer:
+            'It forced the federal government to actively enforce desegregation rulings on interstate buses and terminals.',
+          a: 'It forced the federal government to actively enforce desegregation rulings on interstate buses and terminals.',
+          explanation:
+            'Faced with mob violence against riders, Attorney General Robert Kennedy ordered the Interstate Commerce Commission to enforce federal integration rulings.',
+        },
+        {
+          question:
+            'Which of the following best describes the historical significance of the formation of the Student Nonviolent Coordinating Committee (SNCC) in 1960?',
+          q: 'Which of the following best describes the historical significance of the formation of the Student Nonviolent Coordinating Committee (SNCC) in 1960?',
+          options: [
+            'It gave student activists an independent voice and a more confrontational approach to non-violent direct action.',
+            'It rejected the use of non-violent direct action in favor of armed rebellion.',
+            'It completely replaced the NAACP as the sole legal team for the movement.',
+            'It focused entirely on electing Black politicians to federal offices in the North.',
+          ],
+          answer:
+            'It gave student activists an independent voice and a more confrontational approach to non-violent direct action.',
+          a: 'It gave student activists an independent voice and a more confrontational approach to non-violent direct action.',
+          explanation:
+            "Encouraged by Ella Baker, SNCC was formed as a student-led organization separate from MLK's SCLC. It allowed younger activists to mobilize grassroots communities directly, often taking greater risks in rural areas.",
+        },
+        {
+          question:
+            'What was the main reason why the Kennedy administration was forced to intervene in the 1961 Freedom Rides?',
+          q: 'What was the main reason why the Kennedy administration was forced to intervene in the 1961 Freedom Rides?',
+          options: [
+            'The severe violence against riders and the failure of Southern state authorities to protect them.',
+            'The Freedom Riders had started a violent uprising in Birmingham.',
+            'Southern governors petitioned the President to send federal troops to help them integrate terminals.',
+            'The Supreme Court declared that all interstate transport was illegal.',
+          ],
+          answer:
+            'The severe violence against riders and the failure of Southern state authorities to protect them.',
+          a: 'The severe violence against riders and the failure of Southern state authorities to protect them.',
+          explanation:
+            'When Freedom Riders were beaten by white mobs and their buses were firebombed in Alabama and Mississippi, and local police refused to intervene, the federal government had to step in to enforce federal law and restore order.',
+        },
+        {
+          question:
+            'Which major department store lunch counter in Greensboro, North Carolina, was targeted by four Black college students on 1 February 1960?',
+          q: 'Which major department store lunch counter in Greensboro, North Carolina, was targeted by four Black college students on 1 February 1960?',
+          options: ["Macy's.", 'Sears Roebuck.', 'Walgreens.', "F.W. Woolworth's."],
+          answer: "F.W. Woolworth's.",
+          a: "F.W. Woolworth's.",
+          explanation:
+            'On 1 February 1960, four Black freshmen from North Carolina A&T College (Ezell Blair Jr., David Richmond, Franklin McCain, and Joseph McNeil) sat down at the whites-only lunch counter inside the F.W. Woolworth store in Greensboro, sparking a nationwide sit-in movement.',
+        },
+      ],
     },
     {
       id: 'lesson_2_2',
@@ -2415,6 +3784,290 @@ export const usa = {
           },
         ],
       },
+      quiz: [
+        {
+          question:
+            'Which Alabama city was the site of the 1963 civil rights campaign where police used dogs and fire hoses against children?',
+          q: 'Which Alabama city was the site of the 1963 civil rights campaign where police used dogs and fire hoses against children?',
+          options: [
+            'Jackson, Mississippi',
+            'Montgomery, Alabama',
+            'Selma, Alabama',
+            'Birmingham, Alabama',
+          ],
+          answer: 'Birmingham, Alabama',
+          a: 'Birmingham, Alabama',
+          explanation:
+            'The campaign was organized by SCLC to provoke national outrage, leading directly to Kennedy drafting the Civil Rights Bill. This campaign provoked global outrage, forcing President Kennedy to draft the landmark Civil Rights Bill.',
+        },
+        {
+          question:
+            'Who was the segregationist Police Commissioner of Birmingham who ordered the brutal response to protesters?',
+          q: 'Who was the segregationist Police Commissioner of Birmingham who ordered the brutal response to protesters?',
+          options: ["Eugene 'Bull' Connor", 'Laurie Pritchett', 'W. A. Gayle', 'Jim Clark'],
+          answer: "Eugene 'Bull' Connor",
+          a: "Eugene 'Bull' Connor",
+          explanation:
+            "Connor's use of attack dogs and high-pressure fire hoses on television screens shocked the American public. His brutal response on television screens alienated moderate whites and generated massive public sympathy for the movement.",
+        },
+        {
+          question:
+            'What was the name of the famous document written by Martin Luther King Jr. while imprisoned in Alabama in 1963?',
+          q: 'What was the name of the famous document written by Martin Luther King Jr. while imprisoned in Alabama in 1963?',
+          options: [
+            'The Montgomery Manifesto',
+            'The Birmingham Manifesto',
+            'The Nonviolent Direct Action Guide',
+            'Letter from Birmingham Jail',
+          ],
+          answer: 'Letter from Birmingham Jail',
+          a: 'Letter from Birmingham Jail',
+          explanation:
+            'Written on scraps of paper, the letter defended non-violent direct action against moderate white clergy who urged patience. This letter provided a powerful theological and moral defense of non-violent civil disobedience against critics who urged patience.',
+        },
+        {
+          question: 'What was the main purpose of the March on Washington in 1963?',
+          q: 'What was the main purpose of the March on Washington in 1963?',
+          options: [
+            'To raise money for legal defense funds to help free Martin Luther King Jr. from jail',
+            'To celebrate the centennial of the signing of the US Constitution',
+            'To protest against US military involvement and the draft in the Vietnam War',
+            'To pressure Congress to pass civil rights legislation and demand economic freedom',
+          ],
+          answer:
+            'To pressure Congress to pass civil rights legislation and demand economic freedom',
+          a: 'To pressure Congress to pass civil rights legislation and demand economic freedom',
+          explanation:
+            "The March on Washington drew over 250,000 demonstrators, uniting civil rights organisations to demand 'Jobs and Freedom' and support the passage of a comprehensive federal civil rights bill.",
+        },
+        {
+          question:
+            "What was the title of Martin Luther King Jr.'s famous speech delivered at the March on Washington?",
+          q: "What was the title of Martin Luther King Jr.'s famous speech delivered at the March on Washington?",
+          options: [
+            "I've Been to the Mountaintop",
+            'I Have a Dream',
+            'Let Freedom Ring',
+            'Normalcy No More',
+          ],
+          answer: 'I Have a Dream',
+          a: 'I Have a Dream',
+          explanation:
+            'King departed from his written text to deliver a powerful vision of racial integration and equality. His speech became a defining moment of the movement, framing civil rights in the language of the American Dream.',
+        },
+        {
+          question:
+            'Which US president originally proposed the Civil Rights Bill in June 1963 before his assassination?',
+          q: 'Which US president originally proposed the Civil Rights Bill in June 1963 before his assassination?',
+          options: [
+            'John F. Kennedy',
+            'Dwight D. Eisenhower',
+            'Richard Nixon',
+            'Lyndon B. Johnson',
+          ],
+          answer: 'John F. Kennedy',
+          a: 'John F. Kennedy',
+          explanation:
+            'Kennedy proposed the bill on national television, declaring civil rights a moral issue that required federal action.',
+        },
+        {
+          question: 'Which US president signed the historic Civil Rights Act of 1964 into law?',
+          q: 'Which US president signed the historic Civil Rights Act of 1964 into law?',
+          options: ['Gerald Ford', 'Lyndon B. Johnson', 'John F. Kennedy', 'Richard Nixon'],
+          answer: 'Lyndon B. Johnson',
+          a: 'Lyndon B. Johnson',
+          explanation:
+            "Johnson used his political skill and the memory of Kennedy to guide the bill through a lengthy Southern filibuster. His political skill and utilization of Kennedy's memory guided the bill through a lengthy Southern filibuster.",
+        },
+        {
+          question:
+            "Which Alabama city was the starting point for the 1965 marches where protesters were beaten on 'Bloody Sunday'?",
+          q: "Which Alabama city was the starting point for the 1965 marches where protesters were beaten on 'Bloody Sunday'?",
+          options: [
+            'Birmingham, Alabama',
+            'Selma, Alabama',
+            'Montgomery, Alabama',
+            'Tuskegee, Alabama',
+          ],
+          answer: 'Selma, Alabama',
+          a: 'Selma, Alabama',
+          explanation:
+            'The march from Selma to Montgomery aimed to demand federal voting rights protection for Black citizens. The state violence during this campaign shocked the nation and forced the federal government to draft voting rights legislation.',
+        },
+        {
+          question:
+            'What landmark voting law was passed in 1965 in response to the Selma campaign?',
+          q: 'What landmark voting law was passed in 1965 in response to the Selma campaign?',
+          options: [
+            'Civil Rights Act of 1964',
+            'Equal Opportunity Act of 1964',
+            'Fair Housing Act of 1968',
+            'Voting Rights Act of 1965',
+          ],
+          answer: 'Voting Rights Act of 1965',
+          a: 'Voting Rights Act of 1965',
+          explanation:
+            'The act outlawed literacy tests and sent federal registrars to Southern states, drastically increasing voter turnout. This act outlawed literacy tests and sent federal registrars to Southern states, permanently expanding the Black electorate.',
+        },
+        {
+          question:
+            'How many demonstrators participated in the March on Washington in August 1963?',
+          q: 'How many demonstrators participated in the March on Washington in August 1963?',
+          options: ['Over 250,000', 'Over 100,000', 'Over 500,000', 'Over 150,000'],
+          answer: 'Over 250,000',
+          a: 'Over 250,000',
+          explanation:
+            'It was one of the largest political rallies in US history, bringing immense moral pressure to bear on Congress. This massive turnout demonstrated the scale of the civil rights coalition, putting intense moral pressure on Congress.',
+        },
+        {
+          question:
+            'What was the name of the bridge in Selma where state troopers brutally attacked marching protesters on 7 March 1965?',
+          q: 'What was the name of the bridge in Selma where state troopers brutally attacked marching protesters on 7 March 1965?',
+          options: [
+            'George Washington Bridge',
+            'Edmund Pettus Bridge',
+            'Jefferson Davis Bridge',
+            'Alabama River Bridge',
+          ],
+          answer: 'Edmund Pettus Bridge',
+          a: 'Edmund Pettus Bridge',
+          explanation:
+            "Troopers used tear gas and clubs on the peaceful marchers in an event known as 'Bloody Sunday'. Televised images of this brutal attack shocked the nation, accelerating federal voting rights legislation.",
+        },
+        {
+          question: 'Why did the SCLC choose Birmingham, Alabama, for a major campaign in 1963?',
+          q: 'Why did the SCLC choose Birmingham, Alabama, for a major campaign in 1963?',
+          options: [
+            "Because the city was the birthplace of the SCLC and King's first parish",
+            'Because it was heavily segregated and had a notoriously hot-tempered police chief',
+            'Because the city had a highly active local NAACP chapter ready to march',
+            'Because the city government had indicated it was willing to desegregate',
+          ],
+          answer:
+            'Because it was heavily segregated and had a notoriously hot-tempered police chief',
+          a: 'Because it was heavily segregated and had a notoriously hot-tempered police chief',
+          explanation:
+            "MLK and SCLC targeted Birmingham because they knew Police Commissioner 'Bull' Connor would react violently to peaceful protests, creating media coverage that would force federal intervention. This strategic choice successfully forced a national civil rights crisis through the power of televised media.",
+        },
+        {
+          question:
+            'Why was the Selma to Montgomery march in 1965 organized by civil rights leaders?',
+          q: 'Why was the Selma to Montgomery march in 1965 organized by civil rights leaders?',
+          options: [
+            'To support the campaign of moderate Democrats running for local offices',
+            'To demand federal legislation protecting Black voting rights',
+            'To demand the desegregation of all public facilities in the capital city',
+            'To protest against the recent assassination of Malcolm X in New York',
+          ],
+          answer: 'To demand federal legislation protecting Black voting rights',
+          a: 'To demand federal legislation protecting Black voting rights',
+          explanation:
+            'Despite the 1964 Civil Rights Act, local registrars in Selma used loopholes to keep Black voter registration below 2%. Activists marched to demand direct federal intervention.',
+        },
+        {
+          question:
+            'Which student leader and SNCC chairman was severely beaten on the Edmund Pettus Bridge on Bloody Sunday?',
+          q: 'Which student leader and SNCC chairman was severely beaten on the Edmund Pettus Bridge on Bloody Sunday?',
+          options: ['Stokely Carmichael', 'James Bevel', 'Bob Moses', 'John Lewis'],
+          answer: 'John Lewis',
+          a: 'John Lewis',
+          explanation:
+            "Lewis co-led the march with SCLC's Hosea Williams. Images of his fractured skull shocked the nation.",
+        },
+        {
+          question:
+            'Which three civil rights activists were abducted and murdered by the KKK in Mississippi during Freedom Summer in 1964?',
+          q: 'Which three civil rights activists were abducted and murdered by the KKK in Mississippi during Freedom Summer in 1964?',
+          options: [
+            'Medgar Evers, Jimmie Lee Jackson, and Viola Liuzzo',
+            'Lemuel Penn, Virgil Ware, and Johnny Robinson',
+            'John Daniels, Jonathan Daniels, and Willie Brewster',
+            'James Chaney, Andrew Goodman, and Michael Schwerner',
+          ],
+          answer: 'James Chaney, Andrew Goodman, and Michael Schwerner',
+          a: 'James Chaney, Andrew Goodman, and Michael Schwerner',
+          explanation:
+            'The murders of Chaney, Goodman, and Schwerner in Neshoba County shocked the nation and accelerated the passage of the Civil Rights Act of 1964. Their tragic murders drew national attention to the extreme dangers faced by voting rights volunteers in Mississippi.',
+        },
+        {
+          question:
+            'Which of the following best explains why the Birmingham Campaign of 1963 was a turning point in the civil rights struggle?',
+          q: 'Which of the following best explains why the Birmingham Campaign of 1963 was a turning point in the civil rights struggle?',
+          options: [
+            'It convinced Southern segregationists to voluntarily end Jim Crow laws',
+            'It was the first civil rights march that met zero opposition from local authorities',
+            'The shocking media images of police brutality against peaceful children forced federal intervention and public outrage.',
+            'It resulted in the immediate arrest and conviction of Police Chief Bull Connor',
+          ],
+          answer:
+            'The shocking media images of police brutality against peaceful children forced federal intervention and public outrage.',
+          a: 'The shocking media images of police brutality against peaceful children forced federal intervention and public outrage.',
+          explanation:
+            "Images of Bull Connor's police dogs and fire hoses attacking school children shocked the nation, prompting President Kennedy to draft the Civil Rights Bill.",
+        },
+        {
+          question: 'What was the most significant consequence of the Civil Rights Act of 1964?',
+          q: 'What was the most significant consequence of the Civil Rights Act of 1964?',
+          options: [
+            'It ended de facto segregation in Northern housing markets',
+            'It outlawed segregation in public accommodations and gave the federal government power to desegregate schools.',
+            'It instantly secured voting rights for all Black Americans in the South',
+            'It was vetoed by President Johnson, causing mass riots',
+          ],
+          answer:
+            'It outlawed segregation in public accommodations and gave the federal government power to desegregate schools.',
+          a: 'It outlawed segregation in public accommodations and gave the federal government power to desegregate schools.',
+          explanation:
+            'The 1964 Act was a landmark law that officially ended the legal basis of Jim Crow segregation in businesses and public spaces.',
+        },
+        {
+          question:
+            'Which of the following was the most significant consequence of the 1964 Freedom Summer campaign in Mississippi?',
+          q: 'Which of the following was the most significant consequence of the 1964 Freedom Summer campaign in Mississippi?',
+          options: [
+            'It led to the immediate integration of all housing in Northern cities.',
+            'It forced Malcolm X to abandon his critique of the mainstream civil rights movement.',
+            'It drew national attention to the violent suppression of Black voters and built support for a voting rights bill.',
+            'It immediately registered over 90% of eligible Black voters in Mississippi.',
+          ],
+          answer:
+            'It drew national attention to the violent suppression of Black voters and built support for a voting rights bill.',
+          a: 'It drew national attention to the violent suppression of Black voters and built support for a voting rights bill.',
+          explanation:
+            'Freedom Summer brought hundreds of Northern white students to Mississippi. The resulting violence (including the murders of three activists) shocked the national public and increased pressure for the Voting Rights Act.',
+        },
+        {
+          question:
+            'Which of the following best explains why the Selma Marches of 1965 were a turning point for voting rights?',
+          q: 'Which of the following best explains why the Selma Marches of 1965 were a turning point for voting rights?',
+          options: [
+            'They forced the immediate resignation of Alabama Governor George Wallace.',
+            'They resulted in the Supreme Court declaring all literacy tests constitutional.',
+            'They led to the complete dissolution of the Student Nonviolent Coordinating Committee.',
+            "The brutality of 'Bloody Sunday' forced President Johnson to introduce and pass the Voting Rights Act of 1965.",
+          ],
+          answer:
+            "The brutality of 'Bloody Sunday' forced President Johnson to introduce and pass the Voting Rights Act of 1965.",
+          a: "The brutality of 'Bloody Sunday' forced President Johnson to introduce and pass the Voting Rights Act of 1965.",
+          explanation:
+            "The televised police brutality against peaceful marchers in Selma on 'Bloody Sunday' created massive public outrage, allowing President Johnson to deliver a televised address to Congress demanding the passage of voting rights legislation.",
+        },
+        {
+          question:
+            'Which tragic event occurred at the 16th Street Baptist Church in Birmingham, Alabama, on 15 September 1963, killing four young Black girls?',
+          q: 'Which tragic event occurred at the 16th Street Baptist Church in Birmingham, Alabama, on 15 September 1963, killing four young Black girls?',
+          options: [
+            'A tear gas attack by local police during a student sit-in.',
+            'A riot triggered by the arrest of Martin Luther King Jr.',
+            'A fire caused by an accidental electrical malfunction.',
+            'A Ku Klux Klan bomb explosion during Sunday church services.',
+          ],
+          answer: 'A Ku Klux Klan bomb explosion during Sunday church services.',
+          a: 'A Ku Klux Klan bomb explosion during Sunday church services.',
+          explanation:
+            'Just weeks after the March on Washington, KKK terrorists planted 15 sticks of dynamite beneath the steps of the 16th Street Baptist Church in Birmingham. The explosion killed Addie Mae Collins, Denise McNair, Carole Robertson, and Cynthia Wesley, sparking nationwide outrage and intensifying calls for the 1964 Civil Rights Act.',
+        },
+      ],
     },
     {
       id: 'lesson_2_3',
@@ -2733,6 +4386,298 @@ export const usa = {
           },
         ],
       },
+      quiz: [
+        {
+          question:
+            'Who was the leading spokesperson for the Nation of Islam (commonly known as the Black Muslims) who advocated self-defense in the early 1960s?',
+          q: 'Who was the leading spokesperson for the Nation of Islam (commonly known as the Black Muslims) who advocated self-defense in the early 1960s?',
+          options: ['Malcolm X', 'Elijah Muhammad', 'Stokely Carmichael', 'Bobby Seale'],
+          answer: 'Malcolm X',
+          a: 'Malcolm X',
+          explanation:
+            "Malcolm X offered a militant alternative to MLK, urging Black Americans to defend themselves 'by any means necessary'. His rhetoric offered a powerful, militant alternative to MLK's integrationist and non-violent approach.",
+        },
+        {
+          question:
+            'Which radical civil rights slogan was popularized by Stokely Carmichael during a 1966 march in Mississippi?',
+          q: 'Which radical civil rights slogan was popularized by Stokely Carmichael during a 1966 march in Mississippi?',
+          options: [
+            'By Any Means Necessary',
+            'Black Power',
+            'Self-Defense Now',
+            'Black Nationalism',
+          ],
+          answer: 'Black Power',
+          a: 'Black Power',
+          explanation:
+            'The slogan marked a shift toward self-reliance, racial pride, and rejection of white integrationist control. The slogan marked a major shift in the movement toward self-reliance, racial pride, and rejection of white control.',
+        },
+        {
+          question:
+            'Who were the two co-founders of the Black Panther Party for Self-Defense, created in Oakland in 1966?',
+          q: 'Who were the two co-founders of the Black Panther Party for Self-Defense, created in Oakland in 1966?',
+          options: [
+            'Malcolm X and Elijah Muhammad',
+            'Huey Newton and Bobby Seale',
+            'Fred Hampton and Mark Clark',
+            'Stokely Carmichael and H. Rap Brown',
+          ],
+          answer: 'Huey Newton and Bobby Seale',
+          a: 'Huey Newton and Bobby Seale',
+          explanation:
+            'They founded the party in October 1966, adopting a 10-Point Program and carrying loaded weapons to monitor police. Their armed patrols and community survival programs highlighted a new focus on Northern urban police brutality and poverty.',
+        },
+        {
+          question:
+            'Which leader of the Nation of Islam (the Black Muslims) did Malcolm X clash with before breaking away in 1964?',
+          q: 'Which leader of the Nation of Islam (the Black Muslims) did Malcolm X clash with before breaking away in 1964?',
+          options: [
+            'Louis Farrakhan',
+            'Elijah Muhammad',
+            'Warith Deen Mohammed',
+            'Wallace Fard Muhammad',
+          ],
+          answer: 'Elijah Muhammad',
+          a: 'Elijah Muhammad',
+          explanation:
+            "Malcolm left the Nation of Islam in 1964 due to Elijah Muhammad's personal scandals and political passivity. His departure allowed Malcolm to develop a more politically active and global approach to human rights.",
+        },
+        {
+          question:
+            "How did Malcolm X's views on civil rights change after his pilgrimage to Mecca in 1964?",
+          q: "How did Malcolm X's views on civil rights change after his pilgrimage to Mecca in 1964?",
+          options: [
+            'He retired from public activism to become a local Islamic school teacher',
+            'He endorsed the Democratic Party and ran for a seat in the US Senate',
+            "He rejected the Nation of Islam's racial separatism and embraced global human rights",
+            'He abandoned non-violent direct action and joined the Black Panther Party',
+          ],
+          answer:
+            "He rejected the Nation of Islam's racial separatism and embraced global human rights",
+          a: "He rejected the Nation of Islam's racial separatism and embraced global human rights",
+          explanation:
+            "After visiting Mecca, Malcolm X broke with the Nation of Islam's racial separatism and began seeking cooperative civil rights progress and human rights coalition-building.",
+        },
+        {
+          question: "What was the main purpose of the Black Panther Party's Ten-Point Program?",
+          q: "What was the main purpose of the Black Panther Party's Ten-Point Program?",
+          options: [
+            'To support the US military draft and encourage Black enrollment in the army',
+            'To lobby Congress to pass state voting rights amendments and civil rights bills',
+            'To demand economic justice, decent housing, education, and an end to police brutality',
+            'To coordinate non-violent student sit-ins and freedom rides across the South',
+          ],
+          answer:
+            'To demand economic justice, decent housing, education, and an end to police brutality',
+          a: 'To demand economic justice, decent housing, education, and an end to police brutality',
+          explanation:
+            'Founded by Huey Newton and Bobby Seale in 1966, the Black Panthers wrote a manifesto detailing demands for political power, jobs, decent housing, and community control over police.',
+        },
+        {
+          question:
+            'Which two US athletes raised black-gloved fists during the medal ceremony at the 1968 Olympics?',
+          q: 'Which two US athletes raised black-gloved fists during the medal ceremony at the 1968 Olympics?',
+          options: [
+            'Tommie Smith and John Carlos',
+            'Jesse Owens and Ralph Metcalfe',
+            'Lee Evans and Tommie Smith',
+            'Bob Beamon and Wyomia Tyus',
+          ],
+          answer: 'Tommie Smith and John Carlos',
+          a: 'Tommie Smith and John Carlos',
+          explanation:
+            'Their silent protest on the podium in Mexico City drew international attention to racial inequality in the US. Their silent protest on the podium drew international media attention to systemic racism in the United States.',
+        },
+        {
+          question: 'In which California city was the Black Panther Party originally founded?',
+          q: 'In which California city was the Black Panther Party originally founded?',
+          options: ['Chicago', 'Oakland', 'Los Angeles', 'San Francisco'],
+          answer: 'Oakland',
+          a: 'Oakland',
+          explanation:
+            'Oakland had a large Black population that faced severe police brutality, which the Panthers formed to monitor.',
+        },
+        {
+          question:
+            'Which student organization officially rejected non-violence and adopted Black Power under Stokely Carmichael in 1966?',
+          q: 'Which student organization officially rejected non-violence and adopted Black Power under Stokely Carmichael in 1966?',
+          options: ['CORE', 'SCLC', 'NAACP', 'SNCC'],
+          answer: 'SNCC',
+          a: 'SNCC',
+          explanation:
+            'Under Carmichael, SNCC expelled its white members and focused on militant community organizing. This transition fractured the traditional civil rights coalition and marked the rise of militant activism.',
+        },
+        {
+          question:
+            'What secular activist organization did Malcolm X found after leaving the Nation of Islam in 1964?',
+          q: 'What secular activist organization did Malcolm X found after leaving the Nation of Islam in 1964?',
+          options: [
+            'OAAU (Organization of Afro-American Unity)',
+            'Black Panther Party (BPP)',
+            'Nation of Islam (NOI)',
+            'Muslim Mosque, Inc. (MMI)',
+          ],
+          answer: 'OAAU (Organization of Afro-American Unity)',
+          a: 'OAAU (Organization of Afro-American Unity)',
+          explanation:
+            "The OAAU aimed to unite African Americans and link their struggle to African human rights movements. This organization reflected Malcolm's post-Nation of Islam shift toward international pan-African solidarity.",
+        },
+        {
+          question:
+            'Why did the Black Power movement gain popularity among young urban Black Americans in the mid-1960s?',
+          q: 'Why did the Black Power movement gain popularity among young urban Black Americans in the mid-1960s?',
+          options: [
+            'Because the federal government withdrew all funding from Northern inner-city programs',
+            'Because moderate civil rights leaders urged urban youth to form self-defense militias',
+            'Because of the active recruitment efforts of the Nation of Islam in colleges',
+            'Due to frustration with the slow pace of legislative change and ongoing police brutality',
+          ],
+          answer:
+            'Due to frustration with the slow pace of legislative change and ongoing police brutality',
+          a: 'Due to frustration with the slow pace of legislative change and ongoing police brutality',
+          explanation:
+            'Many young urban Black Americans in the North and West felt that civil rights laws did not improve their daily lives, stop police violence, or solve poverty, leading them to embrace self-defense and Black pride. This growing alienation fueled a wave of urban riots and the rise of Black Power in the late 1960s.',
+        },
+        {
+          question:
+            "What famous book detailing Malcolm X's life was published shortly after his death in 1965?",
+          q: "What famous book detailing Malcolm X's life was published shortly after his death in 1965?",
+          options: [
+            'The Fire Next Time',
+            'Where Do We Go from Here: Chaos or Community?',
+            'Soul on Ice',
+            'The Autobiography of Malcolm X',
+          ],
+          answer: 'The Autobiography of Malcolm X',
+          a: 'The Autobiography of Malcolm X',
+          explanation:
+            'Co-authored with Alex Haley, the book sold millions and deeply influenced the nascent Black Power movement. This book became a seminal text of Black nationalism, inspiring a generation of young civil rights activists.',
+        },
+        {
+          question:
+            'What was the name of the popular community service program created by the Black Panthers to feed school children?',
+          q: 'What was the name of the popular community service program created by the Black Panthers to feed school children?',
+          options: [
+            'Community Medical Clinics Program',
+            'Free Breakfast for Children Program',
+            'Legal Aid for Incarcerated Youth Campaign',
+            'Interstate Bus Desegregation Escort Patrol',
+          ],
+          answer: 'Free Breakfast for Children Program',
+          a: 'Free Breakfast for Children Program',
+          explanation:
+            'The breakfast program fed thousands of children daily, earning the party deep respect in local communities. This survival program built massive grassroots popularity and proved that Black Power was about community care.',
+        },
+        {
+          question:
+            'What term was popularized by Stokely Carmichael to describe systemic discrimination embedded in social institutions?',
+          q: 'What term was popularized by Stokely Carmichael to describe systemic discrimination embedded in social institutions?',
+          options: [
+            'Structural bias',
+            'Institutional racism',
+            'De facto segregation',
+            'Systemic prejudice',
+          ],
+          answer: 'Institutional racism',
+          a: 'Institutional racism',
+          explanation:
+            'Carmichael argued that racism was not just individual prejudice but built into housing, education, and employment. His definition of this term helped shift the civil rights debate to address hidden, systemic bias in Northern institutions.',
+        },
+        {
+          question:
+            'Which voting rights campaign did Malcolm X visit and support in early 1965 shortly before his death?',
+          q: 'Which voting rights campaign did Malcolm X visit and support in early 1965 shortly before his death?',
+          options: [
+            'March on Washington',
+            'Greensboro sit-ins',
+            'Selma campaign',
+            'Freedom Summer campaign',
+          ],
+          answer: 'Selma campaign',
+          a: 'Selma campaign',
+          explanation:
+            'Malcolm spoke in Selma in February 1965 to support the campaign, offering a militant warning to white authorities. His visit demonstrated his willingness to support mainstream campaigns while warning of more militant alternatives.',
+        },
+        {
+          question:
+            'Which of the following best explains why the Selma Campaign of 1965 led directly to the Voting Rights Act?',
+          q: 'Which of the following best explains why the Selma Campaign of 1965 led directly to the Voting Rights Act?',
+          options: [
+            'It was the first march to receive the full endorsement of Southern governors',
+            'It convinced the Supreme Court to rule poll taxes illegal',
+            "It was led entirely by Malcolm X's armed supporters",
+            "The public violence of 'Bloody Sunday' generated massive public outcry and pressured President Johnson to act.",
+          ],
+          answer:
+            "The public violence of 'Bloody Sunday' generated massive public outcry and pressured President Johnson to act.",
+          a: "The public violence of 'Bloody Sunday' generated massive public outcry and pressured President Johnson to act.",
+          explanation:
+            'State troopers attacking peaceful marchers at the Edmund Pettus Bridge was broadcast on television, generating moral outrage that forced the passage of voting rights legislation.',
+        },
+        {
+          question:
+            "Which of the following explains why the concept of 'Black Power' grew in popularity in the mid-1960s?",
+          q: "Which of the following explains why the concept of 'Black Power' grew in popularity in the mid-1960s?",
+          options: [
+            "The sudden disbandment of the SCLC and MLK's retirement",
+            "The federal government's endorsement of segregation in Northern cities",
+            'The total failure of the Voting Rights Act to register any voters',
+            'Frustration with the slow pace of economic progress and ongoing white violence despite legislative gains.',
+          ],
+          answer:
+            'Frustration with the slow pace of economic progress and ongoing white violence despite legislative gains.',
+          a: 'Frustration with the slow pace of economic progress and ongoing white violence despite legislative gains.',
+          explanation:
+            "Many young urban activists felt that SCLC's non-violent campaigns had failed to address poverty, ghetto housing conditions, and police brutality in northern and western cities.",
+        },
+        {
+          question:
+            "Which of the following best explains why Malcolm X's ideas appealed to many Black Americans in Northern urban ghettos?",
+          q: "Which of the following best explains why Malcolm X's ideas appealed to many Black Americans in Northern urban ghettos?",
+          options: [
+            "He was the main author of President Johnson's Civil Rights and Voting Rights bills.",
+            'He proposed a peaceful merger between the Nation of Islam and Southern white churches.',
+            'He addressed de facto segregation, urban poverty, and police brutality, which integration campaigns had not solved.',
+            'He advocated that Black Americans should return to Southern states and run for public office.',
+          ],
+          answer:
+            'He addressed de facto segregation, urban poverty, and police brutality, which integration campaigns had not solved.',
+          a: 'He addressed de facto segregation, urban poverty, and police brutality, which integration campaigns had not solved.',
+          explanation:
+            'Unlike the Southern Christian Leadership Conference (SCLC) which focused on de jure segregation in the South, Malcolm X spoke directly to Northern urban issues like poor housing, unemployment, and police violence, offering a message of racial pride and self-reliance.',
+        },
+        {
+          question:
+            "What was a major consequence of the Black Panther Party's social programs, such as the Free Breakfast for Children?",
+          q: "What was a major consequence of the Black Panther Party's social programs, such as the Free Breakfast for Children?",
+          options: [
+            'They built strong local community support and highlighted the gaps in federal social services.',
+            'They forced the federal government to outlaw all private breakfast programs.',
+            'They led to a peaceful merger between the Panthers and the Republican party.',
+            'They caused the immediate desegregation of all Southern public facilities.',
+          ],
+          answer:
+            'They built strong local community support and highlighted the gaps in federal social services.',
+          a: 'They built strong local community support and highlighted the gaps in federal social services.',
+          explanation:
+            "Although the media focused on their armed patrols, the Black Panthers' survival programs (breakfasts, medical clinics, education) provided concrete help to poor urban communities, building deep grassroots loyalty.",
+        },
+        {
+          question:
+            'What symbol and uniform did members of the Black Panther Party adopt as a visual statement of Black pride and discipline?',
+          q: 'What symbol and uniform did members of the Black Panther Party adopt as a visual statement of Black pride and discipline?',
+          options: [
+            'Black leather jackets, black berets, and dark sunglasses.',
+            'White robes, red armbands, and military helmets.',
+            'Blue denim overalls and cloth caps.',
+            'Green camouflage fatigues and combat boots.',
+          ],
+          answer: 'Black leather jackets, black berets, and dark sunglasses.',
+          a: 'Black leather jackets, black berets, and dark sunglasses.',
+          explanation:
+            'Founded in Oakland in 1966 by Huey Newton and Bobby Seale, the Black Panthers adopted a distinctive uniform of black leather jackets, black berets, and powder-blue shirts, combined with openly carrying firearms under California law to project an image of militant Black self-defence.',
+        },
+      ],
     },
     {
       id: 'lesson_2_4',
@@ -3049,6 +4994,284 @@ export const usa = {
           },
         ],
       },
+      quiz: [
+        {
+          question:
+            'Which district of Los Angeles was the site of massive, destructive race riots in August 1965?',
+          q: 'Which district of Los Angeles was the site of massive, destructive race riots in August 1965?',
+          options: ['Inglewood', 'East Los Angeles', 'Watts', 'Compton'],
+          answer: 'Watts',
+          a: 'Watts',
+          explanation:
+            'Triggered by a police arrest, the Watts Riots lasted for 6 days, resulting in 34 deaths and massive property destruction.',
+        },
+        {
+          question:
+            'What was the name of the federal commission appointed by Johnson that blamed white racism for the 1960s riots?',
+          q: 'What was the name of the federal commission appointed by Johnson that blamed white racism for the 1960s riots?',
+          options: [
+            'Kerner Commission',
+            'Warren Commission',
+            'McCone Commission',
+            'Eisenhower Commission',
+          ],
+          answer: 'Kerner Commission',
+          a: 'Kerner Commission',
+          explanation:
+            'The 1968 report warned that America was moving toward two separate and unequal societies: one Black, one white. The report warned that unless massive federal aid was directed to urban ghettos, the racial division would become permanent.',
+        },
+        {
+          question:
+            'What was a major consequence of the assassination of Martin Luther King Jr. in 1968?',
+          q: 'What was a major consequence of the assassination of Martin Luther King Jr. in 1968?',
+          options: [
+            'Outbreaks of violent riots in over 100 cities across the United States',
+            'The resignation of President Lyndon B. Johnson from office',
+            'The complete integration of the Ku Klux Klan into local politics',
+            'The immediate desegregation of all Southern public transport',
+          ],
+          answer: 'Outbreaks of violent riots in over 100 cities across the United States',
+          a: 'Outbreaks of violent riots in over 100 cities across the United States',
+          explanation:
+            "King's assassination shocked the nation and triggered massive outbreaks of urban rebellion and rioting in more than 100 cities, highlighting the deep anger and frustration in Black urban communities.",
+        },
+        {
+          question: 'In which Southern city was Martin Luther King Jr. assassinated in 1968?',
+          q: 'In which Southern city was Martin Luther King Jr. assassinated in 1968?',
+          options: [
+            'Atlanta, Georgia',
+            'Jackson, Mississippi',
+            'Memphis, Tennessee',
+            'Birmingham, Alabama',
+          ],
+          answer: 'Memphis, Tennessee',
+          a: 'Memphis, Tennessee',
+          explanation:
+            'King had travelled to Memphis to support a strike of municipal Black sanitation workers. His assassination here triggered nationwide urban riots and marked the end of the non-violent civil rights era.',
+        },
+        {
+          question:
+            'What was the name of the 1966 campaign where MLK moved into a slum to highlight poor housing in the North?',
+          q: 'What was the name of the 1966 campaign where MLK moved into a slum to highlight poor housing in the North?',
+          options: [
+            "Poor People's Campaign",
+            'Chicago Freedom Movement',
+            'Mississippi Freedom Project',
+            'Birmingham Campaign',
+          ],
+          answer: 'Chicago Freedom Movement',
+          a: 'Chicago Freedom Movement',
+          explanation:
+            "It was MLK's first major campaign in a Northern city, encountering violent white opposition during marches. This campaign exposed the depth of Northern racism and showed that non-violent tactics faced different obstacles outside the South.",
+        },
+        {
+          question: 'Who was convicted of the assassination of Martin Luther King Jr.?',
+          q: 'Who was convicted of the assassination of Martin Luther King Jr.?',
+          options: ['James Earl Ray', 'Sirhan Sirhan', 'Lee Harvey Oswald', 'Byron De La Beckwith'],
+          answer: 'James Earl Ray',
+          a: 'James Earl Ray',
+          explanation:
+            'Ray pleaded guilty in 1969 to avoid the death penalty, though he later spent years retracting his confession. His capture and conviction closed a major chapter of the investigation, though conspiracy theories persisted.',
+        },
+        {
+          question:
+            'Which federal law passed in April 1968 banned racial discrimination in the sale or rental of housing?',
+          q: 'Which federal law passed in April 1968 banned racial discrimination in the sale or rental of housing?',
+          options: [
+            'Voting Rights Act of 1965',
+            'Civil Rights Act of 1964',
+            'Civil Rights Act of 1968 (Fair Housing Act)',
+            'Equal Opportunity Act of 1964',
+          ],
+          answer: 'Civil Rights Act of 1968 (Fair Housing Act)',
+          a: 'Civil Rights Act of 1968 (Fair Housing Act)',
+          explanation:
+            "The act was passed quickly during the national mourning period following MLK's assassination. This act outlawed housing discrimination, representing the final major legislative victory of the civil rights era.",
+        },
+        {
+          question:
+            'What SCLC campaign launched in 1968 aimed to bring thousands of poor Americans to camp out in Washington?',
+          q: 'What SCLC campaign launched in 1968 aimed to bring thousands of poor Americans to camp out in Washington?',
+          options: [
+            'March on Washington for Jobs and Freedom',
+            'Coalition of the Poor League',
+            'Resurrection City Project',
+            "Poor People's Campaign",
+          ],
+          answer: "Poor People's Campaign",
+          a: "Poor People's Campaign",
+          explanation:
+            "Planned by MLK before his death, the campaign went ahead under Ralph Abernathy, setting up 'Resurrection City'. Its eventual failure to achieve policy reforms highlighted the fragmentation of the civil rights coalition after King's death.",
+        },
+        {
+          question:
+            "Who took over the leadership of the SCLC immediately after Martin Luther King Jr.'s assassination?",
+          q: "Who took over the leadership of the SCLC immediately after Martin Luther King Jr.'s assassination?",
+          options: ['Fred Shuttlesworth', 'Jesse Jackson', 'Ralph Abernathy', 'Andrew Young'],
+          answer: 'Ralph Abernathy',
+          a: 'Ralph Abernathy',
+          explanation:
+            "Abernathy was King's closest friend and co-founder of SCLC, but the organization struggled to maintain influence.",
+        },
+        {
+          question:
+            "In how many US cities did major race riots break out in the week following Martin Luther King Jr.'s assassination?",
+          q: "In how many US cities did major race riots break out in the week following Martin Luther King Jr.'s assassination?",
+          options: ['Over 20 cities', 'Over 100 cities', 'Over 200 cities', 'Over 50 cities'],
+          answer: 'Over 100 cities',
+          a: 'Over 100 cities',
+          explanation:
+            "The riots led to 46 deaths, 20,000 arrests, and required the deployment of 50,000 national guard and federal troops. This explosive reaction highlighted the deep anger and despair of Black communities following King's assassination.",
+        },
+        {
+          question: 'Why did Martin Luther King Jr. launch the Chicago Freedom Movement in 1966?',
+          q: 'Why did Martin Luther King Jr. launch the Chicago Freedom Movement in 1966?',
+          options: [
+            'To test the enforcement of the recently passed Voting Rights Act of 1965',
+            'To challenge segregation in Northern housing, employment, and education',
+            'To organize the first Northern branch of the Black Panther Party',
+            'To support the Democratic mayoral candidate running for city office',
+          ],
+          answer: 'To challenge segregation in Northern housing, employment, and education',
+          a: 'To challenge segregation in Northern housing, employment, and education',
+          explanation:
+            'King wanted to show that racial discrimination was not just a Southern problem, but was deeply entrenched in Northern cities through informal segregation and housing redlining.',
+        },
+        {
+          question:
+            'What famous conclusion did the Kerner Commission draw about the future division of American society?',
+          q: 'What famous conclusion did the Kerner Commission draw about the future division of American society?',
+          options: [
+            'Rapidly integrating public spaces but remaining segregated in political power',
+            'Moving toward two societies, one Black, one white - separate and unequal',
+            'Leading toward a classless society, unified in economic progress - equal and free',
+            'Remaining divided into separate regional factions based on political party lines',
+          ],
+          answer: 'Moving toward two societies, one Black, one white - separate and unequal',
+          a: 'Moving toward two societies, one Black, one white - separate and unequal',
+          explanation:
+            'The report warned that unless massive federal aid was directed to urban ghettos, the division would become permanent. This warning challenged the US government to address systemic poverty and de facto segregation in Northern cities.',
+        },
+        {
+          question:
+            "Which Chicago suburb saw MLK's housing march met by thousands of white residents throwing bricks and bottles?",
+          q: "Which Chicago suburb saw MLK's housing march met by thousands of white residents throwing bricks and bottles?",
+          options: ['Skokie', 'Cicero', 'Oak Park', 'Evanston'],
+          answer: 'Cicero',
+          a: 'Cicero',
+          explanation:
+            'King remarked that he had never seen mobs as hostile or hateful as those in Chicago, even in Mississippi or Alabama. This comment highlighted the extreme and violent white resistance to housing integration in Chicago.',
+        },
+        {
+          question:
+            'What municipal labor strike was Martin Luther King Jr. supporting when he was shot in Memphis?',
+          q: 'What municipal labor strike was Martin Luther King Jr. supporting when he was shot in Memphis?',
+          options: [
+            'Steel mills walkout',
+            "Sanitation workers' strike",
+            "Transit workers' strike",
+            "Postal employees' strike",
+          ],
+          answer: "Sanitation workers' strike",
+          a: "Sanitation workers' strike",
+          explanation:
+            'King marched with the workers who were striking for safety, union recognition, and equal wages. His support for this strike demonstrated his commitment to linking civil rights to labor and economic justice.',
+        },
+        {
+          question: 'What was the significance of the Watts Riots in Los Angeles in 1965?',
+          q: 'What was the significance of the Watts Riots in Los Angeles in 1965?',
+          options: [
+            'They highlighted that federal civil rights laws had not solved economic inequality in Northern cities',
+            'They led to the immediate dissolution of the Southern Christian Leadership Conference',
+            'They resulted in the Supreme Court declaring literacy tests constitutional',
+            'They forced President Johnson to send troops to integrate Southern bus terminals',
+          ],
+          answer:
+            'They highlighted that federal civil rights laws had not solved economic inequality in Northern cities',
+          a: 'They highlighted that federal civil rights laws had not solved economic inequality in Northern cities',
+          explanation:
+            'Happening just days after the Voting Rights Act was signed, the Watts Riots showed that legislative victories in the South did not address the police brutality, poor housing, and unemployment faced by Black Americans in Northern urban areas.',
+        },
+        {
+          question:
+            "What was a major reason why MLK's 1966 Chicago Freedom Movement failed to achieve its housing integration goals?",
+          q: "What was a major reason why MLK's 1966 Chicago Freedom Movement failed to achieve its housing integration goals?",
+          options: [
+            'Northern white politicians and residents put up fierce resistance, and promises were ignored',
+            'The federal government cut off all funding for the campaign',
+            'The Supreme Court declared housing desegregation campaigns illegal',
+            'Black residents in Chicago refused to participate in any marches',
+          ],
+          answer:
+            'Northern white politicians and residents put up fierce resistance, and promises were ignored',
+          a: 'Northern white politicians and residents put up fierce resistance, and promises were ignored',
+          explanation:
+            "King faced violent white mobs and political obstruction from Chicago Mayor Richard Daley, who reneged on agreements once King left. This failure proved that Daley's machine politics and Northern de facto segregation were highly resistant to Southern-style protests.",
+        },
+        {
+          question:
+            'What policies were introduced to give preference to minority groups in employment and education to correct past injustices?',
+          q: 'What policies were introduced to give preference to minority groups in employment and education to correct past injustices?',
+          options: [
+            'Affirmative action',
+            'Redistribution measures',
+            'Integration directives',
+            'Equalisation initiatives',
+          ],
+          answer: 'Affirmative action',
+          a: 'Affirmative action',
+          explanation:
+            'Affirmative action policies were implemented in the late 1960s and 1970s to improve education and job opportunities for historically excluded minorities. These policies aimed to bridge the economic gap by actively integrating workplaces and higher education.',
+        },
+        {
+          question:
+            'Which of the following best explains the primary cause of the Watts Riots in Los Angeles in 1965?',
+          q: 'Which of the following best explains the primary cause of the Watts Riots in Los Angeles in 1965?',
+          options: [
+            'Sustained anger over police brutality, high unemployment, and systemic de facto segregation in housing.',
+            'The passage of the Voting Rights Act of 1965',
+            'The sudden integration of public schools in California',
+            "The SCLC's call for violent uprising in Western cities",
+          ],
+          answer:
+            'Sustained anger over police brutality, high unemployment, and systemic de facto segregation in housing.',
+          a: 'Sustained anger over police brutality, high unemployment, and systemic de facto segregation in housing.',
+          explanation:
+            'While triggered by a police arrest, the Watts riots were fueled by deep-seated resentment of police discrimination and structural inequality in the ghetto.',
+        },
+        {
+          question:
+            'What was a major consequence of the Kerner Commission report (1968) on American society?',
+          q: 'What was a major consequence of the Kerner Commission report (1968) on American society?',
+          options: [
+            'It concluded that urban poverty had been completely solved by the Great Society',
+            'It recommended the immediate deployment of troops to occupy Northern cities permanently',
+            'It warned that America was moving toward two separate and unequal societies and blamed white racism for inner-city conditions.',
+            'It argued that civil rights legislation had gone too far and should be rolled back',
+          ],
+          answer:
+            'It warned that America was moving toward two separate and unequal societies and blamed white racism for inner-city conditions.',
+          a: 'It warned that America was moving toward two separate and unequal societies and blamed white racism for inner-city conditions.',
+          explanation:
+            'The Kerner Commission warned that structural racism, urban poverty, and lack of opportunities were driving a deep divide in America.',
+        },
+        {
+          question:
+            'What was a major legislative consequence of the assassination of Martin Luther King Jr. in 1968?',
+          q: 'What was a major legislative consequence of the assassination of Martin Luther King Jr. in 1968?',
+          options: [
+            'The Supreme Court declared all affirmative action programs unconstitutional.',
+            'President Johnson declared martial law and indefinitely suspended all future elections.',
+            'Congress quickly passed the Civil Rights Act of 1968 (Fair Housing Act) as a tribute and to calm urban unrest.',
+            'Congress repealed the Voting Rights Act of 1965 to appease Southern conservatives.',
+          ],
+          answer:
+            'Congress quickly passed the Civil Rights Act of 1968 (Fair Housing Act) as a tribute and to calm urban unrest.',
+          a: 'Congress quickly passed the Civil Rights Act of 1968 (Fair Housing Act) as a tribute and to calm urban unrest.',
+          explanation:
+            "In the wake of nationwide riots following King's death, President Johnson pressured Congress to pass the Fair Housing Act, which outlawed discrimination in the sale, rental, and financing of housing.",
+        },
+      ],
     },
     {
       id: 'lesson_3_1',
@@ -3363,6 +5586,258 @@ export const usa = {
           },
         ],
       },
+      quiz: [
+        {
+          question: 'Who was the leader of the communist forces and President of North Vietnam?',
+          q: 'Who was the leader of the communist forces and President of North Vietnam?',
+          options: ['Vo Nguyen Giap', 'Ngo Dinh Diem', 'Le Duc Tho', 'Ho Chi Minh'],
+          answer: 'Ho Chi Minh',
+          a: 'Ho Chi Minh',
+          explanation:
+            'Ho Chi Minh led the Vietminh against the French and later directed the struggle to unify Vietnam under communism. His leadership successfully unified the nationalist and communist forces to defeat French and American intervention.',
+        },
+        {
+          question:
+            'Which 1954 battle saw the decisive defeat of the French army, ending French colonial rule in Indochina?',
+          q: 'Which 1954 battle saw the decisive defeat of the French army, ending French colonial rule in Indochina?',
+          options: ['Dien Bien Phu', 'Battle of Ia Drang', 'Battle of Hue', 'Siege of Khe Sanh'],
+          answer: 'Dien Bien Phu',
+          a: 'Dien Bien Phu',
+          explanation:
+            'Vietminh forces under General Giap besieged and captured the French base, forcing France to withdraw.',
+        },
+        {
+          question:
+            'Which parallel divided Vietnam into North and South according to the 1954 Geneva Accords?',
+          q: 'Which parallel divided Vietnam into North and South according to the 1954 Geneva Accords?',
+          options: ['38th Parallel', '17th Parallel', '16th Parallel', '20th Parallel'],
+          answer: '17th Parallel',
+          a: '17th Parallel',
+          explanation:
+            'The division was intended to be temporary until national elections could be held in 1956. This boundary became a major Cold War fault line, separating the communist North from the capitalist South.',
+        },
+        {
+          question:
+            'What theory did President Eisenhower use in 1954 to justify U.S. intervention in Southeast Asia?',
+          q: 'What theory did President Eisenhower use in 1954 to justify U.S. intervention in Southeast Asia?',
+          options: [
+            'The Domino Theory',
+            'The Containment Doctrine',
+            'The Rollback Strategy',
+            'The Truman Doctrine',
+          ],
+          answer: 'The Domino Theory',
+          a: 'The Domino Theory',
+          explanation:
+            'The theory argued that if one nation fell to communism, neighboring nations would collapse like dominoes. This containment doctrine drove successive US presidents to steadily escalate military involvement in Vietnam.',
+        },
+        {
+          question: 'Who was the first US president to send military advisors to South Vietnam?',
+          q: 'Who was the first US president to send military advisors to South Vietnam?',
+          options: [
+            'Dwight D. Eisenhower',
+            'Harry S. Truman',
+            'Lyndon B. Johnson',
+            'John F. Kennedy',
+          ],
+          answer: 'Dwight D. Eisenhower',
+          a: 'Dwight D. Eisenhower',
+          explanation:
+            'Eisenhower backed the South Vietnamese regime with money and hundreds of military advisors starting in 1954. His support committed the United States to maintaining a separate, anti-communist South Vietnamese state.',
+        },
+        {
+          question:
+            'Which US president increased the number of military advisors in Vietnam to over 16,000 by late 1963?',
+          q: 'Which US president increased the number of military advisors in Vietnam to over 16,000 by late 1963?',
+          options: [
+            'Dwight D. Eisenhower',
+            'John F. Kennedy',
+            'Lyndon B. Johnson',
+            'Richard Nixon',
+          ],
+          answer: 'John F. Kennedy',
+          a: 'John F. Kennedy',
+          explanation:
+            'Kennedy resisted sending combat troops but heavily expanded advisors and Green Beret special forces. His escalation set the stage for direct combat involvement, increasing the US military presence in the region.',
+        },
+        {
+          question: 'What was the capital city of South Vietnam?',
+          q: 'What was the capital city of South Vietnam?',
+          options: ['Saigon', 'Hanoi', 'Hue', 'Da Nang'],
+          answer: 'Saigon',
+          a: 'Saigon',
+          explanation:
+            'Saigon was the seat of the anti-communist South Vietnamese government backed by the United States. The defense of this city became the central focus of the US campaign to prevent a communist takeover of the South.',
+        },
+        {
+          question: 'What was the capital city of North Vietnam?',
+          q: 'What was the capital city of North Vietnam?',
+          options: ['Hanoi', 'Hue', 'Haiphong', 'Saigon'],
+          answer: 'Hanoi',
+          a: 'Hanoi',
+          explanation:
+            'Hanoi was the capital of the communist Democratic Republic of Vietnam led by Ho Chi Minh. This city directed the infiltration of troops and supplies along the Ho Chi Minh Trail to support the southern insurgency.',
+        },
+        {
+          question:
+            'Which South Vietnamese president was overthrown and assassinated in a coup in November 1963?',
+          q: 'Which South Vietnamese president was overthrown and assassinated in a coup in November 1963?',
+          options: ['Ngo Dinh Diem', 'Nguyen Cao Ky', 'Nguyen Van Thieu', 'Duong Van Minh'],
+          answer: 'Ngo Dinh Diem',
+          a: 'Ngo Dinh Diem',
+          explanation:
+            "Diem's Catholic-centered discrimination and corruption led the US to tacitly support his overthrow by his generals. His assassination left South Vietnam in severe political instability, forcing the US to intervene directly.",
+        },
+        {
+          question:
+            'What was the name of the program that built fortified villages to separate peasants from Vietcong influence?',
+          q: 'What was the name of the program that built fortified villages to separate peasants from Vietcong influence?',
+          options: [
+            'Strategic Hamlet Program',
+            'Rural Pacification Program',
+            'Civilian Defense Hamlet Initiative',
+            'Fortified Settlement Program',
+          ],
+          answer: 'Strategic Hamlet Program',
+          a: 'Strategic Hamlet Program',
+          explanation:
+            'Launched in 1962, the program alienated peasants by forcing them off ancestral lands, driving many to support the Vietcong.',
+        },
+        {
+          question:
+            'What was the name of the communist-led nationalist coalition that fought the French for independence?',
+          q: 'What was the name of the communist-led nationalist coalition that fought the French for independence?',
+          options: ['Pathet Lao', 'Vietcong', 'Vietminh', 'Khmer Rouge'],
+          answer: 'Vietminh',
+          a: 'Vietminh',
+          explanation:
+            'Founded by Ho Chi Minh in 1941, the Vietminh fought Japanese occupiers and then French colonial forces. Their victory at Dien Bien Phu permanently ended French colonial rule in Indochina.',
+        },
+        {
+          question:
+            "Which major religious group faced severe discrimination under Ngo Dinh Diem's Catholic-dominated government?",
+          q: "Which major religious group faced severe discrimination under Ngo Dinh Diem's Catholic-dominated government?",
+          options: ['Cao Dai adherents', 'Hindus', 'Buddhists', 'Protestants'],
+          answer: 'Buddhists',
+          a: 'Buddhists',
+          explanation:
+            "Diem's ban on Buddhist flags led to mass protests, self-immolations by monks, and a major political crisis in 1963. This persecution destroyed Diem's popular legitimacy and prompted the US to support a military coup against him.",
+        },
+        {
+          question:
+            'Why did the Strategic Hamlet Program (1962) fail and actually increase support for the Vietcong?',
+          q: 'Why did the Strategic Hamlet Program (1962) fail and actually increase support for the Vietcong?',
+          options: [
+            'It failed to provide adequate medical care and schooling for children in the hamlets',
+            'It forced peasants to pay high rent fees and taxes to the South Vietnamese government',
+            'It forcibly relocated peasants from their ancestral lands and villages',
+            'It failed to construct secure fences or provide weapons to defend against Vietcong raids',
+          ],
+          answer: 'It forcibly relocated peasants from their ancestral lands and villages',
+          a: 'It forcibly relocated peasants from their ancestral lands and villages',
+          explanation:
+            "The program alienated South Vietnam's rural population by uprooting them from their land and farming fields to move them into fortified hamlets, building resentment and VC recruits. This forced relocation alienated the peasantry, actively driving many to join the Vietcong insurgency.",
+        },
+        {
+          question:
+            'What term was commonly used by US troops to refer to the communist insurgent fighters in South Vietnam?',
+          q: 'What term was commonly used by US troops to refer to the communist insurgent fighters in South Vietnam?',
+          options: ['NVA', 'Vietminh', 'Charlie', 'Vietcong'],
+          answer: 'Vietcong',
+          a: 'Vietcong',
+          explanation:
+            "Vietcong was short for Vietnamese Communists. The fighters were also referred to as VC or 'Victor Charlie'.",
+        },
+        {
+          question:
+            'What was the official name of the political and military organization commonly known as the Vietcong?',
+          q: 'What was the official name of the political and military organization commonly known as the Vietcong?',
+          options: [
+            'Democratic Republic Alliance (DRA)',
+            'Communist Party of South Vietnam (CPSV)',
+            'National Liberation Front (NLF)',
+            "People's Army of Vietnam (PAVN)",
+          ],
+          answer: 'National Liberation Front (NLF)',
+          a: 'National Liberation Front (NLF)',
+          explanation:
+            "The NLF was established in December 1960 to unite all opponents of Diem's US-backed regime in the South. This broad coalition organized the political and military opposition that fought to overthrow the Saigon regime.",
+        },
+        {
+          question:
+            "Which Buddhist monk committed self-immolation in Saigon in 1963 to protest Ngo Dinh Diem's religious persecution?",
+          q: "Which Buddhist monk committed self-immolation in Saigon in 1963 to protest Ngo Dinh Diem's religious persecution?",
+          options: ['Thich Tri Quang', 'Thích Quảng Đức', 'Thich Tam Chau', 'Thich Nhat Hanh'],
+          answer: 'Thích Quảng Đức',
+          a: 'Thích Quảng Đức',
+          explanation:
+            "Thích Quảng Đức burned himself to death at a busy intersection in Saigon. The televised photographs shocked the world and destroyed Diem's international credibility.",
+        },
+        {
+          question:
+            'Which of the following best explains why the Domino Theory was central to US foreign policy in Southeast Asia?',
+          q: 'Which of the following best explains why the Domino Theory was central to US foreign policy in Southeast Asia?',
+          options: [
+            'It argued that Asian nations were naturally democratic and would resist communism on their own',
+            'It was a strategy to colonize Indochina for US economic exploitation',
+            'It advocated for peaceful coexistence with the Soviet Union in Asia',
+            'It created the belief that if one country fell to communism, neighboring nations would quickly follow, threatening US security.',
+          ],
+          answer:
+            'It created the belief that if one country fell to communism, neighboring nations would quickly follow, threatening US security.',
+          a: 'It created the belief that if one country fell to communism, neighboring nations would quickly follow, threatening US security.',
+          explanation:
+            'The domino theory justified the containment strategy in Asia, convincing US leaders that keeping South Vietnam non-communist was vital to prevent all of Southeast Asia from falling.',
+        },
+        {
+          question:
+            'What was the primary consequence of the French defeat at Dien Bien Phu in 1954?',
+          q: 'What was the primary consequence of the French defeat at Dien Bien Phu in 1954?',
+          options: [
+            'The immediate deployment of 100,000 US combat troops to Hanoi',
+            'The end of French colonial rule in Indochina and the division of Vietnam at the Geneva Conference.',
+            'The signing of a permanent peace treaty between North and South Vietnam',
+            'The coronation of Bao Dai as Emperor of a unified Vietnam',
+          ],
+          answer:
+            'The end of French colonial rule in Indochina and the division of Vietnam at the Geneva Conference.',
+          a: 'The end of French colonial rule in Indochina and the division of Vietnam at the Geneva Conference.',
+          explanation:
+            'The defeat forced France to withdraw, leading to the Geneva Accords which temporarily divided Vietnam at the 17th parallel pending elections.',
+        },
+        {
+          question:
+            'Which of the following was a primary cause for the growth of the Vietcong (National Liberation Front) in South Vietnam by 1960?',
+          q: 'Which of the following was a primary cause for the growth of the Vietcong (National Liberation Front) in South Vietnam by 1960?',
+          options: [
+            "Widespread opposition to Ngo Dinh Diem's corrupt, anti-Buddhist, and repressive policies.",
+            "President Eisenhower's refusal to send any military advisors to Saigon.",
+            'The deployment of French peacekeepers to enforce the Geneva Accords.',
+            'The sudden withdrawal of all Soviet and Chinese financial aid from Hanoi.',
+          ],
+          answer:
+            "Widespread opposition to Ngo Dinh Diem's corrupt, anti-Buddhist, and repressive policies.",
+          a: "Widespread opposition to Ngo Dinh Diem's corrupt, anti-Buddhist, and repressive policies.",
+          explanation:
+            "Diem's regime alienated the rural peasantry through repressive landlord policies, corruption, and the persecution of the Buddhist majority, driving many non-communists and communists to unite under the NLF to overthrow him.",
+        },
+        {
+          question:
+            'What was the significance of the Strategic Hamlet Program introduced by Diem and the US in 1962?',
+          q: 'What was the significance of the Strategic Hamlet Program introduced by Diem and the US in 1962?',
+          options: [
+            'It successfully eliminated the Vietcong threat in South Vietnam within six months.',
+            'It led directly to the reunification of North and South Vietnam under a joint government.',
+            'It convinced North Vietnam to sign a permanent peace treaty and disband its army.',
+            'It backfired, increasing peasant resentment and boosting support for the Vietcong.',
+          ],
+          answer:
+            'It backfired, increasing peasant resentment and boosting support for the Vietcong.',
+          a: 'It backfired, increasing peasant resentment and boosting support for the Vietcong.',
+          explanation:
+            "The program forcibly relocated peasants from their ancestral villages into fortified hamlets to cut them off from the Vietcong. However, the forced movement, poor conditions, and corruption alienated the peasants, turning many against Diem's government.",
+        },
+      ],
     },
     {
       id: 'lesson_3_2',
@@ -3706,6 +6181,278 @@ export const usa = {
           },
         ],
       },
+      quiz: [
+        {
+          question:
+            'Which US destroyer was reportedly attacked by North Vietnamese torpedo boats in August 1964?',
+          q: 'Which US destroyer was reportedly attacked by North Vietnamese torpedo boats in August 1964?',
+          options: ['USS Turner Joy', 'USS Ticonderoga', 'USS C. Turner Joy', 'USS Maddox'],
+          answer: 'USS Maddox',
+          a: 'USS Maddox',
+          explanation:
+            'The clash in the Gulf of Tonkin provided the justification Johnson needed to seek congressional war powers. The incident served as the immediate catalyst for Congress to grant the president broad war-making powers.',
+        },
+        {
+          question:
+            'Which congressional resolution in August 1964 gave President Johnson war powers to defend South Vietnam?',
+          q: 'Which congressional resolution in August 1964 gave President Johnson war powers to defend South Vietnam?',
+          options: [
+            'Presidential War Powers Act',
+            'Gulf of Tonkin Resolution',
+            'Gulf of Tonkin Declaration',
+            'Southeast Asia Defense Bill',
+          ],
+          answer: 'Gulf of Tonkin Resolution',
+          a: 'Gulf of Tonkin Resolution',
+          explanation:
+            "The resolution allowed Johnson to take 'all necessary measures' to repel attacks, acting as a blank check. This resolution gave President Johnson authority to conduct combat operations without a formal declaration of war.",
+        },
+        {
+          question: 'What was the main consequence of the Gulf of Tonkin Resolution?',
+          q: 'What was the main consequence of the Gulf of Tonkin Resolution?',
+          options: [
+            'It resulted in the immediate withdrawal of all US military advisors from Vietnam',
+            'It forced North Vietnam to sign the Paris Peace Accords and end the conflict',
+            'It led to the immediate deployment of UN peacekeeping forces to Hanoi',
+            'It gave President Johnson authority to escalate US military involvement without a formal declaration of war',
+          ],
+          answer:
+            'It gave President Johnson authority to escalate US military involvement without a formal declaration of war',
+          a: 'It gave President Johnson authority to escalate US military involvement without a formal declaration of war',
+          explanation:
+            "Passed in August 1964, the resolution allowed Johnson to take 'all necessary measures' to defend South Vietnam, effectively acting as a blank check that led to rapid deployment of US combat troops.",
+        },
+        {
+          question:
+            'What was the code name of the sustained US bombing campaign of North Vietnam started in early 1965?',
+          q: 'What was the code name of the sustained US bombing campaign of North Vietnam started in early 1965?',
+          options: [
+            'Operation Rolling Thunder',
+            'Operation Linebacker',
+            'Operation Pierce Arrow',
+            'Operation Arc Light',
+          ],
+          answer: 'Operation Rolling Thunder',
+          a: 'Operation Rolling Thunder',
+          explanation:
+            "The campaign aimed to destroy North Vietnamese infrastructure and disrupt supply lines to the South. This bombing campaign failed to break North Vietnam's resolve or stop the flow of supplies to the South.",
+        },
+        {
+          question: 'What was the primary goal of Operation Rolling Thunder?',
+          q: 'What was the primary goal of Operation Rolling Thunder?',
+          options: [
+            'To clear large areas of jungle using chemical defoliants like Agent Blue',
+            'To completely desegregate all military training bases inside the United States',
+            'To deploy nuclear weapons along the border with China to deter invasion',
+            "To destroy North Vietnam's transport infrastructure and disrupt supply routes",
+          ],
+          answer: "To destroy North Vietnam's transport infrastructure and disrupt supply routes",
+          a: "To destroy North Vietnam's transport infrastructure and disrupt supply routes",
+          explanation:
+            'Launched in 1965, Operation Rolling Thunder was a sustained bombing campaign aimed at destroying military bases, industrial targets, and supply lines in North Vietnam to prevent them from supporting the Vietcong in the South.',
+        },
+        {
+          question:
+            'Who was the commander of US forces in Vietnam during the period of escalation (1964-68)?',
+          q: 'Who was the commander of US forces in Vietnam during the period of escalation (1964-68)?',
+          options: [
+            'General William Westmoreland',
+            'General Maxwell Taylor',
+            'General William DePuy',
+            'General Creighton Abrams',
+          ],
+          answer: 'General William Westmoreland',
+          a: 'General William Westmoreland',
+          explanation:
+            "Westmoreland advocated a strategy of attrition, aiming to kill communist forces faster than they could be replaced. His attrition strategy failed to account for North Vietnam's high population and willingness to absorb massive casualties.",
+        },
+        {
+          question:
+            'Where did the first official US ground combat troops land in South Vietnam in 1965?',
+          q: 'Where did the first official US ground combat troops land in South Vietnam in 1965?',
+          options: [
+            'Da Nang air base',
+            'Pleiku military camp',
+            'Hanoi harbor docks',
+            'Saigon city center',
+          ],
+          answer: 'Da Nang air base',
+          a: 'Da Nang air base',
+          explanation:
+            'In March 1965, the first official ground combat forces (3,500 US Marines) landed at Da Nang. Their initial instruction was to defend the vital US air base used for Operation Rolling Thunder bombing flights.',
+        },
+        {
+          question:
+            'Which US military base in South Vietnam was attacked in February 1965, prompting Johnson to launch Rolling Thunder?',
+          q: 'Which US military base in South Vietnam was attacked in February 1965, prompting Johnson to launch Rolling Thunder?',
+          options: ['Da Nang', 'Tan Son Nhut', 'Khe Sanh', 'Pleiku'],
+          answer: 'Pleiku',
+          a: 'Pleiku',
+          explanation:
+            'A Vietcong mortar attack killed 8 US soldiers at Pleiku, triggering retaliatory air strikes and the bombing campaign.',
+        },
+        {
+          question:
+            "What was the peak troop level of US servicemen in Vietnam under President Johnson's administration?",
+          q: "What was the peak troop level of US servicemen in Vietnam under President Johnson's administration?",
+          options: ['Over 100,000', 'Over 750,000', 'Over 250,000', 'Over 500,000'],
+          answer: 'Over 500,000',
+          a: 'Over 500,000',
+          explanation:
+            'By late 1968, US forces in Vietnam exceeded 536,000, representing a massive escalation from advisors. This massive troop commitment illustrated how the US had taken over the primary burden of the ground war.',
+        },
+        {
+          question:
+            'Who was the Secretary of Defense who served under Kennedy and Johnson, overseeing the escalation of the war?',
+          q: 'Who was the Secretary of Defense who served under Kennedy and Johnson, overseeing the escalation of the war?',
+          options: ['Dean Rusk', 'Robert McNamara', 'Clark Clifford', 'McGeorge Bundy'],
+          answer: 'Robert McNamara',
+          a: 'Robert McNamara',
+          explanation:
+            'McNamara applied statistical systems to the war, but later grew disillusioned with prospects of US military victory.',
+        },
+        {
+          question:
+            'Why was the Gulf of Tonkin Resolution (1964) highly significant for US involvement in Vietnam?',
+          q: 'Why was the Gulf of Tonkin Resolution (1964) highly significant for US involvement in Vietnam?',
+          options: [
+            'It officially declared war against North Vietnam and authorized a full ground invasion',
+            'It permitted Congress to supervise and limit presidential defense spending in Vietnam',
+            'It established a joint military coalition between the United States and SEATO allies',
+            'It gave President Johnson the power to escalate military action without a formal declaration of war',
+          ],
+          answer:
+            'It gave President Johnson the power to escalate military action without a formal declaration of war',
+          a: 'It gave President Johnson the power to escalate military action without a formal declaration of war',
+          explanation:
+            'Passed by Congress almost unanimously, the resolution acted as a blank check, allowing Johnson to deploy combat troops and launch bombing campaigns in Vietnam.',
+        },
+        {
+          question:
+            'Which South Vietnamese air base was the landing site for the first official US ground combat troops in March 1965?',
+          q: 'Which South Vietnamese air base was the landing site for the first official US ground combat troops in March 1965?',
+          options: ['Saigon Airport', 'Qui Nhon', 'Da Nang', 'Cam Ranh Bay'],
+          answer: 'Da Nang',
+          a: 'Da Nang',
+          explanation:
+            'The landing of the 9th Marine Expeditionary Brigade marked the formal commitment of US ground combat forces. This arrival began the massive build-up of US combat forces on the Asian mainland.',
+        },
+        {
+          question:
+            'Which major battle in November 1965 was the first large-scale clash between the US Army and conventional NVA forces?',
+          q: 'Which major battle in November 1965 was the first large-scale clash between the US Army and conventional NVA forces?',
+          options: [
+            'Battle of Hamburger Hill',
+            'Battle of Dak To',
+            'Battle of Khe Sanh',
+            'Battle of Ia Drang',
+          ],
+          answer: 'Battle of Ia Drang',
+          a: 'Battle of Ia Drang',
+          explanation:
+            'US airmobile troops used helicopters to engage NVA units in the highlands. Both sides suffered heavy casualties and claimed victory.',
+        },
+        {
+          question:
+            'How many members of Congress voted against the Gulf of Tonkin Resolution in August 1964?',
+          q: 'How many members of Congress voted against the Gulf of Tonkin Resolution in August 1964?',
+          options: ['Zero', 'Five', 'Two', 'Ten'],
+          answer: 'Two',
+          a: 'Two',
+          explanation:
+            'The resolution passed 416-0 in the House and 88-2 in the Senate, with only Senators Morse and Gruening voting against. Their opposition represented a rare early warning against granting the executive branch unchecked military power.',
+        },
+        {
+          question:
+            'Who was the military commander of the North Vietnamese Army (NVA) who planned the strategy against the French and Americans?',
+          q: 'Who was the military commander of the North Vietnamese Army (NVA) who planned the strategy against the French and Americans?',
+          options: ['Vo Nguyen Giap', 'Nguyen Chi Thanh', 'Le Duan', 'Van Tien Dung'],
+          answer: 'Vo Nguyen Giap',
+          a: 'Vo Nguyen Giap',
+          explanation:
+            'Giap was the Minister of Defense who planned the victories at Dien Bien Phu and directed the Tet Offensive. His military strategies successfully countered US technological superiority and wore down American political will.',
+        },
+        {
+          question:
+            'How did declassified records later clarify the events of the Gulf of Tonkin Incident on 4 August 1964?',
+          q: 'How did declassified records later clarify the events of the Gulf of Tonkin Incident on 4 August 1964?',
+          options: [
+            "The second attack was a 'phantom' event caused by weather and sonar errors, and never occurred",
+            'The attack was actually launched by Chinese warships, not North Vietnamese',
+            'The USS Maddox was sunk with all hands, which was covered up by the US Navy',
+            'The North Vietnamese launched a full amphibious invasion of the Gulf',
+          ],
+          answer:
+            "The second attack was a 'phantom' event caused by weather and sonar errors, and never occurred",
+          a: "The second attack was a 'phantom' event caused by weather and sonar errors, and never occurred",
+          explanation:
+            'Declassified reports showed that the second attack on the USS Maddox and USS Turner Joy never happened. It was a false alarm that the Johnson administration used to gain war powers.',
+        },
+        {
+          question:
+            'Which of the following best explains why the Gulf of Tonkin Resolution was a turning point in the Vietnam War?',
+          q: 'Which of the following best explains why the Gulf of Tonkin Resolution was a turning point in the Vietnam War?',
+          options: [
+            'It gave the President blank-check authority to deploy combat troops without a formal declaration of war by Congress.',
+            'It marked the first time the US entered a formal alliance with South Vietnam',
+            'It led to an immediate joint invasion of North Vietnam by US and Chinese forces',
+            'It forced Richard Nixon to resign his presidency',
+          ],
+          answer:
+            'It gave the President blank-check authority to deploy combat troops without a formal declaration of war by Congress.',
+          a: 'It gave the President blank-check authority to deploy combat troops without a formal declaration of war by Congress.',
+          explanation:
+            'The resolution shifted war-making power to the executive branch, allowing LBJ to rapidly escalate and send US ground troops into combat.',
+        },
+        {
+          question:
+            'What was a major consequence of the launch of Operation Rolling Thunder in 1965?',
+          q: 'What was a major consequence of the launch of Operation Rolling Thunder in 1965?',
+          options: [
+            'It convinced China to enter the war on the side of South Vietnam',
+            "It led to the total destruction of the Vietcong's underground tunnels",
+            'It marked the systematic escalation of the air war but failed to stop the flow of supplies from North Vietnam.',
+            'It immediately forced Ho Chi Minh to surrender in Geneva',
+          ],
+          answer:
+            'It marked the systematic escalation of the air war but failed to stop the flow of supplies from North Vietnam.',
+          a: 'It marked the systematic escalation of the air war but failed to stop the flow of supplies from North Vietnam.',
+          explanation:
+            'Despite dropping massive amounts of explosives, the bombing campaign failed to break North Vietnamese morale or block the Ho Chi Minh Trail.',
+        },
+        {
+          question:
+            "Which of the following was a primary cause for President Johnson's decision to deploy official US ground combat troops in early 1965?",
+          q: "Which of the following was a primary cause for President Johnson's decision to deploy official US ground combat troops in early 1965?",
+          options: [
+            'Congress had passed a resolution demanding the immediate withdrawal of all US advisors.',
+            'North Vietnam had launched a full amphibious invasion of the California coast.',
+            'The imminent collapse of the South Vietnamese government and army under communist pressure.',
+            'Southern governors requested troops to help them integrate training camps.',
+          ],
+          answer:
+            'The imminent collapse of the South Vietnamese government and army under communist pressure.',
+          a: 'The imminent collapse of the South Vietnamese government and army under communist pressure.',
+          explanation:
+            "By early 1965, South Vietnam's military was losing ground rapidly to the Vietcong, and its government was highly unstable. Johnson was advised that without direct US combat intervention, South Vietnam would fall.",
+        },
+        {
+          question:
+            "Which of the following was a key consequence of General William Westmoreland's 'war of attrition' strategy?",
+          q: "Which of the following was a key consequence of General William Westmoreland's 'war of attrition' strategy?",
+          options: [
+            "It led to high US casualty rates and rising public opposition, without breaking the enemy's resolve.",
+            'It led to a successful US amphibious invasion and occupation of Hanoi.',
+            'It convinced President Johnson to immediately run for a third term.',
+            'It forced North Vietnam to sign an unconditional surrender within one year.',
+          ],
+          answer:
+            "It led to high US casualty rates and rising public opposition, without breaking the enemy's resolve.",
+          a: "It led to high US casualty rates and rising public opposition, without breaking the enemy's resolve.",
+          explanation:
+            "Westmoreland's strategy focused on body counts to wear the enemy down. However, North Vietnam was willing to absorb massive losses and sent new troops faster than the US could kill them, leading to a bloody stalemate that alienated the US public.",
+        },
+      ],
     },
     {
       id: 'lesson_3_3',
@@ -4045,6 +6792,267 @@ export const usa = {
           },
         ],
       },
+      quiz: [
+        {
+          question:
+            'What Vietcong military tactic involved hit-and-run ambushes, traps, and avoiding conventional pitched battles?',
+          q: 'What Vietcong military tactic involved hit-and-run ambushes, traps, and avoiding conventional pitched battles?',
+          options: [
+            'Attrition warfare',
+            'Conventional warfare',
+            'Guerrilla warfare',
+            'Blitzkrieg tactics',
+          ],
+          answer: 'Guerrilla warfare',
+          a: 'Guerrilla warfare',
+          explanation:
+            'Guerrilla warfare aimed to wear down US troop morale and resources without offering a fixed target for airpower. These tactics neutralized US technological superiority and severely wore down American soldier morale.',
+        },
+        {
+          question:
+            'What US military tactic involved patrolling the jungle to locate enemy units and calling in artillery and air strikes?',
+          q: 'What US military tactic involved patrolling the jungle to locate enemy units and calling in artillery and air strikes?',
+          options: [
+            'Target and Eliminate',
+            'Encircle and Subdue',
+            'Search and Destroy',
+            'Infiltrate and Secure',
+          ],
+          answer: 'Search and Destroy',
+          a: 'Search and Destroy',
+          explanation:
+            'Also known as seek-and-destroy, it relied on helicopter mobility to deploy infantry, but often alienated local populations.',
+        },
+        {
+          question:
+            'What highly flammable, sticky gasoline gel was used by the US military in bombs to burn jungle foliage and enemy positions?',
+          q: 'What highly flammable, sticky gasoline gel was used by the US military in bombs to burn jungle foliage and enemy positions?',
+          options: ['Thermite powder', 'Agent Orange', 'Napalm', 'White phosphorus'],
+          answer: 'Napalm',
+          a: 'Napalm',
+          explanation:
+            'Napalm clung to surfaces and skin, causing horrific burns and sucking oxygen out of shelters.',
+        },
+        {
+          question:
+            'What chemical herbicide was sprayed by US aircraft to defoliate forests and destroy enemy food crops?',
+          q: 'What chemical herbicide was sprayed by US aircraft to defoliate forests and destroy enemy food crops?',
+          options: ['Agent Orange', 'Blue Defoliant', 'Napalm', 'Malathion spray'],
+          answer: 'Agent Orange',
+          a: 'Agent Orange',
+          explanation:
+            'Agent Orange destroyed millions of acres of forest. It was later linked to severe health issues and birth defects.',
+        },
+        {
+          question:
+            'What was the name of the complex supply route running from North to South Vietnam through Laos and Cambodia?',
+          q: 'What was the name of the complex supply route running from North to South Vietnam through Laos and Cambodia?',
+          options: [
+            'Hanoi Transport Route',
+            'Vietcong Supply Highway',
+            'Ho Chi Minh Trail',
+            'Indochina Bypass Trail',
+          ],
+          answer: 'Ho Chi Minh Trail',
+          a: 'Ho Chi Minh Trail',
+          explanation:
+            'The trail kept communist forces in the South supplied with weapons and reinforcements despite constant US bombing. This supply line funneled troops and materials, ensuring the VC could replace their losses indefinitely.',
+        },
+        {
+          question:
+            'What underground structures did the Vietcong construct to hide, store supplies, and launch surprise attacks?',
+          q: 'What underground structures did the Vietcong construct to hide, store supplies, and launch surprise attacks?',
+          options: ['Cave bases', 'Trench lines', 'Fortified bunkers', 'Tunnel systems'],
+          answer: 'Tunnel systems',
+          a: 'Tunnel systems',
+          explanation:
+            'Tunnels (like those at Cu Chi) contained barracks, hospitals, and command centers, protecting fighters from bombing. These tunnels allowed fighters to survive heavy US artillery and air strikes, launch surprise attacks, and retreat safely.',
+        },
+        {
+          question:
+            'What simple Vietcong traps used sharpened bamboo stakes hidden in pits and smeared with excrement?',
+          q: 'What simple Vietcong traps used sharpened bamboo stakes hidden in pits and smeared with excrement?',
+          options: ['Punji traps', 'Bouncing Betties', 'Tripwire bombs', 'Spike boards'],
+          answer: 'Punji traps',
+          a: 'Punji traps',
+          explanation:
+            'Punji traps were designed to wound rather than kill, slowing down patrols and causing severe infections. These booby traps created constant anxiety among US soldiers and slowed down search-and-destroy patrols.',
+        },
+        {
+          question:
+            'What metric did U.S. commanders use as the primary measure of progress in the war of attrition?',
+          q: 'What metric did U.S. commanders use as the primary measure of progress in the war of attrition?',
+          options: ['Territory captured', 'Sorties flown', 'Ammunition expended', 'Body count'],
+          answer: 'Body count',
+          a: 'Body count',
+          explanation:
+            'Commanders focused on the number of enemy dead. This system led to inflated statistics and civilian casualties being counted as combatants.',
+        },
+        {
+          question:
+            'What helicopter model was widely used by the US for troop transport, medical evacuation, and gunship support?',
+          q: 'What helicopter model was widely used by the US for troop transport, medical evacuation, and gunship support?',
+          options: ['OH-6 Cayuse', 'CH-47 Chinook', 'AH-1 Cobra', 'UH-1 Huey'],
+          answer: 'UH-1 Huey',
+          a: 'UH-1 Huey',
+          explanation:
+            'The Huey became the symbol of the Vietnam War, defining the airmobile tactics of the conflict. This helicopter allowed US forces to deploy quickly to remote areas, overcoming the dense jungle terrain.',
+        },
+        {
+          question:
+            'Which major North Vietnamese and Vietcong offensive in January 1968 marked the turning point of the war?',
+          q: 'Which major North Vietnamese and Vietcong offensive in January 1968 marked the turning point of the war?',
+          options: [
+            'Tet Offensive',
+            'Gulf of Tonkin Incident',
+            'Easter Offensive',
+            'Christmas Offensive',
+          ],
+          answer: 'Tet Offensive',
+          a: 'Tet Offensive',
+          explanation:
+            "Although a military failure for the communists, Tet shattered the US public's belief that victory was near. This offensive shattered the US public's trust in claims that the war was near a successful end.",
+        },
+        {
+          question:
+            'Why was the 1968 Tet Offensive considered a major political turning point for the US homefront?',
+          q: 'Why was the 1968 Tet Offensive considered a major political turning point for the US homefront?',
+          options: [
+            'It forced President Johnson to resign from office immediately',
+            'It shattered the public belief that the US was winning the war',
+            'It led to the immediate withdrawal of all US ground forces',
+            'It resulted in the military capture of Saigon by communist forces',
+          ],
+          answer: 'It shattered the public belief that the US was winning the war',
+          a: 'It shattered the public belief that the US was winning the war',
+          explanation:
+            'Despite military claims of progress, the size and coordination of the communist offensive, broadcast on TV, created a massive credibility gap for the US government. This psychological shock forced President Johnson to halt escalation and begin the path to US withdrawal.',
+        },
+        {
+          question:
+            'Which historic South Vietnamese city saw the longest and bloodiest urban battle of the Tet Offensive?',
+          q: 'Which historic South Vietnamese city saw the longest and bloodiest urban battle of the Tet Offensive?',
+          options: ['Da Nang', 'Saigon', 'Hue', 'Quang Tri'],
+          answer: 'Hue',
+          a: 'Hue',
+          explanation:
+            'NVA forces captured the city and held it for nearly a month. The battle left the ancient citadel in ruins.',
+        },
+        {
+          question:
+            'Which US Marine base in northern South Vietnam was besieged by NVA forces for 77 days in early 1968?',
+          q: 'Which US Marine base in northern South Vietnam was besieged by NVA forces for 77 days in early 1968?',
+          options: ['Con Thien', 'Dong Ha', 'Camp Carroll', 'Khe Sanh'],
+          answer: 'Khe Sanh',
+          a: 'Khe Sanh',
+          explanation:
+            'The siege began just before the Tet Offensive. Johnson ordered heavy air support to prevent another Dien Bien Phu.',
+        },
+        {
+          question:
+            'Which high-profile building in Saigon was attacked by a Vietcong commando squad during the Tet Offensive?',
+          q: 'Which high-profile building in Saigon was attacked by a Vietcong commando squad during the Tet Offensive?',
+          options: [
+            'US Embassy',
+            'ARVN Headquarters',
+            'Presidential Palace',
+            'Radio Saigon station',
+          ],
+          answer: 'US Embassy',
+          a: 'US Embassy',
+          explanation:
+            'Although the attackers were killed, images of combat inside the embassy compound shocked the US public. This dramatic attack proved that communist forces could penetrate the most secure US installations in South Vietnam.',
+        },
+        {
+          question:
+            'What slang term was used by US soldiers for search-and-destroy missions that ended in burning down peasant huts?',
+          q: 'What slang term was used by US soldiers for search-and-destroy missions that ended in burning down peasant huts?',
+          options: [
+            'Search-and-destroy sweeps',
+            'Burn-and-clear missions',
+            'Search-and-burn actions',
+            'Zippo missions',
+          ],
+          answer: 'Zippo missions',
+          a: 'Zippo missions',
+          explanation:
+            'Named after the popular Zippo lighter, soldiers used them to burn thatched roofs of suspected Vietcong villages. These operations alienated the rural peasantry, pushing them to support the Vietcong.',
+        },
+        {
+          question:
+            'What was the approximate total length of the Ho Chi Minh Trail supply network running through Laos and Cambodia?',
+          q: 'What was the approximate total length of the Ho Chi Minh Trail supply network running through Laos and Cambodia?',
+          options: ['30,000 km', '5,000 km', '1,500 km', '15,000 km'],
+          answer: '15,000 km',
+          a: '15,000 km',
+          explanation:
+            'The Ho Chi Minh Trail was not a single road, but a massive 15,000 km network of jungle paths, roads, and fuel pipelines that the US could never fully disrupt.',
+        },
+        {
+          question:
+            "Which of the following best explains why the Ho Chi Minh Trail was crucial to the Vietcong's military strategy?",
+          q: "Which of the following best explains why the Ho Chi Minh Trail was crucial to the Vietcong's military strategy?",
+          options: [
+            'It allowed North Vietnam to continuously supply guerrillas in the South via routes in Laos and Cambodia.',
+            'It was a major trade route that supplied food from China directly to South Vietnam',
+            'It was a paved highway that allowed North Vietnamese tanks to invade Saigon directly',
+            'It was built entirely within the Demilitarized Zone (DMZ), protected by international law',
+          ],
+          answer:
+            'It allowed North Vietnam to continuously supply guerrillas in the South via routes in Laos and Cambodia.',
+          a: 'It allowed North Vietnam to continuously supply guerrillas in the South via routes in Laos and Cambodia.',
+          explanation:
+            'The trail bypassed the DMZ by going through neutral Laos and Cambodia, allowing the NVA to supply the Vietcong with arms and troops.',
+        },
+        {
+          question:
+            "What was the primary consequence of the US military's heavy reliance on 'Search and Destroy' tactics?",
+          q: "What was the primary consequence of the US military's heavy reliance on 'Search and Destroy' tactics?",
+          options: [
+            'It alienated the South Vietnamese peasantry, driving many to support the Vietcong.',
+            'It led to a swift capture of Hanoi by US ground forces',
+            'It reduced the need for US draft calls and troop deployments',
+            "It successfully wiped out the Vietcong's organizational structure within two years",
+          ],
+          answer:
+            'It alienated the South Vietnamese peasantry, driving many to support the Vietcong.',
+          a: 'It alienated the South Vietnamese peasantry, driving many to support the Vietcong.',
+          explanation:
+            'Search and destroy missions caused high civilian casualties and destroyed villages, which turned local peasants against the US and the Saigon government.',
+        },
+        {
+          question:
+            "Which of the following explains why the Vietcong's guerrilla tactics were so difficult for the US military to defeat?",
+          q: "Which of the following explains why the Vietcong's guerrilla tactics were so difficult for the US military to defeat?",
+          options: [
+            'They avoided large pitched battles, used complex tunnel networks, and blended in with the local peasant population.',
+            'They relied on high-tech satellite communications and advanced fighter jets.',
+            'They were supported by an active naval fleet that blockaded Saigon harbor.',
+            'They fought in open terrain where they could utilize superior troop numbers.',
+          ],
+          answer:
+            'They avoided large pitched battles, used complex tunnel networks, and blended in with the local peasant population.',
+          a: 'They avoided large pitched battles, used complex tunnel networks, and blended in with the local peasant population.',
+          explanation:
+            'Vietcong tactics neutralized US airpower and heavy artillery. Their tunnels provided shelter from bombing, and their ability to blend with civilians made it extremely difficult for US troops to identify the enemy, creating constant stress and wear on US forces.',
+        },
+        {
+          question:
+            "What was a major consequence of the US military's use of chemical defoliants like Agent Orange and Napalm?",
+          q: "What was a major consequence of the US military's use of chemical defoliants like Agent Orange and Napalm?",
+          options: [
+            'They forced the Vietcong to abandon their underground tunnel systems.',
+            'They led to a permanent ban on US military aircraft in Southeast Asia.',
+            'They caused horrific civilian injuries and birth defects, turning international and domestic opinion against the war.',
+            'They completely stopped all agricultural production in North Vietnam.',
+          ],
+          answer:
+            'They caused horrific civilian injuries and birth defects, turning international and domestic opinion against the war.',
+          a: 'They caused horrific civilian injuries and birth defects, turning international and domestic opinion against the war.',
+          explanation:
+            'While intended to strip forest cover and expose enemy routes, the use of Agent Orange and Napalm destroyed crops and caused widespread civilian suffering, severely damaging the moral credibility of the US mission.',
+        },
+      ],
     },
     {
       id: 'lesson_3_4',
@@ -4392,6 +7400,271 @@ export const usa = {
           },
         ],
       },
+      quiz: [
+        {
+          question:
+            'What policy under President Nixon aimed to withdraw US troops and hand over combat duties to the South Vietnamese army?',
+          q: 'What policy under President Nixon aimed to withdraw US troops and hand over combat duties to the South Vietnamese army?',
+          options: [
+            'Guam Doctrine alignment',
+            'Strategic withdrawal',
+            'Vietnamisation',
+            'De-escalation policy',
+          ],
+          answer: 'Vietnamisation',
+          a: 'Vietnamisation',
+          explanation:
+            'Vietnamisation aimed to reduce US ground casualties and shift the military burden to the ARVN forces. This policy aimed to quiet anti-war protests at home, but left South Vietnam highly vulnerable to North Vietnamese forces.',
+        },
+        {
+          question:
+            'What was the name of the foreign policy doctrine declaring that US allies must provide their own ground troops?',
+          q: 'What was the name of the foreign policy doctrine declaring that US allies must provide their own ground troops?',
+          options: ['Carter Doctrine', 'Eisenhower Doctrine', 'Truman Doctrine', 'Nixon Doctrine'],
+          answer: 'Nixon Doctrine',
+          a: 'Nixon Doctrine',
+          explanation:
+            'The doctrine stated that while the US would offer economic and air support, it would not fight ground wars for allies. This doctrine marked a major shift in US foreign policy, limiting direct ground troop commitments to allies.',
+        },
+        {
+          question:
+            'What slogan did Richard Nixon use to describe his goal of achieving a negotiated exit from the war?',
+          q: 'What slogan did Richard Nixon use to describe his goal of achieving a negotiated exit from the war?',
+          options: [
+            'Peace with Honor',
+            'Victory with Dignity',
+            'Stalemate Resolution',
+            'Negotiated Settlement Plan',
+          ],
+          answer: 'Peace with Honor',
+          a: 'Peace with Honor',
+          explanation:
+            "Nixon sought an exit that did not look like a defeat, preserving US credibility and South Vietnam's independence. This phrase represented Nixon's attempt to negotiate an exit that preserved South Vietnam's independence and US prestige.",
+        },
+        {
+          question:
+            'Which neutral country neighboring Vietnam did Nixon order a secret bombing campaign and ground invasion of in 1969-70?',
+          q: 'Which neutral country neighboring Vietnam did Nixon order a secret bombing campaign and ground invasion of in 1969-70?',
+          options: ['Thailand', 'Cambodia', 'North Vietnam', 'Laos'],
+          answer: 'Cambodia',
+          a: 'Cambodia',
+          explanation:
+            'The invasion aimed to destroy Vietcong sanctuaries and supply depots, but caused massive protests in the US.',
+        },
+        {
+          question:
+            'Which country neighboring Vietnam was invaded by ARVN forces with US air support in 1971?',
+          q: 'Which country neighboring Vietnam was invaded by ARVN forces with US air support in 1971?',
+          options: ['Laos', 'Myanmar', 'Thailand', 'Cambodia'],
+          answer: 'Laos',
+          a: 'Laos',
+          explanation:
+            'The invasion (Lam Son 719) aimed to cut the Ho Chi Minh Trail but ended in a disastrous ARVN retreat. The invasion here resulted in a disastrous ARVN retreat, proving that Vietnamization was failing.',
+        },
+        {
+          question:
+            'Which North Vietnamese capital city was hit by heavy U.S. B-52 bomber raids during the 1972 Christmas Bombings?',
+          q: 'Which North Vietnamese capital city was hit by heavy U.S. B-52 bomber raids during the 1972 Christmas Bombings?',
+          options: ['Vinh', 'Hanoi', 'Haiphong', 'Saigon'],
+          answer: 'Hanoi',
+          a: 'Hanoi',
+          explanation:
+            'The bombings aimed to force North Vietnam back to the negotiating table to finalize the peace treaty. The heavy bombing of this capital forced North Vietnamese negotiators to finalize the ceasefire terms.',
+        },
+        {
+          question:
+            'What was the official code name of the December 1972 Christmas Bombing campaign?',
+          q: 'What was the official code name of the December 1972 Christmas Bombing campaign?',
+          options: [
+            'Operation Linebacker II',
+            'Operation Rolling Thunder',
+            'Operation Linebacker I',
+            'Operation Menu',
+          ],
+          answer: 'Operation Linebacker II',
+          a: 'Operation Linebacker II',
+          explanation:
+            'It was the largest campaign of heavy bomber attacks launched by the US Air Force since World War II. This intensive bombing campaign forced North Vietnam to return to negotiations and sign the Paris Peace Accords.',
+        },
+        {
+          question:
+            'What was the main agreement reached in the Paris Peace Accords regarding US military forces?',
+          q: 'What was the main agreement reached in the Paris Peace Accords regarding US military forces?',
+          options: [
+            'North Vietnam would immediately disarm and dismantle its entire military force',
+            'South Vietnam would become a permanent protectorate governed directly by the UN',
+            'US forces would remain in South Vietnam indefinitely to maintain a ceasefire',
+            'All remaining US combat troops would withdraw, and North Vietnam would release all US POWs',
+          ],
+          answer:
+            'All remaining US combat troops would withdraw, and North Vietnam would release all US POWs',
+          a: 'All remaining US combat troops would withdraw, and North Vietnam would release all US POWs',
+          explanation:
+            'Signed in 1973, the Paris Peace Accords established a ceasefire, required the complete withdrawal of all US combat troops within 60 days, and secured the release of hundreds of American prisoners of war.',
+        },
+        {
+          question:
+            "Who was Nixon's National Security Advisor and lead negotiator at the Paris peace talks?",
+          q: "Who was Nixon's National Security Advisor and lead negotiator at the Paris peace talks?",
+          options: ['McGeorge Bundy', 'Henry Kissinger', 'Melvin Laird', 'William P. Rogers'],
+          answer: 'Henry Kissinger',
+          a: 'Henry Kissinger',
+          explanation:
+            'Kissinger conducted years of secret negotiations with North Vietnam, earning the Nobel Peace Prize in 1973. His diplomatic efforts led to the signing of the Paris Peace Accords, ending direct US combat involvement.',
+        },
+        {
+          question:
+            'Who was the chief negotiator for North Vietnam who negotiated the peace accords with Henry Kissinger?',
+          q: 'Who was the chief negotiator for North Vietnam who negotiated the peace accords with Henry Kissinger?',
+          options: ['Le Duan', 'Nguyen Co Thach', 'Le Duc Tho', 'Xuan Thuy'],
+          answer: 'Le Duc Tho',
+          a: 'Le Duc Tho',
+          explanation:
+            'Le Duc Tho declined the Nobel Peace Prize, stating that true peace had not yet been achieved in Vietnam. His refusal to accept the award highlighted the incomplete nature of the peace agreement as fighting continued.',
+        },
+        {
+          question:
+            'What was a major consequence of the withdrawal of US combat troops following the 1973 Paris Peace Accords?',
+          q: 'What was a major consequence of the withdrawal of US combat troops following the 1973 Paris Peace Accords?',
+          options: [
+            'North and South Vietnam permanently united under a peaceful coalition government',
+            'Fighting resumed between North and South Vietnam, leading to the collapse of South Vietnam',
+            'The United Nations established a permanent demilitarised zone along the Mekong River',
+            'South Vietnam launched a successful invasion and captured Hanoi',
+          ],
+          answer:
+            'Fighting resumed between North and South Vietnam, leading to the collapse of South Vietnam',
+          a: 'Fighting resumed between North and South Vietnam, leading to the collapse of South Vietnam',
+          explanation:
+            'Once US combat forces withdrew, the ceasefire collapsed. Without US military support, the South Vietnamese army was unable to resist the final North Vietnamese offensive, leading to the Fall of Saigon.',
+        },
+        {
+          question:
+            "What was the term for Nixon's secret strategy to make North Vietnam think he was volatile and willing to use nuclear weapons?",
+          q: "What was the term for Nixon's secret strategy to make North Vietnam think he was volatile and willing to use nuclear weapons?",
+          options: [
+            'Atomic Diplomacy Strategy',
+            'Madman Theory',
+            'Unpredictable Commander Plan',
+            'Volatile Negotiator Tactic',
+          ],
+          answer: 'Madman Theory',
+          a: 'Madman Theory',
+          explanation:
+            'Nixon wanted the communists to believe he was irrational enough to do anything, forcing them to negotiate.',
+        },
+        {
+          question: 'Why did President Nixon order the military invasion of Cambodia in 1970?',
+          q: 'Why did President Nixon order the military invasion of Cambodia in 1970?',
+          options: [
+            'To retaliate against North Vietnamese artillery shelling of South Vietnamese cities',
+            'To pressure the Cambodian king to join the military coalition against North Vietnam',
+            'To destroy Vietcong supply sanctuaries and disrupt the Ho Chi Minh Trail',
+            'To establish a new joint US-ARVN military command center closer to the border',
+          ],
+          answer: 'To destroy Vietcong supply sanctuaries and disrupt the Ho Chi Minh Trail',
+          a: 'To destroy Vietcong supply sanctuaries and disrupt the Ho Chi Minh Trail',
+          explanation:
+            "Nixon wanted to weaken communist forces using neutral Cambodian territory as safe havens, hoping to buy time for South Vietnam's army to build strength. This military escalation triggered massive anti-war protests in the United States, including the Kent State shootings.",
+        },
+        {
+          question:
+            'What was the code name of the disastrous 1971 ARVN invasion of Laos that ended in panic and retreat?',
+          q: 'What was the code name of the disastrous 1971 ARVN invasion of Laos that ended in panic and retreat?',
+          options: [
+            'Operation Dewey Canyon II',
+            'Operation Commando Hunt',
+            'Operation Lam Son 719',
+            'Operation Lam Son 720',
+          ],
+          answer: 'Operation Lam Son 719',
+          a: 'Operation Lam Son 719',
+          explanation:
+            'The operation showed that without US ground commanders, the ARVN was unable to defeat NVA forces. The disastrous retreat of ARVN troops proved their severe weakness without US ground commanders.',
+        },
+        {
+          question:
+            'What major conventional offensive did North Vietnam launch in spring 1972 to test the progress of Vietnamisation?',
+          q: 'What major conventional offensive did North Vietnam launch in spring 1972 to test the progress of Vietnamisation?',
+          options: [
+            'Easter Offensive',
+            'Christmas Offensive',
+            'Vietnamisation Test Drive',
+            'Tet Offensive',
+          ],
+          answer: 'Easter Offensive',
+          a: 'Easter Offensive',
+          explanation:
+            'The NVA attacked on three fronts, but Nixon responded with heavy air support (Operation Linebacker) to halt the invasion.',
+        },
+        {
+          question:
+            'How many US and ARVN ground troops were committed to the ground invasion of Cambodia in April 1970?',
+          q: 'How many US and ARVN ground troops were committed to the ground invasion of Cambodia in April 1970?',
+          options: ['100,000 troops', '5,000 troops', '10,000 troops', '30,000 troops'],
+          answer: '30,000 troops',
+          a: '30,000 troops',
+          explanation:
+            'Nixon sent 30,000 troops into Cambodia to clear out communist sanctuaries, triggering massive protests on US college campuses.',
+        },
+        {
+          question:
+            'Approximately how many tons of explosives were dropped on North Vietnam during the 1972 Christmas Bombings (Linebacker II)?',
+          q: 'Approximately how many tons of explosives were dropped on North Vietnam during the 1972 Christmas Bombings (Linebacker II)?',
+          options: ['5,000 tons', '100,000 tons', '50,000 tons', '20,000 tons'],
+          answer: '20,000 tons',
+          a: '20,000 tons',
+          explanation:
+            'Operation Linebacker II saw US B-52 bombers drop over 20,000 tons of bombs on Hanoi and Haiphong, forcing North Vietnam to finalize peace talks.',
+        },
+        {
+          question:
+            "Which of the following best explains the main objective of Nixon's policy of 'Vietnamization'?",
+          q: "Which of the following best explains the main objective of Nixon's policy of 'Vietnamization'?",
+          options: [
+            'To launch a full-scale joint invasion of North Vietnam using allied troops',
+            'To withdraw US troops while transferring combat responsibility to the South Vietnamese forces.',
+            'To replace President Thieu with a communist coalition government',
+            'To completely annex South Vietnam as a permanent US territory',
+          ],
+          answer:
+            'To withdraw US troops while transferring combat responsibility to the South Vietnamese forces.',
+          a: 'To withdraw US troops while transferring combat responsibility to the South Vietnamese forces.',
+          explanation:
+            'Vietnamization aimed to de-escalate US involvement and quiet domestic protests by training the ARVN to fight the war on their own.',
+        },
+        {
+          question:
+            "What was the most significant domestic consequence of Nixon's invasion of Cambodia in 1970?",
+          q: "What was the most significant domestic consequence of Nixon's invasion of Cambodia in 1970?",
+          options: [
+            'It led to the immediate surrender of North Vietnamese forces',
+            'It triggered massive anti-war protests, including the Kent State shootings, and deep public outrage.',
+            'It convinced Congress to double the defense budget for the war',
+            'It was widely praised by the public and united the country behind Nixon',
+          ],
+          answer:
+            'It triggered massive anti-war protests, including the Kent State shootings, and deep public outrage.',
+          a: 'It triggered massive anti-war protests, including the Kent State shootings, and deep public outrage.',
+          explanation:
+            'The invasion of Cambodia was seen as expanding the war rather than ending it, leading to a massive wave of student demonstrations.',
+        },
+        {
+          question:
+            'Which of the following was the primary reason why President Nixon ordered the secret bombing of Cambodia in 1969?',
+          q: 'Which of the following was the primary reason why President Nixon ordered the secret bombing of Cambodia in 1969?',
+          options: [
+            'To establish a permanent US military colony in Phnom Penh.',
+            'To destroy North Vietnamese sanctuaries and supply bases along the border.',
+            'To retaliate against Cambodian air force attacks on US ships.',
+            'To help the Cambodian communist forces overthrow their king.',
+          ],
+          answer: 'To destroy North Vietnamese sanctuaries and supply bases along the border.',
+          a: 'To destroy North Vietnamese sanctuaries and supply bases along the border.',
+          explanation:
+            'Nixon wanted to put pressure on North Vietnam during negotiations by destroying their military sanctuaries and the Ho Chi Minh Trail branches inside Cambodia, hoping to show he was willing to escalate the war.',
+        },
+      ],
     },
     {
       id: 'lesson_4_1',
@@ -4708,6 +7981,281 @@ export const usa = {
           },
         ],
       },
+      quiz: [
+        {
+          question:
+            'What was the name of the system used to select young men for compulsory military service in Vietnam?',
+          q: 'What was the name of the system used to select young men for compulsory military service in Vietnam?',
+          options: [
+            'National Military Call-up',
+            'Selective Service System',
+            'The Draft',
+            'Conscription Act',
+          ],
+          answer: 'The Draft',
+          a: 'The Draft',
+          explanation:
+            'The draft was highly controversial, particularly because college students could obtain deferments, favoring wealthier whites. This conscription system created deep resentment and sparked widespread draft resistance and campus protests.',
+        },
+        {
+          question:
+            'At which university did National Guardsmen shoot and kill four student protesters in May 1970?',
+          q: 'At which university did National Guardsmen shoot and kill four student protesters in May 1970?',
+          options: [
+            'Kent State University',
+            'University of Wisconsin',
+            'UC Berkeley',
+            'Jackson State University',
+          ],
+          answer: 'Kent State University',
+          a: 'Kent State University',
+          explanation:
+            'The shootings occurred during protests against the invasion of Cambodia, triggering a national student strike.',
+        },
+        {
+          question:
+            'Which student organization was at the forefront of the early anti-war protest movement?',
+          q: 'Which student organization was at the forefront of the early anti-war protest movement?',
+          options: [
+            'Students for a Democratic Society (SDS)',
+            'Young Americans for Freedom (YAF)',
+            'Student Mobilization Committee (SMC)',
+            'Weather Underground Organization (WUO)',
+          ],
+          answer: 'Students for a Democratic Society (SDS)',
+          a: 'Students for a Democratic Society (SDS)',
+          explanation:
+            'SDS organized the first major national anti-war march in Washington in April 1965, drawing 20,000. This organization became the primary vehicle for coordinating the early student-led anti-war movement.',
+        },
+        {
+          question:
+            'What symbolic protest method involved young men burning their official government service notices?',
+          q: 'What symbolic protest method involved young men burning their official government service notices?',
+          options: [
+            'Draft card burning',
+            'Registration card destruction',
+            'Conscription notice burning',
+            'Selective Service protest',
+          ],
+          answer: 'Draft card burning',
+          a: 'Draft card burning',
+          explanation:
+            'Burning draft cards became a federal crime in 1965, but remained a popular act of civil disobedience.',
+        },
+        {
+          question:
+            'Which heavyweight boxing champion famously refused to be drafted in 1967, citing religious beliefs?',
+          q: 'Which heavyweight boxing champion famously refused to be drafted in 1967, citing religious beliefs?',
+          options: ['George Foreman', 'Joe Frazier', 'Muhammad Ali', 'Sonny Liston'],
+          answer: 'Muhammad Ali',
+          a: 'Muhammad Ali',
+          explanation:
+            "Ali was stripped of his title and banned from boxing, declaring: 'I ain't got no quarrel with them Viet Cong.' He was stripped of his heavyweight title, becoming a global icon of anti-war opposition and Black pride.",
+        },
+        {
+          question:
+            'What term describes the difference between what the government reported about the war and what journalists showed on TV?',
+          q: 'What term describes the difference between what the government reported about the war and what journalists showed on TV?',
+          options: [
+            'Pentagon barrier',
+            'Information mismatch',
+            'Public trust deficit',
+            'Credibility gap',
+          ],
+          answer: 'Credibility gap',
+          a: 'Credibility gap',
+          explanation:
+            'The credibility gap eroded public trust in the presidency, especially after the Tet Offensive showed the war was not won. This gap eroded public trust in the presidency, peaking after the Tet Offensive and driving anti-war sentiment.',
+        },
+        {
+          question:
+            'In which South Vietnamese village did US troops massacre over 500 unarmed civilians in March 1968?',
+          q: 'In which South Vietnamese village did US troops massacre over 500 unarmed civilians in March 1968?',
+          options: ['Song My', 'Dak Son', 'My Lai', 'Ben Tre'],
+          answer: 'My Lai',
+          a: 'My Lai',
+          explanation:
+            'The massacre of women, children, and old men was covered up by the military until journalist Seymour Hersh broke the story. The exposure of this massacre shocked the nation, severely damaging the moral legitimacy of the war.',
+        },
+        {
+          question:
+            'Who was the US Army lieutenant court-martialed and convicted of murder for ordering the My Lai massacre?',
+          q: 'Who was the US Army lieutenant court-martialed and convicted of murder for ordering the My Lai massacre?',
+          options: ['Ernest Medina', 'Samuel Koster', 'William Calley', 'Oran Henderson'],
+          answer: 'William Calley',
+          a: 'William Calley',
+          explanation:
+            'Calley was sentenced to life in prison, but Nixon reduced his sentence, and he ultimately served only three years of house arrest.',
+        },
+        {
+          question:
+            'What was the name of the top-secret government history of the war leaked to the press in 1971?',
+          q: 'What was the name of the top-secret government history of the war leaked to the press in 1971?',
+          options: [
+            'The Secret History Files',
+            'The McNamara Report',
+            'The Pentagon Papers',
+            'The Vietnam Archives',
+          ],
+          answer: 'The Pentagon Papers',
+          a: 'The Pentagon Papers',
+          explanation:
+            'The papers revealed that the government had systematically lied to Congress and the public about the scope of the war. The papers proved that successive administrations had systematically deceived Congress and the public about the war.',
+        },
+        {
+          question:
+            'Which trusted CBS news anchor declared in 1968 that the war was mired in a stalemate?',
+          q: 'Which trusted CBS news anchor declared in 1968 that the war was mired in a stalemate?',
+          options: ['Chet Huntley', 'Eric Sevareid', 'Walter Cronkite', 'David Brinkley'],
+          answer: 'Walter Cronkite',
+          a: 'Walter Cronkite',
+          explanation:
+            "Cronkite's report after visiting Vietnam deeply influenced public opinion. Johnson remarked: 'If I've lost Cronkite, I've lost Middle America.'",
+        },
+        {
+          question:
+            'What justification did Muhammad Ali give for refusing to fight in the Vietnam War?',
+          q: 'What justification did Muhammad Ali give for refusing to fight in the Vietnam War?',
+          options: [
+            'His religious beliefs and opposition to fighting other people of color',
+            'His protest against the lack of combat safety gear and training provided to recruits',
+            'His desire to pursue a professional career in boxing without military interruption',
+            'His alignment with anti-war student movements and the Students for a Democratic Society',
+          ],
+          answer: 'His religious beliefs and opposition to fighting other people of color',
+          a: 'His religious beliefs and opposition to fighting other people of color',
+          explanation:
+            'Ali cited his faith as a Muslim and argued that Black Americans should not fight for a country that denied them civil rights at home. His refusal linked the anti-war movement to the domestic struggle for civil rights, inspiring other activists.',
+        },
+        {
+          question: 'What was the significance of the Kent State shootings in 1970?',
+          q: 'What was the significance of the Kent State shootings in 1970?',
+          options: [
+            'They forced Congress to immediately repeal the Gulf of Tonkin Resolution',
+            'They triggered a nationwide student strike and highlighted deep divisions over the war',
+            'They resulted in the immediate resignation of President Richard Nixon',
+            'They led to the complete abolition of the student draft deferment system',
+          ],
+          answer:
+            'They triggered a nationwide student strike and highlighted deep divisions over the war',
+          a: 'They triggered a nationwide student strike and highlighted deep divisions over the war',
+          explanation:
+            'The killing of 4 unarmed student protestors by the National Guard triggered a massive wave of student strikes at over 400 universities, intensifying the public division and anger over the invasion of Cambodia.',
+        },
+        {
+          question:
+            'Why did the My Lai Massacre (1968) have such a devastating impact on the US homefront when it was revealed in 1969?',
+          q: 'Why did the My Lai Massacre (1968) have such a devastating impact on the US homefront when it was revealed in 1969?',
+          options: [
+            'It forced the President to establish an immediate ceasefire in South Vietnam',
+            'It led to massive legal prosecutions of top generals in the Pentagon',
+            "It exposed the moral cost of the war and shocked the public's conscience",
+            'It resulted in the immediate cut-off of congressional funds for military operations',
+          ],
+          answer: "It exposed the moral cost of the war and shocked the public's conscience",
+          a: "It exposed the moral cost of the war and shocked the public's conscience",
+          explanation:
+            "The brutal killing of over 500 unarmed Vietnamese civilians by US soldiers undermined the government's claim that the war was a moral defense of democracy. The exposure of this atrocity undermined the moral justification for US involvement in Southeast Asia.",
+        },
+        {
+          question:
+            'Who was the independent investigative journalist who broke the My Lai massacre story in November 1969?',
+          q: 'Who was the independent investigative journalist who broke the My Lai massacre story in November 1969?',
+          options: ['Daniel Ellsberg', 'Ronald Ridenhour', 'Neil Sheehan', 'Seymour Hersh'],
+          answer: 'Seymour Hersh',
+          a: 'Seymour Hersh',
+          explanation:
+            "Hersh traced Calley's court-martial charges, interviewed soldiers, and won the Pulitzer Prize for his reporting. His reporting broke the military's cover-up of the massacre, exposing the war's horrors to the public.",
+        },
+        {
+          question:
+            'Who was the military analyst who leaked the Pentagon Papers to newspapers in 1971?',
+          q: 'Who was the military analyst who leaked the Pentagon Papers to newspapers in 1971?',
+          options: ['Anthony Russo', 'Neil Sheehan', 'Arthur Ochs Sulzberger', 'Daniel Ellsberg'],
+          answer: 'Daniel Ellsberg',
+          a: 'Daniel Ellsberg',
+          explanation:
+            "Ellsberg was a former defense analyst who copied the documents to expose the deception of the war. His leak of the Pentagon Papers was a major victory for press freedom and severely damaged Nixon's administration.",
+        },
+        {
+          question:
+            'What was the scale of the nationwide student strike triggered by the Kent State shootings in May 1970?',
+          q: 'What was the scale of the nationwide student strike triggered by the Kent State shootings in May 1970?',
+          options: [
+            'Over 2 million students strike across 400 campuses',
+            '500,000 students strike',
+            '5 million students strike',
+            '100,000 students strike',
+          ],
+          answer: 'Over 2 million students strike across 400 campuses',
+          a: 'Over 2 million students strike across 400 campuses',
+          explanation:
+            'The shootings galvanized the student anti-war movement, leading to a massive strike of over two million students and closing hundreds of colleges.',
+        },
+        {
+          question:
+            'Which of the following best explains why the Tet Offensive was a turning point in the Vietnam War?',
+          q: 'Which of the following best explains why the Tet Offensive was a turning point in the Vietnam War?',
+          options: [
+            "It shattered US government claims that the enemy was near defeat, widening the 'credibility gap.'",
+            'It was a decisive military victory for the Vietcong that captured Saigon',
+            'It convinced North Vietnam that a military victory was impossible',
+            'It forced President Johnson to run for a third term to finish the war',
+          ],
+          answer:
+            "It shattered US government claims that the enemy was near defeat, widening the 'credibility gap.'",
+          a: "It shattered US government claims that the enemy was near defeat, widening the 'credibility gap.'",
+          explanation:
+            'Although a tactical military failure for the communists, the size of the offensive shocked the public, proving that the war was far from over.',
+        },
+        {
+          question:
+            'What was the most significant political consequence of the Tet Offensive on US domestic politics?',
+          q: 'What was the most significant political consequence of the Tet Offensive on US domestic politics?',
+          options: [
+            'It forced the US to draft all men over the age of 30',
+            'It resulted in Congress passing a declaration of war against North Vietnam',
+            'It led President Johnson to halt bombing, begin peace talks, and announce he would not run for re-election.',
+            'It led to the immediate impeachment of Richard Nixon',
+          ],
+          answer:
+            'It led President Johnson to halt bombing, begin peace talks, and announce he would not run for re-election.',
+          a: 'It led President Johnson to halt bombing, begin peace talks, and announce he would not run for re-election.',
+          explanation:
+            'The political fallout convinced Johnson that military victory was impossible and that his presidency had lost the consensus needed to govern.',
+        },
+        {
+          question:
+            "Which of the following was a primary cause of the growing 'credibility gap' between the US public and the government by 1971?",
+          q: "Which of the following was a primary cause of the growing 'credibility gap' between the US public and the government by 1971?",
+          options: [
+            'The sudden decision of President Nixon to halt all peace talks with North Vietnam.',
+            'The sudden rise in draft exemptions for wealthy students under Nixon.',
+            'A joint declaration by the UN that the US was committing international war crimes.',
+            'The publication of the Pentagon Papers and the exposure of the My Lai Massacre.',
+          ],
+          answer: 'The publication of the Pentagon Papers and the exposure of the My Lai Massacre.',
+          a: 'The publication of the Pentagon Papers and the exposure of the My Lai Massacre.',
+          explanation:
+            'The Pentagon Papers proved that the government had lied about the progress of the war for years, while the exposure of the My Lai Massacre shocked the public conscience, making people realize the government was hiding major atrocities.',
+        },
+        {
+          question:
+            'What was a major consequence of television news coverage of the Vietnam War, particularly after 1968?',
+          q: 'What was a major consequence of television news coverage of the Vietnam War, particularly after 1968?',
+          options: [
+            'It brought the brutal reality of combat into American living rooms, turning public opinion against the war.',
+            'It convinced the public that the US military had won a decisive victory in Hanoi.',
+            'It led to a federal law banning all television networks from showing war news.',
+            'It prompted the public to support a draft of all women into combat roles.',
+          ],
+          answer:
+            'It brought the brutal reality of combat into American living rooms, turning public opinion against the war.',
+          a: 'It brought the brutal reality of combat into American living rooms, turning public opinion against the war.',
+          explanation:
+            "Vietnam was the first 'television war.' Uncensored news footage showing wounded soldiers and civilian casualties contrasted with positive government reports, leading influential figures like Walter Cronkite to declare the war was in a stalemate, which heavily shifted public opinion.",
+        },
+      ],
     },
     {
       id: 'lesson_4_2',
@@ -5028,6 +8576,287 @@ export const usa = {
           },
         ],
       },
+      quiz: [
+        {
+          question:
+            'What term did Nixon use in November 1969 to describe the patriotic Americans who supported his war policy?',
+          q: 'What term did Nixon use in November 1969 to describe the patriotic Americans who supported his war policy?',
+          options: [
+            'The Quiet Americans',
+            'The Silent Majority',
+            'The Great Majority',
+            'The Patriotic Masses',
+          ],
+          answer: 'The Silent Majority',
+          a: 'The Silent Majority',
+          explanation:
+            'Nixon argued that the loud anti-war protesters were a minority, and most Americans supported his efforts. Nixon successfully mobilized this group to counter anti-war demonstrations and secure a landslide re-election in 1972.',
+        },
+        {
+          question:
+            'What was the primary political motivation for pro-war supporters in the US, fearing the global spread of communism?',
+          q: 'What was the primary political motivation for pro-war supporters in the US, fearing the global spread of communism?',
+          options: [
+            'Democratic capitalism',
+            'Global militarism',
+            'Anti-communism',
+            'National sovereignty',
+          ],
+          answer: 'Anti-communism',
+          a: 'Anti-communism',
+          explanation:
+            'Supporters believed that stopping communism in Vietnam was essential to protect American security and democracy. This Cold War containment mindset led many Americans to view the war as a vital defense of democratic values.',
+        },
+        {
+          question:
+            'What violent event occurred in New York City in May 1970 where construction workers attacked anti-war students?',
+          q: 'What violent event occurred in New York City in May 1970 where construction workers attacked anti-war students?',
+          options: [
+            'Hard Hat Riots',
+            'Wall Street Student Brawl',
+            'Labor-Student Clashes',
+            'Construction Workers Riot',
+          ],
+          answer: 'Hard Hat Riots',
+          a: 'Hard Hat Riots',
+          explanation:
+            'Mobilized by union leaders, construction workers beat student protesters, demonstrating the working-class support for the war.',
+        },
+        {
+          question:
+            'What informal term was used to describe politicians and citizens who supported the escalation of the war?',
+          q: 'What informal term was used to describe politicians and citizens who supported the escalation of the war?',
+          options: ['Warriors', 'Eagles', 'Falcons', 'Hawks'],
+          answer: 'Hawks',
+          a: 'Hawks',
+          explanation:
+            'Hawks favored military pressure, believing that the US should use all necessary force to win in Vietnam. Their political influence put pressure on the administration to escalate the war to achieve a military victory.',
+        },
+        {
+          question:
+            'What informal term was used to describe politicians and citizens who favored a peaceful exit from the war?',
+          q: 'What informal term was used to describe politicians and citizens who favored a peaceful exit from the war?',
+          options: ['Pacifists', 'Doves', 'Swallows', 'Pigeons'],
+          answer: 'Doves',
+          a: 'Doves',
+          explanation:
+            'Doves argued that the war was a civil conflict that could not be won militarily and urged immediate negotiations. Their advocacy shifted public opinion and put pressure on Nixon to accelerate the withdrawal of US troops.',
+        },
+        {
+          question:
+            'What popular pro-war slogan expressed the view that citizens who criticized the war should emigrate?',
+          q: 'What popular pro-war slogan expressed the view that citizens who criticized the war should emigrate?',
+          options: [
+            'Stand by Your President',
+            'My Country: Right or Wrong',
+            'America: Love It or Leave It',
+            'Support Our Troops: No Matter What',
+          ],
+          answer: 'America: Love It or Leave It',
+          a: 'America: Love It or Leave It',
+          explanation:
+            'The slogan reflected the intense patriotism and hostility toward anti-war protesters among supporters. This slogan highlighted the deep polarization of American society, equating protest with treason.',
+        },
+        {
+          question:
+            "Which US president made the famous 'Silent Majority' speech on television in November 1969?",
+          q: "Which US president made the famous 'Silent Majority' speech on television in November 1969?",
+          options: [
+            'Lyndon B. Johnson',
+            'Richard Nixon',
+            'Gerald Ford',
+            'Richard Nixon (as Vice President)',
+          ],
+          answer: 'Richard Nixon',
+          a: 'Richard Nixon',
+          explanation:
+            'The speech was highly successful, rallying conservative and working-class support to his administration. His appeal successfully divided public opinion, isolating radical anti-war protesters from mainstream voters.',
+        },
+        {
+          question:
+            "Which major national labor union coalition supported Nixon's war policy and helped organize the Hard Hat Riots?",
+          q: "Which major national labor union coalition supported Nixon's war policy and helped organize the Hard Hat Riots?",
+          options: [
+            'AFL-CIO',
+            'United Mine Workers (UMW)',
+            'Teamsters',
+            'United Auto Workers (UAW)',
+          ],
+          answer: 'AFL-CIO',
+          a: 'AFL-CIO',
+          explanation:
+            'Led by George Meany, the union leadership was strongly anti-communist and patriotic, aligning with Nixon. Their stance showed that a significant portion of the working-class rejected the anti-war movement.',
+        },
+        {
+          question:
+            "What was the main purpose of President Nixon's 'Silent Majority' speech in 1969?",
+          q: "What was the main purpose of President Nixon's 'Silent Majority' speech in 1969?",
+          options: [
+            'To condemn the US military command for failures and order a retreat',
+            'To declare war on Cambodia and send half a million new combat troops',
+            'To announce the immediate, unconditional end of the draft and the war',
+            'To appeal to moderate Americans for support for his Vietnamisation policy against anti-war protestors',
+          ],
+          answer:
+            'To appeal to moderate Americans for support for his Vietnamisation policy against anti-war protestors',
+          a: 'To appeal to moderate Americans for support for his Vietnamisation policy against anti-war protestors',
+          explanation:
+            "Nixon appealed to the millions of patriotic, moderate Americans who did not participate in protests, asking for their support to achieve 'peace with honor' through gradual US withdrawal.",
+        },
+        {
+          question:
+            'What pro-war student organization was formed to counter the radical anti-war Student Mobilization Committee?',
+          q: 'What pro-war student organization was formed to counter the radical anti-war Student Mobilization Committee?',
+          options: [
+            'Young Americans for Freedom (YAF)',
+            'Patriotic Youth Coalition (PYC)',
+            'Students for America (SFA)',
+            'College Republicans League (CRL)',
+          ],
+          answer: 'Young Americans for Freedom (YAF)',
+          a: 'Young Americans for Freedom (YAF)',
+          explanation:
+            'YAF was a conservative youth organization that organized pro-war rallies and supported the draft. Their activism showed that the youth of the 1960s were not unified, with many supporting conservative Cold War policies.',
+        },
+        {
+          question:
+            'How many construction workers marched in support of Nixon in New York City in the days following the Hard Hat Riots?',
+          q: 'How many construction workers marched in support of Nixon in New York City in the days following the Hard Hat Riots?',
+          options: ['Over 50,000', 'Over 20,000', 'Over 5,000', 'Over 10,000'],
+          answer: 'Over 20,000',
+          a: 'Over 20,000',
+          explanation:
+            'The workers marched to City Hall carrying American flags, showing the depth of working-class support for the troops. This counter-protest demonstrated the deep division between working-class patriots and anti-war student radicals.',
+        },
+        {
+          question:
+            'What concept of national duty and pride did working-class supporters frequently cite when criticizing student protesters?',
+          q: 'What concept of national duty and pride did working-class supporters frequently cite when criticizing student protesters?',
+          options: ['Anti-intellectualism', 'Patriotism', 'Law and order', 'Constitutional duty'],
+          answer: 'Patriotism',
+          a: 'Patriotism',
+          explanation:
+            'Supporters felt that refusing the draft and burning flags was a betrayal of those who had served in previous wars. This belief drove working-class families to support the war effort, seeing protests as a betrayal of their sons in combat.',
+        },
+        {
+          question: "Why did Nixon appeal specifically to the 'Silent Majority' in 1969?",
+          q: "Why did Nixon appeal specifically to the 'Silent Majority' in 1969?",
+          options: [
+            'To bypass active anti-war protesters and show Congress he had broad public support',
+            'To prepare the public for a potential nuclear strike against North Vietnam',
+            'To justify a massive increase in the draft calls and defense spending',
+            'To gain political leverage to dissolve the anti-war student organizations',
+          ],
+          answer:
+            'To bypass active anti-war protesters and show Congress he had broad public support',
+          a: 'To bypass active anti-war protesters and show Congress he had broad public support',
+          explanation:
+            'Nixon wanted to demonstrate that the vocal student protesters did not represent the majority of Americans, allowing him to continue his Vietnam policies.',
+        },
+        {
+          question:
+            "What demographic groups formed the primary social base for Nixon's Silent Majority?",
+          q: "What demographic groups formed the primary social base for Nixon's Silent Majority?",
+          options: [
+            'Working-class, suburban, and older conservative Americans',
+            'Black civil rights activists, anti-war veterans, and labor union leaders',
+            'Unemployed urban residents, immigrant laborers, and Southern farmers',
+            'Academic intellectuals, university students, and liberal media columnists',
+          ],
+          answer: 'Working-class, suburban, and older conservative Americans',
+          a: 'Working-class, suburban, and older conservative Americans',
+          explanation:
+            "Often called 'Middle America', they were alienated by the counterculture, student riots, and radical civil rights. This base was alienated by the counterculture and student protests, forming the core of Nixon's political coalition.",
+        },
+        {
+          question:
+            'What did pro-war advocates fear would happen to US allies if the United States withdrew from Vietnam in defeat?',
+          q: 'What did pro-war advocates fear would happen to US allies if the United States withdrew from Vietnam in defeat?',
+          options: [
+            'Loss of US global credibility and containment failure',
+            'A direct Soviet military invasion of other non-communist countries in Asia',
+            'The collapse of the United Nations coalition and loss of European allies',
+            'Immediate economic recession on the homefront due to loss of trade routes',
+          ],
+          answer: 'Loss of US global credibility and containment failure',
+          a: 'Loss of US global credibility and containment failure',
+          explanation:
+            'They feared a communist takeover of the region and that allies would no longer trust US security commitments. This fear drove hawks to demand a military victory, believing that withdrawal would embolden communist expansion.',
+        },
+        {
+          question:
+            'Approximately how many construction workers charged and attacked student anti-war protesters during the 1970 Hard Hat Riot?',
+          q: 'Approximately how many construction workers charged and attacked student anti-war protesters during the 1970 Hard Hat Riot?',
+          options: ['200 workers', '1,000 workers', '500 workers', '50 workers'],
+          answer: '200 workers',
+          a: '200 workers',
+          explanation:
+            "About 200 construction workers wearing hard hats attacked student protesters in Lower Manhattan, demonstrating working-class support for Nixon's policies.",
+        },
+        {
+          question:
+            'Which of the following best explains why the revelation of the My Lai Massacre in 1969 deeply shocked the American public?',
+          q: 'Which of the following best explains why the revelation of the My Lai Massacre in 1969 deeply shocked the American public?',
+          options: [
+            'It proved that the US had won the war but refused to accept victory',
+            'It exposed the brutal killing of unarmed Vietnamese civilians by US soldiers and a subsequent military cover-up.',
+            'It was the first battle where the Vietcong used chemical weapons against civilians',
+            'It showed that the South Vietnamese army had betrayed US troops in combat',
+          ],
+          answer:
+            'It exposed the brutal killing of unarmed Vietnamese civilians by US soldiers and a subsequent military cover-up.',
+          a: 'It exposed the brutal killing of unarmed Vietnamese civilians by US soldiers and a subsequent military cover-up.',
+          explanation:
+            'My Lai undermined the moral authority of the US mission, showing that US troops had committed war crimes against innocent women and children.',
+        },
+        {
+          question: 'What was the primary consequence of the Kent State shootings in 1970?',
+          q: 'What was the primary consequence of the Kent State shootings in 1970?',
+          options: [
+            'It caused President Nixon to immediately resign from office',
+            'It intensified the student anti-war movement, leading to a national student strike of over 4 million students.',
+            'It led to the outlawing of all anti-war protests by the Supreme Court',
+            'It prompted the immediate withdrawal of all US troops from Southeast Asia',
+          ],
+          answer:
+            'It intensified the student anti-war movement, leading to a national student strike of over 4 million students.',
+          a: 'It intensified the student anti-war movement, leading to a national student strike of over 4 million students.',
+          explanation:
+            'The shooting of unarmed student protestors by National Guardsmen polarized the nation, forcing hundreds of colleges to close down.',
+        },
+        {
+          question:
+            'Which of the following was a primary cause of the Hard Hat Riots in New York City in 1970?',
+          q: 'Which of the following was a primary cause of the Hard Hat Riots in New York City in 1970?',
+          options: [
+            "A violent clash between union leaders and Nixon's national guard troops.",
+            'A decision by the city government to cut the wages and benefits of construction workers.',
+            'A strike by construction workers protesting against the integration of New York unions.',
+            'Working-class anger at student anti-war protestors who were seen as unpatriotic and privileged.',
+          ],
+          answer:
+            'Working-class anger at student anti-war protestors who were seen as unpatriotic and privileged.',
+          a: 'Working-class anger at student anti-war protestors who were seen as unpatriotic and privileged.',
+          explanation:
+            "Many blue-collar workers, such as construction workers, strongly supported Nixon's war policies and resented middle-class college students who avoided the draft through student deferments while protesting against soldiers who were fighting.",
+        },
+        {
+          question:
+            "Which of the following best describes the significance of Nixon's 'Silent Majority' strategy for his presidency?",
+          q: "Which of the following best describes the significance of Nixon's 'Silent Majority' strategy for his presidency?",
+          options: [
+            'It resulted in the immediate passage of the War Powers Act of 1973 by a unanimous Congress.',
+            'It led to a formal constitutional amendment banning all future street demonstrations.',
+            'It forced Nixon to immediately resign and hand the presidency to Gerald Ford.',
+            'It allowed Nixon to isolate the anti-war movement and build a powerful electoral coalition for the 1972 election.',
+          ],
+          answer:
+            'It allowed Nixon to isolate the anti-war movement and build a powerful electoral coalition for the 1972 election.',
+          a: 'It allowed Nixon to isolate the anti-war movement and build a powerful electoral coalition for the 1972 election.',
+          explanation:
+            "By positioning moderate, patriotic Americans as the 'Silent Majority' against radical protestors, Nixon succeeded in marginalising the anti-war movement and winning a landslide re-election victory in 1972.",
+        },
+      ],
     },
     {
       id: 'lesson_4_3',
@@ -5339,6 +9168,279 @@ export const usa = {
           },
         ],
       },
+      quiz: [
+        {
+          question:
+            'What event marked the official end of the Vietnam War and the defeat of South Vietnam in 1975?',
+          q: 'What event marked the official end of the Vietnam War and the defeat of South Vietnam in 1975?',
+          options: [
+            'The landing of US Marine divisions at Da Nang harbor',
+            'The signing of the Paris Peace Accords in France',
+            'The Fall of Saigon to North Vietnamese forces',
+            'The assassination of South Vietnamese President Ngo Dinh Diem',
+          ],
+          answer: 'The Fall of Saigon to North Vietnamese forces',
+          a: 'The Fall of Saigon to North Vietnamese forces',
+          explanation:
+            'In April 1975, North Vietnamese tanks crashed through the gates of the Presidential Palace in Saigon, marking the reunification of Vietnam under a communist government.',
+        },
+        {
+          question:
+            'What was the name of the final North Vietnamese conventional offensive that captured Saigon in 1975?',
+          q: 'What was the name of the final North Vietnamese conventional offensive that captured Saigon in 1975?',
+          options: [
+            'The Liberation Drive',
+            'The Hanoi Campaign',
+            'The Ho Chi Minh Campaign',
+            'The Spring Offensive',
+          ],
+          answer: 'The Ho Chi Minh Campaign',
+          a: 'The Ho Chi Minh Campaign',
+          explanation:
+            'The offensive quickly overran South Vietnamese defense lines following the withdrawal of US aid.',
+        },
+        {
+          question: 'What was the name of the US helicopter evacuation of Saigon in April 1975?',
+          q: 'What was the name of the US helicopter evacuation of Saigon in April 1975?',
+          options: [
+            'Operation Frequent Rescue',
+            'Operation Frequent Wind',
+            'Operation Frequent Departure',
+            'Operation Saigon Airlift',
+          ],
+          answer: 'Operation Frequent Wind',
+          a: 'Operation Frequent Wind',
+          explanation:
+            'Helicopters evacuated over 1,000 Americans and 5,000 South Vietnamese refugees from the embassy and airport.',
+        },
+        {
+          question:
+            'Who was the South Vietnamese President who surrendered Saigon to North Vietnamese forces?',
+          q: 'Who was the South Vietnamese President who surrendered Saigon to North Vietnamese forces?',
+          options: ['Nguyen Van Thieu', 'Duong Van Minh', 'Tran Van Huong', 'Nguyen Cao Ky'],
+          answer: 'Duong Van Minh',
+          a: 'Duong Van Minh',
+          explanation:
+            "Minh surrendered on 30 April, telling the NVA: 'I am waiting to hand over the power to you to avoid bloodshed.' His surrender officially ended the Vietnam War, marking the transition of Saigon to communist control.",
+        },
+        {
+          question:
+            'Which US president was responsible for negotiating and signing the 1973 Paris Peace Accords?',
+          q: 'Which US president was responsible for negotiating and signing the 1973 Paris Peace Accords?',
+          options: ['John F. Kennedy', 'Gerald Ford', 'Richard Nixon', 'Lyndon B. Johnson'],
+          answer: 'Richard Nixon',
+          a: 'Richard Nixon',
+          explanation:
+            "President Richard Nixon's administration, led by negotiator Henry Kissinger, signed the Paris Peace Accords in January 1973 to achieve 'peace with honor' and withdraw remaining combat troops.",
+        },
+        {
+          question: 'How many days did the US have to withdraw all troops under the 1973 Accords?',
+          q: 'How many days did the US have to withdraw all troops under the 1973 Accords?',
+          options: ['30 days', '60 days', '90 days', '45 days'],
+          answer: '60 days',
+          a: '60 days',
+          explanation:
+            'The accords mandated the complete withdrawal of all US military personnel and the release of all POWs within 60 days. The complete US exit marked the official end of direct American military involvement in Vietnam.',
+        },
+        {
+          question:
+            'Why did South Vietnamese President Thieu initially refuse to sign the accords?',
+          q: 'Why did South Vietnamese President Thieu initially refuse to sign the accords?',
+          options: [
+            'The accords did not guarantee the return of South Vietnamese POWs',
+            'The US refused to provide any further economic aid to the South',
+            'He believed the US military was plotting a coup to replace him',
+            'North Vietnamese troops stayed in the South',
+          ],
+          answer: 'North Vietnamese troops stayed in the South',
+          a: 'North Vietnamese troops stayed in the South',
+          explanation:
+            'Thieu knew that leaving North Vietnamese troops inside South Vietnam would make a communist takeover inevitable once US forces left. This concession allowed the NVA to launch a final offensive to overrun the South once US forces left.',
+        },
+        {
+          question:
+            'What bombing campaign was ordered to force the signing of the accords in late 1972?',
+          q: 'What bombing campaign was ordered to force the signing of the accords in late 1972?',
+          options: [
+            'Operation Linebacker I',
+            'Operation Linebacker II (Christmas Bombings)',
+            'Operation Menu',
+            'Operation Rolling Thunder',
+          ],
+          answer: 'Operation Linebacker II (Christmas Bombings)',
+          a: 'Operation Linebacker II (Christmas Bombings)',
+          explanation:
+            'Nixon launched intense B-52 raids against Hanoi and Haiphong in December 1972 to force North Vietnam back to the negotiating table. These heavy B-52 raids forced North Vietnam to return to the negotiations and finalize the peace accords.',
+        },
+        {
+          question:
+            "Which 1973 Act of Congress limited the president's power to commit troops to foreign conflicts without approval?",
+          q: "Which 1973 Act of Congress limited the president's power to commit troops to foreign conflicts without approval?",
+          options: [
+            'War Powers Act',
+            'National Security Act',
+            'Foreign Intervention Act',
+            'Presidential Limitation Bill',
+          ],
+          answer: 'War Powers Act',
+          a: 'War Powers Act',
+          explanation:
+            "Passed over Nixon's veto, the act required congressional approval within 60 days of deploying troops. This act reasserted congressional control over war-making powers, severely limiting the president's military authority.",
+        },
+        {
+          question:
+            'Which constitutional amendment lowered the US voting age to 18 in 1971, prompted by the draft?',
+          q: 'Which constitutional amendment lowered the US voting age to 18 in 1971, prompted by the draft?',
+          options: ['24th Amendment', '25th Amendment', '26th Amendment', '27th Amendment'],
+          answer: '26th Amendment',
+          a: '26th Amendment',
+          explanation:
+            "The slogan 'old enough to fight, old enough to vote' led to the rapid ratification of the amendment. This extension of the vote represented a lasting political consequence of the youth-driven draft resistance.",
+        },
+        {
+          question:
+            'What was the significance of the Fall of Saigon in 1975 for US foreign policy?',
+          q: 'What was the significance of the Fall of Saigon in 1975 for US foreign policy?',
+          options: [
+            'It marked the ultimate failure of the US containment policy in Vietnam',
+            'It prompted the US to sign a new mutual defense treaty with China',
+            'It led to the partition of Vietnam into permanent northern and southern zones',
+            'It resulted in the immediate expansion of SEATO military alliances',
+          ],
+          answer: 'It marked the ultimate failure of the US containment policy in Vietnam',
+          a: 'It marked the ultimate failure of the US containment policy in Vietnam',
+          explanation:
+            'Despite over a decade of military involvement and billions of dollars spent, the Fall of Saigon and the unification of Vietnam under a communist government represented a clear defeat for the US policy of containment.',
+        },
+        {
+          question:
+            'What prominent building in Saigon became the iconic site of helicopter evacuations during Operation Frequent Wind?',
+          q: 'What prominent building in Saigon became the iconic site of helicopter evacuations during Operation Frequent Wind?',
+          options: [
+            'US Embassy roof',
+            'Tân Sơn Nhất Airport runway',
+            'Saigon Port docks',
+            'Presidential Palace gates',
+          ],
+          answer: 'US Embassy roof',
+          a: 'US Embassy roof',
+          explanation:
+            'Images of refugees scaling embassy walls and boarding helicopters became symbols of the US defeat in Vietnam.',
+        },
+        {
+          question:
+            'Under the War Powers Act of 1973, within how many hours must a president notify Congress of troop deployment?',
+          q: 'Under the War Powers Act of 1973, within how many hours must a president notify Congress of troop deployment?',
+          options: ['48 hours', '72 hours', '24 hours', '96 hours'],
+          answer: '48 hours',
+          a: '48 hours',
+          explanation:
+            'The president must explain the reasons for the deployment and withdraw forces within 60 days unless Congress approves. This requirement aimed to prevent presidents from escalating conflicts secretly without consulting Congress.',
+        },
+        {
+          question: 'Why did the US Congress pass the War Powers Act in 1973?',
+          q: 'Why did the US Congress pass the War Powers Act in 1973?',
+          options: [
+            "To restore the Senate's authority to command and direct active troop movements",
+            "To limit the president's ability to wage undeclared war without congressional approval",
+            'To cut off all presidential funding for international diplomatic treaties',
+            'To prevent future presidents from making any executive orders regarding the draft',
+          ],
+          answer:
+            "To limit the president's ability to wage undeclared war without congressional approval",
+          a: "To limit the president's ability to wage undeclared war without congressional approval",
+          explanation:
+            'After Nixon escalated the war in Cambodia and Laos without consulting Congress, politicians wanted to reassert their constitutional control over military commitments. This law represented a major constitutional shift, clawing back war powers from the executive branch after the imperial presidency era.',
+        },
+        {
+          question:
+            'Who was the chief North Vietnamese secret negotiator who met with Henry Kissinger in Paris?',
+          q: 'Who was the chief North Vietnamese secret negotiator who met with Henry Kissinger in Paris?',
+          options: ['Xuan Thuy', 'Le Duan', 'Nguyen Co Thach', 'Le Duc Tho'],
+          answer: 'Le Duc Tho',
+          a: 'Le Duc Tho',
+          explanation:
+            'Tho negotiated alongside Kissinger. They were jointly awarded the 1973 Nobel Peace Prize, but Tho refused it.',
+        },
+        {
+          question:
+            'Which June 1973 congressional amendment prohibited all further US military action in Indochina after 15 August 1973?',
+          q: 'Which June 1973 congressional amendment prohibited all further US military action in Indochina after 15 August 1973?',
+          options: [
+            'War Powers Amendment',
+            'Gulf of Tonkin Repeal Act',
+            'Case-Church Amendment',
+            'Cooper-Church Amendment',
+          ],
+          answer: 'Case-Church Amendment',
+          a: 'Case-Church Amendment',
+          explanation:
+            "The Case-Church Amendment legally prevented the US president from ordering air support or military intervention to protect South Vietnam during the final 1975 Spring Offensive. This legislation legally blocked any possibility of US air intervention, sealing South Vietnam's defeat.",
+        },
+        {
+          question:
+            'Which of the following best explains why the Paris Peace Accords of 1973 did not lead to a lasting peace in Vietnam?',
+          q: 'Which of the following best explains why the Paris Peace Accords of 1973 did not lead to a lasting peace in Vietnam?',
+          options: [
+            'The Soviet Union launched a nuclear strike on Saigon immediately after the signing',
+            'South Vietnam invaded North Vietnam in violation of the cease-fire',
+            'The agreement allowed North Vietnamese troops to remain in the South, leading to renewed conflict once US forces left.',
+            'Richard Nixon refused to sign the final agreement in Paris',
+          ],
+          answer:
+            'The agreement allowed North Vietnamese troops to remain in the South, leading to renewed conflict once US forces left.',
+          a: 'The agreement allowed North Vietnamese troops to remain in the South, leading to renewed conflict once US forces left.',
+          explanation:
+            'Because Nixon wanted to withdraw US troops, the accords left South Vietnam vulnerable by allowing North Vietnamese units to hold their positions.',
+        },
+        {
+          question: 'What was the primary consequence of the Fall of Saigon in April 1975?',
+          q: 'What was the primary consequence of the Fall of Saigon in April 1975?',
+          options: [
+            'The immediate deployment of a new US expeditionary force by President Ford',
+            'The total defeat of South Vietnam, the evacuation of US personnel, and the unification of Vietnam under a communist government.',
+            'The outbreak of a war between China and a unified communist Vietnam',
+            'The establishment of a permanent coalition government between communists and nationalists',
+          ],
+          answer:
+            'The total defeat of South Vietnam, the evacuation of US personnel, and the unification of Vietnam under a communist government.',
+          a: 'The total defeat of South Vietnam, the evacuation of US personnel, and the unification of Vietnam under a communist government.',
+          explanation:
+            "Saigon's surrender to the NVA marked the end of the Vietnam War and the establishment of a unified Socialist Republic of Vietnam.",
+        },
+        {
+          question:
+            'Which of the following was a primary cause for the US refusal to provide military aid or air support to South Vietnam during the 1975 North Vietnamese offensive?',
+          q: 'Which of the following was a primary cause for the US refusal to provide military aid or air support to South Vietnam during the 1975 North Vietnamese offensive?',
+          options: [
+            'President Ford had signed a secret pact with the Soviet Union to divide the country.',
+            'Congress had passed the Case-Church Amendment and cut military funding, blocking further intervention.',
+            'South Vietnamese President Thieu officially requested the US to stay out of the conflict.',
+            'The US military had completely run out of conventional ammunition and aircraft.',
+          ],
+          answer:
+            'Congress had passed the Case-Church Amendment and cut military funding, blocking further intervention.',
+          a: 'Congress had passed the Case-Church Amendment and cut military funding, blocking further intervention.',
+          explanation:
+            'Although President Ford appealed for aid to save Saigon, Congress (reflecting intense public opposition and fatigue) refused to vote for new funds and was legally bound by the Case-Church Amendment, which prohibited any further US military activity in Indochina.',
+        },
+        {
+          question:
+            'Which of the following best describes the significance of the 1973 War Powers Act in relation to the executive presidency?',
+          q: 'Which of the following best describes the significance of the 1973 War Powers Act in relation to the executive presidency?',
+          options: [
+            'It officially abolished the Department of Defense and replaced it with a peace council.',
+            'It gave the President absolute power to declare war without consulting Congress.',
+            "It represented a direct reassertion of Congressional authority to limit the President's unilateral control over war-making.",
+            'It made it illegal for any future president to serve as the Commander-in-Chief of the military.',
+          ],
+          answer:
+            "It represented a direct reassertion of Congressional authority to limit the President's unilateral control over war-making.",
+          a: "It represented a direct reassertion of Congressional authority to limit the President's unilateral control over war-making.",
+          explanation:
+            "Following the controversy over secret bombing in Cambodia and the escalation in Vietnam, Congress overrode Nixon's veto to pass the War Powers Act, declaring that the President must notify Congress within 48 hours of deploying troops and obtain authorization within 60 days.",
+        },
+      ],
     },
     {
       id: 'lesson_4_4',
@@ -5634,6 +9736,287 @@ export const usa = {
           },
         ],
       },
+      quiz: [
+        {
+          question:
+            'What was the name of the highly resilient supply route running through Laos and Cambodia that the US failed to block?',
+          q: 'What was the name of the highly resilient supply route running through Laos and Cambodia that the US failed to block?',
+          options: [
+            'Hanoi Bypass Route',
+            'Indochina Supply Highway',
+            'Ho Chi Minh Trail',
+            'Vietcong Logistics Trail',
+          ],
+          answer: 'Ho Chi Minh Trail',
+          a: 'Ho Chi Minh Trail',
+          explanation:
+            'The trail funneled troops and supplies from North Vietnam into the South, rebuilt constantly by volunteers despite intense bombing. This trail successfully funneled reinforcements and weapons, rendering US containment efforts ineffective.',
+        },
+        {
+          question:
+            'Which two communist superpowers provided essential military hardware, air defenses, and financial aid to North Vietnam?',
+          q: 'Which two communist superpowers provided essential military hardware, air defenses, and financial aid to North Vietnam?',
+          options: [
+            'Soviet Union and East Germany',
+            'Soviet Union and North Korea',
+            'China and Cuba',
+            'Soviet Union and China',
+          ],
+          answer: 'Soviet Union and China',
+          a: 'Soviet Union and China',
+          explanation:
+            'Soviet surface-to-air missiles and Chinese military hardware/labor provided North Vietnam the material support to match US firepower. This support enabled North Vietnam to sustain its military campaign against the full weight of US technology.',
+        },
+        {
+          question:
+            'What term was used to describe the collapse of morale behavior where US soldiers intentionally killed their own officers with grenades?',
+          q: 'What term was used to describe the collapse of morale behavior where US soldiers intentionally killed their own officers with grenades?',
+          options: ['Desertion', 'Mutiny', 'Friendly fire', 'Fragging'],
+          answer: 'Fragging',
+          a: 'Fragging',
+          explanation:
+            'Usually involving fragmentation grenades, fragging reflected severe drug abuse, frustration, and rebellion among conscripted soldiers. This internal violence highlighted the collapse of military authority and morale among draftees.',
+        },
+        {
+          question:
+            'What US military strategy of attrition failed because the Vietcong were fighting a total war and could replace losses indefinitely?',
+          q: 'What US military strategy of attrition failed because the Vietcong were fighting a total war and could replace losses indefinitely?',
+          options: [
+            'Pacification sweeps',
+            'Search and Destroy',
+            'Operation Rolling Thunder',
+            'Strategic hamlets',
+          ],
+          answer: 'Search and Destroy',
+          a: 'Search and Destroy',
+          explanation:
+            "General Westmoreland sought to reach a 'crossover point' of enemy casualties, but North Vietnam's high population and resolve nullified this strategy.",
+        },
+        {
+          question:
+            'What was a major cause of low morale and drug abuse among US troops, who were mostly young, working-class conscripts?',
+          q: 'What was a major cause of low morale and drug abuse among US troops, who were mostly young, working-class conscripts?',
+          options: ['Short tour duration', 'Low pay rates', 'The Draft', 'Lack of combat gear'],
+          answer: 'The Draft',
+          a: 'The Draft',
+          explanation:
+            'Conscription selected unwilling young men to fight in a highly confusing, dangerous conflict, leading to a breakdown in military discipline.',
+        },
+        {
+          question:
+            'What chemical weapons and defoliants dropped by the US ruined its global reputation and alienated South Vietnamese peasants?',
+          q: 'What chemical weapons and defoliants dropped by the US ruined its global reputation and alienated South Vietnamese peasants?',
+          options: [
+            'Agent Orange and Napalm',
+            'Agent Orange and Tear Gas',
+            'Blue Defoliant and CS Gas',
+            'Thermite and White Phosphorus',
+          ],
+          answer: 'Agent Orange and Napalm',
+          a: 'Agent Orange and Napalm',
+          explanation:
+            'The drop of toxic herbicides and incendiary weapons destroyed crops and villages, pushing rural populations to support the Vietcong. These chemicals devastated crops and villages, alienating the peasantry and pushing them to support the Vietcong.',
+        },
+        {
+          question:
+            'Which 1968 offensive, though a military defeat for the Vietcong, was a political victory that shattered US support?',
+          q: 'Which 1968 offensive, though a military defeat for the Vietcong, was a political victory that shattered US support?',
+          options: ['Battle of Hue', 'Tet Offensive', 'Christmas Offensive', 'Easter Offensive'],
+          answer: 'Tet Offensive',
+          a: 'Tet Offensive',
+          explanation:
+            "Tet proved to the American public that the government's optimistic claims about winning the war were false, fueling opposition. Tet destroyed public confidence in the US government, forcing a policy shift toward military de-escalation.",
+        },
+        {
+          question:
+            'What did the US Congress cut in 1974 that severely weakened the South Vietnamese military prior to the final invasion?',
+          q: 'What did the US Congress cut in 1974 that severely weakened the South Vietnamese military prior to the final invasion?',
+          options: [
+            'Military funding',
+            'Diplomatic support budget',
+            'Economic aid package',
+            'Air support funding',
+          ],
+          answer: 'Military funding',
+          a: 'Military funding',
+          explanation:
+            'Congress slashed military aid to South Vietnam from $2.1 billion to $700 million, leaving the ARVN with critical shortages of ammo and fuel.',
+        },
+        {
+          question:
+            'What term describes the psychological reluctance of the US public and politicians to intervene militarily abroad after Vietnam?',
+          q: 'What term describes the psychological reluctance of the US public and politicians to intervene militarily abroad after Vietnam?',
+          options: [
+            'Pentagon Hesitation',
+            'Vietnam Syndrome',
+            'Isolationist Complex',
+            'Vietnam Reluctance',
+          ],
+          answer: 'Vietnam Syndrome',
+          a: 'Vietnam Syndrome',
+          explanation:
+            'The national trauma of the defeat made subsequent US administrations highly hesitant to commit ground troops in foreign conflicts. This trauma made subsequent administrations highly hesitant to commit US ground forces in foreign conflicts.',
+        },
+        {
+          question:
+            "What was the primary economic consequence of the war's high military expenditure on the US homefront?",
+          q: "What was the primary economic consequence of the war's high military expenditure on the US homefront?",
+          options: [
+            'High unemployment rates',
+            'Severe trade deficits',
+            'Stock market collapse',
+            'High inflation and deficits',
+          ],
+          answer: 'High inflation and deficits',
+          a: 'High inflation and deficits',
+          explanation:
+            "President Johnson's attempt to fund both the war and Great Society programs without raising taxes triggered severe inflation and economic stagflation. This spending triggered severe economic stagflation that plagued the United States throughout the 1970s.",
+        },
+        {
+          question:
+            'Which superpower provided North Vietnam with advanced anti-aircraft missiles and radar (referred to in the syllabus as Russian support)?',
+          q: 'Which superpower provided North Vietnam with advanced anti-aircraft missiles and radar (referred to in the syllabus as Russian support)?',
+          options: ['Soviet Union', 'North Korea', 'East Germany', 'China'],
+          answer: 'Soviet Union',
+          a: 'Soviet Union',
+          explanation:
+            'Soviet SAM missiles and technical advisors shot down hundreds of US planes, helping North Vietnam survive Rolling Thunder.',
+        },
+        {
+          question:
+            'What strategic military miscalculation by General Westmoreland underestimated the motivation of the communist forces?',
+          q: 'What strategic military miscalculation by General Westmoreland underestimated the motivation of the communist forces?',
+          options: [
+            'Search and destroy strategy',
+            'Pacification strategy',
+            'Strategy of attrition',
+            'Vietnamisation strategy',
+          ],
+          answer: 'Strategy of attrition',
+          a: 'Strategy of attrition',
+          explanation:
+            "Westmoreland believed there was a 'crossover point' where casualties would break the enemy, but the communists replaced losses indefinitely.",
+        },
+        {
+          question:
+            'How did the one-year tour of duty system affect the combat effectiveness and morale of the US military?',
+          q: 'How did the one-year tour of duty system affect the combat effectiveness and morale of the US military?',
+          options: [
+            'Decreased the size of the active military force and caused labor shortages',
+            'Increased training expenses and created administrative delays in recruiting',
+            'Prevented experience build-up and lowered unit cohesion',
+            'Caused severe conflicts between newly arrived draftees and veteran soldiers',
+          ],
+          answer: 'Prevented experience build-up and lowered unit cohesion',
+          a: 'Prevented experience build-up and lowered unit cohesion',
+          explanation:
+            'As soon as soldiers became experienced and street-smart, they were sent home, meaning the US army was constantly filled with raw, un-cohesive recruits. This system prevented experience build-up and lowered unit cohesion, severely undermining combat effectiveness.',
+        },
+        {
+          question:
+            'What major weakness of the South Vietnamese military (ARVN) contributed to the ultimate US failure in Vietnam?',
+          q: 'What major weakness of the South Vietnamese military (ARVN) contributed to the ultimate US failure in Vietnam?',
+          options: [
+            'Heavy conflicts between the political leaders of Saigon and military generals',
+            'The complete absence of veteran officers and trained pilots in the air force',
+            'A total lack of modern weapons, radio equipment, and vehicle transport',
+            'High desertion rates, corruption, and heavy reliance on US air support',
+          ],
+          answer: 'High desertion rates, corruption, and heavy reliance on US air support',
+          a: 'High desertion rates, corruption, and heavy reliance on US air support',
+          explanation:
+            'The ARVN suffered from poor leadership, low morale, and corruption. When the US withdrew its troops and air support, the ARVN was unable to resist the NVA.',
+        },
+        {
+          question:
+            "Why was the South Vietnamese (Saigon) government unable to win the 'hearts and minds' of its own people?",
+          q: "Why was the South Vietnamese (Saigon) government unable to win the 'hearts and minds' of its own people?",
+          options: [
+            'Its refusal to accept any economic or military aid from western allies',
+            'Its failure to build any public schools, roads, or clinics in the countryside',
+            'Its decision to outlaw all political parties except the ruling military junta',
+            'Extreme political corruption, religious bias, and reliance on US force',
+          ],
+          answer: 'Extreme political corruption, religious bias, and reliance on US force',
+          a: 'Extreme political corruption, religious bias, and reliance on US force',
+          explanation:
+            'The ruling elites in Saigon were viewed as Western puppets, highly corrupt, and biased against the Buddhist majority, denying them popular legitimacy. This lack of popular support meant South Vietnam could not survive as an independent state without permanent US military aid.',
+        },
+        {
+          question:
+            'What was the average age of a US combat soldier in Vietnam, which contributed to low morale and inexperience?',
+          q: 'What was the average age of a US combat soldier in Vietnam, which contributed to low morale and inexperience?',
+          options: ['26 years old', '24 years old', '19 years old', '21 years old'],
+          answer: '19 years old',
+          a: '19 years old',
+          explanation:
+            'Unlike World War II (where the average age was 26), the average US soldier in Vietnam was just 19 years old, young, and often draft-conscripted. The youth of the troops contributed to high levels of combat stress, drug abuse, and disillusionment in the field.',
+        },
+        {
+          question:
+            'Which of the following is the most significant reason why US military power failed to defeat the Vietcong?',
+          q: 'Which of the following is the most significant reason why US military power failed to defeat the Vietcong?',
+          options: [
+            'The US military lacked advanced weaponry and air power',
+            'The South Vietnamese army (ARVN) was highly disciplined but too small',
+            'The US public refused to pay any taxes to fund the military',
+            "The Vietcong's effective guerrilla tactics, local knowledge, and determination outlasted the US political will to fight.",
+          ],
+          answer:
+            "The Vietcong's effective guerrilla tactics, local knowledge, and determination outlasted the US political will to fight.",
+          a: "The Vietcong's effective guerrilla tactics, local knowledge, and determination outlasted the US political will to fight.",
+          explanation:
+            'Guerrilla warfare made it impossible to identify the enemy or win ground permanently, while NVA determination made the cost of the war unsustainable for the US.',
+        },
+        {
+          question:
+            'What was the primary consequence of the War Powers Act passed by Congress in 1973?',
+          q: 'What was the primary consequence of the War Powers Act passed by Congress in 1973?',
+          options: [
+            "It restricted the President's power to commit US troops to foreign conflicts without congressional approval.",
+            "It repealed the Constitution's definition of commander-in-chief",
+            'It gave the military complete control over domestic foreign policy decisions',
+            'It abolished the draft and replaced it with a volunteer army permanently',
+          ],
+          answer:
+            "It restricted the President's power to commit US troops to foreign conflicts without congressional approval.",
+          a: "It restricted the President's power to commit US troops to foreign conflicts without congressional approval.",
+          explanation:
+            'Passed in the wake of Vietnam and Cambodia escalations, the Act reasserted Congressional oversight on military actions, limiting unilateral presidential deployments.',
+        },
+        {
+          question:
+            'Which of the following best explains why the South Vietnamese government (ARVN and political regime) failed to win the support of its own population?',
+          q: 'Which of the following best explains why the South Vietnamese government (ARVN and political regime) failed to win the support of its own population?',
+          options: [
+            'It was plagued by corruption, failed to implement land reform, and was seen as a puppet of the United States.',
+            'It was governed by a strict communist ideology that alienated religious peasants.',
+            'It refused to accept any financial aid or weapons from Western nations.',
+            'It was militarily weaker and had fewer tanks and planes than the North Vietnamese.',
+          ],
+          answer:
+            'It was plagued by corruption, failed to implement land reform, and was seen as a puppet of the United States.',
+          a: 'It was plagued by corruption, failed to implement land reform, and was seen as a puppet of the United States.',
+          explanation:
+            'The Saigon government was dominated by wealthy elites who refused to distribute land to peasants, was notoriously corrupt, and relied entirely on foreign US aid, making it easy for the Vietcong to paint them as unpatriotic puppets.',
+        },
+        {
+          question:
+            'How did the US military draft system act as a major factor in the failure of the US war effort?',
+          q: 'How did the US military draft system act as a major factor in the failure of the US war effort?',
+          options: [
+            'It made it illegal for volunteers to join the US military services.',
+            'It prevented the US from deploying more than 50,000 soldiers at any one time.',
+            'It led to a military coup inside the United States led by anti-war generals.',
+            'It created an army of reluctant, inexperienced conscripts and fueled massive anti-war protests at home.',
+          ],
+          answer:
+            'It created an army of reluctant, inexperienced conscripts and fueled massive anti-war protests at home.',
+          a: 'It created an army of reluctant, inexperienced conscripts and fueled massive anti-war protests at home.',
+          explanation:
+            'Because the draft forced young men (average age 19) to fight an unpopular war, troop morale plummeted, leading to drug abuse and fragging. Meanwhile, the middle-class resentment of draft inequities fueled the domestic anti-war movement that ultimately broke US political will.',
+        },
+      ],
     },
   ],
 };

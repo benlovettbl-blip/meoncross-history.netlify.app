@@ -106,21 +106,8 @@ const units = fs
         }
 
         for (const lesson of matchingLessons) {
-          if (unitId === 'medieval_england') {
-            // In medieval_england, every lesson has exactly 20 comprehensive quiz questions (10 spaced retrieval + 10 current content).
-            // Only quiz questions are used so that each 20-question mastery page perfectly maps 1-to-1 with its lesson.
-            if (lesson.quiz && Array.isArray(lesson.quiz)) {
-              lesson.quiz.forEach((q) => {
-                questions.push({
-                  lessonTitle: lesson.title,
-                  q: q.question || q.q,
-                  a: resolveAns(q),
-                  explanation: q.explanation || '',
-                });
-              });
-            }
-          } else if (unitId === 'cme_new') {
-            // For cme_new, quiz array holds the 20 Rapid Recall questions per lesson
+          if (unitId === 'medieval_england' || unitId === 'cme_new' || unitId === 'usa') {
+            // Units where every lesson has a standardized 20-question quiz array
             if (lesson.quiz && Array.isArray(lesson.quiz)) {
               lesson.quiz.forEach((q) => {
                 questions.push({
@@ -2673,7 +2660,7 @@ const units = fs
         id: idx + 1,
         q: q.q,
         a: q.a,
-        explanation: ['cme_new', 'great_war', 'medieval_england'].includes(unitId)
+        explanation: ['cme_new', 'great_war', 'medieval_england', 'usa'].includes(unitId)
           ? q.explanation || ''
           : undefined,
         topic: q.lessonTitle,

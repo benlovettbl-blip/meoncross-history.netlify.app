@@ -3976,7 +3976,7 @@ export const QUIZ_DATA = [
             explanation:
               "General Westmoreland sought to reach a 'crossover point' of enemy casualties, but North Vietnam's high population and resolve nullified this strategy.",
             year: 1965,
-            distractors: ['Search and destroy', 'Strategic hamlets', 'Pacification sweeps'],
+            distractors: ['Operation Rolling Thunder', 'Strategic hamlets', 'Pacification sweeps'],
           },
           {
             id: 'q_4_4_s5',
