@@ -106,7 +106,15 @@ const units = fs
         }
 
         for (const lesson of matchingLessons) {
-          if (unitId === 'medieval_england' || unitId === 'cme_new' || unitId === 'usa') {
+          if (
+            [
+              'medieval_england',
+              'cme_new',
+              'usa',
+              'early_modern_world',
+              'industrialisation_and_empire',
+            ].includes(unitId)
+          ) {
             // Units where every lesson has a standardized 20-question quiz array
             if (lesson.quiz && Array.isArray(lesson.quiz)) {
               lesson.quiz.forEach((q) => {
@@ -2660,7 +2668,14 @@ const units = fs
         id: idx + 1,
         q: q.q,
         a: q.a,
-        explanation: ['cme_new', 'great_war', 'medieval_england', 'usa'].includes(unitId)
+        explanation: [
+          'cme_new',
+          'great_war',
+          'medieval_england',
+          'usa',
+          'early_modern_world',
+          'industrialisation_and_empire',
+        ].includes(unitId)
           ? q.explanation || ''
           : undefined,
         topic: q.lessonTitle,
