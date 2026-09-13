@@ -758,6 +758,12 @@
             gap: 14px;
             transition: all 0.3s ease;
         }
+        .leitner-modal-overlay:not(.teacher-mode) .rapid-fire-timer-bar {
+            display: none;
+        }
+        .leitner-modal-overlay:not(.teacher-mode) .leitner-tools-drawer.expanded .rapid-fire-timer-bar {
+            display: flex;
+        }
         .rapid-fire-timer-bar.timer-expired {
             background: #fee2e2;
             border-color: #f87171;
@@ -2063,10 +2069,9 @@
             <span class="toolbar-badge">Mobile</span>
         </div>
         <div class="toolbar-actions">
-            
-            <button id="open-leitner-btn" class="toolbar-btn primary" onclick="openLeitnerModal()">🗂️ Leitner Flashcards</button>
+            <button class="toolbar-btn whiteboard" onclick="openTeacherWhiteboardModal()">⚡ Whiteboard Rapid-Fire</button>
+            <button id="open-leitner-btn" class="toolbar-btn quiz" onclick="openPupilQuizModal()">🎯 Recall Quiz (Self-Check)</button>
             <a href="#the-vault" class="toolbar-btn secondary">🔓 The Vault</a>
-            
         </div>
     </div>
 
@@ -2083,8 +2088,8 @@
                 <div class="cover-qr-card">
                     <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
                     <div class="cover-qr-info">
-                        <div class="cover-qr-title">⚡ Interactive Leitner &amp; Scratch-Off Vault</div>
-                        <div class="cover-qr-desc">Scan with your phone to launch 3-Box Spaced Flashcards (#practice-mode) &amp; tap-to-reveal self-marking solutions.</div>
+                        <div class="cover-qr-title">⚡ Interactive Recall Quiz &amp; Scratch-Off Vault</div>
+                        <div class="cover-qr-desc">Scan with your phone to launch Instant-Feedback Recall Quiz (#practice-mode) &amp; tap-to-reveal self-marking solutions.</div>
                         <div class="cover-qr-url">meoncross-history.netlify.app/units/great_war/mastery_pack_full.html#practice-mode</div>
                     </div>
                 </div>
@@ -4350,7 +4355,7 @@
         <div class="leitner-modal-card">
             <div class="leitner-modal-header">
                 <div class="leitner-header-title">
-                    <h3 id="leitner-modal-title">⚡ Leitner Spaced Practice</h3>
+                    <h3 id="leitner-modal-title">🎯 Pupil Recall Quiz · Instant Feedback</h3>
                     <p class="leitner-unit-subtitle">KS3: Causes of the Great War · Complete Unit</p>
                 </div>
                 <div class="leitner-header-actions">
@@ -4364,47 +4369,6 @@
 
             <!-- Collapsible Spaced Retrieval Tools Drawer -->
             <div id="leitner-tools-drawer" class="leitner-tools-drawer">
-                
-                <!-- Daily Spaced Retrieval Streak & 7-Day Heatmap -->
-                <div class="leitner-streak-bar">
-                    <div class="streak-badge-wrap">
-                        <span class="streak-fire-icon" id="streak-fire-icon">🔥</span>
-                        <div class="streak-text-group">
-                            <span class="streak-count-title" id="streak-title">0-Day Spaced Streak</span>
-                            <span class="streak-subtitle" id="streak-subtitle">Practice retrieval today to start your streak!</span>
-                        </div>
-                    </div>
-                    <div class="streak-heatmap-container">
-                        <div class="streak-heatmap-title">7-Day Spaced Activity</div>
-                        <div class="streak-heatmap-days" id="streak-heatmap-days">
-                            <!-- Rendered dynamically by JS -->
-                        </div>
-                    </div>
-                </div>
-
-                <div class="leitner-box-stats">
-                    <button class="leitner-stat-pill box-1" id="stat-box-1" onclick="filterByLeitnerBox(1)" style="cursor: pointer; border: none;" title="Click to filter deck to Box 1 (Needs Work / Daily)">
-                        <span>🔴</span>
-                        <span>Box 1 (Learning):</span>
-                        <strong id="count-box-1">0</strong>
-                    </button>
-                    <button class="leitner-stat-pill box-2" id="stat-box-2" onclick="filterByLeitnerBox(2)" style="cursor: pointer; border: none;" title="Click to filter deck to Box 2 (Review Every 3 Days)">
-                        <span>🟡</span>
-                        <span>Box 2 (Consolidating):</span>
-                        <strong id="count-box-2">0</strong>
-                    </button>
-                    <button class="leitner-stat-pill box-3" id="stat-box-3" onclick="filterByLeitnerBox(3)" style="cursor: pointer; border: none;" title="Click to filter deck to Box 3 (Mastered)">
-                        <span>🟢</span>
-                        <span>Box 3 (Mastered):</span>
-                        <strong id="count-box-3">0</strong>
-                    </button>
-                    <button class="leitner-stat-pill" id="stat-box-all" onclick="filterByLeitnerBox('all')" style="cursor: pointer; border: 1px solid #cbd5e1; background: #f1f5f9; color: #475569;" title="Show all cards in deck">
-                        <span>📚</span>
-                        <span>All Cards</span>
-                    </button>
-                </div>
-                
-
                 <div class="leitner-filter-row">
                     <label for="leitner-topic-select">Filter Topic:</label>
                     <select id="leitner-topic-select" class="leitner-topic-select" onchange="changeLeitnerTopic(this.value)">
@@ -4436,7 +4400,21 @@
                 </div>
             </div>
 
-            
+            <!-- Instant-Feedback Live Score & Review Missed Bar -->
+            <div class="quiz-score-bar" id="quiz-score-bar">
+                <div class="quiz-score-pill">
+                    <span>🎯 Mastery Score:</span>
+                    <strong id="quiz-score-text">0 / 0 (0%)</strong>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <button class="quiz-review-missed-btn" id="btn-review-missed" onclick="filterMissedQuestions()" style="display: none;">
+                        🔁 Review Missed (<span id="missed-count">0</span>)
+                    </button>
+                    <button class="quiz-reset-score-btn" onclick="resetQuizScore()" title="Reset score and restart quiz">
+                        🔄 Restart Quiz
+                    </button>
+                </div>
+            </div>
 
             <!-- Flashcard Area -->
             <div class="leitner-card-container">
@@ -4445,7 +4423,6 @@
                         <div class="leitner-card-face leitner-card-front">
                             <div class="card-meta">
                                 <span id="card-qnum-badge" class="qnum-badge">Q# 1</span>
-                                <span id="card-box-badge" class="box-badge b1">Box 1</span>
                             </div>
                             <div class="card-question-text" id="card-question-text">
                                 Loading question...
@@ -4455,34 +4432,27 @@
                         <div class="leitner-card-face leitner-card-back">
                             <div class="card-meta">
                                 <span class="qnum-badge ans">Answer Key</span>
-                                <span id="card-box-badge-back" class="box-badge b1">Box 1</span>
                             </div>
                             <div class="card-answer-text" id="card-answer-text">
                                 Loading answer...
                             </div>
-                            <div class="card-prompt-hint">Rate your retrieval effort below 👇</div>
+                            <div class="card-prompt-hint">Rate your recall below 👇</div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            
-            <!-- Rating Actions (Leitner 3-Box Movement) -->
-            <div class="leitner-action-bar">
-                <button class="leitner-rate-btn btn-box-1" onclick="rateCurrentCard(1)">
-                    <span class="btn-title">🔴 Box 1</span>
-                    <span class="btn-sub">Needs Work (Blank)</span>
+            <!-- Instant-Feedback Binary Rating Bar -->
+            <div class="quiz-binary-bar" id="quiz-binary-bar">
+                <button class="quiz-rate-btn btn-needs-review" onclick="rateBinaryCard(false)">
+                    <span class="btn-title">❌ Needs Review</span>
+                    <span class="btn-sub">Didn't know / Guessed</span>
                 </button>
-                <button class="leitner-rate-btn btn-box-2" onclick="rateCurrentCard(2)">
-                    <span class="btn-title">🟡 Box 2</span>
-                    <span class="btn-sub">Got It (Effortful)</span>
-                </button>
-                <button class="leitner-rate-btn btn-box-3" onclick="rateCurrentCard(3)">
-                    <span class="btn-title">🟢 Box 3</span>
-                    <span class="btn-sub">Mastered (Instant)</span>
+                <button class="quiz-rate-btn btn-got-it" onclick="rateBinaryCard(true)">
+                    <span class="btn-title">✅ Got It (+1)</span>
+                    <span class="btn-sub">Recalled correctly</span>
                 </button>
             </div>
-            
 
             <!-- Navigation Footer -->
             <div class="leitner-modal-footer">
@@ -4498,7 +4468,6 @@
 </html>
 <script>
   (function() {
-    const IS_CME_NEW = false;
     const LEITNER_STORAGE_KEY_RAPID = 'leitner_v1_great_war_full';
     const LEITNER_STORAGE_KEY_EXAM = 'leitner_v1_great_war_full_exam';
     let LEITNER_STORAGE_KEY = LEITNER_STORAGE_KEY_RAPID;
@@ -4674,27 +4643,8 @@
 
       const boxBadge = document.getElementById('card-box-badge');
       const boxBadgeBack = document.getElementById('card-box-badge-back');
-      const boxClass = 'box-badge b' + cardBox;
-      const boxText = 'Box ' + cardBox + ' (' + (cardBox === 1 ? 'Daily' : cardBox === 2 ? '3-Day' : 'Weekly') + ')';
-
-      if (boxBadge) {
-        if (IS_CME_NEW) {
-          boxBadge.style.display = 'none';
-        } else {
-          boxBadge.style.display = '';
-          boxBadge.className = boxClass;
-          boxBadge.textContent = boxText;
-        }
-      }
-      if (boxBadgeBack) {
-        if (IS_CME_NEW) {
-          boxBadgeBack.style.display = 'none';
-        } else {
-          boxBadgeBack.style.display = '';
-          boxBadgeBack.className = boxClass;
-          boxBadgeBack.textContent = boxText;
-        }
-      }
+      if (boxBadge) boxBadge.style.display = 'none';
+      if (boxBadgeBack) boxBadgeBack.style.display = 'none';
 
       const qText = document.getElementById('card-question-text');
       if (qText) {
@@ -4872,7 +4822,6 @@
     };
 
     function updateQuizScoreDisplay() {
-      if (!IS_CME_NEW) return;
       const scoreText = document.getElementById('quiz-score-text');
       const missedBtn = document.getElementById('btn-review-missed');
       const missedCount = document.getElementById('missed-count');
@@ -4897,7 +4846,6 @@
     }
 
     window.filterMissedQuestions = function() {
-      if (!IS_CME_NEW) return;
       if (isReviewingMissed) {
         isReviewingMissed = false;
         currentDeck = [...ALL_DECK];
@@ -4972,7 +4920,7 @@
           modal.classList.remove('teacher-mode');
           if (btn) btn.textContent = '📽️ Teacher Mode';
           if (titleEl) {
-            titleEl.textContent = IS_CME_NEW ? '🎯 Pupil Recall Quiz · Instant Feedback' : '⚡ Leitner Spaced Practice';
+            titleEl.textContent = '🎯 Pupil Recall Quiz · Instant Feedback';
           }
           if (document.fullscreenElement) {
             document.exitFullscreen().catch(() => {});
@@ -5211,7 +5159,7 @@
 
         if (hash.includes('teacher=true') && !isTeacherMode) {
           toggleTeacherMode();
-        } else if (IS_CME_NEW) {
+        } else {
           const titleEl = document.getElementById('leitner-modal-title');
           if (titleEl && !isTeacherMode) {
             titleEl.textContent = '🎯 Pupil Recall Quiz · Instant Feedback';
@@ -5326,18 +5274,15 @@
 
             if (absX > 50 && absX > absY * 1.3) {
               if (deltaX > 0) {
-                // Swiped Right -> Got It / Mastered
-                if (IS_CME_NEW) rateBinaryCard(true);
-                else rateCurrentCard(3);
+                // Swiped Right -> Got It
+                rateBinaryCard(true);
               } else {
-                // Swiped Left -> Needs Review / Needs Work
-                if (IS_CME_NEW) rateBinaryCard(false);
-                else rateCurrentCard(1);
+                // Swiped Left -> Needs Review
+                rateBinaryCard(false);
               }
             } else if (deltaY < -45 && absY > absX * 1.3) {
               // Swiped Upwards -> Got It
-              if (IS_CME_NEW) rateBinaryCard(true);
-              else rateCurrentCard(2);
+              rateBinaryCard(true);
             }
           }
         }
@@ -5361,18 +5306,13 @@
       }
       else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCurrentCard(); }
       else if (e.key === 't' || e.key === 'T') { e.preventDefault(); toggleTeacherMode(); }
-      else if (e.key === 'e' || e.key === 'E') { e.preventDefault(); if (IS_CME_NEW) switchPracticeTier(currentTier === 'rapid' ? 'exam' : 'rapid'); }
+      else if (e.key === 'e' || e.key === 'E') { e.preventDefault(); if (EXAM_DECK && EXAM_DECK.length > 0) switchPracticeTier(currentTier === 'rapid' ? 'exam' : 'rapid'); }
       else if (e.key === 'r' || e.key === 'R') { e.preventDefault(); resetRapidFireTimer(true); }
       else if (e.key === '1') {
-        if (IS_CME_NEW && !isTeacherMode) rateBinaryCard(false);
-        else rateCurrentCard(1);
+        if (!isTeacherMode) rateBinaryCard(false);
       }
       else if (e.key === '2') {
-        if (IS_CME_NEW && !isTeacherMode) rateBinaryCard(true);
-        else rateCurrentCard(2);
-      }
-      else if (e.key === '3') {
-        if (!IS_CME_NEW) rateCurrentCard(3);
+        if (!isTeacherMode) rateBinaryCard(true);
       }
       else if (e.key === 'ArrowRight') nextCard();
       else if (e.key === 'ArrowLeft') prevCard();
