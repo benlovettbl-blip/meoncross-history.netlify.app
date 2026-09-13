@@ -482,6 +482,19 @@ export const unitData = {
           image: '/images/cme_sykes_picot_1916_map.jpg',
         },
         {
+          type: 'photo_slider',
+          tag: 'Imperial Partition (1916 vs 1920–21)',
+          title: 'Sykes-Picot Agreement (1916) vs. League of Nations Mandates (1920–21)',
+          description:
+            'Slide the divider to compare the secret British-French wartime partition (Sykes-Picot 1916) with the formal post-war League of Nations Mandates established at the San Remo Conference (1920–21). Note how the international brown zone in Palestine was converted into a direct British Mandate, and how straight-line imperial boundaries carved up the former Ottoman provinces.',
+          before_image: '/images/cme_sykes_picot_1916_map.jpg',
+          before_label: '1916 Sykes-Picot Partition',
+          after_image: '/images/cme_middle_east_mandates_1921_map.jpg',
+          after_label: '1920–21 Post-San Remo Mandates',
+          aspect_ratio: '1 / 1',
+          object_fit: 'contain',
+        },
+        {
           type: 'narrative',
           theme_heading:
             '2. Contradictory Imperial Pledges: The McMahon-Hussein Correspondence vs The Balfour Declaration (1915–1917)',
@@ -621,7 +634,7 @@ export const unitData = {
           provenance: 'Student Copy for Pupil Workbook',
           content: '/images/middle_east_map.png',
         },
-        answer_image: '/images/middle_east_map_cia_reference.jpg',
+        answer_image: '/images/middle_east_map_answers.png',
         model_answer:
           'Fully labeled reference map of the Middle East displaying all 9 sovereign states, 8 national capitals, and 8 critical strategic waterways and maritime chokepoints.',
       },
@@ -1702,6 +1715,19 @@ export const unitData = {
             'Map of the proposed 1947 UN Partition Plan (Resolution 181) dividing Palestine into Arab and Jewish states.',
         },
         {
+          type: 'photo_slider',
+          tag: 'Partition vs Armistice (1947–1949)',
+          title: 'UN Partition Plan (Resolution 181, 1947) vs. 1949 Armistice Green Line',
+          description:
+            'Slide the divider to compare the territorial division proposed by the United Nations in November 1947 with the reality established by the 1949 Armistice Agreements. Under the UN Plan, the Jewish state was allocated 55% of Palestine. Following the 1948–49 War, Israeli territory expanded to 79%, while Transjordan annexed the West Bank and East Jerusalem, and Egypt took control of the Gaza Strip.',
+          before_image: '/images/palestine_1947_map.png',
+          before_label: '1947 UN Partition Plan (55% Jewish State)',
+          after_image: '/images/palestine_1949_map.png',
+          after_label: '1949 Armistice Green Line (79% Israel)',
+          aspect_ratio: '1 / 1',
+          object_fit: 'contain',
+        },
+        {
           type: 'interactive_map',
           maps: [
             {
@@ -2494,6 +2520,30 @@ export const unitData = {
           desc: 'David Ben-Gurion proclaims the State of Israel; the May 1948 invasion by five Arab League armies begins the next morning.',
         },
       ],
+      secondary_map: {
+        title: 'Map Task: 1947 UN Partition Plan vs. 1949 Armistice Green Line',
+        instructions:
+          'Examine the 1947 UN Partition Plan reference map on the left. On the 1949 Armistice outline map on the right, use green ink to trace the armistice borders and shade the newly expanded territory of the State of Israel.',
+        reference_map: '/images/palestine_1947_map.png',
+        reference_label: 'Reference: 1947 UN Partition Plan (Res. 181)',
+        source_a: '/images/palestine_1949_map.png',
+        task_label: 'Pupil Shading Task: 1949 Armistice Green Line',
+        checklist: {
+          armistice_borders: [
+            'Trace the 1949 Green Line in green ink separating Israel from the West Bank & Gaza',
+            'Mark the divided city of Jerusalem with a star (★) across the Green Line',
+          ],
+          territorial_shading: [
+            'Shade Israeli territory (expanded from 55% allocated by UN to 79% secured in war)',
+            'Label the West Bank & East Jerusalem (annexed by King Abdullah of Transjordan)',
+            'Label the Gaza Strip (administered under Egyptian military governance)',
+          ],
+          demographic_outcomes: [
+            'Record in legend: Jewish state allocation: 1947 UN Plan (55%) ➔ 1949 Armistice (79%)',
+            'Record in legend: Displaced Palestinians: 700,000+ Arab refugees (The Nakba)',
+          ],
+        },
+      },
     },
     {
       id: 'lesson_3',
@@ -5256,6 +5306,19 @@ export const unitData = {
             'By the time a United Nations ceasefire took effect on 10 June 1967, the war was over. Israel had achieved a miraculous victory, defeating three major Arab armies and expanding its territory to three times its pre-war size.',
         },
         {
+          type: 'photo_slider',
+          tag: 'Territorial Conquest (June 1967)',
+          title: 'The Six-Day War: Pre-War 1949 Green Line vs. Post-1967 Quadrupled Territory',
+          description:
+            'Slide the divider to compare Israel on 5 June 1967 (enclosed within the vulnerable 1949 Green Line, with a narrow waist of just 9 miles near Tel Aviv) with the dramatic expansion on 10 June 1967. By seizing the Sinai Peninsula, Gaza Strip, West Bank, and Golan Heights, Israel quadrupled the territory under its military control and established natural defensive water and mountain barriers.',
+          before_image: '/images/palestine_1949_map.png',
+          before_label: '5 June 1967: Pre-War 1949 Green Line',
+          after_image: '/images/palestine_1967_six_day_war_map.png',
+          after_label: '10 June 1967: Quadrupled Territory',
+          aspect_ratio: '1 / 1',
+          object_fit: 'contain',
+        },
+        {
           text: '**The Territorial Balance Sheet: Strategic Depth vs Demographic Dilemma:** <table style="width:100%; border-collapse: collapse; margin: 15px 0;">\n      <thead>\n        <tr>\n          <th style="border: 1px solid #cbd5e1; padding: 10px; background: #e2e8f0;">Captured Territory</th>\n          <th style="border: 1px solid #cbd5e1; padding: 10px; background: #e2e8f0;">Captured From</th>\n          <th style="border: 1px solid #cbd5e1; padding: 10px; background: #e2e8f0;">Strategic Value</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">Sinai Peninsula</td>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">Egypt</td>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">Vast desert buffer zone</td>\n        </tr>\n        <tr>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">Gaza Strip</td>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">Egypt</td>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">Eliminated Fedayeen bases</td>\n        </tr>\n        <tr>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">West Bank</td>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">Jordan</td>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">Defensible borders (Jordan)</td>\n        </tr>\n        <tr>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">East Jerusalem</td>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">Jordan</td>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">Holy Sites (Western Wall)</td>\n        </tr>\n        <tr>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">Golan Heights</td>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">Syria</td>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">Protected Galilee farming</td>\n        </tr>\n      </tbody>\n    </table>',
           level_4:
             '<table style="width:100%; border-collapse: collapse; margin: 15px 0;">\n      <thead>\n        <tr>\n          <th style="border: 1px solid #cbd5e1; padding: 10px; background: #e2e8f0;">Captured Territory</th>\n          <th style="border: 1px solid #cbd5e1; padding: 10px; background: #e2e8f0;">Captured From</th>\n          <th style="border: 1px solid #cbd5e1; padding: 10px; background: #e2e8f0;">Strategic Value</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">Sinai Peninsula</td>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">Egypt</td>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">Vast desert buffer zone</td>\n        </tr>\n        <tr>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">Gaza Strip</td>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">Egypt</td>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">Eliminated Fedayeen bases</td>\n        </tr>\n        <tr>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">West Bank</td>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">Jordan</td>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">Defensible borders (Jordan)</td>\n        </tr>\n        <tr>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">East Jerusalem</td>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">Jordan</td>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">Holy Sites (Western Wall)</td>\n        </tr>\n        <tr>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">Golan Heights</td>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">Syria</td>\n          <td style="border: 1px solid #cbd5e1; padding: 10px;">Protected Galilee farming</td>\n        </tr>\n      </tbody>\n    </table>',
@@ -6122,6 +6185,26 @@ export const unitData = {
           desc: 'IDF paratroopers secure East Jerusalem and the Western Wall; Israeli armour routes Jordan from the West Bank and captures the Golan Heights from Syria.',
         },
       ],
+      secondary_map: {
+        title: 'Map Task: The Territorial Conquests of the Six-Day War (June 1967)',
+        instructions:
+          'Using the regional map below, shade and annotate the four newly occupied territories captured by Israeli forces during the Six-Day War (5–10 June 1967) and identify the new natural defensive barriers.',
+        source_a: '/images/palestine_1967_six_day_war_map.png',
+        max_height: '470px',
+        checklist: {
+          occupied_territories: [
+            'Sinai Peninsula (60,000 km² seized from Egypt — vast buffer to the Suez Canal)',
+            'Gaza Strip (coastal territory seized from Egypt — 350,000 Palestinian refugees under military control)',
+            'West Bank & East Jerusalem (mountainous heartland seized from Jordan — Western Wall reunified)',
+            'Golan Heights (strategic volcanic plateau seized from Syria — ending artillery shelling of Galilee)',
+          ],
+          defensive_buffers: [
+            'Water Barrier: The Suez Canal (western defensive moat against Egyptian ground offensive)',
+            'River Valley: The River Jordan & Dead Sea (eastern defensive moat against Jordanian armor)',
+            'Mountain Watch: Mount Hermon & Golan Ridge (electronic early warning over Damascus)',
+          ],
+        },
+      },
     },
     {
       id: 'lesson_6',
@@ -7578,6 +7661,19 @@ export const unitData = {
           },
         },
         {
+          type: 'photo_slider',
+          tag: 'October 1973 Two-Front War',
+          title: 'The Yom Kippur War: Operation Badr (Sinai Front) vs. Golan Heights Battle',
+          description:
+            "Slide the divider to examine the simultaneous coordinated surprise assault launched by Egypt and Syria on Yom Kippur (6 October 1973). The Sinai Front shows the Egyptian water-cannon breaches across the Bar-Lev Line beneath a SAM missile umbrella and Sharon's counter-crossing at Deversoir. The Golan Front shows the Syrian 1,400-tank breakthrough across the Valley of Tears and the Israeli counter-thrust towards Damascus.",
+          before_image: '/images/cme_yom_kippur_1973_map.png',
+          before_label: 'Southern Front: Sinai & Bar-Lev Line',
+          after_image: '/images/cme_yom_kippur_golan_1973_map.jpg',
+          after_label: 'Northern Front: Golan & Valley of Tears',
+          aspect_ratio: '1 / 1',
+          object_fit: 'contain',
+        },
+        {
           text: "**Cold War Arms Airlifts: Operation Nickel Grass vs Soviet Resupply:** On the Southern Front, the conflict escalated into a massive superpower proxy war. To replace Israel’s heavy losses, US President Richard Nixon authorized Operation Nickel Grass on 12 October—a massive, direct military airlift of advanced American weapons, tanks, and ammunition that arrived in Israel on 15 October. Simultaneously, the Soviet Union launched an equally massive arms resupply to Egypt and Syria. Utilizing their newly arrived equipment, Israeli tank divisions led by General Ariel Sharon exploited a gap between Egypt's Second and Third Armies. The IDF crossed the Suez Canal onto the Egyptian mainland, destroying Soviet-bloc SAM missile sites and completely encircling Egypt's Third Army in the Sinai Desert.",
           level_4:
             "On the Southern Front, the conflict escalated into a massive superpower proxy war. The IDF crossed the Suez Canal onto the Egyptian mainland, destroying Soviet-bloc SAM missile sites and completely encircling Egypt's Third Army in the Sinai Desert.",
@@ -8507,6 +8603,27 @@ export const unitData = {
           desc: 'Sharon leads tanks across the Suez Canal; King Faisal enacts the OPEC oil embargo; superpowers face off at DEFCON 3 before a ceasefire is enforced.',
         },
       ],
+      secondary_map: {
+        title: 'Map Task: The Two-Front Yom Kippur War (October 1973)',
+        instructions:
+          'Trace the operational movements across both wartime theatres: the Egyptian canal crossing and Israeli counter-thrust in the Sinai (left), and the Syrian armoured breakthrough across the Golan Heights and IDF counter-offensive towards Damascus (right).',
+        source_a: '/images/cme_yom_kippur_1973_map.png',
+        primary_label: 'Southern Theatre: Sinai & Bar-Lev Line',
+        secondary_image: '/images/cme_yom_kippur_golan_1973_map.jpg',
+        secondary_label: 'Northern Theatre: Golan Heights & Damascus Corridor',
+        checklist: {
+          sinai_theatre: [
+            'Trace Egyptian water-monitor breaches across the sand ramparts of the Bar-Lev Line',
+            'Highlight the 10–12 km Soviet-supplied SAM missile umbrella along the east bank',
+            'Trace Sharon’s armoured counter-crossing at Deversoir encircling the Egyptian Third Army',
+          ],
+          golan_theatre: [
+            'Trace the Syrian 1,400-tank assault across the Valley of Tears towards the Sea of Galilee',
+            'Mark the heroic defensive stand of the Israeli 7th Armoured Brigade',
+            'Trace the Israeli counter-offensive breaking through the Purple Line to within 40 km of Damascus',
+          ],
+        },
+      },
     },
     {
       id: 'lesson_8',
@@ -9668,6 +9785,26 @@ export const unitData = {
           desc: 'Egypt and Israel sign a formal peace treaty on the White House lawn; in October 1981, Sadat assassinated by Islamic extremists in Cairo.',
         },
       ],
+      secondary_map: {
+        title: 'Map Task: The Sinai Demilitarisation & Handback (1979–1982)',
+        instructions:
+          'Using the map of the Sinai Peninsula, identify the phased withdrawal lines and demilitarised security zones established under the 1979 Egyptian-Israeli Peace Treaty.',
+        source_a: '/images/cme_sinai_peninsula_map.jpg',
+        max_height: '470px',
+        checklist: {
+          withdrawal_zones: [
+            'El Arish–Ras Mohammad Line: First interim Israeli withdrawal line completed by Jan 1980',
+            'International Border Line: Full Israeli evacuation of Yamit settlement and Sinai by April 1982',
+          ],
+          demilitarization_terms: [
+            'Zone A (Egypt): Maximum 1 armed mechanized infantry division (22,000 troops) east of Suez',
+            'Zone B (Egypt): 4 border security battalions with light weapons only',
+            'Zone C (Egypt/UN): Multinational Force & Observers (MFO) peacekeeper zone along the border',
+            'Zone D (Israel): Maximum 4 Israeli infantry battalions along the international border',
+            'Strategic Chokepoint: Guarantees of unhindered Israeli shipping through the Straits of Tiran',
+          ],
+        },
+      },
     },
     {
       id: 'lesson_9',
@@ -11349,6 +11486,19 @@ export const unitData = {
           ],
         },
         {
+          type: 'photo_slider',
+          tag: 'Diplomatic Partition (1993–1995)',
+          title: 'The Oslo Accords: From Undivided West Bank to Oslo II Areas A, B, and C (1995)',
+          description:
+            'Slide the divider to examine the territorial fragmentation of the West Bank under the 1995 Oslo II Agreement. While the 1994 Cairo Agreement granted limited self-rule only to Gaza and Jericho, Oslo II carved the West Bank into a patchwork of Area A (full Palestinian control over major cities), Area B (joint security control), and Area C (full Israeli military and civil control over 60% of the land, including settlements and the Jordan Valley).',
+          before_image: '/images/palestine_1967_six_day_war_map.png',
+          before_label: 'Pre-Oslo: Undivided West Bank Occupation',
+          after_image: '/images/cme_oslo_areas_map.png',
+          after_label: 'Oslo II (1995): Fragmented Areas A, B, and C',
+          aspect_ratio: '1 / 1',
+          object_fit: 'contain',
+        },
+        {
           text: '**The Tragic Climax: The Assassination of Yitzhak Rabin (4 November 1995):** Opposition to the Oslo Accords reached a fever pitch in Israel. Right-wing opposition parties, led by Likud leader Benjamin Netanyahu, staged massive, furious street rallies. Hardline rabbis denounced Rabin as a traitor and invoked ancient theological concepts like *din rodef* (the religious law of the pursuer, which permitted the extrajudicial killing of someone endangering Jewish lives). On the evening of 4 November 1995, over 100,000 Israelis gathered at a massive peace rally in Kings of Israel Square, Tel Aviv, chanting *"Yes to Peace, No to Violence."* Rabin sang the peace anthem *Shir LaShalom* ("A Song for Peace"), folded the lyric sheet into his breast pocket, and walked down the steps to his waiting car. At 9:30 PM, **Yigal Amir**, a 25-year-old radical Orthodox Jewish law student, stepped from the shadows and fired three point-blank hollow-point rounds into Rabin’s spine and chest. Rabin died on the operating table an hour later. The assassination of Yitzhak Rabin dealt a catastrophic, mortal blow to the Oslo peace process. With Rabin gone, mutual trust collapsed, extremism surged on both sides, and the dream of an enduring Arab-Israeli peace began its tragic, agonizing unraveling.',
           level_4:
             'On 4 November 1995, Yitzhak Rabin was assassinated at a peace rally in Tel Aviv by Yigal Amir, a radical right-wing Jewish law student. The assassination dealt a fatal blow to the peace process, leaving the "permanent status" issues completely unresolved.\n<img src="/units/cme_new/assets/deadlock.svg" class="svg-diagram" style="width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;" alt="deadlock">',
@@ -12241,6 +12391,25 @@ export const unitData = {
           desc: 'The West Bank is partitioned into Areas A, B, and C under Oslo II; on 4 November 1995, Prime Minister Yitzhak Rabin was assassinated in Tel Aviv.',
         },
       ],
+      secondary_map: {
+        title: 'Map Task: The Oslo II West Bank Administrative Matrix (1995)',
+        instructions:
+          'Study the fragmented territorial matrix created by the September 1995 Oslo II (Taba) Agreement. Identify the three administrative zones (Areas A, B, and C) and analyse why this archipelago of isolated Palestinian enclaves fuelled deep frustration and undermined the peace process.',
+        source_a: '/images/cme_oslo_areas_map.png',
+        max_height: '470px',
+        checklist: {
+          oslo_zones: [
+            'Area A (Brown / 18%): Full Palestinian civil and internal security control (8 major cities: Ramallah, Nablus, Jenin, Bethlehem, Tulkarm, Qalqilya, Jericho, Hebron)',
+            'Area B (Striped / 22%): Palestinian civil administration with joint Israeli overriding military security control (450+ Arab rural towns and villages)',
+            'Area C (Yellow / 60%): Full Israeli civil administration and military security control (Jewish settlements, military bases, bypass roads, and Jordan Valley)',
+          ],
+          fragmentation_impact: [
+            'Trace the Israeli military bypass roads connecting Jewish settlements directly to Israel proper',
+            'Identify the fragmentation of the West Bank into over 165 separate, disconnected Palestinian cantons',
+            'Note the encirclement of East Jerusalem, cutting it off from the West Bank hinterland',
+          ],
+        },
+      },
     },
   ],
   exam_blocks: [

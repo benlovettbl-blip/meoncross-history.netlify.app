@@ -3170,21 +3170,28 @@ allDirs.forEach((unitId) => {
       // GCSE Task
       let hasExamTask =
         lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
+      let cmeExamWrapperOpened = false;
       if (hasExamTask) {
-        html += `<div style="page-break-before: always; margin-top: 20px;">`;
-        let fallbackExamTitle = [
-          'water_and_sanitation',
-          'early_modern_world',
-          'change_1450_1750',
-          'industrialisation_and_empire',
-          'great_war',
-          'great_war_part2',
-        ].includes(unitId)
-          ? 'Writing Practice'
-          : 'GCSE Exam Practice';
-        let examTitle =
-          lesson.extended && lesson.extended.title ? lesson.extended.title : fallbackExamTitle;
-        html += `<h2 style="margin-top: 0; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 5px;">${examTitle}</h2>`;
+        const skipInitialExamHeader =
+          unitId === 'cme_new' &&
+          lesson.secondary_map &&
+          !(lesson.extended && lesson.extended.question);
+        if (!skipInitialExamHeader) {
+          html += `<div style="page-break-before: always; margin-top: 20px;">`;
+          let fallbackExamTitle = [
+            'water_and_sanitation',
+            'early_modern_world',
+            'change_1450_1750',
+            'industrialisation_and_empire',
+            'great_war',
+            'great_war_part2',
+          ].includes(unitId)
+            ? 'Writing Practice'
+            : 'GCSE Exam Practice';
+          let examTitle =
+            lesson.extended && lesson.extended.title ? lesson.extended.title : fallbackExamTitle;
+          html += `<h2 style="margin-top: 0; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 5px;">${examTitle}</h2>`;
+        }
 
         const renderLines = (text, customLines) => {
           if (customLines) {
@@ -3687,6 +3694,7 @@ allDirs.forEach((unitId) => {
           if (unitId === 'cme_new' && lesson.secondary_map) {
             html += `<div style="page-break-before: always; margin-top: 20px;">`;
             html += `<h2 style="margin-top: 0; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 5px;">GCSE Exam Practice</h2>`;
+            cmeExamWrapperOpened = true;
           }
           html += `<div class="task-box" style="margin-bottom: 10px; page-break-inside: avoid; border-top: none; padding-top: 0; margin-top: 0;">`;
 
@@ -4001,9 +4009,11 @@ allDirs.forEach((unitId) => {
           html += `<div class="task-lines-large"></div>`;
         }
         html += `</div>`;
-        if (unitId === 'cme_new' && lesson.secondary_map) {
-          html += `</div>`; // closes the GCSE Exam Practice + Exit Ticket page wrapper
-        }
+      }
+
+      if (cmeExamWrapperOpened) {
+        html += `</div>`; // closes the GCSE Exam Practice + Exit Ticket page wrapper
+        cmeExamWrapperOpened = false;
       }
 
       // Inject General Notes Box
