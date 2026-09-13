@@ -17,29 +17,31 @@ const units = fs
 
 for (const unitId of units) {
   const unitDir = path.join(publicUnitsDir, unitId);
-  const dataJsPath = path.join(unitDir, 'data.js');
+  let dataJsPath = path.join(unitDir, 'data.js');
+  if (!fs.existsSync(dataJsPath)) {
+    dataJsPath = path.join(rootDir, 'units', unitId, 'data.js');
+  }
 
   if (!fs.existsSync(dataJsPath)) continue;
 
   try {
     let rawData = fs.readFileSync(dataJsPath, 'utf8');
 
-    // Naive parsing: strip imports and exports
-    let jsonStr = rawData.replace(/import .*?;\n/g, '');
-    jsonStr = jsonStr.replace(/export const unitData = |export default /g, '').trim();
-    if (jsonStr.endsWith(';')) jsonStr = jsonStr.slice(0, -1);
-
     let unit;
     try {
-      // Define dummy variables for any imports used in the data object
       let mock_exams = {};
-      // Use eval for robustness against JS syntax (like functions or unquoted keys) that strict JSON.parse rejects
-      // We wrap it in parentheses to force it to be treated as an expression.
-      unit = eval('(' + jsonStr + ')');
+      const startIndex = rawData.indexOf('{');
+      const endIndex = rawData.lastIndexOf('}');
+      if (startIndex !== -1 && endIndex !== -1) {
+        const jsonStr = rawData.substring(startIndex, endIndex + 1);
+        unit = eval('(function(){ return ' + jsonStr + '; })()');
+      }
     } catch (e) {
       console.warn(`Could not parse data for unit ${unitId}. Skipping quiz pack generation.`);
       continue;
     }
+
+    if (!unit || !unit.title) continue;
 
     let quizPack = unit.quizPack || [];
 
@@ -58,11 +60,13 @@ for (const unitId of units) {
             } else if (q.options && typeof q.answer !== 'undefined' && q.options[q.answer]) {
               ansText = q.options[q.answer];
             }
-            quizPack.push({
-              q: q.question || q.q,
-              a: ansText,
-              options: q.options,
-            });
+            if (q.question || q.q) {
+              quizPack.push({
+                q: q.question || q.q,
+                a: ansText,
+                options: q.options,
+              });
+            }
           });
         }
         if (l.do_now && l.do_now.items) {
@@ -78,16 +82,18 @@ for (const unitId of units) {
         }
         if (l.flashcards && Array.isArray(l.flashcards)) {
           l.flashcards.forEach((fc) => {
-            quizPack.push({
-              q: 'Define: ' + fc.term,
-              a: fc.definition,
-              options: [
-                fc.definition,
-                'A different historical term',
-                'An incorrect definition',
-                'None of the above',
-              ],
-            });
+            if (fc && fc.term && fc.definition && fc.term !== 'undefined') {
+              quizPack.push({
+                q: 'Define: ' + fc.term,
+                a: fc.definition,
+                options: [
+                  fc.definition,
+                  'A different historical term',
+                  'An incorrect definition',
+                  'None of the above',
+                ],
+              });
+            }
           });
         }
         if (l.fun_facts && Array.isArray(l.fun_facts)) {

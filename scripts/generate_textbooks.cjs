@@ -77,7 +77,10 @@ allDirs.forEach((unitId) => {
   let dataPath = path.join(publicUnitsDir, unitId, 'data.js');
   if (
     !fs.existsSync(dataPath) &&
-    (unitId === 'weimar_nazi_germany' || unitId === 'early_modern_world')
+    (unitId === 'weimar_nazi_germany' ||
+      unitId === 'early_modern_world' ||
+      unitId === 'great_war_part2' ||
+      unitId === 'medieval_england')
   ) {
     dataPath = path.join(ROOT_DIR, 'units', unitId, 'data.js');
   }

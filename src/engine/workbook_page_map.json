@@ -422,44 +422,44 @@
     }
   },
   "great_war_part2": {
-    "lesson_1": {
-      "page": 3,
+    "lesson_1_enlistment": {
+      "page": 4,
       "booklet": "Pupil Workbook",
       "unitId": "great_war_part2",
       "lessonIndex": 0
     },
-    "lesson_2": {
-      "page": 13,
+    "lesson_2_trenches_haig": {
+      "page": 6,
       "booklet": "Pupil Workbook",
       "unitId": "great_war_part2",
       "lessonIndex": 1
     },
-    "lesson_3": {
-      "page": 26,
+    "lesson_3_empire_troops": {
+      "page": 8,
       "booklet": "Pupil Workbook",
       "unitId": "great_war_part2",
       "lessonIndex": 2
     },
-    "lesson_4": {
-      "page": 36,
+    "lesson_4_home_front_dora": {
+      "page": 10,
       "booklet": "Pupil Workbook",
       "unitId": "great_war_part2",
       "lessonIndex": 3
     },
-    "lesson_5": {
-      "page": 46,
+    "lesson_5_versailles": {
+      "page": 12,
       "booklet": "Pupil Workbook",
       "unitId": "great_war_part2",
       "lessonIndex": 4
     },
-    "lesson_6": {
-      "page": 56,
+    "lesson_6_stubbington_lost_gen": {
+      "page": 14,
       "booklet": "Pupil Workbook",
       "unitId": "great_war_part2",
       "lessonIndex": 5
     },
-    "lesson_7": {
-      "page": 66,
+    "lesson_7_assessment": {
+      "page": 16,
       "booklet": "Pupil Workbook",
       "unitId": "great_war_part2",
       "lessonIndex": 6

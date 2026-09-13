@@ -2,372 +2,1525 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>The Great War: Causes & Outbreak - Quiz Pack</title>
+    <title>KS3: Industrialisation, Empire, and Power (1750–1900) - Quiz Pack</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; padding: 40px; color: #333; max-width: 800px; margin: 0 auto; }
-        h1 { color: #1a237e; text-align: center; }
-        .question-block { margin-bottom: 20px; page-break-inside: avoid; }
-        .question { font-weight: bold; margin-bottom: 5px; }
-        .options { margin-left: 20px; list-style-type: upper-alpha; }
-        .options li { margin-bottom: 3px; }
+        :root {
+            --primary: #0f172a;
+            --accent: #3b82f6;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+        }
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            padding: 40px; 
+            color: var(--text-main); 
+            max-width: 900px; 
+            margin: 0 auto; 
+            background-color: #f1f5f9;
+        }
+        .page-container {
+            background: white;
+            padding: 40px 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid var(--border);
+        }
+        h1 { 
+            font-family: 'Outfit', sans-serif;
+            color: var(--primary); 
+            margin: 0 0 10px 0;
+            font-weight: 800;
+            font-size: 2.2rem;
+            line-height: 1.2;
+        }
+        .subtitle {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+        .questions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px 40px;
+        }
+        .question-block { 
+            page-break-inside: avoid; 
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        .question { 
+            font-weight: 600; 
+            margin-bottom: 12px; 
+            font-size: 1.05rem;
+            line-height: 1.4;
+            color: var(--primary);
+        }
+        .options { 
+            list-style-type: none; 
+            padding: 0;
+            margin: 0;
+        }
+        .options li { 
+            margin-bottom: 8px; 
+            display: flex;
+            align-items: flex-start;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+        .option-bubble {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid #cbd5e1;
+            margin-right: 10px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: #94a3b8;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
         @media print {
-            body { padding: 0; }
+            body { 
+                padding: 0; 
+                background: white; 
+            }
+            .page-container {
+                box-shadow: none;
+                padding: 0;
+            }
+            .question-block {
+                border: 1px solid #cbd5e1;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>The Great War: Causes & Outbreak<br><span style="font-size: 0.7em; color: #555;">Knowledge Recall Quiz Pack</span></h1>
-    <hr style="margin-bottom: 30px;">
+    <div class="page-container">
+        <header>
+            <h1>KS3: Industrialisation, Empire, and Power (1750–1900)</h1>
+            <div class="subtitle">Knowledge Recall Quiz Pack</div>
+        </header>
+        
+        <div class="questions-grid">
 
-        <div class="question-block">
-            <div class="question">1. In what year did the Franco-Prussian War end?</div>
-            <ul class="options">
-                <li>1871</li><li>1882</li><li>1914</li><li>1890</li>
-            </ul>
+            <div class="question-block">
+                <div class="question">1. Who was the Fareham ironmaster who patented the 'puddling and rolling' process in 1783-1784?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Abraham Darby</li><li><span class="option-bubble">B</span> Henry Cort</li><li><span class="option-bubble">C</span> James Watt</li><li><span class="option-bubble">D</span> Isambard Kingdom Brunel</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">2. Where did Henry Cort establish his revolutionary iron mill in Hampshire?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Fontley (near Fareham)</li><li><span class="option-bubble">B</span> Winchester High Street</li><li><span class="option-bubble">C</span> Portsmouth Dockyard</li><li><span class="option-bubble">D</span> Southampton Common</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">3. What major fuel replaced wood and charcoal to power blast furnaces during the Industrial Revolution?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Natural gas</li><li><span class="option-bubble">B</span> Peat</li><li><span class="option-bubble">C</span> Coal (coke)</li><li><span class="option-bubble">D</span> Petroleum</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">4. How did Henry Cort's 'puddling' process revolutionize British iron production?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> It replaced human ironworkers entirely with steam-powered robots</li><li><span class="option-bubble">B</span> It completely eliminated the need for coal in smelting iron</li><li><span class="option-bubble">C</span> It imported all iron ore directly from Swedish mines</li><li><span class="option-bubble">D</span> It allowed pig iron to be converted into high-grade wrought iron rapidly and cheaply using grooved rollers</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">5. Which Scottish engineer dramatically improved the efficiency of the Newcomen steam engine by adding a separate condenser?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> James Watt</li><li><span class="option-bubble">B</span> Thomas Newcomen</li><li><span class="option-bubble">C</span> George Stephenson</li><li><span class="option-bubble">D</span> Richard Trevithick</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">6. Who was the Birmingham entrepreneur who partnered with James Watt to manufacture commercial steam engines?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Josiah Wedgwood</li><li><span class="option-bubble">B</span> Robert Owen</li><li><span class="option-bubble">C</span> Matthew Boulton</li><li><span class="option-bubble">D</span> John Wilkinson</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">7. Before the widespread adoption of steam power, what was the primary natural power source used to drive early textile factories?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Windmills</li><li><span class="option-bubble">B</span> Solar reflectors</li><li><span class="option-bubble">C</span> Horse-drawn capstans</li><li><span class="option-bubble">D</span> Waterwheels placed on fast-flowing rivers</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">8. Why was iron production so vital to the growth of the British Empire and navy?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> It was used exclusively for decorative coins and royal statues</li><li><span class="option-bubble">B</span> It was required to build cannons, anchors, steam boilers, and later ironclad naval warships</li><li><span class="option-bubble">C</span> It was exported exclusively to rival nations like France and Spain</li><li><span class="option-bubble">D</span> It was used to pave all major roads across Britain</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">9. What happened to Britain's iron industry by 1800 as a direct result of Henry Cort's innovations?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Britain transformed from an iron importer into the world's leading exporter of wrought iron</li><li><span class="option-bubble">B</span> The British government banned all private manufacture of iron</li><li><span class="option-bubble">C</span> Iron was completely replaced by aluminium in all construction</li><li><span class="option-bubble">D</span> The British iron industry collapsed due to foreign competition</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">10. Which transport innovation allowed heavy raw materials like coal and iron ore to be moved cheaply before railways?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Toll highways</li><li><span class="option-bubble">B</span> Horse-drawn carriages</li><li><span class="option-bubble">C</span> Steam tractors</li><li><span class="option-bubble">D</span> Canal networks</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">11. What tragic scandal ruined Henry Cort financially despite the immense national success of his iron patents?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> He was accused of high treason by King George III</li><li><span class="option-bubble">B</span> His Fontley iron mill was destroyed by a volcanic eruption</li><li><span class="option-bubble">C</span> His partner Adam Jellicoe embezzled Royal Navy funds, causing the government to confiscate Cort's patents</li><li><span class="option-bubble">D</span> The French navy captured him during a trade voyage to Paris</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">12. What phrase was commonly used to describe Britain's dominant global manufacturing status in the 19th century?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Breadbasket of Europe</li><li><span class="option-bubble">B</span> The Workshop of the World</li><li><span class="option-bubble">C</span> The Island of Inventors</li><li><span class="option-bubble">D</span> The Golden Empire</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">13. What was the name of the famous locomotive built by George and Robert Stephenson that won the 1829 Rainhill Trials?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Flying Scotsman</li><li><span class="option-bubble">B</span> The Rocket</li><li><span class="option-bubble">C</span> The Iron Duke</li><li><span class="option-bubble">D</span> The Puffing Billy</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">14. Which British city was dubbed 'Cottonopolis' due to its vast concentration of steam-powered cotton textile mills?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Birmingham</li><li><span class="option-bubble">B</span> Bristol</li><li><span class="option-bubble">C</span> Newcastle</li><li><span class="option-bubble">D</span> Manchester</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">15. Why was steam power superior to water power for factory owners?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Factories could be built anywhere near coal fields and transport links, not just next to swift rivers</li><li><span class="option-bubble">B</span> Steam engines did not require coal or water to operate</li><li><span class="option-bubble">C</span> Steam engines were completely silent and produced zero smoke</li><li><span class="option-bubble">D</span> Steam power was legally mandated by Parliament for all industries</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">16. Which safety lamp, invented in 1815, reduced fatal explosions caused by firedamp gas in coal mines?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Edison Bulb</li><li><span class="option-bubble">B</span> The Faraday Lantern</li><li><span class="option-bubble">C</span> The Davy Lamp</li><li><span class="option-bubble">D</span> The Cort Burner</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">17. What was the initial source of iron ore used in early British blast furnaces?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Deep-sea mineral nodules</li><li><span class="option-bubble">B</span> Locally mined ironstone found near coal seams</li><li><span class="option-bubble">C</span> Imported Australian red clay</li><li><span class="option-bubble">D</span> Melted Roman coins found in ruins</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">18. What did Henry Cort's grooved rolling process achieve compared to traditional blacksmith hammering?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> It painted the iron red to protect it from rust</li><li><span class="option-bubble">B</span> It rolled malleable iron into standard bars and plates fifteen times faster than manual hammers</li><li><span class="option-bubble">C</span> It made the iron brittle so it could be easily shattered</li><li><span class="option-bubble">D</span> It reduced the weight of iron by over 90%</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">19. Which Shropshire town is home to the world's first cast-iron bridge, built by Abraham Darby III in 1779?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Ironbridge (Coalbrookdale)</li><li><span class="option-bubble">B</span> Shrewsbury</li><li><span class="option-bubble">C</span> Telford</li><li><span class="option-bubble">D</span> Wolverhampton</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">20. How did the expansion of British coal mining and iron manufacturing directly drive 19th-century railway construction?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Railways were built purely for royal pleasure journeys</li><li><span class="option-bubble">B</span> Iron production declined so heavily that railways were used to store surplus tracks</li><li><span class="option-bubble">C</span> The government banned horse transport entirely across the country</li><li><span class="option-bubble">D</span> Railways were needed to move massive tonnages of coal and iron, while tracks and locomotives themselves required thousands of tons of iron</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">21. What military structure did William the Conqueror build across England after 1066 to intimidate the Anglo-Saxons?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Motte and bailey castles (and later stone keeps, such as Portchester Castle).</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">22. What deadly pandemic struck England in 1348, wiping out over a third of the population?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Black Death (Bubonic Plague).</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">23. What religious movement did Martin Luther launch in 1517 that divided European Christianity?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Protestant Reformation.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">24. What major naval invasion fleet sent by Philip II of Spain was defeated by England in 1588?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Spanish Armada.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">25. What was the difference between a primary source and a secondary interpretation?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> A primary source is contemporary evidence created at the time of an event; a secondary interpretation is created later by historians studying evidence.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">26. Who invented the water frame in 1769, establishing the modern factory system at Cromford Mill?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Richard Arkwright</li><li><span class="option-bubble">B</span> Samuel Crompton</li><li><span class="option-bubble">C</span> Edmund Cartwright</li><li><span class="option-bubble">D</span> James Hargreaves</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">27. What hazardous job in textile mills required young children to crawl under operating machinery to sweep up loose cotton fibres?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Piecer</li><li><span class="option-bubble">B</span> Hurrier</li><li><span class="option-bubble">C</span> Trapper</li><li><span class="option-bubble">D</span> Scavenger</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">28. What was the task of a 'piecer' in a 19th-century cotton spinning factory?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> To sew finished clothing for export</li><li><span class="option-bubble">B</span> To lean over moving spinning frames and tie together broken threads without stopping the machines</li><li><span class="option-bubble">C</span> To lubricate the main steam engine flywheel</li><li><span class="option-bubble">D</span> To shovel coal into the furnace boilers</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">29. Why did factory owners prefer to employ children and women over adult men in early textile mills?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Children were legally required to work by the British Monarchy</li><li><span class="option-bubble">B</span> Adult men were legally forbidden from entering factory buildings</li><li><span class="option-bubble">C</span> They could pay them significantly lower wages and they were perceived as easier to discipline</li><li><span class="option-bubble">D</span> Women and children possessed supernatural weaving abilities</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">30. What was the standard working day for most factory workers and child apprentices during the early Industrial Revolution?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> 12 to 16 hours per day, six days a week</li><li><span class="option-bubble">B</span> 8 hours per day, Monday to Friday</li><li><span class="option-bubble">C</span> 4 hours in the morning only</li><li><span class="option-bubble">D</span> 6 hours per day with paid holidays</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">31. What common physical deformity frequently afflicted young children who stood on hard factory floors for up to 14 hours a day?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Scurvy from lack of fruit</li><li><span class="option-bubble">B</span> Rickets and bent/bowed legs from bone softening and constant pressure</li><li><span class="option-bubble">C</span> Loss of hearing from loud church bells</li><li><span class="option-bubble">D</span> Permanent blindness from sunlight</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">32. How did factory overseers enforce strict discipline and punctuality among workers?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> By offering generous bonuses and extra days off</li><li><span class="option-bubble">B</span> By sending workers on university training courses</li><li><span class="option-bubble">C</span> By reducing the working hours of tired employees</li><li><span class="option-bubble">D</span> Through harsh financial fines, beatings ('strapping'), and locking factory gates</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">33. What key restriction did the landmark 1833 Factory Act introduce regarding child labour in textile mills?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> It forced all children to work until age twenty-one</li><li><span class="option-bubble">B</span> It doubled the wages of all child workers</li><li><span class="option-bubble">C</span> It banned all work for children under nine years old and limited 9-13 year-olds to eight hours per day</li><li><span class="option-bubble">D</span> It completely abolished child labour across all British industries</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">34. What famous building in London was constructed using over 6 million Fareham Red bricks?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Tower of London</li><li><span class="option-bubble">B</span> Buckingham Palace</li><li><span class="option-bubble">C</span> The Royal Albert Hall</li><li><span class="option-bubble">D</span> The Houses of Parliament</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">35. What machine was used in Hampshire brickfields to crush and mix raw clay with water?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> A blast furnace</li><li><span class="option-bubble">B</span> A puddling hearth</li><li><span class="option-bubble">C</span> A pug mill</li><li><span class="option-bubble">D</span> A spinning jenny</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">36. What was the role of a "pug boy" in the Funtley and Fareham clay pits?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> To deliver hot tea to the managers</li><li><span class="option-bubble">B</span> To drive horses in circles to turn the pug mill and mix heavy clay</li><li><span class="option-bubble">C</span> To load finished bricks onto railway freight wagons</li><li><span class="option-bubble">D</span> To dig coal from deep underground mines</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">37. Why were "Fareham Reds" so highly prized by Victorian architects across the British Empire?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> They were painted with gold leaf</li><li><span class="option-bubble">B</span> They were exceptionally dense, durable, and weather-resistant with a vibrant crimson color</li><li><span class="option-bubble">C</span> They were made entirely of lightweight dried straw</li><li><span class="option-bubble">D</span> They were the only bricks legally permitted by Parliament</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">38. What transport network allowed millions of Fareham bricks to be moved cheaply to London after 1841?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Motorway highways</li><li><span class="option-bubble">B</span> The London & South Western Railway</li><li><span class="option-bubble">C</span> Supersonic air transport</li><li><span class="option-bubble">D</span> Horse trails through the New Forest</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">39. Which parliamentary committee gathered harrowing eyewitness testimony about child labour in 1832?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Sadler Committee</li><li><span class="option-bubble">B</span> The Beveridge Commission</li><li><span class="option-bubble">C</span> The Gladstone Report</li><li><span class="option-bubble">D</span> The Cort Inquiry</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">40. What historical document from 1881 proves that young children were working in the Fareham clay pits?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Magna Carta</li><li><span class="option-bubble">B</span> The 1881 Fareham Census return</li><li><span class="option-bubble">C</span> The Domesday Book</li><li><span class="option-bubble">D</span> The Treaty of Versailles</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">41. What do "Pessimist" historians (like E.P. Thompson) argue about the Industrial Revolution?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> That it was a golden age of peace and relaxation for workers</li><li><span class="option-bubble">B</span> That it was a social catastrophe that punished workers and exploited children for profit</li><li><span class="option-bubble">C</span> That machines had zero impact on British society</li><li><span class="option-bubble">D</span> That the domestic system was worse than modern factories in every way</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">42. What do "Optimist" historians (like R.M. Hartwell) argue about the long-term impact of industrialisation?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> That Britain should have remained entirely agricultural</li><li><span class="option-bubble">B</span> That the factory system created modern wealth, higher living standards, and medical advances</li><li><span class="option-bubble">C</span> That child labour should never have been abolished</li><li><span class="option-bubble">D</span> That steam power was an economic failure</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">43. What practice did domestic handloom weavers celebrate on Mondays before the factory clock was introduced?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Saint Monday (taking the day off)</li><li><span class="option-bubble">B</span> The Monday Shift</li><li><span class="option-bubble">C</span> The Clock Bell</li><li><span class="option-bubble">D</span> The Steam Festival</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">44. What lung disease commonly afflicted cotton textile mill workers due to inhaling airborne fibres?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Scurvy</li><li><span class="option-bubble">B</span> Byssinosis (brown lung)</li><li><span class="option-bubble">C</span> Rickets</li><li><span class="option-bubble">D</span> Cholera</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">45. What was the age limit below which children were legally banned from working in textile mills by the 1833 Factory Act?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Under six years old</li><li><span class="option-bubble">B</span> Under nine years old</li><li><span class="option-bubble">C</span> Under sixteen years old</li><li><span class="option-bubble">D</span> Under twenty-one years old</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">46. What Hampshire ironworks did Henry Cort lease in 1775 to develop his naval iron innovations?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Funtley Ironworks (situated along the River Meon near Fareham).</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">47. What two metallurgical processes did Henry Cort patent in 1783–1784 that transformed brittle pig iron into tough naval wrought iron?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Reverberatory Puddling Furnace (1783) and the Grooved Rolling Mill (1784).</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">48. Why was Portsmouth Royal Navy Dockyard the primary customer for Henry Cort's iron?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Portsmouth was the largest industrial base in Britain, needing thousands of tons of flawless iron for warship anchors, bolts, and hoops for ships like HMS Victory.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">49. Which Scottish engineer patented the separate condenser in 1769, allowing steam engines to produce rotary motion anywhere coal was available?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> James Watt.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">50. What financial scandal ruined Henry Cort in 1789 despite his world-changing innovations?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> His partner Adam Jellicoe embezzled £27,000 in Royal Navy funds, causing the Crown to confiscate Cort's patents.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">51. What term describes the massive migration of millions of people from rural villages to industrial cities during the 19th century?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Urbanisation</li><li><span class="option-bubble">B</span> Enclosure</li><li><span class="option-bubble">C</span> Colonisation</li><li><span class="option-bubble">D</span> Emancipation</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">52. What cheaply constructed, overcrowded housing style was built in industrial cities to pack the maximum number of families into minimal land?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Detached Victorian villas</li><li><span class="option-bubble">B</span> Country cottages</li><li><span class="option-bubble">C</span> Back-to-back terraced houses</li><li><span class="option-bubble">D</span> Baroque garden estates</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">53. Why were cellar dwellings in 19th-century industrial slums particularly dangerous for human health?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> They had excessively high heating bills</li><li><span class="option-bubble">B</span> They were located too far away from the factory gates</li><li><span class="option-bubble">C</span> They were built entirely out of inflammable timber</li><li><span class="option-bubble">D</span> They were damp, unventilated, perpetually dark, and frequently flooded with raw sewage from nearby cesspools</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">54. In what year did Asiatic cholera first strike Great Britain, causing widespread terror due to its rapid and gruesome mortality?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> 1789</li><li><span class="option-bubble">B</span> 1831</li><li><span class="option-bubble">C</span> 1805</li><li><span class="option-bubble">D</span> 1914</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">55. What waterborne bacterial disease caused victims to dehydrate rapidly through violent diarrhea and vomiting, turning their skin blue?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Influenza</li><li><span class="option-bubble">B</span> Cholera</li><li><span class="option-bubble">C</span> Tuberculosis</li><li><span class="option-bubble">D</span> Scurvy</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">56. What dominant medical theory before the 1860s falsely claimed that epidemic diseases were spread by foul-smelling airborne vapours?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Miasma theory</li><li><span class="option-bubble">B</span> The Germ theory</li><li><span class="option-bubble">C</span> The Four Humours theory</li><li><span class="option-bubble">D</span> The Spontaneous Generation theory</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">57. Who was the social reformer whose 1842 'Report on the Sanitary Conditions of the Labouring Population' proved that disease was caused by filth and poverty?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Charles Dickens</li><li><span class="option-bubble">B</span> Robert Peel</li><li><span class="option-bubble">C</span> Edwin Chadwick</li><li><span class="option-bubble">D</span> Lord Shaftesbury</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">58. What landmark legislation was passed in 1848 establishing Britain's first General Board of Health?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Factory Act 1848</li><li><span class="option-bubble">B</span> The Reform Act 1848</li><li><span class="option-bubble">C</span> The Poor Law Amendment Act 1848</li><li><span class="option-bubble">D</span> The Public Health Act 1848</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">59. What political philosophy held by wealthy taxpayers and town councils ('laissez-faire') delayed public health improvements in the early 19th century?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The policy of forcing all citizens to move into rural farm communes</li><li><span class="option-bubble">B</span> The belief that government should not interfere in the economy or spend taxpayers' money on clean water and sewers</li><li><span class="option-bubble">C</span> The belief that disease could only be cured by royal prayer</li><li><span class="option-bubble">D</span> The demand that all private property should be taken over by the State</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">60. Which doctor investigated the 1854 cholera outbreak in Soho, London, proving the disease was spread through contaminated water?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Dr Joseph Lister</li><li><span class="option-bubble">B</span> Dr William Harvey</li><li><span class="option-bubble">C</span> Dr John Snow</li><li><span class="option-bubble">D</span> Dr Edward Jenner</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">61. What physical action did Dr John Snow take in September 1854 to halt the Soho cholera epidemic?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> He burned down the entire Soho neighbourhood</li><li><span class="option-bubble">B</span> He sprayed carbolic acid into the Soho drinking water</li><li><span class="option-bubble">C</span> He vaccinated every citizen in London against smallpox</li><li><span class="option-bubble">D</span> He removed the handle of the Broad Street water pump, forcing residents to fetch clean water elsewhere</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">62. What environmental crisis in the hot summer of 1858 finally forced Parliament to fund a comprehensive sewer system for London?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Great Stink (the overwhelming stench from the polluted River Thames outside the Houses of Parliament)</li><li><span class="option-bubble">B</span> A tidal wave hitting the Tower of London</li><li><span class="option-bubble">C</span> The Great Fire of London</li><li><span class="option-bubble">D</span> A massive frost fair on the frozen Thames</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">63. Who was the chief civil engineer of the Metropolitan Board of Works who designed London's vast underground intercepting sewer network?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Joseph Bazalgette</li><li><span class="option-bubble">B</span> Isambard Kingdom Brunel</li><li><span class="option-bubble">C</span> Thomas Telford</li><li><span class="option-bubble">D</span> George Stephenson</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">64. How did Joseph Bazalgette's sewer system solve London's contamination crisis?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> It stored all sewage in massive open vats in central London parks</li><li><span class="option-bubble">B</span> It boiled all Thames river water before pumping it to homes</li><li><span class="option-bubble">C</span> It intercepted raw sewage before it could flow into the Thames and transported it downstream to the Thames estuary</li><li><span class="option-bubble">D</span> It dumped all sewage into the London Underground tunnels</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">65. What was the average life expectancy of a working-class labourer in industrial cities like Manchester and Liverpool during the 1840s?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Over 75 years old</li><li><span class="option-bubble">B</span> Around 45 years old</li><li><span class="option-bubble">C</span> Around 65 years old</li><li><span class="option-bubble">D</span> Under 20 years old</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">66. Why was clean drinking water so scarce for working-class families in 1840s industrial slums?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Water was banned by local magistrates to stop drunken riots</li><li><span class="option-bubble">B</span> Water was supplied by private commercial companies through street standpipes for only a few hours a week, often drawn directly from contaminated rivers</li><li><span class="option-bubble">C</span> Families only drank beer and refused to consume water under any circumstances</li><li><span class="option-bubble">D</span> All rainfall in Britain ceased completely between 1840 and 1850</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">67. What was a 'cesspool' in an early 19th-century town?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> A public swimming bath for factory workers</li><li><span class="option-bubble">B</span> An underground pit or chamber for collecting household waste and sewage, which frequently seeped into nearby groundwater and drinking wells</li><li><span class="option-bubble">C</span> A storage reservoir for clean distilled water</li><li><span class="option-bubble">D</span> A holding pen for farm animals before market</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">68. What compulsory requirement was introduced in the Public Health Act of 1875 under Prime Minister Benjamin Disraeli?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Local town councils were legally required to provide clean water, build proper sewers, collect rubbish, and appoint medical officers of health</li><li><span class="option-bubble">B</span> All citizens were forced to bathe twice daily in public rivers</li><li><span class="option-bubble">C</span> All industrial factories had to be demolished and moved to Scotland</li><li><span class="option-bubble">D</span> Doctors were banned from charging fees to wealthy patients</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">69. What devastating chronic pulmonary disease, nicknamed 'the White Plague', was the single biggest killer in 19th-century British slums?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Polio</li><li><span class="option-bubble">B</span> Yellow fever</li><li><span class="option-bubble">C</span> Measles</li><li><span class="option-bubble">D</span> Tuberculosis (consumption)</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">70. How did the 1854 Broad Street investigation challenge traditional medical understanding of disease transmission?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> It proved that diseases were caused by planetary alignments</li><li><span class="option-bubble">B</span> It showed that boiling water made it poisonous</li><li><span class="option-bubble">C</span> It provided empirical, mapped epidemiological evidence that disease spread via contaminated water ingested into the digestive tract, not through airborne miasma</li><li><span class="option-bubble">D</span> It proved that poor people were biologically immune to cholera</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">71. What Fareham ironmaster patented the revolutionary puddling and rolling processes in 1783–1784?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Henry Cort, at Funtley Ironworks along the River Meon.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">72. What was the decisive metallurgical difference between brittle pig iron and tough wrought iron?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Pig iron contained high levels of carbon and impurities from coal fuel, making it brittle; wrought iron was purified and malleable.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">73. Name the local Hampshire geological clay formation that allowed Fareham to manufacture over 20 million bricks annually.</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Reading Formation clay.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">74. What landmark 1832 parliamentary report documented 14-hour working days and corporal strapping of children in northern textile mills?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Sadler Committee Report.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">75. Which iconic Victorian landmark in London was constructed using high-durability Fareham Red bricks?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Royal Albert Hall.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">76. What private joint-stock corporation held a royal charter to control British trade and territories in India until 1858?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The East India Company (EIC)</li><li><span class="option-bubble">B</span> The Royal African Company</li><li><span class="option-bubble">C</span> The South Sea Company</li><li><span class="option-bubble">D</span> The Hudson's Bay Company</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">77. What was the 'Two-Power Standard' adopted by Britain to guarantee global maritime supremacy?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> A policy requiring the Royal Navy to be as strong as the next two largest navies combined.</li><li><span class="option-bubble">B</span> A rule requiring every warship to carry twice as many guns as foreign vessels.</li><li><span class="option-bubble">C</span> A law requiring two admirals to command every fleet squadron.</li><li><span class="option-bubble">D</span> A treaty dividing global naval bases equally between Britain and France.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">78. Launched in 1860, which Portsmouth-associated vessel was the Royal Navy's first revolutionary iron-hulled armoured warship?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> HMS Warrior</li><li><span class="option-bubble">B</span> HMS Victory</li><li><span class="option-bubble">C</span> HMS Dreadnought</li><li><span class="option-bubble">D</span> HMS Beagle</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">79. What was the original purpose of the East India Company when it was founded in 1600?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> To establish direct British government rule in India.</li><li><span class="option-bubble">B</span> To build ironclad warships for the Royal Navy.</li><li><span class="option-bubble">C</span> To control trade in precious spices, silks, indigo, and tea.</li><li><span class="option-bubble">D</span> To fight the French army in North America.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">80. How did the East India Company secure its commercial monopolies in India?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> By recruiting its own private mercenary army and exploiting local political divisions.</li><li><span class="option-bubble">B</span> By signing peaceful trade agreements with all local merchants.</li><li><span class="option-bubble">C</span> By relying solely on the Royal Navy for protection.</li><li><span class="option-bubble">D</span> By paying higher taxes to the local Indian rulers.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">81. What does it mean that the East India Company turned India into a 'captive market'?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The EIC built large prisons in India to hold their commercial rivals.</li><li><span class="option-bubble">B</span> Indian merchants were given exclusive rights to sell their goods in London.</li><li><span class="option-bubble">C</span> India was forced to trade exclusively with Britain, preventing local industries from competing.</li><li><span class="option-bubble">D</span> Britain sent captive prisoners from London to work in Indian factories.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">82. How did British textile mills affect India's domestic handloom weavers?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> They provided Indian weavers with better, cheaper yarn to make cloth.</li><li><span class="option-bubble">B</span> They flooded Indian markets with cheap, machine-made cloth, deliberately bankrupting local weavers.</li><li><span class="option-bubble">C</span> They bought all of the Indian weavers' cloth, making them wealthy.</li><li><span class="option-bubble">D</span> They taught Indian weavers how to build their own steam-powered factories.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">83. What event was triggered in May 1857 by the East India Company's systemic oppression?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Great Stink</li><li><span class="option-bubble">B</span> The signing of the Government of India Act</li><li><span class="option-bubble">C</span> The Battle of Trafalgar</li><li><span class="option-bubble">D</span> The Indian Rebellion (Sepoy Mutiny)</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">84. According to the April 1857 EIC corporate directive, what was the primary purpose of the British presence in India?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> To secure the maintenance of trade and protect shareholder profits.</li><li><span class="option-bubble">B</span> To spread British culture and religion.</li><li><span class="option-bubble">C</span> To bring modern technology and railways to the Indian people.</li><li><span class="option-bubble">D</span> To establish a democratic government in Asia.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">85. What was the consequence of the 1857 Rebellion for the East India Company?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> It was given even more power by the British Parliament.</li><li><span class="option-bubble">B</span> It agreed to share power with the local Indian rulers.</li><li><span class="option-bubble">C</span> It was formally abolished, and control transferred directly to the British Crown.</li><li><span class="option-bubble">D</span> It moved all of its operations to China.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">86. What was the 'Two-Power Standard'?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> A trade agreement between Britain and two other European nations.</li><li><span class="option-bubble">B</span> A policy ensuring India was ruled by both a British Governor and an Indian Prince.</li><li><span class="option-bubble">C</span> A law requiring two steam engines on every British warship.</li><li><span class="option-bubble">D</span> A rule that the Royal Navy must be stronger than the next two most powerful navies combined.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">87. Which Hampshire town became the largest steam-powered industrial complex on earth to support the navy?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Southampton</li><li><span class="option-bubble">B</span> Portsmouth</li><li><span class="option-bubble">C</span> Fareham</li><li><span class="option-bubble">D</span> Winchester</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">88. What major technological transition did the Royal Navy undergo at Portsmouth Dockyard during the 19th century?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Moving from coal-powered ships to oil-powered ships.</li><li><span class="option-bubble">B</span> Moving from wooden sailing ships to steam-driven 'Ironclads'.</li><li><span class="option-bubble">C</span> Moving from iron hulls back to lighter, faster wooden ships.</li><li><span class="option-bubble">D</span> Moving from merchant vessels to passenger liners.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">89. Launched in 1860, which ship was the world's first iron-hulled, steam-powered ironclad warship?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> HMS Warrior</li><li><span class="option-bubble">B</span> HMS Dreadnought</li><li><span class="option-bubble">C</span> HMS Victory</li><li><span class="option-bubble">D</span> HMS Beagle</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">90. Whose advanced metallurgy pioneered at Funtley (from Lesson 1) was vital for creating the armor plating of the Ironclads?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Edwin Chadwick</li><li><span class="option-bubble">B</span> John Snow</li><li><span class="option-bubble">C</span> Joseph Bazalgette</li><li><span class="option-bubble">D</span> Henry Cort</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">91. According to the letter from Arthur Vance (November 1861), what was the reality for the dockyard riveters?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> They worked comfortable shifts and were proud of the glory they brought the fleet.</li><li><span class="option-bubble">B</span> They were replaced by machines and struggled to find work in Hampshire.</li><li><span class="option-bubble">C</span> They endured exhausting 12-hour shifts in blistering heat, breathing black smoke.</li><li><span class="option-bubble">D</span> They mainly did highly skilled wood-carving for the officers' cabins.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">92. Why is Arthur Vance's private letter considered highly reliable by historians studying the human cost of empire?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Because it was written for a political campaign to improve wages.</li><li><span class="option-bubble">B</span> Because it was an official dockyard log checked by the government.</li><li><span class="option-bubble">C</span> Because it was a private letter to family with no motive to hide the grueling reality.</li><li><span class="option-bubble">D</span> Because it was published in The Times newspaper.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">93. What does 'Mercantilism' mean in the context of the British Empire?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> A policy of free trade where all nations compete equally without tariffs.</li><li><span class="option-bubble">B</span> The transition from rural farming communities to large industrial cities.</li><li><span class="option-bubble">C</span> The belief that all men should have the right to vote regardless of wealth.</li><li><span class="option-bubble">D</span> A system maximizing national wealth through strictly controlled colonial trade and monopolies.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">94. What did the Dacca weavers' petition in 1830 beg the British government to do?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> To place a duty (tax) on the cheap clothing coming from England to save their trade.</li><li><span class="option-bubble">B</span> To send them modern British steam engines for their looms.</li><li><span class="option-bubble">C</span> To force the East India Company to buy their hand-woven cloth at a higher price.</li><li><span class="option-bubble">D</span> To allow them to move to London to work in the factories.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">95. What do 'Optimist' historians typically argue about the British Empire's use of technology?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> That technology was only used to hurt people and had no positive benefits.</li><li><span class="option-bubble">B</span> That innovations like ironclads and railways created a massive, interconnected network of global trade and progress.</li><li><span class="option-bubble">C</span> That the British completely failed to modernize and relied too much on old wooden ships.</li><li><span class="option-bubble">D</span> That technological progress was less important than the skill of the handloom weavers.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">96. What lethal waterborne bacterial disease caused four major epidemics in 19th-century British industrial towns?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Cholera.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">97. What was the erroneous Victorian medical theory that epidemic diseases were caused by poisonous foul air?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Miasma Theory.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">98. What 1858 environmental disaster in London forced Parliament to abandon laissez-faire and fund modern sewers?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Great Stink.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">99. Who was the chief civil engineer who designed London’s revolutionary 1,100-mile underground intercepting sewer network?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Sir Joseph Bazalgette.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">100. What was the name given to the unventilated, high-density slum houses that shared three walls with adjoining properties?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Back-to-back houses.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">101. In what year did the massive Indian Rebellion against the British Empire begin?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> 1886</li><li><span class="option-bubble">B</span> 1807</li><li><span class="option-bubble">C</span> 1857</li><li><span class="option-bubble">D</span> 1832</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">102. What military innovation served as the immediate catalyst for the 1857 rebellion?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The ironclad ship</li><li><span class="option-bubble">B</span> The Gatling gun</li><li><span class="option-bubble">C</span> The Maxim gun</li><li><span class="option-bubble">D</span> The Enfield rifle</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">103. Why did the new Enfield rifle cartridges cause such outrage among the sepoys?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> They were rumored to be greased with beef and pork fat</li><li><span class="option-bubble">B</span> They were too heavy to carry</li><li><span class="option-bubble">C</span> They misfired frequently</li><li><span class="option-bubble">D</span> They were made in Britain instead of India</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">104. What percentage of the East India Company's military forces were native Indian soldiers (sepoys)?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Less than 20%</li><li><span class="option-bubble">B</span> Over 80%</li><li><span class="option-bubble">C</span> Around 50%</li><li><span class="option-bubble">D</span> Almost 100%</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">105. What was the East India Company's 'Doctrine of Lapse'?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> A policy to annex independent Indian kingdoms if a ruler died without a direct male heir</li><li><span class="option-bubble">B</span> A law banning Indian textiles from being sold</li><li><span class="option-bubble">C</span> A rule forcing sepoys to serve overseas</li><li><span class="option-bubble">D</span> A trade agreement with the Mughal Emperor</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">106. Besides the cartridges, what deeper issues caused systemic resentment among the Indian population?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The British refusal to trade with India</li><li><span class="option-bubble">B</span> Heavy taxation, land grabs, and destruction of the textile industry</li><li><span class="option-bubble">C</span> The building of too many railways</li><li><span class="option-bubble">D</span> Lack of British funding for Indian schools</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">107. Where did the outbreak of violence begin in earnest on May 10, 1857?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Delhi</li><li><span class="option-bubble">B</span> Lucknow</li><li><span class="option-bubble">C</span> Calcutta</li><li><span class="option-bubble">D</span> Meerut</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">108. Who did the mutinying sepoys declare as the true leader of India?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Governor-General of the EIC</li><li><span class="option-bubble">B</span> Queen Victoria</li><li><span class="option-bubble">C</span> The elderly Mughal Emperor, Bahadur Shah Zafar</li><li><span class="option-bubble">D</span> The Queen of Jhansi</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">109. Who was Rani Lakshmibai?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> A leader of the East India Company</li><li><span class="option-bubble">B</span> The Queen of Jhansi who famously fought on horseback against the British</li><li><span class="option-bubble">C</span> The first Empress of India</li><li><span class="option-bubble">D</span> A British missionary</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">110. How did the British forces respond to the rebellion?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> With uncompromising, industrialized brutality and a campaign of mass terror</li><li><span class="option-bubble">B</span> With peaceful negotiations and political reform</li><li><span class="option-bubble">C</span> By immediately abandoning India</li><li><span class="option-bubble">D</span> By paying the sepoys higher wages</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">111. What horrific method of execution did the British use as a form of psychological warfare against rebel leaders?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Exiling them to Australia</li><li><span class="option-bubble">B</span> Public hanging in London</li><li><span class="option-bubble">C</span> Binding them to the mouths of cannons and blowing them apart</li><li><span class="option-bubble">D</span> Imprisonment in the Tower of London</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">112. Why were rebels blown from cannons instead of hanged?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Because the British ran out of rope</li><li><span class="option-bubble">B</span> To save time</li><li><span class="option-bubble">C</span> Because it was considered more humane</li><li><span class="option-bubble">D</span> To deliberately deny the victims traditional religious funerals</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">113. What was the most significant political consequence of the 1857 Rebellion?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> India was immediately granted full independence</li><li><span class="option-bubble">B</span> The EIC was given more power to rule India</li><li><span class="option-bubble">C</span> The British banned all Indian soldiers from serving in the military</li><li><span class="option-bubble">D</span> The East India Company was abolished and the British Crown took direct control of India</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">114. Which 1858 law formalized the British government's direct rule over India?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Doctrine of Lapse</li><li><span class="option-bubble">B</span> The Secret Ballot Act</li><li><span class="option-bubble">C</span> The Government of India Act</li><li><span class="option-bubble">D</span> The Great Reform Act</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">115. The era of direct British Crown rule in India is known as what?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The British Raj</li><li><span class="option-bubble">B</span> The EIC Era</li><li><span class="option-bubble">C</span> The Imperial Federation</li><li><span class="option-bubble">D</span> The Mughal Empire</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">116. Who was declared Empress of India after the rebellion was crushed?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Mary Queen of Scots</li><li><span class="option-bubble">B</span> Queen Victoria</li><li><span class="option-bubble">C</span> Rani Lakshmibai</li><li><span class="option-bubble">D</span> Queen Elizabeth I</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">117. How did the 1857 Indian Rebellion contrast with domestic resistance like the Swing Riots?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> It aimed to lower the price of bread</li><li><span class="option-bubble">B</span> It was a full-scale war for liberation utilizing military training, rather than localized machine-breaking</li><li><span class="option-bubble">C</span> It was supported by the aristocratic elite</li><li><span class="option-bubble">D</span> It was completely peaceful</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">118. Why did Christian missionary activity in India contribute to the rebellion?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The missionaries stole all the agricultural land</li><li><span class="option-bubble">B</span> The missionaries forced Indians to work in factories</li><li><span class="option-bubble">C</span> It convinced many Indians that the British were determined to systematically dismantle their ancient religions</li><li><span class="option-bubble">D</span> The missionaries were heavily armed</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">119. What did the rebellion shatter regarding the British public's view of their empire?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Victorian myth that the Empire was a 'civilizing' force welcomed by its subjects</li><li><span class="option-bubble">B</span> The belief that the Navy was invincible</li><li><span class="option-bubble">C</span> The idea that trade was profitable</li><li><span class="option-bubble">D</span> The concept of parliamentary democracy</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">120. Which animal's fat was forbidden to Muslim soldiers, making the rumor about the cartridges so explosive?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Cow</li><li><span class="option-bubble">B</span> Horse</li><li><span class="option-bubble">C</span> Sheep</li><li><span class="option-bubble">D</span> Pig</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">121. What private joint-stock corporation ruled vast territories of India and maintained its own army until 1858?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The East India Company (EIC).</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">122. What Hampshire naval facility was the largest industrial manufacturing complex in the 19th-century world?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Portsmouth Royal Dockyard.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">123. Name Britain’s revolutionary 1860 iron-hulled warship that made wooden fleets obsolete overnight.</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> HMS Warrior.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">124. What economic term describes the destruction of India’s handloom weaving industry by cheap British factory cloth?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> De-industrialisation.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">125. What was the naval doctrine requiring the Royal Navy to equal or exceed the combined size of the next two strongest fleets?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Two-Power Standard.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">126. What repressive legislation, known as the 'Six Acts', did Parliament pass in response to the 1819 Peterloo Massacre?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> A law extending the right to vote to all urban factory workers.</li><li><span class="option-bubble">B</span> A statute legalizing trade unions across northern manufacturing towns.</li><li><span class="option-bubble">C</span> Laws banning unauthorized military drilling, taxing radical pamphlets, and prohibiting large meetings.</li><li><span class="option-bubble">D</span> An act abolishing the traditional property tax for rural peasants.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">127. Who was the radical orator whose speech on parliamentary reform at St Peter's Field in 1819 was interrupted by the Manchester Yeomanry charge?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Robert Owen</li><li><span class="option-bubble">B</span> Henry 'Orator' Hunt</li><li><span class="option-bubble">C</span> William Lovett</li><li><span class="option-bubble">D</span> Feargus O'Connor</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">128. Which London cabinet-maker and radical activist drafted the six points of the 'People's Charter' in 1838?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Arthur Wellesley</li><li><span class="option-bubble">B</span> Edwin Chadwick</li><li><span class="option-bubble">C</span> William Lovett</li><li><span class="option-bubble">D</span> George Loveless</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">129. In the early 19th century, who completely controlled the British Parliament?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Wealthy landowners</li><li><span class="option-bubble">B</span> The working class</li><li><span class="option-bubble">C</span> Trade Union leaders</li><li><span class="option-bubble">D</span> The middle-class factory workers</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">130. What did the 60,000 peaceful protestors at St Peter's Field in Manchester demand in August 1819?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Higher wages and shorter working hours.</li><li><span class="option-bubble">B</span> The destruction of all mechanical threshing machines.</li><li><span class="option-bubble">C</span> The abolition of the East India Company.</li><li><span class="option-bubble">D</span> Parliamentary reform and affordable food.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">131. How did the state respond to the peaceful gathering at St Peter's Field in 1819?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> They agreed to pass a new Reform Act immediately.</li><li><span class="option-bubble">B</span> They arrested the leaders but allowed the crowd to continue protesting.</li><li><span class="option-bubble">C</span> Local magistrates panicked and ordered cavalry to charge into the crowd with sabers.</li><li><span class="option-bubble">D</span> They ignored the protestors until they went home.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">132. Why did radicals ironically name the tragic 1819 event the 'Peterloo Massacre'?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Because it took place near a famous waterloo station in Manchester.</li><li><span class="option-bubble">B</span> Because the leader of the protest was named Peter.</li><li><span class="option-bubble">C</span> To compare the violent slaughter of citizens to the famous military victory at Waterloo.</li><li><span class="option-bubble">D</span> Because it occurred on St Peter's Day during a heavy rainstorm.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">133. What technological change caused winter unemployment and starvation for agricultural laborers in 1830?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The widespread use of chemical fertilizers.</li><li><span class="option-bubble">B</span> The introduction of mechanical threshing machines.</li><li><span class="option-bubble">C</span> The invention of the steam train.</li><li><span class="option-bubble">D</span> The shift from farming to factory work in the cities.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">134. What was the name of the violent agrarian uprising in southern England in 1830?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Peterloo Riots</li><li><span class="option-bubble">B</span> The Luddite Rebellion</li><li><span class="option-bubble">C</span> The Tolpuddle Uprising</li><li><span class="option-bubble">D</span> The Swing Riots</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">135. Who was 'Captain Swing'?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> A mythical, pseudonymous leader used by rioters to send anonymous threats.</li><li><span class="option-bubble">B</span> A real military officer who led the agricultural rebellion.</li><li><span class="option-bubble">C</span> The wealthy landowner who invented the threshing machine.</li><li><span class="option-bubble">D</span> The judge who sentenced the rioters at Winchester Castle.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">136. How did the government punish the Hampshire workers involved in the 1830 riots?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> They were all given a small fine and warned not to do it again.</li><li><span class="option-bubble">B</span> Over 100 were tried at Winchester, 6 were executed, and hundreds were transported to Australia.</li><li><span class="option-bubble">C</span> They were sent to work in the factories of northern England.</li><li><span class="option-bubble">D</span> They were forced to rebuild the threshing machines.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">137. What strategy did working-class men explore after realizing violent property destruction resulted in execution or exile?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> They decided to stop protesting entirely and accept low wages.</li><li><span class="option-bubble">B</span> They started breaking machines exclusively during the daytime.</li><li><span class="option-bubble">C</span> They all moved to America to find better farming jobs.</li><li><span class="option-bubble">D</span> They began exploring collective bargaining through Trade Unions.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">138. Why did the six agricultural laborers in Tolpuddle form a friendly society in 1834?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> To overthrow the King.</li><li><span class="option-bubble">B</span> To build their own threshing machines.</li><li><span class="option-bubble">C</span> To protest a wage cut and force employers to pay fair wages.</li><li><span class="option-bubble">D</span> To raise money to travel to London.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">139. What obscure 1797 law did the government use to arrest the Tolpuddle Martyrs?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> A law banning unlawful secret oaths.</li><li><span class="option-bubble">B</span> A law banning workers from leaving their village without permission.</li><li><span class="option-bubble">C</span> A law banning all forms of public gatherings.</li><li><span class="option-bubble">D</span> A law banning the destruction of farm equipment.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">140. What was the initial sentence given to the Tolpuddle Martyrs?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> A large financial fine.</li><li><span class="option-bubble">B</span> Life in a British prison.</li><li><span class="option-bubble">C</span> Execution by hanging.</li><li><span class="option-bubble">D</span> Seven years' transportation to Australia.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">141. By 1838, what did working-class leaders realize was the only way to permanently change factory conditions and low wages?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Moving out of the cities and back to the countryside.</li><li><span class="option-bubble">B</span> Asking the King to personally intervene on their behalf.</li><li><span class="option-bubble">C</span> Achieving structural constitutional reform so working-class men could sit in Parliament.</li><li><span class="option-bubble">D</span> Continuing to burn down hayricks and break machines.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">142. What was the name of the first mass working-class democratic movement in British history launched in 1838?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Suffragettes</li><li><span class="option-bubble">B</span> Chartism</li><li><span class="option-bubble">C</span> The Luddites</li><li><span class="option-bubble">D</span> The Trade Union Congress</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">143. Which of the following was NOT one of the six core demands of the People's Charter?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Equal pay for men and women.</li><li><span class="option-bubble">B</span> Universal male suffrage (the right to vote).</li><li><span class="option-bubble">C</span> Salaries for MPs so poor men could run for office.</li><li><span class="option-bubble">D</span> Secret ballots to stop voter intimidation.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">144. What action did the Chartists take to pressure Parliament into accepting their demands?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> They bought all the threshing machines in England and destroyed them.</li><li><span class="option-bubble">B</span> They set fire to the Houses of Parliament.</li><li><span class="option-bubble">C</span> They gathered millions of signatures on three mammoth petitions in 1839, 1842, and 1848.</li><li><span class="option-bubble">D</span> They kidnapped several wealthy Members of Parliament.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">145. Although Parliament rejected all the Chartist petitions at the time, what was the movement's long-term legacy?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> It proved that working-class people could never organize effectively.</li><li><span class="option-bubble">B</span> By 1928, five of its six democratic demands had slowly become the law of the land.</li><li><span class="option-bubble">C</span> It caused the government to ban all political parties permanently.</li><li><span class="option-bubble">D</span> It forced the British establishment to immediately hand over power in 1848.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">146. What new military rifle’s greased cartridge sparked the 1857 Indian Rebellion?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Enfield rifle (Pattern 1853).</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">147. What 250-year-old corporation’s rule over India was terminated by Parliament in 1858?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Honourable East India Company (EIC).</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">148. Who was the symbolic monarch restored by rebel sepoys in Delhi in May 1857?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Mughal Emperor Bahadur Shah Zafar II.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">149. What female warrior queen became an enduring national legend during the Siege of Jhansi?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Rani Lakshmibai.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">150. What term describes the era of direct British Crown governance over India between 1858 and 1947?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The British Raj.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">151. Which Whig Prime Minister led the parliamentary battle to pass the landmark 1832 Great Reform Act?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Benjamin Disraeli</li><li><span class="option-bubble">B</span> Robert Peel</li><li><span class="option-bubble">C</span> Earl Grey</li><li><span class="option-bubble">D</span> The Duke of Wellington</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">152. Which major industrial cities, completely unrepresented before 1832, were finally granted parliamentary MPs under the Great Reform Act?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Manchester, Birmingham, and Leeds</li><li><span class="option-bubble">B</span> Oxford and Cambridge</li><li><span class="option-bubble">C</span> Old Sarum and Dunwich</li><li><span class="option-bubble">D</span> Portsmouth and Southampton</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">153. Which 1872 statute finally eliminated public bribery and landlord intimidation during elections by introducing private voting booths?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Public Health Act</li><li><span class="option-bubble">B</span> The Great Reform Act</li><li><span class="option-bubble">C</span> The Secret Ballot Act</li><li><span class="option-bubble">D</span> The Representation of the People Act</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">154. Before 1832, who was allowed to vote in British elections?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Both men and women over the age of 21.</li><li><span class="option-bubble">B</span> Only a tiny minority of wealthy male property owners.</li><li><span class="option-bubble">C</span> All adult men.</li><li><span class="option-bubble">D</span> Anyone who could prove they could read and write.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">155. What was a 'Rotten Borough' before 1832?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> A district where all the voters were secretly corrupt and took bribes from the King.</li><li><span class="option-bubble">B</span> A massive industrial city like Manchester with no MPs.</li><li><span class="option-bubble">C</span> An abandoned medieval village that had almost no people but still sent two MPs to Parliament.</li><li><span class="option-bubble">D</span> A poor slum area in a major city that was not allowed to vote.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">156. What was Newtown on the Isle of Wight a famous example of before 1832?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> A Rotten Borough with only 14 houses that still sent two MPs to London.</li><li><span class="option-bubble">B</span> A massive industrial city.</li><li><span class="option-bubble">C</span> The first town in Britain to give working-class men the vote.</li><li><span class="option-bubble">D</span> The site of a violent Chartist uprising.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">157. What was a 'Pocket Borough'?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> A borough small enough to fit inside a single town hall.</li><li><span class="option-bubble">B</span> A voting district where people could vote secretly in a small box or 'pocket'.</li><li><span class="option-bubble">C</span> A seat in Parliament completely controlled by a wealthy local landowner.</li><li><span class="option-bubble">D</span> A constituency set up especially for poor working men.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">158. Why did the government finally pass the Great Reform Act in 1832?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Because they feared a violent revolution similar to the Swing Riots and the French Revolution.</li><li><span class="option-bubble">B</span> Because they believed that democracy was the only fair system of government.</li><li><span class="option-bubble">C</span> Because Queen Victoria ordered them to change the law.</li><li><span class="option-bubble">D</span> Because the working classes had peacefully asked for it in the People's Charter.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">159. Which of the following was a key change made by the 1832 Great Reform Act?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> It introduced the secret ballot.</li><li><span class="option-bubble">B</span> It gave the vote to all working-class men.</li><li><span class="option-bubble">C</span> It gave women the right to vote for the first time.</li><li><span class="option-bubble">D</span> It abolished 56 Rotten Boroughs and created new constituencies for industrial cities.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">160. Who was granted the right to vote by the 1832 Great Reform Act?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Everyone who worked in an industrial factory.</li><li><span class="option-bubble">B</span> Middle-class men who owned property worth £10 a year.</li><li><span class="option-bubble">C</span> Only the nobility and the wealthiest landowners.</li><li><span class="option-bubble">D</span> All men over the age of 21.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">161. How did the working classes react to the 1832 Great Reform Act?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> They celebrated because they finally had a voice in Parliament.</li><li><span class="option-bubble">B</span> They ignored it because they did not care about politics.</li><li><span class="option-bubble">C</span> They felt bitterly betrayed because they were deliberately excluded from voting.</li><li><span class="option-bubble">D</span> They started a war with France to unite the country.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">162. Before 1872, how did a man cast his vote in an election?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> By placing a piece of paper in a locked ballot box.</li><li><span class="option-bubble">B</span> By standing on a public platform (the 'hustings') and shouting out the name of the candidate.</li><li><span class="option-bubble">C</span> By sending a letter through the Royal Mail.</li><li><span class="option-bubble">D</span> By raising his hand in a silent, private room.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">163. Why was the system of public voting before 1872 so unfair to working-class men?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Because landlords and factory owners could intimidate them into voting a certain way under threat of being fired or evicted.</li><li><span class="option-bubble">B</span> Because they were often too shy to speak in public.</li><li><span class="option-bubble">C</span> Because they had to pay a large fee every time they shouted their vote.</li><li><span class="option-bubble">D</span> Because only the rich were allowed to stand on the 'hustings'.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">164. What did the 1872 Secret Ballot Act require voters to do?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Swear a secret oath to the King before voting.</li><li><span class="option-bubble">B</span> Hide their faces with masks while standing on the public platform.</li><li><span class="option-bubble">C</span> Vote for only one candidate in complete silence.</li><li><span class="option-bubble">D</span> Vote in a private wooden booth using a printed paper dropped into a locked box.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">165. What was the immediate consequence of the 1872 Secret Ballot Act?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The power of elite bribery and intimidation collapsed almost overnight.</li><li><span class="option-bubble">B</span> Voter turnout dropped dramatically because people found the paper confusing.</li><li><span class="option-bubble">C</span> The King cancelled all future elections.</li><li><span class="option-bubble">D</span> The working classes rioted because they wanted to vote in public.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">166. Which group of people was given the vote by the 1867 Second Reform Act?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Only the wealthiest merchants in London.</li><li><span class="option-bubble">B</span> Agricultural laborers and miners in the countryside.</li><li><span class="option-bubble">C</span> Skilled working-class men in urban towns and cities.</li><li><span class="option-bubble">D</span> All women over the age of 30.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">167. What did the 1884 Third Reform Act achieve?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> It gave the vote to women for the first time.</li><li><span class="option-bubble">B</span> It took the vote away from the working classes.</li><li><span class="option-bubble">C</span> It introduced the secret ballot across the entire British Empire.</li><li><span class="option-bubble">D</span> It extended the vote to agricultural laborers and miners in the countryside.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">168. Why did Conservative politicians like Benjamin Disraeli eventually expand the vote to the working classes in 1867?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Because they had run out of wealthy landowners to vote for them.</li><li><span class="option-bubble">B</span> Because they hoped the newly enfranchised workers would be grateful and vote for the Conservative party.</li><li><span class="option-bubble">C</span> Because they were forced to by the French government.</li><li><span class="option-bubble">D</span> Because they genuinely believed every man deserved an equal voice.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">169. Based on MP Robert Lowe's 1866 speech, what was the underlying fear that wealthy elites had about expanding democracy?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> They feared that elections would become too expensive to run.</li><li><span class="option-bubble">B</span> They feared that foreign spies would infiltrate the voting booths.</li><li><span class="option-bubble">C</span> They feared that giving men the vote would lead to women demanding the vote too.</li><li><span class="option-bubble">D</span> They feared the 'ignorant and violent' working classes would vote to tax the wealthy and destroy their privileged institutions.</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">170. By 1884, approximately what percentage of adult men in Britain had a secure, private vote?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> 10%</li><li><span class="option-bubble">B</span> 30%</li><li><span class="option-bubble">C</span> 60%</li><li><span class="option-bubble">D</span> 100%</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">171. What 1819 event saw 18 peaceful reform demonstrators killed by cavalry sabres in Manchester?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Peterloo Massacre.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">172. What mythical leader’s name was signed to threatening letters sent by farmworkers smashing threshing machines in Hampshire in 1830?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Captain Swing.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">173. Where were the six Dorset farmworkers known as the Tolpuddle Martyrs transported in 1834?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Australia (Van Diemen’s Land and New South Wales).</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">174. Name the 1838 working-class movement that published a six-point petition demanding universal male suffrage.</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Chartism (The Chartist Movement).</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">175. What was the term for the Chartist strategy that advocated peaceful moral persuasion and parliamentary petitions?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Moral Force Chartism.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">176. Which historical perspective argues that 19th-century Britain experienced unmatched national progress?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Traditional View</li><li><span class="option-bubble">B</span> The Optimist View</li><li><span class="option-bubble">C</span> The Marxist View</li><li><span class="option-bubble">D</span> The Pessimist View</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">177. What local Hampshire industrialist revolutionized iron production with the puddling process?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Henry Cort</li><li><span class="option-bubble">B</span> Edwin Chadwick</li><li><span class="option-bubble">C</span> George Stephenson</li><li><span class="option-bubble">D</span> Isambard Kingdom Brunel</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">178. Which historical perspective argues that Britain's wealth masked horrific human misery and exploitation?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Optimist View</li><li><span class="option-bubble">B</span> The Capitalist View</li><li><span class="option-bubble">C</span> The Pessimist View</li><li><span class="option-bubble">D</span> The Whig View</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">179. According to the 1881 Census, what job did 10-year-old boys perform barefoot in the Funtley clay pits?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Chimney sweeps</li><li><span class="option-bubble">B</span> Pug boys</li><li><span class="option-bubble">C</span> Piecers</li><li><span class="option-bubble">D</span> Trappers</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">180. How long were the typical working shifts for child laborers in the Funtley brickfields?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> 18 hours</li><li><span class="option-bubble">B</span> 10 hours</li><li><span class="option-bubble">C</span> 8 hours</li><li><span class="option-bubble">D</span> 14 hours</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">181. What deadly waterborne disease repeatedly broke out in unventilated 'back-to-back' slums?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Typhoid</li><li><span class="option-bubble">B</span> Tuberculosis</li><li><span class="option-bubble">C</span> Cholera</li><li><span class="option-bubble">D</span> Smallpox</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">182. Who published an 1842 report proving that slums were deadlier than modern wars?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Edwin Chadwick</li><li><span class="option-bubble">B</span> Lord Shaftesbury</li><li><span class="option-bubble">C</span> Charles Dickens</li><li><span class="option-bubble">D</span> Henry Cort</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">183. How did the East India Company violently destroy the local Indian textile economy?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> By establishing a 'captive market' that flooded India with cheap British goods</li><li><span class="option-bubble">B</span> By burning down all Indian textile mills</li><li><span class="option-bubble">C</span> By paying Indian weavers double their standard wages</li><li><span class="option-bubble">D</span> By blocking all global trade routes to India</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">184. What Hampshire-based event in 1830 saw agricultural workers violently break threshing machines?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Luddite Rebellions</li><li><span class="option-bubble">B</span> The Swing Riots</li><li><span class="option-bubble">C</span> The Funtley Strike</li><li><span class="option-bubble">D</span> The Chartism Rallies</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">185. Why do critical historians argue the 1832 Great Reform Act was passed?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> To abolish the monarchy</li><li><span class="option-bubble">B</span> To give the working class political power</li><li><span class="option-bubble">C</span> Out of elite fear of violent revolution</li><li><span class="option-bubble">D</span> Because the elite believed in equality</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">186. Who was deliberately excluded from voting by the £10 property qualification in the 1832 Great Reform Act?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The middle class</li><li><span class="option-bubble">B</span> The aristocracy</li><li><span class="option-bubble">C</span> Industrial factory owners</li><li><span class="option-bubble">D</span> The working class</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">187. What was the name of the first mass working-class political movement that rose in response to the 1832 betrayal?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Swing Rioters</li><li><span class="option-bubble">B</span> Chartism</li><li><span class="option-bubble">C</span> Trade Unionism</li><li><span class="option-bubble">D</span> Suffragettes</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">188. Which 1872 Act collapsed the elite's mechanism of landlord bribery and voter intimidation?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Secret Ballot Act</li><li><span class="option-bubble">B</span> The Great Reform Act</li><li><span class="option-bubble">C</span> The Factory Act</li><li><span class="option-bubble">D</span> The Representation of the People Act</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">189. In historical writing, what does 'synthesis' mean?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Writing from a purely biased perspective</li><li><span class="option-bubble">B</span> Listing historical facts in chronological order</li><li><span class="option-bubble">C</span> Combining different data points and interpretations into a balanced argument</li><li><span class="option-bubble">D</span> Ignoring evidence that contradicts your main point</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">190. What was a 'Rotten Borough' in the pre-reform British electoral system?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> A district that only allowed the working class to vote</li><li><span class="option-bubble">B</span> An industrial city with massive populations but zero MPs</li><li><span class="option-bubble">C</span> A corrupt town council that stole tax money</li><li><span class="option-bubble">D</span> A voting district with virtually no population that still sent two MPs to Parliament</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">191. Which local Hampshire town is a famous example of a 'Rotten Borough' with only 14 houses?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Winchester</li><li><span class="option-bubble">B</span> Portsmouth</li><li><span class="option-bubble">C</span> Fareham</li><li><span class="option-bubble">D</span> Newtown on the Isle of Wight</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">192. What best summarizes the overarching conclusion of the 'Industrialisation and Empire' unit?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> 19th-century progress was built almost entirely on the physical exploitation and political exclusion of the working class and colonized subjects</li><li><span class="option-bubble">B</span> 19th-century progress benefited every social class equally and peacefully</li><li><span class="option-bubble">C</span> 19th-century wealth was generated entirely without the use of child labor or colonialism</li><li><span class="option-bubble">D</span> 19th-century political reform was a gift willingly handed down by a progressive aristocracy</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">193. What was a 'Rotten Borough' in the pre-reform British electoral system, and what local Hampshire example illustrates this corruption?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Incorrect Option A</li><li><span class="option-bubble">B</span> Incorrect Option C</li><li><span class="option-bubble">C</span> A rotten borough was a voting district that had lost virtually its entire population over centuries but still sent two MPs to Parliament. A local example was Newtown on the Isle of Wight (historic Hampshire), which had only 14 houses but retained two MPs.</li><li><span class="option-bubble">D</span> Incorrect Option B</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">194. How did the 1832 Great Reform Act deliberately attempt to stabilize elite power while expanding the franchise?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Incorrect Option A</li><li><span class="option-bubble">B</span> The 1832 Act expanded the vote only to middle-class property owners (£10 qualification), deliberately excluding the working class. The elite hoped this compromise would pacify the country, ally the middle class with the establishment, and block further democratic expansion.</li><li><span class="option-bubble">C</span> Incorrect Option B</li><li><span class="option-bubble">D</span> Incorrect Option C</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">195. Why was the introduction of the 1872 Secret Ballot Act considered a devastating blow to upper-class political intimidation?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Incorrect Option C</li><li><span class="option-bubble">B</span> Incorrect Option B</li><li><span class="option-bubble">C</span> Prior to 1872, voting was public, allowing landlords and factory bosses to watch how men voted and punish them with eviction or unemployment. The Secret Ballot made voting entirely private, collapsing the elite's mechanism of bribery and intimidation.</li><li><span class="option-bubble">D</span> Incorrect Option A</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">196. What landmark 1832 legislation abolished 56 rotten boroughs and enfranchised the industrial middle class?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The 1832 Great Reform Act.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">197. What 1872 law introduced private voting booths and printed ballot papers to end intimidation at the hustings?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The 1872 Secret Ballot Act.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">198. What 1842 government report by Edwin Chadwick shocked Victorian society by documenting urban slum conditions?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Report on the Sanitary Condition of the Labouring Population.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">199. Which Fareham ironmaster developed the puddling and grooved rolling processes at Funtley in 1783–1784?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> Henry Cort.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
+            <div class="question-block">
+                <div class="question">200. What was the name given to the aggressive policy used by Lord Dalhousie to annex Indian princely states without biological heirs?</div>
+                <ul class="options">
+                    <li><span class="option-bubble">A</span> The Doctrine of Lapse.</li><li><span class="option-bubble">B</span> Option B</li><li><span class="option-bubble">C</span> Option C</li><li><span class="option-bubble">D</span> Option D</li>
+                </ul>
+            </div>
+            
         </div>
-        
-        <div class="question-block">
-            <div class="question">2. Which wealthy region did Germany take from France in 1871?</div>
-            <ul class="options">
-                <li>Alsace-Lorraine</li><li>The Rhineland</li><li>The Sudetenland</li><li>The Ruhr Valley</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">3. What was the French desire for revenge called?</div>
-            <ul class="options">
-                <li>Revanche</li><li>Weltpolitik</li><li>Encirclement</li><li>Pan-Slavism</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">4. Who was the German Chancellor that unified Germany?</div>
-            <ul class="options">
-                <li>Otto von Bismarck</li><li>Kaiser Wilhelm II</li><li>Count Leo von Caprivi</li><li>Theobald von Bethmann-Hollweg</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">5. What was Bismarck's greatest strategic fear?</div>
-            <ul class="options">
-                <li>A war on two fronts (Encirclement)</li><li>A British naval blockade</li><li>An uprising by the working class</li><li>The collapse of Austria-Hungary</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">6. Which two countries did Bismarck fear would ally against Germany?</div>
-            <ul class="options">
-                <li>France and Russia</li><li>Britain and France</li><li>Russia and Austria-Hungary</li><li>Britain and Russia</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">7. What was the secret 1887 agreement between Germany and Russia?</div>
-            <ul class="options">
-                <li>The Reinsurance Treaty</li><li>The Entente Cordiale</li><li>The Dual Alliance</li><li>The Treaty of London</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">8. Which ambitious German Emperor dismissed Bismarck in 1890?</div>
-            <ul class="options">
-                <li>Kaiser Wilhelm II</li><li>Kaiser Wilhelm I</li><li>Archduke Franz Ferdinand</li><li>Tsar Nicholas II</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">9. What was Wilhelm II's aggressive global policy called?</div>
-            <ul class="options">
-                <li>Weltpolitik (World Policy)</li><li>Realpolitik</li><li>Lebensraum</li><li>Splendid Isolation</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">10. What previous policy of Bismarck's focused on European peace?</div>
-            <ul class="options">
-                <li>Realpolitik</li><li>Weltpolitik (World Policy)</li><li>Mitteleuropa</li><li>Pan-Slavism</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">11. What agreement did Britain and France sign in 1904?</div>
-            <ul class="options">
-                <li>The Entente Cordiale</li><li>The Triple Entente</li><li>The Treaty of Versailles</li><li>The Reinsurance Treaty</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">12. In which African country did Wilhelm provoke crises in 1905 and 1911?</div>
-            <ul class="options">
-                <li>Morocco</li><li>Egypt</li><li>South Africa</li><li>Sudan</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">13. What was the result of the First Moroccan (Tangier) Crisis?</div>
-            <ul class="options">
-                <li>Britain and France grew closer, isolating Germany</li><li>Germany gained control of Morocco</li><li>The Entente Cordiale was dissolved</li><li>Russia declared war on Germany</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">14. What name was given to Germany's aggressive threat of military force?</div>
-            <ul class="options">
-                <li>Gunboat Diplomacy</li><li>Dollar Diplomacy</li><li>Appeasement</li><li>Risk Theory</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">15. What was the name of the German gunboat sent to Agadir in 1911?</div>
-            <ul class="options">
-                <li>SMS Panther</li><li>HMS Dreadnought</li><li>SMS Emden</li><li>SMS Bismarck</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">16. What was the British policy requiring their navy to be larger than the next two combined?</div>
-            <ul class="options">
-                <li>The Two-Power Standard</li><li>The Risk Theory</li><li>The Imperial Defense Act</li><li>The Continental Commitment</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">17. What revolutionary British battleship was launched in 1906?</div>
-            <ul class="options">
-                <li>HMS Dreadnought</li><li>HMS Victory</li><li>HMS Invincible</li><li>HMS Iron Duke</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">18. Why did the Dreadnought ironically threaten British supremacy?</div>
-            <ul class="options">
-                <li>It made all older ships obsolete, resetting the naval race</li><li>It was too expensive to build more than one</li><li>It was easily destroyed by German U-Boats</li><li>Its guns could not hit moving targets</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">19. What was Britain's traditional foreign policy of avoiding European alliances called?</div>
-            <ul class="options">
-                <li>Splendid Isolation</li><li>The Two-Power Standard</li><li>Balance of Power</li><li>Appeasement</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">20. What was German Admiral Tirpitz's naval strategy called?</div>
-            <ul class="options">
-                <li>Risk Theory</li><li>The Schlieffen Plan</li><li>Weltpolitik</li><li>Unrestricted Submarine Warfare</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">21. What volatile region was known as the 'Powder Keg of Europe'?</div>
-            <ul class="options">
-                <li>The Balkans</li><li>The Rhineland</li><li>The Middle East</li><li>The Caucasus</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">22. What declining multi-ethnic empire dominated the northern Balkans?</div>
-            <ul class="options">
-                <li>The Austro-Hungarian Empire</li><li>The Ottoman Empire</li><li>The Russian Empire</li><li>The British Empire</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">23. Which empire was retreating from the Balkans, leaving a power vacuum?</div>
-            <ul class="options">
-                <li>The Ottoman Empire</li><li>The Austro-Hungarian Empire</li><li>The Russian Empire</li><li>The German Empire</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">24. Which nation wanted to unite all South Slavs into a 'Greater' nation?</div>
-            <ul class="options">
-                <li>Serbia</li><li>Bosnia</li><li>Croatia</li><li>Bulgaria</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">25. Which region did Austria-Hungary formally annex in 1908?</div>
-            <ul class="options">
-                <li>Bosnia</li><li>Serbia</li><li>Romania</li><li>Albania</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">26. Which major power considered itself the protector of the Slavic people?</div>
-            <ul class="options">
-                <li>Russia</li><li>Germany</li><li>France</li><li>Britain</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">27. Who was the heir to the Austro-Hungarian throne?</div>
-            <ul class="options">
-                <li>Archduke Franz Ferdinand</li><li>Emperor Franz Joseph</li><li>Kaiser Wilhelm II</li><li>Tsar Nicholas II</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">28. In which city was the Archduke assassinated?</div>
-            <ul class="options">
-                <li>Sarajevo</li><li>Belgrade</li><li>Vienna</li><li>Berlin</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">29. On what date was the Archduke assassinated?</div>
-            <ul class="options">
-                <li>June 28, 1914</li><li>July 23, 1914</li><li>August 4, 1914</li><li>November 11, 1918</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">30. Who assassinated the Archduke?</div>
-            <ul class="options">
-                <li>Gavrilo Princip</li><li>Nedeljko Čabrinović</li><li>Dragutin Dimitrijević</li><li>Leon Trotsky</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">31. What secret Serbian society did the assassin belong to?</div>
-            <ul class="options">
-                <li>The Black Hand</li><li>The White Rose</li><li>The Young Turks</li><li>The Bolsheviks</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">32. What unconditional promise did Germany give Austria-Hungary in July 1914?</div>
-            <ul class="options">
-                <li>The 'Blank Check'</li><li>The Reinsurance Treaty</li><li>The Entente Cordiale</li><li>The Ultimatum</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">33. What is the month of diplomatic failures after the assassination called?</div>
-            <ul class="options">
-                <li>The July Crisis</li><li>The Sarajevo Crisis</li><li>The Balkan Wars</li><li>The Blank Check Incident</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">34. What did Austria-Hungary issue to Serbia on July 23?</div>
-            <ul class="options">
-                <li>An ultimatum</li><li>A declaration of war</li><li>A peace treaty</li><li>A demand for reparations</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">35. Which country began mobilizing its army to protect Serbia?</div>
-            <ul class="options">
-                <li>Russia</li><li>France</li><li>Britain</li><li>Germany</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">36. What was the name of Germany's military strategy for a two-front war?</div>
-            <ul class="options">
-                <li>The Schlieffen Plan</li><li>The Risk Theory</li><li>Plan XVII</li><li>The Bismarck Strategy</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">37. Which neutral country did Germany invade to attack France?</div>
-            <ul class="options">
-                <li>Belgium</li><li>Switzerland</li><li>The Netherlands</li><li>Luxembourg</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">38. Which country declared war on Germany due to the invasion of Belgium?</div>
-            <ul class="options">
-                <li>Britain</li><li>Russia</li><li>Italy</li><li>The United States</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">39. What was the alliance of Germany, Austria-Hungary, and Italy called?</div>
-            <ul class="options">
-                <li>The Triple Alliance</li><li>The Triple Entente</li><li>The Central Powers</li><li>The League of Three Emperors</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">40. What was the alliance of Britain, France, and Russia called?</div>
-            <ul class="options">
-                <li>The Triple Entente</li><li>The Triple Alliance</li><li>The Allied Powers</li><li>The Grand Alliance</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">41. What treaty ended the First World War in 1919?</div>
-            <ul class="options">
-                <li>The Treaty of Versailles</li><li>The Treaty of Brest-Litovsk</li><li>The Treaty of Trianon</li><li>The Congress of Vienna</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">42. Which clause forced Germany to accept full responsibility for the war?</div>
-            <ul class="options">
-                <li>Article 231 (War Guilt Clause)</li><li>Article 48</li><li>The Blank Check</li><li>The Reparations Clause</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">43. What is the term for a war launched to destroy a rising threat before it gets too strong?</div>
-            <ul class="options">
-                <li>Preventative War</li><li>Total War</li><li>War of Attrition</li><li>Proxy War</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">44. Which historian famously argued Germany planned a war of aggression?</div>
-            <ul class="options">
-                <li>Fritz Fischer</li><li>Margaret MacMillan</li><li>A.J.P. Taylor</li><li>Christopher Clark</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">45. Which historian argued the nations blundered into war due to rigid alliances?</div>
-            <ul class="options">
-                <li>Margaret MacMillan</li><li>Fritz Fischer</li><li>Ian Kershaw</li><li>Richard Evans</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">46. What was the 'quarantine line' of new states created after WWI called?</div>
-            <ul class="options">
-                <li>Cordon Sanitaire</li><li>The Iron Curtain</li><li>The Maginot Line</li><li>Mitteleuropa</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">47. Name one new state created by the Treaty of Versailles.</div>
-            <ul class="options">
-                <li>Poland</li><li>Serbia</li><li>Bulgaria</li><li>Romania</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">48. What European power was completely dismantled by the peace treaties?</div>
-            <ul class="options">
-                <li>The Austro-Hungarian Empire</li><li>The German Empire</li><li>The British Empire</li><li>The Russian Empire</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">49. What ideological threat did the Allies want to separate from Germany after the war?</div>
-            <ul class="options">
-                <li>Soviet Communism</li><li>Fascism</li><li>Anarchism</li><li>Imperialism</li>
-            </ul>
-        </div>
-        
-        <div class="question-block">
-            <div class="question">50. Which country did Germany invade on 3 August 1914?</div>
-            <ul class="options">
-                <li>Belgium</li><li>France</li><li>Russia</li><li>Serbia</li>
-            </ul>
-        </div>
-        
+    </div>
 </body>
 </html>
