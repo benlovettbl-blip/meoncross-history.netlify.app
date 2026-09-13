@@ -1582,6 +1582,13 @@ allDirs.forEach((unitId) => {
       let interpretations = [];
       let sourceCharCode = 65;
       let currentUnitId = typeof unitId !== 'undefined' ? unitId : 'great_war';
+      const isFourActUnit = [
+        'great_war',
+        'great_war_part2',
+        'industrialisation_and_empire',
+        'early_modern_world',
+        'medieval_england',
+      ].includes(currentUnitId);
       // Synced Chronological Numbering matching generate_textbooks.js
 
       if (lesson.narrative_blocks) {
@@ -1876,6 +1883,10 @@ allDirs.forEach((unitId) => {
 
       html += `</div>`;
 
+      if (isFourActUnit) {
+        html += `<div style="page-break-before: always;"></div>`;
+      }
+
       // Sources
 
       let isGCSE = unitId === 'weimar_nazi_germany' || unitId === 'cme_new';
@@ -1932,6 +1943,12 @@ allDirs.forEach((unitId) => {
             let _nbHtml = '';
             let _firstQNum = 9999;
             _nbHtml += `<div class="narrative-block" id="para-${bIdx + 1}">`;
+            if (
+              isFourActUnit &&
+              (bIdx === 2 || (block.title && block.title.startsWith('Act 3:')))
+            ) {
+              _nbHtml += `<div style="page-break-before: always;"></div>`;
+            }
             if (finalRenderedText.trim() !== '') {
               // Narrative text removed for Pupil Workbook
             }
@@ -2010,13 +2027,20 @@ allDirs.forEach((unitId) => {
                   `;
                 }
                 if (task.type === 'visual_annotation' || task.type === 'diagram_annotation') {
-                  let _t = processTaskTextWithTariff(
-                    task.text || task.question || task.instruction || task.title || '',
-                  );
+                  let rawTitle = task.text || task.question || task.instruction || task.title || '';
+                  if (isFourActUnit) {
+                    rawTitle = rawTitle
+                      .replace(/^Visual Blueprint & Archival Anatomy:\s*/i, '')
+                      .replace(/^Visual Blueprint:\s*/i, '')
+                      .replace(/^Visual Anatomy:\s*/i, '');
+                  }
+                  let _t = processTaskTextWithTariff(rawTitle);
                   _nbHtml += `<div class="task-box" style="margin-bottom: 12px; border: 1.5px solid #0f172a; border-radius: 6px; padding: 8px 10px; background: #ffffff; page-break-inside: avoid;">`;
                   _nbHtml += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">`;
                   _nbHtml += `<strong style="color: #0f172a; font-size: 8.5pt;">Q${globalQNum++}. ${_t.cleanText}</strong>`;
-                  _nbHtml += `<span style="font-size: 6.8pt; font-weight: bold; background: #0f172a; color: #ffffff; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Visual Anatomy</span>`;
+                  if (!isFourActUnit) {
+                    _nbHtml += `<span style="font-size: 6.8pt; font-weight: bold; background: #0f172a; color: #ffffff; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Visual Anatomy</span>`;
+                  }
                   _nbHtml += `</div>`;
                   if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
                   if (task.instruction && task.instruction !== task.text) {
@@ -2031,7 +2055,7 @@ allDirs.forEach((unitId) => {
                         ? resolveAssetPath(rawImg, 2)
                         : `../..${rawImg.startsWith('/') ? rawImg : '/' + rawImg}`;
                     _nbHtml += `<div style="text-align: center; margin: 4px 0; background: #f8fafc; padding: 3px; border: 1px solid #e2e8f0; border-radius: 4px;">`;
-                    _nbHtml += `<img src="${imgSrc}" style="max-height: 170px; max-width: 100%; object-fit: contain; border-radius: 3px; display: inline-block;" alt="Visual Diagram">`;
+                    _nbHtml += `<img src="${imgSrc}" style="max-height: 150px; max-width: 100%; object-fit: contain; border-radius: 3px; display: inline-block;" alt="Visual Diagram">`;
                     if (task.caption) {
                       _nbHtml += `<div style="font-size: 6.8pt; color: #64748b; font-style: italic; margin-top: 2px;">${task.caption}</div>`;
                     }
@@ -2049,9 +2073,10 @@ allDirs.forEach((unitId) => {
                             <strong style="font-size: 7.4pt; color: #1e293b;">${ann.label || ann.target || 'Feature ' + num}</strong>
                           </div>
                           <div style="font-size: 6.8pt; color: #475569; margin-bottom: 3px; line-height: 1.2;">${ann.prompt || ann.question || 'Identify and explain significance:'}</div>
-                          <div style="min-height: 26px; background: #ffffff; border: 1px dashed #94a3b8; border-radius: 3px; padding: 3px 5px; font-size: 7pt; color: #475569;">
-                            <span style="color: #94a3b8; font-style: italic;">${ann.starter || ''}</span>
-                            <div style="border-bottom: 1px dotted #cbd5e1; height: 13px; margin-top: 2px;"></div>
+                          <div style="min-height: 28px; background: #ffffff; border: 1px dashed #94a3b8; border-radius: 3px; padding: 3px 5px; font-size: 7pt; color: #475569;">
+                            ${isFourActUnit ? '' : `<span style="color: #94a3b8; font-style: italic;">${ann.starter || ''}</span>`}
+                            <div style="border-bottom: 1px dotted #cbd5e1; height: 12px; margin-top: 2px;"></div>
+                            <div style="border-bottom: 1px dotted #cbd5e1; height: 12px; margin-top: 2px;"></div>
                           </div>
                         </div>
                       `;
@@ -2062,13 +2087,19 @@ allDirs.forEach((unitId) => {
                   return;
                 }
                 if (task.type === 'causal_domino') {
-                  let _t = processTaskTextWithTariff(
-                    task.text || task.question || task.instruction || task.title || '',
-                  );
+                  let rawTitle = task.text || task.question || task.instruction || task.title || '';
+                  if (isFourActUnit) {
+                    rawTitle = rawTitle
+                      .replace(/^Causal Chain:\s*/i, '')
+                      .replace(/^Causal Domino:\s*/i, '');
+                  }
+                  let _t = processTaskTextWithTariff(rawTitle);
                   _nbHtml += `<div class="task-box" style="margin-bottom: 12px; border: 1.5px solid #0284c7; border-radius: 6px; padding: 8px 10px; background: #f0f9ff; page-break-inside: avoid;">`;
                   _nbHtml += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">`;
                   _nbHtml += `<strong style="color: #0369a1; font-size: 8.5pt;">Q${globalQNum++}. ${_t.cleanText}</strong>`;
-                  _nbHtml += `<span style="font-size: 6.8pt; font-weight: bold; background: #0284c7; color: #ffffff; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Causal Chain</span>`;
+                  if (!isFourActUnit) {
+                    _nbHtml += `<span style="font-size: 6.8pt; font-weight: bold; background: #0284c7; color: #ffffff; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Causal Chain</span>`;
+                  }
                   _nbHtml += `</div>`;
                   if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
                   if (task.instruction && task.instruction !== task.text) {
@@ -2082,54 +2113,99 @@ allDirs.forEach((unitId) => {
                         _nbHtml += `<div style="display: flex; align-items: center; justify-content: center; font-size: 10pt; color: #0284c7; font-weight: bold; flex-shrink: 0; padding: 0 1px;">&#10140;</div>`;
                       }
                       _nbHtml += `
-                        <div style="flex: 1; min-width: 0; box-sizing: border-box; background: #ffffff; border: 1.2px solid ${step.blank ? '#0284c7' : '#bae6fd'}; border-top: 3px solid ${sIdx === 0 ? '#0284c7' : sIdx === task.steps.length - 1 ? '#0369a1' : '#0ea5e9'}; border-radius: 4px; padding: 4px 6px; display: flex; flex-direction: column; word-break: break-word;">
+                        <div style="flex: 1; min-width: 0; box-sizing: border-box; background: #ffffff; border: 1.2px solid ${step.blank && !isFourActUnit ? '#0284c7' : '#bae6fd'}; border-top: 3px solid ${sIdx === 0 ? '#0284c7' : sIdx === task.steps.length - 1 ? '#0369a1' : '#0ea5e9'}; border-radius: 4px; padding: 4px 6px; display: flex; flex-direction: column; word-break: break-word;">
                           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
                             <span style="font-size: 6.5pt; font-weight: bold; color: #0369a1; text-transform: uppercase;">${step.stage || 'Step ' + (sIdx + 1)}</span>
                             ${step.year ? `<span style="font-size: 6.5pt; color: #64748b; font-weight: 600;">${step.year}</span>` : ''}
                           </div>
                           <div style="font-weight: bold; font-size: 7.2pt; color: #0f172a; margin-bottom: 2px; line-height: 1.2;">${step.title || ''}</div>
                           ${step.desc ? `<div style="font-size: 6.6pt; color: #475569; line-height: 1.2; margin-bottom: 2px;">${step.desc}</div>` : ''}
-                          ${step.blank ? `<div style="flex: 1; min-height: 32px; background: #f8fafc; border: 1.2px dashed #0284c7; border-radius: 3px; padding: 3px 5px; font-size: 6.6pt; color: #0369a1; margin-top: 2px; box-sizing: border-box;"><em>${step.prompt || 'Complete with pen:'}</em><div style="border-bottom: 1px dotted #93c5fd; height: 14px; margin-top: 2px;"></div></div>` : ''}
+                          ${!isFourActUnit && step.blank ? `<div style="flex: 1; min-height: 32px; background: #f8fafc; border: 1.2px dashed #0284c7; border-radius: 3px; padding: 3px 5px; font-size: 6.6pt; color: #0369a1; margin-top: 2px; box-sizing: border-box;"><em>${step.prompt || 'Complete with pen:'}</em><div style="border-bottom: 1px dotted #93c5fd; height: 14px; margin-top: 2px;"></div></div>` : ''}
                         </div>
                       `;
                     });
                     _nbHtml += `</div>`;
+
+                    if (isFourActUnit) {
+                      const blankStep = task.steps.find((s) => s.blank || s.prompt);
+                      const dominoPrompt =
+                        task.prompt ||
+                        (blankStep
+                          ? blankStep.prompt
+                          : 'Explain the causal chain connecting these steps:');
+                      _nbHtml += `
+                        <div style="background: #ffffff; border: 1.2px solid #bae6fd; border-radius: 4px; padding: 6px 8px; margin-top: 6px;">
+                          <div style="font-size: 7.2pt; font-weight: bold; color: #0369a1; margin-bottom: 4px;"><strong>Causal Analysis:</strong> ${dominoPrompt}</div>
+                          <div class="task-lines" style="height: 13px; margin-top: 3px;"></div>
+                          <div class="task-lines" style="height: 13px; margin-top: 3px;"></div>
+                          <div class="task-lines" style="height: 13px; margin-top: 3px;"></div>
+                          <div class="task-lines" style="height: 13px; margin-top: 3px;"></div>
+                        </div>
+                      `;
+                    }
                   }
                   _nbHtml += `</div>`;
                   return;
                 }
                 if (task.type === 'word_scalpel' || task.type === 'forensic_autopsy') {
-                  let _t = processTaskTextWithTariff(
-                    task.text || task.question || task.instruction || task.title || '',
-                  );
+                  let rawTitle = task.text || task.question || task.instruction || task.title || '';
+                  if (isFourActUnit) {
+                    rawTitle = rawTitle
+                      .replace(/^Forensic Scalpel:\s*/i, '')
+                      .replace(/^Word Scalpel:\s*/i, '')
+                      .replace(/^Forensic Autopsy:\s*/i, '');
+                  }
+                  let _t = processTaskTextWithTariff(rawTitle);
                   _nbHtml += `<div class="task-box" style="margin-bottom: 12px; border: 1.5px solid #d97706; border-radius: 6px; padding: 8px 10px; background: #fffbeb; page-break-inside: avoid;">`;
                   _nbHtml += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">`;
                   _nbHtml += `<strong style="color: #92400e; font-size: 8.5pt;">Q${globalQNum++}. ${_t.cleanText}</strong>`;
-                  _nbHtml += `<span style="font-size: 6.8pt; font-weight: bold; background: #d97706; color: #ffffff; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Forensic Scalpel</span>`;
+                  if (!isFourActUnit) {
+                    _nbHtml += `<span style="font-size: 6.8pt; font-weight: bold; background: #d97706; color: #ffffff; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Forensic Scalpel</span>`;
+                  }
                   _nbHtml += `</div>`;
                   if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
                   if (task.source_excerpt) {
-                    _nbHtml += `<div style="font-family: Georgia, serif; font-size: 7.5pt; color: #334155; font-style: italic; background: #ffffff; border-left: 3px solid #d97706; padding: 4px 7px; margin-bottom: 5px; line-height: 1.3;">&ldquo;${task.source_excerpt}&rdquo;</div>`;
+                    _nbHtml += `<div style="font-family: Georgia, serif; font-size: 8pt; color: #334155; font-style: italic; background: #ffffff; border-left: 3px solid #d97706; padding: 6px 9px; margin-bottom: 6px; line-height: 1.35;">&ldquo;${task.source_excerpt}&rdquo;</div>`;
                   }
-                  _nbHtml += `<div style="background: #ffffff; border: 1.2px dashed #b45309; border-radius: 4px; padding: 5px 7px; margin-bottom: 5px;">`;
-                  _nbHtml += `<div style="font-size: 7pt; font-weight: bold; color: #92400e; margin-bottom: 2px;">Underline in the source text above, then copy the exact 3–6 word "smoking gun" quote:</div>`;
-                  _nbHtml += `<div style="min-height: 20px; font-family: Georgia, serif; font-size: 8pt; color: #1e293b; padding: 2px 3px; border-bottom: 1px dotted #d97706;">[ &ldquo; . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . &rdquo; ]</div>`;
-                  _nbHtml += `</div>`;
-                  if (task.justification_prompt) {
-                    _nbHtml += `<div style="font-size: 7pt; color: #78350f; margin-bottom: 2px;"><strong>Why is this phrase decisive?</strong> ${task.justification_prompt}</div>`;
-                    _nbHtml += `<div style="min-height: 26px; background: #ffffff; border: 1px solid #fed7aa; border-radius: 3px; padding: 3px 5px; font-size: 7pt; color: #475569;"><span style="color: #94a3b8; font-style: italic;">${task.starter || ''}</span><div style="border-bottom: 1px dotted #fdba74; height: 13px; margin-top: 2px;"></div></div>`;
+                  if (isFourActUnit) {
+                    _nbHtml += `<div style="font-size: 7.2pt; font-weight: 600; color: #92400e; margin-bottom: 4px;">1. In the source excerpt above, <strong>underline or circle</strong> the decisive phrase that reveals the key historical evidence.</div>`;
+                    if (task.justification_prompt || task.question) {
+                      const promptText =
+                        task.justification_prompt ||
+                        task.question ||
+                        'Explain why this evidence is historically significant:';
+                      _nbHtml += `<div style="font-size: 7.2pt; color: #78350f; margin: 6px 0 4px 0;">2. <strong>Analytical Explanation:</strong> ${promptText}</div>`;
+                      for (let li = 0; li < 6; li++) {
+                        _nbHtml += `<div class="task-lines" style="height: 13px; margin-top: 3px;"></div>`;
+                      }
+                    }
+                  } else {
+                    _nbHtml += `<div style="background: #ffffff; border: 1.2px dashed #b45309; border-radius: 4px; padding: 5px 7px; margin-bottom: 5px;">`;
+                    _nbHtml += `<div style="font-size: 7pt; font-weight: bold; color: #92400e; margin-bottom: 2px;">Underline in the source text above, then copy the exact 3–6 word "smoking gun" quote:</div>`;
+                    _nbHtml += `<div style="min-height: 20px; font-family: Georgia, serif; font-size: 8pt; color: #1e293b; padding: 2px 3px; border-bottom: 1px dotted #d97706;">[ &ldquo; . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . &rdquo; ]</div>`;
+                    _nbHtml += `</div>`;
+                    if (task.justification_prompt) {
+                      _nbHtml += `<div style="font-size: 7pt; color: #78350f; margin-bottom: 2px;"><strong>Why is this phrase decisive?</strong> ${task.justification_prompt}</div>`;
+                      _nbHtml += `<div style="min-height: 26px; background: #ffffff; border: 1px solid #fed7aa; border-radius: 3px; padding: 3px 5px; font-size: 7pt; color: #475569;"><span style="color: #94a3b8; font-style: italic;">${task.starter || ''}</span><div style="border-bottom: 1px dotted #fdba74; height: 13px; margin-top: 2px;"></div></div>`;
+                    }
                   }
                   _nbHtml += `</div>`;
                   return;
                 }
                 if (task.type === 'ledger_audit' || task.type === 'balance_sheet') {
-                  let _t = processTaskTextWithTariff(
-                    task.text || task.question || task.instruction || task.title || '',
-                  );
+                  let rawTitle = task.text || task.question || task.instruction || task.title || '';
+                  if (isFourActUnit) {
+                    rawTitle = rawTitle
+                      .replace(/^Forensic Ledger:\s*/i, '')
+                      .replace(/^Ledger Audit:\s*/i, '');
+                  }
+                  let _t = processTaskTextWithTariff(rawTitle);
                   _nbHtml += `<div class="task-box" style="margin-bottom: 12px; border: 1.5px solid #475569; border-radius: 6px; padding: 8px 10px; background: #f8fafc; page-break-inside: avoid; box-sizing: border-box; width: 100%;">`;
                   _nbHtml += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">`;
                   _nbHtml += `<strong style="color: #1e293b; font-size: 8.5pt;">Q${globalQNum++}. ${_t.cleanText}</strong>`;
-                  _nbHtml += `<span style="font-size: 6.8pt; font-weight: bold; background: #475569; color: #ffffff; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Forensic Ledger</span>`;
+                  if (!isFourActUnit) {
+                    _nbHtml += `<span style="font-size: 6.8pt; font-weight: bold; background: #475569; color: #ffffff; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Forensic Ledger</span>`;
+                  }
                   _nbHtml += `</div>`;
                   if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
                   if (task.instruction && task.instruction !== task.text) {
@@ -2172,19 +2248,31 @@ allDirs.forEach((unitId) => {
                   _nbHtml += `</tbody></table>`;
                   if (task.synthesis_prompt || task.starter) {
                     _nbHtml += `<div style="font-size: 7pt; color: #1e293b; margin: 5px 0 2px 0;"><strong>${task.synthesis_prompt || 'Synthesise your forensic findings:'}</strong></div>`;
-                    _nbHtml += `<div style="min-height: 24px; background: #ffffff; border: 1px dashed #94a3b8; border-radius: 3px; padding: 3px 5px; font-size: 7pt; color: #475569; box-sizing: border-box;"><span style="color: #94a3b8; font-style: italic;">${task.starter || ''}</span><div style="border-bottom: 1px dotted #cbd5e1; height: 12px; margin-top: 2px;"></div></div>`;
+                    if (isFourActUnit) {
+                      _nbHtml += `<div class="task-lines" style="height: 13px; margin-top: 3px;"></div>`;
+                      _nbHtml += `<div class="task-lines" style="height: 13px; margin-top: 3px;"></div>`;
+                      _nbHtml += `<div class="task-lines" style="height: 13px; margin-top: 3px;"></div>`;
+                    } else {
+                      _nbHtml += `<div style="min-height: 24px; background: #ffffff; border: 1px dashed #94a3b8; border-radius: 3px; padding: 3px 5px; font-size: 7pt; color: #475569; box-sizing: border-box;"><span style="color: #94a3b8; font-style: italic;">${task.starter || ''}</span><div style="border-bottom: 1px dotted #cbd5e1; height: 12px; margin-top: 2px;"></div></div>`;
+                    }
                   }
                   _nbHtml += `</div>`;
                   return;
                 }
                 if (task.type === 'historiographical_spectrum' || task.type === 'spectrum') {
-                  let _t = processTaskTextWithTariff(
-                    task.text || task.question || task.instruction || task.title || '',
-                  );
+                  let rawTitle = task.text || task.question || task.instruction || task.title || '';
+                  if (isFourActUnit) {
+                    rawTitle = rawTitle
+                      .replace(/^Historiographical Spectrum:\s*/i, '')
+                      .replace(/^Interpretation Spectrum:\s*/i, '');
+                  }
+                  let _t = processTaskTextWithTariff(rawTitle);
                   _nbHtml += `<div class="task-box" style="margin-bottom: 12px; border: 1.5px solid #7c3aed; border-radius: 6px; padding: 8px 10px; background: #faf5ff; page-break-inside: avoid; box-sizing: border-box; width: 100%;">`;
                   _nbHtml += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">`;
                   _nbHtml += `<strong style="color: #5b21b6; font-size: 8.5pt;">Q${globalQNum++}. ${_t.cleanText}</strong>`;
-                  _nbHtml += `<span style="font-size: 6.8pt; font-weight: bold; background: #7c3aed; color: #ffffff; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Interpretation Spectrum</span>`;
+                  if (!isFourActUnit) {
+                    _nbHtml += `<span style="font-size: 6.8pt; font-weight: bold; background: #7c3aed; color: #ffffff; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Interpretation Spectrum</span>`;
+                  }
                   _nbHtml += `</div>`;
                   if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
                   if (task.instruction && task.instruction !== task.text) {
@@ -2213,19 +2301,31 @@ allDirs.forEach((unitId) => {
                       </div>
                     </div>
                     <div style="font-size: 7pt; color: #5b21b6; margin-bottom: 2px;"><strong>Plot your position with an &lsquo;X&rsquo; on the line, then explain your reasoning:</strong></div>
-                    <div style="min-height: 26px; background: #ffffff; border: 1px dashed #c4b5fd; border-radius: 3px; padding: 3px 5px; font-size: 7pt; color: #475569; box-sizing: border-box;"><span style="color: #9ca3af; font-style: italic;">${task.starter || ''}</span><div style="border-bottom: 1px dotted #ddd6fe; height: 13px; margin-top: 2px;"></div></div>
                   `;
+                  if (isFourActUnit) {
+                    _nbHtml += `<div class="task-lines" style="height: 13px; margin-top: 3px;"></div>`;
+                    _nbHtml += `<div class="task-lines" style="height: 13px; margin-top: 3px;"></div>`;
+                    _nbHtml += `<div class="task-lines" style="height: 13px; margin-top: 3px;"></div>`;
+                  } else {
+                    _nbHtml += `<div style="min-height: 26px; background: #ffffff; border: 1px dashed #c4b5fd; border-radius: 3px; padding: 3px 5px; font-size: 7pt; color: #475569; box-sizing: border-box;"><span style="color: #9ca3af; font-style: italic;">${task.starter || ''}</span><div style="border-bottom: 1px dotted #ddd6fe; height: 13px; margin-top: 2px;"></div></div>`;
+                  }
                   _nbHtml += `</div>`;
                   return;
                 }
                 if (task.type === 'crucible_fork') {
-                  let _t = processTaskTextWithTariff(
-                    task.text || task.question || task.instruction || task.title || '',
-                  );
+                  let rawTitle = task.text || task.question || task.instruction || task.title || '';
+                  if (isFourActUnit) {
+                    rawTitle = rawTitle
+                      .replace(/^Crucible Fork:\s*/i, '')
+                      .replace(/^Decision Dilemma:\s*/i, '');
+                  }
+                  let _t = processTaskTextWithTariff(rawTitle);
                   _nbHtml += `<div class="task-box" style="margin-bottom: 12px; border: 1.5px solid #ea580c; border-radius: 6px; padding: 8px 10px; background: #fff7ed; page-break-inside: avoid; box-sizing: border-box; width: 100%;">`;
                   _nbHtml += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">`;
                   _nbHtml += `<strong style="color: #9a3412; font-size: 8.5pt;">Q${globalQNum++}. ${_t.cleanText}</strong>`;
-                  _nbHtml += `<span style="font-size: 6.8pt; font-weight: bold; background: #ea580c; color: #ffffff; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Decision Dilemma</span>`;
+                  if (!isFourActUnit) {
+                    _nbHtml += `<span style="font-size: 6.8pt; font-weight: bold; background: #ea580c; color: #ffffff; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Decision Dilemma</span>`;
+                  }
                   _nbHtml += `</div>`;
                   if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
                   if (task.instruction && task.instruction !== task.text) {
@@ -2248,7 +2348,13 @@ allDirs.forEach((unitId) => {
                   }
                   if (task.risk_prompt) {
                     _nbHtml += `<div style="margin-top: 4px; font-size: 7pt; color: #9a3412;"><strong>Calculated Risk:</strong> ${task.risk_prompt}</div>`;
-                    _nbHtml += `<div style="min-height: 24px; background: #ffffff; border: 1px dashed #fdba74; border-radius: 3px; padding: 3px 5px; font-size: 7pt; color: #475569; box-sizing: border-box;"><span style="color: #94a3b8; font-style: italic;">${task.starter || ''}</span><div style="border-bottom: 1px dotted #fdba74; height: 13px; margin-top: 2px;"></div></div>`;
+                    if (isFourActUnit) {
+                      _nbHtml += `<div class="task-lines" style="height: 13px; margin-top: 3px;"></div>`;
+                      _nbHtml += `<div class="task-lines" style="height: 13px; margin-top: 3px;"></div>`;
+                      _nbHtml += `<div class="task-lines" style="height: 13px; margin-top: 3px;"></div>`;
+                    } else {
+                      _nbHtml += `<div style="min-height: 24px; background: #ffffff; border: 1px dashed #fdba74; border-radius: 3px; padding: 3px 5px; font-size: 7pt; color: #475569; box-sizing: border-box;"><span style="color: #94a3b8; font-style: italic;">${task.starter || ''}</span><div style="border-bottom: 1px dotted #fdba74; height: 13px; margin-top: 2px;"></div></div>`;
+                    }
                   }
                   _nbHtml += `</div>`;
                   return;
@@ -2258,13 +2364,20 @@ allDirs.forEach((unitId) => {
                   task.type === 'priority_matrix' ||
                   task.type === 'factor_hierarchy'
                 ) {
-                  let _t = processTaskTextWithTariff(
-                    task.text || task.question || task.instruction || task.title || '',
-                  );
+                  let rawTitle = task.text || task.question || task.instruction || task.title || '';
+                  if (isFourActUnit) {
+                    rawTitle = rawTitle
+                      .replace(/^Significance Diamond:\s*/i, '')
+                      .replace(/^Priority Diamond:\s*/i, '')
+                      .replace(/^Priority Matrix:\s*/i, '');
+                  }
+                  let _t = processTaskTextWithTariff(rawTitle);
                   _nbHtml += `<div class="task-box" style="margin-bottom: 12px; border: 1.5px solid #059669; border-radius: 6px; padding: 8px 10px; background: #ecfdf5; page-break-inside: avoid; box-sizing: border-box; width: 100%;">`;
                   _nbHtml += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">`;
                   _nbHtml += `<strong style="color: #065f46; font-size: 8.5pt;">Q${globalQNum++}. ${_t.cleanText}</strong>`;
-                  _nbHtml += `<span style="font-size: 6.8pt; font-weight: bold; background: #059669; color: #ffffff; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Priority Diamond</span>`;
+                  if (!isFourActUnit) {
+                    _nbHtml += `<span style="font-size: 6.8pt; font-weight: bold; background: #059669; color: #ffffff; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Priority Diamond</span>`;
+                  }
                   _nbHtml += `</div>`;
                   if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
                   if (task.instruction && task.instruction !== task.text) {
@@ -2311,7 +2424,13 @@ allDirs.forEach((unitId) => {
                   }
                   if (task.justification_prompt || task.starter) {
                     _nbHtml += `<div style="font-size: 7pt; color: #047857; margin: 3px 0 2px 0;"><strong>${task.justification_prompt ? task.justification_prompt : 'Write factor letters (A, B, C, D) in the podium slots above, then justify #1:'}</strong></div>`;
-                    _nbHtml += `<div style="min-height: 26px; background: #ffffff; border: 1px dashed #6ee7b7; border-radius: 3px; padding: 3px 5px; font-size: 7pt; color: #475569; box-sizing: border-box;"><span style="color: #9ca3af; font-style: italic;">${task.starter || 'Factor A was the decisive catalyst because...'}</span><div style="border-bottom: 1px dotted #a7f3d0; height: 13px; margin-top: 2px;"></div></div>`;
+                    if (isFourActUnit) {
+                      _nbHtml += `<div class="task-lines" style="height: 13px; margin-top: 3px;"></div>`;
+                      _nbHtml += `<div class="task-lines" style="height: 13px; margin-top: 3px;"></div>`;
+                      _nbHtml += `<div class="task-lines" style="height: 13px; margin-top: 3px;"></div>`;
+                    } else {
+                      _nbHtml += `<div style="min-height: 26px; background: #ffffff; border: 1px dashed #6ee7b7; border-radius: 3px; padding: 3px 5px; font-size: 7pt; color: #475569; box-sizing: border-box;"><span style="color: #9ca3af; font-style: italic;">${task.starter || 'Factor A was the decisive catalyst because...'}</span><div style="border-bottom: 1px dotted #a7f3d0; height: 13px; margin-top: 2px;"></div></div>`;
+                    }
                   }
                   _nbHtml += `</div>`;
                   return;
@@ -2490,9 +2609,10 @@ allDirs.forEach((unitId) => {
                   let isSixteen = (task.text || task.question || '')
                     .toLowerCase()
                     .includes('16 marks');
-                  let pbBefore = isSixteen
-                    ? 'page-break-before: always; margin-top: 30px;'
-                    : 'margin-top: 10px;';
+                  let pbBefore =
+                    isSixteen || (isFourActUnit && task.type === 'extended_writing')
+                      ? 'page-break-before: always; margin-top: 15px;'
+                      : 'margin-top: 10px;';
 
                   if (task.type === 'vocab_match' || task.type === 'drag_drop_timeline') {
                     // Do nothing
@@ -2538,7 +2658,7 @@ allDirs.forEach((unitId) => {
                   } else {
                     let linesToDraw = 4;
                     if (task.type === 'extended_writing') {
-                      linesToDraw = task.scaffolding ? 14 : 18;
+                      linesToDraw = isFourActUnit ? 24 : task.scaffolding ? 14 : 18;
                     } else if (
                       task.type === 'analysis' ||
                       task.type === 'debate' ||
@@ -2551,6 +2671,15 @@ allDirs.forEach((unitId) => {
                     }
                     for (let i = 0; i < linesToDraw; i++) {
                       _nbHtml += `<div class="task-lines"></div>`;
+                    }
+                    if (isFourActUnit && task.type === 'extended_writing') {
+                      _nbHtml += `
+                        <div style="display: flex; justify-content: space-between; font-size: 7pt; color: #64748b; border-top: 1px solid #cbd5e1; padding-top: 4px; margin-top: 8px;">
+                          <span><strong>Level:</strong> [ 1 / 2 / 3 / 4 ]</span>
+                          <span><strong>Marks:</strong> &nbsp; &nbsp; / 16</span>
+                          <span><strong>Teacher Target:</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>
+                        </div>
+                      `;
                     }
                   }
                 }
@@ -2585,8 +2714,12 @@ allDirs.forEach((unitId) => {
         });
       }
 
-      // Pair Share (Hidden for Great War units here, moved to later)
-      if (lesson.pair_share && !(unitId === 'great_war' || unitId === 'great_war_part2')) {
+      // Pair Share (Strictly oral / digital app feature for 4-Act units; omitted from pupil workbooks)
+      if (
+        lesson.pair_share &&
+        !isFourActUnit &&
+        !(unitId === 'great_war' || unitId === 'great_war_part2')
+      ) {
         if (unitId === 'cme_new') {
           html += `<div class="task-box consolidation-box" style="box-sizing: border-box; width: 100%; margin-top: 10px; margin-bottom: 12px; border: 1.5px solid #0f766e; border-radius: 8px; padding: 10px 14px 14px 14px; background: #ffffff; break-inside: avoid !important; page-break-inside: avoid !important;">`;
           html += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">`;
@@ -3205,7 +3338,10 @@ allDirs.forEach((unitId) => {
 
       // GCSE Task
       let hasExamTask =
-        lesson.gcse_task || lesson.exam_practice || (lesson.extended && lesson.extended.question);
+        (lesson.gcse_task ||
+          lesson.exam_practice ||
+          (lesson.extended && lesson.extended.question)) &&
+        !isFourActUnit;
       let cmeExamWrapperOpened = false;
       if (hasExamTask) {
         const skipInitialExamHeader =
@@ -4053,7 +4189,7 @@ allDirs.forEach((unitId) => {
       }
 
       // Inject General Notes Box
-      if (unitId !== 'cme_new') {
+      if (unitId !== 'cme_new' && !isFourActUnit) {
         html += `
         <div style="page-break-before: always; margin-top: 20px;">
           <h3 style="margin-top: 0; color: #334155;">General Notes</h3>
@@ -4068,7 +4204,7 @@ allDirs.forEach((unitId) => {
       const isGCSEUnit = ['weimar_nazi_germany', 'cme_new', 'edexcel_medicine', 'eee'].includes(
         unitId,
       );
-      if (!isGCSEUnit) {
+      if (!isGCSEUnit && !isFourActUnit) {
         html += `
         <div style="margin-top: 10px;"></div>
         <div class="grading-footer">

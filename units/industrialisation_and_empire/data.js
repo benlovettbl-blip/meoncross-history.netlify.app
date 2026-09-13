@@ -452,20 +452,6 @@ export const unitData = {
             'Distinctive tall terracotta chimney pots crafted from local Fareham Red clay featuring a crimped white slip collar.',
         },
       ],
-      exam_practice: {
-        questions: [
-          {
-            type: 'features',
-            question: 'Describe one feature of the domestic system.',
-            marks: 2,
-          },
-          {
-            type: 'features',
-            question: "Describe one feature of Henry Cort's puddling process at Funtley.",
-            marks: 2,
-          },
-        ],
-      },
       quiz: [
         {
           question:
@@ -951,20 +937,6 @@ export const unitData = {
             'An 1840 illustration from Frances Trollope’s Michael Armstrong, the Factory Boy. Visual exposés published in Victorian popular fiction campaigned alongside parliamentary reports to mobilize public outrage against child labour. **Hinge Question:** Why were visual depictions of child labour often more politically powerful in shifting public opinion than dry statistical reports?',
         },
       ],
-      exam_practice: {
-        questions: [
-          {
-            type: 'explain',
-            question:
-              'Explain why child labour was so prevalent during the early Industrial Revolution in both northern mills and local Hampshire brickfields.',
-            marks: 8,
-            hints: [
-              'Sentence Starter: One reason child labour was prevalent was because factory masters and brickfield owners could pay children a fraction of adult wages...',
-              'Sentence Starter: Furthermore, children were physically suited for specific dangerous tasks, such as working as scavengers under machinery or pug boys in clay pits...',
-            ],
-          },
-        ],
-      },
       quiz: [
         {
           question:
