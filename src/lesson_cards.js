@@ -419,7 +419,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
               <h3 style="margin: 0; color: #78350f; font-size: 1.18rem; font-family: 'Playfair Display', serif;">2nd Lieutenant Ernest Edward Crummack MC, DCM</h3>
             </div>
             <p style="margin: 0; color: #451a03; font-size: 0.88rem; line-height: 1.4;">
-              Family archive of <strong>Aby (Year 10)</strong>, researched by grandfather <strong>Edward Pearson</strong> and shared by mother <strong>Harriet Uwalaka</strong>. Held the Boesinghe canal (Day 1 link); rescued Siegfried Sassoon's friend Marcus Goodall (Somme DCM); awarded MC breaching Hindenburg Line.
+              Family archive of <strong>Aby (Year 10)</strong>, researched by grandfather <strong>John Pearson</strong> and shared by mother <strong>Harriet Uwalaka</strong>. Held the Boesinghe canal (Day 1 link); rescued Siegfried Sassoon's friend Marcus Goodall (Somme DCM); awarded MC breaching Hindenburg Line.
             </p>
           </div>
           <div style="display: flex; gap: 8px; align-items: center;">
@@ -714,7 +714,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
                 Living Remembrance: 2nd Lieutenant Ernest Edward Crummack MC, DCM
               </h3>
               <p style="margin: 0; color: #451a03; font-size: 0.92rem; line-height: 1.5;">
-                Great-great-grandfather of <strong>Aby (Year 10)</strong>. Researched by grandfather <strong>Edward Pearson</strong> (Military Historian) and shared by mother <strong>Harriet Uwalaka</strong> (née Pearson) following the Ypres parent briefing. A coal miner who rose through the ranks to win the DCM, the Russian Medal of St George, and the Military Cross.
+                Great-great-grandfather of <strong>Aby (Year 10)</strong>. Researched by grandfather <strong>John Pearson</strong> (Family Historian) and shared by mother <strong>Harriet Uwalaka</strong> (née Pearson) following the Ypres parent briefing. A South Yorkshire hero who rose through the ranks to win the DCM, the Russian Medal of St George, and the Military Cross.
               </p>
             </div>
             <button class="btn" data-action="view-lesson-detail" data-index="${crummackHero.index}" style="padding: 9px 18px; font-size: 0.85rem; font-weight: 700; background: #d97706; color: #ffffff; border: 1.5px solid #b45309; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(217, 119, 6, 0.25);">
@@ -779,10 +779,10 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
                   <i class="fa-solid fa-users" style="color: #2563eb; margin-right: 6px;"></i> Family Attribution &amp; Lineage
                 </h4>
                 <p style="margin: 0 0 10px 0; color: #334155; font-size: 0.88rem; line-height: 1.5;">
-                  Researched and compiled by grandfather and military historian <strong>Edward Pearson</strong>. Shared with Mr Ben Lovett by mother <strong>Harriet Uwalaka</strong> (née Pearson) following the Ypres parent briefing.
+                  Researched and compiled by grandfather and family historian <strong>John Pearson</strong>. Shared with Mr Ben Lovett by mother <strong>Harriet Uwalaka</strong> (née Pearson) following the Ypres parent briefing. Medals presented to the York and Lancaster Regimental Museum at Clifton Park, Rotherham, by eldest son Ted Crummack.
                 </p>
                 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px; font-size: 0.8rem; color: #475569; line-height: 1.6;">
-                  <strong>Lineage:</strong> 2nd Lt Ernest Crummack MC, DCM &rarr; Edward Crummack &rarr; Edward Pearson &rarr; Harriet Uwalaka &rarr; <strong>Aby (Year 10, middle name Ernest)</strong>.
+                  <strong>Lineage:</strong> 2nd Lt Ernest Crummack MC, DCM &amp; Elizabeth Hall &rarr; Mary Crummack &rarr; John Pearson &rarr; Harriet Uwalaka &rarr; <strong>Aby (Year 10, middle name Ernest)</strong>.
                 </div>
               </div>
 
@@ -791,7 +791,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
                   <i class="fa-solid fa-feather-pointed" style="color: #d97706; margin-right: 6px;"></i> The Siegfried Sassoon Connection
                 </h4>
                 <p style="margin: 0; color: #334155; font-size: 0.88rem; line-height: 1.5;">
-                  On 3 July 1916 at Thiepval Wood, Sergeant Crummack crawled into No Man's Land under heavy machine-gun fire to rescue wounded officer <strong>2nd Lt Marcus Goodall</strong>, earning the DCM and Russian Medal of St George. Grandfather Edward Pearson's research confirmed Goodall was the beloved close friend of Great War poet <strong>Siegfried Sassoon</strong>, who wrote an elegy for him.
+                  On 3 July 1916 at Thiepval Wood, Sergeant Crummack crawled into No Man's Land under heavy machine-gun fire to rescue wounded officer <strong>2nd Lt Marcus Goodall</strong>, earning the DCM and Russian Medal of St George. Grandfather John Pearson's research confirmed Goodall was the beloved close friend of Great War poet <strong>Siegfried Sassoon</strong>, who wrote an elegy for him.
                 </p>
               </div>
             </div>

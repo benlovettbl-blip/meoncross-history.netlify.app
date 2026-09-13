@@ -408,7 +408,7 @@ async function buildDocx() {
                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                     children: [
                       p(
-                        'Benjamin Lovett (Head of History) & Edward Pearson ("John", Family Military Historian)',
+                        'Benjamin Lovett (Head of History) & John Pearson (Family Military Historian)',
                         { size: 18 },
                       ),
                     ],
@@ -445,7 +445,7 @@ async function buildDocx() {
             'This dossier provides an exhaustive technical and methodological record of the archival reconstruction of 2nd Lieutenant Ernest Edward Crummack MC, DCM (1885–1958). Conducted by the Meoncross School History Department ahead of the 2026 GCSE Ypres and Somme Battlefield Study Expedition, the project set out to investigate the direct Great War ancestry of Year 10 pupil Aby (whose middle name is Ernest in his great-great-grandfather’s honour).',
           ),
           p(
-            'The research combined two distinct investigative layers: decades of foundational human scholarship conducted by military historian Edward Pearson ("John"), and high-velocity digital mining executed via modern Artificial Intelligence (AI) and digitised state repositories.',
+            'The research combined two distinct investigative layers: decades of foundational human scholarship conducted by military historian John Pearson, and high-velocity digital mining executed via modern Artificial Intelligence (AI) and digitised state repositories.',
           ),
           p(
             'To evaluate the utility and perils of AI in historical inquiry with complete methodological honesty, this report structures its findings around the tripartite framework of The Good, The Bad, and The Ugly:',
@@ -466,7 +466,7 @@ async function buildDocx() {
           // SECTION 2: THE HUMAN FOUNDATION
           h1('2. Foundational Primary Clues (The Human Baseline)'),
           p(
-            'A foundational law of historiography in the digital age is: Machine tools cannot discover truth in a vacuum. AI systems require primary coordinates established by human researchers. The investigation began with ten precise primary anchors provided from Edward Pearson’s multi-decade family archive:',
+            'A foundational law of historiography in the digital age is: Machine tools cannot discover truth in a vacuum. AI systems require primary coordinates established by human researchers. The investigation began with ten precise primary anchors provided from John Pearson’s multi-decade family archive:',
           ),
           bullet(
             'Ernest Edward Crummack was born on 6 September 1885 at Rawmarsh, near Rotherham. His father, Charles Crummack, was a skilled Shingler/Puddler working the reverberatory furnaces at Parkgate Iron and Steel Plant.',
@@ -497,7 +497,7 @@ async function buildDocx() {
             '7. Wider Family War Effort:',
           ),
           bullet(
-            'Ernest married Elizabeth Hall (Edward Pearson’s grandmother) in 1916 at Worksop.',
+            'Ernest married Elizabeth Hall in 1916 at Worksop. Their eldest child, Mary Crummack (John Pearson’s mother and Aby’s great-grandmother), carried the family’s direct DNA and lineage down to John Pearson, Harriet Uwalaka, and Aby.',
             '8. Second Marriage & Lineage:',
           ),
           bullet(
@@ -505,8 +505,8 @@ async function buildDocx() {
             '9. Officer Commissioning & 1918 MC:',
           ),
           bullet(
-            'Surviving interwar postcards confirm Ernest visited the Menin Gate, stayed at the Hôtel Ypriana in Ypres, and visited Albert on the Somme, before passing away peacefully in Dinnington in 1958 at age 73.',
-            '10. Interwar Legacy & Passing:',
+            'Surviving interwar postcards confirm Ernest visited the Menin Gate, stayed at the Hôtel Ypriana in Ypres, and visited Albert on the Somme, before passing away peacefully in Dinnington in 1958 at age 73. His complete mounted six-medal group was presented many decades ago by his eldest son Ted Crummack to the York and Lancaster Regimental Museum at Clifton Park, Rotherham, where it remains permanently preserved.',
+            '10. Interwar Legacy, Passing & Regimental Museum:',
           ),
 
           // SECTION 3: THE GOOD
@@ -558,7 +558,7 @@ async function buildDocx() {
 
           h2('3. Forensic Triangulation: Proving the Identity of 2nd Lt Marcus Goodall'),
           p(
-            'Under strict British wartime censorship, gallantry citations routinely omitted the names of rescued officers to prevent enemy intelligence from gauging command casualties. Edward Pearson had hypothesized that the rescued casualty was 2nd Lt Marcus Goodall. The research pipeline cross-referenced four independent repositories to prove this link beyond academic doubt:',
+            'Under strict British wartime censorship, gallantry citations routinely omitted the names of rescued officers to prevent enemy intelligence from gauging command casualties. John Pearson had hypothesized that the rescued casualty was 2nd Lt Marcus Goodall. The research pipeline cross-referenced four independent repositories to prove this link beyond academic doubt:',
           ),
           bullet(
             'Recorded that only one officer was wounded while cutting enemy wire during the raid on 3–4 July 1916 along Mill Road.',
@@ -1117,7 +1117,7 @@ async function buildHtmlAndPdf() {
     </tr>
     <tr>
       <td class="meta-label">Research Contributors:</td>
-      <td>Benjamin Lovett (Head of History) &amp; Edward Pearson ("John", Family Military Historian)</td>
+      <td>Benjamin Lovett (Head of History) &amp; John Pearson (Family Military Historian)</td>
     </tr>
     <tr>
       <td class="meta-label">Date of Record:</td>
@@ -1127,7 +1127,7 @@ async function buildHtmlAndPdf() {
 
   <h2 class="section-title">1. Executive Summary &amp; The Tripartite Audit Framework</h2>
   <p>This dossier provides an exhaustive technical and methodological record of the archival reconstruction of <strong>2nd Lieutenant Ernest Edward Crummack MC, DCM (1885–1958)</strong>. Conducted by the Meoncross School History Department ahead of the 2026 GCSE Ypres and Somme Battlefield Study Expedition, the project investigated the direct Great War ancestry of Year 10 pupil Aby (whose middle name is Ernest in his great-great-grandfather’s honour).</p>
-  <p>The research combined two distinct investigative layers: decades of foundational human scholarship conducted by military historian <strong>Edward Pearson ("John")</strong>, and high-velocity digital mining executed via modern Artificial Intelligence (AI) and digitised state repositories.</p>
+  <p>The research combined two distinct investigative layers: decades of foundational human scholarship conducted by military historian <strong>John Pearson</strong>, and high-velocity digital mining executed via modern Artificial Intelligence (AI) and digitised state repositories.</p>
   <p>To evaluate the utility and perils of AI in historical inquiry with complete methodological honesty, this report structures its findings around the tripartite framework of <strong>The Good, The Bad, and The Ugly</strong>:</p>
   <ul>
     <li><span class="tag-badge badge-good">The Good</span> <strong>Breakthrough Discoveries &amp; Digital Acceleration:</strong> Bypassing human clerical typos via Boolean operators, instant retrieval of British Government London Gazette dispatches, 4-way cross-archival triangulation of censored casualties (2nd Lt Marcus Goodall), and paleographic transcription of Siegfried Sassoon’s trench notebook at Cambridge University Library.</li>
@@ -1136,7 +1136,7 @@ async function buildHtmlAndPdf() {
   </ul>
 
   <h2 class="section-title">2. Foundational Primary Clues (The Human Baseline)</h2>
-  <p>A foundational law of historiography in the digital age is: <em>Machine tools cannot discover truth in a vacuum.</em> AI systems require primary coordinates established by human researchers. The investigation began with ten precise primary anchors provided from Edward Pearson’s multi-decade family archive:</p>
+  <p>A foundational law of historiography in the digital age is: <em>Machine tools cannot discover truth in a vacuum.</em> AI systems require primary coordinates established by human researchers. The investigation began with ten precise primary anchors provided from John Pearson’s multi-decade family archive:</p>
   <ul>
     <li><strong>1. Birth &amp; Heavy Industry Origins:</strong> Ernest was born on 6 September 1885 at Rawmarsh, Rotherham. His father, Charles Crummack, was a skilled Shingler/Puddler at Parkgate Iron and Steel Plant, working with reverberatory furnaces in heavy metallurgy.</li>
     <li><strong>2. First Marriage &amp; Family Loss:</strong> Ernest married Maud Coxon in Rawmarsh on 20 August 1906. They had two children: Edward ("Ted", born 1908) and Hilda. Maud tragically died of tuberculosis in April 1914, leaving Ernest a widower prior to mobilization.</li>
@@ -1145,9 +1145,9 @@ async function buildHtmlAndPdf() {
     <li><strong>5. The Clerical Typo Clue:</strong> War Office clerks misprinted his surname as "Crummock" with an ‘o’ in the London Gazette, causing search engines to miss his entry for decades.</li>
     <li><strong>6. The Goodall &amp; Sassoon Nexus:</strong> The rescued officer was 2nd Lt Marcus Goodall, son of the Canon of Rotherham and intimate friend of famed war poet Siegfried Sassoon. Canon Goodall visited Ernest after the war to express gratitude.</li>
     <li><strong>7. Wider Family War Effort:</strong> Elder brother Frank Crummack served in the 1/5th York &amp; Lancasters and was invalided out following the Boesinghe gas attack; sisters worked in munitions factories, notably Jessica Alma Crummack, Captain and Goalkeeper of a wartime women’s football team.</li>
-    <li><strong>8. Second Marriage &amp; Lineage:</strong> Ernest married Elizabeth Hall (Edward Pearson’s grandmother) in 1916 at Worksop.</li>
+    <li><strong>8. Second Marriage &amp; Lineage:</strong> Ernest married Elizabeth Hall in 1916 at Worksop. Their eldest daughter, Mary Crummack (John Pearson’s mother and Aby’s great-grandmother), carried the family’s direct DNA and lineage down to John Pearson, Harriet Uwalaka, and Aby.</li>
     <li><strong>9. Officer Commissioning &amp; 1918 MC:</strong> Commissioned on 30 January 1918 into the 1/4th (Territorial) Bn, but attached in operational service to the 6th (Service) Battalion, winning the Military Cross at the Canal du Nord in September 1918.</li>
-    <li><strong>10. Interwar Legacy &amp; Passing:</strong> Surviving interwar postcards confirm Ernest visited the Menin Gate, stayed at the Hôtel Ypriana in Ypres, and visited Albert on the Somme, before passing away peacefully in Dinnington in 1958 at age 73.</li>
+    <li><strong>10. Interwar Legacy, Passing &amp; Regimental Museum:</strong> Surviving interwar postcards confirm Ernest visited the Menin Gate, stayed at the Hôtel Ypriana in Ypres, and visited Albert on the Somme, before passing away peacefully in Dinnington in 1958 at age 73. His complete mounted six-medal group was presented many decades ago by his eldest son Ted Crummack to the York and Lancaster Regimental Museum at Clifton Park, Rotherham, where it remains on public display.</li>
   </ul>
 
   <h2 class="section-title">3. The Good: Breakthrough Discoveries &amp; Digital Acceleration</h2>
@@ -1169,7 +1169,7 @@ async function buildHtmlAndPdf() {
   </div>
 
   <h3 class="sub-section-title">3. Forensic Triangulation: Proving 2nd Lt Marcus Goodall Across 4 Repositories</h3>
-  <p>Under strict British wartime censorship, gallantry citations routinely omitted the names of rescued officers to prevent enemy intelligence from gauging command casualties. Edward Pearson had hypothesized that the rescued casualty was 2nd Lt Marcus Goodall. The research pipeline cross-referenced four independent repositories to prove this link beyond academic doubt:</p>
+  <p>Under strict British wartime censorship, gallantry citations routinely omitted the names of rescued officers to prevent enemy intelligence from gauging command casualties. John Pearson had hypothesized that the rescued casualty was 2nd Lt Marcus Goodall. The research pipeline cross-referenced four independent repositories to prove this link beyond academic doubt:</p>
   <ul>
     <li><strong>1/5th Battalion War Diary (July 1916):</strong> Recorded that only one officer was wounded while cutting enemy wire during the raid on 3–4 July 1916 along Mill Road.</li>
     <li><strong>Eyewitness Field Diary:</strong> Pte Walter Hutchinson recorded an officer staggering into the trench at 10 am stating that Captain Goodall had been badly wounded and requesting stretchers.</li>
