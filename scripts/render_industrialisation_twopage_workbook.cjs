@@ -605,32 +605,37 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
   html += `
   <div class="page page-container" id="page-2" style="padding: 10px 0; display: flex; flex-direction: column; height: 260mm; justify-content: space-between;">
     <div>
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #1a237e; padding-bottom: 4px; margin-bottom: 8px;">
-        <h2 style="margin: 0; color: #1e3a8a; font-size: 15pt; text-transform: uppercase; letter-spacing: 1px;">PROGRESS & ASSESSMENT TRACKER</h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 8.8pt; font-weight: normal; color: #333;">Target Grade: _________</span>
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 7px;">
+        <h2 style="margin: 0; color: #1e3a8a; font-size: 14pt; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">
+          Progress &amp; Assessment Tracker
+        </h2>
+        <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 600; color: #334155;">
+          Target Grade: <span style="display: inline-block; width: 65px; border-bottom: 1.5px solid #0f172a; margin-left: 4px;"></span>
+        </div>
       </div>
       
-      <table style="width: 100%; border-collapse: collapse; text-align: left; font-family: 'Inter', sans-serif; font-size: 7.8pt; line-height: 1.25; margin-bottom: 8px;">
+      <!-- Grading Criteria Benchmarks -->
+      <table style="width: 100%; border-collapse: collapse; text-align: left; font-family: 'Inter', sans-serif; font-size: 7.4pt; line-height: 1.25; margin-bottom: 7px;">
         <tbody>
           <tr>
-            <td style="border: 1px solid #333; padding: 4px 6px; font-weight: bold; background-color: #f1f5f9; width: 12%;">Level</td>
-            <td style="border: 1px solid #333; padding: 4px 6px; width: 22%;">Emerging (1-2)</td>
-            <td style="border: 1px solid #333; padding: 4px 6px; width: 22%;">Emerging+ (3)</td>
-            <td style="border: 1px solid #333; padding: 4px 6px; width: 22%;">Expected (4-5)</td>
-            <td style="border: 1px solid #333; padding: 4px 6px; width: 22%;">Expected+ (6-7) / Greater Depth (8-9)</td>
+            <td style="border: 1px solid #94a3b8; padding: 3.5px 6px; font-weight: 700; background-color: #1e3a8a; color: #ffffff; width: 10%; text-transform: uppercase; letter-spacing: 0.5px;">Criteria</td>
+            <td style="border: 1px solid #cbd5e1; padding: 3.5px 6px; width: 22.5%; background: #f8fafc;"><strong style="color: #0f172a;">Emerging (1–2):</strong> Recalls isolated facts; basic descriptive narrative.</td>
+            <td style="border: 1px solid #cbd5e1; padding: 3.5px 6px; width: 22.5%; background: #ffffff;"><strong style="color: #0f172a;">Emerging+ (3):</strong> Identifies causes &amp; consequences with simple explanation.</td>
+            <td style="border: 1px solid #cbd5e1; padding: 3.5px 6px; width: 22.5%; background: #f8fafc;"><strong style="color: #0f172a;">Expected (4–5):</strong> Structured PEEL arguments; supports claims with evidence.</td>
+            <td style="border: 1px solid #cbd5e1; padding: 3.5px 6px; width: 22.5%; background: #ffffff;"><strong style="color: #0f172a;">Greater Depth (6–9):</strong> Analytical balance; nuanced historical judgements.</td>
           </tr>
         </tbody>
       </table>
     </div>
 
     <div style="width: 100%; display: flex; justify-content: center; flex: 1; min-height: 0; margin-bottom: 4px;">
-      <table style="page-break-inside: avoid; width: 100%; height: 100%; border-collapse: collapse; text-align: left; font-family: 'Inter', sans-serif; font-size: 8pt; line-height: 1.25; background-color: #ffffff;">
+      <table style="page-break-inside: avoid; width: 100%; height: 100%; border-collapse: collapse; text-align: left; font-family: 'Inter', sans-serif; font-size: 7.8pt; line-height: 1.25; background-color: #ffffff; table-layout: fixed;">
         <thead>
-          <tr style="background-color: #1a237e; color: white;">
-            <th style="border: 1px solid #333; padding: 4px 6px; width: 38%;">Lesson / Assessment Title</th>
-            <th style="border: 1px solid #333; padding: 4px 6px; width: 10%; text-align: center;">Effort</th>
-            <th style="border: 1px solid #333; padding: 4px 6px; width: 10%; text-align: center;">Level</th>
-            <th style="border: 1px solid #333; padding: 4px 6px; width: 42%;">Teacher Comments</th>
+          <tr style="background-color: #1e3a8a; color: #ffffff;">
+            <th style="border: 1px solid rgba(255,255,255,0.35); padding: 6px 8px; width: 24%; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; font-size: 7.5pt;">Lesson / Assessment Enquiry</th>
+            <th style="border: 1px solid rgba(255,255,255,0.35); padding: 6px 3px; width: 5.5%; text-align: center; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; font-size: 7.5pt;">Effort</th>
+            <th style="border: 1px solid rgba(255,255,255,0.35); padding: 6px 3px; width: 5.5%; text-align: center; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; font-size: 7.5pt;">Level</th>
+            <th style="border: 1px solid rgba(255,255,255,0.35); padding: 6px 10px; width: 65%; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; font-size: 7.5pt;">Teacher Formative Feedback &amp; Next Steps</th>
           </tr>
         </thead>
         <tbody>
@@ -638,30 +643,40 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
 
   unitData.lessons.forEach((l, i) => {
     const isAssessment = l.title && l.title.startsWith('End of Unit Assessment');
-    const label = isAssessment ? `Assessment: ${l.title}` : `L${i + 1}: ${l.title}`;
-    const bg = isAssessment ? '' : 'background-color: #f1f5f9;';
+    const bg = i % 2 === 1 ? 'background-color: #f8fafc;' : 'background-color: #ffffff;';
     html += `
           <tr style="${bg}">
-            <td style="border: 1px solid #333; padding: 4px 6px; font-weight: bold;">${label}</td>
-            <td style="border: 1px solid #333; padding: 4px 6px; text-align: center;"></td>
-            <td style="border: 1px solid #333; padding: 4px 6px; text-align: center;"></td>
-            <td style="border: 1px solid #333; padding: 4px 6px;"></td>
+            <td style="border: 1px solid #cbd5e1; padding: 5px 8px; font-weight: 600; font-size: 7.2pt; color: #0f172a; line-height: 1.2;">
+              <div style="color: #1e3a8a; font-weight: 700; font-size: 7.6pt; text-transform: uppercase; margin-bottom: 2px;">Lesson ${i + 1}</div>
+              <div style="color: #334155; font-weight: 500;">${l.title}</div>
+            </td>
+            <td style="border: 1px solid #cbd5e1; padding: 4px; text-align: center; font-weight: 600; font-size: 9pt; color: #0f172a;"></td>
+            <td style="border: 1px solid #cbd5e1; padding: 4px; text-align: center; font-weight: 600; font-size: 9pt; color: #0f172a;"></td>
+            <td style="border: 1px solid #cbd5e1; padding: 6px 10px; vertical-align: top;"></td>
           </tr>
     `;
   });
 
   html += `
-          <tr>
-            <td style="border: 1px solid #333; padding: 4px 6px; font-weight: bold;">Assessment: End of Unit Assessment: Industrialisation & Empire</td>
-            <td style="border: 1px solid #333; padding: 4px 6px; text-align: center;"></td>
-            <td style="border: 1px solid #333; padding: 4px 6px; text-align: center;"></td>
-            <td style="border: 1px solid #333; padding: 4px 6px;"></td>
+          <tr style="background-color: #f1f5f9;">
+            <td style="border: 1px solid #cbd5e1; padding: 6px 8px; font-weight: 600; font-size: 7.5pt; color: #0f172a; line-height: 1.25;">
+              <div style="color: #1e3a8a; font-weight: 700; font-size: 7.8pt; text-transform: uppercase; margin-bottom: 2px;">Formal Assessment</div>
+              <div style="color: #334155; font-weight: 600;">End of Unit Enquiry Assessment: Industrialisation &amp; Empire</div>
+            </td>
+            <td style="border: 1px solid #cbd5e1; padding: 4px; text-align: center; font-weight: 700; font-size: 9pt;"></td>
+            <td style="border: 1px solid #cbd5e1; padding: 4px; text-align: center; font-weight: 700; font-size: 9pt;"></td>
+            <td style="border: 1px solid #cbd5e1; padding: 6px 10px; vertical-align: top;"></td>
           </tr>
-          <tr style="font-weight: bold;">
-            <td style="border: 1px solid #333; padding: 4px 6px; text-align: right;">Final Unit Grade:</td>
-            <td style="border: 1px solid #333; padding: 4px 6px; background: #eee;"></td>
-            <td style="border: 1px solid #333; padding: 4px 6px; background: #eee;"></td>
-            <td style="border: 1px solid #333; padding: 4px 6px;"></td>
+          <tr style="background-color: #e2e8f0; font-weight: bold;">
+            <td style="border: 1px solid #94a3b8; padding: 6px 8px; text-align: right; color: #0f172a; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.5px;">
+              Final Unit Grade &bull; Target Outcome:
+            </td>
+            <td style="border: 1px solid #94a3b8; padding: 4px; background: #ffffff; text-align: center; font-size: 10pt; font-weight: 700; color: #1e3a8a;"></td>
+            <td style="border: 1px solid #94a3b8; padding: 4px; background: #ffffff; text-align: center; font-size: 10pt; font-weight: 700; color: #1e3a8a;"></td>
+            <td style="border: 1px solid #94a3b8; padding: 6px 10px; font-size: 7.5pt; color: #475569; font-weight: normal; vertical-align: middle;">
+              <span style="font-weight: 600; color: #0f172a;">Departmental Sign-Off:</span> __________________________ &nbsp;&nbsp;&bull;&nbsp;&nbsp; 
+              <span style="font-weight: 600; color: #0f172a;">Date:</span> ____________
+            </td>
           </tr>
         </tbody>
       </table>
