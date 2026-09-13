@@ -46,13 +46,13 @@ export const WORKBOOK_PAGE_MAP = {
       lessonIndex: 1,
     },
     lesson_3: {
-      page: 19,
+      page: 18,
       booklet: 'Key Topic 1 Booklet',
       unitId: 'cme_new',
       lessonIndex: 2,
     },
     lesson_4: {
-      page: 26,
+      page: 24,
       booklet: 'Key Topic 1 Booklet',
       unitId: 'cme_new',
       lessonIndex: 3,
@@ -70,7 +70,7 @@ export const WORKBOOK_PAGE_MAP = {
       lessonIndex: 5,
     },
     lesson_7: {
-      page: 17,
+      page: 16,
       booklet: 'Key Topic 2 Booklet',
       unitId: 'cme_new',
       lessonIndex: 6,
@@ -82,13 +82,13 @@ export const WORKBOOK_PAGE_MAP = {
       lessonIndex: 7,
     },
     lesson_9: {
-      page: 10,
+      page: 9,
       booklet: 'Key Topic 3 Booklet',
       unitId: 'cme_new',
       lessonIndex: 8,
     },
     lesson_10: {
-      page: 19,
+      page: 17,
       booklet: 'Key Topic 3 Booklet',
       unitId: 'cme_new',
       lessonIndex: 9,
