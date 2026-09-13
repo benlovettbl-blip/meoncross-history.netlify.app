@@ -42,6 +42,18 @@ const PDF_MAPPINGS = [
   },
   {
     folder: '00_Department_Admin_and_Policies',
+    src: 'Research Dossier - 2nd Lt Ernest Crummack (AI Case Study).pdf',
+    dest: 'Research Dossier - 2nd Lt Ernest Crummack (AI Case Study).pdf',
+    category: 'Admin',
+  },
+  {
+    folder: '00_Department_Admin_and_Policies',
+    src: 'Research Dossier - 2nd Lt Ernest Crummack (AI Case Study).docx',
+    dest: 'Research Dossier - 2nd Lt Ernest Crummack (AI Case Study).docx',
+    category: 'Admin',
+  },
+  {
+    folder: '00_Department_Admin_and_Policies',
     src: 'AI Guide for Family Military Historians (Edward Pearson).pdf',
     dest: 'AI Guide for Family Military Historians (Edward Pearson).pdf',
     category: 'Admin',
@@ -616,6 +628,18 @@ const PDF_MAPPINGS = [
     folder: path.join('Trips', 'Battlefield Tour - Ypres'),
     src: 'trip_ypres_textbook_FINAL_V17.pdf',
     dest: 'Ypres Battlefield Master Textbook.pdf',
+    category: 'Trips',
+  },
+  {
+    folder: path.join('Trips', 'Battlefield Tour - Ypres'),
+    src: 'Research Dossier - 2nd Lt Ernest Crummack (AI Case Study).pdf',
+    dest: 'Research Dossier - 2nd Lt Ernest Crummack (AI Case Study).pdf',
+    category: 'Trips',
+  },
+  {
+    folder: path.join('Trips', 'Battlefield Tour - Ypres'),
+    src: 'Research Dossier - 2nd Lt Ernest Crummack (AI Case Study).docx',
+    dest: 'Research Dossier - 2nd Lt Ernest Crummack (AI Case Study).docx',
     category: 'Trips',
   },
   {
