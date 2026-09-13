@@ -1,4 +1,4 @@
-const industrialisation_and_empire = {
+export const unitData = {
   title: 'KS3: Industrialisation, Empire, and Power (1750–1900)',
   homepage_background: '/images/imperial_federation_map.jpg',
   enquiry:
@@ -1845,38 +1845,44 @@ const industrialisation_and_empire = {
       quiz: [
         {
           question:
-            "Why did Victorian builders heavily rely on 'Fareham Red' bricks during 19th-century urbanisation?",
+            'What private joint-stock corporation held a royal charter to control British trade and territories in India until 1858?',
+          q: 'What private joint-stock corporation held a royal charter to control British trade and territories in India until 1858?',
           options: [
-            'They were the cheapest bricks available in northern England.',
-            'They were highly durable under intense structural pressure for massive infrastructure.',
-            'They were the only bricks the government legally allowed to be used in London.',
-            'They were primarily used for decorative facades rather than structural strength.',
+            'The East India Company (EIC)',
+            'The Royal African Company',
+            'The South Sea Company',
+            "The Hudson's Bay Company",
           ],
-          answer:
-            'They were highly durable under intense structural pressure for massive infrastructure.',
+          answer: 'The East India Company (EIC)',
+          a: 'The East India Company (EIC)',
+          explanation:
+            'Founded in 1600, the East India Company became a corporate empire with its own private army, extracting taxes and monopolizing trade across the Indian subcontinent.',
         },
         {
           question:
-            "How did the 1842 Chadwick Report challenge the traditional government policy of 'laissez-faire'?",
+            "What was the 'Two-Power Standard' adopted by Britain to guarantee global maritime supremacy?",
+          q: "What was the 'Two-Power Standard' adopted by Britain to guarantee global maritime supremacy?",
           options: [
-            'It proved that building more back-to-back housing would increase profits.',
-            'It argued that poor people should be responsible for their own healthcare.',
-            'It recommended that the government stop funding public hospitals.',
-            'It showed deaths from filth and overcrowding were higher than modern war casualties.',
+            'A policy requiring the Royal Navy to be as strong as the next two largest navies combined.',
+            'A rule requiring every warship to carry twice as many guns as foreign vessels.',
+            'A law requiring two admirals to command every fleet squadron.',
+            'A treaty dividing global naval bases equally between Britain and France.',
           ],
           answer:
-            'It showed deaths from filth and overcrowding were higher than modern war casualties.',
+            'A policy requiring the Royal Navy to be as strong as the next two largest navies combined.',
+          a: 'A policy requiring the Royal Navy to be as strong as the next two largest navies combined.',
+          explanation:
+            "Adopted formally in the Naval Defence Act of 1889, the Two-Power Standard ensured Britain's battle fleet could defeat any two rival navies acting in alliance.",
         },
         {
           question:
-            'What scientific breakthrough did Dr. John Snow achieve during the 1854 cholera outbreak?',
-          options: [
-            'He proved cholera was a waterborne disease by mapping local fatalities.',
-            'He proved the Miasma Theory by measuring bad smells in Soho.',
-            'He invented the first vaccine for cholera.',
-            'He built the first underground sewer system in London.',
-          ],
-          answer: 'He proved cholera was a waterborne disease by mapping local fatalities.',
+            "Launched in 1860, which Portsmouth-associated vessel was the Royal Navy's first revolutionary iron-hulled armoured warship?",
+          q: "Launched in 1860, which Portsmouth-associated vessel was the Royal Navy's first revolutionary iron-hulled armoured warship?",
+          options: ['HMS Warrior', 'HMS Victory', 'HMS Dreadnought', 'HMS Beagle'],
+          answer: 'HMS Warrior',
+          a: 'HMS Warrior',
+          explanation:
+            'HMS Warrior, completed in 1860, combined an iron hull with steam power and heavy rifled guns, rendering all existing wooden warships immediately obsolete.',
         },
         {
           question:
@@ -2380,26 +2386,6 @@ const industrialisation_and_empire = {
           options: ['Cow', 'Horse', 'Sheep', 'Pig'],
           answer: 'Pig',
         },
-        {
-          question: 'What was the East India Company?',
-          options: [
-            'Incorrect Option B',
-            'Incorrect Option A',
-            'A massive British trading corporation that essentially ruled India.',
-            'Incorrect Option C',
-          ],
-          answer: 'A massive British trading corporation that essentially ruled India.',
-        },
-        {
-          question: 'How did the EIC destroy the Indian textile industry?',
-          options: [
-            'Incorrect Option A',
-            'Incorrect Option C',
-            'Incorrect Option B',
-            "By flooding the 'captive market' with cheap British machine-made cloth.",
-          ],
-          answer: "By flooding the 'captive market' with cheap British machine-made cloth.",
-        },
       ],
       vocab: [
         {
@@ -2655,37 +2641,39 @@ const industrialisation_and_empire = {
       quiz: [
         {
           question:
-            'What private corporate entity controlled British commercial and military interests in India until 1858?',
+            "What repressive legislation, known as the 'Six Acts', did Parliament pass in response to the 1819 Peterloo Massacre?",
+          q: "What repressive legislation, known as the 'Six Acts', did Parliament pass in response to the 1819 Peterloo Massacre?",
           options: [
-            'The East India Company (EIC)',
-            'The Royal Navy',
-            'The Bank of England',
-            'The British Parliament',
-          ],
-          answer: 'The East India Company (EIC)',
-        },
-        {
-          question:
-            "What was the 'Two-Power Standard' followed by the British government in the 19th century?",
-          options: [
-            'A rule that Britain must always have exactly two allies in Europe.',
-            'A naval policy declaring the Royal Navy must be stronger than the next two largest fleets combined.',
-            'An economic rule that Britain must export twice as much as it imports.',
-            'A law stating that Parliament must have two equal political parties.',
+            'A law extending the right to vote to all urban factory workers.',
+            'A statute legalizing trade unions across northern manufacturing towns.',
+            'Laws banning unauthorized military drilling, taxing radical pamphlets, and prohibiting large meetings.',
+            'An act abolishing the traditional property tax for rural peasants.',
           ],
           answer:
-            'A naval policy declaring the Royal Navy must be stronger than the next two largest fleets combined.',
+            'Laws banning unauthorized military drilling, taxing radical pamphlets, and prohibiting large meetings.',
+          a: 'Laws banning unauthorized military drilling, taxing radical pamphlets, and prohibiting large meetings.',
+          explanation:
+            "Fearing a French-style revolution, Lord Liverpool's government enacted the Six Acts (1819) to suppress political dissent, criminalize mass assemblies, and censor radical newspapers.",
         },
         {
           question:
-            'How did the industrial workforce at Portsmouth Dockyard directly support British naval supremacy?',
-          options: [
-            'By protesting against the harsh factory conditions.',
-            "By manufacturing advanced, iron-hulled 'Ironclad' warships.",
-            'By building wooden sailing ships exclusively for merchants.',
-            'By recruiting sailors from the local agricultural farms.',
-          ],
-          answer: "By manufacturing advanced, iron-hulled 'Ironclad' warships.",
+            "Who was the radical orator whose speech on parliamentary reform at St Peter's Field in 1819 was interrupted by the Manchester Yeomanry charge?",
+          q: "Who was the radical orator whose speech on parliamentary reform at St Peter's Field in 1819 was interrupted by the Manchester Yeomanry charge?",
+          options: ['Robert Owen', "Henry 'Orator' Hunt", 'William Lovett', "Feargus O'Connor"],
+          answer: "Henry 'Orator' Hunt",
+          a: "Henry 'Orator' Hunt",
+          explanation:
+            "Henry Hunt was Britain's most famous radical speaker, known for his signature white top hat and fiery speeches demanding universal suffrage and the repeal of the Corn Laws.",
+        },
+        {
+          question:
+            "Which London cabinet-maker and radical activist drafted the six points of the 'People's Charter' in 1838?",
+          q: "Which London cabinet-maker and radical activist drafted the six points of the 'People's Charter' in 1838?",
+          options: ['Arthur Wellesley', 'Edwin Chadwick', 'William Lovett', 'George Loveless'],
+          answer: 'William Lovett',
+          a: 'William Lovett',
+          explanation:
+            "William Lovett co-founded the London Working Men's Association and authored the 1838 People's Charter, advocating moral force and peaceful constitutional petitions to secure working-class voting rights.",
         },
         {
           question: 'In the early 19th century, who completely controlled the British Parliament?',
@@ -3090,38 +3078,44 @@ const industrialisation_and_empire = {
       ],
       quiz: [
         {
-          question: 'What was the 1819 Peterloo Massacre?',
-          options: [
-            'A peaceful protest where agricultural workers burned threshing machines.',
-            'A violent riot in London where Chartists attacked Parliament.',
-            'A battle between the British and the French near Manchester.',
-            'An event where armed cavalry charged into 60,000 peaceful protesters demanding reform, killing 18.',
-          ],
-          answer:
-            'An event where armed cavalry charged into 60,000 peaceful protesters demanding reform, killing 18.',
+          question:
+            'Which Whig Prime Minister led the parliamentary battle to pass the landmark 1832 Great Reform Act?',
+          q: 'Which Whig Prime Minister led the parliamentary battle to pass the landmark 1832 Great Reform Act?',
+          options: ['Benjamin Disraeli', 'Robert Peel', 'Earl Grey', 'The Duke of Wellington'],
+          answer: 'Earl Grey',
+          a: 'Earl Grey',
+          explanation:
+            'Charles Grey, 2nd Earl Grey, recognized that the aristocracy had to reform parliament or face violent revolution, pushing the 1832 Reform Act through intense House of Lords opposition.',
         },
         {
           question:
-            "Which of the following was one of the core demands made by the Chartists in the 'People's Charter'?",
+            'Which major industrial cities, completely unrepresented before 1832, were finally granted parliamentary MPs under the Great Reform Act?',
+          q: 'Which major industrial cities, completely unrepresented before 1832, were finally granted parliamentary MPs under the Great Reform Act?',
           options: [
-            'Universal male suffrage and secret ballots.',
-            'The right for women to vote.',
-            'The abolition of the monarchy.',
-            'A guarantee of minimum wage for all factory workers.',
+            'Manchester, Birmingham, and Leeds',
+            'Oxford and Cambridge',
+            'Old Sarum and Dunwich',
+            'Portsmouth and Southampton',
           ],
-          answer: 'Universal male suffrage and secret ballots.',
+          answer: 'Manchester, Birmingham, and Leeds',
+          a: 'Manchester, Birmingham, and Leeds',
+          explanation:
+            "The 1832 Reform Act disenfranchised corrupt 'rotten boroughs' and transferred their parliamentary seats to rapidly growing industrial powerhouses like Manchester and Birmingham.",
         },
         {
           question:
-            "Why did agricultural laborers in Hampshire launch the violent 'Swing Riots' in 1830?",
+            'Which 1872 statute finally eliminated public bribery and landlord intimidation during elections by introducing private voting booths?',
+          q: 'Which 1872 statute finally eliminated public bribery and landlord intimidation during elections by introducing private voting booths?',
           options: [
-            'They were angry about the high cost of bread imported from France.',
-            'They wanted the right to vote in the next election.',
-            'They were protesting against the harsh conditions of the new workhouses.',
-            'They were facing starvation wages and winter unemployment caused by threshing machines.',
+            'The Public Health Act',
+            'The Great Reform Act',
+            'The Secret Ballot Act',
+            'The Representation of the People Act',
           ],
-          answer:
-            'They were facing starvation wages and winter unemployment caused by threshing machines.',
+          answer: 'The Secret Ballot Act',
+          a: 'The Secret Ballot Act',
+          explanation:
+            'The Ballot Act of 1872 ended the tradition of public voting on open hustings, enabling working men and tenants to vote without fear of being evicted by their landlords or fired by factory bosses.',
         },
         {
           question: 'Before 1832, who was allowed to vote in British elections?',
@@ -3515,27 +3509,6 @@ const industrialisation_and_empire = {
           answer: 'Henry Cort',
         },
         {
-          question: "How much did Henry Cort's puddling process increase iron production?",
-          options: ['100%', '50%', '1000%', '400%'],
-          answer: '400%',
-        },
-        {
-          question: "What famous London monument was built using 'Fareham Red' bricks?",
-          options: [
-            'The Royal Albert Hall',
-            'The Tower of London',
-            'Buckingham Palace',
-            "St. Paul's Cathedral",
-          ],
-          answer: 'The Royal Albert Hall',
-        },
-        {
-          question:
-            "What ship, built with advanced iron processes, helped enforce the global 'Two-Power Standard'?",
-          options: ['HMS Victory', 'HMS Warrior', 'HMS Beagle', 'HMS Dreadnought'],
-          answer: 'HMS Warrior',
-        },
-        {
           question:
             "Which historical perspective argues that Britain's wealth masked horrific human misery and exploitation?",
           options: [
@@ -3919,5 +3892,4 @@ const industrialisation_and_empire = {
     },
   ],
 };
-
-export default industrialisation_and_empire;
+export default unitData;
