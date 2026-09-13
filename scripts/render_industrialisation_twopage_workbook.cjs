@@ -468,8 +468,8 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
     }
     .page, .page-container {
       width: 100%;
-      height: 260mm;
-      max-height: 260mm;
+      height: 256mm;
+      max-height: 256mm;
       overflow: hidden;
       box-sizing: border-box;
       position: relative;
@@ -1242,14 +1242,14 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
             const lineH = parseFloat(linesContainer.getAttribute('data-line-height') || '6.8');
             const lineHPx = lineH * 3.7795;
             let safety = 0;
-            while (getGap() > (lineHPx + 4) && safety < 35) {
+            while (getGap() > (lineHPx + 28) && safety < 35) {
               const newLine = document.createElement('div');
               newLine.className = 'task-line';
               newLine.style.height = lineH + 'mm';
               linesContainer.appendChild(newLine);
               safety++;
             }
-            while (getGap() < 0 && linesContainer.children.length > 1) {
+            while (getGap() < 22 && linesContainer.children.length > 1) {
               linesContainer.removeChild(linesContainer.lastElementChild);
             }
             return;
@@ -1261,7 +1261,8 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
           if (col1 && col2) {
             const lineHPx = 5.6 * 3.7795;
             let safety = 0;
-            while (getGap() > (lineHPx + 4) && safety < 35) {
+            // Cap ledger at 7 dotted lines max (plenty for 2-3 sentences) with a 28px bottom buffer
+            while (getGap() > (lineHPx + 28) && col1.children.length < 7 && safety < 15) {
               const line1 = document.createElement('div');
               line1.className = 'task-line-dotted';
               line1.style.height = '5.6mm';
@@ -1273,7 +1274,7 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
               col2.appendChild(line2);
               safety++;
             }
-            while (getGap() < 0 && col1.children.length > 1 && col2.children.length > 1) {
+            while (getGap() < 22 && col1.children.length > 3 && col2.children.length > 3) {
               col1.removeChild(col1.lastElementChild);
               col2.removeChild(col2.lastElementChild);
             }
@@ -1284,11 +1285,11 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
           const drawBox = page.querySelector('.auto-fill-drawing-box');
           if (drawBox) {
             let gap = getGap();
-            if (gap > 16) {
+            if (gap > 32) {
               const currentH = drawBox.offsetHeight;
-              drawBox.style.height = (currentH + gap - 16) + 'px';
+              drawBox.style.height = (currentH + gap - 32) + 'px';
             }
-            while (getGap() < 6 && drawBox.offsetHeight > 150) {
+            while (getGap() < 22 && drawBox.offsetHeight > 150) {
               drawBox.style.height = (drawBox.offsetHeight - 5) + 'px';
             }
             return;
@@ -1320,16 +1321,16 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
             );
             const lineHPx = lineH * 3.7795; // ~28.7px
             let safety = 0;
-            // Append lines while there is comfortable room
-            while (getGap() > lineHPx + 6 && safety < 15) {
+            // Append lines while keeping a comfortable 30px buffer above teacher assessment
+            while (getGap() > lineHPx + 30 && safety < 15) {
               const newLine = document.createElement('div');
               newLine.className = 'task-line';
               newLine.style.height = lineH + 'mm';
               writingContainer.appendChild(newLine);
               safety++;
             }
-            // Guard: ensure no page ever overflows (gap must be >= 4px)
-            while (getGap() < 4 && writingContainer.children.length > 10) {
+            // Guard: ensure no page ever overflows (gap must be >= 24px)
+            while (getGap() < 24 && writingContainer.children.length > 8) {
               writingContainer.removeChild(writingContainer.lastElementChild);
             }
           }
