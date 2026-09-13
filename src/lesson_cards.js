@@ -776,13 +776,13 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 22px;">
               <div style="background: white; border: 1px solid #fde68a; border-radius: 10px; padding: 18px; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
                 <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 1.05rem; font-family: 'Playfair Display', serif;">
-                  <i class="fa-solid fa-users" style="color: #2563eb; margin-right: 6px;"></i> Family Attribution &amp; Lineage
+                  <i class="fa-solid fa-users" style="color: #2563eb; margin-right: 6px;"></i> Family Attribution &amp; Commemoration
                 </h4>
                 <p style="margin: 0 0 10px 0; color: #334155; font-size: 0.88rem; line-height: 1.5;">
-                  Researched and compiled by grandfather and family historian <strong>John Pearson</strong>. Shared with Mr Ben Lovett by mother <strong>Harriet Uwalaka</strong> (née Pearson) following the Ypres parent briefing. Medals presented to the York and Lancaster Regimental Museum at Clifton Park, Rotherham, by eldest son Ted Crummack.
+                  Researched and compiled by family historian <strong>John Pearson</strong>. Shared with Meoncross School by mother <strong>Harriet Uwalaka</strong> in living remembrance of Year 10 pupil <strong>Aby's</strong> great-great-grandfather, <strong>2nd Lt Ernest Crummack MC, DCM</strong>.
                 </p>
                 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px; font-size: 0.8rem; color: #475569; line-height: 1.6;">
-                  <strong>Lineage:</strong> 2nd Lt Ernest Crummack MC, DCM &amp; Elizabeth Hall &rarr; Mary Crummack &rarr; John Pearson &rarr; Harriet Uwalaka &rarr; <strong>Aby (Year 10, middle name Ernest)</strong>.
+                  <strong>Medals &amp; Custodianship:</strong> Original gallantry medal group preserved and on permanent display at the York and Lancaster Regimental Museum at Clifton Park, Rotherham.
                 </div>
               </div>
 
