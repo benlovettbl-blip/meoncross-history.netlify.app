@@ -369,7 +369,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
           <button class="btn trip-hub-tab-btn" data-action="switch-trip-hub-tab" data-tab="crummack" style="padding: 10px 22px; font-size: 0.95rem; border-radius: 8px; border: 1.5px solid #cbd5e1; background: #f8fafc; color: #475569; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s;">
             <i class="fa-solid fa-medal" style="font-size: 1rem; color: #d97706;"></i>
             <span>Pupil Family Hero: 2nd Lt Crummack MC</span>
-            <span class="tab-badge" style="font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; background: #fef3c7; color: #92400e; margin-left: 4px;">Year 10 (Aby)</span>
+            <span class="tab-badge" style="font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; background: #fef3c7; color: #92400e; margin-left: 4px;">Year 10 Family</span>
           </button>
         </div>
 
@@ -419,7 +419,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
               <h3 style="margin: 0; color: #78350f; font-size: 1.18rem; font-family: 'Playfair Display', serif;">2nd Lieutenant Ernest Edward Crummack MC, DCM</h3>
             </div>
             <p style="margin: 0; color: #451a03; font-size: 0.88rem; line-height: 1.4;">
-              Family archive of <strong>Aby (Year 10)</strong>, researched by grandfather <strong>John Pearson</strong> and shared by mother <strong>Harriet Uwalaka</strong>. Held the Boesinghe canal (Day 1 link); rescued Siegfried Sassoon's friend Marcus Goodall (Somme DCM); awarded MC breaching Hindenburg Line.
+              Family archive commemorating the great-great-grandfather of a Year 10 pupil, researched by family historian <strong>John Pearson</strong>. Held the Boesinghe canal (Day 1 link); rescued Siegfried Sassoon's friend Marcus Goodall (Somme DCM); awarded MC breaching Hindenburg Line.
             </p>
           </div>
           <div style="display: flex; gap: 8px; align-items: center;">
@@ -714,7 +714,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
                 Living Remembrance: 2nd Lieutenant Ernest Edward Crummack MC, DCM
               </h3>
               <p style="margin: 0; color: #451a03; font-size: 0.92rem; line-height: 1.5;">
-                Great-great-grandfather of <strong>Aby (Year 10)</strong>. Researched by grandfather <strong>John Pearson</strong> (Family Historian) and shared by mother <strong>Harriet Uwalaka</strong> (née Pearson) following the Ypres parent briefing. A South Yorkshire hero who rose through the ranks to win the DCM, the Russian Medal of St George, and the Military Cross.
+                Commemorating the great-great-grandfather of a Year 10 pupil. Researched by family historian <strong>John Pearson</strong> and shared with the school following the Ypres parent briefing. A South Yorkshire hero who rose through the ranks to win the DCM, the Russian Medal of St George, and the Military Cross.
               </p>
             </div>
             <button class="btn" data-action="view-lesson-detail" data-index="${crummackHero.index}" style="padding: 9px 18px; font-size: 0.85rem; font-weight: 700; background: #d97706; color: #ffffff; border: 1.5px solid #b45309; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(217, 119, 6, 0.25);">
@@ -738,7 +738,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
                 </p>
                 <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed #fde68a; padding-top: 10px; font-size: 0.8rem;">
                   <span style="color: #92400e; font-weight: 700;"><i class="fa-solid fa-award" style="color: #d97706; margin-right: 4px;"></i> MC, DCM, Russian Medal of St George</span>
-                  <span style="color: #1e3a8a; font-weight: 700;"><i class="fa-solid fa-graduation-cap" style="color: #2563eb; margin-right: 4px;"></i> Aby (Year 10) Family Archive</span>
+                  <span style="color: #1e3a8a; font-weight: 700;"><i class="fa-solid fa-graduation-cap" style="color: #2563eb; margin-right: 4px;"></i> Year 10 Family Archive</span>
                 </div>
               </div>
             </div>
@@ -779,7 +779,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
                   <i class="fa-solid fa-users" style="color: #2563eb; margin-right: 6px;"></i> Family Attribution &amp; Commemoration
                 </h4>
                 <p style="margin: 0 0 10px 0; color: #334155; font-size: 0.88rem; line-height: 1.5;">
-                  Researched and compiled by family historian <strong>John Pearson</strong>. Shared with Meoncross School by mother <strong>Harriet Uwalaka</strong> in living remembrance of Year 10 pupil <strong>Aby's</strong> great-great-grandfather, <strong>2nd Lt Ernest Crummack MC, DCM</strong>.
+                  Researched and compiled by family historian <strong>John Pearson</strong>. Shared with Meoncross School by a Year 10 family in living remembrance of their ancestor, <strong>2nd Lt Ernest Crummack MC, DCM</strong>.
                 </p>
                 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px; font-size: 0.8rem; color: #475569; line-height: 1.6;">
                   <strong>Medals &amp; Custodianship:</strong> Original gallantry medal group preserved and on permanent display at the York and Lancaster Regimental Museum at Clifton Park, Rotherham.

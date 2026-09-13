@@ -442,7 +442,7 @@ async function buildDocx() {
           // SECTION 1: EXECUTIVE SUMMARY & THE TRIPARTITE AUDIT FRAMEWORK
           h1('1. Executive Summary & The Tripartite Audit Framework'),
           p(
-            'This dossier provides an exhaustive technical and methodological record of the archival reconstruction of 2nd Lieutenant Ernest Edward Crummack MC, DCM (1885–1958). Conducted by the Meoncross School History Department ahead of the 2026 GCSE Ypres and Somme Battlefield Study Expedition, the project set out to investigate the direct Great War ancestry of Year 10 pupil Aby (whose middle name is Ernest in his great-great-grandfather’s honour).',
+            'This dossier provides an exhaustive technical and methodological record of the archival reconstruction of 2nd Lieutenant Ernest Edward Crummack MC, DCM (1885–1958). Conducted by the Meoncross School History Department ahead of the 2026 GCSE Ypres and Somme Battlefield Study Expedition, the project set out to investigate the direct Great War ancestry of a Year 10 pupil and family.',
           ),
           p(
             'The research combined two distinct investigative layers: decades of foundational human scholarship conducted by military historian John Pearson, and high-velocity digital mining executed via modern Artificial Intelligence (AI) and digitised state repositories.',
@@ -497,7 +497,7 @@ async function buildDocx() {
             '7. Wider Family War Effort:',
           ),
           bullet(
-            'Ernest married Elizabeth Hall in 1916 at Worksop. Their eldest child, Mary Crummack (John Pearson’s mother and Aby’s great-grandmother), carried the family’s direct DNA and lineage down to John Pearson, Harriet Uwalaka, and Aby.',
+            'Ernest married Elizabeth Hall in 1916 at Worksop. Their eldest child, Mary Crummack (John Pearson’s mother), carried the family’s direct DNA and lineage down to family historian John Pearson and the modern family.',
             '8. Second Marriage & Lineage:',
           ),
           bullet(
@@ -1126,7 +1126,7 @@ async function buildHtmlAndPdf() {
   </table>
 
   <h2 class="section-title">1. Executive Summary &amp; The Tripartite Audit Framework</h2>
-  <p>This dossier provides an exhaustive technical and methodological record of the archival reconstruction of <strong>2nd Lieutenant Ernest Edward Crummack MC, DCM (1885–1958)</strong>. Conducted by the Meoncross School History Department ahead of the 2026 GCSE Ypres and Somme Battlefield Study Expedition, the project investigated the direct Great War ancestry of Year 10 pupil Aby (whose middle name is Ernest in his great-great-grandfather’s honour).</p>
+  <p>This dossier provides an exhaustive technical and methodological record of the archival reconstruction of <strong>2nd Lieutenant Ernest Edward Crummack MC, DCM (1885–1958)</strong>. Conducted by the Meoncross School History Department ahead of the 2026 GCSE Ypres and Somme Battlefield Study Expedition, the project investigated the direct Great War ancestry of a Year 10 pupil and family.</p>
   <p>The research combined two distinct investigative layers: decades of foundational human scholarship conducted by military historian <strong>John Pearson</strong>, and high-velocity digital mining executed via modern Artificial Intelligence (AI) and digitised state repositories.</p>
   <p>To evaluate the utility and perils of AI in historical inquiry with complete methodological honesty, this report structures its findings around the tripartite framework of <strong>The Good, The Bad, and The Ugly</strong>:</p>
   <ul>
@@ -1145,7 +1145,7 @@ async function buildHtmlAndPdf() {
     <li><strong>5. The Clerical Typo Clue:</strong> War Office clerks misprinted his surname as "Crummock" with an ‘o’ in the London Gazette, causing search engines to miss his entry for decades.</li>
     <li><strong>6. The Goodall &amp; Sassoon Nexus:</strong> The rescued officer was 2nd Lt Marcus Goodall, son of the Canon of Rotherham and intimate friend of famed war poet Siegfried Sassoon. Canon Goodall visited Ernest after the war to express gratitude.</li>
     <li><strong>7. Wider Family War Effort:</strong> Elder brother Frank Crummack served in the 1/5th York &amp; Lancasters and was invalided out following the Boesinghe gas attack; sisters worked in munitions factories, notably Jessica Alma Crummack, Captain and Goalkeeper of a wartime women’s football team.</li>
-    <li><strong>8. Second Marriage &amp; Lineage:</strong> Ernest married Elizabeth Hall in 1916 at Worksop. Their eldest daughter, Mary Crummack (John Pearson’s mother and Aby’s great-grandmother), carried the family’s direct DNA and lineage down to John Pearson, Harriet Uwalaka, and Aby.</li>
+    <li><strong>8. Second Marriage &amp; Lineage:</strong> Ernest married Elizabeth Hall in 1916 at Worksop. Their eldest daughter, Mary Crummack (John Pearson’s mother), carried the family’s direct DNA and lineage down to family historian John Pearson and the modern family.</li>
     <li><strong>9. Officer Commissioning &amp; 1918 MC:</strong> Commissioned on 30 January 1918 into the 1/4th (Territorial) Bn, but attached in operational service to the 6th (Service) Battalion, winning the Military Cross at the Canal du Nord in September 1918.</li>
     <li><strong>10. Interwar Legacy, Passing &amp; Regimental Museum:</strong> Surviving interwar postcards confirm Ernest visited the Menin Gate, stayed at the Hôtel Ypriana in Ypres, and visited Albert on the Somme, before passing away peacefully in Dinnington in 1958 at age 73. His complete mounted six-medal group was presented many decades ago by his eldest son Ted Crummack to the York and Lancaster Regimental Museum at Clifton Park, Rotherham, where it remains on public display.</li>
   </ul>

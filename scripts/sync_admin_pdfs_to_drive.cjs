@@ -220,12 +220,6 @@ const PDF_MAPPINGS = [
     dest: 'The Great War (Part 2 - 1917-1918) Complete Mastery Pack.pdf',
     category: 'Year 8',
   },
-  {
-    folder: path.join('Year 8', 'The Great War'),
-    src: 'crummack_sassoon_field_sheet.pdf',
-    dest: 'Crummack & Sassoon Primary Field Sheet.pdf',
-    category: 'Year 8',
-  },
 
   // Year 9
   {
