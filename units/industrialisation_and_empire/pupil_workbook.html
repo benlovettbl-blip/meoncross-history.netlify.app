@@ -88,40 +88,93 @@
       class="page page-container"
       id="page-1"
       style="
-        padding: 16px 18px;
+        padding: 14px 16px;
         border: 1px solid #cbd5e1;
         outline: 3.5px double #0f172a;
         outline-offset: -8px;
       "
     >
-      <!-- Top Block -->
+      <!-- Top Content Block -->
       <div>
-        <!-- Institutional Header -->
-        <div style="text-align: center; margin-top: 3px; margin-bottom: 7px">
+        <!-- Institutional Header & Pupil Registration Strip -->
+        <div style="border-bottom: 1.5px solid #0f172a; padding-bottom: 7px; margin-bottom: 8px">
           <div
             style="
-              font-family: 'Inter', sans-serif;
-              font-size: 8.5pt;
-              text-transform: uppercase;
-              letter-spacing: 2.5px;
-              color: #64748b;
-              font-weight: 600;
+              display: flex;
+              justify-content: space-between;
+              align-items: baseline;
+              margin-bottom: 6px;
             "
           >
-            Meoncross School &bull; Department of History
+            <span
+              style="
+                font-family: 'Inter', sans-serif;
+                font-size: 8.5pt;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                color: #1e3a8a;
+                font-weight: 700;
+              "
+            >
+              Meoncross School &bull; Department of History
+            </span>
+            <span
+              style="
+                font-family: 'Inter', sans-serif;
+                font-size: 8pt;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+                color: #64748b;
+                font-weight: 600;
+              "
+            >
+              Year 8 History
+            </span>
           </div>
+
+          <!-- Pupil Name & Class Box at Top -->
           <div
             style="
-              font-family: 'Inter', sans-serif;
-              font-size: 7.5pt;
-              text-transform: uppercase;
-              letter-spacing: 1.8px;
-              color: #1e3a8a;
-              font-weight: 700;
-              margin-top: 2px;
+              border: 1.2px solid #cbd5e1;
+              border-radius: 4px;
+              padding: 6px 12px;
+              background: #f8fafc;
+              display: grid;
+              grid-template-columns: 2.2fr 1fr;
+              gap: 18px;
+              align-items: center;
             "
           >
-            Key Stage 3 Historical Enquiry Series &bull; Year 8
+            <div style="display: flex; align-items: baseline">
+              <strong
+                style="
+                  font-family: 'Inter', sans-serif;
+                  font-size: 8.8pt;
+                  color: #0f172a;
+                  text-transform: uppercase;
+                  letter-spacing: 0.5px;
+                  white-space: nowrap;
+                  margin-right: 8px;
+                "
+                >Pupil Name:</strong
+              >
+              <div style="flex: 1; border-bottom: 1.5px solid #334155; height: 14px"></div>
+            </div>
+            <div style="display: flex; align-items: baseline">
+              <strong
+                style="
+                  font-family: 'Inter', sans-serif;
+                  font-size: 8.8pt;
+                  color: #0f172a;
+                  text-transform: uppercase;
+                  letter-spacing: 0.5px;
+                  white-space: nowrap;
+                  margin-right: 8px;
+                "
+                >Class:</strong
+              >
+              <div style="flex: 1; border-bottom: 1.5px solid #334155; height: 14px"></div>
+            </div>
           </div>
         </div>
 
@@ -129,18 +182,17 @@
         <div
           style="
             text-align: center;
-            border-top: 2px solid #0f172a;
             border-bottom: 1px solid #cbd5e1;
-            padding: 10px 0 9px 0;
-            margin-bottom: 10px;
+            padding: 4px 0 8px 0;
+            margin-bottom: 8px;
           "
         >
           <h1
             style="
               font-family: 'Playfair Display', serif;
-              font-size: 24pt;
+              font-size: 23pt;
               color: #0f172a;
-              margin: 0 0 4px 0;
+              margin: 0 0 3px 0;
               text-transform: uppercase;
               letter-spacing: 1.5px;
               line-height: 1.15;
@@ -151,7 +203,7 @@
           <div
             style="
               font-family: 'Inter', sans-serif;
-              font-size: 9.5pt;
+              font-size: 9.2pt;
               color: #334155;
               font-weight: 500;
               letter-spacing: 0.5px;
@@ -161,50 +213,42 @@
           </div>
         </div>
 
-        <!-- Overarching Enquiry Callout Box -->
+        <!-- Overarching Enquiry Callout Box (Enlarged, Centered, No Badge) -->
         <div
           style="
-            border: 1.2px solid #cbd5e1;
-            border-left: 4.5px solid #1e3a8a;
-            border-radius: 4px;
-            padding: 8px 14px;
+            border: 1.5px solid #1e3a8a;
+            border-radius: 5px;
+            padding: 9px 16px;
             background: #f8fafc;
-            margin-bottom: 11px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            margin-bottom: 9px;
+            text-align: center;
           "
         >
-          <div>
-            <div
-              style="
-                font-family: 'Inter', sans-serif;
-                font-size: 7.5pt;
-                text-transform: uppercase;
-                letter-spacing: 1.2px;
-                color: #1e3a8a;
-                font-weight: 700;
-                margin-bottom: 2px;
-              "
-            >
-              Overarching Historical Enquiry
-            </div>
-            <div
-              style="
-                font-family: 'Playfair Display', serif;
-                font-size: 12pt;
-                color: #0f172a;
-                font-style: italic;
-                font-weight: 600;
-                line-height: 1.25;
-              "
-            >
-              “How did 19th-century Britain transform at home and abroad?”
-            </div>
-          </div>
-          <span class="archival-badge" style="flex-shrink: 0; margin-left: 14px"
-            >8 Core Enquiries</span
+          <div
+            style="
+              font-family: 'Inter', sans-serif;
+              font-size: 7.8pt;
+              text-transform: uppercase;
+              letter-spacing: 1.8px;
+              color: #1e3a8a;
+              font-weight: 700;
+              margin-bottom: 3px;
+            "
           >
+            Overarching Historical Enquiry
+          </div>
+          <div
+            style="
+              font-family: 'Playfair Display', serif;
+              font-size: 13.5pt;
+              color: #0f172a;
+              font-style: italic;
+              font-weight: 600;
+              line-height: 1.25;
+            "
+          >
+            “How did 19th-century Britain transform at home and abroad?”
+          </div>
         </div>
 
         <!-- Hero Primary Source Presentation (Maximized) -->
@@ -215,13 +259,13 @@
             padding: 7px;
             background: #ffffff;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-            margin-bottom: 9px;
+            margin-bottom: 8px;
           "
         >
           <div
             style="
               width: 100%;
-              height: 350px;
+              height: 355px;
               border-radius: 4px;
               overflow: hidden;
               border: 1px solid #e2e8f0;
@@ -245,10 +289,10 @@
               display: flex;
               justify-content: space-between;
               align-items: center;
-              margin-top: 6px;
+              margin-top: 5px;
               padding: 0 4px;
               font-family: 'Inter', sans-serif;
-              font-size: 7.6pt;
+              font-size: 7.5pt;
               color: #64748b;
             "
           >
@@ -268,9 +312,9 @@
           style="
             border: 1.2px solid #e2e8f0;
             border-radius: 5px;
-            padding: 9px 13px;
+            padding: 8px 12px;
             background: #fafaf9;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
           "
         >
           <div
@@ -312,7 +356,7 @@
             border-radius: 5px;
             padding: 7px 10px;
             background: #f8fafc;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
           "
         >
           <div
@@ -323,18 +367,18 @@
               letter-spacing: 1px;
               color: #1e3a8a;
               font-weight: 700;
-              margin-bottom: 5px;
+              margin-bottom: 4px;
             "
           >
             The 8 Disciplinary Enquiries:
           </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px">
             <div
               style="
                 font-family: 'Inter', sans-serif;
-                font-size: 7.6pt;
+                font-size: 7.5pt;
                 color: #334155;
-                padding: 3px 6px;
+                padding: 2.5px 6px;
                 background: #ffffff;
                 border: 1px solid #e2e8f0;
                 border-radius: 3px;
@@ -348,9 +392,9 @@
             <div
               style="
                 font-family: 'Inter', sans-serif;
-                font-size: 7.6pt;
+                font-size: 7.5pt;
                 color: #334155;
-                padding: 3px 6px;
+                padding: 2.5px 6px;
                 background: #ffffff;
                 border: 1px solid #e2e8f0;
                 border-radius: 3px;
@@ -364,9 +408,9 @@
             <div
               style="
                 font-family: 'Inter', sans-serif;
-                font-size: 7.6pt;
+                font-size: 7.5pt;
                 color: #334155;
-                padding: 3px 6px;
+                padding: 2.5px 6px;
                 background: #ffffff;
                 border: 1px solid #e2e8f0;
                 border-radius: 3px;
@@ -380,9 +424,9 @@
             <div
               style="
                 font-family: 'Inter', sans-serif;
-                font-size: 7.6pt;
+                font-size: 7.5pt;
                 color: #334155;
-                padding: 3px 6px;
+                padding: 2.5px 6px;
                 background: #ffffff;
                 border: 1px solid #e2e8f0;
                 border-radius: 3px;
@@ -396,9 +440,9 @@
             <div
               style="
                 font-family: 'Inter', sans-serif;
-                font-size: 7.6pt;
+                font-size: 7.5pt;
                 color: #334155;
-                padding: 3px 6px;
+                padding: 2.5px 6px;
                 background: #ffffff;
                 border: 1px solid #e2e8f0;
                 border-radius: 3px;
@@ -412,9 +456,9 @@
             <div
               style="
                 font-family: 'Inter', sans-serif;
-                font-size: 7.6pt;
+                font-size: 7.5pt;
                 color: #334155;
-                padding: 3px 6px;
+                padding: 2.5px 6px;
                 background: #ffffff;
                 border: 1px solid #e2e8f0;
                 border-radius: 3px;
@@ -428,9 +472,9 @@
             <div
               style="
                 font-family: 'Inter', sans-serif;
-                font-size: 7.6pt;
+                font-size: 7.5pt;
                 color: #334155;
-                padding: 3px 6px;
+                padding: 2.5px 6px;
                 background: #ffffff;
                 border: 1px solid #e2e8f0;
                 border-radius: 3px;
@@ -444,9 +488,9 @@
             <div
               style="
                 font-family: 'Inter', sans-serif;
-                font-size: 7.6pt;
+                font-size: 7.5pt;
                 color: #334155;
-                padding: 3px 6px;
+                padding: 2.5px 6px;
                 background: #ffffff;
                 border: 1px solid #e2e8f0;
                 border-radius: 3px;
@@ -461,62 +505,17 @@
         </div>
       </div>
 
-      <!-- Bottom Block: Pupil Identity Box & Colophon -->
+      <!-- Bottom Block: Colophon Only (Nothing Cut Off!) -->
       <div>
-        <div
-          style="
-            border: 1.5px solid #0f172a;
-            border-radius: 5px;
-            padding: 9px 16px;
-            background: #ffffff;
-            margin-bottom: 6px;
-          "
-        >
-          <div
-            style="display: grid; grid-template-columns: 2.2fr 1fr; gap: 24px; align-items: center"
-          >
-            <div style="display: flex; align-items: baseline">
-              <strong
-                style="
-                  font-family: 'Inter', sans-serif;
-                  font-size: 9pt;
-                  color: #0f172a;
-                  text-transform: uppercase;
-                  letter-spacing: 0.5px;
-                  white-space: nowrap;
-                  margin-right: 10px;
-                "
-                >Pupil Name:</strong
-              >
-              <div style="flex: 1; border-bottom: 1.5px solid #334155; height: 16px"></div>
-            </div>
-            <div style="display: flex; align-items: baseline">
-              <strong
-                style="
-                  font-family: 'Inter', sans-serif;
-                  font-size: 9pt;
-                  color: #0f172a;
-                  text-transform: uppercase;
-                  letter-spacing: 0.5px;
-                  white-space: nowrap;
-                  margin-right: 10px;
-                "
-                >Class:</strong
-              >
-              <div style="flex: 1; border-bottom: 1.5px solid #334155; height: 16px"></div>
-            </div>
-          </div>
-        </div>
-
         <div
           style="
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-top: 1px solid #cbd5e1;
-            padding-top: 4px;
+            padding-top: 5px;
             font-family: 'Inter', sans-serif;
-            font-size: 7.5pt;
+            font-size: 7.6pt;
             color: #94a3b8;
           "
         >
@@ -1871,10 +1870,12 @@
           >
         </div>
 
-        <!-- Ruled Writing Lines (22 Clean Full-Width Lines, 7.6mm Line Height) -->
-        <div style="width: 100%; margin-bottom: 6px">
-          <div class="task-line" style="height: 7.6mm"></div>
-          <div class="task-line" style="height: 7.6mm"></div>
+        <!-- Ruled Writing Lines (Dynamic Auto-Fill, 7.6mm Line Height) -->
+        <div
+          class="auto-fill-writing-lines"
+          data-line-height="7.6"
+          style="width: 100%; margin-bottom: 6px"
+        >
           <div class="task-line" style="height: 7.6mm"></div>
           <div class="task-line" style="height: 7.6mm"></div>
           <div class="task-line" style="height: 7.6mm"></div>
@@ -2654,10 +2655,12 @@
           >
         </div>
 
-        <!-- Ruled Writing Lines (22 Clean Full-Width Lines, 7.6mm Line Height) -->
-        <div style="width: 100%; margin-bottom: 6px">
-          <div class="task-line" style="height: 7.6mm"></div>
-          <div class="task-line" style="height: 7.6mm"></div>
+        <!-- Ruled Writing Lines (Dynamic Auto-Fill, 7.6mm Line Height) -->
+        <div
+          class="auto-fill-writing-lines"
+          data-line-height="7.6"
+          style="width: 100%; margin-bottom: 6px"
+        >
           <div class="task-line" style="height: 7.6mm"></div>
           <div class="task-line" style="height: 7.6mm"></div>
           <div class="task-line" style="height: 7.6mm"></div>
@@ -3382,10 +3385,12 @@
           >
         </div>
 
-        <!-- Ruled Writing Lines (22 Clean Full-Width Lines, 7.6mm Line Height) -->
-        <div style="width: 100%; margin-bottom: 6px">
-          <div class="task-line" style="height: 7.6mm"></div>
-          <div class="task-line" style="height: 7.6mm"></div>
+        <!-- Ruled Writing Lines (Dynamic Auto-Fill, 7.6mm Line Height) -->
+        <div
+          class="auto-fill-writing-lines"
+          data-line-height="7.6"
+          style="width: 100%; margin-bottom: 6px"
+        >
           <div class="task-line" style="height: 7.6mm"></div>
           <div class="task-line" style="height: 7.6mm"></div>
           <div class="task-line" style="height: 7.6mm"></div>
@@ -4166,10 +4171,12 @@
           >
         </div>
 
-        <!-- Ruled Writing Lines (22 Clean Full-Width Lines, 7.6mm Line Height) -->
-        <div style="width: 100%; margin-bottom: 6px">
-          <div class="task-line" style="height: 7.6mm"></div>
-          <div class="task-line" style="height: 7.6mm"></div>
+        <!-- Ruled Writing Lines (Dynamic Auto-Fill, 7.6mm Line Height) -->
+        <div
+          class="auto-fill-writing-lines"
+          data-line-height="7.6"
+          style="width: 100%; margin-bottom: 6px"
+        >
           <div class="task-line" style="height: 7.6mm"></div>
           <div class="task-line" style="height: 7.6mm"></div>
           <div class="task-line" style="height: 7.6mm"></div>
@@ -4863,10 +4870,12 @@
           >
         </div>
 
-        <!-- Ruled Writing Lines (22 Clean Full-Width Lines, 7.6mm Line Height) -->
-        <div style="width: 100%; margin-bottom: 6px">
-          <div class="task-line" style="height: 7.6mm"></div>
-          <div class="task-line" style="height: 7.6mm"></div>
+        <!-- Ruled Writing Lines (Dynamic Auto-Fill, 7.6mm Line Height) -->
+        <div
+          class="auto-fill-writing-lines"
+          data-line-height="7.6"
+          style="width: 100%; margin-bottom: 6px"
+        >
           <div class="task-line" style="height: 7.6mm"></div>
           <div class="task-line" style="height: 7.6mm"></div>
           <div class="task-line" style="height: 7.6mm"></div>
@@ -5677,10 +5686,12 @@
           >
         </div>
 
-        <!-- Ruled Writing Lines (22 Clean Full-Width Lines, 7.6mm Line Height) -->
-        <div style="width: 100%; margin-bottom: 6px">
-          <div class="task-line" style="height: 7.6mm"></div>
-          <div class="task-line" style="height: 7.6mm"></div>
+        <!-- Ruled Writing Lines (Dynamic Auto-Fill, 7.6mm Line Height) -->
+        <div
+          class="auto-fill-writing-lines"
+          data-line-height="7.6"
+          style="width: 100%; margin-bottom: 6px"
+        >
           <div class="task-line" style="height: 7.6mm"></div>
           <div class="task-line" style="height: 7.6mm"></div>
           <div class="task-line" style="height: 7.6mm"></div>
@@ -6463,10 +6474,12 @@
           >
         </div>
 
-        <!-- Ruled Writing Lines (22 Clean Full-Width Lines, 7.6mm Line Height) -->
-        <div style="width: 100%; margin-bottom: 6px">
-          <div class="task-line" style="height: 7.6mm"></div>
-          <div class="task-line" style="height: 7.6mm"></div>
+        <!-- Ruled Writing Lines (Dynamic Auto-Fill, 7.6mm Line Height) -->
+        <div
+          class="auto-fill-writing-lines"
+          data-line-height="7.6"
+          style="width: 100%; margin-bottom: 6px"
+        >
           <div class="task-line" style="height: 7.6mm"></div>
           <div class="task-line" style="height: 7.6mm"></div>
           <div class="task-line" style="height: 7.6mm"></div>
@@ -7247,10 +7260,12 @@
           >
         </div>
 
-        <!-- Ruled Writing Lines (22 Clean Full-Width Lines, 7.6mm Line Height) -->
-        <div style="width: 100%; margin-bottom: 6px">
-          <div class="task-line" style="height: 7.6mm"></div>
-          <div class="task-line" style="height: 7.6mm"></div>
+        <!-- Ruled Writing Lines (Dynamic Auto-Fill, 7.6mm Line Height) -->
+        <div
+          class="auto-fill-writing-lines"
+          data-line-height="7.6"
+          style="width: 100%; margin-bottom: 6px"
+        >
           <div class="task-line" style="height: 7.6mm"></div>
           <div class="task-line" style="height: 7.6mm"></div>
           <div class="task-line" style="height: 7.6mm"></div>
@@ -7582,6 +7597,39 @@
                 drawBox.style.height = drawBox.offsetHeight - 5 + 'px';
               }
               return;
+            }
+          });
+
+          // Right-Hand Writing Spreads Auto-Fill
+          const rightPages = [5, 7, 9, 11, 13, 15, 17, 19];
+          rightPages.forEach(function (pageNum) {
+            const page = document.getElementById('page-' + pageNum);
+            if (!page) return;
+            const topDiv = page.firstElementChild;
+            const footerDiv = page.lastElementChild;
+            if (!topDiv || !footerDiv) return;
+
+            function getGap() {
+              return page.clientHeight - (topDiv.offsetHeight + footerDiv.offsetHeight);
+            }
+
+            const writingContainer = page.querySelector('.auto-fill-writing-lines');
+            if (writingContainer) {
+              const lineH = parseFloat(writingContainer.getAttribute('data-line-height') || '7.6');
+              const lineHPx = lineH * 3.7795; // ~28.7px
+              let safety = 0;
+              // Append lines while there is comfortable room
+              while (getGap() > lineHPx + 6 && safety < 15) {
+                const newLine = document.createElement('div');
+                newLine.className = 'task-line';
+                newLine.style.height = lineH + 'mm';
+                writingContainer.appendChild(newLine);
+                safety++;
+              }
+              // Guard: ensure no page ever overflows (gap must be >= 4px)
+              while (getGap() < 4 && writingContainer.children.length > 10) {
+                writingContainer.removeChild(writingContainer.lastElementChild);
+              }
             }
           });
         }
