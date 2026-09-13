@@ -497,8 +497,8 @@ function getHtmlContent() {
             </tr>
             <tr>
               <td style="padding: 2.2px 7px;"><strong>Day 3 · 10:30</strong></td>
-              <td style="padding: 2.2px 7px;"><strong>Stop 11:</strong> De Groote’s Chocolatier (Grote Markt)</td>
-              <td style="padding: 2.2px 7px;">Supervised confectionery visit; €30–€40 cash envelopes; discuss Ypres stone-by-stone rebirth.</td>
+              <td style="padding: 2.2px 7px;"><strong>Stop 11:</strong> Ypres Cloth Hall &amp; Grote Markt</td>
+              <td style="padding: 2.2px 7px;">Reconstructed Cloth Hall architecture; town square civic rebirth; brief stop for chocolate gifts.</td>
             </tr>
             <tr>
               <td style="padding: 2.2px 7px;"><strong>Day 3 · 11:20</strong></td>
@@ -1437,7 +1437,7 @@ Rise and deride this sepulchre of crime.
       <div class="header-bar">
         <div>
           <div class="school-title">Day 3 Field Study · Rebirth &amp; Fellowship Behind Lines</div>
-          <div class="school-sub">Stops 10, 11, 12 &amp; 13 · Ypres Cloth Hall, De Groote's, Talbot House &amp; Death Cells</div>
+          <div class="school-sub">Stops 10, 11, 12 &amp; 13 · Ypres Cloth Hall, Town Square, Talbot House &amp; Death Cells</div>
         </div>
         <div class="partner-pill">
           <div class="brand">Rebirth</div>
@@ -1459,7 +1459,7 @@ Rise and deride this sepulchre of crime.
           <div style="font-size: 8pt; color: #334155; line-height: 1.42;">
             <strong>Total Destruction:</strong> By 1918, Ypres was rubble; Winston Churchill wanted the ruins left untouched as a British national monument. Instead, Belgian citizens rebuilt stone-for-stone.<br>
             <strong>The Lakenhalle:</strong> Built in 1304; meticulously reconstructed over 40 years.<br>
-            <strong>De Groote's Chocolatier:</strong> Supervised visit for pupils to experience modern Flemish civic life and chocolate heritage (€30–€40 cash envelopes).
+            <strong>Cloth Hall &amp; Town Square:</strong> Supervised stop for pupils to see the reconstructed Cloth Hall and purchase Belgian chocolate gifts.
           </div>
         </div>
       </div>

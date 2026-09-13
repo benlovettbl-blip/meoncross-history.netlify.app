@@ -137,7 +137,7 @@ export const BATTLEFIELD_DAYS = [
     label: 'Day 3 (Sat)',
     title: 'Day 3: Ramparts, Talbot House & The Journey Home',
     subtitle:
-      'Ramparts Walk · Chocolate Shop · Talbot House · Poperinge Death Cells · Journey Home',
+      'Ramparts Walk · Cloth Hall & Square · Talbot House · Poperinge Death Cells · Journey Home',
     stops: [
       {
         id: 'ramparts',
@@ -149,13 +149,13 @@ export const BATTLEFIELD_DAYS = [
         highlight: 'Siegfried Sassoon "On Passing the New Menin Gate" & moat cemetery',
       },
       {
-        id: 'de_grootes_chocolate',
-        headingId: 'de-groote-s-chocolatier-flemish-craft',
-        title: 'De Groote’s Chocolatier',
-        shortTitle: 'Belgian Chocolates',
+        id: 'cloth_hall',
+        headingId: 'ypres-cloth-hall-reconstructed-grote-markt',
+        title: 'Cloth Hall & Grote Markt',
+        shortTitle: 'Cloth Hall',
         time: '10:30 AM',
-        icon: 'fa-cookie-bite',
-        highlight: 'Artisanal Belgian chocolate gifts on Grote Markt & €30–€40 cash handling',
+        icon: 'fa-landmark',
+        highlight: 'Post-war reconstruction brick-by-brick & short stop on town square',
       },
       {
         id: 'talbot_house',

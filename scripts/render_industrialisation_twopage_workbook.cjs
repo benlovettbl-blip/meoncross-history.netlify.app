@@ -6,7 +6,7 @@ function formatText(txt) {
   return txt;
 }
 
-// Bespoke Bridge Tasks and Writing Genres for each lesson
+// Bespoke Bridge Tasks, Disciplinary Vocabulary Tasks, and Writing Genres for each lesson
 const lessonConfigs = [
   {
     // Lesson 1: Henry Cort & Energy
@@ -30,26 +30,22 @@ const lessonConfigs = [
     ],
     connectives:
       'The immediate breakthrough was... • Furthermore, the enduring structural legacy... • Crucially, this transformed... • In terms of scale... • Ultimately, its significance lies in...',
+    vocabTask: {
+      type: 'distinction',
+      termA: 'Pig Iron',
+      termB: 'Wrought Iron',
+      prompt:
+        'Distinguish between brittle <strong>pig iron</strong> (high carbon content) and tough naval <strong>wrought iron</strong> (refined by Cort at Funtley):',
+    },
     bridgeTask: {
       type: 'draw_label',
       badge: 'Technical Blueprint & Archival Anatomy',
       title:
         'Task 4: Draw & Label Henry Cort’s Reverberatory Puddling Furnace & Grooved Rollers (1784)',
       instruction:
-        'Sketch Cort’s puddling process and grooved rolling mill in the canvas below. Use the faint ghost diagram as your visual anchor. You must label and annotate the 4 mandatory features.',
-      ghostDiagram: `
-        <div style="position: absolute; top: 12px; left: 20px; display: flex; align-items: center; gap: 10px; opacity: 0.35; pointer-events: none;">
-          <div style="border: 1.2px dashed #64748b; padding: 4px 8px; border-radius: 4px; font-size: 7.5pt; text-align: center; background: #fff;">[1] Coal Hearth<br><span style="font-size: 6.5pt; color: #475569;">(Separated Fuel)</span></div>
-          <div style="font-size: 10pt; color: #64748b;">➔</div>
-          <div style="border: 1.2px dashed #64748b; padding: 4px 8px; border-radius: 4px; font-size: 7.5pt; text-align: center; background: #fff;">[2] Arched Roof<br><span style="font-size: 6.5pt; color: #475569;">(Bounces Heat)</span></div>
-          <div style="font-size: 10pt; color: #64748b;">➔</div>
-          <div style="border: 1.2px dashed #64748b; padding: 4px 8px; border-radius: 4px; font-size: 7.5pt; text-align: center; background: #fff;">[3] Puddling Basin<br><span style="font-size: 6.5pt; color: #475569;">(Stirring Molten Iron)</span></div>
-          <div style="font-size: 10pt; color: #64748b;">➔</div>
-          <div style="border: 1.2px dashed #64748b; padding: 4px 8px; border-radius: 4px; font-size: 7.5pt; text-align: center; background: #fff;">[4] Grooved Rollers<br><span style="font-size: 6.5pt; color: #475569;">(Squeezes Out Slag)</span></div>
-        </div>
-      `,
+        'Sketch Cort’s reverberatory puddling furnace and grooved rolling mill in the blueprint canvas below. Label and annotate all 4 mandatory metallurgical features.',
       checklist:
-        '<strong>Required Annotations:</strong> ① <em>Firebox</em> (separating raw coal from metal) &bull; ② <em>Arched masonry roof</em> (reflecting heat down) &bull; ③ <em>Puddling bar</em> (worker stirring out carbon) &bull; ④ <em>Grooved rollers</em> (compressing out slag)',
+        '<strong>Required Blueprint Annotations:</strong> ① <em>Firebox</em> (separating raw coal from metal) &bull; ② <em>Arched masonry roof</em> (reflecting heat down) &bull; ③ <em>Puddling bar</em> (worker stirring out carbon) &bull; ④ <em>Grooved rollers</em> (compressing out slag)',
       clue: '<em>Low-Floor Clue:</em> Notice how the coal fuel never touches the iron directly—only the reverberating heat melts the metal, keeping it free of brittle sulphur.',
       scholarsEdge:
         '<strong>★ Scholar’s Edge:</strong> Why did Britain’s ability to mass-produce coal-fired wrought iron give it an insurmountable naval advantage over timber-dependent France?',
@@ -77,6 +73,13 @@ const lessonConfigs = [
     ],
     connectives:
       'A profound shift occurred in... • Yet beneath the surface... • In direct contrast to the domestic system... • Continuity persisted in... • Consequently, while material output soared...',
+    vocabTask: {
+      type: 'mapping',
+      termA: 'Pug Mill',
+      termB: 'Fareham Reds',
+      prompt:
+        'Write one historically accurate sentence connecting the mechanised <strong>pug mill</strong> to the mass production of durable <strong>Fareham Red bricks</strong>:',
+    },
     bridgeTask: {
       type: 'ledger',
       badge: 'Analytical Conflict Ledger',
@@ -85,15 +88,17 @@ const lessonConfigs = [
         'Complete the two-column forensic ledger below, directly contrasting the factory owner’s argument for progress against the worker’s lived reality.',
       col1Title: 'The Optimist Case (Industrial Progress)',
       col1Prompts: [
-        'Higher nominal cash wages compared to farm labour.',
-        'Production of cheap, machine-made cotton & iron goods.',
-        'Breakthroughs in steam-powered labour productivity.',
+        'Higher nominal cash wages compared to agricultural labour.',
+        'Production of cheap, machine-made cotton & iron consumer goods.',
+        'Technological breakthroughs in steam-powered labour productivity.',
+        'Elimination of devastating seasonal famines and rural isolation.',
       ],
       col2Title: 'The Pessimist Case (Human Degradation)',
       col2Prompts: [
-        '14-hour shifts under brutal factory clock surveillance.',
-        'Child labour in Hampshire clay pits & spinning mules.',
-        'Catastrophic occupational deformities & lung disease.',
+        '14-hour working shifts under relentless factory clock surveillance.',
+        'Pervasive child labour in Hampshire clay pits & spinning mules.',
+        'Catastrophic occupational deformities, scalping, & lung disease.',
+        'Destruction of artisan pride, independence, and family life.',
       ],
       clue: '<em>Low-Floor Clue:</em> Contrast the clock tower at the mill gates against the freedom of cottage weavers taking "Saint Monday" off.',
       scholarsEdge:
@@ -122,6 +127,14 @@ const lessonConfigs = [
     ],
     connectives:
       'The source is exceptionally useful because... • This is directly corroborated by... • However, Chadwick’s motive was deliberately to... • Consequently, its utility is heightened because...',
+    vocabTask: {
+      type: 'cloze',
+      prompt:
+        'Complete the summary below using the terms <em>Miasma Theory</em> and <em>Laissez-faire</em>:',
+      clozeText:
+        'Victorian authorities refused to fund municipal sewers due to their doctrine of [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ], wrongly assuming cholera spread via [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ].',
+      followUp: 'Explain why Chadwick’s 1842 Report challenged both assumptions:',
+    },
     bridgeTask: {
       type: 'source_utility',
       badge: 'Archival Forensic Interrogation',
@@ -131,7 +144,7 @@ const lessonConfigs = [
         '“The annual loss of life from filth and bad ventilation are greater than the loss from death or wounds in any modern war. In the cellar dwellings of Manchester and Leeds, human excrement oozes through walls, and whole families sleep upon damp dung. The average age at death of the working class in Manchester is 17 years, compared to 38 years for the rural gentry.”',
       instruction:
         '1. Underline the shocking statistical comparison Chadwick uses to provoke Parliament.<br>2. In the lines below, explain why an historian must consider Chadwick’s utilitarian motive when judging the accuracy of these figures:',
-      lines: 5,
+      lines: 8,
       clue: '<em>Low-Floor Clue:</em> Notice the comparison between industrial disease and military warfare—why would a government official frame it this way?',
       scholarsEdge:
         '<strong>★ Scholar’s Edge:</strong> How did the persistent belief in the "miasma theory" (bad air) both motivate sanitary reform and delay the scientific eradication of waterborne cholera?',
@@ -159,6 +172,13 @@ const lessonConfigs = [
     ],
     connectives:
       'On one hand, naval supremacy was the primary driver because... • Crucially, this was demonstrated by... • Conversely, commercial capital acted as the true catalyst... • Ultimately, naval power was merely the instrument, whereas...',
+    vocabTask: {
+      type: 'distinction',
+      termA: 'Chartered Monopoly (EIC)',
+      termB: 'Two-Power Standard',
+      prompt:
+        'Distinguish between corporate commercial expansion (<strong>East India Company</strong>) and state naval deterrence (<strong>Two-Power Standard</strong>):',
+    },
     bridgeTask: {
       type: 'metric_table',
       badge: 'Comparative Metric Analysis',
@@ -189,7 +209,7 @@ const lessonConfigs = [
       ],
       prompt:
         'In 3–4 sentences, explain which pillar was more essential for maintaining global dominance between 1750 and 1850:',
-      lines: 4,
+      lines: 8,
       clue: '<em>Low-Floor Clue:</em> Think about what happened to British trading posts whenever the Royal Navy lost control of the English Channel or Atlantic.',
       scholarsEdge:
         '<strong>★ Scholar’s Edge:</strong> Did the British Empire acquire its global territories through a coherent grand strategy, or "in a fit of absence of mind" (Sir John Seeley)?',
@@ -217,6 +237,13 @@ const lessonConfigs = [
     ],
     connectives:
       'The initial crisis was precipitated by... • This immediately escalated when... • The decisive turning point occurred with... • Consequently, this compelled the British Crown to...',
+    vocabTask: {
+      type: 'mapping',
+      termA: 'Doctrine of Lapse',
+      termB: 'Azamgarh Proclamation',
+      prompt:
+        'Write one historically accurate sentence connecting Dalhousie’s <strong>Doctrine of Lapse</strong> to the grievances published in the <strong>Azamgarh Proclamation</strong>:',
+    },
     bridgeTask: {
       type: 'source_utility',
       badge: 'Archival Forensic Interrogation',
@@ -225,7 +252,7 @@ const lessonConfigs = [
         '“Both Hindus and Muslims are being ruined under the tyranny and oppression of the treacherous English. The British have subverted our religion, impoverished our artisans with foreign machine goods, and dispossessed our ancient landed nobility. Arise, then, and rally under the Imperial banner to defend your faith and ancestral lands!”',
       instruction:
         '1. Underline the economic and religious grievances listed by the rebel leadership.<br>2. In the lines below, explain what this proclamation reveals about the diverse groups uniting against British rule:',
-      lines: 5,
+      lines: 8,
       clue: '<em>Low-Floor Clue:</em> Look at who is addressed—is this just soldiers complaining about rifle grease, or something much broader?',
       scholarsEdge:
         '<strong>★ Scholar’s Edge:</strong> Why did British colonial authorities deliberately label the 1857 conflict a "Sepoy Mutiny" rather than a war of national independence?',
@@ -253,6 +280,14 @@ const lessonConfigs = [
     ],
     connectives:
       'The magistrate report is highly useful because it demonstrates... • This panic was rooted in the historical reality of... • However, the magistrates’ motive was explicitly to justify... • Paradoxically, this bias increases its utility by revealing...',
+    vocabTask: {
+      type: 'cloze',
+      prompt:
+        'Complete the summary below using the terms <em>Franchise</em> and <em>Six Acts</em>:',
+      clozeText:
+        'When 60,000 peaceful protestors demanded the [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ] at St Peter’s Field, the terrified elite responded by passing the repressive [ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ].',
+      followUp: 'Explain why the magistrates were terrified of a French-style revolution:',
+    },
     bridgeTask: {
       type: 'ledger',
       badge: 'Analytical Conflict Ledger',
@@ -262,15 +297,17 @@ const lessonConfigs = [
         'Contrast the stated aims of the peaceful working-class crowd against the paranoid fears of the ruling elite at St Peter’s Field.',
       col1Title: 'The Peaceful Reformers (Henry Hunt)',
       col1Prompts: [
-        'Repeal of the hated 1815 Corn Laws causing starvation.',
-        'Universal male suffrage & annual parliaments.',
-        'Dressed in Sunday best; women & children present.',
+        'Repeal of the hated 1815 Corn Laws causing mass starvation.',
+        'Universal male suffrage & annual parliaments to end corruption.',
+        'Dressed in Sunday best; women & children proudly marching.',
+        'Banners demanding "Liberty and Fraternity" and "No Corn Laws".',
       ],
       col2Title: 'The Manchester Magistrates (Elite Panic)',
       col2Prompts: [
-        'Terror of a violent French-style Jacobin revolution.',
-        'Suspicion of marching drill & revolutionary liberty caps.',
-        'Immediate panic reading of the Riot Act & cavalry charge.',
+        'Terror of a violent French-style Jacobin revolution in the North.',
+        'Suspicion of military marching drill & revolutionary liberty caps.',
+        'Panic reading of the Riot Act within 45 minutes of assembly.',
+        'Ordering drunken cavalry to charge sabres drawn into the crowd.',
       ],
       clue: '<em>Low-Floor Clue:</em> Why were British landowners so petrified of mass gatherings in 1819, just 4 years after the defeat of Napoleon?',
       scholarsEdge:
@@ -299,6 +336,13 @@ const lessonConfigs = [
     ],
     connectives:
       'The overriding catalyst was the imminent threat of revolution because... • This was vividly illustrated by... • On the other hand, Whig politicians strategically sought to... • Ultimately, the Reform Act was conceded not out of democratic principle, but...',
+    vocabTask: {
+      type: 'distinction',
+      termA: 'Rotten Borough',
+      termB: 'Pocket Borough',
+      prompt:
+        'Distinguish between a depopulated <strong>Rotten Borough</strong> (e.g. Old Sarum) and an aristocratic <strong>Pocket Borough</strong>:',
+    },
     bridgeTask: {
       type: 'causal_pivot',
       badge: 'Causal Pivot & Catalyst Chain',
@@ -307,27 +351,27 @@ const lessonConfigs = [
         {
           stage: '1. The Stagnation',
           year: '1830',
-          text: 'Rotten boroughs like Old Sarum (3 houses, 2 MPs) hold power, while Birmingham has 0 MPs.',
+          text: 'Rotten boroughs like Old Sarum (3 houses, 2 MPs) hold power, while industrial Birmingham has 0 MPs.',
         },
         {
           stage: '2. The Catalyst',
           year: '1831',
-          text: 'The House of Lords rejects the Reform Bill, sparking mass riots in Bristol and Nottingham.',
+          text: 'The House of Lords rejects the Reform Bill, sparking mass riots in Bristol and the burning of Nottingham Castle.',
         },
         {
           stage: '3. The Turning Point',
           year: 'May 1832',
-          text: 'The "Days of May": Reformers demand "Stop the Duke, go for Gold", crashing bank reserves.',
+          text: 'The "Days of May": Reformers demand "Stop the Duke, go for Gold", threatening total collapse of bank reserves.',
         },
         {
           stage: '4. The Concession',
           year: 'June 1832',
-          text: 'King William IV threatens to create 50 Whig peers; the Lords surrender and pass the Act.',
+          text: 'King William IV threatens to create 50 Whig peers; the Lords surrender and pass the Great Reform Act.',
         },
       ],
       prompt:
         'In 3–4 sentences, explain why the threat of financial panic ("Go for Gold") and civil war forced the aristocracy to concede the vote to the middle class:',
-      lines: 4,
+      lines: 8,
       clue: '<em>Low-Floor Clue:</em> What would happen to the wealthy landowners if the British banking system completely collapsed?',
       scholarsEdge:
         '<strong>★ Scholar’s Edge:</strong> Did the 1832 Great Reform Act represent the birth of British democracy, or a cynical aristocratic masterstroke that entrenched property rule?',
@@ -355,6 +399,13 @@ const lessonConfigs = [
     ],
     connectives:
       'Optimist historians contend that... • As evidenced by the dramatic expansion of... • Conversely, pessimist historians demonstrate that... • This critique is reinforced by... • In the final analysis, while the short-term reality was...',
+    vocabTask: {
+      type: 'mapping',
+      termA: 'Optimist School',
+      termB: 'Pessimist School',
+      prompt:
+        'Write one analytical sentence contrasting the historical claims of the <strong>Optimist School</strong> against the <strong>Pessimist School</strong> regarding living standards:',
+    },
     bridgeTask: {
       type: 'ledger',
       badge: 'Historiographical Synthesis Ledger',
@@ -366,12 +417,14 @@ const lessonConfigs = [
         'Cheaper mass-produced clothing, soap, tea & railway travel.',
         'Eventual rise in real wages after 1850; Factory Act protections.',
         'Foundation of modern democratic institutions and medical science.',
+        'Transition from unpredictable famine to reliable industrial abundance.',
       ],
       col2Title: 'The Pessimist School (e.g. E.J. Hobsbawm, E.P. Thompson)',
       col2Prompts: [
         'Brutal destruction of traditional artisan communities and dignity.',
         'Catastrophic urban squalor, stunted children, and cholera deaths.',
         'Enormous private fortunes accumulated through colonial exploitation.',
+        'Severe psychological trauma under the tyranny of the factory clock.',
       ],
       clue: '<em>Low-Floor Clue:</em> Distinguish between what happened to the first generation of factory workers (1780–1830) versus their grandchildren (after 1860).',
       scholarsEdge:
@@ -407,8 +460,8 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
     }
     .page, .page-container {
       width: 100%;
-      height: 267mm;
-      max-height: 267mm;
+      height: 260mm;
+      max-height: 260mm;
       overflow: hidden;
       box-sizing: border-box;
       position: relative;
@@ -422,22 +475,22 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
     }
     .task-line {
       border-bottom: 1px solid #cbd5e1;
-      height: 7.2mm;
+      height: 7.6mm;
       width: 100%;
       box-sizing: border-box;
     }
     .task-line-dotted {
       border-bottom: 1px dotted #94a3b8;
-      height: 6.5mm;
+      height: 5.6mm;
       width: 100%;
       box-sizing: border-box;
     }
     .archival-badge {
       font-family: 'Inter', sans-serif;
-      font-size: 7pt;
+      font-size: 7.8pt;
       text-transform: uppercase;
       letter-spacing: 0.8px;
-      padding: 2px 6px;
+      padding: 2.5px 7px;
       border-radius: 3px;
       background: #f1f5f9;
       color: #475569;
@@ -453,24 +506,24 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
   // PAGE 1: FRONT COVER (Recto, Right Page)
   // ==========================================
   html += `
-  <div class="page page-container" id="page-1" style="justify-content: center; text-align: center; padding: 30px 20px;">
+  <div class="page page-container" id="page-1" style="justify-content: center; text-align: center; padding: 25px 20px;">
     <div>
-      <div style="font-family: 'Inter', sans-serif; font-size: 9pt; text-transform: uppercase; letter-spacing: 2px; color: #64748b; margin-bottom: 10px;">
+      <div style="font-family: 'Inter', sans-serif; font-size: 9.5pt; text-transform: uppercase; letter-spacing: 2px; color: #64748b; margin-bottom: 10px; font-weight: 600;">
         Meoncross School &bull; History Department
       </div>
-      <h1 style="font-family: 'Playfair Display', serif; font-size: 26pt; color: #0f172a; margin: 0 0 15px 0; text-transform: uppercase; letter-spacing: 1px; line-height: 1.2;">
+      <h1 style="font-family: 'Playfair Display', serif; font-size: 26pt; color: #0f172a; margin: 0 0 14px 0; text-transform: uppercase; letter-spacing: 1px; line-height: 1.2;">
         Industrialisation, Empire,<br>& Power (1750–1900)
       </h1>
-      <div style="font-family: 'Inter', sans-serif; font-size: 11pt; color: #1e3a8a; font-weight: 600; margin-bottom: 25px;">
+      <div style="font-family: 'Inter', sans-serif; font-size: 11pt; color: #1e3a8a; font-weight: 600; margin-bottom: 22px;">
         Key Stage 3 Inquiry Workbook & Disciplinary Writing Record
       </div>
-      <div style="width: 100%; max-width: 480px; margin: 0 auto 30px auto; border: 1.5px solid #cbd5e1; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+      <div style="width: 100%; max-width: 480px; margin: 0 auto 25px auto; border: 1.5px solid #cbd5e1; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
         <img src="/images/imperial_federation_map.jpg" style="width: 100%; height: auto; display: block;" alt="Imperial Federation Map">
       </div>
     </div>
     
-    <div style="width: 100%; max-width: 450px; margin: 0 auto; border: 1.2px solid #cbd5e1; border-radius: 6px; padding: 15px; background: #f8fafc; text-align: left;">
-      <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 9pt;">
+    <div style="width: 100%; max-width: 460px; margin: 0 auto; border: 1.2px solid #cbd5e1; border-radius: 6px; padding: 14px 18px; background: #f8fafc; text-align: left;">
+      <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 8.8pt;">
         <tr>
           <td style="padding: 5px 0; color: #64748b; width: 35%;"><strong>Scholar Name:</strong></td>
           <td style="padding: 5px 0; border-bottom: 1px solid #94a3b8;"></td>
@@ -484,13 +537,13 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
           <td style="padding: 5px 0; border-bottom: 1px solid #94a3b8;"></td>
         </tr>
         <tr>
-          <td style="padding: 5px 0; color: #64748b;"><strong>Academic Target Band:</strong></td>
-          <td style="padding: 5px 0; font-weight: 700; color: #1e3a8a;">Bronze (4) &bull; Silver (5-6) &bull; Gold (7-9)</td>
+          <td style="padding: 5px 0; color: #64748b;"><strong>Target / Working Grade:</strong></td>
+          <td style="padding: 5px 0; font-weight: 700; color: #1e3a8a;">Target: [ &nbsp; &nbsp; &nbsp; ] &nbsp;&bull;&nbsp; Working: [ &nbsp; &nbsp; &nbsp; ]</td>
         </tr>
       </table>
     </div>
 
-    <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; margin-top: 20px;">
+    <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; margin-top: 18px;">
       EDITION 2026.1 &bull; MEONCROSS HISTORY CURRICULUM BLUEPRINT
     </div>
   </div>
@@ -503,21 +556,21 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
   <div class="page page-container" id="page-2" style="padding: 10px 0;">
     <div>
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #0f172a; padding-bottom: 5px; margin-bottom: 12px;">
-        <h2 style="margin: 0; font-size: 14pt; color: #0f172a; text-transform: uppercase;">Scholar Progress & Writing Tracker</h2>
-        <span class="archival-badge">Mastery Milestones</span>
+        <h2 style="margin: 0; font-size: 14pt; color: #0f172a; text-transform: uppercase;">Scholar Progress & Disciplinary Writing Record</h2>
+        <span class="archival-badge">PEEL Writing Record</span>
       </div>
-      <p style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #475569; margin: 0 0 10px 0;">
-        Track your progress across the 6 Disciplinary Writing Genres. After each extended essay, record your awarded milestone band (Bronze, Silver, Gold) and teacher target:
+      <p style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #475569; margin: 0 0 10px 0; line-height: 1.35;">
+        Track your progress across the 6 Disciplinary Writing Genres. After each extended enquiry write-up, record your teacher feedback, effort rating, and PEEL mastery:
       </p>
       
-      <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 8pt; border: 1px solid #cbd5e1;">
+      <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 8.2pt; border: 1px solid #cbd5e1;">
         <thead>
           <tr style="background: #0f172a; color: #ffffff;">
             <th style="padding: 6px 8px; text-align: left; width: 8%;">L#</th>
-            <th style="padding: 6px 8px; text-align: left; width: 42%;">Inquiry Title</th>
-            <th style="padding: 6px 8px; text-align: left; width: 25%;">Disciplinary Genre</th>
-            <th style="padding: 6px 8px; text-align: center; width: 10%;">Milestone</th>
-            <th style="padding: 6px 8px; text-align: center; width: 15%;">Effort (1–4)</th>
+            <th style="padding: 6px 8px; text-align: left; width: 40%;">Inquiry Title</th>
+            <th style="padding: 6px 8px; text-align: left; width: 26%;">Disciplinary Genre</th>
+            <th style="padding: 6px 8px; text-align: center; width: 14%;">PEEL Mastery</th>
+            <th style="padding: 6px 8px; text-align: center; width: 12%;">Effort (1–4)</th>
           </tr>
         </thead>
         <tbody>
@@ -534,9 +587,9 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
                 /^Was industrial work.*?punishment\?/i,
                 'Industrial Work: Progress or Punishment?',
               )}</td>
-            <td style="padding: 5px 8px; font-size: 7.5pt; color: #0f172a; font-weight: 600;">${cfg.genre.replace('Genre ', 'G')}</td>
-            <td style="padding: 5px 8px; text-align: center; border-left: 1px solid #cbd5e1; border-right: 1px solid #cbd5e1;">[ &nbsp; &nbsp; ]</td>
-            <td style="padding: 5px 8px; text-align: center;">[ 1 &bull; 2 &bull; 3 &bull; 4 ]</td>
+            <td style="padding: 5px 8px; font-size: 7.8pt; color: #0f172a; font-weight: 600;">${cfg.genre.replace('Genre ', 'G')}</td>
+            <td style="padding: 5px 8px; text-align: center; border-left: 1px solid #cbd5e1; border-right: 1px solid #cbd5e1; font-size: 7.5pt; color: #1e3a8a; font-weight: 600;">[ P &bull; E &bull; E &bull; L ]</td>
+            <td style="padding: 5px 8px; text-align: center; font-size: 7.5pt;">[ 1 &bull; 2 &bull; 3 &bull; 4 ]</td>
           </tr>
     `;
   });
@@ -546,12 +599,13 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
       </table>
     </div>
 
-    <div style="border: 1.2px solid #cbd5e1; border-radius: 6px; padding: 10px; background: #fafaf9; margin-top: 15px;">
-      <h4 style="margin: 0 0 6px 0; font-size: 9pt; color: #0f172a; text-transform: uppercase;">The 3 Writing Milestones Explained:</h4>
-      <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #334155; line-height: 1.4;">
-        <strong>&bull; Bronze (Accessible Milestone / Grade 4–5):</strong> Complete 1 structured PEEL paragraph using the evidence gathered from Page 1. Clearly states claim, historical fact, and direct causal explanation (8–10 lines).<br>
-        <strong>&bull; Silver (Standard Milestone / Grade 6–7):</strong> Complete 2 balanced paragraphs comparing competing factors using causal connectives (<em>Consequently, However, This directly triggered</em>) (14–16 lines).<br>
-        <strong>&bull; Gold (Scholarship Milestone / Grade 8–9):</strong> Full multi-paragraph essay reaching a substantiated, evaluative verdict using the historical criteria (Scale, Duration, Transformation, NOP) (18–20 lines).
+    <div style="border: 1.2px solid #cbd5e1; border-radius: 6px; padding: 12px 14px; background: #fafaf9; margin-top: 14px;">
+      <h4 style="margin: 0 0 6px 0; font-size: 9.2pt; color: #0f172a; text-transform: uppercase;">Departmental PEEL Disciplinary Writing Standards:</h4>
+      <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #334155; line-height: 1.45;">
+        <strong>&bull; [P] Point (Clear Enquiry Claim):</strong> An authoritative, precise opening thesis statement directly answering the historical enquiry question.<br>
+        <strong>&bull; [E] Evidence (Archival Data & Corroboration):</strong> Specific, named historical evidence (figures, dates, statistics, legislation) drawn directly from the facing evidence page.<br>
+        <strong>&bull; [E] Explanation (Causal & Analytical Reasoning):</strong> In-depth historical reasoning using disciplinary connectives to explain <em>how</em> and <em>why</em> this factor was significant, transformative, or consequential.<br>
+        <strong>&bull; [L] Link (Evaluative Verdict):</strong> A substantiated conclusion directly linking arguments back to the enquiry question and reaching a justified historical judgement.
       </div>
     </div>
   </div>
@@ -619,7 +673,7 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
           <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 700; color: #1e3a8a; width: 75px; flex-shrink: 0;">${item.year}</div>
           <div>
             <strong style="font-size: 8.5pt; color: #0f172a; display: block;">${item.title}</strong>
-            <span style="font-size: 7.8pt; color: #475569; font-family: 'Inter', sans-serif;">${item.desc}</span>
+            <span style="font-size: 8pt; color: #475569; font-family: 'Inter', sans-serif;">${item.desc}</span>
           </div>
         </div>
     `;
@@ -630,13 +684,13 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
 
       <div style="border: 1.2px solid #bae6fd; background: #f0f9ff; border-radius: 6px; padding: 10px;">
         <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0369a1; display: block; margin-bottom: 4px;">Hampshire Local History Connection:</strong>
-        <p style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #334155; margin: 0;">
+        <p style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #334155; margin: 0; line-height: 1.35;">
           Our curriculum directly anchors national events into our local Hampshire landscape: from <strong>Henry Cort’s surviving puddling weir and slag wall at Funtley</strong>, to <strong>Fareham Red brick clay pits</strong>, and the <strong>Portsmouth Royal Navy Dockyard</strong> industrial complex.
         </p>
       </div>
     </div>
 
-    <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #64748b; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 6px;">
+    <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #64748b; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 6px;">
       Turn overleaf to begin <strong>Lesson 1 (Pages 4–5 Facing Spread)</strong> ➔
     </div>
   </div>
@@ -656,23 +710,23 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
     html += `
     <div class="page page-container" id="page-${leftPageNum}">
       <div>
-        <!-- Lesson Header (Compact) -->
-        <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: flex-end;">
+        <!-- Lesson Header (Compact & Scholarly) -->
+        <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: flex-end;">
           <div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 1px; color: #64748b; font-weight: 600;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 1px; color: #64748b; font-weight: 600;">
               Unit 4: Industrialisation &bull; Lesson ${lIdx + 1}
             </div>
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 13pt; color: #0f172a; margin: 2px 0 0 0; line-height: 1.2;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 13.5pt; color: #0f172a; margin: 2px 0 0 0; line-height: 1.2;">
               L${lIdx + 1}: ${formatText(lesson.title)}
             </h2>
           </div>
           <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe; flex-shrink: 0;">Evidence Launch</span>
         </div>
 
-        <!-- Learning Objectives (Compact 3-bullets) -->
-        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 4px 8px; margin-bottom: 8px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; color: #475569; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Core Learning Objectives:</strong>
-          <ul style="margin: 0; padding-left: 14px; font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #334155; line-height: 1.3;">
+        <!-- Learning Objectives (Compact 3-bullets, 8.5pt) -->
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 5px 8px; margin-bottom: 6px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; color: #475569; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Core Learning Objectives:</strong>
+          <ul style="margin: 0; padding-left: 16px; font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #334155; line-height: 1.35;">
     `;
     (lesson.learning_objectives.scaffolded || []).slice(0, 3).forEach((obj) => {
       html += `<li>${formatText(obj)}</li>`;
@@ -681,63 +735,87 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
           </ul>
         </div>
 
-        <!-- Do Now Retrieval Grid (2x2 Compact) -->
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 6px 8px; margin-bottom: 8px; background: #ffffff;">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 3px; margin-bottom: 5px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.5px; color: #0f172a;">Do Now: Spaced Retrieval Grid</strong>
-            <span style="font-size: 6.8pt; color: #64748b; font-family: 'Inter', sans-serif;">Prior Units & Recall</span>
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
-    `;
-    const doNowItems = lesson.do_now && lesson.do_now.items ? lesson.do_now.items.slice(0, 4) : [];
-    const doNowLabels = [
-      '1. Last Lesson',
-      '2. Two Lessons Ago',
-      '3. Prior Unit (Medieval/Tudor)',
-      '4. Big Picture / Chronology',
-    ];
-    doNowItems.forEach((dn, dnIdx) => {
-      html += `
-            <div style="border: 1px solid #e2e8f0; border-radius: 3px; padding: 4px 6px; background: #fafaf9;">
-              <strong style="font-size: 7pt; color: #1e3a8a; display: block; font-family: 'Inter', sans-serif;">${doNowLabels[dnIdx] || `Q${dnIdx + 1}`}:</strong>
-              <div style="font-size: 7.2pt; color: #1e293b; margin: 1px 0 3px 0; line-height: 1.2; font-family: 'Inter', sans-serif;">${dn.question}</div>
-              <div class="task-line-dotted" style="height: 4.5mm;"></div>
-              <div class="task-line-dotted" style="height: 4.5mm;"></div>
+        <!-- Do Now Spaced Retrieval Strip (5 Recall Questions Projected on Board) -->
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; margin-bottom: 6px; background: #ffffff;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 3px; margin-bottom: 4px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.6px; color: #0f172a;">Do Now: Spaced Retrieval</strong>
+              <span style="font-size: 7.8pt; color: #64748b; font-family: 'Inter', sans-serif;">(5 Recall Questions Projected on Board)</span>
             </div>
-      `;
-    });
-    html += `
+            <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 1px 7px; border-radius: 3px;">Score: &nbsp; &nbsp; / 5</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px;">
+            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">[1] Last Lesson</div>
+              <div class="task-line-dotted" style="height: 5.2mm;"></div>
+              <div class="task-line-dotted" style="height: 5.2mm;"></div>
+            </div>
+            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">[2] Two Ago</div>
+              <div class="task-line-dotted" style="height: 5.2mm;"></div>
+              <div class="task-line-dotted" style="height: 5.2mm;"></div>
+            </div>
+            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">[3] Prior Unit</div>
+              <div class="task-line-dotted" style="height: 5.2mm;"></div>
+              <div class="task-line-dotted" style="height: 5.2mm;"></div>
+            </div>
+            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">[4] Prior Unit</div>
+              <div class="task-line-dotted" style="height: 5.2mm;"></div>
+              <div class="task-line-dotted" style="height: 5.2mm;"></div>
+            </div>
+            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">[5] Big Picture</div>
+              <div class="task-line-dotted" style="height: 5.2mm;"></div>
+              <div class="task-line-dotted" style="height: 5.2mm;"></div>
+            </div>
           </div>
         </div>
 
-        <!-- Key Vocabulary Check (2 Terms) -->
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; margin-bottom: 8px; background: #fdfbf7;">
+        <!-- Disciplinary Vocabulary Active Application (Rotating Task + Ruled Lines) -->
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; margin-bottom: 6px; background: #fdfbf7;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; color: #0f172a;">Disciplinary Vocabulary Mastery</strong>
-            <span style="font-size: 6.8pt; color: #854d0e; font-family: 'Inter', sans-serif; font-weight: 600;">Dual-Term Check</span>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; color: #0f172a; letter-spacing: 0.5px;">Disciplinary Vocabulary Active Application</strong>
+            <span style="font-size: 7.5pt; color: #854d0e; font-family: 'Inter', sans-serif; font-weight: 600;">Active Disciplinary Mastery</span>
           </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
     `;
-    const vocabSlice = (lesson.vocab || []).slice(0, 2);
-    vocabSlice.forEach((v) => {
+
+    if (cfg.vocabTask.type === 'cloze') {
       html += `
-            <div style="border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px; background: #ffffff;">
-              <strong style="font-size: 7.5pt; color: #b45309; font-family: 'Inter', sans-serif;">${v.term}:</strong>
-              <span style="font-size: 7pt; color: #475569; font-family: 'Inter', sans-serif;"> ${v.definition}</span>
-            </div>
-      `;
-    });
-    html += `
+          <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #334155; margin-bottom: 2px;">
+            ${cfg.vocabTask.prompt}
           </div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #1e293b; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 4px 6px; margin-bottom: 3px; line-height: 1.35;">
+            ${cfg.vocabTask.clozeText}
+          </div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #475569; margin-bottom: 1px;">
+            <strong>Application:</strong> ${cfg.vocabTask.followUp}
+          </div>
+          <div class="task-line" style="height: 6mm;"></div>
+          <div class="task-line" style="height: 6mm;"></div>
+      `;
+    } else {
+      html += `
+          <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #334155; margin-bottom: 3px; line-height: 1.3;">
+            ${cfg.vocabTask.prompt}
+          </div>
+          <div class="task-line" style="height: 6mm;"></div>
+          <div class="task-line" style="height: 6mm;"></div>
+          <div class="task-line" style="height: 6mm;"></div>
+      `;
+    }
+
+    html += `
         </div>
 
-        <!-- TASK 4: THE PREPARATION BRIDGE TASK (~85-95mm) -->
+        <!-- TASK 4: THE PREPARATION BRIDGE TASK -->
         <div style="border: 1.5px solid #0f172a; border-radius: 5px; padding: 7px 9px; background: #ffffff; margin-bottom: 4px;">
           <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #0f172a; padding-bottom: 3px; margin-bottom: 5px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #0f172a; text-transform: uppercase;">${cfg.bridgeTask.title}</strong>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #0f172a; text-transform: uppercase;">${cfg.bridgeTask.title}</strong>
             <span class="archival-badge" style="background: #0f172a; color: #ffffff; border: none;">The Preparation Bridge</span>
           </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #334155; margin-bottom: 5px; line-height: 1.3;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #334155; margin-bottom: 5px; line-height: 1.35;">
             ${cfg.bridgeTask.instruction}
           </div>
     `;
@@ -745,70 +823,77 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
     // Render task body based on type
     if (cfg.bridgeTask.type === 'draw_label') {
       html += `
-          <div style="height: 145px; border: 1.5px dashed #94a3b8; border-radius: 4px; background: #fafaf9; position: relative; margin-bottom: 5px; box-sizing: border-box;">
-            ${cfg.bridgeTask.ghostDiagram}
-            <div style="position: absolute; bottom: 4px; right: 6px; font-family: 'Inter', sans-serif; font-size: 6.5pt; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.5px;">Technical Drawing & Label Canvas</div>
+          <div style="height: 355px; border: 1.5px solid #64748b; border-radius: 4px; background: #ffffff; position: relative; margin-bottom: 5px; box-sizing: border-box;">
+            <div style="position: absolute; bottom: 6px; right: 8px; font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.8px;">Technical Blueprint & Annotation Canvas (Funtley Ironworks, 1784)</div>
           </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7pt; color: #1e293b; background: #f1f5f9; padding: 3px 6px; border-radius: 3px; margin-bottom: 4px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #1e293b; background: #f1f5f9; padding: 5px 8px; border-radius: 4px; margin-bottom: 4px; border: 1px solid #cbd5e1;">
             ${cfg.bridgeTask.checklist}
           </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b; margin-bottom: 4px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #64748b; margin-bottom: 3px;">
             ${cfg.bridgeTask.clue}
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 3px;">
+          <div style="font-family: 'Georgia', serif; font-size: 8.5pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px;">
             ${cfg.bridgeTask.scholarsEdge}
           </div>
       `;
     } else if (cfg.bridgeTask.type === 'ledger') {
       html += `
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 5px;">
-            <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px; background: #f8fafc;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #0369a1; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">${cfg.bridgeTask.col1Title}</strong>
-              <ul style="margin: 0 0 4px 0; padding-left: 12px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569;">
+            <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 7px; background: #f8fafc;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0369a1; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">${cfg.bridgeTask.col1Title}</strong>
+              <ul style="margin: 0 0 5px 0; padding-left: 15px; font-family: 'Inter', sans-serif; font-size: 8pt; color: #475569; line-height: 1.35;">
                 ${cfg.bridgeTask.col1Prompts.map((p) => `<li>${p}</li>`).join('')}
               </ul>
-              <div class="task-line-dotted" style="height: 5mm;"></div>
-              <div class="task-line-dotted" style="height: 5mm;"></div>
-              <div class="task-line-dotted" style="height: 5mm;"></div>
+              <div class="task-line-dotted" style="height: 5.8mm;"></div>
+              <div class="task-line-dotted" style="height: 5.8mm;"></div>
+              <div class="task-line-dotted" style="height: 5.8mm;"></div>
+              <div class="task-line-dotted" style="height: 5.8mm;"></div>
+              <div class="task-line-dotted" style="height: 5.8mm;"></div>
+              <div class="task-line-dotted" style="height: 5.8mm;"></div>
+              <div class="task-line-dotted" style="height: 5.8mm;"></div>
             </div>
-            <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px; background: #f8fafc;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #b91c1c; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">${cfg.bridgeTask.col2Title}</strong>
-              <ul style="margin: 0 0 4px 0; padding-left: 12px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569;">
+            <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 7px; background: #f8fafc;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #b91c1c; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">${cfg.bridgeTask.col2Title}</strong>
+              <ul style="margin: 0 0 5px 0; padding-left: 15px; font-family: 'Inter', sans-serif; font-size: 8pt; color: #475569; line-height: 1.35;">
                 ${cfg.bridgeTask.col2Prompts.map((p) => `<li>${p}</li>`).join('')}
               </ul>
-              <div class="task-line-dotted" style="height: 5mm;"></div>
-              <div class="task-line-dotted" style="height: 5mm;"></div>
-              <div class="task-line-dotted" style="height: 5mm;"></div>
+              <div class="task-line-dotted" style="height: 5.8mm;"></div>
+              <div class="task-line-dotted" style="height: 5.8mm;"></div>
+              <div class="task-line-dotted" style="height: 5.8mm;"></div>
+              <div class="task-line-dotted" style="height: 5.8mm;"></div>
+              <div class="task-line-dotted" style="height: 5.8mm;"></div>
+              <div class="task-line-dotted" style="height: 5.8mm;"></div>
+              <div class="task-line-dotted" style="height: 5.8mm;"></div>
             </div>
           </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b; margin-bottom: 3px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #64748b; margin-bottom: 3px;">
             ${cfg.bridgeTask.clue}
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px;">
+          <div style="font-family: 'Georgia', serif; font-size: 8.5pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px;">
             ${cfg.bridgeTask.scholarsEdge}
           </div>
       `;
     } else if (cfg.bridgeTask.type === 'source_utility') {
       html += `
-          <div style="border: 1px solid #cbd5e1; border-left: 3px solid #1e3a8a; background: #fdfbf7; padding: 5px 8px; font-size: 7.5pt; font-style: italic; color: #1e293b; margin-bottom: 5px; line-height: 1.35;">
+          <div style="border: 1px solid #cbd5e1; border-left: 3px solid #1e3a8a; background: #fdfbf7; padding: 7px 10px; font-size: 8.5pt; font-style: italic; color: #1e293b; margin-bottom: 5px; line-height: 1.4;">
             ${cfg.bridgeTask.sourceText}
           </div>
-          ${Array(cfg.bridgeTask.lines || 5)
-            .fill('<div class="task-line" style="height: 6.5mm;"></div>')
+          ${Array(cfg.bridgeTask.lines || 8)
+            .fill('<div class="task-line" style="height: 6.8mm;"></div>')
             .join('')}
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b; margin-top: 4px; margin-bottom: 2px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #64748b; margin-top: 4px; margin-bottom: 2px;">
             ${cfg.bridgeTask.clue}
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px;">
+          <div style="font-family: 'Georgia', serif; font-size: 8.5pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px;">
             ${cfg.bridgeTask.scholarsEdge}
           </div>
       `;
     } else if (cfg.bridgeTask.type === 'metric_table') {
       html += `
-          <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 7pt; margin-bottom: 5px; border: 1px solid #cbd5e1;">
+          <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 8pt; margin-bottom: 5px; border: 1px solid #cbd5e1;">
             <thead>
               <tr style="background: #f1f5f9; color: #0f172a;">
-                ${cfg.bridgeTask.tableHeaders.map((h) => `<th style="padding: 3px 5px; text-align: left; border: 1px solid #cbd5e1;">${h}</th>`).join('')}
+                ${cfg.bridgeTask.tableHeaders.map((h) => `<th style="padding: 5px 7px; text-align: left; border: 1px solid #cbd5e1; font-size: 8.2pt;">${h}</th>`).join('')}
               </tr>
             </thead>
             <tbody>
@@ -816,46 +901,46 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
                 .map(
                   (r) => `
                 <tr>
-                  <td style="padding: 3px 5px; font-weight: 700; border: 1px solid #cbd5e1; width: 22%;">${r[0]}</td>
-                  <td style="padding: 3px 5px; border: 1px solid #cbd5e1; width: 39%;">${r[1]}</td>
-                  <td style="padding: 3px 5px; border: 1px solid #cbd5e1; width: 39%;">${r[2]}</td>
+                  <td style="padding: 5px 7px; font-weight: 700; border: 1px solid #cbd5e1; width: 22%; font-size: 8pt;">${r[0]}</td>
+                  <td style="padding: 5px 7px; border: 1px solid #cbd5e1; width: 39%; font-size: 8pt;">${r[1]}</td>
+                  <td style="padding: 5px 7px; border: 1px solid #cbd5e1; width: 39%; font-size: 8pt;">${r[2]}</td>
                 </tr>
               `,
                 )
                 .join('')}
             </tbody>
           </table>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #1e293b; margin-bottom: 2px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #1e293b; margin-bottom: 3px;">
             <strong>Synthesis:</strong> ${cfg.bridgeTask.prompt}
           </div>
-          ${Array(cfg.bridgeTask.lines || 4)
-            .fill('<div class="task-line" style="height: 6.5mm;"></div>')
+          ${Array(cfg.bridgeTask.lines || 8)
+            .fill('<div class="task-line" style="height: 6.8mm;"></div>')
             .join('')}
-          <div style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-top: 3px;">
+          <div style="font-family: 'Georgia', serif; font-size: 8.5pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-top: 3px;">
             ${cfg.bridgeTask.scholarsEdge}
           </div>
       `;
     } else if (cfg.bridgeTask.type === 'causal_pivot') {
       html += `
-          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin-bottom: 5px;">
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; margin-bottom: 6px;">
             ${cfg.bridgeTask.steps
               .map(
                 (s) => `
-              <div style="border: 1px solid #bae6fd; background: #f0f9ff; border-radius: 3px; padding: 3px 4px; font-family: 'Inter', sans-serif;">
-                <span style="font-size: 6.5pt; font-weight: 700; color: #0369a1; display: block;">${s.stage} (${s.year})</span>
-                <span style="font-size: 6.6pt; color: #1e293b; line-height: 1.2; display: block;">${s.text}</span>
+              <div style="border: 1px solid #bae6fd; background: #f0f9ff; border-radius: 3px; padding: 5px 6px; font-family: 'Inter', sans-serif;">
+                <span style="font-size: 7.5pt; font-weight: 700; color: #0369a1; display: block; margin-bottom: 2px;">${s.stage} (${s.year})</span>
+                <span style="font-size: 7.5pt; color: #1e293b; line-height: 1.3; display: block;">${s.text}</span>
               </div>
             `,
               )
               .join('')}
           </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #1e293b; margin-bottom: 2px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #1e293b; margin-bottom: 3px;">
             <strong>Causal Analysis:</strong> ${cfg.bridgeTask.prompt}
           </div>
-          ${Array(cfg.bridgeTask.lines || 4)
-            .fill('<div class="task-line" style="height: 6.5mm;"></div>')
+          ${Array(cfg.bridgeTask.lines || 8)
+            .fill('<div class="task-line" style="height: 6.8mm;"></div>')
             .join('')}
-          <div style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-top: 3px;">
+          <div style="font-family: 'Georgia', serif; font-size: 8.5pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-top: 3px;">
             ${cfg.bridgeTask.scholarsEdge}
           </div>
       `;
@@ -866,7 +951,7 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Left Page Footer -->
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px;">
+      <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px;">
         <span>Meoncross History &bull; KS3 Industrialisation</span>
         <span>Page ${leftPageNum} (Facing Spread Left)</span>
       </div>
@@ -879,55 +964,56 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
     html += `
     <div class="page page-container" id="page-${rightPageNum}">
       <div>
-        <!-- Enquiry Question Header Banner -->
-        <div style="background: #0f172a; color: #ffffff; border-radius: 5px; padding: 8px 12px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+        <!-- Enquiry Question Header (Natural Archival School Typography) -->
+        <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 5px; margin-bottom: 7px; display: flex; justify-content: space-between; align-items: flex-end;">
           <div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7pt; text-transform: uppercase; letter-spacing: 1px; color: #94a3b8; font-weight: 600;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 1px; color: #64748b; font-weight: 600;">
               Independent Historical Argument &bull; ${cfg.genre}
             </div>
-            <h3 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #ffffff; margin: 2px 0 0 0; line-height: 1.25;">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 13pt; color: #0f172a; margin: 3px 0 0 0; line-height: 1.25;">
               ${cfg.enquiryQuestion}
             </h3>
           </div>
-          <span class="archival-badge" style="background: #1e293b; color: #38bdf8; border-color: #0284c7; flex-shrink: 0;">Extended Writing</span>
+          <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe; flex-shrink: 0;">Extended Writing</span>
         </div>
 
-        <!-- Bespoke Disciplinary Structure Strip (3-Columns) -->
+        <!-- Bespoke Disciplinary Structure Strip (3-Columns, 8.5pt) -->
         <div style="border: 1.2px solid #cbd5e1; border-radius: 5px; padding: 6px 8px; background: #f8fafc; margin-bottom: 6px;">
           <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 4px;">
             ${cfg.structureStrip
               .map(
                 (s) => `
-              <div style="border: 1px solid #e2e8f0; border-radius: 3px; padding: 4px 6px; background: #ffffff;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #1e3a8a; display: block; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px; margin-bottom: 2px;">${s.col}</strong>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #334155; line-height: 1.25; display: block;">${s.text}</span>
+              <div style="border: 1px solid #e2e8f0; border-radius: 3px; padding: 5px 6px; background: #ffffff;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #1e3a8a; display: block; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px; margin-bottom: 2px;">${s.col}</strong>
+                <span style="font-family: 'Inter', sans-serif; font-size: 8.4pt; color: #334155; line-height: 1.3; display: block;">${s.text}</span>
               </div>
             `,
               )
               .join('')}
           </div>
           
-          <div style="border-top: 1px dashed #cbd5e1; padding-top: 3px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 6.8pt;">
+          <div style="border-top: 1px dashed #cbd5e1; padding-top: 3px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 8.2pt;">
             <span style="color: #475569;"><strong>Academic Connective Bank:</strong> ${cfg.connectives}</span>
           </div>
         </div>
 
-        <!-- Writing Milestones Banner (Bronze, Silver, Gold) -->
-        <div style="background: #fafaf9; border: 1px solid #d6d3d1; border-radius: 4px; padding: 3px 8px; margin-bottom: 8px; display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #44403c;">
-          <span><strong>Bronze Target (8–10 lines):</strong> 1 complete PEEL paragraph using evidence from Page ${leftPageNum}.</span>
-          <span><strong>Silver (14–16 lines):</strong> 2 balanced paragraphs with connectives.</span>
-          <span style="color: #854d0e; font-weight: 600;"><strong>Gold (18–20 lines):</strong> Sustained evaluative verdict using criteria.</span>
+        <!-- PEEL Writing Framework Strip (Abolishing Bronze/Silver/Gold) -->
+        <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; margin-bottom: 6px; display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #1e293b;">
+          <span><strong style="color: #1e3a8a;">[P] Point:</strong> Authoritative claim answering enquiry.</span>
+          <span><strong style="color: #1e3a8a;">[E] Evidence:</strong> Specific historical facts from Page ${leftPageNum}.</span>
+          <span><strong style="color: #1e3a8a;">[E] Explanation:</strong> Causal reasoning & connectives.</span>
+          <span><strong style="color: #1e3a8a;">[L] Link:</strong> Evaluative verdict answering question.</span>
         </div>
 
-        <!-- Ruled Writing Lines (19 Clean Full-Width Lines) -->
+        <!-- Ruled Writing Lines (22 Clean Full-Width Lines, 7.6mm Line Height) -->
         <div style="width: 100%; margin-bottom: 6px;">
-          ${Array(19).fill('<div class="task-line" style="height: 7.6mm;"></div>').join('')}
+          ${Array(22).fill('<div class="task-line" style="height: 7.6mm;"></div>').join('')}
         </div>
       </div>
 
-      <!-- Teacher Grading & Assessment Footer -->
+      <!-- Teacher Grading & Assessment Footer (PEEL Mastery) -->
       <div>
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; background: #f8fafc; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #334155;">
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; background: #f8fafc; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #334155;">
           <div>
             <strong>Teacher Assessment:</strong> &nbsp;
             Effort: [ 1 &bull; 2 &bull; 3 &bull; 4 ] &nbsp;|&nbsp; 
@@ -935,11 +1021,11 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
             Disciplinary Analysis: [ 1 &bull; 2 &bull; 3 &bull; 4 ]
           </div>
           <div>
-            <strong>Milestone Achieved:</strong> [ &nbsp; ] Bronze &nbsp; [ &nbsp; ] Silver &nbsp; [ &nbsp; ] Gold
+            <strong>PEEL Mastery:</strong> [ &nbsp; ] P &nbsp; [ &nbsp; ] E &nbsp; [ &nbsp; ] E &nbsp; [ &nbsp; ] L
           </div>
         </div>
         
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px; margin-top: 3px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px; margin-top: 3px;">
           <span>Enquiry Write-Up &bull; ${cfg.genre}</span>
           <span>Page ${rightPageNum} (Facing Spread Right)</span>
         </div>
@@ -961,8 +1047,8 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
 
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
         <div style="border: 1.2px solid #cbd5e1; border-radius: 5px; padding: 8px; background: #fafaf9;">
-          <h4 style="margin: 0 0 6px 0; font-size: 8.5pt; color: #0f172a; text-transform: uppercase; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">Key Historical Figures</h4>
-          <ul style="margin: 0; padding-left: 14px; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #334155; line-height: 1.4;">
+          <h4 style="margin: 0 0 6px 0; font-size: 8.8pt; color: #0f172a; text-transform: uppercase; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">Key Historical Figures</h4>
+          <ul style="margin: 0; padding-left: 14px; font-family: 'Inter', sans-serif; font-size: 8pt; color: #334155; line-height: 1.4;">
             <li><strong>James Watt (1736–1819):</strong> Patented the separate condenser steam engine (1769).</li>
             <li><strong>Henry Cort (1741–1800):</strong> Fareham ironmaster who invented puddling & rolling at Funtley (1783–84).</li>
             <li><strong>Isambard Kingdom Brunel (1806–1859):</strong> Engineer of Great Western Railway & SS Great Britain.</li>
@@ -974,8 +1060,8 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
         </div>
 
         <div style="border: 1.2px solid #cbd5e1; border-radius: 5px; padding: 8px; background: #fafaf9;">
-          <h4 style="margin: 0 0 6px 0; font-size: 8.5pt; color: #0f172a; text-transform: uppercase; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">The 6 GCSE Disciplinary Command Words</h4>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #334155; line-height: 1.4;">
+          <h4 style="margin: 0 0 6px 0; font-size: 8.8pt; color: #0f172a; text-transform: uppercase; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">The 6 GCSE Disciplinary Command Words</h4>
+          <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #334155; line-height: 1.4;">
             <p style="margin: 0 0 4px 0;"><strong>1. Causal Weighting:</strong> Prioritising multiple causes into triggers vs underlying pre-conditions.</p>
             <p style="margin: 0 0 4px 0;"><strong>2. Significance:</strong> Judging historical importance using Scale, Duration, and Transformation.</p>
             <p style="margin: 0 0 4px 0;"><strong>3. Change & Continuity:</strong> Distinguishing between radical turning points and persistent continuities.</p>
@@ -987,8 +1073,8 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
       </div>
 
       <div style="border: 1.2px solid #bfdbfe; background: #eff6ff; border-radius: 5px; padding: 8px; margin-bottom: 10px;">
-        <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #1e3a8a; display: block; margin-bottom: 4px;">Scholar Revision Checklist:</strong>
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; font-family: 'Inter', sans-serif; font-size: 7pt; color: #334155;">
+        <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #1e3a8a; display: block; margin-bottom: 4px;">Scholar Revision Checklist:</strong>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; font-family: 'Inter', sans-serif; font-size: 8pt; color: #334155;">
           <div>[ &nbsp; ] Energy & Cort</div>
           <div>[ &nbsp; ] Industrial Work</div>
           <div>[ &nbsp; ] Town Slums</div>
@@ -1001,7 +1087,7 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
       </div>
     </div>
 
-    <div style="text-align: center; border-top: 1px solid #e2e8f0; padding-top: 6px; font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #94a3b8;">
+    <div style="text-align: center; border-top: 1px solid #e2e8f0; padding-top: 6px; font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8;">
       MEONCROSS SCHOOL &bull; DEPARTMENT OF HISTORY &bull; 2026 CURRICULUM EDITION &bull; 20 PAGES SADDLE-STITCHED
     </div>
   </div>

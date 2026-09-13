@@ -552,8 +552,8 @@ function getHtmlContent() {
           </tr>
           <tr>
             <td style="padding: 2.6px 6px;"><strong>Day 3 · 10:30</strong></td>
-            <td style="padding: 2.6px 6px;"><strong>Stop 11:</strong> De Groote’s Chocolatier (Grote Markt)</td>
-            <td style="padding: 2.6px 6px;">Flemish confectionery craft; €30–€40 cash envelope budgeting; stone-by-stone town rebirth.</td>
+            <td style="padding: 2.6px 6px;"><strong>Stop 11:</strong> Ypres Cloth Hall &amp; Grote Markt</td>
+            <td style="padding: 2.6px 6px;">Reconstructed Cloth Hall architecture; town square civic rebirth; brief stop for chocolate gifts.</td>
           </tr>
           <tr>
             <td style="padding: 2.6px 6px;"><strong>Day 3 · 11:20</strong></td>
