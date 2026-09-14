@@ -5610,7 +5610,7 @@ export const usa = {
           question:
             'Which 1954 battle saw the decisive defeat of the French army, ending French colonial rule in Indochina?',
           q: 'Which 1954 battle saw the decisive defeat of the French army, ending French colonial rule in Indochina?',
-          options: ['Dien Bien Phu', 'Battle of Ia Drang', 'Battle of Hue', 'Siege of Khe Sanh'],
+          options: ['Dien Bien Phu', 'Gulf of Tonkin', 'Tet Offensive', 'My Lai'],
           answer: 'Dien Bien Phu',
           a: 'Dien Bien Phu',
           explanation:
@@ -6030,9 +6030,9 @@ export const usa = {
             text: 'What was the sustained aerial bombardment campaign against North Vietnam launched by LBJ in 1965 called?',
             options: [
               'Operation Rolling Thunder',
-              'Operation Ranch Hand',
+              'Search and Destroy',
               'Operation Linebacker',
-              'Operation Cedar Falls',
+              'Strategic Hamlets',
             ],
             answer: 0,
             explanation:
@@ -6349,18 +6349,13 @@ export const usa = {
         },
         {
           question:
-            'Which major battle in November 1965 was the first large-scale clash between the US Army and conventional NVA forces?',
-          q: 'Which major battle in November 1965 was the first large-scale clash between the US Army and conventional NVA forces?',
-          options: [
-            'Battle of Hamburger Hill',
-            'Battle of Dak To',
-            'Battle of Khe Sanh',
-            'Battle of Ia Drang',
-          ],
-          answer: 'Battle of Ia Drang',
-          a: 'Battle of Ia Drang',
+            'Which Vietcong attack on a US base in February 1965 killed eight Americans and directly triggered Operation Rolling Thunder?',
+          q: 'Which Vietcong attack on a US base in February 1965 killed eight Americans and directly triggered Operation Rolling Thunder?',
+          options: ['Pleiku', 'Da Nang', 'Gulf of Tonkin', 'My Lai'],
+          answer: 'Pleiku',
+          a: 'Pleiku',
           explanation:
-            'US airmobile troops used helicopters to engage NVA units in the highlands. Both sides suffered heavy casualties and claimed victory.',
+            'The Vietcong mortar attack on the US airfield at Pleiku in February 1965 prompted President Johnson to immediately authorize Operation Rolling Thunder.',
         },
         {
           question:
@@ -7220,7 +7215,7 @@ export const usa = {
               'Operation Lam Son 719',
               'Operation Rolling Thunder',
               'Operation Linebacker',
-              'Operation Cedar Falls',
+              'Search and Destroy',
             ],
             answer: 0,
             explanation:

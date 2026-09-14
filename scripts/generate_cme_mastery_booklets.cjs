@@ -232,7 +232,7 @@ const KT_DATA = {
         vocabBank: [
           'Aswan Dam loan cancellation',
           'Nasser 26 July speech',
-          'Secret Protocol of Sèvres',
+          'Secret Sèvres agreement',
           'Israeli Sinai invasion',
           'Port Said landings',
           'Eisenhower financial ultimatum',
@@ -447,7 +447,7 @@ const KT_DATA = {
         linesPage3: 11,
         linesPage4: 22,
         vocabBank: [
-          'Operation Focus (7:45 am)',
+          'Pre-emptive air strike (7:45 am)',
           '300+ aircraft destroyed',
           'Total air supremacy',
           'Sinai armoured offensive',
@@ -657,7 +657,7 @@ const KT_DATA = {
         ],
         marks: 8,
         modelP1:
-          'The Six Day War began at 7:45 am on 5 June 1967 when Israel launched Operation Focus, a pre-emptive airstrike against Egyptian airbases. Flying below Egyptian radar across the Mediterranean, the Israeli Air Force caught the Egyptian air force completely by surprise, destroying over 300 combat aircraft on the runway within three hours and disabling runways with specialized penetration bombs. This instantaneous destruction of Egyptian airpower established total Israeli air supremacy from the opening morning, leaving Arab ground forces without air support.',
+          'The Six Day War began at 7:45 am on 5 June 1967 when Israel launched a pre-emptive airstrike against Egyptian airbases. Flying below Egyptian radar across the Mediterranean, the Israeli Air Force caught the Egyptian air force completely by surprise, destroying over 300 combat aircraft on the runway within three hours and disabling runways with specialized penetration bombs. This instantaneous destruction of Egyptian airpower established total Israeli air supremacy from the opening morning, leaving Arab ground forces without air support.',
         modelP2:
           'With aerial supremacy secured, Israeli ground forces executed rapid multi-front offensives. In the south, three armoured divisions under Sharon and Tal smashed through Egyptian defenses in Sinai, racing to block the Mitla Pass and reaching the Suez Canal by 8 June. Meanwhile, after King Hussein opened artillery fire on West Jerusalem under false Egyptian reports of victory, Israeli paratroopers under Motta Gur counter-attacked into East Jerusalem, capturing the Old City and the Western Wall on 7 June while clearing Jordanian forces from the entire West Bank.',
         modelP3:
