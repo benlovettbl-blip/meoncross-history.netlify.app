@@ -319,6 +319,13 @@ export function initEventDelegation() {
         }
         break;
 
+      case 'open-guided-reading-modal': {
+        const lIndex = parseInt(target.dataset.lessonIndex, 10);
+        if (window.openGuidedReadingModal) {
+          window.openGuidedReadingModal(isNaN(lIndex) ? undefined : lIndex);
+        }
+        break;
+      }
       case 'open-debate-modal':
         if (window.openDebateModal) window.openDebateModal();
         break;

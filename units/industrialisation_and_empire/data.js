@@ -4471,5 +4471,175 @@ export const unitData = {
         'The historical skill of combining diverse pieces of evidence, concepts, and perspectives to construct a cohesive, balanced, and nuanced historical argument.',
     },
   ],
+  guided_reading: [
+    {
+      lesson_index: 0,
+      book_title: "A Tour Thro' the Whole Island of Great Britain",
+      author: 'Daniel Defoe & contemporary observers of Coalbrookdale',
+      cover_image: '/images/coalbrookdale_by_night.jpg',
+      cover_caption:
+        'Philipp Jakob de Loutherbourg, Coalbrookdale by Night (1801), Science Museum, London. Blast furnaces illuminating the Severn Gorge.',
+      author_context:
+        "Daniel Defoe (c. 1660–1731), celebrated author and perceptive economic traveller, journeyed across 18th-century Britain recording its nascent industrial and metallurgical energy. Later observers of Abraham Darby's Coalbrookdale and Matthew Boulton's Soho Manufactory recorded the astonishing sight of coal and iron transforming ancient woodlands into subterranean cauldrons of steam and fire.",
+      is_adapted: false,
+      extract:
+        '"...The approach to Coalbrookdale appeared like a vision of subterranean fire. As night fell upon the Severn valley, dense columns of black smoke curled into the heavens, illuminated from below by the blinding crimson glare of the blast furnaces. The ground beneath our feet trembled with the rhythmic thud of colossal iron hammers driven by water and steam.<br><br>Here, night and day, the roaring bellows urge the fire to an intolerable fury. Rivers of liquid iron pour from the stone hearths into the casting beds of sand, casting a lurid, unearthly glow across the swarthy figures of the workmen who guide the molten metal with long iron rods.<br><br>It seemed to the traveller as if the bowels of the earth had broken open, and that Vulcan with all his Cyclopes had established his empire upon the hills of Shropshire. What was once quiet English woodland is now an unceasing foundry of national wealth."<br><br><div style="background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;"><strong style="color: #334155;">Glossary</strong><ul style="margin-top: 10px; margin-bottom: 0;"><li><strong>Blast Furnace:</strong> A towering stone furnace where iron ore, coke (purified coal), and limestone are blasted with air to produce molten iron.</li><li><strong>Bellows:</strong> A mechanical device used to pump strong blasts of air into a furnace to reach extreme smelting temperatures.</li><li><strong>Vulcan:</strong> The ancient Roman god of fire, metalworking, and volcanoes.</li></ul></div>',
+      hinge_question:
+        '<strong>Think:</strong> What mythic comparison does the observer use to describe the blast furnaces of Coalbrookdale?<br><br><strong>Pair:</strong> Notice how the text describes both "a lurid, unearthly glow" and an "unceasing foundry of national wealth." Discuss with your partner: did 18th-century Britons view industrial ironworks as frightening destruction of nature, or thrilling technological progress?<br><br><strong>Share:</strong> How did the transition from wood timber to coal-fired furnaces make Britain the world\'s leading producer of iron by 1800?',
+      audio_file: '/assets/industrialisation_reading_l0.mp3',
+      questions: [
+        'What powered the colossal iron hammers at Coalbrookdale?',
+        'Where was the molten iron poured when it left the furnace hearths?',
+        'Which Roman god of fire is invoked to describe the industrial scene?',
+      ],
+    },
+    {
+      lesson_index: 1,
+      book_title: 'A Memoir of Robert Blincoe, an Orphan Boy',
+      author: 'Robert Blincoe (recorded by John Brown)',
+      cover_image: '/images/child_labour.jpg',
+      cover_caption:
+        'Young child labourers working underneath spinning mules in a 19th-century cotton factory.',
+      author_context:
+        "Robert Blincoe (c. 1792–1860) was a London workhouse orphan apprenticed at age seven to work in northern cotton mills in Nottinghamshire and Derbyshire. His published testimony before parliamentary commissioners shocked Victorian Britain and directly spurred Lord Shaftesbury's factory reform campaigns.",
+      is_adapted: false,
+      extract:
+        '"The children were aroused from their beds at five o\'clock in the morning by the ringing of the factory bell. If any boy or girl was late by even two minutes, the heavy leather strap was laid unmercifully across their shoulders by the overlooker.<br><br>Our work as scavengers was to creep beneath the revolving machinery while the cotton mules were in full, rapid motion, sweeping up the flying dust and loose cotton fibres. The deafening roar of hundreds of whirling spindles filled the air, and the heat in the spinning rooms was kept at eighty degrees so that the threads would not snap.<br><br>...Many a time have I seen a poor child, overcome by utter fatigue, drop his head against the frame and fall asleep while standing. In an instant, the iron cog would seize his fingers or hair, and a limb would be torn away before the engine could be halted. We were fed on coarse oatcakes and pig porridge, working fourteen hours a day without respite."<br><br><div style="background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;"><strong style="color: #334155;">Glossary</strong><ul style="margin-top: 10px; margin-bottom: 0;"><li><strong>Scavenger:</strong> A young child employed to crawl under moving factory looms and spinning machines to clean out waste dust and cotton lint.</li><li><strong>Overlooker:</strong> A factory supervisor appointed to enforce speed, output, and discipline, often using corporal punishment.</li><li><strong>Spinning Mule:</strong> A large steam-driven machine that spun cotton fibres into yarn simultaneously on hundreds of spindles.</li></ul></div>',
+      hinge_question:
+        '<strong>Think:</strong> What was the specific task of a "scavenger" in a cotton mill?<br><br><strong>Pair:</strong> Discuss why mill owners preferred to hire workhouse orphans like Robert Blincoe rather than adult men. What economic and physical advantages did children offer to factory masters?<br><br><strong>Share:</strong> If factory masters knew that children were being maimed and exhausted, why did it take Parliament decades of campaigning by reformers like Lord Shaftesbury to pass effective Factory Acts?',
+      audio_file: '/assets/industrialisation_reading_l1.mp3',
+      questions: [
+        'At what time were the orphan apprentice children woken for work?',
+        'Why was the temperature in the cotton spinning rooms kept at eighty degrees?',
+        'What punishment was administered if a child arrived late to the mill?',
+      ],
+    },
+    {
+      lesson_index: 2,
+      book_title: 'Report on the Sanitary Condition of the Labouring Population',
+      author: 'Sir Edwin Chadwick',
+      cover_image: '/images/chadwick.jpg',
+      cover_caption:
+        'Sir Edwin Chadwick KCB (1800–1890), pioneering public health reformer whose data forced Britain to build modern sewers.',
+      author_context:
+        'Edwin Chadwick was Secretary to the Poor Law Commission. His landmark 1842 report utilized empirical statistics and medical interviews to prove that life expectancy in industrial slums had collapsed due to contaminated water, unpaved alleys, and rotting cesspools.',
+      is_adapted: false,
+      extract:
+        '"...In the crowded courts and cellar dwellings of Manchester, Liverpool, and Leeds, the primary source of pestilence is the total absence of drainage and clean water. The privies are universally foul, overflowing into the courtyards where children play barefoot in stagnant pools of excrement and putrid refuse.<br><br>In one narrow alley in Leeds, thirty-four houses with over two hundred inhabitants were found to possess but a single privy, which had not been emptied for three years. The air is so thick with noxious miasma and decaying animal matter that the inhabitants suffer from continual typhus, cholera, and consumption.<br><br>The statistical evidence proves beyond contradiction that the average age at death of a labourer in Manchester is but seventeen years, compared to thirty-eight years for an agricultural worker in rural Rutland. More lives are destroyed annually in England by filth and preventable disease than were lost in any war in which the country has been engaged in modern times."<br><br><div style="background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;"><strong style="color: #334155;">Glossary</strong><ul style="margin-top: 10px; margin-bottom: 0;"><li><strong>Privy:</strong> An outdoor latrine or toilet consisting of a seat placed over an open pit or cesspool.</li><li><strong>Miasma:</strong> The widely held 19th-century medical theory that epidemic diseases were caused by breathing poisonous air generated by rotting filth.</li><li><strong>Typhus / Consumption:</strong> Deadly infectious diseases; typhus was spread by body lice and consumption (tuberculosis) attacked the lungs in damp, overcrowded housing.</li></ul></div>',
+      hinge_question:
+        "<strong>Think:</strong> What shocking statistical comparison does Chadwick make between a Manchester labourer and a Rutland agricultural worker?<br><br><strong>Pair:</strong> Chadwick claims that filth killed more Britons each year than any foreign war. Discuss with your partner: why did private landlords and town councils resist spending money on clean water mains and underground sewers?<br><br><strong>Share:</strong> How did Chadwick's report overturn the Victorian belief that poverty and disease were simply the moral fault of the poor themselves?",
+      audio_file: '/assets/industrialisation_reading_l2.mp3',
+      questions: [
+        'How many houses shared a single privy in the Leeds court visited by inspectors?',
+        'What was the average age at death for a labourer in industrial Manchester according to Chadwick?',
+        'What medical theory did contemporaries use to explain why decaying matter caused epidemics?',
+      ],
+    },
+    {
+      lesson_index: 3,
+      book_title: 'The Interesting Narrative of the Life of Olaudah Equiano',
+      author: 'Olaudah Equiano',
+      cover_image: '/images/brookes_ship.jpg',
+      cover_caption:
+        'Official 1789 cross-section diagram of the slave ship Brookes, illustrating the inhumane packing of captive Africans.',
+      author_context:
+        'Olaudah Equiano (c. 1745–1797) was kidnapped in West Africa as a boy, endured the transatlantic Middle Passage, and laboured as an enslaved seaman before purchasing his freedom in 1766. His bestselling 1789 autobiography became the most influential eyewitness weapon in the British abolitionist movement.',
+      is_adapted: false,
+      extract:
+        '"The stench of the hold while we were on the coast was so intolerably loathsome, that it was dangerous to remain there for any time... but now that the whole ship\'s cargo were confined together, it became absolutely pestilential. The closeness of the place, and the heat of the climate, added to the number in the ship, which was so crowded that each had scarcely room to turn himself, almost suffocated us.<br><br>This produced copious perspirations, so that the air soon became unfit for respiration, from a variety of loathsome smells, and brought on a sickness among the slaves, of which many died, thus falling victims to the improvident avarice of their purchasers. This wretched situation was again aggravated by the galling of the chains, now become insupportable, and the filth of the necessary tubs, into which the children often fell, and were almost suffocated.<br><br>The shrieks of the women, and the groans of the dying, rendered the whole a scene of horror almost inconceivable... O, ye nominal Christians! might not an African ask you, learned you this from your God, who says unto you, Do unto all men once as you would men should do unto you?"<br><br><div style="background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;"><strong style="color: #334155;">Glossary</strong><ul style="margin-top: 10px; margin-bottom: 0;"><li><strong>Hold:</strong> The dark, unventilated subterranean cargo space below the main deck of a sailing ship.</li><li><strong>Improvident Avarice:</strong> Reckless, short-sighted greed that blinds people to basic human decency.</li><li><strong>Nominal Christians:</strong> People who claim to follow Christian teachings in name only, while committing horrific acts that contradict their faith.</li></ul></div>',
+      hinge_question:
+        '<strong>Think:</strong> What phrase does Equiano use to describe the slave traders\' financial greed?<br><br><strong>Pair:</strong> Look at the final question Equiano asks: "learned you this from your God?" Discuss with your partner: why was appealing directly to Christian scripture and the Golden Rule such a devastating and effective argument against British slave traders?<br><br><strong>Share:</strong> How did profits extracted from transatlantic sugar plantations and slave trading help finance the docks, banks, and early factories of the British Industrial Revolution?',
+      audio_file: '/assets/industrialisation_reading_l3.mp3',
+      questions: [
+        'What caused the air in the hold of the slave ship to become unfit for breathing?',
+        'What happened to children who fell into the "necessary tubs" in the hold?',
+        'What religious argument does Equiano use to challenge European slave merchants?',
+      ],
+    },
+    {
+      lesson_index: 4,
+      book_title: 'The Azamgarh Proclamation',
+      author: 'Firoz Shah & Leaders of the 1857 Indian Uprising',
+      cover_image: '/images/indian_rebellion_1857.jpg',
+      cover_caption:
+        'Contemporary print depicting the fierce clashes of the 1857 Indian Rebellion across northern India.',
+      author_context:
+        'In August 1857, as Indian insurgents held Delhi against the British East India Company, Prince Firoz Shah published the Azamgarh Proclamation. Written in Urdu and Persian, it systematically catalogued how British corporate rule had dispossessed Indian rulers, ruined native artisans, and violated religious faith.',
+      is_adapted: false,
+      extract:
+        '"It is well known to all, that in this age the people of Hindostan, both Hindoos and Mahommedans, are being ruined under the tyranny and oppression of the treacherous English. It is therefore the bounden duty of all wealthy men and princes to risk their life and property for the common good.<br><br><em>Section I: Regarding the Zamindars.</em> The British Government has dispossessed the ancient landlords, imposing exorbitant land taxes and selling off ancestral estates at public auction upon the slightest delay in payment... Under our royal government, their hereditary honours and estates shall be confirmed forever.<br><br><em>Section II: Regarding the Merchants.</em> The British have monopolized all valuable trade—indigo, opium, cloth, and salt—leaving only petty commerce to native merchants. Furthermore, by importing cheap machine-made goods from England, they have impoverished millions of native weavers and craftsmen.<br><br><em>Section III: Regarding the Sepoys.</em> The British have broken their most sacred oaths, dishonouring the religious caste and faith of both Hindoos and Muslims by their defiled cartridges. Let all brave soldiers unite to expel the foreign rulers."<br><br><div style="background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;"><strong style="color: #334155;">Glossary</strong><ul style="margin-top: 10px; margin-bottom: 0;"><li><strong>Hindostan:</strong> The historical name used across northern India for the Indian subcontinent.</li><li><strong>Zamindar:</strong> A hereditary landowner or aristocratic estate holder responsible for collecting local agricultural revenue.</li><li><strong>Defiled Cartridges:</strong> Paper rifle cartridges greased with animal fat (tallow from cows, sacred to Hindus, and lard from pigs, forbidden to Muslims) that soldiers had to bite open.</li></ul></div>',
+      hinge_question:
+        '<strong>Think:</strong> Name two specific groups (e.g. zamindars, merchants, sepoys) addressed in the proclamation and identify one complaint made by each.<br><br><strong>Pair:</strong> British textbooks often labelled the 1857 conflict merely a "Sepoy Mutiny" caused by bullet grease. Discuss with your partner: how does the Azamgarh Proclamation prove that the rebellion was a much broader national uprising against economic and political exploitation?<br><br><strong>Share:</strong> Why was the unity between Hindus and Muslims so terrifying to the British East India Company and Crown authorities?',
+      audio_file: '/assets/industrialisation_reading_l4.mp3',
+      questions: [
+        'How does the proclamation say the British treated Indian merchants and native weavers?',
+        'What happened to ancestral zamindar estates when tax payments were delayed?',
+        'Why did the greased cartridges offend both Hindu and Muslim soldiers?',
+      ],
+    },
+    {
+      lesson_index: 5,
+      book_title: 'Passages in the Life of a Radical',
+      author: 'Samuel Bamford',
+      cover_image: '/images/chartist_demo.jpg',
+      cover_caption:
+        'Contemporary print of working-class political reform demonstrations demanding the right to vote.',
+      author_context:
+        "Samuel Bamford (1788–1872) was a Lancashire weaver and radical reformer who organized the Middleton contingent of 6,000 peaceful men, women, and children marching to St Peter's Field in Manchester on 16 August 1819 to demand parliamentary reform.",
+      is_adapted: false,
+      extract:
+        '"It was a bright, sunny morning. We assembled in the market square at Middleton, six thousand strong, dressed in our clean Sunday suits, with sprigs of laurel and rosemary in our buttonholes. We carried banners of green and white silk bearing the words: \'Annual Parliaments\' and \'Liberty and Fraternity\'. Before marching, I strictly commanded that not a single stick or weapon should be borne; our weapon was the moral righteousness of our cause.<br><br>When we reached St. Peter\'s Field, over sixty thousand souls were gathered in peaceful order, listening with bated breath to Mr. Henry Hunt as he stepped upon the hustings.<br><br>Suddenly, a heavy clatter of hooves echoed down the street. The Manchester Yeomanry Cavalry rode into the crowd at a fierce trot, their sabres drawn and glittering in the midday sun. \'Forward!\' shouted their commander. In a moment they were hacking right and left at the defenceless throng. Shrieks of terror and groans of agony rose from the crushed multitude. Women and children were trampled beneath the charging horses. Within ten minutes, the field was a shambles of blood, torn banners, and groaning wounded."<br><br><div style="background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;"><strong style="color: #334155;">Glossary</strong><ul style="margin-top: 10px; margin-bottom: 0;"><li><strong>Hustings:</strong> A raised temporary wooden platform from which political candidates and speakers addressed the public.</li><li><strong>Yeomanry Cavalry:</strong> A volunteer military force composed of wealthy local businessmen, cotton masters, and pub owners, known for their fierce anti-radical hostility.</li><li><strong>Annual Parliaments:</strong> The radical demand that elections be held every twelve months to make MPs strictly accountable to the voters.</li></ul></div>',
+      hinge_question:
+        '<strong>Think:</strong> What specific instructions did Samuel Bamford give to his followers before they marched to St Peter\'s Field?<br><br><strong>Pair:</strong> The crowd at Peterloo was unarmed and included thousands of women and children in their best clothes. Discuss with your partner: why were the Manchester magistrates and factory owners so terrified of working-class people gathering peacefully to demand the vote?<br><br><strong>Share:</strong> Why was the massacre named "Peterloo" by contemporary newspapers, and how did it mock the British victory at Waterloo four years earlier?',
+      audio_file: '/assets/industrialisation_reading_l5.mp3',
+      questions: [
+        'What words were stitched onto the silk banners carried by the Middleton contingent?',
+        'Who commanded the volunteer cavalry force that charged into the peaceful crowd?',
+        'Why did Samuel Bamford strictly forbid his marchers from carrying sticks or weapons?',
+      ],
+    },
+    {
+      lesson_index: 6,
+      book_title: "The People's Charter and National Petition",
+      author: "William Lovett, Feargus O'Connor & the London Working Men's Association",
+      cover_image: '/images/chartist_demo.jpg',
+      cover_caption:
+        'The Great Chartist Meeting on Kennington Common, 10 April 1848, petitioning Parliament for full democracy.',
+      author_context:
+        "Published in 1838, The People's Charter was authored by cabinetmaker William Lovett and radical campaigners disillusioned by the 1832 Reform Act, which had extended votes to the middle class while entirely excluding working-class men.",
+      is_adapted: false,
+      extract:
+        '"We, your petitioners, dwell in a land whose merchants are nobles; whose manufacturers outstrip the world; whose navy rides triumphant upon every sea. Yet, with all these elements of national prosperity, we are overwhelmed with privation and suffering. The capital of the master flourishes, while the labour of the workman is starved.<br><br>We have sought the cause of this unnatural condition, and we find it in the total exclusion of the working millions from the governance of our country. Therefore, we present to your honourable House this our solemn People\'s Charter, founded upon Six cardinal points:<br><br>1. <strong>Universal Male Suffrage:</strong> Every man of sound mind, aged twenty-one, shall possess the right to vote.<br>2. <strong>The Secret Ballot:</strong> To protect the voter from the intimidation of the landlord and the briberies of the factory master.<br>3. <strong>No Property Qualification for MPs:</strong> Enabling honest working men to sit in Parliament.<br>4. <strong>Payment of Members:</strong> So that an honest tradesman may serve his country without starving.<br>5. <strong>Equal Constituencies:</strong> Granting equal representation to crowded industrial towns instead of deserted rural boroughs.<br>6. <strong>Annual Parliaments:</strong> That representatives may remain faithful servants of the people."<br><br><div style="background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;"><strong style="color: #334155;">Glossary</strong><ul style="margin-top: 10px; margin-bottom: 0;"><li><strong>Universal Male Suffrage:</strong> The right of all adult men to vote in elections, regardless of whether they owned property.</li><li><strong>Secret Ballot:</strong> Voting in private booths so that landlords and employers cannot discover or punish how a person voted.</li><li><strong>Property Qualification:</strong> A legal rule requiring Members of Parliament to own large, valuable landed estates, effectively banning working-class MPs.</li></ul></div>',
+      hinge_question:
+        '<strong>Think:</strong> List three of the Six Points of the People\'s Charter from memory.<br><br><strong>Pair:</strong> The ruling class in 1838 claimed that granting the vote to working men would lead to anarchy, looting, and the destruction of the British Empire. Discuss with your partner: how many of the Chartists\' Six Points have become normal, fundamental laws in Britain today?<br><br><strong>Share:</strong> Why was the demand for "Payment of Members" of Parliament so vital for working-class representation?',
+      audio_file: '/assets/industrialisation_reading_l6.mp3',
+      questions: [
+        'What contrast does the petition draw between the wealth of merchants and the condition of workmen?',
+        'Why was the secret ballot considered essential for protecting factory workers and tenants?',
+        'How many of the Six Points set out in 1838 are part of the modern British electoral system today?',
+      ],
+    },
+    {
+      lesson_index: 7,
+      book_title: "The Black Man's Burden (1920) vs The White Man's Burden (1899)",
+      author: 'E. D. Morel & Rudyard Kipling',
+      cover_image: '/images/map_empire_1886.jpg',
+      cover_caption:
+        'The Imperial Federation Map of the World (1886), showing the global extent of the British Empire at its Victorian peak.',
+      author_context:
+        'By the late Victorian era, British public debate was divided between imperial enthusiasts like Rudyard Kipling, who celebrated British expansion as a selfless moral civilizing mission, and radical critics like E. D. Morel, who exposed the economic devastation and human exploitation inflicted upon indigenous societies.',
+      is_adapted: false,
+      extract:
+        '<em>Rudyard Kipling (1899):</em><br>"Take up the White Man\'s burden—<br>Send forth the best ye breed—<br>Go bind your sons to exile<br>To serve your captives\' need;<br>To wait in heavy harness,<br>On fluttered folk and wild—<br>Your new-caught, sullen peoples,<br>Half-devil and half-child.<br>Take up the White Man\'s burden—<br>The savage wars of peace—<br>Fill full the mouth of Famine<br>And bid the sickness cease..."<br><br><em>E. D. Morel (1920):</em><br>"It is the Africans who carry the true burden. What has modern European imperialism brought to their ancestral lands? It was not the desire to \'fill the mouth of famine\' that drove British and European syndicates into Africa, but the insatiable lust for rubber, ivory, palm oil, and gold.<br><br>Under the mask of a \'civilising mission\', the capitalist powers have dispossessed ancient peoples of their soil, forced them into slave-like labour through military terror, and disrupted tribal systems that had endured for a thousand years. The European trader returns home laden with fortune and honours; the African remains stripped of his freedom, his heritage, and his land."<br><br><div style="background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;"><strong style="color: #334155;">Glossary</strong><ul style="margin-top: 10px; margin-bottom: 0;"><li><strong>Paternalism:</strong> The patronizing belief that colonial peoples were like children who required European rulers to control and discipline them.</li><li><strong>Capitalist Syndicate:</strong> A commercial consortium or chartered company formed to extract natural resources and maximize financial profit.</li><li><strong>Historiography:</strong> The study of how different historians and contemporaries interpret the same historical events from contrasting political perspectives.</li></ul></div>',
+      hinge_question:
+        '<strong>Think:</strong> What phrase does Kipling use to describe colonized peoples, and what phrase does Morel use to describe the true motive of European powers?<br><br><strong>Pair:</strong> Compare Kipling\'s view of empire as a selfless moral sacrifice ("bind your sons to exile... to serve your captives\' need") with Morel\'s view of empire as armed commercial theft ("insatiable lust for rubber, ivory, and gold"). Discuss: which interpretation best explains Britain\'s 19th-century imperial expansion?<br><br><strong>Share:</strong> How does the debate between Kipling and Morel mirror the wider historical debate between "Optimist" and "Pessimist" historians of the Industrial Revolution?',
+      audio_file: '/assets/industrialisation_reading_l7.mp3',
+      questions: [
+        'How does Rudyard Kipling characterize non-European colonized peoples in his 1899 poem?',
+        'According to E.D. Morel, what was the real motive that drove European syndicates into Africa?',
+        'What term describes the patronizing attitude that treated colonized adults as "half-children"?',
+      ],
+    },
+  ],
 };
 export default unitData;

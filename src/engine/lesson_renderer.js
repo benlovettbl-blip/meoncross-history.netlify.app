@@ -615,6 +615,11 @@ export function renderLesson(lesson) {
   const currentIndex = allUnitLessons.findIndex(
     (l) => l.title === lesson.title || (lesson.id && l.id === lesson.id),
   );
+  const grEntry =
+    (activeUnit.guided_reading || []).find((gr) => gr.lesson_index === currentIndex) ||
+    ((window.currentUnitData && window.currentUnitData.guided_reading) || []).find(
+      (gr) => gr.lesson_index === currentIndex,
+    );
   html += `
       <div class="sticky-lesson-header">
           <h4 class="sticky-lesson-title">
@@ -628,6 +633,11 @@ export function renderLesson(lesson) {
               <button class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.88rem; background: white; color: #1e3a8a; border: 1.5px solid #cbd5e1; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); cursor: pointer;" data-action="switch-view" data-view="lessons" data-unit="${appStore.state.selectedUnitId || window.currentUnitId || 'trip_ypres'}"><i class="fa-solid fa-arrow-left" style="margin-right: 6px;"></i> Itinerary</button>
             `
               : `
+              ${
+                grEntry
+                  ? `<button class="btn btn-guided-reading-launcher" style="padding: 6px 12px; font-size: 0.88rem; background: #fdf2f8; color: #9d174d; border: 1.5px solid #fbcfe8; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: inline-flex; align-items: center; gap: 6px; cursor: pointer;" data-action="open-guided-reading-modal" data-lesson-index="${currentIndex}" title="Open Guided Reading Extract: ${grEntry.book_title}"><i class="fa-solid fa-book-open-reader" style="color: #be185d;"></i> Guided Reading: ${grEntry.book_title}</button>`
+                  : ''
+              }
               ${
                 unitId === 'edexcel_medicine' && currentIndex >= 0
                   ? `<a href="/units/edexcel_medicine/visual_revision_guide.html#spread-${currentIndex + 1}" target="_blank" class="btn" style="padding: 6px 12px; font-size: 0.88rem; background: #eff6ff; color: #1e3a8a; border: 1.5px solid #bfdbfe; font-weight: 700; text-decoration: none; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: inline-flex; align-items: center; gap: 6px;" title="Jump directly to this lesson's visual revision spread and exam model in the Masterclass Guide"><i class="fa-solid fa-book-open"></i> Revision Masterclass (Spread ${currentIndex + 1})</a>`

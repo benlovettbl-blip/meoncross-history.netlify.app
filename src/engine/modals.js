@@ -3229,3 +3229,276 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
   overlay.style.opacity = '1';
   modalContent.style.transform = 'scale(1)';
 };
+
+export function openGuidedReadingModal(lessonIndex) {
+  const activeUnit =
+    window.currentUnitData || (appStore && appStore.state && appStore.state.activeUnitData) || {};
+  const readings = activeUnit.guided_reading || [];
+  if (!readings || readings.length === 0) {
+    alert('No guided reading extracts available for this unit.');
+    return;
+  }
+
+  // Determine current lesson index if not specified
+  let targetIndex = lessonIndex;
+  if (targetIndex === undefined || isNaN(targetIndex)) {
+    const allLessons = activeUnit.lessons || [];
+    const activeLesson = window.currentActiveLesson;
+    if (activeLesson) {
+      targetIndex = allLessons.findIndex(
+        (l) => l.title === activeLesson.title || (activeLesson.id && l.id === activeLesson.id),
+      );
+    }
+    if (targetIndex === -1 || targetIndex === undefined) targetIndex = 0;
+  }
+
+  let readingData = readings.find((r) => r.lesson_index === targetIndex);
+  if (!readingData) {
+    readingData = readings[0];
+  }
+
+  let modal = document.getElementById('guided-reading-modal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'guided-reading-modal';
+    modal.style.cssText =
+      'position: fixed; inset: 0; background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(8px); z-index: 10050; display: flex; align-items: center; justify-content: center; padding: 20px; opacity: 0; transition: opacity 0.25s ease;';
+    document.body.appendChild(modal);
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        window.closeGuidedReadingModal();
+      }
+    });
+  }
+
+  // Render modal content
+  modal.innerHTML = `
+    <div class="guided-reading-modal-card" style="background: #ffffff; border-radius: 12px; width: 96%; max-width: 1100px; max-height: 92vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35); border: 1px solid #e2e8f0;">
+      
+      <!-- Modal Header -->
+      <div style="padding: 16px 24px; background: linear-gradient(to right, #fdf2f8, #ffffff); border-bottom: 1px solid #fbcfe8; display: flex; justify-content: space-between; align-items: center;">
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+          <span style="background: #be185d; color: white; padding: 4px 10px; border-radius: 20px; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px;">
+            <i class="fa-solid fa-book-open-reader"></i> Lesson ${readingData.lesson_index + 1} Guided Reading
+          </span>
+          <h3 style="margin: 0; font-family: 'Playfair Display', serif; color: #831843; font-size: 1.4rem; font-weight: 700;">
+            ${readingData.book_title}
+          </h3>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          ${
+            readings.length > 1
+              ? `
+            <select id="gr-lesson-select" style="padding: 5px 10px; border-radius: 6px; border: 1.5px solid #cbd5e1; font-family: 'Inter', sans-serif; font-size: 0.85rem; background: white; color: #1e293b; cursor: pointer;">
+              ${readings
+                .map(
+                  (r) =>
+                    `<option value="${r.lesson_index}" ${r.lesson_index === readingData.lesson_index ? 'selected' : ''}>Lesson ${r.lesson_index + 1}: ${r.book_title}</option>`,
+                )
+                .join('')}
+            </select>
+          `
+              : ''
+          }
+          <button onclick="window.closeGuidedReadingModal()" style="background: none; border: none; font-size: 1.4rem; color: #64748b; cursor: pointer; padding: 4px 8px; border-radius: 6px; display: flex; align-items: center; justify-content: center;" title="Close (Esc)">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Body (Two-Column Layout) -->
+      <div style="padding: 24px; overflow-y: auto; display: flex; gap: 28px; flex: 1; min-height: 0;" class="guided-reading-modal-body">
+        
+        <!-- Left Column: Source / Author / Audio / Think-Pair-Share -->
+        <div style="width: 320px; flex-shrink: 0; display: flex; flex-direction: column; gap: 16px;">
+          
+          <!-- Source Cover Image -->
+          ${
+            readingData.cover_image
+              ? `
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
+              <img src="${getAssetUrl(readingData.cover_image)}" alt="${readingData.book_title}" style="width: 100%; height: auto; border-radius: 6px; display: block; max-height: 200px; object-fit: cover;">
+              ${
+                readingData.cover_caption
+                  ? `
+                <div style="font-size: 0.78rem; color: #64748b; margin-top: 8px; line-height: 1.35; font-style: italic; border-top: 1px solid #e2e8f0; padding-top: 6px;">
+                  ${readingData.cover_caption}
+                </div>
+              `
+                  : ''
+              }
+            </div>
+          `
+              : ''
+          }
+
+          <!-- Author Box -->
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px;">
+            <div style="font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px; color: #64748b; font-weight: 700; margin-bottom: 4px;">Author</div>
+            <div style="font-size: 1.05rem; font-weight: 700; color: #0f172a; margin-bottom: 6px;">${readingData.author}</div>
+            ${
+              readingData.author_context
+                ? `
+              <div style="font-size: 0.85rem; color: #334155; line-height: 1.45;">
+                ${readingData.author_context}
+              </div>
+            `
+                : ''
+            }
+          </div>
+
+          <!-- Audio Read-Aloud Player -->
+          ${
+            readingData.audio_file
+              ? `
+            <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 8px;">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <span style="font-size: 0.82rem; font-weight: 700; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
+                  <i class="fa-solid fa-volume-high" style="color: #2563eb;"></i> Audio Read-Aloud
+                </span>
+                <span id="gr-audio-status" style="font-size: 0.75rem; color: #64748b;">Ready</span>
+              </div>
+              <button id="gr-play-btn" class="btn" onclick="window.toggleGuidedReadingAudio()" style="background: #2563eb; color: white; border: none; padding: 8px 14px; border-radius: 6px; font-weight: 700; font-size: 0.88rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 2px 4px rgba(37,99,235,0.25);">
+                <i class="fa-solid fa-play"></i> Play Audio Reading
+              </button>
+              <audio id="gr-audio-element" src="${getAssetUrl(readingData.audio_file)}" preload="none"></audio>
+            </div>
+          `
+              : ''
+          }
+
+          <!-- Think-Pair-Share Box -->
+          <div style="background: #fdf2f8; border: 1.5px solid #fbcfe8; border-radius: 8px; padding: 14px; display: flex; flex-direction: column; gap: 10px;">
+            <div style="display: flex; align-items: center; gap: 8px; color: #be185d; font-weight: 700; font-size: 0.92rem; text-transform: uppercase; letter-spacing: 0.5px;">
+              <i class="fa-solid fa-users"></i> Think-Pair-Share Challenge
+            </div>
+            <div style="font-size: 0.88rem; color: #831843; line-height: 1.5;">
+              ${readingData.hinge_question || 'Discuss the core argument made by the author in this primary extract.'}
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-top: 4px;">
+              <div style="background: white; border: 1px solid #fbcfe8; border-radius: 4px; padding: 6px 4px; text-align: center; font-size: 0.75rem; color: #9d174d; font-weight: 600;">
+                <i class="fa-regular fa-lightbulb"></i> 1m Think
+              </div>
+              <div style="background: white; border: 1px solid #fbcfe8; border-radius: 4px; padding: 6px 4px; text-align: center; font-size: 0.75rem; color: #9d174d; font-weight: 600;">
+                <i class="fa-solid fa-user-group"></i> 2m Pair
+              </div>
+              <div style="background: white; border: 1px solid #fbcfe8; border-radius: 4px; padding: 6px 4px; text-align: center; font-size: 0.75rem; color: #9d174d; font-weight: 600;">
+                <i class="fa-solid fa-bullhorn"></i> 2m Share
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Reading Extract & Glossary -->
+        <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 14px;">
+          
+          <!-- Extract Header Banner -->
+          <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #e2e8f0; padding-bottom: 8px;">
+            <span style="font-size: 0.82rem; color: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">
+              Primary Text & Archival Excerpt
+            </span>
+            ${
+              readingData.is_adapted !== undefined
+                ? readingData.is_adapted
+                  ? `<span style="display: inline-flex; align-items: center; gap: 5px; font-size: 0.78rem; font-weight: 700; color: #b45309; background: #fffbeb; border: 1px solid #fde68a; padding: 3px 8px; border-radius: 4px;"><i class="fa-solid fa-triangle-exclamation"></i> Adapted for Classroom</span>`
+                  : `<span style="display: inline-flex; align-items: center; gap: 5px; font-size: 0.78rem; font-weight: 700; color: #047857; background: #ecfdf5; border: 1px solid #a7f3d0; padding: 3px 8px; border-radius: 4px;"><i class="fa-solid fa-check"></i> Verbatim Primary Source</span>`
+                : ''
+            }
+          </div>
+
+          <!-- Extract Body -->
+          <div class="guided-reading-text-body" style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.18rem; line-height: 1.8; color: #0f172a; padding: 24px; background: #fafafa; border-radius: 8px; border: 1px solid #e2e8f0; overflow-y: auto; flex: 1;">
+            ${readingData.extract}
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  `;
+
+  // Attach select listener if multiple readings
+  const sel = modal.querySelector('#gr-lesson-select');
+  if (sel) {
+    sel.addEventListener('change', (e) => {
+      const newIdx = parseInt(e.target.value, 10);
+      window.openGuidedReadingModal(newIdx);
+    });
+  }
+
+  // Audio setup
+  const audioEl = modal.querySelector('#gr-audio-element');
+  const playBtn = modal.querySelector('#gr-play-btn');
+  const statusEl = modal.querySelector('#gr-audio-status');
+  if (audioEl && playBtn) {
+    audioEl.addEventListener('play', () => {
+      playBtn.innerHTML = '<i class="fa-solid fa-pause"></i> Pause Audio Reading';
+      playBtn.style.background = '#dc2626';
+      if (statusEl) statusEl.innerText = 'Playing...';
+    });
+    audioEl.addEventListener('pause', () => {
+      playBtn.innerHTML = '<i class="fa-solid fa-play"></i> Play Audio Reading';
+      playBtn.style.background = '#2563eb';
+      if (statusEl) statusEl.innerText = 'Paused';
+    });
+    audioEl.addEventListener('ended', () => {
+      playBtn.innerHTML = '<i class="fa-solid fa-play"></i> Play Audio Reading';
+      playBtn.style.background = '#2563eb';
+      if (statusEl) statusEl.innerText = 'Completed';
+    });
+    audioEl.addEventListener('error', () => {
+      if (statusEl) statusEl.innerText = 'Audio not found';
+    });
+  }
+
+  modal.style.display = 'flex';
+  void modal.offsetWidth;
+  modal.style.opacity = '1';
+
+  // Attach Escape listener
+  if (!window._grModalKeyHandlerAttached) {
+    window._grModalKeyHandlerAttached = true;
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        window.closeGuidedReadingModal();
+      }
+    });
+  }
+}
+
+window.openGuidedReadingModal = openGuidedReadingModal;
+
+export function closeGuidedReadingModal() {
+  const modal = document.getElementById('guided-reading-modal');
+  if (modal) {
+    const audioEl = modal.querySelector('#gr-audio-element');
+    if (audioEl) {
+      audioEl.pause();
+    }
+    modal.style.opacity = '0';
+    setTimeout(() => {
+      modal.style.display = 'none';
+    }, 250);
+  }
+}
+
+window.closeGuidedReadingModal = closeGuidedReadingModal;
+
+window.toggleGuidedReadingAudio = function () {
+  const modal = document.getElementById('guided-reading-modal');
+  if (!modal) return;
+  const audioEl = modal.querySelector('#gr-audio-element');
+  if (!audioEl) return;
+  if (audioEl.paused) {
+    audioEl.play().catch((err) => {
+      console.warn('Could not play guided reading audio:', err);
+      const statusEl = modal.querySelector('#gr-audio-status');
+      if (statusEl) statusEl.innerText = 'No audio file';
+    });
+  } else {
+    audioEl.pause();
+  }
+};

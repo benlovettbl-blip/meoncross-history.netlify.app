@@ -1871,8 +1871,8 @@ export const unitData = {
         },
         {
           question:
-            'What counter-argument do revisionist historians such as A.J.P. Taylor make regarding colonial rivalries in Africa as a cause of the First World War?',
-          q: 'What counter-argument do revisionist historians such as A.J.P. Taylor make regarding colonial rivalries in Africa as a cause of the First World War?',
+            'What counter-argument is made by historians regarding colonial rivalries in Africa as a cause of the First World War?',
+          q: 'What counter-argument is made by historians regarding colonial rivalries in Africa as a cause of the First World War?',
           options: [
             'African armies launched an invasion of Europe that caused the Great War',
             'No European powers possessed colonies in Africa prior to August 1914',
@@ -1883,7 +1883,7 @@ export const unitData = {
             'Colonial disputes in Africa were all resolved through peaceful diplomatic bargaining and did not directly trigger the war of 1914',
           a: 'Colonial disputes in Africa were all resolved through peaceful diplomatic bargaining and did not directly trigger the war of 1914',
           explanation:
-            'Taylor and other revisionists note that Britain, France, and Germany settled all their African border disputes peacefully; the war actually began in the Balkans over European power balances.',
+            'Historians note that Britain, France, and Germany settled all their African border disputes peacefully through diplomacy; the war actually began in the Balkans over European power balances.',
         },
         {
           question:
@@ -1897,8 +1897,8 @@ export const unitData = {
         },
         {
           question:
-            'According to modern historian Margaret MacMillan, what was the primary lasting danger of the Moroccan Crises?',
-          q: 'According to modern historian Margaret MacMillan, what was the primary lasting danger of the Moroccan Crises?',
+            'What was the primary lasting danger of the Moroccan Crises (1905 and 1911) for European diplomatic stability?',
+          q: 'What was the primary lasting danger of the Moroccan Crises (1905 and 1911) for European diplomatic stability?',
           options: [
             'They caused the dissolution of the British Empire in 1911',
             'They convinced German leaders that future diplomatic negotiations were useless and only military strength could achieve prestige',
@@ -1909,7 +1909,7 @@ export const unitData = {
             'They convinced German leaders that future diplomatic negotiations were useless and only military strength could achieve prestige',
           a: 'They convinced German leaders that future diplomatic negotiations were useless and only military strength could achieve prestige',
           explanation:
-            'MacMillan argues that the humiliation of Algeciras and Agadir created a fatal sense in Berlin that Germany was being encircled, making military leaders more willing to risk general war in 1914.',
+            'Historians argue that the diplomatic humiliations of Algeciras and Agadir created a fatal sense in Berlin that Germany was being encircled, making military leaders more willing to risk general war in 1914.',
         },
       ],
     },
@@ -2616,24 +2616,24 @@ export const unitData = {
         },
         {
           question:
-            'What influential thesis was advanced by historian Paul Kennedy in "The Rise of the Anglo-German Antagonism" (1980)?',
-          q: 'What influential thesis was advanced by historian Paul Kennedy in "The Rise of the Anglo-German Antagonism" (1980)?',
+            'What argument is advanced by the theory of "Naval Determinism" regarding the Anglo-German arms race?',
+          q: 'What argument is advanced by the theory of "Naval Determinism" regarding the Anglo-German arms race?',
           options: [
             'Economic cooperation between Britain and Germany made war impossible',
-            'Naval Determinism: the naval arms race was the single decisive structural cause that permanently destroyed Anglo-German relations and made war inevitable',
+            'The naval arms race was the single decisive structural cause that permanently destroyed Anglo-German relations and made war inevitable',
             'Britain was solely to blame for deliberately attacking German merchant ships in peacetime',
             'The naval race was a minor sideshow orchestrated entirely by American arms manufacturers',
           ],
           answer:
-            'Naval Determinism: the naval arms race was the single decisive structural cause that permanently destroyed Anglo-German relations and made war inevitable',
-          a: 'Naval Determinism: the naval arms race was the single decisive structural cause that permanently destroyed Anglo-German relations and made war inevitable',
+            'The naval arms race was the single decisive structural cause that permanently destroyed Anglo-German relations and made war inevitable',
+          a: 'The naval arms race was the single decisive structural cause that permanently destroyed Anglo-German relations and made war inevitable',
           explanation:
-            'Kennedy argued that Germany’s challenge to British sea power directly threatened the core of the British Empire, leaving London no choice but to align with France and Russia.',
+            'The naval determinist argument holds that Germany’s challenge to British sea power directly threatened the core of the British Empire, leaving London no choice but to align with France and Russia.',
         },
         {
           question:
-            'What counter-argument do modern military historians such as Hew Strachan advance regarding the naval race by 1912?',
-          q: 'What counter-argument do modern military historians such as Hew Strachan advance regarding the naval race by 1912?',
+            'What counter-argument do military historians advance regarding the status of the naval arms race by 1912?',
+          q: 'What counter-argument do military historians advance regarding the status of the naval arms race by 1912?',
           options: [
             'Britain dismantled its entire fleet and surrendered naval superiority',
             'Germany successfully invaded the British coast in 1913',
@@ -3316,8 +3316,8 @@ export const unitData = {
         },
         {
           question:
-            'What counter-interpretation do modern historians such as Margaret MacMillan advance regarding the role of alliances in July 1914?',
-          q: 'What counter-interpretation do modern historians such as Margaret MacMillan advance regarding the role of alliances in July 1914?',
+            'What counter-interpretation is advanced by historians regarding whether alliances made the First World War inevitable in July 1914?',
+          q: 'What counter-interpretation is advanced by historians regarding whether alliances made the First World War inevitable in July 1914?',
           options: [
             'Alliances prevented any fighting from taking place outside of the Balkans',
             'Alliances did not make war inevitable; European leaders made conscious, aggressive political choices to mobilize and declare war rather than acting as helpless victims of treaties',
@@ -3328,7 +3328,7 @@ export const unitData = {
             'Alliances did not make war inevitable; European leaders made conscious, aggressive political choices to mobilize and declare war rather than acting as helpless victims of treaties',
           a: 'Alliances did not make war inevitable; European leaders made conscious, aggressive political choices to mobilize and declare war rather than acting as helpless victims of treaties',
           explanation:
-            'MacMillan argues that alliances had preserved peace for decades; in 1914, statesmen chose war because they feared diplomatic humiliation more than military conflict.',
+            'Historians argue that alliances had preserved peace for decades; in 1914, statesmen chose war because they feared diplomatic humiliation more than military conflict.',
         },
         {
           question:
@@ -4104,8 +4104,8 @@ export const unitData = {
         },
         {
           question:
-            'What landmark thesis was published by German historian Fritz Fischer in 1961 ("Griff nach der Weltmacht") regarding the July Crisis?',
-          q: 'What landmark thesis was published by German historian Fritz Fischer in 1961 ("Griff nach der Weltmacht") regarding the July Crisis?',
+            'What argument is advanced by the deliberate German aggression thesis regarding the July Crisis of 1914?',
+          q: 'What argument is advanced by the deliberate German aggression thesis regarding the July Crisis of 1914?',
           options: [
             'Tsarist Russia orchestrated the entire assassination to conquer Constantinople',
             'Imperial Germany deliberately provoked the July Crisis and encouraged Austria to attack Serbia to wage a premeditated war for European hegemony and world power',
@@ -4116,12 +4116,12 @@ export const unitData = {
             'Imperial Germany deliberately provoked the July Crisis and encouraged Austria to attack Serbia to wage a premeditated war for European hegemony and world power',
           a: 'Imperial Germany deliberately provoked the July Crisis and encouraged Austria to attack Serbia to wage a premeditated war for European hegemony and world power',
           explanation:
-            'Fischer broke German historical consensus by producing archival proof that German leaders actively sought war in 1914 to break encirclement and establish German continental dominance.',
+            'This interpretation broke historical consensus by producing archival proof that German leaders actively sought war in 1914 to break encirclement and establish German continental dominance.',
         },
         {
           question:
-            'How does Australian historian Christopher Clark interpret European leadership in "The Sleepwalkers" (2012)?',
-          q: 'How does Australian historian Christopher Clark interpret European leadership in "The Sleepwalkers" (2012)?',
+            'How does the revisionist "Sleepwalkers" interpretation view European leadership during the July Crisis?',
+          q: 'How does the revisionist "Sleepwalkers" interpretation view European leadership during the July Crisis?',
           options: [
             'Britain was solely responsible for attacking Germany without warning',
             'The war was entirely caused by the secret orders of Emperor Franz Joseph',
@@ -4132,7 +4132,7 @@ export const unitData = {
             'European leaders acted like sleepwalkers, blinded by mutual paranoia and domestic pressures, rather than executing a unilateral German conspiracy',
           a: 'European leaders acted like sleepwalkers, blinded by mutual paranoia and domestic pressures, rather than executing a unilateral German conspiracy',
           explanation:
-            'Clark argues for distributed responsibility: European leaders were caught in a volatile multilateral crisis, miscalculating that the other side would back down as they had in previous crises.',
+            'The sleepwalkers thesis argues for distributed responsibility: European leaders were caught in a volatile multilateral crisis, miscalculating that the other side would back down as they had in previous crises.',
         },
         {
           question:
@@ -4241,13 +4241,18 @@ export const unitData = {
         },
         {
           question:
-            'Which German historian published "Griff nach der Weltmacht" in 1961, arguing Germany bore primary responsibility for deliberately planning and provoking the war?',
-          q: 'Which German historian published "Griff nach der Weltmacht" in 1961, arguing Germany bore primary responsibility for deliberately planning and provoking the war?',
-          options: ['Niall Ferguson', 'Fritz Fischer', 'Christopher Clark', 'A.J.P. Taylor'],
-          answer: 'Fritz Fischer',
-          a: 'Fritz Fischer',
+            'What historical interpretation argued that Imperial Germany bore primary responsibility for deliberately planning and provoking the First World War?',
+          q: 'What historical interpretation argued that Imperial Germany bore primary responsibility for deliberately planning and provoking the First World War?',
+          options: [
+            'The Accidental Sleepwalking Thesis',
+            'The Deliberate German Aggression / Fischer Thesis',
+            'The British Encirclement Conspiracy',
+            'The Pan-Slavic Provocation Argument',
+          ],
+          answer: 'The Deliberate German Aggression / Fischer Thesis',
+          a: 'The Deliberate German Aggression / Fischer Thesis',
           explanation:
-            'Fritz Fischer revolutionized WWI historiography by proving that Imperial Germany’s leadership deliberately pursued war in 1914 to break encirclement and establish global power.',
+            'This landmark thesis revolutionized WWI historiography by proving from archival records that Imperial Germany’s leadership deliberately pursued war in 1914 to break encirclement and establish global power.',
         },
         {
           question:
@@ -4281,8 +4286,8 @@ export const unitData = {
         },
         {
           question:
-            'How do revisionist historians such as Christopher Clark ("The Sleepwalkers") characterize the outbreak of the First World War?',
-          q: 'How do revisionist historians such as Christopher Clark ("The Sleepwalkers") characterize the outbreak of the First World War?',
+            'How does the revisionist "Sleepwalkers" interpretation characterize the outbreak of the First World War?',
+          q: 'How does the revisionist "Sleepwalkers" interpretation characterize the outbreak of the First World War?',
           options: [
             'As an accidental conflict caused by a Serbian naval mutiny',
             'As a tragic collective breakdown of diplomacy where European statesmen blindly sleepwalked into a catastrophe that none truly wanted',
@@ -4293,12 +4298,12 @@ export const unitData = {
             'As a tragic collective breakdown of diplomacy where European statesmen blindly sleepwalked into a catastrophe that none truly wanted',
           a: 'As a tragic collective breakdown of diplomacy where European statesmen blindly sleepwalked into a catastrophe that none truly wanted',
           explanation:
-            'Clark argues that the outbreak was not the calculated conspiracy of a single state, but a multilateral crisis where leaders misjudged risks and stumbled into catastrophe.',
+            'This revisionist thesis argues that the outbreak was not the calculated conspiracy of a single state, but a multilateral crisis where leaders misjudged risks and stumbled into catastrophe.',
         },
         {
           question:
-            'What archival document from September 1914 did Fritz Fischer highlight to prove German premeditated expansionist ambitions?',
-          q: 'What archival document from September 1914 did Fritz Fischer highlight to prove German premeditated expansionist ambitions?',
+            'What archival document from September 1914 outlined Imperial Germany’s premeditated expansionist war aims in Europe and Africa?',
+          q: 'What archival document from September 1914 outlined Imperial Germany’s premeditated expansionist war aims in Europe and Africa?',
           options: [
             'The Berlin Conference Minutes',
             'The Kruger Telegram',
@@ -4313,8 +4318,8 @@ export const unitData = {
         },
         {
           question:
-            'What primary cause for the outbreak of war is emphasized by revisionist historian Sean McMeekin in "The Russian Origins of the First World War" (2011)?',
-          q: 'What primary cause for the outbreak of war is emphasized by revisionist historian Sean McMeekin in "The Russian Origins of the First World War" (2011)?',
+            'What primary geopolitical objective is emphasized as Tsarist Russia’s major motive during the July Crisis of 1914?',
+          q: 'What primary geopolitical objective is emphasized as Tsarist Russia’s major motive during the July Crisis of 1914?',
           options: [
             'Tsar Nicholas II’s personal jealousy of King George V’s naval fleet',
             'Tsarist Russia’s aggressive geopolitical ambition to dismantle the Ottoman Empire and seize Constantinople and the Turkish Straits',
@@ -4325,12 +4330,12 @@ export const unitData = {
             'Tsarist Russia’s aggressive geopolitical ambition to dismantle the Ottoman Empire and seize Constantinople and the Turkish Straits',
           a: 'Tsarist Russia’s aggressive geopolitical ambition to dismantle the Ottoman Empire and seize Constantinople and the Turkish Straits',
           explanation:
-            'McMeekin argues that Russian leaders actively welcomed a European war to fulfill their centuries-old imperial ambition of controlling the Bosphorus and Dardanelles.',
+            'Revisionist historians argue that Russian leaders actively welcomed a European war to fulfill their centuries-old imperial ambition of controlling the Bosphorus and Dardanelles.',
         },
         {
           question:
-            'What controversial argument does British historian Niall Ferguson advance in "The Pity of War" (1998) regarding Britain’s entry into the war?',
-          q: 'What controversial argument does British historian Niall Ferguson advance in "The Pity of War" (1998) regarding Britain’s entry into the war?',
+            'What controversial counter-argument is advanced regarding Great Britain’s decision to intervene in the First World War in August 1914?',
+          q: 'What controversial counter-argument is advanced regarding Great Britain’s decision to intervene in the First World War in August 1914?',
           options: [
             'The Royal Navy should have bombarded New York to enforce neutrality',
             'Great Britain made a catastrophic strategic blunder by intervening, transforming a manageable continental clash into a ruinous global bloodbath',
@@ -4341,12 +4346,12 @@ export const unitData = {
             'Great Britain made a catastrophic strategic blunder by intervening, transforming a manageable continental clash into a ruinous global bloodbath',
           a: 'Great Britain made a catastrophic strategic blunder by intervening, transforming a manageable continental clash into a ruinous global bloodbath',
           explanation:
-            'Ferguson contends that had Britain stayed neutral, Germany would have established a continental customs union similar to the modern European Union without the horrific loss of life.',
+            'Counter-factual historians contend that had Britain stayed neutral, Germany would have established a continental customs union similar to the modern European Union without the horrific loss of life.',
         },
         {
           question:
-            'According to military historian John Keegan, how did rigid railway mobilization timetables undermine diplomatic crisis management in July 1914?',
-          q: 'According to military historian John Keegan, how did rigid railway mobilization timetables undermine diplomatic crisis management in July 1914?',
+            'How did rigid railway mobilization timetables fatally undermine diplomatic crisis management across Europe in July 1914?',
+          q: 'How did rigid railway mobilization timetables fatally undermine diplomatic crisis management across Europe in July 1914?',
           options: [
             'Once general mobilization was declared, millions of reservists and train schedules could not be stopped without throwing armies into defenseless chaos',
             'European armies had no maps of railway routes',
@@ -4357,12 +4362,12 @@ export const unitData = {
             'Once general mobilization was declared, millions of reservists and train schedules could not be stopped without throwing armies into defenseless chaos',
           a: 'Once general mobilization was declared, millions of reservists and train schedules could not be stopped without throwing armies into defenseless chaos',
           explanation:
-            'Keegan noted that mobilization timetables dictated diplomacy: once Russia mobilized, German generals insisted they had to attack France immediately or lose the war.',
+            'Military historians note that mobilization timetables dictated diplomacy: once Russia mobilized, German generals insisted they had to attack France immediately or lose the war.',
         },
         {
           question:
-            'What interwar revisionist thesis was advanced by American historian Sidney Fay in "The Origins of the World War" (1928)?',
-          q: 'What interwar revisionist thesis was advanced by American historian Sidney Fay in "The Origins of the World War" (1928)?',
+            'What influential revisionist argument emerged in the interwar period regarding national responsibility for the outbreak of the First World War?',
+          q: 'What influential revisionist argument emerged in the interwar period regarding national responsibility for the outbreak of the First World War?',
           options: [
             'No single nation was solely responsible; all European powers were collectively ensnared by secret diplomacy, militarism, nationalism, and economic rivalry',
             'France had planned the invasion of Germany since 1815',
@@ -4373,7 +4378,7 @@ export const unitData = {
             'No single nation was solely responsible; all European powers were collectively ensnared by secret diplomacy, militarism, nationalism, and economic rivalry',
           a: 'No single nation was solely responsible; all European powers were collectively ensnared by secret diplomacy, militarism, nationalism, and economic rivalry',
           explanation:
-            'Fay challenged Article 231 of Versailles, arguing that the system of alliances and imperial rivalries shared collective responsibility for the tragedy.',
+            'Interwar revisionists challenged Article 231 of Versailles, arguing that the system of alliances and imperial rivalries shared collective responsibility for the tragedy.',
         },
         {
           question:
@@ -5002,15 +5007,25 @@ export const unitData = {
       id: 'gw_q43',
     },
     {
-      q: 'Which historian famously argued Germany planned a war of aggression?',
-      a: 'Fritz Fischer',
-      options: ['A.J.P. Taylor', 'Margaret MacMillan', 'Fritz Fischer', 'Christopher Clark'],
+      q: 'What historical interpretation argues Imperial Germany deliberately planned a war of aggression in 1914?',
+      a: 'The Deliberate Aggression Thesis',
+      options: [
+        'The Deliberate Aggression Thesis',
+        'The Accidental Blunder Theory',
+        'The Economic Inevitability Theory',
+        'The Defensive Preemption Argument',
+      ],
       id: 'gw_q44',
     },
     {
-      q: 'Which historian argued the nations blundered into war due to rigid alliances?',
-      a: 'Margaret MacMillan',
-      options: ['Richard Evans', 'Ian Kershaw', 'Fritz Fischer', 'Margaret MacMillan'],
+      q: 'What historical interpretation argues European powers blundered into war due to rigid alliances and mutual paranoia?',
+      a: 'The Collective Blunder / Sleepwalkers Thesis',
+      options: [
+        'The Imperial Annexation Plan',
+        'The Naval Supremacy Monopoly',
+        'The Collective Blunder / Sleepwalkers Thesis',
+        'The Marxist Class Struggle Theory',
+      ],
       id: 'gw_q45',
     },
     {

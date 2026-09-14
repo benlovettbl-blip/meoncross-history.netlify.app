@@ -562,8 +562,8 @@ export const unitData = {
         },
         {
           question:
-            'What does historian Gary Sheffield argue was a key "pragmatic" economic reason for working-class enlistment in 1914?',
-          q: 'What does historian Gary Sheffield argue was a key "pragmatic" economic reason for working-class enlistment in 1914?',
+            "Beyond patriotic propaganda, what pragmatic economic benefits ('the King’s Shilling') motivated many impoverished working-class men to volunteer in 1914?",
+          q: "Beyond patriotic propaganda, what pragmatic economic benefits ('the King’s Shilling') motivated many impoverished working-class men to volunteer in 1914?",
           options: [
             'Guaranteed regular pay ("the King’s Shilling"), warm clothing, three meals a day, and sturdy leather boots',
             'An exemption from paying any domestic taxes for life',
@@ -578,8 +578,8 @@ export const unitData = {
         },
         {
           question:
-            'According to historian Catriona Pennell ("A Kingdom United"), what moral justification drove British public enlistment in 1914?',
-          q: 'According to historian Catriona Pennell ("A Kingdom United"), what moral justification drove British public enlistment in 1914?',
+            'Beyond domestic economic pressure, what moral outrage over international law convinced hundreds of thousands of British volunteers to enlist in 1914?',
+          q: 'Beyond domestic economic pressure, what moral outrage over international law convinced hundreds of thousands of British volunteers to enlist in 1914?',
           options: [
             'Genuine moral outrage over the German invasion of neutral Belgium ("the Rape of Belgium") and defense of small nations',
             'Fear of an immediate French naval invasion of London',
@@ -590,7 +590,7 @@ export const unitData = {
             'Genuine moral outrage over the German invasion of neutral Belgium ("the Rape of Belgium") and defense of small nations',
           a: 'Genuine moral outrage over the German invasion of neutral Belgium ("the Rape of Belgium") and defense of small nations',
           explanation:
-            'Pennell argues that British volunteers were not naive fools; they felt a profound moral duty to protect international law, small nations, and defend Britain from Prussian militarism.',
+            'Historians emphasize that British volunteers were not simply naive fools; they felt a profound moral duty to uphold the 1839 Treaty of London, protect small nations, and defend Britain from Prussian militarism.',
         },
         {
           question:
@@ -712,8 +712,8 @@ export const unitData = {
         },
         {
           question:
-            'According to social historian Adrian Gregory, why was the term "war enthusiasm" an exaggeration of the British public mood in August 1914?',
-          q: 'According to social historian Adrian Gregory, why was the term "war enthusiasm" an exaggeration of the British public mood in August 1914?',
+            'Why do social historians challenge the traditional myth that the British public in August 1914 was swept up in hysterical "war enthusiasm"?',
+          q: 'Why do social historians challenge the traditional myth that the British public in August 1914 was swept up in hysterical "war enthusiasm"?',
           options: [
             'The dominant public mood was sober, grim determination and civic obligation rather than hysterical rejoicing or bloodlust',
             'Nobody in Britain knew that war had been declared until December 1914',
@@ -724,7 +724,7 @@ export const unitData = {
             'The dominant public mood was sober, grim determination and civic obligation rather than hysterical rejoicing or bloodlust',
           a: 'The dominant public mood was sober, grim determination and civic obligation rather than hysterical rejoicing or bloodlust',
           explanation:
-            'Gregory’s analysis of diaries and local press shows that most ordinary citizens met the declaration of war with anxiety, solemnity, and a sense of duty, rather than reckless celebration.',
+            'Analysis of contemporary diaries and local press shows that most ordinary citizens met the declaration of war with anxiety, solemnity, and a sense of duty, rather than reckless celebration.',
         },
         {
           question:
@@ -1365,8 +1365,8 @@ export const unitData = {
         },
         {
           question:
-            'According to revisionist historian Gary Sheffield, what major factor explains the heavy casualties on the Western Front?',
-          q: 'According to revisionist historian Gary Sheffield, what major factor explains the heavy casualties on the Western Front?',
+            'Why do military historians argue that heavy casualties on the Western Front were driven by technological imbalance rather than general incompetence alone?',
+          q: 'Why do military historians argue that heavy casualties on the Western Front were driven by technological imbalance rather than general incompetence alone?',
           options: [
             'German troops possessed modern tanks in 1914 while Britain had none',
             'The British Army had no supply lines or ammunition',
@@ -1377,7 +1377,7 @@ export const unitData = {
             'Defensive technology (machine guns, barbed wire, artillery) completely outmatched attacking communications and mobility',
           a: 'Defensive technology (machine guns, barbed wire, artillery) completely outmatched attacking communications and mobility',
           explanation:
-            'Sheffield argues that generals faced an unprecedented technological stalemate: telephones had wires cut by shells, radios were bulky, and infantry had to cross mud against machine guns.',
+            'Historians emphasize that generals faced an unprecedented technological stalemate: telephones had wires cut by shells, radios were bulky, and infantry had to cross mud against machine guns.',
         },
         {
           question:
@@ -2156,18 +2156,19 @@ export const unitData = {
         },
         {
           question:
-            'Which modern British historian authored the groundbreaking book and documentary "The World’s War" (2014) to recover colonial contributions?',
-          q: 'Which modern British historian authored the groundbreaking book and documentary "The World’s War" (2014) to recover colonial contributions?',
+            'Why did early official histories of the First World War largely overlook or minimize the combat contributions of non-white colonial troops?',
+          q: 'Why did early official histories of the First World War largely overlook or minimize the combat contributions of non-white colonial troops?',
           options: [
-            'Dr Gary Sheffield',
-            'Professor Jay Winter',
-            'Professor David Olusoga',
-            'Sir Max Hastings',
+            'Because colonial troops never arrived in Europe until after the Armistice',
+            'Because all colonial military service files were destroyed in an accident',
+            'Because wartime racial hierarchies and post-war imperial propaganda prioritized white British and Dominion sacrifices',
+            'Because colonial troops only served as unpaid civilian transport drivers',
           ],
-          answer: 'Professor David Olusoga',
-          a: 'Professor David Olusoga',
+          answer:
+            'Because wartime racial hierarchies and post-war imperial propaganda prioritized white British and Dominion sacrifices',
+          a: 'Because wartime racial hierarchies and post-war imperial propaganda prioritized white British and Dominion sacrifices',
           explanation:
-            'David Olusoga’s historical research revealed how the First World War was an unprecedented global conflict fought by four million non-white subjects whose contributions were erased.',
+            'Modern historical research has revealed how the First World War was an unprecedented global conflict fought by four million non-white subjects whose crucial contributions were systematically marginalized.',
         },
         {
           question:
@@ -2325,8 +2326,8 @@ export const unitData = {
         },
         {
           question:
-            'According to historian David Olusoga, why were non-white colonial soldiers systematically erased from post-war British memorials like the Cenotaph in Whitehall?',
-          q: 'According to historian David Olusoga, why were non-white colonial soldiers systematically erased from post-war British memorials like the Cenotaph in Whitehall?',
+            'Why were non-white colonial soldiers systematically excluded from prominent early post-war British memorials like the Cenotaph in Whitehall?',
+          q: 'Why were non-white colonial soldiers systematically excluded from prominent early post-war British memorials like the Cenotaph in Whitehall?',
           options: [
             'Because the British government ran out of stone to carve non-European names',
             'Because no colonial troops were present in Europe during the war',
@@ -2337,7 +2338,7 @@ export const unitData = {
             'To preserve the comforting national myth that the Great War was an exclusively white, British sacrifice, thereby reinforcing post-war imperial dominance',
           a: 'To preserve the comforting national myth that the Great War was an exclusively white, British sacrifice, thereby reinforcing post-war imperial dominance',
           explanation:
-            'Olusoga argues that imperial authorities deliberately Whitewashed history: acknowledging that four million colonial troops helped save Britain would undermine the justification for imperial rule.',
+            'Historians argue that imperial authorities deliberately Whitewashed history: acknowledging that four million colonial troops helped save Britain would undermine the justification for imperial rule.',
         },
       ],
       subtitle:
@@ -3733,8 +3734,8 @@ export const unitData = {
         },
         {
           question:
-            'According to modern revisionist historian Margaret MacMillan ("Paris 1919"), what was the primary reason the Treaty of Versailles failed?',
-          q: 'According to modern revisionist historian Margaret MacMillan ("Paris 1919"), what was the primary reason the Treaty of Versailles failed?',
+            'Why do modern historians argue that the failure of the 1919 Paris Peace Conference was due to Allied enforcement rather than the treaty terms alone?',
+          q: 'Why do modern historians argue that the failure of the 1919 Paris Peace Conference was due to Allied enforcement rather than the treaty terms alone?',
           options: [
             'President Woodrow Wilson ordered the destruction of the French army',
             'The treaty was too generous and gave Germany all of Eastern Europe',
@@ -3745,7 +3746,7 @@ export const unitData = {
             'The refusal of the victorious Allies to consistently enforce the treaty’s terms during the 1920s and 1930s',
           a: 'The refusal of the victorious Allies to consistently enforce the treaty’s terms during the 1920s and 1930s',
           explanation:
-            'MacMillan argues that Versailles was a workable compromise; the failure lay in Britain and France’s failure to enforce its terms, while the United States retreated into isolationism.',
+            'Historians argue that Versailles was a workable compromise; the failure lay in Britain and France’s failure to enforce its terms, while the United States retreated into isolationism.',
         },
         {
           question:
@@ -3886,8 +3887,8 @@ export const unitData = {
         },
         {
           question:
-            'According to modern diplomatic historian Sally Marks ("The Illusion of Peace"), why is it inaccurate to describe Versailles as an excessively harsh treaty?',
-          q: 'According to modern diplomatic historian Sally Marks ("The Illusion of Peace"), why is it inaccurate to describe Versailles as an excessively harsh treaty?',
+            'What major historical evidence supports the argument that Germany was not completely crushed or ruined by the 1919 Treaty of Versailles?',
+          q: 'What major historical evidence supports the argument that Germany was not completely crushed or ruined by the 1919 Treaty of Versailles?',
           options: [
             'The German army was permitted to expand to 2 million troops',
             'Germany was permitted to keep all of its African colonies',
@@ -3898,7 +3899,7 @@ export const unitData = {
             'Germany remained geographically unified, industrially intact, and potentially the strongest economic power on the European continent',
           a: 'Germany remained geographically unified, industrially intact, and potentially the strongest economic power on the European continent',
           explanation:
-            'Marks argues that unlike the partitioned Austro-Hungarian or Ottoman empires, Germany retained its industrial core, emerging in 1919 in a stronger strategic position relative to fragmented Eastern Europe.',
+            'Historians argue that unlike the partitioned Austro-Hungarian or Ottoman empires, Germany retained its industrial core, emerging in 1919 in a stronger strategic position relative to fragmented Eastern Europe.',
         },
       ],
       subtitle: 'The Hall of Mirrors, The Clash of the Big Three, and the Shadow of Reparations',
@@ -4520,8 +4521,8 @@ export const unitData = {
         },
         {
           question:
-            'According to Cambridge historian Professor Jay Winter, what was the primary psychological purpose of village war memorials?',
-          q: 'According to Cambridge historian Professor Jay Winter, what was the primary psychological purpose of village war memorials?',
+            'Because the British government refused to repatriate the bodies of fallen soldiers, what primary psychological purpose did village war memorials serve for grieving families?',
+          q: 'Because the British government refused to repatriate the bodies of fallen soldiers, what primary psychological purpose did village war memorials serve for grieving families?',
           options: [
             'They served as "surrogate tombs" where families with no physical bodies to bury could mourn locally',
             'They were designed to celebrate British imperial conquest and annexations',
@@ -4671,8 +4672,8 @@ export const unitData = {
         },
         {
           question:
-            'What counter-interpretation do social historians like Dan Todman advance regarding the cultural myth of the "Lost Generation"?',
-          q: 'What counter-interpretation do social historians like Dan Todman advance regarding the cultural myth of the "Lost Generation"?',
+            'What counter-interpretation is advanced by historians regarding the dramatic cultural myth of the "Lost Generation"?',
+          q: 'What counter-interpretation is advanced by historians regarding the dramatic cultural myth of the "Lost Generation"?',
           options: [
             'British communities completely forgot about the war by 1920',
             'The war had zero emotional impact on rural English villages',
@@ -4683,7 +4684,7 @@ export const unitData = {
             'While bereavement was deep and tragic, British society demonstrated remarkable resilience, recovery, and adaptability rather than succumbing to permanent despair',
           a: 'While bereavement was deep and tragic, British society demonstrated remarkable resilience, recovery, and adaptability rather than succumbing to permanent despair',
           explanation:
-            'Todman argues that the "Lost Generation" was a literary metaphor that exaggerated national devastation: 88% of mobilized British soldiers returned home alive, and communities rapidly rebuilt.',
+            'Historians argue that the "Lost Generation" was a literary metaphor that exaggerated national devastation: 88% of mobilized British soldiers returned home alive, and communities rapidly rebuilt.',
         },
         {
           question:
@@ -5323,8 +5324,8 @@ export const unitData = {
         },
         {
           question:
-            'According to Professor Jay Winter, what was the primary psychological purpose of local village war memorials like Stubbington’s?',
-          q: 'According to Professor Jay Winter, what was the primary psychological purpose of local village war memorials like Stubbington’s?',
+            'Because bodies were buried in France and never repatriated home, what vital psychological function did parish war memorials (like Stubbington’s) serve for bereaved families?',
+          q: 'Because bodies were buried in France and never repatriated home, what vital psychological function did parish war memorials (like Stubbington’s) serve for bereaved families?',
           options: [
             'They served as municipal tax collection offices',
             'They acted as "surrogate tombs" for families whose sons had no identifiable graves',
@@ -5540,7 +5541,7 @@ export const unitData = {
         ],
       },
       {
-        q: 'Why do revisionist historians like Gail Braybon argue that the war did NOT truly liberate women?',
+        q: 'Why do revisionist social historians argue that the First World War did NOT result in lasting liberation for women?',
         a: 'Because women were paid less than men, fired immediately after the war ended, and the youngest factory workers were denied the vote.',
         options: [
           'Because women were paid less than men, fired immediately after the war ended, and the youngest factory workers were denied the vote.',
@@ -5795,6 +5796,154 @@ export const unitData = {
       term: 'Memorialisation',
       definition:
         'The communal act of preserving historical remembrance of the dead through stone monuments, war memorials, and ritual ceremonies.',
+    },
+  ],
+  guided_reading: [
+    {
+      lesson_index: 0,
+      book_title: 'Memoirs of an Infantry Officer',
+      author: 'Siegfried Sassoon',
+      cover_image: '/images/siegfried_sassoon.jpg',
+      cover_caption:
+        'Captain Siegfried Sassoon CBE MC, Royal Welch Fusiliers. Decorated frontline officer and war poet.',
+      author_context:
+        'Siegfried Sassoon was an English poet and officer in the Royal Welch Fusiliers who was awarded the Military Cross for extraordinary bravery. In his celebrated wartime memoirs, he records the naive, sporting enthusiasm with which young British men volunteered in August 1914 and the sudden, chilling encounter with the realities of the casualty lists.',
+      is_adapted: false,
+      extract:
+        '"I was sitting in the pavilion at the cricket ground when the news arrived... To me, as an irresponsible young gentleman with nothing better to do than hunt foxes and score occasional runs, the prospect of war seemed like a grand adventure, a sudden invitation to chivalry.<br><br>Everyone around me was swept along by the same strange fever. In the town halls and recruiting stations, young clerks, schoolboys, and labourers queued for hours in the August heat. We were told the conflict would be settled in six months, that we should all be home by Christmas crowned with laurels.<br><br>...It was only later, when the transport wagons rolled in and the first battalion casualty lists appeared in the Times, that the silence fell. The names of boys I had played cricket against at school were printed row upon row in tiny black letters. The heroic romance had vanished; we were entering a factory of death."<br><br><div style="background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;"><strong style="color: #334155;">Glossary</strong><ul style="margin-top: 10px; margin-bottom: 0;"><li><strong>Chivalry:</strong> The medieval knightly code of honour, bravery, and self-sacrifice.</li><li><strong>Laurels:</strong> A traditional Roman symbol of military victory and triumphant return.</li><li><strong>Battalion:</strong> A military unit of roughly 1,000 soldiers.</li></ul></div>',
+      hinge_question:
+        '<strong>Think:</strong> What metaphor does Sassoon use at the end of the extract to describe what the war truly became?<br><br><strong>Pair:</strong> Contrast Sassoon\\\'s initial feelings at the cricket ground in August 1914 with his reaction to the first casualty lists. Why did the British government find it so easy to recruit over a million volunteers before conscription was introduced?<br><br><strong>Share:</strong> If so many volunteers believed the war would be a "grand adventure" that would be "home by Christmas", who bore the moral responsibility for misleading an entire generation?',
+      audio_file: '/assets/great_war_reading_gw2_l0.mp3',
+      questions: [
+        'What was the author doing when the news of war arrived in August 1914?',
+        'What phrase does Sassoon use to describe the popular expectation of when the war would end?',
+        'How did Sassoon’s attitude change once he saw the battalion casualty lists in The Times?',
+      ],
+    },
+    {
+      lesson_index: 1,
+      book_title: 'Storm of Steel',
+      author: 'Ernst Jünger',
+      cover_image: '/images/cheshire_regiment_trench.png',
+      cover_caption: 'Frontline troops enduring a muddy Western Front communication trench.',
+      author_context:
+        'Ernst Jünger was a German frontline officer wounded fourteen times who fought continuously on the Western Front from 1914 to 1918. His 1920 memoir Storm of Steel (In Stahlgewittern) provides an astonishing, unromanticized German eyewitness account of technological industrial bombardment in the trenches.',
+      is_adapted: false,
+      extract:
+        '"The earth shook, the sky was a cauldron of smoke and fire, and the deafening roar of the heavy artillery stunned our senses until thought itself became impossible. We huddled in deep subterranean dugouts carved into the chalk, listening to the relentless pounding of the shells overhead.<br><br>A direct hit on a traverse showered us with chalk and suffocating fumes. The trench was no longer a trench; it had been churned into a lunar wilderness of craters filled with foul water, severed barbed wire, and unburied corpses. Machine guns swept the parapet with metallic chatter, cutting through any man who dared raise his helmet even an inch above the rim.<br><br>...In this landscape of iron and mud, individual human courage counted for almost nothing against the mechanical power of industrial war. The machine gunner did not need bravery; he merely depressed the firing button to mow down an entire company. It was not man against man, but flesh against iron."<br><br><div style="background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;"><strong style="color: #334155;">Glossary</strong><ul style="margin-top: 10px; margin-bottom: 0;"><li><strong>Traverse:</strong> A right-angled bend in a trench designed to stop shrapnel or bullets travelling along its full length.</li><li><strong>Parapet:</strong> The protective front wall of a trench, reinforced with sandbags.</li><li><strong>Industrial War:</strong> Warfare where victory is determined by mass-produced machinery, artillery, and chemical ammunition rather than individual hand-to-hand combat.</li></ul></div>',
+      hinge_question:
+        '<strong>Think:</strong> What does Jünger mean when he writes that the conflict was "not man against man, but flesh against iron"?<br><br><strong>Pair:</strong> Jünger was a German officer, yet his description of frontline trenches mirrors British soldiers\\\' diaries almost word-for-word. Discuss with your partner: how did modern industrial weaponry erase national differences between soldiers enduring the trenches?<br><br><strong>Share:</strong> If modern military technology created a total defensive stalemate, was the slaughter of the Western Front the fault of general incompetence, or the inevitable result of machine-age weapons?',
+      audio_file: '/assets/great_war_reading_gw2_l1.mp3',
+      questions: [
+        'Where did the soldiers shelter during the heavy artillery bombardment?',
+        'Why does Jünger say that individual human courage counted for almost nothing on the Western Front?',
+        'How does Jünger describe the transformation of the trench landscape after bombardment?',
+      ],
+    },
+    {
+      lesson_index: 2,
+      book_title: "Indian Voices of the Great War: Soldiers\\' Letters (1914–1918)",
+      author: 'David Omissi (ed.) & Sepoys of the Indian Army',
+      cover_image: '/images/gw_indian_army.jpg',
+      cover_caption:
+        'Troops of the Indian Army Expeditionary Force on the Western Front, autumn 1914.',
+      author_context:
+        'Over 1.3 million Indian soldiers served in the British Armed Forces during the First World War. Censors carefully examined all outgoing mail to British India. Historian David Omissi compiled these extraordinary, translated primary letters, revealing how Indian sepoys viewed the Western Front, their pride, and the racial restrictions placed upon them.',
+      is_adapted: false,
+      extract:
+        '"<em>(Letter from a Garhwali Subadar, Kitchener Indian Hospital, Brighton, to his brother in India, 1915):</em><br>\\\'Do not think that this is a war. It is not war; it is the destruction of the world. Just as a fire burns dry wood, so the cannon balls and bombs consume men. The bullets fly thicker than drops of rain in the monsoon. Those who survive can only do so by the mercy of God.<br><br>We arrived here in the cold mud when the British lines were on the verge of breaking. Our soldiers stood firm in the water up to their chests. Yet in this country, the care taken of the wounded in hospitals is beyond description. The King-Emperor himself visited our beds and spoke kindly to us.<br><br>...And yet, though we fight alongside the white soldiers, our officers are not permitted to command European troops, and we are guarded behind iron gates when we recover. We shed our blood on the same earth, but we return home to an India that is still not free.\\\'"<br><br><div style="background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;"><strong style="color: #334155;">Glossary</strong><ul style="margin-top: 10px; margin-bottom: 0;"><li><strong>Sepoy:</strong> An Indian infantry soldier serving in the British Indian Army.</li><li><strong>Subadar:</strong> A senior Indian non-commissioned officer ranking below British commissioned officers.</li><li><strong>King-Emperor:</strong> King George V, who held the dual titles of King of the United Kingdom and Emperor of India.</li></ul></div>',
+      hinge_question:
+        '<strong>Think:</strong> What metaphor does the Indian officer use to describe the intensity of the cannon fire and bullets?<br><br><strong>Pair:</strong> The writer notes both that the King-Emperor visited his hospital bed and that Indian soldiers were kept behind locked gates and barred from commanding European troops. Discuss the contradiction between imperial praise and imperial inequality.<br><br><strong>Share:</strong> 130,000 Indian troops served in Flanders, yet their contributions were largely omitted from British popular memory for nearly a century. Why do you think Empire contributions were marginalized after 1918?',
+      audio_file: '/assets/great_war_reading_gw2_l2.mp3',
+      questions: [
+        'What monsoon metaphor does the soldier use to describe the bullet fire on the Western Front?',
+        'According to the letter, what critical action did Indian troops perform upon arriving in France in 1914?',
+        'What racial restriction does the soldier highlight regarding Indian officers commanding European soldiers?',
+      ],
+    },
+    {
+      lesson_index: 3,
+      book_title: 'Testament of Youth',
+      author: 'Vera Brittain',
+      cover_image: '/images/vera_brittain.jpg',
+      cover_caption:
+        'Vera Brittain (1893–1970) in her Voluntary Aid Detachment (VAD) nursing uniform.',
+      author_context:
+        'Vera Brittain abandoned her studies at Oxford University in 1915 to volunteer as a nurse (VAD) treating wounded soldiers in London, Malta, and France. Having lost her fiancé, brother, and closest friends, her 1933 memoir Testament of Youth became the definitive account of women\\\'s wartime service and the grief of the "Lost Generation".',
+      is_adapted: false,
+      extract:
+        '"The hospital wards in London and Etaples were an endless river of suffering. Day and night, ambulance convoys brought us young men with shattered limbs, gangrenous wounds, and eyes blinded by mustard gas. We were middle-class daughters who had never before seen a naked man or cleaned a wound, yet within weeks we were bandaging stumps and holding the hands of dying eighteen-year-olds.<br><br>Across Britain, women stepped into every sphere of life previously barred to them. In Portsmouth Dockyard and the armaments works at Priddy’s Hard, women filled high-explosive TNT shells until their skin turned bright canary yellow and their teeth rotted from toxic dust. They drove buses, operated railway signals, and harvested the grain to keep Britain from starving under the German U-boat blockade.<br><br>...We were told that our sacrifice had earned us our citizenship. Yet when the Armistice bells finally chimed in November 1918, the victory felt hollow. We were a generation of surplus women whose brothers, fiancés, and husbands lay buried beneath French mud. And within months, the men returning from France demanded their jobs back, and thousands of women were dismissed from the factories without a second thought."<br><br><div style="background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;"><strong style="color: #334155;">Glossary</strong><ul style="margin-top: 10px; margin-bottom: 0;"><li><strong>VAD (Voluntary Aid Detachment):</strong> A civilian volunteer nursing organization that provided medical support in military hospitals.</li><li><strong>Mustard Gas:</strong> A blister-agent chemical weapon that caused severe chemical burns to the skin, eyes, and lungs.</li><li><strong>Canary Girls:</strong> Female munitions factory workers whose skin turned yellow from handling toxic TNT explosive compounds.</li></ul></div>',
+      hinge_question:
+        '<strong>Think:</strong> Why were British female munitions factory workers nicknamed "Canary Girls"?<br><br><strong>Pair:</strong> Vera Brittain describes both the immense expansion of women\\\'s work during the war and the sudden dismissal of female workers in 1919. Discuss: did the First World War represent permanent liberation for women, or merely temporary emergency exploitation?<br><br><strong>Share:</strong> Look at the 1918 Representation of the People Act, which granted the vote only to women over 30 who owned property. Why did Parliament exclude the young working-class women under 30 who had risked their lives in the munitions factories?',
+      audio_file: '/assets/great_war_reading_gw2_l3.mp3',
+      questions: [
+        'What types of chemical injuries did Vera Brittain treat in the military hospital wards?',
+        'Why did women working in the munitions factories at Priddy’s Hard have skin that turned bright yellow?',
+        'What happened to female factory workers once the war ended in 1918–1919?',
+      ],
+    },
+    {
+      lesson_index: 4,
+      book_title: 'The Economic Consequences of the Peace',
+      author: 'John Maynard Keynes',
+      cover_image: '/images/gw_big_three_versailles.jpg',
+      cover_caption:
+        'The Council of Four at Versailles, May 1919: David Lloyd George, Vittorio Orlando, Georges Clemenceau, and Woodrow Wilson.',
+      author_context:
+        'John Maynard Keynes was a brilliant British Treasury economist who attended the 1919 Paris Peace Conference as an official delegate. Disgusted by the vindictive terms imposed on Germany, he resigned in protest and published The Economic Consequences of the Peace (1919), warning that crushing the German economy would lead to economic catastrophe and future war.',
+      is_adapted: false,
+      extract:
+        '"The Council of Four assembled in the mirrors of Versailles, but they were blind to the economic reality of the continent they presumed to govern. Georges Clemenceau sat with his gloved hands, burning with a desire to crush Germany permanently so she could never rise again. Lloyd George pursued the fleeting demands of British electoral politics, promising to \\\'squeeze the German lemon until the pips squeak\\\'. And President Woodrow Wilson, armed with noble ideals, proved incapable of mastering the practical European negotiations.<br><br>They drafted a treaty that treated Germany as an outlaw, forcing her to sign Article 231—the War Guilt clause—under threat of renewed invasion and starvation blockade. They demanded reparations running into billions of pounds, stripped her of iron ore, coalfields, and merchant shipping, yet expected her to pay astronomical financial debts.<br><br>...I believe that the campaign for securing out of Germany the general costs of the war was one of the most serious acts of political unwisdom for which European statesmen have ever been responsible. If we aim deliberately at the impoverishment of Central Europe, vengeance, I dare predict, will not limp. Nothing can then delay for very long that final civil war between the forces of Reaction and the despairing convulsions of Revolution, before which the horrors of the late German war will fade into nothing."<br><br><div style="background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;"><strong style="color: #334155;">Glossary</strong><ul style="margin-top: 10px; margin-bottom: 0;"><li><strong>Council of Four:</strong> The leaders of Britain, France, the USA, and Italy who dictated the terms of the Treaty of Versailles.</li><li><strong>Article 231 (War Guilt Clause):</strong> The legal clause forcing Germany to accept sole responsibility for causing all Allied damage.</li><li><strong>Reparations:</strong> Massive financial compensation demanded from Germany to pay for Allied civilian war damages.</li></ul></div>',
+      hinge_question:
+        "<strong>Think:</strong> What warning does Keynes issue in the final sentence about what will happen if Germany is deliberately impoverished?<br><br><strong>Pair:</strong> Contrast Clemenceau\\'s desire to permanently weaken Germany against Keynes\\'s warning that an economically ruined Germany would threaten the stability of all of Europe. Which leader had the more realistic long-term vision?<br><br><strong>Share:</strong> In light of the rise of fascism in the 1930s, was Keynes\\'s prophecy completely accurate, or did the Treaty of Versailles fail because Britain and France refused to enforce its terms when Hitler began rearming?",
+      audio_file: '/assets/great_war_reading_gw2_l4.mp3',
+      questions: [
+        'Why did John Maynard Keynes resign from the British Treasury delegation at Versailles?',
+        'According to Keynes, what contradiction existed between stripping Germany of coal and iron while demanding billions in reparations?',
+        'What dark prediction did Keynes make about the long-term consequence of impoverishing Central Europe?',
+      ],
+    },
+    {
+      lesson_index: 5,
+      book_title: 'Sites of Memory, Sites of Mourning & Stubbington Parish Memorial Roll',
+      author: 'Jay Winter & The Stubbington War Memorial Committee (1919–1921)',
+      cover_image: '/images/stubbington_memorial.jpg',
+      cover_caption:
+        'The Stubbington & Hill Head War Memorial on the village green, commemorating the fallen of the parish.',
+      author_context:
+        'Because over 700,000 British soldiers died and British policy forbade the repatriation of bodies, local communities across the United Kingdom had to build their own "surrogate tombs". This text combines historical analysis with the primary 1920 committee minutes of the Stubbington and Hill Head Parish Memorial.',
+      is_adapted: true,
+      extract:
+        '"In 1919, Britain faced a crisis of collective mourning that had no precedent in human history. Under the policy established by the Imperial War Graves Commission, no fallen British soldier could be brought home; rich and poor, general and private, were buried alike near the battlefields where they fell in France, Gallipoli, or Mesopotamia. Millions of grieving mothers, widows, and orphans were denied the basic human comfort of visiting a grave.<br><br>Therefore, the parish war memorials erected in every British village—from the Celtic stone cross on the green at Stubbington to the monumental bronze cenotaphs of Portsmouth—functioned as communal surrogate tombs. They were places where the bereaved could touch stone that stood in place of a missing body.<br><br><em>(Extract from the Minutes of the Stubbington and Hill Head War Memorial Committee, 1920):</em><br>\\\'Resolved: That a memorial cross of Cornish granite be erected upon the village green, in perpetual memory of the men of this parish who gave their lives in the Great War. Resolved further: That the names of all men who served and fell shall be carved in alphabetical order upon the granite base, with no distinction of military rank, whether commissioned officer or private soldier, so that all who made the supreme sacrifice shall stand equal before God and their countrymen.\\\'"<br><br><div style="background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;"><strong style="color: #334155;">Glossary</strong><ul style="margin-top: 10px; margin-bottom: 0;"><li><strong>Repatriation:</strong> The return of a dead body or person back to their country of origin.</li><li><strong>Surrogate Tomb:</strong> A physical memorial or monument that acts as an emotional stand-in for a missing body that could not be buried at home.</li><li><strong>Imperial War Graves Commission (now CWGC):</strong> The British organisation established in 1917 to build and maintain military cemeteries and memorials across the world.</li></ul></div>',
+      hinge_question:
+        '<strong>Think:</strong> Why did the British government forbid the repatriation of dead soldiers from France and Belgium?<br><br><strong>Pair:</strong> Notice the Stubbington Parish committee\\\'s resolution that names must be listed "in alphabetical order upon the granite base, with no distinction of military rank". Why was this egalitarian principle so revolutionary in class-divided Edwardian Britain?<br><br><strong>Share:</strong> How do local village memorials like the Stubbington cross differ in emotional purpose from colossal national monuments like the Cenotaph in London or the Menin Gate in Ypres?',
+      audio_file: '/assets/great_war_reading_gw2_l5.mp3',
+      questions: [
+        'Why could British families not bury their sons in their local parish churchyards after 1918?',
+        'What does the term "surrogate tomb" mean in the context of Great War remembrance?',
+        'Why did the Stubbington Memorial Committee insist on listing names alphabetically without military ranks?',
+      ],
+    },
+    {
+      lesson_index: 6,
+      book_title: "A Subaltern\\'s War",
+      author: 'Charles Carrington (Charles Edmonds)',
+      cover_image: '/images/aerial_trench_ypres.jpg',
+      cover_caption:
+        'Aerial reconnaissance photograph of the shattered frontline trench networks in Flanders.',
+      author_context:
+        'Charles Carrington served as a British infantry officer (subaltern) in the Royal Warwickshire Regiment on the Somme and Passchendaele. In 1929, reacting against melodramatic postwar plays and novels, he published A Subaltern\\\'s War to challenge the simplistic myth that soldiers were merely helpless victims ("lions led by donkeys"), arguing instead that they fought with profound professional comradeship, resilience, and purpose.',
+      is_adapted: false,
+      extract:
+        '"The prevailing fashion among postwar writers is to depict our generation as a pathetic herd of passive victims, driven into the slaughterhouse by blundering, heartless generals. I repudiate that picture with all the energy in my being.<br><br>We were not miserable sheep. We were ordinary British citizens who volunteered with our eyes open, who endured unimaginable mud, cold, and terror, but who bore it with humour, discipline, and an unbreakable bond of comradeship that no peacetime society has ever matched. We hated the lice, we cursed the wet trenches, and we wept for our dead comrades. But we did not despair, and we did not surrender.<br><br>...The Great War was a tragedy of colossal magnitude, but it was also a supreme test of human endurance and moral resolve. To remember only the mud and the horror, while ignoring the extraordinary courage, tactical evolution, and deep sense of duty of the men who broke the German Imperial Army in the Hundred Days of 1918, is to betray our memory. We were not merely broken victims; we were the men who fought the greatest war in history, and we held our ground."<br><br><div style="background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;"><strong style="color: #334155;">Glossary</strong><ul style="margin-top: 10px; margin-bottom: 0;"><li><strong>Subaltern:</strong> A junior British military officer, typically a Second Lieutenant or Lieutenant commanding a platoon.</li><li><strong>"Lions led by Donkeys":</strong> A popular postwar cultural phrase claiming that brave British soldiers ("lions") were sacrificed by incompetent aristocratic generals ("donkeys").</li><li><strong>Repudiate:</strong> To reject something firmly as false or unjust.</li></ul></div>',
+      hinge_question:
+        "<strong>Think:</strong> What popular postwar interpretation of Great War soldiers does Carrington explicitly reject?<br><br><strong>Pair:</strong> Contrast Carrington\\'s perspective (emphasizing duty, tactical evolution, and comradeship) with Siegfried Sassoon\\'s or Wilfred Owen\\'s poetry (emphasizing futility and industrial slaughter). Why do veterans of the same conflict arrive at such contrasting conclusions?<br><br><strong>Share:</strong> In answering your final synoptic question on the First World War, how can a top-level historian synthesize both the catastrophic human suffering of the trenches and the genuine military resilience and sacrifice of the soldiers?",
+      audio_file: '/assets/great_war_reading_gw2_l6.mp3',
+      questions: [
+        'What postwar stereotype about soldiers does Charles Carrington reject in this extract?',
+        'What qualities does Carrington argue kept British soldiers resilient in the trenches?',
+        'Why does Carrington argue that remembering only the mud and horror betrays the memory of Great War veterans?',
+      ],
     },
   ],
 };

@@ -203,7 +203,7 @@ const lessonConfigs = [
         '“No scutage nor aid shall be imposed on our kingdom, unless by common counsel of our kingdom... No free man shall be seized or imprisoned, or stripped of his rights or possessions, or outlawed or exiled... except by the lawful judgment of his equals or by the law of the land.”',
       instruction:
         '1. Underline the exact phrase that places the King under the rule of law.<br>2. In the lines below, explain who actually counted as a "free man" in 1215, and why this shows the barons were protecting their own estates:',
-      lines: 8,
+      lines: 7,
       clue: '<em>Low-Floor Clue:</em> Over 80% of medieval English people were unfree villeins bound to the soil—did Clause 39 give them any protection at all?',
       scholarsEdge:
         '<strong>★ Scholar’s Edge:</strong> Why did Victorian historians praise Magna Carta as the cradle of English liberty, while modern historians like J.C. Holt view it as a failed baronial pact?',
@@ -253,7 +253,7 @@ const lessonConfigs = [
       ],
       prompt:
         'In 3–4 sentences, explain why this painting was more powerful than written law for an illiterate peasant congregation:',
-      lines: 7,
+      lines: 6,
       clue: '<em>Low-Floor Clue:</em> Notice who is being dragged into Hell—even bishops and greedy lords are shown, reminding serfs that everyone faces God’s court.',
       scholarsEdge:
         '<strong>★ Scholar’s Edge:</strong> How did grand ecclesiastical palaces like <strong>Bishop’s Waltham Palace</strong> in Hampshire demonstrate the immense wealth bishops extracted from local peasant tithes?',
@@ -320,7 +320,7 @@ const lessonConfigs = [
       ],
       prompt:
         'In 3–4 sentences, explain why the 1351 Statute of Labourers failed to stop peasants demanding higher wages and winning their freedom:',
-      lines: 8,
+      lines: 7,
       clue: '<em>Low-Floor Clue:</em> What would happen to a landlord’s barley and wheat if he refused to pay the higher wages and his neighbours did?',
       scholarsEdge:
         '<strong>★ Scholar’s Edge:</strong> Why do modern economic historians call the generation after the Black Death the "Golden Age of the English Peasantry"?',
@@ -495,7 +495,7 @@ const lessonConfigs = [
       ],
       prompt:
         'In 3–4 sentences, explain which of these four checks was the most dangerous threat to a medieval monarch’s throne:',
-      lines: 7,
+      lines: 6,
       clue: '<em>Low-Floor Clue:</em> Did a king have more to fear from an armed revolt of his 25 greatest barons, or an excommunication decree from the Pope in Rome?',
       scholarsEdge:
         '<strong>★ Scholar’s Edge:</strong> Did medieval kings rule through divine authority and the rule of law, or through the sheer physical threat of castles, swords, and executions?',
@@ -833,6 +833,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
   lessonConfigs.forEach((cfg, lIdx) => {
     const leftPageNum = lIdx * 2 + 4;
     const rightPageNum = lIdx * 2 + 5;
+    const gr = (unitData.guided_reading || []).find((r) => r.lesson_index === lIdx);
 
     // ----------------------------------------------------
     // LEFT PAGE (Verso, Even Page Number: 4, 6, 8, 10...)
@@ -952,7 +953,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
     // Render task body based on type
     if (cfg.bridgeTask.type === 'draw_label') {
       html += `
-          <div class="auto-fill-drawing-box" style="height: 330px; border: 1.5px solid #64748b; border-radius: 4px; background: #ffffff; position: relative; margin-bottom: 5px; box-sizing: border-box;"></div>
+          <div class="auto-fill-drawing-box" style="height: 285px; border: 1.5px solid #64748b; border-radius: 4px; background: #ffffff; position: relative; margin-bottom: 5px; box-sizing: border-box;"></div>
           <div style="font-family: 'Inter', sans-serif; font-size: 8.3pt; color: #1e293b; background: #f1f5f9; padding: 5px 8px; border-radius: 4px; margin-bottom: 4px; border: 1px solid #cbd5e1;">
             ${cfg.bridgeTask.checklist}
           </div>
@@ -966,36 +967,34 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
     } else if (cfg.bridgeTask.type === 'ledger') {
       html += `
           <div class="auto-fill-ledger" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 5px;">
-            <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 7px; background: #f8fafc;">
+            <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px 7px; background: #f8fafc;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0369a1; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">${cfg.bridgeTask.col1Title}</strong>
-              <ul style="margin: 0 0 5px 0; padding-left: 15px; font-family: 'Inter', sans-serif; font-size: 8pt; color: #475569; line-height: 1.35;">
+              <ul style="margin: 0 0 4px 0; padding-left: 15px; font-family: 'Inter', sans-serif; font-size: 8pt; color: #475569; line-height: 1.35;">
                 ${cfg.bridgeTask.col1Prompts.map((p) => `<li>${p}</li>`).join('')}
               </ul>
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 600; color: #0369a1; border-top: 1px dashed #cbd5e1; padding-top: 3px; margin: 4px 0 2px 0;">
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 600; color: #0369a1; border-top: 1px dashed #cbd5e1; padding-top: 2px; margin: 3px 0 2px 0;">
                 ✍️ Synthesise their perspective in 2–3 sentences:
               </div>
               <div class="ledger-col-1">
-                <div class="task-line-dotted" style="height: 5.6mm;"></div>
-                <div class="task-line-dotted" style="height: 5.6mm;"></div>
-                <div class="task-line-dotted" style="height: 5.6mm;"></div>
-                <div class="task-line-dotted" style="height: 5.6mm;"></div>
-                <div class="task-line-dotted" style="height: 5.6mm;"></div>
+                <div class="task-line-dotted" style="height: 5.4mm;"></div>
+                <div class="task-line-dotted" style="height: 5.4mm;"></div>
+                <div class="task-line-dotted" style="height: 5.4mm;"></div>
+                <div class="task-line-dotted" style="height: 5.4mm;"></div>
               </div>
             </div>
-            <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 7px; background: #f8fafc;">
+            <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px 7px; background: #f8fafc;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #b91c1c; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">${cfg.bridgeTask.col2Title}</strong>
-              <ul style="margin: 0 0 5px 0; padding-left: 15px; font-family: 'Inter', sans-serif; font-size: 8pt; color: #475569; line-height: 1.35;">
+              <ul style="margin: 0 0 4px 0; padding-left: 15px; font-family: 'Inter', sans-serif; font-size: 8pt; color: #475569; line-height: 1.35;">
                 ${cfg.bridgeTask.col2Prompts.map((p) => `<li>${p}</li>`).join('')}
               </ul>
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 600; color: #b91c1c; border-top: 1px dashed #cbd5e1; padding-top: 3px; margin: 4px 0 2px 0;">
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 600; color: #b91c1c; border-top: 1px dashed #cbd5e1; padding-top: 2px; margin: 3px 0 2px 0;">
                 ✍️ Synthesise their perspective in 2–3 sentences:
               </div>
               <div class="ledger-col-2">
-                <div class="task-line-dotted" style="height: 5.6mm;"></div>
-                <div class="task-line-dotted" style="height: 5.6mm;"></div>
-                <div class="task-line-dotted" style="height: 5.6mm;"></div>
-                <div class="task-line-dotted" style="height: 5.6mm;"></div>
-                <div class="task-line-dotted" style="height: 5.6mm;"></div>
+                <div class="task-line-dotted" style="height: 5.4mm;"></div>
+                <div class="task-line-dotted" style="height: 5.4mm;"></div>
+                <div class="task-line-dotted" style="height: 5.4mm;"></div>
+                <div class="task-line-dotted" style="height: 5.4mm;"></div>
               </div>
             </div>
           </div>
@@ -1008,15 +1007,15 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
       `;
     } else if (cfg.bridgeTask.type === 'source_utility') {
       html += `
-          <div style="border: 1px solid #cbd5e1; border-left: 3px solid #1e3a8a; background: #fdfbf7; padding: 7px 10px; font-size: 8.5pt; font-style: italic; color: #1e293b; margin-bottom: 5px; line-height: 1.4;">
+          <div style="border: 1px solid #cbd5e1; border-left: 3px solid #1e3a8a; background: #fdfbf7; padding: 6px 9px; font-size: 8.5pt; font-style: italic; color: #1e293b; margin-bottom: 5px; line-height: 1.4;">
             ${cfg.bridgeTask.sourceText}
           </div>
           <div class="auto-fill-lines" data-line-height="6.8" data-line-type="task-line">
-            ${Array(cfg.bridgeTask.lines || 8)
+            ${Array(cfg.bridgeTask.lines || 7)
               .fill('<div class="task-line" style="height: 6.8mm;"></div>')
               .join('')}
           </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #64748b; margin-top: 4px; margin-bottom: 2px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #64748b; margin-top: 3px; margin-bottom: 2px;">
             ${cfg.bridgeTask.clue}
           </div>
           <div style="font-family: 'Georgia', serif; font-size: 8.5pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px;">
@@ -1025,13 +1024,13 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
       `;
     } else if (cfg.bridgeTask.type === 'causal_pivot') {
       html += `
-          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; margin-bottom: 6px;">
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; margin-bottom: 5px;">
             ${cfg.bridgeTask.steps
               .map(
                 (s) => `
-              <div style="border: 1px solid #bae6fd; background: #f0f9ff; border-radius: 3px; padding: 5px 6px; font-family: 'Inter', sans-serif;">
-                <span style="font-size: 7.5pt; font-weight: 700; color: #0369a1; display: block; margin-bottom: 2px;">${s.stage} (${s.year})</span>
-                <span style="font-size: 7.5pt; color: #1e293b; line-height: 1.3; display: block;">${s.text}</span>
+              <div style="border: 1px solid #bae6fd; background: #f0f9ff; border-radius: 3px; padding: 4px 5px; font-family: 'Inter', sans-serif;">
+                <span style="font-size: 7.5pt; font-weight: 700; color: #0369a1; display: block; margin-bottom: 1px;">${s.stage} (${s.year})</span>
+                <span style="font-size: 7.3pt; color: #1e293b; line-height: 1.25; display: block;">${s.text}</span>
               </div>
             `,
               )
@@ -1041,59 +1040,59 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
             <strong>Causal Analysis:</strong> ${cfg.bridgeTask.prompt}
           </div>
           <div class="auto-fill-lines" data-line-height="6.8" data-line-type="task-line">
-            ${Array(cfg.bridgeTask.lines || 8)
+            ${Array(cfg.bridgeTask.lines || 7)
               .fill('<div class="task-line" style="height: 6.8mm;"></div>')
               .join('')}
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 8.5pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-top: 3px;">
+          <div style="font-family: 'Georgia', serif; font-size: 8.5pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-top: 2px;">
             ${cfg.bridgeTask.scholarsEdge}
           </div>
       `;
     } else if (cfg.bridgeTask.type === 'fresco_analysis') {
       html += `
-          <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 4px; padding: 6px 8px; margin-bottom: 5px;">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #334155; line-height: 1.35;">
+          <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 4px; padding: 5px 7px; margin-bottom: 4px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #334155; line-height: 1.3;">
               ${cfg.bridgeTask.labels.map((l) => `<div>${l}</div>`).join('')}
             </div>
           </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #1e293b; margin-bottom: 3px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #1e293b; margin-bottom: 2px;">
             <strong>Visual Forensic Interpretation:</strong> ${cfg.bridgeTask.prompt}
           </div>
           <div class="auto-fill-lines" data-line-height="6.8" data-line-type="task-line">
-            ${Array(cfg.bridgeTask.lines || 7)
+            ${Array(cfg.bridgeTask.lines || 6)
               .fill('<div class="task-line" style="height: 6.8mm;"></div>')
               .join('')}
           </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #64748b; margin-top: 3px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #64748b; margin-top: 2px;">
             ${cfg.bridgeTask.clue}
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 8.5pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-top: 3px;">
+          <div style="font-family: 'Georgia', serif; font-size: 8.5pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-top: 2px;">
             ${cfg.bridgeTask.scholarsEdge}
           </div>
       `;
     } else if (cfg.bridgeTask.type === 'matrix') {
       html += `
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 5px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-bottom: 4px;">
             ${cfg.bridgeTask.boxes
               .map(
                 (b) => `
-              <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px 7px; background: #f8fafc; font-family: 'Inter', sans-serif;">
-                <strong style="font-size: 8pt; color: #1e3a8a; display: block; margin-bottom: 2px;">${b.title}</strong>
-                <span style="font-size: 7.5pt; color: #334155; line-height: 1.3; display: block;">${b.evidence}</span>
+              <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; background: #f8fafc; font-family: 'Inter', sans-serif;">
+                <strong style="font-size: 7.8pt; color: #1e3a8a; display: block; margin-bottom: 1px;">${b.title}</strong>
+                <span style="font-size: 7.3pt; color: #334155; line-height: 1.25; display: block;">${b.evidence}</span>
               </div>
             `,
               )
               .join('')}
           </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #1e293b; margin-bottom: 3px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #1e293b; margin-bottom: 2px;">
             <strong>Synoptic Synthesis:</strong> ${cfg.bridgeTask.prompt}
           </div>
           <div class="auto-fill-lines" data-line-height="6.8" data-line-type="task-line">
-            ${Array(cfg.bridgeTask.lines || 7)
+            ${Array(cfg.bridgeTask.lines || 6)
               .fill('<div class="task-line" style="height: 6.8mm;"></div>')
               .join('')}
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 8.5pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-top: 3px;">
+          <div style="font-family: 'Georgia', serif; font-size: 8.5pt; color: #1e3a8a; font-style: italic; border-top: 1px dotted #cbd5e1; padding-top: 2px; margin-top: 2px;">
             ${cfg.bridgeTask.scholarsEdge}
           </div>
       `;
@@ -1101,6 +1100,29 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
 
     html += `
         </div>
+        ${
+          gr
+            ? `
+        <!-- Guided Reading Footnote Quick-Link (Vector QR Code) -->
+        <div style="border: 1px solid #cbd5e1; border-left: 3px solid #be185d; border-radius: 4px; padding: 3px 8px; background: #fdf2f8; margin-top: 4px; display: flex; align-items: center; gap: 8px;">
+          <div style="width: 32px; height: 32px; flex-shrink: 0; background: #ffffff; padding: 1.5px; border: 1px solid #fbcfe8; border-radius: 3px; display: flex; align-items: center; justify-content: center;">
+            ${generateQrSvg(`https://meoncross-history.netlify.app/?view=interactive&unit=medieval_england&tab=guided_reading&lesson=${lIdx}`)}
+          </div>
+          <div style="flex: 1; min-width: 0;">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #9d174d; text-transform: uppercase; letter-spacing: 0.3px;">
+                📖 Guided Reading &amp; Audio: ${gr.book_title} (${gr.author})
+              </strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; background: #fce7f3; color: #be185d; border: 1px solid #fbcfe8; padding: 0 4px; border-radius: 2px; font-weight: 700;">Scan QR</span>
+            </div>
+            <div style="font-family: 'Inter', sans-serif; font-size: 7pt; color: #475569; line-height: 1.2; margin-top: 1px;">
+              Scan for professional audio narration, author context, and Think-Pair-Share discussion questions.
+            </div>
+          </div>
+        </div>
+        `
+            : ''
+        }
       </div>
 
       <!-- Left Page Footer -->
