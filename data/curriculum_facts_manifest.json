@@ -1,0 +1,121 @@
+{
+  "$schema": "Curriculum Facts & Anti-Hallucination Manifest",
+  "version": "1.0.0",
+  "description": "Authoritative registry of verified historical facts, known AI hallucination regressions, and exam board specification guardrails.",
+  "global_banned_patterns": [
+    {
+      "pattern": "\\[insert[^\\]]*here\\]",
+      "isRegex": true,
+      "caseInsensitive": true,
+      "reason": "Unresolved AI template placeholder detected."
+    },
+    {
+      "pattern": "\\[TBD\\]|\\[TODO\\]",
+      "isRegex": true,
+      "caseInsensitive": false,
+      "reason": "Incomplete draft placeholder detected."
+    },
+    {
+      "pattern": "Lorem ipsum",
+      "isRegex": false,
+      "caseInsensitive": true,
+      "reason": "Placeholder text detected in curriculum content."
+    },
+    {
+      "pattern": "Placeholder model answer",
+      "isRegex": false,
+      "caseInsensitive": true,
+      "reason": "Generic unevidenced model answer placeholder detected."
+    }
+  ],
+  "unit_rules": {
+    "trip_ypres": {
+      "name": "GCSE Battlefield Tour: Ypres & The Salient",
+      "banned_patterns": [
+        {
+          "pattern": "Medal of St George[^\\n]{0,80}(?:Third Class|3rd Class|Fourth Class|4th Class)",
+          "isRegex": true,
+          "caseInsensitive": true,
+          "reason": "Ernest Crummack was awarded the Russian Medal of St George SECOND CLASS (Gold), not 3rd/4th Class (Silver). Primary evidence: contemporary 1916 gazettes and Clifton Park Regimental Museum accession."
+        },
+        {
+          "pattern": "Clara Senior",
+          "isRegex": false,
+          "caseInsensitive": true,
+          "reason": "AI confabulation: Ernest Crummack never married 'Clara Senior'. His verified wives were Maud Coxon (m. 1906, d. 1914) and Elizabeth Hall (m. 1916)."
+        },
+        {
+          "pattern": "(?:#|No\\.?\\s*)2404\\b",
+          "isRegex": true,
+          "caseInsensitive": true,
+          "reason": "AI service number confusion: Ernest Crummack's true service number was #2423 (#2404 belonged to an unrelated enlistee)."
+        },
+        {
+          "pattern": "pit ripper|cutting rock and blasting tunnel headings|teenage coal miner",
+          "isRegex": true,
+          "caseInsensitive": true,
+          "reason": "AI occupational stereotyping: Ernest Crummack worked in iron metallurgy (Parkgate Iron and Steel Plant reverberatory furnaces), not as a colliery coal miner."
+        },
+        {
+          "pattern": "11 January 1888|born in 1888|died in 1968|1968 at the age of 80",
+          "isRegex": true,
+          "caseInsensitive": true,
+          "reason": "AI demographic drift: Ernest Crummack was born 6 September 1885 and died in 1958 aged 73."
+        },
+        {
+          "pattern": "2/4th Battalion",
+          "isRegex": false,
+          "caseInsensitive": true,
+          "reason": "Ernest Crummack was gazetted to the 1/4th (Territorial) Bn, but was operationally attached to the 6th (Service) Battalion in the 11th (Northern) Division."
+        }
+      ],
+      "required_anchors_if_present": [
+        {
+          "trigger": "Crummack",
+          "must_include": [
+            {
+              "pattern": "2423",
+              "reason": "Ernest Crummack's verified regimental service number is #2423."
+            },
+            {
+              "pattern": "Second Class|2nd Class",
+              "reason": "Russian Medal of St George must be Second Class (Gold)."
+            }
+          ]
+        }
+      ]
+    },
+    "cme_new": {
+      "name": "Conflict in the Middle East, c1945-95 (Paper 2)",
+      "banned_patterns": [
+        {
+          "pattern": "Explain two consequences[^\\]\\n]{0,60}(?:\\[8 marks\\]|8 marks)",
+          "isRegex": true,
+          "caseInsensitive": true,
+          "reason": "Edexcel specification violation: Middle East consequence questions are 4-mark ('Explain one consequence'), NOT obsolete 8-mark questions."
+        },
+        {
+          "pattern": "Hosni Mubarak|Egyptian Islamic Jihad",
+          "isRegex": true,
+          "caseInsensitive": false,
+          "reason": "GCSE DoK violation: Peripheral post-1981 trivia outside the Pearson Edexcel specification."
+        }
+      ]
+    },
+    "edexcel_medicine": {
+      "name": "Medicine in Britain, c1250-present (Paper 1)",
+      "banned_patterns": [
+        {
+          "pattern": "(?:Section B|Medieval|Renaissance|Industrial|Modern)[^\\n]{0,100}Describe one feature",
+          "isRegex": true,
+          "caseInsensitive": true,
+          "reason": "Edexcel specification violation: 'Describe one feature' [2 marks] appears ONLY in Section A (The British Sector of the Western Front), never in Section B thematic study."
+        }
+      ]
+    },
+    "eee": {
+      "name": "Early Elizabethan England, 1558-88 (Paper 2)",
+      "banned_patterns": []
+    }
+  }
+}

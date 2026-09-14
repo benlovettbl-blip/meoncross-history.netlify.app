@@ -29,6 +29,20 @@ async function runSync() {
   console.log(`🚀 SAFE UNIT SYNC PIPELINE: [${unitId}]`);
   console.log(`======================================================`);
 
+  // Step 0: Fact & Anti-Hallucination Audit
+  console.log(
+    `\n[Step 0/5] 🛡️ Auditing curriculum facts & anti-hallucination guardrails for ${unitId}...`,
+  );
+  try {
+    execSync(`node scripts/verify_curriculum_facts.cjs ${unitId}`, {
+      stdio: 'inherit',
+      cwd: ROOT_DIR,
+    });
+  } catch (err) {
+    console.error(`❌ Fatal: Fact verification failed for ${unitId}. Build aborted.`);
+    return false;
+  }
+
   // Step 1: Validate Syntax
   console.log(`\n[Step 1/5] 🔍 Validating JavaScript syntax for ${unitId}/data.js...`);
   try {

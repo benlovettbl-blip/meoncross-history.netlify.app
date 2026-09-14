@@ -12,6 +12,7 @@
     "build-unit": "node scripts/build_unit.cjs",
     "create-unit": "node scripts/create_unit.js",
     "test:content": "node scripts/test_content.mjs && node scripts/verify_vault_answers.cjs",
+    "verify:facts": "node scripts/verify_curriculum_facts.cjs",
     "verify:vault": "node scripts/verify_vault_answers.cjs",
     "verify:vocab": "node scripts/verify_vocab_parity.cjs",
     "test:sync": "node scripts/test_question_sync.cjs",
