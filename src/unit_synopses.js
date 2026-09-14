@@ -138,15 +138,15 @@ export const unitSynopses = {
     ],
   },
   usa: {
-    period: '1920 – 1975',
+    period: '1954 – 1975',
     synopsis:
-      'The roaring jazz clubs and bootleg speakeasies of the 1920s give way to the despair of breadlines and Dust Bowl shantytowns in the Great Depression. Emerging as the supreme capitalist powerhouse of the atomic age, America fought a ferocious battle for its own soul as Black citizens, led by Martin Luther King Jr and Malcolm X, put their lives on the line against Jim Crow segregation, police dogs, and disenfranchisement to demand constitutional equality.',
+      "Torn apart by two simultaneous existential struggles, the United States fought a ferocious battle for its own soul at home and abroad. On the domestic front, Black Americans risked their lives against Jim Crow terror, police dogs, and disenfranchisement—advancing from the legal triumph of Brown v. Topeka and MLK's non-violent marches to the fiery radicalism of Malcolm X and Black Power. Simultaneously, deep in the Southeast Asian jungle, over 500,000 conscripted GIs waged a brutal counter-insurgency against resilient Vietcong guerrillas. As napalm, the 1968 Tet Offensive, and the My Lai massacre were beamed into American living rooms, anti-war protests, student strikes, and the Kent State shootings fractured the nation, culminating in painful withdrawal and the fall of Saigon in 1975.",
     tags: [
-      'Roaring Twenties & Prohibition',
-      'Wall Street Crash & New Deal',
-      'Jim Crow Segregation',
-      'Civil Rights Movement',
-      'Vietnam War & Counterculture',
+      'Brown v. Topeka & Montgomery',
+      'Birmingham & Voting Rights Act',
+      'Malcolm X & Black Power',
+      'Gulf of Tonkin & Vietcong Tactics',
+      'Tet Offensive & Kent State Protests',
     ],
   },
   post_war_britain: {

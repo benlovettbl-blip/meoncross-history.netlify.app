@@ -13,15 +13,16 @@
     />
     <style>
 
+      *, *:before, *:after { box-sizing: border-box; }
       @page { size: A4 portrait; margin: 15mm 15mm 25mm 15mm; }
-      body { font-family: 'Georgia', 'Garamond', serif; font-size: 11pt; line-height: 1.4; color: #1e293b;  }
+      body { font-family: 'Georgia', 'Garamond', serif; font-size: 11pt; line-height: 1.4; color: #1e293b; margin: 0; padding: 0; }
       h1, h2, h3, h4, h5, h6, strong, .do-now-q, th { font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif; }
       h1 { font-family: 'Playfair Display', serif; font-size: 30pt; text-align: center; margin-top: 80px; color: #0f172a; text-transform: uppercase; letter-spacing: 1px; }
       h2 { font-size: 18pt; color: #1e3a8a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 15px; page-break-after: auto; }
       h4 { font-size: 11pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: avoid; }
       h3 { font-size: 13pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: auto; }
       .narrative-block { margin-bottom: 10pt; text-align: justify; orphans: 3; widows: 3; color: #334155; }
-      .task-box { margin-top: 22px; margin-bottom: 16px; width: 100%; page-break-inside: auto !important; }
+      .task-box { margin-top: 22px; margin-bottom: 16px; width: 100%; max-width: 100%; box-sizing: border-box; page-break-inside: auto !important; }
 
       .task-lines { border-bottom: 1px solid #cbd5e1; height: 7.5mm; margin-top: 0px; box-sizing: border-box; }
       .task-lines-large { border-bottom: 1px solid #cbd5e1; height: 8mm; margin-top: 0px; box-sizing: border-box; }
@@ -3629,7 +3630,7 @@
         font-family: sans-serif;
       "
     >
-      Generated: 2026-09-13 08:34:38 UTC | Unit: usa | Edition: 2026.1
+      Generated: 2026-09-14 07:20:46 UTC | Unit: usa | Edition: 2026.1
     </div>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
