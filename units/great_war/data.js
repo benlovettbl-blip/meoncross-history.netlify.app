@@ -386,12 +386,42 @@ const great_war = {
       vocab: [
         {
           term: 'Chancellor',
-          definition: 'The highest official of a monarch, often equivalent to a prime minister.',
+          definition: 'The highest official of a monarch, serving as the head of government.',
         },
         {
           term: 'Blood and Iron',
           definition:
             "Bismarck's policy of using warfare and military strength to achieve German unification.",
+        },
+        {
+          term: 'Revanche',
+          definition:
+            'The deep French desire for national revenge against Germany after the humiliation of 1871.',
+        },
+        {
+          term: 'Annexation',
+          definition:
+            "The forcible seizure and incorporation of another nation's territory into one's own country.",
+        },
+        {
+          term: 'Indemnity',
+          definition:
+            'A massive financial penalty or fine forced upon a defeated country after a war.',
+        },
+        {
+          term: 'Two-Front War',
+          definition:
+            'A devastating military conflict where a nation must fight enemies on two opposite borders at once.',
+        },
+        {
+          term: 'North German Confederation',
+          definition:
+            'The military and political union of northern German states created by Prussia in 1867.',
+        },
+        {
+          term: 'Reinsurance Treaty',
+          definition:
+            'A secret 1887 agreement between Germany and Russia pledging mutual neutrality if attacked.',
         },
       ],
       extended: {
@@ -575,89 +605,90 @@ const great_war = {
         'In 1870, Chancellor Bismarck edited the [Ems Telegram] to trick France into war. After a devastating [Siege] of Paris, France was forced to pay massive [Reparations] and hand over the vital territory of [Alsace-Lorraine].',
       narrative_blocks: [
         {
-          text: '**Bismarck vs. Wilhelm: A Clash of Strategy**\n\nFollowing the crushing defeat of France in 1871, German Chancellor Otto von Bismarck understood that France would never forgive the loss of Alsace-Lorraine. His greatest fear was that France would form an alliance with another major European power"specifically Russia"which would force Germany to fight a devastating "two-front war" if conflict ever broke out.\n\nTo prevent this, Bismarck spent the next twenty years weaving a complex, dizzying web of alliances and secret treaties designed entirely to keep France diplomatically isolated. He formed the Triple Alliance with Austria-Hungary and Italy, and signed a secret Reinsurance Treaty with Russia. Bismarck\'s diplomatic genius lay in his ability to juggle these competing empires, ensuring that Germany always had more friends than enemies.\n\nHowever, when a young, ambitious Kaiser Wilhelm II took the throne in 1888, he dismissed Bismarck and foolishly allowed the treaty with Russia to expire. Within years, Bismarck\'s nightmare became a reality: France and Russia signed a military alliance. The brilliant diplomatic safety net that Bismarck had built was gone, leaving Germany surrounded and forcing the German military to start planning for the exact scenario Bismarck had dreaded.',
+          theme_heading: 'The European Shockwave: 1871',
+          text: 'In 1871, a dramatic event shocked Europe. Prussia defeated France in the Franco-Prussian War. Prussian Chancellor Otto von Bismarck united thirty-nine independent German states into a single, powerful German Empire. This sudden victory destroyed the old balance of power. France lost vital land and wealth. A bitter rivalry began between France and Germany. This rivalry would poison European peace for over forty years.',
         },
         {
           theme_heading: 'A Fragmented Germany',
-          text: "There was no country called Germany until 1871. Instead, central Europe was a fragmented collection of independent small states loosely joined only by language and local customs. The most powerful, heavily militaristic state among them was the northern kingdom of Prussia. Desiring to unite these states, Prussia's brilliant, ruthless Chancellor Otto von Bismarck first grouped the northern states into the <strong>North German Confederation</strong>. To complete his dream of a single, mighty empire, Bismarck desperately needed the independent southern German states to unite with the north. He realized that nothing would unite these separate states faster than a shared national enemy.",
+          text: 'Before 1871, there was no single country called Germany. Instead, central Europe was divided into dozens of independent states. They shared a common language and customs, but had separate rulers. The northern kingdom of Prussia was the strongest military power. Prussia was led by Chancellor Otto von Bismarck. Bismarck first united the northern states into the <strong>North German Confederation</strong>. However, the southern German states remained independent. Bismarck needed a clever plan to unite the north and south. He believed that a shared foreign enemy would force all Germans to unite under Prussian leadership.',
           level_4:
-            'There was no country called Germany until 1871. He realized that nothing would unite these separate states faster than a shared national enemy.',
+            'Before 1871, Germany did not exist as a single nation. Central Europe was divided into dozens of separate states. Prussia was the strongest military power. Chancellor Otto von Bismarck united the northern states first into the North German Confederation. He realized that a war against a common enemy would make the southern states join him.',
           tasks: [
             {
               type: 'comprehension',
               text: 'To what extent did the maps of central Europe fundamentally change prior to 1871? Use the term "North German Confederation" in your answer.',
               model_answer:
-                'Before 1871, central Europe was a fragmented collection of small, independent states. Bismarck first united the northern states into the North German Confederation. By 1871, after defeating France, he successfully brought the independent southern states into the fold, fundamentally changing the map by creating a single, massive, and powerful German Empire.',
+                'Before 1871, central Europe was divided into many independent German states. Bismarck first united the northern states into the North German Confederation. After defeating France, he brought the southern states into the union. This fundamentally changed the map of Europe by creating a massive, united German Empire.',
             },
           ],
         },
         {
-          text: "Bismarck's opportunity arrived in July 1870, when King Wilhelm sent him a holiday dispatch describing a friendly meeting with the French ambassador. Bismarck carefully edited and shortened the text of this message—now famously known as the <strong>Ems Telegram</strong>—before releasing it to the international press. The edited text read as though the Prussian King had explicitly insulted the French government. Horrified at this public blow to their national pride, France predictably declared war on 19 July 1870. Bismarck’s trap worked flawlessly: the independent southern German states immediately united behind Prussia.",
+          theme_heading: 'Ems Telegram Provokes War',
+          text: "In July 1870, Bismarck found his opportunity. King Wilhelm I of Prussia met with the French ambassador at the spa town of Bad Ems. The King sent Bismarck a telegram describing their polite meeting. Bismarck cleverly altered the message. He shortened the sentences to make it sound like the King had insulted France. Bismarck then leaked this edited <strong>Ems Telegram</strong> to newspapers across Europe. The French public was furious. French Emperor Napoleon III fell directly into Bismarck's trap and declared war on Prussia. The independent southern German states immediately rushed to support Prussia.",
           level_4:
-            "Bismarck's opportunity arrived in July 1870, when King Wilhelm sent him a holiday dispatch describing a friendly meeting with the French ambassador. Bismarck’s trap worked flawlessly: the independent southern German states immediately united behind Prussia.",
+            "In July 1870, the Prussian King sent Bismarck a telegram about a meeting with the French ambassador. Bismarck cleverly edited this <strong>Ems Telegram</strong> to make it sound insulting to France. When the French read it, they were furious and declared war. Bismarck's trap worked, and the southern German states united behind Prussia.",
           tasks: [
             {
               type: 'comprehension',
               text: 'Describe the diplomatic trick Chancellor Otto von Bismarck used to manufacture a war with France in 1870.',
               model_answer:
-                'In July 1870, Bismarck took a friendly message from the Prussian King, known as the Ems Telegram, and carefully edited it. He shortened the text to make it sound as if the King had explicitly insulted the French ambassador. Bismarck then released this edited version to the press, horrifying the French and tricking them into declaring war.',
+                "In July 1870, Bismarck received a telegram describing a peaceful meeting between the Prussian King and the French ambassador. Bismarck edited the Ems Telegram to make it sound as if both men had insulted each other. When this edited message was published, the outraged French Emperor declared war, walking directly into Bismarck's trap.",
             },
           ],
-          theme_heading: 'Ems Telegram Provokes War',
         },
         {
-          text: "Prussia's military strategy relied on two distinct advantages. First, they utilized an <strong>advanced railway network</strong> to mobilise and deploy 500,000 highly trained troops with astonishing speed. Second, they equipped their forces with <strong>Krupp steel artillery</strong>, which fired much faster and further than French guns. The smaller French force of 180,000 was completely caught off guard. During the terrible Siege of Metz, the best French troops were entirely surrounded. When the remaining French forces attempted to break the lines at the Battle of Sedan on 1 September, they suffered 17,000 casualties and over 21,000 soldiers were captured—including the French Emperor Napoleon III. Following a brutal four-month winter siege of Paris, the capital surrendered on 28 January 1871.",
+          theme_heading: 'Prussian Military Advantages',
+          text: 'The Prussian army defeated France with remarkable speed. First, Prussia used an <strong>advanced railway network</strong> to move 500,000 soldiers to the border in days. France mobilized much more slowly. Second, the Germans used heavy <strong>Krupp steel artillery</strong>. These Krupp guns fired explosive shells much faster and further than French bronze cannons. German forces surrounded the main French army at the Battle of Sedan on 1 September 1870. The French suffered 17,000 casualties. Over 21,000 French soldiers were captured, including Emperor Napoleon III himself. Paris was besieged during a bitter winter and finally surrendered on 28 January 1871.',
           level_4:
-            "Prussia's military strategy relied on two distinct advantages. Following a brutal four-month winter siege of Paris, the capital surrendered on 28 January 1871.",
+            'Prussia defeated France rapidly using two major advantages. First, an advanced railway network moved 500,000 troops to the border in days. Second, modern Krupp steel artillery outranged the French cannons. The French army was crushed at the Battle of Sedan, and Paris surrendered in January 1871.',
           tasks: [
             {
               type: 'comprehension',
               text: 'Identify two distinct military advantages that allowed the Prussian-led German army to quickly defeat the conventional French forces.',
               model_answer:
-                'First, the Prussian army used an advanced railway network to mobilize and deploy 500,000 highly trained troops extremely quickly. Second, they were equipped with modern Krupp steel artillery, which fired much faster and further than the French guns.',
+                'First, the Prussian army used an advanced railway network to mobilize and transport 500,000 troops to the front lines in days. Second, the Prussian army used modern Krupp steel artillery, which had greater range and firepower than the French cannons.',
             },
           ],
-          theme_heading: "Prussia'",
         },
         {
-          text: 'The war permanently transformed the balance of power. In a final, agonizing humiliation for France, the German Empire was officially proclaimed inside the Hall of Mirrors at the Palace of Versailles—the historic home of French royalty. The peace treaty forced three severe penalties upon France: it ceded the strategic industrial border provinces of <strong>Alsace-Lorraine</strong>, was forced to pay a crushing war fine of <strong>5 billion francs</strong> over five years, and was forced to <strong>host a German occupation army</strong>. This deep humiliation shattered French national pride and planted a bitter seed of resentment. Fearing eventual French revenge, German Field Marshal Alfred von Schlieffen began drawing up a military master plan in 1897 to quickly knock out France first if Germany ever faced a simultaneous war with Russia.',
+          theme_heading: "France's Humiliation",
+          text: 'The German victory permanently altered European history. On 18 January 1871, the German princes gathered in the Palace of Versailles. Inside the historic Hall of Mirrors, they proclaimed King Wilhelm I as German Emperor. Choosing the French royal palace was a deliberate, agonizing insult to France. In the Treaty of Frankfurt, Germany forced three brutal penalties on France. First, France had to hand over the rich border regions of <strong>Alsace-Lorraine</strong>. Second, France was forced to pay a huge war indemnity of <strong>5 billion francs</strong>. Third, France was forced to host a <strong>German occupation army</strong> until the fine was paid.',
           level_4:
-            'The war permanently transformed the balance of power. Fearing eventual French revenge, German Field Marshal Alfred von Schlieffen began drawing up a military master plan in 1897 to quickly knock out France first if Germany ever faced a simultaneous war with Russia.',
+            'The German victory changed Europe forever. On 18 January 1871, King Wilhelm was proclaimed German Emperor inside the French royal Palace of Versailles. Germany forced three harsh terms on France: taking the rich province of Alsace-Lorraine, demanding 5 billion francs, and stationing German occupation troops on French soil.',
           tasks: [
             {
               type: 'comprehension',
               text: 'List the three severe penalties forced upon France by the victorious German Empire in the 1871 peace treaty.',
               model_answer:
-                'The 1871 peace treaty forced France to cede the strategic industrial provinces of Alsace-Lorraine, pay a crushing war fine of 5 billion francs over five years, and host a German occupation army.',
+                'The three penalties were: first, France had to give up the provinces of Alsace-Lorraine; second, France had to pay a war indemnity of 5 billion francs; third, France had to host a German occupation army until the debt was paid.',
             },
           ],
-          theme_heading: "France's Humiliation",
         },
         {
-          text: 'Following the crushing defeat of France in 1871, German Chancellor Otto von Bismarck understood that France would never forgive the loss of Alsace-Lorraine. His greatest fear was that France would form an alliance with another major European power—specifically Russia—which would force Germany to fight a devastating "two-front war" if conflict ever broke out.',
+          theme_heading: "Bismarck's Nightmare: Fear of Revanche",
+          text: 'These cruel peace terms created a dangerous legacy. French citizens felt deeply humiliated. They demanded <strong>revanche</strong> <small>(revenge)</small> to win back Alsace-Lorraine. In French schools, pupils were taught never to forget the lost provinces. Bismarck realized he had created a permanent enemy. He feared that France would seek revenge. His greatest nightmare was a <strong>two-front war</strong> <small>(fighting enemies on two opposite borders at once)</small>. If France allied with Russia, Germany would be trapped in the middle and attacked from both the west and the east.',
           level_4:
-            'Following the crushing defeat of France in 1871, German Chancellor Otto von Bismarck understood that France would never forgive the loss of Alsace-Lorraine. His greatest fear was that France would form an alliance with another major European power—specifically Russia—which would force Germany to fight a devastating "two-front war" if conflict ever broke out.',
+            'The peace terms created lasting bitterness. The French people demanded revanche (revenge) to take back Alsace-Lorraine. Bismarck knew France was now a permanent enemy. His greatest fear was a two-front war, where Germany would be attacked by France in the west and Russia in the east at the same time.',
           tasks: [
             {
               type: 'comprehension',
               text: 'Explain why the loss of Alsace-Lorraine and the ceremony at Versailles created a long-term "nightmare" for European peace.',
               model_answer:
-                'The loss of Alsace-Lorraine and the humiliation of the German Empire being proclaimed inside the French Royal Palace of Versailles shattered French national pride. This created a bitter desire for revenge (revanche), forcing Bismarck to create a complex web of defensive alliances to isolate France, which ultimately set the stage for World War I.',
+                'The loss of Alsace-Lorraine and the humiliation of the German Empire being proclaimed inside the French Royal Palace of Versailles shattered French national pride. This created a bitter desire for revenge (revanche). Bismarck lived in constant fear of a two-front war if France allied with Russia, forcing Germany into defensive alliance webs that ultimately divided Europe into rival armed camps.',
             },
           ],
-          theme_heading: "Bismarck'",
         },
         {
-          text: "To prevent this, Bismarck spent the next twenty years weaving a complex, dizzying web of alliances and secret treaties designed entirely to keep France diplomatically isolated. He formed the Triple Alliance with Austria-Hungary and Italy, and signed a secret Reinsurance Treaty with Russia. Bismarck's diplomatic genius lay in his ability to juggle these competing empires, ensuring that Germany always had more friends than enemies.",
-          level_4:
-            "To prevent this, Bismarck spent the next twenty years weaving a complex, dizzying web of alliances and secret treaties designed entirely to keep France diplomatically isolated. Bismarck's diplomatic genius lay in his ability to juggle these competing empires, ensuring that Germany always had more friends than enemies.",
           theme_heading: "Bismarck's Alliance Web",
+          text: 'To protect Germany, Bismarck worked tirelessly for twenty years. His main strategy was to keep France completely isolated without allies. In 1882, he built the Triple Alliance between Germany, Austria-Hungary, and Italy. In 1887, he signed a secret treaty with Russia called the <strong>Reinsurance Treaty</strong>. This guaranteed that Russia and Germany would not attack each other. Bismarck was a master diplomat. He kept peace by making sure Germany always had more friends than enemies.',
+          level_4:
+            'To protect Germany, Bismarck spent twenty years keeping France isolated without allies. He formed the Triple Alliance with Austria-Hungary and Italy. He also signed a secret Reinsurance Treaty with Russia to guarantee peace between them. Bismarck made sure Germany always had more allies than enemies.',
         },
         {
-          text: "However, when a young, ambitious Kaiser Wilhelm II took the throne in 1888, he dismissed Bismarck and foolishly allowed the treaty with Russia to expire. Within years, Bismarck's nightmare became a reality: France and Russia signed a military alliance. The brilliant diplomatic safety net that Bismarck had built was gone, leaving Germany surrounded and forcing the German military to start planning for the exact scenario Bismarck had dreaded.",
-          level_4:
-            'However, when a young, ambitious Kaiser Wilhelm II took the throne in 1888, he dismissed Bismarck and foolishly allowed the treaty with Russia to expire. The brilliant diplomatic safety net that Bismarck had built was gone, leaving Germany surrounded and forcing the German military to start planning for the exact scenario Bismarck had dreaded.',
           theme_heading: 'Wilhelm Undoes Bismarck',
+          text: "In 1888, a young and ambitious new emperor took power: Kaiser Wilhelm II. The new Kaiser wanted personal glory and dismissed Bismarck in 1890. Wilhelm made a disastrous mistake. He refused to renew the secret Reinsurance Treaty with Russia. Isolated and desperate for a friend, Russia turned to France. In 1894, France and Russia signed a military alliance. Bismarck's worst nightmare had come true. Germany was now surrounded by two powerful rivals. The German army immediately began planning for a two-front war.",
+          level_4:
+            "In 1888, the ambitious Kaiser Wilhelm II became emperor and dismissed Bismarck in 1890. Wilhelm foolishly dropped the secret treaty with Russia. As a result, Russia signed a military alliance with France in 1894. Bismarck's nightmare had happened: Germany was now surrounded by enemies on both sides.",
         },
         {
           title: 'Consolidation Task',
@@ -667,10 +698,12 @@ const great_war = {
               question:
                 'Explain why the Franco-Prussian War created a lasting legacy of hatred between France and Germany.',
               hints: [
-                'Sentence Starter: The war created hatred because of the humiliating terms of the peace treaty...',
-                'Sentence Starter: For example, France was forced to pay a massive indemnity and lost the territory of...',
-                "Sentence Starter: This resulted in a strong French desire for 'Revanche' (revenge) that lasted until...",
+                'Sentence Starter: The Franco-Prussian War created lasting hatred because the peace treaty humiliated France...',
+                'Sentence Starter: For example, France was forced to give up Alsace-Lorraine and pay 5 billion francs...',
+                'Sentence Starter: Consequently, French people felt a deep desire for revenge (revanche), while Germany lived in fear of a two-front war...',
               ],
+              model_answer:
+                'The Franco-Prussian War created a lasting legacy of hatred for three main reasons. First, the Treaty of Frankfurt deeply humiliated France by taking Alsace-Lorraine, demanding 5 billion francs, and occupying French territory. Second, proclaiming the German Empire inside the French Palace of Versailles wounded French national pride. Third, this humiliation created an obsessive French desire for revenge (revanche). To protect itself, Germany built alliances to isolate France, but Kaiser Wilhelm II later allowed France to ally with Russia, dividing Europe into hostile armed camps.',
             },
           ],
           text: '<h3>Consolidation Task</h3>',
