@@ -1,86 +1,117 @@
-# Year 7 Medieval England: 4-Act Architecture & 24-Page Double-Page Spread Migration
+# Departmental Migration & Visual Quality Walkthrough: Medieval England & The Great War (Part 2)
 
 ## Executive Summary
-Year 7 Medieval England (`medieval_england`, 1066–1485) has been completely migrated to the departmental **4-Act Dramatic Lesson Architecture** (web app) and the **24-Page Saddle-Stitch Double-Page Spread Pupil Workbook Standard** (physical print), integrating primary Hampshire & Meon Valley local history connections.
-
-All pre-commit linters, anti-duplication auditors, layout overflow detectors, and image integrity checks passed with **100% clean marks**.
-
----
-
-## Key Achievements
-
-### 1. 4-Act Dramatic Lesson Architecture (Web App)
-All 9 lessons in [`units/medieval_england/data.js`](file:///c:/Projects/meoncross-history.netlify.app/units/medieval_england/data.js) have been restructured into the departmental 4-Act format:
-- **Act 1: Context & Catalyst** — Baseline reality and geopolitical mindset (`Source A`).
-- **Act 2: Escalation & Conflict** — Core historical mechanism, legal clash, or military turning point (`Source B`).
-- **Act 3: Primary Sources & Forensic Evidence** — Immersive primary dispatches, trial minutes, or chronicle testimonies (`Source C` & `Source D`).
-- **Act 4: Historical Verdict & Historiographical Debate** — Competing academic interpretations and 3-Tier scaffolded extended writing with sentence connectives and milestones.
-
-#### Strict Pedagogical Blueprint Compliance:
-- **Pure Paragraph Indexing:** Paragraphs strictly indexed with `<span class="para-ref">[1.1]</span>`, `<span class="para-ref">[2.1]</span>`, `<span class="para-ref">[3.1]</span>`, `<span class="para-ref">[4.1]</span>`.
-- **Universal Source Lettering:** Sources strictly follow a single sequential sequence per lesson (`Source A`, `Source B`, `Source C`, `Source D`) with zero sub-indices (e.g. no `Source A1`).
-- **Pedagogical Recall Isolation:** "Do Now" retrieval grids strictly recall prior lessons and units (zero current-lesson questions).
-- **Teacher Notes & Hinge Questions:** Every lesson includes a high-level `primer`, learning `objectives` with specific hinge questions, and `source_context` concluding with a targeted hinge question.
+Following your instructions:
+1. **Year 9 The Great War, Part 2** (`great_war_part2`, 1914–1919, 7 lessons) has been completely migrated to the departmental **4-Act Dramatic Lesson Architecture** (web app) and the **20-Page Double-Page Spread Pupil Workbook Standard** (physical print), joining `industrialisation_and_empire` and `medieval_england`.
+2. A comprehensive audit across both **Year 7 Medieval England** and **Year 9 The Great War (Part 2)** was conducted to verify that all workbooks, textbooks, cheat sheets, quiz packs, and databases are complete, correct, and contain **zero occurrences of `'undefined'`**.
+3. Thorough browser visual inspections were conducted across all workbooks and textbooks for both units, verifying that primary source images (including the Stubbington War Memorial Shelter and Bayeux Tapestry) and facing double-page spreads display with zero layout overflows and pristine typography.
 
 ---
 
-### 2. Local Hampshire & Meon Valley Historical Resonance
-In accordance with your request, authentic local primary connections were woven into the core curriculum:
+## 1. Year 9 The Great War (Part 2): 4-Act Architecture & Curriculum Refactor
 
-#### Lesson 2: Castles, Terror & The Domesday Book
-- **Portchester Castle:** Integrated into Act 1 paragraph `[1.2]` and the lesson banner ([`public/images/portchester_seawards.jpg`](file:///c:/Projects/meoncross-history.netlify.app/public/images/portchester_seawards.jpg)). Explains how William I and Henry I constructed a formidable Norman stone keep directly within the existing 3rd-century Roman Saxon Shore fort walls to command Portsmouth Harbour and secure maritime communications with Normandy.
-- **Local Domesday Records:** Source D audits the manors of **Portchester**, **Fareham** (*Ferneham*), and **Titchfield** (*Ticefelle*), showing the exact numbers of villagers, ploughlands, and woodland pigs recorded by the King's commissioners.
+### A. 4-Act Dramatic Lesson Structure
+All 7 lessons in [`units/great_war_part2/data.js`](file:///c:/Projects/meoncross-history.netlify.app/units/great_war_part2/data.js) are now structured into the departmental 4-Act model:
+- **Act 1: Context & Catalyst** — Baseline reality and military/civilian mobilization (`Source A`).
+- **Act 2: Escalation & Conflict** — Core tactical deadlock, technological innovation, or home front clash (`Source B`).
+- **Act 3: Primary Sources & Forensic Evidence** — Immersive primary dispatches, trench diaries, intercepted letters, or gazettes (`Source C` & `Source D`).
+- **Act 4: Historical Verdict & Historiographical Debate** — Competing academic interpretations (e.g. Pennell vs Traditional View, Travers vs Prior & Wilson, Ferguson vs Stevenson) and 3-Tier scaffolded extended writing.
 
-#### Lesson 5: Doom Paintings and Tithes (Village Life)
-- **Bishop’s Waltham Palace (Meon Valley):** Integrated into Act 2 paragraph `[2.2]` and the pupil workbook. Details how Bishop Henry of Blois (Bishop of Winchester and grandson of William the Conqueror) built a palatial estate in the Meon Valley.
-- **Local Tithe Extraction:** Explains how Meon Valley serfs surrendered one-tenth of their grain, fleece, and livestock directly to the Bishop's bailiff at the great Waltham tithe barn, and were tried in the episcopal manorial court for withholding dues.
-- **Visual Source:** Authentic photograph ([`public/images/bishops_waltham_palace.jpg`](file:///c:/Projects/meoncross-history.netlify.app/public/images/bishops_waltham_palace.jpg)) downloaded, verified, and integrated.
+### B. Departmental Specification Standards Enforced:
+- **Paragraph Indexing:** Strictly indexed using `<span class="para-ref">[1.1]</span>`, `<span class="para-ref">[2.1]</span>`, `<span class="para-ref">[3.1]</span>`, `<span class="para-ref">[4.1]</span>`.
+- **Sequential Source Lettering:** Flat sequence per lesson (`Source A`, `Source B`, `Source C`, `Source D`) with zero duplicate letters and zero sub-indices (e.g., no `Source A1`).
+- **Pedagogical Recall Isolation:** All 7 Do Now bell-ringers strictly test prior knowledge (Causes of the Great War, Schlieffen Plan, Trench Stalemate, Medieval and Empire themes) without testing current-lesson content.
+- **Teacher Notes & Hinge Questions:** Structured teacher notes with lesson primers, objective-specific primers with hinge questions, and primary source context blurbs concluding with targeted discussion hinges.
+- **Local Hampshire Historical Connections:**
+  - **The Pompey Pals** (14th & 15th Battalions, Hampshire Regiment) at the Somme and Thiepval.
+  - **Private Arthur Tribbeck** (Fareham soldier of the Hampshire Regiment) buried at Sucrerie Military Cemetery, Colincamps.
+  - **The Lowry Brothers** of Manor Way Grange, Lee-on-the-Solent.
+  - **The Stubbington War Memorial Shelter** on the Village Green (commemorating the 67 local fallen).
 
 ---
 
-### 3. 24-Page Double-Page Spread Pupil Workbook
-Authored [`scripts/render_medieval_twopage_workbook.cjs`](file:///c:/Projects/meoncross-history.netlify.app/scripts/render_medieval_twopage_workbook.cjs), perfectly mapping to a standard 6-sheet A3 saddle-stitch booklet (24 pages total):
+## 2. Bespoke 20-Page Double-Page Spread Pupil Workbook (`great_war_part2`)
 
-| Page Range | Content | Page Side |
+Authored [`scripts/render_great_war_part2_twopage_workbook.cjs`](file:///c:/Projects/meoncross-history.netlify.app/scripts/render_great_war_part2_twopage_workbook.cjs), producing an exact **20-page double-page spread workbook** (5 A3 sheets saddle-stitched):
+
+| Page | Content | Spread Position |
 | :--- | :--- | :--- |
-| **Page 1** | Front Cover (Unit title, classical typography, pupil metadata box) | Recto |
-| **Page 2** | Assessment Progress Tracker (Lessons 1–9 RAG ratings, dates, scores) | Verso |
-| **Page 3** | Chronological Spine (1066–1485) & Hampshire Local Heritage Map | Recto |
-| **Pages 4–21** | **9 Double-Page Spreads (Lessons 1 to 9)**<br>• **Left (Verso):** Learning Objectives, Do Now Grid, Disciplinary Vocab, Archival Sources, Task 4 Preparation Bridge<br>• **Right (Recto):** Act 4 Structure Strip, Connectives, Milestones, and Extended Writing Space | Verso / Recto Spreads |
-| **Page 22** | Vocabulary Mastery Vault (Unit definitions across 1066–1485) | Verso |
-| **Page 23** | Pupil Voice, Reflection & Target Setting | Recto |
-| **Page 24** | Outside Back Cover: Departmental Marking Policy & Formula | Verso |
-
-#### Dynamic Task 4 Preparation Bridges (Verso):
-- **Lesson 1:** Tactical Battlefield Blueprint & Terrain Analysis (Senlac Hill & Feigned Retreat)
-- **Lesson 2:** Norman Motte & Bailey Blueprint (Keep, Motte, Bailey, Portchester Castle Scholar's Edge)
-- **Lesson 3:** Crown vs. Church Conflict Ledger (Henry II Common Law vs. Becket Canon Law)
-- **Lesson 4:** Archival Forensic Dissection (Magna Carta Clauses 12 & 39)
-- **Lesson 5:** Deconstructing the Parish Church Doom Fresco (Hellmouth & Bishop's Waltham Palace Scholar's Edge)
-- **Lesson 6:** Socio-Economic Impact Diagram (The Black Death & The Statute of Labourers)
-- **Lesson 7:** Revolutionary Balance Sheet of 1381 (Wat Tyler's Demands vs. Richard II's Retribution)
-- **Lesson 8:** The Dynastic Crucible: Red Rose vs. White Rose (Bastard Feudalism & Private Armies)
-- **Lesson 9:** Capstone Synthesis Matrix (Monarchical Power: Absolute Authority vs. Constitutional Checks)
+| **Page 1** | Front Cover (Stubbington War Memorial Shelter image, title, pupil metadata box) | Recto |
+| **Page 2** | Learning Tracker (Self-assessment RAG ratings for all 7 lessons) | Verso |
+| **Page 3** | Enquiry Roadmap (Chronological spine: 1914–1919 & Western Front sector map) | Recto |
+| **Pages 4–17** | **7 Double-Page Spreads (Lessons 1 to 7)**<br>• **Left (Verso):** Learning Objectives, Do Now Retrieval Grid, Disciplinary Vocab, Act 1 & 2 Tasks, Act 3 Archival Evidence Box (Sources A–D)<br>• **Right (Recto):** Act 4 Structure Strip, Causal Connectives, Milestones, and Extended Writing Space | Verso / Recto Spreads |
+| **Page 18** | Unit Disciplinary Glossary Vault (30 core historical terms) | Verso |
+| **Page 19** | Pupil Voice & Learning Reflection (Key turning point judgment & target setting) | Recto |
+| **Page 20** | Departmental Marking Policy & Formula | Verso |
 
 ---
 
-### 4. Quality Assurance & Verification Results
-- **Page Layout Overflows:** `node scripts/check_overflows.cjs medieval_england`  
-  👉 **Passed with 0 layout overflows across all 24 pages.**
-- **Curriculum Source Lettering:** `node scripts/verify_source_lettering.cjs medieval_england`  
-  👉 **100% Clean: Strictly sequential single-letter sequence across all lessons.**
-- **Task Uniformity & Anti-Duplication:** `node scripts/lint_task_uniformity.cjs medieval_england`  
-  👉 **100% Clean.**
-- **Image Integrity:** `node verify_images.cjs`  
-  👉 **100% Clean: Zero broken HTML or corrupt images.**
-- **Curriculum Data Vault:** All 180 original quiz questions (20/lesson) and 39 glossary terms preserved intact.
-- **Safe Unit Sync Pipeline:** Executed `node scripts/sync_unit.cjs medieval_england` in 28.8s; compiled fresh PDFs in `public/pdfs/` and refreshed `public/database.json`.
-- **Git Checkpoint:** Cleanly committed with commit `9dfe39fb` and pushed to `main`.
+## 3. Comprehensive Audit: Zero "Undefined" Verified
+
+Ran the automated audit script ([`scripts/audit_undefined.cjs`](file:///c:/Projects/meoncross-history.netlify.app/scripts/audit_undefined.cjs)) across all curriculum data, HTML books, workbooks, cheat sheets, quiz packs, and databases for both units:
+
+```
+====================================================
+🔍 AUDITING FOR UNDEFINED STRINGS & PAGE COUNTS
+====================================================
+
+▶ Unit: [medieval_england]
+  - units/medieval_england/data.js: 0 undefined occurrence(s)
+  - units/medieval_england/cheat_sheet.html: 0 undefined occurrence(s)
+  - units/medieval_england/pupil_workbook.html: 0 undefined occurrence(s) (24 pages)
+  - units/medieval_england/textbook.html: 0 undefined occurrence(s)
+  - public/units/medieval_england/cheat_sheet.html: 0 undefined occurrence(s)
+  - public/units/medieval_england/content.html: 0 undefined occurrence(s)
+  - public/units/medieval_england/mastery_pack_full.html: 0 undefined occurrence(s)
+  - public/units/medieval_england/pupil_workbook.html: 0 undefined occurrence(s) (24 pages)
+  - public/units/medieval_england/quiz_pack.html: 0 undefined occurrence(s)
+  - public/units/medieval_england/textbook.html: 0 undefined occurrence(s)
+
+▶ Unit: [great_war_part2]
+  - units/great_war_part2/data.js: 0 undefined occurrence(s)
+  - units/great_war_part2/cheat_sheet.html: 0 undefined occurrence(s)
+  - units/great_war_part2/pupil_workbook.html: 0 undefined occurrence(s) (20 pages)
+  - units/great_war_part2/textbook.html: 0 undefined occurrence(s)
+  - public/units/great_war_part2/cheat_sheet.html: 0 undefined occurrence(s)
+  - public/units/great_war_part2/content.html: 0 undefined occurrence(s)
+  - public/units/great_war_part2/mastery_pack_full.html: 0 undefined occurrence(s)
+  - public/units/great_war_part2/pupil_workbook.html: 0 undefined occurrence(s) (20 pages)
+  - public/units/great_war_part2/quiz_pack.html: 0 undefined occurrence(s)
+  - public/units/great_war_part2/textbook.html: 0 undefined occurrence(s)
+
+  - public/database.json [medieval_england]: 0 undefined occurrence(s)
+  - public/database.json [great_war_part2]: 0 undefined occurrence(s)
+
+====================================================
+🎉 100% CLEAN: Zero occurrences of "undefined" found!
+====================================================
+```
 
 ---
 
-## Proactive Recommendations
+## 4. Visual Browser Inspection Results
 
-1. **Digital Audio Excerpts for Guided Reading:** While the guided reading extracts for all 9 lessons are fully populated, lessons 1–5 have recorded MP3 narrations while lessons 6–9 currently reference audio filenames. We recommend adding corresponding spoken primary source audio clips for Jean Froissart (John Ball's sermon) and the Crowland Chronicle (Bosworth Field) to maintain immersion for lower-attaining readers.
-2. **Interactive Local Map Overlay:** For Lesson 2 and Lesson 5 in the digital web app, consider adding an interactive leaflet/SVG map component linking Portchester Castle, Titchfield Abbey, and Bishop's Waltham Palace so Year 7 pupils can visually trace Norman and medieval episcopal power across the Meon Valley landscape.
-3. **Year 8 Early Modern World Migration:** Following the success of both `industrialisation_and_empire` and now `medieval_england` in the 24-page double-page spread format, the next logical curriculum priority is migrating Year 8 **Early Modern World** (1450–1750) to this identical 4-Act and double-page spread standard.
+The browser subagent visually rendered and inspected both workbooks and textbooks:
+1. **`great_war_part2/pupil_workbook.html`**:
+   - **Page 1 Cover:** The Stubbington War Memorial Shelter photograph renders crisp and centered.
+   - **Pages 2 & 3:** Learning Tracker and Enquiry Roadmap are balanced and legible.
+   - **Pages 4 & 5 (Lesson 1 Facing Spread):** Sources A, B, C, D render cleanly with archival styling; writing lines align with structure strip and connectives; zero text clipping or page overflows.
+2. **`great_war_part2/textbook.html`**:
+   - Header, table of contents, recruitment poster sources, trench diagrams, Odd One Out vocabulary tasks, and numbered paragraph references load with high visual polish.
+3. **`medieval_england/pupil_workbook.html`**:
+   - Page 1 cover displays the Bayeux Tapestry Battle of Hastings illustration cleanly; 24 pages fit with zero overflow warnings.
+4. **`medieval_england/textbook.html`**:
+   - Portchester Castle hero banner, Chapter 1 claimant comparison table, and primary source medallions load cleanly.
+
+---
+
+## 5. Pipeline Sync & Git Verification
+- Executed `node scripts/sync_unit.cjs great_war_part2`:
+  - Syntax check: Passed cleanly.
+  - Task uniformity linter: Passed 100% clean.
+  - `database.json` refreshed with 16 units.
+  - Exported `great_war_part2_pupil_workbook_FINAL_V17.pdf` and `great_war_part2_textbook_FINAL_V17.pdf`.
+  - Re-aligned `workbook_page_map.js` and `workbook_page_map.json`.
+  - Layout overflow audit: Passed with 0 overflows.
+- Executed `node verify_images.cjs`: All images verified (no corrupt HTML files).
+- Git pre-commit hooks passed: Clean commit `4dca8708` pushed to `origin main`.
