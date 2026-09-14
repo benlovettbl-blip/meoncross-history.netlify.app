@@ -906,7 +906,7 @@ const KT_DATA = {
         vocabBank: [
           '26 October 1994',
           'King Hussein & Yitzhak Rabin',
-          'Wadi Araba border post',
+          'Formal end to state of war',
           'Water sharing agreements',
           'Second Arab state recognition',
         ],
@@ -916,7 +916,7 @@ const KT_DATA = {
           'Consequently, ...',
         ],
         guide:
-          'Identify bilateral consequence &rarr; Support with facts (Wadi Araba, water allocations) &rarr; Explain stabilization and security along Israel’s longest border.',
+          'Identify bilateral consequence &rarr; Support with facts (formal peace, water sharing) &rarr; Explain stabilization and security along Israel’s longest border.',
       },
       q4b: {
         num: '4 (b)',
@@ -939,14 +939,14 @@ const KT_DATA = {
         stem: 'Explain the importance of US President Carter for the Camp David negotiations (1978).',
         marks: 8,
         focus:
-          'Explain how Carter’s personal marathon mediation and drafting of 23 revisions prevented summit collapse and produced the framework accords.',
+          'Explain how Carter’s personal mediation, secluded diplomacy, and economic aid guarantees secured the framework accords between Egypt and Israel.',
         lines: 16,
         vocabBank: [
           'Jimmy Carter personal diplomacy',
           'Secluded 13-day summit in Maryland',
-          'Drafting of 23 agreement revisions',
+          'Framework for Middle East peace',
           'Bilateral pressure on Begin & Sadat',
-          'US financial aid package guarantees',
+          'US promised billions in aid',
         ],
         connectives: [
           'President Carter was critical because...',
@@ -1044,7 +1044,7 @@ const KT_DATA = {
         modelP1:
           'Diplomatic negotiations began with Anwar Sadat’s unprecedented direct peace initiative in November 1977. Recognising that Egypt’s economy was exhausted by warfare and seeking to reclaim the Sinai Peninsula, Sadat shocked the world by flying to Jerusalem on 19 November and addressing the Israeli Knesset, proclaiming "no more war" and offering direct bilateral negotiations. While Israeli Prime Minister Menachem Begin made a reciprocal visit to Ismailia in December, negotiations soon stalled over Israeli unwillingness to dismantle Jewish settlements in Sinai and grant Palestinian autonomy.',
         modelP2:
-          'Faced with complete diplomatic collapse, US President Jimmy Carter intervened decisively in September 1978 by inviting Sadat and Begin to a secluded 13-day summit at Camp David. Carter conducted intensive marathon diplomacy, drafting 23 revisions of the agreements to mediate between Begin’s rigid legalism and Sadat’s emotional demands. Carter’s personal pressure successfully produced the Camp David Accords on 17 September 1978, establishing two frameworks: one for the full return of the Sinai Peninsula to Egypt in exchange for peace, and a second, vaguer framework for interim self-government in the West Bank and Gaza.',
+          'Faced with complete diplomatic collapse, US President Jimmy Carter intervened decisively in September 1978 by inviting Sadat and Begin to a secluded 13-day summit at Camp David. Carter conducted intensive marathon diplomacy, proposing frameworks for Middle East peace with promises of US aid to mediate between Begin’s rigid legalism and Sadat’s emotional demands. Carter’s personal pressure successfully produced the Camp David Accords on 17 September 1978, establishing two frameworks: one for the full return of the Sinai Peninsula to Egypt in exchange for peace, and a second, vaguer framework for interim self-government in the West Bank and Gaza.',
         modelP3:
           'This breakthrough directly culminated in the signing of the formal Treaty of Washington on the White House lawn on 26 March 1979. Under the treaty, Israel agreed to completely evacuate the Sinai Peninsula (dismantling the Yamit settlement) and reopen the Suez Canal to Israeli shipping, while Egypt became the first Arab state to recognize Israel’s right to exist. This historic treaty fundamentally transformed Middle East geopolitics by removing the largest and most powerful Arab military from the anti-Israel coalition, ending thirty years of state-on-state warfare between Egypt and Israel.',
         examiner:

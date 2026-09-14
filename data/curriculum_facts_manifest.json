@@ -1,121 +1,185 @@
 {
-  "$schema": "Curriculum Facts & Anti-Hallucination Manifest",
-  "version": "1.0.0",
-  "description": "Authoritative registry of verified historical facts, known AI hallucination regressions, and exam board specification guardrails.",
-  "global_banned_patterns": [
-    {
-      "pattern": "\\[insert[^\\]]*here\\]",
-      "isRegex": true,
-      "caseInsensitive": true,
-      "reason": "Unresolved AI template placeholder detected."
-    },
-    {
-      "pattern": "\\[TBD\\]|\\[TODO\\]",
-      "isRegex": true,
-      "caseInsensitive": false,
-      "reason": "Incomplete draft placeholder detected."
-    },
-    {
-      "pattern": "Lorem ipsum",
-      "isRegex": false,
-      "caseInsensitive": true,
-      "reason": "Placeholder text detected in curriculum content."
-    },
-    {
-      "pattern": "Placeholder model answer",
-      "isRegex": false,
-      "caseInsensitive": true,
-      "reason": "Generic unevidenced model answer placeholder detected."
-    }
-  ],
-  "unit_rules": {
-    "trip_ypres": {
-      "name": "GCSE Battlefield Tour: Ypres & The Salient",
-      "banned_patterns": [
-        {
-          "pattern": "Medal of St George[^\\n]{0,80}(?:Third Class|3rd Class|Fourth Class|4th Class)",
-          "isRegex": true,
-          "caseInsensitive": true,
-          "reason": "Ernest Crummack was awarded the Russian Medal of St George SECOND CLASS (Gold), not 3rd/4th Class (Silver). Primary evidence: contemporary 1916 gazettes and Clifton Park Regimental Museum accession."
-        },
-        {
-          "pattern": "Clara Senior",
-          "isRegex": false,
-          "caseInsensitive": true,
-          "reason": "AI confabulation: Ernest Crummack never married 'Clara Senior'. His verified wives were Maud Coxon (m. 1906, d. 1914) and Elizabeth Hall (m. 1916)."
-        },
-        {
-          "pattern": "(?:#|No\\.?\\s*)2404\\b",
-          "isRegex": true,
-          "caseInsensitive": true,
-          "reason": "AI service number confusion: Ernest Crummack's true service number was #2423 (#2404 belonged to an unrelated enlistee)."
-        },
-        {
-          "pattern": "pit ripper|cutting rock and blasting tunnel headings|teenage coal miner",
-          "isRegex": true,
-          "caseInsensitive": true,
-          "reason": "AI occupational stereotyping: Ernest Crummack worked in iron metallurgy (Parkgate Iron and Steel Plant reverberatory furnaces), not as a colliery coal miner."
-        },
-        {
-          "pattern": "11 January 1888|born in 1888|died in 1968|1968 at the age of 80",
-          "isRegex": true,
-          "caseInsensitive": true,
-          "reason": "AI demographic drift: Ernest Crummack was born 6 September 1885 and died in 1958 aged 73."
-        },
-        {
-          "pattern": "2/4th Battalion",
-          "isRegex": false,
-          "caseInsensitive": true,
-          "reason": "Ernest Crummack was gazetted to the 1/4th (Territorial) Bn, but was operationally attached to the 6th (Service) Battalion in the 11th (Northern) Division."
-        }
-      ],
-      "required_anchors_if_present": [
-        {
-          "trigger": "Crummack",
-          "must_include": [
-            {
-              "pattern": "2423",
-              "reason": "Ernest Crummack's verified regimental service number is #2423."
-            },
-            {
-              "pattern": "Second Class|2nd Class",
-              "reason": "Russian Medal of St George must be Second Class (Gold)."
-            }
-          ]
-        }
-      ]
-    },
-    "cme_new": {
-      "name": "Conflict in the Middle East, c1945-95 (Paper 2)",
-      "banned_patterns": [
-        {
-          "pattern": "Explain two consequences[^\\]\\n]{0,60}(?:\\[8 marks\\]|8 marks)",
-          "isRegex": true,
-          "caseInsensitive": true,
-          "reason": "Edexcel specification violation: Middle East consequence questions are 4-mark ('Explain one consequence'), NOT obsolete 8-mark questions."
-        },
-        {
-          "pattern": "Hosni Mubarak|Egyptian Islamic Jihad",
-          "isRegex": true,
-          "caseInsensitive": false,
-          "reason": "GCSE DoK violation: Peripheral post-1981 trivia outside the Pearson Edexcel specification."
-        }
-      ]
-    },
-    "edexcel_medicine": {
-      "name": "Medicine in Britain, c1250-present (Paper 1)",
-      "banned_patterns": [
-        {
-          "pattern": "(?:Section B|Medieval|Renaissance|Industrial|Modern)[^\\n]{0,100}Describe one feature",
-          "isRegex": true,
-          "caseInsensitive": true,
-          "reason": "Edexcel specification violation: 'Describe one feature' [2 marks] appears ONLY in Section A (The British Sector of the Western Front), never in Section B thematic study."
-        }
-      ]
-    },
-    "eee": {
-      "name": "Early Elizabethan England, 1558-88 (Paper 2)",
-      "banned_patterns": []
-    }
+  "cme_new": {
+    "title": "Pearson Edexcel GCSE (9–1) History: Conflict in the Middle East, 1945–95",
+    "banned_peripheral_trivia": [
+      "23 agreement revisions",
+      "Wadi Araba",
+      "Protocol of Sèvres",
+      "Operation Focus",
+      "Operation Badr",
+      "Hosni Mubarak",
+      "cold peace",
+      "Erez checkpoint",
+      "Abu Nidal organization",
+      "Lavon Affair"
+    ],
+    "approved_vocabulary": [
+      "Balfour Declaration",
+      "Sykes-Picot Agreement",
+      "British Mandate",
+      "King David Hotel",
+      "UN Partition Plan (Resolution 181)",
+      "1948–49 Arab-Israeli War",
+      "Green Line armistice",
+      "Palestinian refugees",
+      "Law of Return (1950)",
+      "IDF (Israeli Defence Forces)",
+      "Gamal Abdel Nasser",
+      "Nationalisation of Suez Canal",
+      "1956 Suez Crisis",
+      "Sinai Peninsula",
+      "Straits of Tiran",
+      "Six Day War (June 1967)",
+      "Occupied Territories (West Bank, Gaza Strip, Golan Heights, Sinai, East Jerusalem)",
+      "UN Resolution 242",
+      "Land for Peace",
+      "PLO (Palestine Liberation Organisation)",
+      "Fatah",
+      "Yasser Arafat",
+      "PFLP airplane hijackings (1970)",
+      "Black September",
+      "Munich Olympics (1972)",
+      "War of Attrition",
+      "Yom Kippur War (October 1973)",
+      "OPEC Oil Crisis",
+      "Henry Kissinger",
+      "Shuttle Diplomacy",
+      "Anwar Sadat",
+      "Menachem Begin",
+      "Camp David Accords (1978)",
+      "Jimmy Carter",
+      "Treaty of Washington (1979)",
+      "1982 Lebanon War",
+      "Operation Peace for Galilee",
+      "Sabra and Shatila massacres",
+      "First Palestinian Intifada (1987–93)",
+      "Arafat renounces terrorism (1988)",
+      "1991 Gulf War",
+      "Madrid Peace Conference",
+      "Oslo Accords (1993)",
+      "Yitzhak Rabin",
+      "Palestinian National Authority (PNA)",
+      "Israel-Jordan Peace Treaty (1994)",
+      "King Hussein of Jordan",
+      "Oslo II (1995)",
+      "Areas A, B, and C"
+    ]
+  },
+  "usa": {
+    "title": "Pearson Edexcel GCSE (9–1) History: Option 33: Conflict at Home and Abroad: the USA, 1954–75",
+    "banned_peripheral_trivia": [
+      "Operation Cedar Falls",
+      "Operation Junction City",
+      "Operation Starlite",
+      "Project 100,000",
+      "Battle of Ia Drang",
+      "Battle of Khe Sanh",
+      "Tiger cages of Con Son",
+      "Medgar Evers rifle model",
+      "Zapruder film",
+      "COINTELPRO internal memos",
+      "SDS Port Huron Statement",
+      "Weatherman faction bombings"
+    ],
+    "approved_vocabulary": [
+      "Jim Crow laws",
+      "Segregation (de jure and de facto)",
+      "Plessy v. Ferguson (1896)",
+      "Separate but equal",
+      "14th Amendment",
+      "15th Amendment",
+      "NAACP",
+      "Thurgood Marshall",
+      "CORE",
+      "Brown v. Board of Education of Topeka (1954)",
+      "Chief Justice Earl Warren",
+      "Southern resistance and White Citizens' Councils",
+      "Ku Klux Klan (KKK)",
+      "Emmett Till (1955)",
+      "Rosa Parks",
+      "Montgomery Bus Boycott (1955–56)",
+      "MIA (Montgomery Improvement Association)",
+      "Martin Luther King Jr.",
+      "Browder v. Gayle (1956)",
+      "Little Rock Central High School (1957)",
+      "Little Rock Nine",
+      "Governor Orval Faubus",
+      "President Dwight Eisenhower",
+      "101st Airborne Division",
+      "1957 Civil Rights Act",
+      "Greensboro sit-ins (1960)",
+      "SNCC (Student Nonviolent Coordinating Committee)",
+      "Freedom Rides (1961)",
+      "James Meredith and 'Ole Miss' (1962)",
+      "Birmingham campaign (Project C, 1963)",
+      "Eugene 'Bull' Connor",
+      "Police dogs and fire hoses",
+      "March on Washington (August 1963)",
+      "'I Have a Dream' speech",
+      "Civil Rights Act of 1964",
+      "President Lyndon B. Johnson",
+      "Freedom Summer (1964)",
+      "Mississippi murders (Chaney, Goodman, Schwerner)",
+      "Selma to Montgomery marches (1965)",
+      "'Bloody Sunday'",
+      "Voting Rights Act of 1965",
+      "Nation of Islam",
+      "Malcolm X",
+      "'The Ballot or the Bullet'",
+      "Black Power",
+      "Stokely Carmichael",
+      "1968 Mexico City Olympics (Tommie Smith and John Carlos)",
+      "Black Panther Party (1966)",
+      "Huey Newton and Bobby Seale",
+      "Ten-Point Program",
+      "Watts Riots (1965)",
+      "Detroit Riots (1967)",
+      "Kerner Commission (1968)",
+      "Assassination of Martin Luther King Jr. (April 1968)",
+      "Civil Rights Act of 1968 (Fair Housing Act)",
+      "Domino Theory",
+      "French defeat at Dien Bien Phu (1954)",
+      "Geneva Accords (1954)",
+      "17th Parallel",
+      "Ho Chi Minh",
+      "Ngo Dinh Diem",
+      "Buddhist crisis and monk self-immolations",
+      "Strategic Hamlet Program (1962)",
+      "Vietcong (National Liberation Front)",
+      "Overthrow of Diem (1963)",
+      "Gulf of Tonkin incident (August 1964)",
+      "Gulf of Tonkin Resolution",
+      "Operation Rolling Thunder (1965–68)",
+      "First US combat troops at Da Nang (March 1965)",
+      "General William Westmoreland",
+      "Search and Destroy tactics (Zippo raids)",
+      "Chemical warfare: Agent Orange and Napalm",
+      "Guerrilla warfare tactics",
+      "Cu Chi tunnel network",
+      "Booby traps (punji stakes, bouncing bettys)",
+      "Ho Chi Minh Trail",
+      "Tet Offensive (January 1968)",
+      "Attack on US Embassy in Saigon",
+      "Walter Cronkite television broadcast",
+      "'Credibility Gap'",
+      "President Johnson decides not to run for re-election (March 1968)",
+      "My Lai Massacre (March 1968 / revealed November 1969)",
+      "Lieutenant William Calley",
+      "The draft system (conscription and lottery)",
+      "Anti-war movement and student protests (SDS)",
+      "Kent State shootings (May 1970)",
+      "President Richard Nixon",
+      "'Silent Majority' speech (November 1969)",
+      "Vietnamization",
+      "Nixon Doctrine",
+      "Invasion of Cambodia (1970)",
+      "Invasion of Laos (Operation Lam Son 719, 1971)",
+      "Repeal of the Gulf of Tonkin Resolution (1970)",
+      "Secret peace talks (Henry Kissinger and Le Duc Tho)",
+      "1972 Christmas Bombings (Operation Linebacker II)",
+      "Paris Peace Accords (January 1973)",
+      "US military withdrawal (March 1973)",
+      "Fall of Saigon (April 1975)"
+    ]
   }
 }
