@@ -1,5 +1,21 @@
 const fs = require('fs');
 const path = require('path');
+const QRCode = require('qrcode');
+
+function generateQrSvg(url) {
+  const qr = QRCode.create(url, { margin: 1 });
+  const size = qr.modules.size;
+  const data = qr.modules.data;
+  let pathD = '';
+  for (let r = 0; r < size; r++) {
+    for (let c = 0; c < size; c++) {
+      if (data[r * size + c]) {
+        pathD += `M${c},${r}h1v1h-1z `;
+      }
+    }
+  }
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" shape-rendering="crispEdges" style="width: 100%; height: 100%;"><path fill="#ffffff" d="M0,0h${size}v${size}H0z"/><path fill="#0f172a" d="${pathD.trim()}"/></svg>`;
+}
 
 function formatText(txt) {
   if (!txt) return '';
@@ -1280,11 +1296,11 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- The 4 Golden Rules of Extended Writing -->
-      <div style="border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 10px 14px; background: #f8fafc; margin-bottom: 12px;">
-        <strong style="font-family: 'Inter', sans-serif; font-size: 9.2pt; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 4px;">
+      <div style="border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 8px 14px; background: #f8fafc; margin-bottom: 10px;">
+        <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 3px;">
           The 4 Golden Rules of Historical Extended Writing:
         </strong>
-        <ol style="margin: 0; padding-left: 18px; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #334155; line-height: 1.4;">
+        <ol style="margin: 0; padding-left: 18px; font-family: 'Inter', sans-serif; font-size: 8pt; color: #334155; line-height: 1.35;">
           <li><strong>Direct Answer:</strong> Open every paragraph with a clear thematic point that directly addresses the enquiry question.</li>
           <li><strong>Specific Evidence:</strong> Ground every argument in precise historical facts, figures, names, and contemporary legislation.</li>
           <li><strong>Causal Connectives:</strong> Never just describe events; explain the mechanism of how and why one event caused or accelerated another.</li>
@@ -1292,9 +1308,34 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
         </ol>
       </div>
 
+      <!-- Digital Revision Hub Quick-Link (Vector QR Code) -->
+      <div style="border: 1.5px solid #1e3a8a; border-radius: 6px; padding: 7px 12px; background: #f0f9ff; margin-bottom: 10px; display: flex; align-items: center; gap: 14px;">
+        <div style="width: 78px; height: 78px; flex-shrink: 0; background: #ffffff; padding: 3px; border: 1.2px solid #bae6fd; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: flex; align-items: center; justify-content: center;">
+          ${generateQrSvg('https://meoncross-history.netlify.app/?view=interactive&unit=great_war_part2')}
+        </div>
+        <div style="flex: 1;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; color: #0369a1; text-transform: uppercase; letter-spacing: 0.5px;">
+              📱 Digital Revision Hub &bull; Scan with Phone Camera
+            </strong>
+            <span class="archival-badge" style="background: #e0f2fe; color: #0369a1; border-color: #bae6fd; font-size: 6.8pt; padding: 1px 6px;">Interactive</span>
+          </div>
+          <p style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #1e293b; margin: 0 0 3px 0; line-height: 1.35;">
+            Instant home access to the interactive revision flashcards, self-marking knowledge quizzes, and model answers for this unit:
+          </p>
+          <div style="display: flex; gap: 12px; font-family: 'Inter', sans-serif; font-size: 7.3pt; color: #475569;">
+            <span>&bull; <strong>Flashcard Vault:</strong> 30 Great War vocabulary terms</span>
+            <span>&bull; <strong>Quiz Bank:</strong> 140 self-marking recall questions</span>
+          </div>
+          <div style="font-family: monospace; font-size: 6.8pt; color: #0284c7; margin-top: 2px;">
+            https://meoncross-history.netlify.app/?view=interactive&amp;unit=great_war_part2
+          </div>
+        </div>
+      </div>
+
       <!-- Institutional Colophon -->
-      <div style="text-align: center; border-top: 1px solid #cbd5e1; padding-top: 8px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 700; color: #1e3a8a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px;">
+      <div style="text-align: center; border-top: 1px solid #cbd5e1; padding-top: 6px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 700; color: #1e3a8a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 1px;">
           Meoncross School &bull; Department of History
         </div>
         <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #64748b;">

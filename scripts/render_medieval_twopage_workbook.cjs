@@ -1,5 +1,21 @@
 const fs = require('fs');
 const path = require('path');
+const QRCode = require('qrcode');
+
+function generateQrSvg(url) {
+  const qr = QRCode.create(url, { margin: 1 });
+  const size = qr.modules.size;
+  const data = qr.modules.data;
+  let pathD = '';
+  for (let r = 0; r < size; r++) {
+    for (let c = 0; c < size; c++) {
+      if (data[r * size + c]) {
+        pathD += `M${c},${r}h1v1h-1z `;
+      }
+    }
+  }
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" shape-rendering="crispEdges" style="width: 100%; height: 100%;"><path fill="#ffffff" d="M0,0h${size}v${size}H0z"/><path fill="#0f172a" d="${pathD.trim()}"/></svg>`;
+}
 
 function formatText(txt) {
   if (!txt) return '';
@@ -1374,16 +1390,41 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Effort Scale Expectations -->
-      <div style="border: 1.2px solid #e2e8f0; border-radius: 5px; padding: 8px 10px; background: #ffffff;">
-        <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f172a; text-transform: uppercase; display: block; margin-bottom: 4px;">
+      <div style="border: 1.2px solid #e2e8f0; border-radius: 5px; padding: 7px 10px; background: #ffffff; margin-bottom: 10px;">
+        <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f172a; text-transform: uppercase; display: block; margin-bottom: 3px;">
           Effort Grade Descriptors (1–5 Scale):
         </strong>
-        <ul style="margin: 0; padding-left: 18px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #475569; line-height: 1.4;">
+        <ul style="margin: 0; padding-left: 18px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #475569; line-height: 1.35;">
           <li><strong>5 • Exemplary:</strong> Proactive scholarship, voluntary Scholar’s Edge extension, impeccable presentation.</li>
           <li><strong>4 • Good:</strong> Consistent focus, fully completed tasks, accurate deployment of historical vocabulary.</li>
           <li><strong>3 • Satisfactory:</strong> Baseline requirements met; core tasks completed with standard effort.</li>
           <li><strong>2 • Inconsistent / 1 • Concern:</strong> Unfinished work, lack of historical detail, intervention required.</li>
         </ul>
+      </div>
+
+      <!-- Digital Revision Hub Quick-Link (Vector QR Code) -->
+      <div style="border: 1.5px solid #1e3a8a; border-radius: 6px; padding: 7px 12px; background: #f0f9ff; display: flex; align-items: center; gap: 14px;">
+        <div style="width: 78px; height: 78px; flex-shrink: 0; background: #ffffff; padding: 3px; border: 1.2px solid #bae6fd; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: flex; align-items: center; justify-content: center;">
+          ${generateQrSvg('https://meoncross-history.netlify.app/?view=interactive&unit=medieval_england')}
+        </div>
+        <div style="flex: 1;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; color: #0369a1; text-transform: uppercase; letter-spacing: 0.5px;">
+              📱 Digital Revision Hub &bull; Scan with Phone Camera
+            </strong>
+            <span class="archival-badge" style="background: #e0f2fe; color: #0369a1; border-color: #bae6fd; font-size: 6.8pt; padding: 1px 6px;">Interactive</span>
+          </div>
+          <p style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #1e293b; margin: 0 0 3px 0; line-height: 1.35;">
+            Instant home access to the interactive revision flashcards, self-marking knowledge quizzes, and model answers for this unit:
+          </p>
+          <div style="display: flex; gap: 12px; font-family: 'Inter', sans-serif; font-size: 7.3pt; color: #475569;">
+            <span>&bull; <strong>Flashcard Vault:</strong> 39 key medieval concepts</span>
+            <span>&bull; <strong>Quiz Bank:</strong> 177 self-marking recall questions</span>
+          </div>
+          <div style="font-family: monospace; font-size: 6.8pt; color: #0284c7; margin-top: 2px;">
+            https://meoncross-history.netlify.app/?view=interactive&amp;unit=medieval_england
+          </div>
+        </div>
       </div>
     </div>
 
