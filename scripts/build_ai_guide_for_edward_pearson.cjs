@@ -481,7 +481,7 @@ async function buildDocx() {
             '3. Witnessed Enlistment Record:',
           ),
           bullet(
-            'Awarded the Distinguished Conduct Medal (DCM) for rescuing a wounded officer in No Man’s Land on the Somme in July 1916, alongside the Imperial Russian Order of St George (3rd Class).',
+            'Awarded the Distinguished Conduct Medal (DCM) for rescuing a wounded officer in No Man’s Land on the Somme in July 1916, alongside the Imperial Russian Medal of St George (Second Class, Gold).',
             '4. Somme Gallantry Decorations:',
           ),
           bullet(
@@ -1141,7 +1141,7 @@ async function buildHtmlAndPdf() {
     <li><strong>1. Birth &amp; Heavy Industry Origins:</strong> Ernest was born on 6 September 1885 at Rawmarsh, Rotherham. His father, Charles Crummack, was a skilled Shingler/Puddler at Parkgate Iron and Steel Plant, working with reverberatory furnaces in heavy metallurgy.</li>
     <li><strong>2. First Marriage &amp; Family Loss:</strong> Ernest married Maud Coxon in Rawmarsh on 20 August 1906. They had two children: Edward ("Ted", born 1908) and Hilda. Maud tragically died of tuberculosis in April 1914, leaving Ernest a widower prior to mobilization.</li>
     <li><strong>3. Witnessed Enlistment Record:</strong> Enlisted on 2 September 1914 at Rotherham Drill Hall as Private #2423 in the 1/5th Battalion, York &amp; Lancaster Regiment (148th Bde, 49th West Riding Div), an event witnessed in person by his 6-year-old son Ted.</li>
-    <li><strong>4. Somme Gallantry Decorations:</strong> Awarded the Distinguished Conduct Medal (DCM) for rescuing a wounded officer in No Man’s Land on the Somme in July 1916, alongside the Imperial Russian Order of St George (3rd Class).</li>
+    <li><strong>4. Somme Gallantry Decorations:</strong> Awarded the Distinguished Conduct Medal (DCM) for rescuing a wounded officer in No Man’s Land on the Somme in July 1916, alongside the Imperial Russian Medal of St George (Second Class, Gold).</li>
     <li><strong>5. The Clerical Typo Clue:</strong> War Office clerks misprinted his surname as "Crummock" with an ‘o’ in the London Gazette, causing search engines to miss his entry for decades.</li>
     <li><strong>6. The Goodall &amp; Sassoon Nexus:</strong> The rescued officer was 2nd Lt Marcus Goodall, son of the Canon of Rotherham and intimate friend of famed war poet Siegfried Sassoon. Canon Goodall visited Ernest after the war to express gratitude.</li>
     <li><strong>7. Wider Family War Effort:</strong> Elder brother Frank Crummack served in the 1/5th York &amp; Lancasters and was invalided out following the Boesinghe gas attack; sisters worked in munitions factories, notably Jessica Alma Crummack, Captain and Goalkeeper of a wartime women’s football team.</li>

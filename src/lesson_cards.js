@@ -737,7 +737,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
                   Held the Yser Canal at Boesinghe under the first German phosgene gas attacks (1915); awarded the DCM and Russian Medal of St George for crawling under heavy machine-gun fire at Thiepval Wood to rescue 2nd Lt Marcus Goodall (friend of poet Siegfried Sassoon); commissioned from the ranks and awarded the Military Cross breaching the Hindenburg Line at the Canal du Nord (1918).
                 </p>
                 <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed #fde68a; padding-top: 10px; font-size: 0.8rem;">
-                  <span style="color: #92400e; font-weight: 700;"><i class="fa-solid fa-award" style="color: #d97706; margin-right: 4px;"></i> MC, DCM, Russian Medal of St George</span>
+                  <span style="color: #92400e; font-weight: 700;"><i class="fa-solid fa-award" style="color: #d97706; margin-right: 4px;"></i> MC, DCM, Russian Medal of St George (2nd Class, Gold)</span>
                   <span style="color: #1e3a8a; font-weight: 700;"><i class="fa-solid fa-graduation-cap" style="color: #2563eb; margin-right: 4px;"></i> Year 10 Family Archive</span>
                 </div>
               </div>
@@ -765,7 +765,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
                   2nd Lieutenant Ernest Edward Crummack MC, DCM
                 </h3>
                 <p style="margin: 0; color: #451a03; font-size: 0.95rem; line-height: 1.5;">
-                  The Great War Odyssey of a Yorkshire Miner: From the Poison Gas of Boesinghe and Thiepval Wood to the Hindenburg Line.
+                  The Great War Odyssey of a South Yorkshire Ironworker: From the Poison Gas of Boesinghe and Thiepval Wood to the Hindenburg Line.
                 </p>
               </div>
               <button class="btn" data-action="view-lesson-detail" data-index="${crummackHero.index}" style="padding: 10px 22px; font-size: 0.92rem; font-weight: 700; background: #d97706; color: #ffffff; border: 1.5px solid #b45309; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(217, 119, 6, 0.3);">
@@ -791,7 +791,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
                   <i class="fa-solid fa-feather-pointed" style="color: #d97706; margin-right: 6px;"></i> The Siegfried Sassoon Connection
                 </h4>
                 <p style="margin: 0; color: #334155; font-size: 0.88rem; line-height: 1.5;">
-                  On 3 July 1916 at Thiepval Wood, Sergeant Crummack crawled into No Man's Land under heavy machine-gun fire to rescue wounded officer <strong>2nd Lt Marcus Goodall</strong>, earning the DCM and Russian Medal of St George. Grandfather John Pearson's research confirmed Goodall was the beloved close friend of Great War poet <strong>Siegfried Sassoon</strong>, who wrote an elegy for him.
+                  On 3 July 1916 at Thiepval Wood, Sergeant Crummack crawled into No Man's Land under heavy machine-gun fire to rescue wounded officer <strong>2nd Lt Marcus Goodall</strong>, earning the DCM and Russian Medal of St George (Second Class, Gold). Grandfather John Pearson's research confirmed Goodall was the beloved close friend of Great War poet <strong>Siegfried Sassoon</strong>, who wrote an elegy for him.
                 </p>
               </div>
             </div>
