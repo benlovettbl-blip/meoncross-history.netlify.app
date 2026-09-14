@@ -969,7 +969,7 @@ function generateConceptualTriadPage(lesson, unitId) {
         </div>
       </div>
       <div style="margin-top: 4px; font-size: 7.2pt; color: #334155;">
-        <strong>Teacher / Self Feedback:</strong> <span style="border-bottom: 1px solid #94a3b8; display: inline-block; width: 78%; height: 10px;"></span>
+        <strong>Teacher Feedback:</strong> <span style="border-bottom: 1px solid #94a3b8; display: inline-block; width: 78%; height: 10px;"></span>
       </div>
     </div>
   </div>
@@ -3751,7 +3751,7 @@ allDirs.forEach((unitId) => {
                 task.text.includes('16 marks') ||
                 task.marks === 12 ||
                 task.marks === 16;
-              if (isLong) {
+              if (isLong && unitId !== 'edexcel_medicine') {
                 html += `<div class="dirt-box">
                     <h4 style="margin: 0 0 10px 0; color: #64748b; text-transform: uppercase; font-size: 0.85em; font-family: 'Inter', sans-serif;">Teacher Feedback / D.I.R.T.</h4>
                     <div style="height: 60px;"></div>
@@ -4052,7 +4052,7 @@ allDirs.forEach((unitId) => {
             } else if (ep.marks) {
               // ... fallback handled by existing code
             }
-            if (isLong && unitId !== 'weimar_nazi_germany') {
+            if (isLong && unitId !== 'weimar_nazi_germany' && unitId !== 'edexcel_medicine') {
               questionHtml =
                 `<div class="dirt-box">
                     <h4 style="margin: 0 0 10px 0; color: #64748b; text-transform: uppercase; font-size: 0.85em; font-family: 'Inter', sans-serif;">Teacher Feedback / D.I.R.T.</h4>

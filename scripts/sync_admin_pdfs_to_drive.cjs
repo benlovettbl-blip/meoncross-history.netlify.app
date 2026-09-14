@@ -259,96 +259,36 @@ const PDF_MAPPINGS = [
     category: 'Year 9',
   },
 
-  // Year 10 (GCSE) - Medicine Through Time
+  // Year 11 (GCSE) - Medicine Through Time (Workbooks Only)
   {
-    folder: path.join('Year 10 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'edexcel_medicine_visual_revision_and_exam_guide.pdf',
-    dest: 'Edexcel GCSE Medicine Visual Revision and Exam Guide.pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'med_mastery_pack_FULL.pdf',
-    dest: 'Medicine Through Time Complete Specification Mastery Pack.pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'med_mastery_section_a_western_front.pdf',
-    dest: 'Medicine Mastery (Section A - British Sector of Western Front).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'med_mastery_section_b_thematic_study.pdf',
-    dest: 'Medicine Mastery (Section B - Thematic Study).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 1 - Medicine Through Time'),
+    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
     src: 'edexcel_medicine_pupil_workbook_medieval_FINAL_V17.pdf',
     dest: 'Medicine Pupil Workbook (1. Medieval).pdf',
-    category: 'Year 10 GCSE',
+    category: 'Year 11 GCSE',
   },
   {
-    folder: path.join('Year 10 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'edexcel_medicine_textbook_medieval_FINAL_V17.pdf',
-    dest: 'Medicine Master Textbook (1. Medieval).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 1 - Medicine Through Time'),
+    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
     src: 'edexcel_medicine_pupil_workbook_renaissance_FINAL_V17.pdf',
     dest: 'Medicine Pupil Workbook (2. Renaissance).pdf',
-    category: 'Year 10 GCSE',
+    category: 'Year 11 GCSE',
   },
   {
-    folder: path.join('Year 10 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'edexcel_medicine_textbook_renaissance_FINAL_V17.pdf',
-    dest: 'Medicine Master Textbook (2. Renaissance).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 1 - Medicine Through Time'),
+    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
     src: 'edexcel_medicine_pupil_workbook_18th_19th_FINAL_V17.pdf',
     dest: 'Medicine Pupil Workbook (3. 18th & 19th Century).pdf',
-    category: 'Year 10 GCSE',
+    category: 'Year 11 GCSE',
   },
   {
-    folder: path.join('Year 10 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'edexcel_medicine_textbook_18th_19th_FINAL_V17.pdf',
-    dest: 'Medicine Master Textbook (3. 18th & 19th Century).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 1 - Medicine Through Time'),
+    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
     src: 'edexcel_medicine_pupil_workbook_modern_FINAL_V17.pdf',
     dest: 'Medicine Pupil Workbook (4. Modern).pdf',
-    category: 'Year 10 GCSE',
+    category: 'Year 11 GCSE',
   },
   {
-    folder: path.join('Year 10 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'edexcel_medicine_textbook_modern_FINAL_V17.pdf',
-    dest: 'Medicine Master Textbook (4. Modern).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 1 - Medicine Through Time'),
+    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
     src: 'edexcel_medicine_pupil_workbook_western_front_FINAL_V17.pdf',
     dest: 'Medicine Pupil Workbook (5. Western Front).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'edexcel_medicine_textbook_western_front_FINAL_V17.pdf',
-    dest: 'Medicine Master Textbook (5. Western Front).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'edexcel_medicine_cover_lesson_double_period.pdf',
-    dest: 'Medicine Cover Lesson (Double Period).pdf',
-    category: 'Year 10 GCSE',
+    category: 'Year 11 GCSE',
   },
 
   // Year 10 (GCSE) - Early Elizabethan England
