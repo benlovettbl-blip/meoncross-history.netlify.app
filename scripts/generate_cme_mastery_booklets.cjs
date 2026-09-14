@@ -147,6 +147,91 @@ const KT_DATA = {
         },
       ],
     },
+    tracker: {
+      sectionA: [
+        {
+          q: '1 (a)',
+          type: 'Consequence',
+          topic: 'Irgun Bombing of King David Hotel (1946)',
+          page: 'P2',
+          marks: 4,
+        },
+        {
+          q: '1 (b)',
+          type: 'Consequence',
+          topic: 'Israeli Military Attacks on Gaza (1955)',
+          page: 'P2',
+          marks: 4,
+        },
+        {
+          q: '2',
+          type: 'Narrative',
+          topic: 'Outbreak & Key Events of the 1948–49 War',
+          page: 'P3–4',
+          marks: 8,
+        },
+        {
+          q: '3 (a)',
+          type: 'Importance',
+          topic: 'UN Partition Plan (Resolution 181) for Statehood',
+          page: 'P5',
+          marks: 8,
+        },
+        {
+          q: '3 (b)',
+          type: 'Importance',
+          topic: 'Creation of Israeli Defence Forces (IDF) after 1949',
+          page: 'P6',
+          marks: 8,
+        },
+      ],
+      sectionB: [
+        {
+          q: '4 (a)',
+          type: 'Consequence',
+          topic: 'Territorial Changes of the 1948–49 Armistices',
+          page: 'P7',
+          marks: 4,
+        },
+        {
+          q: '4 (b)',
+          type: 'Consequence',
+          topic: 'Formation of the United Arab Republic (1958)',
+          page: 'P7',
+          marks: 4,
+        },
+        {
+          q: '5',
+          type: 'Importance',
+          topic: 'Palestinian Refugee Problem (1948–56) & Relations',
+          page: 'P8',
+          marks: 8,
+        },
+        {
+          q: '6',
+          type: 'Importance',
+          topic: 'US Financial & Diplomatic Aid to Israel (1949–63)',
+          page: 'P9',
+          marks: 8,
+        },
+        {
+          q: '7',
+          type: 'Narrative',
+          topic: 'Escalation to Outbreak of the Suez Crisis (1956)',
+          page: 'P10',
+          marks: 8,
+        },
+      ],
+      sectionC: [
+        {
+          q: 'Ref',
+          type: 'Exemplars',
+          topic: 'Grade 8/9 Level 3 Models (Q1, Q2, Q3) & Top 3 Pitfalls',
+          page: 'P11–12',
+          marks: 'Audit',
+        },
+      ],
+    },
   },
 
   KT2: {
@@ -278,6 +363,91 @@ const KT_DATA = {
         {
           title: 'Israeli Intelligence and "The Conception"',
           desc: 'The catastrophic surprise of the 1973 Yom Kippur War was rooted in "The Conception" (Aman hubris) — the false Israeli assumption that Egypt would never attack without long-range strike aircraft capable of neutralizing Israeli airfields.',
+        },
+      ],
+    },
+    tracker: {
+      sectionA: [
+        {
+          q: '1 (a)',
+          type: 'Consequence',
+          topic: 'Syrian-Israeli Border & Air Clash (7 April 1967)',
+          page: 'P2',
+          marks: 4,
+        },
+        {
+          q: '1 (b)',
+          type: 'Consequence',
+          topic: 'Expulsion of the PLO from Jordan / Black September (1970)',
+          page: 'P2',
+          marks: 4,
+        },
+        {
+          q: '2',
+          type: 'Narrative',
+          topic: 'Key Military Operations of the Six Day War (1967)',
+          page: 'P3–4',
+          marks: 8,
+        },
+        {
+          q: '3 (a)',
+          type: 'Importance',
+          topic: 'UN Resolution 242 ("Land for Peace" Formula)',
+          page: 'P5',
+          marks: 8,
+        },
+        {
+          q: '3 (b)',
+          type: 'Importance',
+          topic: 'Cairo Conference (1964) for Fatah & Rise of PLO',
+          page: 'P6',
+          marks: 8,
+        },
+      ],
+      sectionB: [
+        {
+          q: '4 (a)',
+          type: 'Consequence',
+          topic: 'Israeli Raid on the Jordanian Village of Samu (1966)',
+          page: 'P7',
+          marks: 4,
+        },
+        {
+          q: '4 (b)',
+          type: 'Consequence',
+          topic: 'Munich Olympics Terrorist Attack by Black September (1972)',
+          page: 'P7',
+          marks: 4,
+        },
+        {
+          q: '5',
+          type: 'Importance',
+          topic: 'Occupied Territories (Golan, West Bank, Sinai) for Security',
+          page: 'P8',
+          marks: 8,
+        },
+        {
+          q: '6',
+          type: 'Importance',
+          topic: 'Egyptian Military Relations with the USSR (1967–73)',
+          page: 'P9',
+          marks: 8,
+        },
+        {
+          q: '7',
+          type: 'Narrative',
+          topic: 'Key Military Events of the Yom Kippur War (1973)',
+          page: 'P10',
+          marks: 8,
+        },
+      ],
+      sectionC: [
+        {
+          q: 'Ref',
+          type: 'Exemplars',
+          topic: 'Grade 8/9 Level 3 Models (Q1, Q2, Q3) & Top 3 Pitfalls',
+          page: 'P11–12',
+          marks: 'Audit',
         },
       ],
     },
@@ -418,6 +588,91 @@ const KT_DATA = {
         {
           title: 'Importance Questions: Answer the Prompt Outcome',
           desc: 'In Edexcel Importance questions, you MUST explain why an event was important FOR THE SPECIFIC PROMPT (e.g. importance of Arafat’s UN speech FOR PLO status), rather than writing general biography about Yasser Arafat.',
+        },
+      ],
+    },
+    tracker: {
+      sectionA: [
+        {
+          q: '1 (a)',
+          type: 'Consequence',
+          topic: 'Treaty of Washington (1979) on Egyptian-Arab Relations',
+          page: 'P2',
+          marks: 4,
+        },
+        {
+          q: '1 (b)',
+          type: 'Consequence',
+          topic: 'Israeli Invasion of Lebanon & PLO Expulsion (1982)',
+          page: 'P2',
+          marks: 4,
+        },
+        {
+          q: '2',
+          type: 'Narrative',
+          topic: 'Negotiations: Sadat’s Knesset Visit to Treaty of Washington',
+          page: 'P3–4',
+          marks: 8,
+        },
+        {
+          q: '3 (a)',
+          type: 'Importance',
+          topic: 'Oslo Accords (1993) & Setting up Palestinian Authority',
+          page: 'P5',
+          marks: 8,
+        },
+        {
+          q: '3 (b)',
+          type: 'Importance',
+          topic: 'Outbreak of the First Intifada (December 1987)',
+          page: 'P6',
+          marks: 8,
+        },
+      ],
+      sectionB: [
+        {
+          q: '4 (a)',
+          type: 'Consequence',
+          topic: 'The 1973 Oil Crisis on Western Policy & Support',
+          page: 'P7',
+          marks: 4,
+        },
+        {
+          q: '4 (b)',
+          type: 'Consequence',
+          topic: 'Assassination of Egyptian President Anwar Sadat (1981)',
+          page: 'P7',
+          marks: 4,
+        },
+        {
+          q: '5',
+          type: 'Importance',
+          topic: 'Camp David Accords (1978) for US Middle East Diplomacy',
+          page: 'P8',
+          marks: 8,
+        },
+        {
+          q: '6',
+          type: 'Importance',
+          topic: 'Arafat’s 1988 UN Speech & Renunciation of Terrorism',
+          page: 'P9',
+          marks: 8,
+        },
+        {
+          q: '7',
+          type: 'Narrative',
+          topic: 'Course of First Intifada to Madrid & Oslo (1987–93)',
+          page: 'P10',
+          marks: 8,
+        },
+      ],
+      sectionC: [
+        {
+          q: 'Ref',
+          type: 'Exemplars',
+          topic: 'Grade 8/9 Level 3 Models (Q1, Q2, Q3) & Top 3 Pitfalls',
+          page: 'P11–12',
+          marks: 'Audit',
         },
       ],
     },
@@ -595,35 +850,96 @@ const COMMON_CSS = `
     font-weight: 800;
     color: #0f172a;
   }
-  .instructions-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    font-size: 8.2pt;
+  .exam-notice-strip {
+    border: 1.5px solid #64748b;
+    border-radius: 5px;
+    background: #f8fafc;
+    padding: 6px 10px;
+    font-size: 8pt;
     line-height: 1.35;
     margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
   }
-  .inst-card {
-    border: 1px solid #cbd5e1;
-    border-radius: 5px;
-    padding: 7px 10px;
+  .exam-notice-strip > div {
+    flex: 1;
+  }
+  .exam-notice-strip strong {
+    color: #0f172a;
+  }
+
+  /* Spec-Mapped Question & Mark Tracker */
+  .tracker-container {
+    margin-bottom: 6px;
+  }
+  .tracker-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 7.5pt;
+  }
+  .tracker-table th, .tracker-table td {
+    border: 1px solid #94a3b8;
+    padding: 3.5px 6px;
+    vertical-align: middle;
+  }
+  .tracker-table th {
+    background: #0f172a;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 7.2pt;
+    letter-spacing: 0.3px;
+  }
+  .tracker-section-hdr td {
+    background: #e2e8f0;
+    font-weight: 800;
+    color: #0f172a;
+    font-size: 7.2pt;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    padding: 3px 6px;
+  }
+  .tracker-row td {
+    background: #fff;
+  }
+  .tracker-row:nth-child(even) td {
     background: #f8fafc;
   }
-  .inst-card h4 {
-    margin: 0 0 4px 0;
-    font-size: 8.5pt;
-    font-weight: 800;
-    text-transform: uppercase;
+  .tracker-box {
+    width: 11px;
+    height: 11px;
+    border: 1.5px solid #475569;
+    border-radius: 2px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 3px;
+    background: #fff;
+  }
+  .score-cell {
+    font-weight: 700;
     color: #0f172a;
-    border-bottom: 1px solid #cbd5e1;
-    padding-bottom: 2px;
+    text-align: center;
+    white-space: nowrap;
+    width: 58px;
   }
-  .inst-card ul {
-    margin: 0;
-    padding-left: 16px;
+  .marks-cell {
+    font-weight: 600;
+    color: #334155;
+    text-align: center;
+    width: 44px;
   }
-  .inst-card li {
-    margin-bottom: 3px;
+  .page-cell {
+    font-weight: 700;
+    color: #1e3a8a;
+    text-align: center;
+    width: 42px;
+  }
+  .type-tag {
+    font-size: 7pt;
+    font-weight: 700;
+    color: #334155;
+    text-transform: uppercase;
   }
   .cover-footer {
     display: flex;
@@ -926,27 +1242,84 @@ function renderBookletHtml(ktKey, meta) {
                 </div>
             </div>
 
-            <!-- Instructions & Information Split -->
-            <div class="instructions-container">
-                <div class="inst-card">
-                    <h4>Instructions</h4>
-                    <ul>
-                        <li>Use <strong>black ink</strong> or ball-point pen.</li>
-                        <li>Fill in your name, centre, and candidate numbers above.</li>
-                        <li><strong>Section A (Pages 2–6):</strong> Answer ALL questions for a complete 32-mark timed mock exam.</li>
-                        <li><strong>Section B (Pages 7–10):</strong> Complete for exhaustive specification coverage and homework practice.</li>
-                        <li><strong>Section C (Pages 11–12):</strong> Use for self and peer marking against official Level 3 model answers.</li>
-                    </ul>
-                </div>
-                <div class="inst-card">
-                    <h4>Information &amp; Timing Advice</h4>
-                    <ul>
-                        <li>The total mark for Section A is <strong>32</strong>.</li>
-                        <li><strong>4-mark Consequence:</strong> Spend ~6 mins. 1 tight paragraph with 2–3 precise facts linking to impact.</li>
-                        <li><strong>8-mark Importance:</strong> Spend ~12 mins. 2 developed paragraphs evaluating impact on the named outcome.</li>
-                        <li><strong>8-mark Narrative:</strong> Spend ~12 mins. 3-stage causal storyboard linking catalyst to outcome.</li>
-                    </ul>
-                </div>
+            <!-- Exam Instructions & Timing Guidance Bar -->
+            <div class="exam-notice-strip">
+                <div><strong>Instructions:</strong> Use black ink. Complete Section A as a timed 32-mark mock (~50 mins). Complete Section B for full syllabus mastery. Mark using Section C models.</div>
+                <div><strong>Timing Advice:</strong> 4-mark Consequence (~6 mins) · 8-mark Importance (~12 mins) · 8-mark Narrative (~12 mins).</div>
+            </div>
+
+            <!-- Spec-Mapped Question & Mark Tracker -->
+            <div class="tracker-container">
+                <table class="tracker-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 10%;">Question</th>
+                            <th style="width: 15%;">Format</th>
+                            <th style="width: 47%;">Specification Focus &amp; Historical Content</th>
+                            <th style="width: 8%; text-align: center;">Page</th>
+                            <th style="width: 8%; text-align: center;">Marks</th>
+                            <th style="width: 12%; text-align: center;">Done / Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- SECTION A -->
+                        <tr class="tracker-section-hdr">
+                            <td colspan="6">SECTION A: 32-MARK TIMED MOCK EXAM (Spend approx. 50 minutes)</td>
+                        </tr>
+                        ${meta.tracker.sectionA
+                          .map(
+                            (item) => `
+                        <tr class="tracker-row">
+                            <td><strong>Q${item.q}</strong></td>
+                            <td><span class="type-tag">${item.type}</span></td>
+                            <td>${item.topic}</td>
+                            <td class="page-cell">${item.page}</td>
+                            <td class="marks-cell">[${item.marks}]</td>
+                            <td class="score-cell"><span class="tracker-box"></span> / ${item.marks}</td>
+                        </tr>
+                        `,
+                          )
+                          .join('')}
+
+                        <!-- SECTION B -->
+                        <tr class="tracker-section-hdr">
+                            <td colspan="6">SECTION B: EXHAUSTIVE SPECIFICATION DEPTH BANK (Homework &amp; Mastery)</td>
+                        </tr>
+                        ${meta.tracker.sectionB
+                          .map(
+                            (item) => `
+                        <tr class="tracker-row">
+                            <td><strong>Q${item.q}</strong></td>
+                            <td><span class="type-tag">${item.type}</span></td>
+                            <td>${item.topic}</td>
+                            <td class="page-cell">${item.page}</td>
+                            <td class="marks-cell">[${item.marks}]</td>
+                            <td class="score-cell"><span class="tracker-box"></span> / ${item.marks}</td>
+                        </tr>
+                        `,
+                          )
+                          .join('')}
+
+                        <!-- SECTION C -->
+                        <tr class="tracker-section-hdr">
+                            <td colspan="6">SECTION C: EXAMINER STANDARDS &amp; MODEL ANSWERS (Self &amp; Peer Assessment)</td>
+                        </tr>
+                        ${meta.tracker.sectionC
+                          .map(
+                            (item) => `
+                        <tr class="tracker-row">
+                            <td><strong>${item.q}</strong></td>
+                            <td><span class="type-tag">${item.type}</span></td>
+                            <td>${item.topic}</td>
+                            <td class="page-cell">${item.page}</td>
+                            <td class="marks-cell">Audit</td>
+                            <td class="score-cell"><span class="tracker-box"></span> Read</td>
+                        </tr>
+                        `,
+                          )
+                          .join('')}
+                    </tbody>
+                </table>
             </div>
         </div>
 
