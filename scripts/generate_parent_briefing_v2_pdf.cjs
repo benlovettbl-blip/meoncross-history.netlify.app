@@ -434,7 +434,7 @@ function getHtmlContent() {
       <div class="header-bar">
         <div>
           <div class="school-title">Meoncross School History Department</div>
-          <div class="school-sub">Parental Information Briefing · Version 2</div>
+          <div class="school-sub">Parental Information Pack · Briefing &amp; Logistics</div>
         </div>
         <div class="partner-pill">
           <div class="brand">The History Boys</div>
@@ -544,7 +544,7 @@ function getHtmlContent() {
       <div class="header-bar">
         <div>
           <div class="school-title">Meoncross School History Department · Ypres 2026</div>
-          <div class="school-sub">Essential Logistics, Kit List, Rooming &amp; Parental Checklist (Version 2)</div>
+          <div class="school-sub">Essential Logistics, Kit List, Rooming &amp; Parental Checklist</div>
         </div>
         <div class="partner-pill">
           <div class="brand">Key Logistics</div>
@@ -571,23 +571,23 @@ function getHtmlContent() {
         <!-- Col 2: Luggage, Food, Euros & Tech -->
         <div class="info-card">
           <div class="info-card-header">
-            <span class="title">Food, Luggage, Euros &amp; Devices</span>
+            <span class="title">Food, Dietary, Euros &amp; Devices</span>
           </div>
           <ul class="checklist">
-            <li><strong>Day 1 Packed Lunch:</strong> Bring a packed lunch and snacks from home for the coach journey (no fast food at motorway services). Refillable water bottle.</li>
-            <li><strong>Spending Money (€30–€40 Euros):</strong> In cash for supervised Friday &amp; Saturday supermarket lunches (fresh rolls/fruit) and Belgian chocolates.</li>
-            <li><strong>Luggage:</strong> 1 main holdall (<15kg) for coach luggage hold + 1 small daypack inside coach. Casual clothes for hostel. Roll-on deodorant only (<strong>NO aerosols</strong>).</li>
-            <li><strong>Plug Adapter:</strong> European 2-pin adapter for charging devices in bedrooms.</li>
-            <li><strong>Mobile Phone Policy:</strong> Allowed by day for photos and web app. <strong>Collected each night in staff phone bag at curfew</strong> for proper rest.</li>
+            <li><strong>Strict No Nuts / No Sesame Policy:</strong> Zero-tolerance across tour. Strictly <strong>NO nuts</strong> (peanuts, tree nuts, Nutella, cereal bars) or <strong>sesame</strong> (seeds, buns, hummus, tahini).</li>
+            <li><strong>Day 1 Travel Food:</strong> Packed breakfast, lunch &amp; snacks from home in daypack (strictly nut- and sesame-free; no motorway fast food). Refillable water bottle.</li>
+            <li><strong>Spending Money (€30–€40 Euros):</strong> Cash for supervised Friday &amp; Saturday bakery/supermarket lunches in Ypres &amp; Poperinge and chocolates, plus €5–€10 for hostel soft drinks.</li>
+            <li><strong>Luggage:</strong> 1 main holdall (<15kg) for coach hold + 1 small daypack inside coach. Casual clothes for hostel. Roll-on deodorant only (<strong>NO aerosols</strong>).</li>
+            <li><strong>Plug Adapter &amp; Phone Curfew:</strong> European 2-pin adapter. Phones allowed by day; <strong>collected each night in staff lockbag at curfew</strong> for proper rest.</li>
           </ul>
         </div>
       </div>
 
       <!-- Accommodation Notice -->
       <div class="notice-box" style="margin-bottom: 5px; padding: 4px 8px; border-left: 4px solid #1e3a8a; background: #f8fafc; border-radius: 5px;">
-        <h4 style="font-size: 10pt; font-weight: 800; color: #1e3a8a; margin: 0 0 2px 0; text-transform: uppercase; letter-spacing: 0.02em;">Accommodation &amp; Supervision Timeline</h4>
-        <p style="font-size: 8.8pt; line-height: 1.25; margin: 0; color: #334155;">
-          <strong>Expedition Base:</strong> Peace Village Hostel, Mesen, Belgium (+32 57 226 040 · <a href="https://peacevillage.be/en/practical/faq" target="_blank" style="color: #1e3a8a; font-weight: 700; text-decoration: underline;">peacevillage.be</a>). Secure rural centre with keycard access, ensuite studios (4–7 bunks), and staff on same corridors with active evening checks. <strong>Rooming &amp; Diets:</strong> Friend pairings &amp; meal options gathered in ~2 weeks in school.
+        <h4 style="font-size: 9.6pt; font-weight: 800; color: #1e3a8a; margin: 0 0 2px 0; text-transform: uppercase; letter-spacing: 0.02em;">Accommodation &amp; Rooming Allocations</h4>
+        <p style="font-size: 8.6pt; line-height: 1.25; margin: 0; color: #334155;">
+          <strong>Expedition Base:</strong> Peace Village Hostel, Mesen, Belgium (+32 57 226 040 · <a href="https://peacevillage.be/en/practical/faq" target="_blank" style="color: #1e3a8a; font-weight: 700; text-decoration: underline;">peacevillage.be</a>). Secure rural educational centre with keycard access, ensuite studios (4–7 bunks), and staff on same corridors with active evening checks. <strong>Rooming Allocations:</strong> Rooming allocations are currently being completed in school. If your child has any questions or concerns, please reassure them that they can come and speak to Mr Lovett directly.
         </p>
       </div>
 
@@ -595,23 +595,23 @@ function getHtmlContent() {
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 5px;">
         <!-- Medical Protocol -->
         <div style="background: #fef2f2; border: 1.2px solid #fecaca; border-left: 4px solid #dc2626; border-radius: 5px; padding: 5px 8px;">
-          <h4 style="font-size: 9.8pt; font-weight: 800; color: #991b1b; margin: 0 0 2px 0; text-transform: uppercase; letter-spacing: 0.02em;">💊 Medical &amp; Prescription Protocol</h4>
-          <p style="margin: 0 0 2px 0; font-size: 8.7pt; color: #7f1d1d; line-height: 1.22;">
-            <strong>Medication Forms:</strong> Provided tonight at the briefing for completion and signature.
+          <h4 style="font-size: 9.6pt; font-weight: 800; color: #991b1b; margin: 0 0 2px 0; text-transform: uppercase; letter-spacing: 0.02em;">💊 Medical &amp; Prescription Protocol</h4>
+          <p style="margin: 0 0 2px 0; font-size: 8.5pt; color: #7f1d1d; line-height: 1.22;">
+            <strong>Departure Handover:</strong> Prescriptions &amp; travel sickness meds handed to staff at registration on Thursday 1st Oct (06:15).
           </p>
-          <p style="margin: 0; font-size: 8.7pt; color: #7f1d1d; line-height: 1.22;">
-            <strong>Strict Packaging Rule:</strong> All meds <strong>MUST be in original packaging</strong>. Prescriptions must clearly display the <strong>child’s name, dosage &amp; instructions</strong>.
+          <p style="margin: 0; font-size: 8.5pt; color: #7f1d1d; line-height: 1.22;">
+            <strong>Strict Packaging Rule:</strong> All meds <strong>MUST be in original pharmacy packaging</strong>, clearly displaying <strong>child’s name, dosage &amp; instructions</strong>.
           </p>
         </div>
 
         <!-- WhatsApp Broadcast -->
         <div style="background: #f0fdf4; border: 1.2px solid #bbf7d0; border-left: 4px solid #16a34a; border-radius: 5px; padding: 5px 8px;">
-          <h4 style="font-size: 9.8pt; font-weight: 800; color: #166534; margin: 0 0 2px 0; text-transform: uppercase; letter-spacing: 0.02em;">📱 Trip WhatsApp Updates Group</h4>
-          <p style="margin: 0 0 2px 0; font-size: 8.7pt; color: #14532d; line-height: 1.22;">
-            <strong>Updates &amp; Photos:</strong> Join via link/QR code tonight. Staff will post journey progress and photos (closed group; emoji reactions welcome; not for general chat).
+          <h4 style="font-size: 9.6pt; font-weight: 800; color: #166534; margin: 0 0 2px 0; text-transform: uppercase; letter-spacing: 0.02em;">📱 Trip WhatsApp Broadcast Group</h4>
+          <p style="margin: 0 0 2px 0; font-size: 8.5pt; color: #14532d; line-height: 1.22;">
+            <strong>Travel Updates &amp; ETAs:</strong> A dedicated broadcast group will be set up prior to the trip for live journey updates, visit photos, and Channel crossing ETAs.
           </p>
-          <p style="margin: 0; font-size: 8.7pt; color: #14532d; line-height: 1.22;">
-            <strong>Photo Consent:</strong> We will check individually with parents of any child with photo restrictions to confirm comfort with closed-group sharing.
+          <p style="margin: 0; font-size: 8.5pt; color: #14532d; line-height: 1.22;">
+            <strong>Photo Permissions:</strong> Staff will verify individually with parents regarding any photo restrictions prior to departure.
           </p>
         </div>
       </div>
@@ -628,34 +628,34 @@ function getHtmlContent() {
         </thead>
         <tbody>
           <tr>
-            <td><strong>Medication Forms &amp; Packaging</strong></td>
-            <td>Complete forms tonight. All meds in original packaging; prescriptions clearly named.</td>
-            <td><span class="badge-urgent">Tonight / Departure</span></td>
-          </tr>
-          <tr>
             <td><strong>Passport &amp; GHIC Collection</strong></td>
-            <td>Hand in valid UK passport (>3m validity) &amp; GHIC card to Mr Lovett.</td>
-            <td><span class="badge-urgent">Tonight / This Week</span></td>
-          </tr>
-          <tr>
-            <td><strong>Trip WhatsApp Broadcast Group</strong></td>
-            <td>Join via QR/link tonight for live journey updates &amp; visit photos.</td>
-            <td><span class="badge-urgent">Join Tonight</span></td>
+            <td>Hand valid UK passport (≥3m validity) &amp; GHIC card into the school office.</td>
+            <td><span class="badge-urgent">Due Fri 18 Sep</span></td>
           </tr>
           <tr>
             <td><strong>Code of Conduct Form</strong></td>
-            <td>Signed agreement by pupil &amp; parent (Nut &amp; Sesame Safety Policy).</td>
-            <td><span class="badge-urgent">Return by Fri 25 Sep</span></td>
+            <td>Signed agreement by pupil &amp; parent (noting Nut &amp; Sesame Policy) to school office.</td>
+            <td><span class="badge-urgent">Due Fri 18 Sep</span></td>
           </tr>
           <tr>
-            <td><strong>Rooming &amp; Dietary Choices</strong></td>
-            <td>Pupils nominate friend pairs; parents confirm dietary meal choices.</td>
-            <td><span class="badge-info">In Approx. 2 Weeks</span></td>
+            <td><strong>Rooming Allocations</strong></td>
+            <td>Allocations currently being finalised; pupils can see Mr Lovett with any queries.</td>
+            <td><span class="badge-info">In Progress</span></td>
           </tr>
           <tr>
-            <td><strong>Euros Currency (€)</strong></td>
-            <td>Provide €30–€40 cash for Fri &amp; Sat supermarket lunches &amp; chocolates.</td>
+            <td><strong>Medications &amp; Pharmacy Labels</strong></td>
+            <td>Hand to staff at 06:15 registration in original packaging with child's name &amp; dosage.</td>
+            <td><span class="badge-urgent">Thu 1 Oct (06:15)</span></td>
+          </tr>
+          <tr>
+            <td><strong>Euros Spending Money (€)</strong></td>
+            <td>Provide €30–€40 cash for Fri &amp; Sat supermarket lunches + €5–€10 hostel soft drinks.</td>
             <td><span class="badge-info">For Departure Day</span></td>
+          </tr>
+          <tr>
+            <td><strong>Trip WhatsApp Broadcast Group</strong></td>
+            <td>Broadcast group will be set up prior to departure for live travel updates &amp; ETAs.</td>
+            <td><span class="badge-info">Prior to Departure</span></td>
           </tr>
         </tbody>
       </table>
