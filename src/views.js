@@ -1386,9 +1386,7 @@ export async function renderLessonsView() {
           ${data.cover_caption ? `<p style="margin-top: 20px; margin-bottom: 0; font-style: italic; color: #94a3b8; font-size: 0.95rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">${data.cover_caption}</p>` : ''}
         </div>
       </div>
-      <div style="padding: 20px 30px 0 30px; background: white;">
-        ${renderCoverSourcesHTML(data, true)}
-      </div>
+      ${renderCoverSourcesHTML(data, true) ? `<div style="padding: 20px 30px 0 30px; background: white;">${renderCoverSourcesHTML(data, true)}</div>` : ''}
     `;
   } else {
     headerHtml = `
@@ -1412,6 +1410,8 @@ export async function renderLessonsView() {
       ${headerHtml}
       
       <div style="padding: 30px; border-top: 1px solid #e2e8f0;">
+        ${renderUnitSynopsis(data, unitId)}
+        
         ${
           isTrip
             ? ''
@@ -1435,8 +1435,6 @@ export async function renderLessonsView() {
           </div>
         `
         }
-        
-        ${renderUnitSynopsis(data, unitId)}
         
         ${renderKeyTopicLessonsHTML(data, unitId, data)}
       </div>

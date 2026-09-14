@@ -2,6 +2,7 @@ import { appStore } from './store.js';
 import { renderLesson } from './lesson_renderer.js';
 import { renderKeyTopicLessonsHTML } from '../lesson_cards.js';
 import { renderCoverSourcesHTML } from '../cover_sources.js';
+import { renderUnitSynopsis } from '../unit_synopses.js';
 import { getAssetUrl } from './assets.js';
 import { renderExamPracticeZone } from '../exam_practice_zone.js';
 import { renderQuizZone } from '../quiz_zone.js';
@@ -106,9 +107,7 @@ export function renderHomepage() {
             </h2>
             ${appStore.state.activeUnitData.cover_caption ? `<p class="hero-caption">${appStore.state.activeUnitData.cover_caption}</p>` : ''}
           </div>
-          <div style="padding: 20px 30px 0 30px; background: white;">
-            ${renderCoverSourcesHTML(appStore.state.activeUnitData, true)}
-          </div>
+          ${renderCoverSourcesHTML(appStore.state.activeUnitData, true) ? `<div style="padding: 20px 30px 0 30px; background: white;">${renderCoverSourcesHTML(appStore.state.activeUnitData, true)}</div>` : ''}
         `;
     } else {
       topSectionHTML = `
@@ -169,6 +168,7 @@ export function renderHomepage() {
   contentArea.innerHTML = `
       <div>
         ${topSectionHTML}
+        ${renderUnitSynopsis(appStore.state.activeUnitData, window.currentUnitId)}
         ${medicineVisualGuideBannerHTML}
         ${isTripUnit ? '' : `<h2 style="margin-top: 40px; text-align: left; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Key Topic Lessons</h2>`}
         ${lessonsHTML}

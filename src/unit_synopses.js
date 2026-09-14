@@ -114,15 +114,15 @@ export const unitSynopses = {
     ],
   },
   early_modern_world: {
-    period: '1485 – 1700',
+    period: '1450 – 1750',
     synopsis:
-      "Printing presses roaring, papal authority shattered by royal decree, and European caravel ships plunging across unmapped oceans. Witness the dramatic dawn of the modern world through Henry VIII's turbulent quest for a male heir, the bloody counter-reformation of the Tudor monarchs, the explosive scientific revolutions of Galileo and Newton, and the world-shaking collision of European empires with the indigenous civilisations of the Americas.",
+      "In 1450, Western Europe sat on the impoverished periphery of an Afro-Eurasian world dominated by the Ottoman, Ming, and Songhai empires. Over three turbulent centuries, oceanic navigation, religious conflict, and commercial ambition transformed an isolated island into an aggressive maritime powerhouse. From the fall of Constantinople and Sir Thomas Roe's embassy to the Mughal court, to the bloody convulsions of the English Civil War and the catastrophic human horror of the Transatlantic Slave Trade—witness the high-stakes encounters and systemic exploitation that forged early modern Britain.",
     tags: [
-      'Henry VIII & The Break with Rome',
-      'The Reformation & Counter-Reformation',
-      'Global Age of Exploration',
-      'Columbian Exchange',
-      'Scientific Revolution',
+      'Ottoman & Ming Dominance (1450)',
+      'East India Company & Mughal Court',
+      'Civil War & Glorious Revolution',
+      'Transatlantic Slave Trade',
+      'African Resistance & Maroons',
     ],
   },
   industrialisation_and_empire: {

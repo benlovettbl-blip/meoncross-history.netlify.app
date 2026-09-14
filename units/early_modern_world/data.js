@@ -1,7 +1,18 @@
 export const unitData = {
   title: 'KS3: Early Modern World & Global Encounters (1450–1750)',
   enquiry: "How 'global' was Britain's transformation between 1450 and 1750?",
-  cover_image: '/images/east_offering.jpg',
+  cover_image: '/images/global_britannia.jpg',
+  homepage_background: '/images/global_britannia.jpg',
+  period: '1450 – 1750',
+  synopsis:
+    "In 1450, Western Europe sat on the impoverished periphery of an Afro-Eurasian world dominated by the Ottoman, Ming, and Songhai empires. Over three turbulent centuries, oceanic navigation, religious conflict, and commercial ambition transformed an isolated island into an aggressive maritime powerhouse. From the fall of Constantinople and Sir Thomas Roe's embassy to the Mughal court, to the bloody convulsions of the English Civil War and the catastrophic human horror of the Transatlantic Slave Trade—witness the high-stakes encounters and systemic exploitation that forged early modern Britain.",
+  synopsis_tags: [
+    'Ottoman & Ming Dominance (1450)',
+    'East India Company & Mughal Court',
+    'Civil War & Glorious Revolution',
+    'Transatlantic Slave Trade',
+    'African Resistance & Maroons',
+  ],
   workbooks: [
     {
       id: 'full',
@@ -6249,33 +6260,7 @@ export const unitData = {
     },
   ],
   description:
-    'Study the four sources on the cover. How did an isolated island in 1450 become the center of global trade by 1750? This unit explores the rapid transformation of Britain through exploration, trade, empire, and slavery.',
-  cover_sources: [
-    {
-      image: '/images/global_britannia.jpg',
-      title: 'The East Offering its Riches to Britannia (1778)',
-      description:
-        'A ceiling painting by Spiridione Roma (1778), originally commissioned for the Revenue Committee Room at East India House in London (now held by the British Library). It is an allegorical painting showing Britannia receiving jewels, spices, and silk from Asia, Africa, and India. It highlights the ideology and wealth of the empire.',
-    },
-    {
-      image: '/images/global_canton.jpg',
-      title: 'Foreign Trading Factories at Canton (Guangzhou)',
-      description:
-        'A reverse glass painting by an unknown Chinese artist (c. 1805) currently held by the Peabody Essex Museum. It depicts the highly regulated district in Qing China where European companies operated, proving that Asian empires held immense global economic power.',
-    },
-    {
-      image: '/images/royal_exchange_courtyard.jpg',
-      title: 'The Financial Hub of London',
-      description:
-        'An engraving of the Second Royal Exchange in London by Wenceslaus Hollar (1644), now held by the Metropolitan Museum of Art. By 1750, London was crowded with merchant ships and transformed into the financial center of global maritime trade.',
-    },
-    {
-      image: '/images/global_mercator.jpg',
-      title: 'Nautical Planisphere World Map',
-      description:
-        'A world map created by Flemish cartographer Gerardus Mercator in 1569. Early modern maps revolutionized travel by introducing new projections for navigation, showing the massive ocean trade routes and the terrifying scale of global exploration.',
-    },
-  ],
+    'How did an isolated island in 1450 become the center of global trade by 1750? This unit explores the rapid transformation of Britain through exploration, trade, empire, and slavery.',
   key_individuals: [
     {
       id: 'niccolo_barbaro',
