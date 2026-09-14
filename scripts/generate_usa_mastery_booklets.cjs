@@ -28,14 +28,15 @@ const KT_DATA = {
         stem: 'Give two things you can infer from Source A about racial segregation in the American South in the early 1950s.',
         marks: 4,
         sourceA: {
+          image: 'colored-waiting-room-sign.jpg',
           shelfmark:
             'US National Archives · Record Group 21 / Southern Railway Photographic Records',
           title:
             'Source A: Segregated Municipal Railway Waiting Room, Jacksonville, Florida, early 1950s',
           extract:
-            'A large, prominently displayed painted sign affixed to the brick exterior of the terminal above the entrance door reads:\n"WAITING ROOM FOR COLORED ONLY BY ORDER POLICE DEPT. All colored passengers must purchase tickets at the window marked Colored and enter cars from the rear platform. Loitering on the white concourse is strictly forbidden under penalty of fine or imprisonment."',
+            'A large metal sign suspended above the municipal terminal entrance reads: "COLORED WAITING ROOM" with dual directional arrows pointing towards the segregated facility. Under Jim Crow laws, Black travelers were strictly relegated to separate facilities under penalty of fine or imprisonment.',
           provenance:
-            'Official photograph taken for the Jacksonville Municipal Transportation Authority, Florida, documenting Jim Crow signage at the railway terminal.',
+            'Official photograph documenting Jim Crow segregation signage at a Southern passenger terminal, early 1950s (Library of Congress / National Archives).',
         },
         lines: 6,
         inference1: {
@@ -178,9 +179,9 @@ const KT_DATA = {
       q1: {
         stem: 'Give two things you can infer from Source A about racial segregation in the American South in the early 1950s.',
         model:
-          '(i) What I can infer: I can infer that racial segregation was strictly enforced by official legal authorities rather than just being informal prejudice.\nDetails in the source that tell me this: The source states "BY ORDER POLICE DEPT" and warns that loitering carries a "penalty of fine or imprisonment".\n\n(ii) What I can infer: I can infer that Black Americans were treated as second-class citizens and relegated to inferior, separated facilities in public transport.\nDetails in the source that tell me this: The source states that "All colored passengers must purchase tickets at the window marked Colored and enter cars from the rear platform."',
+          '(i) What I can infer: I can infer that racial segregation was strictly enforced and institutionalized by municipal authorities rather than being merely informal discrimination.\nDetails in the source that tell me this: The source displays a prominent overhead street sign explicitly commanding "COLORED WAITING ROOM" with arrows directing Black travelers away from white areas.\n\n(ii) What I can infer: I can infer that Black Americans were treated as second-class citizens and relegated to separate, segregated facilities in public transport.\nDetails in the source that tell me this: The sign designates a completely separate waiting room specifically for "Colored" passengers, showing that basic facilities like waiting areas were racially divided under Jim Crow.',
         examiner:
-          'Level 2 (4/4 Marks): Two valid inferences made directly from the source, each supported by precise, direct textual quotations.',
+          'Level 2 (4/4 Marks): Two valid, supported inferences drawn directly from the visual and textual evidence of the primary source.',
       },
       q2: {
         stem: 'Explain why it was difficult for Black Americans in the Southern states to register to vote in the early 1950s. (12 marks)',
@@ -245,7 +246,7 @@ const KT_DATA = {
           q: '2',
           type: 'Explain Why',
           topic: 'Obstacles to Southern Black Voter Registration (Early 1950s)',
-          page: 'P3–4',
+          page: 'P3',
           marks: 12,
         },
       ],
@@ -254,42 +255,42 @@ const KT_DATA = {
           q: 'Dossier',
           type: 'Enquiry',
           topic: 'Dossier: Montgomery Bus Boycott (Sources B, C & Ints 1, 2)',
-          page: 'P5',
+          page: 'P4',
           marks: '-',
         },
         {
           q: '3 (a)',
           type: 'Utility',
           topic: 'Sources B & C: Reasons for Success of Montgomery Boycott',
-          page: 'P6',
+          page: 'P5',
           marks: 8,
         },
         {
           q: '3 (b)',
           type: 'Difference',
           topic: 'Interpretations 1 & 2: Main Difference in Views on Boycott',
-          page: 'P7',
+          page: 'P6',
           marks: 4,
         },
         {
           q: '3 (c)',
           type: 'Reason',
           topic: 'Interpretations 1 & 2: Reasons for Difference in Historical Views',
-          page: 'P7',
+          page: 'P6',
           marks: 4,
         },
         {
           q: '3 (d)',
           type: 'Essay',
           topic: 'Evaluative Essay: How Far Do You Agree with Interpretation 1?',
-          page: 'P8–9',
+          page: 'P7–8',
           marks: 20,
         },
         {
           q: '4',
           type: 'Depth Booster',
           topic: 'Spec Depth: Why Brown v. Board Met Intense Resistance',
-          page: 'P10',
+          page: 'P9',
           marks: 12,
         },
       ],
@@ -298,14 +299,14 @@ const KT_DATA = {
           q: 'Exemplars',
           type: 'Section A Models',
           topic: 'Full Level 2 Model Q1 & Level 4 Model Q2 Essay + Examiner Marks',
-          page: 'P11',
+          page: 'P10',
           marks: 'Audit',
         },
         {
           q: 'Exemplars',
           type: 'Section B Models',
           topic: 'Full Level 3 Model Q3a, Q3b, Q3c & Level 4 Q3d Model + Top 3 Traps',
-          page: 'P12',
+          page: 'P11',
           marks: 'Audit',
         },
       ],
@@ -325,14 +326,14 @@ const KT_DATA = {
         stem: 'Give two things you can infer from Source A about the methods used by Southern police against civil rights demonstrators in Birmingham, Alabama (1963).',
         marks: 4,
         sourceA: {
-          shelfmark:
-            'Birmingham Public Library Archives · Civil Rights Digital Collection, File 63-B',
+          image: 'birmingham-protests-dogs-1963.jpg',
+          shelfmark: 'Associated Press Photo Archive / Birmingham Civil Rights Digital Collection',
           title:
-            'Source A: From an eyewitness dispatch by Southern Christian Leadership Conference (SCLC) activist Fred Shuttlesworth, May 1963',
+            'Source A: Police Dogs Lunging at High School Demonstrators, Birmingham, Alabama, 3 May 1963',
           extract:
-            '"On the orders of Public Safety Commissioner Eugene ‘Bull’ Connor, police directed high-pressure water hoses directly into crowds of singing high school children marching out of the 16th Street Baptist Church. The streams were powerful enough to strip bark from trees, blast girls against brick walls, and rip clothes from teenagers. When the youths still refused to run, Connor unleashed snarling police attack dogs on leashes, which lunged into the crowds, biting several unarmed boys as parents screamed in terror from the sidewalks."',
+            'Birmingham police officer Dick Pence holds the leash of a German Shepherd attack dog as it lunges at fifteen-year-old student Walter Gadsden during the Children’s Crusade. High-pressure fire hoses and attack dogs were deployed on unarmed teenage marchers on the orders of Eugene ‘Bull’ Connor.',
           provenance:
-            'Eyewitness account written by civil rights organizer Reverend Fred Shuttlesworth describing the Children’s Crusade in Birmingham, Alabama, May 1963.',
+            'Photographed by Bill Hudson for the Associated Press on 3 May 1963; published across front pages of national and international newspapers.',
         },
         lines: 6,
         inference1: {
@@ -480,9 +481,9 @@ const KT_DATA = {
       q1: {
         stem: 'Give two things you can infer from Source A about the methods used by Southern police against civil rights demonstrators in Birmingham, Alabama (1963).',
         model:
-          '(i) What I can infer: I can infer that Southern police forces used extreme, military-grade physical violence against unarmed young demonstrators.\nDetails in the source that tell me this: The source states that police directed high-pressure water hoses that were "powerful enough to strip bark from trees" and "blast girls against brick walls".\n\n(ii) What I can infer: I can infer that police authorities deliberately weaponized vicious animals to terrorize children into abandoning protests.\nDetails in the source that tell me this: The source describes how Connor unleashed "snarling police attack dogs on leashes, which lunged into the crowds, biting several unarmed boys".',
+          '(i) What I can infer: I can infer that Southern authorities used aggressive physical force and police attack dogs to terrorize young civil rights marchers.\nDetails in the source that tell me this: The photograph shows a uniformed police officer firmly gripping the leash of a snarling German Shepherd attack dog as it lunges directly at a teenage demonstrator.\n\n(ii) What I can infer: I can infer that the civil rights demonstrators maintained non-violent discipline even when confronted by terrifying police brutality.\nDetails in the source that tell me this: The young student (Walter Gadsden) stands calmly without raising his hands, fleeing, or attempting to strike the dog or police officer.',
         examiner:
-          'Level 2 (4/4 Marks): Two fully valid inferences with direct textual quotations supporting each point.',
+          'Level 2 (4/4 Marks): Two valid inferences directly supported by specific visual details from the historic photograph.',
       },
       q2: {
         stem: 'Explain why the Civil Rights Act was passed in 1964. (12 marks)',
@@ -547,7 +548,7 @@ const KT_DATA = {
           q: '2',
           type: 'Explain Why',
           topic: 'Passage of the Civil Rights Act of 1964',
-          page: 'P3–4',
+          page: 'P3',
           marks: 12,
         },
       ],
@@ -556,42 +557,42 @@ const KT_DATA = {
           q: 'Dossier',
           type: 'Enquiry',
           topic: 'Dossier: Northern Urban Riots (Sources B, C & Ints 1, 2)',
-          page: 'P5',
+          page: 'P4',
           marks: '-',
         },
         {
           q: '3 (a)',
           type: 'Utility',
           topic: 'Sources B & C: Causes of Urban Riots (1965–67)',
-          page: 'P6',
+          page: 'P5',
           marks: 8,
         },
         {
           q: '3 (b)',
           type: 'Difference',
           topic: 'Interpretations 1 & 2: Main Difference in Views on Urban Riots',
-          page: 'P7',
+          page: 'P6',
           marks: 4,
         },
         {
           q: '3 (c)',
           type: 'Reason',
           topic: 'Interpretations 1 & 2: Reasons for Difference in Historical Views',
-          page: 'P7',
+          page: 'P6',
           marks: 4,
         },
         {
           q: '3 (d)',
           type: 'Essay',
           topic: 'Evaluative Essay: How Far Do You Agree with Interpretation 1?',
-          page: 'P8–9',
+          page: 'P7–8',
           marks: 20,
         },
         {
           q: '4',
           type: 'Depth Booster',
           topic: 'Spec Depth: Formation of the Black Panther Party (1966)',
-          page: 'P10',
+          page: 'P9',
           marks: 12,
         },
       ],
@@ -600,14 +601,14 @@ const KT_DATA = {
           q: 'Exemplars',
           type: 'Section A Models',
           topic: 'Full Level 2 Model Q1 & Level 4 Model Q2 Essay + Examiner Marks',
-          page: 'P11',
+          page: 'P10',
           marks: 'Audit',
         },
         {
           q: 'Exemplars',
           type: 'Section B Models',
           topic: 'Full Level 3 Model Q3a, Q3b, Q3c & Level 4 Q3d Model + Top 3 Traps',
-          page: 'P12',
+          page: 'P11',
           marks: 'Audit',
         },
       ],
@@ -624,17 +625,17 @@ const KT_DATA = {
     exam: {
       q1: {
         num: '1',
-        stem: 'Give two things you can infer from Source A about the effectiveness of American bombing tactics in South Vietnam (1965–68).',
+        stem: 'Give two things you can infer from Source A about the conditions faced by US infantry patrols fighting in South Vietnam (1965–68).',
         marks: 4,
         sourceA: {
+          image: 'us-soldier-patrolling-swamp.jpg',
           shelfmark:
-            'US National Archives · Records of the Military Assistance Command, Vietnam (MACV), Press Excerpts',
-          title:
-            'Source A: From a battlefield dispatch by American war correspondent Neil Sheehan, published in the New York Times, 1966',
+            'US National Archives · Records of the Office of the Chief of Military History, Vietnam Collection',
+          title: 'Source A: A US Soldier on Combat Patrol in the Swamps of South Vietnam, 1966',
           extract:
-            '"From the sky, South Vietnam looks like a scarred moonscape of bomb craters. American jet bombers streak over the tree canopy dropping thousands of tons of high explosives, napalm, and defoliants. Yet on the ground, the enemy remains virtually invisible. When our infantry sweeps through the smoking ruins of a village, the Vietcong have vanished into hidden underground tunnel complexes or merged seamlessly with the local peasants in neighboring rice fields. The bombing destroys ancestral homes and generates endless lines of bitter refugees, but it does not stop the enemy."',
+            'An American soldier from the 9th Infantry Division wades through chest-deep swamp water carrying an M60 machine gun and bandoliers of ammunition during a search-and-destroy mission against Vietcong guerrillas in the Mekong Delta.',
           provenance:
-            'War report written by journalist Neil Sheehan from South Vietnam, observing US aerial operations and search-and-destroy patrols.',
+            'Official combat photograph taken by US Army military photographers in South Vietnam, 1966 (National Archives Record Group 111).',
         },
         lines: 6,
         inference1: {
@@ -780,11 +781,11 @@ const KT_DATA = {
     },
     exemplars: {
       q1: {
-        stem: 'Give two things you can infer from Source A about the effectiveness of American bombing tactics in South Vietnam (1965–68).',
+        stem: 'Give two things you can infer from Source A about the conditions faced by US infantry patrols fighting in South Vietnam (1965–68).',
         model:
-          '(i) What I can infer: I can infer that American aerial bombing caused vast physical destruction to the landscape but failed to destroy the enemy forces.\nDetails in the source that tell me this: The source describes the countryside as a "scarred moonscape of bomb craters" but notes that "on the ground, the enemy remains virtually invisible".\n\n(ii) What I can infer: I can infer that heavy bombing was counter-productive because it turned the civilian population against the Americans.\nDetails in the source that tell me this: The source states that the bombing "destroys ancestral homes and generates endless lines of bitter refugees, but it does not stop the enemy".',
+          '(i) What I can infer: I can infer that American ground troops had to operate in treacherous, exhausting physical conditions in the Vietnamese countryside.\nDetails in the source that tell me this: The soldier is shown wading through deep, muddy swamp water and dense vegetation that severely hindered mobility.\n\n(ii) What I can infer: I can infer that infantrymen were forced to carry immense physical loads of heavy weaponry to prepare for surprise ambushes.\nDetails in the source that tell me this: The soldier is carrying a heavy M60 machine gun and long belts of live ammunition draped over his shoulder while traversing the swamp.',
         examiner:
-          'Level 2 (4/4 Marks): Two accurate inferences directly grounded in the text, accompanied by precise supporting quotations.',
+          'Level 2 (4/4 Marks): Two valid inferences supported by specific visual details from the combat photograph.',
       },
       q2: {
         stem: 'Explain why US involvement in Vietnam escalated under President Johnson between 1964 and 1965. (12 marks)',
@@ -849,7 +850,7 @@ const KT_DATA = {
           q: '2',
           type: 'Explain Why',
           topic: 'Escalation of US Involvement under LBJ (1964–65)',
-          page: 'P3–4',
+          page: 'P3',
           marks: 12,
         },
       ],
@@ -858,42 +859,42 @@ const KT_DATA = {
           q: 'Dossier',
           type: 'Enquiry',
           topic: 'Dossier: Failure of US Military Tactics (Sources B, C & Ints 1, 2)',
-          page: 'P5',
+          page: 'P4',
           marks: '-',
         },
         {
           q: '3 (a)',
           type: 'Utility',
           topic: 'Sources B & C: Failure of US Military Tactics in Vietnam',
-          page: 'P6',
+          page: 'P5',
           marks: 8,
         },
         {
           q: '3 (b)',
           type: 'Difference',
           topic: 'Interpretations 1 & 2: Main Difference on Why Tactics Failed',
-          page: 'P7',
+          page: 'P6',
           marks: 4,
         },
         {
           q: '3 (c)',
           type: 'Reason',
           topic: 'Interpretations 1 & 2: Reasons for Difference in Historical Views',
-          page: 'P7',
+          page: 'P6',
           marks: 4,
         },
         {
           q: '3 (d)',
           type: 'Essay',
           topic: 'Evaluative Essay: How Far Do You Agree with Interpretation 1?',
-          page: 'P8–9',
+          page: 'P7–8',
           marks: 20,
         },
         {
           q: '4',
           type: 'Depth Booster',
           topic: 'Spec Depth: How Vietcong Launched the Tet Offensive (1968)',
-          page: 'P10',
+          page: 'P9',
           marks: 12,
         },
       ],
@@ -902,14 +903,14 @@ const KT_DATA = {
           q: 'Exemplars',
           type: 'Section A Models',
           topic: 'Full Level 2 Model Q1 & Level 4 Model Q2 Essay + Examiner Marks',
-          page: 'P11',
+          page: 'P10',
           marks: 'Audit',
         },
         {
           q: 'Exemplars',
           type: 'Section B Models',
           topic: 'Full Level 3 Model Q3a, Q3b, Q3c & Level 4 Q3d Model + Top 3 Traps',
-          page: 'P12',
+          page: 'P11',
           marks: 'Audit',
         },
       ],
@@ -926,17 +927,18 @@ const KT_DATA = {
     exam: {
       q1: {
         num: '1',
-        stem: 'Give two things you can infer from Source A about the events at Kent State University in May 1970.',
+        stem: 'Give two things you can infer from Source A about the confrontation at Kent State University in May 1970.',
         marks: 4,
         sourceA: {
+          image: 'kent-state-protests-1970.jpg',
           shelfmark:
             'Kent State University Libraries · Special Collections and Archives, May 4 Collection',
           title:
-            'Source A: From a front-page eyewitness report in the Cleveland Plain Dealer, 5 May 1970',
+            'Source A: Ohio National Guard Confronting Anti-War Student Protesters at Kent State University, 4 May 1970',
           extract:
-            '"The university commons was littered with tear gas canisters and screaming students fleeing in panic. Following days of intense student demonstrations protesting President Nixon’s military invasion of Cambodia, the Ohio National Guard had been deployed with fixed bayonets. Without verbal warning, twenty-eight guardsmen abruptly halted, wheeled around, leveled their M1 military rifles at a crowd of unarmed students several hundred feet away, and fired a thirteen-second volley of sixty-seven shots. When the cordite cleared, four young students lay dead on the grass and nine were critically injured."',
+            'Armed Ohio National Guardsmen in military formation and gas masks deploy tear gas canisters against unarmed student demonstrators on the campus commons protesting President Nixon’s invasion of Cambodia. Minutes later, troops fired sixty-seven live rounds, killing four students.',
           provenance:
-            'Eyewitness newspaper dispatch reported from the Kent State campus the day following the shootings.',
+            'Contemporary news photograph documenting the confrontation between the Ohio National Guard and anti-war student demonstrators at Kent State University, 4 May 1970.',
         },
         lines: 6,
         inference1: {
@@ -1083,11 +1085,11 @@ const KT_DATA = {
     },
     exemplars: {
       q1: {
-        stem: 'Give two things you can infer from Source A about the events at Kent State University in May 1970.',
+        stem: 'Give two things you can infer from Source A about the confrontation at Kent State University in May 1970.',
         model:
-          '(i) What I can infer: I can infer that the National Guard used lethal, completely disproportionate military force against unarmed university students.\nDetails in the source that tell me this: The source notes that guardsmen "leveled their M1 military rifles at a crowd of unarmed students... and fired a thirteen-second volley of sixty-seven shots", killing four.\n\n(ii) What I can infer: I can infer that the student demonstrations were a direct response to President Nixon’s military expansion of the Vietnam War.\nDetails in the source that tell me this: The source explains that the students were protesting "President Nixon’s military invasion of Cambodia".',
+          '(i) What I can infer: I can infer that the government deployed heavily armed, militarized forces onto university grounds to suppress anti-war protests.\nDetails in the source that tell me this: The photograph shows a large formation of Ohio National Guardsmen wearing gas masks and military uniforms marching in rank across the campus green.\n\n(ii) What I can infer: I can infer that the confrontation caused widespread panic and chaos across the university.\nDetails in the source that tell me this: Plumes of tear gas are billowing across the commons while unarmed students flee across the field in panic.',
         examiner:
-          'Level 2 (4/4 Marks): Two valid inferences with direct, accurate textual evidence quoted from the source.',
+          'Level 2 (4/4 Marks): Two valid, supported inferences extracted directly from the primary photograph.',
       },
       q2: {
         stem: 'Explain why President Richard Nixon introduced the policy of Vietnamization in 1969. (12 marks)',
@@ -1152,7 +1154,7 @@ const KT_DATA = {
           q: '2',
           type: 'Explain Why',
           topic: 'Why Nixon Introduced Vietnamization in 1969',
-          page: 'P3–4',
+          page: 'P3',
           marks: 12,
         },
       ],
@@ -1161,42 +1163,42 @@ const KT_DATA = {
           q: 'Dossier',
           type: 'Enquiry',
           topic: 'Dossier: Growth of Anti-War Opposition (Sources B, C & Ints 1, 2)',
-          page: 'P5',
+          page: 'P4',
           marks: '-',
         },
         {
           q: '3 (a)',
           type: 'Utility',
           topic: 'Sources B & C: Reasons for Growth of Anti-War Opposition',
-          page: 'P6',
+          page: 'P5',
           marks: 8,
         },
         {
           q: '3 (b)',
           type: 'Difference',
           topic: 'Interpretations 1 & 2: Main Difference in Views on Anti-War Movement',
-          page: 'P7',
+          page: 'P6',
           marks: 4,
         },
         {
           q: '3 (c)',
           type: 'Reason',
           topic: 'Interpretations 1 & 2: Reasons for Difference in Historical Views',
-          page: 'P7',
+          page: 'P6',
           marks: 4,
         },
         {
           q: '3 (d)',
           type: 'Essay',
           topic: 'Evaluative Essay: How Far Do You Agree with Interpretation 1?',
-          page: 'P8–9',
+          page: 'P7–8',
           marks: 20,
         },
         {
           q: '4',
           type: 'Depth Booster',
           topic: 'Spec Depth: Why the Paris Peace Accords Were Signed (1973)',
-          page: 'P10',
+          page: 'P9',
           marks: 12,
         },
       ],
@@ -1205,14 +1207,14 @@ const KT_DATA = {
           q: 'Exemplars',
           type: 'Section A Models',
           topic: 'Full Level 2 Model Q1 & Level 4 Model Q2 Essay + Examiner Marks',
-          page: 'P11',
+          page: 'P10',
           marks: 'Audit',
         },
         {
           q: 'Exemplars',
           type: 'Section B Models',
           topic: 'Full Level 3 Model Q3a, Q3b, Q3c & Level 4 Q3d Model + Top 3 Traps',
-          page: 'P12',
+          page: 'P11',
           marks: 'Audit',
         },
       ],
@@ -1869,6 +1871,26 @@ function renderBookletHtml(ktKey, meta) {
   const d = meta.depthBank;
   const x = meta.exemplars;
 
+  // Resolve base64 image for Source A
+  let sourceAImgTag = '';
+  if (e.q1.sourceA.image) {
+    const imgFile = path.join(
+      ROOT_DIR,
+      'public',
+      'units',
+      'usa',
+      'assets',
+      'sources',
+      e.q1.sourceA.image,
+    );
+    if (fs.existsSync(imgFile)) {
+      const b64 = fs.readFileSync(imgFile).toString('base64');
+      sourceAImgTag = `<div style="flex-shrink: 0; width: 140px; height: 105px; background: #000; border-radius: 4px; overflow: hidden; display: flex; align-items: center; justify-content: center; border: 1px solid #94a3b8; box-shadow: 0 2px 4px rgba(0,0,0,0.15);">
+          <img src="data:image/jpeg;base64,${b64}" alt="Source A" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+      </div>`;
+    }
+  }
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1924,7 +1946,7 @@ function renderBookletHtml(ktKey, meta) {
                     <div class="exam-time">Time: 1 hour 20 minutes (Complete Mock) · 52 Marks (+4 SPaG)</div>
                     <div class="exam-subject">Option 33: Conflict at Home and Abroad: the USA, 1954–75</div>
                     <div class="exam-booklet">${meta.title}</div>
-                    <div class="exam-subtopic">Comprehensive 12-Page Specification Practice Pack · ${meta.dates}</div>
+                    <div class="exam-subtopic">Comprehensive 11-Page Specification Practice Pack · ${meta.dates}</div>
                 </div>
                 <div class="exam-header-right">
                     <div class="ref-label">Paper<br>reference</div>
@@ -2030,7 +2052,7 @@ function renderBookletHtml(ktKey, meta) {
         <div class="cover-footer">
             <span>Pearson Edexcel GCSE (9–1) History · Paper 3: Option 33 Conflict at Home and Abroad: the USA, 1954–75</span>
             <span class="turn-over">Turn over for Section A &#9654;</span>
-            <span>Page 1 of 12</span>
+            <span>Page 1 of 11</span>
         </div>
     </div>
 
@@ -2047,91 +2069,96 @@ function renderBookletHtml(ktKey, meta) {
                 <span class="header-tag">Q1: Source Inference [4m]</span>
             </div>
 
-            <!-- Archival Source A Box -->
-            <div class="archival-source-box">
-                <div class="archival-header">
-                    <span class="archival-title">${e.q1.sourceA.title}</span>
-                    <span class="archival-shelfmark">${e.q1.sourceA.shelfmark}</span>
+            <!-- Archival Visual Source A Box -->
+            <div class="archival-source-box" style="margin-bottom: 8px; padding: 7px 10px;">
+                <div class="archival-header" style="margin-bottom: 5px; padding-bottom: 3px;">
+                    <span class="archival-title" style="font-size: 8.2pt;">${e.q1.sourceA.title}</span>
+                    <span class="archival-shelfmark" style="font-size: 6.2pt;">${e.q1.sourceA.shelfmark}</span>
                 </div>
-                <div class="archival-body">
-                    ${e.q1.sourceA.extract
-                      .split('\n')
-                      .map((line) => `<p style="margin: 0 0 2px 0;">${line}</p>`)
-                      .join('')}
-                </div>
-                <div class="archival-footer">
-                    <strong>Provenance:</strong> ${e.q1.sourceA.provenance}
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    ${sourceAImgTag}
+                    <div style="flex: 1;">
+                        <div class="archival-body" style="font-size: 7.2pt; line-height: 1.35; margin-bottom: 3px;">
+                            ${e.q1.sourceA.extract
+                              .split('\n')
+                              .map((line) => `<p style="margin: 0 0 2px 0;">${line}</p>`)
+                              .join('')}
+                        </div>
+                        <div class="archival-footer" style="font-size: 6.5pt; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 2px;">
+                            <strong>Provenance:</strong> ${e.q1.sourceA.provenance}
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- Question 1 Prompt -->
             <div class="question-container">
-                <div class="question-prompt">
+                <div class="question-prompt" style="margin-bottom: 5px;">
                     <span><strong class="q-num">1</strong> ${e.q1.stem}</span>
                     <span class="q-marks">(4)</span>
                 </div>
 
                 <!-- Structured Inference Scaffolding Grid -->
-                <div class="inference-grid">
-                    <div class="inference-card">
+                <div class="inference-grid" style="margin-bottom: 6px;">
+                    <div class="inference-card" style="padding: 5px 8px;">
                         <strong>(i) Inference 1:</strong>
-                        <div style="font-size: 6.8pt; color: #475569; margin-bottom: 1px;">What I can infer from Source A:</div>
+                        <div style="font-size: 6.8pt; color: #475569; margin-bottom: 2px;">What I can infer from Source A:</div>
                         <div class="inference-row"></div>
-                        <div style="font-size: 6.8pt; color: #475569; margin: 3px 0 1px 0;">Details in the source that tell me this:</div>
+                        <div style="font-size: 6.8pt; color: #475569; margin: 3px 0 2px 0;">Details in the source that tell me this:</div>
                         <div class="inference-row"></div>
                     </div>
-                    <div class="inference-card">
+                    <div class="inference-card" style="padding: 5px 8px;">
                         <strong>(ii) Inference 2:</strong>
-                        <div style="font-size: 6.8pt; color: #475569; margin-bottom: 1px;">What I can infer from Source A:</div>
+                        <div style="font-size: 6.8pt; color: #475569; margin-bottom: 2px;">What I can infer from Source A:</div>
                         <div class="inference-row"></div>
-                        <div style="font-size: 6.8pt; color: #475569; margin: 3px 0 1px 0;">Details in the source that tell me this:</div>
+                        <div style="font-size: 6.8pt; color: #475569; margin: 3px 0 2px 0;">Details in the source that tell me this:</div>
                         <div class="inference-row"></div>
                     </div>
                 </div>
 
-                <div style="font-size: 7.2pt; font-weight: 700; color: #0f172a; margin: 4px 0 2px 0;">Candidate Response Lines:</div>
-                ${renderLines(e.q1.lines)}
+                <div style="font-size: 7.2pt; font-weight: 700; color: #0f172a; margin: 5px 0 2px 0;">Candidate Response Lines:</div>
+                ${renderLines(e.q1.lines || 6)}
             </div>
         </div>
 
         <div class="page-footer">
             <span>Option 33 · ${meta.shortTitle}</span>
             <span class="turn-over">Turn over for Question 2 &#9654;</span>
-            <span>Page 2 of 12</span>
+            <span>Page 2 of 11</span>
         </div>
     </div>
 
     <!-- ============================================================= -->
-    <!-- PAGE 3: SECTION A — QUESTION 2: EXPLAIN WHY (PART 1) [12 MARKS] -->
+    <!-- PAGE 3: SECTION A — QUESTION 2: EXPLAIN WHY [12 MARKS]        -->
     <!-- ============================================================= -->
     <div class="page">
         <div>
             <div class="page-header">
                 <div class="header-left">
-                    <h2>Section A: Timed Exam Paper · Question 2 (Part 1)</h2>
+                    <h2>Section A: Timed Exam Paper · Question 2</h2>
                     <p>Spend approx. 15 minutes on Question 2. Construct three developed causal paragraphs.</p>
                 </div>
                 <span class="header-tag">Q2: Causation Essay [12m]</span>
             </div>
 
             <div class="question-container">
-                <div class="question-prompt">
+                <div class="question-prompt" style="margin-bottom: 4px;">
                     <span><strong class="q-num">2</strong> ${e.q2.stem}</span>
                     <span class="q-marks">(12)</span>
                 </div>
 
                 <!-- Stimulus Box -->
-                <div class="stimulus-card">
+                <div class="stimulus-card" style="margin-bottom: 4px; padding: 4px 8px; font-size: 7pt;">
                     You may use the following in your answer:
-                    <ul>
+                    <ul style="margin: 2px 0; padding-left: 18px;">
                         <li><strong>${e.q2.stimulus[0]}</strong></li>
                         <li><strong>${e.q2.stimulus[1]}</strong></li>
                     </ul>
-                    <span style="display: block; margin-top: 2px; font-style: italic; color: #475569;">(You must also use information of your own.)</span>
+                    <span style="display: block; margin-top: 1px; font-style: italic; color: #475569;">(You must also use information of your own.)</span>
                 </div>
 
                 <!-- Causal Architecture Planner -->
-                <div class="scaffold-bar">
+                <div class="scaffold-bar" style="margin-bottom: 4px; padding: 3px 6px;">
                     <div class="scaffold-col" style="flex: 1.4;">
                         <span class="scaffold-label">Fact Bank:</span>
                         <div class="scaffold-content">${e.q2.vocabBank.map((v) => `<span class="scaffold-pill">${v}</span>`).join(' ')}</div>
@@ -2142,46 +2169,25 @@ function renderBookletHtml(ktKey, meta) {
                     </div>
                 </div>
 
-                <div style="border: 1px solid #cbd5e1; border-radius: 3px; background: #f8fafc; padding: 3px 6px; margin-bottom: 4px; font-size: 6.8pt; color: #334155;">
-                    <strong>Paragraph 1 Focus:</strong> ${e.q2.stages.p1}
+                <!-- Consecutive Paragraph Focus Prompts -->
+                <div style="display: flex; flex-direction: column; gap: 2px; margin-bottom: 4px;">
+                    <div style="border: 1px solid #cbd5e1; border-radius: 3px; background: #f8fafc; padding: 2px 6px; font-size: 6.8pt; color: #334155;">
+                        <strong>Paragraph 1 Focus:</strong> ${e.q2.stages.p1}
+                    </div>
+                    <div style="border: 1px solid #cbd5e1; border-radius: 3px; background: #f8fafc; padding: 2px 6px; font-size: 6.8pt; color: #334155;">
+                        <strong>Paragraph 2 Focus:</strong> ${e.q2.stages.p2}
+                    </div>
+                    <div style="border: 1.5px solid #1e3a8a; border-radius: 3px; background: #eff6ff; padding: 2px 6px; font-size: 6.8pt; color: #1e3a8a;">
+                        <strong>Paragraph 3 Focus (Compulsory Own Knowledge):</strong> ${e.q2.stages.p3}
+                    </div>
                 </div>
 
-                ${renderLines(e.q2.linesPage3)}
-            </div>
-        </div>
+                <!-- Candidate Response Lines -->
+                <div style="font-size: 7pt; font-weight: 700; color: #0f172a; margin: 3px 0 2px 0;">Candidate Response Lines:</div>
+                ${renderLines(15)}
 
-        <div class="page-footer">
-            <span>Option 33 · ${meta.shortTitle}</span>
-            <span class="turn-over">Question 2 continues on next page &#9654;</span>
-            <span>Page 3 of 12</span>
-        </div>
-    </div>
-
-    <!-- ============================================================= -->
-    <!-- PAGE 4: SECTION A — QUESTION 2: EXPLAIN WHY (PART 2)          -->
-    <!-- ============================================================= -->
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h2>Section A: Timed Exam Paper · Question 2 (Continued)</h2>
-                    <p>Complete Paragraph 2 and Paragraph 3 (Compulsory Own Knowledge).</p>
-                </div>
-                <span class="header-tag">Q2: Continuation</span>
-            </div>
-
-            <div class="question-container">
-                <div style="border: 1px solid #cbd5e1; border-radius: 3px; background: #f8fafc; padding: 3px 6px; margin-bottom: 4px; font-size: 6.8pt; color: #334155;">
-                    <strong>Paragraph 2 Focus:</strong> ${e.q2.stages.p2}
-                </div>
-                <div style="border: 1.5px solid #1e3a8a; border-radius: 3px; background: #eff6ff; padding: 3px 6px; margin-bottom: 4px; font-size: 6.8pt; color: #1e3a8a;">
-                    <strong>Paragraph 3 Focus (Compulsory Own Knowledge):</strong> ${e.q2.stages.p3}
-                </div>
-
-                ${renderLines(e.q2.linesPage4)}
-
-                <!-- Level 4 Scoring Rubric Box -->
-                <div style="border: 1.5px solid #64748b; border-radius: 4px; background: #f8fafc; padding: 4px 6px; margin-top: 5px; font-size: 6.8pt; line-height: 1.25;">
+                <!-- Pearson Edexcel Level 4 Criteria Checklist -->
+                <div style="border: 1.5px solid #64748b; border-radius: 4px; background: #f8fafc; padding: 3px 6px; margin-top: 4px; font-size: 6.7pt; line-height: 1.2;">
                     <div style="font-weight: 800; text-transform: uppercase; color: #0f172a; margin-bottom: 1px;">
                         Pearson Edexcel Level 4 Criteria Checklist [10–12 Marks]:
                     </div>
@@ -2198,7 +2204,7 @@ function renderBookletHtml(ktKey, meta) {
         <div class="page-footer">
             <span>Option 33 · End of Section A (16 Marks Total)</span>
             <span class="turn-over">Turn over for Section B Enquiry Dossier &#9654;</span>
-            <span>Page 4 of 12</span>
+            <span>Page 3 of 11</span>
         </div>
     </div>
 
@@ -2286,7 +2292,7 @@ function renderBookletHtml(ktKey, meta) {
         <div class="page-footer">
             <span>Option 33 · Historical Enquiry Dossier</span>
             <span class="turn-over">Turn over for Question 3(a) &#9654;</span>
-            <span>Page 5 of 12</span>
+            <span>Page 4 of 11</span>
         </div>
     </div>
 
@@ -2336,7 +2342,7 @@ function renderBookletHtml(ktKey, meta) {
         <div class="page-footer">
             <span>Option 33 · ${meta.shortTitle}</span>
             <span class="turn-over">Turn over for Question 3(b) &amp; 3(c) &#9654;</span>
-            <span>Page 6 of 12</span>
+            <span>Page 5 of 11</span>
         </div>
     </div>
 
@@ -2381,7 +2387,7 @@ function renderBookletHtml(ktKey, meta) {
         <div class="page-footer">
             <span>Option 33 · ${meta.shortTitle}</span>
             <span class="turn-over">Turn over for Question 3(d) Evaluative Essay &#9654;</span>
-            <span>Page 7 of 12</span>
+            <span>Page 6 of 11</span>
         </div>
     </div>
 
@@ -2441,7 +2447,7 @@ function renderBookletHtml(ktKey, meta) {
         <div class="page-footer">
             <span>Option 33 · ${meta.shortTitle}</span>
             <span class="turn-over">Question 3(d) continues on next page &#9654;</span>
-            <span>Page 8 of 12</span>
+            <span>Page 7 of 11</span>
         </div>
     </div>
 
@@ -2484,7 +2490,7 @@ function renderBookletHtml(ktKey, meta) {
         <div class="page-footer">
             <span>Option 33 · End of Section B (36 Marks + 4 SPaG)</span>
             <span class="turn-over">Turn over for Section B Depth Booster &#9654;</span>
-            <span>Page 9 of 12</span>
+            <span>Page 8 of 11</span>
         </div>
     </div>
 
@@ -2540,7 +2546,7 @@ function renderBookletHtml(ktKey, meta) {
         <div class="page-footer">
             <span>Option 33 · 100% Specification Practice Bank</span>
             <span class="turn-over">Turn over for Section C (Exemplar Answers) &#9654;</span>
-            <span>Page 10 of 12</span>
+            <span>Page 9 of 11</span>
         </div>
     </div>
 
@@ -2593,7 +2599,7 @@ function renderBookletHtml(ktKey, meta) {
         <div class="page-footer">
             <span>Option 33 · Official Exam Criteria &amp; Exemplars</span>
             <span class="turn-over">Turn over for Section B Models &amp; Traps &#9654;</span>
-            <span>Page 11 of 12</span>
+            <span>Page 10 of 11</span>
         </div>
     </div>
 
@@ -2679,7 +2685,7 @@ function renderBookletHtml(ktKey, meta) {
         <div class="page-footer">
             <span>Pearson Edexcel GCSE (9–1) History · Option 33 Conflict at Home and Abroad: the USA, 1954–75</span>
             <span style="font-weight: 700; color: #0f172a;">100% Specification Coverage Completed</span>
-            <span>Page 12 of 12</span>
+            <span>Page 11 of 11</span>
         </div>
     </div>
 
@@ -2692,12 +2698,12 @@ function renderBookletHtml(ktKey, meta) {
 // =============================================================================
 (async () => {
   try {
-    console.log('🚀 Starting compilation of authentic 12-page USA Exam Practice Packs...');
+    console.log('🚀 Starting compilation of authentic 11-page USA Exam Practice Packs...');
 
     const generatedHtmlFiles = {};
 
     for (const [ktKey, meta] of Object.entries(KT_DATA)) {
-      console.log(`\n📄 Generating 12-Page Exam Practice Pack HTML for ${ktKey}...`);
+      console.log(`\n📄 Generating 11-Page Exam Practice Pack HTML for ${ktKey}...`);
       const htmlContent = renderBookletHtml(ktKey, meta);
       const outHtmlPath = path.join(bookletsDir, `usa_mastery_${ktKey}.html`);
       fs.writeFileSync(outHtmlPath, htmlContent, 'utf8');
@@ -2706,7 +2712,7 @@ function renderBookletHtml(ktKey, meta) {
     }
 
     // Compile the Combined Master HTML booklet (48 Pages)
-    console.log('\n📚 Compiling 48-Page Full Master Booklet (usa_mastery_FULL.html)...');
+    console.log('\n📚 Compiling 44-Page Full Master Booklet (usa_mastery_FULL.html)...');
     let fullHtmlPages = '';
     for (const [ktKey] of Object.entries(KT_DATA)) {
       const htmlFile = generatedHtmlFiles[ktKey];
@@ -2731,7 +2737,7 @@ function renderBookletHtml(ktKey, meta) {
 
     const fullHtmlPath = path.join(bookletsDir, 'usa_mastery_FULL.html');
     fs.writeFileSync(fullHtmlPath, fullHtmlContent, 'utf8');
-    console.log(`   ✅ Saved: usa_mastery_FULL.html (48 Pages Total)`);
+    console.log(`   ✅ Saved: usa_mastery_FULL.html (44 Pages Total)`);
 
     // Launch Puppeteer
     console.log('\n🖨️ Launching Puppeteer to compile print-perfect PDFs...');

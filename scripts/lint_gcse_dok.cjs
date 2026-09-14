@@ -32,6 +32,15 @@ const targetFiles = {
     path.join(__dirname, 'generate_usa_mastery_booklets.cjs'),
     path.join(__dirname, '..', 'units', 'usa', 'data.js'),
   ],
+  edexcel_medicine: [
+    path.join(__dirname, 'generate_medicine_mastery_booklets.cjs'),
+    path.join(__dirname, 'generate_medicine_visual_guide.cjs'),
+    path.join(__dirname, '..', 'units', 'edexcel_medicine', 'data.js'),
+  ],
+  eee: [
+    path.join(__dirname, '..', 'units', 'eee', 'data.js'),
+    path.join(__dirname, 'enrich_eee_individuals.cjs'),
+  ],
 };
 
 let totalViolations = 0;

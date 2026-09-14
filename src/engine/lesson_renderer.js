@@ -810,6 +810,94 @@ export function renderLesson(lesson) {
           ? `data-target-source="${sLetter}" title="Hover or click to highlight Source ${sLetter}"`
           : '';
 
+      if (unitId === 'great_war') {
+        const sLetterMatch = (source.title || '').match(/(?:Source|Map|Diagram)\s+([A-Z])/i);
+        const sLetter = sLetterMatch ? sLetterMatch[1].toUpperCase() : '';
+        const isMap = /map/i.test(source.title);
+        const isDiagram = /diagram/i.test(source.title);
+        const metaTag = isMap
+          ? 'Cartographic Record'
+          : isDiagram
+            ? 'Historical Diagram'
+            : 'Primary Source';
+        const displayTitle = source.title
+          ? source.title.includes(':')
+            ? source.title.split(':').slice(1).join(':').trim()
+            : source.title
+          : 'Historical Document';
+        const prefix = source.title
+          ? source.title.split(':')[0].trim()
+          : sLetter
+            ? `Source ${sLetter}`
+            : 'Document';
+
+        htmlSources1 += `
+          <div class="archival-source-box accent-amber" style="background: #fffdfa; border: 1px solid #cbd5e1; border-top: 3.5px solid ${isMap ? '#059669' : '#1e3a8a'}; border-radius: 8px; padding: 22px 26px; margin-bottom: 24px; text-align: left; box-shadow: 0 3px 10px rgba(0,0,0,0.04);">
+            <div class="archival-source-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding-bottom: 12px; margin-bottom: 16px; border-bottom: 1px solid #e2e8f0;">
+              <div>
+                <span class="archival-meta-tag" style="display: block; margin-bottom: 4px; color: ${isMap ? '#059669' : '#1e3a8a'}; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;">
+                  ${metaTag} · ${prefix}
+                </span>
+                <h4 class="archival-source-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.15rem; font-weight: 700; color: #0f172a; margin: 0; line-height: 1.35;">
+                  ${displayTitle}
+                </h4>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="archival-shelfmark-stamp">${source.shelfmark || (sLetter ? `ARCHIVE · ${sLetter}` : 'ARCHIVAL RECORD')}</span>
+              </div>
+            </div>
+            ${
+              source.src
+                ? `
+              <div style="width: 100%; display: flex; justify-content: center; margin: 16px 0; background: #0f172a; border-radius: 6px; padding: 12px; border: 1px solid #334155; position: relative;">
+                <img src="${getAssetUrl(source.src)}" alt="${source.title || 'Source Image'}" style="max-height: 480px; max-width: 100%; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); cursor: zoom-in;" data-action="open-modal" data-src="${getAssetUrl(source.src)}">
+              </div>
+            `
+                : ''
+            }
+            ${
+              source.caption
+                ? `
+              <div style="font-size: 0.95rem; color: #334155; margin: 12px 0; line-height: 1.6; font-style: italic; background: #f8fafc; padding: 12px 16px; border-left: 3px solid #64748b; border-radius: 0 4px 4px 0;">
+                ${source.caption}
+              </div>
+            `
+                : ''
+            }
+            ${
+              source.context
+                ? `
+              <div style="font-size: 0.95rem; color: #1e293b; margin: 14px 0; line-height: 1.65; background: rgba(2, 132, 199, 0.06); padding: 14px 18px; border-left: 4px solid #0284c7; border-radius: 0 6px 6px 0;">
+                <strong style="color: #0369a1; display: block; margin-bottom: 5px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;"><span class="archival-meta-tag" style="color: #0284c7; margin-right: 6px;">HISTORICAL CONTEXT</span></strong>
+                ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(source.context) : source.context}
+              </div>
+            `
+                : ''
+            }
+            ${
+              source.citation
+                ? `
+              <div class="archival-citation-footer" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 10px; margin-top: 12px;">
+                <span><strong>Provenance:</strong> ${source.citation}</span>
+                <span class="archival-seal" style="border: 1px solid #94a3b8; color: #475569; padding: 2px 6px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em;">ARCHIVE RECORD</span>
+              </div>
+            `
+                : ''
+            }
+            ${
+              source.question
+                ? `
+              <div style="background: #eff6ff; border-left: 4px solid #1e40af; padding: 16px 20px; border-radius: 0 6px 6px 0; text-align: left; margin-top: 18px; box-shadow: 0 2px 5px rgba(30,58,138,0.05);">
+                <p style="margin-bottom: 0; font-size: 1.05rem; color: #1e3a8a; line-height: 1.5;"><strong>${source.qNum ? `Q${source.qNum}. ` : ''}${formatQuestion(source.question, !source.qNum)}</strong></p>
+              </div>
+            `
+                : ''
+            }
+          </div>
+        `;
+        return;
+      }
+
       htmlSources1 += `
             <div class="source-card" ${cardIdAttr} style="background: #ffffff; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px; text-align: center; transition: all 0.3s ease;">
               ${source.title ? `<h4 style="color: var(--primary); margin-top: 0; text-align: left;">${source.title}</h4>` : ''}
@@ -869,7 +957,82 @@ export function renderLesson(lesson) {
   if (lesson.primary_source) {
     let rawSrcs = lesson.primary_source.src || lesson.primary_source.image;
     let srcs = rawSrcs ? (Array.isArray(rawSrcs) ? rawSrcs.filter(Boolean) : [rawSrcs]) : [];
-    htmlPrimary += `
+    if (unitId === 'great_war') {
+      const pTitle = lesson.primary_source.title || 'Primary Archival Source';
+      const displayTitle = pTitle.includes(':')
+        ? pTitle.split(':').slice(1).join(':').trim()
+        : pTitle;
+      const prefix = pTitle.includes(':') ? pTitle.split(':')[0].trim() : 'Source A';
+
+      htmlPrimary += `
+        <div class="phase-card">
+          <div class="archival-source-box accent-amber" style="background: #fffdfa; border: 1px solid #cbd5e1; border-top: 3.5px solid #1e3a8a; border-radius: 8px; padding: 22px 26px; margin-bottom: 24px; text-align: left; box-shadow: 0 3px 10px rgba(0,0,0,0.04);">
+            <div class="archival-source-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding-bottom: 12px; margin-bottom: 16px; border-bottom: 1px solid #e2e8f0;">
+              <div>
+                <span class="archival-meta-tag" style="display: block; margin-bottom: 4px; color: #1e3a8a; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;">
+                  Primary Archival Evidence · ${prefix}
+                </span>
+                <h4 class="archival-source-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.2rem; font-weight: 700; color: #0f172a; margin: 0; line-height: 1.35;">
+                  ${displayTitle}
+                </h4>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="archival-shelfmark-stamp">${lesson.primary_source.shelfmark || 'IWM ARCHIVES / REF-GW-1914'}</span>
+              </div>
+            </div>
+            ${
+              srcs.length > 0
+                ? `
+              <div style="width: 100%; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin: 18px 0; background: #0f172a; border-radius: 6px; padding: 12px; border: 1px solid #334155; position: relative;">
+                ${srcs.map((src) => `<img src="${getAssetUrl(src)}" alt="${lesson.primary_source.title}" style="max-height: 520px; max-width: ${srcs.length > 1 ? '48%' : '100%'}; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); cursor: zoom-in;" data-action="open-modal" data-src="${getAssetUrl(src)}">`).join('')}
+              </div>
+            `
+                : ''
+            }
+            ${
+              lesson.primary_source.caption
+                ? `
+              <div style="font-size: 0.95rem; color: #334155; margin: 14px 0 16px 0; line-height: 1.6; font-style: italic; background: #f8fafc; padding: 12px 16px; border-left: 3px solid #64748b; border-radius: 0 4px 4px 0;">
+                ${lesson.primary_source.caption}
+              </div>
+            `
+                : ''
+            }
+            ${
+              lesson.primary_source.context
+                ? `
+              <div style="font-size: 0.95rem; color: #1e293b; margin-bottom: 16px; line-height: 1.65; background: rgba(2, 132, 199, 0.06); padding: 14px 18px; border-left: 4px solid #0284c7; border-radius: 0 6px 6px 0;">
+                <strong style="color: #0369a1; display: block; margin-bottom: 5px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;"><span class="archival-meta-tag" style="color: #0284c7; margin-right: 6px;">HISTORICAL CONTEXT</span></strong>
+                ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(lesson.primary_source.context) : lesson.primary_source.context}
+              </div>
+            `
+                : ''
+            }
+            ${lesson.primary_source.quote ? `<blockquote style="border-left: 4px solid #3b82f6; background: #f8fafc; padding: 14px 18px; margin: 15px 0; border-radius: 0 8px 8px 0; font-style: italic; color: #1e293b; text-align: left; font-size: 1rem; line-height: 1.6;">&ldquo;${lesson.primary_source.quote}&rdquo;</blockquote>` : ''}
+            ${
+              lesson.primary_source.citation
+                ? `
+              <div class="archival-citation-footer" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 10px; margin-top: 14px;">
+                <span><strong>Provenance:</strong> ${lesson.primary_source.citation}</span>
+                <span class="archival-seal" style="border: 1px solid #94a3b8; color: #475569; padding: 2px 6px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em;">ARCHIVE RECORD</span>
+              </div>
+            `
+                : ''
+            }
+            ${
+              lesson.primary_source.question
+                ? `
+              <div style="background: #eff6ff; border-left: 4px solid #1e40af; padding: 16px 20px; border-radius: 0 6px 6px 0; text-align: left; margin-top: 20px; box-shadow: 0 2px 5px rgba(30,58,138,0.05);">
+                <p style="margin-bottom: 0; font-size: 1.05rem; color: #1e3a8a; line-height: 1.5;"><strong>${lesson.primary_source.qNum ? `Q${lesson.primary_source.qNum}. ` : ''}${formatQuestion(lesson.primary_source.question, !lesson.primary_source.qNum)}</strong></p>
+              </div>
+            `
+                : ''
+            }
+          </div>
+        </div>
+      `;
+    } else {
+      htmlPrimary += `
         <div class="phase-card">
           <div class="source-card" style="background: #ffffff; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px; text-align: center;">
             ${
@@ -897,6 +1060,7 @@ export function renderLesson(lesson) {
           </div>
         </div>
       `;
+    }
   }
 
   if (lesson.starters && lesson.starters.length > 0) {

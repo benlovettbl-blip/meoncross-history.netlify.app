@@ -77,6 +77,20 @@ async function runSync() {
     return false;
   }
 
+  // Step 1c: GCSE Depth of Knowledge (DoK) Specification Linter
+  console.log(
+    `\n[Step 1c/5] 🎓 Auditing GCSE Depth of Knowledge (DoK) specification guardrails...`,
+  );
+  try {
+    execSync(`node scripts/lint_gcse_dok.cjs ${unitId}`, {
+      stdio: 'inherit',
+      cwd: ROOT_DIR,
+    });
+  } catch (err) {
+    console.error(`❌ Fatal: GCSE DoK specification linter failed for ${unitId}. Build aborted.`);
+    return false;
+  }
+
   // Step 2: Rebuild Global Database
   console.log(`\n[Step 2/5] 🗄️ Updating public/database.json for digital app...`);
   try {
