@@ -290,11 +290,11 @@ const water_and_sanitation = {
         },
         {
           question:
-            'Where did Roman soldiers sit side-by-side over water-flushed latrine channels?',
+            "Which Roman fort on Hadrian's Wall contains Britain's best-preserved communal latrine, with running water channels flushing waste into sewers?",
           options: [
-            'Silchester farming roundhouse village',
-            'Bearsden public bathing sequence',
-            'Vindolanda military barracks',
+            'Fishbourne Roman Palace',
+            'Bearsden Bathhouse on the Antonine Wall',
+            'Vindolanda Roman Fort',
             "Housesteads Fort on Hadrian's Wall",
           ],
           answer: 3,
@@ -2534,13 +2534,13 @@ const water_and_sanitation = {
       ],
     },
     {
-      q: 'Where did Roman soldiers sit side-by-side over water-flushed latrine channels?',
+      q: "Which Roman fort on Hadrian's Wall contains Britain's best-preserved communal latrine, with running water channels flushing waste into sewers?",
       a: "Housesteads Fort on Hadrian's Wall",
       options: [
-        'The Colosseum in Rome',
-        "Housesteads Fort on Hadrian's Wall",
         'Fishbourne Roman Palace',
-        'The Tower of London',
+        "Housesteads Fort on Hadrian's Wall",
+        'Bearsden Bathhouse on the Antonine Wall',
+        'Vindolanda Roman Fort',
       ],
     },
     {
