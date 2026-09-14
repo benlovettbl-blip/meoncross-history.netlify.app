@@ -476,7 +476,7 @@ export const unitData = {
       id: 'modern',
       title: 'Modern',
       prefix: 'lesson_4_',
-      image: '/units/edexcel_medicine/assets/authentic_modern.jpg',
+      image: '/images/nhs_established.jpg',
       enquiry:
         'How did technology and government intervention revolutionize 20th-century medicine?',
     },

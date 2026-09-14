@@ -43,6 +43,18 @@ async function runSync() {
     return false;
   }
 
+  // Step 0b: Image Integrity & No-AI Audit
+  console.log(`\n[Step 0b/5] 🖼️ Auditing image integrity & No-AI policy...`);
+  try {
+    execSync(`node scripts/verify_images.cjs`, {
+      stdio: 'inherit',
+      cwd: ROOT_DIR,
+    });
+  } catch (err) {
+    console.error(`❌ Fatal: Image verification failed. Build aborted.`);
+    return false;
+  }
+
   // Step 1: Validate Syntax
   console.log(`\n[Step 1/5] 🔍 Validating JavaScript syntax for ${unitId}/data.js...`);
   try {
@@ -81,6 +93,10 @@ async function runSync() {
   } else {
     console.log(`\n[Step 3/5] 📄 Compiling fresh HTML workbooks & PDFs with Puppeteer...`);
     try {
+      execSync(`node scripts/generate_textbooks.cjs ${unitId}`, {
+        stdio: 'inherit',
+        cwd: ROOT_DIR,
+      });
       execSync(`node scripts/generate_pupil_workbooks.cjs ${unitId}`, {
         stdio: 'inherit',
         cwd: ROOT_DIR,

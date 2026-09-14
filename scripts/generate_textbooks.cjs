@@ -74,16 +74,10 @@ if (targetUnit && allDirs.includes(targetUnit)) {
 
 allDirs.forEach((unitId) => {
   console.log(`Processing textbooks for unit: ${unitId}`);
-  let dataPath = path.join(publicUnitsDir, unitId, 'data.js');
-  if (
-    !fs.existsSync(dataPath) &&
-    (unitId === 'weimar_nazi_germany' ||
-      unitId === 'early_modern_world' ||
-      unitId === 'great_war_part2' ||
-      unitId === 'medieval_england')
-  ) {
-    dataPath = path.join(ROOT_DIR, 'units', unitId, 'data.js');
-  }
+  let canonicalPath = path.join(ROOT_DIR, 'units', unitId, 'data.js');
+  let dataPath = fs.existsSync(canonicalPath)
+    ? canonicalPath
+    : path.join(publicUnitsDir, unitId, 'data.js');
   if (!fs.existsSync(dataPath)) return;
 
   const dataContent = fs.readFileSync(dataPath, 'utf8');
