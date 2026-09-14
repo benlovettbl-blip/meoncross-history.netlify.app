@@ -1520,8 +1520,7 @@ allDirs.forEach((unitId) => {
         },
       };
 
-      const medicineCoverImgSrc =
-        heroImgSrc || medicinePanoMap[periodName] || medicinePanoMap.medieval;
+      const medicineCoverImgSrc = medicinePanoMap[periodName] || medicinePanoMap.medieval;
       const medicineEnquiry = medicineEnquiryMap[periodName] || medicineEnquiryMap.medieval;
       const medicineSpec = medicineSpecMap[periodName] || medicineSpecMap.medieval;
 

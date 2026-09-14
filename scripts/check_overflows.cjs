@@ -17,10 +17,30 @@ const puppeteer = require('puppeteer');
   } else {
     const defaultPath = path.join(__dirname, '..', 'public', 'units', arg, 'pupil_workbook.html');
     const kt1Path = path.join(__dirname, '..', 'public', 'units', arg, 'pupil_workbook_KT1.html');
-    if (!fs.existsSync(defaultPath) && fs.existsSync(kt1Path)) {
-      htmlPath = kt1Path;
-    } else {
+    const medPath = path.join(
+      __dirname,
+      '..',
+      'public',
+      'units',
+      arg,
+      'pupil_workbook_medieval.html',
+    );
+    if (fs.existsSync(defaultPath)) {
       htmlPath = defaultPath;
+    } else if (fs.existsSync(kt1Path)) {
+      htmlPath = kt1Path;
+    } else if (fs.existsSync(medPath)) {
+      htmlPath = medPath;
+    } else {
+      const unitFolder = path.join(__dirname, '..', 'public', 'units', arg);
+      if (fs.existsSync(unitFolder)) {
+        const found = fs
+          .readdirSync(unitFolder)
+          .find((f) => f.startsWith('pupil_workbook') && f.endsWith('.html'));
+        htmlPath = found ? path.join(unitFolder, found) : defaultPath;
+      } else {
+        htmlPath = defaultPath;
+      }
     }
   }
 
