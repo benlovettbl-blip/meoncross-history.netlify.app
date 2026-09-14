@@ -732,10 +732,8 @@ allDirs.forEach((unitId) => {
             html += `<strong style="font-size: 9.5pt;">Teacher Model / Historical Correction:</strong>`;
           }
         }
-        html += `</div>`;
+        html += `</div></div>`;
       }
-
-      html += `</div>`;
 
       html += `</div>`;
 

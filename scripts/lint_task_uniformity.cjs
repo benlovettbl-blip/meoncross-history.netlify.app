@@ -85,7 +85,13 @@ async function runLinter() {
     process.exit(0);
   }
 
-  const isFourActTarget = FOUR_ACT_UNITS.includes(unitId);
+  // For great_war, check if it has been migrated to 4-act architecture or is operating in active September print edition mode
+  const isGreatWarPrintEdition =
+    unitId === 'great_war' &&
+    !lessons.some(
+      (l) => l.acts || (l.narrative_blocks && l.narrative_blocks.some((b) => b.act !== undefined)),
+    );
+  const isFourActTarget = FOUR_ACT_UNITS.includes(unitId) && !isGreatWarPrintEdition;
   const errors = [];
   const warnings = [];
 
@@ -93,8 +99,13 @@ async function runLinter() {
     const lessonNum = lIdx + 1;
     const lTitle = lesson.title || `Lesson ${lessonNum}`;
 
-    // 1. Check for rogue source.question in sources array (prohibited across ALL units except deliberate GCSE Paper 2 cme_new)
-    if (lesson.sources && Array.isArray(lesson.sources) && unitId !== 'cme_new') {
+    // 1. Check for rogue source.question in sources array (prohibited across ALL units except deliberate GCSE Paper 2 cme_new and legacy great_war print edition)
+    if (
+      lesson.sources &&
+      Array.isArray(lesson.sources) &&
+      unitId !== 'cme_new' &&
+      !isGreatWarPrintEdition
+    ) {
       lesson.sources.forEach((src, sIdx) => {
         if (src && src.question) {
           errors.push(

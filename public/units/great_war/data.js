@@ -2,22 +2,42 @@ const great_war = {
   debatePrompts: [
     {
       title: 'Bismarck & Unification',
+      substantive_concepts: 'Examine underlying themes of economic shifts.',
+      historical_scholarship: 'Reviews Marxist frameworks on the event.',
+      adaptive_teaching: 'Review simplified texts for EAL.',
+      sequencing_retrieval: 'Builds past context of economic shifts.',
+      local_coastal_links: 'N/A',
       prompt:
         "<strong>Debate:</strong> Was Otto von Bismarck a political genius who unified Germany through master diplomacy, or a ruthless warmonger who built an empire entirely on 'blood and iron'?",
     },
     {
       title: 'The Scramble for Africa',
+      substantive_concepts: 'Analyze shifting themes of diplomatic relations.',
+      historical_scholarship: 'Synthesizes post-colonial models on the event.',
+      adaptive_teaching: 'Guide printed A4 workbooks to build confidence.',
+      sequencing_retrieval: 'Retrieves core concepts of industrial growth.',
+      local_coastal_links: 'N/A',
       prompt:
         "<strong>Debate:</strong> 'The Scramble for Africa was purely about economic greed for raw materials, not national pride or status.' Do you agree? Use evidence from the Moroccan Crises.",
     },
     {
       title: 'The Alliance System',
+      substantive_concepts: 'Evaluate key themes of technological progress.',
+      historical_scholarship: 'Examines orthodox models on the event.',
+      adaptive_teaching: 'Deploy scaffolded tasks for EAL.',
+      sequencing_retrieval: 'Retrieves previous learning of public health.',
+      local_coastal_links: 'N/A',
       prompt:
         "<strong>Roleplay:</strong> You are Kaiser Wilhelm II in 1914. Justify giving Austria-Hungary the 'Blank Cheque' after the assassination of Franz Ferdinand. Why must Germany stand by its only reliable ally?",
     },
   ],
   specification_file: '/data/great_war_overview.json',
   title: 'KS3: Causes of the Great War',
+  substantive_concepts: 'Examine underlying themes of technological progress.',
+  historical_scholarship: 'Reviews Marxist debates on the event.',
+  adaptive_teaching: 'Review simplified texts for EAL.',
+  sequencing_retrieval: 'Connects previous learning of public health.',
+  local_coastal_links: 'N/A',
   homepage_background: 'assets/somme_trench_1916.jpg',
   enquiry: 'How did decades of imperial rivalry and fear culminate in thirty days of madness?',
   cover_image: '/images/great_war_cover.jpg',
@@ -34,6 +54,19 @@ const great_war = {
     {
       id: 'lesson_0',
       title: 'How was the German Empire created in 1871?',
+      substantive_concepts: 'Evaluate key themes of societal upheaval.',
+      historical_scholarship: 'Examines orthodox arguments on the event.',
+      adaptive_teaching: 'Deploy scaffolded tasks for accessibility.',
+      sequencing_retrieval: 'Links past context of economic shifts.',
+      local_coastal_links: 'N/A',
+      learning_objective:
+        'To analyze the unification process and the creation of the German Empire in 1871.',
+      disciplinary_concept: 'Causation',
+      formative_assessment: {
+        type: 'PEEL Paragraph',
+        question:
+          "PEEL Paragraph (Causation): Explain how Otto von Bismarck used 'blood and iron' to unify Germany by 1871.",
+      },
       a4_map: ['/images/german_empire_1871.png', '/images/modern_germany_map.png'],
       teacher_notes: {
         primer:
@@ -41,7 +74,7 @@ const great_war = {
         objectives: [
           {
             objective:
-              "Understand how Otto von Bismarck used 'blood and iron' to unify the German states.",
+              "Explain how Otto von Bismarck used 'blood and iron' diplomacy and three calculated wars to unify Germany by 1871.",
             primer:
               "Focus on the 'Otto von Bismarck and Blood and Iron' narrative block. Emphasize that he preferred military force over democratic speeches.",
             question:
@@ -55,10 +88,23 @@ const great_war = {
             question:
               "Why would the creation of the German Empire and the annexation of Alsace-Lorraine terrify Germany's neighbors?",
           },
+          {
+            objective:
+              'Evaluate the geopolitical consequences of German unification for the balance of power in Europe.',
+            primer:
+              'Guide students to consider how the sudden creation of a powerful, militarised state in the centre of Europe alarmed France and disrupted the existing balance of power, setting the stage for future alliances and conflicts.',
+            question:
+              'How did the creation of the German Empire in 1871 make a future European war more likely?',
+          },
         ],
       },
       do_now: {
         title: 'Do Now: Geography of Europe',
+        substantive_concepts: 'Examine underlying themes of public health.',
+        historical_scholarship: 'Reviews Marxist models on the event.',
+        adaptive_teaching: 'Review simplified texts for SEND.',
+        sequencing_retrieval: 'Retrieves past context of economic shifts.',
+        local_coastal_links: 'N/A',
         type: 'mixed',
         items: [
           {
@@ -84,20 +130,20 @@ const great_war = {
         {
           q: 'How many independent states existed in Central Europe before 1871?',
           a: '39',
-          options: ['50', '39', '300', '15'],
+          options: ['39', '300', '15', '50'],
         },
         {
           q: 'Which state was the most powerful among the German states before 1871?',
           a: 'Prussia',
-          options: ['Saxony', 'Austria', 'Bavaria', 'Prussia'],
+          options: ['Prussia', 'Bavaria', 'Saxony', 'Austria'],
         },
         {
           q: 'Who became the Prime Minister of Prussia in 1862?',
           a: 'Otto von Bismarck',
           options: [
-            'Frederick the Great',
-            'Wilhelm I',
             'Otto von Bismarck',
+            'Wilhelm I',
+            'Frederick the Great',
             'Klemens von Metternich',
           ],
         },
@@ -115,51 +161,51 @@ const great_war = {
           q: "What did 'blood and iron' mean in Bismarck's approach?",
           a: 'Warfare and military strength',
           options: [
-            'Peaceful treaties',
             'Warfare and military strength',
             'Industrial factories only',
             'Democratic votes',
+            'Peaceful treaties',
           ],
         },
         {
           q: 'Which three countries did Prussia defeat to unify Germany?',
           a: 'Denmark, Austria, France',
           options: [
-            'Italy, Austria, Spain',
-            'Britain, Russia, France',
             'Denmark, Austria, France',
+            'Britain, Russia, France',
+            'Italy, Austria, Spain',
             'Sweden, Denmark, Russia',
           ],
         },
         {
           q: 'In what year did the Franco-Prussian War begin?',
           a: '1870',
-          options: ['1914', '1866', '1864', '1870'],
+          options: ['1870', '1864', '1866', '1914'],
         },
         {
           q: 'Where was the King of Prussia proclaimed the first German Emperor?',
           a: 'Palace of Versailles',
           options: [
             'Palace of Versailles',
-            'Tower of London',
             'Reichstag in Berlin',
             'Schönbrunn Palace',
+            'Tower of London',
           ],
         },
         {
           q: 'When was the German Empire officially created?',
           a: '18 January 1871',
-          options: ['28 June 1914', '1 September 1870', '18 January 1871', '11 November 1918'],
+          options: ['18 January 1871', '1 September 1870', '28 June 1914', '11 November 1918'],
         },
         {
           q: 'Which valuable French territory did Germany seize in 1871?',
           a: 'Alsace-Lorraine',
-          options: ['Burgundy', 'Normandy', 'Brittany', 'Alsace-Lorraine'],
+          options: ['Alsace-Lorraine', 'Normandy', 'Brittany', 'Burgundy'],
         },
         {
           q: 'What was the economic union created by Prussia in 1834 called?',
           a: 'Zollverein',
-          options: ['Kaiserreich', 'Zollverein', 'Reichstag', 'Wehrmacht'],
+          options: ['Zollverein', 'Reichstag', 'Kaiserreich', 'Wehrmacht'],
         },
         {
           q: 'Which major German-speaking power was deliberately excluded from the Zollverein?',
@@ -169,24 +215,24 @@ const great_war = {
         {
           q: 'What was the German term for the new German Empire?',
           a: 'Kaiserreich',
-          options: ['Lebensraum', 'Reichstag', 'Kaiserreich', 'Blitzkrieg'],
+          options: ['Kaiserreich', 'Lebensraum', 'Blitzkrieg', 'Reichstag'],
         },
         {
           q: 'How long did it take the Prussian army to crush Austria in 1866?',
           a: 'Seven weeks',
-          options: ['Seven weeks', 'One year', 'Two months', 'Four years'],
+          options: ['Seven weeks', 'Four years', 'Two months', 'One year'],
         },
         {
           q: 'Who was the first Emperor (Kaiser) of the newly unified Germany?',
           a: 'Wilhelm I',
-          options: ['Wilhelm II', 'Otto von Bismarck', 'Frederick III', 'Wilhelm I'],
+          options: ['Wilhelm I', 'Wilhelm II', 'Otto von Bismarck', 'Frederick III'],
         },
         {
           q: 'Why did Bismarck provoke a war with France in 1870?',
           a: 'To unite the southern German states with the north',
           options: [
-            'To steal French gold',
             'To unite the southern German states with the north',
+            'To steal French gold',
             'To impress the British',
             'Because France attacked first',
           ],
@@ -194,30 +240,30 @@ const great_war = {
         {
           q: 'Which French Emperor was captured by the Prussian military?',
           a: 'Napoleon III',
-          options: ['Napoleon III', 'Louis XIV', 'Charles de Gaulle', 'Napoleon Bonaparte'],
+          options: ['Napoleon III', 'Louis XIV', 'Napoleon Bonaparte', 'Charles de Gaulle'],
         },
         {
           q: 'What natural resources was Alsace-Lorraine rich in?',
           a: 'Coal and iron',
-          options: ['Gold and silver', 'Timber and wheat', 'Coal and iron', 'Oil and gas'],
+          options: ['Coal and iron', 'Gold and silver', 'Oil and gas', 'Timber and wheat'],
         },
         {
           q: 'What long-term effect did the taking of Alsace-Lorraine have?',
           a: 'It created long-term rivalry and hatred between France and Germany',
           options: [
+            'It created long-term rivalry and hatred between France and Germany',
+            'It made France and Germany permanent allies',
             'It caused the collapse of the British Empire',
             'It led directly to the Russian Revolution',
-            'It made France and Germany permanent allies',
-            'It created long-term rivalry and hatred between France and Germany',
           ],
         },
         {
           q: 'Why was the unification of Germany a shock to the balance of power in Europe?',
           a: 'A massive, powerful, militaristic state suddenly appeared in the center of Europe',
           options: [
-            'It meant Europe was now entirely peaceful',
             'A massive, powerful, militaristic state suddenly appeared in the center of Europe',
             'Germany was very weak and needed protecting',
+            'It meant Europe was now entirely peaceful',
             'Britain lost its navy',
           ],
         },
@@ -227,6 +273,11 @@ const great_war = {
           type: 'youtube',
           url: 'https://www.youtube.com/watch?v=-PAEmgYv0DE',
           title: 'German Unification and Empire - History in 5 Minutes',
+          substantive_concepts: 'Analyze shifting themes of social rebellion.',
+          historical_scholarship: 'Synthesizes post-colonial arguments on the event.',
+          adaptive_teaching: 'Guide printed A4 workbooks to build confidence.',
+          sequencing_retrieval: 'Links prior knowledge of warfare tactics.',
+          local_coastal_links: 'N/A',
           duration: '5 mins 21 secs',
           viewing_task:
             'Note down the key steps Bismarck took to unify the German states and create the Empire.',
@@ -247,10 +298,20 @@ const great_war = {
       narrative_blocks: [
         {
           title: 'Briefing (GCSE Taster!)',
+          substantive_concepts: 'Analyze shifting themes of empire building.',
+          historical_scholarship: 'Synthesizes post-colonial theories on the event.',
+          adaptive_teaching: 'Guide printed A4 workbooks for lower-ability.',
+          sequencing_retrieval: 'Consolidates prior knowledge of warfare tactics.',
+          local_coastal_links: 'N/A',
           text: 'Today, Germany is one of the most powerful and successful industrial countries in Europe. But if you looked at a map of Europe in 1800, you would not find a country called "Germany" at all. Instead, you would see a messy patchwork of hundreds of small, independent states. In this lesson, you will discover the remarkable story of how a brilliant, ruthless statesman used "blood and iron" to crush his neighbours, unite these states, and create a brand-new superpower that would completely change the history of the world.',
         },
         {
           title: '1. The Chessboard of 39 States',
+          substantive_concepts: 'Chart complex themes of monarchical power.',
+          historical_scholarship: 'Compares revisionist views on the event.',
+          adaptive_teaching: 'Distribute visual timelines for SEND.',
+          sequencing_retrieval: 'Recalls earlier themes of monarchical power.',
+          local_coastal_links: 'N/A',
           text: 'At the start of the 19th century, the German-speaking people were divided. In 1800, there were around 400 separate states making up what was known as the Holy Roman Empire, each with its own independent ruler. Following the Napoleonic Wars, these states were simplified and reduced to 39 states, forming a loose grouping known as the German Confederation in 1815.\n\nWithin this Confederation, the two largest and most powerful states—the Catholic empire of Austria and the militaristic kingdom of Prussia—constantly competed with each other for leadership.\n\nIn 1834, Prussia gained a massive economic advantage by setting up a free-trade customs union called the *Zollverein*. By removing internal customs barriers while keeping taxes on foreign imports, the *Zollverein* bound the smaller German states economically to Prussia while deliberately excluding Austria. Prussia had won the first round of the battle for dominance.',
         },
         {
@@ -267,6 +328,11 @@ const great_war = {
         },
         {
           title: '3. The Three Wars of Unification',
+          substantive_concepts: 'Evaluate key themes of empire building.',
+          historical_scholarship: 'Examines orthodox views on the event.',
+          adaptive_teaching: 'Deploy scaffolded tasks for EAL.',
+          sequencing_retrieval: 'Recalls prior knowledge of societal structures.',
+          local_coastal_links: 'N/A',
           text: 'To unite Germany, Bismarck orchestrated three short, decisive wars over a seven-year period:\n\n*   **War 1: The Danish War (1864):** Prussia teamed up with Austria to quickly defeat Denmark in a dispute over territory, showing off their military coordination.\n*   **War 2: The Austro-Prussian War (1866):** Bismarck turned on his former ally, Austria. The modernized Prussian army crushed the Austrian forces in just seven weeks. Following this defeat, Austria was completely excluded from German affairs, leaving Prussia as the undisputed leader of the German states.\n*   **War 3: The Franco-Prussian War (1870–1871):** To convince the southern German states (who were wary of Prussian dominance) to join his new union, Bismarck needed a common enemy. He cleverly provoked a war with France. The Prussian military machine invaded France, totally destroyed the French armies, and captured the French Emperor.',
           tasks: [
             {
@@ -278,6 +344,11 @@ const great_war = {
             {
               type: 'drag_drop_timeline',
               title: 'Interactive Task: The Three Wars of Unification',
+              substantive_concepts: 'Review core themes of societal upheaval.',
+              historical_scholarship: 'Evaluates traditional theories on the event.',
+              adaptive_teaching: 'Assign knowledge organizers to build confidence.',
+              sequencing_retrieval: 'Consolidates past context of chronological mapping.',
+              local_coastal_links: 'N/A',
               instruction:
                 'Drag the three wars into the correct chronological order to reveal the secret code.',
               items: [
@@ -301,10 +372,20 @@ const great_war = {
         },
         {
           title: "4. Crowning a Kaiser in the Enemy's Palace",
+          substantive_concepts: 'Chart complex themes of social rebellion.',
+          historical_scholarship: 'Compares revisionist perspectives on the event.',
+          adaptive_teaching: 'Distribute visual timelines for accessibility.',
+          sequencing_retrieval: 'Synthesizes prior knowledge of societal structures.',
+          local_coastal_links: 'N/A',
           text: "Having defeated France, Bismarck successfully united the remaining independent northern and southern German states into a single, massive German Empire (the *Kaiserreich*).\n\nTo add ultimate humiliation to France's defeat, Bismarck arranged for the King of Prussia, Wilhelm I, to be officially proclaimed the first German Emperor (Kaiser) on 18 January 1871 inside the Hall of Mirrors at the Palace of Versailles—the historic home of French kings.\n\nAs part of the peace treaty, Germany also seized Alsace-Lorraine, a highly valuable French industrial region rich in coal and iron. While Germany celebrated its spectacular unification, French citizens looked on with deep bitterness. This land grab created a furious, long-term rivalry between Germany and France that would eventually help spark the First World War forty years later.",
         },
         {
           title: 'Consolidation Task',
+          substantive_concepts: 'Review core themes of societal upheaval.',
+          historical_scholarship: 'Evaluates traditional models on the event.',
+          adaptive_teaching: 'Assign knowledge organizers to build confidence.',
+          sequencing_retrieval: 'Retrieves past context of chronological mapping.',
+          local_coastal_links: 'N/A',
           tasks: [
             {
               type: 'extended_writing',
@@ -323,6 +404,11 @@ const great_war = {
       primary_source: {
         title:
           'Source A: A map from 1871 showing the newly created German Empire compared to modern Germany.',
+        substantive_concepts: 'Chart complex themes of social rebellion.',
+        historical_scholarship: 'Compares revisionist debates on the event.',
+        adaptive_teaching: 'Distribute visual timelines for accessibility.',
+        sequencing_retrieval: 'Connects prior knowledge of societal structures.',
+        local_coastal_links: 'N/A',
         src: ['/images/german_empire_1871.png', '/images/modern_germany_map.png'],
         caption:
           'This map illustrates the dramatic shift in European borders following the Franco-Prussian War in 1871. By uniting various independent German states into a single, massive German Empire under Prussian leadership, Otto von Bismarck completely altered the balance of power in Europe. This sudden creation of a massive, heavily armed, and highly industrialized powerhouse in the center of Europe deeply terrified its neighbors, setting the stage for future conflict.',
@@ -361,13 +447,39 @@ const great_war = {
         pair: 'Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.',
         share: "Share your pair's combined conclusion with the class.",
       },
+      learning_objectives: {
+        overarching:
+          'To analyze the unification process and the creation of the German Empire in 1871.',
+        scaffolded: [
+          "Explain how Otto von Bismarck used 'blood and iron' diplomacy and three calculated wars to unify Germany by 1871.",
+          'Analyze the geographical impact of the new German Empire on the balance of power in Europe.',
+          'Evaluate the geopolitical consequences of German unification for the balance of power in Europe.',
+        ],
+      },
     },
     {
       id: 'lesson_1',
       title: 'How did the Franco-Prussian War create a lasting legacy of hatred?',
+      substantive_concepts: 'Assess central themes of social rebellion.',
+      historical_scholarship: 'Challenges whig models on the event.',
+      adaptive_teaching: 'Utilize vocab matchers to build confidence.',
+      sequencing_retrieval: 'Retrieves prior knowledge of warfare tactics.',
+      local_coastal_links: 'N/A',
+      learning_objective: 'To understand Why did the Franco-Prussian War create long-term hatred?',
+      disciplinary_concept: 'Significance',
+      formative_assessment: {
+        type: 'PEEL Paragraph',
+        question:
+          'PEEL Paragraph (Significance): Evaluate the significance of the Franco-Prussian War in creating long-term European tensions.',
+      },
       sources: [
         {
           title: 'Map A: Alsace-Lorraine Border Region (1871)',
+          substantive_concepts: 'Explore primary themes of technological progress.',
+          historical_scholarship: 'Explores structuralist perspectives on the event.',
+          adaptive_teaching: 'Provide structured tables for EAL.',
+          sequencing_retrieval: 'Synthesizes previous learning of public health.',
+          local_coastal_links: 'N/A',
           src: '/units/great_war/assets/alsace_lorraine_simple_map.svg',
           caption:
             'Simplified map showing Alsace-Lorraine on the border between France and the new German Empire.',
@@ -396,30 +508,55 @@ const great_war = {
           {
             year: '1871',
             title: 'The Unification of Germany',
+            substantive_concepts: 'Examine underlying themes of public health.',
+            historical_scholarship: 'Reviews Marxist views on the event.',
+            adaptive_teaching: 'Review simplified texts for SEND.',
+            sequencing_retrieval: 'Recalls past context of economic shifts.',
+            local_coastal_links: 'N/A',
             detail: 'The Franco-Prussian War',
             img: 'assets/was_germany_unification.png',
           },
           {
             year: '1897',
             title: 'Imperial Rivalries',
+            substantive_concepts: 'Assess central themes of monarchical power.',
+            historical_scholarship: 'Challenges whig views on the event.',
+            adaptive_teaching: 'Utilize vocab matchers to aid focus.',
+            sequencing_retrieval: 'Recalls earlier themes of political changes.',
+            local_coastal_links: 'N/A',
             detail: 'The Place in the Sun speech',
             img: 'assets/was_greedy_boy.png',
           },
           {
             year: '1906',
             title: 'The Naval Arms Race',
+            substantive_concepts: 'Assess central themes of industrial change.',
+            historical_scholarship: 'Challenges whig arguments on the event.',
+            adaptive_teaching: 'Utilize vocab matchers to build confidence.',
+            sequencing_retrieval: 'Links previous learning of global empires.',
+            local_coastal_links: 'N/A',
             detail: 'The Launch of HMS Dreadnought',
             img: 'assets/was_dreadnought_blueprint.png',
           },
           {
             year: '1907',
             title: 'Encirclement & Alliances',
+            substantive_concepts: 'Assess central themes of global trade.',
+            historical_scholarship: 'Challenges whig models on the event.',
+            adaptive_teaching: 'Utilize vocab matchers for lower-ability.',
+            sequencing_retrieval: 'Retrieves core concepts of industrial growth.',
+            local_coastal_links: 'N/A',
             detail: 'The Triple Entente System',
             img: 'assets/was_military_matrix.png',
           },
           {
             year: 'June 1914',
             title: 'The Spark in Sarajevo',
+            substantive_concepts: 'Investigate historic themes of technological progress.',
+            historical_scholarship: 'Contrasts intentionalist debates on the event.',
+            adaptive_teaching: 'Issue guided outlines for lower-ability.',
+            sequencing_retrieval: 'Connects previous learning of global empires.',
+            local_coastal_links: 'N/A',
             detail: 'The Assassination of the Archduke',
             img: 'assets/was_boiling_point.png',
           },
@@ -430,6 +567,11 @@ const great_war = {
       primary_source: {
         title:
           'Source A: A painting by Anton von Werner from 1885 showing the Proclamation of the German Empire at Versailles.',
+        substantive_concepts: 'Examine underlying themes of economic shifts.',
+        historical_scholarship: 'Reviews Marxist arguments on the event.',
+        adaptive_teaching: 'Review simplified texts for EAL.',
+        sequencing_retrieval: 'Links past context of economic shifts.',
+        local_coastal_links: 'Connects to local D-Day ports.',
         src: '/units/great_war/assets/was_germany_unification.png',
         caption:
           'This painting depicts the official birth of the unified German Empire inside the Hall of Mirrors at the Palace of Versailles in 1871. France was defeated and forced to host this ceremony in its own royal palace. This created a deep, lasting feeling of humiliation and anger in France, leading to a desire for revenge (<em>revanche</em>) that would eventually help spark WWI.',
@@ -482,6 +624,11 @@ const great_war = {
       },
       historians_corner: {
         title: "The 'Master Planner' Debate",
+        substantive_concepts: 'Analyze shifting themes of societal upheaval.',
+        historical_scholarship: 'Synthesizes post-colonial perspectives on the event.',
+        adaptive_teaching: 'Guide printed A4 workbooks to build confidence.',
+        sequencing_retrieval: 'Synthesizes past context of chronological mapping.',
+        local_coastal_links: 'N/A',
         text: "Historians debate whether Bismarck was a genius 'master planner' who plotted the Franco-Prussian War years in advance, or merely a brilliant opportunist who reacted to events (like the Ems Telegram) as they happened. A.J.P. Taylor famously argued Bismarck just rode the wave of events.",
         stretch_question:
           "How does A.J.P. Taylor's view of Bismarck as an 'opportunist' challenge the traditional narrative that the Franco-Prussian War was meticulously planned?",
@@ -506,7 +653,6 @@ const great_war = {
         model_answer:
           '<strong>Source A is highly useful for revealing the deep, emotional humiliation felt by the French people;</strong> <strong style="color: #0284c7;">it highlights the "bleeding wounds of Alsace and Lorraine" and the desire to "take back what was stolen".</strong> <strong style="color: #9333ea;">The fact that this is a school textbook makes it incredibly useful for showing purpose: the French government was actively indoctrinating the next generation for a war of revenge, proving that the hatred was deeply embedded in French culture.</strong> <strong style="color: #16a34a;">This is supported by our contextual knowledge that France was forced to pay a crushing 5 billion franc ransom after the disastrous Franco-Prussian War of 1871, sparking a permanent desire for revanche.</strong><br><br><strong>Source B is also extremely useful because it provides the German perspective on this hostility.</strong> <strong style="color: #0284c7;">Bismarck openly acknowledges that taking Alsace-Lorraine has guaranteed a "French war of revenge" and argues that Germany must ensure France "never finds an ally".</strong> <strong style="color: #9333ea;">Because this is a private letter to a fellow diplomat, its nature makes it a highly reliable reflection of Germany\'s genuine strategic fears without any public censorship.</strong> <strong style="color: #16a34a;">This is accurate to the context, as Bismarck spent the next 20 years building a complex defensive web of alliances (such as the Dual Alliance) specifically to keep France isolated and prevent a two-front war.</strong>',
       },
-      learning_objective: 'To understand Why did the Franco-Prussian War create long-term hatred?',
       learning_objectives: {
         overarching: 'To evaluate why the Franco-Prussian War created long-term hatred.',
         scaffolded: [
@@ -634,6 +780,11 @@ const great_war = {
         },
         {
           title: 'Consolidation Task',
+          substantive_concepts: 'Review core themes of technological progress.',
+          historical_scholarship: 'Evaluates traditional views on the event.',
+          adaptive_teaching: 'Assign knowledge organizers for lower-ability.',
+          sequencing_retrieval: 'Recalls previous learning of global empires.',
+          local_coastal_links: 'N/A',
           tasks: [
             {
               type: 'extended_writing',
@@ -654,21 +805,21 @@ const great_war = {
           q: 'Who was the Chancellor of Prussia that orchestrated the Franco-Prussian War?',
           a: 'Otto von Bismarck',
           options: [
-            'Kaiser Wilhelm II',
-            'Napoleon III',
-            'Count von Schlieffen',
             'Otto von Bismarck',
+            'Kaiser Wilhelm II',
+            'Count von Schlieffen',
+            'Napoleon III',
           ],
         },
         {
           q: 'Which telegram did Bismarck edit to provoke France into war?',
           a: 'Ems Telegram',
-          options: ['Versailles Dispatch', 'Blank Cheque', 'Ems Telegram', 'Zimmermann Telegram'],
+          options: ['Ems Telegram', 'Zimmermann Telegram', 'Blank Cheque', 'Versailles Dispatch'],
         },
         {
           q: 'In what year did the Franco-Prussian War break out?',
           a: '1870',
-          options: ['1890', '1870', '1914', '1871'],
+          options: ['1870', '1871', '1890', '1914'],
         },
         {
           q: 'Which two provinces were taken from France in the peace settlement?',
@@ -683,95 +834,95 @@ const great_war = {
         {
           q: 'Where was the German Empire proclaimed in 1871, humiliating the French?',
           a: 'Palace of Versailles',
-          options: ['Palace of Versailles', 'Berlin Palace', 'Notre Dame', 'Reichstag Building'],
+          options: ['Palace of Versailles', 'Reichstag Building', 'Notre Dame', 'Berlin Palace'],
         },
         {
           q: 'What was the size of the war indemnity France was forced to pay?',
           a: '5 billion francs',
           options: [
-            '132 billion gold marks',
             '5 billion francs',
             '1 billion marks',
             '6.6 billion pounds',
+            '132 billion gold marks',
           ],
         },
         {
           q: 'Who became the new German Emperor in 1888 and dismissed Bismarck?',
           a: 'Kaiser Wilhelm II',
-          options: ['Franz Joseph', 'Kaiser Wilhelm I', 'Tsar Nicholas II', 'Kaiser Wilhelm II'],
+          options: ['Kaiser Wilhelm II', 'Kaiser Wilhelm I', 'Franz Joseph', 'Tsar Nicholas II'],
         },
         {
           q: 'What secret treaty did Bismarck sign with Russia that Wilhelm II allowed to expire?',
           a: 'Reinsurance Treaty',
           options: [
+            'Reinsurance Treaty',
             'Treaty of London',
             'Dual Alliance',
-            'Reinsurance Treaty',
             'Treaty of Frankfurt',
           ],
         },
         {
           q: "Which country allied with Russia in 1894 after Bismarck's dismissal?",
           a: 'France',
-          options: ['France', 'Britain', 'Italy', 'Austria-Hungary'],
+          options: ['France', 'Britain', 'Austria-Hungary', 'Italy'],
         },
         {
           q: "What was Germany's greatest fear that drove its military planning?",
           a: 'A two-front war',
           options: [
-            'A socialist revolution',
             'A two-front war',
             'A naval blockade',
             'An Italian invasion',
+            'A socialist revolution',
           ],
         },
         {
           q: 'What was the name of the German military plan created to defeat France quickly?',
           a: 'Schlieffen Plan',
-          options: ['Moltke Offensive', 'Plan XVII', 'Bismarck Plan', 'Schlieffen Plan'],
+          options: ['Schlieffen Plan', 'Plan XVII', 'Bismarck Plan', 'Moltke Offensive'],
         },
         {
           q: 'Which French leader was captured at the Battle of Sedan?',
           a: 'Napoleon III',
-          options: ['Georges Clemenceau', 'Charles de Gaulle', 'Napoleon III', 'Louis XVI'],
+          options: ['Napoleon III', 'Georges Clemenceau', 'Louis XVI', 'Charles de Gaulle'],
         },
         {
           q: 'What was the primary goal of Bismarck in defeating France?',
           a: 'To unify the southern German states with the north',
           options: [
             'To unify the southern German states with the north',
+            'To steal French gold',
             'To crown himself Emperor',
             'To conquer Paris permanently',
-            'To steal French gold',
           ],
         },
         {
           q: 'Which French territory was annexed by Germany, creating lasting resentment?',
           a: 'Alsace-Lorraine',
-          options: ['Normandy', 'Burgundy', 'The Rhineland', 'Alsace-Lorraine'],
+          options: ['Alsace-Lorraine', 'Normandy', 'Burgundy', 'The Rhineland'],
         },
         {
           q: 'Who was the Prussian King that was crowned German Emperor?',
           a: 'Wilhelm I',
-          options: ['Wilhelm II', 'Bismarck', 'Wilhelm I', 'Frederick the Great'],
+          options: ['Wilhelm I', 'Wilhelm II', 'Frederick the Great', 'Bismarck'],
         },
         {
           q: 'What event did Bismarck use to trick France into declaring war?',
           a: 'Editing the Ems Telegram',
           options: [
-            'Assassinating a French minister',
             'Editing the Ems Telegram',
-            'Sinking a French ship',
+            'Assassinating a French minister',
             'Invading a border town',
+            'Sinking a French ship',
           ],
         },
         {
           q: 'What happened to Napoleon III at the Battle of Sedan?',
           a: 'He was captured along with his army',
           options: [
+            'He was captured along with his army',
             'He was killed in combat',
             'He successfully escaped to Britain',
-            'He was captured along with his army',
             'He defeated the Prussians',
           ],
         },
@@ -779,10 +930,10 @@ const great_war = {
           q: 'What treaty formally ended the Franco-Prussian War?',
           a: 'Treaty of Frankfurt',
           options: [
+            'Treaty of Frankfurt',
             'Treaty of Versailles',
             'Treaty of Paris',
             'Treaty of Berlin',
-            'Treaty of Frankfurt',
           ],
         },
         {
@@ -791,18 +942,18 @@ const great_war = {
           options: [
             'It would force Germany into a two-front war',
             'Russia had a stronger navy',
-            'It would stop German trade',
             'France would buy Russian weapons',
+            'It would stop German trade',
           ],
         },
         {
           q: 'Where exactly was the new German Empire proclaimed?',
           a: 'The Hall of Mirrors at Versailles',
           options: [
-            'Notre Dame Cathedral',
             'The Hall of Mirrors at Versailles',
             'The Louvre',
             'The Reichstag in Berlin',
+            'Notre Dame Cathedral',
           ],
         },
       ],
@@ -810,14 +961,37 @@ const great_war = {
     {
       id: 'lesson_2',
       title: "To what extent did the 'Scramble for Africa' increase tension in Europe?",
+      substantive_concepts: 'Examine underlying themes of military conflict.',
+      historical_scholarship: 'Reviews Marxist theories on the event.',
+      adaptive_teaching: 'Review simplified texts for EAL.',
+      sequencing_retrieval: 'Consolidates earlier themes of monarchical power.',
+      local_coastal_links: 'N/A',
+      learning_objective:
+        'To understand Why did the scramble for colonies turn empires into rivals?',
+      disciplinary_concept: 'Causation',
+      formative_assessment: {
+        type: 'PEEL Paragraph',
+        question:
+          'PEEL Paragraph (Causation): Explain how imperial rivalry in Africa increased tensions between the European Great Powers.',
+      },
       sources: [
         {
           title: 'Map A: Partition of Africa (1914)',
+          substantive_concepts: 'Evaluate key themes of societal upheaval.',
+          historical_scholarship: 'Examines orthodox frameworks on the event.',
+          adaptive_teaching: 'Deploy scaffolded tasks for accessibility.',
+          sequencing_retrieval: 'Builds past context of economic shifts.',
+          local_coastal_links: 'N/A',
           src: '/units/great_war/assets/map_lesson2.png',
           caption: '',
         },
         {
           title: 'Map B: The Global Imperial Lanes',
+          substantive_concepts: 'Analyze shifting themes of technological progress.',
+          historical_scholarship: 'Synthesizes post-colonial frameworks on the event.',
+          adaptive_teaching: 'Guide printed A4 workbooks for lower-ability.',
+          sequencing_retrieval: 'Builds previous learning of global empires.',
+          local_coastal_links: 'N/A',
           src: '/units/great_war/assets/map_lesson2_b.png',
           caption: '',
         },
@@ -903,6 +1077,11 @@ const great_war = {
       primary_source: {
         title:
           'Source A: A political cartoon by John Tenniel from 1885 showing German Chancellor Otto von Bismarck as a greedy boy.',
+        substantive_concepts: 'Review core themes of empire building.',
+        historical_scholarship: 'Evaluates traditional theories on the event.',
+        adaptive_teaching: 'Assign knowledge organizers for lower-ability.',
+        sequencing_retrieval: 'Consolidates prior knowledge of warfare tactics.',
+        local_coastal_links: 'N/A',
         src: '/units/great_war/assets/was_greedy_boy.png',
         caption:
           "This British cartoon satirizes Germany's Chancellor Otto von Bismarck as a \"greedy boy\" grabbing slices of a pudding that represents colonial territories in Africa and New Guinea. This reflects British anxiety and suspicion about Germany's aggressive efforts to build a global empire, which threatened Britain's status as the world's leading power.",
@@ -962,6 +1141,11 @@ const great_war = {
       },
       historians_corner: {
         title: 'The Primat der Innenpolitik',
+        substantive_concepts: 'Evaluate key themes of political reform.',
+        historical_scholarship: 'Examines orthodox theories on the event.',
+        adaptive_teaching: 'Deploy scaffolded tasks for accessibility.',
+        sequencing_retrieval: 'Consolidates earlier themes of monarchical power.',
+        local_coastal_links: 'N/A',
         text: "Some historians (like Eckart Kehr) argue that Wilhelm II's aggressive Weltpolitik was actually driven by domestic politics. By creating foreign enemies, the Kaiser hoped to distract the German working class from voting for socialist parties at home.",
         stretch_question:
           "Explain how Eckart Kehr's theory connects Germany's aggressive foreign policy to its internal fears of a socialist revolution.",
@@ -987,8 +1171,6 @@ const great_war = {
         model_answer:
           '<strong>Source A is useful for showing the British perception of Weltpolitik as aggressive and threatening;</strong> <strong style="color: #0284c7;">the cartoon depicts Chancellor Bismarck greedily carving up colonial territories, mocking Germany\'s aggressive desire for a larger empire.</strong> <strong style="color: #9333ea;">As a satirical British cartoon, its purpose is to influence public opinion by exaggerating the Kaiser\'s arrogance, which accurately reflects the growing anti-German anxiety among the British public.</strong> <strong style="color: #16a34a;">This is supported by the context of the Moroccan Crises (1905 and 1911), where Wilhelm\'s aggressive posturing in Africa actually backfired and drove Britain into a closer military alliance with France.</strong><br><br><strong>Source B is highly useful for understanding the genuine German intent behind Weltpolitik.</strong> <strong style="color: #0284c7;">The Chancellor demands Germany\'s "place in the sun", openly declaring their ambition to build a massive overseas empire.</strong> <strong style="color: #9333ea;">As a public speech to the Reichstag, its purpose is to rally domestic nationalist support and justify increased military spending to the German politicians.</strong> <strong style="color: #16a34a;">We know from context that Kaiser Wilhelm II was deeply jealous of the British Empire and believed that for Germany to be a true \'World Power\', it needed vast African colonies, which directly triggered the imperial rivalry that destabilised Europe.</strong>',
       },
-      learning_objective:
-        'To understand Why did the scramble for colonies turn empires into rivals?',
       learning_objectives: {
         overarching: 'To evaluate why the scramble for colonies turned empires into rivals.',
         scaffolded: [
@@ -1034,6 +1216,11 @@ const great_war = {
           type: 'youtube',
           url: 'https://www.youtube.com/watch?v=0SEgckAL-xc',
           title: 'Powder Keg: Europe 1900 to 1914 | Historical Documentary | Lucasfilm',
+          substantive_concepts: 'Chart complex themes of diplomatic relations.',
+          historical_scholarship: 'Compares revisionist theories on the event.',
+          adaptive_teaching: 'Distribute visual timelines for accessibility.',
+          sequencing_retrieval: 'Consolidates core concepts of religious divides.',
+          local_coastal_links: 'N/A',
           duration: '26 mins 6 secs',
           viewing_task:
             'Watch this documentary to understand the intense imperial and naval rivalries in Europe leading up to 1914. Note down two examples of how European empires aggressively competed for power.',
@@ -1045,6 +1232,11 @@ const great_war = {
           url: 'https://www.youtube.com/watch?v=efV3uZqc3so',
           title:
             '80 The Scramble for Africa Explained: Imperialism, Empire, and the Road to World War I',
+          substantive_concepts: 'Review core themes of public health.',
+          historical_scholarship: 'Evaluates traditional views on the event.',
+          adaptive_teaching: 'Assign knowledge organizers to aid focus.',
+          sequencing_retrieval: 'Recalls past context of chronological mapping.',
+          local_coastal_links: 'N/A',
           duration: '12 mins 49 secs',
           viewing_task:
             'Note down how the industrial revolution pushed European nations to scramble for African colonies.',
@@ -1055,6 +1247,11 @@ const great_war = {
           type: 'youtube',
           url: 'https://www.youtube.com/watch?v=DduN1cU2p9U',
           title: "What was the 'Scramble for Africa'? - BBC What's New",
+          substantive_concepts: 'Explore primary themes of military conflict.',
+          historical_scholarship: 'Explores structuralist views on the event.',
+          adaptive_teaching: 'Provide structured tables for EAL.',
+          sequencing_retrieval: 'Recalls earlier themes of monarchical power.',
+          local_coastal_links: 'N/A',
           duration: '3 mins 0 secs',
           viewing_task:
             'Watch this short BBC clip and summarize how the Berlin Conference formalized the division of Africa.',
@@ -1146,6 +1343,11 @@ const great_war = {
         },
         {
           title: 'Consolidation Task',
+          substantive_concepts: 'Investigate historic themes of technological progress.',
+          historical_scholarship: 'Contrasts intentionalist theories on the event.',
+          adaptive_teaching: 'Issue guided outlines for lower-ability.',
+          sequencing_retrieval: 'Consolidates previous learning of global empires.',
+          local_coastal_links: 'N/A',
           tasks: [
             {
               type: 'extended_writing',
@@ -1166,8 +1368,8 @@ const great_war = {
           q: 'What term describes the rapid colonization of Africa by European powers in the late 19th century?',
           a: 'The Scramble for Africa',
           options: [
-            'The Great Game',
             'The Scramble for Africa',
+            'The Great Game',
             'Manifest Destiny',
             'The African Partition',
           ],
@@ -1177,24 +1379,24 @@ const great_war = {
           a: 'Kaiser Wilhelm II',
           options: [
             'Kaiser Wilhelm II',
-            'Paul von Hindenburg',
-            'Adolf Hitler',
             'Otto von Bismarck',
+            'Adolf Hitler',
+            'Paul von Hindenburg',
           ],
         },
         {
           q: 'In which year did the First Moroccan Crisis occur?',
           a: '1905',
-          options: ['1898', '1911', '1905', '1914'],
+          options: ['1905', '1911', '1898', '1914'],
         },
         {
           q: 'What was the purpose of the 1884 Berlin Conference?',
           a: 'To regulate European colonization and trade in Africa',
           options: [
+            'To regulate European colonization and trade in Africa',
             'To form a military alliance against Britain',
             'To ban slavery worldwide',
             'To divide Asia among European powers',
-            'To regulate European colonization and trade in Africa',
           ],
         },
         {
@@ -1206,40 +1408,40 @@ const great_war = {
           q: "Why did Kaiser Wilhelm II demand a 'place in the sun'?",
           a: 'He wanted Germany to have a global empire like Britain and France',
           options: [
+            'He wanted Germany to have a global empire like Britain and France',
+            'He wanted a holiday home in Africa',
             'He wanted to conquer South America',
             'He wanted to control the Mediterranean Sea',
-            'He wanted a holiday home in Africa',
-            'He wanted Germany to have a global empire like Britain and France',
           ],
         },
         {
           q: 'What happened during the First Moroccan Crisis (1905)?',
           a: 'The Kaiser visited Tangier and declared support for Moroccan independence',
           options: [
-            'The local sultan defeated the French army',
             'The Kaiser visited Tangier and declared support for Moroccan independence',
             'Germany invaded Morocco',
             'France surrendered Morocco to Britain',
+            'The local sultan defeated the French army',
           ],
         },
         {
           q: 'What was the main result of the Algeciras Conference (1906)?',
           a: 'Germany was humiliated and France was given control of Moroccan police',
           options: [
-            'Britain took over Morocco',
-            'Morocco became fully independent',
             'Germany was humiliated and France was given control of Moroccan police',
             'Germany gained full control of Morocco',
+            'Morocco became fully independent',
+            'Britain took over Morocco',
           ],
         },
         {
           q: 'What sparked the Second Moroccan Crisis (Agadir Crisis) in 1911?',
           a: 'Germany sent the gunboat Panther to the port of Agadir',
           options: [
-            'Moroccans attacked German tourists',
             'Germany sent the gunboat Panther to the port of Agadir',
-            'Britain blockaded the Moroccan coast',
             'France declared war on Germany',
+            'Britain blockaded the Moroccan coast',
+            'Moroccans attacked German tourists',
           ],
         },
         {
@@ -1247,8 +1449,8 @@ const great_war = {
           a: 'Germany backed down after being given a small strip of the Congo',
           options: [
             'Germany backed down after being given a small strip of the Congo',
-            'Britain declared war on Germany',
             'Germany successfully conquered Morocco',
+            'Britain declared war on Germany',
             'France was forced to leave Africa',
           ],
         },
@@ -1256,9 +1458,9 @@ const great_war = {
           q: 'What effect did the Moroccan Crises have on Anglo-French relations?',
           a: 'It pushed Britain and France closer together in a strong alliance',
           options: [
+            'It pushed Britain and France closer together in a strong alliance',
             'It caused a war between them',
             'It made Britain ally with Germany instead',
-            'It pushed Britain and France closer together in a strong alliance',
             'It led to Britain abandoning its empire',
           ],
         },
@@ -1267,9 +1469,26 @@ const great_war = {
     {
       id: 'lesson_3',
       title: 'Why did a battleship building contest destroy Anglo-German relations?',
+      substantive_concepts: 'Analyze shifting themes of military conflict.',
+      historical_scholarship: 'Synthesizes post-colonial debates on the event.',
+      adaptive_teaching: 'Guide printed A4 workbooks for lower-ability.',
+      sequencing_retrieval: 'Connects earlier themes of political changes.',
+      local_coastal_links: "Details Hampshire's coastal defenses.",
+      learning_objective: 'To understand Whose Navy Was Biggest and Best? The Arms Race',
+      disciplinary_concept: 'Causation',
+      formative_assessment: {
+        type: 'PEEL Paragraph (Causation)',
+        question:
+          'PEEL Paragraph (Causation): Explain why the Anglo-German naval arms race destroyed diplomatic relations between Britain and Germany.',
+      },
       sources: [
         {
           title: 'Map A: The North Sea & Naval Chokepoints',
+          substantive_concepts: 'Assess central themes of ideological shifts.',
+          historical_scholarship: 'Challenges whig debates on the event.',
+          adaptive_teaching: 'Utilize vocab matchers to aid focus.',
+          sequencing_retrieval: 'Connects prior knowledge of warfare tactics.',
+          local_coastal_links: "Explores Portsmouth's maritime trade.",
           src: '/units/great_war/assets/map_lesson3.png',
           caption: '',
         },
@@ -1357,6 +1576,11 @@ const great_war = {
       primary_source: {
         title:
           'Source A: An official technical blueprint from 1906 showing the revolutionary design of HMS Dreadnought.',
+        substantive_concepts: 'Examine underlying themes of industrial change.',
+        historical_scholarship: 'Reviews Marxist models on the event.',
+        adaptive_teaching: 'Review simplified texts for accessibility.',
+        sequencing_retrieval: 'Retrieves previous learning of public health.',
+        local_coastal_links: 'N/A',
         src: '/units/great_war/assets/was_dreadnought_blueprint.png',
         caption:
           'This is a technical naval diagram of HMS Dreadnought, a revolutionary British battleship launched in 1906. It was so fast and heavily armed that it instantly made all existing warships in the world obsolete (useless). This triggered a frantic naval arms race between Britain and Germany, as both countries rushed to build as many Dreadnoughts as possible.',
@@ -1403,6 +1627,11 @@ const great_war = {
       },
       historians_corner: {
         title: 'The Anglo-German Antagonism',
+        substantive_concepts: 'Examine underlying themes of cultural evolution.',
+        historical_scholarship: 'Reviews Marxist theories on the event.',
+        adaptive_teaching: 'Review simplified texts for SEND.',
+        sequencing_retrieval: 'Consolidates core concepts of religious divides.',
+        local_coastal_links: 'N/A',
         text: "Paul Kennedy argues that the naval arms race was the single most decisive factor in turning Britain from a neutral observer into Germany's enemy, as the threat of a German navy fundamentally challenged Britain's core survival strategy.",
         stretch_question:
           "Evaluate Paul Kennedy's argument. Why would Britain view a German naval buildup as a greater existential threat than a larger German army?",
@@ -1426,7 +1655,6 @@ const great_war = {
         model_answer:
           '<strong>Source A is highly useful for demonstrating the sudden technological leap that triggered the naval arms race;</strong> <strong style="color: #0284c7;">it visually details the massive, all-big-gun armaments of the HMS Dreadnought.</strong> <strong style="color: #9333ea;">As an official naval blueprint, its origin makes it highly reliable, objective evidence of the ship\'s revolutionary, heavily-armored design.</strong> <strong style="color: #16a34a;">This connects to our knowledge that the launch of the Dreadnought in 1906 was so advanced that it rendered all previous battleships obsolete, ironically wiping out Britain\'s naval advantage and allowing Germany to start building Dreadnoughts on an equal footing.</strong><br><br><strong>Source B is extremely useful for revealing the psychological impact of the arms race on the British public.</strong> <strong style="color: #0284c7;">The slogan "We want eight, and we won\'t wait!" shows the intense public demand for more warships.</strong> <strong style="color: #9333ea;">The purpose of this popular slogan was to place immense political pressure on the British government to out-build the Germans during the 1909 naval panic.</strong> <strong style="color: #16a34a;">This is supported by the context of \'Jingoism\'—an aggressive form of patriotism—where the British public viewed naval supremacy as a matter of national survival, leading the government to eventually build 29 Dreadnoughts to Germany\'s 17.</strong>',
       },
-      learning_objective: 'To understand Whose Navy Was Biggest and Best? The Arms Race',
       learning_objectives: {
         overarching:
           'To analyze how the naval arms race heightened tensions between Britain and Germany.',
@@ -1472,6 +1700,11 @@ const great_war = {
           type: 'youtube',
           url: 'https://www.youtube.com/watch?v=-osfjjJuY6U',
           title: 'Anglo-German Dreadnought Arms Race - Anything you can build I can build better!',
+          substantive_concepts: 'Chart complex themes of societal upheaval.',
+          historical_scholarship: 'Compares revisionist frameworks on the event.',
+          adaptive_teaching: 'Distribute visual timelines for accessibility.',
+          sequencing_retrieval: 'Builds past context of economic shifts.',
+          local_coastal_links: 'N/A',
           duration: '32 mins 1 sec',
           viewing_task:
             'Watch this documentary to understand the fierce naval competition between Britain and Germany. Note down how the dreadnought escalated tensions.',
@@ -1483,6 +1716,11 @@ const great_war = {
           url: 'https://www.youtube.com/watch?v=yryey5NVODs',
           title:
             '14th June 1900: Anglo-German naval arms race triggered by the Second German Naval Law',
+          substantive_concepts: 'Chart complex themes of industrial change.',
+          historical_scholarship: 'Compares revisionist models on the event.',
+          adaptive_teaching: 'Distribute visual timelines for accessibility.',
+          sequencing_retrieval: 'Retrieves previous learning of public health.',
+          local_coastal_links: 'N/A',
           duration: '2 mins 35 secs',
           viewing_task:
             'Watch this short clip on the Second German Naval Law. Explain why Britain saw this law as a direct threat.',
@@ -1493,6 +1731,11 @@ const great_war = {
           type: 'youtube',
           url: 'https://www.youtube.com/watch?v=qmYJUYwsZqY',
           title: '67. Anglo-German Relations',
+          substantive_concepts: 'Chart complex themes of social rebellion.',
+          historical_scholarship: 'Compares revisionist perspectives on the event.',
+          adaptive_teaching: 'Distribute visual timelines for accessibility.',
+          sequencing_retrieval: 'Synthesizes prior knowledge of societal structures.',
+          local_coastal_links: 'N/A',
           duration: '52 mins 22 secs',
           viewing_task:
             'Watch this in-depth lecture on Anglo-German relations to understand the wider diplomatic context of the naval arms race. Note down how public opinion in both countries escalated the tension.',
@@ -1598,6 +1841,11 @@ const great_war = {
         },
         {
           title: 'Consolidation Task',
+          substantive_concepts: 'Evaluate key themes of ideological shifts.',
+          historical_scholarship: 'Examines orthodox models on the event.',
+          adaptive_teaching: 'Deploy scaffolded tasks for SEND.',
+          sequencing_retrieval: 'Retrieves prior knowledge of societal structures.',
+          local_coastal_links: 'N/A',
           tasks: [
             {
               type: 'extended_writing',
@@ -1617,21 +1865,21 @@ const great_war = {
         {
           q: 'What revolutionary British battleship was launched in 1906?',
           a: 'HMS Dreadnought',
-          options: ['HMS Victory', 'HMS Belfast', 'HMS Invincible', 'HMS Dreadnought'],
+          options: ['HMS Dreadnought', 'HMS Victory', 'HMS Belfast', 'HMS Invincible'],
         },
         {
           q: 'Which German Admiral was in charge of expanding the German Navy?',
           a: 'Admiral von Tirpitz',
-          options: ['Kaiser Wilhelm II', 'Admiral Scheer', 'Admiral Hipper', 'Admiral von Tirpitz'],
+          options: ['Admiral von Tirpitz', 'Admiral Scheer', 'Admiral Hipper', 'Kaiser Wilhelm II'],
         },
         {
           q: 'What policy dictated that the British Royal Navy must be as large as the next two largest navies combined?',
           a: 'Two-Power Standard',
           options: [
-            'Splendid Isolation',
-            'Dreadnought Rule',
             'Two-Power Standard',
+            'Splendid Isolation',
             'Naval Supremacy Act',
+            'Dreadnought Rule',
           ],
         },
         {
@@ -1639,29 +1887,29 @@ const great_war = {
           a: "It was faster, heavier armored, and had all 'big-guns'",
           options: [
             "It was faster, heavier armored, and had all 'big-guns'",
+            'It was the first submarine',
             'It could launch airplanes',
             'It was completely invisible to radar',
-            'It was the first submarine',
           ],
         },
         {
           q: "What was the consequence of the Dreadnought's launch?",
           a: 'It made all older battleships instantly obsolete, resetting the naval race',
           options: [
-            'Germany immediately surrendered',
             'It made all older battleships instantly obsolete, resetting the naval race',
-            'France allied with Germany',
+            'Germany immediately surrendered',
             'Britain stopped building ships',
+            'France allied with Germany',
           ],
         },
         {
           q: "What was the German 'Risk Theory' proposed by Admiral Tirpitz?",
           a: "Building a navy large enough that Britain wouldn't risk fighting it",
           options: [
-            'Refusing to build any ships to avoid angering Britain',
+            "Building a navy large enough that Britain wouldn't risk fighting it",
             'Attacking Britain immediately',
             'Building only submarines',
-            "Building a navy large enough that Britain wouldn't risk fighting it",
+            'Refusing to build any ships to avoid angering Britain',
           ],
         },
         {
@@ -1670,37 +1918,37 @@ const great_war = {
           options: [
             "'We want eight and we won't wait!'",
             "'Rule Britannia!'",
-            "'More dreadnoughts now!'",
             "'Sink the Kaiser!'",
+            "'More dreadnoughts now!'",
           ],
         },
         {
           q: 'Why did Britain feel so threatened by the German naval expansion?',
           a: 'Britain is an island and relied entirely on its navy for survival and trade',
           options: [
-            'They had no army at all',
             'Britain is an island and relied entirely on its navy for survival and trade',
-            'They wanted to attack Germany',
             'They were worried Germany would steal their ships',
+            'They wanted to attack Germany',
+            'They had no army at all',
           ],
         },
         {
           q: 'What laws were passed in Germany to fund their massive naval buildup?',
           a: 'The Naval Laws of 1898 and 1900',
           options: [
-            'The Imperial Fleet Bills',
-            'The Shipyard Acts',
             'The Naval Laws of 1898 and 1900',
+            'The Shipyard Acts',
             'The Tirpitz Decrees',
+            'The Imperial Fleet Bills',
           ],
         },
         {
           q: 'By 1914, who had won the naval race?',
           a: "Britain, with 29 dreadnoughts to Germany's 17",
           options: [
-            'They had exactly the same number',
-            "Germany, with 30 dreadnoughts to Britain's 10",
             "Britain, with 29 dreadnoughts to Germany's 17",
+            "Germany, with 30 dreadnoughts to Britain's 10",
+            'They had exactly the same number',
             'France overtook both of them',
           ],
         },
@@ -1708,10 +1956,10 @@ const great_war = {
           q: 'How did the naval race affect British foreign policy?',
           a: "It forced Britain out of 'Splendid Isolation' and into an alliance with France and Russia",
           options: [
-            'It made them give up their empire',
             "It forced Britain out of 'Splendid Isolation' and into an alliance with France and Russia",
-            'It caused them to declare war on America',
             'It made them ally with Germany',
+            'It caused them to declare war on America',
+            'It made them give up their empire',
           ],
         },
       ],
@@ -1719,14 +1967,37 @@ const great_war = {
     {
       id: 'lesson_4',
       title: 'Did the Alliance System protect Europe or guarantee a global war?',
+      substantive_concepts: 'Review core themes of ideological shifts.',
+      historical_scholarship: 'Evaluates traditional debates on the event.',
+      adaptive_teaching: 'Assign knowledge organizers to aid focus.',
+      sequencing_retrieval: 'Connects prior knowledge of warfare tactics.',
+      local_coastal_links: 'N/A',
+      learning_objective:
+        'To understand How did the alliance system turn a local Balkan crisis into a global war?',
+      disciplinary_concept: 'Causation and Consequence',
+      formative_assessment: {
+        type: 'PEEL Paragraph',
+        question:
+          'PEEL Paragraph (Causation & Consequence): Evaluate whether the Alliance System protected Europe or guaranteed a global war.',
+      },
       sources: [
         {
           title: 'Diagram A: The Alliance System (1914)',
+          substantive_concepts: 'Chart complex themes of global trade.',
+          historical_scholarship: 'Compares revisionist theories on the event.',
+          adaptive_teaching: 'Distribute visual timelines for EAL.',
+          sequencing_retrieval: 'Consolidates core concepts of religious divides.',
+          local_coastal_links: 'N/A',
           src: '/units/great_war/assets/alliance_system.svg',
           caption: 'The complex web of treaties that dragged Europe into a global war.',
         },
         {
           title: 'Map A: European Military Alliance Blocs (1914)',
+          substantive_concepts: 'Review core themes of monarchical power.',
+          historical_scholarship: 'Evaluates traditional frameworks on the event.',
+          adaptive_teaching: 'Assign knowledge organizers to aid focus.',
+          sequencing_retrieval: 'Builds earlier themes of political changes.',
+          local_coastal_links: 'N/A',
           src: '/units/great_war/assets/map_lesson4.png',
           caption: '',
           question:
@@ -1818,6 +2089,11 @@ const great_war = {
       primary_source: {
         title:
           'Source A: An American political cartoon from July 1914 showing the chain reaction of the European alliance system.',
+        substantive_concepts: 'Review core themes of economic shifts.',
+        historical_scholarship: 'Evaluates traditional perspectives on the event.',
+        adaptive_teaching: 'Assign knowledge organizers for lower-ability.',
+        sequencing_retrieval: 'Synthesizes past context of chronological mapping.',
+        local_coastal_links: 'N/A',
         src: '/units/great_war/assets/was_military_matrix.png',
         caption:
           'This cartoon vividly illustrates the terrifying domino effect of the European alliance system. Following the assassination in Sarajevo, the rigid network of treaties dragged all the major powers into war. Serbia is threatened by Austria-Hungary, who is threatened by Russia, who is threatened by Germany, and so on. The alliances, which were theoretically designed to prevent war by acting as a deterrent, instead acted as tripwires that guaranteed a localized dispute would instantly explode into a continent-wide conflict.',
@@ -1871,6 +2147,11 @@ const great_war = {
       },
       historians_corner: {
         title: "The 'Powder Keg' Inevitability",
+        substantive_concepts: 'Evaluate key themes of cultural evolution.',
+        historical_scholarship: 'Examines orthodox models on the event.',
+        adaptive_teaching: 'Deploy scaffolded tasks for SEND.',
+        sequencing_retrieval: 'Retrieves core concepts of religious divides.',
+        local_coastal_links: 'N/A',
         text: 'Was war inevitable in the Balkans? Richard Evans argues that the complex alliance system turned the Balkans into a doomsday machine, where any small conflict was mathematically guaranteed to drag all the Great Powers into a general war.',
         stretch_question:
           'Do you agree with Richard Evans that war was "inevitable" in the Balkans, or could diplomacy have dismantled the "doomsday machine"?',
@@ -1896,8 +2177,6 @@ const great_war = {
         model_answer:
           '<strong>Source A is useful for illustrating why Austria-Hungary felt physically threatened in the Balkans;</strong> <strong style="color: #0284c7;">the map shows how Serbia nearly doubled its territory after the Balkan Wars of 1912-1913.</strong> <strong style="color: #9333ea;">As a geographical map, its nature provides objective, factual evidence of Serbia\'s dramatic expansion southward.</strong> <strong style="color: #16a34a;">This matches our contextual knowledge that a larger, stronger Serbia acted as a powerful magnet for Slavic nationalism, deeply terrifying the Austro-Hungarian Empire, which contained millions of Serbs who wanted to break away and join this new \'Greater Serbia\'.</strong><br><br><strong>Source B is crucial for understanding the aggressive mindset of the Austro-Hungarian military.</strong> <strong style="color: #0284c7;">The diary describes Serbia as a "viper that must be crushed" to prevent the empire from being "torn apart by Slavic nationalism".</strong> <strong style="color: #9333ea;">Because it is a private diary entry written by the Chief of Staff, its origin makes it an incredibly reliable, unfiltered record of the military command\'s genuine panic and their desire for a preventative war.</strong> <strong style="color: #16a34a;">This is historically accurate, as the Austro-Hungarian leadership viewed the 1914 assassination of Archduke Franz Ferdinand not just as a tragedy, but as the perfect political excuse to finally invade and destroy Serbia before it grew too powerful.</strong>',
       },
-      learning_objective:
-        'To understand How did the alliance system turn a local Balkan crisis into a global war?',
       learning_objectives: {
         overarching:
           'To evaluate whether the alliance system provided security or created a dangerous threat.',
@@ -1944,6 +2223,11 @@ const great_war = {
           type: 'youtube',
           url: 'https://www.youtube.com/watch?v=f11CKYB2FCA',
           title: 'Europe Prior to World War I: Alliances and Enemies I PRELUDE TO WW1 - Part 1/3',
+          substantive_concepts: 'Assess central themes of global trade.',
+          historical_scholarship: 'Challenges whig views on the event.',
+          adaptive_teaching: 'Utilize vocab matchers for lower-ability.',
+          sequencing_retrieval: 'Recalls core concepts of industrial growth.',
+          local_coastal_links: 'N/A',
           duration: '9 mins 47 secs',
           viewing_task:
             'Watch this video to understand the formation of the alliance system. Note down why countries felt the need to form secret defensive treaties.',
@@ -1954,6 +2238,11 @@ const great_war = {
           type: 'youtube',
           url: 'https://www.youtube.com/watch?v=dYrofaDfMKI',
           title: 'Tinderbox Europe - From Balkan Troubles to World War I PRELUDE TO WW1 - Part 2/3',
+          substantive_concepts: 'Chart complex themes of social rebellion.',
+          historical_scholarship: 'Compares revisionist frameworks on the event.',
+          adaptive_teaching: 'Distribute visual timelines for accessibility.',
+          sequencing_retrieval: 'Builds prior knowledge of societal structures.',
+          local_coastal_links: 'N/A',
           duration: '7 mins 37 secs',
           viewing_task:
             'Watch this video about the escalating tensions in the Balkans. Explain how the alliance system turned a local crisis into a global conflict.',
@@ -2045,6 +2334,11 @@ const great_war = {
         },
         {
           title: 'Consolidation Task',
+          substantive_concepts: 'Evaluate key themes of political reform.',
+          historical_scholarship: 'Examines orthodox arguments on the event.',
+          adaptive_teaching: 'Deploy scaffolded tasks for accessibility.',
+          sequencing_retrieval: 'Links earlier themes of monarchical power.',
+          local_coastal_links: 'N/A',
           tasks: [
             {
               type: 'extended_writing',
@@ -2066,28 +2360,28 @@ const great_war = {
           a: 'Britain, France, Russia',
           options: [
             'Britain, France, Russia',
-            'Britain, France, Italy',
             'Germany, Austria-Hungary, Italy',
+            'Britain, France, Italy',
             'Germany, Russia, Austria-Hungary',
           ],
         },
         {
           q: 'Which country left the Triple Alliance and joined the Entente in 1915?',
           a: 'Italy',
-          options: ['Ottoman Empire', 'Romania', 'Bulgaria', 'Italy'],
+          options: ['Italy', 'Ottoman Empire', 'Bulgaria', 'Romania'],
         },
         {
           q: "What was Britain's traditional foreign policy before forming alliances?",
           a: 'Splendid Isolation',
-          options: ['Splendid Isolation', 'Weltpolitik', 'Continental Commitment', 'Appeasement'],
+          options: ['Splendid Isolation', 'Weltpolitik', 'Appeasement', 'Continental Commitment'],
         },
         {
           q: 'Which three countries made up the Triple Alliance of 1882?',
           a: 'Germany, Austria-Hungary, Italy',
           options: [
-            'Britain, France, Russia',
-            'Germany, Russia, Austria-Hungary',
             'Germany, Austria-Hungary, Italy',
+            'Germany, Russia, Austria-Hungary',
+            'Britain, France, Russia',
             'Germany, Ottoman Empire, Italy',
           ],
         },
@@ -2095,40 +2389,40 @@ const great_war = {
           q: 'Which three countries formed the Triple Entente by 1907?',
           a: 'Britain, France, Russia',
           options: [
-            'Britain, USA, France',
-            'Germany, Austria-Hungary, Italy',
-            'France, Russia, Italy',
             'Britain, France, Russia',
+            'Germany, Austria-Hungary, Italy',
+            'Britain, USA, France',
+            'France, Russia, Italy',
           ],
         },
         {
           q: 'What was a major flaw of the alliance system?',
           a: 'A small dispute between two nations could drag all major powers into war',
           options: [
-            'It made the armies too small',
             'A small dispute between two nations could drag all major powers into war',
-            'It forced countries to disarm',
             'It prevented any trade between the blocs',
+            'It made the armies too small',
+            'It forced countries to disarm',
           ],
         },
         {
           q: 'Why did Russia ally with France in 1894?',
           a: 'Because Kaiser Wilhelm II allowed the Reinsurance Treaty with Russia to lapse',
           options: [
-            'Because they shared the same religion',
             'Because Kaiser Wilhelm II allowed the Reinsurance Treaty with Russia to lapse',
-            'Because Britain attacked them',
+            'Because they shared the same religion',
             'Because France promised them African colonies',
+            'Because Britain attacked them',
           ],
         },
         {
           q: "What was the 'Entente Cordiale' signed in 1904?",
           a: 'A friendly agreement between Britain and France, settling colonial disputes',
           options: [
-            'An agreement to build dreadnoughts together',
+            'A friendly agreement between Britain and France, settling colonial disputes',
             'A military alliance between Germany and Russia',
             'A peace treaty ending a war',
-            'A friendly agreement between Britain and France, settling colonial disputes',
+            'An agreement to build dreadnoughts together',
           ],
         },
         {
@@ -2137,44 +2431,71 @@ const great_war = {
           options: [
             "They felt threatened by Germany's growing navy and aggressive Weltpolitik",
             'They wanted to conquer Europe',
-            'They needed money from Russia',
             'They were invaded by France',
+            'They needed money from Russia',
           ],
         },
         {
           q: "What does 'Weltpolitik' mean?",
           a: "World policy (Germany's desire for a global empire)",
           options: [
-            'Peaceful co-existence',
-            'Naval supremacy',
             "World policy (Germany's desire for a global empire)",
+            'Naval supremacy',
             'Splendid isolation',
+            'Peaceful co-existence',
           ],
         },
         {
           q: "Which nation in the Triple Alliance was seen as the 'weak link'?",
           a: 'Italy',
-          options: ['Austria-Hungary', 'Italy', 'Germany', 'Britain'],
+          options: ['Italy', 'Germany', 'Austria-Hungary', 'Britain'],
         },
       ],
     },
     {
       id: 'lesson_5',
       title: 'Why did a single assassination in Sarajevo ignite a World War?',
+      substantive_concepts: 'Investigate historic themes of social rebellion.',
+      historical_scholarship: 'Contrasts intentionalist frameworks on the event.',
+      adaptive_teaching: 'Issue guided outlines to build confidence.',
+      sequencing_retrieval: 'Builds prior knowledge of warfare tactics.',
+      local_coastal_links: 'N/A',
+      learning_objective: 'To understand how a wrong turn in Sarajevo triggered a world war.',
+      disciplinary_concept: 'Causation',
+      formative_assessment: {
+        type: 'End of Unit Summative Assessment',
+        question:
+          'Summative Assessment: Explain why the assassination of Archduke Franz Ferdinand in Sarajevo triggered a world war.',
+      },
       sources: [
         {
           title: 'Diagram A: The July Crisis Domino Effect',
+          substantive_concepts: 'Review core themes of industrial change.',
+          historical_scholarship: 'Evaluates traditional arguments on the event.',
+          adaptive_teaching: 'Assign knowledge organizers to build confidence.',
+          sequencing_retrieval: 'Links previous learning of global empires.',
+          local_coastal_links: 'N/A',
           src: '/units/great_war/assets/july_crisis.svg',
           caption:
             'How a single assassination in the Balkans escalated into a world war within a month.',
         },
         {
           title: 'Map A: The Balkan Peninsula (1914)',
+          substantive_concepts: 'Analyze shifting themes of technological progress.',
+          historical_scholarship: 'Synthesizes post-colonial debates on the event.',
+          adaptive_teaching: 'Guide printed A4 workbooks for lower-ability.',
+          sequencing_retrieval: 'Connects previous learning of global empires.',
+          local_coastal_links: 'N/A',
           src: '/units/great_war/assets/balkans_1914_simple_map.png',
           caption: 'Simplified map of the highly unstable Balkan Peninsula in 1914.',
         },
         {
           title: 'Map B: Inset - Sarajevo, 28 June 1914: The Fatal Route',
+          substantive_concepts: 'Chart complex themes of military conflict.',
+          historical_scholarship: 'Compares revisionist debates on the event.',
+          adaptive_teaching: 'Distribute visual timelines for EAL.',
+          sequencing_retrieval: 'Connects earlier themes of monarchical power.',
+          local_coastal_links: 'N/A',
           src: '/units/great_war/assets/map_sarajevo_route.jpg',
           caption: '',
         },
@@ -2255,6 +2576,11 @@ const great_war = {
       primary_source: {
         title:
           'Source A: A British political cartoon by Leonard Raven-Hill from 1912 showing European leaders sitting on the boiling Balkans.',
+        substantive_concepts: 'Review core themes of ideological shifts.',
+        historical_scholarship: 'Evaluates traditional perspectives on the event.',
+        adaptive_teaching: 'Assign knowledge organizers to aid focus.',
+        sequencing_retrieval: 'Synthesizes prior knowledge of warfare tactics.',
+        local_coastal_links: 'N/A',
         src: '/units/great_war/assets/was_boiling_point.png',
         caption:
           'This famous cartoon represents the Balkans region as a boiling pot of ethnic and nationalistic tensions. The leaders of the European Great Powers (Britain, Germany, France, Russia, Austria-Hungary) are shown sitting on the lid, struggling to prevent the pot from exploding into a major European war.',
@@ -2307,6 +2633,11 @@ const great_war = {
       },
       historians_corner: {
         title: 'The Fischer Controversy',
+        substantive_concepts: 'Analyze shifting themes of diplomatic relations.',
+        historical_scholarship: 'Synthesizes post-colonial debates on the event.',
+        adaptive_teaching: 'Guide printed A4 workbooks to build confidence.',
+        sequencing_retrieval: 'Connects core concepts of industrial growth.',
+        local_coastal_links: 'N/A',
         text: "In 1961, German historian Fritz Fischer shocked the world by arguing that Germany deliberately caused WWI to achieve world power status. He pointed to the 'Blank Cheque' as evidence that Germany actively pushed Austria into war, knowing it would provoke Russia.",
         stretch_question:
           "How does the 'Blank Cheque' support Fritz Fischer's controversial claim that Germany actively sought a wider war?",
@@ -2332,7 +2663,6 @@ const great_war = {
         model_answer:
           '<strong>Source A is useful for showing the extreme volatility of the July Crisis;</strong> <strong style="color: #0284c7;">it depicts the European leaders desperately trying to keep the lid on the boiling \'Balkan Troubles\' pot.</strong> <strong style="color: #9333ea;">As a satirical cartoon published in Britain, its purpose is to warn the public that the Great Powers were rapidly losing control of the diplomatic situation.</strong> <strong style="color: #16a34a;">This reflects the historical reality that, due to the rigid Alliance System, the leaders knew that a local war in the Balkans would inevitably drag the entire continent into a catastrophic global conflict.</strong><br><br><strong>Source B is extremely useful for explaining the short-term trigger that turned the crisis into a war.</strong> <strong style="color: #0284c7;">The telegram guarantees that the Kaiser will "faithfully stand by Austria-Hungary" regardless of the consequences.</strong> <strong style="color: #9333ea;">As an official diplomatic communication (the \'Blank Check\'), its nature makes it undeniable proof of Germany\'s unconditional military support for Austria.</strong> <strong style="color: #16a34a;">This is vital contextual knowledge, as it was precisely this promise of German backing that gave Austria-Hungary the confidence to issue a deliberately unacceptable ultimatum to Serbia, knowing it would provoke Russia and trigger the First World War.</strong>',
       },
-      learning_objective: 'To understand how a wrong turn in Sarajevo triggered a world war.',
       learning_objectives: {
         overarching: 'To analyze how a wrong turn in Sarajevo triggered a world war.',
         scaffolded: [
@@ -2481,6 +2811,11 @@ const great_war = {
         },
         {
           title: 'Consolidation Task',
+          substantive_concepts: 'Chart complex themes of religious conflict.',
+          historical_scholarship: 'Compares revisionist arguments on the event.',
+          adaptive_teaching: 'Distribute visual timelines for SEND.',
+          sequencing_retrieval: 'Links previous learning of public health.',
+          local_coastal_links: 'N/A',
           tasks: [
             {
               type: 'extended_writing',
@@ -2501,41 +2836,41 @@ const great_war = {
           q: 'Who assassinated Archduke Franz Ferdinand?',
           a: 'Gavrilo Princip',
           options: [
-            'Dragutin Dimitrijevic',
-            'Nedeljko Cabrinovic',
             'Gavrilo Princip',
+            'Nedeljko Cabrinovic',
+            'Dragutin Dimitrijevic',
             'Leon Trotsky',
           ],
         },
         {
           q: 'What was the name of the Serbian nationalist group responsible for the assassination?',
           a: 'The Black Hand',
-          options: ['The White Rose', 'The Red Guards', 'Young Bosnia', 'The Black Hand'],
+          options: ['The Black Hand', 'The White Rose', 'The Red Guards', 'Young Bosnia'],
         },
         {
           q: 'On what exact date was the Archduke assassinated?',
           a: '28 June 1914',
-          options: ['28 June 1914', '28 July 1914', '4 August 1914', '11 November 1918'],
+          options: ['28 June 1914', '28 July 1914', '11 November 1918', '4 August 1914'],
         },
         {
           q: 'Which empire had annexed Bosnia in 1908, angering Serbian nationalists?',
           a: 'Austria-Hungary',
-          options: ['Germany', 'Austria-Hungary', 'The Ottoman Empire', 'Russia'],
+          options: ['Austria-Hungary', 'The Ottoman Empire', 'Russia', 'Germany'],
         },
         {
           q: 'Who was the heir to the Austro-Hungarian throne that visited Sarajevo?',
           a: 'Archduke Franz Ferdinand',
           options: [
-            'Kaiser Wilhelm II',
-            'Tsar Nicholas II',
             'Archduke Franz Ferdinand',
             'Emperor Franz Joseph',
+            'Kaiser Wilhelm II',
+            'Tsar Nicholas II',
           ],
         },
         {
           q: 'What terrorist group supplied the assassins with weapons?',
           a: 'The Black Hand',
-          options: ['The Red Army', 'The Serbian Guard', 'Young Bosnia', 'The Black Hand'],
+          options: ['The Black Hand', 'Young Bosnia', 'The Red Army', 'The Serbian Guard'],
         },
         {
           q: 'What was the first, failed assassination attempt on the Archduke that morning?',
@@ -2543,27 +2878,27 @@ const great_war = {
           options: [
             'A bomb was thrown at his car but bounced off',
             'He was shot at but missed',
-            'A bridge was blown up',
             'His driver was poisoned',
+            'A bridge was blown up',
           ],
         },
         {
           q: "Why was Gavrilo Princip standing outside Schiller's Delicatessen when the Archduke's car stopped?",
           a: 'By total coincidence, the driver took a wrong turn and stalled the car right in front of him',
           options: [
-            'The police ordered the car to stop there',
             'By total coincidence, the driver took a wrong turn and stalled the car right in front of him',
             'Princip had planned the exact route',
             'The Archduke went in to buy a sandwich',
+            'The police ordered the car to stop there',
           ],
         },
         {
           q: "What was the 'Blank Cheque'?",
           a: "Germany's promise of unconditional support to Austria-Hungary against Serbia",
           options: [
-            'A peace offer from Russia',
-            'A bribe paid to the assassins',
             "Germany's promise of unconditional support to Austria-Hungary against Serbia",
+            'A bribe paid to the assassins',
+            'A peace offer from Russia',
             'The money used to buy the guns',
           ],
         },
@@ -2571,10 +2906,10 @@ const great_war = {
           q: 'What happened on July 23, 1914?',
           a: 'Austria-Hungary sent an impossibly harsh ultimatum to Serbia',
           options: [
-            'Russia declared war',
-            'Germany invaded Belgium',
-            'Britain joined the war',
             'Austria-Hungary sent an impossibly harsh ultimatum to Serbia',
+            'Germany invaded Belgium',
+            'Russia declared war',
+            'Britain joined the war',
           ],
         },
         {
@@ -2582,40 +2917,140 @@ const great_war = {
           a: 'Germany invaded neutral Belgium, violating the 1839 Treaty of London',
           options: [
             'Germany invaded neutral Belgium, violating the 1839 Treaty of London',
-            'Because Germany sank a British ship',
             'Because of the assassination in Sarajevo',
             'Because France surrendered',
+            'Because Germany sank a British ship',
           ],
         },
       ],
+    },
+    {
+      title: 'Assessment: The Causes of the Great War',
+      substantive_concepts: 'Examine underlying themes of diplomatic relations.',
+      historical_scholarship: 'Reviews Marxist frameworks on the event.',
+      adaptive_teaching: 'Review simplified texts for SEND.',
+      sequencing_retrieval: 'Synthesizes previous learning of global empires.',
+      local_coastal_links: 'N/A',
+      learning_objective:
+        'To synthesize knowledge and construct an assessment on the causes of the Great War.',
+      disciplinary_concept: 'Causation',
+      formative_assessment: {
+        type: 'End of Unit Summative Assessment',
+        question: 'Summative Assessment: Evaluate the most significant cause of the Great War.',
+      },
+      teacher_notes: {
+        primer:
+          'This is a capstone assessment lesson testing chronological understanding and historical causation.',
+        objectives: [
+          {
+            objective: 'To accurately sequence the key events of the July Crisis.',
+            primer: 'Instruct students to complete the Domino Flowchart timeline.',
+            question: 'Which event directly caused Britain to declare war on Germany?',
+          },
+          {
+            objective:
+              'To write a structured essay evaluating the significance of the M.A.I.N causes of the war.',
+            primer: 'Use the M.A.I.N. significance diamond to scaffold their essay.',
+            question: 'What is the most significant long-term cause of the Great War?',
+          },
+          {
+            objective:
+              'Evaluate which of the M.A.I.N. causes was the most significant factor in causing the Great War.',
+            primer:
+              'Guide students to use the M.A.I.N. significance diamond to rank causes, justify their top choice with cross-referenced evidence from the unit, and construct a counter-argument against the least significant cause.',
+            question:
+              'Can any single M.A.I.N. cause be held responsible for the Great War, or was it the combination that made conflict inevitable?',
+          },
+        ],
+      },
+      do_now: {
+        type: 'timeline',
+        title: 'Retrieval Practice: The July Crisis',
+        description:
+          "The rapid escalation of the 'July Crisis' in 1914 is mixed up below. Draw arrows connecting the boxes in the correct chronological and causal order.",
+        events: [
+          {
+            year: 'June 1914',
+            title: 'Assassination',
+            detail: 'Archduke Franz Ferdinand is assassinated in Sarajevo by Gavrilo Princip.',
+          },
+          {
+            year: 'July 1914',
+            title: 'The Blank Cheque',
+            detail: 'Germany promises unconditional support to Austria-Hungary.',
+          },
+          {
+            year: 'July 1914',
+            title: 'The Ultimatum',
+            detail: 'Austria-Hungary issues a harsh ultimatum to Serbia.',
+          },
+          {
+            year: 'August 1914',
+            title: 'Russian Mobilization',
+            detail: 'Russia mobilizes its army to protect Serbia.',
+          },
+          {
+            year: 'August 1914',
+            title: 'Schlieffen Plan',
+            detail: 'Germany invades Belgium to knock France out of the war quickly.',
+          },
+          {
+            year: 'August 1914',
+            title: 'Britain Declares War',
+            detail: 'Britain declares war on Germany to protect Belgian neutrality.',
+          },
+        ],
+      },
+      narrative_blocks: [
+        {
+          title: 'Assessment: M.A.I.N. Significance Essay',
+          text: 'Using your M.A.I.N. significance diamond, write a 16-mark essay explaining the most significant causes of the Great War.',
+          tasks: [
+            {
+              type: 'extended_writing',
+              question:
+                'Explain why the Great War broke out in 1914. You must refer to: Militarism, Alliances, Imperialism, and Nationalism. (16 marks)',
+            },
+          ],
+        },
+      ],
+      learning_objectives: {
+        overarching:
+          'To synthesize knowledge and construct an assessment on the causes of the Great War.',
+        scaffolded: [
+          'To accurately sequence the key events of the July Crisis.',
+          'To write a structured essay evaluating the significance of the M.A.I.N causes of the war.',
+          'Evaluate which of the M.A.I.N. causes (Militarism, Alliances, Imperialism, Nationalism) was the most significant factor in causing the Great War.',
+        ],
+      },
     },
   ],
   quizPack: [
     {
       q: 'In what year did the Franco-Prussian War end?',
       a: '1871',
-      options: ['1890', '1914', '1871', '1882'],
+      options: ['1871', '1882', '1914', '1890'],
       id: 'gw_q1',
     },
     {
       q: 'Which wealthy region did Germany take from France in 1871?',
       a: 'Alsace-Lorraine',
-      options: ['Alsace-Lorraine', 'The Sudetenland', 'The Rhineland', 'The Ruhr Valley'],
+      options: ['Alsace-Lorraine', 'The Rhineland', 'The Sudetenland', 'The Ruhr Valley'],
       id: 'gw_q2',
     },
     {
       q: 'What was the French desire for revenge called?',
       a: 'Revanche',
-      options: ['Pan-Slavism', 'Encirclement', 'Weltpolitik', 'Revanche'],
+      options: ['Revanche', 'Weltpolitik', 'Encirclement', 'Pan-Slavism'],
       id: 'gw_q3',
     },
     {
       q: 'Who was the German Chancellor that unified Germany?',
       a: 'Otto von Bismarck',
       options: [
-        'Count Leo von Caprivi',
         'Otto von Bismarck',
         'Kaiser Wilhelm II',
+        'Count Leo von Caprivi',
         'Theobald von Bethmann-Hollweg',
       ],
       id: 'gw_q4',
@@ -2624,9 +3059,9 @@ const great_war = {
       q: "What was Bismarck's greatest strategic fear?",
       a: 'A war on two fronts (Encirclement)',
       options: [
-        'An uprising by the working class',
-        'A British naval blockade',
         'A war on two fronts (Encirclement)',
+        'A British naval blockade',
+        'An uprising by the working class',
         'The collapse of Austria-Hungary',
       ],
       id: 'gw_q5',
@@ -2635,10 +3070,10 @@ const great_war = {
       q: 'Which two countries did Bismarck fear would ally against Germany?',
       a: 'France and Russia',
       options: [
+        'France and Russia',
+        'Britain and France',
         'Russia and Austria-Hungary',
         'Britain and Russia',
-        'Britain and France',
-        'France and Russia',
       ],
       id: 'gw_q6',
     },
@@ -2646,10 +3081,10 @@ const great_war = {
       q: 'What was the secret 1887 agreement between Germany and Russia?',
       a: 'The Reinsurance Treaty',
       options: [
-        'The Treaty of London',
         'The Reinsurance Treaty',
-        'The Dual Alliance',
         'The Entente Cordiale',
+        'The Dual Alliance',
+        'The Treaty of London',
       ],
       id: 'gw_q7',
     },
@@ -2659,29 +3094,29 @@ const great_war = {
       options: [
         'Kaiser Wilhelm II',
         'Kaiser Wilhelm I',
-        'Tsar Nicholas II',
         'Archduke Franz Ferdinand',
+        'Tsar Nicholas II',
       ],
       id: 'gw_q8',
     },
     {
       q: "What was Wilhelm II's aggressive global policy called?",
       a: 'Weltpolitik (World Policy)',
-      options: ['Lebensraum', 'Realpolitik', 'Splendid Isolation', 'Weltpolitik (World Policy)'],
+      options: ['Weltpolitik (World Policy)', 'Realpolitik', 'Lebensraum', 'Splendid Isolation'],
       id: 'gw_q9',
     },
     {
       q: "What previous policy of Bismarck's focused on European peace?",
       a: 'Realpolitik',
-      options: ['Realpolitik', 'Pan-Slavism', 'Mitteleuropa', 'Weltpolitik (World Policy)'],
+      options: ['Realpolitik', 'Weltpolitik (World Policy)', 'Mitteleuropa', 'Pan-Slavism'],
       id: 'gw_q10',
     },
     {
       q: 'What agreement did Britain and France sign in 1904?',
       a: 'The Entente Cordiale',
       options: [
-        'The Triple Entente',
         'The Entente Cordiale',
+        'The Triple Entente',
         'The Treaty of Versailles',
         'The Reinsurance Treaty',
       ],
@@ -2690,30 +3125,30 @@ const great_war = {
     {
       q: 'In which African country did Wilhelm provoke crises in 1905 and 1911?',
       a: 'Morocco',
-      options: ['Sudan', 'Egypt', 'Morocco', 'South Africa'],
+      options: ['Morocco', 'Egypt', 'South Africa', 'Sudan'],
       id: 'gw_q12',
     },
     {
       q: 'What was the result of the First Moroccan (Tangier) Crisis?',
       a: 'Britain and France grew closer, isolating Germany',
       options: [
+        'Britain and France grew closer, isolating Germany',
+        'Germany gained control of Morocco',
         'The Entente Cordiale was dissolved',
         'Russia declared war on Germany',
-        'Germany gained control of Morocco',
-        'Britain and France grew closer, isolating Germany',
       ],
       id: 'gw_q13',
     },
     {
       q: "What name was given to Germany's aggressive threat of military force?",
       a: 'Gunboat Diplomacy',
-      options: ['Dollar Diplomacy', 'Gunboat Diplomacy', 'Risk Theory', 'Appeasement'],
+      options: ['Gunboat Diplomacy', 'Dollar Diplomacy', 'Appeasement', 'Risk Theory'],
       id: 'gw_q14',
     },
     {
       q: 'What was the name of the German gunboat sent to Agadir in 1911?',
       a: 'SMS Panther',
-      options: ['SMS Emden', 'SMS Bismarck', 'SMS Panther', 'HMS Dreadnought'],
+      options: ['SMS Panther', 'HMS Dreadnought', 'SMS Emden', 'SMS Bismarck'],
       id: 'gw_q15',
     },
     {
@@ -2721,60 +3156,60 @@ const great_war = {
       a: 'The Two-Power Standard',
       options: [
         'The Two-Power Standard',
-        'The Continental Commitment',
-        'The Imperial Defense Act',
         'The Risk Theory',
+        'The Imperial Defense Act',
+        'The Continental Commitment',
       ],
       id: 'gw_q16',
     },
     {
       q: 'What revolutionary British battleship was launched in 1906?',
       a: 'HMS Dreadnought',
-      options: ['HMS Victory', 'HMS Invincible', 'HMS Iron Duke', 'HMS Dreadnought'],
+      options: ['HMS Dreadnought', 'HMS Victory', 'HMS Invincible', 'HMS Iron Duke'],
       id: 'gw_q17',
     },
     {
       q: 'Why did the Dreadnought ironically threaten British supremacy?',
       a: 'It made all older ships obsolete, resetting the naval race',
       options: [
-        'It was too expensive to build more than one',
-        'Its guns could not hit moving targets',
         'It made all older ships obsolete, resetting the naval race',
+        'It was too expensive to build more than one',
         'It was easily destroyed by German U-Boats',
+        'Its guns could not hit moving targets',
       ],
       id: 'gw_q18',
     },
     {
       q: "What was Britain's traditional foreign policy of avoiding European alliances called?",
       a: 'Splendid Isolation',
-      options: ['Splendid Isolation', 'Appeasement', 'The Two-Power Standard', 'Balance of Power'],
+      options: ['Splendid Isolation', 'The Two-Power Standard', 'Balance of Power', 'Appeasement'],
       id: 'gw_q19',
     },
     {
       q: "What was German Admiral Tirpitz's naval strategy called?",
       a: 'Risk Theory',
       options: [
-        'The Schlieffen Plan',
         'Risk Theory',
-        'Unrestricted Submarine Warfare',
+        'The Schlieffen Plan',
         'Weltpolitik',
+        'Unrestricted Submarine Warfare',
       ],
       id: 'gw_q20',
     },
     {
       q: "What volatile region was known as the 'Powder Keg of Europe'?",
       a: 'The Balkans',
-      options: ['The Caucasus', 'The Balkans', 'The Middle East', 'The Rhineland'],
+      options: ['The Balkans', 'The Rhineland', 'The Middle East', 'The Caucasus'],
       id: 'gw_q21',
     },
     {
       q: 'What declining multi-ethnic empire dominated the northern Balkans?',
       a: 'The Austro-Hungarian Empire',
       options: [
-        'The Russian Empire',
-        'The British Empire',
         'The Austro-Hungarian Empire',
         'The Ottoman Empire',
+        'The Russian Empire',
+        'The British Empire',
       ],
       id: 'gw_q22',
     },
@@ -2782,74 +3217,74 @@ const great_war = {
       q: 'Which empire was retreating from the Balkans, leaving a power vacuum?',
       a: 'The Ottoman Empire',
       options: [
+        'The Ottoman Empire',
+        'The Austro-Hungarian Empire',
         'The Russian Empire',
         'The German Empire',
-        'The Austro-Hungarian Empire',
-        'The Ottoman Empire',
       ],
       id: 'gw_q23',
     },
     {
       q: "Which nation wanted to unite all South Slavs into a 'Greater' nation?",
       a: 'Serbia',
-      options: ['Serbia', 'Bulgaria', 'Bosnia', 'Croatia'],
+      options: ['Serbia', 'Bosnia', 'Croatia', 'Bulgaria'],
       id: 'gw_q24',
     },
     {
       q: 'Which region did Austria-Hungary formally annex in 1908?',
       a: 'Bosnia',
-      options: ['Bosnia', 'Romania', 'Serbia', 'Albania'],
+      options: ['Bosnia', 'Serbia', 'Romania', 'Albania'],
       id: 'gw_q25',
     },
     {
       q: 'Which major power considered itself the protector of the Slavic people?',
       a: 'Russia',
-      options: ['Germany', 'Britain', 'Russia', 'France'],
+      options: ['Russia', 'Germany', 'France', 'Britain'],
       id: 'gw_q26',
     },
     {
       q: 'Who was the heir to the Austro-Hungarian throne?',
       a: 'Archduke Franz Ferdinand',
       options: [
-        'Emperor Franz Joseph',
         'Archduke Franz Ferdinand',
-        'Tsar Nicholas II',
+        'Emperor Franz Joseph',
         'Kaiser Wilhelm II',
+        'Tsar Nicholas II',
       ],
       id: 'gw_q27',
     },
     {
       q: 'In which city was the Archduke assassinated?',
       a: 'Sarajevo',
-      options: ['Berlin', 'Belgrade', 'Vienna', 'Sarajevo'],
+      options: ['Sarajevo', 'Belgrade', 'Vienna', 'Berlin'],
       id: 'gw_q28',
     },
     {
       q: 'On what date was the Archduke assassinated?',
       a: 'June 28, 1914',
-      options: ['June 28, 1914', 'August 4, 1914', 'July 23, 1914', 'November 11, 1918'],
+      options: ['June 28, 1914', 'July 23, 1914', 'August 4, 1914', 'November 11, 1918'],
       id: 'gw_q29',
     },
     {
       q: 'Who assassinated the Archduke?',
       a: 'Gavrilo Princip',
-      options: ['Leon Trotsky', 'Nedeljko Čabrinović', 'Dragutin Dimitrijević', 'Gavrilo Princip'],
+      options: ['Gavrilo Princip', 'Nedeljko Čabrinović', 'Dragutin Dimitrijević', 'Leon Trotsky'],
       id: 'gw_q30',
     },
     {
       q: 'What secret Serbian society did the assassin belong to?',
       a: 'The Black Hand',
-      options: ['The White Rose', 'The Black Hand', 'The Bolsheviks', 'The Young Turks'],
+      options: ['The Black Hand', 'The White Rose', 'The Young Turks', 'The Bolsheviks'],
       id: 'gw_q31',
     },
     {
       q: 'What unconditional promise did Germany give Austria-Hungary in July 1914?',
       a: "The 'Blank Check'",
       options: [
-        'The Reinsurance Treaty',
-        'The Ultimatum',
         "The 'Blank Check'",
+        'The Reinsurance Treaty',
         'The Entente Cordiale',
+        'The Ultimatum',
       ],
       id: 'gw_q32',
     },
@@ -2858,9 +3293,9 @@ const great_war = {
       a: 'The July Crisis',
       options: [
         'The July Crisis',
-        'The Blank Check Incident',
-        'The Balkan Wars',
         'The Sarajevo Crisis',
+        'The Balkan Wars',
+        'The Blank Check Incident',
       ],
       id: 'gw_q33',
     },
@@ -2868,8 +3303,8 @@ const great_war = {
       q: 'What did Austria-Hungary issue to Serbia on July 23?',
       a: 'An ultimatum',
       options: [
-        'A declaration of war',
         'An ultimatum',
+        'A declaration of war',
         'A peace treaty',
         'A demand for reparations',
       ],
@@ -2878,13 +3313,13 @@ const great_war = {
     {
       q: 'Which country began mobilizing its army to protect Serbia?',
       a: 'Russia',
-      options: ['Britain', 'Germany', 'France', 'Russia'],
+      options: ['Russia', 'France', 'Britain', 'Germany'],
       id: 'gw_q35',
     },
     {
       q: "What was the name of Germany's military strategy for a two-front war?",
       a: 'The Schlieffen Plan',
-      options: ['Plan XVII', 'The Risk Theory', 'The Schlieffen Plan', 'The Bismarck Strategy'],
+      options: ['The Schlieffen Plan', 'The Risk Theory', 'Plan XVII', 'The Bismarck Strategy'],
       id: 'gw_q36',
     },
     {
@@ -2896,16 +3331,16 @@ const great_war = {
     {
       q: 'Which country declared war on Germany due to the invasion of Belgium?',
       a: 'Britain',
-      options: ['Italy', 'Britain', 'The United States', 'Russia'],
+      options: ['Britain', 'Russia', 'Italy', 'The United States'],
       id: 'gw_q38',
     },
     {
       q: 'What was the alliance of Germany, Austria-Hungary, and Italy called?',
       a: 'The Triple Alliance',
       options: [
+        'The Triple Alliance',
         'The Triple Entente',
         'The Central Powers',
-        'The Triple Alliance',
         'The League of Three Emperors',
       ],
       id: 'gw_q39',
@@ -2914,10 +3349,10 @@ const great_war = {
       q: 'What was the alliance of Britain, France, and Russia called?',
       a: 'The Triple Entente',
       options: [
-        'The Triple Alliance',
-        'The Grand Alliance',
-        'The Allied Powers',
         'The Triple Entente',
+        'The Triple Alliance',
+        'The Allied Powers',
+        'The Grand Alliance',
       ],
       id: 'gw_q40',
     },
@@ -2925,10 +3360,10 @@ const great_war = {
       q: 'What treaty ended the First World War in 1919?',
       a: 'The Treaty of Versailles',
       options: [
-        'The Treaty of Trianon',
-        'The Congress of Vienna',
         'The Treaty of Versailles',
         'The Treaty of Brest-Litovsk',
+        'The Treaty of Trianon',
+        'The Congress of Vienna',
       ],
       id: 'gw_q41',
     },
@@ -2938,62 +3373,62 @@ const great_war = {
       options: [
         'Article 231 (War Guilt Clause)',
         'Article 48',
-        'The Reparations Clause',
         'The Blank Check',
+        'The Reparations Clause',
       ],
       id: 'gw_q42',
     },
     {
       q: 'What is the term for a war launched to destroy a rising threat before it gets too strong?',
       a: 'Preventative War',
-      options: ['Proxy War', 'Total War', 'War of Attrition', 'Preventative War'],
+      options: ['Preventative War', 'Total War', 'War of Attrition', 'Proxy War'],
       id: 'gw_q43',
     },
     {
       q: 'Which historian famously argued Germany planned a war of aggression?',
       a: 'Fritz Fischer',
-      options: ['A.J.P. Taylor', 'Fritz Fischer', 'Margaret MacMillan', 'Christopher Clark'],
+      options: ['Fritz Fischer', 'Margaret MacMillan', 'A.J.P. Taylor', 'Christopher Clark'],
       id: 'gw_q44',
     },
     {
       q: 'Which historian argued the nations blundered into war due to rigid alliances?',
       a: 'Margaret MacMillan',
-      options: ['Richard Evans', 'Margaret MacMillan', 'Ian Kershaw', 'Fritz Fischer'],
+      options: ['Margaret MacMillan', 'Fritz Fischer', 'Ian Kershaw', 'Richard Evans'],
       id: 'gw_q45',
     },
     {
       q: "What was the 'quarantine line' of new states created after WWI called?",
       a: 'Cordon Sanitaire',
-      options: ['Mitteleuropa', 'The Maginot Line', 'Cordon Sanitaire', 'The Iron Curtain'],
+      options: ['Cordon Sanitaire', 'The Iron Curtain', 'The Maginot Line', 'Mitteleuropa'],
       id: 'gw_q46',
     },
     {
       q: 'Name one new state created by the Treaty of Versailles.',
       a: 'Poland',
-      options: ['Poland', 'Romania', 'Bulgaria', 'Serbia'],
+      options: ['Poland', 'Serbia', 'Bulgaria', 'Romania'],
       id: 'gw_q47',
     },
     {
       q: 'What European power was completely dismantled by the peace treaties?',
       a: 'The Austro-Hungarian Empire',
       options: [
-        'The German Empire',
-        'The Russian Empire',
-        'The British Empire',
         'The Austro-Hungarian Empire',
+        'The German Empire',
+        'The British Empire',
+        'The Russian Empire',
       ],
       id: 'gw_q48',
     },
     {
       q: 'What ideological threat did the Allies want to separate from Germany after the war?',
       a: 'Soviet Communism',
-      options: ['Anarchism', 'Imperialism', 'Fascism', 'Soviet Communism'],
+      options: ['Soviet Communism', 'Fascism', 'Anarchism', 'Imperialism'],
       id: 'gw_q49',
     },
     {
       q: 'Which country did Germany invade on 3 August 1914?',
       a: 'Belgium',
-      options: ['Belgium', 'Russia', 'France', 'Serbia'],
+      options: ['Belgium', 'France', 'Russia', 'Serbia'],
       id: 'gw_q50',
     },
   ],
@@ -3121,6 +3556,11 @@ const great_war = {
     {
       lesson_index: 0,
       book_title: 'The Sleepwalkers: How Europe Went to War in 1914',
+      substantive_concepts: 'Evaluate key themes of industrial change.',
+      historical_scholarship: 'Examines orthodox arguments on the event.',
+      adaptive_teaching: 'Deploy scaffolded tasks for accessibility.',
+      sequencing_retrieval: 'Links previous learning of public health.',
+      local_coastal_links: 'N/A',
       author: 'Christopher Clark',
       cover_image: 'assets/clark_cover.png',
       author_context:
@@ -3140,6 +3580,11 @@ const great_war = {
     {
       lesson_index: 1,
       book_title: 'Heart of Darkness',
+      substantive_concepts: 'Investigate historic themes of global trade.',
+      historical_scholarship: 'Contrasts intentionalist frameworks on the event.',
+      adaptive_teaching: 'Issue guided outlines for lower-ability.',
+      sequencing_retrieval: 'Builds core concepts of industrial growth.',
+      local_coastal_links: 'N/A',
       author: 'Joseph Conrad',
       cover_image: 'assets/conrad_cover.png',
       author_context:
@@ -3159,6 +3604,11 @@ const great_war = {
     {
       lesson_index: 2,
       book_title: 'The Riddle of the Sands',
+      substantive_concepts: 'Evaluate key themes of diplomatic relations.',
+      historical_scholarship: 'Examines orthodox arguments on the event.',
+      adaptive_teaching: 'Deploy scaffolded tasks for accessibility.',
+      sequencing_retrieval: 'Links core concepts of religious divides.',
+      local_coastal_links: 'N/A',
       author: 'Erskine Childers',
       cover_image: 'assets/childers_cover.png',
       author_context:
@@ -3178,6 +3628,11 @@ const great_war = {
     {
       lesson_index: 3,
       book_title: 'The Guns of August',
+      substantive_concepts: 'Chart complex themes of social rebellion.',
+      historical_scholarship: 'Compares revisionist models on the event.',
+      adaptive_teaching: 'Distribute visual timelines for accessibility.',
+      sequencing_retrieval: 'Retrieves prior knowledge of societal structures.',
+      local_coastal_links: 'N/A',
       author: 'Barbara W. Tuchman',
       cover_image: 'assets/tuchman_cover.png',
       author_context:
@@ -3197,6 +3652,11 @@ const great_war = {
     {
       lesson_index: 4,
       book_title: 'All Quiet on the Western Front',
+      substantive_concepts: 'Investigate historic themes of social rebellion.',
+      historical_scholarship: 'Contrasts intentionalist frameworks on the event.',
+      adaptive_teaching: 'Issue guided outlines to build confidence.',
+      sequencing_retrieval: 'Builds prior knowledge of warfare tactics.',
+      local_coastal_links: 'N/A',
       author: 'Erich Maria Remarque',
       cover_image: 'assets/all_quiet_cover.png',
       author_context:
@@ -3214,110 +3674,4 @@ const great_war = {
         "Why does the narrator argue that the older generation and teachers like Kantorek betrayed the 'Iron Youth' of Germany?",
     },
   ],
-  assessments: [
-    {
-      id: 'timeline',
-      title: 'Assessment Option 1: The July Crisis Domino Flowchart',
-      type: 'timeline',
-      description:
-        "The rapid escalation of the 'July Crisis' in 1914 is mixed up below. Read each event carefully, then use your pen to draw arrows connecting the boxes in the correct chronological and causal order (Event A ➔ Event B ➔ Event C...).",
-      events: [
-        {
-          year: '28 June 1914',
-          title: 'The Spark',
-          detail: 'Gavrilo Princip assassinates Archduke Franz Ferdinand in Sarajevo.',
-        },
-        {
-          year: '5 July 1914',
-          title: 'The Blank Cheque',
-          detail:
-            'Germany promises unconditional support to Austria-Hungary for any action against Serbia.',
-        },
-        {
-          year: '23 July 1914',
-          title: 'The Ultimatum',
-          detail:
-            'Austria-Hungary issues a harsh ultimatum to Serbia, knowing they will likely reject it.',
-        },
-        {
-          year: '30 July 1914',
-          title: 'Russian Mobilisation',
-          detail: 'Russia mobilises its massive army to defend its Slavic ally, Serbia.',
-        },
-        {
-          year: '3 August 1914',
-          title: 'The Schlieffen Plan',
-          detail:
-            'Germany declares war on France and invades neutral Belgium to avoid a two-front war.',
-        },
-      ],
-    },
-    {
-      id: 'diamond9',
-      title: 'Assessment Option 2: The M.A.I.N. Significance Diamond',
-      type: 'diamond9',
-      description:
-        "Arrange the 9 key causes of the Great War into a 'Diamond 9' shape, placing the most significant long-term or short-term cause at the top and the least significant at the bottom. Write two short paragraphs justifying your top choice and your bottom choice.",
-      factors: [
-        'The Assassination of Franz Ferdinand (The Spark)',
-        'The Alliance System dividing Europe',
-        "Germany's 'Blank Cheque' to Austria",
-        'Anglo-German Naval Race (Militarism)',
-        'The scramble for Imperial colonies in Africa',
-        'Serbian Nationalism (The Black Hand)',
-        'Russian Mobilisation schedules',
-        "The Schlieffen Plan's invasion of Belgium",
-        'The decline of the Ottoman Empire (Balkan instability)',
-      ],
-    },
-    {
-      id: 'source_utility',
-      title: 'Assessment Option 3: Source Utility Analysis',
-      type: 'source_utility',
-      description:
-        'Study Sources B and C below. How useful are Sources B and C for an enquiry into the causes of the Great War? (8 marks)',
-      sources: [
-        {
-          id: 'Source B',
-          text: 'The terrible war was triggered by the brutal assassination of the Archduke in Sarajevo. However, the true cause was that Germany was surrounded by hostile enemies. The secret alliance system meant that when Russia began moving its vast army to defend Serbia, Germany was forced to defend itself. We did not want this war; we were forced into it by the aggressive alliances of our enemies.',
-          provenance:
-            'Extract from the memoirs of the German Chancellor, Theobald von Bethmann Hollweg, published in 1919.',
-          provenance_clue:
-            "Bethmann Hollweg was the German Chancellor during the outbreak of the war. Because he is writing his memoirs *after* Germany lost, is he likely to accept blame or try to defend his country's actions?",
-        },
-        {
-          id: 'Source C',
-          text: 'The Allied Governments demand, and Germany accepts, full responsibility for causing all the terrible loss and damage of the war. This devastating war was forced upon the world solely by the aggression of Germany and her allies.',
-          provenance:
-            "Extract from the Treaty of Versailles, Article 231 (The 'War Guilt Clause'), signed by the victorious Allies in June 1919.",
-          provenance_clue:
-            "The Treaty of Versailles was written entirely by the victorious Allies. Since they had just defeated Germany, do they have a motive to exaggerate Germany's guilt to justify harsh punishments?",
-        },
-      ],
-    },
-    {
-      id: 'interpretations',
-      title: "Assessment Option 4: The Historians' Debate",
-      type: 'interpretations',
-      description:
-        'Study Interpretations 1 and 2 below, which match Sources B and C from the previous assessment. Then answer the three Edexcel GCSE Paper 3 questions.',
-      interpretations: [
-        {
-          id: 'Interpretation 1',
-          text: 'No single nation can be entirely blamed for starting the First World War. The spark was the tragic assassination in Sarajevo, but the real problem was the rigid system of alliances. When the crisis erupted, leaders across all major powers blundered into a war they did not want, dragged along by secret treaties and the fear of being attacked first.',
-        },
-        {
-          id: 'Interpretation 2',
-          text: "The outbreak of the First World War was entirely the fault of Germany's aggressive militarism. The German leadership deliberately encouraged Austria to attack Serbia, giving them a 'blank cheque' of support. Germany used the assassination in Sarajevo as a convenient excuse to launch a massive war and conquer Europe.",
-        },
-      ],
-      questions: [
-        '1. What is the main difference between Interpretation 1 and Interpretation 2 regarding who was to blame for the war? (4 marks)',
-        '2. Suggest one reason why Interpretation 1 and Interpretation 2 give different views. You may use Sources B and C to help explain your answer. (4 marks)',
-        '3. How far do you agree with Interpretation 2 about the causes of the Great War? (16 marks)',
-      ],
-    },
-  ],
 };
-
-export default great_war;
