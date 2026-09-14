@@ -289,7 +289,7 @@
   }
   .header-left h2 {
     margin: 0;
-    font-size: 10.5pt;
+    font-size: 10.2pt;
     font-weight: 800;
     color: #0f172a;
     text-transform: uppercase;
@@ -297,7 +297,7 @@
   }
   .header-left p {
     margin: 1px 0 0 0;
-    font-size: 7.8pt;
+    font-size: 7.6pt;
     color: #475569;
   }
   .header-tag {
@@ -312,14 +312,14 @@
   }
 
   .question-container {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
   .question-prompt {
-    font-size: 11pt;
+    font-size: 10.5pt;
     font-weight: 700;
     color: #000;
-    line-height: 1.35;
-    margin-bottom: 6px;
+    line-height: 1.3;
+    margin-bottom: 5px;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -329,7 +329,7 @@
     margin-right: 6px;
   }
   .q-marks {
-    font-size: 10.5pt;
+    font-size: 10pt;
     font-weight: 700;
     color: #334155;
     margin-left: 10px;
@@ -337,56 +337,153 @@
   }
   .stimulus-card {
     border: 1.5px solid #64748b;
-    border-radius: 6px;
-    padding: 7px 12px;
-    font-size: 8.8pt;
+    border-radius: 5px;
+    padding: 6px 10px;
+    font-size: 8.5pt;
     background: #f8fafc;
-    margin-bottom: 8px;
-    line-height: 1.35;
+    margin-bottom: 6px;
+    line-height: 1.3;
   }
   .stimulus-card ul {
-    margin: 3px 0 0 0;
+    margin: 2px 0 0 0;
     padding-left: 18px;
   }
   .focus-guidance {
-    font-size: 8pt;
+    font-size: 7.8pt;
     color: #475569;
     font-style: italic;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
   }
 
-  /* Ruled / Dotted Lines for Handwriting (24.5px spacing) */
+  /* Ruled / Dotted Lines for Handwriting (24px spacing) */
   .dotted-line {
     border-bottom: 1.5px dotted #94a3b8;
-    height: 24.5px;
+    height: 24px;
     width: 100%;
     box-sizing: border-box;
+  }
+
+  /* Pearson Professional Monochrome Scaffolding Containers */
+  .scaffold-bar {
+    border: 1.5px solid #475569;
+    border-radius: 4px;
+    background: #f8fafc;
+    padding: 4px 8px;
+    margin-bottom: 6px;
+    font-size: 7.2pt;
+    line-height: 1.25;
+    display: flex;
+    gap: 8px;
+  }
+  .scaffold-col {
+    border-right: 1px solid #cbd5e1;
+    padding-right: 6px;
+  }
+  .scaffold-col:last-child {
+    border-right: none;
+    padding-right: 0;
+  }
+  .scaffold-label {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 6.6pt;
+    color: #0f172a;
+    margin-bottom: 2px;
+    display: block;
+    letter-spacing: 0.2px;
+  }
+  .scaffold-content {
+    color: #334155;
+  }
+  .scaffold-pill {
+    display: inline-block;
+    background: #fff;
+    border: 1px solid #94a3b8;
+    border-radius: 3px;
+    padding: 1px 4px;
+    margin: 1px 2px 1px 0;
+    font-size: 6.6pt;
+    font-weight: 600;
+    color: #0f172a;
+    white-space: nowrap;
+  }
+
+  .importance-scaffold-grid {
+    border: 1.5px solid #475569;
+    border-radius: 4px;
+    background: #f8fafc;
+    padding: 4px 8px;
+    margin-bottom: 6px;
+    font-size: 7.2pt;
+    line-height: 1.25;
+    display: grid;
+    grid-template-columns: 1.35fr 1.35fr 1fr;
+    gap: 8px;
+  }
+  .importance-scaffold-cell {
+    border-right: 1px solid #cbd5e1;
+    padding-right: 6px;
+  }
+  .importance-scaffold-cell:last-child {
+    border-right: none;
+    padding-right: 0;
+  }
+
+  .narrative-flow-planner {
+    border: 1.5px solid #475569;
+    border-radius: 4px;
+    background: #f8fafc;
+    padding: 4px 8px;
+    margin-bottom: 6px;
+    font-size: 7.2pt;
+    line-height: 1.25;
+  }
+  .narrative-stages-row {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+  .narrative-stage-box {
+    flex: 1;
+    background: #fff;
+    border: 1px solid #94a3b8;
+    border-radius: 3px;
+    padding: 3px 5px;
+  }
+  .narrative-stage-hdr {
+    font-weight: 800;
+    font-size: 6.6pt;
+    text-transform: uppercase;
+    color: #0f172a;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 1px;
+    margin-bottom: 2px;
   }
 
   /* Exemplar and Trap Containers */
   .exemplar-box {
     border: 1.5px solid #cbd5e1;
     border-radius: 5px;
-    padding: 8px 10px;
+    padding: 7px 9px;
     background: #fff;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
   .exemplar-header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     border-bottom: 1px solid #e2e8f0;
-    padding-bottom: 3px;
-    margin-bottom: 5px;
+    padding-bottom: 2px;
+    margin-bottom: 4px;
   }
   .exemplar-title {
-    font-size: 8.8pt;
+    font-size: 8.5pt;
     font-weight: 800;
     color: #0f172a;
     text-transform: uppercase;
   }
   .exemplar-grade {
-    font-size: 7.5pt;
+    font-size: 7.2pt;
     font-weight: 700;
     background: #dbeafe;
     color: #1e40af;
@@ -394,60 +491,60 @@
     border-radius: 3px;
   }
   .exemplar-stem {
-    font-size: 8.5pt;
+    font-size: 8.2pt;
     font-weight: 700;
     color: #1e293b;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
   }
   .exemplar-text {
     font-family: Georgia, serif;
-    font-size: 8.2pt;
-    line-height: 1.35;
+    font-size: 8pt;
+    line-height: 1.32;
     color: #1e293b;
     background: #fafaf9;
     border-left: 3px solid #0284c7;
-    padding: 6px 8px;
+    padding: 5px 7px;
     border-radius: 0 4px 4px 0;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
   }
   .examiner-note {
-    font-size: 7.2pt;
+    font-size: 7pt;
     color: #15803d;
     background: #f0fdf4;
     border: 1px solid #bbf7d0;
     border-radius: 3px;
-    padding: 3px 6px;
+    padding: 2.5px 5px;
     line-height: 1.25;
   }
 
   .traps-card {
     border: 1.5px solid #ef4444;
     border-radius: 5px;
-    padding: 8px 10px;
+    padding: 7px 9px;
     background: #fef2f2;
-    margin-top: 6px;
+    margin-top: 5px;
   }
   .traps-header {
-    font-size: 8.5pt;
+    font-size: 8.2pt;
     font-weight: 800;
     color: #991b1b;
     text-transform: uppercase;
     border-bottom: 1px solid #fca5a5;
     padding-bottom: 2px;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
   }
   .traps-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 8px;
+    gap: 6px;
   }
   .trap-item {
     background: #fff;
     border: 1px solid #fca5a5;
     border-radius: 4px;
-    padding: 5px 6px;
-    font-size: 7.2pt;
-    line-height: 1.25;
+    padding: 4px 5px;
+    font-size: 7pt;
+    line-height: 1.22;
   }
   .trap-item strong {
     color: #991b1b;
@@ -706,8 +803,21 @@
                     <span><strong class="q-num">1 (a)</strong> Explain one consequence of the bombing of the King David Hotel (1946).</span>
                     <span class="q-marks">(4)</span>
                 </div>
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="flex: 1.2;">
+                        <span class="scaffold-label">Key Facts Bank:</span>
+                        <div class="scaffold-content"><span class="scaffold-pill">22 July 1946</span> <span class="scaffold-pill">Irgun militants</span> <span class="scaffold-pill">Menachem Begin</span> <span class="scaffold-pill">91 casualties</span> <span class="scaffold-pill">British Secretariat</span></div>
+                    </div>
+                    <div class="scaffold-col" style="flex: 1;">
+                        <span class="scaffold-label">Causal Connectives:</span>
+                        <div class="scaffold-content"><span class="scaffold-pill">One direct consequence was...</span> <span class="scaffold-pill">This meant that...</span> <span class="scaffold-pill">Consequently, this led to...</span></div>
+                    </div>
+                    <div class="scaffold-col" style="flex: 1.3;">
+                        <span class="scaffold-label">Response Structure:</span>
+                        <div class="scaffold-content" style="font-size: 6.8pt;">Identify one consequence &rarr; Support with precise historical facts &rarr; Explain how this forced Britain to refer the mandate to the UN.</div>
+                    </div>
+                </div>
                 <div class="dotted-line"></div>
-<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -719,13 +829,26 @@
             </div>
 
             <!-- Question 1(b) -->
-            <div class="question-container" style="margin-top: 10px;">
+            <div class="question-container" style="margin-top: 8px;">
                 <div class="question-prompt">
                     <span><strong class="q-num">1 (b)</strong> Explain one consequence of the Israeli attacks on Gaza in 1955.</span>
                     <span class="q-marks">(4)</span>
                 </div>
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="flex: 1.2;">
+                        <span class="scaffold-label">Key Facts Bank:</span>
+                        <div class="scaffold-content"><span class="scaffold-pill">28 February 1955</span> <span class="scaffold-pill">Fedayeen raids</span> <span class="scaffold-pill">Ariel Sharon</span> <span class="scaffold-pill">38 Egyptian soldiers</span> <span class="scaffold-pill">Czech Arms Deal</span></div>
+                    </div>
+                    <div class="scaffold-col" style="flex: 1;">
+                        <span class="scaffold-label">Causal Connectives:</span>
+                        <div class="scaffold-content"><span class="scaffold-pill">As a consequence, ...</span> <span class="scaffold-pill">This action provoked...</span> <span class="scaffold-pill">This directly resulted in...</span></div>
+                    </div>
+                    <div class="scaffold-col" style="flex: 1.3;">
+                        <span class="scaffold-label">Response Structure:</span>
+                        <div class="scaffold-content" style="font-size: 6.8pt;">Identify one consequence &rarr; Support with precise facts &rarr; Explain how this humiliated Nasser and triggered the Czech Arms Deal.</div>
+                    </div>
+                </div>
                 <div class="dotted-line"></div>
-<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -770,12 +893,35 @@
                         <li><strong>The invasion by Arab armies (May 1948)</strong></li>
                         <li><strong>The June 1948 truce</strong></li>
                     </ul>
-                    <span style="display: block; margin-top: 3px; font-style: italic; color: #475569;">(You must also use information of your own.)</span>
+                    <span style="display: block; margin-top: 2px; font-style: italic; color: #475569;">(You must also use information of your own.)</span>
+                </div>
+
+                <!-- Narrative Flow Planner -->
+                <div class="narrative-flow-planner">
+                    <div style="font-weight: 800; font-size: 6.8pt; text-transform: uppercase; color: #0f172a; margin-bottom: 2px;">
+                        Chronological 3-Stage Narrative Architecture:
+                    </div>
+                    <div class="narrative-stages-row">
+                        <div class="narrative-stage-box">
+                            <div class="narrative-stage-hdr">Stage 1: Outbreak & Arab Invasion (May 1948)</div>
+                            <div style="font-size: 6.6pt; color: #334155;">5 Arab armies invade; Jerusalem besieged</div>
+                        </div>
+                        <div class="narrative-stage-box">
+                            <div class="narrative-stage-hdr">Stage 2: Turning Point & UN Truce (June 1948)</div>
+                            <div style="font-size: 6.6pt; color: #334155;">Ben-Gurion unifies IDF; Czech arms imported</div>
+                        </div>
+                        <div class="narrative-stage-box">
+                            <div class="narrative-stage-hdr">Stage 3: Counter-Offensives & Armistice (1949)</div>
+                            <div style="font-size: 6.6pt; color: #334155;">IDF secures 79% territory; 700,000 refugees</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #cbd5e1; padding-top: 2px; font-size: 6.6pt; color: #475569;">
+                        <span><strong>Fact Bank:</strong> <span class="scaffold-pill">14 May Declaration</span> <span class="scaffold-pill">Arab Legion & Jerusalem</span> <span class="scaffold-pill">UN 4-Week Truce</span> <span class="scaffold-pill">Czech Avia S-199s</span> <span class="scaffold-pill">Operation Yoav</span> <span class="scaffold-pill">1949 Green Line Armistices</span></span>
+                        <span><strong>Connectives:</strong> In the opening phase, ... · A decisive turning point came when... · This breathing space allowed...</span>
+                    </div>
                 </div>
 
                 <div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -811,8 +957,11 @@
             </div>
 
             <div class="question-container">
+                <div style="border: 1px solid #94a3b8; border-radius: 4px; background: #f8fafc; padding: 4px 8px; margin-bottom: 6px; font-size: 7pt; color: #334155; display: flex; justify-content: space-between;">
+                    <span><strong>Narrative Rule:</strong> Use linking connectives (<em>"Consequently"</em>, <em>"This directly led to"</em>) between paragraphs.</span>
+                    <span><strong>Check:</strong> Both stimulus points + 1 own fact included.</span>
+                </div>
                 <div class="dotted-line"></div>
-<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -867,11 +1016,24 @@
                     <strong>Examiner Guidance:</strong> Explain why the resolution was important for providing international legal legitimacy and securing immediate diplomatic recognition for the sovereign state.
                 </div>
 
+                <!-- Importance Scaffold Grid -->
+                <div class="importance-scaffold-grid">
+                    <div class="importance-scaffold-cell">
+                        <span class="scaffold-label">Paragraph 1 Focus:</span>
+                        <div style="font-size: 6.8pt; color: #334155;">International Legal Legitimacy: Explain how Res 181 gave Jewish leaders recognised authority to proclaim a state without being branded an illegal rebellion.</div>
+                    </div>
+                    <div class="importance-scaffold-cell">
+                        <span class="scaffold-label">Paragraph 2 Focus:</span>
+                        <div style="font-size: 6.8pt; color: #334155;">Superpower Recognition: Explain how the vote secured immediate US/Soviet diplomatic recognition and Czechoslovak arms shipments.</div>
+                    </div>
+                    <div class="importance-scaffold-cell">
+                        <span class="scaffold-label">Vocabulary &amp; Stems:</span>
+                        <div><span class="scaffold-pill">29 Nov 1947 vote</span> <span class="scaffold-pill">UN General Assembly</span> <span class="scaffold-pill">55% territory allocation</span> <span class="scaffold-pill">Two-thirds majority</span></div>
+                        <div style="margin-top: 2px; font-size: 6.6pt; color: #475569;"><em>Stem:</em> "This was vital because..."</div>
+                    </div>
+                </div>
+
                 <div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -920,11 +1082,24 @@
                     <strong>Examiner Guidance:</strong> Explain why unifying rival paramilitary militias under centralized government command was important for political stability and permanent defense.
                 </div>
 
+                <!-- Importance Scaffold Grid -->
+                <div class="importance-scaffold-grid">
+                    <div class="importance-scaffold-cell">
+                        <span class="scaffold-label">Paragraph 1 Focus:</span>
+                        <div style="font-size: 6.8pt; color: #334155;">Centralised Command: Explain why disbanding independent political militias prevented civil war and unified national defense under cabinet control.</div>
+                    </div>
+                    <div class="importance-scaffold-cell">
+                        <span class="scaffold-label">Paragraph 2 Focus:</span>
+                        <div style="font-size: 6.8pt; color: #334155;">Permanent Border Security: Explain how the standing army established deterrence and fortified settlements against persistent Arab non-recognition.</div>
+                    </div>
+                    <div class="importance-scaffold-cell">
+                        <span class="scaffold-label">Vocabulary &amp; Stems:</span>
+                        <div><span class="scaffold-pill">David Ben-Gurion</span> <span class="scaffold-pill">Order No. 4 (May 1948)</span> <span class="scaffold-pill">Dissolution of Haganah, Irgun, Lehi</span> <span class="scaffold-pill">Altalena affair</span></div>
+                        <div style="margin-top: 2px; font-size: 6.6pt; color: #475569;"><em>Stem:</em> "This ensured that..."</div>
+                    </div>
+                </div>
+
                 <div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -970,8 +1145,21 @@
                     <span><strong class="q-num">4 (a)</strong> Explain one consequence of the territorial changes resulting from the 1948–49 war.</span>
                     <span class="q-marks">(4)</span>
                 </div>
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="flex: 1.2;">
+                        <span class="scaffold-label">Key Facts Bank:</span>
+                        <div class="scaffold-content"><span class="scaffold-pill">1949 Green Line</span> <span class="scaffold-pill">79% of Palestine</span> <span class="scaffold-pill">Gaza Strip to Egypt</span> <span class="scaffold-pill">West Bank to Jordan</span> <span class="scaffold-pill">Divided Jerusalem</span></div>
+                    </div>
+                    <div class="scaffold-col" style="flex: 1;">
+                        <span class="scaffold-label">Causal Connectives:</span>
+                        <div class="scaffold-content"><span class="scaffold-pill">One consequence was...</span> <span class="scaffold-pill">This directly caused...</span> <span class="scaffold-pill">As a result, ...</span></div>
+                    </div>
+                    <div class="scaffold-col" style="flex: 1.3;">
+                        <span class="scaffold-label">Response Structure:</span>
+                        <div class="scaffold-content" style="font-size: 6.8pt;">Identify territorial shift &rarr; Give specific facts (79% vs 55% UN partition) &rarr; Explain permanent loss of an independent Palestinian Arab state.</div>
+                    </div>
+                </div>
                 <div class="dotted-line"></div>
-<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -983,13 +1171,26 @@
             </div>
 
             <!-- Question 4(b) -->
-            <div class="question-container" style="margin-top: 10px;">
+            <div class="question-container" style="margin-top: 8px;">
                 <div class="question-prompt">
                     <span><strong class="q-num">4 (b)</strong> Explain one consequence of the formation of the United Arab Republic (UAR) in 1958.</span>
                     <span class="q-marks">(4)</span>
                 </div>
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="flex: 1.2;">
+                        <span class="scaffold-label">Key Facts Bank:</span>
+                        <div class="scaffold-content"><span class="scaffold-pill">Gamal Abdel Nasser</span> <span class="scaffold-pill">Egypt-Syria political union</span> <span class="scaffold-pill">Pan-Arabism</span> <span class="scaffold-pill">Encirclement of Israel</span> <span class="scaffold-pill">Regional destabilisation</span></div>
+                    </div>
+                    <div class="scaffold-col" style="flex: 1;">
+                        <span class="scaffold-label">Causal Connectives:</span>
+                        <div class="scaffold-content"><span class="scaffold-pill">One consequence was...</span> <span class="scaffold-pill">This meant that...</span> <span class="scaffold-pill">Consequently, ...</span></div>
+                    </div>
+                    <div class="scaffold-col" style="flex: 1.3;">
+                        <span class="scaffold-label">Response Structure:</span>
+                        <div class="scaffold-content" style="font-size: 6.8pt;">Identify regional impact &rarr; Give precise facts &rarr; Explain how merging Egypt and Syria heightened Israeli fears of hostile encirclement.</div>
+                    </div>
+                </div>
                 <div class="dotted-line"></div>
-<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -1030,11 +1231,24 @@
                     <strong>Examiner Guidance:</strong> Explain how the displacement of 700,000 refugees and the refusal of Arab states to permit permanent resettlement entrenched regional hostility.
                 </div>
 
+                <!-- Importance Scaffold Grid -->
+                <div class="importance-scaffold-grid">
+                    <div class="importance-scaffold-cell">
+                        <span class="scaffold-label">Paragraph 1 Focus:</span>
+                        <div style="font-size: 6.8pt; color: #334155;">Entrenched Diplomatic Hostility: Explain how the refugee camps became enduring political symbols preventing Arab states from formally recognizing Israel.</div>
+                    </div>
+                    <div class="importance-scaffold-cell">
+                        <span class="scaffold-label">Paragraph 2 Focus:</span>
+                        <div style="font-size: 6.8pt; color: #334155;">Cycle of Border Violence: Explain how displaced refugees formed fedayeen guerrilla cells, launching raids that prompted devastating Israeli military reprisals.</div>
+                    </div>
+                    <div class="importance-scaffold-cell">
+                        <span class="scaffold-label">Vocabulary &amp; Stems:</span>
+                        <div><span class="scaffold-pill">700,000 displaced (Nakba)</span> <span class="scaffold-pill">Right of Return (UN Res 194)</span> <span class="scaffold-pill">UNRWA border camps</span> <span class="scaffold-pill">Fedayeen guerrilla raids</span></div>
+                        <div style="margin-top: 2px; font-size: 6.6pt; color: #475569;"><em>Stem:</em> "This was important because..."</div>
+                    </div>
+                </div>
+
                 <div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -1083,11 +1297,24 @@
                     <strong>Examiner Guidance:</strong> Explain how American financial loans and diplomatic backing enabled the fledgling state to absorb mass immigration and build sovereign infrastructure.
                 </div>
 
+                <!-- Importance Scaffold Grid -->
+                <div class="importance-scaffold-grid">
+                    <div class="importance-scaffold-cell">
+                        <span class="scaffold-label">Paragraph 1 Focus:</span>
+                        <div style="font-size: 6.8pt; color: #334155;">Economic Survival & Infrastructure: Explain how US grants and loans prevented financial collapse while absorbing one million Jewish refugees.</div>
+                    </div>
+                    <div class="importance-scaffold-cell">
+                        <span class="scaffold-label">Paragraph 2 Focus:</span>
+                        <div style="font-size: 6.8pt; color: #334155;">Strategic Cold War Alignment: Explain how aid deepened as Washington countered growing Soviet influence in Egypt and Syria.</div>
+                    </div>
+                    <div class="importance-scaffold-cell">
+                        <span class="scaffold-label">Vocabulary &amp; Stems:</span>
+                        <div><span class="scaffold-pill">Export-Import Bank loans</span> <span class="scaffold-pill">PL 480 food aid</span> <span class="scaffold-pill">Mass immigration absorption (1m)</span> <span class="scaffold-pill">National Water Carrier</span></div>
+                        <div style="margin-top: 2px; font-size: 6.6pt; color: #475569;"><em>Stem:</em> "Without this relationship, ..."</div>
+                    </div>
+                </div>
+
                 <div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -1137,17 +1364,37 @@
                     You may use the following in your answer:
                     <ul>
                         <li><strong>Nationalisation of the Suez Canal (July 1956)</strong></li>
-                        <li><strong>The Protocol of Sèvres (October 1956)</strong></li>
+                        <li><strong>British and French military intervention</strong></li>
                     </ul>
-                    <span style="display: block; margin-top: 3px; font-style: italic; color: #475569;">(You must also use information of your own.)</span>
+                    <span style="display: block; margin-top: 2px; font-style: italic; color: #475569;">(You must also use information of your own.)</span>
+                </div>
+
+                <!-- Narrative Flow Planner -->
+                <div class="narrative-flow-planner">
+                    <div style="font-weight: 800; font-size: 6.8pt; text-transform: uppercase; color: #0f172a; margin-bottom: 2px;">
+                        Chronological 3-Stage Narrative Architecture:
+                    </div>
+                    <div class="narrative-stages-row">
+                        <div class="narrative-stage-box">
+                            <div class="narrative-stage-hdr">Stage 1: Outbreak & Catalyst (July 1956)</div>
+                            <div style="font-size: 6.6pt; color: #334155;">US cancels Aswan funding; Nasser nationalises Suez Canal</div>
+                        </div>
+                        <div class="narrative-stage-box">
+                            <div class="narrative-stage-hdr">Stage 2: Collusion & Invasion (Oct–Nov 1956)</div>
+                            <div style="font-size: 6.6pt; color: #334155;">Secret Sèvres pact; Israel invades Sinai; Anglo-French assault</div>
+                        </div>
+                        <div class="narrative-stage-box">
+                            <div class="narrative-stage-hdr">Stage 3: Superpower Intervention & Defeat (Nov 1956)</div>
+                            <div style="font-size: 6.6pt; color: #334155;">Eisenhower forces allied retreat; Nasser elevated to Pan-Arab hero</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #cbd5e1; padding-top: 2px; font-size: 6.6pt; color: #475569;">
+                        <span><strong>Fact Bank:</strong> <span class="scaffold-pill">Aswan Dam loan cancellation</span> <span class="scaffold-pill">Nasser 26 July speech</span> <span class="scaffold-pill">Secret Protocol of Sèvres</span> <span class="scaffold-pill">Israeli Sinai invasion</span> <span class="scaffold-pill">Port Said landings</span> <span class="scaffold-pill">Eisenhower financial ultimatum</span></span>
+                        <span><strong>Connectives:</strong> The crisis began when... · In response, Britain and France... · A decisive military escalation occurred when...</span>
+                    </div>
                 </div>
 
                 <div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>

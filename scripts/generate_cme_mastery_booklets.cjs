@@ -12,7 +12,7 @@ if (!fs.existsSync(bookletsDir)) fs.mkdirSync(bookletsDir, { recursive: true });
 if (!fs.existsSync(pdfsDir)) fs.mkdirSync(pdfsDir, { recursive: true });
 
 // =============================================================================
-// COMPREHENSIVE CURRICULUM DATA: KT1, KT2, KT3
+// COMPREHENSIVE CURRICULUM DATA: KT1, KT2, KT3 WITH RICH SPECIFICATION SCAFFOLDING
 // =============================================================================
 const KT_DATA = {
   KT1: {
@@ -27,21 +27,72 @@ const KT_DATA = {
         num: '1 (a)',
         stem: 'Explain one consequence of the bombing of the King David Hotel (1946).',
         marks: 4,
-        lines: 9,
+        lines: 8,
+        vocabBank: [
+          '22 July 1946',
+          'Irgun militants',
+          'Menachem Begin',
+          '91 casualties',
+          'British Secretariat',
+        ],
+        connectives: [
+          'One direct consequence was...',
+          'This meant that...',
+          'Consequently, this led to...',
+        ],
+        guide:
+          'Identify one consequence &rarr; Support with precise historical facts &rarr; Explain how this forced Britain to refer the mandate to the UN.',
       },
       q1b: {
         num: '1 (b)',
         stem: 'Explain one consequence of the Israeli attacks on Gaza in 1955.',
         marks: 4,
-        lines: 9,
+        lines: 8,
+        vocabBank: [
+          '28 February 1955',
+          'Fedayeen raids',
+          'Ariel Sharon',
+          '38 Egyptian soldiers',
+          'Czech Arms Deal',
+        ],
+        connectives: [
+          'As a consequence, ...',
+          'This action provoked...',
+          'This directly resulted in...',
+        ],
+        guide:
+          'Identify one consequence &rarr; Support with precise facts &rarr; Explain how this humiliated Nasser and triggered the Czech Arms Deal.',
       },
       q2: {
         num: '2',
         stem: 'Write a narrative account analysing the key events of the Arab-Israeli war (1948–49).',
         marks: 8,
         stimulus: ['The invasion by Arab armies (May 1948)', 'The June 1948 truce'],
-        linesPage3: 13,
-        linesPage4: 23,
+        linesPage3: 11,
+        linesPage4: 22,
+        vocabBank: [
+          '14 May Declaration',
+          'Arab Legion & Jerusalem',
+          'UN 4-Week Truce',
+          'Czech Avia S-199s',
+          'Operation Yoav',
+          '1949 Green Line Armistices',
+        ],
+        connectives: [
+          'In the opening phase, ...',
+          'A decisive turning point came when...',
+          'This breathing space allowed...',
+          'Consequently, ...',
+          'This outcome resulted in...',
+        ],
+        stages: {
+          stage1:
+            'Stage 1: Outbreak & Arab Invasion (May 1948) — 5 Arab armies invade; Jerusalem besieged',
+          stage2:
+            'Stage 2: Turning Point & UN Truce (June 1948) — Ben-Gurion unifies IDF; Czech arms imported',
+          stage3:
+            'Stage 3: Counter-Offensives & Armistice (1949) — IDF secures 79% territory; 700,000 refugees',
+        },
       },
       q3a: {
         num: '3 (a)',
@@ -49,7 +100,22 @@ const KT_DATA = {
         marks: 8,
         focus:
           'Explain why the resolution was important for providing international legal legitimacy and securing immediate diplomatic recognition for the sovereign state.',
-        lines: 20,
+        lines: 16,
+        vocabBank: [
+          '29 Nov 1947 vote',
+          'UN General Assembly',
+          '55% territory allocation',
+          'Two-thirds majority',
+          'Truman & Soviet recognition',
+        ],
+        connectives: [
+          'This was vital because...',
+          'Furthermore, ...',
+          'Without this international mandate, ...',
+          'This directly enabled...',
+        ],
+        p1: 'International Legal Legitimacy: Explain how Res 181 gave Jewish leaders recognised authority to proclaim a state without being branded an illegal rebellion.',
+        p2: 'Superpower Recognition: Explain how the vote secured immediate US/Soviet diplomatic recognition and Czechoslovak arms shipments.',
       },
       q3b: {
         num: '3 (b)',
@@ -57,7 +123,22 @@ const KT_DATA = {
         marks: 8,
         focus:
           'Explain why unifying rival paramilitary militias under centralized government command was important for political stability and permanent defense.',
-        lines: 20,
+        lines: 16,
+        vocabBank: [
+          'David Ben-Gurion',
+          'Order No. 4 (May 1948)',
+          'Dissolution of Haganah, Irgun, Lehi',
+          'Altalena affair',
+          'Unified command',
+        ],
+        connectives: [
+          'This was important because...',
+          'Consequently, ...',
+          'In addition, ...',
+          'This ensured that...',
+        ],
+        p1: 'Centralised Command: Explain why disbanding independent political militias prevented civil war and unified national defense under cabinet control.',
+        p2: 'Permanent Border Security: Explain how the standing army established deterrence and fortified settlements against persistent Arab non-recognition.',
       },
     },
     depthBank: {
@@ -65,13 +146,33 @@ const KT_DATA = {
         num: '4 (a)',
         stem: 'Explain one consequence of the territorial changes resulting from the 1948–49 war.',
         marks: 4,
-        lines: 9,
+        lines: 8,
+        vocabBank: [
+          '1949 Green Line',
+          '79% of Palestine',
+          'Gaza Strip to Egypt',
+          'West Bank to Jordan',
+          'Divided Jerusalem',
+        ],
+        connectives: ['One consequence was...', 'This directly caused...', 'As a result, ...'],
+        guide:
+          'Identify territorial shift &rarr; Give specific facts (79% vs 55% UN partition) &rarr; Explain permanent loss of an independent Palestinian Arab state.',
       },
       q4b: {
         num: '4 (b)',
         stem: 'Explain one consequence of the formation of the United Arab Republic (UAR) in 1958.',
         marks: 4,
-        lines: 9,
+        lines: 8,
+        vocabBank: [
+          'Gamal Abdel Nasser',
+          'Egypt-Syria political union',
+          'Pan-Arabism',
+          'Encirclement of Israel',
+          'Regional destabilisation',
+        ],
+        connectives: ['One consequence was...', 'This meant that...', 'Consequently, ...'],
+        guide:
+          'Identify regional impact &rarr; Give precise facts &rarr; Explain how merging Egypt and Syria heightened Israeli fears of hostile encirclement.',
       },
       q5: {
         num: '5',
@@ -79,7 +180,22 @@ const KT_DATA = {
         marks: 8,
         focus:
           'Explain how the displacement of 700,000 refugees and the refusal of Arab states to permit permanent resettlement entrenched regional hostility.',
-        lines: 20,
+        lines: 16,
+        vocabBank: [
+          '700,000 displaced (Nakba)',
+          'Right of Return (UN Res 194)',
+          'UNRWA border camps',
+          'Fedayeen guerrilla raids',
+          'Arab boycott of peace',
+        ],
+        connectives: [
+          'This was important because...',
+          'Furthermore, ...',
+          'This directly hardened attitudes by...',
+          'As a consequence, ...',
+        ],
+        p1: 'Entrenched Diplomatic Hostility: Explain how the refugee camps became enduring political symbols preventing Arab states from formally recognizing Israel.',
+        p2: 'Cycle of Border Violence: Explain how displaced refugees formed fedayeen guerrilla cells, launching raids that prompted devastating Israeli military reprisals.',
       },
       q6: {
         num: '6',
@@ -87,7 +203,22 @@ const KT_DATA = {
         marks: 8,
         focus:
           'Explain how American financial loans and diplomatic backing enabled the fledgling state to absorb mass immigration and build sovereign infrastructure.',
-        lines: 20,
+        lines: 16,
+        vocabBank: [
+          'Export-Import Bank loans',
+          'PL 480 food aid',
+          'Mass immigration absorption (1m)',
+          'National Water Carrier',
+          'Hawk surface-to-air missiles (1962)',
+        ],
+        connectives: [
+          'This was critical because...',
+          'Moreover, ...',
+          'Without American financial support, ...',
+          'This ensured that...',
+        ],
+        p1: 'Economic Survival & Infrastructure: Explain how US grants and loans prevented financial collapse while absorbing one million Jewish refugees.',
+        p2: 'Strategic Cold War Alignment: Explain how aid deepened as Washington countered growing Soviet influence in Egypt and Syria.',
       },
       q7: {
         num: '7',
@@ -95,9 +226,32 @@ const KT_DATA = {
         marks: 8,
         stimulus: [
           'Nationalisation of the Suez Canal (July 1956)',
-          'The Protocol of Sèvres (October 1956)',
+          'British and French military intervention',
         ],
-        lines: 19,
+        lines: 14,
+        vocabBank: [
+          'Aswan Dam loan cancellation',
+          'Nasser 26 July speech',
+          'Secret Protocol of Sèvres',
+          'Israeli Sinai invasion',
+          'Port Said landings',
+          'Eisenhower financial ultimatum',
+        ],
+        connectives: [
+          'The crisis began when...',
+          'In response, Britain and France...',
+          'A decisive military escalation occurred when...',
+          'However, the situation reversed when...',
+          'Ultimately, this resulted in...',
+        ],
+        stages: {
+          stage1:
+            'Stage 1: Outbreak & Catalyst (July 1956) — US cancels Aswan funding; Nasser nationalises Suez Canal',
+          stage2:
+            'Stage 2: Collusion & Invasion (Oct–Nov 1956) — Secret Sèvres pact; Israel invades Sinai; Anglo-French assault',
+          stage3:
+            'Stage 3: Superpower Intervention & Defeat (Nov 1956) — Eisenhower forces allied retreat; Nasser elevated to Pan-Arab hero',
+        },
       },
     },
     exemplars: {
@@ -246,21 +400,75 @@ const KT_DATA = {
         num: '1 (a)',
         stem: 'Explain one consequence of the events of 7 April 1967 for escalating tension between Israel and Syria.',
         marks: 4,
-        lines: 9,
+        lines: 8,
+        vocabBank: [
+          'Demilitarised zones (DMZ)',
+          'Tractor farming disputes',
+          'Golan Heights artillery',
+          '6 Syrian MiG-21s downed',
+          'Flyover above Damascus',
+        ],
+        connectives: [
+          'One direct consequence was...',
+          'This escalated tensions because...',
+          'Consequently, this led to...',
+        ],
+        guide:
+          'Identify one consequence &rarr; Support with precise facts (6 MiGs shot down, Damascus flyover) &rarr; Explain how this humiliated Syria and pushed Nasser into Sinai.',
       },
       q1b: {
         num: '1 (b)',
         stem: 'Explain one consequence of the expulsion of the PLO from Jordan (1970).',
         marks: 4,
-        lines: 9,
+        lines: 8,
+        vocabBank: [
+          'Black September 1970',
+          'King Hussein & Jordanian Army',
+          'Dawson’s Field hijackings',
+          'Relocation to Southern Lebanon',
+          'Fatahland enclave',
+        ],
+        connectives: [
+          'As a direct result, ...',
+          'This meant that...',
+          'Consequently, this directly led to...',
+        ],
+        guide:
+          'Identify one consequence &rarr; Support with precise facts (Amman crackdown, move to Lebanon) &rarr; Explain how this created a new border front against northern Israel.',
       },
       q2: {
         num: '2',
         stem: 'Write a narrative account analysing the key events of the Six Day War (1967).',
         marks: 8,
-        stimulus: ['Operation Focus airstrikes (5 June)', 'The capture of East Jerusalem (7 June)'],
-        linesPage3: 13,
-        linesPage4: 23,
+        stimulus: [
+          'Air attacks on Egyptian airfields (5 June 1967)',
+          'The capture of East Jerusalem (7 June)',
+        ],
+        linesPage3: 11,
+        linesPage4: 22,
+        vocabBank: [
+          'Operation Focus (7:45 am)',
+          '300+ aircraft destroyed',
+          'Total air supremacy',
+          'Sinai armoured offensive',
+          'Motta Gur & Western Wall',
+          'Golan Heights capture (9–10 June)',
+        ],
+        connectives: [
+          'The war began when...',
+          'Having established complete air supremacy, ...',
+          'Meanwhile on the central front, ...',
+          'Following this victory, ...',
+          'By the ceasefire, ...',
+        ],
+        stages: {
+          stage1:
+            'Stage 1: Pre-emptive Air Strike (5 June 1967) — Surprise attack destroys Egyptian air force on runways within 3 hours',
+          stage2:
+            'Stage 2: Ground Blitz & Jerusalem (6–8 June 1967) — Israeli armour crosses Sinai; paratroopers secure East Jerusalem & West Bank',
+          stage3:
+            'Stage 3: Golan Victory & Ceasefire (9–10 June 1967) — Syrian escarpment stormed; quadrupling of Israeli territory',
+        },
       },
       q3a: {
         num: '3 (a)',
@@ -268,7 +476,22 @@ const KT_DATA = {
         marks: 8,
         focus:
           'Explain why the "land for peace" formula and its deliberate linguistic ambiguity dictated all subsequent diplomatic negotiations.',
-        lines: 20,
+        lines: 16,
+        vocabBank: [
+          '22 November 1967',
+          'UN Security Council',
+          '"Land for peace" formula',
+          'Deliberate ambiguity ("territories occupied")',
+          'Rejection by PLO as "refugees"',
+        ],
+        connectives: [
+          'This was vital because...',
+          'Furthermore, ...',
+          'Crucially, ...',
+          'This directly influenced...',
+        ],
+        p1: 'Foundational "Land for Peace" Principle: Explain how Res 242 established the universal formula requiring Israel to return land in exchange for Arab peace treaties.',
+        p2: 'Deliberate Linguistic Ambiguity: Explain how omitting the word "the" from the English draft allowed Israel to claim it was not required to surrender all 1967 conquests.',
       },
       q3b: {
         num: '3 (b)',
@@ -276,7 +499,22 @@ const KT_DATA = {
         marks: 8,
         focus:
           'Explain how establishing a pan-Arab institutional framework provided the platform that Yasser Arafat’s guerrilla movement subsequently took over.',
-        lines: 20,
+        lines: 16,
+        vocabBank: [
+          'Arab League summit',
+          'Gamal Abdel Nasser',
+          'Creation of PLO (1964)',
+          'Ahmad Shukeiri',
+          'Yasser Arafat & Fatah takeover (1969)',
+        ],
+        connectives: [
+          'This conference was important because...',
+          'Moreover, ...',
+          'This provided the platform for...',
+          'As a direct result, ...',
+        ],
+        p1: 'Official Institutional Framework: Explain how Arab states created an official, recognised umbrella organization to represent Palestinian national identity.',
+        p2: 'Platform for Independent Militancy: Explain how Fatah exploited this official apparatus following the 1967 Arab defeat to wrest control and launch armed struggle.',
       },
     },
     depthBank: {
@@ -284,13 +522,33 @@ const KT_DATA = {
         num: '4 (a)',
         stem: 'Explain one consequence of Israel’s raid on Samu (1966) for tension between Israel and Jordan.',
         marks: 4,
-        lines: 9,
+        lines: 8,
+        vocabBank: [
+          '13 November 1966',
+          'West Bank border village',
+          'Fedayeen landmine reprisal',
+          'Jordanian civilian & military casualties',
+          'King Hussein defense pact with Egypt',
+        ],
+        connectives: ['One consequence was...', 'This directly caused...', 'Consequently, ...'],
+        guide:
+          'Identify consequence &rarr; Support with facts &rarr; Explain how attacking Jordan alienated King Hussein and pushed him into a mutual defense pact with Nasser.',
       },
       q4b: {
         num: '4 (b)',
         stem: 'Explain one consequence of the Black September attack at the Munich Olympics (1972) for international attitudes towards the Palestine issue.',
         marks: 4,
-        lines: 9,
+        lines: 8,
+        vocabBank: [
+          '5 September 1972',
+          'Black September faction',
+          '11 Israeli athletes murdered',
+          'Televised global audience (900m)',
+          'Operation Wrath of God (Mossad)',
+        ],
+        connectives: ['One consequence was...', 'This meant that...', 'As a result, ...'],
+        guide:
+          'Identify consequence &rarr; Support with facts &rarr; Explain how Munich horrified Western publics while thrusting Palestinian national grievances onto the world stage.',
       },
       q5: {
         num: '5',
@@ -298,25 +556,78 @@ const KT_DATA = {
         marks: 8,
         focus:
           'Explain how strategic depth provided military buffer zones while creating permanent administrative, legal, and demographic burdens.',
-        lines: 20,
+        lines: 16,
+        vocabBank: [
+          'Sinai strategic buffer (130 miles)',
+          'Golan Heights artillery high ground',
+          'West Bank border along Jordan River',
+          'Bar-Lev Line fortifications',
+          '1 million Palestinian demographic burden',
+        ],
+        connectives: [
+          'This was important for security because...',
+          'On the other hand, ...',
+          'Furthermore, ...',
+          'This directly created...',
+        ],
+        p1: 'Strategic Military Buffer: Explain how holding Sinai and the Golan Heights provided essential warning time and removed Syrian artillery from Israeli towns.',
+        p2: 'Internal Security Dilemma: Explain how occupying one million Palestinians created permanent internal unrest, international condemnation, and policing burdens.',
       },
       q6: {
         num: '6',
         stem: 'Explain the importance of Egyptian relations with the USSR between 1967 and 1973.',
         marks: 8,
         focus:
-          'Explain how Soviet surface-to-air missile umbrellas and advanced armour enabled Egypt to plan and execute Operation Badr in 1973.',
-        lines: 20,
+          'Explain how Soviet surface-to-air missile umbrellas and advanced armour enabled Egypt to plan and execute military operations in 1973.',
+        lines: 16,
+        vocabBank: [
+          'Resupply of MiG-21s & T-55/62 tanks',
+          'SAM missile umbrellas (SAM-2, 3, 6)',
+          '15,000 Soviet military advisers',
+          'War of Attrition (1969–70)',
+          'Expulsion of Soviet advisers by Sadat (1972)',
+        ],
+        connectives: [
+          'This relationship was vital because...',
+          'Furthermore, ...',
+          'Without Soviet weaponry, ...',
+          'This directly enabled...',
+        ],
+        p1: 'Rebuilding Military Hardware: Explain how Soviet arms shipments completely replaced Egypt’s destroyed military equipment following the 1967 disaster.',
+        p2: 'The SAM Air Defence Umbrella: Explain how advanced Soviet anti-aircraft missiles neutralized the Israeli Air Force over the Suez Canal, making the 1973 offensive possible.',
       },
       q7: {
         num: '7',
         stem: 'Write a narrative account analysing the key events of the Yom Kippur War (1973).',
         marks: 8,
         stimulus: [
-          'Operation Badr canal crossing (6 October)',
-          'The battle of the Chinese Farm (15–17 October)',
+          'The Arab surprise attack (October 1973)',
+          'Israeli counter-attacks across the Suez Canal',
         ],
-        lines: 19,
+        lines: 14,
+        vocabBank: [
+          '6 October 1973 (Yom Kippur)',
+          'Suez water-cannons & SAM shield',
+          'Bar-Lev Line overrun',
+          'Golan Heights tank battles',
+          'Sharon’s canal crossing (Deversoir)',
+          'OPEC oil embargo & UN Res 338',
+        ],
+        connectives: [
+          'The war erupted when...',
+          'In the opening 48 hours, ...',
+          'However, the strategic momentum shifted when...',
+          'Following this, ...',
+          'By the ceasefire, ...',
+        ],
+        stages: {
+          stage1:
+            'Stage 1: Coordinated Surprise Attack (6 Oct 1973) — Egyptian forces cross Suez under SAM shield; Syrian armour assaults Golan',
+          stage2:
+            'Stage 2: Critical Defence & Counter-Blows (7–14 Oct 1973) — IDF reserves halt Syrian breakthrough; US Operation Nickel Grass airlift arrives',
+          stage3:
+            'Stage 3: Canal Crossing & Ceasefire (15–24 Oct 1973) — Sharon breaches canal, encircles Egyptian 3rd Army; UN ceasefire enforced',
+        },
       },
     },
     exemplars: {
@@ -340,7 +651,10 @@ const KT_DATA = {
       },
       narrative: {
         stem: 'Write a narrative account analysing the key events of the Six Day War (1967).',
-        stimulus: ['Operation Focus airstrikes (5 June)', 'The capture of East Jerusalem (7 June)'],
+        stimulus: [
+          'Air attacks on Egyptian airfields (5 June 1967)',
+          'The capture of East Jerusalem (7 June)',
+        ],
         marks: 8,
         modelP1:
           'The Six Day War began at 7:45 am on 5 June 1967 when Israel launched Operation Focus, a pre-emptive airstrike against Egyptian airbases. Flying below Egyptian radar across the Mediterranean, the Israeli Air Force caught the Egyptian air force completely by surprise, destroying over 300 combat aircraft on the runway within three hours and disabling runways with specialized penetration bombs. This instantaneous destruction of Egyptian airpower established total Israeli air supremacy from the opening morning, leaving Arab ground forces without air support.',
@@ -349,7 +663,7 @@ const KT_DATA = {
         modelP3:
           'Following victory on the southern and central fronts, the IDF turned against Syria on 9 June. Israeli brigades scaled the heavily fortified Golan Heights escarpment under intense artillery fire, capturing the strategic high ground overlooking the Sea of Galilee. By the time a UN ceasefire took effect on 10 June, Israel had shattered three Arab armies in six days and quadrupled its territory, bringing one million Palestinian Arabs under military rule in Sinai, Gaza, the West Bank, East Jerusalem, and the Golan Heights.',
         examiner:
-          'Level 3 (8 Marks): 3-stage causal narrative covering Operation Focus, the multi-front advance, and the Golan climax; explicit causal links; integration of both stimulus points with rich tactical knowledge.',
+          'Level 3 (8 Marks): 3-stage causal narrative covering air strikes, multi-front advance, and the Golan climax; explicit causal links; integration of both stimulus points with rich tactical knowledge.',
       },
       traps: [
         {
@@ -465,13 +779,41 @@ const KT_DATA = {
         num: '1 (a)',
         stem: 'Explain one consequence of the Treaty of Washington (1979) for Egyptian relations with other Arab states.',
         marks: 4,
-        lines: 9,
+        lines: 8,
+        vocabBank: [
+          '26 March 1979',
+          'Anwar Sadat & Menachem Begin',
+          'Arab League suspension of Egypt',
+          'Move of HQ to Tunis',
+          'Severing of diplomatic ties',
+        ],
+        connectives: [
+          'One direct consequence was...',
+          'This meant that...',
+          'Consequently, Egypt faced...',
+        ],
+        guide:
+          'Identify Arab reaction &rarr; Support with facts (suspension from Arab League, move to Tunis) &rarr; Explain how Egypt was ostracized for breaking pan-Arab unity.',
       },
       q1b: {
         num: '1 (b)',
         stem: 'Explain one consequence of the Israeli invasion of Lebanon (1982).',
         marks: 4,
-        lines: 9,
+        lines: 8,
+        vocabBank: [
+          'Operation Peace for Galilee (June 1982)',
+          'Ariel Sharon',
+          'Siege of Beirut',
+          'Expulsion of PLO to Tunisia',
+          'Rise of Hezbollah',
+        ],
+        connectives: [
+          'As a direct result, ...',
+          'This directly led to...',
+          'Consequently, this created...',
+        ],
+        guide:
+          'Identify one consequence &rarr; Support with facts (Beirut siege, PLO expulsion to Tunis, Hezbollah) &rarr; Explain long-term border conflict.',
       },
       q2: {
         num: '2',
@@ -481,8 +823,31 @@ const KT_DATA = {
           'Sadat’s address to the Knesset (November 1977)',
           'The Camp David summit (September 1978)',
         ],
-        linesPage3: 13,
-        linesPage4: 23,
+        linesPage3: 11,
+        linesPage4: 22,
+        vocabBank: [
+          '19 Nov 1977 Knesset speech',
+          'Begin visit to Ismailia',
+          'Jimmy Carter mediation',
+          '13-day Camp David summit',
+          '23 framework drafts',
+          'Treaty of Washington (26 March 1979)',
+        ],
+        connectives: [
+          'Negotiations began when...',
+          'However, talks soon deadlocked until...',
+          'During the intense 13-day summit, ...',
+          'This breakthrough directly enabled...',
+          'Ultimately, the process culminated in...',
+        ],
+        stages: {
+          stage1:
+            'Stage 1: Dramatic Peace Initiative (Nov 1977) — Sadat flies to Jerusalem offering peace; breaks psychological barrier',
+          stage2:
+            'Stage 2: US Mediation & Camp David (Sept 1978) — Carter drafts 23 revisions at secluded summit to prevent collapse',
+          stage3:
+            'Stage 3: Formal Bilateral Treaty (March 1979) — Treaty of Washington signed: Sinai returned, canal opened, Egypt isolated',
+        },
       },
       q3a: {
         num: '3 (a)',
@@ -490,7 +855,23 @@ const KT_DATA = {
         marks: 8,
         focus:
           'Explain why establishing the legal and administrative framework for interim self-government in Gaza and Jericho was critical for formal state administration.',
-        lines: 20,
+        lines: 16,
+        vocabBank: [
+          '13 September 1993',
+          'Declaration of Principles',
+          'Rabin & Arafat handshake',
+          'Withdrawal from Gaza & Jericho',
+          'Creation of PNA (May 1994)',
+          'Arafat return from exile',
+        ],
+        connectives: [
+          'This was important because...',
+          'Furthermore, ...',
+          'Without this agreement, ...',
+          'This directly transformed...',
+        ],
+        p1: 'Framework for Civilian Self-Rule: Explain how the accords transferred civil administration over population centres (Gaza and Jericho) to Palestinians for the first time.',
+        p2: 'Transformation into Recognized Government: Explain how it transformed the PLO from an exiled militant movement into an internationally recognized sovereign governing body.',
       },
       q3b: {
         num: '3 (b)',
@@ -498,7 +879,22 @@ const KT_DATA = {
         marks: 8,
         focus:
           'Explain why meeting Washington’s long-standing mandatory precondition unlocked direct US dialogue with the PLO and opened the path to Madrid and Oslo.',
-        lines: 20,
+        lines: 16,
+        vocabBank: [
+          'December 1988 Geneva speech',
+          'Acceptance of UN Res 242 & 338',
+          'Recognition of Israel’s right to exist',
+          'Explicit renunciation of terrorism',
+          'US opens official diplomatic dialogue',
+        ],
+        connectives: [
+          'This was vital because...',
+          'Moreover, ...',
+          'By fulfilling Washington’s condition, ...',
+          'This directly opened the way to...',
+        ],
+        p1: 'Unlocking Direct American Dialogue: Explain how renouncing terrorism satisfied Washington’s mandatory statutory precondition, opening official US-PLO diplomacy.',
+        p2: 'Paving the Path to Madrid and Oslo: Explain how American engagement gave the PLO international diplomatic credibility, leading directly to future peace negotiations.',
       },
     },
     depthBank: {
@@ -506,13 +902,37 @@ const KT_DATA = {
         num: '4 (a)',
         stem: 'Explain one consequence of the Israel-Jordan peace treaty (1994).',
         marks: 4,
-        lines: 9,
+        lines: 8,
+        vocabBank: [
+          '26 October 1994',
+          'King Hussein & Yitzhak Rabin',
+          'Wadi Araba border post',
+          'Water sharing agreements',
+          'Second Arab state recognition',
+        ],
+        connectives: [
+          'One consequence was...',
+          'This directly resulted in...',
+          'Consequently, ...',
+        ],
+        guide:
+          'Identify bilateral consequence &rarr; Support with facts (Wadi Araba, water allocations) &rarr; Explain stabilization and security along Israel’s longest border.',
       },
       q4b: {
         num: '4 (b)',
         stem: 'Explain one consequence of the Oslo II agreement (1995) for Palestinian self-rule in the West Bank.',
         marks: 4,
-        lines: 9,
+        lines: 8,
+        vocabBank: [
+          'September 1995 (Taba)',
+          'Division into Areas A, B, and C',
+          'Area A (full PNA control, ~3%)',
+          'Area B (joint security, ~24%)',
+          'Area C (full Israeli security, ~73%)',
+        ],
+        connectives: ['One consequence was...', 'This meant that...', 'Consequently, ...'],
+        guide:
+          'Identify territorial consequence &rarr; Support with precise facts (Areas A, B, C breakdown) &rarr; Explain how self-rule remained severely fragmented.',
       },
       q5: {
         num: '5',
@@ -520,7 +940,22 @@ const KT_DATA = {
         marks: 8,
         focus:
           'Explain how Carter’s personal marathon mediation and drafting of 23 revisions prevented summit collapse and produced the framework accords.',
-        lines: 20,
+        lines: 16,
+        vocabBank: [
+          'Jimmy Carter personal diplomacy',
+          'Secluded 13-day summit in Maryland',
+          'Drafting of 23 agreement revisions',
+          'Bilateral pressure on Begin & Sadat',
+          'US financial aid package guarantees',
+        ],
+        connectives: [
+          'President Carter was critical because...',
+          'Furthermore, ...',
+          'When negotiations neared total collapse, ...',
+          'His intervention ensured that...',
+        ],
+        p1: 'Marathon Personal Mediation: Explain how Carter shuttled tirelessly between isolated cabins drafting 23 revisions to overcome bitter personal distrust.',
+        p2: 'US Strategic Guarantees: Explain how Carter committed billions in ongoing US economic and military aid to induce both nations to accept difficult compromises.',
       },
       q6: {
         num: '6',
@@ -528,17 +963,56 @@ const KT_DATA = {
         marks: 8,
         focus:
           'Explain how the Arab oil embargo directly threatened domestic US economic security, compelling Washington to launch active shuttle diplomacy.',
-        lines: 20,
+        lines: 16,
+        vocabBank: [
+          'OPEC & OAPEC embargo (Oct 1973)',
+          'Price of oil quadrupled ($3 to $12)',
+          'US petrol rationing & severe inflation',
+          'Henry Kissinger "shuttle diplomacy"',
+          'Disengagement agreements (1974–75)',
+        ],
+        connectives: [
+          'This was critical because...',
+          'Moreover, ...',
+          'The economic shock forced Washington to...',
+          'This directly initiated...',
+        ],
+        p1: 'Domestic Economic Vulnerability: Explain how fuel shortages and rampant inflation demonstrated that US economic survival depended directly on Middle Eastern stability.',
+        p2: 'Active Diplomatic Mediation: Explain how the crisis compelled Kissinger to launch active shuttle diplomacy to resolve military standoffs and prevent future oil embargoes.',
       },
       q7: {
         num: '7',
         stem: 'Write a narrative account analysing the events of the First Palestinian Intifada (1987–93).',
         marks: 8,
         stimulus: [
-          'Incident at the Erez checkpoint (Dec 1987)',
+          'The outbreak of protests in Gaza (December 1987)',
           'Yitzhak Rabin’s ‘Iron Fist’ policy',
         ],
-        lines: 19,
+        lines: 14,
+        vocabBank: [
+          'Jabalia camp traffic incident',
+          'Stone-throwing youth vs IDF armour',
+          'Unified National Leadership (UNLU)',
+          'Commercial strikes & tax boycotts',
+          'Rabin "broken bones" policy',
+          'Rise of Hamas (1987)',
+          'Secret Oslo negotiations (1993)',
+        ],
+        connectives: [
+          'The uprising erupted when...',
+          'Rapidly spreading across Gaza and the West Bank, ...',
+          'In response, the Israeli government...',
+          'However, international outcry intensified when...',
+          'Ultimately, the Intifada proved that...',
+        ],
+        stages: {
+          stage1:
+            'Stage 1: Spontaneous Uprising (Dec 1987) — Fatal Gaza road incident sparks mass demonstrations; youth confront IDF tanks',
+          stage2:
+            'Stage 2: Civil Resistance & Iron Fist (1988–90) — UNLU organizes strikes and boycotts; Rabin’s harsh crackdown draws global condemnation',
+          stage3:
+            'Stage 3: Political Realisation & Oslo (1991–93) — Rise of Hamas; recognition that military occupation was unsustainable, unlocking Oslo',
+        },
       },
     },
     exemplars: {
@@ -624,7 +1098,7 @@ const KT_DATA = {
         {
           q: '3 (b)',
           type: 'Importance',
-          topic: 'Outbreak of the First Intifada (December 1987)',
+          topic: 'Arafat’s Renunciation of Terrorism (1988) for US Relations',
           page: 'P6',
           marks: 8,
         },
@@ -633,35 +1107,35 @@ const KT_DATA = {
         {
           q: '4 (a)',
           type: 'Consequence',
-          topic: 'The 1973 Oil Crisis on Western Policy & Support',
+          topic: 'The 1994 Israel-Jordan Peace Treaty',
           page: 'P7',
           marks: 4,
         },
         {
           q: '4 (b)',
           type: 'Consequence',
-          topic: 'Assassination of Egyptian President Anwar Sadat (1981)',
+          topic: 'The Oslo II Agreement (1995) for West Bank Self-Rule',
           page: 'P7',
           marks: 4,
         },
         {
           q: '5',
           type: 'Importance',
-          topic: 'Camp David Accords (1978) for US Middle East Diplomacy',
+          topic: 'US President Carter for Camp David Negotiations (1978)',
           page: 'P8',
           marks: 8,
         },
         {
           q: '6',
           type: 'Importance',
-          topic: 'Arafat’s 1988 UN Speech & Renunciation of Terrorism',
+          topic: '1973 Oil Crisis for US Involvement in Middle East',
           page: 'P9',
           marks: 8,
         },
         {
           q: '7',
           type: 'Narrative',
-          topic: 'Course of First Intifada to Madrid & Oslo (1987–93)',
+          topic: 'Events of the First Palestinian Intifada (1987–93)',
           page: 'P10',
           marks: 8,
         },
@@ -968,7 +1442,7 @@ const COMMON_CSS = `
   }
   .header-left h2 {
     margin: 0;
-    font-size: 10.5pt;
+    font-size: 10.2pt;
     font-weight: 800;
     color: #0f172a;
     text-transform: uppercase;
@@ -976,7 +1450,7 @@ const COMMON_CSS = `
   }
   .header-left p {
     margin: 1px 0 0 0;
-    font-size: 7.8pt;
+    font-size: 7.6pt;
     color: #475569;
   }
   .header-tag {
@@ -991,14 +1465,14 @@ const COMMON_CSS = `
   }
 
   .question-container {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
   .question-prompt {
-    font-size: 11pt;
+    font-size: 10.5pt;
     font-weight: 700;
     color: #000;
-    line-height: 1.35;
-    margin-bottom: 6px;
+    line-height: 1.3;
+    margin-bottom: 5px;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -1008,7 +1482,7 @@ const COMMON_CSS = `
     margin-right: 6px;
   }
   .q-marks {
-    font-size: 10.5pt;
+    font-size: 10pt;
     font-weight: 700;
     color: #334155;
     margin-left: 10px;
@@ -1016,56 +1490,153 @@ const COMMON_CSS = `
   }
   .stimulus-card {
     border: 1.5px solid #64748b;
-    border-radius: 6px;
-    padding: 7px 12px;
-    font-size: 8.8pt;
+    border-radius: 5px;
+    padding: 6px 10px;
+    font-size: 8.5pt;
     background: #f8fafc;
-    margin-bottom: 8px;
-    line-height: 1.35;
+    margin-bottom: 6px;
+    line-height: 1.3;
   }
   .stimulus-card ul {
-    margin: 3px 0 0 0;
+    margin: 2px 0 0 0;
     padding-left: 18px;
   }
   .focus-guidance {
-    font-size: 8pt;
+    font-size: 7.8pt;
     color: #475569;
     font-style: italic;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
   }
 
-  /* Ruled / Dotted Lines for Handwriting (24.5px spacing) */
+  /* Ruled / Dotted Lines for Handwriting (24px spacing) */
   .dotted-line {
     border-bottom: 1.5px dotted #94a3b8;
-    height: 24.5px;
+    height: 24px;
     width: 100%;
     box-sizing: border-box;
+  }
+
+  /* Pearson Professional Monochrome Scaffolding Containers */
+  .scaffold-bar {
+    border: 1.5px solid #475569;
+    border-radius: 4px;
+    background: #f8fafc;
+    padding: 4px 8px;
+    margin-bottom: 6px;
+    font-size: 7.2pt;
+    line-height: 1.25;
+    display: flex;
+    gap: 8px;
+  }
+  .scaffold-col {
+    border-right: 1px solid #cbd5e1;
+    padding-right: 6px;
+  }
+  .scaffold-col:last-child {
+    border-right: none;
+    padding-right: 0;
+  }
+  .scaffold-label {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 6.6pt;
+    color: #0f172a;
+    margin-bottom: 2px;
+    display: block;
+    letter-spacing: 0.2px;
+  }
+  .scaffold-content {
+    color: #334155;
+  }
+  .scaffold-pill {
+    display: inline-block;
+    background: #fff;
+    border: 1px solid #94a3b8;
+    border-radius: 3px;
+    padding: 1px 4px;
+    margin: 1px 2px 1px 0;
+    font-size: 6.6pt;
+    font-weight: 600;
+    color: #0f172a;
+    white-space: nowrap;
+  }
+
+  .importance-scaffold-grid {
+    border: 1.5px solid #475569;
+    border-radius: 4px;
+    background: #f8fafc;
+    padding: 4px 8px;
+    margin-bottom: 6px;
+    font-size: 7.2pt;
+    line-height: 1.25;
+    display: grid;
+    grid-template-columns: 1.35fr 1.35fr 1fr;
+    gap: 8px;
+  }
+  .importance-scaffold-cell {
+    border-right: 1px solid #cbd5e1;
+    padding-right: 6px;
+  }
+  .importance-scaffold-cell:last-child {
+    border-right: none;
+    padding-right: 0;
+  }
+
+  .narrative-flow-planner {
+    border: 1.5px solid #475569;
+    border-radius: 4px;
+    background: #f8fafc;
+    padding: 4px 8px;
+    margin-bottom: 6px;
+    font-size: 7.2pt;
+    line-height: 1.25;
+  }
+  .narrative-stages-row {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+  .narrative-stage-box {
+    flex: 1;
+    background: #fff;
+    border: 1px solid #94a3b8;
+    border-radius: 3px;
+    padding: 3px 5px;
+  }
+  .narrative-stage-hdr {
+    font-weight: 800;
+    font-size: 6.6pt;
+    text-transform: uppercase;
+    color: #0f172a;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 1px;
+    margin-bottom: 2px;
   }
 
   /* Exemplar and Trap Containers */
   .exemplar-box {
     border: 1.5px solid #cbd5e1;
     border-radius: 5px;
-    padding: 8px 10px;
+    padding: 7px 9px;
     background: #fff;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
   .exemplar-header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     border-bottom: 1px solid #e2e8f0;
-    padding-bottom: 3px;
-    margin-bottom: 5px;
+    padding-bottom: 2px;
+    margin-bottom: 4px;
   }
   .exemplar-title {
-    font-size: 8.8pt;
+    font-size: 8.5pt;
     font-weight: 800;
     color: #0f172a;
     text-transform: uppercase;
   }
   .exemplar-grade {
-    font-size: 7.5pt;
+    font-size: 7.2pt;
     font-weight: 700;
     background: #dbeafe;
     color: #1e40af;
@@ -1073,60 +1644,60 @@ const COMMON_CSS = `
     border-radius: 3px;
   }
   .exemplar-stem {
-    font-size: 8.5pt;
+    font-size: 8.2pt;
     font-weight: 700;
     color: #1e293b;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
   }
   .exemplar-text {
     font-family: Georgia, serif;
-    font-size: 8.2pt;
-    line-height: 1.35;
+    font-size: 8pt;
+    line-height: 1.32;
     color: #1e293b;
     background: #fafaf9;
     border-left: 3px solid #0284c7;
-    padding: 6px 8px;
+    padding: 5px 7px;
     border-radius: 0 4px 4px 0;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
   }
   .examiner-note {
-    font-size: 7.2pt;
+    font-size: 7pt;
     color: #15803d;
     background: #f0fdf4;
     border: 1px solid #bbf7d0;
     border-radius: 3px;
-    padding: 3px 6px;
+    padding: 2.5px 5px;
     line-height: 1.25;
   }
 
   .traps-card {
     border: 1.5px solid #ef4444;
     border-radius: 5px;
-    padding: 8px 10px;
+    padding: 7px 9px;
     background: #fef2f2;
-    margin-top: 6px;
+    margin-top: 5px;
   }
   .traps-header {
-    font-size: 8.5pt;
+    font-size: 8.2pt;
     font-weight: 800;
     color: #991b1b;
     text-transform: uppercase;
     border-bottom: 1px solid #fca5a5;
     padding-bottom: 2px;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
   }
   .traps-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 8px;
+    gap: 6px;
   }
   .trap-item {
     background: #fff;
     border: 1px solid #fca5a5;
     border-radius: 4px;
-    padding: 5px 6px;
-    font-size: 7.2pt;
-    line-height: 1.25;
+    padding: 4px 5px;
+    font-size: 7pt;
+    line-height: 1.22;
   }
   .trap-item strong {
     color: #991b1b;
@@ -1153,7 +1724,7 @@ const COMMON_CSS = `
 function renderLines(count) {
   let lines = '';
   for (let i = 0; i < count; i++) {
-    lines += '<div class="dotted-line"></div>\n';
+    lines += '<div class=\"dotted-line\"></div>\n';
   }
   return lines;
 }
@@ -1349,14 +1920,42 @@ function renderBookletHtml(ktKey, meta) {
                     <span><strong class="q-num">${e.q1a.num}</strong> ${e.q1a.stem}</span>
                     <span class="q-marks">(4)</span>
                 </div>
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="flex: 1.2;">
+                        <span class="scaffold-label">Key Facts Bank:</span>
+                        <div class="scaffold-content">${e.q1a.vocabBank.map((v) => `<span class="scaffold-pill">${v}</span>`).join(' ')}</div>
+                    </div>
+                    <div class="scaffold-col" style="flex: 1;">
+                        <span class="scaffold-label">Causal Connectives:</span>
+                        <div class="scaffold-content">${e.q1a.connectives.map((c) => `<span class="scaffold-pill">${c}</span>`).join(' ')}</div>
+                    </div>
+                    <div class="scaffold-col" style="flex: 1.3;">
+                        <span class="scaffold-label">Response Structure:</span>
+                        <div class="scaffold-content" style="font-size: 6.8pt;">${e.q1a.guide}</div>
+                    </div>
+                </div>
                 ${renderLines(e.q1a.lines)}
             </div>
 
             <!-- Question 1(b) -->
-            <div class="question-container" style="margin-top: 10px;">
+            <div class="question-container" style="margin-top: 8px;">
                 <div class="question-prompt">
                     <span><strong class="q-num">${e.q1b.num}</strong> ${e.q1b.stem}</span>
                     <span class="q-marks">(4)</span>
+                </div>
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="flex: 1.2;">
+                        <span class="scaffold-label">Key Facts Bank:</span>
+                        <div class="scaffold-content">${e.q1b.vocabBank.map((v) => `<span class="scaffold-pill">${v}</span>`).join(' ')}</div>
+                    </div>
+                    <div class="scaffold-col" style="flex: 1;">
+                        <span class="scaffold-label">Causal Connectives:</span>
+                        <div class="scaffold-content">${e.q1b.connectives.map((c) => `<span class="scaffold-pill">${c}</span>`).join(' ')}</div>
+                    </div>
+                    <div class="scaffold-col" style="flex: 1.3;">
+                        <span class="scaffold-label">Response Structure:</span>
+                        <div class="scaffold-content" style="font-size: 6.8pt;">${e.q1b.guide}</div>
+                    </div>
                 </div>
                 ${renderLines(e.q1b.lines)}
             </div>
@@ -1395,7 +1994,32 @@ function renderBookletHtml(ktKey, meta) {
                         <li><strong>${e.q2.stimulus[0]}</strong></li>
                         <li><strong>${e.q2.stimulus[1]}</strong></li>
                     </ul>
-                    <span style="display: block; margin-top: 3px; font-style: italic; color: #475569;">(You must also use information of your own.)</span>
+                    <span style="display: block; margin-top: 2px; font-style: italic; color: #475569;">(You must also use information of your own.)</span>
+                </div>
+
+                <!-- Narrative Flow Planner -->
+                <div class="narrative-flow-planner">
+                    <div style="font-weight: 800; font-size: 6.8pt; text-transform: uppercase; color: #0f172a; margin-bottom: 2px;">
+                        Chronological 3-Stage Narrative Architecture:
+                    </div>
+                    <div class="narrative-stages-row">
+                        <div class="narrative-stage-box">
+                            <div class="narrative-stage-hdr">${e.q2.stages.stage1.split(' — ')[0]}</div>
+                            <div style="font-size: 6.6pt; color: #334155;">${e.q2.stages.stage1.split(' — ')[1]}</div>
+                        </div>
+                        <div class="narrative-stage-box">
+                            <div class="narrative-stage-hdr">${e.q2.stages.stage2.split(' — ')[0]}</div>
+                            <div style="font-size: 6.6pt; color: #334155;">${e.q2.stages.stage2.split(' — ')[1]}</div>
+                        </div>
+                        <div class="narrative-stage-box">
+                            <div class="narrative-stage-hdr">${e.q2.stages.stage3.split(' — ')[0]}</div>
+                            <div style="font-size: 6.6pt; color: #334155;">${e.q2.stages.stage3.split(' — ')[1]}</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #cbd5e1; padding-top: 2px; font-size: 6.6pt; color: #475569;">
+                        <span><strong>Fact Bank:</strong> ${e.q2.vocabBank.map((v) => `<span class="scaffold-pill">${v}</span>`).join(' ')}</span>
+                        <span><strong>Connectives:</strong> ${e.q2.connectives.slice(0, 3).join(' · ')}</span>
+                    </div>
                 </div>
 
                 ${renderLines(e.q2.linesPage3)}
@@ -1423,6 +2047,10 @@ function renderBookletHtml(ktKey, meta) {
             </div>
 
             <div class="question-container">
+                <div style="border: 1px solid #94a3b8; border-radius: 4px; background: #f8fafc; padding: 4px 8px; margin-bottom: 6px; font-size: 7pt; color: #334155; display: flex; justify-content: space-between;">
+                    <span><strong>Narrative Rule:</strong> Use linking connectives (<em>"Consequently"</em>, <em>"This directly led to"</em>) between paragraphs.</span>
+                    <span><strong>Check:</strong> Both stimulus points + 1 own fact included.</span>
+                </div>
                 ${renderLines(e.q2.linesPage4)}
             </div>
         </div>
@@ -1454,6 +2082,26 @@ function renderBookletHtml(ktKey, meta) {
                 </div>
                 <div class="focus-guidance">
                     <strong>Examiner Guidance:</strong> ${e.q3a.focus}
+                </div>
+
+                <!-- Importance Scaffold Grid -->
+                <div class="importance-scaffold-grid">
+                    <div class="importance-scaffold-cell">
+                        <span class="scaffold-label">Paragraph 1 Focus:</span>
+                        <div style="font-size: 6.8pt; color: #334155;">${e.q3a.p1}</div>
+                    </div>
+                    <div class="importance-scaffold-cell">
+                        <span class="scaffold-label">Paragraph 2 Focus:</span>
+                        <div style="font-size: 6.8pt; color: #334155;">${e.q3a.p2}</div>
+                    </div>
+                    <div class="importance-scaffold-cell">
+                        <span class="scaffold-label">Vocabulary &amp; Stems:</span>
+                        <div>${e.q3a.vocabBank
+                          .slice(0, 4)
+                          .map((v) => `<span class="scaffold-pill">${v}</span>`)
+                          .join(' ')}</div>
+                        <div style="margin-top: 2px; font-size: 6.6pt; color: #475569;"><em>Stem:</em> "This was vital because..."</div>
+                    </div>
                 </div>
 
                 ${renderLines(e.q3a.lines)}
@@ -1489,6 +2137,26 @@ function renderBookletHtml(ktKey, meta) {
                     <strong>Examiner Guidance:</strong> ${e.q3b.focus}
                 </div>
 
+                <!-- Importance Scaffold Grid -->
+                <div class="importance-scaffold-grid">
+                    <div class="importance-scaffold-cell">
+                        <span class="scaffold-label">Paragraph 1 Focus:</span>
+                        <div style="font-size: 6.8pt; color: #334155;">${e.q3b.p1}</div>
+                    </div>
+                    <div class="importance-scaffold-cell">
+                        <span class="scaffold-label">Paragraph 2 Focus:</span>
+                        <div style="font-size: 6.8pt; color: #334155;">${e.q3b.p2}</div>
+                    </div>
+                    <div class="importance-scaffold-cell">
+                        <span class="scaffold-label">Vocabulary &amp; Stems:</span>
+                        <div>${e.q3b.vocabBank
+                          .slice(0, 4)
+                          .map((v) => `<span class="scaffold-pill">${v}</span>`)
+                          .join(' ')}</div>
+                        <div style="margin-top: 2px; font-size: 6.6pt; color: #475569;"><em>Stem:</em> "This ensured that..."</div>
+                    </div>
+                </div>
+
                 ${renderLines(e.q3b.lines)}
             </div>
         </div>
@@ -1519,14 +2187,42 @@ function renderBookletHtml(ktKey, meta) {
                     <span><strong class="q-num">${d.q4a.num}</strong> ${d.q4a.stem}</span>
                     <span class="q-marks">(4)</span>
                 </div>
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="flex: 1.2;">
+                        <span class="scaffold-label">Key Facts Bank:</span>
+                        <div class="scaffold-content">${d.q4a.vocabBank.map((v) => `<span class="scaffold-pill">${v}</span>`).join(' ')}</div>
+                    </div>
+                    <div class="scaffold-col" style="flex: 1;">
+                        <span class="scaffold-label">Causal Connectives:</span>
+                        <div class="scaffold-content">${d.q4a.connectives.map((c) => `<span class="scaffold-pill">${c}</span>`).join(' ')}</div>
+                    </div>
+                    <div class="scaffold-col" style="flex: 1.3;">
+                        <span class="scaffold-label">Response Structure:</span>
+                        <div class="scaffold-content" style="font-size: 6.8pt;">${d.q4a.guide}</div>
+                    </div>
+                </div>
                 ${renderLines(d.q4a.lines)}
             </div>
 
             <!-- Question 4(b) -->
-            <div class="question-container" style="margin-top: 10px;">
+            <div class="question-container" style="margin-top: 8px;">
                 <div class="question-prompt">
                     <span><strong class="q-num">${d.q4b.num}</strong> ${d.q4b.stem}</span>
                     <span class="q-marks">(4)</span>
+                </div>
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="flex: 1.2;">
+                        <span class="scaffold-label">Key Facts Bank:</span>
+                        <div class="scaffold-content">${d.q4b.vocabBank.map((v) => `<span class="scaffold-pill">${v}</span>`).join(' ')}</div>
+                    </div>
+                    <div class="scaffold-col" style="flex: 1;">
+                        <span class="scaffold-label">Causal Connectives:</span>
+                        <div class="scaffold-content">${d.q4b.connectives.map((c) => `<span class="scaffold-pill">${c}</span>`).join(' ')}</div>
+                    </div>
+                    <div class="scaffold-col" style="flex: 1.3;">
+                        <span class="scaffold-label">Response Structure:</span>
+                        <div class="scaffold-content" style="font-size: 6.8pt;">${d.q4b.guide}</div>
+                    </div>
                 </div>
                 ${renderLines(d.q4b.lines)}
             </div>
@@ -1561,6 +2257,26 @@ function renderBookletHtml(ktKey, meta) {
                     <strong>Examiner Guidance:</strong> ${d.q5.focus}
                 </div>
 
+                <!-- Importance Scaffold Grid -->
+                <div class="importance-scaffold-grid">
+                    <div class="importance-scaffold-cell">
+                        <span class="scaffold-label">Paragraph 1 Focus:</span>
+                        <div style="font-size: 6.8pt; color: #334155;">${d.q5.p1}</div>
+                    </div>
+                    <div class="importance-scaffold-cell">
+                        <span class="scaffold-label">Paragraph 2 Focus:</span>
+                        <div style="font-size: 6.8pt; color: #334155;">${d.q5.p2}</div>
+                    </div>
+                    <div class="importance-scaffold-cell">
+                        <span class="scaffold-label">Vocabulary &amp; Stems:</span>
+                        <div>${d.q5.vocabBank
+                          .slice(0, 4)
+                          .map((v) => `<span class="scaffold-pill">${v}</span>`)
+                          .join(' ')}</div>
+                        <div style="margin-top: 2px; font-size: 6.6pt; color: #475569;"><em>Stem:</em> "This was important because..."</div>
+                    </div>
+                </div>
+
                 ${renderLines(d.q5.lines)}
             </div>
         </div>
@@ -1592,6 +2308,26 @@ function renderBookletHtml(ktKey, meta) {
                 </div>
                 <div class="focus-guidance">
                     <strong>Examiner Guidance:</strong> ${d.q6.focus}
+                </div>
+
+                <!-- Importance Scaffold Grid -->
+                <div class="importance-scaffold-grid">
+                    <div class="importance-scaffold-cell">
+                        <span class="scaffold-label">Paragraph 1 Focus:</span>
+                        <div style="font-size: 6.8pt; color: #334155;">${d.q6.p1}</div>
+                    </div>
+                    <div class="importance-scaffold-cell">
+                        <span class="scaffold-label">Paragraph 2 Focus:</span>
+                        <div style="font-size: 6.8pt; color: #334155;">${d.q6.p2}</div>
+                    </div>
+                    <div class="importance-scaffold-cell">
+                        <span class="scaffold-label">Vocabulary &amp; Stems:</span>
+                        <div>${d.q6.vocabBank
+                          .slice(0, 4)
+                          .map((v) => `<span class="scaffold-pill">${v}</span>`)
+                          .join(' ')}</div>
+                        <div style="margin-top: 2px; font-size: 6.6pt; color: #475569;"><em>Stem:</em> "Without this relationship, ..."</div>
+                    </div>
                 </div>
 
                 ${renderLines(d.q6.lines)}
@@ -1630,7 +2366,32 @@ function renderBookletHtml(ktKey, meta) {
                         <li><strong>${d.q7.stimulus[0]}</strong></li>
                         <li><strong>${d.q7.stimulus[1]}</strong></li>
                     </ul>
-                    <span style="display: block; margin-top: 3px; font-style: italic; color: #475569;">(You must also use information of your own.)</span>
+                    <span style="display: block; margin-top: 2px; font-style: italic; color: #475569;">(You must also use information of your own.)</span>
+                </div>
+
+                <!-- Narrative Flow Planner -->
+                <div class="narrative-flow-planner">
+                    <div style="font-weight: 800; font-size: 6.8pt; text-transform: uppercase; color: #0f172a; margin-bottom: 2px;">
+                        Chronological 3-Stage Narrative Architecture:
+                    </div>
+                    <div class="narrative-stages-row">
+                        <div class="narrative-stage-box">
+                            <div class="narrative-stage-hdr">${d.q7.stages.stage1.split(' — ')[0]}</div>
+                            <div style="font-size: 6.6pt; color: #334155;">${d.q7.stages.stage1.split(' — ')[1]}</div>
+                        </div>
+                        <div class="narrative-stage-box">
+                            <div class="narrative-stage-hdr">${d.q7.stages.stage2.split(' — ')[0]}</div>
+                            <div style="font-size: 6.6pt; color: #334155;">${d.q7.stages.stage2.split(' — ')[1]}</div>
+                        </div>
+                        <div class="narrative-stage-box">
+                            <div class="narrative-stage-hdr">${d.q7.stages.stage3.split(' — ')[0]}</div>
+                            <div style="font-size: 6.6pt; color: #334155;">${d.q7.stages.stage3.split(' — ')[1]}</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #cbd5e1; padding-top: 2px; font-size: 6.6pt; color: #475569;">
+                        <span><strong>Fact Bank:</strong> ${d.q7.vocabBank.map((v) => `<span class="scaffold-pill">${v}</span>`).join(' ')}</span>
+                        <span><strong>Connectives:</strong> ${d.q7.connectives.slice(0, 3).join(' · ')}</span>
+                    </div>
                 </div>
 
                 ${renderLines(d.q7.lines)}
@@ -1820,6 +2581,31 @@ function renderBookletHtml(ktKey, meta) {
       const page = await browser.newPage();
       await page.setDefaultNavigationTimeout(180000);
       await page.goto(pathToFileURL(htmlPath).href, { waitUntil: 'networkidle0', timeout: 180000 });
+
+      // Page overflow audit inside Puppeteer
+      const overflows = await page.evaluate(() => {
+        const pages = document.querySelectorAll('.page');
+        const results = [];
+        pages.forEach((p, idx) => {
+          if (p.scrollHeight > p.clientHeight + 2) {
+            results.push({
+              page: idx + 1,
+              scrollHeight: p.scrollHeight,
+              clientHeight: p.clientHeight,
+            });
+          }
+        });
+        return results;
+      });
+
+      if (overflows.length > 0) {
+        console.warn(
+          `   ⚠️ WARNING: Layout overflow detected on page(s): ${JSON.stringify(overflows)}`,
+        );
+      } else {
+        console.log(`   ✨ Layout check passed: Zero overflows across all pages.`);
+      }
+
       await page.pdf({
         path: pdfPath,
         format: 'A4',
@@ -1829,28 +2615,30 @@ function renderBookletHtml(ktKey, meta) {
         timeout: 180000,
       });
       await page.close();
-      console.log(`   📕 Exported PDF: ${label}`);
+
+      // Verify physical page count via PDF buffer
+      const buf = fs.readFileSync(pdfPath);
+      const matches = buf.toString('latin1').match(/\/Type\s*\/Page\b/g);
+      const pageCount = matches ? matches.length : 0;
+      console.log(`   📕 Exported PDF: ${label} — Exact Page Count: ${pageCount} pages`);
+      return pageCount;
     };
 
     // 1. KT1 PDF
     const kt1PdfPath = path.join(pdfsDir, 'cme_mastery_pack_KT1.pdf');
-    await renderPdf(generatedHtmlFiles['KT1'], kt1PdfPath, 'cme_mastery_pack_KT1.pdf (12 Pages)');
+    await renderPdf(generatedHtmlFiles['KT1'], kt1PdfPath, 'cme_mastery_pack_KT1.pdf');
 
     // 2. KT2 PDF
     const kt2PdfPath = path.join(pdfsDir, 'cme_mastery_pack_KT2.pdf');
-    await renderPdf(generatedHtmlFiles['KT2'], kt2PdfPath, 'cme_mastery_pack_KT2.pdf (12 Pages)');
+    await renderPdf(generatedHtmlFiles['KT2'], kt2PdfPath, 'cme_mastery_pack_KT2.pdf');
 
     // 3. KT3 PDF
     const kt3PdfPath = path.join(pdfsDir, 'cme_mastery_pack_KT3.pdf');
-    await renderPdf(generatedHtmlFiles['KT3'], kt3PdfPath, 'cme_mastery_pack_KT3.pdf (12 Pages)');
+    await renderPdf(generatedHtmlFiles['KT3'], kt3PdfPath, 'cme_mastery_pack_KT3.pdf');
 
     // 4. FULL Master PDF
     const fullPdfPath = path.join(pdfsDir, 'cme_mastery_pack_FULL.pdf');
-    await renderPdf(
-      fullHtmlPath,
-      fullPdfPath,
-      'cme_mastery_pack_FULL.pdf (36 Pages Master Volume)',
-    );
+    await renderPdf(fullHtmlPath, fullPdfPath, 'cme_mastery_pack_FULL.pdf');
 
     // Sync to public/pdfs/ root and preserve legacy V17 naming scheme for compatibility
     fs.copyFileSync(kt1PdfPath, path.join(globalPdfsDir, 'cme_mastery_pack_KT1.pdf'));

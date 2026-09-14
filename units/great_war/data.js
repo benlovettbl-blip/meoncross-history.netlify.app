@@ -886,22 +886,52 @@ const great_war = {
         {
           term: 'Imperialism',
           definition:
-            "A policy of extending a country's power and influence through diplomacy or military force.",
+            "The policy of extending a nation's rule over foreign countries by military force or diplomacy.",
         },
         {
           term: 'Scramble for Africa',
           definition:
-            'The rapid invasion, annexation, and division of African territory by European powers.',
+            'The rapid invasion, division, and colonisation of Africa by European powers between 1881 and 1914.',
         },
         {
-          term: 'Empire',
+          term: 'Weltpolitik',
           definition:
-            'An extensive group of states or countries ruled over by a single supreme authority.',
+            "Kaiser Wilhelm II's aggressive foreign policy to transform Germany into a dominant global superpower.",
         },
         {
-          term: 'Colony',
+          term: 'Place in the Sun',
           definition:
-            'A country or area under the full or partial political control of another country.',
+            "Bernhard von Bülow's phrase demanding a vast overseas empire and international respect for Germany.",
+        },
+        {
+          term: 'Entente Cordiale',
+          definition:
+            'The 1904 diplomatic agreement between Britain and France settling colonial disputes and creating friendship.',
+        },
+        {
+          term: 'Algeciras Conference',
+          definition:
+            'The 1906 international meeting where European powers backed France, humiliating Germany.',
+        },
+        {
+          term: 'Agadir Crisis',
+          definition:
+            'The 1911 standoff where Germany sent the gunboat Panther to Morocco, alarming Britain and France.',
+        },
+        {
+          term: 'Gunboat Diplomacy',
+          definition:
+            'The pursuit of foreign policy goals through conspicuous displays of naval military power.',
+        },
+        {
+          term: 'Berlin Conference',
+          definition:
+            'The 1884 meeting where European leaders partitioned Africa without consulting any Africans.',
+        },
+        {
+          term: 'Congo Free State',
+          definition:
+            'A huge Central African territory brutally exploited under King Leopold II of Belgium.',
         },
       ],
       extended: {
@@ -1124,12 +1154,16 @@ const great_war = {
       ],
       narrative_blocks: [
         {
-          text: "**The Gamble of Weltpolitik**\n\nIn 1905, the Kaiser arrived in Tangier, Morocco, declaring his support for Moroccan independence against French influence. He expected the Entente Cordiale to fracture under pressure. Instead, the exact opposite happened: at the Algeciras Conference in 1906, Britain firmly backed France, leaving Germany diplomatically humiliated and isolated, supported only by Austria-Hungary.\n\nThe Kaiser repeated this dangerous gamble in 1911 (the Agadir Crisis) by sending the gunboat SMS Panther to the Moroccan coast. Once again, Britain stood by France, and the British navy was even placed on a war footing. Wilhelm’s clumsy attempts at 'gunboat diplomacy' completely backfired. Rather than breaking the Entente Cordiale, his aggression convinced Britain and France that Germany was an unpredictable threat, pushing the two nations into a much tighter military partnership.",
+          theme_heading: 'The Gamble of Weltpolitik',
+          text: "In 1905, Kaiser Wilhelm II sailed to Tangier in Morocco. He backed Moroccan independence against French rule. The Kaiser expected Britain and France to quarrel and split. Instead, his risky gamble backfired. At the 1906 Algeciras Conference, Britain firmly backed France. Germany was left isolated and humiliated. In 1911, the Kaiser sent a German warship to Agadir in Morocco. Once again, Britain stood by France and prepared the Royal Navy for war. The Kaiser's clumsy gunboat diplomacy convinced both nations that Germany was a dangerous threat.",
+          level_4:
+            "In 1905, Kaiser Wilhelm II visited Morocco to challenge French rule. He hoped to divide Britain and France. Instead, Britain strongly supported France at the Algeciras Conference. In 1911, the Kaiser sent a warship to Agadir, Morocco. Britain stood by France again. The Kaiser's aggressive actions pushed Britain and France closer together.",
         },
         {
-          text: "By the turn of the 20th century, the Great Powers of Europe were locked in a fierce, competitive race to conquer and maintain overseas empires. Colonies had become vital status symbols of industrial wealth and global importance. Each territory provided cheap raw materials to feed the factories of the ruling nation, while simultaneously serving as locked-down markets to purchase the home country's manufactured goods. This race had been formalized at the <strong>1884 Berlin Conference</strong>, where European leaders partitioned Africa among themselves without consulting any Africans. Among the territories partitioned, the <strong>Congo Free State</strong> stood out as a site of extreme exploitation, owned personally by King Leopold II of Belgium.",
+          theme_heading: 'The Scramble for Africa',
+          text: 'By 1900, European Great Powers were racing to build overseas empires. This fierce race was known as Imperialism. Possessing colonies gave a country great status, wealth, and global power. Every colony provided cheap raw materials to feed European factories. In return, colonies bought European factory goods. In 1884, European leaders met at the Berlin Conference. They divided the African continent among themselves on a map. No African leaders were invited to the meeting. The Congo Free State suffered harsh cruelty under King Leopold II of Belgium.',
           level_4:
-            'By the turn of the 20th century, the Great Powers of Europe were locked in a fierce, competitive race to conquer and maintain overseas empires. Among the territories partitioned, the <strong>Congo Free State</strong> stood out as a site of extreme exploitation, owned personally by King Leopold II of Belgium.',
+            'By 1900, European powers were racing to build overseas empires. This competition was called Imperialism. Colonies gave nations raw materials for factories and markets to sell goods. In 1884, European leaders met at the Berlin Conference. They divided Africa between themselves without asking any Africans. King Leopold II of Belgium exploited the Congo Free State with extreme brutality.',
           tasks: [
             {
               type: 'comprehension',
@@ -1138,12 +1172,12 @@ const great_war = {
                 'Possessing overseas colonies was vital for two economic reasons: first, colonies provided cheap raw materials needed to feed the factories back home; second, they served as locked-down, captive markets where the ruling nation could easily sell its manufactured goods.',
             },
           ],
-          theme_heading: "Imperialism's Global",
         },
         {
-          text: 'Great Britain possessed the vastest overseas empire in human history. Because Great Britain was an island nation, its entire imperial network relied heavily on open sea routes. Thousands of British merchant ships sailed the oceans daily, and the Royal Navy was given absolute priority to keep these global sea lanes clear of foreign rivals. Crucially, Britain controlled the <strong>Suez Canal</strong> in Egypt to secure its vital shipping lanes to India. Any challenge to this naval dominance was viewed by British politicians as a direct threat to the survival of the British Empire. France held the second-largest empire, focusing heavily on territories in North and West Africa. Having suffered the bitter humiliation of losing Alsace-Lorraine to Germany in 1871, French politicians fiercely guarded their colonies to protect their remaining international reputation. However, imperial expansion was fraught with danger; in 1898, Britain and France nearly went to war during the <strong>Fashoda Incident</strong>, a tense military standoff over control of the Upper Nile in Sudan.',
+          theme_heading: 'The British and French Empires',
+          text: 'Great Britain ruled the largest empire in human history. As an island nation, Britain relied entirely on open sea routes. Thousands of British merchant ships sailed the oceans every day. The Royal Navy protected these vital global trade routes from rival fleets. Crucially, Britain controlled the Suez Canal in Egypt. This canal was the vital sea shortcut to India. Any challenge to British naval power was seen as a direct threat to survival. France held the second-largest empire, mainly in North and West Africa. France had lost Alsace-Lorraine to Germany in 1871. French leaders fiercely guarded their colonies to restore national pride. In 1898, Britain and France nearly fought over Sudan during the tense Fashoda Incident.',
           level_4:
-            'Great Britain possessed the vastest overseas empire in human history. However, imperial expansion was fraught with danger; in 1898, Britain and France nearly went to war during the <strong>Fashoda Incident</strong>, a tense military standoff over control of the Upper Nile in Sudan.',
+            'Great Britain ruled the largest empire in the world. As an island nation, Britain needed open seas for trade. The Royal Navy protected British merchant ships worldwide. Britain also controlled the Suez Canal to secure trade with India. France held the second-largest empire, mostly in North and West Africa. Having lost Alsace-Lorraine in 1871, France guarded its colonies to protect national pride. In 1898, Britain and France nearly fought over Sudan during the Fashoda Incident.',
           tasks: [
             {
               type: 'comprehension',
@@ -1152,18 +1186,18 @@ const great_war = {
                 'After suffering the bitter humiliation of losing the Alsace-Lorraine region to Germany in 1871, French politicians felt they had to fiercely guard their remaining overseas colonies to protect whatever international power and reputation France still had.',
             },
           ],
-          theme_heading: 'Empires',
         },
         {
-          text: 'The entire geopolitical landscape destabilized when Germany entered the race. Having only unified in 1871, Germany was a new nation right in the middle of Europe, but its industry was growing rapidly. The ambitious German Kaiser Wilhelm II and his politicians wanted Germany to match the global influence of Britain and France. In a fiery speech to the German parliament on 6 December 1897, Foreign Secretary Bernhard von Bülow announced that Germany would no longer stand aside, famously demanding Germany’s own "place in the sun".',
+          theme_heading: "Germany Demands a 'Place in the Sun'",
+          text: "European peace was shaken when Germany entered the imperial race. Germany had only unified in 1871. However, German factories and steel mills were expanding at unmatched speed. Kaiser Wilhelm II wanted Germany to match the global influence of Britain and France. He launched an ambitious new foreign policy called Weltpolitik. On 6 December 1897, Foreign Secretary Bernhard von Bülow gave a famous speech in parliament. He declared that Germany would no longer stand in the shadows. He boldly demanded Germany's own place in the sun.",
           level_4:
-            'The entire geopolitical landscape destabilized when Germany entered the race. In a fiery speech to the German parliament on 6 December 1897, Foreign Secretary Bernhard von Bülow announced that Germany would no longer stand aside, famously demanding Germany’s own "place in the sun".',
-          theme_heading: "Germany's Global",
+            "European peace changed when Germany joined the race for colonies. Germany had united in 1871 and was growing rapidly. Kaiser Wilhelm II wanted a world empire to match Britain and France. In 1897, Foreign Secretary Bernhard von Bülow gave a famous speech. He demanded Germany's own place in the sun.",
         },
         {
-          text: 'Germany rapidly seized territories across the globe, including the Cameroons, East Africa, Togo, and the Pacific colony of <strong>Kaiser-Wilhelmsland</strong> in Papua New Guinea. This aggressive push led to direct clashes. In 1911, the <strong>Agadir Crisis</strong> erupted when Germany sent a gunboat, the <strong>SMS Panther</strong>, to the Moroccan port of <strong>Agadir</strong> in an attempt to challenge French influence. The standoff ended when Germany recognized <strong>France</strong> as the protector of Morocco in exchange for minor territories in the Congo. To hold and defend this new empire, German politicians announced plans to construct a massive battle fleet. This move deeply alarmed Great Britain. British politicians regarded Germany’s colonial and naval ambitions as an aggressive attempt to undermine the British Empire, while German leaders increasingly viewed Britain as a hostile obstacle standing in the way of Germany’s legitimate right to historical greatness.',
+          theme_heading: 'German Ambitions Alarm Britain',
+          text: "Germany rapidly seized lands across Africa and the Pacific. These colonies included Cameroon, Togo, German East Africa, and Kaiser-Wilhelmsland in New Guinea. However, German leaders wanted an even larger world empire. To protect these distant colonies, Germany began building a huge battle fleet. This naval build-up deeply alarmed Great Britain. British leaders feared Germany wanted to destroy the Royal Navy. Meanwhile, German leaders believed Britain was an arrogant barrier blocking Germany's rightful rise.",
           level_4:
-            'Germany rapidly seized territories across the globe, including the Cameroons, East Africa, Togo, and the Pacific colony of <strong>Kaiser-Wilhelmsland</strong> in Papua New Guinea. British politicians regarded Germany’s colonial and naval ambitions as an aggressive attempt to undermine the British Empire, while German leaders increasingly viewed Britain as a hostile obstacle standing in the way of Germany’s legitimate right to historical greatness.',
+            'Germany quickly seized colonies in Africa and the Pacific, including Cameroon, Togo, and Kaiser-Wilhelmsland. German leaders then began building a huge battle fleet to protect these colonies. This alarmed Britain, which relied on naval dominance. British leaders worried Germany wanted to challenge the Royal Navy, while Germany saw Britain as an obstacle.',
           tasks: [
             {
               type: 'comprehension',
@@ -1178,31 +1212,30 @@ const great_war = {
                 "Bülow wasn't targeting one specific territory; demanding a 'place in the sun' meant he wanted Germany to have a massive global empire to match Britain and France, which soon led to Germany aggressively seizing territories like the Cameroons, East Africa, Togo, and Kaiser-Wilhelmsland.",
             },
           ],
-          theme_heading: 'German Ambition Alarms',
         },
         {
-          text: 'In 1904, Britain and France ended centuries of bitter rivalry by signing the Entente Cordiale, a friendly agreement to resolve colonial disputes. Kaiser Wilhelm II of Germany was furious; he believed this friendship was designed to encircle Germany. To test the strength of this new bond, the Kaiser decided to deliberately provoke a crisis in North Africa, assuming the British would not actually risk war to defend French interests.',
+          theme_heading: 'Germany Tests the Entente Cordiale',
+          text: 'In 1904, Britain and France signed a historic treaty called the Entente Cordiale. This agreement settled their old colonial disputes in North Africa. France recognised British rule in Egypt. In return, Britain accepted French influence in Morocco. Kaiser Wilhelm II was furious about this friendly partnership. He feared that Britain and France were plotting to encircle Germany. The Kaiser decided to test the new alliance. He believed Britain would never risk war to defend French interests in North Africa.',
           level_4:
-            'In 1904, Britain and France ended centuries of bitter rivalry by signing the Entente Cordiale, a friendly agreement to resolve colonial disputes. To test the strength of this new bond, the Kaiser decided to deliberately provoke a crisis in North Africa, assuming the British would not actually risk war to defend French interests.',
-          theme_heading: 'Germany Tests New Alliance',
+            'In 1904, Britain and France signed the Entente Cordiale to settle their colonial disputes. France accepted British control in Egypt, and Britain accepted French influence in Morocco. Kaiser Wilhelm II feared this friendship was meant to encircle Germany. He decided to test the alliance by causing a crisis in Morocco.',
         },
         {
-          text: 'In 1905, the Kaiser arrived in Tangier, Morocco, declaring his support for Moroccan independence against French influence. He expected the Entente Cordiale to fracture under pressure. Instead, the exact opposite happened: at the Algeciras Conference in 1906, Britain firmly backed France, leaving Germany diplomatically humiliated and isolated, supported only by Austria-Hungary.',
+          theme_heading: 'The First Moroccan Crisis (1905)',
+          text: 'In March 1905, the Kaiser arrived in Tangier, Morocco. He rode through the streets on a white horse. Wilhelm announced that he supported the Sultan of Morocco as an independent ruler. He demanded an international conference to settle the Moroccan crisis. The Kaiser hoped to humiliate France and break the Anglo-French friendship. However, his gamble failed completely. At the 1906 Algeciras Conference, Britain strongly supported France. Germany was left isolated, backed only by Austria-Hungary.',
           level_4:
-            'In 1905, the Kaiser arrived in Tangier, Morocco, declaring his support for Moroccan independence against French influence. Instead, the exact opposite happened: at the Algeciras Conference in 1906, Britain firmly backed France, leaving Germany diplomatically humiliated and isolated, supported only by Austria-Hungary.',
-          theme_heading: "Kaiser'",
+            'In March 1905, Kaiser Wilhelm II rode into Tangier, Morocco, on a white horse. He declared support for Moroccan independence against France. He wanted an international conference to humiliate France. But at the Algeciras Conference in 1906, Britain backed France completely. Only Austria-Hungary supported Germany.',
         },
         {
-          text: "The Kaiser repeated this dangerous gamble in 1911 (the Agadir Crisis) by sending the gunboat SMS Panther to the Moroccan coast. Once again, Britain stood by France, and the British navy was even placed on a war footing. Wilhelm’s clumsy attempts at 'gunboat diplomacy' completely backfired. Rather than breaking the Entente Cordiale, his aggression convinced Britain and France that Germany was an unpredictable threat, pushing the two nations into a much tighter military partnership.",
+          theme_heading: 'The Agadir Crisis (1911)',
+          text: 'In 1911, the Kaiser triggered a second dangerous standoff known as the Agadir Crisis. France sent troops to Morocco to put down a rebellion. Germany claimed this broke the Algeciras agreement. In response, Wilhelm sent a gunboat, the SMS Panther, to the Moroccan port of Agadir. The Kaiser tried to use gunboat diplomacy to bully France into giving up land in the Congo. Britain was furious at this German aggression. Chancellor David Lloyd George warned that Britain would fight rather than let Germany dominate Europe. The Royal Navy was placed on alert for war. Germany backed down in exchange for small strips of swamp in Central Africa. The crisis proved to Britain and France that Germany was an unpredictable and dangerous threat.',
           level_4:
-            'The Kaiser repeated this dangerous gamble in 1911 (the Agadir Crisis) by sending the gunboat SMS Panther to the Moroccan coast. Rather than breaking the Entente Cordiale, his aggression convinced Britain and France that Germany was an unpredictable threat, pushing the two nations into a much tighter military partnership.',
-          theme_heading: "Kaiser'",
+            'In 1911, France sent troops to put down a rebellion in Morocco. In response, Germany sent the gunboat SMS Panther to the port of Agadir. Kaiser Wilhelm tried to bully France into handing over territory. Britain warned that it would fight to defend France. The Royal Navy was prepared for war. Germany backed down and received only small areas of swamp in the Congo. The crisis made Britain and France distrust Germany even more.',
         },
         {
+          theme_heading: 'Europe Divided: The Alliance System',
           text: '<div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;"><img src="./assets/alliance_system.svg" style="width: 100%; max-width: 350px; display: block; margin: 0 auto;" alt="The European Alliance System (1914)"></div>',
           level_4:
             '<div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;"><img src="./assets/alliance_system.svg" style="width: 100%; max-width: 350px; display: block; margin: 0 auto;" alt="The European Alliance System (1914)"></div>',
-          theme_heading: "Europe's",
         },
         {
           title: 'Consolidation Task',
@@ -1336,14 +1369,8 @@ const great_war = {
       ],
       vocab: [
         {
-          term: 'Dreadnought',
-          definition:
-            'A revolutionary type of heavily-armoured battleship introduced by Britain in 1906.',
-        },
-        {
-          term: 'Arms Race',
-          definition:
-            'A competition between nations to achieve superiority in the quantity and quality of military weapons.',
+          term: 'Naval Supremacy',
+          definition: "Having the most powerful and dominant navy on the world's oceans.",
         },
         {
           term: 'Two-Power Standard',
@@ -1351,8 +1378,43 @@ const great_war = {
             'A British policy stating their navy must be as large as the next two largest navies combined.',
         },
         {
-          term: 'Naval Supremacy',
-          definition: 'Having the most powerful and dominant navy in the world.',
+          term: 'Arms Race',
+          definition:
+            'A competition between nations to achieve superiority in the quantity and quality of military weapons.',
+        },
+        {
+          term: 'Dreadnought',
+          definition:
+            'A revolutionary 1906 British battleship with all-big-guns, heavy armour, and steam turbine speed.',
+        },
+        {
+          term: 'German Navy Laws',
+          definition:
+            'A series of laws passed from 1898 ordering the rapid construction of a massive German battle fleet.',
+        },
+        {
+          term: 'Navy League',
+          definition:
+            'A massive German patriotic organisation created by Admiral Tirpitz to promote public support for naval expansion.',
+        },
+        {
+          term: 'Grand Fleet',
+          definition:
+            'The primary British naval force stationed at Scapa Flow to dominate the North Sea.',
+        },
+        {
+          term: 'High Seas Fleet',
+          definition: 'The main battle fleet of the Imperial German Navy based at Wilhelmshaven.',
+        },
+        {
+          term: 'Kiel Canal',
+          definition:
+            'A strategic German waterway widened in 1914 to allow dreadnoughts to pass quickly between the Baltic and North Seas.',
+        },
+        {
+          term: 'Scapa Flow',
+          definition:
+            'The heavily defended British naval base in the Orkney Islands guarding the northern North Sea.',
         },
       ],
       extended: {
@@ -1562,12 +1624,16 @@ const great_war = {
       ],
       narrative_blocks: [
         {
-          text: "**The Naval Race: A Self-Fulfilling Prophecy?**\n\nThe HMS Dreadnought was a technological marvel. It was faster, heavily armored, and carried ten massive 12-inch guns, making every other battleship on earth instantly obsolete. While the Dreadnought was a triumph of British engineering, it contained a fatal strategic flaw: because all older ships were now worthless, Britain's massive head start in naval numbers was suddenly wiped out.\n\nGermany recognized the opportunity immediately. The naval race was no longer about total ships, but about who could build the most 'Dreadnought-class' vessels. By revolutionizing naval warfare, Britain had essentially hit the reset button on the arms race, giving Germany a realistic chance to challenge British naval supremacy from scratch. The ensuing desperate scramble to build Dreadnoughts consumed the budgets and political rhetoric of both nations up until 1914.",
+          theme_heading: 'The Royal Navy and Splendid Isolation',
+          text: "For a century, Great Britain ruled the oceans. The Royal Navy was the strongest fleet on earth. However, in 1898, Kaiser Wilhelm II decided to challenge British sea power. He began building a massive German battle fleet. In 1906, Britain launched a revolutionary warship named HMS Dreadnought. It was faster and more heavily armoured than any ship in history. Yet this super-battleship created an unexpected problem. It made all older battleships obsolete overnight. Britain's massive naval lead was instantly wiped out. Germany could now challenge Britain on equal terms to build dreadnoughts.",
+          level_4:
+            "For a century, Great Britain ruled the world's oceans. In 1898, Kaiser Wilhelm II began building a large German battle fleet to challenge Britain. In 1906, Britain launched a revolutionary warship called HMS Dreadnought. It was faster and more powerful than any battleship before it. However, it made all older battleships useless. Britain's huge lead in ships was wiped out, giving Germany a chance to catch up.",
         },
         {
-          text: "For nearly a century following the Battle of Trafalgar in 1805, Great Britain had ruled the world's oceans without any major international challenge, possessing the most powerful navy on earth. As an island nation with a massive global empire, Britain relied on its naval supremacy to protect its trade routes, secure resource lifelines, and defend its home shores from European threats. To maintain this supremacy, Britain adhered to the <strong>Two-Power Standard</strong>, a strict naval policy stating that the Royal Navy must always be at least equal to or larger than the next two most powerful navies in the world combined.",
+          theme_heading: 'British Naval Dominance',
+          text: "Following the Battle of Trafalgar in 1805, Great Britain dominated the world's oceans without challenge. Britain was an island nation with a vast global empire. It relied on naval supremacy to protect trade routes and defend its shores. Britain followed a strict policy called the Two-Power Standard. This rule stated that the Royal Navy must always be as large as the next two biggest navies combined. To British leaders, naval supremacy was essential for national survival.",
           level_4:
-            "For nearly a century following the Battle of Trafalgar in 1805, Great Britain had ruled the world's oceans without any major international challenge, possessing the most powerful navy on earth. To maintain this supremacy, Britain adhered to the <strong></strong>, a strict naval policy stating that the Royal Navy must always be at least equal to or larger than the next two most powerful navies in the world combined.",
+            'After defeating the French at Trafalgar in 1805, Great Britain dominated the seas. As an island empire, Britain needed a supreme navy to protect trade and food supplies. Britain followed the Two-Power Standard. This policy stated that the Royal Navy must be as large as the next two biggest navies combined.',
           tasks: [
             {
               type: 'comprehension',
@@ -1576,12 +1642,12 @@ const great_war = {
                 'The Two-Power Standard was a strict British naval policy stating that the Royal Navy must always be at least equal to or larger than the next two most powerful navies in the world combined. Britain adhered to this to ensure absolute naval supremacy to protect its island shores and vast global empire.',
             },
           ],
-          theme_heading: 'British Naval Dominance',
         },
         {
-          text: "Everything changed fundamentally in 1898 when Germany's new emperor, Kaiser Wilhelm II, announced his clear intention to build a powerful German navy. The Kaiser believed that if Germany was ever to become a true world power, it had to explicitly challenge the global dominance of the British fleet. In 1898 and 1900, the German government passed the historic German Navy Laws, which ordered the rapid construction of a massive fleet, including 19 battleships in the first law and an additional 38 in the second. To back this policy, the German naval chief, Admiral Tirpitz, established the Navy League. This massive organization arranged civilian tours of industrial shipyards and delivered public lectures across Germany to stimulate intense public interest and build a fierce sense of patriotism among ordinary citizens.",
+          theme_heading: "Germany's Naval Challenge",
+          text: 'Everything changed in 1898 when Kaiser Wilhelm II set out to build a powerful German navy. The Kaiser believed Germany required a great battle fleet to become a true world power. In 1898 and 1900, Germany passed the historic German Navy Laws. These laws ordered shipyards to build 19 battleships in the first law and 38 more in the second. Admiral Alfred von Tirpitz directed the build-up. He established the Navy League to build public support. This patriotic league organised shipyard tours and delivered lectures to inspire civilian enthusiasm.',
           level_4:
-            "Everything changed fundamentally in 1898 when Germany's new emperor, Kaiser Wilhelm II, announced his clear intention to build a powerful German navy. This massive organization arranged civilian tours of industrial shipyards and delivered public lectures across Germany to stimulate intense public interest and build a fierce sense of patriotism among ordinary citizens.",
+            'In 1898, Kaiser Wilhelm II set out to build a great German navy. Germany passed the German Navy Laws in 1898 and 1900 to order dozens of new battleships. Admiral Alfred von Tirpitz led this build-up. He set up the Navy League, organizing shipyard tours and patriotic lectures to win public support.',
           tasks: [
             {
               type: 'comprehension',
@@ -1602,18 +1668,18 @@ const great_war = {
                 "As an island nation with a global empire, Britain relied entirely on naval supremacy to protect its trade routes and defend its shores, making the navy a matter of national survival. In contrast, Germany was a land-based power; Kaiser Wilhelm II wanted a fleet to explicitly challenge British dominance and achieve the prestige of being a 'true world power'.",
             },
           ],
-          theme_heading: "Germany's Naval Challenge",
         },
         {
-          text: "British politicians were profoundly alarmed by Germany's actions. They believed that Germany's expanding High Seas Fleet was being designed specifically for a future military conflict with the British Grand Fleet. To explain the danger, British politicians pointed out the fundamental difference in each nation's security needs.",
-          level_4:
-            "British politicians were profoundly alarmed by Germany's actions. To explain the danger, British politicians pointed out the fundamental difference in each nation's security needs.",
           theme_heading: 'British Fear German Navy',
+          text: "British politicians were deeply alarmed by Germany's naval expansion. They believed the German High Seas Fleet was designed specifically to fight Britain. British leaders pointed out a fundamental difference between the two nations. For Britain, a massive navy was essential to secure food imports and trade. For Germany, a huge standing army already protected its borders on land. A German battle fleet seemed to Britain like a weapon created for war.",
+          level_4:
+            "British leaders were deeply worried by Germany's naval build-up. Britain needed a large navy to protect its island trade. Germany already had a huge army to protect its land borders. To British politicians, a German battle fleet looked like a weapon built for war.",
         },
         {
-          text: "Britain's defensive response was to design and construct the most powerful warship ever created: HMS <em>Dreadnought</em>. Launched in 1906, this vessel was so advanced in its speed, armor plating, and long-range rotating turrets that every existing battleship on earth was rendered instantly obsolete overnight. Rather than stopping the competition, HMS <em>Dreadnought</em> inadvertently reset the score to zero, giving Germany a chance to compete on equal terms. Germany immediately responded by manufacturing its own version of the battleship, the <em>SMS Rheinland</em>. The naval arms race was officially underway, with both nations building more and more of these massive, expensive weapons. By 1914, Germany had successfully doubled the size of its navy to become the second-largest naval power in the world, leaving Britain deeply suspicious of its motives.",
+          theme_heading: 'Naval Arms Race Begins',
+          text: "Britain responded to the German challenge by designing the ultimate warship. In 1906, Britain launched HMS Dreadnought. The ship possessed thick steel armour and ten heavy 12-inch guns in rotating turrets. It used steam turbine engines to travel faster than any rival battleship. The vessel was so advanced that it made all existing battleships obsolete overnight. However, this wiped out Britain's advantage. Germany immediately began building its own dreadnoughts, beginning with SMS Rheinland. By 1914, Germany had doubled its fleet, becoming the second-largest naval power in the world.",
           level_4:
-            "Britain's defensive response was to design and construct the most powerful warship ever created: HMS <em>Dreadnought</em>. By 1914, Germany had successfully doubled the size of its navy to become the second-largest naval power in the world, leaving Britain deeply suspicious of its motives.",
+            'Britain answered the German threat by building HMS Dreadnought in 1906. It had thick steel armour, ten 12-inch guns, and fast steam engines. It made all older battleships obsolete overnight. But this meant Germany could build new dreadnoughts and compete on equal terms. By 1914, Germany had the second-largest navy in the world.',
           tasks: [
             {
               type: 'comprehension',
@@ -1622,30 +1688,30 @@ const great_war = {
                 'The HMS Dreadnought was vastly superior because of its increased speed, its advanced heavy armor plating, and its long-range rotating turrets. These features rendered all older battleships instantly obsolete.',
             },
           ],
-          theme_heading: 'Naval Arms Race Begins',
         },
         {
-          text: 'This competitive race culminated in a highly strategic naval standoff. The British Grand Fleet was stationed at its primary home base at <strong>Scapa Flow</strong> in Scotland, while the German High Seas Fleet was based at <strong>Wilhelmshaven</strong> on the North Sea coast. Both fleets expected a massive, decisive battle in the <strong>North Sea</strong>. To facilitate the rapid movement of its massive new dreadnoughts between the Baltic Sea and the North Sea, Germany widened the <strong>Kiel Canal</strong>, completing the project in 1914 just before the outbreak of war.',
+          theme_heading: 'Preparing for Naval Standoff',
+          text: 'This competitive naval race produced a tense standoff in the North Sea. The British Grand Fleet was stationed at its main base at Scapa Flow in northern Scotland. The German High Seas Fleet was based at Wilhelmshaven on the North Sea coast. Both navies prepared for a huge, decisive sea clash. To move its dreadnoughts rapidly between the Baltic and North Seas, Germany widened the Kiel Canal. This huge project was finished in 1914, just weeks before the outbreak of war.',
           level_4:
-            'This competitive race culminated in a highly strategic naval standoff. To facilitate the rapid movement of its massive new dreadnoughts between the Baltic Sea and the North Sea, Germany widened the <strong></strong>, completing the project in 1914 just before the outbreak of war.',
-          theme_heading: 'Naval Standoff Prepar',
+            'The naval arms race led to a tense standoff in the North Sea. The British Grand Fleet was based at Scapa Flow in Scotland. The German High Seas Fleet was stationed at Wilhelmshaven. Both navies prepared for a huge battle. Germany widened the Kiel Canal so dreadnoughts could move safely between the Baltic and North Seas.',
         },
         {
-          text: "Before 1906, Britain ruled the waves with a policy known as the 'Two-Power Standard'—a rule stating the Royal Navy must be at least as large as the next two biggest navies combined. Germany, despite passing ambitious Naval Laws under Admiral von Tirpitz, was struggling to catch up. But in 1906, Britain launched a ship that accidentally leveled the playing field.",
-          level_4:
-            "Before 1906, Britain ruled the waves with a policy known as the 'Two-Power Standard'—a rule stating the Royal Navy must be at least as large as the next two biggest navies combined. But in 1906, Britain launched a ship that accidentally leveled the playing field.",
           theme_heading: 'Naval Power Shift',
+          text: "Before 1906, Britain felt secure behind the Two-Power Standard. German shipyards struggled to match Britain's hundreds of older warships. However, launching HMS Dreadnought accidentally levelled the playing field. Because older warships no longer counted in battle, both empires were forced to restart the race from scratch.",
+          level_4:
+            'Before 1906, Britain held a huge lead in older warships. But HMS Dreadnought made older ships useless in modern warfare. This accidentally restarted the naval race from zero for both nations.',
         },
         {
-          text: "The HMS Dreadnought was a technological marvel. It was faster, heavily armored, and carried ten massive 12-inch guns, making every other battleship on earth instantly obsolete. While the Dreadnought was a triumph of British engineering, it contained a fatal strategic flaw: because all older ships were now worthless, Britain's massive head start in naval numbers was suddenly wiped out.",
+          theme_heading: 'A Naval Revolution: The Super-Battleship',
+          text: 'HMS Dreadnought was a triumph of British engineering. Its uniform battery of 12-inch guns could fire at extreme ranges. Its heavy armour resisted enemy shells, and its steam turbines delivered unmatched speed. Yet it contained a fatal strategic flaw. By showing that older warships were useless, Britain made its own huge fleet obsolete.',
           level_4:
-            "The HMS Dreadnought was a technological marvel. While the Dreadnought was a triumph of British engineering, it contained a fatal strategic flaw: because all older ships were now worthless, Britain's massive head start in naval numbers was suddenly wiped out.",
-          theme_heading: "Naval Revolution'",
+            "HMS Dreadnought was a triumph of British engineering. Its ten heavy guns could destroy enemy ships at great distances. Its armour and steam turbines gave great protection and speed. However, it made Britain's existing fleet obsolete.",
         },
         {
-          text: "Germany recognized the opportunity immediately. The naval race was no longer about total ships, but about who could build the most 'Dreadnought-class' vessels. By revolutionizing naval warfare, Britain had essentially hit the reset button on the arms race, giving Germany a realistic chance to challenge British naval supremacy from scratch. The ensuing desperate scramble to build Dreadnoughts consumed the budgets and political rhetoric of both nations up until 1914.",
+          theme_heading: 'The Dreadnought Arms Race',
+          text: "Germany seized this historic chance at once. The naval competition transformed into a contest to build modern dreadnought-class vessels. German shipyards worked day and night to rival British production. In Britain, alarmed citizens demanded more warships with the famous slogan: 'We want eight and we won't wait!' This bitter naval race drained national budgets and created toxic distrust between Britain and Germany.",
           level_4:
-            'Germany recognized the opportunity immediately. The ensuing desperate scramble to build Dreadnoughts consumed the budgets and political rhetoric of both nations up until 1914.',
+            "Germany jumped at the chance to build dreadnoughts. German shipyards worked night and day to match Britain. In Britain, the public demanded more ships with the slogan: 'We want eight and we won't wait!' The naval race cost huge amounts of money and created intense distrust.",
           tasks: [
             {
               type: 'comprehension',
@@ -1654,7 +1720,6 @@ const great_war = {
                 "The HMS Dreadnought was so technologically advanced that it rendered all previous battleships obsolete. This effectively reset the naval arms race to zero; it wiped out Britain's numerical head start and allowed Germany to start building Dreadnought-class ships on an equal footing with Britain.",
             },
           ],
-          theme_heading: 'Dreadnought Arms',
         },
         {
           title: 'Consolidation Task',
@@ -1795,24 +1860,48 @@ const great_war = {
       ],
       vocab: [
         {
-          term: 'Triple Entente',
-          definition:
-            'The military alliance linking the Russian Empire, the French Third Republic, and the United Kingdom.',
-        },
-        {
           term: 'Triple Alliance',
           definition:
-            'A secret agreement between Germany, Austria-Hungary, and Italy formed in May 1882.',
+            'A secret military agreement formed in 1882 linking Germany, Austria-Hungary, and Italy.',
         },
         {
-          term: 'Reinsurance Treaty',
-          definition:
-            'A secret agreement between Germany and Russia arranged by Bismarck to prevent a two-front war.',
+          term: 'Triple Entente',
+          definition: 'The diplomatic coalition uniting Great Britain, France, and Russia by 1907.',
         },
         {
           term: 'Encirclement',
           definition:
-            'A military term for the situation when a force or target is isolated and surrounded by enemy forces.',
+            "Germany's fear of being surrounded and isolated by hostile allied nations on both sides.",
+        },
+        {
+          term: 'Blank Cheque',
+          definition:
+            "Germany's unconditional promise on 5 July 1914 to back Austria-Hungary in any war against Serbia.",
+        },
+        {
+          term: 'Schlieffen Plan',
+          definition:
+            "Germany's war plan to rapidly invade France through Belgium before turning east to fight Russia.",
+        },
+        {
+          term: 'Mobilisation',
+          definition:
+            'The rapid assembly and transportation of armed forces and equipment for active service in war.',
+        },
+        {
+          term: 'Armed Camps',
+          definition:
+            'The dangerous division of Europe into two heavily armed, rival military alliances.',
+        },
+        {
+          term: 'Preventative War',
+          definition:
+            'A war initiated by a nation to knock out a rival before that rival becomes too strong.',
+        },
+        {
+          term: 'Reinsurance Treaty',
+          definition:
+            'A secret 1887 agreement between Germany and Russia arranged by Bismarck to prevent a two-front war.',
         },
       ],
       extended: {
@@ -2023,18 +2112,22 @@ const great_war = {
       ],
       narrative_blocks: [
         {
-          text: "**The Powder Keg: Nationalism vs. Empire**\n\nThis 'Blank Check' is one of the most debated actions in modern history. Some historians argue the Kaiser was acting out of impulsive loyalty to his murdered friend, not expecting the crisis to escalate beyond a localized Balkan war. They point to the fact that Wilhelm went on a sailing cruise immediately after giving the promise, suggesting he did not believe a global conflict was imminent.\n\nHowever, other historians argue that the German High Command deliberately used the 'Blank Check' to push Austria into war. Knowing that Russia's military was rapidly modernizing and would soon be too powerful to defeat, German generals believed that if a European war was inevitable, it was better to fight it in 1914 rather than wait. By giving Austria unconditional support, Germany ensured the crisis would explode into a continental conflict.",
+          theme_heading: 'The Armed Camps of Europe',
+          text: "By 1914, Europe was divided into two hostile armed camps. On 5 July 1914, Kaiser Wilhelm II issued the famous 'Blank Cheque' to Austria-Hungary. This was an unconditional promise of total German military backing against Serbia. Historians still debate why Germany gave this reckless promise. Some argue the Kaiser acted out of personal loyalty to his murdered friend. Others argue the German High Command used the crisis to force a war. German generals feared that Russia's army was modernising rapidly. They believed that if war was coming, Germany must strike before Russia grew too strong.",
+          level_4:
+            "By 1914, Europe was split into two hostile armed camps. On 5 July 1914, Germany gave Austria-Hungary the 'Blank Cheque'—a promise of total military support against Serbia. Some historians argue Kaiser Wilhelm acted out of loyalty to his murdered friend. Others argue the German High Command wanted a war in 1914 before Russia's army grew too strong.",
         },
         {
-          text: 'As European empires expanded and resources grew tightly contested, nations looked for ways to keep themselves safe from sudden attack by their rivals. The primary strategy chosen by European monarchs and statesmen was the construction of binding military alliances. Gradually, over several decades, Europe was carved up into two massively armed, opposing camps.',
-          level_4:
-            'As European empires expanded and resources grew tightly contested, nations looked for ways to keep themselves safe from sudden attack by their rivals. Gradually, over several decades, Europe was carved up into two massively armed, opposing camps.',
           theme_heading: "Europe's Alliance System",
+          text: 'As European empires expanded, rival nations grew suspicious of each other. European leaders looked for ways to protect their borders from sudden attack. Their main strategy was to sign binding military alliances. Over several decades, Europe was carved into two heavily armed, opposing camps. Instead of creating lasting peace, this web of treaties created a dangerous trap.',
+          level_4:
+            'As European empires expanded, nations grew worried about sudden attacks. To protect themselves, countries signed military alliances. Over time, Europe was divided into two armed camps. Instead of preventing war, these alliances created a dangerous trap.',
         },
         {
-          text: 'By 1907, the European alliance system had solidified into two balanced groups. On one side stood the <strong>Triple Alliance</strong>, consisting of the central European bloc of Germany, Austria-Hungary, and Italy. On the opposing side sat the <strong>Triple Entente</strong>, uniting Great Britain, France, and Russia. At the time, contemporary newspapers and diplomats argued that this delicate division of power would successfully maintain world peace. The logic was simple: going to war with any single member of an alliance meant triggering an immediate, terrible war against the entire opposing bloc. No statesman, they believed, would be reckless enough to initiate such a disaster.',
+          theme_heading: "Europe's Two Alliances",
+          text: 'By 1907, the alliance system had split Europe into two rival groups. On one side stood the Triple Alliance, formed in 1882 by Germany, Austria-Hungary, and Italy. On the opposing side was the Triple Entente, uniting Great Britain, France, and Russia. Diplomats argued that this balance of power would keep the peace. Their logic was simple. Attacking one nation would trigger an immediate war against all its allies. Leaders believed no country would be foolish enough to start such a terrible conflict.',
           level_4:
-            'By 1907, the European alliance system had solidified into two balanced groups. No statesman, they believed, would be reckless enough to initiate such a disaster.',
+            'By 1907, Europe was divided into two alliance systems. The Triple Alliance included Germany, Austria-Hungary, and Italy. The Triple Entente included Britain, France, and Russia. Diplomats hoped this balance of power would stop war, because an attack on one nation meant fighting the entire group.',
           tasks: [
             {
               type: 'comprehension',
@@ -2049,12 +2142,12 @@ const great_war = {
                 'The diplomatic logic was that going to war against just one member of an alliance would instantly trigger a massive war against the entire opposing bloc. Politicians believed that the sheer terror of such a massive conflict would prevent anyone from being reckless enough to start a war, thereby keeping everyone safe.',
             },
           ],
-          theme_heading: "Europe's Two Alliances",
         },
         {
-          text: "However, the alliance system did not create a sense of safety; instead, it bred intense suspicion and paranoia. The German Kaiser and his military planners viewed the Triple Entente not as a peaceful defensive bloc, but as a hostile circle of enemies designed to trap them. Historians note that from the German perspective, this amounted to a deliberate policy of <strong>encirclement</strong> meant to block Germany’s legitimate right to become a global power. Crucially, the German High Command and Austria-Hungary's Chief of the General Staff, <strong>Conrad von Hötzendorf</strong> (who repeatedly advocated for a preventive war to crush Serbia), believed that a massive European war was <strong>inevitable</strong>. They feared that Russia's rapid industrialization and military growth would soon overwhelm Germany, making a preventative war necessary before Russia became too powerful. This deep-seated fear reinforced the necessity of the Schlieffen Plan—to aggressively smash France first before the massive Russian army could fully mobilise to attack from the east.",
+          theme_heading: 'German Fears and War Plans',
+          text: "However, the alliance system bred deep fear rather than safety. German leaders viewed the Triple Entente as a hostile ring designed to encircle Germany. Crucially, military leaders like Austria's Conrad von Hötzendorf believed a European war was inevitable and necessary. German generals feared that Russia was building railways and modernising its army at rapid speed. They believed Germany must fight before Russia became unbeatable. This fear drove the Schlieffen Plan. This plan aimed to defeat France in six weeks before turning east to face Russia.",
           level_4:
-            'However, the alliance system did not create a sense of safety; instead, it bred intense suspicion and paranoia. This deep-seated fear reinforced the necessity of the Schlieffen Plan—to aggressively smash France first before the massive Russian army could fully mobilise to attack from the east.',
+            'The alliance system caused suspicion and fear. Germany felt surrounded by enemies, a fear called encirclement. Military leaders like Conrad von Hötzendorf in Austria believed war was inevitable. German generals feared that Russia was modernising rapidly and building railways. They believed Germany should fight before Russia became too strong, using the Schlieffen Plan to defeat France first.',
           tasks: [
             {
               type: 'comprehension',
@@ -2063,12 +2156,12 @@ const great_war = {
                 "German military leaders believed that Russia's rapid industrialization and military growth would soon make Russia too powerful to defeat. Therefore, they viewed a massive European war as inevitable and felt it was necessary to launch a preventative war immediately to crush their enemies before Russia became overwhelmingly strong.",
             },
           ],
-          theme_heading: 'German Fears and War Plans',
         },
         {
-          text: 'Concurrently, the nature of war was becoming highly industrialization-driven. All the Great Powers utilized their factories to engage in a massive land-based arms race. Between 1906 and 1914, steel production in Germany skyrocketed to over 17 million tonnes, vastly outpacing Britain and France combined, to forge heavy artillery and armaments. Millions of kilometers of railway tracks were laid down across the continent for a single strategic purpose: to move hundreds of thousands of uniformed soldiers to the front lines within hours of a crisis breaking out. By 1914, Europe had been transformed into a volatile, high-density powder keg where any single local spark would automatically pull all the Great Powers into a total global slaughter.',
+          theme_heading: "Europe's Industrial War Machine",
+          text: 'At the same time, European factories fueled a massive arms race on land. Between 1906 and 1914, German steel production surged to over 17 million tonnes, far outpacing Britain and France. Steel mills forged heavy artillery, machine guns, and millions of rifle shells. Thousands of miles of new railway tracks were laid across Europe. These tracks allowed armies to move hundreds of thousands of troops to the front line in days. Europe had become a powder keg waiting for a single spark.',
           level_4:
-            'Concurrently, the nature of war was becoming highly industrialization-driven. By 1914, Europe had been transformed into a volatile, high-density powder keg where any single local spark would automatically pull all the Great Powers into a total global slaughter.',
+            'European factories fueled a massive arms race on land. German steel production jumped to over 17 million tonnes, far more than Britain and France. Steel was used for artillery and machine guns. New railway networks allowed armies to move hundreds of thousands of soldiers to the border in days. Europe became a powder keg waiting for a spark.',
           tasks: [
             {
               type: 'comprehension',
@@ -2083,25 +2176,24 @@ const great_war = {
                 'Unlike the traditional balance of power where conflicts remained localized, dividing Europe into two heavily armed, rigid camps turned the continent into a highly volatile powder keg. This meant that any small, local dispute could act as a spark that would automatically drag all the Great Powers into a massive global war.',
             },
           ],
-          theme_heading: "Europe's Industrial War Machine",
         },
         {
-          text: "Following the assassination of Archduke Franz Ferdinand, Austria-Hungary wanted to crush Serbia but feared Russian intervention. To proceed safely, Austria needed a guarantee of German support. On July 5th, 1914, Kaiser Wilhelm II issued what historians call the 'Blank Check'—an unconditional promise that Germany would stand by Austria-Hungary, even if their actions provoked a war with Russia.",
-          level_4:
-            "Following the assassination of Archduke Franz Ferdinand, Austria-Hungary wanted to crush Serbia but feared Russian intervention. On July 5th, 1914, Kaiser Wilhelm II issued what historians call the 'Blank Check'—an unconditional promise that Germany would stand by Austria-Hungary, even if their actions provoked a war with Russia.",
           theme_heading: "Germany's Blank Check",
+          text: "In July 1914, that spark arrived in the Balkans. Following the assassination of Archduke Franz Ferdinand, Austria-Hungary wanted to crush Serbia. However, Austrian leaders feared that Russia would step in to protect Serbia. To act safely, Austria needed a guarantee of German backing. On 5 July 1914, Kaiser Wilhelm II gave Austria-Hungary the 'Blank Cheque'. This was a promise of unconditional support, even if war broke out with Russia.",
+          level_4:
+            "After Archduke Franz Ferdinand was assassinated, Austria-Hungary wanted to crush Serbia. But Austria feared Russia would protect Serbia. On 5 July 1914, Kaiser Wilhelm II gave Austria the 'Blank Cheque'. This was an unconditional promise of German military support.",
         },
         {
-          text: "This 'Blank Check' is one of the most debated actions in modern history. Some historians argue the Kaiser was acting out of impulsive loyalty to his murdered friend, not expecting the crisis to escalate beyond a localized Balkan war. They point to the fact that Wilhelm went on a sailing cruise immediately after giving the promise, suggesting he did not believe a global conflict was imminent.",
-          level_4:
-            "This 'Blank Check' is one of the most debated actions in modern history. They point to the fact that Wilhelm went on a sailing cruise immediately after giving the promise, suggesting he did not believe a global conflict was imminent.",
           theme_heading: "Kaiser's Motives",
+          text: "The 'Blank Cheque' remains one of the most debated actions in modern history. Some historians argue the Kaiser acted impulsively out of friendship. They note that Wilhelm went on a sailing holiday right after making the promise. This suggests he did not expect a world war to erupt.",
+          level_4:
+            "Historians still debate the 'Blank Cheque'. Some believe Kaiser Wilhelm acted impulsively out of loyalty. He went on a sailing holiday right afterwards, showing he did not expect a global war.",
         },
         {
-          text: "However, other historians argue that the German High Command deliberately used the 'Blank Check' to push Austria into war. Knowing that Russia's military was rapidly modernizing and would soon be too powerful to defeat, German generals believed that if a European war was inevitable, it was better to fight it in 1914 rather than wait. By giving Austria unconditional support, Germany ensured the crisis would explode into a continental conflict.",
-          level_4:
-            "However, other historians argue that the German High Command deliberately used the 'Blank Check' to push Austria into war. By giving Austria unconditional support, Germany ensured the crisis would explode into a continental conflict.",
           theme_heading: "Germany's Calculated War",
+          text: "However, other historians argue that the German High Command deliberately pushed Austria into war. German generals knew Russia's military was growing stronger every month. If a major European war was inevitable, they wanted to fight it in 1914 rather than wait. By giving Austria unconditional support, Germany ensured the crisis would explode into a total European war.",
+          level_4:
+            'Other historians argue that German generals used the Blank Cheque to start a war. They believed Russia was growing stronger every year. If war was coming, they wanted to fight in 1914. Giving Austria total support ensured the crisis would lead to war.',
         },
         {
           title: 'Consolidation Task',
@@ -2242,22 +2334,52 @@ const great_war = {
       vocab: [
         {
           term: 'Assassination',
-          definition: 'The murder of a prominent person, often a political leader or ruler.',
+          definition: 'The planned murder of a prominent political leader or royal figure.',
         },
         {
           term: 'Black Hand',
           definition:
-            'A secret Serbian society that used terrorist methods to promote the liberation of Serbs outside Serbia.',
+            'A secret Serbian nationalist terrorist group committed to uniting South Slavs through violence.',
+        },
+        {
+          term: 'Pan-Slavism',
+          definition:
+            'The cultural and political movement to unite all Slavic peoples under Russian protection.',
+        },
+        {
+          term: 'Annexation',
+          definition:
+            'The formal military seizure and incorporation of a foreign territory into another nation.',
         },
         {
           term: 'Ultimatum',
           definition:
-            'A final demand or statement of terms, the rejection of which will result in retaliation or a breakdown in relations.',
+            'A final list of non-negotiable demands, the rejection of which will instantly trigger war.',
+        },
+        {
+          term: 'July Crisis',
+          definition:
+            'The month of tense diplomatic maneuvering in 1914 between the Sarajevo assassination and global war.',
         },
         {
           term: 'Mobilisation',
           definition:
-            'The action of a country or its government preparing and organizing troops for active service.',
+            'The rapid call-up and movement of millions of reservist soldiers to their battle stations.',
+        },
+        {
+          term: 'Schlieffen Plan',
+          definition:
+            "Germany's strategic timetable requiring a lightning invasion of France via neutral Belgium.",
+        },
+        {
+          term: 'Treaty of London (1839)',
+          definition:
+            'The historic international treaty guaranteeing British military protection for Belgian neutrality.',
+        },
+        {
+          term: 'Willy-Nicky Telegrams',
+          definition:
+            'The desperate series of telegrams exchanged between the Kaiser and the Tsar trying to avert war.',
         },
       ],
       do_now: {
@@ -2434,15 +2556,16 @@ const great_war = {
         'The [Assassination] of Archduke Franz Ferdinand by the [Black Hand] terrorist group sparked a massive crisis. Austria-Hungary issued a severe [Ultimatum] to Serbia, demanding they surrender their sovereignty. When Serbia refused, Russia began a massive [Mobilisation] of its army, dragging the entire alliance system into war.',
       narrative_blocks: [
         {
-          text: 'The region of south-east Europe known as the Balkans had once been ruled securely by the Turkish Ottoman Empire. However, as Turkish power weakened across the 19th and early 20th centuries, the Ottoman Empire lost control. Different Balkan states began fiercely demanding their own independence, sparking a series of local Balkan Wars that left the entire area a hotbed of hatred, suspicion, and aggressive militarism.',
+          theme_heading: 'The Powder Keg of Europe',
+          text: "The Balkans region in south-east Europe was known as the 'powder keg of Europe'. It had long been ruled by the Turkish Ottoman Empire. As Ottoman power weakened, new independent nations emerged. These young Balkan states fought bitter local wars for territory. The area was filled with intense nationalism, ethnic hatred, and military rivalry.",
           level_4:
-            'The region of south-east Europe known as the Balkans had once been ruled securely by the Turkish Ottoman Empire. Different Balkan states began fiercely demanding their own independence, sparking a series of local Balkan Wars that left the entire area a hotbed of hatred, suspicion, and aggressive militarism.',
-          theme_heading: 'Balkans Ignite Conflict',
+            "The Balkans in south-east Europe was known as the 'powder keg of Europe'. As the Ottoman Empire lost control, young Balkan nations fought wars over land. The region was full of ethnic hatred, nationalism, and tension.",
         },
         {
-          text: 'For the neighboring empire of Austria-Hungary, this <strong>Pan-Slavism</strong> was an absolute nightmare. Austria-Hungary was a vast empire containing many different nationalities who wanted independence. Its politicians deeply feared that if Serbian nationalism rose unchecked, the millions of Serbs living inside the Austro-Hungarian borders would rebel, causing the entire empire to collapse. Tensions exploded in 1908 when Austria officially <strong>annexed</strong> the provinces of Bosnia and Herzegovina, directly absorbing thousands of furious Serbs into its territory. In response, a group of radical Serbian army officers formed a secret terrorist society dedicated to uniting all Serbs by force: the Black Hand.',
+          theme_heading: 'Austro-Hungarian Fears of Serbia',
+          text: 'For the neighbouring Austro-Hungarian Empire, Slavic nationalism was a deadly threat. Austria-Hungary was a vast empire made of many different nationalities. Its leaders feared that if Serbia grew strong, the millions of Serbs living inside Austrian borders would rebel. In 1908, Austria caused outrage by annexing Bosnia and Herzegovina. Furious Serbian army officers formed a secret terrorist society called the Black Hand. They swore to unite all South Slavs by force.',
           level_4:
-            'For the neighboring empire of Austria-Hungary, this <strong></strong> was an absolute nightmare. In response, a group of radical Serbian army officers formed a secret terrorist society dedicated to uniting all Serbs by force: the Black Hand.',
+            'Austria-Hungary feared Serbian nationalism. Austria-Hungary contained many different nationalities that wanted freedom. In 1908, Austria annexed Bosnia and Herzegovina, angering Serbs. Serbian officers formed the Black Hand, a secret group that used terror to unite all Serbs.',
           tasks: [
             {
               type: 'comprehension',
@@ -2451,18 +2574,18 @@ const great_war = {
                 'Austria-Hungary was a vast empire containing many different nationalities. Its politicians feared that if Serbian nationalism rose unchecked, the millions of Serbs living inside Austro-Hungarian borders would rebel, causing the entire empire to collapse.',
             },
           ],
-          theme_heading: "Empire's Serbian",
         },
         {
-          text: "By June 1914, the Balkan powder keg was ready to blow. To show the rebellious Serbs who was boss, the heir to the Austro-Hungarian throne, Archduke Franz Ferdinand, scheduled a high-profile state visit to Sarajevo, the capital of Bosnia. The date chosen was June 28—the sacred national day of the Serbian people. Thanks to extensive press publicity, the Black Hand knew exactly where the Archduke's open-top car would drive along the river-front <strong>Appel Quay</strong>. Six young assassins positioned themselves along the quay armed with bombs, pistols, and suicide capsules.",
+          theme_heading: "Archduke Franz Ferdinand's Royal Visit",
+          text: 'By June 1914, Balkan tensions were ready to explode. Archduke Franz Ferdinand was the heir to the Austro-Hungarian throne. He scheduled a royal visit to Sarajevo, the capital of Bosnia. The date was 28 June—a sacred national day for Serbs. The visit was widely reported in newspapers. The Black Hand knew the exact route. Six young assassins lined the riverfront Appel Quay armed with pistols and bombs.',
           level_4:
-            'By June 1914, the Balkan powder keg was ready to blow. Six young assassins positioned themselves along the quay armed with bombs, pistols, and suicide capsules.',
-          theme_heading: "Ferdinand'",
+            'Archduke Franz Ferdinand was the heir to the throne of Austria-Hungary. On 28 June 1914, he visited Sarajevo, the capital of Bosnia. The Black Hand knew his route along Appel Quay. Six young assassins waited with guns and bombs.',
         },
         {
-          text: "The initial assassination attempts failed completely. One terrorist couldn't get his gun out, another went home out of pity, and a third threw a bomb that bounced off the Archduke's car and exploded under the vehicle behind. Furious, Franz Ferdinand canceled the rest of his itinerary and decided to head back to the train station, ordering his driver to stop by the hospital first to visit the wounded officers. However, the route map was altered and the drivers took a critical wrong turn onto Franz Josef Street. Realizing the error, the drivers stopped and attempted to reverse.",
+          theme_heading: 'A Fateful Wrong Turn',
+          text: 'At first, the assassination plot failed completely. One terrorist lost his nerve. Another felt pity and went home. A third threw a grenade that bounced off the royal car and wounded officers behind. Franz Ferdinand was furious. He decided to visit the wounded officers in hospital. However, the driver took a fatal wrong turn onto Franz Josef Street. When the driver realized his error, he stopped the car and tried to reverse.',
           level_4:
-            'The initial assassination attempts failed completely. Realizing the error, the drivers stopped and attempted to reverse.',
+            'The first bomb bounced off the royal car and wounded officers behind. Franz Ferdinand decided to visit the wounded officers in hospital. But the driver took a wrong turn onto Franz Josef Street. When the driver stopped to reverse, the car halted right in front of assassin Gavrilo Princip.',
           tasks: [
             {
               type: 'comprehension',
@@ -2471,18 +2594,18 @@ const great_war = {
                 'The first assassin threw a bomb that bounced off the car and exploded behind them. Because of this, the driver later changed the route to visit the injured in the hospital. However, the driver took a wrong turn and stopped the car to reverse right in front of where Gavrilo Princip was standing, giving him a point-blank shot.',
             },
           ],
-          theme_heading: 'A Fateful Wrong Turn',
         },
         {
-          text: "The car ground to a halt a fraction of a second away from where 19-year-old Black Hand assassin Gavrilo Princip was standing. Seizing his unexpected luck, Princip stepped forward, pulled his pistol, and fired twice into the car. One bullet tore through the Archduke's throat; the second struck his wife, Sophie, in the stomach. Both died within minutes.",
+          theme_heading: "Gavrilo Princip's Fatal Shots",
+          text: 'The open-top car stopped right in front of nineteen-year-old Gavrilo Princip. Seizing his chance, the Black Hand assassin stepped forward. He fired two shots at point-blank range. One bullet hit the Archduke in the neck. The second bullet struck his wife, Sophie, in the stomach. Both died within minutes.',
           level_4:
-            'The car ground to a halt a fraction of a second away from where 19-year-old Black Hand assassin Gavrilo Princip was standing. Both died within minutes.',
-          theme_heading: "Princip's Fatal",
+            'Gavrilo Princip stepped forward and fired two shots at the open car. One bullet hit the Archduke in the neck. The other hit his wife, Sophie, in the stomach. Both died within minutes.',
         },
         {
-          text: "This local double-murder triggered a rapid, unstoppable countdown to global war. Backed by Germany's unconditional promise of absolute military support—known as the 'blank cheque'—Austria-Hungary issued a harsh, unacceptable ultimatum to Serbia on July 23. Blaming Serbia for the assassination, they subsequently declared war on July 28, shelling Belgrade. Russia immediately mobilised its massive army to protect its fellow Slavic state, Serbia. Because the German Schlieffen Plan required an immediate land invasion of France through neutral Belgium, Great Britain was bound by the <strong>Treaty of London (1839)</strong> to honor its promise to protect Belgian neutrality. On August 4, 1914, Britain declared war on Germany. The complex system of long-term alliances, imperial greed, and land arms races had successfully dragged the entire world down the path to an unprecedented slaughter.",
+          theme_heading: 'The Road to Global War',
+          text: "This local double-murder triggered a rapid countdown to world war. Backed by Germany's 'Blank Cheque', Austria-Hungary issued a harsh ultimatum to Serbia. On 28 July 1914, Austria declared war and shelled Belgrade. Russia mobilized its massive army to defend Serbia. Germany then declared war on Russia and France. To invade France quickly, German troops marched into neutral Belgium. Britain had promised to protect Belgium in the 1839 Treaty of London. On 4 August 1914, Britain declared war on Germany.",
           level_4:
-            'This local double-murder triggered a rapid, unstoppable countdown to global war. The complex system of long-term alliances, imperial greed, and land arms races had successfully dragged the entire world down the path to an unprecedented slaughter.',
+            "The assassination triggered the First World War. Backed by Germany's Blank Cheque, Austria declared war on Serbia on 28 July. Russia mobilized its army to protect Serbia. Germany declared war on Russia and France. When Germany invaded neutral Belgium, Britain entered the war on 4 August 1914 under the 1839 Treaty of London.",
           tasks: [
             {
               type: 'comprehension',
@@ -2491,18 +2614,18 @@ const great_war = {
                 'Austria-Hungary issued a harsh ultimatum to Serbia on July 23, declaring war on July 28. Russia mobilised its army to defend Serbia. Germany declared war on Russia, and then invaded neutral Belgium to attack France. This forced Britain to declare war on Germany on August 4.',
             },
           ],
-          theme_heading: 'War Erupts Globally',
         },
         {
-          text: 'The 37 days between the assassination in Sarajevo and the outbreak of war are known as the July Crisis. During this frenzied period, diplomats and monarchs across Europe scrambled to react as the rigid alliance system began pulling their nations toward the abyss. What makes the July Crisis so tragic is how many desperate, last-minute attempts were made to hit the brakes.',
+          theme_heading: 'The July Crisis: Descent into War',
+          text: 'The 37 days between the Sarajevo murder and the outbreak of war are called the July Crisis. During this tense month, diplomats and rulers scrambled to prevent a catastrophe. The tragic reality of the July Crisis is how close Europe came to stopping the disaster.',
           level_4:
-            'The 37 days between the assassination in Sarajevo and the outbreak of war are known as the July Crisis. What makes the July Crisis so tragic is how many desperate, last-minute attempts were made to hit the brakes.',
-          theme_heading: 'July Crisis: Descent',
+            'The 37 days between the assassination and the outbreak of war are called the July Crisis. During this time, European diplomats tried desperately to prevent a full-scale war.',
         },
         {
-          text: "The most famous of these attempts was the 'Willy-Nicky Telegrams'—a series of deeply personal, frantic messages exchanged between Kaiser Wilhelm II and Tsar Nicholas II of Russia, who were cousins. Both monarchs pleaded with each other to stop military mobilizations, signing their telegrams with familiar nicknames. However, neither leader was willing to be the first to stand their armies down, fearing they would be left defenseless if the other attacked.",
+          theme_heading: "The Cousins' Failed Peace",
+          text: "The most famous peace effort was the 'Willy-Nicky Telegrams'. Kaiser Wilhelm II and Tsar Nicholas II were cousins. They sent urgent, personal telegrams pleading with each other to stop army mobilizations. However, neither monarch dared to halt their troops first. Each feared being left defenseless if the other attacked.",
           level_4:
-            "The most famous of these attempts was the 'Willy-Nicky Telegrams'—a series of deeply personal, frantic messages exchanged between Kaiser Wilhelm II and Tsar Nicholas II of Russia, who were cousins. However, neither leader was willing to be the first to stand their armies down, fearing they would be left defenseless if the other attacked.",
+            "Kaiser Wilhelm II and Tsar Nicholas II of Russia were cousins. They sent the 'Willy-Nicky Telegrams', pleading with each other to stop military preparations. But neither leader dared to stop first, fearing defeat.",
           tasks: [
             {
               type: 'comprehension',
@@ -2511,12 +2634,12 @@ const great_war = {
                 'The telegrams reveal that both Kaiser Wilhelm and Tsar Nicholas desperately wanted to avoid war but felt completely trapped. They were too afraid to stop their military mobilizations in case the other attacked, showing that civilian leaders had lost control to their military generals.',
             },
           ],
-          theme_heading: "Cousins' Failed Peace",
         },
         {
-          text: "Ultimately, the crisis revealed a terrifying reality: the civilian politicians and monarchs had lost control of the situation to their military generals. Military timetables, such as Germany's rigid Schlieffen Plan and Russia's immense mobilization schedules, were so inflexible that once the train of war started moving, it could not be stopped. The alliance system, intended as a deterrent, had instead become a doomsday machine.",
+          theme_heading: 'Generals in Control',
+          text: "Ultimately, civilian politicians lost control to military generals. War plans like Germany's Schlieffen Plan depended on strict railway timetables. Once mobilization began, the generals insisted it could not be stopped. The alliance system acted like a giant doomsday machine, pulling every Great Power into the abyss.",
           level_4:
-            'Ultimately, the crisis revealed a terrifying reality: the civilian politicians and monarchs had lost control of the situation to their military generals. The alliance system, intended as a deterrent, had instead become a doomsday machine.',
+            "Civilian leaders lost control to military generals. War plans like Germany's Schlieffen Plan depended on strict railway schedules. Once armies began moving, the generals refused to stop. The alliance system dragged all the Great Powers into war.",
           tasks: [
             {
               type: 'comprehension',
@@ -2525,19 +2648,18 @@ const great_war = {
                 "Because of the aggressive 'Scramble for Colonies' by European empires, millions of colonized people across Africa, Asia, and the Middle East were dragged into the conflict to fight and provide labour, making it a truly global war.",
             },
           ],
-          theme_heading: 'Military Control Unleashes',
         },
         {
-          text: 'When war broke out in 1914, it was not just a European conflict. Because of the aggressive Scramble for Colonies (Lesson 2), millions of colonized people across Africa, Asia, and the Middle East were dragged into a war they had no part in causing. Without the immense sacrifices of these colonial troops and laborers, the European empires would have collapsed.',
+          theme_heading: 'Colonies Join the Conflict',
+          text: 'When war began in 1914, it was never just a European conflict. Because of imperial expansion across Africa and Asia, millions of colonial soldiers were pulled into the fighting. Without the courage and sacrifice of these colonial troops, the European empires could not have fought the war.',
           level_4:
-            'When war broke out in 1914, it was not just a European conflict. Without the immense sacrifices of these colonial troops and laborers, the European empires would have collapsed.',
-          theme_heading: 'Colonies Join World War',
+            'The war quickly became global. Because European powers had vast overseas empires, millions of colonial soldiers from Africa and Asia were brought to fight. Their courage and sacrifice helped keep the empires alive.',
         },
         {
+          theme_heading: 'The Falling Dominoes: Europe at War',
           text: '<div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;"><img src="./assets/july_crisis.svg" style="width: 100%; max-width: 350px; display: block; margin: 0 auto;" alt="The July Crisis (1914) - The Domino Effect"></div>',
           level_4:
             '<div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin: 20px 0;"><img src="./assets/july_crisis.svg" style="width: 100%; max-width: 350px; display: block; margin: 0 auto;" alt="The July Crisis (1914) - The Domino Effect"></div>',
-          theme_heading: 'Dominoes',
         },
         {
           title: 'Consolidation Task',
