@@ -2249,6 +2249,17 @@ async function run() {
   console.log(`   📋 Synced PDFs to public/pdfs/ root`);
 
   await browser.close();
+
+  // Auto-sync to Google Drive Department File (School Laptop Access)
+  console.log(`\n📂 Auto-syncing Medicine Mastery PDFs to Google Drive Department File...`);
+  try {
+    const { syncAdminPdfsToDrive } = require('./sync_admin_pdfs_to_drive.cjs');
+    syncAdminPdfsToDrive();
+    console.log(`✅ Google Drive Department File updated with fresh Medicine Mastery PDFs.`);
+  } catch (driveErr) {
+    console.warn(`⚠️ Warning: Could not sync to Google Drive: ${driveErr.message}`);
+  }
+
   console.log('\n🎉 Successfully compiled all Medicine Mastery Booklets into print-perfect PDFs!');
 }
 

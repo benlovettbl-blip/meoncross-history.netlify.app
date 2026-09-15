@@ -2829,6 +2829,17 @@ function renderBookletHtml(ktKey, meta) {
     console.log(`   📋 Synced all 5 USA PDFs to public/pdfs/ root`);
 
     await browser.close();
+
+    // Auto-sync to Google Drive Department File (School Laptop Access)
+    console.log(`\n📂 Auto-syncing USA Mastery PDFs to Google Drive Department File...`);
+    try {
+      const { syncAdminPdfsToDrive } = require('./sync_admin_pdfs_to_drive.cjs');
+      syncAdminPdfsToDrive();
+      console.log(`✅ Google Drive Department File updated with fresh USA Mastery PDFs.`);
+    } catch (driveErr) {
+      console.warn(`⚠️ Warning: Could not sync to Google Drive: ${driveErr.message}`);
+    }
+
     console.log(
       '\n🎉 Successfully compiled all 5 USA Exam Practice Booklets into print-perfect PDFs!',
     );

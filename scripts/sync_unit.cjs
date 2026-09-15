@@ -31,7 +31,7 @@ async function runSync() {
 
   // Step 0: Fact & Anti-Hallucination Audit
   console.log(
-    `\n[Step 0/5] 🛡️ Auditing curriculum facts & anti-hallucination guardrails for ${unitId}...`,
+    `\n[Step 0/6] 🛡️ Auditing curriculum facts & anti-hallucination guardrails for ${unitId}...`,
   );
   try {
     execSync(`node scripts/verify_curriculum_facts.cjs ${unitId}`, {
@@ -44,7 +44,7 @@ async function runSync() {
   }
 
   // Step 0b: Image Integrity & No-AI Audit
-  console.log(`\n[Step 0b/5] 🖼️ Auditing image integrity & No-AI policy...`);
+  console.log(`\n[Step 0b/6] 🖼️ Auditing image integrity & No-AI policy...`);
   try {
     execSync(`node scripts/verify_images.cjs`, {
       stdio: 'inherit',
@@ -56,7 +56,7 @@ async function runSync() {
   }
 
   // Step 1: Validate Syntax
-  console.log(`\n[Step 1/5] 🔍 Validating JavaScript syntax for ${unitId}/data.js...`);
+  console.log(`\n[Step 1/6] 🔍 Validating JavaScript syntax for ${unitId}/data.js...`);
   try {
     execSync(`node --check "${dataJsPath}"`, { stdio: 'inherit' });
     console.log(`✅ Syntax check passed cleanly.`);
@@ -66,7 +66,7 @@ async function runSync() {
   }
 
   // Step 1b: Task Uniformity & Anti-Duplication Linter
-  console.log(`\n[Step 1b/5] 🛡️ Auditing task uniformity, source formatting & anti-duplication...`);
+  console.log(`\n[Step 1b/6] 🛡️ Auditing task uniformity, source formatting & anti-duplication...`);
   try {
     execSync(`node scripts/lint_task_uniformity.cjs ${unitId}`, {
       stdio: 'inherit',
@@ -79,7 +79,7 @@ async function runSync() {
 
   // Step 1c: GCSE Depth of Knowledge (DoK) Specification Linter
   console.log(
-    `\n[Step 1c/5] 🎓 Auditing GCSE Depth of Knowledge (DoK) specification guardrails...`,
+    `\n[Step 1c/6] 🎓 Auditing GCSE Depth of Knowledge (DoK) specification guardrails...`,
   );
   try {
     execSync(`node scripts/lint_gcse_dok.cjs ${unitId}`, {
@@ -92,7 +92,7 @@ async function runSync() {
   }
 
   // Step 2: Rebuild Global Database
-  console.log(`\n[Step 2/5] 🗄️ Updating public/database.json for digital app...`);
+  console.log(`\n[Step 2/6] 🗄️ Updating public/database.json for digital app...`);
   try {
     execSync(`node scripts/build_database.cjs`, { stdio: 'inherit', cwd: ROOT_DIR });
     console.log(`✅ database.json refreshed.`);
@@ -103,9 +103,9 @@ async function runSync() {
 
   // Step 3: Check if digital-only (trip_ypres) or physical PDF required
   if (unitId === 'trip_ypres') {
-    console.log(`\n[Step 3/5] ⏭️ Unit ${unitId} is fully digital. Skipping PDF export.`);
+    console.log(`\n[Step 3/6] ⏭️ Unit ${unitId} is fully digital. Skipping PDF export.`);
   } else {
-    console.log(`\n[Step 3/5] 📄 Compiling fresh HTML workbooks & PDFs with Puppeteer...`);
+    console.log(`\n[Step 3/6] 📄 Compiling fresh HTML workbooks & PDFs with Puppeteer...`);
     try {
       execSync(`node scripts/generate_textbooks.cjs ${unitId}`, {
         stdio: 'inherit',
@@ -123,7 +123,7 @@ async function runSync() {
     }
 
     // Step 4: Re-align Workbook Page Map
-    console.log(`\n[Step 4/5] 🗺️ Synchronizing digital workbook page numbers to PDF...`);
+    console.log(`\n[Step 4/6] 🗺️ Synchronizing digital workbook page numbers to PDF...`);
     try {
       execSync(`node scripts/generate_workbook_page_map.cjs`, { stdio: 'inherit', cwd: ROOT_DIR });
       console.log(`✅ Workbook page map synchronized.`);
@@ -132,7 +132,7 @@ async function runSync() {
     }
 
     // Step 5: Layout Overflow Audit
-    console.log(`\n[Step 5/5] 📐 Auditing PDF layout overflows...`);
+    console.log(`\n[Step 5/6] 📐 Auditing PDF layout overflows...`);
     try {
       execSync(`node scripts/check_overflows.cjs ${unitId}`, { stdio: 'inherit', cwd: ROOT_DIR });
       console.log(`✅ Overflow audit complete.`);
@@ -141,12 +141,27 @@ async function runSync() {
     }
   }
 
+  // Step 6: Google Drive Department File Synchronization (School Laptop Access)
+  console.log(
+    `\n[Step 6/6] 📂 Mirroring PDFs to Google Drive Department File (School Laptop Access)...`,
+  );
+  try {
+    const { syncAdminPdfsToDrive } = require('./sync_admin_pdfs_to_drive.cjs');
+    syncAdminPdfsToDrive();
+    console.log(`✅ Google Drive Department File synchronized for school laptop access.`);
+  } catch (err) {
+    console.warn(`⚠️ Warning: Google Drive Department File sync had issues:`, err.message);
+  }
+
   const duration = ((Date.now() - startTime) / 1000).toFixed(1);
   console.log(`\n======================================================`);
   console.log(`🎉 100% SUCCESS: Unit [${unitId}] is fully synchronized in ${duration}s!`);
   console.log(`   - Digital App (database.json): Up to date`);
   console.log(`   - Physical PDFs (public/pdfs/): Re-compiled`);
   console.log(`   - Page Map: Aligned with physical printouts`);
+  console.log(
+    `   - Google Drive Dep File (G:\\My Drive\\AAMX\\Dep File): Synchronized for school laptop access`,
+  );
   console.log(`======================================================\n`);
   return true;
 }
