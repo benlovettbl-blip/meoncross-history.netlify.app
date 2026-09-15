@@ -392,12 +392,70 @@ const KT_DATA = {
         {
           q: 'Ref',
           type: 'Exemplars',
-          topic: 'Grade 8/9 Level 3 Models (Q1, Q2, Q3) & Top 3 Pitfalls',
-          page: 'P11–12',
-          marks: 'Audit',
+          topic: 'Grade 8/9 Level 3 Models (Q1 Consequence & Q3 Importance)',
+          page: 'P11',
+          marks: 'Model',
+        },
+        {
+          q: 'Bank',
+          type: 'Spec Bank',
+          topic: '100% Specification Practice Bank & Fatal Examiner Traps',
+          page: 'P12',
+          marks: 'Bank',
         },
       ],
     },
+    specBank: [
+      {
+        num: 1,
+        type: 'Consequence (4m)',
+        q: 'Explain one consequence of the conflicting interests and demands of Jews and Arabs within the British Mandate.',
+        focus:
+          'Focus on conflicting British promises (Balfour Declaration vs McMahon-Hussein Correspondence) and rising communal violence.',
+      },
+      {
+        num: 2,
+        type: 'Consequence (4m)',
+        q: 'Explain one consequence of the territorial changes resulting from the 1948–49 war.',
+        focus:
+          'Explain how Israeli expansion to 79% of Palestine created 700,000 Palestinian refugees (the Nakba) and armistice green lines.',
+      },
+      {
+        num: 3,
+        type: 'Importance (8m)',
+        q: 'Explain the importance of the refugee status of Palestinian Arabs for relations between Israel and Arab states after 1949.',
+        focus:
+          'Explain how Arab states refused resettlement to maintain the Palestinian "Right of Return", entrenching regional hostility.',
+      },
+      {
+        num: 4,
+        type: 'Importance (8m)',
+        q: 'Explain the importance of US aid to Israel in the period 1949–1963.',
+        focus:
+          'Explain how US loans and diplomatic backing enabled Israel to absorb 680,000 immigrants and develop sovereign infrastructure.',
+      },
+      {
+        num: 5,
+        type: 'Consequence (4m)',
+        q: 'Explain one consequence of Nasser’s leadership of the Arab world for relations with Israel.',
+        focus:
+          'Explain how Nasser’s charismatic Pan-Arabism united Arab public opinion against Israel and led to the formation of the UAR and Fedayeen raids.',
+      },
+      {
+        num: 6,
+        type: 'Importance (8m)',
+        q: 'Explain the importance of the Israeli attacks on Sinai in 1956 for Israeli security.',
+        focus:
+          'Explain how capturing Sinai eliminated fedayeen bases in Gaza and secured Israeli navigation through the Straits of Tiran via UNEF peacekeepers.',
+      },
+      {
+        num: 7,
+        type: 'Narrative (8m)',
+        q: 'Write a narrative account analysing the development of Israel’s relations with Egypt between 1949 and 1956.',
+        focus:
+          'Analyse the chronological sequence: 1949 Armistice → 1955 Gaza raid → Czech Arms Deal → nationalisation → 1956 Suez War.',
+      },
+    ],
   },
 
   KT2: {
@@ -783,12 +841,70 @@ const KT_DATA = {
         {
           q: 'Ref',
           type: 'Exemplars',
-          topic: 'Grade 8/9 Level 3 Models (Q1, Q2, Q3) & Top 3 Pitfalls',
-          page: 'P11–12',
-          marks: 'Audit',
+          topic: 'Grade 8/9 Level 3 Models (Q1 Consequence & Q3 Importance)',
+          page: 'P11',
+          marks: 'Model',
+        },
+        {
+          q: 'Bank',
+          type: 'Spec Bank',
+          topic: '100% Specification Practice Bank & Fatal Examiner Traps',
+          page: 'P12',
+          marks: 'Bank',
         },
       ],
     },
+    specBank: [
+      {
+        num: 1,
+        type: 'Consequence (4m)',
+        q: 'Explain one consequence of Syria’s support for Fatah between 1964 and 1967.',
+        focus:
+          'Explain how Syrian Ba’athist support for cross-border fedayeen raids provoked Israeli artillery strikes and the 7 April 1967 dogfight.',
+      },
+      {
+        num: 2,
+        type: 'Importance (8m)',
+        q: 'Explain the importance of the continued dispute over the Suez Canal between 1967 and 1973.',
+        focus:
+          'Explain how the closure of the canal during the War of Attrition (1969–70) heightened superpower Cold War tensions along the waterway.',
+      },
+      {
+        num: 3,
+        type: 'Importance (8m)',
+        q: 'Explain the importance of the occupied territories (Golan Heights, West Bank, Sinai) for Israeli security after 1967.',
+        focus:
+          'Explain how strategic depth protected Israeli population centres, but created the long-term demographic and security burden of military occupation.',
+      },
+      {
+        num: 4,
+        type: 'Consequence (4m)',
+        q: 'Explain one consequence of the Black September attack at the Munich Olympics (1972) for international attitudes towards the Palestine issue.',
+        focus:
+          'Explain how the hostage killings shocked world opinion, leading Western nations to brand Palestinian factions as terrorist organisations.',
+      },
+      {
+        num: 5,
+        type: 'Consequence (4m)',
+        q: 'Explain one consequence of Israel’s consolidation of control in the occupied territories between 1967 and 1973.',
+        focus:
+          'Explain how the establishment of Jewish settlements and military administration radicalised Palestinian resistance under the PLO.',
+      },
+      {
+        num: 6,
+        type: 'Importance (8m)',
+        q: 'Explain the importance of Egyptian relations with the USSR between 1967 and 1973.',
+        focus:
+          'Explain how Soviet SAM air-defence batteries and military hardware re-armed Egypt for Operation Badr across the Suez Canal in 1973.',
+      },
+      {
+        num: 7,
+        type: 'Narrative (8m)',
+        q: 'Write a narrative account analysing the key events in the aftermath of the Yom Kippur War in 1973.',
+        focus:
+          'Analyse the causal chain: UN Res 338 ceasefire → OPEC oil embargo → Kissinger shuttle diplomacy → 1974–75 Sinai Disengagement.',
+      },
+    ],
   },
 
   KT3: {
@@ -1177,12 +1293,70 @@ const KT_DATA = {
         {
           q: 'Ref',
           type: 'Exemplars',
-          topic: 'Grade 8/9 Level 3 Models (Q1, Q2, Q3) & Top 3 Pitfalls',
-          page: 'P11–12',
-          marks: 'Audit',
+          topic: 'Grade 8/9 Level 3 Models (Q1 Consequence & Q3 Importance)',
+          page: 'P11',
+          marks: 'Model',
+        },
+        {
+          q: 'Bank',
+          type: 'Spec Bank',
+          topic: '100% Specification Practice Bank & Fatal Examiner Traps',
+          page: 'P12',
+          marks: 'Bank',
         },
       ],
     },
+    specBank: [
+      {
+        num: 1,
+        type: 'Importance (8m)',
+        q: 'Explain the importance of Kissinger’s ‘shuttle diplomacy’ for the reopening of the Suez Canal.',
+        focus:
+          'Explain how the 1974 and 1975 Sinai Disengagement Accords allowed Egypt to clear mines and reopen the canal to world commerce in June 1975.',
+      },
+      {
+        num: 2,
+        type: 'Consequence (4m)',
+        q: 'Explain one consequence of Begin’s visit to Egypt in 1977.',
+        focus:
+          'Explain how Begin’s reciprocal Ismailia summit demonstrated mutual willingness to negotiate, laying groundwork for Camp David.',
+      },
+      {
+        num: 3,
+        type: 'Importance (8m)',
+        q: 'Explain the importance of US President Carter for the Camp David negotiations (1978).',
+        focus:
+          'Explain Carter’s pivotal role in keeping Begin and Sadat at the table for 13 days, drafting 23 revisions to overcome personal deadlock.',
+      },
+      {
+        num: 4,
+        type: 'Importance (8m)',
+        q: 'Explain the importance of Arafat’s speech to the UN (1974) for the international standing of the PLO.',
+        focus:
+          'Explain how Arafat’s "gun and olive branch" address secured official UN Observer status and recognition as sole legitimate representative.',
+      },
+      {
+        num: 5,
+        type: 'Consequence (4m)',
+        q: 'Explain one consequence of PLO activities in Lebanon for Israeli reprisals in the late 1970s.',
+        focus:
+          'Explain how cross-border rocket strikes and coastal road raids directly triggered Operation Litani in 1978, creating a buffer zone.',
+      },
+      {
+        num: 6,
+        type: 'Importance (8m)',
+        q: 'Explain the importance of the end of the Cold War for Middle East peace negotiations.',
+        focus:
+          'Explain how the collapse of the USSR left the US as the sole superpower, depriving Syria and the PLO of Soviet patronage and unlocking Madrid (1991).',
+      },
+      {
+        num: 7,
+        type: 'Consequence (4m)',
+        q: 'Explain one consequence of the Oslo II agreement (1995) for Palestinian self-rule in the West Bank.',
+        focus:
+          'Explain how dividing the West Bank into Areas A (Palestinian control), B (joint), and C (Israeli control) fragmented territory and deepened friction.',
+      },
+    ],
   },
 };
 
@@ -1645,8 +1819,8 @@ const COMMON_CSS = `
     background: #f8fafc;
     padding: 4px 8px;
     margin-bottom: 6px;
-    font-size: 7.2pt;
-    line-height: 1.25;
+    font-size: 8pt;
+    line-height: 1.3;
     display: flex;
     gap: 8px;
   }
@@ -1661,7 +1835,7 @@ const COMMON_CSS = `
   .scaffold-label {
     font-weight: 800;
     text-transform: uppercase;
-    font-size: 6.6pt;
+    font-size: 7.2pt;
     color: #0f172a;
     margin-bottom: 2px;
     display: block;
@@ -1677,7 +1851,7 @@ const COMMON_CSS = `
     border-radius: 3px;
     padding: 1px 5px;
     margin: 1px 2px 1px 0;
-    font-size: 6.6pt;
+    font-size: 7.2pt;
     font-weight: 700;
     color: #0f172a;
     white-space: nowrap;
@@ -1690,8 +1864,8 @@ const COMMON_CSS = `
     background: #f8fafc;
     padding: 4px 8px;
     margin-bottom: 5px;
-    font-size: 7.2pt;
-    line-height: 1.25;
+    font-size: 8pt;
+    line-height: 1.3;
   }
   .scaffold-focus-row {
     display: flex;
@@ -1701,7 +1875,7 @@ const COMMON_CSS = `
     border-bottom: 1px solid #e2e8f0;
   }
   .scaffold-badge {
-    font-size: 6.8pt;
+    font-size: 7.4pt;
     font-weight: 800;
     text-transform: uppercase;
     color: #1e3a8a;
@@ -1713,8 +1887,8 @@ const COMMON_CSS = `
   }
   .scaffold-text {
     color: #1e293b;
-    font-size: 7.1pt;
-    line-height: 1.25;
+    font-size: 8pt;
+    line-height: 1.3;
   }
   .scaffold-vocab-row {
     padding-top: 3px;
@@ -1737,13 +1911,13 @@ const COMMON_CSS = `
     display: flex;
     align-items: baseline;
     gap: 6px;
-    font-size: 6.8pt;
+    font-size: 7.4pt;
     color: #475569;
   }
   .scaffold-stem-label {
     font-weight: 700;
     color: #9a3412;
-    font-size: 6.6pt;
+    font-size: 7.2pt;
     text-transform: uppercase;
     flex-shrink: 0;
   }
@@ -1758,8 +1932,8 @@ const COMMON_CSS = `
     background: #f8fafc;
     padding: 4px 8px;
     margin-bottom: 6px;
-    font-size: 7.2pt;
-    line-height: 1.25;
+    font-size: 8pt;
+    line-height: 1.3;
   }
   .narrative-stages-row {
     display: flex;
@@ -1775,7 +1949,7 @@ const COMMON_CSS = `
   }
   .narrative-stage-hdr {
     font-weight: 800;
-    font-size: 6.6pt;
+    font-size: 7.2pt;
     text-transform: uppercase;
     color: #0f172a;
     border-bottom: 1px solid #e2e8f0;
@@ -1800,13 +1974,13 @@ const COMMON_CSS = `
     margin-bottom: 4px;
   }
   .exemplar-title {
-    font-size: 8.5pt;
+    font-size: 9pt;
     font-weight: 800;
     color: #0f172a;
     text-transform: uppercase;
   }
   .exemplar-grade {
-    font-size: 7.2pt;
+    font-size: 7.8pt;
     font-weight: 700;
     background: #dbeafe;
     color: #1e40af;
@@ -1814,15 +1988,15 @@ const COMMON_CSS = `
     border-radius: 3px;
   }
   .exemplar-stem {
-    font-size: 8.2pt;
+    font-size: 8.8pt;
     font-weight: 700;
     color: #1e293b;
     margin-bottom: 3px;
   }
   .exemplar-text {
     font-family: Georgia, serif;
-    font-size: 8pt;
-    line-height: 1.32;
+    font-size: 8.6pt;
+    line-height: 1.35;
     color: #1e293b;
     background: #fafaf9;
     border-left: 3px solid #0284c7;
@@ -1831,7 +2005,7 @@ const COMMON_CSS = `
     margin-bottom: 3px;
   }
   .examiner-note {
-    font-size: 7pt;
+    font-size: 7.6pt;
     color: #15803d;
     background: #f0fdf4;
     border: 1px solid #bbf7d0;
@@ -1843,12 +2017,12 @@ const COMMON_CSS = `
   .traps-card {
     border: 1.5px solid #ef4444;
     border-radius: 5px;
-    padding: 7px 9px;
+    padding: 6px 8px;
     background: #fef2f2;
-    margin-top: 5px;
+    margin-bottom: 6px;
   }
   .traps-header {
-    font-size: 8.2pt;
+    font-size: 8pt;
     font-weight: 800;
     color: #991b1b;
     text-transform: uppercase;
@@ -1866,8 +2040,8 @@ const COMMON_CSS = `
     border: 1px solid #fca5a5;
     border-radius: 4px;
     padding: 4px 5px;
-    font-size: 7pt;
-    line-height: 1.22;
+    font-size: 7.2pt;
+    line-height: 1.25;
   }
   .trap-item strong {
     color: #991b1b;
@@ -1876,6 +2050,75 @@ const COMMON_CSS = `
   }
   .trap-item span {
     color: #7f1d1d;
+  }
+
+  /* 100% Specification Practice Bank Container (Page 12) */
+  .spec-bank-container {
+    border: 1.5px solid #1e3a8a;
+    border-radius: 5px;
+    padding: 6px 9px;
+    background: #ffffff;
+    margin-bottom: 6px;
+  }
+  .spec-bank-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1.5px solid #1e3a8a;
+    padding-bottom: 2px;
+    margin-bottom: 4px;
+  }
+  .spec-bank-title {
+    color: #1e3a8a;
+    font-size: 8.2pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+  }
+  .spec-bank-subtitle {
+    font-size: 7pt;
+    color: #64748b;
+    font-style: italic;
+  }
+  .spec-bank-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .spec-bank-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    padding: 3px 6px;
+    font-size: 7.4pt;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1.25;
+  }
+  .spec-bank-q {
+    flex: 1;
+    padding-right: 8px;
+    color: #1e293b;
+  }
+  .spec-bank-q strong {
+    color: #1e3a8a;
+  }
+  .spec-bank-badge {
+    font-size: 6.6pt;
+    font-weight: 800;
+    background: #e0e7ff;
+    color: #3730a3;
+    padding: 1.5px 6px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+
+  .diagnostic-action-card {
+    border: 1.5px dashed #475569;
+    border-radius: 5px;
+    padding: 6px 9px;
+    background: #f8fafc;
   }
 
   .page-footer {
@@ -2770,52 +3013,35 @@ function renderBookletHtml(ktKey, meta) {
 
         <div class="page-footer">
             <span>Option P5 · Official Exam Criteria &amp; Exemplars</span>
-            <span class="turn-over">Turn over for Narrative Model &amp; Traps &#9654;</span>
+            <span class="turn-over">Turn over for 100% Specification Practice Bank &amp; Traps &#9654;</span>
             <span>Page 11 of 12</span>
         </div>
     </div>
 
     <!-- ============================================================= -->
-    <!-- PAGE 12: SECTION C — GRADE 8/9 MODEL ANSWER & EXAMINER TRAPS  -->
+    <!-- PAGE 12: 100% SPECIFICATION PRACTICE BANK & EXAMINER TRAPS   -->
     <!-- ============================================================= -->
     <div class="page">
         <div>
             <div class="page-header">
                 <div class="header-left">
-                    <h2>Section C: Narrative Exemplar &amp; Fatal Examiner Traps</h2>
-                    <p>Official Level 3 continuous prose model answer and high-frequency pitfalls to avoid.</p>
+                    <h2>Section C: Specification Practice Bank &amp; Fatal Traps</h2>
+                    <p>100% specification coverage guarantee — practice every remaining Pearson Edexcel exam question stem.</p>
                 </div>
-                <span class="header-tag" style="background: #15803d;">Grade 8/9 Model: Q2</span>
+                <span class="header-tag" style="background: #1e3a8a;">100% Spec Guarantee</span>
             </div>
 
-            <!-- Narrative Model -->
-            <div class="exemplar-box">
-                <div class="exemplar-header">
-                    <span class="exemplar-title">Question 2: Narrative Account Exemplar</span>
-                    <span class="exemplar-grade">Full Marks · Level 3 (8/8)</span>
-                </div>
-                <div class="exemplar-stem">${x.narrative.stem}</div>
-                <div class="exemplar-text">
-                    <p style="margin: 0 0 3px 0;">${x.narrative.modelP1}</p>
-                    <p style="margin: 0 0 3px 0;">${x.narrative.modelP2}</p>
-                    <p style="margin: 0;">${x.narrative.modelP3}</p>
-                </div>
-                <div class="examiner-note">
-                    <strong>Examiner Annotation:</strong> ${x.narrative.examiner}
-                </div>
-            </div>
-
-            <!-- Top 3 Fatal Examiner Traps -->
+            <!-- Top Section: Top 3 Fatal Examiner Traps -->
             <div class="traps-card">
                 <div class="traps-header">
-                    Top 3 Fatal Examiner Traps to Avoid for Key Topic ${meta.number}
+                    ⚠️ Top 3 Fatal Examiner Traps for Key Topic ${meta.number}
                 </div>
                 <div class="traps-grid">
                     ${x.traps
                       .map(
                         (t) => `
                         <div class="trap-item">
-                            <strong>• ${t.title}</strong>
+                            <strong>• ${t.title}:</strong>
                             <span>${t.desc}</span>
                         </div>
                     `,
@@ -2823,11 +3049,62 @@ function renderBookletHtml(ktKey, meta) {
                       .join('')}
                 </div>
             </div>
+
+            <!-- Middle Section: 100% Specification Practice Bank -->
+            <div class="spec-bank-container">
+                <div class="spec-bank-header">
+                    <span class="spec-bank-title">📚 Specification Practice Bank: 100% Curriculum Coverage</span>
+                    <span class="spec-bank-subtitle">Every remaining specification bullet point tested below</span>
+                </div>
+                
+                <div class="spec-bank-list">
+                    ${(meta.specBank || [])
+                      .map(
+                        (item) => `
+                        <div class="spec-bank-item">
+                            <div class="spec-bank-q">
+                                <strong>Question ${item.num}:</strong> ${item.q}
+                            </div>
+                            <span class="spec-bank-badge">
+                                ${item.type}
+                            </span>
+                        </div>
+                    `,
+                      )
+                      .join('')}
+                </div>
+            </div>
+
+            <!-- Bottom Section: Pupil Personal Revision Commitments -->
+            <div class="diagnostic-action-card">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px;">
+                    <strong style="color: #334155; font-size: 7.4pt; text-transform: uppercase;">
+                        ✍️ Pupil Diagnostic Action Plan &amp; Targeted Revision Commitments
+                    </strong>
+                    <span style="font-size: 6.6pt; color: #64748b;">Complete following self-marking of Pages 2–11</span>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 4px;">
+                    <div>
+                        <span style="font-size: 6.8pt; font-weight: 700; color: #475569;">1. Weakest Sub-Topic / Knowledge Area:</span>
+                        <div style="border-bottom: 1.2px solid #475569; height: 16px;"></div>
+                    </div>
+                    <div>
+                        <span style="font-size: 6.8pt; font-weight: 700; color: #475569;">2. Key Dates / Statistics I Need to Memorise:</span>
+                        <div style="border-bottom: 1.2px solid #475569; height: 16px;"></div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; background: #fff; border: 1px solid #cbd5e1; border-radius: 3px; padding: 2.5px 6px; font-size: 6.8pt;">
+                    <span><strong>Revision Commitment:</strong> [ &nbsp; ] Complete Quiz Flashcards &nbsp;&nbsp; [ &nbsp; ] Redo Timed Dual-Track &nbsp;&nbsp; [ &nbsp; ] Practice Spec Bank Question</span>
+                    <span><strong>Target Grade:</strong> [ 9 &nbsp; 8 &nbsp; 7 &nbsp; 6 &nbsp; 5 &nbsp; 4 ]</span>
+                </div>
+            </div>
         </div>
 
         <div class="page-footer">
             <span>Pearson Edexcel GCSE (9–1) History · Option P5 Conflict in the Middle East</span>
-            <span style="font-weight: 700; color: #0f172a;">100% Specification Coverage Completed</span>
+            <span style="font-weight: 700; color: #0f172a;">100% Specification Coverage Guaranteed</span>
             <span>Page 12 of 12</span>
         </div>
     </div>
