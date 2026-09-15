@@ -171,3 +171,10 @@ When authoring, enriching, or refactoring historical content, biographies, archi
 3. **No Hollywood Embellishment ("Dramatic Fluff"):** Maintain a strict archival, juridical register. Do NOT invent dramatic combat maneuvers, cellar-bombing dashes, or sentimental motives that do not exist in official citations, dispatches, or war diaries.
 4. **Mandatory Step 0 Fact Audit:** Whenever compiling or modifying curriculum data, you must run `node scripts/verify_curriculum_facts.cjs <unit_id>` (enforced automatically in `scripts/sync_unit.cjs`). Any detected hallucination regression, placeholder, or specification violation must be resolved immediately before deploying or committing.
 
+## Permanent Departmental Reference Shelf & Specification Safeguard
+The directory `G:\My Drive\TEXTBOOKS` is our permanent departmental reference library for subject content enrichment across all KS3 and GCSE units (e.g. Weimar Germany, Early Elizabethan England, Medicine, Middle East, USA, and Medieval England).
+When referencing or extracting information from these textbooks, you MUST strictly adhere to the following guardrails:
+1. **Content Knowledge Only:** Use textbooks strictly for historical narrative depth, chronological precision, primary source excerpts, key statistics, and historical figures.
+2. **ZERO Exam Technique from Textbooks:** NEVER use textbooks to determine exam question formats, mark allocations, question stems, or exam technique. Many textbooks in the shelf are from different exam boards (AQA, Cambridge iGCSE, OCR, ISEB) or outdated legacy specifications.
+3. **Specification Authority:** All exam question structures, mark schemes, and assessment scaffolds must strictly follow our verified Pearson Edexcel specification rules (e.g. 4-mark consequence questions for Middle East Paper 2, Section A 2-mark feature questions for Medicine / Elizabethan, the 4-4-4-4 matrix for Paper 3, and `data/curriculum_facts_manifest.json`).
+

@@ -12,5 +12,6 @@ module.exports = {
     SCRIPTS: path.join(ROOT_DIR, 'scripts'),
     SRC: path.join(ROOT_DIR, 'src'),
     GOOGLE_DRIVE_DEP_FILE: 'G:\\My Drive\\AAMX\\Dep File',
+    GOOGLE_DRIVE_TEXTBOOKS: 'G:\\My Drive\\TEXTBOOKS',
   },
 };
