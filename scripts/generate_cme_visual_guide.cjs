@@ -2363,7 +2363,8 @@ function getStyles() {
 }
 
 function renderPage1(getImageDataUri) {
-  const nakbaImgUri = getImageDataUri('/images/nakba_galilee_1948.jpg');
+  const unrwaImgUri = getImageDataUri('/images/nakba_unrwa_women_bread_1948.jpg');
+  const rubingerImgUri = getImageDataUri('/images/israeli_troops_wall.jpg');
 
   return `
     <div class="page" id="page_1" data-page="1">
@@ -2394,22 +2395,58 @@ function renderPage1(getImageDataUri) {
           </div>
         </div>
 
-        <!-- Primary Historical Archival Plate: Al-Nakba (1948) -->
-        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 5px 7px; background: #fafafa; display: flex; gap: 10px; align-items: center;">
-          <div style="width: 290px; height: 175px; flex-shrink: 0; border: 1px solid #000000; overflow: hidden; background: #000000;">
-            <img src="${nakbaImgUri}" alt="Palestinian refugees in Galilee, 1948" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(115%); display: block;" />
+        <!-- Two Contrasting Historical Archival Plates: 1948 Nakba vs 1967 Six Day War -->
+        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 7px 8px; background: #fafafa;">
+          <div style="font-size: 7.5pt; font-weight: 800; text-transform: uppercase; color: #000000; letter-spacing: 0.5px; margin-bottom: 6px; text-align: center; border-bottom: 1.2px solid #000000; padding-bottom: 2px;">
+            Dual Archival Plates: The Two Defining Turning Points of Conflict in the Middle East
           </div>
-          <div style="flex: 1; font-size: 7.2pt; color: #1e293b; line-height: 1.30;">
-            <div style="font-size: 7.6pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 2px; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; display: flex; justify-content: space-between;">
-              <span>PRIMARY ARCHIVE &bull; AL-NAKBA (1948)</span>
-              <span style="font-size: 6.8pt; color: #475569;">ICRC / UNRWA Photo Record</span>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            
+            <!-- Left Plate: 1948 Al-Nakba (UNRWA Archive) -->
+            <div style="border: 1px solid #000000; background: #ffffff; padding: 5px; border-radius: 2px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px;">
+                <strong style="font-size: 6.8pt; text-transform: uppercase; color: #000000; letter-spacing: 0.3px;">1. The 1948 Al-Nakba (The Catastrophe)</strong>
+                <span style="font-size: 6.2pt; font-weight: 700; color: #475569;">UNRWA Photo Archive</span>
+              </div>
+              <div style="width: 100%; height: 135px; overflow: hidden; background: #000000; border: 1px solid #000000; margin-bottom: 4px;">
+                <img src="${unrwaImgUri}" alt="Palestinian refugee mother and daughter outside tent with bread rations, 1948" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%; filter: grayscale(100%) contrast(115%); display: block;" />
+              </div>
+              <div style="font-size: 6.8pt; color: #1e293b; line-height: 1.25;">
+                <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 7.2pt; font-weight: 700; font-style: italic; color: #000000; margin-bottom: 2px;">
+                  "Palestinian refugee mother and daughter with bread rations outside shelter tent (1948)"
+                </div>
+                <div>
+                  <strong>Archive Citation:</strong> UN Relief and Works Agency (UNRWA) / UNRPR Historic Milestones Archive, Record ID: I0000l5SkmJo1hLc.
+                </div>
+                <div style="margin-top: 2px; color: #334155;">
+                  <strong>Historical Context:</strong> Over 700,000 Palestinian Arabs were displaced during the 1948 war. The United Nations Relief for Palestine Refugees (UNRPR) provided initial tent camps and emergency flour rations before UNRWA was formally constituted in 1949.
+                </div>
+              </div>
             </div>
-            <p style="margin: 0 0 4px 0; font-family: 'Playfair Display', serif; font-size: 7.8pt; color: #000000; font-style: italic;">
-              "Palestinian civilian refugees from Galilee fleeing towards the Lebanese border in summer 1948 during Al-Nakba (The Catastrophe), carrying personal possessions on foot past an abandoned truck."
-            </p>
-            <div style="font-size: 6.8pt; color: #334155;">
-              <strong>Historical Grounding:</strong> The 1948–49 War displaced over 700,000 Palestinian Arabs (including 280,000 to the West Bank and 190,000 to Gaza). Grounding Paper 2 revision in primary human evidence ensures rigorous historical empathy, source awareness, and balanced specification mastery.
+
+            <!-- Right Plate: 1967 Six Day War (David Rubinger / GPO) -->
+            <div style="border: 1px solid #000000; background: #ffffff; padding: 5px; border-radius: 2px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px;">
+                <strong style="font-size: 6.8pt; text-transform: uppercase; color: #000000; letter-spacing: 0.3px;">2. The 1967 Western Wall Victory</strong>
+                <span style="font-size: 6.2pt; font-weight: 700; color: #475569;">David Rubinger / GPO</span>
+              </div>
+              <div style="width: 100%; height: 135px; overflow: hidden; background: #000000; border: 1px solid #000000; margin-bottom: 4px;">
+                <img src="${rubingerImgUri}" alt="Israeli paratroopers at the Western Wall, 7 June 1967 by David Rubinger" style="width: 100%; height: 100%; object-fit: cover; object-position: center 25%; filter: grayscale(100%) contrast(115%); display: block;" />
+              </div>
+              <div style="font-size: 6.8pt; color: #1e293b; line-height: 1.25;">
+                <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 7.2pt; font-weight: 700; font-style: italic; color: #000000; margin-bottom: 2px;">
+                  "Paratroopers at the Western Wall (צנחנים בכותל המערבי), Jerusalem (7 June 1967)"
+                </div>
+                <div>
+                  <strong>Photograph by:</strong> David Rubinger (1924–2017) &bull; Israel Government Press Office (GPO) Collection.
+                </div>
+                <div style="margin-top: 2px; color: #334155;">
+                  <strong>Historical Context:</strong> Israeli paratroopers of the 55th Brigade (Zion Karasenti, Yitzhak Yifat, Haim Oshri) stand in reverence before the Western Wall moments after capturing the Old City of Jerusalem, symbolizing the dramatic 1967 territorial conquest.
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
 
