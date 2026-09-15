@@ -163,6 +163,38 @@ export function renderHomepage() {
         </div>
       </div>
     `;
+  } else if (window.currentUnitId === 'cme_new') {
+    medicineVisualGuideBannerHTML = `
+      <div class="cme-visual-guide-hub-card" style="margin: 28px 0 20px 0; background: linear-gradient(135deg, #0f172a 0%, #0369a1 60%, #0c4a6e 100%); border-radius: 14px; padding: 24px 28px; color: #ffffff; box-shadow: 0 10px 30px -5px rgba(2, 132, 199, 0.4); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; border: 1.5px solid rgba(255,255,255,0.15); position: relative; overflow: hidden;">
+        <div style="position: absolute; right: -20px; top: -30px; font-size: 13rem; color: rgba(255, 255, 255, 0.03); pointer-events: none; z-index: 0;">
+          <i class="fa-solid fa-dove"></i>
+        </div>
+        <div style="flex: 1; min-width: 290px; position: relative; z-index: 1;">
+          <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(2, 132, 199, 0.25); border: 1px solid rgba(186, 230, 253, 0.4); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; color: #bae6fd;">
+            <i class="fa-solid fa-star"></i> Featured Revision Masterclass &bull; 28 Pages
+          </div>
+          <h3 style="margin: 0 0 6px 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.6rem; font-weight: 800; color: #ffffff; line-height: 1.25;">
+            28-Page Visual Revision Masterclasses &amp; Complete Specification Guide
+          </h3>
+          <p style="margin: 0 0 12px 0; color: #cbd5e1; font-size: 0.94rem; line-height: 1.45; max-width: 680px;">
+            Complete Paper 2 Period Study companion: 12 double-page spreads across KT1, KT2, and KT3, 50-year synoptic timeline, causal pathways, GCSE specification word banks, and Grade 9 historiographical debate models.
+          </p>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap; font-size: 0.76rem;">
+            <span style="background: rgba(255,255,255,0.12); padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.18);"><i class="fa-regular fa-clock" style="color: #38bdf8;"></i> 50m Pacing Blueprint</span>
+            <span style="background: rgba(255,255,255,0.12); padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.18);"><i class="fa-solid fa-award" style="color: #fbbf24;"></i> Grade 7&ndash;9 Examiner Toolkit</span>
+            <span style="background: rgba(255,255,255,0.12); padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.18);"><i class="fa-solid fa-print" style="color: #a78bfa;"></i> Photocopier Ready</span>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; position: relative; z-index: 1;">
+          <a href="/units/cme_new/visual_revision_guide.html" target="_blank" class="btn" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; padding: 12px 22px; border-radius: 8px; font-weight: 700; font-size: 0.95rem; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4); transition: all 0.2s;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='none';">
+            <i class="fa-solid fa-book-open"></i> Launch Interactive Playbook
+          </a>
+          <a href="/pdfs/cme_visual_revision_guide.pdf" target="_blank" class="btn" style="background: rgba(255,255,255,0.12); color: #ffffff; border: 1px solid rgba(255,255,255,0.25); padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.12)'">
+            <i class="fa-solid fa-file-pdf"></i> Download PDF (28 Pages)
+          </a>
+        </div>
+      </div>
+    `;
   }
 
   contentArea.innerHTML = `

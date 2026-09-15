@@ -80,9 +80,6 @@ function formatMd(text) {
 // COMPLETE 12-SPREAD CURRICULUM DATA MODEL FOR PAPER 2 (OPTION P5)
 // =============================================================================
 const SPREADS = [
-  // ---------------------------------------------------------------------------
-  // SPREAD 1 (KT 1.1): BRITISH MANDATE & JEWISH INSURGENCY (1945–47)
-  // ---------------------------------------------------------------------------
   {
     id: 'cme_spread_1',
     spreadNum: 1,
@@ -98,27 +95,30 @@ const SPREADS = [
           title: 'Mandate Roots & Refugee Crisis',
           subtitle: '1923 Terms & Post-War Blockade',
           bullets: [
-            '**1923 Mandate Dilemma:** The League of Nations Mandate held 3 contradictory terms: (1) protect civil/religious rights of the Arab majority, (2) establish a Jewish national home, (3) prepare the country for independent self-government.',
-            '**Demographic Shift & Arab Revolt:** Jewish population doubled by 1931; Britain crushed the 1936–39 Arab Revolt with Haganah aid, leading to the 1937 Peel Commission partition proposal and the restrictive 1939 White Paper (15,000 immigrants/yr).',
-            '**The SS Exodus (July 1947):** Over 250,000 Holocaust survivors remained trapped in European DP camps; the Royal Navy intercepted the SS Exodus with 4,500 refugees, forcibly deporting them to Germany and provoking worldwide moral condemnation.',
+            '**1923 Mandate Dilemma:** Following the 1917 Balfour Declaration, the League of Nations Mandate established 3 contradictory obligations: (1) protect civil and religious rights of the Arab majority, (2) establish a Jewish national home, and (3) prepare the country for independent self-government.',
+            '**Demographic Surge & 1936–39 Arab Revolt:** The Jewish population doubled by 1931 (from 84,000 to 175,000) and escalated rapidly as thousands fled Nazi Germany from 1933; Britain crushed the 1936–39 Arab Revolt with 20,000 troops and Haganah assistance, leaving Arab military leadership shattered.',
+            '**Peel Commission (1937) & 1939 White Paper:** Lord Peel proposed the first partition into separate states, which Arabs rejected; seeking Arab oil alliances before WWII, Britain reversed policy in the 1939 White Paper, capping Jewish immigration at **15,000 per year for 5 years** (75,000 total).',
+            "**The SS Exodus & DP Camps (July 1947):** Over 250,000 Holocaust survivors remained trapped in European DP camps; Haganah's Aliyah Bet ran blockades until the Royal Navy intercepted the SS Exodus with **4,500 refugees**, forcibly deporting them to Hamburg, Germany, provoking worldwide moral condemnation.",
           ],
         },
         {
           title: 'Armed Insurgency & Sabotage',
           subtitle: 'Guerrilla Strikes vs British Rule',
           bullets: [
-            '**Railway & Infrastructure Sabotage:** Jewish underground fighters detonated **153 bombs on railway lines** to paralyze British troop movements, severed telephone communications, and blew up radar posts and oil pipelines.',
-            '**Night of the Bridges (June 1946):** Haganah commandos destroyed 11 road and rail bridges linking Palestine to surrounding Arab states, demonstrating complete tactical dominance across the countryside.',
-            '**King David Hotel Bombing (22 July 1946):** Irgun detonated milk churns with 225kg of TNT inside British military headquarters, killing **91 people** (British, Arab, Jewish civil servants). Ben-Gurion and the Haganah publicly condemned the Irgun after Begin refused calls to delay the blast.',
+            '**The Paramilitary Underground:** The mainstream Haganah (defense force led by Ben-Gurion) and militant splinter groups Irgun (led by Menachem Begin) and Lehi (Stern Gang) formed the unified Hebrew Resistance Movement following the furious August 1945 London Zionist conference.',
+            '**153 Railway Bombs & Transport Paralysis:** Jewish underground fighters detonated **153 bombs on railway lines**, severed telephone communications, blew up military radar stations, and destroyed oil pipelines, effectively paralyzing British troop logistics across Palestine.',
+            '**Night of the Bridges (June 1946):** Haganah commandos destroyed **11 road and rail bridges** linking Palestine to Transjordan, Syria, Lebanon, and Egypt in a single night, demonstrating complete tactical dominance over the countryside and severing British supply routes.',
+            '**King David Hotel Bombing (22 July 1946):** Irgun commandos disguised as milk delivery men detonated 225kg of TNT inside British military headquarters, killing **91 people** (British, Arab, Jewish civil servants); Ben-Gurion publicly condemned the Irgun after Begin ignored evacuation warnings.',
           ],
         },
         {
           title: 'British Military Collapse',
           subtitle: 'The Police State & Surrender',
           bullets: [
-            '**The Police State & Curfews:** Britain deployed **100,000 soldiers** (1 soldier for every 6 Jews) costing £40 million annually; Tel Aviv and Jerusalem were placed under military curfews inside fortified barbed-wire compounds ("Bevingrad").',
-            '**The Sergeants Affair (July 1947):** After Britain hanged 3 Irgun fighters in Acre Prison, Begin retaliated by hanging 2 captured British military intelligence sergeants (Paice and Martin) and booby-trapping their bodies, triggering anti-Jewish riots across Britain.',
-            '**UN Referral (18 Feb 1947):** Facing insolvency, domestic calls to "bring the boys home", and US threats to withhold postwar loans, Foreign Secretary Ernest Bevin announced Britain would hand Palestine to the UN without recommending any solution.',
+            '**The "Bevingrad" Police State:** Britain deployed **100,000 soldiers** (1 soldier for every 6 Jews) costing **£40 million annually**; Jerusalem and Tel Aviv administration compounds were sealed behind massive barbed-wire fortresses nicknamed "Bevingrad" under strict curfews.',
+            '**Acre Prison Raid (May 1947):** Irgun commandos dynamited the ancient crusader fortress of Acre, freeing 27 underground prisoners; British military courts responded by sentencing 3 captured Irgun fighters to death by hanging.',
+            "**The Sergeants Affair (July 1947):** Begin retaliated by hanging 2 captured British military intelligence sergeants (Clifford Martin and Mervyn Paice) in an orange grove and booby-trapping Martin's body with a landmine, triggering violent anti-Jewish riots across British cities.",
+            '**UN Referral (18 Feb 1947):** Exhausted by WWII debt, facing calls to "bring the boys home", and pressured by US threats to withhold postwar financial loans, Foreign Secretary Ernest Bevin announced Britain would surrender the Mandate to the UN without recommending any solution.',
           ],
         },
       ],
@@ -158,12 +158,14 @@ const SPREADS = [
             '**Contradictory Commitments:** Britain promised conflicting rights to both Arab majority and Jewish minority; by 1931, Jewish population had doubled to 175,000.',
             '**1936–39 Arab Revolt:** Crushed by 20,000 British troops aided by Haganah Special Night Squads (Orde Wingate), crippling Palestinian Arab political and military leadership.',
             '**Peel Commission (1937):** First official British proposal to partition Palestine into separate states; rejected by Arabs and superseded by 1939 White Paper.',
+            '**1939 White Paper Quotas:** Capped Jewish immigration at 15,000/yr for 5 years (75,000 total) with subsequent Arab veto, trapping European Jews on the eve of the Holocaust.',
           ],
         },
         {
           title: '2. Railway Sabotage (153 Bombs) & King David Hotel',
           points: [
-            '**Railway Sabotage:** Underground fighters set **153 bombs on railway lines**, blowing up tracks, locomotives, and signal boxes to restrict British troop deployments.',
+            "**London Conference Backlash (Aug 1945):** Fury at Attlee's Labour government upholding the White Paper led Jewish groups to launch an armed offensive against British rule.",
+            '**Railway Sabotage:** Underground fighters set **153 bombs on railway lines**, blowing up tracks, locomotives, and signal boxes to paralyze British troop deployments.',
             '**King David Hotel Strike (July 1946):** Irgun commandos disguised as Arab milk delivery men planted explosives in the basement; **91 civilians and military staff were killed**.',
             '**Haganah Condemnation:** While initially united under the Hebrew Resistance Movement, Ben-Gurion condemned the Irgun for ignoring evacuation warnings, splitting the underground.',
           ],
@@ -171,17 +173,19 @@ const SPREADS = [
         {
           title: '3. SS Exodus (4,500 Survivors) & US Pressure',
           points: [
-            '**Blockade Running:** Haganah bought former American passenger ships to run Royal Navy blockades; the SS Exodus carried **4,500 Holocaust survivors** in July 1947.',
-            '**Global Moral Outrage:** British destroyers rammed the vessel and forcibly deported refugees back to DP camps in Hamburg, Germany, shocking American public opinion.',
+            "**Displaced Persons Crisis:** Over 250,000 Holocaust survivors remained languishing in European DP camps; Haganah's Aliyah Bet clandestine network purchased American ships to run blockades.",
+            '**Blockade Running (July 1947):** The SS Exodus carried **4,500 Holocaust survivors**; Royal Navy destroyers rammed the vessel off Haifa, killing 3 and wounding dozens.',
+            '**Global Moral Outrage:** British destroyers forcibly deported refugees back to DP camps in Hamburg, Germany, shocking American public opinion and generating global press fury.',
             "**Truman's Ultimatum:** President Truman pressured Britain to admit 100,000 survivors, threatening to withhold crucial $3.75 billion Anglo-American postwar financial loans.",
           ],
         },
         {
           title: '4. The Sergeants Affair & The Bevingrad Police State',
           points: [
+            '**"Bevingrad" Fortresses:** 100,000 British troops (£40m/yr cost) placed major cities under constant curfews, retreating into barbed-wire administrative compounds ("Bevingrad").',
             '**Acre Prison Raid (May 1947):** Irgun dynamited the ancient fortress of Acre, freeing 27 underground prisoners; Britain responded by sentencing 3 captured Irgun men to death.',
-            '**Sergeants Hanged (July 1947):** Irgun hanged two captured British sergeants (Paice and Martin) in an orange grove and booby-trapped the ground with landmines.',
-            '**Domestic Collapse:** The deaths caused anti-Semitic riots in Liverpool and London; British newspapers declared Palestine an "unbearable drain in blood and treasure" (£40m/yr).',
+            "**Sergeants Hanged (July 1947):** Irgun hanged two captured British sergeants (Clifford Martin and Mervyn Paice) in an orange grove and booby-trapped Martin's body with landmines.",
+            '**Domestic Collapse:** The deaths caused anti-Semitic riots in Liverpool and London; British newspapers declared Palestine an "unbearable drain in blood and treasure".',
           ],
         },
       ],
@@ -216,7 +220,10 @@ const SPREADS = [
           term: 'Aliyah Bet',
           def: 'Clandestine Jewish underground network organizing illegal refugee ships.',
         },
-        { term: 'Haganah', def: 'Main Jewish paramilitary defense force led by David Ben-Gurion.' },
+        {
+          term: 'Haganah',
+          def: 'Main Jewish paramilitary defense force led by David Ben-Gurion.',
+        },
         {
           term: 'Irgun (Etzel)',
           def: 'Militant revisionist splinter group led by Menachem Begin.',
@@ -252,10 +259,6 @@ const SPREADS = [
       ],
     },
   },
-
-  // ---------------------------------------------------------------------------
-  // SPREAD 2 (KT 1.2): UN PARTITION RES 181 & 1948–49 ARAB-ISRAELI WAR
-  // ---------------------------------------------------------------------------
   {
     id: 'cme_spread_2',
     spreadNum: 2,
@@ -271,8 +274,9 @@ const SPREADS = [
           title: 'UN Resolution 181 (Nov 1947)',
           subtitle: 'The Demographic Partition Dilemma',
           bullets: [
-            '**The Partition Vote:** Passed 29 Nov 1947 (33 to 13, 10 abstentions) dividing Palestine into 3 Jewish segments (55% of land) and 3 Arab segments (under 44% of land); Jerusalem placed under international UN trusteeship.',
-            '**The Demographic Imbalance:** Arabs formed **67% (two-thirds) of the population** and owned most cultivated land, but received under 44%; the proposed Jewish state had a demographic trap: **55% Jewish and 45% Arab (400,000 Arabs inside Jewish state borders)**.',
+            '**The Partition Vote (29 Nov 1947):** UNSCOP toured Palestine in summer 1947 (boycotted by Arab Higher Committee); the UN voted 33 to 13 (with 10 abstentions, both US and USSR voting YES) to partition Palestine into separate states.',
+            '**The Demographic Imbalance:** Arabs formed **67% (two-thirds) of the population** and owned most cultivated land, but received under **44% of the land**; the proposed Jewish state received **55% of the land** (mostly Negev Desert).',
+            '**Demographic Trap (400,000 Arabs):** The proposed Jewish state contained **400,000 Arab residents (45% of its total population)**; Jerusalem and Bethlehem were placed under international UN trusteeship (Corpus Separatum).',
             '**The Economic Union Mandate:** Resolution 181 stipulated that both states must form an Economic Union sharing currency, customs, railways, postal services, and ports; Arab leaders rejected this outright as an imperial imposition.',
           ],
         },
@@ -280,18 +284,20 @@ const SPREADS = [
           title: 'Civil War & Deir Yassin Panic',
           subtitle: 'December 1947 – May 1948',
           bullets: [
-            '**Arab Liberation Army (ALA):** The Arab League sponsored volunteers under Fawzi al-Qawuqji crossing into Palestine before British withdrawal; Arab militias blockaded 100,000 Jews in Jerusalem.',
-            '**Operation Dalet (April 1948):** Haganah plan to secure territory and roads linking Jewish settlements; commanded seizure of strategic Arab villages along the Tel Aviv-Jerusalem corridor.',
-            '**Deir Yassin Massacre (9 April 1948):** Irgun and Lehi commandos attacked the village on the road to Jerusalem, killing **around 100 villagers**; Arab radio broadcasts exaggerated the atrocities to rally Arab nations, which backfired by spreading panic and causing **250,000 Palestinians to flee before 15 May 1948**.',
+            '**Outbreak of Civil War:** Violence erupted immediately after the UN vote; Arab irregulars ambushed Jewish convoys, blockading food and water supplies to **100,000 Jewish residents besieged in Jerusalem**.',
+            '**Arab Liberation Army (ALA):** The Arab League sponsored 5,000 volunteers under Fawzi al-Qawuqji crossing into Palestine before British withdrawal, surrounding Jewish enclaves in Galilee and the Negev.',
+            '**Operation Dalet (April 1948):** Haganah operational plan to secure state borders and clear vital transport corridors, commanding the capture of strategic Arab villages along the Tel Aviv-Jerusalem highway.',
+            '**Deir Yassin Massacre (9 April 1948):** Irgun and Lehi commandos attacked the village on the road to Jerusalem, killing **around 100 villagers (including women and children)**; exaggerated Arab radio reports intended to rally Arab nations backfired, causing **250,000 Palestinians to flee before 15 May**.',
           ],
         },
         {
           title: 'The Five-Army Invasion & Victory',
           subtitle: '15 May 1948 – July 1949',
           bullets: [
-            '**Declaration & Invasion:** 14 May 1948 Ben-Gurion proclaimed independence; on 15 May, regular armies of Egypt, Transjordan, Syria, Iraq, and Lebanon invaded. Population: **650,000 Israelis vs 40 million in surrounding Arab nations**.',
-            '**The First UN Truce (June 1948):** Mediated by Count Folke Bernadotte (11 June – 8 July); Israel used this breathing space to import vital Czech rifles, machine guns, and fighter aircraft (Operation Balak) and construct the secret "Burma Road" into Jerusalem.',
-            '**Unified Command vs Arab Rivalry:** Newly created IDF (28 May 1948) operated under a single unified staff; Arab armies were deeply divided: King Abdullah of Jordan sought only to annex the West Bank, while Egypt and Syria distrusted each other.',
+            '**Declaration & Invasion:** On 14 May 1948, Ben-Gurion proclaimed Israeli independence (instantly recognized by US and USSR); on 15 May, regular armies of Egypt, Transjordan, Syria, Iraq, and Lebanon invaded: **650,000 Israelis faced 40 million Arabs**.',
+            '**Unified Command (28 May 1948):** Ben-Gurion established the Israeli Defence Forces (IDF), absorbing Haganah, Irgun, and Lehi into a single staff; Arab armies were deeply divided with conflicting territorial ambitions.',
+            '**The First UN Truce (11 June – 8 July 1948):** Mediated by Count Bernadotte; Israel used this breathing space to import vital Czech rifles, machine guns, and fighter aircraft (Operation Balak) and construct the secret "Burma Road" into Jerusalem.',
+            '**Ten Days Offensive & Armistices:** IDF broke Egyptian lines, captured Lydda, Ramle, and Galilee; bilateral armistices were signed on Rhodes in 1949 with Egypt (24 Feb), Lebanon (23 Mar), Transjordan (3 Apr), and Syria (20 July); Iraq refused to sign.',
           ],
         },
       ],
@@ -331,6 +337,7 @@ const SPREADS = [
             '**Demographic Imbalance:** Arabs held a 2:1 population majority (**67% vs 33%**) but received only 43% of land, while the Jewish state included **400,000 Arab Palestinians** within its designated borders.',
             '**Economic Union Failure:** UN envisioned shared currency and ports; Arab Higher Committee declared a 3-day general strike and vowed partition would be drowned in blood.',
             '**Arab Liberation Army (ALA):** 5,000 volunteers entered Palestine in Jan 1948 to cut off Jewish enclaves, surrounding Jerusalem and isolating kibbutzim in the Negev.',
+            '**Superpower Voting Alignment:** Both the USA and the USSR voted in favor of Resolution 181, seeking to eliminate British imperial presence in the eastern Mediterranean.',
           ],
         },
         {
@@ -338,7 +345,8 @@ const SPREADS = [
           points: [
             '**Jerusalem Blockade:** Arab forces cut off the supply road to 100,000 Jewish residents in Jerusalem, causing severe starvation and water rationing.',
             '**The Deir Yassin Attack (9 April):** Irgun and Lehi fighters stormed the strategic hillside village; house-to-house fighting and grenade clearing resulted in **around 100 villagers killed**.',
-            '**Mass Flight Mechanism:** Broadcasts by Arab radio intended to shame Arab leaders into invading instead triggered widespread panic; **250,000 Palestinians fled their homes before the war formally began on 15 May**.',
+            '**Mass Flight Mechanism:** Broadcasts by Arab radio intended to shame Arab leaders into invading instead triggered widespread panic; **250,000 Palestinians fled their homes before 15 May**.',
+            '**Haganah Condemnation:** Ben-Gurion sent an official apology to King Abdullah of Transjordan, but the psychological terror created by the massacre proved irreversible.',
           ],
         },
         {
@@ -347,6 +355,7 @@ const SPREADS = [
             '**Existential Threat (May 1948):** In the first three weeks, Syrian tanks pushed into Galilee and Egyptian columns reached Ashdod, just 32km south of Tel Aviv.',
             '**The June Truce (11 June – 8 July):** Four-week ceasefire mediated by Count Bernadotte allowed Israel to import 25,000 rifles, 5,000 machine guns, and 25 Avia S-199 fighters from communist Czechoslovakia.',
             '**Burma Road Lifeline:** Israeli engineers secretly carved a mountain bypass road through steep hills, breaking the siege of West Jerusalem and transporting convoys of food and ammunition.',
+            '**Bernadotte Assassination:** Lehi commandos assassinated Bernadotte in Jerusalem on 17 Sept 1948 after he proposed returning Arab refugees and giving the Negev to Arabs.',
           ],
         },
         {
@@ -355,6 +364,7 @@ const SPREADS = [
             '**650,000 vs 40 Million:** While Arab nations possessed massive demographic superiority, their invading expeditionary forces totaled only 40,000 troops vs 35,000 initial Israeli fighters.',
             '**Inter-Arab Rivalry:** King Abdullah of Transjordan refused to advance beyond the West Bank, having reached an informal understanding with the Jewish Agency, which angered Egypt and Syria.',
             '**IDF Mobilization:** By October 1948, Israel mobilized 100,000 troops under unified national command, launching Operation Yoav in the Negev and Operation Hiram in Galilee to crush Arab forces.',
+            '**Rhodes Armistices (1949):** Ralph Bunche mediated armistices with Egypt (Feb), Lebanon (Mar), Jordan (Apr), Syria (July); Iraq refused to sign any ceasefire.',
           ],
         },
       ],
@@ -364,110 +374,109 @@ const SPREADS = [
           text: 'UN votes 33-13 to partition Palestine; Arabs reject giving 55% land to 33% population with 400k Arabs in Jewish zone.',
         },
         {
-          stage: '2. Civil War & Deir Yassin',
-          text: 'ALA attacks convoys; Irgun kills ~100 at Deir Yassin; Arab media exaggerates, prompting 250k Palestinians to flee.',
+          stage: '2. Deir Yassin & Flight (Apr 48)',
+          text: 'Irgun/Lehi attack Deir Yassin killing ~100; Arab broadcast panic triggers mass flight of 250k Palestinians before 15 May.',
         },
         {
-          stage: '3. Declaration & Invasion',
-          text: 'Ben-Gurion proclaims Israel (14 May); 5 Arab armies invade 650k Israelis; Arab Legion captures Old City.',
+          stage: '3. June Truce & Czech Arms',
+          text: 'Bernadotte brokers 4-week truce; IDF imports Czech Avia fighters and rifles, and carves Burma Road into Jerusalem.',
         },
         {
-          stage: '4. Czech Arms & IDF Victory',
-          text: 'June truce allows Czech arms airlifts & Burma Road; unified IDF offensive pushes Arab forces beyond borders.',
+          stage: '4. Operation Yoav & Armistices',
+          text: '100k IDF troops rout divided Arab armies; 1949 Rhodes armistices give Israel 79% of land; Iraq refuses to sign.',
         },
       ],
       masterWordBank: [
         {
-          term: 'Resolution 181',
-          def: 'UN partition plan (29 Nov 1947) dividing Palestine into Arab and Jewish states.',
+          term: 'UN Resolution 181',
+          def: 'Nov 1947 UN plan to partition Palestine into Arab and Jewish states with international Jerusalem.',
         },
         {
           term: 'Corpus Separatum',
-          def: 'Special international legal status designated for Jerusalem under the UN.',
-        },
-        {
-          term: '400,000 Arabs in State',
-          def: 'Demographic reality of Arabs residing within the proposed 1947 Jewish state.',
+          def: 'Special international legal status designated for Jerusalem and Bethlehem under UN control.',
         },
         {
           term: 'Arab Liberation Army',
-          def: 'Arab League volunteer force under Fawzi al-Qawuqji entering Palestine early 1948.',
+          def: 'Volunteer force of 5,000 Arab fighters under Fawzi al-Qawuqji entering Palestine in Jan 1948.',
         },
         {
-          term: 'Operation Dalet',
-          def: 'Haganah military plan (April 1948) to secure roads and borders before invasion.',
+          term: 'Plan Dalet (Plan D)',
+          def: 'Haganah operational strategy in April 1948 to secure borders and communication routes.',
         },
         {
-          term: 'Deir Yassin Massacre',
-          def: 'Attack on village on 9 April 1948; ~100 killed, prompting panic flight of 250,000.',
+          term: 'Deir Yassin',
+          def: 'Arab village near Jerusalem attacked on 9 April 1948; ~100 civilians killed, sparking mass panic.',
         },
         {
           term: '650k vs 40 Million',
-          def: 'Demographic disparity between Israeli population and surrounding Arab nations.',
+          def: 'Demographic ratio of the new State of Israel versus surrounding hostile Arab nations in May 1948.',
         },
         {
-          term: 'June Truce (1948)',
-          def: '4-week ceasefire mediated by Count Bernadotte allowing Israel to rearm.',
+          term: 'IDF (28 May 1948)',
+          def: 'Unified national military created by Ben-Gurion, dissolving independent underground militias.',
         },
         {
-          term: 'Czech Arms Airlift',
-          def: 'Secret delivery of rifles and Avia fighter planes from Czechoslovakia (Op Balak).',
+          term: 'First UN Truce',
+          def: 'Four-week ceasefire (11 June – 8 July 1948) mediated by Bernadotte, exploited by IDF to rearm.',
+        },
+        {
+          term: 'Czech Arms Deal',
+          def: 'Crucial communist arms shipment of 25k rifles, machine guns, and Avia S-199 fighters to Israel.',
         },
         {
           term: 'Burma Road',
-          def: 'Improvised mountain track constructed to break the Arab siege of Jerusalem.',
-        },
-        {
-          term: 'IDF Creation (28 May)',
-          def: 'Ben-Gurion orders dissolution of militias into a unified Israel Defense Forces.',
+          def: 'Makeshift mountain bypass road carved by Israeli engineers to break the Arab siege of Jerusalem.',
         },
         {
           term: 'Count Bernadotte',
-          def: 'UN mediator who negotiated the first truce; assassinated by Lehi in Sept 1948.',
+          def: 'UN mediator who negotiated the first truce; assassinated in Jerusalem by Lehi in Sept 1948.',
+        },
+        {
+          term: 'Rhodes Armistices',
+          def: '1949 bilateral ceasefires between Israel and Egypt, Lebanon, Jordan, and Syria; Iraq refused.',
         },
       ],
     },
   },
-
-  // ---------------------------------------------------------------------------
-  // SPREAD 3 (KT 1.3): REFUGEE CRISIS & BORDER CONFRONTATION (1949–55)
-  // ---------------------------------------------------------------------------
   {
     id: 'cme_spread_3',
     spreadNum: 3,
     topic: 'Key Topic 1 • The Birth of Israel, 1945–63',
-    title: 'KT 1.3: The Palestinian Refugee Crisis & Border Confrontation (1949–55)',
+    title: 'KT 1.3: Aftermath of 1948–49: Al-Nakba & Israeli State Consolidation',
     left: {
-      tag: 'KT 1.3 • The Nakba, Armistices & The Law of Return',
-      headline: 'Exile, Armistice & Austerity: The Dual Human Cost of 1948–49',
+      tag: 'KT 1.3 • Refugees, Armistices & State Consolidation',
+      headline: 'The Catastrophe & The Sanctuary: Two Incompatible Post-War Realities',
       summary:
-        'The 1948–49 Arab-Israeli War created an enduring refugee tragedy known to Palestinians as Al-Nakba (The Catastrophe), with 700,000 to 750,000 civilians fleeing or expelled from their ancestral homes. The 1949 Rhodes Armistice Agreements established the "Green Line", leaving Israel in control of 79% of mandatory Palestine (a 21% increase over the UN partition). While Jordan annexed the West Bank and Egypt administered Gaza, only 160,000 Arabs remained in Israel out of 900,000. In December 1949, the UN created UNRWA to provide emergency relief for 59 refugee camps. Simultaneously, Israel doubled its population in three years under the Law of Return (July 1950), instituting 30-month male / 18-month female military conscription, enduring severe food rationing, and housing hundreds of thousands in transit tent camps (ma\'abarot) funded by $300 million in US government aid.',
+        'The 1948–49 War transformed Middle Eastern demographics. For Palestinians, the war was Al-Nakba ("The Catastrophe"): over 700,000 Arabs were displaced from their homes, leaving only 160,000 within Israeli borders, while over 400 Arab villages were depopulated. The 1949 Rhodes Armistices established the Green Line, expanding Israeli territory to 79% of mandatory Palestine. Transjordan annexed the West Bank and East Jerusalem, while Egypt occupied Gaza. For Israelis, 1948 was the "Year of Liberation", but the new state faced severe economic crises and hostile borders. Israel instituted mandatory IDF conscription (1949), passed the Law of Return (July 1950) doubling its population through 685,000 immigrants (including 300,000 from Arab lands), and survived through severe austerity (Tzena) and $300m in US grants.',
       pillars: [
         {
-          title: 'Al-Nakba & Refugee Settlement',
-          subtitle: 'The 1949 Regional Distribution',
+          title: 'Al-Nakba: The Catastrophe (1948–49)',
+          subtitle: 'The Palestinian Refugee Tragedy',
           bullets: [
-            '**The Scale of Displacement:** Between 700,000 and 750,000 Palestinians fled or were expelled; over 400 Arab villages were depopulated and systematically demolished or re-settled.',
-            '**Exact 1949 Settlement Breakdown:** Pearson records the exact 1949 refugee settlement numbers: **280,000 in the West Bank (Jordan), 190,000 in the Gaza Strip (Egypt), 100,000 in Lebanon, 75,000 in Syria, and 70,000 in Transjordan**.',
-            '**Only 160,000 Remained:** Out of 900,000 Arabs living in the territory that became Israel, only **160,000 remained inside Israeli borders**, living under military administration until 1966. UNRWA was established in Dec 1949 to provide emergency food, schools, and medical care.',
+            '**The Scale of Displacement:** Over **700,000 to 750,000 Palestinian Arabs** became refugees; only **160,000 Palestinians out of 900,000** remained in Israeli territory; over 400 Arab villages were depopulated, dismantled, or resettled.',
+            '**Exact 1949 Settlement Breakdown:** Pearson records the exact 1949 refugee distribution: **280,000 in the West Bank (Jordan), 190,000 in the Gaza Strip (Egypt), 100,000 in Lebanon, 75,000 in Syria, 70,000 in Transjordan, 4,000 in Iraq, 7,000 in Egypt, and 48,000 internally displaced**.',
+            '**UNRWA Established (Dec 1949):** The UN Relief and Works Agency was created to administer emergency food rations, clinics, and schooling across 59 refugee camps, where families lived in squalid canvas tents with open sewers.',
+            '**Arab League & Right of Return:** Arab states (except Jordan) denied Palestinians citizenship to maintain their right of return under UN Resolution 194; Israel strictly barred refugee return, viewing them as an existential fifth-column security threat.',
           ],
         },
         {
-          title: '1949 Rhodes Armistices',
+          title: '1949 Rhodes Armistices & Borders',
           subtitle: 'The Green Line & Territorial Shifts',
           bullets: [
-            '**The Rhodes Bilateral Treaties:** Mediated by UN diplomat Ralph Bunche on the island of Rhodes (Feb–July 1949) between Israel and Egypt, Lebanon, Jordan, and Syria.',
-            '**Territorial Expansion (79% Control):** Israel expanded from 55% under UN Res 181 to **79% of mandatory Palestine**; Transjordan annexed the West Bank and East Jerusalem, while Egypt occupied the narrow Gaza Strip.',
-            '**UN Resolution 194 Rejected:** Passed Dec 1948 stating refugees wishing to return and live at peace should be permitted at earliest practicable date or compensated; Israel rejected return, arguing Arab states bore war guilt.',
+            '**Bilateral Rhodes Armistices:** Mediated by UN diplomat Ralph Bunche; the armistice agreements established armistice demarcation lines (the "Green Line") rather than recognized permanent political borders.',
+            '**79% Green Line Control:** Israel expanded its territory from 55% under UN Res 181 to **79% of mandatory Palestine** (a 50% land gain), conquering fertile Galilee, the central coastal corridor, and the Negev down to Eilat.',
+            "**Division of Jerusalem & Annexations:** West Jerusalem was declared Israel's capital in 1949; Transjordan annexed the West Bank and East Jerusalem (including the Old City) in 1950 (renamed Jordan); Egypt occupied the Gaza Strip under military rule.",
+            '**Absentee Property Law (1950):** Israel passed legislation transferring ownership of all agricultural land, orchards, homes, and bank accounts abandoned by fleeing refugees to the Israeli Custodian of Absentee Property.',
           ],
         },
         {
-          title: 'Israeli Nation-Building & Aid',
+          title: 'Israeli Nation-Building & Survival',
           subtitle: "Conscription, Ma'abarot & US Aid",
           bullets: [
-            '**Mandatory Conscription (1949):** The 1949 Defence Service Law established compulsory service at age 18: **30 months for males, 18 months for females**, plus annual reserve service up to age **55**.',
-            '**Law of Return & Austerity (Tzena):** The July 1950 Law of Return gave every Jew worldwide the right to settle in Israel; 685,000 immigrants arrived in 3 years. Severe rationing of meat, butter, and furniture was imposed.',
-            "**Ma'abarot & $300m US Aid:** Immigrants were housed in corrugated tin and canvas transit camps (*ma'abarot*); national bankruptcy was averted by **$300 million in US government grants and loans**, plus American Jewish philanthropy.",
+            '**Universal IDF Conscription (1949):** The 1949 Defence Service Law made military service compulsory at 18: **30 months for males, 18 months for females**, followed by mandatory annual reserve duty of 1 month per year up to age **55**.',
+            '**Law of Return & Demographics (July 1950):** Granted every Jew worldwide the right to settle in Israel and gain citizenship; Israel absorbed **618,500 Jewish refugees from Arab and Muslim countries** (Iraq, Yemen, Morocco, Egypt) by 1972, doubling the population.',
+            "**Tzena (Austerity) & Ma'abarot:** Israel faced severe economic crisis; strict rationing (*Tzena*) restricted meat, butter, and clothing; over 200,000 immigrants were housed in corrugated tin and canvas transit camps (*ma'abarot*) prone to winter flooding.",
+            '**$300m US Aid & German Reparations:** National bankruptcy was averted by **$300 million in US government loans and grants**, plus the 1952 West German Reparations Agreement ($822 million over 14 years); US refused to sell arms in the 1950s.',
           ],
         },
       ],
@@ -507,6 +516,7 @@ const SPREADS = [
             '**Displacement Figures:** 700k–750k Palestinians displaced; exact 1949 spread: **280k in West Bank, 190k in Gaza, 100k in Lebanon, 75k in Syria, 70k in Jordan**.',
             '**UNRWA Mandate (Dec 1949):** United Nations Relief and Works Agency took over 59 camps; refugees lived in canvas tents with open sewers and high infant mortality.',
             '**Arab State Policies:** Jordan granted citizenship to incorporate the West Bank; Egypt kept Gazans under military rule without citizenship; Lebanon denied civil rights.',
+            '**Demographic Shift inside Israel:** Only 160,000 Arabs remained inside Israel, placed under military curfew and travel permit restrictions until martial law ended in 1966.',
           ],
         },
         {
@@ -515,6 +525,7 @@ const SPREADS = [
             '**Green Line Borders:** The 1949 armistice lines drawn in green grease pencil on maps in Rhodes; never recognized by Arab states as permanent international borders.',
             '**21% Land Gain:** Israel gained Galilee, the coastal plain, and the Negev corridor down to Eilat on the Gulf of Aqaba, securing vital agricultural and maritime depth.',
             '**Absentee Property Law (1950):** Transferred ownership of all land, homes, and bank accounts abandoned by Palestinian refugees to the Israeli Custodian of Absentee Property.',
+            '**Division of Jerusalem:** The Holy City was partitioned; Jordan held East Jerusalem (denying Jews access to Western Wall), while Israel declared West Jerusalem its capital in 1949.',
           ],
         },
         {
@@ -523,6 +534,7 @@ const SPREADS = [
             '**Universal Conscription (1949):** At 18, **men served 30 months, women served 18 months**, with mandatory annual reserve service up to age **55**.',
             '**Strategic Imperative:** Surrounded by 40 million hostile neighbors, Israel could not maintain a massive standing army; conscription turned society into a mobile reserve force in 48 hours.',
             '**Social Melting Pot:** The IDF served as the primary instrument for integrating immigrant youths from 70 different languages and cultures into a Hebrew-speaking citizenry.',
+            "**Unit 101 & Retaliation Policy:** Ariel Sharon's commando unit established Israel's aggressive doctrine of cross-border disproportionate retaliation against Fedayeen infiltrators.",
           ],
         },
         {
@@ -531,6 +543,7 @@ const SPREADS = [
             '**Population Doubled (1948–51):** 685,000 immigrants arrived, including 300,000 Holocaust survivors and 300,000 Sephardic/Mizrahi Jews fleeing Arab states.',
             '**Tzena (Austerity):** Severe food rationing; points books required for meat, eggs, and bread; widespread public unrest over harsh living standards.',
             "**Ma'abarot Tent Camps:** Over 200,000 immigrants housed in overcrowded tin shacks and tents prone to winter flooding; resolved by **$300m in US grants and German reparations (1952)**.",
+            '**Arab League Boycott:** Arab states closed borders, severed trade, and boycotted international firms trading with Israel, compounding early economic hardship.',
           ],
         },
       ],
@@ -604,10 +617,6 @@ const SPREADS = [
       ],
     },
   },
-
-  // ---------------------------------------------------------------------------
-  // SPREAD 4 (KT 1.4): NASSER, PAN-ARABISM & SUEZ CRISIS (1956–63)
-  // ---------------------------------------------------------------------------
   {
     id: 'cme_spread_4',
     spreadNum: 4,
@@ -624,6 +633,7 @@ const SPREADS = [
           subtitle: 'The Cycle of Escalation (1954–55)',
           bullets: [
             '**British Troop Withdrawal (1954):** Nasser negotiated the departure of **80,000 British troops** stationed in the Suez Canal Zone, removing imperial control; he instituted land redistribution and free public hospitals.',
+            '**Aswan High Dam Ambition:** Nasser planned a monumental dam at Aswan to control annual Nile floods, generate hydro-electricity for industrialization, and irrigate thousands of hectares of fertile farmland.',
             '**The Gaza Raid (February 1955):** In retaliation for cross-border infiltrations, the IDF raided an Egyptian army base in Gaza, killing **38 Egyptian soldiers**; Nasser felt humiliated and vowed to rearm.',
             '**Czech Arms Deal (Sept 1955):** In August 1955, Fedayeen killed 11 Israelis; an IDF raid killed 72 Egyptians; Nasser blockaded the Gulf of Aqaba and signed the Czech Arms Deal ($250m for 200 MiG-15 jets and 300 T-34 tanks).',
           ],
@@ -634,156 +644,159 @@ const SPREADS = [
           bullets: [
             '**Aswan Dam & Nationalisation:** In April 1956, 58 civilians died in mortar attacks; in July 1956, the US and UK abruptly cancelled $70m in Aswan Dam funding; Nasser nationalised the Suez Canal on **26 July 1956** to fund the dam from tolls.',
             '**Protocol of Sèvres (22 Oct 1956):** Secret meeting outside Paris between Ben-Gurion, Selwyn Lloyd (UK), and Guy Mollet (France): Israel would invade Sinai; Britain and France would intervene as "peacekeepers" and re-seize the canal.',
-            '**Tripartite Assault (Oct–Nov 1956):** Israel launched Operation Kadesh on 29 Oct, capturing Sinai and Sharm el-Sheikh; Britain and France bombed airfields and dropped paratroopers at Port Said on 5 Nov; Egypt sank cement-laden ships blocking the canal.',
+            '**Operation Kadesh (29 Oct 1956):** IDF paratroopers dropped at Mitla Pass; Israeli armored columns swept across Sinai in 100 hours; Britain and France issued their staged ultimatum ordering both sides 16km back from the canal.',
+            '**Anglo-French Air Blitz & Landings (31 Oct – 5 Nov):** British and French bombers destroyed Egyptian airfields; paratroopers landed at Port Said on 5 Nov; Nasser retaliated by sinking 40+ ships, blocking the canal.',
           ],
         },
         {
-          title: 'US Ultimatum & Aftermath',
-          subtitle: 'Superpower Hegemony & The UAR',
+          title: 'Superpowers & Strategic Fall-out',
+          subtitle: 'US Ultimatum & UNEF Arrival',
           bullets: [
-            "**Eisenhower's Ultimatum:** US President Dwight D. Eisenhower was furious at being deceived during the US presidential election; he threatened to crash the British Pound and block IMF loans unless invasion forces withdrew.",
-            '**Withdrawal Timeline:** British and French troops withdrew in humiliation on **23 November 1956**; Israel withdrew from Sinai and Gaza in **March 1957** after Eisenhower threatened to cut off US economic aid.',
-            '**The United Arab Republic (1958–61):** UNEF peacekeepers were stationed in Sinai to guarantee Israeli shipping through Aqaba; Nasser emerged as a pan-Arab titan, merging Egypt and Syria into the **United Arab Republic (UAR) in 1958**.',
+            '**US Economic Ultimatum:** President Eisenhower was furious at Anglo-French deceit during the US election; the US threatened to collapse the British pound, block IMF emergency loans, and embargo oil shipments.',
+            '**Soviet Nuclear Threats & UN Ceasefire:** Premier Bulganin threatened rocket attacks on London and Paris; on 6 Nov 1956, Britain and France accepted a UN ceasefire, suffering total imperial humiliation.',
+            '**UNEF Deployment & Withdrawal:** The first UN Emergency Force (UNEF) arrived on 21 Nov 1956; British and French forces completed evacuation on 23 Nov 1956; IDF withdrew from Sinai and Gaza in March 1957 under US pressure.',
+            '**The Triumph of Nasser & The UAR (1958):** Nasser became the undisputed hero of Arab nationalism; in 1958, Syria merged with Egypt to form the United Arab Republic (UAR, lasting to 1961); the USSR agreed to finance the Aswan Dam.',
           ],
         },
       ],
       keyFigures: [
         {
           name: 'Gamal Abdel Nasser',
-          role: 'Egyptian President who nationalised the Suez Canal, defied Britain and France, secured Soviet financing for the Aswan Dam, and led the UAR.',
+          role: 'Egyptian President who nationalised the Suez Canal on 26 July 1956 and emerged as the hero of pan-Arab nationalism despite military defeat.',
         },
         {
-          name: 'Sir Anthony Eden',
-          role: 'British Prime Minister who viewed Nasser as a "new Mussolini"; disgraced by US financial pressure and forced to resign in Jan 1957.',
+          name: 'Anthony Eden',
+          role: 'British Prime Minister who viewed Nasser as a dangerous dictator ("Hitler on the Nile"); resigned in health and political disgrace following the crisis.',
         },
         {
           name: 'David Ben-Gurion',
-          role: 'Israeli Prime Minister who signed the secret Sèvres Protocol, captured Sinai, and opened the Straits of Tiran before yielding to US threats.',
+          role: 'Israeli Prime Minister who signed the secret Protocol of Sèvres to break the Straits of Tiran blockade and crush Egyptian Fedayeen bases in Gaza.',
         },
         {
           name: 'Dwight D. Eisenhower',
-          role: 'US President who halted the Anglo-French-Israeli invasion using financial sanctions, asserting American supremacy in the Middle East.',
+          role: 'US President who halted the Anglo-French-Israeli invasion through devastating financial and economic threats against the British pound.',
         },
       ],
       archivalSource: {
-        title: 'President Gamal Abdel Nasser Speech in Alexandria (26 July 1956)',
-        citation: 'Egyptian State Information Service Official Broadcast Archives',
+        title: 'Gamal Abdel Nasser Nationalising the Suez Canal in Alexandria (26 July 1956)',
+        citation: 'Egyptian State Radio Broadcast Recording',
         quote:
-          'This money is ours! This canal is ours! It was dug by Egyptian hands and 120,000 Egyptians died while building it. We shall run the canal ourselves! The Suez Canal Company is an Egyptian company and it will be run by Egyptians!',
+          'The Suez Canal was dug with the lives of 120,000 Egyptian sons who died in its construction... Today, we take back our rights. We are nationalising the Suez Canal Company. The canal belongs to Egypt, and we shall build the High Dam with its revenues!',
         significance:
-          'Signaled the formal nationalisation of the Suez Canal Company, directly challenging Anglo-French imperial prestige and triggering the war.',
+          'Direct defiance of 80 years of Anglo-French imperial domination, triggering the secret military collusion that destroyed Britain as an independent global superpower.',
       },
     },
     right: {
-      tag: 'KT 1.4 • Geopolitical Deep-Dive, Turning Points & Word Bank',
+      tag: 'KT 1.4 • Imperial Dynamics, Crisis Timelines & Word Bank',
       deepCases: [
         {
-          title: '1. The Gaza Raid (38 Dead) & Czech Arms Deal',
+          title: "1. Nasser's Pan-Arabism & The 80,000 Troops Exit",
           points: [
-            '**80,000 British Troops Out:** Nasser secured the 1954 treaty removing British garrison troops from Suez, aiming to focus on domestic economic reform.',
-            '**Gaza Humiliation (Feb 1955):** Israeli paratroopers killed 38 Egyptian soldiers at Gaza railway station; Nasser realized Western arms embargoes left Egypt defenseless.',
-            '**Soviet Breakthrough:** Nasser purchased 200 MiG-15 jets and T-34 tanks from Czechoslovakia in Sept 1955, breaking Western monopoly and bringing the Cold War into the region.',
+            '**1952 Free Officers Revolution:** General Naguib and Colonel Nasser overthrew the corrupt British-backed King Farouk, seeking total national sovereignty and social land reform.',
+            '**British Canal Evacuation (1954):** Nasser pressured Britain into agreeing to withdraw its **80,000 soldiers stationed along the Suez Canal Zone** within 20 months.',
+            '**Pan-Arab Ambition:** Nasser launched the "Voice of the Arabs" radio network, broadcasting anti-imperialist rhetoric across the Middle East and promoting Arab unity under Egyptian leadership.',
+            "**Aswan Dam Ambition:** The cornerstone of Nasser's modernization was the Aswan High Dam across the Nile, requiring $70 million in initial Western funding.",
           ],
         },
         {
-          title: '2. The Secret Protocol of Sèvres (22 Oct 1956)',
+          title: '2. The Gaza Reprisal Cycle & Czech Arms (1955)',
           points: [
-            '**The Sèvres Villa:** Met in secret near Paris; Ben-Gurion, Selwyn Lloyd (UK), and Christian Pineau (France) signed a pre-arranged timetable for war.',
-            '**Pretext of Separation:** Israel would attack across Sinai on 29 Oct; Anglo-French forces would issue an ultimatum demanding both sides withdraw 16km from the canal, then invade.',
-            '**Canal Paralyzed:** Egyptian troops sank 40 ships filled with concrete, completely blocking the Suez Canal for months and halting Middle Eastern oil exports to Europe.',
+            '**Fedayeen Infiltrations:** Palestinian guerrillas operating from Egyptian-administered Gaza staged cross-border sabotage raids into southern Israeli farms.',
+            '**The Gaza Raid (Feb 1955):** IDF commandos under Ariel Sharon killed **38 Egyptian soldiers** in Gaza; in Aug 1955, Fedayeen killed 11 Israelis, prompting an IDF raid killing **72 Egyptians**.',
+            '**Czech Arms Shock (Sept 1955):** Nasser purchased $250 million in Soviet-bloc weaponry (200 MiG-15 fighters, 300 tanks), shattering Western arms parity in the Middle East.',
+            "**Gulf of Aqaba Blockade:** Nasser fortified Sharm el-Sheikh and closed the Straits of Tiran, cutting off Israel's maritime trade with Africa and Asia through Eilat.",
           ],
         },
         {
-          title: '3. US Financial Coercion & Withdrawal Dates',
+          title: '3. The Protocol of Sèvres & The Tripartite Invasion',
           points: [
-            '**The Run on Sterling:** The US refused to allow IMF emergency loans while Britain was losing millions in foreign reserves, forcing Eden to accept a ceasefire on 6 Nov.',
-            "**Withdrawal Dates:** British and French forces completed their retreat on **23 November 1956**; Israel held Sinai until **March 1957**, yielding only to Eisenhower's sanctions threat.",
-            '**End of Imperial Pretense:** The crisis proved that Britain and France were no longer first-tier world superpowers, leaving the USA and USSR as undisputed regional arbiters.',
+            '**Western Loan Withdrawal (July 1956):** US and Britain cancelled Aswan Dam loans; Nasser nationalised the Suez Canal on **26 July 1956** in retaliation.',
+            '**Sèvres Conspiracy (22–24 Oct):** Britain, France, and Israel secretly signed the Protocol of Sèvres in a Parisian villa, choreographing a false-flag war.',
+            '**Operation Kadesh (29 Oct):** Israeli forces invaded Sinai; Britain and France issued their staged ultimatum ordering both armies 16km back from the canal.',
+            '**Port Said Landings (5 Nov):** Anglo-French paratroopers invaded Port Said, but Nasser sank 40+ ships, completely closing the waterway to world commerce.',
           ],
         },
         {
-          title: '4. Consequences: UNEF Deployment & The UAR (1958)',
+          title: '4. US Financial Coercion, UNEF & The Triumph of Nasser',
           points: [
-            '**UNEF Deployment (1957):** United Nations Emergency Force "blue helmets" stationed on the Egyptian side of the Sinai border and at Sharm el-Sheikh to protect navigation.',
-            '**Pan-Arab Triumphalism:** Nasser lost militarily but won a massive political victory; the USSR fully funded and built the Aswan High Dam.',
-            '**The United Arab Republic (UAR):** In 1958, Syria requested a political merger with Egypt, creating the UAR under Nasser’s presidency, lasting until Syria seceded in 1961.',
+            "**Eisenhower's Ultimatum:** US threatened to crash the British pound and withhold emergency oil supplies unless Britain ordered an immediate ceasefire.",
+            '**UNEF Peacekeeping Force:** First-ever UN peacekeeping force deployed to Sinai on **21 Nov 1956**; British and French forces withdrew in humiliation on **23 Nov 1956**.',
+            '**Israeli Gains & Withdrawal:** IDF withdrew from Sinai in March 1957 under US pressure, but won freedom of navigation through the Gulf of Aqaba, opening Eilat port.',
+            '**United Arab Republic (1958):** Nasser achieved supreme prestige, merging Egypt and Syria into the UAR (1958–61) with the USSR financing the Aswan High Dam.',
           ],
         },
       ],
       causalPathway: [
         {
-          stage: '1. Gaza Raid & Czech Arms',
-          text: 'Feb 1955 Gaza raid kills 38 Egyptians; Nasser blockades Aqaba and signs Czech Arms Deal for 200 Soviet jets.',
+          stage: '1. Gaza Raids & Czech Arms',
+          text: 'Feb 1955 Gaza raid (38 dead) prompts Nasser to sign Czech Arms Deal ($250m) and close Straits of Tiran.',
         },
         {
-          stage: '2. Dam Funding Cancelled',
-          text: 'US cancels $70m Aswan Dam loan; Nasser nationalises Suez Canal on 26 July 1956 to fund dam construction.',
+          stage: '2. Nationalisation (26 July 56)',
+          text: 'US/UK cancel Aswan Dam loan; Nasser nationalises Suez Canal to fund the dam from canal transit tolls.',
         },
         {
-          stage: '3. Sèvres Collusion (22 Oct)',
-          text: 'UK, France & Israel secretly sign Sèvres Protocol; Israel invades Sinai; Anglo-French paratroopers land at Port Said.',
+          stage: '3. Protocol of Sèvres & Attack',
+          text: 'Secret collusion at Sèvres; IDF invades Sinai 29 Oct; UK/France bomb airfields and land paratroopers at Port Said.',
         },
         {
-          stage: '4. US Halt & UAR (1958)',
-          text: 'Eisenhower threatens to crash Sterling; UK/France withdraw 23 Nov; UNEF deploys; Nasser forms UAR in 1958.',
+          stage: '4. US Ultimatum & UAR (1958)',
+          text: 'Eisenhower threatens pound collapse; allies withdraw; Nasser hailed as Arab hero; UAR formed with Syria in 1958.',
         },
       ],
       masterWordBank: [
         {
-          term: 'Free Officers (1952)',
-          def: 'Egyptian military movement led by Nasser that overthrew King Farouk.',
+          term: 'Gamal Abdel Nasser',
+          def: 'Charismatic Egyptian President (1954–70), champion of pan-Arabism and national sovereignty.',
         },
         {
           term: '80,000 British Troops',
-          def: 'British garrison troops withdrawn from the Suez Canal Zone under 1954 treaty.',
-        },
-        {
-          term: 'Aswan High Dam',
-          def: 'Massive engineering project planned by Nasser to provide irrigation and electricity.',
+          def: 'British military garrison occupying the Suez Canal Zone, evacuated in 1954 under treaty.',
         },
         {
           term: 'Gaza Raid (Feb 1955)',
-          def: 'IDF cross-border attack killing 38 Egyptian soldiers, triggering rearmament.',
+          def: "IDF retaliatory raid killing 38 Egyptian soldiers, triggering Nasser's rearmament drive.",
         },
         {
           term: 'Czech Arms Deal (1955)',
-          def: 'Soviet-bloc arms agreement providing Egypt with 200 MiG jets and 300 tanks.',
+          def: '$250m deal for 200 Soviet MiG-15 jets and 300 tanks, breaking Western arms dominance.',
         },
         {
-          term: 'Suez Nationalisation',
-          def: 'Nasser’s seizure of the Suez Canal Company on 26 July 1956 to fund the dam.',
+          term: 'Aswan High Dam',
+          def: 'Monumental Egyptian infrastructure project to harness the Nile, initially denied Western loans.',
+        },
+        {
+          term: 'Nationalisation (1956)',
+          def: 'Nasser seized control of the Suez Canal Company on 26 July 1956 to fund the Aswan Dam.',
         },
         {
           term: 'Protocol of Sèvres',
-          def: 'Secret collusion treaty (22 Oct 1956) between Britain, France, and Israel.',
+          def: 'Secret tripartite war agreement signed on 22 Oct 1956 between Britain, France, and Israel.',
         },
         {
-          term: 'Port Said Invasion',
-          def: 'Anglo-French paratrooper landings on 5 November 1956 to seize the canal.',
+          term: 'Operation Kadesh',
+          def: 'Israeli invasion of Sinai on 29 Oct 1956, reaching the Suez Canal in under 48 hours.',
         },
         {
-          term: 'Eisenhower Ultimatum',
-          def: 'US financial threat to crash the British Pound unless troops withdrew immediately.',
+          term: 'Port Said Landings',
+          def: 'Anglo-French airborne and amphibious assault on 5 Nov 1956 to seize the Suez Canal.',
         },
         {
-          term: 'Withdrawal (Nov 56 / Mar 57)',
-          def: 'Anglo-French retreat on 23 Nov 1956; Israel leaves Sinai in March 1957.',
+          term: 'US Financial Threat',
+          def: "Eisenhower's threat to collapse sterling, forcing an immediate British ceasefire.",
         },
         {
-          term: 'UNEF Blue Helmets',
-          def: 'First UN peacekeeping force deployed to Sinai to guarantee maritime security.',
+          term: 'UNEF (Nov 1956)',
+          def: 'First UN Emergency Force deployed to police Sinai and guarantee Israeli shipping at Tiran.',
         },
         {
           term: 'UAR (1958–61)',
-          def: 'United Arab Republic: political merger of Egypt and Syria under Nasser’s leadership.',
+          def: "United Arab Republic: political union between Egypt and Syria reflecting Nasser's prestige.",
         },
       ],
     },
   },
-  ,
-  // ---------------------------------------------------------------------------
-  // SPREAD 5 (KT 2.1): ROAD TO SIX DAY WAR & JUNE 1967 BLITZKRIEG
-  // ---------------------------------------------------------------------------
+
   {
     id: 'cme_spread_5',
     spreadNum: 5,
@@ -800,26 +813,29 @@ const SPREADS = [
           subtitle: 'Water Wars, Samu & April 7 Clash',
           bullets: [
             "**Cairo Conference (1964):** Created the PLO and the **Palestine Liberation Army (PLA)** with 12,000 soldiers; Arab states agreed the **Headwater Diversion Plan** (diverting Hasbani and Banias tributaries) to starve Israel's National Water Carrier, provoking Israeli airstrikes.",
-            '**Fatah Raids & Samu Raid (Nov 1966):** Fatah staged **over 70 raids** against Israeli water pumps and railways from Jordan, Syria, and Lebanon (none from Gaza due to UNEF); on 13 Nov 1966, Israel struck back at Samu village with **600 troops, 11 tanks, and 60 vehicles**, killing 15 Jordanian soldiers, 1 Israeli, and 3 villagers.',
-            '**7 April 1967 Air Clash:** Syrian artillery fired on an Israeli armored tractor in the demilitarized zone; the IAF shot down **6 Syrian MiG-21s**, flying victoriously directly over Damascus, humiliating the Syrian military regime.',
+            '**Fatah Guerrilla Raids:** Founded in 1959 by Yasser Arafat; Fatah staged **over 70 sabotage raids** between 1965 and 1967 against Israeli water pumps, railways, and villages from Jordan, Syria, and Lebanon (none from Gaza due to UNEF).',
+            '**The Samu Raid (13 Nov 1966):** After an Israeli police vehicle hit a landmine killing 3, PM Levi Eshkol launched a punitive raid: **600 troops, 11 tanks, 60 vehicles** attacked Samu in the West Bank (15 Jordanian soldiers, 1 Israeli, 3 villagers killed), infuriating King Hussein.',
+            '**7 April 1967 Air Clash:** Syrian artillery fired on an Israeli armored tractor in the demilitarized zone; the IAF shot down **6 Syrian MiG-21s**, flying victoriously directly over Damascus, humiliating the Syrian military regime and intensifying border tensions.',
           ],
         },
         {
-          title: 'The May Crisis & Ultimatums',
+          title: 'The May Crisis & Ultimatums (1967)',
           subtitle: 'Soviet False Reports & Tiran Closure',
           bullets: [
-            '**Soviet False Intelligence (13 May):** Moscow gave Nasser a false intelligence report claiming 10 to 12 Israeli brigades were massing for an invasion of Syria, pressuring Nasser to act.',
-            "**Nasser's Escalation (16–22 May):** Nasser expelled UNEF peacekeepers from Sinai, deployed 100,000 troops and 1,000 tanks to the Israeli border, and illegally blockaded the Straits of Tiran, cutting off Israel's oil supply from Iran.",
-            '**The 29 May Ultimatums:** Nasser threatened full war unless Israel met two non-negotiable demands: (1) allow all 1948 Palestinian refugees to return, (2) surrender all territory conquered in 1948–49. On 30 May, King Hussein signed an Egyptian-Jordanian defense pact.',
+            '**Soviet False Intelligence (13 May):** Moscow gave Nasser a false intelligence report claiming 10 to 12 Israeli brigades were massing for an invasion of Syria, pressuring Nasser to take aggressive action to maintain Arab leadership.',
+            "**Nasser's Escalation (16–18 May):** Nasser ordered UNEF peacekeepers to evacuate Sinai buffer zones and mobilized **100,000 Egyptian troops and 1,000 tanks** directly to the Israeli frontier, putting the IDF on maximum alert.",
+            "**Closure of Straits of Tiran (22 May):** Nasser blockaded the Straits of Tiran to all Israeli-flagged ships and oil tankers, severing Israel's vital petroleum lifeline from Iran; Israel viewed this as an explicit *casus belli* (act of war).",
+            "**The 29 May Demands & Pacts:** Nasser threatened war unless Israel met 2 demands: (1) return all 1948 Palestinian refugees, (2) surrender all 1948–49 land; on 30 May, King Hussein signed an Egyptian-Jordanian defense pact placing Jordan's army under Egyptian command.",
           ],
         },
         {
           title: 'Operation Focus & Tri-Front Rout',
           subtitle: '5–10 June 1967 Blitzkrieg',
           bullets: [
-            '**Operation Focus (5 June):** At 7:45 AM, 200 Israeli jets flew low beneath radar; using French runway-cratering bombs, they wiped out **over 300 Egyptian aircraft on the tarmac** in 3 hours, then demolished Syrian and Jordanian airforces.',
-            '**Tri-Front Ground Offensive:** IDF ground columns broke Egyptian lines in Sinai reaching Suez (5–8 June); paratroopers captured East Jerusalem and the West Bank (5–7 June); Golan Heights stormed (9–10 June).',
-            '**The Staggering Toll & Spoils:** Israel captured **70,000 sq km of territory** (quadrupling its land area); **779 Israeli soldiers were killed vs approximately 20,000 Arab soldiers**; 1 million Palestinians fell under military occupation.',
+            '**Operation Focus (5 June 1967):** At 7:45 AM, 200 Israeli jets flew 15 meters above the sea beneath Egyptian radar; using French runway-cratering bombs, they wiped out **over 300 Egyptian aircraft on the tarmac** in 3 hours, then demolished Syrian and Jordanian air forces.',
+            '**Sinai Campaign (5–8 June):** Israeli armored columns under Sharon, Tal, and Yoffe smashed Egyptian defenses at Abu Ageila; Egyptian Field Marshal Amer ordered a panic retreat, allowing IDF tanks to ambush retreating columns at Mitla Pass.',
+            '**Jerusalem & West Bank (5–7 June):** Jordan opened artillery fire; IDF Paratroopers stormed the Old City through Lion\'s Gate on 7 June ("The Temple Mount is in our hands!"), capturing East Jerusalem, Bethlehem, and the entire West Bank.',
+            '**Golan Heights & Total Victory (9–10 June):** IDF stormed fortified Syrian bunker lines on the Golan, capturing Quneitra; the war ended with **70,000 sq km captured** (Sinai, Gaza, West Bank, Golan); **779 Israelis died vs ~20,000 Arab soldiers**.',
           ],
         },
       ],
@@ -859,6 +875,7 @@ const SPREADS = [
             '**Jordan River Water Wars:** Arab states attempted to divert the Hasbani and Banias tributaries; Israel destroyed the engineering equipment with long-range tank and airstrikes.',
             '**Fatah Border Infiltrations:** Over 70 sabotage raids staged from Jordan, Syria, and Lebanon; none from Gaza because UNEF peacekeepers were stationed along the border.',
             '**The Samu Escalation (13 Nov 1966):** After an Israeli police vehicle hit a mine, PM Levi Eshkol launched a punitive raid: **600 troops, 11 tanks, 60 vehicles** attacked Samu (15 Jordanian soldiers and 3 villagers killed), infuriating King Hussein.',
+            '**Destruction of Samu Village:** IDF dynamited over 120 stone houses and police buildings in Samu, triggering mass anti-government riots in Amman and Jerusalem against King Hussein.',
           ],
         },
         {
@@ -867,6 +884,7 @@ const SPREADS = [
             '**Damascus Dogfight (7 April 1967):** Syrian gunners fired on an Israeli armored tractor; IAF fighter jets responded by downing **6 Syrian MiG-21s** and buzzing over Damascus.',
             '**Soviet Lie (13 May 1967):** Moscow claimed Israel was preparing to invade Syria; Nasser mobilized 100,000 troops in Sinai to prove he was still leader of the Arab world.',
             '**The 29 May Demands:** Nasser threatened war unless Israel surrendered all 1948 lands and returned all refugees, leaving Prime Minister Eshkol convinced war was inevitable.',
+            "**Jordan-Egypt Military Pact (30 May):** King Hussein flew to Cairo, signing a mutual defense treaty and placing Jordan's British-trained army under Egyptian General Abdul Munim Riad.",
           ],
         },
         {
@@ -875,619 +893,627 @@ const SPREADS = [
             '**Low-Level Flight:** 200 Israeli jets flew 15 meters above the Mediterranean waves beneath Egyptian radar, striking during the morning shift change when pilots were eating breakfast.',
             '**Dibber Bombs:** French rocket-assisted penetration bombs created massive craters in runways, trapping 300 Egyptian aircraft on the tarmac before destroying them.',
             '**Air Supremacy in 4 Hours:** By midday, Egypt, Syria, and Jordan lost 452 aircraft; IDF ground forces operated with complete, unchallenged air support across all fronts.',
+            '**Ground Advance:** Israeli armored divisions broke through fortified Egyptian defenses at Abu Ageila and Jebel Libni, cutting off Egyptian retreat routes to the Suez Canal.',
           ],
         },
         {
           title: '4. The Spoils: 70,000 sq km & Quadrupled Borders',
           points: [
-            '**Casualty Disparity:** 779 Israeli dead vs **~20,000 Arab soldiers killed** (15,000 Egyptians, 6,000 Jordanians, 1,000 Syrians); Arab military prestige lay completely in ruins.',
-            '**Quadrupled Land Area:** Israel captured **70,000 sq km of territory**, including the Sinai Peninsula, Gaza Strip, West Bank, Old City of Jerusalem, and Golan Heights.',
-            '**Strategic Depth:** For the first time, Israel gained massive buffer territories, insulating Tel Aviv and Jerusalem from surprise artillery bombardment.',
+            '**Territorial Conquests:** Israel seized the **Sinai Peninsula (60,000 sq km), the West Bank (5,600 sq km), Gaza Strip (360 sq km), and the Golan Heights (1,200 sq km)**.',
+            '**Asymmetric Casualties:** Israel lost **779 soldiers**; Arab armies suffered approximately **20,000 dead** (15,000 Egyptians, 6,000 Jordanians, 1,000 Syrians) and 80% equipment loss.',
+            '**One Million Palestinians Under Occupation:** 1,000,000 Arabs in the West Bank and Gaza fell under direct Israeli military rule, fundamentally shifting the demographic conflict.',
+            '**Western Wall Reconnected:** For the first time since 1948, Jewish worshippers were permitted access to the Western Wall; the adjacent Moroccan Quarter was demolished to create the plaza.',
           ],
         },
       ],
       causalPathway: [
         {
-          stage: '1. Water Wars & Samu (1964–66)',
-          text: 'Arab diversion plan bombed; Fatah stages 70 raids; IDF Samu raid (600 troops, 11 tanks) inflames Jordan.',
+          stage: '1. Water Clashes & Samu (1966)',
+          text: 'Fatah raids and Headwater Diversion provoke 13 Nov 1966 Samu raid (600 troops) and 7 April 1967 air clash (6 MiGs downed).',
         },
         {
-          stage: '2. Dogfight & Soviet False Alert',
-          text: 'IAF downs 6 Syrian MiGs over Damascus; USSR falsely claims Israeli border massing; Nasser expels UNEF.',
+          stage: '2. Soviet Lie & May Brinkmanship',
+          text: '13 May Soviet false alert prompts Nasser to expel UNEF, deploy 100k troops, close Straits of Tiran, and issue 29 May demands.',
         },
         {
-          stage: '3. Tiran Blockade & Ultimatums',
-          text: 'Nasser closes Straits of Tiran; demands return of 1948 land on 29 May; Dayan appointed Defence Minister.',
+          stage: '3. Operation Focus Air Blitz',
+          text: '5 June 7:45 AM: IAF destroys 300+ aircraft on tarmac in 3 hours; IDF armored columns break Egyptian lines in Sinai.',
         },
         {
-          stage: '4. Operation Focus & 6-Day Rout',
-          text: 'Pre-emptive strike destroys 300 jets on tarmac; IDF takes Sinai, West Bank & Golan; 70,000 sq km captured.',
+          stage: '4. Tri-Front Rout & 70,000 sq km',
+          text: 'Old City, West Bank, and Golan captured; 779 Israelis die vs ~20,000 Arabs; Israel quadruples territory in 6 days.',
         },
       ],
       masterWordBank: [
         {
-          term: 'Cairo Conference (1964)',
-          def: 'Arab League summit that created the PLO and the Palestine Liberation Army (PLA).',
-        },
-        {
-          term: 'PLA (12,000 troops)',
-          def: 'Conventional military wing of the PLO established under Arab state command.',
+          term: 'Cairo Summit (1964)',
+          def: 'Arab League conference that established the PLO and the Palestine Liberation Army (PLA).',
         },
         {
           term: 'Headwater Diversion',
-          def: "Arab project to divert Jordan River tributaries away from Israel's water network.",
+          def: "Arab project to divert Jordan River tributaries away from Israel's National Water Carrier.",
         },
         {
           term: 'Samu Raid (Nov 1966)',
-          def: 'IDF reprisal raid using 600 troops and 11 tanks into Jordanian West Bank.',
+          def: 'Massive Israeli reprisal raid involving 600 troops and 11 tanks into the West Bank.',
         },
         {
           term: '7 April 1967 Dogfight',
-          def: 'Air battle downing 6 Syrian MiG-21s with IAF jets buzzing over Damascus.',
+          def: 'Air battle in which Israeli Mirage jets shot down 6 Syrian MiG-21s over Damascus.',
         },
         {
-          term: 'Soviet False Intel (13 May)',
-          def: 'Fabricated Moscow report claiming Israel was massing troops on Syrian border.',
+          term: 'Soviet False Alert',
+          def: '13 May 1967 Moscow intelligence lie claiming Israel was massing brigades against Syria.',
         },
         {
           term: 'Straits of Tiran',
-          def: 'Strategic maritime chokepoint closed by Nasser on 22 May, triggering casus belli.',
+          def: 'Strategic maritime chokepoint closed by Nasser on 22 May 1967, triggering the war.',
         },
         {
           term: '29 May Demands',
-          def: "Nasser's ultimatum demanding return of 1948 refugees and all 1948–49 lands.",
+          def: "Nasser's public ultimatum demanding the return of all 1948 refugees and territory.",
         },
         {
           term: 'Operation Focus',
-          def: 'Pre-emptive Israeli airstrike on 5 June 1967 destroying 300+ jets on runways.',
+          def: 'Surprise Israeli air strike on 5 June 1967 destroying 300+ Egyptian planes on the ground.',
         },
         {
-          term: '779 vs ~20,000 Dead',
-          def: 'Casualty ratio demonstrating total Israeli military dominance in the 1967 war.',
+          term: '779 vs 20,000 Dead',
+          def: 'Casualty ratio of Israeli fatal losses compared to total Arab soldiers killed in 6 days.',
         },
         {
-          term: '70,000 sq km Captured',
-          def: "Vast territorial conquest (Sinai, Gaza, West Bank, Golan) quadrupling Israel's size.",
+          term: '70,000 sq km',
+          def: 'Total land area captured by Israel (Sinai, Gaza, West Bank, Golan), quadrupling its size.',
         },
         {
           term: 'Motta Gur',
-          def: 'Paratrooper brigade commander who announced the capture of the Western Wall.',
+          def: 'Commander of 55th Paratroopers Brigade who declared "The Temple Mount is in our hands!".',
+        },
+        {
+          term: 'Levi Eshkol',
+          def: 'Israeli Prime Minister who resisted early war calls before establishing National Unity cabinet.',
         },
       ],
     },
   },
-
-  // ---------------------------------------------------------------------------
-  // SPREAD 6 (KT 2.2): THE 1967 AFTERMATH: OCCUPIED TERRITORIES & RES 242
-  // ---------------------------------------------------------------------------
   {
     id: 'cme_spread_6',
     spreadNum: 6,
     topic: 'Key Topic 2 • The Escalating Conflict, 1964–73',
-    title: 'KT 2.2: The 1967 Aftermath: Occupied Territories & UN Res 242',
+    title: 'KT 2.2: The Aftermath of 1967 & UN Resolution 242',
     left: {
-      tag: 'KT 2.2 • Occupation, Khartoum Summit & Resolution 242',
-      headline: 'The Dilemmas of Conquest: Occupied Lands, Khartoum & Resolution 242',
+      tag: 'KT 2.2 • Resolution 242, Occupation & The Khartoum Rejection',
+      headline: "Land for Peace, The Three No's & The 350% Territorial Dilemma",
       summary:
-        'The Six Day War transformed Israel from an insecure coastal state into an undisputed regional superpower with 350% more land. However, conquest created profound strategic and humanitarian dilemmas: Israel now controlled 1 million Palestinian Arabs across the West Bank and Gaza Strip, alongside the strategic Golan Heights and Sinai Peninsula. In the war\'s wake, 300,000 Palestinians fled the West Bank into Jordan, while Israel highlighted its absorption of 618,500 Jewish refugees from Arab states. In September 1967, Arab League leaders issued the defiant "Three No\'s" at the Khartoum Summit. In response, the UN Security Council passed Resolution 242 on 22 November 1967, establishing the foundational "land for peace" formula, though deliberate linguistic ambiguities between the English and French texts left its implementation contested for decades.',
+        'Israel emerged from the Six Day War controlling 350% more territory, transforming from a vulnerable enclave into the dominant military power in the Middle East. On 22 November 1967, the UN Security Council adopted Resolution 242, establishing the landmark "Land for Peace" formula: Israeli withdrawal from occupied territories in exchange for Arab recognition and secure borders. However, deliberate ambiguity in the English text ("territories occupied" rather than "the territories") allowed Israel to argue it could retain strategic border areas. The Arab League responded at the August 1967 Khartoum Summit with the intransigent "Three No\'s" (No peace, no recognition, no negotiation). Meanwhile, 300,000 new Palestinian refugees fled to Jordan, joining 618,500 Jewish refugees absorbed by Israel, while static clashes along the blocked Suez Canal escalated into the brutal War of Attrition (1969–70).',
       pillars: [
         {
-          title: 'The Occupied Lands Matrix',
-          subtitle: 'Strategic & Economic Value',
+          title: 'UN Resolution 242 (Nov 1967)',
+          subtitle: 'The "Land for Peace" Formula',
           bullets: [
-            '**Golan Heights (Syria):** High volcanic plateau home to 100,000 Syrians (mostly displaced); secured freshwater tributaries of the Jordan River and eliminated Syrian artillery shelling of Galilee kibbutzim.',
-            '**West Bank & East Jerusalem (Jordan):** Home to 600,000 Palestinians; fertile agricultural land next to River Jordan; East Jerusalem and the Old City holy sites were formally annexed into sovereign municipal borders.',
-            "**Sinai & Gaza (Egypt):** Gaza (350,000 Palestinians) eliminated Fedayeen staging grounds; Sinai contained Egypt's only oil reserves, blocked Egypt from using the Suez Canal, secured Aqaba shipping, and provided a 60,000 sq km buffer.",
+            '**The "Land for Peace" Formula:** Adopted unanimously by the UN Security Council; established the diplomatic trade-off: Israel would withdraw from occupied territories in exchange for Arab recognition and secure, recognized borders.',
+            '**Deliberate Linguistic Ambiguity:** The English text called for withdrawal from *"territories occupied in the recent conflict"*, omitting the word "the"; Israel argued this permitted partial retention of defensible borders, while Arabs demanded total 100% withdrawal.',
+            '**Khartoum "Three No\'s" (Aug 1967):** Eight Arab leaders met in Sudan, issuing an intransigent rejection: **"No peace with Israel, no recognition of Israel, no negotiations with Israel"**, locking the region in diplomatic paralysis.',
+            '**Palestinian Betrayal & Outrage:** Resolution 242 referred to Palestinians purely as a *"refugee problem"* to be settled fairly, with zero mention of national self-determination, statehood, or civil rights, fueling independent Palestinian armed militancy.',
           ],
         },
         {
-          title: 'The Double Refugee Reality',
-          subtitle: 'West Bank Flight vs Jewish Influx',
+          title: 'The Occupied Territories Matrix',
+          subtitle: 'Strategic Depth & 1m Arabs',
           bullets: [
-            '**300,000 West Bank Refugees:** During the 1967 war, around **300,000 Palestinians fled the West Bank**, moving into 6 new emergency refugee camps in Jordan; Arab states insisted Israel must rehome and compensate them.',
-            '**618,500 Jewish Refugees:** Israel highlighted that since 1948 it had permanently absorbed and integrated **618,500 Jewish refugees forcibly displaced or expelled from Arab nations** (Iraq, Yemen, Egypt, Syria, Morocco).',
-            '**Annexation vs Military Occupation:** Israel annexed East Jerusalem immediately on religious and historical grounds; all other conquered lands (Sinai, Gaza, West Bank, Golan) were placed under strict IDF military administration.',
+            "**Sinai Peninsula (Egypt):** 60,000 sq km buffer containing Egypt's only oil reserves (Abu Rudeis); Israeli occupation prevented Egyptian use of the Suez Canal and secured permanent passage through the Straits of Tiran.",
+            '**Golan Heights (Syria):** Elevated plateau containing vital freshwater sources for the Sea of Galilee; eliminated Syrian artillery batteries that had shelled Israeli kibbutzim for two decades; 100,000 Syrians displaced.',
+            '**West Bank & Gaza Strip:** Israel gained fertile land along the Jordan River, home to **600,000 Palestinians** in the West Bank and **350,000 in Gaza**; eliminated Fedayeen launchpads but placed 1 million Arabs under military administration.',
+            '**Immediate Annexation of East Jerusalem:** Israel annexed the Old City and sacred religious sites (Western Wall, Temple Mount, Dome of the Rock, Al-Aqsa, Holy Sepulchre), expanding municipal borders and offering residency rather than citizenship.',
           ],
         },
         {
-          title: 'Khartoum Summit & Res 242',
-          subtitle: 'The "Three No\'s" vs "Land for Peace"',
+          title: 'Refugees & War of Attrition',
+          subtitle: 'Jordan Camps & Soviet SAMs',
           bullets: [
-            '**Khartoum Arab Summit (Sept 1967):** Shattered Arab leaders met in Sudan and issued the uncompromising **"Three No\'s": No peace with Israel, No recognition of Israel, No negotiation with Israel**; oil-rich states funded front-line armies.',
-            '**UN Resolution 242 (22 Nov 1967):** Adopted unanimously; called for withdrawal of Israeli armed forces from territories occupied in recent conflict, termination of belligerency, and freedom of international navigation.',
-            '**The Palestinian Omission:** Resolution 242 referred to Palestinians purely as "the refugee problem", offering humanitarian resettlement without acknowledging their national identity or right to statehood.',
+            '**The 1967 Refugee Wave:** Over **300,000 Palestinians fled the West Bank** across the Jordan River; most were crammed into 6 newly established, squalid refugee camps in Jordan, expanding PLO recruitment.',
+            '**The Jewish Refugee Contrast:** Israeli diplomats argued they had permanently resettled and integrated **618,500 Jewish refugees** expelled from Arab nations (1948–72), asserting that Arab states should similarly absorb Palestinian refugees.',
+            '**The Bar-Lev Line:** Israel built a $300 million chain of 35 sand-rampart forts along the east bank of the Suez Canal; 15 commercial cargo ships remained stranded in the blocked canal for 8 years.',
+            '**The War of Attrition (1969–70):** Nasser launched static artillery bombardments; Israel launched deep-penetration air raids; 20,000 Soviet troops and SAM-3 missiles intervened; over 1.5 million Egyptians fled canal cities; 1,000 Israelis killed before Aug 1970 ceasefire.',
           ],
         },
       ],
       keyFigures: [
         {
           name: 'Lord Caradon',
-          role: 'British Ambassador to the UN who drafted Resolution 242, deliberately omitting the word "the" to create constructive ambiguity.',
+          role: 'British UN Ambassador who drafted Resolution 242, deliberately phrasing the withdrawal clause to bridge Israeli and Arab positions.',
         },
         {
           name: 'Gamal Abdel Nasser',
-          role: 'Signed the Khartoum Summit resolution rejecting direct peace talks, while accepting Soviet arms to rebuild the Egyptian military.',
+          role: 'Egyptian President who endorsed the Khartoum "Three No\'s" and waged the War of Attrition (1969–70) to bleed Israeli forces on the Suez Canal.',
         },
         {
-          name: 'Levi Eshkol',
-          role: 'Israeli Prime Minister who offered in June 1967 to return Sinai and Golan for full bilateral peace treaties, which Khartoum rejected.',
+          name: 'King Hussein of Jordan',
+          role: 'Ruler of Jordan who lost the West Bank and East Jerusalem, and was forced to absorb 300,000 new Palestinian refugees into his kingdom.',
         },
         {
-          name: 'Yigal Allon',
-          role: 'Deputy Prime Minister who authored the Allon Plan, advocating security annexations in the Jordan Valley while returning populated areas.',
+          name: 'Golda Meir',
+          role: 'Became Israeli Prime Minister in 1969; oversaw the construction of the Bar-Lev Line and settlement building in the occupied territories.',
         },
       ],
       archivalSource: {
-        title: 'UN Security Council Resolution 242 (22 November 1967)',
-        citation: 'United Nations Official Document S/RES/242',
+        title: 'UN Security Council Resolution 242, Operative Clause 1 (22 Nov 1967)',
+        citation: 'United Nations Document S/RES/242',
         quote:
-          'Emphasizing the inadmissibility of the acquisition of territory by war and the need to work for a just and lasting peace in which every State in the area can live in security... Affirms that the fulfillment of Charter principles requires the withdrawal of Israel armed forces from territories occupied in the recent conflict...',
+          'Affirms that the fulfillment of Charter principles requires the establishment of a just and lasting peace in the Middle East which should include the application of both the following principles: (i) Withdrawal of Israel armed forces from territories occupied in the recent conflict; (ii) Termination of all claims or states of belligerency and respect for and acknowledgement of the sovereignty, territorial integrity and political independence of every State in the area...',
         significance:
-          'Became the international legal cornerstone of all future Arab-Israeli peace diplomacy ("land for peace"), despite conflicting linguistic interpretations.',
+          'The cornerstone of all subsequent Middle Eastern peace diplomacy, despite conflicting interpretations of whether withdrawal applied to "all" territories.',
       },
     },
     right: {
-      tag: 'KT 2.2 • Territorial Analysis, Legal Ambiguities & Word Bank',
+      tag: 'KT 2.2 • Diplomatic Analysis, Strategic Geography & Word Bank',
       deepCases: [
         {
-          title: '1. Strategic Breakdown of the Five Occupied Territories',
+          title: '1. UN Res 242: The "Land for Peace" Formula',
           points: [
-            '**Golan Heights:** Vital fresh water springs feeding the Sea of Galilee; volcanic ridges provided military high ground and defensive depth.',
-            '**Sinai Peninsula:** Provided 60,000 sq km of buffer space; gave Israel control of Abu Rudeis oilfields and unhindered trade through the Straits of Tiran.',
-            '**West Bank & Gaza:** Placed 950,000 Palestinians under IDF military governorates; ended Fedayeen incursions but created a permanent demographic challenge.',
+            "**Core Principles:** Resolution 242 paired Israeli territorial withdrawal with Arab recognition of Israel's right to live in peace within secure, recognized boundaries.",
+            '**The English vs French Text:** The English version called for withdrawal from "territories occupied" (omitting "the"), whereas the French version specified "des territoires" (the territories), sparking endless legal disputes.',
+            '**Arab Conditional Acceptance:** Egypt and Jordan accepted Res 242 on the condition of total Israeli withdrawal; Syria rejected it until 1973; the PLO rejected it completely.',
+            '**Diminished Palestinian Status:** Palestinians were deeply insulted that their national political identity was erased, referred to only as an anonymous "refugee problem".',
           ],
         },
         {
-          title: '2. The Double Refugee Displacements (1948–67)',
+          title: '2. Strategic Value of the Occupied Territories',
           points: [
-            '**300,000 New Displaced Persons:** The 1967 war created a second wave of Palestinian refugees; 300,000 crossed the Jordan River into overcrowded UNRWA camps.',
-            '**618,500 Jewish Refugees:** Israel argued that Arab states bore responsibility for absorbing Palestinian refugees, just as Israel had absorbed 618,500 Jewish refugees from Arab lands.',
-            '**East Jerusalem Annexation:** Israel unified Jerusalem, granting Arab residents permanent municipal residency cards, but denying automatic national citizenship.',
+            '**350% More Land:** Israel expanded from 20,000 sq km to nearly 90,000 sq km, gaining enormous strategic depth against surprise tank invasions from Egypt and Syria.',
+            '**Sinai Oil & Depth:** Israel captured the Abu Rudeis oil fields, achieving petroleum self-sufficiency; Sinai provided a 200km desert buffer zone separating Cairo from Israel.',
+            "**Golan Fortress:** The Golan plateau placed Damascus within Israeli artillery range (60km) and secured Israel's northern agricultural settlements from Syrian shelling.",
+            '**West Bank Security & Settlers:** The Jordan River provided a natural defense trench against eastern invasion; religious Zionists immediately began building ideological settlements (e.g. Gush Etzion).',
           ],
         },
         {
-          title: '3. The Linguistic Battle: English vs French Text',
+          title: '3. The 300,000 West Bank Refugees & Jordan Camps',
           points: [
-            '**English Text (Lord Caradon):** Mandated withdrawal from *"territories occupied"* (omitting the definite article "the"), meaning Israel was not required to withdraw from all lands.',
-            '**French Text:** Read *"de tous les territoires"* (from all the territories); backed by Arab states and the USSR to demand full retreat to 4 June 1967 lines.',
-            '**Conditionality:** Israel maintained that withdrawal was strictly conditional on Arab states granting full diplomatic recognition and secure, recognized boundaries.',
+            '**Second Displacement Wave:** Over 300,000 Palestinians fled or were expelled from the West Bank across the Allenby Bridge into Jordan during and immediately after the war.',
+            "**Six Squalid Emergency Camps:** UNRWA established six new emergency tent camps in Jordan (including Baqa'a), where refugees faced bitter winters and open-ditch sewage.",
+            '**Radicalisation Incubator:** The refugee camps became fertile recruiting grounds for Fatah and the PFLP, transforming Jordan into an armed guerrilla base.',
+            '**618,500 Jewish Refugees:** Israel highlighted that it had permanently integrated 618,500 Jewish refugees expelled from Arab nations, arguing Arab states must absorb Palestinians.',
           ],
         },
         {
-          title: '4. The Allon Plan & The Beginnings of Settlements',
+          title: '4. The War of Attrition & Soviet Intervention',
           points: [
-            '**Security Perimeter:** Formulated by Yigal Allon in 1967; proposed permanent Israeli annexation of a 15km strip along the Jordan Valley and Greater Jerusalem.',
-            '**Arab Autonomy:** Envisioned returning densely populated Palestinian urban areas (Nablus, Hebron) to Jordanian civil administration ("the Jordanian Option").',
-            '**Early Settlements:** First post-1967 Jewish settlements established at Kfar Etzion in the West Bank and in the Golan Heights, laying roots for the religious settler movement.',
+            '**Nasser\'s Strategy (1969–70):** Nasser calculated that Israel could not sustain long-term casualties: "If we kill 1,000 Israelis, they will collapse; if they kill 10,000 Egyptians, we will endure."',
+            '**Bar-Lev Fortifications:** Israel built 35 fortified strongpoints connected by minefields along the canal bank to withstand constant Egyptian artillery bombardments.',
+            '**Direct Soviet Military Combat:** Moscow deployed 20,000 Soviet personnel and advanced SAM-3 surface-to-air missiles; Soviet pilots engaged Israeli Phantoms in direct dogfights.',
+            '**August 1970 Ceasefire:** Brokered by US Secretary of State William Rogers; canal cities were left in ruins and 1.5m Egyptians displaced, but Egypt moved SAM batteries forward to the canal bank.',
           ],
         },
       ],
       causalPathway: [
         {
-          stage: '1. Six Day War Conquests',
-          text: 'Israel captures Golan, Sinai, West Bank, Gaza & East Jerusalem; 1m Palestinians fall under military control.',
+          stage: '1. Res 242 & Khartoum Rejection',
+          text: 'UN adopts "Land for Peace" (22 Nov 1967); Arab states counter with Khartoum "Three No\'s"; Palestinians reject refugee label.',
         },
         {
-          stage: '2. Dual Refugee Movements',
-          text: '300k Palestinians flee West Bank into Jordan; Israel notes its absorption of 618,500 Jewish refugees from Arab lands.',
+          stage: '2. 350% More Land & Occupation',
+          text: 'Israel gains Sinai oil, Golan water, and West Bank buffer, but places 1m hostile Arabs under direct military rule.',
         },
         {
-          stage: '3. Khartoum "Three No\'s"',
-          text: 'Arab states reject defeat: "No peace, no recognition, no negotiation"; pledge to finance front-line armies.',
+          stage: '3. 300,000 Flee to Jordan Camps',
+          text: 'Second mass displacement wave enters Jordan; 6 new camps radicalize youth, fueling PLO guerrilla recruitment.',
         },
         {
-          stage: '4. UN Resolution 242',
-          text: 'Resolution 242 establishes "land for peace"; deliberate ambiguity over "the territories" sparks decades of debate.',
+          stage: '4. War of Attrition (1969–70)',
+          text: 'Canal blocked; 20k Soviet troops intervene; 1,000 Israelis die on Bar-Lev Line before US brokers August 1970 ceasefire.',
         },
       ],
       masterWordBank: [
         {
           term: 'UN Resolution 242',
-          def: 'Foundational 1967 UN resolution establishing the "land for peace" negotiating formula.',
+          def: 'Nov 1967 Security Council resolution establishing the "Land for Peace" principle.',
         },
         {
-          term: 'Lord Caradon',
-          def: 'British UN diplomat who drafted the ambiguous wording of Resolution 242.',
+          term: 'Land for Peace',
+          def: 'Diplomatic concept: Israeli withdrawal in exchange for Arab recognition and secure borders.',
         },
         {
-          term: 'Khartoum Summit (1967)',
-          def: 'Arab League meeting issuing the "Three No\'s" (no peace, recognition, or negotiation).',
+          term: 'Khartoum "Three No\'s"',
+          def: 'Aug 1967 Arab summit declaration: No peace, no recognition, and no negotiation with Israel.',
         },
         {
-          term: "Three No's",
-          def: 'Defiant Arab resolution refusing peace, recognition, or direct negotiations with Israel.',
+          term: '350% Land Increase',
+          def: 'The massive territorial expansion achieved by Israel following the 1967 Six Day War.',
         },
         {
-          term: '300,000 Fled West Bank',
-          def: 'Scale of Palestinian civilian displacement across the Jordan River in the 1967 war.',
+          term: 'Abu Rudeis',
+          def: 'Major Egyptian oil fields in Sinai captured by Israel, providing domestic petroleum needs.',
+        },
+        {
+          term: 'Annexation of Jerusalem',
+          def: 'Israel formally absorbed East Jerusalem into its municipality, declaring it undivided capital.',
+        },
+        {
+          term: '300,000 Refugees (1967)',
+          def: 'Palestinians displaced from the West Bank into Jordan following the Six Day War.',
         },
         {
           term: '618,500 Jewish Refugees',
-          def: 'Number of Jewish refugees absorbed into Israel from Arab states after 1948.',
+          def: 'Jews expelled from Arab and Muslim countries permanently resettled in Israel.',
         },
         {
-          term: 'Golan Water Sources',
-          def: 'Strategic freshwater tributaries of River Jordan controlled by holding the Golan Heights.',
+          term: 'Bar-Lev Line',
+          def: '$300m chain of 35 fortified bunkers and sand ramparts built along the Suez Canal.',
         },
         {
-          term: 'Sinai Oil Reserves',
-          def: 'Egyptian oilfields captured by Israel, providing domestic fuel and economic leverage.',
+          term: 'War of Attrition',
+          def: 'Brutal 1969–70 artillery and air war along the Suez Canal between Egypt and Israel.',
         },
         {
-          term: 'East Jerusalem Annexation',
-          def: 'Extension of Israeli sovereign law over the Old City and holy sites on 27 June 1967.',
+          term: '20,000 Soviet Troops',
+          def: 'Soviet military technicians and missile crews deployed to Egypt to defend air space.',
         },
         {
-          term: 'Allon Plan',
-          def: '1967 Israeli strategic proposal to annex the Jordan Valley while returning populated cities.',
-        },
-        {
-          term: 'Linguistic Ambiguity',
-          def: 'Dispute over whether Res 242 required withdrawal from "all" or "some" occupied lands.',
-        },
-        {
-          term: 'Refugee Problem Clause',
-          def: 'Article in Res 242 treating Palestinians as displaced persons rather than a nation.',
+          term: 'Rogers Plan Ceasefire',
+          def: 'US-brokered August 1970 agreement that ended the War of Attrition along the canal.',
         },
       ],
     },
   },
-
-  // ---------------------------------------------------------------------------
-  // SPREAD 7 (KT 2.3): PALESTINIAN RESISTANCE & BLACK SEPTEMBER (1968–72)
-  // ---------------------------------------------------------------------------
   {
     id: 'cme_spread_7',
     spreadNum: 7,
     topic: 'Key Topic 2 • The Escalating Conflict, 1964–73',
-    title: 'KT 2.3: The Rise of Palestinian Resistance, Fatah & Black September (1964–72)',
+    title: 'KT 2.3: The Rise of Palestinian Resistance & International Terrorism',
     left: {
-      tag: "KT 2.3 • Karameh, Dawson's Field & Munich 1972",
-      headline: 'The Guerrilla Shift: Karameh, Black September & Munich Olympics',
+      tag: "KT 2.3 • Karameh, Dawson's Field & The Munich Massacre",
+      headline: 'The Gun, The Skyjack & The Olympics: Terrorism Takes the World Stage',
       summary:
-        "The crushing defeat of conventional Arab armies in 1967 convinced Palestinians that they had to liberate their homeland through independent armed struggle. Yasser Arafat's Fatah gained legendary status at the Battle of Karameh (March 1968), propelling him to the PLO chairmanship in 1969. Simultaneously, the War of Attrition (1969–70) along the Suez Canal saw 20,000 Soviet troops and 80 SAM missile bases deploy to Egypt, displacing 1.5 million Egyptian civilians and killing ~1,000 Israeli soldiers. However, radical groups like George Habash's PFLP hijacked international aircraft, climaxing in the September 1970 Dawson's Field hijackings. King Hussein deployed the Arab Legion during \"Black September\" to crush the PLO in 10 days of heavy fighting, expelling them to Lebanon. In response, the Black September splinter group murdered 11 Israeli athletes at the 1972 Munich Olympics, provoking Golda Meir's retaliatory Operation Wrath of God.",
+        'The crushing defeat of Arab national armies in 1967 convinced Palestinian factions that they could no longer rely on Arab states. Under Yasser Arafat, Fatah transformed the PLO into an independent armed resistance movement. Following the 21 March 1968 Battle of Karameh, where fedayeen inflicted heavy losses on an Israeli raiding force, Arafat was elected PLO Chairman in 1969. Radical splinter factions, notably George Habash’s Marxist Popular Front for the Liberation of Palestine (PFLP), pioneered international skyjackings. The September 1970 Dawson’s Field hijackings provoked King Hussein to unleash the Jordanian army in "Black September", expelling the PLO to Lebanon by July 1971. In response, the Black September faction executed the 5 September 1972 Munich Olympics massacre, killing 11 Israeli athletes. Prime Minister Golda Meir responded with Operation Wrath of God, authorizing targeted assassinations across Europe.',
       pillars: [
         {
-          title: 'War of Attrition (1969–70)',
-          subtitle: 'Soviet Pilots & Suez Shelling',
+          title: 'Rise of Fatah & Karameh (1968)',
+          subtitle: 'From Arab Armies to Armed Guerrillas',
           bullets: [
-            '**Canal Artillery War:** Nasser launched daily artillery bombardments across the Suez Canal to prevent Israel from entrenching along the sand ramparts of the Bar-Lev Line.',
-            '**Direct Soviet Military Intervention:** Moscow sent **20,000 Soviet troops and 80 advanced SAM missile batteries**; Soviet pilots flew combat sorties directly against Israeli Phantom jets over the canal.',
-            '**Devastating Toll:** Israel bombed Egyptian cities, factories, and oil refineries; **over 1.5 million Egyptian civilians were evacuated** from Suez cities, and **around 1,000 Israeli soldiers were killed** before the US brokered a ceasefire in Aug 1970. Nasser died of a heart attack on 28 Sept 1970; Anwar Sadat succeeded him.',
+            '**Disillusionment with Arab Armies:** Arab military collapse in 1967 convinced Palestinians they could not rely on Arab regimes; Fatah and guerrilla factions advocated independent, armed "people\'s war" to liberate Palestine.',
+            "**Battle of Karameh (21 March 1968):** Following a school bus mining, the IDF raided Fatah's base at Karameh in Jordan; Fatah and Jordanian troops put up fierce resistance, inflicting heavy Israeli losses (28 dead, 4 tanks lost).",
+            "**Arafat's Political Triumph:** Although the IDF destroyed Karameh, Arafat declared a glorious moral victory; thousands of young volunteers joined the fedayeen; in February 1969, Arafat was elected **Chairman of the PLO**.",
+            '**The PLO "State within a State":** By 1970, the PLO operated armed roadblocks, collected taxes, and ran independent police in Jordan, directly defying King Hussein and humiliating the Jordanian monarchy.',
           ],
         },
         {
-          title: 'Karameh & Black September (1970)',
-          subtitle: "Dawson's Field & Jordan Expulsion",
+          title: 'PFLP Skyjackings & Black September',
+          subtitle: "Dawson's Field & The Expulsion",
           bullets: [
-            "**Battle of Karameh (March 1968):** Following a school bus bombing, the IDF raided Fatah's base at Karameh in Jordan; Fatah fighters fought fiercely alongside Jordanian artillery; Arafat claimed a symbolic victory and became PLO Chairman in 1969.",
-            "**Dawson's Field Hijackings (Sept 1970):** The PFLP hijacked 4 airliners, forcing 3 to land at Dawson's Field (Jordan) and 1 in Cairo; they held **56 Jewish passengers hostage** and blew up the empty planes on 12 Sept, directly challenging King Hussein's royal authority.",
-            '**Expulsion from Jordan (Black September):** King Hussein declared martial law on 16 Sept 1970; the Arab Legion engaged the PLO in **10 days of intense urban warfare**; by July 1971, King Hussein totally expelled the PLO to Lebanon, where they established new headquarters in Beirut.',
+            '**PFLP Radical Ideology:** Founded in 1967 by George Habash (Marxist Palestinian Christian); believed international terrorism was essential to capture global media attention and force the world to confront the Palestinian issue.',
+            "**Dawson's Field Hijackings (Sept 1970):** PFLP commandos hijacked 4 international airliners; 3 planes were flown to a desert airstrip in Jordan (Dawson's Field) and 1 to Cairo; **56 Jewish passengers** were held hostage in exchange for prisoners.",
+            '**Planes Blown Up (12 Sept 1970):** PFLP evacuated hostages and detonated the multi-million-dollar airliners on live international television, humiliating King Hussein and triggering an existential showdown.',
+            '**Black September Civil War:** On 17 Sept 1970, King Hussein unleashed the Jordanian army; 10 days of heavy tank fighting in Amman killed 3,000–5,000 Palestinians; by July 1971, the PLO was completely expelled to Lebanon.',
           ],
         },
         {
-          title: 'Munich Olympics & Retaliation',
-          subtitle: '5 Sept 1972 & Wrath of God',
+          title: 'Munich Olympics & Wrath of God',
+          subtitle: '1972 Hostage Tragedy & Retaliation',
           bullets: [
-            '**The Munich Attack (5 Sept 1972):** 8 Black September militants stormed the Olympic Village, killing 2 Israeli athletes and taking 9 hostage; they demanded the release of **234 Palestinian prisoners held in Israel** and 2 German militants.',
-            '**Airfield Disaster & Letter Bombs:** A botched German police rescue at Fürstenfeldbruck airfield resulted in all 9 hostages being killed; weeks later, **51 parcel bombs were sent to Israeli diplomats** worldwide (1 killed in London).',
-            '**Operation Wrath of God:** Prime Minister Golda Meir authorized a secret Mossad hit squad ("Committee X") to track down and assassinate every Black September and PLO operative linked to the Munich massacre across Europe and Beirut.',
+            '**Birth of Black September:** A covert terrorist wing formed within Fatah to avenge the Jordanian expulsion; in Nov 1971, they assassinated Jordanian Prime Minister Wasfi al-Tel in Cairo, drinking his blood on hotel steps.',
+            '**Munich Olympics Attack (5 Sept 1972):** 8 Black September terrorists breached the Olympic Village; they killed 2 Israeli athletes and took 9 hostage, demanding the release of **234 Palestinian prisoners in Israel**.',
+            '**Fürstenfeldbruck Airport Massacre:** A botched German police rescue attempt at the airfield resulted in terrorists detonating a grenade inside a helicopter; all **9 Israeli hostages, 5 terrorists, and 1 German police officer** were killed.',
+            '**Operation Wrath of God:** Prime Minister Golda Meir authorized Mossad to hunt down and assassinate every Black September planner across Europe and the Middle East; Black September responded with **51 letter bombs**, killing an Israeli diplomat in London.',
           ],
         },
       ],
       keyFigures: [
         {
-          name: 'Yasser Arafat (Abu Ammar)',
-          role: 'Founder of Fatah who achieved heroic stature at Karameh; elected Chairman of the PLO in 1969, unifying Palestinian guerrilla resistance.',
-        },
-        {
-          name: 'King Hussein of Jordan',
-          role: 'Ruler of Jordan who launched the Black September military offensive to destroy the PLO "state-within-a-state" and protect his throne.',
+          name: 'Yasser Arafat',
+          role: 'Fatah founder elected PLO Chairman in 1969; championed armed struggle but later balanced military action with international diplomacy.',
         },
         {
           name: 'George Habash',
-          role: 'Christian doctor and Marxist leader of the PFLP who pioneered international aircraft hijackings to force the Palestinian question into world headlines.',
+          role: 'Marxist founder of the Popular Front for the Liberation of Palestine (PFLP); pioneered international skyjackings to publicize the cause.',
+        },
+        {
+          name: 'King Hussein of Jordan',
+          role: 'King of Jordan who crushed the PLO during Black September 1970 and expelled guerrilla forces to preserve his Hashemite monarchy.',
         },
         {
           name: 'Golda Meir',
-          role: "Israeli Prime Minister who rejected hostage negotiations at Munich and authorized Mossad's covert Operation Wrath of God assassinations.",
+          role: 'Israeli Prime Minister who ordered Operation Wrath of God to eliminate the Black September leaders responsible for Munich.',
         },
       ],
       archivalSource: {
-        title: 'Yasser Arafat Statement on the Battle of Karameh (March 1968)',
-        citation: 'Voice of Palestine Radio Broadcast, Central Archives',
+        title: 'George Habash, Leader of the PFLP, Interview on Skyjacking (1970)',
+        citation: 'Life Magazine, Interview Transcript, June 1970',
         quote:
-          'What we did at Karameh was to shatter the myth of the invincible Israeli army... We have proved that armed struggle is the only path to the liberation of our homeland and the dignity of our people.',
+          'When we hijack a plane it has more effect than if we killed a hundred Israelis in battle. For decades world public opinion was deaf to our tragedy. We had to take drastic actions to force the world to look at the Palestinian people.',
         significance:
-          'Transformed the PLO into a mass movement, inspiring tens of thousands of young fedayeen volunteers across the Arab diaspora.',
+          'Articulated the strategic logic of 1970s Palestinian international terrorism: sacrificing moral standing to force the Palestinian tragedy onto television screens.',
       },
     },
     right: {
-      tag: 'KT 2.3 • Forensic Case Studies, Terror Dynamics & Word Bank',
+      tag: 'KT 2.3 • Tactical Analysis, Causal Chains & Word Bank',
       deepCases: [
         {
-          title: '1. The War of Attrition (20k Soviets & 1.5m Displaced)',
+          title: "1. The Battle of Karameh & Arafat's Ascendancy",
           points: [
-            '**Bar-Lev Ramparts:** Israel built 35 fortified bunkers along the Suez Canal; Nasser responded with massive artillery saturation to exhaust Israeli manpower.',
-            '**Direct Soviet Intervention:** 20,000 Soviet personnel operated 80 SAM-2 and SAM-3 missile sites; in July 1970, Israeli jets ambushed and shot down 5 Soviet-piloted MiG-21s.',
-            '**Civilian Displacement:** Israeli deep-penetration bombing into the Nile Delta forced **1.5 million Egyptian civilians** to flee damaged canal zone cities.',
+            '**The School Bus Trigger:** On 18 March 1968, a school bus hit a mine in southern Israel, killing 2 adults and injuring 28 children; Israel launched a massive punitive raid 3 days later.',
+            '**Fierce Defense at Karameh:** Rather than fleeing, Fatah commandos fought alongside Jordanian artillery; 28 Israeli soldiers were killed, 69 wounded, and 4 tanks captured or abandoned.',
+            '**Psychological Watershed:** After the humiliation of 1967, Karameh proved Arab fighters could stand and bleed the IDF; 5,000 recruits joined Fatah in the following 48 hours.',
+            '**PLO Takeover (1969):** Independent fedayeen factions pushed out Egyptian-backed bureaucratic leaders; Yasser Arafat was elected Chairman of the PLO Executive Committee.',
           ],
         },
         {
-          title: "2. The Dawson's Field Hijackings (Sept 1970)",
+          title: "2. Dawson's Field Hijackings & King Hussein's Crackdown",
           points: [
-            '**Coordinated Air Piracy:** PFLP hijacked 4 commercial jetliners (TWA, Swissair, BOAC, Pan Am); 3 aircraft forced to land at an abandoned desert airstrip in Zarqa, Jordan.',
-            '**56 Jewish Hostages:** Hostages segregated by religion and nationality; non-Jewish passengers released, while 56 Jewish passengers were held hostage in desert heat.',
-            '**Direct Challenge to Sovereignty:** PFLP blew up the multi-million dollar airliners in front of international TV cameras, proving King Hussein had lost control of his nation.',
+            '**Triple Airliner Seizure:** On 6 Sept 1970, PFLP commandos hijacked Swissair, TWA, and BOAC flights, landing them at a former RAF desert base in Jordan renamed "Revolution Airport".',
+            '**56 Jewish Hostages Separated:** Non-Jewish passengers were released; 56 Jewish passengers and American crews were held hostage in desert heat to demand prisoner releases.',
+            '**Spectacular Television Destruction:** On 12 Sept, after releasing hostages, the PFLP detonated all three empty jets on live television, showing utter contempt for Jordanian sovereignty.',
+            '**Black September Massacre:** King Hussein declared martial law on 17 Sept; the Jordanian army attacked Palestinian refugee camps with heavy artillery, killing 3,000–5,000.',
           ],
         },
         {
-          title: '3. Black September Civil War & Expulsion (1970–71)',
+          title: '3. The Munich Massacre & Fürstenfeldbruck Firefight',
           points: [
-            '**State-Within-a-State:** PLO guerrillas carried weapons openly in Amman, ran checkpoints, and refused to obey Jordanian law, threatening the Hashemite monarchy.',
-            '**10 Days of Ferocious Urban War:** On 16 Sept 1970, the Arab Legion attacked PLO headquarters; thousands died; Syrian tank columns intervened but were driven off by Jordanian airstrikes.',
-            '**Relocation to Beirut:** By July 1971, King Hussein totally expelled all PLO guerrillas to Lebanon, where they built "Fatahland" in southern refugee camps.',
+            '**Olympic Village Infiltration:** 8 Black September militants scaled the perimeter fence with forged passes, entered 31 Connollystraße, shot wrestling coach Moshe Weinberg, and took 9 hostages.',
+            '**234 Prisoner Demands:** Terrorists demanded the release of 234 Palestinian prisoners in Israel and German Baader-Meinhof terrorists; Golda Meir took an uncompromising stance: "No negotiations with terror."',
+            '**Airport Ambush Disaster:** German authorities arranged a helicopter transfer to Fürstenfeldbruck airfield, planning a sniper ambush with untrained police snipers lacking radios and night scopes.',
+            '**Total Slaughter:** In the firefight, a terrorist tossed a grenade into a helicopter packed with bound Israeli athletes; all 11 Israeli team members and 1 German policeman died.',
           ],
         },
         {
-          title: '4. The Munich Olympics Massacre & Wrath of God',
+          title: '4. Operation Wrath of God & International Backlash',
           points: [
-            '**234 Prisoners Demanded:** 8 Black September terrorists took 9 Israeli athletes hostage in Munich; German police attempted an ambush with snipers lacking radios or night-vision.',
-            '**Airfield Slaughter (5 Sept 1972):** A terrorist tossed a grenade into a helicopter packed with bound hostages; all 9 Israeli hostages, 5 terrorists, and 1 German policeman were killed.',
-            '**Operation Wrath of God:** Mossad agents assassinated 11 targeted operatives across Rome, Paris, and Athens; in 1973, commandos under Ehud Barak stormed Beirut to kill PLO leaders.',
+            '**Committee X Authorization:** Golda Meir and Defence Minister Moshe Dayan established "Committee X" to secretly authorize Mossad assassination squads across Europe.',
+            '**Targeted Killings:** Mossad assassinated PLO representatives in Rome, Paris, and Cyprus using concealed explosives in telephone handsets and beds.',
+            '**The Lillehammer Fiasco (July 1973):** In Norway, Mossad agents misidentified a Moroccan waiter, Ahmed Bouchikhi, as Black September leader Ali Hassan Salameh, shooting him dead; 6 agents were arrested.',
+            "**Double-Edged Legacy:** The operation disrupted Black September's network but caused worldwide condemnation and failed to stop Palestinian attacks on Israeli targets.",
           ],
         },
       ],
       causalPathway: [
         {
-          stage: '1. War of Attrition (1969–70)',
-          text: 'Artillery duels along Suez; 20k Soviet troops deploy; 1.5m Egyptians displaced; ~1,000 Israeli soldiers killed.',
+          stage: '1. Karameh Defense (Mar 1968)',
+          text: 'Fatah stands against IDF raid; 28 Israeli troops die; Arafat hailed as hero and elected PLO Chairman in Feb 1969.',
         },
         {
-          stage: '2. Karameh & Fatah Legend',
-          text: 'Fatah fights IDF at Karameh (1968); Arafat elected PLO Chairman; fedayeen establish state-within-a-state in Jordan.',
+          stage: "2. Dawson's Field Hijackings",
+          text: 'PFLP blows up 3 jetliners on live TV; King Hussein crushes PLO in Black September 1970; PLO flees to Lebanon.',
         },
         {
-          stage: "3. Dawson's Field & Black Sept",
-          text: 'PFLP blows up 3 jetliners; King Hussein launches 10 days of urban war; PLO expelled to Lebanon by July 1971.',
+          stage: '3. Munich Olympics Massacre',
+          text: 'Black September kills 11 Israeli athletes at 1972 Munich Games; airport ambush fails; global shock and condemnation.',
         },
         {
-          stage: '4. Munich & Wrath of God',
-          text: 'Black September kills 11 at Munich; 51 letter bombs sent; Golda Meir orders Mossad covert assassination campaign.',
+          stage: '4. Operation Wrath of God',
+          text: 'Golda Meir orders Mossad assassination campaign; European operatives shot; Lillehammer mistake tarnishes Mossad.',
         },
       ],
       masterWordBank: [
         {
-          term: 'War of Attrition (1969–70)',
-          def: 'Canal artillery conflict killing ~1,000 Israelis and displacing 1.5m Egyptians.',
-        },
-        {
-          term: '20,000 Soviet Troops',
-          def: 'Soviet personnel deployed to operate 80 SAM missile sites along the Suez Canal.',
+          term: 'Fatah',
+          def: 'Palestinian national liberation movement founded in 1959 by Yasser Arafat, dominating the PLO.',
         },
         {
           term: 'Battle of Karameh (1968)',
-          def: 'IDF raid on Jordan where fierce Palestinian resistance made Arafat a legend.',
+          def: 'Clash between IDF and Fatah in Jordan; transformed Arafat into an Arab folk hero.',
         },
         {
-          term: 'PFLP (George Habash)',
-          def: 'Marxist militant faction pioneering international aircraft hijackings.',
+          term: 'PLO Chairman (1969)',
+          def: "Arafat's election cementing independent Palestinian armed leadership over the PLO.",
+        },
+        {
+          term: 'PFLP',
+          def: 'Popular Front for the Liberation of Palestine: Marxist splinter group founded by George Habash.',
         },
         {
           term: "Dawson's Field (1970)",
-          def: 'Desert runway in Jordan where PFLP blew up 3 hijacked international airliners.',
-        },
-        {
-          term: '56 Jewish Hostages',
-          def: 'Passengers held hostage in Jordan desert while non-Jews were released.',
+          def: 'Jordanian desert airstrip where PFLP blew up 3 hijacked international airliners on live TV.',
         },
         {
           term: 'Black September (1970)',
-          def: '10 days of ferocious fighting where King Hussein expelled the PLO to Lebanon.',
+          def: 'Jordanian military crackdown killing thousands of Palestinians and expelling the PLO to Lebanon.',
+        },
+        {
+          term: 'Fatahland',
+          def: 'Southern Lebanon region controlled by the PLO as an armed launchpad against northern Israel.',
         },
         {
           term: 'Munich Olympics (1972)',
-          def: 'Terrorist attack killing 11 Israeli athletes; demanded 234 Palestinian prisoners.',
+          def: 'Black September attack resulting in the slaughter of 11 Israeli athletes and coaches.',
         },
         {
-          term: '234 Palestinian Prisoners',
-          def: 'Number of prisoners demanded by Black September during the Munich hostage siege.',
+          term: '234 Prisoners',
+          def: 'The number of Palestinian militants demanded by the Munich terrorists in exchange for hostages.',
         },
         {
-          term: '51 Parcel Bombs',
-          def: 'Explosive mail sent to Israeli embassies worldwide post-Munich, killing 1 in London.',
+          term: 'Fürstenfeldbruck',
+          def: 'Bavarian airfield where a botched German police rescue attempt ended in the massacre of the hostages.',
         },
         {
           term: 'Operation Wrath of God',
-          def: 'Covert Mossad targeted assassination campaign authorized by PM Golda Meir.',
+          def: 'Covert Mossad targeted assassination campaign authorized by Golda Meir to avenge Munich.',
         },
         {
-          term: 'Anwar Sadat',
-          def: 'Succeeded Nasser as Egyptian President on 28 Sept 1970; charted a new strategy.',
+          term: 'Lillehammer Affair (1973)',
+          def: 'Botched Mossad operation in Norway killing an innocent Moroccan waiter, leading to arrests.',
         },
       ],
     },
   },
-
-  // ---------------------------------------------------------------------------
-  // SPREAD 8 (KT 2.4): THE WAR OF ATTRITION & YOM KIPPUR WAR (1973)
-  // ---------------------------------------------------------------------------
   {
     id: 'cme_spread_8',
     spreadNum: 8,
     topic: 'Key Topic 2 • The Escalating Conflict, 1964–73',
-    title: 'KT 2.4: The War of Attrition & The Yom Kippur War (October 1973)',
+    title: 'KT 2.4: The Yom Kippur War & The 1973 Oil Crisis',
     left: {
-      tag: 'KT 2.4 • Operation Badr, Bar Lev Breach & The Oil Crisis',
-      headline: 'Surprise, Water Monitors & Superpower Brinkmanship: The 1973 War',
+      tag: 'KT 2.4 • Strategic Surprise, The Oil Weapon & Superpower Crisis',
+      headline: 'The October Earthquake: Shattered Invincibility & The Global Oil Weapon',
       summary:
-        "Following frustrated diplomatic overtures, Egyptian President Anwar Sadat prepared for war to break the geopolitical stalemate. In July 1972, Sadat expelled 15,000 Soviet military advisers to regain strategic independence, secured Saudi financial subsidies, and forged a joint war plan with Syria. On 6 October 1973 (Yom Kippur and Ramadan), Egypt and Syria launched a devastating surprise attack. Egyptian engineers used 450 high-pressure water monitors to wash away the 20-meter Bar-Lev sand rampart in under two hours, while Syrian armor stormed the Golan Heights. Israel rallied through US Operation Nickel Grass airlifts, and General Sharon crossed the Suez Canal, trapping Egypt's Third Army. When Moscow threatened unilateral military intervention, the US raised readiness to DEFCON 3 nuclear alert. The war shattered Israel's myth of invincibility, prompted an OAPEC oil embargo that quadrupled oil prices (up 400%), and compelled the US to pursue active peace diplomacy.",
+        'Frustrated by diplomatic stalemate and Israel’s refusal to negotiate over Sinai, Egyptian President Anwar Sadat prepared a limited war to force superpower intervention. In July 1972, Sadat expelled 15,000 Soviet advisers to demonstrate independence. On 6 October 1973 (Yom Kippur and Ramadan), Egypt and Syria launched a devastating coordinated surprise attack. Egyptian forces used high-pressure water cannons to breach the Bar-Lev Line, crossing the Suez Canal under a dense SAM-6 missile umbrella, while 1,400 Syrian tanks stormed the Golan Heights. Israel mobilized its reserves under extreme pressure; after early counter-attacks failed, General Ariel Sharon breached the canal at Deversoir, encircling the Egyptian Third Army. The US raised its military to DEFCON 3 nuclear alert after Soviet threats. Concurrently, OAPEC imposed an oil embargo, quadrupling oil prices and permanently transforming Western foreign policy.',
       pillars: [
         {
-          title: "Sadat's Plan & Preparation",
-          subtitle: 'Expulsion of Soviets & Saudi Alliance',
+          title: "Sadat's Strategy & Soviet Exit",
+          subtitle: 'Breaking the Diplomatic Stalemate',
           bullets: [
-            '**Expulsion of 15,000 Soviets (July 1972):** Sadat expelled 15,000 Soviet advisers because Moscow withheld offensive weapons and urged caution, giving Egypt operational independence.',
-            '**Alliance with Saudi Arabia & Syria:** Sadat allied with President Hafez al-Assad of Syria and King Faisal of Saudi Arabia, securing vital financial subsidies and a pledge to use the "oil weapon".',
-            '**Deception & Israeli Hubris (Conception):** Israel’s intelligence chief Eli Zeira believed the "Conception"—that Egypt would never attack without long-range bombers; Israel dismissed repeated Egyptian military build-ups along the canal as routine exercises.',
+            '**Anwar Sadat\'s Dilemma:** Succeeded Nasser in Sept 1970; inherited a bankrupt Egyptian economy, food riots, and 1.5 million displaced citizens; sought to break the "no war, no peace" stalemate through a limited military shock.',
+            "**Rejection of Sadat's Peace Initiative:** In 1971, Sadat offered full peace in exchange for Israeli withdrawal from Sinai; Israeli Prime Minister Golda Meir rejected the offer, convinced of Israel's military invincibility.",
+            '**Expulsion of 15,000 Soviet Advisers (July 1972):** Sadat expelled 15,000 Soviet military technicians to remove Soviet control, demonstrate Egyptian independence, and lay the groundwork for eventual US diplomatic mediation.',
+            '**Saudi Alliance & Secret War Planning:** Sadat forged a close alliance with King Faisal of Saudi Arabia, securing financial subsidies and planning the coordinated use of the "oil weapon" alongside Syrian President Hafez al-Assad.',
           ],
         },
         {
-          title: 'Operation Badr & Bar Lev Breach',
-          subtitle: 'The 6 October Surprise Attack',
+          title: 'Operation Badr & Golan Surprise',
+          subtitle: 'Water Cannons & The SAM Shield',
           bullets: [
-            '**The Surprise Assault (2:00 PM, 6 Oct):** Launched on Yom Kippur (holiest Jewish fast day) and during Ramadan; 8,000 Egyptian infantry crossed the canal in the first 20 minutes under a massive 2,000-gun artillery barrage.',
-            '**Water Monitors Breach the Ramparts:** Egyptian engineers deployed **450 high-pressure water pumps** to blast 3 million cubic meters of sand into the water, cutting 60 breaches in the 20-meter Bar-Lev sand wall in under 2 hours.',
-            '**SAM Missile Umbrella:** Soviet-supplied SAM-6 surface-to-air missiles and man-portable Sagger anti-tank wire-guided missiles decimated initial Israeli armored and air counter-attacks, establishing 5 bridgeheads.',
+            '**Operation Badr (2 PM, 6 Oct 1973):** On Yom Kippur (the holiest Jewish fast day) and during Ramadan, Egyptian forces crossed the Suez Canal; high-pressure water cannons washed away the 20-meter Bar-Lev sand ramparts in 2 hours.',
+            '**The Anti-Tank & SAM Shield:** Soviet-supplied wire-guided SAGGER missiles and RPGs destroyed early Israeli tank counter-attacks; mobile SAM-6 air defense umbrellas downed over 40 Israeli jets, shattering the myth of IDF invincibility.',
+            '**Syrian Assault on the Golan Heights:** Syria launched 1,400 tanks against 177 Israeli tanks along the purple line; Syrian commandos captured the strategic Mount Hermon listening post before IDF reserves stabilized the ridge.',
+            '**Crisis of Invincibility (8 Oct):** Ill-coordinated Israeli armored counter-attacks in Sinai suffered catastrophic defeats; Defence Minister Moshe Dayan privately warned Golda Meir that "the Third Temple is falling".',
           ],
         },
         {
-          title: 'Turning the Tide & DEFCON 3',
-          subtitle: "Sharon's Crossing & Nuclear Alert",
+          title: 'IDF Counter-Strike & Oil Weapon',
+          subtitle: "Sharon's Crossing & DEFCON 3",
           bullets: [
-            '**Valley of Tears (Golan):** 100 Israeli Centurion tanks held off 1,400 Syrian tanks for 4 days in brutal combat before counter-attacking to within 40km of Damascus.',
-            '**Operation Nickel Grass Airlift:** On 14 October, President Nixon ordered an emergency US military airlift, flying **22,000 tons of tanks, artillery, and electronic gear** directly into Israeli airbases.',
-            '**Sharon Crosses Suez & DEFCON 3:** On 16 Oct, Ariel Sharon found a gap between Egyptian armies, bridged the canal, and encircled the Egyptian Third Army (20,000 troops); when USSR threatened troop deployments, the US went on **DEFCON 3 nuclear alert** before a ceasefire took effect on 24 Oct.',
+            "**Sharon's Deversoir Crossing (15–16 Oct):** General Sharon exploited a gap between Egypt's Second and Third Armies, ferried tanks across the Suez Canal on pontoon bridges, and completely encircled the **20,000-strong Egyptian Third Army**.",
+            '**Superpower Resupply Race:** The USSR launched an emergency airlift to Cairo/Damascus; President Nixon launched **Operation Nickel Grass**, airlifting 22,000 tons of tanks, ammunition, and Phantoms to Israel.',
+            '**DEFCON 3 Nuclear Alert (24 Oct):** When Soviets threatened to deploy paratroopers to enforce a ceasefire on the encircled Third Army, the US placed its military on DEFCON 3 nuclear alert, forcing a UN ceasefire (Res 338).',
+            '**The OAPEC Oil Shock (Oct 1973 – Mar 1974):** Arab oil producers placed an embargo on the US and Netherlands and cut production by 25%; oil prices **quadrupled from $3 to $12 per barrel (a 400% increase)**, triggering global recession.',
           ],
         },
       ],
       keyFigures: [
         {
           name: 'Anwar Sadat',
-          role: 'Egyptian President who conceived Operation Badr, restored Arab military honor, and leveraged the war to initiate direct peace negotiations.',
+          role: 'Egyptian President who orchestrated the surprise crossing of the Suez Canal, shattering Israeli invincibility and regaining Arab honor.',
         },
         {
           name: 'Golda Meir',
-          role: 'Israeli Prime Minister who faced existential crisis, delayed pre-emptive strike to secure US diplomatic backing, and resigned post-war.',
+          role: 'Israeli Prime Minister caught off guard on Yom Kippur; secured vital US military airlift but was forced to resign in 1974 following the Agranat Commission.',
         },
         {
-          name: 'Moshe Dayan',
-          role: 'Defence Minister whose confidence collapsed during the opening days ("destruction of the Third Temple"); criticized heavily by Agranat Commission.',
+          name: 'Ariel Sharon',
+          role: "IDF General who disobeyed orders to punch across the Suez Canal at Deversoir, encircling Egypt's Third Army and turning the tactical tide.",
         },
         {
-          name: 'Henry Kissinger',
-          role: 'US Secretary of State who organized Operation Nickel Grass airlift and mediated the ceasefires, initiating "shuttle diplomacy".',
+          name: 'King Faisal of Saudi Arabia',
+          role: 'Saudi monarch who led OAPEC in imposing the historic oil embargo on Western nations, unleashing the economic power of Arab petroleum.',
         },
       ],
       archivalSource: {
-        title: 'Prime Minister Golda Meir Address to the Knesset (23 October 1973)',
-        citation: 'Knesset Records, Special Emergency War Session',
+        title: 'Anwar Sadat Speech to Egyptian People on the Canal Crossing (16 Oct 1973)',
+        citation: 'Egyptian National Archives, Cairo',
         quote:
-          'We have never suffered such a bitter blow... Our losses are heavy, very heavy. But our forces have stemmed the onslaught, driven the enemy back, and are now fighting across the Suez Canal and deep within Syria.',
+          'We have crossed the barrier that seemed impossible to cross. The myth of the invincible Israeli army has been buried in the sands of Sinai forever. We did not fight to conquer, but to liberate our occupied land and restore Arab dignity.',
         significance:
-          "Acknowledged the unprecedented scale of Israeli casualties (over 2,600 dead), publicly signaling the end of Israel's military invincibility.",
+          'Expressed the profound psychological triumph of the war for the Arab world, transforming Sadat from an underestimated leader into an international statesman.',
       },
     },
     right: {
-      tag: 'KT 2.4 • Tactical Deep-Dive, Superpower Dynamics & Word Bank',
+      tag: 'KT 2.4 • Military Doctrine, Geopolitical Shockwaves & Word Bank',
       deepCases: [
         {
-          title: '1. Expulsion of 15,000 Soviets & The Saudi Lifeline',
+          title: "1. Sadat's Diplomatic Deadlock & Soviet Expulsion",
           points: [
-            '**July 1972 Expulsion:** Sadat ordered 15,000 Soviet military technicians out of Egypt; this convinced Israeli intelligence that Egypt was militarily unready for war.',
-            '**Saudi Financial Underwriting:** King Faisal provided $400 million in low-interest loans and agreed to coordinate oil production cuts to support the front-line attack.',
-            '**Hafez al-Assad Alliance:** Egypt and Syria secretly synchronized operational watches, agreeing to attack at 2:00 PM with the sun behind Egyptian gunners.',
+            '**The "No War, No Peace" Paralysis:** Between 1970 and 1973, Israel ignored Sadat\'s peace overtures; Sadat decided only a military crisis could compel US diplomatic pressure on Israel.',
+            '**Expulsion of 15,000 Soviets (1972):** Sadat expelled Soviet military technicians because Moscow refused to deliver long-range offensive strike bombers.',
+            '**Deception & Camouflage:** Egypt staged 22 false military mobilizations along the canal throughout 1973, conditioning Israeli intelligence (Aman) to dismiss real preparations as routine drills.',
+            '**Intelligence Blindness (The "Concept"):** Israeli intelligence director Eli Zeira assumed Egypt would never attack without air parity; warning dispatches from King Hussein of Jordan were ignored.',
           ],
         },
         {
-          title: '2. The High-Pressure Water Monitor Engineering Feat',
+          title: '2. Operation Badr: High-Pressure Water & SAM Umbrella',
           points: [
-            '**The Sand Wall Barrier:** Israel spent $300m building a 20-meter high, 55-degree sand wall along the canal designed to withstand conventional high explosives.',
-            '**Engineering Breakthrough:** Egyptian General Baki Zaki Youssef adapted British firefighting water monitors; water pumps blasted gaps through the sand ramparts in 90 minutes.',
-            '**Bridging the Canal:** Egyptian engineers laid 10 pontoon bridges, transferring 100,000 troops, 1,000 tanks, and 13,500 vehicles into Sinai within 24 hours.',
+            '**Water Cannons on the Sand Berm:** Egyptian engineers imported commercial firefighting pumps from Germany, spraying 3,000 cubic meters of sand away per hour to carve 60 vehicle gaps.',
+            '**Soviet SAGGER Carnage:** Egyptian infantry armed with AT-3 SAGGER wire-guided anti-tank missiles decimated Israeli tanks counter-attacking without infantry screen.',
+            '**SAM-6 Umbrella:** Egyptian forces stayed strictly within a 10km missile bubble along the canal; Israeli fighter jets attempting dive-bombing were destroyed in dozens.',
+            '**Golan Fortress Crisis:** In the north, 1,400 Syrian tanks nearly broke through the "Valley of Tears" before heroic resistance by Israel\'s 7th Armoured Brigade stabilized the line.',
           ],
         },
         {
-          title: '3. Operation Nickel Grass & The DEFCON 3 Nuclear Stand-Off',
+          title: "3. Sharon's Deversoir Crossing & Third Army Siege",
           points: [
-            '**Emergency Airlift:** Nixon dispatched C-5 Galaxy transports carrying 22,000 tons of supplies; Soviet Union conducted an equivalent massive airlift to Syria and Egypt.',
-            "**Sharon's Counter-Crossing:** Ariel Sharon's division crossed the canal on 16 Oct, cutting supply lines and trapping 20,000 troops of Egypt's Third Army in Sinai.",
-            '**Superpower Nuclear Alert:** Soviet Premier Brezhnev warned Nixon that USSR would send troops to enforce the ceasefire; US placed global nuclear forces on **DEFCON 3** alert until Moscow backed down.',
+            '**The Turning Point (14 Oct):** Sadat ordered Egyptian armor to advance beyond the SAM umbrella to relieve pressure on Syria; Israel ambushed and destroyed 250 Egyptian tanks in hours.',
+            '**Crossing the Canal (15–16 Oct):** General Sharon discovered a 20-mile gap between Egyptian Second and Third Armies; IDF commandos crossed in rubber dinghies followed by floating pontoon bridges.',
+            '**The Third Army Encircled:** Israeli armor swept south down the west bank of the Suez Canal, cutting the Cairo-Suez highway and completely encircling 20,000 Egyptian soldiers.',
+            '**Agranat Commission (1974):** After the war, an Israeli judicial inquiry blamed Chief of Staff Elazar and intelligence chief Zeira, forcing Golda Meir and Moshe Dayan to resign.',
           ],
         },
         {
-          title: '4. The OAPEC Oil Weapon: The 400% Price Shock',
+          title: '4. The Superpower Nuclear Alert & The OAPEC Oil Weapon',
           points: [
-            '**The Oil Embargo:** On 17 Oct 1973, Arab oil ministers imposed an embargo on the US, Netherlands, and allies, cutting monthly oil production by 25%.',
-            '**Quadrupled Oil Prices (400% Rise):** The price of crude oil skyrocketed from $3 to nearly $12 per barrel, triggering severe global inflation, factory closures, and petrol rationing.',
-            '**Diplomatic Transformation:** The oil shock proved Arab collective economic power, forcing US foreign policy to shift from unilateral support for Israel toward active regional diplomacy.',
+            '**Operation Nickel Grass:** Nixon ordered US Air Force C-5 Galaxies to fly round-the-clock airlifts directly to Israel, delivering 22,000 tons of tanks, electronic jamming gear, and munitions.',
+            '**DEFCON 3 Nuclear Showdown:** Brezhnev threatened unilateral Soviet troop deployment to save the Third Army; Kissinger raised US military forces to DEFCON 3 nuclear alert for 24 hours.',
+            '**OAPEC 400% Price Hike:** Saudi Arabia and Arab producers cut output 5% per month and placed an embargo on the US; crude oil quadrupled from **$3 to $12 per barrel**.',
+            '**The Paradigm Shift:** The oil shock shattered Western economic complacency, triggering stagflation and proving to Washington that Israeli occupation endangered vital Western economic security.',
           ],
         },
       ],
       causalPathway: [
         {
-          stage: '1. Soviet Expulsion & Secret Pact',
-          text: 'Sadat expels 15k Soviet advisers; secures Saudi subsidies and coordinates 2-front surprise attack with Syria.',
+          stage: '1. Soviet Exit & Yom Kippur Strike',
+          text: 'Sadat expels 15k Soviets; launches Operation Badr 6 Oct; water cannons and SAGGERs breach Bar-Lev Line.',
         },
         {
-          stage: '2. Operation Badr & Bar Lev Breach',
-          text: '450 water monitors blast through sand wall in 2 hours; 100k Egyptian troops cross Suez under SAM missile umbrella.',
+          stage: '2. Golan & Sinai Desperation',
+          text: '1,400 Syrian tanks attack Golan; early IDF counter-attacks fail; Dayan warns "Third Temple is falling".',
         },
         {
-          stage: '3. US Airlift & Sharon Crossing',
-          text: 'US airlifts 22k tons of arms; Sharon crosses canal and encircles Third Army; US goes to DEFCON 3 nuclear alert.',
+          stage: '3. Sharon Crosses & Third Army Cut',
+          text: 'Sharon punches through Deversoir gap; encircles 20k Egyptian troops; US Nickel Grass airlift delivers 22k tons.',
         },
         {
-          stage: '4. Invincibility Shattered & Oil Shock',
-          text: 'Myth of invincibility broken (2,600 dead); OAPEC embargo quadruples oil prices (400%); forces US active diplomacy.',
+          stage: '4. DEFCON 3 & OAPEC 400% Shock',
+          text: 'Soviet threats trigger US nuclear alert; OAPEC quadruples oil price ($3 to $12); US forced into active diplomacy.',
         },
       ],
       masterWordBank: [
         {
-          term: 'Operation Badr (1973)',
-          def: 'Egyptian surprise military assault across the Suez Canal on 6 October 1973.',
+          term: 'Anwar Sadat',
+          def: 'Egyptian President who launched the surprise 1973 attack to break diplomatic stalemate.',
         },
         {
           term: '15,000 Soviet Advisers',
-          def: 'Soviet personnel expelled by Sadat in July 1972 to regain operational freedom.',
+          def: 'Soviet personnel expelled by Sadat in July 1972 to demonstrate independence.',
         },
         {
-          term: '450 Water Monitors',
-          def: 'High-pressure water pumps used to breach the 20m Bar-Lev sand wall in 2 hours.',
+          term: 'Operation Badr',
+          def: 'Egyptian code name for the crossing of the Suez Canal on 6 October 1973.',
         },
         {
-          term: 'Bar-Lev Line',
-          def: 'Fortified chain of 35 Israeli concrete bunkers and sand barriers along the Suez Canal.',
+          term: 'Water Cannons',
+          def: 'High-pressure pumps used by Egyptian engineers to wash away the Bar-Lev sand ramparts.',
         },
         {
-          term: 'SAM-6 Missile Umbrella',
-          def: 'Soviet mobile air defense batteries neutralizing Israeli air superiority over Suez.',
+          term: 'SAGGER Missiles',
+          def: 'Soviet-supplied wire-guided anti-tank missiles that decimated Israeli armor.',
         },
         {
-          term: 'Valley of Tears',
-          def: 'Ferocious tank battle on the Golan Heights where 100 Israeli tanks halted 1,400 Syrian tanks.',
+          term: 'SAM-6 Umbrella',
+          def: 'Mobile surface-to-air missile shield protecting Egyptian forces along the canal.',
+        },
+        {
+          term: 'Deversoir Gap',
+          def: 'The seam between Egyptian Second and Third Armies exploited by Sharon to cross the canal.',
         },
         {
           term: 'Operation Nickel Grass',
           def: 'Massive emergency US military airlift delivering 22,000 tons of supplies to Israel.',
         },
         {
-          term: 'DEFCON 3 Nuclear Alert',
-          def: 'Heightened US military readiness ordered by Nixon when USSR threatened intervention.',
+          term: 'DEFCON 3',
+          def: 'US military nuclear alert level ordered by Nixon and Kissinger during Soviet standoff.',
         },
         {
-          term: 'OAPEC Oil Weapon',
-          def: 'Arab oil production cuts and embargo against nations supporting Israel in the 1973 war.',
+          term: 'UN Resolution 338',
+          def: 'Ceasefire resolution adopted 22 Oct 1973 calling for immediate peace negotiations.',
         },
         {
-          term: 'Quadrupled Oil Prices (400%)',
-          def: 'Economic shock wave resulting from the Arab oil embargo, forcing Western diplomacy.',
+          term: 'OAPEC Oil Embargo',
+          def: 'Arab oil production cuts and embargo against the US, quadrupling oil prices from $3 to $12.',
         },
         {
           term: 'Agranat Commission',
-          def: "Israeli judicial inquiry investigating military unreadiness, leading to Golda Meir's resignation.",
-        },
-        {
-          term: 'Myth of Invincibility',
-          def: 'Psychological trauma for Israel, having lost 2,600 soldiers to an Arab surprise attack.',
+          def: 'Israeli judicial inquiry into war unpreparedness, leading to the resignations of Meir and Dayan.',
         },
       ],
     },
   },
-  ,
-  // ---------------------------------------------------------------------------
-  // SPREAD 9 (KT 3.1): SHUTTLE DIPLOMACY, SUEZ REOPENING & ROAD TO CAMP DAVID
-  // ---------------------------------------------------------------------------
+
   {
     id: 'cme_spread_9',
     spreadNum: 9,
@@ -1502,29 +1528,32 @@ const SPREADS = [
       pillars: [
         {
           title: "Kissinger's Shuttle Diplomacy",
-          subtitle: 'Step-by-Step Disengagement',
+          subtitle: 'Step-by-Step Disengagement (1974–75)',
           bullets: [
-            "**Step-by-Step Mediation:** Henry Kissinger traveled continuously between Middle Eastern capitals; because Arab states refused to speak directly to Israel, Kissinger acted as intermediary, exploiting Israel's total dependence on US military aid.",
-            '**Sinai I (1974) & Sinai II (1975):** Egypt and Israel agreed to a troop withdrawal from the Suez Canal and established a UN buffer zone; in 1975, Israel pulled back 20km from the strategic Gidi and Mitla passes, returning the Abu Rudeis oilfields to Egypt.',
-            "**Lifting the Oil Embargo:** Kissinger's diplomacy persuaded Arab oil producers to end the devastating oil embargo against the United States in March 1974, though Syria refused to negotiate peace without the return of the Golan Heights.",
+            "**Step-by-Step Mediation:** Henry Kissinger traveled continuously between Middle Eastern capitals; because Arab states refused to speak directly to Israel, Kissinger acted as intermediary, exploiting Israel's total dependence on US military resupply.",
+            '**Sinai I Accord (Jan 1974):** Egypt and Israel agreed to mutual troop withdrawal from the Suez Canal and established a UN buffer zone, while Syria and Israel signed a May 1974 Golan accord monitored by UNDOF peacekeepers.',
+            '**Sinai II Accord (Sept 1975):** Israel pulled back 20km from the strategic Gidi and Mitla mountain passes, returned the vital Abu Rudeis oilfields to Egyptian control, and agreed to resolve future conflicts through peaceful diplomacy.',
+            "**Lifting the Oil Embargo:** Kissinger's diplomacy persuaded Arab oil producers to end the devastating oil embargo against the United States in March 1974, restoring international petroleum flows and stabilizing Western economies.",
           ],
         },
         {
           title: 'Reopening the Suez Canal',
           subtitle: '700,000 Mines & 5 June 1975',
           bullets: [
-            "**Canal Clearance Operation:** The canal had been completely closed since 1967; **1,700 Egyptian military engineers cleared nearly 700,000 mines** from the canal's 164 km of banks; **96 Egyptian soldiers were killed** during the three-month operation.",
-            '**Multinational Naval Clearance:** Navies of the US, UK, France, and Egypt cleared the waterway itself of unexploded bombs, sunken warships, aircraft, and tanks, and demolished the causeway built across the canal by Israeli forces.',
-            "**Grand Reopening (5 June 1975):** President Sadat presided over a ceremonial reopening of the Suez Canal, exactly eight years to the day after it was closed during the Six Day War, restoring millions in vital transit revenue to Egypt's bankrupt economy.",
+            '**Eight-Year Paralysis:** The Suez Canal had been completely closed to international maritime commerce since the June 1967 Six Day War, stranding 15 cargo ships (the "Yellow Fleet") and costing Egypt hundreds of millions in toll fees.',
+            "**Massive Clearance Operation:** **1,700 Egyptian military engineers cleared nearly 700,000 landmines** and unexploded ordnance from the canal's 164 km of banks; **96 Egyptian soldiers were killed** during the dangerous three-month sweep.",
+            '**Multinational Naval Clearance:** Navies of the US, Britain, France, and Egypt dredged the waterway itself of unexploded bombs, sunken warships, aircraft, and tanks, and demolished the military causeway built across the canal by the IDF.',
+            "**Grand Reopening (5 June 1975):** President Anwar Sadat presided over a ceremonial reopening of the canal, exactly eight years to the day after it was closed in 1967, restoring millions in vital transit revenue to Egypt's bankrupt economy.",
           ],
         },
         {
           title: "Sadat's Journey to Jerusalem",
-          subtitle: 'Food Riots & The Knesset Address',
+          subtitle: 'Food Riots & The Knesset Address (1977)',
           bullets: [
-            '**Cairo Food Riots (Jan 1977):** Violent riots against bread price increases threatened Sadat’s regime; Sadat realized Egypt was economically exhausted and desperately needed peace to redirect military spending to domestic needs.',
-            '**Historic Knesset Speech (20 Nov 1977):** Sadat stunned the world by declaring he would go "to the ends of the earth" for peace; he flew to Israel and spoke directly to the Knesset, offering full peace in exchange for complete Israeli withdrawal from Sinai.',
-            "**Begin's Reciprocal Visit (Dec 1977):** Israeli Prime Minister Menachem Begin visited Ismailia, Egypt; though talks stalled over Palestinian self-rule, the psychological barrier of 30 years of war was permanently shattered.",
+            '**Cairo Food Riots (18–19 Jan 1977):** Violent riots against bread and fuel price increases killed 79 people and threatened Sadat’s regime; Sadat realized Egypt was economically exhausted and could not maintain wartime spending.',
+            '**Historic Knesset Speech (20 Nov 1977):** Sadat stunned the world by declaring he would go "to the ends of the earth" for peace; he flew to Israel and spoke directly to the Knesset, offering full peace in exchange for complete Sinai withdrawal.',
+            "**Overcoming Psychological Barriers:** Sadat's arrival at Ben Gurion Airport on 19 November 1977 shattered 30 years of Arab diplomatic taboos; he shook hands with Golda Meir and Ariel Sharon before an astonished global television audience.",
+            "**Begin's Reciprocal Visit (Dec 1977):** Israeli Prime Minister Menachem Begin visited Ismailia, Egypt; though bilateral talks stalled over Palestinian self-determination, the groundwork was established for US intervention at Camp David.",
           ],
         },
       ],
@@ -1561,33 +1590,37 @@ const SPREADS = [
         {
           title: '1. Kissinger\'s "Shuttle Diplomacy" Architecture',
           points: [
-            '**Bypassing the Arab Boycott:** Arab leaders would not sit in the same room as Israeli negotiators; Kissinger flew over 30 round-trip missions carrying handwritten compromise drafts.',
-            '**Golan Disengagement (May 1974):** Kissinger negotiated a disengagement treaty between Israel and Syria, establishing a UN Disengagement Observer Force (UNDOF) buffer zone that held for 40 years.',
-            '**Lifting the Oil Embargo:** Progress in the Sinai talks convinced Saudi Arabia to end the OAPEC oil embargo in March 1974, restoring petroleum flows to Western economies.',
+            '**Bypassing the Arab Boycott:** Arab leaders refused to sit in the same room as Israeli negotiators; Kissinger flew over 30 round-trip missions carrying handwritten compromise drafts between Cairo, Damascus, and Jerusalem.',
+            "**Exploiting Israeli Dependence:** Kissinger used Israel's desperate need for US financial credits, Phantom jets, and modern munitions following Yom Kippur losses to pressure Golda Meir and Yitzhak Rabin into territorial concessions.",
+            '**Golan Disengagement (May 1974):** Kissinger negotiated a disengagement treaty between Israel and Syria, creating a United Nations Disengagement Observer Force (UNDOF) buffer zone that maintained an unbroken border truce for decades.',
+            '**Strategic Splitting of the Arab Coalition:** By securing separate bilateral disengagement accords with Egypt, Kissinger successfully decoupled the most powerful Arab military from Syria and the PLO.',
           ],
         },
         {
           title: '2. Clearing the Suez Canal (700k Mines & 5 June 1975)',
           points: [
-            '**Canal Clearance Danger:** **1,700 Egyptian engineers cleared 700,000 mines** along 164 km of banks; **96 men died** in three months from exploding ordnance.',
-            '**Dredging the Waterway:** International naval teams removed 10 sunken cargo vessels, military bridge causeways, and hundreds of live mortar shells and rockets.',
-            '**Reopened 5 June 1975:** Sadat led a naval convoy through the canal exactly 8 years after the 1967 closure, revitalizing world commerce and securing Egyptian transit fees.',
+            '**Canal Clearance Danger:** **1,700 Egyptian engineers cleared 700,000 mines** along 164 km of banks; **96 men died** in three months from exploding ordnance, illustrating the human sacrifice required to reopen world trade.',
+            '**Dredging the Waterway:** Operation Nimbus Stream and Nimbus Moon deployed US, British, French, and Egyptian naval divers to remove 10 sunken cargo vessels, military bridge causeways, and thousands of live mortar shells and rockets.',
+            '**Reopened 5 June 1975:** Sadat led a ceremonial naval convoy through the canal aboard the destroyer *6th of October*, exactly 8 years to the day after its closure, restoring vital international commerce and Egyptian customs revenue.',
+            "**Economic Dividends:** Reopening the canal generated over $500 million annually in toll revenues for Egypt's treasury, providing critical stabilization to an economy on the brink of hyperinflation.",
           ],
         },
         {
           title: '3. Economic Crisis & Cairo Bread Riots (Jan 1977)',
           points: [
-            '**Economic Insolvency:** Decades of wartime mobilization left Egypt with $12 billion in foreign debt, collapsing infrastructure, and runaway inflation.',
-            '**Food Riots (18–19 Jan 1977):** When the government cut bread and fuel subsidies to meet IMF loan conditions, riots erupted in Cairo and Alexandria, killing 79 people.',
-            '**Strategic Imperative:** Sadat concluded Egypt could never achieve economic survival or feed its growing population while devoting 40% of its budget to military conflict with Israel.',
+            '**Economic Insolvency:** Decades of continuous wartime mobilization left Egypt with $12 billion in foreign debt, collapsing infrastructure, soaring unemployment, and runaway inflation.',
+            '**Food Riots (18–19 Jan 1977):** When the Egyptian government abruptly cut basic food and fuel subsidies to satisfy International Monetary Fund (IMF) loan requirements, violent riots erupted across Cairo and Alexandria, killing 79 people.',
+            '**Domestic Impasse:** The riots forced Sadat to deploy the Egyptian military onto the streets to restore order and immediately cancel the price rises, demonstrating that the domestic economy was on the verge of total collapse.',
+            '**Strategic Imperative:** Sadat concluded Egypt could never achieve economic development or feed its exploding population while devoting 40% of its national budget to perpetual military confrontation with Israel.',
           ],
         },
         {
           title: '4. The Historic Knesset Speech (20 November 1977)',
           points: [
-            '**Stunning the Arab World:** Sadat announced to the Egyptian National Assembly that he was willing to go to the Israeli Knesset; Arab allies reacted with fury and disbelief.',
-            '**Arrival in Tel Aviv:** On 19 Nov 1977, Sadat landed at Ben Gurion Airport and was received by an Israeli honor guard, shaking hands with Golda Meir and Ariel Sharon.',
-            '**Knesset Demands:** Sadat offered genuine peace and recognition, but insisted that lasting peace required total Israeli withdrawal from Sinai, Golan, and West Bank.',
+            '**Stunning the Arab World:** Sadat announced to the Egyptian National Assembly that he was willing to go to the Israeli Knesset; Arab allies reacted with fury, but Israeli Prime Minister Menachem Begin promptly issued an official invitation.',
+            '**Arrival in Tel Aviv:** On 19 Nov 1977, Sadat landed at Ben Gurion Airport and was received by an Israeli military honor guard, shaking hands with Golda Meir, Yitzhak Rabin, and Ariel Sharon on live international television.',
+            '**Knesset Demands:** Sadat offered genuine peace, open borders, and mutual recognition, but insisted that lasting peace required total Israeli withdrawal from Sinai, Golan, and the West Bank, plus Palestinian self-determination.',
+            "**Catalyst for Camp David:** Although Sadat and Begin failed to reach an immediate agreement at their follow-up summit in Ismailia, Sadat's courage created an irreversible momentum that forced US President Jimmy Carter to intervene.",
           ],
         },
       ],
@@ -1661,10 +1694,6 @@ const SPREADS = [
       ],
     },
   },
-
-  // ---------------------------------------------------------------------------
-  // SPREAD 10 (KT 3.2): CAMP DAVID ACCORDS & TREATY OF WASHINGTON (1978–79)
-  // ---------------------------------------------------------------------------
   {
     id: 'cme_spread_10',
     spreadNum: 10,
@@ -1680,9 +1709,10 @@ const SPREADS = [
           title: 'The 13 Days at Camp David (1978)',
           subtitle: "Carter's High-Stakes Summit",
           bullets: [
-            '**Total Diplomatic Isolation:** In Sept 1978, Carter brought Sadat and Begin to Maryland; when the two leaders refused to speak to each other after day three, Carter personally drafted and redrafted proposals 23 times.',
-            '**The Sinai vs Settlements Crisis:** Begin agreed to return the entire Sinai Peninsula, but refused to dismantle Israeli settlements (e.g. Yamit) or concede sovereignty over the West Bank and East Jerusalem.',
-            '**The Breakthrough Moment:** When Sadat packed his bags to leave on day 11, Carter warned him that abandoning the talks would destroy the US-Egyptian alliance and invite Soviet domination, convincing him to sign.',
+            '**Total Diplomatic Isolation:** In Sept 1978, Carter brought Sadat and Begin to Maryland; when the two leaders refused to speak to each other after day three, Carter personally drafted and redrafted compromise proposals 23 times.',
+            '**Sinai vs Settlements Impasse:** Begin agreed to return the Sinai Peninsula, but adamantly refused to dismantle Israeli settlements (e.g. Yamit) or concede sovereignty over the West Bank and East Jerusalem.',
+            '**The Breakthrough Moment:** When Sadat packed his bags to leave on day 11, Carter warned him that abandoning the talks would destroy the US-Egyptian alliance and invite Soviet domination, convincing him to stay and sign.',
+            "**Begin's Grandchildren Concession:** On the final morning, Carter presented Begin with signed photographs dedicated individually to Begin's grandchildren; emotionally moved, Begin agreed to a free Knesset vote to dismantle Yamit.",
           ],
         },
         {
@@ -1691,16 +1721,18 @@ const SPREADS = [
           bullets: [
             '**Framework 1 (Sinai Peace):** Israel would return all of Sinai within three years, dismantle all Jewish settlements, and restore Egyptian sovereignty; Egypt recognized Israel and granted navigation rights in Suez and Aqaba.',
             '**Framework 2 (Palestinian Autonomy):** Envisioned an elected self-governing authority for West Bank and Gaza for 5 years, followed by final-status talks; however, Palestinians were not consulted, and the terms were deliberately vague.',
-            '**Massive US Economic Underwriting:** Carter secured the pact by pledging **$10 billion in US aid to Egypt** ($1 billion annually for 10 years) and **$3 billion in US loans/grants to Israel** to build replacement airbases in the Negev Desert.',
+            '**$10 Billion Aid Package to Egypt:** Carter secured the pact by pledging **$10 billion in US aid to Egypt** ($1 billion annually for 10 years) in economic development, grain supplies, and advanced American military hardware.',
+            '**$3 Billion Aid Package to Israel:** Carter guaranteed **$3 billion in US loans and grants to Israel** to finance the construction of two state-of-the-art military airbases (Nevatim and Ramon) in the Negev Desert to replace surrendered Sinai bases.',
           ],
         },
         {
           title: 'The Treaty & Fatal Backlash',
           subtitle: 'Washington 1979 & Sadat Assassination',
           bullets: [
-            "**Treaty of Washington (26 March 1979):** Signed on the White House lawn; Egypt became the first Arab state to officially recognize Israel's right to exist in peace.",
-            '**Arab League Expulsion:** Arab nations denounced Sadat as a traitor; Egypt was expelled from the Arab League, and the League moved its headquarters from Cairo to Tunis; Saudi Arabia severed financial subsidies.',
-            '**Assassination of Sadat (6 Oct 1981):** During a military victory parade in Cairo celebrating the 1973 canal crossing, Islamic Jihad soldiers led by Lieutenant Khalid Islambouli leaped from a truck and assassinated Sadat with automatic weapons.',
+            "**Treaty of Washington (26 March 1979):** Signed on the White House lawn; Egypt became the first Arab state to officially recognize Israel's right to exist in peace, ending 31 years of official warfare.",
+            '**Arab League Expulsion:** Arab nations denounced Sadat as a traitor who abandoned Palestine; Egypt was expelled from the Arab League, the League HQ was moved from Cairo to Tunis, and Gulf states cut off financial subsidies.',
+            '**Domestic Repression (Sept 1981):** Facing mounting opposition from Islamists and leftists, Sadat cracked down, arresting over 1,500 political opponents, intellectuals, and religious figures in September 1981.',
+            '**Assassination of Sadat (6 Oct 1981):** During a military victory parade in Cairo celebrating the 1973 crossing, Islamic Jihad soldiers led by Lieutenant Khalid Islambouli leaped from a truck and assassinated Sadat with automatic rifles.',
           ],
         },
       ],
@@ -1737,33 +1769,37 @@ const SPREADS = [
         {
           title: '1. The 13-Day Drama at Camp David (Sept 1978)',
           points: [
-            '**Total Seclusion:** Carter kept the delegations cut off from the media at the wooded Maryland retreat; Sadat and Begin developed such mutual hostility they could not meet face-to-face.',
+            '**Total Seclusion:** Carter kept the delegations cut off from the media at the wooded Maryland retreat; Sadat and Begin developed such mutual hostility they could not meet face-to-face after day three.',
+            "**Carter's 23 Drafts:** Carter worked 18-hour days shuttling between Sadat's and Begin's cabins, personally writing, redrafting, and negotiating 23 separate iterations of the peace text.",
             "**The Photographs Breakthrough:** On the final day, Carter presented Begin with signed photographs of Carter, Sadat, and Begin for Begin's grandchildren; deeply moved, Begin softened his stance on settlement removal.",
-            '**Knesset Settlement Vote:** Begin agreed that the Israeli Knesset would hold a free vote on whether to dismantle the 15 Jewish settlements in Sinai, including the town of Yamit.',
+            '**Knesset Settlement Vote:** Begin agreed that the Israeli Knesset would hold a free vote on whether to dismantle the 15 Jewish settlements in Sinai; the Knesset approved the evacuation, leading to the forced demolition of Yamit.',
           ],
         },
         {
           title: '2. The US Financial Packages ($10bn & $3bn)',
           points: [
-            '**$10 Billion to Egypt:** US pledged $10 billion in civilian and military grants over a decade, modernizing Egypt’s infrastructure and providing grain shipments.',
-            '**$3 Billion to Israel:** US funded the construction of two state-of-the-art military airbases (Nevatim and Ramon) in the Negev Desert to replace bases surrendered in Sinai.',
-            '**Economic Dependency:** Both Egypt and Israel became permanently dependent on massive annual congressional foreign aid appropriations.',
+            '**$10 Billion to Egypt:** The US pledged $10 billion in civilian and military grants over a decade ($1 billion annually), modernizing Egypt’s infrastructure, subsidizing wheat imports, and supplying modern M60 Patton tanks.',
+            "**$3 Billion to Israel:** The US funded the construction of two state-of-the-art military airbases (Nevatim and Ramon) in the Negev Desert to replace bases surrendered in Sinai, guaranteeing Israel's qualitative military edge.",
+            '**Economic Dependency:** Both Egypt and Israel became permanently dependent on massive annual congressional foreign aid appropriations, anchoring both nations firmly within the American geopolitical sphere.',
+            '**Strategic Decoupling:** The massive aid package successfully eliminated the possibility of an Egyptian two-front assault on Israel, allowing Israel to focus its military resources entirely on Syria and the PLO.',
           ],
         },
         {
           title: '3. Why Palestinians Rejected the Framework',
           points: [
-            '**Zero Consultation:** The PLO and West Bank Palestinians were completely excluded from the Camp David negotiations, viewing Sadat as a traitor who sold out Palestine for the Sinai.',
-            '**No Guarantee of Statehood:** Framework 2 promised only "administrative autonomy", leaving internal security, border control, and land ownership in the hands of the IDF.',
-            "**Settlement Surge:** Freed from the threat of war with Egypt, Begin's government dramatically accelerated the construction of Jewish settlements across the West Bank.",
+            '**Zero Consultation:** The PLO and West Bank Palestinians were completely excluded from the Camp David negotiations, viewing Sadat as a traitor who sold out Palestinian rights to regain Egyptian sovereign territory.',
+            '**No Guarantee of Statehood:** Framework 2 promised only "administrative autonomy" after 5 years, leaving internal security, border control, water rights, and land ownership firmly in the hands of the IDF.',
+            "**Settlement Surge:** Freed from the threat of war with Egypt, Begin's right-wing Likud government dramatically accelerated the construction of Jewish settlements across the West Bank and East Jerusalem.",
+            '**Perpetual Displacement:** The framework contained no practical mechanism or timeline for the return of 1948 or 1967 Palestinian refugees, cementing Palestinian distrust of bilateral American mediation.',
           ],
         },
         {
           title: '4. The Arab Backlash & 1981 Assassination',
           points: [
-            '**Arab League Sanctions:** Meeting in Baghdad, 18 Arab nations suspended Egypt from the Arab League and imposed a total diplomatic and economic boycott.',
-            '**Islamic Extremist Rage:** Egyptian Islamists viewed peace with Israel as a betrayal of Islam; Sadat further inflamed tensions by arresting 1,500 political opponents in Sept 1981.',
-            '**6 October 1981 Parade:** Lieutenant Islambouli and three fellow conspirators sprayed the presidential viewing stand with bullets and hand grenades, assassinating Sadat on live television.',
+            '**Arab League Sanctions:** Meeting in Baghdad, 18 Arab nations suspended Egypt from the Arab League, moved the League headquarters from Cairo to Tunis, and imposed a total diplomatic, cultural, and economic boycott.',
+            "**Saudi Subsidy Cut:** Saudi Arabia and Kuwait immediately terminated billions in annual financial subsidies that had supported Egypt's treasury since the 1967 Khartoum summit, leaving Egypt wholly reliant on US aid.",
+            '**Islamic Extremist Rage:** Egyptian Islamists viewed peace with Israel as an unpardonable betrayal of Islam; Sadat further inflamed tensions by arresting 1,500 political opponents, lawyers, and sheikhs in Sept 1981.',
+            '**6 October 1981 Parade:** Lieutenant Khalid Islambouli and three fellow conspirators sprayed the presidential reviewing stand with automatic rifles and grenades, assassinating Sadat on live global television.',
           ],
         },
       ],
@@ -1837,10 +1873,6 @@ const SPREADS = [
       ],
     },
   },
-
-  // ---------------------------------------------------------------------------
-  // SPREAD 11 (KT 3.3): THE 1982 LEBANON WAR & THE FIRST INTIFADA (1987–93)
-  // ---------------------------------------------------------------------------
   {
     id: 'cme_spread_11',
     spreadNum: 11,
@@ -1856,27 +1888,30 @@ const SPREADS = [
           title: 'Fatahland & Operation Litani',
           subtitle: '300k Refugees & 1978 Bus Raid',
           bullets: [
-            '**Fatahland in South Lebanon:** 300,000 Palestinian refugees lived in Lebanon; the PLO built a heavily armed military enclave, firing Soviet Katyusha rockets into northern Israeli towns like Kiryat Shmona.',
-            '**Coastal Road Massacre (11 March 1978):** Fatah commandos landed by boat, hijacked a bus near Tel Aviv, and engaged in a shootout killing **38 Israeli civilians (including 13 children)** and wounding 71.',
-            '**Operation Litani (15 March 1978):** Israel responded with **26,000 IDF troops** invading southern Lebanon up to the Litani River, killing 300 PLO fighters; UN Resolution 425 established UNIFIL peacekeepers in southern Lebanon.',
+            '**Fatahland in South Lebanon:** 300,000 Palestinian refugees lived in Lebanon; the PLO built a heavily armed military enclave, firing Soviet Katyusha rockets into northern Israeli towns like Kiryat Shmona and Nahariya.',
+            '**Coastal Road Massacre (11 March 1978):** 11 Fatah commandos landed by boat, hijacked a bus near Tel Aviv, and engaged in a shootout killing **38 Israeli civilians (including 13 children)** and wounding 71.',
+            '**Operation Litani (15 March 1978):** Israel responded with **26,000 IDF troops** invading southern Lebanon up to the Litani River, killing 300 PLO fighters and displacing 100,000 Lebanese civilians.',
+            '**UN Resolution 425 & UNIFIL:** The UN Security Council established the 4,000-strong UN Interim Force in Lebanon (UNIFIL) to confirm Israeli withdrawal, but could not prevent ongoing cross-border PLO guerrilla strikes.',
           ],
         },
         {
           title: 'Lebanon Invasion & Sabra-Shatila',
           subtitle: 'Operation Peace for Galilee (1982)',
           bullets: [
-            '**The Assassination Pretext:** On 3 June 1982, the Abu Nidal group (anti-Arafat extremists) shot Israeli Ambassador Shlomo Argov in London; Defence Minister Ariel Sharon seized on this to launch a full-scale invasion on 6 June 1982.',
-            '**Two-Month Siege of Beirut:** IDF surrounded West Beirut, cutting water and electricity while bombing residential areas; US envoy Philip Habib negotiated a ceasefire, and 14,000 PLO fighters evacuated by sea to Tunis.',
-            '**Sabra & Shatila Massacre (Sept 1982):** Following the assassination of Lebanese President Bashir Gemayel, the IDF allowed Lebanese Christian Phalangists into the refugee camps; **between 800 and 3,500 Palestinian civilians were slaughtered**; the Israeli Kahan Commission found Sharon personally responsible.',
+            '**The Assassination Pretext:** On 3 June 1982, the Abu Nidal group (anti-Arafat extremists) shot and paralyzed Israeli Ambassador Shlomo Argov in London; Defence Minister Ariel Sharon seized on this to launch a full invasion on 6 June 1982.',
+            '**Two-Month Siege of Beirut:** Sharon told cabinet troops would advance only 40km, but pushed 85km to surround West Beirut, cutting water, electricity, and food while relentlessly bombing residential areas for two months.',
+            '**PLO Evacuation to Tunis:** US envoy Philip Habib negotiated a ceasefire; between 21 August and 1 September 1982, **14,000 PLO fighters were evacuated by sea to Tunis**, depriving the PLO of a land border with Israel.',
+            '**Sabra & Shatila Massacre (Sept 1982):** Following the assassination of Lebanese President Bashir Gemayel, the IDF allowed Phalangist Christian militias into refugee camps; **between 800 and 3,500 Palestinian civilians were slaughtered**; Sharon was forced to resign.',
           ],
         },
         {
           title: 'The First Intifada (1987–93)',
           subtitle: 'Jabalya Spark & Grassroots Revolt',
           bullets: [
-            '**The Jabalya Spark (8 Dec 1987):** An IDF tank transporter collided with civilian cars at Jabalya refugee camp in Gaza, killing 4 Palestinians; rumors of intentional murder triggered mass rioting that engulfed the West Bank and Gaza.',
-            '**UNLU & Civil Disobedience:** The Unified National Leadership of the Uprising (UNLU) distributed clandestine leaflets organizing strikes, tax boycotts, and barricades, while stone-throwing youths confronted IDF patrols.',
-            '**Human Toll & Shift in Opinion:** Yitzhak Rabin ordered an "Iron Fist" policy; **1,200 Palestinians were killed by the IDF**, while Palestinian vigilantes executed **over 800 suspected Israeli collaborators (mukhbirin)**; 160 Israelis were killed. TV broadcasts of children facing armored vehicles shattered Israel’s moral standing.',
+            '**The Jabalya Spark (8 Dec 1987):** An IDF tank transporter crashed into four civilian cars at Jabalya refugee camp in Gaza, killing 4 Palestinians; rumors of deliberate revenge triggered mass rioting across Gaza and the West Bank.',
+            '**UNLU & Civil Disobedience:** The Unified National Leadership of the Uprising (UNLU) distributed clandestine leaflets organizing general strikes, commercial boycotts, tax withholding, and barricades, catching PLO leaders in Tunis off guard.',
+            '**Rise of Hamas (Dec 1987):** Sheikh Ahmed Yassin founded the militant Islamist movement **Hamas**, issuing an antisemitic 1988 charter rejecting all compromise and demanding an Islamic state across historic Palestine through holy war (*jihad*).',
+            '**Human Toll & Shift in Opinion:** Yitzhak Rabin ordered an "Iron Fist" policy; **1,200 Palestinians were killed by the IDF**, while Palestinian vigilantes executed **over 800 suspected collaborators (mukhbirin)**; 160 Israelis died, as TV footage of youths against tanks shifted world opinion.',
           ],
         },
       ],
@@ -1913,33 +1948,37 @@ const SPREADS = [
         {
           title: '1. The Coastal Road Massacre & Operation Litani (1978)',
           points: [
-            '**Bus Hijacking (11 March 1978):** 11 Fatah commandos landed by dinghy from Lebanon, seized an intercity bus, and shot at motorists along the highway; 38 civilians died.',
-            '**26,000 IDF Troops Invade:** PM Menachem Begin ordered Operation Litani; Israeli troops pushed to the Litani River, killing 300 PLO fighters and displacing 100,000 Lebanese.',
-            '**UNIFIL Buffer:** UN Resolution 425 deployed 4,000 UN peacekeepers to southern Lebanon, but failed to prevent cross-border Palestinian rocket fire.',
+            '**Bus Hijacking (11 March 1978):** 11 Fatah commandos landed by Zodiac dinghy from Lebanon, seized an intercity bus on the Coastal Highway, and shot at motorists; 38 civilians (including 13 children) died in the fiery standoff.',
+            '**26,000 IDF Troops Invade:** PM Menachem Begin ordered Operation Litani; Israeli troops pushed to the Litani River, killing 300 PLO fighters, destroying training bases, and displacing 100,000 Lebanese civilians.',
+            '**UNIFIL Buffer Zone:** UN Resolution 425 deployed 4,000 UN peacekeepers to southern Lebanon, but Israel established a 10km "security zone" manned by the South Lebanon Army (SLA), a Christian proxy militia.',
+            '**Strategic Failure:** While the PLO withdrew north of the Litani River, it quickly reconstituted its rocket batteries, continuing to bombard northern Israeli towns throughout 1979–81.',
           ],
         },
         {
           title: '2. Shlomo Argov Pretext & The 1982 Beirut Siege',
           points: [
-            "**The London Pretext:** Ambassador Argov was paralyzed by Abu Nidal assassins; despite knowing Abu Nidal was Arafat's deadly enemy, Sharon used the shooting to justify war.",
-            '**The Deceptive Mandate:** Sharon told the Israeli cabinet the invasion would penetrate only 40km to clear rocket range, but drove straight to Beirut, 85km north.',
-            '**Two-Month Siege:** From June to August 1982, the IDF cut water, electricity, and food supplies to West Beirut, subjecting the city to relentless artillery and air bombardment.',
+            "**The London Pretext:** Ambassador Argov was paralyzed by Abu Nidal assassins in London; despite British intelligence confirming Abu Nidal was Arafat's deadly enemy, Sharon seized the shooting to justify invading Lebanon.",
+            '**The Deceptive 40km Mandate:** Sharon told the Israeli cabinet the invasion would penetrate only 40km to clear artillery range, but deliberately drove 85km north to surround Beirut and link up with Christian Phalangist allies.',
+            '**Two-Month Siege of West Beirut:** From June to August 1982, the IDF cut off water, electricity, and food supplies to 500,000 West Beirut residents, subjecting the city to relentless artillery and aerial carpet bombing.',
+            '**Exile to Tunis:** Under the Philip Habib agreement, 14,000 PLO fighters evacuated by ship to Tunisia, Yemen, and Algeria; Arafat lost his immediate land border with Israel, severely weakening the PLO militarily.',
           ],
         },
         {
           title: '3. Sabra-Shatila Massacre & The Rise of Hezbollah',
           points: [
-            "**Phalangist Entry (16–18 Sept 1982):** Seeking revenge for President Gemayel's assassination, Christian militias entered the camps while Israeli troops fired illumination flares.",
-            '**800 to 3,500 Slaughtered:** Phalangists massacred unarmed women, children, and elderly men with knives and machine guns, dumping bodies into mass graves.',
-            "**The Birth of Hezbollah:** While the PLO was exiled to Tunis, the invasion alienated Lebanon's Shi'ite population, birthing **Hezbollah**, an Iranian-funded militant guerrilla army.",
+            '**Phalangist Revenge (16–18 Sept 1982):** Following the assassination of Lebanese President Bashir Gemayel, Israeli commanders allowed Christian Phalangist militias into the defenseless Sabra and Shatila refugee camps.',
+            '**800 to 3,500 Slaughtered:** For 36 hours, Phalangists butchered unarmed women, children, and elderly men with axes, knives, and automatic weapons while Israeli troops fired illumination flares over the camps.',
+            '**The Kahan Commission (Feb 1983):** An Israeli judicial inquiry found Sharon personally responsible for failing to anticipate the bloodbath, forcing his resignation as Defence Minister and sparking a 400,000-person peace protest in Tel Aviv.',
+            "**The Birth of Hezbollah:** While the secular PLO was driven to Tunis, the brutal occupation radicalized Lebanon's impoverished Shi'ite population, giving birth to **Hezbollah**, an Iranian-armed guerrilla army.",
           ],
         },
         {
           title: '4. The Intifada Toll (1,200 IDF / 800 Collaborators)',
           points: [
-            '**Grassroots Uprising (1987–93):** Began in Jabalya camp; driven by local youths throwing stones and petrol bombs rather than foreign-based PLO leaders in Tunis.',
-            '**UNLU Leaflets & Underground Schools:** UNLU distributed secret mimeographed flyers dictating strike days; women established clandestine schools when Israel closed universities.',
-            '**The Grim Balance:** **1,200 Palestinians killed by the IDF**, while Palestinian vigilantes murdered **over 800 fellow Palestinians** accused of collaboration (*mukhbirin*); 160 Israelis killed.',
+            '**Grassroots Popular Uprising (1987–93):** Frustration with 20 years of military occupation exploded spontaneously in Jabalya; driven by local youths throwing stones and petrol bombs rather than the exiled PLO leadership in Tunis.',
+            '**UNLU Leaflets & Resistance:** The Unified National Leadership distributed secret leaflets directing strikes, commercial shutdowns, and underground schooling when Israel shut West Bank schools for two years.',
+            '**Rabin\'s "Iron Fist":** Defence Minister Rabin ordered troops to "break the bones" of stone-throwers; international news broadcasts of armed soldiers beating teenagers provoked worldwide moral condemnation.',
+            '**The Grim Balance:** **1,200 Palestinians were killed by the IDF**, while Palestinian vigilantes executed **over 800 suspected collaborators (*mukhbirin*)** in internal purges; 160 Israelis were killed during the 6-year revolt.',
           ],
         },
       ],
@@ -2013,10 +2052,6 @@ const SPREADS = [
       ],
     },
   },
-
-  // ---------------------------------------------------------------------------
-  // SPREAD 12 (KT 3.4): ROAD TO OSLO, PEACE WITH JORDAN & OSLO II (1993–95)
-  // ---------------------------------------------------------------------------
   {
     id: 'cme_spread_12',
     spreadNum: 12,
@@ -2034,25 +2069,28 @@ const SPREADS = [
           bullets: [
             "**Arafat Renounces Terrorism (Dec 1988):** Arafat addressed the UN in Geneva, officially recognizing Israel's right to exist, renouncing all terrorism, and accepting Res 242; the US opened formal diplomatic dialogue with the PLO.",
             "**1990–91 Gulf War Disaster:** Arafat publicly backed Saddam Hussein's invasion of Kuwait; when Iraq lost, **Kuwait and Saudi Arabia expelled 400,000 Palestinians and cut off all funding**, leaving the PLO completely bankrupt.",
-            "**End of Cold War & 600,000 Soviet Jews:** The collapse of the USSR in Dec 1991 deprived Syria and the PLO of weapons; **over 600,000 Soviet Jews migrated to Israel between 1989 and 1995**, transforming Israel's economic and military strength.",
+            "**End of Cold War & 600,000 Soviet Jews:** The collapse of the USSR in Dec 1991 deprived Syria and the PLO of Soviet weapons; **over 600,000 Soviet Jews migrated to Israel between 1989 and 1995**, transforming Israel's economic strength.",
+            '**Madrid Peace Conference (Oct 1991):** Co-sponsored by the US and USSR, bringing Israel, Syria, Lebanon, and a joint Jordanian-Palestinian delegation together for direct bilateral negotiations for the first time in history.',
           ],
         },
         {
           title: 'Oslo I & The Historic Handshake',
           subtitle: 'Secret Talks & White House Lawn (1993)',
           bullets: [
-            '**Secret Oslo Channel (1992–93):** Israeli academics and PLO officials met covertly outside Oslo, hosted by Norwegian Foreign Minister Johan Jørgen Holst, bypassing the stalled Madrid Conference.',
-            "**Mutual Recognition:** Letters of mutual recognition were exchanged: the PLO recognized Israel's right to live in peace and renounced terrorism; Israel recognized the PLO as the official representative of the Palestinian people.",
-            '**Signing Oslo I (13 Sept 1993):** Signed in Washington; Prime Minister Yitzhak Rabin and Yasser Arafat shook hands on the White House lawn before President Bill Clinton; established the **Palestinian Authority (PA) in 1994** with civil control in Gaza and Jericho.',
+            '**Secret Oslo Channel (1992–93):** Israeli academics and PLO officials met covertly outside Oslo, hosted by Norwegian Foreign Minister Johan Jørgen Holst, bypassing the formal, stalled Madrid negotiating track.',
+            "**Letters of Mutual Recognition:** The PLO recognized Israel's right to exist in peace and security and renounced terrorism; Israel officially recognized the PLO as the legitimate representative of the Palestinian people.",
+            '**Signing Oslo I (13 Sept 1993):** Signed in Washington; Prime Minister Yitzhak Rabin and Yasser Arafat shook hands on the White House lawn before President Bill Clinton, establishing principles for 5-year interim self-rule.',
+            '**Establishment of the PA (1994):** The 1994 Gaza-Jericho Agreement allowed Arafat to return from exile in July 1994 to establish the **Palestinian Authority (PA)**, governing municipal affairs and local policing.',
           ],
         },
         {
           title: 'Oslo II, Jordan Peace & Murder',
           subtitle: 'Areas A/B/C & Rabin Assassination',
           bullets: [
-            "**Israel-Jordan Peace Treaty (Oct 1994):** King Hussein and Yitzhak Rabin signed a formal peace treaty at Wadi Araba, with the US agreeing to cancel Jordan's national debt; Jordan became the second Arab nation to make peace.",
+            "**Israel-Jordan Peace Treaty (Oct 1994):** King Hussein and Yitzhak Rabin signed a formal peace treaty at Wadi Araba, with the US cancelling Jordan's debt; Jordan became the second Arab nation to establish full peace with Israel.",
             '**Oslo II Agreement (Sept 1995):** Divided the West Bank into three administrative zones: **Area A (3% of land)** under full PA control; **Area B (25% of land)** under PA civil and joint Israeli security control; **Area C (72% of land)** under full Israeli civil and military control.',
-            '**Extremist Surge & Rabin Assassinated:** Hamas and Islamic Jihad launched deadly suicide bus bombings across Israeli cities; on **4 November 1995**, Yitzhak Rabin was assassinated at a Tel Aviv peace rally by Yigal Amir, an Orthodox Jewish extremist.',
+            '**Hamas Bus Bombing Campaign:** Militant Islamist groups Hamas and Islamic Jihad launched deadly suicide bus bombings across Afula, Hadera, and Tel Aviv, killing dozens of Israeli civilians to derail the peace process.',
+            '**Assassination of Rabin (4 Nov 1995):** At the end of a massive peace rally in Tel Aviv, Prime Minister Yitzhak Rabin was shot dead by Yigal Amir, an Orthodox Jewish extremist, dealing a catastrophic blow to the peace process.',
           ],
         },
       ],
@@ -2089,33 +2127,37 @@ const SPREADS = [
         {
           title: '1. The Gulf War Financial Disaster & Soviet Aliyah',
           points: [
-            "**Arafat's Gulf War Blunder:** By embracing Saddam Hussein in 1990, Arafat alienated wealthy Gulf monarchies; Kuwait expelled 400,000 Palestinian workers who remitted wages.",
-            '**Financial Ruin:** The PLO lost $100 million annually in Arab aid and could no longer pay salaries, leaving Arafat desperate for a diplomatic breakthrough to retain power.',
-            '**600,000 Soviet Jewish Immigrants:** Between 1989 and 1995, over 600,000 highly educated Soviet Jews arrived in Israel, eliminating Israeli demographic anxiety.',
+            "**Arafat's Gulf War Blunder:** By publicly embracing Saddam Hussein during the 1990 invasion of Kuwait, Arafat alienated wealthy Gulf monarchies; upon liberation, Kuwait expelled 400,000 Palestinian workers.",
+            '**Financial Ruin:** The PLO lost $100 million annually in Arab subsidies and worker remittances, bankrupting its institutions, schools, and hospitals, leaving Arafat desperate for a diplomatic breakthrough to retain power.',
+            '**600,000 Soviet Jewish Immigrants:** Between 1989 and 1995, over 600,000 highly educated Soviet Jews emigrated to Israel following the collapse of the USSR, eliminating Israeli demographic anxiety and boosting military manpower.',
+            '**US Diplomatic Leverage:** The end of the Cold War left the United States as the sole global superpower, enabling President George H.W. Bush to convene the Madrid Peace Conference in October 1991.',
           ],
         },
         {
           title: '2. The Oslo Secret Negotiations & Mutual Recognition',
           points: [
-            '**Norwegian Discretion:** Norwegian social scientist Terje Rød-Larsen and Foreign Minister Johan Jørgen Holst organized 14 secret meetings in rural Norway.',
-            '**Breaking Taboos:** For the first time, Israeli officials sat directly with PLO leaders; they bypassed thorny final-status issues (Jerusalem, refugees) to achieve an interim breakthrough.',
-            '**The White House Handshake (13 Sept 1993):** Rabin famously hesitated before shaking Arafat\'s hand on the White House lawn, declaring "Enough of blood and tears!"',
+            '**Norwegian Discretion:** Norwegian social scientist Terje Rød-Larsen and Foreign Minister Johan Jørgen Holst organized 14 secret meetings in rural Norwegian mansions, shielding negotiators from public pressure.',
+            '**Breaking Taboos:** For the first time, Israeli officials sat directly with PLO leaders; they bypassed thorny final-status issues (Jerusalem, refugees, borders) to achieve an interim breakthrough based on "land for peace".',
+            '**The White House Handshake (13 Sept 1993):** Rabin hesitated before shaking Arafat\'s hand on the White House lawn, declaring "Enough of blood and tears!", while Clinton gently shepherded the two historic enemies together.',
+            '**Arafat Returns to Gaza (July 1994):** Under the Gaza-Jericho Agreement, Arafat entered Gaza in July 1994 to take charge of the newly created Palestinian Authority, ending 27 years of exile from Palestinian soil.',
           ],
         },
         {
           title: '3. The Oslo II West Bank Division (Areas A, B, C)',
           points: [
-            '**Area A (3% of West Bank):** Encompassed major Palestinian cities (Ramallah, Nablus, Bethlehem, Jenin, Hebron); full PA civil and security control.',
-            '**Area B (25% of West Bank):** Covered 450 Palestinian rural villages; PA exercised civil administration, but Israel retained overriding military security control.',
-            '**Area C (72% of West Bank):** Full Israeli civil and military control; contained all Jewish settlements, military bases, bypass roads, and the Jordan Valley.',
+            '**Area A (3% of West Bank):** Encompassed the 8 major Palestinian cities (Jenin, Nablus, Tulkarm, Qalqilya, Ramallah, Bethlehem, Jericho, Hebron); full PA civil administration and internal security control.',
+            '**Area B (25% of West Bank):** Covered 450 Palestinian rural towns and villages (approx. 68% of Palestinian population); PA exercised civil administration, but the IDF retained overriding military security control.',
+            '**Area C (72% of West Bank):** Remained under exclusive Israeli civil and military control; contained all 140 Jewish settlements, military bases, bypass roads, water aquifers, and the strategic Jordan Valley.',
+            '**Territorial Fragmentation:** The division created a fragmented archipelago of Palestinian enclaves separated by Israeli checkpoints and bypass roads, provoking widespread Palestinian resentment.',
           ],
         },
         {
           title: "4. The Extremist Sabotage & Rabin's Assassination",
           points: [
-            '**Hamas Bus Bombings:** Militant Islamists opposed conceding Islamic land; suicide bombings in Afula, Hadera, and Tel Aviv killed dozens of Israeli commuters.',
-            '**Hebron Mosque Massacre (Feb 1994):** Jewish extremist Baruch Goldstein opened fire inside the Ibrahimi Mosque, killing 29 Palestinian worshippers.',
-            '**4 November 1995 Assassination:** At the conclusion of a massive peace rally in Kings of Israel Square, Tel Aviv, law student Yigal Amir shot Rabin twice in the back.',
+            '**Hamas & Islamic Jihad Suicide Bombings:** Militant Islamists opposed conceding Islamic waqf land; suicide bombings in Afula, Hadera, and Tel Aviv commuter buses killed dozens of civilians, turning Israeli public opinion against Oslo.',
+            '**Hebron Mosque Massacre (25 Feb 1994):** US-born Jewish extremist Baruch Goldstein opened fire with an assault rifle inside the Ibrahimi Mosque in Hebron, murdering 29 Palestinian worshippers during morning Ramadan prayers.',
+            '**Demonization of Rabin:** Right-wing Israeli opposition led by Benjamin Netanyahu held fierce rallies portraying Rabin in Nazi SS uniform, accusing him of treason for handing over biblical Jewish land to the PLO.',
+            '**4 November 1995 Assassination:** At the conclusion of a 100,000-strong peace rally in Kings of Israel Square, Tel Aviv, law student Yigal Amir shot Rabin twice in the back, halting the momentum of the Oslo peace process.',
           ],
         },
       ],
@@ -2225,7 +2267,7 @@ function getStyles() {
     position: relative;
     background: #ffffff;
     box-sizing: border-box;
-    padding: 9.5mm 12mm 8.5mm 12mm;
+    padding: 7.5mm 10mm 6.5mm 10mm;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -2312,9 +2354,7 @@ function getStyles() {
     background: #f1f5f9;
     border: 1px solid #334155;
     color: #000000;
-    font-size: 7.2pt;
-    font-weight: 800;
-    padding: 1px 4px;
+    font-size: 6.6pt; font-weight: 800; padding: 1px 3px;
     border-radius: 2px;
     margin-right: 4px;
     white-space: nowrap;
@@ -2510,7 +2550,7 @@ function renderPage2() {
         </div>
 
         <!-- The Four Non-Negotiable Success Principles (2x2 Grid) -->
-        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 9px 12px; background: #ffffff;">
+        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 6px 10px; background: #ffffff;">
           <div style="font-size: 8.6pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 6px; border-bottom: 1.2px solid #cbd5e1; padding-bottom: 3px; display: flex; justify-content: space-between;">
             <span>★ The Four Non-Negotiable Exam Success Principles:</span>
             <span>Grade 9 Protocol</span>
@@ -2544,23 +2584,23 @@ function renderPage2() {
         </div>
 
         <!-- Period Study Mark Scheme Decoder -->
-        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 8px 11px; background: #ffffff;">
+        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 5px 9px; background: #ffffff;">
           <div style="font-size: 9.0pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 5px; border-bottom: 1.2px solid #cbd5e1; padding-bottom: 2px;">
             Examiner Level Descriptors: How Top Marks Are Awarded
           </div>
           <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; font-size: 8.0pt; line-height: 1.30; color: #1e293b;">
-            <div style="background: #f8fafc; border: 1px solid #94a3b8; border-radius: 2px; padding: 6px 8px;">
+            <div style="background: #f8fafc; border: 1px solid #94a3b8; border-radius: 2px; padding: 4px 6px;">
               <strong style="color: #000000; display: block; margin-bottom: 2px; font-size: 8.4pt;">Q1: Consequence [4m each]</strong>
               <div><strong>Level 1 (1–2m):</strong> Simple or general consequence; limited facts.</div>
               <div><strong>Level 2 (3–4m):</strong> Specific historical knowledge + fully explained consequence showing cause-and-effect chain.</div>
             </div>
-            <div style="background: #f8fafc; border: 1px solid #94a3b8; border-radius: 2px; padding: 6px 8px;">
+            <div style="background: #f8fafc; border: 1px solid #94a3b8; border-radius: 2px; padding: 4px 6px;">
               <strong style="color: #000000; display: block; margin-bottom: 2px; font-size: 8.4pt;">Q2: Narrative Account [8m]</strong>
               <div><strong>Level 1 (1–2m):</strong> Simple narrative; fragmented chronology.</div>
               <div><strong>Level 2 (3–5m):</strong> Chronological narrative, but relies only on stimulus.</div>
               <div><strong>Level 3 (6–8m):</strong> Coherent, causally linked narrative + <strong>substantial own knowledge beyond stimulus</strong>.</div>
             </div>
-            <div style="background: #f8fafc; border: 1px solid #94a3b8; border-radius: 2px; padding: 6px 8px;">
+            <div style="background: #f8fafc; border: 1px solid #94a3b8; border-radius: 2px; padding: 4px 6px;">
               <strong style="color: #000000; display: block; margin-bottom: 2px; font-size: 8.4pt;">Q3: Importance [8m each]</strong>
               <div><strong>Level 1 (1–2m):</strong> Identifies facts with little link to importance.</div>
               <div><strong>Level 2 (3–5m):</strong> Explains importance with some factual support.</div>
@@ -2575,21 +2615,21 @@ function renderPage2() {
             The Historian's Analytical Connective Vault
           </div>
           <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; font-size: 8.0pt; line-height: 1.30; color: #000000;">
-            <div style="background: #fff; border: 1px solid #94a3b8; border-radius: 2px; padding: 6px 8px;">
+            <div style="background: #fff; border: 1px solid #94a3b8; border-radius: 2px; padding: 4px 6px;">
               <strong style="color: #000000; display: block; margin-bottom: 2px; font-size: 8.2pt;">Direct Causal Stems (Q1)</strong>
               <div>&bull; "As a direct consequence, ..."</div>
               <div>&bull; "This fundamentally provoked..."</div>
               <div>&bull; "The decisive catalyst was..."</div>
               <div>&bull; "This directly resulted in..."</div>
             </div>
-            <div style="background: #fff; border: 1px solid #94a3b8; border-radius: 2px; padding: 6px 8px;">
+            <div style="background: #fff; border: 1px solid #94a3b8; border-radius: 2px; padding: 4px 6px;">
               <strong style="color: #000000; display: block; margin-bottom: 2px; font-size: 8.2pt;">Sequencing &amp; Linkage (Q2)</strong>
               <div>&bull; "During the opening phase, ..."</div>
               <div>&bull; "A decisive turning point came when..."</div>
               <div>&bull; "This breathing space allowed..."</div>
               <div>&bull; "In the immediate aftermath, ..."</div>
             </div>
-            <div style="background: #fff; border: 1px solid #94a3b8; border-radius: 2px; padding: 6px 8px;">
+            <div style="background: #fff; border: 1px solid #94a3b8; border-radius: 2px; padding: 4px 6px;">
               <strong style="color: #000000; display: block; margin-bottom: 2px; font-size: 8.2pt;">Evaluative Impact (Q3)</strong>
               <div>&bull; "This was vital because..."</div>
               <div>&bull; "Without this intervention, ..."</div>
@@ -2732,13 +2772,13 @@ function renderSpreadLeft(spread, leftPageNum) {
   const pillarsHtml = left.pillars
     .map(
       (p) => `
-    <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 8px 10px; background: #ffffff; display: flex; flex-direction: column; justify-content: flex-start; gap: 6px;">
+    <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 4px 6px; background: #ffffff; display: flex; flex-direction: column; justify-content: flex-start; gap: 3px;">
       <div>
-        <div style="font-size: 8.8pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 1px;">${p.title}</div>
-        <div style="font-size: 7.6pt; color: #475569; font-style: italic; margin-bottom: 5px;">${p.subtitle}</div>
+        <div style="font-size: 7.8pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 1px;">${p.title}</div>
+        <div style="font-size: 6.8pt; color: #475569; font-style: italic; margin-bottom: 3px;">${p.subtitle}</div>
       </div>
-      <ul style="margin: 0; padding-left: 12px; font-size: 8.2pt; color: #000000; line-height: 1.26;">
-        ${p.bullets.map((b) => `<li style="margin-bottom: 4px;">${formatMd(b)}</li>`).join('')}
+      <ul style="margin: 0; padding-left: 10px; font-size: 7.2pt; color: #000000; line-height: 1.22;">
+        ${p.bullets.map((b) => `<li style="margin-bottom: 2.5px;">${formatMd(b)}</li>`).join('')}
       </ul>
     </div>
   `,
@@ -2748,9 +2788,9 @@ function renderSpreadLeft(spread, leftPageNum) {
   const figuresHtml = left.keyFigures
     .map(
       (f) => `
-    <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 5px 7px;">
-      <strong style="color: #000000; display: block; font-size: 8.4pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">${f.name}</strong>
-      <span style="font-size: 7.4pt; color: #1e293b; line-height: 1.20;">${f.role}</span>
+    <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 4px 6px;">
+      <strong style="color: #000000; display: block; font-size: 7.5pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">${f.name}</strong>
+      <span style="font-size: 6.8pt; color: #1e293b; line-height: 1.16;">${f.role}</span>
     </div>
   `,
     )
@@ -2768,23 +2808,23 @@ function renderSpreadLeft(spread, leftPageNum) {
 
       <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; min-height: 0;">
         <!-- Strategic Context Overview -->
-        <div style="background: #f8fafc; border: 1.5px solid #000000; border-left: 5px solid #000000; border-radius: 3px; padding: 8px 12px;">
-          <div style="font-size: 10.4pt; font-weight: 800; font-family: 'Playfair Display', serif; color: #000000; margin-bottom: 3px;">
+        <div style="background: #f8fafc; border: 1.5px solid #000000; border-left: 5px solid #000000; border-radius: 3px; padding: 6px 10px;">
+          <div style="font-size: 9.2pt; font-weight: 800; font-family: 'Playfair Display', serif; color: #000000; margin-bottom: 2px;">
             ${left.headline}
           </div>
-          <div style="font-size: 8.4pt; color: #1e293b; line-height: 1.28;">
+          <div style="font-size: 7.6pt; color: #1e293b; line-height: 1.25;">
             ${formatMd(left.summary)}
           </div>
         </div>
 
         <!-- Three Core Historical Pillars -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; flex: 1; margin: 4px 0;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin: 4px 0;">
           ${pillarsHtml}
         </div>
 
         <!-- Key Figures & Factions (4 Cards) -->
-        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 7px 11px; background: #ffffff;">
-          <div style="font-size: 8.6pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 5px; border-bottom: 1.2px solid #cbd5e1; padding-bottom: 2px; display: flex; justify-content: space-between;">
+        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff;">
+          <div style="font-size: 8.8pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 5px; border-bottom: 1.2px solid #cbd5e1; padding-bottom: 2px; display: flex; justify-content: space-between;">
             <span>Key Historical Figures &amp; Organisations</span>
             <span style="font-size: 7.2pt; color: #475569;">Specification Protagonists</span>
           </div>
@@ -2794,15 +2834,15 @@ function renderSpreadLeft(spread, leftPageNum) {
         </div>
 
         <!-- Archival Source & Historical Evidence Box -->
-        <div style="background: #f8fafc; border: 1.5px solid #000000; border-radius: 3px; padding: 7px 11px; font-size: 8.2pt; line-height: 1.30; color: #000000;">
+        <div style="background: #f8fafc; border: 1.5px solid #000000; border-radius: 3px; padding: 5px 10px; font-size: 7.4pt; line-height: 1.22; color: #000000;">
           <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px;">
-            <strong style="font-size: 8.0pt; text-transform: uppercase; color: #000000; letter-spacing: 0.4px;">PRIMARY ARCHIVAL EVIDENCE &bull; ${left.archivalSource.title}:</strong>
-            <span style="font-size: 7.2pt; font-weight: 700; color: #334155;">${left.archivalSource.citation}</span>
+            <strong style="font-size: 8.2pt; text-transform: uppercase; color: #000000; letter-spacing: 0.4px;">PRIMARY ARCHIVAL EVIDENCE &bull; ${left.archivalSource.title}:</strong>
+            <span style="font-size: 7.4pt; font-weight: 700; color: #334155;">${left.archivalSource.citation}</span>
           </div>
-          <p style="margin: 3px 0 3px 0; font-style: italic; font-family: 'Playfair Display', serif; font-size: 8.2pt; color: #000000;">
+          <p style="margin: 4px 0 4px 0; font-style: italic; font-family: 'Playfair Display', serif; font-size: 7.6pt; color: #000000; line-height: 1.22;">
             "${left.archivalSource.quote}"
           </p>
-          <div style="margin-top: 2px; font-size: 7.6pt; color: #334155;">
+          <div style="margin-top: 2px; font-size: 6.8pt; color: #334155; line-height: 1.16;">
             <strong>Historical Significance:</strong> ${left.archivalSource.significance}
           </div>
         </div>
@@ -2822,12 +2862,12 @@ function renderSpreadRight(spread, rightPageNum) {
   const casesHtml = right.deepCases
     .map(
       (c) => `
-    <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 8px 10px; background: #ffffff; display: flex; flex-direction: column; justify-content: flex-start; gap: 6px;">
-      <div style="font-size: 8.6pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 3px; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px;">
+    <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 6px 10px; background: #ffffff; display: flex; flex-direction: column; justify-content: flex-start; gap: 3px;">
+      <div style="font-size: 7.8pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 2px; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px;">
         ${c.title}
       </div>
-      <ul style="margin: 0; padding-left: 12px; font-size: 8.0pt; color: #000000; line-height: 1.25;">
-        ${c.points.map((p) => `<li style="margin-bottom: 3px;">${formatMd(p)}</li>`).join('')}
+      <ul style="margin: 0; padding-left: 12px; font-size: 7.6pt; color: #000000; line-height: 1.22;">
+        ${c.points.map((p) => `<li style="margin-bottom: 2.5px;">${formatMd(p)}</li>`).join('')}
       </ul>
     </div>
   `,
@@ -2837,9 +2877,9 @@ function renderSpreadRight(spread, rightPageNum) {
   const pathwayHtml = right.causalPathway
     .map(
       (p) => `
-    <div style="background: #ffffff; border: 1px solid #000000; border-radius: 2px; padding: 6px 7px;">
-      <strong style="color: #000000; display: block; font-size: 8.2pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">${p.stage}</strong>
-      <span style="font-size: 7.4pt; color: #1e293b; line-height: 1.20;">${p.text}</span>
+    <div style="background: #ffffff; border: 1px solid #000000; border-radius: 2px; padding: 4px 6px;">
+      <strong style="color: #000000; display: block; font-size: 7.4pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">${p.stage}</strong>
+      <span style="font-size: 6.8pt; color: #1e293b; line-height: 1.18;">${p.text}</span>
     </div>
   `,
     )
@@ -2850,7 +2890,7 @@ function renderSpreadRight(spread, rightPageNum) {
       (w) => `
     <div>
       <span class="wb-pill">${w.term}</span>
-      <span style="font-size: 7.2pt; color: #1e293b;">${w.def}</span>
+      <span style="font-size: 6.8pt; color: #1e293b; line-height: 1.18;">${w.def}</span>
     </div>
   `,
     )
@@ -2868,12 +2908,12 @@ function renderSpreadRight(spread, rightPageNum) {
 
       <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; min-height: 0;">
         <!-- Four Deep-Knowledge Forensic Case Studies (2x2 Grid) -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; flex: 1;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 4px 0;">
           ${casesHtml}
         </div>
 
         <!-- Visual Causal Pathway (4 Connected Stages) -->
-        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 7px 11px; background: #f8fafc; margin: 4px 0;">
+        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 5px 8px; background: #f8fafc; margin: 3px 0;">
           <div style="font-size: 8.8pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 5px; border-bottom: 1.2px solid #cbd5e1; padding-bottom: 2px; display: flex; justify-content: space-between;">
             <span>Visual Causal Pathway: Key Historical Mechanisms</span>
             <span style="font-size: 7.2pt; color: #475569;">Cause &amp; Consequence Chain</span>
@@ -2884,7 +2924,7 @@ function renderSpreadRight(spread, rightPageNum) {
         </div>
 
         <!-- Master GCSE Specification Word Bank Box -->
-        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 7px 11px; background: #ffffff;">
+        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 5px 9px; background: #ffffff;">
           <div style="font-size: 8.8pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 5px; border-bottom: 1.2px solid #cbd5e1; padding-bottom: 2px; display: flex; justify-content: space-between;">
             <span>★ GCSE Specification Word Bank &amp; Essential Historical Concepts</span>
             <span style="color: #475569; font-size: 7.2pt;">Must-Use Vocabulary</span>

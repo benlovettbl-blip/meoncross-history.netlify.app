@@ -181,6 +181,16 @@ export function renderWorkbooksZone(container, unitData) {
   if (showCme) {
     const cmeBooklets = [
       {
+        id: 'VISUAL_GUIDE',
+        title: '28-Page Visual Revision Masterclasses & Complete Specification Guide',
+        pages: '28 Pages',
+        badge: 'Pillar 1 • Visual Guide',
+        color: '#0284c7',
+        desc: 'The complete visual revision master volume: 12 double-page spreads across all 3 Key Topics, 50-year synoptic timeline matrix, causal pathways, GCSE specification word banks, and historiographical debates.',
+        fileBase: '/units/cme_new/visual_revision_guide.html',
+        pdfUrl: '/pdfs/cme_visual_revision_guide.pdf',
+      },
+      {
         id: 'KT1',
         title: 'Key Topic 1: The Birth of the State of Israel (1945–63)',
         pages: '12 Pages',
