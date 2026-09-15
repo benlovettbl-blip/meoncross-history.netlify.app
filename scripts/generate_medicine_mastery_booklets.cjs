@@ -2,9 +2,9 @@
  * generate_medicine_mastery_booklets.cjs
  *
  * Compiles print-perfect Edexcel GCSE (9–1) History Paper 1 Mastery Revision Booklets:
- * 1. Booklet 1: Section A — The British Sector of the Western Front, 1914–1918 (11 Pages)
+ * 1. Booklet 1: Section A — The British Sector of the Western Front, 1914–1918 (8 Pages)
  * 2. Booklet 2: Section B — Medicine in Britain, c1250–present (Thematic Master — 24 Pages)
- * 3. Master Volume: Paper 1 Complete Mastery Volume (35 Pages)
+ * 3. Master Volume: Paper 1 Complete Mastery Volume (20 Pages)
  *
  * Implements:
  * - Space-saving Answers-Only Bank (Pages 4 & 5) with micro-checkboxes [ ✓ ] [ ✗ ]
@@ -212,12 +212,6 @@ async function run() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr style="background: #fefce8; font-weight: 700;">
-                            <td>🧠 Complete Western Front Knowledge Vault (All 100 Recall Questions)</td>
-                            <td style="text-align: center;">Checklist</td>
-                            <td style="text-align: center;">/100</td>
-                            <td style="text-align: center;">_____</td>
-                        </tr>
                         <tr>
                             <td><strong>Round 1 (Stepped):</strong> Q1(a) Feature 1 (Casualty Clearing Stations)</td>
                             <td style="text-align: center;">Stepped Ladder</td>
@@ -295,166 +289,12 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · Pearson Edexcel GCSE History</span>
             <span>Western Front Historic Environment Complete Mastery Booklet</span>
-            <span>Page 1 of 11</span>
+            <span>Page 1 of 8</span>
         </div>
     </div>
 
     <!-- ============================================================= -->
-    <!-- PAGE 2: COMPLETE KNOWLEDGE VAULT (PART 1: Q1 TO Q50)          -->
-    <!-- ============================================================= -->
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>The British Sector of the Western Front, 1914–1918</h1>
-                    <p>Complete Knowledge Retrieval Vault · Questions 1 to 50 (Trench Environment, Ill-Health &amp; Wounds)</p>
-                </div>
-                <span class="header-tag" style="background: #b45309;">Vault Part 1</span>
-            </div>
-
-            <div class="quiz-grid">
-                ${wfQPage1
-                  .map(
-                    (item, i) => `
-                    <div class="quiz-item">
-                        <div class="quiz-cb"></div>
-                        <div style="flex: 1;">
-                            <strong>${i + 1}.</strong> ${item.q}
-                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[${item.source}]</div>
-                        </div>
-                    </div>
-                `,
-                  )
-                  .join('')}
-            </div>
-        </div>
-
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Knowledge Vault Questions</span>
-            <span>Turn page for Vault Part 2 (Questions 51 to 100)</span>
-            <span>Page 2 of 11</span>
-        </div>
-    </div>
-
-    <!-- ============================================================= -->
-    <!-- PAGE 3: COMPLETE KNOWLEDGE VAULT (PART 2: Q51 TO Q100)        -->
-    <!-- ============================================================= -->
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>The British Sector of the Western Front, 1914–1918</h1>
-                    <p>Complete Knowledge Retrieval Vault · Questions 51 to 100 (Chain of Evacuation &amp; Medical Advances)</p>
-                </div>
-                <span class="header-tag" style="background: #b45309;">Vault Part 2</span>
-            </div>
-
-            <div class="quiz-grid">
-                ${wfQPage2
-                  .map(
-                    (item, i) => `
-                    <div class="quiz-item">
-                        <div class="quiz-cb"></div>
-                        <div style="flex: 1;">
-                            <strong>${i + 51}.</strong> ${item.q}
-                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[${item.source}]</div>
-                        </div>
-                    </div>
-                `,
-                  )
-                  .join('')}
-            </div>
-        </div>
-
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Knowledge Vault Questions</span>
-            <span>Turn page for Official Mark Scheme Answers</span>
-            <span>Page 3 of 11</span>
-        </div>
-    </div>
-
-    <!-- ============================================================= -->
-    <!-- PAGE 4: OFFICIAL MARK SCHEME (PART 1: ANSWERS 1 TO 50)         -->
-    <!-- ============================================================= -->
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>The British Sector of the Western Front, 1914–1918</h1>
-                    <p>Official Mark Scheme &amp; Knowledge Vault Answers · Answers 1 to 50 (Self &amp; Peer Marking Bank)</p>
-                </div>
-                <span class="header-tag" style="background: #059669;">Mark Scheme 1</span>
-            </div>
-
-            <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 4px; padding: 2px 6px; font-size: 6.8pt; color: #065f46; margin-bottom: 3px; display: flex; justify-content: space-between;">
-                <span>💡 <strong>Quick-Marking Bank:</strong> Cover this bank with your hand or a sheet of paper to test yourself against Page 2, or use for rapid peer marking.</span>
-                <span>Answers 1–50</span>
-            </div>
-
-            <div class="ans-grid">
-                ${wfAPage1
-                  .map(
-                    (item, i) => `
-                    <div class="ans-item">
-                        <span class="ans-num">${i + 1}.</span>
-                        <span class="ans-text">${item.a}</span>
-                        <span class="ans-check">[✓][✗]</span>
-                    </div>
-                `,
-                  )
-                  .join('')}
-            </div>
-        </div>
-
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Official Mark Scheme</span>
-            <span>Score checked items and log on Front Cover Tracker</span>
-            <span>Page 4 of 11</span>
-        </div>
-    </div>
-
-    <!-- ============================================================= -->
-    <!-- PAGE 5: OFFICIAL MARK SCHEME (PART 2: ANSWERS 51 TO 100)       -->
-    <!-- ============================================================= -->
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>The British Sector of the Western Front, 1914–1918</h1>
-                    <p>Official Mark Scheme &amp; Knowledge Vault Answers · Answers 51 to 100 (Self &amp; Peer Marking Bank)</p>
-                </div>
-                <span class="header-tag" style="background: #059669;">Mark Scheme 2</span>
-            </div>
-
-            <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 4px; padding: 2px 6px; font-size: 6.8pt; color: #065f46; margin-bottom: 3px; display: flex; justify-content: space-between;">
-                <span>💡 <strong>Quick-Marking Bank:</strong> Use for rapid recall checking against Vault Part 2 (Page 3). Log total correct recall items on Page 1.</span>
-                <span>Answers 51–100</span>
-            </div>
-
-            <div class="ans-grid">
-                ${wfAPage2
-                  .map(
-                    (item, i) => `
-                    <div class="ans-item">
-                        <span class="ans-num">${i + 51}.</span>
-                        <span class="ans-text">${item.a}</span>
-                        <span class="ans-check">[✓][✗]</span>
-                    </div>
-                `,
-                  )
-                  .join('')}
-            </div>
-        </div>
-
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Official Mark Scheme</span>
-            <span>Round 1 Exam Practice begins on Page 6</span>
-            <span>Page 5 of 11</span>
-        </div>
-    </div>
-
-    <!-- ============================================================= -->
-    <!-- PAGE 6: ROUND 1 — STEPPED LADDER: FEATURES & FOLLOW-UP         -->
+    <!-- PAGE 2: ROUND 1 — STEPPED LADDER: FEATURES & FOLLOW-UP         -->
     <!-- ============================================================= -->
     <div class="page">
         <div>
@@ -540,12 +380,12 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · Round 1 Stepped Ladder</span>
             <span>Section A · Turn page for Question 2(a) 8-Mark Source Utility</span>
-            <span>Page 6 of 11</span>
+            <span>Page 2 of 8</span>
         </div>
     </div>
 
     <!-- ============================================================= -->
-    <!-- PAGE 7: ROUND 1 — STEPPED LADDER: 8-MARK SOURCE UTILITY        -->
+    <!-- PAGE 3: ROUND 1 — STEPPED LADDER: 8-MARK SOURCE UTILITY        -->
     <!-- ============================================================= -->
     <div class="page">
         <div>
@@ -615,12 +455,12 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · Round 1 Stepped Ladder</span>
             <span>Section A · Round 2 Dual-Track begins on Page 8</span>
-            <span>Page 7 of 11</span>
+            <span>Page 3 of 8</span>
         </div>
     </div>
 
     <!-- ============================================================= -->
-    <!-- PAGE 8: ROUND 2 — SPLIT-COLUMN DUAL TRACK (FEATURES & FOLLOW-UP)-->
+    <!-- PAGE 4: ROUND 2 — SPLIT-COLUMN DUAL TRACK (FEATURES & FOLLOW-UP)-->
     <!-- ============================================================= -->
     <div class="page">
         <div>
@@ -693,12 +533,12 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · Round 2 Dual Track</span>
             <span>Section A · Turn page for Question 2(a) Source Utility Masterclass</span>
-            <span>Page 8 of 11</span>
+            <span>Page 4 of 8</span>
         </div>
     </div>
 
     <!-- ============================================================= -->
-    <!-- PAGE 9: ROUND 2 — SPLIT-COLUMN DUAL TRACK (SOURCE UTILITY)    -->
+    <!-- PAGE 5: ROUND 2 — SPLIT-COLUMN DUAL TRACK (SOURCE UTILITY)    -->
     <!-- ============================================================= -->
     <div class="page">
         <div>
@@ -767,62 +607,67 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · Round 2 Dual Track</span>
             <span>Section A · Round 3 Exam Simulation begins on Page 10</span>
-            <span>Page 9 of 11</span>
+            <span>Page 5 of 8</span>
         </div>
     </div>
 
     <!-- ============================================================= -->
-    <!-- PAGE 10: ROUND 3 — TIMED EXAM SIMULATION & PRE-FLIGHT COCKPIT -->
+    <!-- PAGE 6: ROUND 3 — TIMED SIMULATION (STEMS 1 & 2b · 8 MARKS)   -->
     <!-- ============================================================= -->
     <div class="page">
         <div>
             <div class="page-header">
                 <div class="header-left">
                     <h1>Section A: The Historic Environment</h1>
-                    <p>Round 3: Timed Exam Simulation &amp; Pre-Flight Cockpit (16 Marks · 25 Mins)</p>
+                    <p>Round 3: Timed Exam Simulation · Stems 1(a), 1(b) Features &amp; 2(b) Follow-Up (8 Marks · 12 Mins)</p>
                 </div>
-                <span class="header-tag" style="background: #dc2626;">Timed Exam Pitch</span>
+                <span class="header-tag" style="background: #dc2626;">Timed Pitch Part 1</span>
             </div>
 
             <!-- Pre-Flight Cockpit Banner -->
             <div style="background: #fef2f2; border: 1.5px solid #b91c1c; border-radius: 4px; padding: 4px 8px; font-size: 6.8pt; margin-bottom: 5px;">
                 <div style="font-weight: 800; color: #991b1b; text-transform: uppercase; margin-bottom: 2px; display: flex; justify-content: space-between;">
-                    <span>⚡ Pre-Flight Planning Engine (16 Marks · 25 Mins)</span>
-                    <span>Edexcel Option 11 Blueprint</span>
+                    <span>⚡ Pre-Flight Planning Engine · Features &amp; Follow-Up (8 Marks · ~12 Mins)</span>
+                    <span>Option 11 Blueprint</span>
                 </div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; line-height: 1.25;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; line-height: 1.25;">
                     <div style="background: #fff; border: 1px solid #fecaca; border-radius: 3px; padding: 3px 5px;">
-                        <strong style="color: #991b1b; display: block;">1. Q1 Features (4m):</strong>
+                        <strong style="color: #991b1b; display: block;">1. Q1 Features (4m · ~6 mins):</strong>
                         F-D Formula: 1 feature + 1 specific fact. (e.g. Arras: 700 beds/electricity; Cambrai: Robertson blood bank).
                     </div>
                     <div style="background: #fff; border: 1px solid #fecaca; border-radius: 3px; padding: 3px 5px;">
-                        <strong style="color: #991b1b; display: block;">2. Q2(a) Utility (8m):</strong>
-                        C-O-P Matrix: Content + Own context + Provenance (NOP). Weigh up clinical validity vs wartime typicality.
-                    </div>
-                    <div style="background: #fff; border: 1px solid #fecaca; border-radius: 3px; padding: 3px 5px;">
-                        <strong style="color: #991b1b; display: block;">3. Q2(b) Follow-Up (4m):</strong>
+                        <strong style="color: #991b1b; display: block;">2. Q2(b) Follow-Up (4m · ~6 mins):</strong>
                         Quote exact detail &rarr; Targeted enquiry question &rarr; Primary archival record (RAMC War Diaries) &rarr; Direct purpose.
                     </div>
                 </div>
             </div>
 
-            <!-- Continuous Exam Pitch for Section A -->
-            <div style="padding: 0;">
-                <div class="writing-line starter"><strong>Question 1(a) (2 Marks):</strong> Describe one feature of the underground hospital at Arras: ______________________</div>
+            <!-- Q1(a) & Q1(b) Features -->
+            <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 5px 8px; margin-bottom: 5px; background: #fff;">
+                <div style="font-size: 7.8pt; font-weight: bold; color: #0f172a; margin-bottom: 2px;">
+                    Question 1(a) (2 Marks): Describe one feature of the underground hospital at Arras:
+                </div>
+                <div class="writing-line starter">One feature of the underground hospital at Arras was...</div>
                 <div class="writing-line"></div>
-                <div class="writing-line starter" style="margin-top: 2px;"><strong>Question 1(b) (2 Marks):</strong> Describe one feature of blood transfusion techniques on the Western Front: _________</div>
-                <div class="writing-line"></div>
-                
-                <div class="writing-line starter" style="margin-top: 2px;"><strong>Question 2(a) (8 Marks):</strong> Source A is useful because _____________________________________________________</div>
-                <div class="writing-line"></div>
-                <div class="writing-line starter">Source B is also useful because ____________________________________________________________________</div>
                 <div class="writing-line"></div>
 
-                <div style="font-size: 7.2pt; font-weight: bold; color: #0f172a; margin-top: 3px;">Question 2(b) (4 Marks): Complete the follow-up investigation table below:</div>
+                <div style="font-size: 7.8pt; font-weight: bold; color: #0f172a; margin-top: 4px; margin-bottom: 2px;">
+                    Question 1(b) (2 Marks): Describe one feature of blood transfusion techniques on the Western Front:
+                </div>
+                <div class="writing-line starter">One feature of blood transfusion techniques was...</div>
+                <div class="writing-line"></div>
+                <div class="writing-line"></div>
+            </div>
+
+            <!-- Q2(b) Follow-Up Table -->
+            <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 5px 8px; background: #fff;">
+                <div style="font-size: 7.5pt; font-weight: bold; color: #0f172a; margin-bottom: 2px;">
+                    Question 2(b) (4 Marks): Study Source B (Edith Smith letter on frozen pipes). How could you follow up Source B to find out more about the severe conditions faced by medical staff?
+                </div>
                 <table class="follow-up-table" style="margin-top: 2px;">
                     <tr>
-                        <td><strong>Detail in Source B to follow up:</strong></td>
-                        <td><div class="writing-line starter" style="font-size: 6.8pt; color: #64748b;">Quote exact detail from Source B here...</div></td>
+                        <td style="width: 32%;"><strong>Detail in Source B to follow up:</strong></td>
+                        <td><div class="writing-line starter" style="font-size: 6.8pt; color: #1e3a8a; font-style: italic;">"The pipes freeze entirely, meaning we must strictly ration the water provided to the wounded."</div></td>
                     </tr>
                     <tr>
                         <td><strong>Question I would ask:</strong></td>
@@ -834,7 +679,7 @@ async function run() {
                     </tr>
                     <tr>
                         <td><strong>How this source would help me:</strong></td>
-                        <td><div class="writing-line"></div></td>
+                        <td><div class="writing-line"></div><div class="writing-line"></div></td>
                     </tr>
                 </table>
             </div>
@@ -842,13 +687,80 @@ async function run() {
 
         <div class="page-footer">
             <span>Mr Lovett's History Hub · Authentic Exam Pitch</span>
-            <span>Section A · Turn page for 100% Spec Coverage Bank</span>
-            <span>Page 10 of 11</span>
+            <span>Section A · Turn page for Question 2(a) Timed Source Utility</span>
+            <span>Page 6 of 8</span>
         </div>
     </div>
 
     <!-- ============================================================= -->
-    <!-- PAGE 11: BACK COVER — 100% SPEC PRACTICE BANK & TRAPS         -->
+    <!-- PAGE 7: ROUND 3 — TIMED SIMULATION (STEM 2a · 8 MARKS)        -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h1>Section A: The Historic Environment</h1>
+                    <p>Round 3: Timed Exam Simulation · Question 2(a) Source Utility (8 Marks · ~13 Mins)</p>
+                </div>
+                <span class="header-tag" style="background: #2563eb;">Timed Pitch Part 2</span>
+            </div>
+
+            <div class="ladder-zone" style="border-left: 3.5px solid #2563eb; padding: 4px 8px; margin-bottom: 2px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+                    <strong style="font-size: 8.5pt; color: #1e293b;">Question 2(a): Source Utility (8 Marks)</strong>
+                    <span style="font-size: 7pt; color: #1d4ed8; font-weight: 700;">C-O-P Matrix · ~13 Mins</span>
+                </div>
+                <div style="font-weight: 800; font-size: 8.2pt; color: #0f172a; margin-bottom: 3px;">
+                    Study Sources A and B. How useful are Sources A and B for an enquiry into the immense difficulties of casualty evacuation on the Western Front? Explain your answer, using Sources A and B and your knowledge of the historical context.
+                </div>
+
+                <!-- Sources Display Box -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 3px;">
+                    <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; font-size: 6.5pt; line-height: 1.25;">
+                        <strong style="color: #1e3a8a; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">Source A (RAMC Stretcher Bearer, Ypres Salient, Oct 1917):</strong>
+                        <em>"The mud was waist-deep in places. Duckboards were blown to splinters by artillery fire. It took four of us six agonizing hours to carry a single stretcher back from the front line to the Advanced Dressing Station, slipping constantly into shell craters."</em>
+                    </div>
+                    <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; font-size: 6.5pt; line-height: 1.25;">
+                        <strong style="color: #1e3a8a; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">Source B (Official War Office Medical Evacuation Report, 1917):</strong>
+                        <em>"The evacuation chain relies upon motor ambulance convoys from Dressing Stations to railheads. However, in heavy bombardments, roads become impassable. Canal barges along the Yser and railway ambulance carriages equipped with heating stoves must be prioritized."</em>
+                    </div>
+                </div>
+
+                <!-- Mandatory Provenance Clues Scaffolding Box -->
+                <div style="background: #fef3c7; border: 1px solid #fde047; border-radius: 4px; padding: 3px 6px; font-size: 6.7pt; color: #854d0e; margin-bottom: 3px;">
+                    <strong>🔍 PROVENANCE CLUES (Author, Audience, Motive):</strong> Contrast a frontline stretcher bearer's immediate visceral journal (recording physical exhaustion) with an official military report (recording logistical systems and infrastructure).
+                </div>
+
+                <!-- Writing lines (16 Ruled Lines Total) -->
+                <div style="padding: 1px 0;">
+                    <div style="font-size: 6.8pt; font-weight: 800; color: #1d4ed8; margin: 1px 0; text-transform: uppercase;">Paragraph 1: Utility of Source A (Content + Context + Provenance)</div>
+                    <div class="writing-line starter">Source A is useful for investigating casualty evacuation because the content reveals...</div>
+                    <div class="writing-line starter">From my own knowledge of the Western Front, this reflects the conditions of...</div>
+                    <div class="writing-line starter">Furthermore, the provenance makes it useful because as a frontline stretcher bearer...</div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+
+                    <div style="font-size: 6.8pt; font-weight: 800; color: #1d4ed8; margin: 3px 0 1px 0; text-transform: uppercase;">Paragraph 2: Utility of Source B &amp; Comparative Judgement</div>
+                    <div class="writing-line starter">Source B is also useful because it highlights the wider logistical challenges of...</div>
+                    <div class="writing-line starter">Specifically, my own knowledge confirms that motor ambulances and canal barges...</div>
+                    <div class="writing-line starter">The provenance enhances its utility because as an official War Office report...</div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line starter">Overall, comparing both sources, an historian learns that while Source A reveals...</div>
+                    <div class="writing-line starter">...Source B provides the broader strategic perspective on the evacuation chain.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Mr Lovett's History Hub · Authentic Exam Pitch</span>
+            <span>Section A · Turn page for Examiner Traps &amp; 100% Spec Bank</span>
+            <span>Page 7 of 8</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 8: BACK COVER — 100% SPEC PRACTICE BANK & TRAPS         -->
     <!-- ============================================================= -->
     <div class="page">
         <div>
@@ -920,7 +832,7 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · 100% Specification Bank</span>
             <span>Section A Complete · Score checked items on Page 1</span>
-            <span>Page 11 of 11</span>
+            <span>Page 8 of 8</span>
         </div>
     </div>
 </body>
@@ -928,7 +840,7 @@ async function run() {
 
   const sectionAPath = path.join(bookletsDir, 'med_mastery_section_a.html');
   fs.writeFileSync(sectionAPath, sectionAHtml, 'utf8');
-  console.log(`   ✅ Saved Section A HTML: med_mastery_section_a.html (11 Pages)`);
+  console.log(`   ✅ Saved Section A HTML: med_mastery_section_a.html (8 Pages)`);
 
   // =========================================================================
   // BUILD BOOKLET 2: SECTION B — MEDICINE c1250–PRESENT (24 PAGES)
@@ -955,7 +867,7 @@ async function run() {
             <div style="background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%); color: white; padding: 12px 16px; border-radius: 6px; margin-bottom: 8px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 4px; margin-bottom: 6px;">
                     <span style="font-size: 7.5pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #93c5fd;">Pearson Edexcel GCSE (9–1) History · Paper 1 (1HI0/11)</span>
-                    <span style="font-size: 7pt; background: #3b82f6; padding: 2px 6px; border-radius: 3px; font-weight: 700;">Section B 24-Page Thematic Master</span>
+                    <span style="font-size: 7pt; background: #3b82f6; padding: 2px 6px; border-radius: 3px; font-weight: 700;">Section B 12-Page Thematic Exam Mastery</span>
                 </div>
                 <h1 style="margin: 0; font-size: 14pt; font-weight: 800; line-height: 1.2;">Medicine in Britain, c1250–present</h1>
                 <p style="margin: 3px 0 0 0; font-size: 8pt; color: #cbd5e1;">Thematic Study across 750 Years · Medieval, Renaissance, 18th/19th Century &amp; Modern Eras</p>
@@ -985,12 +897,6 @@ async function run() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr style="background: #f1f5f9; font-weight: 700;">
-                            <td>🧠 Complete 4-Era Knowledge Vault (All 280 Recall Questions)</td>
-                            <td style="text-align: center;">Checklist</td>
-                            <td style="text-align: center;">/280</td>
-                            <td style="text-align: center;">_____</td>
-                        </tr>
                         <tr>
                             <td><strong>Round 1 (Stepped):</strong> Q3 Similarity / Difference (Medieval vs Renaissance)</td>
                             <td style="text-align: center;">Stepped Ladder</td>
@@ -1062,420 +968,12 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · Pearson Edexcel GCSE History</span>
             <span>Section B Thematic Study Master Booklet (c1250–present)</span>
-            <span>Page 1 of 24</span>
+            <span>Page 1 of 12</span>
         </div>
     </div>
 
     <!-- ============================================================= -->
-    <!-- PAGES 2–3: MEDIEVAL KNOWLEDGE VAULT (c1250–c1500)             -->
-    <!-- ============================================================= -->
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Unit 1: Medicine in Medieval Britain, c1250–c1500</h1>
-                    <p>Knowledge Retrieval Vault · Part 1: Questions 1 to 40 (Causes of Illness &amp; Religious Beliefs)</p>
-                </div>
-                <span class="header-tag">Medieval Vault 1</span>
-            </div>
-            <div class="quiz-grid">
-                ${medQuestions
-                  .slice(0, 40)
-                  .map(
-                    (item, i) => `
-                    <div class="quiz-item">
-                        <div class="quiz-cb"></div>
-                        <div style="flex: 1;">
-                            <strong>${i + 1}.</strong> ${item.q}
-                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[${item.source}]</div>
-                        </div>
-                    </div>
-                `,
-                  )
-                  .join('')}
-            </div>
-        </div>
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Knowledge Vault</span>
-            <span>Turn page for Medieval Vault Part 2</span>
-            <span>Page 2 of 24</span>
-        </div>
-    </div>
-
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Unit 1: Medicine in Medieval Britain, c1250–c1500</h1>
-                    <p>Knowledge Retrieval Vault · Part 2: Questions 41 to 80 (Treatments, Care &amp; The Black Death)</p>
-                </div>
-                <span class="header-tag">Medieval Vault 2</span>
-            </div>
-            <div class="quiz-grid">
-                ${medQuestions
-                  .slice(40, 80)
-                  .map(
-                    (item, i) => `
-                    <div class="quiz-item">
-                        <div class="quiz-cb"></div>
-                        <div style="flex: 1;">
-                            <strong>${i + 41}.</strong> ${item.q}
-                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[${item.source}]</div>
-                        </div>
-                    </div>
-                `,
-                  )
-                  .join('')}
-            </div>
-        </div>
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Knowledge Vault</span>
-            <span>Turn page for Renaissance Knowledge Vault</span>
-            <span>Page 3 of 24</span>
-        </div>
-    </div>
-
-    <!-- ============================================================= -->
-    <!-- PAGES 4–5: RENAISSANCE KNOWLEDGE VAULT (c1500–c1700)          -->
-    <!-- ============================================================= -->
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Unit 2: The Medical Renaissance in Britain, c1500–c1700</h1>
-                    <p>Knowledge Retrieval Vault · Part 1: Questions 1 to 30 (Ideas, Printing Press &amp; Sydenham)</p>
-                </div>
-                <span class="header-tag">Renaissance Vault 1</span>
-            </div>
-            <div class="quiz-grid">
-                ${renQuestions
-                  .slice(0, 30)
-                  .map(
-                    (item, i) => `
-                    <div class="quiz-item">
-                        <div class="quiz-cb"></div>
-                        <div style="flex: 1;">
-                            <strong>${i + 1}.</strong> ${item.q}
-                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[${item.source}]</div>
-                        </div>
-                    </div>
-                `,
-                  )
-                  .join('')}
-            </div>
-        </div>
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Knowledge Vault</span>
-            <span>Turn page for Renaissance Vault Part 2</span>
-            <span>Page 4 of 24</span>
-        </div>
-    </div>
-
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Unit 2: The Medical Renaissance in Britain, c1500–c1700</h1>
-                    <p>Knowledge Retrieval Vault · Part 2: Questions 31 to 60 (Vesalius, Harvey &amp; The Great Plague 1665)</p>
-                </div>
-                <span class="header-tag">Renaissance Vault 2</span>
-            </div>
-            <div class="quiz-grid">
-                ${renQuestions
-                  .slice(30, 60)
-                  .map(
-                    (item, i) => `
-                    <div class="quiz-item">
-                        <div class="quiz-cb"></div>
-                        <div style="flex: 1;">
-                            <strong>${i + 31}.</strong> ${item.q}
-                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[${item.source}]</div>
-                        </div>
-                    </div>
-                `,
-                  )
-                  .join('')}
-            </div>
-        </div>
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Knowledge Vault</span>
-            <span>Turn page for 18th &amp; 19th Century Knowledge Vault</span>
-            <span>Page 5 of 24</span>
-        </div>
-    </div>
-
-    <!-- ============================================================= -->
-    <!-- PAGES 6–7: 18th & 19th CENTURY KNOWLEDGE VAULT (c1700–c1900)  -->
-    <!-- ============================================================= -->
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Unit 3: Medicine in 18th &amp; 19th-Century Britain, c1700–c1900</h1>
-                    <p>Knowledge Retrieval Vault · Part 1: Questions 1 to 30 (Germ Theory, Pasteur, Koch &amp; Surgery)</p>
-                </div>
-                <span class="header-tag">18th/19th Vault 1</span>
-            </div>
-            <div class="quiz-grid">
-                ${indQuestions
-                  .slice(0, 30)
-                  .map(
-                    (item, i) => `
-                    <div class="quiz-item">
-                        <div class="quiz-cb"></div>
-                        <div style="flex: 1;">
-                            <strong>${i + 1}.</strong> ${item.q}
-                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[${item.source}]</div>
-                        </div>
-                    </div>
-                `,
-                  )
-                  .join('')}
-            </div>
-        </div>
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Knowledge Vault</span>
-            <span>Turn page for 18th &amp; 19th Century Vault Part 2</span>
-            <span>Page 6 of 24</span>
-        </div>
-    </div>
-
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Unit 3: Medicine in 18th &amp; 19th-Century Britain, c1700–c1900</h1>
-                    <p>Knowledge Retrieval Vault · Part 2: Questions 31 to 60 (Nightingale, Jenner, Snow &amp; 1875 Act)</p>
-                </div>
-                <span class="header-tag">18th/19th Vault 2</span>
-            </div>
-            <div class="quiz-grid">
-                ${indQuestions
-                  .slice(30, 60)
-                  .map(
-                    (item, i) => `
-                    <div class="quiz-item">
-                        <div class="quiz-cb"></div>
-                        <div style="flex: 1;">
-                            <strong>${i + 31}.</strong> ${item.q}
-                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[${item.source}]</div>
-                        </div>
-                    </div>
-                `,
-                  )
-                  .join('')}
-            </div>
-        </div>
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Knowledge Vault</span>
-            <span>Turn page for Modern Medicine Knowledge Vault</span>
-            <span>Page 7 of 24</span>
-        </div>
-    </div>
-
-    <!-- ============================================================= -->
-    <!-- PAGES 8–9: MODERN MEDICINE KNOWLEDGE VAULT (c1900–PRESENT)    -->
-    <!-- ============================================================= -->
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Unit 4: Medicine in Modern Britain, c1900–present</h1>
-                    <p>Knowledge Retrieval Vault · Part 1: Questions 1 to 40 (Genetics, DNA, Diagnosis &amp; Magic Bullets)</p>
-                </div>
-                <span class="header-tag">Modern Vault 1</span>
-            </div>
-            <div class="quiz-grid">
-                ${modQuestions
-                  .slice(0, 40)
-                  .map(
-                    (item, i) => `
-                    <div class="quiz-item">
-                        <div class="quiz-cb"></div>
-                        <div style="flex: 1;">
-                            <strong>${i + 1}.</strong> ${item.q}
-                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[${item.source}]</div>
-                        </div>
-                    </div>
-                `,
-                  )
-                  .join('')}
-            </div>
-        </div>
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Knowledge Vault</span>
-            <span>Turn page for Modern Vault Part 2</span>
-            <span>Page 8 of 24</span>
-        </div>
-    </div>
-
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Unit 4: Medicine in Modern Britain, c1900–present</h1>
-                    <p>Knowledge Retrieval Vault · Part 2: Questions 41 to 80 (Penicillin, NHS 1948 &amp; Lung Cancer)</p>
-                </div>
-                <span class="header-tag">Modern Vault 2</span>
-            </div>
-            <div class="quiz-grid">
-                ${modQuestions
-                  .slice(40, 80)
-                  .map(
-                    (item, i) => `
-                    <div class="quiz-item">
-                        <div class="quiz-cb"></div>
-                        <div style="flex: 1;">
-                            <strong>${i + 41}.</strong> ${item.q}
-                            <div style="color: #94a3b8; font-size: 6.5pt; margin-top: 1px;">[${item.source}]</div>
-                        </div>
-                    </div>
-                `,
-                  )
-                  .join('')}
-            </div>
-        </div>
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Knowledge Vault</span>
-            <span>Turn page for Official Mark Scheme Answers</span>
-            <span>Page 9 of 24</span>
-        </div>
-    </div>
-
-    <!-- ============================================================= -->
-    <!-- PAGES 10–11: MARK SCHEMES — MEDIEVAL & RENAISSANCE            -->
-    <!-- ============================================================= -->
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Section B: Official Mark Scheme</h1>
-                    <p>Answers-Only Bank: Medieval (Answers 1–80) · Quick-Marking Centerfold</p>
-                </div>
-                <span class="header-tag" style="background: #059669;">Medieval Answers</span>
-            </div>
-            <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 4px; padding: 2px 6px; font-size: 6.8pt; color: #065f46; margin-bottom: 4px;">
-                💡 <strong>Quick-Marking Bank:</strong> Cover with your hand or exercise book to test your recall against Pages 2–3.
-            </div>
-            <div class="ans-grid dense-3col">
-                ${medQuestions
-                  .map(
-                    (item, i) => `
-                    <div class="ans-item">
-                        <span class="ans-num">${i + 1}.</span>
-                        <span class="ans-text">${item.a}</span>
-                        <span class="ans-check">[✓][✗]</span>
-                    </div>
-                `,
-                  )
-                  .join('')}
-            </div>
-        </div>
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Mark Scheme</span>
-            <span>Score checked items on Front Cover Tracker</span>
-            <span>Page 10 of 24</span>
-        </div>
-    </div>
-
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Section B: Official Mark Scheme</h1>
-                    <p>Answers-Only Bank: Renaissance (Answers 1–60) · Quick-Marking Centerfold</p>
-                </div>
-                <span class="header-tag" style="background: #059669;">Renaissance Answers</span>
-            </div>
-            <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 4px; padding: 2px 6px; font-size: 6.8pt; color: #065f46; margin-bottom: 4px;">
-                💡 <strong>Quick-Marking Bank:</strong> Score checked items and verify your factual understanding of Harvey, Vesalius and Sydenham.
-            </div>
-            <div class="ans-grid dense-3col">
-                ${renQuestions
-                  .map(
-                    (item, i) => `
-                    <div class="ans-item">
-                        <span class="ans-num">${i + 1}.</span>
-                        <span class="ans-text">${item.a}</span>
-                        <span class="ans-check">[✓][✗]</span>
-                    </div>
-                `,
-                  )
-                  .join('')}
-            </div>
-        </div>
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Mark Scheme</span>
-            <span>Turn page for 18th/19th Century &amp; Modern Answers</span>
-            <span>Page 11 of 24</span>
-        </div>
-    </div>
-
-    <!-- ============================================================= -->
-    <!-- PAGES 12–13: MARK SCHEMES — 18th/19th C & MODERN              -->
-    <!-- ============================================================= -->
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Section B: Official Mark Scheme</h1>
-                    <p>Answers-Only Bank: 18th &amp; 19th Century (Answers 1–60)</p>
-                </div>
-                <span class="header-tag" style="background: #059669;">18th/19th Answers</span>
-            </div>
-            <div class="ans-grid dense-3col">
-                ${indQuestions
-                  .map(
-                    (item, i) => `
-                    <div class="ans-item">
-                        <span class="ans-num">${i + 1}.</span>
-                        <span class="ans-text">${item.a}</span>
-                        <span class="ans-check">[✓][✗]</span>
-                    </div>
-                `,
-                  )
-                  .join('')}
-            </div>
-        </div>
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Mark Scheme</span>
-            <span>Turn page for Modern Medicine Answers</span>
-            <span>Page 12 of 24</span>
-        </div>
-    </div>
-
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Section B: Official Mark Scheme</h1>
-                    <p>Answers-Only Bank: Modern Medicine (Answers 1–80)</p>
-                </div>
-                <span class="header-tag" style="background: #059669;">Modern Answers</span>
-            </div>
-            <div class="ans-grid dense-3col">
-                ${modQuestions
-                  .map(
-                    (item, i) => `
-                    <div class="ans-item">
-                        <span class="ans-num">${i + 1}.</span>
-                        <span class="ans-text">${item.a}</span>
-                        <span class="ans-check">[✓][✗]</span>
-                    </div>
-                `,
-                  )
-                  .join('')}
-            </div>
-        </div>
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Mark Scheme</span>
-            <span>Section B Exam Practice begins on Page 14</span>
-            <span>Page 13 of 24</span>
-        </div>
-    </div>
-
-    <!-- ============================================================= -->
-    <!-- PAGE 14: ROUND 1 — STEPPED LADDER: Q3 SIMILARITY & DIFFERENCE  -->
+    <!-- PAGE 2: ROUND 1 — STEPPED LADDER: Q3 SIMILARITY & DIFFERENCE  -->
     <!-- ============================================================= -->
     <div class="page">
         <div>
@@ -1520,12 +1018,12 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · Round 1 Stepped Ladder</span>
             <span>Section B · Turn page for Question 4 (Explain Why)</span>
-            <span>Page 14 of 24</span>
+            <span>Page 2 of 12</span>
         </div>
     </div>
 
     <!-- ============================================================= -->
-    <!-- PAGE 15: ROUND 1 — STEPPED LADDER: Q4 EXPLAIN WHY (12 MARKS)  -->
+    <!-- PAGE 3: ROUND 1 — STEPPED LADDER: Q4 EXPLAIN WHY (12 MARKS)  -->
     <!-- ============================================================= -->
     <div class="page">
         <div>
@@ -1586,12 +1084,12 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · Round 1 Stepped Ladder</span>
             <span>Section B · Turn page for Questions 5/6 (Statement Essay)</span>
-            <span>Page 15 of 24</span>
+            <span>Page 3 of 12</span>
         </div>
     </div>
 
     <!-- ============================================================= -->
-    <!-- PAGES 16–17: ROUND 1 — STEPPED LADDER: Q5/Q6 ESSAY (16+4m)    -->
+    <!-- PAGES 4–5: ROUND 1 — STEPPED LADDER: Q5/Q6 ESSAY (16+4m)    -->
     <!-- ============================================================= -->
     <div class="page">
         <div>
@@ -1652,7 +1150,7 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · Round 1 Stepped Ladder</span>
             <span>Section B · Turn page for Essay Paragraphs 2, 3 &amp; Judgement</span>
-            <span>Page 16 of 24</span>
+            <span>Page 4 of 12</span>
         </div>
     </div>
 
@@ -1698,12 +1196,12 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · Round 1 Stepped Ladder</span>
             <span>Section B · Round 2 Dual Track begins on Page 18</span>
-            <span>Page 17 of 24</span>
+            <span>Page 5 of 12</span>
         </div>
     </div>
 
     <!-- ============================================================= -->
-    <!-- PAGES 18–21: ROUND 2 — SPLIT-COLUMN DUAL TRACK (Q3, Q4, Q5)   -->
+    <!-- PAGES 6–9: ROUND 2 — SPLIT-COLUMN DUAL TRACK (Q3, Q4, Q5)   -->
     <!-- ============================================================= -->
     <div class="page">
         <div>
@@ -1765,7 +1263,7 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · Round 2 Dual Track</span>
             <span>Section B · Turn page for Question 4 Dual Track</span>
-            <span>Page 18 of 24</span>
+            <span>Page 6 of 12</span>
         </div>
     </div>
 
@@ -1838,7 +1336,7 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · Round 2 Dual Track</span>
             <span>Section B · Turn page for Questions 5/6 Dual Track</span>
-            <span>Page 19 of 24</span>
+            <span>Page 7 of 12</span>
         </div>
     </div>
 
@@ -1904,7 +1402,7 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · Round 2 Dual Track</span>
             <span>Section B · Turn page for Essay Part 2</span>
-            <span>Page 20 of 24</span>
+            <span>Page 8 of 12</span>
         </div>
     </div>
 
@@ -1959,12 +1457,12 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · Round 2 Dual Track</span>
             <span>Section B · Turn page for Planning Engine Room</span>
-            <span>Page 21 of 24</span>
+            <span>Page 9 of 12</span>
         </div>
     </div>
 
     <!-- ============================================================= -->
-    <!-- PAGE 22: ROUND 3 — PLANNING ENGINE ROOM                       -->
+    <!-- PAGE 10: ROUND 3 — PLANNING ENGINE ROOM                       -->
     <!-- ============================================================= -->
     <div class="page">
         <div>
@@ -2035,12 +1533,12 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · Round 3 Engine Room</span>
             <span>Section B · Execute continuous prose on Page 23</span>
-            <span>Page 22 of 24</span>
+            <span>Page 10 of 12</span>
         </div>
     </div>
 
     <!-- ============================================================= -->
-    <!-- PAGE 23: ROUND 3 — THE EXAM PITCH (SECTION B SIMULATION)      -->
+    <!-- PAGE 11: ROUND 3 — THE EXAM PITCH (SECTION B SIMULATION)      -->
     <!-- ============================================================= -->
     <div class="page">
         <div>
@@ -2085,12 +1583,12 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · Authentic Exam Pitch</span>
             <span>Section B · Turn page for 100% Spec Coverage Bank</span>
-            <span>Page 23 of 24</span>
+            <span>Page 11 of 12</span>
         </div>
     </div>
 
     <!-- ============================================================= -->
-    <!-- PAGE 24: BACK COVER — 100% SPEC PRACTICE BANK & TRAPS         -->
+    <!-- PAGE 12: BACK COVER — 100% SPEC PRACTICE BANK & TRAPS         -->
     <!-- ============================================================= -->
     <div class="page">
         <div>
@@ -2159,7 +1657,7 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · 100% Specification Bank</span>
             <span>Section B Complete · Score checked items on Page 1</span>
-            <span>Page 24 of 24</span>
+            <span>Page 12 of 12</span>
         </div>
     </div>
 </body>
@@ -2167,12 +1665,12 @@ async function run() {
 
   const sectionBPath = path.join(bookletsDir, 'med_mastery_section_b.html');
   fs.writeFileSync(sectionBPath, sectionBHtml, 'utf8');
-  console.log(`   ✅ Saved Section B HTML: med_mastery_section_b.html (24 Pages)`);
+  console.log(`   ✅ Saved Section B HTML: med_mastery_section_b.html (12 Pages)`);
 
   // =========================================================================
   // BUILD MASTER COMPENDIUM: PAPER 1 FULL MASTER VOLUME (35 PAGES)
   // =========================================================================
-  console.log('\n📚 Compiling 35-Page Full Paper 1 Master Volume (med_mastery_FULL.html)...');
+  console.log('\n📚 Compiling 20-Page Full Paper 1 Master Volume (med_mastery_FULL.html)...');
 
   const extractBodyPages = (html) => {
     const bodyMatch = html.match(/<body>([\s\S]*?)<\/body>/i);
@@ -2218,7 +1716,7 @@ async function run() {
   });
   console.log(`   📕 Exported PDF: med_mastery_section_a_western_front.pdf (11 Pages)`);
 
-  // 2. Section B PDF (24 Pages)
+  // 2. Section B PDF (12 Pages)
   const secBPdfPath = path.join(pdfsDir, 'med_mastery_section_b_thematic_study.pdf');
   await page.goto(pathToFileURL(sectionBPath).href, { waitUntil: 'networkidle0' });
   await page.pdf({
@@ -2240,7 +1738,7 @@ async function run() {
     printBackground: true,
     margin: { top: '8mm', bottom: '8mm', left: '10mm', right: '10mm' },
   });
-  console.log(`   📕 Exported PDF: med_mastery_pack_FULL.pdf (35 Pages Master Volume)`);
+  console.log(`   📕 Exported PDF: med_mastery_pack_FULL.pdf (20 Pages Master Volume)`);
 
   // Sync to public/pdfs/ root
   fs.copyFileSync(secAPdfPath, path.join(rootPdfsDir, 'med_mastery_section_a_western_front.pdf'));
