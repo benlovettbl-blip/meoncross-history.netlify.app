@@ -564,6 +564,106 @@ export function renderWorkbooksZone(container, unitData) {
       `;
     });
 
+    const usaQuizPacks = [
+      {
+        id: 'KT1_QUIZ',
+        title: 'Key Topic 1 Recall Quiz & Vault (80 Crucial Questions)',
+        pages: '17 Pages',
+        badge: 'KT1 Recall Pack',
+        color: '#2563eb',
+        desc: '80 Targeted retrieval questions covering Lessons 1.1–1.4 (Civil Rights 1954–60), RAG threat-level confidence checkboxes, flashcard interrogation drills, and the full Vault self-marking answer key.',
+        fileBase: '/units/usa/mastery_pack_KT1.html',
+        pdfUrl: '/pdfs/usa_recall_quiz_KT1.pdf',
+      },
+      {
+        id: 'KT2_QUIZ',
+        title: 'Key Topic 2 Recall Quiz & Vault (80 Crucial Questions)',
+        pages: '17 Pages',
+        badge: 'KT2 Recall Pack',
+        color: '#0891b2',
+        desc: '80 Targeted retrieval questions covering Lessons 2.1–2.4 (Protest, Progress & Radicalism 1960–75), RAG threat-level confidence checkboxes, flashcard interrogation drills, and the full Vault self-marking answer key.',
+        fileBase: '/units/usa/mastery_pack_KT2.html',
+        pdfUrl: '/pdfs/usa_recall_quiz_KT2.pdf',
+      },
+      {
+        id: 'KT3_QUIZ',
+        title: 'Key Topic 3 Recall Quiz & Vault (80 Crucial Questions)',
+        pages: '17 Pages',
+        badge: 'KT3 Recall Pack',
+        color: '#059669',
+        desc: '80 Targeted retrieval questions covering Lessons 3.1–3.4 (US Involvement in Vietnam 1954–68), RAG threat-level confidence checkboxes, flashcard interrogation drills, and the full Vault self-marking answer key.',
+        fileBase: '/units/usa/mastery_pack_KT3.html',
+        pdfUrl: '/pdfs/usa_recall_quiz_KT3.pdf',
+      },
+      {
+        id: 'KT4_QUIZ',
+        title: 'Key Topic 4 Recall Quiz & Vault (80 Crucial Questions)',
+        pages: '18 Pages',
+        badge: 'KT4 Recall Pack',
+        color: '#d97706',
+        desc: '80 Targeted retrieval questions covering Lessons 4.1–4.4 (The End of the Vietnam War 1968–75), RAG threat-level confidence checkboxes, flashcard interrogation drills, and the full Vault self-marking answer key.',
+        fileBase: '/units/usa/mastery_pack_KT4.html',
+        pdfUrl: '/pdfs/usa_recall_quiz_KT4.pdf',
+      },
+      {
+        id: 'FULL_QUIZ',
+        title: 'Complete Unit Master Recall Quiz (All 320 Crucial Questions)',
+        pages: '54 Pages',
+        badge: 'Master Unit Quiz',
+        color: '#7c3aed',
+        desc: 'The master retrieval volume compiling all 320 knowledge recall questions across all 4 Key Topics. Includes memory hacking rules, RAG trackers, and complete Vault solutions. Print once for the entire year!',
+        fileBase: '/units/usa/mastery_pack_full.html',
+        pdfUrl: '/pdfs/usa_recall_quiz_FULL.pdf',
+      },
+    ];
+
+    usaHubHtml += `
+        </div>
+      </div>
+
+      <!-- USA Total Recall Knowledge Quizzes -->
+      <div style="background: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px; border-top: 4px solid #7c3aed;">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px;">
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <div style="width: 44px; height: 44px; border-radius: 10px; background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.3rem;">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <div>
+              <h2 style="color: #0f172a; margin: 0; font-size: 1.35rem;">USA 1954–75 — Total Recall Knowledge Quizzes</h2>
+              <p style="color: #64748b; font-size: 0.95rem; margin: 4px 0 0 0;">Focused recall sheets and self-marking Vaults. Features 80 questions each for KT1, KT2, KT3, and KT4, plus the complete 320-question Master Volume.</p>
+            </div>
+          </div>
+          <span style="font-size: 0.8rem; font-weight: 700; background: #ede9fe; color: #6d28d9; padding: 4px 12px; border-radius: 20px;">80 / 80 / 80 / 80 / 320 Questions</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+    `;
+
+    usaQuizPacks.forEach((b) => {
+      usaHubHtml += `
+        <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; gap: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.03);">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+              <span style="font-size: 0.75rem; font-weight: 800; background: ${b.color}15; color: ${b.color}; padding: 3px 8px; border-radius: 4px; border: 1px solid ${b.color}30;">${b.badge}</span>
+              <span style="font-size: 0.78rem; font-weight: 700; color: #475569;"><i class="fa-solid fa-file-pdf" style="color: ${b.color}; margin-right: 4px;"></i>${b.pages}</span>
+            </div>
+            <h3 style="margin: 0 0 8px 0; color: #1e293b; font-size: 1.05rem; line-height: 1.35;">${b.title}</h3>
+            <p style="margin: 0; font-size: 0.82rem; color: #64748b; line-height: 1.4;">${b.desc}</p>
+          </div>
+
+          <div style="display: flex; gap: 8px; margin-top: 5px;">
+            <button type="button" class="btn" onclick="window.openTeacherPrintPreview('${b.fileBase}', '${b.title}', '${b.pdfUrl}')" style="flex: 1; text-align: center; background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4px solid ${b.color}; padding: 10px 8px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: #1e293b; transition: all 0.2s ease;" onmouseover="this.style.borderColor='${b.color}'; this.style.boxShadow='0 2px 6px rgba(0,0,0,0.1)';" onmouseout="this.style.borderColor='#cbd5e1'; this.style.borderLeftColor='${b.color}'; this.style.boxShadow='none';">
+              <i class="fa-solid fa-eye" style="color: ${b.color};"></i> Preview &amp; Print
+            </button>
+
+            <a href="${b.pdfUrl}" target="_blank" download style="background: ${b.color}; color: #ffffff; padding: 10px 14px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; transition: opacity 0.2s ease;" onmouseover="this.style.opacity='0.9';" onmouseout="this.style.opacity='1';">
+              <i class="fa-solid fa-download"></i> PDF
+            </a>
+          </div>
+        </div>
+      `;
+    });
+
     usaHubHtml += `
         </div>
       </div>

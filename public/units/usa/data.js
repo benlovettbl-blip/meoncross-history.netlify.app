@@ -55,6 +55,14 @@ export const usa = {
       enquiry:
         'Why did domestic opposition force the USA to withdraw, and what was the consequence of the fall of Saigon?',
     },
+    {
+      id: 'full',
+      title: 'Complete Unit Master Recall (All 4 Key Topics)',
+      image: '/units/usa/assets/sources/airborne-little-rock-patrol.jpg',
+      prefix: 'all',
+      enquiry:
+        'Comprehensive retrieval mastery of all 320 crucial questions across the entire Pearson Edexcel Paper 3 specification.',
+    },
   ],
   timeline: [
     {

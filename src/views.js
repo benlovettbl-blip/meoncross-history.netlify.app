@@ -852,8 +852,15 @@ export function renderInteractiveQuiz() {
                 examPdfUrl = `/pdfs/cme_new/cme_mastery_pack_${upperId}.pdf`;
               } else if (unitId === 'usa') {
                 const upperId = wbId.toUpperCase();
+                recallPdfUrl = `/pdfs/usa_recall_quiz_${upperId}.pdf`;
                 examPdfUrl = `/pdfs/usa/usa_mastery_pack_${upperId}.pdf`;
               }
+
+              const examSuiteLabel = isFull
+                ? unitId === 'usa'
+                  ? '48p Exam Suite'
+                  : '36p Exam Suite'
+                : '12p Exam Pack';
 
               return `
               <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; transition: all 0.2s ease;" onmouseover="this.style.borderColor='#cbd5e1'; this.style.background='#ffffff';" onmouseout="this.style.borderColor='#e2e8f0'; this.style.background='#f8fafc';">
@@ -863,7 +870,7 @@ export function renderInteractiveQuiz() {
                   </span>
                   <div>
                     <strong style="color: #0f172a; font-size: 0.95rem; display: block;">${wb.title || wb.name}</strong>
-                    <span style="font-size: 0.78rem; color: #64748b;">${isFull ? 'All 10 Lessons • Complete Retrieval & Exam Mastery' : 'Knowledge Retrieval • The Vault Solutions • Exam Practice'}</span>
+                    <span style="font-size: 0.78rem; color: #64748b;">${isFull ? (unitId === 'usa' ? 'All 16 Lessons • Complete Retrieval (320Q) & Exam Mastery' : 'All 10 Lessons • Complete Retrieval & Exam Mastery') : 'Knowledge Retrieval • The Vault Solutions • Exam Practice'}</span>
                   </div>
                 </div>
                 <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
@@ -879,7 +886,7 @@ export function renderInteractiveQuiz() {
                     examPdfUrl
                       ? `
                   <a href="${examPdfUrl}" target="_blank" download style="text-decoration: none; background: #e0f2fe; border: 1.5px solid #bae6fd; color: #0369a1; padding: 7px 12px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s ease;" onmouseover="this.style.background='#bae6fd';" onmouseout="this.style.background='#e0f2fe';">
-                    <i class="fa-solid fa-book-open" style="color: #0284c7;"></i> ${isFull ? '36p Exam Suite' : '12p Exam Pack'}
+                    <i class="fa-solid fa-book-open" style="color: #0284c7;"></i> ${examSuiteLabel}
                   </a>
                   `
                       : ''
