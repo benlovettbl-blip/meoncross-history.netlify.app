@@ -38,7 +38,7 @@ const KT_DATA = {
           provenance:
             'Official photograph documenting Jim Crow segregation signage at a Southern passenger terminal, early 1950s (Library of Congress / National Archives).',
         },
-        lines: 6,
+        lines: 10,
         inference1: {
           prompt: '(i) What I can infer:',
           details: 'Details in the source that tell me this:',
@@ -53,7 +53,7 @@ const KT_DATA = {
         stem: 'Explain why it was difficult for Black Americans in the Southern states to register to vote in the early 1950s.',
         marks: 12,
         stimulus: ['Literacy tests', 'Ku Klux Klan (KKK)'],
-        linesPage3: 11,
+        linesPage3: 20,
         linesPage4: 18,
         vocabBank: [
           '15th Amendment bypassed',
@@ -112,7 +112,7 @@ const KT_DATA = {
         num: '3 (a)',
         stem: 'Study Sources B and C. How useful are Sources B and C for an enquiry into the reasons for the success of the Montgomery Bus Boycott (1955–56)?',
         marks: 8,
-        lines: 16,
+        lines: 25,
         scaffold: {
           sourceB_focus:
             'Source B Utility (Content & COP): Shows the immediate grassroots mobilization, the role of Jo Ann Robinson/WPC, and the deliberate strategy of economic pressure (75% Black passengers).',
@@ -126,7 +126,7 @@ const KT_DATA = {
         num: '3 (b)',
         stem: 'Study Interpretations 1 and 2. They give different views about the main reason why the Montgomery Bus Boycott succeeded. What is the main difference between these views? Explain your answer, using details from both interpretations.',
         marks: 4,
-        lines: 6,
+        lines: 10,
         formula:
           'Interpretation 1 argues that the boycott succeeded primarily due to grassroots mobilization and economic sacrifices of working-class Black women (Jo Ann Robinson, WPC, walking domestic workers), whereas Interpretation 2 argues that success was primarily driven by Dr Martin Luther King Jr.’s charismatic moral leadership and federal legal intervention (Browder v. Gayle).',
       },
@@ -134,17 +134,17 @@ const KT_DATA = {
         num: '3 (c)',
         stem: 'Suggest one reason why Interpretations 1 and 2 give different views about the main reason why the Montgomery Bus Boycott succeeded. You may use Sources B and C to help explain your answer.',
         marks: 4,
-        lines: 6,
+        lines: 10,
         formula:
           'The historians give different views because they have relied on different types of primary evidence. The author of Interpretation 1 has focused on grassroots evidence such as Source B, highlighting the practical organizational labor of the Women’s Political Council and economic leverage. In contrast, the author of Interpretation 2 has drawn upon evidence such as Source C, emphasizing Dr King’s philosophical oratory and national leadership.',
       },
       q3d: {
         num: '3 (d)',
-        stem: 'How far do you agree with Interpretation 1 about the reasons for the success of the Montgomery Bus Boycott (1955–56)?',
+        stem: 'How far do you agree with Interpretation 2 about the reasons for the success of the Montgomery Bus Boycott (1955–56)?',
         marks: 20,
         subMarks: '16 marks for essay + 4 marks for SPaG',
-        linesPage8: 13,
-        linesPage9: 16,
+        linesPage7: 26,
+        linesPage8: 28,
         criteria: [
           'Grassroots economic mobilization (WPC, 300-car pool, walking 381 days, 70% revenue loss)',
           'Charismatic moral leadership (MLK, non-violence, mass church rallies, national media coverage)',
@@ -159,7 +159,7 @@ const KT_DATA = {
         stem: 'Explain why the Brown v. Board of Education decision (1954) met with intense resistance in the Southern states.',
         marks: 12,
         stimulus: ['The Southern Manifesto (1956)', 'Orval Faubus at Little Rock (1957)'],
-        lines: 13,
+        lines: 22,
         vocabBank: [
           'Earl Warren unanimous 9-0 ruling',
           '"Separate is inherently unequal"',
@@ -212,9 +212,9 @@ const KT_DATA = {
           'Level 2 (4/4 Marks): Explains differing interpretations by linking them explicitly to differing source material and historical emphases.',
       },
       q3d: {
-        stem: 'How far do you agree with Interpretation 1 about the reasons for the success of the Montgomery Bus Boycott (1955–56)? (16+4 marks)',
+        stem: 'How far do you agree with Interpretation 2 about the reasons for the success of the Montgomery Bus Boycott (1955–56)? (16+4 marks)',
         modelExtract:
-          'In conclusion, I agree with Interpretation 1 to a substantial extent, because without the daily sacrifice of thousands of working-class domestic workers and the organizational brilliance of the Women’s Political Council, there would have been no boycott for Dr King to lead. The grassroots community sustained the 381-day protest through an intricate 300-car pool network, inflicting devastating financial losses on the municipal bus company. However, Interpretation 1 overstates the case by downplaying the legal and political reality highlighted in Interpretation 2. Economic distress alone could not overturn segregation, as city officials refused to yield despite severe business losses. Ultimate victory required the federal legal mandate of Browder v. Gayle (November 1956) and King’s moral leadership to attract northern financial support. Therefore, the boycott was a complementary triumph: grassroots courage created the crisis, but federal judicial power and King’s national profile sealed the victory.',
+          'In conclusion, I agree with Interpretation 2 to a substantial extent, because without Dr King’s inspirational moral leadership and the binding constitutional authority of the federal courts, the boycott could never have achieved permanent legal desegregation. King’s philosophy of Christian non-violence maintained community discipline across 381 days of terror, while his national profile secured essential financial backing from northern sympathizers. Most decisively, municipal authorities adamantly refused to compromise despite severe commercial losses; only the Supreme Court’s landmark ruling in Browder v. Gayle (November 1956) legally outlawed bus segregation under the 14th Amendment. However, Interpretation 2 understates the indispensable grassroots mobilization highlighted in Interpretation 1. Without Jo Ann Robinson, the Women’s Political Council, and thousands of domestic workers sustaining the intricate 300-car pool network, there would have been no platform for King to lead or legal challenge for the courts to uphold. Therefore, while grassroots heroism created the crisis, charismatic leadership and federal judicial power were the decisive catalysts that transformed local resistance into historic victory.',
         examiner:
           'Level 4 (16+4 = 20/20 Marks): Sustained, criteria-based historiographical judgement; balances both interpretations with extensive own knowledge; nuanced conclusion weighing grassroots resistance against federal judicial power.',
       },
@@ -335,7 +335,7 @@ const KT_DATA = {
           provenance:
             'Photographed by Bill Hudson for the Associated Press on 3 May 1963; published across front pages of national and international newspapers.',
         },
-        lines: 6,
+        lines: 10,
         inference1: {
           prompt: '(i) What I can infer:',
           details: 'Details in the source that tell me this:',
@@ -353,7 +353,7 @@ const KT_DATA = {
           'The Birmingham Campaign (1963)',
           'The assassination of President Kennedy (November 1963)',
         ],
-        linesPage3: 11,
+        linesPage3: 20,
         linesPage4: 18,
         vocabBank: [
           'Bull Connor fire hoses & dogs',
@@ -414,7 +414,7 @@ const KT_DATA = {
         num: '3 (a)',
         stem: 'Study Sources B and C. How useful are Sources B and C for an enquiry into the causes of the riots in northern and western cities between 1965 and 1967?',
         marks: 8,
-        lines: 16,
+        lines: 25,
         scaffold: {
           sourceB_focus:
             'Source B Utility (Content & COP): Official government investigation identifying deep structural causes: white racism, ghettoization, housing redlining, 30% unemployment, and police hostility.',
@@ -428,7 +428,7 @@ const KT_DATA = {
         num: '3 (b)',
         stem: 'Study Interpretations 1 and 2. They give different views about the main cause of the urban riots between 1965 and 1967. What is the main difference between these views? Explain your answer, using details from both interpretations.',
         marks: 4,
-        lines: 6,
+        lines: 10,
         formula:
           'Interpretation 1 argues that the urban riots were spontaneous eruptions driven by severe economic deprivation, poverty, and de facto ghetto segregation in northern cities, whereas Interpretation 2 argues that the riots were primarily caused by an ideological shift towards Black Power, Malcolm X’s rhetoric, and the rejection of non-violence.',
       },
@@ -436,17 +436,17 @@ const KT_DATA = {
         num: '3 (c)',
         stem: 'Suggest one reason why Interpretations 1 and 2 give different views about the main cause of the urban riots between 1965 and 1967. You may use Sources B and C to help explain your answer.',
         marks: 4,
-        lines: 6,
+        lines: 10,
         formula:
           'The historians have different views because they have relied on different historical evidence. The author of Interpretation 1 has focused on socio-economic investigations such as the Kerner Commission Report in Source B, which emphasized structural poverty and housing discrimination. In contrast, the author of Interpretation 2 has examined political speeches and activist manifestos such as Source C, emphasizing the radical rhetoric of Stokely Carmichael and the appeal of Black Power.',
       },
       q3d: {
         num: '3 (d)',
-        stem: 'How far do you agree with Interpretation 1 about the causes of the riots in northern and western cities between 1965 and 1967?',
+        stem: 'How far do you agree with Interpretation 2 about the causes of the riots in northern and western cities between 1965 and 1967?',
         marks: 20,
         subMarks: '16 marks for essay + 4 marks for SPaG',
-        linesPage8: 13,
-        linesPage9: 16,
+        linesPage7: 26,
+        linesPage8: 28,
         criteria: [
           'Socio-economic deprivation (Watts, ghetto slums, bank redlining, 30%+ youth unemployment)',
           'Ideological radicalisation (Black Power, Malcolm X, Stokely Carmichael, rejection of non-violence)',
@@ -461,7 +461,7 @@ const KT_DATA = {
         stem: 'Explain why the Black Panther Party was formed in Oakland, California, in 1966.',
         marks: 12,
         stimulus: ['Bobby Seale and Huey Newton', 'Police brutality in Black neighbourhoods'],
-        lines: 13,
+        lines: 22,
         vocabBank: [
           'Oakland, California (Oct 1966)',
           'Ten-Point Programme',
@@ -514,9 +514,9 @@ const KT_DATA = {
           'Level 2 (4/4 Marks): Clear, historically grounded explanation linking differing viewpoints to differing source types and research perspectives.',
       },
       q3d: {
-        stem: 'How far do you agree with Interpretation 1 about the causes of the riots in northern and western cities between 1965 and 1967? (16+4 marks)',
+        stem: 'How far do you agree with Interpretation 2 about the causes of the riots in northern and western cities between 1965 and 1967? (16+4 marks)',
         modelExtract:
-          'In conclusion, I agree with Interpretation 1 to a very large extent, because grinding economic deprivation and police brutality were the fundamental root causes of urban unrest. The civil rights legislation of 1964 and 1965 had dismantled legal Jim Crow in the South, but it left the de facto economic apartheid of northern cities untouched. In Watts, Detroit, and Newark, Black citizens were trapped in redlined slums with substandard schools, astronomical youth unemployment, and routine abuse by all-white police forces. While Interpretation 2 correctly identifies that Black Power rhetoric (championed by Malcolm X and Stokely Carmichael) provided an ideological language for rebellion, Black Power was a symptom and an accelerator of urban despair rather than its primary cause. Without the unbearable material conditions documented in the Kerner Report, the calls for militant defiance in Source C would have found no receptive audience. Therefore, socio-economic frustration was the decisive powder keg, and police harassment was the trigger that set it off.',
+          'In conclusion, I agree with Interpretation 2 only to a limited extent. While Interpretation 2 correctly identifies that Black Power ideology (championed by Malcolm X and Stokely Carmichael) provided an empowering political language for urban rebellion, militant ideology was an accelerator rather than the root cause of the riots. The primary catalyst was the unbearable socio-economic deprivation and systemic police brutality detailed in Interpretation 1. The civil rights legislation of 1964 and 1965 dismantled de jure segregation in the South, but it left the de facto apartheid of northern cities completely untouched. In Watts, Detroit, and Newark, Black citizens were trapped in redlined slums with 30%+ youth unemployment and abusive, all-white police forces acting like an occupying army. As the Kerner Commission concluded in Source B, white institutions created the ghetto tinderbox. Without these intolerable material conditions, the radical calls for armed defiance in Source C would never have resonated with thousands of ordinary residents. Therefore, while Black Power shaped how anger was expressed, socio-economic misery was the fundamental cause of the explosion.',
         examiner:
           'Level 4 (16+4 = 20/20 Marks): Exemplary evaluative conclusion; sustains explicit criteria; integrates both interpretations with deep factual knowledge; clearly establishes primary causation.',
       },
@@ -637,7 +637,7 @@ const KT_DATA = {
           provenance:
             'Official combat photograph taken by US Army military photographers in South Vietnam, 1966 (National Archives Record Group 111).',
         },
-        lines: 6,
+        lines: 10,
         inference1: {
           prompt: '(i) What I can infer:',
           details: 'Details in the source that tell me this:',
@@ -655,7 +655,7 @@ const KT_DATA = {
           'The Gulf of Tonkin incident (August 1964)',
           'The attack on the US base at Pleiku (February 1965)',
         ],
-        linesPage3: 11,
+        linesPage3: 20,
         linesPage4: 18,
         vocabBank: [
           'Domino Theory & containment',
@@ -716,7 +716,7 @@ const KT_DATA = {
         num: '3 (a)',
         stem: 'Study Sources B and C. How useful are Sources B and C for an enquiry into the reasons why US military tactics failed to defeat the Vietcong (1965–68)?',
         marks: 8,
-        lines: 16,
+        lines: 25,
         scaffold: {
           sourceB_focus:
             'Source B Utility (Content & COP): Eyewitness combat officer detailing tactical failures: inability to find the enemy, booby traps, burning villages (Zippo raids), and losing the "hearts and minds" of peasants.',
@@ -730,7 +730,7 @@ const KT_DATA = {
         num: '3 (b)',
         stem: 'Study Interpretations 1 and 2. They give different views about why US military tactics failed to defeat the Vietcong. What is the main difference between these views? Explain your answer, using details from both interpretations.',
         marks: 4,
-        lines: 6,
+        lines: 10,
         formula:
           'Interpretation 1 argues that US failure was caused by flawed American military strategy—specifically the reliance on attrition, search-and-destroy, and indiscriminate firepower that alienated the peasant population. In contrast, Interpretation 2 argues that US failure was primarily due to the superior resilience, subterranean tunnel networks, and effective guerrilla discipline of the Vietcong.',
       },
@@ -738,17 +738,17 @@ const KT_DATA = {
         num: '3 (c)',
         stem: 'Suggest one reason why Interpretations 1 and 2 give different views about why US military tactics failed to defeat the Vietcong. You may use Sources B and C to help explain your answer.',
         marks: 4,
-        lines: 6,
+        lines: 10,
         formula:
           'The historians give different views because they have utilized different perspectives in their research. The author of Interpretation 1 has focused on American combat reports and soldier accounts like Source B, emphasizing how search-and-destroy alienated Vietnamese villagers. In contrast, the author of Interpretation 2 has examined communist operational records and guerrilla testimonies like Source C, highlighting the subterranean engineering of the Cu Chi tunnels and guerrilla resilience.',
       },
       q3d: {
         num: '3 (d)',
-        stem: 'How far do you agree with Interpretation 1 about the reasons why US military tactics failed to defeat the Vietcong (1965–68)?',
+        stem: 'How far do you agree with Interpretation 2 about the reasons why US military tactics failed to defeat the Vietcong (1965–68)?',
         marks: 20,
         subMarks: '16 marks for essay + 4 marks for SPaG',
-        linesPage8: 13,
-        linesPage9: 16,
+        linesPage7: 26,
+        linesPage8: 28,
         criteria: [
           'Flawed US military tactics (Search and Destroy, body counts, Zippo raids, napalm/Agent Orange destroying villages)',
           'Guerrilla tactics & terrain advantages (Cu Chi tunnels, booby traps, lack of uniform, peasant concealment)',
@@ -763,7 +763,7 @@ const KT_DATA = {
         stem: 'Explain why the Vietcong and North Vietnamese Army were able to launch the Tet Offensive in January 1968.',
         marks: 12,
         stimulus: ['The Ho Chi Minh Trail', 'The siege at Khe Sanh'],
-        lines: 13,
+        lines: 22,
         vocabBank: [
           'Tet Lunar New Year holiday',
           '31 January 1968 assault',
@@ -816,9 +816,9 @@ const KT_DATA = {
           'Level 2 (4/4 Marks): Sound historical explanation linking differing interpretations to differing source materials and historical focuses.',
       },
       q3d: {
-        stem: 'How far do you agree with Interpretation 1 about the reasons why US military tactics failed to defeat the Vietcong (1965–68)? (16+4 marks)',
+        stem: 'How far do you agree with Interpretation 2 about the reasons why US military tactics failed to defeat the Vietcong (1965–68)? (16+4 marks)',
         modelExtract:
-          'In conclusion, I agree with Interpretation 1 to a very substantial extent, because the US military’s reliance on conventional warfare and indiscriminate firepower was fundamentally self-defeating in a political counter-insurgency. As General Westmoreland pursued a strategy of attrition measured by ‘body counts’, American forces deployed 400,000 tons of napalm and millions of gallons of Agent Orange. As detailed in Source B, this destroyed villages and ancestral burial grounds, turning the civilian peasantry into active or passive supporters of the Vietcong. However, Interpretation 1 is incomplete without the critical factor highlighted in Interpretation 2. Flawed US tactics alone do not explain why the Vietcong could not be eradicated. As Source C proves, the communist forces possessed exceptional guerrilla discipline, an intricate subterranean infrastructure (the Cu Chi tunnels), and an uninterrupted supply of Soviet and Chinese armaments along the Ho Chi Minh Trail. Therefore, while American tactical blunders alienated the civilian population, it was the combination of flawed US strategy and superior guerrilla resilience that made military victory impossible.',
+          "In conclusion, I agree with Interpretation 2 to a very large extent, because the remarkable tactical resilience, discipline, and subterranean ingenuity of the Vietcong were the decisive factors that neutralized America’s overwhelming technological superiority. As detailed in Source C, the construction of over 200 kilometers of multi-tiered tunnels at Cu Chi enabled guerrilla fighters to survive intense aerial bombing, conceal weapons workshops, and emerge behind US patrols to launch lethal ambushes. Coupled with low-tech booby traps (punji stakes) that inflicted heavy psychological casualties, and the constant influx of supplies down the Ho Chi Minh Trail, the communists dictated the geography and tempo of combat. However, Interpretation 2 must be evaluated alongside the fatal operational flaws of American strategy outlined in Interpretation 1. As revealed in Source B, General Westmoreland’s reliance on conventional 'search and destroy' missions, measured purely by body counts, alienated the civilian peasantry whose allegiance was essential for counter-insurgency victory. Indiscriminate saturation bombing, napalm, and Agent Orange defoliation destroyed ancestral villages and turned ordinary farmers into active Vietcong sympathizers. Therefore, while American tactical blunders created immense popular hostility, it was the Vietcong’s superior guerrilla resilience and tunnel infrastructure that ultimately made them impossible to defeat.",
         examiner:
           'Level 4 (16+4 = 20/20 Marks): Nuanced, criteria-based evaluation; compares flawed US firepower against Vietcong tactical adaptability; demonstrates mastery of historical context.',
       },
@@ -940,7 +940,7 @@ const KT_DATA = {
           provenance:
             'Contemporary news photograph documenting the confrontation between the Ohio National Guard and anti-war student demonstrators at Kent State University, 4 May 1970.',
         },
-        lines: 6,
+        lines: 10,
         inference1: {
           prompt: '(i) What I can infer:',
           details: 'Details in the source that tell me this:',
@@ -955,7 +955,7 @@ const KT_DATA = {
         stem: 'Explain why President Richard Nixon introduced the policy of Vietnamization in 1969.',
         marks: 12,
         stimulus: ['Rising US casualties', 'The impact of the Tet Offensive (1968)'],
-        linesPage3: 11,
+        linesPage3: 20,
         linesPage4: 18,
         vocabBank: [
           '14,000+ US deaths in 1968',
@@ -1017,7 +1017,7 @@ const KT_DATA = {
         num: '3 (a)',
         stem: 'Study Sources B and C. How useful are Sources B and C for an enquiry into the main reason for the growth of opposition to the Vietnam War in the USA (1968–71)?',
         marks: 8,
-        lines: 16,
+        lines: 25,
         scaffold: {
           sourceB_focus:
             'Source B Utility (Content & COP): Illustrates the immense influence of televised news journalism; Cronkite declaring the war a stalemate destroyed the "credibility gap" and swayed middle-class opinion.',
@@ -1031,7 +1031,7 @@ const KT_DATA = {
         num: '3 (b)',
         stem: 'Study Interpretations 1 and 2. They give different views about the main reason for the growth of opposition to the Vietnam War. What is the main difference between these views? Explain your answer, using details from both interpretations.',
         marks: 4,
-        lines: 6,
+        lines: 10,
         formula:
           'Interpretation 1 argues that anti-war opposition was primarily generated by uncensored television media coverage and news anchors like Walter Cronkite exposing combat horrors and atrocities (My Lai), whereas Interpretation 2 argues that opposition was driven primarily by the personal threat of the military draft, rising casualties, and campus student protests.',
       },
@@ -1039,17 +1039,17 @@ const KT_DATA = {
         num: '3 (c)',
         stem: 'Suggest one reason why Interpretations 1 and 2 give different views about the main reason for the growth of opposition to the Vietnam War. You may use Sources B and C to help explain your answer.',
         marks: 4,
-        lines: 6,
+        lines: 10,
         formula:
           'The historians hold different views because they have examined different sources of evidence. The author of Interpretation 1 has focused on television broadcast history and media journalism such as Source B, showing how Cronkite’s commentary swayed middle America. In contrast, the author of Interpretation 2 has focused on youth resistance records and protest flyers such as Source C, emphasizing the direct fear of the draft, casualty rates, and student activism on university campuses.',
       },
       q3d: {
         num: '3 (d)',
-        stem: 'How far do you agree with Interpretation 1 about the main reason for the growth of opposition to the Vietnam War in the USA (1968–71)?',
+        stem: 'How far do you agree with Interpretation 2 about the main reason for the growth of opposition to the Vietnam War in the USA (1968–71)?',
         marks: 20,
         subMarks: '16 marks for essay + 4 marks for SPaG',
-        linesPage8: 13,
-        linesPage9: 16,
+        linesPage7: 26,
+        linesPage8: 28,
         criteria: [
           'Media coverage & credibility gap (Living-room war, Walter Cronkite, My Lai massacre exposed in 1969)',
           'The draft & student protest (Conscription threat, draft card burnings, SDS, Kent State shootings 1970)',
@@ -1067,7 +1067,7 @@ const KT_DATA = {
           'Operation Linebacker (December 1972)',
           'Détente with the Soviet Union and China',
         ],
-        lines: 13,
+        lines: 22,
         vocabBank: [
           'Operation Linebacker II (Christmas Bombings)',
           '40,000 tons of bombs on Hanoi & Haiphong',
@@ -1120,9 +1120,9 @@ const KT_DATA = {
           'Level 2 (4/4 Marks): Fully developed explanation connecting differing historical viewpoints to differing evidence types and historical focuses.',
       },
       q3d: {
-        stem: 'How far do you agree with Interpretation 1 about the main reason for the growth of opposition to the Vietnam War in the USA (1968–71)? (16+4 marks)',
+        stem: 'How far do you agree with Interpretation 2 about the main reason for the growth of opposition to the Vietnam War in the USA (1968–71)? (16+4 marks)',
         modelExtract:
-          'In conclusion, I agree with Interpretation 1 to a moderate extent, but I find Interpretation 2 to provide a more fundamental explanation for the growth of mass opposition. Television coverage was undeniably revolutionary; as America’s first ‘living-room war’, uncensored nightly broadcasts of napalm attacks, burning villages, and Walter Cronkite’s editorial verdict shattered government propaganda and alienated middle America. However, television images alone would not have sustained years of massive street resistance without the personal, visceral catalyst identified in Interpretation 2: the military draft. Conscription forced millions of young American men to confront the reality that they could be legally compelled to die in an ambiguous war. This personal threat, combined with the grim return of over 50,000 body bags, transformed passive moral unease into militant student strikes, draft-card burnings, and the Moratorium protests seen in Source C. When the Ohio National Guard killed four students at Kent State in 1970, it provoked strikes across 400 campuses, proving that conscription and youth radicalism were the driving engines of the anti-war movement. Therefore, while television exposed the horrors of war, it was the draft and casualties that made the war intolerable.',
+          "In conclusion, I agree with Interpretation 2 to a very large extent, because the personal, visceral threat posed by the military draft system and escalating American casualties was the primary engine that mobilized millions of Americans into sustained street protest. Conscription forced millions of young American men to confront the terrifying reality that they could be legally compelled to fight and die in an ambiguous foreign conflict. As seen in Source C, the draft was deeply unequal, offering deferments to wealthy college students while sending working-class and Black youth to die in 'aluminum coffins'. Combined with the grim toll of over 50,000 American deaths, this personal fear transformed passive unease into militant student strikes, draft-card burnings, and massive demonstrations like the 1969 Moratorium. When the Ohio National Guard killed four unarmed students at Kent State in 1970, it triggered strikes across 400 campuses. While Interpretation 1 correctly argues that uncensored television coverage and Walter Cronkite’s post-Tet verdict shattered government credibility, television alone could not have generated such militant mass resistance without the direct threat of conscription and body bags. Therefore, while television exposed the horrors of war, the draft and casualties made the conflict intolerable.",
         examiner:
           'Level 4 (16+4 = 20/20 Marks): Authoritative evaluative essay; establishes clear criteria comparing media exposure against conscription and casualties; demonstrates profound mastery of the Edexcel specification.',
       },
@@ -1578,10 +1578,10 @@ const COMMON_CSS = `
     padding-left: 16px;
   }
 
-  /* Ruled / Dotted Lines (24px spacing) */
+  /* Authentic Pearson Edexcel GCSE Exam Ruled Lines (8mm line spacing) */
   .dotted-line {
-    border-bottom: 1.5px dotted #94a3b8;
-    height: 24px;
+    border-bottom: 1px solid #cbd5e1;
+    height: 8mm;
     width: 100%;
     box-sizing: border-box;
   }
@@ -2184,7 +2184,7 @@ function renderBookletHtml(ktKey, meta) {
 
                 <!-- Candidate Response Lines -->
                 <div style="font-size: 7pt; font-weight: 700; color: #0f172a; margin: 3px 0 2px 0;">Candidate Response Lines:</div>
-                ${renderLines(15)}
+                ${renderLines(e.q2.linesPage3 || 20)}
 
                 <!-- Pearson Edexcel Level 4 Criteria Checklist -->
                 <div style="border: 1.5px solid #64748b; border-radius: 4px; background: #f8fafc; padding: 3px 6px; margin-top: 4px; font-size: 6.7pt; line-height: 1.2;">
@@ -2368,7 +2368,7 @@ function renderBookletHtml(ktKey, meta) {
                 <div style="border: 1px solid #94a3b8; border-radius: 3px; background: #f8fafc; padding: 3px 6px; margin-bottom: 3px; font-size: 6.8pt; color: #334155;">
                     <strong>Direct Contrast Frame:</strong> <em>Interpretation 1 argues that... whereas Interpretation 2 argues that...</em>
                 </div>
-                ${renderLines(e.q3b.lines)}
+                ${renderLines(10)}
             </div>
 
             <!-- Question 3(c) -->
@@ -2380,7 +2380,7 @@ function renderBookletHtml(ktKey, meta) {
                 <div style="border: 1px solid #94a3b8; border-radius: 3px; background: #f8fafc; padding: 3px 6px; margin-bottom: 3px; font-size: 6.8pt; color: #334155;">
                     <strong>Different Views Frame:</strong> <em>The historians give different views because they have relied on different sources/evidence. Interpretation 1 is supported by Source B, which emphasizes... whereas Interpretation 2 is supported by Source C, which emphasizes...</em>
                 </div>
-                ${renderLines(e.q3c.lines)}
+                ${renderLines(12)}
             </div>
         </div>
 
@@ -2411,20 +2411,20 @@ function renderBookletHtml(ktKey, meta) {
                 </div>
 
                 <!-- Criteria Judgement Matrix -->
-                <div class="matrix-grid">
+                <div class="matrix-grid" style="margin-bottom: 4px;">
                     <div class="matrix-col">
-                        <span class="scaffold-label">Agree with Interpretation 1:</span>
+                        <span class="scaffold-label">Agree with Interpretation 2:</span>
                         <div style="font-size: 6.6pt; color: #334155;">
-                            • Points in Int 1 that are valid<br>
-                            • Evidence from Source B supporting this<br>
+                            • Points in Int 2 that are valid<br>
+                            • Evidence from Source C supporting this<br>
                             • Specific contextual knowledge backing it
                         </div>
                     </div>
                     <div class="matrix-col">
-                        <span class="scaffold-label">Agree with Interpretation 2 (Disagree):</span>
+                        <span class="scaffold-label">Alternative / Counter-view (Interpretation 1):</span>
                         <div style="font-size: 6.6pt; color: #334155;">
-                            • Alternative counter-argument in Int 2<br>
-                            • Evidence from Source C supporting this<br>
+                            • Counter-argument in Int 1<br>
+                            • Evidence from Source B supporting this<br>
                             • Specific contextual knowledge backing it
                         </div>
                     </div>
@@ -2436,11 +2436,11 @@ function renderBookletHtml(ktKey, meta) {
                     </div>
                 </div>
 
-                <div style="font-size: 6.8pt; color: #475569; font-style: italic; margin-bottom: 2px;">
-                    Paragraph 1: Evaluate Interpretation 1 with precise own knowledge &rarr; Paragraph 2: Evaluate Interpretation 2 with precise own knowledge.
+                <div style="font-size: 6.8pt; color: #475569; font-style: italic; margin-bottom: 3px;">
+                    Paragraph 1: Evaluate Interpretation 2 with precise own knowledge &rarr; Paragraph 2: Evaluate Interpretation 1 with precise own knowledge.
                 </div>
 
-                ${renderLines(e.q3d.linesPage8)}
+                ${renderLines(e.q3d.linesPage7 || 26)}
             </div>
         </div>
 
@@ -2466,11 +2466,11 @@ function renderBookletHtml(ktKey, meta) {
 
             <div class="question-container">
                 <div style="border: 1px solid #94a3b8; border-radius: 3px; background: #f8fafc; padding: 3px 6px; margin-bottom: 4px; font-size: 6.8pt; color: #334155; display: flex; justify-content: space-between;">
-                    <span><strong>Conclusion Rule:</strong> State explicitly <em>how far</em> you agree using your chosen criteria. Do not merely summarize.</span>
+                    <span><strong>Conclusion Rule:</strong> State explicitly <em>how far</em> you agree with Interpretation 2 using your chosen criteria. Do not merely summarize.</span>
                     <span><strong>SPaG Check:</strong> Capital letters for proper nouns (e.g. SCLC, Supreme Court, Vietcong).</span>
                 </div>
 
-                ${renderLines(e.q3d.linesPage9)}
+                ${renderLines(e.q3d.linesPage8 || 28)}
 
                 <!-- Level 4 Marking Criteria Box -->
                 <div style="border: 1.5px solid #1e3a8a; border-radius: 4px; background: #eff6ff; padding: 4px 6px; margin-top: 4px; font-size: 6.8pt; line-height: 1.25;">
@@ -2539,7 +2539,7 @@ function renderBookletHtml(ktKey, meta) {
                     </div>
                 </div>
 
-                ${renderLines(d.alternateQ.lines)}
+                ${renderLines(d.alternateQ.lines || 22)}
             </div>
         </div>
 
