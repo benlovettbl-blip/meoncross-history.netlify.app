@@ -334,6 +334,12 @@ const PDF_MAPPINGS = [
   },
   {
     folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
+    src: 'med_recall_quiz_pack_FULL.pdf',
+    dest: 'Medicine Master Knowledge Recall Quiz (All 380 Questions).pdf',
+    category: 'Year 11 GCSE',
+  },
+  {
+    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
     src: 'edexcel_medicine_cover_lesson_double_period.pdf',
     dest: 'Medicine Cover Lesson (Double Period).pdf',
     category: 'Year 11 GCSE',
@@ -466,24 +472,6 @@ const PDF_MAPPINGS = [
     folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
     src: 'cme_new_mastery_pack_KT3_FINAL_V17.pdf',
     dest: 'Conflict in the Middle East Mastery Pack (KT3).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
-    src: 'cme_recall_quiz_KT1.pdf',
-    dest: 'Conflict in the Middle East Knowledge Recall Quiz (KT1 - 80 Questions).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
-    src: 'cme_recall_quiz_KT2.pdf',
-    dest: 'Conflict in the Middle East Knowledge Recall Quiz (KT2 - 60 Questions).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
-    src: 'cme_recall_quiz_KT3.pdf',
-    dest: 'Conflict in the Middle East Knowledge Recall Quiz (KT3 - 60 Questions).pdf',
     category: 'Year 10 GCSE',
   },
   {

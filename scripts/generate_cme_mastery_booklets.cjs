@@ -293,7 +293,7 @@ const KT_DATA = {
           stage1:
             'Stage 1: Catalyst & Nationalisation (July 1956) — US cancels Aswan funding; Nasser nationalises Suez Canal; Western outrage',
           stage2:
-            'Stage 2: Secret Collusion & Invasion (Oct–Nov 1956) — Protocol of Sèvres; Israel storms Sinai; Anglo-French assault Port Said',
+            'Stage 2: Secret Collusion & Invasion (Oct–Nov 1956) — Secret tripartite agreement; Israel storms Sinai; Anglo-French assault Port Said',
           stage3:
             'Stage 3: Superpower Ultimatum & Humiliation (Nov 1956) — US threatens sterling collapse; Anglo-French withdrawal; Nasser hero',
         },
@@ -495,7 +495,7 @@ const KT_DATA = {
         linesPage4: 25,
         vocabBank: [
           'Pre-emptive air strike (7:45 am)',
-          'Operation Focus (Moked)',
+          'Destruction of Egyptian airfields',
           '300+ aircraft destroyed on runways',
           'Total Israeli air supremacy',
           'Sinai armoured blitz (Sharon & Tal)',
@@ -664,7 +664,7 @@ const KT_DATA = {
           'Anwar Sadat presidency (1970)',
           'Expulsion of Soviet advisers (July 1972)',
           'Deception strategy vs Israeli intelligence',
-          'Preparation for Operation Badr (1973)',
+          'Preparation for the 1973 surprise assault',
         ],
         connectives: [
           'This relationship was critical because...',
@@ -688,7 +688,7 @@ const KT_DATA = {
         linesPage11: 22,
         vocabBank: [
           '6 October 1973 (Yom Kippur / Ramadan)',
-          'Operation Badr (Water cannons on sand wall)',
+          'Breach of sand wall with water cannons',
           'Bar-Lev Line breached',
           'Soviet SAM missile umbrella',
           'Syrian assault on Golan Heights',
@@ -996,7 +996,7 @@ const KT_DATA = {
         provenance: { tag: 'Unexamined Spec Target', type: 'unexamined' },
         lines: 9,
         vocabBank: [
-          '26 October 1994 (Wadi Araba)',
+          '26 October 1994 (Arava desert border)',
           'King Hussein & Yitzhak Rabin',
           'Bill Clinton witness',
           'Demarcation of international border',
@@ -1010,7 +1010,7 @@ const KT_DATA = {
           'Consequently, it solidified...',
         ],
         guide:
-          "Identify Consequence (e.g. Normalisation of Jordan-Israel Relations OR Recognition of Jordanian Religious Custody) &rarr; Facts (Hussein, Rabin, Wadi Araba) &rarr; Causal Chain: Secured Israel's longest eastern frontier &rarr; Enabled security cooperation and shared water resources.",
+          "Identify Consequence (e.g. Normalisation of Jordan-Israel Relations OR Recognition of Jordanian Religious Custody) &rarr; Facts (King Hussein, Yitzhak Rabin, 1994 treaty) &rarr; Causal Chain: Secured Israel's longest eastern frontier &rarr; Enabled security cooperation and shared water resources.",
       },
       q4b: {
         num: '4 (b)',
@@ -3003,27 +3003,6 @@ async function generateBooklets() {
 
     fs.writeFileSync(htmlPath, htmlContent, 'utf8');
     console.log(`   Saved HTML: ${htmlFileName}`);
-
-    const page = await browser.newPage();
-    await page.setViewport({ width: 794, height: 1123, deviceScaleFactor: 2 });
-    await page.setContent(htmlContent, { waitUntil: 'networkidle0' });
-
-    const pdfFileName = `cme_mastery_pack_${ktKey}.pdf`;
-    const pdfPath = path.join(pdfsDir, pdfFileName);
-
-    await page.pdf({
-      path: pdfPath,
-      format: 'A4',
-      printBackground: true,
-      margin: { top: '0mm', right: '0mm', bottom: '0mm', left: '0mm' },
-    });
-
-    // Copy to global pdfs folder for direct UI access
-    fs.copyFileSync(pdfPath, path.join(globalPdfsDir, pdfFileName));
-    individualPdfs.push(pdfPath);
-
-    console.log(`   ✅ Exported PDF: ${pdfFileName} (12 Pages)`);
-    await page.close();
   }
 
   // Generate Master Full 36-Page Combined Booklet
@@ -3086,16 +3065,7 @@ async function generateBooklets() {
             path.join(dir, canonicalNames['cme_mastery_pack_FULL.pdf']),
           );
         }
-        for (const pdf of individualPdfs) {
-          const bname = path.basename(pdf);
-          fs.copyFileSync(pdf, path.join(dir, bname));
-          if (canonicalNames[bname]) {
-            fs.copyFileSync(pdf, path.join(dir, canonicalNames[bname]));
-          }
-        }
-        console.log(
-          '   ✅ Synced master and key topic PDFs (both naming standards) to Google Drive.',
-        );
+        console.log('   ✅ Synced master PDF (both naming standards) to Google Drive.');
       }
     } catch (err) {
       console.warn(`   ⚠️ Could not sync to ${dir}: ${err.message}`);

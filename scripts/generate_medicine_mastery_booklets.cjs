@@ -1704,31 +1704,7 @@ async function run() {
   });
   const page = await browser.newPage();
 
-  // 1. Section A PDF (11 Pages)
-  const secAPdfPath = path.join(pdfsDir, 'med_mastery_section_a_western_front.pdf');
-  await page.goto(pathToFileURL(sectionAPath).href, { waitUntil: 'networkidle0' });
-  await page.pdf({
-    path: secAPdfPath,
-    format: 'A4',
-    landscape: false,
-    printBackground: true,
-    margin: { top: '8mm', bottom: '8mm', left: '10mm', right: '10mm' },
-  });
-  console.log(`   📕 Exported PDF: med_mastery_section_a_western_front.pdf (11 Pages)`);
-
-  // 2. Section B PDF (12 Pages)
-  const secBPdfPath = path.join(pdfsDir, 'med_mastery_section_b_thematic_study.pdf');
-  await page.goto(pathToFileURL(sectionBPath).href, { waitUntil: 'networkidle0' });
-  await page.pdf({
-    path: secBPdfPath,
-    format: 'A4',
-    landscape: false,
-    printBackground: true,
-    margin: { top: '8mm', bottom: '8mm', left: '10mm', right: '10mm' },
-  });
-  console.log(`   📕 Exported PDF: med_mastery_section_b_thematic_study.pdf (24 Pages)`);
-
-  // 3. Full Master PDF (35 Pages)
+  // 1. Full Master PDF (20 Pages Master Volume)
   const fullPdfPath = path.join(pdfsDir, 'med_mastery_pack_FULL.pdf');
   await page.goto(pathToFileURL(fullHtmlPath).href, { waitUntil: 'networkidle0' });
   await page.pdf({
@@ -1741,10 +1717,8 @@ async function run() {
   console.log(`   📕 Exported PDF: med_mastery_pack_FULL.pdf (20 Pages Master Volume)`);
 
   // Sync to public/pdfs/ root
-  fs.copyFileSync(secAPdfPath, path.join(rootPdfsDir, 'med_mastery_section_a_western_front.pdf'));
-  fs.copyFileSync(secBPdfPath, path.join(rootPdfsDir, 'med_mastery_section_b_thematic_study.pdf'));
   fs.copyFileSync(fullPdfPath, path.join(rootPdfsDir, 'med_mastery_pack_FULL.pdf'));
-  console.log(`   📋 Synced PDFs to public/pdfs/ root`);
+  console.log(`   📋 Synced med_mastery_pack_FULL.pdf to public/pdfs/ root`);
 
   await browser.close();
 

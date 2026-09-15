@@ -13,24 +13,6 @@ if (!fs.existsSync(globalPdfsDir)) fs.mkdirSync(globalPdfsDir, { recursive: true
 
 const QUIZ_FILES = [
   {
-    id: 'KT1',
-    htmlFile: 'mastery_pack_KT1.html',
-    pdfName: 'cme_recall_quiz_KT1.pdf',
-    title: 'Key Topic 1 Recall Quiz (80 Questions & The Vault)',
-  },
-  {
-    id: 'KT2',
-    htmlFile: 'mastery_pack_KT2.html',
-    pdfName: 'cme_recall_quiz_KT2.pdf',
-    title: 'Key Topic 2 Recall Quiz (60 Questions & The Vault)',
-  },
-  {
-    id: 'KT3',
-    htmlFile: 'mastery_pack_KT3.html',
-    pdfName: 'cme_recall_quiz_KT3.pdf',
-    title: 'Key Topic 3 Recall Quiz (60 Questions & The Vault)',
-  },
-  {
     id: 'FULL',
     htmlFile: 'mastery_pack_full.html',
     pdfName: 'cme_recall_quiz_FULL.pdf',

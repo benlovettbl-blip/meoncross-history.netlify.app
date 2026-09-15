@@ -1,674 +1,722 @@
 /**
  * cme_spreads_kt1.cjs
- *
- * Spreads 1 to 4 for Pearson Edexcel GCSE History: Conflict in the Middle East
- * Key Topic 1: The Birth of the State of Israel, 1945–63
+ * Pure Knowledge Spreads 1-4 for Key Topic 1 (Birth of Israel, 1945-63)
  */
-
-const spreads = [
-  // ---------------------------------------------------------------------------
-  // SPREAD 1 (KT 1.1): BRITISH MANDATE, JEWISH UNDERGROUND & UN REFERRAL
-  // ---------------------------------------------------------------------------
+module.exports = [
   {
     id: 'cme_spread_1',
     spreadNum: 1,
-    topic: 'Key Topic 1 • The Birth of the State of Israel, 1945–63',
-    title: 'KT 1.1: British Mandate, Jewish Underground & UN Referral (1945–47)',
-    footerTag: 'Topic 1.1: British Mandate',
+    topic: 'Key Topic 1 • The Birth of Israel, 1945–63',
+    title: 'KT 1.1: The British Mandate, Jewish Underground & UN Referral (1945–47)',
     left: {
-      sectionTag: 'Section 1: Foundations',
-      contextTitle: 'Strategic Context: Post-Holocaust Demands & The Collapse of British Control',
+      tag: 'KT 1.1 • Context, Origins & The Mandate Collapse',
+      headline: 'Terror, Bankruptcy & Surrender: How Britain Lost Control of Palestine',
       summary:
-        'Following the Second World War, Britain faced an impossible dilemma in Palestine. The 1939 White Paper capped Jewish immigration at 15,000 per year, seeking to protect Arab goodwill and secure vital Middle Eastern oil concessions. However, after the Holocaust, over 250,000 Jewish survivors were stranded in European Displaced Persons (DP) camps with nowhere else to go. When Britain blocked refugee immigration, Jewish underground groups—the official Haganah and militant groups Irgun and Lehi—launched an armed insurgency. Financially exhausted by WWII debt, facing domestic outrage over military deaths, and pressured by US President Harry Truman, Britain announced on 18 February 1947 that it would hand Palestine over to the United Nations.',
+        'Following the Holocaust in Europe, Britain attempted to uphold the 1939 White Paper restriction of 15,000 Jewish refugees per year to secure Arab oil concessions and protect the Suez Canal. In response, Jewish underground paramilitary organisations—the official Haganah and militant splinter groups Irgun (led by Menachem Begin) and Lehi—launched a violent guerrilla insurgency against British military infrastructure. Exhausted by WWII debt, facing domestic outrage over soldier casualties, and pressured by US President Truman following the Anglo-American Committee (1946), Britain announced on 18 February 1947 that it would surrender the Mandate to the United Nations without recommending any solution.',
       pillars: [
         {
-          title: 'The 1939 White Paper & The Post-War Refugee Crisis',
-          subtitle: 'Immigration Blockade',
+          title: 'Mandate Roots & Refugee Crisis',
+          subtitle: '1923 Terms & Post-War Blockade',
           bullets: [
-            '**The 1939 White Paper Quotas:** Britain restricted Jewish entry to 15,000 per year for 5 years (75,000 total), after which Arab consent was required; Arabs rejected any Jewish state, while Jews saw the quota as a betrayal after the Holocaust.',
-            '**The Displaced Persons (DP) Camps:** Over 250,000 Holocaust survivors remained in Allied camps across Europe; the Jewish Agency demanded their immediate transfer to Palestine, supported by US President Harry Truman who urged Britain to admit 100,000 immediately.',
-            '**The SS Exodus Incident (July 1947):** The Royal Navy intercepted a refugee ship carrying 4,500 Holocaust survivors off Haifa, forcing them back onto transport ships to displaced camps in Germany, creating massive global moral condemnation of Britain.',
+            '**1923 Mandate Dilemma:** Following the 1917 Balfour Declaration, the League of Nations Mandate established 3 contradictory obligations: (1) protect civil and religious rights of the Arab majority, (2) establish a Jewish national home, and (3) prepare the country for independent self-government.',
+            '**Demographic Surge & 1936–39 Arab Revolt:** The Jewish population doubled by 1931 (from 84,000 to 175,000) and escalated rapidly as thousands fled Nazi Germany from 1933; Britain crushed the 1936–39 Arab Revolt with 20,000 troops and Haganah assistance, leaving Arab military leadership shattered.',
+            '**Peel Commission (1937) & 1939 White Paper:** Lord Peel proposed the first partition into separate states, which Arabs rejected; seeking Arab oil alliances before WWII, Britain reversed policy in the 1939 White Paper, capping Jewish immigration at **15,000 per year for 5 years** (75,000 total).',
+            "**The SS Exodus & DP Camps (July 1947):** Over 250,000 Holocaust survivors remained trapped in European DP camps; Haganah's Aliyah Bet ran blockades until the Royal Navy intercepted the SS Exodus with **4,500 refugees**, forcibly deporting them to Hamburg, Germany, provoking worldwide moral condemnation.",
           ],
         },
         {
-          title: 'Armed Insurgency: The Jewish Underground Campaigns',
-          subtitle: 'Guerrilla Strikes',
+          title: 'Armed Insurgency & Sabotage',
+          subtitle: 'Guerrilla Strikes vs British Rule',
           bullets: [
-            '**The Resistance Underground:** Three armed Jewish organisations operated in Palestine: the **Haganah** (mainstream defense force led by Ben-Gurion), the **Irgun** (nationalist militant group led by Menachem Begin), and the **Lehi** (Stern Gang splinter group).',
-            '**King David Hotel Bombing (22 July 1946):** Irgun militants disguised as milk deliverers detonated 225kg of explosives in the basement of the British military and administrative headquarters in Jerusalem, killing **91 people** (British, Arab, and Jewish staff).',
-            "**Fracturing of the Movement:** The attack provoked harsh British curfews and arrests; David Ben-Gurion and the Jewish Agency publicly condemned the Irgun's extremism, though underground sabotage against British roads and military bases continued.",
+            '**The Paramilitary Underground:** The mainstream Haganah (defense force led by Ben-Gurion) and militant splinter groups Irgun (led by Menachem Begin) and Lehi (Stern Gang) formed the unified Hebrew Resistance Movement following the furious August 1945 London Zionist conference.',
+            '**153 Railway Bombs & Transport Paralysis:** Jewish underground fighters detonated **153 bombs on railway lines**, severed telephone communications, blew up military radar stations, and destroyed oil pipelines, effectively paralyzing British troop logistics across Palestine.',
+            '**Night of the Bridges (June 1946):** Haganah commandos destroyed **11 road and rail bridges** linking Palestine to Transjordan, Syria, Lebanon, and Egypt in a single night, demonstrating complete tactical dominance over the countryside and severing British supply routes.',
+            '**King David Hotel Bombing (22 July 1946):** Irgun commandos disguised as milk delivery men detonated 225kg of TNT inside British military headquarters, killing **91 people** (British, Arab, Jewish civil servants); Ben-Gurion publicly condemned the Irgun after Begin ignored evacuation warnings.',
           ],
         },
         {
-          title: 'British Crisis & Decision to Surrender the Mandate (1947)',
-          subtitle: 'Imperial Exhaustion',
+          title: 'British Military Collapse',
+          subtitle: 'The Police State & Surrender',
           bullets: [
-            "**The Sergeants Affair (July 1947):** When Britain hanged three captured Irgun fighters, Begin's Irgun hanged two British military police sergeants (Clifford Martin and Mervyn Paice) and booby-trapped a body, igniting fierce anti-Jewish rioting in Liverpool and London.",
-            '**Economic & Military Strain:** Britain kept 100,000 soldiers in Palestine costing £40 million annually during post-war rationing; British public opinion demanded the government "bring the boys home" rather than police an unwinnable conflict.',
-            '**Surrender to the United Nations (18 Feb 1947):** Foreign Secretary Ernest Bevin announced Britain would hand the entire Palestine problem to the UN General Assembly without recommending any solution, setting the stage for partition.',
+            '**The "Bevingrad" Police State:** Britain deployed **100,000 soldiers** (1 soldier for every 6 Jews) costing **£40 million annually**; Jerusalem and Tel Aviv administration compounds were sealed behind massive barbed-wire fortresses nicknamed "Bevingrad" under strict curfews.',
+            '**Acre Prison Raid (May 1947):** Irgun commandos dynamited the ancient crusader fortress of Acre, freeing 27 underground prisoners; British military courts responded by sentencing 3 captured Irgun fighters to death by hanging.',
+            "**The Sergeants Affair (July 1947):** Begin retaliated by hanging 2 captured British military intelligence sergeants (Clifford Martin and Mervyn Paice) in an orange grove and booby-trapping Martin's body with a landmine, triggering violent anti-Jewish riots across British cities.",
+            '**UN Referral (18 Feb 1947):** Exhausted by WWII debt, facing calls to "bring the boys home", and pressured by US threats to withhold postwar financial loans, Foreign Secretary Ernest Bevin announced Britain would surrender the Mandate to the UN without recommending any solution.',
           ],
         },
       ],
       keyFigures: [
         {
-          name: 'Ernest Bevin',
-          role: 'British Foreign Secretary who maintained immigration caps to protect Arab oil alliances, then referred Mandate to UN in Feb 1947.',
+          name: 'Ernest Bevin & Attlee',
+          role: 'British Foreign Secretary and Prime Minister who enforced immigration quotas to protect Arab oil alliances; surrendered Mandate to the UN in Feb 1947.',
         },
         {
           name: 'David Ben-Gurion',
-          role: 'Head of Jewish Agency & Haganah; backed clandestine immigration, built military stockpiles, but condemned the King David Hotel strike.',
+          role: 'Chairman of the Jewish Agency and leader of Haganah; coordinated political pressure and Aliyah Bet blockade running, but condemned King David Hotel bombing.',
         },
         {
-          name: 'Menachem Begin',
-          role: 'Commander of militant Irgun; ordered King David Hotel bombing (91 dead) and Sergeants hanging to drive British troops out of Palestine.',
+          name: 'Menachem Begin (Irgun)',
+          role: 'Commander of militant Irgun; masterminded the King David Hotel bombing (91 dead), Acre Prison breakout, and the Sergeants Affair hanging in July 1947.',
         },
         {
           name: 'Harry S. Truman',
-          role: 'US President who pressured Britain to admit 100,000 Holocaust survivors and supported Zionist demands for a sovereign Jewish state.',
+          role: 'US President who demanded immediate entry for 100,000 Holocaust survivors and leveraged vital postwar American loans to force British withdrawal.',
         },
       ],
-      milestones: [
-        { date: 'May 1939', event: 'White Paper caps Jewish entry to 15k/year.' },
-        { date: 'July 1946', event: 'Irgun bombs King David Hotel (91 dead).' },
-        { date: 'Feb 1947', event: 'Bevin refers Palestine Mandate to UN.' },
-        { date: 'July 1947', event: 'SS Exodus intercepted; Sergeants Affair.' },
-        { date: 'Nov 1947', event: 'UN passes Resolution 181 (Partition Plan).' },
-      ],
+      archivalSource: {
+        title: 'Foreign Secretary Ernest Bevin to House of Commons (18 Feb 1947)',
+        citation: 'Hansard Parliamentary Debates, Vol. 433, Col. 985',
+        quote:
+          "His Majesty's Government have been faced with an irreconcilable conflict of principles... The Mandate is unworkable. We have decided to refer the whole problem to the United Nations without recommending any solution of our own.",
+        significance:
+          'Demonstrates complete British admission of imperial failure; Britain refused to enforce partition and abandoned Palestine to civil war.',
+      },
     },
     right: {
-      question: {
-        typeHeader: 'Exam Masterclass • Question 1 (Consequence) Format',
-        title: 'Assessment Mastery: Explaining Consequences with Causal Links',
-        marksTime: 'Q1: 4 Marks • ~6 Mins',
-        stem: 'Explain one consequence of the bombing of the King David Hotel (1946).',
-        marks: 4,
-        levelTag: 'Full Marks • 4/4',
-        scoreTag: 'Level 2 Target',
-        planningGuideTitle: 'Multi-Pathway Planning Guide (Choose ONE Valid Consequence):',
-        planningGuide: `
-          <div>&bull; <strong>Pathway A (British Military Repression):</strong> Immediate outrage &rarr; Britain introduced strict military curfews and arrested hundreds of Jewish leaders &rarr; deepened hostility between British troops and Jewish population.</div>
-          <div>&bull; <strong>Pathway B (Division within Jewish Resistance):</strong> Shock at 91 deaths &rarr; Jewish Agency and Ben-Gurion publicly denounced Irgun &rarr; shattered the unified resistance movement.</div>
-        `,
-        modelAnswer:
-          'One consequence of the bombing of the King David Hotel was a severe escalation in British military repression across Palestine. On 22 July 1946, the militant Zionist group Irgun detonated explosives inside the hotel, which housed the British military and administrative headquarters, killing 91 British, Arab, and Jewish civil servants. As a direct result, British authorities declared martial law in major cities, imposed sweeping curfews, and deployed thousands of troops to conduct door-to-door searches, arresting hundreds of suspected Zionist militants. Consequently, this crackdown completely shattered any remaining cooperation between British authorities and Jewish leaders, intensifying anti-British hostility and convincing the British public that maintaining the Mandate was too dangerous and costly to sustain.',
-        examinerNote:
-          'Level 2 (4/4 marks). Identifies ONE clear consequence (escalation of British military repression), supports it with precise specification facts (22 July 1946, Irgun, British military headquarters, 91 deaths), and traces a direct causal chain explaining how martial law and searches destroyed cooperation and hastened British withdrawal.',
-        pitfallCategory: 'Question 1 Pitfalls',
-        pitfall:
-          'The exam requires you to explain ONE consequence in depth for 4 marks. Never write a list of multiple brief consequences, as examiners only award marks to your single best-developed point. Always state the consequence, provide precise factual evidence, and explain the direct causal outcome.',
-      },
-      causalPathway: {
-        title: 'Visual Causal Pathway: From 1939 White Paper to British UN Referral (1947)',
-        steps: [
-          {
-            stage: 'Stage 1: Quotas & DP Crisis',
-            desc: '1939 White Paper limits entry to 15,000/yr; 250,000 Holocaust survivors trapped in European camps; Britain refuses US calls to admit 100,000 refugees.',
-          },
-          {
-            stage: 'Stage 2: Armed Insurgency',
-            desc: 'Zionist groups launch guerrilla war; Haganah runs Aliyah Bet blockades; Irgun bombs King David Hotel (91 dead) in July 1946.',
-          },
-          {
-            stage: 'Stage 3: Public Outrage',
-            desc: 'Royal Navy forcibly turns back SS Exodus (July 1947); Irgun hangs two British sergeants; British domestic public demands troops come home.',
-          },
-          {
-            stage: 'Stage 4: UN Referral',
-            desc: 'Exhausted by £40m annual costs, 100,000 troops, and US pressure, Foreign Secretary Bevin hands Palestine to the UN without recommending a solution.',
-          },
-        ],
-      },
-      wordBank: [
+      tag: 'KT 1.1 • Strategic Case Studies, Causal Mechanisms & Word Bank',
+      deepCases: [
         {
-          term: '1939 White Paper',
-          def: 'British policy capping Jewish immigration at 15,000/yr for 5 years to appease Arab leaders.',
+          title: '1. The 1923 Mandate Dilemma & Peel Commission',
+          points: [
+            '**Contradictory Commitments:** Britain promised conflicting rights to both Arab majority and Jewish minority; by 1931, Jewish population had doubled to 175,000.',
+            '**1936–39 Arab Revolt:** Crushed by 20,000 British troops aided by Haganah Special Night Squads (Orde Wingate), crippling Palestinian Arab political and military leadership.',
+            '**Peel Commission (1937):** First official British proposal to partition Palestine into separate states; rejected by Arabs and superseded by 1939 White Paper.',
+            '**1939 White Paper Quotas:** Capped Jewish immigration at 15,000/yr for 5 years (75,000 total) with subsequent Arab veto, trapping European Jews on the eve of the Holocaust.',
+          ],
         },
         {
-          term: 'DP Camps',
-          def: 'European Displaced Persons camps holding 250,000 Holocaust survivors awaiting resettlement.',
+          title: '2. Railway Sabotage (153 Bombs) & King David Hotel',
+          points: [
+            "**London Conference Backlash (Aug 1945):** Fury at Attlee's Labour government upholding the White Paper led Jewish groups to launch an armed offensive against British rule.",
+            '**Railway Sabotage:** Underground fighters set **153 bombs on railway lines**, blowing up tracks, locomotives, and signal boxes to paralyze British troop deployments.',
+            '**King David Hotel Strike (July 1946):** Irgun commandos disguised as Arab milk delivery men planted explosives in the basement; **91 civilians and military staff were killed**.',
+            '**Haganah Condemnation:** While initially united under the Hebrew Resistance Movement, Ben-Gurion condemned the Irgun for ignoring evacuation warnings, splitting the underground.',
+          ],
+        },
+        {
+          title: '3. SS Exodus (4,500 Survivors) & US Pressure',
+          points: [
+            "**Displaced Persons Crisis:** Over 250,000 Holocaust survivors remained languishing in European DP camps; Haganah's Aliyah Bet clandestine network purchased American ships to run blockades.",
+            '**Blockade Running (July 1947):** The SS Exodus carried **4,500 Holocaust survivors**; Royal Navy destroyers rammed the vessel off Haifa, killing 3 and wounding dozens.',
+            '**Global Moral Outrage:** British destroyers forcibly deported refugees back to DP camps in Hamburg, Germany, shocking American public opinion and generating global press fury.',
+            "**Truman's Ultimatum:** President Truman pressured Britain to admit 100,000 survivors, threatening to withhold crucial $3.75 billion Anglo-American postwar financial loans.",
+          ],
+        },
+        {
+          title: '4. The Sergeants Affair & The Bevingrad Police State',
+          points: [
+            '**"Bevingrad" Fortresses:** 100,000 British troops (£40m/yr cost) placed major cities under constant curfews, retreating into barbed-wire administrative compounds ("Bevingrad").',
+            '**Acre Prison Raid (May 1947):** Irgun dynamited the ancient fortress of Acre, freeing 27 underground prisoners; Britain responded by sentencing 3 captured Irgun men to death.',
+            "**Sergeants Hanged (July 1947):** Irgun hanged two captured British sergeants (Clifford Martin and Mervyn Paice) in an orange grove and booby-trapped Martin's body with landmines.",
+            '**Domestic Collapse:** The deaths caused anti-Semitic riots in Liverpool and London; British newspapers declared Palestine an "unbearable drain in blood and treasure".',
+          ],
+        },
+      ],
+      causalPathway: [
+        {
+          stage: '1. White Paper & DP Camps',
+          text: '1939 cap (15k/yr) traps 250k Holocaust survivors in European camps; Aliyah Bet blockade running begins.',
+        },
+        {
+          stage: '2. Insurgency & 153 Bombs',
+          text: 'Irgun & Haganah set 153 railway bombs; King David Hotel bombing kills 91; Bevin establishes police state.',
+        },
+        {
+          stage: '3. Exodus & Sergeants Affair',
+          text: 'Exodus deportation shocks world; 2 sergeants hanged in retaliation; British public demands troop withdrawal.',
+        },
+        {
+          stage: '4. UN Referral (Feb 1947)',
+          text: 'Exhausted by £40m annual costs, 100k troops, and US financial pressure, Britain surrenders Mandate to UN.',
+        },
+      ],
+      masterWordBank: [
+        {
+          term: '1923 Mandate',
+          def: 'League of Nations charter with conflicting obligations to Jews and Arabs.',
+        },
+        {
+          term: '1939 White Paper',
+          def: 'British policy limiting Jewish immigration to 15,000 per year for five years.',
         },
         {
           term: 'Aliyah Bet',
-          def: 'Clandestine Zionist network smuggling Jewish refugees past the British naval blockade.',
+          def: 'Clandestine Jewish underground network organizing illegal refugee ships.',
         },
         {
           term: 'Haganah',
-          def: 'Mainstream Jewish underground defense force led by David Ben-Gurion; precursor to the IDF.',
+          def: 'Main Jewish paramilitary defense force led by David Ben-Gurion.',
         },
         {
           term: 'Irgun (Etzel)',
-          def: 'Militant nationalist underground group led by Menachem Begin that bombed the King David Hotel.',
+          def: 'Militant revisionist splinter group led by Menachem Begin.',
         },
         {
-          term: 'Lehi (Stern Gang)',
-          def: 'Extremist breakaway faction that conducted assassinations of British colonial officials.',
+          term: '153 Railway Bombs',
+          def: 'Sabotage strikes on railway lines crippling British transport.',
         },
         {
           term: 'King David Hotel',
-          def: 'Headquarters of British military administration bombed on 22 July 1946, killing 91 people.',
+          def: 'British headquarters bombed by Irgun on 22 July 1946; 91 people killed.',
         },
         {
-          term: 'SS Exodus',
-          def: 'Refugee ship carrying 4,500 survivors turned back by Royal Navy to Germany in July 1947.',
+          term: 'SS Exodus (1947)',
+          def: 'Refugee ship carrying 4,500 Holocaust survivors forcibly returned to Germany.',
+        },
+        {
+          term: 'Bevingrad',
+          def: 'Fortified, barbed-wire security compounds housing British personnel.',
         },
         {
           term: 'Sergeants Affair',
-          def: 'Hanging of two British sergeants by the Irgun in July 1947 in retaliation for executions.',
+          def: 'Hanging of two British sergeants by Irgun in retaliation for Acre executions.',
         },
         {
           term: 'Ernest Bevin',
-          def: 'British Foreign Secretary who enforced immigration quotas and surrendered the Mandate to the UN.',
+          def: 'British Foreign Secretary who referred Palestine to the UN on 18 Feb 1947.',
         },
         {
-          term: 'UN Referral',
-          def: 'British decision on 18 Feb 1947 to abandon Palestine and pass responsibility to the UN.',
-        },
-        {
-          term: 'Martial Law',
-          def: 'Emergency military rule imposed by Britain with strict curfews and checkpoints in 1946–47.',
+          term: 'Harry S. Truman',
+          def: 'US President who demanded entry for 100,000 refugees, pressuring Britain.',
         },
       ],
     },
   },
-
-  // ---------------------------------------------------------------------------
-  // SPREAD 2 (KT 1.2): UN PARTITION PLAN (RES 181), CIVIL WAR & CREATION OF ISRAEL
-  // ---------------------------------------------------------------------------
   {
     id: 'cme_spread_2',
     spreadNum: 2,
-    topic: 'Key Topic 1 • The Birth of the State of Israel, 1945–63',
-    title: 'KT 1.2: UN Resolution 181, Civil War & The Creation of Israel (1947–48)',
-    footerTag: 'Topic 1.2: UN Partition & Statehood',
+    topic: 'Key Topic 1 • The Birth of Israel, 1945–63',
+    title: 'KT 1.2: UN Partition Resolution 181 & The 1948–49 Arab-Israeli War',
     left: {
-      sectionTag: 'Section 2: Partition & Statehood',
-      contextTitle: 'Strategic Context: The UN Partition Vote & Outbreak of Intercommunal War',
+      tag: 'KT 1.2 • Partition, Civil War & The Five-Army Invasion',
+      headline: 'Resolution 181 to Armistice: How the Infant State of Israel Survived',
       summary:
-        "In May 1947, the United Nations created the Special Committee on Palestine (UNSCOP) to investigate solutions for the territory. On 29 November 1947, the UN General Assembly voted to pass Resolution 181, partitioning Palestine into separate Arab and Jewish states with an international regime for Jerusalem. While Jewish leaders accepted partition as a legal mandate for sovereignty, Arab leaders rejected it entirely as an unjust colonial imposition that awarded 56% of the land to a minority Jewish population. The vote immediately triggered a violent six-month intercommunal civil war. As British forces prepared their final evacuation, Jewish forces secured strategic corridors, culminating in David Ben-Gurion's declaration of the State of Israel on 14 May 1948.",
+        'On 29 November 1947, the UN General Assembly voted to partition Palestine into independent Arab and Jewish states, with Jerusalem under international control (Corpus Separatum). Arabs rejected the plan as unjust because Arabs comprised 67% of the population but were allocated under 44% of the land, while the proposed Jewish state contained 400,000 Arab residents. The vote triggered an immediate civil war, marked by the Deir Yassin massacre (around 100 killed), causing 250,000 Palestinians to flee before 15 May 1948. When David Ben-Gurion declared the State of Israel on 14 May 1948, five Arab armies invaded. Despite 650,000 Israelis facing 40 million Arabs, Israel secured survival through the June truce, Czech arms airlifts, and unified IDF military leadership.',
       pillars: [
         {
-          title: 'UN Resolution 181: The Partition Plan (Nov 1947)',
-          subtitle: 'The 56% vs 43% Formula',
+          title: 'UN Resolution 181 (Nov 1947)',
+          subtitle: 'The Demographic Partition Dilemma',
           bullets: [
-            '**Terms of the Partition:** The UN allocated **56% of Palestine to the Jewish state** (including the coastal plain and Negev) and **43% to the Arab state**, with **Jerusalem designated a *corpus separatum*** (international city under UN trusteeship).',
-            '**Demographic Imbalance:** At the time of the vote, Jews made up only 33% of the total population and owned approximately 6% of the land, leading Arab leaders to brand the plan deeply unfair and illegitimate.',
-            '**Superpower Endorsement:** Supported by intense US diplomatic lobbying and surprising Soviet backing (Stalin hoped Israel would become a socialist ally), Resolution 181 passed with a 33 to 13 majority (10 abstentions).',
+            '**The Partition Vote (29 Nov 1947):** UNSCOP toured Palestine in summer 1947 (boycotted by Arab Higher Committee); the UN voted 33 to 13 (with 10 abstentions, both US and USSR voting YES) to partition Palestine into separate states.',
+            '**The Demographic Imbalance:** Arabs formed **67% (two-thirds) of the population** and owned most cultivated land, but received under **44% of the land**; the proposed Jewish state received **55% of the land** (mostly Negev Desert).',
+            '**Demographic Trap (400,000 Arabs):** The proposed Jewish state contained **400,000 Arab residents (45% of its total population)**; Jerusalem and Bethlehem were placed under international UN trusteeship (Corpus Separatum).',
+            '**The Economic Union Mandate:** Resolution 181 stipulated that both states must form an Economic Union sharing currency, customs, railways, postal services, and ports; Arab leaders rejected this outright as an imperial imposition.',
           ],
         },
         {
-          title: 'The Intercommunal Civil War (Nov 1947 – May 1948)',
-          subtitle: 'Siege of Jerusalem & Plan Dalet',
+          title: 'Civil War & Deir Yassin Panic',
+          subtitle: 'December 1947 – May 1948',
           bullets: [
-            '**Road Blocks & Ambushed Convoys:** Palestinian Arab irregular forces led by the Arab Higher Committee besieged the 100,000 Jewish residents of Jerusalem, cutting off the main supply road from Tel Aviv through the Bab al-Wad gorge.',
-            '**Operation Nachshon (April 1948):** The Haganah launched its first large-scale military offensive using newly arrived Czechoslovakian arms to force open the Jerusalem road and secure defensive perimeters.',
-            '**The Deir Yassin Massacre (9 April 1948):** Irgun and Lehi commandos attacked the Arab village of Deir Yassin near Jerusalem, killing over 100 civilians; news of the massacre sparked widespread panic and accelerated Palestinian flight.',
+            '**Outbreak of Civil War:** Violence erupted immediately after the UN vote; Arab irregulars ambushed Jewish convoys, blockading food and water supplies to **100,000 Jewish residents besieged in Jerusalem**.',
+            '**Arab Liberation Army (ALA):** The Arab League sponsored 5,000 volunteers under Fawzi al-Qawuqji crossing into Palestine before British withdrawal, surrounding Jewish enclaves in Galilee and the Negev.',
+            '**Operation Dalet (April 1948):** Haganah operational plan to secure state borders and clear vital transport corridors, commanding the capture of strategic Arab villages along the Tel Aviv-Jerusalem highway.',
+            '**Deir Yassin Massacre (9 April 1948):** Irgun and Lehi commandos attacked the village on the road to Jerusalem, killing **around 100 villagers (including women and children)**; exaggerated Arab radio reports intended to rally Arab nations backfired, causing **250,000 Palestinians to flee before 15 May**.',
           ],
         },
         {
-          title: 'Declaration of Independence & British Exit (May 1948)',
-          subtitle: 'The Birth of Sovereign Israel',
+          title: 'The Five-Army Invasion & Victory',
+          subtitle: '15 May 1948 – July 1949',
           bullets: [
-            '**British Departure:** Britain refused to enforce the UN partition plan, lowered the Union Jack in Jerusalem on 14 May 1948, and evacuated its remaining high commissioner and soldiers via Haifa.',
-            '**Declaration of Independence (14 May 1948):** Standing beneath a portrait of Theodor Herzl in the Tel Aviv Museum, David Ben-Gurion proclaimed the establishment of the State of Israel just hours before the Mandate officially expired.',
-            '**Immediate Recognition:** US President Truman recognized Israel de facto within 11 minutes of the declaration, followed closely by the Soviet Union; the Arab League declared war that very night.',
+            '**Declaration & Invasion:** On 14 May 1948, Ben-Gurion proclaimed Israeli independence (instantly recognized by US and USSR); on 15 May, regular armies of Egypt, Transjordan, Syria, Iraq, and Lebanon invaded: **650,000 Israelis faced 40 million Arabs**.',
+            '**Unified Command (28 May 1948):** Ben-Gurion established the Israeli Defence Forces (IDF), absorbing Haganah, Irgun, and Lehi into a single staff; Arab armies were deeply divided with conflicting territorial ambitions.',
+            '**The First UN Truce (11 June – 8 July 1948):** Mediated by Count Bernadotte; Israel used this breathing space to import vital Czech rifles, machine guns, and fighter aircraft (Operation Balak) and construct the secret "Burma Road" into Jerusalem.',
+            '**Ten Days Offensive & Armistices:** IDF broke Egyptian lines, captured Lydda, Ramle, and Galilee; bilateral armistices were signed on Rhodes in 1949 with Egypt (24 Feb), Lebanon (23 Mar), Transjordan (3 Apr), and Syria (20 July); Iraq refused to sign.',
           ],
         },
       ],
       keyFigures: [
         {
           name: 'David Ben-Gurion',
-          role: 'Proclaimed Israeli independence on 14 May 1948; served as first Prime Minister and directed the defense during the subsequent war.',
+          role: 'Read the Israeli Declaration of Independence on 14 May 1948; created the unified IDF on 28 May and directed overall war strategy.',
         },
         {
-          name: 'Abd al-Qadir al-Husayni',
-          role: 'Charismatic Palestinian commander of the Holy War Army who besieged Jerusalem until killed at the Battle of al-Qastal in April 1948.',
-        },
-        {
-          name: 'Chaim Weizmann',
-          role: 'Elder statesman of Zionism whose diplomatic efforts in Washington secured President Truman’s vital backing for the partition vote.',
-        },
-        {
-          name: 'Ralph Bunche',
-          role: 'UN diplomat and mediator who helped draft the UNSCOP report and later brokered the 1949 armistice agreements (Nobel Peace Prize).',
-        },
-      ],
-      milestones: [
-        { date: '29 Nov 1947', event: 'UN Resolution 181 passes (Partition).' },
-        { date: 'Dec 1947', event: 'Arab general strike and civil clashes erupt.' },
-        { date: '9 Apr 1948', event: 'Deir Yassin attack; panic spreads.' },
-        { date: '14 May 1948', event: 'Ben-Gurion proclaims State of Israel.' },
-        { date: '15 May 1948', event: 'Five Arab armies invade; interstate war begins.' },
-      ],
-    },
-    right: {
-      question: {
-        typeHeader: 'Exam Masterclass • Question 2 (Narrative Account) Format',
-        title: 'Assessment Mastery: Chronological Flow & Beyond the Stimulus',
-        marksTime: 'Q2: 8 Marks • ~12 Mins',
-        stem: 'Write a narrative account analysing the key events leading to the declaration of the State of Israel, 1947–48.',
-        marks: 8,
-        levelTag: 'Full Marks • 8/8',
-        scoreTag: 'Level 3 Target',
-        planningGuideTitle:
-          '3-Act Narrative Architecture (Must Include Own Knowledge Beyond Stimulus):',
-        planningGuide: `
-          <div>&bull; <strong>Act 1 (Beginning / Catalyst):</strong> UN Resolution 181 partition vote (Nov 1947) &rarr; Jewish acceptance vs Arab rejection &rarr; outbreak of intercommunal violence.</div>
-          <div>&bull; <strong>Act 2 (Turning Point / Escalation):</strong> Siege of Jerusalem &amp; supply convoys &rarr; [Own Knowledge: Operation Nachshon &amp; Deir Yassin panic] &rarr; flight of Palestinian population.</div>
-          <div>&bull; <strong>Act 3 (Outcome / Climax):</strong> British withdrawal on 14 May 1948 &rarr; Ben-Gurion proclaims State of Israel in Tel Aviv &rarr; immediate US recognition and Arab invasion.</div>
-        `,
-        modelAnswer:
-          'The key events leading to the declaration of the State of Israel began on 29 November 1947, when the United Nations passed Resolution 181. This plan proposed partitioning the British Mandate into separate Jewish (56%) and Arab (43%) states, with Jerusalem placed under international control. While Jewish leaders accepted the resolution, Arab leaders strongly rejected it, triggering an immediate outbreak of violent intercommunal civil war as Arab irregulars attacked Jewish settlements and ambushed convoys traveling between Tel Aviv and Jerusalem.\n\nThis conflict escalated into a crucial turning point in April 1948. Facing the complete isolation of 100,000 Jewish residents in Jerusalem, the Haganah launched Operation Nachshon, their first major coordinated military offensive. Supported by secretly imported Czechoslovakian rifles, Jewish forces cleared strategic villages along the highway. During this offensive, militant groups Irgun and Lehi attacked the Arab village of Deir Yassin on 9 April, killing over 100 villagers. The resulting terror triggered mass panic, causing tens of thousands of Palestinian Arabs to flee their homes and collapsing local Arab civilian administration.\n\nThe final outcome occurred on 14 May 1948 as the British Mandate formally expired. With British troops evacuating through Haifa, David Ben-Gurion gathered Jewish leaders at the Tel Aviv Museum and officially proclaimed the establishment of the State of Israel. President Truman immediately granted US diplomatic recognition, but the declaration directly provoked the invasion of five neighboring Arab armies the following day.',
-        examinerNote:
-          'Level 3 (8/8 marks). Flawlessly demonstrates chronological sequencing and causal linking across all three acts (Resolution 181 &rarr; Operation Nachshon / Deir Yassin &rarr; Independence Declaration). Crucially incorporates substantial own knowledge (Operation Nachshon, Czechoslovakian arms, 14 May Tel Aviv Museum) not found in standard stimulus prompts.',
-        pitfallCategory: 'Question 2 Pitfalls',
-        pitfall:
-          'A narrative account is not a simple story. It must show how each event caused the next (causal linkage) and MUST include historical details from outside the two stimulus prompts provided on the exam paper to access Level 3 (6–8 marks).',
-      },
-      causalPathway: {
-        title: 'Visual Causal Pathway: From UN Resolution 181 to Israeli Independence (1947–48)',
-        steps: [
-          {
-            stage: 'Stage 1: Partition Vote',
-            desc: 'UN passes Res 181 allocating 56% to Jews; Arab states reject partition; intercommunal clashes erupt immediately across Palestine.',
-          },
-          {
-            stage: 'Stage 2: Siege of Jerusalem',
-            desc: 'Arab forces cut off 100,000 Jews in Jerusalem; Haganah launches Operation Nachshon with Czech weapons to secure supply corridors.',
-          },
-          {
-            stage: 'Stage 3: Deir Yassin & Panic',
-            desc: 'Irgun commandos attack Deir Yassin (9 April 1948); news triggers mass civilian flight and breakdown of Palestinian society.',
-          },
-          {
-            stage: 'Stage 4: Statehood Proclaimed',
-            desc: 'British evacuate 14 May 1948; Ben-Gurion proclaims State of Israel in Tel Aviv; US grants recognition; Arab armies invade.',
-          },
-        ],
-      },
-      wordBank: [
-        {
-          term: 'UN Resolution 181',
-          def: 'UN General Assembly vote on 29 Nov 1947 to partition Palestine into Arab and Jewish states.',
-        },
-        {
-          term: 'Corpus Separatum',
-          def: 'Special international status designated for Jerusalem under UN trusteeship in the 1947 plan.',
-        },
-        {
-          term: 'UNSCOP',
-          def: 'United Nations Special Committee on Palestine that investigated conditions and recommended partition.',
-        },
-        {
-          term: 'Civil War (1947–48)',
-          def: 'Violent intercommunal clashes between Jewish and Arab militias prior to British departure.',
-        },
-        {
-          term: 'Operation Nachshon',
-          def: 'Haganah military offensive in April 1948 to break the Arab siege of the Jerusalem road.',
-        },
-        {
-          term: 'Deir Yassin',
-          def: 'Arab village attacked on 9 April 1948 where over 100 civilians were killed, sparking mass flight.',
-        },
-        {
-          term: 'Czech Arms Deal',
-          def: 'Secret shipment of rifles and ammunition from Czechoslovakia that armed the Haganah in 1948.',
-        },
-        {
-          term: 'Theodor Herzl',
-          def: 'Father of modern political Zionism whose portrait hung behind Ben-Gurion during the declaration.',
-        },
-        {
-          term: 'Tel Aviv Museum',
-          def: 'Location where the Israeli Declaration of Independence was signed on 14 May 1948.',
-        },
-        {
-          term: 'Arab Higher Committee',
-          def: 'Central political body representing Palestinian Arabs that rejected partition and led strikes.',
-        },
-        {
-          term: 'Bab al-Wad',
-          def: 'Strategic narrow mountain pass on the road to Jerusalem where Jewish supply convoys were ambushed.',
-        },
-        {
-          term: 'De Facto Recognition',
-          def: 'Immediate diplomatic acceptance granted to Israel by US President Harry Truman within 11 minutes.',
-        },
-      ],
-    },
-  },
-
-  // ---------------------------------------------------------------------------
-  // SPREAD 3 (KT 1.3): THE 1948–49 ARAB-ISRAELI WAR & PALESTINIAN REFUGEE CRISIS
-  // ---------------------------------------------------------------------------
-  {
-    id: 'cme_spread_3',
-    spreadNum: 3,
-    topic: 'Key Topic 1 • The Birth of the State of Israel, 1945–63',
-    title: 'KT 1.3: The Arab-Israeli War (1948–49) & The Palestinian Nakba',
-    footerTag: 'Topic 1.3: 1948–49 War & Nakba',
-    left: {
-      sectionTag: 'Section 3: War & Displacement',
-      contextTitle:
-        'Strategic Context: Regional Invasion, Israeli Mobilisation & The Refugee Crisis',
-      summary:
-        "On 15 May 1948, the day after Israel declared independence, armies from Egypt, Syria, Transjordan, Iraq, and Lebanon invaded. Despite initial Arab advances in the Negev and Jerusalem, the Arab coalition suffered from divided leadership and competing territorial ambitions. During the first UN truce in June 1948, the newly unified Israel Defense Forces (IDF) reorganised, conscripted thousands of soldiers, and acquired vital arms shipments from Czechoslovakia. In subsequent counter-offensives, Israel secured military dominance. The 1949 armistice agreements expanded Israel's territory from 56% to 79% of the Mandate, while over 700,000 Palestinian Arabs were displaced into squalid refugee camps across neighboring states.",
-      pillars: [
-        {
-          title: 'Military Stages & Factors in Israeli Victory',
-          subtitle: 'From Crisis to Offensive',
-          bullets: [
-            "**The Initial Arab Invasion:** 30,000 Arab troops crossed the borders; King Abdullah's British-trained Arab Legion seized East Jerusalem and the Old City, while Egyptian forces advanced within 20 miles of Tel Aviv.",
-            '**The Crucial First Truce (June 1948):** UN mediator Count Folke Bernadotte secured a 4-week truce; while the Arabs paused, Israel integrated separate militias into the unified **IDF**, recruited veterans, and imported Czech weapons.',
-            '**Israeli Counter-Offensives (July–Dec 1948):** In Operation Dani and Operation Yoav, the IDF broke the Egyptian blockade of the Negev, expelled Syrian forces from the north, and expanded its operational control.',
-          ],
-        },
-        {
-          title: 'Territorial Transformation & The 1949 Green Line',
-          subtitle: 'The Armistice Borders',
-          bullets: [
-            '**1949 Armistice Agreements:** Brokered on the island of Rhodes by Ralph Bunche, bilateral armistices established the **Green Line** ceasefire borders with Egypt, Lebanon, Jordan, and Syria.',
-            '**Territorial Expansion:** Israel expanded its land area by 23% beyond the UN partition plan, securing **79% of the former British Mandate**, including West Jerusalem, the coastal plain, and Galilee.',
-            '**Fate of Palestinian Land:** The remaining 21% was absorbed by Arab neighbors: King Abdullah annexed the **West Bank and East Jerusalem** into Jordan, while Egypt placed the **Gaza Strip** under military rule.',
-          ],
-        },
-        {
-          title: 'The Palestinian Nakba & The Law of Return (1950)',
-          subtitle: 'Displacement vs Ingathering',
-          bullets: [
-            '**Al-Nakba (The Catastrophe):** Over **700,000 Palestinian Arabs fled or were expelled** from their homes, becoming stateless refugees in Gaza, the West Bank, Jordan, Syria, and Lebanon.',
-            '**Denial of Right of Return:** Israel refused UN Resolution 194 calls to allow refugees to return, passing the Absentee Property Law to confiscate abandoned Arab villages, orchards, and homes for Jewish settlers.',
-            "**The Law of Return (1950):** Passed by the Knesset, granting every Jewish person worldwide the right to Israeli citizenship; between 1948 and 1953, 680,000 Jewish immigrants doubled Israel's population.",
-          ],
-        },
-      ],
-      keyFigures: [
-        {
-          name: 'David Ben-Gurion',
-          role: 'Unified the Haganah, Irgun, and Lehi into the IDF on 26 May 1948; insisted on military command centralization under state authority.',
-        },
-        {
-          name: 'King Abdullah I',
-          role: 'Ruler of Transjordan whose elite Arab Legion captured the West Bank and East Jerusalem, annexing them into Jordan in 1950.',
+          name: 'King Abdullah I of Transjordan',
+          role: 'Commander of the British-trained Arab Legion; captured the Old City of Jerusalem and annexed the West Bank, clashing with other Arab states.',
         },
         {
           name: 'Count Folke Bernadotte',
-          role: 'UN mediator who negotiated the first ceasefire and proposed refugee return; assassinated by Jewish militant group Lehi in Sept 1948.',
+          role: 'UN Special Mediator who brokered the decisive June 1948 Truce; assassinated in Jerusalem by the militant Jewish group Lehi in Sept 1948.',
         },
         {
-          name: 'Yigael Yadin',
-          role: 'IDF Chief of Operations who planned the counter-offensives in the Negev and Galilee that secured the 1949 armistice borders.',
+          name: 'Fawzi al-Qawuqji',
+          role: "Field Commander of the Arab League's volunteer Arab Liberation Army (ALA), which entered Palestine to fight Jewish forces prior to 15 May.",
         },
       ],
-      milestones: [
-        { date: '15 May 1948', event: 'Five Arab armies invade; Arab-Israeli War starts.' },
-        { date: '26 May 1948', event: 'Ben-Gurion issues decree establishing the IDF.' },
-        { date: '11 June 1948', event: 'First UN truce begins; IDF re-arms with Czech arms.' },
-        { date: 'Jan–July 1949', event: '1949 Armistice agreements fix the Green Line.' },
-        { date: 'July 1950', event: 'Knesset passes Law of Return for Jewish immigrants.' },
-      ],
+      archivalSource: {
+        title: 'David Ben-Gurion Declaring the State of Israel (14 May 1948)',
+        citation: 'Tel Aviv Museum of Art, Official Declaration Transcript',
+        quote:
+          'We hereby declare the establishment of a Jewish State in the Land of Israel, to be known as the State of Israel... We appeal to the Arab inhabitants of the State of Israel to preserve peace and participate in the upbuilding of the State on the basis of full and equal citizenship.',
+        significance:
+          'Proclaimed sovereign Jewish statehood for the first time in 2,000 years, triggering the immediate entry of five regular Arab armies.',
+      },
     },
     right: {
-      question: {
-        typeHeader: 'Exam Masterclass • Question 3 (Importance) Format',
-        title: 'Assessment Mastery: Explaining Significance for Aftermath',
-        marksTime: 'Q3: 8 Marks • ~12 Mins',
-        stem: 'Explain the importance of the creation of the Israeli Defence Forces (IDF) for the aftermath of the 1948–49 war.',
-        marks: 8,
-        levelTag: 'Full Marks • 8/8',
-        scoreTag: 'Level 3 Target',
-        planningGuideTitle:
-          'Two-Paragraph Analytical Structure (Short-term Defense vs Long-term Security):',
-        planningGuide: `
-          <div>&bull; <strong>Paragraph 1 (Short-term Military Consolidation & Victory):</strong> On 26 May 1948, Ben-Gurion dissolved independent militias (Haganah, Irgun, Lehi) into a unified national army &rarr; eliminated internal armed rivalries (e.g. Altalena affair) &rarr; enabled coordinated counter-offensives that secured the Green Line.</div>
-          <div>&bull; <strong>Paragraph 2 (Long-term National Security & Law of Return Integration):</strong> Created mandatory conscription (men and women) &rarr; provided immediate military shield against Arab revanchism &rarr; served as the central institution integrating 680,000 new Jewish immigrants.</div>
-        `,
-        modelAnswer:
-          "The creation of the Israeli Defence Forces (IDF) on 26 May 1948 was crucially important in the short term because it established a single, disciplined military command that prevented internal civil conflict and secured Israel's military victory. Prior to its formation, Jewish defense was fractured between the official Haganah and militant underground groups Irgun and Lehi, which operated under separate political leadership. By issuing an executive decree consolidating all forces into the IDF, Prime Minister David Ben-Gurion asserted complete state control over armed force, famously demonstrating this by ordering the shelling of the Irgun arms ship Altalena in June 1948 to eliminate private militias. Consequently, unified command enabled the IDF to coordinate large-scale multi-front counter-offensives (such as Operation Yoav) during the summer and autumn of 1948, allowing Israel to repel the invading Arab armies and expand its territory to 79% of the Mandate by the 1949 armistice.\n\nFurthermore, the IDF was fundamentally important in the long term because it created the institutional backbone necessary for national defense and the survival of the new state. Facing hostile Arab neighbors who refused to recognize the 1949 Green Line borders, Israel established universal conscription, requiring all young men and women to serve. This compulsory military service provided an immediate, highly trained deterrent force to counter border infiltrations. Moreover, as hundreds of thousands of Jewish refugees arrived under the 1950 Law of Return, the IDF functioned as a vital social melting pot, teaching Hebrew, providing vocational training, and forging a cohesive national identity from disparate immigrant populations.",
-        examinerNote:
-          'Level 3 (8/8 marks). Fully addresses importance across two distinct analytical dimensions: (1) immediate operational necessity of unified military command for winning the 1948–49 war, and (2) enduring long-term significance for national integration and deterrent security. Strongly grounded in precise facts (26 May 1948, Altalena, universal conscription, 1950 Law of Return).',
-        pitfallCategory: 'Question 3 Pitfalls',
-        pitfall:
-          'Never simply describe what the IDF did during the war. You must explicitly evaluate why its formation was IMPORTANT for the aftermath. Organize your response into two distinct paragraphs: one on immediate military impact, and one on long-term geopolitical and social consequence.',
-      },
-      causalPathway: {
-        title: 'Visual Causal Pathway: From Regional Invasion to Armistice & Law of Return',
-        steps: [
-          {
-            stage: 'Stage 1: Invasion & Peril',
-            desc: 'Five Arab armies invade 15 May 1948; Egyptian forces threaten Tel Aviv; Arab Legion surrounds Jewish quarters of Jerusalem.',
-          },
-          {
-            stage: 'Stage 2: IDF Unification',
-            desc: 'Ben-Gurion establishes IDF on 26 May 1948; Czech arms arrive during First Truce; unified command replaces factional militias.',
-          },
-          {
-            stage: 'Stage 3: Counter-Offensives',
-            desc: 'IDF launches Operations Dani and Yoav; breaks Negev siege and conquers Galilee; secures 79% of Mandate land area.',
-          },
-          {
-            stage: 'Stage 4: Armistice & Nakba',
-            desc: '1949 Green Line signed on Rhodes; 700k Palestinian refugees displaced; Knesset passes 1950 Law of Return.',
-          },
-        ],
-      },
-      wordBank: [
+      tag: 'KT 1.2 • Military Analysis, Turning Points & Word Bank',
+      deepCases: [
         {
-          term: 'IDF (Tzahal)',
-          def: 'Israel Defense Forces established on 26 May 1948, unifying all Jewish paramilitary organizations.',
+          title: '1. The Res 181 Demographic Reality & ALA Incursion',
+          points: [
+            '**Demographic Imbalance:** Arabs held a 2:1 population majority (**67% vs 33%**) but received only 43% of land, while the Jewish state included **400,000 Arab Palestinians** within its designated borders.',
+            '**Economic Union Failure:** UN envisioned shared currency and ports; Arab Higher Committee declared a 3-day general strike and vowed partition would be drowned in blood.',
+            '**Arab Liberation Army (ALA):** 5,000 volunteers entered Palestine in Jan 1948 to cut off Jewish enclaves, surrounding Jerusalem and isolating kibbutzim in the Negev.',
+            '**Superpower Voting Alignment:** Both the USA and the USSR voted in favor of Resolution 181, seeking to eliminate British imperial presence in the eastern Mediterranean.',
+          ],
         },
         {
-          term: 'The Green Line',
-          def: 'The 1949 armistice borders between Israel and its neighbors, remaining de facto borders until 1967.',
+          title: '2. Deir Yassin (100 Dead) & The 250,000 Refugee Wave',
+          points: [
+            '**Jerusalem Blockade:** Arab forces cut off the supply road to 100,000 Jewish residents in Jerusalem, causing severe starvation and water rationing.',
+            '**The Deir Yassin Attack (9 April):** Irgun and Lehi fighters stormed the strategic hillside village; house-to-house fighting and grenade clearing resulted in **around 100 villagers killed**.',
+            '**Mass Flight Mechanism:** Broadcasts by Arab radio intended to shame Arab leaders into invading instead triggered widespread panic; **250,000 Palestinians fled their homes before 15 May**.',
+            '**Haganah Condemnation:** Ben-Gurion sent an official apology to King Abdullah of Transjordan, but the psychological terror created by the massacre proved irreversible.',
+          ],
         },
         {
-          term: 'Al-Nakba',
-          def: "'The Catastrophe': The displacement and dispossession of over 700,000 Palestinian Arabs in 1948–49.",
+          title: '3. The First UN Truce & The Czech Arms Lifeline',
+          points: [
+            '**Existential Threat (May 1948):** In the first three weeks, Syrian tanks pushed into Galilee and Egyptian columns reached Ashdod, just 32km south of Tel Aviv.',
+            '**The June Truce (11 June – 8 July):** Four-week ceasefire mediated by Count Bernadotte allowed Israel to import 25,000 rifles, 5,000 machine guns, and 25 Avia S-199 fighters from communist Czechoslovakia.',
+            '**Burma Road Lifeline:** Israeli engineers secretly carved a mountain bypass road through steep hills, breaking the siege of West Jerusalem and transporting convoys of food and ammunition.',
+            '**Bernadotte Assassination:** Lehi commandos assassinated Bernadotte in Jerusalem on 17 Sept 1948 after he proposed returning Arab refugees and giving the Negev to Arabs.',
+          ],
         },
         {
-          term: 'Law of Return (1950)',
-          def: 'Knesset law guaranteeing every Jewish person worldwide the right to settle in Israel and gain citizenship.',
+          title: '4. Divided Arab Armies vs Unified IDF Structure',
+          points: [
+            '**650,000 vs 40 Million:** While Arab nations possessed massive demographic superiority, their invading expeditionary forces totaled only 40,000 troops vs 35,000 initial Israeli fighters.',
+            '**Inter-Arab Rivalry:** King Abdullah of Transjordan refused to advance beyond the West Bank, having reached an informal understanding with the Jewish Agency, which angered Egypt and Syria.',
+            '**IDF Mobilization:** By October 1948, Israel mobilized 100,000 troops under unified national command, launching Operation Yoav in the Negev and Operation Hiram in Galilee to crush Arab forces.',
+            '**Rhodes Armistices (1949):** Ralph Bunche mediated armistices with Egypt (Feb), Lebanon (Mar), Jordan (Apr), Syria (July); Iraq refused to sign any ceasefire.',
+          ],
+        },
+      ],
+      causalPathway: [
+        {
+          stage: '1. Res 181 Partition (Nov 47)',
+          text: 'UN votes 33-13 to partition Palestine; Arabs reject giving 55% land to 33% population with 400k Arabs in Jewish zone.',
         },
         {
-          term: 'Arab Legion',
-          def: 'Jordan’s elite, British-trained military force commanded by Sir John Glubb that captured East Jerusalem.',
+          stage: '2. Deir Yassin & Flight (Apr 48)',
+          text: 'Irgun/Lehi attack Deir Yassin killing ~100; Arab broadcast panic triggers mass flight of 250k Palestinians before 15 May.',
         },
         {
-          term: 'Operation Balak',
-          def: 'Clandestine airlift of rifles, machine guns, and Messerschmitt fighter planes from Czechoslovakia in 1948.',
+          stage: '3. June Truce & Czech Arms',
+          text: 'Bernadotte brokers 4-week truce; IDF imports Czech Avia fighters and rifles, and carves Burma Road into Jerusalem.',
         },
         {
-          term: 'UNRWA',
-          def: 'UN Relief and Works Agency created in 1949 to provide welfare, education, and health to Palestinian refugees.',
+          stage: '4. Operation Yoav & Armistices',
+          text: '100k IDF troops rout divided Arab armies; 1949 Rhodes armistices give Israel 79% of land; Iraq refuses to sign.',
+        },
+      ],
+      masterWordBank: [
+        {
+          term: 'UN Resolution 181',
+          def: 'Nov 1947 UN plan to partition Palestine into Arab and Jewish states with international Jerusalem.',
         },
         {
-          term: 'Resolution 194',
-          def: 'UN resolution passed in Dec 1948 stating that refugees wishing to return in peace should be permitted to do so.',
+          term: 'Corpus Separatum',
+          def: 'Special international legal status designated for Jerusalem and Bethlehem under UN control.',
+        },
+        {
+          term: 'Arab Liberation Army',
+          def: 'Volunteer force of 5,000 Arab fighters under Fawzi al-Qawuqji entering Palestine in Jan 1948.',
+        },
+        {
+          term: 'Plan Dalet (Plan D)',
+          def: 'Haganah operational strategy in April 1948 to secure borders and communication routes.',
+        },
+        {
+          term: 'Deir Yassin',
+          def: 'Arab village near Jerusalem attacked on 9 April 1948; ~100 civilians killed, sparking mass panic.',
+        },
+        {
+          term: '650k vs 40 Million',
+          def: 'Demographic ratio of the new State of Israel versus surrounding hostile Arab nations in May 1948.',
+        },
+        {
+          term: 'IDF (28 May 1948)',
+          def: 'Unified national military created by Ben-Gurion, dissolving independent underground militias.',
+        },
+        {
+          term: 'First UN Truce',
+          def: 'Four-week ceasefire (11 June – 8 July 1948) mediated by Bernadotte, exploited by IDF to rearm.',
+        },
+        {
+          term: 'Czech Arms Deal',
+          def: 'Crucial communist arms shipment of 25k rifles, machine guns, and Avia S-199 fighters to Israel.',
+        },
+        {
+          term: 'Burma Road',
+          def: 'Makeshift mountain bypass road carved by Israeli engineers to break the Arab siege of Jerusalem.',
         },
         {
           term: 'Count Bernadotte',
-          def: 'UN mediator assassinated in Jerusalem by Lehi militants after proposing modifications to partition.',
+          def: 'UN mediator who negotiated the first truce; assassinated in Jerusalem by Lehi in Sept 1948.',
         },
         {
-          term: 'Altalena Affair',
-          def: 'Violent confrontation in June 1948 when Ben-Gurion ordered the IDF to fire on an Irgun arms vessel.',
-        },
-        {
-          term: 'Rhodes Armistice',
-          def: 'Bilateral ceasefire agreements negotiated by Ralph Bunche between Israel and Arab neighbors in 1949.',
-        },
-        {
-          term: 'Absentee Property',
-          def: '1950 Israeli law transferring lands and houses of displaced Palestinians to state ownership.',
+          term: 'Rhodes Armistices',
+          def: '1949 bilateral ceasefires between Israel and Egypt, Lebanon, Jordan, and Syria; Iraq refused.',
         },
       ],
     },
   },
-
-  // ---------------------------------------------------------------------------
-  // SPREAD 4 (KT 1.4): NASSER, GAZA RAID & THE SUEZ CRISIS (1955–56)
-  // ---------------------------------------------------------------------------
+  {
+    id: 'cme_spread_3',
+    spreadNum: 3,
+    topic: 'Key Topic 1 • The Birth of Israel, 1945–63',
+    title: 'KT 1.3: Aftermath of 1948–49: Al-Nakba & Israeli State Consolidation',
+    left: {
+      tag: 'KT 1.3 • Refugees, Armistices & State Consolidation',
+      headline: 'The Catastrophe & The Sanctuary: Two Incompatible Post-War Realities',
+      summary:
+        'The 1948–49 War transformed Middle Eastern demographics. For Palestinians, the war was Al-Nakba ("The Catastrophe"): over 700,000 Arabs were displaced from their homes, leaving only 160,000 within Israeli borders, while over 400 Arab villages were depopulated. The 1949 Rhodes Armistices established the Green Line, expanding Israeli territory to 79% of mandatory Palestine. Transjordan annexed the West Bank and East Jerusalem, while Egypt occupied Gaza. For Israelis, 1948 was the "Year of Liberation", but the new state faced severe economic crises and hostile borders. Israel instituted mandatory IDF conscription (1949), passed the Law of Return (July 1950) doubling its population through 685,000 immigrants (including 300,000 from Arab lands), and survived through severe austerity (Tzena) and $300m in US grants.',
+      pillars: [
+        {
+          title: 'Al-Nakba: The Catastrophe (1948–49)',
+          subtitle: 'The Palestinian Refugee Tragedy',
+          bullets: [
+            '**The Scale of Displacement:** Over **700,000 to 750,000 Palestinian Arabs** became refugees; only **160,000 Palestinians out of 900,000** remained in Israeli territory; over 400 Arab villages were depopulated, dismantled, or resettled.',
+            '**Exact 1949 Settlement Breakdown:** Pearson records the exact 1949 refugee distribution: **280,000 in the West Bank (Jordan), 190,000 in the Gaza Strip (Egypt), 100,000 in Lebanon, 75,000 in Syria, 70,000 in Transjordan, 4,000 in Iraq, 7,000 in Egypt, and 48,000 internally displaced**.',
+            '**UNRWA Established (Dec 1949):** The UN Relief and Works Agency was created to administer emergency food rations, clinics, and schooling across 59 refugee camps, where families lived in squalid canvas tents with open sewers.',
+            '**Arab League & Right of Return:** Arab states (except Jordan) denied Palestinians citizenship to maintain their right of return under UN Resolution 194; Israel strictly barred refugee return, viewing them as an existential fifth-column security threat.',
+          ],
+        },
+        {
+          title: '1949 Rhodes Armistices & Borders',
+          subtitle: 'The Green Line & Territorial Shifts',
+          bullets: [
+            '**Bilateral Rhodes Armistices:** Mediated by UN diplomat Ralph Bunche; the armistice agreements established armistice demarcation lines (the "Green Line") rather than recognized permanent political borders.',
+            '**79% Green Line Control:** Israel expanded its territory from 55% under UN Res 181 to **79% of mandatory Palestine** (a 50% land gain), conquering fertile Galilee, the central coastal corridor, and the Negev down to Eilat.',
+            "**Division of Jerusalem & Annexations:** West Jerusalem was declared Israel's capital in 1949; Transjordan annexed the West Bank and East Jerusalem (including the Old City) in 1950 (renamed Jordan); Egypt occupied the Gaza Strip under military rule.",
+            '**Absentee Property Law (1950):** Israel passed legislation transferring ownership of all agricultural land, orchards, homes, and bank accounts abandoned by fleeing refugees to the Israeli Custodian of Absentee Property.',
+          ],
+        },
+        {
+          title: 'Israeli Nation-Building & Survival',
+          subtitle: "Conscription, Ma'abarot & US Aid",
+          bullets: [
+            '**Universal IDF Conscription (1949):** The 1949 Defence Service Law made military service compulsory at 18: **30 months for males, 18 months for females**, followed by mandatory annual reserve duty of 1 month per year up to age **55**.',
+            '**Law of Return & Demographics (July 1950):** Granted every Jew worldwide the right to settle in Israel and gain citizenship; Israel absorbed **618,500 Jewish refugees from Arab and Muslim countries** (Iraq, Yemen, Morocco, Egypt) by 1972, doubling the population.',
+            "**Tzena (Austerity) & Ma'abarot:** Israel faced severe economic crisis; strict rationing (*Tzena*) restricted meat, butter, and clothing; over 200,000 immigrants were housed in corrugated tin and canvas transit camps (*ma'abarot*) prone to winter flooding.",
+            '**$300m US Aid & German Reparations:** National bankruptcy was averted by **$300 million in US government loans and grants**, plus the 1952 West German Reparations Agreement ($822 million over 14 years); US refused to sell arms in the 1950s.',
+          ],
+        },
+      ],
+      keyFigures: [
+        {
+          name: 'Ralph Bunche',
+          role: 'US diplomat and UN Mediator who negotiated the 1949 Rhodes Armistice Agreements, earning the 1950 Nobel Peace Prize.',
+        },
+        {
+          name: 'David Ben-Gurion',
+          role: 'Israeli Prime Minister who passed the Law of Return (1950), built the IDF conscription model, and barred Palestinian refugee return.',
+        },
+        {
+          name: 'King Abdullah I',
+          role: 'Ruler of Jordan who formally annexed the West Bank and East Jerusalem in 1950, granting citizenship to 280,000 Palestinian refugees.',
+        },
+        {
+          name: 'Ariel Sharon',
+          role: 'Young IDF officer appointed in 1953 to command Unit 101, conducting aggressive retaliatory raids against Fedayeen bases.',
+        },
+      ],
+      archivalSource: {
+        title: 'UN General Assembly Resolution 194, Article 11 (11 Dec 1948)',
+        citation: 'United Nations Official Records, Third Session',
+        quote:
+          'Resolves that the refugees wishing to return to their homes and live at peace with their neighbours should be permitted to do so at the earliest practicable date, and that compensation should be paid for the property of those choosing not to return...',
+        significance:
+          'Became the international legal bedrock of the Palestinian "Right of Return", rejected by Israel on national security and demographic grounds.',
+      },
+    },
+    right: {
+      tag: 'KT 1.3 • Demographic Analysis, Legal Frameworks & Word Bank',
+      deepCases: [
+        {
+          title: '1. The 1949 Refugee Settlement Distribution',
+          points: [
+            '**Displacement Figures:** 700k–750k Palestinians displaced; exact 1949 spread: **280k in West Bank, 190k in Gaza, 100k in Lebanon, 75k in Syria, 70k in Jordan**.',
+            '**UNRWA Mandate (Dec 1949):** United Nations Relief and Works Agency took over 59 camps; refugees lived in canvas tents with open sewers and high infant mortality.',
+            '**Arab State Policies:** Jordan granted citizenship to incorporate the West Bank; Egypt kept Gazans under military rule without citizenship; Lebanon denied civil rights.',
+            '**Demographic Shift inside Israel:** Only 160,000 Arabs remained inside Israel, placed under military curfew and travel permit restrictions until martial law ended in 1966.',
+          ],
+        },
+        {
+          title: '2. The Rhodes Armistices & The 79% Green Line',
+          points: [
+            '**Green Line Borders:** The 1949 armistice lines drawn in green grease pencil on maps in Rhodes; never recognized by Arab states as permanent international borders.',
+            '**21% Land Gain:** Israel gained Galilee, the coastal plain, and the Negev corridor down to Eilat on the Gulf of Aqaba, securing vital agricultural and maritime depth.',
+            '**Absentee Property Law (1950):** Transferred ownership of all land, homes, and bank accounts abandoned by Palestinian refugees to the Israeli Custodian of Absentee Property.',
+            '**Division of Jerusalem:** The Holy City was partitioned; Jordan held East Jerusalem (denying Jews access to Western Wall), while Israel declared West Jerusalem its capital in 1949.',
+          ],
+        },
+        {
+          title: '3. IDF Conscription & The "Citizen Army"',
+          points: [
+            '**Universal Conscription (1949):** At 18, **men served 30 months, women served 18 months**, with mandatory annual reserve service up to age **55**.',
+            '**Strategic Imperative:** Surrounded by 40 million hostile neighbors, Israel could not maintain a massive standing army; conscription turned society into a mobile reserve force in 48 hours.',
+            '**Social Melting Pot:** The IDF served as the primary instrument for integrating immigrant youths from 70 different languages and cultures into a Hebrew-speaking citizenry.',
+            "**Unit 101 & Retaliation Policy:** Ariel Sharon's commando unit established Israel's aggressive doctrine of cross-border disproportionate retaliation against Fedayeen infiltrators.",
+          ],
+        },
+        {
+          title: "4. Economic Austerity, Ma'abarot & $300m US Aid",
+          points: [
+            '**Population Doubled (1948–51):** 685,000 immigrants arrived, including 300,000 Holocaust survivors and 300,000 Sephardic/Mizrahi Jews fleeing Arab states.',
+            '**Tzena (Austerity):** Severe food rationing; points books required for meat, eggs, and bread; widespread public unrest over harsh living standards.',
+            "**Ma'abarot Tent Camps:** Over 200,000 immigrants housed in overcrowded tin shacks and tents prone to winter flooding; resolved by **$300m in US grants and German reparations (1952)**.",
+            '**Arab League Boycott:** Arab states closed borders, severed trade, and boycotted international firms trading with Israel, compounding early economic hardship.',
+          ],
+        },
+      ],
+      causalPathway: [
+        {
+          stage: '1. War Flight & Expulsions',
+          text: '700k Palestinians displaced; 280k flee to West Bank, 190k to Gaza, 100k to Lebanon, 75k to Syria, 70k to Jordan.',
+        },
+        {
+          stage: '2. Rhodes Armistice (1949)',
+          text: 'Green Line established; Israel controls 79% of land; Jordan annexes West Bank; only 160k Arabs remain in Israel.',
+        },
+        {
+          stage: '3. Law of Return & Conscription',
+          text: 'July 1950 Law of Return doubles population; IDF institutes 30m men / 18m women conscription to age 55.',
+        },
+        {
+          stage: "4. Ma'abarot & US Aid",
+          text: '200k immigrants housed in transit tent camps; $300m US aid and German reparations prevent economic collapse.',
+        },
+      ],
+      masterWordBank: [
+        {
+          term: 'Al-Nakba (1948)',
+          def: 'The "Catastrophe": the flight and expulsion of 700,000 Palestinian Arabs from their homes.',
+        },
+        {
+          term: '1949 Distribution',
+          def: 'Refugees in West Bank (280k), Gaza (190k), Lebanon (100k), Syria (75k), Jordan (70k).',
+        },
+        {
+          term: 'UNRWA (Dec 1949)',
+          def: 'UN agency created to provide food, medical aid, and schooling across 59 refugee camps.',
+        },
+        {
+          term: 'Green Line',
+          def: '1949 Rhodes Armistice line defining borders until 1967; Israel controlled 79% of land.',
+        },
+        {
+          term: 'UN Resolution 194',
+          def: 'UN resolution affirming Palestinian Right of Return or financial compensation.',
+        },
+        {
+          term: 'Absentee Property Law',
+          def: '1950 Israeli law confiscating land and property left behind by fleeing refugees.',
+        },
+        {
+          term: 'Law of Return (1950)',
+          def: 'Legislation granting every Jewish person worldwide the right to settle in Israel.',
+        },
+        {
+          term: 'IDF Conscription (1949)',
+          def: 'Mandatory military service at 18: 30 months for men, 18 for women, reserves to 55.',
+        },
+        {
+          term: 'Tzena (Austerity)',
+          def: 'Strict economic rationing of food, clothing, and furniture in Israel from 1949 to 1953.',
+        },
+        {
+          term: "Ma'abarot",
+          def: 'Makeshift transit camps of canvas tents and tin shacks housing 200,000 new immigrants.',
+        },
+        {
+          term: '$300m US Aid',
+          def: 'Vital US government loans and grants that funded Israeli infrastructure and immigrant absorption.',
+        },
+        {
+          term: 'Ralph Bunche',
+          def: 'UN mediator who negotiated the 1949 armistices on Rhodes; won Nobel Peace Prize.',
+        },
+      ],
+    },
+  },
   {
     id: 'cme_spread_4',
     spreadNum: 4,
-    topic: 'Key Topic 1 • The Birth of the State of Israel, 1945–63',
-    title: 'KT 1.4: Nasser, the Suez Crisis & Israeli Attacks (1955–56)',
-    footerTag: 'Topic 1.4: Nasser & Suez Crisis',
+    topic: 'Key Topic 1 • The Birth of Israel, 1945–63',
+    title: 'KT 1.4: Nasser, Pan-Arabism & The Suez Crisis (1956–63)',
     left: {
-      sectionTag: 'Section 4: Pan-Arabism & Suez',
-      contextTitle: 'Strategic Context: Cold War Alignments, Pan-Arabism & Imperial Humiliation',
+      tag: 'KT 1.4 • Imperialism, Nationalisation & Tripartite Collusion',
+      headline: 'Nationalisation, Collusion & Humiliation: The 1956 Suez Crisis',
       summary:
-        "The 1952 Free Officers revolution overthrew Egypt's corrupt monarchy, propelling Gamal Abdel Nasser to power. Nasser sought to end Western imperial domination, champion Pan-Arab nationalism, and secure arms to defend Egypt against Israeli border incursions. Following a devastating Israeli military raid on Gaza in February 1955 that killed 38 Egyptian soldiers, Nasser concluded that Western arms embargoes were intolerable and signed the landmark Czech arms deal with the Soviet bloc. When Britain and the US abruptly cancelled loans for the vital Aswan High Dam project in July 1956, Nasser responded by nationalising the Anglo-French Suez Canal Company. In retaliation, Britain and France colluded with Israel in the secret Sèvres Protocol to invade Sinai and seize the canal, ending in profound imperial humiliation when the United States forced an immediate withdrawal.",
+        'The overthrow of Egypt’s monarchy in 1952 brought Colonel Gamal Abdel Nasser to power, championing pan-Arab nationalism and the end of British imperial influence. After negotiating the withdrawal of 80,000 British soldiers from the Suez Canal Zone, Nasser faced escalating border clashes in Gaza. Following a February 1955 Israeli raid that killed 38 Egyptian soldiers, Nasser signed the September 1955 Czech Arms Deal and blockaded the Gulf of Aqaba. When the US and Britain cancelled financing for the Aswan High Dam, Nasser nationalised the Suez Canal on 26 July 1956. Britain and France colluded with Israel in the secret Protocol of Sèvres (22 October 1956). Israel invaded Sinai on 29 October, followed by Anglo-French paratrooper landings at Port Said. However, a US financial ultimatum forced a humiliating British and French withdrawal on 23 November 1956, cementing Nasser as the undisputed hero of the Arab world and establishing the United Arab Republic (UAR) with Syria in 1958.',
       pillars: [
         {
-          title: 'Nasser’s Leadership & The Gaza Raid (Feb 1955)',
-          subtitle: 'The Turn to Moscow',
+          title: "Nasser's Revolution & Gaza Raids",
+          subtitle: 'The Cycle of Escalation (1954–55)',
           bullets: [
-            '**Pan-Arab Nationalism:** Nasser became the undisputed hero of the Arab world by preaching anti-imperialism, sponsoring Palestinian **fedayeen** guerrilla attacks into Israel, and refusing to join Western Cold War alliances.',
-            "**The Israeli Gaza Raid (28 Feb 1955):** In retaliation for fedayeen sabotage, Israeli commandos led by Ariel Sharon attacked an Egyptian army base in Gaza, killing **38 Egyptian soldiers** and exposing Egypt's severe military weakness.",
-            '**The Czechoslovakian Arms Deal (Sept 1955):** Humiliated by the Gaza raid and denied Western weapons, Nasser signed a secret agreement with the USSR via Czechoslovakia to import **200 MiG-15 jet fighters, 300 tanks, and submarines**, shifting the regional arms balance.',
+            '**British Troop Withdrawal (1954):** Nasser negotiated the departure of **80,000 British troops** stationed in the Suez Canal Zone, removing imperial control; he instituted land redistribution and free public hospitals.',
+            '**Aswan High Dam Ambition:** Nasser planned a monumental dam at Aswan to control annual Nile floods, generate hydro-electricity for industrialization, and irrigate thousands of hectares of fertile farmland.',
+            '**The Gaza Raid (February 1955):** In retaliation for cross-border infiltrations, the IDF raided an Egyptian army base in Gaza, killing **38 Egyptian soldiers**; Nasser felt humiliated and vowed to rearm.',
+            '**Czech Arms Deal (Sept 1955):** In August 1955, Fedayeen killed 11 Israelis; an IDF raid killed 72 Egyptians; Nasser blockaded the Gulf of Aqaba and signed the Czech Arms Deal ($250m for 200 MiG-15 jets and 300 T-34 tanks).',
           ],
         },
         {
-          title: 'Nationalisation of the Suez Canal (July 1956)',
-          subtitle: 'The Aswan Dam Catalyst',
+          title: 'Nationalisation & Sèvres Collusion',
+          subtitle: 'The Secret War Plan (1956)',
           bullets: [
-            '**Funding the Aswan High Dam:** Nasser planned a monumental hydroelectric dam on the Nile to industrialize Egypt and irrigate millions of acres of farmland; the US and Britain initially offered $70 million in loans.',
-            "**Western Loan Cancellation (July 1956):** Angered by Nasser's recognition of Communist China and his Soviet arms purchases, US Secretary of State John Foster Dulles abruptly cancelled the Aswan Dam financing.",
-            '**Canal Nationalisation (26 July 1956):** Addressing a massive rally in Alexandria, Nasser nationalised the Suez Canal Company, declaring canal toll revenues ($25 million annually) would pay for the dam, directly defying British and French imperial prestige.',
+            '**Aswan Dam & Nationalisation:** In April 1956, 58 civilians died in mortar attacks; in July 1956, the US and UK abruptly cancelled $70m in Aswan Dam funding; Nasser nationalised the Suez Canal on **26 July 1956** to fund the dam from tolls.',
+            '**Protocol of Sèvres (22 Oct 1956):** Secret meeting outside Paris between Ben-Gurion, Selwyn Lloyd (UK), and Guy Mollet (France): Israel would invade Sinai; Britain and France would intervene as "peacekeepers" and re-seize the canal.',
+            '**Operation Kadesh (29 Oct 1956):** IDF paratroopers dropped at Mitla Pass; Israeli armored columns swept across Sinai in 100 hours; Britain and France issued their staged ultimatum ordering both sides 16km back from the canal.',
+            '**Anglo-French Air Blitz & Landings (31 Oct – 5 Nov):** British and French bombers destroyed Egyptian airfields; paratroopers landed at Port Said on 5 Nov; Nasser retaliated by sinking 40+ ships, blocking the canal.',
           ],
         },
         {
-          title: 'The Sèvres Collusion & The Suez War (Oct–Nov 1956)',
-          subtitle: 'The Tripartite Aggression',
+          title: 'Superpowers & Strategic Fall-out',
+          subtitle: 'US Ultimatum & UNEF Arrival',
           bullets: [
-            '**The Secret Protocol of Sèvres (22–24 Oct 1956):** British, French, and Israeli leaders met secretly near Paris to hatch a conspiracy: Israel would invade Sinai; Britain and France would issue an ultimatum to "separate combatants" and seize the canal zone.',
-            "**Military Invasion (29 Oct – 5 Nov 1956):** General Moshe Dayan's IDF swept across Sinai toward Suez; British and French aircraft bombed Egyptian airfields and paratroopers landed at Port Said, occupying the canal.",
-            "**US Economic Ultimatum:** Furious at being deceived during a US election year and fearing Soviet intervention, US President Eisenhower threatened to collapse Britain's pound sterling, forcing an immediate, humiliating Anglo-French withdrawal.",
+            '**US Economic Ultimatum:** President Eisenhower was furious at Anglo-French deceit during the US election; the US threatened to collapse the British pound, block IMF emergency loans, and embargo oil shipments.',
+            '**Soviet Nuclear Threats & UN Ceasefire:** Premier Bulganin threatened rocket attacks on London and Paris; on 6 Nov 1956, Britain and France accepted a UN ceasefire, suffering total imperial humiliation.',
+            '**UNEF Deployment & Withdrawal:** The first UN Emergency Force (UNEF) arrived on 21 Nov 1956; British and French forces completed evacuation on 23 Nov 1956; IDF withdrew from Sinai and Gaza in March 1957 under US pressure.',
+            '**The Triumph of Nasser & The UAR (1958):** Nasser became the undisputed hero of Arab nationalism; in 1958, Syria merged with Egypt to form the United Arab Republic (UAR, lasting to 1961); the USSR agreed to finance the Aswan Dam.',
           ],
         },
       ],
       keyFigures: [
         {
           name: 'Gamal Abdel Nasser',
-          role: 'President of Egypt who nationalised the Suez Canal in July 1956; emerged as a victorious Pan-Arab hero despite military defeat.',
+          role: 'Egyptian President who nationalised the Suez Canal on 26 July 1956 and emerged as the hero of pan-Arab nationalism despite military defeat.',
         },
         {
           name: 'Anthony Eden',
-          role: 'British Prime Minister who viewed Nasser as a dangerous dictator; his collusion at Sèvres ended his political career in disgrace.',
+          role: 'British Prime Minister who viewed Nasser as a dangerous dictator ("Hitler on the Nile"); resigned in health and political disgrace following the crisis.',
         },
         {
-          name: 'Moshe Dayan',
-          role: 'IDF Chief of Staff who executed the blitzkrieg across Sinai, capturing the peninsula in 100 hours and opening the Straits of Tiran.',
+          name: 'David Ben-Gurion',
+          role: 'Israeli Prime Minister who signed the secret Protocol of Sèvres to break the Straits of Tiran blockade and crush Egyptian Fedayeen bases in Gaza.',
         },
         {
           name: 'Dwight D. Eisenhower',
-          role: 'US President who condemned the Anglo-French-Israeli attack and utilized financial pressure to compel an unconditional Allied withdrawal.',
+          role: 'US President who halted the Anglo-French-Israeli invasion through devastating financial and economic threats against the British pound.',
         },
       ],
-      milestones: [
-        { date: 'Feb 1955', event: 'Israeli Gaza raid kills 38 Egyptians; Nasser seeks arms.' },
-        { date: 'Sept 1955', event: 'Egypt announces Czech arms deal with Soviet bloc.' },
-        { date: '26 July 1956', event: 'Nasser nationalises the Suez Canal Company.' },
-        { date: '24 Oct 1956', event: 'Secret Protocol of Sèvres signed in France.' },
-        { date: '29 Oct 1956', event: 'Israel invades Sinai; Suez Crisis begins.' },
-      ],
+      archivalSource: {
+        title: 'Gamal Abdel Nasser Nationalising the Suez Canal in Alexandria (26 July 1956)',
+        citation: 'Egyptian State Radio Broadcast Recording',
+        quote:
+          'The Suez Canal was dug with the lives of 120,000 Egyptian sons who died in its construction... Today, we take back our rights. We are nationalising the Suez Canal Company. The canal belongs to Egypt, and we shall build the High Dam with its revenues!',
+        significance:
+          'Direct defiance of 80 years of Anglo-French imperial domination, triggering the secret military collusion that destroyed Britain as an independent global superpower.',
+      },
     },
     right: {
-      question: {
-        typeHeader: 'Exam Masterclass • Question 1 (Consequence) Format',
-        title: 'Assessment Mastery: Explaining Consequences with Causal Links',
-        marksTime: 'Q1: 4 Marks • ~6 Mins',
-        stem: 'Explain one consequence of the nationalisation of the Suez Canal (1956).',
-        marks: 4,
-        levelTag: 'Full Marks • 4/4',
-        scoreTag: 'Level 2 Target',
-        planningGuideTitle: 'Multi-Pathway Planning Guide (Choose ONE Valid Consequence):',
-        planningGuide: `
-          <div>&bull; <strong>Pathway A (The Tripartite Military Invasion):</strong> British and French imperial outrage &rarr; secret Sèvres collusion with Israel &rarr; military attack on Sinai and Port Said in October 1956.</div>
-          <div>&bull; <strong>Pathway B (Nasser’s Political Triumph & Pan-Arab Ascendancy):</strong> Standing up to former colonial powers &rarr; survival of US-enforced withdrawal &rarr; Nasser hailed as the supreme hero of Pan-Arab nationalism leading to the 1958 UAR union with Syria.</div>
-        `,
-        modelAnswer:
-          'One consequence of the nationalisation of the Suez Canal was the outbreak of the 1956 Suez Crisis, resulting in a military invasion of Egypt by Britain, France, and Israel. On 26 July 1956, President Gamal Abdel Nasser nationalised the Anglo-French owned Suez Canal Company to use its shipping toll revenues to fund the construction of the Aswan High Dam after Western loans were cancelled. Viewing this seizure as a direct threat to imperial prestige and oil supply routes, British Prime Minister Anthony Eden and French leaders secretly colluded with Israel at the Protocol of Sèvres in October 1956. Under this plan, Israel invaded the Sinai Peninsula on 29 October, providing a pretext for Anglo-French forces to intervene and occupy Port Said under the guise of protecting the canal. Consequently, Nasser’s nationalisation directly triggered international warfare that brought the Middle East to the brink of superpower confrontation before US financial pressure forced an immediate Allied withdrawal.',
-        examinerNote:
-          'Level 2 (4/4 marks). Identifies ONE explicit consequence (military invasion during the 1956 Suez Crisis), provides exact specification facts (26 July 1956, Aswan Dam tolls, Eden, Protocol of Sèvres, 29 October invasion), and explains the clear causal progression from nationalisation to Anglo-French-Israeli military action.',
-        pitfallCategory: 'Question 1 Pitfalls',
-        pitfall:
-          "Keep your focus locked strictly onto ONE consequence. Trace the causal mechanism step by step from Nasser's decree on 26 July 1956 to the secret Sèvres collusion and military invasion. Do not waste valuable exam time listing secondary consequences.",
-      },
-      causalPathway: {
-        title: 'Visual Causal Pathway: From Aswan Loan Cancellation to Sèvres Collusion (1956)',
-        steps: [
-          {
-            stage: 'Stage 1: Loans Cancelled',
-            desc: 'US and Britain cancel $70m funding for Aswan High Dam after Nasser buys Soviet bloc arms and recognizes Communist China.',
-          },
-          {
-            stage: 'Stage 2: Canal Nationalised',
-            desc: 'Nasser seizes Suez Canal Company on 26 July 1956 to collect shipping tolls; Britain and France view this as imperial piracy.',
-          },
-          {
-            stage: 'Stage 3: Sèvres Collusion',
-            desc: 'Britain, France, and Israel secretly sign Protocol of Sèvres in Paris, fabricating an Israeli Sinai attack as pretext for invasion.',
-          },
-          {
-            stage: 'Stage 4: Superpower Humiliation',
-            desc: 'Allied forces occupy Port Said; Eisenhower threatens financial collapse of Britain; UK and France withdraw in disgrace; Nasser triumphs.',
-          },
-        ],
-      },
-      wordBank: [
+      tag: 'KT 1.4 • Imperial Dynamics, Crisis Timelines & Word Bank',
+      deepCases: [
         {
-          term: 'Nationalisation',
-          def: 'The transfer of privately owned foreign business or assets (the Suez Canal) to national government control.',
+          title: "1. Nasser's Pan-Arabism & The 80,000 Troops Exit",
+          points: [
+            '**1952 Free Officers Revolution:** General Naguib and Colonel Nasser overthrew the corrupt British-backed King Farouk, seeking total national sovereignty and social land reform.',
+            '**British Canal Evacuation (1954):** Nasser pressured Britain into agreeing to withdraw its **80,000 soldiers stationed along the Suez Canal Zone** within 20 months.',
+            '**Pan-Arab Ambition:** Nasser launched the "Voice of the Arabs" radio network, broadcasting anti-imperialist rhetoric across the Middle East and promoting Arab unity under Egyptian leadership.',
+            "**Aswan Dam Ambition:** The cornerstone of Nasser's modernization was the Aswan High Dam across the Nile, requiring $70 million in initial Western funding.",
+          ],
+        },
+        {
+          title: '2. The Gaza Reprisal Cycle & Czech Arms (1955)',
+          points: [
+            '**Fedayeen Infiltrations:** Palestinian guerrillas operating from Egyptian-administered Gaza staged cross-border sabotage raids into southern Israeli farms.',
+            '**The Gaza Raid (Feb 1955):** IDF commandos under Ariel Sharon killed **38 Egyptian soldiers** in Gaza; in Aug 1955, Fedayeen killed 11 Israelis, prompting an IDF raid killing **72 Egyptians**.',
+            '**Czech Arms Shock (Sept 1955):** Nasser purchased $250 million in Soviet-bloc weaponry (200 MiG-15 fighters, 300 tanks), shattering Western arms parity in the Middle East.',
+            "**Gulf of Aqaba Blockade:** Nasser fortified Sharm el-Sheikh and closed the Straits of Tiran, cutting off Israel's maritime trade with Africa and Asia through Eilat.",
+          ],
+        },
+        {
+          title: '3. The Protocol of Sèvres & The Tripartite Invasion',
+          points: [
+            '**Western Loan Withdrawal (July 1956):** US and Britain cancelled Aswan Dam loans; Nasser nationalised the Suez Canal on **26 July 1956** in retaliation.',
+            '**Sèvres Conspiracy (22–24 Oct):** Britain, France, and Israel secretly signed the Protocol of Sèvres in a Parisian villa, choreographing a false-flag war.',
+            '**Operation Kadesh (29 Oct):** Israeli forces invaded Sinai; Britain and France issued their staged ultimatum ordering both armies 16km back from the canal.',
+            '**Port Said Landings (5 Nov):** Anglo-French paratroopers invaded Port Said, but Nasser sank 40+ ships, completely closing the waterway to world commerce.',
+          ],
+        },
+        {
+          title: '4. US Financial Coercion, UNEF & The Triumph of Nasser',
+          points: [
+            "**Eisenhower's Ultimatum:** US threatened to crash the British pound and withhold emergency oil supplies unless Britain ordered an immediate ceasefire.",
+            '**UNEF Peacekeeping Force:** First-ever UN peacekeeping force deployed to Sinai on **21 Nov 1956**; British and French forces withdrew in humiliation on **23 Nov 1956**.',
+            '**Israeli Gains & Withdrawal:** IDF withdrew from Sinai in March 1957 under US pressure, but won freedom of navigation through the Gulf of Aqaba, opening Eilat port.',
+            '**United Arab Republic (1958):** Nasser achieved supreme prestige, merging Egypt and Syria into the UAR (1958–61) with the USSR financing the Aswan High Dam.',
+          ],
+        },
+      ],
+      causalPathway: [
+        {
+          stage: '1. Gaza Raids & Czech Arms',
+          text: 'Feb 1955 Gaza raid (38 dead) prompts Nasser to sign Czech Arms Deal ($250m) and close Straits of Tiran.',
+        },
+        {
+          stage: '2. Nationalisation (26 July 56)',
+          text: 'US/UK cancel Aswan Dam loan; Nasser nationalises Suez Canal to fund the dam from canal transit tolls.',
+        },
+        {
+          stage: '3. Protocol of Sèvres & Attack',
+          text: 'Secret collusion at Sèvres; IDF invades Sinai 29 Oct; UK/France bomb airfields and land paratroopers at Port Said.',
+        },
+        {
+          stage: '4. US Ultimatum & UAR (1958)',
+          text: 'Eisenhower threatens pound collapse; allies withdraw; Nasser hailed as Arab hero; UAR formed with Syria in 1958.',
+        },
+      ],
+      masterWordBank: [
+        {
+          term: 'Gamal Abdel Nasser',
+          def: 'Charismatic Egyptian President (1954–70), champion of pan-Arabism and national sovereignty.',
+        },
+        {
+          term: '80,000 British Troops',
+          def: 'British military garrison occupying the Suez Canal Zone, evacuated in 1954 under treaty.',
+        },
+        {
+          term: 'Gaza Raid (Feb 1955)',
+          def: "IDF retaliatory raid killing 38 Egyptian soldiers, triggering Nasser's rearmament drive.",
+        },
+        {
+          term: 'Czech Arms Deal (1955)',
+          def: '$250m deal for 200 Soviet MiG-15 jets and 300 tanks, breaking Western arms dominance.',
         },
         {
           term: 'Aswan High Dam',
-          def: 'Massive hydroelectric irrigation dam project on the Nile championed by Nasser to modernize Egypt.',
+          def: 'Monumental Egyptian infrastructure project to harness the Nile, initially denied Western loans.',
         },
         {
-          term: 'Pan-Arabism',
-          def: 'Ideology advocated by Nasser promoting political unification and solidarity among all Arab states.',
-        },
-        {
-          term: 'Fedayeen',
-          def: 'Palestinian guerrilla fighters operating cross-border raids into Israel, heavily backed by Egypt in Gaza.',
-        },
-        {
-          term: 'Czech Arms Deal',
-          def: 'September 1955 agreement providing Egypt with 200 Soviet MiG fighters and 300 tanks via Czechoslovakia.',
+          term: 'Nationalisation (1956)',
+          def: 'Nasser seized control of the Suez Canal Company on 26 July 1956 to fund the Aswan Dam.',
         },
         {
           term: 'Protocol of Sèvres',
-          def: 'Top-secret October 1956 meeting where Britain, France, and Israel plotted their joint invasion of Egypt.',
+          def: 'Secret tripartite war agreement signed on 22 Oct 1956 between Britain, France, and Israel.',
         },
         {
-          term: 'Port Said',
-          def: 'Mediterranean entrance city to the Suez Canal where British and French paratroopers landed in November 1956.',
+          term: 'Operation Kadesh',
+          def: 'Israeli invasion of Sinai on 29 Oct 1956, reaching the Suez Canal in under 48 hours.',
         },
         {
-          term: 'Anthony Eden',
-          def: 'British Conservative Prime Minister whose disastrous handling of the Suez Crisis forced his resignation in 1957.',
+          term: 'Port Said Landings',
+          def: 'Anglo-French airborne and amphibious assault on 5 Nov 1956 to seize the Suez Canal.',
         },
         {
-          term: 'Dwight Eisenhower',
-          def: 'US President who forced Britain and France to withdraw from Egypt by threatening to block IMF emergency loans.',
+          term: 'US Financial Threat',
+          def: "Eisenhower's threat to collapse sterling, forcing an immediate British ceasefire.",
         },
         {
-          term: 'UNEF',
-          def: 'United Nations Emergency Force deployed to Sinai in 1957 to maintain a buffer zone between Egypt and Israel.',
+          term: 'UNEF (Nov 1956)',
+          def: 'First UN Emergency Force deployed to police Sinai and guarantee Israeli shipping at Tiran.',
         },
         {
-          term: 'Straits of Tiran',
-          def: 'Narrow sea passage into the Gulf of Aqaba providing Israel’s only southern maritime outlet to Asia.',
-        },
-        {
-          term: 'UAR (1958)',
-          def: 'United Arab Republic: Political union between Egypt and Syria (1958–61) established under Nasser’s leadership.',
+          term: 'UAR (1958–61)',
+          def: "United Arab Republic: political union between Egypt and Syria reflecting Nasser's prestige.",
         },
       ],
     },
   },
 ];
-
-module.exports = spreads;

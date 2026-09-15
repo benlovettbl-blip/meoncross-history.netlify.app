@@ -43,10 +43,13 @@ async function run() {
   const dataModule = await import('../units/edexcel_medicine/data.js');
   const unitData = dataModule.unitData;
 
+  const unitDir = path.join(__dirname, '..', 'public', 'units', 'edexcel_medicine');
   const pdfsDir = path.join(__dirname, '..', 'public', 'pdfs', 'edexcel_medicine');
   const globalPdfsDir = path.join(__dirname, '..', 'public', 'pdfs');
 
+  if (!fs.existsSync(unitDir)) fs.mkdirSync(unitDir, { recursive: true });
   if (!fs.existsSync(pdfsDir)) fs.mkdirSync(pdfsDir, { recursive: true });
+  if (!fs.existsSync(globalPdfsDir)) fs.mkdirSync(globalPdfsDir, { recursive: true });
 
   const extractEraQuestions = (filterFn) => {
     const list = [];
@@ -242,34 +245,10 @@ async function run() {
   });
   const page = await browser.newPage();
 
-  // 1. Export WF Quiz PDF (4 Pages)
-  const wfHtml = `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Western Front Knowledge Retrieval Vault</title><style>${COMMON_CSS}</style></head><body>${wfPages}</body></html>`;
-  const wfPdfPath = path.join(pdfsDir, 'med_recall_quiz_western_front.pdf');
-  await page.setContent(wfHtml, { waitUntil: 'domcontentloaded' });
-  await page.pdf({
-    path: wfPdfPath,
-    format: 'A4',
-    printBackground: true,
-    margin: { top: '8mm', bottom: '8mm', left: '10mm', right: '10mm' },
-  });
-  fs.copyFileSync(wfPdfPath, path.join(globalPdfsDir, 'med_recall_quiz_western_front.pdf'));
-  console.log(`✅ Exported Pillar 3: med_recall_quiz_western_front.pdf (4 Pages)`);
-
-  // 2. Export Thematic Study Quiz PDF (12 Pages)
-  const thematicHtml = `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Medicine Thematic Study Knowledge Retrieval Vault</title><style>${COMMON_CSS}</style></head><body>${thematicPages}</body></html>`;
-  const thematicPdfPath = path.join(pdfsDir, 'med_recall_quiz_thematic_study.pdf');
-  await page.setContent(thematicHtml, { waitUntil: 'domcontentloaded' });
-  await page.pdf({
-    path: thematicPdfPath,
-    format: 'A4',
-    printBackground: true,
-    margin: { top: '8mm', bottom: '8mm', left: '10mm', right: '10mm' },
-  });
-  fs.copyFileSync(thematicPdfPath, path.join(globalPdfsDir, 'med_recall_quiz_thematic_study.pdf'));
-  console.log(`✅ Exported Pillar 3: med_recall_quiz_thematic_study.pdf (12 Pages)`);
-
-  // 3. Export Full Master Quiz PDF (16 Pages)
+  // 1. Export Full Master Quiz PDF (16 Pages)
   const fullQuizHtml = `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Paper 1 Medicine Complete Knowledge Retrieval Compendium</title><style>${COMMON_CSS}</style></head><body>${wfPages}${thematicPages}</body></html>`;
+  const fullQuizHtmlPath = path.join(unitDir, 'med_recall_quiz_FULL.html');
+  fs.writeFileSync(fullQuizHtmlPath, fullQuizHtml, 'utf8');
   const fullQuizPdfPath = path.join(pdfsDir, 'med_recall_quiz_pack_FULL.pdf');
   await page.setContent(fullQuizHtml, { waitUntil: 'domcontentloaded' });
   await page.pdf({

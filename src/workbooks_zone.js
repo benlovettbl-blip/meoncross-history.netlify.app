@@ -181,167 +181,57 @@ export function renderWorkbooksZone(container, unitData) {
   if (showCme) {
     const cmeBooklets = [
       {
-        id: 'VISUAL_GUIDE',
+        id: 'PILLAR_1',
         title: '28-Page Visual Revision Masterclasses & Complete Specification Guide',
         pages: '28 Pages',
-        badge: 'Pillar 1 • Visual Guide',
+        badge: 'Pillar 1 • Revision Guide',
         color: '#0284c7',
-        desc: 'The complete visual revision master volume: 12 double-page spreads across all 3 Key Topics, 50-year synoptic timeline matrix, causal pathways, GCSE specification word banks, and historiographical debates.',
+        desc: 'The complete visual revision master volume: 12 double-page spreads across all 3 Key Topics, word-for-word official Pearson specification checklist, 4 deep case studies per spread, causal pathways, GCSE word banks, and primary archival evidence.',
         fileBase: '/units/cme_new/visual_revision_guide.html',
         pdfUrl: '/pdfs/cme_visual_revision_guide.pdf',
       },
       {
-        id: 'KT1',
-        title: 'Key Topic 1: The Birth of the State of Israel (1945–63)',
-        pages: '12 Pages',
-        badge: 'KT1 Exam Booklet',
-        color: '#0284c7',
-        desc: '80 Rapid Recall Questions · Double-Sided Mark Scheme · 3 Rounds of Exam Practice (Stepped Ladder, Dual Track, Exam Pitch) · 100% Spec Coverage Bank',
-        fileBase: '/units/cme_new/booklets/cme_mastery_KT1.html',
-        pdfUrl: '/pdfs/cme_new/cme_mastery_pack_KT1.pdf',
-      },
-      {
-        id: 'KT2',
-        title: 'Key Topic 2: The Escalating Conflict (1964–73)',
-        pages: '12 Pages',
-        badge: 'KT2 Exam Booklet',
-        color: '#dc2626',
-        desc: '60 Rapid Recall Questions · Double-Sided Mark Scheme · 3 Rounds of Exam Practice (Stepped Ladder, Dual Track, Exam Pitch) · 100% Spec Coverage Bank',
-        fileBase: '/units/cme_new/booklets/cme_mastery_KT2.html',
-        pdfUrl: '/pdfs/cme_new/cme_mastery_pack_KT2.pdf',
-      },
-      {
-        id: 'KT3',
-        title: 'Key Topic 3: Attempts at a Solution (1974–95)',
-        pages: '12 Pages',
-        badge: 'KT3 Exam Booklet',
-        color: '#059669',
-        desc: '60 Rapid Recall Questions · Double-Sided Mark Scheme · 3 Rounds of Exam Practice (Stepped Ladder, Dual Track, Exam Pitch) · 100% Spec Coverage Bank',
-        fileBase: '/units/cme_new/booklets/cme_mastery_KT3.html',
-        pdfUrl: '/pdfs/cme_new/cme_mastery_pack_KT3.pdf',
-      },
-      {
-        id: 'FULL',
-        title: 'Complete Unit Master Booklet (All 3 Key Topics)',
+        id: 'PILLAR_2',
+        title: '36-Page Complete Exam Practice & Assessment Mastery Pack',
         pages: '36 Pages',
-        badge: 'Full Master Suite',
+        badge: 'Pillar 2 • Exam Practice',
         color: '#1e3a8a',
-        desc: 'The complete 36-page revision volume binding KT1, KT2, and KT3 together. Contains all 200 recall questions and 48 exam questions. Print once for the entire term!',
+        desc: 'The complete 36-page exam practice volume combining KT1, KT2, and KT3 together. Differentiated stepped ladder, dual-track question breakdowns, authentic exam simulations, and photocopier-safe response lines.',
         fileBase: '/units/cme_new/booklets/cme_mastery_FULL.html',
-        pdfUrl: '/pdfs/cme_new/cme_mastery_pack_FULL.pdf',
-      },
-    ];
-
-    const cmeQuizPacks = [
-      {
-        id: 'KT1_QUIZ',
-        title: 'Key Topic 1 Recall Quiz & Vault (80 Crucial Questions)',
-        pages: '20 Pages',
-        badge: 'KT1 Recall Pack',
-        color: '#0284c7',
-        desc: '80 Targeted retrieval questions covering Lessons 1–4, RAG threat-level confidence checkboxes, flashcard interrogation drills, and the full Vault self-marking answer key.',
-        fileBase: '/units/cme_new/mastery_pack_KT1.html',
-        pdfUrl: '/pdfs/cme_recall_quiz_KT1.pdf',
+        pdfUrl: '/pdfs/cme_mastery_pack_FULL.pdf',
       },
       {
-        id: 'KT2_QUIZ',
-        title: 'Key Topic 2 Recall Quiz & Vault (60 Crucial Questions)',
-        pages: '18 Pages',
-        badge: 'KT2 Recall Pack',
-        color: '#dc2626',
-        desc: '60 Targeted retrieval questions covering Lessons 5–7, RAG threat-level confidence checkboxes, flashcard interrogation drills, and the full Vault self-marking answer key.',
-        fileBase: '/units/cme_new/mastery_pack_KT2.html',
-        pdfUrl: '/pdfs/cme_recall_quiz_KT2.pdf',
-      },
-      {
-        id: 'KT3_QUIZ',
-        title: 'Key Topic 3 Recall Quiz & Vault (60 Crucial Questions)',
-        pages: '18 Pages',
-        badge: 'KT3 Recall Pack',
-        color: '#059669',
-        desc: '60 Targeted retrieval questions covering Lessons 8–10, RAG threat-level confidence checkboxes, flashcard interrogation drills, and the full Vault self-marking answer key.',
-        fileBase: '/units/cme_new/mastery_pack_KT3.html',
-        pdfUrl: '/pdfs/cme_recall_quiz_KT3.pdf',
-      },
-      {
-        id: 'FULL_QUIZ',
-        title: 'Complete Unit Master Recall Quiz (All 200 Crucial Questions)',
+        id: 'PILLAR_3',
+        title: 'Complete Unit Master Recall Quiz & Vault (All 200 Crucial Questions)',
         pages: '44 Pages',
-        badge: 'Master Unit Quiz',
+        badge: 'Pillar 3 • Recall Quizzing',
         color: '#7c3aed',
-        desc: 'The master retrieval volume compiling all 200 knowledge recall questions across the entire unit. Includes memory hacking rules, RAG trackers, and complete Vault solutions. Print once for the term!',
+        desc: 'The complete retrieval volume compiling all 200 knowledge recall questions across all 3 Key Topics. Includes memory hacking rules, RAG threat-level checkboxes, and complete Vault self-marking answer keys.',
         fileBase: '/units/cme_new/mastery_pack_full.html',
         pdfUrl: '/pdfs/cme_recall_quiz_FULL.pdf',
       },
     ];
 
     let cmeHubHtml = `
-      <!-- CME Exam Mastery Booklets -->
-      <div style="background: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px; border-top: 4px solid #1e3a8a;">
+      <!-- CME Three Pillars Revision Suite -->
+      <div style="background: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px; border-top: 4px solid #0284c7;">
         <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px;">
           <div style="display: flex; align-items: center; gap: 15px;">
-            <div style="width: 44px; height: 44px; border-radius: 10px; background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.3rem;">
+            <div style="width: 44px; height: 44px; border-radius: 10px; background: linear-gradient(135deg, #0284c7 0%, #0f172a 100%); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.3rem;">
               <i class="fa-solid fa-book-open"></i>
             </div>
             <div>
-              <h2 style="color: #0f172a; margin: 0; font-size: 1.35rem;">Conflict in the Middle East — 12-Page Exam Mastery Booklets</h2>
-              <p style="color: #64748b; font-size: 0.95rem; margin: 4px 0 0 0;">Comprehensive, photocopier-ready A4 booklets. Each booklet features complete retrieval quizzing, official mark schemes, 3 differentiated exam rounds, and 100% specification coverage.</p>
+              <h2 style="color: #0f172a; margin: 0; font-size: 1.35rem;">Conflict in the Middle East — The Three Pillars Revision Suite</h2>
+              <p style="color: #64748b; font-size: 0.95rem; margin: 4px 0 0 0;">Strictly 3 master volumes for Pearson Edexcel GCSE Paper 2 (Option P5): 1 Revision Guide, 1 Exam Mastery Pack, and 1 Recall Quiz Compendium.</p>
             </div>
           </div>
-          <span style="font-size: 0.8rem; font-weight: 700; background: #e0e7ff; color: #1e3a8a; padding: 4px 12px; border-radius: 20px;">Photocopier Ready (Double-Sided)</span>
+          <span style="font-size: 0.8rem; font-weight: 700; background: #e0f2fe; color: #0369a1; padding: 4px 12px; border-radius: 20px;">The Three Pillars Standard</span>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
     `;
 
     cmeBooklets.forEach((b) => {
-      cmeHubHtml += `
-        <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; gap: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.03);">
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-              <span style="font-size: 0.75rem; font-weight: 800; background: ${b.color}15; color: ${b.color}; padding: 3px 8px; border-radius: 4px; border: 1px solid ${b.color}30;">${b.badge}</span>
-              <span style="font-size: 0.78rem; font-weight: 700; color: #475569;"><i class="fa-solid fa-file-pdf" style="color: ${b.color}; margin-right: 4px;"></i>${b.pages}</span>
-            </div>
-            <h3 style="margin: 0 0 8px 0; color: #1e293b; font-size: 1.05rem; line-height: 1.35;">${b.title}</h3>
-            <p style="margin: 0; font-size: 0.82rem; color: #64748b; line-height: 1.4;">${b.desc}</p>
-          </div>
-
-          <div style="display: flex; gap: 8px; margin-top: 5px;">
-            <button type="button" class="btn" onclick="window.openTeacherPrintPreview('${b.fileBase}', '${b.title}', '${b.pdfUrl}')" style="flex: 1; text-align: center; background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4px solid ${b.color}; padding: 10px 8px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: #1e293b; transition: all 0.2s ease;" onmouseover="this.style.borderColor='${b.color}'; this.style.boxShadow='0 2px 6px rgba(0,0,0,0.1)';" onmouseout="this.style.borderColor='#cbd5e1'; this.style.borderLeftColor='${b.color}'; this.style.boxShadow='none';">
-              <i class="fa-solid fa-eye" style="color: ${b.color};"></i> Preview &amp; Print
-            </button>
-
-            <a href="${b.pdfUrl}" target="_blank" download style="background: ${b.color}; color: #ffffff; padding: 10px 14px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; transition: opacity 0.2s ease;" onmouseover="this.style.opacity='0.9';" onmouseout="this.style.opacity='1';">
-              <i class="fa-solid fa-download"></i> PDF
-            </a>
-          </div>
-        </div>
-      `;
-    });
-
-    cmeHubHtml += `
-        </div>
-      </div>
-
-      <!-- CME Total Recall Knowledge Quizzes -->
-      <div style="background: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px; border-top: 4px solid #7c3aed;">
-        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px;">
-          <div style="display: flex; align-items: center; gap: 15px;">
-            <div style="width: 44px; height: 44px; border-radius: 10px; background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.3rem;">
-              <i class="fa-solid fa-brain"></i>
-            </div>
-            <div>
-              <h2 style="color: #0f172a; margin: 0; font-size: 1.35rem;">Conflict in the Middle East — Total Recall Knowledge Quizzes</h2>
-              <p style="color: #64748b; font-size: 0.95rem; margin: 4px 0 0 0;">Focused recall sheets and self-marking Vaults. Features the "Total Recall of 80 Crucial Questions" (KT1) and 60 questions each for KT2 and KT3, plus the complete 200-question Master Volume.</p>
-            </div>
-          </div>
-          <span style="font-size: 0.8rem; font-weight: 700; background: #ede9fe; color: #6d28d9; padding: 4px 12px; border-radius: 20px;">80 / 60 / 60 / 200 Questions</span>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-    `;
-
-    cmeQuizPacks.forEach((b) => {
       cmeHubHtml += `
         <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; gap: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.03);">
           <div>
@@ -376,44 +266,34 @@ export function renderWorkbooksZone(container, unitData) {
   if (showMed) {
     const medBooklets = [
       {
-        id: 'VISUAL_PLAYBOOK',
-        title: '40-Page Visual Revision & Exam Assessment Playbook',
+        id: 'PILLAR_1',
+        title: '40-Page Visual Revision Masterclasses & Complete Specification Playbook',
         pages: '40 Pages',
-        badge: 'Visual Masterclass Guide',
+        badge: 'Pillar 1 • Revision Guide',
         color: '#2563eb',
-        desc: 'The complete visual revision volume: 18 double-page spreads, complete Paper 1 specification blueprints, Q1–Q6 step-by-step paragraph formulas, Grade 9 examiner WAGOLLs, trigger phrase toolkits, and 1h 20m exam timing models. Designed for double-sided A4 printing!',
+        desc: 'The complete visual revision volume: 18 double-page spreads, complete Paper 1 specification blueprints, Q1–Q6 step-by-step paragraph formulas, Grade 9 examiner WAGOLLs, trigger phrase toolkits, and 1h 20m exam timing models.',
         fileBase: '/units/edexcel_medicine/visual_revision_guide.html',
         pdfUrl: '/pdfs/edexcel_medicine_visual_revision_and_exam_guide.pdf',
       },
       {
-        id: 'SEC_A',
-        title: 'Section A: The British Sector of the Western Front, 1914–1918',
-        pages: '12 Pages',
-        badge: 'Section A Booklet',
-        color: '#b45309',
-        desc: 'The Historic Environment · 100 Rapid Recall Questions · Double-Sided Answers Bank · 3 Rounds of Exam Practice (Stepped Ladder, Dual Track, Timed Exam Pitch) · Provenance Scaffolding & 4-Part Follow-Up Grid · 100% Spec Guarantee',
-        fileBase: '/units/edexcel_medicine/booklets/med_mastery_section_a.html',
-        pdfUrl: '/pdfs/edexcel_medicine/med_mastery_section_a_western_front.pdf',
-      },
-      {
-        id: 'SEC_B',
-        title: 'Section B: Medicine in Britain, c1250–present (Thematic Study Master)',
-        pages: '24 Pages',
-        badge: 'Section B Thematic Master',
-        color: '#1e3a8a',
-        desc: 'Thematic Study across 750 Years · 280 Rapid Recall Questions covering Medieval, Renaissance, 18th/19th C & Modern Eras · 4-Page Quick-Marking Centerfold · Cross-Period Similarity/Difference · Causal Analysis · Statement Essays with Criteria-Led Judgements',
-        fileBase: '/units/edexcel_medicine/booklets/med_mastery_section_b.html',
-        pdfUrl: '/pdfs/edexcel_medicine/med_mastery_section_b_thematic_study.pdf',
-      },
-      {
-        id: 'FULL',
-        title: 'Paper 1 Complete Master Compendium (Sections A & B Combined)',
-        pages: '36 Pages',
-        badge: 'Full Paper 1 Suite',
+        id: 'PILLAR_2',
+        title: '20-Page Complete Exam Practice & Assessment Mastery Pack',
+        pages: '20 Pages',
+        badge: 'Pillar 2 • Exam Practice',
         color: '#0f766e',
-        desc: 'The complete 36-page revision volume binding Section A (Western Front) and Section B (Thematic Study c1250–present) together. Contains all 380 recall questions, complete official mark scheme, and authentic exam hall simulations. Print once for the entire GCSE cohort!',
+        desc: 'The complete 20-page pure exam practice volume binding Section A (Western Front) and Section B (Thematic Study c1250–present) together. Differentiated stepped ladder, dual-track analysis, authentic timed exam simulations, and photocopier-safe response lines.',
         fileBase: '/units/edexcel_medicine/booklets/med_mastery_FULL.html',
-        pdfUrl: '/pdfs/edexcel_medicine/med_mastery_pack_FULL.pdf',
+        pdfUrl: '/pdfs/med_mastery_pack_FULL.pdf',
+      },
+      {
+        id: 'PILLAR_3',
+        title: 'Paper 1 Complete Knowledge Retrieval Compendium (380 Recall Questions)',
+        pages: '16 Pages',
+        badge: 'Pillar 3 • Recall Quizzing',
+        color: '#7c3aed',
+        desc: 'The complete 16-page retrieval volume compiling all 380 rapid recall questions across Section A (Western Front) and Section B (Medieval, Renaissance, Industrial, Modern) with micro-checkboxes and quick-marking back banks.',
+        fileBase: '/units/edexcel_medicine/med_recall_quiz_FULL.html',
+        pdfUrl: '/pdfs/med_recall_quiz_pack_FULL.pdf',
       },
     ];
 
@@ -425,11 +305,11 @@ export function renderWorkbooksZone(container, unitData) {
               <i class="fa-solid fa-notes-medical"></i>
             </div>
             <div>
-              <h2 style="color: #0f172a; margin: 0; font-size: 1.35rem;">Mastery Revision Booklets &amp; Exam Suites</h2>
-              <p style="color: #64748b; font-size: 0.95rem; margin: 4px 0 0 0;">Comprehensive, photocopier-ready A4 booklets for Pearson Edexcel GCSE Paper 1 (1HI0/11). Features 380 retrieval questions, space-saving mark schemes, 3 exam rounds, and 100% specification coverage.</p>
+              <h2 style="color: #0f172a; margin: 0; font-size: 1.35rem;">Medicine Through Time — The Three Pillars Revision Suite</h2>
+              <p style="color: #64748b; font-size: 0.95rem; margin: 4px 0 0 0;">Strictly 3 master volumes for Pearson Edexcel GCSE Paper 1 (1HI0/11): 1 Revision Guide, 1 Exam Mastery Pack, and 1 Recall Quiz Compendium.</p>
             </div>
           </div>
-          <span style="font-size: 0.8rem; font-weight: 700; background: #e0e7ff; color: #1e3a8a; padding: 4px 12px; border-radius: 20px;">Photocopier Ready (Double-Sided)</span>
+          <span style="font-size: 0.8rem; font-weight: 700; background: #e0e7ff; color: #1e3a8a; padding: 4px 12px; border-radius: 20px;">The Three Pillars Standard</span>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
@@ -470,64 +350,34 @@ export function renderWorkbooksZone(container, unitData) {
   if (showUsa) {
     const usaBooklets = [
       {
-        id: 'VISUAL_GUIDE',
+        id: 'PILLAR_1',
         title: '36-Page Visual Revision & Exam Assessment Playbook',
         pages: '36 Pages',
-        badge: 'Visual Masterclass Guide',
+        badge: 'Pillar 1 • Revision Guide',
         color: '#1e40af',
-        desc: 'The complete visual revision volume: 16 double-page spreads across all 4 Key Topics enforcing the 4-4-4-4 exam matrix, Q1–Q3 step-by-step paragraph formulas, Grade 9 examiner WAGOLLs, and full 1h 20m timed exam models.',
+        desc: 'The complete visual revision volume: 16 double-page spreads across all 4 Key Topics, complete Paper 3 specification blueprints, Q1–Q3 step-by-step paragraph formulas, Grade 9 examiner WAGOLLs, and full 1h 20m timed exam models.',
         fileBase: '/units/usa/visual_revision_guide.html',
-        pdfUrl: '/pdfs/edexcel_usa_visual_revision_and_exam_guide.pdf',
+        pdfUrl: '/pdfs/usa_visual_revision_guide.pdf',
       },
       {
-        id: 'KT1',
-        title: 'Key Topic 1: The Development of the Civil Rights Movement, 1954–60',
-        pages: '12 Pages',
-        badge: 'KT1 Booklet',
-        color: '#2563eb',
-        desc: 'Authentic 12-page exam pack: Q1 Source Inference (Jim Crow), Q2 Explain Why (Voter Registration - 2 pages), Section B Dossier (Montgomery Bus Boycott), Q3a Utility, Q3b/c Interpretations, Q3d Evaluative Essay, Spec Depth Booster, and Grade 9 Models.',
-        fileBase: '/units/usa/booklets/usa_mastery_KT1.html',
-        pdfUrl: '/pdfs/usa/usa_mastery_pack_KT1.pdf',
-      },
-      {
-        id: 'KT2',
-        title: 'Key Topic 2: The Radicalisation of the Civil Rights Movement, 1965–68',
-        pages: '12 Pages',
-        badge: 'KT2 Booklet',
-        color: '#0891b2',
-        desc: 'Authentic 12-page exam pack: Q1 Inference (Birmingham 1963 Dogs), Q2 Causation (1964 Civil Rights Act - 2 pages), Section B Dossier (Ghetto Riots: Kerner vs Carmichael), Q3a Utility, Q3b/c Interpretations, Q3d Evaluative Essay, Spec Booster, and Grade 9 Models.',
-        fileBase: '/units/usa/booklets/usa_mastery_KT2.html',
-        pdfUrl: '/pdfs/usa/usa_mastery_pack_KT2.pdf',
-      },
-      {
-        id: 'KT3',
-        title: 'Key Topic 3: US Involvement in the Vietnam War, 1954–68',
-        pages: '12 Pages',
-        badge: 'KT3 Booklet',
-        color: '#059669',
-        desc: 'Authentic 12-page exam pack: Q1 Inference (Swamp Patrol 1966), Q2 Causation (Gulf of Tonkin Escalation - 2 pages), Section B Dossier (Why US Tactics Failed: Caputo vs Vo Thi Mo), Q3a Utility, Q3b/c Interpretations, Q3d Evaluative Essay, Spec Booster, and Grade 9 Models.',
-        fileBase: '/units/usa/booklets/usa_mastery_KT3.html',
-        pdfUrl: '/pdfs/usa/usa_mastery_pack_KT3.pdf',
-      },
-      {
-        id: 'KT4',
-        title: 'Key Topic 4: The End of the Vietnam War, 1968–75',
-        pages: '12 Pages',
-        badge: 'KT4 Booklet',
-        color: '#d97706',
-        desc: 'Authentic 12-page exam pack: Q1 Inference (Kent State 1970), Q2 Causation (Vietnamization - 2 pages), Section B Dossier (Opposition to War: Cronkite vs SDS), Q3a Utility, Q3b/c Interpretations, Q3d Evaluative Essay, Spec Booster, and Grade 9 Models.',
-        fileBase: '/units/usa/booklets/usa_mastery_KT4.html',
-        pdfUrl: '/pdfs/usa/usa_mastery_pack_KT4.pdf',
-      },
-      {
-        id: 'FULL',
-        title: 'Complete Unit Master Compendium (All 4 Key Topics Combined)',
+        id: 'PILLAR_2',
+        title: '48-Page Complete Unit Master Compendium (All 4 Key Topics Combined)',
         pages: '48 Pages',
-        badge: 'Full Master Suite',
+        badge: 'Pillar 2 • Exam Practice',
         color: '#1e3a8a',
         desc: 'The complete 48-page revision compendium binding KT1, KT2, KT3, and KT4 together. Features 4 full Paper 3 exam paper simulations, 16 primary sources/interpretations, 4 specification boosters, and 24 Grade 8/9 exemplars. Photocopier-ready 12-sheet booklet!',
         fileBase: '/units/usa/booklets/usa_mastery_FULL.html',
-        pdfUrl: '/pdfs/usa/usa_mastery_pack_FULL.pdf',
+        pdfUrl: '/pdfs/usa_mastery_pack_FULL.pdf',
+      },
+      {
+        id: 'PILLAR_3',
+        title: 'Complete Unit Master Recall Quiz (All 320 Crucial Questions)',
+        pages: '54 Pages',
+        badge: 'Pillar 3 • Recall Quizzing',
+        color: '#7c3aed',
+        desc: 'The master retrieval volume compiling all 320 knowledge recall questions across all 4 Key Topics. Includes memory hacking rules, RAG trackers, and complete Vault solutions. Print once for the entire year!',
+        fileBase: '/units/usa/mastery_pack_full.html',
+        pdfUrl: '/pdfs/usa_recall_quiz_FULL.pdf',
       },
     ];
 
@@ -539,117 +389,17 @@ export function renderWorkbooksZone(container, unitData) {
               <i class="fa-solid fa-flag-usa"></i>
             </div>
             <div>
-              <h2 style="color: #0f172a; margin: 0; font-size: 1.35rem;">Mastery Revision Booklets &amp; Exam Suites</h2>
-              <p style="color: #64748b; font-size: 0.95rem; margin: 4px 0 0 0;">Authentic Pearson Edexcel GCSE Paper 3 (1HI0/33) revision volumes. Photocopier-ready 12-page booklets and 36-page Visual Revision Playbook with official mark schemes and high-contrast, photocopier-safe candidate response lines.</p>
+              <h2 style="color: #0f172a; margin: 0; font-size: 1.35rem;">USA 1954–75 — The Three Pillars Revision Suite</h2>
+              <p style="color: #64748b; font-size: 0.95rem; margin: 4px 0 0 0;">Strictly 3 master volumes for Pearson Edexcel GCSE Paper 3 (1HI0/33): 1 Revision Guide, 1 Exam Mastery Pack, and 1 Recall Quiz Compendium.</p>
             </div>
           </div>
-          <span style="font-size: 0.8rem; font-weight: 700; background: #dbeafe; color: #1e40af; padding: 4px 12px; border-radius: 20px;">Photocopier Ready (Double-Sided)</span>
+          <span style="font-size: 0.8rem; font-weight: 700; background: #dbeafe; color: #1e40af; padding: 4px 12px; border-radius: 20px;">The Three Pillars Standard</span>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
     `;
 
     usaBooklets.forEach((b) => {
-      usaHubHtml += `
-        <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; gap: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.03);">
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-              <span style="font-size: 0.75rem; font-weight: 800; background: ${b.color}15; color: ${b.color}; padding: 3px 8px; border-radius: 4px; border: 1px solid ${b.color}30;">${b.badge}</span>
-              <span style="font-size: 0.78rem; font-weight: 700; color: #475569;"><i class="fa-solid fa-file-pdf" style="color: ${b.color}; margin-right: 4px;"></i>${b.pages}</span>
-            </div>
-            <h3 style="margin: 0 0 8px 0; color: #1e293b; font-size: 1.05rem; line-height: 1.35;">${b.title}</h3>
-            <p style="margin: 0; font-size: 0.82rem; color: #64748b; line-height: 1.4;">${b.desc}</p>
-          </div>
-
-          <div style="display: flex; gap: 8px; margin-top: 5px;">
-            <button type="button" class="btn" onclick="window.openTeacherPrintPreview('${b.fileBase}', '${b.title}', '${b.pdfUrl}')" style="flex: 1; text-align: center; background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4px solid ${b.color}; padding: 10px 8px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: #1e293b; transition: all 0.2s ease;" onmouseover="this.style.borderColor='${b.color}'; this.style.boxShadow='0 2px 6px rgba(0,0,0,0.1)';" onmouseout="this.style.borderColor='#cbd5e1'; this.style.borderLeftColor='${b.color}'; this.style.boxShadow='none';">
-              <i class="fa-solid fa-eye" style="color: ${b.color};"></i> Preview &amp; Print
-            </button>
-
-            <a href="${b.pdfUrl}" target="_blank" download style="background: ${b.color}; color: #ffffff; padding: 10px 14px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; transition: opacity 0.2s ease;" onmouseover="this.style.opacity='0.9';" onmouseout="this.style.opacity='1';">
-              <i class="fa-solid fa-download"></i> PDF
-            </a>
-          </div>
-        </div>
-      `;
-    });
-
-    const usaQuizPacks = [
-      {
-        id: 'KT1_QUIZ',
-        title: 'Key Topic 1 Recall Quiz & Vault (80 Crucial Questions)',
-        pages: '17 Pages',
-        badge: 'KT1 Recall Pack',
-        color: '#2563eb',
-        desc: '80 Targeted retrieval questions covering Lessons 1.1–1.4 (Civil Rights 1954–60), RAG threat-level confidence checkboxes, flashcard interrogation drills, and the full Vault self-marking answer key.',
-        fileBase: '/units/usa/mastery_pack_KT1.html',
-        pdfUrl: '/pdfs/usa_recall_quiz_KT1.pdf',
-      },
-      {
-        id: 'KT2_QUIZ',
-        title: 'Key Topic 2 Recall Quiz & Vault (80 Crucial Questions)',
-        pages: '17 Pages',
-        badge: 'KT2 Recall Pack',
-        color: '#0891b2',
-        desc: '80 Targeted retrieval questions covering Lessons 2.1–2.4 (Protest, Progress & Radicalism 1960–75), RAG threat-level confidence checkboxes, flashcard interrogation drills, and the full Vault self-marking answer key.',
-        fileBase: '/units/usa/mastery_pack_KT2.html',
-        pdfUrl: '/pdfs/usa_recall_quiz_KT2.pdf',
-      },
-      {
-        id: 'KT3_QUIZ',
-        title: 'Key Topic 3 Recall Quiz & Vault (80 Crucial Questions)',
-        pages: '17 Pages',
-        badge: 'KT3 Recall Pack',
-        color: '#059669',
-        desc: '80 Targeted retrieval questions covering Lessons 3.1–3.4 (US Involvement in Vietnam 1954–68), RAG threat-level confidence checkboxes, flashcard interrogation drills, and the full Vault self-marking answer key.',
-        fileBase: '/units/usa/mastery_pack_KT3.html',
-        pdfUrl: '/pdfs/usa_recall_quiz_KT3.pdf',
-      },
-      {
-        id: 'KT4_QUIZ',
-        title: 'Key Topic 4 Recall Quiz & Vault (80 Crucial Questions)',
-        pages: '18 Pages',
-        badge: 'KT4 Recall Pack',
-        color: '#d97706',
-        desc: '80 Targeted retrieval questions covering Lessons 4.1–4.4 (The End of the Vietnam War 1968–75), RAG threat-level confidence checkboxes, flashcard interrogation drills, and the full Vault self-marking answer key.',
-        fileBase: '/units/usa/mastery_pack_KT4.html',
-        pdfUrl: '/pdfs/usa_recall_quiz_KT4.pdf',
-      },
-      {
-        id: 'FULL_QUIZ',
-        title: 'Complete Unit Master Recall Quiz (All 320 Crucial Questions)',
-        pages: '54 Pages',
-        badge: 'Master Unit Quiz',
-        color: '#7c3aed',
-        desc: 'The master retrieval volume compiling all 320 knowledge recall questions across all 4 Key Topics. Includes memory hacking rules, RAG trackers, and complete Vault solutions. Print once for the entire year!',
-        fileBase: '/units/usa/mastery_pack_full.html',
-        pdfUrl: '/pdfs/usa_recall_quiz_FULL.pdf',
-      },
-    ];
-
-    usaHubHtml += `
-        </div>
-      </div>
-
-      <!-- USA Total Recall Knowledge Quizzes -->
-      <div style="background: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px; border-top: 4px solid #7c3aed;">
-        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px;">
-          <div style="display: flex; align-items: center; gap: 15px;">
-            <div style="width: 44px; height: 44px; border-radius: 10px; background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.3rem;">
-              <i class="fa-solid fa-brain"></i>
-            </div>
-            <div>
-              <h2 style="color: #0f172a; margin: 0; font-size: 1.35rem;">USA 1954–75 — Total Recall Knowledge Quizzes</h2>
-              <p style="color: #64748b; font-size: 0.95rem; margin: 4px 0 0 0;">Focused recall sheets and self-marking Vaults. Features 80 questions each for KT1, KT2, KT3, and KT4, plus the complete 320-question Master Volume.</p>
-            </div>
-          </div>
-          <span style="font-size: 0.8rem; font-weight: 700; background: #ede9fe; color: #6d28d9; padding: 4px 12px; border-radius: 20px;">80 / 80 / 80 / 80 / 320 Questions</span>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-    `;
-
-    usaQuizPacks.forEach((b) => {
       usaHubHtml += `
         <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; gap: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.03);">
           <div>
