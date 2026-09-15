@@ -1,4 +1,9 @@
-/**
+const fs = require('fs');
+const path = require('path');
+
+const USA_SCRIPT_PATH = path.join(__dirname, '..', 'scripts', 'generate_usa_visual_guide.cjs');
+
+const code = `/**
  * generate_usa_visual_guide.cjs
  *
  * Compiles the complete, print-perfect Pearson Edexcel GCSE (9–1) History Paper 3:
@@ -22,32 +27,14 @@ const puppeteer = require('puppeteer');
 
 const ROOT_DIR = path.join(__dirname, '..');
 const HTML_OUT_UNIT = path.join(ROOT_DIR, 'public', 'units', 'usa', 'visual_revision_guide.html');
-const PDF_OUT_UNIT = path.join(
-  ROOT_DIR,
-  'public',
-  'units',
-  'usa',
-  'edexcel_usa_visual_revision_and_exam_guide.pdf',
-);
-const PDF_OUT_GLOBAL_CANONICAL = path.join(
-  ROOT_DIR,
-  'public',
-  'pdfs',
-  'edexcel_usa_visual_revision_and_exam_guide.pdf',
-);
+const PDF_OUT_UNIT = path.join(ROOT_DIR, 'public', 'units', 'usa', 'edexcel_usa_visual_revision_and_exam_guide.pdf');
+const PDF_OUT_GLOBAL_CANONICAL = path.join(ROOT_DIR, 'public', 'pdfs', 'edexcel_usa_visual_revision_and_exam_guide.pdf');
 const PDF_OUT_GLOBAL_SHORT = path.join(ROOT_DIR, 'public', 'pdfs', 'usa_visual_revision_guide.pdf');
-const PDF_OUT_USA_SUBDIR = path.join(
-  ROOT_DIR,
-  'public',
-  'pdfs',
-  'usa',
-  'usa_visual_revision_guide.pdf',
-);
+const PDF_OUT_USA_SUBDIR = path.join(ROOT_DIR, 'public', 'pdfs', 'usa', 'usa_visual_revision_guide.pdf');
 
 // Google Drive Destinations (Departmental Reference File)
-const GDRIVE_DIR_1 = 'G:\\My Drive\\AAMX\\Dep File\\Year 11 (GCSE)\\Paper 3 - USA 1954-75';
-const GDRIVE_DIR_2 =
-  'G:\\My Drive\\AAMX\\Dep File\\02. GCSE (Years 10-11)\\Paper 3 - USA 1954-75\\03. Retrieval Quizzing & Mastery';
+const GDRIVE_DIR_1 = 'G:\\\\My Drive\\\\AAMX\\\\Dep File\\\\Year 11 (GCSE)\\\\Paper 3 - USA 1954-75';
+const GDRIVE_DIR_2 = 'G:\\\\My Drive\\\\AAMX\\\\Dep File\\\\02. GCSE (Years 10-11)\\\\Paper 3 - USA 1954-75\\\\03. Retrieval Quizzing & Mastery';
 
 // Helper to convert relative public paths to base64 Data URIs
 function getImageDataUri(imgPath) {
@@ -56,7 +43,7 @@ function getImageDataUri(imgPath) {
   const fullPath = path.join(ROOT_DIR, 'public', cleanPath);
 
   if (!fs.existsSync(fullPath)) {
-    console.warn(`⚠️ Warning: Image not found on disk: ${fullPath}`);
+    console.warn(\`⚠️ Warning: Image not found on disk: \${fullPath}\`);
     return '';
   }
 
@@ -67,7 +54,7 @@ function getImageDataUri(imgPath) {
   if (ext === '.svg') mimeType = 'image/svg+xml';
 
   const base64 = fs.readFileSync(fullPath).toString('base64');
-  return `data:${mimeType};base64,${base64}`;
+  return \`data:\${mimeType};base64,\${base64}\`;
 }
 
 // Import Modular Components
@@ -80,12 +67,12 @@ const {
   renderSpreadLeft,
   renderSpreadRight,
   renderPage36,
-} = require(path.join(__dirname, 'visual_guides', 'usa', 'usa_renderers.cjs'));
+} = require('../scratch/usa_renderers.cjs');
 
-const kt1 = require(path.join(__dirname, 'visual_guides', 'usa', 'usa_spreads_kt1.cjs'));
-const kt2 = require(path.join(__dirname, 'visual_guides', 'usa', 'usa_spreads_kt2.cjs'));
-const kt3 = require(path.join(__dirname, 'visual_guides', 'usa', 'usa_spreads_kt3.cjs'));
-const kt4 = require(path.join(__dirname, 'visual_guides', 'usa', 'usa_spreads_kt4.cjs'));
+const kt1 = require('../scratch/usa_spreads_kt1.cjs');
+const kt2 = require('../scratch/usa_spreads_kt2.cjs');
+const kt3 = require('../scratch/usa_spreads_kt3.cjs');
+const kt4 = require('../scratch/usa_spreads_kt4.cjs');
 
 const ALL_SPREADS = [...kt1, ...kt2, ...kt3, ...kt4];
 
@@ -112,7 +99,7 @@ function generateMasterHtml() {
   // Page 36: Historiography & Master Interpretations Guide (Back Cover)
   pagesHtml += renderPage36();
 
-  return `<!DOCTYPE html>
+  return \`<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -121,13 +108,13 @@ function generateMasterHtml() {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
   <style>
-${getStyles()}
+\${getStyles()}
   </style>
 </head>
 <body>
-${pagesHtml}
+\${pagesHtml}
 </body>
-</html>`;
+</html>\`;
 }
 
 async function run() {
@@ -150,7 +137,7 @@ async function run() {
 
   // Save standalone HTML
   fs.writeFileSync(HTML_OUT_UNIT, html, 'utf8');
-  console.log(`✅ Generated standalone HTML: ${HTML_OUT_UNIT}`);
+  console.log(\`✅ Generated standalone HTML: \${HTML_OUT_UNIT}\`);
 
   // Launch Puppeteer for Automated Overflow Check & PDF Export
   console.log('🌐 Launching headless browser with Puppeteer...');
@@ -179,19 +166,15 @@ async function run() {
     });
   });
 
-  console.log(`📐 Page layout report: Total pages rendered = ${pageReport.length}`);
+  console.log(\`📐 Page layout report: Total pages rendered = \${pageReport.length}\`);
   const overflows = pageReport.filter((p) => p.overflow > 0);
   if (overflows.length > 0) {
-    console.warn(`⚠️ WARNING: Found ${overflows.length} layout overflows (> 1123px):`);
+    console.warn(\`⚠️ WARNING: Found \${overflows.length} layout overflows (> 1123px):\`);
     overflows.forEach((p) =>
-      console.warn(
-        `   - Page ${p.page} (${p.id}): ${p.scrollHeight}px (overflows by ${p.overflow}px)`,
-      ),
+      console.warn(\`   - Page \${p.page} (\${p.id}): \${p.scrollHeight}px (overflows by \${p.overflow}px)\`),
     );
   } else {
-    console.log(
-      '✅ Automated Overflow Check: All 36 pages fit cleanly within 1123px bounds (0 overflows)!',
-    );
+    console.log('✅ Automated Overflow Check: All 36 pages fit cleanly within 1123px bounds (0 overflows)!');
   }
 
   // Generate Master PDF
@@ -203,22 +186,22 @@ async function run() {
     margin: { top: '0px', right: '0px', bottom: '0px', left: '0px' },
     preferCSSPageSize: true,
   });
-  console.log(`📕 Exported unit PDF: ${PDF_OUT_UNIT}`);
+  console.log(\`📕 Exported unit PDF: \${PDF_OUT_UNIT}\`);
 
   await browser.close();
 
   // Sync to public/pdfs/ mirrors
   fs.copyFileSync(PDF_OUT_UNIT, PDF_OUT_GLOBAL_CANONICAL);
-  console.log(`📋 Synced PDF to public/pdfs/: ${PDF_OUT_GLOBAL_CANONICAL}`);
+  console.log(\`📋 Synced PDF to public/pdfs/: \${PDF_OUT_GLOBAL_CANONICAL}\`);
 
   fs.copyFileSync(PDF_OUT_UNIT, PDF_OUT_GLOBAL_SHORT);
-  console.log(`📋 Synced PDF to public/pdfs/ (short name): ${PDF_OUT_GLOBAL_SHORT}`);
+  console.log(\`📋 Synced PDF to public/pdfs/ (short name): \${PDF_OUT_GLOBAL_SHORT}\`);
 
   fs.copyFileSync(PDF_OUT_UNIT, PDF_OUT_USA_SUBDIR);
-  console.log(`📋 Synced PDF to public/pdfs/usa/: ${PDF_OUT_USA_SUBDIR}`);
+  console.log(\`📋 Synced PDF to public/pdfs/usa/: \${PDF_OUT_USA_SUBDIR}\`);
 
   // Sync to Google Drive Department Folders
-  if (fs.existsSync('G:\\My Drive')) {
+  if (fs.existsSync('G:\\\\My Drive')) {
     [GDRIVE_DIR_1, GDRIVE_DIR_2].forEach((driveDir) => {
       try {
         if (!fs.existsSync(driveDir)) fs.mkdirSync(driveDir, { recursive: true });
@@ -226,15 +209,15 @@ async function run() {
         const target2 = path.join(driveDir, 'USA 1954-75 Visual Revision & Exam Guide.pdf');
         fs.copyFileSync(PDF_OUT_UNIT, target1);
         fs.copyFileSync(PDF_OUT_UNIT, target2);
-        console.log(`\n☁️ Syncing freshly compiled guide to Google Drive: ${driveDir}`);
+        console.log(\`\\n☁️ Syncing freshly compiled guide to Google Drive: \${driveDir}\`);
         console.log('   ✅ Synced master PDF (both short and canonical names) to Google Drive.');
       } catch (err) {
-        console.warn(`⚠️ Could not sync to Google Drive (${driveDir}): ${err.message}`);
+        console.warn(\`⚠️ Could not sync to Google Drive (\${driveDir}): \${err.message}\`);
       }
     });
   }
 
-  console.log('\n====================================================');
+  console.log('\\n====================================================');
   console.log('🎉 USA PILLAR 1 GENERATION COMPLETE (36 PAGES, MONOCHROME, 0 OVERFLOWS)');
   console.log('====================================================');
 }
@@ -243,3 +226,7 @@ run().catch((err) => {
   console.error('❌ Error compiling USA visual guide:', err);
   process.exit(1);
 });
+`;
+
+fs.writeFileSync(USA_SCRIPT_PATH, code, 'utf8');
+console.log(`Successfully assembled: ${USA_SCRIPT_PATH} (${Buffer.byteLength(code)} bytes)`);

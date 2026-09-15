@@ -404,14 +404,14 @@ const PDF_MAPPINGS = [
   },
   {
     folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
-    src: 'cme_mastery_pack_FULL.pdf',
-    dest: 'Conflict in the Middle East Complete Mastery Revision & Exam Practice Guide.pdf',
+    src: 'cme_visual_revision_guide.pdf',
+    dest: 'Conflict in the Middle East Visual Revision Guide.pdf',
     category: 'Year 10 GCSE',
   },
   {
     folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
     src: 'cme_mastery_pack_FULL.pdf',
-    dest: 'Conflict in the Middle East Complete Mastery Pack.pdf',
+    dest: 'Conflict in the Middle East Complete Mastery Revision & Exam Practice Guide.pdf',
     category: 'Year 10 GCSE',
   },
   {
@@ -504,6 +504,18 @@ const PDF_MAPPINGS = [
     folder: path.join('Year 11 (GCSE)', 'Paper 3 - USA 1954-75'),
     src: 'edexcel_usa_visual_revision_and_exam_guide.pdf',
     dest: 'Edexcel GCSE USA Visual Revision and Exam Guide.pdf',
+    category: 'Year 11 GCSE',
+  },
+  {
+    folder: path.join('Year 11 (GCSE)', 'Paper 3 - USA 1954-75'),
+    src: 'usa_mastery_pack_FULL.pdf',
+    dest: 'USA 1954-75 Complete Mastery Revision & Exam Practice Guide.pdf',
+    category: 'Year 11 GCSE',
+  },
+  {
+    folder: path.join('Year 11 (GCSE)', 'Paper 3 - USA 1954-75'),
+    src: 'usa_recall_quiz_FULL.pdf',
+    dest: 'USA 1954-75 Master Knowledge Recall Quiz (All 320 Questions).pdf',
     category: 'Year 11 GCSE',
   },
   {
