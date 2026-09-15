@@ -1,5 +1,40 @@
+/**
+ * usa_renderers.cjs
+ *
+ * Common layout renderers and high-contrast monochrome styles for
+ * Edexcel GCSE History Paper 3: Conflict at Home and Abroad: the USA, 1954–1975 (Option 33).
+ *
+ * Implements the Paper 3 4-4-4-4 Question Matrix:
+ * - 4x Section A: Q1 Inference [4m] + Q2 Explain Why [12m]
+ * - 4x Section B: Q3(a) Utility of Sources B and C [8m]
+ * - 4x Section B: Q3(b) Differences in Views [4m] + Q3(c) Suggest Reasons for Difference [4m]
+ * - 4x Section B: Q3(d) Evaluative Essay with Criteria Judgement [16+4m]
+ */
+
 const fs = require('fs');
 const path = require('path');
+
+const ROOT_DIR = path.join(__dirname, '..', '..', '..');
+
+function getImageDataUri(imgPath) {
+  if (!imgPath) return '';
+  const cleanPath = imgPath.startsWith('/') ? imgPath.slice(1) : imgPath;
+  const fullPath = path.join(ROOT_DIR, 'public', cleanPath);
+  if (fs.existsSync(fullPath)) {
+    const ext = path.extname(fullPath).toLowerCase().replace('.', '');
+    const mime =
+      ext === 'svg'
+        ? 'image/svg+xml'
+        : ext === 'png'
+          ? 'image/png'
+          : ext === 'webp'
+            ? 'image/webp'
+            : 'image/jpeg';
+    const b64 = fs.readFileSync(fullPath).toString('base64');
+    return `data:${mime};base64,${b64}`;
+  }
+  return imgPath;
+}
 
 function formatMd(text) {
   if (!text) return '';
@@ -8,563 +43,505 @@ function formatMd(text) {
 
 function getStyles() {
   return `
-  @page {
-    size: A4 portrait;
-    margin: 0;
-  }
-
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-
+  @page { size: A4 portrait; margin: 0; }
+  * { box-sizing: border-box; }
   body {
-    margin: 0;
-    padding: 0;
-    background: #e2e8f0;
+    margin: 0; padding: 0;
+    background: #ffffff;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: #000000;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
-
   .page {
-    width: 210mm;
-    height: 297mm;
-    page-break-after: always;
-    page-break-inside: avoid;
-    position: relative;
+    width: 794px; height: 1123px; max-height: 1123px;
+    overflow: hidden; page-break-after: always;
+    padding: 18px 22px;
+    display: flex; flex-direction: column; justify-content: space-between;
     background: #ffffff;
-    box-sizing: border-box;
-    padding: 13mm 15mm 11mm 15mm;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
+  }
+  .page:last-child { page-break-after: avoid; }
+  
+  .cover-border {
+    border: 2.5px solid #000000;
+    padding: 14px 16px;
+    height: 100%;
+    display: flex; flex-direction: column; justify-content: space-between;
   }
 
   .page-header {
     border-bottom: 2px solid #000000;
-    padding-bottom: 3px;
-    margin-bottom: 4px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    padding-bottom: 4px; margin-bottom: 6px;
+    display: flex; justify-content: space-between; align-items: flex-end;
   }
-
-  .archival-tag {
-    font-size: 7.2pt;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    color: #475569;
-    display: block;
-    margin-bottom: 1px;
-  }
-
-  .page-title {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 14.5pt;
-    font-weight: 800;
-    color: #000000;
-    margin: 0;
-    line-height: 1.12;
-  }
-
-  .page-badge {
-    border: 1.5px solid #000000;
-    border-radius: 2px;
-    padding: 2px 7px;
-    font-size: 6.8pt;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.4px;
-    color: #000000;
-    background: #ffffff;
-    white-space: nowrap;
-  }
-
   .page-footer {
-    border-top: 1px solid #000000;
-    padding-top: 3px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 7.0pt;
-    color: #475569;
-    font-weight: 600;
-  }
-
-  .page-num {
-    font-weight: 800;
-    font-size: 7.6pt;
-    color: #000000;
+    border-top: 1.5px solid #000000;
+    padding-top: 4px; margin-top: 6px;
+    display: flex; justify-content: space-between;
+    font-size: 7.2pt; font-weight: 700; color: #475569;
   }
 
   .wb-pill {
-    background: #000000;
-    color: #ffffff;
-    padding: 1px 5px;
-    border-radius: 2px;
-    font-weight: 800;
-    font-size: 6.8pt;
     display: inline-block;
+    background: #f1f5f9;
+    border: 1px solid #334155;
+    color: #000000;
+    font-size: 6.8pt; font-weight: 800; padding: 1px 4px;
+    border-radius: 2px;
     margin-right: 4px;
-    margin-bottom: 2px;
-    letter-spacing: 0.2px;
   }
-  `;
+`;
 }
 
-// Page 1: Front Cover
-function renderPage1(getImageDataUri) {
-  const homeImgUri = getImageDataUri('images/usa_march_on_washington_leaders.jpg');
-  const abroadImgUri = getImageDataUri('images/huey_combat_landing_vietnam.jpg');
+function renderPage1(customGetImage) {
+  const getImg = customGetImage || getImageDataUri;
+  const homeImgUri = getImg('images/usa_march_on_washington_leaders.jpg');
+  const abroadImgUri = getImg('images/huey_combat_landing_vietnam.jpg');
 
   return `
-    <div class="page" id="page_1" data-page="1" style="padding: 12mm 15mm 10mm 15mm;">
-      <!-- Outer Archival Border -->
-      <div style="position: absolute; top: 8mm; left: 10mm; right: 10mm; bottom: 8mm; border: 2px solid #000000; pointer-events: none;"></div>
-
-      <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; position: relative; z-index: 1;">
-        <!-- Top Institutional Strip -->
-        <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; display: flex; justify-content: space-between; align-items: baseline;">
-          <span style="font-size: 8.4pt; font-weight: 900; letter-spacing: 0.8px; text-transform: uppercase;">
-            PEARSON EDEXCEL GCSE (9–1) HISTORY &bull; OPTION 33
-          </span>
-          <span style="font-size: 7.6pt; font-weight: 800; letter-spacing: 0.4px;">
-            1HI0/33 &bull; PAPER 3 SPECIFICATION GUIDE
-          </span>
-        </div>
-
-        <!-- Master Title Block -->
-        <div style="text-align: center; margin: 4px 0 3px 0;">
-          <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 24pt; font-weight: 900; margin: 0 0 2px 0; line-height: 1.08; letter-spacing: -0.5px; color: #000000;">
-            Conflict at Home and Abroad: the USA, 1954–1975
-          </h1>
-          <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 11.5pt; font-style: italic; color: #1e293b; margin-bottom: 4px;">
-            Visual Revision Masterclasses &amp; Complete Specification Guide
-          </div>
-          <div style="display: flex; justify-content: center; gap: 8px; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">
-            <span style="background: #000000; color: #ffffff; padding: 2px 8px; border-radius: 2px;">PAPER 3: MODERN DEPTH STUDY</span>
-            <span style="border: 1px solid #000000; padding: 2px 8px; border-radius: 2px;">TIME: 1 HOUR 20 MINUTES</span>
-            <span style="border: 1px solid #000000; padding: 2px 8px; border-radius: 2px;">TOTAL: 52 RAW MARKS (+4 SPaG = 56)</span>
-            <span style="background: #000000; color: #ffffff; padding: 2px 8px; border-radius: 2px;">36-PAGE MASTER VOLUME</span>
-          </div>
-        </div>
-
-        <!-- Dual Contrasting Archival Plates: Conflict at Home vs Conflict Abroad -->
-        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff;">
-          <div style="font-size: 7.6pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.6px; text-align: center; border-bottom: 1.2px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
-            DUAL ARCHIVAL PLATES: THE TWO DEFINING ARENAS OF AMERICAN TURMOIL (1954–1975)
-          </div>
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-            <!-- Left Plate: Conflict at Home (March on Washington) -->
-            <div style="border: 1px solid #000000; border-radius: 2px; padding: 4px 6px; background: #fafafa; display: flex; flex-direction: column;">
-              <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-                <strong style="font-size: 7.2pt; text-transform: uppercase; color: #000000;">1. CONFLICT AT HOME: CIVIL RIGHTS</strong>
-                <span style="font-size: 6.5pt; font-weight: 700; color: #475569;">Warren K. Leffler / NARA / LOC</span>
-              </div>
-              <div style="height: 125px; border: 1px solid #000000; border-radius: 2px; overflow: hidden; background: #000000; margin-bottom: 3px;">
-                <img src="${homeImgUri}" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block;" alt="Civil Rights Leaders at March on Washington 1963" />
-              </div>
-              <div style="font-size: 6.8pt; font-style: italic; font-weight: 700; color: #000000; margin-bottom: 2px; line-height: 1.15;">
-                "Civil rights leaders marching arm-in-arm along Constitution Avenue, Washington D.C. (28 August 1963)"
-              </div>
-              <div style="font-size: 6.2pt; color: #334155; line-height: 1.18; margin-bottom: 2px;">
-                <strong>Archive Citation:</strong> US National Archives &amp; Records Administration (NARA) / Library of Congress (LC-U9-10335-08). Photograph by Warren K. Leffler.
-              </div>
-              <div style="font-size: 6.2pt; color: #1e293b; line-height: 1.18;">
-                <strong>Historical Context:</strong> Over 250,000 Americans gathered at the Lincoln Memorial demanding civil and economic rights. Leaders including A. Philip Randolph, Roy Wilkins, and Walter Reuther marched arm-in-arm, creating irresistible pressure for the Civil Rights Act of 1964.
-              </div>
-            </div>
-
-            <!-- Right Plate: Conflict Abroad (Huey Airmobility Combat) -->
-            <div style="border: 1px solid #000000; border-radius: 2px; padding: 4px 6px; background: #fafafa; display: flex; flex-direction: column;">
-              <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-                <strong style="font-size: 7.2pt; text-transform: uppercase; color: #000000;">2. CONFLICT ABROAD: THE VIETNAM WAR</strong>
-                <span style="font-size: 6.5pt; font-weight: 700; color: #475569;">US Army Signal Corps / NARA</span>
-              </div>
-              <div style="height: 125px; border: 1px solid #000000; border-radius: 2px; overflow: hidden; background: #000000; margin-bottom: 3px;">
-                <img src="${abroadImgUri}" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block;" alt="UH-1D Huey Helicopters Combat Assault Vietnam 1967" />
-              </div>
-              <div style="font-size: 6.8pt; font-style: italic; font-weight: 700; color: #000000; margin-bottom: 2px; line-height: 1.15;">
-                "US 1st Cavalry Division troops disembark from Bell UH-1D Huey helicopters during Operation Oregon (1967)"
-              </div>
-              <div style="font-size: 6.2pt; color: #334155; line-height: 1.18; margin-bottom: 2px;">
-                <strong>Archive Citation:</strong> US Army Signal Corps / US National Archives (NARA), Record ID: 111-SC-638062 (Duc Pho combat landing).
-              </div>
-              <div style="font-size: 6.2pt; color: #1e293b; line-height: 1.18;">
-                <strong>Historical Context:</strong> US infantrymen deploy rapidly from Bell UH-1D 'Huey' helicopters into an active hot landing zone. The photograph epitomises General Westmoreland's airmobile 'search and destroy' doctrine in South Vietnam.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Candidate Information Frame -->
-        <div style="border: 1.5px solid #000000; border-radius: 2px; padding: 4px 10px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; font-size: 7.8pt;">
+    <div class="page" id="page_1" data-page="1">
+      <div class="cover-border">
+        
+        <!-- 1. PUPIL DETAILS BOX (VERY TOP AS REQUESTED) -->
+        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 5px 10px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; font-size: 8.2pt; color: #000000;">
           <div style="display: flex; align-items: center; flex: 1.4;">
-            <strong style="font-size: 8.0pt; text-transform: uppercase;">PUPIL:</strong>
+            <strong style="font-size: 8.6pt; text-transform: uppercase; letter-spacing: 0.5px;">CANDIDATE NAME:</strong>
             <span style="display: inline-block; border-bottom: 1.5px solid #000000; flex: 1; margin: 0 12px 0 6px;">&nbsp;</span>
           </div>
-          <div style="display: flex; gap: 14px; font-size: 7.6pt; font-weight: 700;">
-            <span><strong>Class:</strong> Year 11</span>
-            <span><strong>Teacher:</strong> Mr Lovett</span>
-            <span><strong>School:</strong> Meoncross School</span>
+          <div style="display: flex; gap: 14px; font-weight: 700; font-size: 7.8pt;">
+            <span>Class: <strong>Year 10 / 11</strong></span>
+            <span>Teacher: <strong>Mr Lovett</strong></span>
+            <span>Target: <strong>Grade 7–9</strong></span>
           </div>
         </div>
 
-        <!-- The 4 Question Formats of Paper 3 -->
-        <div style="display: grid; grid-template-columns: 1fr 1.25fr 1.2fr 1.55fr; gap: 6px;">
-          <!-- Q1 -->
-          <div style="border: 1.5px solid #000000; border-radius: 2px; padding: 4px 6px; background: #ffffff;">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-              <strong style="font-size: 7.2pt; text-transform: uppercase;">Q1: INFERENCE</strong>
-              <span style="font-size: 6.8pt; font-weight: 800;">4M</span>
-            </div>
-            <div style="font-size: 6.4pt; color: #1e293b; line-height: 1.2;">
-              Give TWO valid inferences from Source A (~6 mins). State inference &rarr; quote direct evidence. Zero evaluation.
-            </div>
+        <!-- 2. MASTER TITLE BLOCK -->
+        <div style="text-align: center; margin: 3px 0 2px 0;">
+          <div style="font-size: 8.2pt; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; color: #000000; margin-bottom: 2px;">
+            PEARSON EDEXCEL GCSE (9–1) HISTORY &bull; OPTION 33 (1HI0/33)
           </div>
-
-          <!-- Q2 -->
-          <div style="border: 1.5px solid #000000; border-radius: 2px; padding: 4px 6px; background: #ffffff;">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-              <strong style="font-size: 7.2pt; text-transform: uppercase;">Q2: EXPLAIN WHY</strong>
-              <span style="font-size: 6.8pt; font-weight: 800;">12M</span>
-            </div>
-            <div style="font-size: 6.4pt; color: #1e293b; line-height: 1.2;">
-              Multi-causal explanation (~18 mins). 3 developed PEEL paragraphs. MUST include own knowledge beyond stimulus.
-            </div>
+          <h1 style="font-family: 'Playfair Display', serif; font-size: 20pt; font-weight: 900; margin: 0 0 2px 0; line-height: 1.1; color: #000000; letter-spacing: -0.3px;">
+            Conflict at Home and Abroad: The USA, 1954–1975
+          </h1>
+          <div style="font-size: 8.6pt; font-style: italic; color: #334155; margin-bottom: 4px;">
+            Visual Revision Masterclasses &amp; Complete Specification Guide
           </div>
-
-          <!-- Q3(a) -->
-          <div style="border: 1.5px solid #000000; border-radius: 2px; padding: 4px 6px; background: #ffffff;">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-              <strong style="font-size: 7.2pt; text-transform: uppercase;">Q3(a): UTILITY</strong>
-              <span style="font-size: 6.8pt; font-weight: 800;">8M</span>
-            </div>
-            <div style="font-size: 6.4pt; color: #1e293b; line-height: 1.2;">
-              How useful are Sources B and C (~14 mins). Evaluate Content, Provenance (COP: author, motive, date), and Context.
-            </div>
-          </div>
-
-          <!-- Q3(b-d) -->
-          <div style="border: 1.5px solid #000000; border-radius: 2px; padding: 4px 6px; background: #ffffff;">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-              <strong style="font-size: 7.2pt; text-transform: uppercase;">Q3(b–d): INTERPRETATIONS</strong>
-              <span style="font-size: 6.8pt; font-weight: 800;">4+4+16(+4)=28M</span>
-            </div>
-            <div style="font-size: 6.4pt; color: #1e293b; line-height: 1.2;">
-              3(b) Differences in views [4m] &bull; 3(c) Reasons for difference [4m] &bull; 3(d) Evaluative essay with criteria judgement [16+4 SPaG].
-            </div>
+          <div style="display: flex; justify-content: center; gap: 8px; font-size: 7.0pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">
+            <span style="background: #000000; color: #ffffff; padding: 2px 8px; border-radius: 2px;">Paper 3: Modern Depth Study</span>
+            <span style="border: 1.2px solid #000000; padding: 2px 8px; border-radius: 2px;">Time: 1 Hour 20 Minutes</span>
+            <span style="border: 1.2px solid #000000; padding: 2px 8px; border-radius: 2px;">Total: 52 Raw Marks (+4 SPaG = 56)</span>
+            <span style="background: #000000; color: #ffffff; padding: 2px 8px; border-radius: 2px;">36-Page Master Volume</span>
           </div>
         </div>
 
-        <!-- Official Pearson Edexcel Specification Checklist (4 Columns) -->
-        <div style="border: 1.5px solid #000000; border-radius: 2px; padding: 4px 8px; background: #ffffff;">
-          <div style="font-size: 7.4pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.4px; text-align: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
-            &star; OFFICIAL PEARSON EDEXCEL SPECIFICATION CURRICULUM CHECKLIST (OPTION 33)
+        <!-- 3. DUAL ARCHIVAL PLATES (CONFLICT AT HOME VS CONFLICT ABROAD) -->
+        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 6px 8px; background: #ffffff;">
+          <div style="font-size: 7.4pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.6px; text-align: center; border-bottom: 1.2px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
+            Dual Archival Plates &bull; The Two Defining Arenas of American Turmoil (1954–1975)
           </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 8px; font-size: 6.0pt; line-height: 1.22; color: #1e293b;">
-            <!-- Col 1: KT1 -->
-            <div>
-              <strong style="display: block; font-size: 6.6pt; text-transform: uppercase; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-                KT1: CIVIL RIGHTS 1954–60
-              </strong>
-              <strong>1. Position early 1950s:</strong> Segregation, Jim Crow, voting denial, NAACP, CORE.<br/>
-              <strong>2. Education progress:</strong> Brown v Board (1954), Brown II (1955), Little Rock Nine (1957).<br/>
-              <strong>3. Montgomery Boycott:</strong> Rosa Parks, MIA, MLK, Browder v Gayle, SCLC, 1957 Act.<br/>
-              <strong>4. Opposition:</strong> KKK, Emmett Till (1955), WCC, Dixiecrats, Southern Manifesto.
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+            <!-- Left Plate: Conflict at Home -->
+            <div style="border: 1px solid #000000; border-radius: 2px; padding: 4px 6px; background: #fafafa; display: flex; flex-direction: column;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">
+                <strong style="font-size: 7.0pt; text-transform: uppercase; color: #000000;">1. Conflict at Home: Civil Rights</strong>
+                <span style="font-size: 6.2pt; color: #475569;">Warren K. Leffler / LOC (1963)</span>
+              </div>
+              <div style="height: 96px; border: 1px solid #000000; border-radius: 2px; overflow: hidden; background: #000000; margin-bottom: 2px;">
+                <img src="${homeImgUri}" style="width: 100%; height: 100%; object-fit: contain; display: block;" alt="March on Washington Leaders 1963" />
+              </div>
+              <div style="font-size: 6.4pt; color: #1e293b; line-height: 1.20;">
+                <strong>Key Context:</strong> Over 250,000 marchers gathered at the Lincoln Memorial (August 1963) demanding civil and economic rights, generating irresistible national momentum for the Civil Rights Act of 1964.
+              </div>
             </div>
 
-            <!-- Col 2: KT2 -->
-            <div>
-              <strong style="display: block; font-size: 6.6pt; text-transform: uppercase; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-                KT2: PROTEST &amp; RADICALISM
-              </strong>
-              <strong>1. Progress 1960–62:</strong> Greensboro sit-ins, SNCC, Freedom Rides, James Meredith (1962).<br/>
-              <strong>2. Peaceful protests 1963–65:</strong> Birmingham (1963), March on Washington, Selma (1965).<br/>
-              <strong>3. Federal laws:</strong> Civil Rights Act 1964, Voting Rights Act 1965.<br/>
-              <strong>4. Black Power &amp; Riots:</strong> Malcolm X, Black Panthers, Watts, Detroit, Kerner Report, MLK killed.
-            </div>
-
-            <!-- Col 3: KT3 -->
-            <div>
-              <strong style="display: block; font-size: 6.6pt; text-transform: uppercase; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-                KT3: VIETNAM ESCALATION
-              </strong>
-              <strong>1. US involvement 1954–63:</strong> Domino theory, Ngo Dinh Diem, Vietcong, Strategic Hamlets.<br/>
-              <strong>2. Escalation 1964–65:</strong> Gulf of Tonkin Incident &amp; Resolution, Rolling Thunder, Da Nang (1965).<br/>
-              <strong>3. Combat tactics:</strong> Search and destroy, napalm, Agent Orange, Vietcong guerrilla tunnels.<br/>
-              <strong>4. Turning point 1968:</strong> Tet Offensive, Walter Cronkite, My Lai, LBJ withdraws.
-            </div>
-
-            <!-- Col 4: KT4 -->
-            <div>
-              <strong style="display: block; font-size: 6.6pt; text-transform: uppercase; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-                KT4: END OF US INVOLVEMENT
-              </strong>
-              <strong>1. Anti-war movement:</strong> Media role, draft resistance, Moratorium, Kent State (1970).<br/>
-              <strong>2. Pro-war support:</strong> Nixon's Silent Majority speech, Hard Hat riot (1970).<br/>
-              <strong>3. Peace negotiations:</strong> Secret talks, Kissinger, Le Duc Tho, Linebacker bombings.<br/>
-              <strong>4. US exit &amp; defeat:</strong> Paris Accords 1973, War Powers Act, Fall of Saigon (1975), failure causes.
+            <!-- Right Plate: Conflict Abroad -->
+            <div style="border: 1px solid #000000; border-radius: 2px; padding: 4px 6px; background: #fafafa; display: flex; flex-direction: column;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">
+                <strong style="font-size: 7.0pt; text-transform: uppercase; color: #000000;">2. Conflict Abroad: Vietnam War</strong>
+                <span style="font-size: 6.2pt; color: #475569;">US Army / NARA (1966)</span>
+              </div>
+              <div style="height: 96px; border: 1px solid #000000; border-radius: 2px; overflow: hidden; background: #000000; margin-bottom: 2px;">
+                <img src="${abroadImgUri}" style="width: 100%; height: 100%; object-fit: contain; display: block;" alt="Huey Helicopter Combat Landing in Vietnam" />
+              </div>
+              <div style="font-size: 6.4pt; color: #1e293b; line-height: 1.20;">
+                <strong>Key Context:</strong> Airmobile operations with UH-1 Huey helicopters defined Search and Destroy tactics against Vietcong guerrilla networks, sparking a massive domestic anti-war movement across US campuses.
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Institutional Footer -->
-        <div style="border-top: 1.5px solid #000000; padding-top: 2px; display: flex; justify-content: space-between; font-size: 6.8pt; font-weight: 700; color: #475569;">
-          <span>Meoncross History Department &bull; GCSE Masterclass Series</span>
-          <span>PEARSON EDEXCEL 1HI0/33 &bull; 36-PAGE MASTER VOLUME</span>
+        <!-- 4. FOUR PAPER 3 QUESTION FORMATS SUMMARY -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1.2fr; gap: 6px;">
+          <div style="background: #f8fafc; border: 1.2px solid #000000; border-radius: 3px; padding: 3px 5px;">
+            <div style="font-size: 7.2pt; font-weight: 800; color: #000000; text-transform: uppercase; display: flex; justify-content: space-between;">
+              <span>Q1: Inference</span>
+              <span>4m</span>
+            </div>
+            <p style="font-size: 6.3pt; color: #1e293b; line-height: 1.20; margin: 1px 0 0 0;">
+              Give <strong>TWO inferences</strong> from Source A (~6 mins). State inference &rarr; quote supporting evidence.
+            </p>
+          </div>
+          <div style="background: #f8fafc; border: 1.2px solid #000000; border-radius: 3px; padding: 3px 5px;">
+            <div style="font-size: 7.2pt; font-weight: 800; color: #000000; text-transform: uppercase; display: flex; justify-content: space-between;">
+              <span>Q2: Explain Why</span>
+              <span>12m</span>
+            </div>
+            <p style="font-size: 6.3pt; color: #1e293b; line-height: 1.20; margin: 1px 0 0 0;">
+              Multi-causal essay (~18 mins). 3 developed P-E-E paragraphs. <strong>MUST</strong> use own knowledge beyond stimulus.
+            </p>
+          </div>
+          <div style="background: #f8fafc; border: 1.2px solid #000000; border-radius: 3px; padding: 3px 5px;">
+            <div style="font-size: 7.2pt; font-weight: 800; color: #000000; text-transform: uppercase; display: flex; justify-content: space-between;">
+              <span>Q3(a): Utility</span>
+              <span>8m</span>
+            </div>
+            <p style="font-size: 6.3pt; color: #1e293b; line-height: 1.20; margin: 1px 0 0 0;">
+              Utility of Sources B &amp; C (~14 mins). Evaluate <strong>Content + Provenance (NOP) + Context</strong>.
+            </p>
+          </div>
+          <div style="background: #f8fafc; border: 1.2px solid #000000; border-radius: 3px; padding: 3px 5px;">
+            <div style="font-size: 7.2pt; font-weight: 800; color: #000000; text-transform: uppercase; display: flex; justify-content: space-between;">
+              <span>Q3(b–d): Interpretations</span>
+              <span>28m</span>
+            </div>
+            <p style="font-size: 6.3pt; color: #1e293b; line-height: 1.20; margin: 1px 0 0 0;">
+              Q3b Views Diff [4m] &bull; Q3c Reasons [4m] &bull; Q3d Evaluative Essay with criteria judgement [16+4 SPaG].
+            </p>
+          </div>
         </div>
+
+        <!-- 5. ENLARGED FULL SPECIFICATION CURRICULUM CHECKLIST (4 COLUMNS) -->
+        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 6px 8px; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-top: 2px;">
+          <div style="font-size: 8.0pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 4px; text-align: center; border-bottom: 1.4px solid #000000; padding-bottom: 2px; letter-spacing: 0.5px;">
+            ★ Official Pearson Edexcel GCSE Specification Curriculum Checklist (Option 33)
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 8px; font-size: 7.4pt; line-height: 1.30; color: #0f172a; flex: 1;">
+            
+            <!-- Column 1: KT1 -->
+            <div style="border-right: 1.2px solid #cbd5e1; padding-right: 6px;">
+              <div style="font-size: 7.8pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 3px; border-bottom: 1px solid #e2e8f0; padding-bottom: 1px;">
+                KT1: Civil Rights 1954–60
+              </div>
+              <strong style="display:block; color: #000000; font-size: 7.2pt;">1. Position in early 1950s:</strong>
+              <div>&bull; Segregation &amp; Jim Crow laws.</div>
+              <div>&bull; Disenfranchisement &amp; terror.</div>
+              <div>&bull; Work of NAACP &amp; CORE.</div>
+              
+              <strong style="display:block; color: #000000; font-size: 7.2pt; margin-top: 3px;">2. Education Progress:</strong>
+              <div>&bull; Brown v. Topeka (1954).</div>
+              <div>&bull; Little Rock High School (1957).</div>
+              
+              <strong style="display:block; color: #000000; font-size: 7.2pt; margin-top: 3px;">3. Montgomery Boycott:</strong>
+              <div>&bull; Rosa Parks &amp; 381-day boycott.</div>
+              <div>&bull; Browder v Gayle &amp; MLK/SCLC.</div>
+              <div>&bull; Civil Rights Act of 1957.</div>
+
+              <strong style="display:block; color: #000000; font-size: 7.2pt; margin-top: 3px;">4. White Opposition:</strong>
+              <div>&bull; Ku Klux Klan &amp; Emmett Till (1955).</div>
+              <div>&bull; Dixiecrats &amp; Citizens' Councils.</div>
+            </div>
+
+            <!-- Column 2: KT2 -->
+            <div style="border-right: 1.2px solid #cbd5e1; padding-right: 6px;">
+              <div style="font-size: 7.8pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 3px; border-bottom: 1px solid #e2e8f0; padding-bottom: 1px;">
+                KT2: Radicalism 1960–75
+              </div>
+              <strong style="display:block; color: #000000; font-size: 7.2pt;">1. Developments 1960–62:</strong>
+              <div>&bull; Greensboro sit-ins &amp; SNCC.</div>
+              <div>&bull; Freedom Riders &amp; Anniston bomb.</div>
+              <div>&bull; James Meredith case (1962).</div>
+              
+              <strong style="display:block; color: #000000; font-size: 7.2pt; margin-top: 3px;">2. Peaceful Protests 1963–65:</strong>
+              <div>&bull; Birmingham &amp; Washington (1963).</div>
+              <div>&bull; Civil Rights Act (1964).</div>
+              <div>&bull; Selma &amp; Voting Rights Act (1965).</div>
+              
+              <strong style="display:block; color: #000000; font-size: 7.2pt; margin-top: 3px;">3. Malcolm X &amp; Black Power:</strong>
+              <div>&bull; Malcolm X &amp; Nation of Islam.</div>
+              <div>&bull; Stokely Carmichael &amp; 1968 Olympics.</div>
+              <div>&bull; Black Panther Party methods.</div>
+
+              <strong style="display:block; color: #000000; font-size: 7.2pt; margin-top: 3px;">4. Civil Rights 1965–75:</strong>
+              <div>&bull; Riots 1965–67 &amp; Kerner Report.</div>
+              <div>&bull; King in North &amp; assassination.</div>
+              <div>&bull; Progress extent by 1975.</div>
+            </div>
+
+            <!-- Column 3: KT3 -->
+            <div style="border-right: 1.2px solid #cbd5e1; padding-right: 6px;">
+              <div style="font-size: 7.8pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 3px; border-bottom: 1px solid #e2e8f0; padding-bottom: 1px;">
+                KT3: Vietnam War 1954–75
+              </div>
+              <strong style="display:block; color: #000000; font-size: 7.2pt;">1. Involvement 1954–63:</strong>
+              <div>&bull; Domino theory &amp; Diem regime.</div>
+              <div>&bull; Kennedy, Hamlets &amp; Diem coup.</div>
+              
+              <strong style="display:block; color: #000000; font-size: 7.2pt; margin-top: 3px;">2. Escalation under LBJ:</strong>
+              <div>&bull; Vietcong threat expansion.</div>
+              <div>&bull; Gulf of Tonkin incident (1964).</div>
+              
+              <strong style="display:block; color: #000000; font-size: 7.2pt; margin-top: 3px;">3. Nature of Conflict 1964–68:</strong>
+              <div>&bull; Vietcong guerrilla warfare.</div>
+              <div>&bull; Search &amp; Destroy &amp; chemicals.</div>
+              <div>&bull; Operation Rolling Thunder.</div>
+              <div>&bull; The Tet Offensive (1968).</div>
+
+              <strong style="display:block; color: #000000; font-size: 7.2pt; margin-top: 3px;">4. Changes under Nixon:</strong>
+              <div>&bull; Vietnamisation &amp; troop exits.</div>
+              <div>&bull; Invasions of Cambodia &amp; Laos.</div>
+              <div>&bull; 1972 Linebacker bombing.</div>
+            </div>
+
+            <!-- Column 4: KT4 -->
+            <div>
+              <div style="font-size: 7.8pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 3px; border-bottom: 1px solid #e2e8f0; padding-bottom: 1px;">
+                KT4: Reactions &amp; End 1964–75
+              </div>
+              <strong style="display:block; color: #000000; font-size: 7.2pt;">1. Opposition to the War:</strong>
+              <div>&bull; Students, media &amp; draft system.</div>
+              <div>&bull; My Lai Massacre &amp; Lt. Calley.</div>
+              <div>&bull; Kent State shootings (1970).</div>
+              
+              <strong style="display:block; color: #000000; font-size: 7.2pt; margin-top: 3px;">2. Support for the War:</strong>
+              <div>&bull; Fear of communism.</div>
+              <div>&bull; 'Hard hats' &amp; 'silent majority'.</div>
+              
+              <strong style="display:block; color: #000000; font-size: 7.2pt; margin-top: 3px;">3. The Peace Process:</strong>
+              <div>&bull; Negotiations 1972–73.</div>
+              <div>&bull; Paris Peace Agreement (1973).</div>
+              <div>&bull; Human and economic costs.</div>
+
+              <strong style="display:block; color: #000000; font-size: 7.2pt; margin-top: 3px;">4. Reasons for US Failure:</strong>
+              <div>&bull; Vietcong &amp; Ho Chi Minh Trail.</div>
+              <div>&bull; USSR &amp; Chinese military aid.</div>
+              <div>&bull; US tactical failures &amp; dissent.</div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </div>
   `;
 }
 
-// Page 2: Paper 3 Blueprint & Non-Negotiable Success Principles
 function renderPage2() {
   return `
     <div class="page" id="page_2" data-page="2">
-      <div class="page-header">
-        <div>
-          <span class="archival-tag">Paper 3 Blueprint &bull; Exam Overview</span>
-          <h2 class="page-title">Edexcel GCSE Paper 3: Exam Structure, Timings &amp; Success Principles</h2>
-        </div>
-        <div class="page-badge">Total Marks: 52 (+4 SPaG) &bull; Time: 1h 20m</div>
-      </div>
-
-      <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; min-height: 0;">
-        <!-- Top Banner -->
-        <div style="background: #000000; color: #ffffff; padding: 7px 12px; border-radius: 3px; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <div class="page-header">
           <div>
-            <div style="font-size: 9.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.4px;">
-              Pearson Edexcel GCSE (9–1) History &bull; Paper 3 Modern Depth Study Blueprint
-            </div>
-            <div style="font-size: 7.2pt; color: #e2e8f0; line-height: 1.25; margin-top: 1px;">
-              Option 33 tests both deep knowledge recall and forensic historical skills: <strong>Section A (16m &bull; 20% of GCSE)</strong> focuses on inference and multi-causal explanation; <strong>Section B (36m &bull; 30% of GCSE)</strong> focuses on source utility and historiographical interpretations.
-            </div>
+            <span style="font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000; letter-spacing: 0.5px;">
+              Executive Pacing &bull; Pearson Edexcel Specification Standard
+            </span>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 14pt; font-weight: 800; color: #000; margin: 2px 0 0 0;">
+              Paper 3 (Modern Depth Study): 80-Minute Pacing Blueprint &amp; Exam Architecture
+            </h2>
+          </div>
+          <div style="font-size: 7.6pt; font-weight: 800; background: #000; color: #fff; padding: 2px 8px; border-radius: 2px; text-transform: uppercase;">
+            Exam Blueprint
           </div>
         </div>
 
-        <!-- Assessment Objectives Bar (AO1–AO4) -->
-        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff;">
-          <div style="font-size: 7.8pt; font-weight: 900; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px; display: flex; justify-content: space-between;">
-            <span>Pearson Edexcel Paper 3 Assessment Objectives (AO1–AO4)</span>
-            <span style="color: #475569; font-size: 6.8pt;">52 Raw Marks Total &bull; 100% of Paper 3</span>
+        <!-- 1. Four Non-Negotiable Success Principles -->
+        <div style="background: #f8fafc; border: 1.5px solid #000; border-radius: 3px; padding: 8px 10px; margin-bottom: 8px;">
+          <div style="font-size: 7.6pt; font-weight: 800; text-transform: uppercase; color: #000; margin-bottom: 4px; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px;">
+            The Four Non-Negotiable Rules for Securing Grade 7–9 in Paper 3 (Option 33)
           </div>
-          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; font-size: 6.8pt; line-height: 1.22; color: #1e293b;">
-            <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 4px 6px;">
-              <strong style="display: block; font-size: 7.4pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">AO1: Recall Knowledge</strong>
-              <div style="font-weight: 800; font-size: 6.8pt; margin-bottom: 1px;">16 Marks (31%)</div>
-              Demonstrate precise factual recall across all 4 Key Topics: exact dates, acts, casualties, and protagonists.
-            </div>
-            <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 4px 6px;">
-              <strong style="display: block; font-size: 7.4pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">AO2: Causation &amp; Analysis</strong>
-              <div style="font-weight: 800; font-size: 6.8pt; margin-bottom: 1px;">12 Marks (23%)</div>
-              Explain why events happened using multi-layered causal factors, direct mechanisms, and sustained consequences.
-            </div>
-            <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 4px 6px;">
-              <strong style="display: block; font-size: 7.4pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">AO3: Source Utility (COP)</strong>
-              <div style="font-weight: 800; font-size: 6.8pt; margin-bottom: 1px;">8 Marks (15%)</div>
-              Evaluate contemporary sources for a specific enquiry using Content, Origin/Provenance, and Contextual knowledge.
-            </div>
-            <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 4px 6px;">
-              <strong style="display: block; font-size: 7.4pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">AO4: Interpretations (Q3d)</strong>
-              <div style="font-weight: 800; font-size: 6.8pt; margin-bottom: 1px;">16m + 4 SPaG (31%)</div>
-              Evaluate how and why historians differ, testing views against sources and own knowledge to reach a criteria judgement.
-            </div>
-          </div>
-        </div>
-
-        <!-- Four Non-Negotiable Success Principles -->
-        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff;">
-          <div style="font-size: 7.8pt; font-weight: 900; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px; display: flex; justify-content: space-between;">
-            <span>Four Non-Negotiable Paper 3 Success Principles</span>
-            <span style="font-size: 6.8pt; color: #475569;">Examiner Standards</span>
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 7px; font-size: 6.8pt; line-height: 1.25; color: #1e293b;">
-            <div style="border-left: 3px solid #000000; padding-left: 6px;">
-              <strong style="font-size: 7.4pt; text-transform: uppercase; display: block; margin-bottom: 1px;">1. Strict 80-Minute Timing Discipline</strong>
-              Allocate your time ruthlessly: <strong>Q1 (6 mins)</strong>, <strong>Q2 (18 mins)</strong>, <strong>Q3(a) (14 mins)</strong>, <strong>Q3(b) (6 mins)</strong>, <strong>Q3(c) (6 mins)</strong>, <strong>Q3(d) (25 mins)</strong>, leaving 5 minutes for final proofreading. Never let Q2 run over 20 minutes.
-            </div>
-            <div style="border-left: 3px solid #000000; padding-left: 6px;">
-              <strong style="font-size: 7.4pt; text-transform: uppercase; display: block; margin-bottom: 1px;">2. Beyond the Stimulus in Q2 (The Level 2 Trap)</strong>
-              Edexcel mark schemes strictly state: an answer relying <em>only</em> on the provided stimulus points is capped at <strong>Level 2 (5 marks maximum out of 12)</strong>. You MUST introduce at least one substantial own knowledge factor not mentioned on the exam paper.
-            </div>
-            <div style="border-left: 3px solid #000000; padding-left: 6px;">
-              <strong style="font-size: 7.4pt; text-transform: uppercase; display: block; margin-bottom: 1px;">3. Forensic COP in Q3(a) Utility</strong>
-              Never dismiss a source as "biased and therefore useless." Evaluate <strong>Content</strong> (what it reveals), <strong>Origin &amp; Purpose</strong> (author's position, motive, date), and <strong>Context</strong> (precise historical cross-reference) to explain what it is useful <em>for</em>.
-            </div>
-            <div style="border-left: 3px solid #000000; padding-left: 6px;">
-              <strong style="font-size: 7.4pt; text-transform: uppercase; display: block; margin-bottom: 1px;">4. Criteria-Driven Evaluation in Q3(d)</strong>
-              In the 16+4 mark essay, avoid a superficial "agree with both" summary. Establish explicit criteria (e.g. military effectiveness vs political fallout, grassroots agency vs executive action) to substantiate why one interpretation is historically superior.
-            </div>
-          </div>
-        </div>
-
-        <!-- Historian's Analytical Connective Vault -->
-        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 5px 8px; background: #f8fafc;">
-          <div style="font-size: 7.8pt; font-weight: 900; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px; display: flex; justify-content: space-between;">
-            <span>Historian's Analytical Connective Vault &bull; Paper 3 Phrase Bank</span>
-            <span style="font-size: 6.8pt; color: #475569;">High-Yield Writing Scaffolds</span>
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; font-size: 6.8pt; line-height: 1.24; color: #1e293b;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 7.2pt; line-height: 1.30; color: #1e293b;">
             <div>
-              <strong style="font-size: 7.2pt; text-transform: uppercase; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">Causal Transitions (Q2)</strong>
-              &bull; "This served as the primary catalyst because..."<br/>
-              &bull; "Consequently, federal intervention became unavoidable..."<br/>
-              &bull; "This directly exacerbated domestic opposition by..."<br/>
-              &bull; "Fundamentally, this transformed military strategy from..."
+              <strong>1. Strict Timing Allocation (80 Mins Total):</strong>
+              Spend exactly 30 minutes on Section A (6 mins on Q1 Inference [4m], 24 mins on Q2 Explain Why [12m]), and 50 minutes on Section B (14 mins on Q3a Utility [8m], 6 mins on Q3b Diff [4m], 6 mins on Q3c Why [4m], and 24 mins on Q3d Evaluative Essay [16+4m]).
             </div>
             <div>
-              <strong style="font-size: 7.2pt; text-transform: uppercase; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">Source Provenance (Q3a)</strong>
-              &bull; "Given that the author was directly positioned to observe..."<br/>
-              &bull; "The utility is enhanced by its confidential nature as..."<br/>
-              &bull; "However, the motive to secure congressional funding suggests..."<br/>
-              &bull; "Cross-referenced with contemporary casualties, this proves..."
+              <strong>2. Beyond the Stimulus in Q2 (The Level 2 Cap):</strong>
+              In Q2 (Explain Why), examiners provide two bullet prompts. Relying solely on the provided prompts caps your score at Level 2 (5 marks maximum). You MUST include distinct own-knowledge historical factors to access Level 3/4.
             </div>
             <div>
-              <strong style="font-size: 7.2pt; text-transform: uppercase; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">Historiographical Weight (Q3d)</strong>
-              &bull; "Interpretation 1 places primary weight on..."<br/>
-              &bull; "Conversely, Interpretation 2 adopts a revisionist stance..."<br/>
-              &bull; "While Int 1 accurately reflects elite policy decisions..."<br/>
-              &bull; "On balance, Int 2 provides a more persuasive verdict because..."
+              <strong>3. Forensic C-O-P in Q3(a) Utility:</strong>
+              Never dismiss a primary source as "biased and therefore useless." Evaluate <strong>Content</strong> (what it says), <strong>Origin &amp; Purpose</strong> (author's position, motive, date), and <strong>Context</strong> (precise cross-referencing) to explain what it is useful <em>for</em>.
+            </div>
+            <div>
+              <strong>4. Criteria-Driven Evaluation in Q3(d):</strong>
+              In the 16+4 mark essay, avoid a superficial summary. Establish explicit criteria (e.g. military effectiveness vs political fallout, grassroots agency vs executive legislation) to substantiate why one interpretation is historically more convincing.
             </div>
           </div>
         </div>
 
-        <!-- Examiner Warning Pitfalls Strip -->
-        <div style="background: #ffffff; border: 1.5px solid #000000; border-radius: 3px; padding: 4px 8px; font-size: 6.8pt; color: #000000; line-height: 1.24;">
-          <div style="font-weight: 900; font-size: 7.2pt; text-transform: uppercase; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-            &cross; THREE DEADLY EXAMINER PITFALLS TO AVOID ON PAPER 3:
+        <!-- 2. Breakdown of the 4 Exam Question Types -->
+        <div style="border: 1.5px solid #000; border-radius: 3px; padding: 7px 10px; background: #ffffff; margin-bottom: 8px;">
+          <div style="font-size: 7.6pt; font-weight: 800; text-transform: uppercase; color: #000; margin-bottom: 4px; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px;">
+            Structural Masterclasses &amp; Timing Formulas by Question Stem
           </div>
-          <strong>1. Surface Copying in Q1:</strong> Stating "the source shows a sign" is description, not inference. You must infer the underlying social reality (e.g. institutionalized racial hierarchy).<br/>
-          <strong>2. The Section B Source Confusion:</strong> Treating Q3(b) and Q3(c) as source utility questions. They are about HISTORIANS' VIEWS, not primary source reliability.<br/>
-          <strong>3. One-Sided Essay in Q3(d):</strong> Writing solely about Interpretation 1 will cap your mark at 8/16. You MUST evaluate BOTH interpretations with balanced own knowledge.
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 7.1pt; line-height: 1.30; color: #1e293b;">
+            <div style="border-left: 3px solid #000; padding-left: 6px;">
+              <strong>• Section A: Q1 Inference [4 Marks &bull; ~6 Mins]</strong><br/>
+              <em>Inference-Quote Formula.</em> Give two separate inferences from Source A. For each inference, state the inferred meaning in sentence 1, then cite precise supporting evidence from the source in sentence 2. Zero provenance evaluation.
+            </div>
+            <div style="border-left: 3px solid #000; padding-left: 6px;">
+              <strong>• Section A: Q2 Explain Why [12 Marks &bull; ~24 Mins]</strong><br/>
+              <em>3-Paragraph Causal Chain.</em> Point (linking to the question) &rarr; Evidence (dates, statistics, names) &rarr; Explanation (direct mechanism tracing how the factor caused the outcome). Must deploy own knowledge beyond stimulus.
+            </div>
+            <div style="border-left: 3px solid #000; padding-left: 6px;">
+              <strong>• Section B: Q3(a) Source Utility [8 Marks &bull; ~14 Mins]</strong><br/>
+              <em>C-O-P Matrix.</em> Evaluate Source B (Content + Context + Provenance NOP) &rarr; Evaluate Source C (Content + Context + Provenance NOP) &rarr; Comparative conclusion explaining how both sources together provide complementary insight.
+            </div>
+            <div style="border-left: 3px solid #000; padding-left: 6px;">
+              <strong>• Section B: Q3(b–d) Historiography [28 Marks &bull; ~36 Mins]</strong><br/>
+              <em>The Interpretations Suite.</em> 3(b) State core difference in views [4m] &bull; 3(c) Explain why views differ by matching to different sources/focuses [4m] &bull; 3(d) Evaluative essay testing both interpretations against own knowledge with criteria judgement [16+4 SPaG].
+            </div>
+          </div>
         </div>
+
+        <!-- 3. Assessment Objectives & Grade 9 Rubric -->
+        <div style="border: 1.5px solid #000; border-radius: 3px; padding: 7px 10px; background: #fafafa;">
+          <div style="font-size: 7.4pt; font-weight: 800; text-transform: uppercase; color: #000; margin-bottom: 3px;">
+            Assessment Objectives (AO1–AO4) Distribution &bull; 52 Raw Marks Total
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 6px; font-size: 6.8pt; line-height: 1.25; color: #1e293b;">
+            <div style="background: #fff; border: 1px solid #cbd5e1; border-radius: 2px; padding: 4px;">
+              <strong style="color: #000; display: block;">AO1: Factual Recall (16m)</strong>
+              Precise knowledge across civil rights and Vietnam: exact acts, dates, statistics, casualties, and leaders.
+            </div>
+            <div style="background: #fff; border: 1px solid #cbd5e1; border-radius: 2px; padding: 4px;">
+              <strong style="color: #000; display: block;">AO2: Causation &amp; Analysis (12m)</strong>
+              Multi-layered causal explanations showing primary vs secondary triggers and sustained historical mechanisms.
+            </div>
+            <div style="background: #fff; border: 1px solid #cbd5e1; border-radius: 2px; padding: 4px;">
+              <strong style="color: #000; display: block;">AO3: Source Utility (8m)</strong>
+              Evaluating contemporary primary evidence using Content, Provenance (NOP), and Historical Context.
+            </div>
+            <div style="background: #fff; border: 1px solid #cbd5e1; border-radius: 2px; padding: 4px;">
+              <strong style="color: #000; display: block;">AO4: Interpretations (16+4m)</strong>
+              Analyzing how and why historians differ, testing views against sources and facts to substantiate a final verdict.
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <div class="page-footer">
-        <span>Pearson Edexcel GCSE (9–1) History &bull; Option 33: Conflict at Home and Abroad: the USA, 1954–75</span>
-        <span class="page-num">2</span>
+        <span>GCSE History Visual Revision Guide &bull; Option 33: The USA, 1954–75</span>
+        <span>Executive Blueprint &bull; Page 2</span>
       </div>
     </div>
   `;
 }
 
-// Page 3: Master Chronological Matrix & Synoptic Architecture (1954–1975)
 function renderPage3() {
   return `
     <div class="page" id="page_3" data-page="3">
-      <div class="page-header">
-        <div>
-          <span class="archival-tag">Master Chronology &bull; Synoptic Timeline</span>
-          <h2 class="page-title">Paper 3 Master Chronological Matrix &amp; Synoptic Architecture (1954–1975)</h2>
-        </div>
-        <div class="page-badge">1954–1975 Master Sequence</div>
-      </div>
-
-      <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; min-height: 0;">
-        <!-- Top Banner -->
-        <div style="background: #f8fafc; border: 1.5px solid #000000; border-left: 5px solid #000000; border-radius: 3px; padding: 5px 10px;">
-          <div style="font-size: 8.8pt; font-weight: 800; font-family: 'Playfair Display', serif; color: #000000; margin-bottom: 2px;">
-            Synchronized Dual Chronology: The Collision of Domestic Protests and Foreign War
+      <div>
+        <div class="page-header">
+          <div>
+            <span style="font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000; letter-spacing: 0.5px;">
+              Synchronized Chronology &bull; Thematic Arc
+            </span>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 14pt; font-weight: 800; color: #000; margin: 2px 0 0 0;">
+              Dual Chronological Matrix: Conflict at Home vs. Conflict Abroad (1954–1975)
+            </h2>
           </div>
-          <div style="font-size: 7.2pt; color: #1e293b; line-height: 1.25;">
-            Mastering Paper 3 requires understanding how the struggle for racial equality at home unfolded simultaneously with American military escalation in Southeast Asia, creating an unprecedented domestic political crisis that fractured American society.
+          <div style="font-size: 7.6pt; font-weight: 800; background: #000; color: #fff; padding: 2px 8px; border-radius: 2px; text-transform: uppercase;">
+            1954–1975 Timeline
           </div>
         </div>
 
-        <!-- 2-Column Parallel Chronology Grid -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 4px 0;">
-          <!-- Left Column: Civil Rights Timeline (1954–1968) -->
-          <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 6px 8px; background: #ffffff; display: flex; flex-direction: column;">
-            <div style="font-size: 7.8pt; font-weight: 900; text-transform: uppercase; border-bottom: 1.2px solid #000000; padding-bottom: 2px; margin-bottom: 3px; display: flex; justify-content: space-between;">
-              <span>Civil Rights Movement (1954–1968)</span>
-              <span style="font-size: 6.8pt; color: #475569;">Conflict at Home</span>
+        <!-- 3-Column Parallel Master Chronology -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 8px;">
+          
+          <!-- Column 1: KT1 & Early KT2 (1954–1963) -->
+          <div style="border: 1.5px solid #000; border-radius: 3px; padding: 6px 8px; background: #ffffff;">
+            <div style="font-size: 7.6pt; font-weight: 800; text-transform: uppercase; color: #000; border-bottom: 1.2px solid #000; padding-bottom: 2px; margin-bottom: 4px;">
+              Era 1: Legal Challenges &amp; Direct Action (1954–63)
             </div>
-            <div style="font-size: 6.7pt; line-height: 1.25; color: #1e293b; display: flex; flex-direction: column; gap: 2px;">
-              <div><strong>May 1954:</strong> Supreme Court outlaws segregated schools in <em>Brown v. Board of Education</em>.</div>
-              <div><strong>Aug 1955:</strong> Murder of 14-year-old Emmett Till in Mississippi galvanizes national outrage.</div>
-              <div><strong>Dec 1955:</strong> Rosa Parks arrested in Montgomery; 381-day Bus Boycott begins under MLK.</div>
-              <div><strong>Nov 1956:</strong> Supreme Court declares Montgomery bus segregation unconstitutional (<em>Browder v Gayle</em>).</div>
-              <div><strong>Sep 1957:</strong> Little Rock Crisis; Eisenhower dispatches 101st Airborne to enforce integration.</div>
-              <div><strong>Feb 1960:</strong> Greensboro sit-ins launch lunch counter protests; SNCC founded in April.</div>
-              <div><strong>May 1961:</strong> CORE Freedom Rides challenge interstate bus segregation; buses firebombed in Alabama.</div>
-              <div><strong>Oct 1962:</strong> James Meredith integrates Ole Miss; Kennedy sends 500 US Marshals to quell riots.</div>
-              <div><strong>Apr 1963:</strong> SCLC Project C in Birmingham; Bull Connor uses police dogs and fire hoses on marchers.</div>
-              <div><strong>Aug 1963:</strong> March on Washington draws 250,000; King delivers "I Have a Dream" address.</div>
-              <div><strong>Jul 1964:</strong> President Johnson signs historic Civil Rights Act of 1964 banning public segregation.</div>
-              <div><strong>Feb 1965:</strong> Malcolm X assassinated in New York City after breaking with the Nation of Islam.</div>
-              <div><strong>Mar 1965:</strong> "Bloody Sunday" at Selma bridge; Voting Rights Act of 1965 signed in August.</div>
-              <div><strong>Aug 1965:</strong> Watts Riot erupts in Los Angeles (34 dead); signifies shift to northern economic anger.</div>
-              <div><strong>Jun 1966:</strong> Stokely Carmichael proclaims "Black Power" on the March Against Fear.</div>
-              <div><strong>Oct 1966:</strong> Black Panther Party for Self-Defense founded in Oakland by Newton and Seale.</div>
-              <div><strong>Jul 1967:</strong> "Long Hot Summer": devastating urban rebellions erupt in Newark and Detroit.</div>
-              <div><strong>Mar 1968:</strong> Kerner Commission warns: "Our nation is moving toward two societies: separate, unequal."</div>
-              <div><strong>Apr 1968:</strong> Martin Luther King Jr. assassinated in Memphis; riots in over 100 cities; Fair Housing Act passed.</div>
+            <div style="font-size: 6.8pt; line-height: 1.28; color: #1e293b; display: flex; flex-direction: column; gap: 4px;">
+              <div><strong>May 1954:</strong> <em>Brown v. Board of Education</em> outlaws segregated public schools.</div>
+              <div><strong>Aug 1955:</strong> Emmett Till murdered in Mississippi; killers acquitted in 67 mins.</div>
+              <div><strong>Dec 1955:</strong> Rosa Parks arrested; 381-day Montgomery Bus Boycott begins.</div>
+              <div><strong>Nov 1956:</strong> <em>Browder v. Gayle</em> rules bus segregation unconstitutional.</div>
+              <div><strong>Sep 1957:</strong> Little Rock Nine integrated Central High under 101st Airborne.</div>
+              <div><strong>Feb 1960:</strong> Greensboro lunch counter sit-ins; SNCC formed in April.</div>
+              <div><strong>May 1961:</strong> CORE Freedom Rides test interstate travel; Anniston bus bombed.</div>
+              <div><strong>Oct 1962:</strong> James Meredith integrates University of Mississippi ('Ole Miss').</div>
+              <div><strong>May 1963:</strong> SCLC Birmingham Campaign; Bull Connor uses dogs &amp; hoses.</div>
+              <div><strong>Aug 1963:</strong> March on Washington; King delivers "I Have a Dream" speech.</div>
+              <div><strong>Nov 1963:</strong> Ngo Dinh Diem assassinated; JFK assassinated in Dallas.</div>
             </div>
           </div>
 
-          <!-- Right Column: Vietnam War Timeline (1954–1975) -->
-          <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 6px 8px; background: #ffffff; display: flex; flex-direction: column;">
-            <div style="font-size: 7.8pt; font-weight: 900; text-transform: uppercase; border-bottom: 1.2px solid #000000; padding-bottom: 2px; margin-bottom: 3px; display: flex; justify-content: space-between;">
-              <span>Vietnam War &amp; Home Front (1954–1975)</span>
-              <span style="font-size: 6.8pt; color: #475569;">Conflict Abroad</span>
+          <!-- Column 2: KT2 & KT3 Escalation (1964–1968) -->
+          <div style="border: 1.5px solid #000; border-radius: 3px; padding: 6px 8px; background: #ffffff;">
+            <div style="font-size: 7.6pt; font-weight: 800; text-transform: uppercase; color: #000; border-bottom: 1.2px solid #000; padding-bottom: 2px; margin-bottom: 4px;">
+              Era 2: Legislative Triumphs &amp; Vietnam Escalation (1964–68)
             </div>
-            <div style="font-size: 6.7pt; line-height: 1.25; color: #1e293b; display: flex; flex-direction: column; gap: 2px;">
-              <div><strong>May 1954:</strong> French defeated at Dien Bien Phu; Geneva Accords divide Vietnam at 17th Parallel.</div>
-              <div><strong>1955–56:</strong> Ngo Dinh Diem proclaims Republic of Vietnam (South); rejects nationwide elections.</div>
-              <div><strong>Dec 1960:</strong> National Liberation Front (Vietcong) founded to launch insurgency against Diem.</div>
-              <div><strong>1961–63:</strong> Kennedy expands military advisers to 16,000; backs Strategic Hamlets programme.</div>
-              <div><strong>May–Nov 1963:</strong> Buddhist Crisis and self-immolations; Diem overthrown and assassinated in coup.</div>
-              <div><strong>Aug 1964:</strong> Gulf of Tonkin Incident; Congress grants LBJ blank check war powers resolution.</div>
-              <div><strong>Feb 1965:</strong> Operation Rolling Thunder aerial bombing offensive against North Vietnam launched.</div>
-              <div><strong>Mar 1965:</strong> 3,500 US Marines land at Da Nang; launch of direct American ground combat role.</div>
-              <div><strong>1965–67:</strong> Search-and-destroy doctrine, defoliation with Agent Orange, Cu Chi tunnel combat.</div>
-              <div><strong>Jan 1968:</strong> Tet Offensive launched by VC/NVA; Walter Cronkite declares the war a military stalemate.</div>
-              <div><strong>Mar 1968:</strong> My Lai Massacre of over 500 civilians; LBJ announces he will not seek re-election.</div>
-              <div><strong>Jan 1969:</strong> Richard Nixon inaugurated; introduces "Vietnamization" and gradual troop withdrawals.</div>
-              <div><strong>Mar 1969:</strong> Operation Menu: secret B-52 carpet bombing of neutral Cambodia ordered by Nixon.</div>
-              <div><strong>Nov 1969:</strong> Nixon delivers "Silent Majority" address; 500,000 march in Washington Moratorium.</div>
-              <div><strong>May 1970:</strong> US invasion of Cambodia sparks nationwide student strikes; 4 killed at Kent State.</div>
-              <div><strong>Jan 1973:</strong> Paris Peace Accords signed; remaining US combat troops withdraw; 591 POWs returned.</div>
-              <div><strong>Nov 1973:</strong> War Powers Act passed over Nixon's veto, strictly curbing presidential war powers.</div>
-              <div><strong>Apr 1975:</strong> North Vietnamese Spring Offensive; Operation Frequent Wind airlift; Fall of Saigon.</div>
+            <div style="font-size: 6.8pt; line-height: 1.28; color: #1e293b; display: flex; flex-direction: column; gap: 4px;">
+              <div><strong>Jul 1964:</strong> LBJ signs historic Civil Rights Act banning segregation.</div>
+              <div><strong>Aug 1964:</strong> Gulf of Tonkin Incident; Congress passes Gulf of Tonkin Resolution.</div>
+              <div><strong>Feb 1965:</strong> Malcolm X assassinated in Harlem; Operation Rolling Thunder begins.</div>
+              <div><strong>Mar 1965:</strong> Selma to Montgomery marches; 3,500 US Marines land at Da Nang.</div>
+              <div><strong>Aug 1965:</strong> Voting Rights Act signed; Watts riots erupt in Los Angeles.</div>
+              <div><strong>Oct 1966:</strong> Black Panther Party founded by Huey Newton &amp; Bobby Seale.</div>
+              <div><strong>Jan 1968:</strong> Tet Offensive launched across South Vietnam; US credibility gap.</div>
+              <div><strong>Mar 1968:</strong> My Lai Massacre (347–504 killed); LBJ withdraws from re-election.</div>
+              <div><strong>Apr 1968:</strong> Martin Luther King Jr. assassinated in Memphis; nationwide riots.</div>
+              <div><strong>Oct 1968:</strong> Tommie Smith &amp; John Carlos Black Power salute at Mexico Olympics.</div>
             </div>
           </div>
+
+          <!-- Column 3: KT3 & KT4 End of War (1969–1975) -->
+          <div style="border: 1.5px solid #000; border-radius: 3px; padding: 6px 8px; background: #ffffff;">
+            <div style="font-size: 7.6pt; font-weight: 800; text-transform: uppercase; color: #000; border-bottom: 1.2px solid #000; padding-bottom: 2px; margin-bottom: 4px;">
+              Era 3: Radicalism, Disillusionment &amp; US Exit (1969–75)
+            </div>
+            <div style="font-size: 6.8pt; line-height: 1.28; color: #1e293b; display: flex; flex-direction: column; gap: 4px;">
+              <div><strong>Nov 1969:</strong> Nixon's 'Silent Majority' address; My Lai Massacre exposed in press.</div>
+              <div><strong>Apr 1970:</strong> US invasion of Cambodia sparks massive campus protests.</div>
+              <div><strong>May 1970:</strong> Kent State shootings (4 students killed); Hard Hat riot in NYC.</div>
+              <div><strong>Feb 1971:</strong> ARVN invasion of Laos (Operation Lam Son 719) fails disastrously.</div>
+              <div><strong>May 1972:</strong> Operation Linebacker mining and heavy bombing of North Vietnam.</div>
+              <div><strong>Dec 1972:</strong> 'Christmas Bombings' (Linebacker II) force Hanoi to negotiate.</div>
+              <div><strong>Jan 1973:</strong> Paris Peace Agreement signed; last US combat troops withdraw.</div>
+              <div><strong>Nov 1973:</strong> War Powers Act limits presidential power to wage undeclared war.</div>
+              <div><strong>Aug 1974:</strong> Nixon resigns following Watergate; Gerald Ford becomes president.</div>
+              <div><strong>Apr 1975:</strong> Fall of Saigon; North Vietnamese tanks crush presidential palace.</div>
+            </div>
+          </div>
+
         </div>
 
         <!-- Examiner Synoptic Takeaway Box -->
-        <div style="background: #f8fafc; border: 1.5px solid #000000; border-radius: 3px; padding: 5px 8px; font-size: 7.0pt; color: #000000; line-height: 1.25;">
-          <strong>Examiner Synoptic Takeaway:</strong> Notice how <strong>1964</strong> (Civil Rights Act + Tonkin Resolution), <strong>1965</strong> (Voting Rights Act + Combat Troop Deployment), and <strong>1968</strong> (Tet Offensive + King Assassination + Urban Riots) represent decisive pivot points where domestic civil unrest and foreign war collided to transform modern American politics.
+        <div style="border: 1.5px solid #000; border-radius: 3px; padding: 7px 10px; background: #fafafa;">
+          <div style="font-size: 7.4pt; font-weight: 800; text-transform: uppercase; color: #000; margin-bottom: 2px;">
+            Examiner Synoptic Takeaway: The Collision of Domestic Reform and Foreign Quagmire
+          </div>
+          <p style="margin: 0; font-size: 7.0pt; line-height: 1.30; color: #1e293b;">
+            Notice the profound historical interconnection across the 21-year period: (1) <strong>The Great Society Diverted:</strong> President Johnson’s ambition to eliminate poverty and racial injustice was starved of federal funding by the spiraling costs of the Vietnam War ($167 billion). (2) <strong>Disillusionment and Radicalisation:</strong> The slow pace of economic equality in northern ghettos, combined with the disproportionate drafting of working-class and Black soldiers in Vietnam, fractured the non-violent consensus of 1963 into Black Power militancy and anti-war student radicalism. (3) <strong>The Imperial Presidency Checked:</strong> The Gulf of Tonkin Resolution gave the White House unchecked war-making powers in 1964; by 1973, military defeat and public outrage forced Congress to pass the War Powers Act, fundamentally reasserting constitutional limits on executive power.
+          </p>
         </div>
+
       </div>
 
       <div class="page-footer">
-        <span>Pearson Edexcel GCSE (9–1) History &bull; Option 33: Conflict at Home and Abroad: the USA, 1954–75</span>
-        <span class="page-num">3</span>
+        <span>GCSE History Visual Revision Guide &bull; Option 33: The USA, 1954–75</span>
+        <span>Thematic Chronology &bull; Page 3</span>
       </div>
     </div>
   `;
 }
 
-// Left-Hand Spread Page (Knowledge & Archival Evidence)
-function renderSpreadLeft(spread, leftPageNum) {
+function renderSpreadLeft(spread, pageNum) {
   const left = spread.left;
 
   const pillarsHtml = left.pillars
     .map(
-      (p) => `
-    <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 5px 7px; background: #ffffff; display: flex; flex-direction: column; justify-content: flex-start; gap: 2px;">
-      <div style="border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
-        <div style="font-size: 7.8pt; font-weight: 800; color: #000000; line-height: 1.15;">${p.title}</div>
-        <div style="font-size: 6.6pt; color: #475569; font-style: italic; margin-bottom: 2px;">${p.subtitle}</div>
+      (pillar, idx) => `
+    <div style="border: 1.5px solid #000; border-radius: 3px; padding: 6px 9px; background: #fff;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
+        <strong style="font-size: 8.2pt; color: #000;">${idx + 1}. ${pillar.title}</strong>
+        <span style="font-size: 6.8pt; font-weight: 700; color: #475569; text-transform: uppercase;">${pillar.subtitle || ''}</span>
       </div>
-      <ul style="margin: 0; padding-left: 10px; font-size: 7.0pt; color: #000000; line-height: 1.22;">
-        ${p.bullets.map((b) => `<li style="margin-bottom: 2px;">${formatMd(b)}</li>`).join('')}
+      <ul style="margin: 0; padding-left: 14px; font-size: 7.5pt; color: #1e293b; line-height: 1.32;">
+        ${pillar.bullets.map((b) => `<li>${formatMd(b)}</li>`).join('')}
       </ul>
     </div>
   `,
@@ -573,274 +550,312 @@ function renderSpreadLeft(spread, leftPageNum) {
 
   const figuresHtml = (left.keyFigures || [])
     .map(
-      (f) => `
-    <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 3px 5px;">
-      <strong style="color: #000000; display: block; font-size: 7.2pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 1px;">${f.name}</strong>
-      <span style="font-size: 6.5pt; color: #1e293b; line-height: 1.15;">${f.role}</span>
+      (fig) => `
+    <div style="background: #f8fafc; border: 1.2px solid #000; border-radius: 3px; padding: 4px 6px;">
+      <strong style="font-size: 7.2pt; color: #000; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">${fig.name}</strong>
+      <div style="font-size: 6.6pt; color: #334155; line-height: 1.22;">${formatMd(fig.role)}</div>
     </div>
   `,
     )
     .join('');
 
-  return `
-    <div class="page" id="page_${leftPageNum}" data-page="${leftPageNum}">
-      <div class="page-header">
-        <div>
-          <span class="archival-tag">${spread.topic}</span>
-          <h2 class="page-title">${spread.title}</h2>
-        </div>
-        <div class="page-badge">Deep Knowledge Spread</div>
-      </div>
+  const milestonesHtml = (left.milestones || [])
+    .map(
+      (m) => `
+    <div><strong>${m.date}:</strong> ${m.event}</div>
+  `,
+    )
+    .join('');
 
-      <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; min-height: 0;">
-        <!-- Strategic Context Overview -->
-        <div style="background: #f8fafc; border: 1.5px solid #000000; border-left: 5px solid #000000; border-radius: 3px; padding: 5px 9px;">
-          <div style="font-size: 8.8pt; font-weight: 800; font-family: 'Playfair Display', serif; color: #000000; margin-bottom: 2px;">
-            ${left.headline}
+  return `
+    <div class="page" id="page_${pageNum}" data-page="${pageNum}">
+      <div>
+        <!-- Header -->
+        <div class="page-header">
+          <div>
+            <span style="font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000; letter-spacing: 0.5px;">
+              ${spread.topic}
+            </span>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 13.5pt; font-weight: 800; color: #000; margin: 2px 0 0 0; line-height: 1.15;">
+              ${spread.title}
+            </h2>
           </div>
-          <div style="font-size: 7.4pt; color: #1e293b; line-height: 1.25;">
+          <div style="text-align: right;">
+            <span style="font-size: 7.2pt; font-weight: 800; background: #000; color: #fff; padding: 2px 7px; border-radius: 2px; text-transform: uppercase;">
+              Knowledge Masterclass
+            </span>
+            <div style="font-size: 6.8pt; color: #475569; font-weight: 700; margin-top: 2px;">${left.sectionTag || 'Core Knowledge'}</div>
+          </div>
+        </div>
+
+        <!-- Strategic Context Card -->
+        <div style="background: #f8fafc; border: 1.5px solid #000; border-radius: 3px; padding: 7px 10px; margin-bottom: 7px;">
+          <div style="font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000; letter-spacing: 0.4px; margin-bottom: 2px;">
+            ${left.contextTitle || 'Strategic Context & Geopolitical Overview'}
+          </div>
+          <p style="margin: 0; font-size: 7.8pt; line-height: 1.34; color: #1e293b;">
             ${formatMd(left.summary)}
-          </div>
+          </p>
         </div>
 
         <!-- Three Core Historical Pillars -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; margin: 3px 0;">
+        <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 7px;">
           ${pillarsHtml}
         </div>
 
-        <!-- Key Figures & Organisations (4 Cards) -->
-        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 4px 7px; background: #ffffff;">
-          <div style="font-size: 8.2pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 4px; border-bottom: 1.2px solid #cbd5e1; padding-bottom: 2px; display: flex; justify-content: space-between;">
-            <span>Key Historical Figures &amp; Organisations</span>
-            <span style="font-size: 6.8pt; color: #475569;">Specification Protagonists</span>
+        <!-- Key Figures Cards -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 6px; margin-bottom: 7px;">
+          ${figuresHtml}
+        </div>
+
+        <!-- Chronological Milestone Anchor Strip -->
+        <div style="border: 1.5px solid #000; border-radius: 3px; padding: 5px 8px; background: #ffffff;">
+          <div style="font-size: 7.0pt; font-weight: 800; text-transform: uppercase; color: #000; letter-spacing: 0.4px; margin-bottom: 3px; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; display: flex; justify-content: space-between;">
+            <span>Chronological Milestone Anchor &bull; Key Turning Points</span>
+            <span style="color: #475569; font-weight: 600;">Paper 3 Core Specification</span>
           </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 6px;">
-            ${figuresHtml}
+          <div style="display: grid; grid-template-columns: repeat(${left.milestones.length}, 1fr); gap: 6px; font-size: 6.6pt; line-height: 1.25; color: #1e293b;">
+            ${milestonesHtml}
           </div>
         </div>
 
-        <!-- Archival Primary Evidence / Historical Source Box -->
-        <div style="background: #f8fafc; border: 1.5px solid #000000; border-radius: 3px; padding: 5px 9px; font-size: 7.2pt; line-height: 1.22; color: #000000;">
-          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px;">
-            <strong style="font-size: 7.8pt; text-transform: uppercase; color: #000000; letter-spacing: 0.3px;">PRIMARY ARCHIVAL EVIDENCE &bull; ${left.archivalSource.title}:</strong>
-            <span style="font-size: 7.0pt; font-weight: 700; color: #334155;">${left.archivalSource.citation}</span>
-          </div>
-          <p style="margin: 3px 0; font-style: italic; font-family: 'Playfair Display', serif; font-size: 7.4pt; color: #000000; line-height: 1.22;">
-            "${left.archivalSource.quote}"
-          </p>
-          <div style="margin-top: 1px; font-size: 6.6pt; color: #334155; line-height: 1.16;">
-            <strong>Historical Significance:</strong> ${left.archivalSource.significance}
-          </div>
-        </div>
       </div>
 
       <div class="page-footer">
-        <span>Pearson Edexcel GCSE (9–1) History &bull; Option 33: Conflict at Home and Abroad: the USA, 1954–75</span>
-        <span class="page-num">${leftPageNum}</span>
+        <span>GCSE History Visual Revision Guide &bull; Option 33: The USA, 1954–75</span>
+        <span>${spread.footerTag || spread.title} &bull; Page ${pageNum}</span>
       </div>
     </div>
   `;
 }
 
-// Right-Hand Spread Page (Analysis & Word Bank - ZERO blank lines)
-function renderSpreadRight(spread, rightPageNum) {
+function renderSpreadRight(spread, pageNum) {
   const right = spread.right;
+  const q = right.question;
 
-  const casesHtml = (right.deepCases || [])
+  const wordsHtml = right.wordBank
     .map(
-      (c) => `
-    <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff; display: flex; flex-direction: column; justify-content: flex-start; gap: 2px;">
-      <div style="font-size: 7.6pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 2px; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px;">
-        ${c.title}
-      </div>
-      <ul style="margin: 0; padding-left: 10px; font-size: 7.2pt; color: #000000; line-height: 1.22;">
-        ${c.points.map((p) => `<li style="margin-bottom: 2px;">${formatMd(p)}</li>`).join('')}
-      </ul>
-    </div>
+      (item) => `
+    <div><span class="wb-pill">${item.term}</span> ${formatMd(item.def)}</div>
   `,
     )
     .join('');
 
-  const pathwayHtml = (right.causalPathway || [])
+  const pathwayStepsHtml = right.causalPathway.steps
     .map(
-      (p) => `
-    <div style="background: #ffffff; border: 1px solid #000000; border-radius: 2px; padding: 3px 5px;">
-      <strong style="color: #000000; display: block; font-size: 7.2pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 1px;">${p.stage}</strong>
-      <span style="font-size: 6.6pt; color: #1e293b; line-height: 1.16;">${p.text}</span>
-    </div>
-  `,
-    )
-    .join('');
-
-  const wordBankHtml = (right.masterWordBank || [])
-    .map(
-      (w) => `
-    <div>
-      <span class="wb-pill">${w.term}</span>
-      <span style="font-size: 6.6pt; color: #1e293b; line-height: 1.16;">${w.def}</span>
+      (step) => `
+    <div style="background: #ffffff; border: 1.2px solid #000; border-radius: 3px; padding: 5px; font-size: 6.9pt; line-height: 1.25;">
+      <div style="font-weight: 800; color: #000; text-transform: uppercase; margin-bottom: 1px;">${step.stage}</div>
+      ${formatMd(step.desc)}
     </div>
   `,
     )
     .join('');
 
   return `
-    <div class="page" id="page_${rightPageNum}" data-page="${rightPageNum}">
-      <div class="page-header">
-        <div>
-          <span class="archival-tag">${spread.topic}</span>
-          <h2 class="page-title">${spread.title.split(': ')[1] || spread.title}: Analysis &amp; Word Bank</h2>
-        </div>
-        <div class="page-badge">Analysis &amp; Word Bank</div>
-      </div>
-
-      <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; min-height: 0;">
-        <!-- Four Deep-Knowledge Forensic Case Studies (2x2 Grid) -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin: 3px 0;">
-          ${casesHtml}
-        </div>
-
-        <!-- Visual Causal Pathway (4 Connected Stages) -->
-        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 4px 7px; background: #f8fafc; margin: 2px 0;">
-          <div style="font-size: 8.2pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 4px; border-bottom: 1.2px solid #cbd5e1; padding-bottom: 2px; display: flex; justify-content: space-between;">
-            <span>Visual Causal Pathway: Key Historical Mechanisms</span>
-            <span style="font-size: 6.8pt; color: #475569;">Cause &amp; Consequence Chain</span>
+    <div class="page" id="page_${pageNum}" data-page="${pageNum}">
+      <div>
+        <!-- Header -->
+        <div class="page-header">
+          <div>
+            <span style="font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000; letter-spacing: 0.5px;">
+              ${q.typeHeader || 'Exam Masterclass'}
+            </span>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 13.5pt; font-weight: 800; color: #000; margin: 2px 0 0 0; line-height: 1.15;">
+              ${q.title || 'Assessment Mastery & Examiner Benchmark'}
+            </h2>
           </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 6px;">
-            ${pathwayHtml}
+          <div style="text-align: right;">
+            <span style="font-size: 7.2pt; font-weight: 800; background: #000; color: #fff; padding: 2px 7px; border-radius: 2px; text-transform: uppercase;">
+              Exam Technique
+            </span>
+            <div style="font-size: 6.8pt; color: #475569; font-weight: 700; margin-top: 2px;">${q.marksTime || 'Paper 3 Specification'}</div>
           </div>
         </div>
 
-        <!-- Master GCSE Specification Word Bank Box (12 Terms) -->
-        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 4px 8px; background: #ffffff;">
-          <div style="font-size: 8.2pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 4px; border-bottom: 1.2px solid #cbd5e1; padding-bottom: 2px; display: flex; justify-content: space-between;">
-            <span>★ GCSE Specification Word Bank &amp; Essential Historical Concepts</span>
-            <span style="color: #475569; font-size: 6.8pt;">Must-Use Vocabulary</span>
+        <!-- Exam Masterclass Card with Model Answer -->
+        <div style="background: #ffffff; border: 1.5px solid #000; border-radius: 3px; padding: 7px 10px; margin-bottom: 7px;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px;">
+            <span style="font-size: 8.6pt; font-weight: 800; color: #000;">
+              Exam Task: ${q.stem}
+            </span>
+            <span style="font-size: 8.2pt; font-weight: 800; color: #000; white-space: nowrap;">[${q.marks} Marks]</span>
           </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; line-height: 1.24;">
-            ${wordBankHtml}
+          
+          <!-- Planning Guide / Structural Framework -->
+          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 2px; padding: 5px 8px; margin-bottom: 5px; font-size: 7.2pt; line-height: 1.30; color: #1e293b;">
+            <strong style="color: #000; text-transform: uppercase; font-size: 6.8pt; display: block; margin-bottom: 2px;">
+              ${q.planningGuideTitle || 'Examiner Planning & Structural Framework:'}
+            </strong>
+            ${q.planningGuide}
+          </div>
+
+          <!-- Annotated Benchmark Model Answer -->
+          <div style="background: #fafafa; border: 1.2px solid #000; border-radius: 3px; padding: 6px 9px; margin-bottom: 4px; font-size: 7.6pt; line-height: 1.34; color: #000;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 2px;">
+              <strong style="text-transform: uppercase; font-size: 7.0pt; color: #000;">★ Pearson Benchmark Model Answer (${q.levelTag || 'Full Marks'}):</strong>
+              <span style="font-size: 6.8pt; font-weight: 700; color: #000;">${q.scoreTag || 'Level Benchmark'}</span>
+            </div>
+            <p style="margin: 0; font-style: italic;">
+              "${q.modelAnswer}"
+            </p>
+          </div>
+
+          <div style="font-size: 6.8pt; color: #334155; line-height: 1.25;">
+            <strong>Examiner Assessment Commentary:</strong> ${formatMd(q.examinerNote)}
           </div>
         </div>
+
+        <!-- Visual Causal Pathway -->
+        <div style="border: 1.5px solid #000; border-radius: 3px; padding: 6px 9px; background: #fafafa; margin-bottom: 7px;">
+          <div style="font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000; letter-spacing: 0.4px; margin-bottom: 4px; text-align: center; border-bottom: 1px solid #000; padding-bottom: 2px;">
+            ${right.causalPathway.title}
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(${right.causalPathway.steps.length}, 1fr); gap: 6px;">
+            ${pathwayStepsHtml}
+          </div>
+        </div>
+
+        <!-- Master GCSE Word Bank (12 Tagged Terms) -->
+        <div style="border: 1.5px solid #000; border-radius: 3px; padding: 6px 9px; background: #ffffff; margin-bottom: 6px;">
+          <div style="font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000; letter-spacing: 0.4px; margin-bottom: 4px; border-bottom: 1px solid #000; padding-bottom: 2px; display: flex; justify-content: space-between;">
+            <span>Master GCSE Specification Word Bank &bull; Essential Technical Vocabulary</span>
+            <span style="font-weight: 700; color: #475569;">12 Key Terms</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 10px; font-size: 6.9pt; line-height: 1.25; color: #1e293b;">
+            ${wordsHtml}
+          </div>
+        </div>
+
+        <!-- Examiner Common Pitfall Warning -->
+        <div style="background: #f8fafc; border: 1.2px solid #000; border-radius: 3px; padding: 4px 8px; font-size: 6.8pt; line-height: 1.25; color: #000;">
+          <strong>⚠️ Examiner Warning (${q.pitfallCategory || 'Exam Technique Pitfalls'}):</strong> ${formatMd(q.pitfall)}
+        </div>
+
       </div>
 
       <div class="page-footer">
-        <span>Pearson Edexcel GCSE (9–1) History &bull; Option 33: Conflict at Home and Abroad: the USA, 1954–75</span>
-        <span class="page-num">${rightPageNum}</span>
+        <span>GCSE History Visual Revision Guide &bull; Option 33: The USA, 1954–75</span>
+        <span>Assessment Mastery &bull; Page ${pageNum}</span>
       </div>
     </div>
   `;
 }
 
-// Page 36: Back Cover (Master Paper 3 Section B Historiography Guide)
 function renderPage36() {
   return `
     <div class="page" id="page_36" data-page="36">
-      <div class="page-header">
-        <div>
-          <span class="archival-tag">Historiography &bull; Academic Interpretations</span>
-          <h2 class="page-title">Historical Interpretations Guide: Competing Schools of Historiography</h2>
-        </div>
-        <div class="page-badge">Paper 3 Section B Mastery &bull; Q3(d) [16+4 Marks]</div>
-      </div>
-
-      <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; min-height: 0;">
-        <!-- Top Banner -->
-        <div style="background: #f8fafc; border: 1.5px solid #000000; border-left: 5px solid #000000; border-radius: 3px; padding: 5px 9px; font-size: 7.2pt; color: #1e293b; line-height: 1.26;">
-          <strong>Why Historiography Matters:</strong> In Question 3(d) [16m + 4 SPaG], Level 4 marks require students to demonstrate sophisticated awareness of why historians reach contrasting conclusions. Use this guide to cite academic perspectives and understand the ideological foundations behind differing interpretations.
-        </div>
-
-        <!-- Section 1: Civil Rights Historiographical Schools -->
-        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff;">
-          <div style="font-size: 8.0pt; font-weight: 900; text-transform: uppercase; border-bottom: 1.2px solid #000000; padding-bottom: 2px; margin-bottom: 4px; display: flex; justify-content: space-between;">
-            <span>1. The Civil Rights Historiographical Debate</span>
-            <span style="font-size: 6.8pt; color: #475569;">Key Topics 1 &amp; 2</span>
+      <div>
+        <div class="page-header">
+          <div>
+            <span style="font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000; letter-spacing: 0.5px;">
+              Historiographical Perspectives &bull; Paper 3 Master Review
+            </span>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 14pt; font-weight: 800; color: #000; margin: 2px 0 0 0;">
+              Master Historiographical Perspectives &amp; Grade 9 Synoptic Review
+            </h2>
           </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; font-size: 6.8pt; line-height: 1.24; color: #1e293b;">
-            <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 4px 6px;">
-              <strong style="display: block; font-size: 7.2pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">Orthodox / Classical School</strong>
-              <strong>Core Argument:</strong> Focuses on charismatic leadership (Dr. Martin Luther King Jr., SCLC), Christian non-violent moral crusade, and national legislative milestones (1964 Civil Rights Act, 1965 Voting Rights Act).<br/>
-              <em>Key Proponents:</em> David Garrow, Taylor Branch.
-            </div>
-            <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 4px 6px;">
-              <strong style="display: block; font-size: 7.2pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">Revisionist / Grassroots School</strong>
-              <strong>Core Argument:</strong> Emphasises bottom-up local activism over elite leaders. Focuses on local women organisers (Jo Ann Robinson, Ella Baker, Fannie Lou Hamer), student militants (SNCC), and everyday voter registration in Mississippi.<br/>
-              <em>Key Proponents:</em> Clayborne Carson, Danielle L. McGuire.
-            </div>
-            <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 4px 6px;">
-              <strong style="display: block; font-size: 7.2pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">Post-Revisionist / Black Power</strong>
-              <strong>Core Argument:</strong> Challenges the neat division between non-violence and militancy. Argues armed self-defense (Robert F. Williams) always coexisted with peaceful marches, and northern economic racism demanded radical nationalism.<br/>
-              <em>Key Proponents:</em> Peniel Joseph, Hasan Kwame Jeffries.
-            </div>
+          <div style="font-size: 7.6pt; font-weight: 800; background: #000; color: #fff; padding: 2px 8px; border-radius: 2px; text-transform: uppercase;">
+            Historiography &bull; Page 36
           </div>
         </div>
 
-        <!-- Section 2: Vietnam War Historiographical Schools -->
-        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff;">
-          <div style="font-size: 8.0pt; font-weight: 900; text-transform: uppercase; border-bottom: 1.2px solid #000000; padding-bottom: 2px; margin-bottom: 4px; display: flex; justify-content: space-between;">
-            <span>2. The Vietnam War Historiographical Debate</span>
-            <span style="font-size: 6.8pt; color: #475569;">Key Topics 3 &amp; 4</span>
+        <!-- 1. Civil Rights Movement Debates -->
+        <div style="border: 1.5px solid #000; border-radius: 3px; padding: 7px 10px; background: #ffffff; margin-bottom: 7px;">
+          <div style="font-size: 7.8pt; font-weight: 800; text-transform: uppercase; color: #000; margin-bottom: 4px; border-bottom: 1.2px solid #000; padding-bottom: 2px;">
+            1. Civil Rights Movement Historiography: Competing Academic Interpretations
           </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; font-size: 6.8pt; line-height: 1.24; color: #1e293b;">
-            <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 4px 6px;">
-              <strong style="display: block; font-size: 7.2pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">Orthodox / Quagmire School</strong>
-              <strong>Core Argument:</strong> The war was an unwinnable tragedy from the outset. American policymakers fundamentally misunderstood Vietnamese anti-colonial nationalism, backed corrupt, illegitimate Saigon regimes, and relied on futile firepower.<br/>
-              <em>Key Proponents:</em> David Halberstam, Stanley Karnow, Christian Appy.
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; font-size: 6.9pt; line-height: 1.26; color: #1e293b;">
+            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 5px 7px;">
+              <strong style="color: #000; font-size: 7.2pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
+                Traditional / King-Centric
+              </div>
+              <div>&bull; <strong>Core Thesis:</strong> Focuses on charismatic leadership of Martin Luther King Jr., moral non-violence, and federal executive partnership (JFK/LBJ).</div>
+              <div>&bull; <strong>Turning Point:</strong> March on Washington (1963) and Selma (1965) forcing Congress to pass landmark civil rights legislation.</div>
+              <div>&bull; <strong>Key Historians:</strong> David Garrow, Taylor Branch.</div>
             </div>
-            <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 4px 6px;">
-              <strong style="display: block; font-size: 7.2pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">Revisionist / 'Noble Cause' School</strong>
-              <strong>Core Argument:</strong> The war was a morally justified defense of South Vietnamese freedom against aggressive Soviet/Chinese communist expansion. Argues the military won on the battlefield (e.g. defeating Tet) but was betrayed by media defeatism and political micro-management.<br/>
-              <em>Key Proponents:</em> Guenter Lewy, Mark Moyar, Harry Summers.
+            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 5px 7px;">
+              <strong style="color: #000; font-size: 7.2pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
+                Revisionist / Grassroots Movement
+              </div>
+              <div>&bull; <strong>Core Thesis:</strong> Emphasises bottom-up local organizing by women, students, and local Black communities (Ella Baker, Fannie Lou Hamer, Jo Ann Robinson).</div>
+              <div>&bull; <strong>Turning Point:</strong> Montgomery Women's Council, Greensboro sit-ins, and Mississippi Freedom Summer driving momentum before King arrived.</div>
+              <div>&bull; <strong>Key Historians:</strong> Clayborne Carson, Charles Payne.</div>
             </div>
-            <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 4px 6px;">
-              <strong style="display: block; font-size: 7.2pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">Post-Revisionist / Internationalist</strong>
-              <strong>Core Argument:</strong> Synthesises multi-archival international perspectives (Hanoi, Beijing, Moscow). Demonstrates that North Vietnam was determined to achieve unification regardless of casualties, while Washington was constrained by fear of Chinese intervention.<br/>
-              <em>Key Proponents:</em> Lien-Hang Nguyen, Fredrik Logevall.
+            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 5px 7px;">
+              <strong style="color: #000; font-size: 7.2pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
+                Black Power / Armed Self-Defense
+              </div>
+              <div>&bull; <strong>Core Thesis:</strong> Non-violence was effective only because the armed alternative (Malcolm X, Robert F. Williams, Black Panthers) threatened white authority.</div>
+              <div>&bull; <strong>Turning Point:</strong> Watts riots (1965) and Black Panther community survival programs exposing northern economic apartheid.</div>
+              <div>&bull; <strong>Key Historians:</strong> Peniel Joseph, Timothy Tyson.</div>
             </div>
           </div>
         </div>
 
-        <!-- Section 3: Master Assessment Criteria Framework for Q3(d) -->
-        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff;">
-          <div style="font-size: 8.0pt; font-weight: 900; text-transform: uppercase; border-bottom: 1.2px solid #000000; padding-bottom: 2px; margin-bottom: 4px; display: flex; justify-content: space-between;">
-            <span>3. Master 4-Step Evaluation Architecture for Question 3(d) [16+4 Marks]</span>
-            <span style="font-size: 6.8pt; color: #475569;">Level 4 Examiner Formula</span>
+        <!-- 2. Vietnam War Historiography Debates -->
+        <div style="border: 1.5px solid #000; border-radius: 3px; padding: 7px 10px; background: #ffffff; margin-bottom: 7px;">
+          <div style="font-size: 7.8pt; font-weight: 800; text-transform: uppercase; color: #000; margin-bottom: 4px; border-bottom: 1.2px solid #000; padding-bottom: 2px;">
+            2. Vietnam War Historiography: Why Did the United States Fail?
           </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 6px; font-size: 6.7pt; line-height: 1.22; color: #1e293b;">
-            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 2px; padding: 4px 6px;">
-              <strong style="display: block; font-size: 7.2pt; color: #000000; margin-bottom: 2px;">Step 1: Identify Perspectives</strong>
-              State the exact thesis of Interpretation 1 and Interpretation 2 with direct supporting quotes. Clarify the core conceptual disagreement.
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; font-size: 6.9pt; line-height: 1.26; color: #1e293b;">
+            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 5px 7px;">
+              <strong style="color: #000; font-size: 7.2pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
+                Orthodox / 'Quagmire' School
+              </div>
+              <div>&bull; <strong>Core Thesis:</strong> The war was an unwinnable error from the outset. US policymakers misunderstood Vietnamese nationalism as monolithic communism.</div>
+              <div>&bull; <strong>Failure Cause:</strong> Backing corrupt, illegitimate Saigon regimes and using futile conventional firepower against a resilient peasant guerrilla movement.</div>
+              <div>&bull; <strong>Key Historians:</strong> David Halberstam, Stanley Karnow.</div>
             </div>
-            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 2px; padding: 4px 6px;">
-              <strong style="display: block; font-size: 7.2pt; color: #000000; margin-bottom: 2px;">Step 2: Source Corroboration</strong>
-              Explicitly cross-reference both interpretations against <strong>Source B</strong> and <strong>Source C</strong> to test whether contemporary evidence supports their arguments.
+            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 5px 7px;">
+              <strong style="color: #000; font-size: 7.2pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
+                Revisionist / 'Noble Cause' School
+              </div>
+              <div>&bull; <strong>Core Thesis:</strong> The war was a morally justified defense of South Vietnam against aggressive Soviet and Chinese expansion.</div>
+              <div>&bull; <strong>Failure Cause:</strong> The US military was undefeated in major battles (e.g. crushed Tet), but was betrayed by political micromanagement and media defeatism.</div>
+              <div>&bull; <strong>Key Historians:</strong> Guenter Lewy, Harry Summers.</div>
             </div>
-            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 2px; padding: 4px 6px;">
-              <strong style="display: block; font-size: 7.2pt; color: #000000; margin-bottom: 2px;">Step 3: Deploy Own Knowledge</strong>
-              Introduce precise, contextual factual evidence (specific statistics, dates, casualty figures, legislation) that goes beyond the stimulus texts.
-            </div>
-            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 2px; padding: 4px 6px;">
-              <strong style="display: block; font-size: 7.2pt; color: #000000; margin-bottom: 2px;">Step 4: Criteria Judgement</strong>
-              Reach a sustained, definitive conclusion explaining why one interpretation is historically superior using explicit criteria (e.g. short-term vs long-term impact).
+            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 5px 7px;">
+              <strong style="color: #000; font-size: 7.2pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
+                Post-Revisionist / Internationalist
+              </div>
+              <div>&bull; <strong>Core Thesis:</strong> Synthesises archival records from Hanoi, Moscow, and Beijing showing that North Vietnam was determined to reunify regardless of cost.</div>
+              <div>&bull; <strong>Failure Cause:</strong> Washington was boxed in: unable to invade North Vietnam due to fear of Chinese/Soviet nuclear escalation, yet unable to stabilise the South.</div>
+              <div>&bull; <strong>Key Historians:</strong> Fredrik Logevall, Lien-Hang Nguyen.</div>
             </div>
           </div>
         </div>
 
-        <!-- Institutional Sign-off -->
-        <div style="background: #000000; color: #ffffff; padding: 4px 10px; border-radius: 2px; display: flex; justify-content: space-between; align-items: center; font-size: 6.8pt; font-weight: 700;">
-          <span>Meoncross History Department &bull; GCSE Masterclass Series</span>
-          <span>Pearson Edexcel GCSE History (9–1) &bull; Paper 3 Option 33 Complete</span>
+        <!-- 3. Grade 9 Final Pre-Exam Checklist -->
+        <div style="border: 1.5px solid #000; border-radius: 3px; padding: 7px 10px; background: #fafafa;">
+          <div style="font-size: 7.6pt; font-weight: 800; text-transform: uppercase; color: #000; margin-bottom: 3px; border-bottom: 1px solid #000; padding-bottom: 2px;">
+            Grade 9 Final Pre-Exam Checklist: Can You Execute These Paper 3 Skills?
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 6.9pt; line-height: 1.26; color: #1e293b;">
+            <div>
+              <div>&bull; <strong>Q1 Inference (4m):</strong> Can you give 2 inferences + 2 direct quotes in under 6 minutes without analyzing provenance?</div>
+              <div>&bull; <strong>Q2 Causation (12m):</strong> Can you write 3 P-E-E paragraphs with at least one piece of own knowledge beyond the stimulus?</div>
+              <div>&bull; <strong>Q3(a) Utility (8m):</strong> Can you evaluate Content, Provenance (NOP), and Context for both Source B and Source C?</div>
+            </div>
+            <div>
+              <div>&bull; <strong>Q3(b) &amp; Q3(c) Views (8m):</strong> Can you clearly state the difference in view and explain why (matching to sources/emphasis)?</div>
+              <div>&bull; <strong>Q3(d) Evaluative Essay (16+4m):</strong> Can you evaluate both interpretations and substantiate a criteria-led final verdict?</div>
+              <div>&bull; <strong>Key Dates:</strong> 1954 Brown, 1957 Little Rock, 1963 Birmingham, 1964 Tonkin/CRA, 1968 Tet, 1970 Kent State, 1973 Paris.</div>
+            </div>
+          </div>
         </div>
+
       </div>
 
       <div class="page-footer">
-        <span>Pearson Edexcel GCSE (9–1) History &bull; Option 33: Conflict at Home and Abroad: the USA, 1954–75</span>
-        <span class="page-num">36</span>
+        <span>GCSE History Visual Revision Guide &bull; Option 33: The USA, 1954–75</span>
+        <span>Historiography &bull; Page 36</span>
       </div>
     </div>
   `;
 }
 
 module.exports = {
-  formatMd,
   getStyles,
   renderPage1,
   renderPage2,
@@ -848,4 +863,5 @@ module.exports = {
   renderSpreadLeft,
   renderSpreadRight,
   renderPage36,
+  formatMd,
 };

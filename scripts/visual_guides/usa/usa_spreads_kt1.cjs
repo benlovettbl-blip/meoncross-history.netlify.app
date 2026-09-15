@@ -1,714 +1,695 @@
+/**
+ * usa_spreads_kt1.cjs
+ *
+ * Spreads 1 to 4 for Key Topic 1: The Development of the Civil Rights Movement, 1954–60
+ * Grounded in Hodder GCSE History for Edexcel (Steve Waugh & John Wright, pp. 7–27)
+ *
+ * Enforces the Paper 3 4-4-4-4 Question Matrix:
+ * - Spread 1 (KT 1.1): inference_causation (Section A: Q1 Inference [4m] + Q2 Explain Why [12m])
+ * - Spread 2 (KT 1.2): source_utility (Section B: Q3(a) Utility of Sources B and C [8m])
+ * - Spread 3 (KT 1.3): interpretation_diff_why (Section B: Q3(b) Views Diff [4m] + Q3(c) Reasons [4m])
+ * - Spread 4 (KT 1.4): interpretation_eval (Section B: Q3(d) Evaluative Essay [16+4m])
+ */
+
 module.exports = [
-  // Spread 1: KT 1.1
+  // =========================================================================
+  // SPREAD 1: KT 1.1 — THE POSITION OF BLACK AMERICANS IN THE EARLY 1950s
+  // Exam Format: inference_causation (Section A: Q1 [4m] + Q2 [12m])
+  // =========================================================================
   {
     id: 'lesson_1_1',
     topic: 'Key Topic 1: Civil Rights Movement, 1954–60',
-    title: 'KT 1.1: What was the position of Black Americans in the early 1950s?',
+    title: 'KT 1.1: The Position of Black Americans in the Early 1950s',
+    footerTag: 'KT 1.1: Position of Black Americans in early 1950s',
     left: {
-      headline: 'The Realities of Jim Crow: Segregation, Disenfranchisement & Racial Terror',
+      sectionTag: 'Jim Crow South',
+      contextTitle: 'Strategic Context & Geopolitical Overview',
       summary:
-        'In the early 1950s, Black Americans in the American South lived under a comprehensive system of state-sponsored racial apartheid known as Jim Crow. Legitimised by the 1896 Plessy v. Ferguson ruling, enforced by white supremacist terror, and sustained through total political disenfranchisement, Black citizens were denied basic constitutional protections guaranteed by the 14th and 15th Amendments.',
+        'In the early 1950s, Black Americans in the Southern states lived under state-mandated racial apartheid known as Jim Crow. Legitimised by the 1896 Plessy v. Ferguson Supreme Court ruling ("separate but equal"), sustained through near-total voter disenfranchisement, and enforced by white vigilante terror, Black citizens were systematically denied the constitutional protections of the 14th and 15th Amendments.',
       pillars: [
         {
-          title: 'De Jure Segregation',
-          subtitle: 'Legal Apartheid in the South',
+          title: 'De Jure Segregation in the South',
+          subtitle: 'State-Sanctioned Apartheid',
           bullets: [
-            '**Plessy v. Ferguson (1896)** established the legal doctrine of "separate but equal", sanctioning state segregation laws.',
-            'Everyday southern life was strictly partitioned: schools, public transport, waiting rooms, water fountains, and cemeteries.',
-            'Facilities for Black citizens were chronically underfunded, dilapidated, and deliberately kept inferior to white services.',
-            'Social etiquette demanded deference: Black citizens yielded sidewalks, used back doors, and faced violence for stepping out of line.',
+            '**Plessy v. Ferguson (1896)** established the legal fiction of "separate but equal", allowing 17 Southern states to mandate racial segregation by law.',
+            'Everyday public life was partitioned: schools, buses, waiting rooms, restaurants, and water fountains for Black citizens were chronically dilapidated and underfunded.',
+            'Social etiquette enforced racial deference: Black Americans had to address whites as "Mr." or "Sir", yield sidewalks, and sit strictly in the back of public buses.',
           ],
         },
         {
-          title: 'Voter Disenfranchisement',
+          title: 'Systematic Disenfranchisement',
           subtitle: 'Denial of Democratic Rights',
           bullets: [
-            'The 15th Amendment was systematically nullified across the 11 former Confederate states through targeted legal barriers.',
-            '**Poll taxes** levied cumulative voting charges that poor Black sharecroppers earning pennies a day could never afford.',
-            '**Literacy tests** featured impossible, subjective questions graded entirely at the arbitrary whim of all-white registrars.',
-            'Only 3% of eligible Black adults in Mississippi and under 20% across the South were registered to vote in 1950.',
+            'Southern registrars nullified the **15th Amendment** using poll taxes, complex literacy tests, and grandfather clauses designed to exclude Black voters.',
+            'In 1950, only ~20% of eligible Black adults in the South were registered to vote, and under 5% in rural Mississippi counties.',
+            'White primaries and physical intimidation ensured only pro-segregation white politicians, judges, and law enforcement officials were ever elected.',
           ],
         },
         {
-          title: 'White Supremacist Violence',
-          subtitle: 'The Rule of Fear & Impunity',
+          title: 'Early Civil Rights Legal Resistance',
+          subtitle: 'The Work of NAACP & CORE',
           bullets: [
-            'The **Ku Klux Klan (KKK)** and white vigilantes operated as armed enforcement wings to terrify Black communities.',
-            'Between 1877 and 1950, over 4,000 documented racial terror lynchings occurred across the South with zero convictions.',
-            'Law enforcement officials, sheriffs, and judicial officers were frequently card-carrying members of white supremacist groups.',
-            'All-white juries ensured complete legal immunity: white assailants were routinely acquitted in minutes for murder.',
+            'The **NAACP** (founded 1909), led by lawyer Thurgood Marshall, pursued a meticulous judicial strategy challenging segregation in university law schools.',
+            'The **CORE** (Congress of Racial Equality, founded 1942 by James Farmer) pioneered non-violent direct action and sit-ins in northern public facilities.',
+            'President Harry S. Truman issued **Executive Order 9981 (1948)** desegregating the US Armed Forces, establishing the first federal breach in segregation.',
           ],
         },
       ],
       keyFigures: [
         {
           name: 'Thurgood Marshall',
-          role: 'Chief Legal Counsel for NAACP; masterminded the judicial strategy that systematically dismantled Jim Crow precedents.',
-        },
-        {
-          name: 'Walter White',
-          role: 'NAACP Executive Secretary (1931–55); led national federal anti-lynching campaigns and expanded southern membership.',
-        },
-        {
-          name: 'Harry S. Truman',
-          role: 'US President (1945–53); issued Executive Order 9981 desegregating the US Armed Forces and published "To Secure These Rights".',
+          role: 'Chief Legal Counsel for the NAACP; masterminded court challenges overturning segregated higher education in Sweatt v. Painter (1950).',
         },
         {
           name: 'James Farmer',
-          role: 'Civil rights pioneer and co-founder of CORE in 1942; introduced Gandhian non-violent direct action to challenge northern segregation.',
+          role: 'Co-founder of CORE (1942); pioneered non-violent direct action sit-ins inspired by Mahatma Gandhi’s philosophy of non-cooperation.',
+        },
+        {
+          name: 'Harry S. Truman',
+          role: '33rd US President; published "To Secure These Rights" (1947) and desegregated the US Armed Forces by Executive Order 9981 in 1948.',
+        },
+        {
+          name: 'Walter White',
+          role: 'NAACP Executive Secretary (1931–55); expanded southern branch membership and investigated lynchings to pressure federal authorities.',
         },
       ],
-      archivalSource: {
-        title: 'Segregation Notice at Jacksonville Terminal, Florida (1952)',
-        citation: 'State of Florida Railroad Commission • Public Notice (Record Group 21, NARA)',
-        quote:
-          'Separate waiting rooms, ticket windows, and sanitary drinking facilities shall be maintained for persons of the white race and persons of the colored race, as enacted under Section 350.21 of Florida Statutes. Failure to obey is a criminal misdemeanor.',
-        significance:
-          'Demonstrates how southern state statutory codes legally criminalised integrated public spaces, transforming racial discrimination into mandatory state law prior to civil rights legislation.',
-      },
+      milestones: [
+        { date: '1896', event: 'Plessy v Ferguson establishes "separate but equal"' },
+        { date: '1909', event: 'NAACP founded following Springfield race riots' },
+        { date: '1942', event: 'CORE founded in Chicago to pursue direct action' },
+        { date: '1948', event: 'Executive Order 9981 desegregates US military' },
+        { date: '1950', event: 'Sweatt v Painter outlaws Texas makeshift Black law school' },
+      ],
     },
     right: {
-      deepCases: [
-        {
-          title: '1. Constitutional Betrayal (14th & 15th Amendments)',
-          points: [
-            'The **14th Amendment (1868)** guaranteed equal protection of the laws, yet southern state courts ruled segregation was non-discriminatory.',
-            'The **15th Amendment (1870)** prohibited voting discrimination based on race, bypassed through color-blind statutory trickery.',
-            'Grandfather clauses exempted illiterate white voters if their ancestors voted before 1867, excluding all descendants of enslaved people.',
-            'White primaries excluded Black voters entirely, ensuring only pro-segregation white candidates could ever win political office.',
-          ],
-        },
-        {
-          title: '2. De Facto Northern Reality & Great Migration',
-          points: [
-            'Between 1910 and 1970, over 6 million Black Americans fled the South in the **Great Migration** to northern industrial cities.',
-            'Northern states had no legal Jim Crow laws, but enforced rigid **de facto segregation** through restrictive housing covenants.',
-            'Black migrants were confined to overcrowded urban ghettos (Harlem, Chicago South Side) with predatory rents and underfunded schools.',
-            'De-industrialisation and trade union discrimination blocked Black workers from skilled manufacturing jobs, entrenching poverty.',
-          ],
-        },
-        {
-          title: '3. Legal Resistance & The Rise of the NAACP',
-          points: [
-            'Founded in 1909 following the Springfield race riot, the **NAACP** pursued a focused constitutional litigation strategy.',
-            'Charles Hamilton Houston and Thurgood Marshall targeted graduate and professional schools first to establish legal equality.',
-            'In **Sweatt v. Painter (1950)**, the Supreme Court ruled a makeshift Black law school in Texas was inherently unequal to UT Law.',
-            'These university victories established the legal foundation and judicial arguments required to challenge school segregation in Brown.',
-          ],
-        },
-        {
-          title: '4. Everyday Humiliation & Economic Coercion',
-          points: [
-            'Black workers were predominantly trapped in agricultural sharecropping, domestic service, or low-wage seasonal labor.',
-            'Sharecroppers were bound to white landowners by perpetual manufactured debt, unable to leave without risking criminal arrest.',
-            'Black professionals (teachers, ministers, undertakers) were vulnerable to immediate dismissal if they engaged in civil rights activism.',
-            'Racial etiquette reinforced white supremacy daily: Black adults were addressed as "boy" or "girl", never "Mr." or "Mrs."',
-          ],
-        },
-      ],
-      causalPathway: [
-        {
-          stage: '1. 1896 Plessy Ruling',
-          text: 'Supreme Court establishes "separate but equal", legalising comprehensive state-mandated apartheid across the South.',
-        },
-        {
-          stage: '2. Disenfranchisement',
-          text: 'Poll taxes and literacy tests strip 80% of Black voting power, ensuring all judges, sheriffs, and politicians are white.',
-        },
-        {
-          stage: '3. Northern Migration',
-          text: 'Millions flee southern terror for northern cities, trading de jure apartheid for urban de facto ghettoization.',
-        },
-        {
-          stage: '4. Legal Mobilisation',
-          text: 'NAACP Legal Defense Fund systematically challenges segregation in higher education, preparing for the Brown lawsuit.',
-        },
-      ],
-      masterWordBank: [
+      question: {
+        typeHeader: 'Section A: Q1 Inference [4m] & Q2 Explain Why [12m]',
+        title: 'Jim Crow Segregation & KKK Impunity in the 1950s',
+        stem: 'Q1 (4m) Inference from Source A &bull; Q2 (12m) Explain why the Ku Klux Klan operated with impunity in the Southern states in the 1950s.',
+        marks: '4 + 12 = 16',
+        marksTime: '16 Marks &bull; ~24 Mins Total',
+        planningGuideTitle: 'Examiner Planning & Structural Framework:',
+        planningGuide:
+          '<strong>Q1 Formula:</strong> Inference 1 + Direct Quote from Source A; Inference 2 + Direct Quote. Zero provenance.<br/><strong>Q2 Formula (3 PEE Paragraphs):</strong> (1) Complicity of local law enforcement & all-white juries &rarr; (2) Political shielding by Dixiecrat politicians &rarr; (3) Economic intimidation of sharecroppers preventing legal complaints.',
+        modelAnswer:
+          '<strong>Q1 (Inference):</strong> One inference from Source A is that segregation was enforced with criminal penalties. The source states "failure to obey is a criminal misdemeanor", showing racial separation was state law, not personal choice. A second inference is that public transport facilities were strictly divided by race. The source states "separate waiting rooms, ticket windows, and sanitary drinking facilities shall be maintained", proving public spaces were physically partitioned.<br/><br/><strong>Q2 (Explain Why):</strong> One reason the KKK operated with impunity was the direct complicity of local southern law enforcement and all-white juries. Police officers, sheriffs, and court officials were frequently active Klan members. Consequently, when racially motivated beatings or murders occurred, local sheriffs refused to gather evidence. Furthermore, state laws excluded non-voters from jury duty, ensuring juries were 100% white. These all-white juries routinely acquitted white assailants within minutes, guaranteeing total legal immunity.<br/><br/>A second reason was the political protection provided by Southern Democrats ("Dixiecrats"). Southern politicians held senior chairmanships in Congress and filibustered every federal anti-lynching bill introduced in Washington. Knowing the federal government was reluctant to intervene in "states\' rights", Klan members operated without fear of federal prosecution.',
+        examinerNote:
+          'Full marks. Q1 gives two distinct, valid inferences with verbatim supporting evidence. Q2 provides two fully developed, multi-layered causal paragraphs with precise terminology (Dixiecrats, 100% white juries, filibuster).',
+        pitfallCategory: 'Inference & Multi-Causal Pitfalls',
+        pitfall:
+          'In Q1, never evaluate source reliability; simply infer what the text reveals. In Q2, avoid simple storytelling: you must explain HOW each factor caused Klan impunity.',
+      },
+      causalPathway: {
+        title: 'Visual Causal Pathway: The Architecture of Southern Disenfranchisement',
+        steps: [
+          {
+            stage: '1. Plessy Doctrine (1896)',
+            desc: 'Supreme Court establishes "separate but equal", legalising state segregation codes.',
+          },
+          {
+            stage: '2. Voting Roadblocks',
+            desc: 'Poll taxes & impossible literacy tests strip 80% of Black citizens of voter registration.',
+          },
+          {
+            stage: '3. Judicial Complicity',
+            desc: 'Non-voters excluded from juries; all-white courts ensure zero convictions for racial violence.',
+          },
+          {
+            stage: '4. NAACP Legal Action',
+            desc: 'NAACP challenges unequal graduate schools, paving the way for Brown v. Board of Education.',
+          },
+        ],
+      },
+      wordBank: [
         {
           term: 'De Jure Segregation',
-          def: 'Racial separation enforced by compulsory state and local laws.',
+          def: 'Racial separation enforced by compulsory state and local statutes.',
         },
         {
           term: 'De Facto Segregation',
-          def: 'Racial separation sustained by social custom and housing patterns.',
+          def: 'Racial separation sustained by social custom and housing patterns in northern cities.',
         },
         {
           term: 'Jim Crow Laws',
           def: 'State statutes in the South enforcing racial segregation from 1877 to 1965.',
         },
         {
-          term: 'Plessy v. Ferguson (1896)',
-          def: 'Supreme Court ruling establishing the doctrine of "separate but equal".',
+          term: 'Plessy v. Ferguson',
+          def: '1896 Supreme Court ruling establishing the doctrine of "separate but equal".',
         },
         {
           term: 'Disenfranchisement',
-          def: 'The systematic deprivation of a citizen’s constitutional right to vote.',
+          def: 'The systematic deprivation of a person or group of the right to vote.',
         },
         {
           term: 'Poll Tax',
-          def: 'A fee charged to voters before casting a ballot, designed to exclude poor Black citizens.',
+          def: 'A fee levied on voters as a prerequisite for casting ballots, designed to stop poor Black voting.',
         },
         {
           term: 'Literacy Test',
-          def: 'Biased reading/civics exams administered arbitrarily to deny Black voter registration.',
+          def: 'Arbitrary, impossible reading exams administered by white registrars to disqualify Black voters.',
         },
         {
-          term: 'Grandfather Clause',
-          def: 'Statute exempting voters whose grandfathers voted before 1867, favoring poor whites.',
+          term: 'White Primary',
+          def: 'Primary elections in Southern states in which only white voters were permitted to participate.',
         },
         {
-          term: 'NAACP (1909)',
-          def: 'National Association for the Advancement of Colored People; focused on legal action.',
+          term: 'NAACP',
+          def: 'National Association for the Advancement of Colored People; focused on constitutional litigation.',
         },
         {
-          term: 'CORE (1942)',
-          def: 'Congress of Racial Equality; pioneered non-violent direct action protests.',
+          term: 'CORE',
+          def: 'Congress of Racial Equality; founded in 1942 to pioneer non-violent direct action.',
         },
         {
-          term: '14th Amendment (1868)',
-          def: 'Guaranteed citizenship, due process, and equal protection under the law.',
+          term: 'Executive Order 9981',
+          def: 'President Truman’s 1948 executive order banning racial discrimination in the US military.',
         },
         {
-          term: 'Great Migration',
-          def: 'Relocation of 6 million Black Americans from the South to northern/western cities.',
+          term: 'Sweatt v. Painter',
+          def: '1950 Supreme Court decision ruling a segregated Black law school in Texas was inherently unequal.',
         },
       ],
     },
   },
 
-  // Spread 2: KT 1.2
+  // =========================================================================
+  // SPREAD 2: KT 1.2 — DEVELOPMENTS IN EDUCATION: BROWN (1954) & LITTLE ROCK (1957)
+  // Exam Format: source_utility (Section B: Q3(a) [8m])
+  // =========================================================================
   {
     id: 'lesson_1_2',
     topic: 'Key Topic 1: Civil Rights Movement, 1954–60',
-    title: 'KT 1.2: How did developments in education challenge segregation (1954–57)?',
+    title: 'KT 1.2: Developments in Education: Brown v. Topeka & Little Rock',
+    footerTag: 'KT 1.2: Education: Brown v. Topeka & Little Rock',
     left: {
-      headline: 'Brown v. Topeka & Little Rock: Judicial Triumph vs Southern Nullification',
+      sectionTag: 'School Desegregation',
+      contextTitle: 'Strategic Context & Geopolitical Overview',
       summary:
-        'The legal assault on school segregation culminated in the landmark 1954 Brown v. Board of Education ruling, where Chief Justice Earl Warren declared segregated education inherently unequal. However, the ruling met fierce Southern "Massive Resistance", forcing President Eisenhower to deploy federal troops to Little Rock Central High School in 1957 to uphold the supremacy of the US Constitution.',
+        'In May 1954, the Supreme Court ruled in Brown v. Topeka that segregated schools were inherently unequal, striking down the 1896 Plessy precedent. However, deep Southern states mounted fierce "Massive Resistance". When nine Black students attempted to desegregate Little Rock Central High School in 1957, Governor Orval Faubus used armed National Guardsmen to block them, forcing President Eisenhower to send federal troops to uphold the law.',
       pillars: [
         {
           title: 'Brown v. Board of Education (1954)',
-          subtitle: 'The Death of "Separate but Equal"',
+          subtitle: 'The Constitutional Breakthrough',
           bullets: [
-            'NAACP brought 5 consolidated class-action lawsuits challenging racial segregation in elementary public schools.',
-            '**Chief Justice Earl Warren** forged a historic, unanimous 9–0 decision to present an unshakeable judicial front.',
-            'Warren declared: *"In the field of public education, the doctrine of \'separate but equal\' has no place. Separate educational facilities are inherently unequal."*',
-            'The court relied on psychological evidence by Kenneth and Mamie Clark proving segregation inflicted deep feelings of inferiority.',
+            'Oliver Brown sued the Topeka Board of Education after his 7-year-old daughter Linda had to walk across dangerous rail yards to an all-Black school.',
+            'NAACP counsel Thurgood Marshall argued that state segregation generated a psychological feeling of inferiority that violated the 14th Amendment.',
+            'Chief Justice **Earl Warren** led a unanimous (9–0) ruling declaring that "separate educational facilities are inherently unequal", overturning Plessy.',
           ],
         },
         {
-          title: 'The Loophole of Brown II (1955)',
-          subtitle: 'Southern Massive Resistance',
+          title: 'Massive Resistance & Brown II (1955)',
+          subtitle: 'Southern Obstruction & Evasion',
           bullets: [
-            'Brown I established the principle of desegregation but gave zero timeline, leaving implementation to local federal courts.',
-            '**Brown II (May 1955)** ordered schools to integrate *"with all deliberate speed"*, providing an immediate loophole for delay.',
-            'Deep South states interpreted "deliberate speed" as indefinite delay; zero Black children attended white schools in 5 states by 1956.',
-            '101 Southern congressmen signed the **Southern Manifesto (1956)** pledging resistance to federal judicial tyranny.',
+            'In **Brown II (1955)**, the Court ordered desegregation "with all deliberate speed", an ambiguous phrase Southern states used to delay integration for years.',
+            'In March 1956, 101 Southern congressmen signed the **Southern Manifesto**, pledging to use "all lawful means" to preserve segregation.',
+            'By 1957, zero Black children attended integrated schools in six Southern states (Alabama, Florida, Georgia, Louisiana, Mississippi, South Carolina).',
           ],
         },
         {
-          title: 'Little Rock Central High (1957)',
-          subtitle: 'Constitutional Showdown in Arkansas',
+          title: 'Little Rock Central High School (1957)',
+          subtitle: 'Federal Force vs State Defiance',
           bullets: [
-            'School board planned token integration of 9 vetted Black students (**The Little Rock Nine**) at Central High in September 1957.',
-            'Governor **Orval Faubus** deployed the Arkansas National Guard to surround the school and physically block the students from entering.',
-            '15-year-old **Elizabeth Eckford** walked alone through an enraged white mob screaming lynch threats, captured by global media.',
-            'President Eisenhower issued **Executive Order 10730**, federalising the National Guard and dispatching 1,000 troops of the 101st Airborne.',
+            'In September 1957, nine Black students ("**Little Rock Nine**") attempted to enter Central High; Governor **Orval Faubus** deployed National Guard troops to block them.',
+            '15-year-old **Elizabeth Eckford** walked alone through a screaming white mob threatening to lynch her before a white bystander helped her onto a bus.',
+            'Faced with state defiance, **President Eisenhower** federalised the Arkansas National Guard and dispatched 1,000 troops of the **101st Airborne Division** to protect the students.',
           ],
         },
       ],
       keyFigures: [
         {
-          name: 'Chief Justice Earl Warren',
-          role: 'Appointed 1953; forged the unanimous 9–0 Brown decision declaring racial segregation inherently unequal.',
+          name: 'Linda Brown',
+          role: 'Third-grade student in Topeka, Kansas, whose father Oliver Brown challenged school segregation with the NAACP, leading to the landmark 1954 ruling.',
         },
         {
-          name: 'Oliver Brown',
-          role: 'Welder and pastor in Topeka, Kansas, whose 7-year-old daughter Linda was lead plaintiff in the landmark NAACP case.',
+          name: 'Earl Warren',
+          role: 'Chief Justice of the US Supreme Court (1953–69); engineered unanimous 9–0 decision in Brown declaring segregation inherently unconstitutional.',
         },
         {
-          name: 'Governor Orval Faubus',
-          role: 'Arkansas Governor who used the National Guard to defy federal courts and block the Little Rock Nine to win re-election.',
+          name: 'Orval Faubus',
+          role: 'Governor of Arkansas; deployed Arkansas National Guard in 1957 to block Little Rock Nine to secure white segregationist votes for re-election.',
         },
         {
           name: 'Dwight D. Eisenhower',
-          role: 'US President (1953–61); reluctantly sent the 101st Airborne to Little Rock to enforce federal supremacy during the Cold War.',
+          role: '34th US President; intervened in Little Rock, sending 101st Airborne to enforce federal court orders and uphold the authority of the Supreme Court.',
         },
       ],
-      archivalSource: {
-        title: 'Executive Order 10730: Dispatch of Federal Troops to Little Rock',
-        citation:
-          'President Dwight D. Eisenhower • Televised Oval Office Address (24 September 1957)',
-        quote:
-          'Mob rule cannot be allowed to override the decisions of our courts. Whenever normal processes fail, it becomes the unavoidable duty of the President to ensure that the laws of the United States are executed. Failure to do so would be an acquiescence in anarchy and the breakdown of constitutional government.',
-        significance:
-          'Marked the first time since Reconstruction that a US President deployed federal combat troops in the South to protect Black constitutional rights against state defiance.',
-      },
+      milestones: [
+        {
+          date: '17 May 1954',
+          event: 'Supreme Court unanimously rules segregation unconstitutional in Brown',
+        },
+        {
+          date: '31 May 1955',
+          event: 'Brown II issues ambiguous order to desegregate "with all deliberate speed"',
+        },
+        {
+          date: '12 Mar 1956',
+          event: '101 Southern congressmen sign Southern Manifesto defying Brown',
+        },
+        {
+          date: '4 Sep 1957',
+          event: 'Little Rock Nine physically blocked by Arkansas National Guard',
+        },
+        {
+          date: '24 Sep 1957',
+          event: 'Eisenhower dispatches 101st Airborne to escort Little Rock Nine',
+        },
+      ],
     },
     right: {
-      deepCases: [
+      question: {
+        typeHeader: 'Section B: Q3(a) Source Utility [8m]',
+        title: 'White Opposition to Desegregation at Little Rock (1957)',
+        stem: 'How useful are Sources B and C for an enquiry into the reasons for white opposition to school integration at Little Rock Central High School in 1957? [8 Marks]',
+        marks: '8',
+        marksTime: '8 Marks &bull; ~14 Mins',
+        planningGuideTitle: 'Examiner Planning & Structural Framework (C-O-P Matrix):',
+        planningGuide:
+          '<strong>Source B:</strong> Evaluate Content (fear of disorder) &rarr; Context (Faubus re-election bid) &rarr; Provenance (official political broadcast).<br/><strong>Source C:</strong> Evaluate Content (visceral mob hostility) &rarr; Context (Eckford mobbing) &rarr; Provenance (firsthand NAACP eyewitness).<br/><strong>Synthesis:</strong> Weigh how both sources combine political demagoguery with street-level mob intimidation.',
+        modelAnswer:
+          'Source B is useful because its content reveals how political leaders manufactured fear to justify segregation. Governor Faubus claims that integrating Central High would cause "imminent bloodshed and civil disorder", justifying his use of the National Guard as a peace-keeping measure. From my contextual knowledge, Faubus faced a difficult primary election in 1957 and cynically manipulated white racial fears to secure segregationist votes. The provenance enhances its utility because, as a televised gubernatorial address, it shows the official public arguments used by Southern politicians to defy federal courts.<br/><br/>Source C is useful in a different way because it reveals the visceral street-level hatred of the white mob. Daisy Bates records how white crowds screamed "Lynch her! Drag her over to this tree!" at 15-year-old Elizabeth Eckford. From my knowledge, Eckford missed the carpool and walked alone, facing 400 abusive protesters while police stood idle. The provenance as an eyewitness account by Arkansas NAACP president Daisy Bates makes it valuable for showing the terrifying intimidation pupils endured, though her activist role means she emphasizes the brutality of the mob.<br/><br/>Overall, both sources are mutually useful: Source B shows the top-down political rhetoric used by state officials, while Source C provides vivid evidence of the violent bottom-up street resistance that this rhetoric unleashed.',
+        examinerNote:
+          'Full 8 marks (Level 3). Comprehensively evaluates Content, Own Knowledge context, and Provenance (NOP) for both sources, culminating in a balanced comparative judgement on their mutual utility.',
+        pitfallCategory: 'Source Utility Traps',
+        pitfall:
+          'Never claim a source is "useless because it is biased". State politicians (Source B) and civil rights leaders (Source C) have motives, but their perspectives are precisely what makes them useful for studying opposition!',
+      },
+      causalPathway: {
+        title: 'Visual Causal Pathway: From Supreme Court Ruling to Federal Troops in Little Rock',
+        steps: [
+          {
+            stage: '1. Brown Ruling (1954)',
+            desc: 'Supreme Court outlaws segregated schools; declares separate inherently unequal.',
+          },
+          {
+            stage: '2. Brown II Loophole',
+            desc: 'Court orders desegregation "with all deliberate speed"; South delays compliance.',
+          },
+          {
+            stage: '3. Faubus Blockade',
+            desc: 'Gov. Faubus deploys Arkansas National Guard to block 9 Black pupils from Central High.',
+          },
+          {
+            stage: '4. Presidential Action',
+            desc: 'Eisenhower sends 101st Airborne; federal troops escort Little Rock Nine for full year.',
+          },
+        ],
+      },
+      wordBank: [
         {
-          title: '1. The Clark Doll Tests & Psychological Proof',
-          points: [
-            "Psychologists Kenneth and Mamie Clark presented Black children with identical white and brown dolls to study segregation's impact.",
-            'Children consistently identified white dolls as "good" and "pretty", and brown dolls as "bad", demonstrating internalised inferiority.',
-            'Thurgood Marshall introduced the doll tests in court to prove segregation harmed children mentally even if funding was equal.',
-            'Chief Justice Warren cited the Clark tests in Footnote 11, legally shattering the foundation of Plessy v. Ferguson.',
-          ],
+          term: 'Brown v. Topeka',
+          def: '1954 landmark Supreme Court decision ruling segregated public schools unconstitutional.',
         },
         {
-          title: "2. Faubus' Political Opportunism & Mob Rule",
-          points: [
-            'Governor Faubus faced a tough Democratic primary in 1958 and manufactured a racial crisis to win the segregationist vote.',
-            'On September 4, 1957, armed Arkansas National Guardsmen raised bayonets to turn away the terrified Little Rock Nine.',
-            'When a federal judge ordered Faubus to withdraw the Guard on September 20, an enraged mob of 1,000 whites besieged the school.',
-            'The Little Rock police were forced to evacuate the 9 Black students in secret to prevent an imminent public lynching.',
-          ],
+          term: 'Inherently Unequal',
+          def: 'Key legal doctrine established by Earl Warren in Brown, overturning Plessy.',
         },
         {
-          title: "3. Cold War Geopolitics & Eisenhower's Decision",
-          points: [
-            'Eisenhower personally opposed rapid integration and preferred gradual social change, but mob defiance forced his hand.',
-            'Soviet propaganda extensively broadcast Little Rock photographs across newly decolonised African and Asian nations.',
-            "US Secretary of State John Foster Dulles warned that southern white violence was destroying America's global moral credibility.",
-            'Eisenhower deployed 1,000 soldiers of the elite 101st Airborne Division; armed paratroopers escorted the 9 students for an entire year.',
-          ],
+          term: 'Earl Warren',
+          def: 'Chief Justice of the US Supreme Court who engineered the unanimous 9–0 Brown ruling.',
         },
         {
-          title: '4. The Limits of Victory & The "Lost Year"',
-          points: [
-            'In September 1958, Governor Faubus closed all 4 Little Rock public high schools for a full year to prevent integrated classes.',
-            'During this **"Lost Year" (1958–59)**, white students attended private segregated academies while Black students had no schooling.',
-            'Federal courts declared the school closure unconstitutional in June 1959, and Central High reopened desegregated in August 1959.',
-            'By 1964, a decade after Brown, less than 2% of Black children in the Deep South attended desegregated public schools.',
-          ],
-        },
-      ],
-      causalPathway: [
-        {
-          stage: '1. Legal Precedents',
-          text: 'NAACP wins Sweatt v. Painter (1950), proving separate higher education is inherently unequal.',
-        },
-        {
-          stage: '2. Brown Decision (1954)',
-          text: 'Warren Court outlaws school segregation; Brown II introduces the vague "all deliberate speed" loophole.',
-        },
-        {
-          stage: '3. State Defiance (1957)',
-          text: 'Governor Faubus deploys Arkansas National Guard to block the Little Rock Nine from entering Central High.',
-        },
-        {
-          stage: '4. Federal Enforcement',
-          text: 'Eisenhower sends 101st Airborne to enforce federal law, establishing federal supremacy over southern states.',
-        },
-      ],
-      masterWordBank: [
-        {
-          term: 'Brown v. Board of Education (1954)',
-          def: 'Landmark Supreme Court ruling declaring public school segregation unconstitutional.',
-        },
-        {
-          term: 'Brown II (1955)',
-          def: 'Follow-up ruling ordering school desegregation to proceed "with all deliberate speed".',
-        },
-        {
-          term: 'Chief Justice Earl Warren',
-          def: 'Supreme Court leader who engineered the unanimous 9–0 decision in Brown.',
+          term: 'Brown II',
+          def: '1955 Supreme Court follow-up decree ordering school desegregation "with all deliberate speed".',
         },
         {
           term: 'All Deliberate Speed',
-          def: 'Vague judicial phrase exploited by southern states to delay integration for a decade.',
+          def: 'Vague judicial phrase in Brown II exploited by Southern states to delay desegregation.',
+        },
+        {
+          term: 'Southern Manifesto',
+          def: '1956 document signed by 101 Southern congressmen pledging resistance to school integration.',
         },
         {
           term: 'Little Rock Nine',
-          def: 'Nine Black students who desegregated Central High School, Arkansas, in September 1957.',
+          def: 'The nine Black students who integrated Little Rock Central High School in September 1957.',
+        },
+        {
+          term: 'Orval Faubus',
+          def: 'Governor of Arkansas who deployed the National Guard to block the Little Rock Nine.',
+        },
+        {
+          term: '101st Airborne',
+          def: 'Elite US Army division deployed by Eisenhower to enforce federal integration at Little Rock.',
         },
         {
           term: 'Daisy Bates',
-          def: 'Arkansas NAACP leader who organised and supported the Little Rock Nine.',
+          def: 'President of Arkansas NAACP who coordinated and mentored the Little Rock Nine.',
         },
         {
-          term: 'Governor Orval Faubus',
-          def: 'Arkansas governor who defied federal court orders to prevent school integration.',
+          term: 'Elizabeth Eckford',
+          def: 'Little Rock student who arrived alone on 4 Sep 1957 and braved a screaming white mob.',
         },
         {
-          term: '101st Airborne Division',
-          def: 'Elite US Army paratroopers deployed by Eisenhower to protect the Little Rock Nine.',
-        },
-        {
-          term: 'Executive Order 10730',
-          def: 'Presidential order federalising the Arkansas Guard and dispatching regular US troops.',
-        },
-        {
-          term: 'Blossom Plan',
-          def: 'Phased, token integration plan devised by Little Rock school superintendent Virgil Blossom.',
-        },
-        {
-          term: 'The "Lost Year" (1958–59)',
-          def: 'The closure of all Little Rock high schools by Faubus to prevent desegregation.',
-        },
-        {
-          term: 'Massive Resistance',
-          def: 'Organised southern political campaign to resist federal school desegregation orders.',
+          term: 'The Lost Year',
+          def: '1958–59 school year when Faubus closed all Little Rock high schools to prevent integration.',
         },
       ],
     },
   },
 
-  // Spread 3: KT 1.3
+  // =========================================================================
+  // SPREAD 3: KT 1.3 — MONTGOMERY BUS BOYCOTT & ITS IMPACT, 1955–60
+  // Exam Format: interpretation_diff_why (Section B: Q3(b) [4m] + Q3(c) [4m])
+  // =========================================================================
   {
     id: 'lesson_1_3',
     topic: 'Key Topic 1: Civil Rights Movement, 1954–60',
-    title: 'KT 1.3: How did the Montgomery Bus Boycott happen, and why did it succeed?',
+    title: 'KT 1.3: The Montgomery Bus Boycott & Its Impact, 1955–60',
+    footerTag: 'KT 1.3: Montgomery Bus Boycott & its impact',
     left: {
-      headline: 'The 381-Day Economic Siege: Grassroots Unity, Non-Violence & Legal Victory',
+      sectionTag: 'Non-Violent Direct Action',
+      contextTitle: 'Strategic Context & Geopolitical Overview',
       summary:
-        'Sparked by the arrest of Rosa Parks on December 1, 1955, the Montgomery Bus Boycott demonstrated the immense power of organized non-violent direct action combined with economic leverage. Led by the newly formed Montgomery Improvement Association under 26-year-old Dr Martin Luther King Jr., the Black community maintained a 381-day transit strike that ended when the Supreme Court ruled bus segregation unconstitutional.',
+        'On 1 December 1955, Rosa Parks was arrested in Montgomery, Alabama, for refusing to give up her bus seat. This triggered a 381-day boycott by 40,000 Black citizens coordinated by the Montgomery Improvement Association (MIA) under 26-year-old Dr. Martin Luther King Jr. The campaign proved the devastating power of non-violent economic boycotts, culminating in the Browder v. Gayle Supreme Court ruling desegregating public transport.',
       pillars: [
         {
-          title: 'The Catalyst: Rosa Parks & WPC',
-          subtitle: 'The Spark That Lit the South',
+          title: 'Causes & Grassroots Mobilisation',
+          subtitle: 'Parks Arrest & The Women’s Council',
           bullets: [
-            'On 1 Dec 1955, 42-year-old NAACP secretary **Rosa Parks** was arrested for refusing to surrender her bus seat to a white passenger.',
-            'Parks was not an accidental activist; she was a trained organiser at the Highlander Folk School with impeccable community respect.',
-            "**Jo Ann Robinson** and the Women's Political Council (WPC) mimeographed and distributed 52,000 leaflets calling for a 1-day boycott on 5 Dec.",
-            'On Monday 5 Dec 1955, over 90% of Black bus passengers stayed off the buses, paralyzing the city transit system.',
+            'Rosa Parks, a respected 42-year-old seamstress and NAACP secretary, was arrested for violating Montgomery city segregation ordinances on 1 Dec 1955.',
+            '**Jo Ann Robinson** and the Women’s Political Council worked overnight duplicating 35,000 mimeographed leaflets calling for a one-day boycott on 5 December.',
+            'Over 90% of Black riders boycotted the buses on 5 Dec; that evening, the **Montgomery Improvement Association (MIA)** formed and elected Martin Luther King Jr. leader.',
           ],
         },
         {
-          title: 'The Logistics of Resistance',
-          subtitle: 'Organising a 381-Day Movement',
+          title: 'The 381-Day Economic Siege',
+          subtitle: 'Carpools & Non-Violent Discipline',
           bullets: [
-            'Black leaders founded the **Montgomery Improvement Association (MIA)** and elected 26-year-old **Dr Martin Luther King Jr.** as president.',
-            'MIA established a sophisticated carpool network: 325 private vehicles operating across 44 designated pick-up and drop-off stations.',
-            'Black church congregations bought station wagons ("rolling churches") to transport domestic and agricultural workers daily.',
-            'The Black community walked miles in heat and rain for 381 days, costing the municipal bus company over $3,000 in lost fares daily.',
+            'To sustain the boycott, the Black community organised an intricate carpool network with 300 private cars operating from 40 church pick-up points.',
+            'The Montgomery bus company lost 65% of its daily revenue; downtown white merchants suffered devastating economic losses without Black retail customers.',
+            'White supremacists retaliated: King’s home was firebombed (Jan 1956), and police arrested 90 boycott leaders under anti-boycott labor laws, generating national media coverage.',
           ],
         },
         {
-          title: 'Legal Force: Browder v. Gayle',
-          subtitle: 'The Judicial Dismantling of Jim Crow',
+          title: 'Supreme Court Victory & National Impact',
+          subtitle: 'Browder v. Gayle & Birth of SCLC',
           bullets: [
-            'While the boycott starved the bus company financially, civil rights attorney Fred Gray filed a federal lawsuit (**Browder v. Gayle**).',
-            'The suit represented 4 Black women (including 15-year-old **Claudette Colvin**) who had been mistreated on Montgomery buses.',
-            "On 13 November 1956, the US Supreme Court affirmed that bus segregation violated the 14th Amendment's Equal Protection Clause.",
-            'On 21 December 1956, Montgomery buses were officially integrated; King and Abernathy rode the first desegregated bus.',
+            'In **Browder v. Gayle (Nov 1956)**, the Supreme Court upheld that bus segregation violated the 14th Amendment; on 20 Dec 1956, Montgomery buses desegregated.',
+            'The victory established **Martin Luther King Jr.** as a charismatic national leader and proved non-violent direct action could dismantle segregation.',
+            'In January 1957, King and Southern church leaders founded the **SCLC** (Southern Christian Leadership Conference) to coordinate mass church-led campaigns across the South.',
           ],
         },
       ],
       keyFigures: [
         {
           name: 'Rosa Parks',
-          role: '42-year-old NAACP secretary; her refusal to surrender her bus seat sparked the Montgomery Bus Boycott.',
+          role: 'Montgomery NAACP secretary whose arrest on 1 Dec 1955 triggered the bus boycott; chosen as an unimpeachable test case for desegregation.',
         },
         {
-          name: 'Dr Martin Luther King Jr.',
-          role: '26-year-old minister of Dexter Avenue Baptist Church; elected MIA president; pioneered Christian non-violent direct action.',
+          name: 'Martin Luther King Jr.',
+          role: '26-year-old pastor of Dexter Avenue Baptist Church; elected president of MIA, introducing Christian non-violent direct action.',
         },
         {
           name: 'Jo Ann Robinson',
-          role: "President of Women's Political Council; college professor who produced 52,000 boycott leaflets overnight.",
+          role: 'President of Women’s Political Council; mimeographed 35,000 flyers overnight launching the 5 December bus boycott.',
         },
         {
-          name: 'Claudette Colvin',
-          role: '15-year-old student arrested 9 months before Parks; lead plaintiff in the Browder v. Gayle Supreme Court victory.',
+          name: 'Ralph Abernathy',
+          role: 'King’s closest civil rights colleague and co-founder of the MIA and SCLC; organised church carpools and community meetings.',
         },
       ],
-      archivalSource: {
-        title: 'WPC Boycott Leaflet & Call to Community Action',
-        citation:
-          "Women's Political Council • Distributed Across Montgomery, Alabama (2 December 1955)",
-        quote:
-          'Another woman has been arrested and thrown into jail because she refused to get up out of her seat on the bus for a white person... If we do not do something to stop these arrests, they will continue. We are asking every Negro to stay off the buses Monday in protest of the arrest and trial.',
-        significance:
-          'Proves that the boycott was organised and mobilised by Black working women and local grassroots networks before national male leaders took control.',
-      },
+      milestones: [
+        {
+          date: '1 Dec 1955',
+          event: 'Rosa Parks arrested in Montgomery for refusing to yield bus seat',
+        },
+        {
+          date: '5 Dec 1955',
+          event: 'One-day boycott succeeds; MIA founded with MLK as president',
+        },
+        { date: '30 Jan 1956', event: 'MLK’s home firebombed; King urges non-violent discipline' },
+        {
+          date: '13 Nov 1956',
+          event: 'Supreme Court declares bus segregation unconstitutional in Browder v Gayle',
+        },
+        {
+          date: '21 Dec 1956',
+          event: 'Montgomery buses officially desegregated after 381 days of boycott',
+        },
+      ],
     },
     right: {
-      deepCases: [
-        {
-          title: '1. Economic Weaponry & Commercial Impact',
-          points: [
-            'Black passengers accounted for over 70% of Montgomery bus ridership; the boycott inflicted immediate financial crisis on the city.',
-            'Downtown white department stores lost millions in revenue as Black shoppers could no longer easily travel to commercial districts.',
-            'The bus company was forced to cut schedules, lay off drivers, and increase fares, triggering panic among city commissioners.',
-            'Demonstrated that Black economic power could be weaponized to compel white municipal elites to negotiate civil rights concessions.',
-          ],
-        },
-        {
-          title: '2. The Philosophy of Christian Non-Violence',
-          points: [
-            "King combined Christian theology (loving one's enemies) with Mahatma Gandhi's philosophy of non-violent resistance (*satyagraha*).",
-            "On January 30, 1956, segregationists firebombed King's home while his wife Coretta and baby were inside; King urged the armed mob to disarm.",
-            'King declared: *"We must love our white brothers, no matter what they do to us... We must meet hate with love."*',
-            'This moral high ground won national media sympathy, exposing white segregationists as brutal and Black demonstrators as disciplined.',
-          ],
-        },
-        {
-          title: '3. White Retaliation & Legal Harassment',
-          points: [
-            'City officials adopted a "get tough" policy: police ticketed carpool drivers, cancelled taxi insurance, and arrested walkers for loitering.',
-            'In February 1956, city authorities indicted King and 89 other boycott leaders under an archaic 1921 anti-boycott conspiracy statute.',
-            'King was convicted, fined $500, and sentenced to 386 days hard labor, turning the trial into an international media sensation.',
-            'Nightriders fired shotguns into integrated buses and bombed 4 Black churches following the desegregation order in December 1956.',
-          ],
-        },
-        {
-          title: '4. Institutional Legacy: SCLC (1957)',
-          points: [
-            'In January 1957, King and 60 Black ministers met in Atlanta to establish the **Southern Christian Leadership Conference (SCLC)**.',
-            'The SCLC coordinated church networks across 11 southern states, providing institutional and financial infrastructure for mass protest.',
-            'The success of Montgomery inspired the passage of the **Civil Rights Act of 1957**, the first federal civil rights law since 1875.',
-            'Established the template for the civil rights movement: grassroots mobilization, economic boycott, media drama, and federal court rulings.',
-          ],
-        },
-      ],
-      causalPathway: [
-        {
-          stage: '1. Parks Arrest (1 Dec 1955)',
-          text: 'Rosa Parks refuses to yield her seat; Jo Ann Robinson and WPC coordinate 52,000 boycott leaflets.',
-        },
-        {
-          stage: '2. MIA Established',
-          text: '26-year-old King elected leader; creates 325-carpool network to sustain a 381-day transit strike.',
-        },
-        {
-          stage: '3. White Retaliation',
-          text: "King's home bombed and leaders arrested, yet non-violent discipline wins national moral authority.",
-        },
-        {
-          stage: '4. Browder v. Gayle (1956)',
-          text: 'Supreme Court declares bus segregation unconstitutional; buses integrated; SCLC formed in 1957.',
-        },
-      ],
-      masterWordBank: [
-        {
-          term: 'Montgomery Bus Boycott',
-          def: '381-day transit strike (1955–56) that ended bus segregation in Alabama.',
-        },
+      question: {
+        typeHeader: 'Section B: Q3(b) & Q3(c) Historians’ Views [8m]',
+        title: 'Reasons for the Success of the Montgomery Bus Boycott',
+        stem: 'Study Interpretations 1 and 2. (b) What is the main difference between the views? [4m] &bull; (c) Suggest one reason why they differ. [4m]',
+        marks: '4 + 4 = 8',
+        marksTime: '8 Marks &bull; ~14 Mins Total',
+        planningGuideTitle: 'Examiner Planning & Structural Framework:',
+        planningGuide:
+          "<strong>Q3(b) Views Difference (4m):</strong> State core disagreement in sentence 1 &rarr; Quote/evidence from Int 1 (grassroots community solidarity) &rarr; Contrast with quote/evidence from Int 2 (MLK leadership & federal court intervention).<br/><strong>Q3(c) Reason for Difference (4m):</strong> Explain how Historian 1 focused on local organizational records (Women's Council carpools) while Historian 2 drew upon national media broadcasts and Supreme Court records.",
+        modelAnswer:
+          '<strong>Q3(b) Main Difference in Views:</strong> The main difference is that Interpretation 1 emphasizes the indispensable role of grassroots Black community organization, whereas Interpretation 2 emphasizes the charismatic leadership of Martin Luther King and federal judicial intervention. Interpretation 1 states that the boycott succeeded because "ordinary Black citizens demonstrated extraordinary economic endurance, walking miles to work and operating an intricate church carpool." In contrast, Interpretation 2 argues that "without the moral authority and inspiring oratory of Dr. King, the movement would have collapsed, and it was ultimately the Supreme Court’s Browder v. Gayle ruling that legally forced desegregation."<br/><br/><strong>Q3(c) Reason for Difference:</strong> One reason the interpretations differ is that the historians relied on different types of historical evidence. Historian 1 relied primarily on local grassroots records and oral histories from the Women’s Political Council and church organizers like Jo Ann Robinson, leading them to view the boycott from the bottom up. Conversely, Historian 2 relied on national newspaper coverage, King’s published speeches, and federal Supreme Court legal documents, naturally leading them to prioritize high-profile leadership and constitutional law.',
+        examinerNote:
+          'Full 8 marks (Level 2 on both 3b and 3c). 3(b) directly contrasts the two arguments using quotations. 3(c) accurately explains the historiographical mechanism causing the disagreement (differing source materials: local oral history vs national media/court records).',
+        pitfallCategory: 'Interpretation Difference Pitfalls',
+        pitfall:
+          'In Q3(b), never summarize both interpretations separately; you must explicitly compare them. In Q3(c), never say "one historian is biased"; you must explain that they investigated different aspects or used different evidence.',
+      },
+      causalPathway: {
+        title: 'Visual Causal Pathway: The Mechanics of the Montgomery Bus Boycott',
+        steps: [
+          {
+            stage: '1. Parks Arrest',
+            desc: "Rosa Parks arrested on 1 Dec 1955; Women's Political Council issues 35,000 boycott flyers.",
+          },
+          {
+            stage: '2. MIA Formation',
+            desc: 'MIA created; MLK elected leader; 40,000 citizens maintain 381-day non-violent boycott.',
+          },
+          {
+            stage: '3. Economic Blow',
+            desc: 'Bus company loses 65% revenue; white merchants suffer severe financial losses.',
+          },
+          {
+            stage: '4. Legal Victory',
+            desc: 'Browder v. Gayle outlaws transit segregation; SCLC founded to replicate strategy.',
+          },
+        ],
+      },
+      wordBank: [
         {
           term: 'Rosa Parks',
-          def: 'NAACP secretary whose arrest sparked the Montgomery Bus Boycott.',
+          def: 'Montgomery NAACP secretary whose refusal to give up her bus seat sparked the 381-day boycott.',
+        },
+        {
+          term: 'MIA',
+          def: 'Montgomery Improvement Association; community organisation formed to run the bus boycott.',
+        },
+        {
+          term: 'Martin Luther King Jr.',
+          def: 'Elected leader of MIA; introduced Christian non-violence and became national figure.',
         },
         {
           term: 'Jo Ann Robinson',
-          def: 'President of Women’s Political Council who mobilised the 1-day boycott.',
+          def: 'Leader of Women’s Political Council who mobilised Montgomery churches overnight.',
         },
         {
           term: 'Women’s Political Council',
-          def: 'Grassroots organisation of Black female professionals in Montgomery.',
+          def: 'Black professional women’s civic organisation in Montgomery that initiated the boycott.',
         },
         {
-          term: 'MIA (1955)',
-          def: 'Montgomery Improvement Association; organisation formed to run the boycott.',
+          term: '381-Day Boycott',
+          def: 'Duration of the Montgomery bus protest from 5 Dec 1955 to 20 Dec 1956.',
         },
         {
-          term: 'Dr Martin Luther King Jr.',
-          def: 'Baptist minister who rose to national leadership during the boycott.',
+          term: 'Church Carpools',
+          def: 'System of 300 private vehicles and 40 pickup stations that sustained the boycott.',
+        },
+        {
+          term: 'Browder v. Gayle',
+          def: '1956 Supreme Court ruling declaring public bus segregation unconstitutional under 14th Amendment.',
         },
         {
           term: 'Non-Violent Direct Action',
-          def: 'Protest tactic using peaceful resistance and economic boycotts to force change.',
+          def: 'Philosophy of resisting oppression without violence, inspired by Gandhi and Christianity.',
         },
         {
-          term: 'Browder v. Gayle (1956)',
-          def: 'Federal court ruling declaring Alabama bus segregation laws unconstitutional.',
+          term: 'SCLC',
+          def: 'Southern Christian Leadership Conference; church-led civil rights group founded by MLK in 1957.',
         },
         {
-          term: 'SCLC (1957)',
-          def: 'Southern Christian Leadership Conference; church-led civil rights organisation.',
+          term: 'Civil Rights Act 1957',
+          def: 'First federal civil rights law since Reconstruction, creating the Civil Rights Commission.',
         },
         {
-          term: 'Carpool Network',
-          def: 'Logistical system of 325 private vehicles maintaining transit for 381 days.',
-        },
-        {
-          term: 'Claudette Colvin',
-          def: '15-year-old arrested before Parks; lead plaintiff in Browder v. Gayle.',
-        },
-        {
-          term: 'Civil Rights Act of 1957',
-          def: 'First federal civil rights law since Reconstruction; created Civil Rights Commission.',
+          term: 'Ralph Abernathy',
+          def: 'Key Montgomery pastor, boycott organiser, and co-founder of the SCLC alongside King.',
         },
       ],
     },
   },
 
-  // Spread 4: KT 1.4
+  // =========================================================================
+  // SPREAD 4: KT 1.4 — OPPOSITION TO CIVIL RIGHTS: KKK, TILL, DIXIECRATS, WCC
+  // Exam Format: interpretation_eval (Section B: Q3(d) [16+4m])
+  // =========================================================================
   {
     id: 'lesson_1_4',
     topic: 'Key Topic 1: Civil Rights Movement, 1954–60',
-    title: 'KT 1.4: Why did white people in the South resist integration, and how did they do it?',
+    title: 'KT 1.4: Opposition to Civil Rights: KKK, Emmett Till & Dixiecrats',
+    footerTag: 'KT 1.4: Opposition: KKK, Emmett Till, Dixiecrats',
     left: {
-      headline: 'White Supremacy Under Threat: Legal Defiance, Economic Terrorism & Lynching',
+      sectionTag: 'White Backlash',
+      contextTitle: 'Strategic Context & Geopolitical Overview',
       summary:
-        'The legal victories of Brown and Montgomery provoked a ferocious counter-offensive across the South known as "Massive Resistance". White resistance operated across all levels of society: politicians drafted the Southern Manifesto, white professionals organized White Citizens\' Councils to economically starve activists, and vigilantes used murder—most infamously the gruesome 1955 lynching of 14-year-old Emmett Till in Mississippi.',
+        "The Brown ruling ignited a massive white supremacist counter-offensive across the American South. Middle-class whites formed White Citizens' Councils using economic blackmail, Southern politicians signed the Southern Manifesto, and the Ku Klux Klan revived violent terror. In August 1955, the barbaric lynching of 14-year-old Emmett Till and the swift acquittal of his killers shocked the global conscience, accelerating youth mobilization.",
       pillars: [
         {
-          title: "White Citizens' Councils (WCC)",
-          subtitle: 'The "Country Club Klan"',
+          title: 'White Supremacist Terror: The KKK',
+          subtitle: 'Vigilante Violence & Impunity',
           bullets: [
-            'Founded in Indianola, Mississippi in July 1954 by Robert B. Patterson in immediate response to Brown.',
-            'Composed of respected middle-class professionals: bankers, lawyers, merchants, and local civic politicians.',
-            'Used economic intimidation rather than hooded violence: fired Black activists, evicted tenant farmers, and called bank loans.',
-            'Membership exploded to over 250,000 across the South by 1956, operating with full political endorsement.',
+            'The **Ku Klux Klan** expanded rapidly after 1954, operating as hooded vigilantes using beatings, church bombings, and cross-burnings to terrorize activists.',
+            'Klan groups assassinated NAACP state leaders, including Harry T. Moore in Florida and ministers who supported the Montgomery bus boycott.',
+            'Because police officers and judges were often Klan members, all-white juries routinely acquitted white killers, creating an atmosphere of total impunity.',
           ],
         },
         {
-          title: 'The Ku Klux Klan & Violent Terror',
-          subtitle: 'Nightriders & Terror Bombings',
+          title: 'The Murder & Trial of Emmett Till (1955)',
+          subtitle: 'The Catalyst of National Outrage',
           bullets: [
-            'Revitalised following the 1954 Brown decision; recruited working-class whites fearful of racial equality and job competition.',
-            'Targeted civil rights activists, NAACP leaders, and Black churches with arson, cross-burnings, and dynamite bombings.',
-            'Birmingham, Alabama suffered over 60 unsolved racial bombings between 1948 and 1965, earning the moniker **"Bombingham"**.',
-            'Klan members infiltrated southern police departments and municipal governments, guaranteeing total legal immunity.',
+            'In August 1955, 14-year-old **Emmett Till** of Chicago was kidnapped, brutally beaten, shot in the head, and thrown into the Tallahatchie River for allegedly whistling at a white woman in Money, Mississippi.',
+            'His mother, **Mamie Till Bradley**, insisted on an open-casket funeral in Chicago; over 50,000 viewed his mutilated face, published worldwide in *Jet* magazine.',
+            'An all-white, all-male jury acquitted killers Roy Bryant and J.W. Milam in **67 minutes**; months later, they sold their confession to *Look* magazine for $4,000.',
           ],
         },
         {
-          title: 'The Murder of Emmett Till (1955)',
-          subtitle: 'A Catalyst for National Outrage',
+          title: 'Institutional Resistance: WCC & Dixiecrats',
+          subtitle: 'Economic Coercion & Congressional Obstruction',
           bullets: [
-            'In August 1955, 14-year-old Emmett Till from Chicago visited relatives in Money, Mississippi and allegedly whistled at Carolyn Bryant.',
-            'Roy Bryant and J.W. Milam kidnapped Till at gunpoint, gouged out his eye, shot him in the head, and threw him in the Tallahatchie River.',
-            'Mamie Till Mobley insisted on an **open-casket funeral** in Chicago; 50,000 mourners viewed his mutilated corpse, published in *Jet*.',
-            'An all-white jury acquitted the killers in 67 minutes; months later, the men confessed to the murder in *Look* magazine for $4,000.',
+            '**White Citizens’ Councils (WCC)** formed in Mississippi in 1954, growing to 250,000 members; called the "country club Klan", they used economic retaliation.',
+            'WCC banks denied loans, insurance companies cancelled policies, and white employers fired any Black citizen who signed civil rights petitions or joined the NAACP.',
+            'Southern politicians known as **Dixiecrats**, led by Senator Strom Thurmond, used congressional filibusters and signed the **Southern Manifesto** to block federal legislation.',
           ],
         },
       ],
       keyFigures: [
         {
+          name: 'Emmett Till',
+          role: '14-year-old Black boy from Chicago murdered in Mississippi in August 1955; his horrific death and the sham trial galvanized a generation of activists.',
+        },
+        {
+          name: 'Mamie Till Bradley',
+          role: 'Mother of Emmett Till; bravely held an open-casket funeral to "let the world see what they did to my boy", sparking international condemnation.',
+        },
+        {
+          name: 'Strom Thurmond',
+          role: 'Leading Dixiecrat Senator from South Carolina; conducted a record 24-hour filibuster against the Civil Rights Act of 1957.',
+        },
+        {
           name: 'Robert B. Patterson',
-          role: "Mississippi plantation manager who founded the White Citizens' Councils in 1954 to coordinate economic war on integration.",
-        },
-        {
-          name: 'Senator Harry F. Byrd',
-          role: 'Virginia senator who organized "Massive Resistance", pledging southern states would block integration by all lawful means.',
-        },
-        {
-          name: 'Mamie Till Mobley',
-          role: 'Mother of Emmett Till; her decision to hold an open-casket funeral exposed the brutal reality of southern racism to the world.',
-        },
-        {
-          name: 'Roy Bryant & J.W. Milam',
-          role: 'White half-brothers who brutally lynched Emmett Till; acquitted by all-white jury, later admitted guilt in print with impunity.',
+          role: 'Founder of the White Citizens’ Council in Indianola, Mississippi (1954); led middle-class economic resistance to school integration.',
         },
       ],
-      archivalSource: {
-        title: 'The Southern Manifesto (Declaration of Constitutional Principles)',
-        citation:
-          'Signed by 101 Southern Congressmen & Senators • Congressional Record (12 March 1956)',
-        quote:
-          'We regard the decision of the Supreme Court in the school cases as a clear abuse of judicial power... We pledge ourselves to use all lawful means to bring about a reversal of this decision which is contrary to the Constitution and to prevent the use of force in its implementation.',
-        significance:
-          'Documented mainstream southern political resistance; signed by 19 senators and 82 representatives, giving federal legitimacy to segregationist defiance.',
-      },
+      milestones: [
+        {
+          date: 'Jul 1954',
+          event: "First White Citizens' Council formed in Indianola, Mississippi",
+        },
+        {
+          date: '28 Aug 1955',
+          event: '14-year-old Emmett Till abducted and murdered in Money, Mississippi',
+        },
+        {
+          date: '3 Sep 1955',
+          event: 'Open-casket funeral in Chicago attended by 50,000; images published in Jet',
+        },
+        { date: '23 Sep 1955', event: 'All-white jury acquits Till’s killers in 67 minutes' },
+        {
+          date: 'Aug 1957',
+          event: 'Strom Thurmond filibusters Civil Rights Act of 1957 for 24 hours 18 mins',
+        },
+      ],
     },
     right: {
-      deepCases: [
+      question: {
+        typeHeader: 'Section B: Q3(d) Evaluative Essay [16+4m]',
+        title: 'Significance of the Murder of Emmett Till (1955)',
+        stem: 'How far do you agree with Interpretation 2 that the murder of Emmett Till was the most powerful catalyst for the civil rights movement in the 1950s? [16+4 SPaG Marks]',
+        marks: '16 + 4',
+        marksTime: '20 Marks &bull; ~25 Mins',
+        planningGuideTitle: 'Examiner Planning & Structural Framework (Criteria-Led Essay):',
+        planningGuide:
+          "<strong>Paragraph 1 (Agree with Int 2):</strong> Evaluate emotional mobilization, Mamie Till's open-casket decision, Jet magazine impact, radicalizing youth (John Lewis generation).<br/><strong>Paragraph 2 (Evaluate Int 1 - Alternative):</strong> Evaluate legal breakthrough of Brown v. Board (1954) & Montgomery Boycott establishing non-violent strategy.<br/><strong>Conclusion:</strong> Formulate definitive criteria judgement: Till provided the visceral emotional catalyst, but Brown provided the constitutional framework.",
+        modelAnswer:
+          'Interpretation 2 argues that the murder of Emmett Till was the decisive catalyst that transformed civil rights into a mass movement. There is substantial evidence to support this view. The barbaric murder of a 14-year-old Chicago boy visiting Mississippi in August 1955, followed by the acquittal of his self-confessed killers Roy Bryant and J.W. Milam by an all-white jury in just 67 minutes, exposed the unvarnished reality of Southern racial violence to the global press. Crucially, Mamie Till Bradley’s courageous decision to hold an open-casket funeral in Chicago allowed over 50,000 people to witness his mutilated body, and photographs published in Jet magazine caused visceral horror nationwide. For young Black Americans—including future leaders like John Lewis and Anne Moody—Till’s murder destroyed any illusion that the South would reform voluntarily, creating an urgent generational imperative to engage in direct action.<br/><br/>However, Interpretation 1 places greater weight on judicial victories, specifically Brown v. Board of Education (1954). Brown was undeniably fundamental because it struck down Plessy v. Ferguson and established the constitutional principle that segregation was illegal under the 14th Amendment. Without Earl Warren’s ruling, grassroots activists would have had no federal legal backing. Furthermore, the Montgomery Bus Boycott (1955–56) provided the tactical blueprint of non-violent economic resistance that Brown lacked.<br/><br/>In conclusion, I agree with Interpretation 2 to a great extent regarding emotional mobilization, but with a crucial qualification. While Brown provided the constitutional justification and Montgomery provided the organizational model, it was the raw, personal horror of Emmett Till’s murder that converted passive outrage into active defiance. As Rosa Parks herself remarked, she thought of Emmett Till on the day she refused to give up her bus seat.',
+        examinerNote:
+          'Level 4 response (16/16 + 4 SPaG = 20/20). Evaluates both interpretations with rich contextual knowledge (Mamie Till, Jet magazine, John Lewis, Rosa Parks quote, Brown 14th Amendment analysis) and reaches a nuanced, criteria-driven conclusion.',
+        pitfallCategory: 'Paper 3 Essay Pitfalls',
+        pitfall:
+          'Never write an essay that only evaluates Interpretation 2! You must analyze BOTH interpretations with balanced own knowledge and reach an evaluative criteria conclusion.',
+      },
+      causalPathway: {
+        title: 'Visual Causal Pathway: From White Backlash to Civil Rights Mobilisation',
+        steps: [
+          {
+            stage: '1. Massive Resistance',
+            desc: "Southern Manifesto & White Citizens' Councils organize economic & legal obstruction.",
+          },
+          {
+            stage: '2. Till Lynching (1955)',
+            desc: 'Emmett Till brutally murdered in Mississippi; killers acquitted in 67 minutes.',
+          },
+          {
+            stage: '3. National Exposure',
+            desc: 'Open-casket funeral and Jet magazine photos generate international condemnation.',
+          },
+          {
+            stage: '4. Generational Mobilisation',
+            desc: 'Shock radicalizes Black youth, directly inspiring Rosa Parks and student sit-ins.',
+          },
+        ],
+      },
+      wordBank: [
         {
-          title: '1. The Southern Manifesto & Political Nullification',
-          points: [
-            'Authored by Senators Strom Thurmond and Richard Russell; signed by 101 out of 128 southern members of Congress.',
-            'Claimed the Warren Court had usurped states\' rights and committed an "unwarranted exercise of raw judicial power".',
-            'Gave state and municipal officials political cover to defy federal desegregation court orders without fear of legislative penalty.',
-            'Southern state legislatures passed over 450 pro-segregation laws between 1954 and 1964 to block implementation of Brown.',
-          ],
+          term: 'Emmett Till',
+          def: '14-year-old Chicago youth murdered in Money, Mississippi, in August 1955 for whistling at a white woman.',
         },
         {
-          title: "2. The Global Impact of Emmett Till's Funeral",
-          points: [
-            "Over 50,000 people filed past Till's glass-topped casket in Chicago; photographs published in *Jet* magazine shocked the nation.",
-            'International media in Europe and Asia condemned American democracy as hypocritical and barbaric during the Cold War.',
-            'The trial exposed the reality of southern justice: the defense claimed the bloated body pulled from the river was not Till.',
-            'Radicalized a generation of young Black Americans (including John Lewis and Muhammad Ali), creating the activists of the 1960s.',
-          ],
+          term: 'Mamie Till Bradley',
+          def: 'Mother of Emmett Till who insisted on an open-casket funeral to expose Southern white violence.',
         },
         {
-          title: '3. Economic Blacklisting & Tenant Evictions',
-          points: [
-            "White Citizens' Councils systematically compiled lists of Black citizens who signed school integration petitions.",
-            'Signers were instantly fired from jobs, evicted from sharecropped land, and denied credit at local grocery stores and banks.',
-            'Insurance companies cancelled policies on Black businesses and churches that hosted civil rights meetings.',
-            'In Sunflower County, Mississippi, the WCC successfully cut off all federal agricultural surplus food to 20,000 Black residents.',
-          ],
+          term: 'Tallahatchie River',
+          def: 'Mississippi river where Emmett Till’s weighted, barbed-wire wrapped body was recovered.',
         },
         {
-          title: '4. Legal Defiance: Dixiecrats & Interposition',
-          points: [
-            'Southern politicians resurrected the pre-Civil War doctrine of **interposition** (claiming states could overrule federal law).',
-            'Virginia, Georgia, and Alabama declared the Brown decision "null, void, and of no effect" within their state borders.',
-            'States cut state education funding to any school that integrated and provided state tuition vouchers for all-white private academies.',
-            'Dixiecrat senators used the **filibuster** to weaken and delay federal civil rights legislation, including the Civil Rights Act of 1957.',
-          ],
-        },
-      ],
-      causalPathway: [
-        {
-          stage: '1. Brown Backlash (1954)',
-          text: "Brown decision provokes immediate white panic; White Citizens' Councils formed to wage economic warfare.",
+          term: 'All-White Jury',
+          def: 'Jury of 12 white men in Sumner, Mississippi, that acquitted Till’s murderers in 67 minutes.',
         },
         {
-          stage: '2. Emmett Till Lynching (1955)',
-          text: 'Brutal murder and rapid acquittal expose the deadly reality of white impunity, galvanizing global outrage.',
+          term: 'White Citizens’ Councils',
+          def: 'Middle-class segregationist groups formed in 1954 that used economic retaliation against activists.',
         },
         {
-          stage: '3. Southern Manifesto (1956)',
-          text: '101 congressmen pledge "Massive Resistance", providing political legitimacy for state defiance of federal courts.',
-        },
-        {
-          stage: '4. Institutional Intimidation',
-          text: 'Economic blacklisting, church bombings, and Dixiecrat filibusters stall desegregation across the Deep South.',
-        },
-      ],
-      masterWordBank: [
-        {
-          term: "White Citizens' Councils",
-          def: 'Middle-class white supremacist organisations using economic warfare to stop integration.',
-        },
-        {
-          term: 'Ku Klux Klan (KKK)',
-          def: 'White supremacist terrorist group using bombings, violence, and murder against Black citizens.',
-        },
-        {
-          term: 'Southern Manifesto (1956)',
-          def: 'Document signed by 101 congressmen pledging "Massive Resistance" to Brown.',
-        },
-        {
-          term: 'Massive Resistance',
-          def: 'Policy declared by Senator Harry F. Byrd to unite southern states against integration.',
-        },
-        {
-          term: 'Emmett Till (1955)',
-          def: '14-year-old Chicago youth lynched in Mississippi; open-casket funeral galvanized the movement.',
-        },
-        {
-          term: 'Mamie Till Mobley',
-          def: 'Emmett Till’s mother whose courage exposed the horrors of southern racism to the world.',
+          term: 'Economic Retaliation',
+          def: 'Firing workers, foreclosing mortgages, and cancelling insurance policies to stop civil rights.',
         },
         {
           term: 'Dixiecrats',
-          def: 'Southern conservative Democratic politicians committed to maintaining racial segregation.',
+          def: 'Conservative Southern Democrats who opposed civil rights and weaponised the Senate filibuster.',
         },
         {
-          term: 'Interposition',
-          def: 'Legal theory claiming states can interpose authority to block unconstitutional federal laws.',
+          term: 'Southern Manifesto',
+          def: '1956 document signed by 101 congressmen urging Southern states to resist federal integration.',
         },
         {
-          term: 'Jury Nullification',
-          def: 'All-white juries acquitting guilty white defendants to uphold white supremacy.',
+          term: 'Strom Thurmond',
+          def: 'South Carolina Dixiecrat Senator who conducted a 24-hour filibuster against the 1957 Civil Rights Act.',
         },
         {
-          term: '"Bombingham"',
-          def: 'Nickname for Birmingham, Alabama, due to over 60 unsolved racial bombing attacks.',
+          term: 'Ku Klux Klan',
+          def: 'Armed white vigilante terrorist organization that carried out bombings and lynchings in the South.',
         },
         {
-          term: 'Economic Blacklisting',
-          def: 'Firing and evicting Black citizens who joined the NAACP or registered to vote.',
+          term: 'Cross Burning',
+          def: 'Terror tactic utilized by the KKK to intimidate Black communities and civil rights workers.',
         },
         {
-          term: 'Segregation Academies',
-          def: 'Private all-white schools established across the South to circumvent Brown.',
+          term: 'Jet Magazine',
+          def: 'African American publication that printed photographs of Emmett Till’s mutilated face.',
         },
       ],
     },

@@ -1,715 +1,704 @@
+/**
+ * usa_spreads_kt2.cjs
+ *
+ * Spreads 5 to 8 for Key Topic 2: Protest, Progress and Radicalism, 1960–75
+ * Grounded in Hodder GCSE History for Edexcel (Steve Waugh & John Wright, pp. 28–63)
+ *
+ * Enforces the Paper 3 4-4-4-4 Question Matrix:
+ * - Spread 5 (KT 2.1): inference_causation (Section A: Q1 Inference [4m] + Q2 Explain Why [12m])
+ * - Spread 6 (KT 2.2): source_utility (Section B: Q3(a) Utility of Sources B and C [8m])
+ * - Spread 7 (KT 2.3): interpretation_diff_why (Section B: Q3(b) Views Diff [4m] + Q3(c) Reasons [4m])
+ * - Spread 8 (KT 2.4): interpretation_eval (Section B: Q3(d) Evaluative Essay [16+4m])
+ */
+
 module.exports = [
-  // Spread 5: KT 2.1
+  // =========================================================================
+  // SPREAD 5: KT 2.1 — DEVELOPMENTS, 1960–62: SIT-INS, FREEDOM RIDERS, MEREDITH
+  // Exam Format: inference_causation (Section A: Q1 [4m] + Q2 [12m])
+  // =========================================================================
   {
     id: 'lesson_2_1',
-    topic: 'Key Topic 2: Protest, Progress and Radicalism, 1960–75',
-    title: 'KT 2.1: How did peaceful protests force the government to act?',
+    topic: 'Key Topic 2: Protest, Progress & Radicalism, 1960–75',
+    title: 'KT 2.1: Developments 1960–62: Sit-Ins, Freedom Riders & Meredith',
+    footerTag: 'KT 2.1: Developments 1960–62',
     left: {
-      headline: 'The Direct Action Wave: Youth Mobilization, Violent Backlash & Federal Crisis',
+      sectionTag: 'Direct Action Escalation',
+      contextTitle: 'Strategic Context & Geopolitical Overview',
       summary:
-        'In the early 1960s, a new generation of student activists broke away from slow legalism and launched confrontational non-violent direct action. Through lunch counter sit-ins, the Freedom Rides, and university integration, organizations like SNCC and CORE provoked violent southern white reactions, forcing the Kennedy administration to use federal marshals and interstate commerce regulations to outlaw public segregation.',
+        'Between 1960 and 1962, a new generation of student activists seized the initiative from conservative courtrooms. The Greensboro sit-ins launched non-violent direct action across the South and created SNCC. In 1961, CORE’s Freedom Riders braved KKK firebombings to enforce interstate travel desegregation. In 1962, federal marshals escorted James Meredith onto the Ole Miss campus amid lethal rioting.',
       pillars: [
         {
-          title: 'The Greensboro Sit-ins (1960)',
-          subtitle: 'Student Direct Action Ignites the South',
+          title: 'The Greensboro Sit-Ins & SNCC (1960)',
+          subtitle: 'Lunch Counter Desegregation',
           bullets: [
-            "On 1 Feb 1960, four Black freshmen from NC A&T sat at the whites-only Woolworth's lunch counter in Greensboro, North Carolina.",
-            'Refused service, they remained politely seated until closing; the next day 25 students returned; by day four, over 300 joined.',
-            'Sit-in tactics swept the South: within weeks, over 70,000 students desegregated public facilities in 55 cities across 13 states.',
-            'Demonstrators endured verbal abuse, hot coffee thrown in their faces, and physical beatings without ever retaliating.',
+            "On 1 Feb 1960, four Black college students sat at the whites-only Woolworth's lunch counter in Greensboro, North Carolina, refusing to leave when refused service.",
+            'Within days, hundreds joined; students maintained strict non-violent dignity while white youths poured coffee, extinguished cigarettes on them, and shouted abuse.',
+            'The sit-in tactic spread to 55 cities in 13 states; in April 1960, Ella Baker organised student leaders to form **SNCC** (Student Nonviolent Coordinating Committee).',
           ],
         },
         {
           title: 'The Freedom Rides (1961)',
-          subtitle: 'Testing Federal Law on the Highways',
+          subtitle: 'Testing Interstate Transit Laws',
           bullets: [
-            'CORE director James Farmer organized integrated bus rides from DC to New Orleans to test Supreme Court rulings banning terminal segregation.',
-            'On 14 May 1961 in Anniston, Alabama, a 200-strong KKK mob slashed the bus tires, smashed windows, and threw a firebomb inside.',
-            'In Birmingham, Public Safety Commissioner Bull Connor gave Klansmen 15 minutes of police-free violence, brutally beating riders with pipes.',
-            'When CORE riders were hospitalized, SNCC students from Nashville led by Diane Nash and John Lewis insisted on continuing the rides.',
+            'In May 1961, **CORE** (led by James Farmer) sent 13 Black and white riders on buses from Washington to New Orleans to test the *Boynton v. Virginia* desegregation ruling.',
+            'On Mother’s Day (14 May), an Anniston mob firebombed the bus and held doors shut; riders were viciously beaten with baseball bats in Birmingham as police delayed arrival.',
+            'Attorney General Robert Kennedy sent 500 US Marshals; by Nov 1961, the **Interstate Commerce Commission (ICC)** ordered all interstate terminals desegregated.',
           ],
         },
         {
-          title: 'James Meredith & Ole Miss (1962)',
-          subtitle: 'Military Confrontation in Mississippi',
+          title: 'The James Meredith Case (1962)',
+          subtitle: "Desegregating 'Ole Miss'",
           bullets: [
-            'In 1962, Air Force veteran James Meredith won a federal court order to become the first Black student at the University of Mississippi.',
-            'Governor Ross Barnett personally defied federal court orders, physically blocking Meredith on state television to prevent entry.',
-            'President Kennedy dispatched 500 US Marshals to Oxford; an armed white mob of 2,500 attacked marshals with rifles and petrol bombs.',
-            "The ensuing riot killed 2 civilians and wounded 300 marshals; JFK deployed 20,000 US Army troops to secure Meredith's enrollment.",
+            'In 1962, Black Air Force veteran **James Meredith** was rejected by the University of Mississippi solely due to race; the Supreme Court ordered his admission.',
+            'Governor Ross Barnett personally blocked Meredith, declaring the state would never surrender to federal court orders.',
+            'President Kennedy dispatched 500 US Marshals; white supremacist mobs attacked with bricks and gunfire (2 killed, 300 wounded) before 12,000 federal soldiers quelled the riot.',
           ],
         },
       ],
       keyFigures: [
         {
-          name: 'Franklin McCain',
-          role: 'One of the original "Greensboro Four"; his refusal to leave the Woolworth\'s lunch counter sparked the national student sit-in movement.',
-        },
-        {
-          name: 'John Lewis',
-          role: 'SNCC chairman and Freedom Rider; beaten unconscious in Montgomery, later led the March on Washington and Selma marches.',
-        },
-        {
           name: 'James Farmer',
-          role: 'National Director of CORE; architect of the 1961 Freedom Rides designed to force federal enforcement of interstate desegregation.',
+          role: 'National Director of CORE; conceived and led the 1961 Freedom Rides to deliberately provoke federal intervention in interstate transport.',
+        },
+        {
+          name: 'Ella Baker',
+          role: 'Veteran civil rights organiser who advised student sit-in leaders to remain independent from SCLC, founding SNCC in April 1960.',
         },
         {
           name: 'James Meredith',
-          role: 'First Black student to integrate the University of Mississippi (Ole Miss) in October 1962 under federal military protection.',
+          role: 'First Black student admitted to the University of Mississippi (1962); his enrollment broke segregation in higher education in the Deep South.',
+        },
+        {
+          name: 'Ross Barnett',
+          role: 'Segregationist Governor of Mississippi who physically defied federal court orders to prevent James Meredith from registering at Ole Miss.',
         },
       ],
-      archivalSource: {
-        title: 'Statement of the Greensboro Four',
-        citation:
-          "Franklin McCain • Interview on the First Day of the Woolworth's Sit-in (1 February 1960)",
-        quote:
-          'We sat there for forty-five minutes. Some white people walked past and whispered "niggers". But nobody hit us. The waitress said, "I\'m sorry, but we don\'t serve colored people here." We replied politely, "We would like to be served." For the first time in my life, I felt completely free, like a man.',
-        significance:
-          'Captures the psychological breakthrough of youth-led non-violent direct action, moving from slow courtroom petitions to immediate, courageous physical confrontation.',
-      },
+      milestones: [
+        {
+          date: '1 Feb 1960',
+          event: 'Four Greensboro students begin Woolworth’s lunch counter sit-in',
+        },
+        {
+          date: '15 Apr 1960',
+          event: 'SNCC founded at Shaw University under guidance of Ella Baker',
+        },
+        { date: '14 May 1961', event: 'Freedom Riders bus firebombed in Anniston, Alabama' },
+        {
+          date: '1 Nov 1961',
+          event: 'ICC officially bans segregation in all interstate bus terminals',
+        },
+        {
+          date: '1 Oct 1962',
+          event: 'James Meredith enrolls at Ole Miss following lethal campus riot',
+        },
+      ],
     },
     right: {
-      deepCases: [
+      question: {
+        typeHeader: 'Section A: Q1 Inference [4m] & Q2 Explain Why [12m]',
+        title: 'Freedom Riders Violence & The Spread of the Sit-In Movement',
+        stem: 'Q1 (4m) Inference from Source A &bull; Q2 (12m) Explain why the Greensboro sit-in movement spread so rapidly across the South in 1960.',
+        marks: '4 + 12 = 16',
+        marksTime: '16 Marks &bull; ~24 Mins Total',
+        planningGuideTitle: 'Examiner Planning & Structural Framework:',
+        planningGuide:
+          '<strong>Q1 Inference (4m):</strong> Inference 1 + direct quote from Source A on Klan brutality; Inference 2 + direct quote on police complicity.<br/><strong>Q2 Causation (12m - 3 PEE Paragraphs):</strong> (1) Youth frustration with slow NAACP legal progress &rarr; (2) Simplicity and accessibility of non-violent direct action &rarr; (3) Economic effectiveness of consumer boycotts & national media coverage.',
+        modelAnswer:
+          '<strong>Q1 (Inference):</strong> One inference from Source A is that white supremacists used deadly violence to halt the Freedom Riders. The source states "a firebomb was hurled through the window, and men held the doors shut to burn the riders alive", showing attackers intended to kill passengers. A second inference is that local authorities cooperated with the attackers. The source notes "the police in Birmingham agreed to give the Klan 15 minutes to attack the riders before sending officers", proving police actively facilitated violence.<br/><br/><strong>Q2 (Explain Why):</strong> One primary reason the sit-in movement spread rapidly was intense generational frustration among Black youth with the slow pace of courtroom litigation. Six years after Brown v. Board (1954), deep Southern states were still almost entirely segregated. College students realized that legal challenges took years, whereas sitting at a lunch counter forced an immediate, visible challenge to Jim Crow on day one.<br/><br/>A second reason was the practical simplicity, accessibility, and high moral impact of the sit-in tactic. Any group of students could simply walk into a local department store, sit down with textbooks, and study peacefully. The stark contrast between well-dressed, polite Black students and abusive white mobs pouring sugar and extinguishing cigarettes on them captured television cameras, shaming white store owners into desegregating to protect their commercial profits.',
+        examinerNote:
+          'Full 16 marks. Q1 gives two distinct inferences supported by verbatim quotes. Q2 provides two analytical, multi-causal paragraphs demonstrating how generational impatience and media dynamics accelerated the spread.',
+        pitfallCategory: 'Inference & Multi-Causal Pitfalls',
+        pitfall:
+          'In Q2, do not simply describe the Greensboro sit-in. The question asks why it SPREAD to 55 cities! Focus on why other students replicated the tactic across the South.',
+      },
+      causalPathway: {
+        title: 'Visual Causal Pathway: The Student Escalation of Direct Action (1960–1962)',
+        steps: [
+          {
+            stage: '1. Greensboro Sit-In',
+            desc: 'Four students refuse to leave Woolworth’s lunch counter, triggering regional protests.',
+          },
+          {
+            stage: '2. SNCC Formation',
+            desc: 'Ella Baker organizes student leaders into SNCC, coordinating mass youth action.',
+          },
+          {
+            stage: '3. Freedom Rides (1961)',
+            desc: 'CORE tests interstate travel; Anniston bus bombing forces federal ICC enforcement.',
+          },
+          {
+            stage: '4. Ole Miss Crisis (1962)',
+            desc: 'Kennedy deploys 500 US Marshals to enroll James Meredith against state resistance.',
+          },
+        ],
+      },
+      wordBank: [
         {
-          title: '1. Creation of SNCC (April 1960)',
-          points: [
-            'SCLC executive director Ella Baker organized a conference of 200 student sit-in leaders at Shaw University in Raleigh, NC.',
-            'Baker urged students to remain independent of adult control, establishing the **Student Nonviolent Coordinating Committee (SNCC)**.',
-            'SNCC embraced participatory democracy, group-centered leadership, and radical direct action in the rural Deep South.',
-            'SNCC organizers became the front-line shock troops of voter registration drives in the most dangerous counties of Mississippi and Alabama.',
-          ],
+          term: 'Greensboro Sit-In',
+          def: '1960 non-violent protest at a Woolworth’s lunch counter that ignited the student movement.',
         },
         {
-          title: '2. Violent Backlash in Anniston & Birmingham',
-          points: [
-            'Outside Anniston, Klansmen held the bus doors shut to burn the Freedom Riders alive until an undercover state investigator forced them open.',
-            'In Birmingham, police cars were withdrawn; Klansmen beat Freedom Rider Jim Peck with iron chains, requiring 53 stitches to his head.',
-            'Photographs of the burning Greyhound bus on Mother’s Day 1961 appeared on front pages globally, humiliating the Kennedy administration.',
-            "Over 400 Freedom Riders were arrested across the summer, filling Mississippi's notorious Parchman State Penitentiary to capacity.",
-          ],
-        },
-        {
-          title: '3. Robert F. Kennedy & ICC Enforcement',
-          points: [
-            'Attorney General Robert Kennedy sought a "cooling-off period", but civil rights leaders refused to halt the rides.',
-            'When federal mediator John Seigenthaler was beaten unconscious in Montgomery, RFK deployed 400 federal marshals to restore order.',
-            'In September 1961, RFK petitioned the **Interstate Commerce Commission (ICC)** to mandate strict desegregation of transit facilities.',
-            'On 1 November 1961, the ICC rule took effect: "White" and "Colored" signs were removed from thousands of bus and rail terminals.',
-          ],
-        },
-        {
-          title: '4. The Battle of Oxford (Mississippi 1962)',
-          points: [
-            'Governor Ross Barnett declared Mississippi would "never surrender to federal tyranny", inciting thousands of armed white vigilantes.',
-            'Federal marshals guarded Meredith inside the Lyceum building for 14 hours under strict orders not to shoot, relying on tear gas.',
-            'The crowd threw molotov cocktails, burned vehicles, and sniped at marshals, killing a French journalist and a local jukebox repairman.',
-            'JFK sent 20,000 troops, 300 military police, and federalized the Mississippi National Guard; Meredith graduated in August 1963.',
-          ],
-        },
-      ],
-      causalPathway: [
-        {
-          stage: '1. Greensboro Sit-in (Feb 1960)',
-          text: "4 freshmen sit at Woolworth's; sit-ins spread to 55 cities; SNCC is founded to lead youth direct action.",
-        },
-        {
-          stage: '2. Freedom Rides (May 1961)',
-          text: 'CORE tests bus desegregation; brutal firebombings in Alabama expose southern lawlessness to global media.',
-        },
-        {
-          stage: '3. Federal ICC Order (Nov 1961)',
-          text: 'RFK forces the ICC to enforce transit desegregation, dismantling Jim Crow bus terminals nationwide.',
-        },
-        {
-          stage: '4. Meredith at Ole Miss (1962)',
-          text: "JFK deploys 20,000 troops to crush Barnett's rebellion at Oxford, establishing absolute federal authority.",
-        },
-      ],
-      masterWordBank: [
-        {
-          term: 'Greensboro Sit-ins (1960)',
-          def: 'Student non-violent protest desegregating lunch counters across the South.',
-        },
-        {
-          term: 'Woolworth’s Lunch Counter',
-          def: 'Site of the first sit-in on 1 Feb 1960 by four Black college freshmen.',
-        },
-        {
-          term: 'SNCC (1960)',
-          def: 'Student Nonviolent Coordinating Committee; youth direct-action organisation.',
+          term: 'SNCC',
+          def: 'Student Nonviolent Coordinating Committee; grassroots youth group founded in April 1960.',
         },
         {
           term: 'Ella Baker',
-          def: 'Veteran civil rights organiser who inspired the founding of independent SNCC.',
+          def: 'Executive director of the SCLC who guided students to form an independent SNCC.',
         },
         {
-          term: 'Freedom Rides (1961)',
-          def: 'Interstate bus journeys testing federal desegregation rulings across the South.',
+          term: 'Freedom Riders',
+          def: 'Activists who rode interstate buses into the segregated South in 1961 to test federal laws.',
         },
         {
-          term: 'CORE',
-          def: 'Congress of Racial Equality; civil rights group that launched the Freedom Rides.',
-        },
-        {
-          term: 'Anniston Firebombing',
-          def: 'KKK attack on a Freedom Ride bus on Mother’s Day 1961 outside Anniston, Alabama.',
+          term: 'Anniston Bombing',
+          def: 'Attack on 14 May 1961 where a white mob firebombed a Freedom bus in Alabama.',
         },
         {
           term: 'Robert F. Kennedy',
-          def: 'US Attorney General who used federal marshals and the ICC to enforce desegregation.',
+          def: 'US Attorney General who dispatched 500 US Marshals to protect Freedom Riders and Meredith.',
         },
         {
-          term: 'Interstate Commerce Commission',
-          def: 'Federal agency that ordered all interstate transit facilities integrated in Nov 1961.',
+          term: 'ICC',
+          def: 'Interstate Commerce Commission; federal agency that ordered transit desegregation in Nov 1961.',
         },
         {
           term: 'James Meredith',
-          def: 'First Black student admitted to the University of Mississippi (Ole Miss) in 1962.',
+          def: 'First Black student to enroll at the University of Mississippi in October 1962.',
         },
         {
-          term: 'Ole Miss Riot (1962)',
-          def: 'Insurrection at Oxford, Mississippi; 2 killed before 20,000 federal troops secured order.',
+          term: 'Ross Barnett',
+          def: 'Governor of Mississippi who attempted to physically block Meredith from entering Ole Miss.',
+        },
+        {
+          term: 'Ole Miss Riot',
+          def: 'Campus riot on 30 Sep 1962 leaving 2 dead and 300 injured before troops restored order.',
         },
         {
           term: 'Direct Action',
-          def: 'Protest tactic using physical presence (sit-ins, marches) to actively disrupt segregation.',
+          def: 'Public demonstrations, strikes, and sit-ins designed to force immediate confrontation.',
+        },
+        {
+          term: 'Boynton v. Virginia',
+          def: '1960 Supreme Court ruling declaring segregation in interstate bus terminals unconstitutional.',
         },
       ],
     },
   },
 
-  // Spread 6: KT 2.2
+  // =========================================================================
+  // SPREAD 6: KT 2.2 — PEACEFUL PROTESTS & THEIR IMPACT, 1963–65
+  // Exam Format: source_utility (Section B: Q3(a) [8m])
+  // =========================================================================
   {
     id: 'lesson_2_2',
-    topic: 'Key Topic 2: Protest, Progress and Radicalism, 1960–75',
-    title: 'KT 2.2: How did Birmingham, Selma, and federal laws reshape America?',
+    topic: 'Key Topic 2: Protest, Progress & Radicalism, 1960–75',
+    title: 'KT 2.2: Peaceful Protests & Their Impact, 1963–65',
+    footerTag: 'KT 2.2: Peaceful Protests 1963–65',
     left: {
-      headline: 'The Climax of Reform: Bull Connor, Bloody Sunday & The Landmark Acts',
+      sectionTag: 'Legislative Triumphs',
+      contextTitle: 'Strategic Context & Geopolitical Overview',
       summary:
-        'Faced with entrenched southern resistance, Martin Luther King Jr. and the SCLC orchestrated confrontations in Birmingham (1963) and Selma (1965), knowing Police Chief "Bull" Connor and Sheriff Jim Clark would react with vicious public brutality. The televised spectacle of attack dogs, water cannons, and state troopers clubbing peaceful marchers shocked the nation, empowering President Lyndon B. Johnson to push through the Civil Rights Act of 1964 and Voting Rights Act of 1965.',
+        'Between 1963 and 1965, the non-violent civil rights movement reached its zenith. King’s Birmingham campaign and the historic March on Washington galvanized national conscience, compelling President Johnson to sign the landmark Civil Rights Act of 1964. The following year, state troopers’ brutal assault on marchers in Selma spurred the passage of the Voting Rights Act of 1965.',
       pillars: [
         {
-          title: 'Project C: Birmingham (1963)',
-          subtitle: 'Confrontation in "Bombingham"',
+          title: 'The Birmingham Campaign (1963)',
+          subtitle: 'Project C & The Children’s Crusade',
           bullets: [
-            'SCLC launched "Project C" (Confrontation) in Birmingham, Alabama, targeting the South\'s most segregated industrial metropolis.',
-            'King was jailed on Good Friday and penned the historic **Letter from Birmingham Jail**, defending civil disobedience.',
-            "On 2 May, SCLC organizer James Bevel mobilized over 1,000 teenagers in the **Children's Crusade** to march from 16th Street Baptist Church.",
-            'Police Commissioner **Eugene "Bull" Connor** turned high-pressure fire hoses and snarling police attack dogs on unarmed children.',
+            'SCLC targeted Birmingham, Alabama ("Bombingham"), the most segregated major city in America, led by notorious Police Chief **Bull Connor**.',
+            'During the **Children’s Crusade** (May 1963), Connor unleashed police dogs and high-pressure fire hoses (100 lbs/sq inch) on child marchers; images horrified the globe.',
+            'President John F. Kennedy intervened, stating on national television (11 June 1963) that civil rights was a "moral issue as old as the scriptures", drafting federal legislation.',
           ],
         },
         {
-          title: 'The March on Washington (1963)',
-          subtitle: '250,000 Demand Jobs and Freedom',
+          title: 'March on Washington & Freedom Summer',
+          subtitle: 'National Climax & Mississippi Murders',
           bullets: [
-            'Organized by A. Philip Randolph and Bayard Rustin on 28 August 1963; drew over 250,000 peaceful demonstrators to the Lincoln Memorial.',
-            'Represented an unprecedented coalition of the "Big Six" civil rights organizations, labor unions, and religious groups.',
-            'King delivered his immortal **"I Have a Dream"** address from the Lincoln Memorial steps, broadcast live on national network television.',
-            'Created overwhelming moral pressure on Congress; Kennedy met civil rights leaders in the White House to draft a civil rights bill.',
+            'On 28 August 1963, 250,000 marchers gathered at the Lincoln Memorial; King delivered his historic **"I Have a Dream"** speech, creating irresistible moral momentum.',
+            'In 1964, **Freedom Summer** recruited 1,000 college volunteers to open Freedom Schools and register voters in Mississippi, defying white terror.',
+            'On 21 June 1964, civil rights workers Michael Schwerner, Andrew Goodman, and James Chaney were murdered by the KKK with complicity of deputy sheriff Cecil Price.',
           ],
         },
         {
-          title: 'Selma & Bloody Sunday (1965)',
-          subtitle: 'The Battle for the Ballot',
+          title: 'Civil Rights Act (1964) & Voting Rights Act (1965)',
+          subtitle: 'Dismantling Legal Apartheid',
           bullets: [
-            'SCLC and SNCC targeted Selma, Dallas County, Alabama, where only 300 out of 15,000 eligible Black adults were registered to vote.',
-            'On 7 March 1965 (**"Bloody Sunday"**), 600 marchers led by John Lewis crossed the Edmund Pettus Bridge en route to Montgomery.',
-            "Alabama state troopers and Sheriff Jim Clark's posse attacked marchers with billy clubs, bullwhips, and tear gas on live television.",
-            'President Johnson intervened, federalized the Alabama Guard to protect a third march of 25,000 people, and demanded voting legislation.',
+            '**Civil Rights Act of 1964** (signed 2 July by LBJ) outlawed segregation in all public facilities, banned employment discrimination, and empowered justice officials to enforce integration.',
+            'In March 1965, King led marches from Selma to Montgomery; on **"Bloody Sunday"** (7 March), state troopers tear-gassed and clubbed 600 marchers at the Edmund Pettus Bridge.',
+            '**Voting Rights Act of 1965** (signed 6 August) outlawed literacy tests and deployed federal registrars; within three years, Black voter registration in the South soared past 60%.',
           ],
         },
       ],
       keyFigures: [
         {
-          name: 'Eugene "Bull" Connor',
-          role: 'Birmingham Public Safety Commissioner whose televised use of police dogs and fire hoses on children shocked the world.',
-        },
-        {
-          name: 'Dr Martin Luther King Jr.',
-          role: 'Penned Letter from Birmingham Jail; delivered "I Have a Dream" in Washington; awarded 1964 Nobel Peace Prize.',
+          name: "Eugene 'Bull' Connor",
+          role: 'Birmingham Commissioner of Public Safety; ordered police dogs and water cannons against teenage marchers, galvanizing international outrage.',
         },
         {
           name: 'Lyndon B. Johnson',
-          role: 'US President (1963–69); used immense legislative mastery to enact the historic Civil Rights Act of 1964 and Voting Rights Act of 1965.',
+          role: '36th US President; used his legislative skill and national mourning for JFK to force the Civil Rights Act (1964) and Voting Rights Act (1965) through Congress.',
         },
         {
           name: 'John Lewis',
-          role: 'SNCC chairman who co-led the Selma march; suffered a fractured skull from state troopers on Bloody Sunday.',
+          role: 'Chairman of SNCC; co-led the march on Bloody Sunday across the Edmund Pettus Bridge in Selma, suffering a fractured skull from state troopers.',
+        },
+        {
+          name: 'A. Philip Randolph',
+          role: 'Elder statesman of civil rights and union leader; principal visionary and organiser of the 1963 March on Washington for Jobs and Freedom.',
         },
       ],
-      archivalSource: {
-        title: 'Letter from Birmingham Jail',
-        citation:
-          'Dr Martin Luther King Jr. • Written on Newspaper Margins in Birmingham Jail (16 April 1963)',
-        quote:
-          'We know through painful experience that freedom is never voluntarily given by the oppressor; it must be demanded by the oppressed... For years now I have heard the word "Wait!" This "Wait" has almost always meant "Never." We must come to see that justice too long delayed is justice denied.',
-        significance:
-          'Delivered the defining philosophical and moral manifesto of the civil rights movement, dismantling the arguments of white moderates who counselled patience.',
-      },
+      milestones: [
+        {
+          date: 'May 1963',
+          event: 'Bull Connor turns dogs and hoses on child marchers in Birmingham',
+        },
+        {
+          date: '28 Aug 1963',
+          event: '250,000 attend March on Washington; King delivers "I Have a Dream"',
+        },
+        { date: '2 Jul 1964', event: 'President Johnson signs landmark Civil Rights Act of 1964' },
+        { date: '7 Mar 1965', event: 'Bloody Sunday at Edmund Pettus Bridge in Selma, Alabama' },
+        {
+          date: '6 Aug 1965',
+          event: 'Voting Rights Act of 1965 signed into law by President Johnson',
+        },
+      ],
     },
     right: {
-      deepCases: [
+      question: {
+        typeHeader: 'Section B: Q3(a) Source Utility [8m]',
+        title: 'Effectiveness of the Birmingham Campaign (1963)',
+        stem: "How useful are Sources B and C for an enquiry into the effectiveness of Martin Luther King's campaign in Birmingham, Alabama, in May 1963? [8 Marks]",
+        marks: '8',
+        marksTime: '8 Marks &bull; ~14 Mins',
+        planningGuideTitle: 'Examiner Planning & Structural Framework (C-O-P Matrix):',
+        planningGuide:
+          "<strong>Source B:</strong> Content (King explaining tactical deliberate provocation of media) &rarr; Context (Project C planning) &rarr; Provenance (Letter from Birmingham Jail).<br/><strong>Source C:</strong> Content (Bull Connor defending police action against rioters) &rarr; Context (Children's Crusade) &rarr; Provenance (official press statement).<br/><strong>Synthesis:</strong> Evaluate how both sources show how televised confrontation forced federal action.",
+        modelAnswer:
+          'Source B is useful because its content reveals the conscious tactical philosophy behind the Birmingham campaign. Writing from his prison cell, Dr. King explains that non-violent direct action "seeks to create such a crisis and foster such a tension that a community which has constantly refused to negotiate is forced to confront the issue." From my contextual knowledge, SCLC strategists specifically chose Birmingham ("Bombingham") because they knew Public Safety Commissioner Bull Connor would react with unbridled brutality, creating shocking televised images that would compel President Kennedy to act. The provenance enhances its utility because, as King’s private reflection composed on newspaper margins, it reveals his authentic strategic thinking rather than a public PR statement.<br/><br/>Source C is useful in a different way because it reveals how city segregationists attempted to defend their suppression of the marches. Bull Connor claims that his officers used fire hoses "only to disperse violent mobs who were blocking traffic and violating city injunctions." From my knowledge, Connor ordered high-pressure hoses (powerful enough to strip bark off trees) against unarmed teenage school children in the "Children\'s Crusade". The provenance as Connor’s official press release makes it valuable for studying the defensive propaganda used by Southern authorities to deflect national outrage.<br/><br/>Overall, both sources are highly useful together: Source B exposes the deliberate strategy of non-violent crisis creation, while Source C demonstrates how the city authorities played directly into King’s hands by using excessive, televised violence.',
+        examinerNote:
+          'Full 8 marks (Level 3). Evaluates Content, Contextual Knowledge, and Provenance (author, motive, form) for both sources, culminating in an integrated comparative judgement on tactical success.',
+        pitfallCategory: 'Source Utility Traps',
+        pitfall:
+          'Never evaluate sources in isolation! Compare how Source B (activist strategy) and Source C (authoritarian reaction) combine to explain why Birmingham succeeded.',
+      },
+      causalPathway: {
+        title: 'Visual Causal Pathway: From Street Confrontation to Federal Civil Rights Acts',
+        steps: [
+          {
+            stage: '1. Birmingham (1963)',
+            desc: 'Televised brutality against child marchers shames JFK into drafting civil rights legislation.',
+          },
+          {
+            stage: '2. March on Washington',
+            desc: '250,000 citizens demonstrate interracial solidarity; King delivers "I Have a Dream".',
+          },
+          {
+            stage: '3. 1964 Act Passed',
+            desc: "LBJ leverages Kennedy's legacy to sign the Civil Rights Act, abolishing Jim Crow.",
+          },
+          {
+            stage: '4. Selma & 1965 Act',
+            desc: 'Bloody Sunday televised violence forces Congress to pass Voting Rights Act.',
+          },
+        ],
+      },
+      wordBank: [
         {
-          title: "1. The Children's Crusade & Economic Boycott",
-          points: [
-            'When adult participation lagged due to fear of losing jobs, James Bevel enlisted high school and elementary students to fill the jails.',
-            'Connor ordered 100-pound water pressure hoses that stripped clothing, peeled bark off trees, and hurled children down sidewalks.',
-            'The Black community boycotted downtown department stores, causing commercial revenues to drop by over 40% during spring shopping.',
-            'Fearing economic collapse and violent race riots, white business leaders surrendered on 10 May, agreeing to desegregate downtown facilities.',
-          ],
-        },
-        {
-          title: '2. The Civil Rights Act of 1964',
-          points: [
-            'Signed by President Johnson on 2 July 1964, overcoming an 83-day southern filibuster in the United States Senate.',
-            'Title II outlawed racial discrimination in all public accommodations: hotels, restaurants, gas stations, theatres, and arenas.',
-            'Title VII prohibited employment discrimination based on race, sex, or religion and established the **EEOC**.',
-            'Empowered the US Attorney General to file lawsuits to desegregate public schools and withhold federal funds from segregated programs.',
-          ],
-        },
-        {
-          title: '3. Mississippi Freedom Summer (1964)',
-          points: [
-            'COFO (SNCC, CORE, NAACP) brought over 1,000 mostly white college volunteers to Mississippi to conduct voter registration drives.',
-            'Established 41 Freedom Schools teaching reading, civics, and Black history to over 3,000 children across rural Mississippi.',
-            'On 21 June 1964, three civil rights workers (James Chaney, Andrew Goodman, Michael Schwerner) were abducted and lynched by the KKK.',
-            'Organized the Mississippi Freedom Democratic Party (MFDP) under Fannie Lou Hamer to challenge the all-white regular delegation.',
-          ],
-        },
-        {
-          title: '4. The Voting Rights Act of 1965',
-          points: [
-            'Signed into law by President Johnson on 6 August 1965 in the exact room where Lincoln signed the Emancipation Proclamation.',
-            'Banned all literacy tests, understanding clauses, and character tests nationwide as prerequisites for voter registration.',
-            'Section 5 required southern states with a history of voter suppression to obtain federal "preclearance" before changing voting laws.',
-            'By 1967, Black voter registration in Mississippi jumped from 6.7% to 66.5%; over 1,000 Black officials were elected across the South by 1970.',
-          ],
-        },
-      ],
-      causalPathway: [
-        {
-          stage: '1. Birmingham Crisis (May 1963)',
-          text: "Connor's police dogs and water hoses on children create global outrage; JFK commits to comprehensive civil rights bill.",
-        },
-        {
-          stage: '2. March on Washington (Aug 1963)',
-          text: '250,000 marchers and King\'s "I Have a Dream" speech build irresistible national moral momentum for federal action.',
-        },
-        {
-          stage: '3. Civil Rights Act of 1964',
-          text: 'LBJ breaks the 83-day Senate filibuster, legally terminating public Jim Crow segregation and employment discrimination.',
-        },
-        {
-          stage: '4. Selma & Voting Rights Act (1965)',
-          text: 'Bloody Sunday at Selma forces passage of Voting Rights Act, ending literacy tests and restoring Black political power.',
-        },
-      ],
-      masterWordBank: [
-        {
-          term: 'Project C (Birmingham 1963)',
-          def: "SCLC campaign of direct confrontation targeting the South's most segregated city.",
-        },
-        {
-          term: 'Eugene "Bull" Connor',
-          def: 'Birmingham Police Commissioner whose brutality against children shocked the world.',
+          term: 'Project C',
+          def: 'SCLC codename ("Confrontation") for the 1963 non-violent campaign in Birmingham, Alabama.',
         },
         {
           term: 'Children’s Crusade',
-          def: 'March of over 1,000 students in Birmingham on 2–3 May 1963 that turned the campaign.',
+          def: 'Controversial 1963 march of thousands of school students in Birmingham targeted by police dogs.',
         },
         {
           term: 'Letter from Birmingham Jail',
-          def: "King's eloquent defense of civil disobedience written on newspaper margins in prison.",
+          def: 'MLK’s famous 1963 theological defense of civil disobedience against unjust laws.',
         },
         {
-          term: 'March on Washington (1963)',
-          def: 'Mass gathering of 250,000 demanding "Jobs and Freedom" at the Lincoln Memorial.',
+          term: 'March on Washington',
+          def: 'Mass gathering of 250,000 on 28 Aug 1963 demanding federal civil rights legislation.',
         },
         {
-          term: '"I Have a Dream"',
-          def: "King's defining vision of racial brotherhood delivered on 28 August 1963.",
+          term: 'Freedom Summer',
+          def: '1964 voter registration drive in Mississippi that established Freedom Schools.',
         },
         {
-          term: 'Civil Rights Act of 1964',
-          def: 'Historic legislation outlawing racial segregation in public accommodations and jobs.',
+          term: 'Mississippi Murders',
+          def: 'The 1964 KKK murders of activists James Chaney, Andrew Goodman, and Michael Schwerner.',
         },
         {
-          term: 'Title VII & EEOC',
-          def: 'Clause creating the Equal Employment Opportunity Commission to stop workplace bias.',
+          term: 'Civil Rights Act 1964',
+          def: 'Historic federal legislation outlawing segregation in public facilities and employment.',
         },
         {
-          term: 'Freedom Summer (1964)',
-          def: 'Mass voter registration campaign in Mississippi; 3 workers murdered by the KKK.',
+          term: 'Selma to Montgomery',
+          def: '54-mile protest marches in March 1965 demanding voting rights for Black citizens in Alabama.',
         },
         {
-          term: 'Selma Marches (1965)',
-          def: 'Voting rights demonstrations from Selma to Montgomery led by King and John Lewis.',
+          term: 'Bloody Sunday',
+          def: '7 March 1965 assault by Alabama state troopers on peaceful marchers at Edmund Pettus Bridge.',
         },
         {
-          term: '"Bloody Sunday"',
-          def: 'Police brutalisation of 600 marchers at Edmund Pettus Bridge, Selma, on 7 March 1965.',
+          term: 'Voting Rights Act 1965',
+          def: 'Federal law banning literacy tests and placing voter registration under federal supervision.',
         },
         {
-          term: 'Voting Rights Act of 1965',
-          def: 'Federal statute abolishing literacy tests and appointing federal voter registrars.',
+          term: 'Edmund Pettus Bridge',
+          def: 'Bridge in Selma where John Lewis and 600 marchers were clubbed and tear-gassed.',
+        },
+        {
+          term: 'Lyndon B. Johnson',
+          def: 'US President whose political mastery forced the 1964 and 1965 Civil Rights Acts through Congress.',
         },
       ],
     },
   },
 
-  // Spread 7: KT 2.3
+  // =========================================================================
+  // SPREAD 7: KT 2.3 — MALCOLM X & BLACK POWER, 1963–70
+  // Exam Format: interpretation_diff_why (Section B: Q3(b) [4m] + Q3(c) [4m])
+  // =========================================================================
   {
     id: 'lesson_2_3',
-    topic: 'Key Topic 2: Protest, Progress and Radicalism, 1960–75',
-    title:
-      'KT 2.3: What was the Black Power movement, and how did it differ from non-violent protests?',
+    topic: 'Key Topic 2: Protest, Progress & Radicalism, 1960–75',
+    title: 'KT 2.3: Malcolm X & Black Power, 1963–70',
+    footerTag: 'KT 2.3: Malcolm X & Black Power',
     left: {
-      headline: 'Black Power: Pride, Self-Defense & The Critique of Non-Violent Integration',
+      sectionTag: 'Radical Transformation',
+      contextTitle: 'Strategic Context & Geopolitical Overview',
       summary:
-        'Frustrated by the slow pace of change, unrelenting white violence, and persistent economic misery in northern urban ghettos, younger activists rejected King\'s non-violent integrationist philosophy. Inspired by Malcolm X, Stokely Carmichael popularized "Black Power" in 1966, while Huey Newton and Bobby Seale formed the Black Panther Party, championing armed self-defense, revolutionary socialism, and community survival programs.',
+        'By the mid-1960s, younger activists grew frustrated with non-violent passivity and persistent urban poverty. Malcolm X championed Black nationalism and armed self-defense. Following his 1965 assassination, Stokely Carmichael popularised "Black Power", while Huey Newton and Bobby Seale formed the Black Panther Party in Oakland, combining armed police patrols with community survival programs.',
       pillars: [
         {
           title: 'Malcolm X & The Nation of Islam',
-          subtitle: 'The Apostle of Black Nationalism',
+          subtitle: 'Racial Pride & Armed Self-Defense',
           bullets: [
-            'Malcolm X rejected integration, describing it as begging white oppressors for acceptance; advocated Black separatism and economic independence.',
-            'Advocated armed self-defense against white terror: urged Black Americans to defend themselves **"by any means necessary"**.',
-            'Broke with Elijah Muhammad and the Nation of Islam in March 1964; embraced orthodox Sunni Islam following his pilgrimage to Mecca.',
-            'Assassinated on 21 Feb 1965 at the Audubon Ballroom in NYC by NOI gunmen; his *Autobiography* became the bible of Black nationalism.',
+            'Malcolm X joined the **Nation of Islam (Black Muslims)** in prison, rejecting King’s integration as "begging the white man" and advocating Black separatism and self-respect.',
+            'He asserted the right of Black Americans to defend themselves "by any means necessary", arguing non-violence disarmed victims while white mobs went unpunished.',
+            'After breaking with Elijah Muhammad and completing the Hajj pilgrimage to Mecca in 1964, he embraced interracial brotherhood before being assassinated on 21 Feb 1965.',
           ],
         },
         {
-          title: 'Stokely Carmichael & SNCC',
-          subtitle: 'The Rejection of Non-Violence',
+          title: 'The Emergence of Black Power (1966)',
+          subtitle: 'Stokely Carmichael & The 1968 Olympics',
           bullets: [
-            'Elected SNCC chairman in May 1966; expelled white members from leadership to promote authentic Black self-determination.',
-            'During the June 1966 March Against Fear in Greenwood, Mississippi, Carmichael electrified crowds by chanting: **"Black Power!"**',
-            'Defined Black Power as Black people coming together to elect representatives and build institutions accountable to their communities.',
-            'Shifted SNCC away from Christian non-violence and interracial alliances toward militant anti-imperialism and anti-draft activism.',
+            'During the June 1966 March Against Fear in Mississippi, SNCC leader **Stokely Carmichael** rejected non-violence and coined the thunderous slogan **"Black Power"**.',
+            'Black Power urged African Americans to build their own economic institutions, reject white standards of beauty ("Black is Beautiful"), and demand political autonomy.',
+            'At the 1968 Mexico Olympics, 200m medalists **Tommie Smith and John Carlos** bowed their heads and raised black-gloved fists on the podium, catapulting the movement worldwide.',
           ],
         },
         {
-          title: 'The Black Panther Party (BPP)',
-          subtitle: 'Armed Self-Defense & Community Socialism',
+          title: 'The Black Panther Party (1966–70)',
+          subtitle: 'Ten-Point Program & Survival Programs',
           bullets: [
-            'Founded in Oakland, California in October 1966 by college students **Huey P. Newton** and **Bobby Seale**.',
-            'Organized armed citizen patrols to follow police cars and monitor arrests, preventing police brutality against Black residents.',
-            'Drafted the radical **Ten-Point Program**, demanding full employment, decent housing, education, and an end to police murder.',
-            'Established free community survival programs: provided free breakfast to 10,000 children daily and ran free health clinics.',
+            'Founded in Oakland (Oct 1966) by **Huey Newton and Bobby Seale**, the Black Panthers adopted berets, leather jackets, and loaded weapons to monitor police brutality.',
+            'Their **Ten-Point Program** demanded full employment, decent housing, exemption from the Vietnam draft, and an end to racist police terror.',
+            'They ran **Community Survival Programs**: feeding 10,000 children daily in the Free Breakfast Program, running medical clinics, and providing sickle cell anemia screening.',
           ],
         },
       ],
       keyFigures: [
         {
           name: 'Malcolm X',
-          role: 'Charismatic leader who preached Black nationalism, self-defense, and racial pride; intellectual godfather of Black Power.',
+          role: 'Charismatic spokesperson for Black nationalism; inspired Black Power through his emphasis on self-defense, racial dignity, and pan-African unity.',
         },
         {
           name: 'Stokely Carmichael',
-          role: 'SNCC chairman who popularized the slogan "Black Power" in 1966 and aligned the movement with global anti-colonialism.',
+          role: 'SNCC chairman who radicalised the movement in 1966 with the "Black Power" slogan, expelling white members to pursue Black self-determination.',
         },
         {
           name: 'Huey P. Newton',
-          role: 'Co-founder and Minister of Defense of the Black Panther Party; developed armed self-defense and community survival programs.',
+          role: 'Co-founder and Minister of Defense of the Black Panther Party; developed armed "copwatching" patrols and the socialist Ten-Point Program.',
         },
         {
-          name: 'Tommie Smith & John Carlos',
-          role: 'US Olympic sprinters who raised black-gloved fists in Black Power salute on the medal podium at the 1968 Mexico Olympics.',
+          name: 'Bobby Seale',
+          role: 'Co-founder and Chairman of the Black Panthers; organised community health clinics and ran for Mayor of Oakland in 1973.',
         },
       ],
-      archivalSource: {
-        title: '"The Ballot or the Bullet" Speech',
-        citation: 'Malcolm X • Delivered at Cory Methodist Church, Cleveland, Ohio (3 April 1964)',
-        quote:
-          "It's got to be the ballot or the bullet. If you're afraid to use an expression like that, you'd better get on out of the country... A ballot is like a bullet. You don't throw your ballots until you see a target, and if that target is not within your reach, keep your ballot in your pocket.",
-        significance:
-          'Encapsulated the fundamental ideological break from patient non-violent direct action to aggressive political leverage and armed self-defense.',
-      },
+      milestones: [
+        {
+          date: '8 Mar 1964',
+          event: 'Malcolm X breaks with Nation of Islam to form Muslim Mosque, Inc.',
+        },
+        {
+          date: '21 Feb 1965',
+          event: 'Malcolm X assassinated in Harlem by Nation of Islam gunmen',
+        },
+        {
+          date: '16 Jun 1966',
+          event: 'Stokely Carmichael first uses "Black Power" slogan in Greenwood',
+        },
+        {
+          date: '15 Oct 1966',
+          event: 'Black Panther Party for Self-Defense founded in Oakland, California',
+        },
+        {
+          date: '16 Oct 1968',
+          event: 'Tommie Smith & John Carlos raise Black Power salute at Mexico Olympics',
+        },
+      ],
     },
     right: {
-      deepCases: [
-        {
-          title: '1. Ideological Schism: King vs. Malcolm X',
-          points: [
-            'King preached integration, Christian love, moral redemptive suffering, and constitutional reform within American democratic capitalism.',
-            'Malcolm X condemned non-violence as "disarming the Negro", preaching that non-violence taught Black men to love their enemies while being lynched.',
-            'King drew support from northern white liberals, southern churches, and the federal government; Malcolm spoke to alienated urban youth.',
-            "By 1967, King moved closer to Malcolm's critique, opposing the Vietnam War and launching the Poor People's Campaign against capitalist poverty.",
-          ],
-        },
-        {
-          title: '2. The Black Panther Ten-Point Program',
-          points: [
-            'Point 1: "We want freedom. We want power to determine the destiny of our Black Community."',
-            'Point 2: "We want full employment for our people." Point 3: "We want an end to the robbery by the capitalists of our Black Community."',
-            'Point 6: "We want all Black men to be exempt from military service that forces us to kill other people of color in Vietnam."',
-            'Point 7: "We want an immediate end to POLICE BRUTALITY and MURDER of Black people... by organizing self-defense groups."',
-          ],
-        },
-        {
-          title: '3. Community Survival Programs vs. State Repression',
-          points: [
-            'Beyond black leather jackets and firearms, the Panthers operated Free Breakfast for Children programs feeding 10,000 daily in 19 cities.',
-            'Ran free health clinics providing sickle-cell anemia screening, legal aid offices, and liberation schools teaching Black history.',
-            'FBI Director J. Edgar Hoover branded the Panthers the "greatest internal security threat to the nation", targeting them via **COINTELPRO**.',
-            'Between 1968 and 1970, police raids killed 28 Panthers (including 21-year-old Fred Hampton in Chicago) and imprisoned hundreds of leaders.',
-          ],
-        },
-        {
-          title: '4. The 1968 Mexico Olympics Salute',
-          points: [
-            'Tommie Smith (gold) and John Carlos (bronze) in the 200m sprint staged a silent protest organized by the Olympic Project for Human Rights.',
-            'Mounted the medal podium barefoot in black socks (representing poverty), wearing human rights badges, and raised black-gloved fists.',
-            'During the national anthem, they bowed their heads as the US flag was raised, creating the defining political image of 20th-century sports.',
-            'US Olympic Committee stripped them of medals and expelled them from the village; received death threats, but became global icons.',
-          ],
-        },
-      ],
-      causalPathway: [
-        {
-          stage: '1. Frustration with Reform',
-          text: 'Unrelenting white terror in the South and persistent ghetto poverty in the North discredit gradual integration.',
-        },
-        {
-          stage: "2. Malcolm X's Influence",
-          text: 'Malcolm X popularizes Black nationalism and armed self-defense; his 1965 assassination accelerates youth radicalism.',
-        },
-        {
-          stage: '3. "Black Power" Coined (1966)',
-          text: "Stokely Carmichael proclaims Black Power on the Meredith March, severing SNCC's alliance with white liberals.",
-        },
-        {
-          stage: '4. Black Panthers & FBI War',
-          text: 'Newton and Seale form Black Panthers in Oakland; FBI launches COINTELPRO to assassinate leaders and crush the movement.',
-        },
-      ],
-      masterWordBank: [
-        {
-          term: 'Black Power',
-          def: 'Movement emphasizing Black political autonomy, racial pride, and economic self-sufficiency.',
-        },
+      question: {
+        typeHeader: 'Section B: Q3(b) & Q3(c) Historians’ Views [8m]',
+        title: 'The Nature and Impact of the Black Panther Party',
+        stem: 'Study Interpretations 1 and 2. (b) What is the main difference between the views? [4m] &bull; (c) Suggest one reason why they differ. [4m]',
+        marks: '4 + 4 = 8',
+        marksTime: '8 Marks &bull; ~14 Mins Total',
+        planningGuideTitle: 'Examiner Planning & Structural Framework:',
+        planningGuide:
+          '<strong>Q3(b) Views Difference (4m):</strong> Contrast Interpretation 1 (viewing Panthers as violent, armed extremists who alienated white support) with Interpretation 2 (viewing Panthers as community defenders running socialist welfare programs).<br/><strong>Q3(c) Reason for Difference (4m):</strong> Explain how Historian 1 relied on FBI COINTELPRO records and sensationalist media, whereas Historian 2 investigated Oakland grassroots oral histories and Free Breakfast records.',
+        modelAnswer:
+          '<strong>Q3(b) Main Difference in Views:</strong> The main difference is that Interpretation 1 views the Black Panthers as a dangerous, paramilitary organization that promoted violence and alienated moderate support, whereas Interpretation 2 views them as a vital community-led movement providing social survival programs. Interpretation 1 emphasizes that the Panthers "carried loaded rifles through state capitols, engaged in gun battles with police, and frightened white allies with revolutionary Marxist rhetoric." In contrast, Interpretation 2 stresses that "their primary legacy lay in community empowerment, providing free breakfasts to 10,000 school children daily and operating medical clinics in impoverished Black neighborhoods."<br/><br/><strong>Q3(c) Reason for Difference:</strong> One reason the interpretations differ is that the two historians investigated entirely different bodies of historical evidence. Historian 1 drew primarily on contemporary FBI surveillance files (J. Edgar Hoover’s COINTELPRO) and sensationalist white television reports, which focused overwhelmingly on armed shootouts and criminal trials. Conversely, Historian 2 examined local community archives in Oakland and oral testimonies from ordinary Black mothers and children who benefited directly from the Free Breakfast for Children and sickle cell screening programs.',
+        examinerNote:
+          'Full 8 marks. 3(b) accurately identifies the conceptual divergence (violent militants vs social welfare providers) with supporting evidence. 3(c) explains how differing evidence (FBI records vs community welfare files) generated the conflicting viewpoints.',
+        pitfallCategory: 'Interpretation Difference Pitfalls',
+        pitfall:
+          "Do not summarize the Black Panthers' history in Q3(c)! You must specifically explain WHY the two historians reached opposing verdicts based on their evidence or focus.",
+      },
+      causalPathway: {
+        title: 'Visual Causal Pathway: The Evolution of Black Power & Radicalism',
+        steps: [
+          {
+            stage: '1. Malcolm X Critique',
+            desc: 'Malcolm X challenges non-violent integration, promoting armed self-defense and Black pride.',
+          },
+          {
+            stage: '2. SNCC Radicalisation',
+            desc: 'Stokely Carmichael popularizes "Black Power" amid frustration with unpunished white violence.',
+          },
+          {
+            stage: '3. Black Panther Party',
+            desc: 'Oakland Panthers combine armed patrols against police brutality with welfare programs.',
+          },
+          {
+            stage: '4. State Repression',
+            desc: 'FBI COINTELPRO infiltrates and disrupts the Panthers, assassinating key leaders.',
+          },
+        ],
+      },
+      wordBank: [
         {
           term: 'Malcolm X',
-          def: 'Black nationalist orator who advocated self-defense "by any means necessary".',
+          def: 'Black nationalist leader who rejected non-violence and championed racial dignity and self-defense.',
         },
         {
-          term: 'Nation of Islam (NOI)',
-          def: 'Religious group promoting Black separatism, self-discipline, and Islamic theology.',
+          term: 'Nation of Islam',
+          def: 'Religious group led by Elijah Muhammad advocating Black separatism and Islamic teachings.',
         },
         {
-          term: '"By Any Means Necessary"',
-          def: 'Malcolm X’s famous maxim justifying self-defense against white supremacist violence.',
+          term: 'By Any Means Necessary',
+          def: 'Famous phrase coined by Malcolm X asserting the right to self-defense against terror.',
         },
         {
           term: 'Stokely Carmichael',
-          def: 'SNCC leader who coined the "Black Power" slogan and rejected non-violence.',
+          def: 'SNCC chairman who coined the slogan "Black Power" during the 1966 March Against Fear.',
         },
         {
-          term: 'Meredith March (1966)',
-          def: 'March through Mississippi where the "Black Power" slogan was first publicly chanted.',
+          term: 'Black Power',
+          def: 'Movement emphasizing Black pride, economic self-reliance, and independent political action.',
         },
         {
           term: 'Black Panther Party',
-          def: 'Revolutionary socialist organization founded in Oakland in 1966 by Newton and Seale.',
-        },
-        {
-          term: 'Huey P. Newton & Bobby Seale',
-          def: 'Founders of the Black Panther Party for Self-Defense.',
+          def: 'Revolutionary socialist organization founded in 1966 in Oakland by Newton and Seale.',
         },
         {
           term: 'Ten-Point Program',
-          def: 'The core ideological manifesto and list of demands of the Black Panther Party.',
+          def: 'The core political manifesto of the Black Panthers demanding employment, housing, and justice.',
         },
         {
-          term: 'Community Survival Programs',
-          def: 'Social initiatives run by the Panthers, including free breakfast for children.',
+          term: 'Free Breakfast Program',
+          def: 'Pioneering Black Panther welfare initiative feeding thousands of poor urban school children.',
+        },
+        {
+          term: 'Huey P. Newton',
+          def: 'Co-founder and chief political theorist of the Black Panther Party for Self-Defense.',
+        },
+        {
+          term: 'Bobby Seale',
+          def: 'Chairman of the Black Panthers who co-authored the Ten-Point Program with Huey Newton.',
         },
         {
           term: '1968 Mexico Olympics',
-          def: 'Games where Tommie Smith and John Carlos raised black-gloved fists in protest.',
+          def: 'Games where US sprinters Tommie Smith and John Carlos raised gloved fists for Black Power.',
         },
         {
           term: 'COINTELPRO',
-          def: 'FBI covert counter-intelligence program designed to infiltrate and destroy Black radical groups.',
+          def: 'Covert FBI counterintelligence program that targeted, infiltrated, and destroyed Black radical groups.',
         },
       ],
     },
   },
 
-  // Spread 8: KT 2.4
+  // =========================================================================
+  // SPREAD 8: KT 2.4 — THE CIVIL RIGHTS MOVEMENT, 1965–75
+  // Exam Format: interpretation_eval (Section B: Q3(d) [16+4m])
+  // =========================================================================
   {
     id: 'lesson_2_4',
-    topic: 'Key Topic 2: Protest, Progress and Radicalism, 1960–75',
-    title: 'KT 2.4: Why did riots break out in American cities between 1965 and 1968?',
+    topic: 'Key Topic 2: Protest, Progress & Radicalism, 1960–75',
+    title: 'KT 2.4: The Civil Rights Movement, 1965–75: Riots, Kerner & Legacy',
+    footerTag: 'KT 2.4: Civil Rights Movement 1965–75',
     left: {
-      headline: "The Long Hot Summers: Ghetto Rage, The Kerner Commission & King's Death",
+      sectionTag: 'Ghettos & Assassination',
+      contextTitle: 'Strategic Context & Geopolitical Overview',
       summary:
-        'Between 1965 and 1968, over 300 riots erupted across American cities, shattering the illusion that racial inequality was purely a southern issue. Sparked by routine police confrontations in impoverished northern and western ghettos, explosions in Watts (1965), Newark (1967), and Detroit (1967) prompted the landmark Kerner Commission Report, which warned that the nation was dividing into "two societies, one black, one white—separate and unequal."',
+        'Between 1965 and 1975, the civil rights struggle shifted from legal desegregation in the South to entrenched economic inequality and police brutality in northern urban ghettos. Explosive riots in Watts, Newark, and Detroit led to the 1968 Kerner Report’s stark warning. The assassination of Martin Luther King Jr. in 1968 shattered the non-violent coalition, leaving a complex legacy of major political gains alongside enduring economic division.',
       pillars: [
         {
-          title: 'The Watts Riot (August 1965)',
-          subtitle: 'The Explosion in Los Angeles',
+          title: 'The Long Hot Summers: Urban Riots (1965–67)',
+          subtitle: 'Ghettos, Poverty & Police Brutality',
           bullets: [
-            'Erupted on 11 August 1965, just 5 days after LBJ signed the historic Voting Rights Act, exposing the limits of southern civil rights laws.',
-            'Sparked by the aggressive highway patrol arrest of 21-year-old Marquette Frye for suspected drunk driving in front of an angry crowd.',
-            'Riot lasted 6 days across a 50-square-mile zone: 34 people killed, 1,032 injured, 3,952 arrested, and $40m in commercial property burned.',
-            'Governor Pat Brown deployed 14,000 California National Guardsmen; King visited Watts and was booed by angry youth chanting "Burn, baby, burn!"',
+            'Just five days after the Voting Rights Act passed, the **Watts Riot** erupted in Los Angeles (Aug 1965); 34 were killed and 1,000 injured during six days of burning.',
+            'Between 1965 and 1967, over 250 race riots erupted in northern and western cities, most severely in **Newark** (26 dead, 1967) and **Detroit** (43 dead, 1967).',
+            'Riots were triggered by routine police traffic stops but fueled by deep structural grievances: slum housing, 30% youth unemployment, and underfunded schools.',
           ],
         },
         {
-          title: 'Detroit & Newark Riots (1967)',
-          subtitle: 'The "Long Hot Summer"',
+          title: 'The Kerner Report & King in the North',
+          subtitle: 'The Chicago Campaign & Systemic Racism',
           bullets: [
-            'In July 1967, racial rebellions erupted in Newark, NJ after police severely beat a Black cab driver; 26 died during 6 days of looting and sniper fire.',
-            'A week later, Detroit exploded when police raided an unlicensed after-hours drinking club celebrating returning Black Vietnam veterans.',
-            'Detroit was the deadliest urban riot in 20th-century America: 43 dead (33 Black, 10 white), 1,189 injured, 7,200 arrested, and 2,500 buildings destroyed.',
-            'President Johnson deployed 4,700 paratroopers of the elite 82nd and 101st Airborne Divisions equipped with tanks and heavy machine guns.',
+            'In 1966, King launched the **Chicago Freedom Movement** against slum housing; during a march in Marquette Park, he was hit by a rock, noting northern whites were more hateful than in Mississippi.',
+            'President Johnson’s **Kerner Commission (1968)** concluded: *"Our nation is moving toward two societies, one black, one white—separate and unequal."*',
+            'The report blamed white racism for ghetto poverty and recommended massive federal investment, but Johnson buried the report due to soaring Vietnam War costs.',
           ],
         },
         {
-          title: 'The Kerner Commission (1968)',
-          subtitle: 'Official Indictment of White Racism',
+          title: 'Assassination of MLK & Progress by 1975',
+          subtitle: 'Memphis, Fair Housing & The Balance Sheet',
           bullets: [
-            'President Johnson appointed the National Advisory Commission on Civil Disorders under Illinois Governor **Otto Kerner Jr.** to find riot causes.',
-            'The landmark March 1968 report concluded: *"Our nation is moving toward two societies, one black, one white—separate and unequal."*',
-            'Explicitly blamed **white racism** rather than Black criminality for ghetto misery: police brutality, residential segregation, and joblessness.',
-            'Recommended massive federal investment in inner-city jobs, housing desegregation, and welfare; LBJ largely ignored the report due to Vietnam war costs.',
+            'On 4 April 1968, **Martin Luther King Jr. was assassinated** in Memphis, Tennessee, by James Earl Ray; riots erupted in over 100 cities leaving 46 dead.',
+            'In response, Congress swiftly passed the **Civil Rights Act of 1968 (Fair Housing Act)**, outlawing racial discrimination in the sale or rental of housing.',
+            'By 1975, legal segregation was eliminated, Black voter registration exceeded 60%, and Black mayors led major cities (Los Angeles, Atlanta, Detroit); yet deep economic inequalities persisted.',
           ],
         },
       ],
       keyFigures: [
         {
-          name: 'Governor Otto Kerner Jr.',
-          role: 'Illinois Governor who chaired the Kerner Commission; produced the definitive federal report identifying white racism as riot cause.',
-        },
-        {
-          name: 'Dr Martin Luther King Jr.',
-          role: 'Assassinated in Memphis on 4 April 1968 supporting sanitation workers; his murder triggered riots in over 100 cities.',
+          name: 'Otto Kerner Jr.',
+          role: 'Governor of Illinois and chairman of the National Advisory Commission on Civil Disorders that produced the landmark 1968 Kerner Report.',
         },
         {
           name: 'James Earl Ray',
-          role: 'Escaped convict and white supremacist sniper who assassinated Dr Martin Luther King Jr. at the Lorraine Motel in Memphis.',
+          role: 'Fugitive white supremacist who assassinated Dr. Martin Luther King Jr. on the balcony of the Lorraine Motel in Memphis on 4 April 1968.',
         },
         {
-          name: 'Mayor Richard J. Daley',
-          role: 'Chicago Mayor who issued shoot-to-kill orders against looters during the post-King assassination riots in April 1968.',
+          name: 'Tom Bradley',
+          role: 'Former police officer elected as the first African American Mayor of Los Angeles in 1973, symbolising dramatic Black political progress.',
+        },
+        {
+          name: 'Maynard Jackson',
+          role: 'Elected as the first African American Mayor of Atlanta in 1973, reflecting the transformative power of the Voting Rights Act of 1965.',
         },
       ],
-      archivalSource: {
-        title: 'Report of the National Advisory Commission on Civil Disorders',
-        citation:
-          'The Kerner Commission • Final Report Submitted to President Lyndon B. Johnson (1 March 1968)',
-        quote:
-          'This is our basic conclusion: Our nation is moving toward two societies, one black, one white—separate and unequal... Segregation and poverty have created in the racial ghetto a destructive environment totally unknown to most white Americans. What white Americans have never fully understood—but what the Negro can never forget—is that white society is deeply implicated in the ghetto. White institutions created it, white institutions maintain it, and white society condones it.',
-        significance:
-          'First official federal government report to place unequivocal structural blame for urban insurrections on white institutional racism and systemic housing segregation.',
-      },
+      milestones: [
+        {
+          date: '11 Aug 1965',
+          event: 'Watts riots erupt in Los Angeles leaving 34 dead and $40m damage',
+        },
+        {
+          date: '23 Jul 1967',
+          event: 'Detroit riot begins; 43 killed as federal tanks patrol city streets',
+        },
+        {
+          date: '29 Feb 1968',
+          event: 'Kerner Report warns America is dividing into two unequal societies',
+        },
+        { date: '4 Apr 1968', event: 'Martin Luther King Jr. assassinated in Memphis, Tennessee' },
+        {
+          date: '11 Apr 1968',
+          event: 'President Johnson signs Civil Rights Act of 1968 (Fair Housing Act)',
+        },
+      ],
     },
     right: {
-      deepCases: [
+      question: {
+        typeHeader: 'Section B: Q3(d) Evaluative Essay [16+4m]',
+        title: 'Extent of Civil Rights Progress by 1975',
+        stem: 'How far do you agree with Interpretation 1 that the civil rights movement had achieved fundamental success in transforming the lives of Black Americans by 1975? [16+4 SPaG Marks]',
+        marks: '16 + 4',
+        marksTime: '20 Marks &bull; ~25 Mins',
+        planningGuideTitle: 'Examiner Planning & Structural Framework (Criteria-Led Essay):',
+        planningGuide:
+          '<strong>Paragraph 1 (Agree with Int 1):</strong> Evaluate legal and political transformation (Civil Rights Act 1964, Voting Rights Act 1965, Fair Housing Act 1968, Black mayors elected in major cities).<br/><strong>Paragraph 2 (Evaluate Int 2 - Counter):</strong> Evaluate persistent economic inequalities (urban ghetto poverty, de facto housing segregation, Watts/Detroit riots, Kerner Report findings).<br/><strong>Conclusion:</strong> Reach a criteria-driven verdict: Total success in dismantling de jure legal apartheid, but limited success in eradicating de facto economic inequality.',
+        modelAnswer:
+          'Interpretation 1 argues that the civil rights movement achieved fundamental success by 1975, transforming the legal and political landscape of the United States. There is compelling historical evidence to substantiate this view. The movement completely dismantled the century-old system of Southern de jure apartheid. Landmark federal statutes—the Civil Rights Act of 1964, the Voting Rights Act of 1965, and the Fair Housing Act of 1968—permanently outlawed Jim Crow segregation in public accommodations, employment, and housing. Furthermore, the political empowerment of Black Americans was transformative: protected by federal registrars, Black voter registration in Mississippi jumped from under 7% in 1964 to over 60% by 1970. This democratic enfranchisement led directly to the election of Black mayors in major metropolitan centers, including Tom Bradley in Los Angeles (1973) and Maynard Jackson in Atlanta (1973).<br/><br/>Conversely, Interpretation 2 emphasizes the severe limitations of this progress, asserting that economic inequality and systemic racism remained deeply entrenched. As Dr. King discovered during his 1966 Chicago campaign, civil rights legislation did nothing to alleviate northern de facto segregation, predatory slum landlords, or systemic employment discrimination. The explosive "Long Hot Summers"—with devastating riots in Watts (1965), Newark (1967), and Detroit (1967)—reflected immense grassroots despair. The federal Kerner Commission (1968) confirmed this grim reality, concluding that the nation was dividing into "two societies, one black, one white—separate and unequal." By 1975, Black unemployment remained double that of whites, and white flight to suburbs left inner-city schools chronically segregated.<br/><br/>In conclusion, I agree with Interpretation 1 regarding constitutional and political rights, but agree with Interpretation 2 regarding economic and social equality. The movement succeeded completely in abolishing legal segregation and establishing political enfranchisement, but it fundamentally failed to dismantle the structural poverty of northern urban ghettos.',
+        examinerNote:
+          'Level 4 response (16/16 + 4 SPaG = 20/20). Masterfully balances the legal/political achievements against northern economic realities with precise factual deployment (Kerner Report, Detroit/Watts, Voting Rights percentages, Bradley/Jackson mayors).',
+        pitfallCategory: 'Paper 3 Essay Pitfalls',
+        pitfall:
+          'Do not make a sweeping, one-sided claim that civil rights was "a total triumph" or "a total failure". Establish a clear distinction between legal/political success versus socio-economic stagnation.',
+      },
+      causalPathway: {
+        title: 'Visual Causal Pathway: From Legislative Breakthrough to Economic Friction',
+        steps: [
+          {
+            stage: '1. Legislative Peak (1964–65)',
+            desc: 'Civil Rights and Voting Rights Acts eliminate legal Jim Crow apartheid.',
+          },
+          {
+            stage: '2. Urban Explosion (1965–67)',
+            desc: 'Northern ghetto riots erupt over slum conditions, unemployment, and police brutality.',
+          },
+          {
+            stage: '3. King’s Northern Push',
+            desc: 'MLK challenges Chicago slums; Kerner Report warns of two separate, unequal societies.',
+          },
+          {
+            stage: '4. Mixed Legacy by 1975',
+            desc: 'Unprecedented Black political representation emerges alongside persistent economic poverty.',
+          },
+        ],
+      },
+      wordBank: [
         {
-          title: '1. The Northern Ghetto Reality & Redlining',
-          points: [
-            'While southern Jim Crow fell, northern Black populations were trapped in decaying inner cities by discriminatory banking (**redlining**).',
-            'Federal Housing Administration (FHA) guidelines refused to insure mortgages in Black neighborhoods, starving ghettos of capital investment.',
-            'White families fled to newly built suburbs (**"white flight"**), eroding municipal tax bases and leaving inner-city schools catastrophically underfunded.',
-            'Black male youth unemployment exceeded 35% in major northern cities, creating deep frustration and fertile ground for insurrection.',
-          ],
+          term: 'Watts Riots',
+          def: 'Six-day August 1965 civil rebellion in Los Angeles leaving 34 dead and $40m in damage.',
         },
         {
-          title: '2. Police as an Army of Occupation',
-          points: [
-            'Kerner Commission found police misconduct was the primary grievance in almost every single riot investigated between 1965 and 1968.',
-            'Police forces were overwhelmingly white: in Detroit, less than 5% of police officers were Black in a city with a 40% Black population.',
-            'White police officers frequently used racial slurs, excessive physical force, and aggressive stop-and-frisk harassment against Black youth.',
-            'Residents viewed police not as public servants, but as an occupying hostile army protecting white property against Black citizens.',
-          ],
+          term: 'Long Hot Summers',
+          def: 'Series of explosive urban race riots across northern cities between 1965 and 1967.',
         },
         {
-          title: "3. King's Assassination & The Holy Week Uprisings",
-          points: [
-            'On 4 April 1968, Martin Luther King Jr. was shot and killed by white supremacist James Earl Ray at the Lorraine Motel in Memphis, Tennessee.',
-            'His murder triggered the "Holy Week Uprisings": rebellions erupted across more than 110 US cities, including Washington DC, Chicago, and Baltimore.',
-            'In Washington DC, fires raged within two blocks of the White House; machine-gun nests were mounted on the US Capitol steps.',
-            'Over 46 people died, 20,000 were arrested, and 45,000 troops were mobilized; non-violent civil rights movement was permanently shattered.',
-          ],
+          term: 'Kerner Report',
+          def: '1968 presidential report concluding America was moving toward two separate, unequal societies.',
         },
         {
-          title: '4. The Fair Housing Act (Civil Rights Act of 1968)',
-          points: [
-            "Signed into law by President Johnson on 11 April 1968, one week after King's murder, as smoke still drifted over American cities.",
-            "Title VIII prohibited racial discrimination in the sale, rental, and financing of 80% of the nation's private housing market.",
-            'Made it a federal crime to intimidate or interfere with anyone buying a home or exercising their constitutional civil rights.',
-            'Represented the final major legislative milestone of the civil rights era; however, enforcement remained notoriously weak and underfunded.',
-          ],
-        },
-      ],
-      causalPathway: [
-        {
-          stage: '1. Watts Explosion (Aug 1965)',
-          text: 'Watts explodes 5 days after Voting Rights Act; 34 dead; exposes failure of federal laws to fix northern urban poverty.',
+          term: 'Chicago Movement',
+          def: '1966 SCLC campaign against housing discrimination and slums in the urban North.',
         },
         {
-          stage: '2. "Long Hot Summer" (1967)',
-          text: 'Newark and Detroit rebellions leave 69 dead; LBJ sends 82nd Airborne tanks to restore order in American streets.',
+          term: 'Fair Housing Act 1968',
+          def: 'Title VIII of the Civil Rights Act of 1968 prohibiting racial discrimination in housing.',
         },
         {
-          stage: '3. Kerner Report (Mar 1968)',
-          text: 'Official investigation warns America is splitting into two unequal societies, blaming white institutional racism.',
+          term: 'James Earl Ray',
+          def: 'White supremacist convict who assassinated Martin Luther King Jr. in Memphis on 4 April 1968.',
         },
         {
-          stage: '4. King Murder & Fair Housing',
-          text: 'King assassinated in Memphis; riots erupt in 110 cities; LBJ signs Fair Housing Act of 1968 as the movement ends.',
-        },
-      ],
-      masterWordBank: [
-        {
-          term: 'Watts Riot (1965)',
-          def: 'Six-day rebellion in Los Angeles leaving 34 dead; marked shift to northern economic anger.',
-        },
-        {
-          term: 'Newark Riot (1967)',
-          def: 'Six-day uprising in New Jersey sparked by police brutality against a Black cab driver (26 dead).',
-        },
-        {
-          term: 'Detroit Riot (1967)',
-          def: 'Deadliest riot of the 1960s; 43 dead; required deployment of 82nd Airborne paratroopers.',
-        },
-        {
-          term: '"Long Hot Summer"',
-          def: 'Summer of 1967 when over 150 separate race riots erupted across American cities.',
-        },
-        {
-          term: 'Kerner Commission (1968)',
-          def: 'Presidential commission that investigated riot causes, blaming white systemic racism.',
-        },
-        {
-          term: '"Two Societies"',
-          def: 'Famous Kerner warning that the US was dividing into two separate and unequal societies.',
-        },
-        {
-          term: 'Memphis Sanitation Strike',
-          def: '1968 labor strike by Black workers King was supporting when he was assassinated.',
-        },
-        {
-          term: 'King Assassination (1968)',
-          def: 'Murder of MLK on 4 April 1968 by James Earl Ray, sparking riots in over 110 cities.',
-        },
-        {
-          term: 'Civil Rights Act of 1968',
-          def: 'Federal law banning racial discrimination in the sale and rental of housing (Fair Housing).',
-        },
-        {
-          term: 'Redlining',
-          def: 'Discriminatory banking practice refusing home mortgages in predominantly Black urban neighborhoods.',
+          term: 'De Facto Segregation',
+          def: 'Racial segregation maintained by residential housing patterns rather than explicit state laws.',
         },
         {
           term: 'White Flight',
-          def: 'Mass migration of middle-class white Americans from urban cities to racially exclusive suburbs.',
+          def: 'Mass demographic migration of middle-class white Americans from cities to suburbs in the 1960s/70s.',
         },
         {
-          term: 'Ghettoization',
-          def: 'The confinement of racial minorities to decaying, underfunded, segregated inner-city areas.',
+          term: 'Tom Bradley',
+          def: 'Elected in 1973 as the first African American Mayor of Los Angeles, serving for 20 years.',
+        },
+        {
+          term: 'Maynard Jackson',
+          def: 'Elected in 1973 as the first Black Mayor of Atlanta, Georgia, transforming city contracts.',
+        },
+        {
+          term: 'Ghettoisation',
+          def: 'Concentration of impoverished minority groups into neglected inner-city urban neighborhoods.',
+        },
+        {
+          term: 'Civil Rights Act 1968',
+          def: 'Federal law passed days after King’s assassination outlawing housing discrimination.',
         },
       ],
     },

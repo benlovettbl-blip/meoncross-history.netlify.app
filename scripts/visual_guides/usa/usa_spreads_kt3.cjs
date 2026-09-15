@@ -1,713 +1,724 @@
+/**
+ * usa_spreads_kt3.cjs
+ *
+ * Spreads 9 to 12 for Key Topic 3: US Involvement in the Vietnam War, 1954–75
+ * Grounded in Hodder GCSE History for Edexcel (Steve Waugh & John Wright, pp. 64–95)
+ *
+ * Enforces the Paper 3 4-4-4-4 Question Matrix:
+ * - Spread 9 (KT 3.1): inference_causation (Section A: Q1 Inference [4m] + Q2 Explain Why [12m])
+ * - Spread 10 (KT 3.2): source_utility (Section B: Q3(a) Utility of Sources B and C [8m])
+ * - Spread 11 (KT 3.3): interpretation_diff_why (Section B: Q3(b) Views Diff [4m] + Q3(c) Reasons [4m])
+ * - Spread 12 (KT 3.4): interpretation_eval (Section B: Q3(d) Evaluative Essay [16+4m])
+ */
+
 module.exports = [
-  // Spread 9: KT 3.1
+  // =========================================================================
+  // SPREAD 9: KT 3.1 — REASONS FOR US INVOLVEMENT, 1954–63 (EISENHOWER & KENNEDY)
+  // Exam Format: inference_causation (Section A: Q1 [4m] + Q2 [12m])
+  // =========================================================================
   {
     id: 'lesson_3_1',
-    topic: 'Key Topic 3: US Involvement in the Vietnam War, 1954–75',
-    title: 'KT 3.1: Why did the US support Ngo Dinh Diem in South Vietnam (1954–63)?',
+    topic: 'Key Topic 3: US Involvement in Vietnam, 1954–75',
+    title: 'KT 3.1: Reasons for US Involvement in Vietnam, 1954–63',
+    footerTag: 'KT 3.1: US Involvement, 1954–63',
     left: {
-      headline: 'The Cold War Quagmire: Domino Theory, Ngo Dinh Diem & The Buddhist Crisis',
+      sectionTag: 'Cold War Origins',
+      contextTitle: 'Strategic Context & Geopolitical Overview',
       summary:
-        'Following the catastrophic French defeat at Dien Bien Phu and the 1954 Geneva Accords dividing Vietnam at the 17th Parallel, the United States viewed Southeast Asia through the rigid lens of the Cold War. Driven by Eisenhower\'s "Domino Theory", Washington backed the autocratic, Catholic regime of Ngo Dinh Diem in South Vietnam, cancelling scheduled democratic elections and provoking the rise of the Vietcong guerrilla movement.',
+        "Following France's defeat at Dien Bien Phu and the 1954 Geneva Accords dividing Vietnam at the 17th Parallel, the US intervened to contain communism. Driven by Eisenhower's Domino Theory, Washington installed Ngo Dinh Diem, cancelled the scheduled 1956 elections, and funded Saigon. However, Diem's autocracy, corruption, and persecution of Buddhists alienated the rural population, culminating in his overthrow in November 1963.",
       pillars: [
         {
-          title: 'Dien Bien Phu & Geneva (1954)',
-          subtitle: 'The Collapse of French Colonial Rule',
+          title: 'Geneva Accords & The Domino Theory (1954)',
+          subtitle: 'Partition & The Cold War Rationale',
           bullets: [
-            "French colonial forces were surrounded and decisively defeated at **Dien Bien Phu** in May 1954 by General Giap's Vietminh artillery.",
-            'The **Geneva Accords (July 1954)** temporarily partitioned Vietnam at the 17th Parallel into a communist North and pro-Western South.',
-            'The Accords mandated nationwide democratic elections by July 1956 to reunify Vietnam under a single freely elected national government.',
-            'The US refused to sign the final declaration, fearing communist leader Ho Chi Minh would win over 80% of the nationwide vote.',
+            'Following the French surrender at **Dien Bien Phu** (May 1954), the Geneva Accords temporarily partitioned Vietnam along the **17th Parallel**.',
+            'Nationwide democratic elections were scheduled for July 1956 to reunify the country under a single national government.',
+            'President Eisenhower formulated the **"Domino Theory"**: if South Vietnam fell to communism, Laos, Cambodia, Thailand, and Burma would rapidly collapse.',
+            'The US refused to endorse Geneva, backed **Ngo Dinh Diem** as South Vietnamese President, and established SEATO to block communist expansion.',
           ],
         },
         {
-          title: 'The Domino Theory & Diem',
-          subtitle: 'Backing an Autocratic Ally',
+          title: "Weaknesses of Ngo Dinh Diem's Regime",
+          subtitle: 'Autocracy, Corruption & Catholic Favoritism',
           bullets: [
-            'President Eisenhower articulated the **"Domino Theory"** on 7 April 1954: if Vietnam fell, neighbouring Asian nations would rapidly topple.',
-            'The US installed anti-communist, Catholic nationalist **Ngo Dinh Diem** as Prime Minister, pumping $1.2bn into South Vietnam.',
-            'With American backing, Diem refused to hold the scheduled 1956 reunification elections, solidifying the permanent division of Vietnam.',
-            'Diem ruled as an autocrat: appointed family members, crushed political rivals, and imprisoned 40,000 dissidents in concentration camps.',
+            'Diem cancelled the 1956 national elections with US approval, knowing communist leader **Ho Chi Minh** would win an estimated 80% majority.',
+            'Diem ruled as an autocrat: rigged the 1955 referendum (claiming 98.2% of votes), gave government jobs to Catholic relatives, and imprisoned 40,000 opponents.',
+            'He reversed land reforms, taking 2 million acres from peasants to return to wealthy Catholic landlords, who demanded up to 40% crop rent.',
+            'In Dec 1960, southern rebels formed the **National Liberation Front (NLF / Vietcong)**, launching guerrilla warfare to overthrow Diem.',
           ],
         },
         {
-          title: 'Strategic Hamlets & Buddhist Crisis',
-          subtitle: 'Peasant Alienation & The Final Coup',
+          title: 'Kennedy Escalation & The Buddhist Crisis (1961–63)',
+          subtitle: 'Strategic Hamlets & The Fall of Diem',
           bullets: [
-            'In 1962, Kennedy expanded US military advisers to 16,000 and launched the fortified **Strategic Hamlets** resettlement programme.',
-            'Hamlets uprooted peasants from ancestral lands at gunpoint; the program backfired, driving thousands of recruits into the Vietcong.',
-            "Diem's regime heavily favored the Catholic minority, persecuting the 80% Buddhist majority and banning the Buddhist flag in May 1963.",
-            'Monk **Thich Quang Duc** burned himself to death in Saigon; global outrage forced JFK to back an ARVN military coup that killed Diem.',
+            'President Kennedy dramatically expanded US aid, sending the "Green Berets" and increasing US military advisers from 900 to **16,000 by 1963**.',
+            'In 1962, the US launched the **Strategic Hamlet Program**, moving peasants into fortified barbed-wire villages to isolate the Vietcong; it deeply alienated peasants.',
+            "In May 1963, Diem banned the Buddhist flag on Buddha's birthday; monk **Thich Quang Duc** publicly burned himself to death in Saigon in protest.",
+            'Recognising Diem was an impossible liability, the US covertly backed an ARVN military coup on **1–2 Nov 1963**; Diem was overthrown and assassinated.',
           ],
         },
       ],
       keyFigures: [
         {
+          name: 'Dwight D. Eisenhower',
+          role: '34th US President (1953–61); formulated Domino Theory and poured $1.2bn into South Vietnam to construct an anti-communist buffer state.',
+        },
+        {
           name: 'Ngo Dinh Diem',
-          role: 'Catholic President of South Vietnam (1955–63); overthrown and assassinated in a US-sanctioned military coup in November 1963.',
+          role: 'Catholic President of South Vietnam (1955–63); autocratic ruler assassinated in US-backed coup after alienating the 80% Buddhist majority.',
         },
         {
           name: 'Ho Chi Minh',
-          role: 'President of North Vietnam; revered communist nationalist who led the anti-colonial struggle against France and the US.',
-        },
-        {
-          name: 'Dwight D. Eisenhower',
-          role: 'US President (1953–61) who articulated the Domino Theory and committed the first financial aid and military advisers to Saigon.',
+          role: 'Communist nationalist leader of North Vietnam; revered founder of Vietminh who orchestrated guerrilla resistance to French and US forces.',
         },
         {
           name: 'Thich Quang Duc',
-          role: "Buddhist monk whose self-immolation on 11 June 1963 in Saigon exposed Diem's religious tyranny to worldwide television audiences.",
+          role: '66-year-old Buddhist monk whose self-immolation in Saigon on 11 June 1963 shocked global audiences and destroyed Diem’s international legitimacy.',
         },
       ],
-      archivalSource: {
-        title: 'President Eisenhower on the "Domino Theory"',
-        citation: 'Dwight D. Eisenhower • White House Press Conference (7 April 1954)',
-        quote:
-          'You have a row of dominoes set up, you knock over the first one, and what will happen to the last one is the certainty that it will go over very quickly. So you could have a beginning of a disintegration that would have the most profound influences... Asia, after all, has already lost some 450 million of its peoples to the Communist dictatorship.',
-        significance:
-          'Established the foundational Cold War geopolitical rationale that justified American military intervention in Vietnam across four successive presidencies.',
-      },
+      milestones: [
+        {
+          date: 'May 1954',
+          event: 'French defeated at Dien Bien Phu; Geneva Accords divide Vietnam',
+        },
+        {
+          date: 'Jul 1956',
+          event: 'Diem cancels nationwide reunification elections with US support',
+        },
+        {
+          date: 'Dec 1960',
+          event: 'National Liberation Front (Vietcong) established in South Vietnam',
+        },
+        { date: 'Mar 1962', event: 'Strategic Hamlet Program launched to isolate rural Vietcong' },
+        { date: 'Nov 1963', event: 'Diem overthrown and assassinated in US-backed military coup' },
+      ],
     },
     right: {
-      deepCases: [
+      question: {
+        typeHeader: 'Section A: Q1 Inference [4m] & Q2 Explain Why [12m]',
+        title: 'Strategic Hamlets & US Cold War Escalation, 1954–63',
+        stem: 'Q1 (4m) Inference from Source A &bull; Q2 (12m) Explain why US involvement in Vietnam increased between 1954 and 1963.',
+        marks: '4 + 12 = 16',
+        marksTime: '16 Marks &bull; ~24 Mins Total',
+        planningGuideTitle: 'Examiner Planning & Structural Framework:',
+        planningGuide:
+          '<strong>Q1 Formula:</strong> Inference 1 + Direct Quote from Source A; Inference 2 + Direct Quote. Zero provenance.<br/><strong>Q2 Formula (3 PEE Paragraphs):</strong> (1) Geopolitical fear of Domino Theory & containment after Dien Bien Phu &rarr; (2) Inherent weakness and autocracy of Diem’s regime requiring US propping up &rarr; (3) Kennedy’s determination to look strong against communism after Cuba/Berlin.',
+        modelAnswer:
+          '<strong>Q1 (Inference):</strong> One inference from Source A is that the Strategic Hamlet Program caused intense resentment among Vietnamese peasants. The source states "peasants were forcibly uprooted from ancestral grounds at bayonet point", showing resettlement was coerced by military violence. A second inference is that the hamlets failed to stop the Vietcong. The source notes "cadres operated freely inside the perimeter after dark", proving the fortifications were easily infiltrated by communist guerrillas.<br/><br/><strong>Q2 (Explain Why):</strong> One major reason US involvement increased was the geopolitical commitment to Eisenhower’s "Domino Theory". Following the French collapse at Dien Bien Phu and the 1954 Geneva Accords, US policymakers believed that if South Vietnam fell to communism, neighboring nations including Laos, Cambodia, Thailand, and Burma would topple sequentially. To prevent this, Washington committed $1.2 billion in economic and military aid to construct a non-communist bastion under Ngo Dinh Diem, establishing SEATO to guarantee regional defense.<br/><br/>A second crucial reason was the acute political and military weakness of Diem’s autocratic regime. Diem refused to hold the 1956 reunification elections because he knew Ho Chi Minh would win over 80% of the vote. Diem’s corruption, his persecution of the 80% Buddhist majority, and his reversal of peasant land reforms drove rural villagers to support the National Liberation Front (Vietcong). As guerrilla attacks mounted, the US was forced to escalate its military support from 900 advisers under Eisenhower to 16,000 under Kennedy to prevent Saigon’s collapse.<br/><br/>A third reason was President Kennedy’s personal need to demonstrate Cold War resolve following foreign policy setbacks in the Bay of Pigs (1961) and the Berlin Wall crisis. Kennedy deployed the elite Green Berets and launched the Strategic Hamlet Program in 1962, deepening American military entanglement until the US finally backed Diem’s overthrow in November 1963.',
+        examinerNote:
+          'Full 16/16. Q1 gives two distinct inferences with concise verbatim quotes. Q2 produces three rich, multi-causal paragraphs integrating precise specification knowledge (Geneva 17th Parallel, SEATO, 80% Buddhist majority, Green Berets, 16,000 advisers) and causal connectives.',
+        pitfallCategory: 'Inference & Causation Pitfalls',
+        pitfall:
+          'In Q1, do not waste time evaluating provenance or reliability—stick strictly to text inferences. In Q2, avoid simple chronological storytelling: always explain HOW each factor caused increased US commitment.',
+      },
+      causalPathway: {
+        title: 'Visual Causal Pathway: The Trajectory of US Escalation in Vietnam (1954–63)',
+        steps: [
+          {
+            stage: '1. Geneva Accords (1954)',
+            desc: 'Vietnam divided at 17th Parallel; US backs Diem to build anti-communist buffer.',
+          },
+          {
+            stage: '2. Cancelled Vote (1956)',
+            desc: 'Diem cancels elections; autocracy and land seizures spawn Vietcong insurgency.',
+          },
+          {
+            stage: '3. Kennedy Advisers (1961–62)',
+            desc: 'JFK expands advisers to 16,000; launches failed Strategic Hamlet Program.',
+          },
+          {
+            stage: '4. Coup & Vacuum (1963)',
+            desc: 'Buddhist crisis triggers US-backed coup killing Diem; leaves political chaos.',
+          },
+        ],
+      },
+      wordBank: [
         {
-          title: '1. The 1955 Rigged Referendum & Land Reform Failure',
-          points: [
-            'In 1955, Diem held a fraudulent referendum to depose Emperor Bao Dai, claiming an impossible 98.2% of the national vote.',
-            'In Saigon, Diem was credited with 605,000 votes despite there being only 450,000 registered voters on the electoral roll.',
-            'Diem repealed Vietminh land reforms, seizing 2 million acres from peasants and returning them to wealthy Catholic landlords.',
-            'Landlords demanded back-rent of up to 40% of crop yields, destroying peasant loyalty and creating fertile soil for communist recruitment.',
-          ],
-        },
-        {
-          title: '2. Creation of the Vietcong (NLF 1960)',
-          points: [
-            'In December 1960, southern insurgents founded the **National Liberation Front (NLF)**, dismissively labelled "Vietcong" by Diem.',
-            'The NLF united communist cadres, nationalist students, and aggrieved peasants in an armed struggle to overthrow Diem.',
-            'Established effective shadow governments in rural villages, redistributing land to poor families and providing basic schooling.',
-            'Carried out targeted assassinations: between 1959 and 1962, the Vietcong assassinated over 4,000 local government officials and police.',
-          ],
-        },
-        {
-          title: '3. Strategic Hamlets & Rural Resentment',
-          points: [
-            'Devised by British adviser Robert Thompson; aimed to isolate guerrillas by moving rural populations into barbed-wire enclosures.',
-            'Peasants were forced to construct their own stockades without pay, causing intense resentment among deeply religious rural families.',
-            'Vietcong cadres easily infiltrated the hamlets from within; stolen American weapons and ammunition were funneled to local units.',
-            'By late 1963, over 70% of strategic hamlets were either abandoned, destroyed, or fully under covert communist control.',
-          ],
-        },
-        {
-          title: '4. The Buddhist Crisis & The November 1963 Coup',
-          points: [
-            'On 8 May 1963, government troops fired into a peaceful Buddhist crowd in Hue celebrating the Buddha’s birthday, killing 9 civilians.',
-            'Diem\'s sister-in-law Madame Nhu publicly mocked self-immolations as "barbecues", offering to provide gasoline and matches.',
-            "In August 1963, Diem's special forces raided sacred pagodas nationwide, arresting 1,400 monks and prompting widespread student strikes.",
-            'US Ambassador Henry Cabot Lodge Jr. authorized ARVN generals to execute a coup; on 2 Nov 1963, Diem and his brother were murdered.',
-          ],
-        },
-      ],
-      causalPathway: [
-        {
-          stage: '1. Geneva Partition (1954)',
-          text: 'French defeat leads to 17th Parallel division; US installs Diem and blocks 1956 democratic elections.',
-        },
-        {
-          stage: '2. Domino Doctrine',
-          text: 'Eisenhower and Kennedy pump military advisers and $1.2bn into Saigon to halt communist expansion.',
-        },
-        {
-          stage: '3. Peasant Alienation',
-          text: 'Strategic Hamlets and Buddhist repression drive rural populations into the arms of the Vietcong.',
-        },
-        {
-          stage: '4. Diem Overthrown (Nov 1963)',
-          text: 'US-backed military coup assassinates Diem, leaving South Vietnam in severe political chaos.',
-        },
-      ],
-      masterWordBank: [
-        {
-          term: 'Domino Theory',
-          def: 'Cold War belief that if one Southeast Asian nation fell to communism, all others would follow.',
-        },
-        {
-          term: 'Geneva Accords (1954)',
-          def: 'International agreement dividing Vietnam at the 17th Parallel and scheduling 1956 elections.',
+          term: 'Geneva Accords',
+          def: '1954 agreements ending French rule, temporarily dividing Vietnam along the 17th Parallel.',
         },
         {
           term: '17th Parallel',
-          def: 'The temporary demilitarized buffer zone separating North and South Vietnam established in 1954.',
+          def: 'Demilitarised line separating communist North Vietnam from pro-Western South Vietnam.',
+        },
+        {
+          term: 'Domino Theory',
+          def: "Eisenhower's doctrine that the fall of South Vietnam would cause neighboring Asian states to fall.",
+        },
+        {
+          term: 'SEATO',
+          def: 'Southeast Asia Treaty Organization; 1954 collective defense alliance formed to block communism.',
         },
         {
           term: 'Ngo Dinh Diem',
-          def: 'Anti-communist, Catholic President of South Vietnam from 1955 until his murder in 1963.',
-        },
-        {
-          term: 'Ho Chi Minh',
-          def: 'Communist leader of North Vietnam who championed national independence and unification.',
+          def: 'Catholic, anti-communist President of South Vietnam (1955–63), overthrown in Nov 1963.',
         },
         {
           term: 'Vietminh',
-          def: 'Communist-led anti-colonial army founded by Ho Chi Minh that defeated the French at Dien Bien Phu.',
+          def: 'Communist nationalist movement led by Ho Chi Minh that defeated French forces at Dien Bien Phu.',
         },
         {
-          term: 'Vietcong (NLF 1960)',
-          def: 'National Liberation Front; southern communist guerrilla force fighting to reunify Vietnam.',
+          term: 'National Liberation Front',
+          def: 'NLF (Vietcong); guerrilla organization founded in Dec 1960 to overthrow Diem and unify Vietnam.',
         },
         {
           term: 'Strategic Hamlets',
-          def: 'Fortified villages created in 1962 to forcibly isolate peasants from Vietcong guerrillas.',
+          def: 'Fortified villages established in 1962 to isolate rural peasants from Vietcong guerrillas.',
         },
         {
-          term: 'Buddhist Crisis (1963)',
-          def: "Religious uprising against Diem's pro-Catholic discrimination; monk self-immolations.",
+          term: 'Military Advisers',
+          def: 'US personnel sent to train South Vietnamese forces; increased from 900 to 16,000 under JFK.',
         },
         {
-          term: 'Thich Quang Duc',
-          def: 'Buddhist monk whose self-immolation in Saigon shocked the international community.',
+          term: 'Green Berets',
+          def: 'Elite US Special Forces trained in counter-insurgency warfare deployed to Vietnam by Kennedy.',
         },
         {
-          term: '1963 Military Coup',
-          def: 'Overthrow and execution of Ngo Dinh Diem by South Vietnamese generals with CIA backing.',
+          term: 'Buddhist Crisis',
+          def: '1963 protests and self-immolations sparked by Diem’s ban on flying Buddhist religious flags.',
         },
         {
-          term: 'Containment Policy',
-          def: 'US foreign policy doctrine aimed at stopping the global spread of Soviet/Chinese communism.',
+          term: 'ARVN',
+          def: 'Army of the Republic of Vietnam; South Vietnamese official armed forces funded by the US.',
         },
       ],
     },
   },
 
-  // Spread 10: KT 3.2
+  // =========================================================================
+  // SPREAD 10: KT 3.2 — ESCALATION UNDER JOHNSON & GULF OF TONKIN (1964–65)
+  // Exam Format: source_utility (Section B: Q3(a) [8m])
+  // =========================================================================
   {
     id: 'lesson_3_2',
-    topic: 'Key Topic 3: US Involvement in the Vietnam War, 1954–75',
-    title: 'KT 3.2: Why did the US send combat troops to Vietnam after the Gulf of Tonkin?',
+    topic: 'Key Topic 3: US Involvement in Vietnam, 1954–75',
+    title: 'KT 3.2: Escalation Under Johnson: Tonkin to Ground Combat',
+    footerTag: 'KT 3.2: Escalation under Johnson',
     left: {
-      headline: 'Crossing the Rubicon: The Tonkin Resolution, Rolling Thunder & Ground Troops',
+      sectionTag: 'Direct Military Escalation',
+      contextTitle: 'Strategic Context & Geopolitical Overview',
       summary:
-        'Following the disputed Gulf of Tonkin Incident in August 1964, President Lyndon B. Johnson secured near-unanimous congressional approval for the Gulf of Tonkin Resolution, granting him blank-check authority to conduct open war. When Vietcong attacks threatened US bases in early 1965, Johnson launched the sustained aerial bombing of North Vietnam (Operation Rolling Thunder) and deployed the first US ground combat troops to Da Nang.',
+        'Following the assassination of President Kennedy in November 1963, President Lyndon B. Johnson inherited an unstable South Vietnam with the Vietcong controlling vast rural territories. The controversial Gulf of Tonkin Incident in August 1964 gave Johnson the congressional blank check he needed to wage full-scale war. By March 1965, Operation Rolling Thunder was underway and 3,500 US Marines landed at Da Nang.',
       pillars: [
         {
-          title: 'Gulf of Tonkin Incident (1964)',
-          subtitle: 'The Fabricated Casus Belli',
+          title: 'The Gulf of Tonkin Incident (August 1964)',
+          subtitle: 'The Catalyst for Direct War',
           bullets: [
-            'On 2 Aug 1964, the destroyer USS Maddox exchanged fire with 3 North Vietnamese torpedo boats while running covert electronic intelligence.',
-            'On 4 Aug, Maddox and USS Turner Joy reported a second torpedo attack amid turbulent weather, pitch darkness, and phantom radar blips.',
-            'Task force commander Captain Herrick sent urgent follow-up cables warning of "freak weather and overeager sonar men"; no attack occurred.',
-            'President Johnson deliberately suppressed the doubts, ordering retaliatory airstrikes and claiming "unprovoked aggression on the high seas".',
+            'On 2 Aug 1964, destroyer USS *Maddox* was attacked by 3 North Vietnamese torpedo boats in international waters while gathering covert electronic intelligence.',
+            'On 4 Aug, *Maddox* and USS *Turner Joy* reported a second torpedo attack in darkness and stormy seas; sonar operators reported phantom torpedo tracks.',
+            'Captain John Herrick cabled Washington that freak weather caused false readings, but LBJ ignored doubts and ordered immediate retaliatory airstrikes.',
+            'Johnson used the incident to present himself as firm against communism during the 1964 presidential election campaign against Barry Goldwater.',
           ],
         },
         {
-          title: 'The Gulf of Tonkin Resolution',
-          subtitle: 'The Congressional Blank Check',
+          title: 'The Gulf of Tonkin Resolution (August 1964)',
+          subtitle: 'The Congressional "Blank Check"',
           bullets: [
-            'On 7 August 1964, Congress overwhelmingly passed the **Gulf of Tonkin Resolution** (416–0 in House, 88–2 in Senate).',
+            'On 7 Aug 1964, Congress passed the **Gulf of Tonkin Resolution** almost unanimously (416–0 in House, 88–2 in Senate).',
             'Authorized the President to take *"all necessary measures to repel any armed attack... and to prevent further aggression"*.',
-            'Served as a functional declaration of war; LBJ joked the resolution was "like grandma\'s nightshirt—it covered everything".',
-            'Senators Wayne Morse and Ernest Gruening cast the only dissenting votes, warning the act was an unconstitutional transfer of war power.',
+            'Gave Johnson total executive power to wage war in Southeast Asia without requiring a formal constitutional declaration of war.',
+            'Senators Wayne Morse and Ernest Gruening cast the only dissenting votes, warning the resolution granted monarchical war-making powers.',
           ],
         },
         {
-          title: 'Operation Rolling Thunder & Da Nang',
-          subtitle: 'Escalation to Full Combat Role',
+          title: 'Pleiku, Rolling Thunder & Da Nang (1965)',
+          subtitle: 'The Shift to Ground Warfare',
           bullets: [
-            'In Feb 1965, Vietcong guerrillas attacked the US airfield at Pleiku, killing 8 Americans and wounding 126 soldiers.',
-            'LBJ authorized **Operation Rolling Thunder**, a massive 3-year aerial bombardment campaign targeting North Vietnamese infrastructure.',
-            'To protect American airbases and bomber strips, 3,500 US Marines landed on the beaches of **Da Nang** on 8 March 1965.',
-            'By December 1965, US combat troop strength had skyrocketed from 23,000 military advisers to over 184,000 frontline combat troops.',
+            'In Feb 1965, Vietcong guerrillas attacked the US base at **Pleiku**, killing 8 US soldiers and destroying 10 aircraft; Johnson retaliated with airstrikes.',
+            'On 2 Mar 1965, LBJ launched **Operation Rolling Thunder**, a massive 3-year bombing campaign targeting North Vietnamese bridges, roads, and army bases.',
+            'On 8 March 1965, **3,500 US Marines landed at Da Nang** to protect US air bases, marking the arrival of the first American ground combat troops.',
+            'Troop numbers skyrocketed from 23,000 in late 1964 to 184,000 by late 1965, and reached 536,000 by 1968 under General William Westmoreland.',
           ],
         },
       ],
       keyFigures: [
         {
           name: 'Lyndon B. Johnson',
-          role: 'US President (1963–69); escalated American involvement into a full-scale ground war in Southeast Asia.',
+          role: '36th US President (1963–69); used Gulf of Tonkin Resolution to transform Vietnam into an American ground war, committing over 500,000 troops.',
         },
         {
           name: 'Robert McNamara',
-          role: 'US Secretary of Defense; applied statistical analysis and body count metrics to direct the war effort.',
+          role: 'US Secretary of Defense (1961–68); key architect of US military escalation, body count metrics, and Operation Rolling Thunder bombing campaigns.',
         },
         {
           name: 'General William Westmoreland',
-          role: 'Commander of MACV; architect of "search and destroy" attrition doctrine and requested troop increases.',
+          role: 'Commander of US forces in Vietnam (1964–68); devised the "Search and Destroy" attrition strategy and demanded continual troop increases.',
         },
         {
-          name: 'Senator Wayne Morse',
-          role: 'One of only two senators who voted against the Gulf of Tonkin Resolution, warning it violated the US Constitution.',
+          name: 'Wayne Morse',
+          role: 'US Senator from Oregon; one of only two senators to vote against the Gulf of Tonkin Resolution, warning it was unconstitutional.',
         },
       ],
-      archivalSource: {
-        title: 'The Gulf of Tonkin Resolution (Public Law 88-408)',
-        citation:
-          'Joint Resolution of the US Congress • Approved by President Johnson (7 August 1964)',
-        quote:
-          'The Congress approves and supports the determination of the President, as Commander in Chief, to take all necessary measures to repel any armed attack against the forces of the United States and to prevent further aggression... This resolution shall expire when the President shall determine that the peace and security of the area is reasonably assured.',
-        significance:
-          'Functioned as a blank check declaration of war, allowing LBJ to commit over 500,000 combat troops to Vietnam without ever seeking a formal constitutional declaration of war.',
-      },
+      milestones: [
+        {
+          date: '2–4 Aug 1964',
+          event: 'USS Maddox involved in disputed naval skirmishes in Gulf of Tonkin',
+        },
+        {
+          date: '7 Aug 1964',
+          event: 'Congress passes Gulf of Tonkin Resolution granting LBJ blank-check war power',
+        },
+        {
+          date: 'Feb 1965',
+          event: 'Vietcong attack on Pleiku airbase kills 8 Americans; triggers retaliation',
+        },
+        {
+          date: '2 Mar 1965',
+          event: 'Operation Rolling Thunder begins; sustained 3-year bombing of North Vietnam',
+        },
+        {
+          date: '8 Mar 1965',
+          event: 'First 3,500 US combat Marines land at Da Nang; ground war begins',
+        },
+      ],
     },
     right: {
-      deepCases: [
-        {
-          title: '1. The Covert Background (OPLAN 34A)',
-          points: [
-            'The USS Maddox was not on innocent patrol; it was directly supporting **OPLAN 34A**, covert South Vietnamese commando raids.',
-            'On 31 July 1964, South Vietnamese gunboats shelled North Vietnamese radar stations on Hon Me and Hon Nieu islands.',
-            'North Vietnamese torpedo boats attacked the Maddox on 2 August because they believed it was coordinating the naval bombardments.',
-            'The Johnson administration concealed OPLAN 34A from Congress, falsely portraying the United States as an unprovoked victim.',
-          ],
-        },
-        {
-          title: '2. The Disputed Second Attack of August 4',
-          points: [
-            'Maddox sonar operators reported 22 torpedo attacks; sailors fired over 300 shells at radar contacts that did not exist.',
-            'Navy pilots flying overhead, including future vice presidential candidate James Stockdale, saw zero torpedo boats and zero wakes.',
-            'Herrick cabled Washington: "Review of action makes many reported contacts and torpedoes fired appear doubtful."',
-            "McNamara withheld Herrick's doubts from Congress, presenting intercepted radio transcripts out of context to prove an attack.",
-          ],
-        },
-        {
-          title: '3. Operation Rolling Thunder (1965–68)',
-          points: [
-            'Lasted 44 months; dropped 864,000 tons of bombs on North Vietnam, exceeding total US tonnage dropped in the Pacific in WWII.',
-            'Aimed to destroy industrial capacity, interdict supply lines, and force Hanoi to the negotiating table through sheer destruction.',
-            'Failed strategically: North Vietnam was a rural agrarian society with few industrial targets; supplies moved at night along the trail.',
-            'Cost the US 922 combat aircraft shot down; unified the North Vietnamese population in patriotic defiance against the "air pirates".',
-          ],
-        },
-        {
-          title: '4. Mission Creep: From Base Defense to Search & Destroy',
-          points: [
-            'General Westmoreland argued that static base defense at Da Nang was impossible without actively clearing the surrounding countryside.',
-            "In April 1965, LBJ approved National Security Action Memorandum 328, secretly changing the Marines' mission to offensive combat.",
-            'Westmoreland instituted the "three-phase strategy": halt the communist offensive, seize the initiative, and wipe out the enemy.',
-            'By late 1967, US troop deployments reached 485,000; the draft was expanded, conscripting 30,000 young Americans every month.',
-          ],
-        },
-      ],
-      causalPathway: [
-        {
-          stage: '1. Tonkin Clashes (Aug 1964)',
-          text: 'Maddox engages torpedo boats; phantom second attack exploited to rally domestic political backing.',
-        },
-        {
-          stage: '2. Blank-Check Resolution',
-          text: 'Congress passes Tonkin Resolution 498–2, surrendering constitutional war powers to President Johnson.',
-        },
-        {
-          stage: '3. Pleiku Attack (Feb 1965)',
-          text: 'Vietcong strike on US airbase kills 8 Americans, providing the trigger for Operation Rolling Thunder.',
-        },
-        {
-          stage: '4. Marines Land at Da Nang',
-          text: '3,500 Marines arrive in March 1965; US commits to direct, full-scale ground combat in Asia.',
-        },
-      ],
-      masterWordBank: [
-        {
-          term: 'Gulf of Tonkin Incident',
-          def: 'Naval clashes in August 1964 between US destroyers and North Vietnamese torpedo boats.',
-        },
+      question: {
+        typeHeader: 'Section B: Q3(a) Source Utility [8m]',
+        title: 'US Escalation & the Gulf of Tonkin Resolution (1964)',
+        stem: 'How useful are Sources B and C for an enquiry into the reasons for US military escalation in Vietnam in 1964–65? [8 Marks]',
+        marks: '8',
+        marksTime: '8 Marks &bull; ~14 Mins',
+        planningGuideTitle: 'Examiner Planning & Structural Framework (C-O-P Matrix):',
+        planningGuide:
+          '<strong>Source B:</strong> Evaluate Content (unprovoked communist aggression, international law) &rarr; Context (DESOTO covert raids, 1964 election) &rarr; Provenance (official LBJ presidential address to Congress).<br/><strong>Source C:</strong> Evaluate Content (giving unconstitutional blank check, executive war power) &rarr; Context (Senate debate, Wayne Morse dissent) &rarr; Provenance (critical speech on Senate floor).<br/><strong>Synthesis:</strong> Weigh how both sources together show the political justification versus the constitutional alarm over escalation.',
+        modelAnswer:
+          'Source B is useful because its content reveals the public justifications President Johnson used to rally Congress for military intervention. Johnson asserts that North Vietnamese naval vessels launched "deliberate and unprovoked attacks" on US warships on the high seas, claiming military retaliation was vital to protect freedom in Southeast Asia. From my contextual knowledge, Johnson omitted that the USS Maddox was engaged in covert electronic espionage supporting South Vietnamese commando raids (OPLAN 34A), and that reports of the 4 August attack were heavily disputed by sonar operators. The provenance as an official presidential message to Congress makes it exceptionally valuable for showing how the administration manufactured political consent to pass the Tonkin Resolution, especially while LBJ wanted to appear decisive against communism ahead of the 1964 election.<br/><br/>Source C is useful in a contrasting way because it highlights contemporary political opposition to this escalation. Senator Wayne Morse warns that the resolution constitutes an unconstitutional "blank check" that surrenders congressional war powers directly to the executive, warning it will inevitably plunge America into a protracted Asian ground war. From my knowledge, Morse and Ernest Gruening were the sole two senators to vote against the resolution on 7 August 1964, predicting that the 3,500 Marines sent to Da Nang in March 1965 would rapidly multiply into hundreds of thousands of combat troops. The provenance as a speech delivered on the Senate floor makes it highly reliable for capturing the constitutional alarm of dissenting lawmakers who recognized the danger of unchecked presidential war power.<br/><br/>Overall, both sources are mutually useful: Source B illustrates the top-down rhetoric of anti-communist self-defense used to justify war, while Source C demonstrates that contemporary politicians recognized the resolution as a dangerous blank check for massive military escalation.',
+        examinerNote:
+          'Full 8/8 marks (Level 3). Comprehensively evaluates Content, Own Knowledge context (OPLAN 34A, 1964 election, Da Nang 1965), and Provenance (NOP) for both sources, culminating in a balanced comparative judgement.',
+        pitfallCategory: 'Source Utility Traps',
+        pitfall:
+          'Never dismiss Source B because Johnson "lied" or was "biased". The fact that the president used deceptive claims IS what makes it historically useful for studying the reasons for escalation!',
+      },
+      causalPathway: {
+        title: 'Visual Causal Pathway: From Naval Skirmish to Open Ground Combat (1964–65)',
+        steps: [
+          {
+            stage: '1. Covert Missions',
+            desc: 'US conducts DESOTO electronic patrols supporting South Vietnamese commando raids.',
+          },
+          {
+            stage: '2. Tonkin Incident (Aug 1964)',
+            desc: 'Skirmishes with Maddox exploited by LBJ to claim unprovoked aggression.',
+          },
+          {
+            stage: '3. Tonkin Resolution',
+            desc: 'Congress passes blank check 416–0; surrenders constitutional war powers to LBJ.',
+          },
+          {
+            stage: '4. Rolling Thunder & Da Nang',
+            desc: 'Pleiku attack sparks bombing campaign; 3,500 Marines land at Da Nang (Mar 1965).',
+          },
+        ],
+      },
+      wordBank: [
         {
           term: 'USS Maddox',
-          def: 'US destroyer engaged in electronic surveillance attacked in the Gulf of Tonkin.',
+          def: 'US destroyer attacked by North Vietnamese torpedo boats in Gulf of Tonkin on 2 Aug 1964.',
+        },
+        {
+          term: 'Gulf of Tonkin Incident',
+          def: 'August 1964 naval skirmishes used by Johnson as the justification for direct military war.',
         },
         {
           term: 'Gulf of Tonkin Resolution',
-          def: 'Congressional act granting LBJ unrestricted authority to wage war in Vietnam.',
+          def: 'Congressional act of 7 Aug 1964 giving LBJ authority to use all necessary military force.',
         },
         {
-          term: '"Blank Check"',
-          def: 'Metaphor for the Tonkin Resolution, which allowed open-ended presidential military escalation.',
+          term: 'Blank Check',
+          def: 'Metaphor describing how the Tonkin Resolution gave the President limitless war powers.',
         },
         {
-          term: 'Pleiku Attack (1965)',
-          def: 'Vietcong mortar attack killing 8 Americans; triggered Operation Rolling Thunder.',
+          term: 'Pleiku Attack',
+          def: 'Feb 1965 Vietcong assault on US airbase killing 8 soldiers; triggered Rolling Thunder.',
         },
         {
           term: 'Operation Rolling Thunder',
-          def: 'Sustained, 3-year aerial bombardment campaign against North Vietnam (1965–68).',
+          def: 'Sustained US bombing campaign against North Vietnam from March 1965 to November 1968.',
         },
         {
-          term: 'Da Nang Landing (1965)',
-          def: 'Arrival of 3,500 US Marines on 8 March 1965, marking the start of US ground combat.',
+          term: 'Da Nang',
+          def: 'Coastal South Vietnamese airbase where first 3,500 US combat Marines landed on 8 March 1965.',
         },
         {
-          term: 'General Westmoreland',
-          def: 'Commander of US forces in Vietnam who designed the "search and destroy" attrition strategy.',
+          term: 'William Westmoreland',
+          def: 'US commanding general who instituted the Search and Destroy attrition strategy.',
+        },
+        {
+          term: 'Attrition Strategy',
+          def: 'Military doctrine aiming to wear down enemy forces through superior firepower and body counts.',
         },
         {
           term: 'Robert McNamara',
-          def: 'US Defense Secretary who applied corporate statistical methods to the Vietnam War.',
+          def: 'US Secretary of Defense who applied statistical analysis and body count metrics to the war.',
         },
         {
-          term: 'MACV',
-          def: 'Military Assistance Command, Vietnam; the unified command structure for US military forces.',
+          term: 'Wayne Morse',
+          def: 'Oregon Senator who voted against Tonkin Resolution, warning of unconstitutional war powers.',
         },
         {
-          term: 'OPLAN 34A',
-          def: 'Covert South Vietnamese commando raids against North Vietnam backed by US naval intelligence.',
-        },
-        {
-          term: 'Mission Creep',
-          def: 'The gradual expansion of a military operation beyond its original goals (defense to combat).',
+          term: 'Escalation',
+          def: 'The rapid expansion of US military commitment from advisers to over 500,000 combat troops.',
         },
       ],
     },
   },
 
-  // Spread 11: KT 3.3
+  // =========================================================================
+  // SPREAD 11: KT 3.3 — NATURE OF THE CONFLICT & TET OFFENSIVE (1964–68)
+  // Exam Format: interpretation_diff_why (Section B: Q3(b) [4m] + Q3(c) [4m])
+  // =========================================================================
   {
     id: 'lesson_3_3',
-    topic: 'Key Topic 3: US Involvement in the Vietnam War, 1954–75',
-    title: 'KT 3.3: Why did US military tactics fail to defeat the Vietcong?',
+    topic: 'Key Topic 3: US Involvement in Vietnam, 1954–75',
+    title: 'KT 3.3: Nature of Conflict: Tactics & the 1968 Tet Offensive',
+    footerTag: 'KT 3.3: Nature of conflict, 1964–68',
     left: {
-      headline: 'Asymmetric Attrition: High-Tech Firepower vs Guerrilla Survival',
+      sectionTag: 'Tactics & Turning Points',
+      contextTitle: 'Strategic Context & Geopolitical Overview',
       summary:
-        'The Vietnam War was an asymmetric clash between the most technologically advanced military in history and a resilient peasant guerrilla force. While the US relied on massive firepower, helicopter airmobility, chemical defoliation, and search-and-destroy missions measured by body count, the Vietcong countered with underground tunnel networks, booby traps, close-quarters combat, and unshakeable ideological commitment.',
+        'Between 1965 and 1968, the Vietnam War became a clash of mismatched doctrines. US forces utilized overwhelming technology, Search and Destroy missions, and chemical defoliants, but were confounded by Vietcong guerrilla warfare, tunnel complexes, and the Ho Chi Minh Trail. In January 1968, the Tet Offensive shattered American claims of imminent victory, delivering a psychological shock that forced LBJ to abandon re-election.',
       pillars: [
         {
-          title: 'Vietcong Guerrilla Tactics',
-          subtitle: 'The Strategy of Asymmetric Survival',
+          title: 'Vietcong Guerrilla Tactics & The Trail',
+          subtitle: 'Tunnels, Traps & "Hanging on Belts"',
           bullets: [
-            "Lacking air power and tanks, the Vietcong followed Mao Zedong's guerrilla manual: retreat when enemy attacks, harass when he camps.",
-            'Practiced **"hanging on the belts"** of American forces: fighting within 50 yards so US air strikes and artillery would hit friendly troops.',
-            'Blended invisibly into the civilian peasant population without uniforms; worked rice paddies by day and planted landmines at night.',
-            'Maintained strict discipline: treated peasants respectfully to secure intelligence, food rations, shelter, and fresh recruits.',
+            'Vietcong guerrillas avoided open battle; they practiced **"hanging onto US belts"** (fighting at close quarters) so US air strikes and artillery could not be used without killing Americans.',
+            'Constructed over **200 miles of underground tunnels** (such as Cu Chi) containing hospitals, weapon factories, kitchens, and command bunkers impervious to bombing.',
+            'Employed lethal booby traps (punji bamboo stakes smeared with excrement, Bouncing Betty mines); booby traps caused **11% of US deaths and 17% of wounds**.',
+            'Resupplied along the **Ho Chi Minh Trail**, a 600-mile network through Laos and Cambodia maintained by 300,000 workers despite relentless US bombing.',
           ],
         },
         {
-          title: 'Cu Chi Tunnels & Ho Chi Minh Trail',
-          subtitle: 'Subterranean Fortresses & Logistics',
+          title: 'US Military Tactics & Chemical Warfare',
+          subtitle: 'Search & Destroy, Agent Orange & Napalm',
           bullets: [
-            'Constructed over 250km of subterranean tunnel networks at **Cu Chi**, featuring hospitals, armouries, kitchens, and command posts.',
-            'Tunnels featured water traps to block gas, trapdoors, and punji pits, remaining completely impervious to B-52 carpet bombing.',
-            'The **Ho Chi Minh Trail** spanned 16,000km through neutral Laos and Cambodia, funneling 200 tons of Soviet/Chinese weapons daily.',
-            'Over 300,000 full-time youth volunteers and soldiers repaired bomb damage along the trail overnight, keeping supplies moving.',
+            'General Westmoreland implemented **Search and Destroy** missions: US platoons helicoptered into jungles to locate Vietcong, burn suspected villages ("Zippo raids"), and count dead bodies.',
+            'Missions alienated civilians: soldiers burned thatched huts, destroyed rice stocks, and killed livestock, driving angry peasants to support the Vietcong.',
+            'Operation Ranch Hand sprayed **19 million gallons of defoliants**; **Agent Orange** destroyed 4.5 million acres of jungle and crops, causing birth defects and cancer.',
+            'US bombers dropped **napalm** (jellied gasoline burning at 800°C) that stuck to human skin, causing horrific burns to civilians and soldiers alike.',
           ],
         },
         {
-          title: 'US Tactics: Search & Destroy',
-          subtitle: 'The Firepower & Body Count Doctrine',
+          title: 'The Tet Offensive (January–February 1968)',
+          subtitle: 'The Decisive Psychological Turning Point',
           bullets: [
-            'Westmoreland implemented **"Search and Destroy"** missions: helicopter patrols landed in jungle clearings to flush out guerrillas.',
-            'Units burned suspected communist villages with Zippo lighters (**"Zippo raids"**), slaughtering livestock and creating 4m refugees.',
-            'Success was measured by the **"Body Count"** metric, incentivising soldiers to inflate enemy casualty figures with dead civilians.',
-            'Dropped 20m gallons of chemical defoliants (**Agent Orange**) and jellied petroleum (**napalm**) that burned at 1,000°C.',
+            'On 31 Jan 1968, during the sacred Tet lunar holiday truce, 84,000 Vietcong and North Vietnamese troops launched surprise assaults on over **100 cities and military bases**.',
+            'A 19-man Vietcong sapper unit breached the US Embassy compound in Saigon, fighting for 6 hours; bloody battles raged in Hue for 25 days.',
+            '**Military Outcome:** A catastrophic defeat for the Vietcong; 45,000 communist fighters were killed, effectively breaking the Vietcong as an independent fighting force.',
+            '**Psychological Impact:** Shattered US government claims that the war was being won; news anchor Walter Cronkite declared the war was "mired in stalemate".',
           ],
         },
       ],
       keyFigures: [
         {
           name: 'General Vo Nguyen Giap',
-          role: "Commander-in-Chief of North Vietnamese Army; master of people's war who wore down US military through patient attrition.",
+          role: 'Brilliant North Vietnamese military commander; masterminded the anti-French victory at Dien Bien Phu and orchestrated the 1968 Tet Offensive.',
         },
         {
           name: 'General William Westmoreland',
-          role: 'US military commander in Vietnam; believed heavy firepower and body counts would reach the "cross-over point".',
+          role: 'US commander who assured the American public in late 1967 that there was "light at the end of the tunnel", before Tet destroyed his credibility.',
         },
         {
-          name: 'Philip Caputo',
-          role: 'US Marine lieutenant whose 1977 memoir A Rumor of War chronicled the moral collapse of search-and-destroy patrols.',
+          name: 'Walter Cronkite',
+          role: 'CBS News anchor known as "the most trusted man in America"; his Feb 1968 broadcast declaring the war unwinnable convinced LBJ he had lost public support.',
         },
         {
-          name: 'Nguyen Van Lem',
-          role: 'Vietcong captain executed on the streets of Saigon by South Vietnamese General Loan during Tet; captured in iconic photograph.',
+          name: 'Ho Chi Minh',
+          role: 'North Vietnamese leader who inspired communist fighters: "You can kill ten of my men for every one I kill of yours, but even at those odds, you will lose and I will win."',
         },
       ],
-      archivalSource: {
-        title: 'Personal Account of Search and Destroy Combat',
-        citation:
-          'Lieutenant Philip Caputo • US Marine Corps, Danang Sector • A Rumor of War (1977)',
-        quote:
-          "Our mission was not to win terrain or seize positions in that jungle, but to kill: to kill communists and to kill as many of them as possible. Stack 'em like cordwood. Victory was a high body count, defeat a low one. It was that simple, and that brutal. We walked into ambushes as human bait to draw fire so the fighter-bombers could drop napalm.",
-        significance:
-          'Exposes the moral and strategic bankruptcy of the US attrition doctrine, where human bait tactics destroyed soldier morale and alienated the Vietnamese civilian population.',
-      },
+      milestones: [
+        {
+          date: '1965–68',
+          event: 'US forces conduct Search and Destroy missions and spray Agent Orange',
+        },
+        {
+          date: 'Late 1967',
+          event: 'Westmoreland claims the end of the war is in sight ("light at end of tunnel")',
+        },
+        {
+          date: '31 Jan 1968',
+          event:
+            'Tet Offensive launched; 84,000 communist troops attack 100+ South Vietnamese cities',
+        },
+        {
+          date: '27 Feb 1968',
+          event: 'Walter Cronkite CBS editorial declares the Vietnam War a bloody stalemate',
+        },
+        {
+          date: '31 Mar 1968',
+          event: 'LBJ halts bombing of North Vietnam and announces he will not run for re-election',
+        },
+      ],
     },
     right: {
-      deepCases: [
+      question: {
+        typeHeader: 'Section B: Q3(b) [4m] & Q3(c) [4m] Interpretations',
+        title: 'Historiographical Debate: Significance of the 1968 Tet Offensive',
+        stem: 'Q3(b) How do Interpretations 1 and 2 differ about the outcome of the Tet Offensive? [4m] &bull; Q3(c) Suggest one reason why they differ. [4m]',
+        marks: '4 + 4 = 8',
+        marksTime: '8 Marks &bull; ~14 Mins Total',
+        planningGuideTitle: 'Examiner Planning & Structural Framework:',
+        planningGuide:
+          '<strong>Q3(b) Views Difference (4m):</strong> Identify precise contrasting viewpoints. Int 1 views Tet as a decisive military victory for US/ARVN forces that decimated the Vietcong. Int 2 views Tet as a catastrophic psychological and political disaster that broke American will to fight.<br/><strong>Q3(c) Reasons for Difference (4m):</strong> Explain difference by linking to different sources/evidence or differing historical focus (military statistics vs domestic political and media fallout).',
+        modelAnswer:
+          '<strong>Q3(b) (Differences in Views):</strong> Interpretations 1 and 2 differ substantially over whether the Tet Offensive was a military victory or a strategic disaster for the United States. Interpretation 1 argues that Tet was an overwhelming military triumph for US and ARVN forces. It emphasizes that communist troops were slaughtered in the open, suffering 45,000 casualties and failing to hold a single city or trigger a popular civilian uprising, leaving the Vietcong permanently broken as a combat force.<br/><br/>In direct contrast, Interpretation 2 focuses on the psychological and political impact, arguing that Tet was a catastrophic turning point that lost the war for America. It highlights that television images of Vietcong commandos attacking the US Embassy in Saigon destroyed the credibility of President Johnson and General Westmoreland, exposing their claims of imminent victory as false and turning public opinion, media figures like Walter Cronkite, and political leaders against continuing the war.<br/><br/><strong>Q3(c) (Reasons for Difference):</strong> One reason the interpretations differ is that the historians have focused on different aspects of the conflict and relied on different types of historical evidence. The author of Interpretation 1 has focused on battlefield statistics, Pentagon kill ratios, and tactical military outcomes, which show that US firepower successfully repelled the communist assault and inflicted unsustainable losses on the Vietcong. Conversely, the author of Interpretation 2 has focused on domestic American politics, media coverage, and public opinion. They give greater weight to the "credibility gap", the demoralization of the US public, and Walter Cronkite’s broadcast, which led directly to President Johnson’s decision to halt escalation and withdraw from the 1968 presidential election.',
+        examinerNote:
+          'Full 4/4 for Q3(b) and 4/4 for Q3(c). Q3(b) explicitly contrasts the two core views with specific textual detail. Q3(c) provides a valid, sophisticated explanation for the divergence (tactical/military focus vs political/media perspective) rather than a generic claim about bias.',
+        pitfallCategory: 'Interpretation Difference Pitfalls',
+        pitfall:
+          'In Q3(b), do not write two separate summaries—quote and compare them directly! In Q3(c), never say "historians have different opinions because one is biased"—explain how their historical evidence or focus differs.',
+      },
+      causalPathway: {
+        title: 'Visual Causal Pathway: The Dual Impact of the 1968 Tet Offensive',
+        steps: [
+          {
+            stage: '1. "Light in Tunnel"',
+            desc: 'US officials claim victory is near; public believes war is almost won.',
+          },
+          {
+            stage: '2. Surprise Assault',
+            desc: '84,000 communist troops attack 100+ cities; invade Saigon US Embassy.',
+          },
+          {
+            stage: '3. Tactical Defeat',
+            desc: 'US/ARVN kill 45,000 communist troops; Vietcong severely decimated.',
+          },
+          {
+            stage: '4. Political Defeat',
+            desc: 'Credibility gap widens; Walter Cronkite declares stalemate; LBJ quits 1968 race.',
+          },
+        ],
+      },
+      wordBank: [
         {
-          title: '1. Booby Traps & Psychological Dread',
-          points: [
-            'Over 11% of US combat deaths and 17% of combat wounds were inflicted by homemade Vietcong booby traps and landmines.',
-            '**Punji stick pits**: sharpened bamboo stakes smeared with animal excrement to cause fatal infections; penetrated jungle combat boots.',
-            'Bouncing Betty mines leaped waist-high before detonating; tripwires attached to dud American artillery shells exploded patrol columns.',
-            'The inability to see the enemy generated severe paranoia, combat fatigue, and indiscriminate violence against civilian villagers.',
-          ],
+          term: 'Tet Offensive',
+          def: 'Massive January 1968 communist surprise attack across South Vietnam during lunar new year.',
         },
         {
-          title: '2. "Tunnel Rats" & The Underground War',
-          points: [
-            'To combat the Cu Chi tunnels, the US military deployed specialized volunteers known as **"tunnel rats"**.',
-            'Equipped only with a .45 pistol, flashlight, and bayonet, crawling into pitch-black subterranean labyrinths measuring 2x2 feet.',
-            'Faced lethal booby traps, trapdoors, venomous pit vipers, scorpion nests, and hand-to-hand combat in oxygen-starved shafts.',
-            'Proved unable to permanently destroy the complexes; the Vietcong operated command headquarters directly beneath US division bases.',
-          ],
+          term: 'Credibility Gap',
+          def: 'The difference between optimistic government claims and the reality shown on television.',
         },
         {
-          title: '3. Chemical Warfare: Agent Orange & Napalm',
-          points: [
-            'Operation Ranch Hand sprayed defoliants over 10% of South Vietnam to strip jungle canopy and destroy peasant food crops.',
-            '**Agent Orange** contained lethal concentrations of dioxin, causing massive rates of birth defects, leukemia, and miscarriages.',
-            '**Napalm** (jellied gasoline) adhered to human flesh and burned through bone; incinerated villages and inflicted horrific civilian burns.',
-            'Chemical devastation alienated the peasant population and generated global anti-war protests, branded as war crimes.',
-          ],
+          term: 'Walter Cronkite',
+          def: 'Influential CBS newsman whose 1968 broadcast convinced LBJ he had lost public support.',
         },
-        {
-          title: '4. The Cross-Over Point Delusion',
-          points: [
-            'Westmoreland calculated the "cross-over point": the moment when US forces killed enemy troops faster than they could be replaced.',
-            'This metric was fatally flawed: North Vietnam had over 200,000 young men reach military age every single year.',
-            'Hanoi accepted astronomical casualties (losing an estimated 1.1 million soldiers) to achieve national unification.',
-            'Body count metrics encouraged fabricated statistics; dead water buffaloes, elderly villagers, and children were logged as "VC killed".',
-          ],
-        },
-      ],
-      causalPathway: [
-        {
-          stage: '1. Asymmetric Strategy',
-          text: 'Vietcong avoid open battles, using hit-and-run ambushes, punji traps, and underground tunnels to bleed US troops.',
-        },
-        {
-          stage: '2. Ho Chi Minh Trail',
-          text: 'Hanoi funnels 200 tons of Soviet/Chinese weapons daily through neutral Laos, impervious to US aerial bombardment.',
-        },
-        {
-          stage: '3. Search and Destroy',
-          text: 'US relies on helicopter airmobility and napalm; burning villages alienates the rural peasantry they came to protect.',
-        },
-        {
-          stage: '4. The Attrition Stalemate',
-          text: 'American casualties mount past 30,000 while the communist "cross-over point" remains completely unreachable.',
-        },
-      ],
-      masterWordBank: [
         {
           term: 'Guerrilla Warfare',
-          def: 'Irregular warfare using ambushes, sabotage, and mobility rather than conventional frontlines.',
+          def: 'Hit-and-run military tactics avoiding large pitched battles against superior firepower.',
         },
         {
           term: 'Cu Chi Tunnels',
-          def: 'Vast 250km underground network of bunkers, armouries, and hospitals near Saigon.',
-        },
-        {
-          term: 'Ho Chi Minh Trail',
-          def: '16,000km jungle logistical network through Laos and Cambodia supplying the Vietcong.',
-        },
-        {
-          term: '"Hanging on the Belts"',
-          def: 'Vietcong close-quarters fighting tactic preventing the US from calling air and artillery strikes.',
+          def: '200-mile underground tunnel system near Saigon housing Vietcong hospitals and barracks.',
         },
         {
           term: 'Search and Destroy',
-          def: 'US offensive doctrine sending helicopter patrols into jungle terrain to eliminate enemy forces.',
-        },
-        {
-          term: '"Zippo Raids"',
-          def: 'US operations burning suspected Vietcong peasant villages with cigarette lighters.',
-        },
-        {
-          term: 'Body Count Strategy',
-          def: "MacNamara's metric measuring military progress by the number of enemy soldiers killed.",
-        },
-        {
-          term: 'Cross-over Point',
-          def: "Theoretical point where communist casualties would exceed Hanoi's replacement rate.",
-        },
-        {
-          term: 'Napalm',
-          def: 'Incendiary jellied gasoline weapon adhering to skin and burning at 1,000°C.',
+          def: 'US military missions inserting platoons into jungles to locate and kill Vietcong units.',
         },
         {
           term: 'Agent Orange',
-          def: 'Toxic chemical herbicide used to strip jungle foliage; caused widespread birth defects.',
+          def: 'Toxic herbicide chemical sprayed by US aircraft to strip away jungle foliage and crops.',
+        },
+        {
+          term: 'Napalm',
+          def: 'Jellied gasoline weapon used in firebombing strikes, causing devastating burn injuries.',
         },
         {
           term: 'Punji Sticks',
-          def: 'Sharpened bamboo stakes smeared with excrement placed in hidden booby-trap pits.',
+          def: 'Sharpened bamboo stakes concealed in pit traps, often smeared with excrement to cause infection.',
         },
         {
-          term: '"Tunnel Rats"',
-          def: 'Specialized US/Australian soldiers who crawled into enemy tunnel complexes with flashlights and pistols.',
+          term: 'Ho Chi Minh Trail',
+          def: 'Supply corridor through Laos and Cambodia supplying communist forces in the South.',
+        },
+        {
+          term: 'Body Count',
+          def: 'US military metric measuring success by the number of enemy soldiers killed rather than land held.',
+        },
+        {
+          term: 'Zippo Raids',
+          def: 'US troop actions using cigarette lighters to torch suspected Vietcong village huts.',
         },
       ],
     },
   },
 
-  // Spread 12: KT 3.4
+  // =========================================================================
+  // SPREAD 12: KT 3.4 — CHANGES UNDER NIXON, 1969–73 (VIETNAMISATION & EXPANSION)
+  // Exam Format: interpretation_eval (Section B: Q3(d) [16+4m])
+  // =========================================================================
   {
     id: 'lesson_3_4',
-    topic: 'Key Topic 3: US Involvement in the Vietnam War, 1954–75',
-    title: 'KT 3.4: What was the Tet Offensive, and why was it the decisive turning point?',
+    topic: 'Key Topic 3: US Involvement in Vietnam, 1954–75',
+    title: 'KT 3.4: Changes Under Nixon: Vietnamisation & War Expansion',
+    footerTag: 'KT 3.4: Changes under Nixon, 1969–73',
     left: {
-      headline: 'The Tet Turning Point: Tactical Defeat, Psychological Rupture & Vietnamization',
+      sectionTag: 'De-escalation & Expansion',
+      contextTitle: 'Strategic Context & Geopolitical Overview',
       summary:
-        'On January 31, 1968, during the sacred Tet holiday truce, 84,000 communist troops launched a massive surprise offensive across 100 South Vietnamese towns and cities, penetrating the US Embassy compound in Saigon. While the offensive was a catastrophic military defeat for the Vietcong, it shattered the Washington "credibility gap", convinced the American public the war was unwinnable, prompted LBJ to abandon re-election, and led to Richard Nixon\'s strategy of "Vietnamization".',
+        'Elected in 1968 promising "peace with honor", President Richard Nixon introduced Vietnamisation—withdrawing American ground troops while training the ARVN to assume combat duties. However, to force North Vietnam into concessions, Nixon simultaneously widened the war: secretly bombing and invading Cambodia (1970) and Laos (1971), and unleashing devastating air offensives (Linebacker) on North Vietnam.',
       pillars: [
         {
-          title: 'The Tet Offensive (Jan 1968)',
-          subtitle: 'The Lightning Lunar New Year Attack',
+          title: 'Vietnamisation & The Nixon Doctrine (1969)',
+          subtitle: 'Troop Withdrawals & ARVN Expansion',
           bullets: [
-            'On 31 January 1968, 84,000 Vietcong and NVA regulars struck over 100 cities, 36 provincial capitals, and 5 of 6 autonomous cities.',
-            'A 19-man Vietcong sapper unit blasted through the perimeter wall of the **US Embassy in Saigon**, holding the grounds for 6 hours.',
-            'Communists captured the historic imperial capital of **Hue**, occupying the citadel for 26 days of brutal house-to-house urban combat.',
-            'Simultaneous diversionary sieges at **Khe Sanh** tied down 6,000 US Marines, distracting commanders from urban infiltration.',
+            'In June 1969, Nixon announced **Vietnamisation**: handing over the ground fighting to the ARVN while progressively withdrawing US troops.',
+            'The **Nixon Doctrine (July 1969)** declared the US would provide financial and military aid, but Asian allies had to supply their own combat manpower.',
+            'US troop levels plummeted dramatically from **543,000 in early 1969 to under 30,000 by late 1972**, significantly reducing US casualties.',
+            'The US poured billions into modernizing the ARVN: expanded to 1 million men, equipped with modern M16 rifles, helicopters, and artillery.',
           ],
         },
         {
-          title: 'Catastrophic Military Outcome',
-          subtitle: 'The Destruction of the Vietcong',
+          title: 'Invasions of Cambodia (1970) & Laos (1971)',
+          subtitle: 'Widening the War to Cut Supply Lines',
           bullets: [
-            'Tet was an overwhelming military failure for the communists: 45,000 of the 84,000 attackers were killed within weeks.',
-            'The South Vietnamese civilian population failed to rise in a popular revolution as North Vietnamese military planners had assumed.',
-            'The indigenous Vietcong was virtually wiped out as an effective fighting force; NVA regular units had to take over frontline combat.',
-            'US and ARVN forces recaptured every single city and town within weeks, inflicting staggering losses on communist forces.',
+            'From March 1969, Nixon ordered **Operation Menu**, dropping 110,000 tons of bombs on secret communist sanctuaries inside neutral Cambodia.',
+            'In April 1970, 30,000 US and ARVN troops officially invaded **Cambodia** to destroy Vietcong bases, sparking massive anti-war protests across US campuses.',
+            'In Feb 1971, South Vietnamese troops alone invaded **Laos** (Operation Lam Son 719) with US air support to sever the Ho Chi Minh Trail.',
+            'Laos was a military catastrophe: ARVN forces met intense NVA tank resistance and fled in panic, suffering a **50% casualty rate**.',
           ],
         },
         {
-          title: 'Psychological Shock & Aftermath',
-          subtitle: 'The Shattered Credibility Gap',
+          title: 'Air War Escalation: Linebacker I & II (1972)',
+          subtitle: 'The Easter Offensive & Christmas Bombings',
           bullets: [
-            'In late 1967, General Westmoreland assured the American public that victory was in sight and there was "light at the end of the tunnel".',
-            'Televised images of combat inside the US Embassy and street executions in Saigon shattered public trust (**the "credibility gap"**).',
-            'Respected CBS News anchor **Walter Cronkite** declared on national television that the war was mired in an unwinnable stalemate.',
-            'On 31 March 1968, President Johnson announced a partial bombing pause, opened Paris peace talks, and withdrew from re-election.',
+            'In March 1972, North Vietnam launched the conventional **Easter Offensive**; Nixon retaliated with **Operation Linebacker I**, mining Haiphong harbour and bombing northern rail links.',
+            'When peace negotiations stalled in Dec 1972, Nixon unleashed **Linebacker II ("The Christmas Bombings")**, dropping 20,000 tons of explosives on Hanoi and Haiphong in 11 days.',
+            'Linebacker was the most intense bombing campaign in world history; the US lost 15 B-52 bombers, but forced North Vietnam to sign the **Paris Peace Accords (Jan 1973)**.',
+            'Despite US claims of success, Vietnamisation failed fundamentally: the ARVN remained dependent on US air power, plagued by desertion, and riddled with corruption.',
           ],
         },
       ],
       keyFigures: [
         {
-          name: 'General Vo Nguyen Giap',
-          role: 'North Vietnamese Defense Minister; planned the Tet Offensive to break American political will despite huge military losses.',
+          name: 'Richard M. Nixon',
+          role: '37th US President (1969–74); implemented Vietnamisation to withdraw US troops while expanding aerial warfare into Cambodia and Laos.',
         },
         {
-          name: 'Walter Cronkite',
-          role: 'CBS News anchor whose post-Tet broadcast declaring Vietnam a stalemate prompted LBJ to abandon re-election.',
+          name: 'Henry Kissinger',
+          role: 'Nixon’s National Security Adviser and Secretary of State; conducted secret peace talks in Paris with North Vietnam’s Le Duc Tho.',
         },
         {
-          name: 'Clark Clifford',
-          role: 'Succeeded McNamara as Secretary of Defense in 1968; advised LBJ that military victory was unattainable.',
+          name: 'Nguyen Van Thieu',
+          role: 'President of South Vietnam (1967–75); opposed US troop withdrawals and protested the Paris Peace Accords allowing NVA troops to stay in South.',
         },
         {
-          name: 'General Creighton Abrams',
-          role: 'Replaced Westmoreland as MACV commander in 1968; implemented the "Vietnamization" transition strategy.',
+          name: 'Le Duc Tho',
+          role: 'Senior North Vietnamese diplomat who negotiated the Paris Peace Accords with Kissinger; refused Nobel Peace Prize because real peace had not arrived.',
         },
       ],
-      archivalSource: {
-        title: 'CBS News Editorial on the Vietnam Stalemate',
-        citation: 'Walter Cronkite • Special CBS News Broadcast from Vietnam (27 February 1968)',
-        quote:
-          'To say that we are closer to victory today is to believe, in the face of the evidence, the optimists who have been wrong in the past. To suggest we are on the edge of defeat is to yield to unreasonable pessimism. To say that we are mired in stalemate seems the only realistic, yet unsatisfactory, conclusion... It is increasingly clear to this reporter that the only rational way out then will be to negotiate, not as victors, but as an honorable people who lived up to their pledge to defend democracy, and did the best they could.',
-        significance:
-          'Shattered public faith in official White House pronouncements; marked the decisive turning point where mainstream middle-class America turned irrevocably against the war.',
-      },
+      milestones: [
+        {
+          date: 'Jun 1969',
+          event: 'Nixon announces Vietnamisation and begins withdrawing US combat troops',
+        },
+        {
+          date: 'Apr 1970',
+          event: 'US and ARVN forces invade Cambodia; triggers Kent State campus shootings',
+        },
+        {
+          date: 'Feb 1971',
+          event: 'ARVN invades Laos (Lam Son 719); suffers 50% casualties in disastrous retreat',
+        },
+        {
+          date: 'May 1972',
+          event: 'Operation Linebacker I launches heavy bombing and mines Haiphong harbour',
+        },
+        {
+          date: 'Dec 1972',
+          event:
+            'Operation Linebacker II ("Christmas Bombing") drops 20,000 tons of bombs in 11 days',
+        },
+      ],
     },
     right: {
-      deepCases: [
+      question: {
+        typeHeader: 'Section B: Q3(d) Evaluative Essay [16+4m]',
+        title: 'Evaluation: Was Vietnamisation a Doomed Failure from Inception?',
+        stem: "How far do you agree with Interpretation 2 that Nixon's policy of Vietnamisation was an inevitable failure that merely delayed communist victory? [16+4 SPaG Marks]",
+        marks: '16 + 4',
+        marksTime: '20 Marks &bull; ~25 Mins',
+        planningGuideTitle: 'Examiner Planning & Structural Framework (Criteria-Led Essay):',
+        planningGuide:
+          '<strong>Paragraph 1 (Agree with Int 2):</strong> Vietnamisation was a flawed political facade. ARVN plagued by desertion, corrupt officers, low morale, and dependent on US air support (proven by 50% casualties in Laos 1971).<br/><strong>Paragraph 2 (Evaluate Int 1 - Alternative View):</strong> Vietnamisation had genuine military successes. ARVN expanded to 1m men, successfully repelled 1972 Easter Offensive with US air support, Linebacker forced Hanoi to sign Paris Peace Accords (1973).<br/><strong>Conclusion:</strong> Formulate criteria judgement: Militarily, ARVN could hold ground only with US air power; once Congress cut funding and banned bombing in 1973, collapse was inevitable.',
+        modelAnswer:
+          'Interpretation 2 argues that Nixon’s policy of Vietnamisation was fundamentally flawed and merely delayed an inevitable communist victory. There is extensive evidence to support this view. From its inception in June 1969, Vietnamisation was primarily a domestic political strategy designed to quell anti-war unrest in America by reducing US casualties, rather than a coherent military plan. Although the South Vietnamese army (ARVN) was expanded to over one million men and supplied with modern weaponry, it remained crippled by institutional weaknesses. ARVN officers were appointed for political loyalty to President Thieu rather than military competence, corruption was rampant, and desertion rates reached 100,000 men per year. The fatal flaw of Vietnamisation was brutally exposed during the February 1971 invasion of Laos (Operation Lam Son 719): sent into combat without US ground troops, the ARVN was routed by North Vietnamese armor, suffering a catastrophic 50% casualty rate with soldiers clinging to helicopter skids in panic.<br/><br/>However, Interpretation 1 presents an alternative view, arguing that Vietnamisation achieved substantial military success and gave South Vietnam a viable defense. Supported by American air power and modernized logistics, the ARVN successfully blunted North Vietnam’s massive conventional Easter Offensive in March 1972. Furthermore, Nixon’s aggressive use of air power—mining Haiphong harbour in Operation Linebacker I and unleashing the devastating "Christmas Bombings" of Linebacker II in December 1972 (dropping 20,000 tons of bombs)—inflicted severe damage on northern infrastructure and forced Hanoi to sign the Paris Peace Accords in January 1973, securing Nixon’s goal of "peace with honor". Proponents of this view argue that South Vietnam survived for two years after American troops departed, collapsing only when the US Congress slashed military aid in 1974.<br/><br/>In conclusion, I agree with Interpretation 2 to a great extent. While Vietnamisation temporarily equipped the ARVN to resist North Vietnamese offensives, it created an army that was utterly dependent on American air power, intelligence, and ammunition. The fundamental premise of Vietnamisation—that a deeply corrupt and unpopular Saigon regime could defeat a highly motivated nationalist movement without hundreds of thousands of US combat troops—was an illusion. Once US forces departed under the 1973 Paris Accords, the collapse of South Vietnam was only a matter of time.',
+        examinerNote:
+          'Full marks (16/16 Level 4 + 4 SPaG = 20/20). Masterfully evaluates both interpretations with rich contextual knowledge (Lam Son 719, Laos 50% casualties, 1972 Easter Offensive, Linebacker II Christmas Bombings, Paris Peace Accords 1973) and delivers a sophisticated criteria-driven conclusion.',
+        pitfallCategory: 'Paper 3 Essay Pitfalls',
+        pitfall:
+          'Do not write a one-sided essay agreeing only with Interpretation 2! To reach Level 4, you must thoroughly evaluate the counter-arguments in Interpretation 1 before reaching your final balanced verdict.',
+      },
+      causalPathway: {
+        title: 'Visual Causal Pathway: The Trajectory and Collapse of Vietnamisation (1969–73)',
+        steps: [
+          {
+            stage: '1. Troop Drawdowns (1969)',
+            desc: 'Nixon announces Vietnamisation; US troops cut from 543k to 30k by 1972.',
+          },
+          {
+            stage: '2. Cambodia & Laos (1970–71)',
+            desc: 'Secret bombings and invasions widen war; ARVN suffers 50% losses in Laos.',
+          },
+          {
+            stage: '3. Linebacker Bombings (1972)',
+            desc: 'Devastating air offensives mine Haiphong and bomb Hanoi during Christmas.',
+          },
+          {
+            stage: '4. Paris Accords (1973)',
+            desc: 'US troops withdraw completely; ARVN left fatally vulnerable without air support.',
+          },
+        ],
+      },
+      wordBank: [
         {
-          title: '1. The Siege of the US Embassy in Saigon',
-          points: [
-            'At 2:45 am, 19 VC sappers of the C-10 Battalion blasted a hole in the 8-foot perimeter wall of the US Embassy using C-4 explosives.',
-            'Killed 5 US military policemen before being pinned down on the embassy grounds; failed to breach the main Chancery building doors.',
-            'By 9:15 am, US Military Police and 101st Airborne troops landing by helicopter killed or captured all 19 attackers.',
-            'The psychological damage was catastrophic: Americans saw their sovereign embassy transformed into a bloody warzone on morning television.',
-          ],
+          term: 'Vietnamisation',
+          def: "Nixon's policy of withdrawing US troops while training and equipping the ARVN to fight.",
         },
         {
-          title: '2. The Massacre at Hue & Urban Destruction',
-          points: [
-            'In Hue, communist forces systematically rounded up and executed over 2,800 civilians (teachers, doctors, priests, civil servants).',
-            'Bodies were buried in shallow mass graves, clubs and wire used to strangle victims to save communist ammunition.',
-            'US Marines and ARVN engaged in vicious street-by-street fighting for 26 days to recapture the historic imperial citadel.',
-            'Over 80% of Hue was destroyed by heavy artillery and air strikes; 10,000 soldiers and civilians died, creating 116,000 refugees.',
-          ],
+          term: 'Nixon Doctrine',
+          def: '1969 foreign policy declaring the US would provide aid, but Asian allies must supply troops.',
         },
         {
-          title: "3. LBJ's Resignation & Political Fallout",
-          points: [
-            'In the New Hampshire primary on 12 March 1968, anti-war challenger Eugene McCarthy won 42% of the vote against the sitting President.',
-            'Four days later, Robert F. Kennedy entered the presidential race on an explicit anti-war platform, shattering Democratic Party unity.',
-            'On 31 March 1968, LBJ gave a televised address from the Oval Office announcing a halt to bombing north of the 20th Parallel.',
-            'Concluded with his shock announcement: "I shall not seek, and I will not accept, the nomination of my party for another term as your President."',
-          ],
+          term: 'Operation Menu',
+          def: 'Covert US aerial bombing campaign targeting communist sanctuaries in neutral Cambodia.',
         },
         {
-          title: '4. The Genesis of "Vietnamization"',
-          points: [
-            'When Richard Nixon won the presidency in November 1968, he recognized that the American electorate would tolerate no more body bags.',
-            'Announced the **Nixon Doctrine** in Guam (July 1969): Asian nations must be responsible for their own ground defense.',
-            '**Vietnamization** called for the gradual withdrawal of US troops while equipping ARVN with $5bn in modern American aircraft and tanks.',
-            'Secretly expanded the war: Nixon ordered B-52 carpet bombing of communist sanctuaries in neutral Cambodia (Operation Menu) in March 1969.',
-          ],
-        },
-      ],
-      causalPathway: [
-        {
-          stage: '1. Tet Holiday Attacks (Jan 1968)',
-          text: '84,000 VC attack 100 cities; US Embassy breached, proving official claims of victory were false.',
+          term: 'Cambodian Incursion',
+          def: 'April 1970 invasion by US and ARVN forces to destroy North Vietnamese bases.',
         },
         {
-          stage: '2. Credibility Gap Explodes',
-          text: 'Televised fighting exposes the reality of the war; Walter Cronkite declares the conflict an unwinnable stalemate.',
+          term: 'Operation Lam Son 719',
+          def: 'Disastrous February 1971 ARVN invasion of Laos resulting in a 50% casualty rate.',
         },
         {
-          stage: '3. LBJ Abdication (Mar 1968)',
-          text: 'Johnson announces a bombing pause, opens Paris peace talks, and withdraws from the presidential race.',
+          term: 'Easter Offensive',
+          def: 'Massive conventional North Vietnamese invasion of South Vietnam in March 1972.',
         },
         {
-          stage: '4. Shift to Vietnamization',
-          text: 'Nixon enters office promising "peace with honor", beginning the gradual withdrawal of American ground forces.',
-        },
-      ],
-      masterWordBank: [
-        {
-          term: 'Tet Offensive (1968)',
-          def: 'Massive surprise communist offensive launched during the Lunar New Year across 100 cities.',
+          term: 'Operation Linebacker I',
+          def: 'Heavy US bombing campaign in 1972 that mined Haiphong harbour and halted the Easter Offensive.',
         },
         {
-          term: 'Lunar New Year Truce',
-          def: 'Traditional Vietnamese holiday ceasefire violated by the coordinated communist attacks.',
+          term: 'Linebacker II',
+          def: 'The "Christmas Bombings" of Dec 1972 dropping 20,000 tons of bombs on Hanoi and Haiphong.',
         },
         {
-          term: 'Battle of Hue',
-          def: '26-day urban battle destroying 80% of the imperial city; discovery of communist mass graves.',
+          term: 'Paris Peace Accords',
+          def: 'January 1973 agreement ending direct US military involvement in the Vietnam War.',
         },
         {
-          term: 'US Embassy Breach',
-          def: 'Vietcong sapper attack penetrating the US Embassy compound in Saigon on live television.',
+          term: 'Henry Kissinger',
+          def: 'US National Security Adviser who negotiated the Paris Peace Accords with Le Duc Tho.',
         },
         {
-          term: 'Credibility Gap',
-          def: 'The gulf between official government optimism and the brutal reality documented by the media.',
+          term: 'Nguyen Van Thieu',
+          def: 'President of South Vietnam (1967–75) who reluctantly accepted the 1973 peace treaty.',
         },
         {
-          term: 'Walter Cronkite',
-          def: 'CBS anchor whose post-Tet broadcast declaring the war a stalemate shifted national opinion.',
-        },
-        {
-          term: '"Living-Room War"',
-          def: 'Term describing the Vietnam conflict as the first war broadcast nightly into American homes.',
-        },
-        {
-          term: 'Clark Clifford',
-          def: 'Defense Secretary who replaced McNamara and urged Johnson to de-escalate the war.',
-        },
-        {
-          term: 'LBJ Withdrawal Speech',
-          def: '31 March 1968 address where Johnson announced he would not seek re-election.',
-        },
-        {
-          term: 'Vietnamization Policy',
-          def: "Nixon's strategy to withdraw US ground forces while building up South Vietnamese forces.",
-        },
-        {
-          term: 'Nixon Doctrine (1969)',
-          def: 'Foreign policy stating allies must provide their own ground combat troops in future wars.',
-        },
-        {
-          term: 'ARVN Modernisation',
-          def: 'Equipping South Vietnam’s military with modern tanks, jets, and weapons to replace US units.',
+          term: 'Peace with Honor',
+          def: 'Nixon’s campaign slogan promising an honorable exit from Vietnam without surrender.',
         },
       ],
     },

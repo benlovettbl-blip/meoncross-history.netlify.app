@@ -1,713 +1,729 @@
+/**
+ * usa_spreads_kt4.cjs
+ *
+ * Spreads 13 to 16 for Key Topic 4: Reactions to, and the End of, US Involvement in Vietnam, 1964–75
+ * Grounded in Hodder GCSE History for Edexcel (Steve Waugh & John Wright, pp. 96–119)
+ *
+ * Enforces the Paper 3 4-4-4-4 Question Matrix:
+ * - Spread 13 (KT 4.1): inference_causation (Section A: Q1 Inference [4m] + Q2 Explain Why [12m])
+ * - Spread 14 (KT 4.2): source_utility (Section B: Q3(a) Utility of Sources B and C [8m])
+ * - Spread 15 (KT 4.3): interpretation_diff_why (Section B: Q3(b) Views Diff [4m] + Q3(c) Reasons [4m])
+ * - Spread 16 (KT 4.4): interpretation_eval (Section B: Q3(d) Evaluative Essay [16+4m])
+ */
+
 module.exports = [
-  // Spread 13: KT 4.1
+  // =========================================================================
+  // SPREAD 13: KT 4.1 — OPPOSITION TO THE WAR (STUDENTS, MEDIA, MY LAI, KENT STATE)
+  // Exam Format: inference_causation (Section A: Q1 [4m] + Q2 [12m])
+  // =========================================================================
   {
     id: 'lesson_4_1',
-    topic: 'Key Topic 4: Reactions to, and the End of, US Involvement in Vietnam, 1964–75',
-    title: 'KT 4.1: Why did opposition to the Vietnam War grow so rapidly (1968–70)?',
+    topic: 'Key Topic 4: Reactions & End of Vietnam War, 1964–75',
+    title: 'KT 4.1: The Growth of Domestic Opposition to the Vietnam War',
+    footerTag: 'KT 4.1: Opposition to the war',
     left: {
-      headline: 'The Domestic Storm: Televised Atrocity, Draft Inequity & Campus Slaughter',
+      sectionTag: 'Anti-War Movement',
+      contextTitle: 'Strategic Context & Geopolitical Overview',
       summary:
-        'Between 1968 and 1970, domestic opposition to the Vietnam War expanded from fringe student movements into a broad national consensus. Fueled by uncensored television coverage of brutal combat, outrage over the unfairness of the military draft, revelations of horrific atrocities at My Lai, and the lethal shooting of unarmed student protesters by the National Guard at Kent State, millions of Americans mobilized to demand an immediate end to the conflict.',
+        'Between 1965 and 1971, public support for the Vietnam War collapsed under the pressure of mass student protests, uncensored television coverage, and the perceived unfairness of the military draft. Revelations of the 1968 My Lai Massacre and the killing of four students by the Ohio National Guard at Kent State University in May 1970 provoked nationwide strikes, turning millions of mainstream Americans against the conflict.',
       pillars: [
         {
-          title: 'The Living Room War & The Draft',
-          subtitle: 'Unfiltered Casualties & Class Inequality',
+          title: 'Students, the Media & The Draft System',
+          subtitle: 'The "Living Room War" & Selective Service',
           bullets: [
-            "Vietnam was America's first uncensored television war; 50 million viewers watched footage of burning huts and body bags nightly.",
-            'The Selective Service draft was deeply unequal: college deferments protected middle-class white youth, while working-class men were conscripted.',
-            'Black Americans suffered disproportionate combat casualties: in 1965–66, Black soldiers accounted for 20% of combat deaths despite being 11% of population.',
-            'Over 200,000 young Americans evaded the draft: thousands burned draft cards, filed for conscientious objector status, or fled to Canada.',
+            '**Students for a Democratic Society (SDS)** organized campus "teach-ins" and mass rallies; the anti-war movement swelled from fringe radicals to millions of students.',
+            'Vietnam was the first **"living room war"**: uncensored nightly television broadcasts showed burning villages, wounded soldiers, and body bags, destroying government credibility.',
+            'The **draft system (Selective Service)** conscripted 1.8 million young men (average age 19, compared to 26 in WWII); college deferments favoured affluent white youths.',
+            'Working-class and Black Americans bore a disproportionate burden; thousands burned draft cards or fled to Canada (an estimated 30,000–50,000 draft evaders).',
           ],
         },
         {
-          title: 'The My Lai Massacre (1968/1969)',
-          subtitle: 'The Exposure of War Crimes',
+          title: 'The My Lai Massacre (1968) & Lt Calley',
+          subtitle: 'Atrocities & Moral Disillusionment',
           bullets: [
-            'On 16 March 1968, Charlie Company under **Lt. William Calley** entered the village of My Lai on a search-and-destroy sweep.',
-            'Encountering zero enemy fire, soldiers systematically slaughtered over 500 unarmed Vietnamese civilians (women, babies, and elderly).',
-            'The military covered up the atrocity for a year until whistle-blower soldier Ron Ridenhour sent evidence to 30 members of Congress.',
-            'Investigative journalist Seymour Hersh published the story in Nov 1969; photographs of piles of murdered children horrified the world.',
+            'On 16 March 1968, Charlie Company (led by **Lt. William Calley**) massacred between **347 and 504 unarmed civilians** (infants, women, elderly) in the village of My Lai.',
+            'No Vietcong or weapons were found; women were gang-raped and villagers were herded into irrigation ditches and executed with automatic rifle fire.',
+            'The US military covered up the atrocity for 18 months until soldier Ron Ridenhour alerted Congress, and Seymour Hersh published the story in November 1969.',
+            'Photographs of piles of bodies published in *Life* magazine horrified the public; in 1971, Calley was convicted of murder, deeply dividing the nation.',
           ],
         },
         {
-          title: 'Kent State Shootings (May 1970)',
-          subtitle: 'State Violence on Campus',
+          title: 'The Kent State Shootings (May 1970)',
+          subtitle: 'The Cambodian Invasion & Campus Bloodshed',
           bullets: [
-            'On 30 April 1970, Nixon announced the US invasion of neutral Cambodia, sparking massive anti-war protests across 450 college campuses.',
-            'At Kent State University, Ohio, protesters burned the campus ROTC building; Governor James Rhodes sent in the Ohio National Guard.',
-            'On 4 May 1970, 28 Guardsmen opened fire into an unarmed crowd of students, firing 67 rounds in 13 seconds without warning.',
-            'Four students were killed (**Allison Krause**, Jeffrey Miller, Sandra Scheuer, William Schroeder) and 9 wounded; sparked a nationwide student strike.',
+            'Nixon’s April 1970 invasion of neutral Cambodia triggered spontaneous anti-war demonstrations across hundreds of American universities.',
+            'At **Kent State University (Ohio)** on 4 May 1970, 28 Ohio National Guardsmen fired 67 rounds into an unarmed student protest, **killing 4 and wounding 9**.',
+            'Two of the dead students (Sandra Scheuer and William Schroeder) were simply walking between classes and were not participating in the demonstration.',
+            'The shootings sparked a **nationwide student strike of 4 million students** across 450 campuses, temporarily shutting down the US higher education system.',
           ],
         },
       ],
       keyFigures: [
         {
           name: 'Lieutenant William Calley',
-          role: 'Platoon leader of Charlie Company convicted of the premeditated murder of 22 Vietnamese civilians at My Lai.',
+          role: 'Platoon leader of Charlie Company convicted of murdering 22 unarmed Vietnamese civilians at My Lai; sentenced to life but served only 3 years house arrest.',
         },
         {
-          name: 'Hugh Thompson Jr.',
-          role: "US Army helicopter pilot who landed his aircraft between Calley's troops and fleeing civilians, halting the My Lai massacre.",
+          name: 'Ron Ridenhour',
+          role: 'Vietnam veteran who gathered eyewitness testimonies of the My Lai Massacre and sent investigative letters to 30 congressmen, exposing the cover-up.',
         },
         {
-          name: 'Ronald Ridenhour',
-          role: 'Vietnam veteran whose whistle-blower letters to Congress in March 1969 forced the official investigation into My Lai.',
+          name: 'Tom Hayden',
+          role: 'Co-founder of Students for a Democratic Society (SDS) and author of the Port Huron Statement; prominent leader of national anti-war mobilization.',
         },
         {
-          name: 'Allison Krause',
-          role: "19-year-old Kent State student shot dead by National Guardsmen; photographed putting a flower in a soldier's rifle the day before.",
+          name: 'Ronald Haeberle',
+          role: 'US Army combat photographer whose graphic colour photographs of the My Lai slaughter published in Life magazine shocked global conscience.',
         },
       ],
-      archivalSource: {
-        title: 'Congressional Testimony on the My Lai Massacre',
-        citation:
-          'Warrant Officer Hugh Thompson Jr. • US Army Helicopter Pilot • House Armed Services Committee (1969)',
-        quote:
-          'I looked down and saw a ditch full of bodies, over a hundred of them, mostly women and babies... I saw Captain Medina kick a wounded woman and shoot her. Then I saw a group of nine civilians running toward a bunker, pursued by soldiers. I landed my helicopter between the civilians and the advancing troops, and ordered my crew chief to train his machine gun on the American soldiers if they opened fire on the civilians.',
-        significance:
-          'Primary eyewitness testimony confirming the deliberate mass slaughter of unarmed civilians by US troops, destroying the moral justification of the American intervention.',
-      },
+      milestones: [
+        {
+          date: '16 Mar 1968',
+          event: 'Charlie Company slaughters up to 504 unarmed villagers at My Lai',
+        },
+        {
+          date: 'Nov 1969',
+          event: 'Seymour Hersh exposes My Lai Massacre; 500,000 march in Washington',
+        },
+        {
+          date: '30 Apr 1970',
+          event: 'Nixon announces military invasion of Cambodia, reigniting campus unrest',
+        },
+        {
+          date: '4 May 1970',
+          event: 'Ohio National Guard kills 4 unarmed students at Kent State University',
+        },
+        {
+          date: 'Mar 1971',
+          event: 'Lt. William Calley convicted of murder for his role in My Lai massacre',
+        },
+      ],
     },
     right: {
-      deepCases: [
+      question: {
+        typeHeader: 'Section A: Q1 Inference [4m] & Q2 Explain Why [12m]',
+        title: 'Opposition to War: Media Exposure & the My Lai Backlash',
+        stem: 'Q1 (4m) Inference from Source A &bull; Q2 (12m) Explain why domestic opposition to the Vietnam War intensified after 1968.',
+        marks: '4 + 12 = 16',
+        marksTime: '16 Marks &bull; ~24 Mins Total',
+        planningGuideTitle: 'Examiner Planning & Structural Framework:',
+        planningGuide:
+          '<strong>Q1 Formula:</strong> Inference 1 + Direct Quote from Source A; Inference 2 + Direct Quote. Zero provenance.<br/><strong>Q2 Formula (3 PEE Paragraphs):</strong> (1) The shock of the Tet Offensive (1968) & TV media exposing the credibility gap &rarr; (2) Revelations of moral atrocities like My Lai (1968/69) & Lt. Calley trial &rarr; (3) Expansion into Cambodia (1970) triggering Kent State shootings and student strikes.',
+        modelAnswer:
+          '<strong>Q1 (Inference):</strong> One inference from Source A is that the television media shattered government claims about the war. The source states "nightly news broadcasts brought unfiltered bloodshed and burning villages directly into American family living rooms", showing media coverage directly contradicted White House claims of progress. A second inference is that the draft system was deeply resented as socially biased. The source notes "working-class boys were conscripted while wealthy youths secured college deferments", proving the draft was viewed as an unfair burden on poorer Americans.<br/><br/><strong>Q2 (Explain Why):</strong> One major reason opposition intensified after 1968 was the shock of the Tet Offensive and the resulting "credibility gap". Prior to 1968, the Johnson administration assured the public that the war was nearly won. When television footage showed communist commandos inside the Saigon US Embassy compound in January 1968, the public realized they had been misled. Respected CBS anchor Walter Cronkite declared the war was an unwinnable stalemate. Public confidence collapsed, turning middle America against the war and forcing Johnson to abandon re-election.<br/><br/>A second crucial reason was the public revelation of horrific US military atrocities, most notably the My Lai Massacre. In November 1969, investigative reports revealed that in March 1968, American troops under Lt. William Calley had murdered up to 504 unarmed Vietnamese women, children, and elderly villagers. Graphic photographs published in Life magazine destroyed the moral justification that America was defending freedom. When Calley was convicted of murder in 1971, it sparked bitter polarization between those who saw him as a scapegoat and those horrified by military war crimes.<br/><br/>A third reason was Nixon’s military expansion into Cambodia in April 1970, which directly contradicted his promise of de-escalation. The Cambodian incursion ignited massive nationwide campus protests. On 4 May 1970, the Ohio National Guard fired into a demonstration at Kent State University, killing four unarmed students. The shock of American troops killing American students on college grounds triggered a nationwide strike of over four million students across 450 campuses, galvanizing mainstream opposition.',
+        examinerNote:
+          'Full marks (16/16). Q1 gives two distinct inferences with concise verbatim quotes. Q2 produces three rich, multi-layered causal paragraphs integrating specific specification details (Tet credibility gap, Walter Cronkite, 504 dead at My Lai, Seymour Hersh, Cambodia 1970, Kent State 4 dead, 4 million striking students).',
+        pitfallCategory: 'Inference & Causation Pitfalls',
+        pitfall:
+          'In Q1, focus purely on textual inferences without analyzing provenance. In Q2, avoid simple storytelling: ensure every paragraph links directly to WHY opposition grew after 1968.',
+      },
+      causalPathway: {
+        title: 'Visual Causal Pathway: Why Domestic Opposition Exploded After 1968',
+        steps: [
+          {
+            stage: '1. Tet & TV (1968)',
+            desc: 'Television coverage shatters government claims; creates massive credibility gap.',
+          },
+          {
+            stage: '2. My Lai Exposed (1969)',
+            desc: 'Hersh reveals murder of 504 civilians; Life photos destroy moral authority.',
+          },
+          {
+            stage: '3. Cambodia (1970)',
+            desc: 'Nixon expands war into neutral Cambodia, reigniting explosive campus protests.',
+          },
+          {
+            stage: '4. Kent State Massacre',
+            desc: 'National Guard kills 4 students; 4 million strike, uniting public against war.',
+          },
+        ],
+      },
+      wordBank: [
         {
-          title: '1. The Anti-War Movement & Moratorium Day (1969)',
-          points: [
-            'Opposition evolved from radical student groups (SDS) into a mass middle-class movement including mothers, clergy, and veterans.',
-            '**Vietnam Veterans Against the War (VVAW)** threw combat medals and Purple Hearts onto the steps of the US Capitol in protest.',
-            'On 15 October 1969, **Moratorium Day** mobilized over 2 million participants across the United States in peaceful candlelight marches.',
-            'In November 1969, 500,000 marchers gathered in Washington DC, staging the "March Against Death" carrying names of fallen soldiers.',
-          ],
+          term: 'Living Room War',
+          def: 'Term describing how television brought unedited combat footage directly to home audiences.',
         },
         {
-          title: '2. The Pentagon Papers Leak (1971)',
-          points: [
-            'Military analyst Daniel Ellsberg leaked a 7,000-page top-secret Department of Defense historical study to the *New York Times*.',
-            'Revealed that the Truman, Eisenhower, Kennedy, and Johnson administrations had systematically deceived the public and Congress.',
-            'Proved that the Johnson administration planned to escalate the war and bomb North Vietnam long before the Gulf of Tonkin incident.',
-            'Nixon attempted to block publication via federal injunction; the Supreme Court ruled 6–3 in favor of press freedom under the 1st Amendment.',
-          ],
+          term: 'Selective Service',
+          def: 'The US military conscription system drafting young men aged 18–26 into armed service.',
         },
         {
-          title: '3. Draft Inequity & The Draft Lottery',
-          points: [
-            'Undergraduate and graduate students received 2-S college deferments, allowing wealthy men (including future politicians) to avoid service.',
-            'Heavyweight champion Muhammad Ali was stripped of his boxing title in 1967 for refusing the draft: "I ain\'t got no quarrel with them Vietcong."',
-            'To defuse public fury over draft unfairness, Nixon introduced the **Draft Lottery** in December 1969 based on birthdates.',
-            'While fairer, the lottery forced hundreds of thousands of young men to face induction, intensifying campus anti-war militancy.',
-          ],
+          term: 'Draft Deferment',
+          def: 'Legal exemptions delaying military conscription, widely utilized by affluent college students.',
         },
         {
-          title: '4. The Jackson State Killings (14 May 1970)',
-          points: [
-            'Ten days after Kent State, city and state police confronted anti-war and racial justice protesters at Black Jackson State College, Mississippi.',
-            "Police opened fire with shotguns and submachine guns into Alexander Hall, a women's dormitory, firing over 400 rounds in 28 seconds.",
-            'Two young Black men (Phillip Gibbs, 21, and James Green, 17) were killed, and 12 other students were wounded by buckshot.',
-            'Received significantly less media attention and public sympathy than Kent State, highlighting racial disparities in American news coverage.',
-          ],
-        },
-      ],
-      causalPathway: [
-        {
-          stage: '1. Televised Atrocity',
-          text: 'Nightly living-room combat footage and draft inequities turn middle-class families against the war.',
+          term: 'Draft Dodgers',
+          def: 'Individuals who refused conscription, burned draft cards, or fled to Canada or Sweden.',
         },
         {
-          stage: '2. My Lai Exposed (Nov 1969)',
-          text: 'Photographic proof of the slaughter of 500 civilians destroys American moral authority globally.',
+          term: 'SDS',
+          def: 'Students for a Democratic Society; prominent left-wing student organization leading anti-war rallies.',
         },
         {
-          stage: '3. Cambodian Incursion (1970)',
-          text: "Nixon's secret expansion of the war sparks nationwide student strikes across 450 campuses.",
+          term: 'Teach-ins',
+          def: 'University seminars and public forums organized by faculty and students to protest the war.',
         },
         {
-          stage: '4. Kent State Shootings (May 1970)',
-          text: 'National Guardsmen shoot 4 students dead, creating an unprecedented domestic constitutional crisis.',
-        },
-      ],
-      masterWordBank: [
-        {
-          term: 'My Lai Massacre (1968)',
-          def: 'Mass murder of over 500 unarmed Vietnamese civilians by US troops in Son My village.',
+          term: 'My Lai Massacre',
+          def: 'March 1968 slaughter of 347–504 unarmed Vietnamese villagers by US soldiers in Charlie Company.',
         },
         {
-          term: 'Lt. William Calley',
-          def: 'US platoon leader convicted of murder at My Lai; sentenced to life, pardoned by Nixon.',
+          term: 'William Calley',
+          def: 'US Army lieutenant convicted in 1971 of murdering 22 civilians during the My Lai Massacre.',
         },
         {
-          term: 'Hugh Thompson Jr.',
-          def: 'Heroic US helicopter pilot who intervened to rescue civilians during the My Lai massacre.',
+          term: 'Ron Ridenhour',
+          def: 'Vietnam veteran who sent letters to Congress in 1969 exposing the My Lai Massacre.',
         },
         {
-          term: 'Kent State Shootings (1970)',
-          def: 'Killing of 4 unarmed student anti-war protesters by Ohio National Guardsmen on 4 May.',
+          term: 'Seymour Hersh',
+          def: 'Investigative journalist who broke the My Lai Massacre story in November 1969.',
         },
         {
-          term: 'Allison Krause',
-          def: '19-year-old student activist shot dead by National Guardsmen at Kent State.',
+          term: 'Kent State Shootings',
+          def: '4 May 1970 killing of 4 unarmed student protesters by the Ohio National Guard.',
         },
         {
-          term: 'Jackson State Killings',
-          def: 'Police shooting at a Black Mississippi college on 14 May 1970 killing 2 students.',
-        },
-        {
-          term: 'Pentagon Papers (1971)',
-          def: 'Classified DoD history leaked by Daniel Ellsberg proving government deceit about Vietnam.',
-        },
-        {
-          term: 'Daniel Ellsberg',
-          def: 'Military analyst who leaked the Pentagon Papers to the press to expose presidential lies.',
-        },
-        {
-          term: 'Draft Lottery (1969)',
-          def: 'Randomized selection system for military conscription based on birthdates.',
-        },
-        {
-          term: 'Moratorium Day (1969)',
-          def: 'Massive nationwide peaceful anti-war demonstrations involving over 2 million Americans.',
-        },
-        {
-          term: 'VVAW',
-          def: 'Vietnam Veterans Against the War; decorated combat soldiers who led anti-war protests.',
-        },
-        {
-          term: '"Living-Room War"',
-          def: 'Term describing the nightly broadcast of unfiltered combat footage into American homes.',
+          term: 'Student Strike',
+          def: 'Massive walkout of 4 million students shutting down 450 colleges following Kent State.',
         },
       ],
     },
   },
 
-  // Spread 14: KT 4.2
+  // =========================================================================
+  // SPREAD 14: KT 4.2 — SUPPORT FOR THE WAR (FEAR OF COMMUNISM, SILENT MAJORITY, HARD HATS)
+  // Exam Format: source_utility (Section B: Q3(a) [8m])
+  // =========================================================================
   {
     id: 'lesson_4_2',
-    topic: 'Key Topic 4: Reactions to, and the End of, US Involvement in Vietnam, 1964–75',
-    title: "KT 4.2: Why did some Americans support the war, and who were the 'Silent Majority'?",
+    topic: 'Key Topic 4: Reactions & End of Vietnam War, 1964–75',
+    title: 'KT 4.2: Support for the War: The Silent Majority & Hard Hats',
+    footerTag: 'KT 4.2: Support for the war',
     left: {
-      headline: 'The Patriotic Counter-Offensive: Anti-Communism, Hard Hats & The Silent Majority',
+      sectionTag: 'Pro-War Mobilisation',
+      contextTitle: 'Strategic Context & Geopolitical Overview',
       summary:
-        'Despite vocal anti-war demonstrations, millions of Americans continued to support the war effort throughout the late 1960s and early 1970s. Appealing to patriotic pride, anti-communist conviction, and working-class resentment of privileged student draft-dodgers, President Richard Nixon mobilized what he famously termed the "Silent Majority", winning overwhelming political support for his policy of gradual withdrawal and law and order.',
+        'Despite vocal anti-war demonstrations, millions of Americans continued to support US military involvement in Vietnam. Rooted in intense Cold War fear of communism, traditional patriotism, and revulsion against counterculture lawlessness, this patriotic conservative coalition was mobilized by President Nixon’s celebrated "Silent Majority" speech in November 1969 and dramatized by the New York "Hard Hat Riots" in May 1970.',
       pillars: [
         {
-          title: 'The "Silent Majority" Speech (1969)',
-          subtitle: 'Mobilising Middle America',
+          title: 'Fear of Communism & Traditional Patriotism',
+          subtitle: 'The Anticommunist Consensus & National Honour',
           bullets: [
-            'On 3 November 1969, President Nixon addressed the nation to counter the massive Moratorium anti-war demonstrations.',
-            'Framed protesters as a vocal, privileged, unpatriotic minority attempting to dictate foreign policy through street mob coercion.',
-            'Appealed directly to: *"The great silent majority of my fellow Americans—I ask for your support. Let us be united for peace... against defeat."*',
-            'The speech was a political triumph: White House received 50,000 supportive telegrams; public support for Nixon jumped to 77%.',
+            'Many older, suburban, and working-class Americans retained deep faith in the **Cold War containment doctrine** and feared global communist domination.',
+            'Believed an American defeat would trigger the Domino Theory across Asia and humiliate the United States as a second-rate superpower.',
+            'Felt a profound moral and patriotic duty to support US soldiers fighting overseas, viewing anti-war demonstrators as unpatriotic traitors or communist sympathizers.',
+            'Feared that withdrawing abruptly would result in the mass slaughter and political liquidation of millions of anti-communist South Vietnamese allies.',
           ],
         },
         {
-          title: 'The Hard Hat Riots (May 1970)',
-          subtitle: 'Working-Class Patriotic Backlash',
+          title: 'Nixon’s "Silent Majority" Address (1969)',
+          subtitle: 'Rallying Conservative Middle America',
           bullets: [
-            'On 8 May 1970, 1,000 students gathered at Federal Hall in Lower Manhattan to protest the Kent State killings and Cambodian invasion.',
-            'Around 200 construction workers wearing hard hats and carrying American flags attacked the students with steel pipes and wrenches.',
-            'Workers surged through police lines into City Hall, forcing municipal staff to raise the American flag back to full mast.',
-            'Union leader Peter J. Brennan was invited to the White House; Nixon appointed him US Secretary of Labor in 1973.',
+            'On 3 Nov 1969, President Nixon delivered a landmark televised address appealing to the **"great silent majority of my fellow Americans"**.',
+            'Argued that vocal campus radicals and street rioters did not represent the nation, warning that an immediate retreat would lead to a communist "bloodbath".',
+            'Asserted that only North Vietnam could humiliate the US, but: *"Only Americans can defeat or humiliate the United States."*',
+            'The speech was a political triumph: White House polls showed **77% public approval**, and over 50,000 supportive telegrams poured into Washington.',
           ],
         },
         {
-          title: 'Ideological & Cultural Support',
-          subtitle: 'Anti-Communism, Duty & Resentment',
+          title: 'The "Hard Hats" & Working-Class Backlash (1970)',
+          subtitle: 'Construction Workers vs Student Protesters',
           bullets: [
-            'Millions of conservative and working-class citizens genuinely believed in the **Domino Theory** and American anti-communist mission.',
-            'Working-class families deeply resented upper-middle-class college students who burned draft cards while their sons were drafted.',
-            'Patriotic Americans viewed anti-war protesters waving Vietcong flags and chanting "Ho, Ho, Ho Chi Minh" as treasonous enemies.',
-            'Religious leaders like Billy Graham and conservative commentators framed the war as a righteous defense of Christian civilization.',
+            'Working-class blue-collar workers deeply resented affluent middle-class college students who avoided the draft through university deferments.',
+            'On 8 May 1970, four days after Kent State, 200 construction workers wearing hard hats attacked 1,000 anti-war student demonstrators in **Wall Street, New York**.',
+            'Carrying steel pipes and American flags, the workers chased and beat student protesters while police largely stood by without intervening.',
+            'On 20 May 1970, over **100,000 construction workers, dockers, and trade unionists** marched peacefully through Manhattan chanting *"All the way with the USA!"*.',
           ],
         },
       ],
       keyFigures: [
         {
-          name: 'Richard Nixon',
-          role: 'US President (1969–74); mobilized the "Silent Majority" to build a conservative coalition and isolate anti-war radicals.',
-        },
-        {
-          name: 'Spiro Agnew',
-          role: 'Vice President; delivered fierce public attacks on anti-war activists, branding them "effete snobs" and "intellectual vultures".',
+          name: 'Richard M. Nixon',
+          role: 'US President who mobilized the "Silent Majority" to build a new conservative Republican electoral coalition supporting his war policies.',
         },
         {
           name: 'Peter J. Brennan',
-          role: 'New York construction union leader who organized the pro-war Hard Hat rally; appointed Secretary of Labor by Nixon.',
+          role: 'President of the New York Building and Construction Trades Council; organized pro-Nixon Hard Hat marches and was named US Secretary of Labor.',
         },
         {
-          name: 'John Mitchell',
-          role: 'US Attorney General (1969–72); led Nixon\'s aggressive "law and order" domestic crackdown against anti-war demonstrators.',
+          name: 'Spiro Agnew',
+          role: 'Nixon’s combative Vice President; publicly attacked anti-war protesters, intellectuals, and liberal media as "an effete corps of impudent snobs".',
+        },
+        {
+          name: 'John Wayne',
+          role: 'Hollywood icon who directed and starred in The Green Berets (1968), a pro-war film celebrating American military valour in Vietnam.',
         },
       ],
-      archivalSource: {
-        title: 'Address to the Nation on the War in Vietnam ("The Silent Majority")',
-        citation: 'President Richard Nixon • Televised Oval Office Address (3 November 1969)',
-        quote:
-          'Let historians not record that when America was the most powerful nation in the world we went down that road that leads to the chimney of civilization... And so tonight—to you, the great silent majority of my fellow Americans—I ask for your support. For the more divided we are at home, the less likely the enemy will be to negotiate at Paris. Let us be united for peace. Let us also be united against defeat. Because let us understand: North Vietnam cannot defeat or humiliate the United States. Only Americans can do that.',
-        significance:
-          "A political masterstroke that transformed the domestic debate, creating a powerful conservative electoral coalition that supported Nixon's gradual withdrawal while discrediting anti-war demonstrators as unpatriotic.",
-      },
+      milestones: [
+        {
+          date: 'Jul 1968',
+          event: 'Pro-war film The Green Berets released, becoming a box-office commercial hit',
+        },
+        {
+          date: '3 Nov 1969',
+          event: 'Nixon delivers landmark "Silent Majority" speech, securing 77% poll approval',
+        },
+        {
+          date: '8 May 1970',
+          event: 'Hard Hat Riots: New York construction workers attack student anti-war marchers',
+        },
+        {
+          date: '20 May 1970',
+          event: '100,000 construction workers march through Manhattan in support of Nixon',
+        },
+        {
+          date: 'Nov 1972',
+          event:
+            'Nixon re-elected in 49-state landslide victory over anti-war Democrat George McGovern',
+        },
+      ],
     },
     right: {
-      deepCases: [
-        {
-          title: '1. Class Resentment & The Draft Burden',
-          points: [
-            'Blue-collar construction workers, mechanics, and factory workers felt insulted by privileged college students who avoided military service.',
-            'Working-class families had the highest casualty rates in Vietnam: 80% of enlisted soldiers came from poor or working-class backgrounds.',
-            'Workers viewed flag-burning and draft-card resistance as direct personal attacks on their sons, brothers, and neighbors serving overseas.',
-            'The Hard Hat riot symbolized a profound social rupture: blue-collar labor unions broke away from the traditional Democratic alliance.',
-          ],
-        },
-        {
-          title: "2. Spiro Agnew's Rhetorical War on the Media",
-          points: [
-            'Nixon deployed Vice President Spiro Agnew to relentlessly attack anti-war critics, liberal television networks, and universities.',
-            'Agnew denounced anti-war leaders as "an effete corps of impudent snobs" and accused television commentators of biased defeatism.',
-            "Agnew's aggressive speeches galvanized grassroots conservatives, raising tens of millions of dollars in campaign donations across Middle America.",
-            'Helped create the conservative conviction that the US military was undefeated in Vietnam but betrayed by liberal media elites.',
-          ],
-        },
-        {
-          title: '3. "Honor America Day" & Pro-War Mobilisation',
-          points: [
-            'Conservative organizations fought back against anti-war demonstrations with massive patriotic rallies across the nation.',
-            'On 4 July 1970, evangelist Billy Graham and entertainer Bob Hope organized **"Honor America Day"** in Washington, drawing 350,000 citizens.',
-            'Pro-war groups organized rallies supporting Lieutenant Calley, viewing him as a scapegoat for political failure in Washington.',
-            'Demonstrated that millions of ordinary Americans rejected the counter-culture and firmly supported military victory.',
-          ],
-        },
-        {
-          title: '4. The 1972 Presidential Landslide',
-          points: [
-            'In the 1972 presidential election, Nixon ran against anti-war Democratic nominee Senator George McGovern.',
-            'McGovern promised the immediate, unconditional withdrawal of all US forces and amnesty for draft evaders.',
-            'Nixon\'s "Silent Majority" coalition delivered one of the greatest landslides in US history, winning 49 out of 50 states (60.7% popular vote).',
-            'Proved conclusively that despite loud campus protests, mainstream American voters favored Nixon\'s "peace with honor" over anti-war radicalism.',
-          ],
-        },
-      ],
-      causalPathway: [
-        {
-          stage: '1. Anti-War Radicalism',
-          text: 'Flag-burnings, campus strikes, and counter-culture rhetoric alienate millions of working-class Americans.',
-        },
-        {
-          stage: '2. "Silent Majority" Speech',
-          text: 'Nixon mobilizes suburban and blue-collar voters, reframing the conflict as patriotism versus humiliation.',
-        },
-        {
-          stage: '3. Hard Hat Riots (1970)',
-          text: 'Construction workers violently clash with anti-war students in Manhattan, displaying deep cultural polarization.',
-        },
-        {
-          stage: '4. 1972 Electoral Landslide',
-          text: 'Nixon crushes anti-war candidate McGovern in 49 states, proving the enduring political power of the pro-war majority.',
-        },
-      ],
-      masterWordBank: [
+      question: {
+        typeHeader: 'Section B: Q3(a) Source Utility [8m]',
+        title: 'Support for the War: The Silent Majority & Working-Class Patriotism',
+        stem: 'How useful are Sources B and C for an enquiry into the reasons why many Americans continued to support US military involvement in Vietnam between 1968 and 1972? [8 Marks]',
+        marks: '8',
+        marksTime: '8 Marks &bull; ~14 Mins',
+        planningGuideTitle: 'Examiner Planning & Structural Framework (C-O-P Matrix):',
+        planningGuide:
+          '<strong>Source B:</strong> Evaluate Content (national honour, Domino Theory, preventing bloodbaths, silent majority) &rarr; Context (Nixon speech, Nov 1969, 77% poll backing) &rarr; Provenance (official televised presidential address).<br/><strong>Source C:</strong> Evaluate Content (class resentment against privileged draft-dodging students, patriotism) &rarr; Context (Hard Hat Riots NYC, May 1970, 100,000 marching) &rarr; Provenance (interview with union construction worker).<br/><strong>Synthesis:</strong> Weigh how both sources together reveal top-down political framing and bottom-up working-class cultural backlash.',
+        modelAnswer:
+          'Source B is useful because its content outlines the primary political arguments used to maintain public backing for the war. President Nixon insists that a precipitous American withdrawal would not bring peace, but would instead spark a catastrophic communist "bloodbath" against South Vietnamese allies and irreparably damage American global credibility. Nixon appeals directly to the "silent majority" of patriotic citizens to stand firm against radical street protesters. From my contextual knowledge, Nixon’s televised address on 3 November 1969 achieved a massive 77% approval rating and produced 50,000 supportive telegrams, showing that a huge constituency of middle Americans supported his strategy of gradual Vietnamisation rather than immediate surrender. The provenance as a prime-time presidential address makes it highly valuable for demonstrating how the White House mobilized conservative patriotism and Cold War anti-communism.<br/><br/>Source C is useful in a contrasting way because it reveals the grassroots, working-class motivations of pro-war supporters. The New York construction worker expresses visceral anger toward privileged, middle-class university students who avoided the draft through college deferments while burning American flags and spitting on soldiers. From my knowledge, blue-collar communities bore the heaviest casualty burdens in Vietnam, leading to intense resentment when campus radicals protested against the soldiers. This erupted four days after Kent State on 8 May 1970, when 200 "hard hat" construction workers attacked student protesters on Wall Street, followed by a march of 100,000 workers through Manhattan. The provenance as an interview with a rank-and-file union laborer provides authentic firsthand evidence of the cultural and class grievances that drove working-class patriotism.<br/><br/>Overall, both sources are highly useful and complementary: Source B explains the high-level geopolitical and ideological arguments for staying the course, while Source C exposes the raw socio-economic class resentment and traditional patriotism that fueled blue-collar support for Nixon.',
+        examinerNote:
+          'Full 8/8 marks (Level 3). Thoroughly evaluates Content, Contextual Knowledge (77% poll backing, 50,000 telegrams, Kent State aftermath, May 1970 Wall Street clash, 100,000 workers marching), and Provenance for both sources, offering an insightful comparative synthesis.',
+        pitfallCategory: 'Source Utility Traps',
+        pitfall:
+          'Do not judge Source C as "useless" because the worker was angry or violent. His anger IS the historical evidence of the deep class divide between blue-collar workers and student protesters!',
+      },
+      causalPathway: {
+        title: 'Visual Causal Pathway: Why the Pro-War Coalition Mobilised (1968–72)',
+        steps: [
+          {
+            stage: '1. Anticommunist Core',
+            desc: 'Millions retain faith in Cold War containment and fear communist bloodbaths.',
+          },
+          {
+            stage: '2. Class Resentment',
+            desc: 'Working-class families resent affluent college students dodging draft deferments.',
+          },
+          {
+            stage: '3. Silent Majority (1969)',
+            desc: 'Nixon unites conservative Middle America against campus radical lawlessness.',
+          },
+          {
+            stage: '4. Hard Hat Backlash',
+            desc: '100,000 construction workers march in NYC; leads to 1972 Nixon landslide.',
+          },
+        ],
+      },
+      wordBank: [
         {
           term: 'Silent Majority',
-          def: "Nixon's term for mainstream, patriotic Americans who supported the war but did not demonstrate.",
+          def: 'Nixon’s term for law-abiding, patriotic Americans who supported the war against radicals.',
         },
         {
-          term: '"Peace with Honor"',
-          def: "Nixon's campaign promise to exit Vietnam without surrendering South Vietnam to communism.",
-        },
-        {
-          term: 'Hard Hat Riots (1970)',
-          def: 'Violent clash on 8 May 1970 where 200 construction workers attacked anti-war students in NYC.',
+          term: 'Hard Hats',
+          def: 'New York construction workers who violently clashed with anti-war students in May 1970.',
         },
         {
           term: 'Peter J. Brennan',
-          def: 'New York construction union leader who led the pro-war rally; later appointed Secretary of Labor.',
+          def: 'Labor leader who led the New York Hard Hat marches and was appointed Secretary of Labor.',
         },
         {
-          term: 'Spiro Agnew Rhetoric',
-          def: 'Fierce verbal attacks on anti-war protesters, branding them "effete snobs" and unpatriotic.',
+          term: 'Spiro Agnew',
+          def: 'Nixon’s Vice President who vigorously attacked anti-war critics and liberal journalists.',
         },
         {
-          term: '"Effete Snobs"',
-          def: 'Agnew’s famous phrase describing privileged, college-educated anti-war demonstrators.',
+          term: 'Communist Bloodbath',
+          def: 'The fear that US withdrawal would lead to mass executions of anti-communist Vietnamese.',
         },
         {
-          term: 'Class Polarization',
-          def: 'Working-class patriotic resentment against affluent college students with draft deferments.',
+          term: 'Containment',
+          def: 'Cold War doctrine committed to halting the expansion of Soviet and Chinese communism.',
         },
         {
-          term: 'Draft Deferments',
-          def: 'Legal exemptions allowing college students to avoid military conscription during the war.',
+          term: 'Class Divide',
+          def: 'Social friction between working-class draftees and privileged college students with deferments.',
         },
         {
-          term: 'Honor America Day (1970)',
-          def: 'Massive patriotic rally in Washington on 4 July 1970 drawing 350,000 pro-war supporters.',
+          term: 'Counterculture',
+          def: '1960s youth cultural rebellion associated with hippies, psychedelic drugs, and anti-war protests.',
         },
         {
-          term: 'George McGovern (1972)',
-          def: 'Anti-war Democratic presidential candidate crushed by Nixon in a 49-state landslide.',
+          term: 'The Green Berets',
+          def: '1968 patriotic war film starring John Wayne supporting US troops fighting in Vietnam.',
         },
         {
-          term: '1972 Landslide',
-          def: 'Nixon\'s overwhelming victory demonstrating that the "Silent Majority" rejected anti-war radicalism.',
+          term: 'George McGovern',
+          def: 'Anti-war Democratic candidate defeated by Nixon in a 49-state landslide in 1972.',
         },
         {
-          term: 'Cultural Resentment',
-          def: 'Traditional American hostility toward the counter-culture, drug use, and anti-military protests.',
+          term: 'Patriotism',
+          def: "Devotion to one's country; a central emotional motivator for pro-war Americans.",
+        },
+        {
+          term: 'Wall Street Riot',
+          def: 'May 1970 clash where 200 construction workers attacked student anti-war demonstrators.',
         },
       ],
     },
   },
 
-  // Spread 15: KT 4.3
+  // =========================================================================
+  // SPREAD 15: KT 4.3 — THE PEACE PROCESS & END OF THE WAR (1972–75)
+  // Exam Format: interpretation_diff_why (Section B: Q3(b) [4m] + Q3(c) [4m])
+  // =========================================================================
   {
     id: 'lesson_4_3',
-    topic: 'Key Topic 4: Reactions to, and the End of, US Involvement in Vietnam, 1964–75',
-    title: 'KT 4.3: How did the US exit Vietnam, and why did South Vietnam fall in 1975?',
+    topic: 'Key Topic 4: Reactions & End of Vietnam War, 1964–75',
+    title: 'KT 4.3: The Peace Process & the End of the War, 1972–75',
+    footerTag: 'KT 4.3: The peace process, 1972–75',
     left: {
-      headline: 'The Endgame: Triangular Diplomacy, The Paris Accords & The Fall of Saigon',
+      sectionTag: 'Diplomacy & Withdrawal',
+      contextTitle: 'Strategic Context & Geopolitical Overview',
       summary:
-        'Determined to achieve "Peace with Honour", President Nixon and National Security Adviser Henry Kissinger pursued triangular diplomacy with Moscow and Beijing while conducting brutal bombing campaigns to force North Vietnam to negotiate. Signed in January 1973, the Paris Peace Accords enabled the total withdrawal of US troops, but left 150,000 North Vietnamese soldiers in South Vietnam, leading to the total collapse of the South Vietnamese regime in April 1975.',
+        'Between 1972 and 1973, protracted secret diplomacy between Henry Kissinger and Le Duc Tho produced the Paris Peace Agreement, ending direct US military involvement. However, the agreement was a flawed compromise that permitted North Vietnamese troops to remain in the South. In April 1975, North Vietnam launched a rapid final offensive; South Vietnam collapsed in 55 days, concluding a war that cost 58,220 American lives and $167 billion.',
       pillars: [
         {
-          title: 'Triangular Diplomacy & Detente',
-          subtitle: 'Exploiting the Sino-Soviet Split',
+          title: 'Secret Negotiations & Christmas Bombings (1972)',
+          subtitle: 'Kissinger, Le Duc Tho & Linebacker II',
           bullets: [
-            'Nixon and Kissinger exploited bitter border clashes between the USSR and China to isolate North Vietnam from its communist patrons.',
-            'Nixon made a historic visit to **Beijing (Feb 1972)**, opening relations with Mao Zedong, followed by a summit in **Moscow (May 1972)**.',
-            'Both communist superpowers pressured Hanoi to negotiate with the US in order to secure trade and arms control treaties (SALT I).',
-            'Nixon combined diplomacy with the **"Madman Theory"**, ordering B-52 carpet bombing of Hanoi to force concessions.',
+            'From 1969, **Henry Kissinger** and North Vietnam’s **Le Duc Tho** conducted covert negotiations in Paris alongside deadlocked public talks.',
+            'In October 1972, Kissinger announced **"peace is at hand"**; however, South Vietnamese President Nguyen Van Thieu furiously rejected terms permitting NVA troops to remain.',
+            'To force North Vietnam to make concessions and reassure Thieu of US resolve, Nixon ordered the **Christmas Bombings (Operation Linebacker II)** in Dec 1972.',
+            'For 11 days, B-52s dropped 20,000 tons of bombs on Hanoi and Haiphong; the devastating raids forced both sides to sign the accords with minimal changes.',
           ],
         },
         {
-          title: 'The Paris Peace Accords (Jan 1973)',
-          subtitle: 'The Flawed Ceasefire Agreement',
+          title: 'The Paris Peace Agreement (January 1973)',
+          subtitle: 'The Terms of American Extrication',
           bullets: [
-            'Signed on 27 January 1973 by the US, North Vietnam, South Vietnam, and the Vietcong after 4 years of tortuous secret negotiations.',
-            'All remaining 24,000 US combat troops were withdrawn within 60 days; 591 American POWs returned home (**Operation Homecoming**).',
-            'Crucially, the Accords permitted **150,000 North Vietnamese Army (NVA) troops** to remain inside South Vietnamese territory.',
-            'South Vietnamese President **Nguyen Van Thieu** was coerced into signing only after Nixon secretly promised "full retaliatory force".',
+            'Signed on **27 January 1973**; established an immediate ceasefire throughout South Vietnam.',
+            'Mandated the complete withdrawal of all remaining US troops within **60 days** and the release of all American prisoners of war (POWs).',
+            'Crucially, the treaty allowed **150,000 North Vietnamese Army (NVA) troops** to remain in occupied areas of South Vietnam.',
+            'Established a National Council of National Reconciliation to organize democratic elections; the US promised economic reconstruction aid to Hanoi.',
           ],
         },
         {
-          title: 'The Fall of Saigon (April 1975)',
-          subtitle: 'The Final Collapse of South Vietnam',
+          title: 'Fall of Saigon (1975) & The Human/Economic Cost',
+          subtitle: 'The Final Collapse & Aftermath',
           bullets: [
-            'In January 1975, North Vietnam launched a massive 20-division conventional tank blitzkrieg across the 17th Parallel.',
-            "ARVN forces collapsed in absolute panic; Congress refused President Gerald Ford's request for $300m in emergency military aid.",
-            'On 29–30 April 1975, the US executed **Operation Frequent Wind**, evacuating 7,000 Americans and South Vietnamese by rooftop helicopters.',
-            'At 11:30 am on 30 April 1975, North Vietnamese tanks crashed through the gates of the Presidential Palace; Saigon fell and was renamed Ho Chi Minh City.',
+            'Following US withdrawal, fighting resumed; in 1974, the US Congress cut aid to Saigon and passed the **War Powers Act** banning US military action.',
+            'In early 1975, North Vietnam launched a massive conventional offensive; the demoralized ARVN disintegrated in just 55 days.',
+            'On **30 April 1975, Saigon fell**; chaotic helicopter evacuations from the US Embassy roof marked the humiliating end of American involvement.',
+            '**Costs for the USA:** **58,220 American dead**, 303,000 wounded; direct costs of **$167 billion** caused domestic inflation and gutted the "Great Society".',
           ],
         },
       ],
       keyFigures: [
         {
           name: 'Henry Kissinger',
-          role: 'National Security Adviser and Secretary of State; architect of triangular diplomacy and Paris Accords; awarded 1973 Nobel Peace Prize.',
+          role: 'US National Security Adviser who negotiated the Paris Peace Accords; awarded the 1973 Nobel Peace Prize alongside Le Duc Tho.',
         },
         {
           name: 'Le Duc Tho',
-          role: 'Chief North Vietnamese negotiator in Paris; rejected the 1973 Nobel Peace Prize because genuine peace had not been achieved.',
+          role: 'North Vietnamese diplomat who outmaneuvered US negotiators; refused the Nobel Peace Prize because genuine peace had not been achieved.',
         },
         {
-          name: 'President Nguyen Van Thieu',
-          role: 'President of South Vietnam (1967–75); wept on television accusing the US of betrayal after Congress cut military aid.',
+          name: 'Nguyen Van Thieu',
+          role: 'South Vietnamese President who felt betrayed by the Paris Accords; fled Saigon days before communist forces captured the capital in April 1975.',
         },
         {
-          name: 'General Van Tien Dung',
-          role: 'Commander of the North Vietnamese Spring Offensive that captured Saigon in just 55 days in April 1975.',
+          name: 'Gerald Ford',
+          role: '38th US President (1974–77); presided over the final evacuation of Saigon after Congress rejected his plea for $722 million in emergency military aid.',
         },
       ],
-      archivalSource: {
-        title: 'The Paris Peace Accords (Agreement on Ending the War)',
-        citation: 'Signed by US, North Vietnam, South Vietnam & PRG • Paris (27 January 1973)',
-        quote:
-          'The United States will stop all its military activities against the territory of the Democratic Republic of Vietnam by ground, air and naval forces... The United States will withdraw from South Vietnam all troops, military advisers, and military personnel, including technical military personnel within sixty days of the signing of this Agreement.',
-        significance:
-          "Allowed the complete extraction of US combat troops and POWs, while crucially permitting North Vietnamese regular armies to remain entrenched in South Vietnam, ensuring Saigon's eventual collapse.",
-      },
+      milestones: [
+        {
+          date: 'Oct 1972',
+          event: 'Kissinger declares "peace is at hand" after secret Paris breakthroughs',
+        },
+        {
+          date: 'Dec 1972',
+          event: 'Linebacker II Christmas Bombings drop 20,000 tons of bombs on Hanoi',
+        },
+        {
+          date: '27 Jan 1973',
+          event: 'Paris Peace Agreement signed; US combat troops withdraw within 60 days',
+        },
+        {
+          date: 'Nov 1973',
+          event: "War Powers Act passed by Congress over Nixon's veto, curbing presidential power",
+        },
+        {
+          date: '30 Apr 1975',
+          event: 'Saigon falls to North Vietnamese troops; Vietnam reunified under communism',
+        },
+      ],
     },
     right: {
-      deepCases: [
+      question: {
+        typeHeader: 'Section B: Q3(b) [4m] & Q3(c) [4m] Interpretations',
+        title: 'Historiographical Debate: The 1973 Paris Peace Agreement',
+        stem: 'Q3(b) How do Interpretations 1 and 2 differ about the Paris Peace Agreement of 1973? [4m] &bull; Q3(c) Suggest one reason why they differ. [4m]',
+        marks: '4 + 4 = 8',
+        marksTime: '8 Marks &bull; ~14 Mins Total',
+        planningGuideTitle: 'Examiner Planning & Structural Framework:',
+        planningGuide:
+          '<strong>Q3(b) Views Difference (4m):</strong> Contrast the core interpretations. Int 1 views the Paris Accords as an honorable, successful diplomatic exit that achieved "peace with honor" and preserved South Vietnamese sovereignty. Int 2 views it as a cynical, face-saving surrender ("decent interval") that knowingly abandoned Saigon to communist conquest.<br/><strong>Q3(c) Reasons for Difference (4m):</strong> Explain difference through contrasting sources/focus: Nixon/Kissinger diplomatic memoirs vs declassified White House tapes and the subsequent 1975 fall of Saigon.',
+        modelAnswer:
+          '<strong>Q3(b) (Differences in Views):</strong> Interpretations 1 and 2 differ fundamentally over whether the 1973 Paris Peace Agreement was an honorable diplomatic settlement or a cynical betrayal of South Vietnam. Interpretation 1 argues that the accords successfully secured "peace with honor". It stresses that Nixon and Kissinger preserved an independent, sovereign South Vietnam, secured the return of all American prisoners of war (POWs), and achieved an honorable exit through resolute military pressure during the Linebacker II Christmas Bombings.<br/><br/>In direct contrast, Interpretation 2 views the Paris Accords as a cynical, face-saving fig leaf designed merely to establish a "decent interval" between American withdrawal and South Vietnam’s inevitable collapse. It emphasizes that the treaty made fatal concessions by permitting 150,000 North Vietnamese troops to remain stationed inside South Vietnam while withdrawing all US forces, ensuring that Saigon was left defenseless once Congress terminated military funding.<br/><br/><strong>Q3(c) (Reasons for Difference):</strong> One reason the interpretations differ is that the authors have examined different types of historical evidence and focused on different timeframes. The historian in Interpretation 1 relies heavily on official diplomatic records, public speeches, and the memoirs of Richard Nixon and Henry Kissinger, which portray the treaty as a balanced compromise that achieved their stated foreign policy objectives. Conversely, the historian in Interpretation 2 relies on declassified White House audio tapes and private memos, which reveal that Nixon and Kissinger privately acknowledged South Vietnam could not survive on its own. Furthermore, Interpretation 2 focuses on the tragic consequences of 1975, when North Vietnam invaded and conquered Saigon in just 55 days, proving that the 1973 treaty had merely delayed communist victory.',
+        examinerNote:
+          'Full 8/8 marks (4/4 for Q3(b) and 4/4 for Q3(c)). Q3(b) directly contrasts the interpretations using specific quotes and terminology. Q3(c) gives a valid, sophisticated explanation grounded in differing source bases (memoirs vs declassified tapes) and analytical timeframes (1973 signing vs 1975 aftermath).',
+        pitfallCategory: 'Interpretation Difference Pitfalls',
+        pitfall:
+          'In Q3(b), avoid simply summarizing each interpretation separately—explicitly contrast their core arguments. In Q3(c), never claim that one historian is biased; explain how their historical sources and perspective differ.',
+      },
+      causalPathway: {
+        title: 'Visual Causal Pathway: The Road to Paris and the Fall of Saigon (1972–75)',
+        steps: [
+          {
+            stage: '1. Secret Diplomacy',
+            desc: 'Kissinger and Le Duc Tho negotiate in Paris; agreement stalled by President Thieu.',
+          },
+          {
+            stage: '2. Christmas Bombing',
+            desc: 'Linebacker II drops 20,000 tons on Hanoi, forcing both sides to sign treaty.',
+          },
+          {
+            stage: '3. Paris Treaty (1973)',
+            desc: 'US troops withdraw and POWs return; 150,000 NVA troops remain in South.',
+          },
+          {
+            stage: '4. Saigon Falls (1975)',
+            desc: 'Congress cuts military aid; NVA crushes ARVN in 55 days; Vietnam reunified.',
+          },
+        ],
+      },
+      wordBank: [
         {
-          title: '1. Linebacker II & The Christmas Bombings (1972)',
-          points: [
-            'When peace talks stalled in December 1972, Nixon ordered 12 days of relentless B-52 carpet bombing of Hanoi and Haiphong.',
-            'Dropped 20,000 tons of bombs; destroyed hospitals, railways, and airfields; 15 B-52 bombers were shot down by Soviet surface-to-air missiles.',
-            'World leaders condemned the bombings as barbaric; Swedish Prime Minister Palme compared them to Nazi atrocities at Guernica.',
-            'Forced North Vietnam back to Paris; however, the final treaty signed in January 1973 was virtually identical to the draft agreed in October.',
-          ],
-        },
-        {
-          title: '2. The Watergate Scandal & Betrayal of Thieu',
-          points: [
-            'Nixon wrote confidential letters to Thieu: "You have my absolute assurance that if Hanoi fails to abide by this agreement, we will retaliate."',
-            'The **Watergate scandal** broke in 1973, paralyzing the executive branch; Nixon was forced to resign in August 1974 to avoid impeachment.',
-            'Congress took control of foreign policy, passing the Case-Church Amendment forbidding any further US military action in Indochina.',
-            'Congress slashed military and economic aid to Saigon from $2.3bn to $700m, leaving ARVN troops rationing artillery shells and fuel.',
-          ],
-        },
-        {
-          title: '3. The War Powers Act (November 1973)',
-          points: [
-            "Passed by Congress over President Nixon's veto to re-establish legislative control over presidential war-making powers.",
-            'Required the President to formally notify Congress within 48 hours of deploying military forces into hostile situations.',
-            'Mandated that forces must be withdrawn within 60 to 90 days unless Congress expressly authorized their use or declared war.',
-            'Represented a permanent constitutional check on the "imperial presidency", preventing future presidents from waging undeclared wars.',
-          ],
-        },
-        {
-          title: '4. Operation Frequent Wind & The Final Flight',
-          points: [
-            'On 29–30 April 1975, as North Vietnamese artillery shelled Tan Son Nhut airport, the US launched the largest helicopter airlift in history.',
-            'US Marine CH-53 helicopters flew 682 sorties, evacuating 1,373 Americans and 5,595 vulnerable South Vietnamese from embassy grounds.',
-            'Iconic photograph by Hugh Van Es captured desperate refugees climbing a ladder to an Air America helicopter on a rooftop safehouse.',
-            'US Navy carriers were so overwhelmed with helicopters that crewmen pushed $10m worth of aircraft over the side into the South China Sea.',
-          ],
-        },
-      ],
-      causalPathway: [
-        {
-          stage: '1. Triangular Diplomacy (1972)',
-          text: 'Nixon visits Beijing and Moscow, isolating Hanoi from its superpower patrons and securing peace talks.',
-        },
-        {
-          stage: '2. Paris Accords (Jan 1973)',
-          text: 'US secures ceasefire and POW release, withdrawing combat troops while 150,000 NVA soldiers remain.',
-        },
-        {
-          stage: '3. Watergate & War Powers',
-          text: 'Nixon resigns; Congress passes War Powers Act and cuts military funding, abandoning the Thieu regime.',
-        },
-        {
-          stage: '4. Fall of Saigon (April 1975)',
-          text: 'North Vietnamese 20-division blitz captures Saigon in 55 days; US conducts desperate rooftop helicopter evacuation.',
-        },
-      ],
-      masterWordBank: [
-        {
-          term: 'Triangular Diplomacy',
-          def: "Nixon's strategy playing China and the USSR off against each other to pressure North Vietnam.",
-        },
-        {
-          term: 'Madman Theory',
-          def: "Nixon's tactic of convincing communist enemies he was reckless enough to use nuclear weapons.",
-        },
-        {
-          term: 'Linebacker II (1972)',
-          def: 'Intense 12-day B-52 Christmas bombing of Hanoi and Haiphong that forced Hanoi to sign the treaty.',
-        },
-        {
-          term: 'Paris Peace Accords (1973)',
-          def: 'Treaty ending direct US military involvement; mandated US troop withdrawal and POW release.',
+          term: 'Paris Peace Accords',
+          def: 'Agreement signed on 27 Jan 1973 ending direct US military involvement in Vietnam.',
         },
         {
           term: 'Henry Kissinger',
-          def: 'US diplomat who negotiated the Paris Peace Accords and detente with Moscow and Beijing.',
+          def: 'US National Security Adviser who negotiated the Paris treaty with North Vietnam.',
         },
         {
-          term: 'Operation Homecoming',
-          def: 'The repatriation of 591 American prisoners of war from North Vietnam in spring 1973.',
+          term: 'Le Duc Tho',
+          def: 'Chief North Vietnamese negotiator in Paris who refused the 1973 Nobel Peace Prize.',
         },
         {
-          term: 'War Powers Act (1973)',
-          def: 'Federal law limiting presidential authority to deploy troops abroad without congressional consent.',
+          term: 'Peace with Honor',
+          def: "Nixon's stated goal of ending the war without abandoning South Vietnam or surrendering.",
         },
         {
-          term: 'Watergate Scandal',
-          def: "Political scandal forcing Nixon's resignation in 1974, fatally weakening executive war powers.",
+          term: 'Christmas Bombings',
+          def: 'Operation Linebacker II in Dec 1972 dropping 20,000 tons of bombs to force peace terms.',
         },
         {
-          term: 'President Nguyen Van Thieu',
-          def: 'South Vietnamese President who reluctantly signed the Paris Accords under American pressure.',
+          term: 'POWs',
+          def: 'Prisoners of War; 591 American military captives released following the 1973 Paris Accords.',
         },
         {
-          term: '1975 Spring Offensive',
-          def: 'Rapid North Vietnamese conventional offensive that conquered South Vietnam in 55 days.',
+          term: 'Decent Interval',
+          def: "Theory that Nixon sought a face-saving gap between US exit and Saigon's inevitable fall.",
+        },
+        {
+          term: 'War Powers Act',
+          def: '1973 federal law passed over Nixon’s veto restricting presidential power to commit US troops.',
+        },
+        {
+          term: 'Fall of Saigon',
+          def: '30 April 1975 capture of the South Vietnamese capital by communist forces.',
         },
         {
           term: 'Operation Frequent Wind',
-          def: 'Emergency helicopter evacuation of 7,000 Americans and South Vietnamese from Saigon in April 1975.',
+          def: 'Chaotic final helicopter evacuation of Americans and Vietnamese from Saigon in April 1975.',
         },
         {
-          term: 'Fall of Saigon (30 April 1975)',
-          def: 'The capture of the South Vietnamese capital by communist tanks, ending the Vietnam War.',
+          term: 'Casualty Toll',
+          def: '58,220 American service personnel killed and over 303,000 wounded during the conflict.',
+        },
+        {
+          term: 'Economic Cost',
+          def: '$167 billion direct expenditure ($1 trillion+ long term), triggering severe US inflation.',
         },
       ],
     },
   },
 
-  // Spread 16: KT 4.4
+  // =========================================================================
+  // SPREAD 16: KT 4.4 — REASONS FOR THE FAILURE OF THE USA IN VIETNAM
+  // Exam Format: interpretation_eval (Section B: Q3(d) [16+4m])
+  // =========================================================================
   {
     id: 'lesson_4_4',
-    topic: 'Key Topic 4: Reactions to, and the End of, US Involvement in Vietnam, 1964–75',
-    title: 'KT 4.4: What were the main reasons why the US failed to win the war in Vietnam?',
+    topic: 'Key Topic 4: Reactions & End of Vietnam War, 1964–75',
+    title: 'KT 4.4: Reasons for the Failure of the USA in Vietnam',
+    footerTag: 'KT 4.4: Reasons for US failure',
     left: {
-      headline: 'The Anatomy of Defeat: Military, Political, Moral & Cultural Limits of Superpower',
+      sectionTag: 'Synoptic Assessment',
+      contextTitle: 'Strategic Context & Geopolitical Overview',
       summary:
-        'The American failure in Vietnam was a multidimensional catastrophe resulting from inappropriate military doctrine, an illegitimate South Vietnamese client state, unshakeable Vietnamese communist nationalism, domestic political collapse, and severe economic exhaustion. Costing over 58,000 American lives, 2 million Vietnamese lives, and $168 billion, the war shattered the post-WWII American consensus and created the lasting "Vietnam Syndrome".',
+        'The defeat of the United States in Vietnam resulted from a lethal combination of communist strengths, American military tactical misjudgments, and domestic political collapse. While North Vietnam drew on patriotic nationalism, guerrilla mastery, and Soviet/Chinese aid, the US armed forces were crippled by conscription turnover, low morale, tactical failures like Search and Destroy, and an unravelling home front.',
       pillars: [
         {
-          title: 'Military Deficiencies',
-          subtitle: 'Conventional Firepower in Guerrilla Jungle',
+          title: 'Strengths of North Vietnam & The Vietcong',
+          subtitle: 'Nationalist Fanaticism, Tunnels & Foreign Aid',
           bullets: [
-            'The US military was designed for conventional mechanized war in Europe, not asymmetric counter-insurgency in Southeast Asian jungle.',
-            '**Search-and-destroy** tactics alienated the peasantry: burning villages and defoliating crops pushed rural civilians to support the Vietcong.',
-            'Massive bombing (Operation Rolling Thunder) failed to halt the Ho Chi Minh Trail or break the willpower of North Vietnamese society.',
-            'US troop rotation policies (1-year tours) caused constant inexperience, low morale, drug addiction, and officer fragging.',
+            'Communist forces were fighting for **national reunification and independence**, inspiring a willingness to endure massive casualties that the US could never match.',
+            'Mastered guerrilla warfare, the **Cu Chi tunnel network**, and booby traps, which neutralized American technological and air superiority.',
+            'The **Ho Chi Minh Trail** moved supplies through Laos and Cambodia, repaired continuously by 300,000 laborers despite intensive US bombing.',
+            'Received vital modern weapons from the **Soviet Union and China** (estimated at $2bn annually), including AK-47 rifles, SAM anti-aircraft missiles, and radar.',
           ],
         },
         {
-          title: 'Political & Cultural Illegitimacy',
-          subtitle: 'The Corrupt Saigon Client State',
+          title: 'Weaknesses of US Armed Forces & Tactical Failures',
+          subtitle: 'Conscription, Drug Abuse, Fragging & Alienation',
           bullets: [
-            'Successive South Vietnamese regimes (Diem, Khanh, Ky, Thieu) were viewed by the peasantry as corrupt, Catholic-dominated puppets.',
-            'The Army of the Republic of Vietnam (ARVN) was crippled by political cronyism, ghost soldiers, and high desertion rates (100,000/year).',
-            'In contrast, the Vietcong and NVA possessed unshakeable nationalist legitimacy, viewing the war as a 2,000-year struggle for independence.',
-            'Hanoi proved willing to absorb catastrophic casualties (losing 1.1 million soldiers) while maintaining total national resolve.',
+            'The **one-year "tour of duty"** produced an inexperienced army; as soon as soldiers learned jungle combat, they were rotated home.',
+            'Morale collapsed in the late 1960s: widespread drug abuse (an estimated **15–20% of troops addicted to heroin** by 1971) and **over 800 "fragging" incidents** (killing officers).',
+            '**Search and Destroy** tactics alienated the civilian population; burning villages and destroying crops drove peasants directly into the arms of the Vietcong.',
+            'The US military relied on body count metrics rather than holding ground, winning tactical firefights while losing the strategic war.',
           ],
         },
         {
-          title: 'Domestic Collapse & Economic Cost',
-          subtitle: 'The Shattered Home Front',
+          title: 'Impact of Domestic Opposition & Political Limits',
+          subtitle: 'The Home Front Collapse & Congressional Restrictions',
           bullets: [
-            'Uncensored television coverage of combat, My Lai war crimes, and student killings at Kent State destroyed domestic public support.',
-            'The astronomical economic cost ($168 billion) triggered soaring inflation and forced LBJ to abandon his Great Society anti-poverty programs.',
-            'The **credibility gap** between official government claims of progress and the reality of stalemate destroyed trust in public institutions.',
-            'Congress reasserted its authority through the War Powers Act (1973) and cut military funding, abandoning Saigon to defeat.',
+            'The domestic anti-war movement made prolonged military intervention politically impossible for Democratic and Republican administrations.',
+            'Television broadcasts of atrocities (My Lai) and casualties destroyed the national consensus required to wage a protracted Cold War conflict.',
+            'Fear of Chinese or Soviet nuclear intervention prevented US ground troops from invading North Vietnam to cut the conflict at its root.',
+            "In 1973–74, Congress passed the **War Powers Act** and slashed financial aid to South Vietnam, guaranteeing Saigon's final collapse in 1975.",
           ],
         },
       ],
       keyFigures: [
         {
-          name: 'Robert McNamara',
-          role: 'Defense Secretary who admitted in his 1995 memoir: "We were wrong, terribly wrong. We owe it to future generations to explain why."',
-        },
-        {
           name: 'General Vo Nguyen Giap',
-          role: 'North Vietnamese commander who recognized superior US firepower could be overcome by patience, nationalism, and attrition.',
+          role: "North Vietnamese Commander-in-Chief whose strategy of protracted people's war successfully exhausted French and American military power.",
         },
         {
-          name: 'David Halberstam',
-          role: "Journalist whose classic book The Best and the Brightest exposed the arrogant, flawed assumptions of Kennedy's and Johnson's advisers.",
+          name: 'Ho Chi Minh',
+          role: 'Nationalist and communist icon whose moral leadership unified North Vietnam through decades of war until his death in September 1969.',
         },
         {
-          name: 'President Gerald Ford',
-          role: 'US President who oversaw the final evacuation of Saigon in April 1975, stating: "The war is finished as far as America is concerned."',
+          name: 'General William Westmoreland',
+          role: 'US commander whose attrition doctrine and Search and Destroy strategy failed to break the will of the communist insurgency.',
+        },
+        {
+          name: 'Richard M. Nixon',
+          role: 'President whose pursuit of Vietnamisation and secret diplomacy ultimately resulted in complete American military extrication.',
         },
       ],
-      archivalSource: {
-        title: 'Memorandum on the Lessons of Vietnam',
-        citation:
-          'Secretary of State Henry Kissinger • Memorandum to President Gerald Ford (12 May 1975)',
-        quote:
-          'The military strategy pursued in Vietnam was fundamentally ill-suited to the nature of the war. We fought a war of attrition against an adversary who was willing to accept limitless casualties... Our political commitment was open-ended, while our domestic political will was inherently limited. We were unable to build a viable South Vietnamese political institution capable of surviving without massive American ground combat support.',
-        significance:
-          'An authoritative historical post-mortem by the chief architect of US diplomacy, admitting that military intervention was doomed by structural political illegitimacy and limitless enemy resolve.',
-      },
+      milestones: [
+        {
+          date: '1965–73',
+          event: 'USSR and China provide over $2 billion in annual military aid to North Vietnam',
+        },
+        {
+          date: '1969–71',
+          event: 'US army morale disintegrates: fragging incidents rise and 15–20% use heroin',
+        },
+        {
+          date: 'Jan 1973',
+          event: 'Paris Peace Accords signed; remaining US combat troops withdraw from Vietnam',
+        },
+        {
+          date: 'Nov 1973',
+          event: 'War Powers Act restricts presidential authority to deploy forces abroad',
+        },
+        {
+          date: '30 Apr 1975',
+          event: 'Saigon falls; Vietnam is reunified under communist rule, marking US defeat',
+        },
+      ],
     },
     right: {
-      deepCases: [
+      question: {
+        typeHeader: 'Section B: Q3(d) Evaluative Essay [16+4m]',
+        title: 'Synoptic Evaluation: Why Did the United States Fail in Vietnam?',
+        stem: 'How far do you agree with Interpretation 2 that the primary reason for the US defeat in Vietnam was the resilience and tactics of the Vietnamese communists, rather than American military and political blunders? [16+4 SPaG Marks]',
+        marks: '16 + 4',
+        marksTime: '20 Marks &bull; ~25 Mins',
+        planningGuideTitle: 'Examiner Planning & Structural Framework (Criteria-Led Essay):',
+        planningGuide:
+          '<strong>Paragraph 1 (Agree with Int 2):</strong> Strengths of North Vietnam & Vietcong: nationalist commitment to independence, guerrilla tactics (Cu Chi tunnels, "hanging onto belts"), supply lines (Ho Chi Minh Trail), crucial Soviet/Chinese military aid ($2bn/year).<br/><strong>Paragraph 2 (Evaluate Int 1 - Alternative View):</strong> US military and political weaknesses: one-year tour of duty, collapse of morale (fragging, heroin abuse), alienation of peasants via Search & Destroy / Agent Orange, and domestic political collapse (media, protests, War Powers Act).<br/><strong>Conclusion:</strong> Formulate criteria judgement: American tactics were inappropriate, but the fundamental determinant was asymmetry of will: the communists were fighting an existential anti-colonial struggle for national survival, whereas the US was fighting a limited Cold War intervention.',
+        modelAnswer:
+          'Interpretation 2 argues that the primary reason for American defeat was the extraordinary resilience, tactics, and motivation of the Vietnamese communists. There is powerful historical evidence to support this view. Unlike American soldiers who served limited one-year tours, communist forces were fighting an existential war for national independence and reunification. This ideological commitment enabled them to sustain catastrophic losses—over one million combat deaths—without breaking, adhering to Ho Chi Minh’s doctrine that while the US could kill ten of his men for every one American killed, it was America that would ultimately tire and quit. Tactically, the Vietcong neutralized American technological superiority through guerrilla warfare, "hanging onto American belts" in close combat to prevent air strikes, utilizing over 200 miles of underground tunnels at Cu Chi, and relying on lethal booby traps that caused 11% of US deaths. Furthermore, the communists maintained the 600-mile Ho Chi Minh Trail through Laos and Cambodia, kept open by 300,000 workers despite intensive US bombing, and received over $2 billion annually in sophisticated Soviet and Chinese military hardware, including SAM missiles and AK-47 rifles.<br/><br/>However, Interpretation 1 places greater emphasis on American military failures and the collapse of the home front. General Westmoreland’s strategy of attrition and Search and Destroy was fundamentally counter-productive: burning thatched huts ("Zippo raids") and spraying 19 million gallons of toxic defoliants like Agent Orange destroyed 4.5 million acres of land, alienating the rural peasant population and driving recruits to the Vietcong. Militarily, the one-year tour of duty meant US units suffered from chronic inexperience. By the early 1970s, military discipline disintegrated, evidenced by over 800 recorded "fragging" assaults on officers and widespread heroin addiction affecting up to 20% of enlisted men. Furthermore, uncensored television coverage of atrocities like the My Lai Massacre and the domestic anti-war movement created an insurmountable political barrier, culminating in the 1973 War Powers Act and congressional funding cuts that left South Vietnam defenseless.<br/><br/>In conclusion, I agree with Interpretation 2 to a great extent. While American tactical errors and domestic political unrest accelerated the withdrawal, the decisive factor was the asymmetrical nature of the conflict. The United States was fighting a limited, peripheral Cold War containment war with strict political constraints that prevented an invasion of North Vietnam. In contrast, the Vietnamese communists were engaged in a total anti-colonial struggle for national liberation. Superior American technology could win individual tactical battles, but it could never overcome the limitless resilience, guerrilla adaptability, and ideological commitment of North Vietnam.',
+        examinerNote:
+          'Level 4 Benchmark (16/16 + 4 SPaG = 20/20). Comprehensively evaluates both interpretations with deep contextual mastery (Ho Chi Minh Trail, Cu Chi tunnels, Soviet/Chinese aid, Search & Destroy, Agent Orange, fragging, heroin statistics, My Lai, War Powers Act) and delivers an exceptionally sophisticated, criteria-driven conclusion.',
+        pitfallCategory: 'Paper 3 Essay Pitfalls',
+        pitfall:
+          'Never write a one-sided essay focusing solely on US domestic protests. To secure top marks, you must analyze both the strengths of North Vietnam AND the weaknesses of the US war effort, weighing which factor was the primary cause of defeat.',
+      },
+      causalPathway: {
+        title: 'Visual Causal Pathway: The Synthesis of Factors Causing US Defeat',
+        steps: [
+          {
+            stage: '1. Asymmetry of Will',
+            desc: 'Communist dedication to national independence absorbs immense casualties.',
+          },
+          {
+            stage: '2. Tactical Impasse',
+            desc: 'Cu Chi tunnels, booby traps, and Ho Chi Minh Trail neutralize US firepower.',
+          },
+          {
+            stage: '3. Internal Collapse',
+            desc: 'US army suffers morale crisis; Search and Destroy alienates rural peasants.',
+          },
+          {
+            stage: '4. Political Limits',
+            desc: 'Domestic protests and media coverage force US troop exit; Saigon falls in 1975.',
+          },
+        ],
+      },
+      wordBank: [
         {
-          title: '1. Asymmetric Resolve & Vietnamese Nationalism',
-          points: [
-            'Vietnamese communists viewed the conflict as a continuation of their ancient anti-colonial struggle against Chinese and French invaders.',
-            'Ho Chi Minh famously told the French: "You can kill ten of my men for every one I kill of yours, but even at those odds, you will lose and I will win."',
-            'North Vietnam was backed by limitless supplies of modern weaponry from the Soviet Union and China ($2bn annually), including SAM missiles and AK-47s.',
-            'The US failed fundamentally to understand that for the Vietnamese people, this was a war of total national survival, not a Cold War border skirmish.',
-          ],
+          term: 'Asymmetry of Will',
+          def: 'The contrast between total communist commitment to independence and limited US aims.',
         },
         {
-          title: '2. Failure to Win "Hearts and Minds"',
-          points: [
-            'Pacification programs were completely undermined by the destructive nature of American search-and-destroy combat operations.',
-            'The use of chemical defoliants (**Agent Orange**) poisoned 4 million acres of farmland and ruined the livelihoods of hundreds of thousands of peasants.',
-            'Over 4 million South Vietnamese peasants were uprooted from their ancestral lands, becoming destitute refugees in corrupt city slums.',
-            'Peasants saw American soldiers burning their homes, shooting livestock, and treating them with racial contempt, driving them to assist the Vietcong.',
-          ],
+          term: 'Tour of Duty',
+          def: 'The standard 12-month combat rotation that created chronic inexperience in US units.',
         },
         {
-          title: '3. Collapse of US Military Morale & Cohesion',
-          points: [
-            'By 1970–71, the US Army in Vietnam was in an advanced state of internal rebellion; soldiers wore peace symbols and refused patrol orders.',
-            'Documented over 500 incidents of **"fragging"** (enlisted men murdering aggressive or unpopular officers with fragmentation grenades).',
-            'Over 30,000 US troops were addicted to pure Southeast Asian heroin; racial clashes erupted frequently on major bases.',
-            'The one-year "tour of duty" ensured that by the time a soldier learned jungle survival skills, he was rotated home, leaving units inexperienced.',
-          ],
+          term: 'Fragging',
+          def: 'The assassination of unpopular or aggressive military officers by their own troops with grenades.',
         },
         {
-          title: '4. The "Vietnam Syndrome" & Lasting Legacy',
-          points: [
-            'Total US casualties: 58,220 dead, 153,303 wounded, and thousands suffering from undiagnosed Post-Traumatic Stress Disorder (PTSD).',
-            'Vietnamese casualties were catastrophic: over 2 million civilians killed and 1.1 million North Vietnamese and Vietcong fighters dead.',
-            'The **"Vietnam Syndrome"** made the American public and Congress deeply fearful of foreign military entanglements for over twenty years.',
-            'Shattered public faith in the presidency, the military, and government truthfulness, accelerating cynical political alienation in modern America.',
-          ],
-        },
-      ],
-      causalPathway: [
-        {
-          stage: '1. Flawed Military Strategy',
-          text: 'Conventional firepower and search-and-destroy fail to defeat guerrilla tactics or halt the Ho Chi Minh Trail.',
+          term: 'Cu Chi Tunnels',
+          def: 'Underground defensive network enabling Vietcong to survive intensive US aerial bombing.',
         },
         {
-          stage: '2. Client State Illegitimacy',
-          text: 'Corrupt Saigon regimes lack popular support and democratic legitimacy among the rural peasant majority.',
+          term: 'Ho Chi Minh Trail',
+          def: 'Supply logistics lifeline moving troops and Soviet/Chinese arms from North to South.',
         },
         {
-          stage: '3. Domestic Willpower Collapses',
-          text: 'Televised combat, My Lai, Kent State, and economic inflation destroy public and congressional support for the war.',
+          term: 'SAM Missiles',
+          def: 'Soviet-supplied surface-to-air guided missiles that shot down hundreds of US aircraft.',
         },
         {
-          stage: '4. Total Communist Victory (1975)',
-          text: 'North Vietnamese conventional army conquers South Vietnam; country is reunified under communist rule.',
-        },
-      ],
-      masterWordBank: [
-        {
-          term: 'Asymmetric Warfare',
-          def: 'Conflict between belligerents whose relative military power or strategy differs significantly.',
+          term: 'Attrition Strategy',
+          def: 'Westmoreland’s failed doctrine attempting to destroy communist forces faster than replacement.',
         },
         {
-          term: 'Hearts and Minds',
-          def: 'The failed campaign to win the emotional and political allegiance of the South Vietnamese peasantry.',
+          term: 'Agent Orange',
+          def: 'Dioxin herbicide chemical weapon that destroyed 4.5 million acres of jungle and crops.',
         },
         {
-          term: 'Puppet Regime',
-          def: 'Contemptuous label for South Vietnamese leaders seen as completely dependent on American money and guns.',
+          term: 'Zippo Raids',
+          def: 'Tactical missions where US infantry torched civilian villages suspected of sheltering Vietcong.',
         },
         {
-          term: 'ARVN Fragility',
-          def: 'Weakness, corruption, and mass desertion that plagued the South Vietnamese military.',
+          term: 'Credibility Gap',
+          def: 'Public disillusionment caused by discrepancies between official optimism and television reality.',
         },
         {
-          term: 'Cross-over Point Myth',
-          def: "The false Pentagon assumption that body counts would break Hanoi's willingness to fight.",
+          term: 'War Powers Act',
+          def: '1973 law preventing US presidents from committing troops abroad without congressional consent.',
         },
         {
-          term: '"Fragging"',
-          def: 'The deliberate murder or attempted murder of military officers by their own enlisted men with grenades.',
-        },
-        {
-          term: 'Troop Morale Collapse',
-          def: 'Widespread drug addiction, patrol refusals, and racial conflict that crippled the US Army by 1971.',
-        },
-        {
-          term: 'Great Society Abandonment',
-          def: "Johnson's domestic anti-poverty and civil rights programs starved of funding by war expenditures.",
-        },
-        {
-          term: 'Economic Inflation',
-          def: 'Severe economic stagflation and budget deficits caused by spending $168 billion on the Vietnam War.',
-        },
-        {
-          term: '"Vietnam Syndrome"',
-          def: 'Decades-long American reluctance to deploy US military forces in foreign overseas conflicts.',
-        },
-        {
-          term: 'The Best and the Brightest',
-          def: "Ironic phrase describing the intellectual arrogance of Kennedy's and Johnson's advisers.",
-        },
-        {
-          term: 'PTSD',
-          def: 'Post-Traumatic Stress Disorder; psychological trauma afflicting hundreds of thousands of returning veterans.',
+          term: 'Fall of Saigon',
+          def: 'The 30 April 1975 capture of the South Vietnamese capital, marking final communist victory.',
         },
       ],
     },
