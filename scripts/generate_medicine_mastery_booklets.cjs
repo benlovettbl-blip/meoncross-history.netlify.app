@@ -53,8 +53,8 @@ const COMMON_CSS = `
   
   .page-footer { font-size: 6.5pt; color: #94a3b8; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 3px; margin-top: 4px; display: flex; justify-content: space-between; }
   
-  /* Authentic Edexcel 8mm exam ruled lines */
-  .writing-line { height: 8mm; border-bottom: 1px solid #cbd5e1; margin-bottom: 0; box-sizing: border-box; }
+  /* Authentic Edexcel 8mm exam ruled lines (Photocopier & Duplex Safe) */
+  .writing-line { height: 8mm; border-bottom: 1.2px solid #475569; margin-bottom: 0; box-sizing: border-box; }
   .writing-line.starter { color: #475569; font-style: italic; font-size: 7.5pt; display: flex; align-items: flex-end; padding-bottom: 1.5px; }
   
   /* Answers-Only Bank (Green Pages) */

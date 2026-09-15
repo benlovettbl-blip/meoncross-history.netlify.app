@@ -3677,10 +3677,10 @@ function generateFullHTML() {
       font-size: 7.5pt;
     }
 
-    /* Lines for answer writing (18.5px dotted ruling matching standard 8mm exercise book) */
+    /* Lines for answer writing (18.5px ruling matching standard 8mm exercise book - Photocopier & Duplex Safe) */
     .line {
       height: 18.5px;
-      border-bottom: 1px dotted #94a3b8;
+      border-bottom: 1.2px solid #475569;
       width: 100%;
     }
 

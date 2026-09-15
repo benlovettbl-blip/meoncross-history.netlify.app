@@ -1578,9 +1578,9 @@ const COMMON_CSS = `
     padding-left: 16px;
   }
 
-  /* Authentic Pearson Edexcel GCSE Exam Ruled Lines (8mm line spacing) */
+  /* Authentic Pearson Edexcel GCSE Exam Ruled Lines (8mm line spacing - Photocopier & Duplex Safe) */
   .dotted-line {
-    border-bottom: 1px solid #cbd5e1;
+    border-bottom: 1.2px solid #475569;
     height: 8mm;
     width: 100%;
     box-sizing: border-box;
@@ -1701,7 +1701,7 @@ const COMMON_CSS = `
     text-transform: uppercase;
   }
   .inference-row {
-    border-bottom: 1px dotted #94a3b8;
+    border-bottom: 1.2px solid #475569;
     height: 18px;
     margin-top: 2px;
   }
@@ -2052,7 +2052,7 @@ function renderBookletHtml(ktKey, meta) {
         <div class="cover-footer">
             <span>Pearson Edexcel GCSE (9–1) History · Paper 3: Option 33 Conflict at Home and Abroad: the USA, 1954–75</span>
             <span class="turn-over">Turn over for Section A &#9654;</span>
-            <span>Page 1 of 11</span>
+            <span>Page 1 of 12</span>
         </div>
     </div>
 
@@ -2124,7 +2124,7 @@ function renderBookletHtml(ktKey, meta) {
         <div class="page-footer">
             <span>Option 33 · ${meta.shortTitle}</span>
             <span class="turn-over">Turn over for Question 2 &#9654;</span>
-            <span>Page 2 of 11</span>
+            <span>Page 2 of 12</span>
         </div>
     </div>
 
@@ -2170,28 +2170,57 @@ function renderBookletHtml(ktKey, meta) {
                 </div>
 
                 <!-- Consecutive Paragraph Focus Prompts -->
-                <div style="display: flex; flex-direction: column; gap: 2px; margin-bottom: 4px;">
-                    <div style="border: 1px solid #cbd5e1; border-radius: 3px; background: #f8fafc; padding: 2px 6px; font-size: 6.8pt; color: #334155;">
+                <div style="display: flex; flex-direction: column; gap: 3px; margin-bottom: 5px;">
+                    <div style="border: 1px solid #cbd5e1; border-radius: 3px; background: #f8fafc; padding: 3px 6px; font-size: 6.8pt; color: #334155;">
                         <strong>Paragraph 1 Focus:</strong> ${e.q2.stages.p1}
                     </div>
-                    <div style="border: 1px solid #cbd5e1; border-radius: 3px; background: #f8fafc; padding: 2px 6px; font-size: 6.8pt; color: #334155;">
+                    <div style="border: 1px solid #cbd5e1; border-radius: 3px; background: #f8fafc; padding: 3px 6px; font-size: 6.8pt; color: #334155;">
                         <strong>Paragraph 2 Focus:</strong> ${e.q2.stages.p2}
-                    </div>
-                    <div style="border: 1.5px solid #1e3a8a; border-radius: 3px; background: #eff6ff; padding: 2px 6px; font-size: 6.8pt; color: #1e3a8a;">
-                        <strong>Paragraph 3 Focus (Compulsory Own Knowledge):</strong> ${e.q2.stages.p3}
                     </div>
                 </div>
 
                 <!-- Candidate Response Lines -->
-                <div style="font-size: 7pt; font-weight: 700; color: #0f172a; margin: 3px 0 2px 0;">Candidate Response Lines:</div>
-                ${renderLines(e.q2.linesPage3 || 20)}
+                <div style="font-size: 7pt; font-weight: 700; color: #0f172a; margin: 4px 0 2px 0;">Candidate Response Lines:</div>
+                ${renderLines(e.q2.linesPage3 || 14)}
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Option 33 · Section A (Question 2 continues)</span>
+            <span class="turn-over">Question 2 continues on next page &#9654;</span>
+            <span>Page 3 of 12</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 4: SECTION A — QUESTION 2: EXPLAIN WHY (PART 2)          -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h2>Section A: Timed Exam Paper · Question 2 (Continued)</h2>
+                    <p>Complete your causation essay with a developed third paragraph and criteria evaluation.</p>
+                </div>
+                <span class="header-tag">Q2: Developed Causation</span>
+            </div>
+
+            <div class="question-container">
+                <!-- Compulsory Own Knowledge Focus -->
+                <div style="border: 1.5px solid #1e3a8a; border-radius: 4px; background: #eff6ff; padding: 4px 8px; margin-bottom: 6px; font-size: 7pt; color: #1e3a8a; display: flex; justify-content: space-between; align-items: center;">
+                    <span><strong>Paragraph 3 Focus (Compulsory Own Knowledge):</strong> ${e.q2.stages.p3}</span>
+                    <span style="font-weight: 800; text-transform: uppercase; font-size: 6.5pt; background: #1e3a8a; color: #fff; padding: 1.5px 5px; border-radius: 3px;">Spec Guarantee</span>
+                </div>
+
+                <!-- Candidate Response Lines -->
+                ${renderLines(e.q2.linesPage4 || 24)}
 
                 <!-- Pearson Edexcel Level 4 Criteria Checklist -->
-                <div style="border: 1.5px solid #64748b; border-radius: 4px; background: #f8fafc; padding: 3px 6px; margin-top: 4px; font-size: 6.7pt; line-height: 1.2;">
-                    <div style="font-weight: 800; text-transform: uppercase; color: #0f172a; margin-bottom: 1px;">
+                <div style="border: 1.5px solid #64748b; border-radius: 4px; background: #f8fafc; padding: 4px 8px; margin-top: 6px; font-size: 6.8pt; line-height: 1.25;">
+                    <div style="font-weight: 800; text-transform: uppercase; color: #0f172a; margin-bottom: 2px;">
                         Pearson Edexcel Level 4 Criteria Checklist [10–12 Marks]:
                     </div>
-                    <div style="color: #334155; display: flex; gap: 8px;">
+                    <div style="color: #334155; display: flex; gap: 10px;">
                         <div><span class="tracker-box"></span> 3 Developed Causal Factors</div>
                         <div><span class="tracker-box"></span> Beyond Stimulus Own Fact</div>
                         <div><span class="tracker-box"></span> Explicit Connectives</div>
@@ -2204,7 +2233,7 @@ function renderBookletHtml(ktKey, meta) {
         <div class="page-footer">
             <span>Option 33 · End of Section A (16 Marks Total)</span>
             <span class="turn-over">Turn over for Section B Enquiry Dossier &#9654;</span>
-            <span>Page 3 of 11</span>
+            <span>Page 4 of 12</span>
         </div>
     </div>
 
@@ -2292,7 +2321,7 @@ function renderBookletHtml(ktKey, meta) {
         <div class="page-footer">
             <span>Option 33 · Historical Enquiry Dossier</span>
             <span class="turn-over">Turn over for Question 3(a) &#9654;</span>
-            <span>Page 4 of 11</span>
+            <span>Page 5 of 12</span>
         </div>
     </div>
 
@@ -2342,7 +2371,7 @@ function renderBookletHtml(ktKey, meta) {
         <div class="page-footer">
             <span>Option 33 · ${meta.shortTitle}</span>
             <span class="turn-over">Turn over for Question 3(b) &amp; 3(c) &#9654;</span>
-            <span>Page 5 of 11</span>
+            <span>Page 6 of 12</span>
         </div>
     </div>
 
@@ -2387,7 +2416,7 @@ function renderBookletHtml(ktKey, meta) {
         <div class="page-footer">
             <span>Option 33 · ${meta.shortTitle}</span>
             <span class="turn-over">Turn over for Question 3(d) Evaluative Essay &#9654;</span>
-            <span>Page 6 of 11</span>
+            <span>Page 7 of 12</span>
         </div>
     </div>
 
@@ -2447,7 +2476,7 @@ function renderBookletHtml(ktKey, meta) {
         <div class="page-footer">
             <span>Option 33 · ${meta.shortTitle}</span>
             <span class="turn-over">Question 3(d) continues on next page &#9654;</span>
-            <span>Page 7 of 11</span>
+            <span>Page 8 of 12</span>
         </div>
     </div>
 
@@ -2490,7 +2519,7 @@ function renderBookletHtml(ktKey, meta) {
         <div class="page-footer">
             <span>Option 33 · End of Section B (36 Marks + 4 SPaG)</span>
             <span class="turn-over">Turn over for Section B Depth Booster &#9654;</span>
-            <span>Page 8 of 11</span>
+            <span>Page 9 of 12</span>
         </div>
     </div>
 
@@ -2546,7 +2575,7 @@ function renderBookletHtml(ktKey, meta) {
         <div class="page-footer">
             <span>Option 33 · 100% Specification Practice Bank</span>
             <span class="turn-over">Turn over for Section C (Exemplar Answers) &#9654;</span>
-            <span>Page 9 of 11</span>
+            <span>Page 10 of 12</span>
         </div>
     </div>
 
@@ -2599,7 +2628,7 @@ function renderBookletHtml(ktKey, meta) {
         <div class="page-footer">
             <span>Option 33 · Official Exam Criteria &amp; Exemplars</span>
             <span class="turn-over">Turn over for Section B Models &amp; Traps &#9654;</span>
-            <span>Page 10 of 11</span>
+            <span>Page 11 of 12</span>
         </div>
     </div>
 
@@ -2685,7 +2714,7 @@ function renderBookletHtml(ktKey, meta) {
         <div class="page-footer">
             <span>Pearson Edexcel GCSE (9–1) History · Option 33 Conflict at Home and Abroad: the USA, 1954–75</span>
             <span style="font-weight: 700; color: #0f172a;">100% Specification Coverage Completed</span>
-            <span>Page 11 of 11</span>
+            <span>Page 12 of 12</span>
         </div>
     </div>
 
@@ -2703,7 +2732,7 @@ function renderBookletHtml(ktKey, meta) {
     const generatedHtmlFiles = {};
 
     for (const [ktKey, meta] of Object.entries(KT_DATA)) {
-      console.log(`\n📄 Generating 11-Page Exam Practice Pack HTML for ${ktKey}...`);
+      console.log(`\n📄 Generating 12-Page Exam Practice Pack HTML for ${ktKey}...`);
       const htmlContent = renderBookletHtml(ktKey, meta);
       const outHtmlPath = path.join(bookletsDir, `usa_mastery_${ktKey}.html`);
       fs.writeFileSync(outHtmlPath, htmlContent, 'utf8');
@@ -2712,7 +2741,7 @@ function renderBookletHtml(ktKey, meta) {
     }
 
     // Compile the Combined Master HTML booklet (48 Pages)
-    console.log('\n📚 Compiling 44-Page Full Master Booklet (usa_mastery_FULL.html)...');
+    console.log('\n📚 Compiling 48-Page Full Master Booklet (usa_mastery_FULL.html)...');
     let fullHtmlPages = '';
     for (const [ktKey] of Object.entries(KT_DATA)) {
       const htmlFile = generatedHtmlFiles[ktKey];
@@ -2737,7 +2766,7 @@ function renderBookletHtml(ktKey, meta) {
 
     const fullHtmlPath = path.join(bookletsDir, 'usa_mastery_FULL.html');
     fs.writeFileSync(fullHtmlPath, fullHtmlContent, 'utf8');
-    console.log(`   ✅ Saved: usa_mastery_FULL.html (44 Pages Total)`);
+    console.log(`   ✅ Saved: usa_mastery_FULL.html (48 Pages Total)`);
 
     // Launch Puppeteer
     console.log('\n🖨️ Launching Puppeteer to compile print-perfect PDFs...');

@@ -872,7 +872,7 @@ function generateConceptualTriadPage(lesson, unitId) {
         <div style="margin-bottom: 6px;">
           ${Array(8)
             .fill(
-              '<div class="task-lines" style="height: 20px; border-bottom: 1px dotted #94a3b8; margin-top: 1px;"></div>',
+              '<div class="task-lines" style="height: 20px; border-bottom: 1.2px solid #475569; margin-top: 1px;"></div>',
             )
             .join('')}
         </div>
@@ -928,7 +928,7 @@ function generateConceptualTriadPage(lesson, unitId) {
         <div style="margin-bottom: 6px;">
           ${Array(24)
             .fill(
-              '<div class="task-lines" style="height: 20px; border-bottom: 1px dotted #94a3b8; margin-top: 1px;"></div>',
+              '<div class="task-lines" style="height: 20px; border-bottom: 1.2px solid #475569; margin-top: 1px;"></div>',
             )
             .join('')}
         </div>
@@ -1281,8 +1281,8 @@ allDirs.forEach((unitId) => {
     `
         : ''
     }
-    .task-lines { border-bottom: 1px solid #cbd5e1; height: 7.5mm; margin-top: 0px; box-sizing: border-box; }
-    .task-lines-large { border-bottom: 1px solid #cbd5e1; height: 8mm; margin-top: 0px; box-sizing: border-box; }
+    .task-lines { border-bottom: 1.2px solid #475569; height: 7.5mm; margin-top: 0px; box-sizing: border-box; }
+    .task-lines-large { border-bottom: 1.2px solid #475569; height: 8mm; margin-top: 0px; box-sizing: border-box; }
     .dirt-box { margin-top: 20px; margin-bottom: 10px; border: 2px dashed #94a3b8; border-radius: 8px; padding: 15px; background-color: #f8fafc; page-break-inside: avoid; }
     .do-now-box { border-top: 2px solid #e2e8f0; padding-top: 10px; margin-top: 10px; margin-bottom: 10px; width: 100%; page-break-inside: auto; }
     .do-now-q { font-weight: 600; margin-bottom: 8px; color: #0f172a; }

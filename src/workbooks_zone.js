@@ -338,6 +338,120 @@ export function renderWorkbooksZone(container, unitData) {
     html += medHubHtml;
   }
 
+  if (state.selectedUnitId === 'usa' || window.currentUnitId === 'usa') {
+    const usaBooklets = [
+      {
+        id: 'VISUAL_GUIDE',
+        title: '36-Page Visual Revision & Exam Assessment Playbook',
+        pages: '36 Pages',
+        badge: 'Visual Masterclass Guide',
+        color: '#1e40af',
+        desc: 'The complete visual revision volume: 16 double-page spreads across all 4 Key Topics enforcing the 4-4-4-4 exam matrix, Q1–Q3 step-by-step paragraph formulas, Grade 9 examiner WAGOLLs, and full 1h 20m timed exam models.',
+        fileBase: '/units/usa/visual_revision_guide.html',
+        pdfUrl: '/pdfs/edexcel_usa_visual_revision_and_exam_guide.pdf',
+      },
+      {
+        id: 'KT1',
+        title: 'Key Topic 1: The Development of the Civil Rights Movement, 1954–60',
+        pages: '12 Pages',
+        badge: 'KT1 Booklet',
+        color: '#2563eb',
+        desc: 'Authentic 12-page exam pack: Q1 Source Inference (Jim Crow), Q2 Explain Why (Voter Registration - 2 pages), Section B Dossier (Montgomery Bus Boycott), Q3a Utility, Q3b/c Interpretations, Q3d Evaluative Essay, Spec Depth Booster, and Grade 9 Models.',
+        fileBase: '/units/usa/booklets/usa_mastery_KT1.html',
+        pdfUrl: '/pdfs/usa/usa_mastery_pack_KT1.pdf',
+      },
+      {
+        id: 'KT2',
+        title: 'Key Topic 2: The Radicalisation of the Civil Rights Movement, 1965–68',
+        pages: '12 Pages',
+        badge: 'KT2 Booklet',
+        color: '#0891b2',
+        desc: 'Authentic 12-page exam pack: Q1 Inference (Birmingham 1963 Dogs), Q2 Causation (1964 Civil Rights Act - 2 pages), Section B Dossier (Ghetto Riots: Kerner vs Carmichael), Q3a Utility, Q3b/c Interpretations, Q3d Evaluative Essay, Spec Booster, and Grade 9 Models.',
+        fileBase: '/units/usa/booklets/usa_mastery_KT2.html',
+        pdfUrl: '/pdfs/usa/usa_mastery_pack_KT2.pdf',
+      },
+      {
+        id: 'KT3',
+        title: 'Key Topic 3: US Involvement in the Vietnam War, 1954–68',
+        pages: '12 Pages',
+        badge: 'KT3 Booklet',
+        color: '#059669',
+        desc: 'Authentic 12-page exam pack: Q1 Inference (Swamp Patrol 1966), Q2 Causation (Gulf of Tonkin Escalation - 2 pages), Section B Dossier (Why US Tactics Failed: Caputo vs Vo Thi Mo), Q3a Utility, Q3b/c Interpretations, Q3d Evaluative Essay, Spec Booster, and Grade 9 Models.',
+        fileBase: '/units/usa/booklets/usa_mastery_KT3.html',
+        pdfUrl: '/pdfs/usa/usa_mastery_pack_KT3.pdf',
+      },
+      {
+        id: 'KT4',
+        title: 'Key Topic 4: The End of the Vietnam War, 1968–75',
+        pages: '12 Pages',
+        badge: 'KT4 Booklet',
+        color: '#d97706',
+        desc: 'Authentic 12-page exam pack: Q1 Inference (Kent State 1970), Q2 Causation (Vietnamization - 2 pages), Section B Dossier (Opposition to War: Cronkite vs SDS), Q3a Utility, Q3b/c Interpretations, Q3d Evaluative Essay, Spec Booster, and Grade 9 Models.',
+        fileBase: '/units/usa/booklets/usa_mastery_KT4.html',
+        pdfUrl: '/pdfs/usa/usa_mastery_pack_KT4.pdf',
+      },
+      {
+        id: 'FULL',
+        title: 'Complete Unit Master Compendium (All 4 Key Topics Combined)',
+        pages: '48 Pages',
+        badge: 'Full Master Suite',
+        color: '#1e3a8a',
+        desc: 'The complete 48-page revision compendium binding KT1, KT2, KT3, and KT4 together. Features 4 full Paper 3 exam paper simulations, 16 primary sources/interpretations, 4 specification boosters, and 24 Grade 8/9 exemplars. Photocopier-ready 12-sheet booklet!',
+        fileBase: '/units/usa/booklets/usa_mastery_FULL.html',
+        pdfUrl: '/pdfs/usa/usa_mastery_pack_FULL.pdf',
+      },
+    ];
+
+    let usaHubHtml = `
+      <div style="background: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px; border-top: 4px solid #1e40af;">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px;">
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <div style="width: 44px; height: 44px; border-radius: 10px; background: linear-gradient(135deg, #1e40af 0%, #0f172a 100%); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.3rem;">
+              <i class="fa-solid fa-flag-usa"></i>
+            </div>
+            <div>
+              <h2 style="color: #0f172a; margin: 0; font-size: 1.35rem;">Mastery Revision Booklets &amp; Exam Suites</h2>
+              <p style="color: #64748b; font-size: 0.95rem; margin: 4px 0 0 0;">Authentic Pearson Edexcel GCSE Paper 3 (1HI0/33) revision volumes. Photocopier-ready 12-page booklets and 36-page Visual Revision Playbook with official mark schemes and high-contrast, photocopier-safe candidate response lines.</p>
+            </div>
+          </div>
+          <span style="font-size: 0.8rem; font-weight: 700; background: #dbeafe; color: #1e40af; padding: 4px 12px; border-radius: 20px;">Photocopier Ready (Double-Sided)</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+    `;
+
+    usaBooklets.forEach((b) => {
+      usaHubHtml += `
+        <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; gap: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.03);">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+              <span style="font-size: 0.75rem; font-weight: 800; background: ${b.color}15; color: ${b.color}; padding: 3px 8px; border-radius: 4px; border: 1px solid ${b.color}30;">${b.badge}</span>
+              <span style="font-size: 0.78rem; font-weight: 700; color: #475569;"><i class="fa-solid fa-file-pdf" style="color: ${b.color}; margin-right: 4px;"></i>${b.pages}</span>
+            </div>
+            <h3 style="margin: 0 0 8px 0; color: #1e293b; font-size: 1.05rem; line-height: 1.35;">${b.title}</h3>
+            <p style="margin: 0; font-size: 0.82rem; color: #64748b; line-height: 1.4;">${b.desc}</p>
+          </div>
+
+          <div style="display: flex; gap: 8px; margin-top: 5px;">
+            <button type="button" class="btn" onclick="window.openTeacherPrintPreview('${b.fileBase}', '${b.title}', '${b.pdfUrl}')" style="flex: 1; text-align: center; background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4px solid ${b.color}; padding: 10px 8px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: #1e293b; transition: all 0.2s ease;" onmouseover="this.style.borderColor='${b.color}'; this.style.boxShadow='0 2px 6px rgba(0,0,0,0.1)';" onmouseout="this.style.borderColor='#cbd5e1'; this.style.borderLeftColor='${b.color}'; this.style.boxShadow='none';">
+              <i class="fa-solid fa-eye" style="color: ${b.color};"></i> Preview &amp; Print
+            </button>
+
+            <a href="${b.pdfUrl}" target="_blank" download style="background: ${b.color}; color: #ffffff; padding: 10px 14px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; transition: opacity 0.2s ease;" onmouseover="this.style.opacity='0.9';" onmouseout="this.style.opacity='1';">
+              <i class="fa-solid fa-download"></i> PDF
+            </a>
+          </div>
+        </div>
+      `;
+    });
+
+    usaHubHtml += `
+        </div>
+      </div>
+    `;
+    html += usaHubHtml;
+  }
+
   if (unitData.mock_exams && Array.isArray(unitData.mock_exams) && unitData.mock_exams.length > 0) {
     const unitId = state.selectedUnitId || window.currentUnitId || 'cme_new';
 

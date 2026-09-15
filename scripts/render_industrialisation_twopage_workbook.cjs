@@ -482,13 +482,13 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
       page-break-after: auto;
     }
     .task-line {
-      border-bottom: 1px solid #cbd5e1;
+      border-bottom: 1.2px solid #475569;
       height: 7.6mm;
       width: 100%;
       box-sizing: border-box;
     }
     .task-line-dotted {
-      border-bottom: 1px dotted #94a3b8;
+      border-bottom: 1.2px solid #475569;
       height: 5.6mm;
       width: 100%;
       box-sizing: border-box;
