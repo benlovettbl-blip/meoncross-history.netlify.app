@@ -135,6 +135,7 @@ const water_and_sanitation = {
               clue: 'Think about population density and why simple methods worked when people were spread out.',
             },
           ],
+          theme_heading: 'Life Before Pipes: Roundhouses, Rivers and Rot',
         },
         {
           text: 'This simple way of life was completely transformed in AD 43 when the Roman Empire invaded Britain. The Romans brought revolutionary sanitation technology and a strong belief that clean, flowing water was vital for keeping a society healthy. To bring vast amounts of clean water into their newly built stone towns and military outposts, such as Corbridge, Roman engineers constructed stone channels called conduits. These conduits used the natural pull of gravity to transport fresh water over miles from distant natural springs directly into urban centres.',
@@ -164,6 +165,7 @@ const water_and_sanitation = {
               clue: 'Focus on the continuous flowing water flushing waste away (advancement), but the lack of privacy, absence of soap, and shared wiping sponge on a stick (limitations).',
             },
           ],
+          theme_heading: 'Gravity-Powered Engineering: Conduits and Clean Water',
           image: '/assets/roman_latrine.jpg',
           image_alt: "Roman Communal Latrines at Housesteads Fort (Hadrian's Wall)",
           caption:
@@ -201,6 +203,7 @@ const water_and_sanitation = {
           text: '\n<div class="local-history-box" style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;">\n    <h4 style="color: #166534; margin-top: 0; margin-bottom: 10px;">\n        <i class="fa-solid fa-location-dot"></i> Local Link: Fishbourne Roman Palace\n    </h4>\n    <p style="margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;">\n        Just down the road from Fareham near Chichester, Fishbourne Roman Palace is the largest residential Roman building found in Britain. Originally built in the 1st century AD, likely as a reward for the local British client-king Togidubnus, the palace was a marvel of Roman engineering. It featured incredibly well-preserved remains of a Roman bathhouse and a sophisticated hypocaust (underfloor heating) system that pumped hot air beneath the luxurious mosaic floors. It is a perfect local example of the extreme luxury sanitation that elite Romans enjoyed, which you can actually visit today. <br><br><a href=\'https://sussexpast.co.uk/attraction/fishbourne-roman-palace/\' target=\'_blank\' style=\'color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;\'><i class=\'fas fa-external-link-alt\'></i> Visit the official Fishbourne Roman Palace website</a>\n    </p>\n</div>',
           level_4:
             '\n<div class="local-history-box" style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;">\n    <h4 style="color: #166534; margin-top: 0; margin-bottom: 10px;">\n        <i class="fa-solid fa-location-dot"></i> Local Link: Fishbourne Roman Palace\n    </h4>\n    <p style="margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;">\n        Just down the road from Fareham near Chichester, Fishbourne Roman Palace is the largest residential Roman building found in Britain. Originally built in the 1st century AD, likely as a reward for the local British client-king Togidubnus, the palace was a marvel of Roman engineering. It featured incredibly well-preserved remains of a Roman bathhouse and a sophisticated hypocaust (underfloor heating) system that pumped hot air beneath the luxurious mosaic floors. It is a perfect local example of the extreme luxury sanitation that elite Romans enjoyed, which you can actually visit today. <br><br><a href=\'https://sussexpast.co.uk/attraction/fishbourne-roman-palace/\' target=\'_blank\' style=\'color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;\'><i class=\'fas fa-external-link-alt\'></i> Visit the official Fishbourne Roman Palace website</a>\n    </p>\n</div>',
+          theme_heading: 'Fishbourne Palace: Steamy Mosaics and Elite Luxury',
           image_alt: 'Fishbourne Roman Palace Excavations & Hypocaust',
           caption:
             '<strong>What is this source showing?</strong> This is a modern photograph of the excavated remains of Fishbourne Roman Palace, the largest residential Roman building discovered in Britain. It features incredibly well-preserved mosaics and the remains of a sophisticated hypocaust underfloor heating system, demonstrating the extreme luxury and sanitation enjoyed by elite Romans.',
@@ -295,6 +298,7 @@ const water_and_sanitation = {
               ],
             },
           ],
+          theme_heading: 'Soaps, Sponges and Shouting: Inside the Roman Baths',
           image: '/images/roman_strigils.jpg',
           image_alt: 'Roman Bronze Strigils and Oil Flask (Aryballos)',
           caption:
@@ -319,6 +323,7 @@ const water_and_sanitation = {
               clue: 'Consider what happened to the pipes and sewers when the engineers left.',
             },
           ],
+          theme_heading: 'When the Legions Left: The Great Sanitation Collapse',
         },
       ],
       flashcards: [
@@ -655,6 +660,7 @@ const water_and_sanitation = {
               clue: 'Think about why rural density prevented disease from spreading.',
             },
           ],
+          theme_heading: 'Muck, Mud and Monks: Daily Life in the Middle Ages',
         },
         {
           text: 'In stark contrast to the rustic simplicity of peasant villages, medieval monasteries were the absolute pinnacle of luxury and engineering sophistication in Medieval England. Christian monks were highly literate, exceptionally wealthy, and incredibly organized, managing vast agricultural estates. Crucially, they believed that physical cleanliness was a reflection of spiritual purity, bringing them closer to God and aiding their holy duties. Driven by this belief, monasteries designed and constructed highly complex water management systems using incredibly expensive imported lead and hollowed-out elm trunks for pipes. For example, surviving twelfth-century blueprints of Canterbury Priory reveal a sophisticated, gravity-fed network of green-colored pipes bringing fresh, pressurized spring water directly into the monastery for drinking and ceremonial washing. Meanwhile, a separate network of red-colored pipes was specifically designed to direct dirty wastewater away to continuously flush the communal latrines, keeping the air remarkably fresh.',
@@ -682,6 +688,7 @@ const water_and_sanitation = {
               starter: 'This highly detailed plumbing plan suggests that medieval monks...',
             },
           ],
+          theme_heading: 'Canterbury Cathedral Waterworks: Holy Hygiene and Flowing Pipes',
           image: '/assets/canterbury_waterworks.jpg',
           image_alt: 'Canterbury Cathedral Priory Waterworks Plan (c. 1165)',
           caption:
@@ -708,6 +715,7 @@ const water_and_sanitation = {
           text: '\n<div class="local-history-box" style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;">\n    <h4 style="color: #166534; margin-top: 0; margin-bottom: 10px;">\n        <i class="fa-solid fa-location-dot"></i> Local Link: Titchfield Abbey\n    </h4>\n    <p style="margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;">\n        Located right in Fareham, this Premonstratensian abbey relied on the River Meon. Like most monasteries, it had highly advanced water management for the time, including fresh water piped in for washing (the lavatorium) and a reredorter (latrine block) cleverly positioned over a running stream to carry waste away. The impressive stone ruins and medieval floor tiles are still visible today. <br><br><a href=\'https://www.english-heritage.org.uk/visit/places/titchfield-abbey/\' target=\'_blank\' style=\'color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;\'><i class=\'fas fa-external-link-alt\'></i> Visit the official English Heritage Titchfield Abbey website</a>\n    </p>\n</div>',
           level_4:
             '\n<div class="local-history-box" style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;">\n    <h4 style="color: #166534; margin-top: 0; margin-bottom: 10px;">\n        <i class="fa-solid fa-location-dot"></i> Local Link: Titchfield Abbey\n    </h4>\n    <p style="margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;">\n        Located right in Fareham, this Premonstratensian abbey relied on the River Meon. Like most monasteries, it had highly advanced water management for the time, including fresh water piped in for washing (the lavatorium) and a reredorter (latrine block) cleverly positioned over a running stream to carry waste away. The impressive stone ruins and medieval floor tiles are still visible today. <br><br><a href=\'https://www.english-heritage.org.uk/visit/places/titchfield-abbey/\' target=\'_blank\' style=\'color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;\'><i class=\'fas fa-external-link-alt\'></i> Visit the official English Heritage Titchfield Abbey website</a>\n    </p>\n</div>',
+          theme_heading: "Local Link: Titchfield Abbey's River Meon Channels",
         },
         {
           text: "The most severe and lethal sanitation crises of the era occurred in the rapidly growing and heavily overcrowded medieval towns, such as London and York. The high population density meant that thousands of people were crammed into tightly packed wooden houses lining narrow, unpaved streets. In these conditions, shared communal toilets overflowed rapidly, leaking raw human waste directly into the mud of the streets and seeping into nearby shallow wells. While wealthy merchants could afford to dig deep, private, stone-lined wells in their secure courtyards, poorer citizens faced a daily battle for clean water. They were often forced to buy expensive, unfiltered river water from professional 'water sellers'—laborers who hauled massive wooden barrels through the filthy streets on horseback, shouting to attract customers.",
@@ -725,6 +733,7 @@ const water_and_sanitation = {
               clue: 'Consider how high density impacted shared wells and rivers.',
             },
           ],
+          theme_heading: 'Stinking Streets: Butchers, Dunghills and Open Drains',
         },
         {
           text: "To prevent these rapidly expanding towns from literally drowning in their own filth, city councils were forced to employ highly specialized, well-paid laborers known as 'gongfermers.' These men performed one of the most vital, yet utterly revolting, jobs in medieval society. Working strictly under the cover of darkness to avoid offending the public with the smell, gongfermers climbed down into deep, barrel-lined cesspits beneath public latrines and private homes. Armed only with wooden shovels and buckets, they scooped out the accumulated human waste, loaded it onto heavy horse-drawn carts, and transported it outside the town walls to be dumped in designated rural fields, where it was often sold to local farmers as potent agricultural fertilizer.",
@@ -742,6 +751,7 @@ const water_and_sanitation = {
               clue: 'Think about what happened when cesspits overflowed and why they worked at night.',
             },
           ],
+          theme_heading: 'Gongfermers and Rakers: The Tough Job of Clearing Town Filth',
         },
         {
           text: "The situation in major cities became so desperate that even the monarchy was forced to intervene. In 1357, King Edward III personally sent a scathing letter to the Mayor of London, expressing his absolute horror at the state of the capital. The King warned that the overwhelming filth and decaying animal carcasses lying in the streets were infecting the air with a terrible stench, which medieval physicians believed was directly causing deadly sickness—a concept known as 'miasma'. Edward III ordered the immediate, forceful removal of all waste and the strict fining of anyone caught dumping garbage in the River Thames, marking a significant early instance of royal intervention to preserve public health.",
@@ -759,6 +769,7 @@ const water_and_sanitation = {
               clue: 'Look at his 1357 letter to the Mayor of London.',
             },
           ],
+          theme_heading: 'Royal Proclamations: King Edward III Demands Clean Streets',
         },
       ],
       flashcards: [
@@ -1097,6 +1108,7 @@ const water_and_sanitation = {
                 "Harington's flushing water closet failed to catch on with ordinary citizens because...",
             },
           ],
+          theme_heading: 'Sir John Harington: The First Flushing Water Closet (1596)',
           image: '/assets/harington_toilet.jpg',
           image_alt: "Sir John Harington's Flushing Water Closet (1596)",
           caption:
@@ -1122,6 +1134,7 @@ const water_and_sanitation = {
               clue: 'Consider the distance the water traveled and how it was distributed.',
             },
           ],
+          theme_heading: 'Hugh Myddelton: The New River Clean Water Miracle',
         },
         {
           image: '/assets/water_local_southsea.jpg',
@@ -1140,6 +1153,7 @@ const water_and_sanitation = {
           text: "\n<div class=\"local-history-box\" style=\"background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;\">\n    <h4 style=\"color: #166534; margin-top: 0; margin-bottom: 10px;\">\n        <i class=\"fa-solid fa-location-dot\"></i> Local Link: Tudor Portsmouth & Southsea Castle\n    </h4>\n    <p style=\"margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;\">\n        As Portsmouth grew into a vital naval hub under Henry VIII, the cramped, walled town became notoriously filthy, relying entirely on overflowing cesspits and open gutters. You can contrast this with the dedicated (though basic) latrine chutes built into the walls of nearby Southsea Castle for soldiers. The famous 'Cowdray Engraving' (shown here) is an authentic historical source depicting the devastating sinking of Henry VIII's flagship, the Mary Rose, right off the coast of Southsea Castle in 1545. <br><br><a href='https://maryrose.org/' target='_blank' style='color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;'><i class='fas fa-external-link-alt'></i> Visit the official Mary Rose Museum website</a>\n    </p>\n</div>",
           level_4:
             "\n<div class=\"local-history-box\" style=\"background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;\">\n    <h4 style=\"color: #166534; margin-top: 0; margin-bottom: 10px;\">\n        <i class=\"fa-solid fa-location-dot\"></i> Local Link: Tudor Portsmouth & Southsea Castle\n    </h4>\n    <p style=\"margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;\">\n        As Portsmouth grew into a vital naval hub under Henry VIII, the cramped, walled town became notoriously filthy, relying entirely on overflowing cesspits and open gutters. You can contrast this with the dedicated (though basic) latrine chutes built into the walls of nearby Southsea Castle for soldiers. The famous 'Cowdray Engraving' (shown here) is an authentic historical source depicting the devastating sinking of Henry VIII's flagship, the Mary Rose, right off the coast of Southsea Castle in 1545. <br><br><a href='https://maryrose.org/' target='_blank' style='color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;'><i class='fas fa-external-link-alt'></i> Visit the official Mary Rose Museum website</a>\n    </p>\n</div>",
+          theme_heading: 'Local Link: Tudor Portsmouth, Southsea Castle and Fleet Sanitation',
         },
         {
           text: "Despite the influx of fresh water, dealing with human waste remained a horrifying challenge in crowded 17th-century cities. To save space, many opportunistic landlords built indoor toilets known as 'houses of easement' that simply emptied directly into deep, unlined cellars immediately below the floorboards. In his world-famous diary entry on 20 October 1660, the wealthy government official Samuel Pepys recorded a disgusting reality of Early Modern urban life. He complained bitterly about the terrible, eye-watering stench of his neighbor's cellar privy, which had filled to bursting, leaked directly through the shared foundations, and completely flooded his own basement with raw human waste. It was a stark reminder that personal wealth could not protect citizens from the collective failure of urban sanitation.",
@@ -1157,6 +1171,7 @@ const water_and_sanitation = {
               clue: 'Think about what he found in his cellar on October 20, 1660.',
             },
           ],
+          theme_heading: "Night-Soil Men & Overflowing Privies: Samuel Pepys' Cellar Nightmare",
         },
         {
           text: "By the year 1700, London's population had exploded to over 600,000, making it the largest city in Western Europe. Yet, the municipal systems to handle basic human needs completely failed to match this staggering, unprecedented growth. While the wealthy enjoyed piped water from the New River, poorer townspeople were left to struggle. They were forced to buy their drinking water from professional 'water sellers' who continued to haul large wooden barrels on horseback through the increasingly congested streets. Alternatively, women and children spent hours waiting in long, exhausting lines to gather a few precious buckets of water from public 'conduits'—communal lead cisterns that often ran dry during the hot summer months, leaving the poorest citizens vulnerable to thirst and disease.",
@@ -1174,6 +1189,7 @@ const water_and_sanitation = {
               clue: 'Think about who bought their water and where they got it from.',
             },
           ],
+          theme_heading: 'Waterwheels and Elm Pipes: London Bridge Waterworks',
         },
       ],
       flashcards: [
@@ -1503,6 +1519,7 @@ const water_and_sanitation = {
               clue: 'Think about the shift from 6 million to 21 million people.',
             },
           ],
+          theme_heading: 'Factory Boomtowns: The Explosion of Industrial Slums',
         },
         {
           text: "To maximize their profits from this desperate influx of workers, opportunistic landlords hastily built cheap, structurally unsound 'back-to-back' terraced brick housing blocks. These rows of houses shared three walls with their neighbors, meaning they had no rear windows, absolutely zero cross-ventilation, and trapped the damp, polluted air inside. Crucially, these poorer families did not have the luxury of indoor running water or private toilets. Instead, entire streets of up to 100 people had to rely on a single, shared outdoor street pump and perhaps two communal privies located in a filthy shared yard. The street pumps only supplied water for a few unpredictable hours a day, and this water was often visibly brown, foul-tasting, and highly polluted by industrial runoff and human waste leaking from the adjacent privies.",
@@ -1520,6 +1537,7 @@ const water_and_sanitation = {
               clue: 'Consider how landlords built cheap housing for factory workers.',
             },
           ],
+          theme_heading: 'Back-to-Backs and Cellars: Life in Squalid Slum Courts',
         },
         {
           image: '/assets/water_local_cholera.jpg',
@@ -1538,6 +1556,7 @@ const water_and_sanitation = {
           text: '\n<div class="local-history-box" style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;">\n    <h4 style="color: #166534; margin-top: 0; margin-bottom: 10px;">\n        <i class="fa-solid fa-location-dot"></i> Local Link: The 1849 Portsmouth Cholera Epidemic\n    </h4>\n    <p style="margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;">\n        As the Industrial Revolution caused Portsea\'s population to explode around the dockyard, overcrowding led to severe sanitation crises. In the summer of 1849, a devastating cholera outbreak hit Portsmouth, killing over 800 people. Primary sources from the time, such as Robert Rawlinson\'s 1850 sanitary report, detailed horrific scenes of open sewers running directly into the streets and drinking wells contaminated by overflowing cesspits. It perfectly mirrors the national crisis and the deadly consequences of the Miasma theory. <br><br><a href=\'https://portsmouthmuseum.co.uk/\' target=\'_blank\' style=\'color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;\'><i class=\'fas fa-external-link-alt\'></i> Discover more local history at Portsmouth Museum</a>\n    </p>\n</div>',
           level_4:
             '\n<div class="local-history-box" style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;">\n    <h4 style="color: #166534; margin-top: 0; margin-bottom: 10px;">\n        <i class="fa-solid fa-location-dot"></i> Local Link: The 1849 Portsmouth Cholera Epidemic\n    </h4>\n    <p style="margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;">\n        As the Industrial Revolution caused Portsea\'s population to explode around the dockyard, overcrowding led to severe sanitation crises. In the summer of 1849, a devastating cholera outbreak hit Portsmouth, killing over 800 people. Primary sources from the time, such as Robert Rawlinson\'s 1850 sanitary report, detailed horrific scenes of open sewers running directly into the streets and drinking wells contaminated by overflowing cesspits. It perfectly mirrors the national crisis and the deadly consequences of the Miasma theory. <br><br><a href=\'https://portsmouthmuseum.co.uk/\' target=\'_blank\' style=\'color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;\'><i class=\'fas fa-external-link-alt\'></i> Discover more local history at Portsmouth Museum</a>\n    </p>\n</div>',
+          theme_heading: 'Local Link: Portsmouth Under Siege — The Portsea Cholera Outbreak (1849)',
         },
         {
           text: "This catastrophic lack of sanitation created the perfect breeding ground for disease. Cholera, a terrifying and agonizing waterborne bacterial infection, struck Britain for the first time in 1831, having spread along global trade routes from India. The disease caused rapid, uncontrollable diarrhea and vomiting, leading to severe dehydration; victims' skin would turn a ghastly shade of blue before they died, often within 24 hours of showing the first symptoms. Over 31,000 people died in the horrifying first epidemic alone. Because doctors falsely believed the disease was spread by 'miasma'—bad, foul-smelling air—their attempts to fight it by burning tar in the streets were useless. The terrifying speed of the deaths triggered mass national panic and starkly highlighted the catastrophic, deadly failure of municipal public health.",
@@ -1565,6 +1584,7 @@ const water_and_sanitation = {
               starter: 'Dr Snow used his map to challenge miasma theory by...',
             },
           ],
+          theme_heading: 'King Cholera Strikes: The Deadly Blue Death Arrives in Britain',
           image: '/assets/snow_cholera_map.jpg',
           image_alt: "Dr John Snow's 1854 Broad Street Cholera Map",
           caption:
@@ -1590,6 +1610,7 @@ const water_and_sanitation = {
               clue: 'Think about the evidence he gathered on the working class.',
             },
           ],
+          theme_heading: 'Edwin Chadwick: The Landmark 1842 Report on Sanitary Conditions',
         },
       ],
       flashcards: [
@@ -1923,6 +1944,7 @@ const water_and_sanitation = {
               clue: 'Consider how he used geography and data to locate the infection.',
             },
           ],
+          theme_heading: 'Dr John Snow: The Broad Street Ghost Map Detective',
         },
         {
           text: "Despite John Snow's brilliant statistical proof, the government remained paralyzed by the enormous cost of rebuilding London's sewers. It took an overwhelming environmental crisis to force them into action. During the unusually hot and dry summer of 1858, the River Thames—which received the raw, untreated sewage of over two million Londoners—began to literally bake in the sun. The resulting stench was so incredibly overpowering and nauseating that it became known as 'The Great Stink.' The smell completely disrupted parliamentary meetings in the newly built Palace of Westminster, forcing politicians to flee the building with handkerchiefs soaked in chloride of lime pressed to their faces. Terrified by the stench and finally personally affected by the crisis, Parliament rapidly passed emergency legislation to fund a complete rebuild of the capital's sanitation networks.",
@@ -1940,6 +1962,7 @@ const water_and_sanitation = {
               clue: 'Think about why the smell of the Thames affected the politicians personally.',
             },
           ],
+          theme_heading: 'The Great Stink of 1858: Parliament Chokes on the Thames',
         },
         {
           image: '/images/eastney.jpg',
@@ -1958,6 +1981,7 @@ const water_and_sanitation = {
           text: "\n<div class=\"local-history-box\" style=\"background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;\">\n    <h4 style=\"color: #166534; margin-top: 0; margin-bottom: 10px;\">\n        <i class=\"fa-solid fa-location-dot\"></i> Local Link: Eastney Beam Engine House\n    </h4>\n    <p style=\"margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;\">\n        This is Portsmouth's direct equivalent to Joseph Bazalgette's London sewers! Built in 1887 by Sir Frederick Bramwell, these massive Victorian steam-powered beam engines were constructed to pump Portsmouth's raw sewage out to sea at Langstone Harbour. The ornate cast-iron machinery, housed in a grand Victorian brick pump house, finally cleaned up the city's streets and eliminated cholera locally. <br><br><a href='https://www.portsmouthwater.co.uk/about-us/eastney-beam-engine-house/' target='_blank' style='color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;'><i class='fas fa-external-link-alt'></i> Visit the Eastney Engine House website</a>\n    </p>\n</div>",
           level_4:
             "\n<div class=\"local-history-box\" style=\"background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;\">\n    <h4 style=\"color: #166534; margin-top: 0; margin-bottom: 10px;\">\n        <i class=\"fa-solid fa-location-dot\"></i> Local Link: Eastney Beam Engine House\n    </h4>\n    <p style=\"margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;\">\n        This is Portsmouth's direct equivalent to Joseph Bazalgette's London sewers! Built in 1887 by Sir Frederick Bramwell, these massive Victorian steam-powered beam engines were constructed to pump Portsmouth's raw sewage out to sea at Langstone Harbour. The ornate cast-iron machinery, housed in a grand Victorian brick pump house, finally cleaned up the city's streets and eliminated cholera locally. <br><br><a href='https://www.portsmouthwater.co.uk/about-us/eastney-beam-engine-house/' target='_blank' style='color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;'><i class='fas fa-external-link-alt'></i> Visit the Eastney Engine House website</a>\n    </p>\n</div>",
+          theme_heading: 'Local Link: Portsmouth Cleans Up — Eastney Pumping Station (1887)',
         },
         {
           text: "Tasked with this monumental challenge, the visionary Chief Engineer of the Metropolitan Board of Works, Joseph Bazalgette, designed and constructed one of the greatest engineering marvels of the 19th century. Between 1858 and 1865, his massive army of 'navvies' (laborers) excavated millions of tons of earth to build a spectacular, interconnected network of 1,300 miles of deep, enclosed brick sewers beneath London. Bazalgette utilized revolutionary Portland cement to ensure the tunnels were entirely watertight. This ingenious system successfully intercepted the city's waste before it could reach the Thames, using massive steam-powered pumping stations to divert it far downstream toward the sea. Bazalgette's sewers virtually eliminated cholera in the capital, saving tens of thousands of working-class lives.",
@@ -1985,6 +2009,7 @@ const water_and_sanitation = {
               starter: 'The sheer scale of this brickwork reveals that the Victorian government...',
             },
           ],
+          theme_heading: "Joseph Bazalgette: London's Underground Brick Cathedrals",
           image: '/assets/bazalgette_sewer.jpg',
           image_alt: 'Construction of the London Main Drainage System (c. 1860s)',
           caption:
@@ -2010,6 +2035,7 @@ const water_and_sanitation = {
               clue: 'Think about how this disproved miasma theory permanently.',
             },
           ],
+          theme_heading: 'Louis Pasteur: Proving That Microscopic Germs Cause Disease',
         },
         {
           text: "Armed with the irrefutable scientific truth of Germ Theory and the undeniable success of Bazalgette’s sewer system, the British government decisively abandoned its old policy of 'laissez-faire' (leaving things alone). In 1875, Parliament passed a landmark, uncompromising Public Health Act. This revolutionary legislation legally forced every local municipal council in the country to take strict, inescapable responsibility for the physical well-being of its citizens. The Act mandated that councils must provide clean, piped water, ensure the safe disposal of all sewage, pave and clean the streets, and employ specialized Medical Officers of Health to inspect poor housing. It marked a permanent, fundamental shift in the relationship between the state and the people, establishing the modern expectation that the government must protect public health.",
@@ -2027,6 +2053,7 @@ const water_and_sanitation = {
               clue: 'Think about the transition from voluntary hygiene to mandatory laws.',
             },
           ],
+          theme_heading: 'The 1875 Public Health Act: Clean Water Becomes the Law',
         },
       ],
       flashcards: [
@@ -2604,6 +2631,7 @@ const water_and_sanitation = {
                 'The medical establishment, including prominent figures like Chadwick and Nightingale, strongly believed in Miasma Theory—that diseases were caused by breathing foul smells and toxic fumes. Because Soho smelled terrible and cholera was terrifying and fast-acting, authorities assumed bad air was responsible and resisted new ideas.',
             },
           ],
+          theme_heading: 'Terror in Soho: The 1854 Broad Street Outbreak',
         },
         {
           title: 'Epidemiological Mapping: The Scientific Method in Action',
@@ -2620,6 +2648,7 @@ const water_and_sanitation = {
                 'The brewery workers were surrounded by cholera deaths in Soho but remained completely unaffected. When Snow investigated, he found they never drank pump water because the brewery had its own private well and gave workers free beer. This anomalous negative evidence proved that living in the smelly area did not cause cholera; drinking the specific contaminated pump water did.',
             },
           ],
+          theme_heading: 'The Detective Doctor: Mapping the Ghost Pumps',
         },
         {
           title: 'The Turning Point: Removing the Handle and Legacy',
@@ -2635,6 +2664,7 @@ const water_and_sanitation = {
                 'John Snow’s investigation is recognized as the founding moment of modern epidemiology. By demonstrating that data mapping and rigorous scientific deduction could isolate the source of an epidemic, he paved the way for modern disease control and helped convince Victorian authorities that investing millions in clean water and Bazalgette’s sewers was a matter of life and death.',
             },
           ],
+          theme_heading: 'Removing the Pump Handle: The Triumph of John Snow',
         },
       ],
     },
