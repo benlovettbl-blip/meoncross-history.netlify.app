@@ -42,16 +42,28 @@ const water_and_sanitation = {
         "Explain how the Roman Empire's centralised power enabled large-scale public health projects",
         'Evaluate the significance of Roman public health by assessing whether it represented genuine medical understanding or imperial prestige',
       ],
-      video: {
-        type: 'era',
-        url: 'https://era.org.uk/streaming-service-resource/learning-zone-public-baths-in-roman-britain-bbc-two/',
-        title: 'Learning Zone: Public Baths in Roman Britain',
-        duration: '5 mins 11 secs',
-        viewing_task:
-          'Identify three features of a Roman public bathhouse and explain how they helped improve public health.',
-        model_answer:
-          'Roman bathhouses featured a hypocaust heating system, hot and cold pools (caldarium and frigidarium), and latrines. They improved public health by providing a cheap, communal place for regular washing, which removed dirt and reduced the spread of disease, even though the Romans did not understand germ theory.',
-      },
+      video: [
+        {
+          type: 'era',
+          url: 'https://era.org.uk/streaming-service-resource/learning-zone-public-baths-in-roman-britain-bbc-two/',
+          title: 'Learning Zone: Public Baths in Roman Britain',
+          duration: '5 mins 11 secs',
+          viewing_task:
+            'Identify three features of a Roman public bathhouse and explain how they helped improve public health.',
+          model_answer:
+            'Roman bathhouses featured a hypocaust heating system, hot and cold pools (caldarium and frigidarium), and latrines. They improved public health by providing a cheap, communal place for regular washing, which removed dirt and reduced the spread of disease, even though the Romans did not understand germ theory.',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=klnMloYjHmg',
+          title: 'Roman Bathing and Wellness: How Were Roman Baths Really Used?',
+          duration: '14 mins 5 secs',
+          viewing_task:
+            'Explain the social, ritual, and hygienic routines Romans followed when visiting the public baths (thermae).',
+          model_answer:
+            'Roman bathing was an essential daily social ritual. Romans moved through progressive heated chambers (tepidarium, caldarium) to induce sweating, used olive oil and strigils to scrape away dirt and dead skin, plunged into cold water (frigidarium) to close pores, and socialised, exercised, and conducted business in the communal complex.',
+        },
+      ],
       do_now: {
         type: 'questions',
         items: [
