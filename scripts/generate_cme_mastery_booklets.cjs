@@ -27,7 +27,7 @@ const KT_DATA = {
         num: '1 (a)',
         stem: 'Explain one consequence of the bombing of the King David Hotel (1946).',
         marks: 4,
-        lines: 8,
+        lines: 9,
         vocabBank: [
           '22 July 1946',
           'Irgun militants',
@@ -47,7 +47,7 @@ const KT_DATA = {
         num: '1 (b)',
         stem: 'Explain one consequence of the Israeli attacks on Gaza in 1955.',
         marks: 4,
-        lines: 8,
+        lines: 9,
         vocabBank: [
           '28 February 1955',
           'Fedayeen raids',
@@ -68,8 +68,8 @@ const KT_DATA = {
         stem: 'Write a narrative account analysing the key events of the Arab-Israeli war (1948–49).',
         marks: 8,
         stimulus: ['The invasion by Arab armies (May 1948)', 'The June 1948 truce'],
-        linesPage3: 11,
-        linesPage4: 22,
+        linesPage3: 13,
+        linesPage4: 25,
         vocabBank: [
           '14 May Declaration',
           'Arab Legion & Jerusalem',
@@ -100,13 +100,16 @@ const KT_DATA = {
         marks: 8,
         focus:
           'Explain why the resolution was important for providing international legal legitimacy and securing immediate diplomatic recognition for the sovereign state.',
-        lines: 16,
+        lines: 21,
         vocabBank: [
           '29 Nov 1947 vote',
-          'UN General Assembly',
-          '55% territory allocation',
-          'Two-thirds majority',
-          'Truman & Soviet recognition',
+          'UN General Assembly two-thirds majority',
+          'Partition of Palestine',
+          '55% Jewish / 44% Arab split',
+          'David Ben-Gurion proclamation (14 May 1948)',
+          'US & Soviet diplomatic recognition',
+          'End of British Mandate',
+          'Outbreak of 1947–48 civil conflict',
         ],
         connectives: [
           'This was vital because...',
@@ -114,22 +117,27 @@ const KT_DATA = {
           'Without this international mandate, ...',
           'This directly enabled...',
         ],
-        p1: 'International Legal Legitimacy: Explain how Res 181 gave Jewish leaders recognised authority to proclaim a state without being branded an illegal rebellion.',
-        p2: 'Superpower Recognition: Explain how the vote secured immediate US/Soviet diplomatic recognition and Czechoslovak arms shipments.',
+        p1: 'International Legal Legitimacy: Explain how Resolution 181 provided Jewish leaders with a recognised international mandate to establish a sovereign state rather than an illegal rebel territory.',
+        p2: 'Superpower Recognition & Geopolitical Foundation: Explain how the vote triggered immediate diplomatic recognition from the USA and USSR, enabling the new state to secure vital arms shipments and diplomatic standing.',
       },
       q3b: {
         num: '3 (b)',
         stem: 'Explain the importance of the creation of the Israeli Defence Forces (IDF) for the aftermath of the 1948–49 war.',
         marks: 8,
         focus:
-          'Explain why unifying rival paramilitary militias under centralized government command was important for political stability and permanent defense.',
-        lines: 16,
+          'Explain why unifying rival paramilitary militias under central state command was important both for internal political stability and defending the vulnerable armistice borders in the aftermath of 1948–49.',
+        lines: 21,
         vocabBank: [
           'David Ben-Gurion',
-          'Order No. 4 (May 1948)',
-          'Dissolution of Haganah, Irgun, Lehi',
-          'Altalena affair',
-          'Unified command',
+          'Ordinance No. 4 (May 1948)',
+          'Disbanding of Haganah, Irgun & Lehi',
+          'Unified national command',
+          'Universal conscription',
+          '1949 Armistice Green Line',
+          'Border kibbutzim defense',
+          'Fedayeen guerrilla raids (Gaza)',
+          'IDF reprisal policy',
+          'Deterrence vs Arab neighbours',
         ],
         connectives: [
           'This was important because...',
@@ -137,8 +145,8 @@ const KT_DATA = {
           'In addition, ...',
           'This ensured that...',
         ],
-        p1: 'Centralised Command: Explain why disbanding independent political militias prevented civil war and unified national defense under cabinet control.',
-        p2: 'Permanent Border Security: Explain how the standing army established deterrence and fortified settlements against persistent Arab non-recognition.',
+        p1: 'Centralised State Command & Internal Stability: Explain how dissolving rival political militias into a single national army under Ben-Gurion eliminated the risk of factional civil war and subordinated military force to democratic civilian control.',
+        p2: 'Border Defence & Deterrence in the Hostile Aftermath: Explain how the IDF defended the expanded 1949 Green Line through universal conscription and conducted armed reprisal operations against cross-border Fedayeen raids from Gaza.',
       },
     },
     depthBank: {
@@ -146,7 +154,7 @@ const KT_DATA = {
         num: '4 (a)',
         stem: 'Explain one consequence of the territorial changes resulting from the 1948–49 war.',
         marks: 4,
-        lines: 8,
+        lines: 9,
         vocabBank: [
           '1949 Green Line',
           '79% of Palestine',
@@ -162,7 +170,7 @@ const KT_DATA = {
         num: '4 (b)',
         stem: 'Explain one consequence of the formation of the United Arab Republic (UAR) in 1958.',
         marks: 4,
-        lines: 8,
+        lines: 9,
         vocabBank: [
           'Gamal Abdel Nasser',
           'Egypt-Syria political union',
@@ -180,13 +188,16 @@ const KT_DATA = {
         marks: 8,
         focus:
           'Explain how the displacement of 700,000 refugees and the refusal of Arab states to permit permanent resettlement entrenched regional hostility.',
-        lines: 16,
+        lines: 21,
         vocabBank: [
           '700,000 displaced (Nakba)',
           'Right of Return (UN Res 194)',
           'UNRWA border camps',
+          'Refusal of permanent resettlement',
+          'Arab League diplomatic boycott',
           'Fedayeen guerrilla raids',
-          'Arab boycott of peace',
+          'IDF reprisal operations (Qibya 1953)',
+          'Border militarisation',
         ],
         connectives: [
           'This was important because...',
@@ -203,13 +214,14 @@ const KT_DATA = {
         marks: 8,
         focus:
           'Explain how American financial loans and diplomatic backing enabled the fledgling state to absorb mass immigration and build sovereign infrastructure.',
-        lines: 16,
+        lines: 21,
         vocabBank: [
-          'Export-Import Bank loans',
-          'PL 480 food aid',
-          'Mass immigration absorption (1m)',
-          'National Water Carrier',
-          'Hawk surface-to-air missiles (1962)',
+          'Export-Import Bank loans ($100m)',
+          'PL 480 food assistance',
+          '1 million immigrant absorption',
+          'National Water Carrier project',
+          'Hawk anti-aircraft missiles (1962)',
+          'Cold War counterweight to Soviet-Egypt ties',
         ],
         connectives: [
           'This was critical because...',
@@ -228,7 +240,7 @@ const KT_DATA = {
           'Nationalisation of the Suez Canal (July 1956)',
           'British and French military intervention',
         ],
-        lines: 14,
+        lines: 18,
         vocabBank: [
           'Aswan Dam loan cancellation',
           'Nasser 26 July speech',
@@ -400,7 +412,7 @@ const KT_DATA = {
         num: '1 (a)',
         stem: 'Explain one consequence of the events of 7 April 1967 for escalating tension between Israel and Syria.',
         marks: 4,
-        lines: 8,
+        lines: 9,
         vocabBank: [
           'Demilitarised zones (DMZ)',
           'Tractor farming disputes',
@@ -420,7 +432,7 @@ const KT_DATA = {
         num: '1 (b)',
         stem: 'Explain one consequence of the expulsion of the PLO from Jordan (1970).',
         marks: 4,
-        lines: 8,
+        lines: 9,
         vocabBank: [
           'Black September 1970',
           'King Hussein & Jordanian Army',
@@ -444,8 +456,8 @@ const KT_DATA = {
           'Air attacks on Egyptian airfields (5 June 1967)',
           'The capture of East Jerusalem (7 June)',
         ],
-        linesPage3: 11,
-        linesPage4: 22,
+        linesPage3: 13,
+        linesPage4: 25,
         vocabBank: [
           'Pre-emptive air strike (7:45 am)',
           '300+ aircraft destroyed',
@@ -476,13 +488,16 @@ const KT_DATA = {
         marks: 8,
         focus:
           'Explain why the "land for peace" formula and its deliberate linguistic ambiguity dictated all subsequent diplomatic negotiations.',
-        lines: 16,
+        lines: 21,
         vocabBank: [
           '22 November 1967',
           'UN Security Council',
           '"Land for peace" formula',
-          'Deliberate ambiguity ("territories occupied")',
-          'Rejection by PLO as "refugees"',
+          'Withdrawal from occupied territories',
+          'Deliberate ambiguity (omission of "the")',
+          'Israeli insistence on direct bilateral treaties',
+          'Arab League Khartoum Summit ("Three No\'s")',
+          'Palestinian refugee status vs national rights',
         ],
         connectives: [
           'This was vital because...',
@@ -499,13 +514,17 @@ const KT_DATA = {
         marks: 8,
         focus:
           'Explain how establishing a pan-Arab institutional framework provided the platform that Yasser Arafat’s guerrilla movement subsequently took over.',
-        lines: 16,
+        lines: 21,
         vocabBank: [
-          'Arab League summit',
-          'Gamal Abdel Nasser',
-          'Creation of PLO (1964)',
-          'Ahmad Shukeiri',
+          'January 1964 Arab League summit',
+          'Gamal Abdel Nasser sponsorship',
+          'Creation of the PLO (May 1964)',
+          'Palestinian National Charter',
+          'Ahmad Shukeiri leadership',
+          'Disillusionment after 1967 defeat',
+          'Battle of Karameh (1968)',
           'Yasser Arafat & Fatah takeover (1969)',
+          'Shift to independent armed struggle',
         ],
         connectives: [
           'This conference was important because...',
@@ -522,7 +541,7 @@ const KT_DATA = {
         num: '4 (a)',
         stem: 'Explain one consequence of Israel’s raid on Samu (1966) for tension between Israel and Jordan.',
         marks: 4,
-        lines: 8,
+        lines: 9,
         vocabBank: [
           '13 November 1966',
           'West Bank border village',
@@ -538,7 +557,7 @@ const KT_DATA = {
         num: '4 (b)',
         stem: 'Explain one consequence of the Black September attack at the Munich Olympics (1972) for international attitudes towards the Palestine issue.',
         marks: 4,
-        lines: 8,
+        lines: 9,
         vocabBank: [
           '5 September 1972',
           'Black September faction',
@@ -556,13 +575,16 @@ const KT_DATA = {
         marks: 8,
         focus:
           'Explain how strategic depth provided military buffer zones while creating permanent administrative, legal, and demographic burdens.',
-        lines: 16,
+        lines: 21,
         vocabBank: [
           'Sinai strategic buffer (130 miles)',
           'Golan Heights artillery high ground',
-          'West Bank border along Jordan River',
-          'Bar-Lev Line fortifications',
+          'West Bank & Jordan River border',
+          'Bar-Lev Line along Suez Canal',
+          'Early warning depth against surprise attack',
           '1 million Palestinian demographic burden',
+          'Permanent military occupation costs',
+          'Rise of Palestinian militant resistance',
         ],
         connectives: [
           'This was important for security because...',
@@ -579,13 +601,15 @@ const KT_DATA = {
         marks: 8,
         focus:
           'Explain how Soviet surface-to-air missile umbrellas and advanced armour enabled Egypt to plan and execute military operations in 1973.',
-        lines: 16,
+        lines: 21,
         vocabBank: [
-          'Resupply of MiG-21s & T-55/62 tanks',
-          'SAM missile umbrellas (SAM-2, 3, 6)',
+          'Rebuilding MiG-21s & T-55/62 tanks',
+          'SAM-2, 3, and 6 missile umbrellas',
           '15,000 Soviet military advisers',
-          'War of Attrition (1969–70)',
-          'Expulsion of Soviet advisers by Sadat (1972)',
+          'War of Attrition air defence (1969–70)',
+          'Neutralisation of Israeli air superiority over Suez',
+          'Expulsion of Soviet advisers by Sadat (July 1972)',
+          'Operation Badr crossing plan (Oct 1973)',
         ],
         connectives: [
           'This relationship was vital because...',
@@ -604,7 +628,7 @@ const KT_DATA = {
           'The Arab surprise attack (October 1973)',
           'Israeli counter-attacks across the Suez Canal',
         ],
-        lines: 14,
+        lines: 18,
         vocabBank: [
           '6 October 1973 (Yom Kippur)',
           'Suez water-cannons & SAM shield',
@@ -779,7 +803,7 @@ const KT_DATA = {
         num: '1 (a)',
         stem: 'Explain one consequence of the Treaty of Washington (1979) for Egyptian relations with other Arab states.',
         marks: 4,
-        lines: 8,
+        lines: 9,
         vocabBank: [
           '26 March 1979',
           'Anwar Sadat & Menachem Begin',
@@ -799,7 +823,7 @@ const KT_DATA = {
         num: '1 (b)',
         stem: 'Explain one consequence of the Israeli invasion of Lebanon (1982).',
         marks: 4,
-        lines: 8,
+        lines: 9,
         vocabBank: [
           'Operation Peace for Galilee (June 1982)',
           'Ariel Sharon',
@@ -823,8 +847,8 @@ const KT_DATA = {
           'Sadat’s address to the Knesset (November 1977)',
           'The Camp David summit (September 1978)',
         ],
-        linesPage3: 11,
-        linesPage4: 22,
+        linesPage3: 13,
+        linesPage4: 25,
         vocabBank: [
           '19 Nov 1977 Knesset speech',
           'Begin visit to Ismailia',
@@ -855,14 +879,16 @@ const KT_DATA = {
         marks: 8,
         focus:
           'Explain why establishing the legal and administrative framework for interim self-government in Gaza and Jericho was critical for formal state administration.',
-        lines: 16,
+        lines: 21,
         vocabBank: [
-          '13 September 1993',
-          'Declaration of Principles',
-          'Rabin & Arafat handshake',
-          'Withdrawal from Gaza & Jericho',
-          'Creation of PNA (May 1994)',
-          'Arafat return from exile',
+          'Secret Norwegian negotiations',
+          'Declaration of Principles (13 Sept 1993)',
+          'Mutual recognition (Rabin & Arafat handshake)',
+          'Gaza-Jericho Agreement (May 1994)',
+          'Setting up of Palestinian National Authority (PNA)',
+          'Arafat return from Tunisian exile',
+          'Interim self-government framework',
+          'Elected Palestinian Legislative Council (1996)',
         ],
         connectives: [
           'This was important because...',
@@ -879,13 +905,16 @@ const KT_DATA = {
         marks: 8,
         focus:
           'Explain why meeting Washington’s long-standing mandatory precondition unlocked direct US dialogue with the PLO and opened the path to Madrid and Oslo.',
-        lines: 16,
+        lines: 21,
         vocabBank: [
           'December 1988 Geneva speech',
-          'Acceptance of UN Res 242 & 338',
-          'Recognition of Israel’s right to exist',
-          'Explicit renunciation of terrorism',
-          'US opens official diplomatic dialogue',
+          'Acceptance of UN Resolutions 242 & 338',
+          "Recognition of Israel's right to exist in peace",
+          'Explicit total renunciation of terrorism',
+          'Fulfillment of 1975 US statutory precondition',
+          'US opens direct diplomatic dialogue (Tunis)',
+          'Diplomatic rehabilitation of PLO',
+          'Paved way to Madrid (1991) & Oslo (1993)',
         ],
         connectives: [
           'This was vital because...',
@@ -902,7 +931,7 @@ const KT_DATA = {
         num: '4 (a)',
         stem: 'Explain one consequence of the Israel-Jordan peace treaty (1994).',
         marks: 4,
-        lines: 8,
+        lines: 9,
         vocabBank: [
           '26 October 1994',
           'King Hussein & Yitzhak Rabin',
@@ -922,7 +951,7 @@ const KT_DATA = {
         num: '4 (b)',
         stem: 'Explain one consequence of the Oslo II agreement (1995) for Palestinian self-rule in the West Bank.',
         marks: 4,
-        lines: 8,
+        lines: 9,
         vocabBank: [
           'September 1995 (Taba)',
           'Division into Areas A, B, and C',
@@ -940,13 +969,15 @@ const KT_DATA = {
         marks: 8,
         focus:
           'Explain how Carter’s personal mediation, secluded diplomacy, and economic aid guarantees secured the framework accords between Egypt and Israel.',
-        lines: 16,
+        lines: 21,
         vocabBank: [
           'Jimmy Carter personal diplomacy',
-          'Secluded 13-day summit in Maryland',
-          'Framework for Middle East peace',
-          'Bilateral pressure on Begin & Sadat',
-          'US promised billions in aid',
+          'Secluded 13-day summit at Camp David',
+          'Drafted 23 successive compromise revisions',
+          'Overcame personal antipathy between Begin & Sadat',
+          'Framework for Middle East Peace (Sept 1978)',
+          'US multi-billion dollar aid commitments',
+          '1979 Egypt-Israel Peace Treaty',
         ],
         connectives: [
           'President Carter was critical because...',
@@ -963,13 +994,15 @@ const KT_DATA = {
         marks: 8,
         focus:
           'Explain how the Arab oil embargo directly threatened domestic US economic security, compelling Washington to launch active shuttle diplomacy.',
-        lines: 16,
+        lines: 21,
         vocabBank: [
-          'OPEC & OAPEC embargo (Oct 1973)',
-          'Price of oil quadrupled ($3 to $12)',
-          'US petrol rationing & severe inflation',
+          'OPEC / OAPEC oil embargo (October 1973)',
+          'Quadrupling of oil prices ($3 to $12/barrel)',
+          'US petrol rationing, shortages & inflation',
           'Henry Kissinger "shuttle diplomacy"',
-          'Disengagement agreements (1974–75)',
+          'Sinai & Golan disengagement agreements (1974–75)',
+          'US shift from partisan ally to active peace broker',
+          'Strategic imperative to secure Middle Eastern oil flow',
         ],
         connectives: [
           'This was critical because...',
@@ -988,7 +1021,7 @@ const KT_DATA = {
           'The outbreak of protests in Gaza (December 1987)',
           'Yitzhak Rabin’s ‘Iron Fist’ policy',
         ],
-        lines: 14,
+        lines: 18,
         vocabBank: [
           'Jabalia camp traffic incident',
           'Stone-throwing youth vs IDF armour',
@@ -1508,10 +1541,10 @@ const COMMON_CSS = `
     margin-bottom: 5px;
   }
 
-  /* Ruled / Dotted Lines for Handwriting (24px spacing) */
+  /* Ruled Lines for Handwriting (Authentic Pearson Edexcel 8mm Spacing) */
   .dotted-line {
-    border-bottom: 1.5px dotted #94a3b8;
-    height: 24px;
+    border-bottom: 1px solid #cbd5e1;
+    height: 8mm;
     width: 100%;
     box-sizing: border-box;
   }
@@ -1553,33 +1586,81 @@ const COMMON_CSS = `
     background: #fff;
     border: 1px solid #94a3b8;
     border-radius: 3px;
-    padding: 1px 4px;
+    padding: 1px 5px;
     margin: 1px 2px 1px 0;
     font-size: 6.6pt;
-    font-weight: 600;
+    font-weight: 700;
     color: #0f172a;
     white-space: nowrap;
   }
 
-  .importance-scaffold-grid {
-    border: 1.5px solid #475569;
+  /* Pearson Professional Full-Width Stacked Scaffolding */
+  .importance-scaffold-stack {
+    border: 1.5px solid #334155;
     border-radius: 4px;
     background: #f8fafc;
     padding: 4px 8px;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
     font-size: 7.2pt;
     line-height: 1.25;
-    display: grid;
-    grid-template-columns: 1.35fr 1.35fr 1fr;
-    gap: 8px;
   }
-  .importance-scaffold-cell {
-    border-right: 1px solid #cbd5e1;
-    padding-right: 6px;
+  .scaffold-focus-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    padding: 2px 0;
+    border-bottom: 1px solid #e2e8f0;
   }
-  .importance-scaffold-cell:last-child {
-    border-right: none;
-    padding-right: 0;
+  .scaffold-badge {
+    font-size: 6.8pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #1e3a8a;
+    background: #e0f2fe;
+    padding: 1.5px 6px;
+    border-radius: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .scaffold-text {
+    color: #1e293b;
+    font-size: 7.1pt;
+    line-height: 1.25;
+  }
+  .scaffold-vocab-row {
+    padding-top: 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .scaffold-vocab-subrow {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .scaffold-pills-list {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 3px;
+  }
+  .scaffold-stem-subrow {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    font-size: 6.8pt;
+    color: #475569;
+  }
+  .scaffold-stem-label {
+    font-weight: 700;
+    color: #9a3412;
+    font-size: 6.6pt;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+  .scaffold-stem-text {
+    font-style: italic;
+    color: #334155;
   }
 
   .narrative-flow-planner {
@@ -2084,23 +2165,30 @@ function renderBookletHtml(ktKey, meta) {
                     <strong>Examiner Guidance:</strong> ${e.q3a.focus}
                 </div>
 
-                <!-- Importance Scaffold Grid -->
-                <div class="importance-scaffold-grid">
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 1 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">${e.q3a.p1}</div>
+                <!-- Importance Scaffold Stack -->
+                <div class="importance-scaffold-stack">
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 1 Focus</span>
+                        <span class="scaffold-text">${e.q3a.p1}</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 2 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">${e.q3a.p2}</div>
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 2 Focus</span>
+                        <span class="scaffold-text">${e.q3a.p2}</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Vocabulary &amp; Stems:</span>
-                        <div>${e.q3a.vocabBank
-                          .slice(0, 4)
-                          .map((v) => `<span class="scaffold-pill">${v}</span>`)
-                          .join(' ')}</div>
-                        <div style="margin-top: 2px; font-size: 6.6pt; color: #475569;"><em>Stem:</em> "This was vital because..."</div>
+                    <div class="scaffold-vocab-row">
+                        <div class="scaffold-vocab-subrow">
+                            <span class="scaffold-badge" style="background: #fef3c7; color: #92400e;">Specification Fact Bank</span>
+                            <div class="scaffold-pills-list">
+                                ${e.q3a.vocabBank.map((v) => `<span class="scaffold-pill">${v}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="scaffold-stem-subrow">
+                            <span class="scaffold-stem-label">Analytical Stems:</span>
+                            <span class="scaffold-stem-text">${e.q3a.connectives
+                              .slice(0, 3)
+                              .map((c) => `<em>"${c}"</em>`)
+                              .join(' · ')}</span>
+                        </div>
                     </div>
                 </div>
 
@@ -2137,23 +2225,30 @@ function renderBookletHtml(ktKey, meta) {
                     <strong>Examiner Guidance:</strong> ${e.q3b.focus}
                 </div>
 
-                <!-- Importance Scaffold Grid -->
-                <div class="importance-scaffold-grid">
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 1 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">${e.q3b.p1}</div>
+                <!-- Importance Scaffold Stack -->
+                <div class="importance-scaffold-stack">
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 1 Focus</span>
+                        <span class="scaffold-text">${e.q3b.p1}</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 2 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">${e.q3b.p2}</div>
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 2 Focus</span>
+                        <span class="scaffold-text">${e.q3b.p2}</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Vocabulary &amp; Stems:</span>
-                        <div>${e.q3b.vocabBank
-                          .slice(0, 4)
-                          .map((v) => `<span class="scaffold-pill">${v}</span>`)
-                          .join(' ')}</div>
-                        <div style="margin-top: 2px; font-size: 6.6pt; color: #475569;"><em>Stem:</em> "This ensured that..."</div>
+                    <div class="scaffold-vocab-row">
+                        <div class="scaffold-vocab-subrow">
+                            <span class="scaffold-badge" style="background: #fef3c7; color: #92400e;">Specification Fact Bank</span>
+                            <div class="scaffold-pills-list">
+                                ${e.q3b.vocabBank.map((v) => `<span class="scaffold-pill">${v}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="scaffold-stem-subrow">
+                            <span class="scaffold-stem-label">Analytical Stems:</span>
+                            <span class="scaffold-stem-text">${e.q3b.connectives
+                              .slice(0, 3)
+                              .map((c) => `<em>"${c}"</em>`)
+                              .join(' · ')}</span>
+                        </div>
                     </div>
                 </div>
 
@@ -2257,23 +2352,30 @@ function renderBookletHtml(ktKey, meta) {
                     <strong>Examiner Guidance:</strong> ${d.q5.focus}
                 </div>
 
-                <!-- Importance Scaffold Grid -->
-                <div class="importance-scaffold-grid">
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 1 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">${d.q5.p1}</div>
+                <!-- Importance Scaffold Stack -->
+                <div class="importance-scaffold-stack">
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 1 Focus</span>
+                        <span class="scaffold-text">${d.q5.p1}</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 2 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">${d.q5.p2}</div>
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 2 Focus</span>
+                        <span class="scaffold-text">${d.q5.p2}</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Vocabulary &amp; Stems:</span>
-                        <div>${d.q5.vocabBank
-                          .slice(0, 4)
-                          .map((v) => `<span class="scaffold-pill">${v}</span>`)
-                          .join(' ')}</div>
-                        <div style="margin-top: 2px; font-size: 6.6pt; color: #475569;"><em>Stem:</em> "This was important because..."</div>
+                    <div class="scaffold-vocab-row">
+                        <div class="scaffold-vocab-subrow">
+                            <span class="scaffold-badge" style="background: #fef3c7; color: #92400e;">Specification Fact Bank</span>
+                            <div class="scaffold-pills-list">
+                                ${d.q5.vocabBank.map((v) => `<span class="scaffold-pill">${v}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="scaffold-stem-subrow">
+                            <span class="scaffold-stem-label">Analytical Stems:</span>
+                            <span class="scaffold-stem-text">${d.q5.connectives
+                              .slice(0, 3)
+                              .map((c) => `<em>"${c}"</em>`)
+                              .join(' · ')}</span>
+                        </div>
                     </div>
                 </div>
 
@@ -2310,23 +2412,30 @@ function renderBookletHtml(ktKey, meta) {
                     <strong>Examiner Guidance:</strong> ${d.q6.focus}
                 </div>
 
-                <!-- Importance Scaffold Grid -->
-                <div class="importance-scaffold-grid">
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 1 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">${d.q6.p1}</div>
+                <!-- Importance Scaffold Stack -->
+                <div class="importance-scaffold-stack">
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 1 Focus</span>
+                        <span class="scaffold-text">${d.q6.p1}</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 2 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">${d.q6.p2}</div>
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 2 Focus</span>
+                        <span class="scaffold-text">${d.q6.p2}</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Vocabulary &amp; Stems:</span>
-                        <div>${d.q6.vocabBank
-                          .slice(0, 4)
-                          .map((v) => `<span class="scaffold-pill">${v}</span>`)
-                          .join(' ')}</div>
-                        <div style="margin-top: 2px; font-size: 6.6pt; color: #475569;"><em>Stem:</em> "Without this relationship, ..."</div>
+                    <div class="scaffold-vocab-row">
+                        <div class="scaffold-vocab-subrow">
+                            <span class="scaffold-badge" style="background: #fef3c7; color: #92400e;">Specification Fact Bank</span>
+                            <div class="scaffold-pills-list">
+                                ${d.q6.vocabBank.map((v) => `<span class="scaffold-pill">${v}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="scaffold-stem-subrow">
+                            <span class="scaffold-stem-label">Analytical Stems:</span>
+                            <span class="scaffold-stem-text">${d.q6.connectives
+                              .slice(0, 3)
+                              .map((c) => `<em>"${c}"</em>`)
+                              .join(' · ')}</span>
+                        </div>
                     </div>
                 </div>
 

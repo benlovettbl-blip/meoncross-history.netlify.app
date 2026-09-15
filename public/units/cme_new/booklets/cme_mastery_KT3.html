@@ -355,10 +355,10 @@
     margin-bottom: 5px;
   }
 
-  /* Ruled / Dotted Lines for Handwriting (24px spacing) */
+  /* Ruled Lines for Handwriting (Authentic Pearson Edexcel 8mm Spacing) */
   .dotted-line {
-    border-bottom: 1.5px dotted #94a3b8;
-    height: 24px;
+    border-bottom: 1px solid #cbd5e1;
+    height: 8mm;
     width: 100%;
     box-sizing: border-box;
   }
@@ -400,33 +400,81 @@
     background: #fff;
     border: 1px solid #94a3b8;
     border-radius: 3px;
-    padding: 1px 4px;
+    padding: 1px 5px;
     margin: 1px 2px 1px 0;
     font-size: 6.6pt;
-    font-weight: 600;
+    font-weight: 700;
     color: #0f172a;
     white-space: nowrap;
   }
 
-  .importance-scaffold-grid {
-    border: 1.5px solid #475569;
+  /* Pearson Professional Full-Width Stacked Scaffolding */
+  .importance-scaffold-stack {
+    border: 1.5px solid #334155;
     border-radius: 4px;
     background: #f8fafc;
     padding: 4px 8px;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
     font-size: 7.2pt;
     line-height: 1.25;
-    display: grid;
-    grid-template-columns: 1.35fr 1.35fr 1fr;
-    gap: 8px;
   }
-  .importance-scaffold-cell {
-    border-right: 1px solid #cbd5e1;
-    padding-right: 6px;
+  .scaffold-focus-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    padding: 2px 0;
+    border-bottom: 1px solid #e2e8f0;
   }
-  .importance-scaffold-cell:last-child {
-    border-right: none;
-    padding-right: 0;
+  .scaffold-badge {
+    font-size: 6.8pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #1e3a8a;
+    background: #e0f2fe;
+    padding: 1.5px 6px;
+    border-radius: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .scaffold-text {
+    color: #1e293b;
+    font-size: 7.1pt;
+    line-height: 1.25;
+  }
+  .scaffold-vocab-row {
+    padding-top: 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .scaffold-vocab-subrow {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .scaffold-pills-list {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 3px;
+  }
+  .scaffold-stem-subrow {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    font-size: 6.8pt;
+    color: #475569;
+  }
+  .scaffold-stem-label {
+    font-weight: 700;
+    color: #9a3412;
+    font-size: 6.6pt;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+  .scaffold-stem-text {
+    font-style: italic;
+    color: #334155;
   }
 
   .narrative-flow-planner {
@@ -825,6 +873,7 @@
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
 
             </div>
 
@@ -849,6 +898,7 @@
                     </div>
                 </div>
                 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -932,6 +982,8 @@
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
 
             </div>
         </div>
@@ -962,6 +1014,9 @@
                     <span><strong>Check:</strong> Both stimulus points + 1 own fact included.</span>
                 </div>
                 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -1016,24 +1071,36 @@
                     <strong>Examiner Guidance:</strong> Explain why establishing the legal and administrative framework for interim self-government in Gaza and Jericho was critical for formal state administration.
                 </div>
 
-                <!-- Importance Scaffold Grid -->
-                <div class="importance-scaffold-grid">
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 1 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">Framework for Civilian Self-Rule: Explain how the accords transferred civil administration over population centres (Gaza and Jericho) to Palestinians for the first time.</div>
+                <!-- Importance Scaffold Stack -->
+                <div class="importance-scaffold-stack">
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 1 Focus</span>
+                        <span class="scaffold-text">Framework for Civilian Self-Rule: Explain how the accords transferred civil administration over population centres (Gaza and Jericho) to Palestinians for the first time.</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 2 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">Transformation into Recognized Government: Explain how it transformed the PLO from an exiled militant movement into an internationally recognized sovereign governing body.</div>
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 2 Focus</span>
+                        <span class="scaffold-text">Transformation into Recognized Government: Explain how it transformed the PLO from an exiled militant movement into an internationally recognized sovereign governing body.</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Vocabulary &amp; Stems:</span>
-                        <div><span class="scaffold-pill">13 September 1993</span> <span class="scaffold-pill">Declaration of Principles</span> <span class="scaffold-pill">Rabin & Arafat handshake</span> <span class="scaffold-pill">Withdrawal from Gaza & Jericho</span></div>
-                        <div style="margin-top: 2px; font-size: 6.6pt; color: #475569;"><em>Stem:</em> "This was vital because..."</div>
+                    <div class="scaffold-vocab-row">
+                        <div class="scaffold-vocab-subrow">
+                            <span class="scaffold-badge" style="background: #fef3c7; color: #92400e;">Specification Fact Bank</span>
+                            <div class="scaffold-pills-list">
+                                <span class="scaffold-pill">Secret Norwegian negotiations</span><span class="scaffold-pill">Declaration of Principles (13 Sept 1993)</span><span class="scaffold-pill">Mutual recognition (Rabin & Arafat handshake)</span><span class="scaffold-pill">Gaza-Jericho Agreement (May 1994)</span><span class="scaffold-pill">Setting up of Palestinian National Authority (PNA)</span><span class="scaffold-pill">Arafat return from Tunisian exile</span><span class="scaffold-pill">Interim self-government framework</span><span class="scaffold-pill">Elected Palestinian Legislative Council (1996)</span>
+                            </div>
+                        </div>
+                        <div class="scaffold-stem-subrow">
+                            <span class="scaffold-stem-label">Analytical Stems:</span>
+                            <span class="scaffold-stem-text"><em>"This was important because..."</em> · <em>"Furthermore, ..."</em> · <em>"Without this agreement, ..."</em></span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -1082,24 +1149,36 @@
                     <strong>Examiner Guidance:</strong> Explain why meeting Washington’s long-standing mandatory precondition unlocked direct US dialogue with the PLO and opened the path to Madrid and Oslo.
                 </div>
 
-                <!-- Importance Scaffold Grid -->
-                <div class="importance-scaffold-grid">
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 1 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">Unlocking Direct American Dialogue: Explain how renouncing terrorism satisfied Washington’s mandatory statutory precondition, opening official US-PLO diplomacy.</div>
+                <!-- Importance Scaffold Stack -->
+                <div class="importance-scaffold-stack">
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 1 Focus</span>
+                        <span class="scaffold-text">Unlocking Direct American Dialogue: Explain how renouncing terrorism satisfied Washington’s mandatory statutory precondition, opening official US-PLO diplomacy.</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 2 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">Paving the Path to Madrid and Oslo: Explain how American engagement gave the PLO international diplomatic credibility, leading directly to future peace negotiations.</div>
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 2 Focus</span>
+                        <span class="scaffold-text">Paving the Path to Madrid and Oslo: Explain how American engagement gave the PLO international diplomatic credibility, leading directly to future peace negotiations.</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Vocabulary &amp; Stems:</span>
-                        <div><span class="scaffold-pill">December 1988 Geneva speech</span> <span class="scaffold-pill">Acceptance of UN Res 242 & 338</span> <span class="scaffold-pill">Recognition of Israel’s right to exist</span> <span class="scaffold-pill">Explicit renunciation of terrorism</span></div>
-                        <div style="margin-top: 2px; font-size: 6.6pt; color: #475569;"><em>Stem:</em> "This ensured that..."</div>
+                    <div class="scaffold-vocab-row">
+                        <div class="scaffold-vocab-subrow">
+                            <span class="scaffold-badge" style="background: #fef3c7; color: #92400e;">Specification Fact Bank</span>
+                            <div class="scaffold-pills-list">
+                                <span class="scaffold-pill">December 1988 Geneva speech</span><span class="scaffold-pill">Acceptance of UN Resolutions 242 & 338</span><span class="scaffold-pill">Recognition of Israel's right to exist in peace</span><span class="scaffold-pill">Explicit total renunciation of terrorism</span><span class="scaffold-pill">Fulfillment of 1975 US statutory precondition</span><span class="scaffold-pill">US opens direct diplomatic dialogue (Tunis)</span><span class="scaffold-pill">Diplomatic rehabilitation of PLO</span><span class="scaffold-pill">Paved way to Madrid (1991) & Oslo (1993)</span>
+                            </div>
+                        </div>
+                        <div class="scaffold-stem-subrow">
+                            <span class="scaffold-stem-label">Analytical Stems:</span>
+                            <span class="scaffold-stem-text"><em>"This was vital because..."</em> · <em>"Moreover, ..."</em> · <em>"By fulfilling Washington’s condition, ..."</em></span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -1167,6 +1246,7 @@
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
 
             </div>
 
@@ -1191,6 +1271,7 @@
                     </div>
                 </div>
                 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -1231,24 +1312,36 @@
                     <strong>Examiner Guidance:</strong> Explain how Carter’s personal mediation, secluded diplomacy, and economic aid guarantees secured the framework accords between Egypt and Israel.
                 </div>
 
-                <!-- Importance Scaffold Grid -->
-                <div class="importance-scaffold-grid">
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 1 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">Marathon Personal Mediation: Explain how Carter shuttled tirelessly between isolated cabins drafting 23 revisions to overcome bitter personal distrust.</div>
+                <!-- Importance Scaffold Stack -->
+                <div class="importance-scaffold-stack">
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 1 Focus</span>
+                        <span class="scaffold-text">Marathon Personal Mediation: Explain how Carter shuttled tirelessly between isolated cabins drafting 23 revisions to overcome bitter personal distrust.</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 2 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">US Strategic Guarantees: Explain how Carter committed billions in ongoing US economic and military aid to induce both nations to accept difficult compromises.</div>
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 2 Focus</span>
+                        <span class="scaffold-text">US Strategic Guarantees: Explain how Carter committed billions in ongoing US economic and military aid to induce both nations to accept difficult compromises.</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Vocabulary &amp; Stems:</span>
-                        <div><span class="scaffold-pill">Jimmy Carter personal diplomacy</span> <span class="scaffold-pill">Secluded 13-day summit in Maryland</span> <span class="scaffold-pill">Framework for Middle East peace</span> <span class="scaffold-pill">Bilateral pressure on Begin & Sadat</span></div>
-                        <div style="margin-top: 2px; font-size: 6.6pt; color: #475569;"><em>Stem:</em> "This was important because..."</div>
+                    <div class="scaffold-vocab-row">
+                        <div class="scaffold-vocab-subrow">
+                            <span class="scaffold-badge" style="background: #fef3c7; color: #92400e;">Specification Fact Bank</span>
+                            <div class="scaffold-pills-list">
+                                <span class="scaffold-pill">Jimmy Carter personal diplomacy</span><span class="scaffold-pill">Secluded 13-day summit at Camp David</span><span class="scaffold-pill">Drafted 23 successive compromise revisions</span><span class="scaffold-pill">Overcame personal antipathy between Begin & Sadat</span><span class="scaffold-pill">Framework for Middle East Peace (Sept 1978)</span><span class="scaffold-pill">US multi-billion dollar aid commitments</span><span class="scaffold-pill">1979 Egypt-Israel Peace Treaty</span>
+                            </div>
+                        </div>
+                        <div class="scaffold-stem-subrow">
+                            <span class="scaffold-stem-label">Analytical Stems:</span>
+                            <span class="scaffold-stem-text"><em>"President Carter was critical because..."</em> · <em>"Furthermore, ..."</em> · <em>"When negotiations neared total collapse, ..."</em></span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -1297,24 +1390,36 @@
                     <strong>Examiner Guidance:</strong> Explain how the Arab oil embargo directly threatened domestic US economic security, compelling Washington to launch active shuttle diplomacy.
                 </div>
 
-                <!-- Importance Scaffold Grid -->
-                <div class="importance-scaffold-grid">
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 1 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">Domestic Economic Vulnerability: Explain how fuel shortages and rampant inflation demonstrated that US economic survival depended directly on Middle Eastern stability.</div>
+                <!-- Importance Scaffold Stack -->
+                <div class="importance-scaffold-stack">
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 1 Focus</span>
+                        <span class="scaffold-text">Domestic Economic Vulnerability: Explain how fuel shortages and rampant inflation demonstrated that US economic survival depended directly on Middle Eastern stability.</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 2 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">Active Diplomatic Mediation: Explain how the crisis compelled Kissinger to launch active shuttle diplomacy to resolve military standoffs and prevent future oil embargoes.</div>
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 2 Focus</span>
+                        <span class="scaffold-text">Active Diplomatic Mediation: Explain how the crisis compelled Kissinger to launch active shuttle diplomacy to resolve military standoffs and prevent future oil embargoes.</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Vocabulary &amp; Stems:</span>
-                        <div><span class="scaffold-pill">OPEC & OAPEC embargo (Oct 1973)</span> <span class="scaffold-pill">Price of oil quadrupled ($3 to $12)</span> <span class="scaffold-pill">US petrol rationing & severe inflation</span> <span class="scaffold-pill">Henry Kissinger "shuttle diplomacy"</span></div>
-                        <div style="margin-top: 2px; font-size: 6.6pt; color: #475569;"><em>Stem:</em> "Without this relationship, ..."</div>
+                    <div class="scaffold-vocab-row">
+                        <div class="scaffold-vocab-subrow">
+                            <span class="scaffold-badge" style="background: #fef3c7; color: #92400e;">Specification Fact Bank</span>
+                            <div class="scaffold-pills-list">
+                                <span class="scaffold-pill">OPEC / OAPEC oil embargo (October 1973)</span><span class="scaffold-pill">Quadrupling of oil prices ($3 to $12/barrel)</span><span class="scaffold-pill">US petrol rationing, shortages & inflation</span><span class="scaffold-pill">Henry Kissinger "shuttle diplomacy"</span><span class="scaffold-pill">Sinai & Golan disengagement agreements (1974–75)</span><span class="scaffold-pill">US shift from partisan ally to active peace broker</span><span class="scaffold-pill">Strategic imperative to secure Middle Eastern oil flow</span>
+                            </div>
+                        </div>
+                        <div class="scaffold-stem-subrow">
+                            <span class="scaffold-stem-label">Analytical Stems:</span>
+                            <span class="scaffold-stem-text"><em>"This was critical because..."</em> · <em>"Moreover, ..."</em> · <em>"The economic shock forced Washington to..."</em></span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -1395,6 +1500,10 @@
                 </div>
 
                 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>

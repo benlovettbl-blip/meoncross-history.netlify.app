@@ -355,10 +355,10 @@
     margin-bottom: 5px;
   }
 
-  /* Ruled / Dotted Lines for Handwriting (24px spacing) */
+  /* Ruled Lines for Handwriting (Authentic Pearson Edexcel 8mm Spacing) */
   .dotted-line {
-    border-bottom: 1.5px dotted #94a3b8;
-    height: 24px;
+    border-bottom: 1px solid #cbd5e1;
+    height: 8mm;
     width: 100%;
     box-sizing: border-box;
   }
@@ -400,33 +400,81 @@
     background: #fff;
     border: 1px solid #94a3b8;
     border-radius: 3px;
-    padding: 1px 4px;
+    padding: 1px 5px;
     margin: 1px 2px 1px 0;
     font-size: 6.6pt;
-    font-weight: 600;
+    font-weight: 700;
     color: #0f172a;
     white-space: nowrap;
   }
 
-  .importance-scaffold-grid {
-    border: 1.5px solid #475569;
+  /* Pearson Professional Full-Width Stacked Scaffolding */
+  .importance-scaffold-stack {
+    border: 1.5px solid #334155;
     border-radius: 4px;
     background: #f8fafc;
     padding: 4px 8px;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
     font-size: 7.2pt;
     line-height: 1.25;
-    display: grid;
-    grid-template-columns: 1.35fr 1.35fr 1fr;
-    gap: 8px;
   }
-  .importance-scaffold-cell {
-    border-right: 1px solid #cbd5e1;
-    padding-right: 6px;
+  .scaffold-focus-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    padding: 2px 0;
+    border-bottom: 1px solid #e2e8f0;
   }
-  .importance-scaffold-cell:last-child {
-    border-right: none;
-    padding-right: 0;
+  .scaffold-badge {
+    font-size: 6.8pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #1e3a8a;
+    background: #e0f2fe;
+    padding: 1.5px 6px;
+    border-radius: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .scaffold-text {
+    color: #1e293b;
+    font-size: 7.1pt;
+    line-height: 1.25;
+  }
+  .scaffold-vocab-row {
+    padding-top: 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .scaffold-vocab-subrow {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .scaffold-pills-list {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 3px;
+  }
+  .scaffold-stem-subrow {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    font-size: 6.8pt;
+    color: #475569;
+  }
+  .scaffold-stem-label {
+    font-weight: 700;
+    color: #9a3412;
+    font-size: 6.6pt;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+  .scaffold-stem-text {
+    font-style: italic;
+    color: #334155;
   }
 
   .narrative-flow-planner {
@@ -825,6 +873,7 @@
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
 
             </div>
 
@@ -849,6 +898,7 @@
                     </div>
                 </div>
                 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -932,6 +982,8 @@
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
 
             </div>
         </div>
@@ -962,6 +1014,9 @@
                     <span><strong>Check:</strong> Both stimulus points + 1 own fact included.</span>
                 </div>
                 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -1016,24 +1071,36 @@
                     <strong>Examiner Guidance:</strong> Explain why the "land for peace" formula and its deliberate linguistic ambiguity dictated all subsequent diplomatic negotiations.
                 </div>
 
-                <!-- Importance Scaffold Grid -->
-                <div class="importance-scaffold-grid">
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 1 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">Foundational "Land for Peace" Principle: Explain how Res 242 established the universal formula requiring Israel to return land in exchange for Arab peace treaties.</div>
+                <!-- Importance Scaffold Stack -->
+                <div class="importance-scaffold-stack">
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 1 Focus</span>
+                        <span class="scaffold-text">Foundational "Land for Peace" Principle: Explain how Res 242 established the universal formula requiring Israel to return land in exchange for Arab peace treaties.</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 2 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">Deliberate Linguistic Ambiguity: Explain how omitting the word "the" from the English draft allowed Israel to claim it was not required to surrender all 1967 conquests.</div>
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 2 Focus</span>
+                        <span class="scaffold-text">Deliberate Linguistic Ambiguity: Explain how omitting the word "the" from the English draft allowed Israel to claim it was not required to surrender all 1967 conquests.</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Vocabulary &amp; Stems:</span>
-                        <div><span class="scaffold-pill">22 November 1967</span> <span class="scaffold-pill">UN Security Council</span> <span class="scaffold-pill">"Land for peace" formula</span> <span class="scaffold-pill">Deliberate ambiguity ("territories occupied")</span></div>
-                        <div style="margin-top: 2px; font-size: 6.6pt; color: #475569;"><em>Stem:</em> "This was vital because..."</div>
+                    <div class="scaffold-vocab-row">
+                        <div class="scaffold-vocab-subrow">
+                            <span class="scaffold-badge" style="background: #fef3c7; color: #92400e;">Specification Fact Bank</span>
+                            <div class="scaffold-pills-list">
+                                <span class="scaffold-pill">22 November 1967</span><span class="scaffold-pill">UN Security Council</span><span class="scaffold-pill">"Land for peace" formula</span><span class="scaffold-pill">Withdrawal from occupied territories</span><span class="scaffold-pill">Deliberate ambiguity (omission of "the")</span><span class="scaffold-pill">Israeli insistence on direct bilateral treaties</span><span class="scaffold-pill">Arab League Khartoum Summit ("Three No's")</span><span class="scaffold-pill">Palestinian refugee status vs national rights</span>
+                            </div>
+                        </div>
+                        <div class="scaffold-stem-subrow">
+                            <span class="scaffold-stem-label">Analytical Stems:</span>
+                            <span class="scaffold-stem-text"><em>"This was vital because..."</em> · <em>"Furthermore, ..."</em> · <em>"Crucially, ..."</em></span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -1082,24 +1149,36 @@
                     <strong>Examiner Guidance:</strong> Explain how establishing a pan-Arab institutional framework provided the platform that Yasser Arafat’s guerrilla movement subsequently took over.
                 </div>
 
-                <!-- Importance Scaffold Grid -->
-                <div class="importance-scaffold-grid">
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 1 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">Official Institutional Framework: Explain how Arab states created an official, recognised umbrella organization to represent Palestinian national identity.</div>
+                <!-- Importance Scaffold Stack -->
+                <div class="importance-scaffold-stack">
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 1 Focus</span>
+                        <span class="scaffold-text">Official Institutional Framework: Explain how Arab states created an official, recognised umbrella organization to represent Palestinian national identity.</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 2 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">Platform for Independent Militancy: Explain how Fatah exploited this official apparatus following the 1967 Arab defeat to wrest control and launch armed struggle.</div>
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 2 Focus</span>
+                        <span class="scaffold-text">Platform for Independent Militancy: Explain how Fatah exploited this official apparatus following the 1967 Arab defeat to wrest control and launch armed struggle.</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Vocabulary &amp; Stems:</span>
-                        <div><span class="scaffold-pill">Arab League summit</span> <span class="scaffold-pill">Gamal Abdel Nasser</span> <span class="scaffold-pill">Creation of PLO (1964)</span> <span class="scaffold-pill">Ahmad Shukeiri</span></div>
-                        <div style="margin-top: 2px; font-size: 6.6pt; color: #475569;"><em>Stem:</em> "This ensured that..."</div>
+                    <div class="scaffold-vocab-row">
+                        <div class="scaffold-vocab-subrow">
+                            <span class="scaffold-badge" style="background: #fef3c7; color: #92400e;">Specification Fact Bank</span>
+                            <div class="scaffold-pills-list">
+                                <span class="scaffold-pill">January 1964 Arab League summit</span><span class="scaffold-pill">Gamal Abdel Nasser sponsorship</span><span class="scaffold-pill">Creation of the PLO (May 1964)</span><span class="scaffold-pill">Palestinian National Charter</span><span class="scaffold-pill">Ahmad Shukeiri leadership</span><span class="scaffold-pill">Disillusionment after 1967 defeat</span><span class="scaffold-pill">Battle of Karameh (1968)</span><span class="scaffold-pill">Yasser Arafat & Fatah takeover (1969)</span><span class="scaffold-pill">Shift to independent armed struggle</span>
+                            </div>
+                        </div>
+                        <div class="scaffold-stem-subrow">
+                            <span class="scaffold-stem-label">Analytical Stems:</span>
+                            <span class="scaffold-stem-text"><em>"This conference was important because..."</em> · <em>"Moreover, ..."</em> · <em>"This provided the platform for..."</em></span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -1167,6 +1246,7 @@
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
 
             </div>
 
@@ -1191,6 +1271,7 @@
                     </div>
                 </div>
                 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -1231,24 +1312,36 @@
                     <strong>Examiner Guidance:</strong> Explain how strategic depth provided military buffer zones while creating permanent administrative, legal, and demographic burdens.
                 </div>
 
-                <!-- Importance Scaffold Grid -->
-                <div class="importance-scaffold-grid">
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 1 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">Strategic Military Buffer: Explain how holding Sinai and the Golan Heights provided essential warning time and removed Syrian artillery from Israeli towns.</div>
+                <!-- Importance Scaffold Stack -->
+                <div class="importance-scaffold-stack">
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 1 Focus</span>
+                        <span class="scaffold-text">Strategic Military Buffer: Explain how holding Sinai and the Golan Heights provided essential warning time and removed Syrian artillery from Israeli towns.</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 2 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">Internal Security Dilemma: Explain how occupying one million Palestinians created permanent internal unrest, international condemnation, and policing burdens.</div>
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 2 Focus</span>
+                        <span class="scaffold-text">Internal Security Dilemma: Explain how occupying one million Palestinians created permanent internal unrest, international condemnation, and policing burdens.</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Vocabulary &amp; Stems:</span>
-                        <div><span class="scaffold-pill">Sinai strategic buffer (130 miles)</span> <span class="scaffold-pill">Golan Heights artillery high ground</span> <span class="scaffold-pill">West Bank border along Jordan River</span> <span class="scaffold-pill">Bar-Lev Line fortifications</span></div>
-                        <div style="margin-top: 2px; font-size: 6.6pt; color: #475569;"><em>Stem:</em> "This was important because..."</div>
+                    <div class="scaffold-vocab-row">
+                        <div class="scaffold-vocab-subrow">
+                            <span class="scaffold-badge" style="background: #fef3c7; color: #92400e;">Specification Fact Bank</span>
+                            <div class="scaffold-pills-list">
+                                <span class="scaffold-pill">Sinai strategic buffer (130 miles)</span><span class="scaffold-pill">Golan Heights artillery high ground</span><span class="scaffold-pill">West Bank & Jordan River border</span><span class="scaffold-pill">Bar-Lev Line along Suez Canal</span><span class="scaffold-pill">Early warning depth against surprise attack</span><span class="scaffold-pill">1 million Palestinian demographic burden</span><span class="scaffold-pill">Permanent military occupation costs</span><span class="scaffold-pill">Rise of Palestinian militant resistance</span>
+                            </div>
+                        </div>
+                        <div class="scaffold-stem-subrow">
+                            <span class="scaffold-stem-label">Analytical Stems:</span>
+                            <span class="scaffold-stem-text"><em>"This was important for security because..."</em> · <em>"On the other hand, ..."</em> · <em>"Furthermore, ..."</em></span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -1297,24 +1390,36 @@
                     <strong>Examiner Guidance:</strong> Explain how Soviet surface-to-air missile umbrellas and advanced armour enabled Egypt to plan and execute military operations in 1973.
                 </div>
 
-                <!-- Importance Scaffold Grid -->
-                <div class="importance-scaffold-grid">
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 1 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">Rebuilding Military Hardware: Explain how Soviet arms shipments completely replaced Egypt’s destroyed military equipment following the 1967 disaster.</div>
+                <!-- Importance Scaffold Stack -->
+                <div class="importance-scaffold-stack">
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 1 Focus</span>
+                        <span class="scaffold-text">Rebuilding Military Hardware: Explain how Soviet arms shipments completely replaced Egypt’s destroyed military equipment following the 1967 disaster.</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 2 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">The SAM Air Defence Umbrella: Explain how advanced Soviet anti-aircraft missiles neutralized the Israeli Air Force over the Suez Canal, making the 1973 offensive possible.</div>
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 2 Focus</span>
+                        <span class="scaffold-text">The SAM Air Defence Umbrella: Explain how advanced Soviet anti-aircraft missiles neutralized the Israeli Air Force over the Suez Canal, making the 1973 offensive possible.</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Vocabulary &amp; Stems:</span>
-                        <div><span class="scaffold-pill">Resupply of MiG-21s & T-55/62 tanks</span> <span class="scaffold-pill">SAM missile umbrellas (SAM-2, 3, 6)</span> <span class="scaffold-pill">15,000 Soviet military advisers</span> <span class="scaffold-pill">War of Attrition (1969–70)</span></div>
-                        <div style="margin-top: 2px; font-size: 6.6pt; color: #475569;"><em>Stem:</em> "Without this relationship, ..."</div>
+                    <div class="scaffold-vocab-row">
+                        <div class="scaffold-vocab-subrow">
+                            <span class="scaffold-badge" style="background: #fef3c7; color: #92400e;">Specification Fact Bank</span>
+                            <div class="scaffold-pills-list">
+                                <span class="scaffold-pill">Rebuilding MiG-21s & T-55/62 tanks</span><span class="scaffold-pill">SAM-2, 3, and 6 missile umbrellas</span><span class="scaffold-pill">15,000 Soviet military advisers</span><span class="scaffold-pill">War of Attrition air defence (1969–70)</span><span class="scaffold-pill">Neutralisation of Israeli air superiority over Suez</span><span class="scaffold-pill">Expulsion of Soviet advisers by Sadat (July 1972)</span><span class="scaffold-pill">Operation Badr crossing plan (Oct 1973)</span>
+                            </div>
+                        </div>
+                        <div class="scaffold-stem-subrow">
+                            <span class="scaffold-stem-label">Analytical Stems:</span>
+                            <span class="scaffold-stem-text"><em>"This relationship was vital because..."</em> · <em>"Furthermore, ..."</em> · <em>"Without Soviet weaponry, ..."</em></span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -1395,6 +1500,10 @@
                 </div>
 
                 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>

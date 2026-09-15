@@ -355,10 +355,10 @@
     margin-bottom: 5px;
   }
 
-  /* Ruled / Dotted Lines for Handwriting (24px spacing) */
+  /* Ruled Lines for Handwriting (Authentic Pearson Edexcel 8mm Spacing) */
   .dotted-line {
-    border-bottom: 1.5px dotted #94a3b8;
-    height: 24px;
+    border-bottom: 1px solid #cbd5e1;
+    height: 8mm;
     width: 100%;
     box-sizing: border-box;
   }
@@ -400,33 +400,81 @@
     background: #fff;
     border: 1px solid #94a3b8;
     border-radius: 3px;
-    padding: 1px 4px;
+    padding: 1px 5px;
     margin: 1px 2px 1px 0;
     font-size: 6.6pt;
-    font-weight: 600;
+    font-weight: 700;
     color: #0f172a;
     white-space: nowrap;
   }
 
-  .importance-scaffold-grid {
-    border: 1.5px solid #475569;
+  /* Pearson Professional Full-Width Stacked Scaffolding */
+  .importance-scaffold-stack {
+    border: 1.5px solid #334155;
     border-radius: 4px;
     background: #f8fafc;
     padding: 4px 8px;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
     font-size: 7.2pt;
     line-height: 1.25;
-    display: grid;
-    grid-template-columns: 1.35fr 1.35fr 1fr;
-    gap: 8px;
   }
-  .importance-scaffold-cell {
-    border-right: 1px solid #cbd5e1;
-    padding-right: 6px;
+  .scaffold-focus-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    padding: 2px 0;
+    border-bottom: 1px solid #e2e8f0;
   }
-  .importance-scaffold-cell:last-child {
-    border-right: none;
-    padding-right: 0;
+  .scaffold-badge {
+    font-size: 6.8pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #1e3a8a;
+    background: #e0f2fe;
+    padding: 1.5px 6px;
+    border-radius: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .scaffold-text {
+    color: #1e293b;
+    font-size: 7.1pt;
+    line-height: 1.25;
+  }
+  .scaffold-vocab-row {
+    padding-top: 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .scaffold-vocab-subrow {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .scaffold-pills-list {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 3px;
+  }
+  .scaffold-stem-subrow {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    font-size: 6.8pt;
+    color: #475569;
+  }
+  .scaffold-stem-label {
+    font-weight: 700;
+    color: #9a3412;
+    font-size: 6.6pt;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+  .scaffold-stem-text {
+    font-style: italic;
+    color: #334155;
   }
 
   .narrative-flow-planner {
@@ -825,6 +873,7 @@
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
 
             </div>
 
@@ -849,6 +898,7 @@
                     </div>
                 </div>
                 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -932,6 +982,8 @@
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
 
             </div>
         </div>
@@ -962,6 +1014,9 @@
                     <span><strong>Check:</strong> Both stimulus points + 1 own fact included.</span>
                 </div>
                 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -1016,24 +1071,36 @@
                     <strong>Examiner Guidance:</strong> Explain why the resolution was important for providing international legal legitimacy and securing immediate diplomatic recognition for the sovereign state.
                 </div>
 
-                <!-- Importance Scaffold Grid -->
-                <div class="importance-scaffold-grid">
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 1 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">International Legal Legitimacy: Explain how Res 181 gave Jewish leaders recognised authority to proclaim a state without being branded an illegal rebellion.</div>
+                <!-- Importance Scaffold Stack -->
+                <div class="importance-scaffold-stack">
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 1 Focus</span>
+                        <span class="scaffold-text">International Legal Legitimacy: Explain how Resolution 181 provided Jewish leaders with a recognised international mandate to establish a sovereign state rather than an illegal rebel territory.</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 2 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">Superpower Recognition: Explain how the vote secured immediate US/Soviet diplomatic recognition and Czechoslovak arms shipments.</div>
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 2 Focus</span>
+                        <span class="scaffold-text">Superpower Recognition & Geopolitical Foundation: Explain how the vote triggered immediate diplomatic recognition from the USA and USSR, enabling the new state to secure vital arms shipments and diplomatic standing.</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Vocabulary &amp; Stems:</span>
-                        <div><span class="scaffold-pill">29 Nov 1947 vote</span> <span class="scaffold-pill">UN General Assembly</span> <span class="scaffold-pill">55% territory allocation</span> <span class="scaffold-pill">Two-thirds majority</span></div>
-                        <div style="margin-top: 2px; font-size: 6.6pt; color: #475569;"><em>Stem:</em> "This was vital because..."</div>
+                    <div class="scaffold-vocab-row">
+                        <div class="scaffold-vocab-subrow">
+                            <span class="scaffold-badge" style="background: #fef3c7; color: #92400e;">Specification Fact Bank</span>
+                            <div class="scaffold-pills-list">
+                                <span class="scaffold-pill">29 Nov 1947 vote</span><span class="scaffold-pill">UN General Assembly two-thirds majority</span><span class="scaffold-pill">Partition of Palestine</span><span class="scaffold-pill">55% Jewish / 44% Arab split</span><span class="scaffold-pill">David Ben-Gurion proclamation (14 May 1948)</span><span class="scaffold-pill">US & Soviet diplomatic recognition</span><span class="scaffold-pill">End of British Mandate</span><span class="scaffold-pill">Outbreak of 1947–48 civil conflict</span>
+                            </div>
+                        </div>
+                        <div class="scaffold-stem-subrow">
+                            <span class="scaffold-stem-label">Analytical Stems:</span>
+                            <span class="scaffold-stem-text"><em>"This was vital because..."</em> · <em>"Furthermore, ..."</em> · <em>"Without this international mandate, ..."</em></span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -1079,27 +1146,39 @@
                     <span class="q-marks">(8)</span>
                 </div>
                 <div class="focus-guidance">
-                    <strong>Examiner Guidance:</strong> Explain why unifying rival paramilitary militias under centralized government command was important for political stability and permanent defense.
+                    <strong>Examiner Guidance:</strong> Explain why unifying rival paramilitary militias under central state command was important both for internal political stability and defending the vulnerable armistice borders in the aftermath of 1948–49.
                 </div>
 
-                <!-- Importance Scaffold Grid -->
-                <div class="importance-scaffold-grid">
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 1 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">Centralised Command: Explain why disbanding independent political militias prevented civil war and unified national defense under cabinet control.</div>
+                <!-- Importance Scaffold Stack -->
+                <div class="importance-scaffold-stack">
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 1 Focus</span>
+                        <span class="scaffold-text">Centralised State Command & Internal Stability: Explain how dissolving rival political militias into a single national army under Ben-Gurion eliminated the risk of factional civil war and subordinated military force to democratic civilian control.</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 2 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">Permanent Border Security: Explain how the standing army established deterrence and fortified settlements against persistent Arab non-recognition.</div>
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 2 Focus</span>
+                        <span class="scaffold-text">Border Defence & Deterrence in the Hostile Aftermath: Explain how the IDF defended the expanded 1949 Green Line through universal conscription and conducted armed reprisal operations against cross-border Fedayeen raids from Gaza.</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Vocabulary &amp; Stems:</span>
-                        <div><span class="scaffold-pill">David Ben-Gurion</span> <span class="scaffold-pill">Order No. 4 (May 1948)</span> <span class="scaffold-pill">Dissolution of Haganah, Irgun, Lehi</span> <span class="scaffold-pill">Altalena affair</span></div>
-                        <div style="margin-top: 2px; font-size: 6.6pt; color: #475569;"><em>Stem:</em> "This ensured that..."</div>
+                    <div class="scaffold-vocab-row">
+                        <div class="scaffold-vocab-subrow">
+                            <span class="scaffold-badge" style="background: #fef3c7; color: #92400e;">Specification Fact Bank</span>
+                            <div class="scaffold-pills-list">
+                                <span class="scaffold-pill">David Ben-Gurion</span><span class="scaffold-pill">Ordinance No. 4 (May 1948)</span><span class="scaffold-pill">Disbanding of Haganah, Irgun & Lehi</span><span class="scaffold-pill">Unified national command</span><span class="scaffold-pill">Universal conscription</span><span class="scaffold-pill">1949 Armistice Green Line</span><span class="scaffold-pill">Border kibbutzim defense</span><span class="scaffold-pill">Fedayeen guerrilla raids (Gaza)</span><span class="scaffold-pill">IDF reprisal policy</span><span class="scaffold-pill">Deterrence vs Arab neighbours</span>
+                            </div>
+                        </div>
+                        <div class="scaffold-stem-subrow">
+                            <span class="scaffold-stem-label">Analytical Stems:</span>
+                            <span class="scaffold-stem-text"><em>"This was important because..."</em> · <em>"Consequently, ..."</em> · <em>"In addition, ..."</em></span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -1167,6 +1246,7 @@
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
 
             </div>
 
@@ -1191,6 +1271,7 @@
                     </div>
                 </div>
                 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -1231,24 +1312,36 @@
                     <strong>Examiner Guidance:</strong> Explain how the displacement of 700,000 refugees and the refusal of Arab states to permit permanent resettlement entrenched regional hostility.
                 </div>
 
-                <!-- Importance Scaffold Grid -->
-                <div class="importance-scaffold-grid">
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 1 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">Entrenched Diplomatic Hostility: Explain how the refugee camps became enduring political symbols preventing Arab states from formally recognizing Israel.</div>
+                <!-- Importance Scaffold Stack -->
+                <div class="importance-scaffold-stack">
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 1 Focus</span>
+                        <span class="scaffold-text">Entrenched Diplomatic Hostility: Explain how the refugee camps became enduring political symbols preventing Arab states from formally recognizing Israel.</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 2 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">Cycle of Border Violence: Explain how displaced refugees formed fedayeen guerrilla cells, launching raids that prompted devastating Israeli military reprisals.</div>
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 2 Focus</span>
+                        <span class="scaffold-text">Cycle of Border Violence: Explain how displaced refugees formed fedayeen guerrilla cells, launching raids that prompted devastating Israeli military reprisals.</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Vocabulary &amp; Stems:</span>
-                        <div><span class="scaffold-pill">700,000 displaced (Nakba)</span> <span class="scaffold-pill">Right of Return (UN Res 194)</span> <span class="scaffold-pill">UNRWA border camps</span> <span class="scaffold-pill">Fedayeen guerrilla raids</span></div>
-                        <div style="margin-top: 2px; font-size: 6.6pt; color: #475569;"><em>Stem:</em> "This was important because..."</div>
+                    <div class="scaffold-vocab-row">
+                        <div class="scaffold-vocab-subrow">
+                            <span class="scaffold-badge" style="background: #fef3c7; color: #92400e;">Specification Fact Bank</span>
+                            <div class="scaffold-pills-list">
+                                <span class="scaffold-pill">700,000 displaced (Nakba)</span><span class="scaffold-pill">Right of Return (UN Res 194)</span><span class="scaffold-pill">UNRWA border camps</span><span class="scaffold-pill">Refusal of permanent resettlement</span><span class="scaffold-pill">Arab League diplomatic boycott</span><span class="scaffold-pill">Fedayeen guerrilla raids</span><span class="scaffold-pill">IDF reprisal operations (Qibya 1953)</span><span class="scaffold-pill">Border militarisation</span>
+                            </div>
+                        </div>
+                        <div class="scaffold-stem-subrow">
+                            <span class="scaffold-stem-label">Analytical Stems:</span>
+                            <span class="scaffold-stem-text"><em>"This was important because..."</em> · <em>"Furthermore, ..."</em> · <em>"This directly hardened attitudes by..."</em></span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -1297,24 +1390,36 @@
                     <strong>Examiner Guidance:</strong> Explain how American financial loans and diplomatic backing enabled the fledgling state to absorb mass immigration and build sovereign infrastructure.
                 </div>
 
-                <!-- Importance Scaffold Grid -->
-                <div class="importance-scaffold-grid">
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 1 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">Economic Survival & Infrastructure: Explain how US grants and loans prevented financial collapse while absorbing one million Jewish refugees.</div>
+                <!-- Importance Scaffold Stack -->
+                <div class="importance-scaffold-stack">
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 1 Focus</span>
+                        <span class="scaffold-text">Economic Survival & Infrastructure: Explain how US grants and loans prevented financial collapse while absorbing one million Jewish refugees.</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Paragraph 2 Focus:</span>
-                        <div style="font-size: 6.8pt; color: #334155;">Strategic Cold War Alignment: Explain how aid deepened as Washington countered growing Soviet influence in Egypt and Syria.</div>
+                    <div class="scaffold-focus-row">
+                        <span class="scaffold-badge">Paragraph 2 Focus</span>
+                        <span class="scaffold-text">Strategic Cold War Alignment: Explain how aid deepened as Washington countered growing Soviet influence in Egypt and Syria.</span>
                     </div>
-                    <div class="importance-scaffold-cell">
-                        <span class="scaffold-label">Vocabulary &amp; Stems:</span>
-                        <div><span class="scaffold-pill">Export-Import Bank loans</span> <span class="scaffold-pill">PL 480 food aid</span> <span class="scaffold-pill">Mass immigration absorption (1m)</span> <span class="scaffold-pill">National Water Carrier</span></div>
-                        <div style="margin-top: 2px; font-size: 6.6pt; color: #475569;"><em>Stem:</em> "Without this relationship, ..."</div>
+                    <div class="scaffold-vocab-row">
+                        <div class="scaffold-vocab-subrow">
+                            <span class="scaffold-badge" style="background: #fef3c7; color: #92400e;">Specification Fact Bank</span>
+                            <div class="scaffold-pills-list">
+                                <span class="scaffold-pill">Export-Import Bank loans ($100m)</span><span class="scaffold-pill">PL 480 food assistance</span><span class="scaffold-pill">1 million immigrant absorption</span><span class="scaffold-pill">National Water Carrier project</span><span class="scaffold-pill">Hawk anti-aircraft missiles (1962)</span><span class="scaffold-pill">Cold War counterweight to Soviet-Egypt ties</span>
+                            </div>
+                        </div>
+                        <div class="scaffold-stem-subrow">
+                            <span class="scaffold-stem-label">Analytical Stems:</span>
+                            <span class="scaffold-stem-text"><em>"This was critical because..."</em> · <em>"Moreover, ..."</em> · <em>"Without American financial support, ..."</em></span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
@@ -1395,6 +1500,10 @@
                 </div>
 
                 <div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
+<div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
 <div class="dotted-line"></div>
