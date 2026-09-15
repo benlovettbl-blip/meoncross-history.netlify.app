@@ -960,7 +960,10 @@ export function initializeApp(unitData) {
         if (container) {
           const allSelects = Array.from(container.querySelectorAll('.cloze-blank-select'));
           const allCorrect = allSelects.every(
-            (s) => s.disabled && (s.value || '').trim().toLowerCase() === (s.dataset.answer || '').trim().toLowerCase()
+            (s) =>
+              s.disabled &&
+              (s.value || '').trim().toLowerCase() ===
+                (s.dataset.answer || '').trim().toLowerCase(),
           );
           if (allCorrect) {
             const successEl = container.querySelector('#cloze-success');
@@ -2357,6 +2360,7 @@ window.openModal = function (src) {
     return;
   }
 
+  // Remove any previously open image modal to prevent duplicates
   const existing = document.getElementById('global-image-modal');
   if (existing) existing.remove();
 
@@ -2367,12 +2371,15 @@ window.openModal = function (src) {
   modal.style.left = '0';
   modal.style.width = '100vw';
   modal.style.height = '100vh';
-  modal.style.backgroundColor = 'rgba(0,0,0,0.88)';
-  modal.style.backdropFilter = 'blur(4px)';
+  modal.style.backgroundColor = 'rgba(15, 23, 42, 0.94)';
+  modal.style.backdropFilter = 'blur(6px)';
+  modal.style.webkitBackdropFilter = 'blur(6px)';
   modal.style.zIndex = '999999';
   modal.style.display = 'flex';
   modal.style.justifyContent = 'center';
   modal.style.alignItems = 'center';
+  modal.style.overflow = 'hidden';
+  modal.style.touchAction = 'none';
   modal.style.cursor = 'default';
 
   const cleanupAndClose = () => {
@@ -2387,6 +2394,7 @@ window.openModal = function (src) {
   };
   window.addEventListener('keydown', onKeyDown);
 
+  // Close Button (Top Right)
   const closeBtn = document.createElement('button');
   closeBtn.setAttribute('aria-label', 'Close Image');
   closeBtn.title = 'Close (Esc)';
@@ -2405,7 +2413,7 @@ window.openModal = function (src) {
   closeBtn.style.display = 'flex';
   closeBtn.style.justifyContent = 'center';
   closeBtn.style.alignItems = 'center';
-  closeBtn.style.zIndex = '1000000';
+  closeBtn.style.zIndex = '1000002';
   closeBtn.style.transition = 'all 0.2s ease';
   closeBtn.onmouseover = () => {
     closeBtn.style.background = 'rgba(239, 68, 68, 0.85)';
@@ -2421,21 +2429,98 @@ window.openModal = function (src) {
   };
   modal.appendChild(closeBtn);
 
+  // Floating Zoom Controls (Top Left) - Specially designed for tablets & laptops
+  const zoomControls = document.createElement('div');
+  zoomControls.style.position = 'absolute';
+  zoomControls.style.top = '20px';
+  zoomControls.style.left = '25px';
+  zoomControls.style.display = 'flex';
+  zoomControls.style.alignItems = 'center';
+  zoomControls.style.gap = '8px';
+  zoomControls.style.background = 'rgba(15, 23, 42, 0.75)';
+  zoomControls.style.backdropFilter = 'blur(8px)';
+  zoomControls.style.webkitBackdropFilter = 'blur(8px)';
+  zoomControls.style.border = '1px solid rgba(255, 255, 255, 0.25)';
+  zoomControls.style.borderRadius = '24px';
+  zoomControls.style.padding = '4px 10px';
+  zoomControls.style.zIndex = '1000002';
+  zoomControls.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
+
+  const zoomOutBtn = document.createElement('button');
+  zoomOutBtn.innerHTML = '<i class="fa-solid fa-minus"></i>';
+  zoomOutBtn.title = 'Zoom Out';
+  zoomOutBtn.style.background = 'none';
+  zoomOutBtn.style.border = 'none';
+  zoomOutBtn.style.color = '#fff';
+  zoomOutBtn.style.cursor = 'pointer';
+  zoomOutBtn.style.padding = '6px 8px';
+  zoomOutBtn.style.fontSize = '0.9rem';
+
+  const zoomLabel = document.createElement('span');
+  zoomLabel.innerText = '100%';
+  zoomLabel.style.color = '#38bdf8';
+  zoomLabel.style.fontSize = '0.8rem';
+  zoomLabel.style.fontWeight = '700';
+  zoomLabel.style.minWidth = '45px';
+  zoomLabel.style.textAlign = 'center';
+  zoomLabel.style.fontFamily = 'monospace';
+
+  const zoomInBtn = document.createElement('button');
+  zoomInBtn.innerHTML = '<i class="fa-solid fa-plus"></i>';
+  zoomInBtn.title = 'Zoom In';
+  zoomInBtn.style.background = 'none';
+  zoomInBtn.style.border = 'none';
+  zoomInBtn.style.color = '#fff';
+  zoomInBtn.style.cursor = 'pointer';
+  zoomInBtn.style.padding = '6px 8px';
+  zoomInBtn.style.fontSize = '0.9rem';
+
+  const resetBtn = document.createElement('button');
+  resetBtn.innerHTML = '<i class="fa-solid fa-rotate-left"></i> Reset';
+  resetBtn.title = 'Reset Zoom';
+  resetBtn.style.background = 'rgba(255,255,255,0.15)';
+  resetBtn.style.border = '1px solid rgba(255,255,255,0.2)';
+  resetBtn.style.borderRadius = '14px';
+  resetBtn.style.color = '#e2e8f0';
+  resetBtn.style.cursor = 'pointer';
+  resetBtn.style.padding = '3px 10px';
+  resetBtn.style.fontSize = '0.75rem';
+  resetBtn.style.fontWeight = '600';
+  resetBtn.style.marginLeft = '4px';
+
+  zoomControls.appendChild(zoomOutBtn);
+  zoomControls.appendChild(zoomLabel);
+  zoomControls.appendChild(zoomInBtn);
+  zoomControls.appendChild(resetBtn);
+  modal.appendChild(zoomControls);
+
+  // Bottom Helper Hint
   const hint = document.createElement('div');
-  hint.innerText = 'Click anywhere or press Esc to close · Scroll to zoom';
+  hint.innerText = 'Pinch, scroll, or use buttons to zoom · Drag to pan · Double-tap to expand';
   hint.style.position = 'absolute';
   hint.style.bottom = '20px';
   hint.style.left = '50%';
   hint.style.transform = 'translateX(-50%)';
-  hint.style.color = 'rgba(255,255,255,0.75)';
-  hint.style.background = 'rgba(0,0,0,0.5)';
-  hint.style.padding = '6px 14px';
+  hint.style.color = 'rgba(255,255,255,0.85)';
+  hint.style.background = 'rgba(0,0,0,0.6)';
+  hint.style.border = '1px solid rgba(255,255,255,0.15)';
+  hint.style.padding = '6px 16px';
   hint.style.borderRadius = '20px';
   hint.style.fontSize = '0.82rem';
   hint.style.letterSpacing = '0.03em';
   hint.style.pointerEvents = 'none';
-  hint.style.zIndex = '1000000';
+  hint.style.zIndex = '1000001';
   modal.appendChild(hint);
+
+  // Image Viewport & Transform State
+  const imgContainer = document.createElement('div');
+  imgContainer.style.width = '100%';
+  imgContainer.style.height = '100%';
+  imgContainer.style.display = 'flex';
+  imgContainer.style.justifyContent = 'center';
+  imgContainer.style.alignItems = 'center';
+  imgContainer.style.overflow = 'hidden';
+  imgContainer.style.position = 'relative';
 
   const img = document.createElement('img');
   img.src = src;
@@ -2444,11 +2529,188 @@ window.openModal = function (src) {
   img.style.objectFit = 'contain';
   img.style.borderRadius = '8px';
   img.style.boxShadow = '0 10px 30px rgba(0,0,0,0.6)';
-  img.style.transition = 'transform 0.1s ease';
+  img.style.transition = 'transform 0.08s ease-out';
+  img.style.userSelect = 'none';
+  img.style.webkitUserSelect = 'none';
   img.style.cursor = 'zoom-in';
+
+  let scale = 1;
+  let posX = 0;
+  let posY = 0;
+  let isDragging = false;
+  let startX = 0;
+  let startY = 0;
+  let hasDragged = false;
+
+  const updateTransform = () => {
+    if (scale <= 1) {
+      scale = 1;
+      posX = 0;
+      posY = 0;
+      img.style.cursor = 'zoom-in';
+      img.style.transform = 'translate(0px, 0px) scale(1)';
+    } else {
+      img.style.cursor = isDragging ? 'grabbing' : 'grab';
+      img.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
+    }
+    zoomLabel.innerText = `${Math.round(scale * 100)}%`;
+  };
+
+  zoomInBtn.onclick = (e) => {
+    e.stopPropagation();
+    scale = Math.min(scale + 0.4, 5);
+    updateTransform();
+  };
+
+  zoomOutBtn.onclick = (e) => {
+    e.stopPropagation();
+    scale = Math.max(scale - 0.4, 1);
+    updateTransform();
+  };
+
+  resetBtn.onclick = (e) => {
+    e.stopPropagation();
+    scale = 1;
+    posX = 0;
+    posY = 0;
+    updateTransform();
+  };
+
+  // Mouse wheel zoom
+  modal.addEventListener(
+    'wheel',
+    (e) => {
+      e.preventDefault();
+      scale += e.deltaY * -0.004;
+      scale = Math.min(Math.max(1, scale), 5);
+      updateTransform();
+    },
+    { passive: false },
+  );
+
+  // Mouse drag panning when zoomed in
+  img.addEventListener('mousedown', (e) => {
+    if (scale > 1) {
+      e.preventDefault();
+      isDragging = true;
+      hasDragged = false;
+      startX = e.clientX - posX;
+      startY = e.clientY - posY;
+      img.style.cursor = 'grabbing';
+    }
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (isDragging) {
+      hasDragged = true;
+      posX = e.clientX - startX;
+      posY = e.clientY - startY;
+      updateTransform();
+    }
+  });
+
+  window.addEventListener('mouseup', () => {
+    if (isDragging) {
+      isDragging = false;
+      updateTransform();
+    }
+  });
+
+  // Touch gestures for tablet/touchscreen (Pinch to zoom + 1-finger pan + double tap)
+  let initialPinchDistance = null;
+  let initialScale = 1;
+  let lastTapTime = 0;
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  imgContainer.addEventListener(
+    'touchstart',
+    (e) => {
+      if (e.touches.length === 2) {
+        initialPinchDistance = Math.hypot(
+          e.touches[0].clientX - e.touches[1].clientX,
+          e.touches[0].clientY - e.touches[1].clientY,
+        );
+        initialScale = scale;
+      } else if (e.touches.length === 1) {
+        touchStartX = e.touches[0].clientX - posX;
+        touchStartY = e.touches[0].clientY - posY;
+        hasDragged = false;
+
+        const now = Date.now();
+        if (now - lastTapTime < 300) {
+          if (scale > 1) {
+            scale = 1;
+            posX = 0;
+            posY = 0;
+          } else {
+            scale = 2.4;
+          }
+          updateTransform();
+          lastTapTime = 0;
+        } else {
+          lastTapTime = now;
+        }
+      }
+    },
+    { passive: true },
+  );
+
+  imgContainer.addEventListener(
+    'touchmove',
+    (e) => {
+      if (e.touches.length === 2 && initialPinchDistance) {
+        e.preventDefault();
+        const currentDistance = Math.hypot(
+          e.touches[0].clientX - e.touches[1].clientX,
+          e.touches[0].clientY - e.touches[1].clientY,
+        );
+        const diff = currentDistance / initialPinchDistance;
+        scale = Math.min(Math.max(1, initialScale * diff), 5);
+        updateTransform();
+      } else if (e.touches.length === 1 && scale > 1) {
+        e.preventDefault();
+        hasDragged = true;
+        posX = e.touches[0].clientX - touchStartX;
+        posY = e.touches[0].clientY - touchStartY;
+        updateTransform();
+      }
+    },
+    { passive: false },
+  );
+
+  imgContainer.addEventListener('touchend', (e) => {
+    if (e.touches.length < 2) {
+      initialPinchDistance = null;
+    }
+  });
+
+  modal.onclick = (e) => {
+    if (
+      e.target === closeBtn ||
+      closeBtn.contains(e.target) ||
+      zoomControls.contains(e.target) ||
+      hasDragged
+    ) {
+      hasDragged = false;
+      return;
+    }
+    if (e.target === img) {
+      if (scale === 1) {
+        scale = 2.2;
+        updateTransform();
+      } else {
+        scale = 1;
+        updateTransform();
+      }
+      return;
+    }
+    cleanupAndClose();
+  };
 
   img.onerror = () => {
     img.style.display = 'none';
+    zoomControls.style.display = 'none';
     const errBox = document.createElement('div');
     errBox.style.background = '#ffffff';
     errBox.style.padding = '30px';
@@ -2469,36 +2731,8 @@ window.openModal = function (src) {
     modal.appendChild(errBox);
   };
 
-  let scale = 1;
-  modal.addEventListener('wheel', (e) => {
-    e.preventDefault();
-    scale += e.deltaY * -0.005;
-    scale = Math.min(Math.max(1, scale), 5);
-    const rect = img.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-    if (scale === 1) {
-      img.style.transformOrigin = 'center center';
-      img.style.cursor = 'zoom-in';
-    } else if (e.deltaY < 0) {
-      img.style.transformOrigin = `${x}% ${y}%`;
-      img.style.cursor = 'zoom-out';
-    }
-    img.style.transform = `scale(${scale})`;
-  });
-
-  modal.onclick = (e) => {
-    if (e.target === closeBtn || closeBtn.contains(e.target)) return;
-    if (scale > 1) {
-      scale = 1;
-      img.style.transform = `scale(1)`;
-      img.style.cursor = 'zoom-in';
-    } else {
-      cleanupAndClose();
-    }
-  };
-
-  modal.appendChild(img);
+  imgContainer.appendChild(img);
+  modal.appendChild(imgContainer);
   document.body.appendChild(modal);
 };
 

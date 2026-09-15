@@ -38638,8 +38638,8 @@
                 "model_answer": "Students should identify territories such as Alsace-Lorraine (now back in France) and East Prussia/Silesia/Pomerania (now in Poland and Russia)."
               }
             ],
-            "shelfmark": "Königlich Preußische Landesaufnahme / Cartographic Record 1871",
-            "citation": "Königlich Preußische Landesaufnahme (Berlin, 1871); Comparative Historical Atlas of Europe",
+            "shelfmark": "Comparative Cartographic Study",
+            "citation": "Comparative Historical Cartography: German Empire (1871) boundary surveys paired with modern European geopolitical borders.",
             "context": "In January 1871, following Prussia's swift victory over France in the Franco-Prussian War, Otto von Bismarck united thirty-nine sovereign German states into a single unified empire dominated by Prussia. This cartographic comparison reveals the massive geopolitical footprint of the new state in the very heart of Central Europe, stretching from Alsace-Lorraine in the west to East Prussia in the east. The sudden arrival of a heavily industrialized empire with an army of over one million men completely shattered the traditional European balance of power established after the Napoleonic Wars. **Hinge Question:** How did the central geographical position and massive borders of the newly unified German Empire create immediate security dilemmas for both Germany and its neighbors?"
           },
           "vocab": [
@@ -38668,8 +38668,8 @@
               "src": "/units/great_war/assets/alsace_lorraine_1871_map.png",
               "caption": "Map showing the strategic borderland of Alsace-Lorraine (Reichsland Elsaß-Lothringen), seized from France by Otto von Bismarck following the Franco-Prussian War of 1870–71.",
               "context": "Following their victory in 1871, the Germans annexed Alsace and northern Lorraine. This was an economic and psychological catastrophe for France: the region contained 80% of France’s iron ore, vital coal deposits, and major textile factories, while placing 1.5 million French citizens under German military control. For the next 44 years, French school children were taught that Alsace-Lorraine was a \"stolen child,\" and the statue representing Strasbourg in Paris was draped in black mourning cloth until 1918. This annexation made permanent peace between France and Germany impossible, driving France into the arms of Russia and Britain and creating the rigid alliance system of 1914. **Hinge Question:** Why did Bismarck’s annexation of Alsace-Lorraine make a future war between France and Germany virtually inevitable?",
-              "shelfmark": "Reichsamt für Landesaufnahme, 1871",
-              "citation": "Treaty of Frankfurt Boundary Commission / Reichsland Elsaß-Lothringen Geodetic Survey (1871)"
+              "shelfmark": "Curriculum Reference Cartography",
+              "citation": "Historical reference cartography illustrating the border changes and territorial cessions under the Treaty of Frankfurt (1871)."
             },
             {
               "title": "Source B: The Black Spot (La Tache Noire) by Albert Bettannier (1887)",
@@ -39171,9 +39171,9 @@
             {
               "title": "Map A: The Partition of Africa at the Outbreak of War (1914)",
               "src": "/units/great_war/assets/map_lesson2.png",
-              "caption": "Official 1914 cartographic survey illustrating the complete division of the African continent following thirty years of imperial expansion under the Berlin Act of 1885.",
-              "shelfmark": "War Office Geographical Section, General Staff No. 2639",
-              "citation": "British General Staff, Geographical Section No. 2639 (London: War Office, 1914)",
+              "caption": "Curriculum reference map illustrating the complete division of the African continent following thirty years of imperial expansion under the Berlin Act of 1885.",
+              "shelfmark": "Curriculum Reference Cartography",
+              "citation": "Curriculum Reference Cartography based on colonial territorial boundaries established following the 1884–85 Berlin Conference.",
               "context": "Between 1881 and 1914, European powers invaded and colonized 90% of the African continent during the 'Scramble for Africa'. At the Berlin Conference of 1884–85, Bismarck mediated the partition of territory to prevent war between European empires, establishing the principle of 'effective occupation'. By 1914, Britain held a vast continuous north-south corridor from Egypt to South Africa, France dominated West and Equatorial Africa, while Germany controlled Tanganyika, South-West Africa, Cameroon, and Togoland. Clashes over African territory—such as the Fashoda Incident (1898) and the First and Second Moroccan Crises (1905, 1911)—brought the great powers to the brink of war and solidified the Anglo-French Entente Cordiale. **Hinge Question:** To what extent did imperial rivalry in Africa accelerate the division of Europe into hostile military alliance blocs?"
             },
             {
@@ -39612,11 +39612,11 @@
           "title": "Why did a battleship building contest destroy Anglo-German relations?",
           "sources": [
             {
-              "title": "Map A: The North Sea & Naval Chokepoints (Hydrographic Survey)",
+              "title": "Map A: The North Sea & Naval Chokepoints (Strategic Hydrographic Map)",
               "src": "/units/great_war/assets/map_lesson3.png",
-              "caption": "Strategic hydrographic chart of the North Sea showing the shallow German Bight, the English Channel bottleneck, and the northern naval blockade patrol lines between Scotland and Norway.",
-              "shelfmark": "Admiralty Hydrographic Office Chart No. 2182",
-              "citation": "British Admiralty Hydrographic Office, General Chart of the North Sea, 1914",
+              "caption": "Strategic hydrographic reference map of the North Sea showing the shallow German Bight, the English Channel bottleneck, and the northern naval blockade patrol lines between Scotland and Norway.",
+              "shelfmark": "Curriculum Reference Cartography",
+              "citation": "Curriculum Reference Cartography based on British Admiralty North Sea naval patrol zones and strategic choke points (1914).",
               "context": "Geography dictated naval strategy in the Anglo-German arms race. The German High Seas Fleet was trapped in the shallow waters of the German Bight behind Heligoland, with only two exits into the open Atlantic: the heavily defended English Channel and the northern choke point between the Orkney Islands and Norway. By stationing the British Grand Fleet at Scapa Flow in Scotland, the Royal Navy could enforce a distant blockade on Germany without risking its battleships near German minefields and U-boats. This blockade would eventually starve Germany of vital food and fertilizer imports during World War I. **Hinge Question:** How did the natural geography of the North Sea give Britain a decisive strategic advantage over the German fleet?"
             }
           ],
@@ -40051,18 +40051,18 @@
             {
               "title": "Diagram A: The European Alliance System Matrix (1879–1914)",
               "src": "/units/great_war/assets/alliance_system.svg",
-              "caption": "Analytical matrix diagram mapping the interlocking bilateral and multilateral mutual defence pacts dividing Europe into the Triple Alliance and Triple Entente.",
-              "shelfmark": "Foreign Office Historical Section Cartography FO 899/4",
-              "citation": "Historical Cartography Archive, Meoncross Educational Foundation (Based on British Foreign Office State Papers, 1879–1914)",
+              "caption": "Curriculum analytical matrix mapping the interlocking bilateral and multilateral mutual defence pacts dividing Europe into the Triple Alliance and Triple Entente.",
+              "shelfmark": "Curriculum Analytical Diagram",
+              "citation": "Curriculum analytical diagram mapping the bilateral and multilateral mutual defence pacts (1879–1914).",
               "context": "Between the Dual Alliance of 1879 and the Anglo-Russian Convention of 1907, Europe gradually crystallized into two armed camps: the Triple Alliance (Germany, Austria-Hungary, Italy) and the Triple Entente (Britain, France, Russia). While statesmen argued that balance-of-power alliances would deter any single power from risking war, the system removed flexibility. Each power felt bound to support its ally even in reckless ventures—such as Germany backing Austria-Hungary with the 'blank cheque'—for fear of losing its only partner and facing encirclement. **Hinge Question:** Why did the formation of the Triple Entente convince German military planners that war was inevitable sooner rather than later?"
             },
             {
               "title": "Map A: European Military Alliance Blocs & Ethno-National Minorities (1914)",
               "src": "/units/great_war/assets/map_lesson4.png",
-              "caption": "Geopolitical map of Europe in 1914 showing the central bloc of the Central Powers (brown) surrounded by the Triple Entente (green), highlighting the volatile ethnic fault lines within Austria-Hungary.",
+              "caption": "Geopolitical reference map of Europe in 1914 showing the central bloc of the Central Powers (brown) surrounded by the Triple Entente (green), highlighting the volatile ethnic fault lines within Austria-Hungary.",
               "question": "Enquiry: Look at the geographical position of Germany and Austria-Hungary. Why would they feel encircled by the Triple Entente?",
-              "shelfmark": "Bartholomew's Comparative Map of Europe, Geodetic Survey 1914",
-              "citation": "John Bartholomew & Co., The Edinburgh Geographical Institute (1914 Edition)",
+              "shelfmark": "Curriculum Reference Cartography",
+              "citation": "Curriculum reference map illustrating the Triple Entente and Central Powers European military alliance blocs in 1914.",
               "context": "This map illustrates the profound strategic vulnerability felt in Berlin and Vienna. Positioned in the center of Europe, Germany and Austria-Hungary faced a two-front war against France in the west and the Russian Empire in the east. At the same time, Austria-Hungary was an empire of eleven distinct nationalities (Germans, Hungarians, Czechs, Slovaks, Poles, Ukrainians, Croats, Serbs, Slovenes, Romanians, and Italians), many of whom yearned for independence. If Serbia succeeded in uniting South Slavs, Austria-Hungary would disintegrate. This internal fragility made Austro-Hungarian leaders desperate to crush Serbian nationalism once and for all. **Hinge Question:** How did the internal ethnic instability of Austria-Hungary make its alliance with Germany extraordinarily dangerous for European peace?"
             }
           ],
@@ -40476,27 +40476,27 @@
           "title": "Why did a single assassination in Sarajevo ignite a World War?",
           "sources": [
             {
-              "title": "Diagram A: The July Crisis Domino Effect (28 June – 4 August 1914)",
+              "title": "Diagram A: The July Crisis Domino Sequence (1914)",
               "src": "/units/great_war/assets/july_crisis.svg",
-              "caption": "Chronological causal diagram illustrating the thirty-seven days of escalating ultimatums and mobilisations following the assassination of Archduke Franz Ferdinand.",
-              "shelfmark": "Austro-Hungarian July Ultimatum & Diplomatic Dispatch Archive",
-              "citation": "Diplomatic History Archive, Meoncross Educational Foundation (Based on British Blue Book & German White Book Dispatches, 1914)",
+              "caption": "Curriculum causal flowchart illustrating the thirty-seven days of escalating ultimatums and mobilisations following the assassination of Archduke Franz Ferdinand.",
+              "shelfmark": "Curriculum Analytical Flowchart",
+              "citation": "Curriculum causal chronology tracing the escalation of the July Crisis from the Sarajevo assassination to the outbreak of war.",
               "context": "The assassination of Franz Ferdinand on 28 June 1914 did not immediately cause war. For three weeks, European diplomacy seemed normal. But behind the scenes, Austria-Hungary secured a 'blank cheque' of unconditional support from Germany on 5 July, and on 23 July issued an impossible 48-hour ultimatum to Serbia. When Serbia accepted nine of the ten points but rejected Austro-Hungarian officials running investigations inside Serbia, Austria declared war on 28 July and bombarded Belgrade. Russia mobilized to protect Serbia; Germany declared war on Russia and France; and Germany's invasion of neutral Belgium on 4 August triggered Britain's entry into the war. **Hinge Question:** At which specific point during the July Crisis could the escalation to a world war have been averted?"
             },
             {
               "title": "Map A: The Balkan Peninsula & The Frontiers of 1914",
               "src": "/units/great_war/assets/balkans_1914_simple_map.png",
-              "caption": "Cartographic diagram showing the expansion of Serbia and the Balkan states following the Balkan Wars of 1912–13, bordering the Austro-Hungarian provinces of Bosnia and Herzegovina.",
-              "shelfmark": "Austro-Hungarian Militärgeographisches Institut 1913 / General Staff Chart",
-              "citation": "Militärgeographisches Institut Wien, Balkankarte 1913 (Historical Military Survey)",
+              "caption": "Cartographic reference map showing the expansion of Serbia and the Balkan states following the Balkan Wars of 1912–13, bordering the Austro-Hungarian provinces of Bosnia and Herzegovina.",
+              "shelfmark": "Curriculum Reference Cartography",
+              "citation": "Historical reference cartography illustrating the borders of Serbia, Bulgaria, Greece, and Ottoman Thrace following the Balkan Wars (1912–13).",
               "context": "Known as the 'powder keg of Europe', the Balkan Peninsula was the meeting point of three decaying empires: the Ottoman Empire, the Austro-Hungarian Empire, and the Russian Empire. The annexation of Bosnia and Herzegovina by Austria-Hungary in 1908 provoked deep outrage in Serbia, which hoped to unite all South Slavic peoples into a Greater Serbia. Russia, humiliated by having to back down during the 1908 Bosnian Crisis, vowed never to abandon Serbia again. By 1914, Serbia's military victories in the Balkan Wars made it appear as a grave mortal danger to Austria-Hungary's southern frontier. **Hinge Question:** Why did the geographical expansion of Serbia in 1912–13 terrify Austro-Hungarian leaders in Vienna?"
             },
             {
               "title": "Map B: Forensic Crime Scene Plan — Sarajevo, 28 June 1914: The Fatal Route",
               "src": "/units/great_war/assets/map_sarajevo_route.jpg",
-              "caption": "Official contemporary police sketch map of the Franz Josef Street intersection along the Appel Quay, marking the exact positions of the assassins and the fateful wrong turn taken by the Archduke's chauffeur.",
-              "shelfmark": "Sarajevo Police & Court Archive Acc. 1914-FJ-6",
-              "citation": "Landesgericht Sarajevo, Untersuchungsakten zum Attentat vom 28. Juni 1914, Akte Nr. 1914-FJ-6",
+              "caption": "Historical schematic plan of the Franz Josef Street intersection along the Appel Quay, marking the positions of the assassins and the fateful wrong turn taken by the Archduke's chauffeur.",
+              "shelfmark": "Historical Forensic Plan",
+              "citation": "Historical schematic crime scene plan of Franz Josef Street and Appel Quay, Sarajevo (28 June 1914).",
               "context": "This forensic map was compiled by the Sarajevo police following the assassination of Archduke Franz Ferdinand and his wife Sophie. The route followed the Appel Quay along the Miljacka River. After an initial bomb thrown by Nedeljko Čabrinović bounced off the car and exploded behind them, the Archduke decided to visit wounded officers in hospital. Crucially, the motorcade's Czech chauffeur, Leopold Lojka, was never informed of the change of route. When Lojka mistakenly turned right onto Franz Josef Street, Governor Potiorek shouted at him to stop. Lojka braked directly in front of Schiller's delicatessen, where nineteen-year-old Gavrilo Princip was standing just five feet away. Princip drew his Browning FN Model 1910 semi-automatic pistol and fired two shots that ignited the First World War. **Hinge Question:** How does the police sketch map demonstrate the role of pure chance versus careful terrorist conspiracy in the assassination of Franz Ferdinand?"
             }
           ],

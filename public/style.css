@@ -3821,6 +3821,92 @@ body.sen-mode .narrative-chunk.reading-highlight {
   background: #f8fafc;
 }
 
+/* ==========================================================================
+   ARCHIVAL VISUAL SOURCE SPLIT LAYOUT (2-COLUMN RESPONSIVE)
+   Places visual source on the left (~45-48%) and provenance/caption on the right
+   ========================================================================== */
+.archival-source-split-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 20px;
+  margin: 16px 0;
+}
+
+.archival-source-media-col {
+  flex: 0 0 46%;
+  max-width: 48%;
+  background: #0f172a;
+  border-radius: 6px;
+  padding: 10px;
+  border: 1px solid #334155;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.archival-source-media-col img {
+  max-height: 380px;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  cursor: zoom-in;
+  transition: transform 0.2s ease;
+}
+
+.archival-source-media-col img:hover {
+  transform: scale(1.015);
+}
+
+.archival-source-inspect-badge {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(15, 23, 42, 0.85);
+  color: #cbd5e1;
+  font-family:
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 3px;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+}
+
+.archival-source-details-col {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .archival-source-split-layout {
+    flex-direction: column;
+  }
+  .archival-source-media-col {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  .archival-source-details-col {
+    flex: 1 1 100%;
+  }
+}
+
 /* Suppress decorative/colored FontAwesome icons in academic historical source boxes and teacher commentary */
 .archival-source-box i.fa-solid:not(.fa-print):not(.fa-volume-high):not(.fa-stop),
 .gcse-source-container i.fa-file-lines,

@@ -1894,7 +1894,7 @@ allDirs.forEach((unitId) => {
 
         if (vocabStyle === 0) {
           // Style 0: The Odd One Out
-          html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;"><strong>The Odd One Out:</strong> Select THREE terms that share a close historical connection. Identify which ONE remaining term is the 'Odd One Out' in this lesson, and explain your historical reasoning:</p>`;
+          html += `<p style="font-style: italic; font-size: 9.5pt; margin: 2px 0 5px 0;"><strong>The Odd One Out:</strong> Circle ONE term that does not belong with the others. Explain your reasoning: What historical connection links the other terms, and why is your chosen term different?</p>`;
           html += wordBox;
           html += `<div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div><div class="task-lines"></div>`;
         } else if (vocabStyle === 1) {

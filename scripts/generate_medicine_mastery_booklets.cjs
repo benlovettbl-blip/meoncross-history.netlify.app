@@ -2,9 +2,9 @@
  * generate_medicine_mastery_booklets.cjs
  *
  * Compiles print-perfect Edexcel GCSE (9–1) History Paper 1 Mastery Revision Booklets:
- * 1. Booklet 1: Section A — The British Sector of the Western Front, 1914–1918 (12 Pages)
+ * 1. Booklet 1: Section A — The British Sector of the Western Front, 1914–1918 (11 Pages)
  * 2. Booklet 2: Section B — Medicine in Britain, c1250–present (Thematic Master — 24 Pages)
- * 3. Master Volume: Paper 1 Complete Mastery Volume (36 Pages)
+ * 3. Master Volume: Paper 1 Complete Mastery Volume (35 Pages)
  *
  * Implements:
  * - Space-saving Answers-Only Bank (Pages 4 & 5) with micro-checkboxes [ ✓ ] [ ✗ ]
@@ -17,7 +17,7 @@
  *     - 4-mark Cross-Period Similarity / Difference (Q3)
  *     - 12-mark Multi-Factor "Explain Why" with stimulus points (Q4)
  *     - 16+4-mark Cross-Era Statement Essay with criteria-led judgement (Q5/Q6)
- * - Generous ruled writing lines to eliminate empty lower halves
+ * - Authentic Edexcel 8mm exam ruled lines to eliminate orphaned continuation pages
  * - High-speed Puppeteer PDF generation with automated zero-overflow guarantee
  */
 
@@ -53,9 +53,9 @@ const COMMON_CSS = `
   
   .page-footer { font-size: 6.5pt; color: #94a3b8; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 3px; margin-top: 4px; display: flex; justify-content: space-between; }
   
-  /* Lined paper simulation */
-  .writing-line { height: 15px; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; }
-  .writing-line.starter { color: #475569; font-style: italic; font-size: 7.5pt; display: flex; align-items: flex-end; padding-bottom: 2px; }
+  /* Authentic Edexcel 8mm exam ruled lines */
+  .writing-line { height: 8mm; border-bottom: 1px solid #cbd5e1; margin-bottom: 0; box-sizing: border-box; }
+  .writing-line.starter { color: #475569; font-style: italic; font-size: 7.5pt; display: flex; align-items: flex-end; padding-bottom: 1.5px; }
   
   /* Answers-Only Bank (Green Pages) */
   .ans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8px 6px; font-size: 6.6pt; line-height: 1.15; flex: 1 1 auto; }
@@ -155,9 +155,9 @@ async function run() {
   console.log(`   Modern: ${modQuestions.length} questions`);
 
   // =========================================================================
-  // BUILD BOOKLET 1: SECTION A — THE WESTERN FRONT (12 PAGES)
+  // BUILD BOOKLET 1: SECTION A — THE WESTERN FRONT (11 PAGES)
   // =========================================================================
-  console.log('\n📄 Compiling 12-Page Mastery Booklet for Section A (Western Front)...');
+  console.log('\n📄 Compiling 11-Page Mastery Booklet for Section A (Western Front)...');
 
   const wfQPage1 = wfQuestions.slice(0, 50);
   const wfQPage2 = wfQuestions.slice(50, 100);
@@ -182,7 +182,7 @@ async function run() {
             <div style="background: linear-gradient(135deg, #78350f 0%, #1e293b 100%); color: white; padding: 12px 16px; border-radius: 6px; margin-bottom: 8px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 4px; margin-bottom: 6px;">
                     <span style="font-size: 7.5pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #fde68a;">Pearson Edexcel GCSE (9–1) History · Paper 1 (1HI0/11)</span>
-                    <span style="font-size: 7pt; background: #b45309; padding: 2px 6px; border-radius: 3px; font-weight: 700;">Section A 12-Page Pack</span>
+                    <span style="font-size: 7pt; background: #b45309; padding: 2px 6px; border-radius: 3px; font-weight: 700;">Section A 11-Page Pack</span>
                 </div>
                 <h1 style="margin: 0; font-size: 13.5pt; font-weight: 800; line-height: 1.2;">The British Sector of the Western Front, 1914–1918</h1>
                 <p style="margin: 3px 0 0 0; font-size: 8pt; color: #fef3c7;">The Historic Environment · Injuries, Treatment and the Trenches · Complete Mastery &amp; Source Studio</p>
@@ -295,7 +295,7 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · Pearson Edexcel GCSE History</span>
             <span>Western Front Historic Environment Complete Mastery Booklet</span>
-            <span>Page 1 of 12</span>
+            <span>Page 1 of 11</span>
         </div>
     </div>
 
@@ -332,7 +332,7 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · Knowledge Vault Questions</span>
             <span>Turn page for Vault Part 2 (Questions 51 to 100)</span>
-            <span>Page 2 of 12</span>
+            <span>Page 2 of 11</span>
         </div>
     </div>
 
@@ -369,7 +369,7 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · Knowledge Vault Questions</span>
             <span>Turn page for Official Mark Scheme Answers</span>
-            <span>Page 3 of 12</span>
+            <span>Page 3 of 11</span>
         </div>
     </div>
 
@@ -409,7 +409,7 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · Official Mark Scheme</span>
             <span>Score checked items and log on Front Cover Tracker</span>
-            <span>Page 4 of 12</span>
+            <span>Page 4 of 11</span>
         </div>
     </div>
 
@@ -449,7 +449,7 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · Official Mark Scheme</span>
             <span>Round 1 Exam Practice begins on Page 6</span>
-            <span>Page 5 of 12</span>
+            <span>Page 5 of 11</span>
         </div>
     </div>
 
@@ -540,7 +540,7 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · Round 1 Stepped Ladder</span>
             <span>Section A · Turn page for Question 2(a) 8-Mark Source Utility</span>
-            <span>Page 6 of 12</span>
+            <span>Page 6 of 11</span>
         </div>
     </div>
 
@@ -615,7 +615,7 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · Round 1 Stepped Ladder</span>
             <span>Section A · Round 2 Dual-Track begins on Page 8</span>
-            <span>Page 7 of 12</span>
+            <span>Page 7 of 11</span>
         </div>
     </div>
 
@@ -693,7 +693,7 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · Round 2 Dual Track</span>
             <span>Section A · Turn page for Question 2(a) Source Utility Masterclass</span>
-            <span>Page 8 of 12</span>
+            <span>Page 8 of 11</span>
         </div>
     </div>
 
@@ -767,138 +767,62 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · Round 2 Dual Track</span>
             <span>Section A · Round 3 Exam Simulation begins on Page 10</span>
-            <span>Page 9 of 12</span>
+            <span>Page 9 of 11</span>
         </div>
     </div>
 
     <!-- ============================================================= -->
-    <!-- PAGE 10: ROUND 3 — THE PLANNING ENGINE ROOM                   -->
+    <!-- PAGE 10: ROUND 3 — TIMED EXAM SIMULATION & PRE-FLIGHT COCKPIT -->
     <!-- ============================================================= -->
     <div class="page">
         <div>
             <div class="page-header">
                 <div class="header-left">
                     <h1>Section A: The Historic Environment</h1>
-                    <p>Round 3: The Planning Engine Room · Deconstruction Matrix (Plan here, write on Page 11)</p>
-                </div>
-                <span class="header-tag" style="background: #dc2626;">Round 3: Engine Room</span>
-            </div>
-
-            <!-- Pre-Flight Planning Grid for Section A -->
-            <div style="margin-bottom: 6px;">
-                <strong style="font-size: 7.8pt; color: #991b1b;">1. Question 1 Features Selector:</strong>
-                <table class="plan-table">
-                    <tr>
-                        <th style="width: 30%;">Exam Prompt</th>
-                        <th style="width: 35%;">Feature 1 (Core Concept)</th>
-                        <th style="width: 35%;">Supporting Specific Fact / Detail (AO1)</th>
-                    </tr>
-                    <tr>
-                        <td>Q1(a) Underground Hospital at Arras</td>
-                        <td>Built into chalk quarries; fully equipped</td>
-                        <td>700 beds, running water, electricity, operating theatre, mortuary.</td>
-                    </tr>
-                    <tr>
-                        <td>Q1(b) Blood Transfusion at Cambrai</td>
-                        <td>First large-scale indirect blood bank (1917)</td>
-                        <td>Oswald Robertson used sodium citrate/dextrose; treated 20 severely wounded men.</td>
-                    </tr>
-                </table>
-            </div>
-
-            <div style="margin-bottom: 6px;">
-                <strong style="font-size: 7.8pt; color: #991b1b;">2. Question 2(a) Source Utility Planning Grid:</strong>
-                <table class="plan-table">
-                    <tr>
-                        <th style="width: 20%;">Source</th>
-                        <th style="width: 40%;">Content Knowledge (What it reveals)</th>
-                        <th style="width: 40%;">Provenance Analysis (NOP &amp; Evaluation)</th>
-                    </tr>
-                    <tr>
-                        <td>Source A (Medical)</td>
-                        <td>Specific wound types (shrapnel, compound fracture, gangrene)</td>
-                        <td>Doctor/nurse eyewitness account; high clinical validity but localized.</td>
-                    </tr>
-                    <tr>
-                        <td>Source B (Soldier)</td>
-                        <td>Stretcher bearer delays in mud, shell craters, shell shock</td>
-                        <td>Infantry diary; emotional impact; subject to wartime censorship.</td>
-                    </tr>
-                </table>
-            </div>
-
-            <div style="margin-bottom: 6px;">
-                <strong style="font-size: 7.8pt; color: #991b1b;">3. Question 2(b) Follow-Up Pre-Flight Selector:</strong>
-                <table class="plan-table">
-                    <tr>
-                        <th style="width: 25%;">Detail to Quote</th>
-                        <th style="width: 25%;">Targeted Question</th>
-                        <th style="width: 25%;">Authentic Source Type</th>
-                        <th style="width: 25%;">How it Answers</th>
-                    </tr>
-                    <tr>
-                        <td>Exact phrase about delays in stretcher evacuation</td>
-                        <td>What was the average time taken from RAP to CCS in the Ypres salient?</td>
-                        <td>RAMC Field Ambulance Section War Diaries (WO 95)</td>
-                        <td>Provides recorded times of stretcher bearer transfers across muddy terrain.</td>
-                    </tr>
-                </table>
-            </div>
-
-            <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 4px; padding: 4px 8px; font-size: 6.8pt; color: #991b1b;">
-                <strong>📋 PRE-FLIGHT AUDIT CHECKLIST:</strong> &nbsp;
-                [ ] Did I state TWO separate features for Q1? &nbsp;&nbsp;
-                [ ] Did I analyze BOTH content and provenance for Sources A &amp; B? &nbsp;&nbsp;
-                [ ] Is my Q2(b) source a specific historical record (not 'the internet')?
-            </div>
-        </div>
-
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Round 3 Engine Room</span>
-            <span>Section A · Execute continuous prose on Page 11</span>
-            <span>Page 10 of 12</span>
-        </div>
-    </div>
-
-    <!-- ============================================================= -->
-    <!-- PAGE 11: ROUND 3 — THE EXAM PITCH (SECTION A EXAM SIMULATION) -->
-    <!-- ============================================================= -->
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Section A: The Historic Environment</h1>
-                    <p>Round 3: The Exam Pitch · Authentic Edexcel Section A Simulation (16 Marks · 25 Mins)</p>
+                    <p>Round 3: Timed Exam Simulation &amp; Pre-Flight Cockpit (16 Marks · 25 Mins)</p>
                 </div>
                 <span class="header-tag" style="background: #dc2626;">Timed Exam Pitch</span>
             </div>
 
-            <div style="background: #f1f5f9; border: 1.5px solid #475569; border-radius: 4px; padding: 4px 8px; font-size: 6.8pt; margin-bottom: 6px; display: flex; justify-content: space-between;">
-                <div><strong>AO1 Knowledge:</strong> Precise names, locations (Ypres, Somme, Cambrai), equipment, and dates.</div>
-                <div><strong>AO3 Sources:</strong> Balanced analysis of utility using content, contextual knowledge, and provenance.</div>
+            <!-- Pre-Flight Cockpit Banner -->
+            <div style="background: #fef2f2; border: 1.5px solid #b91c1c; border-radius: 4px; padding: 4px 8px; font-size: 6.8pt; margin-bottom: 5px;">
+                <div style="font-weight: 800; color: #991b1b; text-transform: uppercase; margin-bottom: 2px; display: flex; justify-content: space-between;">
+                    <span>⚡ Pre-Flight Planning Engine (16 Marks · 25 Mins)</span>
+                    <span>Edexcel Option 11 Blueprint</span>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; line-height: 1.25;">
+                    <div style="background: #fff; border: 1px solid #fecaca; border-radius: 3px; padding: 3px 5px;">
+                        <strong style="color: #991b1b; display: block;">1. Q1 Features (4m):</strong>
+                        F-D Formula: 1 feature + 1 specific fact. (e.g. Arras: 700 beds/electricity; Cambrai: Robertson blood bank).
+                    </div>
+                    <div style="background: #fff; border: 1px solid #fecaca; border-radius: 3px; padding: 3px 5px;">
+                        <strong style="color: #991b1b; display: block;">2. Q2(a) Utility (8m):</strong>
+                        C-O-P Matrix: Content + Own context + Provenance (NOP). Weigh up clinical validity vs wartime typicality.
+                    </div>
+                    <div style="background: #fff; border: 1px solid #fecaca; border-radius: 3px; padding: 3px 5px;">
+                        <strong style="color: #991b1b; display: block;">3. Q2(b) Follow-Up (4m):</strong>
+                        Quote exact detail &rarr; Targeted enquiry question &rarr; Primary archival record (RAMC War Diaries) &rarr; Direct purpose.
+                    </div>
+                </div>
             </div>
 
-            <!-- Continuous Exam Lines for Section A -->
+            <!-- Continuous Exam Pitch for Section A -->
             <div style="padding: 0;">
                 <div class="writing-line starter"><strong>Question 1(a) (2 Marks):</strong> Describe one feature of the underground hospital at Arras: ______________________</div>
                 <div class="writing-line"></div>
-                <div class="writing-line starter" style="margin-top: 3px;"><strong>Question 1(b) (2 Marks):</strong> Describe one feature of blood transfusion techniques on the Western Front: _________</div>
+                <div class="writing-line starter" style="margin-top: 2px;"><strong>Question 1(b) (2 Marks):</strong> Describe one feature of blood transfusion techniques on the Western Front: _________</div>
                 <div class="writing-line"></div>
                 
-                <div class="writing-line starter" style="margin-top: 3px;"><strong>Question 2(a) (8 Marks):</strong> Source A is useful because _____________________________________________________</div>
-                <div class="writing-line"></div>
-                <div class="writing-line"></div>
+                <div class="writing-line starter" style="margin-top: 2px;"><strong>Question 2(a) (8 Marks):</strong> Source A is useful because _____________________________________________________</div>
                 <div class="writing-line"></div>
                 <div class="writing-line starter">Source B is also useful because ____________________________________________________________________</div>
                 <div class="writing-line"></div>
-                <div class="writing-line"></div>
-                <div class="writing-line"></div>
 
-                <div style="font-size: 7.2pt; font-weight: bold; color: #0f172a; margin-top: 4px;">Question 2(b) (4 Marks): Complete the follow-up investigation table below:</div>
+                <div style="font-size: 7.2pt; font-weight: bold; color: #0f172a; margin-top: 3px;">Question 2(b) (4 Marks): Complete the follow-up investigation table below:</div>
                 <table class="follow-up-table" style="margin-top: 2px;">
                     <tr>
                         <td><strong>Detail in Source B to follow up:</strong></td>
-                        <td><div class="writing-line"></div></td>
+                        <td><div class="writing-line starter" style="font-size: 6.8pt; color: #64748b;">Quote exact detail from Source B here...</div></td>
                     </tr>
                     <tr>
                         <td><strong>Question I would ask:</strong></td>
@@ -919,12 +843,12 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · Authentic Exam Pitch</span>
             <span>Section A · Turn page for 100% Spec Coverage Bank</span>
-            <span>Page 11 of 12</span>
+            <span>Page 10 of 11</span>
         </div>
     </div>
 
     <!-- ============================================================= -->
-    <!-- PAGE 12: BACK COVER — 100% SPEC PRACTICE BANK & TRAPS         -->
+    <!-- PAGE 11: BACK COVER — 100% SPEC PRACTICE BANK & TRAPS         -->
     <!-- ============================================================= -->
     <div class="page">
         <div>
@@ -996,7 +920,7 @@ async function run() {
         <div class="page-footer">
             <span>Mr Lovett's History Hub · 100% Specification Bank</span>
             <span>Section A Complete · Score checked items on Page 1</span>
-            <span>Page 12 of 12</span>
+            <span>Page 11 of 11</span>
         </div>
     </div>
 </body>
@@ -1004,7 +928,7 @@ async function run() {
 
   const sectionAPath = path.join(bookletsDir, 'med_mastery_section_a.html');
   fs.writeFileSync(sectionAPath, sectionAHtml, 'utf8');
-  console.log(`   ✅ Saved Section A HTML: med_mastery_section_a.html (12 Pages)`);
+  console.log(`   ✅ Saved Section A HTML: med_mastery_section_a.html (11 Pages)`);
 
   // =========================================================================
   // BUILD BOOKLET 2: SECTION B — MEDICINE c1250–PRESENT (24 PAGES)
@@ -2246,9 +2170,9 @@ async function run() {
   console.log(`   ✅ Saved Section B HTML: med_mastery_section_b.html (24 Pages)`);
 
   // =========================================================================
-  // BUILD MASTER COMPENDIUM: PAPER 1 FULL MASTER VOLUME (36 PAGES)
+  // BUILD MASTER COMPENDIUM: PAPER 1 FULL MASTER VOLUME (35 PAGES)
   // =========================================================================
-  console.log('\n📚 Compiling 36-Page Full Paper 1 Master Volume (med_mastery_FULL.html)...');
+  console.log('\n📚 Compiling 35-Page Full Paper 1 Master Volume (med_mastery_FULL.html)...');
 
   const extractBodyPages = (html) => {
     const bodyMatch = html.match(/<body>([\s\S]*?)<\/body>/i);
@@ -2270,7 +2194,7 @@ async function run() {
 
   const fullHtmlPath = path.join(bookletsDir, 'med_mastery_FULL.html');
   fs.writeFileSync(fullHtmlPath, fullHtmlContent, 'utf8');
-  console.log(`   ✅ Saved Full Master HTML: med_mastery_FULL.html (36 Pages)`);
+  console.log(`   ✅ Saved Full Master HTML: med_mastery_FULL.html (35 Pages)`);
 
   // =========================================================================
   // LAUNCH PUPPETEER TO COMPILE THE 3 PDFs
@@ -2282,7 +2206,7 @@ async function run() {
   });
   const page = await browser.newPage();
 
-  // 1. Section A PDF (12 Pages)
+  // 1. Section A PDF (11 Pages)
   const secAPdfPath = path.join(pdfsDir, 'med_mastery_section_a_western_front.pdf');
   await page.goto(pathToFileURL(sectionAPath).href, { waitUntil: 'networkidle0' });
   await page.pdf({
@@ -2292,7 +2216,7 @@ async function run() {
     printBackground: true,
     margin: { top: '8mm', bottom: '8mm', left: '10mm', right: '10mm' },
   });
-  console.log(`   📕 Exported PDF: med_mastery_section_a_western_front.pdf (12 Pages)`);
+  console.log(`   📕 Exported PDF: med_mastery_section_a_western_front.pdf (11 Pages)`);
 
   // 2. Section B PDF (24 Pages)
   const secBPdfPath = path.join(pdfsDir, 'med_mastery_section_b_thematic_study.pdf');
@@ -2306,7 +2230,7 @@ async function run() {
   });
   console.log(`   📕 Exported PDF: med_mastery_section_b_thematic_study.pdf (24 Pages)`);
 
-  // 3. Full Master PDF (36 Pages)
+  // 3. Full Master PDF (35 Pages)
   const fullPdfPath = path.join(pdfsDir, 'med_mastery_pack_FULL.pdf');
   await page.goto(pathToFileURL(fullHtmlPath).href, { waitUntil: 'networkidle0' });
   await page.pdf({
@@ -2316,7 +2240,7 @@ async function run() {
     printBackground: true,
     margin: { top: '8mm', bottom: '8mm', left: '10mm', right: '10mm' },
   });
-  console.log(`   📕 Exported PDF: med_mastery_pack_FULL.pdf (36 Pages Master Volume)`);
+  console.log(`   📕 Exported PDF: med_mastery_pack_FULL.pdf (35 Pages Master Volume)`);
 
   // Sync to public/pdfs/ root
   fs.copyFileSync(secAPdfPath, path.join(rootPdfsDir, 'med_mastery_section_a_western_front.pdf'));

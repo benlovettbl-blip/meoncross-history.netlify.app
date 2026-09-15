@@ -849,40 +849,79 @@ export function renderLesson(lesson) {
             ${
               source.src
                 ? `
-              <div style="width: 100%; display: flex; justify-content: center; margin: 16px 0; background: #0f172a; border-radius: 6px; padding: 12px; border: 1px solid #334155; position: relative;">
-                <img src="${getAssetUrl(source.src)}" alt="${source.title || 'Source Image'}" style="max-height: 480px; max-width: 100%; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); cursor: zoom-in;" data-action="open-modal" data-src="${getAssetUrl(source.src)}">
+              <div class="archival-source-split-layout">
+                <div class="archival-source-media-col">
+                  <img src="${getAssetUrl(source.src)}" alt="${source.title || 'Source Image'}" data-action="open-modal" data-src="${getAssetUrl(source.src)}">
+                  <div class="archival-source-inspect-badge">
+                    <span class="archival-meta-tag" style="font-size: 0.65rem; color: #cbd5e1; letter-spacing: 0.08em;">CLICK TO ENLARGE / PAN-ZOOM</span>
+                  </div>
+                </div>
+                <div class="archival-source-details-col">
+                  <div>
+                    ${
+                      source.caption
+                        ? `
+                      <div style="font-size: 0.95rem; color: #334155; margin-bottom: 12px; line-height: 1.6; font-style: italic; background: #f8fafc; padding: 12px 16px; border-left: 3px solid #64748b; border-radius: 0 4px 4px 0;">
+                        ${source.caption}
+                      </div>
+                    `
+                        : ''
+                    }
+                    ${
+                      source.context
+                        ? `
+                      <div style="font-size: 0.95rem; color: #1e293b; margin-bottom: 12px; line-height: 1.65; background: rgba(2, 132, 199, 0.06); padding: 14px 18px; border-left: 4px solid #0284c7; border-radius: 0 6px 6px 0;">
+                        <strong style="color: #0369a1; display: block; margin-bottom: 5px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;"><span class="archival-meta-tag" style="color: #0284c7; margin-right: 6px;">HISTORICAL CONTEXT</span></strong>
+                        ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(source.context) : source.context}
+                      </div>
+                    `
+                        : ''
+                    }
+                  </div>
+                  ${
+                    source.citation
+                      ? `
+                    <div class="archival-citation-footer" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 10px; margin-top: auto;">
+                      <span><strong>Provenance:</strong> ${source.citation}</span>
+                      <span class="archival-seal" style="border: 1px solid #94a3b8; color: #475569; padding: 2px 6px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em;">ARCHIVE RECORD</span>
+                    </div>
+                  `
+                      : ''
+                  }
+                </div>
               </div>
             `
-                : ''
-            }
-            ${
-              source.caption
-                ? `
-              <div style="font-size: 0.95rem; color: #334155; margin: 12px 0; line-height: 1.6; font-style: italic; background: #f8fafc; padding: 12px 16px; border-left: 3px solid #64748b; border-radius: 0 4px 4px 0;">
-                ${source.caption}
-              </div>
+                : `
+              ${
+                source.caption
+                  ? `
+                <div style="font-size: 0.95rem; color: #334155; margin: 12px 0; line-height: 1.6; font-style: italic; background: #f8fafc; padding: 12px 16px; border-left: 3px solid #64748b; border-radius: 0 4px 4px 0;">
+                  ${source.caption}
+                </div>
+              `
+                  : ''
+              }
+              ${
+                source.context
+                  ? `
+                <div style="font-size: 0.95rem; color: #1e293b; margin: 14px 0; line-height: 1.65; background: rgba(2, 132, 199, 0.06); padding: 14px 18px; border-left: 4px solid #0284c7; border-radius: 0 6px 6px 0;">
+                  <strong style="color: #0369a1; display: block; margin-bottom: 5px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;"><span class="archival-meta-tag" style="color: #0284c7; margin-right: 6px;">HISTORICAL CONTEXT</span></strong>
+                  ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(source.context) : source.context}
+                </div>
+              `
+                  : ''
+              }
+              ${
+                source.citation
+                  ? `
+                <div class="archival-citation-footer" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 10px; margin-top: 12px;">
+                  <span><strong>Provenance:</strong> ${source.citation}</span>
+                  <span class="archival-seal" style="border: 1px solid #94a3b8; color: #475569; padding: 2px 6px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em;">ARCHIVE RECORD</span>
+                </div>
+              `
+                  : ''
+              }
             `
-                : ''
-            }
-            ${
-              source.context
-                ? `
-              <div style="font-size: 0.95rem; color: #1e293b; margin: 14px 0; line-height: 1.65; background: rgba(2, 132, 199, 0.06); padding: 14px 18px; border-left: 4px solid #0284c7; border-radius: 0 6px 6px 0;">
-                <strong style="color: #0369a1; display: block; margin-bottom: 5px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;"><span class="archival-meta-tag" style="color: #0284c7; margin-right: 6px;">HISTORICAL CONTEXT</span></strong>
-                ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(source.context) : source.context}
-              </div>
-            `
-                : ''
-            }
-            ${
-              source.citation
-                ? `
-              <div class="archival-citation-footer" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 10px; margin-top: 12px;">
-                <span><strong>Provenance:</strong> ${source.citation}</span>
-                <span class="archival-seal" style="border: 1px solid #94a3b8; color: #475569; padding: 2px 6px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em;">ARCHIVE RECORD</span>
-              </div>
-            `
-                : ''
             }
             ${
               source.question
@@ -1381,8 +1420,9 @@ export function renderLesson(lesson) {
             </div>
             ${wbDrillBtnHtml}
           </div>
-          <p style="color: #475569; font-size: 0.95rem; margin-bottom: 12px;">
-            Select <strong>THREE</strong> terms below that share a close historical connection. Click which <strong>ONE</strong> term is the 'Odd One Out' in this lesson, and explain your historical reasoning:
+          <p style="color: #475569; font-size: 0.95rem; margin-bottom: 12px; line-height: 1.5;">
+            Click <strong>ONE</strong> term that does not belong with the others.<br>
+            <strong>Explain your reasoning:</strong> What historical connection links the other terms, and why is your chosen term different?
           </p>
           <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
             ${vocabTermsList
@@ -2275,23 +2315,9 @@ export function renderLesson(lesson) {
           : null);
 
       if (rawSource) {
-        let sourceContentHtml = '';
-        if (
+        const isWrittenSource =
           rawSource.type === 'written' ||
-          (rawSource.content && !rawSource.source && !rawSource.src && !rawSource.image)
-        ) {
-          sourceContentHtml = `
-                   <div class="archival-source-body" style="width: 100%; max-height: 350px; overflow-y: auto; font-family: 'Georgia', serif; font-style: italic; font-size: 1.05rem; line-height: 1.75; color: #1e293b; background: #fffdfa; padding: 14px 18px; border-left: 4px solid #1e3a8a; border-radius: 4px;">
-                     ${rawSource.content}
-                   </div>
-                 `;
-        } else {
-          sourceContentHtml = `
-                    <div style="width: 100%; max-height: 400px; background-color: #000; border-radius: 4px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center;">
-                      <img src="${getAssetUrl(rawSource.source || rawSource.src)}" alt="Source" style="max-width: 100%; max-height: 100%; object-fit: contain; cursor: zoom-in;" data-action="open-modal" data-src="${getAssetUrl(rawSource.source || rawSource.src)}">
-                    </div>
-                 `;
-        }
+          (rawSource.content && !rawSource.source && !rawSource.src && !rawSource.image);
 
         const bLetterMatch = (rawSource.title || '').match(/Source\s+([A-Z])/i);
         const bLetter = bLetterMatch ? bLetterMatch[1].toUpperCase() : '';
@@ -2309,9 +2335,6 @@ export function renderLesson(lesson) {
             : '';
 
         const sourceTitle = rawSource.title || rawSource.caption || '';
-        const isWrittenSource =
-          rawSource.type === 'written' ||
-          (rawSource.content && !rawSource.source && !rawSource.src);
         const sourceAudioBtnHtml = isWrittenSource
           ? `<button class="btn btn-secondary no-print read-aloud-btn" data-action="read-aloud" style="padding: 5px 9px; flex-shrink: 0; margin-left: 8px; cursor: pointer;" title="Read Aloud Primary Source Excerpt"><i class="fa-solid fa-volume-high"></i></button>`
           : '';
@@ -2339,42 +2362,98 @@ export function renderLesson(lesson) {
           `
             : '';
 
-        blockSourceHtml = `
-              <div class="gcse-source-container archival-source-box" ${bCardIdAttr} style="text-align: left; transition: all 0.3s ease; margin: 20px 0;">
-                ${sourceHeaderHtml}
-                ${sourceContentHtml}
+        let sourceBodyHtml = '';
+        if (isWrittenSource) {
+          sourceBodyHtml = `
+            <div class="archival-source-body" style="width: 100%; max-height: 350px; overflow-y: auto; font-family: 'Georgia', serif; font-style: italic; font-size: 1.05rem; line-height: 1.75; color: #1e293b; background: #fffdfa; padding: 14px 18px; border-left: 4px solid #1e3a8a; border-radius: 4px;">
+              ${rawSource.content}
+            </div>
+            ${
+              rawSource.citation
+                ? `<div class="archival-citation-footer" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: 8px;">
+                    <span><strong>Provenance:</strong> ${rawSource.citation}</span>
+                    <span class="archival-seal" style="border: 1px solid #94a3b8; color: #475569; padding: 2px 6px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em;">ARCHIVE RECORD</span>
+                  </div>`
+                : ''
+            }
+            ${
+              window.currentUnitId === 'cme_new' && rawSource.title && rawSource.caption
+                ? `<div style="font-size: 0.95rem; color: #475569; margin-top: -5px; margin-bottom: 15px; font-style: italic;">${rawSource.caption}</div>`
+                : ''
+            }
+            ${
+              rawSource.source_context
+                ? `
+              <div style="background: #f8fafc; border-left: 4px solid #64748b; padding: 15px; border-radius: 0 4px 4px 0; margin-top: 15px; color: #334155; font-size: 1.05rem; line-height: 1.6;">
+                <strong>Historical Context:</strong> ${window.formatBold(rawSource.source_context)}
+              </div>
+            `
+                : ''
+            }
+            ${
+              rawSource.provenance_clue
+                ? `
+              <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 15px; margin-top: 15px;">
+                <strong style="color: #166534; display: block; margin-bottom: 5px;"><span class="archival-meta-tag accent-emerald" style="margin-right: 6px;">PROVENANCE CLUE</span></strong>
+                <span style="color: #15803d; font-size: 0.95rem;">${window.formatBold(rawSource.provenance_clue)}</span>
+              </div>
+            `
+                : ''
+            }
+          `;
+        } else {
+          sourceBodyHtml = `
+            <div class="archival-source-split-layout">
+              <div class="archival-source-media-col">
+                <img src="${getAssetUrl(rawSource.source || rawSource.src)}" alt="${sourceTitle || 'Source'}" data-action="open-modal" data-src="${getAssetUrl(rawSource.source || rawSource.src)}">
+                <div class="archival-source-inspect-badge">
+                  <span class="archival-meta-tag" style="font-size: 0.65rem; color: #cbd5e1; letter-spacing: 0.08em;">CLICK TO ENLARGE / PAN-ZOOM</span>
+                </div>
+              </div>
+              <div class="archival-source-details-col">
+                <div>
+                  ${
+                    window.currentUnitId === 'cme_new' && rawSource.title && rawSource.caption
+                      ? `<div style="font-size: 0.95rem; color: #475569; margin-bottom: 12px; font-style: italic;">${rawSource.caption}</div>`
+                      : ''
+                  }
+                  ${
+                    rawSource.source_context
+                      ? `
+                    <div style="background: #f8fafc; border-left: 4px solid #64748b; padding: 12px 16px; border-radius: 0 4px 4px 0; margin-bottom: 12px; color: #334155; font-size: 0.98rem; line-height: 1.6;">
+                      <strong>Historical Context:</strong> ${window.formatBold(rawSource.source_context)}
+                    </div>
+                  `
+                      : ''
+                  }
+                  ${
+                    rawSource.provenance_clue
+                      ? `
+                    <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 12px 15px; margin-bottom: 12px;">
+                      <strong style="color: #166534; display: block; margin-bottom: 4px;"><span class="archival-meta-tag accent-emerald" style="margin-right: 6px;">PROVENANCE CLUE</span></strong>
+                      <span style="color: #15803d; font-size: 0.92rem;">${window.formatBold(rawSource.provenance_clue)}</span>
+                    </div>
+                  `
+                      : ''
+                  }
+                </div>
                 ${
                   rawSource.citation
-                    ? `<div class="archival-citation-footer" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: 8px;">
+                    ? `<div class="archival-citation-footer" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: auto;">
                         <span><strong>Provenance:</strong> ${rawSource.citation}</span>
                         <span class="archival-seal" style="border: 1px solid #94a3b8; color: #475569; padding: 2px 6px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em;">ARCHIVE RECORD</span>
                       </div>`
                     : ''
                 }
-                ${
-                  window.currentUnitId === 'cme_new' && rawSource.title && rawSource.caption
-                    ? `<div style="font-size: 0.95rem; color: #475569; margin-top: -5px; margin-bottom: 15px; font-style: italic;">${rawSource.caption}</div>`
-                    : ''
-                }
-                ${
-                  rawSource.source_context
-                    ? `
-                  <div style="background: #f8fafc; border-left: 4px solid #64748b; padding: 15px; border-radius: 0 4px 4px 0; margin-top: 15px; color: #334155; font-size: 1.05rem; line-height: 1.6;">
-                    <strong>Historical Context:</strong> ${window.formatBold(rawSource.source_context)}
-                  </div>
-                `
-                    : ''
-                }
-                ${
-                  rawSource.provenance_clue
-                    ? `
-                  <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 15px; margin-top: 15px;">
-                    <strong style="color: #166534; display: block; margin-bottom: 5px;"><span class="archival-meta-tag accent-emerald" style="margin-right: 6px;">PROVENANCE CLUE</span></strong>
-                    <span style="color: #15803d; font-size: 0.95rem;">${window.formatBold(rawSource.provenance_clue)}</span>
-                  </div>
-                `
-                    : ''
-                }
+              </div>
+            </div>
+          `;
+        }
+
+        blockSourceHtml = `
+              <div class="gcse-source-container archival-source-box" ${bCardIdAttr} style="text-align: left; transition: all 0.3s ease; margin: 20px 0;">
+                ${sourceHeaderHtml}
+                ${sourceBodyHtml}
                 ${
                   rawSource.question
                     ? `<div class="${bQClassAttr}" ${bQDataAttr} style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px; border-radius: 0 4px 4px 0; text-align: left; margin-top: 15px;">
