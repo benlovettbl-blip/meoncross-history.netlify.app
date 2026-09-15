@@ -1,0 +1,248 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="100%" height="100%" style="background-color: #ffffff; font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e0f2fe"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <linearGradient id="earthGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#78350f"/>
+      <stop offset="100%" stop-color="#451a03"/>
+    </linearGradient>
+    <linearGradient id="fireGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#b91c1c"/>
+      <stop offset="50%" stop-color="#ea580c"/>
+      <stop offset="100%" stop-color="#fef08a"/>
+    </linearGradient>
+    <linearGradient id="heatFlowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#f97316" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#fbbf24" stop-opacity="0.45"/>
+    </linearGradient>
+    <linearGradient id="hotWaterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fda4af"/>
+      <stop offset="100%" stop-color="#f43f5e"/>
+    </linearGradient>
+    <linearGradient id="coldWaterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7dd3fc"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="warmWaterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fed7aa"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+
+    <!-- Brick pattern for Hypocaust pilae -->
+    <pattern id="brickPattern" width="16" height="8" patternUnits="userSpaceOnUse">
+      <rect width="16" height="8" fill="#c2410c"/>
+      <line x1="0" y1="0" x2="16" y2="0" stroke="#7c2d12" stroke-width="1"/>
+      <line x1="0" y1="4" x2="16" y2="4" stroke="#7c2d12" stroke-width="1"/>
+      <line x1="8" y1="0" x2="8" y2="4" stroke="#7c2d12" stroke-width="1"/>
+      <line x1="0" y1="4" x2="0" y2="8" stroke="#7c2d12" stroke-width="1"/>
+      <line x1="16" y1="4" x2="16" y2="8" stroke="#7c2d12" stroke-width="1"/>
+    </pattern>
+
+    <!-- Stone Wall Hatching -->
+    <pattern id="stoneWall" width="24" height="14" patternUnits="userSpaceOnUse">
+      <rect width="24" height="14" fill="#cbd5e1"/>
+      <rect x="1" y="1" width="22" height="6" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.7"/>
+      <rect x="1" y="7" width="10" height="6" fill="#f1f5f9" stroke="#94a3b8" stroke-width="0.7"/>
+      <rect x="12" y="7" width="11" height="6" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.7"/>
+    </pattern>
+  </defs>
+
+  <!-- Title Banner -->
+  <rect x="0" y="0" width="1000" height="52" fill="#0f172a"/>
+  <text x="25" y="33" fill="#f8fafc" font-size="19" font-weight="800" letter-spacing="0.5">ARCHITECTURAL SCHEMATIC: ROMAN PUBLIC BATHS (THERMAE)</text>
+  <rect x="790" y="14" width="185" height="24" rx="4" fill="#0284c7"/>
+  <text x="882" y="30" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="0.5">CROSS-SECTION BLUEPRINT</text>
+
+  <!-- Sky & Ground Background -->
+  <rect x="0" y="52" width="1000" height="350" fill="url(#skyGrad)"/>
+  <rect x="0" y="400" width="1000" height="160" fill="url(#earthGrad)"/>
+
+  <!-- Underground Bedding Stone -->
+  <rect x="0" y="400" width="1000" height="20" fill="#475569"/>
+  <line x1="0" y1="400" x2="1000" y2="400" stroke="#0f172a" stroke-width="2"/>
+
+  <!-- ==================== ROOM WALLS & ROOFS ==================== -->
+  <!-- 1. PRAEFURNIUM (Furnace Chamber) [Left, partially sunken] -->
+  <rect x="20" y="270" width="150" height="150" fill="#334155"/>
+  <polygon points="10,270 95,210 180,270" fill="#94a3b8" stroke="#475569" stroke-width="2"/>
+  <!-- Stoking Pit -->
+  <rect x="35" y="340" width="120" height="75" fill="#1e293b"/>
+  <!-- Wood logs & Fire -->
+  <rect x="45" y="395" width="40" height="14" rx="3" fill="#78350f" transform="rotate(-10 45 395)"/>
+  <rect x="65" y="395" width="45" height="14" rx="3" fill="#92400e" transform="rotate(15 65 395)"/>
+  <path d="M 60 405 Q 75 350 85 385 Q 95 340 105 380 Q 115 355 125 405 Z" fill="url(#fireGrad)"/>
+  <path d="M 75 405 Q 85 365 95 390 Q 105 370 115 405 Z" fill="#ffffff" opacity="0.75"/>
+  <!-- Boiler / Hot Water Tank above furnace -->
+  <rect x="55" y="285" width="80" height="45" rx="4" fill="#64748b" stroke="#334155" stroke-width="2"/>
+  <text x="95" y="312" fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle">COPPER BOILER</text>
+
+  <!-- 2. HYPOCAUST UNDERFLOOR HEATING (Spans under Caldarium & Tepidarium) -->
+  <rect x="180" y="355" width="490" height="55" fill="#fef2f2"/>
+  <!-- Heat flow glow under floor -->
+  <rect x="175" y="355" width="495" height="55" fill="url(#heatFlowGrad)"/>
+
+  <!-- Hypocaust Pilae (Stacks of square terracotta tiles) -->
+  <!-- Stacks under Caldarium -->
+  <rect x="200" y="355" width="22" height="55" fill="url(#brickPattern)"/>
+  <rect x="250" y="355" width="22" height="55" fill="url(#brickPattern)"/>
+  <rect x="300" y="355" width="22" height="55" fill="url(#brickPattern)"/>
+  <rect x="350" y="355" width="22" height="55" fill="url(#brickPattern)"/>
+  <rect x="400" y="355" width="22" height="55" fill="url(#brickPattern)"/>
+  <!-- Stacks under Tepidarium -->
+  <rect x="460" y="355" width="22" height="55" fill="url(#brickPattern)"/>
+  <rect x="510" y="355" width="22" height="55" fill="url(#brickPattern)"/>
+  <rect x="560" y="355" width="22" height="55" fill="url(#brickPattern)"/>
+  <rect x="610" y="355" width="22" height="55" fill="url(#brickPattern)"/>
+
+  <!-- Suspended Floor (Suspensura: concrete slab + large bipedales tiles + mosaic) -->
+  <rect x="170" y="338" width="500" height="17" fill="#64748b" stroke="#1e293b" stroke-width="1.5"/>
+  <rect x="170" y="335" width="500" height="3" fill="#f59e0b"/> <!-- Mosaic floor line -->
+
+  <!-- Flue passage from furnace to hypocaust -->
+  <rect x="155" y="360" width="25" height="45" fill="url(#fireGrad)" opacity="0.85"/>
+  <!-- Heat flow arrows -->
+  <path d="M 140 380 Q 180 375 220 380" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="4,4" fill="none"/>
+  <path d="M 280 380 Q 350 375 420 380" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="4,4" fill="none"/>
+  <path d="M 470 380 Q 540 375 610 380" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="4,4" fill="none"/>
+
+  <!-- ==================== MAIN BATH ROOMS ==================== -->
+
+  <!-- ROOM 5: CALDARIUM (Hot Steam Room) [x: 180 to 440] -->
+  <!-- Outer walls with hollow flue tiles (tubuli) -->
+  <rect x="180" y="150" width="18" height="188" fill="#ea580c"/>
+  <rect x="198" y="150" width="232" height="185" fill="#fff7ed"/>
+  <!-- Barrel Vaulted Ceiling with moisture grooves -->
+  <path d="M 180 150 Q 314 90 448 150 Z" fill="#fed7aa" stroke="#ea580c" stroke-width="3"/>
+  <line x1="210" y1="140" x2="210" y2="150" stroke="#c2410c" stroke-width="1.5"/>
+  <line x1="260" y1="120" x2="260" y2="150" stroke="#c2410c" stroke-width="1.5"/>
+  <line x1="314" y1="110" x2="314" y2="150" stroke="#c2410c" stroke-width="1.5"/>
+  <line x1="370" y1="120" x2="370" y2="150" stroke="#c2410c" stroke-width="1.5"/>
+  <line x1="420" y1="140" x2="420" y2="150" stroke="#c2410c" stroke-width="1.5"/>
+  <!-- Hot Water Immersion Pool (Alveus) -->
+  <rect x="208" y="275" width="105" height="60" rx="3" fill="#fecdd3" stroke="#e11d48" stroke-width="2"/>
+  <rect x="212" y="285" width="97" height="48" fill="url(#hotWaterGrad)"/>
+  <text x="260" y="315" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">HOT POOL (Alveus)</text>
+  <!-- Steam clouds -->
+  <path d="M 230 270 Q 240 250 250 265 Q 260 245 270 265 Q 280 250 290 270" stroke="#f43f5e" stroke-width="1.5" stroke-dasharray="3,3" fill="none"/>
+  <!-- Cold water wash basin (Labrum) on pedestal -->
+  <rect x="375" y="280" width="14" height="55" fill="#94a3b8" stroke="#475569" stroke-width="1.5"/>
+  <path d="M 360 280 Q 382 295 404 280 Z" fill="#e2e8f0" stroke="#475569" stroke-width="2"/>
+  <text x="382" y="272" fill="#475569" font-size="9" font-weight="700" text-anchor="middle">Labrum</text>
+
+  <!-- Dividing Wall between Caldarium and Tepidarium with Flue -->
+  <rect x="430" y="150" width="18" height="188" fill="#f97316"/>
+
+  <!-- ROOM 4: TEPIDARIUM (Warm Room) [x: 448 to 650] -->
+  <rect x="448" y="170" width="202" height="165" fill="#fffbeb"/>
+  <!-- Vaulted Ceiling -->
+  <path d="M 448 170 Q 549 125 650 170 Z" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/>
+  <!-- Heated benches where bathers relax & oil is scraped with strigils -->
+  <rect x="470" y="280" width="70" height="55" rx="3" fill="#fde68a" stroke="#d97706" stroke-width="2"/>
+  <text x="505" y="312" fill="#92400e" font-size="9.5" font-weight="700" text-anchor="middle">WARM BENCH</text>
+  <rect x="565" y="280" width="70" height="55" rx="3" fill="#fde68a" stroke="#d97706" stroke-width="2"/>
+  <text x="600" y="312" fill="#92400e" font-size="9.5" font-weight="700" text-anchor="middle">MASSAGE/OIL</text>
+
+  <!-- Dividing Wall between Tepidarium and Frigidarium (Thick insulation wall) -->
+  <rect x="650" y="150" width="20" height="250" fill="url(#stoneWall)"/>
+
+  <!-- ROOM 6: FRIGIDARIUM (Cold Room & Plunge Pool) [x: 670 to 820] -->
+  <!-- Solid unheated ground floor -->
+  <rect x="670" y="340" width="150" height="60" fill="#cbd5e1" stroke="#475569" stroke-width="1.5"/>
+  <rect x="670" y="170" width="150" height="170" fill="#f0f9ff"/>
+  <!-- High domed ceiling with light opening (oculus) -->
+  <path d="M 670 170 Q 745 110 820 170 Z" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.5"/>
+  <!-- Cold Plunge Pool -->
+  <rect x="685" y="275" width="120" height="65" rx="3" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+  <rect x="690" y="285" width="110" height="50" fill="url(#coldWaterGrad)"/>
+  <text x="745" y="315" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">COLD PLUNGE POOL</text>
+
+  <!-- Dividing Wall between Frigidarium and Apodyterium -->
+  <rect x="820" y="150" width="18" height="250" fill="url(#stoneWall)"/>
+
+  <!-- ROOM 3: APODYTERIUM (Changing Room / Entrance) [x: 838 to 980] -->
+  <rect x="838" y="340" width="142" height="60" fill="#cbd5e1" stroke="#475569" stroke-width="1.5"/>
+  <rect x="838" y="180" width="142" height="160" fill="#f8fafc"/>
+  <!-- Pitched Tile Roof -->
+  <polygon points="830,180 910,130 990,180" fill="#b91c1c" stroke="#7f1d1d" stroke-width="2"/>
+  <!-- Wall Cubbyholes / Niches for clothes -->
+  <g fill="#e2e8f0" stroke="#64748b" stroke-width="1.5">
+    <rect x="850" y="210" width="22" height="22" rx="2"/>
+    <rect x="880" y="210" width="22" height="22" rx="2"/>
+    <rect x="910" y="210" width="22" height="22" rx="2"/>
+    <rect x="940" y="210" width="22" height="22" rx="2"/>
+    <rect x="850" y="240" width="22" height="22" rx="2"/>
+    <rect x="880" y="240" width="22" height="22" rx="2"/>
+    <rect x="910" y="240" width="22" height="22" rx="2"/>
+    <rect x="940" y="240" width="22" height="22" rx="2"/>
+  </g>
+  <text x="905" y="200" fill="#475569" font-size="9" font-weight="700" text-anchor="middle">CLOTHES NICHES</text>
+  <!-- Benches for changing -->
+  <rect x="850" y="295" width="112" height="40" fill="#e2e8f0" stroke="#64748b" stroke-width="1.5"/>
+  <text x="906" y="320" fill="#334155" font-size="10" font-weight="700" text-anchor="middle">CHANGING BENCH</text>
+
+  <!-- Wall tile heat flues (Tubuli) labels -->
+  <text x="189" y="245" fill="#ffffff" font-size="8" font-weight="800" text-anchor="middle" transform="rotate(-90 189 245)">WALL FLUE (TUBULI)</text>
+  <text x="439" y="245" fill="#ffffff" font-size="8" font-weight="800" text-anchor="middle" transform="rotate(-90 439 245)">WALL FLUE (TUBULI)</text>
+
+  <!-- ==================== NUMBERED CALLOUT BADGES [1] TO [6] ==================== -->
+
+  <!-- [1] PRAEFURNIUM (Furnace) -->
+  <g transform="translate(85, 435)">
+    <circle cx="0" cy="0" r="16" fill="#dc2626" stroke="#ffffff" stroke-width="2.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.3))"/>
+    <text x="0" y="6" fill="#ffffff" font-size="15" font-weight="900" text-anchor="middle">1</text>
+  </g>
+  <text x="85" y="475" fill="#fef08a" font-size="12" font-weight="800" text-anchor="middle">Praefurnium</text>
+  <text x="85" y="490" fill="#fed7aa" font-size="10" text-anchor="middle">(Furnace Room)</text>
+
+  <!-- [2] HYPOCAUST (Underfloor Heating Pillars) -->
+  <g transform="translate(390, 435)">
+    <circle cx="0" cy="0" r="16" fill="#d97706" stroke="#ffffff" stroke-width="2.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.3))"/>
+    <text x="0" y="6" fill="#ffffff" font-size="15" font-weight="900" text-anchor="middle">2</text>
+  </g>
+  <text x="390" y="475" fill="#fef08a" font-size="12" font-weight="800" text-anchor="middle">Hypocaust</text>
+  <text x="390" y="490" fill="#fed7aa" font-size="10" text-anchor="middle">(Pilae Tile Pillars)</text>
+
+  <!-- [3] APODYTERIUM (Changing Room) -->
+  <g transform="translate(908, 90)">
+    <circle cx="0" cy="0" r="16" fill="#0f172a" stroke="#ffffff" stroke-width="2.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.3))"/>
+    <text x="0" y="6" fill="#ffffff" font-size="15" font-weight="900" text-anchor="middle">3</text>
+  </g>
+  <text x="908" y="70" fill="#0f172a" font-size="12" font-weight="800" text-anchor="middle">Apodyterium</text>
+  <text x="908" y="118" fill="#475569" font-size="10" text-anchor="middle">(Changing Room)</text>
+
+  <!-- [4] TEPIDARIUM (Warm Room) -->
+  <g transform="translate(549, 90)">
+    <circle cx="0" cy="0" r="16" fill="#d97706" stroke="#ffffff" stroke-width="2.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.3))"/>
+    <text x="0" y="6" fill="#ffffff" font-size="15" font-weight="900" text-anchor="middle">4</text>
+  </g>
+  <text x="549" y="70" fill="#b45309" font-size="12" font-weight="800" text-anchor="middle">Tepidarium</text>
+  <text x="549" y="118" fill="#92400e" font-size="10" text-anchor="middle">(Warm Room)</text>
+
+  <!-- [5] CALDARIUM (Hot Steam Room) -->
+  <g transform="translate(314, 60)">
+    <circle cx="0" cy="0" r="16" fill="#dc2626" stroke="#ffffff" stroke-width="2.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.3))"/>
+    <text x="0" y="6" fill="#ffffff" font-size="15" font-weight="900" text-anchor="middle">5</text>
+  </g>
+  <text x="314" y="42" fill="#b91c1c" font-size="12" font-weight="800" text-anchor="middle">Caldarium</text>
+  <text x="314" y="88" fill="#7f1d1d" font-size="10" text-anchor="middle">(Hot Steam Room)</text>
+
+  <!-- [6] FRIGIDARIUM (Cold Plunge Pool) -->
+  <g transform="translate(745, 90)">
+    <circle cx="0" cy="0" r="16" fill="#0284c7" stroke="#ffffff" stroke-width="2.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.3))"/>
+    <text x="0" y="6" fill="#ffffff" font-size="15" font-weight="900" text-anchor="middle">6</text>
+  </g>
+  <text x="745" y="70" fill="#0369a1" font-size="12" font-weight="800" text-anchor="middle">Frigidarium</text>
+  <text x="745" y="118" fill="#075985" font-size="10" text-anchor="middle">(Cold Plunge Pool)</text>
+
+  <!-- Bather Direction Arrow Guide -->
+  <g transform="translate(680, 520)">
+    <rect x="-10" y="-14" width="310" height="28" rx="14" fill="#0f172a" opacity="0.9"/>
+    <text x="145" y="4" fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle" letter-spacing="0.3">
+      BATHING PATH: [3] Changing → [4] Warm → [5] Hot Steam → [6] Cold Plunge
+    </text>
+  </g>
+</svg>

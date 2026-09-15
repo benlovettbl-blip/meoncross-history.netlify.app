@@ -2257,7 +2257,10 @@ export function renderLesson(lesson) {
                  .join('')}
              </div>
            `;
-      } else if (block.image) {
+      } else if (
+        block.image &&
+        !(window.currentUnitId === 'water_and_sanitation' && block.source_letter)
+      ) {
         let containerStyle = block.image_context
           ? 'display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch; justify-content: center; margin: 20px 0;'
           : 'text-align: center; margin: 20px 0;';
@@ -2298,7 +2301,7 @@ export function renderLesson(lesson) {
       }
 
       let blockSourceHtml = '';
-      const rawSource =
+      let rawSource =
         block.source ||
         (block.archival_source
           ? {
@@ -2313,6 +2316,25 @@ export function renderLesson(lesson) {
               qNum: block.archival_source.qNum || '',
             }
           : null);
+
+      if (
+        !rawSource &&
+        window.currentUnitId === 'water_and_sanitation' &&
+        block.source_letter &&
+        block.image
+      ) {
+        rawSource = {
+          type: 'visual',
+          src: block.image,
+          source: block.image,
+          title: `Source ${block.source_letter}: ${block.image_alt || block.theme_heading || 'Primary Historical Evidence'}`,
+          shelfmark: block.shelfmark || `SOURCE ${block.source_letter}`,
+          caption: block.caption || block.image_caption || '',
+          citation: block.citation || 'Archaeological / Primary Archive Evidence',
+          source_context: block.image_context || '',
+          question: block.source_question || '',
+        };
+      }
 
       if (rawSource) {
         const isWrittenSource =
@@ -2413,7 +2435,10 @@ export function renderLesson(lesson) {
               <div class="archival-source-details-col">
                 <div>
                   ${
-                    window.currentUnitId === 'cme_new' && rawSource.title && rawSource.caption
+                    (window.currentUnitId === 'cme_new' ||
+                      window.currentUnitId === 'water_and_sanitation' ||
+                      rawSource.caption) &&
+                    rawSource.caption
                       ? `<div style="font-size: 0.95rem; color: #475569; margin-bottom: 12px; font-style: italic;">${rawSource.caption}</div>`
                       : ''
                   }
@@ -3073,7 +3098,7 @@ export function renderLesson(lesson) {
                  <button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-reveal" data-action="toggle-element" data-target-id="${ansId}"><i class="fa-solid fa-eye"></i> Show</button>
                  ${starterBtn}
                  ${starterDiv}
-                 <div class="answer" id="${ansId}" style="display: none; margin-top: 8px; background: white; padding: 10px; border-left: 3px solid #b45309; font-style: italic; color: #451a03; line-height: 1.6;">${window.formatBold(task.model || task.model_answer || '')}</div>
+                 <div class="answer" id="${ansId}" style="display: none; margin-top: 8px; background: white; padding: 10px; border-left: 3px solid #b45309; font-style: italic; color: #451a03; line-height: 1.6;">${window.formatBold(task.model || task.model_answer || task.answer || '')}</div>
                </div>
              `;
         });
@@ -3185,14 +3210,14 @@ export function renderLesson(lesson) {
                   ${clueBtn}
                   ${task.starter ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-icon-only btn-pedagogy-starter" title="Sentence Starter" data-action="toggle-element" data-target-id="starter-${tIdx}"><i class="fa-solid fa-pen"></i></button>` : ''}
                   ${task.clue ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-icon-only btn-pedagogy-clue" title="Clue" data-action="toggle-element" data-target-id="clue-${tIdx}"><i class="fa-solid fa-lightbulb"></i></button>` : ''}
-                  ${task.model ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-icon-only btn-pedagogy-model" title="Reveal Model Answer" data-action="toggle-element" data-target-id="model-${tIdx}"><i class="fa-solid fa-check-double"></i></button>` : ''}
+                  ${task.model || task.model_answer || task.answer ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-icon-only btn-pedagogy-model" title="Reveal Model Answer" data-action="toggle-element" data-target-id="model-${tIdx}"><i class="fa-solid fa-check-double"></i></button>` : ''}
                 </span>
               </div>
               <textarea class="student-answer-input" placeholder="Write your response here..." oninput="window.updateProgress()"></textarea>
 
               ${task.starter ? `<div id="starter-${tIdx}" class="scaffold-box starter-box" style="display:none;"><strong>Sentence Starter:</strong> ${task.starter}</div>` : ''}
               ${task.clue ? `<div id="clue-${tIdx}" class="scaffold-box clue-box" style="display:none;"><strong>Clue Hint:</strong> ${task.clue}</div>` : ''}
-              ${task.model ? `<div id="model-${tIdx}" class="scaffold-box model-box" style="display:none;">${formatBold(task.model)}</div>` : ''}
+              ${task.model || task.model_answer || task.answer ? `<div id="model-${tIdx}" class="scaffold-box model-box" style="display:none;">${formatBold(task.model || task.model_answer || task.answer)}</div>` : ''}
             </div>
           `;
         });
