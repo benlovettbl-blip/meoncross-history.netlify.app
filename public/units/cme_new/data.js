@@ -80,6 +80,13 @@ export const unitData = {
       prefix: 'KT3',
       enquiry: 'Why has lasting peace in the Middle East been so difficult to achieve?',
     },
+    {
+      id: 'full',
+      title: 'Complete Unit Master Recall (All 3 Key Topics)',
+      image: '/images/cme_cover.jpg',
+      prefix: 'all',
+      enquiry: 'Total recall across all 10 lessons of Conflict in the Middle East',
+    },
   ],
   groupings: [
     {

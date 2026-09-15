@@ -470,6 +470,30 @@ const PDF_MAPPINGS = [
   },
   {
     folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
+    src: 'cme_recall_quiz_KT1.pdf',
+    dest: 'Conflict in the Middle East Knowledge Recall Quiz (KT1 - 80 Questions).pdf',
+    category: 'Year 10 GCSE',
+  },
+  {
+    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
+    src: 'cme_recall_quiz_KT2.pdf',
+    dest: 'Conflict in the Middle East Knowledge Recall Quiz (KT2 - 60 Questions).pdf',
+    category: 'Year 10 GCSE',
+  },
+  {
+    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
+    src: 'cme_recall_quiz_KT3.pdf',
+    dest: 'Conflict in the Middle East Knowledge Recall Quiz (KT3 - 60 Questions).pdf',
+    category: 'Year 10 GCSE',
+  },
+  {
+    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
+    src: 'cme_recall_quiz_FULL.pdf',
+    dest: 'Conflict in the Middle East Master Knowledge Recall Quiz (All 200 Questions).pdf',
+    category: 'Year 10 GCSE',
+  },
+  {
+    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
     src: 'cme_cover_lesson_double_period.pdf',
     dest: 'Conflict in the Middle East Cover Lesson (Double Period).pdf',
     category: 'Year 10 GCSE',

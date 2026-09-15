@@ -343,13 +343,19 @@ export async function switchView(viewName, param = null, skipHistory = false, op
     viewName === 'profile' ||
     viewName === 'curriculum' ||
     viewName === 'competitions' ||
-    viewName === 'chess'
+    viewName === 'chess' ||
+    viewName === 'booklet'
   ) {
+    const navBooklet = document.getElementById('nav-booklet');
+    if (navBooklet) {
+      navBooklet.style.display = 'flex';
+      navBooklet.onclick = () => switchView('booklet');
+    }
+
     [
       'nav-lessons',
       'nav-interactive',
       'nav-timeline',
-      'nav-booklet',
       'nav-mock-exams',
       'nav-decisions',
       'nav-taboo',

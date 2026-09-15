@@ -16,6 +16,29 @@ export function renderWorkbooksZone(container, unitData) {
         </button>
       </div>
     </div>
+
+    <!-- Quick Unit Filter Navigation -->
+    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; padding: 12px 18px; background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+      <span style="font-size: 0.8rem; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 4px;">Jump to Unit:</span>
+      <button type="button" onclick="window.switchView('booklet', 'cme_new')" style="background: ${state.selectedUnitId === 'cme_new' || window.currentUnitId === 'cme_new' ? '#0284c7' : '#f0f9ff'}; color: ${state.selectedUnitId === 'cme_new' || window.currentUnitId === 'cme_new' ? '#ffffff' : '#0369a1'}; border: 1px solid #bae6fd; font-size: 0.82rem; font-weight: 700; padding: 6px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s ease;">
+        <i class="fa-solid fa-dove"></i> ⭐ Middle East (Paper 2)
+      </button>
+      <button type="button" onclick="window.switchView('booklet', 'usa')" style="background: ${state.selectedUnitId === 'usa' || window.currentUnitId === 'usa' ? '#1e40af' : '#eff6ff'}; color: ${state.selectedUnitId === 'usa' || window.currentUnitId === 'usa' ? '#ffffff' : '#1e40af'}; border: 1px solid #bfdbfe; font-size: 0.82rem; font-weight: 700; padding: 6px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s ease;">
+        <i class="fa-solid fa-flag-usa"></i> USA 1954–75 (Paper 3)
+      </button>
+      <button type="button" onclick="window.switchView('booklet', 'edexcel_medicine')" style="background: ${state.selectedUnitId === 'edexcel_medicine' || window.currentUnitId === 'edexcel_medicine' ? '#0f766e' : '#f0fdfa'}; color: ${state.selectedUnitId === 'edexcel_medicine' || window.currentUnitId === 'edexcel_medicine' ? '#ffffff' : '#0f766e'}; border: 1px solid #99f6e4; font-size: 0.82rem; font-weight: 700; padding: 6px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s ease;">
+        <i class="fa-solid fa-notes-medical"></i> Medicine (Paper 1)
+      </button>
+      <button type="button" onclick="window.switchView('booklet', 'eee')" style="background: ${state.selectedUnitId === 'eee' || window.currentUnitId === 'eee' ? '#b45309' : '#fffbeb'}; color: ${state.selectedUnitId === 'eee' || window.currentUnitId === 'eee' ? '#ffffff' : '#b45309'}; border: 1px solid #fde68a; font-size: 0.82rem; font-weight: 700; padding: 6px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s ease;">
+        <i class="fa-solid fa-crown"></i> Early Elizabethan (Paper 2)
+      </button>
+      <button type="button" onclick="window.switchView('booklet', 'weimar_nazi_germany')" style="background: ${state.selectedUnitId === 'weimar_nazi_germany' || window.currentUnitId === 'weimar_nazi_germany' ? '#7f1d1d' : '#fef2f2'}; color: ${state.selectedUnitId === 'weimar_nazi_germany' || window.currentUnitId === 'weimar_nazi_germany' ? '#ffffff' : '#991b1b'}; border: 1px solid #fecaca; font-size: 0.82rem; font-weight: 700; padding: 6px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s ease;">
+        <i class="fa-solid fa-landmark"></i> Weimar Germany (Paper 3)
+      </button>
+      <button type="button" onclick="window.switchView('booklet')" style="background: ${!state.selectedUnitId && !window.currentUnitId ? '#0f172a' : '#f8fafc'}; color: ${!state.selectedUnitId && !window.currentUnitId ? '#ffffff' : '#475569'}; border: 1px solid #cbd5e1; font-size: 0.82rem; font-weight: 700; padding: 6px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s ease;">
+        <i class="fa-solid fa-layer-group"></i> All Curriculum Units &amp; KS3
+      </button>
+    </div>
   `;
 
   const renderSection = (title, icon, description, color, items) => {
@@ -150,13 +173,18 @@ export function renderWorkbooksZone(container, unitData) {
     }
   }
 
-  if (state.selectedUnitId === 'cme_new' || window.currentUnitId === 'cme_new') {
+  const activeUnit = state.selectedUnitId || window.currentUnitId;
+  const showCme = !activeUnit || activeUnit === 'cme_new' || activeUnit === 'all';
+  const showMed = !activeUnit || activeUnit === 'edexcel_medicine' || activeUnit === 'all';
+  const showUsa = !activeUnit || activeUnit === 'usa' || activeUnit === 'all';
+
+  if (showCme) {
     const cmeBooklets = [
       {
         id: 'KT1',
         title: 'Key Topic 1: The Birth of the State of Israel (1945–63)',
         pages: '12 Pages',
-        badge: 'KT1 Booklet',
+        badge: 'KT1 Exam Booklet',
         color: '#0284c7',
         desc: '80 Rapid Recall Questions · Double-Sided Mark Scheme · 3 Rounds of Exam Practice (Stepped Ladder, Dual Track, Exam Pitch) · 100% Spec Coverage Bank',
         fileBase: '/units/cme_new/booklets/cme_mastery_KT1.html',
@@ -166,7 +194,7 @@ export function renderWorkbooksZone(container, unitData) {
         id: 'KT2',
         title: 'Key Topic 2: The Escalating Conflict (1964–73)',
         pages: '12 Pages',
-        badge: 'KT2 Booklet',
+        badge: 'KT2 Exam Booklet',
         color: '#dc2626',
         desc: '60 Rapid Recall Questions · Double-Sided Mark Scheme · 3 Rounds of Exam Practice (Stepped Ladder, Dual Track, Exam Pitch) · 100% Spec Coverage Bank',
         fileBase: '/units/cme_new/booklets/cme_mastery_KT2.html',
@@ -176,7 +204,7 @@ export function renderWorkbooksZone(container, unitData) {
         id: 'KT3',
         title: 'Key Topic 3: Attempts at a Solution (1974–95)',
         pages: '12 Pages',
-        badge: 'KT3 Booklet',
+        badge: 'KT3 Exam Booklet',
         color: '#059669',
         desc: '60 Rapid Recall Questions · Double-Sided Mark Scheme · 3 Rounds of Exam Practice (Stepped Ladder, Dual Track, Exam Pitch) · 100% Spec Coverage Bank',
         fileBase: '/units/cme_new/booklets/cme_mastery_KT3.html',
@@ -194,7 +222,51 @@ export function renderWorkbooksZone(container, unitData) {
       },
     ];
 
+    const cmeQuizPacks = [
+      {
+        id: 'KT1_QUIZ',
+        title: 'Key Topic 1 Recall Quiz & Vault (80 Crucial Questions)',
+        pages: '20 Pages',
+        badge: 'KT1 Recall Pack',
+        color: '#0284c7',
+        desc: '80 Targeted retrieval questions covering Lessons 1–4, RAG threat-level confidence checkboxes, flashcard interrogation drills, and the full Vault self-marking answer key.',
+        fileBase: '/units/cme_new/mastery_pack_KT1.html',
+        pdfUrl: '/pdfs/cme_recall_quiz_KT1.pdf',
+      },
+      {
+        id: 'KT2_QUIZ',
+        title: 'Key Topic 2 Recall Quiz & Vault (60 Crucial Questions)',
+        pages: '18 Pages',
+        badge: 'KT2 Recall Pack',
+        color: '#dc2626',
+        desc: '60 Targeted retrieval questions covering Lessons 5–7, RAG threat-level confidence checkboxes, flashcard interrogation drills, and the full Vault self-marking answer key.',
+        fileBase: '/units/cme_new/mastery_pack_KT2.html',
+        pdfUrl: '/pdfs/cme_recall_quiz_KT2.pdf',
+      },
+      {
+        id: 'KT3_QUIZ',
+        title: 'Key Topic 3 Recall Quiz & Vault (60 Crucial Questions)',
+        pages: '18 Pages',
+        badge: 'KT3 Recall Pack',
+        color: '#059669',
+        desc: '60 Targeted retrieval questions covering Lessons 8–10, RAG threat-level confidence checkboxes, flashcard interrogation drills, and the full Vault self-marking answer key.',
+        fileBase: '/units/cme_new/mastery_pack_KT3.html',
+        pdfUrl: '/pdfs/cme_recall_quiz_KT3.pdf',
+      },
+      {
+        id: 'FULL_QUIZ',
+        title: 'Complete Unit Master Recall Quiz (All 200 Crucial Questions)',
+        pages: '44 Pages',
+        badge: 'Master Unit Quiz',
+        color: '#7c3aed',
+        desc: 'The master retrieval volume compiling all 200 knowledge recall questions across the entire unit. Includes memory hacking rules, RAG trackers, and complete Vault solutions. Print once for the term!',
+        fileBase: '/units/cme_new/mastery_pack_full.html',
+        pdfUrl: '/pdfs/cme_recall_quiz_FULL.pdf',
+      },
+    ];
+
     let cmeHubHtml = `
+      <!-- CME Exam Mastery Booklets -->
       <div style="background: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px; border-top: 4px solid #1e3a8a;">
         <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px;">
           <div style="display: flex; align-items: center; gap: 15px;">
@@ -202,7 +274,7 @@ export function renderWorkbooksZone(container, unitData) {
               <i class="fa-solid fa-book-open"></i>
             </div>
             <div>
-              <h2 style="color: #0f172a; margin: 0; font-size: 1.35rem;">Mastery Revision Booklets &amp; Exam Suites</h2>
+              <h2 style="color: #0f172a; margin: 0; font-size: 1.35rem;">Conflict in the Middle East — 12-Page Exam Mastery Booklets</h2>
               <p style="color: #64748b; font-size: 0.95rem; margin: 4px 0 0 0;">Comprehensive, photocopier-ready A4 booklets. Each booklet features complete retrieval quizzing, official mark schemes, 3 differentiated exam rounds, and 100% specification coverage.</p>
             </div>
           </div>
@@ -240,11 +312,58 @@ export function renderWorkbooksZone(container, unitData) {
     cmeHubHtml += `
         </div>
       </div>
+
+      <!-- CME Total Recall Knowledge Quizzes -->
+      <div style="background: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px; border-top: 4px solid #7c3aed;">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px;">
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <div style="width: 44px; height: 44px; border-radius: 10px; background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.3rem;">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <div>
+              <h2 style="color: #0f172a; margin: 0; font-size: 1.35rem;">Conflict in the Middle East — Total Recall Knowledge Quizzes</h2>
+              <p style="color: #64748b; font-size: 0.95rem; margin: 4px 0 0 0;">Focused recall sheets and self-marking Vaults. Features the "Total Recall of 80 Crucial Questions" (KT1) and 60 questions each for KT2 and KT3, plus the complete 200-question Master Volume.</p>
+            </div>
+          </div>
+          <span style="font-size: 0.8rem; font-weight: 700; background: #ede9fe; color: #6d28d9; padding: 4px 12px; border-radius: 20px;">80 / 60 / 60 / 200 Questions</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+    `;
+
+    cmeQuizPacks.forEach((b) => {
+      cmeHubHtml += `
+        <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; gap: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.03);">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+              <span style="font-size: 0.75rem; font-weight: 800; background: ${b.color}15; color: ${b.color}; padding: 3px 8px; border-radius: 4px; border: 1px solid ${b.color}30;">${b.badge}</span>
+              <span style="font-size: 0.78rem; font-weight: 700; color: #475569;"><i class="fa-solid fa-file-pdf" style="color: ${b.color}; margin-right: 4px;"></i>${b.pages}</span>
+            </div>
+            <h3 style="margin: 0 0 8px 0; color: #1e293b; font-size: 1.05rem; line-height: 1.35;">${b.title}</h3>
+            <p style="margin: 0; font-size: 0.82rem; color: #64748b; line-height: 1.4;">${b.desc}</p>
+          </div>
+
+          <div style="display: flex; gap: 8px; margin-top: 5px;">
+            <button type="button" class="btn" onclick="window.openTeacherPrintPreview('${b.fileBase}', '${b.title}', '${b.pdfUrl}')" style="flex: 1; text-align: center; background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4px solid ${b.color}; padding: 10px 8px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: #1e293b; transition: all 0.2s ease;" onmouseover="this.style.borderColor='${b.color}'; this.style.boxShadow='0 2px 6px rgba(0,0,0,0.1)';" onmouseout="this.style.borderColor='#cbd5e1'; this.style.borderLeftColor='${b.color}'; this.style.boxShadow='none';">
+              <i class="fa-solid fa-eye" style="color: ${b.color};"></i> Preview &amp; Print
+            </button>
+
+            <a href="${b.pdfUrl}" target="_blank" download style="background: ${b.color}; color: #ffffff; padding: 10px 14px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; transition: opacity 0.2s ease;" onmouseover="this.style.opacity='0.9';" onmouseout="this.style.opacity='1';">
+              <i class="fa-solid fa-download"></i> PDF
+            </a>
+          </div>
+        </div>
+      `;
+    });
+
+    cmeHubHtml += `
+        </div>
+      </div>
     `;
     html += cmeHubHtml;
   }
 
-  if (state.selectedUnitId === 'edexcel_medicine' || window.currentUnitId === 'edexcel_medicine') {
+  if (showMed) {
     const medBooklets = [
       {
         id: 'VISUAL_PLAYBOOK',
@@ -338,7 +457,7 @@ export function renderWorkbooksZone(container, unitData) {
     html += medHubHtml;
   }
 
-  if (state.selectedUnitId === 'usa' || window.currentUnitId === 'usa') {
+  if (showUsa) {
     const usaBooklets = [
       {
         id: 'VISUAL_GUIDE',

@@ -2535,16 +2535,7 @@ export const unitData = {
           model_answer:
             'The Black Death entered southern England through coastal ports (such as Melcombe Regis in Dorset) in the summer of 1348 aboard merchant trade ships. Carried by fleas living on black rats, it spread rapidly along river and road trade networks. Medieval people had no knowledge of bacteria or microbiology, believing the devastating pestilence was caused by divine retribution from God, astrological conjunctions, or corrupting miasma.',
         },
-        {
-          type: 'youtube',
-          url: 'https://www.youtube.com/watch?v=zR2A7o90L9A',
-          title: 'BBC Teach: The Black Death',
-          duration: '4 mins',
-          viewing_task:
-            'How did people respond to the devastating outbreak of the Black Death in 1348?',
-          model_answer:
-            "People responded with panic. Some whipped themselves to earn God's forgiveness (flagellants), others blamed minority groups, while local governments ordered streets to be cleaned to remove bad smells.",
-        },
+
         {
           url: 'https://era.org.uk/streaming-service-resource/bbc-two-a-history-of-britain-by-simon-schama-series-1-king-death-the-symptoms-of-black-death-and-how-it-spread/',
           title:

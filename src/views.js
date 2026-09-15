@@ -819,53 +819,78 @@ export function renderInteractiveQuiz() {
           : ''
       }
 
-      <!-- Quiet Secondary Drawer: Printable Materials & The Vault -->
-      <details style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
-        <summary style="font-weight: 700; color: #1e293b; font-size: 0.92rem; cursor: pointer; display: flex; align-items: center; justify-content: space-between; outline: none; user-select: none;">
-          <span style="display: inline-flex; align-items: center; gap: 8px;">
-            <i class="fa-solid fa-folder-open" style="color: #6366f1;"></i>
-            <span>Printable A4 Workbooks &amp; Mastery Key Vault</span>
+      <!-- Prominent Physical Booklets & Printable PDF Quizzes -->
+      <div style="background: white; border: 1.5px solid #e2e8f0; border-radius: 14px; padding: 22px 24px; box-shadow: 0 4px 18px rgba(0,0,0,0.03); margin-top: 10px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid #f1f5f9;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 36px; height: 36px; border-radius: 8px; background: #eef2ff; color: #4338ca; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">
+              <i class="fa-solid fa-file-pdf" style="color: #dc2626;"></i>
+            </div>
+            <div>
+              <h3 style="margin: 0; color: #1e293b; font-size: 1.1rem; font-weight: 700;">Printable A4 Quizzes &amp; Mastery Booklets</h3>
+              <p style="margin: 2px 0 0 0; font-size: 0.82rem; color: #64748b;">Photocopier-ready retrieval sheets, scratch-off Vault answer keys, and complete exam practice packs.</p>
+            </div>
+          </div>
+          <span style="font-size: 0.76rem; color: #4338ca; font-weight: 700; background: #e0e7ff; padding: 4px 12px; border-radius: 999px;">
+            ${workbooks.length} ${workbooks.length === 1 ? 'Deck' : 'Decks'} Ready to Print
           </span>
-          <span style="font-size: 0.76rem; color: #64748b; font-weight: 600; background: #f1f5f9; padding: 2px 10px; border-radius: 999px;">
-            ${workbooks.length} ${workbooks.length === 1 ? 'Deck' : 'Decks'} Available ▾
-          </span>
-        </summary>
+        </div>
 
-        <div style="margin-top: 16px; padding-top: 14px; border-top: 1px solid #f1f5f9;">
-          <p style="margin: 0 0 14px 0; font-size: 0.85rem; color: #64748b; line-height: 1.4;">
-            Physical booklets and scratch-off answer keys for homework assignments or structured intervention sessions:
-          </p>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          ${workbooks
+            .map((wb, idx) => {
+              const wbId = wb.name || wb.id;
+              const isFull = wbId === 'full' || wbId === 'FULL';
+              const htmlUrl = `/units/${unitId}/mastery_pack_${wbId}.html`;
 
-          <div style="display: flex; flex-direction: column; gap: 8px;">
-            ${workbooks
-              .map((wb, idx) => {
-                const wbId = wb.name || wb.id;
-                const isFull = wbId === 'full';
-                const htmlUrl = `/units/${unitId}/mastery_pack_${wbId}.html`;
-                const pdfUrl = `/pdfs/${unitId}_mastery_pack_${wbId}_FINAL_V17.pdf`;
-                return `
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
-                  <div style="display: flex; align-items: center; gap: 10px;">
-                    <span style="background: ${isFull ? '#e0e7ff' : '#f1f5f9'}; color: ${isFull ? '#4338ca' : '#475569'}; font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 4px;">
-                      ${isFull ? 'All Lessons' : `Topic ${idx + 1}`}
-                    </span>
-                    <strong style="color: #1e293b; font-size: 0.88rem;">${wb.title || wb.name}</strong>
-                  </div>
-                  <div style="display: flex; align-items: center; gap: 8px;">
-                    <a href="${htmlUrl}" target="_blank" style="text-decoration: none; background: white; border: 1px solid #cbd5e1; color: #334155; padding: 5px 10px; border-radius: 6px; font-weight: 600; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 5px;" onmouseover="this.style.background='#f1f5f9';" onmouseout="this.style.background='white';">
-                      <i class="fa-solid fa-lock" style="color: #d97706;"></i> The Vault Key
-                    </a>
-                    <a href="${pdfUrl}" target="_blank" style="text-decoration: none; background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; padding: 5px 10px; border-radius: 6px; font-weight: 600; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 5px;" onmouseover="this.style.background='#fee2e2';" onmouseout="this.style.background='#fef2f2';">
-                      <i class="fa-solid fa-file-pdf" style="color: #dc2626;"></i> Print A4 PDF
-                    </a>
+              let recallPdfUrl = `/pdfs/${unitId}_mastery_pack_${wbId}_FINAL_V17.pdf`;
+              let examPdfUrl = null;
+
+              if (unitId === 'cme_new') {
+                const upperId = wbId.toUpperCase();
+                recallPdfUrl = `/pdfs/cme_recall_quiz_${upperId}.pdf`;
+                examPdfUrl = `/pdfs/cme_new/cme_mastery_pack_${upperId}.pdf`;
+              } else if (unitId === 'usa') {
+                const upperId = wbId.toUpperCase();
+                examPdfUrl = `/pdfs/usa/usa_mastery_pack_${upperId}.pdf`;
+              }
+
+              return `
+              <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; transition: all 0.2s ease;" onmouseover="this.style.borderColor='#cbd5e1'; this.style.background='#ffffff';" onmouseout="this.style.borderColor='#e2e8f0'; this.style.background='#f8fafc';">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <span style="background: ${isFull ? '#e0e7ff' : '#f1f5f9'}; color: ${isFull ? '#4338ca' : '#475569'}; font-size: 0.74rem; font-weight: 800; padding: 3px 9px; border-radius: 6px; text-transform: uppercase;">
+                    ${isFull ? 'Master Volume' : `Topic ${idx + 1}`}
+                  </span>
+                  <div>
+                    <strong style="color: #0f172a; font-size: 0.95rem; display: block;">${wb.title || wb.name}</strong>
+                    <span style="font-size: 0.78rem; color: #64748b;">${isFull ? 'All 10 Lessons • Complete Retrieval & Exam Mastery' : 'Knowledge Retrieval • The Vault Solutions • Exam Practice'}</span>
                   </div>
                 </div>
-              `;
-              })
-              .join('')}
-          </div>
+                <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                  <a href="${htmlUrl}" target="_blank" style="text-decoration: none; background: #ffffff; border: 1.5px solid #cbd5e1; color: #334155; padding: 7px 12px; border-radius: 6px; font-weight: 600; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;" onmouseover="this.style.background='#f1f5f9'; this.style.borderColor='#94a3b8';" onmouseout="this.style.background='#ffffff'; this.style.borderColor='#cbd5e1';">
+                    <i class="fa-solid fa-key" style="color: #d97706;"></i> The Vault Key
+                  </a>
+
+                  <a href="${recallPdfUrl}" target="_blank" download style="text-decoration: none; background: #fef2f2; border: 1.5px solid #fecaca; color: #991b1b; padding: 7px 12px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s ease;" onmouseover="this.style.background='#fee2e2';" onmouseout="this.style.background='#fef2f2';">
+                    <i class="fa-solid fa-file-pdf" style="color: #dc2626;"></i> Print Recall Quiz PDF
+                  </a>
+
+                  ${
+                    examPdfUrl
+                      ? `
+                  <a href="${examPdfUrl}" target="_blank" download style="text-decoration: none; background: #e0f2fe; border: 1.5px solid #bae6fd; color: #0369a1; padding: 7px 12px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s ease;" onmouseover="this.style.background='#bae6fd';" onmouseout="this.style.background='#e0f2fe';">
+                    <i class="fa-solid fa-book-open" style="color: #0284c7;"></i> ${isFull ? '36p Exam Suite' : '12p Exam Pack'}
+                  </a>
+                  `
+                      : ''
+                  }
+                </div>
+              </div>
+            `;
+            })
+            .join('')}
         </div>
-      </details>
+      </div>
 
     </div>
   `;

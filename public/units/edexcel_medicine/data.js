@@ -2527,13 +2527,13 @@ export const unitData = {
       video: [
         {
           type: 'youtube',
-          url: 'https://www.youtube.com/watch?v=zR2A7o90L9A',
-          title: 'BBC Teach: The Black Death',
-          duration: '4 mins',
+          url: 'https://www.youtube.com/watch?v=YhsPPBGtquo',
+          title: 'Black Death - Timelines.tv',
+          duration: '6 mins 33 secs',
           viewing_task:
-            'How did people respond to the devastating outbreak of the Black Death in 1348?',
+            'Explain how the Black Death entered Britain in 1348, how it spread, and what medieval people believed caused the disease.',
           model_answer:
-            "People responded with panic. Some whipped themselves to earn God's forgiveness (flagellants), others blamed minority groups, while local governments ordered streets to be cleaned to remove bad smells.",
+            'The Black Death entered southern England through coastal ports (such as Melcombe Regis in Dorset) in the summer of 1348 aboard merchant trade ships. Carried by fleas living on black rats, it spread rapidly along river and road trade networks. Medieval people had no knowledge of bacteria or microbiology, believing the devastating pestilence was caused by divine retribution from God, astrological conjunctions, or corrupting miasma.',
         },
         {
           url: 'https://era.org.uk/streaming-service-resource/bbc-two-a-history-of-britain-by-simon-schama-series-1-king-death-the-symptoms-of-black-death-and-how-it-spread/',
