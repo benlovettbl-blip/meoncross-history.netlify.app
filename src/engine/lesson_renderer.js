@@ -849,14 +849,14 @@ export function renderLesson(lesson) {
             ${
               source.src
                 ? `
-              <div class="archival-source-split-layout">
-                <div class="archival-source-media-col">
-                  <img src="${getAssetUrl(source.src)}" alt="${source.title || 'Source Image'}" data-action="open-modal" data-src="${getAssetUrl(source.src)}">
+              <div class="archival-source-split-layout" style="display: flex; flex-direction: row; align-items: stretch; gap: 18px; margin: 14px 0; max-width: 100%; overflow: hidden; box-sizing: border-box;">
+                <div class="archival-source-media-col" style="flex: 0 0 260px; max-width: 280px; min-width: 0; background: #0f172a; border-radius: 6px; padding: 8px; border: 1px solid #334155; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; box-sizing: border-box; overflow: hidden;">
+                  <img src="${getAssetUrl(source.src)}" alt="${source.title || 'Source Image'}" data-action="open-modal" data-src="${getAssetUrl(source.src)}" style="max-height: 200px; max-width: 100%; width: auto; height: auto; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); cursor: zoom-in; display: block;">
                   <div class="archival-source-inspect-badge">
-                    <span class="archival-meta-tag" style="font-size: 0.65rem; color: #cbd5e1; letter-spacing: 0.08em;">CLICK TO ENLARGE / PAN-ZOOM</span>
+                    <span class="archival-meta-tag" style="font-size: 0.62rem; color: #cbd5e1; letter-spacing: 0.08em;">CLICK TO ENLARGE / PAN-ZOOM</span>
                   </div>
                 </div>
-                <div class="archival-source-details-col">
+                <div class="archival-source-details-col" style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 10px; box-sizing: border-box; overflow: hidden;">
                   <div>
                     ${
                       source.caption
@@ -2292,7 +2292,7 @@ export function renderLesson(lesson) {
              </style>
              <div class="narrative-image-container" style="${containerStyle}">
                <div style="${imgWrapperStyle}">
-                 <img src="${getAssetUrl(block.image)}" alt="${block.image_alt || 'Narrative Image'}" style="max-width: 100%; max-height: 400px; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in;" data-action="open-modal" data-src="${getAssetUrl(block.image)}">
+                 <img src="${getAssetUrl(block.image)}" alt="${block.image_alt || 'Narrative Image'}" style="max-width: 100%; max-height: 240px; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in; display: block; margin: 0 auto;" data-action="open-modal" data-src="${getAssetUrl(block.image)}">
                  ${block.caption || block.image_caption || block.image_alt ? `<div class="image-hint-caption" data-action="toggle-caption-blur" title="Click to hide caption"><i class="fa-solid fa-eye" style="margin-right:4px; color: #10b981;"></i> ${block.source_letter ? `<strong>Source ${block.source_letter}:</strong> ` : ''}${block.caption || block.image_caption || block.image_alt}</div>` : ''}
                </div>
                ${contextHtml}
@@ -2425,14 +2425,14 @@ export function renderLesson(lesson) {
           `;
         } else {
           sourceBodyHtml = `
-            <div class="archival-source-split-layout">
-              <div class="archival-source-media-col">
-                <img src="${getAssetUrl(rawSource.source || rawSource.src)}" alt="${sourceTitle || 'Source'}" data-action="open-modal" data-src="${getAssetUrl(rawSource.source || rawSource.src)}">
+            <div class="archival-source-split-layout" style="display: flex; flex-direction: row; align-items: stretch; gap: 18px; margin: 14px 0; max-width: 100%; overflow: hidden; box-sizing: border-box;">
+              <div class="archival-source-media-col" style="flex: 0 0 260px; max-width: 280px; min-width: 0; background: #0f172a; border-radius: 6px; padding: 8px; border: 1px solid #334155; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; box-sizing: border-box; overflow: hidden;">
+                <img src="${getAssetUrl(rawSource.source || rawSource.src)}" alt="${sourceTitle || 'Source'}" data-action="open-modal" data-src="${getAssetUrl(rawSource.source || rawSource.src)}" style="max-height: 200px; max-width: 100%; width: auto; height: auto; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); cursor: zoom-in; display: block;">
                 <div class="archival-source-inspect-badge">
-                  <span class="archival-meta-tag" style="font-size: 0.65rem; color: #cbd5e1; letter-spacing: 0.08em;">CLICK TO ENLARGE / PAN-ZOOM</span>
+                  <span class="archival-meta-tag" style="font-size: 0.62rem; color: #cbd5e1; letter-spacing: 0.08em;">CLICK TO ENLARGE / PAN-ZOOM</span>
                 </div>
               </div>
-              <div class="archival-source-details-col">
+              <div class="archival-source-details-col" style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 10px; box-sizing: border-box; overflow: hidden;">
                 <div>
                   ${
                     (window.currentUnitId === 'cme_new' ||
