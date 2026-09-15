@@ -6,448 +6,270 @@
     <style>
   @page {
     size: A4 portrait;
-    margin: 10mm 12mm;
+    margin: 0;
   }
   * {
     box-sizing: border-box;
-  }
-  body {
-    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
-    color: #000;
-    margin: 0;
-    padding: 0;
-    background: #fff;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    color: #0f172a;
+    -webkit-font-smoothing: antialiased;
+  }
   .page {
+    width: 210mm;
+    height: 297mm;
+    padding: 11mm 13mm 11mm 13mm;
     page-break-after: always;
-    height: 277mm;
-    max-height: 277mm;
-    box-sizing: border-box;
+    position: relative;
+    background: #fff;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 0;
-  }
-  .page:last-child {
-    page-break-after: avoid;
   }
 
-  /* Authentic Pearson Cover Layout */
+  /* Authentic Pearson Edexcel Cover Headers */
   .cover-warning {
-    text-align: center;
-    font-weight: 600;
-    font-size: 8.5pt;
-    color: #333;
-    margin-bottom: 6px;
+    font-size: 7.8pt;
+    font-weight: 700;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 5px;
+    border-bottom: 1.5px solid #0f172a;
+    padding-bottom: 3px;
   }
   .candidate-box {
-    border: 2px solid #555;
-    border-radius: 8px;
-    padding: 8px 12px;
-    margin-bottom: 12px;
+    border: 1.5px solid #0f172a;
+    padding: 6px 10px;
+    margin-bottom: 8px;
+    background: #fff;
   }
   .candidate-row {
     display: flex;
     gap: 12px;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
   }
   .candidate-row:last-child {
     margin-bottom: 0;
   }
   .field-label {
-    font-size: 8pt;
-    font-weight: 600;
-    margin-bottom: 3px;
-    color: #222;
+    font-size: 7.6pt;
+    font-weight: 700;
+    color: #334155;
+    margin-bottom: 2px;
   }
   .field-input {
-    border: 1.5px solid #666;
-    border-radius: 4px;
-    height: 26px;
-    background: #fff;
+    border-bottom: 1.2px solid #475569;
+    height: 18px;
   }
   .char-cell {
-    border: 1.5px solid #666;
-    border-radius: 4px;
-    height: 26px;
-    width: 22px;
     display: inline-block;
-    background: #fff;
-    margin-right: 2px;
+    width: 17px;
+    height: 19px;
+    border: 1px solid #475569;
+    margin-right: 3px;
+    vertical-align: middle;
   }
+
   .edexcel-banner {
-    font-size: 16pt;
-    font-weight: 700;
-    margin: 8px 0 6px 0;
-    letter-spacing: -0.3px;
-    color: #111;
+    font-size: 13pt;
+    font-weight: 900;
+    color: #0f172a;
+    letter-spacing: -0.2px;
+    margin-bottom: 4px;
   }
   .exam-header-box {
-    border: 2px solid #555;
-    border-radius: 8px;
-    padding: 10px 14px;
-    margin-bottom: 10px;
+    border: 2px solid #0f172a;
     display: flex;
-    justify-content: space-between;
+    margin-bottom: 7px;
   }
   .exam-header-left {
-    flex: 1;
+    flex: 3.8;
+    padding: 6px 10px;
+    border-right: 2px solid #0f172a;
+  }
+  .exam-header-right {
+    flex: 1.2;
+    padding: 6px 8px;
+    background: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
   .exam-date {
     font-size: 8pt;
-    font-weight: 600;
-    color: #444;
+    font-weight: 700;
+    color: #475569;
+    text-transform: uppercase;
   }
   .exam-time {
     font-size: 8pt;
-    color: #444;
-    margin-bottom: 4px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 3px;
   }
   .exam-subject {
-    font-size: 18pt;
-    font-weight: 800;
-    line-height: 1.1;
-    margin: 2px 0;
-  }
-  .exam-booklet {
-    font-size: 10pt;
-    font-weight: 700;
-    color: #222;
-  }
-  .exam-subtopic {
-    font-size: 9pt;
-    color: #444;
-    margin-top: 2px;
-  }
-  .exam-header-right {
-    text-align: right;
-    padding-left: 15px;
-    border-left: 1px solid #ccc;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .ref-label {
-    font-size: 7.5pt;
-    font-weight: 600;
-    color: #555;
-  }
-  .ref-val {
-    font-size: 14pt;
-    font-weight: 800;
-    color: #111;
-  }
-  .must-have-row {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
-  }
-  .must-have-box {
-    border: 2px solid #555;
-    border-radius: 6px;
-    padding: 8px 12px;
-    flex: 1;
-    font-size: 8.5pt;
-    line-height: 1.35;
-  }
-  .marks-box {
-    border: 2px solid #555;
-    border-radius: 6px;
-    width: 90px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 8.5pt;
-    font-weight: 700;
-    background: #f8fafc;
-  }
-  .marks-number {
-    font-size: 16pt;
-    font-weight: 800;
+    font-size: 11pt;
+    font-weight: 900;
     color: #0f172a;
-  }
-  .exam-notice-strip {
-    border: 1.5px solid #64748b;
-    border-radius: 5px;
-    background: #f8fafc;
-    padding: 6px 10px;
-    font-size: 8pt;
-    line-height: 1.35;
-    margin-bottom: 8px;
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-  }
-  .exam-notice-strip > div {
-    flex: 1;
-  }
-  .exam-notice-strip strong {
-    color: #0f172a;
-  }
-
-  /* Spec-Mapped Question & Mark Tracker */
-  .tracker-container {
-    margin-bottom: 6px;
-  }
-  .tracker-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 7.5pt;
-  }
-  .tracker-table th, .tracker-table td {
-    border: 1px solid #94a3b8;
-    padding: 3.5px 6px;
-    vertical-align: middle;
-  }
-  .tracker-table th {
-    background: #0f172a;
-    color: #fff;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 7.2pt;
-    letter-spacing: 0.3px;
-  }
-  .tracker-section-hdr td {
-    background: #e2e8f0;
-    font-weight: 800;
-    color: #0f172a;
-    font-size: 7.2pt;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    padding: 3px 6px;
-  }
-  .tracker-row td {
-    background: #fff;
-  }
-  .tracker-row:nth-child(even) td {
-    background: #f8fafc;
-  }
-  .tracker-box {
-    width: 11px;
-    height: 11px;
-    border: 1.5px solid #475569;
-    border-radius: 2px;
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 3px;
-    background: #fff;
-  }
-  .score-cell {
-    font-weight: 700;
-    color: #0f172a;
-    text-align: center;
-    white-space: nowrap;
-    width: 58px;
-  }
-  .marks-cell {
-    font-weight: 600;
-    color: #334155;
-    text-align: center;
-    width: 44px;
-  }
-  .page-cell {
-    font-weight: 700;
-    color: #1e3a8a;
-    text-align: center;
-    width: 42px;
-  }
-  .type-tag {
-    font-size: 7pt;
-    font-weight: 700;
-    color: #334155;
-    text-transform: uppercase;
-  }
-  .cover-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    font-size: 7.5pt;
-    color: #64748b;
-    border-top: 1px solid #cbd5e1;
-    padding-top: 4px;
-    margin-top: 4px;
-  }
-  .turn-over {
-    font-weight: 700;
-    font-size: 8.5pt;
-    color: #000;
-  }
-
-  /* Specification Audit & Checklist Box */
-  .spec-audit-container {
-    margin-top: 8px;
-    margin-bottom: 4px;
-    border: 1.5px solid #0f172a;
-    border-radius: 6px;
-    background: #ffffff;
-    padding: 6px 8px 6px 8px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-  }
-  .spec-audit-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1.2px solid #0f172a;
-    padding-bottom: 3px;
-    margin-bottom: 5px;
-  }
-  .spec-audit-title {
-    font-size: 7.4pt;
-    font-weight: 800;
-    color: #0f172a;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-  }
-  .spec-audit-sub {
-    font-size: 6.8pt;
-    font-style: italic;
-    color: #475569;
-  }
-  .spec-audit-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 7px;
-    align-items: stretch;
-  }
-  .spec-audit-col {
-    background: #f8fafc;
-    border: 1px solid #cbd5e1;
-    border-radius: 4px;
-    padding: 4px 6px;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-  }
-  .spec-col-title {
-    font-size: 6.8pt;
-    font-weight: 800;
-    color: #1e3a8a;
-    text-transform: uppercase;
-    border-bottom: 1px solid #cbd5e1;
-    padding-bottom: 2px;
-    margin-bottom: 4px;
-    letter-spacing: 0.2px;
     line-height: 1.2;
   }
-  .spec-points-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
+  .exam-booklet {
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #1e3a8a;
   }
-  .spec-point-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 4px;
-    font-size: 6.5pt;
-    line-height: 1.22;
-    color: #1e293b;
+  .exam-subtopic {
+    font-size: 7.8pt;
+    color: #475569;
+    font-style: italic;
   }
-  .spec-tick-box {
-    width: 8.5px;
-    height: 8.5px;
-    border: 1.2px solid #0f172a;
-    border-radius: 2px;
-    background: #fff;
-    flex-shrink: 0;
-    margin-top: 1px;
-    display: inline-block;
+  .ref-label {
+    font-size: 7pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #64748b;
   }
-  .spec-point-text {
-    flex: 1;
-  }
-  .spec-point-text strong {
+  .ref-code {
+    font-size: 11.5pt;
+    font-weight: 900;
     color: #0f172a;
+    letter-spacing: 0.5px;
   }
 
-  /* Standard Inner Page Layouts */
+  /* Internal Page Headers */
   .page-header {
     border-bottom: 1.5px solid #0f172a;
-    padding-bottom: 4px;
+    padding-bottom: 3px;
     margin-bottom: 6px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
   }
   .header-left h2 {
-    margin: 0;
-    font-size: 10.2pt;
+    font-size: 10.5pt;
     font-weight: 800;
+    margin: 0;
     color: #0f172a;
-    text-transform: uppercase;
-    letter-spacing: 0.2px;
+    letter-spacing: -0.2px;
   }
   .header-left p {
+    font-size: 7.8pt;
     margin: 1px 0 0 0;
-    font-size: 7.6pt;
     color: #475569;
   }
   .header-tag {
-    font-size: 7pt;
-    font-weight: 700;
-    background: #0f172a;
+    font-size: 7.4pt;
+    font-weight: 800;
     color: #fff;
+    background: #0f172a;
     padding: 2px 7px;
     border-radius: 3px;
     text-transform: uppercase;
+    letter-spacing: 0.3px;
     white-space: nowrap;
   }
 
+  /* Question Containers */
   .question-container {
-    margin-bottom: 6px;
+    margin-bottom: 5px;
   }
   .question-prompt {
-    font-size: 10.5pt;
+    font-size: 9.2pt;
     font-weight: 700;
-    color: #000;
-    line-height: 1.3;
-    margin-bottom: 5px;
+    line-height: 1.35;
+    margin-bottom: 4px;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
   }
   .q-num {
-    font-weight: 800;
-    margin-right: 6px;
+    font-size: 10pt;
+    font-weight: 900;
+    margin-right: 4px;
+    color: #0f172a;
   }
   .q-marks {
-    font-size: 10pt;
-    font-weight: 700;
-    color: #334155;
-    margin-left: 10px;
+    font-size: 9.2pt;
+    font-weight: 800;
+    color: #0f172a;
     white-space: nowrap;
+    margin-left: 8px;
   }
+
+  /* Discrete 4-Tier Provenance Badges */
+  .exam-provenance-pill {
+    font-size: 7pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    padding: 1px 5px;
+    border-radius: 3px;
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.25;
+  }
+  .exam-provenance-pill.past {
+    background: #f1f5f9;
+    border: 1.2px solid #475569;
+    color: #1e293b;
+  }
+  .exam-provenance-pill.specimen {
+    background: #f0fdfa;
+    border: 1.2px solid #0d9488;
+    color: #0f766e;
+  }
+  .exam-provenance-pill.unexamined {
+    background: #fffbeb;
+    border: 1.2px solid #d97706;
+    color: #92400e;
+  }
+  .exam-provenance-pill.forecast {
+    background: #eef2ff;
+    border: 1.4px solid #4338ca;
+    color: #3730a3;
+  }
+
+  /* Stimulus Box */
   .stimulus-card {
-    border: 1.5px solid #64748b;
-    border-radius: 5px;
-    padding: 6px 10px;
-    font-size: 8.5pt;
+    border: 1.2px solid #64748b;
+    border-radius: 4px;
     background: #f8fafc;
-    margin-bottom: 6px;
+    padding: 5px 9px;
+    margin-bottom: 5px;
+    font-size: 8.2pt;
     line-height: 1.3;
   }
   .stimulus-card ul {
-    margin: 2px 0 0 0;
-    padding-left: 18px;
+    margin: 2px 0 2px 18px;
+    padding: 0;
   }
-  .focus-guidance {
-    font-size: 7.8pt;
-    color: #475569;
-    font-style: italic;
-    margin-bottom: 5px;
+  .stimulus-card li {
+    margin-bottom: 1px;
   }
 
-  /* Ruled Lines for Handwriting (Authentic Pearson Edexcel 8mm Spacing - Photocopier & Duplex Safe) */
+  .focus-guidance {
+    font-size: 8.2pt;
+    color: #334155;
+    font-style: italic;
+    margin-bottom: 5px;
+    line-height: 1.3;
+  }
+
+  /* Ruled Lines for Handwriting (Authentic Pearson Edexcel 7.4mm Spacing - Photocopier & Duplex Safe) */
   .dotted-line {
     border-bottom: 1.2px solid #475569;
-    height: 8mm;
+    height: 7.4mm;
     width: 100%;
     box-sizing: border-box;
   }
@@ -459,7 +281,7 @@
     background: #f8fafc;
     padding: 4px 8px;
     margin-bottom: 6px;
-    font-size: 8pt;
+    font-size: 8.4pt;
     line-height: 1.3;
     display: flex;
     gap: 8px;
@@ -475,7 +297,7 @@
   .scaffold-label {
     font-weight: 800;
     text-transform: uppercase;
-    font-size: 7.2pt;
+    font-size: 7.6pt;
     color: #0f172a;
     margin-bottom: 2px;
     display: block;
@@ -483,6 +305,8 @@
   }
   .scaffold-content {
     color: #334155;
+    font-size: 7.6pt;
+    line-height: 1.3;
   }
   .scaffold-pill {
     display: inline-block;
@@ -491,7 +315,7 @@
     border-radius: 3px;
     padding: 1px 5px;
     margin: 1px 2px 1px 0;
-    font-size: 7.2pt;
+    font-size: 7.6pt;
     font-weight: 700;
     color: #0f172a;
     white-space: nowrap;
@@ -504,7 +328,7 @@
     background: #f8fafc;
     padding: 4px 8px;
     margin-bottom: 5px;
-    font-size: 8pt;
+    font-size: 8.4pt;
     line-height: 1.3;
   }
   .scaffold-focus-row {
@@ -515,7 +339,7 @@
     border-bottom: 1px solid #e2e8f0;
   }
   .scaffold-badge {
-    font-size: 7.4pt;
+    font-size: 7.6pt;
     font-weight: 800;
     text-transform: uppercase;
     color: #1e3a8a;
@@ -527,7 +351,7 @@
   }
   .scaffold-text {
     color: #1e293b;
-    font-size: 8pt;
+    font-size: 8.2pt;
     line-height: 1.3;
   }
   .scaffold-vocab-row {
@@ -551,13 +375,13 @@
     display: flex;
     align-items: baseline;
     gap: 6px;
-    font-size: 7.4pt;
+    font-size: 7.6pt;
     color: #475569;
   }
   .scaffold-stem-label {
     font-weight: 700;
     color: #9a3412;
-    font-size: 7.2pt;
+    font-size: 7.6pt;
     text-transform: uppercase;
     flex-shrink: 0;
   }
@@ -572,7 +396,7 @@
     background: #f8fafc;
     padding: 4px 8px;
     margin-bottom: 6px;
-    font-size: 8pt;
+    font-size: 8.4pt;
     line-height: 1.3;
   }
   .narrative-stages-row {
@@ -589,7 +413,7 @@
   }
   .narrative-stage-hdr {
     font-weight: 800;
-    font-size: 7.2pt;
+    font-size: 7.6pt;
     text-transform: uppercase;
     color: #0f172a;
     border-bottom: 1px solid #e2e8f0;
@@ -597,63 +421,7 @@
     margin-bottom: 2px;
   }
 
-  /* Exemplar and Trap Containers */
-  .exemplar-box {
-    border: 1.5px solid #cbd5e1;
-    border-radius: 5px;
-    padding: 7px 9px;
-    background: #fff;
-    margin-bottom: 6px;
-  }
-  .exemplar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    border-bottom: 1px solid #e2e8f0;
-    padding-bottom: 2px;
-    margin-bottom: 4px;
-  }
-  .exemplar-title {
-    font-size: 9pt;
-    font-weight: 800;
-    color: #0f172a;
-    text-transform: uppercase;
-  }
-  .exemplar-grade {
-    font-size: 7.8pt;
-    font-weight: 700;
-    background: #dbeafe;
-    color: #1e40af;
-    padding: 1.5px 5px;
-    border-radius: 3px;
-  }
-  .exemplar-stem {
-    font-size: 8.8pt;
-    font-weight: 700;
-    color: #1e293b;
-    margin-bottom: 3px;
-  }
-  .exemplar-text {
-    font-family: Georgia, serif;
-    font-size: 8.6pt;
-    line-height: 1.35;
-    color: #1e293b;
-    background: #fafaf9;
-    border-left: 3px solid #0284c7;
-    padding: 5px 7px;
-    border-radius: 0 4px 4px 0;
-    margin-bottom: 3px;
-  }
-  .examiner-note {
-    font-size: 7.6pt;
-    color: #15803d;
-    background: #f0fdf4;
-    border: 1px solid #bbf7d0;
-    border-radius: 3px;
-    padding: 2.5px 5px;
-    line-height: 1.25;
-  }
-
+  /* Fatal Traps Card */
   .traps-card {
     border: 1.5px solid #ef4444;
     border-radius: 5px;
@@ -662,7 +430,7 @@
     margin-bottom: 6px;
   }
   .traps-header {
-    font-size: 8pt;
+    font-size: 8.4pt;
     font-weight: 800;
     color: #991b1b;
     text-transform: uppercase;
@@ -680,7 +448,7 @@
     border: 1px solid #fca5a5;
     border-radius: 4px;
     padding: 4px 5px;
-    font-size: 7.2pt;
+    font-size: 7.6pt;
     line-height: 1.25;
   }
   .trap-item strong {
@@ -710,13 +478,13 @@
   }
   .spec-bank-title {
     color: #1e3a8a;
-    font-size: 8.2pt;
+    font-size: 8.5pt;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.2px;
   }
   .spec-bank-subtitle {
-    font-size: 7pt;
+    font-size: 7.2pt;
     color: #64748b;
     font-style: italic;
   }
@@ -730,7 +498,7 @@
     border: 1px solid #e2e8f0;
     border-radius: 4px;
     padding: 3px 6px;
-    font-size: 7.4pt;
+    font-size: 7.8pt;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -738,38 +506,222 @@
   }
   .spec-bank-q {
     flex: 1;
-    padding-right: 8px;
     color: #1e293b;
-  }
-  .spec-bank-q strong {
-    color: #1e3a8a;
+    padding-right: 8px;
   }
   .spec-bank-badge {
-    font-size: 6.6pt;
-    font-weight: 800;
     background: #e0e7ff;
     color: #3730a3;
-    padding: 1.5px 6px;
+    font-size: 6.8pt;
+    font-weight: 700;
+    padding: 1.5px 5px;
     border-radius: 3px;
     white-space: nowrap;
   }
 
+  /* Diagnostic Card */
   .diagnostic-action-card {
-    border: 1.5px dashed #475569;
+    border: 1.5px solid #475569;
     border-radius: 5px;
-    padding: 6px 9px;
-    background: #f8fafc;
+    padding: 5px 8px;
+    background: #f1f5f9;
+    font-size: 7.4pt;
   }
 
-  .page-footer {
-    font-size: 7.2pt;
+  /* Progress Tracker Table on Page 1 */
+  .tracker-card {
+    border: 1.5px solid #0f172a;
+    border-radius: 5px;
+    background: #fff;
+    padding: 5px 8px;
+    margin-bottom: 7px;
+  }
+  .tracker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1.5px solid #0f172a;
+    padding-bottom: 2px;
+    margin-bottom: 4px;
+  }
+  .tracker-title {
+    font-size: 8.5pt;
+    font-weight: 800;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+  }
+  .tracker-sub {
+    font-size: 7pt;
     color: #64748b;
+    font-style: italic;
+  }
+  .tracker-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 7.4pt;
+    line-height: 1.2;
+  }
+  .tracker-table th {
+    background: #f1f5f9;
+    color: #334155;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 2.5px 5px;
+    border: 1px solid #cbd5e1;
+    text-align: left;
+    font-size: 6.8pt;
+  }
+  .tracker-table td {
+    padding: 2.5px 5px;
+    border: 1px solid #e2e8f0;
+    color: #1e293b;
+  }
+  .tracker-section-hdr td {
+    background: #f8fafc;
+    font-weight: 800;
+    color: #0f172a;
+    font-size: 7pt;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    padding: 2.5px 5px;
+    border-top: 1.5px solid #94a3b8;
+  }
+  .tracker-row:nth-child(even) {
+    background: #fafafa;
+  }
+  .page-cell {
+    text-align: center;
+    font-weight: 700;
+    color: #1e3a8a;
+  }
+  .marks-cell {
+    text-align: center;
+    font-weight: 700;
+  }
+  .score-cell {
+    text-align: center;
+    font-weight: 700;
+    color: #475569;
+  }
+  .type-tag {
+    display: inline-block;
+    padding: 1px 4px;
+    border-radius: 2px;
+    font-size: 6.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: #0f172a;
+    color: #fff;
+    white-space: nowrap;
+  }
+  .tracker-box {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border: 1px solid #64748b;
+    border-radius: 1.5px;
+    vertical-align: middle;
+    margin-right: 2px;
+  }
+
+  /* Specification Audit Checklist on Page 1 */
+  .spec-audit-container {
+    border: 1.5px solid #334155;
+    border-radius: 5px;
+    padding: 5px 8px;
+    background: #f8fafc;
+    margin-bottom: 5px;
+  }
+  .spec-audit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 2px;
+    margin-bottom: 4px;
+  }
+  .spec-audit-title {
+    font-size: 8pt;
+    font-weight: 800;
+    color: #0f172a;
+    text-transform: uppercase;
+  }
+  .spec-audit-sub {
+    font-size: 6.8pt;
+    color: #64748b;
+    font-style: italic;
+  }
+  .spec-audit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6px;
+  }
+  .spec-audit-col {
+    background: #fff;
+    border: 1px solid #cbd5e1;
+    border-radius: 3px;
+    padding: 3px 5px;
+  }
+  .spec-col-title {
+    font-size: 7.2pt;
+    font-weight: 800;
+    color: #1e3a8a;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 1.5px;
+    margin-bottom: 2.5px;
+    text-transform: uppercase;
+  }
+  .spec-points-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .spec-point-item {
+    font-size: 6.6pt;
+    line-height: 1.2;
+    color: #334155;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2px;
+  }
+  .spec-tick-box {
+    width: 8px;
+    height: 8px;
+    border: 1px solid #64748b;
+    border-radius: 1px;
+    margin-right: 3px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .spec-point-text {
+    flex: 1;
+  }
+
+  /* Footer */
+  .page-footer {
     border-top: 1px solid #cbd5e1;
     padding-top: 3px;
-    margin-top: 3px;
+    font-size: 7pt;
+    color: #64748b;
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  .cover-footer {
+    border-top: 1px solid #cbd5e1;
+    padding-top: 3px;
+    font-size: 7pt;
+    color: #64748b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .turn-over {
+    font-weight: 700;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
   }
 </style>
 </head>
@@ -825,31 +777,22 @@
                 </div>
                 <div class="exam-header-right">
                     <div class="ref-label">Paper<br>reference</div>
-                    <div class="ref-val">1HI0/P5</div>
+                    <div class="ref-code">1HI0/P5</div>
                 </div>
             </div>
 
-            <!-- Must Have & Total Marks Row -->
-            <div class="must-have-row">
-                <div class="must-have-box">
-                    <strong>You must have:</strong><br>
-                    Black ink or ball-point pen. Ruler for margin checks.
-                </div>
-                <div class="marks-box">
-                    <span>Section A Total</span>
-                    <span class="marks-number">32</span>
-                    <span>Marks</span>
-                </div>
+            <!-- Instructions & Information -->
+            <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; margin-bottom: 6px; font-size: 7.2pt; color: #334155; line-height: 1.25;">
+                <div><strong>Instructions:</strong> Use black ink. Complete Section A as a timed 32-mark mock (~50 mins). Section B provides exhaustive specification depth. Section C provides the 100% syllabus practice bank and fatal traps on Page 12.</div>
+                <div style="margin-top: 2px;"><strong>Information:</strong> The total mark for Section A is 32. Marks for each question are shown in brackets. Clean student pack with zero model answers.</div>
             </div>
 
-            <!-- Exam Instructions & Timing Guidance Bar -->
-            <div class="exam-notice-strip">
-                <div><strong>Instructions:</strong> Use black ink. Complete Section A as a timed 32-mark mock (~50 mins). Complete Section B for full syllabus mastery. Mark using Section C models.</div>
-                <div><strong>Timing Advice:</strong> 4-mark Consequence (~6 mins) · 8-mark Importance (~12 mins) · 8-mark Narrative (~12 mins).</div>
-            </div>
-
-            <!-- Spec-Mapped Question & Mark Tracker -->
-            <div class="tracker-container">
+            <!-- 12-Page Complete Unit Exam Tracker -->
+            <div class="tracker-card">
+                <div class="tracker-header">
+                    <span class="tracker-title">📋 12-Page Specification Practice Tracker &amp; Progress Audit</span>
+                    <span class="tracker-sub">Track marks achieved across Timed Mock (Sec A) &amp; Depth Practice (Sec B)</span>
+                </div>
                 <table class="tracker-table">
                     <thead>
                         <tr>
@@ -888,7 +831,7 @@
                         <tr class="tracker-row">
                             <td><strong>Q2</strong></td>
                             <td><span class="type-tag">Narrative</span></td>
-                            <td>Negotiations: Sadat’s Knesset Visit to Treaty of Washington</td>
+                            <td>Egypt-Israel Peace Diplomacy (1977–79)</td>
                             <td class="page-cell">P3–4</td>
                             <td class="marks-cell">[8]</td>
                             <td class="score-cell"><span class="tracker-box"></span> / 8</td>
@@ -897,7 +840,7 @@
                         <tr class="tracker-row">
                             <td><strong>Q3 (a)</strong></td>
                             <td><span class="type-tag">Importance</span></td>
-                            <td>Oslo Accords (1993) & Setting up Palestinian Authority</td>
+                            <td>Oslo Accords (1993) for Setting Up Palestinian Authority</td>
                             <td class="page-cell">P5</td>
                             <td class="marks-cell">[8]</td>
                             <td class="score-cell"><span class="tracker-box"></span> / 8</td>
@@ -906,7 +849,7 @@
                         <tr class="tracker-row">
                             <td><strong>Q3 (b)</strong></td>
                             <td><span class="type-tag">Importance</span></td>
-                            <td>Arafat’s Renunciation of Terrorism (1988) for US Relations</td>
+                            <td>Arafat’s 1988 Terrorism Renunciation on US Diplomacy</td>
                             <td class="page-cell">P6</td>
                             <td class="marks-cell">[8]</td>
                             <td class="score-cell"><span class="tracker-box"></span> / 8</td>
@@ -921,7 +864,7 @@
                         <tr class="tracker-row">
                             <td><strong>Q4 (a)</strong></td>
                             <td><span class="type-tag">Consequence</span></td>
-                            <td>The 1994 Israel-Jordan Peace Treaty</td>
+                            <td>Israel-Jordan Peace Treaty (1994)</td>
                             <td class="page-cell">P7</td>
                             <td class="marks-cell">[4]</td>
                             <td class="score-cell"><span class="tracker-box"></span> / 4</td>
@@ -930,7 +873,7 @@
                         <tr class="tracker-row">
                             <td><strong>Q4 (b)</strong></td>
                             <td><span class="type-tag">Consequence</span></td>
-                            <td>The Oslo II Agreement (1995) for West Bank Self-Rule</td>
+                            <td>Oslo II Agreement (1995) on West Bank Self-Rule</td>
                             <td class="page-cell">P7</td>
                             <td class="marks-cell">[4]</td>
                             <td class="score-cell"><span class="tracker-box"></span> / 4</td>
@@ -939,7 +882,7 @@
                         <tr class="tracker-row">
                             <td><strong>Q5</strong></td>
                             <td><span class="type-tag">Importance</span></td>
-                            <td>US President Carter for Camp David Negotiations (1978)</td>
+                            <td>President Carter’s Mediation at Camp David (1978)</td>
                             <td class="page-cell">P8</td>
                             <td class="marks-cell">[8]</td>
                             <td class="score-cell"><span class="tracker-box"></span> / 8</td>
@@ -948,7 +891,7 @@
                         <tr class="tracker-row">
                             <td><strong>Q6</strong></td>
                             <td><span class="type-tag">Importance</span></td>
-                            <td>1973 Oil Crisis for US Involvement in Middle East</td>
+                            <td>1973 Oil Crisis on US Involvement in Middle East</td>
                             <td class="page-cell">P9</td>
                             <td class="marks-cell">[8]</td>
                             <td class="score-cell"><span class="tracker-box"></span> / 8</td>
@@ -958,7 +901,7 @@
                             <td><strong>Q7</strong></td>
                             <td><span class="type-tag">Narrative</span></td>
                             <td>Events of the First Palestinian Intifada (1987–93)</td>
-                            <td class="page-cell">P10</td>
+                            <td class="page-cell">P10–11</td>
                             <td class="marks-cell">[8]</td>
                             <td class="score-cell"><span class="tracker-box"></span> / 8</td>
                         </tr>
@@ -966,27 +909,16 @@
 
                         <!-- SECTION C -->
                         <tr class="tracker-section-hdr">
-                            <td colspan="6">SECTION C: EXAMINER STANDARDS &amp; MODEL ANSWERS (Self &amp; Peer Assessment)</td>
+                            <td colspan="6">SECTION C: 100% SPECIFICATION PRACTICE BANK &amp; FATAL TRAPS</td>
                         </tr>
-                        
                         <tr class="tracker-row">
-                            <td><strong>Ref</strong></td>
-                            <td><span class="type-tag">Exemplars</span></td>
-                            <td>Grade 8/9 Level 3 Models (Q1 Consequence & Q3 Importance)</td>
-                            <td class="page-cell">P11</td>
+                            <td><strong>Page 12</strong></td>
+                            <td><span class="type-tag" style="background: #1e3a8a;">Syllabus Bank</span></td>
+                            <td>Exhaustive Practice Stems &amp; Top 3 Fatal Examiner Traps</td>
+                            <td class="page-cell">12</td>
                             <td class="marks-cell">Audit</td>
-                            <td class="score-cell"><span class="tracker-box"></span> Read</td>
+                            <td class="score-cell"><span class="tracker-box"></span> Complete</td>
                         </tr>
-                        
-                        <tr class="tracker-row">
-                            <td><strong>Bank</strong></td>
-                            <td><span class="type-tag">Spec Bank</span></td>
-                            <td>100% Specification Practice Bank & Fatal Examiner Traps</td>
-                            <td class="page-cell">P12</td>
-                            <td class="marks-cell">Audit</td>
-                            <td class="score-cell"><span class="tracker-box"></span> Read</td>
-                        </tr>
-                        
                     </tbody>
                 </table>
             </div>
@@ -1097,65 +1029,55 @@
             <!-- Question 1(a) -->
             <div class="question-container">
                 <div class="question-prompt">
-                    <span><strong class="q-num">1 (a)</strong> Explain one consequence of the Treaty of Washington (1979) for Egyptian relations with other Arab states.</span>
+                    <span>
+                        <strong class="q-num">1 (a)</strong>
+                        <span class="exam-provenance-pill past">Edexcel June 2018</span>
+                        Explain one consequence of the Treaty of Washington (1979) for Egyptian relations with other Arab states.
+                    </span>
                     <span class="q-marks">(4)</span>
                 </div>
                 <div class="scaffold-bar">
                     <div class="scaffold-col" style="flex: 1.2;">
                         <span class="scaffold-label">Key Facts Bank:</span>
-                        <div class="scaffold-content"><span class="scaffold-pill">26 March 1979</span> <span class="scaffold-pill">Anwar Sadat & Menachem Begin</span> <span class="scaffold-pill">Arab League suspension of Egypt</span> <span class="scaffold-pill">Move of HQ to Tunis</span> <span class="scaffold-pill">Severing of diplomatic ties</span></div>
+                        <div class="scaffold-content"><span class="scaffold-pill">26 March 1979 (White House lawn)</span> <span class="scaffold-pill">Anwar Sadat & Menachem Begin</span> <span class="scaffold-pill">Jimmy Carter mediation</span> <span class="scaffold-pill">Sinai Peninsula returned to Egypt</span> <span class="scaffold-pill">Arab League expulsion of Egypt</span> <span class="scaffold-pill">HQ moved from Cairo to Tunis</span> <span class="scaffold-pill">Severing of Arab diplomatic ties</span> <span class="scaffold-pill">Sadat assassinated (Oct 1981)</span></div>
                     </div>
-                    <div class="scaffold-col" style="flex: 1;">
+                    <div class="scaffold-col" style="flex: 0.9;">
                         <span class="scaffold-label">Causal Connectives:</span>
-                        <div class="scaffold-content"><span class="scaffold-pill">One direct consequence was...</span> <span class="scaffold-pill">This meant that...</span> <span class="scaffold-pill">Consequently, Egypt faced...</span></div>
+                        <div class="scaffold-content"><span class="scaffold-pill">One decisive consequence was...</span> <span class="scaffold-pill">By signing a separate bilateral peace, ...</span> <span class="scaffold-pill">Consequently, the Arab world responded by...</span></div>
                     </div>
-                    <div class="scaffold-col" style="flex: 1.3;">
+                    <div class="scaffold-col" style="flex: 1.6;">
                         <span class="scaffold-label">Response Structure:</span>
-                        <div class="scaffold-content" style="font-size: 6.8pt;">Identify Arab reaction &rarr; Support with facts (suspension from Arab League, move to Tunis) &rarr; Explain how Egypt was ostracized for breaking pan-Arab unity.</div>
+                        <div class="scaffold-content" style="font-size: 7.4pt;">Identify Consequence (e.g. Diplomatic Isolation of Egypt OR Return of Sinai Peninsula) &rarr; Facts (Sadat, Begin, Arab League boycott) &rarr; Causal Chain: Separate peace broke Arab solidarity &rarr; Arab states cut diplomatic ties &rarr; Fueled Islamist outrage leading to Sadat's assassination.</div>
                     </div>
                 </div>
-                <div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-
+                <div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
             </div>
 
             <!-- Question 1(b) -->
             <div class="question-container" style="margin-top: 8px;">
                 <div class="question-prompt">
-                    <span><strong class="q-num">1 (b)</strong> Explain one consequence of the Israeli invasion of Lebanon (1982).</span>
+                    <span>
+                        <strong class="q-num">1 (b)</strong>
+                        <span class="exam-provenance-pill forecast">★ High-Yield Forecast</span>
+                        Explain one consequence of the Israeli invasion of Lebanon (1982).
+                    </span>
                     <span class="q-marks">(4)</span>
                 </div>
                 <div class="scaffold-bar">
                     <div class="scaffold-col" style="flex: 1.2;">
                         <span class="scaffold-label">Key Facts Bank:</span>
-                        <div class="scaffold-content"><span class="scaffold-pill">Operation Peace for Galilee (June 1982)</span> <span class="scaffold-pill">Ariel Sharon</span> <span class="scaffold-pill">Siege of Beirut</span> <span class="scaffold-pill">Expulsion of PLO to Tunisia</span> <span class="scaffold-pill">Rise of Hezbollah</span></div>
+                        <div class="scaffold-content"><span class="scaffold-pill">Operation Peace for Galilee (June 1982)</span> <span class="scaffold-pill">Ariel Sharon (Defence Minister)</span> <span class="scaffold-pill">Siege of West Beirut</span> <span class="scaffold-pill">Expulsion of Arafat and 14,000 PLO fighters to Tunisia</span> <span class="scaffold-pill">Sabra and Shatila massacre (Phalangists)</span> <span class="scaffold-pill">Kahan Commission inquiry</span> <span class="scaffold-pill">Rise of Hezbollah in Southern Lebanon</span></div>
                     </div>
-                    <div class="scaffold-col" style="flex: 1;">
+                    <div class="scaffold-col" style="flex: 0.9;">
                         <span class="scaffold-label">Causal Connectives:</span>
-                        <div class="scaffold-content"><span class="scaffold-pill">As a direct result, ...</span> <span class="scaffold-pill">This directly led to...</span> <span class="scaffold-pill">Consequently, this created...</span></div>
+                        <div class="scaffold-content"><span class="scaffold-pill">One far-reaching consequence was...</span> <span class="scaffold-pill">The military assault resulted in...</span> <span class="scaffold-pill">This directly created a new threat because...</span></div>
                     </div>
-                    <div class="scaffold-col" style="flex: 1.3;">
+                    <div class="scaffold-col" style="flex: 1.6;">
                         <span class="scaffold-label">Response Structure:</span>
-                        <div class="scaffold-content" style="font-size: 6.8pt;">Identify one consequence &rarr; Support with facts (Beirut siege, PLO expulsion to Tunis, Hezbollah) &rarr; Explain long-term border conflict.</div>
+                        <div class="scaffold-content" style="font-size: 7.4pt;">Identify Consequence (e.g. Expulsion of PLO to Tunis OR Rise of Hezbollah) &rarr; Facts (Sharon, Beirut siege, 14,000 evacuated) &rarr; Causal Chain: Removed PLO artillery threat from Galilee &rarr; But power vacuum created militant Hezbollah &rarr; Prolonged Israeli occupation until 2000.</div>
                     </div>
                 </div>
-                <div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-
+                <div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
             </div>
         </div>
 
@@ -1181,7 +1103,11 @@
 
             <div class="question-container">
                 <div class="question-prompt">
-                    <span><strong class="q-num">2</strong> Write a narrative account analysing diplomatic negotiations between Egypt and Israel from Sadat’s visit (1977) to the Treaty of Washington (1979).</span>
+                    <span>
+                        <strong class="q-num">2</strong>
+                        <span class="exam-provenance-pill past">Edexcel June 2019</span>
+                        Write a narrative account analysing diplomatic negotiations between Egypt and Israel from Sadat’s visit (1977) to the Treaty of Washington (1979).
+                    </span>
                     <span class="q-marks">(8)</span>
                 </div>
 
@@ -1189,7 +1115,7 @@
                 <div class="stimulus-card">
                     You may use the following in your answer:
                     <ul>
-                        <li><strong>Sadat’s address to the Knesset (November 1977)</strong></li>
+                        <li><strong>Sadat’s visit to Jerusalem (November 1977)</strong></li>
                         <li><strong>The Camp David summit (September 1978)</strong></li>
                     </ul>
                     <span style="display: block; margin-top: 2px; font-style: italic; color: #475569;">(You must also use information of your own.)</span>
@@ -1197,43 +1123,30 @@
 
                 <!-- Narrative Flow Planner -->
                 <div class="narrative-flow-planner">
-                    <div style="font-weight: 800; font-size: 6.8pt; text-transform: uppercase; color: #0f172a; margin-bottom: 2px;">
+                    <div style="font-weight: 800; font-size: 7.4pt; text-transform: uppercase; color: #0f172a; margin-bottom: 2px;">
                         Chronological 3-Stage Narrative Architecture:
                     </div>
                     <div class="narrative-stages-row">
                         <div class="narrative-stage-box">
-                            <div class="narrative-stage-hdr">Stage 1: Dramatic Peace Initiative (Nov 1977)</div>
-                            <div style="font-size: 6.6pt; color: #334155;">Sadat flies to Jerusalem offering peace; breaks psychological barrier</div>
+                            <div class="narrative-stage-hdr">Stage 1: Breakthrough & Jerusalem Visit (Nov 1977)</div>
+                            <div style="font-size: 7.2pt; color: #334155;">Sadat breaks psychological barrier with Knesset address; Begin visits Egypt</div>
                         </div>
                         <div class="narrative-stage-box">
-                            <div class="narrative-stage-hdr">Stage 2: US Mediation & Camp David (Sept 1978)</div>
-                            <div style="font-size: 6.6pt; color: #334155;">Carter drafts 23 revisions at secluded summit to prevent collapse</div>
+                            <div class="narrative-stage-hdr">Stage 2: Carter’s Mediation & Camp David (Sept 1978)</div>
+                            <div style="font-size: 7.2pt; color: #334155;">13 days of intense diplomacy yield Camp David Accords framework</div>
                         </div>
                         <div class="narrative-stage-box">
                             <div class="narrative-stage-hdr">Stage 3: Formal Bilateral Treaty (March 1979)</div>
-                            <div style="font-size: 6.6pt; color: #334155;">Treaty of Washington signed: Sinai returned, canal opened, Egypt isolated</div>
+                            <div style="font-size: 7.2pt; color: #334155;">Treaty of Washington signed; Sinai returned; Arab world ostracizes Egypt</div>
                         </div>
                     </div>
-                    <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #cbd5e1; padding-top: 2px; font-size: 6.6pt; color: #475569;">
-                        <span><strong>Fact Bank:</strong> <span class="scaffold-pill">19 Nov 1977 Knesset speech</span> <span class="scaffold-pill">Begin visit to Ismailia</span> <span class="scaffold-pill">Jimmy Carter mediation</span> <span class="scaffold-pill">13-day Camp David summit</span> <span class="scaffold-pill">23 framework drafts</span> <span class="scaffold-pill">Treaty of Washington (26 March 1979)</span></span>
-                        <span><strong>Connectives:</strong> Negotiations began when... · However, talks soon deadlocked until... · During the intense 13-day summit, ...</span>
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #cbd5e1; padding-top: 2px; font-size: 7.4pt; color: #475569;">
+                        <span><strong>Fact Bank:</strong> <span class="scaffold-pill">Knesset historic speech (19 Nov 1977)</span> <span class="scaffold-pill">"No more war, no more bloodshed"</span> <span class="scaffold-pill">Menachem Begin reciprocal visit to Ismailia</span> <span class="scaffold-pill">Jimmy Carter 13-day Camp David summit</span> <span class="scaffold-pill">"A Framework for Peace in the Middle East"</span> <span class="scaffold-pill">Sinai withdrawal & dismantling of Yamit</span> <span class="scaffold-pill">Full diplomatic recognition & normalization</span> <span class="scaffold-pill">Treaty of Washington (26 March 1979)</span></span>
+                        <span><strong>Connectives:</strong> The diplomatic breakthrough began when... · When negotiations stalled, ... · President Carter intervened decisively by...</span>
                     </div>
                 </div>
 
-                <div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-
+                <div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
             </div>
         </div>
 
@@ -1258,36 +1171,11 @@
             </div>
 
             <div class="question-container">
-                <div style="border: 1px solid #94a3b8; border-radius: 4px; background: #f8fafc; padding: 4px 8px; margin-bottom: 6px; font-size: 7pt; color: #334155; display: flex; justify-content: space-between;">
+                <div style="border: 1px solid #94a3b8; border-radius: 4px; background: #f8fafc; padding: 4px 8px; margin-bottom: 6px; font-size: 7.4pt; color: #334155; display: flex; justify-content: space-between;">
                     <span><strong>Narrative Rule:</strong> Use linking connectives (<em>"Consequently"</em>, <em>"This directly led to"</em>) between paragraphs.</span>
                     <span><strong>Check:</strong> Both stimulus points + 1 own fact included.</span>
                 </div>
-                <div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-
+                <div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
             </div>
         </div>
 
@@ -1313,59 +1201,42 @@
 
             <div class="question-container">
                 <div class="question-prompt">
-                    <span><strong class="q-num">3 (a)</strong> Explain the importance of the Oslo Accords (1993) for the setting up of the Palestinian National Authority.</span>
+                    <span>
+                        <strong class="q-num">3 (a)</strong>
+                        <span class="exam-provenance-pill past">Edexcel June 2022</span>
+                        Explain the importance of the Oslo Accords (1993) for the setting up of the Palestinian National Authority.
+                    </span>
                     <span class="q-marks">(8)</span>
                 </div>
                 <div class="focus-guidance">
-                    <strong>Examiner Guidance:</strong> Explain why establishing the legal and administrative framework for interim self-government in Gaza and Jericho was critical for formal state administration.
+                    <strong>Examiner Guidance:</strong> Explain why the mutual recognition agreement and the Declaration of Principles provided the legal framework and institutions for Palestinian self-government.
                 </div>
 
                 <!-- Importance Scaffold Stack -->
                 <div class="importance-scaffold-stack">
                     <div class="scaffold-focus-row">
                         <span class="scaffold-badge">Paragraph 1 Focus</span>
-                        <span class="scaffold-text">Framework for Civilian Self-Rule: Explain how the accords transferred civil administration over population centres (Gaza and Jericho) to Palestinians for the first time.</span>
+                        <span class="scaffold-text">Foundational Institutional Framework: Explain how the Oslo Accords created the Palestinian Authority with its own elected council, police force, and civil ministries to govern Palestinian population centres.</span>
                     </div>
                     <div class="scaffold-focus-row">
                         <span class="scaffold-badge">Paragraph 2 Focus</span>
-                        <span class="scaffold-text">Transformation into Recognized Government: Explain how it transformed the PLO from an exiled militant movement into an internationally recognized sovereign governing body.</span>
+                        <span class="scaffold-text">Legitimacy & Arafat’s Return: Explain how mutual recognition between Israel and the PLO allowed Yasser Arafat to end 27 years of exile and establish direct political leadership in Gaza and Jericho.</span>
                     </div>
                     <div class="scaffold-vocab-row">
                         <div class="scaffold-vocab-subrow">
                             <span class="scaffold-badge" style="background: #fef3c7; color: #92400e;">Specification Fact Bank</span>
                             <div class="scaffold-pills-list">
-                                <span class="scaffold-pill">Secret Norwegian negotiations</span><span class="scaffold-pill">Declaration of Principles (13 Sept 1993)</span><span class="scaffold-pill">Mutual recognition (Rabin & Arafat handshake)</span><span class="scaffold-pill">Gaza-Jericho Agreement (May 1994)</span><span class="scaffold-pill">Setting up of Palestinian National Authority (PNA)</span><span class="scaffold-pill">Arafat return from Tunisian exile</span><span class="scaffold-pill">Interim self-government framework</span><span class="scaffold-pill">Elected Palestinian Legislative Council (1996)</span>
+                                <span class="scaffold-pill">Secret negotiations in Norway</span><span class="scaffold-pill">Declaration of Principles (DOP)</span><span class="scaffold-pill">Letters of Mutual Recognition</span><span class="scaffold-pill">Rabin & Arafat handshake (White House, 13 Sept 1993)</span><span class="scaffold-pill">Creation of Palestinian National Authority (PNA)</span><span class="scaffold-pill">Gaza-Jericho Agreement (1994)</span><span class="scaffold-pill">Arafat’s return from exile to Gaza</span><span class="scaffold-pill">Palestinian civil police & administration</span>
                             </div>
                         </div>
                         <div class="scaffold-stem-subrow">
                             <span class="scaffold-stem-label">Analytical Stems:</span>
-                            <span class="scaffold-stem-text"><em>"This was important because..."</em> · <em>"Furthermore, ..."</em> · <em>"Without this agreement, ..."</em></span>
+                            <span class="scaffold-stem-text"><em>"This accord was monumental because..."</em> · <em>"Furthermore, ..."</em> · <em>"Without this formal agreement, ..."</em></span>
                         </div>
                     </div>
                 </div>
 
-                <div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-
+                <div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
             </div>
         </div>
 
@@ -1391,59 +1262,42 @@
 
             <div class="question-container">
                 <div class="question-prompt">
-                    <span><strong class="q-num">3 (b)</strong> Explain the importance of Arafat’s renunciation of terrorism (1988) for diplomatic relations with the USA.</span>
+                    <span>
+                        <strong class="q-num">3 (b)</strong>
+                        <span class="exam-provenance-pill forecast">★ High-Yield Forecast</span>
+                        Explain the importance of Arafat’s renunciation of terrorism (1988) for diplomatic relations with the USA.
+                    </span>
                     <span class="q-marks">(8)</span>
                 </div>
                 <div class="focus-guidance">
-                    <strong>Examiner Guidance:</strong> Explain why meeting Washington’s long-standing mandatory precondition unlocked direct US dialogue with the PLO and opened the path to Madrid and Oslo.
+                    <strong>Examiner Guidance:</strong> Explain how meeting US diplomatic preconditions opened direct official dialogue between Washington and the PLO for the first time.
                 </div>
 
                 <!-- Importance Scaffold Stack -->
                 <div class="importance-scaffold-stack">
                     <div class="scaffold-focus-row">
                         <span class="scaffold-badge">Paragraph 1 Focus</span>
-                        <span class="scaffold-text">Unlocking Direct American Dialogue: Explain how renouncing terrorism satisfied Washington’s mandatory statutory precondition, opening official US-PLO diplomacy.</span>
+                        <span class="scaffold-text">Fulfilling US Diplomatic Preconditions: Explain how explicitly accepting UN Resolution 242 and renouncing terrorism met conditions set by Washington since 1975.</span>
                     </div>
                     <div class="scaffold-focus-row">
                         <span class="scaffold-badge">Paragraph 2 Focus</span>
-                        <span class="scaffold-text">Paving the Path to Madrid and Oslo: Explain how American engagement gave the PLO international diplomatic credibility, leading directly to future peace negotiations.</span>
+                        <span class="scaffold-text">Unlocking Direct Superpower Dialogue: Explain how George Shultz immediately opened official talks with the PLO, transforming Arafat from an international pariah into a recognized diplomatic partner.</span>
                     </div>
                     <div class="scaffold-vocab-row">
                         <div class="scaffold-vocab-subrow">
                             <span class="scaffold-badge" style="background: #fef3c7; color: #92400e;">Specification Fact Bank</span>
                             <div class="scaffold-pills-list">
-                                <span class="scaffold-pill">December 1988 Geneva speech</span><span class="scaffold-pill">Acceptance of UN Resolutions 242 & 338</span><span class="scaffold-pill">Recognition of Israel's right to exist in peace</span><span class="scaffold-pill">Explicit total renunciation of terrorism</span><span class="scaffold-pill">Fulfillment of 1975 US statutory precondition</span><span class="scaffold-pill">US opens direct diplomatic dialogue (Tunis)</span><span class="scaffold-pill">Diplomatic rehabilitation of PLO</span><span class="scaffold-pill">Paved way to Madrid (1991) & Oslo (1993)</span>
+                                <span class="scaffold-pill">Algiers PNC meeting (Nov 1988)</span><span class="scaffold-pill">Geneva UN General Assembly speech (Dec 1988)</span><span class="scaffold-pill">Renunciation of terrorism in all forms</span><span class="scaffold-pill">Recognition of Israel’s right to exist in peace (UN Res 242/338)</span><span class="scaffold-pill">Secretary of State George Shultz announcement</span><span class="scaffold-pill">Opening of direct US-PLO diplomatic dialogue (Tunis)</span><span class="scaffold-pill">Breakthrough ending American diplomatic boycott</span>
                             </div>
                         </div>
                         <div class="scaffold-stem-subrow">
                             <span class="scaffold-stem-label">Analytical Stems:</span>
-                            <span class="scaffold-stem-text"><em>"This was vital because..."</em> · <em>"Moreover, ..."</em> · <em>"By fulfilling Washington’s condition, ..."</em></span>
+                            <span class="scaffold-stem-text"><em>"This public renunciation was vital because..."</em> · <em>"Moreover, ..."</em> · <em>"By meeting American preconditions, ..."</em></span>
                         </div>
                     </div>
                 </div>
 
-                <div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-
+                <div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
             </div>
         </div>
 
@@ -1470,65 +1324,55 @@
             <!-- Question 4(a) -->
             <div class="question-container">
                 <div class="question-prompt">
-                    <span><strong class="q-num">4 (a)</strong> Explain one consequence of the Israel-Jordan peace treaty (1994).</span>
+                    <span>
+                        <strong class="q-num">4 (a)</strong>
+                        <span class="exam-provenance-pill unexamined">Unexamined Spec Target</span>
+                        Explain one consequence of the Israel-Jordan peace treaty (1994).
+                    </span>
                     <span class="q-marks">(4)</span>
                 </div>
                 <div class="scaffold-bar">
                     <div class="scaffold-col" style="flex: 1.2;">
                         <span class="scaffold-label">Key Facts Bank:</span>
-                        <div class="scaffold-content"><span class="scaffold-pill">26 October 1994</span> <span class="scaffold-pill">King Hussein & Yitzhak Rabin</span> <span class="scaffold-pill">Formal end to state of war</span> <span class="scaffold-pill">Water sharing agreements</span> <span class="scaffold-pill">Second Arab state recognition</span></div>
+                        <div class="scaffold-content"><span class="scaffold-pill">26 October 1994 (Wadi Araba)</span> <span class="scaffold-pill">King Hussein & Yitzhak Rabin</span> <span class="scaffold-pill">Bill Clinton witness</span> <span class="scaffold-pill">Demarcation of international border</span> <span class="scaffold-pill">Water sharing agreements (Yarmouk River)</span> <span class="scaffold-pill">Jordanian custodian role in Jerusalem shrines</span> <span class="scaffold-pill">Second Arab state to recognise Israel</span></div>
                     </div>
-                    <div class="scaffold-col" style="flex: 1;">
+                    <div class="scaffold-col" style="flex: 0.9;">
                         <span class="scaffold-label">Causal Connectives:</span>
-                        <div class="scaffold-content"><span class="scaffold-pill">One consequence was...</span> <span class="scaffold-pill">This directly resulted in...</span> <span class="scaffold-pill">Consequently, ...</span></div>
+                        <div class="scaffold-content"><span class="scaffold-pill">One major consequence was...</span> <span class="scaffold-pill">This historic accord meant that...</span> <span class="scaffold-pill">Consequently, it solidified...</span></div>
                     </div>
-                    <div class="scaffold-col" style="flex: 1.3;">
+                    <div class="scaffold-col" style="flex: 1.6;">
                         <span class="scaffold-label">Response Structure:</span>
-                        <div class="scaffold-content" style="font-size: 6.8pt;">Identify bilateral consequence &rarr; Support with facts (formal peace, water sharing) &rarr; Explain stabilization and security along Israel’s longest border.</div>
+                        <div class="scaffold-content" style="font-size: 7.4pt;">Identify Consequence (e.g. Normalisation of Jordan-Israel Relations OR Recognition of Jordanian Religious Custody) &rarr; Facts (Hussein, Rabin, Wadi Araba) &rarr; Causal Chain: Secured Israel's longest eastern frontier &rarr; Enabled security cooperation and shared water resources.</div>
                     </div>
                 </div>
-                <div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-
+                <div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
             </div>
 
             <!-- Question 4(b) -->
             <div class="question-container" style="margin-top: 8px;">
                 <div class="question-prompt">
-                    <span><strong class="q-num">4 (b)</strong> Explain one consequence of the Oslo II agreement (1995) for Palestinian self-rule in the West Bank.</span>
+                    <span>
+                        <strong class="q-num">4 (b)</strong>
+                        <span class="exam-provenance-pill unexamined">Unexamined Spec Target</span>
+                        Explain one consequence of the Oslo II agreement (1995) for Palestinian self-rule in the West Bank.
+                    </span>
                     <span class="q-marks">(4)</span>
                 </div>
                 <div class="scaffold-bar">
                     <div class="scaffold-col" style="flex: 1.2;">
                         <span class="scaffold-label">Key Facts Bank:</span>
-                        <div class="scaffold-content"><span class="scaffold-pill">September 1995 (Taba)</span> <span class="scaffold-pill">Division into Areas A, B, and C</span> <span class="scaffold-pill">Area A (full PNA control, ~3%)</span> <span class="scaffold-pill">Area B (joint security, ~24%)</span> <span class="scaffold-pill">Area C (full Israeli security, ~73%)</span></div>
+                        <div class="scaffold-content"><span class="scaffold-pill">September 1995 (Taba / Washington)</span> <span class="scaffold-pill">Division of West Bank into Areas A, B, and C</span> <span class="scaffold-pill">Area A: Full Palestinian civil & security (3%)</span> <span class="scaffold-pill">Area B: Palestinian civil, joint security (24%)</span> <span class="scaffold-pill">Area C: Exclusive Israeli civil & military (73%)</span> <span class="scaffold-pill">Palestinian Legislative Council elections</span> <span class="scaffold-pill">Fragmentation of West Bank into enclaves</span></div>
                     </div>
-                    <div class="scaffold-col" style="flex: 1;">
+                    <div class="scaffold-col" style="flex: 0.9;">
                         <span class="scaffold-label">Causal Connectives:</span>
-                        <div class="scaffold-content"><span class="scaffold-pill">One consequence was...</span> <span class="scaffold-pill">This meant that...</span> <span class="scaffold-pill">Consequently, ...</span></div>
+                        <div class="scaffold-content"><span class="scaffold-pill">One direct consequence was...</span> <span class="scaffold-pill">By dividing the land into Areas A, B, and C, ...</span> <span class="scaffold-pill">This fragmentation meant that...</span></div>
                     </div>
-                    <div class="scaffold-col" style="flex: 1.3;">
+                    <div class="scaffold-col" style="flex: 1.6;">
                         <span class="scaffold-label">Response Structure:</span>
-                        <div class="scaffold-content" style="font-size: 6.8pt;">Identify territorial consequence &rarr; Support with precise facts (Areas A, B, C breakdown) &rarr; Explain how self-rule remained severely fragmented.</div>
+                        <div class="scaffold-content" style="font-size: 7.4pt;">Identify Consequence (e.g. Fragmentation of West Bank into Enclaves OR Establishment of Direct Palestinian Civil Rule) &rarr; Facts (Areas A/B/C, 73% Israeli control) &rarr; Causal Chain: Limited Palestinian Authority to isolated cities &rarr; Entrenched Israeli settlements and military checkpoints.</div>
                     </div>
                 </div>
-                <div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-
+                <div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
             </div>
         </div>
 
@@ -1554,59 +1398,42 @@
 
             <div class="question-container">
                 <div class="question-prompt">
-                    <span><strong class="q-num">5</strong> Explain the importance of US President Carter for the Camp David negotiations (1978).</span>
+                    <span>
+                        <strong class="q-num">5</strong>
+                        <span class="exam-provenance-pill specimen">Edexcel Specimen</span>
+                        Explain the importance of US President Carter for the Camp David negotiations (1978).
+                    </span>
                     <span class="q-marks">(8)</span>
                 </div>
                 <div class="focus-guidance">
-                    <strong>Examiner Guidance:</strong> Explain how Carter’s personal mediation, secluded diplomacy, and economic aid guarantees secured the framework accords between Egypt and Israel.
+                    <strong>Examiner Guidance:</strong> Explain how Carter’s tireless 13-day personal mediation and financial guarantees bridged irreconcilable positions between Sadat and Begin.
                 </div>
 
                 <!-- Importance Scaffold Stack -->
                 <div class="importance-scaffold-stack">
                     <div class="scaffold-focus-row">
                         <span class="scaffold-badge">Paragraph 1 Focus</span>
-                        <span class="scaffold-text">Marathon Personal Mediation: Explain how Carter shuttled tirelessly between isolated cabins drafting 23 revisions to overcome bitter personal distrust.</span>
+                        <span class="scaffold-text">Tenacious Personal Mediation: Explain how Carter prevented the summit collapsing by drafting over 20 compromise proposals and physically shuttling between Sadat and Begin’s cabins.</span>
                     </div>
                     <div class="scaffold-focus-row">
                         <span class="scaffold-badge">Paragraph 2 Focus</span>
-                        <span class="scaffold-text">US Strategic Guarantees: Explain how Carter committed billions in ongoing US economic and military aid to induce both nations to accept difficult compromises.</span>
+                        <span class="scaffold-text">Financial & Strategic Guarantees: Explain how Carter pledged billions of dollars in annual US aid to both Egypt and Israel, creating the financial incentives needed for peace.</span>
                     </div>
                     <div class="scaffold-vocab-row">
                         <div class="scaffold-vocab-subrow">
                             <span class="scaffold-badge" style="background: #fef3c7; color: #92400e;">Specification Fact Bank</span>
                             <div class="scaffold-pills-list">
-                                <span class="scaffold-pill">Jimmy Carter personal diplomacy</span><span class="scaffold-pill">Secluded 13-day summit at Camp David</span><span class="scaffold-pill">Drafted 23 successive compromise revisions</span><span class="scaffold-pill">Overcame personal antipathy between Begin & Sadat</span><span class="scaffold-pill">Framework for Middle East Peace (Sept 1978)</span><span class="scaffold-pill">US multi-billion dollar aid commitments</span><span class="scaffold-pill">1979 Egypt-Israel Peace Treaty</span>
+                                <span class="scaffold-pill">September 1978 Camp David summit</span><span class="scaffold-pill">13 days of secluded negotiations</span><span class="scaffold-pill">Personal diplomacy & shuttle mediation</span><span class="scaffold-pill">Sadat threat to walk out</span><span class="scaffold-pill">Begin refusal to dismantle Sinai settlements</span><span class="scaffold-pill">Carter signed photographs for Begin’s grandchildren</span><span class="scaffold-pill">Billions in US financial & military subsidies</span><span class="scaffold-pill">Camp David Accords framework</span>
                             </div>
                         </div>
                         <div class="scaffold-stem-subrow">
                             <span class="scaffold-stem-label">Analytical Stems:</span>
-                            <span class="scaffold-stem-text"><em>"President Carter was critical because..."</em> · <em>"Furthermore, ..."</em> · <em>"When negotiations neared total collapse, ..."</em></span>
+                            <span class="scaffold-stem-text"><em>"President Carter was indispensable because..."</em> · <em>"Furthermore, ..."</em> · <em>"Without his direct intervention, ..."</em></span>
                         </div>
                     </div>
                 </div>
 
-                <div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-
+                <div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
             </div>
         </div>
 
@@ -1632,59 +1459,42 @@
 
             <div class="question-container">
                 <div class="question-prompt">
-                    <span><strong class="q-num">6</strong> Explain the importance of the oil crisis (1973) for the involvement of the USA in the Middle East.</span>
+                    <span>
+                        <strong class="q-num">6</strong>
+                        <span class="exam-provenance-pill forecast">★ High-Yield Forecast</span>
+                        Explain the importance of the oil crisis (1973) for the involvement of the USA in the Middle East.
+                    </span>
                     <span class="q-marks">(8)</span>
                 </div>
                 <div class="focus-guidance">
-                    <strong>Examiner Guidance:</strong> Explain how the Arab oil embargo directly threatened domestic US economic security, compelling Washington to launch active shuttle diplomacy.
+                    <strong>Examiner Guidance:</strong> Explain how OPEC’s oil embargo inflicted severe domestic economic damage on Western economies, forcing Washington into active peacemaking.
                 </div>
 
                 <!-- Importance Scaffold Stack -->
                 <div class="importance-scaffold-stack">
                     <div class="scaffold-focus-row">
                         <span class="scaffold-badge">Paragraph 1 Focus</span>
-                        <span class="scaffold-text">Domestic Economic Vulnerability: Explain how fuel shortages and rampant inflation demonstrated that US economic survival depended directly on Middle Eastern stability.</span>
+                        <span class="scaffold-text">Economic Vulnerability & Domestic Shock: Explain how long petrol queues and inflation proved that unconditional US support for Israel threatened America's vital economic security.</span>
                     </div>
                     <div class="scaffold-focus-row">
                         <span class="scaffold-badge">Paragraph 2 Focus</span>
-                        <span class="scaffold-text">Active Diplomatic Mediation: Explain how the crisis compelled Kissinger to launch active shuttle diplomacy to resolve military standoffs and prevent future oil embargoes.</span>
+                        <span class="scaffold-text">Catalyst for Active American Diplomacy: Explain how Kissinger embarked on intense shuttle diplomacy to stabilize the region, broker military disengagements, and end the embargo.</span>
                     </div>
                     <div class="scaffold-vocab-row">
                         <div class="scaffold-vocab-subrow">
                             <span class="scaffold-badge" style="background: #fef3c7; color: #92400e;">Specification Fact Bank</span>
                             <div class="scaffold-pills-list">
-                                <span class="scaffold-pill">OPEC / OAPEC oil embargo (October 1973)</span><span class="scaffold-pill">Quadrupling of oil prices ($3 to $12/barrel)</span><span class="scaffold-pill">US petrol rationing, shortages & inflation</span><span class="scaffold-pill">Henry Kissinger "shuttle diplomacy"</span><span class="scaffold-pill">Sinai & Golan disengagement agreements (1974–75)</span><span class="scaffold-pill">US shift from partisan ally to active peace broker</span><span class="scaffold-pill">Strategic imperative to secure Middle Eastern oil flow</span>
+                                <span class="scaffold-pill">OPEC & OAPEC oil embargo (Oct 1973)</span><span class="scaffold-pill">King Faisal of Saudi Arabia</span><span class="scaffold-pill">Quadrupling of crude oil prices ($3 to $12)</span><span class="scaffold-pill">US petrol shortages & inflation</span><span class="scaffold-pill">Vulnerability of Western economies</span><span class="scaffold-pill">Henry Kissinger "shuttle diplomacy"</span><span class="scaffold-pill">Disengagement agreements (1974–75)</span><span class="scaffold-pill">Reopening of Suez Canal (1975)</span>
                             </div>
                         </div>
                         <div class="scaffold-stem-subrow">
                             <span class="scaffold-stem-label">Analytical Stems:</span>
-                            <span class="scaffold-stem-text"><em>"This was critical because..."</em> · <em>"Moreover, ..."</em> · <em>"The economic shock forced Washington to..."</em></span>
+                            <span class="scaffold-stem-text"><em>"This crisis was critical because..."</em> · <em>"Moreover, ..."</em> · <em>"The economic threat forced Washington to..."</em></span>
                         </div>
                     </div>
                 </div>
 
-                <div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-
+                <div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
             </div>
         </div>
 
@@ -1696,135 +1506,115 @@
     </div>
 
     <!-- ============================================================= -->
-    <!-- PAGE 10: SECTION B — SPECIFICATION BANK: NARRATIVE DEPTH       -->
+    <!-- PAGE 10: SECTION B — SPECIFICATION BANK: NARRATIVE (PART 1)   -->
     <!-- ============================================================= -->
     <div class="page">
         <div>
             <div class="page-header">
                 <div class="header-left">
-                    <h2>Section B: Specification Depth Bank · Narrative Account</h2>
+                    <h2>Section B: Specification Depth Bank · Narrative Account (Part 1)</h2>
                     <p>Exhaustive curriculum coverage. Analyse the chronological sequence and causal links.</p>
                 </div>
-                <span class="header-tag" style="background: #0284c7;">Spec Depth: Narrative</span>
+                <span class="header-tag" style="background: #0284c7;">Spec Depth: Narrative Pt 1</span>
             </div>
 
             <div class="question-container">
                 <div class="question-prompt">
-                    <span><strong class="q-num">7</strong> Write a narrative account analysing the events of the First Palestinian Intifada (1987–93).</span>
+                    <span>
+                        <strong class="q-num">7</strong>
+                        <span class="exam-provenance-pill past">Edexcel June 2023</span>
+                        Write a narrative account analysing the events of the First Palestinian Intifada (1987–93).
+                    </span>
                     <span class="q-marks">(8)</span>
                 </div>
 
                 <div class="stimulus-card">
                     You may use the following in your answer:
                     <ul>
-                        <li><strong>The outbreak of protests in Gaza (December 1987)</strong></li>
-                        <li><strong>Yitzhak Rabin’s ‘Iron Fist’ policy</strong></li>
+                        <li><strong>The Jabalya camp road incident (December 1987)</strong></li>
+                        <li><strong>The "Iron Fist" policy and stone-throwing youth</strong></li>
                     </ul>
                     <span style="display: block; margin-top: 2px; font-style: italic; color: #475569;">(You must also use information of your own.)</span>
                 </div>
 
                 <!-- Narrative Flow Planner -->
                 <div class="narrative-flow-planner">
-                    <div style="font-weight: 800; font-size: 6.8pt; text-transform: uppercase; color: #0f172a; margin-bottom: 2px;">
+                    <div style="font-weight: 800; font-size: 7.4pt; text-transform: uppercase; color: #0f172a; margin-bottom: 2px;">
                         Chronological 3-Stage Narrative Architecture:
                     </div>
                     <div class="narrative-stages-row">
                         <div class="narrative-stage-box">
-                            <div class="narrative-stage-hdr">Stage 1: Spontaneous Uprising (Dec 1987)</div>
-                            <div style="font-size: 6.6pt; color: #334155;">Fatal Gaza road incident sparks mass demonstrations; youth confront IDF tanks</div>
+                            <div class="narrative-stage-hdr">Stage 1: Outbreak & Civil Disobedience (Dec 1987)</div>
+                            <div style="font-size: 7.2pt; color: #334155;">Jabalya crash triggers mass strikes, protests, and stone-throwing youth</div>
                         </div>
                         <div class="narrative-stage-box">
-                            <div class="narrative-stage-hdr">Stage 2: Civil Resistance & Iron Fist (1988–90)</div>
-                            <div style="font-size: 6.6pt; color: #334155;">UNLU organizes strikes and boycotts; Rabin’s harsh crackdown draws global condemnation</div>
+                            <div class="narrative-stage-hdr">Stage 2: Israeli Repression & International Backlash (1988–90)</div>
+                            <div style="font-size: 7.2pt; color: #334155;">Rabin "Iron Fist" policy televised globally; Israel loses PR battle</div>
                         </div>
                         <div class="narrative-stage-box">
-                            <div class="narrative-stage-hdr">Stage 3: Political Realisation & Oslo (1991–93)</div>
-                            <div style="font-size: 6.6pt; color: #334155;">Rise of Hamas; recognition that military occupation was unsustainable, unlocking Oslo</div>
+                            <div class="narrative-stage-hdr">Stage 3: Political Realignment & Oslo Catalyst (1991–93)</div>
+                            <div style="font-size: 7.2pt; color: #334155;">Rise of Hamas; Israeli recognition that status quo was untenable</div>
                         </div>
                     </div>
-                    <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #cbd5e1; padding-top: 2px; font-size: 6.6pt; color: #475569;">
-                        <span><strong>Fact Bank:</strong> <span class="scaffold-pill">Jabalia camp traffic incident</span> <span class="scaffold-pill">Stone-throwing youth vs IDF armour</span> <span class="scaffold-pill">Unified National Leadership (UNLU)</span> <span class="scaffold-pill">Commercial strikes & tax boycotts</span> <span class="scaffold-pill">Rabin "broken bones" policy</span> <span class="scaffold-pill">Rise of Hamas (1987)</span> <span class="scaffold-pill">Secret Oslo negotiations (1993)</span></span>
-                        <span><strong>Connectives:</strong> The uprising erupted when... · Rapidly spreading across Gaza and the West Bank, ... · In response, the Israeli government...</span>
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #cbd5e1; padding-top: 2px; font-size: 7.4pt; color: #475569;">
+                        <span><strong>Fact Bank:</strong> <span class="scaffold-pill">8 Dec 1987 Jabalya refugee camp</span> <span class="scaffold-pill">IDF tank transporter collision (4 Palestinians killed)</span> <span class="scaffold-pill">Spontaneous civil uprising (Intifada)</span> <span class="scaffold-pill">Stone-throwing youth vs IDF tanks ("David vs Goliath")</span> <span class="scaffold-pill">Unified National Leadership of the Uprising (UNLU)</span> <span class="scaffold-pill">General strikes, tax boycotts, barricades</span> <span class="scaffold-pill">Yitzhak Rabin "broken bones" policy</span> <span class="scaffold-pill">Emergence of Hamas (1987)</span> <span class="scaffold-pill">International condemnation of Israeli tactics</span> <span class="scaffold-pill">Catalyst for Madrid (1991) and Oslo (1993)</span></span>
+                        <span><strong>Connectives:</strong> The uprising erupted spontaneously when... · As protests spread across the West Bank and Gaza, ... · Israel responded with severe measures, which...</span>
                     </div>
                 </div>
 
-                <div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-<div class="dotted-line"></div>
-
+                <div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
             </div>
         </div>
 
         <div class="page-footer">
             <span>Option P5 · 100% Specification Practice Bank</span>
-            <span class="turn-over">Turn over for Section C (Exemplar Answers) &#9654;</span>
+            <span class="turn-over">Turn over for Question 7 continuation lines &#9654;</span>
             <span>Page 10 of 12</span>
         </div>
     </div>
 
     <!-- ============================================================= -->
-    <!-- PAGE 11: SECTION C — GRADE 8/9 MODEL ANSWERS (Q1 & Q3)        -->
+    <!-- PAGE 11: SECTION B — SPECIFICATION BANK: NARRATIVE (PART 2)   -->
     <!-- ============================================================= -->
     <div class="page">
         <div>
             <div class="page-header">
                 <div class="header-left">
-                    <h2>Section C: High-Scoring Exemplar Responses</h2>
-                    <p>Official Pearson Edexcel Level 3 continuous prose exemplars with examiner annotations.</p>
+                    <h2>Section B: Specification Depth Bank · Narrative Account (Part 2)</h2>
+                    <p>Continue your narrative analysis below. Ensure all 3 chronological stages are causally linked.</p>
                 </div>
-                <span class="header-tag" style="background: #15803d;">Grade 8/9 Models: Q1 &amp; Q3</span>
+                <span class="header-tag" style="background: #0284c7;">Q7: Continuation</span>
             </div>
 
-            <!-- Consequence Model -->
-            <div class="exemplar-box">
-                <div class="exemplar-header">
-                    <span class="exemplar-title">Question 1: Consequence Exemplar</span>
-                    <span class="exemplar-grade">Full Marks · Level 2 (4/4)</span>
+            <div class="question-container">
+                <div class="question-prompt" style="margin-bottom: 5px;">
+                    <span><strong class="q-num">Question 7 continued:</strong></span>
                 </div>
-                <div class="exemplar-stem">Explain one consequence of the Treaty of Washington (1979) for Egyptian relations with other Arab states.</div>
-                <div class="exemplar-text">
-                    One consequence of the Treaty of Washington (1979) was that Egypt was politically and economically ostracized by the rest of the Arab world. Signed on 26 March 1979 by Anwar Sadat and Menachem Begin, the bilateral treaty made Egypt the first Arab nation to formally recognize Israel in exchange for the return of the Sinai Peninsula. Arab League nations viewed this as a treacherous betrayal of the Palestinian cause, voting immediately to suspend Egypt from the Arab League, move the League’s headquarters from Cairo to Tunis, and sever diplomatic ties. This regional isolation shattered pan-Arab diplomatic solidarity and fueled domestic Islamist fury inside Egypt, leading directly to Sadat’s assassination in October 1981.
-                </div>
-                <div class="examiner-note">
-                    <strong>Examiner Annotation:</strong> Level 2 (4 Marks): Direct point on Arab ostracization; specific evidence (26 March 1979, Arab League suspension, Tunis move, Sadat assassination); causal explanation of why this severed pan-Arab unity.
-                </div>
-            </div>
 
-            <!-- Importance Model -->
-            <div class="exemplar-box" style="margin-bottom: 0;">
-                <div class="exemplar-header">
-                    <span class="exemplar-title">Question 3: Importance Exemplar</span>
-                    <span class="exemplar-grade">Full Marks · Level 3 (8/8)</span>
-                </div>
-                <div class="exemplar-stem">Explain the importance of the Oslo Accords (1993) for the setting up of the Palestinian National Authority.</div>
-                <div class="exemplar-text">
-                    <p style="margin: 0 0 4px 0;">The Oslo Accords (Declaration of Principles) were important because they established the legal and administrative framework for formal Palestinian self-government for the first time. Signed on 13 September 1993 following secret Norwegian backchannel talks, the agreement mandated that Israel would withdraw its military forces from the Gaza Strip and the West Bank town of Jericho, transferring civil administration to an interim Palestinian authority. This breakthrough transformed the PLO from an exiled guerrilla organization into an internationally recognized civilian government, creating the Palestinian National Authority (PNA) in May 1994.</p>
-                    <p style="margin: 0;">Furthermore, the Oslo Accords were important because they enabled Yasser Arafat and the exiled PLO leadership to return to Palestine to govern directly. In July 1994, Arafat returned to Gaza after 27 years in exile to head the newly established PNA, creating an elected Palestinian Legislative Council and a dedicated Palestinian civil police force. Although the accords controversially deferred permanent status issues (borders, Jerusalem, refugees), the creation of the PNA permanently altered Middle Eastern politics by granting Palestinians direct administrative authority over their major population centres.</p>
-                </div>
-                <div class="examiner-note">
-                    <strong>Examiner Annotation:</strong> Level 3 (8 Marks): Direct focus on setting up the PNA; precise facts (13 Sept 1993, Jericho and Gaza withdrawal, July 1994 return, police force); clear evaluation of immediate governance vs deferred final status issues.
+                <div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
+
+                <!-- Pupil Self-Assessment & Examiner Standards Checklist -->
+                <div style="border: 1.5px solid #0284c7; border-radius: 4px; background: #f0f9ff; padding: 4px 8px; margin-top: 6px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #bae6fd; padding-bottom: 2px; margin-bottom: 3px;">
+                        <strong style="color: #0369a1; font-size: 7.8pt; text-transform: uppercase;">
+                            🔍 Narrative Account Quality Audit &amp; Examiner Criteria (8 Marks)
+                        </strong>
+                        <span style="font-size: 7.2pt; color: #0284c7; font-weight: 700;">Pearson Edexcel Level 3 Standard</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 7.2pt; color: #0f172a;">
+                        <span>[ &nbsp; ] 3 Distinct Chronological Phases</span>
+                        <span>[ &nbsp; ] Explicit Causal Connectives Used</span>
+                        <span>[ &nbsp; ] Precise Historical Facts &amp; Dates</span>
+                        <span>[ &nbsp; ] Avoided Mere Storytelling</span>
+                        <span style="background: #fff; border: 1px solid #0284c7; padding: 1px 6px; border-radius: 3px; font-weight: 800;">Score: &nbsp; &nbsp; / 8</span>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="page-footer">
-            <span>Option P5 · Official Exam Criteria &amp; Exemplars</span>
-            <span class="turn-over">Turn over for 100% Specification Practice Bank &amp; Traps &#9654;</span>
+            <span>Option P5 · 100% Specification Practice Bank</span>
+            <span class="turn-over">Turn over for Specification Practice Bank &amp; Fatal Traps &#9654;</span>
             <span>Page 11 of 12</span>
         </div>
     </div>
@@ -1878,64 +1668,64 @@
                     
                         <div class="spec-bank-item">
                             <div class="spec-bank-q">
-                                <strong>Question 1:</strong> Explain the importance of Kissinger’s ‘shuttle diplomacy’ for the reopening of the Suez Canal.
+                                <strong>Question 1:</strong> Explain the importance of Kissinger and ‘shuttle diplomacy’ for the reopening of the Suez Canal.
                             </div>
                             <span class="spec-bank-badge">
-                                Importance (8m)
+                                8m Importance
                             </span>
                         </div>
                     
                         <div class="spec-bank-item">
                             <div class="spec-bank-q">
-                                <strong>Question 2:</strong> Explain one consequence of Begin’s visit to Egypt in 1977.
+                                <strong>Question 2:</strong> Explain the importance of Sadat’s visit to Israel (1977) for peace negotiations in the Middle East.
                             </div>
                             <span class="spec-bank-badge">
-                                Consequence (4m)
+                                8m Importance
                             </span>
                         </div>
                     
                         <div class="spec-bank-item">
                             <div class="spec-bank-q">
-                                <strong>Question 3:</strong> Explain the importance of US President Carter for the Camp David negotiations (1978).
+                                <strong>Question 3:</strong> Explain the importance of Arafat’s speech to the UN in 1974 for international attitudes towards the PLO.
                             </div>
                             <span class="spec-bank-badge">
-                                Importance (8m)
+                                8m Importance
                             </span>
                         </div>
                     
                         <div class="spec-bank-item">
                             <div class="spec-bank-q">
-                                <strong>Question 4:</strong> Explain the importance of Arafat’s speech to the UN (1974) for the international standing of the PLO.
+                                <strong>Question 4:</strong> Explain the importance of PLO activities in Lebanon for Israeli security in the years 1975–82.
                             </div>
                             <span class="spec-bank-badge">
-                                Importance (8m)
+                                8m Importance
                             </span>
                         </div>
                     
                         <div class="spec-bank-item">
                             <div class="spec-bank-q">
-                                <strong>Question 5:</strong> Explain one consequence of PLO activities in Lebanon for Israeli reprisals in the late 1970s.
+                                <strong>Question 5:</strong> Explain one consequence of the First Palestinian Intifada (1987–93) for relations between Israelis and Palestinians.
                             </div>
                             <span class="spec-bank-badge">
-                                Consequence (4m)
+                                4m Consequence
                             </span>
                         </div>
                     
                         <div class="spec-bank-item">
                             <div class="spec-bank-q">
-                                <strong>Question 6:</strong> Explain the importance of the end of the Cold War for Middle East peace negotiations.
+                                <strong>Question 6:</strong> Explain one consequence of US involvement in the Gulf War (1991) for the Middle East peace process.
                             </div>
                             <span class="spec-bank-badge">
-                                Importance (8m)
+                                4m Consequence
                             </span>
                         </div>
                     
                         <div class="spec-bank-item">
                             <div class="spec-bank-q">
-                                <strong>Question 7:</strong> Explain one consequence of the Oslo II agreement (1995) for Palestinian self-rule in the West Bank.
+                                <strong>Question 7:</strong> Explain the importance of the end of the Cold War for attempts to find a solution to the Middle East conflict.
                             </div>
                             <span class="spec-bank-badge">
-                                Consequence (4m)
+                                8m Importance
                             </span>
                         </div>
                     
@@ -1945,24 +1735,24 @@
             <!-- Bottom Section: Pupil Personal Revision Commitments -->
             <div class="diagnostic-action-card">
                 <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px;">
-                    <strong style="color: #334155; font-size: 7.4pt; text-transform: uppercase;">
+                    <strong style="color: #334155; font-size: 7.6pt; text-transform: uppercase;">
                         ✍️ Pupil Diagnostic Action Plan &amp; Targeted Revision Commitments
                     </strong>
-                    <span style="font-size: 6.6pt; color: #64748b;">Complete following self-marking of Pages 2–11</span>
+                    <span style="font-size: 6.8pt; color: #64748b;">Complete following self-marking of Pages 2–11</span>
                 </div>
                 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 4px;">
                     <div>
-                        <span style="font-size: 6.8pt; font-weight: 700; color: #475569;">1. Weakest Sub-Topic / Knowledge Area:</span>
+                        <span style="font-size: 7.2pt; font-weight: 700; color: #475569;">1. Weakest Sub-Topic / Knowledge Area:</span>
                         <div style="border-bottom: 1.2px solid #475569; height: 16px;"></div>
                     </div>
                     <div>
-                        <span style="font-size: 6.8pt; font-weight: 700; color: #475569;">2. Key Dates / Statistics I Need to Memorise:</span>
+                        <span style="font-size: 7.2pt; font-weight: 700; color: #475569;">2. Key Dates / Statistics I Need to Memorise:</span>
                         <div style="border-bottom: 1.2px solid #475569; height: 16px;"></div>
                     </div>
                 </div>
                 
-                <div style="display: flex; justify-content: space-between; align-items: center; background: #fff; border: 1px solid #cbd5e1; border-radius: 3px; padding: 2.5px 6px; font-size: 6.8pt;">
+                <div style="display: flex; justify-content: space-between; align-items: center; background: #fff; border: 1px solid #cbd5e1; border-radius: 3px; padding: 2.5px 6px; font-size: 7.2pt;">
                     <span><strong>Revision Commitment:</strong> [ &nbsp; ] Complete Quiz Flashcards &nbsp;&nbsp; [ &nbsp; ] Redo Timed Dual-Track &nbsp;&nbsp; [ &nbsp; ] Practice Spec Bank Question</span>
                     <span><strong>Target Grade:</strong> [ 9 &nbsp; 8 &nbsp; 7 &nbsp; 6 &nbsp; 5 &nbsp; 4 ]</span>
                 </div>
@@ -1971,7 +1761,7 @@
 
         <div class="page-footer">
             <span>Pearson Edexcel GCSE (9–1) History · Option P5 Conflict in the Middle East</span>
-            <span style="font-weight: 700; color: #0f172a;">100% Specification Coverage Guaranteed</span>
+            <span class="turn-over">End of Booklet · 100% Specification Mastered</span>
             <span>Page 12 of 12</span>
         </div>
     </div>
