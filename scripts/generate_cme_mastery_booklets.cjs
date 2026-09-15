@@ -1464,6 +1464,95 @@ const COMMON_CSS = `
     color: #000;
   }
 
+  /* Specification Audit & Checklist Box */
+  .spec-audit-container {
+    margin-top: 8px;
+    margin-bottom: 4px;
+    border: 1.5px solid #0f172a;
+    border-radius: 6px;
+    background: #ffffff;
+    padding: 6px 8px 6px 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .spec-audit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1.2px solid #0f172a;
+    padding-bottom: 3px;
+    margin-bottom: 5px;
+  }
+  .spec-audit-title {
+    font-size: 7.4pt;
+    font-weight: 800;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .spec-audit-sub {
+    font-size: 6.8pt;
+    font-style: italic;
+    color: #475569;
+  }
+  .spec-audit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 7px;
+    align-items: stretch;
+  }
+  .spec-audit-col {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    padding: 4px 6px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .spec-col-title {
+    font-size: 6.8pt;
+    font-weight: 800;
+    color: #1e3a8a;
+    text-transform: uppercase;
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 2px;
+    margin-bottom: 4px;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+  }
+  .spec-points-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .spec-point-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+    font-size: 6.5pt;
+    line-height: 1.22;
+    color: #1e293b;
+  }
+  .spec-tick-box {
+    width: 8.5px;
+    height: 8.5px;
+    border: 1.2px solid #0f172a;
+    border-radius: 2px;
+    background: #fff;
+    flex-shrink: 0;
+    margin-top: 1px;
+    display: inline-block;
+  }
+  .spec-point-text {
+    flex: 1;
+  }
+  .spec-point-text strong {
+    color: #0f172a;
+  }
+
   /* Standard Inner Page Layouts */
   .page-header {
     border-bottom: 1.5px solid #0f172a;
@@ -1811,6 +1900,95 @@ function renderLines(count) {
 }
 
 // =============================================================================
+// OFFICIAL PEARSON EDEXCEL SPECIFICATION CHECKLIST DATA (WORD-FOR-WORD)
+// =============================================================================
+const KT_SPECIFICATION = {
+  KT1: [
+    {
+      title: '1. British Withdrawal & Creation of Israel',
+      points: [
+        '<strong>Conflicting interests and demands</strong> of Jews and Arabs within the British Mandate.',
+        '<strong>Key events leading to the end of the British Mandate</strong>, partition and the creation of Israel, including the <strong>significance of the bombing of the King David Hotel</strong> and <strong>UN Resolution 181</strong>.',
+        '<strong>Key events of the Arab-Israeli war (1948–49)</strong>.',
+      ],
+    },
+    {
+      title: '2. Aftermath of the 1948–49 War',
+      points: [
+        '<strong>Territorial changes</strong> and their impact.',
+        'The <strong>refugee status of Palestinian Arabs</strong>.',
+        'The creation of the <strong>Israeli Defence Forces (IDF)</strong> and the <strong>Law of Return (1950)</strong>.',
+        '<strong>US aid</strong> to Israel.',
+        'Israel’s <strong>relations with Egypt</strong>.',
+      ],
+    },
+    {
+      title: '3. Increased Tension, 1955–63',
+      points: [
+        '<strong>Nasser</strong> and Egypt’s <strong>leadership of the Arab world</strong>.',
+        'The events and significance of <strong>Israeli attacks on Gaza in 1955</strong> and <strong>Sinai in 1956</strong>.',
+        'The events and significance of the <strong>Suez Crisis (1956)</strong>, including the <strong>formation of the United Arab Republic (UAR) in 1958</strong>.',
+      ],
+    },
+  ],
+  KT2: [
+    {
+      title: '1. The Six Day War, 1967',
+      points: [
+        'The significance of the <strong>Cairo Conference (1964)</strong> and the <strong>growth of Fatah and the PLO</strong>.',
+        '<strong>Escalating tension</strong> between Israel, Syria and Jordan: <strong>Syria’s support for Fatah</strong>, <strong>Israel’s raid on Samu</strong> and the <strong>events of 7 April 1967</strong>.',
+        'The <strong>actions of the USSR, Nasser and the USA</strong> in the period leading to war.',
+        '<strong>Key events of the war</strong>.',
+      ],
+    },
+    {
+      title: '2. Aftermath of the 1967 War',
+      points: [
+        '<strong>UN Resolution 242</strong> and the <strong>continued dispute over the Suez Canal</strong>.',
+        '<strong>Palestinian refugees</strong> and the significance of the <strong>occupied territories</strong>: <strong>Golan Heights, Gaza Strip, West Bank, Sinai and East Jerusalem</strong>.',
+        'The <strong>use of terrorism, Israel’s response and international attitudes</strong> towards the Palestine issue: the <strong>PFLP airplane hijacks of 1970</strong>; <strong>Black September</strong> and the <strong>Munich Olympics</strong>.',
+        'The <strong>expulsion of the PLO from Jordan (1970)</strong>.',
+      ],
+    },
+    {
+      title: '3. Israel and Egypt, 1967–73',
+      points: [
+        '<strong>Egyptian relations</strong> with Israel, the USA, the USSR and other Arab states.',
+        'Israel’s <strong>consolidation of control of the occupied territories</strong>.',
+        'Key events of the <strong>Yom Kippur War (1973)</strong> and its aftermath.',
+      ],
+    },
+  ],
+  KT3: [
+    {
+      title: '1. Diplomatic Negotiations',
+      points: [
+        'The significance of the <strong>oil crisis</strong> and the <strong>involvement of the USA and the USSR</strong>.',
+        '<strong>Kissinger, ‘shuttle diplomacy’</strong> and the <strong>reopening of the Suez Canal</strong>.',
+        '<strong>Sadat’s visit to Israel (1977)</strong>, <strong>Begin’s visit to Egypt (1977)</strong>, <strong>US President Carter and Camp David (1978)</strong> and the <strong>Treaty of Washington (1979)</strong>.',
+      ],
+    },
+    {
+      title: '2. The Palestinian Issue',
+      points: [
+        '<strong>Arafat’s speech to the UN (1974)</strong>.',
+        'The significance of <strong>PLO activities in Lebanon</strong>.',
+        '<strong>Israeli reprisals, the invasion of Lebanon (1982)</strong> and the results.',
+        'The <strong>Israeli occupied territories</strong> and the <strong>First Palestinian Intifada (1987–93)</strong>.',
+      ],
+    },
+    {
+      title: '3. Attempts at a Solution',
+      points: [
+        'The significance of <strong>Arafat’s renunciation of terrorism</strong> in a speech at the UN (1988).',
+        '<strong>Changing superpower policies</strong> in the Middle East: <strong>US involvement in the Gulf War (1991)</strong>, and the <strong>end of the Cold War</strong>.',
+        '<strong>Arafat, Rabin and the Oslo Accords (1993)</strong>; the <strong>setting up of the Palestinian National Authority</strong>; the <strong>Israel-Jordan peace treaty (1994)</strong>; <strong>Oslo II (1995)</strong>.',
+      ],
+    },
+  ],
+};
+
+// =============================================================================
 // HTML RENDERER: 12-PAGE PER-KEY-TOPIC MASTER BOOKLET
 // =============================================================================
 function renderBookletHtml(ktKey, meta) {
@@ -1972,6 +2150,37 @@ function renderBookletHtml(ktKey, meta) {
                           .join('')}
                     </tbody>
                 </table>
+            </div>
+
+            <!-- Official Specification Mastery Checklist -->
+            <div class="spec-audit-container">
+                <div class="spec-audit-header">
+                    <span class="spec-audit-title">Pearson Edexcel GCSE (9–1) Specification Audit &amp; Revision Checklist</span>
+                    <span class="spec-audit-sub">Tick each official syllabus requirement once revised and mastered:</span>
+                </div>
+                <div class="spec-audit-grid">
+                    ${(KT_SPECIFICATION[ktKey] || [])
+                      .map(
+                        (topic) => `
+                    <div class="spec-audit-col">
+                        <div class="spec-col-title">${topic.title}</div>
+                        <ul class="spec-points-list">
+                            ${topic.points
+                              .map(
+                                (pt) => `
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text">${pt}</span>
+                            </li>
+                            `,
+                              )
+                              .join('')}
+                        </ul>
+                    </div>
+                    `,
+                      )
+                      .join('')}
+                </div>
             </div>
         </div>
 
