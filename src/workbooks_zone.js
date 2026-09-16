@@ -253,15 +253,9 @@ export function renderWorkbooksZone(container, unitData) {
               <i class="fa-solid fa-download"></i> PDF
             </a>
 
-            ${
-              b.digitalUnit
-                ? `
-            <button type="button" class="btn" onclick="window.switchView('mock-exams', '${b.digitalUnit}')" style="background: #0f172a; color: #ffffff; padding: 10px 12px; border-radius: 6px; border: none; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Practice interactively in the web app with timers and model answers">
-              <i class="fa-solid fa-laptop-code"></i> Digital Mode
-            </button>
-            `
-                : ''
-            }
+            <a href="${b.fileBase}" target="_blank" style="background: #0f172a; color: #ffffff; padding: 10px 12px; border-radius: 6px; text-decoration: none; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; transition: background 0.2s ease;" onmouseover="this.style.background='#1e293b';" onmouseout="this.style.background='#0f172a';" title="Open master booklet in a full browser tab">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in Tab
+            </a>
           </div>
         </div>
       `;
@@ -348,15 +342,9 @@ export function renderWorkbooksZone(container, unitData) {
               <i class="fa-solid fa-download"></i> PDF
             </a>
 
-            ${
-              b.digitalUnit
-                ? `
-            <button type="button" class="btn" onclick="window.switchView('mock-exams', '${b.digitalUnit}')" style="background: #0f172a; color: #ffffff; padding: 10px 12px; border-radius: 6px; border: none; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Practice interactively in the web app with timers and model answers">
-              <i class="fa-solid fa-laptop-code"></i> Digital Mode
-            </button>
-            `
-                : ''
-            }
+            <a href="${b.fileBase}" target="_blank" style="background: #0f172a; color: #ffffff; padding: 10px 12px; border-radius: 6px; text-decoration: none; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; transition: background 0.2s ease;" onmouseover="this.style.background='#1e293b';" onmouseout="this.style.background='#0f172a';" title="Open master booklet in a full browser tab">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in Tab
+            </a>
           </div>
         </div>
       `;
@@ -433,14 +421,28 @@ export function renderWorkbooksZone(container, unitData) {
             <p style="margin: 0; font-size: 0.82rem; color: #64748b; line-height: 1.4;">${b.desc}</p>
           </div>
 
-          <div style="display: flex; gap: 8px; margin-top: 5px;">
-            <button type="button" class="btn" onclick="window.openTeacherPrintPreview('${b.fileBase}', '${b.title}', '${b.pdfUrl}')" style="flex: 1; text-align: center; background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4px solid ${b.color}; padding: 10px 8px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: #1e293b; transition: all 0.2s ease;" onmouseover="this.style.borderColor='${b.color}'; this.style.boxShadow='0 2px 6px rgba(0,0,0,0.1)';" onmouseout="this.style.borderColor='#cbd5e1'; this.style.borderLeftColor='${b.color}'; this.style.boxShadow='none';">
+          <div style="display: flex; gap: 8px; margin-top: 5px; flex-wrap: wrap;">
+            <button type="button" class="btn" onclick="window.openTeacherPrintPreview('${b.fileBase}', '${b.title}', '${b.pdfUrl}')" style="flex: 1; min-width: 110px; text-align: center; background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4px solid ${b.color}; padding: 10px 8px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: #1e293b; transition: all 0.2s ease;" onmouseover="this.style.borderColor='${b.color}'; this.style.boxShadow='0 2px 6px rgba(0,0,0,0.1)';" onmouseout="this.style.borderColor='#cbd5e1'; this.style.borderLeftColor='${b.color}'; this.style.boxShadow='none';">
               <i class="fa-solid fa-eye" style="color: ${b.color};"></i> Preview &amp; Print
             </button>
 
             <a href="${b.pdfUrl}" target="_blank" download style="background: ${b.color}; color: #ffffff; padding: 10px 14px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; transition: opacity 0.2s ease;" onmouseover="this.style.opacity='0.9';" onmouseout="this.style.opacity='1';">
               <i class="fa-solid fa-download"></i> PDF
             </a>
+
+            ${
+              b.id === 'PILLAR_2'
+                ? `
+            <a href="${b.fileBase}" target="_blank" class="btn" style="background: #0f172a; color: #ffffff; padding: 10px 14px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; transition: background 0.2s ease; border: 1.5px solid #334155;" onmouseover="this.style.background='#1e293b';" onmouseout="this.style.background='#0f172a';" title="Launch interactive 48-page compendium with live 1h 20m exam clock and pupil typing mode">
+              <i class="fa-solid fa-stopwatch" style="color: #38bdf8;"></i> Digital Twin (1h 20m)
+            </a>
+            `
+                : `
+            <a href="${b.fileBase}" target="_blank" style="background: #0f172a; color: #ffffff; padding: 10px 12px; border-radius: 6px; text-decoration: none; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; transition: background 0.2s ease;" onmouseover="this.style.background='#1e293b';" onmouseout="this.style.background='#0f172a';" title="Open master booklet in a full browser tab">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in Tab
+            </a>
+            `
+            }
           </div>
         </div>
       `;

@@ -1869,15 +1869,313 @@ const COMMON_CSS = `
     justify-content: space-between;
     align-items: center;
   }
+
+  /* ========================================================================= */
+  /* DIGITAL TWIN: HIGH-CONTRAST INVIGILATOR HUD & INTERACTIVE TYPING MODE    */
+  /* ========================================================================= */
+  @media screen {
+    body {
+      padding-top: 66px !important;
+      background: #334155 !important;
+    }
+    .page {
+      margin: 24px auto !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
+      border-radius: 2px !important;
+    }
+  }
+
+  @media print {
+    .invigilator-hud {
+      display: none !important;
+    }
+    body {
+      padding-top: 0 !important;
+      background: #ffffff !important;
+    }
+    .page {
+      margin: 0 !important;
+      box-shadow: none !important;
+    }
+    .pupil-response-pad {
+      display: none !important;
+    }
+    body.print-pupil-typed .static-lines {
+      display: none !important;
+    }
+    body.print-pupil-typed .pupil-response-pad {
+      display: block !important;
+      border: none !important;
+      background: transparent !important;
+      color: #000000 !important;
+      font-size: 9pt !important;
+      line-height: 8mm !important;
+    }
+  }
+
+  /* Ruled Line & Typing Response Container */
+  .writing-response-area {
+    position: relative;
+    width: 100%;
+  }
+  .pupil-response-pad {
+    display: none;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 9.5pt;
+    line-height: 8mm;
+    background: repeating-linear-gradient(transparent, transparent calc(8mm - 1.2px), #000000 calc(8mm - 1.2px), #000000 8mm);
+    border: 1.5px solid #000000;
+    padding: 0 6px;
+    color: #000000;
+    resize: vertical;
+    outline: none;
+  }
+  body.typing-mode-active .writing-response-area .static-lines {
+    display: none !important;
+  }
+  body.typing-mode-active .writing-response-area .pupil-response-pad {
+    display: block !important;
+  }
+  body.typing-mode-active .field-input[contenteditable="true"],
+  body.typing-mode-active .char-cell[contenteditable="true"],
+  body.typing-mode-active .inference-row[contenteditable="true"] {
+    outline: 1.5px solid #2563eb !important;
+    background: #f0f9ff !important;
+    cursor: text;
+  }
+  .field-input, .char-cell, .inference-row {
+    outline: none;
+  }
+
+  /* Fixed Invigilator HUD Navigation Bar */
+  .invigilator-hud {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 58px;
+    background: #0f172a;
+    border-bottom: 2px solid #334155;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    z-index: 999999;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    font-family: 'Inter', -apple-system, sans-serif;
+    user-select: none;
+  }
+  .hud-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hud-title-badge {
+    display: flex;
+    flex-direction: column;
+  }
+  .hud-tag {
+    font-size: 6.5pt;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: #38bdf8;
+    text-transform: uppercase;
+  }
+  .hud-title-badge strong {
+    font-size: 8.5pt;
+    color: #ffffff;
+    white-space: nowrap;
+  }
+  .hud-nav-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .hud-label {
+    font-size: 7.5pt;
+    font-weight: 700;
+    color: #94a3b8;
+    white-space: nowrap;
+  }
+  .hud-select {
+    background: #1e293b;
+    color: #ffffff;
+    border: 1px solid #475569;
+    border-radius: 4px;
+    padding: 5px 8px;
+    font-size: 7.8pt;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    max-width: 270px;
+  }
+  .hud-select:focus {
+    border-color: #38bdf8;
+  }
+
+  .hud-center {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hud-timer-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #000000;
+    border: 1px solid #334155;
+    border-radius: 4px;
+    padding: 3px 8px;
+  }
+  .hud-clock {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 1.25rem;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    color: #38bdf8;
+    min-width: 90px;
+    text-align: center;
+  }
+  .hud-clock.warning-amber {
+    color: #f59e0b !important;
+  }
+  .hud-clock.warning-red {
+    color: #ef4444 !important;
+    animation: pulse-red 1s infinite;
+  }
+  @keyframes pulse-red {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  .hud-pill {
+    font-size: 6.8pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 3px 7px;
+    border-radius: 3px;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
+  .hud-pill-ready {
+    background: #334155;
+    color: #cbd5e1;
+  }
+  .hud-pill-active {
+    background: #065f46;
+    color: #34d399;
+  }
+  .hud-pill-section-b {
+    background: #1e3a8a;
+    color: #93c5fd;
+  }
+  .hud-pill-warning {
+    background: #78350f;
+    color: #fcd34d;
+  }
+  .hud-pill-ended {
+    background: #7f1d1d;
+    color: #fca5a5;
+  }
+
+  .hud-timer-controls {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .hud-btn {
+    background: #1e293b;
+    color: #f1f5f9;
+    border: 1px solid #475569;
+    border-radius: 4px;
+    padding: 6px 9px;
+    font-size: 7.8pt;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.15s ease;
+    outline: none;
+    white-space: nowrap;
+  }
+  .hud-btn:hover {
+    background: #334155;
+    border-color: #64748b;
+    color: #ffffff;
+  }
+  .hud-btn-primary {
+    background: #2563eb;
+    border-color: #3b82f6;
+    color: #ffffff;
+  }
+  .hud-btn-primary:hover {
+    background: #1d4ed8;
+  }
+  .hud-btn-extra {
+    background: #312e81;
+    border-color: #4f46e5;
+    color: #c7d2fe;
+  }
+  .hud-btn-extra:hover {
+    background: #3730a3;
+    color: #ffffff;
+  }
+  .hud-btn-danger {
+    background: #450a0a;
+    border-color: #7f1d1d;
+    color: #fca5a5;
+  }
+  .hud-btn-danger:hover {
+    background: #7f1d1d;
+    color: #ffffff;
+  }
+
+  .hud-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hud-btn-typing {
+    background: #0f766e;
+    border-color: #14b8a6;
+    color: #ffffff;
+  }
+  .hud-btn-typing.active {
+    background: #047857;
+    border-color: #10b981;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+  }
+  .hud-save-indicator {
+    font-size: 7pt;
+    font-weight: 600;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+  }
+  .hud-save-indicator.saved {
+    color: #34d399;
+  }
 `;
 
-// Helper to render ruled dotted lines
-function renderLines(count) {
+// Helper to render ruled dotted lines with digital typing overlay
+function renderLines(count, key) {
   let lines = '';
   for (let i = 0; i < count; i++) {
     lines += '<div class="dotted-line"></div>\n';
   }
-  return lines;
+  if (!key) return lines;
+  return `<div class="writing-response-area" data-response-key="${key}">
+    <div class="static-lines">
+      ${lines}
+    </div>
+    <textarea class="pupil-response-pad" data-key="${key}" placeholder="Type candidate response here..." style="min-height: ${count * 8}mm;"></textarea>
+  </div>`;
 }
 
 // =============================================================================
@@ -1931,24 +2229,24 @@ function renderBookletHtml(ktKey, meta) {
                 <div class="candidate-row">
                     <div style="flex: 2;">
                         <div class="field-label">Candidate surname</div>
-                        <div class="field-input"></div>
+                        <div class="field-input" data-field="${ktKey}_cand_surname"></div>
                     </div>
                     <div style="flex: 1.5;">
                         <div class="field-label">Other names</div>
-                        <div class="field-input"></div>
+                        <div class="field-input" data-field="${ktKey}_cand_other_names"></div>
                     </div>
                 </div>
                 <div class="candidate-row">
                     <div style="flex: 1;">
                         <div class="field-label">Centre Number</div>
                         <div>
-                            <span class="char-cell"></span><span class="char-cell"></span><span class="char-cell"></span><span class="char-cell"></span><span class="char-cell"></span>
+                            <span class="char-cell" data-field="${ktKey}_centre_1"></span><span class="char-cell" data-field="${ktKey}_centre_2"></span><span class="char-cell" data-field="${ktKey}_centre_3"></span><span class="char-cell" data-field="${ktKey}_centre_4"></span><span class="char-cell" data-field="${ktKey}_centre_5"></span>
                         </div>
                     </div>
                     <div style="flex: 1;">
                         <div class="field-label">Candidate Number</div>
                         <div>
-                            <span class="char-cell"></span><span class="char-cell"></span><span class="char-cell"></span><span class="char-cell"></span>
+                            <span class="char-cell" data-field="${ktKey}_cand_1"></span><span class="char-cell" data-field="${ktKey}_cand_2"></span><span class="char-cell" data-field="${ktKey}_cand_3"></span><span class="char-cell" data-field="${ktKey}_cand_4"></span>
                         </div>
                     </div>
                 </div>
@@ -2120,21 +2418,21 @@ function renderBookletHtml(ktKey, meta) {
                     <div class="inference-card" style="padding: 5px 8px;">
                         <strong>(i) Inference 1:</strong>
                         <div style="font-size: 6.8pt; color: #475569; margin-bottom: 2px;">What I can infer from Source A:</div>
-                        <div class="inference-row"></div>
+                        <div class="inference-row" data-field="${ktKey}_q1_inf1"></div>
                         <div style="font-size: 6.8pt; color: #475569; margin: 3px 0 2px 0;">Details in the source that tell me this:</div>
-                        <div class="inference-row"></div>
+                        <div class="inference-row" data-field="${ktKey}_q1_det1"></div>
                     </div>
                     <div class="inference-card" style="padding: 5px 8px;">
                         <strong>(ii) Inference 2:</strong>
                         <div style="font-size: 6.8pt; color: #475569; margin-bottom: 2px;">What I can infer from Source A:</div>
-                        <div class="inference-row"></div>
+                        <div class="inference-row" data-field="${ktKey}_q1_inf2"></div>
                         <div style="font-size: 6.8pt; color: #475569; margin: 3px 0 2px 0;">Details in the source that tell me this:</div>
-                        <div class="inference-row"></div>
+                        <div class="inference-row" data-field="${ktKey}_q1_det2"></div>
                     </div>
                 </div>
 
                 <div style="font-size: 7.2pt; font-weight: 700; color: #0f172a; margin: 5px 0 2px 0;">Candidate Response Lines:</div>
-                ${renderLines(e.q1.lines || 6)}
+                ${renderLines(e.q1.lines || 6, `${ktKey}_q1_lines`)}
             </div>
         </div>
 
@@ -2198,7 +2496,7 @@ function renderBookletHtml(ktKey, meta) {
 
                 <!-- Candidate Response Lines -->
                 <div style="font-size: 7pt; font-weight: 700; color: #0f172a; margin: 4px 0 2px 0;">Candidate Response Lines:</div>
-                ${renderLines(e.q2.linesPage3 || 14)}
+                ${renderLines(e.q2.linesPage3 || 14, `${ktKey}_q2_p1`)}
             </div>
         </div>
 
@@ -2230,7 +2528,7 @@ function renderBookletHtml(ktKey, meta) {
                 </div>
 
                 <!-- Candidate Response Lines -->
-                ${renderLines(e.q2.linesPage4 || 24)}
+                ${renderLines(e.q2.linesPage4 || 24, `${ktKey}_q2_p2`)}
 
                 <!-- Pearson Edexcel Level 4 Criteria Checklist -->
                 <div style="border: 1.5px solid #64748b; border-radius: 4px; background: #f8fafc; padding: 4px 8px; margin-top: 6px; font-size: 6.8pt; line-height: 1.25;">
@@ -2381,7 +2679,7 @@ function renderBookletHtml(ktKey, meta) {
                     Response Structure: Evaluate Source B (Content + Nature/Origin/Purpose + Context) &rarr; Evaluate Source C &rarr; Conclusion on Comparative Utility.
                 </div>
 
-                ${renderLines(e.q3a.lines)}
+                ${renderLines(e.q3a.lines || 20, `${ktKey}_q3a_lines`)}
             </div>
         </div>
 
@@ -2414,7 +2712,7 @@ function renderBookletHtml(ktKey, meta) {
                 <div style="border: 1px solid #94a3b8; border-radius: 3px; background: #f8fafc; padding: 3px 6px; margin-bottom: 3px; font-size: 6.8pt; color: #334155;">
                     <strong>Direct Contrast Frame:</strong> <em>Interpretation 1 argues that... whereas Interpretation 2 argues that...</em>
                 </div>
-                ${renderLines(10)}
+                ${renderLines(10, `${ktKey}_q3b_lines`)}
             </div>
 
             <!-- Question 3(c) -->
@@ -2426,7 +2724,7 @@ function renderBookletHtml(ktKey, meta) {
                 <div style="border: 1px solid #94a3b8; border-radius: 3px; background: #f8fafc; padding: 3px 6px; margin-bottom: 3px; font-size: 6.8pt; color: #334155;">
                     <strong>Different Views Frame:</strong> <em>The historians give different views because they have relied on different sources/evidence. Interpretation 1 is supported by Source B, which emphasizes... whereas Interpretation 2 is supported by Source C, which emphasizes...</em>
                 </div>
-                ${renderLines(12)}
+                ${renderLines(12, `${ktKey}_q3c_lines`)}
             </div>
         </div>
 
@@ -2486,7 +2784,7 @@ function renderBookletHtml(ktKey, meta) {
                     Paragraph 1: Evaluate Interpretation 2 with precise own knowledge &rarr; Paragraph 2: Evaluate Interpretation 1 with precise own knowledge.
                 </div>
 
-                ${renderLines(e.q3d.linesPage7 || 26)}
+                ${renderLines(e.q3d.linesPage7 || 26, `${ktKey}_q3d_p1`)}
             </div>
         </div>
 
@@ -2516,7 +2814,7 @@ function renderBookletHtml(ktKey, meta) {
                     <span><strong>SPaG Check:</strong> Capital letters for proper nouns (e.g. SCLC, Supreme Court, Vietcong).</span>
                 </div>
 
-                ${renderLines(e.q3d.linesPage8 || 28)}
+                ${renderLines(e.q3d.linesPage8 || 28, `${ktKey}_q3d_p2`)}
 
                 <!-- Level 4 Marking Criteria Box -->
                 <div style="border: 1.5px solid #1e3a8a; border-radius: 4px; background: #eff6ff; padding: 4px 6px; margin-top: 4px; font-size: 6.8pt; line-height: 1.25;">
@@ -2585,7 +2883,7 @@ function renderBookletHtml(ktKey, meta) {
                     </div>
                 </div>
 
-                ${renderLines(d.alternateQ.lines || 22)}
+                ${renderLines(d.alternateQ.lines || 22, `${ktKey}_depth_q_lines`)}
             </div>
         </div>
 
@@ -2760,24 +3058,474 @@ function renderBookletHtml(ktKey, meta) {
     // Compile the Combined Master HTML booklet (48 Pages)
     console.log('\n📚 Compiling 48-Page Full Master Booklet (usa_mastery_FULL.html)...');
     let fullHtmlPages = '';
-    for (const [ktKey] of Object.entries(KT_DATA)) {
+    const ktKeys = Object.keys(KT_DATA);
+
+    for (let i = 0; i < ktKeys.length; i++) {
+      const ktKey = ktKeys[i];
       const htmlFile = generatedHtmlFiles[ktKey];
       const rawHtml = fs.readFileSync(htmlFile, 'utf8');
       const bodyMatch = rawHtml.match(/<body>([\s\S]*?)<\/body>/);
       if (bodyMatch) {
-        fullHtmlPages += bodyMatch[1] + '\n';
+        let ktBody = bodyMatch[1];
+
+        // Global page numbering: replace "Page X of 12" with "Page Y of 48"
+        ktBody = ktBody.replace(/<span>Page (\d+) of 12<\/span>/g, (m, p) => {
+          const globalP = parseInt(p, 10) + i * 12;
+          return `<span>Page ${globalP} of 48</span>`;
+        });
+
+        // Add unique id and data attributes to each .page container
+        let pInKt = 1;
+        ktBody = ktBody.replace(/<div class="page">/g, () => {
+          const globalP = pInKt + i * 12;
+          pInKt++;
+          return `<div class="page" id="page-${globalP}" data-page="${globalP}" data-kt="${ktKey}">`;
+        });
+
+        fullHtmlPages += ktBody + '\n';
       }
     }
+
+    const hudNavHtml = `
+    <!-- ============================================================= -->
+    <!-- DIGITAL TWIN: INVIGILATOR HUD (1h 20m EXAM CLOCK & CONTROLS)   -->
+    <!-- ============================================================= -->
+    <nav class="invigilator-hud" aria-label="Exam Invigilator HUD">
+        <div class="hud-left">
+            <div class="hud-title-badge">
+                <span class="hud-tag">EDEXCEL GCSE · 1HI0/33</span>
+                <strong>USA 1954–75: 48-Page Master Compendium</strong>
+            </div>
+            <div class="hud-nav-group">
+                <label for="hud-quick-jump" class="hud-label"><i class="fa-solid fa-list-check"></i> Jump to:</label>
+                <select id="hud-quick-jump" class="hud-select">
+                    <optgroup label="Key Topic 1: Civil Rights Movement (1954–60)">
+                        <option value="page-1">Page 1: Exam Cover &amp; Spec Tracker</option>
+                        <option value="page-2">Page 2: Q1 Inference [4m] (Source A)</option>
+                        <option value="page-3">Page 3: Q2 Explain Why: Voting Rights [12m] (P1–P2)</option>
+                        <option value="page-4">Page 4: Q2 Explain Why: Voting Rights (P3 &amp; Criteria)</option>
+                        <option value="page-5">Page 5: Section B Dossier (Montgomery Boycott)</option>
+                        <option value="page-6">Page 6: Q3(a) Utility of Sources B &amp; C [8m]</option>
+                        <option value="page-7">Page 7: Q3(b) &amp; Q3(c) Interpretations 1 &amp; 2 [8m]</option>
+                        <option value="page-8">Page 8: Q3(d) Evaluative Essay [16+4m] (Matrix &amp; P1)</option>
+                        <option value="page-9">Page 9: Q3(d) Evaluative Essay (Conclusion &amp; Criteria)</option>
+                        <option value="page-10">Page 10: Spec Booster: Little Rock Nine [12m]</option>
+                        <option value="page-11">Page 11: Grade 8/9 Models: Q1 &amp; Q2</option>
+                        <option value="page-12">Page 12: Grade 8/9 Models: Q3 &amp; Fatal Traps</option>
+                    </optgroup>
+                    <optgroup label="Key Topic 2: USA at Home (1960–75)">
+                        <option value="page-13">Page 13: Exam Cover &amp; Spec Tracker</option>
+                        <option value="page-14">Page 14: Q1 Inference [4m] (Source A)</option>
+                        <option value="page-15">Page 15: Q2 Explain Why: Black Power Movement [12m] (P1–P2)</option>
+                        <option value="page-16">Page 16: Q2 Explain Why: Black Power (P3 &amp; Criteria)</option>
+                        <option value="page-17">Page 17: Section B Dossier (Black Panthers &amp; Militancy)</option>
+                        <option value="page-18">Page 18: Q3(a) Utility of Sources B &amp; C [8m]</option>
+                        <option value="page-19">Page 19: Q3(b) &amp; Q3(c) Interpretations 1 &amp; 2 [8m]</option>
+                        <option value="page-20">Page 20: Q3(d) Evaluative Essay [16+4m] (Matrix &amp; P1)</option>
+                        <option value="page-21">Page 21: Q3(d) Evaluative Essay (Conclusion &amp; Criteria)</option>
+                        <option value="page-22">Page 22: Spec Booster: Women's Movement &amp; Roe v. Wade [12m]</option>
+                        <option value="page-23">Page 23: Grade 8/9 Models: Q1 &amp; Q2</option>
+                        <option value="page-24">Page 24: Grade 8/9 Models: Q3 &amp; Fatal Traps</option>
+                    </optgroup>
+                    <optgroup label="Key Topic 3: Vietnam War Origins &amp; Escalation (1954–75)">
+                        <option value="page-25">Page 25: Exam Cover &amp; Spec Tracker</option>
+                        <option value="page-26">Page 26: Q1 Inference [4m] (Source A)</option>
+                        <option value="page-27">Page 27: Q2 Explain Why: US Escalation &amp; Rolling Thunder [12m]</option>
+                        <option value="page-28">Page 28: Q2 Explain Why: Escalation (P3 &amp; Criteria)</option>
+                        <option value="page-29">Page 29: Section B Dossier (Gulf of Tonkin Resolution)</option>
+                        <option value="page-30">Page 30: Q3(a) Utility of Sources B &amp; C [8m]</option>
+                        <option value="page-31">Page 31: Q3(b) &amp; Q3(c) Interpretations 1 &amp; 2 [8m]</option>
+                        <option value="page-32">Page 32: Q3(d) Evaluative Essay [16+4m] (Matrix &amp; P1)</option>
+                        <option value="page-33">Page 33: Q3(d) Evaluative Essay (Conclusion &amp; Criteria)</option>
+                        <option value="page-34">Page 34: Spec Booster: Guerrilla Tactics &amp; Ho Chi Minh Trail [12m]</option>
+                        <option value="page-35">Page 35: Grade 8/9 Models: Q1 &amp; Q2</option>
+                        <option value="page-36">Page 36: Grade 8/9 Models: Q3 &amp; Fatal Traps</option>
+                    </optgroup>
+                    <optgroup label="Key Topic 4: End of US Involvement in Vietnam">
+                        <option value="page-37">Page 37: Exam Cover &amp; Spec Tracker</option>
+                        <option value="page-38">Page 38: Q1 Inference [4m] (Source A)</option>
+                        <option value="page-39">Page 39: Q2 Explain Why: Public Opposition &amp; Kent State [12m]</option>
+                        <option value="page-40">Page 40: Q2 Explain Why: Anti-War Movement (P3 &amp; Criteria)</option>
+                        <option value="page-41">Page 41: Section B Dossier (Tet Offensive &amp; Walter Cronkite)</option>
+                        <option value="page-42">Page 42: Q3(a) Utility of Sources B &amp; C [8m]</option>
+                        <option value="page-43">Page 43: Q3(b) &amp; Q3(c) Interpretations 1 &amp; 2 [8m]</option>
+                        <option value="page-44">Page 44: Q3(d) Evaluative Essay [16+4m] (Matrix &amp; P1)</option>
+                        <option value="page-45">Page 45: Q3(d) Evaluative Essay (Conclusion &amp; Criteria)</option>
+                        <option value="page-46">Page 46: Spec Booster: Vietnamization &amp; Fall of Saigon [12m]</option>
+                        <option value="page-47">Page 47: Grade 8/9 Models: Q1 &amp; Q2</option>
+                        <option value="page-48">Page 48: Back Cover: Complete Specification Coverage &amp; Audit</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+
+        <div class="hud-center">
+            <div class="hud-timer-container">
+                <div id="hud-clock-display" class="hud-clock">01:20:00</div>
+                <div id="hud-timer-pill" class="hud-pill hud-pill-ready">Ready to Begin</div>
+            </div>
+            <div class="hud-timer-controls">
+                <button type="button" id="hud-btn-toggle" class="hud-btn hud-btn-primary" title="Start / Pause Timer"><i class="fa-solid fa-play"></i> Start</button>
+                <button type="button" id="hud-btn-reset" class="hud-btn" title="Reset Exam Clock"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                <button type="button" id="hud-btn-add5" class="hud-btn" title="Add 5 minutes extra time"><i class="fa-solid fa-plus"></i> 5m</button>
+                <button type="button" id="hud-btn-add20" class="hud-btn hud-btn-extra" title="Add 20 minutes (25% Access Arrangements / Extra Time)"><i class="fa-solid fa-plus"></i> 20m (25% Extra)</button>
+                <button type="button" id="hud-btn-sound" class="hud-btn" title="Toggle audio pacing chimes"><i class="fa-solid fa-volume-high"></i></button>
+            </div>
+        </div>
+
+        <div class="hud-right">
+            <button type="button" id="hud-btn-typing" class="hud-btn hud-btn-typing" title="Toggle Pupil Interactive Typing Mode">
+                <i class="fa-solid fa-keyboard"></i> <span id="typing-status-text">Typing Mode: OFF</span>
+            </button>
+            <div id="hud-save-indicator" class="hud-save-indicator"><i class="fa-solid fa-cloud"></i> Ready</div>
+            <button type="button" id="hud-btn-print" class="hud-btn" title="Print Booklet or Save PDF with Typed Work"><i class="fa-solid fa-print"></i> Print / PDF</button>
+            <button type="button" id="hud-btn-clear" class="hud-btn hud-btn-danger" title="Clear all typed pupil responses"><i class="fa-solid fa-trash-can"></i></button>
+        </div>
+    </nav>
+`;
+
+    const digitalTwinScript = `
+<script>
+(function() {
+  const INITIAL_SECONDS = 80 * 60; // 1 hour 20 minutes = 4800s
+  let totalSeconds = INITIAL_SECONDS;
+  let timerInterval = null;
+  let isRunning = false;
+  let soundMuted = false;
+  const milestonesFired = {
+    sectionA: false,
+    warning5m: false,
+    finish: false
+  };
+
+  const clockDisplay = document.getElementById('hud-clock-display');
+  const timerPill = document.getElementById('hud-timer-pill');
+  const toggleBtn = document.getElementById('hud-btn-toggle');
+  const resetBtn = document.getElementById('hud-btn-reset');
+  const add5Btn = document.getElementById('hud-btn-add5');
+  const add20Btn = document.getElementById('hud-btn-add20');
+  const soundBtn = document.getElementById('hud-btn-sound');
+  const typingBtn = document.getElementById('hud-btn-typing');
+  const typingLabel = document.getElementById('typing-status-text');
+  const printBtn = document.getElementById('hud-btn-print');
+  const clearBtn = document.getElementById('hud-btn-clear');
+  const saveIndicator = document.getElementById('hud-save-indicator');
+  const quickJumpSelect = document.getElementById('hud-quick-jump');
+
+  let audioCtx = null;
+  function getAudioContext() {
+    if (!audioCtx) {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    if (audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+    return audioCtx;
+  }
+
+  function playTone(ctx, freq, startTime, duration) {
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(freq, startTime);
+    gain.gain.setValueAtTime(0.25, startTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, startTime + duration);
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start(startTime);
+    osc.stop(startTime + duration);
+  }
+
+  function playChime(type) {
+    if (soundMuted) return;
+    try {
+      const ctx = getAudioContext();
+      const now = ctx.currentTime;
+      if (type === 'sectionA') {
+        playTone(ctx, 392, now, 0.35); // G4
+        playTone(ctx, 523.25, now + 0.3, 0.5); // C5
+      } else if (type === 'warning5m') {
+        playTone(ctx, 659.25, now, 0.22); // E5
+        playTone(ctx, 783.99, now + 0.18, 0.22); // G5
+        playTone(ctx, 659.25, now + 0.36, 0.4); // E5
+      } else if (type === 'finish') {
+        playTone(ctx, 523.25, now, 0.35); // C5
+        playTone(ctx, 392, now + 0.3, 0.45); // G4
+        playTone(ctx, 261.63, now + 0.7, 1.2); // C4
+      }
+    } catch(e) {
+      console.warn('Audio chime note:', e);
+    }
+  }
+
+  function formatTime(secs) {
+    const h = Math.floor(secs / 3600);
+    const m = Math.floor((secs % 3600) / 60);
+    const s = secs % 60;
+    return String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+  }
+
+  function updateClockDisplay() {
+    clockDisplay.textContent = formatTime(totalSeconds);
+    clockDisplay.classList.remove('warning-amber', 'warning-red');
+    timerPill.className = 'hud-pill';
+
+    if (totalSeconds === 0) {
+      clockDisplay.classList.add('warning-red');
+      timerPill.classList.add('hud-pill-ended');
+      timerPill.textContent = 'Exam Ended · Pens Down';
+    } else if (totalSeconds <= 300) {
+      clockDisplay.classList.add('warning-red');
+      timerPill.classList.add('hud-pill-warning');
+      timerPill.textContent = 'Final 5 Mins · Review SPaG';
+    } else if (totalSeconds <= 3000) {
+      clockDisplay.classList.add('warning-amber');
+      timerPill.classList.add('hud-pill-section-b');
+      timerPill.textContent = isRunning ? 'Section B: Enquiry & Essay (60m)' : 'Paused (Section B)';
+    } else {
+      timerPill.classList.add(isRunning ? 'hud-pill-active' : 'hud-pill-ready');
+      timerPill.textContent = isRunning ? 'Section A: Q1 & Q2 (15–20m)' : 'Ready to Begin';
+    }
+  }
+
+  function startTimer() {
+    if (isRunning) return;
+    getAudioContext();
+    isRunning = true;
+    toggleBtn.innerHTML = '<i class="fa-solid fa-pause"></i> Pause';
+    toggleBtn.classList.remove('hud-btn-primary');
+    toggleBtn.style.background = '#eab308';
+    toggleBtn.style.borderColor = '#ca8a04';
+    toggleBtn.style.color = '#000000';
+
+    timerInterval = setInterval(() => {
+      if (totalSeconds > 0) {
+        totalSeconds--;
+        updateClockDisplay();
+
+        if (totalSeconds === 3000 && !milestonesFired.sectionA) {
+          milestonesFired.sectionA = true;
+          playChime('sectionA');
+        }
+        if (totalSeconds === 300 && !milestonesFired.warning5m) {
+          milestonesFired.warning5m = true;
+          playChime('warning5m');
+        }
+        if (totalSeconds === 0 && !milestonesFired.finish) {
+          milestonesFired.finish = true;
+          playChime('finish');
+          pauseTimer();
+        }
+      } else {
+        pauseTimer();
+      }
+    }, 1000);
+    updateClockDisplay();
+  }
+
+  function pauseTimer() {
+    isRunning = false;
+    clearInterval(timerInterval);
+    toggleBtn.innerHTML = '<i class="fa-solid fa-play"></i> ' + (totalSeconds === 0 ? 'Restart' : 'Resume');
+    toggleBtn.classList.add('hud-btn-primary');
+    toggleBtn.style.background = '';
+    toggleBtn.style.borderColor = '';
+    toggleBtn.style.color = '';
+    updateClockDisplay();
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    if (isRunning) {
+      pauseTimer();
+    } else {
+      if (totalSeconds === 0) totalSeconds = INITIAL_SECONDS;
+      startTimer();
+    }
+  });
+
+  resetBtn.addEventListener('click', () => {
+    if (confirm('Reset the exam clock back to 1 hour 20 minutes?')) {
+      pauseTimer();
+      totalSeconds = INITIAL_SECONDS;
+      milestonesFired.sectionA = false;
+      milestonesFired.warning5m = false;
+      milestonesFired.finish = false;
+      updateClockDisplay();
+    }
+  });
+
+  add5Btn.addEventListener('click', () => {
+    totalSeconds += 300;
+    updateClockDisplay();
+  });
+
+  add20Btn.addEventListener('click', () => {
+    totalSeconds += 1200;
+    updateClockDisplay();
+  });
+
+  soundBtn.addEventListener('click', () => {
+    soundMuted = !soundMuted;
+    soundBtn.innerHTML = soundMuted
+      ? '<i class="fa-solid fa-volume-xmark" style="color: #ef4444;"></i>'
+      : '<i class="fa-solid fa-volume-high"></i>';
+    soundBtn.title = soundMuted ? 'Sound muted (click to unmute)' : 'Sound active (click to mute)';
+  });
+
+  quickJumpSelect.addEventListener('change', function() {
+    const pageId = this.value;
+    const target = document.getElementById(pageId);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+
+  const pageElements = document.querySelectorAll('.page');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        if (id && quickJumpSelect) {
+          const option = quickJumpSelect.querySelector('option[value="' + id + '"]');
+          if (option) {
+            quickJumpSelect.value = id;
+          }
+        }
+      }
+    });
+  }, { threshold: 0.3 });
+  pageElements.forEach(p => observer.observe(p));
+
+  const STORAGE_KEY = 'usa_paper3_pupil_work';
+  let pupilData = {};
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) pupilData = JSON.parse(saved);
+  } catch(e) {}
+
+  function loadPupilData() {
+    document.querySelectorAll('[data-field]').forEach(el => {
+      const fieldKey = el.getAttribute('data-field');
+      if (pupilData[fieldKey]) {
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+          el.value = pupilData[fieldKey];
+        } else {
+          el.textContent = pupilData[fieldKey];
+        }
+      }
+    });
+    document.querySelectorAll('textarea.pupil-response-pad').forEach(ta => {
+      const qKey = ta.getAttribute('data-key');
+      if (pupilData[qKey]) {
+        ta.value = pupilData[qKey];
+      }
+    });
+  }
+
+  let saveTimeout = null;
+  function triggerAutoSave(key, value) {
+    pupilData[key] = value;
+    saveIndicator.className = 'hud-save-indicator';
+    saveIndicator.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Saving...';
+
+    clearTimeout(saveTimeout);
+    saveTimeout = setTimeout(() => {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(pupilData));
+        const now = new Date();
+        const timeStr = now.toTimeString().split(' ')[0];
+        saveIndicator.className = 'hud-save-indicator saved';
+        saveIndicator.innerHTML = '<i class="fa-solid fa-check"></i> Saved ' + timeStr;
+      } catch(e) {
+        saveIndicator.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Save error';
+      }
+    }, 400);
+  }
+
+  document.addEventListener('input', (e) => {
+    const target = e.target;
+    if (target.matches('[data-field]')) {
+      const key = target.getAttribute('data-field');
+      const val = (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA') ? target.value : target.textContent;
+      triggerAutoSave(key, val);
+    } else if (target.matches('textarea.pupil-response-pad')) {
+      const key = target.getAttribute('data-key');
+      triggerAutoSave(key, target.value);
+    }
+  });
+
+  let typingModeActive = false;
+  function setTypingMode(active) {
+    typingModeActive = active;
+    if (typingModeActive) {
+      document.body.classList.add('typing-mode-active');
+      typingBtn.classList.add('active');
+      typingLabel.textContent = 'Typing Mode: ON';
+      document.querySelectorAll('[data-field]').forEach(el => {
+        el.setAttribute('contenteditable', 'true');
+      });
+    } else {
+      document.body.classList.remove('typing-mode-active');
+      typingBtn.classList.remove('active');
+      typingLabel.textContent = 'Typing Mode: OFF';
+      document.querySelectorAll('[data-field]').forEach(el => {
+        el.setAttribute('contenteditable', 'false');
+      });
+    }
+  }
+
+  typingBtn.addEventListener('click', () => {
+    setTypingMode(!typingModeActive);
+  });
+
+  printBtn.addEventListener('click', () => {
+    const hasTyped = Object.keys(pupilData).length > 0;
+    if (hasTyped) {
+      if (confirm('Print exam paper WITH your typed responses included?\\n(Click Cancel to print blank booklet for handwriting)')) {
+        document.body.classList.add('print-pupil-typed');
+        window.print();
+        setTimeout(() => document.body.classList.remove('print-pupil-typed'), 2000);
+        return;
+      }
+    }
+    window.print();
+  });
+
+  clearBtn.addEventListener('click', () => {
+    if (confirm('WARNING: Are you sure you want to clear ALL typed pupil responses for this exam paper? This cannot be undone.')) {
+      pupilData = {};
+      try { localStorage.removeItem(STORAGE_KEY); } catch(e) {}
+      document.querySelectorAll('[data-field]').forEach(el => {
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.value = '';
+        else el.textContent = '';
+      });
+      document.querySelectorAll('textarea.pupil-response-pad').forEach(ta => {
+        ta.value = '';
+      });
+      saveIndicator.className = 'hud-save-indicator';
+      saveIndicator.innerHTML = '<i class="fa-solid fa-cloud"></i> Cleared';
+    }
+  });
+
+  loadPupilData();
+  updateClockDisplay();
+})();
+</script>
+`;
 
     const fullHtmlContent = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Conflict at Home and Abroad: the USA, 1954–75 — Complete Unit Exam Master Pack</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conflict at Home and Abroad: the USA, 1954–75 — Paper 3 Complete Exam Master Pack (48 Pages)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>${COMMON_CSS}</style>
 </head>
 <body>
+    ${hudNavHtml}
     ${fullHtmlPages}
+    ${digitalTwinScript}
 </body>
 </html>`;
 
@@ -2802,6 +3550,7 @@ function renderBookletHtml(ktKey, meta) {
       const page = await browser.newPage();
       await page.setDefaultNavigationTimeout(180000);
       await page.goto(pathToFileURL(htmlPath).href, { waitUntil: 'networkidle0', timeout: 180000 });
+      await page.emulateMediaType('print');
 
       // Page overflow audit inside Puppeteer
       const overflows = await page.evaluate(() => {
