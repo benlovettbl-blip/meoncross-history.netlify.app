@@ -4025,7 +4025,7 @@ export function renderLesson(lesson) {
     if (lesson.extended && lesson.extended.question) {
       let hintsHtml = '';
       if (lesson.extended.hints && lesson.extended.hints.length > 0) {
-        hintsHtml = `<div style="margin-top: 15px; padding: 10px; background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px;"><strong style="color: #d97706;">Hints:</strong><ul style="margin: 5px 0 0 0; padding-left: 20px; color: #92400e;">${lesson.extended.hints.map((h) => `<li>${formatBold(h)}</li>`).join('')}</ul></div>`;
+        hintsHtml = `<div style="margin-top: 15px; padding: 10px; background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px;"><strong style="color: #d97706;">Hints &amp; Structure Guide:</strong><ul style="margin: 5px 0 0 0; padding-left: 20px; color: #92400e;">${lesson.extended.hints.map((h) => `<li>${formatBold(h)}</li>`).join('')}</ul></div>`;
       }
       if (
         lesson.extended.teacher_guidance &&
@@ -4041,6 +4041,48 @@ export function renderLesson(lesson) {
               ${lesson.extended.teacher_guidance.tiered_stems.map((s) => `<li>${formatBold(s)}</li>`).join('')}
             </ul>
           </div>`;
+      }
+
+      let wordBankHtml = '';
+      if (lesson.extended.word_bank && lesson.extended.word_bank.length > 0) {
+        wordBankHtml = `
+          <div style="margin-top: 12px; padding: 10px 14px; background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 6px;">
+            <strong style="color: #166534; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 6px;">
+              Key Word Bank:
+            </strong>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+              ${lesson.extended.word_bank.map((w) => `<span style="background: white; border: 1px solid #bbf7d0; color: #14532d; font-size: 0.85rem; font-weight: 600; padding: 2px 8px; border-radius: 4px;">${w}</span>`).join('')}
+            </div>
+          </div>
+        `;
+      }
+
+      let connectivesHtml = '';
+      if (lesson.extended.connective_bank && lesson.extended.connective_bank.length > 0) {
+        connectivesHtml = `
+          <div style="margin-top: 10px; padding: 10px 14px; background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 6px;">
+            <strong style="color: #1e40af; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 4px;">
+              Causal Connective Bank:
+            </strong>
+            <div style="font-size: 0.85rem; color: #1e3a8a; font-style: italic; line-height: 1.5;">
+              ${lesson.extended.connective_bank.map((c) => `&ldquo;${c}&rdquo;`).join(' &bull; ')}
+            </div>
+          </div>
+        `;
+      }
+
+      let startersHtml = '';
+      if (lesson.extended.sentence_starters && lesson.extended.sentence_starters.length > 0) {
+        startersHtml = `
+          <div style="margin-top: 10px; padding: 10px 14px; background: #faf5ff; border: 1.5px solid #d8b4fe; border-radius: 6px;">
+            <strong style="color: #6b21a8; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 6px;">
+              Model Sentence Starters:
+            </strong>
+            <ul style="margin: 0; padding-left: 20px; font-size: 0.88rem; color: #581c87; line-height: 1.5;">
+              ${lesson.extended.sentence_starters.map((st) => `<li><em>"${st}"</em></li>`).join('')}
+            </ul>
+          </div>
+        `;
       }
 
       let sourceHtml = '';
@@ -4120,6 +4162,9 @@ export function renderLesson(lesson) {
               </span>
             </div>
             ${sourceHtml}
+            ${wordBankHtml}
+            ${connectivesHtml}
+            ${startersHtml}
             ${hintsHtml}
             ${
               lesson.extended.answer_image

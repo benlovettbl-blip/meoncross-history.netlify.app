@@ -3627,6 +3627,26 @@ allDirs.forEach((unitId) => {
             if (lesson.extended.provenance_clue) {
               html += `<div style="margin-top: 10px; margin-bottom: 12px; padding: 10px 14px; border: 1px solid #bfdbfe; border-radius: 6px; background: #eff6ff;"><strong style="color: #1e3a8a;">Provenance PEE/PEEL Structure Strip:</strong><p style="margin: 4px 0 0 0; color: #1e40af; font-style: italic;">${formatText(lesson.extended.provenance_clue)}</p></div>`;
             }
+            if (
+              unitId === 'early_modern_world' &&
+              lesson.extended.word_bank &&
+              lesson.extended.word_bank.length > 0
+            ) {
+              html += `<div style="margin-top: 8px; margin-bottom: 8px; padding: 6px 10px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 8.5pt;">`;
+              html += `<strong style="color: #0f172a; text-transform: uppercase; font-size: 8pt; letter-spacing: 0.5px;">Key Word Bank:</strong> `;
+              html += `<span style="color: #334155;">${lesson.extended.word_bank.join(' &bull; ')}</span>`;
+              html += `</div>`;
+            }
+            if (
+              unitId === 'early_modern_world' &&
+              lesson.extended.connective_bank &&
+              lesson.extended.connective_bank.length > 0
+            ) {
+              html += `<div style="margin-top: 6px; margin-bottom: 8px; padding: 6px 10px; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 4px; font-size: 8.5pt;">`;
+              html += `<strong style="color: #1e40af; text-transform: uppercase; font-size: 8pt; letter-spacing: 0.5px;">Causal Connective Bank:</strong> `;
+              html += `<span style="color: #1e3a8a; font-style: italic;">${lesson.extended.connective_bank.map((c) => `&ldquo;${c}&rdquo;`).join(' &bull; ')}</span>`;
+              html += `</div>`;
+            }
             if (lesson.extended.hints && lesson.extended.hints.length > 0) {
               html += `<div style="margin-top: 10px; margin-bottom: 15px; padding: 12px 16px; background: #f0fdf4; border: 2px solid #22c55e; border-radius: 8px;">`;
               html += `<strong style="color: #166534; font-size: 10.5pt;">PEE/PEEL Structure Strip & Hints:</strong>`;
