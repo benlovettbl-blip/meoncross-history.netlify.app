@@ -57,12 +57,30 @@ Each lesson occupies exactly **one double-page spread (2 pages)**:
 
 ---
 
-## 3. Curriculum-Wide Progress & Unit Status Ledger
+## 3. Departmental Conversion Ledgers & Production Status
+
+### A. GCSE Three Pillars Production & Conversion Matrix
+The department mandates that every GCSE unit must be consolidated into strictly **three canonical master volumes** (eliminating all individual Key Topic and section split PDFs to maximize reprographics efficiency and classroom usability):
+- **Pillar 1:** Visual Revision Guide & Cartographic Atlas (Pure double-page knowledge spreads, 0 practice lines, authentic primary visual plates, and word-for-word official specification coverage).
+- **Pillar 2:** Mastery Exam Practice Pack (Unified single volume, differentiated stepped ladder, past-paper provenance badges `Edexcel June YYYY`, and Pearson 7.4mm ruled response lines).
+- **Pillar 3:** Knowledge Retrieval Quiz Compendium (Complete unit recall bank, micro-checkboxes, RAG tracking, and randomized Vault self-marking keys).
+
+| GCSE Unit | Pillar 1: Visual Revision Guide | Pillar 2: Exam Practice Mastery Pack | Pillar 3: Retrieval Quizzing Pack | Overall Status & Next Action |
+| :--- | :--- | :--- | :--- | :--- |
+| **Paper 2: Conflict in the Middle East, 1945–1995** (`cme_new`) | **✅ 36 Pages**<br>• 12 double-page spreads<br>• 4 full-page cartographic war atlases<br>• 100% verbatim spec cover<br>• 0 overflows (≤1123px)<br>• Pure monochrome<br>`cme_revision_guide.pdf` | **✅ 36 Pages**<br>• Combined KT1–KT3 volume<br>• Stepped ladder & exam models<br>• Provenance: June 2018, 2019, 2022, 2023 & Forecasts<br>• Pearson 7.4mm ruled lines<br>`cme_mastery_pack_FULL.pdf` | **✅ 44 Pages**<br>• All 200 crucial questions<br>• Memory hacking rules<br>• RAG threat-level boxes<br>• Vault self-marking keys<br>• Randomized option spread<br>`cme_recall_quiz_FULL.pdf` | **✅ 100% PRODUCTION READY**<br>Strictly 3 master PDFs.<br>Zero split files.<br>Synchronized to Drive & Netlify. |
+| **Paper 3: The USA, 1954–75: Conflict at Home & Abroad** (`usa`) | **✅ 36 Pages**<br>• 16 double-page spreads<br>• 4-4-4-4 question matrix<br>• Hodder-grounded facts<br>• 0 overflows (≤1123px)<br>• Pure monochrome<br>`usa_visual_revision_guide.pdf` | **✅ 48 Pages**<br>• Combined KT1–KT4 volume<br>• 4 full Paper 3 simulations<br>• 16 primary sources/interpretations<br>• 24 Grade 8/9 exemplars<br>`usa_mastery_pack_FULL.pdf` | **✅ 54 Pages**<br>• All 320 crucial questions<br>• Memory hacking rules<br>• RAG tracking & Vault keys<br>• Randomized option spread<br>`usa_recall_quiz_FULL.pdf` | **✅ 100% PRODUCTION READY**<br>Strictly 3 master PDFs.<br>Zero split files.<br>Synchronized to Drive & Netlify. |
+| **Paper 1: Medicine in Britain, c1250–present & Western Front** (`edexcel_medicine`) | **✅ 36 Pages**<br>• 18 double-page spreads<br>• All 4 thematic eras + Section A<br>• Dual contrasting archival plates<br>• High-contrast monochrome<br>`edexcel_medicine_visual_revision_and_exam_guide.pdf` | **✅ 20 Pages**<br>• Combined Section A & B volume<br>• 2m feature, 8m utility, 4m follow-up<br>• 4m similarity, 12m explain, 16m essay<br>• Provenance badges & exam models<br>`med_mastery_pack_FULL.pdf` | **✅ 16 Pages**<br>• All 380 rapid recall questions<br>• Section A + all 4 eras<br>• Standardized monochrome<br>• Micro-checkboxes & answers bank<br>`med_recall_quiz_pack_FULL.pdf` | **✅ STANDARDIZED & VERIFIED**<br>Strictly 3 master PDFs.<br>Typography converted to GCSE standard.<br>Synchronized to Drive. |
+| **Paper 2: Early Elizabethan England, 1558–1588** (`eee`) | **🟡 Pending Conversion**<br>Needs authoring of 24–28 page Visual Revision Guide (12 spreads across KT1–KT3). | **🟡 Pending Conversion**<br>Currently split in KT1, KT2, KT3. Needs consolidation to single 36-page master volume with past paper session badges (June 2018–2024). | **🟡 Pending Conversion**<br>Needs compilation into unified master recall quiz booklet (240 questions) with Vault answer keys. | **🟡 PRIORITY #1 FOR CONVERSION**<br>Scheduled as immediate next unit for Three Pillars unification. |
+| **Paper 3: Weimar and Nazi Germany, 1918–1939** (`weimar_nazi_germany`) | **⚪ Scheduled**<br>Scheduled for 36-page 4-4-4-4 Visual Revision Guide across KT1–KT4. | **⚪ Scheduled**<br>Currently split in 4 KT booklets. Needs consolidation to single 48-page master volume with past paper session badges. | **⚪ Scheduled**<br>Needs compilation into unified master recall quiz booklet (320 questions) with Vault answer keys. | **⚪ PRIORITY #2 IN ROADMAP**<br>Scheduled following Early Elizabethan England completion. |
+
+---
+
+### B. KS3 Curriculum Progress & 2-Page Spread Ledger
 
 | Unit ID | Title | Key Stage | Lessons | Status | Notes / Next Action |
 | :--- | :--- | :---: | :---: | :--- | :--- |
 | **`industrialisation_and_empire`** | Industrialisation, Empire, and Power (1750–1900) | KS3 (Yr 8) | 8 | **✅ Complete & Production Ready** | Full 20-page saddle-stitch 2-page spread standard finalized. 0 layout overflows, standardized cover, Page 2 tracker (Effort 1–5), Task 4 preparation bridges, bracketless C • OK • NOP source utility mastery, and Page 20 Pupil Voice reflection. |
-| **`early_modern_world`** | Early Modern World & Global Encounters (1450–1750) | KS3 (Yr 8) | 9 | **🟡 Next in Queue (Pending 2-Page Migration)** | 4-Act structure complete. Next unit scheduled to migrate from legacy 4-page to the new 2-page double-page spread standard. |
+| **`early_modern_world`** | Early Modern World & Global Encounters (1450–1750) | KS3 (Yr 8) | 9 | **🟡 Next in Queue (Pending 2-Page Migration)** | 4-Act structure complete. Next KS3 unit scheduled to migrate from legacy 4-page to the new 2-page double-page spread standard. |
 | **`great_war`** | Causes of the Great War (1870–1914) | KS3 (Yr 9) | 7 | **4-Act Complete** | Awaiting 2-page spread migration. |
 | **`great_war_part2`** | The Great War (1914–1919) | KS3 (Yr 9) | 7 | **4-Act Complete** | Awaiting 2-page spread migration. |
 | **`medieval_england`** | Medieval England & The Struggle for Power (1066–1485) | KS3 (Yr 7) | 9 | **Pending Conversion** | Uses legacy prose comprehension questions. |
@@ -71,11 +89,6 @@ Each lesson occupies exactly **one double-page spread (2 pages)**:
 | **`the_shoah`** | The Shoah | KS3 (Yr 9) | 7 | **Pending Conversion** | Legacy format. |
 | **`australia`** | History of Australia | KS3 (Yr 8/9) | 5 | **Pending Conversion** | Legacy format. |
 | **`cold_war`** | The Cold War | KS3 (Yr 9) | 7 | **Pending Conversion** | Legacy format. |
-| **`edexcel_medicine`** | Medicine Through Time with Western Front | GCSE (Paper 1) | 18 | **GCSE Specification Format** | Strictly Pearson Edexcel exam architecture (Section A/B). Untouched. |
-| **`eee`** | Early Elizabethan England (1558–1588) | GCSE (Paper 2) | 12 | **GCSE Specification Format** | Edexcel exam questions (2m features, 12m explain, 16m essay). Untouched. |
-| **`cme_new`** | Conflict in the Middle East (1945–1995) | GCSE (Paper 2) | 10 | **GCSE Specification Format** | Edexcel exam questions (4m consequence, 8m narrative, 8m importance). Untouched. |
-| **`usa`** | Conflict at Home & Abroad: The USA (1954–1975) | GCSE (Paper 3) | 16 | **GCSE 4-4-4-4 Matrix Format** | Standardized 16-spread Paper 3 Visual Exam Guide. Untouched. |
-| **`weimar_nazi_germany`** | Weimar and Nazi Germany (1918–1939) | GCSE (Paper 3) | 16 | **GCSE Exam Format** | Scheduled for 4-4-4-4 matrix alignment when requested. Untouched. |
 | **`trip_ypres`** | GCSE Battlefield Tour: Ypres & The Salient | GCSE Field Trip | 14 stops | **Digital Field Trip Guide** | Interactive web companion; workbook export intentionally bypassed. |
 
 ---

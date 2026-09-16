@@ -3039,10 +3039,9 @@ async function generateBooklets() {
       path: ktPdfPath,
       format: 'A4',
       printBackground: true,
-      margin: { top: '0mm', right: '0mm', bottom: '0mm', left: '0mm' },
     });
-    fs.copyFileSync(ktPdfPath, path.join(globalPdfsDir, `cme_mastery_pack_${ktKey}.pdf`));
-    console.log(`   ✅ Exported PDF: cme_mastery_pack_${ktKey}.pdf (12 Pages)`);
+    // Keep individual KT PDF in unit folder only (do not pollute global public/pdfs)
+    console.log(`   ✅ Exported unit PDF: cme_mastery_pack_${ktKey}.pdf (12 Pages)`);
     await ktPage.close();
   }
 
@@ -3096,17 +3095,14 @@ async function generateBooklets() {
 
   const canonicalNames = {
     'cme_mastery_pack_FULL.pdf': 'Conflict in the Middle East Complete Mastery Pack.pdf',
-    'cme_mastery_pack_KT1.pdf': 'Conflict in the Middle East Mastery Pack (KT1).pdf',
-    'cme_mastery_pack_KT2.pdf': 'Conflict in the Middle East Mastery Pack (KT2).pdf',
-    'cme_mastery_pack_KT3.pdf': 'Conflict in the Middle East Mastery Pack (KT3).pdf',
   };
 
   for (const dir of driveDirs) {
     try {
       if (fs.existsSync(dir)) {
-        console.log(`\n☁️ Syncing freshly compiled booklets to Google Drive: ${dir}`);
+        console.log(`\n☁️ Syncing freshly compiled master booklet to Google Drive: ${dir}`);
         for (const [pdfFile, canonical] of Object.entries(canonicalNames)) {
-          const srcPath = path.join(pdfsDir, pdfFile);
+          const srcPath = path.join(globalPdfsDir, pdfFile);
           if (fs.existsSync(srcPath)) {
             fs.copyFileSync(srcPath, path.join(dir, pdfFile));
             if (canonical) {
@@ -3114,9 +3110,23 @@ async function generateBooklets() {
             }
           }
         }
-        console.log(
-          '   ✅ Synced all master & KT booklets (both naming standards) to Google Drive.',
-        );
+        // Clean up any old split KT files in Drive
+        [
+          'cme_mastery_pack_KT1.pdf',
+          'cme_mastery_pack_KT2.pdf',
+          'cme_mastery_pack_KT3.pdf',
+          'Conflict in the Middle East Mastery Pack (KT1).pdf',
+          'Conflict in the Middle East Mastery Pack (KT2).pdf',
+          'Conflict in the Middle East Mastery Pack (KT3).pdf',
+        ].forEach((splitFile) => {
+          const oldFile = path.join(dir, splitFile);
+          if (fs.existsSync(oldFile)) {
+            try {
+              fs.unlinkSync(oldFile);
+            } catch (e) {}
+          }
+        });
+        console.log('   ✅ Synced master booklet (strictly 1 PDF per pillar) to Google Drive.');
       }
     } catch (err) {
       console.warn(`   ⚠️ Could not sync to ${dir}: ${err.message}`);

@@ -178,3 +178,34 @@ When referencing or extracting information from these textbooks, you MUST strict
 2. **ZERO Exam Technique from Textbooks:** NEVER use textbooks to determine exam question formats, mark allocations, question stems, or exam technique. Many textbooks in the shelf are from different exam boards (AQA, Cambridge iGCSE, OCR, ISEB) or outdated legacy specifications.
 3. **Specification Authority:** All exam question structures, mark schemes, and assessment scaffolds must strictly follow our verified Pearson Edexcel specification rules (e.g. 4-mark consequence questions for Middle East Paper 2, Section A 2-mark feature questions for Medicine / Elizabethan, the 4-4-4-4 matrix for Paper 3, and `data/curriculum_facts_manifest.json`).
 
+## Exam Question Provenance & Past Paper Session Tagging
+Whenever generating, editing, or evaluating GCSE exam practice questions (in revision guides, mastery exam packs, workbooks, or the interactive web app), you MUST include past-paper provenance metadata for every question:
+1. **Official Past Exam Questions:** If a question (or a close variant) has appeared on an official Edexcel past exam, explicitly tag it with the exact series session (e.g. `Edexcel June 2018`, `Edexcel June 2019`, `Edexcel June 2022`, `Edexcel June 2023`, `Edexcel November 2020`, `Edexcel June 2024`, or `Sample Assessment Material`). Render this prominently as an `.exam-provenance-pill.past` badge.
+2. **Forecast & Unexamined Targets:** If a question has not yet appeared on an official past paper, label it accurately using our standard taxonomy:
+   - `★ High-Yield Forecast` (`.exam-provenance-pill.forecast`): for core specification bullet points with high statistical probability of appearing in upcoming series.
+   - `Unexamined Spec Target` (`.exam-provenance-pill.unexamined`): for specification points that Edexcel has never yet examined.
+3. **App & PDF Parity:** Ensure this provenance indicator is visible to students and teachers in both the printed booklets and the interactive online exam modules.
+
+## GCSE Revision Material Typography & Readability Calibration Standard
+All GCSE revision materials (Visual Revision Guides, Mastery Exam Practice Packs, and Knowledge Retrieval Quiz Packs) must adhere strictly to our unified departmental typography and readability calibration:
+1. **Font Hierarchy**:
+   - Primary Interface & Analytical Body: `Inter`, `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif` for maximum legibility.
+   - Document Titles & Primary Historical Excerpts: `Playfair Display`, `Georgia`, or authentic serif faces.
+   - Metadata, Shelfmarks & Category Tags: Uppercase monospace (`Courier New`, letter-spacing 0.5–1px).
+2. **Strict Font Size Thresholds (Zero Micro-Text)**:
+   - Title 1 (Main Unit / Document Title): `16.5pt`–`21pt` bold.
+   - Heading 2 (Major Sections / SOW Headings): `12.5pt`–`14pt` bold.
+   - Subheading / Card Title / Factor Box: `10pt`–`10.5pt` bold.
+   - Standard Analytical Body / Case Studies: `9.5pt` (line-height 1.36–1.38).
+   - Captions, Word Bank Pills, Metadata & Footers: `8.5pt` (line-height 1.28–1.30).
+   - **Absolute Minimum Floor:** Nothing under `8.5pt` (completely eliminate 5.5pt–7.5pt micro-text across all booklets).
+3. **High-Contrast Monochrome & Photocopier Safety**:
+   - Strictly pure monochrome styling (`#000000` text, `1.5px` to `2px` solid black borders, `#ffffff` card backgrounds, subtle `#f8fafc` tinting).
+   - Eliminate colored inks (no `#1e3a8a` navy headers, no green answer panels, no amber warnings) so documents photocopy and duplex-print with razor-sharp contrast.
+4. **Strict Three Pillars Volume Consolidation (Zero Split PDFs)**:
+   - Every GCSE unit must produce strictly **ONE canonical master PDF per pillar**:
+     - **Pillar 1:** Visual Revision Guide (`<unit>_revision_guide.pdf`)
+     - **Pillar 2:** Mastery Exam Practice Pack (`<unit>_mastery_pack_FULL.pdf`)
+     - **Pillar 3:** Knowledge Retrieval Quiz Pack (`<unit>_recall_quiz_FULL.pdf` / `<unit>_recall_quiz_pack_FULL.pdf`)
+   - Split PDFs (by Key Topic or section) are strictly forbidden in public distributions.
+

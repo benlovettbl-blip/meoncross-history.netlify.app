@@ -239,16 +239,13 @@ async function run() {
   // Maintain legacy path copy
   fs.copyFileSync(PDF_OUT_UNIT, PDF_OUT_UNIT_LEGACY);
 
-  // Mirror to public/pdfs
+  // Mirror to public/pdfs (strictly 1 master PDF)
   fs.copyFileSync(PDF_OUT_UNIT, PDF_OUT_PUBLIC);
-  fs.copyFileSync(PDF_OUT_UNIT, PDF_OUT_PUBLIC_LEGACY);
-  console.log(`📋 Synced PDF to public/pdfs/: ${PDF_OUT_PUBLIC}`);
-  console.log(`📋 Synced legacy PDF alias to public/pdfs/: ${PDF_OUT_PUBLIC_LEGACY}`);
+  console.log(`📋 Synced master PDF to public/pdfs/: ${PDF_OUT_PUBLIC}`);
 
   const publicCmeDir = path.dirname(PDF_OUT_PUBLIC_CME);
   if (!fs.existsSync(publicCmeDir)) fs.mkdirSync(publicCmeDir, { recursive: true });
   fs.copyFileSync(PDF_OUT_UNIT, PDF_OUT_PUBLIC_CME);
-  fs.copyFileSync(PDF_OUT_UNIT, PDF_OUT_PUBLIC_CME_LEGACY);
   console.log(`📋 Synced PDF to public/pdfs/cme_new/: ${PDF_OUT_PUBLIC_CME}`);
 
   // Mirror to Google Drive Department File

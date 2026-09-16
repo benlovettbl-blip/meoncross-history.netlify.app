@@ -182,13 +182,13 @@ export function renderWorkbooksZone(container, unitData) {
     const cmeBooklets = [
       {
         id: 'PILLAR_1',
-        title: '28-Page Visual Revision Masterclasses & Complete Specification Guide',
-        pages: '28 Pages',
+        title: '36-Page Visual Revision Masterclasses & Complete Specification Guide',
+        pages: '36 Pages',
         badge: 'Pillar 1 • Revision Guide',
         color: '#0284c7',
-        desc: 'The complete visual revision master volume: 12 double-page spreads across all 3 Key Topics, word-for-word official Pearson specification checklist, 4 deep case studies per spread, causal pathways, GCSE word banks, and primary archival evidence.',
-        fileBase: '/units/cme_new/visual_revision_guide.html',
-        pdfUrl: '/pdfs/cme_visual_revision_guide.pdf',
+        desc: 'The complete visual revision master volume: 12 double-page spreads across all 3 Key Topics, 4 full-page dedicated cartographic war atlases, word-for-word official Pearson specification checklist, 4 deep case studies per spread, causal pathways, GCSE word banks, and primary archival evidence.',
+        fileBase: '/units/cme_new/revision_guide.html',
+        pdfUrl: '/pdfs/cme_revision_guide.pdf',
       },
       {
         id: 'PILLAR_2',

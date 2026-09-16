@@ -410,7 +410,7 @@ const PDF_MAPPINGS = [
   },
   {
     folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
-    src: 'cme_visual_revision_guide.pdf',
+    src: 'cme_revision_guide.pdf',
     dest: 'Conflict in the Middle East Visual Revision Guide.pdf',
     category: 'Year 10 GCSE',
   },
@@ -434,12 +434,6 @@ const PDF_MAPPINGS = [
   },
   {
     folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
-    src: 'cme_new_mastery_pack_KT1_FINAL_V17.pdf',
-    dest: 'Conflict in the Middle East Mastery Pack (KT1).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
     src: 'cme_new_pupil_workbook_KT2_FINAL_V17.pdf',
     dest: 'Conflict in the Middle East Pupil Workbook (KT2).pdf',
     category: 'Year 10 GCSE',
@@ -452,12 +446,6 @@ const PDF_MAPPINGS = [
   },
   {
     folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
-    src: 'cme_new_mastery_pack_KT2_FINAL_V17.pdf',
-    dest: 'Conflict in the Middle East Mastery Pack (KT2).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
     src: 'cme_new_pupil_workbook_KT3_FINAL_V17.pdf',
     dest: 'Conflict in the Middle East Pupil Workbook (KT3).pdf',
     category: 'Year 10 GCSE',
@@ -466,12 +454,6 @@ const PDF_MAPPINGS = [
     folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
     src: 'cme_new_textbook_KT3_FINAL_V17.pdf',
     dest: 'Conflict in the Middle East Master Textbook (KT3).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
-    src: 'cme_new_mastery_pack_KT3_FINAL_V17.pdf',
-    dest: 'Conflict in the Middle East Mastery Pack (KT3).pdf',
     category: 'Year 10 GCSE',
   },
   {
@@ -490,7 +472,7 @@ const PDF_MAPPINGS = [
   // Year 11 (GCSE) - USA 1954-75
   {
     folder: path.join('Year 11 (GCSE)', 'Paper 3 - USA 1954-75'),
-    src: 'edexcel_usa_visual_revision_and_exam_guide.pdf',
+    src: 'usa_visual_revision_guide.pdf',
     dest: 'Edexcel GCSE USA Visual Revision and Exam Guide.pdf',
     category: 'Year 11 GCSE',
   },
@@ -520,12 +502,6 @@ const PDF_MAPPINGS = [
   },
   {
     folder: path.join('Year 11 (GCSE)', 'Paper 3 - USA 1954-75'),
-    src: 'usa_mastery_pack_KT1_FINAL_V17.pdf',
-    dest: 'USA 1954-75 Mastery Pack (KT1).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 3 - USA 1954-75'),
     src: 'usa_pupil_workbook_KT2_FINAL_V17.pdf',
     dest: 'USA 1954-75 Pupil Workbook (KT2).pdf',
     category: 'Year 11 GCSE',
@@ -534,12 +510,6 @@ const PDF_MAPPINGS = [
     folder: path.join('Year 11 (GCSE)', 'Paper 3 - USA 1954-75'),
     src: 'usa_textbook_KT2_FINAL_V17.pdf',
     dest: 'USA 1954-75 Master Textbook (KT2).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 3 - USA 1954-75'),
-    src: 'usa_mastery_pack_KT2_FINAL_V17.pdf',
-    dest: 'USA 1954-75 Mastery Pack (KT2).pdf',
     category: 'Year 11 GCSE',
   },
   {
@@ -556,12 +526,6 @@ const PDF_MAPPINGS = [
   },
   {
     folder: path.join('Year 11 (GCSE)', 'Paper 3 - USA 1954-75'),
-    src: 'usa_mastery_pack_KT3_FINAL_V17.pdf',
-    dest: 'USA 1954-75 Mastery Pack (KT3).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 3 - USA 1954-75'),
     src: 'usa_pupil_workbook_KT4_FINAL_V17.pdf',
     dest: 'USA 1954-75 Pupil Workbook (KT4).pdf',
     category: 'Year 11 GCSE',
@@ -570,12 +534,6 @@ const PDF_MAPPINGS = [
     folder: path.join('Year 11 (GCSE)', 'Paper 3 - USA 1954-75'),
     src: 'usa_textbook_KT4_FINAL_V17.pdf',
     dest: 'USA 1954-75 Master Textbook (KT4).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 3 - USA 1954-75'),
-    src: 'usa_mastery_pack_KT4_FINAL_V17.pdf',
-    dest: 'USA 1954-75 Mastery Pack (KT4).pdf',
     category: 'Year 11 GCSE',
   },
   {
