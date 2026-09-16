@@ -2693,6 +2693,43 @@ allDirs.forEach((unitId) => {
                     let _t = processTaskTextWithTariff(task.text || task.question);
                     _nbHtml += `<div style="${pbBefore}; margin-bottom: 15px;"><strong>Q${globalQNum++}. ${_t.cleanText}</strong></div>`;
                     if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
+                    if (task.source_annotations && task.source_annotations.length > 0) {
+                      _nbHtml += `
+                        <div style="margin: 6px 0 12px 0; padding: 6px 8px; background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 6px; page-break-inside: avoid;">
+                          <div style="font-weight: bold; font-size: 7.5pt; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px;">
+                            Visual Source Dissection &amp; Archival Annotation:
+                          </div>
+                          <div style="display: flex; gap: 6px; align-items: stretch;">
+                            ${task.source_annotations
+                              .map((sa) => {
+                                const rawImg = sa.src;
+                                const imgSrc =
+                                  typeof resolveAssetPath === 'function'
+                                    ? resolveAssetPath(rawImg, 2)
+                                    : `../..${rawImg.startsWith('/') ? rawImg : '/' + rawImg}`;
+                                return `
+                                  <div style="flex: 1; min-width: 0; background: #ffffff; border: 1.2px solid #cbd5e1; border-top: 3px solid #1e3a8a; border-radius: 4px; padding: 5px; display: flex; flex-direction: column;">
+                                    <div style="font-weight: bold; font-size: 7.4pt; color: #0f172a; margin-bottom: 3px; line-height: 1.15;">${sa.title}</div>
+                                    <div style="text-align: center; margin-bottom: 4px; height: 60px; display: flex; align-items: center; justify-content: center; background: #f1f5f9; border-radius: 3px; overflow: hidden; border: 1px solid #e2e8f0;">
+                                      <img src="${imgSrc}" style="max-height: 56px; max-width: 100%; object-fit: contain;" alt="${sa.feature}">
+                                    </div>
+                                    <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 3px; padding: 2px 4px; margin-bottom: 4px;">
+                                      <div style="font-size: 6.2pt; font-weight: bold; color: #1d4ed8; text-transform: uppercase;">Key Feature:</div>
+                                      <div style="font-size: 6.8pt; color: #1e3a8a; font-weight: 600;">${sa.feature}</div>
+                                    </div>
+                                    <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-end;">
+                                      <div style="font-size: 6.4pt; color: #475569; margin-bottom: 2px; line-height: 1.15;">${sa.prompt}</div>
+                                      <div style="border-bottom: 1px dotted #94a3b8; height: 12px; margin-top: 2px;"></div>
+                                      <div style="border-bottom: 1px dotted #94a3b8; height: 12px; margin-top: 2px;"></div>
+                                    </div>
+                                  </div>
+                                `;
+                              })
+                              .join('')}
+                          </div>
+                        </div>
+                      `;
+                    }
                     if (task.type === 'extended_writing') {
                       if (task.instructions) {
                         _nbHtml += `<p style="font-style: italic; color: #334155; margin-bottom: 5px; margin-top: 5px; font-size: 10pt;">${task.instructions}</p>`;

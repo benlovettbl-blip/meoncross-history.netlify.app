@@ -3280,6 +3280,41 @@ export function renderLesson(lesson) {
           const starterDiv = starterText
             ? `<div class="starter-box" id="starter-${ansId}" style="display: none; margin-top: 8px; background: #f0f9ff; padding: 10px; border-left: 3px solid #0284c7; font-style: italic; color: #0c4a6e; transition: all 0.3s ease;">${starterText}</div>`
             : '';
+          let sourceAnnotationsHtml = '';
+          if (task.source_annotations && task.source_annotations.length > 0) {
+            sourceAnnotationsHtml = `
+              <div class="visual-source-dissection-grid" style="margin: 12px 0 16px 0; padding: 14px; background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 8px;">
+                <div style="font-weight: 800; font-size: 0.9rem; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+                  <i class="fa-solid fa-magnifying-glass"></i> Visual Source Dissection &amp; Forensic Evidence
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+                  ${task.source_annotations
+                    .map(
+                      (sa) => `
+                    <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-top: 3.5px solid #1e3a8a; border-radius: 6px; padding: 10px; display: flex; flex-direction: column;">
+                      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                        <strong style="color: #0f172a; font-size: 0.88rem;">${sa.title}</strong>
+                        <span style="font-size: 0.72rem; font-weight: 800; background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 4px;">Source ${sa.letter}</span>
+                      </div>
+                      <div style="text-align: center; margin-bottom: 8px; background: #0f172a; border-radius: 4px; padding: 6px; height: 110px; display: flex; align-items: center; justify-content: center;">
+                        <img src="${sa.src}" style="max-height: 100px; max-width: 100%; object-fit: contain; cursor: zoom-in;" data-action="open-modal" data-src="${sa.src}" title="Click to inspect" alt="${sa.feature}">
+                      </div>
+                      <div style="background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 4px; padding: 5px 8px; margin-bottom: 6px;">
+                        <div style="font-size: 0.72rem; font-weight: bold; color: #0284c7; text-transform: uppercase;">Key Feature:</div>
+                        <div style="font-size: 0.82rem; font-weight: 700; color: #0369a1;">${sa.feature}</div>
+                      </div>
+                      <div style="margin-top: auto;">
+                        <label style="font-size: 0.78rem; font-weight: 600; color: #475569; display: block; margin-bottom: 4px;">${sa.prompt}</label>
+                        <input type="text" style="width: 100%; box-sizing: border-box; padding: 6px 8px; font-size: 0.82rem; border: 1px solid #cbd5e1; border-radius: 4px;" placeholder="Annotate significance...">
+                      </div>
+                    </div>
+                  `,
+                    )
+                    .join('')}
+                </div>
+              </div>
+            `;
+          }
           let flowchartHtml = '';
           if (task.flowchart) {
             const fc = task.flowchart;
@@ -3390,6 +3425,7 @@ export function renderLesson(lesson) {
 
           extrasHtml += `
                <div style="margin-bottom: 10px;">
+                 ${sourceAnnotationsHtml}
                  ${flowchartHtml}
                  ${wordBankHtml}
                  ${causalChainHtml}
