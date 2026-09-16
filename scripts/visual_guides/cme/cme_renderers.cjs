@@ -85,9 +85,10 @@ function getStyles() {
   .page-footer {
     border-top: 1.5px solid #000000;
     padding-top: 2px; margin-top: auto;
-    display: flex; justify-content: space-between;
-    font-size: 8.5pt; font-weight: 700; color: #000000;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 8.0pt; font-weight: 700; color: #000000;
     text-transform: uppercase;
+    white-space: nowrap;
   }
 
   .wb-pill {
@@ -136,81 +137,78 @@ function renderPage1() {
             </span>
           </div>
 
-          <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 16.5pt; font-weight: 900; line-height: 1.1; color: #000000; margin: 0 0 2px 0; text-transform: uppercase; letter-spacing: 0.2px;">
+          <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 17pt; font-weight: 900; line-height: 1.1; color: #000000; margin: 0 0 3px 0; text-transform: uppercase; letter-spacing: 0.2px;">
             Option P5: Conflict in the Middle East, 1945–1995
           </h1>
           <div style="font-size: 9.0pt; font-weight: 700; color: #000000; display: flex; justify-content: space-between;">
             <span>Complete Revision Guide &bull; Core Knowledge, Cartographic Atlas &amp; Specification Volume</span>
-            <span style="font-size: 8.5pt; font-weight: 800; background: #000000; color: #ffffff; padding: 1px 6px; border-radius: 2px; text-transform: uppercase;">
-              32-Page Master Edition
+            <span style="font-size: 8.5pt; font-weight: 800; background: #000000; color: #ffffff; padding: 1.5px 7px; border-radius: 2px; text-transform: uppercase;">
+              36-Page Master Edition
             </span>
           </div>
         </div>
 
-        <!-- 3. DUAL ARCHIVAL PRIMARY PLATES (Height 95px) -->
-        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 6px 8px; background: #fafafa;">
-          <div style="font-size: 8.5pt; font-weight: 800; text-transform: uppercase; color: #000000; letter-spacing: 0.3px; margin-bottom: 4px; text-align: center; border-bottom: 1.2px solid #000000; padding-bottom: 2px;">
+        <!-- 3. DUAL ARCHIVAL PRIMARY PLATES (Generous uncropped container height: 165px) -->
+        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 7px 9px; background: #fafafa;">
+          <div style="font-size: 8.5pt; font-weight: 800; text-transform: uppercase; color: #000000; letter-spacing: 0.3px; margin-bottom: 5px; text-align: center; border-bottom: 1.2px solid #000000; padding-bottom: 3px;">
             Dual Archival Plates: Two Defining Turning Points of Middle East Conflict
           </div>
           
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
             <!-- Left Plate: 1948 Al-Nakba -->
-            <div style="border: 1px solid #000000; background: #ffffff; padding: 4px; border-radius: 2px;">
-              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px;">
+            <div style="border: 1px solid #000000; background: #ffffff; padding: 5px; border-radius: 2px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px;">
                 <strong style="font-size: 8.5pt; text-transform: uppercase; color: #000000;">1. The 1948 Al-Nakba (The Catastrophe)</strong>
-                <span style="font-size: 8.5pt; font-weight: 700; color: #475569;">UNRWA Archive</span>
+                <span style="font-size: 8.0pt; font-weight: 700; color: #475569;">UNRWA Archive</span>
               </div>
-              <div style="width: 100%; height: 95px; overflow: hidden; background: #000000; border: 1px solid #000000; margin-bottom: 3px;">
-                <img src="${unrwaImgUri}" alt="Palestinian refugees 1948" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%; filter: grayscale(100%); display: block;" />
+              <div style="width: 100%; height: 165px; background: #ffffff; border: 1px solid #000000; margin-bottom: 4px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                <img src="${unrwaImgUri}" alt="Palestinian refugees 1948" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%); display: block;" />
               </div>
-              <div style="font-size: 8.5pt; color: #000000; line-height: 1.24;">
-                <strong>Significance:</strong> Over 700,000 Palestinian Arabs displaced in 1948, creating the permanent refugee crisis.
+              <div style="font-size: 8.5pt; color: #000000; line-height: 1.25;">
+                <strong>Significance:</strong> Over 700,000 Palestinian Arabs displaced into permanent refugee exile following the 1948–49 War.
               </div>
             </div>
 
-            <!-- Right Plate: 1967 Six Day War -->
-            <div style="border: 1px solid #000000; background: #ffffff; padding: 4px; border-radius: 2px;">
-              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px;">
-                <strong style="font-size: 8.5pt; text-transform: uppercase; color: #000000;">2. 1967 Western Wall Victory</strong>
-                <span style="font-size: 8.5pt; font-weight: 700; color: #475569;">Rubinger / GPO</span>
+            <!-- Right Plate: 1967 Six Day War (Paratroopers fully visible) -->
+            <div style="border: 1px solid #000000; background: #ffffff; padding: 5px; border-radius: 2px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px;">
+                <strong style="font-size: 8.5pt; text-transform: uppercase; color: #000000;">2. 1967 Paratroopers at Western Wall</strong>
+                <span style="font-size: 8.0pt; font-weight: 700; color: #475569;">Rubinger / GPO</span>
               </div>
-              <div style="width: 100%; height: 95px; overflow: hidden; background: #000000; border: 1px solid #000000; margin-bottom: 3px;">
-                <img src="${rubingerImgUri}" alt="Israeli troops Western Wall" style="width: 100%; height: 100%; object-fit: cover; object-position: center 25%; filter: grayscale(100%); display: block;" />
+              <div style="width: 100%; height: 165px; background: #ffffff; border: 1px solid #000000; margin-bottom: 4px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                <img src="${rubingerImgUri}" alt="Israeli paratroopers Western Wall 1967" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%); display: block;" />
               </div>
-              <div style="font-size: 8.5pt; color: #000000; line-height: 1.24;">
-                <strong>Significance:</strong> Capture of West Bank and East Jerusalem placed 1 million Palestinians under military occupation.
+              <div style="font-size: 8.5pt; color: #000000; line-height: 1.25;">
+                <strong>Significance:</strong> Paratroopers secure East Jerusalem and Western Wall; 1 million Palestinians placed under military rule.
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 4. THE THREE EXAM QUESTION TYPES STRIP (Minimum 8.5pt) -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px;">
-          <div style="background: #f8fafc; border: 1.2px solid #000000; border-radius: 3px; padding: 5px 7px;">
-            <div style="font-size: 9.0pt; font-weight: 800; color: #000000; text-transform: uppercase; display: flex; justify-content: space-between;">
-              <span>Q1: Consequence</span>
-              <span>4+4 = 8m</span>
+        <!-- 4. CORE PERIOD STUDY EXAMINATION PILLARS (REPLACES EXAM QUESTION STRIP) -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
+          <div style="background: #f8fafc; border: 1.2px solid #000000; border-radius: 3px; padding: 5px 8px;">
+            <div style="font-size: 8.5pt; font-weight: 800; color: #000000; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
+              Key Topic 1: 1945–1963
             </div>
-            <p style="font-size: 8.5pt; color: #000000; line-height: 1.25; margin: 3px 0 0 0;">
-              Answer <strong>BOTH 1(a) and 1(b)</strong> (~6m each). State ONE consequence &rarr; Support with precise facts &rarr; Trace causal outcome.
+            <p style="font-size: 8.5pt; color: #000000; line-height: 1.25; margin: 0;">
+              British Mandate breakdown, King David Hotel, 1947 UN Partition, 1948–49 War, Law of Return &amp; 1956 Suez Crisis.
             </p>
           </div>
-          <div style="background: #f8fafc; border: 1.2px solid #000000; border-radius: 3px; padding: 5px 7px;">
-            <div style="font-size: 9.0pt; font-weight: 800; color: #000000; text-transform: uppercase; display: flex; justify-content: space-between;">
-              <span>Q2: Narrative</span>
-              <span>8m</span>
+          <div style="background: #f8fafc; border: 1.2px solid #000000; border-radius: 3px; padding: 5px 8px;">
+            <div style="font-size: 8.5pt; font-weight: 800; color: #000000; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
+              Key Topic 2: 1964–1973
             </div>
-            <p style="font-size: 8.5pt; color: #000000; line-height: 1.25; margin: 3px 0 0 0;">
-              Continuous causal prose (~12m). 3 acts: <strong>Beginning &rarr; Turning Point &rarr; Outcome</strong>. Must exceed stimulus.
+            <p style="font-size: 8.5pt; color: #000000; line-height: 1.25; margin: 0;">
+              Cairo Summit, 1967 Six Day War, Occupied Territories, UN Res 242, 1973 Yom Kippur War, OPEC oil embargo &amp; Camp David.
             </p>
           </div>
-          <div style="background: #f8fafc; border: 1.2px solid #000000; border-radius: 3px; padding: 5px 7px;">
-            <div style="font-size: 9.0pt; font-weight: 800; color: #000000; text-transform: uppercase; display: flex; justify-content: space-between;">
-              <span>Q3: Importance</span>
-              <span>8+8 = 16m</span>
+          <div style="background: #f8fafc; border: 1.2px solid #000000; border-radius: 3px; padding: 5px 8px;">
+            <div style="font-size: 8.5pt; font-weight: 800; color: #000000; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
+              Key Topic 3: 1974–1995
             </div>
-            <p style="font-size: 8.5pt; color: #000000; line-height: 1.25; margin: 3px 0 0 0;">
-              Choose <strong>TWO from 3(a, b, c)</strong> (~12m each). 2 paragraphs: short-term impact vs long-term consequence.
+            <p style="font-size: 8.5pt; color: #000000; line-height: 1.25; margin: 0;">
+              PLO diplomacy, 1982 Lebanon War, Sabra &amp; Shatila, 1987 First Intifada, Hamas, Madrid Conference &amp; 1993/95 Oslo Accords.
             </p>
           </div>
         </div>
@@ -291,7 +289,7 @@ function renderPage1() {
         <!-- 6. FOOTER STRIP -->
         <div style="border-top: 1.5px solid #000000; padding-top: 3px; display: flex; justify-content: space-between; align-items: center; font-size: 8.5pt; color: #000000;">
           <span><strong>Meoncross History Department</strong> &bull; GCSE Revision Series</span>
-          <span style="font-weight: 800; text-transform: uppercase;">Pearson Edexcel 1HI0/P5 &bull; 32-Page Master Revision Guide</span>
+          <span style="font-weight: 800; text-transform: uppercase;">Pearson Edexcel 1HI0/P5 &bull; 36-Page Master Revision Guide</span>
         </div>
 
       </div>
@@ -491,132 +489,106 @@ function renderPage3() {
 // Page 4: 1947 UN Partition Plan (Cartographic Atlas 1 Left)
 function renderPage4() {
   const mapUri = getImageDataUri('images/palestine_1947_map.png');
-
   return `
     <div class="page" id="page_4" data-page="4">
-      <div>
-        <div class="page-header">
+      <div class="spread-container">
+        <div style="border-bottom: 2px solid #000000; padding-bottom: 4px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: flex-end;">
           <div>
-            <span style="font-size: 8.5pt; font-weight: 800; text-transform: uppercase; color: #000; letter-spacing: 0.5px;">
-              Master Cartographic Atlas &bull; The Territorial Origins of Conflict
-            </span>
-            <h2 style="font-size: 16pt; font-weight: 900; color: #000; margin: 2px 0 0 0; text-transform: uppercase;">
-              Plate 1: The 1947 United Nations Partition Plan (Res 181)
+            <div style="font-size: 8.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #000000;">
+              Master Cartographic Atlas &bull; The Territorial Foundation (1947)
+            </div>
+            <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 15pt; font-weight: 900; margin: 2px 0 0 0; text-transform: uppercase; color: #000000;">
+              The 1947 United Nations Partition Plan (Resolution 181)
             </h2>
           </div>
-          <div style="font-size: 8.5pt; font-weight: 800; background: #000; color: #fff; padding: 2px 8px; border-radius: 2px; text-transform: uppercase;">
-            Atlas Study 1
+          <span style="font-size: 8.5pt; font-weight: 800; background: #000000; color: #ffffff; padding: 2px 7px; border-radius: 2px; text-transform: uppercase;">
+            Facing Atlas Spread &bull; Left
+          </span>
+        </div>
+
+        <div style="border: 1.5px solid #000000; background: #ffffff; padding: 6px; border-radius: 3px; margin-bottom: 8px;">
+          <div style="width: 100%; height: 600px; background: #f8fafc; border: 1px solid #000000; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+            <img src="${mapUri}" alt="1947 UN Partition Plan" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" />
           </div>
         </div>
 
-        <!-- Strategic Overview Card -->
-        <div style="background: #f8fafc; border: 1.5px solid #000; border-left: 5px solid #000; border-radius: 3px; padding: 6px 9px; margin-bottom: 6px; font-size: 9.5pt; line-height: 1.35;">
-          <strong>Historical Catalyst:</strong> On 29 November 1947, following Britain's declaration that the Mandate was unworkable, the UN General Assembly voted 33 to 13 (with 10 abstentions) to adopt <strong>Resolution 181</strong>. The plan terminated the British Mandate and divided Palestine into independent Jewish and Arab states, with Jerusalem under an international regime.
-        </div>
-
-        <!-- Map Container (High-Resolution Visual Plate) -->
-        <div style="border: 1.5px solid #000; border-radius: 3px; padding: 4px; background: #fff; margin-bottom: 6px; display: flex; justify-content: center; align-items: center;">
-          <div style="width: 100%; height: 500px; overflow: hidden; background: #f1f5f9; display: flex; justify-content: center; align-items: center;">
-            <img src="${mapUri}" alt="1947 UN Partition Plan Map" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" />
-          </div>
-        </div>
-
-        <!-- Specification Analytical Breakdown Box -->
-        <div style="border: 1.5px solid #000; border-radius: 3px; padding: 6px 9px; background: #ffffff;">
-          <div style="font-size: 10pt; font-weight: 800; text-transform: uppercase; color: #000; border-bottom: 1.2px solid #000; padding-bottom: 2px; margin-bottom: 4px;">
-            Key Specification Cartographic Metrics &amp; Arab-Jewish Reactions
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 9.0pt; line-height: 1.34; color: #000;">
-            <div>
-              <strong>1. The Jewish State Allocation (55% of Mandate):</strong>
-              <div>&bull; Included the coastal plain (Tel Aviv/Haifa), fertile Eastern Galilee, and the arid Negev Desert down to the Gulf of Aqaba.</div>
-              <div>&bull; Demographics: ~500,000 Jews and ~400,000 Arabs living inside the proposed Jewish borders.</div>
-              <div>&bull; <strong>Jewish Reaction:</strong> Accepted pragmatically by Ben-Gurion and the Jewish Agency as legal recognition of statehood, though right-wing militants (Irgun/Lehi) rejected the loss of Jerusalem and Judea/Samaria.</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 8.5pt; color: #000000; line-height: 1.28;">
+          <div style="border: 1.2px solid #000000; padding: 6px 8px; background: #f8fafc; border-radius: 2px;">
+            <div style="font-weight: 800; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">
+              1. The Land &amp; Population Allocation (UNSCOP)
             </div>
-            <div>
-              <strong>2. The Arab State Allocation (44% of Mandate):</strong>
-              <div>&bull; Included Western Galilee, the central mountainous spine (Judea and Samaria), Gaza coastal strip, and Jaffa enclave.</div>
-              <div>&bull; Demographics: ~725,000 Arabs and only ~10,000 Jews.</div>
-              <div>&bull; <strong>Arab Reaction:</strong> Completely rejected by the Arab Higher Committee and Arab League states as an imperialist betrayal, violating democratic majority self-determination (Arabs comprised 67% of population).</div>
-            </div>
+            <div>&bull; <strong>Jewish State (55% of Land):</strong> Allocated to ~500,000 Jews and ~400,000 Arabs. Included fertile coastal plain, Jezreel Valley, and Negev desert.</div>
+            <div>&bull; <strong>Arab State (45% of Land):</strong> Allocated to ~725,000 Arabs and ~10,000 Jews. Included mountainous Judea, Samaria, and Western Galilee.</div>
+            <div>&bull; <strong>Jerusalem &amp; Bethlehem:</strong> Defined as an international <em>Corpus Separatum</em> under UN Trusteeship.</div>
           </div>
-          <div style="margin-top: 4px; padding-top: 3px; border-top: 1px solid #cbd5e1; font-size: 8.5pt; color: #000; line-height: 1.28;">
-            <strong>Jerusalem Corpus Separatum (1% of land):</strong> Governed as a special international zone under UN trusteeship to protect holy sites sacred to Judaism, Christianity, and Islam (surrounded by Arab territory).
+
+          <div style="border: 1.2px solid #000000; padding: 6px 8px; background: #f8fafc; border-radius: 2px;">
+            <div style="font-weight: 800; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">
+              2. Conflicting Strategic Reactions
+            </div>
+            <div>&bull; <strong>Jewish Agency (David Ben-Gurion):</strong> Accepted partition pragmatically as legal international recognition of Jewish sovereignty, despite fragmented borders.</div>
+            <div>&bull; <strong>Arab Higher Committee &amp; Arab League:</strong> Utterly rejected partition, refusing to surrender 55% of historic Palestine to a 33% minority without democratic consent.</div>
+            <div>&bull; <strong>Immediate Causal Impact:</strong> Triggered civil war in Palestine (Nov 1947) and Arab invasion on 15 May 1948.</div>
           </div>
         </div>
-
       </div>
-
       <div class="page-footer">
-        <span>GCSE History Revision Guide &bull; Option P5: Conflict in the Middle East</span>
-        <span>Cartographic Atlas 1 &bull; Page 4</span>
+        <span>Pearson Edexcel GCSE (9–1) History &bull; Option P5: Conflict in the Middle East, 1945–1995</span>
+        <span style="font-weight: 800; text-transform: uppercase;">Page 4 &bull; Master Cartographic Atlas (1947 Partition)</span>
       </div>
     </div>
   `;
 }
 
-// Page 5: 1949 Armistice Green Line (Cartographic Atlas 1 Right)
+// Page 5: 1948 Arab Invasions & First Arab-Israeli War Operations (Cartographic Atlas 1 Right)
 function renderPage5() {
-  const mapUri = getImageDataUri('images/palestine_1949_map.png');
-
+  const mapUri = getImageDataUri('images/cme_1948_arab_invasion_map.png');
   return `
     <div class="page" id="page_5" data-page="5">
-      <div>
-        <div class="page-header">
+      <div class="spread-container">
+        <div style="border-bottom: 2px solid #000000; padding-bottom: 4px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: flex-end;">
           <div>
-            <span style="font-size: 8.5pt; font-weight: 800; text-transform: uppercase; color: #000; letter-spacing: 0.5px;">
-              Master Cartographic Atlas &bull; The Territorial Origins of Conflict
-            </span>
-            <h2 style="font-size: 16pt; font-weight: 900; color: #000; margin: 2px 0 0 0; text-transform: uppercase;">
-              Plate 2: The 1949 Armistice Agreements &amp; The Green Line
+            <div style="font-size: 8.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #000000;">
+              Master Cartographic Atlas &bull; The War of Independence (1948–1949)
+            </div>
+            <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 15pt; font-weight: 900; margin: 2px 0 0 0; text-transform: uppercase; color: #000000;">
+              The 1948 Arab Invasions &amp; First Arab-Israeli War Operations
             </h2>
           </div>
-          <div style="font-size: 8.5pt; font-weight: 800; background: #000; color: #fff; padding: 2px 8px; border-radius: 2px; text-transform: uppercase;">
-            Atlas Study 1
+          <span style="font-size: 8.5pt; font-weight: 800; background: #000000; color: #ffffff; padding: 2px 7px; border-radius: 2px; text-transform: uppercase;">
+            Facing Atlas Spread &bull; Right
+          </span>
+        </div>
+
+        <div style="border: 1.5px solid #000000; background: #ffffff; padding: 6px; border-radius: 3px; margin-bottom: 8px;">
+          <div style="width: 100%; height: 600px; background: #ffffff; border: 1px solid #000000; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+            <img src="${mapUri}" alt="1948 Arab Invasions Map" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" />
           </div>
         </div>
 
-        <!-- Strategic Overview Card -->
-        <div style="background: #f8fafc; border: 1.5px solid #000; border-left: 5px solid #000; border-radius: 3px; padding: 6px 9px; margin-bottom: 6px; font-size: 9.5pt; line-height: 1.35;">
-          <strong>Historical Outcome:</strong> Following the declaration of Israeli independence on 14 May 1948 and the invasion by five Arab armies, the 1948–49 Arab-Israeli War concluded with bilateral armistice agreements signed on the island of Rhodes in 1949. The resulting armistice borders—drawn in green pencil on military maps—became known as the <strong>Green Line</strong>.
-        </div>
-
-        <!-- Map Container (High-Resolution Visual Plate) -->
-        <div style="border: 1.5px solid #000; border-radius: 3px; padding: 4px; background: #fff; margin-bottom: 6px; display: flex; justify-content: center; align-items: center;">
-          <div style="width: 100%; height: 500px; overflow: hidden; background: #f1f5f9; display: flex; justify-content: center; align-items: center;">
-            <img src="${mapUri}" alt="1949 Armistice Green Line Map" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" />
-          </div>
-        </div>
-
-        <!-- Specification Analytical Breakdown Box -->
-        <div style="border: 1.5px solid #000; border-radius: 3px; padding: 6px 9px; background: #ffffff;">
-          <div style="font-size: 10pt; font-weight: 800; text-transform: uppercase; color: #000; border-bottom: 1.2px solid #000; padding-bottom: 2px; margin-bottom: 4px;">
-            Key Specification Cartographic Changes &amp; The Refugee Diaspora
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 9.0pt; line-height: 1.34; color: #000;">
-            <div>
-              <strong>1. Territorial Expansion to 79% (The Green Line):</strong>
-              <div>&bull; Israel captured Western Galilee, Jaffa, West Jerusalem, and a wider corridor connecting Tel Aviv to Jerusalem.</div>
-              <div>&bull; Total territory increased from 55% under Res 181 to <strong>79% of Mandatory Palestine</strong>.</div>
-              <div>&bull; Jerusalem was partitioned: West Jerusalem controlled by Israel; East Jerusalem and the Old City controlled by Transjordan.</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 8.5pt; color: #000000; line-height: 1.28;">
+          <div style="border: 1.2px solid #000000; padding: 6px 8px; background: #f8fafc; border-radius: 2px;">
+            <div style="font-weight: 800; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">
+              1. The Five Arab Invasions (15 May 1948)
             </div>
-            <div>
-              <strong>2. Non-Creation of a Palestinian Arab State:</strong>
-              <div>&bull; <strong>The West Bank:</strong> Annexed by Transjordan under King Abdullah (creating the Hashemite Kingdom of Jordan).</div>
-              <div>&bull; <strong>The Gaza Strip:</strong> Placed under Egyptian military administration as a client protectorate.</div>
-              <div>&bull; <strong>Al-Nakba (The Catastrophe):</strong> Over <strong>700,000 Palestinian Arabs displaced</strong>, fleeing military assaults and fear following the Deir Yassin massacre.</div>
-            </div>
+            <div>&bull; <strong>Egyptian Army (11,000 men):</strong> Advanced through Gaza strip along the coast towards Tel Aviv; halted at Isdud by Givati brigade and Czech-supplied Avia fighters.</div>
+            <div>&bull; <strong>Jordanian Arab Legion (5,000 men):</strong> British-officered under Glubb Pasha; captured Old City of Jerusalem and severed the supply highway at Latrun.</div>
+            <div>&bull; <strong>Syrian, Lebanese &amp; Iraqi Invasions:</strong> Syrian armor thrust into Galilee (Degania); Iraqi troops occupied Jenin-Tulkarm triangle threatening coastal waist.</div>
           </div>
-          <div style="margin-top: 4px; padding-top: 3px; border-top: 1px solid #cbd5e1; font-size: 8.5pt; color: #000; line-height: 1.28;">
-            <strong>UNRWA Refugee Distribution:</strong> 280,000 fled to the West Bank, 190,000 to the Gaza Strip, 100,000 to Lebanon, 75,000 to Syria, and 70,000 to Jordan, establishing permanent refugee camps and UN General Assembly Resolution 194 (Right of Return).
+
+          <div style="border: 1.2px solid #000000; padding: 6px 8px; background: #f8fafc; border-radius: 2px;">
+            <div style="font-weight: 800; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">
+              2. The Turning Point &amp; Israeli Victories
+            </div>
+            <div>&bull; <strong>UN 4-Week Truce (11 June):</strong> Allowed Ben-Gurion to unify Haganah, Irgun, and Lehi into the IDF (Order No. 4) and import Czech aircraft and artillery.</div>
+            <div>&bull; <strong>Offensives (Oct–Dec 1948):</strong> Operation Yoav secured the Negev; Operation Hiram cleared Upper Galilee; Arab armies lacked central command and coordination.</div>
+            <div>&bull; <strong>Strategic Outcome:</strong> Israel expanded to 79% of mandatory Palestine; Green Line armistices signed in 1949 with zero formal peace treaties.</div>
           </div>
         </div>
-
       </div>
-
       <div class="page-footer">
-        <span>GCSE History Revision Guide &bull; Option P5: Conflict in the Middle East</span>
-        <span>Cartographic Atlas 1 &bull; Page 5</span>
+        <span>Pearson Edexcel GCSE (9–1) History &bull; Option P5: Conflict in the Middle East, 1945–1995</span>
+        <span style="font-weight: 800; text-transform: uppercase;">Page 5 &bull; Master Cartographic Atlas (1948–49 War)</span>
       </div>
     </div>
   `;
@@ -879,101 +851,347 @@ function renderPage30() {
   `;
 }
 
-// Page 31: 1993-1995 Oslo Accords Division (Cartographic Atlas 2 Right)
-function renderPage31() {
-  const mapUri = getImageDataUri('images/cme_oslo_areas_map.png');
-
+// Atlas 2: Page 14 (1967 Six Day War) & Page 15 (1973 Yom Kippur War)
+function renderPage14() {
+  const mapUri = getImageDataUri('images/palestine_1967_six_day_war_map.png');
   return `
-    <div class="page" id="page_31" data-page="31">
-      <div>
-        <div class="page-header">
+    <div class="page" id="page_14" data-page="14">
+      <div class="spread-container">
+        <div style="border-bottom: 2px solid #000000; padding-bottom: 4px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: flex-end;">
           <div>
-            <span style="font-size: 8.5pt; font-weight: 800; text-transform: uppercase; color: #000; letter-spacing: 0.5px;">
-              Master Cartographic Atlas &bull; The Geopolitical Division
-            </span>
-            <h2 style="font-size: 16pt; font-weight: 900; color: #000; margin: 2px 0 0 0; text-transform: uppercase;">
-              Plate 4: The 1993–1995 Oslo Accords &amp; West Bank Partition
+            <div style="font-size: 8.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #000000;">
+              Master Cartographic Atlas &bull; The Six Day War (June 1967)
+            </div>
+            <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 15pt; font-weight: 900; margin: 2px 0 0 0; text-transform: uppercase; color: #000000;">
+              The 1967 Six Day War &amp; The Five Occupied Territories
             </h2>
           </div>
-          <div style="font-size: 8.5pt; font-weight: 800; background: #000; color: #fff; padding: 2px 8px; border-radius: 2px; text-transform: uppercase;">
-            Atlas Study 2
+          <span style="font-size: 8.5pt; font-weight: 800; background: #000000; color: #ffffff; padding: 2px 7px; border-radius: 2px; text-transform: uppercase;">
+            Facing Atlas Spread &bull; Left
+          </span>
+        </div>
+
+        <div style="border: 1.5px solid #000000; background: #ffffff; padding: 6px; border-radius: 3px; margin-bottom: 8px;">
+          <div style="width: 100%; height: 600px; background: #f8fafc; border: 1px solid #000000; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+            <img src="${mapUri}" alt="1967 Six Day War Map" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" />
           </div>
         </div>
 
-        <!-- Strategic Overview Card -->
-        <div style="background: #f8fafc; border: 1.5px solid #000; border-left: 5px solid #000; border-radius: 3px; padding: 6px 9px; margin-bottom: 6px; font-size: 9.5pt; line-height: 1.35;">
-          <strong>Diplomatic Breakthrough &amp; Territorial Fragmentation:</strong> Brokered secretly in Norway, the 1993 <strong>Oslo I Accord</strong> established mutual recognition between Israel and the PLO, creating the Palestinian National Authority (PNA). In September 1995, the <strong>Oslo II Agreement (Taba Accord)</strong> divided the West Bank into three separate administrative zones as a transitional 5-year step towards permanent peace.
-        </div>
-
-        <!-- Map & Zones Grid -->
-        <div style="display: grid; grid-template-columns: 240px 1fr; gap: 10px; margin-bottom: 6px; align-items: stretch;">
-          
-          <!-- Map Column -->
-          <div style="border: 1.5px solid #000; border-radius: 3px; padding: 4px; background: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-            <div style="width: 100%; height: 500px; overflow: hidden; background: #fff; display: flex; justify-content: center; align-items: center;">
-              <img src="${mapUri}" alt="Oslo Accords Areas Map" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" />
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 8.5pt; color: #000000; line-height: 1.28;">
+          <div style="border: 1.2px solid #000000; padding: 6px 8px; background: #f8fafc; border-radius: 2px;">
+            <div style="font-weight: 800; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">
+              1. The Three Fronts of Blitzkrieg (5–10 June 1967)
             </div>
-            <div style="font-size: 8.0pt; color: #475569; margin-top: 2px; text-align: center;">
-              Green: Area A &bull; Dark Red: Area B &bull; Light Red: Area C
-            </div>
+            <div>&bull; <strong>Pre-emptive Air Strike (Operation Focus):</strong> Destroyed 300+ Egyptian aircraft on runways in 3 hours; gained total air supremacy.</div>
+            <div>&bull; <strong>Sinai Front (Tal, Yoffe, Sharon):</strong> Smashed Egyptian defences at Abu Ageila; reached Suez Canal in 4 days, capturing 60,000 km² Sinai.</div>
+            <div>&bull; <strong>Central &amp; Northern Fronts:</strong> Paratroopers took Old City Jerusalem &amp; West Bank (7 June); stormed Golan escarpment (9–10 June).</div>
           </div>
 
-          <!-- Zones & Analysis Column -->
-          <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 6px;">
-            
-            <!-- Area A -->
-            <div style="border: 1.2px solid #000; border-radius: 2px; padding: 6px 8px; background: #f8fafc; font-size: 9.0pt; line-height: 1.32;">
-              <strong style="color: #000; display: block; font-size: 9.5pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">
-                AREA A: Full Palestinian Control (Green)
-              </strong>
-              <div>&bull; <strong>Territory:</strong> Initially only <strong>3% of the West Bank</strong> (expanded to ~18% by 1999).</div>
-              <div>&bull; <strong>Jurisdiction:</strong> Palestinian Authority has full civil and internal security control.</div>
-              <div>&bull; <strong>Population:</strong> Encompasses major Arab population centers: Ramallah, Nablus, Jenin, Tulkarm, Qalqilya, Bethlehem, Jericho, and Hebron.</div>
+          <div style="border: 1.2px solid #000000; padding: 6px 8px; background: #f8fafc; border-radius: 2px;">
+            <div style="font-weight: 800; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">
+              2. Diplomatic &amp; Demographic Consequences
             </div>
-
-            <!-- Area B -->
-            <div style="border: 1.2px solid #000; border-radius: 2px; padding: 6px 8px; background: #f8fafc; font-size: 9.0pt; line-height: 1.32;">
-              <strong style="color: #000; display: block; font-size: 9.5pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">
-                AREA B: Joint Administrative Control (Dark Red)
-              </strong>
-              <div>&bull; <strong>Territory:</strong> Approximately <strong>25% of the West Bank</strong> (expanded to ~22%).</div>
-              <div>&bull; <strong>Jurisdiction:</strong> Palestinian civil administration; Israeli overriding military security control.</div>
-              <div>&bull; <strong>Geography:</strong> Covers ~450 Palestinian villages and rural farmland surrounding Area A cities.</div>
-            </div>
-
-            <!-- Area C -->
-            <div style="border: 1.2px solid #000; border-radius: 2px; padding: 6px 8px; background: #f8fafc; font-size: 9.0pt; line-height: 1.32;">
-              <strong style="color: #000; display: block; font-size: 9.5pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">
-                AREA C: Full Israeli Military Control (Light Red)
-              </strong>
-              <div>&bull; <strong>Territory:</strong> Contiguous <strong>72% of the West Bank</strong> (later ~60%).</div>
-              <div>&bull; <strong>Jurisdiction:</strong> Complete Israeli civil and military control (planning, building permits, security).</div>
-              <div>&bull; <strong>Strategic Value:</strong> Contains all 140,000+ Israeli settlers, bypass roads, military bases, and the Jordan Valley border strip. Palestinian areas became disconnected "islands".</div>
-            </div>
-
-            <!-- Unresolved Core Issues -->
-            <div style="border: 1.2px solid #000; border-radius: 2px; padding: 5px 8px; background: #ffffff; font-size: 8.5pt; line-height: 1.28;">
-              <strong style="text-transform: uppercase; color: #000; display: block; margin-bottom: 1px;">The Fatal Flaw: Deferred Final Status Issues</strong>
-              <div>Oslo postponed the 4 most contentious questions: (1) <strong>Jerusalem</strong> sovereignty, (2) <strong>Right of return</strong> for 1948 refugees, (3) <strong>Settler dismantling</strong>, and (4) <strong>Independent statehood</strong>. In Nov 1995, Yitzhak Rabin was assassinated by Jewish extremist Yigal Amir, plunging the peace process into crisis.</div>
-            </div>
-
+            <div>&bull; <strong>Territorial Quadrupling:</strong> Israel controlled Sinai Peninsula, Gaza Strip, West Bank, East Jerusalem, and Syrian Golan Heights.</div>
+            <div>&bull; <strong>UN Resolution 242 (Nov 1967):</strong> "Land for Peace" formula established; withdrawal from territories in exchange for Arab recognition.</div>
+            <div>&bull; <strong>Khartoum Summit (Sept 1967):</strong> Arab League declared "Three No's": No peace, No recognition, No negotiations with Israel.</div>
           </div>
         </div>
-
       </div>
-
       <div class="page-footer">
-        <span>GCSE History Revision Guide &bull; Option P5: Conflict in the Middle East</span>
-        <span>Cartographic Atlas 2 &bull; Page 31</span>
+        <span>Pearson Edexcel GCSE (9–1) History &bull; Option P5: Conflict in the Middle East, 1945–1995</span>
+        <span style="font-weight: 800; text-transform: uppercase;">Page 14 &bull; Master Cartographic Atlas (1967 Six Day War)</span>
       </div>
     </div>
   `;
 }
 
-// Page 32: Historiographical Debates & Final Revision Checklist
-function renderPage32() {
+function renderPage15() {
+  const sinaiUri = getImageDataUri('images/cme_yom_kippur_1973_map.png');
+  const golanUri = getImageDataUri('images/cme_yom_kippur_golan_1973_map.jpg');
   return `
-    <div class="page" id="page_32" data-page="32">
+    <div class="page" id="page_15" data-page="15">
+      <div class="spread-container">
+        <div style="border-bottom: 2px solid #000000; padding-bottom: 4px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: flex-end;">
+          <div>
+            <div style="font-size: 8.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #000000;">
+              Master Cartographic Atlas &bull; The October War (1973)
+            </div>
+            <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 15pt; font-weight: 900; margin: 2px 0 0 0; text-transform: uppercase; color: #000000;">
+              The 1973 Yom Kippur War: Sinai &amp; Golan Heights Campaigns
+            </h2>
+          </div>
+          <span style="font-size: 8.5pt; font-weight: 800; background: #000000; color: #ffffff; padding: 2px 7px; border-radius: 2px; text-transform: uppercase;">
+            Facing Atlas Spread &bull; Right
+          </span>
+        </div>
+
+        <!-- Dual War Maps: Sinai Front (Left) and Golan Heights Front (Right) -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px;">
+          <div style="border: 1.5px solid #000000; background: #ffffff; padding: 5px; border-radius: 3px;">
+            <div style="font-size: 8.5pt; font-weight: 800; text-transform: uppercase; color: #000000; text-align: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">
+              Front 1: The Suez Canal &amp; Sinai Crossing
+            </div>
+            <div style="width: 100%; height: 575px; background: #ffffff; border: 1px solid #000000; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <img src="${sinaiUri}" alt="1973 Yom Kippur War Sinai Front" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" />
+            </div>
+          </div>
+
+          <div style="border: 1.5px solid #000000; background: #ffffff; padding: 5px; border-radius: 3px;">
+            <div style="font-size: 8.5pt; font-weight: 800; text-transform: uppercase; color: #000000; text-align: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">
+              Front 2: The Golan Heights Campaign
+            </div>
+            <div style="width: 100%; height: 575px; background: #ffffff; border: 1px solid #000000; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <img src="${golanUri}" alt="1973 Yom Kippur War Golan Campaign" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" />
+            </div>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 8.5pt; color: #000000; line-height: 1.28;">
+          <div style="border: 1.2px solid #000000; padding: 6px 8px; background: #f8fafc; border-radius: 2px;">
+            <div style="font-weight: 800; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">
+              1. Sinai Front: Operation Badr (6 Oct 1973)
+            </div>
+            <div>&bull; <strong>The Water-Cannon Breach:</strong> 80,000 Egyptian troops breached the 20m high Bar-Lev sand rampart with high-pressure water hoses in hours.</div>
+            <div>&bull; <strong>The SAM Umbrella:</strong> Soviet SAM-6 missiles neutralized the Israeli Air Force; Sagger anti-tank missiles decimated Israeli counter-attacks.</div>
+            <div>&bull; <strong>Sharon's Crossing:</strong> IDF crossed canal at Deversoir (15 Oct), encircled Egyptian Third Army, threatening Cairo.</div>
+          </div>
+
+          <div style="border: 1.2px solid #000000; padding: 6px 8px; background: #f8fafc; border-radius: 2px;">
+            <div style="font-weight: 800; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">
+              2. Golan Front: Battle of the Valley of Tears
+            </div>
+            <div>&bull; <strong>Syrian Surprise Attack:</strong> 1,400 Syrian tanks stormed the Purple Line; Israeli 7th &amp; 188th Brigades fought desperate defensive stand.</div>
+            <div>&bull; <strong>IDF Counter-Offensive:</strong> Israeli reserves pushed Syrians back across the Purple Line, advancing within 35 km of Damascus.</div>
+            <div>&bull; <strong>Global Ramifications:</strong> Triggered US-Soviet nuclear DEFCON 3 standoff, OPEC oil embargo, and paved way for Camp David diplomacy.</div>
+          </div>
+        </div>
+      </div>
+      <div class="page-footer">
+        <span>Pearson Edexcel GCSE (9–1) History &bull; Option P5: Conflict in the Middle East, 1945–1995</span>
+        <span style="font-weight: 800; text-transform: uppercase;">Page 15 &bull; Master Cartographic Atlas (1973 Yom Kippur War)</span>
+      </div>
+    </div>
+  `;
+}
+
+// Atlas 3: Page 24 (1982 Lebanon Invasion) & Page 25 (1995 Oslo West Bank)
+function renderPage24() {
+  const mapUri = getImageDataUri('images/cme_lebanon_1982_campaign_map.png');
+  return `
+    <div class="page" id="page_24" data-page="24">
+      <div class="spread-container">
+        <div style="border-bottom: 2px solid #000000; padding-bottom: 4px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: flex-end;">
+          <div>
+            <div style="font-size: 8.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #000000;">
+              Master Cartographic Atlas &bull; The Lebanon War (1982)
+            </div>
+            <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 15pt; font-weight: 900; margin: 2px 0 0 0; text-transform: uppercase; color: #000000;">
+              The 1982 Israeli Invasion of Lebanon (Operation Peace for Galilee)
+            </h2>
+          </div>
+          <span style="font-size: 8.5pt; font-weight: 800; background: #000000; color: #ffffff; padding: 2px 7px; border-radius: 2px; text-transform: uppercase;">
+            Facing Atlas Spread &bull; Left
+          </span>
+        </div>
+
+        <div style="border: 1.5px solid #000000; background: #ffffff; padding: 6px; border-radius: 3px; margin-bottom: 8px;">
+          <div style="width: 100%; height: 600px; background: #ffffff; border: 1px solid #000000; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+            <img src="${mapUri}" alt="1982 Lebanon Campaign Map" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" />
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 8.5pt; color: #000000; line-height: 1.28;">
+          <div style="border: 1.2px solid #000000; padding: 6px 8px; background: #f8fafc; border-radius: 2px;">
+            <div style="font-weight: 800; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">
+              1. Military Aims &amp; Operation Peace for Galilee (6 June 1982)
+            </div>
+            <div>&bull; <strong>The 40km Buffer Zone Pretext:</strong> Triggered by Abu Nidal assassination attempt on Israeli Ambassador Argov; stated aim was clearing a 40km artillery-free buffer.</div>
+            <div>&bull; <strong>Sharon's Deep Drive:</strong> Defence Minister Ariel Sharon pushed 100km north past Tyre and Sidon, surrounding West Beirut and trapping Yasser Arafat's PLO.</div>
+            <div>&bull; <strong>Bekaa Valley Air Battle (Operation Mole Cricket 19):</strong> Israeli Air Force destroyed 19 Syrian SAM batteries and shot down 82 Syrian MiGs without loss.</div>
+          </div>
+
+          <div style="border: 1.2px solid #000000; padding: 6px 8px; background: #f8fafc; border-radius: 2px;">
+            <div style="font-weight: 800; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">
+              2. Political Fallout &amp; Sabra-Shatila Massacre
+            </div>
+            <div>&bull; <strong>Siege &amp; PLO Evacuation:</strong> Heavy IDF bombardment of Beirut led to US-brokered evacuation of 14,000 PLO fighters by sea to Tunisia (Aug 1982).</div>
+            <div>&bull; <strong>Sabra &amp; Shatila (Sept 1982):</strong> Phalangist Christian militiamen massacred 800–3,500 Palestinian refugees under Israeli illumination flares.</div>
+            <div>&bull; <strong>Kahan Commission:</strong> Found Sharon indirectly responsible for failing to prevent the massacre; forced his resignation; shattered Israeli domestic consensus.</div>
+          </div>
+        </div>
+      </div>
+      <div class="page-footer">
+        <span>Pearson Edexcel GCSE (9–1) History &bull; Option P5: Conflict in the Middle East, 1945–1995</span>
+        <span style="font-weight: 800; text-transform: uppercase;">Page 24 &bull; Master Cartographic Atlas (1982 Lebanon War)</span>
+      </div>
+    </div>
+  `;
+}
+
+function renderPage25() {
+  const mapUri = getImageDataUri('images/cme_oslo_areas_map.png');
+  return `
+    <div class="page" id="page_25" data-page="25">
+      <div class="spread-container">
+        <div style="border-bottom: 2px solid #000000; padding-bottom: 4px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: flex-end;">
+          <div>
+            <div style="font-size: 8.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #000000;">
+              Master Cartographic Atlas &bull; The Oslo Accords (1993–1995)
+            </div>
+            <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 15pt; font-weight: 900; margin: 2px 0 0 0; text-transform: uppercase; color: #000000;">
+              The Oslo II Administrative Division (Areas A, B, and C)
+            </h2>
+          </div>
+          <span style="font-size: 8.5pt; font-weight: 800; background: #000000; color: #ffffff; padding: 2px 7px; border-radius: 2px; text-transform: uppercase;">
+            Facing Atlas Spread &bull; Right
+          </span>
+        </div>
+
+        <div style="border: 1.5px solid #000000; background: #ffffff; padding: 6px; border-radius: 3px; margin-bottom: 8px;">
+          <div style="width: 100%; height: 600px; background: #ffffff; border: 1px solid #000000; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+            <img src="${mapUri}" alt="1995 Oslo II Areas A B C Map" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" />
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 8.5pt; color: #000000; line-height: 1.28;">
+          <div style="border: 1.2px solid #000000; padding: 6px 8px; background: #f8fafc; border-radius: 2px;">
+            <div style="font-weight: 800; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">
+              1. The Three Administrative Zones (Oslo II, 1995)
+            </div>
+            <div>&bull; <strong>Area A (~3% of Land):</strong> Full Palestinian National Authority (PNA) civil and security control. Comprised 8 major urban centres (Ramallah, Nablus, Jenin, Jericho, etc.).</div>
+            <div>&bull; <strong>Area B (~25% of Land):</strong> PNA civil control with joint Israeli military security control. Comprised ~450 Palestinian villages.</div>
+            <div>&bull; <strong>Area C (~72% of Land):</strong> Complete Israeli civil and military control. Encompassed all Israeli settlements, military bases, bypass roads, and Jordan Valley.</div>
+          </div>
+
+          <div style="border: 1.2px solid #000000; padding: 6px 8px; background: #f8fafc; border-radius: 2px;">
+            <div style="font-weight: 800; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">
+              2. Structural Flaws &amp; Roadblocks to Peace
+            </div>
+            <div>&bull; <strong>Fragmented "Swiss-Cheese" Enclaves:</strong> Area A islands separated by Israeli-controlled Area C roads; Palestinian daily movement choked by military checkpoints.</div>
+            <div>&bull; <strong>Deferred Final Status Questions:</strong> Oslo postponed the 4 most volatile issues: Jerusalem's sovereignty, borders, 1948 refugees' right of return, and Jewish settlements.</div>
+            <div>&bull; <strong>Extremist Backlash:</strong> Hamas suicide bombings (Dizengoff bus) and the assassination of Prime Minister Yitzhak Rabin by Yigal Amir (Nov 1995) derailed the peace process.</div>
+          </div>
+        </div>
+      </div>
+      <div class="page-footer">
+        <span>Pearson Edexcel GCSE (9–1) History &bull; Option P5: Conflict in the Middle East, 1945–1995</span>
+        <span style="font-weight: 800; text-transform: uppercase;">Page 25 &bull; Master Cartographic Atlas (1995 Oslo Accords)</span>
+      </div>
+    </div>
+  `;
+}
+
+// Atlas 4: Page 34 (1949 Green Line) & Page 35 (Regional Geopolitics)
+function renderPage34() {
+  const mapUri = getImageDataUri('images/palestine_1949_map.png');
+  return `
+    <div class="page" id="page_34" data-page="34">
+      <div class="spread-container">
+        <div style="border-bottom: 2px solid #000000; padding-bottom: 4px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: flex-end;">
+          <div>
+            <div style="font-size: 8.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #000000;">
+              Master Cartographic Atlas &bull; The Territorial Legacy (1949)
+            </div>
+            <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 15pt; font-weight: 900; margin: 2px 0 0 0; text-transform: uppercase; color: #000000;">
+              The 1949 Armistice Green Line &amp; The Palestinian Refugee Crisis
+            </h2>
+          </div>
+          <span style="font-size: 8.5pt; font-weight: 800; background: #000000; color: #ffffff; padding: 2px 7px; border-radius: 2px; text-transform: uppercase;">
+            Facing Atlas Spread &bull; Left
+          </span>
+        </div>
+
+        <div style="border: 1.5px solid #000000; background: #ffffff; padding: 6px; border-radius: 3px; margin-bottom: 8px;">
+          <div style="width: 100%; height: 600px; background: #f8fafc; border: 1px solid #000000; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+            <img src="${mapUri}" alt="1949 Armistice Green Line Map" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" />
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 8.5pt; color: #000000; line-height: 1.28;">
+          <div style="border: 1.2px solid #000000; padding: 6px 8px; background: #f8fafc; border-radius: 2px;">
+            <div style="font-weight: 800; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">
+              1. The 1949 Armistice Agreements (The Green Line)
+            </div>
+            <div>&bull; <strong>Territorial Expansion:</strong> Israel increased from 55% (UN partition) to 79% of mandatory Palestine (+24% territorial gain), establishing the de facto Green Line.</div>
+            <div>&bull; <strong>Arab Annexations:</strong> Transjordan annexed the West Bank and East Jerusalem (renaming as Kingdom of Jordan); Egypt occupied and administered the Gaza Strip.</div>
+            <div>&bull; <strong>Armistice vs Permanent Peace:</strong> Signed on Rhodes under UN mediator Ralph Bunche; Arab states refused to recognise Israel or sign formal peace treaties.</div>
+          </div>
+
+          <div style="border: 1.2px solid #000000; padding: 6px 8px; background: #f8fafc; border-radius: 2px;">
+            <div style="font-weight: 800; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">
+              2. The Palestinian Refugee Crisis (Al-Nakba)
+            </div>
+            <div>&bull; <strong>Displacement Scale:</strong> ~700,000–750,000 Palestinian Arabs became refugees, fleeing or expelled from villages into camps in the West Bank, Gaza, Jordan, Syria, and Lebanon.</div>
+            <div>&bull; <strong>UN Resolution 194 (Dec 1948):</strong> Resolved that refugees wishing to return to their homes and live at peace should be permitted to do so; rejected by Israel.</div>
+            <div>&bull; <strong>UNRWA Established (1949):</strong> Provided permanent relief, food, and schools, creating enduring camps that fueled future Palestinian resistance (Fedayeen).</div>
+          </div>
+        </div>
+      </div>
+      <div class="page-footer">
+        <span>Pearson Edexcel GCSE (9–1) History &bull; Option P5: Conflict in the Middle East, 1945–1995</span>
+        <span style="font-weight: 800; text-transform: uppercase;">Page 34 &bull; Master Cartographic Atlas (1949 Green Line)</span>
+      </div>
+    </div>
+  `;
+}
+
+function renderPage35() {
+  const mapUri = getImageDataUri('images/middle_east_map_answers.png');
+  return `
+    <div class="page" id="page_35" data-page="35">
+      <div class="spread-container">
+        <div style="border-bottom: 2px solid #000000; padding-bottom: 4px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: flex-end;">
+          <div>
+            <div style="font-size: 8.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #000000;">
+              Master Cartographic Atlas &bull; Regional Geopolitics (1945–1995)
+            </div>
+            <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 15pt; font-weight: 900; margin: 2px 0 0 0; text-transform: uppercase; color: #000000;">
+              Middle East Strategic Geopolitics &amp; Maritime Chokepoints
+            </h2>
+          </div>
+          <span style="font-size: 8.5pt; font-weight: 800; background: #000000; color: #ffffff; padding: 2px 7px; border-radius: 2px; text-transform: uppercase;">
+            Facing Atlas Spread &bull; Right
+          </span>
+        </div>
+
+        <div style="border: 1.5px solid #000000; background: #ffffff; padding: 6px; border-radius: 3px; margin-bottom: 8px;">
+          <div style="width: 100%; height: 600px; background: #ffffff; border: 1px solid #000000; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+            <img src="${mapUri}" alt="Middle East Regional Reference Map" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" />
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 8.5pt; color: #000000; line-height: 1.28;">
+          <div style="border: 1.2px solid #000000; padding: 6px 8px; background: #f8fafc; border-radius: 2px;">
+            <div style="font-weight: 800; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">
+              1. The Two Critical Maritime Chokepoints
+            </div>
+            <div>&bull; <strong>The Suez Canal:</strong> Connects Mediterranean to Red Sea; vital conduit for European trade and Gulf oil. Nationalised by Nasser (1956); closed during 1967–75 wars.</div>
+            <div>&bull; <strong>Straits of Tiran:</strong> Narrow waterway at Sharm el-Sheikh controlling access to Israel's southern port of Eilat; Egyptian blockade in 1956 and May 1967 acted as direct <em>casus belli</em>.</div>
+            <div>&bull; <strong>Superpower Geopolitics:</strong> Middle East served as Cold War flashpoint (US support for Israel vs Soviet arms/advisers to Egypt and Syria).</div>
+          </div>
+
+          <div style="border: 1.2px solid #000000; padding: 6px 8px; background: #f8fafc; border-radius: 2px;">
+            <div style="font-weight: 800; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 4px;">
+              2. The Strategic Frontline States
+            </div>
+            <div>&bull; <strong>The Confrontation States:</strong> Egypt, Syria, and Jordan directly bordered Israel and bore the military burden of the 1948, 1956, 1967, and 1973 wars.</div>
+            <div>&bull; <strong>The Gulf Oil Weapon (OPEC):</strong> Saudi Arabia and Arab producers leveraged oil embargoes in 1973, quadrupling world oil prices to pressure Western powers.</div>
+            <div>&bull; <strong>The Diplomatic Shift:</strong> Camp David (1978–79) removed Egypt (the largest Arab military power) from the battlefield, permanently transforming regional strategy.</div>
+          </div>
+        </div>
+      </div>
+      <div class="page-footer">
+        <span>Pearson Edexcel GCSE (9–1) History &bull; Option P5: Conflict in the Middle East, 1945–1995</span>
+        <span style="font-weight: 800; text-transform: uppercase;">Page 35 &bull; Master Cartographic Atlas (Regional Geopolitics)</span>
+      </div>
+    </div>
+  `;
+}
+
+// Page 36: Historiographical Debates & Final Revision Checklist
+function renderPage36() {
+  return `
+    <div class="page" id="page_36" data-page="36">
       <div>
         <div class="page-header">
           <div>
@@ -1056,10 +1274,21 @@ function renderPage32() {
 
       <div class="page-footer">
         <span>GCSE History Revision Guide &bull; Option P5: Conflict in the Middle East</span>
-        <span>Historiography &amp; Master Index &bull; Page 32</span>
+        <span>Historiography &amp; Master Index &bull; Page 36 of 36</span>
       </div>
     </div>
   `;
+}
+
+// Backwards compatibility functions
+function renderPage30() {
+  return renderPage14();
+}
+function renderPage31() {
+  return renderPage25();
+}
+function renderPage32() {
+  return renderPage36();
 }
 
 module.exports = {
@@ -1069,11 +1298,18 @@ module.exports = {
   renderPage3,
   renderPage4,
   renderPage5,
+  renderPage14,
+  renderPage15,
+  renderPage24,
+  renderPage25,
+  renderPage34,
+  renderPage35,
+  renderPage36,
   renderSpreadLeft,
   renderSpreadRight,
   renderPage30,
   renderPage31,
   renderPage32,
-  renderPage28: renderPage32, // Backwards compatibility
+  renderPage28: renderPage36, // Backwards compatibility
   getImageDataUri,
 };

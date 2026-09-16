@@ -31,18 +31,20 @@ const {
   renderPage3,
   renderPage4,
   renderPage5,
+  renderPage14,
+  renderPage15,
+  renderPage24,
+  renderPage25,
+  renderPage34,
+  renderPage35,
+  renderPage36,
   renderSpreadLeft,
   renderSpreadRight,
-  renderPage30,
-  renderPage31,
-  renderPage32,
 } = require('./visual_guides/cme/cme_renderers.cjs');
 
 const kt1Spreads = require('./visual_guides/cme/cme_spreads_kt1.cjs');
 const kt2Spreads = require('./visual_guides/cme/cme_spreads_kt2.cjs');
 const kt3Spreads = require('./visual_guides/cme/cme_spreads_kt3.cjs');
-
-const SPREADS = [...kt1Spreads, ...kt2Spreads, ...kt3Spreads];
 
 const ROOT_DIR = path.join(__dirname, '..');
 const PDF_OUT_PUBLIC_LEGACY = path.join(
@@ -106,24 +108,48 @@ function generateFullHTML() {
   // Page 3: Thematic Chronology Matrix (1945–1995) + Examiner Synoptic Takeaway
   pagesHtml += renderPage3();
 
-  // Pages 4 & 5: Master Cartographic Atlas 1 (1947 UN Partition vs. 1949 Armistice Green Line)
+  // Pages 4 & 5: Master Cartographic Atlas 1 (1947 UN Partition vs. 1948–49 Arab Invasions)
   pagesHtml += renderPage4();
   pagesHtml += renderPage5();
 
-  // Pages 6–29: 12 Pure Double-Page Revision Spreads (Spreads 1 to 12)
-  SPREADS.forEach((spread, idx) => {
+  // Pages 6–13: Key Topic 1 Spreads (4 Spreads = 8 Pages)
+  kt1Spreads.forEach((spread, idx) => {
     const leftPageNum = 6 + idx * 2;
     const rightPageNum = leftPageNum + 1;
     pagesHtml += renderSpreadLeft(spread, leftPageNum);
     pagesHtml += renderSpreadRight(spread, rightPageNum);
   });
 
-  // Pages 30 & 31: Master Cartographic Atlas 2 (1967 Six Day War vs. 1995 Oslo Accords)
-  pagesHtml += renderPage30();
-  pagesHtml += renderPage31();
+  // Pages 14 & 15: Master Cartographic Atlas 2 (1967 Six Day War vs. 1973 Yom Kippur War)
+  pagesHtml += renderPage14();
+  pagesHtml += renderPage15();
 
-  // Page 32: Master Historiographical Debates & Final Revision Checklist
-  pagesHtml += renderPage32();
+  // Pages 16–23: Key Topic 2 Spreads (4 Spreads = 8 Pages)
+  kt2Spreads.forEach((spread, idx) => {
+    const leftPageNum = 16 + idx * 2;
+    const rightPageNum = leftPageNum + 1;
+    pagesHtml += renderSpreadLeft(spread, leftPageNum);
+    pagesHtml += renderSpreadRight(spread, rightPageNum);
+  });
+
+  // Pages 24 & 25: Master Cartographic Atlas 3 (1982 Lebanon War vs. 1995 Oslo II)
+  pagesHtml += renderPage24();
+  pagesHtml += renderPage25();
+
+  // Pages 26–33: Key Topic 3 Spreads (4 Spreads = 8 Pages)
+  kt3Spreads.forEach((spread, idx) => {
+    const leftPageNum = 26 + idx * 2;
+    const rightPageNum = leftPageNum + 1;
+    pagesHtml += renderSpreadLeft(spread, leftPageNum);
+    pagesHtml += renderSpreadRight(spread, rightPageNum);
+  });
+
+  // Pages 34 & 35: Master Cartographic Atlas 4 (1949 Green Line vs. Regional Geopolitics)
+  pagesHtml += renderPage34();
+  pagesHtml += renderPage35();
+
+  // Page 36: Master Historiographical Debates & Final Revision Checklist
+  pagesHtml += renderPage36();
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -148,7 +174,7 @@ function generateFullHTML() {
 // =============================================================================
 async function run() {
   console.log('====================================================');
-  console.log('🚀 COMPILING CME REVISION GUIDE (32 PAGES, CARTOGRAPHIC ATLAS, MONOCHROME)');
+  console.log('🚀 COMPILING CME REVISION GUIDE (36 PAGES, CARTOGRAPHIC ATLAS, MONOCHROME)');
   console.log('====================================================');
 
   const html = generateFullHTML();
@@ -167,7 +193,7 @@ async function run() {
   await page.goto(pathToFileURL(HTML_OUT_PUBLIC).href, { waitUntil: 'networkidle0' });
   await page.evaluateHandle('document.fonts.ready');
 
-  // Automated Overflow Check (Strict 1123px Limit across all 32 pages)
+  // Automated Overflow Check (Strict 1123px Limit across all 36 pages)
   const overflowReports = await page.evaluate(() => {
     const pages = Array.from(document.querySelectorAll('.page'));
     const overflows = [];
@@ -197,7 +223,7 @@ async function run() {
     throw new Error(`PDF Generation halted due to page overflow:\n${details}`);
   }
   console.log(
-    '✅ Automated Overflow Check: All 32 pages fit cleanly within 1123px bounds (0 overflows)!',
+    '✅ Automated Overflow Check: All 36 pages fit cleanly within 1123px bounds (0 overflows)!',
   );
 
   // Export PDF to unit directory
@@ -245,7 +271,7 @@ async function run() {
 
   await browser.close();
   console.log('\n====================================================');
-  console.log('🎉 CME 32-PAGE REVISION GUIDE GENERATION COMPLETE (0 OVERFLOWS, 4 MAP ATLASES)');
+  console.log('🎉 CME 36-PAGE REVISION GUIDE GENERATION COMPLETE (0 OVERFLOWS, 4 MAP ATLASES)');
   console.log('====================================================');
 }
 

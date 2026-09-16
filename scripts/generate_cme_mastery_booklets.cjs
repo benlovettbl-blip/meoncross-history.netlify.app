@@ -1263,6 +1263,8 @@ const KT_DATA = {
 // COMMON CSS: HIGH-CONTRAST PHOTOCOPIER SAFE TYPOGRAPHY & ENLARGED FONT SIZES
 // =============================================================================
 const COMMON_CSS = `
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&display=swap');
+
   @page {
     size: A4 portrait;
     margin: 0;
@@ -1273,11 +1275,11 @@ const COMMON_CSS = `
     print-color-adjust: exact;
   }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #fff;
-    color: #0f172a;
+    background: #ffffff;
+    color: #000000;
     -webkit-font-smoothing: antialiased;
   }
   .page {
@@ -1286,7 +1288,7 @@ const COMMON_CSS = `
     padding: 11mm 13mm 11mm 13mm;
     page-break-after: always;
     position: relative;
-    background: #fff;
+    background: #ffffff;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -1295,20 +1297,20 @@ const COMMON_CSS = `
 
   /* Authentic Pearson Edexcel Cover Headers */
   .cover-warning {
-    font-size: 7.8pt;
-    font-weight: 700;
-    color: #475569;
+    font-size: 8.0pt;
+    font-weight: 800;
+    color: #000000;
     text-transform: uppercase;
-    letter-spacing: 0.4px;
+    letter-spacing: 0.5px;
     margin-bottom: 5px;
-    border-bottom: 1.5px solid #0f172a;
+    border-bottom: 1.5px solid #000000;
     padding-bottom: 3px;
   }
   .candidate-box {
-    border: 1.5px solid #0f172a;
+    border: 1.5px solid #000000;
     padding: 6px 10px;
     margin-bottom: 8px;
-    background: #fff;
+    background: #ffffff;
   }
   .candidate-row {
     display: flex;
@@ -1319,20 +1321,22 @@ const COMMON_CSS = `
     margin-bottom: 0;
   }
   .field-label {
-    font-size: 7.6pt;
-    font-weight: 700;
-    color: #334155;
+    font-size: 8.0pt;
+    font-weight: 800;
+    color: #000000;
     margin-bottom: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
   }
   .field-input {
-    border-bottom: 1.2px solid #475569;
+    border-bottom: 1.5px solid #000000;
     height: 18px;
   }
   .char-cell {
     display: inline-block;
     width: 17px;
     height: 19px;
-    border: 1px solid #475569;
+    border: 1.2px solid #000000;
     margin-right: 3px;
     vertical-align: middle;
   }
@@ -1340,19 +1344,21 @@ const COMMON_CSS = `
   .edexcel-banner {
     font-size: 13pt;
     font-weight: 900;
-    color: #0f172a;
+    color: #000000;
     letter-spacing: -0.2px;
     margin-bottom: 4px;
+    text-transform: uppercase;
   }
   .exam-header-box {
-    border: 2px solid #0f172a;
+    border: 2px solid #000000;
     display: flex;
     margin-bottom: 7px;
+    background: #ffffff;
   }
   .exam-header-left {
     flex: 3.8;
     padding: 6px 10px;
-    border-right: 2px solid #0f172a;
+    border-right: 2px solid #000000;
   }
   .exam-header-right {
     flex: 1.2;
@@ -1366,73 +1372,79 @@ const COMMON_CSS = `
   }
   .exam-date {
     font-size: 8pt;
-    font-weight: 700;
-    color: #475569;
+    font-weight: 800;
+    color: #000000;
     text-transform: uppercase;
+    letter-spacing: 0.3px;
   }
   .exam-time {
     font-size: 8pt;
     font-weight: 700;
-    color: #0f172a;
+    color: #000000;
     margin-bottom: 3px;
   }
   .exam-subject {
-    font-size: 11pt;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 12.5pt;
     font-weight: 900;
-    color: #0f172a;
-    line-height: 1.2;
+    color: #000000;
+    line-height: 1.15;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
   }
   .exam-booklet {
     font-size: 9.5pt;
     font-weight: 800;
-    color: #1e3a8a;
+    color: #000000;
   }
   .exam-subtopic {
-    font-size: 7.8pt;
-    color: #475569;
+    font-size: 8.0pt;
+    color: #000000;
     font-style: italic;
   }
   .ref-label {
-    font-size: 7pt;
-    font-weight: 700;
+    font-size: 7.2pt;
+    font-weight: 800;
     text-transform: uppercase;
-    color: #64748b;
+    color: #000000;
   }
   .ref-code {
-    font-size: 11.5pt;
+    font-size: 12pt;
     font-weight: 900;
-    color: #0f172a;
+    color: #000000;
     letter-spacing: 0.5px;
   }
 
   /* Internal Page Headers */
   .page-header {
-    border-bottom: 1.5px solid #0f172a;
-    padding-bottom: 3px;
-    margin-bottom: 6px;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 4px;
+    margin-bottom: 7px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
   }
   .header-left h2 {
-    font-size: 10.5pt;
-    font-weight: 800;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 11.5pt;
+    font-weight: 900;
     margin: 0;
-    color: #0f172a;
-    letter-spacing: -0.2px;
+    color: #000000;
+    letter-spacing: -0.1px;
+    text-transform: uppercase;
   }
   .header-left p {
-    font-size: 7.8pt;
+    font-size: 8.2pt;
     margin: 1px 0 0 0;
-    color: #475569;
+    color: #000000;
   }
   .header-tag {
-    font-size: 7.4pt;
+    font-size: 7.8pt;
     font-weight: 800;
-    color: #fff;
-    background: #0f172a;
-    padding: 2px 7px;
-    border-radius: 3px;
+    color: #ffffff;
+    background: #000000;
+    padding: 2.5px 8px;
+    border-radius: 2px;
     text-transform: uppercase;
     letter-spacing: 0.3px;
     white-space: nowrap;
@@ -1450,64 +1462,63 @@ const COMMON_CSS = `
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    color: #000000;
   }
   .q-num {
     font-size: 10pt;
     font-weight: 900;
     margin-right: 4px;
-    color: #0f172a;
+    color: #000000;
   }
   .q-marks {
     font-size: 9.2pt;
-    font-weight: 800;
-    color: #0f172a;
+    font-weight: 900;
+    color: #000000;
     white-space: nowrap;
     margin-left: 8px;
   }
 
-  /* Discrete 4-Tier Provenance Badges */
+  /* Discrete 4-Tier Provenance Badges (Monochrome Laser-Safe) */
   .exam-provenance-pill {
     font-size: 7pt;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.3px;
     padding: 1px 5px;
-    border-radius: 3px;
+    border-radius: 2px;
     margin-right: 5px;
     display: inline-block;
     vertical-align: middle;
     line-height: 1.25;
+    border: 1.2px solid #000000;
   }
   .exam-provenance-pill.past {
-    background: #f1f5f9;
-    border: 1.2px solid #475569;
-    color: #1e293b;
+    background: #000000;
+    color: #ffffff;
   }
   .exam-provenance-pill.specimen {
-    background: #f0fdfa;
-    border: 1.2px solid #0d9488;
-    color: #0f766e;
+    background: #f8fafc;
+    color: #000000;
   }
   .exam-provenance-pill.unexamined {
-    background: #fffbeb;
-    border: 1.2px solid #d97706;
-    color: #92400e;
+    background: #f8fafc;
+    color: #000000;
   }
   .exam-provenance-pill.forecast {
-    background: #eef2ff;
-    border: 1.4px solid #4338ca;
-    color: #3730a3;
+    background: #f8fafc;
+    color: #000000;
   }
 
   /* Stimulus Box */
   .stimulus-card {
-    border: 1.2px solid #64748b;
-    border-radius: 4px;
+    border: 1.5px solid #000000;
+    border-radius: 2px;
     background: #f8fafc;
     padding: 5px 9px;
     margin-bottom: 5px;
     font-size: 8.2pt;
     line-height: 1.3;
+    color: #000000;
   }
   .stimulus-card ul {
     margin: 2px 0 2px 18px;
@@ -1519,15 +1530,15 @@ const COMMON_CSS = `
 
   .focus-guidance {
     font-size: 8.2pt;
-    color: #334155;
+    color: #000000;
     font-style: italic;
     margin-bottom: 5px;
     line-height: 1.3;
   }
 
-  /* Ruled Lines for Handwriting (Authentic Pearson Edexcel 7.4mm Spacing - Photocopier & Duplex Safe) */
+  /* Ruled Lines for Handwriting (Authentic Pearson Edexcel 7.4mm Spacing - Photocopier Safe) */
   .dotted-line {
-    border-bottom: 1.2px solid #475569;
+    border-bottom: 1.2px solid #000000;
     height: 7.4mm;
     width: 100%;
     box-sizing: border-box;
@@ -1535,8 +1546,8 @@ const COMMON_CSS = `
 
   /* Pearson Professional Monochrome Scaffolding Containers */
   .scaffold-bar {
-    border: 1.5px solid #475569;
-    border-radius: 4px;
+    border: 1.5px solid #000000;
+    border-radius: 3px;
     background: #f8fafc;
     padding: 4px 8px;
     margin-bottom: 6px;
@@ -1544,6 +1555,7 @@ const COMMON_CSS = `
     line-height: 1.3;
     display: flex;
     gap: 8px;
+    color: #000000;
   }
   .scaffold-col {
     border-right: 1px solid #cbd5e1;
@@ -1556,60 +1568,61 @@ const COMMON_CSS = `
   .scaffold-label {
     font-weight: 800;
     text-transform: uppercase;
-    font-size: 7.6pt;
-    color: #0f172a;
+    font-size: 7.8pt;
+    color: #000000;
     margin-bottom: 2px;
     display: block;
     letter-spacing: 0.2px;
   }
   .scaffold-content {
-    color: #334155;
+    color: #000000;
     font-size: 7.6pt;
     line-height: 1.3;
   }
   .scaffold-pill {
     display: inline-block;
-    background: #fff;
-    border: 1px solid #94a3b8;
-    border-radius: 3px;
+    background: #ffffff;
+    border: 1.2px solid #000000;
+    border-radius: 2px;
     padding: 1px 5px;
     margin: 1px 2px 1px 0;
     font-size: 7.6pt;
     font-weight: 700;
-    color: #0f172a;
+    color: #000000;
     white-space: nowrap;
   }
 
   /* Pearson Professional Full-Width Stacked Scaffolding */
   .importance-scaffold-stack {
-    border: 1.5px solid #334155;
-    border-radius: 4px;
+    border: 1.5px solid #000000;
+    border-radius: 3px;
     background: #f8fafc;
     padding: 4px 8px;
     margin-bottom: 5px;
     font-size: 8.4pt;
     line-height: 1.3;
+    color: #000000;
   }
   .scaffold-focus-row {
     display: flex;
     align-items: baseline;
     gap: 6px;
     padding: 2px 0;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid #cbd5e1;
   }
   .scaffold-badge {
     font-size: 7.6pt;
     font-weight: 800;
     text-transform: uppercase;
-    color: #1e3a8a;
-    background: #e0f2fe;
+    color: #ffffff;
+    background: #000000;
     padding: 1.5px 6px;
-    border-radius: 3px;
+    border-radius: 2px;
     white-space: nowrap;
     flex-shrink: 0;
   }
   .scaffold-text {
-    color: #1e293b;
+    color: #000000;
     font-size: 8.2pt;
     line-height: 1.3;
   }
@@ -1635,23 +1648,23 @@ const COMMON_CSS = `
     align-items: baseline;
     gap: 6px;
     font-size: 7.6pt;
-    color: #475569;
+    color: #000000;
   }
   .scaffold-stem-label {
-    font-weight: 700;
-    color: #9a3412;
+    font-weight: 800;
+    color: #000000;
     font-size: 7.6pt;
     text-transform: uppercase;
     flex-shrink: 0;
   }
   .scaffold-stem-text {
     font-style: italic;
-    color: #334155;
+    color: #000000;
   }
 
   .narrative-flow-planner {
-    border: 1.5px solid #475569;
-    border-radius: 4px;
+    border: 1.5px solid #000000;
+    border-radius: 3px;
     background: #f8fafc;
     padding: 4px 8px;
     margin-bottom: 6px;
@@ -1665,37 +1678,39 @@ const COMMON_CSS = `
   }
   .narrative-stage-box {
     flex: 1;
-    background: #fff;
-    border: 1px solid #94a3b8;
-    border-radius: 3px;
+    background: #ffffff;
+    border: 1.2px solid #000000;
+    border-radius: 2px;
     padding: 3px 5px;
   }
   .narrative-stage-hdr {
     font-weight: 800;
     font-size: 7.6pt;
     text-transform: uppercase;
-    color: #0f172a;
-    border-bottom: 1px solid #e2e8f0;
+    color: #000000;
+    border-bottom: 1px solid #000000;
     padding-bottom: 1px;
     margin-bottom: 2px;
   }
 
   /* Fatal Traps Card */
   .traps-card {
-    border: 1.5px solid #ef4444;
-    border-radius: 5px;
+    border: 1.5px solid #000000;
+    border-radius: 3px;
     padding: 6px 8px;
-    background: #fef2f2;
+    background: #ffffff;
     margin-bottom: 6px;
   }
   .traps-header {
-    font-size: 8.4pt;
+    font-size: 8.5pt;
     font-weight: 800;
-    color: #991b1b;
+    color: #ffffff;
+    background: #000000;
     text-transform: uppercase;
-    border-bottom: 1px solid #fca5a5;
-    padding-bottom: 2px;
-    margin-bottom: 4px;
+    letter-spacing: 0.3px;
+    padding: 3px 6px;
+    border-radius: 2px;
+    margin-bottom: 5px;
   }
   .traps-grid {
     display: grid;
@@ -1703,26 +1718,28 @@ const COMMON_CSS = `
     gap: 6px;
   }
   .trap-item {
-    background: #fff;
-    border: 1px solid #fca5a5;
-    border-radius: 4px;
-    padding: 4px 5px;
+    background: #f8fafc;
+    border: 1.2px solid #000000;
+    border-radius: 2px;
+    padding: 5px 6px;
     font-size: 7.6pt;
     line-height: 1.25;
+    color: #000000;
   }
   .trap-item strong {
-    color: #991b1b;
+    color: #000000;
     display: block;
     margin-bottom: 2px;
+    font-weight: 800;
   }
   .trap-item span {
-    color: #7f1d1d;
+    color: #000000;
   }
 
   /* 100% Specification Practice Bank Container (Page 12) */
   .spec-bank-container {
-    border: 1.5px solid #1e3a8a;
-    border-radius: 5px;
+    border: 1.5px solid #000000;
+    border-radius: 3px;
     padding: 6px 9px;
     background: #ffffff;
     margin-bottom: 6px;
@@ -1731,12 +1748,12 @@ const COMMON_CSS = `
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    border-bottom: 1.5px solid #1e3a8a;
+    border-bottom: 1.5px solid #000000;
     padding-bottom: 2px;
     margin-bottom: 4px;
   }
   .spec-bank-title {
-    color: #1e3a8a;
+    color: #000000;
     font-size: 8.5pt;
     font-weight: 800;
     text-transform: uppercase;
@@ -1744,7 +1761,7 @@ const COMMON_CSS = `
   }
   .spec-bank-subtitle {
     font-size: 7.2pt;
-    color: #64748b;
+    color: #000000;
     font-style: italic;
   }
   .spec-bank-list {
@@ -1754,44 +1771,47 @@ const COMMON_CSS = `
   }
   .spec-bank-item {
     background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 4px;
+    border: 1px solid #000000;
+    border-radius: 2px;
     padding: 3px 6px;
     font-size: 7.8pt;
     display: flex;
     justify-content: space-between;
     align-items: center;
     line-height: 1.25;
+    color: #000000;
   }
   .spec-bank-q {
     flex: 1;
-    color: #1e293b;
+    color: #000000;
     padding-right: 8px;
   }
   .spec-bank-badge {
-    background: #e0e7ff;
-    color: #3730a3;
+    background: #000000;
+    color: #ffffff;
     font-size: 6.8pt;
     font-weight: 700;
     padding: 1.5px 5px;
-    border-radius: 3px;
+    border-radius: 2px;
     white-space: nowrap;
+    text-transform: uppercase;
   }
 
   /* Diagnostic Card */
   .diagnostic-action-card {
-    border: 1.5px solid #475569;
-    border-radius: 5px;
+    border: 1.5px solid #000000;
+    border-radius: 3px;
     padding: 5px 8px;
-    background: #f1f5f9;
+    background: #f8fafc;
     font-size: 7.4pt;
+    color: #000000;
   }
 
   /* Progress Tracker Table on Page 1 */
   .tracker-card {
-    border: 1.5px solid #0f172a;
-    border-radius: 5px;
-    background: #fff;
+    border: 1.5px solid #000000;
+    border-radius: 3px;
+    background: #ffffff;
     padding: 5px 8px;
     margin-bottom: 7px;
   }
@@ -1799,20 +1819,20 @@ const COMMON_CSS = `
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    border-bottom: 1.5px solid #0f172a;
+    border-bottom: 1.5px solid #000000;
     padding-bottom: 2px;
     margin-bottom: 4px;
   }
   .tracker-title {
     font-size: 8.5pt;
     font-weight: 800;
-    color: #0f172a;
+    color: #000000;
     text-transform: uppercase;
     letter-spacing: 0.2px;
   }
   .tracker-sub {
     font-size: 7pt;
-    color: #64748b;
+    color: #000000;
     font-style: italic;
   }
   .tracker-table {
@@ -1822,37 +1842,38 @@ const COMMON_CSS = `
     line-height: 1.2;
   }
   .tracker-table th {
-    background: #f1f5f9;
-    color: #334155;
-    font-weight: 700;
+    background: #000000;
+    color: #ffffff;
+    font-weight: 800;
     text-transform: uppercase;
     padding: 2.5px 5px;
-    border: 1px solid #cbd5e1;
+    border: 1px solid #000000;
     text-align: left;
     font-size: 6.8pt;
   }
   .tracker-table td {
     padding: 2.5px 5px;
-    border: 1px solid #e2e8f0;
-    color: #1e293b;
+    border: 1px solid #cbd5e1;
+    color: #000000;
   }
   .tracker-section-hdr td {
-    background: #f8fafc;
+    background: #f1f5f9;
     font-weight: 800;
-    color: #0f172a;
+    color: #000000;
     font-size: 7pt;
     text-transform: uppercase;
     letter-spacing: 0.3px;
     padding: 2.5px 5px;
-    border-top: 1.5px solid #94a3b8;
+    border-top: 1.5px solid #000000;
+    border-bottom: 1.5px solid #000000;
   }
   .tracker-row:nth-child(even) {
     background: #fafafa;
   }
   .page-cell {
     text-align: center;
-    font-weight: 700;
-    color: #1e3a8a;
+    font-weight: 800;
+    color: #000000;
   }
   .marks-cell {
     text-align: center;
@@ -1861,7 +1882,7 @@ const COMMON_CSS = `
   .score-cell {
     text-align: center;
     font-weight: 700;
-    color: #475569;
+    color: #000000;
   }
   .type-tag {
     display: inline-block;
@@ -1870,24 +1891,24 @@ const COMMON_CSS = `
     font-size: 6.5pt;
     font-weight: 700;
     text-transform: uppercase;
-    background: #0f172a;
-    color: #fff;
+    background: #000000;
+    color: #ffffff;
     white-space: nowrap;
   }
   .tracker-box {
     display: inline-block;
     width: 9px;
     height: 9px;
-    border: 1px solid #64748b;
-    border-radius: 1.5px;
+    border: 1.2px solid #000000;
+    border-radius: 1px;
     vertical-align: middle;
     margin-right: 2px;
   }
 
   /* Specification Audit Checklist on Page 1 */
   .spec-audit-container {
-    border: 1.5px solid #334155;
-    border-radius: 5px;
+    border: 1.5px solid #000000;
+    border-radius: 3px;
     padding: 5px 8px;
     background: #f8fafc;
     margin-bottom: 5px;
@@ -1896,19 +1917,19 @@ const COMMON_CSS = `
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    border-bottom: 1px solid #cbd5e1;
+    border-bottom: 1.2px solid #000000;
     padding-bottom: 2px;
     margin-bottom: 4px;
   }
   .spec-audit-title {
     font-size: 8pt;
     font-weight: 800;
-    color: #0f172a;
+    color: #000000;
     text-transform: uppercase;
   }
   .spec-audit-sub {
     font-size: 6.8pt;
-    color: #64748b;
+    color: #000000;
     font-style: italic;
   }
   .spec-audit-grid {
@@ -1917,16 +1938,16 @@ const COMMON_CSS = `
     gap: 6px;
   }
   .spec-audit-col {
-    background: #fff;
-    border: 1px solid #cbd5e1;
-    border-radius: 3px;
+    background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 2px;
     padding: 3px 5px;
   }
   .spec-col-title {
     font-size: 7.2pt;
     font-weight: 800;
-    color: #1e3a8a;
-    border-bottom: 1px solid #e2e8f0;
+    color: #000000;
+    border-bottom: 1px solid #000000;
     padding-bottom: 1.5px;
     margin-bottom: 2.5px;
     text-transform: uppercase;
@@ -1939,7 +1960,7 @@ const COMMON_CSS = `
   .spec-point-item {
     font-size: 6.6pt;
     line-height: 1.2;
-    color: #334155;
+    color: #000000;
     display: flex;
     align-items: flex-start;
     margin-bottom: 2px;
@@ -1947,7 +1968,7 @@ const COMMON_CSS = `
   .spec-tick-box {
     width: 8px;
     height: 8px;
-    border: 1px solid #64748b;
+    border: 1.2px solid #000000;
     border-radius: 1px;
     margin-right: 3px;
     flex-shrink: 0;
@@ -1957,28 +1978,30 @@ const COMMON_CSS = `
     flex: 1;
   }
 
-  /* Footer */
+  /* Footers */
   .page-footer {
-    border-top: 1px solid #cbd5e1;
+    border-top: 1.2px solid #000000;
     padding-top: 3px;
-    font-size: 7pt;
-    color: #64748b;
+    font-size: 7.5pt;
+    color: #000000;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    white-space: nowrap;
   }
   .cover-footer {
-    border-top: 1px solid #cbd5e1;
+    border-top: 1.2px solid #000000;
     padding-top: 3px;
-    font-size: 7pt;
-    color: #64748b;
+    font-size: 7.5pt;
+    color: #000000;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    white-space: nowrap;
   }
   .turn-over {
-    font-weight: 700;
-    color: #0f172a;
+    font-weight: 800;
+    color: #000000;
     text-transform: uppercase;
     letter-spacing: 0.3px;
   }
@@ -2092,6 +2115,9 @@ function renderBookletHtml(ktKey, meta) {
 <head>
     <meta charset="UTF-8">
     <title>${meta.title} — GCSE (9–1) Exam Practice Pack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&display=swap" rel="stylesheet">
     <style>${COMMON_CSS}</style>
 </head>
 <body>
@@ -2218,7 +2244,7 @@ function renderBookletHtml(ktKey, meta) {
                         </tr>
                         <tr class="tracker-row">
                             <td><strong>Page 12</strong></td>
-                            <td><span class="type-tag" style="background: #1e3a8a;">Syllabus Bank</span></td>
+                            <td><span class="type-tag">Syllabus Bank</span></td>
                             <td>Exhaustive Practice Stems &amp; Top 3 Fatal Examiner Traps</td>
                             <td class="page-cell">12</td>
                             <td class="marks-cell">Audit</td>
@@ -2478,7 +2504,7 @@ function renderBookletHtml(ktKey, meta) {
                     </div>
                     <div class="scaffold-vocab-row">
                         <div class="scaffold-vocab-subrow">
-                            <span class="scaffold-badge" style="background: #fef3c7; color: #92400e;">Specification Fact Bank</span>
+                            <span class="scaffold-badge">Specification Fact Bank</span>
                             <div class="scaffold-pills-list">
                                 ${e.q3a.vocabBank.map((v) => `<span class="scaffold-pill">${v}</span>`).join('')}
                             </div>
@@ -2542,7 +2568,7 @@ function renderBookletHtml(ktKey, meta) {
                     </div>
                     <div class="scaffold-vocab-row">
                         <div class="scaffold-vocab-subrow">
-                            <span class="scaffold-badge" style="background: #fef3c7; color: #92400e;">Specification Fact Bank</span>
+                            <span class="scaffold-badge">Specification Fact Bank</span>
                             <div class="scaffold-pills-list">
                                 ${e.q3b.vocabBank.map((v) => `<span class="scaffold-pill">${v}</span>`).join('')}
                             </div>
@@ -2578,7 +2604,7 @@ function renderBookletHtml(ktKey, meta) {
                     <h2>Section B: Specification Depth Bank · Consequence Practice</h2>
                     <p>Exhaustive curriculum coverage. Practice additional 4-mark consequence stems.</p>
                 </div>
-                <span class="header-tag" style="background: #0284c7;">Spec Depth: Consequence</span>
+                <span class="header-tag">Spec Depth: Consequence</span>
             </div>
 
             <!-- Question 4(a) -->
@@ -2653,7 +2679,7 @@ function renderBookletHtml(ktKey, meta) {
                     <h2>Section B: Specification Depth Bank · Importance Depth</h2>
                     <p>Exhaustive curriculum coverage. Write two developed analytical paragraphs.</p>
                 </div>
-                <span class="header-tag" style="background: #0284c7;">Spec Depth: Importance A</span>
+                <span class="header-tag">Spec Depth: Importance A</span>
             </div>
 
             <div class="question-container">
@@ -2681,7 +2707,7 @@ function renderBookletHtml(ktKey, meta) {
                     </div>
                     <div class="scaffold-vocab-row">
                         <div class="scaffold-vocab-subrow">
-                            <span class="scaffold-badge" style="background: #fef3c7; color: #92400e;">Specification Fact Bank</span>
+                            <span class="scaffold-badge">Specification Fact Bank</span>
                             <div class="scaffold-pills-list">
                                 ${d.q5.vocabBank.map((v) => `<span class="scaffold-pill">${v}</span>`).join('')}
                             </div>
@@ -2717,7 +2743,7 @@ function renderBookletHtml(ktKey, meta) {
                     <h2>Section B: Specification Depth Bank · Importance Depth</h2>
                     <p>Exhaustive curriculum coverage. Write two developed analytical paragraphs.</p>
                 </div>
-                <span class="header-tag" style="background: #0284c7;">Spec Depth: Importance B</span>
+                <span class="header-tag">Spec Depth: Importance B</span>
             </div>
 
             <div class="question-container">
@@ -2745,7 +2771,7 @@ function renderBookletHtml(ktKey, meta) {
                     </div>
                     <div class="scaffold-vocab-row">
                         <div class="scaffold-vocab-subrow">
-                            <span class="scaffold-badge" style="background: #fef3c7; color: #92400e;">Specification Fact Bank</span>
+                            <span class="scaffold-badge">Specification Fact Bank</span>
                             <div class="scaffold-pills-list">
                                 ${d.q6.vocabBank.map((v) => `<span class="scaffold-pill">${v}</span>`).join('')}
                             </div>
@@ -2781,7 +2807,7 @@ function renderBookletHtml(ktKey, meta) {
                     <h2>Section B: Specification Depth Bank · Narrative Account (Part 1)</h2>
                     <p>Exhaustive curriculum coverage. Analyse the chronological sequence and causal links.</p>
                 </div>
-                <span class="header-tag" style="background: #0284c7;">Spec Depth: Narrative Pt 1</span>
+                <span class="header-tag">Spec Depth: Narrative Pt 1</span>
             </div>
 
             <div class="question-container">
@@ -2849,7 +2875,7 @@ function renderBookletHtml(ktKey, meta) {
                     <h2>Section B: Specification Depth Bank · Narrative Account (Part 2)</h2>
                     <p>Continue your narrative analysis below. Ensure all 3 chronological stages are causally linked.</p>
                 </div>
-                <span class="header-tag" style="background: #0284c7;">Q${d.q7.num}: Continuation</span>
+                <span class="header-tag">Q${d.q7.num}: Continuation</span>
             </div>
 
             <div class="question-container">
@@ -2860,19 +2886,19 @@ function renderBookletHtml(ktKey, meta) {
                 ${renderLines(d.q7.linesPage11)}
 
                 <!-- Pupil Self-Assessment & Examiner Standards Checklist -->
-                <div style="border: 1.5px solid #0284c7; border-radius: 4px; background: #f0f9ff; padding: 4px 8px; margin-top: 6px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #bae6fd; padding-bottom: 2px; margin-bottom: 3px;">
-                        <strong style="color: #0369a1; font-size: 7.8pt; text-transform: uppercase;">
+                <div style="border: 1.5px solid #000000; border-radius: 4px; background: #f8fafc; padding: 4px 8px; margin-top: 6px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
+                        <strong style="color: #000000; font-size: 7.8pt; text-transform: uppercase;">
                             🔍 Narrative Account Quality Audit &amp; Examiner Criteria (8 Marks)
                         </strong>
-                        <span style="font-size: 7.2pt; color: #0284c7; font-weight: 700;">Pearson Edexcel Level 3 Standard</span>
+                        <span style="font-size: 7.2pt; color: #000000; font-weight: 700;">Pearson Edexcel Level 3 Standard</span>
                     </div>
-                    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 7.2pt; color: #0f172a;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 7.2pt; color: #000000;">
                         <span>[ &nbsp; ] 3 Distinct Chronological Phases</span>
                         <span>[ &nbsp; ] Explicit Causal Connectives Used</span>
                         <span>[ &nbsp; ] Precise Historical Facts &amp; Dates</span>
                         <span>[ &nbsp; ] Avoided Mere Storytelling</span>
-                        <span style="background: #fff; border: 1px solid #0284c7; padding: 1px 6px; border-radius: 3px; font-weight: 800;">Score: &nbsp; &nbsp; / 8</span>
+                        <span style="background: #fff; border: 1px solid #000000; padding: 1px 6px; border-radius: 3px; font-weight: 800;">Score: &nbsp; &nbsp; / 8</span>
                     </div>
                 </div>
             </div>
@@ -2895,7 +2921,7 @@ function renderBookletHtml(ktKey, meta) {
                     <h2>Section C: Specification Practice Bank &amp; Fatal Traps</h2>
                     <p>100% specification coverage guarantee — practice every remaining Pearson Edexcel exam question stem.</p>
                 </div>
-                <span class="header-tag" style="background: #1e3a8a;">100% Spec Guarantee</span>
+                <span class="header-tag">100% Spec Guarantee</span>
             </div>
 
             <!-- Top Section: Top 3 Fatal Examiner Traps -->
@@ -3003,12 +3029,32 @@ async function generateBooklets() {
 
     fs.writeFileSync(htmlPath, htmlContent, 'utf8');
     console.log(`   Saved HTML: ${htmlFileName}`);
+
+    const ktPage = await browser.newPage();
+    await ktPage.setViewport({ width: 794, height: 1123, deviceScaleFactor: 2 });
+    await ktPage.setContent(htmlContent, { waitUntil: 'networkidle0' });
+    await ktPage.evaluateHandle('document.fonts.ready');
+    const ktPdfPath = path.join(pdfsDir, `cme_mastery_pack_${ktKey}.pdf`);
+    await ktPage.pdf({
+      path: ktPdfPath,
+      format: 'A4',
+      printBackground: true,
+      margin: { top: '0mm', right: '0mm', bottom: '0mm', left: '0mm' },
+    });
+    fs.copyFileSync(ktPdfPath, path.join(globalPdfsDir, `cme_mastery_pack_${ktKey}.pdf`));
+    console.log(`   ✅ Exported PDF: cme_mastery_pack_${ktKey}.pdf (12 Pages)`);
+    await ktPage.close();
   }
 
   // Generate Master Full 36-Page Combined Booklet
   console.log('\n📚 Assembling Master 36-Page Combined Exam Pack...');
   let fullHtml =
-    '<!DOCTYPE html><html><head><meta charset="UTF-8"><style>' +
+    '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">' +
+    '<title>Conflict in the Middle East, 1945–95 — Complete Mastery Exam Pack</title>' +
+    '<link rel="preconnect" href="https://fonts.googleapis.com">' +
+    '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' +
+    '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&display=swap" rel="stylesheet">' +
+    '<style>' +
     COMMON_CSS +
     '</style></head><body>';
   for (const [ktKey, meta] of Object.entries(KT_DATA)) {
@@ -3026,6 +3072,7 @@ async function generateBooklets() {
   const masterPage = await browser.newPage();
   await masterPage.setViewport({ width: 794, height: 1123, deviceScaleFactor: 2 });
   await masterPage.setContent(fullHtml, { waitUntil: 'networkidle0' });
+  await masterPage.evaluateHandle('document.fonts.ready');
 
   const masterPdfPath = path.join(pdfsDir, 'cme_mastery_pack_FULL.pdf');
   await masterPage.pdf({
@@ -3058,14 +3105,18 @@ async function generateBooklets() {
     try {
       if (fs.existsSync(dir)) {
         console.log(`\n☁️ Syncing freshly compiled booklets to Google Drive: ${dir}`);
-        fs.copyFileSync(masterPdfPath, path.join(dir, 'cme_mastery_pack_FULL.pdf'));
-        if (canonicalNames['cme_mastery_pack_FULL.pdf']) {
-          fs.copyFileSync(
-            masterPdfPath,
-            path.join(dir, canonicalNames['cme_mastery_pack_FULL.pdf']),
-          );
+        for (const [pdfFile, canonical] of Object.entries(canonicalNames)) {
+          const srcPath = path.join(pdfsDir, pdfFile);
+          if (fs.existsSync(srcPath)) {
+            fs.copyFileSync(srcPath, path.join(dir, pdfFile));
+            if (canonical) {
+              fs.copyFileSync(srcPath, path.join(dir, canonical));
+            }
+          }
         }
-        console.log('   ✅ Synced master PDF (both naming standards) to Google Drive.');
+        console.log(
+          '   ✅ Synced all master & KT booklets (both naming standards) to Google Drive.',
+        );
       }
     } catch (err) {
       console.warn(`   ⚠️ Could not sync to ${dir}: ${err.message}`);
