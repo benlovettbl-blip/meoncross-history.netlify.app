@@ -653,7 +653,11 @@ export function renderLesson(lesson) {
     activeUnit.isGCSE ||
     false;
   const hasInlineNarrativeSources =
-    Array.isArray(lesson.narrative_blocks) && lesson.narrative_blocks.some((b) => b && b.source);
+    Array.isArray(lesson.narrative_blocks) &&
+    lesson.narrative_blocks.some(
+      (b) =>
+        b && (b.source || (Array.isArray(b.sources) && b.sources.length > 0) || b.archival_source),
+    );
   let htmlDoNow = '',
     htmlPrimary = '',
     htmlSources1 = '',
@@ -1528,6 +1532,8 @@ export function renderLesson(lesson) {
         qText = qText.replace(/src=['"]assets\//g, `src="/units/${window.currentUnitId}/assets/`);
         aText = aText.replace(/src=['"]assets\//g, `src="/units/${window.currentUnitId}/assets/`);
       }
+      // Strip any leading question number prefix like "1. ", "1) ", "Q1: " to prevent duplicate numbering
+      qText = qText.replace(/^\s*(?:Q\d+[\.:]?\s*|\d+[\.\)]\s*)/i, '');
       const cardId = `donow-card-${index}`;
       htmlDoNow += `
           <div class="do-now-card" id="do-now-card-${index}" data-action="toggle-element" data-target-id="${cardId}" style="cursor: pointer;">
@@ -2499,29 +2505,33 @@ export function renderLesson(lesson) {
       }
 
       let blockSourceHtml = '';
-      let rawSource =
-        block.source ||
-        (block.archival_source
-          ? {
-              type: 'written',
-              title: block.archival_source.title,
-              shelfmark: block.archival_source.shelfmark,
-              content: block.archival_source.text || block.archival_source.content || '',
-              citation: block.archival_source.citation || '',
-              source_context:
-                block.archival_source.source_context || block.archival_source.context || '',
-              question: block.archival_source.question || '',
-              qNum: block.archival_source.qNum || '',
-            }
-          : null);
+      const rawSources = Array.isArray(block.sources)
+        ? [...block.sources]
+        : block.source
+          ? [block.source]
+          : block.archival_source
+            ? [
+                {
+                  type: 'written',
+                  title: block.archival_source.title,
+                  shelfmark: block.archival_source.shelfmark,
+                  content: block.archival_source.text || block.archival_source.content || '',
+                  citation: block.archival_source.citation || '',
+                  source_context:
+                    block.archival_source.source_context || block.archival_source.context || '',
+                  question: block.archival_source.question || '',
+                  qNum: block.archival_source.qNum || '',
+                },
+              ]
+            : [];
 
       if (
-        !rawSource &&
+        rawSources.length === 0 &&
         window.currentUnitId === 'water_and_sanitation' &&
         block.source_letter &&
         block.image
       ) {
-        rawSource = {
+        rawSources.push({
           type: 'visual',
           src: block.image,
           source: block.image,
@@ -2531,10 +2541,11 @@ export function renderLesson(lesson) {
           citation: block.citation || 'Archaeological / Primary Archive Evidence',
           source_context: block.image_context || '',
           question: block.source_question || '',
-        };
+        });
       }
 
-      if (rawSource) {
+      rawSources.forEach((rawSource) => {
+        if (!rawSource) return;
         const isWrittenSource =
           rawSource.type === 'written' ||
           (rawSource.content && !rawSource.source && !rawSource.src && !rawSource.image);
@@ -2673,7 +2684,7 @@ export function renderLesson(lesson) {
           `;
         }
 
-        blockSourceHtml = `
+        blockSourceHtml += `
               <div class="gcse-source-container archival-source-box" ${bCardIdAttr} style="text-align: left; transition: all 0.3s ease; margin: 20px 0;">
                 ${sourceHeaderHtml}
                 ${sourceBodyHtml}
@@ -2686,12 +2697,11 @@ export function renderLesson(lesson) {
                 }
               </div>
              `;
-      }
+      });
 
       htmlNarrative += `
             <div class="standard-narrative-container">
               ${imageHtml}
-              ${blockSourceHtml}
               <div id="para-${index + 1}" class="narrative-chunk" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding: 15px; background: ${bg}; border-radius: 6px; border-left: 4px solid #3b82f6; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
                 ${!block.text || !block.text.trim() || (typeof block.text === 'string' && block.text.includes('side-quest-box')) || (block.title && block.title.toLowerCase().includes('lesson reflection')) ? '' : '<div class="para-number">' + (index + 1) + '</div>'}
                 <div class="narrative-text" style="flex-grow: 1; line-height: 1.6;">${themeHeadingHtml}${styledContent}</div>
@@ -2699,6 +2709,7 @@ export function renderLesson(lesson) {
                   <button class="btn btn-secondary no-print" data-action="read-aloud" style="padding: 6px 10px; flex-shrink: 0; margin-left: 15px;" title="Read Aloud"><i class="fa-solid fa-volume-high"></i></button>
                 </div>
               </div>
+              ${blockSourceHtml}
             </div>
           `;
 

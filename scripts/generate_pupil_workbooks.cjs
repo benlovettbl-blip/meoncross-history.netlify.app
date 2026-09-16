@@ -1853,18 +1853,24 @@ allDirs.forEach((unitId) => {
         } else if (
           lesson.do_now.type === 'questions' ||
           lesson.do_now.type === 'retrieval' ||
-          (!lesson.do_now.type && (lesson.do_now.items || lesson.do_now.questions))
+          lesson.do_now.type === 'recall_grid' ||
+          lesson.do_now.type === 'quiz' ||
+          (!lesson.do_now.type && (lesson.do_now.items || lesson.do_now.questions)) ||
+          lesson.do_now.items ||
+          lesson.do_now.questions
         ) {
           let items = lesson.do_now.items || lesson.do_now.questions;
-          let maxScore = items ? items.length : 5;
+          let maxScore = items ? items.length : 4;
           html += `<div class="do-now-box" style="padding: 5px; margin-bottom: 5px;">
                    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 5px;">
-                     <h3 style="margin: 0; font-size: 11pt;">Do Now Activity</h3>
+                     <h3 style="margin: 0; font-size: 11pt;">${lesson.do_now.title || 'Do Now Activity'}</h3>
                      <div style=" padding: 3px 10px; font-weight: bold; font-size: 10pt; border-radius: 4px; ">Score: &nbsp;&nbsp;&nbsp;&nbsp; / ${maxScore}</div>
                    </div>`;
           if (items) {
             items.forEach((item, index) => {
-              html += `<div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;">${unitId === 'early_modern_world' ? index + 1 + '. ' : ''}${item.question}</div>`;
+              let rawQ = item.question || item.q || item.text || '';
+              let cleanQ = rawQ.replace(/^\s*(?:Q\d+[\.:]?\s*|\d+[\.\)]\s*)/i, '');
+              html += `<div class="do-now-q" style="font-size: 9.5pt; margin-bottom: 4px;"><strong>${index + 1}.</strong> ${cleanQ}</div>`;
               let linesToDraw = 2;
               for (let i = 0; i < linesToDraw; i++) {
                 html += `<div class="task-lines" style="height: 12px; margin-top: 3px;"></div>`;
