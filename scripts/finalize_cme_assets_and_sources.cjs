@@ -30,10 +30,10 @@ async function finalizeCme() {
 
     // Lesson 3
     L3_primary: '/units/cme_new/assets/cme_tel_aviv_yafo__997008136796005171_.jpg',
-    L3_B0: '/units/cme_new/assets/cme_tel_aviv_yafo__997008136796005171_.jpg',
-    L3_B2: '/images/cme_palestinian_refugees_1948.jpg',
-    L3_B4: '/units/cme_new/assets/palestine_1949_map.png',
-    L3_B8: '/units/cme_new/assets/palestine_1949_map.png',
+    L3_B0: null, // Removed: eliminates duplicate photo rendering below header
+    L3_B2: '/images/cme_palestinian_refugees_leaving_gaza.webp', // Matches coastal water wading caption with 100% precision
+    L3_B4: '/units/cme_new/assets/palestine_1949_map.png', // Source C: 1949 Armistice Green Line
+    L3_B8: '/images/cme_sinai_peninsula_map.jpg', // Source D: Straits of Tiran & Sinai Peninsula Topographical Map
 
     // Lesson 4
     L4_primary: '/images/cme_nasser_1956.jpg',
@@ -111,9 +111,16 @@ async function finalizeCme() {
   // 3. LESSON 3
   const l3 = unitData.lessons[2];
   l3.primary_source.src = imageMap.L3_primary;
-  if (l3.narrative_blocks[0]) l3.narrative_blocks[0].image = imageMap.L3_B0;
+  if (l3.narrative_blocks[0]) {
+    delete l3.narrative_blocks[0].image;
+    delete l3.narrative_blocks[0].caption;
+  }
   if (l3.narrative_blocks[2] && l3.narrative_blocks[2].source) {
     l3.narrative_blocks[2].source.src = imageMap.L3_B2;
+    l3.narrative_blocks[2].source.caption =
+      'Authentic Historical Photograph: Palestinian families wading through coastal waters carrying trunks and possessions as they flee the fighting during the 1948 Nakba.';
+    l3.narrative_blocks[2].source.model_answer =
+      'Source B highlights the abrupt and desperate nature of the flight, showing Palestinian men and boys wading through coastal waters carrying heavy wooden trunks and personal possessions on their shoulders, with hundreds more refugees lining the shore. Over 700,000 Palestinians fled or were forcibly expelled from their homes during the 1948 Nakba, leaving behind possessions, land, and communities. The photograph captures the immediate, perilous physical reality of displacement as families sought safety along coastal routes, transforming the majority of the Arab population into stateless refugees dependent on emergency aid and UNRWA camps.';
   }
   if (l3.narrative_blocks[4] && l3.narrative_blocks[4].source) {
     l3.narrative_blocks[4].source.src = imageMap.L3_B4;

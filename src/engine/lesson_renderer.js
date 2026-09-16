@@ -217,35 +217,163 @@ function getRetrievalStarterActions(lesson, currentUnitId) {
 
 function renderDoNowTimerBarHTML(timerId = 'donow-timer') {
   return `
-    <div class="donow-timer-bar" id="${timerId}-bar" style="grid-column: 1 / -1; width: 100%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4px solid #0284c7; border-radius: 8px; padding: 10px 16px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.03); box-sizing: border-box;">
-      <div style="display: flex; align-items: center; gap: 12px;">
-        <div style="width: 36px; height: 36px; border-radius: 8px; background: #e0f2fe; color: #0284c7; display: flex; align-items: center; justify-content: center; font-size: 1.15rem; flex-shrink: 0;">
-          <i class="fa-solid fa-stopwatch"></i>
+    <div class="donow-timer-bar" id="${timerId}-bar" style="grid-column: 1 / -1; width: 100%; display: flex; flex-direction: column; gap: 8px; background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4px solid #0284c7; border-radius: 8px; padding: 10px 14px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.03); box-sizing: border-box;">
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+        <!-- Left: Stopwatch icon + display + mode -->
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="width: 34px; height: 34px; border-radius: 6px; background: #e0f2fe; color: #0284c7; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;">
+            <i class="fa-solid fa-stopwatch"></i>
+          </div>
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em;">Retrieval Timer</span>
+              <span id="${timerId}-mode-pill" style="font-size: 0.7rem; font-weight: 700; color: #0369a1; background: #f0f9ff; padding: 1px 6px; border-radius: 10px; border: 1px solid #bae6fd;">5 Mins</span>
+            </div>
+            <div style="font-size: 1.35rem; font-weight: 800; font-family: 'Courier New', monospace; color: #0f172a; line-height: 1.1;" id="${timerId}-display">05:00</div>
+          </div>
         </div>
-        <div>
-          <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em;">Do Now Task Timer</div>
-          <div style="font-size: 1.35rem; font-weight: 800; font-family: 'Courier New', monospace; color: #0f172a; line-height: 1.1;" id="${timerId}-display">05:00</div>
+
+        <!-- Center: Quick Preset Pills (Flexi Timer for Teachers) -->
+        <div class="timer-preset-pills" id="${timerId}-presets" style="display: flex; align-items: center; gap: 5px; flex-wrap: wrap;">
+          <span style="font-size: 0.72rem; font-weight: 700; color: #64748b; margin-right: 2px;">Presets:</span>
+          <button type="button" class="btn-timer-pill" data-sec="120" onclick="event.stopPropagation(); window.setDoNowTimerPreset('${timerId}', 120);" style="padding: 3px 8px; font-size: 0.75rem; font-weight: 700; border-radius: 4px; border: 1px solid #cbd5e1; background: #f8fafc; color: #334155; cursor: pointer;">2m</button>
+          <button type="button" class="btn-timer-pill" data-sec="180" onclick="event.stopPropagation(); window.setDoNowTimerPreset('${timerId}', 180);" style="padding: 3px 8px; font-size: 0.75rem; font-weight: 700; border-radius: 4px; border: 1px solid #cbd5e1; background: #f8fafc; color: #334155; cursor: pointer;">3m</button>
+          <button type="button" class="btn-timer-pill active-preset" data-sec="300" onclick="event.stopPropagation(); window.setDoNowTimerPreset('${timerId}', 300);" style="padding: 3px 8px; font-size: 0.75rem; font-weight: 700; border-radius: 4px; border: 1.5px solid #0284c7; background: #e0f2fe; color: #0369a1; cursor: pointer;">5m</button>
+          <button type="button" class="btn-timer-pill" data-sec="480" onclick="event.stopPropagation(); window.setDoNowTimerPreset('${timerId}', 480);" style="padding: 3px 8px; font-size: 0.75rem; font-weight: 700; border-radius: 4px; border: 1px solid #cbd5e1; background: #f8fafc; color: #334155; cursor: pointer;">8m</button>
+          <button type="button" class="btn-timer-pill" data-sec="600" onclick="event.stopPropagation(); window.setDoNowTimerPreset('${timerId}', 600);" style="padding: 3px 8px; font-size: 0.75rem; font-weight: 700; border-radius: 4px; border: 1px solid #cbd5e1; background: #f8fafc; color: #334155; cursor: pointer;">10m</button>
+        </div>
+
+        <!-- Right: Controls (Start / Pause / Reset / +/- 1m / Mute) -->
+        <div style="display: flex; align-items: center; gap: 5px; flex-wrap: wrap;">
+          <button type="button" class="btn btn-primary btn-sm" id="${timerId}-start-btn" onclick="event.stopPropagation(); window.toggleDoNowTimer('${timerId}', 'start');" style="padding: 5px 12px; font-weight: 700; font-size: 0.82rem; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; background: #0284c7; color: #fff; border: none;">
+            <i class="fa-solid fa-play"></i> Start
+          </button>
+          <button type="button" class="btn btn-secondary btn-sm" id="${timerId}-pause-btn" onclick="event.stopPropagation(); window.toggleDoNowTimer('${timerId}', 'pause');" style="padding: 5px 12px; font-size: 0.82rem; font-weight: 600; border-radius: 6px; cursor: pointer; display: none; align-items: center; gap: 5px;">
+            <i class="fa-solid fa-pause"></i> Pause
+          </button>
+          <button type="button" class="btn btn-secondary btn-sm" id="${timerId}-sub1-btn" onclick="event.stopPropagation(); window.toggleDoNowTimer('${timerId}', 'sub1');" style="padding: 5px 8px; font-size: 0.8rem; font-weight: 700; border-radius: 6px; cursor: pointer;" title="Subtract 1 minute">-1m</button>
+          <button type="button" class="btn btn-secondary btn-sm" id="${timerId}-add1-btn" onclick="event.stopPropagation(); window.toggleDoNowTimer('${timerId}', 'add1');" style="padding: 5px 8px; font-size: 0.8rem; font-weight: 700; border-radius: 6px; cursor: pointer;" title="Add 1 minute">+1m</button>
+          <button type="button" class="btn btn-secondary btn-sm" id="${timerId}-reset-btn" onclick="event.stopPropagation(); window.toggleDoNowTimer('${timerId}', 'reset');" style="padding: 5px 10px; font-size: 0.82rem; font-weight: 600; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;" title="Reset timer to start of chosen duration">
+            <i class="fa-solid fa-rotate-right"></i> Reset
+          </button>
+          <button type="button" class="btn btn-secondary btn-sm" id="${timerId}-sound-btn" onclick="event.stopPropagation(); window.toggleDoNowTimerSound('${timerId}');" style="padding: 5px 8px; font-size: 0.8rem; font-weight: 600; border-radius: 6px; cursor: pointer;" title="Toggle audio chime on/off">
+            <i class="fa-solid fa-bell-slash" id="${timerId}-sound-icon" style="color: #64748b;"></i>
+          </button>
         </div>
       </div>
-      <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
-        <button type="button" class="btn btn-primary btn-sm" id="${timerId}-start-btn" onclick="event.stopPropagation(); window.toggleDoNowTimer('${timerId}', 'start');" style="padding: 6px 14px; font-weight: 700; font-size: 0.82rem; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; background: #0284c7; color: #fff; border: none;">
-          <i class="fa-solid fa-play"></i> Start
-        </button>
-        <button type="button" class="btn btn-secondary btn-sm" id="${timerId}-pause-btn" onclick="event.stopPropagation(); window.toggleDoNowTimer('${timerId}', 'pause');" style="padding: 6px 12px; font-size: 0.82rem; font-weight: 600; border-radius: 6px; cursor: pointer; display: none; align-items: center; gap: 6px;">
-          <i class="fa-solid fa-pause"></i> Pause
-        </button>
-        <button type="button" class="btn btn-secondary btn-sm" id="${timerId}-reset-btn" onclick="event.stopPropagation(); window.toggleDoNowTimer('${timerId}', 'reset');" style="padding: 6px 12px; font-size: 0.82rem; font-weight: 600; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Reset to 5 minutes">
-          <i class="fa-solid fa-rotate-right"></i> Reset (5m)
-        </button>
-        <button type="button" class="btn btn-secondary btn-sm" id="${timerId}-add5-btn" onclick="event.stopPropagation(); window.toggleDoNowTimer('${timerId}', 'add5');" style="padding: 6px 12px; font-size: 0.82rem; font-weight: 600; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Add 5 minutes">
-          +5m
-        </button>
+
+      <!-- Slim Visual Progress Bar -->
+      <div style="width: 100%; height: 4px; background: #e2e8f0; border-radius: 2px; overflow: hidden;">
+        <div id="${timerId}-progress" style="width: 100%; height: 100%; background: #0284c7; transition: width 0.5s linear, background 0.3s ease;"></div>
       </div>
     </div>
   `;
 }
 
 window.doNowTimers = window.doNowTimers || {};
+
+window.setDoNowTimerPreset = function (timerId, seconds) {
+  let timer = window.doNowTimers[timerId];
+  if (!timer) {
+    timer = {
+      totalSeconds: seconds,
+      initialSeconds: seconds,
+      interval: null,
+      isRunning: false,
+      isSilent: true,
+    };
+    window.doNowTimers[timerId] = timer;
+  } else {
+    if (timer.interval) clearInterval(timer.interval);
+    timer.interval = null;
+    timer.isRunning = false;
+    timer.totalSeconds = seconds;
+    timer.initialSeconds = seconds;
+  }
+
+  // Update pills UI
+  const presetsContainer = document.getElementById(`${timerId}-presets`);
+  if (presetsContainer) {
+    presetsContainer.querySelectorAll('.btn-timer-pill').forEach((pill) => {
+      const sec = parseInt(pill.getAttribute('data-sec'), 10);
+      if (sec === seconds) {
+        pill.classList.add('active-preset');
+        pill.style.border = '1.5px solid #0284c7';
+        pill.style.background = '#e0f2fe';
+        pill.style.color = '#0369a1';
+      } else {
+        pill.classList.remove('active-preset');
+        pill.style.border = '1px solid #cbd5e1';
+        pill.style.background = '#f8fafc';
+        pill.style.color = '#334155';
+      }
+    });
+  }
+
+  // Update mode pill
+  const modePill = document.getElementById(`${timerId}-mode-pill`);
+  if (modePill) {
+    const mins = Math.round(seconds / 60);
+    modePill.textContent = `${mins} Mins`;
+  }
+
+  // Reset button state
+  const startBtn = document.getElementById(`${timerId}-start-btn`);
+  const pauseBtn = document.getElementById(`${timerId}-pause-btn`);
+  if (startBtn) {
+    startBtn.style.display = 'inline-flex';
+    startBtn.innerHTML = '<i class="fa-solid fa-play"></i> Start';
+  }
+  if (pauseBtn) pauseBtn.style.display = 'none';
+
+  // Update display
+  const display = document.getElementById(`${timerId}-display`);
+  const summaryBadge = document.getElementById(`${timerId}-summary-badge`);
+  const progressBar = document.getElementById(`${timerId}-progress`);
+  const mins = Math.floor(seconds / 60);
+  const secs = seconds % 60;
+  const formatted = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+  if (display) {
+    display.textContent = formatted;
+    display.style.color = '#0f172a';
+  }
+  if (summaryBadge) {
+    summaryBadge.textContent = formatted;
+    summaryBadge.style.color = '#0369a1';
+  }
+  if (progressBar) {
+    progressBar.style.width = '100%';
+    progressBar.style.background = '#0284c7';
+  }
+};
+
+window.toggleDoNowTimerSound = function (timerId) {
+  let timer = window.doNowTimers[timerId];
+  if (!timer) {
+    timer = {
+      totalSeconds: 300,
+      initialSeconds: 300,
+      interval: null,
+      isRunning: false,
+      isSilent: true,
+    };
+    window.doNowTimers[timerId] = timer;
+  }
+  timer.isSilent = !timer.isSilent;
+  const icon = document.getElementById(`${timerId}-sound-icon`);
+  const btn = document.getElementById(`${timerId}-sound-btn`);
+  if (icon && btn) {
+    if (timer.isSilent) {
+      icon.className = 'fa-solid fa-bell-slash';
+      icon.style.color = '#64748b';
+      btn.title = 'Silent Mode Active (Click to unmute chime)';
+    } else {
+      icon.className = 'fa-solid fa-bell';
+      icon.style.color = '#0284c7';
+      btn.title = 'Audio Chime Active (Click to mute)';
+    }
+  }
+};
 
 window.toggleDoNowTimer = function (timerId, action) {
   let timer = window.doNowTimers[timerId];
@@ -255,6 +383,7 @@ window.toggleDoNowTimer = function (timerId, action) {
       initialSeconds: 300,
       interval: null,
       isRunning: false,
+      isSilent: true,
     };
     window.doNowTimers[timerId] = timer;
   }
@@ -263,6 +392,7 @@ window.toggleDoNowTimer = function (timerId, action) {
   const summaryBadge = document.getElementById(`${timerId}-summary-badge`);
   const startBtn = document.getElementById(`${timerId}-start-btn`);
   const pauseBtn = document.getElementById(`${timerId}-pause-btn`);
+  const progressBar = document.getElementById(`${timerId}-progress`);
 
   const updateDisplay = () => {
     const mins = Math.floor(timer.totalSeconds / 60);
@@ -283,9 +413,21 @@ window.toggleDoNowTimer = function (timerId, action) {
       summaryBadge.textContent = formatted;
       summaryBadge.style.color = timer.totalSeconds <= 30 ? '#ef4444' : '#0369a1';
     }
+    if (progressBar) {
+      const pct = Math.max(0, (timer.totalSeconds / (timer.initialSeconds || 300)) * 100);
+      progressBar.style.width = pct + '%';
+      if (timer.totalSeconds === 0) {
+        progressBar.style.background = '#ef4444';
+      } else if (timer.totalSeconds <= 30 || pct <= 20) {
+        progressBar.style.background = '#f59e0b';
+      } else {
+        progressBar.style.background = '#0284c7';
+      }
+    }
   };
 
   const playChime = () => {
+    if (timer.isSilent) return;
     try {
       const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
       const osc = audioCtx.createOscillator();
@@ -304,7 +446,7 @@ window.toggleDoNowTimer = function (timerId, action) {
 
   if (action === 'start') {
     if (timer.isRunning) return;
-    if (timer.totalSeconds === 0) timer.totalSeconds = 300;
+    if (timer.totalSeconds === 0) timer.totalSeconds = timer.initialSeconds || 300;
     timer.isRunning = true;
     if (startBtn) startBtn.style.display = 'none';
     if (pauseBtn) pauseBtn.style.display = 'inline-flex';
@@ -320,7 +462,7 @@ window.toggleDoNowTimer = function (timerId, action) {
           timer.isRunning = false;
           if (startBtn) {
             startBtn.style.display = 'inline-flex';
-            startBtn.innerHTML = '<i class="fa-solid fa-rotate-right"></i> Restart (5m)';
+            startBtn.innerHTML = '<i class="fa-solid fa-rotate-right"></i> Restart';
           }
           if (pauseBtn) pauseBtn.style.display = 'none';
           playChime();
@@ -341,17 +483,59 @@ window.toggleDoNowTimer = function (timerId, action) {
     if (timer.interval) clearInterval(timer.interval);
     timer.interval = null;
     timer.isRunning = false;
-    timer.totalSeconds = 300;
+    timer.totalSeconds = timer.initialSeconds || 300;
     updateDisplay();
     if (startBtn) {
       startBtn.style.display = 'inline-flex';
       startBtn.innerHTML = '<i class="fa-solid fa-play"></i> Start';
     }
     if (pauseBtn) pauseBtn.style.display = 'none';
+  } else if (action === 'add1') {
+    timer.totalSeconds += 60;
+    if (timer.totalSeconds > timer.initialSeconds) timer.initialSeconds = timer.totalSeconds;
+    updateDisplay();
+  } else if (action === 'sub1') {
+    if (timer.totalSeconds > 60) {
+      timer.totalSeconds -= 60;
+      updateDisplay();
+    }
   } else if (action === 'add5') {
     timer.totalSeconds += 300;
+    if (timer.totalSeconds > timer.initialSeconds) timer.initialSeconds = timer.totalSeconds;
     updateDisplay();
   }
+};
+
+window.toggleWhiteboardMode = function () {
+  const isCurrentlyActive = document.body.classList.contains('whiteboard-mode-active');
+  const nextState = !isCurrentlyActive;
+  if (nextState) {
+    document.body.classList.add('whiteboard-mode-active');
+  } else {
+    document.body.classList.remove('whiteboard-mode-active');
+  }
+  try {
+    localStorage.setItem('whiteboardMode', nextState ? 'true' : 'false');
+  } catch (e) {}
+  window.syncWhiteboardButtons(nextState);
+};
+
+window.syncWhiteboardButtons = function (isActive) {
+  const btns = document.querySelectorAll('.btn-whiteboard-toggle');
+  btns.forEach((btn) => {
+    if (isActive) {
+      btn.classList.add('active');
+      btn.innerHTML =
+        '<i class="fa-solid fa-compress"></i> <span class="wb-btn-label">Standard View</span>';
+      btn.title = 'Exit Whiteboard Presentation Mode (restore hero banner)';
+    } else {
+      btn.classList.remove('active');
+      btn.innerHTML =
+        '<i class="fa-solid fa-chalkboard"></i> <span class="wb-btn-label">Whiteboard View</span>';
+      btn.title =
+        'Toggle Whiteboard Presentation Mode (collapses hero banner for classroom projectors)';
+    }
+  });
 };
 
 window.renderLessonByIndex = function (index, skipHistory = false) {
@@ -630,6 +814,7 @@ export function renderLesson(lesson) {
           ${
             isTrip
               ? `
+              <button class="btn btn-whiteboard-toggle ${typeof document !== 'undefined' && document.body.classList.contains('whiteboard-mode-active') ? 'active' : ''}" id="whiteboard-mode-btn" onclick="event.stopPropagation(); window.toggleWhiteboardMode();" title="Toggle Whiteboard Presentation Mode (collapses hero banner for classroom projectors)"><i class="fa-solid fa-chalkboard"></i> <span class="wb-btn-label">Whiteboard View</span></button>
               <button class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.88rem; background: white; color: #1e3a8a; border: 1.5px solid #cbd5e1; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); cursor: pointer;" data-action="switch-view" data-view="lessons" data-unit="${appStore.state.selectedUnitId || window.currentUnitId || 'trip_ypres'}"><i class="fa-solid fa-arrow-left" style="margin-right: 6px;"></i> Itinerary</button>
             `
               : `
@@ -648,6 +833,7 @@ export function renderLesson(lesson) {
                   ? `<a href="/units/cme_new/visual_revision_guide.html#page_${4 + currentIndex * 2}" target="_blank" class="btn" style="padding: 6px 12px; font-size: 0.88rem; background: #f0f9ff; color: #0369a1; border: 1.5px solid #bae6fd; font-weight: 700; text-decoration: none; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: inline-flex; align-items: center; gap: 6px;" title="Jump directly to this lesson's visual revision spread in the Masterclass Guide"><i class="fa-solid fa-book-open"></i> Revision Masterclass (Spread ${currentIndex + 1})</a>`
                   : ''
               }
+              <button class="btn btn-whiteboard-toggle ${typeof document !== 'undefined' && document.body.classList.contains('whiteboard-mode-active') ? 'active' : ''}" id="whiteboard-mode-btn" onclick="event.stopPropagation(); window.toggleWhiteboardMode();" title="Toggle Whiteboard Presentation Mode (collapses hero banner for classroom projectors)"><i class="fa-solid fa-chalkboard"></i> <span class="wb-btn-label">Whiteboard View</span></button>
               <button class="btn" style="padding: 6px 12px; font-size: 0.9rem; background: white; color: #0f172a; border: 1px solid rgba(0,0,0,0.1); font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.05);" data-action="open-debate-modal"><i class="fa-solid fa-comments" style="color: #3b82f6;"></i> Class Debate</button>
               <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem; background: white; border: 1px solid rgba(0,0,0,0.1); box-shadow: 0 2px 5px rgba(0,0,0,0.05);" data-action="open-task-whiteboard" title="Teacher Whiteboard / Live Marking"><i class="fa-solid fa-person-chalkboard" style="color: #0284c7;"></i> Whiteboard</button>
               <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 0.9rem; background: white; border: 1px solid rgba(0,0,0,0.1);" data-action="switch-view" data-view="lessons" data-unit="${appStore.state.selectedUnitId || window.currentUnitId || 'gcse_usa_1954_1975'}"><i class="fa-solid fa-arrow-left"></i> Unit Menu</button>
@@ -1270,12 +1456,17 @@ export function renderLesson(lesson) {
       });
       htmlDoNow += `</div></div></details>`;
     }
-  } else if (lesson.do_now && lesson.do_now.items) {
+  } else if (
+    lesson.do_now &&
+    (lesson.do_now.items || lesson.do_now.questions || lesson.do_now.tasks)
+  ) {
     try {
       const taught = JSON.parse(localStorage.getItem('taughtUnits') || '[]');
       if (taught.length > 0 && window.KNOWLEDGE_BANK) {
-        lesson.do_now.items.forEach((item) => {
-          if (item.question.includes('PAST TOPIC:')) {
+        const rawItems =
+          lesson.do_now.items || lesson.do_now.questions || lesson.do_now.tasks || [];
+        rawItems.forEach((item) => {
+          if (item && item.question && item.question.includes('PAST TOPIC:')) {
             const unit = taught[Math.floor(Math.random() * taught.length)];
             const bank = window.KNOWLEDGE_BANK[unit];
             if (bank && bank.length > 0) {
@@ -1306,19 +1497,19 @@ export function renderLesson(lesson) {
                 <i class="fa-solid fa-chevron-down" style="color: #64748b;"></i>
               </div>
             </summary>
-            <div style="padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+            <div class="do-now-grid" style="padding: 14px 18px; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px;">
               ${renderDoNowTimerBarHTML('donow-timer')}
               ${
                 showQuizzing
                   ? `
-                <div style="grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); border: 1.5px solid #bfdbfe; border-radius: 8px; padding: 12px 18px; margin-bottom: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">
-                  <div style="display: flex; align-items: center; gap: 12px;">
-                    <div style="width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1rem; flex-shrink: 0; box-shadow: 0 2px 4px rgba(59,130,246,0.25);">
+                <div style="grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); border: 1.5px solid #bfdbfe; border-radius: 8px; padding: 8px 14px; margin-bottom: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">
+                  <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="width: 30px; height: 30px; border-radius: 6px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.9rem; flex-shrink: 0; box-shadow: 0 2px 4px rgba(59,130,246,0.25);">
                       <i class="fa-solid fa-bolt"></i>
                     </div>
                     <div>
-                      <div style="font-weight: 700; color: #1e3a8a; font-size: 0.95rem;">Retrieval Starter Drill</div>
-                      <div style="font-size: 0.83rem; color: #64748b;">Consolidate prior learning with 3-Box Leitner spaced flashcards or a 10-min readiness check.</div>
+                      <div style="font-weight: 700; color: #1e3a8a; font-size: 0.9rem;">Retrieval Starter Drill</div>
+                      <div style="font-size: 0.8rem; color: #64748b;">Consolidate prior learning with 3-Box Leitner spaced flashcards or a 10-min readiness check.</div>
                     </div>
                   </div>
                   ${getRetrievalStarterActions(lesson, currentUnitId)}
@@ -1327,10 +1518,10 @@ export function renderLesson(lesson) {
                   : ''
               }
       `;
-    const doNowItems = lesson.do_now.items || lesson.do_now.tasks || [];
+    const doNowItems = lesson.do_now.items || lesson.do_now.questions || lesson.do_now.tasks || [];
     doNowItems.forEach((item, index) => {
-      let qText = item.question || item.event || '';
-      let aText = item.answer || item.year || '';
+      let qText = item.question || item.q || item.event || '';
+      let aText = item.answer || item.a || item.year || '';
       if (typeof qText !== 'string') qText = String(qText);
       if (typeof aText !== 'string') aText = String(aText);
       if (window.currentUnitId) {
@@ -1340,9 +1531,11 @@ export function renderLesson(lesson) {
       const cardId = `donow-card-${index}`;
       htmlDoNow += `
           <div class="do-now-card" id="do-now-card-${index}" data-action="toggle-element" data-target-id="${cardId}" style="cursor: pointer;">
-            <div style="font-weight: 700; margin-bottom: 8px; color: #1e3a8a;">${index + 1}</div>
-            <div>${qText}</div>
-            <div class="answer" id="${cardId}" style="display: none; margin-top: 10px; padding: 10px; background: #f8fafc; border-left: 4px solid #3b82f6; border-radius: 4px;">${aText}</div>
+            <div style="display: flex; gap: 8px; align-items: flex-start;">
+              <span style="font-weight: 800; color: #0369a1; background: #e0f2fe; padding: 2px 7px; border-radius: 4px; font-size: 0.85rem; line-height: 1.2; flex-shrink: 0;">${index + 1}</span>
+              <div style="font-size: 0.9rem; line-height: 1.35; color: #1e293b; font-weight: 500;">${qText}</div>
+            </div>
+            <div class="answer" id="${cardId}" style="display: none; margin-top: 8px; padding: 8px 10px; background: #f8fafc; border-left: 3px solid #3b82f6; border-radius: 4px; font-size: 0.85rem; line-height: 1.35; color: #1e3a8a; font-weight: 600;">${aText}</div>
           </div>
         `;
     });

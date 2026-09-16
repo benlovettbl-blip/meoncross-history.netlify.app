@@ -2702,8 +2702,6 @@ export const unitData = {
           text: '**The Palestinian Nakba & The Creation of UNRWA (1948–1949):** The 1948–49 war resulted in what Palestinians mourn as the **Nakba** ("Catastrophe"). Between 700,000 and 750,000 Arab Palestinians—over half of the country’s indigenous Arab population—were expelled or fled from their ancestral homes and villages. Fleeing in panic from psychological terror, wartime atrocities like the Deir Yassin massacre, and organized expulsions under military operations like Plan Dalet, the refugees were scattered into squalid, overcrowded tent encampments in the Gaza Strip (controlled by Egypt), the West Bank (annexed by Jordan), Lebanon, Syria, and Jordan. In December 1948, the UN General Assembly passed Resolution 194, asserting that refugees wishing to return to their homes and live at peace with their neighbors should be permitted to do so at the earliest practicable date, or compensated for lost property. Israel adamantly rejected Resolution 194, arguing that allowing a hostile Arab population to return would destroy the Jewish character of the state. To avert humanitarian catastrophe, the UN created **UNRWA** (the United Nations Relief and Works Agency for Palestine Refugees in the Near East) in December 1949 under Resolution 302, which took over the provision of essential rations, medical care, and schooling.',
           level_4:
             "The signing of separate Armistice Agreements between Israel and its Arab neighbors (Egypt in February, Lebanon in March, Transjordan in April, and Syria in July 1949) formally ended the military hostilities of the first Arab-Israeli War but left a highly volatile political landscape. Rather than the 55% of mandate Palestine allocated under the 1947 UN Partition Plan, Israel's military victory secured control over 75% to 79% of the territory, including the fertile coastal plains, the Galilee, the Negev Desert, and a secure corridor to West Jerusalem.",
-          image: '/units/cme_new/assets/cme_tel_aviv_yafo__997008136796005171_.jpg',
-          caption: 'Israeli soldiers in combat during the 1948 Arab-Israeli War.',
         },
         {
           text: '**The Disintegration of the Proposed Arab State:** The remaining portions of mandate Palestine were occupied by neighboring Arab states, entirely preventing the creation of an independent Palestinian Arab state. The West Bank and East Jerusalem were occupied and subsequently annexed by King Abdullah of Transjordan, a unilateral move designed to expand his Hashemite kingdom that was widely condemned as illegal by the rest of the Arab world. Meanwhile, the Gaza Strip—a narrow coastal territory crowded with displaced refugees—was placed under the military and administrative control of Egypt. Jerusalem itself was left deeply divided, with barbed wire, concrete walls, and military checkpoints separating Israeli-controlled West Jerusalem from Jordanian-controlled East Jerusalem.',
@@ -2728,13 +2726,13 @@ export const unitData = {
             "For Palestinian Arabs, the immediate aftermath of the war was a tragedy of historic proportions, remembered as the Nakba ('The Catastrophe'). UNRWA constructed and managed dozens of temporary refugee camps, providing basic food rations, emergency tents, rudimentary healthcare, and elementary schooling.",
           source: {
             title: 'Source B: Palestinian Refugees Leaving Their Villages (1948 Nakba)',
-            src: '/images/cme_palestinian_refugees_1948.jpg',
+            src: '/images/cme_palestinian_refugees_leaving_gaza.webp',
             caption:
               'Authentic Historical Photograph: Palestinian families wading through coastal waters carrying trunks and possessions as they flee the fighting during the 1948 Nakba.',
             question:
               'Study Source B. What does this photograph reveal about the suddenness of the Palestinian flight and the immense humanitarian crisis created across the region?',
             model_answer:
-              'Source B highlights the abrupt and desperate nature of the flight, showing families carrying meager possessions on their backs and donkeys along dusty roads. Over 700,000 Palestinians fled or were forcibly expelled from their ancestral homes, leaving behind possessions, land, and communities. The photograph reveals the human reality of the Nakba, which transformed the majority of the indigenous Palestinian population into stateless refugees living in makeshift tent camps across the region.',
+              'Source B highlights the abrupt and desperate nature of the flight, showing Palestinian men and boys wading through coastal waters carrying heavy wooden trunks and personal possessions on their shoulders, with hundreds more refugees lining the shore. Over 700,000 Palestinians fled or were forcibly expelled from their homes during the 1948 Nakba, leaving behind possessions, land, and communities. The photograph captures the immediate, perilous physical reality of displacement as families sought safety along coastal routes, transforming the majority of the Arab population into stateless refugees dependent on emergency aid and UNRWA camps.',
           },
         },
         {
@@ -2805,7 +2803,7 @@ export const unitData = {
             'Egypt closed the internationally vital Suez Canal to all Israeli ships and systematically searched neutral vessels, confiscating any cargo purchased at Israeli ports or bound for Israel’s armed forces. These displaced refugees launched cross-border attacks into Israel to sabotage infrastructure, steal livestock, and kill Jewish civilians.',
           source: {
             title: 'Source D: Maritime Chokepoints & The Straits of Tiran Blockade',
-            src: '/units/cme_new/assets/palestine_1949_map.png',
+            src: '/images/cme_sinai_peninsula_map.jpg',
             caption:
               'Topographical map of the Sinai Peninsula, highlighting the narrow Straits of Tiran and the entrance to the Gulf of Aqaba, which Egypt blockaded against Israeli shipping in the 1950s.',
             question:
@@ -4138,6 +4136,7 @@ export const unitData = {
           text: '**The Rise of Gamal Abdel Nasser & Pan-Arab Nationalism:** The fragile status quo established by the 1949 armistice was permanently shattered by political upheavals inside Egypt. In July 1952, a group of nationalist army officers known as the "Free Officers Movement" overthrew Egypt\'s corrupt, pro-Western monarch, King Farouk. By 1954, the charismatic and fiercely anti-imperialist Colonel Gamal Abdel Nasser emerged as the undisputed President of Egypt. Nasser quickly positioned himself as the champion of Pan-Arabism—a powerful political ideology aimed at uniting Arab nations to throw off Western colonial influence, secure Arab dignity, and avenge the humiliating 1948 defeat by Israel.',
           level_4:
             'The fragile status quo established by the 1949 armistice was permanently shattered by political upheavals inside Egypt. Nasser quickly positioned himself as the champion of Pan-Arabism—a powerful political ideology aimed at uniting Arab nations to throw off Western colonial influence, secure Arab dignity, and avenge the humiliating 1948 defeat by Israel.',
+          image: '/images/cme_nasser_1956.jpg',
         },
         {
           text: '**Operation Black Arrow (February 1955) & The Czech Arms Deal:** In February 1955, the simmering border tensions erupted into a strategic turning point. In response to recurring Fedayeen infiltrations, Israeli paratroopers commanded by Ariel Sharon launched **Operation Black Arrow**, an aggressive raid on an Egyptian military garrison in Gaza. The raid was a military success for Israel but a catastrophic humiliation for Egypt, leaving 37 Egyptian soldiers and 2 civilians dead. Nasser realized that the Egyptian armed forces were hopelessly obsolete and unable to defend their territory. When Western nations refused to sell Egypt modern weapons without demanding that Egypt join anti-Soviet military pacts, Nasser made a revolutionary geopolitical maneuver. In September 1955, Nasser announced the **Czech Arms Deal**: Egypt purchased $250 million worth of state-of-the-art Soviet hardware via Czechoslovakia, including 200 MiG-15 jet fighters, 50 Ilyushin bombers, and 300 modern T-34 and JS-3 heavy tanks. The Czech arms deal shattered the Western arms monopoly in the Middle East and triggered sheer panic in Israel, which now faced an Arab neighbor equipped with supersonic Soviet jet aircraft.',
@@ -14608,3 +14607,4 @@ export const unitData = {
     },
   ],
 };
+export default unitData;

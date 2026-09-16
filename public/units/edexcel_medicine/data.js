@@ -2856,8 +2856,7 @@ export const unitData = {
             "Compare this drawing to the medieval 'Zodiac Man'. How was this astonishing level of anatomical detail achieved, and why was it so dangerous to discover?",
         },
         {
-          source:
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Leonardo_da_Vinci_-_RCIN_919126%2C_v%2C_A_sketch_of_the_liver%2C_heart_and_kidneys_c._1515-16.jpg/500px-Leonardo_da_Vinci_-_RCIN_919126%2C_v%2C_A_sketch_of_the_liver%2C_heart_and_kidneys_c._1515-16.jpg',
+          source: '/images/da_vinci_skull.jpg',
           title: 'Da Vinci Anatomical Sketch',
           caption: 'A detailed sketch of the human skull and spine by Leonardo da Vinci.',
           think_wonder:

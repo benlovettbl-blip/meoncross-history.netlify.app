@@ -22,6 +22,8 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT_DIR = path.join(__dirname, '..', '..', '..');
+const USA_DEEP_CASES = require(path.join(__dirname, 'usa_deep_cases.cjs'));
+const USA_FORENSIC_METRICS = require(path.join(__dirname, 'usa_forensic_metrics.cjs'));
 
 function getImageDataUri(imgPath) {
   if (!imgPath) return '';
@@ -784,13 +786,81 @@ function renderPage3() {
         </div>
 
         <!-- Examiner Synoptic Takeaway Box -->
-        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 7px 10px; background: #fafafa;">
-          <div style="font-size: 9.8pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 2px;">
+        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 6px 9px; background: #fafafa; margin-bottom: 7px;">
+          <div style="font-size: 9.2pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 2px;">
             Examiner Synoptic Takeaway: The Collision of Domestic Reform and Foreign Quagmire
           </div>
-          <p style="margin: 0; font-size: 9.0pt; line-height: 1.34; color: #000000;">
+          <p style="margin: 0; font-size: 8.4pt; line-height: 1.30; color: #000000;">
             Notice the profound historical interconnection across the 21-year period: (1) <strong>The Great Society Diverted:</strong> President Johnson’s ambition to eliminate poverty and racial injustice was starved of federal funding by the spiraling costs of the Vietnam War ($167 billion). (2) <strong>Disillusionment and Radicalisation:</strong> The slow pace of economic equality in northern ghettos, combined with the disproportionate drafting of working-class and Black soldiers in Vietnam, fractured the non-violent consensus of 1963 into Black Power militancy and anti-war student radicalism. (3) <strong>The Imperial Presidency Checked:</strong> The Gulf of Tonkin Resolution gave the White House unchecked war-making powers in 1964; by 1973, military defeat and public outrage forced Congress to pass the War Powers Act, fundamentally reasserting constitutional limits on executive power.
           </p>
+        </div>
+
+        <!-- Master 4-Tier Synoptic Timeline Grid (1954–1975) -->
+        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 6px 9px; background: #ffffff;">
+          <div style="font-size: 9.0pt; font-weight: 900; text-transform: uppercase; color: #000000; border-bottom: 1.2px solid #000000; padding-bottom: 2px; margin-bottom: 5px; display: flex; justify-content: space-between;">
+            <span>★ Master 4-Tier Synoptic Timeline Grid &bull; Core Historical Tracks (1954–1975)</span>
+            <span style="font-size: 7.8pt; color: #475569;">Longitudinal Specification Anchors</span>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 5px;">
+            
+            <!-- Track 1: Supreme Court Decisions & Legal Benchmarks -->
+            <div style="background: #f8fafc; border: 1.2px solid #000000; border-radius: 2px; padding: 4px 7px;">
+              <div style="font-size: 8.0pt; font-weight: 800; text-transform: uppercase; color: #000000; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 3px;">
+                Track 1 &bull; Judicial Precedents &amp; Supreme Court Rulings
+              </div>
+              <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; font-size: 7.6pt; line-height: 1.22; color: #000000;">
+                <div><strong>May 1954 &bull; Brown v. Board:</strong> Unanimous 9–0 Warren Court strikes down "separate but equal" under 14th Amendment.</div>
+                <div><strong>Nov 1956 &bull; Browder v. Gayle:</strong> Affirms district court ruling that bus segregation in Montgomery violates federal constitution.</div>
+                <div><strong>Dec 1960 &bull; Boynton v. Virginia:</strong> Outlaws racial segregation in interstate bus terminals, inspiring 1961 Freedom Rides.</div>
+                <div><strong>Jun 1967 &bull; Loving v. Virginia:</strong> Strikes down state anti-miscegenation laws banning interracial marriage as unconstitutional.</div>
+                <div><strong>Apr 1971 &bull; Swann v. Charlotte:</strong> Upholds court-ordered busing of students to achieve racial desegregation in southern districts.</div>
+              </div>
+            </div>
+
+            <!-- Track 2: Federal Legislation & Executive Powers -->
+            <div style="background: #f8fafc; border: 1.2px solid #000000; border-radius: 2px; padding: 4px 7px;">
+              <div style="font-size: 8.0pt; font-weight: 800; text-transform: uppercase; color: #000000; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 3px;">
+                Track 2 &bull; Federal Civil Rights Statutes &amp; Executive Powers
+              </div>
+              <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; font-size: 7.6pt; line-height: 1.22; color: #000000;">
+                <div><strong>Sep 1957 &bull; Civil Rights Act:</strong> First since 1875; creates Civil Rights Commission and Civil Rights Division in Justice Dept.</div>
+                <div><strong>Jul 1964 &bull; Civil Rights Act:</strong> Breaks 83-day filibuster; outlaws discrimination in public facilities and workplace (Title VII).</div>
+                <div><strong>Aug 1965 &bull; Voting Rights Act:</strong> Suspends literacy tests; sends federal examiners south; registers 250,000 Black voters in 6 months.</div>
+                <div><strong>Apr 1968 &bull; Fair Housing Act:</strong> Prohibits discrimination in the sale or rental of housing; passed after MLK assassination.</div>
+                <div><strong>Nov 1973 &bull; War Powers Act:</strong> Congress overrides Nixon's veto; reasserts 60-day limit on presidential military deployments.</div>
+              </div>
+            </div>
+
+            <!-- Track 3: Vietnam War Military Escalations -->
+            <div style="background: #f8fafc; border: 1.2px solid #000000; border-radius: 2px; padding: 4px 7px;">
+              <div style="font-size: 8.0pt; font-weight: 800; text-transform: uppercase; color: #000000; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 3px;">
+                Track 3 &bull; Vietnam War Military Escalations &amp; Combat Operations
+              </div>
+              <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; font-size: 7.6pt; line-height: 1.22; color: #000000;">
+                <div><strong>May 1954 &bull; Dien Bien Phu:</strong> French defeat leads to Geneva Accords partition at 17th parallel; US backs Diem in South.</div>
+                <div><strong>Aug 1964 &bull; Tonkin Resolution:</strong> Congress grants LBJ unlimited authority to repel attacks; triggers massive US combat deployment.</div>
+                <div><strong>Mar 1965 &bull; Rolling Thunder:</strong> Sustained 3-year air bombing blitz; first 3,500 ground Marines land ashore at Da Nang.</div>
+                <div><strong>Jan 1968 &bull; Tet Offensive:</strong> 84,000 VC/NVA strike 100+ cities; US Embassy breached; proves war is an unwinnable stalemate.</div>
+                <div><strong>Dec 1972 &bull; Linebacker II:</strong> 11-day "Christmas Bombings" drop 20,000 tons of bombs on Hanoi/Haiphong to force peace terms.</div>
+              </div>
+            </div>
+
+            <!-- Track 4: Anti-War Movement & Domestic Flashpoints -->
+            <div style="background: #f8fafc; border: 1.2px solid #000000; border-radius: 2px; padding: 4px 7px;">
+              <div style="font-size: 8.0pt; font-weight: 800; text-transform: uppercase; color: #000000; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 3px;">
+                Track 4 &bull; Anti-War Movement, Media Disillusionment &amp; Domestic Crises
+              </div>
+              <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; font-size: 7.6pt; line-height: 1.22; color: #000000;">
+                <div><strong>Mar 1965 &bull; Michigan Teach-In:</strong> First campus anti-war teach-in; kicks off SDS national student protest movement across 100+ colleges.</div>
+                <div><strong>Apr 1967 &bull; Beyond Vietnam:</strong> King breaks with LBJ at Riverside Church, condemning war as "enemy of the poor" and imperialist.</div>
+                <div><strong>Aug 1968 &bull; Chicago DNC:</strong> Police battle anti-war demonstrators outside convention hall; televised chant: "The whole world is watching!"</div>
+                <div><strong>Nov 1969 &bull; Washington Moratorium:</strong> 500,000 rally in DC; My Lai Massacre exposed by Seymour Hersh, shocking moral consensus.</div>
+                <div><strong>May 1970 &bull; Kent State Shootings:</strong> Ohio National Guard kills 4 students protesting Cambodia invasion; 450+ colleges strike.</div>
+              </div>
+            </div>
+
+          </div>
         </div>
 
       </div>
@@ -1099,23 +1169,61 @@ function renderSpreadLeft(spread, pageNum) {
 
 function renderSpreadRight(spread, pageNum) {
   const right = spread.right;
-  const q = right.question;
-  const isEval = q.typeHeader && q.typeHeader.includes('Q3(d)');
+  const cases = right.deepCases || USA_DEEP_CASES[spread.id] || [];
 
-  const wordsHtml = right.wordBank
+  const casesHtml = cases
     .map(
-      (item) => `
-    <div><span class="wb-pill">${item.term}</span> <span style="font-size: 8.2pt; color: #000000; line-height: 1.26;">${formatMd(item.def)}</span></div>
+      (c) => `
+    <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff; display: flex; flex-direction: column; justify-content: flex-start; gap: 2px;">
+      <div style="font-size: 9.2pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 2px; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px;">
+        ${c.title}
+      </div>
+      <ul style="margin: 0; padding-left: 13px; font-size: 9.0pt; color: #000000; line-height: 1.32;">
+        ${c.points.map((p) => `<li style="margin-bottom: 2px;">${formatMd(p)}</li>`).join('')}
+      </ul>
+    </div>
   `,
     )
     .join('');
 
-  const pathwayStepsHtml = right.causalPathway.steps
+  const pathwaySteps =
+    right.causalPathway && right.causalPathway.steps
+      ? right.causalPathway.steps
+      : right.causalPathway || [];
+  const pathwayTitle =
+    right.causalPathway && right.causalPathway.title
+      ? right.causalPathway.title
+      : 'Causal Pathway: Key Historical Mechanisms';
+  const pathwayStepsHtml = pathwaySteps
     .map(
       (step) => `
     <div style="background: #ffffff; border: 1.2px solid #000000; border-radius: 2px; padding: 4px 6px; font-size: 8.0pt; line-height: 1.24; color: #000000;">
-      <div style="font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 1px; font-size: 8.0pt;">${step.stage}</div>
-      ${formatMd(step.desc)}
+      <strong style="color: #000000; display: block; font-size: 8.2pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px; text-transform: uppercase;">${step.stage}</strong>
+      ${formatMd(step.desc || step.text || '')}
+    </div>
+  `,
+    )
+    .join('');
+
+  const wordBankItems = right.masterWordBank || right.wordBank || [];
+  const wordsHtml = wordBankItems
+    .map(
+      (item) => `
+    <div style="font-size: 8.0pt; line-height: 1.24; color: #000000;">
+      <span class="wb-pill">${item.term}</span> ${formatMd(item.def)}
+    </div>
+  `,
+    )
+    .join('');
+
+  const metrics = USA_FORENSIC_METRICS[spread.id] || [];
+  const metricsHtml = metrics
+    .map(
+      (m) => `
+    <div style="background: #ffffff; border: 1.2px solid #000000; border-radius: 2px; padding: 3px 6px; display: flex; flex-direction: column; justify-content: flex-start;">
+      <div style="font-size: 10pt; font-weight: 900; color: #000000; line-height: 1.1;">${m.stat}</div>
+      <div style="font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #475569; margin: 1px 0 1px 0;">${m.label}</div>
+      <div style="font-size: 7.4pt; line-height: 1.20; color: #000000;">${formatMd(m.detail)}</div>
     </div>
   `,
     )
@@ -1128,109 +1236,63 @@ function renderSpreadRight(spread, pageNum) {
         <div class="page-header">
           <div>
             <span style="font-size: 8.5pt; font-weight: 800; text-transform: uppercase; color: #000000; letter-spacing: 0.5px;">
-              ${q.typeHeader || 'Exam Masterclass'}
+              ${spread.topic}
             </span>
             <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 13.5pt; font-weight: 900; color: #000000; margin: 2px 0 0 0; line-height: 1.15;">
-              ${q.title || 'Assessment Mastery & Examiner Benchmark'}
+              ${spread.title}: Forensic Analysis &amp; Word Bank
             </h2>
           </div>
           <div style="text-align: right;">
             <span style="font-size: 8.2pt; font-weight: 800; background: #000000; color: #ffffff; padding: 2px 7px; border-radius: 2px; text-transform: uppercase;">
-              Exam Technique
+              Deep Knowledge
             </span>
-            <div style="font-size: 8.0pt; color: #475569; font-weight: 700; margin-top: 2px;">${q.marksTime || 'Paper 3 Specification'}</div>
+            <div style="font-size: 8.0pt; color: #475569; font-weight: 700; margin-top: 2px;">Forensic Case Studies</div>
           </div>
         </div>
 
-        <!-- Exam Masterclass Card with Model Answer -->
-        <div style="background: #ffffff; border: 1.5px solid #000000; border-radius: 3px; padding: 5px 8px; margin-bottom: 5px;">
-          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
-            <span style="font-size: 9.2pt; font-weight: 800; color: #000000;">
-              Exam Task: ${q.stem}
-            </span>
-            <span style="font-size: 9.2pt; font-weight: 900; color: #000000; white-space: nowrap;">[${q.marks} Marks]</span>
-          </div>
-          
-          <!-- Planning Guide / Structural Framework -->
-          <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 4px 7px; margin-bottom: 4px; font-size: 8.3pt; line-height: 1.28; color: #000000;">
-            <strong style="color: #000000; text-transform: uppercase; font-size: 8.0pt; display: block; margin-bottom: 1px;">
-              ${q.planningGuideTitle || 'Examiner Planning & Structural Framework:'}
-            </strong>
-            ${q.planningGuide}
-          </div>
-
-          <!-- Annotated Benchmark Model Answer -->
-          <div style="background: #fafafa; border: 1.2px solid #000000; border-radius: 2px; padding: 5px 8px; margin-bottom: 3px; font-size: 8.8pt; line-height: 1.31; color: #000000;">
-            <div style="display: flex; justify-content: space-between; margin-bottom: 2px;">
-              <strong style="text-transform: uppercase; font-size: 8.0pt; color: #000000;">★ Pearson Benchmark Model Answer (${q.levelTag || 'Full Marks'}):</strong>
-              <span style="font-size: 7.8pt; font-weight: 800; color: #000000;">${q.scoreTag || 'Level Benchmark'}</span>
-            </div>
-            <p style="margin: 0; font-style: italic;">
-              "${q.modelAnswer}"
-            </p>
-          </div>
-
-          <div style="font-size: 8.0pt; color: #000000; line-height: 1.23;">
-            <strong>Examiner Assessment Commentary:</strong> ${formatMd(q.examinerNote)}
-          </div>
+        <!-- Four Deep-Knowledge Forensic Case Studies (2x2 Grid, 3 Bullets each at 9.0pt) -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-bottom: 5px;">
+          ${casesHtml}
         </div>
 
-        <!-- Visual Causal Pathway -->
-        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 4px 7px; background: #fafafa; margin-bottom: 5px;">
-          <div style="font-size: 8.2pt; font-weight: 800; text-transform: uppercase; color: #000000; letter-spacing: 0.4px; margin-bottom: 2px; text-align: center; border-bottom: 1px solid #000000; padding-bottom: 2px;">
-            ${right.causalPathway.title}
+        <!-- Visual Causal Pathway (4 Connected Stages) -->
+        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 4px 7px; background: #f8fafc; margin-bottom: 5px;">
+          <div style="font-size: 8.0pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 2px; border-bottom: 1.2px solid #cbd5e1; padding-bottom: 1px; display: flex; justify-content: space-between;">
+            <span>${pathwayTitle}</span>
+            <span style="font-size: 7.8pt; color: #475569;">Cause &amp; Consequence Chain</span>
           </div>
-          <div style="display: grid; grid-template-columns: repeat(${right.causalPathway.steps.length}, 1fr); gap: 5px;">
+          <div style="display: grid; grid-template-columns: repeat(${pathwaySteps.length}, 1fr); gap: 4px;">
             ${pathwayStepsHtml}
           </div>
         </div>
 
-        <!-- Master GCSE Word Bank (12 Tagged Terms) -->
+        <!-- Master GCSE Specification Word Bank Box (12 terms, 3 columns) -->
         <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 4px 7px; background: #ffffff; margin-bottom: 5px;">
-          <div style="font-size: 8.2pt; font-weight: 800; text-transform: uppercase; color: #000000; letter-spacing: 0.4px; margin-bottom: 2px; border-bottom: 1px solid #000000; padding-bottom: 2px; display: flex; justify-content: space-between;">
-            <span>Master GCSE Specification Word Bank &bull; Essential Technical Vocabulary</span>
-            <span style="font-weight: 700; color: #475569;">12 Key Terms</span>
+          <div style="font-size: 8.0pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 2px; border-bottom: 1.2px solid #cbd5e1; padding-bottom: 1px; display: flex; justify-content: space-between;">
+            <span>★ GCSE Specification Word Bank &amp; Essential Historical Concepts</span>
+            <span style="color: #475569; font-size: 7.8pt;">12 Key Terms</span>
           </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px 7px; font-size: 8.2pt; line-height: 1.24; color: #000000;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px 7px;">
             ${wordsHtml}
           </div>
         </div>
 
-        <!-- Examiner Common Pitfall Warning -->
-        <div style="background: #f8fafc; border: 1.2px solid #000000; border-radius: 2px; padding: 3px 7px; font-size: 8.2pt; line-height: 1.24; color: #000000;">
-          <strong>⚠️ Examiner Warning (${q.pitfallCategory || 'Exam Technique Pitfalls'}):</strong> ${formatMd(q.pitfall)}
-        </div>
-
-        <!-- Examiner Mark Scheme Level Discriminators (Grade 7–9 Benchmark) -->
-        ${
-          !isEval
-            ? `
-        <div style="border: 1.2px solid #000000; border-radius: 2px; padding: 3px 6px; background: #f8fafc; margin-top: 4px; font-size: 7.6pt; line-height: 1.22; color: #000000;">
-          <div style="display: flex; justify-content: space-between; font-weight: 800; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">
-            <span>Edexcel Examiner Mark Scheme &bull; Level Discriminator Thresholds</span>
-            <span>Grade 7–9 Benchmark</span>
+        <!-- Forensic Empirical Metrics Strip (4 Quantitative Data Anchors) -->
+        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 4px 7px; background: #f8fafc;">
+          <div style="font-size: 8.0pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 2px; border-bottom: 1.2px solid #cbd5e1; padding-bottom: 1px; display: flex; justify-content: space-between;">
+            <span>⚡ Forensic Empirical Metrics &bull; Quantitative Data Anchors</span>
+            <span style="font-size: 7.6pt; color: #475569;">Level 4 Evidence Threshold</span>
           </div>
-          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px;">
-            <div><strong>Level 1 (Basic):</strong> Identifies simple points; generalized statements with minimal historical context.</div>
-            <div><strong>Level 2 (Descriptive):</strong> Narrative description; limited causal links; relies exclusively on provided stimulus.</div>
-            <div><strong>Level 3 (Explained):</strong> Analytical explanation; clear causal links; integrates factors beyond the stimulus prompts.</div>
-            <div><strong>Level 4 (Sustained):</strong> Multi-causal analysis; criteria-driven judgement; sophisticated historical knowledge.</div>
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px;">
+            ${metricsHtml}
           </div>
         </div>
-        `
-            : `
-        <div style="border: 1.2px solid #000000; border-radius: 2px; padding: 3px 6px; background: #f8fafc; margin-top: 3px; font-size: 7.5pt; display: flex; justify-content: space-between; align-items: center;">
-          <span><strong>Level 4 Essay Criteria [13–16m]:</strong> Sustained evaluation of BOTH interpretations against own knowledge + substantiated criteria conclusion.</span>
-          <span><strong>SPaG [+4m]:</strong> Grade 9 spelling, syntax &amp; technical vocabulary.</span>
-        </div>
-        `
-        }
 
       </div>
 
       <div class="page-footer">
         <span>Option 33: The USA, 1954–75: conflict at home and abroad</span>
-        <span>Assessment Mastery &bull; Page ${pageNum}</span>
+        <span>Forensic Analysis &amp; Word Bank &bull; Page ${pageNum}</span>
       </div>
     </div>
   `;
@@ -1245,39 +1307,39 @@ function renderPage36() {
             <span style="font-size: 8.5pt; font-weight: 800; text-transform: uppercase; color: #000000; letter-spacing: 0.5px;">
               Historiographical Perspectives &bull; Paper 3 Master Review
             </span>
-            <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 15pt; font-weight: 900; color: #000000; margin: 2px 0 0 0;">
+            <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 14pt; font-weight: 900; color: #000000; margin: 2px 0 0 0;">
               Master Historiographical Perspectives &amp; Grade 9 Synoptic Review
             </h2>
           </div>
-          <div style="font-size: 8.5pt; font-weight: 800; background: #000000; color: #ffffff; padding: 2px 8px; border-radius: 2px; text-transform: uppercase;">
+          <div style="font-size: 8.2pt; font-weight: 800; background: #000000; color: #ffffff; padding: 2px 8px; border-radius: 2px; text-transform: uppercase;">
             Historiography &bull; Page 36
           </div>
         </div>
 
         <!-- 1. Civil Rights Movement Debates -->
-        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 7px 10px; background: #ffffff; margin-bottom: 7px;">
-          <div style="font-size: 9.5pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 4px; border-bottom: 1.2px solid #000000; padding-bottom: 2px;">
+        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff; margin-bottom: 5px;">
+          <div style="font-size: 8.8pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 3px; border-bottom: 1.2px solid #000000; padding-bottom: 2px;">
             1. Civil Rights Movement Historiography: Competing Academic Interpretations
           </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; font-size: 8.2pt; line-height: 1.28; color: #000000;">
-            <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 5px 7px;">
-              <strong style="color: #000000; font-size: 8.5pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; font-size: 7.8pt; line-height: 1.24; color: #000000;">
+            <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 4px 6px;">
+              <strong style="color: #000000; font-size: 8.2pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">
                 Traditional / King-Centric
               </strong>
               <div>&bull; <strong>Core Thesis:</strong> Focuses on charismatic leadership of Martin Luther King Jr., moral non-violence, and federal executive partnership (JFK/LBJ).</div>
               <div>&bull; <strong>Turning Point:</strong> March on Washington (1963) and Selma (1965) forcing Congress to pass landmark civil rights legislation.</div>
               <div>&bull; <strong>Key Historians:</strong> David Garrow, Taylor Branch.</div>
             </div>
-            <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 5px 7px;">
-              <strong style="color: #000000; font-size: 8.5pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
+            <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 4px 6px;">
+              <strong style="color: #000000; font-size: 8.2pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">
                 Revisionist / Grassroots Movement
               </strong>
               <div>&bull; <strong>Core Thesis:</strong> Emphasises bottom-up local organizing by women, students, and local Black communities (Ella Baker, Fannie Lou Hamer, Jo Ann Robinson).</div>
               <div>&bull; <strong>Turning Point:</strong> Montgomery Women's Council, Greensboro sit-ins, and Mississippi Freedom Summer driving momentum before King arrived.</div>
               <div>&bull; <strong>Key Historians:</strong> Clayborne Carson, Charles Payne.</div>
             </div>
-            <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 5px 7px;">
-              <strong style="color: #000000; font-size: 8.5pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
+            <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 4px 6px;">
+              <strong style="color: #000000; font-size: 8.2pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">
                 Black Power / Armed Self-Defense
               </strong>
               <div>&bull; <strong>Core Thesis:</strong> Non-violence was effective only because the armed alternative (Malcolm X, Robert F. Williams, Black Panthers) threatened white authority.</div>
@@ -1288,29 +1350,29 @@ function renderPage36() {
         </div>
 
         <!-- 2. Vietnam War Historiography Debates -->
-        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 7px 10px; background: #ffffff; margin-bottom: 7px;">
-          <div style="font-size: 9.5pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 4px; border-bottom: 1.2px solid #000000; padding-bottom: 2px;">
+        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff; margin-bottom: 5px;">
+          <div style="font-size: 8.8pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 3px; border-bottom: 1.2px solid #000000; padding-bottom: 2px;">
             2. Vietnam War Historiography: Why Did the United States Fail?
           </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; font-size: 8.2pt; line-height: 1.28; color: #000000;">
-            <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 5px 7px;">
-              <strong style="color: #000000; font-size: 8.5pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; font-size: 7.8pt; line-height: 1.24; color: #000000;">
+            <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 4px 6px;">
+              <strong style="color: #000000; font-size: 8.2pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">
                 Orthodox / 'Quagmire' School
               </strong>
               <div>&bull; <strong>Core Thesis:</strong> The war was an unwinnable error from the outset. US policymakers misunderstood Vietnamese nationalism as monolithic communism.</div>
               <div>&bull; <strong>Failure Cause:</strong> Backing corrupt, illegitimate Saigon regimes and using futile conventional firepower against a resilient peasant guerrilla movement.</div>
               <div>&bull; <strong>Key Historians:</strong> David Halberstam, Stanley Karnow.</div>
             </div>
-            <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 5px 7px;">
-              <strong style="color: #000000; font-size: 8.5pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
+            <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 4px 6px;">
+              <strong style="color: #000000; font-size: 8.2pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">
                 Revisionist / 'Noble Cause' School
               </strong>
               <div>&bull; <strong>Core Thesis:</strong> The war was a morally justified defense of South Vietnam against aggressive Soviet and Chinese expansion.</div>
               <div>&bull; <strong>Failure Cause:</strong> The US military was undefeated in major battles (e.g. crushed Tet), but was betrayed by political micromanagement and media defeatism.</div>
               <div>&bull; <strong>Key Historians:</strong> Guenter Lewy, Harry Summers.</div>
             </div>
-            <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 5px 7px;">
-              <strong style="color: #000000; font-size: 8.5pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
+            <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 4px 6px;">
+              <strong style="color: #000000; font-size: 8.2pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">
                 Post-Revisionist / Internationalist
               </strong>
               <div>&bull; <strong>Core Thesis:</strong> Synthesises archival records from Hanoi, Moscow, and Beijing showing that North Vietnam was determined to reunify regardless of cost.</div>
@@ -1320,22 +1382,82 @@ function renderPage36() {
           </div>
         </div>
 
-        <!-- 3. Grade 9 Final Pre-Exam Checklist -->
-        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 7px 10px; background: #fafafa;">
-          <div style="font-size: 9.0pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 3px; border-bottom: 1px solid #000000; padding-bottom: 2px;">
-            Grade 9 Final Pre-Exam Checklist: Can You Execute These Paper 3 Skills?
+        <!-- 3. Master Historiographical Clash Grid (4 Core GCSE Debates) -->
+        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff; margin-bottom: 5px;">
+          <div style="font-size: 8.8pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 3px; border-bottom: 1.2px solid #000000; padding-bottom: 2px; display: flex; justify-content: space-between;">
+            <span>3. Master Historiographical Clash Grid &bull; 4 Core GCSE Paper 3 Debates</span>
+            <span style="font-size: 7.8pt; color: #475569;">Interpretative Synthesis &bull; Section B Mastery</span>
           </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 8.2pt; line-height: 1.28; color: #000000;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 5px; font-size: 7.6pt; line-height: 1.22; color: #000000;">
+            
+            <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 4px 5px;">
+              <strong style="display: block; font-size: 7.9pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px; text-transform: uppercase;">
+                Debate 1: Civil Rights Acts
+              </strong>
+              <div>&bull; <strong>Orthodox:</strong> Presidential moral leadership (LBJ/JFK) and King's oratory forced historic bipartisan reform.</div>
+              <div>&bull; <strong>Revisionist:</strong> Bottom-up grassroots courage (Freedom Riders, SNCC, Selma) shamed Washington into passing legislation.</div>
+              <div>&bull; <strong>Post-Rev:</strong> Cold War embarrassment: Soviet propaganda highlighting US racism forced State Dept to press for reform.</div>
+            </div>
+
+            <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 4px 5px;">
+              <strong style="display: block; font-size: 7.9pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px; text-transform: uppercase;">
+                Debate 2: Black Power &amp; Riots
+              </strong>
+              <div>&bull; <strong>Orthodox:</strong> Destructive radicalism alienating white moderates, stalling progress and triggering conservative backlash.</div>
+              <div>&bull; <strong>Revisionist:</strong> Inevitable rebellion against northern ghetto poverty, systemic police brutality, and economic apartheid.</div>
+              <div>&bull; <strong>Post-Rev:</strong> Radical flank effect: armed posture and clinics forced white elites to concede reforms to King's moderates.</div>
+            </div>
+
+            <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 4px 5px;">
+              <strong style="display: block; font-size: 7.9pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px; text-transform: uppercase;">
+                Debate 3: Why US Failed in Vietnam
+              </strong>
+              <div>&bull; <strong>Orthodox:</strong> Unwinnable quagmire: corrupt Saigon regime could never defeat resilient Vietnamese peasant nationalism.</div>
+              <div>&bull; <strong>Revisionist:</strong> Military was undefeated in major battles (crushed Tet), but stabbed in back by media defeatism and politicians.</div>
+              <div>&bull; <strong>Post-Rev:</strong> Hanoi was implacable; US was trapped—unable to invade North without provoking Chinese/Soviet nuclear escalation.</div>
+            </div>
+
+            <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 4px 5px;">
+              <strong style="display: block; font-size: 7.9pt; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px; text-transform: uppercase;">
+                Debate 4: Anti-War Movement
+              </strong>
+              <div>&bull; <strong>Orthodox:</strong> Crucial moral force that mobilized public opinion, created the credibility gap, and forced US withdrawal.</div>
+              <div>&bull; <strong>Revisionist:</strong> Counterproductive fringe that hardened conservative Silent Majority resolve and prolonged the conflict.</div>
+              <div>&bull; <strong>Post-Rev:</strong> Secondary factor: soaring casualty body counts, economic inflation, and draft inequities mattered far more.</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 4. Master Synoptic Knowledge Checklist -->
+        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 5px 8px; background: #fafafa; margin-bottom: 5px;">
+          <div style="font-size: 8.8pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 2px; border-bottom: 1px solid #000000; padding-bottom: 1px;">
+            4. Master Synoptic Knowledge Checklist: Can You Explain These 6 Core Historical Dynamics?
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-size: 7.8pt; line-height: 1.24; color: #000000;">
             <div>
-              <div>&bull; <strong>Q1 Inference (4m):</strong> Can you give 2 inferences + 2 direct quotes in under 6 minutes without analyzing provenance?</div>
-              <div>&bull; <strong>Q2 Causation (12m):</strong> Can you write 3 P-E-E paragraphs with at least one piece of own knowledge beyond the stimulus?</div>
-              <div>&bull; <strong>Q3(a) Utility (8m):</strong> Can you evaluate Content, Provenance (NOP), and Context for both Source B and Source C?</div>
+              <div>&bull; <strong>Legal vs Direct Action:</strong> Contrast NAACP court challenges (*Brown*, *Sweatt*) with direct action of SCLC, CORE, and SNCC.</div>
+              <div>&bull; <strong>Non-Violence vs Black Power:</strong> Explain why ghetto poverty and police brutality fueled the radical shift to Black self-defence.</div>
+              <div>&bull; <strong>The Domino Mechanism:</strong> How Cold War Containment doctrine escalated US commitment from advisers to 536,000 troops.</div>
             </div>
             <div>
-              <div>&bull; <strong>Q3(b) &amp; Q3(c) Views (8m):</strong> Can you clearly state the difference in view and explain why (matching to sources/emphasis)?</div>
-              <div>&bull; <strong>Q3(d) Evaluative Essay (16+4m):</strong> Can you evaluate both interpretations and substantiate a criteria-led final verdict?</div>
-              <div>&bull; <strong>Key Dates:</strong> 1954 Brown, 1957 Little Rock, 1963 Birmingham, 1964 Tonkin/CRA, 1968 Tet, 1970 Kent State, 1973 Paris.</div>
+              <div>&bull; <strong>Asymmetric Guerrilla Mismatch:</strong> Why US firepower, defoliation, and air strikes could not defeat Vietcong insurgency.</div>
+              <div>&bull; <strong>Home Front Disillusionment:</strong> How television, draft inequities, My Lai, and Kent State created the unbridgeable Credibility Gap.</div>
+              <div>&bull; <strong>1954–75 Turning Points:</strong> 1954 Brown, 1955 Montgomery, 1964 CRA/Tonkin, 1965 VRA, 1968 Tet, 1970 Kent State, 1973 Paris Accords.</div>
             </div>
+          </div>
+        </div>
+
+        <!-- 5. Examiner Guidance: Grade 9 Evaluative Essay Benchmark (Q3d [16+4m]) -->
+        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 4px 8px; background: #ffffff;">
+          <div style="font-size: 8.4pt; font-weight: 800; text-transform: uppercase; color: #000000; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px; display: flex; justify-content: space-between;">
+            <span>★ Examiner Guidance &bull; Grade 9 Evaluative Essay Criteria Benchmark (Q3(d) [16+4m])</span>
+            <span style="color: #475569; font-size: 7.6pt;">Section B Threshold</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; font-size: 7.6pt; line-height: 1.20; color: #000000;">
+            <div><strong>1. Balanced Evaluation:</strong> Evaluate both provided Interpretations using precise own knowledge beyond the stimulus (minimum 3 named facts per view).</div>
+            <div><strong>2. Contextual Weighting:</strong> Explain WHY historians differ (varying source selections, focus on political elites vs grassroots, or opening of new archives).</div>
+            <div><strong>3. Criteria-Led Judgement:</strong> Formulate a sustained, criteria-driven verdict weighing short-term vs long-term impact rather than a simple summary.</div>
           </div>
         </div>
 

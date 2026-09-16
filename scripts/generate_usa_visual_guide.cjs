@@ -22,8 +22,20 @@ const puppeteer = require('puppeteer');
 
 const ROOT_DIR = path.join(__dirname, '..');
 const HTML_OUT_UNIT = path.join(ROOT_DIR, 'public', 'units', 'usa', 'visual_revision_guide.html');
-const PDF_OUT_UNIT = path.join(ROOT_DIR, 'public', 'units', 'usa', 'usa_visual_revision_guide.pdf');
-const PDF_OUT_GLOBAL = path.join(ROOT_DIR, 'public', 'pdfs', 'usa_visual_revision_guide.pdf');
+const PDF_OUT_UNIT = path.join(
+  ROOT_DIR,
+  'public',
+  'units',
+  'usa',
+  'edexcel_usa_visual_revision_and_exam_guide.pdf',
+);
+const PDF_OUT_GLOBAL_CANONICAL = path.join(
+  ROOT_DIR,
+  'public',
+  'pdfs',
+  'edexcel_usa_visual_revision_and_exam_guide.pdf',
+);
+const PDF_OUT_GLOBAL_SHORT = path.join(ROOT_DIR, 'public', 'pdfs', 'usa_visual_revision_guide.pdf');
 const PDF_OUT_USA_SUBDIR = path.join(
   ROOT_DIR,
   'public',
@@ -68,12 +80,12 @@ const {
   renderSpreadLeft,
   renderSpreadRight,
   renderPage36,
-} = require(path.join(__dirname, 'visual_guides', 'usa', 'usa_renderers.cjs'));
+} = require('./visual_guides/usa/usa_renderers.cjs');
 
-const kt1 = require(path.join(__dirname, 'visual_guides', 'usa', 'usa_spreads_kt1.cjs'));
-const kt2 = require(path.join(__dirname, 'visual_guides', 'usa', 'usa_spreads_kt2.cjs'));
-const kt3 = require(path.join(__dirname, 'visual_guides', 'usa', 'usa_spreads_kt3.cjs'));
-const kt4 = require(path.join(__dirname, 'visual_guides', 'usa', 'usa_spreads_kt4.cjs'));
+const kt1 = require('./visual_guides/usa/usa_spreads_kt1.cjs');
+const kt2 = require('./visual_guides/usa/usa_spreads_kt2.cjs');
+const kt3 = require('./visual_guides/usa/usa_spreads_kt3.cjs');
+const kt4 = require('./visual_guides/usa/usa_spreads_kt4.cjs');
 
 const ALL_SPREADS = [...kt1, ...kt2, ...kt3, ...kt4];
 
@@ -130,7 +142,7 @@ async function run() {
   [
     path.dirname(HTML_OUT_UNIT),
     path.dirname(PDF_OUT_UNIT),
-    path.dirname(PDF_OUT_GLOBAL),
+    path.dirname(PDF_OUT_GLOBAL_CANONICAL),
     path.dirname(PDF_OUT_USA_SUBDIR),
   ].forEach((dir) => {
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
@@ -168,16 +180,14 @@ async function run() {
   });
 
   console.log(`📐 Page layout report: Total pages rendered = ${pageReport.length}`);
-  pageReport.forEach((p) => {
-    const status =
-      p.overflow > 0
-        ? `⚠️ OVERFLOW (+${p.overflow}px)`
-        : `✅ OK (${1123 - p.scrollHeight}px spare)`;
-    console.log(`   - Page ${p.page} (${p.id}): ${p.scrollHeight}px / 1123px -> ${status}`);
-  });
   const overflows = pageReport.filter((p) => p.overflow > 0);
   if (overflows.length > 0) {
-    console.warn(`⚠️ WARNING: Found ${overflows.length} layout overflows (> 1123px)!`);
+    console.warn(`⚠️ WARNING: Found ${overflows.length} layout overflows (> 1123px):`);
+    overflows.forEach((p) =>
+      console.warn(
+        `   - Page ${p.page} (${p.id}): ${p.scrollHeight}px (overflows by ${p.overflow}px)`,
+      ),
+    );
   } else {
     console.log(
       '✅ Automated Overflow Check: All 36 pages fit cleanly within 1123px bounds (0 overflows)!',
@@ -198,8 +208,11 @@ async function run() {
   await browser.close();
 
   // Sync to public/pdfs/ mirrors
-  fs.copyFileSync(PDF_OUT_UNIT, PDF_OUT_GLOBAL);
-  console.log(`📋 Synced PDF to public/pdfs/: ${PDF_OUT_GLOBAL}`);
+  fs.copyFileSync(PDF_OUT_UNIT, PDF_OUT_GLOBAL_CANONICAL);
+  console.log(`📋 Synced PDF to public/pdfs/: ${PDF_OUT_GLOBAL_CANONICAL}`);
+
+  fs.copyFileSync(PDF_OUT_UNIT, PDF_OUT_GLOBAL_SHORT);
+  console.log(`📋 Synced PDF to public/pdfs/ (short name): ${PDF_OUT_GLOBAL_SHORT}`);
 
   fs.copyFileSync(PDF_OUT_UNIT, PDF_OUT_USA_SUBDIR);
   console.log(`📋 Synced PDF to public/pdfs/usa/: ${PDF_OUT_USA_SUBDIR}`);
@@ -209,12 +222,12 @@ async function run() {
     [GDRIVE_DIR_1, GDRIVE_DIR_2].forEach((driveDir) => {
       try {
         if (!fs.existsSync(driveDir)) fs.mkdirSync(driveDir, { recursive: true });
-        const target1 = path.join(driveDir, 'usa_visual_revision_guide.pdf');
+        const target1 = path.join(driveDir, 'edexcel_usa_visual_revision_and_exam_guide.pdf');
         const target2 = path.join(driveDir, 'USA 1954-75 Visual Revision & Exam Guide.pdf');
         fs.copyFileSync(PDF_OUT_UNIT, target1);
         fs.copyFileSync(PDF_OUT_UNIT, target2);
         console.log(`\n☁️ Syncing freshly compiled guide to Google Drive: ${driveDir}`);
-        console.log('   ✅ Synced master PDF to Google Drive.');
+        console.log('   ✅ Synced master PDF (both short and canonical names) to Google Drive.');
       } catch (err) {
         console.warn(`⚠️ Could not sync to Google Drive (${driveDir}): ${err.message}`);
       }

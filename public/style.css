@@ -2613,6 +2613,23 @@ img::after {
   margin-bottom: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
+.do-now-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+}
+.do-now-grid .do-now-card {
+  margin-bottom: 0 !important;
+  padding: 12px 14px;
+  border-radius: 8px;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+.do-now-grid .do-now-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
 .do-now-card .answer {
   display: none;
   margin-top: 10px;
@@ -4193,4 +4210,73 @@ body.sen-mode .archival-source-box.reading-highlight {
   text-align: right;
   margin-right: 12px;
   user-select: none;
+}
+
+/* =============================================================================
+   WHITEBOARD PRESENTATION MODE (CLASSROOM PROJECTOR OPTIMIZATION)
+   ============================================================================= */
+body.whiteboard-mode-active .lesson-hero {
+  display: none !important;
+}
+
+body.whiteboard-mode-active #progress-container {
+  margin-bottom: 8px !important;
+}
+
+body.whiteboard-mode-active .sticky-lesson-header {
+  background: #0f172a !important;
+  border-bottom: 2px solid #0284c7 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
+}
+
+body.whiteboard-mode-active .sticky-lesson-title {
+  color: #f8fafc !important;
+}
+
+body.whiteboard-mode-active #content-area {
+  padding-top: 0 !important;
+}
+
+.btn-whiteboard-toggle {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1.5px solid #cbd5e1;
+  font-weight: 700;
+  padding: 6px 12px;
+  font-size: 0.88rem;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.btn-whiteboard-toggle:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+body.whiteboard-mode-active .btn-whiteboard-toggle,
+.btn-whiteboard-toggle.active {
+  background: #0284c7 !important;
+  color: #ffffff !important;
+  border: 1.5px solid #38bdf8 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 0 12px rgba(2, 132, 199, 0.4) !important;
+}
+
+/* Flexi Timer Preset Pills */
+.btn-timer-pill {
+  transition: all 0.15s ease;
+}
+.btn-timer-pill:hover {
+  background: #e2e8f0 !important;
+  border-color: #94a3b8 !important;
+}
+.btn-timer-pill.active-preset {
+  background: #e0f2fe !important;
+  border-color: #0284c7 !important;
+  color: #0369a1 !important;
 }

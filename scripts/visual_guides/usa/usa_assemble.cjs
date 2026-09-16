@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const USA_SCRIPT_PATH = path.join(__dirname, '..', 'scripts', 'generate_usa_visual_guide.cjs');
+const USA_SCRIPT_PATH = path.join(__dirname, '..', '..', 'generate_usa_visual_guide.cjs');
 
 const code = `/**
  * generate_usa_visual_guide.cjs
@@ -67,12 +67,12 @@ const {
   renderSpreadLeft,
   renderSpreadRight,
   renderPage36,
-} = require('../scratch/usa_renderers.cjs');
+} = require('./visual_guides/usa/usa_renderers.cjs');
 
-const kt1 = require('../scratch/usa_spreads_kt1.cjs');
-const kt2 = require('../scratch/usa_spreads_kt2.cjs');
-const kt3 = require('../scratch/usa_spreads_kt3.cjs');
-const kt4 = require('../scratch/usa_spreads_kt4.cjs');
+const kt1 = require('./visual_guides/usa/usa_spreads_kt1.cjs');
+const kt2 = require('./visual_guides/usa/usa_spreads_kt2.cjs');
+const kt3 = require('./visual_guides/usa/usa_spreads_kt3.cjs');
+const kt4 = require('./visual_guides/usa/usa_spreads_kt4.cjs');
 
 const ALL_SPREADS = [...kt1, ...kt2, ...kt3, ...kt4];
 
