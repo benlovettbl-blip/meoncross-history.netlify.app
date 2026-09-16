@@ -6,8 +6,13 @@
   if (typeof window === 'undefined') return;
 
   function initTimer() {
-    // Avoid double injection
-    if (document.getElementById('digital-exam-timer-bar')) return;
+    // Avoid double injection if invigilator-hud or digital-exam-timer-bar exists
+    if (
+      document.getElementById('digital-exam-timer-bar') ||
+      document.querySelector('.invigilator-hud') ||
+      document.getElementById('docked-invigilator-hud')
+    )
+      return;
 
     // Detect duration from document text or URL query
     const params = new URLSearchParams(window.location.search);

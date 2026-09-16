@@ -32,6 +32,8 @@
     }
 
     @media print {
+    .invigilator-hud { display: none !important; }
+
       body { background: white; }
       .page {
         margin: 0;
@@ -171,38 +173,44 @@
 </head>
 <body>
 
+  <!-- Top Docked Invigilator Toolbar (Interactive Screen Mode) -->
+  <div class="invigilator-hud no-print" style="position: sticky; top: 0; z-index: 9999; background: #000000; color: #ffffff; border-bottom: 2px solid #ffffff; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.4); font-family: 'Open Sans', Arial, sans-serif;">
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <div>
+        <div style="font-size: 10px; font-weight: 800; letter-spacing: 1px; color: #9ca3af; text-transform: uppercase;">PEARSON EXAM CLOCK &bull; 1HI0/11</div>
+        <div id="mock-exam-clock" style="font-size: 24px; font-weight: 800; font-family: 'Courier New', Courier, monospace; color: #ffffff; line-height: 1.1;">01:20:00</div>
+      </div>
+      <div style="font-size: 12px; color: #d1d5db; border-left: 1px solid #374151; padding-left: 12px;">
+        <div><strong>Pacing:</strong> Sec A: 25m (Western Front) | Sec B: 55m (Thematic Study)</div>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+      <button type="button" id="mock-timer-toggle" onclick="toggleMockExamTimer('start')" style="background: #ffffff; color: #000000; border: 2px solid #ffffff; padding: 5px 14px; font-weight: 800; font-size: 12px; border-radius: 3px; cursor: pointer;">Start Clock</button>
+      <button type="button" id="mock-timer-pause" onclick="toggleMockExamTimer('pause')" style="background: #facc15; color: #000000; border: 2px solid #facc15; padding: 5px 12px; font-weight: 800; font-size: 12px; border-radius: 3px; cursor: pointer; display: none;">Pause</button>
+      <button type="button" id="mock-timer-reset" onclick="toggleMockExamTimer('reset')" style="background: transparent; color: #d1d5db; border: 1.5px solid #4b5563; padding: 5px 10px; font-weight: 700; font-size: 12px; border-radius: 3px; cursor: pointer;">Reset</button>
+      <button type="button" onclick="toggleMockExamTimer('add5')" style="background: transparent; color: #ffffff; border: 1.5px solid #6b7280; padding: 5px 8px; font-weight: 700; font-size: 12px; border-radius: 3px; cursor: pointer;" title="Add 5 Minutes Extra Time">+5m</button>
+      <button type="button" onclick="toggleMockExamTimer('add20')" style="background: transparent; color: #ffffff; border: 1.5px solid #6b7280; padding: 5px 8px; font-weight: 700; font-size: 12px; border-radius: 3px; cursor: pointer;" title="Add 20 Minutes (25% Access Arrangements)">+20m (25%)</button>
+      <button type="button" id="mock-timer-sound" onclick="toggleMockExamTimer('toggleSound')" style="background: transparent; color: #ffffff; border: 1.5px solid #6b7280; padding: 5px 8px; font-weight: 700; font-size: 12px; border-radius: 3px; cursor: pointer;">🔊 Sound</button>
+      <a id="mock-ms-link" href="mock_c_2026_predict_mark_scheme.html" target="_blank" style="background: #ffffff; color: #000000; border: 2px solid #000000; padding: 5px 12px; font-weight: 800; font-size: 12px; border-radius: 3px; text-decoration: none; display: inline-flex; align-items: center; margin-left: 6px;">Teacher Mark Scheme &rarr;</a>
+    </div>
+  </div>
+
+
   <!-- Cover Page -->
   <div class="page">
-    <div style="text-align: center; margin-bottom: 10px; font-weight: bold;">
-      Please check the examination details below before entering your candidate information
-    </div>
     
-    <div class="cover-box">
-      <div class="candidate-info">
-        <div style="flex: 2;">
-          <div>Candidate surname</div>
-          <div class="input-box" style="border-radius: 5px;"></div>
-        </div>
-        <div style="flex: 1;">
-          <div>Other names</div>
-          <div class="input-box" style="border-radius: 5px;"></div>
-        </div>
+    <!-- Official Pearson Examination Header (Minimal & Focused) -->
+    <div style="border: 2px solid #000; padding: 14px 18px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; background: #fff;">
+      <div>
+        <div style="font-size: 11px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: #000;">PEARSON EDEXCEL GCSE (9–1)</div>
+        <div style="font-size: 18px; font-weight: 900; color: #000; font-family: 'Open Sans', Arial, sans-serif;">History Practice Examination Paper</div>
       </div>
-      <div class="candidate-info">
-        <div style="flex: 1;">
-          <div>Centre Number</div>
-          <div style="display:flex; gap: 5px; margin-top:5px;">
-            <div class="input-box" style="flex:1;"></div><div class="input-box" style="flex:1;"></div><div class="input-box" style="flex:1;"></div><div class="input-box" style="flex:1;"></div><div class="input-box" style="flex:1;"></div>
-          </div>
-        </div>
-        <div style="flex: 1;">
-          <div>Candidate Number</div>
-          <div style="display:flex; gap: 5px; margin-top:5px;">
-            <div class="input-box" style="flex:1;"></div><div class="input-box" style="flex:1;"></div><div class="input-box" style="flex:1;"></div><div class="input-box" style="flex:1;"></div>
-          </div>
-        </div>
+      <div style="text-align: right;">
+        <div style="font-size: 11px; font-weight: 800; color: #555; text-transform: uppercase;">Paper Reference</div>
+        <div style="font-size: 20px; font-weight: 900; line-height: 1; color: #000;">1HI0/11</div>
       </div>
     </div>
+  
 
     <div class="exam-header">
       <h1>Pearson Edexcel GCSE (9–1)</h1>
@@ -232,7 +240,7 @@
       <h3>Instructions</h3>
       <ul>
         <li>Use <strong>black</strong> ink or ball-point pen.</li>
-        <li><strong>Fill in the boxes</strong> at the top of this page with your name, centre number and candidate number.</li>
+        
         <li>There are two sections in this question paper. Answer all parts of Questions 1 and 2 from Section A. From Section B, answer Questions 3 and 4 and then <strong>EITHER</strong> Question 5 <strong>OR</strong> Question 6.</li>
         <li>Answer the questions in the spaces provided – <em>there may be more space than you need.</em></li>
       </ul>

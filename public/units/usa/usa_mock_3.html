@@ -9,7 +9,9 @@
     * { box-sizing: border-box; font-family: 'Open Sans', Arial, sans-serif; }
     body { margin: 0; padding: 0; background: #e0e0e0; color: #000; }
     .page { width: 210mm; min-height: 297mm; background: white; margin: 20mm auto; padding: 15mm; box-shadow: 0 0 15px rgba(0,0,0,0.2); position: relative; page-break-after: always; display: flex; flex-direction: column; }
-    @media print { body { background: white; } .no-print { display: none !important; } .page { margin: 0; padding: 15mm; box-shadow: none; width: 100%; min-height: 100%; page-break-after: always; } }
+    @media print {
+    .invigilator-hud { display: none !important; }
+ body { background: white; } .no-print { display: none !important; } .page { margin: 0; padding: 15mm; box-shadow: none; width: 100%; min-height: 100%; page-break-after: always; } }
     .cover-box { border: 3px solid #666; border-radius: 15px; padding: 15px 20px; margin-bottom: 20px; }
     .candidate-info { display: flex; gap: 15px; margin-bottom: 15px; }
     .input-box { border: 2px solid #666; border-radius: 5px; height: 35px; background: white; flex: 1; }
@@ -20,25 +22,49 @@
     .provenance { font-style: italic; font-size: 13px; margin-bottom: 8px; color: #333; }
     .source-content { font-size: 14px; line-height: 1.5; }
     .question-title { font-weight: bold; font-size: 15px; margin-top: 15px; }
-    .mark-scheme-banner { background: #1e3a8a; color: white; padding: 12px 18px; border-radius: 8px; margin-bottom: 20px; font-weight: bold; font-size: 16px; }
+    .mark-scheme-banner { background: #000000; color: #ffffff; border: 2px solid #000000; }
   </style>
 </head>
 <body>
 
-  <!-- Cover Page -->
-  <div class="page">
-    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+  <!-- Top Docked Invigilator Toolbar (Interactive Screen Mode) -->
+  <div class="invigilator-hud no-print" style="position: sticky; top: 0; z-index: 9999; background: #000000; color: #ffffff; border-bottom: 2px solid #ffffff; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.4); font-family: 'Open Sans', Arial, sans-serif;">
+    <div style="display: flex; align-items: center; gap: 16px;">
       <div>
-        <div style="font-size: 13px; font-weight: bold;">Candidate Number</div>
-        <div style="margin-top: 4px;">
-          <div class="char-box"></div><div class="char-box"></div><div class="char-box"></div><div class="char-box"></div>
-        </div>
+        <div style="font-size: 10px; font-weight: 800; letter-spacing: 1px; color: #9ca3af; text-transform: uppercase;">PEARSON EXAM CLOCK &bull; 1HI0/33</div>
+        <div id="mock-exam-clock" style="font-size: 24px; font-weight: 800; font-family: 'Courier New', Courier, monospace; color: #ffffff; line-height: 1.1;">01:20:00</div>
       </div>
-      <div style="text-align: right;">
-        <div style="font-size: 13px; font-weight: bold;">Paper Reference</div>
-        <div style="font-size: 18px; font-weight: 800; margin-top: 4px;">1HI0/33</div>
+      <div style="font-size: 12px; color: #d1d5db; border-left: 1px solid #374151; padding-left: 12px;">
+        <div><strong>Pacing:</strong> Sec A: 30m (Civil Rights) | Sec B: 50m (Vietnam)</div>
       </div>
     </div>
+    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+      <button type="button" id="mock-timer-toggle" onclick="toggleMockExamTimer('start')" style="background: #ffffff; color: #000000; border: 2px solid #ffffff; padding: 5px 14px; font-weight: 800; font-size: 12px; border-radius: 3px; cursor: pointer;">Start Clock</button>
+      <button type="button" id="mock-timer-pause" onclick="toggleMockExamTimer('pause')" style="background: #facc15; color: #000000; border: 2px solid #facc15; padding: 5px 12px; font-weight: 800; font-size: 12px; border-radius: 3px; cursor: pointer; display: none;">Pause</button>
+      <button type="button" id="mock-timer-reset" onclick="toggleMockExamTimer('reset')" style="background: transparent; color: #d1d5db; border: 1.5px solid #4b5563; padding: 5px 10px; font-weight: 700; font-size: 12px; border-radius: 3px; cursor: pointer;">Reset</button>
+      <button type="button" onclick="toggleMockExamTimer('add5')" style="background: transparent; color: #ffffff; border: 1.5px solid #6b7280; padding: 5px 8px; font-weight: 700; font-size: 12px; border-radius: 3px; cursor: pointer;" title="Add 5 Minutes Extra Time">+5m</button>
+      <button type="button" onclick="toggleMockExamTimer('add20')" style="background: transparent; color: #ffffff; border: 1.5px solid #6b7280; padding: 5px 8px; font-weight: 700; font-size: 12px; border-radius: 3px; cursor: pointer;" title="Add 20 Minutes (25% Access Arrangements)">+20m (25%)</button>
+      <button type="button" id="mock-timer-sound" onclick="toggleMockExamTimer('toggleSound')" style="background: transparent; color: #ffffff; border: 1.5px solid #6b7280; padding: 5px 8px; font-weight: 700; font-size: 12px; border-radius: 3px; cursor: pointer;">🔊 Sound</button>
+      <a id="mock-ms-link" href="usa_mock_3_mark_scheme.html" target="_blank" style="background: #ffffff; color: #000000; border: 2px solid #000000; padding: 5px 12px; font-weight: 800; font-size: 12px; border-radius: 3px; text-decoration: none; display: inline-flex; align-items: center; margin-left: 6px;">Teacher Mark Scheme &rarr;</a>
+    </div>
+  </div>
+
+
+  <!-- Cover Page -->
+  <div class="page">
+    
+    <!-- Official Pearson Examination Header (Minimal & Focused) -->
+    <div style="border: 2px solid #000; padding: 14px 18px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; background: #fff;">
+      <div>
+        <div style="font-size: 11px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: #000;">PEARSON EDEXCEL GCSE (9–1)</div>
+        <div style="font-size: 18px; font-weight: 900; color: #000; font-family: 'Open Sans', Arial, sans-serif;">History Practice Examination Paper</div>
+      </div>
+      <div style="text-align: right;">
+        <div style="font-size: 11px; font-weight: 800; color: #555; text-transform: uppercase;">Paper Reference</div>
+        <div style="font-size: 20px; font-weight: 900; line-height: 1; color: #000;">1HI0/33</div>
+      </div>
+    </div>
+  
 
     <div class="edexcel-title">Pearson Edexcel GCSE (9–1)</div>
     <div style="font-size: 20px; font-weight: bold; margin-bottom: 25px;">History</div>
