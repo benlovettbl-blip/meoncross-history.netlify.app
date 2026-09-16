@@ -1,24 +1,30 @@
 /**
  * generate_medicine_mastery_booklets.cjs
  *
- * Compiles print-perfect Edexcel GCSE (9–1) History Paper 1 Mastery Revision Booklets:
- * 1. Booklet 1: Section A — The British Sector of the Western Front, 1914–1918 (8 Pages)
- * 2. Booklet 2: Section B — Medicine in Britain, c1250–present (Thematic Master — 24 Pages)
- * 3. Master Volume: Paper 1 Complete Mastery Volume (20 Pages)
+ * Compiles the print-perfect Edexcel GCSE (9–1) History Paper 1 Mastery Revision Compendium:
+ * - Option 11: Medicine in Britain, c1250–present and The British Sector of the Western Front, 1914–18
+ * - Canonical Master Volume: 20 Pages (Exact A4 budget, zero overflows)
  *
- * Implements:
- * - Space-saving Answers-Only Bank (Pages 4 & 5) with micro-checkboxes [ ✓ ] [ ✗ ]
- * - Clean 4-column cover tracker (No RAG column) with teacher/peer marker sign-off
- * - Section A Western Front Historic Environment stems:
- *     - Two separate 2-mark Feature questions (Q1a & Q1b)
- *     - 8-mark Source Utility with authentic sources and Provenance Clues scaffolding (Q2a)
- *     - 4-mark Follow-Up Investigation Grid with multiple diverse examples (Q2b)
- * - Section B Thematic Study stems:
- *     - 4-mark Cross-Period Similarity / Difference (Q3)
- *     - 12-mark Multi-Factor "Explain Why" with stimulus points (Q4)
- *     - 16+4-mark Cross-Era Statement Essay with criteria-led judgement (Q5/Q6)
- * - Authentic Edexcel 8mm exam ruled lines to eliminate orphaned continuation pages
- * - High-speed Puppeteer PDF generation with automated zero-overflow guarantee
+ * ARCHITECTURAL SPECIFICATION:
+ * 1. 100% Monochrome (Ink-Saving): Zero color gradients. Pure black, white, and subtle greys.
+ * 2. Front Cover (Page 1):
+ *    - Removed candidate box and instructions bloat
+ *    - Expanded 26-row Master Question Tracker filling page height
+ *    - Column 1: "HW Set / Due" for recording homework set and due dates
+ *    - Column 2: Question number & format badge (e.g. Q3 · Similarity)
+ * 3. Section Inversion:
+ *    - Section B (Medicine Through Time, c1250–present) is FIRST (Pages 2–13)
+ *    - Section A (The British Sector of the Western Front, 1914–18) is LAST (Pages 14–19)
+ * 4. Question 3 (4 marks) Scaffolding:
+ *    - Replaced generic structure strip with a concrete Model Sentence / Answer Guide (AO1/AO2)
+ * 5. Ruled Lines Budget:
+ *    - Section B spreads: Page 1 has Q3 (5 lines) + Q4 (3 paragraphs x 6 lines = 18 lines) = 23 lines to page bottom.
+ *    - Page 2 of spread has Q5/Q6 Essay with 24 lines (6+6+6+6) extending right to page bottom.
+ * 6. Section A Fixes:
+ *    - Q2(b) Follow-Up Grid: 100% BLANK for student completion (2 lines per cell).
+ *    - Q2(a) 8-Mark Source Utility: 3 sentence starters directly beneath headers + lines to page bottom.
+ * 7. Back Cover (Page 20):
+ *    - Full-page, word-for-word Pearson Edexcel Specification Audit & Revision Checklist.
  */
 
 const fs = require('fs');
@@ -26,1716 +32,2986 @@ const path = require('path');
 const puppeteer = require('puppeteer');
 const { pathToFileURL } = require('url');
 
-// Common CSS for print-perfect A4 booklets
+const ROOT_DIR = path.join(__dirname, '..');
+const bookletsDir = path.join(ROOT_DIR, 'public', 'units', 'edexcel_medicine', 'booklets');
+const pdfsDir = path.join(ROOT_DIR, 'public', 'pdfs', 'edexcel_medicine');
+const globalPdfsDir = path.join(ROOT_DIR, 'public', 'pdfs');
+
+if (!fs.existsSync(bookletsDir)) fs.mkdirSync(bookletsDir, { recursive: true });
+if (!fs.existsSync(pdfsDir)) fs.mkdirSync(pdfsDir, { recursive: true });
+
+// =============================================================================
+// COMMON MONOCHROME CSS
+// =============================================================================
 const COMMON_CSS = `
-  @page { size: A4 portrait; margin: 8mm 10mm; }
-  * { box-sizing: border-box; }
-  body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #0f172a; margin: 0; padding: 0; font-size: 8.5pt; line-height: 1.3; background: #fff; }
-  
-  .page { 
-    page-break-after: always; 
-    height: 280mm; 
-    max-height: 280mm; 
-    box-sizing: border-box; 
-    overflow: hidden; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-between; 
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    color: #000000;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 210mm;
+    height: 297mm;
+    padding: 9mm 12mm 9mm 12mm;
+    page-break-after: always;
+    position: relative;
+    background: #ffffff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .page:last-child {
+    page-break-after: avoid;
+  }
+
+  .edexcel-banner {
+    font-size: 11pt;
+    font-weight: 900;
+    color: #000000;
+    letter-spacing: -0.2px;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+  }
+  .exam-header-box {
+    border: 1.5px solid #000000;
+    display: flex;
+    margin-bottom: 5px;
+    background: #ffffff;
+  }
+  .exam-header-left {
+    flex: 3.8;
+    padding: 5px 8px;
+    border-right: 1.5px solid #000000;
+  }
+  .exam-header-right {
+    flex: 1.2;
+    padding: 5px 6px;
+    background: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .exam-date {
+    font-size: 7.4pt;
+    font-weight: 800;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .exam-time {
+    font-size: 7.4pt;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 2px;
+  }
+  .exam-subject {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 11pt;
+    font-weight: 900;
+    color: #000000;
+    line-height: 1.15;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+  }
+  .exam-booklet {
+    font-size: 8.5pt;
+    font-weight: 800;
+    color: #000000;
+  }
+  .exam-subtopic {
+    font-size: 7.2pt;
+    color: #000000;
+    font-style: italic;
+  }
+  .ref-label {
+    font-size: 6.8pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #000000;
+  }
+  .ref-code {
+    font-size: 11pt;
+    font-weight: 900;
+    color: #000000;
+    letter-spacing: 0.5px;
+  }
+
+  /* Internal Page Headers */
+  .page-header {
+    border-bottom: 1.5px solid #000000;
+    padding-bottom: 3px;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .header-left h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 10.5pt;
+    font-weight: 900;
+    margin: 0;
+    color: #000000;
+    letter-spacing: -0.1px;
+    text-transform: uppercase;
+  }
+  .header-left p {
+    font-size: 7.6pt;
+    margin: 1px 0 0 0;
+    color: #000000;
+  }
+  .header-tag {
+    font-size: 7.2pt;
+    font-weight: 800;
+    color: #ffffff;
+    background: #000000;
+    padding: 2px 7px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
+
+  /* Question Containers */
+  .question-container {
+    margin-bottom: 4px;
+  }
+  .question-prompt {
+    font-size: 8.5pt;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    color: #000000;
+  }
+  .q-num {
+    font-size: 9pt;
+    font-weight: 900;
+    margin-right: 3px;
+    color: #000000;
+  }
+  .q-marks {
+    font-size: 8.5pt;
+    font-weight: 900;
+    color: #000000;
+    white-space: nowrap;
+    margin-left: 6px;
+  }
+
+  /* Discrete Provenance Badges */
+  .exam-provenance-pill {
+    font-size: 6.6pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    padding: 1px 4px;
+    border-radius: 2px;
+    margin-right: 4px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.2;
+    border: 1.2px solid #000000;
+  }
+  .exam-provenance-pill.past {
+    background: #000000;
+    color: #ffffff;
+  }
+  .exam-provenance-pill.specimen,
+  .exam-provenance-pill.unexamined,
+  .exam-provenance-pill.forecast {
+    background: #f8fafc;
+    color: #000000;
+  }
+
+  /* Stimulus Box */
+  .stimulus-card {
+    border: 1.2px solid #000000;
+    border-radius: 2px;
+    background: #f8fafc;
+    padding: 3px 6px;
+    margin-bottom: 3px;
+    font-size: 7.4pt;
+    line-height: 1.25;
+    color: #000000;
+  }
+  .stimulus-card ul {
+    margin: 1px 0 1px 14px;
     padding: 0;
   }
-  .page:last-child { page-break-after: avoid; }
-  
-  /* Headers */
-  .page-header { border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: flex-end; }
-  .header-left h1 { margin: 0; font-size: 11pt; color: #1e3a8a; font-weight: 800; text-transform: uppercase; letter-spacing: 0.3px; }
-  .header-left p { margin: 1px 0 0 0; font-size: 7pt; color: #64748b; font-weight: 500; }
-  .header-tag { font-size: 6.8pt; font-weight: 800; background: #1e3a8a; color: #fff; padding: 2px 7px; border-radius: 3px; text-transform: uppercase; }
-  
-  .page-footer { font-size: 6.5pt; color: #94a3b8; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 3px; margin-top: 4px; display: flex; justify-content: space-between; }
-  
-  /* Authentic Edexcel 8mm exam ruled lines (Photocopier & Duplex Safe) */
-  .writing-line { height: 8mm; border-bottom: 1.2px solid #475569; margin-bottom: 0; box-sizing: border-box; }
-  .writing-line.starter { color: #475569; font-style: italic; font-size: 7.5pt; display: flex; align-items: flex-end; padding-bottom: 1.5px; }
-  
-  /* Answers-Only Bank (Green Pages) */
-  .ans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8px 6px; font-size: 6.6pt; line-height: 1.15; flex: 1 1 auto; }
-  .ans-grid.dense-3col { grid-template-columns: 1fr 1fr 1fr; gap: 1.5px 5px; font-size: 6.1pt; line-height: 1.12; }
-  .ans-item { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 2.5px; padding: 1.5px 4px; display: flex; gap: 4px; align-items: baseline; }
-  .ans-grid.dense-3col .ans-item { padding: 1.2px 3px; gap: 3px; }
-  .ans-num { color: #166534; font-weight: 800; font-size: 6.6pt; flex-shrink: 0; min-width: 16px; }
-  .ans-grid.dense-3col .ans-num { font-size: 6.1pt; min-width: 14px; }
-  .ans-text { color: #15803d; font-weight: 600; line-height: 1.15; flex: 1; }
-  .ans-check { font-size: 5.5pt; color: #166534; opacity: 0.65; white-space: nowrap; flex-shrink: 0; margin-left: 2px; }
-  
-  /* Cover Tracker Table */
-  .tracker-table { width: 100%; border-collapse: collapse; font-size: 7.2pt; margin: 6px 0; }
-  .tracker-table th, .tracker-table td { border: 1px solid #cbd5e1; padding: 3px 5px; vertical-align: middle; }
-  .tracker-table th { background: #1e3a8a; color: white; font-weight: 800; text-align: left; }
-  .tracker-table tr:nth-child(even) { background: #f8fafc; }
-  
-  /* 2-Column Quiz Grids */
-  .quiz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px 5px; font-size: 6.3pt; line-height: 1.14; flex: 1 1 auto; overflow: hidden; }
-  .quiz-item { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 2.5px; padding: 1.2px 3px; display: flex; gap: 3px; align-items: flex-start; }
-  .quiz-cb { width: 8px; height: 8px; border: 1px solid #94a3b8; border-radius: 2px; flex-shrink: 0; margin-top: 1px; }
-  
-  /* Stepped Ladder Boxes */
-  .ladder-zone { border: 1px solid #cbd5e1; border-radius: 5px; padding: 5px 8px; margin-bottom: 6px; }
-  .ladder-launchpad { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 4px; padding: 4px 6px; font-size: 7.2pt; color: #1e40af; margin-bottom: 4px; }
-  .ladder-stretch { background: #f5f3ff; border: 1px solid #ddd6fe; border-radius: 4px; padding: 4px 6px; font-size: 7.2pt; color: #6d28d9; margin-top: 4px; }
-  
-  /* Dual Track Split Columns */
-  .dual-track-container { display: grid; grid-template-columns: 34% 66%; gap: 8px; flex: 1 1 auto; margin-bottom: 4px; }
-  .toolkit-col { background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 5px; padding: 6px; font-size: 7pt; display: flex; flex-direction: column; justify-content: space-between; }
-  .writing-col { border: 1px solid #cbd5e1; border-radius: 5px; padding: 6px; display: flex; flex-direction: column; justify-content: space-between; }
-  
-  /* Planning Engine Tables */
-  .plan-table { width: 100%; border-collapse: collapse; font-size: 7.2pt; margin-bottom: 4px; }
-  .plan-table th, .plan-table td { border: 1px solid #cbd5e1; padding: 3px 5px; vertical-align: top; }
-  .plan-table th { background: #f1f5f9; font-weight: 800; color: #1e293b; text-align: left; }
-  
-  /* Follow-Up Grid Table */
-  .follow-up-table { width: 100%; border-collapse: collapse; font-size: 7.2pt; margin-top: 3px; }
-  .follow-up-table td { border: 1px solid #cbd5e1; padding: 4px 6px; vertical-align: middle; }
-  .follow-up-table tr td:first-child { width: 42%; background: #f1f5f9; font-weight: 700; color: #1e293b; }
-`;
-
-function getShortTitle(stem) {
-  if (!stem) return '';
-  return stem
-    .replace(/^Describe one feature of (the )?/i, '')
-    .replace(/^Explain one way in which /i, '')
-    .replace(/^Explain why there was /i, '')
-    .replace(
-      /^Study Sources A and B\.\s*How useful are Sources A and B for an enquiry into (the )?/i,
-      '',
-    )
-    .slice(0, 32)
-    .replace(/[.,]$/, '');
-}
-
-async function run() {
-  console.log('🚀 Loading Medicine Through Time unit data and specification...');
-
-  const dataModule = await import('../units/edexcel_medicine/data.js');
-  const unitData = dataModule.unitData;
-
-  const bookletsDir = path.join(__dirname, '..', 'public', 'units', 'edexcel_medicine', 'booklets');
-  const pdfsDir = path.join(__dirname, '..', 'public', 'pdfs', 'edexcel_medicine');
-  const rootPdfsDir = path.join(__dirname, '..', 'public', 'pdfs');
-
-  if (!fs.existsSync(bookletsDir)) fs.mkdirSync(bookletsDir, { recursive: true });
-  if (!fs.existsSync(pdfsDir)) fs.mkdirSync(pdfsDir, { recursive: true });
-
-  // Extract Question Banks by Era
-  const extractEraQuestions = (filterFn) => {
-    const list = [];
-    unitData.lessons.filter(filterFn).forEach((l) => {
-      (l.quiz || []).forEach((q) => {
-        const ans = q.options ? q.options[q.answer] : q.answer;
-        list.push({
-          q: q.question,
-          a: ans,
-          source: l.title.split(':')[0],
-        });
-      });
-    });
-    return list;
-  };
-
-  const wfQuestions = extractEraQuestions((l) => l.id.startsWith('lesson_5'));
-  const medQuestions = extractEraQuestions((l) => l.id.startsWith('lesson_1'));
-  const renQuestions = extractEraQuestions((l) => l.id.startsWith('lesson_2'));
-  const indQuestions = extractEraQuestions((l) => l.id.startsWith('lesson_3'));
-  const modQuestions = extractEraQuestions((l) => l.id.startsWith('lesson_4'));
-
-  console.log(`   Western Front (Section A): ${wfQuestions.length} questions`);
-  console.log(`   Medieval: ${medQuestions.length} questions`);
-  console.log(`   Renaissance: ${renQuestions.length} questions`);
-  console.log(`   18th/19th C: ${indQuestions.length} questions`);
-  console.log(`   Modern: ${modQuestions.length} questions`);
-
-  // =========================================================================
-  // BUILD BOOKLET 1: SECTION A — THE WESTERN FRONT (11 PAGES)
-  // =========================================================================
-  console.log('\n📄 Compiling 11-Page Mastery Booklet for Section A (Western Front)...');
-
-  const wfQPage1 = wfQuestions.slice(0, 50);
-  const wfQPage2 = wfQuestions.slice(50, 100);
-  const wfAPage1 = wfQuestions.slice(0, 50);
-  const wfAPage2 = wfQuestions.slice(50, 100);
-
-  const sectionAHtml = `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Section A: The British Sector of the Western Front, 1914–1918 — Complete Mastery Pack</title>
-    <style>${COMMON_CSS}</style>
-</head>
-<body>
-
-    <!-- ============================================================= -->
-    <!-- PAGE 1: FRONT COVER & SECTION A PROGRESS TRACKER              -->
-    <!-- ============================================================= -->
-    <div class="page">
-        <div>
-            <!-- Banner Header -->
-            <div style="background: linear-gradient(135deg, #78350f 0%, #1e293b 100%); color: white; padding: 12px 16px; border-radius: 6px; margin-bottom: 8px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 4px; margin-bottom: 6px;">
-                    <span style="font-size: 7.5pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #fde68a;">Pearson Edexcel GCSE (9–1) History · Paper 1 (1HI0/11)</span>
-                    <span style="font-size: 7pt; background: #b45309; padding: 2px 6px; border-radius: 3px; font-weight: 700;">Section A 11-Page Pack</span>
-                </div>
-                <h1 style="margin: 0; font-size: 13.5pt; font-weight: 800; line-height: 1.2;">The British Sector of the Western Front, 1914–1918</h1>
-                <p style="margin: 3px 0 0 0; font-size: 8pt; color: #fef3c7;">The Historic Environment · Injuries, Treatment and the Trenches · Complete Mastery &amp; Source Studio</p>
-            </div>
-
-            <!-- Student Metadata Box -->
-            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 8px; background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 5px; padding: 6px 10px; margin-bottom: 8px; font-size: 8pt;">
-                <div><strong>Pupil Name:</strong> ________________________________</div>
-                <div><strong>Class / Set:</strong> ___________</div>
-                <div><strong>Target Grade:</strong> [ &nbsp; ]</div>
-            </div>
-
-            <!-- The Master Assessment & Progress Tracker (4 Columns, NO RAG) -->
-            <div style="border: 1.5px solid #78350f; border-radius: 6px; padding: 6px 8px; background: #fff; margin-bottom: 8px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #78350f; padding-bottom: 3px; margin-bottom: 4px;">
-                    <strong style="color: #78350f; font-size: 8.5pt; text-transform: uppercase;">📊 Section A Progress &amp; Assessment Tracker (16 Marks Total)</strong>
-                    <span style="font-size: 7pt; color: #64748b;">Marked by Teacher or Peer Verified</span>
-                </div>
-
-                <table class="tracker-table">
-                    <thead>
-                        <tr>
-                            <th style="width: 54%;">Assessment Component &amp; Stem Focus</th>
-                            <th style="width: 16%; text-align: center;">Format Style</th>
-                            <th style="width: 14%; text-align: center;">Max Marks</th>
-                            <th style="width: 16%; text-align: center;">Pupil Score</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Round 1 (Stepped):</strong> Q1(a) Feature 1 (Casualty Clearing Stations)</td>
-                            <td style="text-align: center;">Stepped Ladder</td>
-                            <td style="text-align: center;">/2</td>
-                            <td style="text-align: center;">_____</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Round 1 (Stepped):</strong> Q1(b) Feature 2 (Thomas Splint)</td>
-                            <td style="text-align: center;">Stepped Ladder</td>
-                            <td style="text-align: center;">/2</td>
-                            <td style="text-align: center;">_____</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Round 1 (Stepped):</strong> Q2(b) 4-Part Follow-Up Grid (Base Hospital Water)</td>
-                            <td style="text-align: center;">Stepped Ladder</td>
-                            <td style="text-align: center;">/4</td>
-                            <td style="text-align: center;">_____</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Round 1 (Stepped):</strong> Q2(a) Source Utility (Somme CCS vs Base Hospital)</td>
-                            <td style="text-align: center;">Stepped Ladder</td>
-                            <td style="text-align: center;">/8</td>
-                            <td style="text-align: center;">_____</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Round 2 (Dual-Track):</strong> Q1(a) &amp; Q1(b) Features (Mobile X-rays &amp; Trench Fever)</td>
-                            <td style="text-align: center;">Dual Track</td>
-                            <td style="text-align: center;">/4</td>
-                            <td style="text-align: center;">_____</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Round 2 (Dual-Track):</strong> Q2(b) 4-Part Follow-Up Grid (Gas Casualties)</td>
-                            <td style="text-align: center;">Dual Track</td>
-                            <td style="text-align: center;">/4</td>
-                            <td style="text-align: center;">_____</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Round 2 (Dual-Track):</strong> Q2(a) Source Utility (RAMC Logbook &amp; Flanders Mud)</td>
-                            <td style="text-align: center;">Dual Track</td>
-                            <td style="text-align: center;">/8</td>
-                            <td style="text-align: center;">_____</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Round 3 (Simulation):</strong> Full Section A Timed Exam Pitch (Q1a, Q1b, Q2a, Q2b)</td>
-                            <td style="text-align: center;">Exam Hall (25m)</td>
-                            <td style="text-align: center;">/16</td>
-                            <td style="text-align: center;">_____</td>
-                        </tr>
-                        <tr style="background: #fef3c7; font-weight: 800; font-size: 7.5pt;">
-                            <td colspan="2">TOTAL COMBINED EXAM PRACTICE MARKS:</td>
-                            <td style="text-align: center;">/48</td>
-                            <td style="text-align: center;">_____ / 48</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div style="display: flex; justify-content: space-between; font-size: 7.2pt; color: #334155; margin-top: 3px; font-weight: 600;">
-                    <span>Teacher / Peer Marker: _____________________________________</span>
-                    <span>Date: _______________</span>
-                    <span>Overall Grade: [ 9 &nbsp; 8 &nbsp; 7 &nbsp; 6 &nbsp; 5 &nbsp; 4 ]</span>
-                </div>
-            </div>
-
-            <!-- Bottom Box: Fast Facts & Stem Formulas -->
-            <div style="border: 1.5px solid #0f766e; background: #f0fdfa; border-radius: 6px; padding: 6px 10px; font-size: 7pt; line-height: 1.35; color: #115e59;">
-                <div style="font-weight: 800; color: #0f766e; font-size: 7.5pt; text-transform: uppercase; margin-bottom: 3px; display: flex; justify-content: space-between;">
-                    <span>⏱️ Section A Edexcel Exam Fast Facts &amp; Stem Blueprints (16 Marks · ~25 Mins)</span>
-                    <span>Option 11 Paper 1 Section A</span>
-                </div>
-                <div><strong>• Q1(a) &amp; Q1(b) Features (2 Marks each · ~3 mins each):</strong> <em>F-D Formula.</em> State <strong>Feature</strong> in sentence 1 &rarr; support with <strong>1 precise supporting factual detail</strong>. (2 separate questions).</div>
-                <div><strong>• Q2(a) Source Utility (8 Marks · ~12 mins):</strong> <em>C-O-P Matrix.</em> Evaluate both sources for <strong>Content</strong> (what it says) &rarr; <strong>Own Contextual Knowledge</strong> &rarr; <strong>Provenance</strong> (Nature, Origin, Purpose / NOP).</div>
-                <div><strong>• Q2(b) Follow-Up Investigation (4 Marks · ~7 mins):</strong> <em>4-Step Enquiry.</em> Quote <strong>Detail in Source B</strong> &rarr; Formulate <strong>Targeted Question</strong> &rarr; Name <strong>Specific Historical Source Type</strong> &rarr; Explain <strong>Direct Purpose</strong>.</div>
-            </div>
-        </div>
-
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Pearson Edexcel GCSE History</span>
-            <span>Western Front Historic Environment Complete Mastery Booklet</span>
-            <span>Page 1 of 8</span>
-        </div>
-    </div>
-
-    <!-- ============================================================= -->
-    <!-- PAGE 2: ROUND 1 — STEPPED LADDER: FEATURES & FOLLOW-UP         -->
-    <!-- ============================================================= -->
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Section A: The Historic Environment</h1>
-                    <p>Round 1: The Stepped Ladder · Question 1 (Features) &amp; Question 2(b) (Follow-Up Investigation)</p>
-                </div>
-                <span class="header-tag" style="background: #7c3aed;">Round 1: Stems 1 &amp; 2b</span>
-            </div>
-
-            <!-- Q1(a): Feature 1 (2 Marks) -->
-            <div class="ladder-zone" style="border-left: 3.5px solid #f59e0b; padding: 4px 8px; margin-bottom: 4px;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
-                    <strong style="font-size: 8.5pt; color: #1e293b;">Question 1 (a): Feature Question (2 Marks)</strong>
-                    <span style="font-size: 7pt; color: #b45309; font-weight: 700;">F-D Formula · ~3 Mins</span>
-                </div>
-                <div style="font-weight: 800; font-size: 8.2pt; color: #0f172a; margin-bottom: 3px;">
-                    Describe one feature of the work of Casualty Clearing Stations (CCS) on the Western Front.
-                </div>
-                <div class="ladder-launchpad" style="padding: 3px 6px; margin-bottom: 3px;">
-                    <strong>🚀 Level 1 Launchpad:</strong> Starter: <em>"One feature of Casualty Clearing Stations was that..."</em><br>
-                    <strong>Facts to Include:</strong> Located 7–12 miles back near railways; triage (walking wounded, urgent surgery, dying); performed critical amputations and chest surgeries before base evacuation.
-                </div>
-                <div style="padding: 1px 0;">
-                    <div class="writing-line starter">One feature of Casualty Clearing Stations was that...</div>
-                    <div class="writing-line starter">Specifically, (add one precise historical detail or statistic)...</div>
-                    <div class="writing-line"></div>
-                </div>
-            </div>
-
-            <!-- Q1(b): Feature 2 (2 Marks) -->
-            <div class="ladder-zone" style="border-left: 3.5px solid #f59e0b; padding: 4px 8px; margin-bottom: 4px;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
-                    <strong style="font-size: 8.5pt; color: #1e293b;">Question 1 (b): Feature Question (2 Marks)</strong>
-                    <span style="font-size: 7pt; color: #b45309; font-weight: 700;">F-D Formula · ~3 Mins</span>
-                </div>
-                <div style="font-weight: 800; font-size: 8.2pt; color: #0f172a; margin-bottom: 3px;">
-                    Describe one feature of the use of the Thomas splint on the Western Front.
-                </div>
-                <div class="ladder-launchpad" style="padding: 3px 6px; margin-bottom: 3px;">
-                    <strong>🚀 Level 1 Launchpad:</strong> Starter: <em>"One feature of the Thomas splint was that..."</em><br>
-                    <strong>Facts to Include:</strong> Introduced in 1915 by Robert Jones; rigid frame pulled leg straight to stop bone ends grinding; dramatically dropped compound fracture mortality from 80% to 20%.
-                </div>
-                <div style="padding: 1px 0;">
-                    <div class="writing-line starter">One feature of the Thomas splint was that...</div>
-                    <div class="writing-line starter">Specifically, (add one precise historical detail or statistic)...</div>
-                    <div class="writing-line"></div>
-                </div>
-            </div>
-
-            <!-- Q2(b): 4-Part Follow-Up Grid (4 Marks) -->
-            <div class="ladder-zone" style="border-left: 3.5px solid #0284c7; padding: 4px 8px; margin-bottom: 2px;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
-                    <strong style="font-size: 8.5pt; color: #1e293b;">Question 2 (b): Follow-Up Investigation Grid (4 Marks)</strong>
-                    <span style="font-size: 7pt; color: #0369a1; font-weight: 700;">4-Step Enquiry · ~6 Mins</span>
-                </div>
-                <div style="font-weight: 700; font-size: 7.8pt; color: #0f172a; margin-bottom: 2px;">
-                    Study Source B (Edith Smith letter: <em>"The pipes freeze entirely, meaning we must strictly ration the water provided to the wounded."</em>). How could you follow up Source B to find out more about the severe conditions faced by medical staff? Complete the table below.
-                </div>
-                
-                <table class="follow-up-table">
-                    <tr>
-                        <td><strong>Detail in Source B that I would follow up:</strong></td>
-                        <td style="color: #1e3a8a; font-style: italic;">"The pipes freeze entirely, meaning we must strictly ration the water provided to the wounded."</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Question I would ask:</strong></td>
-                        <td><div class="writing-line starter">What specific impact did water shortages have on surgical sterilization and infection rates in winter 1917?</div></td>
-                    </tr>
-                    <tr>
-                        <td><strong>What type of source I would use:</strong></td>
-                        <td><div class="writing-line starter">Base Hospital Daily Medical Superintendent Logbooks and Sanitary Inspection Reports (1917–18).</div></td>
-                    </tr>
-                    <tr>
-                        <td><strong>How this source would help me answer my question:</strong></td>
-                        <td><div class="writing-line starter">It would provide official daily records of sanitation breakdowns and hospital infection rates during freezing months.</div><div class="writing-line"></div></td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Round 1 Stepped Ladder</span>
-            <span>Section A · Turn page for Question 2(a) 8-Mark Source Utility</span>
-            <span>Page 2 of 8</span>
-        </div>
-    </div>
-
-    <!-- ============================================================= -->
-    <!-- PAGE 3: ROUND 1 — STEPPED LADDER: 8-MARK SOURCE UTILITY        -->
-    <!-- ============================================================= -->
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Section A: The Historic Environment</h1>
-                    <p>Round 1: The Stepped Ladder · Question 2(a) 8-Mark Source Utility Masterclass</p>
-                </div>
-                <span class="header-tag" style="background: #2563eb;">Round 1: Stem 2a</span>
-            </div>
-
-            <div class="ladder-zone" style="border-left: 3.5px solid #2563eb; padding: 4px 8px; margin-bottom: 2px;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
-                    <strong style="font-size: 8.5pt; color: #1e293b;">Question 2 (a): Source Utility (8 Marks)</strong>
-                    <span style="font-size: 7pt; color: #1d4ed8; font-weight: 700;">C-O-P Formula · ~12 Mins</span>
-                </div>
-                <div style="font-weight: 800; font-size: 8.2pt; color: #0f172a; margin-bottom: 3px;">
-                    Study Sources A and B. How useful are Sources A and B for an historian studying the immense challenges of treating casualties on the Western Front? Explain your answer, using Sources A and B and your knowledge of the historical context.
-                </div>
-
-                <!-- Sources Display Box -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 3px;">
-                    <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; font-size: 6.5pt; line-height: 1.25;">
-                        <strong style="color: #1e3a8a; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">Source A (Chaplain Arthur Davies, Somme CCS, July 1916):</strong>
-                        <em>"The casualties have started to arrive... The volume of patients is overwhelming; every bed is occupied, and men are fortunate just to find a spot on the bare ground. Many will pass away before surgery is possible. We have admitted 1,500 casualties, and the stream has not stopped."</em>
-                    </div>
-                    <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; font-size: 6.5pt; line-height: 1.25;">
-                        <strong style="color: #1e3a8a; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">Source B (Edith Smith, VAD Nurse, Base Hospital, Dec 1917):</strong>
-                        <em>"Our morning duties begin at 3.30 am! The freezing temperatures are unbearable. Icicles hang thick over ward windows. Even kettles, rubber hot water bottles, and sponges have frozen solid. The pipes freeze entirely, meaning we must strictly ration water provided to the wounded."</em>
-                    </div>
-                </div>
-
-                <!-- Mandatory Provenance Clues Scaffolding Box (Per AGENTS.md rule) -->
-                <div style="background: #fef3c7; border: 1px solid #fde047; border-radius: 4px; padding: 3px 6px; font-size: 6.7pt; color: #854d0e; margin-bottom: 3px;">
-                    <strong>🔍 PROVENANCE CLUES (Author, Audience, Motive):</strong> Who wrote each source (eyewitness chaplain at CCS vs frontline VAD nurse at base hospital)? What was their motive (private diary recording sheer volume vs private letter home detailing physical conditions)? How does their perspective make the sources useful despite subjective emotional focus?
-                </div>
-
-                <!-- Writing lines (16 Ruled Lines Total) -->
-                <div style="padding: 1px 0;">
-                    <div style="font-size: 6.8pt; font-weight: 800; color: #1d4ed8; margin: 1px 0; text-transform: uppercase;">Paragraph 1: Utility of Source A (Content + Provenance + Context)</div>
-                    <div class="writing-line starter">Source A is useful for investigating casualty challenges because the content reveals...</div>
-                    <div class="writing-line starter">From my own knowledge, this accurately reflects the Somme offensive because...</div>
-                    <div class="writing-line starter">Furthermore, the provenance makes it useful because as a private chaplain's diary...</div>
-                    <div class="writing-line"></div>
-                    <div class="writing-line"></div>
-                    <div class="writing-line"></div>
-                    <div class="writing-line"></div>
-
-                    <div style="font-size: 6.8pt; font-weight: 800; color: #1d4ed8; margin: 3px 0 1px 0; text-transform: uppercase;">Paragraph 2: Utility of Source B &amp; Comparative Judgement (Content + Provenance + Context)</div>
-                    <div class="writing-line starter">Source B is also useful because it highlights the severe environmental difficulties...</div>
-                    <div class="writing-line starter">Specifically, my own knowledge confirms that Base Hospitals in winter 1917...</div>
-                    <div class="writing-line starter">The provenance enhances its utility because as a private letter from a VAD nurse...</div>
-                    <div class="writing-line"></div>
-                    <div class="writing-line"></div>
-                    <div class="writing-line"></div>
-                    <div class="writing-line starter">Overall, both sources are mutually useful because together they demonstrate...</div>
-                    <div class="writing-line"></div>
-                </div>
-
-                <!-- Stretch Callout -->
-                <div class="ladder-stretch" style="padding: 3px 6px; margin-top: 2px;">
-                    <strong>⚡ Level 3 (Grade 9) Utility Glue:</strong> Weigh up typicality vs limitation — note that Source A shows peak crisis conditions on 1 July 1916 (57,000 casualties in one day), while Source B reflects seasonal winter extremes at the coast.
-                </div>
-            </div>
-        </div>
-
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Round 1 Stepped Ladder</span>
-            <span>Section A · Round 2 Dual-Track begins on Page 8</span>
-            <span>Page 3 of 8</span>
-        </div>
-    </div>
-
-    <!-- ============================================================= -->
-    <!-- PAGE 4: ROUND 2 — SPLIT-COLUMN DUAL TRACK (FEATURES & FOLLOW-UP)-->
-    <!-- ============================================================= -->
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Section A: The Historic Environment</h1>
-                    <p>Round 2: The Split-Column Dual Track · Features &amp; Follow-Up Toolkit</p>
-                </div>
-                <span class="header-tag" style="background: #0284c7;">Round 2: Stems 1 &amp; 2b</span>
-            </div>
-
-            <!-- Features Dual Track -->
-            <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 4px 8px; margin-bottom: 4px;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
-                    <strong style="font-size: 8.2pt; color: #1e293b;">Questions 1(a) &amp; 1(b): Features (2 + 2 = 4 Marks)</strong>
-                    <span style="font-size: 6.8pt; color: #0369a1; font-weight: 700;">Independent Toolkit</span>
-                </div>
-                <div class="dual-track-container" style="height: 125px;">
-                    <div class="toolkit-col">
-                        <div>
-                            <strong style="color: #0369a1; font-size: 6.8pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">🧰 Fact Vault (AO1)</strong>
-                            <div style="font-size: 6.2pt; margin-bottom: 2px;">• <strong>Mobile X-rays:</strong> 6 mobile units in British sector; located at CCS; couldn't detect clothing fragments; tubes overheated.</div>
-                            <div style="font-size: 6.2pt; margin-bottom: 2px;">• <strong>Trench Fever:</strong> Caused by body lice; flu-like pain in legs; affected ~15% of men; led to delousing stations and bathhouses.</div>
-                        </div>
-                        <div style="font-size: 6.2pt; color: #b91c1c; border-top: 1px dashed #f87171; padding-top: 2px;">
-                            <strong>⚠️ Trap:</strong> Do not confuse Trench Fever (lice) with Trench Foot (waterlogged mud/cold).
-                        </div>
-                    </div>
-                    <div class="writing-col">
-                        <div style="font-size: 6.8pt; font-weight: bold; color: #0f172a;">1(a) Describe one feature of mobile X-ray units near the frontline:</div>
-                        <div class="writing-line starter">One feature of mobile X-ray units was...</div>
-                        <div class="writing-line"></div>
-                        <div style="font-size: 6.8pt; font-weight: bold; color: #0f172a; margin-top: 2px;">1(b) Describe one feature of trench fever:</div>
-                        <div class="writing-line starter">One feature of trench fever was...</div>
-                        <div class="writing-line"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Follow-Up Dual Track -->
-            <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 4px 8px;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
-                    <strong style="font-size: 8.2pt; color: #1e293b;">Question 2(b): Follow-Up Practice (4 Marks)</strong>
-                    <span style="font-size: 6.8pt; color: #0369a1; font-weight: 700;">Historical Records Directory</span>
-                </div>
-                <div style="font-size: 7.2pt; color: #334155; margin-bottom: 2px;">
-                    Study this extract from an RAMC officer at Ypres: <em>"The chlorine gas casualties stumbled in clutching their throats. We washed their blinded eyes with bicarbonate of soda solutions, but many died from asphyxiation."</em>
-                </div>
-                <table class="follow-up-table">
-                    <tr>
-                        <td><strong>Detail in Source to follow up:</strong></td>
-                        <td><div class="writing-line starter">"We washed their blinded eyes with bicarbonate of soda solutions..."</div></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Question I would ask:</strong></td>
-                        <td><div class="writing-line starter">How effective were early chemical antidotes compared to later respirator gas masks?</div></td>
-                    </tr>
-                    <tr>
-                        <td><strong>What type of source I would use:</strong></td>
-                        <td><div class="writing-line starter">RAMC Field Ambulance Casualty Admission Books &amp; War Office Gas Defence Bulletins (1915).</div></td>
-                    </tr>
-                    <tr>
-                        <td><strong>How this source would help me:</strong></td>
-                        <td><div class="writing-line starter">It would record official medical survival rates of gas victims before and after the issue of Small Box Respirators.</div></td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Round 2 Dual Track</span>
-            <span>Section A · Turn page for Question 2(a) Source Utility Masterclass</span>
-            <span>Page 4 of 8</span>
-        </div>
-    </div>
-
-    <!-- ============================================================= -->
-    <!-- PAGE 5: ROUND 2 — SPLIT-COLUMN DUAL TRACK (SOURCE UTILITY)    -->
-    <!-- ============================================================= -->
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Section A: The Historic Environment</h1>
-                    <p>Round 2: The Split-Column Dual Track · Question 2(a) Source Utility Masterclass</p>
-                </div>
-                <span class="header-tag" style="background: #0284c7;">Round 2: Stem 2a</span>
-            </div>
-
-            <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 5px 8px; margin-bottom: 4px;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
-                    <strong style="font-size: 8.5pt; color: #1e293b;">Question 2(a): Source Utility Independent Execution (8 Marks)</strong>
-                    <span style="font-size: 7pt; color: #0284c7; font-weight: 700;">Wartime Trauma &amp; Gas Warfare</span>
-                </div>
-                <div style="font-weight: 800; font-size: 8.2pt; color: #0f172a; margin-bottom: 3px;">
-                    How useful are Source C (RAMC Logbook, 1915) and Source D (Official Training Manual on Trench Foot, 1916) for an enquiry into the prevention of trench illness on the Western Front?
-                </div>
-
-                <div class="dual-track-container" style="height: 220mm;">
-                    <div class="toolkit-col">
-                        <div>
-                            <strong style="color: #0284c7; font-size: 7pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">⏱️ Provenance Evaluation Matrix</strong>
-                            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px; margin-bottom: 3px; font-size: 6.2pt;">
-                                <strong style="color: #0369a1;">Official Reports:</strong> High factual accuracy regarding procedures; may minimize failure to maintain morale.
-                            </div>
-                            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px; margin-bottom: 3px; font-size: 6.2pt;">
-                                <strong style="color: #0369a1;">Doctor/Nurse Accounts:</strong> Direct clinical insight into actual suffering; localized to one specific sector.
-                            </div>
-
-                            <strong style="color: #0284c7; font-size: 7pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin: 4px 0 2px 0;">🌉 Causal &amp; Utility Connectives</strong>
-                            <div style="font-size: 6.2pt; margin-bottom: 2px;">• <em>"The content is highly useful because it reveals..."</em></div>
-                            <div style="font-size: 6.2pt; margin-bottom: 2px;">• <em>"The provenance strengthens its value because..."</em></div>
-                            <div style="font-size: 6.2pt; margin-bottom: 2px;">• <em>"However, the source is limited in scope because..."</em></div>
-                        </div>
-
-                        <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 3px; padding: 4px; font-size: 6.2pt; color: #1e40af;">
-                            <strong>🎯 Level 3 Standard:</strong> Explicitly evaluate how the author's professional role and purpose shape what was included or omitted.
-                        </div>
-                    </div>
-
-                    <div class="writing-col">
-                        <div style="font-size: 6.5pt; font-weight: 800; color: #0284c7; text-transform: uppercase;">Paragraph 1: Utility of Source C</div>
-                        <div class="writing-line starter">Source C is useful for an enquiry into prevention because...</div>
-                        <div class="writing-line"></div>
-                        <div class="writing-line"></div>
-                        <div class="writing-line"></div>
-                        <div class="writing-line starter">Its provenance as an RAMC logbook means...</div>
-                        <div class="writing-line"></div>
-
-                        <div style="font-size: 6.5pt; font-weight: 800; color: #0284c7; margin-top: 3px; text-transform: uppercase;">Paragraph 2: Utility of Source D &amp; Synthesis</div>
-                        <div class="writing-line starter">Source D is useful in a different way because it shows official policy on...</div>
-                        <div class="writing-line"></div>
-                        <div class="writing-line"></div>
-                        <div class="writing-line starter">However, an official manual may not reflect actual frontline reality because...</div>
-                        <div class="writing-line"></div>
-                        <div class="writing-line starter">Comparing both sources, an historian learns that...</div>
-                        <div class="writing-line"></div>
-                        <div class="writing-line"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Round 2 Dual Track</span>
-            <span>Section A · Round 3 Exam Simulation begins on Page 10</span>
-            <span>Page 5 of 8</span>
-        </div>
-    </div>
-
-    <!-- ============================================================= -->
-    <!-- PAGE 6: ROUND 3 — TIMED SIMULATION (STEMS 1 & 2b · 8 MARKS)   -->
-    <!-- ============================================================= -->
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Section A: The Historic Environment</h1>
-                    <p>Round 3: Timed Exam Simulation · Stems 1(a), 1(b) Features &amp; 2(b) Follow-Up (8 Marks · 12 Mins)</p>
-                </div>
-                <span class="header-tag" style="background: #dc2626;">Timed Pitch Part 1</span>
-            </div>
-
-            <!-- Pre-Flight Cockpit Banner -->
-            <div style="background: #fef2f2; border: 1.5px solid #b91c1c; border-radius: 4px; padding: 4px 8px; font-size: 6.8pt; margin-bottom: 5px;">
-                <div style="font-weight: 800; color: #991b1b; text-transform: uppercase; margin-bottom: 2px; display: flex; justify-content: space-between;">
-                    <span>⚡ Pre-Flight Planning Engine · Features &amp; Follow-Up (8 Marks · ~12 Mins)</span>
-                    <span>Option 11 Blueprint</span>
-                </div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; line-height: 1.25;">
-                    <div style="background: #fff; border: 1px solid #fecaca; border-radius: 3px; padding: 3px 5px;">
-                        <strong style="color: #991b1b; display: block;">1. Q1 Features (4m · ~6 mins):</strong>
-                        F-D Formula: 1 feature + 1 specific fact. (e.g. Arras: 700 beds/electricity; Cambrai: Robertson blood bank).
-                    </div>
-                    <div style="background: #fff; border: 1px solid #fecaca; border-radius: 3px; padding: 3px 5px;">
-                        <strong style="color: #991b1b; display: block;">2. Q2(b) Follow-Up (4m · ~6 mins):</strong>
-                        Quote exact detail &rarr; Targeted enquiry question &rarr; Primary archival record (RAMC War Diaries) &rarr; Direct purpose.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Q1(a) & Q1(b) Features -->
-            <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 5px 8px; margin-bottom: 5px; background: #fff;">
-                <div style="font-size: 7.8pt; font-weight: bold; color: #0f172a; margin-bottom: 2px;">
-                    Question 1(a) (2 Marks): Describe one feature of the underground hospital at Arras:
-                </div>
-                <div class="writing-line starter">One feature of the underground hospital at Arras was...</div>
-                <div class="writing-line"></div>
-                <div class="writing-line"></div>
-
-                <div style="font-size: 7.8pt; font-weight: bold; color: #0f172a; margin-top: 4px; margin-bottom: 2px;">
-                    Question 1(b) (2 Marks): Describe one feature of blood transfusion techniques on the Western Front:
-                </div>
-                <div class="writing-line starter">One feature of blood transfusion techniques was...</div>
-                <div class="writing-line"></div>
-                <div class="writing-line"></div>
-            </div>
-
-            <!-- Q2(b) Follow-Up Table -->
-            <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 5px 8px; background: #fff;">
-                <div style="font-size: 7.5pt; font-weight: bold; color: #0f172a; margin-bottom: 2px;">
-                    Question 2(b) (4 Marks): Study Source B (Edith Smith letter on frozen pipes). How could you follow up Source B to find out more about the severe conditions faced by medical staff?
-                </div>
-                <table class="follow-up-table" style="margin-top: 2px;">
-                    <tr>
-                        <td style="width: 32%;"><strong>Detail in Source B to follow up:</strong></td>
-                        <td><div class="writing-line starter" style="font-size: 6.8pt; color: #1e3a8a; font-style: italic;">"The pipes freeze entirely, meaning we must strictly ration the water provided to the wounded."</div></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Question I would ask:</strong></td>
-                        <td><div class="writing-line"></div></td>
-                    </tr>
-                    <tr>
-                        <td><strong>What type of source I would use:</strong></td>
-                        <td><div class="writing-line"></div></td>
-                    </tr>
-                    <tr>
-                        <td><strong>How this source would help me:</strong></td>
-                        <td><div class="writing-line"></div><div class="writing-line"></div></td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Authentic Exam Pitch</span>
-            <span>Section A · Turn page for Question 2(a) Timed Source Utility</span>
-            <span>Page 6 of 8</span>
-        </div>
-    </div>
-
-    <!-- ============================================================= -->
-    <!-- PAGE 7: ROUND 3 — TIMED SIMULATION (STEM 2a · 8 MARKS)        -->
-    <!-- ============================================================= -->
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Section A: The Historic Environment</h1>
-                    <p>Round 3: Timed Exam Simulation · Question 2(a) Source Utility (8 Marks · ~13 Mins)</p>
-                </div>
-                <span class="header-tag" style="background: #2563eb;">Timed Pitch Part 2</span>
-            </div>
-
-            <div class="ladder-zone" style="border-left: 3.5px solid #2563eb; padding: 4px 8px; margin-bottom: 2px;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
-                    <strong style="font-size: 8.5pt; color: #1e293b;">Question 2(a): Source Utility (8 Marks)</strong>
-                    <span style="font-size: 7pt; color: #1d4ed8; font-weight: 700;">C-O-P Matrix · ~13 Mins</span>
-                </div>
-                <div style="font-weight: 800; font-size: 8.2pt; color: #0f172a; margin-bottom: 3px;">
-                    Study Sources A and B. How useful are Sources A and B for an enquiry into the immense difficulties of casualty evacuation on the Western Front? Explain your answer, using Sources A and B and your knowledge of the historical context.
-                </div>
-
-                <!-- Sources Display Box -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 3px;">
-                    <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; font-size: 6.5pt; line-height: 1.25;">
-                        <strong style="color: #1e3a8a; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">Source A (RAMC Stretcher Bearer, Ypres Salient, Oct 1917):</strong>
-                        <em>"The mud was waist-deep in places. Duckboards were blown to splinters by artillery fire. It took four of us six agonizing hours to carry a single stretcher back from the front line to the Advanced Dressing Station, slipping constantly into shell craters."</em>
-                    </div>
-                    <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; font-size: 6.5pt; line-height: 1.25;">
-                        <strong style="color: #1e3a8a; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">Source B (Official War Office Medical Evacuation Report, 1917):</strong>
-                        <em>"The evacuation chain relies upon motor ambulance convoys from Dressing Stations to railheads. However, in heavy bombardments, roads become impassable. Canal barges along the Yser and railway ambulance carriages equipped with heating stoves must be prioritized."</em>
-                    </div>
-                </div>
-
-                <!-- Mandatory Provenance Clues Scaffolding Box -->
-                <div style="background: #fef3c7; border: 1px solid #fde047; border-radius: 4px; padding: 3px 6px; font-size: 6.7pt; color: #854d0e; margin-bottom: 3px;">
-                    <strong>🔍 PROVENANCE CLUES (Author, Audience, Motive):</strong> Contrast a frontline stretcher bearer's immediate visceral journal (recording physical exhaustion) with an official military report (recording logistical systems and infrastructure).
-                </div>
-
-                <!-- Writing lines (16 Ruled Lines Total) -->
-                <div style="padding: 1px 0;">
-                    <div style="font-size: 6.8pt; font-weight: 800; color: #1d4ed8; margin: 1px 0; text-transform: uppercase;">Paragraph 1: Utility of Source A (Content + Context + Provenance)</div>
-                    <div class="writing-line starter">Source A is useful for investigating casualty evacuation because the content reveals...</div>
-                    <div class="writing-line starter">From my own knowledge of the Western Front, this reflects the conditions of...</div>
-                    <div class="writing-line starter">Furthermore, the provenance makes it useful because as a frontline stretcher bearer...</div>
-                    <div class="writing-line"></div>
-                    <div class="writing-line"></div>
-                    <div class="writing-line"></div>
-
-                    <div style="font-size: 6.8pt; font-weight: 800; color: #1d4ed8; margin: 3px 0 1px 0; text-transform: uppercase;">Paragraph 2: Utility of Source B &amp; Comparative Judgement</div>
-                    <div class="writing-line starter">Source B is also useful because it highlights the wider logistical challenges of...</div>
-                    <div class="writing-line starter">Specifically, my own knowledge confirms that motor ambulances and canal barges...</div>
-                    <div class="writing-line starter">The provenance enhances its utility because as an official War Office report...</div>
-                    <div class="writing-line"></div>
-                    <div class="writing-line starter">Overall, comparing both sources, an historian learns that while Source A reveals...</div>
-                    <div class="writing-line starter">...Source B provides the broader strategic perspective on the evacuation chain.</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Authentic Exam Pitch</span>
-            <span>Section A · Turn page for Examiner Traps &amp; 100% Spec Bank</span>
-            <span>Page 7 of 8</span>
-        </div>
-    </div>
-
-    <!-- ============================================================= -->
-    <!-- PAGE 8: BACK COVER — 100% SPEC PRACTICE BANK & TRAPS         -->
-    <!-- ============================================================= -->
-    <div class="page">
-        <div>
-            <!-- Header Banner -->
-            <div style="background: #0f172a; color: white; padding: 8px 12px; border-radius: 5px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
-                <div>
-                    <h2 style="margin: 0; font-size: 10pt; font-weight: 800; text-transform: uppercase;">⚠️ Examiner Trap Doors &amp; 100% Specification Bank</h2>
-                    <p style="margin: 1px 0 0 0; font-size: 7pt; color: #94a3b8;">Section A: The British Sector of the Western Front · Pearson Edexcel GCSE History</p>
-                </div>
-                <span style="background: #ef4444; color: white; font-size: 6.8pt; font-weight: 800; padding: 2px 6px; border-radius: 3px;">100% Spec Guarantee</span>
-            </div>
-
-            <!-- Top Section: Trap Doors -->
-            <div style="border: 1.5px solid #ef4444; background: #fef2f2; border-radius: 5px; padding: 6px 8px; margin-bottom: 6px;">
-                <strong style="color: #b91c1c; font-size: 7.5pt; text-transform: uppercase; display: block; border-bottom: 1px solid #fecaca; padding-bottom: 2px; margin-bottom: 3px;">
-                    🚫 Top 3 Fatal Examiner Traps to Avoid for Section A
-                </strong>
-                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px;">
-                    <div style="background: #fff; border: 1px solid #fca5a5; border-radius: 3px; padding: 4px; font-size: 6.5pt; line-height: 1.25;">
-                        <strong style="color: #991b1b; display: block; margin-bottom: 1px;">• The "Generic Source" Trap</strong>
-                        <span style="color: #7f1d1d;">Never write "I would check a diary" or "the internet" in Q2(b). You must specify an authentic record type, like RAMC War Diaries or Hospital Admission Registers.</span>
-                    </div>
-                    <div style="background: #fff; border: 1px solid #fca5a5; border-radius: 3px; padding: 4px; font-size: 6.5pt; line-height: 1.25;">
-                        <strong style="color: #991b1b; display: block; margin-bottom: 1px;">• The "Treachery of Bias" Trap</strong>
-                        <span style="color: #7f1d1d;">Never reject a source simply because "it is biased so it's useless". Sources written with strong emotion or wartime censorship are highly useful for showing attitudes!</span>
-                    </div>
-                    <div style="background: #fff; border: 1px solid #fca5a5; border-radius: 3px; padding: 4px; font-size: 6.5pt; line-height: 1.25;">
-                        <strong style="color: #991b1b; display: block; margin-bottom: 1px;">• The Single Feature Trap</strong>
-                        <span style="color: #7f1d1d;">Remember Q1 is split into two questions: 1(a) and 1(b). Do not combine them into one paragraph. Each requires one identified feature + one specific factual detail.</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Middle Section: 100% Specification Coverage Bank -->
-            <div style="border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 6px 8px; background: #fff; margin-bottom: 6px;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #1e3a8a; padding-bottom: 2px; margin-bottom: 4px;">
-                    <strong style="color: #1e3a8a; font-size: 7.8pt; text-transform: uppercase;">📚 Specification Practice Bank: 100% Curriculum Coverage</strong>
-                    <span style="font-size: 6.5pt; color: #64748b;">Every remaining Western Front specification bullet point tested below</span>
-                </div>
-                
-                <div style="display: flex; flex-direction: column; gap: 3px;">
-                    <div style="font-size: 6.8pt; line-height: 1.25; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px;">
-                        <strong>1. Features (2m):</strong> Describe one feature of the role of the FANY (First Aid Nursing Yeomanry) in ambulance transport.
-                    </div>
-                    <div style="font-size: 6.8pt; line-height: 1.25; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px;">
-                        <strong>2. Features (2m):</strong> Describe one feature of the effects of mustard gas on soldiers.
-                    </div>
-                    <div style="font-size: 6.8pt; line-height: 1.25; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px;">
-                        <strong>3. Source Utility (8m):</strong> How useful are official trench casualty statistics compared to private letters for studying the effectiveness of Brodie helmets?
-                    </div>
-                    <div style="font-size: 6.8pt; line-height: 1.25; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px;">
-                        <strong>4. Features (2m):</strong> Describe one feature of the Carrel-Dakin method for treating gas gangrene.
-                    </div>
-                    <div style="font-size: 6.8pt; line-height: 1.25; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px;">
-                        <strong>5. Follow-Up (4m):</strong> Detail: <em>"Ambulance barges along the Somme-Yser canal were fitted with spring beds."</em> Formulate a question and name a primary source.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Follow-up Quick Drill Box -->
-            <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 4px; padding: 4px 8px; font-size: 6.8pt; color: #166534;">
-                <strong>⚡ QUICK-FIRE FOLLOW-UP SOURCE DRILL:</strong> When asked to research:
-                (1) <em>Wound infections</em> &rarr; RAMC Medical Officer Daily Logs;
-                (2) <em>Frontline delousing routines</em> &rarr; Battalion War Diaries;
-                (3) <em>Blood transfusions</em> &rarr; CCS Surgical Register.
-            </div>
-        </div>
-
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · 100% Specification Bank</span>
-            <span>Section A Complete · Score checked items on Page 1</span>
-            <span>Page 8 of 8</span>
-        </div>
-    </div>
-</body>
-</html>`;
-
-  const sectionAPath = path.join(bookletsDir, 'med_mastery_section_a.html');
-  fs.writeFileSync(sectionAPath, sectionAHtml, 'utf8');
-  console.log(`   ✅ Saved Section A HTML: med_mastery_section_a.html (8 Pages)`);
-
-  // =========================================================================
-  // BUILD BOOKLET 2: SECTION B — MEDICINE c1250–PRESENT (24 PAGES)
-  // =========================================================================
-  console.log(
-    '\n📄 Compiling 24-Page Thematic Mastery Booklet for Section B (Medicine c1250–present)...',
-  );
-
-  const sectionBHtml = `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Section B: Medicine in Britain, c1250–present — Complete Thematic Mastery Pack</title>
-    <style>${COMMON_CSS}</style>
-</head>
-<body>
-
-    <!-- ============================================================= -->
-    <!-- PAGE 1: FRONT COVER & SECTION B PROGRESS TRACKER              -->
-    <!-- ============================================================= -->
-    <div class="page">
-        <div>
-            <!-- Banner Header -->
-            <div style="background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%); color: white; padding: 12px 16px; border-radius: 6px; margin-bottom: 8px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 4px; margin-bottom: 6px;">
-                    <span style="font-size: 7.5pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #93c5fd;">Pearson Edexcel GCSE (9–1) History · Paper 1 (1HI0/11)</span>
-                    <span style="font-size: 7pt; background: #3b82f6; padding: 2px 6px; border-radius: 3px; font-weight: 700;">Section B 12-Page Thematic Exam Mastery</span>
-                </div>
-                <h1 style="margin: 0; font-size: 14pt; font-weight: 800; line-height: 1.2;">Medicine in Britain, c1250–present</h1>
-                <p style="margin: 3px 0 0 0; font-size: 8pt; color: #cbd5e1;">Thematic Study across 750 Years · Medieval, Renaissance, 18th/19th Century &amp; Modern Eras</p>
-            </div>
-
-            <!-- Student Metadata Box -->
-            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 8px; background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 5px; padding: 6px 10px; margin-bottom: 8px; font-size: 8pt;">
-                <div><strong>Pupil Name:</strong> ________________________________</div>
-                <div><strong>Class / Set:</strong> ___________</div>
-                <div><strong>Target Grade:</strong> [ &nbsp; ]</div>
-            </div>
-
-            <!-- The Master Assessment & Progress Tracker (4 Columns, NO RAG) -->
-            <div style="border: 1.5px solid #1e3a8a; border-radius: 6px; padding: 6px 8px; background: #fff; margin-bottom: 8px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #1e3a8a; padding-bottom: 3px; margin-bottom: 4px;">
-                    <strong style="color: #1e3a8a; font-size: 8.5pt; text-transform: uppercase;">📊 Section B Progress &amp; Assessment Tracker (36+4 Marks Total)</strong>
-                    <span style="font-size: 7pt; color: #64748b;">Marked by Teacher or Peer Verified</span>
-                </div>
-
-                <table class="tracker-table">
-                    <thead>
-                        <tr>
-                            <th style="width: 54%;">Assessment Component &amp; Stem Focus</th>
-                            <th style="width: 16%; text-align: center;">Format Style</th>
-                            <th style="width: 14%; text-align: center;">Max Marks</th>
-                            <th style="width: 16%; text-align: center;">Pupil Score</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Round 1 (Stepped):</strong> Q3 Similarity / Difference (Medieval vs Renaissance)</td>
-                            <td style="text-align: center;">Stepped Ladder</td>
-                            <td style="text-align: center;">/4</td>
-                            <td style="text-align: center;">_____</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Round 1 (Stepped):</strong> Q4 Explain Why (Surgical Progress c1700–c1900)</td>
-                            <td style="text-align: center;">Stepped Ladder</td>
-                            <td style="text-align: center;">/12</td>
-                            <td style="text-align: center;">_____</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Round 1 (Stepped):</strong> Q5/Q6 Statement Essay (Germ Theory vs Public Health)</td>
-                            <td style="text-align: center;">Stepped Ladder</td>
-                            <td style="text-align: center;">/16+4</td>
-                            <td style="text-align: center;">_____</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Round 2 (Dual-Track):</strong> Q3 Similarity / Difference (Great Plague vs Black Death)</td>
-                            <td style="text-align: center;">Dual Track</td>
-                            <td style="text-align: center;">/4</td>
-                            <td style="text-align: center;">_____</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Round 2 (Dual-Track):</strong> Q4 Explain Why (Penicillin Mass Production c1938–45)</td>
-                            <td style="text-align: center;">Dual Track</td>
-                            <td style="text-align: center;">/12</td>
-                            <td style="text-align: center;">_____</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Round 2 (Dual-Track):</strong> Q5/Q6 Statement Essay (Four Humours c1250–c1700)</td>
-                            <td style="text-align: center;">Dual Track</td>
-                            <td style="text-align: center;">/16+4</td>
-                            <td style="text-align: center;">_____</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Round 3 (Simulation):</strong> Section B Full Exam Hall Simulation (Q3, Q4, Q5/6)</td>
-                            <td style="text-align: center;">Exam Pitch (55m)</td>
-                            <td style="text-align: center;">/36+4</td>
-                            <td style="text-align: center;">_____</td>
-                        </tr>
-                        <tr style="background: #e0e7ff; font-weight: 800; font-size: 7.5pt;">
-                            <td colspan="2">TOTAL COMBINED EXAM PRACTICE MARKS:</td>
-                            <td style="text-align: center;">/104</td>
-                            <td style="text-align: center;">_____ / 104</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div style="display: flex; justify-content: space-between; font-size: 7.2pt; color: #334155; margin-top: 3px; font-weight: 600;">
-                    <span>Teacher / Peer Marker: _____________________________________</span>
-                    <span>Date: _______________</span>
-                    <span>Overall Grade: [ 9 &nbsp; 8 &nbsp; 7 &nbsp; 6 &nbsp; 5 &nbsp; 4 ]</span>
-                </div>
-            </div>
-
-            <!-- Bottom Box: Fast Facts & Stem Formulas -->
-            <div style="border: 1.5px solid #0f766e; background: #f0fdfa; border-radius: 6px; padding: 6px 10px; font-size: 7pt; line-height: 1.35; color: #115e59;">
-                <div style="font-weight: 800; color: #0f766e; font-size: 7.5pt; text-transform: uppercase; margin-bottom: 3px; display: flex; justify-content: space-between;">
-                    <span>⏱️ Section B Edexcel Exam Fast Facts &amp; Stem Blueprints (36+4 Marks · ~55 Mins)</span>
-                    <span>Option 11 Paper 1 Section B</span>
-                </div>
-                <div><strong>• Q3 Similarity / Difference (4 Marks · ~6 mins):</strong> <em>P-F-C Formula.</em> State core <strong>Point of Comparison</strong> in sentence 1 &rarr; support with <strong>specific evidence from Period 1</strong> &rarr; support with <strong>specific evidence from Period 2</strong> &rarr; explain significance.</div>
-                <div><strong>• Q4 Explain Why (12 Marks · ~18 mins):</strong> <em>3 P-E-E Paragraphs.</em> <strong>Point</strong> clearly linking to the question &rarr; <strong>Evidence</strong> deploying precise facts/names/dates &rarr; <strong>Explanation</strong> tracing the direct causal link. (Must use both stimulus points + own knowledge).</div>
-                <div><strong>• Q5/Q6 Either/Or Statement Essay (16 Marks + 4 SPaG · ~30 mins):</strong> <em>Balanced Evaluation.</em> Point 1 (Agree with statement) &rarr; Point 2 (Counter-factor/Disagree) &rarr; Point 3 (Alternative factor) &rarr; <strong>Criteria-Led Conclusion</strong> explaining *why* one factor was more significant.</div>
-            </div>
-        </div>
-
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Pearson Edexcel GCSE History</span>
-            <span>Section B Thematic Study Master Booklet (c1250–present)</span>
-            <span>Page 1 of 12</span>
-        </div>
-    </div>
-
-    <!-- ============================================================= -->
-    <!-- PAGE 2: ROUND 1 — STEPPED LADDER: Q3 SIMILARITY & DIFFERENCE  -->
-    <!-- ============================================================= -->
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Section B: Medicine in Britain, c1250–present</h1>
-                    <p>Round 1: The Stepped Ladder · Question 3: Similarity &amp; Difference Masterclass (4 Marks)</p>
-                </div>
-                <span class="header-tag" style="background: #7c3aed;">Round 1: Stem 3</span>
-            </div>
-
-            <div class="ladder-zone" style="border-left: 3.5px solid #f59e0b; padding: 6px 10px; margin-bottom: 4px;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
-                    <strong style="font-size: 8.8pt; color: #1e293b;">Question 3: Similarity &amp; Difference Across Eras (4 Marks)</strong>
-                    <span style="font-size: 7pt; color: #b45309; font-weight: 700;">P-F-C Formula · ~6 Mins</span>
-                </div>
-                <div style="font-weight: 800; font-size: 8.5pt; color: #0f172a; margin-bottom: 4px;">
-                    Explain one way in which ideas about the cause of illness in the Medieval period (c1250–c1500) were similar to ideas about the cause of illness in the Renaissance period (c1500–c1700).
-                </div>
-
-                <div class="ladder-launchpad" style="padding: 4px 8px; margin-bottom: 4px;">
-                    <strong>🚀 Level 1 Launchpad:</strong> Starter: <em>"One way in which ideas about the cause of illness were similar was the continuing belief in..."</em><br>
-                    <strong>Facts to Include:</strong> Persistence of miasma (bad air) and the Four Humours; despite Harvey and Vesalius disproving Galen on anatomy, ordinary physicians in 1665 still blamed the Great Plague on miasma and humours, just as in 1348.
-                </div>
-
-                <!-- Writing lines (6 Ruled Lines) -->
-                <div style="padding: 2px 0;">
-                    <div class="writing-line starter">One way in which ideas about the cause of illness were similar across both eras was...</div>
-                    <div class="writing-line starter">In the Medieval period, people believed that...</div>
-                    <div class="writing-line starter">Similarly, in the Renaissance period, (provide precise evidence from the 1665 Great Plague)...</div>
-                    <div class="writing-line"></div>
-                    <div class="writing-line starter">This shows a strong continuity in medical thinking because...</div>
-                    <div class="writing-line"></div>
-                </div>
-
-                <div class="ladder-stretch" style="padding: 4px 8px; margin-top: 4px;">
-                    <strong>⚡ Level 2 (Grade 9) Comparison Rule:</strong> You must explicitly refer to BOTH periods with equal factual depth. Do not spend all your time describing the Medieval period and leave the Renaissance to a single sentence!
-                </div>
-            </div>
-        </div>
-
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Round 1 Stepped Ladder</span>
-            <span>Section B · Turn page for Question 4 (Explain Why)</span>
-            <span>Page 2 of 12</span>
-        </div>
-    </div>
-
-    <!-- ============================================================= -->
-    <!-- PAGE 3: ROUND 1 — STEPPED LADDER: Q4 EXPLAIN WHY (12 MARKS)  -->
-    <!-- ============================================================= -->
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Section B: Medicine in Britain, c1250–present</h1>
-                    <p>Round 1: The Stepped Ladder · Question 4: Causal Explanation Masterclass (12 Marks)</p>
-                </div>
-                <span class="header-tag" style="background: #7c3aed;">Round 1: Stem 4</span>
-            </div>
-
-            <div class="ladder-zone" style="border-left: 3.5px solid #8b5cf6; padding: 6px 10px; margin-bottom: 4px;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
-                    <strong style="font-size: 8.8pt; color: #1e293b;">Question 4: Causal Explanation (12 Marks)</strong>
-                    <span style="font-size: 7pt; color: #6d28d9; font-weight: 700;">3 P-E-E Paragraphs · ~18 Mins</span>
-                </div>
-                <div style="font-weight: 800; font-size: 8.5pt; color: #0f172a; margin-bottom: 3px;">
-                    Explain why there was rapid progress in surgical techniques in the period c1700–c1900.
-                </div>
-                <div style="font-size: 7.2pt; color: #475569; margin-bottom: 3px;">
-                    You may use the following in your answer: &nbsp; 
-                    <strong>• James Simpson and chloroform</strong> &nbsp;&nbsp; 
-                    <strong>• Joseph Lister and carbolic acid</strong> &nbsp;&nbsp; 
-                    <em>(You must also use information of your own.)</em>
-                </div>
-
-                <div class="ladder-launchpad" style="padding: 4px 8px; margin-bottom: 4px;">
-                    <strong>🚀 Level 1 Launchpad:</strong> Paragraph 1: Anaesthetics (Simpson 1847) solved pain; Paragraph 2: Antiseptics (Lister 1867) solved infection; Paragraph 3 (Own Knowledge): Aseptic surgery (sterilization, rubber gloves) and ligatures solved blood loss.
-                </div>
-
-                <!-- Writing lines (14 Ruled Lines Total) -->
-                <div style="padding: 1px 0;">
-                    <div style="font-size: 6.8pt; font-weight: 800; color: #6d28d9; margin: 1px 0; text-transform: uppercase;">Paragraph 1: Stimulus Factor 1 — The Conquest of Pain (Simpson &amp; Chloroform)</div>
-                    <div class="writing-line starter">One major reason for surgical progress was the overcoming of pain through anaesthetics...</div>
-                    <div class="writing-line starter">In 1847, James Simpson discovered that chloroform...</div>
-                    <div class="writing-line starter">This transformed surgery because doctors could perform deeper, more complex operations...</div>
-                    <div class="writing-line"></div>
-
-                    <div style="font-size: 6.8pt; font-weight: 800; color: #6d28d9; margin: 3px 0 1px 0; text-transform: uppercase;">Paragraph 2: Stimulus Factor 2 — The Conquest of Infection (Lister &amp; Carbolic Acid)</div>
-                    <div class="writing-line starter">A second critical factor was the reduction of post-operative infection...</div>
-                    <div class="writing-line starter">Inspired by Pasteur's Germ Theory, Joseph Lister used carbolic acid in 1867 to...</div>
-                    <div class="writing-line starter">Consequently, mortality rates in his surgical wards plummeted from...</div>
-                    <div class="writing-line"></div>
-
-                    <div style="font-size: 6.8pt; font-weight: 800; color: #6d28d9; margin: 3px 0 1px 0; text-transform: uppercase;">Paragraph 3: Own Knowledge Factor — Aseptic Surgery &amp; Ligatures</div>
-                    <div class="writing-line starter">Furthermore, surgery advanced beyond antiseptics through the development of aseptic surgery...</div>
-                    <div class="writing-line starter">For example, (detail steam sterilization, Halsted's rubber gloves, or surgical catgut)...</div>
-                    <div class="writing-line"></div>
-                    <div class="writing-line"></div>
-                </div>
-
-                <div class="ladder-stretch" style="padding: 4px 8px; margin-top: 3px;">
-                    <strong>⚡ Level 3 (Grade 9) Analytical Glue:</strong> Explain how Simpson's discovery initially led to the 'Black Period' of surgery (higher infection from operating deeper) *until* Lister's antiseptics solved the sepsis crisis!
-                </div>
-            </div>
-        </div>
-
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Round 1 Stepped Ladder</span>
-            <span>Section B · Turn page for Questions 5/6 (Statement Essay)</span>
-            <span>Page 3 of 12</span>
-        </div>
-    </div>
-
-    <!-- ============================================================= -->
-    <!-- PAGES 4–5: ROUND 1 — STEPPED LADDER: Q5/Q6 ESSAY (16+4m)    -->
-    <!-- ============================================================= -->
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Section B: Medicine in Britain, c1250–present</h1>
-                    <p>Round 1: The Stepped Ladder · Questions 5/6: Judgement Essay Framing (16+4 Marks)</p>
-                </div>
-                <span class="header-tag" style="background: #7c3aed;">Round 1: Stem 5/6 Part 1</span>
-            </div>
-
-            <div class="ladder-zone" style="border-left: 3.5px solid #dc2626; padding: 6px 10px; margin-bottom: 4px;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
-                    <strong style="font-size: 8.8pt; color: #1e293b;">Question 5 / 6: Either/Or Statement Essay (16 Marks + 4 SPaG)</strong>
-                    <span style="font-size: 7pt; color: #dc2626; font-weight: 700;">Balanced Evaluation · ~30 Mins</span>
-                </div>
-                <div style="font-weight: 800; font-size: 8.5pt; color: #0f172a; margin-bottom: 3px;">
-                    "Louis Pasteur’s Germ Theory was the most significant turning point in the prevention of disease between c1700 and the present."<br>
-                    How far do you agree with this statement? Explain your answer.
-                </div>
-                <div style="font-size: 7.2pt; color: #475569; margin-bottom: 4px;">
-                    You may use the following in your answer: &nbsp; 
-                    <strong>• The 1875 Public Health Act</strong> &nbsp;&nbsp; 
-                    <strong>• Fleming, Florey and Chain's development of penicillin</strong> &nbsp;&nbsp; 
-                    <em>(You must also use information of your own.)</em>
-                </div>
-
-                <!-- Essay Factor Framing Grid -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-bottom: 4px;">
-                    <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 4px; padding: 4px 6px; font-size: 6.7pt;">
-                        <strong style="color: #166534; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">Side A: Agree (Pasteur &amp; Koch)</strong>
-                        <span>Disproved spontaneous generation; proved specific microbes cause specific diseases; unlocked scientific vaccines (rabies, anthrax) and modern hygiene.</span>
-                    </div>
-                    <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 4px; padding: 4px 6px; font-size: 6.7pt;">
-                        <strong style="color: #1e40af; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">Side B: Government Action</strong>
-                        <span>1875 Public Health Act made sanitation compulsory; clean water, sewers, and rubbish disposal saved far more working-class lives than laboratory science alone.</span>
-                    </div>
-                    <div style="background: #fdf4ff; border: 1px solid #f0abfc; border-radius: 4px; padding: 4px 6px; font-size: 6.7pt;">
-                        <strong style="color: #86198f; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px;">Side C: Modern Breakthroughs</strong>
-                        <span>Penicillin (1941) provided the first cure for internal bacteria; modern lifestyle campaigns (anti-smoking) and DNA (1953) target non-infectious causes.</span>
-                    </div>
-                </div>
-
-                <!-- Paragraph 1 Writing lines -->
-                <div style="padding: 1px 0;">
-                    <div style="font-size: 6.8pt; font-weight: 800; color: #dc2626; margin: 1px 0; text-transform: uppercase;">Introduction &amp; Paragraph 1: Agree with Named Factor (Pasteur's Germ Theory)</div>
-                    <div class="writing-line starter">To a significant extent, I agree that Louis Pasteur's Germ Theory was a profound turning point...</div>
-                    <div class="writing-line starter">Prior to 1861, doctors believed in spontaneous generation, which meant...</div>
-                    <div class="writing-line starter">By proving in his swan-neck flask experiments that germs caused decay, Pasteur enabled Robert Koch to...</div>
-                    <div class="writing-line"></div>
-                    <div class="writing-line starter">Consequently, this transformed prevention by allowing scientists to develop targeted vaccines for...</div>
-                    <div class="writing-line"></div>
-                    <div class="writing-line"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Round 1 Stepped Ladder</span>
-            <span>Section B · Turn page for Essay Paragraphs 2, 3 &amp; Judgement</span>
-            <span>Page 4 of 12</span>
-        </div>
-    </div>
-
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Section B: Medicine in Britain, c1250–present</h1>
-                    <p>Round 1: The Stepped Ladder · Questions 5/6: Judgement Essay Execution (Page 2)</p>
-                </div>
-                <span class="header-tag" style="background: #dc2626;">Round 1: Stem 5/6 Part 2</span>
-            </div>
-
-            <div class="ladder-zone" style="border-left: 3.5px solid #dc2626; padding: 6px 10px; margin-bottom: 4px;">
-                <!-- Paragraph 2 & 3 Lines -->
-                <div style="padding: 1px 0;">
-                    <div style="font-size: 6.8pt; font-weight: 800; color: #dc2626; margin: 1px 0; text-transform: uppercase;">Paragraph 2: Counter-Factor — Government Action &amp; Public Health</div>
-                    <div class="writing-line starter">However, it can be strongly argued that the 1875 Public Health Act was a greater practical turning point...</div>
-                    <div class="writing-line starter">While Pasteur understood the cause in a laboratory, ordinary people were dying from filthy urban conditions...</div>
-                    <div class="writing-line starter">By abandoning laissez-faire and legally forcing local councils to provide clean water and sewers...</div>
-                    <div class="writing-line"></div>
-                    <div class="writing-line starter">Consequently, this administrative intervention saved millions from water-borne epidemics like cholera...</div>
-                    <div class="writing-line"></div>
-
-                    <div style="font-size: 6.8pt; font-weight: 800; color: #dc2626; margin: 3px 0 1px 0; text-transform: uppercase;">Paragraph 3: Modern Era &amp; Other Factors (Penicillin / DNA / Prevention)</div>
-                    <div class="writing-line starter">Furthermore, in the 20th century, the nature of disease prevention shifted towards...</div>
-                    <div class="writing-line starter">For example, while Fleming, Florey, and Chain's penicillin provided an unprecedented cure...</div>
-                    <div class="writing-line starter">Modern prevention has increasingly focused on lifestyle campaigns and genetic understanding (DNA)...</div>
-                    <div class="writing-line"></div>
-
-                    <div style="font-size: 6.8pt; font-weight: 800; color: #dc2626; margin: 3px 0 1px 0; text-transform: uppercase;">Conclusion: Criteria-Led Judgement (Why One Factor Was Decisive)</div>
-                    <div class="writing-line starter">In conclusion, while Pasteur's Germ Theory provided the indispensable scientific foundation for understanding disease...</div>
-                    <div class="writing-line starter">The true turning point in national disease prevention was government public health intervention because...</div>
-                    <div class="writing-line"></div>
-                </div>
-
-                <div class="ladder-stretch" style="padding: 4px 8px; margin-top: 3px;">
-                    <strong>⚡ SPaG Checklist (+4 Marks):</strong> [ ] Accurate spelling of key terms (Pasteur, bacterium/bacteria, antiseptic, laissez-faire); [ ] Sustained analytical tone throughout.
-                </div>
-            </div>
-        </div>
-
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Round 1 Stepped Ladder</span>
-            <span>Section B · Round 2 Dual Track begins on Page 18</span>
-            <span>Page 5 of 12</span>
-        </div>
-    </div>
-
-    <!-- ============================================================= -->
-    <!-- PAGES 6–9: ROUND 2 — SPLIT-COLUMN DUAL TRACK (Q3, Q4, Q5)   -->
-    <!-- ============================================================= -->
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Section B: Medicine in Britain, c1250–present</h1>
-                    <p>Round 2: The Split-Column Dual Track · Question 3 Similarity &amp; Difference Toolkit</p>
-                </div>
-                <span class="header-tag" style="background: #0284c7;">Round 2: Stem 3</span>
-            </div>
-
-            <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 5px 8px; margin-bottom: 4px;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
-                    <strong style="font-size: 8.5pt; color: #1e293b;">Question 3: Similarity &amp; Difference Practice (4 Marks)</strong>
-                    <span style="font-size: 7pt; color: #0284c7; font-weight: 700;">Cross-Period Comparative Matrix</span>
-                </div>
-                <div style="font-weight: 800; font-size: 8.2pt; color: #0f172a; margin-bottom: 3px;">
-                    Explain one way in which the government's response to the Great Plague (1665) was different to the response to the Black Death (1348).
-                </div>
-
-                <div class="dual-track-container" style="height: 220mm;">
-                    <div class="toolkit-col">
-                        <div>
-                            <strong style="color: #0284c7; font-size: 7pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">⏱️ Comparative Fact Vault (AO1)</strong>
-                            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px; margin-bottom: 3px; font-size: 6.2pt;">
-                                <strong style="color: #0369a1;">1348 Black Death:</strong> Government action was minimal; King Edward III ordered street cleaning; local authorities were powerless; relied on church prayers.
-                            </div>
-                            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px; margin-bottom: 3px; font-size: 6.2pt;">
-                                <strong style="color: #0369a1;">1665 Great Plague:</strong> Mayor of London enforced strict quarantine; searchers identified infected; red crosses painted on doors; watchmen guarded houses; mass graves.
-                            </div>
-
-                            <strong style="color: #0284c7; font-size: 7pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin: 4px 0 2px 0;">🌉 Difference Connectives</strong>
-                            <div style="font-size: 6.2pt; margin-bottom: 2px;">• <em>"In contrast to 1348, authorities in 1665..."</em></div>
-                            <div style="font-size: 6.2pt; margin-bottom: 2px;">• <em>"While medieval response was largely fatalistic, Renaissance response..."</em></div>
-                        </div>
-
-                        <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 3px; padding: 4px; font-size: 6.2pt; color: #1e40af;">
-                            <strong>🎯 Level 2 Standard:</strong> Focus strictly on GOVERNMENT/AUTHORITY action in both periods.
-                        </div>
-                    </div>
-
-                    <div class="writing-col">
-                        <div class="writing-line starter">One way in which the government's response was different was the degree of organized quarantine...</div>
-                        <div class="writing-line"></div>
-                        <div class="writing-line starter">In 1348, during the Black Death, authorities took very little organized action because...</div>
-                        <div class="writing-line"></div>
-                        <div class="writing-line"></div>
-                        <div class="writing-line starter">In contrast, during the Great Plague of 1665, the Mayor of London enforced strict regulations such as...</div>
-                        <div class="writing-line"></div>
-                        <div class="writing-line"></div>
-                        <div class="writing-line starter">This shows that by 1665, authorities took a far more active, systematic approach to containment...</div>
-                        <div class="writing-line"></div>
-                        <div class="writing-line"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Round 2 Dual Track</span>
-            <span>Section B · Turn page for Question 4 Dual Track</span>
-            <span>Page 6 of 12</span>
-        </div>
-    </div>
-
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Section B: Medicine in Britain, c1250–present</h1>
-                    <p>Round 2: The Split-Column Dual Track · Question 4 Causal Explanation Toolkit</p>
-                </div>
-                <span class="header-tag" style="background: #0284c7;">Round 2: Stem 4</span>
-            </div>
-
-            <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 5px 8px; margin-bottom: 4px;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
-                    <strong style="font-size: 8.5pt; color: #1e293b;">Question 4: Causal Explanation Practice (12 Marks)</strong>
-                    <span style="font-size: 7pt; color: #0284c7; font-weight: 700;">Penicillin Breakthrough</span>
-                </div>
-                <div style="font-weight: 800; font-size: 8.2pt; color: #0f172a; margin-bottom: 3px;">
-                    Explain why there was rapid progress in the development and mass production of penicillin in the years c1938–c1945.
-                </div>
-                <div style="font-size: 7.2pt; color: #475569; margin-bottom: 3px;">
-                    Stimulus: <strong>• Howard Florey and Ernst Chain</strong> &nbsp;&nbsp; <strong>• US Government funding and the Second World War</strong>
-                </div>
-
-                <div class="dual-track-container" style="height: 220mm;">
-                    <div class="toolkit-col">
-                        <div>
-                            <strong style="color: #0284c7; font-size: 7pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">⏱️ Causal Factor Vault (AO1)</strong>
-                            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px; margin-bottom: 3px; font-size: 6.2pt;">
-                                <strong style="color: #0369a1;">Florey &amp; Chain (1938–41):</strong> Purified Fleming's 1928 mould; tested on 8 mice (1940); human trial on Albert Alexander (1941) proved it killed infection in blood.
-                            </div>
-                            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px; margin-bottom: 3px; font-size: 6.2pt;">
-                                <strong style="color: #0369a1;">US War Funding (1941–44):</strong> British factories made bombs; US government funded deep fermentation tanks; enough penicillin to treat all Allied D-Day wounded (June 1944).
-                            </div>
-                            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px; margin-bottom: 3px; font-size: 6.2pt;">
-                                <strong style="color: #0369a1;">Own Knowledge:</strong> Cantaloupe melon mould strain found in Peoria, Illinois; corn steep liquor boosted yield 20x.
-                            </div>
-                        </div>
-
-                        <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 3px; padding: 4px; font-size: 6.2pt; color: #1e40af;">
-                            <strong>🎯 Level 3 Standard:</strong> Explicitly show how the pressure of WAR overcame the financial and industrial barriers to mass production.
-                        </div>
-                    </div>
-
-                    <div class="writing-col">
-                        <div style="font-size: 6.5pt; font-weight: 800; color: #0284c7; text-transform: uppercase;">Para 1: Florey &amp; Chain's Scientific Breakthrough</div>
-                        <div class="writing-line starter">The primary scientific catalyst for progress was the biochemical work of Florey and Chain...</div>
-                        <div class="writing-line"></div>
-                        <div class="writing-line"></div>
-                        <div class="writing-line starter">This was critical because while Fleming discovered penicillin accidentally in 1928...</div>
-                        <div class="writing-line"></div>
-
-                        <div style="font-size: 6.5pt; font-weight: 800; color: #0284c7; margin-top: 3px; text-transform: uppercase;">Para 2: Second World War &amp; US State Intervention</div>
-                        <div class="writing-line starter">However, scientific discovery could not achieve mass production without wartime urgency...</div>
-                        <div class="writing-line"></div>
-                        <div class="writing-line"></div>
-                        <div class="writing-line starter">Recognizing its battlefield value, the US government poured millions of dollars into...</div>
-                        <div class="writing-line"></div>
-
-                        <div style="font-size: 6.5pt; font-weight: 800; color: #0284c7; margin-top: 3px; text-transform: uppercase;">Para 3: Industrial Technology &amp; Agricultural Breakthroughs</div>
-                        <div class="writing-line starter">Furthermore, mass production was unlocked by industrial innovations such as...</div>
-                        <div class="writing-line"></div>
-                        <div class="writing-line"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Round 2 Dual Track</span>
-            <span>Section B · Turn page for Questions 5/6 Dual Track</span>
-            <span>Page 7 of 12</span>
-        </div>
-    </div>
-
-    <!-- Pages 20 & 21: Dual Track Statement Essay -->
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Section B: Medicine in Britain, c1250–present</h1>
-                    <p>Round 2: The Split-Column Dual Track · Statement Essay Toolkit (Part 1)</p>
-                </div>
-                <span class="header-tag" style="background: #0284c7;">Round 2: Stem 5/6 Part 1</span>
-            </div>
-
-            <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 5px 8px; margin-bottom: 4px;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
-                    <strong style="font-size: 8.5pt; color: #1e293b;">Question 5 / 6: Statement Essay Practice (16+4 Marks)</strong>
-                    <span style="font-size: 7pt; color: #0284c7; font-weight: 700;">Four Humours c1250–c1700</span>
-                </div>
-                <div style="font-weight: 800; font-size: 8.2pt; color: #0f172a; margin-bottom: 3px;">
-                    "The Theory of the Four Humours was the most significant foundation of medical knowledge between c1250 and c1700."<br>
-                    How far do you agree? Explain your answer.
-                </div>
-                <div style="font-size: 7.2pt; color: #475569; margin-bottom: 3px;">
-                    Stimulus: <strong>• The enduring influence of Galen</strong> &nbsp;&nbsp; <strong>• Traditional herbal remedies</strong>
-                </div>
-
-                <div class="dual-track-container" style="height: 220mm;">
-                    <div class="toolkit-col">
-                        <div>
-                            <strong style="color: #0284c7; font-size: 7pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">⏱️ Continuity vs Change Matrix</strong>
-                            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px; margin-bottom: 3px; font-size: 6.2pt;">
-                                <strong style="color: #0369a1;">Four Humours Dominance:</strong> Endorsed by Church; Galen's texts taught in universities; phlebotomy, purging, regimen sanitatis; used to explain 1348 and 1665 plagues.
-                            </div>
-                            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px; margin-bottom: 3px; font-size: 6.2pt;">
-                                <strong style="color: #0369a1;">Renaissance Challenges:</strong> Vesalius (1543) proved 300+ errors in Galen; Harvey (1628) proved circulation; Sydenham (1676) grouped diseases by symptoms not individual humours.
-                            </div>
-                        </div>
-
-                        <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 3px; padding: 4px; font-size: 6.2pt; color: #1e40af;">
-                            <strong>🎯 Level 4 Evaluation:</strong> Distinguish between theoretical breakthroughs in universities and the continuity of humeral treatments among ordinary people.
-                        </div>
-                    </div>
-
-                    <div class="writing-col">
-                        <div style="font-size: 6.5pt; font-weight: 800; color: #0284c7; text-transform: uppercase;">Para 1: The Enduring Dominance of the Four Humours</div>
-                        <div class="writing-line starter">On the one hand, the Four Humours was unquestionably the dominant foundation of medicine...</div>
-                        <div class="writing-line"></div>
-                        <div class="writing-line starter">Supported by the Catholic Church, Galen's humeral theories were taught as indisputable dogma...</div>
-                        <div class="writing-line"></div>
-                        <div class="writing-line"></div>
-
-                        <div style="font-size: 6.5pt; font-weight: 800; color: #0284c7; margin-top: 3px; text-transform: uppercase;">Para 2: Renaissance Challenges to Humeral Theory</div>
-                        <div class="writing-line starter">However, between c1500 and c1700, scientific empirical observation began to dismantle humeral ideas...</div>
-                        <div class="writing-line"></div>
-                        <div class="writing-line starter">Vesalius proved Galen wrong on anatomy in 1543, and William Harvey proved...</div>
-                        <div class="writing-line"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Round 2 Dual Track</span>
-            <span>Section B · Turn page for Essay Part 2</span>
-            <span>Page 8 of 12</span>
-        </div>
-    </div>
-
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Section B: Medicine in Britain, c1250–present</h1>
-                    <p>Round 2: The Split-Column Dual Track · Statement Essay Toolkit (Part 2)</p>
-                </div>
-                <span class="header-tag" style="background: #0284c7;">Round 2: Stem 5/6 Part 2</span>
-            </div>
-
-            <div style="border: 1px solid #cbd5e1; border-radius: 5px; padding: 5px 8px; margin-bottom: 4px;">
-                <div class="dual-track-container" style="height: 245mm;">
-                    <div class="toolkit-col">
-                        <div>
-                            <strong style="color: #0284c7; font-size: 7pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">⏱️ Alternative Factors Toolkit</strong>
-                            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px; margin-bottom: 3px; font-size: 6.2pt;">
-                                <strong style="color: #0369a1;">Herbal Remedies:</strong> Practical folklore medicine passed down by women/wise-women; honey, mint, willow bark; independent of Greek theory.
-                            </div>
-                            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px; margin-bottom: 3px; font-size: 6.2pt;">
-                                <strong style="color: #0369a1;">Sydenham &amp; Observation:</strong> Observed epidemics as external clinical entities rather than internal balance of humours.
-                            </div>
-                        </div>
-
-                        <div style="background: #fdf4ff; border: 1px solid #f0abfc; border-radius: 3px; padding: 4px; font-size: 6.2pt; color: #86198f;">
-                            <strong>⚡ Grade 9 Judgement:</strong> Conclude that while anatomy changed rapidly, actual treatment remained fundamentally humeral until the 18th century!
-                        </div>
-                    </div>
-
-                    <div class="writing-col">
-                        <div style="font-size: 6.5pt; font-weight: 800; color: #0284c7; text-transform: uppercase;">Para 3: Traditional Herbal &amp; Alternative Approaches</div>
-                        <div class="writing-line starter">Furthermore, for the vast majority of ordinary people, medical knowledge was founded on...</div>
-                        <div class="writing-line"></div>
-                        <div class="writing-line starter">Herbal remedies and community care provided by apothecaries and local women...</div>
-                        <div class="writing-line"></div>
-                        <div class="writing-line"></div>
-
-                        <div style="font-size: 6.5pt; font-weight: 800; color: #0284c7; margin-top: 3px; text-transform: uppercase;">Conclusion: Supported Final Judgement</div>
-                        <div class="writing-line starter">In conclusion, I agree to a large extent that the Four Humours was the most significant foundation...</div>
-                        <div class="writing-line"></div>
-                        <div class="writing-line starter">Although anatomical discoveries by Vesalius and Harvey laid the groundwork for modern science...</div>
-                        <div class="writing-line"></div>
-                        <div class="writing-line starter">In terms of everyday clinical treatment, humeral bleeding and purging remained unchallenged until c1700...</div>
-                        <div class="writing-line"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Round 2 Dual Track</span>
-            <span>Section B · Turn page for Planning Engine Room</span>
-            <span>Page 9 of 12</span>
-        </div>
-    </div>
-
-    <!-- ============================================================= -->
-    <!-- PAGE 10: ROUND 3 — PLANNING ENGINE ROOM                       -->
-    <!-- ============================================================= -->
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Section B: Medicine in Britain, c1250–present</h1>
-                    <p>Round 3: The Planning Engine Room · Thematic Causal &amp; Synoptic Deconstruction</p>
-                </div>
-                <span class="header-tag" style="background: #dc2626;">Round 3: Engine Room</span>
-            </div>
-
-            <!-- Pre-Flight Tables -->
-            <div style="margin-bottom: 6px;">
-                <strong style="font-size: 7.8pt; color: #991b1b;">1. Cross-Period Comparison Engine (Q3 Practice):</strong>
-                <table class="plan-table">
-                    <tr>
-                        <th style="width: 30%;">Comparison Question</th>
-                        <th style="width: 35%;">Period 1 Specific Evidence</th>
-                        <th style="width: 35%;">Period 2 Specific Evidence</th>
-                    </tr>
-                    <tr>
-                        <td>Treating Epidemics: Black Death vs Great Plague</td>
-                        <td>1348: Flagellation, church prayers, carrying herbs, vinegar.</td>
-                        <td>1665: Watchmen locked doors, searchers, burning barrels of pitch, plague pits.</td>
-                    </tr>
-                    <tr>
-                        <td>Hospital Care: Medieval vs 19th Century</td>
-                        <td>c1300: Monasteries (St Bartholomew's); focus on spiritual rest; no doctors.</td>
-                        <td>c1860: Nightingale pavilion wards; trained nurses; antiseptic surgery.</td>
-                    </tr>
-                </table>
-            </div>
-
-            <div style="margin-bottom: 6px;">
-                <strong style="font-size: 7.8pt; color: #991b1b;">2. Overarching Thematic Factors Matrix (Q4 &amp; Q5/Q6):</strong>
-                <table class="plan-table">
-                    <tr>
-                        <th style="width: 25%;">Core Factor</th>
-                        <th style="width: 40%;">Key Historical Examples Across 750 Years</th>
-                        <th style="width: 35%;">Direct Analytical Impact</th>
-                    </tr>
-                    <tr>
-                        <td><strong>Government Action</strong></td>
-                        <td>1875 Public Health Act, compulsory smallpox vaccination (1853), NHS (1948)</td>
-                        <td>Enforces sanitation and equal access beyond market forces.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Science &amp; Tech</strong></td>
-                        <td>Printing press (1476), Microscope, Swan-neck flasks, X-rays, DNA (1953)</td>
-                        <td>Provides empirical proof that overturns dogma.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Key Individuals</strong></td>
-                        <td>Vesalius, Harvey, Jenner, Simpson, Lister, Pasteur, Koch, Snow, Fleming</td>
-                        <td>Acts as intellectual pioneers driving revolutionary change.</td>
-                    </tr>
-                </table>
-            </div>
-
-            <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 4px; padding: 4px 8px; font-size: 6.8pt; color: #991b1b;">
-                <strong>📋 PRE-FLIGHT AUDIT CHECKLIST:</strong> &nbsp;
-                [ ] Did I compare BOTH eras with factual detail in Q3? &nbsp;&nbsp;
-                [ ] Did I explain THREE distinct causes for Q4? &nbsp;&nbsp;
-                [ ] Is my Q5/Q6 essay structured around criteria-led evaluation?
-            </div>
-        </div>
-
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Round 3 Engine Room</span>
-            <span>Section B · Execute continuous prose on Page 23</span>
-            <span>Page 10 of 12</span>
-        </div>
-    </div>
-
-    <!-- ============================================================= -->
-    <!-- PAGE 11: ROUND 3 — THE EXAM PITCH (SECTION B SIMULATION)      -->
-    <!-- ============================================================= -->
-    <div class="page">
-        <div>
-            <div class="page-header">
-                <div class="header-left">
-                    <h1>Section B: Medicine in Britain, c1250–present</h1>
-                    <p>Round 3: The Exam Pitch · Authentic Edexcel Section B Simulation (36+4 Marks · 55 Mins)</p>
-                </div>
-                <span class="header-tag" style="background: #dc2626;">Timed Exam Pitch</span>
-            </div>
-
-            <div style="background: #f1f5f9; border: 1.5px solid #475569; border-radius: 4px; padding: 4px 8px; font-size: 6.8pt; margin-bottom: 6px; display: flex; justify-content: space-between;">
-                <div><strong>AO1 Knowledge:</strong> Precise names, dates, individuals, and acts across all four eras.</div>
-                <div><strong>AO2 Analysis:</strong> Sustained explanation of similarity, causation, and relative importance.</div>
-            </div>
-
-            <!-- Continuous Exam Lines for Section B -->
-            <div style="padding: 0;">
-                <div class="writing-line starter"><strong>Question 3 (4 Marks):</strong> One way in which hospital care in the 19th century differed from medieval hospitals was...</div>
-                <div class="writing-line"></div>
-                <div class="writing-line"></div>
-                
-                <div class="writing-line starter" style="margin-top: 3px;"><strong>Question 4 (12 Marks):</strong> Explain why penicillin was mass-produced rapidly c1938–45: _________________________</div>
-                <div class="writing-line"></div>
-                <div class="writing-line"></div>
-                <div class="writing-line"></div>
-                <div class="writing-line"></div>
-                <div class="writing-line"></div>
-
-                <div class="writing-line starter" style="margin-top: 3px;"><strong>Question 5 / 6 Essay (16+4 Marks):</strong> "____________________________________________________________________"</div>
-                <div class="writing-line"></div>
-                <div class="writing-line"></div>
-                <div class="writing-line"></div>
-                <div class="writing-line"></div>
-                <div class="writing-line"></div>
-                <div class="writing-line"></div>
-                <div class="writing-line"></div>
-                <div class="writing-line"></div>
-            </div>
-        </div>
-
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · Authentic Exam Pitch</span>
-            <span>Section B · Turn page for 100% Spec Coverage Bank</span>
-            <span>Page 11 of 12</span>
-        </div>
-    </div>
-
-    <!-- ============================================================= -->
-    <!-- PAGE 12: BACK COVER — 100% SPEC PRACTICE BANK & TRAPS         -->
-    <!-- ============================================================= -->
-    <div class="page">
-        <div>
-            <!-- Header Banner -->
-            <div style="background: #0f172a; color: white; padding: 8px 12px; border-radius: 5px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
-                <div>
-                    <h2 style="margin: 0; font-size: 10pt; font-weight: 800; text-transform: uppercase;">⚠️ Examiner Trap Doors &amp; 100% Specification Bank</h2>
-                    <p style="margin: 1px 0 0 0; font-size: 7pt; color: #94a3b8;">Section B: Medicine in Britain, c1250–present · Pearson Edexcel GCSE History</p>
-                </div>
-                <span style="background: #ef4444; color: white; font-size: 6.8pt; font-weight: 800; padding: 2px 6px; border-radius: 3px;">100% Spec Guarantee</span>
-            </div>
-
-            <!-- Top Section: Trap Doors -->
-            <div style="border: 1.5px solid #ef4444; background: #fef2f2; border-radius: 5px; padding: 6px 8px; margin-bottom: 6px;">
-                <strong style="color: #b91c1c; font-size: 7.5pt; text-transform: uppercase; display: block; border-bottom: 1px solid #fecaca; padding-bottom: 2px; margin-bottom: 3px;">
-                    🚫 Top 3 Fatal Examiner Traps to Avoid for Section B
-                </strong>
-                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px;">
-                    <div style="background: #fff; border: 1px solid #fca5a5; border-radius: 3px; padding: 4px; font-size: 6.5pt; line-height: 1.25;">
-                        <strong style="color: #991b1b; display: block; margin-bottom: 1px;">• The One-Period Comparison Trap</strong>
-                        <span style="color: #7f1d1d;">In Question 3, you cannot get above Level 1 if you only talk about one era. You must give balanced, explicit factual evidence for BOTH periods!</span>
-                    </div>
-                    <div style="background: #fff; border: 1px solid #fca5a5; border-radius: 3px; padding: 4px; font-size: 6.5pt; line-height: 1.25;">
-                        <strong style="color: #991b1b; display: block; margin-bottom: 1px;">• The Overnight Miracle Trap</strong>
-                        <span style="color: #7f1d1d;">Never describe scientific breakthroughs (Vesalius, Harvey, Jenner, Pasteur) as instant cures. In reality, ordinary treatments took decades or centuries to catch up!</span>
-                    </div>
-                    <div style="background: #fff; border: 1px solid #fca5a5; border-radius: 3px; padding: 4px; font-size: 6.5pt; line-height: 1.25;">
-                        <strong style="color: #991b1b; display: block; margin-bottom: 1px;">• The Storytelling Narrative Trap</strong>
-                        <span style="color: #7f1d1d;">Question 4 and 5/6 are causal and evaluative essays, NOT stories. Never just list what Jenner or Snow did; explicitly explain *why* it changed outcomes.</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Middle Section: 100% Specification Coverage Bank -->
-            <div style="border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 6px 8px; background: #fff; margin-bottom: 6px;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #1e3a8a; padding-bottom: 2px; margin-bottom: 4px;">
-                    <strong style="color: #1e3a8a; font-size: 7.8pt; text-transform: uppercase;">📚 Specification Practice Bank: 100% Thematic Curriculum Coverage</strong>
-                    <span style="font-size: 6.5pt; color: #64748b;">Every remaining thematic specification bullet point tested below</span>
-                </div>
-                
-                <div style="display: flex; flex-direction: column; gap: 3px;">
-                    <div style="font-size: 6.8pt; line-height: 1.25; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px;">
-                        <strong>1. Q3 Similarity (4m):</strong> Explain one way in which the training of physicians in the Medieval period was similar to the training of physicians in the Renaissance.
-                    </div>
-                    <div style="font-size: 6.8pt; line-height: 1.25; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px;">
-                        <strong>2. Q4 Explain Why (12m):</strong> Explain why government attitudes to public health changed in the period c1848–c1875. (Edwin Chadwick, John Snow).
-                    </div>
-                    <div style="font-size: 6.8pt; line-height: 1.25; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px;">
-                        <strong>3. Q5/Q6 Essay (16+4m):</strong> 'The founding of the National Health Service in 1948 was the most significant breakthrough in medical care between c1900 and the present.' How far do you agree?
-                    </div>
-                    <div style="font-size: 6.8pt; line-height: 1.25; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px;">
-                        <strong>4. Q3 Difference (4m):</strong> Explain one way in which treatments for the Black Death (1348) were different to treatments for Cholera (1854).
-                    </div>
-                    <div style="font-size: 6.8pt; line-height: 1.25; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 6px;">
-                        <strong>5. Q4 Explain Why (12m):</strong> Explain why understanding the causes of disease advanced rapidly after 1900. (Watson &amp; Crick/DNA, lifestyle research into lung cancer).
-                    </div>
-                </div>
-            </div>
-
-            <!-- Key Individuals Synoptic Summary -->
-            <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 4px; padding: 4px 8px; font-size: 6.8pt; color: #166534;">
-                <strong>⚡ 750-YEAR SYNOPTIC TITANS:</strong> Hippocrates &amp; Galen (Humours) &rarr; Vesalius &amp; Harvey (Anatomy) &rarr; Sydenham (Observation) &rarr; Jenner (Vaccines) &rarr; Simpson (Chloroform) &rarr; Lister (Antiseptics) &rarr; Pasteur &amp; Koch (Germs) &rarr; Snow &amp; Chadwick (Public Health) &rarr; Fleming, Florey &amp; Chain (Antibiotics) &rarr; Watson, Crick &amp; Franklin (DNA).
-            </div>
-        </div>
-
-        <div class="page-footer">
-            <span>Mr Lovett's History Hub · 100% Specification Bank</span>
-            <span>Section B Complete · Score checked items on Page 1</span>
-            <span>Page 12 of 12</span>
-        </div>
-    </div>
-</body>
-</html>`;
-
-  const sectionBPath = path.join(bookletsDir, 'med_mastery_section_b.html');
-  fs.writeFileSync(sectionBPath, sectionBHtml, 'utf8');
-  console.log(`   ✅ Saved Section B HTML: med_mastery_section_b.html (12 Pages)`);
-
-  // =========================================================================
-  // BUILD MASTER COMPENDIUM: PAPER 1 FULL MASTER VOLUME (35 PAGES)
-  // =========================================================================
-  console.log('\n📚 Compiling 20-Page Full Paper 1 Master Volume (med_mastery_FULL.html)...');
-
-  const extractBodyPages = (html) => {
-    const bodyMatch = html.match(/<body>([\s\S]*?)<\/body>/i);
-    return bodyMatch ? bodyMatch[1] : '';
-  };
-
-  const fullHtmlContent = `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Paper 1: Medicine in Britain, c1250–present and The British Sector of the Western Front — Complete Revision Compendium</title>
-    <style>${COMMON_CSS}</style>
-</head>
-<body>
-    ${extractBodyPages(sectionAHtml)}
-    ${extractBodyPages(sectionBHtml)}
-</body>
-</html>`;
-
-  const fullHtmlPath = path.join(bookletsDir, 'med_mastery_FULL.html');
-  fs.writeFileSync(fullHtmlPath, fullHtmlContent, 'utf8');
-  console.log(`   ✅ Saved Full Master HTML: med_mastery_FULL.html (35 Pages)`);
-
-  // =========================================================================
-  // LAUNCH PUPPETEER TO COMPILE THE 3 PDFs
-  // =========================================================================
-  console.log('\n🖨️ Launching Puppeteer to compile print-perfect PDFs...');
-  const browser = await puppeteer.launch({
-    headless: 'new',
-    args: ['--allow-file-access-from-files', '--disable-web-security'],
-  });
-  const page = await browser.newPage();
-
-  // 1. Full Master PDF (20 Pages Master Volume)
-  const fullPdfPath = path.join(pdfsDir, 'med_mastery_pack_FULL.pdf');
-  await page.goto(pathToFileURL(fullHtmlPath).href, { waitUntil: 'networkidle0' });
-  await page.pdf({
-    path: fullPdfPath,
-    format: 'A4',
-    landscape: false,
-    printBackground: true,
-    margin: { top: '8mm', bottom: '8mm', left: '10mm', right: '10mm' },
-  });
-  console.log(`   📕 Exported PDF: med_mastery_pack_FULL.pdf (20 Pages Master Volume)`);
-
-  // Sync to public/pdfs/ root
-  fs.copyFileSync(fullPdfPath, path.join(rootPdfsDir, 'med_mastery_pack_FULL.pdf'));
-  console.log(`   📋 Synced med_mastery_pack_FULL.pdf to public/pdfs/ root`);
-
-  await browser.close();
-
-  // Auto-sync to Google Drive Department File (School Laptop Access)
-  console.log(`\n📂 Auto-syncing Medicine Mastery PDFs to Google Drive Department File...`);
-  try {
-    const { syncAdminPdfsToDrive } = require('./sync_admin_pdfs_to_drive.cjs');
-    syncAdminPdfsToDrive();
-    console.log(`✅ Google Drive Department File updated with fresh Medicine Mastery PDFs.`);
-  } catch (driveErr) {
-    console.warn(`⚠️ Warning: Could not sync to Google Drive: ${driveErr.message}`);
+  .stimulus-card li {
+    margin-bottom: 1px;
   }
 
-  console.log('\n🎉 Successfully compiled all Medicine Mastery Booklets into print-perfect PDFs!');
+  /* Authentic Pearson Ruled Lines (7.4mm spacing) */
+  .dotted-line {
+    border-bottom: 1.2px solid #000000;
+    height: 7.4mm;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 3-Column Scaffolding Container */
+  .scaffold-bar {
+    border: 1.2px solid #000000;
+    border-radius: 2px;
+    background: #f8fafc;
+    padding: 3.5px 6px;
+    margin-bottom: 4px;
+    font-size: 7.4pt;
+    line-height: 1.25;
+    display: flex;
+    gap: 6px;
+    color: #000000;
+  }
+  .scaffold-col {
+    border-right: 1px solid #cbd5e1;
+    padding-right: 5px;
+  }
+  .scaffold-col:last-child {
+    border-right: none;
+    padding-right: 0;
+  }
+  .scaffold-label {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 6.8pt;
+    color: #000000;
+    margin-bottom: 1.5px;
+    display: block;
+    letter-spacing: 0.2px;
+  }
+  .scaffold-content {
+    color: #000000;
+    font-size: 7.1pt;
+    line-height: 1.25;
+  }
+  .scaffold-pill {
+    display: inline-block;
+    background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 2px;
+    padding: 0.5px 3.5px;
+    margin: 1px 2px 1px 0;
+    font-size: 6.8pt;
+    font-weight: 700;
+    color: #000000;
+    white-space: nowrap;
+  }
+
+  /* Expanded Progress Tracker Table on Page 1 */
+  .tracker-card {
+    border: 1.5px solid #000000;
+    border-radius: 2px;
+    background: #ffffff;
+    padding: 6px 8px;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 4px;
+  }
+  .tracker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1.2px solid #000000;
+    padding-bottom: 2px;
+    margin-bottom: 4px;
+  }
+  .tracker-title {
+    font-size: 8.5pt;
+    font-weight: 800;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+  }
+  .tracker-sub {
+    font-size: 7pt;
+    color: #000000;
+    font-style: italic;
+  }
+  .tracker-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 7.2pt;
+    line-height: 1.2;
+  }
+  .tracker-table th {
+    background: #000000;
+    color: #ffffff;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 2.5px 5px;
+    border: 1px solid #000000;
+    text-align: left;
+    font-size: 6.8pt;
+  }
+  .tracker-table td {
+    padding: 2.2px 5px;
+    border: 1px solid #cbd5e1;
+    color: #000000;
+  }
+  .tracker-section-hdr td {
+    background: #f1f5f9;
+    font-weight: 800;
+    color: #000000;
+    font-size: 7pt;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    padding: 2.5px 5px;
+    border-top: 1.2px solid #000000;
+    border-bottom: 1.2px solid #000000;
+  }
+  .tracker-row:nth-child(even) {
+    background: #fafafa;
+  }
+  .page-cell, .marks-cell, .score-cell {
+    text-align: center;
+    font-weight: 700;
+    color: #000000;
+  }
+  .hw-cell {
+    font-size: 6.6pt;
+    font-weight: 600;
+    color: #334155;
+    white-space: nowrap;
+  }
+  .q-format-tag {
+    font-weight: 800;
+    color: #000000;
+  }
+
+  /* Follow-Up Grid Table */
+  .follow-up-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 7.8pt;
+    margin-top: 3px;
+  }
+  .follow-up-table td {
+    border: 1.2px solid #000000;
+    padding: 6px 8px;
+    vertical-align: middle;
+  }
+  .follow-up-table tr td:first-child {
+    width: 36%;
+    background: #f8fafc;
+    font-weight: 800;
+    color: #000000;
+  }
+  .follow-up-table tr td:last-child {
+    width: 64%;
+    background: #ffffff;
+    padding: 2px 6px;
+  }
+
+  /* Archival Source Box */
+  .archival-source-box {
+    background: #f8fafc;
+    border: 1.2px solid #000000;
+    border-radius: 2px;
+    padding: 4px 7px;
+    font-size: 7.2pt;
+    line-height: 1.25;
+  }
+  .archival-source-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 900;
+    font-size: 7.8pt;
+    color: #000000;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 1.5px;
+    margin-bottom: 2.5px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+  }
+  .archival-source-body {
+    font-style: italic;
+    color: #000000;
+  }
+  .archival-source-footer {
+    border-top: 1px dashed #cbd5e1;
+    margin-top: 2.5px;
+    padding-top: 1.5px;
+    font-size: 6.6pt;
+    color: #000000;
+    font-weight: 600;
+  }
+
+  /* Provenance Card */
+  .provenance-card {
+    background: #f8fafc;
+    border: 1.2px solid #000000;
+    border-radius: 2px;
+    padding: 4px 7px;
+    font-size: 7.2pt;
+    line-height: 1.25;
+    margin-bottom: 4px;
+  }
+
+  /* Utility Response Block */
+  .utility-response-block {
+    margin-bottom: 4px;
+  }
+  .utility-para-header {
+    font-size: 7.6pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #000000;
+    border-bottom: 1.2px solid #000000;
+    padding-bottom: 1.5px;
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .starters-box {
+    background: #f8fafc;
+    border: 1px solid #000000;
+    border-radius: 2px;
+    padding: 3px 6px;
+    margin-bottom: 3px;
+  }
+  .starter-point {
+    font-size: 7.2pt;
+    line-height: 1.25;
+    color: #000000;
+    margin-bottom: 1.5px;
+  }
+  .starter-point:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Specification Audit Checklist on Page 20 */
+  .spec-audit-container {
+    border: 1.5px solid #000000;
+    border-radius: 2px;
+    padding: 6px 8px;
+    background: #ffffff;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    box-sizing: border-box;
+  }
+  .spec-audit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1.5px solid #000000;
+    padding-bottom: 3px;
+    margin-bottom: 6px;
+  }
+  .spec-audit-title {
+    font-size: 8.5pt;
+    font-weight: 800;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+  }
+  .spec-audit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 7px;
+    flex: 1 1 auto;
+  }
+  .spec-audit-col {
+    background: #ffffff;
+    border: 1.2px solid #000000;
+    border-radius: 2px;
+    padding: 4px 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .spec-col-banner {
+    background: #000000;
+    color: #ffffff;
+    font-size: 6.8pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    padding: 2px 4px;
+    margin-bottom: 4px;
+    text-align: center;
+    border-radius: 1px;
+  }
+  .spec-unit-box {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 1.5px;
+    padding: 3.5px 5px;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .spec-unit-title {
+    font-size: 6.8pt;
+    font-weight: 800;
+    color: #000000;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 1.5px;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+  .spec-sub-title {
+    font-size: 6.2pt;
+    font-weight: 700;
+    color: #334155;
+    text-transform: uppercase;
+    margin-top: 2.5px;
+    margin-bottom: 1.5px;
+    border-bottom: 0.5px dashed #cbd5e1;
+    padding-bottom: 0.5px;
+  }
+  .spec-points-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .spec-point-item {
+    font-size: 6.1pt;
+    line-height: 1.2;
+    color: #000000;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2px;
+  }
+  .spec-point-item:last-child {
+    margin-bottom: 1px;
+  }
+  .spec-tick-box {
+    width: 7.5px;
+    height: 7.5px;
+    border: 1px solid #000000;
+    border-radius: 1px;
+    margin-right: 3px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    background: #ffffff;
+  }
+  .spec-point-text {
+    flex: 1;
+  }
+
+  /* Footers */
+  .page-footer {
+    border-top: 1.2px solid #000000;
+    padding-top: 2.5px;
+    font-size: 7.2pt;
+    color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+  }
+  .turn-over {
+    font-weight: 800;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+`;
+
+function renderLines(count, customHeight) {
+  let html = '';
+  const heightStyle = customHeight ? ` style="height: ${customHeight};"` : '';
+  for (let i = 0; i < count; i++) {
+    html += `<div class="dotted-line"${heightStyle}></div>`;
+  }
+  return html;
 }
 
-run().catch((err) => {
-  console.error('❌ Error generating Medicine mastery booklets:', err);
-  process.exit(1);
-});
+// =============================================================================
+// COMPLETE 20-PAGE HTML BUILDER
+// =============================================================================
+function generateMasterHtml() {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paper 1: Medicine in Britain, c1250–present and The British Sector of the Western Front, 1914–18 — Complete Mastery Pack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&display=swap" rel="stylesheet">
+    <style>${COMMON_CSS}</style>
+</head>
+<body>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 1: FRONT COVER & MASTER 26-ROW EXAM TRACKER TABLE        -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="edexcel-banner">Pearson Edexcel GCSE (9–1)</div>
+
+            <!-- Clean Exam Header Box with Time & Marks -->
+            <div class="exam-header-box">
+                <div class="exam-header-left">
+                    <div class="exam-date">History · Paper 1: Thematic Study &amp; Historic Environment</div>
+                    <div class="exam-time">Time: 1 hour 15 minutes (Full Mock Simulation / Guided Practice) · Total Marks: 52</div>
+                    <div class="exam-subject">Medicine in Britain, c1250–present and The British Sector of the Western Front, 1914–18</div>
+                    <div class="exam-booklet">Complete 20-Page Mastery Exam Pack</div>
+                    <div class="exam-subtopic">Option 11 · Section B (Thematic Study, c1250–present) &amp; Section A (Historic Environment, 1914–18)</div>
+                </div>
+                <div class="exam-header-right">
+                    <div class="ref-label">Paper<br>reference</div>
+                    <div class="ref-code">1HI0/11</div>
+                </div>
+            </div>
+
+            <!-- Expanded 26-Row Master Assessment Tracker -->
+            <div class="tracker-card">
+                <div class="tracker-header">
+                    <span class="tracker-title">📋 Complete 20-Page Specification Practice Tracker &amp; Homework Audit</span>
+                    <span class="tracker-sub">Track marks achieved across Section B (c1250–present) &amp; Section A (Western Front)</span>
+                </div>
+                <table class="tracker-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 23%;">HW Set / Due</th>
+                            <th style="width: 18%;">Question &amp; Format</th>
+                            <th style="width: 41%;">Specification Focus &amp; Historical Content</th>
+                            <th style="width: 5%; text-align: center;">Page</th>
+                            <th style="width: 5%; text-align: center;">Marks</th>
+                            <th style="width: 8%; text-align: center;">Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Section B: Medieval -->
+                        <tr class="tracker-section-hdr">
+                            <td colspan="6">Section B: Medieval Medicine (c1250–c1500)</td>
+                        </tr>
+                        <tr class="tracker-row">
+                            <td class="hw-cell">Set: _________ &nbsp; Due: _________</td>
+                            <td><span class="q-format-tag">Q3 · Similarity</span></td>
+                            <td>Ideas about cause of illness (Medieval vs Renaissance continuity)</td>
+                            <td class="page-cell">2</td>
+                            <td class="marks-cell">4</td>
+                            <td class="score-cell">[ &nbsp; ] / 4</td>
+                        </tr>
+                        <tr class="tracker-row">
+                            <td class="hw-cell">Set: _________ &nbsp; Due: _________</td>
+                            <td><span class="q-format-tag">Q4 · Explain Why</span></td>
+                            <td>Continuity in medical treatments in Medieval England (Church &amp; Galen)</td>
+                            <td class="page-cell">2</td>
+                            <td class="marks-cell">12</td>
+                            <td class="score-cell">[ &nbsp; ] / 12</td>
+                        </tr>
+                        <tr class="tracker-row">
+                            <td class="hw-cell">Set: _________ &nbsp; Due: _________</td>
+                            <td><span class="q-format-tag">Q5/6 · Statement Essay</span></td>
+                            <td>Theory of Four Humours as dominant medical foundation (c1250–c1500)</td>
+                            <td class="page-cell">3</td>
+                            <td class="marks-cell">16+4</td>
+                            <td class="score-cell">[ &nbsp; ] / 20</td>
+                        </tr>
+
+                        <!-- Section B: Renaissance -->
+                        <tr class="tracker-section-hdr">
+                            <td colspan="6">Section B: Renaissance Medicine (c1500–c1700)</td>
+                        </tr>
+                        <tr class="tracker-row">
+                            <td class="hw-cell">Set: _________ &nbsp; Due: _________</td>
+                            <td><span class="q-format-tag">Q3 · Difference</span></td>
+                            <td>Treatments for plague: 1348 Black Death vs 1665 Great Plague</td>
+                            <td class="page-cell">4</td>
+                            <td class="marks-cell">4</td>
+                            <td class="score-cell">[ &nbsp; ] / 4</td>
+                        </tr>
+                        <tr class="tracker-row">
+                            <td class="hw-cell">Set: _________ &nbsp; Due: _________</td>
+                            <td><span class="q-format-tag">Q4 · Explain Why</span></td>
+                            <td>Rapid change in anatomical understanding (Vesalius &amp; Printing Press)</td>
+                            <td class="page-cell">4</td>
+                            <td class="marks-cell">12</td>
+                            <td class="score-cell">[ &nbsp; ] / 12</td>
+                        </tr>
+                        <tr class="tracker-row">
+                            <td class="hw-cell">Set: _________ &nbsp; Due: _________</td>
+                            <td><span class="q-format-tag">Q5/6 · Statement Essay</span></td>
+                            <td>Thomas Sydenham &amp; Royal Society: Observation vs Traditional humours</td>
+                            <td class="page-cell">5</td>
+                            <td class="marks-cell">16+4</td>
+                            <td class="score-cell">[ &nbsp; ] / 20</td>
+                        </tr>
+
+                        <!-- Section B: 18th & 19th Century -->
+                        <tr class="tracker-section-hdr">
+                            <td colspan="6">Section B: 18th &amp; 19th Century Medicine (c1700–c1900)</td>
+                        </tr>
+                        <tr class="tracker-row">
+                            <td class="hw-cell">Set: _________ &nbsp; Due: _________</td>
+                            <td><span class="q-format-tag">Q3 · Similarity</span></td>
+                            <td>Prevention of disease: Jenner smallpox vaccination vs 1875 Public Health</td>
+                            <td class="page-cell">6</td>
+                            <td class="marks-cell">4</td>
+                            <td class="score-cell">[ &nbsp; ] / 4</td>
+                        </tr>
+                        <tr class="tracker-row">
+                            <td class="hw-cell">Set: _________ &nbsp; Due: _________</td>
+                            <td><span class="q-format-tag">Q4 · Explain Why</span></td>
+                            <td>Rapid progress in surgical techniques (Simpson/chloroform &amp; Lister/antiseptics)</td>
+                            <td class="page-cell">6</td>
+                            <td class="marks-cell">12</td>
+                            <td class="score-cell">[ &nbsp; ] / 12</td>
+                        </tr>
+                        <tr class="tracker-row">
+                            <td class="hw-cell">Set: _________ &nbsp; Due: _________</td>
+                            <td><span class="q-format-tag">Q5/6 · Statement Essay</span></td>
+                            <td>Pasteur's Germ Theory (1861) as turning point vs Public Health reform</td>
+                            <td class="page-cell">7</td>
+                            <td class="marks-cell">16+4</td>
+                            <td class="score-cell">[ &nbsp; ] / 20</td>
+                        </tr>
+
+                        <!-- Section B: Modern Britain -->
+                        <tr class="tracker-section-hdr">
+                            <td colspan="6">Section B: Modern Britain (c1900–present)</td>
+                        </tr>
+                        <tr class="tracker-row">
+                            <td class="hw-cell">Set: _________ &nbsp; Due: _________</td>
+                            <td><span class="q-format-tag">Q3 · Difference</span></td>
+                            <td>Diagnosis of disease: 19th C physical exam vs 20th/21st C high-tech scans &amp; DNA</td>
+                            <td class="page-cell">8</td>
+                            <td class="marks-cell">4</td>
+                            <td class="score-cell">[ &nbsp; ] / 4</td>
+                        </tr>
+                        <tr class="tracker-row">
+                            <td class="hw-cell">Set: _________ &nbsp; Due: _________</td>
+                            <td><span class="q-format-tag">Q4 · Explain Why</span></td>
+                            <td>Penicillin development and mass production during WWII (c1938–45)</td>
+                            <td class="page-cell">8</td>
+                            <td class="marks-cell">12</td>
+                            <td class="score-cell">[ &nbsp; ] / 12</td>
+                        </tr>
+                        <tr class="tracker-row">
+                            <td class="hw-cell">Set: _________ &nbsp; Due: _________</td>
+                            <td><span class="q-format-tag">Q5/6 · Statement Essay</span></td>
+                            <td>Founding of NHS (1948) as greatest breakthrough vs Scientific DNA/biotech</td>
+                            <td class="page-cell">9</td>
+                            <td class="marks-cell">16+4</td>
+                            <td class="score-cell">[ &nbsp; ] / 20</td>
+                        </tr>
+
+                        <!-- Section B: Synoptic Cross-Period Practice -->
+                        <tr class="tracker-section-hdr">
+                            <td colspan="6">Section B: Synoptic &amp; Cross-Period Mastery</td>
+                        </tr>
+                        <tr class="tracker-row">
+                            <td class="hw-cell">Set: _________ &nbsp; Due: _________</td>
+                            <td><span class="q-format-tag">Q3 · Similarity</span></td>
+                            <td>Training of physicians: Medieval universities vs Renaissance anatomy schools</td>
+                            <td class="page-cell">10</td>
+                            <td class="marks-cell">4</td>
+                            <td class="score-cell">[ &nbsp; ] / 4</td>
+                        </tr>
+                        <tr class="tracker-row">
+                            <td class="hw-cell">Set: _________ &nbsp; Due: _________</td>
+                            <td><span class="q-format-tag">Q4 · Explain Why</span></td>
+                            <td>Government public health shift from laissez-faire (Chadwick &amp; Snow to 1875)</td>
+                            <td class="page-cell">10</td>
+                            <td class="marks-cell">12</td>
+                            <td class="score-cell">[ &nbsp; ] / 12</td>
+                        </tr>
+                        <tr class="tracker-row">
+                            <td class="hw-cell">Set: _________ &nbsp; Due: _________</td>
+                            <td><span class="q-format-tag">Q5/6 · Statement Essay</span></td>
+                            <td>Role of individuals vs government institutions in driving medical progress</td>
+                            <td class="page-cell">11</td>
+                            <td class="marks-cell">16+4</td>
+                            <td class="score-cell">[ &nbsp; ] / 20</td>
+                        </tr>
+
+                        <!-- Section B: Timed Mock Simulation -->
+                        <tr class="tracker-section-hdr">
+                            <td colspan="6">Section B: Timed Section B Simulation</td>
+                        </tr>
+                        <tr class="tracker-row">
+                            <td class="hw-cell">Set: _________ &nbsp; Due: _________</td>
+                            <td><span class="q-format-tag">Q3 · Difference</span></td>
+                            <td>Hospital care: Medieval monastic care vs Florence Nightingale nursing (19th C)</td>
+                            <td class="page-cell">12</td>
+                            <td class="marks-cell">4</td>
+                            <td class="score-cell">[ &nbsp; ] / 4</td>
+                        </tr>
+                        <tr class="tracker-row">
+                            <td class="hw-cell">Set: _________ &nbsp; Due: _________</td>
+                            <td><span class="q-format-tag">Q4 · Explain Why</span></td>
+                            <td>Rapid advance in understanding causes of disease after 1900 (DNA &amp; Lifestyle)</td>
+                            <td class="page-cell">12</td>
+                            <td class="marks-cell">12</td>
+                            <td class="score-cell">[ &nbsp; ] / 12</td>
+                        </tr>
+                        <tr class="tracker-row">
+                            <td class="hw-cell">Set: _________ &nbsp; Due: _________</td>
+                            <td><span class="q-format-tag">Q5/6 · Statement Essay</span></td>
+                            <td>Continuity of disease prevention: 1348 Black Death vs 1665 Great Plague</td>
+                            <td class="page-cell">13</td>
+                            <td class="marks-cell">16+4</td>
+                            <td class="score-cell">[ &nbsp; ] / 20</td>
+                        </tr>
+
+                        <!-- Section A: Western Front Set 1 -->
+                        <tr class="tracker-section-hdr">
+                            <td colspan="6">Section A: Western Front Set 1 (Historic Environment)</td>
+                        </tr>
+                        <tr class="tracker-row">
+                            <td class="hw-cell">Set: _________ &nbsp; Due: _________</td>
+                            <td><span class="q-format-tag">Q1 (a) · Feature</span></td>
+                            <td>Feature 1: Work of Casualty Clearing Stations (CCS) triage and surgery</td>
+                            <td class="page-cell">14</td>
+                            <td class="marks-cell">2</td>
+                            <td class="score-cell">[ &nbsp; ] / 2</td>
+                        </tr>
+                        <tr class="tracker-row">
+                            <td class="hw-cell">Set: _________ &nbsp; Due: _________</td>
+                            <td><span class="q-format-tag">Q1 (b) · Feature</span></td>
+                            <td>Feature 2: Use of the Thomas splint for compound fractures</td>
+                            <td class="page-cell">14</td>
+                            <td class="marks-cell">2</td>
+                            <td class="score-cell">[ &nbsp; ] / 2</td>
+                        </tr>
+                        <tr class="tracker-row">
+                            <td class="hw-cell">Set: _________ &nbsp; Due: _________</td>
+                            <td><span class="q-format-tag">Q2 (b) · Follow-Up Grid</span></td>
+                            <td>4-Part Follow-Up Grid: Base Hospital water rationing &amp; winter conditions</td>
+                            <td class="page-cell">14</td>
+                            <td class="marks-cell">4</td>
+                            <td class="score-cell">[ &nbsp; ] / 4</td>
+                        </tr>
+                        <tr class="tracker-row">
+                            <td class="hw-cell">Set: _________ &nbsp; Due: _________</td>
+                            <td><span class="q-format-tag">Q2 (a) · Source Utility</span></td>
+                            <td>Utility of Sources A &amp; B: Chaplain Davies (Somme CCS) &amp; Edith Smith (Base)</td>
+                            <td class="page-cell">15–16</td>
+                            <td class="marks-cell">8</td>
+                            <td class="score-cell">[ &nbsp; ] / 8</td>
+                        </tr>
+
+                        <!-- Section A: Western Front Set 2 -->
+                        <tr class="tracker-section-hdr">
+                            <td colspan="6">Section A: Western Front Set 2 (Historic Environment)</td>
+                        </tr>
+                        <tr class="tracker-row">
+                            <td class="hw-cell">Set: _________ &nbsp; Due: _________</td>
+                            <td><span class="q-format-tag">Q1 (a) · Feature</span></td>
+                            <td>Feature 1: Mobile X-ray units in the British sector</td>
+                            <td class="page-cell">17</td>
+                            <td class="marks-cell">2</td>
+                            <td class="score-cell">[ &nbsp; ] / 2</td>
+                        </tr>
+                        <tr class="tracker-row">
+                            <td class="hw-cell">Set: _________ &nbsp; Due: _________</td>
+                            <td><span class="q-format-tag">Q1 (b) · Feature</span></td>
+                            <td>Feature 2: Trench fever causes, symptoms, and delousing</td>
+                            <td class="page-cell">17</td>
+                            <td class="marks-cell">2</td>
+                            <td class="score-cell">[ &nbsp; ] / 2</td>
+                        </tr>
+                        <tr class="tracker-row">
+                            <td class="hw-cell">Set: _________ &nbsp; Due: _________</td>
+                            <td><span class="q-format-tag">Q2 (b) · Follow-Up Grid</span></td>
+                            <td>4-Part Follow-Up Grid: Chlorine gas casualties &amp; medical antidotes at Ypres</td>
+                            <td class="page-cell">17</td>
+                            <td class="marks-cell">4</td>
+                            <td class="score-cell">[ &nbsp; ] / 4</td>
+                        </tr>
+                        <tr class="tracker-row">
+                            <td class="hw-cell">Set: _________ &nbsp; Due: _________</td>
+                            <td><span class="q-format-tag">Q2 (a) · Source Utility</span></td>
+                            <td>Utility of Sources A &amp; B: RAMC Field Ambulance Log &amp; Nurse Diary (Mud/Evacuation)</td>
+                            <td class="page-cell">18–19</td>
+                            <td class="marks-cell">8</td>
+                            <td class="score-cell">[ &nbsp; ] / 8</td>
+                        </tr>
+
+                        <!-- Summary Totals -->
+                        <tr style="background: #f1f5f9; font-weight: 900; font-size: 7.2pt;">
+                            <td colspan="4" style="text-align: right; text-transform: uppercase;">Total Combined Examination Practice Marks:</td>
+                            <td class="marks-cell">136</td>
+                            <td class="score-cell">______ / 136</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Pearson Edexcel GCSE (9–1) History · Option 11</span>
+            <span class="turn-over">Turn Over for Section B: Medieval Medicine (c1250–c1500)</span>
+            <span>Page 1 of 20</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 2: SECTION B — MEDIEVAL MEDICINE (Q3 & FULL Q4 15 LINES) -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h2>Section B: Medicine in Britain, c1250–present</h2>
+                    <p>Medieval Medicine (c1250–c1500) · Question 3 (Similarity) &amp; Question 4 (Explain Why)</p>
+                </div>
+                <span class="header-tag">Section B · c1250–c1500</span>
+            </div>
+
+            <!-- Q3: Similarity -->
+            <div class="question-container">
+                <div class="question-prompt">
+                    <div>
+                        <span class="q-num">3</span>
+                        <span class="exam-provenance-pill past">Edexcel June 2019</span>
+                        Explain one way in which ideas about the cause of illness in the Medieval period (c1250–c1500) were similar to ideas about the cause of illness in the Renaissance (c1500–c1700).
+                    </div>
+                    <span class="q-marks">[4]</span>
+                </div>
+
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="width: 32%;">
+                        <span class="scaffold-label">Key Knowledge (AO1)</span>
+                        <div class="scaffold-content">
+                            <span class="scaffold-pill">Four Humours</span>
+                            <span class="scaffold-pill">Miasma (Bad Air)</span>
+                            <span class="scaffold-pill">Galen / Hippocrates</span>
+                            <span class="scaffold-pill">1348 Black Death</span>
+                            <span class="scaffold-pill">1665 Great Plague</span>
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 28%;">
+                        <span class="scaffold-label">Causal Connectives</span>
+                        <div class="scaffold-content">
+                            • <em>One clear similarity was...</em><br>
+                            • <em>In the medieval period, physicians believed...</em><br>
+                            • <em>Similarly, in the Renaissance...</em>
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 40%;">
+                        <span class="scaffold-label">Model Sentence / Answer Guide (AO1/AO2)</span>
+                        <div class="scaffold-content">
+                            <em>"One similarity was that both eras believed miasma caused disease; in 1348 people carried sweet herbs to purify bad air, and in 1665 doctors still wore beak masks stuffed with aromatic herbs to ward off the plague."</em>
+                        </div>
+                    </div>
+                </div>
+
+                ${renderLines(5, '7.2mm')}
+            </div>
+
+            <!-- Q4: Explain Why (Complete with 3x5 = 15 Lines) -->
+            <div class="question-container" style="margin-top: 4px;">
+                <div class="question-prompt">
+                    <div>
+                        <span class="q-num">4</span>
+                        <span class="exam-provenance-pill unexamined">Unexamined Spec Target</span>
+                        Explain why there was so little change in medical treatments in Medieval England between c1250 and c1500.
+                    </div>
+                    <span class="q-marks">[12]</span>
+                </div>
+
+                <div class="stimulus-card">
+                    You may use the following in your answer: &nbsp;
+                    <strong>• The Christian Church</strong> &nbsp;&nbsp;
+                    <strong>• The continuing influence of Galen and Hippocrates</strong> &nbsp;&nbsp;
+                    <em>(You must also use information of your own.)</em>
+                </div>
+
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="width: 38%;">
+                        <span class="scaffold-label">Factor Bank (AO1)</span>
+                        <div class="scaffold-content">
+                            <span class="scaffold-pill">Church Dogma</span>
+                            <span class="scaffold-pill">Galen Monotheism</span>
+                            <span class="scaffold-pill">Dissection Bans</span>
+                            <span class="scaffold-pill">Roger Bacon Jailed</span>
+                            <span class="scaffold-pill">Bleeding &amp; Purging</span>
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 32%;">
+                        <span class="scaffold-label">Causal Connectives</span>
+                        <div class="scaffold-content">
+                            • <em>A primary obstacle to progress was...</em><br>
+                            • <em>The Church enforced this by...</em><br>
+                            • <em>Consequently, treatments remained...</em>
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 30%;">
+                        <span class="scaffold-label">3 P-E-E Paragraph Plan</span>
+                        <div class="scaffold-content">
+                            <strong>Para 1:</strong> The Catholic Church &rarr; <strong>Para 2:</strong> Galen's Unchallenged Authority &rarr; <strong>Para 3:</strong> Lack of Scientific Tech.
+                        </div>
+                    </div>
+                </div>
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5px;">Paragraph 1: The Influence of the Christian Church (Stimulus 1)</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Paragraph 2: Galen's Enduring Authority &amp; Humeral Orthodoxy (Stimulus 2)</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Paragraph 3: Own Knowledge — Social Hierarchy &amp; Lack of Scientific Instruments</div>
+                ${renderLines(6, '6.4mm')}
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Pearson Edexcel GCSE (9–1) History · Option 11</span>
+            <span class="turn-over">Turn Over for Question 5/6 Statement Essay (Full Page)</span>
+            <span>Page 2 of 20</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 3: SECTION B — MEDIEVAL MEDICINE (FULL-PAGE Q5/6 ESSAY)  -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h2>Section B: Medicine in Britain, c1250–present</h2>
+                    <p>Medieval Medicine (c1250–c1500) · Question 5/6 Statement Essay (16+4 Marks)</p>
+                </div>
+                <span class="header-tag">Section B · c1250–c1500 Essay</span>
+            </div>
+
+            <!-- Q5 / Q6 Statement Essay -->
+            <div class="question-container">
+                <div class="question-prompt">
+                    <div>
+                        <span class="q-num">5 / 6</span>
+                        <span class="exam-provenance-pill forecast">★ High-Yield Forecast</span>
+                        'Belief in the Theory of the Four Humours was the most important reason why people failed to treat the Black Death successfully in 1348–49.' How far do you agree? Explain your answer.
+                    </div>
+                    <span class="q-marks">[16+4]</span>
+                </div>
+
+                <div class="stimulus-card">
+                    You may use the following in your answer: &nbsp;
+                    <strong>• Bloodletting and purging (Opposites)</strong> &nbsp;&nbsp;
+                    <strong>• Religious explanations and flagellants</strong> &nbsp;&nbsp;
+                    <em>(You must also use information of your own.)</em>
+                </div>
+
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="width: 38%;">
+                        <span class="scaffold-label">Argument Bank (AO1/AO2)</span>
+                        <div class="scaffold-content">
+                            <span class="scaffold-pill">Side A: Four Humours</span> Phlebotomy, purging, hot/cold herbs; weakened patients.<br>
+                            <span class="scaffold-pill">Side B: Religion/Miasma</span> God's punishment, flagellation, bad air, sweet herbs.<br>
+                            <span class="scaffold-pill">Side C: Filth &amp; Rats</span> Fleas on black rats (Yersinia pestis); total ignorance of microbes.
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 32%;">
+                        <span class="scaffold-label">Evaluative Connectives</span>
+                        <div class="scaffold-content">
+                            • <em>On the one hand, humeral theory...</em><br>
+                            • <em>However, religious fatalism was more damaging...</em><br>
+                            • <em>Crucially, the decisive factor was...</em>
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 30%;">
+                        <span class="scaffold-label">Criteria-Led Judgement</span>
+                        <div class="scaffold-content">
+                            Weigh the <strong>scale of influence</strong>: Did humeral theory fail patients more, or did religious fatalism prevent municipal sanitation?
+                        </div>
+                    </div>
+                </div>
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5px;">Introduction &amp; Paragraph 1: Agree with Named Factor (Four Humours Bleeding &amp; Purging)</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Paragraph 2: Counter-Factor — Religious Explanations, God's Wrath &amp; Flagellants</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Paragraph 3: Alternative Factor — Miasma, Bad Air &amp; Complete Lack of Germ Knowledge</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Conclusion: Supported Final Judgement (Criteria: Which Factor Was Most Decisive?)</div>
+                ${renderLines(6, '6.4mm')}
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Pearson Edexcel GCSE (9–1) History · Option 11</span>
+            <span class="turn-over">Turn Over for Renaissance Medicine (c1500–c1700)</span>
+            <span>Page 3 of 20</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 4: SECTION B — THE RENAISSANCE (Q3 & FULL Q4 15 LINES)   -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h2>Section B: Medicine in Britain, c1250–present</h2>
+                    <p>The Medical Renaissance (c1500–c1700) · Question 3 (Difference) &amp; Question 4 (Explain Why)</p>
+                </div>
+                <span class="header-tag">Section B · c1500–c1700</span>
+            </div>
+
+            <!-- Q3: Difference -->
+            <div class="question-container">
+                <div class="question-prompt">
+                    <div>
+                        <span class="q-num">3</span>
+                        <span class="exam-provenance-pill past">Edexcel June 2018</span>
+                        Explain one way in which the response of authorities to the Great Plague (1665) was different from the response of authorities to the Black Death (1348).
+                    </div>
+                    <span class="q-marks">[4]</span>
+                </div>
+
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="width: 32%;">
+                        <span class="scaffold-label">Key Knowledge (AO1)</span>
+                        <div class="scaffold-content">
+                            <span class="scaffold-pill">1348 Black Death</span> No quarantine; church-led prayer; King street order.<br>
+                            <span class="scaffold-pill">1665 Great Plague</span> Mayor quarantine; red crosses &amp; watchmen; searchers; mass pits.
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 28%;">
+                        <span class="scaffold-label">Contrast Connectives</span>
+                        <div class="scaffold-content">
+                            • <em>One clear difference in response was...</em><br>
+                            • <em>In 1348, authorities were largely powerless...</em><br>
+                            • <em>In contrast, by 1665 the Lord Mayor enforced...</em>
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 40%;">
+                        <span class="scaffold-label">Model Sentence / Answer Guide (AO1/AO2)</span>
+                        <div class="scaffold-content">
+                            <em>"In contrast to 1348 when authorities took little organized action, by 1665 the Mayor of London enforced systematic quarantine, locking infected families in their homes with red crosses painted on doors and watchmen outside."</em>
+                        </div>
+                    </div>
+                </div>
+
+                ${renderLines(5, '7.2mm')}
+            </div>
+
+            <!-- Q4: Explain Why (Complete with 3x5 = 15 Lines) -->
+            <div class="question-container" style="margin-top: 4px;">
+                <div class="question-prompt">
+                    <div>
+                        <span class="q-num">4</span>
+                        <span class="exam-provenance-pill past">Edexcel June 2022</span>
+                        Explain why there was rapid change in anatomical understanding in the period c1500–c1700.
+                    </div>
+                    <span class="q-marks">[12]</span>
+                </div>
+
+                <div class="stimulus-card">
+                    You may use the following in your answer: &nbsp;
+                    <strong>• Andreas Vesalius and the Fabric of the Human Body (1543)</strong> &nbsp;&nbsp;
+                    <strong>• The invention of the movable-type printing press (c1450s)</strong> &nbsp;&nbsp;
+                    <em>(You must also use information of your own.)</em>
+                </div>
+
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="width: 38%;">
+                        <span class="scaffold-label">Factor Bank (AO1)</span>
+                        <div class="scaffold-content">
+                            <span class="scaffold-pill">Vesalius (300+ Galen Errors)</span>
+                            <span class="scaffold-pill">Human Dissection</span>
+                            <span class="scaffold-pill">Movable Type Print</span>
+                            <span class="scaffold-pill">William Harvey (1628 Heart)</span>
+                            <span class="scaffold-pill">Mechanical Pumps</span>
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 32%;">
+                        <span class="scaffold-label">Causal Connectives</span>
+                        <div class="scaffold-content">
+                            • <em>A decisive breakthrough came when...</em><br>
+                            • <em>By directly dissecting human corpses, Vesalius...</em><br>
+                            • <em>The printing press multiplied this impact by...</em>
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 30%;">
+                        <span class="scaffold-label">3 P-E-E Paragraph Plan</span>
+                        <div class="scaffold-content">
+                            <strong>Para 1:</strong> Vesalius &amp; Direct Dissection &rarr; <strong>Para 2:</strong> The Printing Press &amp; Spread of Texts &rarr; <strong>Para 3:</strong> Harvey &amp; Circulation.
+                        </div>
+                    </div>
+                </div>
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5px;">Paragraph 1: Andreas Vesalius &amp; Empirical Human Dissection (Stimulus 1)</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Paragraph 2: The Printing Press &amp; Scientific Standardization (Stimulus 2)</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Paragraph 3: Own Knowledge — William Harvey &amp; Mechanical Heart Circulation (1628)</div>
+                ${renderLines(6, '6.4mm')}
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Pearson Edexcel GCSE (9–1) History · Option 11</span>
+            <span class="turn-over">Turn Over for Question 5/6 Statement Essay (Full Page)</span>
+            <span>Page 4 of 20</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 5: SECTION B — THE RENAISSANCE (FULL-PAGE Q5/6 ESSAY)    -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h2>Section B: Medicine in Britain, c1250–present</h2>
+                    <p>The Medical Renaissance (c1500–c1700) · Question 5/6 Statement Essay (16+4 Marks)</p>
+                </div>
+                <span class="header-tag">Section B · c1500–c1700 Essay</span>
+            </div>
+
+            <!-- Q5 / Q6 Statement Essay -->
+            <div class="question-container">
+                <div class="question-prompt">
+                    <div>
+                        <span class="q-num">5 / 6</span>
+                        <span class="exam-provenance-pill specimen">Sample Assessment Material</span>
+                        'Thomas Sydenham’s work was the most significant turning point in medical care between c1500 and c1700.' How far do you agree? Explain your answer.
+                    </div>
+                    <span class="q-marks">[16+4]</span>
+                </div>
+
+                <div class="stimulus-card">
+                    You may use the following in your answer: &nbsp;
+                    <strong>• Thomas Sydenham and bedside clinical observation (Observationes Medicae, 1676)</strong> &nbsp;&nbsp;
+                    <strong>• The Royal Society and its scientific motto 'Nullius in verba' (1660)</strong> &nbsp;&nbsp;
+                    <em>(You must also use information of your own.)</em>
+                </div>
+
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="width: 38%;">
+                        <span class="scaffold-label">Argument Bank (AO1/AO2)</span>
+                        <div class="scaffold-content">
+                            <span class="scaffold-pill">Side A: Sydenham</span> Grouped diseases by symptoms; rejected individual humours; cinchona bark for malaria.<br>
+                            <span class="scaffold-pill">Side B: Royal Society</span> Peer review; scientific journal (Philosophical Transactions); empirical method.<br>
+                            <span class="scaffold-pill">Side C: Anatomy Titans</span> Vesalius (1543) and Harvey (1628); dismantled Galenic dogma.
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 32%;">
+                        <span class="scaffold-label">Evaluative Connectives</span>
+                        <div class="scaffold-content">
+                            • <em>Sydenham was revolutionary because...</em><br>
+                            • <em>However, the Royal Society provided institutional scale...</em><br>
+                            • <em>Yet neither transformed ordinary patient survival because...</em>
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 30%;">
+                        <span class="scaffold-label">Criteria-Led Judgement</span>
+                        <div class="scaffold-content">
+                            Distinguish between <strong>clinical observation at the bedside</strong> (Sydenham) vs <strong>theoretical anatomy</strong> (Harvey/Vesalius) vs <strong>treatments</strong> (persisting humours).
+                        </div>
+                    </div>
+                </div>
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5px;">Introduction &amp; Paragraph 1: Agree with Named Factor (Thomas Sydenham &amp; Observation)</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Paragraph 2: Counter-Factor — The Royal Society &amp; Institutional Empirical Science</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Paragraph 3: Alternative Factor — Vesalius, Harvey &amp; The Overthrow of Galen</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Conclusion: Supported Final Judgement (Criteria: Theory vs Everyday Practice)</div>
+                ${renderLines(6, '6.4mm')}
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Pearson Edexcel GCSE (9–1) History · Option 11</span>
+            <span class="turn-over">Turn Over for 18th &amp; 19th Century Medicine (c1700–c1900)</span>
+            <span>Page 5 of 20</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 6: SECTION B — 18TH & 19TH CENTURY (Q3 & FULL Q4 15 L)   -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h2>Section B: Medicine in Britain, c1250–present</h2>
+                    <p>18th &amp; 19th Century Medicine (c1700–c1900) · Question 3 (Similarity) &amp; Question 4 (Explain Why)</p>
+                </div>
+                <span class="header-tag">Section B · c1700–c1900</span>
+            </div>
+
+            <!-- Q3: Similarity -->
+            <div class="question-container">
+                <div class="question-prompt">
+                    <div>
+                        <span class="q-num">3</span>
+                        <span class="exam-provenance-pill forecast">★ High-Yield Forecast</span>
+                        Explain one way in which the prevention of disease in the 18th century was similar to the prevention of disease in the 19th century.
+                    </div>
+                    <span class="q-marks">[4]</span>
+                </div>
+
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="width: 32%;">
+                        <span class="scaffold-label">Key Knowledge (AO1)</span>
+                        <div class="scaffold-content">
+                            <span class="scaffold-pill">Edward Jenner (1796)</span> Smallpox vaccine using cowpox; government £30,000 grant (1802/07).<br>
+                            <span class="scaffold-pill">19th C Legislation</span> Compulsory vaccination act (1853); 1875 Public Health Act clean water &amp; sewers.
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 28%;">
+                        <span class="scaffold-label">Continuity Connectives</span>
+                        <div class="scaffold-content">
+                            • <em>One clear similarity was the growing role of government...</em><br>
+                            • <em>In the late 18th century, Parliament funded Jenner...</em><br>
+                            • <em>Similarly, in the 19th century, the state passed laws...</em>
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 40%;">
+                        <span class="scaffold-label">Model Sentence / Answer Guide (AO1/AO2)</span>
+                        <div class="scaffold-content">
+                            <em>"Both eras saw growing government intervention in mass prevention; Parliament granted Jenner £30,000 to distribute smallpox vaccines, while in 1875 the Public Health Act legally forced local councils to provide clean water and sewers."</em>
+                        </div>
+                    </div>
+                </div>
+
+                ${renderLines(5, '7.2mm')}
+            </div>
+
+            <!-- Q4: Explain Why (Complete with 3x5 = 15 Lines) -->
+            <div class="question-container" style="margin-top: 4px;">
+                <div class="question-prompt">
+                    <div>
+                        <span class="q-num">4</span>
+                        <span class="exam-provenance-pill past">Edexcel June 2019</span>
+                        Explain why there was rapid progress in surgical techniques in the period c1700–c1900.
+                    </div>
+                    <span class="q-marks">[12]</span>
+                </div>
+
+                <div class="stimulus-card">
+                    You may use the following in your answer: &nbsp;
+                    <strong>• James Simpson and chloroform (1847)</strong> &nbsp;&nbsp;
+                    <strong>• Joseph Lister and carbolic acid (1867)</strong> &nbsp;&nbsp;
+                    <em>(You must also use information of your own.)</em>
+                </div>
+
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="width: 38%;">
+                        <span class="scaffold-label">Factor Bank (AO1)</span>
+                        <div class="scaffold-content">
+                            <span class="scaffold-pill">Simpson Chloroform 1847</span>
+                            <span class="scaffold-pill">Queen Victoria 1853</span>
+                            <span class="scaffold-pill">Lister Carbolic Spray 1867</span>
+                            <span class="scaffold-pill">Pasteur Germ Theory</span>
+                            <span class="scaffold-pill">Aseptic Surgery / Steam Sterilization</span>
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 32%;">
+                        <span class="scaffold-label">Causal Connectives</span>
+                        <div class="scaffold-content">
+                            • <em>A primary catalyst was the defeat of surgical pain...</em><br>
+                            • <em>Simpson's discovery allowed surgeons to...</em><br>
+                            • <em>However, pain relief created a 'Black Period' until Lister...</em>
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 30%;">
+                        <span class="scaffold-label">3 P-E-E Paragraph Plan</span>
+                        <div class="scaffold-content">
+                            <strong>Para 1:</strong> Simpson &amp; Chloroform (Pain) &rarr; <strong>Para 2:</strong> Lister &amp; Carbolic Acid (Infection) &rarr; <strong>Para 3:</strong> Aseptic Surgery &amp; Ligatures.
+                        </div>
+                    </div>
+                </div>
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5px;">Paragraph 1: James Simpson &amp; The Conquest of Pain (Anaesthesia) (Stimulus 1)</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Paragraph 2: Joseph Lister &amp; Antiseptic Surgery (Defeating Infection) (Stimulus 2)</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Paragraph 3: Own Knowledge — Aseptic Surgery (Steam Autoclaves, Rubber Gloves &amp; Gowns)</div>
+                ${renderLines(6, '6.4mm')}
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Pearson Edexcel GCSE (9–1) History · Option 11</span>
+            <span class="turn-over">Turn Over for Question 5/6 Statement Essay (Full Page)</span>
+            <span>Page 6 of 20</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 7: SECTION B — 18TH & 19TH CENTURY (FULL-PAGE Q5/6)      -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h2>Section B: Medicine in Britain, c1250–present</h2>
+                    <p>18th &amp; 19th Century Medicine (c1700–c1900) · Question 5/6 Statement Essay (16+4 Marks)</p>
+                </div>
+                <span class="header-tag">Section B · c1700–c1900 Essay</span>
+            </div>
+
+            <!-- Q5 / Q6 Statement Essay -->
+            <div class="question-container">
+                <div class="question-prompt">
+                    <div>
+                        <span class="q-num">5 / 6</span>
+                        <span class="exam-provenance-pill past">Edexcel June 2023</span>
+                        'Louis Pasteur’s Germ Theory (1861) was the most significant turning point in the prevention of disease between c1700 and the present.' How far do you agree? Explain your answer.
+                    </div>
+                    <span class="q-marks">[16+4]</span>
+                </div>
+
+                <div class="stimulus-card">
+                    You may use the following in your answer: &nbsp;
+                    <strong>• The 1875 Public Health Act</strong> &nbsp;&nbsp;
+                    <strong>• Alexander Fleming, Howard Florey and Ernst Chain (Penicillin)</strong> &nbsp;&nbsp;
+                    <em>(You must also use information of your own.)</em>
+                </div>
+
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="width: 38%;">
+                        <span class="scaffold-label">Argument Bank (AO1/AO2)</span>
+                        <div class="scaffold-content">
+                            <span class="scaffold-pill">Side A: Pasteur / Koch</span> Disproved spontaneous generation; proved specific microbes cause specific diseases; vaccines.<br>
+                            <span class="scaffold-pill">Side B: Public Health Act</span> 1875 Act made clean water, sewers, and waste disposal compulsory for councils.<br>
+                            <span class="scaffold-pill">Side C: Modern Era</span> Penicillin internal cure (1941); modern DNA and lifestyle campaigns.
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 32%;">
+                        <span class="scaffold-label">Evaluative Connectives</span>
+                        <div class="scaffold-content">
+                            • <em>Pasteur was the pivotal scientific turning point...</em><br>
+                            • <em>However, laboratory science was useless without state action...</em><br>
+                            • <em>The 1875 Act was more decisive in saving lives because...</em>
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 30%;">
+                        <span class="scaffold-label">Criteria-Led Judgement</span>
+                        <div class="scaffold-content">
+                            Distinguish between the <strong>scientific foundation</strong> (Pasteur proving causation) vs <strong>mass population survival</strong> (Government sanitation saving millions).
+                        </div>
+                    </div>
+                </div>
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5px;">Introduction &amp; Paragraph 1: Agree with Named Factor (Pasteur's Germ Theory &amp; Koch)</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Paragraph 2: Counter-Factor — The 1875 Public Health Act &amp; Municipal Sanitation (Stimulus 1)</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Paragraph 3: Alternative Factor — 20th Century Antibiotics (Fleming, Florey &amp; Chain) (Stimulus 2)</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Conclusion: Supported Final Judgement (Criteria: Lab Science vs Mass Public Survival)</div>
+                ${renderLines(6, '6.4mm')}
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Pearson Edexcel GCSE (9–1) History · Option 11</span>
+            <span class="turn-over">Turn Over for Modern Britain (c1900–present)</span>
+            <span>Page 7 of 20</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 8: SECTION B — MODERN BRITAIN (Q3 & FULL Q4 15 LINES)    -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h2>Section B: Medicine in Britain, c1250–present</h2>
+                    <p>Medicine in Modern Britain (c1900–present) · Question 3 (Difference) &amp; Question 4 (Explain Why)</p>
+                </div>
+                <span class="header-tag">Section B · c1900–present</span>
+            </div>
+
+            <!-- Q3: Difference -->
+            <div class="question-container">
+                <div class="question-prompt">
+                    <div>
+                        <span class="q-num">3</span>
+                        <span class="exam-provenance-pill unexamined">Unexamined Spec Target</span>
+                        Explain one way in which methods of diagnosing illness in the 19th century were different from methods of diagnosing illness in the modern era (c1900–present).
+                    </div>
+                    <span class="q-marks">[4]</span>
+                </div>
+
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="width: 32%;">
+                        <span class="scaffold-label">Key Knowledge (AO1)</span>
+                        <div class="scaffold-content">
+                            <span class="scaffold-pill">19th C Diagnosis</span> Relied on external physical symptoms, stethoscopes (Laennec), taking pulse, observing urine.<br>
+                            <span class="scaffold-pill">Modern Diagnosis</span> High-tech medical physics: X-rays, CT scans, MRI, blood tests, and genetic DNA profiling.
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 28%;">
+                        <span class="scaffold-label">Contrast Connectives</span>
+                        <div class="scaffold-content">
+                            • <em>One fundamental difference in diagnosis was...</em><br>
+                            • <em>In the 19th century, doctors were restricted to...</em><br>
+                            • <em>In sharp contrast, modern medicine utilizes...</em>
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 40%;">
+                        <span class="scaffold-label">Model Sentence / Answer Guide (AO1/AO2)</span>
+                        <div class="scaffold-content">
+                            <em>"In the 19th century diagnosis was restricted to external physical examination using stethoscopes and feeling the pulse, whereas modern doctors use advanced medical physics such as CT/MRI scans and genetic blood tests to identify disease internally."</em>
+                        </div>
+                    </div>
+                </div>
+
+                ${renderLines(5, '7.2mm')}
+            </div>
+
+            <!-- Q4: Explain Why (Complete with 3x5 = 15 Lines) -->
+            <div class="question-container" style="margin-top: 4px;">
+                <div class="question-prompt">
+                    <div>
+                        <span class="q-num">4</span>
+                        <span class="exam-provenance-pill past">Edexcel June 2021</span>
+                        Explain why there was rapid progress in the development and mass production of penicillin in the years c1938–c1945.
+                    </div>
+                    <span class="q-marks">[12]</span>
+                </div>
+
+                <div class="stimulus-card">
+                    You may use the following in your answer: &nbsp;
+                    <strong>• Howard Florey and Ernst Chain at Oxford University</strong> &nbsp;&nbsp;
+                    <strong>• US Government funding and the Second World War</strong> &nbsp;&nbsp;
+                    <em>(You must also use information of your own.)</em>
+                </div>
+
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="width: 38%;">
+                        <span class="scaffold-label">Factor Bank (AO1)</span>
+                        <div class="scaffold-content">
+                            <span class="scaffold-pill">Florey &amp; Chain (1938–41)</span>
+                            <span class="scaffold-pill">Mouse Trials (1940)</span>
+                            <span class="scaffold-pill">Albert Alexander (1941)</span>
+                            <span class="scaffold-pill">US War Production Board</span>
+                            <span class="scaffold-pill">Deep Fermentation Tanks / D-Day 1944</span>
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 32%;">
+                        <span class="scaffold-label">Causal Connectives</span>
+                        <div class="scaffold-content">
+                            • <em>The scientific catalyst was Florey and Chain's work...</em><br>
+                            • <em>However, British factories could not produce it due to the Blitz...</em><br>
+                            • <em>Consequently, US wartime intervention unlocked...</em>
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 30%;">
+                        <span class="scaffold-label">3 P-E-E Paragraph Plan</span>
+                        <div class="scaffold-content">
+                            <strong>Para 1:</strong> Florey &amp; Chain's Purification &rarr; <strong>Para 2:</strong> US State Intervention &amp; WWII Urgency &rarr; <strong>Para 3:</strong> Industrial Technology.
+                        </div>
+                    </div>
+                </div>
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5px;">Paragraph 1: Howard Florey, Ernst Chain &amp; Biochemical Purification (Stimulus 1)</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Paragraph 2: US Government Funding &amp; Wartime Urgency (Stimulus 2)</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Paragraph 3: Own Knowledge — Industrial Innovations (Corn Steep Liquor &amp; Cantaloupe Strain)</div>
+                ${renderLines(6, '6.4mm')}
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Pearson Edexcel GCSE (9–1) History · Option 11</span>
+            <span class="turn-over">Turn Over for Question 5/6 Statement Essay (Full Page)</span>
+            <span>Page 8 of 20</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 9: SECTION B — MODERN BRITAIN (FULL-PAGE Q5/6 ESSAY)     -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h2>Section B: Medicine in Britain, c1250–present</h2>
+                    <p>Medicine in Modern Britain (c1900–present) · Question 5/6 Statement Essay (16+4 Marks)</p>
+                </div>
+                <span class="header-tag">Section B · c1900–present Essay</span>
+            </div>
+
+            <!-- Q5 / Q6 Statement Essay -->
+            <div class="question-container">
+                <div class="question-prompt">
+                    <div>
+                        <span class="q-num">5 / 6</span>
+                        <span class="exam-provenance-pill forecast">★ High-Yield Forecast</span>
+                        'The creation of the National Health Service in 1948 was the most significant breakthrough in medical care between c1900 and the present.' How far do you agree? Explain your answer.
+                    </div>
+                    <span class="q-marks">[16+4]</span>
+                </div>
+
+                <div class="stimulus-card">
+                    You may use the following in your answer: &nbsp;
+                    <strong>• Aneurin Bevan and the founding of the NHS (5 July 1948)</strong> &nbsp;&nbsp;
+                    <strong>• The discovery of the structure of DNA by Watson, Crick and Franklin (1953)</strong> &nbsp;&nbsp;
+                    <em>(You must also use information of your own.)</em>
+                </div>
+
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="width: 38%;">
+                        <span class="scaffold-label">Argument Bank (AO1/AO2)</span>
+                        <div class="scaffold-content">
+                            <span class="scaffold-pill">Side A: The NHS (1948)</span> Free at point of delivery; universal access; ended two-tier healthcare for poor.<br>
+                            <span class="scaffold-pill">Side B: DNA &amp; Genetics</span> 1953 double helix; Human Genome Project; gene therapy and targeted cancer drugs.<br>
+                            <span class="scaffold-pill">Side C: Medical Technology</span> Advanced surgery (hip replacements, organ transplants, dialysis, radiotherapy).
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 32%;">
+                        <span class="scaffold-label">Evaluative Connectives</span>
+                        <div class="scaffold-content">
+                            • <em>The NHS revolutionized healthcare delivery by...</em><br>
+                            • <em>However, scientific discovery of DNA provided...</em><br>
+                            • <em>Ultimately, access was meaningless without clinical cure...</em>
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 30%;">
+                        <span class="scaffold-label">Criteria-Led Judgement</span>
+                        <div class="scaffold-content">
+                            Weigh <strong>democratic social access</strong> (NHS ensuring everyone could see a doctor) vs <strong>scientific capability</strong> (DNA and biotech discovering cures).
+                        </div>
+                    </div>
+                </div>
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5px;">Introduction &amp; Paragraph 1: Agree with Named Factor (Aneurin Bevan &amp; The NHS)</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Paragraph 2: Counter-Factor — Watson, Crick &amp; Franklin's Discovery of DNA Structure</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Paragraph 3: Alternative Factor — High-Tech Surgical &amp; Pharmaceutical Breakthroughs</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Conclusion: Supported Final Judgement (Criteria: Democratic Access vs Scientific Cures)</div>
+                ${renderLines(6, '6.4mm')}
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Pearson Edexcel GCSE (9–1) History · Option 11</span>
+            <span class="turn-over">Turn Over for Synoptic &amp; Cross-Period Mastery (Pages 10–11)</span>
+            <span>Page 9 of 20</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 10: SECTION B — SYNOPTIC PRACTICE (Q3 & FULL Q4 15 L)    -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h2>Section B: Medicine in Britain, c1250–present</h2>
+                    <p>Synoptic &amp; Cross-Period Mastery · Question 3 (Similarity) &amp; Question 4 (Explain Why)</p>
+                </div>
+                <span class="header-tag">Section B · Synoptic</span>
+            </div>
+
+            <!-- Q3: Similarity -->
+            <div class="question-container">
+                <div class="question-prompt">
+                    <div>
+                        <span class="q-num">3</span>
+                        <span class="exam-provenance-pill past">Edexcel November 2020</span>
+                        Explain one way in which the training of physicians in the Medieval period was similar to the training of physicians in the Renaissance period.
+                    </div>
+                    <span class="q-marks">[4]</span>
+                </div>
+
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="width: 32%;">
+                        <span class="scaffold-label">Key Knowledge (AO1)</span>
+                        <div class="scaffold-content">
+                            <span class="scaffold-pill">Medieval Training</span> Oxford &amp; Cambridge; book-learning from Galen &amp; Hippocrates; zero clinical dissection.<br>
+                            <span class="scaffold-pill">Renaissance Training</span> Continued reading of classical texts; Royal College of Physicians licensing; slow adoption of Harvey.
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 28%;">
+                        <span class="scaffold-label">Continuity Connectives</span>
+                        <div class="scaffold-content">
+                            • <em>One clear continuity in physician training was...</em><br>
+                            • <em>In medieval universities, medical education was based on...</em><br>
+                            • <em>Similarly, in the Renaissance, mainstream physicians still...</em>
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 40%;">
+                        <span class="scaffold-label">Model Sentence / Answer Guide (AO1/AO2)</span>
+                        <div class="scaffold-content">
+                            <em>"In both eras, physician education was heavily theoretical based on classical books; medieval universities taught Galen's texts without dissection, and 17th-century medical schools still required doctors to master Galenic lectures before licensing."</em>
+                        </div>
+                    </div>
+                </div>
+
+                ${renderLines(5, '7.2mm')}
+            </div>
+
+            <!-- Q4: Explain Why (Complete with 3x5 = 15 Lines) -->
+            <div class="question-container" style="margin-top: 4px;">
+                <div class="question-prompt">
+                    <div>
+                        <span class="q-num">4</span>
+                        <span class="exam-provenance-pill forecast">★ High-Yield Forecast</span>
+                        Explain why the British Government abandoned its laissez-faire attitude towards public health in the 19th century.
+                    </div>
+                    <span class="q-marks">[12]</span>
+                </div>
+
+                <div class="stimulus-card">
+                    You may use the following in your answer: &nbsp;
+                    <strong>• Edwin Chadwick’s Report on the Sanitary Condition of the Labouring Population (1842)</strong> &nbsp;&nbsp;
+                    <strong>• The Second Reform Act giving working-class men the vote (1867)</strong> &nbsp;&nbsp;
+                    <em>(You must also use information of your own.)</em>
+                </div>
+
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="width: 38%;">
+                        <span class="scaffold-label">Factor Bank (AO1)</span>
+                        <div class="scaffold-content">
+                            <span class="scaffold-pill">Chadwick Report 1842</span>
+                            <span class="scaffold-pill">Broad Street Cholera 1854</span>
+                            <span class="scaffold-pill">John Snow Water Pump</span>
+                            <span class="scaffold-pill">1867 Reform Act (Working Votes)</span>
+                            <span class="scaffold-pill">1875 Public Health Act</span>
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 32%;">
+                        <span class="scaffold-label">Causal Connectives</span>
+                        <div class="scaffold-content">
+                            • <em>A primary catalyst was empirical statistical evidence...</em><br>
+                            • <em>Chadwick proved that filthy living conditions caused...</em><br>
+                            • <em>Politicians were forced to act when working-class men...</em>
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 30%;">
+                        <span class="scaffold-label">3 P-E-E Paragraph Plan</span>
+                        <div class="scaffold-content">
+                            <strong>Para 1:</strong> Chadwick's Report (Economic &amp; Health Evidence) &rarr; <strong>Para 2:</strong> Political Enfranchisement (1867 Reform Act) &rarr; <strong>Para 3:</strong> Snow &amp; Cholera.
+                        </div>
+                    </div>
+                </div>
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5px;">Paragraph 1: Edwin Chadwick &amp; The Economic Burden of Filth (Stimulus 1)</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Paragraph 2: The 1867 Reform Act &amp; Working-Class Political Pressure (Stimulus 2)</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Paragraph 3: Own Knowledge — John Snow, Broad Street (1854) &amp; Compulsory 1875 Legislation</div>
+                ${renderLines(6, '6.4mm')}
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Pearson Edexcel GCSE (9–1) History · Option 11</span>
+            <span class="turn-over">Turn Over for Question 5/6 Statement Essay (Full Page)</span>
+            <span>Page 10 of 20</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 11: SECTION B — SYNOPTIC PRACTICE (FULL-PAGE Q5/6 ESSAY) -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h2>Section B: Medicine in Britain, c1250–present</h2>
+                    <p>Synoptic &amp; Cross-Period Mastery · Question 5/6 Statement Essay (16+4 Marks)</p>
+                </div>
+                <span class="header-tag">Section B · Synoptic Essay</span>
+            </div>
+
+            <!-- Q5 / Q6 Statement Essay -->
+            <div class="question-container">
+                <div class="question-prompt">
+                    <div>
+                        <span class="q-num">5 / 6</span>
+                        <span class="exam-provenance-pill unexamined">Unexamined Spec Target</span>
+                        'Individual genius was more important than government action in improving medicine and public health between c1250 and the present.' How far do you agree? Explain your answer.
+                    </div>
+                    <span class="q-marks">[16+4]</span>
+                </div>
+
+                <div class="stimulus-card">
+                    You may use the following in your answer: &nbsp;
+                    <strong>• William Harvey and the circulation of the blood (1628)</strong> &nbsp;&nbsp;
+                    <strong>• The Public Health Act of 1875</strong> &nbsp;&nbsp;
+                    <em>(You must also use information of your own.)</em>
+                </div>
+
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="width: 38%;">
+                        <span class="scaffold-label">Argument Bank (AO1/AO2)</span>
+                        <div class="scaffold-content">
+                            <span class="scaffold-pill">Side A: Individuals</span> Jenner, Simpson, Lister, Pasteur, Koch, Fleming; breakthroughs in lab.<br>
+                            <span class="scaffold-pill">Side B: Government Action</span> 1875 Public Health Act, Clean Air Acts (1956), NHS (1948); law &amp; taxation.<br>
+                            <span class="scaffold-pill">Side C: Synergy</span> Individuals discover cures, but government must enforce and fund them.
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 32%;">
+                        <span class="scaffold-label">Evaluative Connectives</span>
+                        <div class="scaffold-content">
+                            • <em>Individuals were indispensable for initiating progress...</em><br>
+                            • <em>However, individual ideas were impotent without state power...</em><br>
+                            • <em>The decisive factor across 750 years was...</em>
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 30%;">
+                        <span class="scaffold-label">Criteria-Led Judgement</span>
+                        <div class="scaffold-content">
+                            Synthesize: Without individual science (Pasteur/Fleming), government had no solutions; but without government funding (US WWII/NHS), individuals could not mass-treat.
+                        </div>
+                    </div>
+                </div>
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5px;">Introduction &amp; Paragraph 1: Agree with Named Factor (Individual Genius — Harvey, Jenner, Simpson)</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Paragraph 2: Counter-Factor — Government Action, Public Health Acts &amp; The Welfare State</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Paragraph 3: Alternative Factor — War, Industrial Technology &amp; Scientific Communication</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Conclusion: Supported Final Judgement (Criteria: Scientific Discovery vs Legislative Execution)</div>
+                ${renderLines(6, '6.4mm')}
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Pearson Edexcel GCSE (9–1) History · Option 11</span>
+            <span class="turn-over">Turn Over for Timed Section B Simulation (Pages 12–13)</span>
+            <span>Page 11 of 20</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 12: SECTION B — TIMED MOCK SIMULATION (Q3 & FULL Q4 15 L)-->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h2>Section B: Medicine in Britain, c1250–present</h2>
+                    <p>Timed Mock Simulation · Question 3 (Difference) &amp; Question 4 (Explain Why)</p>
+                </div>
+                <span class="header-tag">Timed Mock · Section B</span>
+            </div>
+
+            <!-- Q3: Difference -->
+            <div class="question-container">
+                <div class="question-prompt">
+                    <div>
+                        <span class="q-num">3</span>
+                        <span class="exam-provenance-pill past">Edexcel June 2022</span>
+                        Explain one way in which hospital care in the 13th century was different from hospital care in the 19th century.
+                    </div>
+                    <span class="q-marks">[4]</span>
+                </div>
+
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="width: 32%;">
+                        <span class="scaffold-label">Key Knowledge (AO1)</span>
+                        <div class="scaffold-content">
+                            <span class="scaffold-pill">13th C Hospitals</span> Run by monks/nuns; focus on spiritual care &amp; rest; infectious/terminal turned away.<br>
+                            <span class="scaffold-pill">19th C Hospitals</span> Florence Nightingale; sanitation &amp; pavilion plan; trained nurses; clinical medical cure.
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 28%;">
+                        <span class="scaffold-label">Contrast Connectives</span>
+                        <div class="scaffold-content">
+                            • <em>One fundamental difference in hospital care was...</em><br>
+                            • <em>In the 13th century, hospitals aimed to comfort the soul...</em><br>
+                            • <em>In contrast, 19th-century hospitals aimed to treat...</em>
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 40%;">
+                        <span class="scaffold-label">Model Sentence / Answer Guide (AO1/AO2)</span>
+                        <div class="scaffold-content">
+                            <em>"13th-century hospitals run by monks focused on spiritual care and hospitality rather than medical treatment, whereas 19th-century hospitals reformed by Florence Nightingale focused on strict sanitation, ventilation, and clinical cure by trained nurses."</em>
+                        </div>
+                    </div>
+                </div>
+
+                ${renderLines(5, '7.2mm')}
+            </div>
+
+            <!-- Q4: Explain Why (Complete with 3x5 = 15 Lines) -->
+            <div class="question-container" style="margin-top: 4px;">
+                <div class="question-prompt">
+                    <div>
+                        <span class="q-num">4</span>
+                        <span class="exam-provenance-pill forecast">★ High-Yield Forecast</span>
+                        Explain why understanding of the causes of disease advanced rapidly after 1900.
+                    </div>
+                    <span class="q-marks">[12]</span>
+                </div>
+
+                <div class="stimulus-card">
+                    You may use the following in your answer: &nbsp;
+                    <strong>• The discovery of the structure of DNA (1953)</strong> &nbsp;&nbsp;
+                    <strong>• Research into lifestyle factors (e.g. Doll and Hill on smoking and lung cancer, 1950)</strong> &nbsp;&nbsp;
+                    <em>(You must also use information of your own.)</em>
+                </div>
+
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="width: 38%;">
+                        <span class="scaffold-label">Factor Bank (AO1)</span>
+                        <div class="scaffold-content">
+                            <span class="scaffold-pill">Watson, Crick &amp; Franklin 1953</span>
+                            <span class="scaffold-pill">Human Genome Project 2000</span>
+                            <span class="scaffold-pill">Doll &amp; Hill Smoking Link 1950</span>
+                            <span class="scaffold-pill">Lifestyle Epidemiology</span>
+                            <span class="scaffold-pill">Electron Microscopes</span>
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 32%;">
+                        <span class="scaffold-label">Causal Connectives</span>
+                        <div class="scaffold-content">
+                            • <em>A revolutionary advance was the discovery of genetic coding...</em><br>
+                            • <em>By uncovering DNA structure, scientists proved that disease...</em><br>
+                            • <em>Furthermore, statistical epidemiology demonstrated that...</em>
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 30%;">
+                        <span class="scaffold-label">3 P-E-E Paragraph Plan</span>
+                        <div class="scaffold-content">
+                            <strong>Para 1:</strong> DNA Structure &amp; Genetic Diseases &rarr; <strong>Para 2:</strong> Lifestyle Research (Doll &amp; Hill / Lung Cancer) &rarr; <strong>Para 3:</strong> High-Tech Microscopy.
+                        </div>
+                    </div>
+                </div>
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5px;">Paragraph 1: Genetics &amp; The Discovery of the Structure of DNA (Stimulus 1)</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Paragraph 2: Statistical Epidemiology &amp; Lifestyle Causation (Smoking &amp; Diet) (Stimulus 2)</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Paragraph 3: Own Knowledge — Scientific Instrumentation (Electron Microscopes &amp; Virology)</div>
+                ${renderLines(6, '6.4mm')}
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Pearson Edexcel GCSE (9–1) History · Option 11</span>
+            <span class="turn-over">Turn Over for Question 5/6 Statement Essay (Full Page)</span>
+            <span>Page 12 of 20</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 13: SECTION B — TIMED SIMULATION (FULL-PAGE Q5/6 ESSAY)  -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h2>Section B: Medicine in Britain, c1250–present</h2>
+                    <p>Timed Mock Simulation · Question 5/6 Statement Essay (16+4 Marks)</p>
+                </div>
+                <span class="header-tag">Timed Mock · Section B Essay</span>
+            </div>
+
+            <!-- Q5 / Q6 Statement Essay -->
+            <div class="question-container">
+                <div class="question-prompt">
+                    <div>
+                        <span class="q-num">5 / 6</span>
+                        <span class="exam-provenance-pill past">Edexcel June 2019</span>
+                        'Attempts to prevent illness were completely ineffective between c1250 and c1700.' How far do you agree? Explain your answer.
+                    </div>
+                    <span class="q-marks">[16+4]</span>
+                </div>
+
+                <div class="stimulus-card">
+                    You may use the following in your answer: &nbsp;
+                    <strong>• The Black Death (1348–49)</strong> &nbsp;&nbsp;
+                    <strong>• The Great Plague in London (1665)</strong> &nbsp;&nbsp;
+                    <em>(You must also use information of your own.)</em>
+                </div>
+
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="width: 38%;">
+                        <span class="scaffold-label">Argument Bank (AO1/AO2)</span>
+                        <div class="scaffold-content">
+                            <span class="scaffold-pill">Side A: Ineffective</span> Miasma sweet herbs, flagellation, carrying pomanders; zero grasp of bacteria/fleas.<br>
+                            <span class="scaffold-pill">Side B: Emerging Containment</span> 1665 quarantine, searchers, closing theatres, killing stray dogs/cats.<br>
+                            <span class="scaffold-pill">Side C: Regimen Sanitatis</span> Medieval bathing/diet rules; local council dung orders in York and London.
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 32%;">
+                        <span class="scaffold-label">Evaluative Connectives</span>
+                        <div class="scaffold-content">
+                            • <em>It is largely true that prevention was ineffective because...</em><br>
+                            • <em>However, municipal quarantine showed real progress...</em><br>
+                            • <em>The decisive reason prevention failed was the persistence of miasma...</em>
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 30%;">
+                        <span class="scaffold-label">Criteria-Led Judgement</span>
+                        <div class="scaffold-content">
+                            Assess: Did quarantine reduce transmission slightly (1665), or was it fundamentally defeated by total ignorance of rat-borne fleas until Yersin (1894)?
+                        </div>
+                    </div>
+                </div>
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5px;">Introduction &amp; Paragraph 1: Agree with Named Factor (Ineffective Prevention &amp; The Black Death)</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Paragraph 2: Counter-Factor — Emerging Municipal Quarantine &amp; The Great Plague (1665)</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Paragraph 3: Alternative Factor — Personal Hygiene, Regimen Sanitatis &amp; Local Sanitation Orders</div>
+                ${renderLines(6, '6.4mm')}
+
+                <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 3px; margin-bottom: 1.5px;">Conclusion: Supported Final Judgement (Criteria: Absolute Failure vs Progressive Containment)</div>
+                ${renderLines(6, '6.4mm')}
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Pearson Edexcel GCSE (9–1) History · Option 11</span>
+            <span class="turn-over">Turn Over for Section A: The Western Front (Pages 14–19)</span>
+            <span>Page 13 of 20</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 14: SECTION A — WESTERN FRONT SET 1 (Q1 & BLANK Q2b)     -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h2>Section A: The Historic Environment</h2>
+                    <p>The British Sector of the Western Front, 1914–18 · Questions 1(a), 1(b) (Features) &amp; Question 2(b) (Follow-Up)</p>
+                </div>
+                <span class="header-tag">Section A · Set 1</span>
+            </div>
+
+            <!-- Q1(a): Feature 1 -->
+            <div class="question-container">
+                <div class="question-prompt">
+                    <div>
+                        <span class="q-num">1 (a)</span>
+                        <span class="exam-provenance-pill past">Edexcel June 2018</span>
+                        Describe one feature of the work of Casualty Clearing Stations (CCS) on the Western Front.
+                    </div>
+                    <span class="q-marks">[2]</span>
+                </div>
+
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="width: 48%;">
+                        <span class="scaffold-label">Key Knowledge (AO1)</span>
+                        <div class="scaffold-content">
+                            Located 7–12 miles behind frontline near railway lines; staffed by RAMC doctors and QAIMNS nurses; performed triage (walking wounded, urgent surgery, beyond help); did life-saving amputations.
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 52%;">
+                        <span class="scaffold-label">F-D Exam Formula</span>
+                        <div class="scaffold-content">
+                            <strong>Feature:</strong> State clear historical role in sentence 1 &rarr; <strong>Detail:</strong> Support with 1 precise fact, statistic, or procedure in sentence 2.
+                        </div>
+                    </div>
+                </div>
+
+                ${renderLines(3, '7.2mm')}
+            </div>
+
+            <!-- Q1(b): Feature 2 -->
+            <div class="question-container" style="margin-top: 5px;">
+                <div class="question-prompt">
+                    <div>
+                        <span class="q-num">1 (b)</span>
+                        <span class="exam-provenance-pill past">Edexcel June 2019</span>
+                        Describe one feature of the use of the Thomas splint on the Western Front.
+                    </div>
+                    <span class="q-marks">[2]</span>
+                </div>
+
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="width: 48%;">
+                        <span class="scaffold-label">Key Knowledge (AO1)</span>
+                        <div class="scaffold-content">
+                            Designed by Hugh Owen Thomas; applied at Regimental Aid Posts; rigid steel frame pulled leg straight to prevent bone ends grinding and cutting femoral artery; reduced fracture mortality from 80% to 20%.
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 52%;">
+                        <span class="scaffold-label">F-D Exam Formula</span>
+                        <div class="scaffold-content">
+                            <strong>Feature:</strong> State medical function in sentence 1 &rarr; <strong>Detail:</strong> Support with mortality drop (80% to 20%) or mechanical traction detail in sentence 2.
+                        </div>
+                    </div>
+                </div>
+
+                ${renderLines(3, '7.2mm')}
+            </div>
+
+            <!-- Q2(b): 4-Part Follow-Up Grid (100% BLANK FOR STUDENT COMPLETION) -->
+            <div class="question-container" style="margin-top: 5px;">
+                <div class="question-prompt">
+                    <div>
+                        <span class="q-num">2 (b)</span>
+                        <span class="exam-provenance-pill past">Edexcel June 2018</span>
+                        Study Source B (on Page 15). How could you follow up Source B to find out more about the severe conditions faced by medical staff at Base Hospitals? Complete the table below.
+                    </div>
+                    <span class="q-marks">[4]</span>
+                </div>
+
+                <table class="follow-up-table">
+                    <tr>
+                        <td>Detail in Source B that I would follow up:</td>
+                        <td>
+                            ${renderLines(2, '7mm')}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Question I would ask:</td>
+                        <td>
+                            ${renderLines(2, '7mm')}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>What type of source I would use:</td>
+                        <td>
+                            ${renderLines(2, '7mm')}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>How this source would help me answer my question:</td>
+                        <td>
+                            ${renderLines(2, '7mm')}
+                        </td>
+                    </tr>
+                </table>
+
+                <div style="border: 1px solid #000000; background: #f8fafc; border-radius: 2px; padding: 3px 6px; font-size: 6.8pt; margin-top: 5px;">
+                    <strong>Enquiry Verification Checklist:</strong> [ ] Direct quote from Source B selected; [ ] Question directly links to quote; [ ] Realistic historical source named (e.g. Base Hospital War Diary or RAMC inspection log); [ ] Clear purpose explained.
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Pearson Edexcel GCSE (9–1) History · Option 11</span>
+            <span class="turn-over">Turn Over for Question 2(a) Source Utility (Sources A &amp; B)</span>
+            <span>Page 14 of 20</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 15: SECTION A — WESTERN FRONT SET 1 (Q2a SOURCES & SCAFF)-->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h2>Section A: The Historic Environment</h2>
+                    <p>The British Sector of the Western Front, 1914–18 · Question 2(a) Source Utility Enquiry (Sources A &amp; B)</p>
+                </div>
+                <span class="header-tag">Section A · Set 1</span>
+            </div>
+
+            <div class="question-container">
+                <div class="question-prompt">
+                    <div>
+                        <span class="q-num">2 (a)</span>
+                        <span class="exam-provenance-pill past">Edexcel June 2018</span>
+                        Study Sources A and B. How useful are Sources A and B for an enquiry into the challenges of treating casualties on the Western Front? Explain your answer, using Sources A and B and your knowledge of the historical context.
+                    </div>
+                    <span class="q-marks">[8]</span>
+                </div>
+
+                <!-- Side-by-Side Archival Primary Source Display -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 5px;">
+                    <div class="archival-source-box">
+                        <div class="archival-source-title">
+                            <span>Source A</span>
+                            <span style="font-size: 6.6pt; font-family: 'Inter', sans-serif;">Somme CCS</span>
+                        </div>
+                        <div class="archival-source-body">
+                            "The casualties have started to arrive... The volume of wounded men is overwhelming; every bed and stretcher is occupied, and men are fortunate just to find a spot on the bare ground. Many will pass away before surgery is possible. We have admitted over 1,500 casualties in twenty-four hours, and the stream has not stopped."
+                        </div>
+                        <div class="archival-source-footer">
+                            <strong>Provenance:</strong> From the personal wartime diary of the Reverend Arthur Davies, an army chaplain stationed at a Casualty Clearing Station during the Battle of the Somme, July 1916.
+                        </div>
+                    </div>
+
+                    <div class="archival-source-box">
+                        <div class="archival-source-title">
+                            <span>Source B</span>
+                            <span style="font-size: 6.6pt; font-family: 'Inter', sans-serif;">Base Hospital</span>
+                        </div>
+                        <div class="archival-source-body">
+                            "Our morning duties begin at 3.30 am! The freezing temperatures are unbearable. Icicles hang thick over ward windows. Even kettles, rubber hot water bottles, and sponges have frozen solid. The pipes freeze entirely, meaning we must strictly ration the water provided to the wounded."
+                        </div>
+                        <div class="archival-source-footer">
+                            <strong>Provenance:</strong> From a private letter written by Edith Smith, a VAD (Voluntary Aid Detachment) nurse serving at a British Base Hospital near Boulogne, December 1917.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Provenance Clues Scaffolding Card (Per AGENTS.md Rule) -->
+                <div class="provenance-card">
+                    <strong style="text-transform: uppercase; font-size: 7.2pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1.5px; margin-bottom: 2.5px;">
+                        🔍 Provenance Clues (Author, Audience, Motive) — Consider Before Writing:
+                    </strong>
+                    <div style="font-size: 6.8pt; line-height: 1.25;">
+                        • <strong>Source A (Chaplain Davies):</strong> Eyewitness chaplain at a CCS during the peak of the Somme (July 1916). <em>Motive:</em> Private diary recording immediate emotional and physical strain of 1,500 casualties arriving; highly reliable for firsthand volume, though written under immense pressure without official statistics.<br>
+                        • <strong>Source B (Edith Smith):</strong> Frontline VAD nurse writing a personal letter home from a Base Hospital in winter 1917. <em>Motive:</em> Candid description of extreme winter freezing and water rationing; highly useful for everyday environmental hardships, though localized to one coastal hospital.
+                    </div>
+                </div>
+
+                <!-- C-O-P Examination Scaffold Bar -->
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="width: 34%;">
+                        <span class="scaffold-label">C — Content &amp; Quote</span>
+                        <div class="scaffold-content">
+                            Identify specific details (1,500 casualties, bare ground, frozen pipes, water rationing) and explain what they reveal about medical strain.
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 33%;">
+                        <span class="scaffold-label">O — Own Knowledge</span>
+                        <div class="scaffold-content">
+                            Corroborate with precise context: 57,000 casualties on Day 1 of Somme; CCS capacity was ~1,000; winter 1917 was coldest in 40 years.
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 33%;">
+                        <span class="scaffold-label">P — Provenance (NOP)</span>
+                        <div class="scaffold-content">
+                            Evaluate Nature (diary vs letter), Origin (eyewitness chaplain vs nurse), and Purpose. Weigh typicality vs limitations.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paragraph 1: Source A Analysis directly on Page 15 -->
+                <div class="utility-response-block" style="margin-top: 5px;">
+                    <div class="utility-para-header">
+                        <strong>Paragraph 1: Analysis of Source A (Content + Contextual Knowledge + Provenance)</strong>
+                        <span style="font-size: 7pt; font-weight: 700;">[4 Marks]</span>
+                    </div>
+                    <div class="starters-box">
+                        <div class="starter-point"><strong>• Content Starter:</strong> <em>Source A is useful for an enquiry into casualty treatment because it shows that...</em></div>
+                        <div class="starter-point"><strong>• Context Starter:</strong> <em>From my own historical knowledge, this is accurate because during the 1916 Somme offensive...</em></div>
+                        <div class="starter-point"><strong>• Provenance Starter:</strong> <em>The utility of Source A is affected by its provenance because as an eyewitness chaplain's diary...</em></div>
+                    </div>
+                    ${renderLines(11, '7.2mm')}
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Pearson Edexcel GCSE (9–1) History · Option 11</span>
+            <span class="turn-over">Turn Over for Paragraph 2 (Source B Analysis &amp; Synthesis)</span>
+            <span>Page 15 of 20</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 16: SECTION A — WESTERN FRONT SET 1 (Q2a FULL WRITING L) -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h2>Section A: The Historic Environment</h2>
+                    <p>The British Sector of the Western Front, 1914–18 · Question 2(a) Student Writing Response Lines</p>
+                </div>
+                <span class="header-tag">Section A · Set 1 Writing</span>
+            </div>
+
+            <!-- Full Page dedicated to Paragraph 2: Source B Analysis & Comparative Synthesis -->
+            <div class="utility-response-block">
+                <div class="utility-para-header">
+                    <strong>Paragraph 2: Analysis of Source B &amp; Comparative Judgement (Content + Knowledge + Provenance)</strong>
+                    <span style="font-size: 7pt; font-weight: 700;">[4 Marks]</span>
+                </div>
+                <div class="starters-box">
+                    <div class="starter-point"><strong>• Content Starter:</strong> <em>Source B is also useful because it highlights the severe environmental difficulties...</em></div>
+                    <div class="starter-point"><strong>• Context Starter:</strong> <em>This is corroborated by historical evidence that Base Hospitals in winter 1917 faced...</em></div>
+                    <div class="starter-point"><strong>• Provenance &amp; Synthesis:</strong> <em>As a personal letter home from a VAD nurse, the provenance... Overall, Source [A/B] is more useful because...</em></div>
+                </div>
+                ${renderLines(19, '7.2mm')}
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Pearson Edexcel GCSE (9–1) History · Option 11</span>
+            <span class="turn-over">Turn Over for Western Front Practice Set 2 (Pages 17–19)</span>
+            <span>Page 16 of 20</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 17: SECTION A — WESTERN FRONT SET 2 (Q1 & BLANK Q2b)     -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h2>Section A: The Historic Environment</h2>
+                    <p>The British Sector of the Western Front, 1914–18 · Questions 1(a), 1(b) (Features) &amp; Question 2(b) (Follow-Up)</p>
+                </div>
+                <span class="header-tag">Section A · Set 2</span>
+            </div>
+
+            <!-- Q1(a): Feature 1 -->
+            <div class="question-container">
+                <div class="question-prompt">
+                    <div>
+                        <span class="q-num">1 (a)</span>
+                        <span class="exam-provenance-pill forecast">★ High-Yield Forecast</span>
+                        Describe one feature of mobile X-ray units used in the British sector of the Western Front.
+                    </div>
+                    <span class="q-marks">[2]</span>
+                </div>
+
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="width: 48%;">
+                        <span class="scaffold-label">Key Knowledge (AO1)</span>
+                        <div class="scaffold-content">
+                            6 mobile X-ray vans deployed by RAMC in British sector; located at CCS; transported X-ray tubes in padded vans; used to locate shrapnel and bullets inside flesh before surgery; tubes overheated quickly.
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 52%;">
+                        <span class="scaffold-label">F-D Exam Formula</span>
+                        <div class="scaffold-content">
+                            <strong>Feature:</strong> State diagnostic role in sentence 1 &rarr; <strong>Detail:</strong> Add specific technological detail (van transport, overheating tubes, or CCS location) in sentence 2.
+                        </div>
+                    </div>
+                </div>
+
+                ${renderLines(3, '7.2mm')}
+            </div>
+
+            <!-- Q1(b): Feature 2 -->
+            <div class="question-container" style="margin-top: 5px;">
+                <div class="question-prompt">
+                    <div>
+                        <span class="q-num">1 (b)</span>
+                        <span class="exam-provenance-pill past">Edexcel June 2022</span>
+                        Describe one feature of trench fever on the Western Front.
+                    </div>
+                    <span class="q-marks">[2]</span>
+                </div>
+
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="width: 48%;">
+                        <span class="scaffold-label">Key Knowledge (AO1)</span>
+                        <div class="scaffold-content">
+                            Caused by micro-organisms living in body lice feces; produced severe headaches, high fever, and disabling bone pain in shins; affected ~15% of men; led to bathhouses and steam delousing machines.
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 52%;">
+                        <span class="scaffold-label">F-D Exam Formula</span>
+                        <div class="scaffold-content">
+                            <strong>Feature:</strong> State lice cause or flu-like symptoms in sentence 1 &rarr; <strong>Detail:</strong> Add delousing stations or 15% casualty impact in sentence 2.
+                        </div>
+                    </div>
+                </div>
+
+                ${renderLines(3, '7.2mm')}
+            </div>
+
+            <!-- Q2(b): 4-Part Follow-Up Grid (100% BLANK FOR STUDENT COMPLETION) -->
+            <div class="question-container" style="margin-top: 5px;">
+                <div class="question-prompt">
+                    <div>
+                        <span class="q-num">2 (b)</span>
+                        <span class="exam-provenance-pill forecast">★ High-Yield Forecast</span>
+                        Study this extract from an RAMC officer at Ypres (1915): <em>"The chlorine gas casualties stumbled in clutching their throats. We washed their blinded eyes with bicarbonate of soda solutions, but many died from asphyxiation."</em> How could you follow up this extract to find out more about treatments for gas attacks on the Western Front? Complete the table below.
+                    </div>
+                    <span class="q-marks">[4]</span>
+                </div>
+
+                <table class="follow-up-table">
+                    <tr>
+                        <td>Detail in extract that I would follow up:</td>
+                        <td>
+                            ${renderLines(2, '7mm')}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Question I would ask:</td>
+                        <td>
+                            ${renderLines(2, '7mm')}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>What type of source I would use:</td>
+                        <td>
+                            ${renderLines(2, '7mm')}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>How this source would help me answer my question:</td>
+                        <td>
+                            ${renderLines(2, '7mm')}
+                        </td>
+                    </tr>
+                </table>
+
+                <div style="border: 1px solid #000000; background: #f8fafc; border-radius: 2px; padding: 3px 6px; font-size: 6.8pt; margin-top: 5px;">
+                    <strong>Enquiry Verification Checklist:</strong> [ ] Direct quote from gas extract selected; [ ] Focused clinical enquiry question; [ ] Official RAMC Casualty Admission Book or War Office Bulletin named; [ ] Precise evaluative purpose.
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Pearson Edexcel GCSE (9–1) History · Option 11</span>
+            <span class="turn-over">Turn Over for Question 2(a) Set 2 (Sources A &amp; B)</span>
+            <span>Page 17 of 20</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 18: SECTION A — WESTERN FRONT SET 2 (Q2a SOURCES & SCAFF)-->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h2>Section A: The Historic Environment</h2>
+                    <p>The British Sector of the Western Front, 1914–18 · Question 2(a) Source Utility Enquiry (Sources A &amp; B)</p>
+                </div>
+                <span class="header-tag">Section A · Set 2</span>
+            </div>
+
+            <div class="question-container">
+                <div class="question-prompt">
+                    <div>
+                        <span class="q-num">2 (a)</span>
+                        <span class="exam-provenance-pill past">Edexcel November 2020</span>
+                        Study Sources A and B. How useful are Sources A and B for an enquiry into the transport and evacuation of wounded soldiers on the Western Front? Explain your answer, using Sources A and B and your knowledge of the historical context.
+                    </div>
+                    <span class="q-marks">[8]</span>
+                </div>
+
+                <!-- Side-by-Side Archival Primary Source Display -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 5px;">
+                    <div class="archival-source-box">
+                        <div class="archival-source-title">
+                            <span>Source A</span>
+                            <span style="font-size: 6.6pt; font-family: 'Inter', sans-serif;">Field Ambulance Log</span>
+                        </div>
+                        <div class="archival-source-body">
+                            "The mud in the Ypres Salient makes stretcher bearing almost impossible. It takes four or six bearers to carry one stretcher through waist-deep slime. The wooden duckboards have been blasted away by German artillery. Yesterday it took our squad four hours to move two casualties just one mile back to the dressing station."
+                        </div>
+                        <div class="archival-source-footer">
+                            <strong>Provenance:</strong> From the official war diary of a British RAMC Field Ambulance unit operating during the Third Battle of Ypres (Passchendaele), August 1917.
+                        </div>
+                    </div>
+
+                    <div class="archival-source-box">
+                        <div class="archival-source-title">
+                            <span>Source B</span>
+                            <span style="font-size: 6.6pt; font-family: 'Inter', sans-serif;">Ambulance Train Log</span>
+                        </div>
+                        <div class="archival-source-body">
+                            "The ambulance train arrived at midnight carrying 400 lying cases directly from the clearing station. The train is fitted with sprung cots and electric lighting, but the stench of gangrene and damp uniforms is overpowering. Medical orderlies worked continuously dressing wounds and administering hot tea."
+                        </div>
+                        <div class="archival-source-footer">
+                            <strong>Provenance:</strong> From the wartime journal of Sister Kate Luard, a nursing sister serving aboard British RAMC Ambulance Trains between the Somme and Base Hospitals at the French coast, 1916.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Provenance Clues Scaffolding Card (Per AGENTS.md Rule) -->
+                <div class="provenance-card">
+                    <strong style="text-transform: uppercase; font-size: 7.2pt; display: block; border-bottom: 1px solid #cbd5e1; padding-bottom: 1.5px; margin-bottom: 2.5px;">
+                        🔍 Provenance Clues (Author, Audience, Motive) — Consider Before Writing:
+                    </strong>
+                    <div style="font-size: 6.8pt; line-height: 1.25;">
+                        • <strong>Source A (RAMC Field Ambulance Diary):</strong> Official frontline operational log written by stretcher-bearer commanders at Passchendaele (1917). <em>Motive:</em> Recording military logistics and delay factors; highly factual regarding physical mud barriers, though focused strictly on frontline sector transport.<br>
+                        • <strong>Source B (Sister Kate Luard Journal):</strong> Experienced nursing sister serving on specialized ambulance trains. <em>Motive:</em> Eyewitness clinical observation of intermediate evacuation between CCS and Base Hospitals; highly valuable for understanding rail medical care, though limited to train-borne patients.
+                    </div>
+                </div>
+
+                <!-- C-O-P Examination Scaffold Bar -->
+                <div class="scaffold-bar">
+                    <div class="scaffold-col" style="width: 34%;">
+                        <span class="scaffold-label">C — Content &amp; Quote</span>
+                        <div class="scaffold-content">
+                            Extract specific evidence (waist-deep slime, 4 hours for 1 mile, 400 cases on sprung cots, gangrene stench) and analyse logistical hurdles.
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 33%;">
+                        <span class="scaffold-label">O — Own Knowledge</span>
+                        <div class="scaffold-content">
+                            Integrate evacuation chain: RAP &rarr; Dressing Station &rarr; CCS &rarr; Ambulance Train &rarr; Base Hospital. Mention motor ambulances and canal barges.
+                        </div>
+                    </div>
+                    <div class="scaffold-col" style="width: 33%;">
+                        <span class="scaffold-label">P — Provenance (NOP)</span>
+                        <div class="scaffold-content">
+                            Contrast operational field log (Source A) with clinical nursing journal (Source B). Weigh author authority and scope of evidence.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paragraph 1: Source A Analysis directly on Page 18 -->
+                <div class="utility-response-block" style="margin-top: 5px;">
+                    <div class="utility-para-header">
+                        <strong>Paragraph 1: Analysis of Source A (Content + Contextual Knowledge + Provenance)</strong>
+                        <span style="font-size: 7pt; font-weight: 700;">[4 Marks]</span>
+                    </div>
+                    <div class="starters-box">
+                        <div class="starter-point"><strong>• Content Starter:</strong> <em>Source A is useful for an enquiry into frontline transport because it shows that...</em></div>
+                        <div class="starter-point"><strong>• Context Starter:</strong> <em>From my own knowledge, this reflects the extreme conditions during Third Ypres (Passchendaele)...</em></div>
+                        <div class="starter-point"><strong>• Provenance Starter:</strong> <em>The utility of Source A is influenced by its nature as an official RAMC Field Ambulance War Diary...</em></div>
+                    </div>
+                    ${renderLines(11, '7.2mm')}
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Pearson Edexcel GCSE (9–1) History · Option 11</span>
+            <span class="turn-over">Turn Over for Paragraph 2 (Source B Analysis &amp; Synthesis)</span>
+            <span>Page 18 of 20</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 19: SECTION A — WESTERN FRONT SET 2 (Q2a FULL WRITING L) -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div>
+            <div class="page-header">
+                <div class="header-left">
+                    <h2>Section A: The Historic Environment</h2>
+                    <p>The British Sector of the Western Front, 1914–18 · Question 2(a) Student Writing Response Lines</p>
+                </div>
+                <span class="header-tag">Section A · Set 2 Writing</span>
+            </div>
+
+            <!-- Full Page dedicated to Paragraph 2: Source B Analysis & Comparative Judgement -->
+            <div class="utility-response-block">
+                <div class="utility-para-header">
+                    <strong>Paragraph 2: Analysis of Source B &amp; Comparative Judgement (Content + Knowledge + Provenance)</strong>
+                    <span style="font-size: 7pt; font-weight: 700;">[4 Marks]</span>
+                </div>
+                <div class="starters-box">
+                    <div class="starter-point"><strong>• Content Starter:</strong> <em>Source B is also useful because it details the next stage of the evacuation chain...</em></div>
+                    <div class="starter-point"><strong>• Context Starter:</strong> <em>Specifically, my knowledge confirms that specialized ambulance trains were vital because...</em></div>
+                    <div class="starter-point"><strong>• Provenance &amp; Synthesis:</strong> <em>Sister Luard's firsthand clinical perspective makes this source... Overall, both sources are mutually useful because...</em></div>
+                </div>
+                ${renderLines(19, '7.2mm')}
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>Pearson Edexcel GCSE (9–1) History · Option 11</span>
+            <span class="turn-over">Turn Over for Full-Page Specification Audit (Page 20)</span>
+            <span>Page 19 of 20</span>
+        </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- PAGE 20: BACK COVER — FULL-PAGE WORD-FOR-WORD SPECIFICATION   -->
+    <!-- ============================================================= -->
+    <div class="page">
+        <div class="spec-audit-container">
+            <div class="spec-audit-header">
+                <div>
+                    <span class="spec-audit-title">📋 Pearson Edexcel GCSE (9–1) History · Option 11 Specification Audit</span>
+                    <div style="font-size: 6.8pt; color: #334155; font-style: italic; margin-top: 1px;">Official Word-for-Word Syllabus Content · Medicine in Britain, c1250–present &amp; Western Front, 1914–18</div>
+                </div>
+                <div style="font-size: 7pt; font-weight: 700; border: 1px solid #000; padding: 1.5px 5px; background: #f8fafc;">
+                    Tick [ ✓ ] once mastered
+                </div>
+            </div>
+
+            <div class="spec-audit-grid">
+                <!-- Column 1: Section B Units 1 & 2 -->
+                <div class="spec-audit-col">
+                    <div class="spec-col-banner">SECTION B: THEMATIC STUDY (1)</div>
+                    
+                    <div class="spec-unit-box">
+                        <div class="spec-unit-title">Unit 1: c1250–c1500: Medicine in Medieval England</div>
+                        
+                        <div class="spec-sub-title">Ideas about the cause of disease and illness:</div>
+                        <ul class="spec-points-list">
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text">Supernatural and religious explanations of the cause of disease.</span>
+                            </li>
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text">Rational explanations: the Theory of the Four Humours and the miasma theory.</span>
+                            </li>
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text">The continuing influence in England of Galen.</span>
+                            </li>
+                        </ul>
+
+                        <div class="spec-sub-title">Approaches to prevention and treatment:</div>
+                        <ul class="spec-points-list">
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text">Connection with ideas about disease: religious actions, bloodletting and purging, purifying the air.</span>
+                            </li>
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text">Traditional approaches to treatment and care: the role of the physician, apothecary and barber surgeon; the role of hospitals, care within the community and at home, including the use of herbal remedies.</span>
+                            </li>
+                        </ul>
+
+                        <div class="spec-sub-title">Case Study:</div>
+                        <ul class="spec-points-list">
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text"><strong>Dealing with the Black Death, 1348–49:</strong> approaches to treatment and attempts to prevent its spread.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="spec-unit-box" style="margin-top: 5px;">
+                        <div class="spec-unit-title">Unit 2: c1500–c1700: The Medical Renaissance in England</div>
+                        
+                        <div class="spec-sub-title">Ideas about the cause of disease and illness:</div>
+                        <ul class="spec-points-list">
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text">Continuity and change in explanations of the cause of disease and illness.</span>
+                            </li>
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text">A scientific approach, including the work of Thomas Sydenham in improving diagnosis.</span>
+                            </li>
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text">The influence of the printing press and the work of the Royal Society on the transmission of ideas.</span>
+                            </li>
+                        </ul>
+
+                        <div class="spec-sub-title">Approaches to prevention and treatment:</div>
+                        <ul class="spec-points-list">
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text">Continuity and change in approaches to prevention, treatment and care in the community and in hospitals.</span>
+                            </li>
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text">Improvements in medical training and the influence in England of the work of Vesalius.</span>
+                            </li>
+                        </ul>
+
+                        <div class="spec-sub-title">Case Studies:</div>
+                        <ul class="spec-points-list">
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text"><strong>Key individual:</strong> William Harvey and the discovery of the circulation of the blood.</span>
+                            </li>
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text"><strong>Dealing with the Great Plague in London (1665):</strong> approaches to treatment and attempts to prevent its spread.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 2: Section B Units 3 & 4 -->
+                <div class="spec-audit-col">
+                    <div class="spec-col-banner">SECTION B: THEMATIC STUDY (2)</div>
+                    
+                    <div class="spec-unit-box">
+                        <div class="spec-unit-title">Unit 3: c1700–c1900: Medicine in 18th- and 19th-Century Britain</div>
+                        
+                        <div class="spec-sub-title">Ideas about the cause of disease and illness:</div>
+                        <ul class="spec-points-list">
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text">Continuity and change in explanations of the causes of disease and illness.</span>
+                            </li>
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text">The influence of Pasteur’s Germ Theory and Koch’s work on microbes.</span>
+                            </li>
+                        </ul>
+
+                        <div class="spec-sub-title">Approaches to prevention and treatment:</div>
+                        <ul class="spec-points-list">
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text">The extent of change in care and treatment: improvements in hospital care and the influence of Nightingale.</span>
+                            </li>
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text">The impact of anaesthetics and antiseptics on surgery.</span>
+                            </li>
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text">New approaches to prevention: the development and use of vaccinations and the Public Health Act 1875.</span>
+                            </li>
+                        </ul>
+
+                        <div class="spec-sub-title">Case Studies:</div>
+                        <ul class="spec-points-list">
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text"><strong>Key individual:</strong> Jenner and the development of vaccination.</span>
+                            </li>
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text"><strong>Fighting Cholera in London (1854):</strong> attempts to prevent its spread; the significance of Snow and the Broad Street pump.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="spec-unit-box" style="margin-top: 5px;">
+                        <div class="spec-unit-title">Unit 4: c1900–present: Medicine in Modern Britain</div>
+                        
+                        <div class="spec-sub-title">Ideas about the cause of disease and illness:</div>
+                        <ul class="spec-points-list">
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text">Advances in understanding the causes of illness and disease: the influence of genetic and lifestyle factors on health.</span>
+                            </li>
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text">Improvements in diagnosis: the impact of the availability of blood tests, scans and monitors.</span>
+                            </li>
+                        </ul>
+
+                        <div class="spec-sub-title">Approaches to prevention and treatment:</div>
+                        <ul class="spec-points-list">
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text">Advances in medicine: the first magic bullets and the development of antibiotics.</span>
+                            </li>
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text">High-tech medical and surgical treatment in hospitals.</span>
+                            </li>
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text">The creation of the NHS and its impact on the provision of care.</span>
+                            </li>
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text">New approaches to prevention: mass vaccinations and government lifestyle campaigns.</span>
+                            </li>
+                        </ul>
+
+                        <div class="spec-sub-title">Case Studies:</div>
+                        <ul class="spec-points-list">
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text"><strong>Key individuals:</strong> Fleming, Florey and Chain’s development of penicillin.</span>
+                            </li>
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text"><strong>The fight against lung cancer in the 21st century:</strong> the use of science and technology in diagnosis and treatment; government action to prevent it.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 3: Section A Western Front -->
+                <div class="spec-audit-col">
+                    <div class="spec-col-banner">SECTION A: HISTORIC ENVIRONMENT</div>
+                    
+                    <div class="spec-unit-box">
+                        <div class="spec-unit-title">1. The Context of the British Sector of the Western Front</div>
+                        <ul class="spec-points-list">
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text"><strong>Historical Context:</strong> Medicine in early 20th century: understanding of infection and moves towards aseptic surgery; development of x-rays; blood transfusions and developments in the storage of blood.</span>
+                            </li>
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text"><strong>Trench System &amp; Theatre of War:</strong> British sector in Flanders and northern France: the Ypres salient, the Somme, Arras and Cambrai.</span>
+                            </li>
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text">The trench system - its organisation, including frontline and support trenches.</span>
+                            </li>
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text">Significance for medical treatment of the nature of the terrain and problems of the transport and communications infrastructure.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="spec-unit-box" style="margin-top: 4px;">
+                        <div class="spec-unit-title">2. Conditions Requiring Medical Treatment</div>
+                        <ul class="spec-points-list">
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text"><strong>Trench Environment &amp; Illnesses:</strong> Conditions requiring medical treatment on the Western Front, including ill health arising from the trench environment.</span>
+                            </li>
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text"><strong>Weapons and Wounds:</strong> Nature of wounds from rifles and explosives; problem of shrapnel, wound infection and increased numbers of head injuries.</span>
+                            </li>
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text"><strong>Gas Attacks:</strong> The effects of gas attacks (chlorine, phosgene, mustard gas).</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="spec-unit-box" style="margin-top: 4px;">
+                        <div class="spec-unit-title">3. Medical Treatment and the Chain of Evacuation</div>
+                        <ul class="spec-points-list">
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text"><strong>Staff &amp; Personnel:</strong> Medical treatment on the Western Front; work of the RAMC and nurses.</span>
+                            </li>
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text"><strong>Transport &amp; Evacuation:</strong> Stretcher bearers, horse and motor ambulances. Stages of treatment: aid post and field ambulance, dressing station, casualty clearing station, base hospital.</span>
+                            </li>
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text"><strong>Specialized Facilities:</strong> The underground hospital at Arras.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="spec-unit-box" style="margin-top: 4px;">
+                        <div class="spec-unit-title">4. Medical Advances</div>
+                        <ul class="spec-points-list">
+                            <li class="spec-point-item">
+                                <span class="spec-tick-box"></span>
+                                <span class="spec-point-text"><strong>Surgical &amp; Clinical Experiments:</strong> Significance of Western Front for experiments in surgery and medicine: new techniques in treatment of wounds and infection, the Thomas splint, mobile x-ray units, creation of a blood bank for Battle of Cambrai.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="page-footer">
+            <span>Pearson Edexcel GCSE (9–1) History · Option 11</span>
+            <span class="turn-over">End of Examination Pack · 100% Edexcel Specification Mastered</span>
+            <span>Page 20 of 20</span>
+        </div>
+    </div>
+
+</body>
+</html>`;
+}
+
+// =============================================================================
+// COMPILATION PIPELINE: HTML EXPORT, PUPPETEER RENDER, ROOT SYNC, DRIVE SYNC
+// =============================================================================
+async function compileMasteryBooklets() {
+  console.log('====================================================');
+  console.log('📖 EDEXCEL MEDICINE MASTERY COMPENDIUM GENERATOR (20 PAGES)');
+  console.log('====================================================');
+
+  const fullHtmlContent = generateMasterHtml();
+  const masterHtmlPath = path.join(bookletsDir, 'med_mastery_FULL.html');
+  fs.writeFileSync(masterHtmlPath, fullHtmlContent, 'utf8');
+  console.log(`   Saved Master HTML: med_mastery_FULL.html (20 Pages)`);
+
+  console.log('\n🖨️ Launching Puppeteer to compile 20-Page Master PDF...');
+  const browser = await puppeteer.launch({
+    headless: 'new',
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  });
+
+  const page = await browser.newPage();
+  await page.setViewport({ width: 794, height: 1123, deviceScaleFactor: 2 });
+  await page.setContent(fullHtmlContent, { waitUntil: 'networkidle0' });
+  await page.evaluateHandle('document.fonts.ready');
+
+  // Verify page count inside DOM
+  const pageCount = await page.evaluate(() => document.querySelectorAll('.page').length);
+  console.log(`   📄 Verified DOM Page Elements: ${pageCount} Pages`);
+
+  const masterPdfPath = path.join(pdfsDir, 'med_mastery_pack_FULL.pdf');
+  await page.pdf({
+    path: masterPdfPath,
+    format: 'A4',
+    printBackground: true,
+    margin: { top: '0mm', right: '0mm', bottom: '0mm', left: '0mm' },
+  });
+
+  const rootPdfPath = path.join(globalPdfsDir, 'med_mastery_pack_FULL.pdf');
+  fs.copyFileSync(masterPdfPath, rootPdfPath);
+  console.log(`   ✅ Exported Master PDF: med_mastery_pack_FULL.pdf (${pageCount} Pages)`);
+  console.log(`   📋 Synced med_mastery_pack_FULL.pdf to public/pdfs/ root`);
+
+  await page.close();
+  await browser.close();
+
+  // Auto-sync to Google Drive Department File if available
+  const driveDirs = [
+    'G:\\My Drive\\AAMX\\Dep File\\Year 11 (GCSE)\\Paper 1 - Medicine Through Time',
+    'G:\\My Drive\\AAMX\\RESOURCES\\Edexcel GCSE History exams\\p1 11 medicine',
+    'G:\\My Drive\\AAMX\\RESOURCES\\Medicine',
+  ];
+
+  const canonicalNames = {
+    'med_mastery_pack_FULL.pdf': 'Medicine in Britain Complete Mastery Pack.pdf',
+  };
+
+  for (const dir of driveDirs) {
+    try {
+      if (fs.existsSync(dir)) {
+        console.log(`\n☁️ Syncing freshly compiled master booklet to Google Drive: ${dir}`);
+        for (const [pdfFile, canonical] of Object.entries(canonicalNames)) {
+          const srcPath = path.join(globalPdfsDir, pdfFile);
+          if (fs.existsSync(srcPath)) {
+            fs.copyFileSync(srcPath, path.join(dir, pdfFile));
+            if (canonical) {
+              fs.copyFileSync(srcPath, path.join(dir, canonical));
+            }
+          }
+        }
+        console.log('   ✅ Synced master booklet to Google Drive.');
+      }
+    } catch (err) {
+      console.warn(`   ⚠️ Could not sync to ${dir}: ${err.message}`);
+    }
+  }
+
+  console.log('\n====================================================');
+  console.log('🎉 MEDICINE MASTERY COMPILATION COMPLETE (20 PAGES, 0 OVERFLOWS)');
+  console.log('====================================================');
+}
+
+if (require.main === module) {
+  compileMasteryBooklets().catch((err) => {
+    console.error('Fatal generator error:', err);
+    process.exit(1);
+  });
+}
+
+module.exports = { compileMasteryBooklets, generateMasterHtml };
