@@ -1226,6 +1226,8 @@ const KT_DATA = {
 // CSS STYLING: REFINED ARCHIVAL PRINT MASTERPIECE (EXACT ZERO-OVERFLOW FIT)
 // =============================================================================
 const COMMON_CSS = `
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&display=swap');
+
   @page {
     size: A4 portrait;
     margin: 10mm 12mm;
@@ -1238,11 +1240,12 @@ const COMMON_CSS = `
   body {
     margin: 0;
     padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: #0f172a;
-    background: #fff;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #000000;
+    background: #ffffff;
     font-size: 8.5pt;
     line-height: 1.35;
+    -webkit-font-smoothing: antialiased;
   }
   .page {
     page-break-after: always;
@@ -1254,6 +1257,7 @@ const COMMON_CSS = `
     flex-direction: column;
     justify-content: space-between;
     padding: 0;
+    background: #ffffff;
   }
   .page:last-child {
     page-break-after: avoid;
@@ -1261,20 +1265,23 @@ const COMMON_CSS = `
 
   /* Cover Page Styles */
   .cover-warning {
-    border: 2px solid #000;
+    border: 1.5px solid #000000;
     padding: 4px 8px;
     font-size: 7.5pt;
-    font-weight: 700;
+    font-weight: 800;
     text-align: center;
     margin-bottom: 8px;
-    background: #f8fafc;
+    background: #ffffff;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
   }
   .candidate-box {
-    border: 1.5px solid #334155;
+    border: 1.5px solid #000000;
     padding: 6px 10px;
     margin-bottom: 8px;
-    background: #f8fafc;
-    border-radius: 4px;
+    background: #ffffff;
+    border-radius: 0;
   }
   .candidate-row {
     display: flex;
@@ -1286,90 +1293,97 @@ const COMMON_CSS = `
   }
   .field-label {
     font-size: 7.2pt;
-    font-weight: 700;
-    color: #475569;
+    font-weight: 800;
+    color: #000000;
     text-transform: uppercase;
     margin-bottom: 2px;
+    letter-spacing: 0.2px;
   }
   .field-input {
-    border: 1.5px solid #666;
-    border-radius: 4px;
-    height: 24px;
-    background: #fff;
+    border-bottom: 1.5px solid #000000;
+    height: 20px;
+    background: #ffffff;
   }
   .char-cell {
-    border: 1.5px solid #666;
-    border-radius: 4px;
-    height: 24px;
-    width: 20px;
+    border: 1.2px solid #000000;
+    height: 22px;
+    width: 18px;
     display: inline-block;
-    background: #fff;
+    background: #ffffff;
     margin-right: 2px;
+    vertical-align: middle;
   }
   .edexcel-banner {
-    font-size: 15pt;
-    font-weight: 800;
+    font-size: 14pt;
+    font-weight: 900;
     margin: 6px 0 4px 0;
-    letter-spacing: -0.3px;
-    color: #0f172a;
+    letter-spacing: -0.2px;
+    color: #000000;
+    text-transform: uppercase;
   }
   .exam-header-box {
-    border: 2px solid #0f172a;
-    border-radius: 6px;
-    padding: 8px 12px;
+    border: 2px solid #000000;
+    padding: 7px 11px;
     margin-bottom: 8px;
     display: flex;
     justify-content: space-between;
+    background: #ffffff;
   }
   .exam-header-left {
     flex: 1;
   }
   .exam-date {
-    font-size: 7.8pt;
-    font-weight: 700;
-    color: #475569;
+    font-size: 8pt;
+    font-weight: 800;
+    color: #000000;
     text-transform: uppercase;
+    letter-spacing: 0.3px;
   }
   .exam-time {
-    font-size: 7.8pt;
-    color: #334155;
+    font-size: 8pt;
+    color: #000000;
     margin-bottom: 3px;
   }
   .exam-subject {
-    font-size: 16pt;
-    font-weight: 800;
-    line-height: 1.1;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 14pt;
+    font-weight: 900;
+    line-height: 1.15;
     margin: 2px 0;
-    color: #0f172a;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
   }
   .exam-booklet {
     font-size: 9.5pt;
-    font-weight: 700;
-    color: #1e293b;
+    font-weight: 800;
+    color: #000000;
   }
   .exam-subtopic {
-    font-size: 8.5pt;
-    color: #475569;
+    font-size: 8pt;
+    color: #000000;
     margin-top: 1px;
+    font-style: italic;
   }
   .exam-header-right {
     text-align: right;
     padding-left: 12px;
-    border-left: 1.5px solid #cbd5e1;
+    border-left: 1.5px solid #000000;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
   .ref-label {
     font-size: 7.2pt;
-    font-weight: 700;
-    color: #64748b;
+    font-weight: 800;
+    color: #000000;
     text-transform: uppercase;
   }
   .ref-val {
     font-size: 13pt;
-    font-weight: 800;
-    color: #0f172a;
+    font-weight: 900;
+    color: #000000;
+    letter-spacing: 0.5px;
   }
   .must-have-row {
     display: flex;
@@ -1377,17 +1391,16 @@ const COMMON_CSS = `
     margin-bottom: 8px;
   }
   .must-have-box {
-    border: 1.5px solid #475569;
-    border-radius: 4px;
+    border: 1.5px solid #000000;
     padding: 6px 10px;
     flex: 1;
     font-size: 8pt;
     line-height: 1.3;
-    background: #fff;
+    background: #ffffff;
+    color: #000000;
   }
   .marks-box {
-    border: 1.5px solid #0f172a;
-    border-radius: 4px;
+    border: 1.5px solid #000000;
     width: 85px;
     display: flex;
     flex-direction: column;
@@ -1395,17 +1408,17 @@ const COMMON_CSS = `
     justify-content: center;
     text-align: center;
     font-size: 8pt;
-    font-weight: 700;
+    font-weight: 800;
     background: #f8fafc;
+    color: #000000;
   }
   .marks-number {
     font-size: 15pt;
-    font-weight: 800;
-    color: #0f172a;
+    font-weight: 900;
+    color: #000000;
   }
   .exam-notice-strip {
-    border: 1.5px solid #64748b;
-    border-radius: 4px;
+    border: 1.5px solid #000000;
     background: #f8fafc;
     padding: 5px 8px;
     font-size: 7.6pt;
@@ -1414,12 +1427,13 @@ const COMMON_CSS = `
     display: flex;
     justify-content: space-between;
     gap: 12px;
+    color: #000000;
   }
   .exam-notice-strip > div {
     flex: 1;
   }
   .exam-notice-strip strong {
-    color: #0f172a;
+    color: #000000;
   }
 
   /* Cover Tracker Table */
@@ -1429,29 +1443,29 @@ const COMMON_CSS = `
     font-size: 7.2pt;
   }
   .tracker-table th, .tracker-table td {
-    border: 1px solid #94a3b8;
+    border: 1px solid #000000;
     padding: 3px 5px;
     vertical-align: middle;
   }
   .tracker-table th {
-    background: #0f172a;
-    color: #fff;
-    font-weight: 700;
+    background: #000000;
+    color: #ffffff;
+    font-weight: 800;
     text-transform: uppercase;
     font-size: 7pt;
     letter-spacing: 0.2px;
   }
   .tracker-section-hdr td {
-    background: #e2e8f0;
+    background: #f1f5f9;
     font-weight: 800;
-    color: #0f172a;
+    color: #000000;
     font-size: 7pt;
     text-transform: uppercase;
     letter-spacing: 0.2px;
     padding: 2.5px 5px;
   }
   .tracker-row td {
-    background: #fff;
+    background: #ffffff;
   }
   .tracker-row:nth-child(even) td {
     background: #f8fafc;
@@ -1459,36 +1473,35 @@ const COMMON_CSS = `
   .tracker-box {
     width: 10px;
     height: 10px;
-    border: 1.5px solid #475569;
-    border-radius: 2px;
+    border: 1.2px solid #000000;
     display: inline-block;
     vertical-align: middle;
     margin-right: 2px;
-    background: #fff;
+    background: #ffffff;
   }
   .score-cell {
-    font-weight: 700;
-    color: #0f172a;
+    font-weight: 800;
+    color: #000000;
     text-align: center;
     white-space: nowrap;
     width: 55px;
   }
   .marks-cell {
-    font-weight: 600;
-    color: #334155;
+    font-weight: 700;
+    color: #000000;
     text-align: center;
     width: 40px;
   }
   .page-cell {
-    font-weight: 700;
-    color: #1e3a8a;
+    font-weight: 800;
+    color: #000000;
     text-align: center;
     width: 38px;
   }
   .type-tag {
     font-size: 6.8pt;
-    font-weight: 700;
-    color: #334155;
+    font-weight: 800;
+    color: #000000;
     text-transform: uppercase;
   }
   .cover-footer {
@@ -1496,20 +1509,20 @@ const COMMON_CSS = `
     justify-content: space-between;
     align-items: flex-end;
     font-size: 7.2pt;
-    color: #64748b;
-    border-top: 1px solid #cbd5e1;
+    color: #000000;
+    border-top: 1.5px solid #000000;
     padding-top: 3px;
     margin-top: 3px;
   }
   .turn-over {
-    font-weight: 700;
+    font-weight: 800;
     font-size: 8pt;
-    color: #000;
+    color: #000000;
   }
 
   /* Inner Pages */
   .page-header {
-    border-bottom: 1.5px solid #0f172a;
+    border-bottom: 2px solid #000000;
     padding-bottom: 3px;
     margin-bottom: 5px;
     display: flex;
@@ -1518,25 +1531,27 @@ const COMMON_CSS = `
   }
   .header-left h2 {
     margin: 0;
-    font-size: 10pt;
-    font-weight: 800;
-    color: #0f172a;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 10.5pt;
+    font-weight: 900;
+    color: #000000;
     text-transform: uppercase;
     letter-spacing: 0.2px;
   }
   .header-left p {
     margin: 1px 0 0 0;
-    font-size: 7.4pt;
-    color: #475569;
+    font-size: 7.6pt;
+    color: #000000;
   }
   .header-tag {
-    font-size: 6.8pt;
-    font-weight: 700;
-    background: #0f172a;
-    color: #fff;
-    padding: 2px 6px;
-    border-radius: 3px;
+    font-size: 7.2pt;
+    font-weight: 800;
+    background: #000000;
+    color: #ffffff;
+    padding: 2.5px 7px;
+    border-radius: 2px;
     text-transform: uppercase;
+    letter-spacing: 0.3px;
     white-space: nowrap;
   }
 
@@ -1544,43 +1559,45 @@ const COMMON_CSS = `
     margin-bottom: 5px;
   }
   .question-prompt {
-    font-size: 10pt;
+    font-size: 9.6pt;
     font-weight: 700;
-    color: #000;
-    line-height: 1.28;
+    color: #000000;
+    line-height: 1.32;
     margin-bottom: 4px;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
   }
   .q-num {
-    font-weight: 800;
+    font-weight: 900;
+    font-size: 10pt;
     margin-right: 5px;
+    color: #000000;
   }
   .q-marks {
     font-size: 9.5pt;
-    font-weight: 700;
-    color: #334155;
+    font-weight: 900;
+    color: #000000;
     margin-left: 8px;
     white-space: nowrap;
   }
   .stimulus-card {
-    border: 1.5px solid #64748b;
-    border-radius: 4px;
+    border: 1.5px solid #000000;
     padding: 5px 8px;
     font-size: 8pt;
     background: #f8fafc;
     margin-bottom: 5px;
     line-height: 1.25;
+    color: #000000;
   }
   .stimulus-card ul {
     margin: 1px 0 0 0;
     padding-left: 16px;
   }
 
-  /* Authentic Pearson Edexcel GCSE Exam Ruled Lines (8mm line spacing - Photocopier & Duplex Safe) */
+  /* Ruled Lines for Handwriting (Authentic Pearson Edexcel 8mm Line Spacing - Photocopier Safe) */
   .dotted-line {
-    border-bottom: 1.2px solid #475569;
+    border-bottom: 1.2px solid #000000;
     height: 8mm;
     width: 100%;
     box-sizing: border-box;
@@ -1588,15 +1605,15 @@ const COMMON_CSS = `
 
   /* Scaffolding Containers */
   .scaffold-bar {
-    border: 1.5px solid #475569;
-    border-radius: 4px;
+    border: 1.5px solid #000000;
     background: #f8fafc;
     padding: 4px 7px;
     margin-bottom: 5px;
-    font-size: 7pt;
+    font-size: 7.2pt;
     line-height: 1.25;
     display: flex;
     gap: 6px;
+    color: #000000;
   }
   .scaffold-col {
     border-right: 1px solid #cbd5e1;
@@ -1609,33 +1626,32 @@ const COMMON_CSS = `
   .scaffold-label {
     font-weight: 800;
     text-transform: uppercase;
-    font-size: 6.5pt;
-    color: #0f172a;
+    font-size: 6.8pt;
+    color: #000000;
     margin-bottom: 1px;
     display: block;
     letter-spacing: 0.2px;
   }
   .scaffold-content {
-    color: #334155;
+    color: #000000;
   }
   .scaffold-pill {
     display: inline-block;
-    background: #fff;
-    border: 1px solid #94a3b8;
-    border-radius: 3px;
-    padding: 1px 3px;
+    background: #ffffff;
+    border: 1.2px solid #000000;
+    border-radius: 2px;
+    padding: 1px 4px;
     margin: 1px 2px 1px 0;
-    font-size: 6.5pt;
-    font-weight: 600;
-    color: #0f172a;
+    font-size: 6.8pt;
+    font-weight: 700;
+    color: #000000;
     white-space: nowrap;
   }
 
   /* Archival Source Box Standards */
   .archival-source-box {
-    border: 1.5px solid #334155;
-    border-radius: 4px;
-    background: #fdfcf9;
+    border: 1.5px solid #000000;
+    background: #ffffff;
     padding: 5px 8px;
     margin-bottom: 5px;
     position: relative;
@@ -1644,38 +1660,37 @@ const COMMON_CSS = `
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #cbd5e1;
+    border-bottom: 1px solid #000000;
     padding-bottom: 2px;
     margin-bottom: 3px;
   }
   .archival-title {
-    font-family: Georgia, serif;
-    font-size: 8.5pt;
-    font-weight: 700;
-    color: #0f172a;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 8.8pt;
+    font-weight: 800;
+    color: #000000;
   }
   .archival-shelfmark {
-    font-size: 6.2pt;
+    font-size: 6.5pt;
     font-family: monospace;
-    color: #475569;
+    color: #000000;
     background: #f1f5f9;
-    border: 1px solid #cbd5e1;
-    border-radius: 2px;
+    border: 1px solid #000000;
     padding: 1px 4px;
     white-space: nowrap;
   }
   .archival-body {
     font-family: Georgia, serif;
-    font-size: 7.5pt;
+    font-size: 7.8pt;
     line-height: 1.35;
-    color: #1e293b;
+    color: #000000;
     margin-bottom: 3px;
   }
   .archival-footer {
-    border-top: 1px dashed #cbd5e1;
+    border-top: 1px dashed #000000;
     padding-top: 2px;
     font-size: 6.8pt;
-    color: #64748b;
+    color: #000000;
     font-style: italic;
   }
 
@@ -1687,32 +1702,32 @@ const COMMON_CSS = `
   }
   .inference-card {
     flex: 1;
-    border: 1.5px solid #475569;
-    border-radius: 4px;
+    border: 1.5px solid #000000;
     background: #f8fafc;
     padding: 4px 6px;
     font-size: 7.2pt;
+    color: #000000;
   }
   .inference-card strong {
-    color: #0f172a;
+    color: #000000;
     display: block;
     margin-bottom: 2px;
     font-size: 7pt;
+    font-weight: 800;
     text-transform: uppercase;
   }
   .inference-row {
-    border-bottom: 1.2px solid #475569;
+    border-bottom: 1.2px solid #000000;
     height: 18px;
     margin-top: 2px;
   }
 
   /* Dossier Grid Layout (Page 5) */
   .dossier-banner {
-    background: #0f172a;
-    color: #fff;
+    background: #000000;
+    color: #ffffff;
     padding: 4px 8px;
-    border-radius: 4px;
-    font-weight: 800;
+    font-weight: 900;
     font-size: 8pt;
     text-transform: uppercase;
     letter-spacing: 0.3px;
@@ -1733,12 +1748,12 @@ const COMMON_CSS = `
     display: grid;
     grid-template-columns: 1.2fr 1.2fr 1fr;
     gap: 6px;
-    border: 1.5px solid #475569;
-    border-radius: 4px;
+    border: 1.5px solid #000000;
     background: #f8fafc;
     padding: 4px 6px;
     margin-bottom: 5px;
     font-size: 7pt;
+    color: #000000;
   }
   .matrix-col {
     border-right: 1px solid #cbd5e1;
@@ -1751,74 +1766,75 @@ const COMMON_CSS = `
 
   /* Exemplars & Examiner Standards (Pages 11–12) */
   .exemplar-box {
-    border: 1.5px solid #1e3a8a;
-    border-radius: 4px;
-    background: #f8fafc;
+    border: 1.5px solid #000000;
+    background: #ffffff;
     padding: 5px 8px;
     margin-bottom: 5px;
+    color: #000000;
   }
   .exemplar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #cbd5e1;
+    border-bottom: 1px solid #000000;
     padding-bottom: 2px;
     margin-bottom: 3px;
   }
   .exemplar-title {
-    font-size: 8pt;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 8.5pt;
     font-weight: 800;
-    color: #1e3a8a;
+    color: #000000;
     text-transform: uppercase;
   }
   .exemplar-grade {
     font-size: 7pt;
-    font-weight: 700;
-    background: #15803d;
-    color: #fff;
+    font-weight: 800;
+    background: #000000;
+    color: #ffffff;
     padding: 1px 5px;
-    border-radius: 3px;
+    border-radius: 2px;
     text-transform: uppercase;
   }
   .exemplar-stem {
-    font-size: 7.2pt;
-    font-weight: 700;
-    color: #0f172a;
+    font-size: 7.4pt;
+    font-weight: 800;
+    color: #000000;
     margin-bottom: 3px;
   }
   .exemplar-text {
-    font-size: 7.2pt;
+    font-size: 7.4pt;
     line-height: 1.32;
-    color: #1e293b;
+    color: #000000;
     margin-bottom: 3px;
   }
   .examiner-note {
-    border-top: 1px dashed #94a3b8;
+    border-top: 1px dashed #000000;
     padding-top: 2px;
-    font-size: 6.8pt;
-    color: #0f766e;
+    font-size: 7pt;
+    color: #000000;
     font-style: italic;
-    background: #f0fdf4;
+    background: #f8fafc;
     padding: 2px 5px;
-    border-radius: 2px;
   }
 
   /* Traps Grid */
   .traps-card {
-    border: 1.5px solid #dc2626;
-    border-radius: 4px;
-    background: #fef2f2;
+    border: 1.5px solid #000000;
+    background: #ffffff;
     padding: 5px 7px;
     margin-top: 4px;
+    color: #000000;
   }
   .traps-header {
     font-size: 7.8pt;
     font-weight: 800;
-    color: #991b1b;
+    color: #000000;
     text-transform: uppercase;
-    border-bottom: 1px solid #fca5a5;
+    border-bottom: 1px solid #000000;
     padding-bottom: 2px;
     margin-bottom: 3px;
+    letter-spacing: 0.2px;
   }
   .traps-grid {
     display: grid;
@@ -1826,26 +1842,27 @@ const COMMON_CSS = `
     gap: 5px;
   }
   .trap-item {
-    background: #fff;
-    border: 1px solid #fca5a5;
-    border-radius: 3px;
+    background: #f8fafc;
+    border: 1px solid #000000;
     padding: 3px 5px;
     font-size: 6.8pt;
     line-height: 1.22;
+    color: #000000;
   }
   .trap-item strong {
-    color: #991b1b;
+    color: #000000;
     display: block;
     margin-bottom: 1px;
+    font-weight: 800;
   }
   .trap-item span {
-    color: #7f1d1d;
+    color: #000000;
   }
 
   .page-footer {
-    font-size: 7pt;
-    color: #64748b;
-    border-top: 1px solid #cbd5e1;
+    font-size: 7.2pt;
+    color: #000000;
+    border-top: 1.5px solid #000000;
     padding-top: 2px;
     margin-top: 2px;
     display: flex;
@@ -2828,34 +2845,37 @@ function renderBookletHtml(ktKey, meta) {
       return pageCount;
     };
 
-    // 1. KT1 PDF
-    const kt1PdfPath = path.join(pdfsDir, 'usa_mastery_pack_KT1.pdf');
-    await renderPdf(generatedHtmlFiles['KT1'], kt1PdfPath, 'usa_mastery_pack_KT1.pdf');
-
-    // 2. KT2 PDF
-    const kt2PdfPath = path.join(pdfsDir, 'usa_mastery_pack_KT2.pdf');
-    await renderPdf(generatedHtmlFiles['KT2'], kt2PdfPath, 'usa_mastery_pack_KT2.pdf');
-
-    // 3. KT3 PDF
-    const kt3PdfPath = path.join(pdfsDir, 'usa_mastery_pack_KT3.pdf');
-    await renderPdf(generatedHtmlFiles['KT3'], kt3PdfPath, 'usa_mastery_pack_KT3.pdf');
-
-    // 4. KT4 PDF
-    const kt4PdfPath = path.join(pdfsDir, 'usa_mastery_pack_KT4.pdf');
-    await renderPdf(generatedHtmlFiles['KT4'], kt4PdfPath, 'usa_mastery_pack_KT4.pdf');
-
-    // 5. FULL Master PDF
+    // =========================================================================
+    // MASTER COMPENDIUM PDF ONLY (STRICT THREE PILLARS STANDARD)
+    // =========================================================================
     const fullPdfPath = path.join(pdfsDir, 'usa_mastery_pack_FULL.pdf');
     await renderPdf(fullHtmlPath, fullPdfPath, 'usa_mastery_pack_FULL.pdf');
 
     // Sync to public/pdfs/ root
-    fs.copyFileSync(kt1PdfPath, path.join(globalPdfsDir, 'usa_mastery_pack_KT1.pdf'));
-    fs.copyFileSync(kt2PdfPath, path.join(globalPdfsDir, 'usa_mastery_pack_KT2.pdf'));
-    fs.copyFileSync(kt3PdfPath, path.join(globalPdfsDir, 'usa_mastery_pack_KT3.pdf'));
-    fs.copyFileSync(kt4PdfPath, path.join(globalPdfsDir, 'usa_mastery_pack_KT4.pdf'));
     fs.copyFileSync(fullPdfPath, path.join(globalPdfsDir, 'usa_mastery_pack_FULL.pdf'));
 
-    console.log(`   📋 Synced all 5 USA PDFs to public/pdfs/ root`);
+    // Clean up any old split KT PDFs in pdfsDir and globalPdfsDir
+    [
+      'usa_mastery_pack_KT1.pdf',
+      'usa_mastery_pack_KT2.pdf',
+      'usa_mastery_pack_KT3.pdf',
+      'usa_mastery_pack_KT4.pdf',
+    ].forEach((splitFile) => {
+      const p1 = path.join(pdfsDir, splitFile);
+      const p2 = path.join(globalPdfsDir, splitFile);
+      if (fs.existsSync(p1)) {
+        try {
+          fs.unlinkSync(p1);
+        } catch (e) {}
+      }
+      if (fs.existsSync(p2)) {
+        try {
+          fs.unlinkSync(p2);
+        } catch (e) {}
+      }
+    });
+
+    console.log(`   📋 Synced master PDF (usa_mastery_pack_FULL.pdf) to public/pdfs/ root`);
 
     await browser.close();
 
