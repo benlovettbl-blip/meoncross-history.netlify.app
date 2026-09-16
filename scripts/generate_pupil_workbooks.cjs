@@ -1257,13 +1257,22 @@ allDirs.forEach((unitId) => {
         ? `@page { size: A4 portrait; margin: 15mm 20mm 22mm 20mm; }`
         : `@page { size: A4 portrait; margin: 15mm 15mm 25mm 15mm; }`
     }
-    body { font-family: 'Georgia', 'Garamond', serif; font-size: 11pt; line-height: 1.4; color: #1e293b; margin: 0; padding: 0; }
+    ${
+      unitId === 'early_modern_world'
+        ? `body { font-family: 'Georgia', 'Garamond', serif; font-size: 11.5pt; line-height: 1.45; color: #0f172a; margin: 0; padding: 0; }
+    .narrative-block { font-size: 11.5pt; line-height: 1.5; color: #0f172a; margin-bottom: 12pt; text-align: justify; orphans: 3; widows: 3; }
+    .task-lines { border-bottom: 1.5px solid #000000; height: 8mm; margin-top: 0px; box-sizing: border-box; }
+    .task-lines-large { border-bottom: 1.5px solid #000000; height: 8.5mm; margin-top: 0px; box-sizing: border-box; }`
+        : `body { font-family: 'Georgia', 'Garamond', serif; font-size: 11pt; line-height: 1.4; color: #1e293b; margin: 0; padding: 0; }
+    .narrative-block { margin-bottom: 10pt; text-align: justify; orphans: 3; widows: 3; color: #334155; }
+    .task-lines { border-bottom: 1.2px solid #475569; height: 7.5mm; margin-top: 0px; box-sizing: border-box; }
+    .task-lines-large { border-bottom: 1.2px solid #475569; height: 8mm; margin-top: 0px; box-sizing: border-box; }`
+    }
     h1, h2, h3, h4, h5, h6, strong, .do-now-q, th { font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif; }
     h1 { font-family: 'Playfair Display', serif; font-size: 30pt; text-align: center; margin-top: 80px; color: #0f172a; text-transform: uppercase; letter-spacing: 1px; }
     h2 { font-size: 18pt; color: #1e3a8a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 15px; page-break-after: auto; }
     h4 { font-size: 11pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: avoid; }
     h3 { font-size: 13pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: auto; }
-    .narrative-block { margin-bottom: 10pt; text-align: justify; orphans: 3; widows: 3; color: #334155; }
     .task-box { margin-top: 22px; margin-bottom: 16px; width: 100%; max-width: 100%; box-sizing: border-box; page-break-inside: auto !important; }
     ${
       unitId === 'cme_new'
@@ -1281,8 +1290,6 @@ allDirs.forEach((unitId) => {
     `
         : ''
     }
-    .task-lines { border-bottom: 1.2px solid #475569; height: 7.5mm; margin-top: 0px; box-sizing: border-box; }
-    .task-lines-large { border-bottom: 1.2px solid #475569; height: 8mm; margin-top: 0px; box-sizing: border-box; }
     .dirt-box { margin-top: 20px; margin-bottom: 10px; border: 2px dashed #94a3b8; border-radius: 8px; padding: 15px; background-color: #f8fafc; page-break-inside: avoid; }
     .do-now-box { border-top: 2px solid #e2e8f0; padding-top: 10px; margin-top: 10px; margin-bottom: 10px; width: 100%; page-break-inside: auto; }
     .do-now-q { font-weight: 600; margin-bottom: 8px; color: #0f172a; }
@@ -2680,29 +2687,57 @@ allDirs.forEach((unitId) => {
                     let _t = processTaskTextWithTariff(task.text || task.question);
                     _nbHtml += `<div style="${pbBefore}; margin-bottom: 15px;"><strong>Q${globalQNum++}. ${_t.cleanText}</strong></div>`;
                     if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
-                    if (task.type === 'extended_writing' && task.instructions) {
-                      _nbHtml += `<p style="font-style: italic; color: #334155; margin-bottom: 5px; margin-top: 5px; font-size: 10pt;">${task.instructions}</p>`;
-                    }
-                    if (task.type === 'extended_writing' && task.scaffolding) {
-                      const sc = task.scaffolding;
-                      _nbHtml += `<div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 8px 10px; margin-bottom: 10px; font-size: 7.3pt; box-sizing: border-box; width: 100%;">`;
-                      if (sc.structure_strip && sc.structure_strip.length > 0) {
-                        _nbHtml += `<div style="font-weight: 700; color: #1e3a8a; margin-bottom: 4px; text-transform: uppercase; font-size: 6.8pt; letter-spacing: 0.5px;">Analytical Structure Guide:</div>`;
-                        _nbHtml += `<div style="display: flex; flex-direction: column; gap: 3px; margin-bottom: 6px;">`;
-                        sc.structure_strip.forEach((s) => {
-                          _nbHtml += `<div style="background: #ffffff; border: 1px solid #e2e8f0; border-left: 3px solid #3b82f6; padding: 3px 6px; color: #334155; line-height: 1.25;"><strong>&bull;</strong> ${s}</div>`;
+                    if (task.type === 'extended_writing') {
+                      if (task.instructions) {
+                        _nbHtml += `<p style="font-style: italic; color: #334155; margin-bottom: 5px; margin-top: 5px; font-size: 10pt;">${task.instructions}</p>`;
+                      }
+                      if (task.word_bank && task.word_bank.length > 0) {
+                        _nbHtml += `<div style="background: #f0fdf4; border: 1.5px solid #16a34a; border-radius: 6px; padding: 6px 10px; margin-bottom: 8px;">`;
+                        _nbHtml += `<div style="font-weight: 700; color: #15803d; margin-bottom: 4px; text-transform: uppercase; font-size: 7.5pt; letter-spacing: 0.5px;">Key Word Bank:</div>`;
+                        _nbHtml += `<div style="display: flex; flex-wrap: wrap; gap: 4px;">`;
+                        task.word_bank.forEach((w) => {
+                          _nbHtml += `<span style="background: #ffffff; border: 1px solid #86efac; color: #14532d; font-size: 7.5pt; font-weight: 600; padding: 2px 6px; border-radius: 4px;">${w}</span>`;
                         });
+                        _nbHtml += `</div></div>`;
+                      }
+                      if (task.causal_chain) {
+                        _nbHtml += `<div style="background: #eff6ff; border: 1.5px solid #3b82f6; border-radius: 6px; padding: 6px 10px; margin-bottom: 8px;">`;
+                        _nbHtml += `<div style="font-weight: 700; color: #1d4ed8; margin-bottom: 3px; text-transform: uppercase; font-size: 7.5pt; letter-spacing: 0.5px;">Causal Connection Model:</div>`;
+                        _nbHtml += `<div style="font-size: 8pt; font-weight: 700; color: #1e3a8a; line-height: 1.35;">${task.causal_chain}</div>`;
                         _nbHtml += `</div>`;
                       }
-                      if (sc.connective_bank && sc.connective_bank.length > 0) {
-                        _nbHtml += `<div style="font-weight: 700; color: #047857; margin-bottom: 3px; text-transform: uppercase; font-size: 6.8pt; letter-spacing: 0.5px;">Sentence Starters &amp; Causal Connectives:</div>`;
-                        _nbHtml += `<div style="background: #ffffff; border: 1px dashed #a7f3d0; border-radius: 4px; padding: 4px 6px; color: #065f46; font-style: italic; font-size: 7pt; line-height: 1.3;">`;
-                        _nbHtml += sc.connective_bank
-                          .map((c) => `&ldquo;${c}&rdquo;`)
-                          .join(' &bull; ');
+                      if (task.scaffolding) {
+                        const sc = task.scaffolding;
+                        _nbHtml += `<div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 8px 10px; margin-bottom: 10px; font-size: 7.5pt; box-sizing: border-box; width: 100%;">`;
+                        if (sc.structure_strip && sc.structure_strip.length > 0) {
+                          _nbHtml += `<div style="font-weight: 700; color: #1e3a8a; margin-bottom: 4px; text-transform: uppercase; font-size: 7pt; letter-spacing: 0.5px;">Analytical Structure Guide:</div>`;
+                          _nbHtml += `<div style="display: flex; flex-direction: column; gap: 3px; margin-bottom: 6px;">`;
+                          sc.structure_strip.forEach((s) => {
+                            _nbHtml += `<div style="background: #ffffff; border: 1px solid #e2e8f0; border-left: 3px solid #3b82f6; padding: 3px 6px; color: #334155; line-height: 1.25;"><strong>&bull;</strong> ${s}</div>`;
+                          });
+                          _nbHtml += `</div>`;
+                        }
+                        if (sc.sentence_starters && sc.sentence_starters.length > 0) {
+                          _nbHtml += `<div style="font-weight: 700; color: #047857; margin-bottom: 3px; text-transform: uppercase; font-size: 7pt; letter-spacing: 0.5px;">Sentence Starters:</div>`;
+                          _nbHtml += `<div style="display: flex; flex-direction: column; gap: 2px; margin-bottom: 6px;">`;
+                          sc.sentence_starters.forEach((st) => {
+                            _nbHtml += `<div style="background: #ffffff; border: 1px dashed #6ee7b7; border-radius: 4px; padding: 3px 6px; color: #065f46; font-style: italic; font-size: 7.2pt;">&bull; ${st}</div>`;
+                          });
+                          _nbHtml += `</div>`;
+                        }
+                        if (sc.connective_bank && sc.connective_bank.length > 0) {
+                          _nbHtml += `<div style="font-weight: 700; color: #047857; margin-bottom: 3px; text-transform: uppercase; font-size: 7pt; letter-spacing: 0.5px;">Literacy Connectives &amp; Stems:</div>`;
+                          _nbHtml += `<div style="background: #ffffff; border: 1px dashed #a7f3d0; border-radius: 4px; padding: 4px 6px; color: #065f46; font-style: italic; font-size: 7pt; line-height: 1.3;">`;
+                          _nbHtml += sc.connective_bank
+                            .map((c) => `&ldquo;${c}&rdquo;`)
+                            .join(' &bull; ');
+                          _nbHtml += `</div>`;
+                        }
+                        if (sc.scholar_extension) {
+                          _nbHtml += `<div style="margin-top: 6px; background: #fdf4ff; border: 1px solid #f0abfc; border-radius: 4px; padding: 4px 6px; color: #86198f; font-size: 7.2pt;"><strong>Scholar Challenge:</strong> ${sc.scholar_extension}</div>`;
+                        }
                         _nbHtml += `</div>`;
                       }
-                      _nbHtml += `</div>`;
                     }
                   }
 

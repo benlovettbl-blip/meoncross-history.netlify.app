@@ -171,12 +171,13 @@ allDirs.forEach((unitId) => {
   <style>
       
     @page { size: A4 portrait; margin: 15mm 15mm 25mm 15mm; }
-    body { font-family: 'Inter', sans-serif; font-size: 10pt; line-height: 1.3; color: #1e293b;  }
-    h1 { font-family: 'Playfair Display', serif; font-size: 30pt; text-align: center; margin-top: 60px; color: #0f172a; text-transform: uppercase; letter-spacing: 1px; }
-    h2 { font-family: 'Playfair Display', serif; font-size: 18pt; color: #1e3a8a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 15px; page-break-after: auto; }
-    h4 { font-size: 11pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: avoid; }
-    h3 { font-size: 13pt; color: #334155; margin-top: 10px; font-weight: 600; page-break-after: auto; }
-    .narrative-block { margin-bottom: 10pt; text-align: justify; orphans: 3; widows: 3; color: #334155; }
+    ${
+      unitId === 'early_modern_world'
+        ? `body { font-family: 'Inter', sans-serif; font-size: 11.5pt; line-height: 1.45; color: #0f172a; }
+    .narrative-block { margin-bottom: 12pt; text-align: justify; orphans: 3; widows: 3; color: #0f172a; font-size: 11.5pt; line-height: 1.5; }`
+        : `body { font-family: 'Inter', sans-serif; font-size: 10pt; line-height: 1.3; color: #1e293b; }
+    .narrative-block { margin-bottom: 10pt; text-align: justify; orphans: 3; widows: 3; color: #334155; }`
+    }
     .task-box { background-color: #f0fdf4; border: 1px solid #bbf7d0; padding: 10px; border-radius: 8px; margin-top: 10px; margin-bottom: 10px; width: 100%; page-break-inside: avoid; box-sizing: border-box; }
     .task-lines { border-bottom: 1px solid #94a3b8; height: 16px; margin-top: 5px; }
     .task-lines-large { border-bottom: 1px solid #94a3b8; height: 16px; margin-top: 5px; }

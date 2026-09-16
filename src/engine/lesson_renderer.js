@@ -1550,29 +1550,29 @@ export function renderLesson(lesson) {
               <span><i class="fa-solid fa-spell-check" style="color: #b45309; margin-right: 10px;"></i> Key Vocabulary</span>
               <i class="fa-solid fa-chevron-down" style="color: #64748b;"></i>
             </summary>
-            <div style="padding: 20px;">
-              <p style="color: #475569; margin-bottom: 20px; font-size: 1.1rem;"><strong>Vocabulary Practice:</strong> Tap a term on the left, then tap its matching definition on the right to master the key vocabulary.</p>
-              <div id="vocab-match-game" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                <div class="match-terms" style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="padding: 12px 16px;">
+              <p style="color: #475569; margin-bottom: 12px; font-size: 0.95rem;"><strong>Vocabulary Practice:</strong> Tap a term on the left, then tap its matching definition on the right to master the key vocabulary.</p>
+              <div id="vocab-match-game" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <div class="match-terms" style="display: flex; flex-direction: column; gap: 8px;">
       `;
 
     lesson.vocab.forEach((v, idx) => {
-      htmlDoNow += `<button class="btn btn-secondary match-term-btn" data-idx="${idx}" style="text-align: left; padding: 15px; font-weight: bold; border-width: 2px; cursor: pointer; transition: all 0.2s;">${v.term}</button>`;
+      htmlDoNow += `<button class="btn btn-secondary match-term-btn" data-idx="${idx}" style="text-align: left; padding: 8px 12px; font-size: 0.9rem; font-weight: bold; border-width: 1.5px; cursor: pointer; transition: all 0.2s;">${v.term}</button>`;
     });
 
-    htmlDoNow += `</div><div class="match-defs" style="display: flex; flex-direction: column; gap: 10px;">`;
+    htmlDoNow += `</div><div class="match-defs" style="display: flex; flex-direction: column; gap: 8px;">`;
 
     let defs = lesson.vocab.map((v, idx) => ({ def: v.definition || v.def || '', idx: idx }));
     defs.sort(() => Math.random() - 0.5);
 
     defs.forEach((d) => {
-      htmlDoNow += `<button class="btn btn-secondary match-def-btn" data-idx="${d.idx}" style="text-align: left; padding: 15px; font-weight: normal; border-width: 2px; cursor: pointer; transition: all 0.2s;">${d.def}</button>`;
+      htmlDoNow += `<button class="btn btn-secondary match-def-btn" data-idx="${d.idx}" style="text-align: left; padding: 8px 12px; font-size: 0.86rem; font-weight: normal; border-width: 1.5px; cursor: pointer; transition: all 0.2s;">${d.def}</button>`;
     });
 
     htmlDoNow += `
                 </div>
               </div>
-              <div id="unlock-success" style="display: none; margin-top: 20px; padding: 15px; background: #ecfdf5; border: 2px solid #10b981; border-radius: 8px; color: #047857; font-weight: bold; text-align: center; font-size: 1.2rem;">
+              <div id="unlock-success" style="display: none; margin-top: 12px; padding: 10px; background: #ecfdf5; border: 1.5px solid #10b981; border-radius: 8px; color: #047857; font-weight: bold; text-align: center; font-size: 1rem;">
                 <i class="fa-solid fa-star"></i> Vocabulary Mastered!
               </div>
     `;
@@ -2803,8 +2803,9 @@ export function renderLesson(lesson) {
             return;
           }
           if (task.type === 'multiple_choice') {
+            const mcPrefix = task.qNum ? `Q${task.qNum}. ` : '';
             extrasHtml += `<div style="margin-bottom: 20px; background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
-                 <h4 style="margin-top:0; color:#0f172a;"><i class="fa-solid fa-list-check"></i> ${task.text || task.question || ''}</h4>
+                 <h4 style="margin-top:0; color:#0f172a;"><i class="fa-solid fa-list-check"></i> ${mcPrefix}${task.text || task.question || ''}</h4>
                  ${task.questions
                    .map(
                      (q, qIdx) => `
@@ -2895,23 +2896,28 @@ export function renderLesson(lesson) {
             return;
           }
           if (task.type === 'think_pair_share') {
+            const tpsPrefix = task.qNum ? `Q${task.qNum}. ` : '';
             extrasHtml += `<div style="margin-bottom: 20px; background: #ecfdf5; padding: 15px; border-radius: 8px; border: 2px solid #10b981;">
-                 <h4 style="margin-top:0; color:#065f46;"><i class="fa-solid fa-users"></i> Think-Pair-Share</h4>
+                 <h4 style="margin-top:0; color:#065f46;"><i class="fa-solid fa-users"></i> ${tpsPrefix}Think-Pair-Share</h4>
                  <p style="font-weight:bold; color:#0f172a; font-size:1.1rem;">${task.text || task.question}</p>
                  <div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px; margin-top:15px;">
                    <div style="background:white; padding:10px; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-                     <div style="font-weight:bold; color:#059669; margin-bottom:8px;"><i class="fa-solid fa-brain"></i> My Thoughts</div>
-                     <textarea style="width:100%; border:none; resize:vertical; min-height:80px; outline:none;" placeholder="Jot down your initial ideas..."></textarea>
+                     <strong style="color:#059669; display:block; margin-bottom:5px;"><i class="fa-solid fa-comments"></i> Partner A Focus</strong>
+                     <p style="margin:0; font-size:0.95rem; color:#475569;">${task.partner_a || 'Analyze the primary motives and historical context.'}</p>
                    </div>
                    <div style="background:white; padding:10px; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-                     <div style="font-weight:bold; color:#059669; margin-bottom:8px;"><i class="fa-solid fa-comments"></i> Partner's Thoughts</div>
-                     <textarea style="width:100%; border:none; resize:vertical; min-height:80px; outline:none;" placeholder="What did your partner add?..."></textarea>
-                   </div></div></div>`;
+                     <strong style="color:#059669; display:block; margin-bottom:5px;"><i class="fa-solid fa-comments"></i> Partner B Focus</strong>
+                     <p style="margin:0; font-size:0.95rem; color:#475569;">${task.partner_b || 'Evaluate the counter-arguments and broader significance.'}</p>
+                   </div>
+                 </div>
+               </div>
+             `;
             return;
           }
           if (task.type === 'drawing') {
+            const drawPrefix = task.qNum ? `Q${task.qNum}. ` : '';
             extrasHtml += `<div style="margin-bottom: 20px; background: #fffbeb; padding: 15px; border-radius: 8px; border: 2px dashed #f59e0b; text-align:center;">
-                 <h4 style="margin-top:0; color:#b45309;"><i class="fa-solid fa-palette"></i> Drawing Task</h4>
+                 <h4 style="margin-top:0; color:#b45309;"><i class="fa-solid fa-palette"></i> ${drawPrefix}Drawing Task</h4>
                  <p style="font-weight:bold; color:#0f172a; font-size:1.05rem;">${task.text || task.question}</p>
                  <div style="margin:20px auto; width:80%; height:200px; background:white; border:1px solid #d1d5db; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#9ca3af; font-style:italic;">
                    [Draw your response in your workbook]
@@ -3254,6 +3260,7 @@ export function renderLesson(lesson) {
             return;
           }
           const qPrefix = task.qNum ? `Q${task.qNum}. ` : '';
+          const cleanTaskText = (task.text || task.question || '').replace(/^Q\d+[\.\:]\s*/i, '');
           const ansId = `ans-emb-${index}-${tIdx}`;
           const starterText = task.starter || task.sentence_starter;
           const starterBtn = starterText
@@ -3289,10 +3296,94 @@ export function renderLesson(lesson) {
               </div>
             `;
           }
+          let wordBankHtml = '';
+          if (task.word_bank && task.word_bank.length > 0) {
+            wordBankHtml = `
+              <div style="margin: 10px 0 12px 0; padding: 10px 14px; background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 8px;">
+                <div style="font-weight: 800; font-size: 0.85rem; color: #166534; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">
+                  <i class="fa-solid fa-spell-check"></i> Key Word Bank:
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                  ${task.word_bank
+                    .map(
+                      (w) =>
+                        `<span style="background: white; border: 1px solid #bbf7d0; color: #14532d; font-size: 0.85rem; font-weight: 600; padding: 3px 8px; border-radius: 4px;">${w}</span>`,
+                    )
+                    .join('')}
+                </div>
+              </div>
+            `;
+          }
+
+          let causalChainHtml = '';
+          if (task.causal_chain) {
+            causalChainHtml = `
+              <div style="margin: 8px 0 14px 0; padding: 10px 14px; background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 8px;">
+                <div style="font-weight: 800; font-size: 0.82rem; color: #1e40af; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">
+                  <i class="fa-solid fa-arrow-right-arrow-left"></i> Causal Connection Model:
+                </div>
+                <div style="font-size: 0.88rem; font-weight: 600; color: #1e3a8a; line-height: 1.5;">
+                  ${task.causal_chain}
+                </div>
+              </div>
+            `;
+          }
+
+          let scaffoldingHtml = '';
+          if (task.scaffolding) {
+            const sc = task.scaffolding;
+            let stripHtml = '';
+            if (sc.structure_strip && sc.structure_strip.length > 0) {
+              stripHtml = `
+                <div style="margin-bottom: 8px;">
+                  <div style="font-weight: 800; font-size: 0.82rem; color: #1e40af; text-transform: uppercase; margin-bottom: 4px;">Structure Guide:</div>
+                  <div style="display: flex; flex-direction: column; gap: 4px;">
+                    ${sc.structure_strip
+                      .map(
+                        (s) =>
+                          `<div style="background: white; border-left: 3px solid #3b82f6; border: 1px solid #e2e8f0; border-left-width: 3px; padding: 5px 8px; font-size: 0.85rem; color: #1e293b;">${s}</div>`,
+                      )
+                      .join('')}
+                  </div>
+                </div>
+              `;
+            }
+            let connectivesHtml = '';
+            if (sc.connective_bank && sc.connective_bank.length > 0) {
+              connectivesHtml = `
+                <div style="margin-bottom: 6px;">
+                  <div style="font-weight: 800; font-size: 0.82rem; color: #047857; text-transform: uppercase; margin-bottom: 4px;">Literacy Connectives & Stems:</div>
+                  <div style="background: #ffffff; border: 1px dashed #a7f3d0; border-radius: 6px; padding: 8px 10px; font-style: italic; font-size: 0.85rem; color: #065f46; line-height: 1.5;">
+                    ${sc.connective_bank.map((c) => `&ldquo;${c}&rdquo;`).join(' &bull; ')}
+                  </div>
+                </div>
+              `;
+            }
+            let scholarHtml = '';
+            if (sc.scholar_extension) {
+              scholarHtml = `
+                <div style="margin-top: 8px; background: #fdf4ff; border: 1.5px solid #f0abfc; border-radius: 6px; padding: 8px 10px;">
+                  <div style="font-weight: 800; font-size: 0.82rem; color: #86198f; text-transform: uppercase; margin-bottom: 2px;">🎓 Scholar Challenge (Extension):</div>
+                  <div style="font-size: 0.85rem; color: #701a75; font-style: italic;">${sc.scholar_extension}</div>
+                </div>
+              `;
+            }
+            scaffoldingHtml = `
+              <div style="margin: 10px 0 14px 0; padding: 12px; background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 8px;">
+                ${stripHtml}
+                ${connectivesHtml}
+                ${scholarHtml}
+              </div>
+            `;
+          }
+
           extrasHtml += `
                <div style="margin-bottom: 10px;">
                  ${flowchartHtml}
-                 <div style="font-size: 1.05rem; line-height: 1.6; color: #1e293b; margin-bottom: 8px;">${window.formatBold(qPrefix + (task.text || task.question || ''))}</div>
+                 ${wordBankHtml}
+                 ${causalChainHtml}
+                 ${scaffoldingHtml}
+                 <div style="font-size: 1.05rem; line-height: 1.6; color: #1e293b; margin-bottom: 8px;">${window.formatBold(qPrefix + cleanTaskText)}</div>
                  <button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-reveal" data-action="toggle-element" data-target-id="${ansId}"><i class="fa-solid fa-eye"></i> Show</button>
                  ${starterBtn}
                  ${starterDiv}
