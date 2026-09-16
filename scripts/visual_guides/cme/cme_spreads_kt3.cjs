@@ -6,7 +6,7 @@ module.exports = [
   {
     id: 'cme_spread_9',
     spreadNum: 9,
-    topic: 'Key Topic 3 • Attempts at Peace, 1974–95',
+    topic: 'Key Topic 3: Attempts at a solution, 1974–95',
     title:
       'KT 3.1: Diplomatic Negotiations: Shuttle Diplomacy, Camp David & Treaty of Washington (1974–79)',
     left: {
@@ -186,7 +186,7 @@ module.exports = [
   {
     id: 'cme_spread_10',
     spreadNum: 10,
-    topic: 'Key Topic 3 • Attempts at Peace, 1974–95',
+    topic: 'Key Topic 3: Attempts at a solution, 1974–95',
     title: 'KT 3.2: Camp David Accords (1978), Treaty of Washington (1979) & Backlash',
     left: {
       tag: 'KT 3.2 • Carter, Begin, Sadat & The Assassination',
@@ -365,7 +365,7 @@ module.exports = [
   {
     id: 'cme_spread_11',
     spreadNum: 11,
-    topic: 'Key Topic 3 • Attempts at Peace, 1974–95',
+    topic: 'Key Topic 3: Attempts at a solution, 1974–95',
     title: 'KT 3.3: The Palestinian Issue: The 1982 Lebanon War & The First Intifada (1987–93)',
     left: {
       tag: 'KT 3.3 • Fatahland, Sabra-Shatila & The Grassroots Uprising',
@@ -544,7 +544,7 @@ module.exports = [
   {
     id: 'cme_spread_12',
     spreadNum: 12,
-    topic: 'Key Topic 3 • Attempts at Peace, 1974–95',
+    topic: 'Key Topic 3: Attempts at a solution, 1974–95',
     title: 'KT 3.4: Attempts at a Solution: From the Oslo Accords to Oslo II (1993–95)',
     left: {
       tag: 'KT 3.4 • Geneva 1988, White House Handshake & Oslo II',

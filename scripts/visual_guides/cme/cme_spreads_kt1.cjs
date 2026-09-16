@@ -6,7 +6,7 @@ module.exports = [
   {
     id: 'cme_spread_1',
     spreadNum: 1,
-    topic: 'Key Topic 1 • The Birth of Israel, 1945–63',
+    topic: 'Key Topic 1: The birth of the state of Israel, 1945–63',
     title: 'KT 1.1: The British Mandate, Jewish Underground & UN Referral (1945–47)',
     left: {
       tag: 'KT 1.1 • Context, Origins & The Mandate Collapse',
@@ -185,7 +185,7 @@ module.exports = [
   {
     id: 'cme_spread_2',
     spreadNum: 2,
-    topic: 'Key Topic 1 • The Birth of Israel, 1945–63',
+    topic: 'Key Topic 1: The birth of the state of Israel, 1945–63',
     title: 'KT 1.2: UN Partition Resolution 181 & The 1948–49 Arab-Israeli War',
     left: {
       tag: 'KT 1.2 • Partition, Civil War & The Five-Army Invasion',
@@ -364,7 +364,7 @@ module.exports = [
   {
     id: 'cme_spread_3',
     spreadNum: 3,
-    topic: 'Key Topic 1 • The Birth of Israel, 1945–63',
+    topic: 'Key Topic 1: The birth of the state of Israel, 1945–63',
     title: 'KT 1.3: Aftermath of 1948–49: Al-Nakba & Israeli State Consolidation',
     left: {
       tag: 'KT 1.3 • Refugees, Armistices & State Consolidation',
@@ -543,7 +543,7 @@ module.exports = [
   {
     id: 'cme_spread_4',
     spreadNum: 4,
-    topic: 'Key Topic 1 • The Birth of Israel, 1945–63',
+    topic: 'Key Topic 1: The birth of the state of Israel, 1945–63',
     title: 'KT 1.4: Nasser, Pan-Arabism & The Suez Crisis (1956–63)',
     left: {
       tag: 'KT 1.4 • Imperialism, Nationalisation & Tripartite Collusion',

@@ -148,139 +148,237 @@ function renderPage1() {
           </div>
         </div>
 
-        <!-- 3. DUAL ARCHIVAL PRIMARY PLATES (Generous uncropped container height: 165px) -->
-        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 7px 9px; background: #fafafa;">
-          <div style="font-size: 8.5pt; font-weight: 800; text-transform: uppercase; color: #000000; letter-spacing: 0.3px; margin-bottom: 5px; text-align: center; border-bottom: 1.2px solid #000000; padding-bottom: 3px;">
+        <!-- 3. DUAL ARCHIVAL PRIMARY PLATES (Generous uncropped container height: 140px) -->
+        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 6px 8px; background: #fafafa;">
+          <div style="font-size: 8.2pt; font-weight: 800; text-transform: uppercase; color: #000000; letter-spacing: 0.3px; margin-bottom: 4px; text-align: center; border-bottom: 1.2px solid #000000; padding-bottom: 2px;">
             Dual Archival Plates: Two Defining Turning Points of Middle East Conflict
           </div>
           
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
             <!-- Left Plate: 1948 Al-Nakba -->
-            <div style="border: 1px solid #000000; background: #ffffff; padding: 5px; border-radius: 2px;">
-              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px;">
-                <strong style="font-size: 8.5pt; text-transform: uppercase; color: #000000;">1. The 1948 Al-Nakba (The Catastrophe)</strong>
-                <span style="font-size: 8.0pt; font-weight: 700; color: #475569;">UNRWA Archive</span>
+            <div style="border: 1px solid #000000; background: #ffffff; padding: 4px; border-radius: 2px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px;">
+                <strong style="font-size: 8.2pt; text-transform: uppercase; color: #000000;">1. The 1948 Al-Nakba (The Catastrophe)</strong>
+                <span style="font-size: 7.6pt; font-weight: 700; color: #475569;">UNRWA Archive</span>
               </div>
-              <div style="width: 100%; height: 165px; background: #ffffff; border: 1px solid #000000; margin-bottom: 4px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <div style="width: 100%; height: 140px; background: #ffffff; border: 1px solid #000000; margin-bottom: 3px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
                 <img src="${unrwaImgUri}" alt="Palestinian refugees 1948" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%); display: block;" />
               </div>
-              <div style="font-size: 8.5pt; color: #000000; line-height: 1.25;">
+              <div style="font-size: 8.0pt; color: #000000; line-height: 1.22;">
                 <strong>Significance:</strong> Over 700,000 Palestinian Arabs displaced into permanent refugee exile following the 1948–49 War.
               </div>
             </div>
 
             <!-- Right Plate: 1967 Six Day War (Paratroopers fully visible) -->
-            <div style="border: 1px solid #000000; background: #ffffff; padding: 5px; border-radius: 2px;">
-              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px;">
-                <strong style="font-size: 8.5pt; text-transform: uppercase; color: #000000;">2. 1967 Paratroopers at Western Wall</strong>
-                <span style="font-size: 8.0pt; font-weight: 700; color: #475569;">Rubinger / GPO</span>
+            <div style="border: 1px solid #000000; background: #ffffff; padding: 4px; border-radius: 2px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px;">
+                <strong style="font-size: 8.2pt; text-transform: uppercase; color: #000000;">2. 1967 Paratroopers at Western Wall</strong>
+                <span style="font-size: 7.6pt; font-weight: 700; color: #475569;">Rubinger / GPO</span>
               </div>
-              <div style="width: 100%; height: 165px; background: #ffffff; border: 1px solid #000000; margin-bottom: 4px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <div style="width: 100%; height: 140px; background: #ffffff; border: 1px solid #000000; margin-bottom: 3px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
                 <img src="${rubingerImgUri}" alt="Israeli paratroopers Western Wall 1967" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(100%); display: block;" />
               </div>
-              <div style="font-size: 8.5pt; color: #000000; line-height: 1.25;">
+              <div style="font-size: 8.0pt; color: #000000; line-height: 1.22;">
                 <strong>Significance:</strong> Paratroopers secure East Jerusalem and Western Wall; 1 million Palestinians placed under military rule.
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 4. CORE PERIOD STUDY EXAMINATION PILLARS (REPLACES EXAM QUESTION STRIP) -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
-          <div style="background: #f8fafc; border: 1.2px solid #000000; border-radius: 3px; padding: 5px 8px;">
-            <div style="font-size: 8.5pt; font-weight: 800; color: #000000; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
-              Key Topic 1: 1945–1963
-            </div>
-            <p style="font-size: 8.5pt; color: #000000; line-height: 1.25; margin: 0;">
-              British Mandate breakdown, King David Hotel, 1947 UN Partition, 1948–49 War, Law of Return &amp; 1956 Suez Crisis.
-            </p>
+        <!-- 4. VERBATIM OFFICIAL PEARSON SPECIFICATION AUDIT & REVISION CHECKLIST (100% WORD-FOR-WORD) -->
+        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; border-bottom: 1.2px solid #000000; padding-bottom: 2px;">
+            <span style="font-size: 8.8pt; font-weight: 900; color: #000000; text-transform: uppercase; letter-spacing: 0.3px;">
+              📋 Official Pearson Edexcel GCSE Specification Audit &amp; Revision Checklist (Option P5)
+            </span>
+            <span style="font-size: 7.6pt; font-weight: 700; color: #000000;">Tick each syllabus point once revised &amp; mastered:</span>
           </div>
-          <div style="background: #f8fafc; border: 1.2px solid #000000; border-radius: 3px; padding: 5px 8px;">
-            <div style="font-size: 8.5pt; font-weight: 800; color: #000000; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
-              Key Topic 2: 1964–1973
-            </div>
-            <p style="font-size: 8.5pt; color: #000000; line-height: 1.25; margin: 0;">
-              Cairo Summit, 1967 Six Day War, Occupied Territories, UN Res 242, 1973 Yom Kippur War, OPEC oil embargo &amp; Camp David.
-            </p>
-          </div>
-          <div style="background: #f8fafc; border: 1.2px solid #000000; border-radius: 3px; padding: 5px 8px;">
-            <div style="font-size: 8.5pt; font-weight: 800; color: #000000; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
-              Key Topic 3: 1974–1995
-            </div>
-            <p style="font-size: 8.5pt; color: #000000; line-height: 1.25; margin: 0;">
-              PLO diplomacy, 1982 Lebanon War, Sabra &amp; Shatila, 1987 First Intifada, Hamas, Madrid Conference &amp; 1993/95 Oslo Accords.
-            </p>
-          </div>
-        </div>
-
-        <!-- 5. VERBATIM OFFICIAL PEARSON SPECIFICATION CHECKLIST (OPTION P5) -->
-        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 6px 8px; background: #ffffff;">
-          <div style="font-size: 9.0pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 4px; text-align: center; border-bottom: 1.2px solid #000000; padding-bottom: 2px; letter-spacing: 0.3px;">
-            ★ Official Pearson Edexcel GCSE Specification Curriculum Checklist (Option P5)
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; font-size: 8.5pt; line-height: 1.26; color: #000000;">
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; font-size: 7.2pt; line-height: 1.24; color: #000000;">
             
             <!-- Column 1: KT1 -->
             <div style="border-right: 1px solid #cbd5e1; padding-right: 6px;">
-              <div style="font-size: 9.0pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 2px; border-bottom: 1px solid #000; padding-bottom: 1px;">
-                Key topic 1: The birth of Israel, 1945–63
+              <div style="font-size: 8.4pt; font-weight: 900; color: #000000; text-transform: uppercase; margin-bottom: 3px; border-bottom: 1px solid #000; padding-bottom: 1px;">
+                Key Topic 1: The birth of the state of Israel, 1945–63
               </div>
-              <strong style="display:block; color: #000000; margin-top: 2px;">1 British withdrawal &amp; creation of Israel</strong>
-              <div>&bull; Jewish/Arab conflicting demands in Mandate.</div>
-              <div>&bull; King David Hotel, UN Res 181 &amp; partition.</div>
-              <div>&bull; 1948–49 Arab-Israeli War key events.</div>
               
-              <strong style="display:block; color: #000000; margin-top: 3px;">2 Aftermath of 1948–49 war</strong>
-              <div>&bull; Territorial changes &amp; Palestinian refugee crisis.</div>
-              <div>&bull; Creation of IDF, Law of Return &amp; US aid.</div>
-              <div>&bull; Early Israeli-Egyptian relations.</div>
+              <div style="margin-bottom: 4px;">
+                <strong style="display: block; font-size: 7.8pt; text-transform: uppercase; color: #000000; margin-bottom: 1px;">1. The British withdrawal and the creation of Israel</strong>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>Conflicting interests and demands of Jews and Arabs within the British Mandate.</span>
+                </div>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>Key events leading to the end of the British Mandate, partition and the creation of Israel, including the significance of the bombing of the King David Hotel and UN Resolution 181.</span>
+                </div>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>Key events of the Arab-Israeli war (1948–49).</span>
+                </div>
+              </div>
               
-              <strong style="display:block; color: #000000; margin-top: 3px;">3 Increased tension, 1955–63</strong>
-              <div>&bull; Nasser &amp; Pan-Arab leadership.</div>
-              <div>&bull; 1955 Gaza raid &amp; 1956 Sinai attack.</div>
-              <div>&bull; 1956 Suez Crisis &amp; 1958 UAR formation.</div>
+              <div style="margin-bottom: 4px;">
+                <strong style="display: block; font-size: 7.8pt; text-transform: uppercase; color: #000000; margin-bottom: 1px;">2. Aftermath of the 1948–49 war</strong>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>Territorial changes and their impact.</span>
+                </div>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>The refugee status of Palestinian Arabs.</span>
+                </div>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>The creation of the Israeli Defence Forces (IDF) and the Law of Return (1950).</span>
+                </div>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>US aid to Israel.</span>
+                </div>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>Israel’s relations with Egypt.</span>
+                </div>
+              </div>
+
+              <div>
+                <strong style="display: block; font-size: 7.8pt; text-transform: uppercase; color: #000000; margin-bottom: 1px;">3. Increased tension, 1955–63</strong>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>Nasser and Egypt’s leadership of the Arab world.</span>
+                </div>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>The events and significance of Israeli attacks on Gaza in 1955 and Sinai in 1956.</span>
+                </div>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>The events and significance of the Suez Crisis (1956), including the formation of the United Arab Republic (UAR) in 1958.</span>
+                </div>
+              </div>
             </div>
 
             <!-- Column 2: KT2 -->
             <div style="border-right: 1px solid #cbd5e1; padding-right: 6px;">
-              <div style="font-size: 9.0pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 2px; border-bottom: 1px solid #000; padding-bottom: 1px;">
-                Key topic 2: Escalating conflict, 1964–73
+              <div style="font-size: 8.4pt; font-weight: 900; color: #000000; text-transform: uppercase; margin-bottom: 3px; border-bottom: 1px solid #000; padding-bottom: 1px;">
+                Key Topic 2: The escalating conflict, 1964–73
               </div>
-              <strong style="display:block; color: #000000; margin-top: 2px;">1 The Six Day War, 1967</strong>
-              <div>&bull; 1964 Cairo Conference &amp; Fatah raids.</div>
-              <div>&bull; Actions of USSR, Nasser &amp; USA before war.</div>
-              <div>&bull; Key events of the Six Day War.</div>
               
-              <strong style="display:block; color: #000000; margin-top: 3px;">2 Aftermath of the 1967 war</strong>
-              <div>&bull; UN Res 242 &amp; Occupied Territories control.</div>
-              <div>&bull; PFLP hijackings (1970) &amp; Black September.</div>
-              <div>&bull; Munich Olympics (1972) &amp; PLO expulsion.</div>
-              
-              <strong style="display:block; color: #000000; margin-top: 3px;">3 Israel and Egypt, 1967–73</strong>
-              <div>&bull; Egyptian relations with superpowers &amp; Arabs.</div>
-              <div>&bull; Consolidation of the Occupied Territories.</div>
-              <div>&bull; Yom Kippur War (1973) events &amp; aftermath.</div>
+              <div style="margin-bottom: 4px;">
+                <strong style="display: block; font-size: 7.8pt; text-transform: uppercase; color: #000000; margin-bottom: 1px;">1. The Six Day War, 1967</strong>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>The significance of the Cairo Conference (1964) and the growth of Fatah and the PLO.</span>
+                </div>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>Escalating tension between Israel, Syria and Jordan: Syria’s support for Fatah, Israel’s raid on Samu and the events of 7 April 1967.</span>
+                </div>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>The actions of the USSR, Nasser and the USA in the period leading to war.</span>
+                </div>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>Key events of the war.</span>
+                </div>
+              </div>
+
+              <div style="margin-bottom: 4px;">
+                <strong style="display: block; font-size: 7.8pt; text-transform: uppercase; color: #000000; margin-bottom: 1px;">2. Aftermath of the 1967 war</strong>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>UN Resolution 242 and the continued dispute over the Suez Canal.</span>
+                </div>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>Palestinian refugees and the significance of the occupied territories: Golan Heights, Gaza Strip, West Bank, Sinai and East Jerusalem.</span>
+                </div>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>The use of terrorism, Israel’s response and international attitudes towards the Palestine issue: the PFLP airplane hijacks of 1970; Black September and the Munich Olympics.</span>
+                </div>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>The expulsion of the PLO from Jordan (1970).</span>
+                </div>
+              </div>
+
+              <div>
+                <strong style="display: block; font-size: 7.8pt; text-transform: uppercase; color: #000000; margin-bottom: 1px;">3. Israel and Egypt, 1967–73</strong>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>Egyptian relations with Israel, the USA, the USSR and other Arab states.</span>
+                </div>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>Israel’s consolidation of control of the occupied territories.</span>
+                </div>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>Key events of the Yom Kippur War (1973) and its aftermath.</span>
+                </div>
+              </div>
             </div>
 
             <!-- Column 3: KT3 -->
             <div>
-              <div style="font-size: 9.0pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 2px; border-bottom: 1px solid #000; padding-bottom: 1px;">
-                Key topic 3: Attempts at solution, 1974–95
+              <div style="font-size: 8.4pt; font-weight: 900; color: #000000; text-transform: uppercase; margin-bottom: 3px; border-bottom: 1px solid #000; padding-bottom: 1px;">
+                Key Topic 3: Attempts at a solution, 1974–95
               </div>
-              <strong style="display:block; color: #000000; margin-top: 2px;">1 Diplomatic negotiations</strong>
-              <div>&bull; 1973 Oil Crisis &amp; superpower involvement.</div>
-              <div>&bull; Kissinger shuttle diplomacy &amp; Suez reopening.</div>
-              <div>&bull; Sadat in Jerusalem, Camp David &amp; 1979 Treaty.</div>
               
-              <strong style="display:block; color: #000000; margin-top: 3px;">2 The Palestinian issue</strong>
-              <div>&bull; Arafat UN speech (1974) &amp; PLO in Lebanon.</div>
-              <div>&bull; 1982 Lebanon invasion &amp; Sabra-Shatila.</div>
-              <div>&bull; First Palestinian Intifada (1987–93).</div>
-              
-              <strong style="display:block; color: #000000; margin-top: 3px;">3 Attempts at a solution</strong>
-              <div>&bull; Arafat renounces terrorism (1988).</div>
-              <div>&bull; 1991 Gulf War &amp; Madrid Peace Conference.</div>
-              <div>&bull; Oslo I (1993), 1994 Jordan Treaty &amp; Oslo II (1995).</div>
+              <div style="margin-bottom: 4px;">
+                <strong style="display: block; font-size: 7.8pt; text-transform: uppercase; color: #000000; margin-bottom: 1px;">1. Diplomatic negotiations</strong>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>The significance of the oil crisis and the involvement of the USA and the USSR.</span>
+                </div>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>Kissinger, ‘shuttle diplomacy’ and the reopening of the Suez Canal.</span>
+                </div>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>Sadat’s visit to Israel (1977), Begin’s visit to Egypt (1977), US President Carter and Camp David (1978) and the Treaty of Washington (1979).</span>
+                </div>
+              </div>
+
+              <div style="margin-bottom: 4px;">
+                <strong style="display: block; font-size: 7.8pt; text-transform: uppercase; color: #000000; margin-bottom: 1px;">2. The Palestinian issue</strong>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>Arafat’s speech to the UN (1974).</span>
+                </div>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>The significance of PLO activities in Lebanon.</span>
+                </div>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>Israeli reprisals, the invasion of Lebanon (1982) and the results.</span>
+                </div>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>The Israeli occupied territories and the First Palestinian Intifada (1987–93).</span>
+                </div>
+              </div>
+
+              <div>
+                <strong style="display: block; font-size: 7.8pt; text-transform: uppercase; color: #000000; margin-bottom: 1px;">3. Attempts at a solution</strong>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>The significance of Arafat’s renunciation of terrorism in a speech at the UN (1988).</span>
+                </div>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>Changing superpower policies in the Middle East: US involvement in the Gulf War (1991), and the end of the Cold War.</span>
+                </div>
+                <div style="display: flex; gap: 4px; align-items: flex-start; margin-bottom: 2px;">
+                  <span style="display: inline-block; width: 9px; height: 9px; border: 1.2px solid #000; flex-shrink: 0; margin-top: 2px;"></span>
+                  <span>Arafat, Rabin and the Oslo Accords (1993); the setting up of the Palestinian National Authority; the Israel-Jordan peace treaty (1994); Oslo II (1995).</span>
+                </div>
+              </div>
             </div>
 
           </div>
@@ -412,7 +510,7 @@ function renderPage3() {
           <!-- KT1 -->
           <div style="border: 1.5px solid #000; border-radius: 3px; padding: 6px 8px; background: #fff;">
             <div style="font-size: 10pt; font-weight: 800; text-transform: uppercase; color: #000; border-bottom: 1.2px solid #000; padding-bottom: 2px; margin-bottom: 3px;">
-              Key Topic 1: Birth of Israel (1945–63)
+              Key Topic 1: The birth of the state of Israel, 1945–63
             </div>
             <div style="font-size: 8.5pt; line-height: 1.30; color: #000; display: flex; flex-direction: column; gap: 3px;">
               <div><strong>1945:</strong> Jewish insurgency begins against White Paper quotas.</div>
@@ -430,7 +528,7 @@ function renderPage3() {
           <!-- KT2 -->
           <div style="border: 1.5px solid #000; border-radius: 3px; padding: 6px 8px; background: #fff;">
             <div style="font-size: 10pt; font-weight: 800; text-transform: uppercase; color: #000; border-bottom: 1.2px solid #000; padding-bottom: 2px; margin-bottom: 3px;">
-              Key Topic 2: Escalating Conflict (1964–73)
+              Key Topic 2: The escalating conflict, 1964–73
             </div>
             <div style="font-size: 8.5pt; line-height: 1.30; color: #000; display: flex; flex-direction: column; gap: 3px;">
               <div><strong>1964:</strong> Arab League establishes PLO at Cairo Summit.</div>
@@ -448,7 +546,7 @@ function renderPage3() {
           <!-- KT3 -->
           <div style="border: 1.5px solid #000; border-radius: 3px; padding: 6px 8px; background: #fff;">
             <div style="font-size: 10pt; font-weight: 800; text-transform: uppercase; color: #000; border-bottom: 1.2px solid #000; padding-bottom: 2px; margin-bottom: 3px;">
-              Key Topic 3: Attempts at Solution (1974–95)
+              Key Topic 3: Attempts at a solution, 1974–95
             </div>
             <div style="font-size: 8.5pt; line-height: 1.30; color: #000; display: flex; flex-direction: column; gap: 3px;">
               <div><strong>1974–75:</strong> Kissinger conducts shuttle diplomacy; Suez reopens.</div>

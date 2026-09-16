@@ -6,7 +6,7 @@ module.exports = [
   {
     id: 'cme_spread_5',
     spreadNum: 5,
-    topic: 'Key Topic 2 • The Escalating Conflict, 1964–73',
+    topic: 'Key Topic 2: The escalating conflict, 1964–73',
     title: 'KT 2.1: The Road to War & The Six Day War (June 1967)',
     left: {
       tag: 'KT 2.1 • Water Wars, Border Raids & Operation Focus',
@@ -185,7 +185,7 @@ module.exports = [
   {
     id: 'cme_spread_6',
     spreadNum: 6,
-    topic: 'Key Topic 2 • The Escalating Conflict, 1964–73',
+    topic: 'Key Topic 2: The escalating conflict, 1964–73',
     title: 'KT 2.2: The Aftermath of 1967 & UN Resolution 242',
     left: {
       tag: 'KT 2.2 • Resolution 242, Occupation & The Khartoum Rejection',
@@ -364,7 +364,7 @@ module.exports = [
   {
     id: 'cme_spread_7',
     spreadNum: 7,
-    topic: 'Key Topic 2 • The Escalating Conflict, 1964–73',
+    topic: 'Key Topic 2: The escalating conflict, 1964–73',
     title: 'KT 2.3: The Rise of Palestinian Resistance & International Terrorism',
     left: {
       tag: "KT 2.3 • Karameh, Dawson's Field & The Munich Massacre",
@@ -543,7 +543,7 @@ module.exports = [
   {
     id: 'cme_spread_8',
     spreadNum: 8,
-    topic: 'Key Topic 2 • The Escalating Conflict, 1964–73',
+    topic: 'Key Topic 2: The escalating conflict, 1964–73',
     title: 'KT 2.4: The Yom Kippur War & The 1973 Oil Crisis',
     left: {
       tag: 'KT 2.4 • Strategic Surprise, The Oil Weapon & Superpower Crisis',
