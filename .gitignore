@@ -15,3 +15,4 @@ pdfs/
 admin_internal/
 *department_development_plan*
 public/images/Henry Cort/
+public/units/**/*.pdf
