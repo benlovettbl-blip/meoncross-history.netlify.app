@@ -1,53 +1,12 @@
-/**
- * generate_medicine_mastery_booklets.cjs
- *
- * Compiles the print-perfect Edexcel GCSE (9–1) History Paper 1 Mastery Revision Compendium:
- * - Option 11: Medicine in Britain, c1250–present and The British Sector of the Western Front, 1914–18
- * - Canonical Master Volume: 32 Pages (8-Sheet Saddle-Stitched Compendium, zero overflows)
- *
- * ARCHITECTURAL SPECIFICATION:
- * 1. 100% Monochrome (Ink-Saving): Zero color gradients. Pure black, white, and subtle greys.
- * 2. Front Cover (Page 1):
- *    - Expanded 32-row Master Question & Homework Tracker filling page height
- * 3. Section B Spreads (Pages 2–17):
- *    - Spread 1: Medieval Medicine (c1250–c1500)
- *    - Spread 2: Renaissance Medicine (c1500–c1700)
- *    - Spread 3: 18th & 19th C Surgery (c1700–c1900)
- *    - Spread 4: 18th & 19th C Public Health & Cholera (NEW)
- *    - Spread 5: Modern Britain: Antibiotics & The NHS (c1900–present)
- *    - Spread 6: 21st C Science, Genetics & Prevention (NEW)
- *    - Spread 7: Synoptic & Cross-Period Thematic Mastery
- *    - Spread 8: The 4-Mark Comparison Mastery Lab & Paired Choice Strategy (NEW)
- * 4. Section A Historic Environment (Pages 18–29):
- *    - Set 1: Somme 1916 (CCS & Evacuation Chain)
- *    - Set 2: Ypres 1915/17 (Gas Warfare & Stretcher Relays)
- *    - Set 3: Arras 1917 (Underground Hospitals & Carrel-Dakin) (NEW)
- *    - Set 4: Cambrai 1917 (Blood Depots & Thomas Splints) (NEW)
- * 5. Reference & Masterclass (Pages 30–32):
- *    - Page 30: Western Front Primary Source Provenance Typology & Utility Matrix (NEW)
- *    - Page 31: Official 2026 Pearson Edexcel Examining Masterclass: Secrets of Grade 9 Execution (NEW)
- *    - Page 32: Back Cover — Full-Page Pearson Edexcel Specification Audit & Revision Checklist
- * 6. Ruled Lines Budget:
- *    - All essay paragraphs strictly 6 lines each (18 lines for Q4; 24 lines for Q5/6).
- */
-
-const fs = require('fs');
-const path = require('path');
-const puppeteer = require('puppeteer');
-const { pathToFileURL } = require('url');
-
-const ROOT_DIR = path.join(__dirname, '..');
-const bookletsDir = path.join(ROOT_DIR, 'public', 'units', 'edexcel_medicine', 'booklets');
-const pdfsDir = path.join(ROOT_DIR, 'public', 'pdfs', 'edexcel_medicine');
-const globalPdfsDir = path.join(ROOT_DIR, 'public', 'pdfs');
-
-if (!fs.existsSync(bookletsDir)) fs.mkdirSync(bookletsDir, { recursive: true });
-if (!fs.existsSync(pdfsDir)) fs.mkdirSync(pdfsDir, { recursive: true });
-
-// =============================================================================
-// COMMON MONOCHROME CSS
-// =============================================================================
-const COMMON_CSS = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paper 1: Medicine in Britain, c1250–present and The British Sector of the Western Front, 1914–18 — 32-Page Ultimate Compendium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&display=swap" rel="stylesheet">
+    <style>
   @page {
     size: A4 portrait;
     margin: 0;
@@ -738,30 +697,7 @@ const COMMON_CSS = `
     text-transform: uppercase;
     letter-spacing: 0.3px;
   }
-`;
-
-function renderLines(count, customHeight) {
-  let html = '';
-  const heightStyle = customHeight ? ` style="height: ${customHeight};"` : '';
-  for (let i = 0; i < count; i++) {
-    html += `<div class="dotted-line"${heightStyle}></div>`;
-  }
-  return html;
-}
-
-// =============================================================================
-// COMPLETE 32-PAGE HTML BUILDER
-// =============================================================================
-function generateMasterHtml() {
-  return `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Paper 1: Medicine in Britain, c1250–present and The British Sector of the Western Front, 1914–18 — 32-Page Ultimate Compendium</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&display=swap" rel="stylesheet">
-    <style>${COMMON_CSS}</style>
+</style>
 </head>
 <body>
 
@@ -1094,7 +1030,7 @@ function generateMasterHtml() {
                     </div>
                 </div>
 
-                ${renderLines(5, '7.2mm')}
+                <div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div>
             </div>
 
             <!-- Q4: Explain Why (Complete with 3x6 = 18 Lines) -->
@@ -1143,13 +1079,13 @@ function generateMasterHtml() {
                 </div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5px;">Paragraph 1: The Influence of the Christian Church (Stimulus 1)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 2: Galen's Enduring Authority &amp; Humeral Orthodoxy (Stimulus 2)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 3: Own Knowledge — Social Hierarchy &amp; Lack of Scientific Instruments</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
             </div>
         </div>
 
@@ -1217,16 +1153,16 @@ function generateMasterHtml() {
                 </div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5px;">Introduction &amp; Paragraph 1: Agree with Named Factor (Four Humours Bleeding &amp; Purging)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 2: Counter-Factor — Religious Explanations, God's Wrath &amp; Flagellants</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 3: Alternative Factor — Miasma, Bad Air &amp; Complete Lack of Germ Knowledge</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Conclusion: Supported Final Judgement (Criteria: Which Factor Was Most Decisive?)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
             </div>
         </div>
 
@@ -1286,7 +1222,7 @@ function generateMasterHtml() {
                     </div>
                 </div>
 
-                ${renderLines(5, '7.2mm')}
+                <div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div>
             </div>
 
             <!-- Q4: Explain Why (Complete with 3x6 = 18 Lines) -->
@@ -1335,13 +1271,13 @@ function generateMasterHtml() {
                 </div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5px;">Paragraph 1: Andreas Vesalius &amp; Empirical Human Dissection (Stimulus 1)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 2: The Printing Press &amp; Scientific Standardization (Stimulus 2)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 3: Own Knowledge — William Harvey &amp; Mechanical Heart Circulation (1628)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
             </div>
         </div>
 
@@ -1409,16 +1345,16 @@ function generateMasterHtml() {
                 </div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5px;">Introduction &amp; Paragraph 1: Agree with Named Factor (Thomas Sydenham &amp; Observation)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 2: Counter-Factor — The Royal Society &amp; Institutional Empirical Science</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 3: Alternative Factor — Vesalius, Harvey &amp; The Overthrow of Galen</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Conclusion: Supported Final Judgement (Criteria: Theory vs Everyday Practice)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
             </div>
         </div>
 
@@ -1478,7 +1414,7 @@ function generateMasterHtml() {
                     </div>
                 </div>
 
-                ${renderLines(5, '7.2mm')}
+                <div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div>
             </div>
 
             <!-- Q4: Explain Why (Complete with 3x6 = 18 Lines) -->
@@ -1528,13 +1464,13 @@ function generateMasterHtml() {
                 </div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5px;">Paragraph 1: James Simpson &amp; The Conquest of Pain (Anaesthesia) (Stimulus 1)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 2: Joseph Lister &amp; Antiseptic Surgery (Defeating Infection) (Stimulus 2)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 3: Own Knowledge — Aseptic Surgery (Steam Autoclaves, Rubber Gloves &amp; Gowns)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
             </div>
         </div>
 
@@ -1602,16 +1538,16 @@ function generateMasterHtml() {
                 </div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5px;">Introduction &amp; Paragraph 1: Agree with Named Factor (Pasteur's Germ Theory &amp; Koch)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 2: Counter-Factor — The 1875 Public Health Act &amp; Municipal Sanitation (Stimulus 1)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 3: Alternative Factor — 20th Century Antibiotics (Fleming, Florey &amp; Chain) (Stimulus 2)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Conclusion: Supported Final Judgement (Criteria: Lab Science vs Mass Public Survival)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
             </div>
         </div>
 
@@ -1671,7 +1607,7 @@ function generateMasterHtml() {
                     </div>
                 </div>
 
-                ${renderLines(5, '7.2mm')}
+                <div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div>
             </div>
 
             <!-- Q4: Explain Why (Complete with 3x6 = 18 Lines) -->
@@ -1721,13 +1657,13 @@ function generateMasterHtml() {
                 </div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5px;">Paragraph 1: John Snow &amp; The Disproof of Miasma (Stimulus 1)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 2: The Public Health Act of 1875 &amp; The End of Laissez-Faire (Stimulus 2)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 3: Own Knowledge — Working-Class Enfranchisement (1867) &amp; Bazalgette's Sewers</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
             </div>
         </div>
 
@@ -1795,16 +1731,16 @@ function generateMasterHtml() {
                 </div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5px;">Introduction &amp; Paragraph 1: Agree with Named Factor (John Snow's Broad Street Investigation)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 2: Counter-Factor — Joseph Bazalgette &amp; Civil Engineering (London Sewers)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 3: Alternative Factor — Chadwick's 1842 Report &amp; The Compulsory 1875 Act</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Conclusion: Supported Final Judgement (Criteria: Scientific Proof vs Statutory Enforcement)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
             </div>
         </div>
 
@@ -1864,7 +1800,7 @@ function generateMasterHtml() {
                     </div>
                 </div>
 
-                ${renderLines(5, '7.2mm')}
+                <div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div>
             </div>
 
             <!-- Q4: Explain Why (Complete with 3x6 = 18 Lines) -->
@@ -1914,13 +1850,13 @@ function generateMasterHtml() {
                 </div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5px;">Paragraph 1: Howard Florey, Ernst Chain &amp; Biochemical Purification (Stimulus 1)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 2: US Government Funding &amp; Wartime Military Urgency (Stimulus 2)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 3: Own Knowledge — Industrial Innovations (Corn Steep Liquor, Cantaloupe Strain &amp; Deep Fermentation)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
             </div>
         </div>
 
@@ -1988,16 +1924,16 @@ function generateMasterHtml() {
                 </div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5px;">Introduction &amp; Paragraph 1: Agree with Named Factor (Aneurin Bevan &amp; The Foundation of the NHS)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 2: Counter-Factor — Watson, Crick &amp; Franklin's Discovery of DNA Structure (Stimulus 2)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 3: Alternative Factor — High-Tech Surgical &amp; Pharmaceutical Breakthroughs (Organ Transplants &amp; Chemotherapy)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Conclusion: Supported Final Judgement (Criteria: Democratic Social Access vs Clinical Cure)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
             </div>
         </div>
 
@@ -2057,7 +1993,7 @@ function generateMasterHtml() {
                     </div>
                 </div>
 
-                ${renderLines(5, '7.2mm')}
+                <div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div>
             </div>
 
             <!-- Q4: Explain Why (Complete with 3x6 = 18 Lines) -->
@@ -2106,13 +2042,13 @@ function generateMasterHtml() {
                 </div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5px;">Paragraph 1: Genetics &amp; The Discovery of the Structure of DNA (Stimulus 1)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 2: Statistical Epidemiology &amp; Lifestyle Causation (Doll &amp; Hill / Smoking) (Stimulus 2)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 3: Own Knowledge — Scientific Instrumentation (Electron Microscopes &amp; Virology)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
             </div>
         </div>
 
@@ -2180,16 +2116,16 @@ function generateMasterHtml() {
                 </div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5px;">Introduction &amp; Paragraph 1: Agree with Named Factor (DNA Discovery &amp; Human Genome Project)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 2: Counter-Factor — Mass-Produced Antibiotics &amp; Eradication of Bacterial Killers (Stimulus 2)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 3: Alternative Factor — Government Public Health &amp; Preventative Legislation (Clean Air &amp; Smoking Bans)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Conclusion: Supported Final Judgement (Criteria: Immediate Acute Survival vs Long-Term Genetic Mastery)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
             </div>
         </div>
 
@@ -2249,7 +2185,7 @@ function generateMasterHtml() {
                     </div>
                 </div>
 
-                ${renderLines(5, '7.2mm')}
+                <div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div>
             </div>
 
             <!-- Q4: Explain Why (Complete with 3x6 = 18 Lines) -->
@@ -2298,13 +2234,13 @@ function generateMasterHtml() {
                 </div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5px;">Paragraph 1: Edwin Chadwick &amp; The Economic Burden of Filth (Stimulus 1)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 2: The 1867 Reform Act &amp; Working-Class Political Pressure (Stimulus 2)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 3: Own Knowledge — John Snow, Broad Street (1854) &amp; Compulsory 1875 Legislation</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
             </div>
         </div>
 
@@ -2372,16 +2308,16 @@ function generateMasterHtml() {
                 </div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5px;">Introduction &amp; Paragraph 1: Agree with Named Factor (Individual Genius — Harvey, Jenner, Simpson)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 2: Counter-Factor — Government Action, Public Health Acts &amp; The Welfare State (Stimulus 2)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 3: Alternative Factor — War, Industrial Technology &amp; Mass Communications</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
                 <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Conclusion: Supported Final Judgement (Criteria: Scientific Discovery vs Statutory Enforcement)</div>
-                ${renderLines(6, '6.4mm')}
+                <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
             </div>
         </div>
 
@@ -2429,7 +2365,7 @@ function generateMasterHtml() {
                 <div class="scaffold-content" style="margin-bottom: 2px;">
                     <span class="scaffold-pill">Core Hook: Miasma / Four Humours</span> <em>Model Stem: "One way in which ideas about causes of disease were similar was the continued belief in miasma; during the Black Death in 1348... similarly during the Great Plague in 1665..."</em>
                 </div>
-                ${renderLines(5, '6.2mm')}
+                <div class="dotted-line" style="height: 6.2mm;"></div><div class="dotted-line" style="height: 6.2mm;"></div><div class="dotted-line" style="height: 6.2mm;"></div><div class="dotted-line" style="height: 6.2mm;"></div><div class="dotted-line" style="height: 6.2mm;"></div>
             </div>
 
             <!-- Drill 2: Difference Drill -->
@@ -2444,7 +2380,7 @@ function generateMasterHtml() {
                 <div class="scaffold-content" style="margin-bottom: 2px;">
                     <span class="scaffold-pill">Core Hook: Empirical Observation vs Laboratory Science</span> <em>Model Stem: "One difference was that Jenner developed vaccination through empirical observation of cowpox without knowing germs caused disease, whereas Pasteur..."</em>
                 </div>
-                ${renderLines(5, '6.2mm')}
+                <div class="dotted-line" style="height: 6.2mm;"></div><div class="dotted-line" style="height: 6.2mm;"></div><div class="dotted-line" style="height: 6.2mm;"></div><div class="dotted-line" style="height: 6.2mm;"></div><div class="dotted-line" style="height: 6.2mm;"></div>
             </div>
 
             <!-- Drill 3: Difference Drill -->
@@ -2459,7 +2395,7 @@ function generateMasterHtml() {
                 <div class="scaffold-content" style="margin-bottom: 2px;">
                     <span class="scaffold-pill">Core Hook: Spiritual Care vs Clinical Cure &amp; Sanitation</span> <em>Model Stem: "One key difference was that 13th-century hospitals run by monks focused on spiritual care and rest for travelers, whereas 19th-century hospitals..."</em>
                 </div>
-                ${renderLines(5, '6.2mm')}
+                <div class="dotted-line" style="height: 6.2mm;"></div><div class="dotted-line" style="height: 6.2mm;"></div><div class="dotted-line" style="height: 6.2mm;"></div><div class="dotted-line" style="height: 6.2mm;"></div><div class="dotted-line" style="height: 6.2mm;"></div>
             </div>
         </div>
 
@@ -2537,16 +2473,16 @@ function generateMasterHtml() {
 
             <!-- Student Essay Writing Lines: Exactly 24 Lines (4 Paragraphs x 6 Lines) -->
             <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-bottom: 1.5px;">Introduction &amp; Paragraph 1: Direct Engagement with Statement / Named Factor</div>
-            ${renderLines(6, '6.4mm')}
+            <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
             <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 2: Counter-Argument / Second Stimulus Factor</div>
-            ${renderLines(6, '6.4mm')}
+            <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
             <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Paragraph 3: Independent Context Factor (Own Knowledge Beyond Stimulus Points)</div>
-            ${renderLines(6, '6.4mm')}
+            <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
 
             <div style="font-size: 7.1pt; font-weight: 800; text-transform: uppercase; margin-top: 2.5px; margin-bottom: 1.5px;">Conclusion: Justified Criteria-Led Final Judgement</div>
-            ${renderLines(6, '6.4mm')}
+            <div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div><div class="dotted-line" style="height: 6.4mm;"></div>
         </div>
 
         <div class="page-footer">
@@ -2596,7 +2532,7 @@ function generateMasterHtml() {
                     </div>
                 </div>
 
-                ${renderLines(3, '7.2mm')}
+                <div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div>
             </div>
 
             <!-- Q1(b): Feature 2 -->
@@ -2625,7 +2561,7 @@ function generateMasterHtml() {
                     </div>
                 </div>
 
-                ${renderLines(3, '7.2mm')}
+                <div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div>
             </div>
 
             <!-- Q2(b): 4-Part Follow-Up Grid (100% BLANK FOR STUDENT COMPLETION) -->
@@ -2643,25 +2579,25 @@ function generateMasterHtml() {
                     <tr>
                         <td>Detail in Source B that I would follow up:</td>
                         <td>
-                            ${renderLines(2, '7mm')}
+                            <div class="dotted-line" style="height: 7mm;"></div><div class="dotted-line" style="height: 7mm;"></div>
                         </td>
                     </tr>
                     <tr>
                         <td>Question I would ask:</td>
                         <td>
-                            ${renderLines(2, '7mm')}
+                            <div class="dotted-line" style="height: 7mm;"></div><div class="dotted-line" style="height: 7mm;"></div>
                         </td>
                     </tr>
                     <tr>
                         <td>What type of source I would use:</td>
                         <td>
-                            ${renderLines(2, '7mm')}
+                            <div class="dotted-line" style="height: 7mm;"></div><div class="dotted-line" style="height: 7mm;"></div>
                         </td>
                     </tr>
                     <tr>
                         <td>How this source would help me answer my question:</td>
                         <td>
-                            ${renderLines(2, '7mm')}
+                            <div class="dotted-line" style="height: 7mm;"></div><div class="dotted-line" style="height: 7mm;"></div>
                         </td>
                     </tr>
                 </table>
@@ -2775,7 +2711,7 @@ function generateMasterHtml() {
                         <div class="starter-point"><strong>• Context Starter:</strong> <em>From my own historical knowledge, this is accurate because during the 1916 Somme offensive...</em></div>
                         <div class="starter-point"><strong>• Provenance Starter:</strong> <em>The utility of Source A is affected by its provenance because as an eyewitness chaplain's diary...</em></div>
                     </div>
-                    ${renderLines(11, '7.2mm')}
+                    <div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div>
                 </div>
             </div>
         </div>
@@ -2811,7 +2747,7 @@ function generateMasterHtml() {
                     <div class="starter-point"><strong>• Context Starter:</strong> <em>This is corroborated by historical evidence that Base Hospitals in winter 1917 faced...</em></div>
                     <div class="starter-point"><strong>• Provenance &amp; Synthesis:</strong> <em>As a personal letter home from a VAD nurse, the provenance... Overall, Source [A/B] is more useful because...</em></div>
                 </div>
-                ${renderLines(19, '7.2mm')}
+                <div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div>
             </div>
         </div>
 
@@ -2862,7 +2798,7 @@ function generateMasterHtml() {
                     </div>
                 </div>
 
-                ${renderLines(3, '7.2mm')}
+                <div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div>
             </div>
 
             <!-- Q1(b): Feature 2 -->
@@ -2891,7 +2827,7 @@ function generateMasterHtml() {
                     </div>
                 </div>
 
-                ${renderLines(3, '7.2mm')}
+                <div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div>
             </div>
 
             <!-- Q2(b): 4-Part Follow-Up Grid (100% BLANK FOR STUDENT COMPLETION) -->
@@ -2909,25 +2845,25 @@ function generateMasterHtml() {
                     <tr>
                         <td>Detail in extract that I would follow up:</td>
                         <td>
-                            ${renderLines(2, '7mm')}
+                            <div class="dotted-line" style="height: 7mm;"></div><div class="dotted-line" style="height: 7mm;"></div>
                         </td>
                     </tr>
                     <tr>
                         <td>Question I would ask:</td>
                         <td>
-                            ${renderLines(2, '7mm')}
+                            <div class="dotted-line" style="height: 7mm;"></div><div class="dotted-line" style="height: 7mm;"></div>
                         </td>
                     </tr>
                     <tr>
                         <td>What type of source I would use:</td>
                         <td>
-                            ${renderLines(2, '7mm')}
+                            <div class="dotted-line" style="height: 7mm;"></div><div class="dotted-line" style="height: 7mm;"></div>
                         </td>
                     </tr>
                     <tr>
                         <td>How this source would help me answer my question:</td>
                         <td>
-                            ${renderLines(2, '7mm')}
+                            <div class="dotted-line" style="height: 7mm;"></div><div class="dotted-line" style="height: 7mm;"></div>
                         </td>
                     </tr>
                 </table>
@@ -3041,7 +2977,7 @@ function generateMasterHtml() {
                         <div class="starter-point"><strong>• Context Starter:</strong> <em>From my own knowledge, this reflects the extreme conditions during Third Ypres (Passchendaele)...</em></div>
                         <div class="starter-point"><strong>• Provenance Starter:</strong> <em>The utility of Source C is influenced by its nature as an official RAMC Field Ambulance War Diary...</em></div>
                     </div>
-                    ${renderLines(11, '7.2mm')}
+                    <div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div>
                 </div>
             </div>
         </div>
@@ -3077,7 +3013,7 @@ function generateMasterHtml() {
                     <div class="starter-point"><strong>• Context Starter:</strong> <em>Specifically, my knowledge confirms that specialized ambulance trains were vital because...</em></div>
                     <div class="starter-point"><strong>• Provenance &amp; Synthesis:</strong> <em>Sister Luard's firsthand clinical perspective makes this source... Overall, both sources are mutually useful because...</em></div>
                 </div>
-                ${renderLines(19, '7.2mm')}
+                <div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div>
             </div>
         </div>
 
@@ -3128,7 +3064,7 @@ function generateMasterHtml() {
                     </div>
                 </div>
 
-                ${renderLines(3, '7.2mm')}
+                <div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div>
             </div>
 
             <!-- Q1(b): Feature 2 -->
@@ -3157,7 +3093,7 @@ function generateMasterHtml() {
                     </div>
                 </div>
 
-                ${renderLines(3, '7.2mm')}
+                <div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div>
             </div>
 
             <!-- Q2(b): 4-Part Follow-Up Grid (100% BLANK FOR STUDENT COMPLETION) -->
@@ -3175,25 +3111,25 @@ function generateMasterHtml() {
                     <tr>
                         <td>Detail in Source F that I would follow up:</td>
                         <td>
-                            ${renderLines(2, '7mm')}
+                            <div class="dotted-line" style="height: 7mm;"></div><div class="dotted-line" style="height: 7mm;"></div>
                         </td>
                     </tr>
                     <tr>
                         <td>Question I would ask:</td>
                         <td>
-                            ${renderLines(2, '7mm')}
+                            <div class="dotted-line" style="height: 7mm;"></div><div class="dotted-line" style="height: 7mm;"></div>
                         </td>
                     </tr>
                     <tr>
                         <td>What type of source I would use:</td>
                         <td>
-                            ${renderLines(2, '7mm')}
+                            <div class="dotted-line" style="height: 7mm;"></div><div class="dotted-line" style="height: 7mm;"></div>
                         </td>
                     </tr>
                     <tr>
                         <td>How this source would help me answer my question:</td>
                         <td>
-                            ${renderLines(2, '7mm')}
+                            <div class="dotted-line" style="height: 7mm;"></div><div class="dotted-line" style="height: 7mm;"></div>
                         </td>
                     </tr>
                 </table>
@@ -3307,7 +3243,7 @@ function generateMasterHtml() {
                         <div class="starter-point"><strong>• Context Starter:</strong> <em>From my historical knowledge, this accurately reflects the construction of Thompson's Cave where...</em></div>
                         <div class="starter-point"><strong>• Provenance Starter:</strong> <em>The utility of Source E is reinforced by Major Myers' position as an official RAMC inspector because...</em></div>
                     </div>
-                    ${renderLines(11, '7.2mm')}
+                    <div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div>
                 </div>
             </div>
         </div>
@@ -3343,7 +3279,7 @@ function generateMasterHtml() {
                     <div class="starter-point"><strong>• Context Starter:</strong> <em>This is supported by evidence that frontline surgeons battled severe gas gangrene and sepsis using...</em></div>
                     <div class="starter-point"><strong>• Provenance &amp; Synthesis:</strong> <em>While Mary Borden writes from personal nursing experience, both sources combine effectively because...</em></div>
                 </div>
-                ${renderLines(19, '7.2mm')}
+                <div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div>
             </div>
         </div>
 
@@ -3394,7 +3330,7 @@ function generateMasterHtml() {
                     </div>
                 </div>
 
-                ${renderLines(3, '7.2mm')}
+                <div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div>
             </div>
 
             <!-- Q1(b): Feature 2 -->
@@ -3423,7 +3359,7 @@ function generateMasterHtml() {
                     </div>
                 </div>
 
-                ${renderLines(3, '7.2mm')}
+                <div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div>
             </div>
 
             <!-- Q2(b): 4-Part Follow-Up Grid (100% BLANK FOR STUDENT COMPLETION) -->
@@ -3441,25 +3377,25 @@ function generateMasterHtml() {
                     <tr>
                         <td>Detail in Source G that I would follow up:</td>
                         <td>
-                            ${renderLines(2, '7mm')}
+                            <div class="dotted-line" style="height: 7mm;"></div><div class="dotted-line" style="height: 7mm;"></div>
                         </td>
                     </tr>
                     <tr>
                         <td>Question I would ask:</td>
                         <td>
-                            ${renderLines(2, '7mm')}
+                            <div class="dotted-line" style="height: 7mm;"></div><div class="dotted-line" style="height: 7mm;"></div>
                         </td>
                     </tr>
                     <tr>
                         <td>What type of source I would use:</td>
                         <td>
-                            ${renderLines(2, '7mm')}
+                            <div class="dotted-line" style="height: 7mm;"></div><div class="dotted-line" style="height: 7mm;"></div>
                         </td>
                     </tr>
                     <tr>
                         <td>How this source would help me answer my question:</td>
                         <td>
-                            ${renderLines(2, '7mm')}
+                            <div class="dotted-line" style="height: 7mm;"></div><div class="dotted-line" style="height: 7mm;"></div>
                         </td>
                     </tr>
                 </table>
@@ -3573,7 +3509,7 @@ function generateMasterHtml() {
                         <div class="starter-point"><strong>• Context Starter:</strong> <em>From my historical knowledge, Captain Robertson's work at Cambrai in 1917 was groundbreaking because...</em></div>
                         <div class="starter-point"><strong>• Provenance Starter:</strong> <em>The utility of Source G is elevated by its provenance as a British Medical Journal report because...</em></div>
                     </div>
-                    ${renderLines(11, '7.2mm')}
+                    <div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div>
                 </div>
             </div>
         </div>
@@ -3609,7 +3545,7 @@ function generateMasterHtml() {
                     <div class="starter-point"><strong>• Context Starter:</strong> <em>This is supported by evidence that rapid blood replacement raised blood pressure and prevented...</em></div>
                     <div class="starter-point"><strong>• Provenance &amp; Synthesis:</strong> <em>Private Devenish's eyewitness observations corroborate the BMJ data... Overall, both sources provide...</em></div>
                 </div>
-                ${renderLines(19, '7.2mm')}
+                <div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div><div class="dotted-line" style="height: 7.2mm;"></div>
             </div>
         </div>
 
@@ -4151,134 +4087,4 @@ function generateMasterHtml() {
     
 
 </body>
-</html>`;
-}
-
-// =============================================================================
-// COMPILATION, AUDIT & EXPORT ENGINE
-// =============================================================================
-async function compileMasteryBooklets() {
-  console.log('================================================================');
-  console.log('🚀 COMPILING 32-PAGE ULTIMATE COMPENDIUM (OPTION 11 MEDICINE)');
-  console.log('================================================================');
-
-  const htmlContent = generateMasterHtml();
-  const htmlPath = path.join(bookletsDir, 'medicine_mastery_compendium_32page.html');
-  fs.writeFileSync(htmlPath, htmlContent, 'utf-8');
-  console.log(
-    `✓ Generated Master HTML: ${htmlPath} (${(Buffer.byteLength(htmlContent) / 1024).toFixed(1)} KB)`,
-  );
-
-  console.log('⏳ Launching Puppeteer to audit layout and compile PDF...');
-  const browser = await puppeteer.launch({
-    headless: 'new',
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
-  });
-  const page = await browser.newPage();
-  await page.setViewport({ width: 1200, height: 1600 });
-  await page.goto(pathToFileURL(htmlPath).href, { waitUntil: 'networkidle0' });
-
-  // Strict DOM Page Count & Overflow Audit
-  const auditResults = await page.evaluate(() => {
-    const pages = document.querySelectorAll('.page');
-    const overflows = [];
-    pages.forEach((p, idx) => {
-      const pageNum = idx + 1;
-      const scrollH = p.scrollHeight;
-      const clientH = p.clientHeight;
-      if (scrollH > clientH + 2) {
-        overflows.push({
-          pageNum,
-          scrollH,
-          clientH,
-          diff: scrollH - clientH,
-        });
-      }
-    });
-    return {
-      pageCount: pages.length,
-      overflows,
-    };
-  });
-
-  console.log(`✓ DOM Page Count: ${auditResults.pageCount} pages (Target: 32 pages)`);
-
-  if (auditResults.pageCount !== 32) {
-    console.error(
-      `❌ ARCHITECTURAL ERROR: Expected exactly 32 pages, found ${auditResults.pageCount} pages!`,
-    );
-  } else {
-    console.log(
-      `✅ PERFECT PRINT-READY 32-PAGE ARCHITECTURE CONFIRMED (Rule of 4: 8 folded A3 sheets).`,
-    );
-  }
-
-  if (auditResults.overflows.length > 0) {
-    console.warn(`⚠️ OVERFLOW DETECTED ON ${auditResults.overflows.length} PAGES:`);
-    auditResults.overflows.forEach((o) => {
-      console.warn(
-        `   - Page ${o.pageNum}: scrollHeight ${o.scrollH}px > clientHeight ${o.clientH}px (Diff: +${o.diff}px)`,
-      );
-    });
-  } else {
-    console.log(
-      `✅ ZERO OVERFLOWS: All ${auditResults.pageCount} pages fit within 297mm print budget!`,
-    );
-  }
-
-  // Export High-Resolution Monochrome PDF
-  const pdfFileName = 'med_mastery_pack_FULL.pdf';
-  const outPdfUnit = path.join(pdfsDir, pdfFileName);
-  const outPdfGlobal = path.join(globalPdfsDir, pdfFileName);
-
-  console.log('⏳ Generating 32-page PDF...');
-  const pdfBuffer = await page.pdf({
-    format: 'A4',
-    printBackground: true,
-    preferCSSPageSize: true,
-    margin: { top: 0, right: 0, bottom: 0, left: 0 },
-  });
-
-  fs.writeFileSync(outPdfUnit, pdfBuffer);
-  fs.writeFileSync(outPdfGlobal, pdfBuffer);
-  console.log(
-    `✓ Saved PDF to Unit: ${outPdfUnit} (${(pdfBuffer.length / 1024 / 1024).toFixed(2)} MB)`,
-  );
-  console.log(
-    `✓ Saved PDF to Global: ${outPdfGlobal} (${(pdfBuffer.length / 1024 / 1024).toFixed(2)} MB)`,
-  );
-
-  await browser.close();
-
-  // Automatic Sync to Google Drive Folders
-  const driveDestinations = [
-    'G:\\My Drive\\AAMX\\Dep File\\Year 11 (GCSE)\\Paper 1 - Medicine Through Time',
-    'G:\\My Drive\\AAMX\\RESOURCES\\Edexcel GCSE History exams\\p1 11 medicine',
-    'G:\\My Drive\\AAMX\\RESOURCES\\Medicine',
-  ];
-
-  console.log('\n📂 Synchronizing 32-page Compendium to Google Drive folders...');
-  driveDestinations.forEach((destDir) => {
-    try {
-      if (fs.existsSync(destDir)) {
-        const targetPath = path.join(
-          destDir,
-          'Edexcel_Paper1_Medicine_32Page_Ultimate_Compendium.pdf',
-        );
-        fs.copyFileSync(outPdfGlobal, targetPath);
-        console.log(`   ✓ Synced to: ${targetPath}`);
-      } else {
-        console.log(`   ℹ️ Note: Directory not mounted/found: ${destDir}`);
-      }
-    } catch (err) {
-      console.warn(`   ⚠️ Warning: Could not copy to ${destDir}: ${err.message}`);
-    }
-  });
-
-  console.log('\n🎉 SUCCESS: 32-PAGE MASTER COMPENDIUM COMPILED AND VERIFIED!\n');
-}
-
-compileMasteryBooklets().catch((err) => {
-  console.error('Fatal compilation error:', err);
-  process.exit(1);
-});
+</html>
