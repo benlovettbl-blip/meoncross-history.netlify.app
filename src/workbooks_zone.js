@@ -199,6 +199,7 @@ export function renderWorkbooksZone(container, unitData) {
         desc: 'The complete 36-page exam practice volume combining KT1, KT2, and KT3 together. Differentiated stepped ladder, dual-track question breakdowns, authentic exam simulations, and photocopier-safe response lines.',
         fileBase: '/units/cme_new/booklets/cme_mastery_FULL.html',
         pdfUrl: '/pdfs/cme_mastery_pack_FULL.pdf',
+        digitalUnit: 'cme_new',
       },
       {
         id: 'PILLAR_3',
@@ -243,14 +244,24 @@ export function renderWorkbooksZone(container, unitData) {
             <p style="margin: 0; font-size: 0.82rem; color: #64748b; line-height: 1.4;">${b.desc}</p>
           </div>
 
-          <div style="display: flex; gap: 8px; margin-top: 5px;">
-            <button type="button" class="btn" onclick="window.openTeacherPrintPreview('${b.fileBase}', '${b.title}', '${b.pdfUrl}')" style="flex: 1; text-align: center; background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4px solid ${b.color}; padding: 10px 8px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: #1e293b; transition: all 0.2s ease;" onmouseover="this.style.borderColor='${b.color}'; this.style.boxShadow='0 2px 6px rgba(0,0,0,0.1)';" onmouseout="this.style.borderColor='#cbd5e1'; this.style.borderLeftColor='${b.color}'; this.style.boxShadow='none';">
+          <div style="display: flex; gap: 8px; margin-top: 5px; flex-wrap: wrap;">
+            <button type="button" class="btn" onclick="window.openTeacherPrintPreview('${b.fileBase}', '${b.title}', '${b.pdfUrl}')" style="flex: 1; min-width: 110px; text-align: center; background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4px solid ${b.color}; padding: 10px 8px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: #1e293b; transition: all 0.2s ease;" onmouseover="this.style.borderColor='${b.color}'; this.style.boxShadow='0 2px 6px rgba(0,0,0,0.1)';" onmouseout="this.style.borderColor='#cbd5e1'; this.style.borderLeftColor='${b.color}'; this.style.boxShadow='none';">
               <i class="fa-solid fa-eye" style="color: ${b.color};"></i> Preview &amp; Print
             </button>
 
             <a href="${b.pdfUrl}" target="_blank" download style="background: ${b.color}; color: #ffffff; padding: 10px 14px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; transition: opacity 0.2s ease;" onmouseover="this.style.opacity='0.9';" onmouseout="this.style.opacity='1';">
               <i class="fa-solid fa-download"></i> PDF
             </a>
+
+            ${
+              b.digitalUnit
+                ? `
+            <button type="button" class="btn" onclick="window.switchView('mock-exams', '${b.digitalUnit}')" style="background: #0f172a; color: #ffffff; padding: 10px 12px; border-radius: 6px; border: none; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Practice interactively in the web app with timers and model answers">
+              <i class="fa-solid fa-laptop-code"></i> Digital Mode
+            </button>
+            `
+                : ''
+            }
           </div>
         </div>
       `;
@@ -277,13 +288,14 @@ export function renderWorkbooksZone(container, unitData) {
       },
       {
         id: 'PILLAR_2',
-        title: '20-Page Complete Exam Practice & Assessment Mastery Pack',
-        pages: '20 Pages',
+        title: '32-Page Complete Exam Practice & Assessment Compendium',
+        pages: '32 Pages',
         badge: 'Pillar 2 • Exam Practice',
         color: '#0f766e',
-        desc: 'The complete 20-page pure exam practice volume binding Section A (Western Front) and Section B (Thematic Study c1250–present) together. Differentiated stepped ladder, dual-track analysis, authentic timed exam simulations, and photocopier-safe response lines.',
-        fileBase: '/units/edexcel_medicine/booklets/med_mastery_FULL.html',
+        desc: 'The complete 32-page master volume binding Section A (Western Front: 4 complete sets for Somme, Ypres, Arras, Cambrai) and Section B (Thematic Study: Medieval, Renaissance, 18th/19th C Surgery & Public Health, Modern Britain & 21st C Science). Includes Source Typology Matrix, 2026 Senior Examiner Masterclass, and Specification Audit.',
+        fileBase: '/units/edexcel_medicine/booklets/medicine_mastery_compendium_32page.html',
         pdfUrl: '/pdfs/med_mastery_pack_FULL.pdf',
+        digitalUnit: 'edexcel_medicine',
       },
       {
         id: 'PILLAR_3',
@@ -327,14 +339,24 @@ export function renderWorkbooksZone(container, unitData) {
             <p style="margin: 0; font-size: 0.82rem; color: #64748b; line-height: 1.4;">${b.desc}</p>
           </div>
 
-          <div style="display: flex; gap: 8px; margin-top: 5px;">
-            <button type="button" class="btn" onclick="window.openTeacherPrintPreview('${b.fileBase}', '${b.title}', '${b.pdfUrl}')" style="flex: 1; text-align: center; background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4px solid ${b.color}; padding: 10px 8px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: #1e293b; transition: all 0.2s ease;" onmouseover="this.style.borderColor='${b.color}'; this.style.boxShadow='0 2px 6px rgba(0,0,0,0.1)';" onmouseout="this.style.borderColor='#cbd5e1'; this.style.borderLeftColor='${b.color}'; this.style.boxShadow='none';">
+          <div style="display: flex; gap: 8px; margin-top: 5px; flex-wrap: wrap;">
+            <button type="button" class="btn" onclick="window.openTeacherPrintPreview('${b.fileBase}', '${b.title}', '${b.pdfUrl}')" style="flex: 1; min-width: 110px; text-align: center; background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4px solid ${b.color}; padding: 10px 8px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: #1e293b; transition: all 0.2s ease;" onmouseover="this.style.borderColor='${b.color}'; this.style.boxShadow='0 2px 6px rgba(0,0,0,0.1)';" onmouseout="this.style.borderColor='#cbd5e1'; this.style.borderLeftColor='${b.color}'; this.style.boxShadow='none';">
               <i class="fa-solid fa-eye" style="color: ${b.color};"></i> Preview &amp; Print
             </button>
 
             <a href="${b.pdfUrl}" target="_blank" download style="background: ${b.color}; color: #ffffff; padding: 10px 14px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; transition: opacity 0.2s ease;" onmouseover="this.style.opacity='0.9';" onmouseout="this.style.opacity='1';">
               <i class="fa-solid fa-download"></i> PDF
             </a>
+
+            ${
+              b.digitalUnit
+                ? `
+            <button type="button" class="btn" onclick="window.switchView('mock-exams', '${b.digitalUnit}')" style="background: #0f172a; color: #ffffff; padding: 10px 12px; border-radius: 6px; border: none; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Practice interactively in the web app with timers and model answers">
+              <i class="fa-solid fa-laptop-code"></i> Digital Mode
+            </button>
+            `
+                : ''
+            }
           </div>
         </div>
       `;
