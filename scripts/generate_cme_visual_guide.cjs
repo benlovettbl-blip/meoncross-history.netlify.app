@@ -3,18 +3,20 @@
  *
  * Compiles the complete, print-perfect Pearson Edexcel GCSE (9–1) History Paper 2 (Period Study):
  * "Option P5: Conflict in the Middle East, 1945–1995 (1HI0/P5)"
- * Visual Revision Masterclasses & Complete Specification Guide (28-Page Master Volume).
+ * Complete Revision Guide & Cartographic Specification Masterclass (32-Page Master Volume).
  *
- * Commercial Saddle-Stitch Format (28 Pages = 7 folded A3 sheets, 0 blank pages, 0 overflows):
- * - Page 1: Official Examination Cover with Candidate Box at Very Top, Photos & Large Spec Checklist
- * - Page 2: Paper 2 Period Study Blueprint, Exam Architecture & Four Non-Negotiable Success Principles
- * - Page 3: Master Chronology & Geopolitical Shift Matrix (1945–1995) + Examiner Synoptic Takeaway
- * - Pages 4–27: 12 Pure Double-Page Revision Spreads (Zero dead space; dense narrative, causal pathways & GCSE Word Banks)
- * - Page 28: Master Historiographical Debates (Traditional vs New Historians) & Final Revision Checklist
+ * Commercial Saddle-Stitch Format (32 Pages = 8 folded A3 sheets, 0 blank pages, 0 overflows):
+ * - Page 1: Official Examination Cover with Candidate Box, Photos & Verbatim Spec Checklist
+ * - Pages 2 & 3: Period Study Blueprint & 50-Year Master Chronology Matrix (1945–1995)
+ * - Pages 4 & 5: Master Cartographic Atlas 1 — 1947 UN Partition (Res 181) vs. 1949 Armistice Green Line
+ * - Pages 6–29: 12 Pure Double-Page Revision Spreads (100% core knowledge, causal pathways & GCSE Word Banks)
+ * - Pages 30 & 31: Master Cartographic Atlas 2 — 1967 Six Day War (Occupied Territories) vs. 1995 Oslo West Bank
+ * - Page 32: Master Historiographical Debates (Traditional vs New Historians) & Final Revision Checklist
  *
  * Strict Monochrome / Black & White Styling:
  * - Designed for optimal high-contrast professional printing with zero color reliance.
  * - Enriched with 100% of the facts, metrics, and demographics from the official Pearson Revision Guide.
+ * - Zero exam questions, zero model answers.
  */
 
 const fs = require('fs');
@@ -27,9 +29,13 @@ const {
   renderPage1,
   renderPage2,
   renderPage3,
+  renderPage4,
+  renderPage5,
   renderSpreadLeft,
   renderSpreadRight,
-  renderPage28,
+  renderPage30,
+  renderPage31,
+  renderPage32,
 } = require('./visual_guides/cme/cme_renderers.cjs');
 
 const kt1Spreads = require('./visual_guides/cme/cme_spreads_kt1.cjs');
@@ -39,8 +45,21 @@ const kt3Spreads = require('./visual_guides/cme/cme_spreads_kt3.cjs');
 const SPREADS = [...kt1Spreads, ...kt2Spreads, ...kt3Spreads];
 
 const ROOT_DIR = path.join(__dirname, '..');
-const PDF_OUT_PUBLIC = path.join(ROOT_DIR, 'public', 'pdfs', 'cme_visual_revision_guide.pdf');
+const PDF_OUT_PUBLIC_LEGACY = path.join(
+  ROOT_DIR,
+  'public',
+  'pdfs',
+  'cme_visual_revision_guide.pdf',
+);
+const PDF_OUT_PUBLIC = path.join(ROOT_DIR, 'public', 'pdfs', 'cme_revision_guide.pdf');
 const PDF_OUT_PUBLIC_CME = path.join(
+  ROOT_DIR,
+  'public',
+  'pdfs',
+  'cme_new',
+  'cme_revision_guide.pdf',
+);
+const PDF_OUT_PUBLIC_CME_LEGACY = path.join(
   ROOT_DIR,
   'public',
   'pdfs',
@@ -52,9 +71,17 @@ const PDF_OUT_UNIT = path.join(
   'public',
   'units',
   'cme_new',
+  'edexcel_cme_revision_guide.pdf',
+);
+const PDF_OUT_UNIT_LEGACY = path.join(
+  ROOT_DIR,
+  'public',
+  'units',
+  'cme_new',
   'edexcel_cme_visual_revision_and_exam_guide.pdf',
 );
-const HTML_OUT_PUBLIC = path.join(
+const HTML_OUT_PUBLIC = path.join(ROOT_DIR, 'public', 'units', 'cme_new', 'revision_guide.html');
+const HTML_OUT_PUBLIC_LEGACY = path.join(
   ROOT_DIR,
   'public',
   'units',
@@ -70,7 +97,7 @@ const GDRIVE_DIRS = [
 function generateFullHTML() {
   let pagesHtml = '';
 
-  // Page 1: Official Examination Cover with Candidate Box at Very Top, Photos & Large Spec Checklist
+  // Page 1: Official Examination Cover with Candidate Box, Photos & Large Spec Checklist
   pagesHtml += renderPage1();
 
   // Page 2: Paper 2 Period Study Blueprint & 4 Non-Negotiable Success Principles
@@ -79,22 +106,30 @@ function generateFullHTML() {
   // Page 3: Thematic Chronology Matrix (1945–1995) + Examiner Synoptic Takeaway
   pagesHtml += renderPage3();
 
-  // Pages 4–27: 12 Pure Double-Page Revision Spreads
+  // Pages 4 & 5: Master Cartographic Atlas 1 (1947 UN Partition vs. 1949 Armistice Green Line)
+  pagesHtml += renderPage4();
+  pagesHtml += renderPage5();
+
+  // Pages 6–29: 12 Pure Double-Page Revision Spreads (Spreads 1 to 12)
   SPREADS.forEach((spread, idx) => {
-    const leftPageNum = 4 + idx * 2;
+    const leftPageNum = 6 + idx * 2;
     const rightPageNum = leftPageNum + 1;
     pagesHtml += renderSpreadLeft(spread, leftPageNum);
     pagesHtml += renderSpreadRight(spread, rightPageNum);
   });
 
-  // Page 28: Master Historiographical Debates & Final Revision Checklist
-  pagesHtml += renderPage28();
+  // Pages 30 & 31: Master Cartographic Atlas 2 (1967 Six Day War vs. 1995 Oslo Accords)
+  pagesHtml += renderPage30();
+  pagesHtml += renderPage31();
+
+  // Page 32: Master Historiographical Debates & Final Revision Checklist
+  pagesHtml += renderPage32();
 
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Pearson Edexcel GCSE (9–1) History &bull; Conflict in the Middle East, 1945–1995 &bull; Visual Revision &amp; Exam Guide</title>
+  <title>Pearson Edexcel GCSE (9–1) History &bull; Option P5: Conflict in the Middle East, 1945–1995 &bull; Complete Revision Guide</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&display=swap" rel="stylesheet">
@@ -113,11 +148,12 @@ function generateFullHTML() {
 // =============================================================================
 async function run() {
   console.log('====================================================');
-  console.log('🚀 COMPILING CME VISUAL REVISION & EXAM GUIDE (28 PAGES, MONOCHROME)');
+  console.log('🚀 COMPILING CME REVISION GUIDE (32 PAGES, CARTOGRAPHIC ATLAS, MONOCHROME)');
   console.log('====================================================');
 
   const html = generateFullHTML();
   fs.writeFileSync(HTML_OUT_PUBLIC, html);
+  fs.writeFileSync(HTML_OUT_PUBLIC_LEGACY, html);
   console.log(`✅ Generated standalone HTML: ${HTML_OUT_PUBLIC}`);
 
   console.log('🌐 Launching headless browser with Puppeteer...');
@@ -131,7 +167,7 @@ async function run() {
   await page.goto(pathToFileURL(HTML_OUT_PUBLIC).href, { waitUntil: 'networkidle0' });
   await page.evaluateHandle('document.fonts.ready');
 
-  // Automated Overflow Check (Strict 1123px Limit)
+  // Automated Overflow Check (Strict 1123px Limit across all 32 pages)
   const overflowReports = await page.evaluate(() => {
     const pages = Array.from(document.querySelectorAll('.page'));
     const overflows = [];
@@ -161,7 +197,7 @@ async function run() {
     throw new Error(`PDF Generation halted due to page overflow:\n${details}`);
   }
   console.log(
-    '✅ Automated Overflow Check: All 28 pages fit cleanly within 1123px bounds (0 overflows)!',
+    '✅ Automated Overflow Check: All 32 pages fit cleanly within 1123px bounds (0 overflows)!',
   );
 
   // Export PDF to unit directory
@@ -174,24 +210,33 @@ async function run() {
   });
   console.log(`📕 Exported unit PDF: ${PDF_OUT_UNIT}`);
 
+  // Maintain legacy path copy
+  fs.copyFileSync(PDF_OUT_UNIT, PDF_OUT_UNIT_LEGACY);
+
   // Mirror to public/pdfs
   fs.copyFileSync(PDF_OUT_UNIT, PDF_OUT_PUBLIC);
+  fs.copyFileSync(PDF_OUT_UNIT, PDF_OUT_PUBLIC_LEGACY);
   console.log(`📋 Synced PDF to public/pdfs/: ${PDF_OUT_PUBLIC}`);
+  console.log(`📋 Synced legacy PDF alias to public/pdfs/: ${PDF_OUT_PUBLIC_LEGACY}`);
 
   const publicCmeDir = path.dirname(PDF_OUT_PUBLIC_CME);
   if (!fs.existsSync(publicCmeDir)) fs.mkdirSync(publicCmeDir, { recursive: true });
   fs.copyFileSync(PDF_OUT_UNIT, PDF_OUT_PUBLIC_CME);
+  fs.copyFileSync(PDF_OUT_UNIT, PDF_OUT_PUBLIC_CME_LEGACY);
   console.log(`📋 Synced PDF to public/pdfs/cme_new/: ${PDF_OUT_PUBLIC_CME}`);
 
   // Mirror to Google Drive Department File
-  const canonicalName = 'Conflict in the Middle East Visual Revision & Exam Guide.pdf';
+  const canonicalName = 'Conflict in the Middle East Revision Guide.pdf';
+  const legacyCanonicalName = 'Conflict in the Middle East Visual Revision & Exam Guide.pdf';
   for (const driveDir of GDRIVE_DIRS) {
     try {
       if (fs.existsSync(driveDir)) {
         console.log(`\n☁️ Syncing freshly compiled guide to Google Drive: ${driveDir}`);
+        fs.copyFileSync(PDF_OUT_UNIT, path.join(driveDir, 'cme_revision_guide.pdf'));
         fs.copyFileSync(PDF_OUT_UNIT, path.join(driveDir, 'cme_visual_revision_guide.pdf'));
         fs.copyFileSync(PDF_OUT_UNIT, path.join(driveDir, canonicalName));
-        console.log(`   ✅ Synced master PDF (both short and canonical names) to Google Drive.`);
+        fs.copyFileSync(PDF_OUT_UNIT, path.join(driveDir, legacyCanonicalName));
+        console.log(`   ✅ Synced master PDF (both revision and legacy names) to Google Drive.`);
       }
     } catch (err) {
       console.warn(`   ⚠️ Could not copy to ${driveDir}: ${err.message}`);
@@ -200,7 +245,7 @@ async function run() {
 
   await browser.close();
   console.log('\n====================================================');
-  console.log('🎉 CME PILLAR 1 GENERATION COMPLETE (28 PAGES, MONOCHROME, 0 OVERFLOWS)');
+  console.log('🎉 CME 32-PAGE REVISION GUIDE GENERATION COMPLETE (0 OVERFLOWS, 4 MAP ATLASES)');
   console.log('====================================================');
 }
 
