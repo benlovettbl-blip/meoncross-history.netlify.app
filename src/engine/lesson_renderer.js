@@ -2803,8 +2803,9 @@ export function renderLesson(lesson) {
             return;
           }
           if (task.type === 'multiple_choice') {
+            const mcPrefix = task.qNum ? `Q${task.qNum}. ` : '';
             extrasHtml += `<div style="margin-bottom: 20px; background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
-                 <h4 style="margin-top:0; color:#0f172a;"><i class="fa-solid fa-list-check"></i> ${task.text || task.question || ''}</h4>
+                 <h4 style="margin-top:0; color:#0f172a;"><i class="fa-solid fa-list-check"></i> ${mcPrefix}${task.text || task.question || ''}</h4>
                  ${task.questions
                    .map(
                      (q, qIdx) => `
@@ -2895,8 +2896,9 @@ export function renderLesson(lesson) {
             return;
           }
           if (task.type === 'think_pair_share') {
+            const tpsPrefix = task.qNum ? `Q${task.qNum}. ` : '';
             extrasHtml += `<div style="margin-bottom: 20px; background: #ecfdf5; padding: 15px; border-radius: 8px; border: 2px solid #10b981;">
-                 <h4 style="margin-top:0; color:#065f46;"><i class="fa-solid fa-users"></i> Think-Pair-Share</h4>
+                 <h4 style="margin-top:0; color:#065f46;"><i class="fa-solid fa-users"></i> ${tpsPrefix}Think-Pair-Share</h4>
                  <p style="font-weight:bold; color:#0f172a; font-size:1.1rem;">${task.text || task.question}</p>
                  <div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px; margin-top:15px;">
                    <div style="background:white; padding:10px; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.1);">
@@ -2910,8 +2912,9 @@ export function renderLesson(lesson) {
             return;
           }
           if (task.type === 'drawing') {
+            const drawPrefix = task.qNum ? `Q${task.qNum}. ` : '';
             extrasHtml += `<div style="margin-bottom: 20px; background: #fffbeb; padding: 15px; border-radius: 8px; border: 2px dashed #f59e0b; text-align:center;">
-                 <h4 style="margin-top:0; color:#b45309;"><i class="fa-solid fa-palette"></i> Drawing Task</h4>
+                 <h4 style="margin-top:0; color:#b45309;"><i class="fa-solid fa-palette"></i> ${drawPrefix}Drawing Task</h4>
                  <p style="font-weight:bold; color:#0f172a; font-size:1.05rem;">${task.text || task.question}</p>
                  <div style="margin:20px auto; width:80%; height:200px; background:white; border:1px solid #d1d5db; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#9ca3af; font-style:italic;">
                    [Draw your response in your workbook]
@@ -3254,6 +3257,7 @@ export function renderLesson(lesson) {
             return;
           }
           const qPrefix = task.qNum ? `Q${task.qNum}. ` : '';
+          const cleanTaskText = (task.text || task.question || '').replace(/^Q\d+[\.\:]\s*/i, '');
           const ansId = `ans-emb-${index}-${tIdx}`;
           const starterText = task.starter || task.sentence_starter;
           const starterBtn = starterText
@@ -3292,7 +3296,7 @@ export function renderLesson(lesson) {
           extrasHtml += `
                <div style="margin-bottom: 10px;">
                  ${flowchartHtml}
-                 <div style="font-size: 1.05rem; line-height: 1.6; color: #1e293b; margin-bottom: 8px;">${window.formatBold(qPrefix + (task.text || task.question || ''))}</div>
+                 <div style="font-size: 1.05rem; line-height: 1.6; color: #1e293b; margin-bottom: 8px;">${window.formatBold(qPrefix + cleanTaskText)}</div>
                  <button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-reveal" data-action="toggle-element" data-target-id="${ansId}"><i class="fa-solid fa-eye"></i> Show</button>
                  ${starterBtn}
                  ${starterDiv}
