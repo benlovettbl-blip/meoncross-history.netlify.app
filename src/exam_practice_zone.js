@@ -1056,51 +1056,67 @@ export function renderExamPracticeZone(container, unitData, initialQuestion = nu
   // Render Mock Exams Section
   if (unitData.mock_exams && unitData.mock_exams.length > 0) {
     const mocksHtml = `
-      <div style="margin-top: 50px; background: #fff; padding: 30px; border-radius: 16px; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; color: #1e293b; margin-top: 0; margin-bottom: 20px;">
-          <i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> Printable Mock Exams
-        </h2>
-        <p style="color: #475569; font-size: 1.1rem; margin-bottom: 25px;">Generate completely copyright-free, print-ready PDF replicas of past papers.</p>
+      <div style="margin-top: 50px; background: #ffffff; padding: 28px; border-radius: 4px; border: 2px solid #000000; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+        <div style="border-bottom: 2px solid #000000; padding-bottom: 12px; margin-bottom: 20px;">
+          <div style="font-size: 0.75rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #000000;">
+            PEARSON EDEXCEL GCSE (9–1) HISTORY
+          </div>
+          <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.8rem; font-weight: 900; color: #000000; margin: 4px 0 0 0;">
+            Printable Mock Examination Papers
+          </h2>
+        </div>
+        <p style="color: #111827; font-size: 1rem; margin-bottom: 24px; line-height: 1.5;">Authentic past-paper replicas featuring source booklets, question papers, and teacher mark schemes for exam conditions.</p>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
           ${unitData.mock_exams
             .map(
               (mock) => `
-            <div style="border: 2px solid #e2e8f0; border-radius: 12px; padding: 20px; background: #f8fafc; display: flex; flex-direction: column;">
-              <h3 style="margin-top: 0; color: #0f172a; font-size: 1.3rem;">${mock.title}</h3>
-              ${
-                mock.paper_reference || mock.time_minutes
-                  ? `<p style="color: #64748b; font-size: 1rem; margin-bottom: 20px; flex-grow: 1;">
-                ${mock.paper_reference ? `<strong>Paper Ref:</strong> ${mock.paper_reference}<br>` : ''}
-                ${mock.time_minutes ? `<strong>Time:</strong> ${mock.time_minutes} minutes<br>` : ''}
-                ${mock.total_marks ? `<strong>Marks:</strong> ${mock.total_marks} marks` : ''}
-              </p>`
-                  : '<div style="flex-grow: 1;"></div>'
-              }
-              <a href="units/${unitData.id || window.currentUnitId}/${mock.id}.html" target="_blank" class="main-btn epz-btn" style="display: block; text-align: center; text-decoration: none; background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 12px 20px; font-size: 1.1rem; border-radius: 8px; font-weight: 600; margin-bottom: 10px;">
-                <i class="fa-solid fa-print"></i> Generate Printable PDF
-              </a>
-              ${
-                mock.has_mark_scheme ||
-                (mock.section_b &&
-                  mock.section_b.questions &&
-                  mock.section_b.questions.some(
-                    (q) =>
-                      q.model_answer ||
-                      (q.type === 'either_or' && (q.q5?.model_answer || q.q6?.model_answer)),
-                  )) ||
-                (mock.questions &&
-                  mock.questions.some(
-                    (q) =>
-                      q.model_answer ||
-                      (q.type === 'essay_choice' && q.options?.some((opt) => opt.model_answer)),
-                  ))
-                  ? `
-              <a href="units/${unitData.id || window.currentUnitId}/${mock.id}_mark_scheme.html" target="_blank" class="main-btn epz-btn" style="display: block; text-align: center; text-decoration: none; background: linear-gradient(135deg, #002855, #003b7a); color: white; padding: 12px 20px; font-size: 1.1rem; border-radius: 8px; font-weight: 600;">
-                <i class="fa-solid fa-chalkboard-user"></i> Teacher Mark Scheme
-              </a>
-              `
-                  : ''
-              }
+            <div style="border: 2px solid #000000; border-radius: 4px; padding: 20px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between; gap: 14px;">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                  <span style="font-size: 0.7rem; font-weight: 800; background: #000000; color: #ffffff; padding: 2px 7px; border-radius: 2px; text-transform: uppercase;">
+                    OFFICIAL MOCK
+                  </span>
+                  <span style="font-size: 0.8rem; font-weight: 800; color: #000000;">
+                    ${mock.paper_reference || '1HI0'}
+                  </span>
+                </div>
+                <h3 style="margin: 0 0 10px 0; color: #000000; font-size: 1.2rem; font-weight: 800; font-family: 'Outfit', sans-serif;">${mock.title}</h3>
+                ${
+                  mock.paper_reference || mock.time_minutes
+                    ? `<div style="background: #f4f4f5; border: 1px solid #d1d5db; border-radius: 3px; padding: 8px 12px; font-size: 0.82rem; color: #000000; margin-bottom: 15px; font-weight: 600; display: flex; justify-content: space-between;">
+                  <span><strong>Time:</strong> ${mock.time_minutes || 80} mins</span>
+                  <span><strong>Marks:</strong> ${mock.total_marks || 52} marks</span>
+                </div>`
+                    : ''
+                }
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <a href="units/${unitData.id || window.currentUnitId}/${mock.id}.html" target="_blank" style="display: block; text-align: center; text-decoration: none; background: #000000; color: #ffffff; border: 2px solid #000000; padding: 11px 16px; font-size: 0.9rem; border-radius: 4px; font-weight: 800; transition: background 0.15s ease;">
+                  Open Question Paper
+                </a>
+                ${
+                  mock.has_mark_scheme ||
+                  (mock.section_b &&
+                    mock.section_b.questions &&
+                    mock.section_b.questions.some(
+                      (q) =>
+                        q.model_answer ||
+                        (q.type === 'either_or' && (q.q5?.model_answer || q.q6?.model_answer)),
+                    )) ||
+                  (mock.questions &&
+                    mock.questions.some(
+                      (q) =>
+                        q.model_answer ||
+                        (q.type === 'essay_choice' && q.options?.some((opt) => opt.model_answer)),
+                    ))
+                    ? `
+                <a href="units/${unitData.id || window.currentUnitId}/${mock.id}_mark_scheme.html" target="_blank" style="display: block; text-align: center; text-decoration: none; background: #ffffff; color: #000000; border: 2px solid #000000; padding: 9px 16px; font-size: 0.88rem; border-radius: 4px; font-weight: 800; transition: background 0.15s ease;">
+                  Teacher Mark Scheme
+                </a>
+                `
+                    : ''
+                }
+              </div>
             </div>
           `,
             )

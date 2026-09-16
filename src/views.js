@@ -1579,6 +1579,7 @@ window.hubExamTimerState = window.hubExamTimerState || {
   totalSeconds: 4800,
   initialSeconds: 4800,
   isRunning: false,
+  soundEnabled: true,
 };
 
 window.toggleHubExamClock = function (action, defaultMinutes = 80) {
@@ -1586,6 +1587,7 @@ window.toggleHubExamClock = function (action, defaultMinutes = 80) {
   const display = document.getElementById('hub-exam-clock-display');
   const startBtn = document.getElementById('hub-exam-clock-start');
   const pauseBtn = document.getElementById('hub-exam-clock-pause');
+  const soundBtn = document.getElementById('hub-exam-clock-sound');
   const alertBanner = document.getElementById('hub-exam-clock-pacing-alert');
 
   const formatTime = (secs) => {
@@ -1602,14 +1604,12 @@ window.toggleHubExamClock = function (action, defaultMinutes = 80) {
     if (display) {
       display.textContent = formatTime(state.totalSeconds);
       if (state.totalSeconds === 0) {
-        display.style.color = '#ef4444';
-        display.textContent = "00:00 (Time's Up!)";
+        display.style.color = '#f87171';
+        display.textContent = "00:00 (TIME'S UP)";
       } else if (state.totalSeconds <= 300) {
-        display.style.color = '#ef4444';
-      } else if (state.totalSeconds <= 900) {
-        display.style.color = '#f59e0b';
+        display.style.color = '#facc15';
       } else {
-        display.style.color = '#38bdf8';
+        display.style.color = '#ffffff';
       }
     }
   };
@@ -1629,17 +1629,24 @@ window.toggleHubExamClock = function (action, defaultMinutes = 80) {
         state.totalSeconds--;
         updateDisplay();
 
-        // 25-Minute Section A transition check (when starting from 80m = 4800s, 25m elapsed = 3300s remaining)
-        if (state.initialSeconds === 4800 && state.totalSeconds === 3300) {
-          playDoubleChime();
+        // Section A milestone check
+        if (
+          state.initialSeconds === 4800 &&
+          (state.totalSeconds === 3300 || state.totalSeconds === 3000)
+        ) {
+          if (state.soundEnabled) playDoubleChime();
           if (alertBanner) {
+            const secInfo =
+              state.totalSeconds === 3300
+                ? 'Section A (Western Front) complete &bull; 55m remaining for Section B (Thematic Study)'
+                : 'Section A complete &bull; 50m remaining for Section B';
             alertBanner.innerHTML = `
-              <div style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #ffffff; padding: 10px 18px; border-radius: 8px; font-weight: 700; font-size: 0.92rem; display: flex; align-items: center; justify-content: space-between; gap: 12px; box-shadow: 0 4px 15px rgba(245,158,11,0.4); border: 1.5px solid rgba(255,255,255,0.3);">
+              <div style="background: #000000; color: #ffffff; padding: 10px 18px; border-radius: 4px; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 2px solid #ffffff;">
                 <div style="display: flex; align-items: center; gap: 10px;">
-                  <i class="fa-solid fa-bell" style="font-size: 1.2rem; animation: ring 1s ease infinite;"></i>
-                  <span><strong>🔔 PACING CHIME (25 Mins Elapsed):</strong> Section A is complete! Time to turn to <strong>Section B (Thematic Study)</strong> &bull; 55 mins remaining.</span>
+                  <span style="background: #ffffff; color: #000000; padding: 2px 6px; font-weight: 800; font-size: 0.75rem; text-transform: uppercase;">PACING NOTICE</span>
+                  <span><strong>SECTION TRANSITION:</strong> ${secInfo}</span>
                 </div>
-                <button type="button" onclick="this.parentElement.parentElement.style.display='none'" style="background: rgba(0,0,0,0.2); border: none; color: white; padding: 4px 8px; border-radius: 4px; cursor: pointer;">Dismiss</button>
+                <button type="button" onclick="this.parentElement.parentElement.style.display='none'" style="background: #374151; border: 1px solid #9ca3af; color: white; padding: 4px 10px; border-radius: 3px; cursor: pointer; font-size: 0.8rem; font-weight: 700;">Dismiss</button>
               </div>
             `;
             alertBanner.style.display = 'block';
@@ -1648,38 +1655,39 @@ window.toggleHubExamClock = function (action, defaultMinutes = 80) {
 
         // 5-Minute warning check
         if (state.totalSeconds === 300) {
-          playDoubleChime();
+          if (state.soundEnabled) playDoubleChime();
           if (alertBanner) {
             alertBanner.innerHTML = `
-              <div style="background: #ef4444; color: #ffffff; padding: 10px 18px; border-radius: 8px; font-weight: 700; font-size: 0.92rem; display: flex; align-items: center; justify-content: space-between; gap: 12px; box-shadow: 0 4px 15px rgba(239,68,68,0.4); border: 1.5px solid rgba(255,255,255,0.3);">
+              <div style="background: #000000; color: #ffffff; padding: 10px 18px; border-radius: 4px; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 2px solid #facc15;">
                 <div style="display: flex; align-items: center; gap: 10px;">
-                  <i class="fa-solid fa-triangle-exclamation" style="font-size: 1.2rem;"></i>
-                  <span><strong>⚠️ 5 MINUTES REMAINING:</strong> Conclude essays, verify sustained judgements, and check SPaG!</span>
+                  <span style="background: #facc15; color: #000000; padding: 2px 6px; font-weight: 800; font-size: 0.75rem; text-transform: uppercase;">WARNING</span>
+                  <span><strong>5 MINUTES REMAINING:</strong> Conclude final evaluations, verify sustained criteria judgements, and check SPaG.</span>
                 </div>
-                <button type="button" onclick="this.parentElement.parentElement.style.display='none'" style="background: rgba(0,0,0,0.2); border: none; color: white; padding: 4px 8px; border-radius: 4px; cursor: pointer;">Dismiss</button>
+                <button type="button" onclick="this.parentElement.parentElement.style.display='none'" style="background: #374151; border: 1px solid #9ca3af; color: white; padding: 4px 10px; border-radius: 3px; cursor: pointer; font-size: 0.8rem; font-weight: 700;">Dismiss</button>
               </div>
             `;
             alertBanner.style.display = 'block';
           }
         }
 
+        // Time's Up
         if (state.totalSeconds === 0) {
-          playDoubleChime();
+          if (state.soundEnabled) playDoubleChime();
           clearInterval(state.interval);
           state.interval = null;
           state.isRunning = false;
           if (alertBanner) {
             alertBanner.innerHTML = `
-              <div style="background: #ef4444; color: #ffffff; padding: 12px 18px; border-radius: 8px; font-weight: 800; font-size: 1rem; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 20px rgba(239,68,68,0.5);">
-                <i class="fa-solid fa-hourglass-end" style="font-size: 1.3rem;"></i>
-                <span>⏰ TIME'S UP! All pens down. Examination concluded.</span>
+              <div style="background: #000000; color: #ffffff; padding: 12px 18px; border-radius: 4px; font-weight: 800; font-size: 0.95rem; display: flex; align-items: center; gap: 10px; border: 2px solid #ef4444;">
+                <span style="background: #ef4444; color: #ffffff; padding: 3px 8px; font-weight: 900; font-size: 0.78rem; text-transform: uppercase;">EXAM CONCLUDED</span>
+                <span>TIME IS UP: All pens down. Examination concluded.</span>
               </div>
             `;
             alertBanner.style.display = 'block';
           }
           if (startBtn) {
             startBtn.style.display = 'inline-flex';
-            startBtn.innerHTML = '<i class="fa-solid fa-rotate-right"></i> Restart';
+            startBtn.textContent = 'Restart Clock';
           }
           if (pauseBtn) pauseBtn.style.display = 'none';
         }
@@ -1692,7 +1700,7 @@ window.toggleHubExamClock = function (action, defaultMinutes = 80) {
     state.isRunning = false;
     if (startBtn) {
       startBtn.style.display = 'inline-flex';
-      startBtn.innerHTML = '<i class="fa-solid fa-play"></i> Resume';
+      startBtn.textContent = 'Resume Clock';
     }
     if (pauseBtn) pauseBtn.style.display = 'none';
   } else if (action === 'reset') {
@@ -1705,12 +1713,20 @@ window.toggleHubExamClock = function (action, defaultMinutes = 80) {
     if (alertBanner) alertBanner.style.display = 'none';
     if (startBtn) {
       startBtn.style.display = 'inline-flex';
-      startBtn.innerHTML = '<i class="fa-solid fa-play"></i> Start Clock';
+      startBtn.textContent = 'Start Clock';
     }
     if (pauseBtn) pauseBtn.style.display = 'none';
   } else if (action === 'add5') {
     state.totalSeconds += 300;
     updateDisplay();
+  } else if (action === 'add20') {
+    state.totalSeconds += 1200;
+    updateDisplay();
+  } else if (action === 'toggleSound') {
+    state.soundEnabled = !state.soundEnabled;
+    if (soundBtn) {
+      soundBtn.textContent = state.soundEnabled ? '🔊 Sound: On' : '🔇 Sound: Off';
+    }
   }
 };
 
@@ -1718,7 +1734,7 @@ export async function renderMockExamsView() {
   const contentArea = document.getElementById('main-content');
   if (!contentArea) return;
   contentArea.innerHTML = '';
-  contentArea.style.paddingTop = '1rem';
+  contentArea.style.paddingTop = '0';
 
   const unitData = state.activeUnitData || {};
   const unitId = state.selectedUnitId || window.currentUnitId || 'cme_new';
@@ -1726,11 +1742,10 @@ export async function renderMockExamsView() {
 
   if (!mocks || mocks.length === 0) {
     contentArea.innerHTML = `
-      <div style="padding: 40px; text-align: center; background: #fff; border-radius: 12px; margin: 20px auto; max-width: 800px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-        <i class="fa-solid fa-file-circle-xmark fa-3x" style="color: #cbd5e1; margin-bottom: 15px;"></i>
-        <h2 style="color: #0f172a; margin-top: 0;">No Mock Exams Available</h2>
-        <p style="color: #64748b;">There are currently no mock exam papers registered for this unit.</p>
-        <button class="btn-pedagogy-primary" data-action="switch-view" data-view="dashboard" style="margin-top: 15px; padding: 10px 20px; border-radius: 6px; cursor: pointer;">Back to Dashboard</button>
+      <div style="padding: 40px; text-align: center; background: #ffffff; border: 2px solid #000000; border-radius: 4px; margin: 40px auto; max-width: 800px;">
+        <h2 style="color: #000000; margin-top: 0; font-family: 'Outfit', sans-serif;">No Mock Exam Papers Registered</h2>
+        <p style="color: #374151; font-size: 1rem;">There are currently no mock exam papers registered for this unit.</p>
+        <button class="btn" data-action="switch-view" data-view="dashboard" style="margin-top: 15px; padding: 10px 20px; background: #000000; color: #ffffff; border: 2px solid #000000; border-radius: 4px; cursor: pointer; font-weight: 700;">Back to Dashboard</button>
       </div>
     `;
     return;
@@ -1738,44 +1753,45 @@ export async function renderMockExamsView() {
 
   // Determine unit-specific exam metadata
   let specTitle = 'Edexcel GCSE (9–1) History';
-  let headerColor = '#1e3a8a';
-  let headerGrad = 'linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%)';
+  let specPaperRef = '1HI0';
   let defaultTime = '1 Hour 20 Mins';
   let defaultMarks = '52 Marks';
+  let pacingSummary = 'Section A: 30 mins &bull; Section B: 50 mins';
 
   if (unitId === 'cme_new') {
-    specTitle = 'Paper 2: Conflict in the Middle East, 1945–1995 (1HI0/21)';
-    headerColor = '#0284c7';
-    headerGrad = 'linear-gradient(135deg, #0284c7 0%, #0369a1 100%)';
+    specTitle = 'Paper 2: Conflict in the Middle East, 1945–1995';
+    specPaperRef = '1HI0/21';
     defaultTime = '55 Minutes';
     defaultMarks = '32 Marks';
+    pacingSummary = 'Total Exam Duration: 55 mins &bull; Q1(a) 5m, Q1(b) 15m, Q2 15m, Q3 20m';
   } else if (unitId === 'weimar_nazi_germany') {
-    specTitle = 'Paper 3: Weimar and Nazi Germany, 1918–1939 (1HI0/31)';
-    headerColor = '#7f1d1d';
-    headerGrad = 'linear-gradient(135deg, #7f1d1d 0%, #1e1b4b 100%)';
+    specTitle = 'Paper 3: Weimar and Nazi Germany, 1918–1939';
+    specPaperRef = '1HI0/31';
     defaultTime = '1 Hour 20 Mins';
     defaultMarks = '52 Marks + 4 SPaG';
+    pacingSummary =
+      'Section A: 30 mins (Q1 10m, Q2 20m) &bull; Section B: 50 mins (Q3a 15m, Q3b 5m, Q3c 5m, Q3d 25m)';
   } else if (unitId === 'eee') {
-    specTitle = 'Paper 2: Early Elizabethan England, 1558–1588 (1HI0/B4)';
-    headerColor = '#b45309';
-    headerGrad = 'linear-gradient(135deg, #b45309 0%, #1e293b 100%)';
+    specTitle = 'Paper 2: Early Elizabethan England, 1558–1588';
+    specPaperRef = '1HI0/B4';
     defaultTime = '55 Minutes';
     defaultMarks = '32 Marks';
+    pacingSummary = 'Total Exam Duration: 55 mins &bull; Q1(a)/(b) 10m, Q2 15m, Q3 30m';
   } else if (unitId === 'edexcel_medicine') {
-    specTitle = 'Paper 1: Medicine in Britain & British Sector of Western Front (1HI0/11)';
-    headerColor = '#0f766e';
-    headerGrad = 'linear-gradient(135deg, #0f766e 0%, #0f172a 100%)';
+    specTitle = 'Paper 1: Medicine in Britain, c1250–present and Western Front';
+    specPaperRef = '1HI0/11';
     defaultTime = '1 Hour 20 Mins';
     defaultMarks = '52 Marks + 4 SPaG';
+    pacingSummary = 'Section A (Western Front): 25 mins &bull; Section B (Thematic Study): 55 mins';
   } else if (unitId === 'usa') {
-    specTitle = 'Paper 3: Conflict at Home and Abroad: the USA, 1954–75 (1HI0/33)';
-    headerColor = '#1e40af';
-    headerGrad = 'linear-gradient(135deg, #1e40af 0%, #0f172a 100%)';
+    specTitle = 'Paper 3: Conflict at Home and Abroad: the USA, 1954–75';
+    specPaperRef = '1HI0/33';
     defaultTime = '1 Hour 20 Mins';
     defaultMarks = '52 Marks + 4 SPaG';
+    pacingSummary = 'Section A (Civil Rights): 30 mins &bull; Section B (Vietnam): 50 mins';
   }
 
-  const defaultMins = defaultTime.includes('55') ? 55 : defaultTime.includes('15') ? 75 : 80;
+  const defaultMins = defaultTime.includes('55') ? 55 : 80;
   if (window.hubExamTimerState && window.hubExamTimerState.interval) {
     clearInterval(window.hubExamTimerState.interval);
   }
@@ -1784,113 +1800,114 @@ export async function renderMockExamsView() {
     totalSeconds: defaultMins * 60,
     initialSeconds: defaultMins * 60,
     isRunning: false,
+    soundEnabled: true,
   };
 
   let html = `
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 15px 40px 15px;">
-      <!-- Welcome Banner -->
-      <div style="background: ${headerGrad}; color: white; padding: 35px 30px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.15);">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 8px; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
-          <span style="font-size: 0.82rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #93c5fd;">
-            ${specTitle}
-          </span>
-          <span style="font-size: 0.75rem; background: rgba(255,255,255,0.2); backdrop-filter: blur(4px); padding: 3px 10px; border-radius: 4px; font-weight: 700; border: 1px solid rgba(255,255,255,0.3);">
-            ${mocks.length} Official Mock Papers Available
-          </span>
+    <!-- Docked Top Invigilator Toolbar -->
+    <div id="docked-invigilator-hud" style="position: sticky; top: 0; z-index: 1000; background: #000000; color: #ffffff; border-bottom: 2px solid #ffffff; box-shadow: 0 4px 20px rgba(0,0,0,0.5); padding: 12px 24px;">
+      <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+        <div style="display: flex; align-items: center; gap: 18px;">
+          <div>
+            <div style="font-size: 0.68rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #9ca3af;">
+              PEARSON EXAM HALL CLOCK &bull; ${specPaperRef}
+            </div>
+            <div id="hub-exam-clock-display" style="font-size: 1.95rem; font-weight: 800; font-family: 'Courier New', Courier, monospace; letter-spacing: 2px; color: #ffffff; line-height: 1.05; margin-top: 2px;">
+              ${defaultMins === 55 ? '55:00' : '01:20:00'}
+            </div>
+          </div>
+          <div style="border-left: 1px solid #374151; padding-left: 16px; font-size: 0.78rem; color: #d1d5db; line-height: 1.4;">
+            <div style="font-weight: 800; color: #ffffff; text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.5px;">Pacing Schedule</div>
+            <div>${pacingSummary}</div>
+          </div>
         </div>
-        <h1 style="margin: 0; font-size: 1.85rem; font-weight: 800; line-height: 1.25; font-family: 'Outfit', sans-serif;">
-          GCSE Mock Examination Papers
-        </h1>
-        <p style="margin: 8px 0 0 0; font-size: 1rem; color: #e2e8f0; max-width: 850px; line-height: 1.45;">
-          Authentic Pearson Edexcel GCSE (9–1) past-paper format replicas featuring full source booklets, question papers, and comprehensive teacher mark schemes. Ready to view, print for exam conditions, or use in classroom mock assessment cycles.
+
+        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+          <button type="button" class="btn" id="hub-exam-clock-start" onclick="window.toggleHubExamClock('start', ${defaultMins})" style="background: #ffffff; color: #000000; padding: 7px 18px; border-radius: 3px; font-weight: 800; font-size: 0.85rem; border: 2px solid #ffffff; cursor: pointer;">
+            Start Clock
+          </button>
+          <button type="button" class="btn" id="hub-exam-clock-pause" onclick="window.toggleHubExamClock('pause')" style="background: #facc15; color: #000000; padding: 7px 14px; border-radius: 3px; font-weight: 800; font-size: 0.85rem; border: 2px solid #facc15; cursor: pointer; display: none;">
+            Pause
+          </button>
+          <button type="button" class="btn" id="hub-exam-clock-reset" onclick="window.toggleHubExamClock('reset', ${defaultMins})" style="background: transparent; color: #d1d5db; padding: 7px 12px; border-radius: 3px; font-weight: 700; font-size: 0.82rem; border: 1.5px solid #4b5563; cursor: pointer;">
+            Reset
+          </button>
+          <button type="button" class="btn" onclick="window.toggleHubExamClock('add5')" style="background: transparent; color: #ffffff; border: 1.5px solid #6b7280; padding: 7px 11px; border-radius: 3px; font-weight: 700; font-size: 0.82rem; cursor: pointer;" title="Add 5 Minutes Extra Time">
+            +5m
+          </button>
+          <button type="button" class="btn" onclick="window.toggleHubExamClock('add20')" style="background: transparent; color: #ffffff; border: 1.5px solid #6b7280; padding: 7px 11px; border-radius: 3px; font-weight: 700; font-size: 0.82rem; cursor: pointer;" title="Add 20 Minutes (25% Access Arrangements)">
+            +20m (25%)
+          </button>
+          <button type="button" class="btn" id="hub-exam-clock-sound" onclick="window.toggleHubExamClock('toggleSound')" style="background: transparent; color: #ffffff; border: 1.5px solid #6b7280; padding: 7px 11px; border-radius: 3px; font-weight: 700; font-size: 0.82rem; cursor: pointer;">
+            🔊 Sound: On
+          </button>
+        </div>
+      </div>
+      <div id="hub-exam-clock-pacing-alert" style="max-width: 1200px; margin: 10px auto 0 auto; display: none;"></div>
+    </div>
+
+    <div style="max-width: 1200px; margin: 0 auto; padding: 25px 15px 40px 15px;">
+      <!-- Pearson Examination Official Masthead -->
+      <div style="background: #ffffff; color: #000000; border: 2px solid #000000; border-radius: 4px; padding: 26px 30px; margin-bottom: 24px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid #000000; padding-bottom: 12px; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+          <div>
+            <div style="font-size: 0.78rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #000000;">
+              PEARSON EDEXCEL GCSE (9–1) HISTORY
+            </div>
+            <h1 style="margin: 4px 0 0 0; font-size: 1.9rem; font-weight: 900; line-height: 1.2; font-family: 'Outfit', sans-serif; color: #000000;">
+              Official Mock Examination Papers
+            </h1>
+          </div>
+          <div style="text-align: right;">
+            <span style="display: inline-block; background: #000000; color: #ffffff; font-weight: 800; font-size: 0.75rem; letter-spacing: 1px; padding: 4px 10px; text-transform: uppercase;">
+              ${specPaperRef} &bull; ${defaultTime.toUpperCase()}
+            </span>
+            <div style="font-size: 0.82rem; font-weight: 700; color: #000000; margin-top: 4px;">
+              ${mocks.length} Practice Papers Available
+            </div>
+          </div>
+        </div>
+        <div style="font-size: 1rem; font-weight: 700; color: #000000; margin-bottom: 6px;">
+          ${specTitle}
+        </div>
+        <p style="margin: 0; font-size: 0.92rem; color: #111827; max-width: 900px; line-height: 1.5;">
+          Authentic past-paper format replicas featuring full source booklets, question papers, and comprehensive teacher mark schemes. Calibrated for timed exam hall conditions or commercial A4 printing.
         </p>
       </div>
 
-      <!-- Sub Navigation Tabs: Mock Papers vs Past Paper Matrix -->
-      <div style="display: flex; gap: 10px; margin-bottom: 25px; border-bottom: 2px solid #e2e8f0; padding-bottom: 2px; overflow-x: auto;">
-        <button id="tab-btn-official-mocks" class="btn" style="background: ${headerColor}; color: white; border: none; padding: 12px 22px; border-radius: 10px 10px 0 0; font-weight: 700; cursor: pointer; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; transition: all 0.2s;">
-          <i class="fa-solid fa-file-signature"></i> Official Mock Exam Papers
+      <!-- Sub Navigation Tabs: High-Contrast Monochrome -->
+      <div style="display: flex; gap: 8px; margin-bottom: 24px; border-bottom: 2px solid #000000; padding-bottom: 2px; overflow-x: auto;">
+        <button id="tab-btn-official-mocks" class="btn" style="background: #000000; color: #ffffff; border: 2px solid #000000; border-bottom: none; padding: 10px 20px; border-radius: 4px 4px 0 0; font-weight: 800; cursor: pointer; font-size: 0.9rem; display: flex; align-items: center; gap: 8px;">
+          Official Mock Exam Papers
         </button>
-        <button id="tab-btn-trend-radar" class="btn" style="background: transparent; color: #64748b; border: none; padding: 12px 22px; border-radius: 10px 10px 0 0; font-weight: 700; cursor: pointer; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; transition: all 0.2s;">
-          <i class="fa-solid fa-table-cells"></i> 2018–2026 Past Paper Matrix &amp; Overdue Radar
+        <button id="tab-btn-trend-radar" class="btn" style="background: #ffffff; color: #000000; border: 2px solid #000000; border-bottom: none; padding: 10px 20px; border-radius: 4px 4px 0 0; font-weight: 700; cursor: pointer; font-size: 0.9rem; display: flex; align-items: center; gap: 8px;">
+          2018–2026 Past Paper Matrix &amp; Overdue Radar
         </button>
       </div>
 
       <div id="mock-papers-wrapper">
-        <!-- Quick Assessment Specifications & Instructions -->
-        <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 18px 24px; margin-bottom: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+        <!-- Assessment Specification Quick Audit -->
+        <div style="background: #ffffff; border: 2px solid #000000; border-radius: 4px; padding: 16px 20px; margin-bottom: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px;">
           <div>
-            <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em;">Exam Timing</div>
-            <div style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-top: 2px;"><i class="fa-regular fa-clock" style="color: ${headerColor}; margin-right: 6px;"></i>${defaultTime}</div>
+            <div style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; color: #000000; letter-spacing: 1px;">Exam Timing</div>
+            <div style="font-size: 1.1rem; font-weight: 900; color: #000000; margin-top: 2px;">${defaultTime}</div>
           </div>
           <div>
-            <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em;">Total Marks Available</div>
-            <div style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-top: 2px;"><i class="fa-solid fa-award" style="color: ${headerColor}; margin-right: 6px;"></i>${defaultMarks}</div>
+            <div style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; color: #000000; letter-spacing: 1px;">Total Marks</div>
+            <div style="font-size: 1.1rem; font-weight: 900; color: #000000; margin-top: 2px;">${defaultMarks}</div>
           </div>
           <div>
-            <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em;">Print Format</div>
-            <div style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-top: 2px;"><i class="fa-solid fa-print" style="color: ${headerColor}; margin-right: 6px;"></i>A4 Booklet / Replicas</div>
+            <div style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; color: #000000; letter-spacing: 1px;">Print Format</div>
+            <div style="font-size: 1.1rem; font-weight: 900; color: #000000; margin-top: 2px;">A4 Exam Replicas</div>
           </div>
           <div>
-            <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em;">Marking Support</div>
-            <div style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin-top: 2px;"><i class="fa-solid fa-chalkboard-user" style="color: ${headerColor}; margin-right: 6px;"></i>Full Model Answers</div>
+            <div style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; color: #000000; letter-spacing: 1px;">Marking Support</div>
+            <div style="font-size: 1.1rem; font-weight: 900; color: #000000; margin-top: 2px;">Full Indicative Content</div>
           </div>
         </div>
 
-      <!-- Digital Exam Hall Clock & Timer Bar -->
-      <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #ffffff; border-radius: 10px; padding: 18px 24px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-left: 5px solid #38bdf8;">
-        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
-          <div style="display: flex; align-items: center; gap: 16px;">
-            <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); display: flex; align-items: center; justify-content: center; color: #38bdf8; font-size: 1.3rem;">
-              <i class="fa-solid fa-stopwatch-20"></i>
-            </div>
-            <div>
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <span style="font-size: 0.72rem; font-weight: 800; background: #38bdf8; color: #0f172a; padding: 2px 7px; border-radius: 3px; text-transform: uppercase;">
-                  Digital Exam Clock
-                </span>
-                <span style="font-size: 0.8rem; color: #94a3b8;">
-                  Whiteboard Projector Mode &bull; Audio Pacing Chimes Active
-                </span>
-              </div>
-              <div id="hub-exam-clock-display" style="font-size: 1.85rem; font-weight: 800; font-family: 'Courier New', Courier, monospace; letter-spacing: 2px; color: #38bdf8; line-height: 1.15; margin-top: 3px;">
-                ${defaultMins === 55 ? '55:00' : '01:20:00'}
-              </div>
-            </div>
-          </div>
-
-          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-            <button type="button" class="btn" id="hub-exam-clock-start" onclick="window.toggleHubExamClock('start', ${defaultMins})" style="background: #10b981; color: #fff; padding: 8px 16px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
-              <i class="fa-solid fa-play"></i> Start Clock
-            </button>
-            <button type="button" class="btn" id="hub-exam-clock-pause" onclick="window.toggleHubExamClock('pause')" style="background: #f59e0b; color: #fff; padding: 8px 14px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; border: none; cursor: pointer; display: none; align-items: center; gap: 6px;">
-              <i class="fa-solid fa-pause"></i> Pause
-            </button>
-            <button type="button" class="btn" id="hub-exam-clock-reset" onclick="window.toggleHubExamClock('reset', ${defaultMins})" style="background: #334155; color: #e2e8f0; padding: 8px 14px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
-              <i class="fa-solid fa-rotate-right"></i> Reset
-            </button>
-            <button type="button" class="btn" onclick="window.toggleHubExamClock('add5')" style="background: #1e293b; color: #94a3b8; border: 1px solid #475569; padding: 8px 12px; border-radius: 6px; font-weight: 600; font-size: 0.82rem; cursor: pointer;" title="Add 5 Minutes Extra Time">
-              +5m Extra Time
-            </button>
-          </div>
-        </div>
-
-        <div id="hub-exam-clock-pacing-alert" style="display: none; margin-top: 14px;"></div>
-
-        ${
-          unitId === 'edexcel_medicine'
-            ? `
-        <div style="width: 100%; margin-top: 14px; background: rgba(255,255,255,0.06); border-radius: 6px; padding: 8px 14px; display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; color: #94a3b8; border: 1px solid rgba(255,255,255,0.1); flex-wrap: wrap; gap: 8px;">
-          <span style="display: flex; align-items: center; gap: 6px;"><strong style="color: #38bdf8;"><i class="fa-solid fa-flag"></i> Section A (Western Front):</strong> 25 mins &bull; 16 marks [Q1(a)/(b) 5m, Q2(a) 15m, Q2(b) 5m]</span>
-          <span style="display: flex; align-items: center; gap: 6px;"><strong style="color: #a78bfa;"><i class="fa-solid fa-book-medical"></i> Section B (Thematic Study):</strong> 55 mins &bull; 36 marks [Q3 5m, Q4 20m, Q5/Q6 30m]</span>
-        </div>
-        `
-            : ''
-        }
-      </div>
-
-      <!-- Mock Papers Grid -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
+        <!-- Mock Papers Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
   `;
 
   mocks.forEach((mock, idx) => {
@@ -1914,58 +1931,58 @@ export async function renderMockExamsView() {
       mock.title.includes('Heat Map') ||
       mock.title.includes('Forecast');
     const badgeText = mock.title.includes('NotebookLM')
-      ? 'Prediction Model'
+      ? 'PREDICTION MODEL'
       : isRadarMock
-        ? '🎯 Radar Spec Gap'
-        : `Exam Mock ${idx + 1}`;
+        ? 'RADAR SPEC GAP'
+        : `MOCK PAPER ${idx + 1}`;
 
     html += `
-      <div style="background: #ffffff; border: 1.5px solid ${isRadarMock ? '#f59e0b' : '#cbd5e1'}; border-radius: 10px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; gap: 15px; box-shadow: ${isRadarMock ? '0 4px 15px rgba(245, 158, 11, 0.12)' : '0 4px 10px rgba(0,0,0,0.04)'}; transition: transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='${isRadarMock ? '0 4px 15px rgba(245, 158, 11, 0.12)' : '0 4px 10px rgba(0,0,0,0.04)'}';">
+      <div style="background: #ffffff; border: 2px solid #000000; border-radius: 4px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; gap: 14px;">
         <div>
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
-            <span style="font-size: 0.72rem; font-weight: 800; background: ${isRadarMock ? '#fef3c7' : headerColor + '18'}; color: ${isRadarMock ? '#b45309' : headerColor}; padding: 3px 9px; border-radius: 4px; text-transform: uppercase; border: 1px solid ${isRadarMock ? '#fde68a' : headerColor + '30'};">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+            <span style="font-size: 0.7rem; font-weight: 800; background: #000000; color: #ffffff; padding: 3px 8px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.5px;">
               ${badgeText}
             </span>
-            <span style="font-size: 0.75rem; font-weight: 700; color: #64748b;">
-              <i class="fa-solid fa-file-lines" style="color: ${headerColor}; margin-right: 4px;"></i>${mock.paper_reference || specTitle.split(':')[0]}
+            <span style="font-size: 0.8rem; font-weight: 800; color: #000000;">
+              ${mock.paper_reference || specPaperRef}
             </span>
           </div>
 
-          <h3 style="margin: 0 0 10px 0; color: #0f172a; font-size: 1.15rem; line-height: 1.35; font-family: 'Outfit', sans-serif;">
+          <h3 style="margin: 8px 0 10px 0; color: #000000; font-size: 1.15rem; font-weight: 800; line-height: 1.35; font-family: 'Outfit', sans-serif;">
             ${mock.title}
           </h3>
 
           ${
             isRadarMock
               ? `
-            <div style="font-size: 0.78rem; color: #92400e; background: #fef3c7; border: 1px solid #fde68a; border-radius: 6px; padding: 7px 10px; margin-bottom: 12px; line-height: 1.45;">
-              <i class="fa-solid fa-satellite-dish" style="margin-right: 4px; color: #d97706;"></i> <strong>Probabilistic Topic Forecast:</strong> Constructed directly from 100% unexamined syllabus criteria and overdue question patterns across 2018–2026. <em>(Revision forecast — not an official exam guarantee).</em>
+            <div style="font-size: 0.78rem; color: #000000; background: #f9fafb; border: 1.5px solid #000000; border-radius: 3px; padding: 8px 10px; margin-bottom: 12px; line-height: 1.45; font-style: italic;">
+              <strong>Topic Forecast:</strong> Target questions calibrated against 100% unexamined syllabus criteria across 2018–2026.
             </div>
           `
               : ''
           }
 
-          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px 12px; font-size: 0.8rem; color: #475569; margin-bottom: 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px;">
+          <div style="background: #f4f4f5; border: 1px solid #d1d5db; border-radius: 3px; padding: 8px 12px; font-size: 0.82rem; color: #000000; margin-bottom: 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; font-weight: 600;">
             <span><strong>Time:</strong> ${mock.time_minutes ? mock.time_minutes + ' mins' : defaultTime}</span>
             <span><strong>Marks:</strong> ${mock.total_marks ? mock.total_marks + ' marks' : defaultMarks}</span>
           </div>
         </div>
 
-        <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 5px;">
-          <a href="${fullPaperUrl}" target="_blank" style="text-align: center; text-decoration: none; background: linear-gradient(135deg, ${headerColor} 0%, #0f172a 100%); color: #ffffff; padding: 10px 14px; border-radius: 6px; font-size: 0.88rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: opacity 0.2s ease;" onmouseover="this.style.opacity='0.92';" onmouseout="this.style.opacity='1';">
-            <i class="fa-solid fa-file-pdf"></i> Open &amp; Print Question Paper
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <a href="${fullPaperUrl}" target="_blank" style="text-align: center; text-decoration: none; background: #000000; color: #ffffff; border: 2px solid #000000; padding: 10px 14px; border-radius: 4px; font-size: 0.88rem; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.15s ease;" onmouseover="this.style.background='#27272a'; this.style.borderColor='#27272a';" onmouseout="this.style.background='#000000'; this.style.borderColor='#000000';">
+            Open Question Paper
           </a>
 
           ${
             hasMs
               ? `
-            <a href="${fullMsUrl}" target="_blank" style="text-align: center; text-decoration: none; background: #f1f5f9; color: #1e293b; border: 1.5px solid #cbd5e1; padding: 9px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s ease;" onmouseover="this.style.background='#e2e8f0'; this.style.borderColor='#94a3b8';" onmouseout="this.style.background='#f1f5f9'; this.style.borderColor='#cbd5e1';">
-              <i class="fa-solid fa-chalkboard-user" style="color: ${headerColor};"></i> View Teacher Mark Scheme
+            <a href="${fullMsUrl}" target="_blank" style="text-align: center; text-decoration: none; background: #ffffff; color: #000000; border: 2px solid #000000; padding: 9px 14px; border-radius: 4px; font-size: 0.85rem; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.15s ease;" onmouseover="this.style.background='#f4f4f5';" onmouseout="this.style.background='#ffffff';">
+              Teacher Mark Scheme
             </a>
           `
               : `
-            <div style="font-size: 0.75rem; color: #94a3b8; text-align: center; font-style: italic; padding: 4px 0;">
-              Model answers integrated in unit study bank
+            <div style="font-size: 0.75rem; color: #4b5563; text-align: center; font-style: italic; padding: 4px 0;">
+              Model answers integrated in study bank
             </div>
           `
           }
@@ -1982,12 +1999,12 @@ export async function renderMockExamsView() {
       <div id="mock-trend-matrix-container" style="display: none;"></div>
 
       <!-- Bottom Actions Bar -->
-      <div style="margin-top: 35px; padding-top: 20px; border-top: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
-        <button class="btn btn-secondary" data-action="switch-view" data-view="lessons" data-unit="${unitId}" style="padding: 10px 18px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-weight: 600;">
-          <i class="fa-solid fa-arrow-left"></i> Return to Lessons
+      <div style="margin-top: 35px; padding-top: 20px; border-top: 2px solid #000000; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <button class="btn" data-action="switch-view" data-view="lessons" data-unit="${unitId}" style="padding: 9px 18px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; background: #ffffff; color: #000000; border: 2px solid #000000;">
+          &larr; Return to Lessons
         </button>
-        <button class="btn btn-secondary" data-action="switch-view" data-view="booklet" data-unit="${unitId}" style="padding: 10px 18px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: #8b5cf6; border-color: #ddd6fe;">
-          <i class="fa-solid fa-print"></i> Visit Print &amp; PDF Hub
+        <button class="btn" data-action="switch-view" data-view="booklet" data-unit="${unitId}" style="padding: 9px 18px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; background: #000000; color: #ffffff; border: 2px solid #000000;">
+          Visit Print &amp; PDF Hub
         </button>
       </div>
     </div>
@@ -2003,19 +2020,19 @@ export async function renderMockExamsView() {
 
   if (tabBtnMocks && tabBtnTrend) {
     tabBtnMocks.addEventListener('click', () => {
-      tabBtnMocks.style.background = headerColor;
-      tabBtnMocks.style.color = 'white';
-      tabBtnTrend.style.background = 'transparent';
-      tabBtnTrend.style.color = '#64748b';
+      tabBtnMocks.style.background = '#000000';
+      tabBtnMocks.style.color = '#ffffff';
+      tabBtnTrend.style.background = '#ffffff';
+      tabBtnTrend.style.color = '#000000';
       if (mockWrapper) mockWrapper.style.display = 'block';
       if (trendContainer) trendContainer.style.display = 'none';
     });
 
     tabBtnTrend.addEventListener('click', async () => {
-      tabBtnTrend.style.background = headerColor;
-      tabBtnTrend.style.color = 'white';
-      tabBtnMocks.style.background = 'transparent';
-      tabBtnMocks.style.color = '#64748b';
+      tabBtnTrend.style.background = '#000000';
+      tabBtnTrend.style.color = '#ffffff';
+      tabBtnMocks.style.background = '#ffffff';
+      tabBtnMocks.style.color = '#000000';
       if (mockWrapper) mockWrapper.style.display = 'none';
       if (trendContainer) {
         trendContainer.style.display = 'block';

@@ -491,18 +491,14 @@ export function renderWorkbooksZone(container, unitData) {
     }
 
     let mocksHubHtml = `
-      <div style="background: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px; border-top: 4px solid ${themeColor};">
-        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px;">
-          <div style="display: flex; align-items: center; gap: 15px;">
-            <div style="width: 44px; height: 44px; border-radius: 10px; background: linear-gradient(135deg, ${themeColor} 0%, #0f172a 100%); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.3rem;">
-              <i class="fa-solid fa-file-signature"></i>
-            </div>
-            <div>
-              <h2 style="color: #0f172a; margin: 0; font-size: 1.35rem;">GCSE Mock Examination Papers</h2>
-              <p style="color: #64748b; font-size: 0.95rem; margin: 4px 0 0 0;">Authentic Pearson Edexcel GCSE (9–1) past-paper format replicas featuring full source booklets, question papers, and comprehensive teacher mark schemes formatted for A4 printing.</p>
-            </div>
+      <div style="background: #ffffff; padding: 28px; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 30px; border: 2px solid #000000;">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; border-bottom: 2px solid #000000; padding-bottom: 15px;">
+          <div>
+            <div style="font-size: 0.72rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #000000;">PEARSON EDEXCEL GCSE (9–1) HISTORY</div>
+            <h2 style="color: #000000; margin: 4px 0 0 0; font-size: 1.45rem; font-weight: 900; font-family: 'Outfit', sans-serif;">GCSE Mock Examination Papers</h2>
+            <p style="color: #111827; font-size: 0.95rem; margin: 4px 0 0 0;">Authentic past-paper format replicas featuring full source booklets, question papers, and comprehensive teacher mark schemes formatted for A4 printing.</p>
           </div>
-          <span style="font-size: 0.8rem; font-weight: 700; background: #fee2e2; color: #991b1b; padding: 4px 12px; border-radius: 20px;">
+          <span style="font-size: 0.8rem; font-weight: 800; background: #000000; color: #ffffff; padding: 4px 12px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.5px;">
             ${unitData.mock_exams.length} Exam Papers Ready
           </span>
         </div>
@@ -525,40 +521,40 @@ export function renderWorkbooksZone(container, unitData) {
         mock.mark_scheme_url || `${paperUrl.replace(/\.html$/, '')}_mark_scheme.html`;
       const fullMsUrl = msFileName.startsWith('/') ? msFileName : `/units/${unitId}/${msFileName}`;
       const badgeText = mock.title.includes('NotebookLM')
-        ? 'Prediction Model'
-        : `Mock Paper ${idx + 1}`;
+        ? 'PREDICTION MODEL'
+        : `MOCK PAPER ${idx + 1}`;
 
       mocksHubHtml += `
-        <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; gap: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.03);">
+        <div style="background: #ffffff; border: 2px solid #000000; border-radius: 4px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; gap: 14px;">
           <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-              <span style="font-size: 0.75rem; font-weight: 800; background: ${themeColor}15; color: ${themeColor}; padding: 3px 8px; border-radius: 4px; border: 1px solid ${themeColor}30;">
+              <span style="font-size: 0.7rem; font-weight: 800; background: #000000; color: #ffffff; padding: 2px 7px; border-radius: 2px; text-transform: uppercase;">
                 ${badgeText}
               </span>
-              <span style="font-size: 0.78rem; font-weight: 700; color: #475569;">
-                <i class="fa-regular fa-clock" style="color: ${themeColor}; margin-right: 4px;"></i>${mock.time_minutes ? mock.time_minutes + ' mins' : defaultTime}
+              <span style="font-size: 0.8rem; font-weight: 800; color: #000000;">
+                ${mock.time_minutes ? mock.time_minutes + ' mins' : defaultTime}
               </span>
             </div>
-            <h3 style="margin: 0 0 8px 0; color: #1e293b; font-size: 1.05rem; line-height: 1.35;">${mock.title}</h3>
-            <p style="margin: 0; font-size: 0.82rem; color: #64748b; line-height: 1.4;">
-              ${mock.paper_reference || specTitle} · ${mock.total_marks ? mock.total_marks + ' marks' : defaultMarks} · Authentic exam booklet layout with line-spaced answer registers.
+            <h3 style="margin: 0 0 8px 0; color: #000000; font-size: 1.15rem; font-weight: 800; font-family: 'Outfit', sans-serif; line-height: 1.35;">${mock.title}</h3>
+            <p style="margin: 0; font-size: 0.82rem; color: #374151; line-height: 1.4;">
+              ${mock.paper_reference || specTitle} &bull; ${mock.total_marks ? mock.total_marks + ' marks' : defaultMarks} &bull; Authentic exam layout.
             </p>
           </div>
 
           <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 5px;">
-            <a href="${fullPaperUrl}" target="_blank" style="text-align: center; text-decoration: none; background: linear-gradient(135deg, ${themeColor} 0%, #0f172a 100%); color: #ffffff; padding: 9px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 6px; transition: opacity 0.2s ease;" onmouseover="this.style.opacity='0.92';" onmouseout="this.style.opacity='1';">
-              <i class="fa-solid fa-file-pdf"></i> Open Question Paper
+            <a href="${fullPaperUrl}" target="_blank" style="text-align: center; text-decoration: none; background: #000000; color: #ffffff; border: 2px solid #000000; padding: 10px 14px; border-radius: 4px; font-size: 0.88rem; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.15s ease;">
+              Open Question Paper
             </a>
 
             ${
               hasMs
                 ? `
-              <a href="${fullMsUrl}" target="_blank" style="text-align: center; text-decoration: none; background: #ffffff; color: #1e293b; border: 1.5px solid #cbd5e1; border-left: 3px solid ${themeColor}; padding: 8px 12px; border-radius: 6px; font-size: 0.82rem; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.2s ease;" onmouseover="this.style.background='#f1f5f9'; this.style.borderColor='#94a3b8';" onmouseout="this.style.background='#ffffff'; this.style.borderColor='#cbd5e1'; this.style.borderLeftColor='${themeColor}';">
-                <i class="fa-solid fa-chalkboard-user" style="color: ${themeColor};"></i> Teacher Mark Scheme
+              <a href="${fullMsUrl}" target="_blank" style="text-align: center; text-decoration: none; background: #ffffff; color: #000000; border: 2px solid #000000; padding: 9px 14px; border-radius: 4px; font-size: 0.85rem; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.15s ease;">
+                Teacher Mark Scheme
               </a>
             `
                 : `
-              <div style="font-size: 0.75rem; color: #94a3b8; text-align: center; font-style: italic; padding: 3px 0;">
+              <div style="font-size: 0.75rem; color: #4b5563; text-align: center; font-style: italic; padding: 3px 0;">
                 Model answers integrated in study bank
               </div>
             `
