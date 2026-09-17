@@ -387,10 +387,15 @@ export async function switchView(viewName, param = null, skipHistory = false, op
   } else if (viewName === 'booklet') {
     if (param && param !== 'all') {
       await loadUnit(param);
-    } else {
+    } else if (param === 'all') {
       state.selectedUnitId = null;
       window.currentUnitId = null;
       state.activeUnitData = null;
+    } else {
+      // param is null/undefined (e.g. user clicked sidebar "PDF Library & Booklets")
+      // If a unit is already selected, keep it! If none, default to cme_new
+      const targetUnit = state.selectedUnitId || window.currentUnitId || 'cme_new';
+      await loadUnit(targetUnit);
     }
     renderBookletView();
   } else if (viewName === 'mock-exams') {
@@ -436,7 +441,9 @@ export async function switchView(viewName, param = null, skipHistory = false, op
 
 // Dynamically fetch and parse the compiled JSON for a unit
 async function loadUnit(unitId) {
-  const currentLessons = state.activeUnitData.lessons || state.activeUnitData.subtopics;
+  const currentLessons = state.activeUnitData
+    ? state.activeUnitData.lessons || state.activeUnitData.subtopics
+    : null;
   const isAlreadyLoaded =
     state.selectedUnitId === unitId && currentLessons && currentLessons.length > 0;
 
