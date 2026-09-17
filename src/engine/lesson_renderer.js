@@ -637,6 +637,158 @@ window.renderLessonByIndex = function (index, skipHistory = false) {
   }
 };
 
+function renderLessonVideos(videos, lesson, unitId) {
+  if (!videos || videos.length === 0) return '';
+  const formatBold = window.formatBold || ((s) => s);
+
+  let videoCardsHtml = '';
+
+  videos.forEach((vid) => {
+    const isYt =
+      vid.type === 'youtube' ||
+      (vid.url && (vid.url.includes('youtube.com') || vid.url.includes('youtu.be')));
+    const isEra = vid.type === 'era' || (vid.url && vid.url.includes('era.org.uk'));
+
+    // Extract YouTube ID
+    let ytId = null;
+    if (isYt && vid.url) {
+      const match = vid.url.match(
+        /(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/i,
+      );
+      ytId = match ? match[1] : null;
+    }
+
+    const providerName = isEra
+      ? 'BBC / ERA Educational Broadcast'
+      : isYt
+        ? 'YouTube Archival Video'
+        : 'Educational Resource';
+    const providerBadgeColor = isEra ? '#1e40af' : '#dc2626';
+    const providerBadgeBg = isEra ? '#eff6ff' : '#fef2f2';
+    const providerBadgeBorder = isEra ? '#bfdbfe' : '#fecaca';
+    const providerIcon = isEra ? 'fa-solid fa-graduation-cap' : 'fa-brands fa-youtube';
+
+    let actionButtonHtml = '';
+    if (ytId) {
+      actionButtonHtml = `
+        <button type="button" class="btn btn-primary no-print" data-action="open-video-modal" data-youtube="${ytId}" style="display: inline-flex; align-items: center; gap: 8px; background: #dc2626; color: #ffffff; border: none; padding: 9px 18px; border-radius: 6px; font-weight: 700; font-size: 0.92rem; cursor: pointer; transition: all 0.2s; box-shadow: 0 2px 6px rgba(220, 38, 38, 0.3);">
+          <i class="fa-solid fa-play"></i> Watch in App (Distraction-Free)
+        </button>
+        <a href="${vid.url}" target="_blank" rel="noopener noreferrer" class="no-print" style="color: #64748b; font-size: 0.85rem; text-decoration: underline; display: inline-flex; align-items: center; gap: 4px;">
+          External Link <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+        </a>
+      `;
+    } else if (isEra) {
+      actionButtonHtml = `
+        <a href="${vid.url}" target="_blank" rel="noopener noreferrer" class="no-print" style="display: inline-flex; align-items: center; gap: 8px; background: #1e40af; color: #ffffff; border: none; padding: 9px 18px; border-radius: 6px; font-weight: 700; font-size: 0.92rem; text-decoration: none; transition: all 0.2s; box-shadow: 0 2px 6px rgba(30, 64, 175, 0.3);">
+          <i class="fa-solid fa-lock" style="font-size: 0.8rem;"></i> Stream on ERA (School SSO) <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem; margin-left: 2px;"></i>
+        </a>
+        <span class="no-print" style="color: #64748b; font-size: 0.82rem; font-style: italic;">Requires School SSO</span>
+      `;
+    } else {
+      actionButtonHtml = `
+        <a href="${vid.url}" target="_blank" rel="noopener noreferrer" class="no-print" style="display: inline-flex; align-items: center; gap: 8px; background: #0f172a; color: #ffffff; border: none; padding: 9px 18px; border-radius: 6px; font-weight: 700; font-size: 0.92rem; text-decoration: none;">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Resource
+        </a>
+      `;
+    }
+
+    videoCardsHtml += `
+      <div class="archival-video-entry" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); display: flex; flex-direction: column; gap: 14px;">
+        <!-- Top row: Provider + Duration + Title + Action -->
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 260px;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px; flex-wrap: wrap;">
+              <span class="archival-meta-tag" style="background: ${providerBadgeBg}; color: ${providerBadgeColor}; border: 1px solid ${providerBadgeBorder}; font-size: 0.72rem; padding: 2px 8px; border-radius: 4px; font-weight: 700; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="${providerIcon}"></i> ${providerName}
+              </span>
+              ${vid.duration ? `<span style="background: #f1f5f9; color: #475569; font-size: 0.78rem; font-weight: 600; padding: 2px 8px; border-radius: 4px; border: 1px solid #e2e8f0; display: inline-flex; align-items: center; gap: 4px;"><i class="fa-regular fa-clock"></i> ${vid.duration}</span>` : ''}
+            </div>
+            <h4 style="margin: 0; font-size: 1.15rem; color: #0f172a; font-family: 'Playfair Display', serif; line-height: 1.4;">
+              ${vid.title || 'Historical Documentary Resource'}
+            </h4>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+            ${actionButtonHtml}
+          </div>
+        </div>
+
+        <!-- Active Viewing Task -->
+        ${
+          vid.viewing_task
+            ? `
+          <div class="video-viewing-task-box" style="background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; border-radius: 0 6px 6px 0;">
+            <div style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">
+              <i class="fa-solid fa-crosshairs"></i> Active Viewing Task:
+            </div>
+            <div style="font-size: 0.95rem; color: #92400e; line-height: 1.55;">
+              ${formatBold(vid.viewing_task)}
+            </div>
+          </div>
+        `
+            : ''
+        }
+
+        <!-- Revealable Model Answer -->
+        ${
+          vid.model_answer
+            ? `
+          <details class="video-model-details" style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; overflow: hidden;">
+            <summary style="cursor: pointer; padding: 9px 14px; font-size: 0.88rem; color: #166534; font-weight: 700; user-select: none; display: flex; align-items: center; gap: 8px; background: #f0fdf4;">
+              <i class="fa-solid fa-key" style="color: #16a34a;"></i> Reveal Viewing Task Model Notes
+            </summary>
+            <div style="padding: 12px 16px; font-size: 0.92rem; color: #14532d; line-height: 1.6; border-top: 1px solid #bbf7d0; background: #ffffff;">
+              ${formatBold(vid.model_answer)}
+            </div>
+          </details>
+        `
+            : ''
+        }
+      </div>
+    `;
+  });
+
+  return `
+    <div class="phase-card archival-media-phase" style="margin-top: 30px; margin-bottom: 30px; background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.05);">
+      <!-- Header Banner -->
+      <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #ffffff; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="background: rgba(239, 68, 68, 0.2); border: 1px solid rgba(239, 68, 68, 0.4); width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+            <i class="fa-solid fa-film" style="color: #f87171; font-size: 1.1rem;"></i>
+          </div>
+          <div>
+            <div style="font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: #94a3b8; font-weight: 700;">
+              Act 2 Bridge &bull; Dual-Coding Audio-Visual Reinforcement
+            </div>
+            <div style="font-size: 1.2rem; font-weight: 700; font-family: 'Playfair Display', serif; color: #ffffff;">
+              Archival Broadcast &amp; Documentary Evidence
+            </div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span class="archival-shelfmark-stamp" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: #cbd5e1; font-size: 0.75rem; padding: 4px 10px; border-radius: 4px; font-family: monospace;">
+            MEDIA // ${(unitId || 'HIST').toUpperCase()} &bull; ${videos.length} ${videos.length === 1 ? 'Resource' : 'Resources'}
+          </span>
+        </div>
+      </div>
+
+      <!-- Pedagogical Subtitle -->
+      <div style="background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 12px 24px; font-size: 0.9rem; color: #475569; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-circle-info" style="color: #3b82f6;"></i>
+          <span><strong>Active Viewing Instruction:</strong> Review the viewing task before playing. Use evidence from the broadcast to reinforce your historical explanation.</span>
+        </div>
+        <span class="no-print" style="font-size: 0.8rem; color: #64748b;"><i class="fa-regular fa-circle-play" style="color: #10b981; margin-right: 4px;"></i> In-App Player Active</span>
+      </div>
+
+      <!-- Video Cards List -->
+      <div style="padding: 20px 24px; display: flex; flex-direction: column; gap: 18px;">
+        ${videoCardsHtml}
+      </div>
+    </div>
+  `;
+}
+
 export function renderLesson(lesson) {
   if (window.doNowTimers) {
     Object.values(window.doNowTimers).forEach((t) => {
@@ -672,6 +824,7 @@ export function renderLesson(lesson) {
     htmlPrimary = '',
     htmlSources1 = '',
     htmlNarrative = '',
+    htmlVideo = '',
     htmlPairShare = '',
     htmlHistorian = '',
     htmlTasks = '',
@@ -1892,57 +2045,7 @@ export function renderLesson(lesson) {
   }
 
   if (videos.length > 0) {
-    htmlDoNow += `
-        <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-          <summary style="cursor: pointer; padding: 20px; font-size: 1.25rem; color: #b45309; font-weight: 600; display: flex; align-items: center; gap: 10px; user-select: none;">
-            <i class="fa-brands fa-youtube" style="color: #dc2626;"></i> Lesson Video Resources (${videos.length})
-          </summary>
-          <div style="padding: 0 20px 20px 20px; display: flex; flex-direction: column; gap: 15px;">
-      `;
-
-    videos.forEach((vid) => {
-      let providerText = vid.type === 'youtube' ? 'YouTube' : 'ERA';
-      let iconColor = vid.type === 'youtube' ? '#dc2626' : '#3b82f6';
-      let iconClass =
-        vid.type === 'youtube' ? 'fa-brands fa-youtube' : 'fa-solid fa-arrow-up-right-from-square';
-
-      htmlDoNow += `
-          <div style="background: #f8fafc; border-left: 4px solid ${iconColor}; border-radius: 4px; padding: 12px 16px; display: flex; flex-direction: column; gap: 10px;">
-            <div style="display: flex; align-items: center; justify-content: space-between; gap: 15px; flex-wrap: wrap;">
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <i class="${iconClass}" style="font-size: 1.2rem; color: ${iconColor};"></i>
-                <div>
-                  <div style="color: #1e293b; font-size: 0.95rem; font-weight: 600;">${vid.title || 'External Video Resource'} ${vid.duration ? `<span style="color: #64748b; font-weight: normal; margin-left: 8px;"><i class="fa-regular fa-clock"></i> ${vid.duration}</span>` : ''}</div>
-                  <div style="color: #64748b; font-size: 0.85rem;">External ${providerText} Video. Opens in a new secure tab.</div>
-                </div>
-              </div>
-              <a href="${vid.url}" target="_blank" style="white-space: nowrap; background: #eff6ff; color: #2563eb; padding: 6px 12px; border: 1px solid #bfdbfe; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.2s;">
-                Watch <i class="fa-solid fa-play" style="margin-left: 4px; font-size: 0.8rem;"></i>
-              </a>
-            </div>
-            ${vid.viewing_task ? `<div style="background: #fffbeb; border-left: 3px solid #f59e0b; padding: 8px 12px; font-size: 0.9rem; color: #b45309;"><i class="fa-solid fa-bullseye" style="margin-right: 5px;"></i> <b>Viewing Task:</b> ${vid.viewing_task}</div>` : ''}
-            ${
-              vid.model_answer
-                ? `
-            <details style="background: #f0fdf4; border-left: 3px solid #22c55e; border-radius: 2px;">
-              <summary style="cursor: pointer; padding: 8px 12px; font-size: 0.9rem; color: #166534; font-weight: 600; user-select: none; display: flex; align-items: center; gap: 8px;">
-                <i class="fa-solid fa-key"></i> Reveal Model Answer
-              </summary>
-              <div style="padding: 0 12px 12px 12px; font-size: 0.9rem; color: #14532d; line-height: 1.5;">
-                ${vid.model_answer}
-              </div>
-            </details>
-            `
-                : ''
-            }
-          </div>
-        `;
-    });
-
-    htmlDoNow += `
-          </div>
-        </details>
-      `;
+    htmlVideo = renderLessonVideos(videos, lesson, unitId);
   }
 
   if (lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
@@ -3522,6 +3625,7 @@ export function renderLesson(lesson) {
 
       htmlNarrative += extrasHtml;
     });
+    htmlNarrative += '</div>';
 
     if (!isTrip) {
       if (lesson.tasks && lesson.tasks.length > 0) {
@@ -4163,6 +4267,7 @@ export function renderLesson(lesson) {
     html +=
       htmlCwgc +
       htmlNarrative +
+      htmlVideo +
       htmlPoetry +
       htmlDoNow +
       htmlPrimary +
@@ -4178,6 +4283,7 @@ export function renderLesson(lesson) {
       htmlPrimary +
       (typeof isGCSE !== 'undefined' && isGCSE ? '' : htmlSources1) +
       htmlNarrative +
+      htmlVideo +
       htmlPairShare +
       htmlExamPractice +
       htmlVocabDeck +
@@ -4190,6 +4296,7 @@ export function renderLesson(lesson) {
       htmlPrimary +
       htmlDoNow +
       htmlNarrative +
+      htmlVideo +
       htmlPairShare +
       htmlExamPractice +
       htmlVocabDeck +
@@ -4201,6 +4308,7 @@ export function renderLesson(lesson) {
       htmlPrimary +
       htmlDoNow +
       htmlNarrative +
+      htmlVideo +
       htmlPairShare +
       htmlTasks +
       htmlHistorian +
@@ -4213,6 +4321,7 @@ export function renderLesson(lesson) {
       htmlPrimary +
       htmlDoNow +
       htmlNarrative +
+      htmlVideo +
       htmlTasks +
       htmlHistorian +
       htmlPairShare +

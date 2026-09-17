@@ -425,27 +425,41 @@ export function initEventDelegation() {
         }
         break;
       }
-      case 'open-video-modal':
+      case 'open-video-modal': {
         const youtubeId = target.dataset.youtube;
         if (youtubeId) {
           const overlay = document.createElement('div');
-          overlay.className = 'modal-overlay no-print';
+          overlay.className = 'modal-overlay video-modal-overlay no-print';
           overlay.style.cssText =
-            'position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); justify-content: center; align-items: center; z-index: 2000; display: flex;';
+            'position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(12px); justify-content: center; align-items: center; z-index: 3000; display: flex;';
+          const removeModal = () => {
+            document.removeEventListener('keydown', onEsc);
+            overlay.remove();
+          };
+          const onEsc = (e) => {
+            if (e.key === 'Escape') removeModal();
+          };
+          document.addEventListener('keydown', onEsc);
           overlay.onclick = function (e) {
-            if (e.target === overlay) overlay.remove();
+            if (e.target === overlay) removeModal();
           };
           overlay.innerHTML = `
-            <div class="modal-content" style="background: transparent; width: 90%; max-width: 900px; position: relative;">
-              <button onclick="this.closest('.modal-overlay').remove()" style="position: absolute; top: -40px; right: 0; background: none; border: none; color: white; font-size: 2rem; cursor: pointer;">&times;</button>
-              <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
-                <iframe src="https://www.youtube.com/embed/${youtubeId}?autoplay=1" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="modal-content" style="background: transparent; width: 92%; max-width: 960px; position: relative;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <span style="color: #94a3b8; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;"><i class="fa-solid fa-play" style="color: #ef4444; margin-right: 6px;"></i> Archival Documentary Player &bull; Press ESC to close</span>
+                <button type="button" class="btn-close-video-modal" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; font-size: 1rem; cursor: pointer; padding: 4px 12px; border-radius: 6px; display: inline-flex; align-items: center; gap: 6px; font-weight: 600; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">&times; Close</button>
+              </div>
+              <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.7); border: 1px solid rgba(255,255,255,0.15); background: #000;">
+                <iframe src="https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </div>
           `;
+          const closeBtn = overlay.querySelector('.btn-close-video-modal');
+          if (closeBtn) closeBtn.onclick = removeModal;
           document.body.appendChild(overlay);
         }
         break;
+      }
       case 'jump-to-key-individual':
         if (window.jumpToKeyIndividual) window.jumpToKeyIndividual(target.dataset.name);
         break;
