@@ -2261,6 +2261,91 @@ export function renderLesson(lesson) {
           if (block.tasks && block.tasks.length > 0) {
             htmlNarrative += `<div class="embedded-tasks-container" style="margin-bottom: 25px; padding: 15px; background: #fffbeb; border: 2px dashed #fcd34d; border-radius: 6px;">`;
             block.tasks.forEach((task) => {
+              if (task.type === 'two_sided_argument') {
+                const qNumPrefix = task.qNum ? `Q${task.qNum}. ` : '';
+                const adv = task.advancement || {};
+                const lim = task.limitations || {};
+                const advTitle = adv.title || 'Advancement & Progress (Change)';
+                const limTitle = lim.title || 'Critical Limitations & Stagnation (Continuity)';
+                const advPoints = adv.points || [];
+                const limPoints = lim.points || [];
+                const advStarter = adv.starter || adv.sentence_starter || '';
+                const limStarter = lim.starter || lim.sentence_starter || '';
+                const synthesisPrompt =
+                  task.synthesis_prompt ||
+                  'Write a balanced GCSE exam paragraph evaluating both sides.';
+                const connectives = task.synthesis_connectives || [
+                  'Although...',
+                  'However, in practical terms...',
+                  'Consequently...',
+                  'Overall...',
+                ];
+                const modelAnswer = task.model_answer || task.model || '';
+
+                htmlNarrative += `
+                  <div class="task-box two-sided-argument-interactive" style="margin-bottom: 16px; background: #ffffff; padding: 16px; border-radius: 8px; border: 2px solid #0f766e; box-shadow: 0 3px 10px rgba(15, 118, 110, 0.08);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #ccfbf1; padding-bottom: 8px;">
+                      <h4 style="margin: 0; color: #0f766e; font-size: 1.1rem;"><i class="fa-solid fa-scale-balanced" style="margin-right: 8px;"></i> ${qNumPrefix}${task.topic || task.text || 'Two-Sided Argument Analysis'}</h4>
+                      <span style="background: #0f766e; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">GCSE Two-Sided Argument</span>
+                    </div>
+                    ${task.instruction ? `<p style="font-size: 0.95rem; color: #475569; font-style: italic; margin-top: 0; margin-bottom: 14px;">${task.instruction}</p>` : ''}
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-bottom: 14px;">
+                      <!-- Side 1: Advancement / Progress -->
+                      <div style="background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 6px; padding: 12px;">
+                        <h5 style="margin: 0 0 8px 0; color: #166534; font-size: 0.95rem; border-bottom: 1.5px solid #86efac; padding-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+                          <i class="fa-solid fa-arrow-trend-up"></i> ${advTitle}
+                        </h5>
+                        <ul style="margin: 0 0 10px 0; padding-left: 16px; color: #1e293b; font-size: 0.88rem; line-height: 1.45;">
+                          ${advPoints.map((pt) => `<li style="margin-bottom: 5px;">${pt}</li>`).join('')}
+                        </ul>
+                        ${advStarter ? `<div style="padding: 6px 8px; background: #ffffff; border-left: 3px solid #22c55e; border-radius: 4px; font-size: 0.82rem; color: #15803d; font-style: italic;"><strong>Evidence Stem:</strong> &ldquo;${advStarter}&rdquo;</div>` : ''}
+                      </div>
+
+                      <!-- Side 2: Limitations / Continuity -->
+                      <div style="background: #fff1f2; border: 1.5px solid #fecdd3; border-radius: 6px; padding: 12px;">
+                        <h5 style="margin: 0 0 8px 0; color: #9f1239; font-size: 0.95rem; border-bottom: 1.5px solid #fecdd3; padding-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+                          <i class="fa-solid fa-hand"></i> ${limTitle}
+                        </h5>
+                        <ul style="margin: 0 0 10px 0; padding-left: 16px; color: #1e293b; font-size: 0.88rem; line-height: 1.45;">
+                          ${limPoints.map((pt) => `<li style="margin-bottom: 5px;">${pt}</li>`).join('')}
+                        </ul>
+                        ${limStarter ? `<div style="padding: 6px 8px; background: #ffffff; border-left: 3px solid #f43f5e; border-radius: 4px; font-size: 0.82rem; color: #be123c; font-style: italic;"><strong>Counter-Stem:</strong> &ldquo;${limStarter}&rdquo;</div>` : ''}
+                      </div>
+                    </div>
+
+                    <!-- Synthesis: GCSE Paragraph Builder -->
+                    <div style="background: #fffbeb; border: 1.5px solid #fcd34d; border-radius: 6px; padding: 12px;">
+                      <h5 style="margin: 0 0 6px 0; color: #92400e; font-size: 0.95rem; display: flex; align-items: center; gap: 6px;">
+                        <i class="fa-solid fa-pen-nib"></i> GCSE Paragraph Builder: Evaluative Synthesis
+                      </h5>
+                      <p style="font-size: 0.9rem; color: #78350f; font-weight: 600; margin: 0 0 8px 0;">${synthesisPrompt}</p>
+                      
+                      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; align-items: center;">
+                        <span style="font-size: 0.75rem; font-weight: 700; color: #92400e; text-transform: uppercase;">Connectives:</span>
+                        ${connectives.map((c) => `<span style="background: #ffffff; border: 1px solid #fde68a; color: #b45309; padding: 2px 7px; border-radius: 10px; font-size: 0.78rem; font-weight: 600;">${c}</span>`).join('')}
+                      </div>
+
+                      <textarea class="interactive-textarea" style="width: 100%; box-sizing: border-box; min-height: 80px; padding: 8px; border: 1px solid #fde68a; border-radius: 5px; font-size: 0.9rem; font-family: inherit; resize: vertical;" placeholder="Combine the evidence and counter-evidence above to write your complex, balanced GCSE exam paragraph..."></textarea>
+
+                      ${
+                        modelAnswer
+                          ? `
+                        <details style="margin-top: 8px;">
+                          <summary style="cursor: pointer; color: #b45309; font-weight: 600; font-size: 0.85rem;"><i class="fa-solid fa-eye"></i> View Level 4 Model Paragraph</summary>
+                          <div class="scaffold-box model-box" style="margin-top: 6px; padding: 10px 12px; background: #ffffff; border-left: 3px solid #f59e0b; border-radius: 4px; font-size: 0.9rem; color: #78350f; line-height: 1.5;">
+                            ${modelAnswer}
+                          </div>
+                        </details>
+                      `
+                          : ''
+                      }
+                    </div>
+                  </div>
+                `;
+                return;
+              }
+
               const qNumPrefix = task.qNum ? `Q${task.qNum}. ` : '';
               const cleanTaskText = (task.text || task.question || '').replace(
                 /^Q\d+[\.\:]\s*/i,
@@ -3107,6 +3192,90 @@ export function renderLesson(lesson) {
                       )
                       .join('')}
                   </div>
+                </div>
+              </div>
+            `;
+            return;
+          }
+          if (task.type === 'two_sided_argument') {
+            const qNumPrefix = task.qNum ? `Q${task.qNum}. ` : '';
+            const adv = task.advancement || {};
+            const lim = task.limitations || {};
+            const advTitle = adv.title || 'Advancement & Progress (Change)';
+            const limTitle = lim.title || 'Critical Limitations & Stagnation (Continuity)';
+            const advPoints = adv.points || [];
+            const limPoints = lim.points || [];
+            const advStarter = adv.starter || adv.sentence_starter || '';
+            const limStarter = lim.starter || lim.sentence_starter || '';
+            const synthesisPrompt =
+              task.synthesis_prompt ||
+              'Write a balanced GCSE exam paragraph evaluating both sides.';
+            const connectives = task.synthesis_connectives || [
+              'Although...',
+              'However, in practical terms...',
+              'Consequently...',
+              'Overall...',
+            ];
+            const modelAnswer = task.model_answer || task.model || '';
+
+            extrasHtml += `
+              <div class="task-box two-sided-argument-interactive" style="margin-bottom: 25px; background: #ffffff; padding: 20px; border-radius: 10px; border: 2px solid #0f766e; box-shadow: 0 4px 12px rgba(15, 118, 110, 0.08);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #ccfbf1; padding-bottom: 10px;">
+                  <h4 style="margin: 0; color: #0f766e; font-size: 1.15rem;"><i class="fa-solid fa-scale-balanced" style="margin-right: 8px;"></i> ${qNumPrefix}${task.topic || task.text || 'Two-Sided Argument Analysis'}</h4>
+                  <span style="background: #0f766e; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">GCSE Two-Sided Argument</span>
+                </div>
+                ${task.instruction ? `<p style="font-size: 0.95rem; color: #475569; font-style: italic; margin-top: 0; margin-bottom: 15px;">${task.instruction}</p>` : ''}
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-bottom: 16px;">
+                  <!-- Side 1: Advancement / Progress -->
+                  <div style="background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 8px; padding: 14px;">
+                    <h5 style="margin: 0 0 10px 0; color: #166534; font-size: 1rem; border-bottom: 2px solid #86efac; padding-bottom: 6px; display: flex; align-items: center; gap: 6px;">
+                      <i class="fa-solid fa-arrow-trend-up"></i> ${advTitle}
+                    </h5>
+                    <ul style="margin: 0 0 12px 0; padding-left: 18px; color: #1e293b; font-size: 0.9rem; line-height: 1.45;">
+                      ${advPoints.map((pt) => `<li style="margin-bottom: 6px;">${pt}</li>`).join('')}
+                    </ul>
+                    ${advStarter ? `<div style="padding: 8px 10px; background: #ffffff; border-left: 3px solid #22c55e; border-radius: 4px; font-size: 0.85rem; color: #15803d; font-style: italic;"><strong>Evidence Stem:</strong> &ldquo;${advStarter}&rdquo;</div>` : ''}
+                  </div>
+
+                  <!-- Side 2: Limitations / Continuity -->
+                  <div style="background: #fff1f2; border: 1.5px solid #fecdd3; border-radius: 8px; padding: 14px;">
+                    <h5 style="margin: 0 0 10px 0; color: #9f1239; font-size: 1rem; border-bottom: 2px solid #fecdd3; padding-bottom: 6px; display: flex; align-items: center; gap: 6px;">
+                      <i class="fa-solid fa-hand"></i> ${limTitle}
+                    </h5>
+                    <ul style="margin: 0 0 12px 0; padding-left: 18px; color: #1e293b; font-size: 0.9rem; line-height: 1.45;">
+                      ${limPoints.map((pt) => `<li style="margin-bottom: 6px;">${pt}</li>`).join('')}
+                    </ul>
+                    ${limStarter ? `<div style="padding: 8px 10px; background: #ffffff; border-left: 3px solid #f43f5e; border-radius: 4px; font-size: 0.85rem; color: #be123c; font-style: italic;"><strong>Counter-Stem:</strong> &ldquo;${limStarter}&rdquo;</div>` : ''}
+                  </div>
+                </div>
+
+                <!-- Synthesis: GCSE Paragraph Builder -->
+                <div style="background: #fffbeb; border: 1.5px solid #fcd34d; border-radius: 8px; padding: 14px;">
+                  <h5 style="margin: 0 0 8px 0; color: #92400e; font-size: 1rem; display: flex; align-items: center; gap: 6px;">
+                    <i class="fa-solid fa-pen-nib"></i> GCSE Paragraph Builder: Evaluative Synthesis
+                  </h5>
+                  <p style="font-size: 0.92rem; color: #78350f; font-weight: 600; margin: 0 0 10px 0;">${synthesisPrompt}</p>
+                  
+                  <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; align-items: center;">
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #92400e; text-transform: uppercase;">Analytical Connectives:</span>
+                    ${connectives.map((c) => `<span style="background: #ffffff; border: 1px solid #fde68a; color: #b45309; padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; font-weight: 600;">${c}</span>`).join('')}
+                  </div>
+
+                  <textarea class="interactive-textarea" style="width: 100%; box-sizing: border-box; min-height: 90px; padding: 10px; border: 1px solid #fde68a; border-radius: 6px; font-size: 0.92rem; font-family: inherit; resize: vertical;" placeholder="Combine the evidence and counter-evidence above to write your complex, balanced GCSE exam paragraph..."></textarea>
+
+                  ${
+                    modelAnswer
+                      ? `
+                    <details style="margin-top: 10px;">
+                      <summary style="cursor: pointer; color: #b45309; font-weight: 600; font-size: 0.88rem;"><i class="fa-solid fa-eye"></i> Reveal Level 4 Model Paragraph</summary>
+                      <div class="scaffold-box model-box" style="margin-top: 8px; padding: 12px 15px; background: #ffffff; border-left: 3px solid #f59e0b; border-radius: 4px; font-size: 0.92rem; color: #78350f; line-height: 1.55;">
+                        ${modelAnswer}
+                      </div>
+                    </details>
+                  `
+                      : ''
+                  }
                 </div>
               </div>
             `;

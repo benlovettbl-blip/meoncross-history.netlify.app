@@ -2319,6 +2319,79 @@ allDirs.forEach((unitId) => {
                   _nbHtml += `</div>`;
                   return;
                 }
+                if (task.type === 'two_sided_argument') {
+                  let rawTitle =
+                    task.topic || task.text || task.question || 'Two-Sided Argument Analysis';
+                  let _t = processTaskTextWithTariff(rawTitle);
+                  const adv = task.advancement || {};
+                  const lim = task.limitations || {};
+                  const advTitle = adv.title || 'Advancement & Progress (Change)';
+                  const limTitle = lim.title || 'Critical Limitations & Stagnation (Continuity)';
+                  const advPoints = adv.points || [];
+                  const limPoints = lim.points || [];
+                  const synthesisPrompt =
+                    task.synthesis_prompt ||
+                    'Write a balanced GCSE exam paragraph evaluating both sides.';
+                  const connectives = task.synthesis_connectives || [
+                    'Although...',
+                    'However, in practical terms...',
+                    'Consequently...',
+                    'Overall...',
+                  ];
+
+                  _nbHtml += `<div class="task-box" style="margin-bottom: 12px; border: 1.5px solid #0f766e; border-radius: 6px; padding: 8px 10px; background: #f0fdf4; page-break-inside: avoid; box-sizing: border-box; width: 100%;">`;
+                  _nbHtml += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">`;
+                  _nbHtml += `<strong style="color: #0f766e; font-size: 8.5pt;">Q${globalQNum++}. ${_t.cleanText}</strong>`;
+                  _nbHtml += `<span style="font-size: 6.8pt; font-weight: bold; background: #0f766e; color: #ffffff; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">GCSE Two-Sided Argument</span>`;
+                  _nbHtml += `</div>`;
+                  if (_t.badgeHtml) _nbHtml += _t.badgeHtml;
+                  if (task.instruction) {
+                    _nbHtml += `<p style="font-size: 7.3pt; color: #334155; margin: 0 0 5px 0; font-style: italic;">${task.instruction}</p>`;
+                  }
+
+                  _nbHtml += `
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 4px; font-size: 7.2pt; table-layout: fixed; box-sizing: border-box;">
+                      <thead>
+                        <tr>
+                          <th style="width: 50%; border: 1px solid #cbd5e1; background: #dcfce7; color: #166534; padding: 4px 6px; text-align: left;">&#9650; ${advTitle}</th>
+                          <th style="width: 50%; border: 1px solid #cbd5e1; background: #ffe4e6; color: #9f1239; padding: 4px 6px; text-align: left;">&#9632; ${limTitle}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td style="border: 1px solid #cbd5e1; background: #ffffff; padding: 4px 6px; vertical-align: top; color: #1e293b; font-size: 7pt; line-height: 1.3;">
+                            <ul style="margin: 0; padding-left: 12px;">
+                              ${advPoints.map((p) => `<li style="margin-bottom: 3px;">${p}</li>`).join('')}
+                            </ul>
+                            ${adv.starter ? `<div style="margin-top: 4px; font-style: italic; color: #15803d; font-size: 6.8pt;"><em>Starter:</em> &ldquo;${adv.starter}&rdquo;</div>` : ''}
+                          </td>
+                          <td style="border: 1px solid #cbd5e1; background: #ffffff; padding: 4px 6px; vertical-align: top; color: #1e293b; font-size: 7pt; line-height: 1.3;">
+                            <ul style="margin: 0; padding-left: 12px;">
+                              ${limPoints.map((p) => `<li style="margin-bottom: 3px;">${p}</li>`).join('')}
+                            </ul>
+                            ${lim.starter ? `<div style="margin-top: 4px; font-style: italic; color: #be123c; font-size: 6.8pt;"><em>Counter:</em> &ldquo;${lim.starter}&rdquo;</div>` : ''}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  `;
+
+                  _nbHtml += `
+                    <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; padding: 5px 7px; margin-top: 6px;">
+                      <div style="font-size: 7.2pt; font-weight: bold; color: #92400e; margin-bottom: 2px;"><strong>GCSE Paragraph Builder:</strong> ${synthesisPrompt}</div>
+                      <div style="font-size: 6.8pt; color: #64748b; margin-bottom: 4px;">Connectives: ${connectives.join(' &bull; ')}</div>
+                      <div class="task-lines" style="height: 13px; margin-top: 3px;"></div>
+                      <div class="task-lines" style="height: 13px; margin-top: 3px;"></div>
+                      <div class="task-lines" style="height: 13px; margin-top: 3px;"></div>
+                      <div class="task-lines" style="height: 13px; margin-top: 3px;"></div>
+                      <div class="task-lines" style="height: 13px; margin-top: 3px;"></div>
+                      <div class="task-lines" style="height: 13px; margin-top: 3px;"></div>
+                    </div>
+                  `;
+
+                  _nbHtml += `</div>`;
+                  return;
+                }
                 if (task.type === 'historiographical_spectrum' || task.type === 'spectrum') {
                   let rawTitle = task.text || task.question || task.instruction || task.title || '';
                   if (isFourActUnit) {
