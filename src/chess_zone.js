@@ -67,6 +67,8 @@ async function persistToIndexedDB(state) {
       players: state.players,
       matches: state.matches,
       checkedInPlayerIds: state.checkedInPlayerIds,
+      activePairings: state.activePairings || [],
+      leagueTableViewMode: state.leagueTableViewMode || 'matrix',
       knockoutBracket: state.knockoutBracket,
     });
   } catch (err) {
@@ -172,6 +174,8 @@ let chessState = {
   players: [],
   matches: [],
   checkedInPlayerIds: [],
+  activePairings: [],
+  leagueTableViewMode: 'matrix', // 'matrix' | 'table'
   knockoutBracket: null,
   activeTab: 'signin', // 'signin' | 'beginners' | 'ladder' | 'table' | 'pairings' | 'knockout' | 'drills' | 'matches'
   filterYear: 'all', // 'all' | 'ks3' | 'ks4'
@@ -182,7 +186,7 @@ let chessState = {
   puzzleCategory: 'grandmaster', // 'grandmaster' | 'beginner'
   showBethHarmonHint: false,
   showBethHarmonSolution: false,
-  showStarterPuzzle: true,
+  showStarterPuzzle: false,
   showAdminDropdown: false,
   showTeacherGuide: false,
   whiteboardMode: false,
@@ -362,6 +366,10 @@ function initChessState(forceClean = false) {
         chessState.checkedInPlayerIds = Array.isArray(parsed.checkedInPlayerIds)
           ? parsed.checkedInPlayerIds
           : [];
+        chessState.activePairings = Array.isArray(parsed.activePairings)
+          ? parsed.activePairings
+          : [];
+        if (parsed.leagueTableViewMode) chessState.leagueTableViewMode = parsed.leagueTableViewMode;
         chessState.knockoutBracket = parsed.knockoutBracket || null;
         if (parsed.autoRePairEnabled !== undefined)
           chessState.autoRePairEnabled = parsed.autoRePairEnabled;
@@ -451,6 +459,8 @@ function saveChessState(isIntentionalReset = false) {
     players: chessState.players,
     matches: chessState.matches,
     checkedInPlayerIds: chessState.checkedInPlayerIds,
+    activePairings: chessState.activePairings || [],
+    leagueTableViewMode: chessState.leagueTableViewMode || 'matrix',
     knockoutBracket: chessState.knockoutBracket,
     autoRePairEnabled: chessState.autoRePairEnabled,
     sessionActive: chessState.sessionActive,
@@ -1057,6 +1067,134 @@ function renderLadderTab(players) {
 }
 
 // 2. League Table View
+// Helper: Render Authentic Head-to-Head Cross-Table Matrix Grid
+function renderTournamentCrossTableGrid(sortedPlayers) {
+  const matches = chessState.matches || [];
+
+  // Helper: Get head-to-head match outcomes between pA and pB from pA's perspective
+  function getH2HResults(pA, pB) {
+    const directMatches = matches.filter(
+      (m) =>
+        (m.white === pA.name && m.black === pB.name) ||
+        (m.white === pB.name && m.black === pA.name),
+    );
+
+    if (directMatches.length === 0) return '·';
+
+    return directMatches
+      .map((m) => {
+        if (m.result === '½-½') return '½';
+        if (m.white === pA.name) {
+          return m.result === '1-0' ? '1' : '0';
+        } else {
+          return m.result === '0-1' ? '1' : '0';
+        }
+      })
+      .join(', ');
+  }
+
+  return `
+    <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+      <div style="background: #f8fafc; padding: 14px 18px; border-bottom: 1.5px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+        <div>
+          <h4 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 1.15rem; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+            <span>☵</span> Tournament Head-to-Head Matrix Grid
+          </h4>
+          <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">
+            The classic chess tournament grid: player names on rows, opponent numbers on columns.
+          </div>
+        </div>
+        <div style="font-size: 0.75rem; color: #475569; font-family: monospace; background: #ffffff; padding: 4px 10px; border-radius: 6px; border: 1px solid #cbd5e1;">
+          <span style="color: #16a34a; font-weight: 800;">1 = Win</span> &nbsp;|&nbsp; 
+          <span style="color: #d97706; font-weight: 800;">½ = Draw</span> &nbsp;|&nbsp; 
+          <span style="color: #94a3b8; font-weight: 700;">0 = Loss</span> &nbsp;|&nbsp; 
+          <span style="color: #cbd5e1;">· = Unplayed</span>
+        </div>
+      </div>
+
+      <div style="width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.84rem; text-align: center;">
+          <thead>
+            <tr style="background: #f1f5f9; border-bottom: 2px solid #cbd5e1; color: #334155; font-size: 0.76rem; font-weight: 800; text-transform: uppercase;">
+              <th style="padding: 10px 12px; width: 40px; text-align: center;">#</th>
+              <th style="padding: 10px 14px; text-align: left; min-width: 140px;">Pupil</th>
+              <th style="padding: 10px 10px; text-align: left; min-width: 90px;">House</th>
+              ${sortedPlayers
+                .map(
+                  (p, idx) => `
+                <th style="padding: 8px 6px; width: 34px; min-width: 30px; text-align: center; border-left: 1px solid #e2e8f0; font-family: monospace;" title="${p.name}">
+                  ${idx + 1}
+                </th>
+              `,
+                )
+                .join('')}
+              <th style="padding: 10px 12px; border-left: 2px solid #cbd5e1; text-align: center; background: #f8fafc;">Pts</th>
+              <th style="padding: 10px 10px; text-align: center;">W-D-L</th>
+              <th style="padding: 10px 12px; text-align: center; font-family: monospace;">Rating</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${sortedPlayers
+              .map((pA, rIdx) => {
+                const hA = HOUSES[pA.house] || {
+                  name: pA.house,
+                  color: '#334155',
+                  bgLight: '#f1f5f9',
+                  borderColor: '#cbd5e1',
+                };
+                const totalPts =
+                  pA.won * SCORING_RULES.WIN +
+                  pA.drawn * SCORING_RULES.DRAW +
+                  pA.lost * SCORING_RULES.PARTICIPATION;
+
+                return `
+                <tr style="border-bottom: 1px solid #f1f5f9; transition: background 0.15s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                  <td style="padding: 10px 12px; font-weight: 800; color: #64748b; font-family: monospace;">${rIdx + 1}</td>
+                  <td style="padding: 10px 14px; text-align: left; font-weight: 700; color: #0f172a; white-space: nowrap;">${pA.name}</td>
+                  <td style="padding: 10px 10px; text-align: left; white-space: nowrap;">
+                    <span style="background: ${hA.bgLight}; color: ${hA.color}; border: 1px solid ${hA.borderColor}; padding: 2px 7px; border-radius: 10px; font-size: 0.72rem; font-weight: 700;">
+                      ${hA.name}
+                    </span>
+                  </td>
+                  ${sortedPlayers
+                    .map((pB, cIdx) => {
+                      if (rIdx === cIdx) {
+                        return `<td style="padding: 8px 6px; background: #334155; color: #64748b; border-left: 1px solid #e2e8f0; font-size: 0.75rem; user-select: none;">■</td>`;
+                      }
+                      const res = getH2HResults(pA, pB);
+                      let style = 'color: #cbd5e1;';
+                      if (res.includes('1')) style = 'color: #16a34a; font-weight: 800;';
+                      else if (res.includes('½')) style = 'color: #d97706; font-weight: 800;';
+                      else if (res.includes('0')) style = 'color: #64748b; font-weight: 700;';
+
+                      return `
+                      <td style="padding: 8px 6px; border-left: 1px solid #e2e8f0; font-family: monospace; font-size: 0.86rem; ${style}">
+                        ${res}
+                      </td>
+                    `;
+                    })
+                    .join('')}
+                  <td style="padding: 10px 12px; border-left: 2px solid #cbd5e1; font-weight: 900; color: ${hA.color}; font-size: 1rem; background: #fafafa;">
+                    ${totalPts}
+                  </td>
+                  <td style="padding: 10px 10px; font-size: 0.78rem; color: #475569; white-space: nowrap;">
+                    ${pA.won}W-${pA.drawn}D-${pA.lost}L
+                  </td>
+                  <td style="padding: 10px 12px; font-family: monospace; font-weight: 700; color: #334155;">
+                    ${pA.rating}
+                  </td>
+                </tr>
+              `;
+              })
+              .join('')}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  `;
+}
+
+// 2. League Table View & Tournament Cross-Table Matrix
 function renderLeagueTableTab(players) {
   if (players.length === 0) {
     return `
@@ -1089,55 +1227,81 @@ function renderLeagueTableTab(players) {
     return ptsB - ptsA || b.rating - a.rating;
   });
 
+  const isMatrix = chessState.leagueTableViewMode !== 'table';
+
   return `
-    <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
-      <div style="width: 100%; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;">
-        <table style="width: 100%; min-width: 680px; border-collapse: collapse; text-align: left; font-size: 0.88rem;">
-          <thead>
-            <tr style="background: #f8fafc; border-bottom: 2px solid #e2e8f0; color: #475569; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em;">
-              <th style="padding: 12px 14px;">Rank</th>
-              <th style="padding: 12px 14px;">Pupil</th>
-              <th style="padding: 12px 14px;">Year</th>
-              <th style="padding: 12px 14px;">House</th>
-              <th style="padding: 12px 14px; text-align: center;">Played</th>
-              <th style="padding: 12px 14px; text-align: center;">Won</th>
-              <th style="padding: 12px 14px; text-align: center;">Drawn</th>
-              <th style="padding: 12px 14px; text-align: center;">Lost</th>
-              <th style="padding: 12px 14px; text-align: center;">Rating</th>
-              <th style="padding: 12px 14px; text-align: right;">House Points</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${sortedByPoints
-              .map((p, idx) => {
-                const h = HOUSES[p.house];
-                const totalPts =
-                  p.won * SCORING_RULES.WIN +
-                  p.drawn * SCORING_RULES.DRAW +
-                  p.lost * SCORING_RULES.PARTICIPATION;
-                return `
-                <tr class="chess-table-row" style="border-bottom: 1px solid #f1f5f9; transition: background 0.15s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
-                  <td style="padding: 12px 14px; font-weight: 800; color: #64748b;">${idx + 1}</td>
-                  <td style="padding: 12px 14px; font-weight: 700; color: #0f172a;">${p.name}</td>
-                  <td style="padding: 12px 14px; color: #475569;">Year ${p.year}</td>
-                  <td style="padding: 12px 14px;">
-                    <span style="background: ${h.bgLight}; color: ${h.color}; border: 1px solid ${h.borderColor}; padding: 3px 8px; border-radius: 12px; font-size: 0.72rem; font-weight: 700;">
-                      <i class="fa-solid ${h.icon}"></i> ${h.name}
-                    </span>
-                  </td>
-                  <td style="padding: 12px 14px; text-align: center; font-weight: 600;">${p.games}</td>
-                  <td style="padding: 12px 14px; text-align: center; color: #16a34a; font-weight: 700;">${p.won}</td>
-                  <td style="padding: 12px 14px; text-align: center; color: #2563eb; font-weight: 700;">${p.drawn}</td>
-                  <td style="padding: 12px 14px; text-align: center; color: #94a3b8;">${p.lost}</td>
-                  <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: 700; color: #334155;">${p.rating}</td>
-                  <td style="padding: 12px 14px; text-align: right; font-weight: 800; color: ${h.color}; font-size: 1.05rem;">+${totalPts}</td>
-                </tr>
-              `;
-              })
-              .join('')}
-          </tbody>
-        </table>
+    <div>
+      <!-- View Mode Selector Toggle Bar -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+        <div style="display: inline-flex; background: #e2e8f0; border-radius: 8px; padding: 3px;">
+          <button type="button" onclick="window.setLeagueTableViewMode('matrix')" style="${isMatrix ? 'background: #0f172a; color: #ffffff; font-weight: 800;' : 'background: transparent; color: #475569; font-weight: 600;'} border: none; padding: 7px 14px; border-radius: 6px; font-size: 0.82rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s;">
+            <span>☵</span> Tournament Cross-Table Grid
+          </button>
+          <button type="button" onclick="window.setLeagueTableViewMode('table')" style="${!isMatrix ? 'background: #0f172a; color: #ffffff; font-weight: 800;' : 'background: transparent; color: #475569; font-weight: 600;'} border: none; padding: 7px 14px; border-radius: 6px; font-size: 0.82rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s;">
+            <span>📋</span> Standings Table
+          </button>
+        </div>
+
+        <div style="font-size: 0.8rem; color: #64748b;">
+          Showing <strong>${sortedByPoints.length}</strong> active pupils · <strong>${chessState.matches.length}</strong> matches
+        </div>
       </div>
+
+      ${
+        isMatrix
+          ? renderTournamentCrossTableGrid(sortedByPoints)
+          : `
+        <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+          <div style="width: 100%; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;">
+            <table style="width: 100%; min-width: 680px; border-collapse: collapse; text-align: left; font-size: 0.88rem;">
+              <thead>
+                <tr style="background: #f8fafc; border-bottom: 2px solid #e2e8f0; color: #475569; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                  <th style="padding: 12px 14px;">Rank</th>
+                  <th style="padding: 12px 14px;">Pupil</th>
+                  <th style="padding: 12px 14px;">Year</th>
+                  <th style="padding: 12px 14px;">House</th>
+                  <th style="padding: 12px 14px; text-align: center;">Played</th>
+                  <th style="padding: 12px 14px; text-align: center;">Won</th>
+                  <th style="padding: 12px 14px; text-align: center;">Drawn</th>
+                  <th style="padding: 12px 14px; text-align: center;">Lost</th>
+                  <th style="padding: 12px 14px; text-align: center;">Rating</th>
+                  <th style="padding: 12px 14px; text-align: right;">House Points</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${sortedByPoints
+                  .map((p, idx) => {
+                    const h = HOUSES[p.house];
+                    const totalPts =
+                      p.won * SCORING_RULES.WIN +
+                      p.drawn * SCORING_RULES.DRAW +
+                      p.lost * SCORING_RULES.PARTICIPATION;
+                    return `
+                    <tr class="chess-table-row" style="border-bottom: 1px solid #f1f5f9; transition: background 0.15s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                      <td style="padding: 12px 14px; font-weight: 800; color: #64748b;">${idx + 1}</td>
+                      <td style="padding: 12px 14px; font-weight: 700; color: #0f172a;">${p.name}</td>
+                      <td style="padding: 12px 14px; color: #475569;">Year ${p.year}</td>
+                      <td style="padding: 12px 14px;">
+                        <span style="background: ${h.bgLight}; color: ${h.color}; border: 1px solid ${h.borderColor}; padding: 3px 8px; border-radius: 12px; font-size: 0.72rem; font-weight: 700;">
+                          <i class="fa-solid ${h.icon}"></i> ${h.name}
+                        </span>
+                      </td>
+                      <td style="padding: 12px 14px; text-align: center; font-weight: 600;">${p.games}</td>
+                      <td style="padding: 12px 14px; text-align: center; color: #16a34a; font-weight: 700;">${p.won}</td>
+                      <td style="padding: 12px 14px; text-align: center; color: #2563eb; font-weight: 700;">${p.drawn}</td>
+                      <td style="padding: 12px 14px; text-align: center; color: #94a3b8;">${p.lost}</td>
+                      <td style="padding: 12px 14px; text-align: center; font-family: monospace; font-weight: 700; color: #334155;">${p.rating}</td>
+                      <td style="padding: 12px 14px; text-align: right; font-weight: 800; color: ${h.color}; font-size: 1.05rem;">+${totalPts}</td>
+                    </tr>
+                  `;
+                  })
+                  .join('')}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      `
+      }
     </div>
   `;
 }
@@ -2012,6 +2176,191 @@ function renderBeginnersTab() {
   `;
 }
 
+// Helper: Render Active Board Pairings Grid with Direct 1-Click Result Scoring
+function renderActiveBoardPairingsGrid() {
+  const pairings = chessState.activePairings;
+  if (!pairings || pairings.length === 0) {
+    return '';
+  }
+
+  const activeBoards = pairings.filter((p) => !p.isBye);
+  const byeBoards = pairings.filter((p) => p.isBye);
+  const completedCount = activeBoards.filter((p) => p.completed).length;
+
+  return `
+    <div id="classroom-pairings-grid" style="background: #ffffff; border: 2px solid #38bdf8; border-radius: 12px; padding: 22px; box-shadow: 0 8px 24px rgba(2, 132, 199, 0.08); margin-top: 14px;">
+      
+      <!-- Grid Top Bar -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 12px; border-bottom: 1.5px solid #f1f5f9; padding-bottom: 14px;">
+        <div>
+          <div style="display: inline-flex; align-items: center; gap: 6px; background: #e0f2fe; color: #0284c7; padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase;">
+            <i class="fa-solid fa-chess-board"></i> Classroom Match Grid
+          </div>
+          <h3 style="margin: 4px 0 0 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.35rem; color: #0f172a; font-weight: 700;">
+            Today's Board Pairings (${activeBoards.length} Boards In Play)
+          </h3>
+          <div style="font-size: 0.84rem; color: #64748b; margin-top: 2px;">
+            ${completedCount} of ${activeBoards.length} games finished · Tap result directly on board card to score!
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <button type="button" onclick="window.generateThursdayPairings()" style="background: #f8fafc; color: #334155; border: 1.5px solid #cbd5e1; font-weight: 700; font-size: 0.82rem; padding: 8px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+            <i class="fa-solid fa-shuffle"></i> Re-Pair Boards
+          </button>
+          <button type="button" onclick="window.printFidePairingSheet()" style="background: #1c1917; color: #d4af37; border: 1.5px solid #44403c; font-weight: 700; font-size: 0.82rem; padding: 8px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Print official A4 pairing sheet">
+            <i class="fa-solid fa-print"></i> Print Sheet (A4)
+          </button>
+          <button type="button" onclick="window.toggleWhiteboardMode(true)" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: none; font-weight: 800; font-size: 0.82rem; padding: 8px 16px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);" title="Display on classroom interactive whiteboard">
+            <span>📺</span> Projector Mode (W)
+          </button>
+        </div>
+      </div>
+
+      <!-- Boards Grid (Responsive Cards) -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 14px;">
+        ${activeBoards
+          .map((p) => {
+            const wH = HOUSES[p.white.house] || {
+              name: p.white.house,
+              color: '#2563eb',
+              bgLight: '#eff6ff',
+              borderColor: '#bfdbfe',
+            };
+            const bH = HOUSES[p.black.house] || {
+              name: p.black.house,
+              color: '#dc2626',
+              bgLight: '#fef2f2',
+              borderColor: '#fecaca',
+            };
+            const isDone = !!p.completed;
+
+            return `
+            <div style="background: ${isDone ? '#f0fdf4' : '#ffffff'}; border: 2px solid ${isDone ? '#86efac' : '#e2e8f0'}; border-radius: 10px; padding: 14px 16px; box-shadow: 0 2px 6px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s;">
+              
+              <!-- Board Header -->
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; border-bottom: 1px solid ${isDone ? '#bbf7d0' : '#f1f5f9'}; padding-bottom: 8px;">
+                <span style="background: ${isDone ? '#16a34a' : '#0284c7'}; color: #ffffff; font-family: monospace; font-size: 0.76rem; font-weight: 800; padding: 2px 8px; border-radius: 4px;">
+                  BOARD ${p.board}
+                </span>
+                <span style="font-size: 0.74rem; font-weight: 700; color: #64748b;">
+                  ${wH.name} vs ${bH.name}
+                </span>
+              </div>
+
+              <!-- Players Row -->
+              <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px; align-items: center; margin-bottom: 12px;">
+                
+                <!-- White Player -->
+                <div style="background: #f8fafc; border: 1.5px solid ${wH.borderColor}; border-radius: 6px; padding: 8px 10px;">
+                  <div style="font-size: 0.65rem; color: #64748b; font-weight: 700; text-transform: uppercase;">♔ White</div>
+                  <div style="font-size: 0.95rem; font-weight: 800; color: #0f172a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                    ${p.white.name}
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 4px; margin-top: 3px;">
+                    <span style="background: ${wH.bgLight}; color: ${wH.color}; font-size: 0.68rem; font-weight: 700; padding: 1px 6px; border-radius: 3px; border: 1px solid ${wH.borderColor};">
+                      ${wH.name} · Y${p.white.year}
+                    </span>
+                  </div>
+                </div>
+
+                <div style="font-size: 0.8rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; text-align: center;">
+                  vs
+                </div>
+
+                <!-- Black Player -->
+                <div style="background: #f8fafc; border: 1.5px solid ${bH.borderColor}; border-radius: 6px; padding: 8px 10px; text-align: right;">
+                  <div style="font-size: 0.65rem; color: #64748b; font-weight: 700; text-transform: uppercase;">♚ Black</div>
+                  <div style="font-size: 0.95rem; font-weight: 800; color: #0f172a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                    ${p.black.name}
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 4px; margin-top: 3px; justify-content: flex-end;">
+                    <span style="background: ${bH.bgLight}; color: ${bH.color}; font-size: 0.68rem; font-weight: 700; padding: 1px 6px; border-radius: 3px; border: 1px solid ${bH.borderColor};">
+                      ${bH.name} · Y${p.black.year}
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Scoring Actions -->
+              ${
+                isDone
+                  ? `
+                <div style="background: #dcfce7; border: 1px solid #86efac; border-radius: 6px; padding: 8px 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px;">
+                  <div style="font-size: 0.82rem; font-weight: 800; color: #15803d; display: flex; align-items: center; gap: 6px;">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Result: <strong>${p.result}</strong> · ${p.result === '1-0' ? p.white.name + ' Won (+3)' : p.result === '0-1' ? p.black.name + ' Won (+3)' : 'Draw (+2 each)'}</span>
+                  </div>
+                  <button type="button" onclick="window.undoBoardResult(${p.board})" style="background: #ffffff; color: #475569; border: 1px solid #cbd5e1; font-size: 0.72rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; cursor: pointer;" title="Undo and re-score this game">
+                    ↺ Change
+                  </button>
+                </div>
+              `
+                  : `
+                <div>
+                  <div style="font-size: 0.7rem; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 5px; text-align: center;">
+                    ⚡ Tap 1-Click Game Result:
+                  </div>
+                  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px;">
+                    <button type="button" onclick="window.recordQuickMatchResult(${p.board}, 'white')"
+                            style="background: #ffffff; color: #0f172a; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 8px 4px; font-weight: 800; font-size: 0.8rem; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; transition: all 0.15s;"
+                            onmouseover="this.style.borderColor='#2563eb';this.style.background='#eff6ff'"
+                            onmouseout="this.style.borderColor='#cbd5e1';this.style.background='#ffffff'"
+                            title="White wins (+3 House pts)">
+                      <span>♔ White (1)</span>
+                      <span style="font-size: 0.65rem; color: #16a34a; font-weight: 700;">+3 Pts</span>
+                    </button>
+
+                    <button type="button" onclick="window.recordQuickMatchResult(${p.board}, 'draw')"
+                            style="background: #f8fafc; color: #334155; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 8px 4px; font-weight: 800; font-size: 0.8rem; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; transition: all 0.15s;"
+                            onmouseover="this.style.borderColor='#ca8a04';this.style.background='#fefce8'"
+                            onmouseout="this.style.borderColor='#cbd5e1';this.style.background='#f8fafc'"
+                            title="Draw: +2 House pts each">
+                      <span>½ Draw</span>
+                      <span style="font-size: 0.65rem; color: #ca8a04; font-weight: 700;">+2 Pts Each</span>
+                    </button>
+
+                    <button type="button" onclick="window.recordQuickMatchResult(${p.board}, 'black')"
+                            style="background: #1e293b; color: #ffffff; border: 1.5px solid #0f172a; border-radius: 6px; padding: 8px 4px; font-weight: 800; font-size: 0.8rem; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; transition: all 0.15s;"
+                            onmouseover="this.style.background='#0f172a';this.style.borderColor='#dc2626'"
+                            onmouseout="this.style.background='#1e293b';this.style.borderColor='#0f172a'"
+                            title="Black wins (+3 House pts)">
+                      <span>♚ Black (1)</span>
+                      <span style="font-size: 0.65rem; color: #86efac; font-weight: 700;">+3 Pts</span>
+                    </button>
+                  </div>
+                </div>
+              `
+              }
+
+            </div>
+          `;
+          })
+          .join('')}
+
+        ${byeBoards
+          .map((p) => {
+            const h = HOUSES[p.white.house] || { name: p.white.house, color: '#64748b' };
+            return `
+            <div style="background: #fafaf9; border: 1.5px dashed #cbd5e1; border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between;">
+              <div>
+                <div style="font-size: 0.72rem; font-weight: 800; color: #94a3b8; text-transform: uppercase;">Odd Number of Pupils · Practice Bye</div>
+                <div style="font-size: 0.95rem; font-weight: 700; color: #0f172a;">${p.white.name} (Y${p.white.year} · ${h.name})</div>
+              </div>
+              <span style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.76rem; font-weight: 700; padding: 3px 8px; border-radius: 4px;">
+                +1 Bye Pt
+              </span>
+            </div>
+          `;
+          })
+          .join('')}
+      </div>
+
+    </div>
+  `;
+}
+
 // 3. Pupil Self-Check-In & Attendance Management (Unified Period 6 Hub)
 function renderSignInTab(players = []) {
   const notCheckedIn = chessState.players.filter(
@@ -2037,47 +2386,62 @@ function renderSignInTab(players = []) {
     },
   );
 
+  const hasPairings = chessState.activePairings && chessState.activePairings.length > 0;
+
   return `
     <div style="display: flex; flex-direction: column; gap: 20px;">
       
-      <!-- Guidance & Attendance Controls Header -->
-      <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border: 1.5px solid #86efac; border-radius: 12px; padding: 18px 22px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
-        <div style="display: flex; align-items: center; gap: 14px;">
-          <div style="width: 44px; height: 44px; border-radius: 10px; background: #16a34a; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0;">
-            <i class="fa-solid fa-clipboard-check"></i>
-          </div>
+      <!-- Period 6 3-Step Session Runner Header -->
+      <div style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border: 2px solid #3b82f6; border-radius: 12px; padding: 18px 22px; color: #ffffff; box-shadow: 0 8px 24px rgba(0,0,0,0.2);">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
           <div>
-            <h3 style="margin: 0; font-size: 1.18rem; color: #14532d; font-weight: 800;">Thursday Period 6 Club Session</h3>
-            <div style="font-size: 0.88rem; color: #166534; margin-top: 2px;">
-              Currently <strong>${checkedInPlayers.length}</strong> pupil${checkedInPlayers.length === 1 ? '' : 's'} checked in for today's session · <strong>${chessState.matches.length}</strong> games logged this term!
+            <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(59, 130, 246, 0.2); border: 1px solid #3b82f6; padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: #93c5fd;">
+              Period 6 Thursday · Quick Session Runner
+            </div>
+            <h3 style="margin: 4px 0 2px 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.35rem; color: #ffffff; font-weight: 700;">
+              Today's 3-Step Club Workflow
+            </h3>
+            <div style="font-size: 0.85rem; color: #cbd5e1;">
+              <strong>1. Check In Pupils</strong> below &nbsp;·&nbsp; 
+              <strong>2. Generate Board Pairings Grid</strong> &nbsp;·&nbsp; 
+              <strong>3. Tap 1-Click Game Results</strong> on boards!
             </div>
           </div>
+
+          <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+            ${
+              chessState.players.length > 0
+                ? `
+              <button onclick="window.checkInAllPlayers()" style="background: #16a34a; color: #ffffff; border: none; font-weight: 800; font-size: 0.84rem; padding: 10px 16px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 10px rgba(22, 163, 74, 0.3);">
+                <span>✓</span> Check In All (${chessState.players.length})
+              </button>
+            `
+                : ''
+            }
+
+            <button onclick="window.generateThursdayPairings()" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1.5px solid #38bdf8; font-weight: 800; font-size: 0.88rem; padding: 10px 18px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);">
+              <span>⚔️</span> Generate Today's Board Pairings
+            </button>
+
+            ${
+              checkedInPlayers.length > 0
+                ? `
+              <button onclick="window.clearAttendance()" style="background: rgba(255,255,255,0.08); color: #cbd5e1; border: 1px solid #64748b; font-weight: 600; font-size: 0.8rem; padding: 9px 12px; border-radius: 8px; cursor: pointer;" title="Reset today's attendance checklist">
+                <span>↺</span> Reset Check-In
+              </button>
+            `
+                : ''
+            }
+          </div>
         </div>
 
-        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-          ${
-            chessState.players.length > 0
-              ? `
-            <button onclick="window.checkInAllPlayers()" style="background: #15803d; color: #fff; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 800; font-size: 0.84rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(21, 128, 61, 0.25);">
-              <i class="fa-solid fa-users"></i> Check In All (${chessState.players.length})
-            </button>
-          `
-              : ''
-          }
-          ${
-            checkedInPlayers.length > 0
-              ? `
-            <button onclick="window.clearAttendance()" style="background: #ffffff; color: #475569; border: 1.5px solid #cbd5e1; padding: 8px 14px; border-radius: 6px; font-weight: 700; font-size: 0.84rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Reset today's attendance checklist without losing pupil records or points">
-              <i class="fa-solid fa-clock-rotate-left"></i> Reset Today's Attendance
-            </button>
-          `
-              : ''
-          }
+        <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.82rem; color: #94a3b8; align-items: center;">
+          <span>Checked In: <strong style="color: #4ade80;">${checkedInPlayers.length}</strong> of ${chessState.players.length} pupils</span>
+          <span>·</span>
+          <span>Games logged this term: <strong style="color: #facc15;">${chessState.matches.length}</strong></span>
+          ${hasPairings ? `<span>·</span><span style="color: #38bdf8; font-weight: 700;">⚔️ ${chessState.activePairings.filter((p) => !p.isBye).length} Boards Currently Paired</span>` : ''}
         </div>
       </div>
-
-      <!-- The Beth Harmon Ceiling Board (Quiet Entry Starter / Weekly Challenge) -->
-      ${renderBethHarmonCeilingBoard()}
 
       <!-- Two-Column Form: Quick Check-In vs New Player Registration -->
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
@@ -2246,6 +2610,33 @@ function renderSignInTab(players = []) {
         `
         }
       </div>
+
+      <!-- Active Classroom Board Pairings Grid (Embedded directly in Period 6 Hub) -->
+      ${
+        hasPairings
+          ? renderActiveBoardPairingsGrid()
+          : checkedInPlayers.length >= 2
+            ? `
+        <div style="background: #eff6ff; border: 2px dashed #93c5fd; border-radius: 12px; padding: 24px 20px; text-align: center;">
+          <div style="width: 50px; height: 50px; border-radius: 50%; background: #dbeafe; color: #0284c7; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin: 0 auto 10px;">
+            ⚔️
+          </div>
+          <h4 style="margin: 0 0 6px 0; font-size: 1.2rem; color: #1e40af; font-weight: 800;">
+            Ready to Begin Period 6 Games!
+          </h4>
+          <p style="margin: 0 auto 16px auto; max-width: 520px; font-size: 0.88rem; color: #3b82f6; line-height: 1.45;">
+            You have <strong>${checkedInPlayers.length}</strong> pupils checked in. Click below to automatically pair players across houses and assign classroom boards!
+          </p>
+          <button type="button" onclick="window.generateThursdayPairings()" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: none; font-weight: 800; font-size: 0.92rem; padding: 12px 24px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);">
+            <span>⚔️</span> Generate Today's Board Pairings Grid
+          </button>
+        </div>
+      `
+            : ''
+      }
+
+      <!-- The Beth Harmon Ceiling Board (Quiet Entry Starter / Weekly Challenge — Collapsed by Default) -->
+      ${renderBethHarmonCeilingBoard()}
 
       <!-- Live League Standings & Ladder Section (Unified directly into Period 6 Hub!) -->
       <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 22px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
@@ -2423,10 +2814,16 @@ function renderPairingsTab() {
 
       <!-- Generated Pairings Container -->
       <div id="pairings-results-box">
-        <div style="text-align: center; padding: 40px 20px; border: 2px dashed #cbd5e1; border-radius: 10px; color: #64748b;">
-          <i class="fa-solid fa-chess-board" style="font-size: 2.5rem; color: #94a3b8; margin-bottom: 10px;"></i>
-          <div>Click <strong>"Generate Balanced Pairings"</strong> above to auto-assign boards for Period 6.</div>
-        </div>
+        ${
+          chessState.activePairings && chessState.activePairings.length > 0
+            ? renderActiveBoardPairingsGrid()
+            : `
+          <div style="text-align: center; padding: 40px 20px; border: 2px dashed #cbd5e1; border-radius: 10px; color: #64748b;">
+            <i class="fa-solid fa-chess-board" style="font-size: 2.5rem; color: #94a3b8; margin-bottom: 10px;"></i>
+            <div>Click <strong>"Generate Balanced Pairings"</strong> above to auto-assign boards for Period 6.</div>
+          </div>
+        `
+        }
       </div>
 
     </div>
@@ -3321,6 +3718,11 @@ window.generateThursdayPairings = function () {
       board: boardNum,
       white: white,
       black: black,
+      completed: false,
+      result: null,
+      winnerName: null,
+      winnerHouse: null,
+      matchId: null,
     });
   }
 
@@ -3330,86 +3732,151 @@ window.generateThursdayPairings = function () {
       white: pool[0],
       black: null,
       isBye: true,
+      completed: true,
+      result: 'Bye',
     });
   }
 
   chessState.activePairings = pairings;
+  saveChessState();
+  renderChessHubView();
+  showChessToast(
+    `⚔️ Generated ${pairings.filter((p) => !p.isBye).length} boards for Period 6!`,
+    'success',
+  );
+};
 
-  const box = document.getElementById('pairings-results-box');
-  if (!box) return;
+// 1-Click Direct Board Scoring Engine
+window.recordQuickMatchResult = function (boardNum, resultWinner) {
+  if (!chessState.activePairings) return;
+  const p = chessState.activePairings.find((x) => x.board === boardNum);
+  if (!p || !p.white || !p.black) return;
 
-  box.innerHTML = `
-    <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px; animation: fadeIn 0.25s ease-out;">
-      
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
-        <div>
-          <h3 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 1.25rem; color: #0f172a; display: flex; align-items: center; gap: 8px;">
-            <i class="fa-solid fa-chess-board" style="color: #8b5cf6;"></i> Official Period 6 Board Assignments
-          </h3>
-          <div style="font-size: 0.8rem; color: #64748b;">Generated for ${presentIds.length} players (${pairings.filter((p) => !p.isBye).length} active boards)</div>
-        </div>
+  const pWhite = chessState.players.find((x) => x.id === p.white.id);
+  const pBlack = chessState.players.find((x) => x.id === p.black.id);
+  if (!pWhite || !pBlack) return;
 
-        <button onclick="window.printFidePairingSheet()" style="background: #1c1917; color: #d4af37; border: 1.5px solid #44403c; padding: 6px 14px; border-radius: 6px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
-          <i class="fa-solid fa-print"></i> 🖨 Print FIDE Sheet (A4)
-        </button>
-      </div>
+  pWhite.games = (pWhite.games || 0) + 1;
+  pBlack.games = (pBlack.games || 0) + 1;
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
-        ${pairings
-          .map((p) => {
-            if (p.isBye) {
-              return `
-              <div style="background: #ffffff; border: 1px dashed #cbd5e1; border-radius: 8px; padding: 14px; text-align: center;">
-                <div style="font-size: 0.75rem; font-weight: 800; color: #94a3b8; text-transform: uppercase;">Odd Number of Players</div>
-                <div style="font-size: 0.95rem; font-weight: 700; color: #0f172a; margin: 4px 0;">${p.white.name}</div>
-                <div style="font-size: 0.75rem; color: #10b981; font-weight: 700;">Receives 1 Practice Bye (+1 pt)</div>
-              </div>
-            `;
-            }
+  let resultStr = '1-0';
+  let winnerName = pWhite.name;
+  let winnerHouse = pWhite.house;
 
-            const wH = HOUSES[p.white.house];
-            const bH = HOUSES[p.black.house];
+  if (resultWinner === 'white') {
+    resultStr = '1-0';
+    pWhite.won = (pWhite.won || 0) + 1;
+    pBlack.lost = (pBlack.lost || 0) + 1;
+    pWhite.rating = (pWhite.rating || 1000) + 15;
+    pBlack.rating = Math.max(800, (pBlack.rating || 1000) - 15);
+    if (pWhite.rank > pBlack.rank) {
+      const t = pWhite.rank;
+      pWhite.rank = pBlack.rank;
+      pBlack.rank = t;
+    }
+    const hName = HOUSES[pWhite.house]?.name || pWhite.house;
+    showChessToast(`🏆 Board ${boardNum}: ${pWhite.name} (${hName}) won! +3 House Pts`, 'success');
+  } else if (resultWinner === 'black') {
+    resultStr = '0-1';
+    winnerName = pBlack.name;
+    winnerHouse = pBlack.house;
+    pBlack.won = (pBlack.won || 0) + 1;
+    pWhite.lost = (pWhite.lost || 0) + 1;
+    pBlack.rating = (pBlack.rating || 1000) + 15;
+    pWhite.rating = Math.max(800, (pWhite.rating || 1000) - 15);
+    if (pBlack.rank > pWhite.rank) {
+      const t = pBlack.rank;
+      pBlack.rank = pWhite.rank;
+      pWhite.rank = t;
+    }
+    const hName = HOUSES[pBlack.house]?.name || pBlack.house;
+    showChessToast(`🏆 Board ${boardNum}: ${pBlack.name} (${hName}) won! +3 House Pts`, 'success');
+  } else {
+    resultStr = '½-½';
+    winnerName = 'Draw';
+    winnerHouse = null;
+    pWhite.drawn = (pWhite.drawn || 0) + 1;
+    pBlack.drawn = (pBlack.drawn || 0) + 1;
+    const wH = HOUSES[pWhite.house]?.name || pWhite.house;
+    const bH = HOUSES[pBlack.house]?.name || pBlack.house;
+    showChessToast(`🤝 Board ${boardNum}: Draw! +2 House Pts each for ${wH} & ${bH}`, 'info');
+  }
 
-            return `
-            <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 14px; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 0.75rem; font-weight: 800;">
-                <span style="color: #2563eb; text-transform: uppercase;">BOARD ${p.board}</span>
-                <span style="color: #64748b;">Rank #${p.white.rank} vs #${p.black.rank}</span>
-              </div>
+  chessState.players.sort((a, b) => a.rank - b.rank);
+  chessState.players.forEach((player, idx) => (player.rank = idx + 1));
 
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                <div style="min-width: 0;">
-                  <div style="font-weight: 700; color: #0f172a; font-size: 0.9rem; display: flex; align-items: center; gap: 6px;">
-                    <span style="display: inline-block; width: 10px; height: 10px; border-radius: 2px; background: #ffffff; border: 1px solid #94a3b8;"></span>
-                    <span>${p.white.name}</span>
-                  </div>
-                  <div style="font-size: 0.72rem; color: ${wH.color}; font-weight: 700;">${wH.name} · Y${p.white.year}</div>
-                </div>
+  const matchId = 'm_' + Date.now();
+  chessState.matches.push({
+    id: matchId,
+    date: 'Thursday Period 6',
+    round: `Period 6 Board ${boardNum}`,
+    white: pWhite.name,
+    black: pBlack.name,
+    whiteHouse: pWhite.house,
+    blackHouse: pBlack.house,
+    result: resultStr,
+    opening: 'Period 6 Match',
+  });
 
-                <div style="font-size: 0.75rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; padding: 0 6px;">vs</div>
+  p.completed = true;
+  p.result = resultStr;
+  p.winnerName = winnerName;
+  p.winnerHouse = winnerHouse;
+  p.matchId = matchId;
 
-                <div style="text-align: right; min-width: 0;">
-                  <div style="font-weight: 700; color: #0f172a; font-size: 0.9rem; display: flex; align-items: center; justify-content: flex-end; gap: 6px;">
-                    <span>${p.black.name}</span>
-                    <span style="display: inline-block; width: 10px; height: 10px; border-radius: 2px; background: #0f172a;"></span>
-                  </div>
-                  <div style="font-size: 0.72rem; color: ${bH.color}; font-weight: 700;">${bH.name} · Y${p.black.year}</div>
-                </div>
-              </div>
+  saveChessState();
+  renderChessHubView();
+};
 
-              <div style="border-top: 1px solid #f1f5f9; padding-top: 8px; text-align: center;">
-                <button onclick="window.prefillMatchModal('${p.white.id}', '${p.black.id}', ${p.board})" style="background: none; border: none; color: #8b5cf6; font-size: 0.78rem; font-weight: 700; cursor: pointer;">
-                  <i class="fa-solid fa-square-check"></i> Record Result for Board ${p.board}
-                </button>
-              </div>
-            </div>
-          `;
-          })
-          .join('')}
-      </div>
+// Undo Board Result (Emergency Teacher Safety Net)
+window.undoBoardResult = function (boardNum) {
+  if (!chessState.activePairings) return;
+  const p = chessState.activePairings.find((x) => x.board === boardNum);
+  if (!p || !p.completed) return;
 
-    </div>
-  `;
+  const pWhite = chessState.players.find((x) => x.id === p.white.id);
+  const pBlack = chessState.players.find((x) => x.id === p.black.id);
+
+  if (pWhite && pBlack) {
+    pWhite.games = Math.max(0, (pWhite.games || 1) - 1);
+    pBlack.games = Math.max(0, (pBlack.games || 1) - 1);
+
+    if (p.result === '1-0') {
+      pWhite.won = Math.max(0, (pWhite.won || 1) - 1);
+      pBlack.lost = Math.max(0, (pBlack.lost || 1) - 1);
+      pWhite.rating = Math.max(800, (pWhite.rating || 1000) - 15);
+      pBlack.rating = (pBlack.rating || 1000) + 15;
+    } else if (p.result === '0-1') {
+      pBlack.won = Math.max(0, (pBlack.won || 1) - 1);
+      pWhite.lost = Math.max(0, (pWhite.lost || 1) - 1);
+      pBlack.rating = Math.max(800, (pBlack.rating || 1000) - 15);
+      pWhite.rating = (pWhite.rating || 1000) + 15;
+    } else if (p.result === '½-½') {
+      pWhite.drawn = Math.max(0, (pWhite.drawn || 1) - 1);
+      pBlack.drawn = Math.max(0, (pBlack.drawn || 1) - 1);
+    }
+  }
+
+  if (p.matchId) {
+    chessState.matches = chessState.matches.filter((m) => m.id !== p.matchId);
+  }
+
+  p.completed = false;
+  p.result = null;
+  p.winnerName = null;
+  p.winnerHouse = null;
+  p.matchId = null;
+
+  saveChessState();
+  renderChessHubView();
+  showChessToast(`Board ${boardNum} result cleared. Ready to re-score!`, 'info');
+};
+
+// Toggle League Table View Mode ('matrix' vs 'table')
+window.setLeagueTableViewMode = function (mode) {
+  chessState.leagueTableViewMode = mode;
+  saveChessState();
+  renderChessHubView();
 };
 
 // Knockout Cup Generator & Progression (Audio 3)
