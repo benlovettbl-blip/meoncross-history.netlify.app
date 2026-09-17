@@ -3225,6 +3225,44 @@ function renderKnockoutTab() {
     if (plateFinalMatch && plateFinalMatch.winner) plateWinner = plateFinalMatch.winner;
   }
 
+  // Auto-heal / initialize woodenSpoonMatch & cupBronzeMatch if 8-player bracket
+  if (bracket.tournamentSize === 8) {
+    if (!bracket.woodenSpoonMatch && bracket.plateRounds && bracket.plateRounds[0]) {
+      bracket.woodenSpoonMatch = {
+        id: 'wooden_spoon_final',
+        p1: null,
+        p2: null,
+        winner: null,
+        loser: null,
+      };
+      if (bracket.plateRounds[0][0]?.loser)
+        bracket.woodenSpoonMatch.p1 = bracket.plateRounds[0][0].loser;
+      if (bracket.plateRounds[0][1]?.loser)
+        bracket.woodenSpoonMatch.p2 = bracket.plateRounds[0][1].loser;
+    }
+    if (!bracket.cupBronzeMatch && bracket.rounds && bracket.rounds[1]) {
+      bracket.cupBronzeMatch = {
+        id: 'cup_bronze_final',
+        p1: null,
+        p2: null,
+        winner: null,
+        loser: null,
+      };
+      if (bracket.rounds[1][0]?.loser) bracket.cupBronzeMatch.p1 = bracket.rounds[1][0].loser;
+      if (bracket.rounds[1][1]?.loser) bracket.cupBronzeMatch.p2 = bracket.rounds[1][1].loser;
+    }
+  }
+
+  let woodenSpoonWinner = null;
+  if (bracket.woodenSpoonMatch && bracket.woodenSpoonMatch.winner) {
+    woodenSpoonWinner = bracket.woodenSpoonMatch.winner;
+  }
+
+  let bronzeWinner = null;
+  if (bracket.cupBronzeMatch && bracket.cupBronzeMatch.winner) {
+    bronzeWinner = bracket.cupBronzeMatch.winner;
+  }
+
   return `
     <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 14px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
       
@@ -3234,8 +3272,11 @@ function renderKnockoutTab() {
             <i class="fa-solid fa-trophy"></i> Single-Elimination Knockout
           </div>
           <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #0f172a; margin: 4px 0 0 0;">
-            Thursday Period 6 Championship Bracket
+            Thursday Period 6 Championship Tournament
           </h2>
+          <div style="font-size: 0.84rem; color: #64748b; margin-top: 2px;">
+            3-Tier Trophy System: 🏆 Championship Cup · 🥈 Challenger Plate · 🥄 Wooden Spoon Shield
+          </div>
         </div>
 
         <div style="display: flex; gap: 8px;">
@@ -3248,6 +3289,7 @@ function renderKnockoutTab() {
         </div>
       </div>
 
+      <!-- SECTION 1: 🏆 Championship Cup (Gold Tier) -->
       ${
         grandWinner
           ? `
@@ -3255,10 +3297,10 @@ function renderKnockoutTab() {
         <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 2px solid #f59e0b; border-radius: 12px; padding: 20px; margin-bottom: 24px; text-align: center; box-shadow: 0 6px 18px rgba(245, 158, 11, 0.25); animation: zoomIn 0.3s ease-out;">
           <div style="font-size: 2rem; color: #d97706; margin-bottom: 6px;"><i class="fa-solid fa-crown"></i></div>
           <h3 style="margin: 0 0 4px 0; font-family: 'Playfair Display', serif; font-size: 1.6rem; color: #78350f; font-weight: 900;">
-            TOURNAMENT CHAMPION: ${grandWinner.name}!
+            🏆 TOURNAMENT CHAMPION: ${grandWinner.name}!
           </h3>
-          <div style="font-size: 1rem; font-weight: 800; color: ${HOUSES[grandWinner.house].color}; text-transform: uppercase;">
-            ${HOUSES[grandWinner.house].name} House (+3 House Points Awarded)
+          <div style="font-size: 1rem; font-weight: 800; color: ${HOUSES[grandWinner.house]?.color || '#78350f'}; text-transform: uppercase;">
+            ${HOUSES[grandWinner.house]?.name || grandWinner.house} House (+3 House Points Awarded)
           </div>
           <div style="font-size: 0.85rem; color: #92400e; margin-top: 6px;">
             Brilliant strategic mastery throughout all rounds of Period 6!
@@ -3267,6 +3309,12 @@ function renderKnockoutTab() {
       `
           : ''
       }
+
+      <div style="margin-bottom: 12px;">
+        <div style="display: inline-flex; align-items: center; gap: 6px; background: #fef3c7; color: #b45309; border: 1px solid #fde68a; padding: 3px 10px; border-radius: 12px; font-size: 0.72rem; font-weight: 800; text-transform: uppercase;">
+          🏆 Gold Tier · Championship Cup Bracket
+        </div>
+      </div>
 
       <!-- Championship Bracket Tree Horizontal Scroll Container -->
       <div style="display: flex; gap: 28px; overflow-x: auto; padding: 10px 0 20px;">
@@ -3338,9 +3386,69 @@ function renderKnockoutTab() {
           `;
           })
           .join('')}
+
+        <!-- 🥉 3rd Place Bronze Medal Playoff (Optional for 8-player Cup SF Losers) -->
+        ${
+          bracket.cupBronzeMatch
+            ? `
+          <div style="min-width: 250px; flex: 1; border-left: 2px dashed #fcd34d; padding-left: 18px;">
+            <div style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: #b45309; margin-bottom: 12px; text-align: center; letter-spacing: 0.05em;">
+              🥉 3rd Place Bronze Playoff
+            </div>
+            <div style="display: flex; flex-direction: column; justify-content: center; height: 100%; min-height: 340px;">
+              <div style="background: #fffbeb; border: 1.5px solid ${bracket.cupBronzeMatch.winner ? '#f59e0b' : '#fcd34d'}; border-radius: 8px; padding: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                <div style="font-size: 0.7rem; font-weight: 800; color: #92400e; text-transform: uppercase; margin-bottom: 6px; text-align: center;">
+                  Cup Semi-Final Non-Advancers
+                </div>
+                <!-- P1 -->
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 6px 8px; border-radius: 4px; background: ${bracket.cupBronzeMatch.winner && bracket.cupBronzeMatch.winner.id === bracket.cupBronzeMatch.p1?.id ? '#fef3c7' : '#ffffff'}; margin-bottom: 4px;">
+                  <span style="font-weight: 700; font-size: 0.85rem; color: #0f172a;">
+                    ${bracket.cupBronzeMatch.p1 ? bracket.cupBronzeMatch.p1.name : '<span style="color: #94a3b8; font-style: italic;">Awaiting SF 1 Loser</span>'}
+                  </span>
+                  ${bracket.cupBronzeMatch.p1 ? `<span style="font-size: 0.7rem; font-weight: 800; color: ${HOUSES[bracket.cupBronzeMatch.p1.house]?.color || '#94a3b8'};">${HOUSES[bracket.cupBronzeMatch.p1.house]?.name || ''}</span>` : ''}
+                </div>
+                <!-- P2 -->
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 6px 8px; border-radius: 4px; background: ${bracket.cupBronzeMatch.winner && bracket.cupBronzeMatch.winner.id === bracket.cupBronzeMatch.p2?.id ? '#fef3c7' : '#ffffff'};">
+                  <span style="font-weight: 700; font-size: 0.85rem; color: #0f172a;">
+                    ${bracket.cupBronzeMatch.p2 ? bracket.cupBronzeMatch.p2.name : '<span style="color: #94a3b8; font-style: italic;">Awaiting SF 2 Loser</span>'}
+                  </span>
+                  ${bracket.cupBronzeMatch.p2 ? `<span style="font-size: 0.7rem; font-weight: 800; color: ${HOUSES[bracket.cupBronzeMatch.p2.house]?.color || '#94a3b8'};">${HOUSES[bracket.cupBronzeMatch.p2.house]?.name || ''}</span>` : ''}
+                </div>
+                <!-- Actions -->
+                ${
+                  bracket.cupBronzeMatch.p1 &&
+                  bracket.cupBronzeMatch.p2 &&
+                  !bracket.cupBronzeMatch.winner
+                    ? `
+                  <div style="display: flex; gap: 6px; margin-top: 8px; border-top: 1px dashed #fcd34d; padding-top: 6px;">
+                    <button onclick="window.advanceCupBronzeWinner('${bracket.cupBronzeMatch.p1.id}')" style="flex: 1; background: #ffffff; border: 1px solid #fcd34d; font-size: 0.72rem; font-weight: 700; padding: 4px; border-radius: 4px; cursor: pointer; color: #b45309;">
+                      ${bracket.cupBronzeMatch.p1.name.split(' ')[0]} Wins
+                    </button>
+                    <button onclick="window.advanceCupBronzeWinner('${bracket.cupBronzeMatch.p2.id}')" style="flex: 1; background: #ffffff; border: 1px solid #fcd34d; font-size: 0.72rem; font-weight: 700; padding: 4px; border-radius: 4px; cursor: pointer; color: #b45309;">
+                      ${bracket.cupBronzeMatch.p2.name.split(' ')[0]} Wins
+                    </button>
+                  </div>
+                `
+                    : ''
+                }
+                ${
+                  bracket.cupBronzeMatch.winner
+                    ? `
+                  <div style="font-size: 0.75rem; font-weight: 800; color: #b45309; text-align: center; margin-top: 6px; padding-top: 4px; border-top: 1px solid #fcd34d;">
+                    🥉 3rd Place Bronze: ${bracket.cupBronzeMatch.winner.name} (+2 pts)
+                  </div>
+                `
+                    : ''
+                }
+              </div>
+            </div>
+          </div>
+        `
+            : ''
+        }
       </div>
 
-      <!-- SECTION 2: Challenger Plate / Wooden Spoon Shield (Silver Tier) -->
+      <!-- SECTION 2: 🥈 The Challenger Plate (Silver Tier) -->
       ${
         bracket.plateRounds && bracket.plateRounds.length > 0
           ? `
@@ -3348,14 +3456,14 @@ function renderKnockoutTab() {
           
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
             <div>
-              <div style="display: inline-flex; align-items: center; gap: 6px; background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase;">
-                🥄 Consolation Bracket · Keep Everyone Playing
+              <div style="display: inline-flex; align-items: center; gap: 6px; background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase;">
+                🥈 Silver Tier · Second Chance Championship
               </div>
               <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #1e293b; margin: 4px 0 0 0;">
-                The Challenger Plate &amp; Wooden Spoon Shield
+                The Challenger Plate
               </h3>
               <div style="font-size: 0.84rem; color: #64748b; margin-top: 2px;">
-                Losers from Round 1 automatically advance here to compete for the Challenger Plate trophy (+2 House Points)!
+                Round 1 Quarter-Final non-advancers advance here! Winners of the Plate Semi-Finals contest the Challenger Plate Final (+2 House Points)!
               </div>
             </div>
           </div>
@@ -3364,7 +3472,7 @@ function renderKnockoutTab() {
             plateWinner
               ? `
             <div style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border: 2px solid #94a3b8; border-radius: 12px; padding: 18px; margin-bottom: 20px; text-align: center; box-shadow: 0 4px 14px rgba(0,0,0,0.06); animation: zoomIn 0.3s ease-out;">
-              <div style="font-size: 1.8rem; color: #475569; margin-bottom: 4px;">🥄</div>
+              <div style="font-size: 1.8rem; color: #334155; margin-bottom: 4px;">🥈</div>
               <h3 style="margin: 0 0 4px 0; font-family: 'Playfair Display', serif; font-size: 1.45rem; color: #1e293b; font-weight: 900;">
                 CHALLENGER PLATE CHAMPION: ${plateWinner.name}!
               </h3>
@@ -3372,7 +3480,7 @@ function renderKnockoutTab() {
                 ${HOUSES[plateWinner.house]?.name || plateWinner.house} House (+2 House Points Awarded)
               </div>
               <div style="font-size: 0.82rem; color: #64748b; margin-top: 4px;">
-                Fought back with grit and determination through the Wooden Spoon consolation rounds!
+                Fought back with grit and determination through the Challenger Plate rounds!
               </div>
             </div>
           `
@@ -3382,7 +3490,9 @@ function renderKnockoutTab() {
           <div style="display: flex; gap: 28px; overflow-x: auto; padding: 10px 0 16px;">
             ${bracket.plateRounds
               .map((round, rIdx) => {
-                const roundTitle = bracket.plateRoundNames[rIdx] || `Plate Round ${rIdx + 1}`;
+                const roundTitle =
+                  bracket.plateRoundNames[rIdx] ||
+                  (rIdx === 0 ? 'Plate Semi-Finals' : 'Challenger Plate Final');
                 return `
                 <div style="min-width: 250px; flex: 1;">
                   <div style="font-size: 0.82rem; font-weight: 800; text-transform: uppercase; color: #64748b; margin-bottom: 10px; text-align: center; letter-spacing: 0.04em;">
@@ -3448,6 +3558,100 @@ function renderKnockoutTab() {
               `;
               })
               .join('')}
+          </div>
+
+        </div>
+      `
+          : ''
+      }
+
+      <!-- SECTION 3: 🥄 The Wooden Spoon Shield (Consolation Tier for Plate SF Losers) -->
+      ${
+        bracket.woodenSpoonMatch
+          ? `
+        <div style="margin-top: 28px; border-top: 2px dashed #e2e8f0; padding-top: 22px;">
+          
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+            <div>
+              <div style="display: inline-flex; align-items: center; gap: 6px; background: #fef3c7; color: #92400e; border: 1px solid #fde68a; padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase;">
+                🥄 Consolation Tier · Resilience &amp; Determination
+              </div>
+              <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #78350f; margin: 4px 0 0 0;">
+                The Wooden Spoon Shield
+              </h3>
+              <div style="font-size: 0.84rem; color: #64748b; margin-top: 2px;">
+                Non-advancers from the Plate Semi-Finals face off head-to-head here. Nobody gets eliminated! The winner claims the proud Wooden Spoon Shield (+1 House Point for perseverance)!
+              </div>
+            </div>
+          </div>
+
+          ${
+            woodenSpoonWinner
+              ? `
+            <div style="background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 2px solid #b45309; border-radius: 12px; padding: 18px; margin-bottom: 20px; text-align: center; box-shadow: 0 4px 14px rgba(180, 83, 9, 0.15); animation: zoomIn 0.3s ease-out;">
+              <div style="font-size: 2rem; margin-bottom: 4px;">🥄</div>
+              <h3 style="margin: 0 0 4px 0; font-family: 'Playfair Display', serif; font-size: 1.45rem; color: #78350f; font-weight: 900;">
+                WOODEN SPOON SHIELD CHAMPION: ${woodenSpoonWinner.name}!
+              </h3>
+              <div style="font-size: 0.95rem; font-weight: 800; color: ${HOUSES[woodenSpoonWinner.house]?.color || '#b45309'}; text-transform: uppercase;">
+                ${HOUSES[woodenSpoonWinner.house]?.name || woodenSpoonWinner.house} House (+1 House Point Awarded)
+              </div>
+              <div style="font-size: 0.82rem; color: #92400e; margin-top: 4px;">
+                Fought with grit and determination right to the end! True chess spirit!
+              </div>
+            </div>
+          `
+              : ''
+          }
+
+          <!-- Wooden Spoon Shield Match Card -->
+          <div style="max-width: 480px; margin: 0 auto; background: #ffffff; border: 1.5px solid ${bracket.woodenSpoonMatch.winner ? '#b45309' : '#cbd5e1'}; border-radius: 10px; padding: 14px 16px; box-shadow: 0 3px 8px rgba(0,0,0,0.03);">
+            <div style="font-size: 0.75rem; font-weight: 800; color: #92400e; text-transform: uppercase; margin-bottom: 8px; text-align: center;">
+              🥄 Wooden Spoon Shield Final
+            </div>
+
+            <!-- P1 Slot -->
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 7px 10px; border-radius: 5px; background: ${bracket.woodenSpoonMatch.winner && bracket.woodenSpoonMatch.winner.id === bracket.woodenSpoonMatch.p1?.id ? '#fef3c7' : '#fafafa'}; margin-bottom: 6px;">
+              <span style="font-weight: 700; font-size: 0.88rem; color: #0f172a;">
+                ${bracket.woodenSpoonMatch.p1 ? bracket.woodenSpoonMatch.p1.name : '<span style="color: #94a3b8; font-style: italic;">Awaiting Plate SF 1 Loser</span>'}
+              </span>
+              ${bracket.woodenSpoonMatch.p1 ? `<span style="font-size: 0.72rem; font-weight: 800; color: ${HOUSES[bracket.woodenSpoonMatch.p1.house]?.color || '#94a3b8'};">${HOUSES[bracket.woodenSpoonMatch.p1.house]?.name || ''}</span>` : ''}
+            </div>
+
+            <!-- P2 Slot -->
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 7px 10px; border-radius: 5px; background: ${bracket.woodenSpoonMatch.winner && bracket.woodenSpoonMatch.winner.id === bracket.woodenSpoonMatch.p2?.id ? '#fef3c7' : '#fafafa'};">
+              <span style="font-weight: 700; font-size: 0.88rem; color: #0f172a;">
+                ${bracket.woodenSpoonMatch.p2 ? bracket.woodenSpoonMatch.p2.name : '<span style="color: #94a3b8; font-style: italic;">Awaiting Plate SF 2 Loser</span>'}
+              </span>
+              ${bracket.woodenSpoonMatch.p2 ? `<span style="font-size: 0.72rem; font-weight: 800; color: ${HOUSES[bracket.woodenSpoonMatch.p2.house]?.color || '#94a3b8'};">${HOUSES[bracket.woodenSpoonMatch.p2.house]?.name || ''}</span>` : ''}
+            </div>
+
+            <!-- Action Buttons -->
+            ${
+              bracket.woodenSpoonMatch.p1 &&
+              bracket.woodenSpoonMatch.p2 &&
+              !bracket.woodenSpoonMatch.winner
+                ? `
+              <div style="display: flex; gap: 8px; margin-top: 10px; border-top: 1px dashed #cbd5e1; padding-top: 8px;">
+                <button onclick="window.advanceWoodenSpoonWinner('${bracket.woodenSpoonMatch.p1.id}')" style="flex: 1; background: #fffbeb; border: 1.5px solid #fcd34d; font-size: 0.76rem; font-weight: 800; padding: 6px; border-radius: 5px; cursor: pointer; color: #78350f;" title="Spoon Win for ${bracket.woodenSpoonMatch.p1.name}">
+                  ${bracket.woodenSpoonMatch.p1.name.split(' ')[0]} Wins Spoon
+                </button>
+                <button onclick="window.advanceWoodenSpoonWinner('${bracket.woodenSpoonMatch.p2.id}')" style="flex: 1; background: #fffbeb; border: 1.5px solid #fcd34d; font-size: 0.76rem; font-weight: 800; padding: 6px; border-radius: 5px; cursor: pointer; color: #78350f;" title="Spoon Win for ${bracket.woodenSpoonMatch.p2.name}">
+                  ${bracket.woodenSpoonMatch.p2.name.split(' ')[0]} Wins Spoon
+                </button>
+              </div>
+            `
+                : ''
+            }
+            ${
+              bracket.woodenSpoonMatch.winner
+                ? `
+              <div style="font-size: 0.78rem; font-weight: 800; color: #78350f; text-align: center; margin-top: 8px; padding-top: 6px; border-top: 1px solid #fef3c7;">
+                🥄 Wooden Spoon Shield Winner: ${bracket.woodenSpoonMatch.winner.name} (+1 pt)
+              </div>
+            `
+                : ''
+            }
           </div>
 
         </div>
@@ -4454,31 +4658,55 @@ window.generateKnockoutTournament = function () {
   }
   rounds.push([{ id: 'ko_final', p1: null, p2: null, winner: null }]);
 
-  // Challenger Plate (Wooden Spoon Shield) Setup:
-  // In an 8-player bracket: 4 losers from Round 1 battle in Plate Semi-Finals -> Wooden Spoon Final
-  // In a 4-player bracket: 2 losers from Round 1 battle in the Wooden Spoon Final directly!
+  // Challenger Plate & Wooden Spoon Shield Setup:
+  // In an 8-player bracket:
+  // - 4 losers from Round 1 battle in Plate Semi-Finals -> Challenger Plate Final
+  // - The 2 losers from Plate Semi-Finals battle in the Wooden Spoon Shield Final!
+  // - The 2 losers from Cup Semi-Finals battle in the 3rd Place Bronze Playoff!
+  // In a 4-player bracket: 2 losers from Round 1 battle in the Challenger Plate Final directly!
   let plateRounds = [];
   let plateRoundNames = [];
+  let woodenSpoonMatch = null;
+  let cupBronzeMatch = null;
+
   if (tournamentSize === 8) {
-    plateRoundNames = ['Plate Semi-Finals', 'Wooden Spoon Shield Final'];
+    plateRoundNames = ['Plate Semi-Finals', 'Challenger Plate Final'];
     plateRounds = [
       [
-        { id: 'plate_sf_0', p1: null, p2: null, winner: null },
-        { id: 'plate_sf_1', p1: null, p2: null, winner: null },
+        { id: 'plate_sf_0', p1: null, p2: null, winner: null, loser: null },
+        { id: 'plate_sf_1', p1: null, p2: null, winner: null, loser: null },
       ],
-      [{ id: 'plate_final', p1: null, p2: null, winner: null }],
+      [{ id: 'plate_final', p1: null, p2: null, winner: null, loser: null }],
     ];
+    woodenSpoonMatch = {
+      id: 'wooden_spoon_final',
+      p1: null,
+      p2: null,
+      winner: null,
+      loser: null,
+      title: 'Wooden Spoon Shield Final',
+    };
+    cupBronzeMatch = {
+      id: 'cup_bronze_final',
+      p1: null,
+      p2: null,
+      winner: null,
+      loser: null,
+      title: '3rd Place Bronze Playoff',
+    };
   } else {
-    plateRoundNames = ['Wooden Spoon Shield Final'];
-    plateRounds = [[{ id: 'plate_final', p1: null, p2: null, winner: null }]];
+    plateRoundNames = ['Challenger Plate Final'];
+    plateRounds = [[{ id: 'plate_final', p1: null, p2: null, winner: null, loser: null }]];
   }
 
   chessState.knockoutBracket = {
     tournamentSize,
     roundNames,
     rounds,
+    cupBronzeMatch,
     plateRoundNames,
     plateRounds,
+    woodenSpoonMatch,
     casualMatches: [],
   };
 
@@ -4533,7 +4761,7 @@ window.advanceKnockoutWinner = function (roundIdx, matchIdx, winnerId) {
     }
   }
 
-  // Route Round 1 losers into the Challenger Plate (Wooden Spoon Shield)
+  // Route Round 1 losers into the Challenger Plate
   if (roundIdx === 0 && bracket.plateRounds && bracket.plateRounds.length > 0) {
     if (bracket.tournamentSize === 8) {
       const plateMatchIdx = Math.floor(matchIdx / 2);
@@ -4554,6 +4782,24 @@ window.advanceKnockoutWinner = function (roundIdx, matchIdx, winnerId) {
           plateFinal.p2 = loser;
         }
       }
+    }
+  }
+
+  // Route Cup Semi-Final losers into 3rd Place Bronze Playoff!
+  if (roundIdx === 1 && bracket.tournamentSize === 8) {
+    if (!bracket.cupBronzeMatch) {
+      bracket.cupBronzeMatch = {
+        id: 'cup_bronze_final',
+        p1: null,
+        p2: null,
+        winner: null,
+        loser: null,
+      };
+    }
+    if (matchIdx === 0) {
+      bracket.cupBronzeMatch.p1 = loser;
+    } else {
+      bracket.cupBronzeMatch.p2 = loser;
     }
   }
 
@@ -4614,8 +4860,111 @@ window.advancePlateWinner = function (roundIdx, matchIdx, winnerId) {
     }
   }
 
+  // Route Plate Semi-Final losers into the Wooden Spoon Shield match!
+  if (roundIdx === 0 && bracket.tournamentSize === 8) {
+    if (!bracket.woodenSpoonMatch) {
+      bracket.woodenSpoonMatch = {
+        id: 'wooden_spoon_final',
+        p1: null,
+        p2: null,
+        winner: null,
+        loser: null,
+      };
+    }
+    if (matchIdx === 0) {
+      bracket.woodenSpoonMatch.p1 = loser;
+    } else {
+      bracket.woodenSpoonMatch.p2 = loser;
+    }
+  }
+
   saveChessState();
   renderChessHubView();
+  if (chessState.autoRePairEnabled && chessState.sessionActive) {
+    setTimeout(() => {
+      window.checkAndAutoPairFreePupils();
+    }, 120);
+  }
+};
+
+window.advanceWoodenSpoonWinner = function (winnerId) {
+  const bracket = chessState.knockoutBracket;
+  if (!bracket || !bracket.woodenSpoonMatch) return;
+
+  const match = bracket.woodenSpoonMatch;
+  if (!match.p1 || !match.p2) return;
+
+  const winner = match.p1.id === winnerId ? match.p1 : match.p2;
+  const loser = match.p1.id === winnerId ? match.p2 : match.p1;
+  match.winner = winner;
+  match.loser = loser;
+
+  chessState.matches.push({
+    id: 'spoon_m_' + Date.now(),
+    date: 'Thursday Period 6 Wooden Spoon',
+    round: 'Wooden Spoon Shield Final',
+    white: match.p1.name,
+    black: match.p2.name,
+    whiteHouse: match.p1.house,
+    blackHouse: match.p2.house,
+    result: winner.id === match.p1.id ? '1-0' : '0-1',
+    opening: 'Wooden Spoon Consolation',
+  });
+
+  winner.won++;
+  winner.games++;
+  winner.rating += 8;
+  loser.lost++;
+  loser.games++;
+  loser.rating = Math.max(800, loser.rating - 5);
+
+  saveChessState();
+  renderChessHubView();
+  showChessToast(
+    `🥄 Wooden Spoon Shield won by ${winner.name} (+1 House Point)! Fantastic fighting spirit!`,
+    'success',
+  );
+  if (chessState.autoRePairEnabled && chessState.sessionActive) {
+    setTimeout(() => {
+      window.checkAndAutoPairFreePupils();
+    }, 120);
+  }
+};
+
+window.advanceCupBronzeWinner = function (winnerId) {
+  const bracket = chessState.knockoutBracket;
+  if (!bracket || !bracket.cupBronzeMatch) return;
+
+  const match = bracket.cupBronzeMatch;
+  if (!match.p1 || !match.p2) return;
+
+  const winner = match.p1.id === winnerId ? match.p1 : match.p2;
+  const loser = match.p1.id === winnerId ? match.p2 : match.p1;
+  match.winner = winner;
+  match.loser = loser;
+
+  chessState.matches.push({
+    id: 'bronze_m_' + Date.now(),
+    date: 'Thursday Period 6 Bronze Playoff',
+    round: '3rd Place Bronze Playoff',
+    white: match.p1.name,
+    black: match.p2.name,
+    whiteHouse: match.p1.house,
+    blackHouse: match.p2.house,
+    result: winner.id === match.p1.id ? '1-0' : '0-1',
+    opening: '3rd Place Bronze Match',
+  });
+
+  winner.won++;
+  winner.games++;
+  winner.rating += 12;
+  loser.lost++;
+  loser.games++;
+  loser.rating = Math.max(800, loser.rating - 8);
+
+  saveChessState();
+  renderChessHubView();
+  showChessToast(`🥉 3rd Place Bronze Medal won by ${winner.name} (+2 House Points)!`, 'success');
   if (chessState.autoRePairEnabled && chessState.sessionActive) {
     setTimeout(() => {
       window.checkAndAutoPairFreePupils();
@@ -4653,6 +5002,24 @@ window.repairFreePupilsCasual = function () {
         busyIds.add(m.p2.id);
       }
     });
+  }
+  if (
+    bracket.woodenSpoonMatch &&
+    bracket.woodenSpoonMatch.p1 &&
+    bracket.woodenSpoonMatch.p2 &&
+    !bracket.woodenSpoonMatch.winner
+  ) {
+    busyIds.add(bracket.woodenSpoonMatch.p1.id);
+    busyIds.add(bracket.woodenSpoonMatch.p2.id);
+  }
+  if (
+    bracket.cupBronzeMatch &&
+    bracket.cupBronzeMatch.p1 &&
+    bracket.cupBronzeMatch.p2 &&
+    !bracket.cupBronzeMatch.winner
+  ) {
+    busyIds.add(bracket.cupBronzeMatch.p1.id);
+    busyIds.add(bracket.cupBronzeMatch.p2.id);
   }
 
   const pool = chessState.players.filter(
@@ -4817,6 +5184,44 @@ export function getActiveMatches() {
             badge: 'Rapid Re-Pair',
           });
         }
+      });
+    }
+    if (
+      bracket.cupBronzeMatch &&
+      bracket.cupBronzeMatch.p1 &&
+      bracket.cupBronzeMatch.p2 &&
+      !bracket.cupBronzeMatch.winner &&
+      !bracket.cupBronzeMatch.isDraw
+    ) {
+      active.push({
+        type: 'cup_bronze',
+        rIdx: 0,
+        mIdx: 0,
+        id: bracket.cupBronzeMatch.id || 'cup_bronze_final',
+        boardNum: boardIdx++,
+        p1: bracket.cupBronzeMatch.p1,
+        p2: bracket.cupBronzeMatch.p2,
+        title: '3rd Place Bronze Playoff',
+        badge: 'Bronze Medal Match',
+      });
+    }
+    if (
+      bracket.woodenSpoonMatch &&
+      bracket.woodenSpoonMatch.p1 &&
+      bracket.woodenSpoonMatch.p2 &&
+      !bracket.woodenSpoonMatch.winner &&
+      !bracket.woodenSpoonMatch.isDraw
+    ) {
+      active.push({
+        type: 'wooden_spoon',
+        rIdx: 0,
+        mIdx: 0,
+        id: bracket.woodenSpoonMatch.id || 'wooden_spoon_final',
+        boardNum: boardIdx++,
+        p1: bracket.woodenSpoonMatch.p1,
+        p2: bracket.woodenSpoonMatch.p2,
+        title: 'Wooden Spoon Shield Final',
+        badge: 'Wooden Spoon Shield',
       });
     }
   }
@@ -5004,6 +5409,64 @@ window.recordBoardResult = function (type, rIdx, mIdx, resultWinnerId, matchId) 
     } else {
       window.advanceCasualMatch(matchId, resultWinnerId);
     }
+  } else if (type === 'wooden_spoon') {
+    const match = bracket.woodenSpoonMatch;
+    if (!match || match.winner || match.isDraw) return;
+    if (resultWinnerId === 'draw') {
+      match.isDraw = true;
+      match.p1.drawn = (match.p1.drawn || 0) + 1;
+      match.p2.drawn = (match.p2.drawn || 0) + 1;
+      match.p1.games++;
+      match.p2.games++;
+      chessState.matches.push({
+        id: 'spoon_m_' + Date.now(),
+        date: 'Thursday Period 6 Wooden Spoon',
+        round: 'Wooden Spoon Shield Final',
+        white: match.p1.name,
+        black: match.p2.name,
+        whiteHouse: match.p1.house,
+        blackHouse: match.p2.house,
+        result: '½-½',
+        opening: 'Wooden Spoon Draw',
+      });
+      saveChessState();
+      renderChessHubView();
+      showChessToast(
+        `Wooden Spoon Draw between ${match.p1.name} and ${match.p2.name} (+1 House pt each)!`,
+        'info',
+      );
+    } else {
+      window.advanceWoodenSpoonWinner(resultWinnerId);
+    }
+  } else if (type === 'cup_bronze') {
+    const match = bracket.cupBronzeMatch;
+    if (!match || match.winner || match.isDraw) return;
+    if (resultWinnerId === 'draw') {
+      match.isDraw = true;
+      match.p1.drawn = (match.p1.drawn || 0) + 1;
+      match.p2.drawn = (match.p2.drawn || 0) + 1;
+      match.p1.games++;
+      match.p2.games++;
+      chessState.matches.push({
+        id: 'bronze_m_' + Date.now(),
+        date: 'Thursday Period 6 Bronze Playoff',
+        round: '3rd Place Bronze Playoff',
+        white: match.p1.name,
+        black: match.p2.name,
+        whiteHouse: match.p1.house,
+        blackHouse: match.p2.house,
+        result: '½-½',
+        opening: 'Bronze Playoff Draw',
+      });
+      saveChessState();
+      renderChessHubView();
+      showChessToast(
+        `Bronze Playoff Draw between ${match.p1.name} and ${match.p2.name} (+2 House pts each)!`,
+        'info',
+      );
+    } else {
+      window.advanceCupBronzeWinner(resultWinnerId);
+    }
   }
 
   // Automatic Re-Pair trigger
@@ -5056,6 +5519,12 @@ window.concludePeriod6Session = function () {
     }
     if (Array.isArray(bracket.casualMatches)) {
       bracket.casualMatches.forEach((m) => processMatch(m, 'Casual Rapid Match'));
+    }
+    if (bracket.woodenSpoonMatch) {
+      processMatch(bracket.woodenSpoonMatch, 'Wooden Spoon Shield Final');
+    }
+    if (bracket.cupBronzeMatch) {
+      processMatch(bracket.cupBronzeMatch, '3rd Place Bronze Playoff');
     }
   }
 
