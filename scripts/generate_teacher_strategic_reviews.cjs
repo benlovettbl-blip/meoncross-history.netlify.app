@@ -432,33 +432,44 @@ const medicineAuditHtml = `
     </div>
   </div>
 
-  <h2 style="font-size: 13pt; border-bottom: 1.5px solid #cbd5e1; padding-bottom: 4px; margin-bottom: 12px;">Section A: The Western Front (1914–1918)</h2>
+  <h2 style="font-size: 13pt; border-bottom: 1.5px solid #cbd5e1; padding-bottom: 4px; margin-bottom: 12px;">Topic 1: Medieval Medicine (c.1250–c.1500)</h2>
 
-  <!-- Western Front Innovations -->
+  <!-- Galen & Church -->
   <div class="spec-card">
     <div class="spec-card-header">
-      <h3>12. Thomas Splint, Mobile X-Rays &amp; Blood Transfusions</h3>
-      <span class="spec-era">Section A &bull; British Sector 1914–1918</span>
+      <h3>12. Claudius Galen &amp; The Medieval Catholic Church</h3>
+      <span class="spec-era">Topic 1 &bull; Ideas About Cause &amp; Treatment</span>
     </div>
     <div class="spec-card-body">
       <div class="grid-facts-limits">
         <div class="fact-box">
-          <h4>✓ 3 Supporting Facts (Progress &amp; Impact)</h4>
+          <h4>✓ 3 Supporting Facts (Authority &amp; Impact)</h4>
           <ul>
-            <li><strong>Thomas Splint (1915):</strong> Hugh Owen Thomas's splint pulled the fractured femur straight, preventing bone grinding and slashing compound fracture mortality from 80% to 20%.</li>
-            <li><strong>Blood Depots at Cambrai (1917):</strong> Oswald Robertson used sodium citrate to prevent clotting and dextrose to refrigerate blood, creating the world's first blood bank.</li>
-            <li><strong>Mobile X-Ray Vans:</strong> Allowed RAMC surgeons at CCS stations to locate shrapnel and bullet fragments in deep tissue before gangrene developed.</li>
+            <li><strong>Theory of Opposites:</strong> Built upon Hippocrates' Four Humours by prescribing opposite qualities (e.g. treating a cold, phlegmatic fever with hot chillies or cucumber for hot blood).</li>
+            <li><strong>Church Canonisation:</strong> Galen's belief that the body was created by a single divine Creator led the Catholic Church to adopt his texts as undisputed medical scripture for 1,400 years.</li>
+            <li><strong>Anatomical Compendiums:</strong> Wrote over 350 treatises documenting blood vessels, cranial nerves, and organs based on animal vivisections (monkeys, pigs, and apes).</li>
           </ul>
         </div>
         <div class="limit-box">
           <h4>✗ 2 Critical Historical Limitations</h4>
           <ul>
-            <li><strong>Gas Gangrene Severity:</strong> Fertilizer-rich Flemish soil harboured anaerobic bacteria (gas gangrene and tetanus); wounds had to be excised manually (debridement) without antibiotics.</li>
-            <li><strong>Stretcher Bearer Delays:</strong> Shellfire, mud, and waterlogged communication trenches meant wounded men often lay in No Man's Land for 24–48 hours before reaching an RAP.</li>
+            <li><strong>Anatomical Errors:</strong> Because human dissection was banned in ancient Rome, Galen transposed animal anatomy onto humans (e.g. 5-lobed liver, rete mirabile in the brain).</li>
+            <li><strong>Stifled Medical Enquiry:</strong> The medieval Church forbade challenging Galen (e.g. Roger Bacon was imprisoned for advocating scientific observation), preventing all progress.</li>
           </ul>
         </div>
       </div>
+      <div class="model-p">
+        <strong>GCSE Model Paragraph:</strong> "Throughout the medieval period c.1250–c.1500, Galen's humoural theories provided a coherent framework for physicians to diagnose illnesses using urine charts and the Theory of Opposites. However, Galen's ideas severely limited medical progress because his anatomical treatises contained fundamental errors from animal dissection, while the Catholic Church's complete monopolisation of university education made questioning Galenic dogma a punishable heresy."
+      </div>
     </div>
+  </div>
+
+  <!-- SCOPE NOTE: SECTION B ONLY -->
+  <div class="callout" style="border-left-color: #f59e0b; background: #fffbeb; border-color: #fde68a; margin-top: 10px;">
+    <div class="callout-title" style="color: #b45309;">Scope Clarification: Four Thematic Eras (Section B) vs Western Front (Section A)</div>
+    <p style="margin: 0; font-size: 8.8pt; color: #92400e;">
+      <strong>Exam Architecture Note:</strong> As confirmed, the <em>"3 Facts + 1–2 Limitations"</em> framework applies strictly to the <strong>four thematic eras of Medicine (Medieval, Renaissance, 18th/19th Century, Modern)</strong> for Section B questions (Q4 Explain Why [12m] and Q5/6 Evaluative Essay [16m]). It is <strong>not</strong> applied to Section A (The British Sector of the Western Front 1914–1918), which is an historic environment study assessing two 2-mark feature questions [Q1a/Q1b], source utility [Q2a, 8m], and historical enquiry follow-up [Q2b, 4m].
+    </p>
   </div>
 
   <!-- VOCABULARY AUDIT SUMMARY BOX -->
@@ -532,27 +543,27 @@ const timelineProposalHtml = `
   </div>
 
   <h2 style="font-size: 13pt; border-bottom: 1.5px solid #cbd5e1; padding-bottom: 4px; margin-bottom: 12px;">Component Architecture Demonstration</h2>
-  <p style="font-size: 9pt; color: #475569; margin-bottom: 8px;">Below is the verified 4-card horizontal responsive flex layout deployed at the top of lesson containers:</p>
+  <p style="font-size: 9pt; color: #475569; margin-bottom: 8px;">Below is the verified 4-card horizontal responsive flex layout deployed at the top of lesson containers (clean chronological milestone format):</p>
 
   <!-- Visual Mockup Strip -->
   <div class="timeline-strip-preview">
     <div class="timeline-card-demo">
-      <div class="timeline-card-date">STAGE 1 &bull; 1543</div>
+      <div class="timeline-card-date">1543 &bull; ANATOMY</div>
       <div class="timeline-card-title">Vesalius Fabric of the Human Body</div>
       <div class="timeline-card-desc">Corrects 300+ Galenic errors via human dissection; establishes anatomical inspection.</div>
     </div>
     <div class="timeline-card-demo">
-      <div class="timeline-card-date">STAGE 2 &bull; 1628</div>
+      <div class="timeline-card-date">1628 &bull; PHYSIOLOGY</div>
       <div class="timeline-card-title">William Harvey Circulation of Blood</div>
       <div class="timeline-card-desc">Proves heart functions as a mechanical pump; disproves liver blood production.</div>
     </div>
     <div class="timeline-card-demo highlight">
-      <div class="timeline-card-date">STAGE 3 &bull; 1676 (TODAY)</div>
+      <div class="timeline-card-date">1676 &bull; DIAGNOSIS (TODAY)</div>
       <div class="timeline-card-title">Sydenham Observationes Medicae</div>
       <div class="timeline-card-desc">Pioneers bedside clinical observation; classifies diseases into distinct biological species.</div>
     </div>
     <div class="timeline-card-demo">
-      <div class="timeline-card-date">STAGE 4 &bull; 1660–65</div>
+      <div class="timeline-card-date">1660–65 &bull; EMPIRICISM</div>
       <div class="timeline-card-title">Royal Society &amp; Philosophical Trans.</div>
       <div class="timeline-card-desc">Motto <em>Nullius in Verba</em>; establishes peer-reviewed empirical lab research across Europe.</div>
     </div>
@@ -671,10 +682,10 @@ const timelineProposalHtml = `
     </p>
     <pre style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 8px 10px; border-radius: 4px; font-family: monospace; font-size: 7.8pt; color: #0f172a; margin: 0 0 8px 0;">
 timeline_strip: [
-  { stage: '1', date: '1543', title: 'Vesalius Fabrica', desc: 'Dissected human corpses, correcting Galen.' },
-  { stage: '2', date: '1628', title: 'Harvey De Motu Cordis', desc: 'Proved continuous blood circulation.' },
-  { stage: '3', date: '1676', title: 'Sydenham Observationes', desc: 'Bedside diagnosis of disease species.', active: true },
-  { stage: '4', date: '1660', title: 'Royal Society', desc: 'Empirical experimentation and journal.' }
+  { date: '1543', category: 'Anatomy', title: 'Vesalius Fabrica', desc: 'Dissected human corpses, correcting Galen.' },
+  { date: '1628', category: 'Physiology', title: 'Harvey De Motu Cordis', desc: 'Proved continuous blood circulation.' },
+  { date: '1676', category: 'Diagnosis', title: 'Sydenham Observationes', desc: 'Bedside diagnosis of disease species.', active: true },
+  { date: '1660–65', category: 'Empiricism', title: 'Royal Society', desc: 'Empirical experimentation and journal.' }
 ]
     </pre>
     <p style="margin: 0; font-size: 8.8pt;">
