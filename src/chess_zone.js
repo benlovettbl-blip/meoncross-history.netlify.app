@@ -298,11 +298,15 @@ if (typeof window !== 'undefined' && !window.__meoncrossKeydownBound) {
     if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
 
     if (e.key === 'w' || e.key === 'W') {
-      if (typeof window.toggleWhiteboardMode === 'function') {
+      if (typeof window.toggleChessWhiteboardMode === 'function') {
+        window.toggleChessWhiteboardMode();
+      } else if (typeof window.toggleWhiteboardMode === 'function') {
         window.toggleWhiteboardMode();
       }
     } else if (e.key === 'Escape' && chessState && chessState.whiteboardMode) {
-      if (typeof window.toggleWhiteboardMode === 'function') {
+      if (typeof window.toggleChessWhiteboardMode === 'function') {
+        window.toggleChessWhiteboardMode(false);
+      } else if (typeof window.toggleWhiteboardMode === 'function') {
         window.toggleWhiteboardMode(false);
       }
     }
@@ -636,7 +640,7 @@ export function renderChessHubView() {
             <!-- Teacher Action Controls -->
             <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
               <!-- Button 1: Master Whiteboard Launch (Main Projector Screen) -->
-              <button onclick="window.toggleWhiteboardMode()" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1.5px solid #38bdf8; font-weight: 800; font-size: 0.92rem; padding: 11px 20px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 9px; box-shadow: 0 4px 14px rgba(14, 165, 233, 0.4); transition: all 0.15s;" title="Launch Big Screen Whiteboard Display for Interactive Projector (Press W)">
+              <button onclick="window.toggleChessWhiteboardMode()" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1.5px solid #38bdf8; font-weight: 800; font-size: 0.92rem; padding: 11px 20px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 9px; box-shadow: 0 4px 14px rgba(14, 165, 233, 0.4); transition: all 0.15s;" title="Launch Big Screen Whiteboard Display for Interactive Projector (Press W)">
                 <span style="font-size: 1.25rem; line-height: 1;">📺</span> Launch Whiteboard Mode (W)
               </button>
 
@@ -2213,7 +2217,7 @@ function renderActiveBoardPairingsGrid() {
           <button type="button" onclick="window.printFidePairingSheet()" style="background: #1c1917; color: #d4af37; border: 1.5px solid #44403c; font-weight: 700; font-size: 0.82rem; padding: 8px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Print official A4 pairing sheet">
             <i class="fa-solid fa-print"></i> Print Sheet (A4)
           </button>
-          <button type="button" onclick="window.toggleWhiteboardMode(true)" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: none; font-weight: 800; font-size: 0.82rem; padding: 8px 16px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);" title="Display on classroom interactive whiteboard">
+          <button type="button" onclick="window.toggleChessWhiteboardMode(true)" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: none; font-weight: 800; font-size: 0.82rem; padding: 8px 16px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);" title="Display on classroom interactive whiteboard">
             <span>📺</span> Projector Mode (W)
           </button>
         </div>
@@ -4533,7 +4537,7 @@ window.resetSessionTimer = function () {
   showChessToast('⏱ Session clock reset to 60:00.', 'info');
 };
 
-window.toggleWhiteboardMode = function (forceState) {
+export function toggleChessWhiteboardMode(forceState) {
   if (typeof forceState === 'boolean') {
     chessState.whiteboardMode = forceState;
   } else {
@@ -4544,7 +4548,10 @@ window.toggleWhiteboardMode = function (forceState) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     showChessToast('📺 Big Screen Whiteboard Mode enabled! Press [Esc] or [W] to exit.', 'info');
   }
-};
+}
+window.toggleChessWhiteboardMode = toggleChessWhiteboardMode;
+window.toggleChessProjectorMode = toggleChessWhiteboardMode;
+window.toggleWhiteboardMode = toggleChessWhiteboardMode;
 
 window.toggleAutoRePair = function () {
   chessState.autoRePairEnabled = !chessState.autoRePairEnabled;
@@ -4637,7 +4644,7 @@ export function renderWhiteboardModeView(sortedHouses) {
           <button onclick="window.openLogMatchModal()" style="background: #27272a; color: #fafafa; border: 1.5px solid #52525b; font-weight: 700; font-size: 0.82rem; padding: 8px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
             <span>⚔</span> Record Game
           </button>
-          <button onclick="window.toggleWhiteboardMode(false)" style="background: #ffffff; color: #09090b; border: 1.5px solid #e4e4e7; font-weight: 800; font-size: 0.82rem; padding: 8px 16px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(255,255,255,0.15);" title="Return to regular tabbed dashboard (or press Esc)">
+          <button onclick="window.toggleChessWhiteboardMode(false)" style="background: #ffffff; color: #09090b; border: 1.5px solid #e4e4e7; font-weight: 800; font-size: 0.82rem; padding: 8px 16px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(255,255,255,0.15);" title="Return to regular tabbed dashboard (or press Esc)">
             <span>✕</span> Exit (Esc)
           </button>
         </div>
@@ -4902,7 +4909,7 @@ export function renderWhiteboardModeView(sortedHouses) {
               Finished early? Pupils can solve grandmaster tactical combinations with physical tap-to-move pieces on the interactive ceiling board.
             </p>
           </div>
-          <button onclick="window.toggleWhiteboardMode(false); chessState.showStarterPuzzle = true; renderChessHubView();" style="background: #27272a; color: #fafafa; border: 1.5px solid #52525b; font-weight: 700; font-size: 0.82rem; padding: 8px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.15s;" onmouseover="this.style.borderColor='#d4af37';this.style.color='#d4af37'" onmouseout="this.style.borderColor='#52525b';this.style.color='#fafafa'">
+          <button onclick="window.toggleChessWhiteboardMode(false); chessState.showStarterPuzzle = true; renderChessHubView();" style="background: #27272a; color: #fafafa; border: 1.5px solid #52525b; font-weight: 700; font-size: 0.82rem; padding: 8px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.15s;" onmouseover="this.style.borderColor='#d4af37';this.style.color='#d4af37'" onmouseout="this.style.borderColor='#52525b';this.style.color='#fafafa'">
             <span>♟</span> Open Interactive Ceiling Board
           </button>
         </div>

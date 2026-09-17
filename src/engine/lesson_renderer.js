@@ -506,9 +506,20 @@ window.toggleDoNowTimer = function (timerId, action) {
   }
 };
 
-window.toggleWhiteboardMode = function () {
+window.toggleWhiteboardMode = function (forceState) {
+  // If in chess view, delegate to chess projector/whiteboard mode
+  if (
+    document.getElementById('chess-hub-root') ||
+    (window.state && window.state.currentView === 'chess') ||
+    (typeof window.location !== 'undefined' && window.location.search.includes('view=chess'))
+  ) {
+    if (typeof window.toggleChessWhiteboardMode === 'function') {
+      return window.toggleChessWhiteboardMode(forceState);
+    }
+  }
+
   const isCurrentlyActive = document.body.classList.contains('whiteboard-mode-active');
-  const nextState = !isCurrentlyActive;
+  const nextState = typeof forceState === 'boolean' ? forceState : !isCurrentlyActive;
   if (nextState) {
     document.body.classList.add('whiteboard-mode-active');
   } else {
