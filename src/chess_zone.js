@@ -189,7 +189,7 @@ let chessState = {
   pairingsHistory: [],
   leagueTableViewMode: 'matrix', // 'matrix' | 'table'
   knockoutBracket: null,
-  activeTab: 'signin', // 'signin' | 'beginners' | 'ladder' | 'table' | 'pairings' | 'knockout' | 'drills' | 'matches'
+  activeTab: 'ladder', // 'ladder' | 'signin' | 'table' | 'pairings' | 'knockout' | 'drills' | 'beginners' | 'matches'
   filterYear: 'all', // 'all' | 'ks3' | 'ks4'
   filterHouse: 'all', // 'all' | houseId
   userRole: getInitialRole(), // 'teacher' | 'pupil'
@@ -330,7 +330,7 @@ function initChessState(forceClean = false) {
     chessState.matches = [];
     chessState.checkedInPlayerIds = [];
     chessState.knockoutBracket = null;
-    chessState.activeTab = 'signin';
+    chessState.activeTab = 'ladder';
     saveChessState(true);
     return;
   }
@@ -652,7 +652,7 @@ export function renderChessHubView() {
 
   // In Pupil View, prevent attendance tab from showing
   if (chessState.userRole === 'pupil' && chessState.activeTab === 'signin') {
-    chessState.activeTab = 'beginners';
+    chessState.activeTab = 'ladder';
   }
 
   let html = `
@@ -822,38 +822,68 @@ export function renderChessHubView() {
           <span style="font-size: 0.8rem; color: #78716c; font-family: monospace; background: #faf8f5; padding: 5px 12px; border-radius: 4px; border: 1px solid #e7e5e4;">GAMES LOGGED: ${chessState.matches.length}</span>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; width: 100%; box-sizing: border-box;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; width: 100%; box-sizing: border-box;">
           ${sortedHouses
             .map((hStats, index) => {
               const houseInfo = HOUSES[hStats.id];
               const isFirst = index === 0 && hStats.points > 0;
+              const housePlayers = chessState.players.filter((p) => p.house === hStats.id);
+              const houseLeader = housePlayers.slice().sort((a, b) => {
+                const ptsA =
+                  (a.won || 0) * SCORING_RULES.WIN +
+                  (a.drawn || 0) * SCORING_RULES.DRAW +
+                  ((a.games || 0) - (a.won || 0) - (a.drawn || 0)) * SCORING_RULES.PARTICIPATION;
+                const ptsB =
+                  (b.won || 0) * SCORING_RULES.WIN +
+                  (b.drawn || 0) * SCORING_RULES.DRAW +
+                  ((b.games || 0) - (b.won || 0) - (b.drawn || 0)) * SCORING_RULES.PARTICIPATION;
+                return ptsB - ptsA || (b.rating || 1000) - (a.rating || 1000);
+              })[0];
+              const leaderPts = houseLeader
+                ? (houseLeader.won || 0) * SCORING_RULES.WIN +
+                  (houseLeader.drawn || 0) * SCORING_RULES.DRAW +
+                  ((houseLeader.games || 0) - (houseLeader.won || 0) - (houseLeader.drawn || 0)) *
+                    SCORING_RULES.PARTICIPATION
+                : 0;
+
               return `
-              <div class="chess-house-card" style="background: #faf8f5; border: 1.5px solid ${isFirst ? '#c5a059' : '#e7e5e4'}; border-radius: 8px; padding: 16px; box-shadow: 0 2px 6px rgba(0,0,0,0.03); position: relative; overflow: hidden;">
-                ${isFirst ? `<div style="position: absolute; top: 0; right: 0; background: #c5a059; color: #1c1917; font-size: 0.62rem; font-weight: 800; padding: 3px 8px; border-bottom-left-radius: 4px; text-transform: uppercase; letter-spacing: 0.08em; font-family: monospace;">★ 1ST PLACE</div>` : ''}
+              <div class="chess-house-card" style="background: #faf8f5; border: 1.5px solid ${isFirst ? '#c5a059' : '#e7e5e4'}; border-radius: 10px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
+                ${isFirst ? `<div style="position: absolute; top: 0; right: 0; background: #c5a059; color: #1c1917; font-size: 0.64rem; font-weight: 800; padding: 3px 10px; border-bottom-left-radius: 6px; text-transform: uppercase; letter-spacing: 0.08em; font-family: monospace;">★ 1ST PLACE</div>` : ''}
                 
-                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
-                  <div style="width: 34px; height: 34px; border-radius: 6px; background: ${houseInfo.bgLight}; border: 1.5px solid ${houseInfo.borderColor}; color: ${houseInfo.color}; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; font-weight: 800;">
-                    ${houseInfo.name.charAt(0)}
+                <div>
+                  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                    <div style="width: 36px; height: 36px; border-radius: 8px; background: ${houseInfo.bgLight}; border: 1.5px solid ${houseInfo.borderColor}; color: ${houseInfo.color}; display: flex; align-items: center; justify-content: center; font-size: 1.05rem; flex-shrink: 0; font-weight: 800;">
+                      ${houseInfo.name.charAt(0)}
+                    </div>
+                    <div>
+                      <h3 style="margin: 0; font-size: 1.08rem; color: #1c1917; font-weight: 700; font-family: 'Playfair Display', Georgia, serif;">${houseInfo.name}</h3>
+                      <div style="font-size: 0.72rem; color: #78716c; font-style: italic;">${houseInfo.ship}</div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 style="margin: 0; font-size: 1.05rem; color: #1c1917; font-weight: 700; font-family: 'Playfair Display', Georgia, serif;">${houseInfo.name}</h3>
-                    <div style="font-size: 0.7rem; color: #78716c; font-style: italic;">${houseInfo.ship}</div>
+
+                  <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 8px;">
+                    <span style="font-size: 1.95rem; font-weight: 800; color: #1c1917; font-family: 'Playfair Display', serif; line-height: 1;">${hStats.points}</span>
+                    <span style="font-size: 0.74rem; font-weight: 700; color: #78716c; text-transform: uppercase; letter-spacing: 0.05em; font-family: monospace;">House Pts</span>
+                  </div>
+
+                  <div style="background: #e7e5e4; height: 5px; border-radius: 3px; overflow: hidden; margin-bottom: 10px;">
+                    <div style="background: ${houseInfo.color}; height: 100%; width: ${Math.min(100, Math.round((hStats.points / (sortedHouses[0].points || 1)) * 100))}%; border-radius: 3px; transition: width 0.4s ease;"></div>
+                  </div>
+
+                  <div style="display: flex; justify-content: space-between; font-size: 0.74rem; color: #78716c; border-top: 1px solid #e7e5e4; padding-top: 8px; font-family: monospace;">
+                    <span>${hStats.playersCount} Players</span>
+                    <span>${hStats.wins}W · ${hStats.draws}D · ${hStats.losses}L</span>
                   </div>
                 </div>
 
-                <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 8px;">
-                  <span style="font-size: 1.85rem; font-weight: 800; color: #1c1917; font-family: 'Playfair Display', serif; line-height: 1;">${hStats.points}</span>
-                  <span style="font-size: 0.72rem; font-weight: 700; color: #78716c; text-transform: uppercase; letter-spacing: 0.05em; font-family: monospace;">House Pts</span>
+                <!-- House Leader / MVP Callout -->
+                <div style="margin-top: 10px; padding: 7px 10px; background: #ffffff; border-radius: 6px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: space-between; font-size: 0.74rem;">
+                  <span style="color: #64748b; font-weight: 700; text-transform: uppercase; font-size: 0.65rem; letter-spacing: 0.05em;">House MVP</span>
+                  <span style="font-weight: 800; color: ${houseInfo.color}; display: inline-flex; align-items: center; gap: 4px;">
+                    ${houseLeader ? `${houseLeader.name} <span style="background: ${houseInfo.bgLight}; border: 1px solid ${houseInfo.borderColor}; padding: 1px 6px; border-radius: 4px; font-size: 0.68rem; color: ${houseInfo.color}; font-family: monospace; font-weight: 800;">${leaderPts} pts</span>` : '<span style="color:#94a3b8; font-weight:500;">None yet</span>'}
+                  </span>
                 </div>
 
-                <div style="background: #e7e5e4; height: 5px; border-radius: 2px; overflow: hidden; margin-bottom: 10px;">
-                  <div style="background: ${houseInfo.color}; height: 100%; width: ${Math.min(100, Math.round((hStats.points / (sortedHouses[0].points || 1)) * 100))}%; border-radius: 2px; transition: width 0.4s ease;"></div>
-                </div>
-
-                <div style="display: flex; justify-content: space-between; font-size: 0.74rem; color: #78716c; border-top: 1px solid #e7e5e4; padding-top: 8px; font-family: monospace;">
-                  <span>${hStats.playersCount} Players</span>
-                  <span>${hStats.wins}W · ${hStats.draws}D · ${hStats.losses}L</span>
-                </div>
               </div>
             `;
             })
@@ -909,29 +939,26 @@ export function renderChessHubView() {
 
       <!-- Main Navigation Tabs: Classic Typography -->
       <div style="display: flex; gap: 4px; border-bottom: 2px solid #e7e5e4; margin-bottom: 20px; overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; padding-bottom: 2px; scrollbar-width: thin;">
+        <button onclick="window.switchChessTab('ladder')" style="${getTabStyle(chessState.activeTab === 'ladder')}">
+          <span style="font-size: 1.05rem; line-height: 1;">🪜</span> Master Ladder (${chessState.players.length})
+        </button>
         ${
           chessState.userRole === 'teacher'
             ? `
         <button onclick="window.switchChessTab('signin')" style="${getTabStyle(chessState.activeTab === 'signin')}">
-          <span style="font-size: 1.1rem; line-height: 1;">♔</span> Period 6
+          <span style="font-size: 1.1rem; line-height: 1;">♔</span> Period 6 Match Grid
         </button>
         `
             : ''
         }
-        <button onclick="window.switchChessTab('beginners')" style="${getTabStyle(chessState.activeTab === 'beginners')}">
-          <span style="font-size: 1.05rem; line-height: 1;">🌱</span> Rookie Academy
-        </button>
-        <button onclick="window.switchChessTab('ladder')" style="${getTabStyle(chessState.activeTab === 'ladder')}">
-          <span style="font-size: 1.05rem; line-height: 1;">🪜</span> Master Ladder (${chessState.players.length})
-        </button>
         <button onclick="window.switchChessTab('table')" style="${getTabStyle(chessState.activeTab === 'table')}">
           <span style="font-size: 1.05rem; line-height: 1;">☵</span> League Cross-Table
         </button>
-        <button onclick="window.switchChessTab('pairings')" style="${getTabStyle(chessState.activeTab === 'pairings')}">
-          <span style="font-size: 1.05rem; line-height: 1;">⚔</span> Round Pairings
-        </button>
         <button onclick="window.switchChessTab('knockout')" style="${getTabStyle(chessState.activeTab === 'knockout')}">
           <span style="font-size: 1.05rem; line-height: 1;">♛</span> Championship Cup
+        </button>
+        <button onclick="window.switchChessTab('beginners')" style="${getTabStyle(chessState.activeTab === 'beginners')}">
+          <span style="font-size: 1.05rem; line-height: 1;">🌱</span> Rookie Academy
         </button>
         <button onclick="window.switchChessTab('drills')" style="${getTabStyle(chessState.activeTab === 'drills')}">
           <span style="font-size: 1.05rem; line-height: 1;">📖</span> Master Tactical Drills
@@ -1054,83 +1081,234 @@ function renderLadderTab(players) {
     `;
   }
 
+  // Identify Top 3 Podium finishers if at least 3 players exist
+  const sortedByRank = [...players].sort((a, b) => a.rank - b.rank);
+  const p1 = sortedByRank[0] || null;
+  const p2 = sortedByRank[1] || null;
+  const p3 = sortedByRank[2] || null;
+
   return `
     <div>
-      <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-left: 4px solid #8b5cf6; padding: 12px 18px; border-radius: 8px; margin-bottom: 18px; font-size: 0.88rem; color: #334155; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-        <div>
-          <strong><i class="fa-solid fa-circle-info" style="color: #8b5cf6;"></i> The Master Ladder Rules:</strong> Pupils can challenge any player up to <strong>2 rungs above</strong> them. If the challenger wins, they swap rungs!
+      <!-- Championship Podium (Top 3 Rungs) -->
+      ${
+        p1 && p2 && p3
+          ? `
+        <div style="margin-bottom: 24px;">
+          <div style="text-align: center; margin-bottom: 16px;">
+            <div style="font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #fde047; font-family: 'Playfair Display', Georgia, serif; font-style: italic; margin-bottom: 4px;">
+              Autumn Term · Premier Standings
+            </div>
+            <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.75rem; color: #f8fafc; margin: 0 0 4px 0; font-weight: 700; text-shadow: 0 2px 8px rgba(0,0,0,0.3);">
+              The Championship Podium
+            </h2>
+            <p style="font-size: 0.88rem; color: #cbd5e1; margin: 0;">
+              Current top 3 contenders leading the Meoncross School Chess Ladder.
+            </p>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; align-items: flex-end; max-width: 960px; margin: 0 auto;">
+            
+            <!-- 2nd Place (Silver) -->
+            <div style="background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); border: 2px solid #cbd5e1; border-radius: 12px; padding: 18px 16px; text-align: center; box-shadow: 0 4px 14px rgba(0,0,0,0.04); position: relative;">
+              <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #e2e8f0; color: #334155; border: 1.5px solid #94a3b8; font-size: 0.72rem; font-weight: 800; padding: 3px 12px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.06em; font-family: monospace;">
+                🥈 2ND PLACE
+              </div>
+              <div style="margin-top: 8px;">
+                <div style="font-size: 1.22rem; font-weight: 800; color: #0f172a; font-family: 'Playfair Display', serif;">${p2.name}</div>
+                <div style="display: inline-flex; align-items: center; gap: 6px; margin: 6px 0;">
+                  <span style="background: ${HOUSES[p2.house]?.bgLight || '#f1f5f9'}; color: ${HOUSES[p2.house]?.color || '#334155'}; border: 1px solid ${HOUSES[p2.house]?.borderColor || '#cbd5e1'}; padding: 2px 8px; border-radius: 10px; font-size: 0.72rem; font-weight: 800;">
+                    ${HOUSES[p2.house]?.name || p2.house}
+                  </span>
+                  <span style="font-size: 0.72rem; color: #64748b; font-weight: 700;">Year ${p2.year}</span>
+                </div>
+                <div style="display: flex; justify-content: center; gap: 12px; margin-top: 8px; padding-top: 8px; border-top: 1px solid #f1f5f9; font-family: monospace;">
+                  <div>
+                    <div style="font-size: 1.35rem; font-weight: 900; color: #0284c7;">${p2.won * SCORING_RULES.WIN + p2.drawn * SCORING_RULES.DRAW + p2.lost * SCORING_RULES.PARTICIPATION}</div>
+                    <div style="font-size: 0.65rem; color: #64748b; text-transform: uppercase;">Points</div>
+                  </div>
+                  <div>
+                    <div style="font-size: 1.35rem; font-weight: 900; color: #334155;">${p2.rating}</div>
+                    <div style="font-size: 0.65rem; color: #64748b; text-transform: uppercase;">ELO</div>
+                  </div>
+                  <div>
+                    <div style="font-size: 1.35rem; font-weight: 900; color: #16a34a;">${p2.won}W/${p2.games}P</div>
+                    <div style="font-size: 0.65rem; color: #64748b; text-transform: uppercase;">Record</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 1st Place (Gold - Elevated Champion) -->
+            <div style="background: linear-gradient(180deg, #fefce8 0%, #ffffff 100%); border: 2.5px solid #eab308; border-radius: 14px; padding: 22px 18px; text-align: center; box-shadow: 0 8px 26px rgba(234, 179, 8, 0.22); position: relative; transform: translateY(-8px);">
+              <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: #fde047; color: #854d0e; border: 1.5px solid #ca8a04; font-size: 0.74rem; font-weight: 900; padding: 4px 14px; border-radius: 14px; text-transform: uppercase; letter-spacing: 0.08em; font-family: monospace; display: flex; align-items: center; gap: 4px;">
+                👑 CLUB CHAMPION
+              </div>
+              <div style="margin-top: 10px;">
+                <div style="font-size: 1.45rem; font-weight: 900; color: #0f172a; font-family: 'Playfair Display', serif;">${p1.name}</div>
+                <div style="display: inline-flex; align-items: center; gap: 6px; margin: 6px 0;">
+                  <span style="background: ${HOUSES[p1.house]?.bgLight || '#f1f5f9'}; color: ${HOUSES[p1.house]?.color || '#334155'}; border: 1px solid ${HOUSES[p1.house]?.borderColor || '#cbd5e1'}; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 800;">
+                    ${HOUSES[p1.house]?.name || p1.house}
+                  </span>
+                  <span style="font-size: 0.75rem; color: #854d0e; font-weight: 800; background: #fef9c3; padding: 2px 6px; border-radius: 4px;">Year ${p1.year}</span>
+                </div>
+                <div style="display: flex; justify-content: center; gap: 14px; margin-top: 10px; padding-top: 10px; border-top: 1px solid #fef08a; font-family: monospace;">
+                  <div>
+                    <div style="font-size: 1.6rem; font-weight: 900; color: #ca8a04;">${p1.won * SCORING_RULES.WIN + p1.drawn * SCORING_RULES.DRAW + p1.lost * SCORING_RULES.PARTICIPATION}</div>
+                    <div style="font-size: 0.68rem; color: #854d0e; text-transform: uppercase; font-weight: 700;">Points</div>
+                  </div>
+                  <div>
+                    <div style="font-size: 1.6rem; font-weight: 900; color: #0f172a;">${p1.rating}</div>
+                    <div style="font-size: 0.68rem; color: #64748b; text-transform: uppercase; font-weight: 700;">ELO</div>
+                  </div>
+                  <div>
+                    <div style="font-size: 1.6rem; font-weight: 900; color: #16a34a;">${p1.won}W/${p1.games}P</div>
+                    <div style="font-size: 0.68rem; color: #15803d; text-transform: uppercase; font-weight: 700;">Undefeated</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3rd Place (Bronze) -->
+            <div style="background: linear-gradient(180deg, #fffbeb 0%, #ffffff 100%); border: 2px solid #fed7aa; border-radius: 12px; padding: 18px 16px; text-align: center; box-shadow: 0 4px 14px rgba(0,0,0,0.04); position: relative;">
+              <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #ffedd5; color: #9a3412; border: 1.5px solid #fb923c; font-size: 0.72rem; font-weight: 800; padding: 3px 12px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.06em; font-family: monospace;">
+                🥉 3RD PLACE
+              </div>
+              <div style="margin-top: 8px;">
+                <div style="font-size: 1.22rem; font-weight: 800; color: #0f172a; font-family: 'Playfair Display', serif;">${p3.name}</div>
+                <div style="display: inline-flex; align-items: center; gap: 6px; margin: 6px 0;">
+                  <span style="background: ${HOUSES[p3.house]?.bgLight || '#f1f5f9'}; color: ${HOUSES[p3.house]?.color || '#334155'}; border: 1px solid ${HOUSES[p3.house]?.borderColor || '#cbd5e1'}; padding: 2px 8px; border-radius: 10px; font-size: 0.72rem; font-weight: 800;">
+                    ${HOUSES[p3.house]?.name || p3.house}
+                  </span>
+                  <span style="font-size: 0.72rem; color: #64748b; font-weight: 700;">Year ${p3.year}</span>
+                </div>
+                <div style="display: flex; justify-content: center; gap: 12px; margin-top: 8px; padding-top: 8px; border-top: 1px solid #f1f5f9; font-family: monospace;">
+                  <div>
+                    <div style="font-size: 1.35rem; font-weight: 900; color: #c2410c;">${p3.won * SCORING_RULES.WIN + p3.drawn * SCORING_RULES.DRAW + p3.lost * SCORING_RULES.PARTICIPATION}</div>
+                    <div style="font-size: 0.65rem; color: #64748b; text-transform: uppercase;">Points</div>
+                  </div>
+                  <div>
+                    <div style="font-size: 1.35rem; font-weight: 900; color: #334155;">${p3.rating}</div>
+                    <div style="font-size: 0.65rem; color: #64748b; text-transform: uppercase;">ELO</div>
+                  </div>
+                  <div>
+                    <div style="font-size: 1.35rem; font-weight: 900; color: #475569;">${p3.won}W/${p3.games}P</div>
+                    <div style="font-size: 0.65rem; color: #64748b; text-transform: uppercase;">Record</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
-        <span style="font-size: 0.8rem; font-weight: 700; color: #64748b;">Showing ${players.length} Pupils</span>
+      `
+          : ''
+      }
+
+      <!-- Ladder Meta Header Strip -->
+      <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 12px 18px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <div style="font-size: 0.86rem; color: #334155;">
+          <strong>Championship Ladder Rules:</strong> Challenge any pupil up to <strong>2 rungs above</strong> you. If the challenger wins, you swap rungs!
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 0.74rem; font-weight: 700; color: #4338ca; background: #e0e7ff; border: 1px solid #c7d2fe; padding: 3px 8px; border-radius: 4px;">
+            ★ Ranks 1–5: Championship Cup Flight
+          </span>
+          <span style="font-size: 0.78rem; font-weight: 700; color: #64748b; font-family: monospace;">
+            ${players.length} Pupils Ranked
+          </span>
+        </div>
       </div>
 
-      <div style="display: flex; flex-direction: column; gap: 10px;">
+      <!-- Complete Ladder Roster -->
+      <div style="display: flex; flex-direction: column; gap: 8px;">
         ${players
           .map((p) => {
             const h = HOUSES[p.house];
             const isCheckedIn = chessState.checkedInPlayerIds.includes(p.id);
-            let badgeBg = '#f1f5f9';
-            let badgeColor = '#475569';
+            const totalPts =
+              p.won * SCORING_RULES.WIN +
+              p.drawn * SCORING_RULES.DRAW +
+              p.lost * SCORING_RULES.PARTICIPATION;
+
+            let rankBadgeBg = '#f1f5f9';
+            let rankBadgeColor = '#334155';
+            let rowBorder = isCheckedIn ? '#86efac' : '#e2e8f0';
+
             if (p.rank === 1) {
-              badgeBg = '#fef08a';
-              badgeColor = '#854d0e';
+              rankBadgeBg = '#fde047';
+              rankBadgeColor = '#854d0e';
+              rowBorder = '#facc15';
             } else if (p.rank === 2) {
-              badgeBg = '#e2e8f0';
-              badgeColor = '#334155';
+              rankBadgeBg = '#e2e8f0';
+              rankBadgeColor = '#1e293b';
+              rowBorder = '#94a3b8';
             } else if (p.rank === 3) {
-              badgeBg = '#fed7aa';
-              badgeColor = '#9a3412';
+              rankBadgeBg = '#ffedd5';
+              rankBadgeColor = '#9a3412';
+              rowBorder = '#fdba74';
+            } else if (p.rank <= 5) {
+              rankBadgeBg = '#e0e7ff';
+              rankBadgeColor = '#3730a3';
             }
 
             return `
-            <div class="ladder-row" style="background: #ffffff; border: 1.5px solid ${isCheckedIn ? '#86efac' : '#e2e8f0'}; border-radius: 10px; padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); transition: transform 0.15s ease;" onmouseover="this.style.transform='translateX(3px)'" onmouseout="this.style.transform='translateX(0)'">
+            <div class="ladder-row" style="background: #ffffff; border: 1.5px solid ${rowBorder}; border-radius: 10px; padding: 12px 18px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); transition: all 0.15s ease;">
               
-              <!-- Left: Rank & Avatar & Name -->
+              <!-- Left: Rank Badge + Pupil Identity -->
               <div style="display: flex; align-items: center; gap: 14px;">
-                <div style="width: 36px; height: 36px; border-radius: 8px; background: ${badgeBg}; color: ${badgeColor}; font-weight: 900; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0;">
-                  ${p.rank === 1 ? '<i class="fa-solid fa-crown"></i>' : `#${p.rank}`}
+                <div style="width: 38px; height: 38px; border-radius: 8px; background: ${rankBadgeBg}; color: ${rankBadgeColor}; font-weight: 900; display: flex; align-items: center; justify-content: center; font-size: 1.05rem; flex-shrink: 0; font-family: monospace;">
+                  ${p.rank === 1 ? '👑' : `#${p.rank}`}
                 </div>
 
                 <div>
                   <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-                    <h3 style="margin: 0; font-size: 1.05rem; color: #0f172a; font-weight: 700;">${p.name}</h3>
-                    <span style="background: ${h.bgLight}; color: ${h.color}; border: 1px solid ${h.borderColor}; padding: 2px 8px; border-radius: 12px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase;">
-                      <i class="fa-solid ${h.icon}"></i> ${h.name}
+                    <h3 style="margin: 0; font-size: 1.08rem; color: #0f172a; font-weight: 700;">${p.name}</h3>
+                    <span style="background: ${h.bgLight}; color: ${h.color}; border: 1px solid ${h.borderColor}; padding: 2px 8px; border-radius: 10px; font-size: 0.72rem; font-weight: 800;">
+                      ${h.name}
                     </span>
                     <span style="background: #f1f5f9; color: #475569; padding: 2px 6px; border-radius: 4px; font-size: 0.72rem; font-weight: 700;">
                       Year ${p.year}
                     </span>
                     ${
                       isCheckedIn
-                        ? `<span style="background: #dcfce7; color: #15803d; font-size: 0.72rem; font-weight: 700; padding: 2px 6px; border-radius: 4px;"><i class="fa-solid fa-circle-check"></i> Present</span>`
+                        ? `<span style="background: #dcfce7; color: #15803d; font-size: 0.72rem; font-weight: 700; padding: 2px 6px; border-radius: 4px;">✓ Present</span>`
                         : `<span style="background: #f1f5f9; color: #94a3b8; font-size: 0.72rem; font-weight: 600; padding: 2px 6px; border-radius: 4px;">Absent</span>`
                     }
                   </div>
-                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 3px;">
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 3px; font-family: monospace;">
                     Rating: <strong>${p.rating}</strong> · Played: <strong>${p.games}</strong> (${p.won}W / ${p.drawn}D / ${p.lost}L)
                   </div>
                 </div>
               </div>
 
-              <!-- Right: Challenge Action & Contribution -->
-              <div style="display: flex; align-items: center; gap: 10px;">
+              <!-- Right: Score + Actions -->
+              <div style="display: flex; align-items: center; gap: 12px;">
                 <div style="text-align: right; margin-right: 4px;">
-                  <div style="font-size: 1.05rem; font-weight: 800; color: ${h.color};">${p.won * SCORING_RULES.WIN + p.drawn * SCORING_RULES.DRAW + p.lost * SCORING_RULES.PARTICIPATION} pts</div>
-                  <div style="font-size: 0.68rem; color: #64748b; text-transform: uppercase; font-weight: 700;">House Contribution</div>
+                  <div style="font-size: 1.15rem; font-weight: 900; color: ${h.color}; font-family: monospace;">${totalPts} pts</div>
+                  <div style="font-size: 0.66rem; color: #64748b; text-transform: uppercase; font-weight: 700;">House Total</div>
                 </div>
 
                 ${
-                  isCheckedIn
-                    ? `<button onclick="window.checkOutPlayer('${p.id}')" style="background: #f8fafc; border: 1px solid #cbd5e1; color: #64748b; padding: 6px 10px; border-radius: 6px; font-size: 0.78rem; font-weight: 700; cursor: pointer;">Check Out</button>`
-                    : `<button onclick="window.checkInPlayer('${p.id}')" style="background: #ecfdf5; border: 1px solid #a7f3d0; color: #059669; padding: 6px 10px; border-radius: 6px; font-size: 0.78rem; font-weight: 700; cursor: pointer;">+ Check In</button>`
+                  chessState.userRole === 'teacher'
+                    ? `
+                  ${
+                    isCheckedIn
+                      ? `<button onclick="window.checkOutPlayer('${p.id}')" style="background: #f8fafc; border: 1px solid #cbd5e1; color: #64748b; padding: 6px 10px; border-radius: 6px; font-size: 0.76rem; font-weight: 700; cursor: pointer;">Check Out</button>`
+                      : `<button onclick="window.checkInPlayer('${p.id}')" style="background: #ecfdf5; border: 1px solid #a7f3d0; color: #059669; padding: 6px 10px; border-radius: 6px; font-size: 0.76rem; font-weight: 700; cursor: pointer;">+ Check In</button>`
+                  }
+                  <button onclick="window.quickChallengePlayer('${p.id}')" style="background: #f8fafc; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 6px 12px; border-radius: 6px; font-size: 0.78rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                    ⚔ Challenge
+                  </button>
+                  <button onclick="window.removePlayer('${p.id}')" title="Remove pupil" style="background: none; border: none; color: #cbd5e1; cursor: pointer; padding: 4px 6px; font-size: 0.9rem;" onmouseover="this.style.color='#ef4444'" onmouseout="this.style.color='#cbd5e1'">
+                    ✕
+                  </button>
+                `
+                    : `
+                  <button onclick="window.quickChallengePlayer('${p.id}')" style="background: #f8fafc; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 6px 12px; border-radius: 6px; font-size: 0.78rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                    ⚔ Challenge
+                  </button>
+                `
                 }
-
-                <button onclick="window.quickChallengePlayer('${p.id}')" style="background: #f8fafc; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 6px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
-                  <i class="fa-solid fa-chess-knight" style="color: #8b5cf6;"></i> Challenge
-                </button>
-
-                <button onclick="window.removePlayer('${p.id}')" title="Delete pupil" style="background: none; border: none; color: #94a3b8; cursor: pointer; padding: 6px;" onmouseover="this.style.color='#ef4444'" onmouseout="this.style.color='#94a3b8'">
-                  <i class="fa-solid fa-trash-can"></i>
-                </button>
               </div>
 
             </div>
@@ -3475,20 +3653,22 @@ function renderMatchesTab() {
 // Styling Helpers: Classic Chess Salon Aesthetic
 function getTabStyle(isActive) {
   return `
-    padding: 10px 16px;
-    font-size: 0.92rem;
-    font-weight: 700;
-    font-family: 'Playfair Display', Georgia, serif;
+    padding: 10px 18px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    font-family: 'Outfit', sans-serif;
     letter-spacing: 0.02em;
-    border: none;
-    background: transparent;
+    border: 1.5px solid ${isActive ? '#d4af37' : 'rgba(255,255,255,0.12)'};
+    border-bottom: 3px solid ${isActive ? '#d4af37' : 'transparent'};
+    background: ${isActive ? '#ffffff' : 'rgba(255,255,255,0.08)'};
+    border-radius: 8px;
     cursor: pointer;
-    color: ${isActive ? '#1c1917' : '#78716c'};
-    border-bottom: 2.5px solid ${isActive ? '#1c1917' : 'transparent'};
+    color: ${isActive ? '#0f172a' : '#e2e8f0'};
     display: inline-flex;
     align-items: center;
     gap: 8px;
     white-space: nowrap;
+    box-shadow: ${isActive ? '0 4px 12px rgba(0,0,0,0.15)' : 'none'};
     transition: all 0.15s ease;
   `;
 }
