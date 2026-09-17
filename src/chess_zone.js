@@ -150,17 +150,7 @@ function getInitialRole() {
     }
     const teacherParam = (params.get('teacher') || '').toLowerCase();
     const passkeyParam = (params.get('passkey') || '').toLowerCase();
-    const validPasskeys = [
-      'lovett',
-      'teacher',
-      'history',
-      'meoncross',
-      'drake.30!',
-      'drake.30',
-      'drake30',
-      'drake',
-      'true',
-    ];
+    const validPasskeys = ['drake.30!', 'drake.30'];
     if (
       params.get('role') === 'teacher' ||
       validPasskeys.includes(teacherParam) ||
@@ -3418,21 +3408,10 @@ if (typeof window !== 'undefined') {
 
 // Teacher Authentication & Pupil Safeguard Handlers
 window.promptTeacherUnlock = function () {
-  const passkey = prompt(
-    'Enter Teacher Passkey to unlock administrative controls (e.g. lovett, Drake.30!):',
-  );
+  const passkey = prompt('Enter Teacher Passkey:');
   if (!passkey) return;
   const clean = passkey.trim().toLowerCase();
-  const validPasskeys = [
-    'lovett',
-    'teacher',
-    'history',
-    'meoncross',
-    'drake.30!',
-    'drake.30',
-    'drake30',
-    'drake',
-  ];
+  const validPasskeys = ['drake.30!', 'drake.30'];
   if (validPasskeys.includes(clean)) {
     localStorage.setItem('meoncross_chess_teacher_auth', 'true');
     chessState.userRole = 'teacher';
