@@ -965,10 +965,6 @@ export const unitData = {
         share:
           "Be ready to report your partner's best point to the class, especially if they managed to sway your opinion.",
       },
-      historians_corner: {
-        title: "The Debate over the Medieval Church's Impact on Medicine",
-        text: "For decades, traditional historians portrayed the medieval Catholic Church as a dogmatic institution that actively and deliberately stifled medical progress by banning dissections and imprisoning independent researchers like Roger Bacon. However, modern revisionist historians argue that the Church was not deliberately preventing progress. They point out that without the Church's libraries, the vital ancient medical texts of Hippocrates and Galen would have been lost entirely. Furthermore, they argue that the level of medieval technology meant that microbes could not be observed anyway, meaning that treatment would remain ineffective regardless of religious dominance, and that the Church was the only institution actively offering organised care to the sick through monastic hospitals.",
-      },
       gcse_task: {
         title: 'Edexcel Exam Practice (Section B)',
         tasks: [
@@ -1513,10 +1509,6 @@ export const unitData = {
         pair: 'Take turns explaining your choice, discussing the practicality and accessibility of home-based care versus university-trained theory.',
         share:
           "Be ready to report your partner's best point, focusing on how class and cost shaped a patient's choices.",
-      },
-      historians_corner: {
-        title: 'The Debate over the Effectiveness of Medieval Hospitals',
-        text: "Traditional historical accounts often dismissed medieval hospitals as dirty, unhygienic places of death where patients shared beds and received no real medicine. However, modern revisionist historians point out that judged by medieval standards, monastic hospitals actually maintained high standards of cleanliness, as bed linens and clothing were regularly washed by nuns. While they did not perform surgery and excluded infectious patients to prevent the spread of disease, they provided crucial spiritual care, warmth, and nutritious food. For patients not suffering from terminal illnesses, monastic care focusing on 'care, not cure' was highly successful in allowing the body to rest and recover in a comfortable, sanitary environment.",
       },
       gcse_task: {
         title: 'Edexcel 12-Mark Essay Practice (Section B)',
@@ -2274,10 +2266,6 @@ export const unitData = {
         share:
           "Be ready to report your partner's best point, focusing on how they defended their side of the argument.",
       },
-      historians_corner: {
-        title: 'The Debate over the Socio-Economic Impact of the Black Death',
-        text: 'Historians are deeply divided over the long-term impact of the Black Death on medieval English society. Traditional historians, such as G.M. Trevelyan, argued that the demographic catastrophe was a massive watershed of progress-the crucial turning point that caused severe labor shortages, ended feudalism, and paved the way for the Renaissance and Industrial Revolution. Conversely, modern revisionist historians argue that the Black Death did not suddenly destroy the feudal system overnight. Instead, they suggest it merely accelerated economic trends that were already underway, pointing to the immediate return of the plague every 10 to 20 years which caused prolonged economic depression and stagnation, rather than rapid modernizing progress.',
-      },
       gcse_task: {
         title: 'Edexcel 12-Mark Essay Practice (Section B)',
         tasks: [
@@ -2817,10 +2805,6 @@ export const unitData = {
         pair: 'Take turns explaining your choice, highlighting whether individual clinical observations or institutional sharing had a greater impact on undermining ancient medical authorities.',
         share:
           "Be ready to report your partner's best point, focusing on how they evaluated the relative significance of individuals versus institutions.",
-      },
-      historians_corner: {
-        title: 'The Debate over the Pace of Change in Renaissance Medicine',
-        text: "Historians often debate the extent to which the Renaissance c1500-c1700 represented a genuine breakthrough or a period of stagnation in the understanding of disease causes. Traditional historians emphasize a 'Scientific Revolution,' pointing to the works of Vesalius, Harvey, and Leeuwenhoek as a rapid and complete dismantling of medieval Galenism. However, revisionist historians argue that this period was actually characterized by overwhelming continuity for the average patient. They argue that while elite physicians in organizations like the Royal Society debated new ideas, daily treatments (such as bleeding and purging to balance the humours) remained completely unchanged. Because there was no scientific proof that Leeuwenhoek's 'animalcules' actually caused disease, everyday medical practice clung tightly to the Theory of the Four Humours and miasma for centuries after the Renaissance.",
       },
       gcse_task: {
         title: 'Edexcel Exam Practice: Section B (Q3 & Q4)',
@@ -3380,10 +3364,6 @@ export const unitData = {
         pair: 'Take turns explaining your choice, debating whether new practical remedies or improved anatomical education had a more lasting impact on patient care.',
         share:
           "Be ready to report your partner's best point, focusing on how they balanced short-term clinical benefits against long-term scientific foundations.",
-      },
-      historians_corner: {
-        title: 'The Debate over Renaissance Progress: Breakthrough or Backstep?',
-        text: "Historians actively debate whether the Renaissance represented genuine progress in patient care or a period of regression. Traditionalist accounts often celebrated the 'rebirth' of medical science, highlighting how the shift towards chemical cures and Vesalian anatomy laid the foundations of modern clinical practice. However, revisionist social historians argue that for the average sick person, the Renaissance was actually a time of decline in care. They point out that Henry VIII's closure of the monasteries in 1536 destroyed the medieval hospital safety net, leaving thousands of poor patients without any institutional care. Furthermore, they highlight that some new treatments, such as using highly toxic mercury to treat syphilis or smoking tobacco as a 'cure-all' defense against plague, actually did far more physical harm than medieval herbal remedies ever did.",
       },
       gcse_task: {
         title: 'Edexcel Exam Practice: Section B (Q3 & Q4)',
@@ -3959,10 +3939,6 @@ export const unitData = {
         pair: "Take turns explaining your ideas, debating whether the lack of practical medical application or the deep-seated respect for Galen's tradition was the bigger barrier.",
         share:
           "Be ready to share your partner's best point, focusing on how they explained the gap between anatomical knowledge and actual medical cures.",
-      },
-      historians_corner: {
-        title: 'The Debate over the Significance of William Harvey',
-        text: "Historians often debate whether William Harvey represents a sudden turning point or a very gradual stepping stone in medicine. Traditionalist historians celebrate his work as a revolutionary breakthrough that demolished Galenic physiology. However, revisionist historians emphasize the extreme limits of his immediate significance. They point out that a lot of contemporary doctors simply ignored or openly criticized Harvey because his discovery offered no practical treatment for sick patients. As a result, English medical textbooks continued to print Galen's flawed theories until 1651, and Harvey's findings were not taught in universities until 1673, decades after his discovery.",
       },
       gcse_task: {
         title: 'Edexcel Exam Practice: Section B (Q3 & Q4)',
@@ -4544,10 +4520,6 @@ export const unitData = {
         share:
           "Be ready to report your partner's best point to the class, particularly how they linked the scientific discovery to a decline in traditional beliefs like miasma.",
       },
-      historians_corner: {
-        title: 'The Debate over the Pace of the Germ Theory Revolution',
-        text: "Historians actively debate how quickly Germ Theory transformed medical beliefs in Britain. While traditional narratives present Pasteur's 1861 publication as an overnight revolution that instantly swept away ancient superstitions, modern revisionist historians argue that the transition was incredibly slow and highly contested. They point out that Pasteur was a chemist, not a doctor, and his early work focused on wine and vinegar, leading prominent British medical authorities like Dr. Henry Bastian to reject his ideas for decades. It was only after Robert Koch identified specific human pathogens (such as the tuberculosis microbe in 1882) and developed practical laboratory techniques that the wider medical community gradually accepted the link between germs and disease.",
-      },
       gcse_task: {
         title: 'Edexcel Exam Practice: Section B (Q3 & Q4)',
         tasks: [
@@ -5124,10 +5096,6 @@ export const unitData = {
         share:
           "Be ready to report your partner's best point, focusing on how they balanced immediate patient comfort against long-term survival rates.",
       },
-      historians_corner: {
-        title: "The Debate over the 'Black Period' of Surgery",
-        text: "Historians frequently debate the immediate consequences of James Simpson's 1847 discovery of chloroform. While popular history often celebrates chloroform as an overnight triumph that ended the horror of conscious amputations, medical historians point out that it ushered in a devastating 'Black Period' for British surgery. Because patients were unconscious and relaxed, surgeons attempted far deeper, more complex, and longer internal operations. However, because Lister's carbolic antiseptics were not introduced until 1865, surgeons still operated in filthy environments with unwashed hands and blood-stained coats. As a result, the 'Black Period' actually saw a dramatic increase in postoperative deaths from gangrene and infection, leading some historians to argue that the discovery of anaesthetics was a step backward for patient survival until antiseptics were finally developed.",
-      },
       gcse_task: {
         title: 'Edexcel Exam Practice: Section B (Q3 & Q4)',
         tasks: [
@@ -5701,10 +5669,6 @@ export const unitData = {
         share:
           "Be ready to report your partner's best point to the class, focusing on how they balanced immediate clinical success against long-term public health legislation.",
       },
-      historians_corner: {
-        title: 'The Debate over the Catalysts for Victorian Public Health Reform',
-        text: "Historians debate the extent to which John Snow's 1854 Broad Street investigation was the primary driver behind the cleanup of Victorian London. Traditional narratives portray Snow as a lone hero whose pump-handle intervention instantly convinced the government to abandon laissez-faire and build a new sewer system. However, revisionist historians argue that Snow's work had very little immediate impact because the medical establishment and the General Board of Health clung obstinately to miasma theory. They suggest that the real turning point was the combination of 'The Great Stink' of 1858, which physically disrupted Parliament, and the 1867 Reform Act, which gave working-class men the vote and forced politicians to promise sanitary reforms to win elections. This culminated in the compulsory 1875 Public Health Act once Pasteur's Germ Theory finally provided the scientific proof that Snow lacked.",
-      },
       gcse_task: {
         title: 'Edexcel Exam Practice: Section B (Q3 & Q4)',
         tasks: [
@@ -6272,10 +6236,6 @@ export const unitData = {
         share:
           "Be ready to report your partner's best point, particularly how they evaluated the role of individual choices versus inherited biology.",
       },
-      historians_corner: {
-        title: 'The Debate over the Significance of DNA vs. Germ Theory',
-        text: "GCSE historians frequently debate whether the 1953 discovery of the structure of DNA represents a more significant turning point in understanding illness than Pasteur's 1861 Germ Theory. Some historians argue that DNA is the ultimate breakthrough because it finally solved the mystery of non-communicable, hereditary conditions (such as Down's syndrome, haemophilia, and cystic fibrosis) that germs could never explain. However, other historians point out that while Germ Theory immediately transformed surgery, public health, and vaccination in the nineteenth century, the practical impact of DNA has been much slower to develop. Although we can map the genome, genetic treatments like gene therapy are still not widely available for most diseases, meaning the everyday clinical impact of genetics remains a future promise rather than a current reality.",
-      },
       gcse_task: {
         title: 'Edexcel Exam Practice: Section B (Q3 & Q4)',
         tasks: [
@@ -6827,11 +6787,6 @@ export const unitData = {
         pair: 'Take turns explaining your choice to your partner. Challenge each other on whether a miracle drug is useful if people cannot afford to see a doctor to get it, or whether a free healthcare system is useful without effective medicines.',
         share:
           "Be ready to report your partner's best point to the class, particularly if they managed to sway your opinion about which development had a wider impact on British society.",
-      },
-      historians_corner: {
-        title:
-          'The Debate over the Significance of the Beveridge Report in the Foundation of the NHS',
-        text: "Historians debate the extent to which the 1942 Beveridge Report was the primary catalyst for the creation of the NHS in 1948. Traditional consensus histories argue that William Beveridge's report, which recommended tackling the 'five giants' of want, disease, ignorance, squalor, and idleness 'from the cradle to the grave', created an irresistible democratic mandate that forced the post-war Labour government to act. However, revisionist political historians argue that the Beveridge Report was merely a set of recommendations and that the true turning point was the political tenacity of Health Minister Aneurin Bevan. They point out that Bevan had to wage a fierce political battle against the British Medical Association (BMA), who heavily resisted state control, and that the NHS was only realized because Bevan agreed to 'stuff their mouths with gold' by allowing consultants to keep their lucrative private practices alongside their NHS hospital roles.",
       },
       gcse_task: {
         title: 'Edexcel Exam Practice: Section B (Q3 & Q4)',
@@ -7402,10 +7357,6 @@ export const unitData = {
         share:
           "Be ready to report your partner's best point to the class, focusing on how they evaluated the relative significance of 'accidental discovery' versus 'deliberate scientific development'.",
       },
-      historians_corner: {
-        title: "The Debate over the 'Myth' of Fleming and the Penicillin Breakthrough",
-        text: "For decades, popular historical accounts portrayed Alexander Fleming as the sole hero of the penicillin story, celebrating his accidental observation of the Penicillium mould in 1928 as an instant cure. However, revisionist historians actively challenge this traditional narrative, arguing that it propagates a 'myth'. They point out that Fleming actually abandoned his work on penicillin by 1931, having failed to isolate the active substance or prove that it could kill bacteria in living human blood. Revisionists argue that the true breakthrough belongs to Howard Florey, Ernst Chain, and the Oxford research team, who systematically isolated the drug in 1940 and proved its therapeutic value, but were initially ignored by a public captivated by the romantic narrative of Fleming's accident.",
-      },
       gcse_task: {
         title: 'Edexcel Exam Practice: Section B (Q3 & Q4)',
         tasks: [
@@ -7968,10 +7919,6 @@ export const unitData = {
         pair: 'Take turns explaining your choice, discussing whether protecting public health or preserving personal freedom is a more powerful motivator for change.',
         share:
           "Be ready to report your partner's best point, focusing on how they evaluated the changing role of the government in the 20th and 21st centuries compared to the 19th century.",
-      },
-      historians_corner: {
-        title: 'The Debate over the Motives for Modern Public Health Interventions',
-        text: "Historians of modern medicine actively debate what primarily drove the British government to finally abandon its traditional hands-off approach and launch aggressive campaigns against smoking. Traditionalist historians argue that the state acted out of genuine humanitarian concern and scientific responsibility, moving to intervene once Richard Doll and A. Bradford Hill's landmark 1950 study provided undeniable statistical proof linking tobacco to lung cancer. Conversely, revisionist historians argue that the government's response was actually incredibly slow and reluctant, delayed for decades by a desire to protect massive tobacco tax revenues and a fear of political backlash against state overreach. These historians suggest that the real turning point was economic pragmatism: as the financial burden of treating chronic, smoking-related illnesses on the newly established National Health Service (NHS) became unsustainable, the government was forced to recognize that prevention was far cheaper than clinical treatment.",
       },
       gcse_task: {
         title: 'Edexcel Exam Practice: Section B (Q3 & Q4)',
@@ -8585,10 +8532,6 @@ export const unitData = {
         share:
           "Be ready to report your partner's best point, especially if they explained how two of these developments depended on each other to be fully successful.",
       },
-      historians_corner: {
-        title: 'The Debate over the Source of Medical Innovation in World War I',
-        text: "Historians of military medicine debate whether the rapid medical advances of the First World War represented brand new, revolutionary breakthroughs or merely the accelerated application of existing peacetime technologies. Traditionalist historians argue that the Western Front acted as a vast clinical laboratory, forcing rapid, unprecedented experimentation that yielded genuine breakthroughs in surgery and logistics. However, revisionist historians argue that almost all key technologies-including aseptic surgery, sodium citrate blood preservation, and portable X-ray tubes-had already been discovered in civilian laboratories before 1914. They suggest that the war's real contribution was not scientific creation, but rather the massive state funding and logistical mobilization that allowed these pre-existing civilian ideas to be scaled up and standardized across thousands of casualties.",
-      },
       gcse_task: {
         title: 'Edexcel Features Practice',
         tasks: [
@@ -9193,10 +9136,6 @@ export const unitData = {
         pair: 'Take turns explaining your choice to your partner, arguing why your selected challenge was harder to resolve under active battlefield conditions.',
         share:
           "Be ready to report your partner's best point to the class, especially if they explained how different environmental factors (like mud and heavy shelling) combined to weaken soldiers' resistance.",
-      },
-      historians_corner: {
-        title: 'The Debate over the Treatment and Diagnosis of Shell Shock (NYD.N)',
-        text: "Historians of military medicine actively debate the British Army's evolving response to shell shock (NYD.N) during the First World War. Traditionalist histories often focused on the harshness of the military command, highlighting that early in the war, soldiers showing symptoms of psychological trauma were frequently accused of cowardice or malingering, with some even facing court-martial and execution. However, revisionist historians argue that the British medical services adapted remarkably quickly to an unprecedented crisis. They point out that by 1916, the RAMC recognized shell shock as a genuine medical condition, establishing specialist treatment centers close to the front lines. They argue that the policy of treating soldiers quickly and locally (focusing on rest and reassurance) was a highly advanced clinical approach that aimed to prevent chronic mental illness, even though the primary military motive remained returning men to active fighting.",
       },
       gcse_task: {
         title: 'Edexcel Features Practice',
@@ -9810,10 +9749,6 @@ export const unitData = {
         share:
           "Be ready to report your partner's best point to the class, focusing on how they balanced weapon-based trauma against environment-borne disease.",
       },
-      historians_corner: {
-        title: 'The Debate over the Diagnosis and Treatment of Shell Shock (NYD.N)',
-        text: "Historians of military medicine are deeply divided over the British Army's response to psychological trauma, which was medically recorded as shell shock or NYD.N ('Not Yet Diagnosed, Nervous'). Traditionalist historians argue that the military high command was unsympathetic and hostile, often viewing traumatized soldiers as cowards or malingerers, which in some instances led to court-martials and executions for desertion. Conversely, revisionist historians argue that the RAMC adapted with remarkable speed to an entirely new clinical phenomenon. They highlight that by 1916, the army had established specialized psychiatric units close to the front line, utilizing the advanced concept of 'proximity, immediacy, and expectation' (treating men locally so they expected to return to their units), which laid the groundwork for modern trauma therapy.",
-      },
       gcse_task: {
         title: 'Edexcel Features Practice',
         tasks: [
@@ -10425,10 +10360,6 @@ export const unitData = {
         pair: 'Take turns explaining your choice, focusing on why your selected factor was more crucial for soldier survival rates on the Western Front.',
         share:
           "Be ready to report your partner's best point, particularly how they linked either systemic logistics or individual bravery to medical progress.",
-      },
-      historians_corner: {
-        title: 'The Debate over the Primary Role of Casualty Clearing Stations',
-        text: 'Historians of military medicine actively debate how the roles of Casualty Clearing Stations (CCSs) and Base Hospitals shifted during the First World War. Traditional accounts argued that Base Hospitals, situated near the safe French coast, remained the primary hubs for surgical intervention throughout the war. However, revisionist historians have shown that the extreme threat of gas gangrene and tetanus from Flanders soil forced a rapid role reversal. Because debridement (wound excision) had to be performed within hours of injury, CCSs located near the frontline railheads became the primary hubs for life-saving surgery, while Base Hospitals were relegated to long-term convalescence. This adaptation demonstrates that wartime medical logistics was not a static plan but a dynamic, rapidly evolving system.',
       },
       gcse_task: {
         title: 'Edexcel Features Practice',
@@ -11091,10 +11022,6 @@ export const unitData = {
         pair: 'Take turns explaining your choice, debating whether solving physical transport trauma or biochemical blood loss saved more lives on the battlefield.',
         share:
           "Be ready to report your partner's best point, particularly how they compared the immediate clinical impact of these two breakthroughs.",
-      },
-      historians_corner: {
-        title: 'The Debate over the Western Front as a Catalyst for Medical Innovation',
-        text: "Military and social historians actively debate the true significance of the First World War in driving medical progress. Traditional histories argue that the Western Front served as a massive, unprecedented laboratory of rapid innovation, where the extreme pressures of trench warfare forced doctors to experiment and make revolutionary breakthroughs in antiseptics, radiology, and blood storage. Conversely, revisionist historians argue that almost all of these 'wartime breakthroughs' were actually based on pre-war civilian discoveries that had already been established in laboratories before 1914, such as the basic design of the Thomas splint, Marie Curie's work with radioactivity, and pre-war transfusion experiments. From this perspective, the war did not spark scientific creation itself, but rather acted as an institutional and financial accelerator, providing the state funding and millions of casualties necessary to scale up and standardize pre-existing civilian technologies.",
       },
       learning_objectives: {
         overarching:

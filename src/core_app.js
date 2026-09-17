@@ -1855,15 +1855,22 @@ window.currentQuizLessonId = null;
 window.injectQuizModalIfNeeded = function () {
   if (document.getElementById('quizModal')) return;
   const html = `
-  <div id="quizModal" class="modal-overlay no-print" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(8px); justify-content: center; align-items: center; z-index: 1000; opacity: 0; transition: opacity 0.3s ease;" onclick="if(event.target === this) window.closeQuizModal()">
-    <div class="modal-content" style="background: #ffffff; border-radius: 12px; padding: 30px; max-width: 600px; width: 90%; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transform: scale(0.95); transition: transform 0.3s ease;">
-      <button class="modal-close-btn" onclick="window.closeQuizModal()" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; color: #64748b; font-size: 16pt; cursor: pointer; transition: color 0.2s;"><i class="fa-solid fa-xmark"></i></button>
+  <div id="quizModal" class="modal-overlay no-print" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(8px); justify-content: center; align-items: center; z-index: 9999; opacity: 0; transition: opacity 0.3s ease;" onclick="if(event.target === this) window.closeQuizModal()">
+    <div class="modal-content" style="background: #ffffff; border-radius: 16px; padding: 28px 32px; max-width: 640px; width: 92%; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.3); transform: scale(0.95); transition: transform 0.3s ease; border: 1px solid #e2e8f0;">
+      <button class="modal-close-btn" onclick="window.closeQuizModal()" style="position: absolute; top: 16px; right: 16px; background: transparent; border: none; color: #94a3b8; font-size: 1.3rem; cursor: pointer; transition: color 0.2s; padding: 6px; line-height: 1;"><i class="fa-solid fa-xmark"></i></button>
       
-      <div style="display: flex; align-items: center; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px;">
-        <i class="fa-solid fa-clipboard-check" style="font-size: 2rem; color: #3b82f6; margin-right: 15px;"></i>
-        <div>
-          <h2 style="margin: 0; color: #1e293b; font-size: 1.5rem;">Knowledge Check</h2>
-          <p style="margin: 0; color: #64748b; font-size: 0.95rem;">Question <span id="quiz-progress">1 / 4</span></p>
+      <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px; border-bottom: 1.5px solid #f1f5f9; padding-bottom: 16px;">
+        <div style="width: 42px; height: 42px; border-radius: 10px; background: #eff6ff; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: #2563eb; border: 1px solid #bfdbfe; flex-shrink: 0;">
+          🎯
+        </div>
+        <div style="flex: 1;">
+          <div style="display: flex; justify-content: space-between; align-items: center; padding-right: 36px;">
+            <h3 style="margin: 0; color: #0f172a; font-size: 1.2rem; font-family: 'Montserrat', sans-serif;">Plenary Knowledge Check</h3>
+            <span id="quiz-progress-pill" style="background: #f1f5f9; color: #475569; font-weight: 700; font-size: 0.82rem; padding: 3px 10px; border-radius: 12px;">Q <span id="quiz-progress">1 / 20</span></span>
+          </div>
+          <div style="width: 100%; height: 6px; background: #e2e8f0; border-radius: 4px; margin-top: 8px; overflow: hidden;">
+            <div id="quiz-progress-bar" style="width: 5%; height: 100%; background: #2563eb; transition: width 0.25s ease;"></div>
+          </div>
         </div>
       </div>
       
@@ -1871,9 +1878,9 @@ window.injectQuizModalIfNeeded = function () {
         <!-- Populated dynamically -->
       </div>
       
-      <div style="display: flex; justify-content: space-between; margin-top: 25px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
-        <div id="quiz-feedback" style="font-weight: bold; padding-top: 8px;"></div>
-        <button id="quiz-next-btn" class="btn btn-primary" style="display: none;" onclick="window.nextQuizQuestion()">Next Question <i class="fa-solid fa-arrow-right"></i></button>
+      <div id="quiz-footer" style="display: flex; justify-content: space-between; align-items: center; margin-top: 22px; border-top: 1px solid #e2e8f0; padding-top: 16px;">
+        <div id="quiz-feedback" style="font-weight: 600; font-size: 0.95rem;"></div>
+        <button id="quiz-next-btn" class="btn-pedagogy-primary" style="display: none; padding: 9px 20px; font-weight: 700; border-radius: 8px;" onclick="window.nextQuizQuestion()">Next Question <i class="fa-solid fa-arrow-right"></i></button>
       </div>
     </div>
   </div>`;
@@ -1882,8 +1889,11 @@ window.injectQuizModalIfNeeded = function () {
 
 window.startQuiz = function (lessonId) {
   window.injectQuizModalIfNeeded();
-  if (!window.currentUnitData || !window.currentUnitData.lessons) return;
-  const lesson = window.currentUnitData.lessons.find((l) => l.id === lessonId);
+  const unitData =
+    window.currentUnitData ||
+    (window.appStore && window.appStore.state && window.appStore.state.activeUnitData);
+  if (!unitData || !unitData.lessons) return;
+  const lesson = unitData.lessons.find((l) => l.id === lessonId);
   if (!lesson || !lesson.quiz || lesson.quiz.length === 0) return;
 
   window.currentQuizData = lesson.quiz.map((q) => {
@@ -1900,69 +1910,81 @@ window.startQuiz = function (lessonId) {
     return q;
   });
   window.currentQuizIndex = 0;
+  window.currentQuizScore = 0;
   window.currentQuizLessonId = lessonId;
 
   window.renderQuizQuestion();
 
   const modal = document.getElementById('quizModal');
-  modal.style.display = 'flex';
-  void modal.offsetWidth; // Trigger reflow
-  modal.style.opacity = '1';
-  modal.querySelector('.modal-content').style.transform = 'scale(1)';
+  if (modal) {
+    modal.style.display = 'flex';
+    void modal.offsetWidth; // Trigger reflow
+    modal.style.opacity = '1';
+    modal.querySelector('.modal-content').style.transform = 'scale(1)';
+  }
 };
 
 window.renderQuizQuestion = function () {
   const qData = window.currentQuizData[window.currentQuizIndex];
-  document.getElementById('quiz-progress').innerText =
-    `${window.currentQuizIndex + 1} / ${window.currentQuizData.length}`;
+  const total = window.currentQuizData.length;
+  const currentNum = window.currentQuizIndex + 1;
+  const pctProgress = Math.round((currentNum / total) * 100);
+
+  const progPill = document.getElementById('quiz-progress');
+  if (progPill) progPill.innerText = `${currentNum} / ${total}`;
+  const progBar = document.getElementById('quiz-progress-bar');
+  if (progBar) progBar.style.width = `${pctProgress}%`;
 
   let optionsHtml = '';
   if (qData.options) {
     qData.options.forEach((opt, idx) => {
       optionsHtml += `
-        <button class="quiz-option-btn" data-idx="${idx}" onclick="window.checkQuizAnswer(this, ${idx})" style="display: block; width: 100%; text-align: left; padding: 15px; margin-bottom: 10px; background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1.05rem; color: #334155; cursor: pointer; transition: all 0.2s;">
-          <span style="display: inline-block; width: 30px; height: 30px; line-height: 30px; text-align: center; background: #e2e8f0; border-radius: 50%; margin-right: 15px; font-weight: bold; color: #64748b;">${String.fromCharCode(65 + idx)}</span>
-          ${opt}
+        <button class="btn-quiz-option quiz-option-btn" data-idx="${idx}" onclick="window.checkQuizAnswer(this, ${idx})" style="display: flex; align-items: center; width: 100%; text-align: left; background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 12px 16px; margin-bottom: 10px; font-size: 0.98rem; cursor: pointer; transition: all 0.2s; color: #1e293b;">
+          <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; line-height: 28px; text-align: center; background: #f1f5f9; border-radius: 50%; margin-right: 14px; font-weight: 800; color: #475569; flex-shrink: 0; font-size: 0.85rem;">${String.fromCharCode(65 + idx)}</span>
+          <span style="flex: 1;">${opt}</span>
         </button>
       `;
     });
   } else {
     optionsHtml = `
       <div style="background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 8px; padding: 20px; text-align: center; margin-bottom: 15px;">
-         <button class="btn btn-secondary" onclick="this.nextElementSibling.style.display='block'; this.style.display='none'; document.getElementById('quiz-next-btn').style.display='block';">Reveal Answer</button>
+         <button class="btn btn-secondary" onclick="this.nextElementSibling.style.display='block'; this.style.display='none'; document.getElementById('quiz-next-btn').style.display='inline-flex';">Reveal Answer</button>
          <div style="display: none; font-size: 1.15rem; color: #059669; font-weight: bold; padding: 10px;">${qData.a || qData.answer || ''}</div>
       </div>
     `;
   }
 
-  document.getElementById('quiz-question-container').innerHTML = `
-    <h3 style="font-size: 1.3rem; color: #0f172a; margin-bottom: 20px; line-height: 1.4;">${qData.question || qData.q}</h3>
-    ${optionsHtml}
-  `;
-
-  document.getElementById('quiz-feedback').innerHTML = '';
-
-  const nextBtn = document.getElementById('quiz-next-btn');
-  if (!qData.options) {
-    nextBtn.style.display = 'none'; // Will be revealed when answer is shown
-  } else {
-    nextBtn.style.display = 'none';
+  const container = document.getElementById('quiz-question-container');
+  if (container) {
+    container.innerHTML = `
+      <h3 style="font-size: 1.2rem; color: #0f172a; margin-bottom: 18px; line-height: 1.45; font-weight: 700;">${qData.question || qData.q}</h3>
+      <div class="quiz-options-list">${optionsHtml}</div>
+    `;
   }
 
-  if (window.currentQuizIndex >= window.currentQuizData.length - 1) {
-    nextBtn.innerHTML = 'Finish <i class="fa-solid fa-check"></i>';
-    nextBtn.onclick = window.closeQuizModal;
-  } else {
-    nextBtn.innerHTML = 'Next Question <i class="fa-solid fa-arrow-right"></i>';
-    nextBtn.onclick = window.nextQuizQuestion;
+  const feedbackEl = document.getElementById('quiz-feedback');
+  if (feedbackEl) feedbackEl.innerHTML = '';
+
+  const nextBtn = document.getElementById('quiz-next-btn');
+  if (nextBtn) {
+    nextBtn.style.display = 'none';
+    if (window.currentQuizIndex >= window.currentQuizData.length - 1) {
+      nextBtn.innerHTML = 'View Results <i class="fa-solid fa-trophy"></i>';
+      nextBtn.onclick = window.finishQuizModal;
+    } else {
+      nextBtn.innerHTML = 'Next Question <i class="fa-solid fa-arrow-right"></i>';
+      nextBtn.onclick = window.nextQuizQuestion;
+    }
   }
 };
 
 window.checkQuizAnswer = function (btnEl, selectedIdx) {
   const qData = window.currentQuizData[window.currentQuizIndex];
   const isCorrect = selectedIdx === qData.answer;
+  if (isCorrect) {
+    window.currentQuizScore = (window.currentQuizScore || 0) + 1;
+  }
 
-  // Disable all buttons
   const allBtns = document
     .getElementById('quiz-question-container')
     .querySelectorAll('.quiz-option-btn');
@@ -1970,47 +1992,125 @@ window.checkQuizAnswer = function (btnEl, selectedIdx) {
     btn.disabled = true;
     btn.style.cursor = 'default';
     if (parseInt(btn.dataset.idx) === qData.answer) {
-      btn.style.borderColor = '#22c55e';
+      btn.style.borderColor = '#16a34a';
       btn.style.background = '#f0fdf4';
       btn.style.color = '#15803d';
-      btn.innerHTML = '<i class="fa-solid fa-check-circle"></i> ' + btn.innerHTML;
+      btn.style.fontWeight = '600';
+      const badge = btn.querySelector('span:first-child');
+      if (badge) {
+        badge.style.background = '#16a34a';
+        badge.style.color = '#ffffff';
+      }
     }
   });
 
   const feedbackEl = document.getElementById('quiz-feedback');
   if (isCorrect) {
     feedbackEl.innerHTML =
-      '<span style="color: #22c55e;"><i class="fa-solid fa-star"></i> Correct!</span>';
+      '<span style="color: #16a34a; display: inline-flex; align-items: center; gap: 6px; font-weight: 700;"><i class="fa-solid fa-circle-check"></i> Correct!</span>';
   } else {
-    btnEl.style.borderColor = '#ef4444';
+    btnEl.style.borderColor = '#dc2626';
     btnEl.style.background = '#fef2f2';
-    btnEl.style.color = '#b91c1c';
-    btnEl.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> ' + btnEl.innerHTML;
+    btnEl.style.color = '#991b1b';
+    const badge = btnEl.querySelector('span:first-child');
+    if (badge) {
+      badge.style.background = '#dc2626';
+      badge.style.color = '#ffffff';
+    }
     feedbackEl.innerHTML =
-      '<span style="color: #ef4444;">Incorrect. Review the answer above.</span>';
+      '<span style="color: #dc2626; display: inline-flex; align-items: center; gap: 6px; font-weight: 700;"><i class="fa-solid fa-circle-xmark"></i> Incorrect. See correct answer above.</span>';
   }
 
-  if (window.currentQuizIndex < window.currentQuizData.length - 1) {
-    document.getElementById('quiz-next-btn').innerHTML =
-      'Next Question <i class="fa-solid fa-arrow-right"></i>';
-    document.getElementById('quiz-next-btn').style.display = 'block';
-    document.getElementById('quiz-next-btn').onclick = window.nextQuizQuestion;
-  } else {
-    document.getElementById('quiz-next-btn').innerHTML =
-      'Finish Quiz <i class="fa-solid fa-flag-checkered"></i>';
-    document.getElementById('quiz-next-btn').style.display = 'block';
-    document.getElementById('quiz-next-btn').onclick = function () {
-      document.getElementById('quiz-question-container').innerHTML =
-        '<h3 style="text-align:center; color: #15803d;"><i class="fa-solid fa-trophy"></i> Quiz Complete!</h3>';
-      document.getElementById('quiz-feedback').innerHTML = '';
-      document.getElementById('quiz-next-btn').style.display = 'none';
-    };
+  const nextBtn = document.getElementById('quiz-next-btn');
+  if (nextBtn) {
+    nextBtn.style.display = 'inline-flex';
   }
 };
 
 window.nextQuizQuestion = function () {
   window.currentQuizIndex++;
   window.renderQuizQuestion();
+};
+
+window.finishQuizModal = function () {
+  const score = window.currentQuizScore || 0;
+  const total = window.currentQuizData.length;
+  const pct = Math.round((score / total) * 100);
+  const lessonId = window.currentQuizLessonId;
+
+  try {
+    localStorage.setItem(
+      'meoncross_quiz_' + lessonId,
+      JSON.stringify({ score, total, pct, date: Date.now() }),
+    );
+  } catch (e) {}
+
+  const statusBadge = document.getElementById('quiz-status-badge-' + lessonId);
+  if (statusBadge) {
+    statusBadge.innerHTML = `
+      <span class="quiz-score-pill" style="background: #f0fdf4; color: #166534; border: 1.5px solid #86efac; padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 0.88rem; display: inline-flex; align-items: center; gap: 6px;">
+        <i class="fa-solid fa-circle-check"></i> Score: ${score}/${total} (${pct}%)
+      </span>
+      <button class="btn btn-secondary" onclick="window.startQuiz('${lessonId}')" style="padding: 7px 14px; font-size: 0.85rem; font-weight: 600; margin-left: 8px;">
+        <i class="fa-solid fa-rotate-right"></i> Re-take
+      </button>
+    `;
+  }
+
+  let descriptor = '';
+  let descriptorColor = '#16a34a';
+  if (pct >= 85) {
+    descriptor =
+      "Outstanding Retrieval Mastery! Excellent recall of today's historical facts and concepts.";
+    descriptorColor = '#16a34a';
+  } else if (pct >= 65) {
+    descriptor = 'Good Work! Solid grasp of core lesson knowledge.';
+    descriptorColor = '#2563eb';
+  } else {
+    descriptor = 'Keep Practicing! Review key terms and chronology before your next assessment.';
+    descriptorColor = '#d97706';
+  }
+
+  const container = document.getElementById('quiz-question-container');
+  if (container) {
+    container.innerHTML = `
+      <div style="text-align: center; padding: 20px 10px;">
+        <div style="font-size: 3.5rem; margin-bottom: 12px;">🏆</div>
+        <h3 style="font-size: 1.45rem; color: #0f172a; margin: 0 0 6px 0; font-family: 'Playfair Display', Georgia, serif;">Plenary Knowledge Check Complete!</h3>
+        <div style="display: inline-block; background: #f0fdf4; border: 2px solid #86efac; border-radius: 12px; padding: 10px 24px; margin: 15px 0;">
+          <div style="font-size: 0.85rem; font-weight: 700; color: #166534; text-transform: uppercase; letter-spacing: 0.5px;">Your Score</div>
+          <div style="font-size: 2.2rem; font-weight: 900; color: #15803d; line-height: 1.1;">${score} / ${total}</div>
+          <div style="font-size: 0.95rem; font-weight: 700; color: #166534;">${pct}% Correct</div>
+        </div>
+        <p style="font-size: 0.98rem; color: ${descriptorColor}; max-width: 480px; margin: 8px auto 25px auto; font-weight: 600; line-height: 1.5;">
+          ${descriptor}
+        </p>
+        <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+          <button class="btn-pedagogy-primary" onclick="window.closeAndScrollToExitTicket()" style="padding: 12px 24px; font-size: 1rem; font-weight: 700; border-radius: 8px; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);">
+            <i class="fa-solid fa-ticket"></i> Proceed to Exit Ticket
+          </button>
+          <button class="btn btn-secondary" onclick="window.startQuiz('${lessonId}')" style="padding: 12px 20px; font-size: 0.95rem; font-weight: 600; border-radius: 8px; display: inline-flex; align-items: center; gap: 6px;">
+            <i class="fa-solid fa-rotate-right"></i> Re-take Quiz
+          </button>
+        </div>
+      </div>
+    `;
+  }
+
+  const feedbackEl = document.getElementById('quiz-feedback');
+  if (feedbackEl) feedbackEl.innerHTML = '';
+  const nextBtn = document.getElementById('quiz-next-btn');
+  if (nextBtn) nextBtn.style.display = 'none';
+};
+
+window.closeAndScrollToExitTicket = function () {
+  window.closeQuizModal();
+  setTimeout(() => {
+    const exitTicket = document.querySelector('.exit-ticket-card');
+    if (exitTicket) {
+      exitTicket.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, 320);
 };
 
 window.closeQuizModal = function () {

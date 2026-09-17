@@ -1450,12 +1450,6 @@ export const unitData = {
       ],
       vocab_cloze_text:
         'Following World War II, Britain struggled to maintain its [Dual Obligation] to both Arabs and Jews under the League of Nations [Mandate]. Rising support for [Zionism] and violent guerrilla attacks by militant groups like the [Irgun] forced Britain to hand Palestine to the United Nations. The General Assembly voted for partition in [UN Resolution 181]. War erupted immediately, resulting in the establishment of Israel alongside the Palestinian catastrophe known as the [Nakba].',
-      historians_corner: {
-        title: 'The Debate over Plan Dalet',
-        text: "Historians sharply disagree on the nature of Plan D. Traditional Israeli historians argue it was a purely defensive necessity to secure besieged Jewish settlements before the Arab armies invaded. However, 'New Historians' like Ilan Pappé argue the text of Plan D proves it was a deliberate blueprint for the systematic ethnic cleansing of Palestinian Arabs from the future Jewish state.",
-        stretch_question:
-          "How does Pappé's interpretation of Plan Dalet fundamentally change our understanding of the Palestinian refugee crisis?",
-      },
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval (Lesson 1: Geopolitics & Mandates)',

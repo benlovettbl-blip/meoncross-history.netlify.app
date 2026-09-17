@@ -537,14 +537,6 @@ const great_war = {
         pair: 'Take turns explaining your choice. If you disagree, try to convince your partner!',
         share: "Be ready to report your partner's best point to the class.",
       },
-      historians_corner: {
-        title: "The 'Master Planner' Debate",
-        text: "Historians debate whether Bismarck was a genius 'master planner' who plotted the Franco-Prussian War years in advance, or merely a brilliant opportunist who reacted to events (like the Ems Telegram) as they happened. A.J.P. Taylor famously argued Bismarck just rode the wave of events.",
-        stretch_question:
-          "How does A.J.P. Taylor's view of Bismarck as an 'opportunist' challenge the traditional narrative that the Franco-Prussian War was meticulously planned?",
-        stretch_model:
-          "Traditional historians argue Bismarck provoked France deliberately to unite Germany. However, Taylor challenges this by suggesting Bismarck didn't have a grand masterplan; instead, he was just incredibly skilled at reacting to events (like the Spanish succession crisis) and twisting them to Germany's advantage at the last minute.",
-      },
       gcse_task: {
         sources: [
           {
@@ -1050,14 +1042,6 @@ const great_war = {
         pair: 'Discuss your views. Did your partner point out anything you missed?',
         share: 'Be ready to share whether your partner changed your mind.',
       },
-      historians_corner: {
-        title: 'The Primat der Innenpolitik',
-        text: "Some historians (like Eckart Kehr) argue that Wilhelm II's aggressive Weltpolitik was actually driven by domestic politics. By creating foreign enemies, the Kaiser hoped to distract the German working class from voting for socialist parties at home.",
-        stretch_question:
-          "Explain how Eckart Kehr's theory connects Germany's aggressive foreign policy to its internal fears of a socialist revolution.",
-        stretch_model:
-          "Kehr argues that the Kaiser was terrified of the growing working-class support for socialism at home. To prevent a revolution, he used 'Weltpolitik' (aggressive foreign policy) to create external enemies, rallying the German public around nationalism and distracting them from demanding domestic reforms.",
-      },
       gcse_task: {
         sources: [
           {
@@ -1522,14 +1506,6 @@ const great_war = {
         think: 'Decide who is more to blame and write down your main reason.',
         pair: 'Debate your choice with your partner. Try to find a weakness in their argument.',
         share: 'Be ready to summarize the strongest argument you heard.',
-      },
-      historians_corner: {
-        title: 'The Anglo-German Antagonism',
-        text: "Paul Kennedy argues that the naval arms race was the single most decisive factor in turning Britain from a neutral observer into Germany's enemy, as the threat of a German navy fundamentally challenged Britain's core survival strategy.",
-        stretch_question:
-          "Evaluate Paul Kennedy's argument. Why would Britain view a German naval buildup as a greater existential threat than a larger German army?",
-        stretch_model:
-          "As an island nation, Britain's survival depended entirely on importing food and raw materials by sea. A massive German army was a threat to France and Russia on the continent, but a German navy could blockade Britain, starve its population, and destroy its empire, making it an existential threat to British survival.",
       },
       gcse_task: {
         sources: [
@@ -2018,14 +1994,6 @@ const great_war = {
         pair: 'Share your perspective with your partner.',
         share: 'Be prepared to share an interesting insight from your discussion.',
       },
-      historians_corner: {
-        title: "The 'Powder Keg' Inevitability",
-        text: 'Was war inevitable in the Balkans? Richard Evans argues that the complex alliance system turned the Balkans into a doomsday machine, where any small conflict was mathematically guaranteed to drag all the Great Powers into a general war.',
-        stretch_question:
-          'Do you agree with Richard Evans that war was "inevitable" in the Balkans, or could diplomacy have dismantled the "doomsday machine"?',
-        stretch_model:
-          "While the alliance system certainly turned the Balkans into a 'doomsday machine', war was not strictly inevitable. The Great Powers had successfully used diplomacy to diffuse earlier Balkan crises in 1912 and 1913. However, by 1914, leaders were too fearful of losing prestige and too constrained by rigid military timetables to stop the domino effect once it started.",
-      },
       gcse_task: {
         sources: [
           {
@@ -2486,14 +2454,6 @@ const great_war = {
         think: 'Pick the specific turning point and write down why you chose it.',
         pair: "Compare your turning points. Do you agree on when the 'point of no return' was?",
         share: "Be ready to defend your group's chosen turning point to the class.",
-      },
-      historians_corner: {
-        title: 'The Fischer Controversy',
-        text: "In 1961, German historian Fritz Fischer shocked the world by arguing that Germany deliberately caused WWI to achieve world power status. He pointed to the 'Blank Cheque' as evidence that Germany actively pushed Austria into war, knowing it would provoke Russia.",
-        stretch_question:
-          "How does the 'Blank Cheque' support Fritz Fischer's controversial claim that Germany actively sought a wider war?",
-        stretch_model:
-          "By giving Austria unconditional support (the 'Blank Cheque') to attack Serbia, Germany knew it would almost certainly provoke Russia to intervene. Fischer argues that Germany did this deliberately because they wanted a preventive war against Russia before the Russian army fully modernized, hoping to secure German dominance in Europe.",
       },
       gcse_task: {
         sources: [

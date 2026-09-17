@@ -247,14 +247,6 @@ export const unitData = {
         pair: 'Compare your rankings with your partner and explain your #1 choice.',
         share: 'Be prepared to justify your top factor to the class using historical evidence.',
       },
-      historians_corner: {
-        title: 'The Myth of the Gullible Volunteer: Pennell vs The Traditional View',
-        text: 'For decades, popular history portrayed the volunteers of 1914 as naive simpletons who were tricked by lying propaganda posters and jingoistic poetry into throwing their lives away. However, modern revisionist historian Catriona Pennell (A Kingdom United, 2012) argues that British volunteers were rational actors who made sober decisions based on genuine moral outrage over Germany’s invasion of Belgium. Alongside this, military historian Gary Sheffield demonstrates that millions enlisted out of economic pragmatism, seeking stable wages, clothing, and food during a time of widespread poverty.',
-        stretch_question:
-          'Does the evidence of the "Pals Battalions" support the traditional view of naive volunteers, or the revisionist view of rational community solidarity?',
-        stretch_model:
-          'The Pals Battalions support both interpretations. On one hand, volunteers were genuinely naive about the destructive nature of industrial artillery and machine guns, expecting a glorious adventure that would be over by Christmas. On the other hand, Pennell and Sheffield show that joining a Pals Battalion was a rational act of communal solidarity: men trusted their friends, wanted to support their local community, and secured reliable military pay and separation allowances for their families.',
-      },
       learning_objective:
         'To understand why millions of British men voluntarily enlisted in 1914, balancing state propaganda and social coercion against genuine moral conviction and economic pragmatism.',
       teacher_notes: {
@@ -1035,14 +1027,6 @@ export const unitData = {
         pair: 'Compare your points with your partner and debate whether Haig could have acted differently on 1 July 1916.',
         share:
           'Be prepared to justify your final verdict to the class using specific historical evidence from the Somme.',
-      },
-      historians_corner: {
-        title: 'The Haig Debate: Alan Clark vs Gary Sheffield',
-        text: 'In his 1961 book "The Donkeys", historian and politician Alan Clark popularized the argument that brave British troops were commanded by foolish, arrogant, and out-of-touch aristocrats who squandered an entire generation in senseless frontal assaults. However, modern revisionist historian Professor Gary Sheffield ("The Chief: Douglas Haig and the British Army", 2011) fundamentally challenges this caricature. Sheffield demonstrates that Haig confronted the world’s first industrial war with zero technological template. Instead of repeating failures, Haig mastered tanks, creeping barrages, aerial photography, and sound-ranging artillery, leading the British Army to smash the German military in the decisive Hundred Days Offensive of 1918.',
-        stretch_question:
-          'Why did 1960s public culture embrace Alan Clark’s "Donkeys" thesis so eagerly, and why have academic historians largely rejected it?',
-        stretch_model:
-          'The 1960s witnessed the rise of anti-establishment sentiment, the Vietnam War protests, and cultural satire (like "Oh! What a Lovely War" and later "Blackadder Goes Forth"), making Clark’s thesis of foolish aristocratic generals deeply appealing to a cynical public. However, modern academic historians reject Clark because he selective cherry-picked quotes and ignored the reality of military technology: communications were primitive, defensive firepower was invincible, and Haig actually oversaw the most rapid technological modernization in British military history.',
       },
       teacher_notes: {
         primer:
@@ -1837,14 +1821,6 @@ export const unitData = {
         share:
           'Be prepared to share your conclusions with the class regarding why colonial soldiers felt deeply betrayed after the war.',
       },
-      historians_corner: {
-        title: 'Imperial Amnesia: David Olusoga vs Santanu Das',
-        text: 'In his landmark book and BBC documentary "The World\'s War" (2014), historian Professor David Olusoga argues that the First World War was not a European clash of nations, but a clash of multi-ethnic global empires that could not have been fought—let alone won—without four million non-white combatants and labourers. Alongside this, cultural historian Professor Santanu Das ("India, Empire, and First World War Culture", 2018) explores the deeply personal, sensory trauma preserved in the intercepted letters and folk songs of colonial troops, demonstrating that the psychological trauma of the trenches was shared across imperial lines, yet systematically erased from European memorialization.',
-        stretch_question:
-          'Why was the concept of the First World War as a "White Man’s War" so vital to European colonial empires in 1919?',
-        stretch_model:
-          'European colonial rule rested on the ideological myth of white racial, cultural, and moral superiority. Admitting that European civilization had descended into suicidal savagery, and that Britain and France had been rescued from defeat by Indian, African, Caribbean, and Chinese men, shattered this colonial myth. To preserve imperial dominance and deny colonial demands for political independence, European governments had to perpetuate the fiction that the war had been a purely white achievement.',
-      },
       teacher_notes: {
         primer:
           'This lesson reframes the First World War from a narrow European conflict into a truly global clash of empires. Students must investigate the indispensable contributions of over four million non-white colonial soldiers and labourers (including the Indian Army, British West Indies Regiment, and Chinese Labour Corps) and interrogate the political and racial reasons why their sacrifices were erased from British national memory for nearly a century.',
@@ -2636,14 +2612,6 @@ export const unitData = {
         share:
           'Be prepared to justify your view to the class: was the First World War a breakthrough or an illusion for female equality?',
       },
-      historians_corner: {
-        title: 'Did the War Liberate Women? Martin Pugh vs Gail Braybon',
-        text: 'For decades, traditional history textbooks claimed that the First World War was the great liberator of British women, arguing that their heroic service as "Munitionettes" persuaded male politicians to grant them the vote in 1918. However, feminist historian Gail Braybon ("Women Workers in the First World War", 1981) and political historian Professor Martin Pugh ("The March of the Women", 2000) heavily challenge this orthodox narrative. Braybon proves that women endured brutal exploitation, toxic chemical poisoning, and unequal wages, only to be ruthlessly sacked and forced back into domestic servitude under the 1919 Restoration of Pre-War Practices Act. Furthermore, Pugh highlights that the 1918 Act enfranchised respectable, married women over 30—the exact demographic that did not work in munitions factories—while young working-class female workers remained entirely disenfranchised.',
-        stretch_question:
-          'Why did the British Parliament grant the vote to women over 30 in 1918, while refusing to give the vote to the young women who actually worked in the munitions factories?',
-        stretch_model:
-          'Male politicians in 1918 were deeply terrified of female political radicalism and the numerical superiority of women following the slaughter of male soldiers. Granting universal suffrage to all women would have made women the majority of the electorate. By restricting the vote to property-owning women over 30, Parliament ensured that newly enfranchised women were mature, married, and conservative, deliberately excluding the young, unmarried working-class factory "Munitionettes" who were deemed politically unpredictable.',
-      },
       teacher_notes: {
         primer:
           'This lesson examines the concept of "total war" on the British Home Front. Students must analyze how modern industrial conflict obliterated Victorian laissez-faire governance through DORA, conscription, food rationing, and female mobilization. Guide pupils to explore the intense moral debates surrounding Conscientious Objectors and critically evaluate the feminist historiography on whether wartime work truly liberated British women.',
@@ -3427,14 +3395,6 @@ export const unitData = {
         share:
           'Be prepared to justify your verdict to the class: was a lasting peace ever possible in 1919?',
       },
-      historians_corner: {
-        title: 'The Versailles Debate: John Maynard Keynes vs Margaret MacMillan',
-        text: 'In his bestselling 1919 book "The Economic Consequences of the Peace", British economist John Maynard Keynes argued that the Treaty of Versailles was an immoral and catastrophic "Carthaginian Peace" that deliberately impoverished Germany, ruined the European economy, and made a second world war inevitable. However, modern revisionist historian Professor Margaret MacMillan ("Peacemakers: Six Months That Changed the World", 2001) fundamentally challenges Keynes’ thesis. MacMillan argues that Versailles was not uniquely harsh: Germany remained the largest, most populous, and most industrially potent power in Central Europe, with its territory undamaged by war. MacMillan contends that the rise of Hitler was not caused by the treaty itself, but by the devastating 1929 Wall Street Crash and the refusal of Britain and France to enforce the treaty’s military terms during the 1930s.',
-        stretch_question:
-          'Does the evidence of Germany’s rapid rearmament in the 1930s support Keynes’ view that Germany was economically crippled, or MacMillan’s view that German industrial power survived intact?',
-        stretch_model:
-          'Germany’s ability to construct the world’s most formidable mechanized military within six years of Hitler taking power strongly supports Margaret MacMillan’s thesis. If the Treaty of Versailles had genuinely destroyed the German economy as Keynes claimed, Germany could not have built thousands of tanks, aircraft, and battleships in the 1930s. This proves that German industrial capacity survived 1919 largely undamaged, and that the failure of Versailles was political and military appeasement by the Western Allies, rather than excessive economic destruction in 1919.',
-      },
       teacher_notes: {
         primer:
           'This lesson examines the controversial 1919 peace settlement that concluded the First World War. Guide pupils to analyze the competing geopolitical motivations of the "Big Three" and interrogate the mnemonic GARGLE (Guilt, Arms, Reparations, German Land, League of Nations, Empire). Move students beyond the simplistic view that Versailles directly created Hitler by introducing the revisionist debate between John Maynard Keynes (Carthaginian peace) and Margaret MacMillan (unenforced compromise).',
@@ -4196,14 +4156,6 @@ export const unitData = {
         pair: 'Debate with your partner whether the Stubbington shelter was built to celebrate heroic military sacrifice or to provide a quiet sanctuary for unbearable family grief.',
         share:
           'Be prepared to explain to the class how the Stubbington memorial connects modern school pupils directly to the history of the First World War.',
-      },
-      historians_corner: {
-        title: 'Sites of Memory: Professor Jay Winter on Communal Mourning',
-        text: 'In his groundbreaking work "Sites of Memory, Sites of Mourning: The Great War in European Cultural History" (1995), Cambridge historian Professor Jay Winter fundamentally reinterprets the purpose of local war memorials. Winter argues that small-town memorials were not erected by governments to promote imperial patriotism or celebrate military triumph. Instead, they were deeply personal, communal acts of psychological bereavement organized by grieving families. Because more than half of all British soldiers killed on the Western Front and Gallipoli had no identifiable graves, parents had nowhere to lay flowers. Parishes like Stubbington built local memorials to create "surrogate tombs"—sacred, physical spaces where communities could collectively grieve and ensure their sons were not lost to history.',
-        stretch_question:
-          'How does the story of carpenter Arthur Tribbeck carving his own son Harold’s name into the Stubbington shelter support Professor Jay Winter’s thesis?',
-        stretch_model:
-          'Arthur Tribbeck’s personal involvement directly validates Jay Winter’s argument that memorials were expressions of intimate family mourning rather than state militarism. Tribbeck was not a government official or military officer; he was a local father working with wood to create a community sanctuary while processing the agonizing death of his own 21-year-old son. The physical act of carving Harold’s name into the oak beam provided a tangible, enduring site of remembrance that substituted for an absent grave.',
       },
       teacher_notes: {
         primer:
@@ -4992,14 +4944,6 @@ export const unitData = {
         pair: 'Debate with your partner and attempt to reach a consensus on the most decisive cause of Allied victory in 1918.',
         share:
           'Be prepared to defend your combined conclusion to the class with specific historical evidence.',
-      },
-      historians_corner: {
-        title: 'The Great War Debate: Butchers and Bunglers vs The Learning Curve',
-        text: 'For over a century, historians have fiercely debated the nature of British generalship on the Western Front. In "British Butchers and Bunglers of the First World War" (1988), historian John Laffin argued that commanders like Field Marshal Douglas Haig were callous, incompetent aristocratic "donkeys" who stubbornly repeated suicidal frontal infantry charges against machine guns. Conversely, in "Forgotten Victory" (2001) and "The Chief" (2011), Professor Gary Sheffield contends that Haig was the "Architect of Victory". Sheffield demonstrates that Haig faced an unprecedented industrial war with no historical manual, navigated an agonizing "learning curve", and successfully developed the combined-arms tactics (tanks, creeping barrages, aerial photography, and sound-ranging artillery) that decisively defeated the German Army in the Hundred Days Offensive of 1918.',
-        stretch_question:
-          'Which historical interpretation of British military command do you find more convincing, and why?',
-        stretch_model:
-          'Gary Sheffield’s "learning curve" interpretation is significantly more convincing than Laffin’s "butchers and bunglers" caricature. While Haig unquestionably made grave errors on 1 July 1916 by ordering men to advance in slow lines carrying 30kg packs, Laffin ignores the brutal reality of military technology: defensive machine guns and heavy artillery outmatched primitive pre-radio communications for any attacking general. Sheffield proves that Haig actively adapted: pioneering tanks at Flers in 1916, perfecting creeping barrages, and orchestrating the 1918 Hundred Days Offensive, which advanced 60 miles, captured 188,000 German prisoners, and won the war.',
       },
       teacher_notes: {
         primer:

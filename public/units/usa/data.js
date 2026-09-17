@@ -812,19 +812,6 @@ export const usa = {
         model:
           "Source A is highly useful for demonstrating the legal litigation strategy of the NAACP. The content outlines Marshall's defense of the Constitution's equal protection clause to challenge the legal basis of Jim Crow. This content is highly useful because it is supported by my knowledge that <strong>the NAACP Legal Defense Fund, led by Thurgood Marshall, spent the early 1950s systematically challenging segregation in courts, winning key rulings like Sweatt v. Painter in 1950</strong>, which confirms that their legal strategy successfully targeted segregation's constitutional framework. <em>The provenance makes the source extremely useful because it is an internal report written in 1953 by Thurgood Marshall himself, providing a reliable, direct account of NAACP legal tactics and their legal confidence just before their major victories. However, it is limited because it represents a top-down legal perspective, failing to show the daily experiences of ordinary Black citizens on the ground.</em>\n\nSource B is highly useful for demonstrating the systemic, official nature of segregation in public facilities in the 1950s. The photograph shows a wooden sign reading \"COLORED WAITING ROOM\" hanging above a public entrance. This content's utility is supported by my knowledge that <strong>Jim Crow laws in the Southern states officially enforced segregation in transit, waiting rooms, and restaurants, creating separate and unequal conditions</strong>, which confirms that the sign is an accurate representation of how segregation was physically and legally enforced in Southern public spaces. <em>The provenance, taken in the Southern United States in the early 1950s, makes the source extremely useful because it provides direct, unedited evidence of state-sanctioned segregation infrastructure. However, it is less useful because it only shows the sign itself, failing to document the personal experiences of the Black passengers who suffered under segregation or the active resistance against it.</em>",
       },
-      historians_corner: {
-        title: '⚖️ Dual Interpretation: Challenging Segregation',
-        author_context:
-          'NAACP Leadership: "The Power of Constitutional Law" vs CORE Activists: "Direct Action on the Streets"',
-        extract:
-          '**NAACP Leadership:** The only way to dismantle segregation permanently is through federal court rulings that establish binding constitutional precedents. Grassroots actions are easily crushed by local police without federal legal protection.\n\n**CORE Activists:** Court rulings are empty promises without mass direct action. By peacefully disobeying segregation laws, we expose the violence of white supremacy to the public and force federal intervention.',
-        stretch_question:
-          'Which historical interpretation provides a more convincing explanation of developments in KT 1.1: What was the position of Black Americans in the early 1950s??',
-        starter: 'It can be argued that NAACP Leadership is more convincing because...',
-        clue: 'Consider the concrete historical evidence: were outcomes driven by federal legal decisions or by grassroots direct action on the ground?',
-        stretch_model:
-          'A top-level historical response synthesizes both perspectives: while top-down decisions (such as federal court rulings or presidential interventions) established the indispensable constitutional foundation, bottom-up grassroots pressure was essential to compel reluctant authorities to enforce those rulings against entrenched local resistance.',
-      },
       pair_share: {
         prompt:
           "How does John Lewis's childhood experience illustrate the difference between the physical enforcement of segregation and its psychological impact on young Black Americans?",
@@ -1398,19 +1385,6 @@ export const usa = {
         model:
           'Source A is highly useful for showing the intense social opposition and grassroots white resistance to school integration. The photograph depicts an "angry white crowd" of students and adults protesting, with some carrying signs reading "Keep Central High Clean". This content is highly useful because it is supported by my contextual knowledge that <strong>when the Little Rock Nine attempted to integrate Central High School in September 1957, they faced violent, threatening white mobs who surrounded the school</strong>, which confirms that the source is an extremely useful record of the deep-seated racial hostility and active resistance to integration in the South. <em>The provenance, taken outside Central High in September 1957, makes the source highly useful because it captures the raw, authentic hostility of the segregationists at the exact moment of the crisis. However, it is less useful because it only represents the vocal extremist protesters, failing to show the moderate white citizens or the experiences of the Black students inside the school.</em>\n\nSource B is highly useful for showing the scale of the state and military conflict required to override this local segregationist opposition. The photograph shows "soldiers of the 101st Airborne Division in a military jeep guarding a station wagon" as Black students enter it. This content\'s usefulness is supported by my knowledge that <strong>Governor Orval Faubus used the National Guard to block the Black students, forcing President Eisenhower to send 1,000 soldiers of the 101st Airborne Division to enforce integration</strong>, which explains why such heavy military presence was necessary to protect the students. <em>The provenance of late September 1957 makes the source extremely useful because it documents the historic federal intervention needed to uphold the Constitution. However, it is slightly less useful because it portrays a controlled escort moment, which hides the constant, daily psychological harassment the students endured inside the classrooms.</em>',
       },
-      historians_corner: {
-        title: '⚖️ Dual Interpretation: Federal Intervention at Little Rock',
-        author_context:
-          'NAACP Leadership: "Defending Constitutional Law" vs Southern Segregationists: "Preventing Federal Tyranny"',
-        extract:
-          "**NAACP Leadership:** Desegregation is a federal constitutional mandate. Governor Faubus' rebellion against federal court decisions was an act of defiance that required immediate presidential military suppression to assert federal supremacy.\n\n**Southern Segregationists:** Eisenhower's troop deployment was an military invasion that violated Arkansas sovereignty and states' rights, forcing social integration against the wishes of the local white community.",
-        stretch_question:
-          'Which historical interpretation provides a more convincing explanation of developments in KT 1.2: How did developments in education challenge segregation (1954–57)??',
-        starter: 'It can be argued that NAACP Leadership is more convincing because...',
-        clue: 'Consider the concrete historical evidence: were outcomes driven by federal legal decisions or by grassroots direct action on the ground?',
-        stretch_model:
-          'A top-level historical response synthesizes both perspectives: while top-down decisions (such as federal court rulings or presidential interventions) established the indispensable constitutional foundation, bottom-up grassroots pressure was essential to compel reluctant authorities to enforce those rulings against entrenched local resistance.',
-      },
       pair_share: {
         prompt:
           'Elizabeth Eckford was just 15 years old. Why do you think school desegregation provoked such intense personal anger from ordinary white citizens?',
@@ -1965,19 +1939,6 @@ export const usa = {
         model:
           'Source A is highly useful for showing the spiritual leadership and religious solidarity that sustained the boycott. The photograph shows Martin Luther King Jr. "speaking passionately from a pulpit" to a packed church of Black citizens. This content is highly useful because it is supported by my contextual knowledge that <strong>the Montgomery Improvement Association (MIA) held regular mass meetings in local churches to coordinate strategy, maintain non-violent discipline, and raise funds for the boycott</strong>, which confirms that the source is an accurate representation of the central role the church played as the movement\'s organizational and spiritual hub. <em>The provenance of late 1955 makes the source highly useful because it captures the central role of the Black church at the very beginning of the boycott. However, it is less useful because it focuses solely on Dr. King\'s charismatic leadership, omitting the crucial organizing work of figures like Jo Ann Robinson and the Women\'s Political Council.</em>\n\nSource B is highly useful for showing the direct police criminalization of peaceful protestors and the individual courage of boycott leaders. The photograph depicts "Rosa Parks standing calmly" while a police officer in uniform applies ink to her fingers for fingerprinting. This content is highly useful because it is supported by my contextual knowledge that <strong>the local authorities in Montgomery attempted to break the boycott by indicting and arresting over 80 leaders, including Rosa Parks and MLK, under an old anti-conspiracy law in February 1956</strong>, which confirms that the photograph is an accurate representation of the state\'s efforts to legally harass and intimidate civil rights activists. <em>The provenance, taken on 22 February 1956 during the height of the Montgomery Bus Boycott, strengthens its utility because it captures a real-time record of state-level intimidation. However, it is slightly limited because it is a staged publicity photo taken for the press, failing to represent the daily grassroots efforts of thousands of ordinary boycotters who walked or carpooled.</em>',
       },
-      historians_corner: {
-        title: '⚖️ Dual Interpretation: Non-Violent Economic Action',
-        author_context:
-          'MIA Boycotters: "Dignified Non-Violent Resistance" vs Montgomery Mayor Gayle: "Illegal Economic Coercion"',
-        extract:
-          '**MIA Boycotters:** MIA organizers argued that walking and carpooling was a peaceful protest that applied Christian love and economic leverage to force the city to treat Black citizens with human dignity.\n\n**Montgomery Mayor Gayle:** Montgomery city authorities claimed the boycott was an illegal conspiracy designed to damage a public utility, prosecuting MLK and other organizers for disrupting public business.',
-        stretch_question:
-          'Which historical interpretation provides a more convincing explanation of developments in KT 1.3: How did the Montgomery Bus Boycott happen, and why did it succeed??',
-        starter: 'It can be argued that MIA Boycotters is more convincing because...',
-        clue: 'Consider the concrete historical evidence: were outcomes driven by federal legal decisions or by grassroots direct action on the ground?',
-        stretch_model:
-          'A top-level historical response synthesizes both perspectives: while top-down decisions (such as federal court rulings or presidential interventions) established the indispensable constitutional foundation, bottom-up grassroots pressure was essential to compel reluctant authorities to enforce those rulings against entrenched local resistance.',
-      },
       pair_share: {
         prompt:
           "Rosa Parks's arrest is famous, but Jo Ann Robinson's account shows the massive organization behind the scenes. How does this source challenge the idea that the boycott was just a spontaneous event?",
@@ -2506,19 +2467,6 @@ export const usa = {
         ],
         model:
           "<h3>Model Answer (Level 4 — 12/12 marks):</h3>\n<p><strong>One major reason for widespread Southern white opposition to desegregation was organized political resistance led by Southern elected officials, epitomized by the 1956 'Southern Manifesto'.</strong> In 1956, 101 Southern congressmen and senators signed the manifesto, openly condemning the Supreme Court's <em>Brown v. Board of Education</em> decision as a 'clear abuse of judicial power' and pledging to use 'all lawful means' to resist integration. Southern state governments, led by 'Dixiecrats', embraced the strategy of 'Massive Resistance', passing state laws to cut funding from integrated schools and even shutting down public schools entirely (as Governor Faubus did in Little Rock during the 'Lost Year' of 1958–59). This political leadership legitimized popular defiance by framing segregation as a constitutional defense of 'states' rights' against federal tyranny, encouraging ordinary white citizens to disobey federal court orders.</p>\n<p><strong>A second crucial reason was the rise of middle-class economic coercion through White Citizens' Councils.</strong> Formed in Mississippi in 1954 following the <em>Brown</em> ruling, the White Citizens' Councils grew to over 250,000 members across the South, attracting doctors, lawyers, bankers, and business owners who branded themselves as 'respectable' segregationists. Rather than using overt physical violence, the Councils used devastating economic warfare against Black activists and integration supporters. Black parents who signed petitions to integrate local schools had their mortgages foreclosed, bank loans canceled, and employment terminated, while Black sharecroppers were evicted from white-owned land. This systematic economic terror made supporting desegregation financially ruinous for Black families, effectively paralyzing local integration efforts without needing open street violence.</p>\n<p><strong>Finally, extreme racial opposition was enforced through violent domestic terrorism and intimidation by the Ku Klux Klan (KKK).</strong> The <em>Brown</em> decision triggered a violent resurgence of the KKK across the Deep South, marked by cross burnings, firebombings of Black churches and homes, and brutal lynchings. The horrific murder of 14-year-old Emmett Till in Mississippi in August 1955 and the subsequent acquittal of his white murderers by an all-white jury demonstrated that white violence was protected by the Southern legal system. This unchecked brutality was designed to terrify Black communities into submission and demonstrate that any challenge to the racial hierarchy would carry fatal consequences. Therefore, Southern white opposition succeeded in delaying integration through a coordinated combination of political obstruction, economic ruin, and physical terror.</p>",
-      },
-      historians_corner: {
-        title: '⚖️ Dual Interpretation: Southern White Resistance',
-        author_context:
-          'SCLC Organizers: "Dismantling White Supremacy" vs Citizens\' Councils: "Preserving Southern Traditions"',
-        extract:
-          "**SCLC Organizers:** Civil rights leaders argued that Southern white opposition used legal double standards and illegal terror to maintain a system of racial slavery under a different name.\n\n**Citizens' Councils:** Southern segregationists argued that integration would destroy public safety, ruin the educational system, and violate state rights guaranteed by the Tenth Amendment.",
-        stretch_question:
-          'Which historical interpretation provides a more convincing explanation of developments in KT 1.4: Why did white people in the South resist integration, and how did they do it??',
-        starter: 'It can be argued that SCLC Organizers is more convincing because...',
-        clue: 'Consider the concrete historical evidence: were outcomes driven by federal legal decisions or by grassroots direct action on the ground?',
-        stretch_model:
-          'A top-level historical response synthesizes both perspectives: while top-down decisions (such as federal court rulings or presidential interventions) established the indispensable constitutional foundation, bottom-up grassroots pressure was essential to compel reluctant authorities to enforce those rulings against entrenched local resistance.',
       },
       pair_share: {
         prompt:
@@ -3126,19 +3074,6 @@ export const usa = {
         model:
           'Source A is highly useful for showing the non-violent direct action tactics used by student activists to challenge retail segregation. The photograph shows the "empty, preserved section of the Greensboro Woolworth\'s lunch counter and four stools" on display inside the Smithsonian Museum. This content is highly useful because it is supported by my knowledge that <strong>the Greensboro sit-in of February 1960 at Woolworth\'s was a turning point that sparked sit-ins across the South, and this preserved counter stands as a significant material artifact representing that struggle</strong>, which confirms that the preserved counter stands as a significant material artifact representing that struggle. <em>The provenance, showing the counter preserved at the Smithsonian, makes the source highly useful as it demonstrates the national historical significance and public recognition of the sit-ins. However, it is limited because it shows an empty museum exhibit rather than the actual 1960 protest, failing to capture the student activists, the hostile white crowds, or the harassment they endured.</em>\n\nSource B is highly useful for showing the extreme level of state resistance to university integration and the federal intervention needed to override it. The photograph depicts James Meredith walking "flanked by several tall, serious US Marshals" wearing helmets. This content\'s utility is supported by my knowledge that <strong>Governor Ross Barnett defied federal orders, prompting President Kennedy to send 30,000 troops and US Marshals to force the integration of the University of Mississippi in October 1962, sparking riots that killed two people</strong>, which explains the military necessity of using armed guards to protect a single Black student. <em>The provenance of October 1962 makes the source extremely useful because it visually documents the armed federal power needed to protect Black rights. However, it is less useful because it depicts a controlled walk, failing to capture the chaos and violence of the Ole Miss riot itself.</em>',
       },
-      historians_corner: {
-        title: '⚖️ Dual Interpretation: Direct Action Protests',
-        author_context:
-          'SNCC / CORE Riders: "Direct Confrontation with Injustice" vs Southern Governors: "Disruptive Outside Agitation"',
-        extract:
-          '**SNCC / CORE Riders:** Student activists argued that directly breaking unjust local segregation laws was the only way to expose Southern white brutality to the world and force federal intervention.\n\n**Southern Governors:** Southern leaders claimed the Freedom Riders were Northern outside agitators who intentionally provoked riots to force federal military occupation of their states.',
-        stretch_question:
-          'Which historical interpretation provides a more convincing explanation of developments in KT 2.1: How did peaceful protests (like sit-ins and Freedom Rides) force the government to act??',
-        starter: 'It can be argued that SNCC / CORE Riders is more convincing because...',
-        clue: 'Consider the concrete historical evidence: were outcomes driven by federal legal decisions or by grassroots direct action on the ground?',
-        stretch_model:
-          'A top-level historical response synthesizes both perspectives: while top-down decisions (such as federal court rulings or presidential interventions) established the indispensable constitutional foundation, bottom-up grassroots pressure was essential to compel reluctant authorities to enforce those rulings against entrenched local resistance.',
-      },
       pair_share: {
         prompt:
           'How can sitting quietly at a lunch counter be a powerful form of protest? Why was the police officer unable to stop them?',
@@ -3701,19 +3636,6 @@ export const usa = {
           "Scaffolding Clue: Evaluate the author, audience, and motive for both sources. For written accounts, consider if the author has political reasons to justify their actions. For photographs, consider what may be excluded outside the camera's frame.",
         model:
           'Source A is highly useful for showing the massive scale, unity, and public impact of non-violent civil rights campaigns. The photograph depicts Martin Luther King Jr. "looking out over a massive crowd of over 250,000 demonstrators" surrounding the reflecting pool. This content\'s utility is supported by my knowledge that <strong>the March on Washington in August 1963 was a key moment of multi-racial unity that put pressure on the Kennedy administration to pass civil rights laws</strong>, which confirms the effectiveness of non-violent mobilization in capturing national attention. <em>The provenance of 28 August 1963 makes the source highly useful because it captures the peak of the movement\'s public mobilization. However, it is less useful because it highlights a single speech, obscuring the deep strategic disagreements between SNCC, SCLC, and other coalition members behind the scenes.</em>\n\nSource B is highly useful for showing the political and legislative outcomes of grassroots non-violent campaigns. The photograph shows President Johnson "handing a commemorative pen to Martin Luther King Jr." and other leaders at the desk. This content is highly useful because it is supported by my knowledge that <strong>the legislative alliance between LBJ and civil rights leaders led to the passage of the Voting Rights Act of 1965, which banned literacy tests and authorized federal registrars</strong>, which proves that grassroots moral pressure successfully forced federal reform. <em>The provenance of 6 August 1965 makes the source extremely useful because it documents the formal signing of this landmark act. However, it is less useful because it portrays a harmonious political consensus, hiding the intense pressure, political caution, and FBI surveillance that Johnson\'s administration directed at civil rights leaders.</em>',
-      },
-      historians_corner: {
-        title: '⚖️ Dual Interpretation: The Birmingham & Selma Campaigns',
-        author_context:
-          'SCLC Activists: "Exposing the Moral Rot of Segregation" vs Southern Police: "Maintaining Public Safety and Law"',
-        extract:
-          "**SCLC Activists:** SCLC leaders argued that putting children and peaceful marchers in harm's way was a necessary moral strategy to force federal legislation and expose the violent nature of white supremacy.\n\n**Southern Police:** Southern sheriffs and segregationists argued that the civil rights marchers deliberately broke city permits, disrupted traffic, and provoked violence to create media spectacles.",
-        stretch_question:
-          'Which historical interpretation provides a more convincing explanation of developments in KT 2.2: How did protests in Birmingham and Selma lead to the Civil and Voting Rights Acts??',
-        starter: 'It can be argued that SCLC Activists is more convincing because...',
-        clue: 'Consider the concrete historical evidence: were outcomes driven by federal legal decisions or by grassroots direct action on the ground?',
-        stretch_model:
-          'A top-level historical response synthesizes both perspectives: while top-down decisions (such as federal court rulings or presidential interventions) established the indispensable constitutional foundation, bottom-up grassroots pressure was essential to compel reluctant authorities to enforce those rulings against entrenched local resistance.',
       },
       pair_share: {
         prompt:
@@ -4303,19 +4225,6 @@ export const usa = {
           "Scaffolding Clue: Evaluate the author, audience, and motive for both sources. For written accounts, consider if the author has political reasons to justify their actions. For photographs, consider what may be excluded outside the camera's frame.",
         model:
           "Source A is highly useful for understanding the intellectual shift toward self-defense and militancy. The photograph shows Malcolm X pointing to a newspaper headline that reads \"Blacks Must Defend Themselves Against Klan Terror!\". This content is highly useful because it is supported by my knowledge that <strong>Malcolm X rejected SCLC's non-violent integration, advocating Black nationalism, economic self-reliance, and self-defense 'by any means necessary' to appeal to Northern urban Black communities</strong>, which confirms that the source is an accurate representation of his teachings and his rejection of MLK's non-violent approach. <em>The provenance of 1964 makes the source highly useful because it documents how Malcolm X used print media to directly challenge MLK's traditional non-violent approach. However, it is less useful because it is a posed, strategic media photograph designed to project militancy, rather than showing Malcolm's complex intellectual evolution.</em>\n\nSource B is highly useful for showing how Black Power and militancy were institutionalized by student groups in the late 1960s. The photograph depicts a \"column of Black Panther members wearing black leather jackets, black berets\" marching in formation. This content's usefulness is supported by my knowledge that <strong>the Black Panther Party, founded in 1966 in Oakland, California, rejected integration and police brutality, calling for armed patrols and community self-reliance</strong>, which validates the source as a visual representation of their militant discipline and rejection of pacifism. <em>The provenance of 1968 makes the source extremely useful because it visually captures the disciplined, militaristic style of Black Power. However, it is less useful because it focuses on their armed, militant appearance, ignoring their extensive community welfare programs, such as free breakfasts for children.</em>",
-      },
-      historians_corner: {
-        title: '⚖️ Dual Interpretation: Malcolm X & Black Power',
-        author_context:
-          'Black Panthers: "Black Self-Determination and Dignity" vs Mainstream SCLC: "Dangerous Separatism and Militancy"',
-        extract:
-          "**Black Panthers:** Black Power advocates argued that non-violence begged white oppressors for rights, and that Black people must defend themselves and control their own communities' destiny.\n\n**Mainstream SCLC:** Mainstream civil rights leaders like MLK and white liberals warned that Black Power isolationism and armed militancy would alienate white allies and trigger a racial war.",
-        stretch_question:
-          'Which historical interpretation provides a more convincing explanation of developments in KT 2.3: What was the Black Power movement, and how did it differ from non-violent protests??',
-        starter: 'It can be argued that Black Panthers is more convincing because...',
-        clue: 'Consider the concrete historical evidence: were outcomes driven by federal legal decisions or by grassroots direct action on the ground?',
-        stretch_model:
-          'A top-level historical response synthesizes both perspectives: while top-down decisions (such as federal court rulings or presidential interventions) established the indispensable constitutional foundation, bottom-up grassroots pressure was essential to compel reluctant authorities to enforce those rulings against entrenched local resistance.',
       },
       pair_share: {
         prompt:
@@ -4921,19 +4830,6 @@ export const usa = {
         model:
           "<h3>Model Answer (Level 4 — 12/12 marks):</h3>\n<p><strong>One fundamental reason for the outbreak of urban riots between 1965 and 1968 was severe de facto segregation and economic deprivation in Northern and Western inner-city ghettos.</strong> While federal legislation like the 1964 Civil Rights Act outlawed legal (de jure) segregation in the South, it did nothing to address economic hardship in northern cities like Los Angeles, Chicago, and Detroit. Black Americans were trapped in substandard inner-city housing due to discriminatory practices like 'redlining' by banks. Unemployment among young Black urban men was up to three times higher than national averages, and ghetto schools were chronically underfunded. This created an atmosphere of deep despair, as Black urban populations felt excluded from the American economic dream despite civil rights victories in the South.</p>\n<p><strong>A second direct cause was pervasive police brutality and racial friction with virtually all-white police forces.</strong> In August 1965, the arrest of Marquette Frye in the Watts district of Los Angeles by California Highway Patrol sparked six days of rioting that left 34 dead and over 1,000 injured. Similar confrontations ignited riots in Newark and Detroit in 1967. The federal Kerner Commission Report, published in 1968 by President Johnson's National Advisory Commission on Civil Disorders, famously concluded that America was 'moving toward two societies, one black, one white—separate and unequal.' The Kerner Report explicitly identified aggressive, heavy-handed policing in Black neighborhoods as the immediate spark that detonated urban anger.</p>\n<p><strong>Finally, urban violence was catalyzed by rising frustration with the limitations of non-violence and the catastrophic shock of Martin Luther King Jr.'s assassination in April 1968.</strong> Many young urban Black Americans felt that the SCLC's non-violent Christian marches had failed to improve the material conditions of the northern working class, leading them to embrace more assertive Black Power rhetoric. When King was assassinated on April 4, 1968, in Memphis, the devastating news triggered violent uprisings in more than 100 American cities within hours, including Washington D.C., Chicago, and Baltimore. The assassination destroyed faith in peaceful reform among millions of Black Americans, unleashing a wave of grief and fury that required tens of thousands of federal troops to suppress. Therefore, systemic economic exclusion, discriminatory policing, and the death of non-violent leadership combined to ignite the urban rebellions of the late 1960s.</p>",
       },
-      historians_corner: {
-        title: '⚖️ Dual Interpretation: Urban Riots and the Kerner Report',
-        author_context:
-          'Kerner Commission: "A Cry of the Oppressed" vs Nixon Conservatives: "Lawless Criminal Rioting"',
-        extract:
-          '**Kerner Commission:** Civil rights commission members argued that urban riots were political rebellions caused by systematic white neglect, police brutality, and job discrimination in ghetto slums.\n\n**Nixon Conservatives:** Conservative white politicians claimed the riots were lawless acts of vandalism and criminality that destroyed communities and required immediate military force to suppress.',
-        stretch_question:
-          'Which historical interpretation provides a more convincing explanation of developments in KT 2.4: Why did riots break out in American cities between 1965 and 1968??',
-        starter: 'It can be argued that Kerner Commission is more convincing because...',
-        clue: 'Consider the concrete historical evidence: were outcomes driven by federal legal decisions or by grassroots direct action on the ground?',
-        stretch_model:
-          'A top-level historical response synthesizes both perspectives: while top-down decisions (such as federal court rulings or presidential interventions) established the indispensable constitutional foundation, bottom-up grassroots pressure was essential to compel reluctant authorities to enforce those rulings against entrenched local resistance.',
-      },
       pair_share: {
         prompt:
           'According to this resident, why did federal laws like the Civil Rights Act fail to prevent urban riots? What does this tell us about the limits of legal rights when economic misery remains?',
@@ -5503,19 +5399,6 @@ export const usa = {
           "Scaffolding Clue: Evaluate the author, audience, and motive for both sources. For written accounts, consider if the author has political reasons to justify their actions. For photographs, consider what may be excluded outside the camera's frame.",
         model:
           "Source A is highly useful for showing President Diem's authoritarian methods and his reliance on military forces to maintain power. The photograph shows \"Diem standing in an open-top car, reviewing rows of South Vietnamese soldiers\" carrying US-supplied weapons. This content is highly useful because it is supported by my knowledge that <strong>the US supported Diem's anti-communist regime with massive military aid and advisors from 1955, despite his corruption, nepotism, and lack of peasant support</strong>, which explains the militaristic nature of Diem's control. <em>The provenance of October 1957 makes the source highly useful because it illustrates how the regime projected military authority to hide its internal weaknesses. However, it is less useful because it shows a highly staged state event in Saigon, concealing the lack of peasant support and the growing communist insurgency in the countryside.</em>\n\nSource B is highly useful for showing the scale of religious opposition that undermined Diem's regime. The photograph shows a \"massive crowd of Buddhist monks and nuns sitting in a street, holding banners reading 'Stop Religious Persecution!'\". This content's utility is supported by my knowledge that <strong>Diem's favoritism toward the Catholic minority and suppression of the Buddhist majority sparked the Buddhist Crisis of 1963, including self-immolations that destroyed the regime's international legitimacy</strong>, which confirms that the source represents the broad civil opposition that made the regime collapse-prone. <em>The provenance of June 1963 makes the source extremely useful because it captures the public crisis that forced the US to support a military coup against Diem in November 1963. However, it is less useful because it only captures the peaceful protests, omitting the violent police raids on pagodas.</em>",
-      },
-      historians_corner: {
-        title: '⚖️ Dual Interpretation: Support for Ngo Dinh Diem',
-        author_context:
-          'US Planners: "Containing Communist Tyranny" vs Buddhist Opponents: "Propping Up a Corrupt Dictator"',
-        extract:
-          '**US Planners:** US planners argued that supporting South Vietnam was a vital strategic necessity to stop communist expansion, defend a sovereign ally, and uphold SEATO commitments.\n\n**Buddhist Opponents:** Vietnamese nationalists and critics argued that the US was backing a corrupt, anti-Buddhist dictator who lacked popular support and ruled through secret police terror.',
-        stretch_question:
-          'Which historical interpretation provides a more convincing explanation of developments in KT 3.1: Why did the US support the unpopular government of Ngo Dinh Diem in South Vietnam??',
-        starter: 'It can be argued that US Planners is more convincing because...',
-        clue: 'Consider the concrete historical evidence: were outcomes driven by federal legal decisions or by grassroots direct action on the ground?',
-        stretch_model:
-          'A top-level historical response synthesizes both perspectives: while top-down decisions (such as federal court rulings or presidential interventions) established the indispensable constitutional foundation, bottom-up grassroots pressure was essential to compel reluctant authorities to enforce those rulings against entrenched local resistance.',
       },
       pair_share: {
         prompt:
@@ -6097,19 +5980,6 @@ export const usa = {
           "Scaffolding Clue: Evaluate the author, audience, and motive for both sources. For written accounts, consider if the author has political reasons to justify their actions. For photographs, consider what may be excluded outside the camera's frame.",
         model:
           'Source A is highly useful for showing the US naval presence that served as the trigger for direct combat escalation. The photograph shows the "USS Maddox traveling through calm seas" with gun turrets aimed toward the horizon. This content is highly useful because it is supported by my knowledge that <strong>the Gulf of Tonkin incidents of August 1964 led Congress to pass the Gulf of Tonkin Resolution, giving President Johnson a \'blank check\' to escalate US military involvement</strong>, which confirms the naval buildup that preceded the congressional mandate. <em>The provenance of August 1964 makes the source highly useful because it documents the actual vessel involved in the clashes. However, it is less useful because it shows a calm, routine patrol, failing to clarify the disputed and confusing details of the attacks.</em>\n\nSource B is highly useful for showing the transition to full combat operations and the deployment of ground troops. The photograph shows "US Marines carrying heavy backpacks and rifles wading through shallow water" onto Da Nang beach. This content\'s utility is supported by my knowledge that <strong>the landing of the 9th Marine Expeditionary Brigade in March 1965 marked the official start of the US ground war, with troop levels rising to 184,000 by the end of 1965</strong>, which confirms that the photograph captures the historic landing that marked the end of the advisory phase. <em>The provenance of 8 March 1965 makes the source extremely useful because it captures the historical moment of transition to direct combat. However, it is less useful because the presence of local women handing out flowers was a staged public relations event, hiding the hostile, muddy reality of combat that the Marines would soon face.</em>',
-      },
-      historians_corner: {
-        title: '⚖️ Dual Interpretation: Gulf of Tonkin Resolution',
-        author_context:
-          'LBJ Administration: "Appropriate Defensive Action" vs Anti-War Critics: "Pretext for Imperialist Aggression"',
-        extract:
-          '**LBJ Administration:** President Johnson argued that the Tonkin Resolution was a necessary response to unprovoked North Vietnamese aggression, showing US determination to defend Southeast Asia from communism.\n\n**Anti-War Critics:** Critics and North Vietnam claimed the US fabricated or exaggerated the second Tonkin attack to justify a pre-planned military invasion of a sovereign country.',
-        stretch_question:
-          'Which historical interpretation provides a more convincing explanation of developments in KT 3.2: Why did the US send combat troops to Vietnam after the Gulf of Tonkin incident??',
-        starter: 'It can be argued that LBJ Administration is more convincing because...',
-        clue: 'Consider the concrete historical evidence: were outcomes driven by federal legal decisions or by grassroots direct action on the ground?',
-        stretch_model:
-          'A top-level historical response synthesizes both perspectives: while top-down decisions (such as federal court rulings or presidential interventions) established the indispensable constitutional foundation, bottom-up grassroots pressure was essential to compel reluctant authorities to enforce those rulings against entrenched local resistance.',
       },
       pair_share: {
         prompt:
@@ -6709,19 +6579,6 @@ export const usa = {
         model:
           'Source A is highly useful for showing the tactical and physical challenges that US combat patrols faced. The photograph shows a US soldier "wading waist-deep through muddy swamp water in dense jungle" holding his rifle high. This content\'s utility is supported by my knowledge that <strong>US Search and Destroy tactics designed to find the Vietcong faced terrain problems and ambush vulnerability, as the Vietcong used booby traps and the jungle environment to neutralize US technology</strong>, which explains the physical and psychological exhaustion depicted. <em>The provenance of 1967 makes the source highly useful because it offers a realistic, gritty look at the brutal environmental conditions. However, it is less useful because it focuses on a single soldier\'s exhaustion, failing to show the high civilian casualties and destruction of villages that search-and-destroy missions often caused.</em>\n\nSource B is highly useful for showing the chemical warfare tactics used by the US to counter these environmental challenges. The photograph shows "C-123 military transport planes... releasing thick white chemical trails of Agent Orange" over dense forest. This content is highly useful because it is supported by my knowledge that <strong>Operation Ranch Hand sprayed millions of gallons of herbicides to strip jungle cover and destroy crops, which poisoned food supplies and alienated the peasant population</strong>, which confirms the systemic scale of environmental destruction that alienated the local population. <em>The provenance of 1966 makes the source extremely useful because it documents the systematic, industrial scale of chemical defoliation. However, it is less useful because it presents a clean, aerial view of the spraying, omitting the devastating health consequences, birth defects, and political backlash among Vietnamese peasants.</em>',
       },
-      historians_corner: {
-        title: '⚖️ Dual Interpretation: Military Tactics in Vietnam',
-        author_context:
-          'US Generals: "Necessary Attrition and Air Power" vs Peasant Farmers: "Brutal and Indiscriminate Warfare"',
-        extract:
-          '**US Generals:** US commanders argued that massive air power, search-and-destroy patrols, and chemical defoliants were necessary to find a hidden enemy in dense jungle and minimize US casualties.\n\n**Peasant Farmers:** Anti-war critics and Vietnamese peasants argued that chemical defoliants and search-and-destroy missions destroyed innocent lives, poisoned the soil, and was a war crime.',
-        stretch_question:
-          'Which historical interpretation provides a more convincing explanation of developments in KT 3.3: Why did US military tactics (like bombing and search & destroy) fail to defeat the Vietcong??',
-        starter: 'It can be argued that US Generals is more convincing because...',
-        clue: 'Consider the concrete historical evidence: were outcomes driven by federal legal decisions or by grassroots direct action on the ground?',
-        stretch_model:
-          'A top-level historical response synthesizes both perspectives: while top-down decisions (such as federal court rulings or presidential interventions) established the indispensable constitutional foundation, bottom-up grassroots pressure was essential to compel reluctant authorities to enforce those rulings against entrenched local resistance.',
-      },
       pair_share: {
         prompt:
           "How did the Vietcong use the tunnels and hit-and-run tactics to render the US military's technological superiority ineffective?",
@@ -7318,19 +7175,6 @@ export const usa = {
         model:
           "Source A is highly useful for showing the public relations campaign used to justify Vietnamization. The photograph shows \"Nixon standing in a crowd of smiling US soldiers\" in combat uniforms. This content's utility is supported by my knowledge that <strong>President Nixon introduced 'Vietnamization' in 1969 to gradually withdraw US combat troops while shifting responsibility to the ARVN, seeking 'peace with honor' to satisfy the public</strong>, which explains the positive, supportive image projected by the President. <em>The provenance of July 1969 makes the source highly useful because it illustrates the presidential photo opportunity used to project troop support. However, it is less useful because it is a carefully managed event, masking the low morale, drug use, and growing anti-war sentiment among the soldiers in the field.</em>\n\nSource B is highly useful for showing that Vietnamization actually expanded the geographical scope of the war. The photograph shows \"ARVN soldiers running past a burning tank on a dirt road in Cambodia\" with helicopters overhead. This content is highly useful because it is supported by my knowledge that <strong>Nixon ordered the invasion of Cambodia in May 1970 to destroy communist sanctuaries and supply lines, which failed to secure South Vietnam and sparked massive protests at Kent State</strong>, which confirms that ARVN relied heavily on US air support and regional incursions rather than independent ground strength. <em>The provenance of May 1970 makes the source extremely useful because it shows ARVN troops in active combat. However, it is less useful because it portrays a successful tactical advance, failing to show the strategic failure of the campaign or the ARVN's heavy reliance on US air power.</em>",
       },
-      historians_corner: {
-        title: "⚖️ Dual Interpretation: Nixon's Cambodia Invasion (1970)",
-        author_context:
-          'Nixon White House: "Supporting ARVN and Protecting Troops" vs Anti-War Movement: "Reckless Expansion of the War"',
-        extract:
-          '**Nixon White House:** The Nixon administration argued that invading Cambodia was necessary to destroy communist sanctuaries, protect withdrawing US forces, and buy time for ARVN to build its strength.\n\n**Anti-War Movement:** Anti-war critics and student protesters argued that Nixon had lied about seeking peace and was recklessly expanding the war into neutral countries, destabilizing Cambodia.',
-        stretch_question:
-          "Which historical interpretation provides a more convincing explanation of developments in KT 3.4: What was Nixon's 'Vietnamization' policy, and did it achieve peace with honour??",
-        starter: 'It can be argued that Nixon White House is more convincing because...',
-        clue: 'Consider the concrete historical evidence: were outcomes driven by federal legal decisions or by grassroots direct action on the ground?',
-        stretch_model:
-          'A top-level historical response synthesizes both perspectives: while top-down decisions (such as federal court rulings or presidential interventions) established the indispensable constitutional foundation, bottom-up grassroots pressure was essential to compel reluctant authorities to enforce those rulings against entrenched local resistance.',
-      },
       pair_share: {
         prompt:
           "What does this soldier's account of the Laos invasion tell us about the practical weaknesses and failures of Nixon's 'Vietnamization' policy?",
@@ -7898,19 +7742,6 @@ export const usa = {
           "Scaffolding Clue: Evaluate the author, audience, and motive for both sources. For written accounts, consider if the author has political reasons to justify their actions. For photographs, consider what may be excluded outside the camera's frame.",
         model:
           'Source A is highly useful for showing the direct confrontation and physical arrest of anti-war protestors by federal authorities. The photograph shows "two U.S. Marshals wearing white helmets carrying away a civilian demonstrator". This content\'s utility is supported by my knowledge that <strong>the Pentagon protest of October 1967 reflected the rapid growth of the anti-war movement as the draft escalated, with draft card burning and peaceful marches becoming common</strong>, which confirms the growing polarization and student involvement at this time. <em>The provenance of October 1967 makes the source highly useful because it captures the direct, physical conflict and state response to anti-war protestors. However, it is less useful because it focuses on a single demonstration in Washington D.C., failing to show the wider, working-class opposition or moderate critics of the war.</em>\n\nSource B is highly useful for showing the lethal escalation of state suppression of student protests on campus. The photograph shows a "line of National Guard soldiers... aimed toward them, holding rifles" at Kent State. This content is highly useful because it is supported by my knowledge that <strong>the Kent State shootings of May 1970, where National Guardsmen killed four students protesting the invasion of Cambodia, triggered a strike of 4 million students nationwide</strong>, which validates the high tension and physical danger student protesters faced. <em>The provenance of May 1970 makes the source extremely useful because it documents the tense standoff just before the shooting. However, it is less useful because it captures the standoff, failing to explain the panic, chaos, and nationwide student strike that followed.</em>',
-      },
-      historians_corner: {
-        title: '⚖️ Dual Interpretation: The Anti-War Movement',
-        author_context:
-          'Anti-War Students: "A Moral and Patriotic Duty to Protest" vs Conservative Hawks: "Unpatriotic Dissent and Lawlessness"',
-        extract:
-          '**Anti-War Students:** Anti-war activists argued that the war was immoral, undemocratic, and was destroying both Vietnamese lives and American youth through a rigged class-based draft system.\n\n**Conservative Hawks:** Conservative hawks and Nixon supporters claimed that campus protesters were draft-dodging radicals who actively aided the communist enemy by destroying national unity.',
-        stretch_question:
-          'Which historical interpretation provides a more convincing explanation of developments in KT 4.1: Why did so many Americans oppose the Vietnam War (like at My Lai and Kent State)??',
-        starter: 'It can be argued that Anti-War Students is more convincing because...',
-        clue: 'Consider the concrete historical evidence: were outcomes driven by federal legal decisions or by grassroots direct action on the ground?',
-        stretch_model:
-          'A top-level historical response synthesizes both perspectives: while top-down decisions (such as federal court rulings or presidential interventions) established the indispensable constitutional foundation, bottom-up grassroots pressure was essential to compel reluctant authorities to enforce those rulings against entrenched local resistance.',
       },
       pair_share: {
         prompt:
@@ -8494,19 +8325,6 @@ export const usa = {
         model:
           "Source A is highly useful for showing the organized public support for President Nixon's policies. The photograph shows citizens holding signs reading \"Support Our President\" and \"Silent Majority Speaks\". This content's usefulness is supported by my knowledge that <strong>President Nixon's November 1969 speech appealed to the 'Silent Majority'—the patriotic, law-abiding middle-class citizens who did not join protests—to politically counter the anti-war movement</strong>, which confirms that Nixon's rhetoric successfully mobilized a visible, pro-government counter-protest. <em>The provenance of 1970 makes the source highly useful because it proves that pro-war citizens actively adopted Nixon's rhetoric. However, it is less useful because it is a pro-war rally, which may exaggerate the active support of the average citizen who was simply silent or disengaged.</em>\n\nSource B is highly useful for showing the working-class basis of this pro-war support and the polarization of the home front. The photograph shows \"construction workers... marching... banners reading 'USA All the Way'\". This content is highly useful because it is supported by my knowledge that <strong>the Hard Hat Riots of May 1970, where construction workers attacked students protesting the Kent State shootings in New York City, revealed deep class divisions on the home front</strong>, which explains why working-class patriotism clashed violently with student pacifism. <em>The provenance of May 1970 makes the source extremely useful because it documents the intense, working-class backlash against student protestors. However, it is less useful because it shows workers marching, concealing the complex economic anxieties and union politics that also drove their opposition to student demonstrators.</em>",
       },
-      historians_corner: {
-        title: "⚖️ Dual Interpretation: Nixon's Silent Majority Appeal",
-        author_context:
-          'Silent Majority Hawks: "Defending American Honor and Allies" vs Anti-War Liberals: "Manipulative and Divisive Politics"',
-        extract:
-          "**Silent Majority Hawks:** Nixon supporters argued that maintaining the war was a patriotic duty to prevent a communist takeover of South Vietnam and protect America's credibility as a global ally.\n\n**Anti-War Liberals:** Anti-war critics argued that Nixon's 'Silent Majority' rhetoric was a cynical political trick designed to divide the country, demonize protesters, and hide his military failures.",
-        stretch_question:
-          "Which historical interpretation provides a more convincing explanation of developments in KT 4.2: Why did some Americans support the Vietnam War and the 'Silent Majority'??",
-        starter: 'It can be argued that Silent Majority Hawks is more convincing because...',
-        clue: 'Consider the concrete historical evidence: were outcomes driven by federal legal decisions or by grassroots direct action on the ground?',
-        stretch_model:
-          'A top-level historical response synthesizes both perspectives: while top-down decisions (such as federal court rulings or presidential interventions) established the indispensable constitutional foundation, bottom-up grassroots pressure was essential to compel reluctant authorities to enforce those rulings against entrenched local resistance.',
-      },
       pair_share: {
         prompt:
           'How did the anti-war movement create deep social and class divisions in American society? How did Nixon capitalize on these divisions?',
@@ -9085,19 +8903,6 @@ export const usa = {
         model:
           'Source A is highly useful for showing the formal, diplomatic conclusion of US military involvement in Vietnam. The photograph shows "diplomats sitting around a massive circular table... signing the official treaty" in Paris. This content\'s utility is supported by my knowledge that <strong>the signing of the Paris Peace Accords in January 1973 ended direct US military involvement, securing the withdrawal of US troops and the return of POWs</strong>, which confirms the diplomatic settlement that allowed a face-saving exit for the US. <em>The provenance of 27 January 1973 makes the source highly useful because it documents the formal legal conclusion of the war. However, it is less useful because it portrays a polished, peaceful diplomatic consensus, ignoring the secret negotiations, pressure on South Vietnamese President Thieu, and the fact that fighting continued between North and South.</em>\n\nSource B is highly useful for showing the chaotic, real-world failure of the peace treaty and the collapse of Vietnamization. The photograph shows a "long line of people climbing a ladder onto the roof... to board a CIA Huey helicopter" at the US embassy. This content is highly useful because it is supported by my knowledge that <strong>the Fall of Saigon in April 1975, when North Vietnamese forces captured the capital and South Vietnam surrendered, marked the final failure of US containment policy in Indochina</strong>, which explains why the evacuation had to be conducted in such a panic. <em>The provenance of 29 April 1975 makes the source extremely useful because it provides a raw, iconic visual record of defeat. However, it is less useful because it focuses on the panic at the evacuation point, failing to capture the military campaigns and political decisions that led to the final collapse.</em>',
       },
-      historians_corner: {
-        title: '⚖️ Dual Interpretation: The Paris Peace Accords (1973)',
-        author_context:
-          'US Diplomats: "Achieving Peace with Honor" vs ARVN Leadership: "A Betrayal and Defeat in Disguise"',
-        extract:
-          "**US Diplomats:** Nixon and Kissinger argued that the 1973 accords achieved 'Peace with Honor' by securing the return of US prisoners and guaranteeing South Vietnam a democratic choice.\n\n**ARVN Leadership:** South Vietnamese leaders and critics argued that the accords were a US betrayal that allowed North Vietnamese troops to remain in the South, guaranteeing a communist victory.",
-        stretch_question:
-          'Which historical interpretation provides a more convincing explanation of developments in KT 4.3: How did the US exit Vietnam, and why did South Vietnam fall so quickly in 1975??',
-        starter: 'It can be argued that US Diplomats is more convincing because...',
-        clue: 'Consider the concrete historical evidence: were outcomes driven by federal legal decisions or by grassroots direct action on the ground?',
-        stretch_model:
-          'A top-level historical response synthesizes both perspectives: while top-down decisions (such as federal court rulings or presidential interventions) established the indispensable constitutional foundation, bottom-up grassroots pressure was essential to compel reluctant authorities to enforce those rulings against entrenched local resistance.',
-      },
       pair_share: {
         prompt:
           'How does this eyewitness account challenge the idea that the US exit from Vietnam was an orderly, honorable retreat? What was the human cost of the sudden withdrawal?',
@@ -9662,19 +9467,6 @@ export const usa = {
         ],
         model:
           "<h3>Model Answer (Level 4 — 16/16 marks + 4 SPaG):</h3>\n<p><strong>Introduction:</strong> The US failure to achieve military victory in Vietnam between 1965 and 1973 was a multifaceted catastrophe. While Vietcong guerrilla tactics were exceptionally effective in neutralizing American technological superiority and inflicting continuous attrition, they were not the sole cause of defeat. The war was equally lost due to the domestic collapse of political support on the American home front, the deep corruption and military weakness of the South Vietnamese government (ARVN), and the unwavering resilience of North Vietnam backed by Soviet and Chinese aid. Ultimately, Vietcong tactics were decisive because they prolonged the war to the point where the American public and political system refused to sustain it.</p>\n<p><strong>Arguments supporting the statement (Vietcong Tactics):</strong> There is strong evidence that Vietcong guerrilla tactics were the primary operational reason for US failure. Guided by General Vo Nguyen Giap, the Vietcong avoided set-piece battles where US air superiority and artillery could destroy them. Instead, they adopted 'hanging onto American belts'—fighting at close range so US forces could not call in air strikes without hitting their own troops. Their extensive underground tunnel networks, such as at Cu Chi, allowed them to launch surprise ambushes, store supplies, and disappear undetected. Furthermore, booby traps (like punji stake pits and tripwire mines) caused 11% of all US deaths and 17% of wounds, inflicting devastating psychological trauma on American conscripts. By dressing as ordinary peasants, the Vietcong denied US troops a visible enemy, rendering search-and-destroy missions deeply frustrating and often counterproductive.</p>\n<p><strong>Alternative Factor 1 (US Tactical and Strategic Errors):</strong> Conversely, it can be argued that US failure stemmed from flawed American military strategies rather than Vietcong brilliance alone. General Westmoreland pursued a war of attrition measured by 'body counts', mistakenly believing US firepower would force the enemy to a breaking point. Instead, tactics like search-and-destroy, heavy napalm bombing, and Agent Orange defoliation alienated the South Vietnamese peasantry whose 'hearts and minds' were essential to win. The massacre of hundreds of unarmed civilians at My Lai in 1968 demonstrated how strategic frustration led to atrocities that destroyed the moral legitimacy of the American mission both in Vietnam and internationally.</p>\n<p><strong>Alternative Factor 2 (Home Front Opposition & The Credibility Gap):</strong> Crucially, the war was lost on the American home front as domestic political consensus collapsed. Vietnam was the world's first 'television war', bringing graphic footage of combat, wounded soldiers, and burning villages into American living rooms every night. The shock of the January 1968 Tet Offensive shattered government claims that victory was near, creating a vast 'credibility gap' between official statements and battlefield reality. Following Tet, influential news anchor Walter Cronkite declared the war an unwinnable stalemate. Massive anti-war demonstrations, university strikes (culminating in the Kent State shootings of 1970), and veteran protests made continuing the war politically impossible, compelling President Nixon to pursue 'Vietnamization' and diplomatic withdrawal.</p>\n<p><strong>Conclusion:</strong> In conclusion, while Vietcong guerrilla tactics were essential in preventing a rapid American victory, they were not the sole reason the US lost. The decisive factor was the interplay between guerrilla warfare and the American home front. Asymmetric guerrilla tactics succeeded because they turned the war into a prolonged war of attrition. North Vietnam and the Vietcong were fighting an existential war of national liberation and were willing to absorb staggering casualties, whereas the United States was fighting a limited Cold War engagement. Once the American public recognized that no amount of bombing or troop deployment could break the enemy's will, political support evaporated. Therefore, Vietcong tactics succeeded primarily because they created the conditions that forced America's domestic withdrawal.</p>",
-      },
-      historians_corner: {
-        title: '⚖️ Dual Interpretation: Reasons for US Defeat in Vietnam',
-        author_context:
-          'Military Historians: "Defeat by Political Will and Homefront Opposition" vs Revisionist Historians: "Defeat by Ineffective Tactics and Popular Resistance"',
-        extract:
-          '**Military Historians:** Military historians argue that the US military did not lose a single major battle, and that the war was lost in Washington and on university campuses due to a failure of political will and media defeatism.\n\n**Revisionist Historians:** Revisionist historians argue that US military tactics were fundamentally flawed and morally bankrupt, and that a high-tech foreign army could never defeat a highly motivated local nationalist movement.',
-        stretch_question:
-          'Which historical interpretation provides a more convincing explanation of developments in KT 4.4: What were the main reasons why the US failed to win the war in Vietnam??',
-        starter: 'It can be argued that Military Historians is more convincing because...',
-        clue: 'Consider the concrete historical evidence: were outcomes driven by federal legal decisions or by grassroots direct action on the ground?',
-        stretch_model:
-          'A top-level historical response synthesizes both perspectives: while top-down decisions (such as federal court rulings or presidential interventions) established the indispensable constitutional foundation, bottom-up grassroots pressure was essential to compel reluctant authorities to enforce those rulings against entrenched local resistance.',
       },
       pair_share: {
         prompt:

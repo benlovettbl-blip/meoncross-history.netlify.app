@@ -3529,9 +3529,6 @@ export function renderLesson(lesson) {
         if (lesson.tasks) {
           hasModels = lesson.tasks.some((t) => !!t.model);
         }
-        if (lesson.historians_corner && lesson.historians_corner.stretch_model) {
-          hasModels = true;
-        }
 
         const revealBtn = hasModels
           ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-model" data-action="reveal-all-models"><i class="fa-solid fa-magnifying-glass"></i> Reveal All Models</button>`
@@ -3678,35 +3675,6 @@ export function renderLesson(lesson) {
           </div>
         </div>
       `;
-    }
-
-    if (lesson.historians_corner) {
-      const hc = lesson.historians_corner;
-      htmlHistorian += `
-          <div style="margin-top: 30px; background: #fafafa; border: 2px solid #e2e8f0; border-radius: 8px; padding: 20px;">
-            <h3 style="margin-top: 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; color: #0f172a;">${hc.title}</h3>
-            <p style="font-size: 1.05rem; line-height: 1.6; color: #334155; margin-bottom: 20px;">${formatBold(hc.text || hc.author_context + '<br><br><i>' + hc.extract + '</i>')}</p>
-            ${
-              hc.stretch_question
-                ? `
-            <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 0;">
-              <div style="font-weight: 700; margin-bottom: 10px; color: #ef4444;">Stretch Challenge</div>
-              <div style="font-size: 1.05rem; margin-bottom: 12px;">
-                ${hc.qNum ? `Q${hc.qNum}. ` : ''}${hc.stretch_question}
-                <span style="display: inline-flex; vertical-align: middle;">
-                  ${hc.starter ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-icon-only btn-pedagogy-starter" title="Sentence Starter" data-action="toggle-element" data-target-id="hc-starter"><i class="fa-solid fa-pen"></i></button>` : ''}
-                  ${hc.clue ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-icon-only btn-pedagogy-clue" title="Clue" data-action="toggle-element" data-target-id="hc-clue"><i class="fa-solid fa-lightbulb"></i></button>` : ''}
-                  ${hc.stretch_model ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-icon-only btn-pedagogy-model" title="Reveal Model Answer" data-action="toggle-element" data-target-id="hc-model"><i class="fa-solid fa-check-double"></i></button>` : ''}
-                </span>
-              </div>
-              ${hc.starter ? `<div id="hc-starter" class="scaffold-box starter-box" style="display:none;"><strong>Sentence Starter:</strong> ${hc.starter}</div>` : ''}
-              ${hc.clue ? `<div id="hc-clue" class="scaffold-box clue-box" style="display:none;"><strong>Clue Hint:</strong> ${hc.clue}</div>` : ''}
-              ${hc.stretch_model ? `<div id="hc-model" class="scaffold-box model-box" style="display:none;">${formatBold(hc.stretch_model)}</div>` : ''}
-            </div>`
-                : ''
-            }
-          </div>
-        `;
     }
   }
 
@@ -4637,45 +4605,6 @@ export function renderLesson(lesson) {
     html += gcseHtml;
   }
 
-  if (lesson.quiz && lesson.quiz.length > 0 && appStore.state.activeUnitData.type !== 'trip') {
-    window.currentQuizData = lesson.quiz.map((q) => {
-      if (!q.options && q.distractors && q.distractors.length > 0) {
-        let opts = [q.answer || q.a, ...q.distractors];
-        opts = opts.sort(() => Math.random() - 0.5);
-        const correctIdx = opts.indexOf(q.answer || q.a);
-        return { ...q, options: opts, answer: correctIdx };
-      } else if (q.options && typeof (q.answer || q.a) === 'string') {
-        let opts = [...q.options];
-        opts = opts.sort(() => Math.random() - 0.5);
-        return { ...q, options: opts, answer: opts.indexOf(q.answer || q.a) };
-      }
-      return q;
-    });
-    window.currentQuizIndex = 0;
-    window.currentQuizLessonId = lesson.id;
-
-    html += `
-        <div class="phase-card no-print" id="inline-quiz-container" style="padding: 30px;">
-          <div style="display: flex; align-items: center; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px;">
-            <i class="fa-solid fa-clipboard-check" style="font-size: 2rem; color: #3b82f6; margin-right: 15px;"></i>
-            <div>
-              <h2 style="margin: 0; color: #1e293b; font-size: 1.5rem;">Knowledge Check Quiz</h2>
-              <p style="margin: 0; color: #64748b; font-size: 0.95rem;">Question <span id="quiz-progress">1 / ${lesson.quiz.length}</span></p>
-            </div>
-          </div>
-          
-          <div id="quiz-question-container">
-            <!-- Populated dynamically -->
-          </div>
-          
-          <div style="display: flex; justify-content: space-between; margin-top: 25px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
-            <div id="quiz-feedback" style="font-weight: bold; padding-top: 8px;"></div>
-            <button id="quiz-next-btn" class="btn-pedagogy-primary" style="display: none;" data-action="next-quiz-question">Next Question <i class="fa-solid fa-arrow-right"></i></button>
-          </div>
-        </div>
-      `;
-  }
-
   // Extension Task
   if (lesson.extension_task) {
     html += `
@@ -4712,6 +4641,50 @@ export function renderLesson(lesson) {
           </div>
         </div>
     `;
+  }
+
+  // --- PLENARY RETRIEVAL QUIZ LAUNCHER (Compact ~80px card immediately above Exit Ticket) ---
+  if (lesson.quiz && lesson.quiz.length > 0 && appStore.state.activeUnitData.type !== 'trip') {
+    let savedScoreBadge = '';
+    try {
+      const savedRaw = localStorage.getItem('meoncross_quiz_' + lesson.id);
+      if (savedRaw) {
+        const s = JSON.parse(savedRaw);
+        savedScoreBadge = `
+          <span class="quiz-score-pill" style="background: #f0fdf4; color: #166534; border: 1.5px solid #86efac; padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 0.88rem; display: inline-flex; align-items: center; gap: 6px;">
+            <i class="fa-solid fa-circle-check"></i> Score: ${s.score}/${s.total} (${s.pct}%)
+          </span>
+          <button class="btn btn-secondary" onclick="window.startQuiz('${lesson.id}')" style="padding: 7px 14px; font-size: 0.85rem; font-weight: 600; margin-left: 8px;">
+            <i class="fa-solid fa-rotate-right"></i> Re-take
+          </button>
+        `;
+      }
+    } catch (e) {}
+
+    html += `
+        <div class="phase-card no-print plenary-launcher-card" id="plenary-launcher-${lesson.id}" style="padding: 18px 24px; margin-bottom: 25px; background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 5px solid #2563eb; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.03); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; min-height: 80px;">
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <div style="width: 44px; height: 44px; border-radius: 12px; background: #eff6ff; display: flex; align-items: center; justify-content: center; font-size: 1.35rem; color: #2563eb; border: 1.5px solid #bfdbfe; flex-shrink: 0;">
+              🎯
+            </div>
+            <div>
+              <h3 style="margin: 0; color: #0f172a; font-size: 1.15rem; font-family: 'Playfair Display', Georgia, serif;">Plenary Retrieval Quiz</h3>
+              <p style="margin: 3px 0 0 0; color: #64748b; font-size: 0.88rem;">Rapid closed-book recall &bull; <strong>${lesson.quiz.length} Questions</strong></p>
+            </div>
+          </div>
+          <div id="quiz-status-badge-${lesson.id}" style="display: flex; align-items: center;">
+            ${
+              savedScoreBadge
+                ? savedScoreBadge
+                : `
+              <button class="btn-pedagogy-primary" onclick="window.startQuiz('${lesson.id}')" style="padding: 10px 22px; font-size: 0.95rem; font-weight: 700; border-radius: 8px; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.22); cursor: pointer;">
+                <i class="fa-solid fa-rocket"></i> Launch Plenary Quiz
+              </button>
+            `
+            }
+          </div>
+        </div>
+      `;
   }
 
   // --- EXIT TICKET / LESSON CLOSURE ---
@@ -4848,14 +4821,6 @@ export function renderLesson(lesson) {
 
   contentArea.innerHTML = html;
 
-  if (lesson.quiz && lesson.quiz.length > 0) {
-    if (
-      document.getElementById('quiz-progress') &&
-      typeof window.renderQuizQuestion === 'function'
-    ) {
-      window.renderQuizQuestion();
-    }
-  }
   window.vocabMatchesFound = 0;
   if (window.resetVocabSelection) window.resetVocabSelection();
   setTimeout(() => {
@@ -5475,13 +5440,6 @@ export function assignQuestionNumbers(lesson, targetUnitId) {
         }
       }
     });
-  }
-
-  // 6. Historian's Corner
-  if (lesson.historians_corner && !lesson.historians_corner.textbook_only) {
-    if (lesson.historians_corner.stretch_question) {
-      lesson.historians_corner.qNum = globalQNum++;
-    }
   }
 
   // 7. Exam Practice Tasks
