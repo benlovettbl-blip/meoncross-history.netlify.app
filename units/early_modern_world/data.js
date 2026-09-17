@@ -801,25 +801,7 @@ const early_modern_world = {
         },
         {
           title: 'Macro-History: The Wealth of the East',
-          text: 'Before 1750, European powers did not dominate the world. The true economic superpowers were Asian empires like Qing China and Mughal India. European merchants were desperate to access the silk, tea, and porcelain of China, but the Chinese Emperor severely restricted their access. European traders were forced to live and work in small, heavily regulated zones on the edge of the Pearl River in Canton, closely watched by Chinese authorities.',
-          tasks: [
-            {
-              type: 'multiple_choice',
-              question: 'Knowledge Check: Global Power in 1450',
-              questions: [
-                {
-                  q: 'How does the reality of the Thirteen Factories in Canton challenge the idea that Europeans dominated global trade in the 1700s?',
-                  options: [
-                    'Europeans were forced to stay in small, confined trading posts',
-                    'Europeans owned the entire city of Canton',
-                    'The Chinese refused to trade entirely',
-                    'Europeans had stronger armies than the Ming Emperor',
-                  ],
-                },
-              ],
-              qNum: 5,
-            },
-          ],
+          text: 'Before 1750, European powers did not dominate the world. The true economic superpowers were Asian empires like Ming China and Mughal India. Western European merchants were desperate to access the silk, tea, and porcelain of China, but direct trade routes were blocked or heavily taxed by the Ottoman Empire, keeping Europe on the impoverished periphery of global commerce.',
           image: '/images/silk_route_colored_map.jpg',
           image_alt:
             'Map of the Afro-Eurasian Silk Road trade networks connecting Europe, Africa, and Asia',
@@ -842,14 +824,14 @@ const early_modern_world = {
                 'Study Source D. How does the artist use scale, chaos, and religious imagery to emphasize the sheer trauma of the Fall of Constantinople for Christian Europe?',
               model_answer:
                 'The artist likely exaggerates the size of the invading forces, depicts chaotic slaughter, and shows religious symbols being destroyed or overwhelmed to evoke a deep sense of despair, making the defeat look like an apocalyptic disaster for Christendom rather than just a military loss.',
-              qNum: 6,
+              qNum: 5,
             },
             {
               question:
                 'Study Source D (Fresco of the Siege of Constantinople). What military technologies or tactics are visible in this depiction of the 1537 siege?',
               model_answer:
                 'This visual source is significant as it provides contemporary evidence of 16th-century siege warfare, likely illustrating the use of heavy artillery, fortified walls, and the massive logistical scale of Ottoman military campaigns during this period.',
-              qNum: 7,
+              qNum: 6,
             },
           ],
           image_caption: 'Fresco of the Siege of Constantinople (1537)',
@@ -870,7 +852,7 @@ const early_modern_world = {
                 'Study Source E (the 16th-Century Benin Bronze Plaque). How does this artifact challenge traditional European assumptions about pre-colonial African societies?',
               model_answer:
                 'The intricate craftsmanship of the Benin Bronze Plaque proves the existence of a highly sophisticated, technologically advanced, and wealthy civilization in West Africa long before European colonization, directly challenging racist assumptions of African "backwardness".',
-              qNum: 8,
+              qNum: 7,
             },
           ],
         },
@@ -890,7 +872,7 @@ const early_modern_world = {
                 'What impression do Sources E and F give about the balance of power between Europe and the rest of the world in the 15th century?',
               model_answer:
                 "Both sources suggest that Europe was relatively weak and poor compared to non-European powers. Source F (Benin Bronze) shows highly advanced metallurgical skills that rivalled Europe, while Source F highlights how European merchants were desperate to travel vast distances just to obtain a 'fraction' of West Africa's staggering wealth.",
-              qNum: 9,
+              qNum: 8,
             },
           ],
           image_caption: 'Catalan Atlas (1375) - Mansa Musa',
@@ -909,7 +891,7 @@ const early_modern_world = {
                 "Class Debate: Based on Professor Frankopan's argument, why might traditional European textbooks have deliberately ignored the wealth of the East in 1450?",
               model_answer:
                 "Traditional textbooks may have minimized Eastern wealth to justify later European imperialism, creating a narrative where Europe 'civilized' the rest of the world rather than acknowledging that Europe was initially an isolated, desperate outpost seeking access to superior Eastern economies.",
-              qNum: 10,
+              qNum: 9,
             },
           ],
         },
@@ -926,7 +908,7 @@ const early_modern_world = {
                 "How does the evidence in Source F and the description of the peasant's 'pottage' contrast with the lives of the Oba of Benin or the Ming Emperor?",
               model_answer:
                 'Unlike the Oba of Benin with his bronze plaques or the Ming Emperor in silk, the English peasant lived in poverty in a dark mud hut, relying on a bland stew just to survive.',
-              qNum: 11,
+              qNum: 10,
             },
             {
               type: 'comprehension',
@@ -934,7 +916,7 @@ const early_modern_world = {
                 "Why does this evidence support the idea that Europe was an 'isolated outpost' in 1450?",
               model_answer:
                 'It shows that ordinary Europeans were completely oblivious to the vast wealth of the Silk Road or African trade networks, rarely traveling far from their poor, localized villages.',
-              qNum: 12,
+              qNum: 11,
             },
           ],
           source_letter: 'F',
@@ -999,7 +981,7 @@ const early_modern_world = {
         model_answer:
           "In 1450, Western Europe was emphatically NOT the center of global wealth and power; rather, it was an impoverished, agrarian periphery on the western rim of Eurasia. First, over ninety percent of Europeans were subsistence peasants living in dark wattle-and-daub huts with livestock, surviving on bland pottage, with virtually no export industries or gold reserves. Second, when Sultan Mehmed II conquered Constantinople in 1453, the Ottoman Empire seized control of the Silk Road and Bosporus Straits, commercially suffocating European merchants with heavy tariffs. Third, the true centers of wealth and technology lay in Africa and Asia: the Mali Empire controlled the world's gold trade (as shown by Mansa Musa on the Catalan Atlas), Benin perfected sophisticated lost-wax bronze casting, and Ming China commanded an industrial empire of 100 million people with Admiral Zheng He’s 400-foot treasure fleets. Therefore, Europe’s later oceanic exploration was born not out of superiority, but out of desperate commercial weakness.",
         lines: 15,
-        qNum: 13,
+        qNum: 12,
       },
       vocab: [
         {
