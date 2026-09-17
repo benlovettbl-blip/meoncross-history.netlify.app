@@ -290,6 +290,13 @@ if (typeof window !== 'undefined' && !window.__meoncrossSessionInterval) {
         const m = Math.floor(chessState.sessionTimeRemaining / 60);
         const s = chessState.sessionTimeRemaining % 60;
         clockEl.textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+        if (chessState.sessionTimeRemaining <= 120) {
+          clockEl.style.color = '#f87171';
+          clockEl.style.textShadow = '0 0 20px rgba(248, 113, 113, 0.6)';
+        } else {
+          clockEl.style.color = '#4ade80';
+          clockEl.style.textShadow = '0 0 20px rgba(74, 222, 128, 0.4)';
+        }
       }
       if (chessState.sessionTimeRemaining === 0) {
         if (typeof window.concludePeriod6Session === 'function') {
@@ -632,6 +639,29 @@ export function renderChessHubView() {
   const sortedHouses = Object.values(houseTotals).sort((a, b) => b.points - a.points);
   const leadingHouse = HOUSES[sortedHouses[0].id];
 
+  // Individual Leader (Rank 1 on ladder or highest points)
+  const sortedByPoints = [...chessState.players].sort((a, b) => {
+    const ptsA =
+      (a.won || 0) * SCORING_RULES.WIN +
+      (a.drawn || 0) * SCORING_RULES.DRAW +
+      ((a.games || 0) - (a.won || 0) - (a.drawn || 0)) * SCORING_RULES.PARTICIPATION;
+    const ptsB =
+      (b.won || 0) * SCORING_RULES.WIN +
+      (b.drawn || 0) * SCORING_RULES.DRAW +
+      ((b.games || 0) - (b.won || 0) - (b.drawn || 0)) * SCORING_RULES.PARTICIPATION;
+    if (ptsB !== ptsA) return ptsB - ptsA;
+    return (a.rank || 99) - (b.rank || 99);
+  });
+  const individualLeader = chessState.players.find((p) => p.rank === 1) || sortedByPoints[0];
+  const individualLeaderPts = individualLeader
+    ? (individualLeader.won || 0) * SCORING_RULES.WIN +
+      (individualLeader.drawn || 0) * SCORING_RULES.DRAW +
+      ((individualLeader.games || 0) -
+        (individualLeader.won || 0) -
+        (individualLeader.drawn || 0)) *
+        SCORING_RULES.PARTICIPATION
+    : 0;
+
   // Whiteboard Projector Mode View (Clean, High-Contrast Classroom Display)
   if (chessState.whiteboardMode) {
     container.innerHTML = renderWhiteboardModeView(sortedHouses);
@@ -807,8 +837,24 @@ export function renderChessHubView() {
             <span style="background: #292524; border: 1px solid #57534e; color: #a8a29e; padding: 2px 8px; border-radius: 3px; font-weight: 700; font-family: monospace; font-size: 0.75rem;">+${SCORING_RULES.PARTICIPATION}</span>
             <span>Participation</span>
           </div>
-          <div style="margin-left: auto; font-family: 'Playfair Display', Georgia, serif; font-style: italic; color: #d4af37; font-size: 0.88rem;">
-            👑 Tournament Leader: <strong>${leadingHouse.name}</strong> (${sortedHouses[0].points} pts)
+          <div style="margin-left: auto; display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
+            ${
+              individualLeader
+                ? `
+              <div style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; color: #facc15; font-size: 0.88rem; display: flex; align-items: center; gap: 6px;">
+                <span>🥇</span> Individual Leader: <strong style="font-style: normal; color: #ffffff;">${individualLeader.name}</strong>
+                <span style="font-style: normal; font-size: 0.72rem; background: rgba(255, 255, 255, 0.1); color: ${HOUSES[individualLeader.house]?.color || '#facc15'}; border: 1px solid ${HOUSES[individualLeader.house]?.borderColor || '#555'}; padding: 1px 7px; border-radius: 3px; font-family: monospace; font-weight: 700;">
+                  ${HOUSES[individualLeader.house]?.name || individualLeader.house}
+                </span>
+                <span style="font-style: normal; color: #a8a29e; font-family: monospace; font-size: 0.78rem;">(${individualLeaderPts} pts)</span>
+              </div>
+              <span style="color: #57534e; font-size: 0.75rem;">·</span>
+            `
+                : ''
+            }
+            <div style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; color: #d4af37; font-size: 0.88rem;">
+              👑 Tournament Leader: <strong>${leadingHouse.name}</strong> (${sortedHouses[0].points} pts)
+            </div>
           </div>
         </div>
       </div>
@@ -5042,16 +5088,88 @@ window.resetSessionTimer = function () {
   showChessToast('⏱ Session clock reset to 60:00.', 'info');
 };
 
+window.setRoundTimer = function (mins) {
+  chessState.sessionTimeRemaining = mins * 60;
+  chessState.sessionTimerRunning = true;
+  chessState.sessionActive = true;
+  saveChessState();
+  renderChessHubView();
+  showChessToast(`⏱ Round countdown set to ${mins}:00!`, 'info');
+};
+
+window.undoLastMatchResult = function () {
+  if (!chessState.matches || chessState.matches.length === 0) {
+    showChessToast('No matches to undo.', 'info');
+    return;
+  }
+  const lastMatch = chessState.matches.pop();
+
+  if (Array.isArray(chessState.activePairings)) {
+    const boardNumMatch = String(lastMatch.round || '').match(/Board (\d+)/);
+    if (boardNumMatch) {
+      const bNum = parseInt(boardNumMatch[1], 10);
+      const pairing = chessState.activePairings.find((p) => p.board === bNum);
+      if (pairing) {
+        pairing.completed = false;
+        pairing.result = null;
+        pairing.winnerName = null;
+        pairing.winnerHouse = null;
+      }
+    }
+  }
+
+  const pW = chessState.players.find((p) => p.name === lastMatch.white);
+  const pB = chessState.players.find((p) => p.name === lastMatch.black);
+  if (pW) {
+    pW.games = Math.max(0, (pW.games || 1) - 1);
+    if (lastMatch.result === '1-0') {
+      pW.won = Math.max(0, (pW.won || 1) - 1);
+      pW.rating = (pW.rating || 1000) - 15;
+    } else if (lastMatch.result === '½-½') {
+      pW.drawn = Math.max(0, (pW.drawn || 1) - 1);
+    } else if (lastMatch.result === '0-1') {
+      pW.lost = Math.max(0, (pW.lost || 1) - 1);
+      pW.rating = (pW.rating || 1000) + 15;
+    }
+  }
+  if (pB) {
+    pB.games = Math.max(0, (pB.games || 1) - 1);
+    if (lastMatch.result === '0-1') {
+      pB.won = Math.max(0, (pB.won || 1) - 1);
+      pB.rating = (pB.rating || 1000) - 15;
+    } else if (lastMatch.result === '½-½') {
+      pB.drawn = Math.max(0, (pB.drawn || 1) - 1);
+    } else if (lastMatch.result === '1-0') {
+      pB.lost = Math.max(0, (pB.lost || 1) - 1);
+      pB.rating = (pB.rating || 1000) + 15;
+    }
+  }
+
+  saveChessState();
+  renderChessHubView();
+  showChessToast(`↩️ Reopened Board: ${lastMatch.white} vs ${lastMatch.black}!`, 'success');
+};
+
 export function toggleChessWhiteboardMode(forceState) {
   if (typeof forceState === 'boolean') {
     chessState.whiteboardMode = forceState;
   } else {
     chessState.whiteboardMode = !chessState.whiteboardMode;
   }
+  if (chessState.whiteboardMode) {
+    chessState.sessionActive = true;
+    if (!chessState.sessionTimeRemaining || chessState.sessionTimeRemaining <= 0) {
+      chessState.sessionTimeRemaining = 900; // default 15 min round
+    }
+  }
+  saveChessState();
   renderChessHubView();
   if (chessState.whiteboardMode) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    showChessToast('📺 Big Screen Whiteboard Mode enabled! Press [Esc] or [W] to exit.', 'info');
+    showChessToast(
+      '📺 Projector Mode: Large Board Matchups & Round Timer active! Press [Esc] or [W] to exit.',
+      'info',
+    );
   }
 }
 window.toggleChessWhiteboardMode = toggleChessWhiteboardMode;
@@ -5073,250 +5191,207 @@ window.toggleAutoRePair = function () {
   }
 };
 
+// Refined High-Contrast Projector Display: Shows ONLY active board matchups in large text with live round countdown timer
 export function renderWhiteboardModeView(sortedHouses) {
   const activeMatches = getActiveMatches();
   const idlePupils = getIdlePupils();
   const mins = Math.floor((chessState.sessionTimeRemaining || 0) / 60);
   const secs = (chessState.sessionTimeRemaining || 0) % 60;
   const formattedTime = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+  const isUrgentTime =
+    (chessState.sessionTimeRemaining || 0) <= 120 && (chessState.sessionTimeRemaining || 0) > 0;
 
-  const leaderHouse = HOUSES[sortedHouses[0].id] || { name: 'Victory', color: '#dc2626' };
+  const completedPairings = Array.isArray(chessState.activePairings)
+    ? chessState.activePairings.filter((p) => p.completed && !p.isBye)
+    : [];
 
   return `
-    <div style="background: #09090b; color: #fafafa; min-height: 100vh; padding: 18px 24px 80px 24px; font-family: 'Outfit', sans-serif; box-sizing: border-box;">
+    <div id="projector-whiteboard-root" style="background: #090d16; color: #f8fafc; min-height: 100vh; padding: 24px 32px 80px 32px; font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif; box-sizing: border-box;">
       
-      <!-- Top Control Header Bar -->
-      <div style="background: #18181b; border: 2px solid #27272a; border-radius: 12px; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+      <!-- Top Control Header Bar (High Visibility Classroom Screen Aesthetic) -->
+      <div style="background: linear-gradient(135deg, #111827 0%, #0f172a 100%); border: 2px solid #1e293b; border-radius: 16px; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 18px; margin-bottom: 24px; box-shadow: 0 16px 36px rgba(0,0,0,0.5);">
         
-        <!-- Left: Status Badge & Salon Placard -->
+        <!-- Left: Matchups Placard -->
         <div style="display: flex; align-items: center; gap: 14px;">
-          <div style="width: 46px; height: 46px; border-radius: 10px; background: #27272a; border: 1.5px solid #3f3f46; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; color: #d4af37;">
+          <div style="width: 48px; height: 48px; border-radius: 12px; background: #1e293b; border: 2px solid #334155; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: #facc15; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
             ♔
           </div>
           <div>
             <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="display: inline-flex; align-items: center; gap: 5px; background: ${chessState.sessionActive ? 'rgba(34, 197, 94, 0.15)' : 'rgba(239, 68, 68, 0.15)'}; color: ${chessState.sessionActive ? '#4ade80' : '#f87171'}; border: 1px solid ${chessState.sessionActive ? '#22c55e' : '#ef4444'}; padding: 2px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 800; text-transform: uppercase; font-family: monospace;">
-                <span style="width: 7px; height: 7px; border-radius: 50%; background: ${chessState.sessionActive ? '#22c55e' : '#ef4444'}; display: inline-block;"></span>
-                ${chessState.sessionActive ? 'LIVE SESSION' : 'SESSION ENDED'}
+              <span style="display: inline-flex; align-items: center; gap: 6px; background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1.5px solid #22c55e; padding: 2px 8px; border-radius: 6px; font-size: 0.72rem; font-weight: 800; text-transform: uppercase; font-family: monospace; letter-spacing: 0.05em;">
+                <span style="width: 7px; height: 7px; border-radius: 50%; background: #22c55e; display: inline-block; box-shadow: 0 0 8px #22c55e;"></span>
+                LIVE BOARD MATCHUPS
               </span>
-              <span style="color: #a1a1aa; font-size: 0.75rem; font-family: monospace;">SENIOR BLOCK HISTORY ROOM</span>
+              <span style="color: #64748b; font-size: 0.76rem; font-family: monospace;">PERIOD 6 THURSDAYS</span>
             </div>
-            <h1 style="margin: 2px 0 0 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.65rem; color: #ffffff; font-weight: 700; letter-spacing: 0.02em;">
-              Meoncross Chess Salon · Whiteboard Display
+            <h1 style="margin: 2px 0 0 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; color: #ffffff; font-weight: 800; letter-spacing: -0.01em;">
+              Meoncross Chess Club
             </h1>
           </div>
         </div>
 
-        <!-- Center: Giant Period 6 Countdown Clock -->
-        <div style="background: #09090b; border: 2px solid #3f3f46; border-radius: 10px; padding: 10px 20px; display: flex; align-items: center; gap: 16px; box-shadow: inset 0 2px 6px rgba(0,0,0,0.6);">
-          <span style="font-size: 1.6rem; color: #f59e0b;">⏱</span>
+        <!-- Center: Giant Live Round Countdown Timer -->
+        <div style="background: #030712; border: 2.5px solid ${isUrgentTime ? '#ef4444' : '#1e293b'}; border-radius: 14px; padding: 10px 24px; display: flex; align-items: center; gap: 18px; box-shadow: inset 0 2px 10px rgba(0,0,0,0.8), 0 8px 24px rgba(0,0,0,0.4); transition: border-color 0.3s;">
           <div style="display: flex; flex-direction: column; align-items: center;">
-            <div id="whiteboard-session-clock" style="font-family: monospace; font-size: 2.3rem; font-weight: 900; letter-spacing: 2px; line-height: 1; color: ${chessState.sessionActive ? '#22c55e' : '#ef4444'}; text-shadow: 0 0 12px ${chessState.sessionActive ? 'rgba(34, 197, 94, 0.4)' : 'rgba(239, 68, 68, 0.4)'};">
+            <div style="font-size: 0.68rem; color: #94a3b8; font-family: monospace; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 2px;">
+              Round Countdown
+            </div>
+            <div id="whiteboard-session-clock" style="font-family: 'JetBrains Mono', monospace, monospace; font-size: 3.2rem; font-weight: 900; letter-spacing: 3px; line-height: 1; color: ${isUrgentTime ? '#f87171' : '#4ade80'}; text-shadow: 0 0 22px ${isUrgentTime ? 'rgba(248, 113, 113, 0.6)' : 'rgba(74, 222, 128, 0.45)'};">
               ${formattedTime}
             </div>
-            <span style="font-size: 0.65rem; color: #71717a; font-family: monospace; text-transform: uppercase; margin-top: 2px;">Period 6 Match Clock</span>
           </div>
-          <div style="display: flex; flex-direction: column; gap: 4px;">
-            <button onclick="window.toggleSessionTimer()" style="background: #27272a; color: #fafafa; border: 1px solid #52525b; padding: 4px 10px; border-radius: 4px; font-size: 0.74rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 4px;">
-              <span>${chessState.sessionTimerRunning ? '⏸' : '▶'}</span> ${chessState.sessionTimerRunning ? 'Pause' : 'Resume'}
+
+          <!-- Timer Controls -->
+          <div style="display: flex; flex-direction: column; gap: 6px; border-left: 1.5px solid #1f2937; padding-left: 14px;">
+            <button onclick="window.toggleSessionTimer()" style="background: ${chessState.sessionTimerRunning ? '#1e293b' : '#16a34a'}; color: #ffffff; border: 1.5px solid ${chessState.sessionTimerRunning ? '#475569' : '#22c55e'}; padding: 5px 12px; border-radius: 6px; font-size: 0.78rem; font-weight: 800; cursor: pointer; display: flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">
+              <span>${chessState.sessionTimerRunning ? '⏸' : '▶'}</span> ${chessState.sessionTimerRunning ? 'Pause' : 'Start'}
             </button>
-            <div style="display: gap: 4px; display: flex;">
-              <button onclick="window.resetSessionTimer()" style="background: #27272a; color: #d4d4d8; border: 1px solid #52525b; padding: 3px 7px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; cursor: pointer;" title="Reset clock to 60:00">
-                ↺ 60m
-              </button>
-              ${
-                chessState.sessionActive
-                  ? `
-                <button onclick="window.concludePeriod6Session()" style="background: rgba(220, 38, 38, 0.25); color: #fca5a5; border: 1px solid #ef4444; padding: 3px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 800; cursor: pointer;" title="Conclude session and adjudicate all active games as draws (+2 House points each)">
-                  ⏹ Conclude
-                </button>
-              `
-                  : `
-                <button onclick="window.resumePeriod6Session()" style="background: rgba(34, 197, 94, 0.25); color: #86efac; border: 1px solid #22c55e; padding: 3px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 800; cursor: pointer;">
-                  ▶ Resume
-                </button>
-              `
-              }
+            
+            <div style="display: flex; gap: 4px;">
+              <button onclick="window.setRoundTimer(10)" style="background: #111827; color: #94a3b8; border: 1px solid #374151; padding: 3px 6px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; cursor: pointer; font-family: monospace;" title="Set 10 min round">10m</button>
+              <button onclick="window.setRoundTimer(15)" style="background: #111827; color: #38bdf8; border: 1px solid #0284c7; padding: 3px 6px; border-radius: 4px; font-size: 0.7rem; font-weight: 800; cursor: pointer; font-family: monospace;" title="Set 15 min round">15m</button>
+              <button onclick="window.setRoundTimer(20)" style="background: #111827; color: #94a3b8; border: 1px solid #374151; padding: 3px 6px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; cursor: pointer; font-family: monospace;" title="Set 20 min round">20m</button>
+              <button onclick="window.resetSessionTimer()" style="background: #111827; color: #94a3b8; border: 1px solid #374151; padding: 3px 6px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; cursor: pointer; font-family: monospace;" title="Reset to 60m clock">↺ 60m</button>
             </div>
           </div>
         </div>
 
-        <!-- Right: Action & Mode Exit Buttons -->
+        <!-- Right: Actions & Exit Button -->
         <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
-          <button onclick="window.toggleAutoRePair()" style="background: ${chessState.autoRePairEnabled ? 'rgba(34, 197, 94, 0.15)' : 'rgba(239, 68, 68, 0.15)'}; color: ${chessState.autoRePairEnabled ? '#86efac' : '#fca5a5'}; border: 1.5px solid ${chessState.autoRePairEnabled ? '#22c55e' : '#ef4444'}; font-weight: 800; font-size: 0.82rem; padding: 8px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.3);" title="When enabled, free pupils are automatically paired as soon as a game ends">
-            <span>⚡</span> Auto Re-Pair: <strong>${chessState.autoRePairEnabled ? 'ON' : 'PAUSED'}</strong>
-          </button>
-          <button onclick="window.openLogMatchModal()" style="background: #27272a; color: #fafafa; border: 1.5px solid #52525b; font-weight: 700; font-size: 0.82rem; padding: 8px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
-            <span>⚔</span> Record Game
-          </button>
-          <button onclick="window.toggleChessWhiteboardMode(false)" style="background: #ffffff; color: #09090b; border: 1.5px solid #e4e4e7; font-weight: 800; font-size: 0.82rem; padding: 8px 16px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(255,255,255,0.15);" title="Return to regular tabbed dashboard (or press Esc)">
-            <span>✕</span> Exit (Esc)
+          ${
+            idlePupils.length >= 2
+              ? `
+            <button onclick="window.pairFreePupilsOnMatchGrid()" style="background: linear-gradient(135deg, #059669 0%, #047857 100%); color: #ffffff; border: 1.5px solid #34d399; font-weight: 800; font-size: 0.85rem; padding: 10px 16px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(5, 150, 105, 0.4);" title="Pair pupils who finished early on new boards without touching active games">
+              <span>⚡</span> Pair Free Pupils (${idlePupils.length})
+            </button>
+          `
+              : ''
+          }
+
+          <button onclick="window.toggleChessWhiteboardMode(false)" style="background: #ffffff; color: #09090b; border: 2px solid #e4e4e7; font-weight: 900; font-size: 0.92rem; padding: 10px 18px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 16px rgba(255,255,255,0.2); transition: transform 0.15s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'" title="Return to regular dashboard (or press Esc)">
+            <span>✕</span> Exit Projector (Esc)
           </button>
         </div>
 
       </div>
 
-      <!-- House Championship Live Standings Ribbons -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 24px;">
-        ${sortedHouses
-          .map((h, idx) => {
-            const houseDef = HOUSES[h.id] || { name: h.id, color: '#666', crest: '♜' };
-            const isFirst = idx === 0;
-            return `
-            <div style="background: #18181b; border: 2px solid ${isFirst ? '#d4af37' : '#27272a'}; border-radius: 10px; padding: 14px 18px; position: relative; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.3);">
-              ${
-                isFirst
-                  ? `<div style="position: absolute; top: 0; right: 0; background: #d4af37; color: #18181b; font-size: 0.65rem; font-weight: 900; padding: 2px 10px; border-bottom-left-radius: 6px; text-transform: uppercase; font-family: monospace;">👑 LEADER</div>`
-                  : ''
-              }
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <div style="display: flex; align-items: center; gap: 8px;">
-                  <span style="font-size: 1.4rem;">${houseDef.crest || '♜'}</span>
-                  <div>
-                    <h3 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.15rem; color: #fafafa; font-weight: 700;">
-                      ${houseDef.name}
-                    </h3>
-                    <span style="font-size: 0.72rem; color: #a1a1aa; font-family: monospace;">Rank #${idx + 1}</span>
-                  </div>
-                </div>
-                <div style="text-align: right;">
-                  <div style="font-size: 1.85rem; font-weight: 900; color: ${isFirst ? '#fbbf24' : '#fafafa'}; line-height: 1; font-family: monospace;">
-                    ${h.points}
-                  </div>
-                  <span style="font-size: 0.68rem; color: #71717a; text-transform: uppercase; font-family: monospace;">House Pts</span>
-                </div>
-              </div>
-              <div style="display: flex; gap: 10px; font-size: 0.75rem; color: #a1a1aa; border-top: 1px solid #27272a; padding-top: 8px; font-family: monospace;">
-                <span>W: <strong style="color: #4ade80;">${h.wins}</strong></span>
-                <span>D: <strong style="color: #facc15;">${h.draws}</strong></span>
-                <span>L: <strong style="color: #f87171;">${h.losses}</strong></span>
-                <span style="margin-left: auto;">${h.playersCount} pupils</span>
-              </div>
-            </div>
-          `;
-          })
-          .join('')}
-      </div>
-
-      <!-- Active Tournament Boards Grid -->
-      <div style="margin-bottom: 26px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 10px;">
-          <div style="display: flex; align-items: center; gap: 10px;">
-            <div style="width: 32px; height: 32px; border-radius: 6px; background: #27272a; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: #38bdf8;">
-              ⚔
-            </div>
-            <div>
-              <h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.35rem; color: #ffffff; font-weight: 700;">
-                Active Tournament Boards (${activeMatches.length} In Play)
-              </h2>
-              <div style="font-size: 0.78rem; color: #a1a1aa;">
-                Tap result directly on the interactive whiteboard when the game concludes!
-              </div>
-            </div>
-          </div>
-
-          <div style="display: flex; gap: 8px;">
-            ${
-              idlePupils.length >= 2
-                ? `
-              <button onclick="window.pairFreePupilsOnMatchGrid()" style="background: #059669; color: #ffffff; border: 1px solid #34d399; font-weight: 800; font-size: 0.78rem; padding: 6px 14px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
-                <span>⚡</span> Pair Free Pupils Now (${idlePupils.length})
-              </button>
-            `
-                : ''
-            }
-          </div>
-        </div>
-
+      <!-- MAIN SECTION: ONLY THE ACTIVE BOARD MATCHUPS IN LARGE TEXT -->
+      <div style="margin-bottom: 24px;">
         ${
           activeMatches.length > 0
             ? `
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 16px;">
+          <!-- Active Matchup Placard -->
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="font-size: 1.25rem; color: #38bdf8;">⚔️</span>
+              <h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: #ffffff; font-weight: 800;">
+                Active Board Matchups (${activeMatches.length} Boards In Play)
+              </h2>
+            </div>
+            <div style="font-size: 0.82rem; color: #94a3b8; font-family: monospace;">
+              Tap result directly on board card to score
+            </div>
+          </div>
+
+          <!-- Cards Grid: High-Contrast Large Text Boards -->
+          <div style="display: grid; grid-template-columns: ${
+            activeMatches.length === 1
+              ? '1fr'
+              : activeMatches.length <= 4
+                ? 'repeat(auto-fit, minmax(460px, 1fr))'
+                : 'repeat(auto-fit, minmax(360px, 1fr))'
+          }; gap: 18px;">
             ${activeMatches
               .map((m) => {
                 const h1 = HOUSES[m.p1.house] || { name: m.p1.house, color: '#dc2626' };
                 const h2 = HOUSES[m.p2.house] || { name: m.p2.house, color: '#2563eb' };
+
                 return `
-                <div style="background: #18181b; border: 2px solid #27272a; border-radius: 12px; padding: 18px; box-shadow: 0 8px 24px rgba(0,0,0,0.4); display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="background: linear-gradient(145deg, #111827 0%, #0f172a 100%); border: 2.5px solid #1e293b; border-radius: 16px; padding: 20px 22px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45); display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s;" onmouseover="this.style.borderColor='#38bdf8'; this.style.boxShadow='0 14px 36px rgba(2, 132, 199, 0.2)'" onmouseout="this.style.borderColor='#1e293b'; this.style.boxShadow='0 12px 30px rgba(0, 0, 0, 0.45)'">
                   
-                  <div>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; border-bottom: 1px solid #27272a; padding-bottom: 10px;">
-                      <span style="background: #27272a; color: #38bdf8; border: 1px solid #0369a1; font-family: monospace; font-size: 0.75rem; font-weight: 800; padding: 3px 8px; border-radius: 4px;">
+                  <!-- Large Headline: Board X: Player 1 vs Player 2 -->
+                  <div style="margin-bottom: 16px; border-bottom: 2px solid rgba(255, 255, 255, 0.08); padding-bottom: 12px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+                    <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                      <span style="background: #0284c7; color: #ffffff; font-family: 'JetBrains Mono', monospace; font-size: 1.15rem; font-weight: 900; padding: 4px 14px; border-radius: 8px; letter-spacing: 1px; box-shadow: 0 2px 8px rgba(2, 132, 199, 0.4);">
                         BOARD ${m.boardNum}
                       </span>
-                      <span style="font-size: 0.74rem; color: #a1a1aa; font-family: monospace;">
-                        ${m.badge} · ${m.title}
+                      <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.85rem; font-weight: 800; color: #ffffff; letter-spacing: -0.01em;">
+                        ${m.p1.name} <span style="color: #64748b; font-size: 1.3rem; font-family: 'Outfit', sans-serif; font-weight: 500;">vs</span> ${m.p2.name}
                       </span>
                     </div>
-
-                    <!-- Players Row -->
-                    <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 10px; align-items: center; margin-bottom: 16px;">
-                      
-                      <!-- White Player -->
-                      <div style="background: #27272a; border: 1px solid #3f3f46; border-radius: 8px; padding: 10px 12px;">
-                        <div style="font-size: 0.68rem; color: #a1a1aa; font-family: monospace; text-transform: uppercase;">♔ White</div>
-                        <div style="font-size: 1.05rem; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                          ${m.p1.name}
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 6px; margin-top: 4px;">
-                          <span style="background: ${h1.color || '#444'}; color: #fff; font-size: 0.65rem; font-weight: 700; padding: 1px 6px; border-radius: 3px;">
-                            ${h1.name}
-                          </span>
-                          <span style="font-size: 0.72rem; color: #d4d4d8; font-family: monospace;">${m.p1.rating || 1000}</span>
-                        </div>
-                      </div>
-
-                      <div style="font-size: 0.85rem; font-weight: 900; color: #71717a; font-family: monospace;">
-                        VS
-                      </div>
-
-                      <!-- Black Player -->
-                      <div style="background: #27272a; border: 1px solid #3f3f46; border-radius: 8px; padding: 10px 12px; text-align: right;">
-                        <div style="font-size: 0.68rem; color: #a1a1aa; font-family: monospace; text-transform: uppercase;">♚ Black</div>
-                        <div style="font-size: 1.05rem; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                          ${m.p2.name}
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 6px; margin-top: 4px; justify-content: flex-end;">
-                          <span style="font-size: 0.72rem; color: #d4d4d8; font-family: monospace;">${m.p2.rating || 1000}</span>
-                          <span style="background: ${h2.color || '#444'}; color: #fff; font-size: 0.65rem; font-weight: 700; padding: 1px 6px; border-radius: 3px;">
-                            ${h2.name}
-                          </span>
-                        </div>
-                      </div>
-
-                    </div>
+                    <span style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #94a3b8; font-family: monospace; letter-spacing: 0.05em; background: rgba(255, 255, 255, 0.06); padding: 3px 8px; border-radius: 4px;">
+                      ${m.badge || 'Period 6 Match'}
+                    </span>
                   </div>
 
-                  <!-- Touch-Friendly Result Action Buttons -->
-                  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-top: 6px;">
+                  <!-- Two Player Hero Panels (White vs Black) in Large Text -->
+                  <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center; margin-bottom: 18px;">
+                    
+                    <!-- White Player Panel -->
+                    <div style="background: rgba(255, 255, 255, 0.03); border: 2px solid ${h1.color || '#38bdf8'}; border-radius: 12px; padding: 14px 16px;">
+                      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                        <span style="font-size: 0.74rem; font-weight: 800; color: #cbd5e1; text-transform: uppercase; letter-spacing: 0.08em; font-family: monospace;">♔ White</span>
+                        <span style="background: ${h1.color || '#444'}; color: #ffffff; font-size: 0.72rem; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-family: monospace;">${h1.name}</span>
+                      </div>
+                      <div style="font-size: 1.75rem; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-family: 'Outfit', sans-serif; line-height: 1.2;">
+                        ${m.p1.name}
+                      </div>
+                      <div style="font-size: 0.82rem; color: #94a3b8; margin-top: 4px; font-family: monospace;">
+                        Year ${m.p1.year || 8} · Elo ${m.p1.rating || 1000}
+                      </div>
+                    </div>
+
+                    <!-- Center VS Divider -->
+                    <div style="text-align: center; font-size: 1.15rem; font-weight: 900; color: #475569; font-family: monospace;">
+                      VS
+                    </div>
+
+                    <!-- Black Player Panel -->
+                    <div style="background: rgba(255, 255, 255, 0.03); border: 2px solid ${h2.color || '#dc2626'}; border-radius: 12px; padding: 14px 16px; text-align: right;">
+                      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                        <span style="background: ${h2.color || '#444'}; color: #ffffff; font-size: 0.72rem; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-family: monospace;">${h2.name}</span>
+                        <span style="font-size: 0.74rem; font-weight: 800; color: #cbd5e1; text-transform: uppercase; letter-spacing: 0.08em; font-family: monospace;">♚ Black</span>
+                      </div>
+                      <div style="font-size: 1.75rem; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-family: 'Outfit', sans-serif; line-height: 1.2;">
+                        ${m.p2.name}
+                      </div>
+                      <div style="font-size: 0.82rem; color: #94a3b8; margin-top: 4px; font-family: monospace;">
+                        Year ${m.p2.year || 8} · Elo ${m.p2.rating || 1000}
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <!-- 1-Click Smartboard Touch Result Buttons -->
+                  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
                     <button onclick="window.recordBoardResult('${m.type}', ${m.rIdx}, ${m.mIdx}, '${m.p1.id}', '${m.id}')"
-                            style="background: #ffffff; color: #18181b; border: 2px solid #e4e4e7; border-radius: 8px; padding: 10px 6px; font-weight: 800; font-size: 0.82rem; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; box-shadow: 0 4px 10px rgba(0,0,0,0.25); transition: all 0.15s;"
-                            onmouseover="this.style.background='#f4f4f5';this.style.borderColor='#d4af37'"
-                            onmouseout="this.style.background='#ffffff';this.style.borderColor='#e4e4e7'"
+                            style="background: #ffffff; color: #0f172a; border: 2px solid #e2e8f0; border-radius: 8px; padding: 12px 6px; font-weight: 800; font-size: 0.92rem; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 3px; box-shadow: 0 4px 12px rgba(0,0,0,0.25); transition: all 0.15s;"
+                            onmouseover="this.style.background='#f1f5f9';this.style.borderColor='#38bdf8'"
+                            onmouseout="this.style.background='#ffffff';this.style.borderColor='#e2e8f0'"
                             title="White wins (+3 House pts)">
-                      <span style="font-size: 1.1rem; line-height: 1;">♔</span>
-                      <span>White Win</span>
-                      <span style="font-size: 0.68rem; color: #16a34a; font-weight: 700;">+3 Pts</span>
+                      <span style="font-size: 1.15rem; line-height: 1;">♔</span>
+                      <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">${m.p1.name} Won</span>
+                      <span style="font-size: 0.68rem; color: #16a34a; font-weight: 800; font-family: monospace;">+3 PTS</span>
                     </button>
 
                     <button onclick="window.recordBoardResult('${m.type}', ${m.rIdx}, ${m.mIdx}, 'draw', '${m.id}')"
-                            style="background: #27272a; color: #fafafa; border: 2px solid #52525b; border-radius: 8px; padding: 10px 6px; font-weight: 800; font-size: 0.82rem; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; box-shadow: 0 4px 10px rgba(0,0,0,0.25); transition: all 0.15s;"
-                            onmouseover="this.style.background='#3f3f46';this.style.borderColor='#d4af37'"
-                            onmouseout="this.style.background='#27272a';this.style.borderColor='#52525b'"
-                            title="Draw: +2 House pts each">
-                      <span style="font-size: 1.1rem; line-height: 1;">½</span>
+                            style="background: #1e293b; color: #f8fafc; border: 2px solid #475569; border-radius: 8px; padding: 12px 6px; font-weight: 800; font-size: 0.92rem; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 3px; box-shadow: 0 4px 12px rgba(0,0,0,0.25); transition: all 0.15s;"
+                            onmouseover="this.style.background='#334155';this.style.borderColor='#facc15'"
+                            onmouseout="this.style.background='#1e293b';this.style.borderColor='#475569'"
+                            title="Draw (+2 House pts each)">
+                      <span style="font-size: 1.15rem; line-height: 1; color: #facc15;">½</span>
                       <span>Draw</span>
-                      <span style="font-size: 0.68rem; color: #facc15; font-weight: 700;">+2 Pts Each</span>
+                      <span style="font-size: 0.68rem; color: #facc15; font-weight: 800; font-family: monospace;">+2 PTS EACH</span>
                     </button>
 
                     <button onclick="window.recordBoardResult('${m.type}', ${m.rIdx}, ${m.mIdx}, '${m.p2.id}', '${m.id}')"
-                            style="background: #18181b; color: #ffffff; border: 2px solid #3f3f46; border-radius: 8px; padding: 10px 6px; font-weight: 800; font-size: 0.82rem; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; box-shadow: 0 4px 10px rgba(0,0,0,0.25); transition: all 0.15s;"
-                            onmouseover="this.style.background='#27272a';this.style.borderColor='#d4af37'"
-                            onmouseout="this.style.background='#18181b';this.style.borderColor='#3f3f46'"
+                            style="background: #0f172a; color: #ffffff; border: 2px solid #334155; border-radius: 8px; padding: 12px 6px; font-weight: 800; font-size: 0.92rem; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 3px; box-shadow: 0 4px 12px rgba(0,0,0,0.25); transition: all 0.15s;"
+                            onmouseover="this.style.background='#1e293b';this.style.borderColor='#ef4444'"
+                            onmouseout="this.style.background='#0f172a';this.style.borderColor='#334155'"
                             title="Black wins (+3 House pts)">
-                      <span style="font-size: 1.1rem; line-height: 1;">♚</span>
-                      <span>Black Win</span>
-                      <span style="font-size: 0.68rem; color: #16a34a; font-weight: 700;">+3 Pts</span>
+                      <span style="font-size: 1.15rem; line-height: 1;">♚</span>
+                      <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">${m.p2.name} Won</span>
+                      <span style="font-size: 0.68rem; color: #16a34a; font-weight: 800; font-family: monospace;">+3 PTS</span>
                     </button>
                   </div>
 
@@ -5327,18 +5402,34 @@ export function renderWhiteboardModeView(sortedHouses) {
           </div>
         `
             : `
-          <div style="background: #18181b; border: 2px dashed #3f3f46; border-radius: 12px; padding: 36px 20px; text-align: center; color: #a1a1aa;">
-            <div style="font-size: 2.2rem; margin-bottom: 8px; color: #d4af37;">♙</div>
-            <h3 style="margin: 0 0 6px 0; color: #fafafa; font-size: 1.25rem;">All Tournament Boards Cleared!</h3>
-            <p style="margin: 0 auto 16px auto; max-width: 500px; font-size: 0.88rem; color: #a1a1aa;">
-              No active games on the board right now. Check in pupils or start the automated pairing engine to begin rapid games.
+          <!-- Zero Active Matches State -->
+          <div style="background: rgba(15, 23, 42, 0.7); border: 2px dashed rgba(255, 255, 255, 0.15); border-radius: 20px; padding: 60px 24px; text-align: center; margin: 30px auto; max-width: 680px; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
+            <div style="font-size: 4rem; margin-bottom: 16px; color: #facc15;">♔</div>
+            <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 2.1rem; color: #ffffff; font-weight: 800; margin: 0 0 10px 0;">
+              ${completedPairings.length > 0 ? 'All Round Matches Finished!' : 'No Active Matches In Play'}
+            </h2>
+            <p style="font-size: 1.1rem; color: #94a3b8; line-height: 1.5; margin: 0 auto 28px auto; max-width: 500px;">
+              ${
+                completedPairings.length > 0
+                  ? `All ${completedPairings.length} board games have concluded and house points have been awarded.`
+                  : "Check in your pupils on the dashboard or launch auto-pairings to begin today's round matches."
+              }
             </p>
-            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-              <button onclick="window.repairFreePupilsCasual()" style="background: #0284c7; color: #ffffff; border: 1px solid #38bdf8; font-weight: 700; font-size: 0.86rem; padding: 9px 18px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;">
-                <span>⚡</span> Pair All Free Pupils Now
+            <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+              <button onclick="window.generateThursdayPairings()" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1.5px solid #38bdf8; font-weight: 800; font-size: 1rem; padding: 13px 26px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 16px rgba(2, 132, 199, 0.4);">
+                <span>⚔️</span> Generate Board Pairings Grid
               </button>
-              <button onclick="window.openLogMatchModal()" style="background: #27272a; color: #fafafa; border: 1px solid #52525b; font-weight: 700; font-size: 0.86rem; padding: 9px 18px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;">
-                <span>⚔</span> Record Single Game Outcome
+              ${
+                idlePupils.length >= 2
+                  ? `
+                <button onclick="window.pairFreePupilsOnMatchGrid()" style="background: #059669; color: #ffffff; border: 1.5px solid #34d399; font-weight: 800; font-size: 1rem; padding: 13px 26px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;">
+                  <span>⚡</span> Pair Free Pupils (${idlePupils.length})
+                </button>
+              `
+                  : ''
+              }
+              <button onclick="window.toggleChessWhiteboardMode(false)" style="background: rgba(255, 255, 255, 0.1); color: #cbd5e1; border: 1.5px solid rgba(255, 255, 255, 0.2); font-weight: 700; font-size: 1rem; padding: 13px 22px; border-radius: 8px; cursor: pointer;">
+                <span>✕</span> Exit to Dashboard
               </button>
             </div>
           </div>
@@ -5346,79 +5437,48 @@ export function renderWhiteboardModeView(sortedHouses) {
         }
       </div>
 
-      <!-- Bottom Split: Free Waiting Queue & Beth Harmon Quick Access -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px;">
-        
-        <!-- Free Waiting Queue -->
-        <div style="background: #18181b; border: 2px solid #27272a; border-radius: 10px; padding: 16px 20px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="width: 9px; height: 9px; border-radius: 50%; background: #22c55e; display: inline-block;"></span>
-              <h3 style="margin: 0; font-size: 1.05rem; color: #fafafa; font-weight: 700;">
-                Free Pupils Waiting Queue (${idlePupils.length})
-              </h3>
-            </div>
-            ${
-              idlePupils.length >= 2
-                ? `
-              <button onclick="window.checkAndAutoPairFreePupils()" style="background: #27272a; color: #4ade80; border: 1px solid #166534; font-size: 0.72rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; cursor: pointer;">
-                Pair (${Math.floor(idlePupils.length / 2)} games)
-              </button>
-            `
-                : ''
-            }
-          </div>
-
-          ${
-            idlePupils.length > 0
-              ? `
-            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;">
-              ${idlePupils
-                .map((p) => {
-                  const h = HOUSES[p.house] || { name: p.house, color: '#555' };
-                  return `
-                  <div style="background: #27272a; border: 1px solid #3f3f46; border-radius: 6px; padding: 6px 10px; display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem;">
-                    <span style="background: ${h.color}; width: 8px; height: 8px; border-radius: 50%; display: inline-block;"></span>
-                    <strong style="color: #fafafa;">${p.name}</strong>
-                    <span style="color: #a1a1aa; font-family: monospace; font-size: 0.72rem;">${p.rating || 1000}</span>
-                  </div>
-                `;
-                })
-                .join('')}
-            </div>
-            <div style="font-size: 0.76rem; color: #a1a1aa; font-style: italic;">
-              ⚡ Continuous Play Engine is active. As soon as any match finishes, free pupils are automatically re-paired onto available boards.
-            </div>
-          `
-              : `
-            <div style="font-size: 0.84rem; color: #71717a; padding: 12px 0;">
-              ✨ Zero idle pupils — every checked-in player currently has an active board!
-            </div>
-          `
-          }
-        </div>
-
-        <!-- Beth Harmon Tactical Spotlight -->
-        <div style="background: #18181b; border: 2px solid #27272a; border-radius: 10px; padding: 16px 20px; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
-              <span style="color: #d4af37; font-size: 1.1rem;">♟</span>
-              <h3 style="margin: 0; font-size: 1.05rem; color: #fafafa; font-weight: 700;">
-                The Beth Harmon Ceiling Board
-              </h3>
-              <span style="background: #27272a; color: #f59e0b; border: 1px solid #78350f; font-size: 0.65rem; font-weight: 800; padding: 1px 6px; border-radius: 3px; font-family: monospace;">
-                Movable Pieces
+      <!-- Compact Completed Match Strip (Unobtrusive & Collapsible) -->
+      ${
+        completedPairings.length > 0
+          ? `
+        <div style="background: rgba(15, 23, 42, 0.5); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 12px 18px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.85rem; color: #94a3b8;">
+          <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+            <span style="color: #4ade80; font-weight: 800;">✓ Completed Games (${completedPairings.length}):</span>
+            ${completedPairings
+              .map(
+                (c) => `
+              <span style="background: rgba(255,255,255,0.06); padding: 3px 8px; border-radius: 4px; font-family: monospace;">
+                Board ${c.board}: ${c.result === '1-0' ? `${c.white?.name || 'White'} won` : c.result === '0-1' ? `${c.black?.name || 'Black'} won` : 'Draw'}
               </span>
-            </div>
-            <p style="margin: 0 0 12px 0; font-size: 0.82rem; color: #a1a1aa; line-height: 1.45;">
-              Finished early? Pupils can solve grandmaster tactical combinations with physical tap-to-move pieces on the interactive ceiling board.
-            </p>
+            `,
+              )
+              .join('')}
           </div>
-          <button onclick="window.toggleChessWhiteboardMode(false); chessState.showStarterPuzzle = true; renderChessHubView();" style="background: #27272a; color: #fafafa; border: 1.5px solid #52525b; font-weight: 700; font-size: 0.82rem; padding: 8px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.15s;" onmouseover="this.style.borderColor='#d4af37';this.style.color='#d4af37'" onmouseout="this.style.borderColor='#52525b';this.style.color='#fafafa'">
-            <span>♟</span> Open Interactive Ceiling Board
+          <button onclick="window.undoLastMatchResult()" style="background: rgba(255,255,255,0.08); color: #cbd5e1; border: 1px solid rgba(255,255,255,0.15); font-weight: 700; font-size: 0.78rem; padding: 5px 12px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+            <span>↩️</span> Undo Last Result
           </button>
         </div>
+      `
+          : ''
+      }
 
+      <!-- Subtle Single-Line House Standings Ticker at Bottom -->
+      <div style="background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 8px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 0.8rem; color: #64748b; font-family: monospace;">
+        <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
+          <span style="color: #cbd5e1; font-weight: 700; text-transform: uppercase;">House Trophy Standings:</span>
+          ${sortedHouses
+            .map((h, i) => {
+              const hDef = HOUSES[h.id] || { name: h.id, color: '#999' };
+              const medal = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : '🎖️';
+              return `
+              <span>${medal} <strong style="color: #f8fafc;">${hDef.name}:</strong> <strong style="color: ${hDef.color};">${h.points} pts</strong></span>
+            `;
+            })
+            .join(' · ')}
+        </div>
+        <div style="color: #475569;">
+          Press [W] or [Esc] on keyboard anytime to exit
+        </div>
       </div>
 
     </div>
