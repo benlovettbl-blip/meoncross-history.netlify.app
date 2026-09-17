@@ -653,7 +653,10 @@ export function renderLesson(lesson) {
     activeUnit.isGCSE ||
     false;
   const hasInlineNarrativeSources =
-    Array.isArray(lesson.narrative_blocks) && lesson.narrative_blocks.some((b) => b && b.source);
+    Array.isArray(lesson.narrative_blocks) &&
+    lesson.narrative_blocks.some(
+      (b) => b && (b.source || (unitId === 'edexcel_medicine' && b.image)),
+    );
   let htmlDoNow = '',
     htmlPrimary = '',
     htmlSources1 = '',
