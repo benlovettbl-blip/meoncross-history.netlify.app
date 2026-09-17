@@ -15,6 +15,14 @@ import {
   BEGINNER_GOLDEN_RULES,
 } from './chess_data.js';
 
+import {
+  broadcastStateToCloud,
+  startPupilRealtimeSync,
+  renderCloudSyncStatusPill,
+  getCloudSyncStatus,
+} from './chess_realtime.js';
+import QRCode from 'qrcode';
+
 const STORAGE_KEY = 'meoncross_chess_club_v5';
 const ARCHIVE_KEY = 'meoncross_chess_master_archive';
 const BACKUP_KEY = 'meoncross_chess_backup_snapshot';
@@ -471,6 +479,36 @@ function initChessState(forceClean = false) {
       }
     });
   }
+
+  // 4. Start Live Cloud Sync listener for pupil and spectator devices
+  if (typeof window !== 'undefined' && !window.__chessSyncListenerStarted) {
+    window.__chessSyncListenerStarted = true;
+    startPupilRealtimeSync((remoteData) => {
+      // Only apply remote data updates in pupil mode or pupil preview
+      if (chessState.userRole === 'pupil' || chessState.isPupilPreview) {
+        if (Array.isArray(remoteData.players) && remoteData.players.length > 0) {
+          chessState.players = remoteData.players;
+        }
+        if (Array.isArray(remoteData.matches)) {
+          chessState.matches = remoteData.matches;
+        }
+        if (Array.isArray(remoteData.activePairings)) {
+          chessState.activePairings = remoteData.activePairings;
+        }
+        if (Array.isArray(remoteData.checkedInPlayerIds)) {
+          chessState.checkedInPlayerIds = remoteData.checkedInPlayerIds;
+        }
+        if (typeof remoteData.sessionTimeRemaining === 'number') {
+          chessState.sessionTimeRemaining = remoteData.sessionTimeRemaining;
+        }
+        if (remoteData.knockoutBracket !== undefined) {
+          chessState.knockoutBracket = remoteData.knockoutBracket;
+        }
+        renderChessHubView();
+        showChessToast('⚡ Live update received from teacher!', 'info');
+      }
+    });
+  }
 }
 
 function saveChessState(isIntentionalReset = false) {
@@ -501,6 +539,11 @@ function saveChessState(isIntentionalReset = false) {
 
   // Mirror to IndexedDB asynchronously
   persistToIndexedDB(payload);
+
+  // Broadcast state to live cloud room for pupil devices if in teacher mode
+  if (chessState.userRole === 'teacher' && !chessState.isPupilPreview) {
+    broadcastStateToCloud(chessState);
+  }
 }
 
 // Calculate House Totals dynamically
@@ -654,22 +697,33 @@ export function renderChessHubView() {
               ? `
             <!-- Teacher Action Controls -->
             <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+              <!-- Cloud Sync Indicator -->
+              ${renderCloudSyncStatusPill('teacher')}
+
               <!-- Button 1: Master Whiteboard Launch (Main Projector Screen) -->
-              <button onclick="window.toggleChessWhiteboardMode()" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1.5px solid #38bdf8; font-weight: 800; font-size: 0.92rem; padding: 11px 20px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 9px; box-shadow: 0 4px 14px rgba(14, 165, 233, 0.4); transition: all 0.15s;" title="Launch Big Screen Whiteboard Display for Interactive Projector (Press W)">
-                <span style="font-size: 1.25rem; line-height: 1;">📺</span> Launch Whiteboard Mode (W)
+              <button onclick="window.toggleChessWhiteboardMode()" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1.5px solid #38bdf8; font-weight: 800; font-size: 0.92rem; padding: 11px 18px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(14, 165, 233, 0.4); transition: all 0.15s;" title="Launch Big Screen Whiteboard Display for Interactive Projector (Press W)">
+                <span style="font-size: 1.2rem; line-height: 1;">📺</span> Whiteboard (W)
               </button>
 
-              <!-- Button 2: Quick Record Result -->
-              <button onclick="window.openLogMatchModal()" style="background: #292524; color: #fafaf9; border: 1.5px solid #78716c; font-weight: 700; font-size: 0.88rem; padding: 11px 18px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.25); transition: all 0.15s;" onmouseover="this.style.borderColor='#d4af37';this.style.color='#d4af37'" onmouseout="this.style.borderColor='#78716c';this.style.color='#fafaf9'">
+              <!-- Button 2: Pupil QR Code -->
+              <button onclick="window.openPupilQrModal()" style="background: #065f46; color: #a7f3d0; border: 1.5px solid #059669; font-weight: 700; font-size: 0.88rem; padding: 11px 16px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; box-shadow: 0 2px 6px rgba(0,0,0,0.25); transition: all 0.15s;" title="Display QR Code for pupils to join live room on their Chromebooks/phones">
+                <span>📱</span> Pupil QR Code
+              </button>
+
+              <!-- Button 3: Quick Record Result -->
+              <button onclick="window.openLogMatchModal()" style="background: #292524; color: #fafaf9; border: 1.5px solid #78716c; font-weight: 700; font-size: 0.88rem; padding: 11px 16px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.25); transition: all 0.15s;" onmouseover="this.style.borderColor='#d4af37';this.style.color='#d4af37'" onmouseout="this.style.borderColor='#78716c';this.style.color='#fafaf9'">
                 <span style="font-size: 1.05rem; line-height: 1;">⚔</span> Record Game Result
               </button>
 
-              <!-- Button 3: Clean Teacher Tools Dropdown -->
+              <!-- Button 4: Clean Teacher Tools Dropdown -->
               <div style="position: relative; display: inline-block;">
                 <button id="btn-chess-admin-menu" onclick="window.toggleChessAdminDropdown(event)" style="background: rgba(255, 255, 255, 0.08); color: #e7e5e4; border: 1.5px solid #57534e; font-weight: 700; font-size: 0.84rem; padding: 11px 16px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s;" title="Administrative & Backup Tools">
                   <span>⚙️</span> Teacher Tools ▾
                 </button>
                 <div id="chess-admin-dropdown" style="display: ${chessState.showAdminDropdown ? 'block' : 'none'}; position: absolute; right: 0; top: calc(100% + 8px); background: #292524; border: 1.5px solid #57534e; border-radius: 8px; box-shadow: 0 12px 32px rgba(0,0,0,0.65); z-index: 9999; min-width: 250px; overflow: hidden;">
+                  <button type="button" onclick="window.closeChessAdminDropdownOnly(); window.forceCloudBroadcast();" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: #34d399; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
+                    <span>☁️</span> Broadcast Room to Cloud Now
+                  </button>
                   <button type="button" onclick="window.closeChessAdminDropdownOnly(); window.copyFridayBulletinNotice();" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: #67e8f9; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
                     <span>📋</span> Copy Friday Bulletin Notice
                   </button>
@@ -721,6 +775,7 @@ export function renderChessHubView() {
               : `
             <!-- Pupil View Controls: Safe & Clutter-Free -->
             <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+              ${renderCloudSyncStatusPill('pupil')}
               <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(212, 175, 55, 0.15); border: 1px solid rgba(212, 175, 55, 0.4); padding: 8px 14px; border-radius: 6px; font-size: 0.82rem; font-weight: 700; color: #d4af37;">
                 <span>🎓</span> Pupil Academy &amp; Standings
               </div>
@@ -730,7 +785,7 @@ export function renderChessHubView() {
               <button onclick="window.switchChessTab('ladder')" style="background: #292524; color: #fafaf9; border: 1.5px solid #78716c; font-weight: 700; font-size: 0.88rem; padding: 10px 18px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;">
                 <span>🪜</span> Master Ladder
               </button>
-              <button onclick="window.promptTeacherUnlock()" style="background: transparent; color: #78716c; border: 1px solid #44403c; font-weight: 600; font-size: 0.76rem; padding: 10px 12px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;" title="Teacher administrative access">
+              <button onclick="window.promptTeacherUnlock()" style="background: transparent; color: #78716c; border: 1px solid #44403c; font-weight: 600; font-size: 0.76rem; padding: 10px 12px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;" title="Teacher administrative access (Passkey: Drake.30!)">
                 <span>🔒</span> Teacher Access
               </button>
             </div>
@@ -2227,6 +2282,9 @@ function renderActiveBoardPairingsGrid() {
           </div>
         </div>
 
+        ${
+          chessState.userRole === 'teacher'
+            ? `
         <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
           <button type="button" onclick="window.pairFreePupilsOnMatchGrid()" style="background: linear-gradient(135deg, #059669 0%, #047857 100%); color: #ffffff; border: 1.5px solid #34d399; font-weight: 800; font-size: 0.82rem; padding: 8px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(5, 150, 105, 0.25);" title="Pair pupils who have completed their games without disturbing ongoing matches">
             <span>⚡</span> Pair Free Pupils
@@ -2244,7 +2302,36 @@ function renderActiveBoardPairingsGrid() {
             <span>📺</span> Projector Mode (W)
           </button>
         </div>
+        `
+            : `
+        <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+          ${renderCloudSyncStatusPill('pupil')}
+          <span style="font-size: 0.8rem; color: #64748b; font-weight: 600;">Auto-syncing with teacher screen</span>
+        </div>
+        `
+        }
       </div>
+
+      ${
+        chessState.userRole === 'pupil'
+          ? `
+      <!-- Pupil "Find My Board" Widget -->
+      <div style="background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 8px; padding: 12px 16px; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.3rem;">🔍</span>
+          <div>
+            <div style="font-size: 0.86rem; font-weight: 800; color: #166534;">Find Your Board:</div>
+            <div style="font-size: 0.78rem; color: #15803d;">Select your name to instantly highlight your active board and piece color</div>
+          </div>
+        </div>
+        <select id="pupil-my-board-select" onchange="window.highlightPupilBoard(this.value)" style="padding: 7px 14px; border-radius: 6px; border: 1.5px solid #16a34a; font-weight: 700; font-size: 0.85rem; background: #ffffff; color: #0f172a; cursor: pointer;">
+          <option value="">-- Select Your Name --</option>
+          ${chessState.players.map((pl) => `<option value="${pl.id}">${pl.name} (${pl.house})</option>`).join('')}
+        </select>
+      </div>
+      `
+          : ''
+      }
 
       <!-- Boards Grid (Responsive Cards) -->
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 14px;">
@@ -2265,7 +2352,7 @@ function renderActiveBoardPairingsGrid() {
             const isDone = !!p.completed;
 
             return `
-            <div style="background: ${isDone ? '#f0fdf4' : '#ffffff'}; border: 2px solid ${isDone ? '#86efac' : '#e2e8f0'}; border-radius: 10px; padding: 14px 16px; box-shadow: 0 2px 6px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s;">
+            <div class="board-pairing-card" data-white-id="${p.white.id}" data-black-id="${p.black.id}" style="background: ${isDone ? '#f0fdf4' : '#ffffff'}; border: 2px solid ${isDone ? '#86efac' : '#e2e8f0'}; border-radius: 10px; padding: 14px 16px; box-shadow: 0 2px 6px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s;">
               
               <!-- Board Header -->
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; border-bottom: 1px solid ${isDone ? '#bbf7d0' : '#f1f5f9'}; padding-bottom: 8px;">
@@ -2314,8 +2401,21 @@ function renderActiveBoardPairingsGrid() {
 
               <!-- Scoring Actions -->
               ${
-                isDone
-                  ? `
+                chessState.userRole === 'pupil'
+                  ? isDone
+                    ? `
+                <div style="background: #dcfce7; border: 1px solid #86efac; border-radius: 6px; padding: 8px 12px; font-size: 0.82rem; font-weight: 800; color: #15803d; text-align: center;">
+                  <i class="fa-solid fa-circle-check"></i>
+                  Result: <strong>${p.result}</strong> · ${p.result === '1-0' ? p.white.name + ' Won' : p.result === '0-1' ? p.black.name + ' Won' : 'Draw'}
+                </div>
+                `
+                    : `
+                <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; padding: 8px 12px; font-size: 0.8rem; font-weight: 700; color: #1e40af; text-align: center;">
+                  <i class="fa-solid fa-clock"></i> Match in progress...
+                </div>
+                `
+                  : isDone
+                    ? `
                 <div style="background: #dcfce7; border: 1px solid #86efac; border-radius: 6px; padding: 8px 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px;">
                   <div style="font-size: 0.82rem; font-weight: 800; color: #15803d; display: flex; align-items: center; gap: 6px;">
                     <i class="fa-solid fa-circle-check"></i>
@@ -2326,7 +2426,7 @@ function renderActiveBoardPairingsGrid() {
                   </button>
                 </div>
               `
-                  : `
+                    : `
                 <div>
                   <div style="font-size: 0.7rem; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 5px; text-align: center;">
                     ⚡ Tap 1-Click Game Result:
@@ -2351,7 +2451,7 @@ function renderActiveBoardPairingsGrid() {
                     </button>
 
                     <button type="button" onclick="window.recordQuickMatchResult(${p.board}, 'black')"
-                            style="background: #1e293b; color: #ffffff; border: 1.5px solid #0f172a; border-radius: 6px; padding: 8px 4px; font-weight: 800; font-size: 0.8rem; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; transition: all 0.15s;"
+                            style="background: #1e293b; color: #fafaf9; border: 1.5px solid #0f172a; border-radius: 6px; padding: 8px 4px; font-weight: 800; font-size: 0.8rem; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; transition: all 0.15s;"
                             onmouseover="this.style.background='#0f172a';this.style.borderColor='#dc2626'"
                             onmouseout="this.style.background='#1e293b';this.style.borderColor='#0f172a'"
                             title="Black wins (+3 House pts)">
@@ -6712,4 +6812,87 @@ window.quickChallengePlayer = function (targetId) {
     const bSelect = document.getElementById('match-black-player');
     if (bSelect) bSelect.value = targetId;
   }, 50);
+};
+
+window.forceCloudBroadcast = async function () {
+  showChessToast('Broadcasting state to cloud...', 'info');
+  const success = await broadcastStateToCloud(chessState, true);
+  if (success) {
+    showChessToast('☁️ Live room state successfully broadcasted to cloud!', 'success');
+  } else {
+    showChessToast('Cloud broadcast failed. Using local cache.', 'warning');
+  }
+};
+
+window.highlightPupilBoard = function (pupilId) {
+  chessState.selectedPupilId = pupilId;
+  const cards = document.querySelectorAll('.board-pairing-card');
+  cards.forEach((card) => {
+    card.style.outline = 'none';
+    card.style.boxShadow = 'none';
+  });
+  if (!pupilId) return;
+
+  const targetCard = document.querySelector(
+    `.board-pairing-card[data-white-id="${pupilId}"], .board-pairing-card[data-black-id="${pupilId}"]`,
+  );
+  if (targetCard) {
+    targetCard.style.outline = '3px solid #16a34a';
+    targetCard.style.boxShadow = '0 0 24px rgba(22, 163, 74, 0.45)';
+    targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    showChessToast('🎯 Found your board!', 'success');
+  } else {
+    showChessToast('You are not currently paired on an active board. Wait for teacher!', 'info');
+  }
+};
+
+window.openPupilQrModal = async function () {
+  const modalCont = getChessModalContainer();
+  if (!modalCont) return;
+
+  const origin = window.location.origin;
+  const pupilUrl = `${origin}/?view=chess&role=pupil`;
+  let qrDataUrl = '';
+  try {
+    qrDataUrl = await QRCode.toDataURL(pupilUrl, {
+      width: 300,
+      margin: 2,
+      color: { dark: '#0f172a', light: '#ffffff' },
+    });
+  } catch (e) {
+    console.error('Error generating QR code:', e);
+  }
+
+  modalCont.innerHTML = `
+    <div style="position: fixed; inset: 0; background: rgba(15, 23, 42, 0.85); display: flex; align-items: center; justify-content: center; z-index: 99999; padding: 20px;" onclick="if(event.target === this) window.closeChessModal();">
+      <div style="background: #ffffff; border-radius: 16px; max-width: 440px; width: 100%; padding: 28px; box-shadow: 0 24px 48px rgba(0,0,0,0.35); text-align: center; font-family: 'Outfit', sans-serif; animation: zoomIn 0.2s ease-out;">
+        <div style="width: 52px; height: 52px; border-radius: 12px; background: #ecfdf5; color: #059669; display: inline-flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 12px;">
+          📱
+        </div>
+        <h3 style="margin: 0 0 6px 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.45rem; color: #0f172a; font-weight: 700;">
+          Pupil Live Screen Access
+        </h3>
+        <p style="font-size: 0.86rem; color: #64748b; margin: 0 0 16px 0; line-height: 1.5;">
+          Display this on the classroom projector or let pupils scan with their phone/Chromebook camera to join the live match grid.
+        </p>
+        
+        <div style="background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 12px; padding: 16px; display: inline-block; margin-bottom: 14px;">
+          ${qrDataUrl ? `<img src="${qrDataUrl}" alt="Pupil QR Code" style="display: block; width: 240px; height: 240px; border-radius: 8px;">` : `<div style="font-size:0.8rem; color:#dc2626;">Could not generate QR code</div>`}
+        </div>
+
+        <div style="background: #f1f5f9; border-radius: 8px; padding: 8px 12px; font-family: monospace; font-size: 0.76rem; color: #334155; word-break: break-all; margin-bottom: 18px; border: 1px solid #cbd5e1;">
+          ${pupilUrl}
+        </div>
+
+        <div style="display: flex; gap: 8px; justify-content: center;">
+          <button type="button" onclick="navigator.clipboard.writeText('${pupilUrl}'); window.showChessToast('Link copied to clipboard!', 'success');" style="background: #0284c7; color: #ffffff; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+            <span>📋</span> Copy Link
+          </button>
+          <button type="button" onclick="window.closeChessModal();" style="background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; padding: 10px 18px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; cursor: pointer;">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
 };
