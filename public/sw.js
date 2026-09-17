@@ -1,5 +1,5 @@
-const CACHE_NAME = 'history-hub-cache-v16';
-const DYNAMIC_CACHE = 'history-hub-dynamic-v16';
+const CACHE_NAME = 'history-hub-cache-v17';
+const DYNAMIC_CACHE = 'history-hub-dynamic-v17';
 
 const CORE_ASSETS = [
   '/',
@@ -8,10 +8,8 @@ const CORE_ASSETS = [
   '/icon-192.svg',
   '/icon-512.svg',
   '/style.css',
-  '/public/style.css',
   '/database.json',
   '/knowledge_bank.js',
-  '/src/main.js',
   // Key Ypres Battlefield Tour images for offline coach use in Belgium
   '/images/stubbington_memorial.jpg',
   '/images/stubbington_memorial_2.jpg',
@@ -56,7 +54,7 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// Activate Event: Cleanup older caches
+// Activate Event: Immediate takeover and older cache eviction
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches
@@ -75,7 +73,7 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Fetch Event: Stale-While-Revalidate with resilient offline navigation fallback
+// Fetch Event: Resilient hybrid caching strategy
 self.addEventListener('fetch', (event) => {
   // Only intercept GET requests
   if (event.request.method !== 'GET') return;
@@ -95,7 +93,44 @@ self.addEventListener('fetch', (event) => {
   // Skip Chrome extensions and non-http schemes
   if (!url.protocol.startsWith('http')) return;
 
-  // 1. Network-First for database.json: always fetch fresh live curriculum data when online; fallback to cache offline
+  // 1. Navigation Requests (HTML SPA Pages): Network-First
+  // Guarantees online pupils always get the fresh index.html pointing to current Vite asset hashes.
+  // Falls back to cached index.html only when truly offline (e.g. coach trip with no signal).
+  const isNavigate = event.request.mode === 'navigate';
+  const isHtmlRequest =
+    url.pathname === '/' ||
+    url.pathname === '/index.html' ||
+    (event.request.headers.get('accept') &&
+      event.request.headers.get('accept').includes('text/html'));
+
+  if (isNavigate || isHtmlRequest) {
+    event.respondWith(
+      fetch(event.request)
+        .then((networkResponse) => {
+          if (networkResponse && networkResponse.status === 200) {
+            const responseToCache = networkResponse.clone();
+            caches.open(DYNAMIC_CACHE).then((cache) => {
+              cache.put(event.request, responseToCache.clone());
+              cache.put('/index.html', responseToCache.clone());
+              cache.put('/', responseToCache);
+            });
+          }
+          return networkResponse;
+        })
+        .catch(async () => {
+          console.warn('[Service Worker] Offline navigation fallback for:', event.request.url);
+          const cached =
+            (await caches.match(event.request, { ignoreSearch: true })) ||
+            (await caches.match('/index.html')) ||
+            (await caches.match('/'));
+          if (cached) return cached;
+          throw new Error('Offline and no cached index.html found');
+        }),
+    );
+    return;
+  }
+
+  // 2. Network-First for database.json: always fetch fresh live curriculum data when online; fallback to cache offline
   if (url.pathname.includes('database.json')) {
     event.respondWith(
       fetch(event.request)
@@ -121,10 +156,36 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // 3. Cache-First for Vite hashed assets (/assets/*):
+  // Hashed files are immutable. Check cache first; if missing, fetch from network and store in dynamic cache.
+  if (url.pathname.startsWith('/assets/')) {
+    event.respondWith(
+      caches.match(event.request).then((cachedResponse) => {
+        if (cachedResponse) {
+          return cachedResponse;
+        }
+        return fetch(event.request).then((networkResponse) => {
+          if (
+            networkResponse &&
+            networkResponse.status === 200 &&
+            (networkResponse.type === 'basic' || networkResponse.type === 'cors')
+          ) {
+            const responseToCache = networkResponse.clone();
+            caches.open(DYNAMIC_CACHE).then((cache) => {
+              cache.put(event.request, responseToCache);
+            });
+          }
+          return networkResponse;
+        });
+      }),
+    );
+    return;
+  }
+
+  // 4. Stale-While-Revalidate for images, fonts, and static assets
   event.respondWith(
     caches.match(event.request, { ignoreSearch: true }).then((cachedResponse) => {
       if (cachedResponse) {
-        // Serve cached response immediately; update cache in background
         fetch(event.request)
           .then((networkResponse) => {
             if (
@@ -162,19 +223,6 @@ self.addEventListener('fetch', (event) => {
         .catch(async (error) => {
           console.warn('[Service Worker] Offline fetch intercepted:', event.request.url);
 
-          // Fallback for database.json regardless of query timestamp
-          if (event.request.url.includes('database.json')) {
-            const dbMatch = await caches.match('/database.json');
-            if (dbMatch) return dbMatch;
-          }
-
-          // Fallback for navigation requests (HTML SPA load)
-          if (event.request.mode === 'navigate') {
-            const indexMatch = (await caches.match('/index.html')) || (await caches.match('/'));
-            if (indexMatch) return indexMatch;
-          }
-
-          // General ignoreSearch cache match
           const fallback = await caches.match(event.request, { ignoreSearch: true });
           if (fallback) return fallback;
 

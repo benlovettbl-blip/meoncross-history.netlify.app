@@ -9,6 +9,17 @@
     Cache-Control = "no-cache, no-store, must-revalidate"
 
 [[headers]]
+  # Ensure the root HTML entrypoint is never cached stale by browser HTTP cache
+  for = "/"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
   # By default, force the browser to check if the file has changed (for HTML, PDFs, public/style.css)
   for = "/*"
   [headers.values]

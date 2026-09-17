@@ -23,6 +23,26 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <script>
+      // Emergency Stylesheet Recovery: If a cached/stale Vite CSS chunk fails (404),
+      // dynamically inject root /style.css fallback so pupils never see an unstyled page.
+      window.addEventListener(
+        'error',
+        function (e) {
+          if (e.target && e.target.tagName === 'LINK' && e.target.rel === 'stylesheet') {
+            console.warn('[PWA Recovery] Stylesheet failed to load:', e.target.href);
+            if (!document.getElementById('emergency-fallback-style')) {
+              var fallback = document.createElement('link');
+              fallback.id = 'emergency-fallback-style';
+              fallback.rel = 'stylesheet';
+              fallback.href = '/style.css?v=' + Date.now();
+              document.head.appendChild(fallback);
+            }
+          }
+        },
+        true,
+      );
+    </script>
     <link rel="stylesheet" href="style.css" />
 
     <!-- Leaflet CSS & JS for Interactive Maps -->
@@ -407,6 +427,51 @@
         </nav>
       </main>
     </div>
+
+    <script>
+      // Emergency Vite Module Recovery: If a stale tab or cached HTML tries to import
+      // a purged Vite chunk, auto-update the service worker and refresh cleanly.
+      window.addEventListener('vite:preloadError', function (event) {
+        console.warn('[PWA Recovery] Vite chunk load error detected. Reloading...');
+        window.location.reload();
+      });
+      window.addEventListener(
+        'error',
+        function (e) {
+          if (e.target && e.target.tagName === 'SCRIPT' && e.target.type === 'module') {
+            console.warn('[PWA Recovery] Module script failed to load:', e.target.src);
+            if (!sessionStorage.getItem('pwa_module_recovery_triggered')) {
+              sessionStorage.setItem('pwa_module_recovery_triggered', '1');
+              if ('serviceWorker' in navigator) {
+                navigator.serviceWorker
+                  .getRegistrations()
+                  .then(function (regs) {
+                    return Promise.all(
+                      regs.map(function (r) {
+                        return r.update();
+                      }),
+                    );
+                  })
+                  .then(function () {
+                    window.location.reload();
+                  });
+              } else {
+                window.location.reload();
+              }
+            }
+          }
+        },
+        true,
+      );
+
+      // Page curtain failsafe timeout: Ensure curtain never stays stuck
+      setTimeout(function () {
+        var curtain = document.getElementById('page-curtain');
+        if (curtain && !curtain.classList.contains('hidden')) {
+          curtain.classList.add('hidden');
+        }
+      }, 3500);
+    </script>
 
     <script src="/knowledge_bank.js"></script>
     <script type="module" src="src/main.js?v=cwgc"></script>
