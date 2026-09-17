@@ -68,6 +68,7 @@ async function persistToIndexedDB(state) {
       matches: state.matches,
       checkedInPlayerIds: state.checkedInPlayerIds,
       activePairings: state.activePairings || [],
+      pairingsHistory: state.pairingsHistory || [],
       leagueTableViewMode: state.leagueTableViewMode || 'matrix',
       knockoutBracket: state.knockoutBracket,
     });
@@ -177,6 +178,7 @@ let chessState = {
   matches: [],
   checkedInPlayerIds: [],
   activePairings: [],
+  pairingsHistory: [],
   leagueTableViewMode: 'matrix', // 'matrix' | 'table'
   knockoutBracket: null,
   activeTab: 'signin', // 'signin' | 'beginners' | 'ladder' | 'table' | 'pairings' | 'knockout' | 'drills' | 'matches'
@@ -375,6 +377,9 @@ function initChessState(forceClean = false) {
         chessState.activePairings = Array.isArray(parsed.activePairings)
           ? parsed.activePairings
           : [];
+        chessState.pairingsHistory = Array.isArray(parsed.pairingsHistory)
+          ? parsed.pairingsHistory
+          : [];
         if (parsed.leagueTableViewMode) chessState.leagueTableViewMode = parsed.leagueTableViewMode;
         chessState.knockoutBracket = parsed.knockoutBracket || null;
         if (parsed.autoRePairEnabled !== undefined)
@@ -429,7 +434,7 @@ function initChessState(forceClean = false) {
     chessState.matches = Array.isArray(INITIAL_MATCHES)
       ? JSON.parse(JSON.stringify(INITIAL_MATCHES))
       : [];
-    chessState.checkedInPlayerIds = [];
+    chessState.checkedInPlayerIds = chessState.players.map((p) => p.id);
     chessState.knockoutBracket = null;
     loaded = true;
     saveChessState();
@@ -466,6 +471,7 @@ function saveChessState(isIntentionalReset = false) {
     matches: chessState.matches,
     checkedInPlayerIds: chessState.checkedInPlayerIds,
     activePairings: chessState.activePairings || [],
+    pairingsHistory: (chessState.pairingsHistory || []).slice(-10),
     leagueTableViewMode: chessState.leagueTableViewMode || 'matrix',
     knockoutBracket: chessState.knockoutBracket,
     autoRePairEnabled: chessState.autoRePairEnabled,
@@ -2192,6 +2198,8 @@ function renderActiveBoardPairingsGrid() {
   const activeBoards = pairings.filter((p) => !p.isBye);
   const byeBoards = pairings.filter((p) => p.isBye);
   const completedCount = activeBoards.filter((p) => p.completed).length;
+  const hasHistory =
+    Array.isArray(chessState.pairingsHistory) && chessState.pairingsHistory.length > 0;
 
   return `
     <div id="classroom-pairings-grid" style="background: #ffffff; border: 2px solid #38bdf8; border-radius: 12px; padding: 22px; box-shadow: 0 8px 24px rgba(2, 132, 199, 0.08); margin-top: 14px;">
@@ -2210,9 +2218,15 @@ function renderActiveBoardPairingsGrid() {
           </div>
         </div>
 
-        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-          <button type="button" onclick="window.generateThursdayPairings()" style="background: #f8fafc; color: #334155; border: 1.5px solid #cbd5e1; font-weight: 700; font-size: 0.82rem; padding: 8px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
-            <i class="fa-solid fa-shuffle"></i> Re-Pair Boards
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+          <button type="button" onclick="window.pairFreePupilsOnMatchGrid()" style="background: linear-gradient(135deg, #059669 0%, #047857 100%); color: #ffffff; border: 1.5px solid #34d399; font-weight: 800; font-size: 0.82rem; padding: 8px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(5, 150, 105, 0.25);" title="Pair pupils who have completed their games without disturbing ongoing matches">
+            <span>⚡</span> Pair Free Pupils
+          </button>
+          <button type="button" onclick="window.undoPairings()" style="background: ${hasHistory ? '#fef3c7' : '#f8fafc'}; color: ${hasHistory ? '#92400e' : '#94a3b8'}; border: 1.5px solid ${hasHistory ? '#fde68a' : '#e2e8f0'}; font-weight: 700; font-size: 0.82rem; padding: 8px 14px; border-radius: 6px; cursor: ${hasHistory ? 'pointer' : 'not-allowed'}; display: inline-flex; align-items: center; gap: 6px;" ${!hasHistory ? 'disabled' : ''} title="Revert to previous board pairings">
+            <span>↩️</span> Undo Re-Pair
+          </button>
+          <button type="button" onclick="window.confirmNewRoundAll()" style="background: #f8fafc; color: #334155; border: 1.5px solid #cbd5e1; font-weight: 700; font-size: 0.82rem; padding: 8px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Start a fresh round for all checked-in pupils">
+            <i class="fa-solid fa-shuffle"></i> New Round (All)
           </button>
           <button type="button" onclick="window.printFidePairingSheet()" style="background: #1c1917; color: #d4af37; border: 1.5px solid #44403c; font-weight: 700; font-size: 0.82rem; padding: 8px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Print official A4 pairing sheet">
             <i class="fa-solid fa-print"></i> Print Sheet (A4)
@@ -3692,12 +3706,178 @@ window.handleSelfRegister = function (e) {
   return false;
 };
 
+// 1-Click Pair Only Free Pupils (Safe Mode - Does not disturb in-progress boards!)
+window.pairFreePupilsOnMatchGrid = function () {
+  const activePairings = chessState.activePairings || [];
+  const busyIds = new Set();
+
+  activePairings.forEach((b) => {
+    if (!b.completed && !b.isBye) {
+      if (b.white && b.white.id) busyIds.add(b.white.id);
+      if (b.black && b.black.id) busyIds.add(b.black.id);
+    }
+  });
+
+  const checkedInSet = new Set(chessState.checkedInPlayerIds || []);
+  const freePupils = chessState.players.filter((p) => checkedInSet.has(p.id) && !busyIds.has(p.id));
+
+  if (freePupils.length < 2) {
+    if (freePupils.length === 1) {
+      showChessToast(
+        `Only 1 free pupil right now (${freePupils[0].name}). Need at least 2 free pupils to pair a new board!`,
+        'warning',
+      );
+    } else {
+      showChessToast(
+        'All checked-in pupils are currently playing on active boards! None are idle.',
+        'info',
+      );
+    }
+    return;
+  }
+
+  // Save undo history snapshot
+  if (!chessState.pairingsHistory) chessState.pairingsHistory = [];
+  chessState.pairingsHistory.push(JSON.parse(JSON.stringify(activePairings)));
+
+  // Pair free pupils
+  const pool = [...freePupils].sort((a, b) => (b.rating || 1000) - (a.rating || 1000));
+  const newPairings = [];
+  let maxBoardNum = 0;
+  activePairings.forEach((b) => {
+    if (typeof b.board === 'number' && b.board > maxBoardNum) maxBoardNum = b.board;
+  });
+  let nextBoard = maxBoardNum + 1;
+
+  while (pool.length >= 2) {
+    const white = pool.shift();
+    let bestOpponentIdx = 0;
+    for (let i = 0; i < pool.length; i++) {
+      if (pool[i].house !== white.house) {
+        bestOpponentIdx = i;
+        break;
+      }
+    }
+    const black = pool.splice(bestOpponentIdx, 1)[0];
+    newPairings.push({
+      board: nextBoard++,
+      white: white,
+      black: black,
+      completed: false,
+      result: null,
+      winnerName: null,
+      winnerHouse: null,
+      matchId: null,
+    });
+  }
+
+  if (pool.length === 1) {
+    newPairings.push({
+      board: nextBoard++,
+      white: pool[0],
+      black: null,
+      isBye: true,
+      completed: true,
+      result: 'Bye',
+    });
+  }
+
+  chessState.activePairings = [...activePairings, ...newPairings];
+  saveChessState();
+  renderChessHubView();
+  showChessToast(
+    `⚡ Paired ${newPairings.filter((p) => !p.isBye).length} new board(s) for free pupils without disturbing ongoing matches!`,
+    'success',
+  );
+};
+
+// Undo Board Re-Pairing (Instant Teacher Safety Net)
+window.undoPairings = function () {
+  if (!chessState.pairingsHistory || chessState.pairingsHistory.length === 0) {
+    showChessToast('No previous board pairings to restore.', 'info');
+    return;
+  }
+  const previous = chessState.pairingsHistory.pop();
+  chessState.activePairings = previous;
+  saveChessState();
+  renderChessHubView();
+  showChessToast('↩️ Restored previous board pairings successfully!', 'success');
+};
+
+// Confirmation modal before re-pairing entire room from scratch
+window.confirmNewRoundAll = function () {
+  const activePairings = chessState.activePairings || [];
+  const inProgressBoards = activePairings.filter((b) => !b.completed && !b.isBye);
+
+  if (inProgressBoards.length > 0) {
+    const modalCont = getChessModalContainer();
+    const boardList = inProgressBoards
+      .map((b) => `Board ${b.board}: ${b.white?.name || 'White'} vs ${b.black?.name || 'Black'}`)
+      .join('<br>');
+
+    modalCont.innerHTML = `
+      <div style="position: fixed; inset: 0; background: rgba(15, 23, 42, 0.75); display: flex; align-items: center; justify-content: center; z-index: 99999; padding: 20px;" onclick="if(event.target === this) window.closeChessModal();">
+        <div style="background: #ffffff; border-radius: 12px; max-width: 500px; width: 100%; padding: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); font-family: 'Outfit', sans-serif;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+            <div style="width: 40px; height: 40px; border-radius: 8px; background: #fef3c7; color: #d97706; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">
+              ⚠️
+            </div>
+            <div>
+              <h3 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; color: #0f172a;">
+                ${inProgressBoards.length} Game(s) Still In Progress!
+              </h3>
+              <div style="font-size: 0.78rem; color: #64748b;">
+                Active matches have not finished yet.
+              </div>
+            </div>
+          </div>
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 14px; font-size: 0.82rem; color: #334155; line-height: 1.6; max-height: 120px; overflow-y: auto; margin-bottom: 14px;">
+            ${boardList}
+          </div>
+          <p style="font-size: 0.88rem; color: #475569; line-height: 1.5; margin: 0 0 18px 0;">
+            Do you want to pair <strong>only the pupils who are free</strong>, or start a brand new round for everyone?
+          </p>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <button onclick="window.closeChessModal(); window.pairFreePupilsOnMatchGrid();" style="background: linear-gradient(135deg, #059669 0%, #047857 100%); color: #ffffff; border: none; padding: 11px 16px; border-radius: 6px; font-weight: 800; font-size: 0.88rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+              <span>⚡</span> Pair Only Free Pupils (Keeps in-progress games running)
+            </button>
+            <button onclick="window.closeChessModal(); window.generateThursdayPairings(true);" style="background: #f8fafc; color: #dc2626; border: 1.5px solid #fca5a5; padding: 10px 16px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+              <span>🔄</span> Re-Pair All 12 from Scratch (Start New Round)
+            </button>
+            <button onclick="window.closeChessModal();" style="background: none; color: #64748b; border: none; padding: 6px 16px; border-radius: 6px; font-weight: 600; font-size: 0.82rem; cursor: pointer;">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+    return;
+  }
+
+  // If no in-progress games, proceed directly
+  window.generateThursdayPairings(true);
+};
+
 // 1-Click Thursday Period 6 Auto-Pairings Algorithm
-window.generateThursdayPairings = function () {
+window.generateThursdayPairings = function (force = false) {
   const presentIds = chessState.checkedInPlayerIds;
   if (presentIds.length < 2) {
     showChessToast('Please check in at least 2 pupils to generate pairings.', 'warning');
     return;
+  }
+
+  if (!force) {
+    const inProgress = (chessState.activePairings || []).filter((b) => !b.completed && !b.isBye);
+    if (inProgress.length > 0) {
+      window.confirmNewRoundAll();
+      return;
+    }
+  }
+
+  // Save undo history before replacing
+  if (chessState.activePairings && chessState.activePairings.length > 0) {
+    if (!chessState.pairingsHistory) chessState.pairingsHistory = [];
+    chessState.pairingsHistory.push(JSON.parse(JSON.stringify(chessState.activePairings)));
   }
 
   const presentPlayers = chessState.players
@@ -4217,8 +4397,29 @@ window.resetKnockoutTournament = function () {
 // Continuous Play Matchmaker & Whiteboard Projection Engine
 export function getActiveMatches() {
   const active = [];
-  const bracket = chessState.knockoutBracket;
   let boardIdx = 1;
+
+  // 1. Period 6 Classroom Match Grid active pairings
+  if (Array.isArray(chessState.activePairings) && chessState.activePairings.length > 0) {
+    chessState.activePairings.forEach((p) => {
+      if (p.white && p.black && !p.completed && !p.isBye) {
+        active.push({
+          type: 'quick_pairing',
+          rIdx: 0,
+          mIdx: 0,
+          id: `qp_${p.board}`,
+          boardNum: p.board || boardIdx++,
+          p1: p.white,
+          p2: p.black,
+          title: `Match Grid · Board ${p.board}`,
+          badge: 'Period 6 Match',
+        });
+      }
+    });
+  }
+
+  // 2. Knockout Tournament / Casual Matches
+  const bracket = chessState.knockoutBracket;
   if (bracket) {
     if (Array.isArray(bracket.rounds)) {
       bracket.rounds.forEach((round, rIdx) => {
@@ -4353,6 +4554,21 @@ window.checkAndAutoPairFreePupils = function () {
 };
 
 window.recordBoardResult = function (type, rIdx, mIdx, resultWinnerId, matchId) {
+  if (type === 'quick_pairing') {
+    const boardNum = parseInt(String(matchId || '').replace('qp_', ''), 10) || rIdx || 1;
+    if (resultWinnerId === 'draw') {
+      window.recordQuickMatchResult(boardNum, 'draw');
+    } else {
+      const p = (chessState.activePairings || []).find((x) => x.board === boardNum);
+      if (p && p.white && p.white.id === resultWinnerId) {
+        window.recordQuickMatchResult(boardNum, 'white');
+      } else {
+        window.recordQuickMatchResult(boardNum, 'black');
+      }
+    }
+    return;
+  }
+
   const bracket = chessState.knockoutBracket;
   if (!bracket) return;
 
@@ -4714,7 +4930,7 @@ export function renderWhiteboardModeView(sortedHouses) {
             ${
               idlePupils.length >= 2
                 ? `
-              <button onclick="window.checkAndAutoPairFreePupils()" style="background: #0284c7; color: #ffffff; border: 1px solid #38bdf8; font-weight: 800; font-size: 0.78rem; padding: 6px 14px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+              <button onclick="window.pairFreePupilsOnMatchGrid()" style="background: #059669; color: #ffffff; border: 1px solid #34d399; font-weight: 800; font-size: 0.78rem; padding: 6px 14px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
                 <span>⚡</span> Pair Free Pupils Now (${idlePupils.length})
               </button>
             `
