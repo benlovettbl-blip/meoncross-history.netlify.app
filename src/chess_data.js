@@ -1104,232 +1104,78 @@ export const BEGINNER_GOLDEN_RULES = [
 ];
 
 // ==========================================================
-// WITTY HISTORICAL CHESS QUOTES (TONGUE-IN-CHEEK WIT & BLUNDERS)
-// Mixing British & World History with Chess Rules and Blunders
+// PRESTIGIOUS CHESS & STRATEGY QUOTES FOR ASSEMBLY PRESENTATION
+// Classic Grandmaster & Philosophical Insights for School Notices
 // ==========================================================
 export const HISTORICAL_CHESS_QUOTES = [
-  // --- TUDORS & MONARCHY ---
   {
-    id: 'henry_viii_queens',
-    quote: 'Henry VIII went through six Queens. You only get one — defend her!',
-    figure: 'Tudor Domestic Policy',
-    era: 'The Tudors',
+    id: 'lasker_better_move',
+    quote: 'When you see a good move, look for a better one.',
+    figure: 'Emanuel Lasker',
+    era: 'World Champion 1894–1921',
   },
   {
-    id: 'charles_i_castle',
-    quote: 'Charles I lost his head because he refused to castle early.',
-    figure: 'English Civil War (1649)',
-    era: 'Early Modern England',
+    id: 'philidor_pawns_soul',
+    quote: 'The pawns are the soul of chess; they alone form the attack and the defense.',
+    figure: 'François-André Philidor',
+    era: 'Eighteenth-Century Master',
   },
   {
-    id: 'richard_iii_knight',
+    id: 'tartakower_tactics_strategy',
     quote:
-      '“A horse! A horse! My kingdom for a horse!” — Richard III, realizing he forgot to develop his knights.',
-    figure: 'Battle of Bosworth (1485)',
-    era: 'War of the Roses',
+      'Tactics is knowing what to do when there is something to do; strategy is knowing what to do when there is nothing to do.',
+    figure: 'Savielly Tartakower',
+    era: 'Grandmaster & Philosopher',
   },
   {
-    id: 'anne_boleyn_pin',
-    quote: 'Anne Boleyn thought she had King’s pawn protection. Turns out, it was an absolute pin.',
-    figure: 'Tower Green (1536)',
-    era: 'The Tudors',
+    id: 'chernev_every_master',
+    quote: 'Every chess master was once a beginner.',
+    figure: 'Irving Chernev',
+    era: 'Chess Author & Historian',
   },
   {
-    id: 'mary_queen_of_scots',
+    id: 'chigorin_plan',
+    quote: 'Even a poor plan is better than no plan at all.',
+    figure: 'Mikhail Chigorin',
+    era: 'Founder of the Russian School',
+  },
+  {
+    id: 'pascal_gymnasium',
+    quote: 'Chess is the gymnasium of the mind.',
+    figure: 'Blaise Pascal',
+    era: 'Mathematician & Philosopher',
+  },
+  {
+    id: 'buxton_forethought',
+    quote: 'In life, as in chess, forethought wins.',
+    figure: 'Charles Buxton',
+    era: 'Statesman & Writer',
+  },
+  {
+    id: 'spielmann_phases',
     quote:
-      'Mary Queen of Scots: A tragic textbook example of leaving an undefended piece on an open file.',
-    figure: 'Fotheringhay Castle (1587)',
-    era: 'Elizabethan England',
+      'Play the opening like a book, the middle game like a magician, and the endgame like a machine.',
+    figure: 'Rudolf Spielmann',
+    era: 'Grandmaster of Attack',
   },
   {
-    id: 'guy_fawkes_center',
+    id: 'capablanca_good_player',
+    quote: 'A good player is always lucky because he creates his own fortune through foresight.',
+    figure: 'José Raúl Capablanca',
+    era: 'World Champion 1921–1927',
+  },
+  {
+    id: 'tarrasch_patience',
     quote:
-      'Guy Fawkes under Parliament: Why leaving your King sitting in the center never ends well.',
-    figure: 'Gunpowder Plot (1605)',
-    era: 'Stuart Britain',
+      'Chess teaches us to formulate a plan and follow it through with patience, discipline, and courage.',
+    figure: 'Dr. Siegbert Tarrasch',
+    era: 'Master Theorist',
   },
   {
-    id: 'king_john_zugzwang',
+    id: 'kasparov_battles',
     quote:
-      'King John didn’t want to sign Magna Carta; the Barons simply placed his King in permanent zugzwang.',
-    figure: 'Runnymede (1215)',
-    era: 'Medieval England',
-  },
-  {
-    id: 'cromwell_touch_move',
-    quote:
-      'Oliver Cromwell abolished Christmas, theatres, and sports, but even he couldn’t repeal the touch-move rule.',
-    figure: 'The Commonwealth (1653)',
-    era: 'Early Modern England',
-  },
-
-  // --- ANCIENT & MEDIEVAL CATASTROPHES ---
-  {
-    id: 'harold_diagonal',
-    quote: 'Harold Godwinson at Hastings: Never take your eyes off the long diagonal.',
-    figure: 'Battle of Hastings (1066)',
-    era: 'Norman Conquest',
-  },
-  {
-    id: 'caesar_ides_pawns',
-    quote: 'The Ides of March: When 23 of your own pawns suddenly turn and attack the King.',
-    figure: 'Roman Senate (44 BC)',
-    era: 'Ancient Rome',
-  },
-  {
-    id: 'trojan_horse_gift',
-    quote:
-      'The Trojan Horse: The ancient Greek warning against accepting a free sacrifice from your opponent.',
-    figure: 'The Siege of Troy',
-    era: 'Ancient History',
-  },
-  {
-    id: 'berserker_opening',
-    quote:
-      'Viking Berserkers didn’t study opening theory. They just sacrificed every piece and yelled.',
-    figure: 'Norse Sagas (c. 1000)',
-    era: 'Viking Age',
-  },
-  {
-    id: 'black_death_blunder',
-    quote:
-      'The Black Death wiped out half of Europe, yet pupils still blunder their Queen on Move 4.',
-    figure: 'Historical Epidemiology',
-    era: 'Medieval Europe',
-  },
-  {
-    id: 'william_feigned_retreat',
-    quote:
-      'William the Conqueror’s feigned retreat at Hastings: The greatest discovered attack in British history.',
-    figure: 'Duke of Normandy (1066)',
-    era: 'Norman Conquest',
-  },
-  {
-    id: 'spartans_pawn_chain',
-    quote:
-      'Leonidas at Thermopylae: The historical masterclass in maintaining an unbreakable pawn chain.',
-    figure: 'Battle of Thermopylae (480 BC)',
-    era: 'Ancient Greece',
-  },
-  {
-    id: 'constantinople_back_rank',
-    quote:
-      'Fall of Constantinople (1453): What happens when you leave your back-rank gate completely unlocked.',
-    figure: 'Byzantine Endgame',
-    era: 'Medieval Siege Warfare',
-  },
-
-  // --- EMPIRE, REVOLUTIONS & MODERN WARFARE ---
-  {
-    id: 'napoleon_russia_supply',
-    quote:
-      'Napoleon invading Russia: Rushing your Queen deep into enemy territory with zero supply lines.',
-    figure: 'Retreat from Moscow (1812)',
-    era: 'Napoleonic Wars',
-  },
-  {
-    id: 'spanish_armada_weather',
-    quote:
-      'The Spanish Armada: Moving all your heavy pieces into the English Channel without checking the weather forecast.',
-    figure: 'Gravelines (1588)',
-    era: 'Elizabethan England',
-  },
-  {
-    id: 'light_brigade_knight',
-    quote:
-      '“Into the valley of Death rode the six hundred.” — A classic British officer premature knight charge.',
-    figure: 'Crimean War (1854)',
-    era: 'Victorian Empire',
-  },
-  {
-    id: 'maginot_line_flank',
-    quote:
-      'The Maginot Line: Spending all your tempo building an impenetrable wall while White walks around through Belgium.',
-    figure: 'Western Front (1940)',
-    era: 'Twentieth Century',
-  },
-  {
-    id: 'cold_war_table_flip',
-    quote:
-      'The Cold War: Two grandmasters glaring across the board for 45 years, threatening to flip the table.',
-    figure: 'Superpower Diplomacy',
-    era: 'Cold War (1945–91)',
-  },
-  {
-    id: 'churchill_passed_pawn',
-    quote:
-      '“Never in the field of human conflict was so much owed by so many to a single passed pawn.”',
-    figure: 'Battle of Britain (1940)',
-    era: 'Second World War',
-  },
-  {
-    id: 'boston_tea_party_fide',
-    quote:
-      'The Boston Tea Party: Throwing your opponent’s pieces into the harbour is strictly prohibited under FIDE rules.',
-    figure: 'American Revolution (1773)',
-    era: 'Eighteenth Century',
-  },
-  {
-    id: 'french_rev_stalemate',
-    quote:
-      'The French Revolution: What happens when the pawns reach the eighth rank and choose not to promote to a Queen.',
-    figure: 'Storming the Bastille (1789)',
-    era: 'French Revolution',
-  },
-  {
-    id: 'chamberlain_appeasement',
-    quote:
-      'Neville Chamberlain: Promising “peace in our time” while Black stacks three heavy pieces on the f-file.',
-    figure: 'Munich Agreement (1938)',
-    era: 'Twentieth Century',
-  },
-
-  // --- CLASSROOM REALITIES & TONGUE-IN-CHEEK PHILOSOPHY ---
-  {
-    id: 'touch_move_victoria',
-    quote:
-      'Touch-move rule: If you touch it, you play it. Queen Victoria herself couldn’t take back a blunder.',
-    figure: 'Senior Block Etiquette',
-    era: 'Club Rules',
-  },
-  {
-    id: 'scholars_mate_1066',
-    quote: 'Scholar’s Mate in 4 moves: The 1066 Norman Conquest of chess catastrophes.',
-    figure: 'Year 7 Opening Traps',
-    era: 'Classroom Lore',
-  },
-  {
-    id: 'peasant_revolt_pawns',
-    quote:
-      'Pawns are like the Peasants’ Revolt of 1381: individually humble, but march them together and the King panics.',
-    figure: 'Wat Tyler’s Strategy',
-    era: 'Medieval Social History',
-  },
-  {
-    id: 'blunder_interpretation',
-    quote:
-      'That was not a blunder; it was merely a “controversial historiographical interpretation” of the position.',
-    figure: 'GCSE History Mark Scheme',
-    era: 'Academic Debate',
-  },
-  {
-    id: 'mouse_slip_wooden',
-    quote:
-      'Blaming a “mouse slip” over an authentic physical wooden chessboard is historically untenable.',
-    figure: 'Departmental Arbiter',
-    era: 'Club Rules',
-  },
-  {
-    id: 'french_aristocrats_resign',
-    quote: 'Resigning is for 18th-century French aristocrats. Fight on for the stalemate swindle!',
-    figure: 'Club Tenacity',
-    era: 'Tactical Mindset',
-  },
-  {
-    id: 'nagging_checks',
-    quote:
-      'Delivering 14 meaningless checks in a row is not strategy; it is just aggressive historical nagging.',
-    figure: 'Senior Block Masterclass',
-    era: 'Tactical Philosophy',
+      'Chess is life in miniature. It demands patience, determination, and the courage to make decisions under pressure.',
+    figure: 'Garry Kasparov',
+    era: 'World Champion 1985–2000',
   },
 ];

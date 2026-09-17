@@ -312,21 +312,17 @@ if (typeof window !== 'undefined' && !window.__meoncrossSessionInterval) {
 }
 
 // ==========================================================
-// Historical Chess Quotes Rotation & Interactive Quips
+// Assembly Presentation Slide Quotes (Grandmaster & Strategy Wisdom)
+// Only visible inside the Friday Assembly Presentation Slide modal
 // ==========================================================
-window.__currentHistoricalQuoteIndex = Math.floor(
-  Math.random() *
-    (Array.isArray(HISTORICAL_CHESS_QUOTES) && HISTORICAL_CHESS_QUOTES.length > 0
-      ? HISTORICAL_CHESS_QUOTES.length
-      : 1),
-);
+window.__currentHistoricalQuoteIndex = 0;
 
 window.getRandomHistoricalQuote = function () {
   if (!Array.isArray(HISTORICAL_CHESS_QUOTES) || HISTORICAL_CHESS_QUOTES.length === 0) {
     return {
-      quote: 'Henry VIII went through six Queens. You only get one — defend her!',
-      figure: 'Tudor Domestic Policy',
-      era: 'The Tudors',
+      quote: 'When you see a good move, look for a better one.',
+      figure: 'Emanuel Lasker',
+      era: 'World Champion 1894–1921',
     };
   }
   return HISTORICAL_CHESS_QUOTES[
@@ -334,38 +330,22 @@ window.getRandomHistoricalQuote = function () {
   ];
 };
 
-window.cycleHistoricalQuote = function () {
+window.cycleAssemblyQuote = function () {
   if (!Array.isArray(HISTORICAL_CHESS_QUOTES) || HISTORICAL_CHESS_QUOTES.length === 0) return;
   window.__currentHistoricalQuoteIndex =
     (window.__currentHistoricalQuoteIndex + 1) % HISTORICAL_CHESS_QUOTES.length;
   const q = HISTORICAL_CHESS_QUOTES[window.__currentHistoricalQuoteIndex];
 
-  // Update Hero Quote elements if present
-  const eraEl = document.getElementById('quote-era-tag');
-  const bodyEl = document.getElementById('quote-body-text');
-  if (eraEl) eraEl.textContent = q.era;
-  if (bodyEl) {
-    bodyEl.innerHTML = `&ldquo;${q.quote}&rdquo; <span id="quote-figure-text" style="font-style: normal; color: #94a3b8; font-size: 0.8rem; margin-left: 6px;">&mdash; ${q.figure}</span>`;
+  const slideQuoteText = document.getElementById('assembly-slide-quote-text');
+  const slideQuoteAuthor = document.getElementById('assembly-slide-quote-author');
+  if (slideQuoteText) {
+    slideQuoteText.textContent = `“${q.quote}”`;
   }
-
-  // Also update Whiteboard Quote text if present
-  const wbTextEl = document.getElementById('whiteboard-quote-text');
-  if (wbTextEl) {
-    wbTextEl.innerHTML = `&ldquo;${q.quote}&rdquo; &mdash; <span style="font-style: normal; color: #38bdf8; font-weight: 600;">${q.figure}</span>`;
+  if (slideQuoteAuthor) {
+    slideQuoteAuthor.textContent = `— ${q.figure} (${q.era})`;
   }
 };
-
-window.cycleWhiteboardQuote = window.cycleHistoricalQuote;
-
-// Auto-cycle whiteboard quote every 18 seconds
-if (typeof window !== 'undefined' && !window.__meoncrossQuoteInterval) {
-  window.__meoncrossQuoteInterval = setInterval(() => {
-    const wbTextEl = document.getElementById('whiteboard-quote-text');
-    if (wbTextEl) {
-      window.cycleHistoricalQuote();
-    }
-  }, 18000);
-}
+window.cycleHistoricalQuote = window.cycleAssemblyQuote;
 
 // Global Keyboard Shortcut for Whiteboard Mode ('W' or 'Esc')
 if (typeof window !== 'undefined' && !window.__meoncrossKeydownBound) {
@@ -784,25 +764,6 @@ export function renderChessHubView() {
             <p style="margin: 0; font-size: 0.9rem; color: #d6d3d1; line-height: 1.55; font-family: 'Outfit', sans-serif;">
               Autumn Term tournament ledger and master ladder. Every completed game scores points toward the annual House Championship for <strong>Victory</strong>, <strong>Warrior</strong>, <strong>Dreadnought</strong>, and <strong>Invincible</strong>.
             </p>
-
-            <!-- Interactive Historical Chess Wit & Wisdom Card -->
-            <div id="chess-historical-quote-card" onclick="window.cycleHistoricalQuote()" style="cursor: pointer; background: rgba(212, 175, 55, 0.08); border: 1.5px dashed rgba(212, 175, 55, 0.35); border-radius: 8px; padding: 10px 14px; margin-top: 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; transition: all 0.2s;" onmouseover="this.style.background='rgba(212, 175, 55, 0.15)'; this.style.borderColor='rgba(212, 175, 55, 0.7)'" onmouseout="this.style.background='rgba(212, 175, 55, 0.08)'; this.style.borderColor='rgba(212, 175, 55, 0.35)'" title="Click for another witty historical chess quip!">
-              <div style="display: flex; align-items: center; gap: 10px; overflow: hidden;">
-                <span style="font-size: 1.3rem; flex-shrink: 0;">📜</span>
-                <div>
-                  <div style="font-size: 0.68rem; font-weight: 800; color: #d4af37; text-transform: uppercase; letter-spacing: 0.08em; font-family: monospace;">
-                    Historical Chess Wit &bull; <span id="quote-era-tag">${(typeof window.getRandomHistoricalQuote === 'function' ? window.getRandomHistoricalQuote() : { era: 'The Tudors' }).era}</span> &bull; <span style="font-weight: normal; color: #a8a29e;">(Click to cycle)</span>
-                  </div>
-                  <div id="quote-body-text" style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; color: #f8fafc; font-size: 0.94rem; line-height: 1.35; margin-top: 2px;">
-                    &ldquo;${(typeof window.getRandomHistoricalQuote === 'function' ? window.getRandomHistoricalQuote() : { quote: 'Henry VIII went through six Queens. You only get one — defend her!' }).quote}&rdquo;
-                    <span id="quote-figure-text" style="font-style: normal; color: #94a3b8; font-size: 0.8rem; margin-left: 6px;">&mdash; ${(typeof window.getRandomHistoricalQuote === 'function' ? window.getRandomHistoricalQuote() : { figure: 'Tudor Domestic Policy' }).figure}</span>
-                  </div>
-                </div>
-              </div>
-              <button type="button" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #fde047; border-radius: 6px; padding: 5px 10px; font-size: 0.74rem; cursor: pointer; font-weight: 700; flex-shrink: 0;">
-                🎲 Next Quip
-              </button>
-            </div>
           </div>
 
           <!-- Action Controls (Role-Aware: Teacher vs Pupil) -->
@@ -6193,13 +6154,8 @@ export function renderWhiteboardModeView(sortedHouses) {
             })
             .join(' · ')}
         </div>
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <div id="whiteboard-quote-text" onclick="window.cycleHistoricalQuote()" style="cursor: pointer; color: #cbd5e1; font-style: italic; max-width: 480px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="Click to cycle quote">
-            &ldquo;${(typeof window.getRandomHistoricalQuote === 'function' ? window.getRandomHistoricalQuote() : { quote: 'Henry VIII went through six Queens. You only get one — defend her!', figure: 'Tudor Domestic Policy' }).quote}&rdquo; &mdash; <span style="font-style: normal; color: #38bdf8; font-weight: 600;">${(typeof window.getRandomHistoricalQuote === 'function' ? window.getRandomHistoricalQuote() : { figure: 'Tudor Domestic Policy' }).figure}</span>
-          </div>
-          <div style="color: #475569;">
-            Press [W] or [Esc] to exit
-          </div>
+        <div style="display: flex; align-items: center; gap: 12px; color: #64748b; font-size: 0.8rem; font-weight: 600;">
+          Press [W] or [Esc] to exit Fullscreen Whiteboard
         </div>
       </div>
 
@@ -6743,6 +6699,15 @@ window.openAssemblySlideModal = function () {
   const champHouse = HOUSES[champ.house] || { name: champ.house, color: '#38bdf8' };
   const champLosses = Math.max(0, (champ.games || 0) - (champ.won || 0) - (champ.drawn || 0));
 
+  const currentQuote =
+    typeof window.getRandomHistoricalQuote === 'function'
+      ? window.getRandomHistoricalQuote()
+      : {
+          quote: 'When you see a good move, look for a better one.',
+          figure: 'Emanuel Lasker',
+          era: 'World Champion 1894–1921',
+        };
+
   modalCont.innerHTML = `
     <div style="position: fixed; inset: 0; background: rgba(15, 23, 42, 0.75); display: flex; align-items: center; justify-content: center; z-index: 99999; padding: 20px;" onclick="if(event.target === this) window.closeChessModal();">
       <div style="background: #ffffff; border-radius: 14px; max-width: 960px; width: 100%; padding: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); animation: zoomIn 0.2s ease-out; font-family: 'Outfit', sans-serif;">
@@ -6847,10 +6812,21 @@ window.openAssemblySlideModal = function () {
               .join('')}
           </div>
 
-          <!-- Footer Banner -->
-          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 6px; font-size: 0.72rem; color: #94a3b8;">
-            <span>Every match played earns points: <strong>+3 Win</strong> | <strong>+2 Draw</strong> | <strong>+1 Participation</strong></span>
-            <span style="color: #e2e8f0; font-weight: 700;">Thursdays Period 6 · Meoncross History Hub</span>
+          <!-- Footer Banner & Assembly Strategy Quote of the Week -->
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 6px; font-size: 0.72rem; color: #94a3b8; gap: 12px;">
+            <div style="display: flex; align-items: center; gap: 8px; overflow: hidden; flex: 1;">
+              <span style="background: rgba(245, 158, 11, 0.2); border: 1px solid rgba(245, 158, 11, 0.5); color: #fde047; font-size: 0.62rem; font-weight: 800; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; white-space: nowrap;">Quote of the Week</span>
+              <div style="color: #cbd5e1; font-style: italic; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: 'Playfair Display', Georgia, serif; font-size: 0.78rem;">
+                <span id="assembly-slide-quote-text">&ldquo;${currentQuote.quote}&rdquo;</span>
+                <span id="assembly-slide-quote-author" style="font-style: normal; color: #fde047; font-weight: 700; margin-left: 6px;">&mdash; ${currentQuote.figure} (${currentQuote.era})</span>
+              </div>
+              <button type="button" onclick="window.cycleAssemblyQuote()" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #cbd5e1; border-radius: 4px; padding: 1px 7px; font-size: 0.65rem; cursor: pointer; white-space: nowrap;" title="Change quote">
+                🔄 Change
+              </button>
+            </div>
+            <div style="color: #94a3b8; font-size: 0.68rem; white-space: nowrap;">
+              Every match: <strong style="color: #fde047;">+3 Win</strong> | <strong style="color: #cbd5e1;">+2 Draw</strong> | <strong style="color: #93c5fd;">+1 Play</strong>
+            </div>
           </div>
 
         </div>
@@ -7115,20 +7091,35 @@ window.downloadAssemblySlidePNG = function () {
     ctx.fillText(house.ship || '', x + boxWidth / 2, startY + 400);
   });
 
-  // Footer
+  // Footer: Grandmaster Quote & Event Info
+  const currentQuote =
+    typeof window.getRandomHistoricalQuote === 'function'
+      ? window.getRandomHistoricalQuote()
+      : {
+          quote: 'When you see a good move, look for a better one.',
+          figure: 'Emanuel Lasker',
+          era: 'World Champion 1894–1921',
+        };
+
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
+  ctx.fillRect(80, 950, 1760, 56);
+  ctx.strokeStyle = 'rgba(245, 158, 11, 0.35)';
+  ctx.lineWidth = 1;
+  ctx.strokeRect(80, 950, 1760, 56);
+
   ctx.textAlign = 'left';
-  ctx.fillStyle = '#94a3b8';
-  ctx.font = '26px sans-serif';
-  ctx.fillText(
-    'Scoring: +3 Win | +2 Draw | +1 Participation · Every game matters for your House!',
-    80,
-    985,
-  );
+  ctx.fillStyle = '#fde047';
+  ctx.font = 'bold 20px sans-serif';
+  ctx.fillText('QUOTE OF THE WEEK:', 100, 986);
+
+  ctx.fillStyle = '#f8fafc';
+  ctx.font = 'italic 20px Georgia, serif';
+  ctx.fillText(`"${currentQuote.quote}" — ${currentQuote.figure} (${currentQuote.era})`, 330, 986);
 
   ctx.textAlign = 'right';
-  ctx.fillStyle = '#38bdf8';
-  ctx.font = 'bold 26px sans-serif';
-  ctx.fillText("Mr Lovett's History Hub", 1840, 985);
+  ctx.fillStyle = '#94a3b8';
+  ctx.font = 'bold 20px sans-serif';
+  ctx.fillText('Thursdays Period 6 · Meoncross History Hub', 1815, 986);
 
   // Download Trigger
   const link = document.createElement('a');
