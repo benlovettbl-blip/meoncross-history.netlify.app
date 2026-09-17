@@ -3610,6 +3610,76 @@ export function renderLesson(lesson) {
       htmlTasks += `</div>`;
     }
 
+    if (lesson.essay_planning) {
+      const ep = lesson.essay_planning;
+      htmlHistorian += `
+        <div class="phase-card essay-planning-card" style="margin-top: 30px; border: 2px solid #2563eb; border-radius: 10px; background: #ffffff; overflow: hidden; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);">
+          <div style="background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); color: #ffffff; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="font-size: 1.25rem;">⚖️</span>
+              <div>
+                <h3 style="margin: 0; font-size: 1.15rem; font-family: 'Playfair Display', serif; color: #ffffff;">16-Mark Essay Planning Matrix (2&times;2)</h3>
+                <span style="font-size: 0.75rem; color: #bfdbfe; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">Edexcel Paper 1 &bull; Section B (Q5/Q6) &bull; ${ep.marks || '16 Marks + 4 SPaG'}</span>
+              </div>
+            </div>
+            <span style="background: rgba(255, 255, 255, 0.2); color: #ffffff; font-size: 0.78rem; font-weight: 800; padding: 4px 10px; border-radius: 20px;">Target: Level 4 (13–16 Marks)</span>
+          </div>
+          
+          <div style="padding: 20px;">
+            <div style="background: #f8fafc; border-left: 4px solid #2563eb; border-radius: 0 6px 6px 0; padding: 12px 16px; margin-bottom: 18px;">
+              <div style="font-size: 0.75rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">Statement to Evaluate:</div>
+              <div style="font-size: 1.05rem; font-weight: 700; color: #0f172a; line-height: 1.4;">${ep.statement}</div>
+              ${ep.stimulus && ep.stimulus.length > 0 ? `<div style="font-size: 0.85rem; color: #475569; margin-top: 6px;"><strong>Stimulus points provided:</strong> ${ep.stimulus.join(' &bull; ')} <em>(You must also use information of your own)</em></div>` : ''}
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 18px;">
+              <div style="background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 8px; padding: 16px;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px; border-bottom: 1.5px solid #bbf7d0; padding-bottom: 8px;">
+                  <span style="background: #16a34a; color: white; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 900;">✓</span>
+                  <strong style="color: #166534; font-size: 0.92rem; text-transform: uppercase; letter-spacing: 0.5px;">Factors Supporting Statement (Agree)</strong>
+                </div>
+                <ul style="margin: 0; padding-left: 18px; color: #14532d; font-size: 0.9rem; line-height: 1.55;">
+                  ${(ep.supporting_factors || []).map((f) => `<li style="margin-bottom: 8px;">${formatBold(f)}</li>`).join('')}
+                </ul>
+              </div>
+
+              <div style="background: #eff6ff; border: 1.5px solid #93c5fd; border-radius: 8px; padding: 16px;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px; border-bottom: 1.5px solid #bfdbfe; padding-bottom: 8px;">
+                  <span style="background: #2563eb; color: white; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 900;">⇄</span>
+                  <strong style="color: #1e40af; font-size: 0.92rem; text-transform: uppercase; letter-spacing: 0.5px;">Counter-Factors / Other Factors (Disagree)</strong>
+                </div>
+                <ul style="margin: 0; padding-left: 18px; color: #1e3a8a; font-size: 0.9rem; line-height: 1.55;">
+                  ${(ep.counter_factors || []).map((f) => `<li style="margin-bottom: 8px;">${formatBold(f)}</li>`).join('')}
+                </ul>
+              </div>
+            </div>
+
+            ${
+              ep.criteria_prompt
+                ? `
+            <div style="background: #fffbeb; border: 1.5px solid #fde68a; border-radius: 8px; padding: 12px 16px; margin-bottom: 16px;">
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                <span style="color: #b45309; font-weight: bold;">⚖️</span>
+                <strong style="color: #92400e; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.5px;">Level 4 Evaluative Judgment Criteria:</strong>
+              </div>
+              <p style="margin: 0; font-size: 0.9rem; color: #78350f; line-height: 1.5; font-style: italic;">
+                ${formatBold(ep.criteria_prompt)}
+              </p>
+            </div>`
+                : ''
+            }
+
+            <div>
+              <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #475569; margin-bottom: 6px;">
+                <i class="fa-solid fa-pen-to-square"></i> Student Planning Scratchpad (Prioritize your factor hierarchy &amp; concluding judgment):
+              </label>
+              <textarea class="student-answer-input" placeholder="Jot down your 3 paragraph themes (1 agree, 2 other factors) and your overall criteria-based verdict here..." style="min-height: 80px; width: 100%; box-sizing: border-box;"></textarea>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
     if (lesson.historians_corner) {
       const hc = lesson.historians_corner;
       htmlHistorian += `
@@ -3638,7 +3708,6 @@ export function renderLesson(lesson) {
           </div>
         `;
     }
-    htmlHistorian += `</div>`;
   }
 
   if (lesson.pair_share) {

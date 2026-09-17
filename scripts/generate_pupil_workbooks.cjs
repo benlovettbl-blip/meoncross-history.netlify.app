@@ -3191,6 +3191,45 @@ allDirs.forEach((unitId) => {
         html += `</div>`;
       }
 
+      // Phase 2b: 16-Mark Essay Planning Matrix (Medicine)
+      if (unitId === 'edexcel_medicine' && lesson.essay_planning) {
+        const ep = lesson.essay_planning;
+        html += `
+          <div class="task-box essay-planning-box" style="break-inside: avoid !important; page-break-inside: avoid !important; margin-top: 15px; margin-bottom: 15px; border: 2px solid #1e3a8a; padding: 12px; background: #ffffff;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #1e3a8a; padding-bottom: 5px; margin-bottom: 8px;">
+              <strong style="color: #1e3a8a; font-size: 10.5pt; text-transform: uppercase; letter-spacing: 0.5px;">16-Mark Essay Planning Matrix (2&times;2 Grid)</strong>
+              <span style="font-size: 8.5pt; color: #475569; font-weight: bold;">Edexcel Paper 1 &bull; Section B (Q5/Q6)</span>
+            </div>
+            <div style="font-size: 8.8pt; color: #0f172a; margin-bottom: 8px; line-height: 1.35;">
+              <strong>Question:</strong> ${ep.statement}
+              ${ep.stimulus ? `<br><em>Stimulus: ${ep.stimulus.join(' &bull; ')}</em>` : ''}
+            </div>
+            <div style="display: flex; gap: 10px; margin-bottom: 8px;">
+              <div style="flex: 1; border: 1.5px solid #15803d; border-radius: 4px; padding: 6px 8px; background: #f0fdf4;">
+                <strong style="color: #166534; font-size: 8.5pt; display: block; margin-bottom: 4px; border-bottom: 1px solid #86efac; padding-bottom: 2px;">✓ Factors Supporting Statement (Agree)</strong>
+                <ul style="margin: 0; padding-left: 14px; font-size: 7.8pt; color: #14532d; line-height: 1.35;">
+                  ${ep.supporting_factors.map((f) => `<li>${formatText(f)}</li>`).join('')}
+                </ul>
+              </div>
+              <div style="flex: 1; border: 1.5px solid #1d4ed8; border-radius: 4px; padding: 6px 8px; background: #eff6ff;">
+                <strong style="color: #1e40af; font-size: 8.5pt; display: block; margin-bottom: 4px; border-bottom: 1px solid #93c5fd; padding-bottom: 2px;">⇄ Counter-Factors / Other Factors (Disagree)</strong>
+                <ul style="margin: 0; padding-left: 14px; font-size: 7.8pt; color: #1e3a8a; line-height: 1.35;">
+                  ${ep.counter_factors.map((f) => `<li>${formatText(f)}</li>`).join('')}
+                </ul>
+              </div>
+            </div>
+            ${
+              ep.criteria_prompt
+                ? `
+            <div style="border-top: 1px dashed #94a3b8; padding-top: 5px; font-size: 7.8pt; color: #475569; font-style: italic;">
+              <strong>Level 4 Judgment Criteria:</strong> ${formatText(ep.criteria_prompt)}
+            </div>`
+                : ''
+            }
+          </div>
+        `;
+      }
+
       // Phase 3 & 4: GCSE Exam Practice
       if (lesson.tasks && lesson.tasks.length > 0) {
         let originalTasks = lesson.tasks;

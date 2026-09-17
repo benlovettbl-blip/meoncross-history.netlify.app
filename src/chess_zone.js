@@ -13,6 +13,7 @@ import {
   BEGINNER_ROOKIE_PUZZLES,
   BEGINNER_PIECES_GUIDE,
   BEGINNER_GOLDEN_RULES,
+  HISTORICAL_CHESS_QUOTES,
 } from './chess_data.js';
 
 import {
@@ -308,6 +309,62 @@ if (typeof window !== 'undefined' && !window.__meoncrossSessionInterval) {
       }
     }
   }, 1000);
+}
+
+// ==========================================================
+// Historical Chess Quotes Rotation & Interactive Quips
+// ==========================================================
+window.__currentHistoricalQuoteIndex = Math.floor(
+  Math.random() *
+    (Array.isArray(HISTORICAL_CHESS_QUOTES) && HISTORICAL_CHESS_QUOTES.length > 0
+      ? HISTORICAL_CHESS_QUOTES.length
+      : 1),
+);
+
+window.getRandomHistoricalQuote = function () {
+  if (!Array.isArray(HISTORICAL_CHESS_QUOTES) || HISTORICAL_CHESS_QUOTES.length === 0) {
+    return {
+      quote: 'Henry VIII went through six Queens. You only get one — defend her!',
+      figure: 'Tudor Domestic Policy',
+      era: 'The Tudors',
+    };
+  }
+  return HISTORICAL_CHESS_QUOTES[
+    window.__currentHistoricalQuoteIndex % HISTORICAL_CHESS_QUOTES.length
+  ];
+};
+
+window.cycleHistoricalQuote = function () {
+  if (!Array.isArray(HISTORICAL_CHESS_QUOTES) || HISTORICAL_CHESS_QUOTES.length === 0) return;
+  window.__currentHistoricalQuoteIndex =
+    (window.__currentHistoricalQuoteIndex + 1) % HISTORICAL_CHESS_QUOTES.length;
+  const q = HISTORICAL_CHESS_QUOTES[window.__currentHistoricalQuoteIndex];
+
+  // Update Hero Quote elements if present
+  const eraEl = document.getElementById('quote-era-tag');
+  const bodyEl = document.getElementById('quote-body-text');
+  if (eraEl) eraEl.textContent = q.era;
+  if (bodyEl) {
+    bodyEl.innerHTML = `&ldquo;${q.quote}&rdquo; <span id="quote-figure-text" style="font-style: normal; color: #94a3b8; font-size: 0.8rem; margin-left: 6px;">&mdash; ${q.figure}</span>`;
+  }
+
+  // Also update Whiteboard Quote text if present
+  const wbTextEl = document.getElementById('whiteboard-quote-text');
+  if (wbTextEl) {
+    wbTextEl.innerHTML = `&ldquo;${q.quote}&rdquo; &mdash; <span style="font-style: normal; color: #38bdf8; font-weight: 600;">${q.figure}</span>`;
+  }
+};
+
+window.cycleWhiteboardQuote = window.cycleHistoricalQuote;
+
+// Auto-cycle whiteboard quote every 18 seconds
+if (typeof window !== 'undefined' && !window.__meoncrossQuoteInterval) {
+  window.__meoncrossQuoteInterval = setInterval(() => {
+    const wbTextEl = document.getElementById('whiteboard-quote-text');
+    if (wbTextEl) {
+      window.cycleHistoricalQuote();
+    }
+  }, 18000);
 }
 
 // Global Keyboard Shortcut for Whiteboard Mode ('W' or 'Esc')
@@ -727,6 +784,25 @@ export function renderChessHubView() {
             <p style="margin: 0; font-size: 0.9rem; color: #d6d3d1; line-height: 1.55; font-family: 'Outfit', sans-serif;">
               Autumn Term tournament ledger and master ladder. Every completed game scores points toward the annual House Championship for <strong>Victory</strong>, <strong>Warrior</strong>, <strong>Dreadnought</strong>, and <strong>Invincible</strong>.
             </p>
+
+            <!-- Interactive Historical Chess Wit & Wisdom Card -->
+            <div id="chess-historical-quote-card" onclick="window.cycleHistoricalQuote()" style="cursor: pointer; background: rgba(212, 175, 55, 0.08); border: 1.5px dashed rgba(212, 175, 55, 0.35); border-radius: 8px; padding: 10px 14px; margin-top: 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; transition: all 0.2s;" onmouseover="this.style.background='rgba(212, 175, 55, 0.15)'; this.style.borderColor='rgba(212, 175, 55, 0.7)'" onmouseout="this.style.background='rgba(212, 175, 55, 0.08)'; this.style.borderColor='rgba(212, 175, 55, 0.35)'" title="Click for another witty historical chess quip!">
+              <div style="display: flex; align-items: center; gap: 10px; overflow: hidden;">
+                <span style="font-size: 1.3rem; flex-shrink: 0;">📜</span>
+                <div>
+                  <div style="font-size: 0.68rem; font-weight: 800; color: #d4af37; text-transform: uppercase; letter-spacing: 0.08em; font-family: monospace;">
+                    Historical Chess Wit &bull; <span id="quote-era-tag">${(typeof window.getRandomHistoricalQuote === 'function' ? window.getRandomHistoricalQuote() : { era: 'The Tudors' }).era}</span> &bull; <span style="font-weight: normal; color: #a8a29e;">(Click to cycle)</span>
+                  </div>
+                  <div id="quote-body-text" style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; color: #f8fafc; font-size: 0.94rem; line-height: 1.35; margin-top: 2px;">
+                    &ldquo;${(typeof window.getRandomHistoricalQuote === 'function' ? window.getRandomHistoricalQuote() : { quote: 'Henry VIII went through six Queens. You only get one — defend her!' }).quote}&rdquo;
+                    <span id="quote-figure-text" style="font-style: normal; color: #94a3b8; font-size: 0.8rem; margin-left: 6px;">&mdash; ${(typeof window.getRandomHistoricalQuote === 'function' ? window.getRandomHistoricalQuote() : { figure: 'Tudor Domestic Policy' }).figure}</span>
+                  </div>
+                </div>
+              </div>
+              <button type="button" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #fde047; border-radius: 6px; padding: 5px 10px; font-size: 0.74rem; cursor: pointer; font-weight: 700; flex-shrink: 0;">
+                🎲 Next Quip
+              </button>
+            </div>
           </div>
 
           <!-- Action Controls (Role-Aware: Teacher vs Pupil) -->
@@ -6103,7 +6179,7 @@ export function renderWhiteboardModeView(sortedHouses) {
           : ''
       }
 
-      <!-- Subtle Single-Line House Standings Ticker at Bottom -->
+      <!-- Subtle Single-Line House Standings & Wit Ticker at Bottom -->
       <div style="flex-shrink: 0; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 6px; padding: 5px 12px; margin-top: 6px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 0.74rem; color: #64748b; font-family: monospace;">
         <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
           <span style="color: #cbd5e1; font-weight: 700; text-transform: uppercase;">House Trophy Standings:</span>
@@ -6117,8 +6193,13 @@ export function renderWhiteboardModeView(sortedHouses) {
             })
             .join(' · ')}
         </div>
-        <div style="color: #475569;">
-          Press [W] or [Esc] to exit
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div id="whiteboard-quote-text" onclick="window.cycleHistoricalQuote()" style="cursor: pointer; color: #cbd5e1; font-style: italic; max-width: 480px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="Click to cycle quote">
+            &ldquo;${(typeof window.getRandomHistoricalQuote === 'function' ? window.getRandomHistoricalQuote() : { quote: 'Henry VIII went through six Queens. You only get one — defend her!', figure: 'Tudor Domestic Policy' }).quote}&rdquo; &mdash; <span style="font-style: normal; color: #38bdf8; font-weight: 600;">${(typeof window.getRandomHistoricalQuote === 'function' ? window.getRandomHistoricalQuote() : { figure: 'Tudor Domestic Policy' }).figure}</span>
+          </div>
+          <div style="color: #475569;">
+            Press [W] or [Esc] to exit
+          </div>
         </div>
       </div>
 

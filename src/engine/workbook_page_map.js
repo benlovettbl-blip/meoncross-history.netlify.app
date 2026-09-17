@@ -202,7 +202,7 @@ export const WORKBOOK_PAGE_MAP = {
       lessonIndex: 1,
     },
     lesson_1_3: {
-      page: 33,
+      page: 32,
       booklet: 'Medieval Booklet',
       unitId: 'edexcel_medicine',
       lessonIndex: 2,
@@ -214,13 +214,13 @@ export const WORKBOOK_PAGE_MAP = {
       lessonIndex: 3,
     },
     lesson_2_2: {
-      page: 17,
+      page: 16,
       booklet: 'Renaissance Booklet',
       unitId: 'edexcel_medicine',
       lessonIndex: 4,
     },
     lesson_2_3: {
-      page: 30,
+      page: 29,
       booklet: 'Renaissance Booklet',
       unitId: 'edexcel_medicine',
       lessonIndex: 5,
@@ -250,19 +250,19 @@ export const WORKBOOK_PAGE_MAP = {
       lessonIndex: 9,
     },
     lesson_4_2: {
-      page: 16,
+      page: 17,
       booklet: 'Modern Booklet',
       unitId: 'edexcel_medicine',
       lessonIndex: 10,
     },
     lesson_4_3: {
-      page: 28,
+      page: 29,
       booklet: 'Modern Booklet',
       unitId: 'edexcel_medicine',
       lessonIndex: 11,
     },
     lesson_4_4: {
-      page: 42,
+      page: 43,
       booklet: 'Modern Booklet',
       unitId: 'edexcel_medicine',
       lessonIndex: 12,
@@ -292,7 +292,7 @@ export const WORKBOOK_PAGE_MAP = {
       lessonIndex: 16,
     },
     lesson_5_5: {
-      page: 37,
+      page: 36,
       booklet: 'Western Front Booklet',
       unitId: 'edexcel_medicine',
       lessonIndex: 17,
