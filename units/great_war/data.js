@@ -22,7 +22,7 @@ const great_war = {
   enquiry: 'How did decades of imperial rivalry and fear culminate in thirty days of madness?',
   cover_image: '/images/great_war_cover.jpg',
   cover_caption:
-    'Source A: A political cartoon published in Puck Magazine (1909) satirising the intense naval arms race between Britain and Germany.',
+    "Primary Photograph: The Royal Navy battleship HMS Dreadnought at sea (c. 1906–1907), whose revolutionary steam-turbine propulsion and 'all-big-gun' armament rendered all existing battleships obsolete and triggered the Anglo-German naval arms race.",
   workbooks: [
     {
       id: 'full',

@@ -74,7 +74,12 @@ function extractCanonicalWorkbookNumbering(lesson, unitId) {
       }
       if (b.tasks) {
         b.tasks.forEach((t, tIdx) => {
-          if (t && typeof t === 'object' && t.type !== 'vocab_match') {
+          if (
+            t &&
+            typeof t === 'object' &&
+            t.type !== 'vocab_match' &&
+            t.type !== 'drag_drop_timeline'
+          ) {
             items.push({
               id: `nb_${bIdx}_t${tIdx}`,
               qNum: globalQNum++,
@@ -242,7 +247,12 @@ targetUnits.forEach((unitId) => {
         if (b.source?.question) actual.push({ id: `nb_${bIdx}_src`, qNum: b.source.qNum });
         if (b.tasks) {
           b.tasks.forEach((t, tIdx) => {
-            if (t && typeof t === 'object' && t.type !== 'vocab_match') {
+            if (
+              t &&
+              typeof t === 'object' &&
+              t.type !== 'vocab_match' &&
+              t.type !== 'drag_drop_timeline'
+            ) {
               actual.push({ id: `nb_${bIdx}_t${tIdx}`, qNum: t.qNum });
             }
           });

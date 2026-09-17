@@ -1120,7 +1120,12 @@ function assignQuestionNumbers(lesson, targetUnitId) {
       if (block.source && block.source.question) block.source.qNum = globalQNum++;
       if (block.tasks) {
         block.tasks.forEach((task) => {
-          if (typeof task === 'object' && task !== null && task.type !== 'vocab_match') {
+          if (
+            typeof task === 'object' &&
+            task !== null &&
+            task.type !== 'vocab_match' &&
+            task.type !== 'drag_drop_timeline'
+          ) {
             task.qNum = globalQNum++;
           }
         });

@@ -385,7 +385,13 @@ export async function switchView(viewName, param = null, skipHistory = false, op
     if (param) await loadUnit(param);
     renderTimeline();
   } else if (viewName === 'booklet') {
-    if (param) await loadUnit(param);
+    if (param && param !== 'all') {
+      await loadUnit(param);
+    } else {
+      state.selectedUnitId = null;
+      window.currentUnitId = null;
+      state.activeUnitData = null;
+    }
     renderBookletView();
   } else if (viewName === 'mock-exams') {
     if (param) await loadUnit(param);
