@@ -369,11 +369,20 @@ function initChessState(forceClean = false) {
     if (raw) {
       const parsed = JSON.parse(raw);
       if (Array.isArray(parsed.players) && parsed.players.length > 0) {
-        chessState.players = parsed.players;
-        chessState.matches = Array.isArray(parsed.matches) ? parsed.matches : [];
-        chessState.checkedInPlayerIds = Array.isArray(parsed.checkedInPlayerIds)
-          ? parsed.checkedInPlayerIds
-          : [];
+        if (
+          Array.isArray(INITIAL_MATCHES) &&
+          INITIAL_MATCHES.length > (parsed.matches?.length || 0)
+        ) {
+          chessState.players = JSON.parse(JSON.stringify(INITIAL_PLAYERS));
+          chessState.matches = JSON.parse(JSON.stringify(INITIAL_MATCHES));
+          chessState.checkedInPlayerIds = chessState.players.map((p) => p.id);
+        } else {
+          chessState.players = parsed.players;
+          chessState.matches = Array.isArray(parsed.matches) ? parsed.matches : [];
+          chessState.checkedInPlayerIds = Array.isArray(parsed.checkedInPlayerIds)
+            ? parsed.checkedInPlayerIds
+            : [];
+        }
         chessState.activePairings = Array.isArray(parsed.activePairings)
           ? parsed.activePairings
           : [];
