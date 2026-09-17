@@ -845,7 +845,7 @@ function generateConceptualTriadPage(lesson, unitId) {
           </span>
         </div>
         <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 14.5pt; color: #0f172a; margin: 3px 0 4px 0; border: none; padding: 0;">
-          Exam Practice: Similarity/Difference &amp; Analytical Explanation
+          Exam Practice: Question 3 (Similarity or Difference) &amp; Question 4 (Explain Why)
         </h2>
       </div>
 
@@ -865,7 +865,7 @@ function generateConceptualTriadPage(lesson, unitId) {
             ${q3.question}
           </div>
           <div style="font-size: 7.2pt; color: #334155; background: #f8fafc; border-left: 3px solid #334155; padding: 3px 8px; border-radius: 3px;">
-            <strong>Strategy:</strong> ${q3.guidance || 'Timing: 5 mins • 1 developed comparative PEEL paragraph with specific knowledge from both eras.'}
+            <strong>Strategy:</strong> ${q3.guidance || 'Timing: 5 mins • 1 developed comparative PEEL paragraph. Focus on ONE similarity OR ONE difference with specific knowledge from both eras. Do NOT write both!'}
           </div>
         </div>
         <!-- Q3 Ruled lines (8 lines) -->

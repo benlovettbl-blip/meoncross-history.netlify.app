@@ -91,7 +91,7 @@ export const DISCIPLINARY_STRANDS = [
     bgColor: '#f0fdf4',
     borderColor: '#bbf7d0',
     summary:
-      'Progresses from challenging linear progress narratives in Year 7 to evaluating the pace and extent of industrial change in Year 8, turning points in Year 9, and Edexcel 8-mark similarity/difference across eras in GCSE.',
+      'Progresses from challenging linear progress narratives in Year 7 to evaluating the pace and extent of industrial change in Year 8, turning points in Year 9, and Edexcel 4-mark similarity or difference across eras in GCSE.',
     years: {
       'Year 7': {
         stage: 'KS3 Foundations',
@@ -143,15 +143,15 @@ export const DISCIPLINARY_STRANDS = [
       },
       'Year 11': {
         stage: 'GCSE Synoptic Mastery (Paper 1 Medicine)',
-        skillHeadline: 'Edexcel 8-mark Similarity & Difference across 750 years',
+        skillHeadline: 'Edexcel 4-mark Similarity or Difference across 750 years',
         progression:
-          'Pupils master the Edexcel 8-mark comparative format: identifying one similarity or difference between two historical eras (e.g. treatment of the Black Death in 1348 vs Great Plague in 1665) and explaining the underlying reasons for continuity or change.',
+          'Pupils master the Edexcel 4-mark comparative format: identifying ONE way in which two historical eras were similar OR different (e.g. treatment of the Black Death in 1348 vs Great Plague in 1665) and explaining the underlying historical reasons for continuity or change.',
         scaffold:
-          'Edexcel 8-Mark Comparative Framework: "One similarity in the treatments used in the 14th and 17th centuries was the reliance on bleeding and purging. In 1348... Similarly, in 1665... This similarity existed because both periods still lacked an accurate understanding of germ theory."',
+          'Edexcel 4-Mark Comparative Framework: "One way in which treatments in the 14th and 17th centuries were similar was the reliance on humoural bloodletting. In 1348... Similarly, in 1665... This similarity existed because both periods still lacked an accurate understanding of germ theory."',
         assessmentFormat:
-          'Edexcel Paper 1 Question 3 (8 marks: Explain one similarity/difference between...)',
+          'Edexcel Paper 1 Question 3 (4 marks: Explain one way in which [X] was similar / different...)',
         modelQuestion:
-          'Explain one similarity in the attempts to treat or prevent the spread of disease during the Black Death (1348) and the Great Plague (1665). (8 marks)',
+          'Explain one way in which attempts to treat or prevent disease were similar during the Black Death (1348) and the Great Plague (1665). (4 marks)',
       },
     },
   },
@@ -346,7 +346,7 @@ export const YEAR_GROUPS_PROGRESSION = [
     ks: 'Key Stage 4 (GCSE)',
     subtitle: 'Synoptic Mastery & Long-Arc Analysis (Papers 1, 2 & 3)',
     focus:
-      '16-mark synoptic factor essays across 750 years (Medicine), 8-mark similarity/difference, Western Front 8-mark utility & follow-up enquiries.',
+      '16-mark synoptic factor essays across 750 years (Medicine), 4-mark similarity or difference, Western Front 8-mark utility & follow-up enquiries.',
     color: '#1e1b4b',
     badge: '#ecfeff',
     badgeText: '#0e7490',
