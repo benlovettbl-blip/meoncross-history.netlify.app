@@ -1032,6 +1032,9 @@
         </div>
 
         <div class="hud-right">
+            <button type="button" id="hud-btn-dossier" class="hud-btn" onclick="window.toggleDossierDrawer()" style="background: #1e3a8a; color: #ffffff; border-color: #3b82f6;" title="Open Section B Sources &amp; Interpretations Side Drawer">
+                <i class="fa-solid fa-book-open"></i> Sources &amp; Interpretations
+            </button>
             <button type="button" id="hud-btn-typing" class="hud-btn hud-btn-typing" title="Toggle Pupil Interactive Typing Mode">
                 <i class="fa-solid fa-keyboard"></i> <span id="typing-status-text">Typing Mode: OFF</span>
             </button>
@@ -1600,6 +1603,12 @@
                     <span class="q-marks">(8)</span>
                 </div>
 
+                <!-- Source Reference & Interactive Slide-Out Drawer Notice -->
+                <div style="border: 1px solid #cbd5e1; border-radius: 4px; background: #f8fafc; padding: 4px 8px; margin-bottom: 5px; font-size: 6.8pt; color: #334155; display: flex; justify-content: space-between; align-items: center;">
+                    <span><strong>Sources Reference:</strong> Study <strong>Source B</strong> and <strong>Source C</strong> on the Section B Historical Enquiry Dossier (Page 5).</span>
+                    <button type="button" class="no-print" onclick="window.toggleDossierDrawer('KT1')" style="background: #1e3a8a; color: #ffffff; border: none; padding: 3px 8px; border-radius: 3px; font-size: 6.8pt; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">📖 View Sources B &amp; C (Slide Out)</button>
+                </div>
+
                 <!-- Utility Scaffolding Bar -->
                 <div class="scaffold-bar">
                     <div class="scaffold-col" style="flex: 1.2;">
@@ -1680,6 +1689,11 @@
                     <span><strong class="q-num">3 (b)</strong> Study Interpretations 1 and 2. They give different views about the main reason why the Montgomery Bus Boycott succeeded. What is the main difference between these views? Explain your answer, using details from both interpretations.</span>
                     <span class="q-marks">(4)</span>
                 </div>
+                <!-- Interpretations Reference Notice -->
+                <div style="border: 1px solid #cbd5e1; border-radius: 3px; background: #f8fafc; padding: 3px 6px; margin-bottom: 3px; font-size: 6.8pt; color: #334155; display: flex; justify-content: space-between; align-items: center;">
+                    <span><strong>Interpretations Reference:</strong> Study <strong>Interpretation 1</strong> and <strong>Interpretation 2</strong> on Page 5.</span>
+                    <button type="button" class="no-print" onclick="window.toggleDossierDrawer('KT1')" style="background: #1e3a8a; color: #ffffff; border: none; padding: 2px 7px; border-radius: 3px; font-size: 6.8pt; font-weight: 800; cursor: pointer;">📖 View Interpretations</button>
+                </div>
                 <div style="border: 1px solid #94a3b8; border-radius: 3px; background: #f8fafc; padding: 3px 6px; margin-bottom: 3px; font-size: 6.8pt; color: #334155;">
                     <strong>Direct Contrast Frame:</strong> <em>Interpretation 1 argues that... whereas Interpretation 2 argues that...</em>
                 </div>
@@ -1755,6 +1769,12 @@
                 <div class="question-prompt">
                     <span><strong class="q-num">3 (d)</strong> How far do you agree with Interpretation 2 about the reasons for the success of the Montgomery Bus Boycott (1955–56)?</span>
                     <span class="q-marks">(16 + 4 SPaG)</span>
+                </div>
+
+                <!-- Dossier Reference Notice -->
+                <div style="border: 1px solid #cbd5e1; border-radius: 3px; background: #f8fafc; padding: 3px 6px; margin-bottom: 4px; font-size: 6.8pt; color: #334155; display: flex; justify-content: space-between; align-items: center;">
+                    <span><strong>Enquiry Core:</strong> Evaluate <strong>Interpretation 2</strong> against <strong>Interpretation 1</strong> and <strong>Sources B &amp; C</strong> (Page 5).</span>
+                    <button type="button" class="no-print" onclick="window.toggleDossierDrawer('KT1')" style="background: #1e3a8a; color: #ffffff; border: none; padding: 2px 7px; border-radius: 3px; font-size: 6.8pt; font-weight: 800; cursor: pointer;">📖 View Dossier (Slide Out)</button>
                 </div>
 
                 <!-- Criteria Judgement Matrix -->
@@ -2694,6 +2714,12 @@ Details in the source that tell me this: The sign designates a completely separa
                     <span class="q-marks">(8)</span>
                 </div>
 
+                <!-- Source Reference & Interactive Slide-Out Drawer Notice -->
+                <div style="border: 1px solid #cbd5e1; border-radius: 4px; background: #f8fafc; padding: 4px 8px; margin-bottom: 5px; font-size: 6.8pt; color: #334155; display: flex; justify-content: space-between; align-items: center;">
+                    <span><strong>Sources Reference:</strong> Study <strong>Source B</strong> and <strong>Source C</strong> on the Section B Historical Enquiry Dossier (Page 5).</span>
+                    <button type="button" class="no-print" onclick="window.toggleDossierDrawer('KT2')" style="background: #1e3a8a; color: #ffffff; border: none; padding: 3px 8px; border-radius: 3px; font-size: 6.8pt; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">📖 View Sources B &amp; C (Slide Out)</button>
+                </div>
+
                 <!-- Utility Scaffolding Bar -->
                 <div class="scaffold-bar">
                     <div class="scaffold-col" style="flex: 1.2;">
@@ -2774,6 +2800,11 @@ Details in the source that tell me this: The sign designates a completely separa
                     <span><strong class="q-num">3 (b)</strong> Study Interpretations 1 and 2. They give different views about the main cause of the urban riots between 1965 and 1967. What is the main difference between these views? Explain your answer, using details from both interpretations.</span>
                     <span class="q-marks">(4)</span>
                 </div>
+                <!-- Interpretations Reference Notice -->
+                <div style="border: 1px solid #cbd5e1; border-radius: 3px; background: #f8fafc; padding: 3px 6px; margin-bottom: 3px; font-size: 6.8pt; color: #334155; display: flex; justify-content: space-between; align-items: center;">
+                    <span><strong>Interpretations Reference:</strong> Study <strong>Interpretation 1</strong> and <strong>Interpretation 2</strong> on Page 5.</span>
+                    <button type="button" class="no-print" onclick="window.toggleDossierDrawer('KT2')" style="background: #1e3a8a; color: #ffffff; border: none; padding: 2px 7px; border-radius: 3px; font-size: 6.8pt; font-weight: 800; cursor: pointer;">📖 View Interpretations</button>
+                </div>
                 <div style="border: 1px solid #94a3b8; border-radius: 3px; background: #f8fafc; padding: 3px 6px; margin-bottom: 3px; font-size: 6.8pt; color: #334155;">
                     <strong>Direct Contrast Frame:</strong> <em>Interpretation 1 argues that... whereas Interpretation 2 argues that...</em>
                 </div>
@@ -2849,6 +2880,12 @@ Details in the source that tell me this: The sign designates a completely separa
                 <div class="question-prompt">
                     <span><strong class="q-num">3 (d)</strong> How far do you agree with Interpretation 2 about the causes of the riots in northern and western cities between 1965 and 1967?</span>
                     <span class="q-marks">(16 + 4 SPaG)</span>
+                </div>
+
+                <!-- Dossier Reference Notice -->
+                <div style="border: 1px solid #cbd5e1; border-radius: 3px; background: #f8fafc; padding: 3px 6px; margin-bottom: 4px; font-size: 6.8pt; color: #334155; display: flex; justify-content: space-between; align-items: center;">
+                    <span><strong>Enquiry Core:</strong> Evaluate <strong>Interpretation 2</strong> against <strong>Interpretation 1</strong> and <strong>Sources B &amp; C</strong> (Page 5).</span>
+                    <button type="button" class="no-print" onclick="window.toggleDossierDrawer('KT2')" style="background: #1e3a8a; color: #ffffff; border: none; padding: 2px 7px; border-radius: 3px; font-size: 6.8pt; font-weight: 800; cursor: pointer;">📖 View Dossier (Slide Out)</button>
                 </div>
 
                 <!-- Criteria Judgement Matrix -->
@@ -3788,6 +3825,12 @@ Details in the source that tell me this: The young student (Walter Gadsden) stan
                     <span class="q-marks">(8)</span>
                 </div>
 
+                <!-- Source Reference & Interactive Slide-Out Drawer Notice -->
+                <div style="border: 1px solid #cbd5e1; border-radius: 4px; background: #f8fafc; padding: 4px 8px; margin-bottom: 5px; font-size: 6.8pt; color: #334155; display: flex; justify-content: space-between; align-items: center;">
+                    <span><strong>Sources Reference:</strong> Study <strong>Source B</strong> and <strong>Source C</strong> on the Section B Historical Enquiry Dossier (Page 5).</span>
+                    <button type="button" class="no-print" onclick="window.toggleDossierDrawer('KT3')" style="background: #1e3a8a; color: #ffffff; border: none; padding: 3px 8px; border-radius: 3px; font-size: 6.8pt; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">📖 View Sources B &amp; C (Slide Out)</button>
+                </div>
+
                 <!-- Utility Scaffolding Bar -->
                 <div class="scaffold-bar">
                     <div class="scaffold-col" style="flex: 1.2;">
@@ -3868,6 +3911,11 @@ Details in the source that tell me this: The young student (Walter Gadsden) stan
                     <span><strong class="q-num">3 (b)</strong> Study Interpretations 1 and 2. They give different views about why US military tactics failed to defeat the Vietcong. What is the main difference between these views? Explain your answer, using details from both interpretations.</span>
                     <span class="q-marks">(4)</span>
                 </div>
+                <!-- Interpretations Reference Notice -->
+                <div style="border: 1px solid #cbd5e1; border-radius: 3px; background: #f8fafc; padding: 3px 6px; margin-bottom: 3px; font-size: 6.8pt; color: #334155; display: flex; justify-content: space-between; align-items: center;">
+                    <span><strong>Interpretations Reference:</strong> Study <strong>Interpretation 1</strong> and <strong>Interpretation 2</strong> on Page 5.</span>
+                    <button type="button" class="no-print" onclick="window.toggleDossierDrawer('KT3')" style="background: #1e3a8a; color: #ffffff; border: none; padding: 2px 7px; border-radius: 3px; font-size: 6.8pt; font-weight: 800; cursor: pointer;">📖 View Interpretations</button>
+                </div>
                 <div style="border: 1px solid #94a3b8; border-radius: 3px; background: #f8fafc; padding: 3px 6px; margin-bottom: 3px; font-size: 6.8pt; color: #334155;">
                     <strong>Direct Contrast Frame:</strong> <em>Interpretation 1 argues that... whereas Interpretation 2 argues that...</em>
                 </div>
@@ -3943,6 +3991,12 @@ Details in the source that tell me this: The young student (Walter Gadsden) stan
                 <div class="question-prompt">
                     <span><strong class="q-num">3 (d)</strong> How far do you agree with Interpretation 2 about the reasons why US military tactics failed to defeat the Vietcong (1965–68)?</span>
                     <span class="q-marks">(16 + 4 SPaG)</span>
+                </div>
+
+                <!-- Dossier Reference Notice -->
+                <div style="border: 1px solid #cbd5e1; border-radius: 3px; background: #f8fafc; padding: 3px 6px; margin-bottom: 4px; font-size: 6.8pt; color: #334155; display: flex; justify-content: space-between; align-items: center;">
+                    <span><strong>Enquiry Core:</strong> Evaluate <strong>Interpretation 2</strong> against <strong>Interpretation 1</strong> and <strong>Sources B &amp; C</strong> (Page 5).</span>
+                    <button type="button" class="no-print" onclick="window.toggleDossierDrawer('KT3')" style="background: #1e3a8a; color: #ffffff; border: none; padding: 2px 7px; border-radius: 3px; font-size: 6.8pt; font-weight: 800; cursor: pointer;">📖 View Dossier (Slide Out)</button>
                 </div>
 
                 <!-- Criteria Judgement Matrix -->
@@ -4882,6 +4936,12 @@ Details in the source that tell me this: The soldier is carrying a heavy M60 mac
                     <span class="q-marks">(8)</span>
                 </div>
 
+                <!-- Source Reference & Interactive Slide-Out Drawer Notice -->
+                <div style="border: 1px solid #cbd5e1; border-radius: 4px; background: #f8fafc; padding: 4px 8px; margin-bottom: 5px; font-size: 6.8pt; color: #334155; display: flex; justify-content: space-between; align-items: center;">
+                    <span><strong>Sources Reference:</strong> Study <strong>Source B</strong> and <strong>Source C</strong> on the Section B Historical Enquiry Dossier (Page 5).</span>
+                    <button type="button" class="no-print" onclick="window.toggleDossierDrawer('KT4')" style="background: #1e3a8a; color: #ffffff; border: none; padding: 3px 8px; border-radius: 3px; font-size: 6.8pt; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">📖 View Sources B &amp; C (Slide Out)</button>
+                </div>
+
                 <!-- Utility Scaffolding Bar -->
                 <div class="scaffold-bar">
                     <div class="scaffold-col" style="flex: 1.2;">
@@ -4962,6 +5022,11 @@ Details in the source that tell me this: The soldier is carrying a heavy M60 mac
                     <span><strong class="q-num">3 (b)</strong> Study Interpretations 1 and 2. They give different views about the main reason for the growth of opposition to the Vietnam War. What is the main difference between these views? Explain your answer, using details from both interpretations.</span>
                     <span class="q-marks">(4)</span>
                 </div>
+                <!-- Interpretations Reference Notice -->
+                <div style="border: 1px solid #cbd5e1; border-radius: 3px; background: #f8fafc; padding: 3px 6px; margin-bottom: 3px; font-size: 6.8pt; color: #334155; display: flex; justify-content: space-between; align-items: center;">
+                    <span><strong>Interpretations Reference:</strong> Study <strong>Interpretation 1</strong> and <strong>Interpretation 2</strong> on Page 5.</span>
+                    <button type="button" class="no-print" onclick="window.toggleDossierDrawer('KT4')" style="background: #1e3a8a; color: #ffffff; border: none; padding: 2px 7px; border-radius: 3px; font-size: 6.8pt; font-weight: 800; cursor: pointer;">📖 View Interpretations</button>
+                </div>
                 <div style="border: 1px solid #94a3b8; border-radius: 3px; background: #f8fafc; padding: 3px 6px; margin-bottom: 3px; font-size: 6.8pt; color: #334155;">
                     <strong>Direct Contrast Frame:</strong> <em>Interpretation 1 argues that... whereas Interpretation 2 argues that...</em>
                 </div>
@@ -5037,6 +5102,12 @@ Details in the source that tell me this: The soldier is carrying a heavy M60 mac
                 <div class="question-prompt">
                     <span><strong class="q-num">3 (d)</strong> How far do you agree with Interpretation 2 about the main reason for the growth of opposition to the Vietnam War in the USA (1968–71)?</span>
                     <span class="q-marks">(16 + 4 SPaG)</span>
+                </div>
+
+                <!-- Dossier Reference Notice -->
+                <div style="border: 1px solid #cbd5e1; border-radius: 3px; background: #f8fafc; padding: 3px 6px; margin-bottom: 4px; font-size: 6.8pt; color: #334155; display: flex; justify-content: space-between; align-items: center;">
+                    <span><strong>Enquiry Core:</strong> Evaluate <strong>Interpretation 2</strong> against <strong>Interpretation 1</strong> and <strong>Sources B &amp; C</strong> (Page 5).</span>
+                    <button type="button" class="no-print" onclick="window.toggleDossierDrawer('KT4')" style="background: #1e3a8a; color: #ffffff; border: none; padding: 2px 7px; border-radius: 3px; font-size: 6.8pt; font-weight: 800; cursor: pointer;">📖 View Dossier (Slide Out)</button>
                 </div>
 
                 <!-- Criteria Judgement Matrix -->
@@ -5419,8 +5490,312 @@ Details in the source that tell me this: Plumes of tear gas are billowing across
 
 
     
+    <!-- Slide-Out Section B Source Booklet Drawer -->
+    <div id="dossier-drawer" class="no-print" style="position: fixed; top: 0; right: -560px; width: 520px; max-width: 92vw; height: 100vh; background: #ffffff; box-shadow: -6px 0 25px rgba(0,0,0,0.35); z-index: 10001; transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; flex-direction: column; font-family: 'Inter', -apple-system, sans-serif; border-left: 3px solid #1e3a8a;">
+        <div style="background: #0f172a; color: #ffffff; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #334155;">
+            <div>
+                <div style="font-size: 9px; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.8px;">PEARSON EDEXCEL GCSE (9–1) · SECTION B</div>
+                <div id="drawer-dossier-title" style="font-size: 13px; font-weight: 800; color: #ffffff; margin-top: 2px;">Historical Enquiry Dossier</div>
+            </div>
+            <button type="button" onclick="window.toggleDossierDrawer()" style="background: #334155; color: #ffffff; border: 1px solid #475569; padding: 5px 10px; border-radius: 4px; font-weight: 800; font-size: 12px; cursor: pointer;">✕ Close</button>
+        </div>
+        <div style="background: #eff6ff; border-bottom: 1px solid #bfdbfe; padding: 6px 14px; font-size: 10px; color: #1e3a8a; display: flex; justify-content: space-between; align-items: center;">
+            <span>📖 Study sources &amp; interpretations while typing answers.</span>
+            <div style="display: flex; gap: 4px;">
+                <button type="button" class="drawer-tab-btn" onclick="window.switchDrawerKt('KT1')" id="tab-btn-KT1" style="font-weight: 800; text-transform: uppercase; background: #1e3a8a; color: #fff; border: none; padding: 2px 7px; border-radius: 3px; font-size: 9px; cursor: pointer;">KT1</button>
+                <button type="button" class="drawer-tab-btn" onclick="window.switchDrawerKt('KT2')" id="tab-btn-KT2" style="font-weight: 800; text-transform: uppercase; background: #e2e8f0; color: #334155; border: none; padding: 2px 7px; border-radius: 3px; font-size: 9px; cursor: pointer;">KT2</button>
+                <button type="button" class="drawer-tab-btn" onclick="window.switchDrawerKt('KT3')" id="tab-btn-KT3" style="font-weight: 800; text-transform: uppercase; background: #e2e8f0; color: #334155; border: none; padding: 2px 7px; border-radius: 3px; font-size: 9px; cursor: pointer;">KT3</button>
+                <button type="button" class="drawer-tab-btn" onclick="window.switchDrawerKt('KT4')" id="tab-btn-KT4" style="font-weight: 800; text-transform: uppercase; background: #e2e8f0; color: #334155; border: none; padding: 2px 7px; border-radius: 3px; font-size: 9px; cursor: pointer;">KT4</button>
+            </div>
+        </div>
+        <div style="flex: 1; overflow-y: auto; padding: 14px; background: #f8fafc;">
+            
+              <div id="drawer-panel-KT1" class="drawer-panel" style="">
+                  <div style="background: #0f172a; color: #ffffff; padding: 8px 12px; font-weight: 800; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; border-radius: 4px; margin-bottom: 12px;">
+                    Historical Enquiry: The Reasons for the Success of the Montgomery Bus Boycott (1955–56)
+                  </div>
+                  
+                  <!-- Source B -->
+                  <div style="background: #ffffff; border: 1.5px solid #000000; padding: 10px 12px; margin-bottom: 12px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1.5px solid #000; padding-bottom: 4px; margin-bottom: 6px;">
+                      <span style="font-weight: 800; font-size: 11px; color: #1e3a8a;">Source B: From a protest flyer mimeographed and distributed in Montgomery, 2 December 1955</span>
+                      <span style="font-size: 9px; font-weight: 700; color: #64748b;">Alabama Department of Archives and History </span>
+                    </div>
+                    <div style="font-size: 11px; line-height: 1.5; color: #000000; font-style: italic; margin-bottom: 8px;">
+                      "Another woman has been arrested and thrown into jail because she refused to get up out of her seat on the bus for a white person... This has to be stopped. Negroes have rights too. If Negroes did not ride the buses, they could not operate; three-fourths of the riders are Negroes. We are asking every Negro to stay off the buses on Monday in protest of the arrest and trial. Don’t ride the buses to work, to town, to school, or anywhere on Monday. If you must work, take a cab, or share a ride, or walk."
+                    </div>
+                    <div style="font-size: 9.5px; color: #475569; border-top: 1px solid #e2e8f0; padding-top: 4px;">
+                      <strong>Provenance:</strong> Protest leaflet written and mimeographed overnight by Jo Ann Robinson and the Women’s Political Council (WPC), distributing 35,000 copies.
+                    </div>
+                  </div>
+
+                  <!-- Source C -->
+                  <div style="background: #ffffff; border: 1.5px solid #000000; padding: 10px 12px; margin-bottom: 12px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1.5px solid #000; padding-bottom: 4px; margin-bottom: 6px;">
+                      <span style="font-weight: 800; font-size: 11px; color: #1e3a8a;">Source C: From an address by Dr Martin Luther King Jr. to the Montgomery Improvement Association, 5 December 1955</span>
+                      <span style="font-size: 9px; font-weight: 700; color: #64748b;">Martin Luther King Jr. Papers Project </span>
+                    </div>
+                    <div style="font-size: 11px; line-height: 1.5; color: #000000; font-style: italic; margin-bottom: 8px;">
+                      "We are here this evening for serious business. We are here in a general sense because first and foremost we are American citizens, and we are determined to apply our citizenship to the fullness of its meaning... There comes a time when people get tired of being trampled over by the iron feet of oppression. Our method will be that of persuasion, not coercion. We will say to the people: let your conscience be your guide. Our actions must be guided by the highest Christian principles of love and non-violence."
+                    </div>
+                    <div style="font-size: 9.5px; color: #475569; border-top: 1px solid #e2e8f0; padding-top: 4px;">
+                      <strong>Provenance:</strong> Speech delivered by Dr Martin Luther King Jr. at Holt Street Baptist Church to over 5,000 citizens at the first mass rally of the boycott.
+                    </div>
+                  </div>
+
+                  <!-- Interpretation 1 -->
+                  <div style="background: #f8fafc; border: 1.5px solid #475569; padding: 10px 12px; margin-bottom: 12px; border-radius: 4px;">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1.5px solid #475569; padding-bottom: 4px; margin-bottom: 6px;">
+                      <span style="font-weight: 800; font-size: 11px; color: #0f172a;">Interpretation 1</span>
+                      <span style="font-size: 9px; font-weight: 700; color: #64748b;">HISTORIOGRAPHY</span>
+                    </div>
+                    <div style="font-size: 10.5px; font-weight: 700; color: #1e293b; margin-bottom: 4px;">From Historian Danielle L. McGuire, 'At the Dark End of the Street: Black Women, Rape, and Resistance' (2010):</div>
+                    <div style="font-size: 10.5px; line-height: 1.45; color: #0f172a;">
+                      "The Montgomery Bus Boycott was fundamentally the achievement of organized Black working-class women. Long before national male leaders arrived, Jo Ann Robinson and the Women’s Political Council had methodically planned a bus strike. Within hours of Rosa Parks’ arrest, Robinson spent the night mimeographing 35,000 leaflets. Over the next 381 days, thousands of domestic maids and cooks walked up to twelve miles a day in freezing winter and blistering summer, while local drivers ran an intricate 300-car dispatch network. It was this daily grassroots courage and economic sacrifice—depriving the bus company of over 70% of its passengers—that brought Montgomery to its knees."
+                    </div>
+                  </div>
+
+                  <!-- Interpretation 2 -->
+                  <div style="background: #f8fafc; border: 1.5px solid #475569; padding: 10px 12px; margin-bottom: 12px; border-radius: 4px;">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1.5px solid #475569; padding-bottom: 4px; margin-bottom: 6px;">
+                      <span style="font-weight: 800; font-size: 11px; color: #0f172a;">Interpretation 2</span>
+                      <span style="font-size: 9px; font-weight: 700; color: #64748b;">HISTORIOGRAPHY</span>
+                    </div>
+                    <div style="font-size: 10.5px; font-weight: 700; color: #1e293b; margin-bottom: 4px;">From Historian David L. Lewis, 'King: A Critical Biography' (1970):</div>
+                    <div style="font-size: 10.5px; line-height: 1.45; color: #0f172a;">
+                      "While grassroots logistics sustained the boycott, the movement achieved national momentum and ultimate victory because of the charismatic moral leadership of Dr Martin Luther King Jr. King provided the strategic vision and rhetorical genius that unified disparate local factions and prevented violent retaliation despite firebombings and arrests. He framed the local dispute as a national crusade for Christian justice, attracting essential northern financial support and national media coverage. Crucially, local economic pressure alone could not change municipal segregation laws; success ultimately depended on the legal strategy that secured the Supreme Court’s Browder v. Gayle ruling."
+                    </div>
+                  </div>
+              </div>
+
+              <div id="drawer-panel-KT2" class="drawer-panel" style="display: none;">
+                  <div style="background: #0f172a; color: #ffffff; padding: 8px 12px; font-weight: 800; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; border-radius: 4px; margin-bottom: 12px;">
+                    Historical Enquiry: The Causes of the Riots in Northern and Western Cities (1965–67)
+                  </div>
+                  
+                  <!-- Source B -->
+                  <div style="background: #ffffff; border: 1.5px solid #000000; padding: 10px 12px; margin-bottom: 12px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1.5px solid #000; padding-bottom: 4px; margin-bottom: 6px;">
+                      <span style="font-weight: 800; font-size: 11px; color: #1e3a8a;">Source B: From the official Report of the Kerner Commission, presented to President Johnson in March 1968</span>
+                      <span style="font-size: 9px; font-weight: 700; color: #64748b;">US Government Publishing Office </span>
+                    </div>
+                    <div style="font-size: 11px; line-height: 1.5; color: #000000; font-style: italic; margin-bottom: 8px;">
+                      "Our nation is moving toward two societies, one black, one white—separate and unequal... Segregation and poverty have created in the racial ghetto a destructive environment totally unknown to white Americans. What white Americans have never fully understood—but what the Negro can never forget—is that white society is deeply implicated in the ghetto. White institutions created it, white institutions maintain it, and white society condones it. Pervasive discrimination in employment and housing, coupled with routine police harassment, has generated a reservoir of frustration that ignited in Watts, Newark, and Detroit."
+                    </div>
+                    <div style="font-size: 9.5px; color: #475569; border-top: 1px solid #e2e8f0; padding-top: 4px;">
+                      <strong>Provenance:</strong> From the official findings of the National Advisory Commission on Civil Disorders (the Kerner Commission), established by President Lyndon B. Johnson to investigate urban riots.
+                    </div>
+                  </div>
+
+                  <!-- Source C -->
+                  <div style="background: #ffffff; border: 1.5px solid #000000; padding: 10px 12px; margin-bottom: 12px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1.5px solid #000; padding-bottom: 4px; margin-bottom: 6px;">
+                      <span style="font-weight: 800; font-size: 11px; color: #1e3a8a;">Source C: From a speech by Stokely Carmichael, chairman of SNCC, addressing a rally in Chicago, July 1966</span>
+                      <span style="font-size: 9px; font-weight: 700; color: #64748b;">Student Nonviolent Coordinating Committee Papers </span>
+                    </div>
+                    <div style="font-size: 11px; line-height: 1.5; color: #000000; font-style: italic; margin-bottom: 8px;">
+                      "We have been begging the white man for freedom for over a century, singing ‘We Shall Overcome’ while his police beat our heads and his judges throw us in jail. Non-violence has failed to protect Black people in the northern slums. The Civil Rights Act did not give our brothers jobs; it did not tear down the rats and roaches in Harlem and Chicago! Black Power means Black people coming together to organize our own strength. If white police come into our communities acting like an occupying army, Black men have a duty to defend themselves and take control of our own destiny."
+                    </div>
+                    <div style="font-size: 9.5px; color: #475569; border-top: 1px solid #e2e8f0; padding-top: 4px;">
+                      <strong>Provenance:</strong> Speech by SNCC leader Stokely Carmichael delivered to an audience of urban Black youths in Chicago, widely broadcast across national media.
+                    </div>
+                  </div>
+
+                  <!-- Interpretation 1 -->
+                  <div style="background: #f8fafc; border: 1.5px solid #475569; padding: 10px 12px; margin-bottom: 12px; border-radius: 4px;">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1.5px solid #475569; padding-bottom: 4px; margin-bottom: 6px;">
+                      <span style="font-weight: 800; font-size: 11px; color: #0f172a;">Interpretation 1</span>
+                      <span style="font-size: 9px; font-weight: 700; color: #64748b;">HISTORIOGRAPHY</span>
+                    </div>
+                    <div style="font-size: 10.5px; font-weight: 700; color: #1e293b; margin-bottom: 4px;">From Historian Harvard Sitkoff, 'The Struggle for Black Equality, 1954–1980' (1981):</div>
+                    <div style="font-size: 10.5px; line-height: 1.45; color: #0f172a;">
+                      "The explosion of urban rebellions in Watts, Chicago, Newark, and Detroit was the direct consequence of intolerable economic despair and de facto segregation in northern ghettos. While the civil rights movement had won voting rights in the South, it had done almost nothing to alleviate poverty, dilapidated tenement housing, and 30% youth unemployment in northern cities. Confined by bank redlining and landlord discrimination into overcrowded slums, and subjected to routine brutality by almost entirely white police forces, young Black urbanites felt completely excluded from American prosperity. The riots were spontaneous eruptions of economic rage against living conditions that legislative civil rights acts had left untouched."
+                    </div>
+                  </div>
+
+                  <!-- Interpretation 2 -->
+                  <div style="background: #f8fafc; border: 1.5px solid #475569; padding: 10px 12px; margin-bottom: 12px; border-radius: 4px;">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1.5px solid #475569; padding-bottom: 4px; margin-bottom: 6px;">
+                      <span style="font-weight: 800; font-size: 11px; color: #0f172a;">Interpretation 2</span>
+                      <span style="font-size: 9px; font-weight: 700; color: #64748b;">HISTORIOGRAPHY</span>
+                    </div>
+                    <div style="font-size: 10.5px; font-weight: 700; color: #1e293b; margin-bottom: 4px;">From Historian Clayborne Carson, 'In Struggle: SNCC and the Black Awakening of the 1960s' (1981):</div>
+                    <div style="font-size: 10.5px; line-height: 1.45; color: #0f172a;">
+                      "The wave of urban violence from 1965 onwards was driven primarily by a profound ideological transformation: the rise of Black Power and militant Black nationalism. Inspired by the uncompromising rhetoric of Malcolm X and popularized by Stokely Carmichael, younger activists completely rejected Martin Luther King’s philosophy of non-violence and interracial integration. Black Power taught urban youth that non-violence was humiliating and ineffective, encouraging them instead to confront white institutional power directly. The fiery speeches of SNCC and Black Panther leaders gave voice and political legitimacy to rebellion, transforming street unrest into conscious acts of defiance against white authority."
+                    </div>
+                  </div>
+              </div>
+
+              <div id="drawer-panel-KT3" class="drawer-panel" style="display: none;">
+                  <div style="background: #0f172a; color: #ffffff; padding: 8px 12px; font-weight: 800; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; border-radius: 4px; margin-bottom: 12px;">
+                    Historical Enquiry: The Reasons Why US Military Tactics Failed to Defeat the Vietcong (1965–68)
+                  </div>
+                  
+                  <!-- Source B -->
+                  <div style="background: #ffffff; border: 1.5px solid #000000; padding: 10px 12px; margin-bottom: 12px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1.5px solid #000; padding-bottom: 4px; margin-bottom: 6px;">
+                      <span style="font-weight: 800; font-size: 11px; color: #1e3a8a;">Source B: From combat memoirs by US Marine Lieutenant Philip Caputo, published in ‘A Rumor of War’ (1977)</span>
+                      <span style="font-size: 9px; font-weight: 700; color: #64748b;">Marine Corps Historical Center </span>
+                    </div>
+                    <div style="font-size: 11px; line-height: 1.5; color: #000000; font-style: italic; margin-bottom: 8px;">
+                      "We were sent on ‘search and destroy’ patrols through dense jungle and steaming swamps. The strategy was simple: find the enemy, fix him, and destroy him with massive artillery and air strikes. But we could almost never locate him. The Vietcong fought on their own terms: a sudden burst of fire from concealed tree lines, a sniper round, or an explosive booby trap made from a recycled artillery shell and bamboo punji sticks. When we entered a village, we could not distinguish a friendly farmer by day from a guerrilla fighter by night. Frustrated soldiers burned thatched huts with Zippo lighters, turning the very peasants we were sent to defend into sworn enemies."
+                    </div>
+                    <div style="font-size: 9.5px; color: #475569; border-top: 1px solid #e2e8f0; padding-top: 4px;">
+                      <strong>Provenance:</strong> Written by Philip Caputo, a US Marine lieutenant who commanded combat infantry units in South Vietnam in 1965–66.
+                    </div>
+                  </div>
+
+                  <!-- Source C -->
+                  <div style="background: #ffffff; border: 1.5px solid #000000; padding: 10px 12px; margin-bottom: 12px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1.5px solid #000; padding-bottom: 4px; margin-bottom: 6px;">
+                      <span style="font-weight: 800; font-size: 11px; color: #1e3a8a;">Source C: From an interview with Vo Thi Mo, a female Vietcong guerrilla fighter in Cu Chi district, recorded in 1982</span>
+                      <span style="font-size: 9px; font-weight: 700; color: #64748b;">War Remnants Museum </span>
+                    </div>
+                    <div style="font-size: 11px; line-height: 1.5; color: #000000; font-style: italic; margin-bottom: 8px;">
+                      "The Americans possessed immense firepower—jets, helicopters, tanks, and chemical poisons that destroyed our rice crops. But they did not know the forest, and they did not know our people. Beneath the soil, we built over two hundred kilometers of multi-level tunnels with barracks, hospitals, and weapons factories. When their planes bombed, we remained safe twenty feet underground. When their infantry advanced, our booby traps—punji stakes smeared with animal dung, tripwires, and toe-poppers—inflicted daily casualties and wrecked their nerves. We were fighting for our own homeland; their soldiers fought only because they were drafted."
+                    </div>
+                    <div style="font-size: 9.5px; color: #475569; border-top: 1px solid #e2e8f0; padding-top: 4px;">
+                      <strong>Provenance:</strong> Oral history interview with a veteran Vietcong combatant who operated in the Cu Chi tunnel network throughout the war.
+                    </div>
+                  </div>
+
+                  <!-- Interpretation 1 -->
+                  <div style="background: #f8fafc; border: 1.5px solid #475569; padding: 10px 12px; margin-bottom: 12px; border-radius: 4px;">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1.5px solid #475569; padding-bottom: 4px; margin-bottom: 6px;">
+                      <span style="font-weight: 800; font-size: 11px; color: #0f172a;">Interpretation 1</span>
+                      <span style="font-size: 9px; font-weight: 700; color: #64748b;">HISTORIOGRAPHY</span>
+                    </div>
+                    <div style="font-size: 10.5px; font-weight: 700; color: #1e293b; margin-bottom: 4px;">From Historian Christian G. Appy, 'Working-Class War: American Combat Soldiers and Vietnam' (1993):</div>
+                    <div style="font-size: 10.5px; line-height: 1.45; color: #0f172a;">
+                      "American military tactics were fundamentally mismatched with the political realities of guerrilla warfare in Vietnam. General Westmoreland’s strategy of ‘search and destroy’ relied on attrition—measuring progress through enemy ‘body counts’ rather than securing territory. Because US troops were dropped into hostile territory by helicopter and evacuated immediately after contact, they never established permanent security for South Vietnamese villagers. Furthermore, the massive reliance on indiscriminate firepower—napalm, defoliants (Agent Orange), and artillery—inflicted horrific civilian casualties, alienating the rural population and pushing thousands of previously neutral peasants into active support for the National Liberation Front."
+                    </div>
+                  </div>
+
+                  <!-- Interpretation 2 -->
+                  <div style="background: #f8fafc; border: 1.5px solid #475569; padding: 10px 12px; margin-bottom: 12px; border-radius: 4px;">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1.5px solid #475569; padding-bottom: 4px; margin-bottom: 6px;">
+                      <span style="font-weight: 800; font-size: 11px; color: #0f172a;">Interpretation 2</span>
+                      <span style="font-size: 9px; font-weight: 700; color: #64748b;">HISTORIOGRAPHY</span>
+                    </div>
+                    <div style="font-size: 10.5px; font-weight: 700; color: #1e293b; margin-bottom: 4px;">From Historian Guenter Lewy, 'America in Vietnam' (1978):</div>
+                    <div style="font-size: 10.5px; line-height: 1.45; color: #0f172a;">
+                      "The failure of the American military effort was not primarily due to flawed US tactics, but to the extraordinary effectiveness, discipline, and strategic design of the communist insurgency. The Vietcong and North Vietnamese Army operated an exceptionally sophisticated underground logistics infrastructure. Their vast network of subterranean tunnels in Cu Chi and the Iron Triangle neutralized American air superiority. Moreover, the Vietcong enforced strict discipline, utilized terror ruthlessly to eliminate uncooperative village leaders, and benefited from an inexhaustible flow of Soviet and Chinese weapons down the Ho Chi Minh Trail. The tenacity and survival techniques of the communist cadres made them impervious to military defeat."
+                    </div>
+                  </div>
+              </div>
+
+              <div id="drawer-panel-KT4" class="drawer-panel" style="display: none;">
+                  <div style="background: #0f172a; color: #ffffff; padding: 8px 12px; font-weight: 800; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; border-radius: 4px; margin-bottom: 12px;">
+                    Historical Enquiry: The Main Reason for the Growth of Opposition to the Vietnam War in the USA (1968–71)
+                  </div>
+                  
+                  <!-- Source B -->
+                  <div style="background: #ffffff; border: 1.5px solid #000000; padding: 10px 12px; margin-bottom: 12px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1.5px solid #000; padding-bottom: 4px; margin-bottom: 6px;">
+                      <span style="font-weight: 800; font-size: 11px; color: #1e3a8a;">Source B: From a special television broadcast by CBS News anchor Walter Cronkite, 27 February 1968</span>
+                      <span style="font-size: 9px; font-weight: 700; color: #64748b;">CBS News Broadcast Archives </span>
+                    </div>
+                    <div style="font-size: 11px; line-height: 1.5; color: #000000; font-style: italic; margin-bottom: 8px;">
+                      "It seems now more certain than ever that the bloody experience of Vietnam is to end in a stalemate. To say that we are closer to victory today is to believe, in the face of the evidence, the optimists who have been wrong in the past. To suggest we are on the edge of defeat is to yield to unreasonable despair. To say that we are mired in stalemate seems the only realistic, yet unsatisfactory, conclusion. It is increasingly clear to this reporter that the only rational way out will be to negotiate, not as victors, but as an honorable people who lived up to their pledge to defend democracy and did the best they could."
+                    </div>
+                    <div style="font-size: 9.5px; color: #475569; border-top: 1px solid #e2e8f0; padding-top: 4px;">
+                      <strong>Provenance:</strong> Broadcast to millions of American households by the nation’s most respected news anchor following his fact-finding mission to Vietnam after the Tet Offensive.
+                    </div>
+                  </div>
+
+                  <!-- Source C -->
+                  <div style="background: #ffffff; border: 1.5px solid #000000; padding: 10px 12px; margin-bottom: 12px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1.5px solid #000; padding-bottom: 4px; margin-bottom: 6px;">
+                      <span style="font-weight: 800; font-size: 11px; color: #1e3a8a;">Source C: From an anti-draft flyer distributed by Students for a Democratic Society (SDS) at university campuses, October 1969</span>
+                      <span style="font-size: 9px; font-weight: 700; color: #64748b;">Wisconsin Historical Society </span>
+                    </div>
+                    <div style="font-size: 11px; line-height: 1.5; color: #000000; font-style: italic; margin-bottom: 8px;">
+                      "Rich young men with political connections go to prestigious colleges and receive student deferments. Working-class and Black youth who cannot afford university are handed M16 rifles and shipped off to die in the jungles for a corrupt dictatorship in Saigon. Over 35,000 American boys have already come home in aluminum coffins, while Washington politicians lie about ‘progress’. We refuse to participate in the slaughter of Vietnamese peasants. Burn your draft cards! Join the nationwide Moratorium on October 15! Strike against the war machine!"
+                    </div>
+                    <div style="font-size: 9.5px; color: #475569; border-top: 1px solid #e2e8f0; padding-top: 4px;">
+                      <strong>Provenance:</strong> Protest pamphlet produced and circulated by the student anti-war organization Students for a Democratic Society (SDS) prior to the October 1969 Moratorium.
+                    </div>
+                  </div>
+
+                  <!-- Interpretation 1 -->
+                  <div style="background: #f8fafc; border: 1.5px solid #475569; padding: 10px 12px; margin-bottom: 12px; border-radius: 4px;">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1.5px solid #475569; padding-bottom: 4px; margin-bottom: 6px;">
+                      <span style="font-weight: 800; font-size: 11px; color: #0f172a;">Interpretation 1</span>
+                      <span style="font-size: 9px; font-weight: 700; color: #64748b;">HISTORIOGRAPHY</span>
+                    </div>
+                    <div style="font-size: 10.5px; font-weight: 700; color: #1e293b; margin-bottom: 4px;">From Historian Chester Pach, 'The Real Media War on Vietnam' (1996):</div>
+                    <div style="font-size: 10.5px; line-height: 1.45; color: #0f172a;">
+                      "The fundamental engine driving mass opposition to the war was television journalism and the uncensored visual exposure of combat horrors. Vietnam was America’s first ‘living-room war’. Night after night, millions of ordinary Americans watched unedited color footage of wounded soldiers, burning huts, civilian body counts, and napalmed children alongside their evening dinners. When trusted national figures like Walter Cronkite declared the war unwinnable after the Tet Offensive, it shattered the government’s credibility. The media’s subsequent exposure of atrocities like the My Lai massacre in 1969 made it impossible for the moral conscience of middle America to support the war any longer."
+                    </div>
+                  </div>
+
+                  <!-- Interpretation 2 -->
+                  <div style="background: #f8fafc; border: 1.5px solid #475569; padding: 10px 12px; margin-bottom: 12px; border-radius: 4px;">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1.5px solid #475569; padding-bottom: 4px; margin-bottom: 6px;">
+                      <span style="font-weight: 800; font-size: 11px; color: #0f172a;">Interpretation 2</span>
+                      <span style="font-size: 9px; font-weight: 700; color: #64748b;">HISTORIOGRAPHY</span>
+                    </div>
+                    <div style="font-size: 10.5px; font-weight: 700; color: #1e293b; margin-bottom: 4px;">From Historian Melvin Small, 'Antiwarriors: The Vietnam War and the Battle for America’s Hearts and Minds' (2002):</div>
+                    <div style="font-size: 10.5px; line-height: 1.45; color: #0f172a;">
+                      "While television coverage was vivid, the primary catalyst for mass domestic opposition was the personal, immediate threat posed by the military draft system combined with skyrocketing American casualties. Young men faced the terrifying prospect of conscription into an ambiguous conflict, producing a massive student rebellion across college campuses. Student organizations like SDS, energized by civil rights techniques, transformed anti-war sentiment into sustained street mobilization, draft-card burnings, and nationwide moratoriums involving millions of demonstrators. It was the visceral fear of the draft, coupled with the rising toll of over 50,000 American deaths, that galvanized grassroots resistance and made the war politically unsustainable."
+                    </div>
+                  </div>
+              </div>
+        </div>
+        <div style="background: #f1f5f9; border-top: 1px solid #cbd5e1; padding: 8px 14px; font-size: 10px; color: #64748b; display: flex; justify-content: space-between; align-items: center;">
+            <span>Option 33: The USA, 1954–75</span>
+            <button type="button" onclick="window.toggleDossierDrawer()" style="background: #1e3a8a; color: #fff; border: none; padding: 3px 8px; border-radius: 3px; font-size: 9px; font-weight: 700; cursor: pointer;">Dock / Hide</button>
+        </div>
+    </div>
+
 <script>
 (function() {
+  window.switchDrawerKt = function(targetKt) {
+    if (!['KT1', 'KT2', 'KT3', 'KT4'].includes(targetKt)) targetKt = 'KT1';
+    ['KT1', 'KT2', 'KT3', 'KT4'].forEach(k => {
+      const panel = document.getElementById('drawer-panel-' + k);
+      const tabBtn = document.getElementById('tab-btn-' + k);
+      if (panel) panel.style.display = (k === targetKt) ? 'block' : 'none';
+      if (tabBtn) {
+        tabBtn.style.background = (k === targetKt) ? '#1e3a8a' : '#e2e8f0';
+        tabBtn.style.color = (k === targetKt) ? '#ffffff' : '#334155';
+      }
+    });
+    const drawer = document.getElementById('dossier-drawer');
+    if (drawer) drawer.setAttribute('data-active-kt', targetKt);
+  };
+
+  window.toggleDossierDrawer = function(ktKey) {
+    const drawer = document.getElementById('dossier-drawer');
+    if (!drawer) return;
+
+    if (!ktKey || ktKey === 'FULL') {
+      const activeAttr = drawer.getAttribute('data-active-kt');
+      if (activeAttr) {
+        ktKey = activeAttr;
+      } else {
+        const qVal = (typeof quickJumpSelect !== 'undefined' && quickJumpSelect) ? quickJumpSelect.value : '';
+        const match = qVal.match(/page-(\d+)/);
+        const pNum = match ? parseInt(match[1]) : 1;
+        if (pNum <= 12) ktKey = 'KT1';
+        else if (pNum <= 24) ktKey = 'KT2';
+        else if (pNum <= 36) ktKey = 'KT3';
+        else ktKey = 'KT4';
+      }
+    }
+
+    const isOpen = drawer.classList.contains('open');
+    if (isOpen && (!ktKey || drawer.getAttribute('data-active-kt') === ktKey)) {
+      drawer.classList.remove('open');
+      drawer.style.right = '-560px';
+      return;
+    }
+
+    window.switchDrawerKt(ktKey);
+    drawer.classList.add('open');
+    drawer.style.right = '0px';
+  };
+
   const INITIAL_SECONDS = 80 * 60; // 1 hour 20 minutes = 4800s
   let totalSeconds = INITIAL_SECONDS;
   let timerInterval = null;

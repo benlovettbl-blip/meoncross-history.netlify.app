@@ -2659,6 +2659,12 @@ function renderBookletHtml(ktKey, meta) {
                     <span class="q-marks">(8)</span>
                 </div>
 
+                <!-- Source Reference & Interactive Slide-Out Drawer Notice -->
+                <div style="border: 1px solid #cbd5e1; border-radius: 4px; background: #f8fafc; padding: 4px 8px; margin-bottom: 5px; font-size: 6.8pt; color: #334155; display: flex; justify-content: space-between; align-items: center;">
+                    <span><strong>Sources Reference:</strong> Study <strong>Source B</strong> and <strong>Source C</strong> on the Section B Historical Enquiry Dossier (Page 5).</span>
+                    <button type="button" class="no-print" onclick="window.toggleDossierDrawer('${ktKey}')" style="background: #1e3a8a; color: #ffffff; border: none; padding: 3px 8px; border-radius: 3px; font-size: 6.8pt; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">📖 View Sources B &amp; C (Slide Out)</button>
+                </div>
+
                 <!-- Utility Scaffolding Bar -->
                 <div class="scaffold-bar">
                     <div class="scaffold-col" style="flex: 1.2;">
@@ -2709,6 +2715,11 @@ function renderBookletHtml(ktKey, meta) {
                     <span><strong class="q-num">3 (b)</strong> ${e.q3b.stem}</span>
                     <span class="q-marks">(4)</span>
                 </div>
+                <!-- Interpretations Reference Notice -->
+                <div style="border: 1px solid #cbd5e1; border-radius: 3px; background: #f8fafc; padding: 3px 6px; margin-bottom: 3px; font-size: 6.8pt; color: #334155; display: flex; justify-content: space-between; align-items: center;">
+                    <span><strong>Interpretations Reference:</strong> Study <strong>Interpretation 1</strong> and <strong>Interpretation 2</strong> on Page 5.</span>
+                    <button type="button" class="no-print" onclick="window.toggleDossierDrawer('${ktKey}')" style="background: #1e3a8a; color: #ffffff; border: none; padding: 2px 7px; border-radius: 3px; font-size: 6.8pt; font-weight: 800; cursor: pointer;">📖 View Interpretations</button>
+                </div>
                 <div style="border: 1px solid #94a3b8; border-radius: 3px; background: #f8fafc; padding: 3px 6px; margin-bottom: 3px; font-size: 6.8pt; color: #334155;">
                     <strong>Direct Contrast Frame:</strong> <em>Interpretation 1 argues that... whereas Interpretation 2 argues that...</em>
                 </div>
@@ -2752,6 +2763,12 @@ function renderBookletHtml(ktKey, meta) {
                 <div class="question-prompt">
                     <span><strong class="q-num">3 (d)</strong> ${e.q3d.stem}</span>
                     <span class="q-marks">(16 + 4 SPaG)</span>
+                </div>
+
+                <!-- Dossier Reference Notice -->
+                <div style="border: 1px solid #cbd5e1; border-radius: 3px; background: #f8fafc; padding: 3px 6px; margin-bottom: 4px; font-size: 6.8pt; color: #334155; display: flex; justify-content: space-between; align-items: center;">
+                    <span><strong>Enquiry Core:</strong> Evaluate <strong>Interpretation 2</strong> against <strong>Interpretation 1</strong> and <strong>Sources B &amp; C</strong> (Page 5).</span>
+                    <button type="button" class="no-print" onclick="window.toggleDossierDrawer('${ktKey}')" style="background: #1e3a8a; color: #ffffff; border: none; padding: 2px 7px; border-radius: 3px; font-size: 6.8pt; font-weight: 800; cursor: pointer;">📖 View Dossier (Slide Out)</button>
                 </div>
 
                 <!-- Criteria Judgement Matrix -->
@@ -3174,6 +3191,9 @@ function renderBookletHtml(ktKey, meta) {
         </div>
 
         <div class="hud-right">
+            <button type="button" id="hud-btn-dossier" class="hud-btn" onclick="window.toggleDossierDrawer()" style="background: #1e3a8a; color: #ffffff; border-color: #3b82f6;" title="Open Section B Sources &amp; Interpretations Side Drawer">
+                <i class="fa-solid fa-book-open"></i> Sources &amp; Interpretations
+            </button>
             <button type="button" id="hud-btn-typing" class="hud-btn hud-btn-typing" title="Toggle Pupil Interactive Typing Mode">
                 <i class="fa-solid fa-keyboard"></i> <span id="typing-status-text">Typing Mode: OFF</span>
             </button>
@@ -3185,8 +3205,143 @@ function renderBookletHtml(ktKey, meta) {
 `;
 
     const digitalTwinScript = `
+    <!-- Slide-Out Section B Source Booklet Drawer -->
+    <div id="dossier-drawer" class="no-print" style="position: fixed; top: 0; right: -560px; width: 520px; max-width: 92vw; height: 100vh; background: #ffffff; box-shadow: -6px 0 25px rgba(0,0,0,0.35); z-index: 10001; transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; flex-direction: column; font-family: 'Inter', -apple-system, sans-serif; border-left: 3px solid #1e3a8a;">
+        <div style="background: #0f172a; color: #ffffff; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #334155;">
+            <div>
+                <div style="font-size: 9px; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.8px;">PEARSON EDEXCEL GCSE (9–1) · SECTION B</div>
+                <div id="drawer-dossier-title" style="font-size: 13px; font-weight: 800; color: #ffffff; margin-top: 2px;">Historical Enquiry Dossier</div>
+            </div>
+            <button type="button" onclick="window.toggleDossierDrawer()" style="background: #334155; color: #ffffff; border: 1px solid #475569; padding: 5px 10px; border-radius: 4px; font-weight: 800; font-size: 12px; cursor: pointer;">✕ Close</button>
+        </div>
+        <div style="background: #eff6ff; border-bottom: 1px solid #bfdbfe; padding: 6px 14px; font-size: 10px; color: #1e3a8a; display: flex; justify-content: space-between; align-items: center;">
+            <span>📖 Study sources &amp; interpretations while typing answers.</span>
+            <div style="display: flex; gap: 4px;">
+                <button type="button" class="drawer-tab-btn" onclick="window.switchDrawerKt('KT1')" id="tab-btn-KT1" style="font-weight: 800; text-transform: uppercase; background: #1e3a8a; color: #fff; border: none; padding: 2px 7px; border-radius: 3px; font-size: 9px; cursor: pointer;">KT1</button>
+                <button type="button" class="drawer-tab-btn" onclick="window.switchDrawerKt('KT2')" id="tab-btn-KT2" style="font-weight: 800; text-transform: uppercase; background: #e2e8f0; color: #334155; border: none; padding: 2px 7px; border-radius: 3px; font-size: 9px; cursor: pointer;">KT2</button>
+                <button type="button" class="drawer-tab-btn" onclick="window.switchDrawerKt('KT3')" id="tab-btn-KT3" style="font-weight: 800; text-transform: uppercase; background: #e2e8f0; color: #334155; border: none; padding: 2px 7px; border-radius: 3px; font-size: 9px; cursor: pointer;">KT3</button>
+                <button type="button" class="drawer-tab-btn" onclick="window.switchDrawerKt('KT4')" id="tab-btn-KT4" style="font-weight: 800; text-transform: uppercase; background: #e2e8f0; color: #334155; border: none; padding: 2px 7px; border-radius: 3px; font-size: 9px; cursor: pointer;">KT4</button>
+            </div>
+        </div>
+        <div style="flex: 1; overflow-y: auto; padding: 14px; background: #f8fafc;">
+            ${['KT1', 'KT2', 'KT3', 'KT4']
+              .map((k) => {
+                const d = KT_DATA[k].exam.dossier;
+                return `
+              <div id="drawer-panel-${k}" class="drawer-panel" style="${k === 'KT1' ? '' : 'display: none;'}">
+                  <div style="background: #0f172a; color: #ffffff; padding: 8px 12px; font-weight: 800; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; border-radius: 4px; margin-bottom: 12px;">
+                    Historical Enquiry: ${d.enquiry}
+                  </div>
+                  
+                  <!-- Source B -->
+                  <div style="background: #ffffff; border: 1.5px solid #000000; padding: 10px 12px; margin-bottom: 12px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1.5px solid #000; padding-bottom: 4px; margin-bottom: 6px;">
+                      <span style="font-weight: 800; font-size: 11px; color: #1e3a8a;">${d.sourceB.title}</span>
+                      <span style="font-size: 9px; font-weight: 700; color: #64748b;">${d.sourceB.shelfmark.split('·')[0]}</span>
+                    </div>
+                    <div style="font-size: 11px; line-height: 1.5; color: #000000; font-style: italic; margin-bottom: 8px;">
+                      ${d.sourceB.extract}
+                    </div>
+                    <div style="font-size: 9.5px; color: #475569; border-top: 1px solid #e2e8f0; padding-top: 4px;">
+                      <strong>Provenance:</strong> ${d.sourceB.provenance}
+                    </div>
+                  </div>
+
+                  <!-- Source C -->
+                  <div style="background: #ffffff; border: 1.5px solid #000000; padding: 10px 12px; margin-bottom: 12px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1.5px solid #000; padding-bottom: 4px; margin-bottom: 6px;">
+                      <span style="font-weight: 800; font-size: 11px; color: #1e3a8a;">${d.sourceC.title}</span>
+                      <span style="font-size: 9px; font-weight: 700; color: #64748b;">${d.sourceC.shelfmark.split('·')[0]}</span>
+                    </div>
+                    <div style="font-size: 11px; line-height: 1.5; color: #000000; font-style: italic; margin-bottom: 8px;">
+                      ${d.sourceC.extract}
+                    </div>
+                    <div style="font-size: 9.5px; color: #475569; border-top: 1px solid #e2e8f0; padding-top: 4px;">
+                      <strong>Provenance:</strong> ${d.sourceC.provenance}
+                    </div>
+                  </div>
+
+                  <!-- Interpretation 1 -->
+                  <div style="background: #f8fafc; border: 1.5px solid #475569; padding: 10px 12px; margin-bottom: 12px; border-radius: 4px;">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1.5px solid #475569; padding-bottom: 4px; margin-bottom: 6px;">
+                      <span style="font-weight: 800; font-size: 11px; color: #0f172a;">Interpretation 1</span>
+                      <span style="font-size: 9px; font-weight: 700; color: #64748b;">HISTORIOGRAPHY</span>
+                    </div>
+                    <div style="font-size: 10.5px; font-weight: 700; color: #1e293b; margin-bottom: 4px;">From ${d.int1.author}:</div>
+                    <div style="font-size: 10.5px; line-height: 1.45; color: #0f172a;">
+                      ${d.int1.text}
+                    </div>
+                  </div>
+
+                  <!-- Interpretation 2 -->
+                  <div style="background: #f8fafc; border: 1.5px solid #475569; padding: 10px 12px; margin-bottom: 12px; border-radius: 4px;">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1.5px solid #475569; padding-bottom: 4px; margin-bottom: 6px;">
+                      <span style="font-weight: 800; font-size: 11px; color: #0f172a;">Interpretation 2</span>
+                      <span style="font-size: 9px; font-weight: 700; color: #64748b;">HISTORIOGRAPHY</span>
+                    </div>
+                    <div style="font-size: 10.5px; font-weight: 700; color: #1e293b; margin-bottom: 4px;">From ${d.int2.author}:</div>
+                    <div style="font-size: 10.5px; line-height: 1.45; color: #0f172a;">
+                      ${d.int2.text}
+                    </div>
+                  </div>
+              </div>`;
+              })
+              .join('\n')}
+        </div>
+        <div style="background: #f1f5f9; border-top: 1px solid #cbd5e1; padding: 8px 14px; font-size: 10px; color: #64748b; display: flex; justify-content: space-between; align-items: center;">
+            <span>Option 33: The USA, 1954–75</span>
+            <button type="button" onclick="window.toggleDossierDrawer()" style="background: #1e3a8a; color: #fff; border: none; padding: 3px 8px; border-radius: 3px; font-size: 9px; font-weight: 700; cursor: pointer;">Dock / Hide</button>
+        </div>
+    </div>
+
 <script>
 (function() {
+  window.switchDrawerKt = function(targetKt) {
+    if (!['KT1', 'KT2', 'KT3', 'KT4'].includes(targetKt)) targetKt = 'KT1';
+    ['KT1', 'KT2', 'KT3', 'KT4'].forEach(k => {
+      const panel = document.getElementById('drawer-panel-' + k);
+      const tabBtn = document.getElementById('tab-btn-' + k);
+      if (panel) panel.style.display = (k === targetKt) ? 'block' : 'none';
+      if (tabBtn) {
+        tabBtn.style.background = (k === targetKt) ? '#1e3a8a' : '#e2e8f0';
+        tabBtn.style.color = (k === targetKt) ? '#ffffff' : '#334155';
+      }
+    });
+    const drawer = document.getElementById('dossier-drawer');
+    if (drawer) drawer.setAttribute('data-active-kt', targetKt);
+  };
+
+  window.toggleDossierDrawer = function(ktKey) {
+    const drawer = document.getElementById('dossier-drawer');
+    if (!drawer) return;
+
+    if (!ktKey || ktKey === 'FULL') {
+      const activeAttr = drawer.getAttribute('data-active-kt');
+      if (activeAttr) {
+        ktKey = activeAttr;
+      } else {
+        const qVal = (typeof quickJumpSelect !== 'undefined' && quickJumpSelect) ? quickJumpSelect.value : '';
+        const match = qVal.match(/page-(\\d+)/);
+        const pNum = match ? parseInt(match[1]) : 1;
+        if (pNum <= 12) ktKey = 'KT1';
+        else if (pNum <= 24) ktKey = 'KT2';
+        else if (pNum <= 36) ktKey = 'KT3';
+        else ktKey = 'KT4';
+      }
+    }
+
+    const isOpen = drawer.classList.contains('open');
+    if (isOpen && (!ktKey || drawer.getAttribute('data-active-kt') === ktKey)) {
+      drawer.classList.remove('open');
+      drawer.style.right = '-560px';
+      return;
+    }
+
+    window.switchDrawerKt(ktKey);
+    drawer.classList.add('open');
+    drawer.style.right = '0px';
+  };
+
   const INITIAL_SECONDS = 80 * 60; // 1 hour 20 minutes = 4800s
   let totalSeconds = INITIAL_SECONDS;
   let timerInterval = null;
