@@ -5,3 +5,5 @@
 /cme      /?view=lessons&unit=cme_new 302!
 /eee/*    /?view=lessons&unit=eee     302!
 /eee      /?view=lessons&unit=eee     302!
+# API routes to Netlify Functions
+/api/chess_sync    /.netlify/functions/chess_sync    200
