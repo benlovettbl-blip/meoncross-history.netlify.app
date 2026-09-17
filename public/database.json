@@ -23561,7 +23561,7 @@
               }
             ],
             "source_context": {
-              "Source A": "Ambroise Paré revolutionized battlefield surgery in 16th-century France. Rejecting the horrific practice of pouring boiling elder oil onto gunshot wounds, he substituted a soothing balm of egg yolks, rose oil, and turpentine. For amputations, he abandoned cautery irons in favor of silk ligatures to tie off arteries. Because so many wounded soldiers survived his operations, Paré collaborated with Parisian armorers and clockmakers to engineer sophisticated mechanical prosthetic limbs with articulated joint gears. **Hinge Question:** Why did Paré's invention of mechanical prosthetic limbs with moving gears represent a decisive shift toward practical engineering and clinical experimentation over ancient medical dogma?",
+              "Source A": "Despite Andreas Vesalius publishing revolutionary anatomical corrections in 1543, practical medical treatments experienced overwhelming continuity throughout the Renaissance. Medical practitioners and barber-surgeons continued to rely upon classical humoural theory, believing illness resulted from an internal imbalance of the Four Humours (blood, phlegm, yellow bile, and black bile). As illustrated in this 16th-century Italian phlebotomy woodcut, physicians prescribed bloodletting from specific veins across the body to purge excessive blood, cool internal fevers, and restore bodily equilibrium. **Hinge Question:** Why did physicians and barber-surgeons continue to prescribe humoural bloodletting throughout the Renaissance, even after Vesalius proved that Galen had made hundreds of anatomical errors?",
               "Source B": "In 1649, apothecary Nicholas Culpeper outraged the London College of Physicians by translating their secret Latin pharmacopoeia into English. In 1652, he published 'The English Physitian' (later known as Culpeper's Complete Herbal), cataloging indigenous British wild herbs and astrological remedies so poor families could treat themselves without paying extortionate fees to university-trained Latin-speaking physicians. The College condemned him as a dangerous populist and quack. **Hinge Question:** Why did the Royal College of Physicians furiously oppose Nicholas Culpeper publishing medical remedies in plain English rather than Latin?",
               "Source C": "Despite Renaissance intellectual breakthroughs, ordinary people rarely had access to university-trained physicians. Instead, medical markets were dominated by traveling 'quacks' (quacksalvers) who set up temporary stages in market squares. Quack doctors wore elaborate theatrical costumes, hired entertainers to draw crowds, and sold colorful bottled cure-alls made of alcohol, opium, and mercury that promised to cure everything from kidney stones to gout. **Hinge Question:** Why did ordinary citizens continue to purchase untested herbal potions and elixirs from traveling quacks throughout the Renaissance, despite the anatomical discoveries of Vesalius?"
             }
@@ -23607,7 +23607,7 @@
                 "options": [
                   "William Harvey.",
                   "Thomas Sydenham.",
-                  "Ambroise Pare",
+                  "Galen.",
                   "Andreas Vesalius."
                 ]
               },
@@ -23688,42 +23688,42 @@
               "tasks": [
                 {
                   "type": "two_sided_argument",
-                  "topic": "Ambroise Paré and Renaissance Surgery",
-                  "instruction": "GCSE Analytical Assessment: Evaluate both the surgical advancements of Ambroise Paré and their practical limitations.",
+                  "topic": "Continuity and Change in Renaissance Treatments (c1500–c1700)",
+                  "instruction": "GCSE Analytical Assessment: Evaluate the extent to which medical treatments improved during the Renaissance (c1500–c1700).",
                   "advancement": {
-                    "title": "Surgical Breakthroughs (Change)",
+                    "title": "Medical Innovations & New Treatments (Change)",
                     "points": [
-                      "In 1537, ran out of boiling elderberry oil at the Siege of Turin and invented a soothing digestive ointment (egg yolk, oil of roses, turpentine) that healed wounds faster without searing pain.",
-                      "Promoted the use of silk ligatures (threads) to tie individual blood vessels during amputations instead of using agonizing red-hot cautery irons.",
-                      "Designed sophisticated articulated artificial limbs and prosthetic eyes for maimed soldiers."
+                      "Global exploration introduced new botanical treatments from the Americas, such as Cinchona bark (containing quinine) to treat malarial fevers and sarsaparilla for syphilis.",
+                      "The growth of alchemy spurred iatrochemistry (medical chemistry), popularized by Paracelsus, introducing mineral-based chemical cures like antimony to purge the body.",
+                      "Thomas Sydenham advocated empirical clinical observation, urging physicians to identify and treat specific diseases rather than isolated individual symptoms."
                     ],
-                    "starter": "On the one hand, Ambroise Paré significantly advanced surgical practice because..."
+                    "starter": "On the one hand, medical treatments experienced important changes during the Renaissance because..."
                   },
                   "limitations": {
-                    "title": "Critical Limitations & Dangers",
+                    "title": "Persistent Tradition & Severe Limitations (Continuity)",
                     "points": [
-                      "Silk ligatures were dirty and unsterilized, often carrying deadly bacteria deep into surgical wounds and causing fatal gangrene/infection.",
-                      "Ligatures took much longer to tie on the chaotic battlefield compared to cauterization, increasing patient blood loss.",
-                      "The discovery of his soothing ointment was entirely accidental and could not prevent wound infections.",
-                      "Surgery still had no effective anaesthetics; operations remained agonizing, horrifying experiences that often caused fatal shock."
+                      "The vast majority of physicians and patients still firmly believed in the Four Humours, continuing to rely on bleeding, purging, and sweating to balance bodily fluids.",
+                      "Without an understanding of Germ Theory or microscopy, physicians could not identify the microscopic causes of infectious disease, leaving treatments powerless against epidemics.",
+                      "Superstitious remedies persisted, such as transference (attempting to pass an illness to an animal or object) and royal touch for the King's Evil.",
+                      "Dangerous chemical cures like antimony and toxic mercury often poisoned patients, while the closure of monastic hospitals left ordinary people dependent on unlicensed quacks."
                     ],
-                    "starter": "However, Paré’s surgical methods had severe limitations because..."
+                    "starter": "However, there was massive continuity in medical treatment because..."
                   },
-                  "synthesis_prompt": "Write a balanced GCSE exam paragraph evaluating the significance of Ambroise Paré in the development of surgery.",
+                  "synthesis_prompt": "Write a balanced GCSE exam paragraph evaluating the extent of change in medical treatments during the Renaissance (c1500–c1700).",
                   "synthesis_connectives": [
-                    "Although Paré pioneered gentler surgical techniques...",
-                    "However, in the absence of antiseptics...",
-                    "This meant that...",
-                    "Overall, his methods were a double-edged sword because..."
+                    "Although global trade and iatrochemistry introduced novel remedies...",
+                    "However, because the Four Humours remained entrenched...",
+                    "This directly resulted in...",
+                    "Overall, continuity heavily outweighed change because..."
                   ],
-                  "model_answer": "On the one hand, Ambroise Paré significantly advanced surgical practice during the Renaissance by challenging brutal medieval methods with empirical battlefield experimentation. As a French army surgeon at the 1537 Siege of Turin, Paré ran out of boiling elderberry oil—the traditional Galenic treatment used to cauterize and 'detoxify' gunpowder wounds. In desperation, he concocted a soothing mixture of egg yolks, oil of roses, and turpentine. The following morning, he discovered that patients treated with the ointment were resting comfortably with cool, uninflamed wounds, whereas those treated with boiling oil were screaming in fever and agony. Furthermore, Paré pioneered the use of silk ligatures to tie individual blood vessels during amputations, sparing patients the torture of the red-hot cautery iron, and designed articulated iron prosthetic limbs for disabled veterans.<br><br>However, Paré’s innovations suffered from dangerous limitations because the biological causes of infection remained completely unknown. Without knowledge of bacteria or antiseptic practices, surgeons handled silk ligatures with dirty, unwashed hands. These unsterilized threads carried deadly microbes deep into amputation stumps, frequently causing fatal post-operative gangrene. Tying multiple ligatures was also far slower than cauterization, meaning wounded soldiers on chaotic battlefields often bled to death before bleeding could be stopped. Most critically, because effective anaesthesia did not exist, surgery remained an agonizing ordeal of shock and trauma. Consequently, while Paré demonstrated that gentler clinical methods were superior to classical dogma, his techniques were double-edged and could not dramatically improve overall surgical survival rates."
+                  "model_answer": "On the one hand, medical treatments experienced genuine change during the Renaissance through global exploration and the emergence of medical chemistry. Explorers returning from the New World introduced valuable new botanical remedies to Europe, most notably the bark of the Cinchona tree (containing quinine), which successfully treated malarial fevers, and sarsaparilla, used against syphilis. Furthermore, the growth of alchemy led to iatrochemistry, promoted by Paracelsus, which introduced mineral and chemical compounds—such as antimony salts and mercury—to target specific illnesses. In England, physician Thomas Sydenham published pioneering clinical observations that encouraged doctors to categorize diseases as distinct species rather than viewing each patient's illness as a unique humoural imbalance. These developments marked the first steps away from medieval herbal tradition.<br><br>However, continuity far outweighed change for ordinary patients because traditional humoural dogma remained deeply entrenched. Throughout the 16th and 17th centuries, the overwhelming majority of university-educated physicians and ordinary barber-surgeons continued to prescribe traditional bloodletting, purging, and sweating to rebalance the Four Humours. Because Germ Theory had not yet been discovered and bacteria remained completely unknown, medical practitioners had no understanding of infection, rendering treatments powerless against major killers like the plague. Furthermore, superstitious practices like transference (rubbing warts with onions or sleeping next to sheep) and royal touch remained popular, while toxic chemical remedies like mercury often severely poisoned patients. Consequently, while the Renaissance introduced new ingredients to the pharmacopoeia, practical medical treatments saw little meaningful improvement, with Galenic humoural methods remaining dominant until the late 19th century."
                 }
               ],
-              "image": "/images/pare_artificial_limbs.jpg",
-              "image_alt": "Source A: Ambroise Paré's Mechanical Artificial Limbs (1575)",
-              "caption": "Detailed mechanical diagrams of articulated artificial iron arms and hands with cogged gears and springs designed by French army surgeon Ambroise Paré.",
+              "image": "/images/renaissance_phlebotomy_man.jpg",
+              "image_alt": "Source A: 16th-Century Phlebotomy and Humoural Bloodletting Woodcut",
+              "caption": "Woodcut diagram from a 16th-century Italian medical text detailing specific vein points on the human body to be lanced for humoural bloodletting.",
               "source_letter": "A",
-              "image_context": "Ambroise Paré revolutionized battlefield surgery in 16th-century France. Rejecting the horrific practice of pouring boiling elder oil onto gunshot wounds, he substituted a soothing balm of egg yolks, rose oil, and turpentine. For amputations, he abandoned cautery irons in favor of silk ligatures to tie off arteries. Because so many wounded soldiers survived his operations, Paré collaborated with Parisian armorers and clockmakers to engineer sophisticated mechanical prosthetic limbs with articulated joint gears. **Hinge Question:** Why did Paré's invention of mechanical prosthetic limbs with moving gears represent a decisive shift toward practical engineering and clinical experimentation over ancient medical dogma?"
+              "image_context": "Despite Andreas Vesalius publishing revolutionary anatomical corrections in 1543, practical medical treatments experienced overwhelming continuity throughout the Renaissance. Medical practitioners and barber-surgeons continued to rely upon classical humoural theory, believing illness resulted from an internal imbalance of the Four Humours (blood, phlegm, yellow bile, and black bile). As illustrated in this 16th-century Italian phlebotomy woodcut, physicians prescribed bloodletting from specific veins across the body to purge excessive blood, cool internal fevers, and restore bodily equilibrium. **Hinge Question:** Why did physicians and barber-surgeons continue to prescribe humoural bloodletting throughout the Renaissance, even after Vesalius proved that Galen had made hundreds of anatomical errors?"
             },
             {
               "text": "**Continuity and Change in Prevention**\n\nPeople still desperately tried to avoid breathing in miasma (bad air) by carrying sweet-smelling herbs, and town councils continued to enforce the removal of rotting sewage from streets.\n\nPeople still followed the Regimen Sanitatis (moderation in diet and exercise), but also began using new instruments like barometers to try and link specific weather conditions to outbreaks of disease.\n\nCrucially, bathing became far less fashionable. The terrifying spread of syphilis (the Great Pox) across Europe had been linked to public bathhouses, so people instead tried to keep clean by regularly changing their linen clothes. Despite changing attitudes towards public bathing and a more scientific approach to observing the weather, prevention methods remained largely ineffective because the true microscopic causes of disease remained invisible.",
@@ -24086,20 +24086,20 @@
           "video": [
             {
               "url": "https://www.youtube.com/watch?v=walfj2dpU-E",
-              "title": "Vesalius, Paré and Harvey | Secondary History - Medicine Through Time"
+              "title": "Vesalius and Harvey | Secondary History - Medicine Through Time"
             }
           ],
           "sources": [
             {
               "id": "source_a",
               "letter": "A",
-              "title": "Source A: Ambroise Paré's Mechanical Artificial Limbs (1575)",
-              "src": "/images/pare_artificial_limbs.jpg",
-              "image": "/images/pare_artificial_limbs.jpg",
-              "caption": "Detailed mechanical diagrams of articulated artificial iron arms and hands with cogged gears and springs designed by French army surgeon Ambroise Paré.",
-              "provenance": "Engraving from Les Oeuvres d'Ambroise Paré, Conseiller, et Premier Chirurgien du Roy, Paris, 1575.",
-              "context": "Ambroise Paré revolutionized battlefield surgery in 16th-century France. Rejecting the horrific practice of pouring boiling elder oil onto gunshot wounds, he substituted a soothing balm of egg yolks, rose oil, and turpentine. For amputations, he abandoned cautery irons in favor of silk ligatures to tie off arteries. Because so many wounded soldiers survived his operations, Paré collaborated with Parisian armorers and clockmakers to engineer sophisticated mechanical prosthetic limbs with articulated joint gears.",
-              "hinge_question": "Why did Paré's invention of mechanical prosthetic limbs with moving gears represent a decisive shift toward practical engineering and clinical experimentation over ancient medical dogma?"
+              "title": "Source A: 16th-Century Phlebotomy and Humoural Bloodletting Woodcut",
+              "src": "/images/renaissance_phlebotomy_man.jpg",
+              "image": "/images/renaissance_phlebotomy_man.jpg",
+              "caption": "Woodcut diagram from a 16th-century Italian medical text detailing specific vein points on the human body to be lanced for humoural bloodletting.",
+              "provenance": "Italian medical treatise woodcut, 16th century (Wellcome Collection, London).",
+              "context": "Despite Andreas Vesalius publishing revolutionary anatomical corrections in 1543, practical medical treatments experienced overwhelming continuity throughout the Renaissance. Medical practitioners and barber-surgeons continued to rely upon classical humoural theory, believing illness resulted from an internal imbalance of the Four Humours (blood, phlegm, yellow bile, and black bile). As illustrated in this 16th-century Italian phlebotomy woodcut, physicians prescribed bloodletting from specific veins across the body to purge excessive blood, cool internal fevers, and restore bodily equilibrium.",
+              "hinge_question": "Why did physicians and barber-surgeons continue to prescribe humoural bloodletting throughout the Renaissance, even after Vesalius proved that Galen had made hundreds of anatomical errors?"
             },
             {
               "id": "source_b",
@@ -24169,7 +24169,7 @@
                 "options": [
                   "William Harvey.",
                   "Thomas Sydenham.",
-                  "Ambroise Pare",
+                  "Galen.",
                   "Andreas Vesalius."
                 ]
               },
@@ -24851,7 +24851,7 @@
                   "Andreas Vesalius.",
                   "William Harvey.",
                   "Thomas Sydenham.",
-                  "Ambroise Pare"
+                  "Galen."
                 ]
               },
               {
@@ -25489,7 +25489,7 @@
                 "options": [
                   "William Harvey.",
                   "Thomas Sydenham.",
-                  "Ambroise Pare",
+                  "Galen.",
                   "Andreas Vesalius."
                 ]
               }
@@ -27243,7 +27243,7 @@
                   "William Harvey.",
                   "Andreas Vesalius.",
                   "Thomas Sydenham.",
-                  "Ambroise Pare"
+                  "Galen."
                 ]
               },
               {
@@ -28414,7 +28414,7 @@
                   "Andreas Vesalius.",
                   "William Harvey.",
                   "Thomas Sydenham.",
-                  "Ambroise Pare"
+                  "Galen."
                 ]
               },
               {
@@ -31786,7 +31786,7 @@
             {
               "question": "Which pioneering surgeon developed early plastic surgery techniques to rebuild the severe, disfiguring facial injuries caused by shrapnel?",
               "options": [
-                "Ambroise Paré",
+                "Joseph Lister",
                 "John Snow",
                 "Harold Gillies",
                 "Edwin Chadwick"
