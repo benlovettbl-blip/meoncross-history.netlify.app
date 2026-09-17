@@ -250,6 +250,7 @@ export function bindEvents() {
       header.style.cursor = 'pointer';
 
       const content = document.createElement('div');
+      content.className = 'accordion-content';
       content.style.display = defaultOpen ? 'block' : 'none';
       content.style.transition = 'all 0.3s ease';
 
@@ -272,6 +273,7 @@ export function bindEvents() {
       unitList.forEach((unit) => {
         const link = document.createElement('div');
         link.className = 'nav-item';
+        link.setAttribute('data-unit-id', unit.id);
         link.style.cursor = 'pointer';
         link.style.display = 'flex';
         link.style.alignItems = 'center';
@@ -282,12 +284,16 @@ export function bindEvents() {
         link.style.color = 'rgba(255,255,255,0.85)';
 
         link.addEventListener('mouseenter', () => {
-          link.style.background = 'rgba(255,255,255,0.1)';
-          link.style.color = '#fff';
+          if (!link.classList.contains('active-unit-tree-item')) {
+            link.style.background = 'rgba(255,255,255,0.1)';
+            link.style.color = '#fff';
+          }
         });
         link.addEventListener('mouseleave', () => {
-          link.style.background = 'transparent';
-          link.style.color = 'rgba(255,255,255,0.85)';
+          if (!link.classList.contains('active-unit-tree-item')) {
+            link.style.background = 'transparent';
+            link.style.color = 'rgba(255,255,255,0.85)';
+          }
         });
 
         link.innerHTML = `<i class="fa-solid ${unit.id === 'great_war' || unit.id === 'great_war_part2' ? 'fa-helmet-safety' : 'fa-book'}" style="opacity: 0.7; width: 20px; text-align: center;"></i> <span style="font-size: 0.85rem; line-height: 1.2;">${unit.title || 'Untitled Unit'}</span>`;
@@ -298,9 +304,9 @@ export function bindEvents() {
       });
     };
 
-    renderAccordionGroup('GCSE Battlefield Tour (Y10–11)', tripUnits, true);
-    renderAccordionGroup('Year 7', year7Units, true);
-    renderAccordionGroup('Year 8', year8Units, true);
+    renderAccordionGroup('GCSE Battlefield Tour (Y10–11)', tripUnits, false);
+    renderAccordionGroup('Year 7', year7Units, false);
+    renderAccordionGroup('Year 8', year8Units, false);
 
     // Year 9: show accordion even when only coming-soon units exist
     const header9 = document.createElement('div');
@@ -308,6 +314,7 @@ export function bindEvents() {
     header9.style.margin = '10px 16px 8px';
     header9.style.cursor = 'pointer';
     const content9 = document.createElement('div');
+    content9.className = 'accordion-content';
     content9.style.display = 'none';
     header9.addEventListener('click', () => {
       const isOpen = content9.style.display === 'block';
@@ -320,15 +327,20 @@ export function bindEvents() {
       year9Units.forEach((unit) => {
         const link = document.createElement('div');
         link.className = 'nav-item';
+        link.setAttribute('data-unit-id', unit.id);
         link.style.cssText =
           'cursor:pointer;display:flex;align-items:center;gap:8px;padding:8px 16px;border-radius:6px;margin:0 8px 4px 8px;color:rgba(255,255,255,0.85);';
         link.addEventListener('mouseenter', () => {
-          link.style.background = 'rgba(255,255,255,0.1)';
-          link.style.color = '#fff';
+          if (!link.classList.contains('active-unit-tree-item')) {
+            link.style.background = 'rgba(255,255,255,0.1)';
+            link.style.color = '#fff';
+          }
         });
         link.addEventListener('mouseleave', () => {
-          link.style.background = 'transparent';
-          link.style.color = 'rgba(255,255,255,0.85)';
+          if (!link.classList.contains('active-unit-tree-item')) {
+            link.style.background = 'transparent';
+            link.style.color = 'rgba(255,255,255,0.85)';
+          }
         });
         link.innerHTML = `<i class="fa-solid fa-book" style="opacity: 0.7; width: 20px; text-align: center;"></i> <span style="font-size: 0.85rem; line-height: 1.2;">${unit.title || 'Untitled Unit'}</span>`;
         link.addEventListener('click', () => {
@@ -354,7 +366,44 @@ export function bindEvents() {
     sidebarUnitsContainer.appendChild(header9);
     sidebarUnitsContainer.appendChild(content9);
 
-    renderAccordionGroup('Year 10 (GCSE)', year10Units, true);
-    renderAccordionGroup('Year 11 (GCSE)', year11Units, true);
+    renderAccordionGroup('Year 10 (GCSE)', year10Units, false);
+    renderAccordionGroup('Year 11 (GCSE)', year11Units, false);
   }
 }
+
+// Active Unit Tree Highlighting and Auto-Expansion in Lower Sidebar
+window.highlightActiveSidebarUnit = function (unitId) {
+  if (!unitId) {
+    document.querySelectorAll('#sidebar-unit-links .nav-item').forEach((el) => {
+      el.classList.remove('active-unit-tree-item');
+    });
+    return;
+  }
+
+  let targetId = unitId;
+  if (targetId === 'gcse_middle_east_1945_1995_new') targetId = 'cme_new';
+  if (targetId === 'gcse_usa_1954_1975') targetId = 'usa';
+  if (targetId === 'gcse_elizabethan_england') targetId = 'eee';
+  if (targetId === 'great_war_v2') targetId = 'great_war';
+
+  document.querySelectorAll('#sidebar-unit-links .nav-item').forEach((el) => {
+    const elId = el.getAttribute('data-unit-id');
+    if (elId === targetId) {
+      el.classList.add('active-unit-tree-item');
+      const parentAccordion = el.closest('.accordion-content');
+      if (parentAccordion && parentAccordion.style.display !== 'block') {
+        parentAccordion.style.display = 'block';
+        const parentHeader = parentAccordion.previousElementSibling;
+        if (parentHeader) {
+          const icon = parentHeader.querySelector('i');
+          if (icon) {
+            icon.classList.remove('fa-chevron-down');
+            icon.classList.add('fa-chevron-up');
+          }
+        }
+      }
+    } else {
+      el.classList.remove('active-unit-tree-item');
+    }
+  });
+};

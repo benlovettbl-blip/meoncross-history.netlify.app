@@ -53,7 +53,11 @@ export function initNavigationUI() {
     document.querySelectorAll('.sidebar-nav .nav-item').forEach((item) => {
       item.classList.remove('active');
     });
-    const navItem = document.getElementById(`nav-${viewName}`);
+    const isUnitBookletActive =
+      viewName === 'booklet' && (state.selectedUnitId || window.currentUnitId);
+    const activeNavId = isUnitBookletActive ? 'nav-unit-booklet' : `nav-${viewName}`;
+    const navItem =
+      document.getElementById(activeNavId) || document.getElementById(`nav-${viewName}`);
     if (navItem) navItem.classList.add('active');
 
     // Update active mobile bottom nav item
@@ -338,23 +342,30 @@ export async function switchView(viewName, param = null, skipHistory = false, op
   }
 
   // Clean up unit-specific sidebar navigation on global views
-  if (
+  const isGlobalView =
     viewName === 'dashboard' ||
     viewName === 'profile' ||
     viewName === 'curriculum' ||
     viewName === 'competitions' ||
     viewName === 'chess' ||
-    viewName === 'booklet'
-  ) {
+    (viewName === 'booklet' && (!param || param === 'all'));
+
+  if (isGlobalView) {
+    const globalNav = document.getElementById('sidebar-global-nav');
+    const unitWorkspace = document.getElementById('sidebar-unit-workspace');
+    if (globalNav) globalNav.style.display = 'flex';
+    if (unitWorkspace) unitWorkspace.style.display = 'none';
+
     const navBooklet = document.getElementById('nav-booklet');
     if (navBooklet) {
       navBooklet.style.display = 'flex';
-      navBooklet.onclick = () => switchView('booklet');
+      navBooklet.onclick = () => switchView('booklet', 'all');
     }
 
     [
       'nav-lessons',
       'nav-interactive',
+      'nav-unit-booklet',
       'nav-timeline',
       'nav-mock-exams',
       'nav-decisions',
@@ -365,6 +376,10 @@ export async function switchView(viewName, param = null, skipHistory = false, op
       const el = document.getElementById(id);
       if (el) el.style.display = 'none';
     });
+
+    if (typeof window.highlightActiveSidebarUnit === 'function') {
+      window.highlightActiveSidebarUnit(null);
+    }
   }
 
   // Map direct unit view aliases
@@ -545,17 +560,57 @@ async function loadUnit(unitId) {
 }
 
 function updateSidebarForUnit(unitId, unitData = {}) {
+  const globalNav = document.getElementById('sidebar-global-nav');
+  const unitWorkspace = document.getElementById('sidebar-unit-workspace');
+  if (globalNav) globalNav.style.display = 'none';
+  if (unitWorkspace) unitWorkspace.style.display = 'flex';
+
   const navDecisions = document.getElementById('nav-decisions');
   const navTaboo = document.getElementById('nav-taboo');
   const navLessons = document.getElementById('nav-lessons');
+  const navLessonsLabel = document.getElementById('nav-lessons-label');
+  const navLessonsCountPill = document.getElementById('nav-lessons-count-pill');
   const navInteractive = document.getElementById('nav-interactive');
   const navTimeline = document.getElementById('nav-timeline');
-  const navBooklet = document.getElementById('nav-booklet');
+  const navUnitBooklet = document.getElementById('nav-unit-booklet');
   const navMockExams = document.getElementById('nav-mock-exams');
   const navIndividuals = document.getElementById('nav-individuals');
   const navReading = document.getElementById('nav-reading');
 
+  const unitKeystage = document.getElementById('sidebar-unit-keystage');
+  const unitTitleEl = document.getElementById('sidebar-unit-title');
+
   const isTrip = unitId === 'trip_ypres' || unitData.type === 'trip';
+
+  // Set KeyStage badge
+  let ksLabel = 'KS3 HISTORY';
+  if (
+    unitId.startsWith('gcse_') ||
+    unitId === 'cme_new' ||
+    unitId === 'weimar_nazi_germany' ||
+    unitId === 'edexcel_medicine' ||
+    unitId === 'eee' ||
+    unitId === 'usa'
+  ) {
+    ksLabel = 'EDEXCEL GCSE';
+  } else if (isTrip) {
+    ksLabel = 'BATTLEFIELD TOUR';
+  }
+  if (unitKeystage) unitKeystage.textContent = ksLabel;
+
+  // Set Unit Title
+  if (unitTitleEl) {
+    const title = unitData.title || (unitData.meta && unitData.meta.title) || 'Unit Scheme of Work';
+    unitTitleEl.textContent = title;
+  }
+
+  // Calculate and display Lesson Count Micro-Badge
+  const lessons = unitData.lessons || unitData.subtopics || [];
+  const lessonCount = lessons.length;
+  if (navLessonsCountPill) {
+    navLessonsCountPill.textContent = isTrip ? `${lessonCount} Stops` : `${lessonCount} Lessons`;
+    navLessonsCountPill.style.display = lessonCount > 0 ? 'inline-block' : 'none';
+  }
 
   if (isTrip) {
     // Battlefield Tour Unit: Configure Tour Itinerary tab and Pupil Family Hero tab
@@ -564,8 +619,7 @@ function updateSidebarForUnit(unitId, unitData = {}) {
       navLessons.dataset.action = 'switch-view';
       navLessons.dataset.view = 'lessons';
       navLessons.dataset.unit = unitId;
-      navLessons.innerHTML =
-        '<i class="fa-solid fa-map-location-dot"></i><span>Tour Itinerary</span>';
+      if (navLessonsLabel) navLessonsLabel.textContent = 'Tour Itinerary';
       navLessons.onclick = () => switchView('lessons', unitId);
     }
     if (navIndividuals) {
@@ -580,9 +634,8 @@ function updateSidebarForUnit(unitId, unitData = {}) {
         const raw =
           state.db && state.db[unitId] ? state.db[unitId] : state.activeUnitData || unitData;
         const uData = raw && raw.data ? raw.data : raw || {};
-        const lessons =
-          uData.lessons || (state.activeUnitData && state.activeUnitData.lessons) || [];
-        const idx = lessons.findIndex((l) => l.id === 'hero_crummack');
+        const lList = uData.lessons || (state.activeUnitData && state.activeUnitData.lessons) || [];
+        const idx = lList.findIndex((l) => l.id === 'hero_crummack');
         if (idx !== -1 && typeof window.renderLessonByIndex === 'function') {
           window.renderLessonByIndex(idx);
         } else {
@@ -592,11 +645,15 @@ function updateSidebarForUnit(unitId, unitData = {}) {
     }
     if (navInteractive) navInteractive.style.display = 'none';
     if (navTimeline) navTimeline.style.display = 'none';
-    if (navBooklet) navBooklet.style.display = 'none';
+    if (navUnitBooklet) navUnitBooklet.style.display = 'none';
     if (navMockExams) navMockExams.style.display = 'none';
     if (navDecisions) navDecisions.style.display = 'none';
     if (navTaboo) navTaboo.style.display = 'none';
     if (navReading) navReading.style.display = 'none';
+
+    if (typeof window.highlightActiveSidebarUnit === 'function') {
+      window.highlightActiveSidebarUnit(unitId);
+    }
     return;
   }
 
@@ -606,7 +663,7 @@ function updateSidebarForUnit(unitId, unitData = {}) {
     navLessons.dataset.action = 'switch-view';
     navLessons.dataset.view = 'lessons';
     navLessons.dataset.unit = unitId;
-    navLessons.innerHTML = '<i class="fa-solid fa-book-open"></i><span>Study Lessons</span>';
+    if (navLessonsLabel) navLessonsLabel.textContent = 'Study Lessons';
     navLessons.onclick = () => switchView('lessons', unitId);
   }
 
@@ -623,6 +680,17 @@ function updateSidebarForUnit(unitId, unitData = {}) {
     navInteractive.style.display = 'none';
   }
 
+  // Unit Printable Booklet (nested inside Unit Workspace)
+  if (navUnitBooklet) {
+    navUnitBooklet.style.display = 'flex';
+    navUnitBooklet.dataset.action = 'switch-view';
+    navUnitBooklet.dataset.view = 'booklet';
+    navUnitBooklet.dataset.unit = unitId;
+    navUnitBooklet.innerHTML =
+      '<i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i><span>Printable Unit Booklet</span>';
+    navUnitBooklet.onclick = () => switchView('booklet', unitId);
+  }
+
   const hasTimeline =
     (unitData.timelineEvents && unitData.timelineEvents.length > 0) ||
     (unitData.timeline && unitData.timeline.length > 0);
@@ -634,14 +702,6 @@ function updateSidebarForUnit(unitId, unitData = {}) {
     navTimeline.onclick = () => switchView('timeline', unitId);
   } else if (navTimeline) {
     navTimeline.style.display = 'none';
-  }
-
-  if (navBooklet) {
-    navBooklet.style.display = 'flex';
-    navBooklet.dataset.action = 'switch-view';
-    navBooklet.dataset.view = 'booklet';
-    navBooklet.dataset.unit = unitId;
-    navBooklet.onclick = () => switchView('booklet', unitId);
   }
 
   const hasMockExams = Boolean(
@@ -705,5 +765,10 @@ function updateSidebarForUnit(unitId, unitData = {}) {
       navDecisions.style.display = 'none';
       navTaboo.style.display = 'none';
     }
+  }
+
+  // Highlight active unit in lower sidebar tree
+  if (typeof window.highlightActiveSidebarUnit === 'function') {
+    window.highlightActiveSidebarUnit(unitId);
   }
 }
