@@ -32,7 +32,7 @@ const great_war = {
   ],
   lessons: [
     {
-      id: 'lesson_0',
+      id: 'lesson_1',
       title: 'How was the German Empire created in 1871?',
       a4_map: ['/images/german_empire_1871.png', '/images/modern_germany_map.png'],
       teacher_notes: {
@@ -368,7 +368,7 @@ const great_war = {
       },
     },
     {
-      id: 'lesson_1',
+      id: 'lesson_2',
       title: 'How did the Franco-Prussian War create a lasting legacy of hatred?',
       video: [
         {
@@ -376,6 +376,9 @@ const great_war = {
           url: 'https://www.youtube.com/watch?v=xfTI_YLapog',
           title: 'Welcome To Glory & Defeat - Why We Should Remember The Franco-Prussian War',
           duration: '4 mins 28 secs',
+          pathway: 'Broader Context & Strategic Causes',
+          teacher_guidance:
+            'Excellent introductory hook, homework primer, or flipped learning task before analyzing the Ems Telegram and the proclamation in the Hall of Mirrors.',
           viewing_task:
             'Watch this introductory overview and note down three reasons why the Franco-Prussian War of 1870–71 was a crucial turning point that shaped modern European history and paved the path toward 1914.',
           model_answer:
@@ -386,6 +389,9 @@ const great_war = {
           url: 'https://www.youtube.com/watch?v=j1Yk0lzV40Q',
           title: 'History Matters: The Franco Prussian War (Short Animated Documentary)',
           duration: '3 mins 49 secs',
+          pathway: 'Quick Summary',
+          teacher_guidance:
+            'Ideal for starter recaps, rapid retrieval, or lower-attaining / SEN learners needing core factual concepts without cognitive overload.',
           viewing_task:
             'Identify how Otto von Bismarck engineered the conflict against Napoleon III, how the German Empire was proclaimed in Versailles, and why the annexation of Alsace-Lorraine created permanent French resentment.',
           model_answer:
@@ -396,6 +402,9 @@ const great_war = {
           url: 'https://www.youtube.com/watch?v=xVISzFmBiPU',
           title: 'The Armchair Historian: How Prussia Ended The French Empire',
           duration: '27 mins 56 secs',
+          pathway: 'In-Depth Military Mechanics',
+          teacher_guidance:
+            'Great for high-attainers wanting granular tactical detail on Krupp breech-loading steel artillery, railway mobilization, and the Sedan encirclement.',
           viewing_task:
             'Observe the technological and logistical advantages of the Prussian military (Krupp breech-loading artillery, needle guns, railway mobilization) over the French Imperial Army.',
           model_answer:
@@ -465,6 +474,32 @@ const great_war = {
           term: 'Reinsurance Treaty',
           definition:
             'A secret 1887 agreement between Germany and Russia pledging mutual neutrality if attacked.',
+        },
+        {
+          term: 'Nationalism',
+          definition:
+            "A fierce devotion to one's nation, believing shared language and culture should unite an independent state.",
+        },
+        {
+          term: 'Imperialism',
+          definition:
+            "The policy of extending a nation's authority by territorial acquisition or political/economic dominance.",
+        },
+      ],
+      distinction_tasks: [
+        {
+          terms: ['Annexation', 'Revanche'],
+          question:
+            'Explain the crucial historical distinction and cause-and-effect relationship between Annexation and Revanche following the Franco-Prussian War.',
+          model_answer:
+            'Annexation refers to the physical and legal seizure of sovereign territory (specifically Germany taking Alsace-Lorraine under the 1871 Treaty of Frankfurt), whereas Revanche is the deep psychological and political doctrine of revenge that this loss provoked across French society, making permanent European reconciliation impossible.',
+        },
+        {
+          terms: ['Nationalism', 'Imperialism'],
+          question:
+            'Explain the crucial historical distinction between 19th-century European Nationalism and Imperialism.',
+          model_answer:
+            'Nationalism is the ideological movement asserting that people with a shared language, culture, and identity have the right to self-determination and political unity within a sovereign state (exemplified by German unification in 1871). In contrast, Imperialism is the aggressive projection of state power to conquer, dominate, and exploit external lands, colonies, and distinct foreign populations.',
         },
       ],
       extended: {
@@ -908,7 +943,7 @@ const great_war = {
       ],
     },
     {
-      id: 'lesson_2',
+      id: 'lesson_3',
       title: "To what extent did the 'Scramble for Africa' increase tension in Europe?",
       sources: [
         {
@@ -1407,7 +1442,7 @@ const great_war = {
       ],
     },
     {
-      id: 'lesson_3',
+      id: 'lesson_4',
       title: 'Why did a battleship building contest destroy Anglo-German relations?',
       sources: [
         {
@@ -1894,7 +1929,7 @@ const great_war = {
       ],
     },
     {
-      id: 'lesson_4',
+      id: 'lesson_5',
       title: 'Did the Alliance System protect Europe or guarantee a global war?',
       sources: [
         {
@@ -2372,7 +2407,7 @@ const great_war = {
       ],
     },
     {
-      id: 'lesson_5',
+      id: 'lesson_6',
       title: 'Why did a single assassination in Sarajevo ignite a World War?',
       video: [
         {

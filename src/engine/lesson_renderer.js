@@ -703,6 +703,7 @@ function renderLessonVideos(videos, lesson, unitId) {
                 <i class="${providerIcon}"></i> ${providerName}
               </span>
               ${vid.duration ? `<span style="background: #f1f5f9; color: #475569; font-size: 0.78rem; font-weight: 600; padding: 2px 8px; border-radius: 4px; border: 1px solid #e2e8f0; display: inline-flex; align-items: center; gap: 4px;"><i class="fa-regular fa-clock"></i> ${vid.duration}</span>` : ''}
+              ${vid.pathway ? `<span class="archival-meta-tag" style="background: #eff6ff; color: #1e40af; border: 1.5px solid #bfdbfe; font-size: 0.74rem; padding: 2px 9px; border-radius: 4px; font-weight: 700; letter-spacing: 0.04em; display: inline-flex; align-items: center; gap: 5px;"><i class="fa-solid fa-route" style="color: #2563eb;"></i> ${vid.pathway}</span>` : ''}
             </div>
             <h4 style="margin: 0; font-size: 1.15rem; color: #0f172a; font-family: 'Playfair Display', serif; line-height: 1.4;">
               ${vid.title || 'Historical Documentary Resource'}
@@ -712,6 +713,27 @@ function renderLessonVideos(videos, lesson, unitId) {
             ${actionButtonHtml}
           </div>
         </div>
+
+        <!-- Teacher Pathway & Lesson Pace Guidance -->
+        ${
+          vid.teacher_guidance
+            ? `
+          <div class="video-teacher-guidance-box" style="background: #f8fafc; border-left: 4px solid #6366f1; padding: 10px 14px; border-radius: 0 6px 6px 0; display: flex; align-items: flex-start; gap: 10px;">
+            <div style="color: #4f46e5; font-size: 1rem; margin-top: 2px; flex-shrink: 0;">
+              <i class="fa-solid fa-chalkboard-user"></i>
+            </div>
+            <div>
+              <div style="font-size: 0.76rem; font-weight: 800; color: #4338ca; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 2px;">
+                Teacher Video Pathway Guidance:
+              </div>
+              <div style="font-size: 0.88rem; color: #334155; line-height: 1.5;">
+                ${formatBold(vid.teacher_guidance)}
+              </div>
+            </div>
+          </div>
+        `
+            : ''
+        }
 
         <!-- Active Viewing Task -->
         ${
@@ -931,10 +953,12 @@ export function renderLesson(lesson) {
     lessonPrefix = `KT ${ktMatch[1]}`;
   } else if (lesson.id && lesson.id.startsWith('lesson_')) {
     const parts = lesson.id.split('_');
+    const rawNum = parseInt(parts[1], 10);
+    const lessonNum = isNaN(rawNum) || rawNum === 0 ? 1 : rawNum;
     if (parts.length > 2) {
-      lessonPrefix = `Lesson ${parseInt(parts[1])}.${parts.slice(2).join('.')}`;
+      lessonPrefix = `Lesson ${lessonNum}.${parts.slice(2).join('.')}`;
     } else {
-      lessonPrefix = `Lesson ${parseInt(parts[1])}`;
+      lessonPrefix = `Lesson ${lessonNum}`;
     }
   }
 
@@ -4331,6 +4355,19 @@ export function renderLesson(lesson) {
       htmlPairShare +
       htmlTasks +
       htmlHistorian +
+      htmlExamPractice +
+      htmlVocabDeck +
+      htmlExtended;
+  } else if (unitId === 'great_war') {
+    html +=
+      htmlDoNow +
+      htmlNarrative +
+      htmlPrimary +
+      (typeof isGCSE !== 'undefined' && isGCSE ? '' : htmlSources1) +
+      htmlVideo +
+      htmlTasks +
+      htmlHistorian +
+      htmlPairShare +
       htmlExamPractice +
       htmlVocabDeck +
       htmlExtended;
