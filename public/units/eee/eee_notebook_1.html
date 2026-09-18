@@ -33,6 +33,8 @@
     }
 
     @media print {
+    .invigilator-hud { display: none !important; }
+
       body { background: white; }
       .page {
         margin: 0;
@@ -277,42 +279,198 @@
       margin-left: 5px;
       margin-right: 20px;
     }
+  
+    /* Question-Anchor Quick Launch Button Styles */
+    .btn-time-question {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #0f172a;
+      color: #38bdf8;
+      border: 1px solid #0284c7;
+      border-radius: 4px;
+      padding: 2px 7px;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Open Sans', Arial, sans-serif;
+      cursor: pointer;
+      margin-left: 8px;
+      vertical-align: middle;
+      text-decoration: none;
+      line-height: 1.2;
+      transition: all 0.15s ease;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+    .btn-time-question:hover {
+      background: #0284c7;
+      color: #ffffff;
+      border-color: #38bdf8;
+      transform: translateY(-1px);
+      box-shadow: 0 3px 6px rgba(2,132,199,0.3);
+    }
+    .btn-time-question:active {
+      transform: translateY(0);
+    }
+    .question-block, .question-title, .page-inner {
+      scroll-margin-top: 75px;
+    }
+    @media print {
+      .btn-time-question, .invigilator-hud, #mock-timing-strategy-drawer, .no-print {
+        display: none !important;
+      }
+    }
+
   </style>
 </head>
 <body>
+  <!-- Top Docked Invigilator Toolbar (Interactive Screen Mode) -->
+  <div class="invigilator-hud no-print" style="position: sticky; top: 0; z-index: 9999; background: #0f172a; color: #ffffff; border-bottom: 3px solid #3b82f6; padding: 8px 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); font-family: 'Open Sans', Arial, sans-serif;">
+    <!-- Left: Clock & Status -->
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <div>
+        <div style="font-size: 9px; font-weight: 800; letter-spacing: 1px; color: #94a3b8; text-transform: uppercase;">PEARSON EXAM CLOCK &bull; 1HI0/B4</div>
+        <div id="mock-exam-clock" style="font-size: 26px; font-weight: 800; font-family: 'Courier New', Courier, monospace; color: #38bdf8; line-height: 1.1; cursor: pointer; text-shadow: 0 0 10px rgba(56,189,248,0.3);" title="Click to set custom timer duration">55:00</div>
+      </div>
+      <div style="font-size: 11px; color: #cbd5e1; border-left: 1px solid #334155; padding-left: 12px; max-width: 250px; line-height: 1.3;">
+        <div id="mock-pacing-status"><strong>Pacing:</strong> 55 mins total exam time</div>
+        <div style="font-size: 10px; color: #64748b; margin-top: 2px;">💡 Click clock to type custom minutes</div>
+      </div>
+    </div>
+
+    <!-- Center: Single-Question Practice Presets, Strategy Drawer & Custom Mins -->
+    <div style="display: flex; align-items: center; gap: 5px; flex-wrap: wrap; background: #1e293b; padding: 4px 8px; border-radius: 6px; border: 1px solid #334155;">
+      <span style="font-size: 10px; font-weight: 800; color: #93c5fd; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 2px;">Question Practice:</span>
+      <button type="button" class="mock-preset-btn" data-mins="5" onclick="setMockExamTimerMinutes(5, '4-Mark Question (5m)')" style="background: #0f172a; color: #e2e8f0; border: 1px solid #475569; padding: 4px 7px; font-weight: 700; font-size: 11px; border-radius: 4px; cursor: pointer;" title="5 Minutes (4-Mark Question)">5m</button>
+      <button type="button" class="mock-preset-btn" data-mins="10" onclick="setMockExamTimerMinutes(10, '8-Mark Question (10m)')" style="background: #0f172a; color: #e2e8f0; border: 1px solid #475569; padding: 4px 7px; font-weight: 700; font-size: 11px; border-radius: 4px; cursor: pointer;" title="10 Minutes (8-Mark Question)">10m</button>
+      <button type="button" class="mock-preset-btn" data-mins="15" onclick="setMockExamTimerMinutes(15, '12-Mark Question (15m)')" style="background: #0f172a; color: #e2e8f0; border: 1px solid #475569; padding: 4px 7px; font-weight: 700; font-size: 11px; border-radius: 4px; cursor: pointer;" title="15 Minutes (12-Mark Question)">15m</button>
+      <button type="button" class="mock-preset-btn" data-mins="25" onclick="setMockExamTimerMinutes(25, '16-Mark Essay (25m)')" style="background: #0f172a; color: #e2e8f0; border: 1px solid #475569; padding: 4px 7px; font-weight: 700; font-size: 11px; border-radius: 4px; cursor: pointer;" title="25 Minutes (16-Mark Essay / Section)">25m</button>
+      <button type="button" class="mock-preset-btn" data-mins="55" onclick="setMockExamTimerMinutes(55, 'Full Paper (55m)')" style="background: #0f172a; color: #38bdf8; border: 1px solid #0284c7; padding: 4px 7px; font-weight: 700; font-size: 11px; border-radius: 4px; cursor: pointer;" title="Full Paper (55m)">Full (55m)</button>
+      
+      <!-- Custom Minute Input -->
+      <div style="display: flex; align-items: center; gap: 3px; margin-left: 4px; border-left: 1px solid #475569; padding-left: 6px;">
+        <input type="number" id="mock-custom-mins" min="1" max="240" placeholder="Mins" style="width: 48px; background: #0f172a; color: #ffffff; border: 1px solid #475569; border-radius: 3px; padding: 3px 5px; font-size: 11px; font-weight: 700; text-align: center;">
+        <button type="button" onclick="applyCustomMockMinutes()" style="background: #3b82f6; color: #ffffff; border: none; padding: 4px 8px; font-weight: 700; font-size: 11px; border-radius: 3px; cursor: pointer;" title="Apply Custom Minutes">Set</button>
+      </div>
+
+      <!-- Collapsible Timing Strategy Toggle Button -->
+      <button type="button" id="mock-strategy-toggle" onclick="toggleMockTimingStrategy()" style="background: #1e293b; color: #38bdf8; border: 1.5px solid #0284c7; padding: 4px 9px; font-weight: 800; font-size: 11px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; margin-left: 4px;" title="View Exam Timing Strategy & Pacing Breakdown">
+        <span>⏱ Timing Strategy</span> <span id="mock-strategy-arrow" style="font-size: 9px; transition: transform 0.2s ease;">▼</span>
+      </button>
+    </div>
+
+    <!-- Right: Controls -->
+    <div style="display: flex; align-items: center; gap: 5px; flex-wrap: wrap;">
+      <button type="button" id="mock-timer-toggle" onclick="toggleMockExamTimer('start')" style="background: #ffffff; color: #000000; border: 2px solid #ffffff; padding: 5px 12px; font-weight: 800; font-size: 12px; border-radius: 4px; cursor: pointer;">▶ Start Clock</button>
+      <button type="button" id="mock-timer-pause" onclick="toggleMockExamTimer('pause')" style="background: #facc15; color: #000000; border: 2px solid #facc15; padding: 5px 12px; font-weight: 800; font-size: 12px; border-radius: 4px; cursor: pointer; display: none;">⏸ Pause</button>
+      <button type="button" id="mock-timer-reset" onclick="toggleMockExamTimer('reset')" style="background: transparent; color: #cbd5e1; border: 1.5px solid #475569; padding: 5px 8px; font-weight: 700; font-size: 12px; border-radius: 4px; cursor: pointer;" title="Reset Timer">🔄 Reset</button>
+      <button type="button" onclick="toggleMockExamTimer('sub1')" style="background: transparent; color: #e2e8f0; border: 1.5px solid #475569; padding: 5px 7px; font-weight: 700; font-size: 11px; border-radius: 4px; cursor: pointer;" title="Subtract 1 Minute">-1m</button>
+      <button type="button" onclick="toggleMockExamTimer('add1')" style="background: transparent; color: #e2e8f0; border: 1.5px solid #475569; padding: 5px 7px; font-weight: 700; font-size: 11px; border-radius: 4px; cursor: pointer;" title="Add 1 Minute">+1m</button>
+      <button type="button" onclick="toggleMockExamTimer('add5')" style="background: transparent; color: #e2e8f0; border: 1.5px solid #475569; padding: 5px 7px; font-weight: 700; font-size: 11px; border-radius: 4px; cursor: pointer;" title="Add 5 Minutes Extra Time">+5m</button>
+      <button type="button" onclick="toggleMockExamTimer('add25pct')" style="background: transparent; color: #c084fc; border: 1.5px solid #8b5cf6; padding: 5px 7px; font-weight: 700; font-size: 11px; border-radius: 4px; cursor: pointer;" title="Add 25% Extra Time (Access Arrangements)">+25% Extra</button>
+      <button type="button" id="mock-timer-sound" onclick="toggleMockExamTimer('toggleSound')" style="background: transparent; color: #e2e8f0; border: 1.5px solid #475569; padding: 5px 7px; font-weight: 700; font-size: 11px; border-radius: 4px; cursor: pointer;" title="Toggle Audio Chimes">🔊 Sound: On</button>
+      <a id="mock-ms-link" href="eee_notebook_1_mark_scheme.html" target="_blank" style="background: #10b981; color: #ffffff; border: 1.5px solid #059669; padding: 5px 10px; font-weight: 800; font-size: 11px; border-radius: 4px; text-decoration: none; display: inline-flex; align-items: center; margin-left: 4px;">Mark Scheme &rarr;</a>
+    </div>
+
+    <!-- Collapsible Timing Strategy Drawer (Pacing Matrix: 1 Mark ≈ 1.25 Mins) -->
+    <div id="mock-timing-strategy-drawer" style="display: none; width: 100%; border-top: 1px solid #334155; margin-top: 8px; padding-top: 10px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; flex-wrap: wrap; gap: 8px;">
+        <div>
+          <div style="font-size: 11px; font-weight: 800; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.8px;">
+            ⏱ Pearson GCSE History &bull; Exam Timing Strategy &amp; Pacing Matrix
+          </div>
+          <div style="font-size: 11px; color: #cbd5e1; margin-top: 2px;">
+            <strong>The Golden Rule:</strong> 1 Mark &asymp; 1.25 Minutes. Protect your time by adhering strictly to the recommended planning vs. writing splits below.
+          </div>
+        </div>
+        <div style="font-size: 10px; color: #94a3b8; background: #0f172a; padding: 3px 8px; border-radius: 4px; border: 1px solid #334155;">
+          💡 Tip: Click any row's <strong>[⏱ Time (Xm)]</strong> button or on-page question anchor to start immediately.
+        </div>
+      </div>
+
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 11px; text-align: left; background: #0f172a; border: 1px solid #334155; border-radius: 4px;">
+          <thead>
+            <tr style="background: #1e293b; color: #93c5fd; border-bottom: 1px solid #334155; text-transform: uppercase; font-size: 10px; letter-spacing: 0.5px;">
+              <th style="padding: 6px 10px;">Tariff</th>
+              <th style="padding: 6px 10px;">Question Type (Edexcel Specification)</th>
+              <th style="padding: 6px 10px;">Total Time</th>
+              <th style="padding: 6px 10px;">Planning &amp; Prep Split</th>
+              <th style="padding: 6px 10px;">Writing &amp; Evidence Split</th>
+              <th style="padding: 6px 10px; text-align: right;">Quick Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #1e293b;">
+              <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">2 Marks</td>
+              <td style="padding: 6px 10px; color: #e2e8f0;">Describe one feature / Identification</td>
+              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">3 mins</td>
+              <td style="padding: 6px 10px; color: #94a3b8;"><strong>30s</strong> target feature recall</td>
+              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>2.5m</strong> 2 precise sentences (feature + detail)</td>
+              <td style="padding: 6px 10px; text-align: right;">
+                <button type="button" onclick="setMockExamTimerMinutes(3, '2-Mark Question (3m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (3m)</button>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #1e293b;">
+              <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">4 Marks</td>
+              <td style="padding: 6px 10px; color: #e2e8f0;">Inference / Similarity &amp; Diff / Consequence / Follow-up</td>
+              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">5 mins</td>
+              <td style="padding: 6px 10px; color: #94a3b8;"><strong>1 min</strong> identify quotes / key factor</td>
+              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>4 mins</strong> single sustained analytical paragraph</td>
+              <td style="padding: 6px 10px; text-align: right;">
+                <button type="button" onclick="setMockExamTimerMinutes(5, '4-Mark Question (5m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (5m)</button>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #1e293b;">
+              <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">8 Marks</td>
+              <td style="padding: 6px 10px; color: #e2e8f0;">Source Utility (NOP + Content) / Narrative Account</td>
+              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">10 mins</td>
+              <td style="padding: 6px 10px; color: #94a3b8;"><strong>2 mins</strong> annotate provenance (NOP) + own knowledge</td>
+              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>8 mins</strong> 2 balanced paragraphs (4m per source/phase)</td>
+              <td style="padding: 6px 10px; text-align: right;">
+                <button type="button" onclick="setMockExamTimerMinutes(10, '8-Mark Question (10m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (10m)</button>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #1e293b;">
+              <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">12 Marks</td>
+              <td style="padding: 6px 10px; color: #e2e8f0;">Explain why... (Causation / Analytical Account)</td>
+              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">15 mins</td>
+              <td style="padding: 6px 10px; color: #94a3b8;"><strong>3 mins</strong> select 3 distinct causes + 1 own point</td>
+              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>12 mins</strong> 3 PEEL paragraphs with causal links (4m each)</td>
+              <td style="padding: 6px 10px; text-align: right;">
+                <button type="button" onclick="setMockExamTimerMinutes(15, '12-Mark Question (15m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (15m)</button>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">16+4 Marks</td>
+              <td style="padding: 6px 10px; color: #e2e8f0;">Statement Evaluation Essay ("How far do you agree?")</td>
+              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">25 mins</td>
+              <td style="padding: 6px 10px; color: #94a3b8;"><strong>5 mins</strong> define criteria + balance argument + conclusion</td>
+              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>20 mins</strong> Intro + Agree + Counter + Justified Judgement</td>
+              <td style="padding: 6px 10px; text-align: right;">
+                <button type="button" onclick="setMockExamTimerMinutes(25, '16-Mark Essay (25m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (25m)</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 
   <!-- Cover Page -->
   <div class="page">
-    <div class="top-warning">
-      Please check the examination details below before entering your candidate information
-    </div>
     
-    <div class="cover-box">
-      <div class="candidate-info">
-        <div style="flex: 2;">
-          <div class="input-label">Candidate surname</div>
-          <div class="input-box"></div>
-        </div>
-        <div style="flex: 1.5;">
-          <div class="input-label">Other names</div>
-          <div class="input-box"></div>
-        </div>
+    <!-- Official Pearson Examination Header (Minimal & Focused) -->
+    <div style="border: 2px solid #000; padding: 14px 18px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; background: #fff;">
+      <div>
+        <div style="font-size: 11px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: #000;">PEARSON EDEXCEL GCSE (9–1)</div>
+        <div style="font-size: 18px; font-weight: 900; color: #000; font-family: 'Open Sans', Arial, sans-serif;">History Practice Examination Paper</div>
       </div>
-      <div class="candidate-info">
-        <div style="flex: 1;">
-          <div class="input-label">Centre Number</div>
-          <div>
-            <div class="char-box"></div><div class="char-box"></div><div class="char-box"></div><div class="char-box"></div><div class="char-box"></div>
-          </div>
-        </div>
-        <div style="flex: 1;">
-          <div class="input-label">Candidate Number</div>
-          <div>
-            <div class="char-box"></div><div class="char-box"></div><div class="char-box"></div><div class="char-box"></div>
-          </div>
-        </div>
+      <div style="text-align: right;">
+        <div style="font-size: 11px; font-weight: 800; color: #555; text-transform: uppercase;">Paper Reference</div>
+        <div style="font-size: 20px; font-weight: 900; line-height: 1; color: #000;">1HI0/B4</div>
       </div>
     </div>
+  
 
     <div class="edexcel-title">Pearson Edexcel GCSE (9-1)</div>
 
@@ -382,7 +540,7 @@
     </div>
   </div>
 
-  <div class="page"><div class="page-inner"><div class="inner-header">Early Elizabethan England, 1558-88<br><br>Answer Question 1(a), Question 1(b), Question 2 and EITHER Question 3 OR Question 4.</div><div class="question-block">  <div class="question-text">    <div class="question-num">1</div>    <div style="width: 100%;">      (a) Describe one feature of the role of the Church of England in early Elizabethan society.      <span style="float: right; font-weight: 400; color: #444;">(2)</span>    </div>  </div></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="height:30px;"></div><div class="question-block">  <div class="question-text">    <div class="question-num"></div>    <div style="width: 100%;">      (b) Describe one feature of Walsingham and the use of spies.      <span style="float: right; font-weight: 400; color: #444;">(2)</span>    </div>  </div></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="border-top: 1px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">(Total for Question 1 = 4 marks)</div></div><div class="footer"><div></div><div></div></div></div><div class="page"><div class="page-inner"><div class="question-block">  <div class="question-text">    <div class="question-num">2</div>    <div style="width: 100%;">      Explain why Elizabeth's religious settlement was introduced in 1559.      <span style="float: right; font-weight: 400; color: #444;">(12)</span>    </div>  </div>  <div class="bullet-point-box">    <em>You <strong>may</strong> use the following in your answer:</em>    <ul><li>religious divisions</li><li>the French threat</li>    </ul>    <em style="display:block; margin-top:10px;">You <strong>must</strong> also use information of your own.</em>  </div></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div><div class="footer"><div></div><div></div></div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="border-top: 1px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">(Total for Question 2 = 12 marks)</div></div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div><div class="page"><div class="page-inner"><div style="text-align:center; font-weight:bold; margin-bottom: 20px;">Answer EITHER Question 3 OR Question 4.</div><div style="font-weight:bold; margin-bottom:10px;">EITHER</div><div class="question-block">  <div class="question-text">    <div class="question-num">3</div>    <div style="width: 100%;">      ‘Walsingham and the use of spies was the main reason for the significance of Mary Queen of Scots’ execution in 1587.’<br><br>How far do you agree? Explain your answer.    </div>  </div>  <div class="bullet-point-box">    <em>You <strong>may</strong> use the following in your answer:</em>    <ul><li>the Babington Plot</li><li>the Catholic challenge</li>    </ul>    <em style="display:block; margin-top:10px;">You <strong>must</strong> also use information of your own.</em>  </div></div><div style="border-top: 1px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">(Total for Question 3 = 16 marks)</div><div style="font-weight:bold; margin:20px 0 10px 0;">OR</div><div class="question-block">  <div class="question-text">    <div class="question-num">4</div>    <div style="width: 100%;">      ‘The drive to expand trade was the main reason for the attempted colonisation of Virginia.’<br><br>How far do you agree? Explain your answer.    </div>  </div>  <div class="bullet-point-box">    <em>You <strong>may</strong> use the following in your answer:</em>    <ul><li>new technology</li><li>the significance of Raleigh</li>    </ul>    <em style="display:block; margin-top:10px;">You <strong>must</strong> also use information of your own.</em>  </div></div><div style="border-top: 1px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">(Total for Question 4 = 16 marks)</div></div><div class="footer"><div></div><div></div></div></div><div class="page"><div class="page-inner"><div class="indicate-choice">  Indicate which question you are answering by marking a cross in the box <span style="font-weight:900;">&#9746;</span>. If you change your mind, put a line through the box <span style="font-weight:900;">&#9746;</span> and then indicate your new question with a cross <span style="font-weight:900;">&#9746;</span>.<br><br>  Chosen question number:   <span style="margin-left: 10px;">Question 3</span> <div class="checkbox-inline"></div>  Question 4 <div class="checkbox-inline"></div></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="border-top: 2px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">TOTAL FOR BOOKLET B = 32 MARKS</div></div><div class="footer"><div></div><div></div></div></div>
+  <div class="page"><div class="page-inner"><div class="inner-header">Early Elizabethan England, 1558-88<br><br>Answer Question 1(a), Question 1(b), Question 2 and EITHER Question 3 OR Question 4.</div><div class="question-block">  <div class="question-text">    <div class="question-num">1</div>    <div style="width: 100%;">      (a) Describe one feature of the role of the Church of England in early Elizabethan society.      <span style="float: right; font-weight: 400; color: #444;">(2) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 3, '2-Mark Question (3m)')" title="Lock timer to 3m and start immediately">⏱ Time this question (3m)</button></span>    </div>  </div></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="height:30px;"></div><div class="question-block">  <div class="question-text">    <div class="question-num"></div>    <div style="width: 100%;">      (b) Describe one feature of Walsingham and the use of spies.      <span style="float: right; font-weight: 400; color: #444;">(2) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 3, '2-Mark Question (3m)')" title="Lock timer to 3m and start immediately">⏱ Time this question (3m)</button></span>    </div>  </div></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="border-top: 1px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">(Total for Question 1 = 4 marks)</div></div><div class="footer"><div></div><div></div></div></div><div class="page"><div class="page-inner"><div class="question-block">  <div class="question-text">    <div class="question-num">2</div>    <div style="width: 100%;">      Explain why Elizabeth's religious settlement was introduced in 1559.      <span style="float: right; font-weight: 400; color: #444;">(12) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 15, '12-Mark Question (15m)')" title="Lock timer to 15m and start immediately">⏱ Time this question (15m)</button></span>    </div>  </div>  <div class="bullet-point-box">    <em>You <strong>may</strong> use the following in your answer:</em>    <ul><li>religious divisions</li><li>the French threat</li>    </ul>    <em style="display:block; margin-top:10px;">You <strong>must</strong> also use information of your own.</em>  </div></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div><div class="footer"><div></div><div></div></div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="border-top: 1px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">(Total for Question 2 = 12 marks)</div></div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div><div class="page"><div class="page-inner"><div style="text-align:center; font-weight:bold; margin-bottom: 20px;">Answer EITHER Question 3 OR Question 4.</div><div style="font-weight:bold; margin-bottom:10px;">EITHER</div><div class="question-block">  <div class="question-text">    <div class="question-num">3</div>    <div style="width: 100%;">      ‘Walsingham and the use of spies was the main reason for the significance of Mary Queen of Scots’ execution in 1587.’<br><br>How far do you agree? Explain your answer.    </div>  </div>  <div class="bullet-point-box">    <em>You <strong>may</strong> use the following in your answer:</em>    <ul><li>the Babington Plot</li><li>the Catholic challenge</li>    </ul>    <em style="display:block; margin-top:10px;">You <strong>must</strong> also use information of your own.</em>  </div></div><div style="border-top: 1px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">(Total for Question 3 = 16 marks) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 25, 'Question 3 (16m)')" title="Lock timer to 25m and start immediately">⏱ Time this question (25m)</button></div><div style="font-weight:bold; margin:20px 0 10px 0;">OR</div><div class="question-block">  <div class="question-text">    <div class="question-num">4</div>    <div style="width: 100%;">      ‘The drive to expand trade was the main reason for the attempted colonisation of Virginia.’<br><br>How far do you agree? Explain your answer.    </div>  </div>  <div class="bullet-point-box">    <em>You <strong>may</strong> use the following in your answer:</em>    <ul><li>new technology</li><li>the significance of Raleigh</li>    </ul>    <em style="display:block; margin-top:10px;">You <strong>must</strong> also use information of your own.</em>  </div></div><div style="border-top: 1px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">(Total for Question 4 = 16 marks) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 25, 'Question 4 (16m)')" title="Lock timer to 25m and start immediately">⏱ Time this question (25m)</button></div></div><div class="footer"><div></div><div></div></div></div><div class="page"><div class="page-inner"><div class="indicate-choice">  Indicate which question you are answering by marking a cross in the box <span style="font-weight:900;">&#9746;</span>. If you change your mind, put a line through the box <span style="font-weight:900;">&#9746;</span> and then indicate your new question with a cross <span style="font-weight:900;">&#9746;</span>.<br><br>  Chosen question number:   <span style="margin-left: 10px;">Question 3</span> <div class="checkbox-inline"></div>  Question 4 <div class="checkbox-inline"></div></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="border-top: 2px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">TOTAL FOR BOOKLET B = 32 MARKS</div></div><div class="footer"><div></div><div></div></div></div>
 
   <!-- End of booklet -->
   <div class="page">
@@ -399,5 +557,300 @@
     </div>
   </div>
 
+  <!-- Pearson Invigilator HUD Live Timer Engine -->
+  <script>
+  (function () {
+    var defaultMins = 55;
+    var totalSecs = defaultMins * 60;
+    var initialSecs = totalSecs;
+    var interval = null;
+    var isRunning = false;
+    var soundEnabled = true;
+    var currentModeLabel = 'Full Paper (' + defaultMins + 'm)';
+
+    function formatTime(secs) {
+      var h = Math.floor(secs / 3600);
+      var m = Math.floor((secs % 3600) / 60);
+      var s = secs % 60;
+      if (h > 0) {
+        return (
+          (h < 10 ? '0' + h : h) +
+          ':' +
+          (m < 10 ? '0' + m : m) +
+          ':' +
+          (s < 10 ? '0' + s : s)
+        );
+      }
+      return (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+    }
+
+    function updateClockDisplay() {
+      var clockEl = document.getElementById('mock-exam-clock');
+      if (!clockEl) return;
+
+      if (totalSecs <= 0) {
+        clockEl.style.color = '#ef4444';
+        clockEl.textContent = "00:00 (TIME'S UP)";
+      } else if (totalSecs <= 300) {
+        clockEl.style.color = '#facc15';
+        clockEl.textContent = formatTime(totalSecs);
+      } else {
+        clockEl.style.color = '#38bdf8';
+        clockEl.textContent = formatTime(totalSecs);
+      }
+    }
+
+    function playTone(freq, dur) {
+      if (!soundEnabled) return;
+      try {
+        var ctx = new (window.AudioContext || window.webkitAudioContext)();
+        var osc = ctx.createOscillator();
+        var gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, ctx.currentTime);
+        gain.gain.setValueAtTime(0.15, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + dur);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + dur);
+      } catch (e) {}
+    }
+
+    window.setMockExamTimerMinutes = function (mins, label) {
+      mins = parseInt(mins, 10);
+      if (isNaN(mins) || mins <= 0) return;
+      if (interval) {
+        clearInterval(interval);
+        interval = null;
+        isRunning = false;
+      }
+      totalSecs = mins * 60;
+      initialSecs = totalSecs;
+      currentModeLabel = label || mins + ' mins';
+
+      var startBtn = document.getElementById('mock-timer-toggle');
+      var pauseBtn = document.getElementById('mock-timer-pause');
+      if (startBtn) {
+        startBtn.style.display = 'inline-flex';
+        startBtn.innerHTML = '▶ Start Clock';
+      }
+      if (pauseBtn) pauseBtn.style.display = 'none';
+
+      var statusEl = document.getElementById('mock-pacing-status');
+      if (statusEl) {
+        statusEl.innerHTML = '<strong>Practice Mode:</strong> ' + currentModeLabel;
+      }
+
+      var presetBtns = document.querySelectorAll('.mock-preset-btn, .preset-btn');
+      presetBtns.forEach(function (btn) {
+        var btnMins = btn.getAttribute('data-mins');
+        if (btnMins === String(mins) || btn.textContent.trim().startsWith(String(mins) + 'm')) {
+          btn.style.background = '#2563eb';
+          btn.style.color = '#ffffff';
+          btn.style.borderColor = '#60a5fa';
+        } else {
+          btn.style.background = '#0f172a';
+          btn.style.color = '#e2e8f0';
+          btn.style.borderColor = '#475569';
+        }
+      });
+
+      var customInput = document.getElementById('mock-custom-mins');
+      if (customInput) customInput.value = mins;
+
+      updateClockDisplay();
+    };
+
+    window.applyCustomMockMinutes = function () {
+      var input = document.getElementById('mock-custom-mins');
+      var val = input ? parseInt(input.value, 10) : NaN;
+      if (isNaN(val) || val <= 0) {
+        var promptVal = prompt(
+          'Enter custom timer minutes (e.g. 5, 10, 15, 25, 45, ' + defaultMins + '):',
+          Math.round(totalSecs / 60) || '15',
+        );
+        if (promptVal) {
+          var m = parseInt(promptVal, 10);
+          if (!isNaN(m) && m > 0) {
+            window.setMockExamTimerMinutes(m, m + 'm (Custom Single Question)');
+          }
+        }
+        return;
+      }
+      window.setMockExamTimerMinutes(val, val + 'm (Custom Single Question)');
+    };
+
+    window.toggleMockExamTimer = function (action) {
+      var startBtn = document.getElementById('mock-timer-toggle');
+      var pauseBtn = document.getElementById('mock-timer-pause');
+      var soundBtn = document.getElementById('mock-timer-sound');
+
+      if (action === 'start') {
+        if (isRunning) return;
+        if (totalSecs <= 0) totalSecs = initialSecs;
+        isRunning = true;
+        if (startBtn) startBtn.style.display = 'none';
+        if (pauseBtn) pauseBtn.style.display = 'inline-flex';
+
+        if (interval) clearInterval(interval);
+        interval = setInterval(function () {
+          if (totalSecs > 0) {
+            totalSecs--;
+            updateClockDisplay();
+
+            // 5-minute warning chime
+            if (totalSecs === 300) {
+              playTone(659.25, 0.6);
+              setTimeout(function () {
+                playTone(880, 0.8);
+              }, 250);
+            } else if (totalSecs === 60) {
+              // 1-minute warning chime
+              playTone(587.33, 0.5);
+            }
+
+            // Time's up chime
+            if (totalSecs === 0) {
+              playTone(440, 1.2);
+              setTimeout(function () {
+                playTone(440, 1.2);
+              }, 400);
+              clearInterval(interval);
+              interval = null;
+              isRunning = false;
+              if (startBtn) {
+                startBtn.style.display = 'inline-flex';
+                startBtn.innerHTML = '🔄 Restart';
+              }
+              if (pauseBtn) pauseBtn.style.display = 'none';
+            }
+          }
+        }, 1000);
+      } else if (action === 'pause') {
+        if (!isRunning) return;
+        clearInterval(interval);
+        interval = null;
+        isRunning = false;
+        if (startBtn) {
+          startBtn.style.display = 'inline-flex';
+          startBtn.innerHTML = '▶ Resume';
+        }
+        if (pauseBtn) pauseBtn.style.display = 'none';
+      } else if (action === 'reset') {
+        if (interval) clearInterval(interval);
+        interval = null;
+        isRunning = false;
+        totalSecs = initialSecs;
+        updateClockDisplay();
+        if (startBtn) {
+          startBtn.style.display = 'inline-flex';
+          startBtn.innerHTML = '▶ Start Clock';
+        }
+        if (pauseBtn) pauseBtn.style.display = 'none';
+      } else if (action === 'sub1') {
+        if (totalSecs > 60) totalSecs -= 60;
+        else totalSecs = 0;
+        updateClockDisplay();
+      } else if (action === 'add1') {
+        totalSecs += 60;
+        updateClockDisplay();
+      } else if (action === 'add5') {
+        totalSecs += 300;
+        updateClockDisplay();
+      } else if (action === 'add20' || action === 'add25pct') {
+        var extra = Math.round(initialSecs * 0.25);
+        if (extra < 60) extra = 300;
+        totalSecs += extra;
+        updateClockDisplay();
+        var statusEl = document.getElementById('mock-pacing-status');
+        if (statusEl && !statusEl.textContent.includes('+25%')) {
+          statusEl.innerHTML +=
+            ' <span style="color: #c084fc; font-weight: 700;">(+25% Extra Time: +' +
+            Math.round(extra / 60) +
+            'm)</span>';
+        }
+      } else if (action === 'toggleSound') {
+        soundEnabled = !soundEnabled;
+        if (soundBtn) {
+          soundBtn.textContent = soundEnabled ? '🔊 Sound: On' : '🔇 Sound: Off';
+        }
+      }
+    };
+
+    window.toggleMockTimingStrategy = function () {
+      var drawer = document.getElementById('mock-timing-strategy-drawer');
+      var arrow = document.getElementById('mock-strategy-arrow');
+      if (!drawer) return;
+      var isHidden = drawer.style.display === 'none' || drawer.style.display === '';
+      drawer.style.display = isHidden ? 'block' : 'none';
+      if (arrow) {
+        arrow.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+      }
+    };
+
+    window.timeThisQuestion = function (btnEl, mins, label) {
+      mins = parseInt(mins, 10);
+      if (isNaN(mins) || mins <= 0) return;
+
+      // 1. Lock timer to question minutes & update status
+      window.setMockExamTimerMinutes(mins, label || (mins + 'm Question'));
+
+      // 2. Start clock immediately
+      window.toggleMockExamTimer('start');
+
+      // 3. Smooth scroll viewport to anchor question container below sticky HUD
+      var container = btnEl.closest('.question-block, .page-inner, .page, .question-title') || btnEl;
+      var hud = document.querySelector('.invigilator-hud');
+      var hudOffset = (hud ? hud.offsetHeight : 60) + 16;
+      var rect = container.getBoundingClientRect();
+      var targetY = window.pageYOffset + rect.top - hudOffset;
+
+      window.scrollTo({
+        top: Math.max(0, targetY),
+        behavior: 'smooth'
+      });
+
+      // 4. Subtle visual pulse/accent to highlight the anchored question
+      var origOutline = container.style.outline;
+      var origOffset = container.style.outlineOffset;
+      var origTransition = container.style.transition;
+      container.style.transition = 'outline 0.25s ease';
+      container.style.outline = '3px solid #38bdf8';
+      container.style.outlineOffset = '6px';
+      setTimeout(function () {
+        container.style.outline = origOutline;
+        container.style.outlineOffset = origOffset;
+        container.style.transition = origTransition;
+      }, 2200);
+    };
+
+    function initHud() {
+      var clockEl = document.getElementById('mock-exam-clock');
+      if (clockEl) {
+        clockEl.onclick = function () {
+          window.applyCustomMockMinutes();
+        };
+        clockEl.style.cursor = 'pointer';
+        clockEl.title = 'Click to set custom duration in minutes';
+      }
+
+      var customInput = document.getElementById('mock-custom-mins');
+      if (customInput) {
+        customInput.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter') window.applyCustomMockMinutes();
+        });
+      }
+
+      updateClockDisplay();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initHud);
+    } else {
+      initHud();
+    }
+  })();
+  </script>
 </body>
 </html>

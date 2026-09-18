@@ -1730,6 +1730,47 @@ window.toggleHubExamClock = function (action, defaultMinutes = 80) {
   }
 };
 
+window.toggleHubTimingStrategy = function () {
+  const drawer = document.getElementById('hub-timing-strategy-drawer');
+  const arrow = document.getElementById('hub-strategy-arrow');
+  if (!drawer) return;
+  const isHidden = drawer.style.display === 'none' || drawer.style.display === '';
+  drawer.style.display = isHidden ? 'block' : 'none';
+  if (arrow) {
+    arrow.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+  }
+};
+
+window.setHubExamClockMinutes = function (mins, label) {
+  mins = parseInt(mins, 10);
+  if (isNaN(mins) || mins <= 0) return;
+  const state = window.hubExamTimerState;
+  if (state.interval) {
+    clearInterval(state.interval);
+    state.interval = null;
+    state.isRunning = false;
+  }
+  state.totalSeconds = mins * 60;
+  state.initialSeconds = state.totalSeconds;
+
+  const display = document.getElementById('hub-exam-clock-display');
+  const startBtn = document.getElementById('hub-exam-clock-start');
+  const pauseBtn = document.getElementById('hub-exam-clock-pause');
+  if (display) {
+    const m = Math.floor(state.totalSeconds / 60);
+    const s = state.totalSeconds % 60;
+    display.textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    display.style.color = '#38bdf8';
+  }
+  if (startBtn) {
+    startBtn.style.display = 'none';
+  }
+  if (pauseBtn) {
+    pauseBtn.style.display = 'inline-flex';
+  }
+  window.toggleHubExamClock('start', mins);
+};
+
 export async function renderMockExamsView() {
   const contentArea = document.getElementById('main-content');
   if (!contentArea) return;
@@ -1841,9 +1882,96 @@ export async function renderMockExamsView() {
           <button type="button" class="btn" id="hub-exam-clock-sound" onclick="window.toggleHubExamClock('toggleSound')" style="background: transparent; color: #ffffff; border: 1.5px solid #6b7280; padding: 7px 11px; border-radius: 3px; font-weight: 700; font-size: 0.82rem; cursor: pointer;">
             🔊 Sound: On
           </button>
+          <button type="button" class="btn" id="hub-timing-strategy-btn" onclick="window.toggleHubTimingStrategy()" style="background: #111827; color: #38bdf8; border: 1.5px solid #0284c7; padding: 7px 14px; border-radius: 3px; font-weight: 800; font-size: 0.82rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="View Exam Timing Strategy & Pacing Breakdown">
+            <span>⏱ Timing Strategy</span> <span id="hub-strategy-arrow" style="font-size: 9px; transition: transform 0.2s ease;">▼</span>
+          </button>
         </div>
       </div>
       <div id="hub-exam-clock-pacing-alert" style="max-width: 1200px; margin: 10px auto 0 auto; display: none;"></div>
+
+      <!-- Collapsible Timing Strategy Drawer (Pacing Matrix: 1 Mark ≈ 1.25 Mins) -->
+      <div id="hub-timing-strategy-drawer" style="display: none; max-width: 1200px; margin: 12px auto 0 auto; border-top: 1px solid #374151; padding-top: 12px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <div style="font-size: 0.78rem; font-weight: 800; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.8px;">
+              ⏱ Pearson GCSE History &bull; Exam Timing Strategy &amp; Pacing Matrix
+            </div>
+            <div style="font-size: 0.78rem; color: #d1d5db; margin-top: 2px;">
+              <strong>The Golden Rule:</strong> 1 Mark &asymp; 1.25 Minutes. Protect your marks by adhering strictly to the recommended planning vs. writing splits below.
+            </div>
+          </div>
+          <div style="font-size: 0.72rem; color: #9ca3af; background: #111827; padding: 4px 10px; border-radius: 3px; border: 1px solid #374151;">
+            💡 Tip: Click any row's <strong>[⏱ Time (Xm)]</strong> button to set the invigilator clock immediately.
+          </div>
+        </div>
+
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.78rem; text-align: left; background: #000000; border: 1px solid #374151; border-radius: 4px;">
+            <thead>
+              <tr style="background: #111827; color: #93c5fd; border-bottom: 1px solid #374151; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.5px;">
+                <th style="padding: 8px 12px;">Tariff</th>
+                <th style="padding: 8px 12px;">Question Type (Edexcel Specification)</th>
+                <th style="padding: 8px 12px;">Total Time</th>
+                <th style="padding: 8px 12px;">Planning &amp; Prep Split</th>
+                <th style="padding: 8px 12px;">Writing &amp; Evidence Split</th>
+                <th style="padding: 8px 12px; text-align: right;">Quick Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid #1f2937;">
+                <td style="padding: 8px 12px; font-weight: 800; color: #38bdf8;">2 Marks</td>
+                <td style="padding: 8px 12px; color: #e5e7eb;">Describe one feature / Identification</td>
+                <td style="padding: 8px 12px; font-weight: 700; color: #facc15;">3 mins</td>
+                <td style="padding: 8px 12px; color: #9ca3af;"><strong>30s</strong> target feature recall</td>
+                <td style="padding: 8px 12px; color: #d1d5db;"><strong>2.5m</strong> 2 precise sentences (feature + detail)</td>
+                <td style="padding: 8px 12px; text-align: right;">
+                  <button type="button" onclick="window.setHubExamClockMinutes(3, '2-Mark Question (3m)')" style="background: #111827; color: #38bdf8; border: 1px solid #0284c7; padding: 4px 8px; border-radius: 3px; font-weight: 700; font-size: 0.72rem; cursor: pointer;">⏱ Time (3m)</button>
+                </td>
+              </tr>
+              <tr style="border-bottom: 1px solid #1f2937;">
+                <td style="padding: 8px 12px; font-weight: 800; color: #38bdf8;">4 Marks</td>
+                <td style="padding: 8px 12px; color: #e5e7eb;">Inference / Similarity &amp; Diff / Consequence / Follow-up</td>
+                <td style="padding: 8px 12px; font-weight: 700; color: #facc15;">5 mins</td>
+                <td style="padding: 8px 12px; color: #9ca3af;"><strong>1 min</strong> identify quotes / key factor</td>
+                <td style="padding: 8px 12px; color: #d1d5db;"><strong>4 mins</strong> single sustained analytical paragraph</td>
+                <td style="padding: 8px 12px; text-align: right;">
+                  <button type="button" onclick="window.setHubExamClockMinutes(5, '4-Mark Question (5m)')" style="background: #111827; color: #38bdf8; border: 1px solid #0284c7; padding: 4px 8px; border-radius: 3px; font-weight: 700; font-size: 0.72rem; cursor: pointer;">⏱ Time (5m)</button>
+                </td>
+              </tr>
+              <tr style="border-bottom: 1px solid #1f2937;">
+                <td style="padding: 8px 12px; font-weight: 800; color: #38bdf8;">8 Marks</td>
+                <td style="padding: 8px 12px; color: #e5e7eb;">Source Utility (NOP + Content) / Narrative Account</td>
+                <td style="padding: 8px 12px; font-weight: 700; color: #facc15;">10 mins</td>
+                <td style="padding: 8px 12px; color: #9ca3af;"><strong>2 mins</strong> annotate provenance (NOP) + own knowledge</td>
+                <td style="padding: 8px 12px; color: #d1d5db;"><strong>8 mins</strong> 2 balanced paragraphs (4m per source/phase)</td>
+                <td style="padding: 8px 12px; text-align: right;">
+                  <button type="button" onclick="window.setHubExamClockMinutes(10, '8-Mark Question (10m)')" style="background: #111827; color: #38bdf8; border: 1px solid #0284c7; padding: 4px 8px; border-radius: 3px; font-weight: 700; font-size: 0.72rem; cursor: pointer;">⏱ Time (10m)</button>
+                </td>
+              </tr>
+              <tr style="border-bottom: 1px solid #1f2937;">
+                <td style="padding: 8px 12px; font-weight: 800; color: #38bdf8;">12 Marks</td>
+                <td style="padding: 8px 12px; color: #e5e7eb;">Explain why... (Causation / Analytical Account)</td>
+                <td style="padding: 8px 12px; font-weight: 700; color: #facc15;">15 mins</td>
+                <td style="padding: 8px 12px; color: #9ca3af;"><strong>3 mins</strong> select 3 distinct causes + 1 own point</td>
+                <td style="padding: 8px 12px; color: #d1d5db;"><strong>12 mins</strong> 3 PEEL paragraphs with causal links (4m each)</td>
+                <td style="padding: 8px 12px; text-align: right;">
+                  <button type="button" onclick="window.setHubExamClockMinutes(15, '12-Mark Question (15m)')" style="background: #111827; color: #38bdf8; border: 1px solid #0284c7; padding: 4px 8px; border-radius: 3px; font-weight: 700; font-size: 0.72rem; cursor: pointer;">⏱ Time (15m)</button>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 12px; font-weight: 800; color: #38bdf8;">16+4 Marks</td>
+                <td style="padding: 8px 12px; color: #e5e7eb;">Statement Evaluation Essay ("How far do you agree?")</td>
+                <td style="padding: 8px 12px; font-weight: 700; color: #facc15;">25 mins</td>
+                <td style="padding: 8px 12px; color: #9ca3af;"><strong>5 mins</strong> define criteria + balance argument + conclusion</td>
+                <td style="padding: 8px 12px; color: #d1d5db;"><strong>20 mins</strong> Intro + Agree + Counter + Justified Judgement</td>
+                <td style="padding: 8px 12px; text-align: right;">
+                  <button type="button" onclick="window.setHubExamClockMinutes(25, '16-Mark Essay (25m)')" style="background: #111827; color: #38bdf8; border: 1px solid #0284c7; padding: 4px 8px; border-radius: 3px; font-weight: 700; font-size: 0.72rem; cursor: pointer;">⏱ Time (25m)</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
 
     <div style="max-width: 1200px; margin: 0 auto; padding: 25px 15px 40px 15px;">

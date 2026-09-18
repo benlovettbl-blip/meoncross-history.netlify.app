@@ -279,11 +279,52 @@
       margin-left: 5px;
       margin-right: 20px;
     }
+  
+    /* Question-Anchor Quick Launch Button Styles */
+    .btn-time-question {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #0f172a;
+      color: #38bdf8;
+      border: 1px solid #0284c7;
+      border-radius: 4px;
+      padding: 2px 7px;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Open Sans', Arial, sans-serif;
+      cursor: pointer;
+      margin-left: 8px;
+      vertical-align: middle;
+      text-decoration: none;
+      line-height: 1.2;
+      transition: all 0.15s ease;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+    .btn-time-question:hover {
+      background: #0284c7;
+      color: #ffffff;
+      border-color: #38bdf8;
+      transform: translateY(-1px);
+      box-shadow: 0 3px 6px rgba(2,132,199,0.3);
+    }
+    .btn-time-question:active {
+      transform: translateY(0);
+    }
+    .question-block, .question-title, .page-inner {
+      scroll-margin-top: 75px;
+    }
+    @media print {
+      .btn-time-question, .invigilator-hud, #mock-timing-strategy-drawer, .no-print {
+        display: none !important;
+      }
+    }
+
   </style>
 </head>
 <body>
 
-      <!-- Top Docked Invigilator Toolbar (Interactive Screen Mode) -->
+        <!-- Top Docked Invigilator Toolbar (Interactive Screen Mode) -->
   <div class="invigilator-hud no-print" style="position: sticky; top: 0; z-index: 9999; background: #0f172a; color: #ffffff; border-bottom: 3px solid #3b82f6; padding: 8px 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); font-family: 'Open Sans', Arial, sans-serif;">
     <!-- Left: Clock & Status -->
     <div style="display: flex; align-items: center; gap: 14px;">
@@ -297,7 +338,7 @@
       </div>
     </div>
 
-    <!-- Center: Single-Question Practice Presets & Custom Mins -->
+    <!-- Center: Single-Question Practice Presets, Strategy Drawer & Custom Mins -->
     <div style="display: flex; align-items: center; gap: 5px; flex-wrap: wrap; background: #1e293b; padding: 4px 8px; border-radius: 6px; border: 1px solid #334155;">
       <span style="font-size: 10px; font-weight: 800; color: #93c5fd; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 2px;">Question Practice:</span>
       <button type="button" class="mock-preset-btn" data-mins="5" onclick="setMockExamTimerMinutes(5, '4-Mark Question (5m)')" style="background: #0f172a; color: #e2e8f0; border: 1px solid #475569; padding: 4px 7px; font-weight: 700; font-size: 11px; border-radius: 4px; cursor: pointer;" title="5 Minutes (4-Mark Question)">5m</button>
@@ -311,6 +352,11 @@
         <input type="number" id="mock-custom-mins" min="1" max="240" placeholder="Mins" style="width: 48px; background: #0f172a; color: #ffffff; border: 1px solid #475569; border-radius: 3px; padding: 3px 5px; font-size: 11px; font-weight: 700; text-align: center;">
         <button type="button" onclick="applyCustomMockMinutes()" style="background: #3b82f6; color: #ffffff; border: none; padding: 4px 8px; font-weight: 700; font-size: 11px; border-radius: 3px; cursor: pointer;" title="Apply Custom Minutes">Set</button>
       </div>
+
+      <!-- Collapsible Timing Strategy Toggle Button -->
+      <button type="button" id="mock-strategy-toggle" onclick="toggleMockTimingStrategy()" style="background: #1e293b; color: #38bdf8; border: 1.5px solid #0284c7; padding: 4px 9px; font-weight: 800; font-size: 11px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; margin-left: 4px;" title="View Exam Timing Strategy & Pacing Breakdown">
+        <span>⏱ Timing Strategy</span> <span id="mock-strategy-arrow" style="font-size: 9px; transition: transform 0.2s ease;">▼</span>
+      </button>
     </div>
 
     <!-- Right: Controls -->
@@ -324,6 +370,90 @@
       <button type="button" onclick="toggleMockExamTimer('add25pct')" style="background: transparent; color: #c084fc; border: 1.5px solid #8b5cf6; padding: 5px 7px; font-weight: 700; font-size: 11px; border-radius: 4px; cursor: pointer;" title="Add 25% Extra Time (Access Arrangements)">+25% Extra</button>
       <button type="button" id="mock-timer-sound" onclick="toggleMockExamTimer('toggleSound')" style="background: transparent; color: #e2e8f0; border: 1.5px solid #475569; padding: 5px 7px; font-weight: 700; font-size: 11px; border-radius: 4px; cursor: pointer;" title="Toggle Audio Chimes">🔊 Sound: On</button>
       <a id="mock-ms-link" href="eee_mock_2026_mark_scheme.html" target="_blank" style="background: #10b981; color: #ffffff; border: 1.5px solid #059669; padding: 5px 10px; font-weight: 800; font-size: 11px; border-radius: 4px; text-decoration: none; display: inline-flex; align-items: center; margin-left: 4px;">Mark Scheme &rarr;</a>
+    </div>
+
+    <!-- Collapsible Timing Strategy Drawer (Pacing Matrix: 1 Mark ≈ 1.25 Mins) -->
+    <div id="mock-timing-strategy-drawer" style="display: none; width: 100%; border-top: 1px solid #334155; margin-top: 8px; padding-top: 10px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; flex-wrap: wrap; gap: 8px;">
+        <div>
+          <div style="font-size: 11px; font-weight: 800; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.8px;">
+            ⏱ Pearson GCSE History &bull; Exam Timing Strategy &amp; Pacing Matrix
+          </div>
+          <div style="font-size: 11px; color: #cbd5e1; margin-top: 2px;">
+            <strong>The Golden Rule:</strong> 1 Mark &asymp; 1.25 Minutes. Protect your time by adhering strictly to the recommended planning vs. writing splits below.
+          </div>
+        </div>
+        <div style="font-size: 10px; color: #94a3b8; background: #0f172a; padding: 3px 8px; border-radius: 4px; border: 1px solid #334155;">
+          💡 Tip: Click any row's <strong>[⏱ Time (Xm)]</strong> button or on-page question anchor to start immediately.
+        </div>
+      </div>
+
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 11px; text-align: left; background: #0f172a; border: 1px solid #334155; border-radius: 4px;">
+          <thead>
+            <tr style="background: #1e293b; color: #93c5fd; border-bottom: 1px solid #334155; text-transform: uppercase; font-size: 10px; letter-spacing: 0.5px;">
+              <th style="padding: 6px 10px;">Tariff</th>
+              <th style="padding: 6px 10px;">Question Type (Edexcel Specification)</th>
+              <th style="padding: 6px 10px;">Total Time</th>
+              <th style="padding: 6px 10px;">Planning &amp; Prep Split</th>
+              <th style="padding: 6px 10px;">Writing &amp; Evidence Split</th>
+              <th style="padding: 6px 10px; text-align: right;">Quick Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #1e293b;">
+              <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">2 Marks</td>
+              <td style="padding: 6px 10px; color: #e2e8f0;">Describe one feature / Identification</td>
+              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">3 mins</td>
+              <td style="padding: 6px 10px; color: #94a3b8;"><strong>30s</strong> target feature recall</td>
+              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>2.5m</strong> 2 precise sentences (feature + detail)</td>
+              <td style="padding: 6px 10px; text-align: right;">
+                <button type="button" onclick="setMockExamTimerMinutes(3, '2-Mark Question (3m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (3m)</button>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #1e293b;">
+              <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">4 Marks</td>
+              <td style="padding: 6px 10px; color: #e2e8f0;">Inference / Similarity &amp; Diff / Consequence / Follow-up</td>
+              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">5 mins</td>
+              <td style="padding: 6px 10px; color: #94a3b8;"><strong>1 min</strong> identify quotes / key factor</td>
+              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>4 mins</strong> single sustained analytical paragraph</td>
+              <td style="padding: 6px 10px; text-align: right;">
+                <button type="button" onclick="setMockExamTimerMinutes(5, '4-Mark Question (5m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (5m)</button>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #1e293b;">
+              <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">8 Marks</td>
+              <td style="padding: 6px 10px; color: #e2e8f0;">Source Utility (NOP + Content) / Narrative Account</td>
+              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">10 mins</td>
+              <td style="padding: 6px 10px; color: #94a3b8;"><strong>2 mins</strong> annotate provenance (NOP) + own knowledge</td>
+              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>8 mins</strong> 2 balanced paragraphs (4m per source/phase)</td>
+              <td style="padding: 6px 10px; text-align: right;">
+                <button type="button" onclick="setMockExamTimerMinutes(10, '8-Mark Question (10m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (10m)</button>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #1e293b;">
+              <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">12 Marks</td>
+              <td style="padding: 6px 10px; color: #e2e8f0;">Explain why... (Causation / Analytical Account)</td>
+              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">15 mins</td>
+              <td style="padding: 6px 10px; color: #94a3b8;"><strong>3 mins</strong> select 3 distinct causes + 1 own point</td>
+              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>12 mins</strong> 3 PEEL paragraphs with causal links (4m each)</td>
+              <td style="padding: 6px 10px; text-align: right;">
+                <button type="button" onclick="setMockExamTimerMinutes(15, '12-Mark Question (15m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (15m)</button>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">16+4 Marks</td>
+              <td style="padding: 6px 10px; color: #e2e8f0;">Statement Evaluation Essay ("How far do you agree?")</td>
+              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">25 mins</td>
+              <td style="padding: 6px 10px; color: #94a3b8;"><strong>5 mins</strong> define criteria + balance argument + conclusion</td>
+              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>20 mins</strong> Intro + Agree + Counter + Justified Judgement</td>
+              <td style="padding: 6px 10px; text-align: right;">
+                <button type="button" onclick="setMockExamTimerMinutes(25, '16-Mark Essay (25m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (25m)</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 
@@ -412,7 +542,7 @@
     </div>
   </div>
 
-  <div class="page"><div class="page-inner"><div class="inner-header">Early Elizabethan England, 1558-88<br><br>Answer Question 1(a), Question 1(b), Question 2 and EITHER Question 3 OR Question 4.</div><div class="question-block">  <div class="question-text">    <div class="question-num">1</div>    <div style="width: 100%;">      (a) Describe one characteristic of poverty in early Elizabethan England.      <span style="float: right; font-weight: 400; color: #444;">(2)</span>    </div>  </div></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="height:30px;"></div><div class="question-block">  <div class="question-text">    <div class="question-num"></div>    <div style="width: 100%;">      (b) Describe one characteristic of the English attempts to colonise Virginia.      <span style="float: right; font-weight: 400; color: #444;">(2)</span>    </div>  </div></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="border-top: 1px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">(Total for Question 1 = 4 marks)</div></div><div class="footer"><div></div><div></div></div></div><div class="page"><div class="page-inner"><div class="question-block">  <div class="question-text">    <div class="question-num">2</div>    <div style="width: 100%;">      Explain why the Northern Earls' Rebellion (1569-70) posed a significant danger to Elizabeth I.      <span style="float: right; font-weight: 400; color: #444;">(12)</span>    </div>  </div>  <div class="bullet-point-box">    <em>You <strong>may</strong> use the following in your answer:</em>    <ul><li>Mary, Queen of Scots</li><li>Anglo-Spanish relations</li>    </ul>    <em style="display:block; margin-top:10px;">You <strong>must</strong> also use information of your own.</em>  </div></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div><div class="footer"><div></div><div></div></div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="border-top: 1px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">(Total for Question 2 = 12 marks)</div></div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div><div class="page"><div class="page-inner"><div style="text-align:center; font-weight:bold; margin-bottom: 20px;">Answer EITHER Question 3 OR Question 4.</div><div style="font-weight:bold; margin-bottom:10px;">EITHER</div><div class="question-block">  <div class="question-text">    <div class="question-num">3</div>    <div style="width: 100%;">      "Economic difficulties were the most significant challenge Elizabeth faced upon her accession in 1558."<br><br>How far do you agree? Explain your answer.    </div>  </div>  <div class="bullet-point-box">    <em>You <strong>may</strong> use the following in your answer:</em>    <ul><li>The royal debt</li><li>Elizabeth's claim to the throne</li>    </ul>    <em style="display:block; margin-top:10px;">You <strong>must</strong> also use information of your own.</em>  </div></div><div style="border-top: 1px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">(Total for Question 3 = 16 marks)</div><div style="font-weight:bold; margin:20px 0 10px 0;">OR</div><div class="question-block">  <div class="question-text">    <div class="question-num">4</div>    <div style="width: 100%;">      "Spanish strategic errors were the primary cause of England's triumph over the Armada."<br><br>How far do you agree? Explain your answer.    </div>  </div>  <div class="bullet-point-box">    <em>You <strong>may</strong> use the following in your answer:</em>    <ul><li>The command of the Duke of Medina Sidonia</li><li>The deployment of fireships</li>    </ul>    <em style="display:block; margin-top:10px;">You <strong>must</strong> also use information of your own.</em>  </div></div><div style="border-top: 1px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">(Total for Question 4 = 16 marks)</div></div><div class="footer"><div></div><div></div></div></div><div class="page"><div class="page-inner"><div class="indicate-choice">  Indicate which question you are answering by marking a cross in the box <span style="font-weight:900;">&#9746;</span>. If you change your mind, put a line through the box <span style="font-weight:900;">&#9746;</span> and then indicate your new question with a cross <span style="font-weight:900;">&#9746;</span>.<br><br>  Chosen question number:   <span style="margin-left: 10px;">Question 3</span> <div class="checkbox-inline"></div>  Question 4 <div class="checkbox-inline"></div></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="border-top: 2px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">TOTAL FOR BOOKLET B = 32 MARKS</div></div><div class="footer"><div></div><div></div></div></div>
+  <div class="page"><div class="page-inner"><div class="inner-header">Early Elizabethan England, 1558-88<br><br>Answer Question 1(a), Question 1(b), Question 2 and EITHER Question 3 OR Question 4.</div><div class="question-block">  <div class="question-text">    <div class="question-num">1</div>    <div style="width: 100%;">      (a) Describe one characteristic of poverty in early Elizabethan England.      <span style="float: right; font-weight: 400; color: #444;">(2) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 3, '2-Mark Question (3m)')" title="Lock timer to 3m and start immediately">⏱ Time this question (3m)</button></span>    </div>  </div></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="height:30px;"></div><div class="question-block">  <div class="question-text">    <div class="question-num"></div>    <div style="width: 100%;">      (b) Describe one characteristic of the English attempts to colonise Virginia.      <span style="float: right; font-weight: 400; color: #444;">(2) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 3, '2-Mark Question (3m)')" title="Lock timer to 3m and start immediately">⏱ Time this question (3m)</button></span>    </div>  </div></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="border-top: 1px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">(Total for Question 1 = 4 marks)</div></div><div class="footer"><div></div><div></div></div></div><div class="page"><div class="page-inner"><div class="question-block">  <div class="question-text">    <div class="question-num">2</div>    <div style="width: 100%;">      Explain why the Northern Earls' Rebellion (1569-70) posed a significant danger to Elizabeth I.      <span style="float: right; font-weight: 400; color: #444;">(12) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 15, '12-Mark Question (15m)')" title="Lock timer to 15m and start immediately">⏱ Time this question (15m)</button></span>    </div>  </div>  <div class="bullet-point-box">    <em>You <strong>may</strong> use the following in your answer:</em>    <ul><li>Mary, Queen of Scots</li><li>Anglo-Spanish relations</li>    </ul>    <em style="display:block; margin-top:10px;">You <strong>must</strong> also use information of your own.</em>  </div></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div><div class="footer"><div></div><div></div></div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="border-top: 1px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">(Total for Question 2 = 12 marks)</div></div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div><div class="page"><div class="page-inner"><div style="text-align:center; font-weight:bold; margin-bottom: 20px;">Answer EITHER Question 3 OR Question 4.</div><div style="font-weight:bold; margin-bottom:10px;">EITHER</div><div class="question-block">  <div class="question-text">    <div class="question-num">3</div>    <div style="width: 100%;">      "Economic difficulties were the most significant challenge Elizabeth faced upon her accession in 1558."<br><br>How far do you agree? Explain your answer.    </div>  </div>  <div class="bullet-point-box">    <em>You <strong>may</strong> use the following in your answer:</em>    <ul><li>The royal debt</li><li>Elizabeth's claim to the throne</li>    </ul>    <em style="display:block; margin-top:10px;">You <strong>must</strong> also use information of your own.</em>  </div></div><div style="border-top: 1px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">(Total for Question 3 = 16 marks) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 25, 'Question 3 (16m)')" title="Lock timer to 25m and start immediately">⏱ Time this question (25m)</button></div><div style="font-weight:bold; margin:20px 0 10px 0;">OR</div><div class="question-block">  <div class="question-text">    <div class="question-num">4</div>    <div style="width: 100%;">      "Spanish strategic errors were the primary cause of England's triumph over the Armada."<br><br>How far do you agree? Explain your answer.    </div>  </div>  <div class="bullet-point-box">    <em>You <strong>may</strong> use the following in your answer:</em>    <ul><li>The command of the Duke of Medina Sidonia</li><li>The deployment of fireships</li>    </ul>    <em style="display:block; margin-top:10px;">You <strong>must</strong> also use information of your own.</em>  </div></div><div style="border-top: 1px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">(Total for Question 4 = 16 marks) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 25, 'Question 4 (16m)')" title="Lock timer to 25m and start immediately">⏱ Time this question (25m)</button></div></div><div class="footer"><div></div><div></div></div></div><div class="page"><div class="page-inner"><div class="indicate-choice">  Indicate which question you are answering by marking a cross in the box <span style="font-weight:900;">&#9746;</span>. If you change your mind, put a line through the box <span style="font-weight:900;">&#9746;</span> and then indicate your new question with a cross <span style="font-weight:900;">&#9746;</span>.<br><br>  Chosen question number:   <span style="margin-left: 10px;">Question 3</span> <div class="checkbox-inline"></div>  Question 4 <div class="checkbox-inline"></div></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div></div><div class="footer"><div></div><div class="turn-over">Turn over &#9654;</div></div></div><div class="page"><div class="page-inner"><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="border-top: 2px solid #ccc; margin-top: 20px; padding-top: 10px; text-align: right; font-weight: bold;">TOTAL FOR BOOKLET B = 32 MARKS</div></div><div class="footer"><div></div><div></div></div></div>
 
   <!-- End of booklet -->
   <div class="page">
@@ -429,7 +559,8 @@
     </div>
   </div>
 
-    <!-- Pearson Invigilator HUD Live Timer Engine -->
+    
+  <!-- Pearson Invigilator HUD Live Timer Engine -->
   <script>
   (function () {
     var defaultMins = 55;
@@ -648,6 +779,53 @@
           soundBtn.textContent = soundEnabled ? '🔊 Sound: On' : '🔇 Sound: Off';
         }
       }
+    };
+
+    window.toggleMockTimingStrategy = function () {
+      var drawer = document.getElementById('mock-timing-strategy-drawer');
+      var arrow = document.getElementById('mock-strategy-arrow');
+      if (!drawer) return;
+      var isHidden = drawer.style.display === 'none' || drawer.style.display === '';
+      drawer.style.display = isHidden ? 'block' : 'none';
+      if (arrow) {
+        arrow.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+      }
+    };
+
+    window.timeThisQuestion = function (btnEl, mins, label) {
+      mins = parseInt(mins, 10);
+      if (isNaN(mins) || mins <= 0) return;
+
+      // 1. Lock timer to question minutes & update status
+      window.setMockExamTimerMinutes(mins, label || (mins + 'm Question'));
+
+      // 2. Start clock immediately
+      window.toggleMockExamTimer('start');
+
+      // 3. Smooth scroll viewport to anchor question container below sticky HUD
+      var container = btnEl.closest('.question-block, .page-inner, .page, .question-title') || btnEl;
+      var hud = document.querySelector('.invigilator-hud');
+      var hudOffset = (hud ? hud.offsetHeight : 60) + 16;
+      var rect = container.getBoundingClientRect();
+      var targetY = window.pageYOffset + rect.top - hudOffset;
+
+      window.scrollTo({
+        top: Math.max(0, targetY),
+        behavior: 'smooth'
+      });
+
+      // 4. Subtle visual pulse/accent to highlight the anchored question
+      var origOutline = container.style.outline;
+      var origOffset = container.style.outlineOffset;
+      var origTransition = container.style.transition;
+      container.style.transition = 'outline 0.25s ease';
+      container.style.outline = '3px solid #38bdf8';
+      container.style.outlineOffset = '6px';
+      setTimeout(function () {
+        container.style.outline = origOutline;
+        container.style.outlineOffset = origOffset;
+        container.style.transition = origTransition;
+      }, 2200);
     };
 
     function initHud() {

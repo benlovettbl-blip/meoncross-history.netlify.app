@@ -23,11 +23,52 @@
     .source-content { font-size: 14px; line-height: 1.5; }
     .question-title { font-weight: bold; font-size: 15px; margin-top: 15px; }
     .mark-scheme-banner { background: #000000; color: #ffffff; border: 2px solid #000000; }
+  
+    /* Question-Anchor Quick Launch Button Styles */
+    .btn-time-question {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #0f172a;
+      color: #38bdf8;
+      border: 1px solid #0284c7;
+      border-radius: 4px;
+      padding: 2px 7px;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Open Sans', Arial, sans-serif;
+      cursor: pointer;
+      margin-left: 8px;
+      vertical-align: middle;
+      text-decoration: none;
+      line-height: 1.2;
+      transition: all 0.15s ease;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+    .btn-time-question:hover {
+      background: #0284c7;
+      color: #ffffff;
+      border-color: #38bdf8;
+      transform: translateY(-1px);
+      box-shadow: 0 3px 6px rgba(2,132,199,0.3);
+    }
+    .btn-time-question:active {
+      transform: translateY(0);
+    }
+    .question-block, .question-title, .page-inner {
+      scroll-margin-top: 75px;
+    }
+    @media print {
+      .btn-time-question, .invigilator-hud, #mock-timing-strategy-drawer, .no-print {
+        display: none !important;
+      }
+    }
+
   </style>
 </head>
 <body>
 
-      <!-- Top Docked Invigilator Toolbar (Interactive Screen Mode) -->
+        <!-- Top Docked Invigilator Toolbar (Interactive Screen Mode) -->
   <div class="invigilator-hud no-print" style="position: sticky; top: 0; z-index: 9999; background: #0f172a; color: #ffffff; border-bottom: 3px solid #3b82f6; padding: 8px 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); font-family: 'Open Sans', Arial, sans-serif;">
     <!-- Left: Clock & Status -->
     <div style="display: flex; align-items: center; gap: 14px;">
@@ -41,7 +82,7 @@
       </div>
     </div>
 
-    <!-- Center: Single-Question Practice Presets & Custom Mins -->
+    <!-- Center: Single-Question Practice Presets, Strategy Drawer & Custom Mins -->
     <div style="display: flex; align-items: center; gap: 5px; flex-wrap: wrap; background: #1e293b; padding: 4px 8px; border-radius: 6px; border: 1px solid #334155;">
       <span style="font-size: 10px; font-weight: 800; color: #93c5fd; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 2px;">Question Practice:</span>
       <button type="button" class="mock-preset-btn" data-mins="5" onclick="setMockExamTimerMinutes(5, '4-Mark Question (5m)')" style="background: #0f172a; color: #e2e8f0; border: 1px solid #475569; padding: 4px 7px; font-weight: 700; font-size: 11px; border-radius: 4px; cursor: pointer;" title="5 Minutes (4-Mark Question)">5m</button>
@@ -55,6 +96,11 @@
         <input type="number" id="mock-custom-mins" min="1" max="240" placeholder="Mins" style="width: 48px; background: #0f172a; color: #ffffff; border: 1px solid #475569; border-radius: 3px; padding: 3px 5px; font-size: 11px; font-weight: 700; text-align: center;">
         <button type="button" onclick="applyCustomMockMinutes()" style="background: #3b82f6; color: #ffffff; border: none; padding: 4px 8px; font-weight: 700; font-size: 11px; border-radius: 3px; cursor: pointer;" title="Apply Custom Minutes">Set</button>
       </div>
+
+      <!-- Collapsible Timing Strategy Toggle Button -->
+      <button type="button" id="mock-strategy-toggle" onclick="toggleMockTimingStrategy()" style="background: #1e293b; color: #38bdf8; border: 1.5px solid #0284c7; padding: 4px 9px; font-weight: 800; font-size: 11px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; margin-left: 4px;" title="View Exam Timing Strategy & Pacing Breakdown">
+        <span>⏱ Timing Strategy</span> <span id="mock-strategy-arrow" style="font-size: 9px; transition: transform 0.2s ease;">▼</span>
+      </button>
     </div>
 
     <!-- Right: Controls -->
@@ -68,6 +114,90 @@
       <button type="button" onclick="toggleMockExamTimer('add25pct')" style="background: transparent; color: #c084fc; border: 1.5px solid #8b5cf6; padding: 5px 7px; font-weight: 700; font-size: 11px; border-radius: 4px; cursor: pointer;" title="Add 25% Extra Time (Access Arrangements)">+25% Extra</button>
       <button type="button" id="mock-timer-sound" onclick="toggleMockExamTimer('toggleSound')" style="background: transparent; color: #e2e8f0; border: 1.5px solid #475569; padding: 5px 7px; font-weight: 700; font-size: 11px; border-radius: 4px; cursor: pointer;" title="Toggle Audio Chimes">🔊 Sound: On</button>
       <a id="mock-ms-link" href="usa_mock_1_mark_scheme.html" target="_blank" style="background: #10b981; color: #ffffff; border: 1.5px solid #059669; padding: 5px 10px; font-weight: 800; font-size: 11px; border-radius: 4px; text-decoration: none; display: inline-flex; align-items: center; margin-left: 4px;">Mark Scheme &rarr;</a>
+    </div>
+
+    <!-- Collapsible Timing Strategy Drawer (Pacing Matrix: 1 Mark ≈ 1.25 Mins) -->
+    <div id="mock-timing-strategy-drawer" style="display: none; width: 100%; border-top: 1px solid #334155; margin-top: 8px; padding-top: 10px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; flex-wrap: wrap; gap: 8px;">
+        <div>
+          <div style="font-size: 11px; font-weight: 800; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.8px;">
+            ⏱ Pearson GCSE History &bull; Exam Timing Strategy &amp; Pacing Matrix
+          </div>
+          <div style="font-size: 11px; color: #cbd5e1; margin-top: 2px;">
+            <strong>The Golden Rule:</strong> 1 Mark &asymp; 1.25 Minutes. Protect your time by adhering strictly to the recommended planning vs. writing splits below.
+          </div>
+        </div>
+        <div style="font-size: 10px; color: #94a3b8; background: #0f172a; padding: 3px 8px; border-radius: 4px; border: 1px solid #334155;">
+          💡 Tip: Click any row's <strong>[⏱ Time (Xm)]</strong> button or on-page question anchor to start immediately.
+        </div>
+      </div>
+
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 11px; text-align: left; background: #0f172a; border: 1px solid #334155; border-radius: 4px;">
+          <thead>
+            <tr style="background: #1e293b; color: #93c5fd; border-bottom: 1px solid #334155; text-transform: uppercase; font-size: 10px; letter-spacing: 0.5px;">
+              <th style="padding: 6px 10px;">Tariff</th>
+              <th style="padding: 6px 10px;">Question Type (Edexcel Specification)</th>
+              <th style="padding: 6px 10px;">Total Time</th>
+              <th style="padding: 6px 10px;">Planning &amp; Prep Split</th>
+              <th style="padding: 6px 10px;">Writing &amp; Evidence Split</th>
+              <th style="padding: 6px 10px; text-align: right;">Quick Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #1e293b;">
+              <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">2 Marks</td>
+              <td style="padding: 6px 10px; color: #e2e8f0;">Describe one feature / Identification</td>
+              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">3 mins</td>
+              <td style="padding: 6px 10px; color: #94a3b8;"><strong>30s</strong> target feature recall</td>
+              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>2.5m</strong> 2 precise sentences (feature + detail)</td>
+              <td style="padding: 6px 10px; text-align: right;">
+                <button type="button" onclick="setMockExamTimerMinutes(3, '2-Mark Question (3m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (3m)</button>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #1e293b;">
+              <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">4 Marks</td>
+              <td style="padding: 6px 10px; color: #e2e8f0;">Inference / Similarity &amp; Diff / Consequence / Follow-up</td>
+              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">5 mins</td>
+              <td style="padding: 6px 10px; color: #94a3b8;"><strong>1 min</strong> identify quotes / key factor</td>
+              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>4 mins</strong> single sustained analytical paragraph</td>
+              <td style="padding: 6px 10px; text-align: right;">
+                <button type="button" onclick="setMockExamTimerMinutes(5, '4-Mark Question (5m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (5m)</button>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #1e293b;">
+              <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">8 Marks</td>
+              <td style="padding: 6px 10px; color: #e2e8f0;">Source Utility (NOP + Content) / Narrative Account</td>
+              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">10 mins</td>
+              <td style="padding: 6px 10px; color: #94a3b8;"><strong>2 mins</strong> annotate provenance (NOP) + own knowledge</td>
+              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>8 mins</strong> 2 balanced paragraphs (4m per source/phase)</td>
+              <td style="padding: 6px 10px; text-align: right;">
+                <button type="button" onclick="setMockExamTimerMinutes(10, '8-Mark Question (10m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (10m)</button>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #1e293b;">
+              <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">12 Marks</td>
+              <td style="padding: 6px 10px; color: #e2e8f0;">Explain why... (Causation / Analytical Account)</td>
+              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">15 mins</td>
+              <td style="padding: 6px 10px; color: #94a3b8;"><strong>3 mins</strong> select 3 distinct causes + 1 own point</td>
+              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>12 mins</strong> 3 PEEL paragraphs with causal links (4m each)</td>
+              <td style="padding: 6px 10px; text-align: right;">
+                <button type="button" onclick="setMockExamTimerMinutes(15, '12-Mark Question (15m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (15m)</button>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">16+4 Marks</td>
+              <td style="padding: 6px 10px; color: #e2e8f0;">Statement Evaluation Essay ("How far do you agree?")</td>
+              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">25 mins</td>
+              <td style="padding: 6px 10px; color: #94a3b8;"><strong>5 mins</strong> define criteria + balance argument + conclusion</td>
+              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>20 mins</strong> Intro + Agree + Counter + Justified Judgement</td>
+              <td style="padding: 6px 10px; text-align: right;">
+                <button type="button" onclick="setMockExamTimerMinutes(25, '16-Mark Essay (25m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (25m)</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 
@@ -125,7 +255,7 @@
     
     <!-- Question 1 -->
     <div class="question-title">
-      1. Give two things you can infer from Source A about Civil rights organisations in the early 1950s. (4 marks)
+      1. Give two things you can infer from Source A about Civil rights organisations in the early 1950s. (4 marks) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 5, '4-Mark Question (5m)')" title="Lock timer to 5m and start immediately">⏱ Time this question (5m)</button>
     </div>
     <div class="source-box">
       <div class="provenance">Source A: From a journalist's dispatch in a Chicago newspaper, reporting on Southern voter registration in 1954.</div>
@@ -145,7 +275,7 @@
   <!-- Question 2 -->
   <div class="page">
     <div class="question-title">
-      2. Explain why Black Americans faced segregation and discrimination in the Southern states in the early 1950s. (12 marks)
+      2. Explain why Black Americans faced segregation and discrimination in the Southern states in the early 1950s. (12 marks) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 15, '12-Mark Question (15m)')" title="Lock timer to 15m and start immediately">⏱ Time this question (15m)</button>
     </div>
     <div style="background: #f1f5f9; padding: 10px; border-radius: 4px; font-size: 13px; margin: 10px 0;">You may use the following in your answer: <ul><li>Supreme Court rulings (Plessy v Ferguson)</li><li>The Ku Klux Klan</li></ul> You must also use information of your own.</div>
     <div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
@@ -170,7 +300,7 @@
 
     <!-- Question 3(a) -->
     <div class="question-title">
-      3 (a) How useful are Sources B and C for an enquiry into the work of civil rights organisations in the early 1950s? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks)
+      3 (a) How useful are Sources B and C for an enquiry into the work of civil rights organisations in the early 1950s? Explain your answer, using Sources B and C and your own knowledge of the historical context. (8 marks) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 10, '8-Mark Question (10m)')" title="Lock timer to 10m and start immediately">⏱ Time this question (10m)</button>
     </div>
     <div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
   </div>
@@ -188,12 +318,12 @@
 
     <!-- Question 3(b) & 3(c) -->
     <div class="question-title">
-      3 (b) Study Interpretations 1 and 2. They give different views about the work of civil rights organisations in the early 1950s. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks)
+      3 (b) Study Interpretations 1 and 2. They give different views about the work of civil rights organisations in the early 1950s. What is the main difference between these views? Explain your answer, using details from both interpretations. (4 marks) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 5, '4-Mark Question (5m)')" title="Lock timer to 5m and start immediately">⏱ Time this question (5m)</button>
     </div>
     <div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
 
     <div class="question-title" style="margin-top: 15px;">
-      3 (c) Suggest one reason why Interpretations 1 and 2 give different views about the work of civil rights organisations in the early 1950s. You can use Sources B and C to help explain your answer. (4 marks)
+      3 (c) Suggest one reason why Interpretations 1 and 2 give different views about the work of civil rights organisations in the early 1950s. You can use Sources B and C to help explain your answer. (4 marks) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 5, '4-Mark Question (5m)')" title="Lock timer to 5m and start immediately">⏱ Time this question (5m)</button>
     </div>
     <div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
   </div>
@@ -201,12 +331,13 @@
   <!-- Question 3(d) 16 marks -->
   <div class="page">
     <div class="question-title">
-      3 (d) How far do you agree with Interpretation 2 about the work of civil rights organisations in the early 1950s? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar)
+      3 (d) How far do you agree with Interpretation 2 about the work of civil rights organisations in the early 1950s? Explain your answer, using both interpretations and your own knowledge of the historical context. (16 marks + 4 marks for spelling, punctuation and grammar) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 25, '16-Mark Question (25m)')" title="Lock timer to 25m and start immediately">⏱ Time this question (25m)</button>
     </div>
     <div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
   </div>
 
-    <!-- Pearson Invigilator HUD Live Timer Engine -->
+    
+  <!-- Pearson Invigilator HUD Live Timer Engine -->
   <script>
   (function () {
     var defaultMins = 80;
@@ -425,6 +556,53 @@
           soundBtn.textContent = soundEnabled ? '🔊 Sound: On' : '🔇 Sound: Off';
         }
       }
+    };
+
+    window.toggleMockTimingStrategy = function () {
+      var drawer = document.getElementById('mock-timing-strategy-drawer');
+      var arrow = document.getElementById('mock-strategy-arrow');
+      if (!drawer) return;
+      var isHidden = drawer.style.display === 'none' || drawer.style.display === '';
+      drawer.style.display = isHidden ? 'block' : 'none';
+      if (arrow) {
+        arrow.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+      }
+    };
+
+    window.timeThisQuestion = function (btnEl, mins, label) {
+      mins = parseInt(mins, 10);
+      if (isNaN(mins) || mins <= 0) return;
+
+      // 1. Lock timer to question minutes & update status
+      window.setMockExamTimerMinutes(mins, label || (mins + 'm Question'));
+
+      // 2. Start clock immediately
+      window.toggleMockExamTimer('start');
+
+      // 3. Smooth scroll viewport to anchor question container below sticky HUD
+      var container = btnEl.closest('.question-block, .page-inner, .page, .question-title') || btnEl;
+      var hud = document.querySelector('.invigilator-hud');
+      var hudOffset = (hud ? hud.offsetHeight : 60) + 16;
+      var rect = container.getBoundingClientRect();
+      var targetY = window.pageYOffset + rect.top - hudOffset;
+
+      window.scrollTo({
+        top: Math.max(0, targetY),
+        behavior: 'smooth'
+      });
+
+      // 4. Subtle visual pulse/accent to highlight the anchored question
+      var origOutline = container.style.outline;
+      var origOffset = container.style.outlineOffset;
+      var origTransition = container.style.transition;
+      container.style.transition = 'outline 0.25s ease';
+      container.style.outline = '3px solid #38bdf8';
+      container.style.outlineOffset = '6px';
+      setTimeout(function () {
+        container.style.outline = origOutline;
+        container.style.outlineOffset = origOffset;
+        container.style.transition = origTransition;
+      }, 2200);
     };
 
     function initHud() {

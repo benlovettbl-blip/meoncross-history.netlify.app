@@ -57,7 +57,7 @@ function generateInvigilatorHud(paperRef, defaultMinutes, pacingText, msUrl) {
       </div>
     </div>
 
-    <!-- Center: Single-Question Practice Presets & Custom Mins -->
+    <!-- Center: Single-Question Practice Presets, Strategy Drawer & Custom Mins -->
     <div style="display: flex; align-items: center; gap: 5px; flex-wrap: wrap; background: #1e293b; padding: 4px 8px; border-radius: 6px; border: 1px solid #334155;">
       <span style="font-size: 10px; font-weight: 800; color: #93c5fd; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 2px;">Question Practice:</span>
       <button type="button" class="mock-preset-btn" data-mins="5" onclick="setMockExamTimerMinutes(5, '4-Mark Question (5m)')" style="background: #0f172a; color: #e2e8f0; border: 1px solid #475569; padding: 4px 7px; font-weight: 700; font-size: 11px; border-radius: 4px; cursor: pointer;" title="5 Minutes (4-Mark Question)">5m</button>
@@ -71,6 +71,11 @@ function generateInvigilatorHud(paperRef, defaultMinutes, pacingText, msUrl) {
         <input type="number" id="mock-custom-mins" min="1" max="240" placeholder="Mins" style="width: 48px; background: #0f172a; color: #ffffff; border: 1px solid #475569; border-radius: 3px; padding: 3px 5px; font-size: 11px; font-weight: 700; text-align: center;">
         <button type="button" onclick="applyCustomMockMinutes()" style="background: #3b82f6; color: #ffffff; border: none; padding: 4px 8px; font-weight: 700; font-size: 11px; border-radius: 3px; cursor: pointer;" title="Apply Custom Minutes">Set</button>
       </div>
+
+      <!-- Collapsible Timing Strategy Toggle Button -->
+      <button type="button" id="mock-strategy-toggle" onclick="toggleMockTimingStrategy()" style="background: #1e293b; color: #38bdf8; border: 1.5px solid #0284c7; padding: 4px 9px; font-weight: 800; font-size: 11px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; margin-left: 4px;" title="View Exam Timing Strategy & Pacing Breakdown">
+        <span>⏱ Timing Strategy</span> <span id="mock-strategy-arrow" style="font-size: 9px; transition: transform 0.2s ease;">▼</span>
+      </button>
     </div>
 
     <!-- Right: Controls -->
@@ -84,6 +89,90 @@ function generateInvigilatorHud(paperRef, defaultMinutes, pacingText, msUrl) {
       <button type="button" onclick="toggleMockExamTimer('add25pct')" style="background: transparent; color: #c084fc; border: 1.5px solid #8b5cf6; padding: 5px 7px; font-weight: 700; font-size: 11px; border-radius: 4px; cursor: pointer;" title="Add 25% Extra Time (Access Arrangements)">+25% Extra</button>
       <button type="button" id="mock-timer-sound" onclick="toggleMockExamTimer('toggleSound')" style="background: transparent; color: #e2e8f0; border: 1.5px solid #475569; padding: 5px 7px; font-weight: 700; font-size: 11px; border-radius: 4px; cursor: pointer;" title="Toggle Audio Chimes">🔊 Sound: On</button>
       ${msUrl ? `<a id="mock-ms-link" href="${msUrl}" target="_blank" style="background: #10b981; color: #ffffff; border: 1.5px solid #059669; padding: 5px 10px; font-weight: 800; font-size: 11px; border-radius: 4px; text-decoration: none; display: inline-flex; align-items: center; margin-left: 4px;">Mark Scheme &rarr;</a>` : ''}
+    </div>
+
+    <!-- Collapsible Timing Strategy Drawer (Pacing Matrix: 1 Mark ≈ 1.25 Mins) -->
+    <div id="mock-timing-strategy-drawer" style="display: none; width: 100%; border-top: 1px solid #334155; margin-top: 8px; padding-top: 10px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; flex-wrap: wrap; gap: 8px;">
+        <div>
+          <div style="font-size: 11px; font-weight: 800; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.8px;">
+            ⏱ Pearson GCSE History &bull; Exam Timing Strategy &amp; Pacing Matrix
+          </div>
+          <div style="font-size: 11px; color: #cbd5e1; margin-top: 2px;">
+            <strong>The Golden Rule:</strong> 1 Mark &asymp; 1.25 Minutes. Protect your time by adhering strictly to the recommended planning vs. writing splits below.
+          </div>
+        </div>
+        <div style="font-size: 10px; color: #94a3b8; background: #0f172a; padding: 3px 8px; border-radius: 4px; border: 1px solid #334155;">
+          💡 Tip: Click any row's <strong>[⏱ Time (Xm)]</strong> button or on-page question anchor to start immediately.
+        </div>
+      </div>
+
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 11px; text-align: left; background: #0f172a; border: 1px solid #334155; border-radius: 4px;">
+          <thead>
+            <tr style="background: #1e293b; color: #93c5fd; border-bottom: 1px solid #334155; text-transform: uppercase; font-size: 10px; letter-spacing: 0.5px;">
+              <th style="padding: 6px 10px;">Tariff</th>
+              <th style="padding: 6px 10px;">Question Type (Edexcel Specification)</th>
+              <th style="padding: 6px 10px;">Total Time</th>
+              <th style="padding: 6px 10px;">Planning &amp; Prep Split</th>
+              <th style="padding: 6px 10px;">Writing &amp; Evidence Split</th>
+              <th style="padding: 6px 10px; text-align: right;">Quick Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #1e293b;">
+              <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">2 Marks</td>
+              <td style="padding: 6px 10px; color: #e2e8f0;">Describe one feature / Identification</td>
+              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">3 mins</td>
+              <td style="padding: 6px 10px; color: #94a3b8;"><strong>30s</strong> target feature recall</td>
+              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>2.5m</strong> 2 precise sentences (feature + detail)</td>
+              <td style="padding: 6px 10px; text-align: right;">
+                <button type="button" onclick="setMockExamTimerMinutes(3, '2-Mark Question (3m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (3m)</button>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #1e293b;">
+              <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">4 Marks</td>
+              <td style="padding: 6px 10px; color: #e2e8f0;">Inference / Similarity &amp; Diff / Consequence / Follow-up</td>
+              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">5 mins</td>
+              <td style="padding: 6px 10px; color: #94a3b8;"><strong>1 min</strong> identify quotes / key factor</td>
+              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>4 mins</strong> single sustained analytical paragraph</td>
+              <td style="padding: 6px 10px; text-align: right;">
+                <button type="button" onclick="setMockExamTimerMinutes(5, '4-Mark Question (5m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (5m)</button>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #1e293b;">
+              <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">8 Marks</td>
+              <td style="padding: 6px 10px; color: #e2e8f0;">Source Utility (NOP + Content) / Narrative Account</td>
+              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">10 mins</td>
+              <td style="padding: 6px 10px; color: #94a3b8;"><strong>2 mins</strong> annotate provenance (NOP) + own knowledge</td>
+              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>8 mins</strong> 2 balanced paragraphs (4m per source/phase)</td>
+              <td style="padding: 6px 10px; text-align: right;">
+                <button type="button" onclick="setMockExamTimerMinutes(10, '8-Mark Question (10m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (10m)</button>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #1e293b;">
+              <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">12 Marks</td>
+              <td style="padding: 6px 10px; color: #e2e8f0;">Explain why... (Causation / Analytical Account)</td>
+              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">15 mins</td>
+              <td style="padding: 6px 10px; color: #94a3b8;"><strong>3 mins</strong> select 3 distinct causes + 1 own point</td>
+              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>12 mins</strong> 3 PEEL paragraphs with causal links (4m each)</td>
+              <td style="padding: 6px 10px; text-align: right;">
+                <button type="button" onclick="setMockExamTimerMinutes(15, '12-Mark Question (15m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (15m)</button>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">16+4 Marks</td>
+              <td style="padding: 6px 10px; color: #e2e8f0;">Statement Evaluation Essay ("How far do you agree?")</td>
+              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">25 mins</td>
+              <td style="padding: 6px 10px; color: #94a3b8;"><strong>5 mins</strong> define criteria + balance argument + conclusion</td>
+              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>20 mins</strong> Intro + Agree + Counter + Justified Judgement</td>
+              <td style="padding: 6px 10px; text-align: right;">
+                <button type="button" onclick="setMockExamTimerMinutes(25, '16-Mark Essay (25m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (25m)</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>`;
 }
@@ -310,6 +399,53 @@ function generateTimerScript(defaultMinutes) {
       }
     };
 
+    window.toggleMockTimingStrategy = function () {
+      var drawer = document.getElementById('mock-timing-strategy-drawer');
+      var arrow = document.getElementById('mock-strategy-arrow');
+      if (!drawer) return;
+      var isHidden = drawer.style.display === 'none' || drawer.style.display === '';
+      drawer.style.display = isHidden ? 'block' : 'none';
+      if (arrow) {
+        arrow.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+      }
+    };
+
+    window.timeThisQuestion = function (btnEl, mins, label) {
+      mins = parseInt(mins, 10);
+      if (isNaN(mins) || mins <= 0) return;
+
+      // 1. Lock timer to question minutes & update status
+      window.setMockExamTimerMinutes(mins, label || (mins + 'm Question'));
+
+      // 2. Start clock immediately
+      window.toggleMockExamTimer('start');
+
+      // 3. Smooth scroll viewport to anchor question container below sticky HUD
+      var container = btnEl.closest('.question-block, .page-inner, .page, .question-title') || btnEl;
+      var hud = document.querySelector('.invigilator-hud');
+      var hudOffset = (hud ? hud.offsetHeight : 60) + 16;
+      var rect = container.getBoundingClientRect();
+      var targetY = window.pageYOffset + rect.top - hudOffset;
+
+      window.scrollTo({
+        top: Math.max(0, targetY),
+        behavior: 'smooth'
+      });
+
+      // 4. Subtle visual pulse/accent to highlight the anchored question
+      var origOutline = container.style.outline;
+      var origOffset = container.style.outlineOffset;
+      var origTransition = container.style.transition;
+      container.style.transition = 'outline 0.25s ease';
+      container.style.outline = '3px solid #38bdf8';
+      container.style.outlineOffset = '6px';
+      setTimeout(function () {
+        container.style.outline = origOutline;
+        container.style.outlineOffset = origOffset;
+        container.style.transition = origTransition;
+      }, 2200);
+    };
+
     function initHud() {
       var clockEl = document.getElementById('mock-exam-clock');
       if (clockEl) {
@@ -337,6 +473,164 @@ function generateTimerScript(defaultMinutes) {
     }
   })();
   </script>`;
+}
+
+const buttonCss = `
+    /* Question-Anchor Quick Launch Button Styles */
+    .btn-time-question {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #0f172a;
+      color: #38bdf8;
+      border: 1px solid #0284c7;
+      border-radius: 4px;
+      padding: 2px 7px;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Open Sans', Arial, sans-serif;
+      cursor: pointer;
+      margin-left: 8px;
+      vertical-align: middle;
+      text-decoration: none;
+      line-height: 1.2;
+      transition: all 0.15s ease;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+    .btn-time-question:hover {
+      background: #0284c7;
+      color: #ffffff;
+      border-color: #38bdf8;
+      transform: translateY(-1px);
+      box-shadow: 0 3px 6px rgba(2,132,199,0.3);
+    }
+    .btn-time-question:active {
+      transform: translateY(0);
+    }
+    .question-block, .question-title, .page-inner {
+      scroll-margin-top: 75px;
+    }
+    @media print {
+      .btn-time-question, .invigilator-hud, #mock-timing-strategy-drawer, .no-print {
+        display: none !important;
+      }
+    }
+`;
+
+function injectButtonStyles(content) {
+  if (content.includes('.btn-time-question')) {
+    content = content.replace(
+      /\/\* Question-Anchor Quick Launch Button Styles \*\/[\s\S]*?@media print\s*\{[\s\S]*?\.btn-time-question[^\}]*\}\s*\}/gi,
+      '',
+    );
+  }
+  return content.replace(/<\/style>/i, `${buttonCss}\n  </style>`);
+}
+
+function getMinsForMarks(marks) {
+  const m = parseInt(marks, 10);
+  if (m === 2) return 3;
+  if (m === 4) return 5;
+  if (m === 8) return 10;
+  if (m === 12) return 15;
+  if (m === 16 || m === 20) return 25;
+  return Math.max(3, Math.round(m * 1.25));
+}
+
+function makeTimeQuestionButton(marks, label) {
+  const mins = getMinsForMarks(marks);
+  const displayLabel = label || `${marks}-Mark Question (${mins}m)`;
+  return ` <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, ${mins}, '${displayLabel}')" title="Lock timer to ${mins}m and start immediately">⏱ Time this question (${mins}m)</button>`;
+}
+
+function injectQuestionTimeButtons(content, unitId) {
+  // Strip any previous buttons for clean idempotency
+  content = content.replace(
+    /<button[^>]*class=["'][^"']*btn-time-question[^"']*["'][^>]*>[\s\S]*?<\/button>/gi,
+    '',
+  );
+
+  if (unitId === 'edexcel_medicine') {
+    // Replace <div class="marks">(X)</div>
+    content = content.replace(
+      /<div class="marks"[^>]*>\s*\(([0-9]+)\)\s*<\/div>/g,
+      (match, marks) => {
+        const btn = makeTimeQuestionButton(marks);
+        return `<div class="marks" style="display: flex; align-items: center; justify-content: flex-end; gap: 8px;">(${marks})${btn}</div>`;
+      },
+    );
+  }
+
+  if (unitId === 'cme_new') {
+    // Replace <span style="...float: right...">(X)</span>
+    content = content.replace(
+      /(<span[^>]*style=["'][^"']*float:\s*right[^"']*["'][^>]*>\s*)\(([0-9]+)\)(\s*<\/span>)/g,
+      (match, p1, marks, p2) => {
+        const btn = makeTimeQuestionButton(marks);
+        return `${p1}(${marks})${btn}${p2}`;
+      },
+    );
+  }
+
+  if (unitId === 'eee') {
+    // 1(a), 1(b), 2 in spans
+    content = content.replace(
+      /(<span[^>]*style=["'][^"']*float:\s*right[^"']*["'][^>]*>\s*)\(([0-9]+)\)(\s*<\/span>)/g,
+      (match, p1, marks, p2) => {
+        const btn = makeTimeQuestionButton(marks);
+        return `${p1}(${marks})${btn}${p2}`;
+      },
+    );
+    // Question 3 and 4 in Total for Question X = 16 marks
+    content = content.replace(
+      /(\(Total for Question (\d+) = (16) marks\))/g,
+      (match, p1, qNum, marks) => {
+        const btn = makeTimeQuestionButton(marks, `Question ${qNum} (16m)`);
+        return `${p1}${btn}`;
+      },
+    );
+  }
+
+  if (unitId === 'usa') {
+    // Ensure Question 2 has (12 marks) if missing
+    content = content.replace(
+      /(<div class="question-title">\s*2\.\s*Explain why[\s\S]*?)(<\/div>)/gi,
+      (match, p1, p2) => {
+        if (!p1.includes('marks')) {
+          return `${p1.trimEnd()} (12 marks)\n    ${p2}`;
+        }
+        return match;
+      },
+    );
+
+    // Inside question-title: (X marks)
+    content = content.replace(
+      /(\(([0-9]+)\s*marks(?:\s*\+\s*4\s*marks[^\)]*)?\))/gi,
+      (match, p1, marks) => {
+        const btn = makeTimeQuestionButton(marks);
+        return `${p1}${btn}`;
+      },
+    );
+  }
+
+  if (unitId === 'weimar_nazi_germany') {
+    // Section A spans
+    content = content.replace(
+      /(<span[^>]*style=["'][^"']*float:\s*right[^"']*["'][^>]*>\s*)\(([0-9]+)\)(\s*<\/span>)/g,
+      (match, p1, marks, p2) => {
+        const btn = makeTimeQuestionButton(marks);
+        return `${p1}(${marks})${btn}${p2}`;
+      },
+    );
+    // Section B (8), (4), (16+4 SPaG) at end of question text before </div>
+    content = content.replace(/\(([0-9]+)(?:\+4\s*SPaG)?\)(\s*<\/div>)/g, (match, marks, p2) => {
+      const fullMarksText = match.replace(p2, '');
+      const btn = makeTimeQuestionButton(marks, `${fullMarksText} Question`);
+      return `${fullMarksText}${btn}${p2}`;
+    });
+  }
+
+  return content;
 }
 
 function replaceOrInjectHud(content, hudHtml) {
@@ -479,7 +773,7 @@ units.forEach((unit) => {
       (f) =>
         f.endsWith('.html') &&
         !f.includes('mark_scheme') &&
-        (f.includes('mock') || f.includes('clone')),
+        (f.includes('mock') || f.includes('clone') || f.includes('notebook')),
     );
 
   files.forEach((fileName) => {
@@ -508,7 +802,7 @@ units.forEach((unit) => {
       );
     }
 
-    // 4. Inject or Replace Invigilator HUD with new flexible single-question preset toolbar
+    // 4. Inject or Replace Invigilator HUD with timing strategy drawer
     const hudHtml = generateInvigilatorHud(unit.paperRef, unit.defaultMinutes, unit.pacing, msUrl);
     content = replaceOrInjectHud(content, hudHtml);
 
@@ -516,7 +810,13 @@ units.forEach((unit) => {
     const scriptHtml = generateTimerScript(unit.defaultMinutes);
     content = replaceOrInjectTimerScript(content, scriptHtml);
 
-    // 6. Normalize blue mark scheme banners or colorful elements
+    // 6. Inject Quick Launch question buttons next to mark indicators
+    content = injectQuestionTimeButtons(content, unit.id);
+
+    // 7. Inject Question Button and Print Styles into <style>
+    content = injectButtonStyles(content);
+
+    // 8. Normalize blue mark scheme banners or colorful elements
     content = content.replace(
       /\.mark-scheme-banner\s*\{[^}]*background:\s*#[a-f0-9]+;[^}]*\}/gi,
       '.mark-scheme-banner { background: #000000; color: #ffffff; border: 2px solid #000000; }',
@@ -529,5 +829,5 @@ units.forEach((unit) => {
 });
 
 console.log(
-  `\n🎉 Successfully processed and upgraded ${modifiedCount} mock exam papers with self-contained flexible timers!`,
+  `\n🎉 Successfully processed and upgraded ${modifiedCount} mock exam papers with Question-Anchor Quick Launch & Timing Strategy Drawers!`,
 );
