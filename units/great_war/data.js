@@ -391,6 +391,17 @@ const great_war = {
           model_answer:
             'Prussia utilised rapid railway mobilisation and a professional General Staff under Helmuth von Moltke. Prussian breech-loading Krupp steel artillery heavily outranged French bronze muzzle-loaders, allowing the Prussians to encircle and annihilate French armies at Sedan and Metz despite the superior French Chassepot rifle.',
         },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=xKtSXGisbxU',
+          title:
+            'The World of the Franco-Prussian War – The 19th Century up to 1870 | GLORY & DEFEAT',
+          duration: '13 mins 1 sec',
+          viewing_task:
+            'Examine the broader 19th-century background leading up to 1870. Identify how industrialisation, expanding railway networks, and rising European nationalism created the geopolitical tensions that led directly to the Franco-Prussian War.',
+          model_answer:
+            'The documentary explains that 19th-century industrialisation and modern railway networks radically transformed state power and the speed of military mobilization. Emerging nationalist movements disrupted traditional balances of power, creating intense friction between an established French Empire and a rising, ambitious Prussia that Otto von Bismarck skillfully exploited to spark the conflict of 1870.',
+        },
       ],
       sources: [
         {
