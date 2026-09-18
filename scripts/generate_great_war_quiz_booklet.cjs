@@ -39,6 +39,7 @@ const QUIZ_DATA = [
     lesson: 1,
     lessonTitle: "1. German Unification (1871) & Bismarck's Alliances",
     shortTitle: 'German Unification & Alliances',
+    enquiry: 'How was the German Empire created in 1871?',
     items: [
       {
         q: 'How many independent states existed in Central Europe before German unification?',
@@ -88,6 +89,7 @@ const QUIZ_DATA = [
     lesson: 2,
     lessonTitle: '2. The Franco-Prussian War & the Legacy of Revanche',
     shortTitle: 'Franco-Prussian War & Revanche',
+    enquiry: 'How did the Franco-Prussian War create a lasting legacy of hatred?',
     items: [
       {
         q: 'Which French territory was annexed by Germany following the war in 1871?',
@@ -137,6 +139,7 @@ const QUIZ_DATA = [
     lesson: 3,
     lessonTitle: '3. The Scramble for Africa & the Moroccan Crises',
     shortTitle: 'Scramble for Africa & Morocco',
+    enquiry: "To what extent did the 'Scramble for Africa' increase tension in Europe?",
     items: [
       {
         q: 'What term describes the rapid partition of the African continent by European empires (1881–1914)?',
@@ -186,6 +189,7 @@ const QUIZ_DATA = [
     lesson: 4,
     lessonTitle: '4. The Anglo-German Naval Arms Race & HMS Dreadnought',
     shortTitle: 'Naval Arms Race & Dreadnought',
+    enquiry: 'Why did a battleship building contest destroy Anglo-German relations?',
     items: [
       {
         q: 'Which revolutionary, all-big-gun British battleship was launched in 1906?',
@@ -235,6 +239,7 @@ const QUIZ_DATA = [
     lesson: 5,
     lessonTitle: '5. The Alliance System & the Balkan Powder Keg',
     shortTitle: 'Alliance System & Balkan Powder Keg',
+    enquiry: 'Did the Alliance System protect Europe or guarantee a global war?',
     items: [
       {
         q: 'Which three empires formed the Triple Alliance in 1882?',
@@ -284,6 +289,7 @@ const QUIZ_DATA = [
     lesson: 6,
     lessonTitle: '6. The Sarajevo Assassination, July Crisis & War',
     shortTitle: 'Sarajevo Assassination & July Crisis',
+    enquiry: 'Why did a single assassination in Sarajevo ignite a World War?',
     items: [
       {
         q: 'On what exact date was Archduke Franz Ferdinand assassinated in Sarajevo?',
@@ -446,34 +452,65 @@ const A5_BOOKLET_CSS = `
     margin: 0;
   }
 
-  /* Scholar Box */
-  .scholar-box {
+  /* Pupil Box */
+  .pupil-box {
     background: #ffffff;
     border: 1px solid #cbd5e1;
     border-top: none;
-    padding: 4px 8px;
-    font-size: 6.8pt;
+    padding: 3px 8px;
+    font-size: 7pt;
   }
-  .scholar-grid {
+  .pupil-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 2fr 1fr;
-    gap: 6px;
+    grid-template-columns: 2fr 1.2fr 1.5fr;
+    gap: 10px;
     align-items: center;
   }
-  .scholar-field {
+  .pupil-field {
     display: flex;
     align-items: center;
     gap: 4px;
   }
-  .scholar-field span.lbl {
+  .pupil-field span.lbl {
     font-weight: 700;
     color: #334155;
     white-space: nowrap;
   }
-  .scholar-field span.line {
-    border-bottom: 1px solid #94a3b8;
+  .pupil-field span.line {
+    border-bottom: 1.2px solid #000000;
     flex: 1;
-    min-height: 11px;
+    min-height: 12px;
+  }
+
+  /* Cover Map Container */
+  .cover-map-container {
+    margin: 2px 0 2px 0;
+    text-align: center;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    padding: 2px 4px 2px 4px;
+  }
+  .cover-map-frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    max-height: 50mm;
+  }
+  .cover-map-img {
+    max-height: 50mm;
+    max-width: 100%;
+    object-fit: contain;
+    border: 1px solid #94a3b8;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .cover-map-caption {
+    font-size: 5.6pt;
+    color: #475569;
+    margin-top: 1.5px;
+    letter-spacing: 0.2px;
   }
 
   /* Tracking Grid Table (Page 1) */
@@ -481,38 +518,54 @@ const A5_BOOKLET_CSS = `
     width: 100%;
     border-collapse: collapse;
     font-size: 6.5pt;
-    margin-top: 3px;
-    margin-bottom: 3px;
+    margin-top: 2px;
+    margin-bottom: 2px;
   }
   .tracking-table th {
     background: #0f172a;
     color: #ffffff;
     font-weight: 700;
     text-transform: uppercase;
-    padding: 3px 4px;
+    padding: 3px 3px;
     border: 1px solid #0f172a;
-    font-size: 6.2pt;
+    font-size: 6pt;
     letter-spacing: 0.2px;
     text-align: center;
   }
   .tracking-table td {
     border: 1px solid #cbd5e1;
-    padding: 3px 4px;
+    padding: 2.5px 3px;
     text-align: center;
     vertical-align: middle;
   }
   .tracking-table td.left-title {
     text-align: left;
-    font-weight: 700;
     color: #0f172a;
-    font-size: 6.4pt;
+  }
+  .tb-lesson-title {
+    font-weight: 800;
+    font-size: 6.5pt;
+    color: #0f172a;
+    line-height: 1.15;
+  }
+  .tb-lesson-enquiry {
+    font-size: 5.4pt;
+    color: #475569;
+    font-style: italic;
+    line-height: 1.15;
+    margin-top: 0.5px;
+  }
+  .score-line {
+    display: inline-block;
+    width: 14px;
+    border-bottom: 1px solid #000;
   }
   .retrieval-boxes {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5px;
-    font-size: 6pt;
+    gap: 3.5px;
+    font-size: 5.8pt;
     color: #334155;
     white-space: nowrap;
   }
@@ -526,19 +579,15 @@ const A5_BOOKLET_CSS = `
     height: 14px;
     width: 100%;
   }
-
-  /* Target & QR Strip */
-  .target-strip {
-    border: 1px solid #cbd5e1;
-    border-radius: 4px;
-    padding: 4px 6px;
-    background: #f8fafc;
-    font-size: 6.5pt;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 3px;
+  .staff-box {
+    border: 1px solid #94a3b8;
+    background: #ffffff;
+    border-radius: 2px;
+    height: 14px;
+    width: 100%;
   }
+
+  /* QR Strip */
   .qr-strip {
     display: flex;
     align-items: center;
@@ -547,11 +596,12 @@ const A5_BOOKLET_CSS = `
     border-radius: 4px;
     padding: 3px 6px;
     gap: 8px;
-    margin-bottom: 3px;
+    margin-top: 2px;
+    margin-bottom: 1px;
   }
   .qr-code-img {
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 32px;
     flex-shrink: 0;
   }
   .qr-caption-text {
@@ -560,17 +610,6 @@ const A5_BOOKLET_CSS = `
     line-height: 1.2;
     text-align: left;
     font-weight: 600;
-  }
-  .stamp-box {
-    border: 1px dashed #cbd5e1;
-    border-radius: 4px;
-    padding: 4px 8px;
-    font-size: 6.2pt;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    height: 14mm;
-    background: #ffffff;
   }
 
   /* Page 2: Chronology Domino Flowchart */
@@ -610,73 +649,76 @@ const A5_BOOKLET_CSS = `
     background: #f8fafc;
     border-left: 3px solid #0f172a;
     padding: 2px 6px;
-    font-size: 6.3pt;
+    font-size: 6.4pt;
     color: #334155;
     font-weight: 600;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
   }
   .q-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     flex: 1;
-    gap: 2px;
+    gap: 1.5px;
   }
   .q-block {
     background: #ffffff;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #cbd5e1;
     border-radius: 3px;
-    padding: 3px 5px;
+    padding: 2.5px 5px;
     display: flex;
     flex-direction: column;
-    gap: 1.5px;
+    gap: 1px;
   }
   .q-header {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     gap: 4px;
-    font-size: 6.7pt;
+    font-size: 8.5pt;
     line-height: 1.15;
   }
   .q-prompt-wrap {
     display: flex;
     align-items: flex-start;
-    gap: 3px;
+    gap: 4px;
     flex: 1;
   }
   .q-num {
     font-weight: 800;
-    color: #0f172a;
-    min-width: 13px;
+    color: #000000;
+    min-width: 14px;
+    font-size: 8.5pt;
   }
   .q-prompt {
     font-weight: 700;
-    color: #0f172a;
+    color: #000000;
+    font-size: 8.5pt;
   }
   .q-mastery {
-    font-size: 5.8pt;
+    font-size: 6pt;
     font-weight: 700;
-    color: #64748b;
+    color: #475569;
     white-space: nowrap;
   }
   .q-line-row {
     display: flex;
     align-items: flex-end;
     gap: 4px;
-    font-size: 6pt;
+    font-size: 7.2pt;
     margin-top: 1px;
   }
   .q-line-lbl {
-    font-weight: 700;
-    color: #475569;
+    font-weight: 800;
+    color: #000000;
     white-space: nowrap;
-    min-width: 68px;
+    font-size: 7.2pt;
+    min-width: 65px;
   }
-  .q-dots {
+  .q-solid-line {
     flex: 1;
-    border-bottom: 1px dotted #94a3b8;
-    min-height: 8px;
+    border-bottom: 1.2px solid #000000;
+    min-height: 9px;
   }
 
   /* Pages 9 & 10: Marking Bank */
@@ -809,60 +851,79 @@ const A5_BOOKLET_CSS = `
     background: #ffffff;
     border: 1px solid #cbd5e1;
     border-radius: 3px;
-    padding: 3px 5px;
-    font-size: 6.3pt;
-    line-height: 1.16;
-    margin-bottom: 2px;
+    padding: 4px 6px;
+    font-size: 6.8pt;
+    line-height: 1.2;
+    margin-bottom: 3px;
   }
   .architect-sec-head {
-    font-size: 6.8pt;
+    font-size: 7.4pt;
     font-weight: 800;
     color: #0f172a;
     text-transform: uppercase;
     letter-spacing: 0.3px;
     background: #f1f5f9;
-    border-left: 2.5px solid #0f172a;
-    padding: 1.5px 4px;
-    margin: 2px 0 2px 0;
+    border-left: 3px solid #0f172a;
+    padding: 2.5px 5px;
+    margin: 4px 0 3px 0;
   }
   .main-matrix-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2.5px;
+    gap: 3.5px;
   }
   .main-matrix-cell {
     background: #f8fafc;
     border: 1px solid #e2e8f0;
-    border-radius: 2px;
-    padding: 2px 4px;
-    font-size: 6.1pt;
-    line-height: 1.14;
+    border-radius: 3px;
+    padding: 3.5px 5px;
+    font-size: 6.6pt;
+    line-height: 1.2;
   }
   .historiography-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3px;
+    gap: 4px;
   }
   .historiography-box {
     border: 1px solid #cbd5e1;
-    border-radius: 2px;
-    padding: 2.5px 4px;
-    font-size: 6.1pt;
-    line-height: 1.14;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-size: 6.6pt;
+    line-height: 1.2;
+  }
+  .essay-stages-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5px;
+    margin-bottom: 3px;
+  }
+  .essay-stage-card {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 3px;
+    padding: 3.5px 5px;
+    font-size: 6.5pt;
+    line-height: 1.2;
+  }
+  .stage-num {
+    font-weight: 800;
+    color: #0f172a;
+    margin-right: 2px;
   }
   .stems-list {
     display: flex;
     flex-direction: column;
-    gap: 1.5px;
-    font-size: 6.1pt;
-    line-height: 1.14;
+    gap: 3px;
+    font-size: 6.8pt;
+    line-height: 1.25;
     color: #1e293b;
   }
   .seal-strip {
     text-align: center;
     border-top: 1px solid #cbd5e1;
-    padding-top: 2px;
-    font-size: 5.8pt;
+    padding-top: 3px;
+    font-size: 6pt;
     color: #64748b;
     font-weight: 700;
     letter-spacing: 0.4px;
@@ -882,6 +943,14 @@ async function buildHtml() {
     color: { dark: '#0f172a', light: '#ffffff' },
   });
 
+  console.log('🗺️  Loading German Empire 1871 primary reference map for Cover Page...');
+  const mapPath = path.join(ROOT_DIR, 'public', 'images', 'german_empire_1871.png');
+  let mapDataUrl = '';
+  if (fs.existsSync(mapPath)) {
+    const mapBase64 = fs.readFileSync(mapPath).toString('base64');
+    mapDataUrl = `data:image/png;base64,${mapBase64}`;
+  }
+
   // ------------------------------------------------------------------------
   // PAGE 1: FRONT COVER & FORMATIVE HOMEWORK RETRIEVAL LEDGER
   // ------------------------------------------------------------------------
@@ -890,116 +959,128 @@ async function buildHtml() {
     <div>
       <div class="cover-banner">
         <span>The History Revision Hub &bull; Meoncross History Department</span>
-        <span>A5 Companion</span>
+        <span>Key Stage 3 Companion</span>
       </div>
       <div class="cover-header-block">
         <h1 class="cover-title">Causes of the Great War (1871–1914)</h1>
-        <p class="cover-subtitle">Knowledge Retrieval, Homework Companion &amp; Assessment Architect</p>
+        <p class="cover-subtitle">“How did decades of imperial rivalry and fear culminate in thirty days of madness?”</p>
       </div>
 
-      <div class="scholar-box">
-        <div class="scholar-grid">
-          <div class="scholar-field"><span class="lbl">Scholar:</span><span class="line"></span></div>
-          <div class="scholar-field"><span class="lbl">Form:</span><span class="line"></span></div>
-          <div class="scholar-field"><span class="lbl">Teacher:</span><span style="font-weight: 800; color: #0f172a; margin-left: 2px;">Mr Lovett</span></div>
-          <div class="scholar-field"><span class="lbl">Target:</span><span class="line"></span></div>
+      <div class="pupil-box">
+        <div class="pupil-grid">
+          <div class="pupil-field"><span class="lbl">Pupil:</span><span class="line"></span></div>
+          <div class="pupil-field"><span class="lbl">Form:</span><span class="line"></span></div>
+          <div class="pupil-field"><span class="lbl">Teacher:</span><span style="font-weight: 800; color: #0f172a; margin-left: 2px;">Mr Lovett</span></div>
+        </div>
+      </div>
+
+      <div class="cover-map-container">
+        <div class="cover-map-frame">
+          <img src="${mapDataUrl}" alt="The German Reich 1871-1918 Reference Map" class="cover-map-img">
+        </div>
+        <div class="cover-map-caption">
+          <strong>Historical Reference Map:</strong> The German Reich (1871–1918) &mdash; Geopolitical Encirclement &amp; The Balance of Power
         </div>
       </div>
     </div>
 
     <div>
-      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-bottom: none; padding: 2px 6px; font-size: 6.2pt; font-weight: 700; color: #334155; display: flex; justify-content: space-between;">
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-bottom: none; padding: 2.5px 6px; font-size: 6.2pt; font-weight: 700; color: #334155; display: flex; justify-content: space-between;">
         <span>FORMATIVE HOMEWORK &amp; RETRIEVAL LEDGER</span>
-        <span>DESK INSPECTION READY &bull; 30-SECOND CHECK</span>
+        <span>30-SECOND DESK INSPECTION READY</span>
       </div>
 
       <table class="tracking-table">
         <thead>
           <tr>
-            <th style="width: 35%; text-align: left;">Lesson / Historical Topic</th>
-            <th style="width: 10%;">Att 1</th>
-            <th style="width: 10%;">Att 2</th>
-            <th style="width: 27%;">Retrieval Strength</th>
-            <th style="width: 12%;">Parent</th>
-            <th style="width: 6%;">Staff</th>
+            <th style="width: 44%; text-align: left;">Lesson &amp; Enquiry Focus</th>
+            <th style="width: 7%;">1</th>
+            <th style="width: 7%;">2</th>
+            <th style="width: 24%;">Retrieval Strength</th>
+            <th style="width: 10%;">Parent Signature</th>
+            <th style="width: 8%;">Staff Signature</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td class="left-title">1. German Unification &amp; Bismarck</td>
-            <td>&nbsp;&nbsp; / 8</td>
-            <td>&nbsp;&nbsp; / 8</td>
+            <td class="left-title">
+              <div class="tb-lesson-title">1. German Unification &amp; Bismarck</div>
+              <div class="tb-lesson-enquiry">How was the German Empire created in 1871?</div>
+            </td>
+            <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
+            <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><div class="retrieval-boxes"><span>[ ] Instant</span> <span>[ ] Effortful</span> <span>[ ] Restudy</span></div></td>
             <td><div class="parent-box"></div></td>
-            <td>[ &nbsp; ]</td>
+            <td><div class="staff-box"></div></td>
           </tr>
           <tr>
-            <td class="left-title">2. Franco-Prussian War &amp; Revanche</td>
-            <td>&nbsp;&nbsp; / 8</td>
-            <td>&nbsp;&nbsp; / 8</td>
+            <td class="left-title">
+              <div class="tb-lesson-title">2. Franco-Prussian War &amp; Revanche</div>
+              <div class="tb-lesson-enquiry">How did the Franco-Prussian War create a lasting legacy of hatred?</div>
+            </td>
+            <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
+            <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><div class="retrieval-boxes"><span>[ ] Instant</span> <span>[ ] Effortful</span> <span>[ ] Restudy</span></div></td>
             <td><div class="parent-box"></div></td>
-            <td>[ &nbsp; ]</td>
+            <td><div class="staff-box"></div></td>
           </tr>
           <tr>
-            <td class="left-title">3. Scramble for Africa &amp; Morocco</td>
-            <td>&nbsp;&nbsp; / 8</td>
-            <td>&nbsp;&nbsp; / 8</td>
+            <td class="left-title">
+              <div class="tb-lesson-title">3. Scramble for Africa &amp; Morocco</div>
+              <div class="tb-lesson-enquiry">To what extent did the 'Scramble for Africa' increase tension in Europe?</div>
+            </td>
+            <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
+            <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><div class="retrieval-boxes"><span>[ ] Instant</span> <span>[ ] Effortful</span> <span>[ ] Restudy</span></div></td>
             <td><div class="parent-box"></div></td>
-            <td>[ &nbsp; ]</td>
+            <td><div class="staff-box"></div></td>
           </tr>
           <tr>
-            <td class="left-title">4. Naval Arms Race &amp; Dreadnought</td>
-            <td>&nbsp;&nbsp; / 8</td>
-            <td>&nbsp;&nbsp; / 8</td>
+            <td class="left-title">
+              <div class="tb-lesson-title">4. Naval Arms Race &amp; Dreadnought</div>
+              <div class="tb-lesson-enquiry">Why did a battleship building contest destroy Anglo-German relations?</div>
+            </td>
+            <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
+            <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><div class="retrieval-boxes"><span>[ ] Instant</span> <span>[ ] Effortful</span> <span>[ ] Restudy</span></div></td>
             <td><div class="parent-box"></div></td>
-            <td>[ &nbsp; ]</td>
+            <td><div class="staff-box"></div></td>
           </tr>
           <tr>
-            <td class="left-title">5. Alliance System &amp; Powder Keg</td>
-            <td>&nbsp;&nbsp; / 8</td>
-            <td>&nbsp;&nbsp; / 8</td>
+            <td class="left-title">
+              <div class="tb-lesson-title">5. Alliance System &amp; Powder Keg</div>
+              <div class="tb-lesson-enquiry">Did the Alliance System protect Europe or guarantee a global war?</div>
+            </td>
+            <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
+            <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><div class="retrieval-boxes"><span>[ ] Instant</span> <span>[ ] Effortful</span> <span>[ ] Restudy</span></div></td>
             <td><div class="parent-box"></div></td>
-            <td>[ &nbsp; ]</td>
+            <td><div class="staff-box"></div></td>
           </tr>
           <tr>
-            <td class="left-title">6. Sarajevo &amp; The July Crisis</td>
-            <td>&nbsp;&nbsp; / 8</td>
-            <td>&nbsp;&nbsp; / 8</td>
+            <td class="left-title">
+              <div class="tb-lesson-title">6. Sarajevo &amp; The July Crisis</div>
+              <div class="tb-lesson-enquiry">Why did a single assassination in Sarajevo ignite a World War?</div>
+            </td>
+            <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
+            <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><div class="retrieval-boxes"><span>[ ] Instant</span> <span>[ ] Effortful</span> <span>[ ] Restudy</span></div></td>
             <td><div class="parent-box"></div></td>
-            <td>[ &nbsp; ]</td>
+            <td><div class="staff-box"></div></td>
           </tr>
         </tbody>
       </table>
 
-      <div class="target-strip">
-        <div>
-          <strong>Unit Mastery Target:</strong> 42+ / 48 (87%+) &bull; <em>Level 4 Factual Fluency</em>
-        </div>
-        <div style="border: 1px solid #94a3b8; padding: 1.5px 6px; border-radius: 2px; font-weight: 800; background: #fff;">
-          Mastery Score: ____ / 48
-        </div>
-      </div>
-
       <div class="qr-strip">
         <img src="${qrDataUrl}" alt="Digital Quiz QR" class="qr-code-img">
         <div class="qr-caption-text">
-          <strong>Digital Revision Portal:</strong> Scan code on a mobile device or tablet to practice interactive retrieval, flashcard vaults, and listen to spoken teacher guides.
+          <strong>Interactive Digital Revision Portal:</strong> Scan QR code for instant retrieval practice, flashcard vaults, and spoken teacher audio guides: <em>the-history-revision-hub.netlify.app</em>
         </div>
-      </div>
-
-      <div class="stamp-box">
-        <span style="font-weight: 700; color: #475569;">Teacher Homework Inspection &amp; Feedback:</span>
-        <span style="border-bottom: 1px solid #94a3b8; width: 45%; text-align: center; font-size: 5.8pt; color: #94a3b8;">Signature &amp; Date</span>
       </div>
     </div>
 
     <div class="page-footer-strip">
-      <span>Causes of the Great War &bull; Tracking Ledger</span>
+      <span>Causes of the Great War (1871–1914) &bull; Pupil Companion</span>
       <span>Page 1 of 12</span>
     </div>
   </div>
@@ -1108,11 +1189,14 @@ async function buildHtml() {
           </div>
           <div class="q-line-row">
             <span class="q-line-lbl">Answer:</span>
-            <span class="q-dots"></span>
+            <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">The Explanation:</span>
-            <span class="q-dots"></span>
+            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-solid-line"></span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       `;
@@ -1125,15 +1209,15 @@ async function buildHtml() {
         <div class="page-header-strip">
           <div>
             <h2>Lesson ${l.lesson}: ${l.shortTitle}</h2>
-            <p>Direct Active Recall &bull; Factual Core &amp; Causal Explanation</p>
+            <p>Enquiry: “${l.enquiry}” &bull; Direct Active Recall</p>
           </div>
           <div style="display: flex; align-items: center; gap: 4px;">
-            <span style="font-size: 6.2pt; font-weight: 700; border: 1px solid #0f172a; padding: 1.5px 5px; border-radius: 2px;">Score: &nbsp;&nbsp;&nbsp; / 8</span>
+            <span style="font-size: 6.5pt; font-weight: 700; border: 1.2px solid #0f172a; padding: 1.5px 5px; border-radius: 2px;">Score: &nbsp;&nbsp;&nbsp; / 8</span>
             <span class="page-tag">Q${currentQNum - 8}–Q${currentQNum - 1}</span>
           </div>
         </div>
         <div class="lesson-instruction-bar">
-          <strong>Instructions:</strong> Complete Line 1 (Answer) from memory. Complete Line 2 (The Explanation) to explain the historical mechanism, motive, or consequence.
+          <strong>Instructions:</strong> Complete Line 1 (Answer) from memory. Complete Lines 2 &amp; 3 (Explanation) to articulate the historical mechanism, motive, or consequence.
         </div>
       </div>
 
@@ -1389,20 +1473,20 @@ async function buildHtml() {
       <div class="page-header-strip">
         <div>
           <h2>Summative Assessment Preparation &amp; Essay Architect</h2>
-          <p>Key Stage 3 Unit Assessment &bull; Extended Analytical Writing Framework</p>
+          <p>Key Stage 3 Unit Assessment &bull; Extended Analytical Writing Blueprint</p>
         </div>
         <span class="page-tag">Essay Blueprint</span>
       </div>
 
-      <div style="background: #0f172a; color: #ffffff; padding: 4px 6px; border-radius: 3px; margin-bottom: 3px;">
-        <div style="font-size: 6pt; font-weight: 700; color: #38bdf8; text-transform: uppercase;">Summative Assessment Enquiry Question:</div>
-        <div style="font-size: 8.5pt; font-weight: 800; font-family: 'Playfair Display', serif; line-height: 1.2;">
+      <div style="background: #0f172a; color: #ffffff; padding: 4px 8px; border-radius: 3px; margin-bottom: 3px;">
+        <div style="font-size: 6.2pt; font-weight: 700; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.5px;">Summative Assessment Key Enquiry Question:</div>
+        <div style="font-size: 8.8pt; font-weight: 800; font-family: 'Playfair Display', serif; line-height: 1.2; margin-top: 1px;">
           “Why did the First World War break out in August 1914?”
         </div>
       </div>
 
       <!-- 1. The M.A.I.N. Causal Framework -->
-      <div class="architect-sec-head">1. The M.A.I.N. Structural Causes &amp; The July Spark</div>
+      <div class="architect-sec-head">1. The M.A.I.N. Long-Term Causes &amp; The July Spark</div>
       <div class="main-matrix-grid">
         <div class="main-matrix-cell">
           <strong>Militarism:</strong> Anglo-German dreadnought naval race; massive army expansions; rigid railway mobilisation timetables (Schlieffen Plan).
@@ -1422,26 +1506,61 @@ async function buildHtml() {
       </div>
 
       <!-- 2. Historiographical Debate -->
-      <div class="architect-sec-head">2. Historiographical Verdict: Competing Interpretations</div>
+      <div class="architect-sec-head">2. Historiographical Debate: Competing Academic Interpretations</div>
       <div class="historiography-grid">
         <div class="historiography-box" style="background: #fff1f2; border-color: #fecdd3;">
-          <strong style="color: #9f1239;">Fritz Fischer Thesis (German Aggression):</strong><br>
+          <strong style="color: #9f1239; font-size: 6.4pt;">Fritz Fischer Thesis (German Aggression):</strong><br>
           Germany's imperial leaders deliberately exploited the Sarajevo crisis, issuing the Blank Cheque to launch a pre-emptive war for European continental hegemony.
         </div>
         <div class="historiography-box" style="background: #f0fdf4; border-color: #bbf7d0;">
-          <strong style="color: #166534;">Christopher Clark Thesis ('The Sleepwalkers'):</strong><br>
-          No single power sought a world war. European leaders sleepwalked into catastrophe through mutual paranoia, miscalculation, and rigid alliance treaties.
+          <strong style="color: #166534; font-size: 6.4pt;">Christopher Clark Thesis ('The Sleepwalkers'):</strong><br>
+          No single power sought a world war. European leaders sleepwalked into catastrophe through mutual paranoia, diplomatic miscalculation, and rigid military timetables.
         </div>
       </div>
 
-      <!-- 3. Analytical Sentence Starters & Connectives -->
-      <div class="architect-sec-head">3. Master Analytical Sentence Starters &amp; Causal Connectives</div>
+      <!-- 3. Four-Stage Essay Architecture -->
+      <div class="architect-sec-head">3. Four-Stage Essay Architecture Blueprint</div>
+      <div class="essay-stages-grid">
+        <div class="essay-stage-card">
+          <span class="stage-num">Act 1:</span>
+          <span><strong>Introduction:</strong> Define M.A.I.N. structural conditions and outline your thesis on whether war was premeditated or accidental.</span>
+        </div>
+        <div class="essay-stage-card">
+          <span class="stage-num">Act 2:</span>
+          <span><strong>Structural Causes:</strong> Analyse Militarism &amp; Alliances; evaluate how German <em>Weltpolitik</em> polarized Europe into armed camps.</span>
+        </div>
+        <div class="essay-stage-card">
+          <span class="stage-num">Act 3:</span>
+          <span><strong>The Spark &amp; Mobilisation:</strong> Explain why the Sarajevo assassination triggered the cascade of irreversible railway mobilisations.</span>
+        </div>
+        <div class="essay-stage-card">
+          <span class="stage-num">Act 4:</span>
+          <span><strong>Conclusion &amp; Verdict:</strong> Form a balanced historical judgement weighing the Fischer thesis against Clark's 'sleepwalkers'.</span>
+        </div>
+      </div>
+
+      <!-- 4. Analytical Sentence Starters & Connectives -->
+      <div class="architect-sec-head">4. Master Analytical Sentence Starters &amp; Causal Connectives</div>
       <div class="stems-list">
         <div>&bull; <em>“On one hand, orthodox historians argue that German aggressive foreign policy...”</em></div>
-        <div>&bull; <em>“This directly escalated tensions because Wilhelm II's pursuit of Weltpolitik...”</em></div>
-        <div>&bull; <em>“Consequently, the Sarajevo assassination acted as the fatal catalyst because...”</em></div>
+        <div>&bull; <em>“This directly escalated international tensions because Wilhelm II's pursuit of Weltpolitik...”</em></div>
+        <div>&bull; <em>“Consequently, the Sarajevo assassination acted as the decisive catalyst because...”</em></div>
         <div>&bull; <em>“However, revisionist historians like Christopher Clark emphasize that the Alliance System...”</em></div>
         <div>&bull; <em>“In conclusion, while M.A.I.N. created the combustible structural conditions, the decisive spark was...”</em></div>
+      </div>
+
+      <!-- 5. Evaluative Criteria & Extended Writing Checklist -->
+      <div class="architect-sec-head">5. Evaluative Criteria &amp; Essay Self-Assessment Checklist</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3.5px; margin-bottom: 2px;">
+        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3.5px 5px; font-size: 6.3pt; line-height: 1.2;">
+          <strong style="color: #0f172a; text-transform: uppercase;">Key Causal Vocabulary:</strong><br>
+          <em>Consequently &bull; Inevitability &bull; Premeditation &bull; Escalation &bull; Balance of Power &bull; Encirclement &bull; Brinkmanship</em>
+        </div>
+        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3.5px 5px; font-size: 6.3pt; line-height: 1.2;">
+          <strong style="color: #0f172a; text-transform: uppercase;">Pupil Self-Assessment Checklist:</strong><br>
+          [ ] Defined clear thesis &bull; [ ] Linked 2+ M.A.I.N. causes<br>
+          [ ] Evaluated July Crisis spark &bull; [ ] Balanced verdict
+        </div>
       </div>
     </div>
 
