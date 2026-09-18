@@ -7,7 +7,7 @@
   <style>
   @page {
     size: 148mm 210mm;
-    margin: 6mm 8mm;
+    margin: 6mm 0mm;
   }
   * { box-sizing: border-box; }
   body {
@@ -32,6 +32,15 @@
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+  }
+  /* Gutter-Safe Margin Tuning for A5 Saddle-Stitch Binding */
+  .a5-page:nth-child(odd) {
+    padding-left: 10mm; /* Inner spine clearance on left for odd/recto pages */
+    padding-right: 6mm;
+  }
+  .a5-page:nth-child(even) {
+    padding-left: 6mm;
+    padding-right: 10mm; /* Inner spine clearance on right for even/verso pages */
   }
   .a5-page:last-child { page-break-after: avoid; }
 
@@ -171,10 +180,10 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    max-height: 50mm;
+    max-height: 46mm;
   }
   .cover-map-img {
-    max-height: 50mm;
+    max-height: 46mm;
     max-width: 100%;
     object-fit: contain;
     border: 1px solid #94a3b8;
@@ -261,6 +270,34 @@
     height: 14px;
     width: 100%;
   }
+
+  /* Page 1: 3-Tier Traffic Light Mastery Rule (DIRT Loop) */
+  .mastery-traffic-strip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 3px;
+    padding: 2.5px 6px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size: 5.8pt;
+    line-height: 1.15;
+  }
+  .traffic-tier {
+    display: flex;
+    align-items: center;
+    gap: 3.5px;
+    color: #1e293b;
+  }
+  .traffic-dot {
+    font-size: 7.5pt;
+    line-height: 1;
+  }
+  .green-dot { color: #16a34a; }
+  .amber-dot { color: #d97706; }
+  .red-dot { color: #dc2626; }
 
   /* QR Strip */
   .qr-strip {
@@ -723,6 +760,22 @@
           </tr>
         </tbody>
       </table>
+
+      <!-- 3-Tier Traffic Light Mastery & DIRT Rule -->
+      <div class="mastery-traffic-strip">
+        <div class="traffic-tier">
+          <span class="traffic-dot green-dot">&#9679;</span>
+          <span><strong>7–8/8: Mastered</strong> (Ready for essay)</span>
+        </div>
+        <div class="traffic-tier">
+          <span class="traffic-dot amber-dot">&#9679;</span>
+          <span><strong>5–6/8: Revise Vault</strong> (Check Pages 9–10)</span>
+        </div>
+        <div class="traffic-tier">
+          <span class="traffic-dot red-dot">&#9679;</span>
+          <span><strong>0–4/8: Retake Quiz</strong> (Scan QR for Attempt 2)</span>
+        </div>
+      </div>
 
       <div class="qr-strip">
         <img src="data:image/png;base64,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" alt="Digital Quiz QR" class="qr-code-img">

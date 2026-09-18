@@ -341,7 +341,7 @@ const QUIZ_DATA = [
 const A5_BOOKLET_CSS = `
   @page {
     size: 148mm 210mm;
-    margin: 6mm 8mm;
+    margin: 6mm 0mm;
   }
   * { box-sizing: border-box; }
   body {
@@ -366,6 +366,15 @@ const A5_BOOKLET_CSS = `
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+  }
+  /* Gutter-Safe Margin Tuning for A5 Saddle-Stitch Binding */
+  .a5-page:nth-child(odd) {
+    padding-left: 10mm; /* Inner spine clearance on left for odd/recto pages */
+    padding-right: 6mm;
+  }
+  .a5-page:nth-child(even) {
+    padding-left: 6mm;
+    padding-right: 10mm; /* Inner spine clearance on right for even/verso pages */
   }
   .a5-page:last-child { page-break-after: avoid; }
 
@@ -505,10 +514,10 @@ const A5_BOOKLET_CSS = `
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    max-height: 50mm;
+    max-height: 46mm;
   }
   .cover-map-img {
-    max-height: 50mm;
+    max-height: 46mm;
     max-width: 100%;
     object-fit: contain;
     border: 1px solid #94a3b8;
@@ -595,6 +604,34 @@ const A5_BOOKLET_CSS = `
     height: 14px;
     width: 100%;
   }
+
+  /* Page 1: 3-Tier Traffic Light Mastery Rule (DIRT Loop) */
+  .mastery-traffic-strip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 3px;
+    padding: 2.5px 6px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size: 5.8pt;
+    line-height: 1.15;
+  }
+  .traffic-tier {
+    display: flex;
+    align-items: center;
+    gap: 3.5px;
+    color: #1e293b;
+  }
+  .traffic-dot {
+    font-size: 7.5pt;
+    line-height: 1;
+  }
+  .green-dot { color: #16a34a; }
+  .amber-dot { color: #d97706; }
+  .red-dot { color: #dc2626; }
 
   /* QR Strip */
   .qr-strip {
@@ -1079,6 +1116,22 @@ async function buildHtml() {
           </tr>
         </tbody>
       </table>
+
+      <!-- 3-Tier Traffic Light Mastery & DIRT Rule -->
+      <div class="mastery-traffic-strip">
+        <div class="traffic-tier">
+          <span class="traffic-dot green-dot">&#9679;</span>
+          <span><strong>7–8/8: Mastered</strong> (Ready for essay)</span>
+        </div>
+        <div class="traffic-tier">
+          <span class="traffic-dot amber-dot">&#9679;</span>
+          <span><strong>5–6/8: Revise Vault</strong> (Check Pages 9–10)</span>
+        </div>
+        <div class="traffic-tier">
+          <span class="traffic-dot red-dot">&#9679;</span>
+          <span><strong>0–4/8: Retake Quiz</strong> (Scan QR for Attempt 2)</span>
+        </div>
+      </div>
 
       <div class="qr-strip">
         <img src="${qrDataUrl}" alt="Digital Quiz QR" class="qr-code-img">
@@ -1683,7 +1736,7 @@ async function run() {
     width: '148mm',
     height: '210mm',
     printBackground: true,
-    margin: { top: '6mm', bottom: '6mm', left: '8mm', right: '8mm' },
+    margin: { top: '6mm', bottom: '6mm', left: '0mm', right: '0mm' },
   });
   console.log(`✅ Generated Master 12-Page A5 PDF: ${primaryPdf}`);
 
