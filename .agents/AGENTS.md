@@ -1,4 +1,9 @@
-
+## Strict School Anonymity & Commercial Neutrality Policy
+STRICT RULE: You are STRICTLY FORBIDDEN from using the name of the user's school ("Meoncross", "Meoncross School") in ANY user-facing text, page titles, document headers, footers, meta tags, printed booklets, worksheets, PDFs, PowerPoint presentations, mark schemes, teacher notes, audio scripts, or curriculum files (`data.js`, `index.html`, etc.).
+1. **Commercial Independence:** The platform is an independent commercial educational product intended for wider sale and multi-school adoption. It must maintain 100% strict institutional neutrality.
+2. **Approved Branding Terminology:** Always use the platform's public title ("The History Revision Hub" / "GCSE History Revision Hub") or generic departmental designations ("The History Department", "The History Portal", "Fieldwork Primary Record", "Fieldwork Archive").
+3. **No Associated School Identifiers:** Never include school-specific email domains (`@meoncross.co.uk`), school telephone numbers, school archive seals, teacher surname nameplates (render pupil/teacher fields with blank lines `<span class="line"></span>`), or student family links that identify the school.
+4. **Mandatory Sanitization Audit:** Before completing any work or deploying, run `node scripts/verify_sanitization.cjs` to guarantee 0 instances of the school name in the repository.
 
 ## Layout Checks
 Always proactively check for layout overflows, spilling text, and missing title pages after making any structural HTML changes.

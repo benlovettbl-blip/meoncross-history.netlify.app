@@ -49,6 +49,8 @@ const IGNORED_FILES = new Set([
   'scripts/analyze_lovett.cjs',
   'scripts/execute_anonymization_sweep.cjs',
   'scripts/verify_sanitization.cjs',
+  'scripts/register_scheduled_cleanup.ps1',
+  '.agents/AGENTS.md',
 ]);
 
 const issues = [];

@@ -958,7 +958,7 @@ async function buildHtml() {
   <div class="a5-page">
     <div>
       <div class="cover-banner">
-        <span>The History Revision Hub &bull; Meoncross History Department</span>
+        <span>The History Revision Hub &bull; The History Department</span>
         <span>Key Stage 3 Companion</span>
       </div>
       <div class="cover-header-block">
@@ -970,7 +970,7 @@ async function buildHtml() {
         <div class="pupil-grid">
           <div class="pupil-field"><span class="lbl">Pupil:</span><span class="line"></span></div>
           <div class="pupil-field"><span class="lbl">Form:</span><span class="line"></span></div>
-          <div class="pupil-field"><span class="lbl">Teacher:</span><span style="font-weight: 800; color: #0f172a; margin-left: 2px;">Mr Lovett</span></div>
+          <div class="pupil-field"><span class="lbl">Teacher:</span><span class="line"></span></div>
         </div>
       </div>
 
