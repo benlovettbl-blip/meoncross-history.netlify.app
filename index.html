@@ -89,7 +89,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap"
       rel="stylesheet"
     />
     <link
@@ -369,9 +369,13 @@
       <main class="app-body">
         <header class="app-header no-print">
           <div class="header-left">
-            <button class="menu-toggle" id="sidebar-toggle-btn">
+            <button class="menu-toggle" id="sidebar-toggle-btn" aria-label="Toggle Navigation Menu">
               <i class="fa-solid fa-bars"></i>
             </button>
+            <div class="header-mobile-brand" id="header-mobile-brand">
+              <i class="fa-solid fa-graduation-cap" style="color: #3b82f6"></i>
+              <span>History Hub</span>
+            </div>
             <button class="back-btn" id="header-back-btn" style="display: none">
               <i class="fa-solid fa-arrow-left"></i> <span>Dashboard</span>
             </button>
@@ -387,48 +391,12 @@
             <button
               id="btn-dyslexia"
               class="btn-dyslexia header-tool-btn"
-              title="Toggle SEN / Dyslexia Mode (Soft cream background & high-legibility font)"
+              title="Toggle SEN / Dyslexia Mode (Warm cream background & high-legibility font)"
               aria-label="Toggle SEN and Dyslexia Mode"
             >
               <i class="fa-solid fa-universal-access"></i>
               <span class="btn-text">SEN</span>
             </button>
-
-            <!-- Read-Aloud Playback Speed Selector -->
-            <div
-              class="speech-rate-selector"
-              id="speech-rate-selector"
-              role="group"
-              aria-label="Read-Aloud Playback Speed"
-            >
-              <span class="speed-label" title="Read-Aloud Playback Speed"
-                ><i class="fa-solid fa-gauge-high"></i
-              ></span>
-              <button
-                type="button"
-                class="speed-btn"
-                data-rate="0.85"
-                title="Slower reading pace (0.85x) for enhanced processing"
-              >
-                0.85x
-              </button>
-              <button
-                type="button"
-                class="speed-btn active"
-                data-rate="1.0"
-                title="Standard reading pace (1.0x)"
-              >
-                1.0x
-              </button>
-              <button
-                type="button"
-                class="speed-btn"
-                data-rate="1.15"
-                title="Brisk reading pace (1.15x)"
-              >
-                1.15x
-              </button>
-            </div>
 
             <!-- Persistent Theme Toggle (always visible in header) -->
             <div id="header-theme-toggle" style="position: relative">

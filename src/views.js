@@ -47,85 +47,25 @@ export function renderDashboard() {
     });
   }
 
-  // Inject compact stats into header
-  const headerRight = document.querySelector('.header-right');
-  if (headerRight) {
-    headerRight.style.flex = '1';
-    headerRight.style.display = 'flex';
-    headerRight.style.justifyContent = 'space-between';
-    headerRight.style.alignItems = 'center';
-
-    headerRight.innerHTML = `
-      <div style="font-size: 1.35rem; font-family: 'Playfair Display', serif; font-weight: 800; color: #1e3a8a; display: flex; align-items: center; gap: 12px; margin-left: 20px;">
-        <i class="fa-solid fa-graduation-cap" style="color: #3b82f6;"></i>
-        The History Revision Hub
-      </div>
-      <div style="display: flex; gap: 8px; align-items: center; font-size: 0.85rem; flex-wrap: wrap; justify-content: flex-end;">
-        <span style="font-weight: 600; color: #334155; margin-right: 5px;">Welcome back to The History Revision Hub</span>
-        <span style="background: #fef3c7; color: #d97706; padding: 3px 8px; border-radius: 6px; font-weight: 700; border: 1px solid #fde68a;"><i class="fa-solid fa-fire"></i> ${state.dailyXp} XP</span>
-        <span style="background: #dcfce7; color: #166534; padding: 3px 8px; border-radius: 6px; font-weight: 700; border: 1px solid #bbf7d0;"><i class="fa-solid fa-graduation-cap"></i> ${masteredCount} Mastered</span>
-        <span style="background: #e0f2fe; color: #0369a1; padding: 3px 8px; border-radius: 6px; font-weight: 700; border: 1px solid #bae6fd;"><i class="fa-solid fa-shield-halved"></i> ${securedCount} Secured</span>
-        <!-- Theme Toggle -->
-        <div style="position:relative; margin-left:4px;">
-          <button id="theme-toggle-btn" title="Change Theme" style="background: rgba(255,255,255,0.9); border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 5px 10px; cursor: pointer; display: flex; align-items: center; gap: 5px; font-size: 0.78rem; font-weight: 600; color: #334155; transition: all 0.2s;" onmouseover="this.style.borderColor='#1e3a8a'" onmouseout="this.style.borderColor='#e2e8f0'">
-            <i class="fa-solid fa-palette" style="color:#6366f1;"></i> <span id="theme-toggle-label">Theme</span>
-          </button>
-          <div id="theme-popover" style="display:none; position:absolute; top:calc(100% + 8px); right:0; background:var(--bg-card, #fff); border:1.5px solid var(--border-glass, #e2e8f0); border-radius:10px; padding:10px 14px; box-shadow:0 8px 24px rgba(0,0,0,0.15); z-index:9999; min-width:180px;">
-            <p style="font-size:0.7rem; font-weight:600; text-transform:uppercase; letter-spacing:1px; color:var(--text-primary,#334155); opacity:0.5; margin:0 0 8px;">Choose Theme</p>
-            <div style="display:flex; gap:10px; align-items:center;">
-              <button class="theme-btn" data-theme="primary" title="History Hub (Default)"><span class="color-dot primary"></span></button>
-              <button class="theme-btn" data-theme="desert" title="Sand"><span class="color-dot desert"></span></button>
-              <button class="theme-btn" data-theme="space" title="Deep Space"><span class="color-dot space"></span></button>
-              <button class="theme-btn" data-theme="coral" title="Coral"><span class="color-dot coral"></span></button>
-            </div>
-            <div style="margin-top:8px;"><span style="font-size:0.68rem; color:var(--text-primary,#334155); opacity:0.35;">History Hub · Sand · Space · Coral</span></div>
-          </div>
-        </div>
-      </div>
-    `;
-
-    // Wire up the injected theme toggle
-    const themeToggleBtn = document.getElementById('theme-toggle-btn');
-    const themePopover = document.getElementById('theme-popover');
-    const themeToggleLabel = document.getElementById('theme-toggle-label');
-    const themeNames = {
-      primary: 'History Hub',
-      desert: 'Sand',
-      space: 'Deep Space',
-      coral: 'Coral',
-    };
-    if (themeToggleBtn && themePopover) {
-      // Set initial label
-      const currentTheme = localStorage.getItem('history_theme') || 'primary';
-      if (themeToggleLabel) themeToggleLabel.textContent = themeNames[currentTheme] || 'Theme';
-      themeToggleBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        themePopover.style.display = themePopover.style.display === 'none' ? 'block' : 'none';
-      });
-      document.addEventListener('click', (e) => {
-        if (!themeToggleBtn.contains(e.target) && !themePopover.contains(e.target)) {
-          themePopover.style.display = 'none';
-        }
-      });
-      // Re-bind the theme-btn clicks inside the popover
-      themePopover.querySelectorAll('.theme-btn').forEach((btn) => {
-        btn.addEventListener('click', (e) => {
-          const themeName = e.currentTarget.getAttribute('data-theme');
-          document.documentElement.setAttribute('data-theme', themeName);
-          localStorage.setItem('history_theme', themeName);
-          document.querySelectorAll('.theme-btn').forEach((b) => b.classList.remove('active'));
-          document
-            .querySelectorAll(`.theme-btn[data-theme="${themeName}"]`)
-            .forEach((b) => b.classList.add('active'));
-          if (themeToggleLabel) themeToggleLabel.textContent = themeNames[themeName] || 'Theme';
-          themePopover.style.display = 'none';
-        });
-      });
-    }
-  }
-
   let html = `
     <div style="max-width: 1150px; margin: 0 auto; padding: 0 20px;">
+      <!-- Pupil Welcome & Study Progress Strip -->
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; background: var(--bg-card, #ffffff); border: 1.5px solid var(--border-glass, #e2e8f0); border-radius: 12px; padding: 12px 18px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="width: 38px; height: 38px; border-radius: 8px; background: rgba(59, 130, 246, 0.1); color: #2563eb; display: flex; align-items: center; justify-content: center; font-size: 1.15rem; flex-shrink: 0;">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div>
+            <div style="font-weight: 700; font-size: 0.95rem; color: var(--text-main, #0f172a);">The History Revision Hub</div>
+            <div style="font-size: 0.76rem; color: var(--text-muted, #64748b);">KS3 &amp; GCSE Active Revision Workspace</div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+          <span style="background: #fef3c7; color: #d97706; padding: 4px 10px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-fire"></i> ${state.dailyXp || 0} XP</span>
+          <span style="background: #dcfce7; color: #166534; padding: 4px 10px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; border: 1px solid #bbf7d0; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-circle-check"></i> ${masteredCount} Mastered</span>
+          <span style="background: #e0f2fe; color: #0369a1; padding: 4px 10px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; border: 1px solid #bae6fd; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-shield-halved"></i> ${securedCount} Secured</span>
+        </div>
+      </div>
   `;
 
   // Co-Curricular & Enrichment Dual Spotlight (Competitions + Chess Club)
@@ -457,6 +397,28 @@ export function renderProfileView() {
       
       <div style="margin-top: 24px;">
         <button class="btn btn-secondary w-full" data-action="switch-view" data-view="dashboard">Save and Return</button>
+      </div>
+    </div>
+
+    <!-- Study XP & Revision Progress Overview Card -->
+    <div class="card max-w-md mx-auto" style="margin-bottom: 1.5rem; background: linear-gradient(135deg, var(--bg-card) 0%, rgba(59, 130, 246, 0.05) 100%);">
+      <h3 style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+        <span><i class="fa-solid fa-fire" style="color: #f59e0b;"></i> Revision Progress &amp; XP</span>
+        <span style="font-size: 0.82rem; font-weight: 800; color: #d97706; background: #fef3c7; border: 1px solid #fde68a; padding: 4px 10px; border-radius: 6px;"><i class="fa-solid fa-fire"></i> ${state.dailyXp || 0} XP</span>
+      </h3>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px; text-align: center;">
+        <div style="background: var(--bg-app); border: 1px solid var(--border-glass); border-radius: 8px; padding: 12px 6px;">
+          <div style="font-size: 1.35rem; font-weight: 800; color: #16a34a;">${boxes[5]}</div>
+          <div style="font-size: 0.72rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-top: 2px;">Mastered</div>
+        </div>
+        <div style="background: var(--bg-app); border: 1px solid var(--border-glass); border-radius: 8px; padding: 12px 6px;">
+          <div style="font-size: 1.35rem; font-weight: 800; color: #0284c7;">${boxes[3] + boxes[4]}</div>
+          <div style="font-size: 0.72rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-top: 2px;">Secured</div>
+        </div>
+        <div style="background: var(--bg-app); border: 1px solid var(--border-glass); border-radius: 8px; padding: 12px 6px;">
+          <div style="font-size: 1.35rem; font-weight: 800; color: #d97706;">${boxes[1] + boxes[2]}</div>
+          <div style="font-size: 0.72rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-top: 2px;">In Progress</div>
+        </div>
       </div>
     </div>
 

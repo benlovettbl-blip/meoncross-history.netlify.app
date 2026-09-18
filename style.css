@@ -4136,66 +4136,83 @@ body.sen-mode .speech-word.speaking-word-highlight {
   box-shadow: 0 2px 6px rgba(30, 58, 138, 0.25);
 }
 
+/* Authentic SEN / Dyslexia Mode */
+body.sen-mode {
+  --bg-app: #fdfaf2 !important;
+  --bg-card: #f8f3e5 !important;
+  --bg-card-hover: #f3edd8 !important;
+  --border-glass: rgba(180, 150, 100, 0.3) !important;
+  --text-main: #1c1917 !important;
+  --text-muted: #57534e !important;
+  --font-body: 'Lexend', 'Comic Sans MS', 'Arial', sans-serif !important;
+  background-color: #fdfaf2 !important;
+  color: #1c1917 !important;
+  font-family: 'Lexend', 'Comic Sans MS', 'Arial', sans-serif !important;
+  letter-spacing: 0.035em !important;
+  word-spacing: 0.07em !important;
+  line-height: 1.8 !important;
+}
+
+body.sen-mode * {
+  letter-spacing: inherit;
+}
+
+body.sen-mode h1,
+body.sen-mode h2,
+body.sen-mode h3,
+body.sen-mode h4,
+body.sen-mode h5,
+body.sen-mode h6,
+body.sen-mode p,
+body.sen-mode span,
+body.sen-mode li,
+body.sen-mode button,
+body.sen-mode input,
+body.sen-mode select,
+body.sen-mode .card,
+body.sen-mode .narrative-block,
+body.sen-mode .task-item,
+body.sen-mode .primary-source-box {
+  font-family: 'Lexend', 'Comic Sans MS', 'Arial', sans-serif !important;
+  line-height: 1.75 !important;
+}
+
+body.sen-mode .app-header {
+  background-color: #f8f3e5 !important;
+  border-bottom: 1px solid rgba(180, 150, 100, 0.25) !important;
+}
+
+body.sen-mode .card,
+body.sen-mode .narrative-block,
+body.sen-mode .primary-source-box,
+body.sen-mode .do-now-box {
+  background-color: #f8f3e5 !important;
+  border-color: rgba(180, 150, 100, 0.3) !important;
+  color: #1c1917 !important;
+}
+
 body.sen-mode .header-tool-btn.btn-dyslexia.active {
   background: #d97706 !important;
   color: #ffffff !important;
   border-color: #b45309 !important;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.3) !important;
 }
 
-/* Read-Aloud Playback Speed Selector */
-.speech-rate-selector {
-  display: inline-flex;
+/* Mobile Brand Title in Header */
+.header-mobile-brand {
+  display: none;
   align-items: center;
-  gap: 2px;
-  background: var(--bg-card, #f8fafc);
-  border: 1.5px solid var(--border-glass, #e2e8f0);
-  border-radius: 8px;
-  padding: 3px 5px;
-  transition: border-color 0.2s ease;
-}
-
-.speech-rate-selector:hover {
-  border-color: var(--primary, #1e3a8a);
-}
-
-.speech-rate-selector .speed-label {
-  font-size: 0.72rem;
-  color: var(--text-muted, #64748b);
-  padding: 0 4px 0 2px;
-  display: inline-flex;
-  align-items: center;
-  opacity: 0.8;
-}
-
-.speech-rate-selector .speed-btn {
-  background: transparent;
-  border: none;
-  border-radius: 5px;
-  padding: 3px 6px;
-  font-size: 0.74rem;
-  font-weight: 600;
-  color: var(--text-primary, #334155);
-  cursor: pointer;
-  transition: all 0.15s ease;
-  user-select: none;
-  line-height: 1.2;
-}
-
-.speech-rate-selector .speed-btn:hover {
-  background: rgba(0, 0, 0, 0.05);
-  color: var(--primary, #1e3a8a);
-}
-
-.speech-rate-selector .speed-btn.active {
-  background: var(--primary, #1e3a8a);
-  color: #ffffff;
+  gap: 8px;
+  font-size: 0.95rem;
   font-weight: 700;
-  box-shadow: 0 1px 3px rgba(30, 58, 138, 0.2);
+  color: var(--text-main, #0f172a);
+  white-space: nowrap;
 }
 
-body.sen-mode .speech-rate-selector .speed-btn.active {
-  background: #d97706 !important;
-  color: #ffffff !important;
+@media (max-width: 768px) {
+  .header-mobile-brand {
+    display: inline-flex;
+  }
 }
 
 /* Primary Source Box Read-Aloud Button */
@@ -4238,20 +4255,13 @@ body.sen-mode .archival-source-box.reading-highlight {
 
 @media (max-width: 640px) {
   .header-accessibility-bar {
-    gap: 4px;
+    gap: 6px;
   }
   .header-tool-btn.btn-dyslexia .btn-text {
-    display: none;
+    display: inline-block;
   }
   .header-tool-btn.btn-dyslexia {
-    padding: 6px 8px;
-  }
-  .speech-rate-selector {
-    padding: 2px 3px;
-  }
-  .speech-rate-selector .speed-btn {
-    padding: 2px 4px;
-    font-size: 0.7rem;
+    padding: 6px 10px;
   }
 }
 

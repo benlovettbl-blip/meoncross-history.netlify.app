@@ -147,34 +147,7 @@ export function bindEvents() {
       btnDyslexia.classList.toggle('active', isSen);
       btnDyslexia.title = isSen
         ? 'SEN / Dyslexia Mode: ACTIVE (Click to return to Standard Mode)'
-        : 'Toggle SEN / Dyslexia Mode (Soft cream background & high-legibility font)';
-    });
-  }
-
-  // Read-Aloud Playback Speed Selector in Header
-  const speedGroup = document.getElementById('speech-rate-selector');
-  if (speedGroup) {
-    const savedRate = localStorage.getItem('speech_rate') || '1.0';
-    // Highlight initial active rate button
-    speedGroup.querySelectorAll('.speed-btn').forEach((btn) => {
-      if (btn.getAttribute('data-rate') === savedRate) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
-
-      btn.addEventListener('click', (e) => {
-        const rate = e.currentTarget.getAttribute('data-rate');
-        if (window.setSpeechRate) {
-          window.setSpeechRate(rate);
-        } else {
-          try {
-            localStorage.setItem('speech_rate', rate);
-          } catch (err) {}
-        }
-        speedGroup.querySelectorAll('.speed-btn').forEach((b) => b.classList.remove('active'));
-        e.currentTarget.classList.add('active');
-      });
+        : 'Toggle SEN / Dyslexia Mode (Warm cream background & high-legibility font)';
     });
   }
 
