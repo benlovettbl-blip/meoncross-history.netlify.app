@@ -455,6 +455,27 @@ export function renderExamPracticeZone(container, unitData, initialQuestion = nu
         position: absolute;
         top: 0; right: 0; width: 100px; height: 100px;
         background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+        pointer-events: none;
+      }
+      #epz-timer-container {
+        cursor: pointer;
+        user-select: none;
+        position: relative;
+        z-index: 10;
+        transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+      }
+      #epz-timer-container:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.1);
+        box-shadow: 0 6px 20px rgba(15, 23, 42, 0.55);
+      }
+      #epz-timer-container:active {
+        transform: translateY(1px);
+        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.4);
+      }
+      #epz-timer-presets {
+        position: relative;
+        z-index: 10;
       }
       .epz-pill {
         padding: 8px 16px;
@@ -530,9 +551,9 @@ export function renderExamPracticeZone(container, unitData, initialQuestion = nu
         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 25px;">
           <div id="epz-q-meta" style="font-size: 0.95rem; font-weight: 800; color: #6366f1; text-transform: uppercase; letter-spacing: 1.5px; background: rgba(99, 102, 241, 0.1); padding: 6px 12px; border-radius: 8px;"></div>
           <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 8px;">
-            <div id="epz-timer-container" style="display: flex; align-items: center; gap: 12px; background: linear-gradient(135deg, #0f172a, #1e293b); color: white; padding: 10px 20px; border-radius: 25px; font-family: 'Courier New', monospace; font-size: 1.4rem; font-weight: bold; box-shadow: 0 4px 15px rgba(15, 23, 42, 0.4); border: 1px solid rgba(255,255,255,0.1);">
+            <div id="epz-timer-container" role="button" tabindex="0" title="Click to start/pause timer" style="display: flex; align-items: center; gap: 12px; background: linear-gradient(135deg, #0f172a, #1e293b); color: white; padding: 10px 20px; border-radius: 25px; font-family: 'Courier New', monospace; font-size: 1.4rem; font-weight: bold; box-shadow: 0 4px 15px rgba(15, 23, 42, 0.4); border: 1px solid rgba(255,255,255,0.1); cursor: pointer; user-select: none; position: relative; z-index: 10;">
               <i class="fa-solid fa-stopwatch" style="color: #38bdf8;"></i> <span id="epz-timer-display" style="letter-spacing: 2px;">00:00</span>
-              <button id="epz-timer-toggle" style="background: rgba(255,255,255,0.1); border: none; color: white; cursor: pointer; padding: 6px 10px; border-radius: 50%; transition: background 0.2s;"><i class="fa-solid fa-play"></i></button>
+              <button type="button" id="epz-timer-toggle" style="background: rgba(255,255,255,0.15); border: none; color: white; cursor: pointer; padding: 6px 10px; border-radius: 50%; transition: background 0.2s;" title="Start/Pause timer"><i class="fa-solid fa-play"></i></button>
             </div>
             <div id="epz-timer-presets" style="display: flex; gap: 6px; font-size: 0.75rem; flex-wrap: wrap; justify-content: flex-end;">
               <button type="button" id="epz-btn-reset-q" style="background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; border-radius: 12px; padding: 2px 8px; cursor: pointer; font-weight: 600;" title="Reset timer to question marks">Question Tariff</button>
@@ -613,6 +634,7 @@ export function renderExamPracticeZone(container, unitData, initialQuestion = nu
   const qProv = document.getElementById('epz-q-provenance');
   const qProvText = document.getElementById('epz-q-provenance-text');
 
+  const timerContainer = document.getElementById('epz-timer-container');
   const timerDisplay = document.getElementById('epz-timer-display');
   const timerToggle = document.getElementById('epz-timer-toggle');
   const pacingNotice = document.getElementById('epz-pacing-notice');
@@ -645,8 +667,20 @@ export function renderExamPracticeZone(container, unitData, initialQuestion = nu
 
   const startTimer = () => {
     if (timerRunning) return;
+    if (timeLeft <= 0) {
+      timeLeft =
+        questionTariffSeconds || (currentQuestion?.marks ? currentQuestion.marks * 90 : 360);
+      initialTimeLeft = timeLeft;
+      updateTimerDisplay();
+    }
     timerRunning = true;
-    timerToggle.innerHTML = '<i class="fa-solid fa-pause"></i>';
+    if (timerToggle) {
+      timerToggle.innerHTML = '<i class="fa-solid fa-pause"></i>';
+      timerToggle.setAttribute('title', 'Pause timer');
+    }
+    if (timerContainer) {
+      timerContainer.setAttribute('title', 'Click to pause timer');
+    }
     timerInterval = setInterval(() => {
       if (timeLeft > 0) {
         timeLeft--;
@@ -675,7 +709,13 @@ export function renderExamPracticeZone(container, unitData, initialQuestion = nu
 
   const stopTimer = () => {
     timerRunning = false;
-    timerToggle.innerHTML = '<i class="fa-solid fa-play"></i>';
+    if (timerToggle) {
+      timerToggle.innerHTML = '<i class="fa-solid fa-play"></i>';
+      timerToggle.setAttribute('title', 'Start timer');
+    }
+    if (timerContainer) {
+      timerContainer.setAttribute('title', 'Click to start timer');
+    }
     clearInterval(timerInterval);
   };
 
@@ -766,13 +806,28 @@ export function renderExamPracticeZone(container, unitData, initialQuestion = nu
     }
   });
 
-  timerToggle.addEventListener('click', () => {
+  const handleTimerToggle = (e) => {
+    if (e) e.stopPropagation();
     if (timerRunning) {
       stopTimer();
     } else {
       startTimer();
     }
-  });
+  };
+
+  if (timerContainer) {
+    timerContainer.addEventListener('click', handleTimerToggle);
+    timerContainer.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        handleTimerToggle();
+      }
+    });
+  }
+
+  if (timerToggle) {
+    timerToggle.addEventListener('click', handleTimerToggle);
+  }
 
   hintBtn.addEventListener('click', () => {
     hintPanel.style.display = hintPanel.style.display === 'none' ? 'block' : 'none';

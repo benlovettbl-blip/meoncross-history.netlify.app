@@ -348,84 +348,84 @@ const COVER_PACKS = [
       "[TEACHER KEY] 1. 2 September 1666 | 2. Pudding Lane | 3. Thomas Farriner | 4. Samuel Pepys | 5. Sir Thomas Bloodworth | 6. Gunpowder | 7. Old St Paul's Cathedral | 8. Roman Catholics (Papists) | 9. Robert Hubert | 10. Sir Christopher Wren",
   },
 
-  // 4. Year 8 - Olaudah Equiano & The Middle Passage
+  // 4. Year 8 - Matthew Hopkins: The Witchfinder General (1645)
   {
-    id: 'yr8_equiano_passage',
-    title: 'Olaudah Equiano & The Middle Passage',
-    subtitle: 'Period 1 Forensic Investigation • Firsthand Slave Narrative vs Commercial Logistics',
+    id: 'yr8_witchfinder_general',
+    title: 'Matthew Hopkins: The Witchfinder General',
+    subtitle: 'Period 1 Forensic Investigation • Religious Zealot or Ruthless Conman?',
     yearLabel: 'Year 8 (Key Stage 3)',
-    specLabel: 'KS3 History: Transatlantic Slave Trade & Abolition',
-    headerColor: '#15803d',
-    accentColor: '#16a34a',
-    tagColor: '#166534',
+    specLabel: 'KS3 History: Superstition, Civil War Chaos & Society (1645)',
+    headerColor: '#4c1d95',
+    accentColor: '#7c3aed',
+    tagColor: '#5b21b6',
     qrUrl: 'https://the-history-revision-hub.netlify.app/?view=lessons',
-    pdfFileName: 'standalone_cover_yr8_equiano_middle_passage.pdf',
-    driveFolders: ['Year 8', 'Year 8\\Early Modern World', 'Year 7\\Industrialisation and Empire'],
-    driveTitle: 'Year 8 Emergency Cover - Olaudah Equiano & The Middle Passage (Double Period).pdf',
+    pdfFileName: 'standalone_cover_yr8_witchfinder_general.pdf',
+    driveFolders: ['Year 8', 'Year 8\\Early Modern World', 'Year 8\\Emergency Cover'],
+    driveTitle: 'Year 8 Emergency Cover - Matthew Hopkins Witchfinder General (Double Period).pdf',
 
     p1Context:
-      "<strong>Historical Setting (The Transatlantic Slave Trade c. 1750–1807):</strong> Between the 16th and 19th centuries, European ships transported over 12 million captive Africans across the Atlantic in the triangular trade. The horrific sea voyage from the West African coast to the Caribbean and the Americas was known as the 'Middle Passage'. Enslaved humans were chained in pairs below deck with barely room to sit or turn. In 1789, an African-born writer and former enslaved sailor, Olaudah Equiano, published his autobiography in London. His vivid, forensic firsthand account shocked British readers and became one of the most powerful weapons of the abolitionist movement led by Granville Sharp and William Wilberforce.",
+      "<strong>Historical Setting (The English Civil War & East Anglia, 1645–1647):</strong> In the summer of 1645, England was torn apart by the Civil War between King Charles I and Parliament. Normal royal courts of law broke down, travel was perilous, and puritan religious anxiety reached fever pitch. Into this power vacuum stepped Matthew Hopkins, the twenty-five-year-old son of a Suffolk clergyman. Calling himself the 'Witchfinder General' (a completely invented title with zero legal authority), Hopkins and his associate John Stearne offered their services to fearful East Anglian town councils. For substantial fees—often £20 or more per town (more than a labourer earned in a year)—Hopkins pledged to root out witches using sleep deprivation, 'witch pricking' with spring-loaded needles, and discovering 'Devil's marks'. In just fourteen months, Hopkins condemned more than 300 innocent women and men to the gallows—more than all English witch trials combined over the previous century.",
 
     sources: [
       {
-        tag: "Source A • Olaudah Equiano's Narrative",
+        tag: "Source A • Matthew Hopkins' Defense Pamphlet",
         quote:
-          '"I was immediately handled and tossed up to see if I were sound by some of the crew. When I was carried down under the decks, the stench of the hold was so intolerably loathsome that it was dangerous to remain there for any time. The closeness of the place, the heat of the climate, and the number in the ship—so crowded that each had scarcely room to turn—almost suffocated us. The shrieks of the women and the groans of the dying made the whole a scene of horror almost inconceivable. I wished for the last friend, death, to relieve me."',
-        prov: 'Olaudah Equiano, The Interesting Narrative of the Life of Olaudah Equiano (London, 1789).',
+          '"I have been charged with extorting vast sums of money from poor parishes, and that I gain twenty pounds a town. I answer: I never went to any town unless called and invited by the local magistrates. Furthermore, I take but twenty shillings for my travel, horse-meat, and upkeep, with my associate. As for torture, we strictly forbid it. We only cause the suspected witch to sit upon a stool and watch her for twenty-four hours to see if her imps or familiars (in the likeness of cats, dogs, or toads) come to suckle at her secret teats."',
+        prov: 'Matthew Hopkins, The Discovery of Witches: In Answer to Several Queries (London, May 1647).',
       },
       {
-        tag: "Source B • Slave Ship Captain's Testimony",
+        tag: 'Source B • Puritan Minister Denouncing Hopkins',
         quote:
-          '"The slaves are placed in two rows, one above the other, upon platforms like shelves in a pantry. The height between decks is scarcely three feet. They have not room to lie on their backs, but are tucked in \'spoon-fashion\' one into another. If they attempt to jump overboard, as many try to do, they are whipped savagely or forced to swallow burning coals. They are looked upon by owners strictly as cargo, where mortality of 15% is budgeted into the voyage profits."',
-        prov: 'John Newton, former slave ship captain turned abolitionist, Thoughts Upon the African Slave Trade (1788).',
+          '"Every old woman with a wrinkled face, a furred brow, a hairy lip, a gobber tooth, a squint eye, or a squeaking voice is pronounced a witch by this wretched impostor. He terrifies simple folk with talk of Satan while draining the parish treasury of gold. He keeps poor starving wretches awake for four days and nights without food or rest, walking them back and forth upon bare feet until their minds wander, and then he writes down their delirious babbling as willing confessions made to Lucifer."',
+        prov: 'Reverend John Gaule, Puritan Minister of Great Staughton, Select Cases of Conscience Touching Witches (1646).',
       },
       {
-        tag: 'Source C • Parliamentary Abolition Campaign Print',
+        tag: 'Source C • Official Court Deposition of Elizabeth Clarke',
         quote:
-          '"Plan of the Slave Ship Brookes of Liverpool (1788): Shows 454 captive Africans crammed into the hold, measuring only 6 feet by 16 inches per man. Published by the Society for Effecting the Abolition of the Slave Trade, this architectural blueprint was distributed to thousands of coffeehouses, proving to the British public that slave merchants systematically treated human beings like stacked lumber."',
-        prov: 'Thomas Clarkson & Plymouth Abolition Committee, Brookes Broadside (1788).',
+          '"The said Elizabeth Clarke, an eighty-year-old one-legged widow of Manningtree, was watched for three nights by Hopkins and four searchers. Upon the third night of continuous watching without sleep, she confessed that Satan visited her in the shape of a white dog named Jarmara, followed by an imp like a black cat named Vinegar Tom. She admitted giving suck to these familiars from a fleshy mark upon her shoulder. Two days later, at Chelmsford Assizes, she was hanged alongside eighteen other women."',
+        prov: 'The Examination of Elizabeth Clarke before Sir Harbottle Grimston, Justice of the Peace (Essex, March 1645).',
       },
     ],
 
     p1Questions: [
-      "1. [Recall] In Source A, what physical sensations does Olaudah Equiano describe upon entering the slave ship's hold?",
-      '2. [Inference] What does Equiano mean when he writes that he "wished for the last friend, death, to relieve me"?',
-      '3. [Commercial Reality] In Source B, how does Captain Newton describe the commercial attitude of merchants toward enslaved human lives?',
-      '4. [Abolitionist Rhetoric] Why was the architectural plan of the ship Brookes (Source C) such a devastating piece of abolitionist propaganda?',
-      "5. [Historical Impact] How did Equiano's ability to write and publish his book in English directly challenge racist pro-slavery arguments?",
+      '1. [Recall] In Source A, what reasons does Matthew Hopkins give to defend himself against claims of greed and torture?',
+      '2. [Inference] In Source B, what physical characteristics does Reverend Gaule say Hopkins used to accuse innocent elderly women?',
+      '3. [Cross-Examination] Contrast Source A and Source B: How do Hopkins and Gaule completely disagree over the practice of "watching"?',
+      "4. [Psychological Forensic] In Source C, what condition was Elizabeth Clarke in when she confessed to seeing 'Vinegar Tom', and why is this unreliable?",
+      '5. [Historical Judgement] Why did the chaos of the English Civil War (1642–1649) allow a self-appointed fraud like Hopkins to operate unchecked?',
     ],
 
-    p2Title: 'The Abolitionist Breakthrough: Testimony vs Commerce',
+    p2Title: "The Witchfinder's Inquest: Religious Zealot vs Ruthless Conman",
     p2Sub:
-      'Enquiry: How did eyewitness accounts dismantle the moral defense of the British slave trade?',
+      'Enquiry: Evaluating contradictory forensic evidence to deliver a verdict on Matthew Hopkins.',
 
-    matrixTitle: 'Part 1: The Transatlantic Slave Trade Analytical Matrix',
+    matrixTitle: 'Part 1: The Witchfinder Analytical Matrix (Evaluating the Motives)',
     matrixCols: [
-      'The Pro-Slavery Commercial Defense',
-      'The Abolitionist Forensic Counter-Attack',
-      'Historical Impact',
+      'The "Puritan Zealot" Argument (Sincere Belief)',
+      'The "Ruthless Extortionist" Argument (Greed & Fraud)',
+      "Historian's Evaluation",
     ],
     matrixRows: [
       [
-        '<strong>"Economic Necessity":</strong> Planters argued British sugar, tobacco, and cotton plantations in Jamaica and Barbados would collapse without enslaved labor.',
-        "<strong>Moral Exposure of Cruelty:</strong> Equiano's autobiography and the Brookes diagram proved that British wealth was bought with torture and mass murder.",
-        'Turned the debate from economic policy into a fundamental Christian moral crisis.',
+        '<strong>Scriptural Obligation:</strong> Hopkins quoted Exodus 22:18 ("Thou shalt not suffer a witch to live") and King James I’s <em>Daemonologie</em>, genuinely fearing the Devil was subverting England.',
+        '<strong>Vast Financial Profit:</strong> Charged impoverished towns extortionate fees (£23 from Aldeburgh, equivalent to 10% of their annual tax revenue) during a national crisis.',
+        'Hopkins accumulated huge wealth in 14 months, far exceeding any religious stipend.',
       ],
       [
-        '<strong>"Racial Inferiority":</strong> Merchants claimed Africans were uncivilized savages who benefited from European discipline and Christian conversion.',
-        '<strong>Intellectual Brilliance:</strong> Equiano toured Britain giving eloquent lectures, demonstrating high culture, moral depth, and Christian piety.',
-        'Completely destroyed the intellectual justification used by slave owners.',
+        '<strong>No Physical Bloodshed (in Theory):</strong> English law banned the rack; Hopkins avoided physical cutting, using "watching" (sleep deprivation) and "swimming" (ducking in water).',
+        '<strong>Torture by Exhaustion:</strong> Continuous sleep deprivation for 72+ hours induces severe hallucinations, forcing exhausted victims to confess to anything to stop the ordeal.',
+        'The "non-violent" methods were psychologically brutal and scientifically guaranteed false confessions.',
       ],
       [
-        '<strong>"Regulated Shipping":</strong> Merchants claimed the 1788 Dolben Act ensured clean, healthy conditions at sea.',
-        '<strong>Eyewitness Truth:</strong> Newton and Equiano proved that dysentery, chains, forced feeding, and suicides remained rampant.',
-        'Led directly to Parliament passing the Abolition of the Slave Trade Act in 1807.',
+        '<strong>Local Community Paranoia:</strong> Villagers repeatedly invited Hopkins because neighbours genuinely accused eccentric, lonely, or impoverished women of cursing livestock.',
+        '<strong>Predatory Manipulation:</strong> Targeted vulnerable, friendless widows without family or legal counsel who could not defend themselves in court.',
+        'Preyed on preexisting rural feuds, weaponizing neighbourly suspicion for personal fame and profit.',
       ],
     ],
 
-    essayPrompt: 'Part 2: Extended Writing — The Significance of Olaudah Equiano (15 Mins)',
+    essayPrompt: 'Part 2: Extended Writing — The Historical Verdict on Matthew Hopkins (15 Mins)',
     essayQuestion:
-      'Explain: <em>"Why was Olaudah Equiano\'s autobiography such a crucial turning point in the British campaign to abolish the slave trade?"</em>',
+      'Explain: <em>"Was Matthew Hopkins a sincere religious crusader combating evil, or a ruthless conman profiting from the terror of the English Civil War?"</em>',
     connectives: [
       'Consequently',
       'As a direct result',
@@ -434,22 +434,22 @@ const COVER_PACKS = [
       'Furthermore',
     ],
     starter:
-      '"Olaudah Equiano\'s autobiography was a pivotal turning point in the abolition campaign because it gave an authentic African voice to the horrors of the Middle Passage..."',
+      '"While Matthew Hopkins justified his campaign through puritan religious zeal, the historical evidence overwhelmingly proves he was a predatory opportunist who profited from wartime chaos..."',
 
     plenaryItems: [
-      '1. What name was given to the sea voyage transporting enslaved people across the Atlantic?',
-      '2. What was the name of the famous African writer who published his autobiography in 1789?',
-      '3. Approximately how many enslaved Africans were transported across the Atlantic over 300 years?',
-      '4. Name the famous slave ship whose tight-packing diagram shocked the British public in 1788.',
-      "5. Which former slave captain wrote 'Thoughts upon the African Slave Trade' and the hymn 'Amazing Grace'?",
-      '6. What phrase was used to describe how enslaved people were packed sideways into the hold?',
-      '7. Name the leading British MP who fought in Parliament for 20 years to abolish the slave trade.',
-      '8. In what year did the British Parliament pass the Act to Abolish the Transatlantic Slave Trade?',
-      '9. Did the 1807 Act instantly free all existing enslaved people on Caribbean plantations? (Yes/No)',
-      '10. In what year was slavery itself finally abolished throughout the British Empire?',
+      '1. What official-sounding title did Matthew Hopkins invent for himself in 1645?',
+      '2. Which English national conflict (1642–1649) broke down normal royal law courts, allowing Hopkins to operate?',
+      '3. In which region of eastern England (Suffolk, Essex, Norfolk) did Hopkins conduct his trials?',
+      "4. What brutal, non-physical interrogation technique did Hopkins call 'watching'?",
+      '5. What name was given to demonic animal spirits (like black cats or toads) believed to serve witches?',
+      '6. What was the name of the blunt, spring-loaded needle tool used to test for numb spots on the skin?',
+      '7. Name the brave Puritan minister from Great Staughton who publicly denounced Hopkins in 1646.',
+      '8. Approximately how much money did Hopkins charge towns for his services?',
+      "9. Approximately how many people were executed as a result of Hopkins' investigations in 14 months?",
+      "10. In what year did Matthew Hopkins publish his defense pamphlet 'The Discovery of Witches' before his death?",
     ],
     invertedKey:
-      '[TEACHER KEY] 1. The Middle Passage | 2. Olaudah Equiano | 3. Over 12 million | 4. The Brookes of Liverpool | 5. John Newton | 6. Spoon-fashion | 7. William Wilberforce | 8. 1807 | 9. No (it banned the trade/shipping only) | 10. 1833 (Slavery Abolition Act)',
+      '[TEACHER KEY] 1. The Witchfinder General | 2. The English Civil War | 3. East Anglia | 4. Sleep deprivation (walking on stools) | 5. Familiars (or imps) | 6. Witch pricker (retractable needle) | 7. Reverend John Gaule | 8. Up to £20–£23 per town | 9. Over 300 people | 10. 1647',
   },
 
   // 5. Year 9 - The Christmas Truce of 1914
