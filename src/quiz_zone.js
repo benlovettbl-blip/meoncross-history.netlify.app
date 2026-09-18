@@ -528,7 +528,7 @@ export function renderQuizZone(container, unitData) {
             expDiv.className = 'quiz-explanation-box';
             expDiv.style.cssText =
               'margin-top: 15px; padding: 14px 18px; background: #f8fafc; border-left: 4px solid #8b5cf6; border-radius: 6px; font-size: 0.95rem; color: #1e293b; text-align: left; line-height: 1.5; box-shadow: 0 1px 3px rgba(0,0,0,0.05);';
-            expDiv.innerHTML = `<strong style="color: #6d28d9; display: block; margin-bottom: 4px; font-size: 0.95rem;"><i class="fa-solid fa-graduation-cap"></i> Historian Explanation:</strong><span>${q.explanation}</span>`;
+            expDiv.innerHTML = `<strong style="color: #6d28d9; display: block; margin-bottom: 4px; font-size: 0.95rem;">The Explanation:</strong><span>${q.explanation}</span>`;
             uiContainer.querySelector('#quiz-feedback').appendChild(expDiv);
           }
 

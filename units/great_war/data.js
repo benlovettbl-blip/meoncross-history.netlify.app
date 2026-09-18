@@ -3259,6 +3259,16 @@ const great_war = {
   ],
   glossary: [
     {
+      term: 'Weltpolitik [Velt-pol-ee-teek]',
+      definition:
+        '"World Policy." Kaiser Wilhelm II\'s aggressive foreign policy to transform Germany into a dominant global superpower with an overseas empire and massive battlefleet.',
+    },
+    {
+      term: 'Revanche [Ruh-vahnsh]',
+      definition:
+        '"Revenge." The profound, enduring French national desire to avenge their humiliating defeat in the Franco-Prussian War (1870–71) and reclaim Alsace-Lorraine.',
+    },
+    {
       term: 'Alsace-Lorraine',
       definition: 'A resource-rich border region taken by Germany from France in 1871.',
     },

@@ -144,13 +144,12 @@ def populate_form():
     
     # -------------------------------------------------------------
     # ROW 4: NOTEWORTHY PUPIL SUCCESS
-    # -------------------------------------------------------------
     r4_cells = [c for c in rows[4] if c.tag == f"{{{W_NS}}}tc"]
     set_cell_simple(r4_cells[1], [
-        ("Charlotte Grant achieved Grade 9 (FFT50 6.08 | VA +2.92) and Denys Boiko achieved Grade 9 (FFT50 6.17 | VA +2.83). Both secured top grades through mastery of 16-mark evaluative essays and disciplined retrieval practice.", False, False, "19")
+        ("Charlotte Grant (Grade 9, FFT 6.1, VA +2.9) and Denys Boiko (Grade 9, FFT 6.2, VA +2.8). Both excelled through strong 16-mark essay technique and regular retrieval.", False, False, "20")
     ])
     set_cell_simple(r4_cells[2], [
-        ("Embed timed 16-mark essay practice in lessons to secure consistent conversion of Grade 8 pupils to Grade 9.", False, False, "19")
+        ("Continue timed 16-mark essay practice in class to push Grade 8s to 9.", False, False, "20")
     ])
     
     # -------------------------------------------------------------
@@ -158,10 +157,10 @@ def populate_form():
     # -------------------------------------------------------------
     r5_cells = [c for c in rows[5] if c.tag == f"{{{W_NS}}}tc"]
     set_cell_simple(r5_cells[1], [
-        ("Dylan Parker achieved Grade 6 (FFT50 4.24 | VA +1.76) and Christopher Davis achieved Grade 6 (FFT50 5.03 | VA +0.97). Targeted scaffolding for 8-mark questions and weekly recall booklets secured strong positive progress.", False, False, "19")
+        ("Dylan Parker (Grade 6, FFT 4.2, VA +1.8) and Christopher Davis (Grade 6, FFT 5.0, VA +1.0). Both made strong progress via targeted question scaffolding.", False, False, "20")
     ])
     set_cell_simple(r5_cells[2], [
-        ("Deploy targeted 4-mark and 8-mark question scaffolding early in Year 11 ahead of mock examinations.", False, False, "19")
+        ("Use targeted 4-mark and 8-mark scaffolds early in Year 11 before mocks.", False, False, "20")
     ])
     
     # -------------------------------------------------------------
@@ -171,7 +170,7 @@ def populate_form():
     r6_nt = [n for n in r6_cells[1] if n.tag == f"{{{W_NS}}}tbl"][0]
     r6_table_data = [
         ["Grade awarded", "Nr of pupils", "% of cohort", "National Average"],
-        ["8+", "4", "23.5%", "-"],
+        ["8+", "5", "29.4%", "-"],
         ["7+", "7", "41.2%", "-"],
         ["5+", "16", "94.1%", "-"],
         ["4+", "17", "100.0%", "-"],
@@ -186,23 +185,22 @@ def populate_form():
             r6_cells[1].remove(child)
             
     # Add heading before table
-    p_head = make_p("Headline Figures", bold=True, font_size="20", space_after="40")
+    p_head = make_p("Headline Figures", bold=True, font_size="20", space_after="30")
     r6_cells[1].insert(list(r6_cells[1]).index(r6_nt), p_head)
     
     # Add summary and notable pupils after table
     r6_cells[1].append(make_p(
-        "Whole cohort (17 pupils) achieved 100% 4+ (vs FFT50 85.0%), 94.1% 5+ (vs FFT50 73.5%), and 41.2% 7+ (vs FFT50 28.5%). Overall Subject VA: +1.04.",
-        bold=False, font_size="18", space_before="60", space_after="40"
+        "Whole cohort (17 pupils): 100% 4+ (vs FFT50 85%), 94.1% 5+ (vs FFT50 73.5%), and 41.2% 7+ (vs FFT50 28.5%). Subject VA: +1.10 (average grade 6.47).",
+        bold=False, font_size="18", space_before="40", space_after="20"
     ))
-    r6_cells[1].append(make_p("Pupils with notable VA success:", bold=True, font_size="18", space_after="20"))
+    r6_cells[1].append(make_p("Notable VA progress:", bold=True, font_size="18", space_after="10"))
     r6_cells[1].append(make_p(
-        "Denys Boiko (Gr 9 | VA +2.83), Charlotte Grant (Gr 9 | VA +2.92), Matthew Whittaker (Gr 7 | VA +2.60), Connor Brew (Gr 7 | VA +2.01), Dylan Parker (Gr 6 | VA +1.76).",
-        bold=False, font_size="18", space_after="40"
+        "Denys Boiko (Gr 9, VA +2.8), Charlotte Grant (Gr 9, VA +2.9), Connor Brew (Gr 8, VA +3.0 after remark from Gr 7), Matthew Whittaker (Gr 7, VA +2.6), Dylan Parker (Gr 6, VA +1.8).",
+        bold=False, font_size="18", space_after="30"
     ))
     
-    # Cell 2: strictly ONE point!
     set_cell_simple(r6_cells[2], [
-        ("Embed 4-mark Consequence and 8-mark Narrative writing frames in workbooks to sustain positive cohort VA.", False, False, "19")
+        ("Embed 4-mark and 8-mark writing frames in booklets to maintain positive VA.", False, False, "20")
     ])
     
     # -------------------------------------------------------------
@@ -212,10 +210,10 @@ def populate_form():
     r8_nt = [n for n in r8_cells[1] if n.tag == f"{{{W_NS}}}tbl"][0]
     r8_table_data = [
         ["2026", "Overall", "Male", "Female", "Pupils with SEND", "Pupils without SEND", "Mid-phase joiners", "Non-mid-phase joiners"],
-        ["Average Grade", "6.41", "6.30", "6.57", "6.14", "6.60", "6.13", "6.67"],
-        ["VA", "+1.04", "+0.98", "+1.14", "+1.03", "+1.05", "+0.69", "+1.35"]
+        ["Average Grade", "6.47", "6.40", "6.57", "6.14", "6.70", "6.25", "6.67"],
+        ["VA", "+1.10", "+1.08", "+1.14", "+1.03", "+1.15", "+0.81", "+1.35"]
     ]
-    populate_nested_table(r8_nt, r8_table_data, font_size="17")
+    populate_nested_table(r8_nt, r8_table_data, font_size="18")
     
     # Clean surrounding paragraphs in Cell 1
     tcPr = r8_cells[1].find(f"{{{W_NS}}}tcPr")
@@ -223,15 +221,13 @@ def populate_form():
         if child != tcPr and child != r8_nt:
             r8_cells[1].remove(child)
             
-    # Add concise commentary after table
     r8_cells[1].append(make_p(
-        "Positive value-added across all subgroups. Girls achieved +1.14 VA and Boys achieved +0.98 VA. SEND pupils (7) secured +1.03 VA and a 100% 4+ pass rate. Mid-phase joiners (8) achieved +0.69 VA versus +1.35 for non-mid-phase joiners.",
-        bold=False, font_size="18", space_before="60", space_after="40"
+        "Positive VA across all groups: Girls +1.14, Boys +1.08. SEND pupils (7) achieved +1.03 VA and 100% 4+. Mid-phase joiners (8) achieved +0.81 VA (lifted by Connor Brew's remark to Gr 8) vs +1.35 for non-MPJ.",
+        bold=False, font_size="18", space_before="40", space_after="20"
     ))
     
-    # Cell 2: strictly ONE point!
     set_cell_simple(r8_cells[2], [
-        ("Target mid-phase joiners with baseline diagnostic assessments upon entry to close the 0.66 VA progress gap.", False, False, "19")
+        ("Use early baseline assessments for mid-phase joiners to close the progress gap.", False, False, "20")
     ])
     
     # -------------------------------------------------------------
@@ -239,10 +235,10 @@ def populate_form():
     # -------------------------------------------------------------
     r9_cells = [c for c in rows[9] if c.tag == f"{{{W_NS}}}tc"]
     set_cell_simple(r9_cells[1], [
-        ("High-prior attainers achieved strong outcomes: Charlotte Grant (Grade 9 | VA +2.92) and Toby Jones (Grade 8 | VA +0.78). Advanced source evaluation scaffolds and historiographical prompts enabled top grades.", False, False, "19")
+        ("High-prior attainers performed strongly: Charlotte Grant (Grade 9, VA +2.9) and Toby Jones (Grade 8, VA +0.8).", False, False, "20")
     ])
     set_cell_simple(r9_cells[2], [
-        ("Introduce stretch historiography extracts and academic vocabulary banks to push Grade 7 students to Grade 8/9.", False, False, "19")
+        ("Use stretch vocabulary banks to help convert Grade 7s to 8/9.", False, False, "20")
     ])
     
     # -------------------------------------------------------------
@@ -250,10 +246,10 @@ def populate_form():
     # -------------------------------------------------------------
     r10_cells = [c for c in rows[10] if c.tag == f"{{{W_NS}}}tc"]
     set_cell_simple(r10_cells[1], [
-        ("Denys Boiko achieved Grade 9 (FFT50 6.17 | VA +2.83). Dual-language glossaries, structured sentence stems, and visual dual-coding in workbooks supported exceptional language acquisition and exam performance.", False, False, "19")
+        ("Denys Boiko achieved Grade 9 (FFT 6.2, VA +2.8). Supported with bilingual glossaries and structured writing frames.", False, False, "20")
     ])
     set_cell_simple(r10_cells[2], [
-        ("Maintain dual-language glossaries and structured writing stems for future EAL admissions.", False, False, "19")
+        ("Continue providing bilingual glossaries and writing stems for EAL pupils.", False, False, "20")
     ])
     
     # -------------------------------------------------------------
@@ -261,10 +257,10 @@ def populate_form():
     # -------------------------------------------------------------
     r12_cells = [c for c in rows[12] if c.tag == f"{{{W_NS}}}tc"]
     set_cell_simple(r12_cells[1], [
-        ("Zero pupils achieved Grade 3 or below (100% 4-9 pass rate). The lowest grade awarded was Grade 4 (Philip Waller | FFT50 5.43), successfully securing a standard pass.", False, False, "19")
+        ("Zero pupils achieved Grade 3 or below (100% 4-9). Lowest grade was Grade 4 (Philip Waller, FFT 5.4), securing a standard pass.", False, False, "20")
     ])
     set_cell_simple(r12_cells[2], [
-        ("Maintain zero Grade 1-3 outcomes by triggering immediate department intervention if pupil attendance falls below 90%.", False, False, "19")
+        ("Maintain 100% pass rate by monitoring any pupil attendance dropping below 90%.", False, False, "20")
     ])
     
     # -------------------------------------------------------------
@@ -287,15 +283,13 @@ def populate_form():
         if child != tcPr and child != r15_nt:
             r15_cells[1].remove(child)
             
-    # Add concise commentary after table
     r15_cells[1].append(make_p(
-        "Rising Year 11 cohort (14 pupils) benchmarked against FFT 20 estimates. Projected OTF 7+ is 42.9% (6 pupils: Baker, Corlette, Cripps, Frey, Hyde, Young), exceeding the FFT 20 target of 28.6% (4 pupils). Overall cohort OTF VA is +0.62.",
-        bold=False, font_size="18", space_before="60", space_after="40"
+        "Rising Year 11 cohort benchmarked against FFT 20. Projected OTF 7+ is 42.9% (6 pupils: Baker [8], Corlette [8], Cripps [7], Frey [8], Hyde [9], Young [7]), well above FFT 20 target of 28.6%. OTF 5+ is 78.6% (Henderson, Lubbe, Smith, Vest, Wright all on 6). Target intervention focused on Elise Longman (CWA 3, OTF 4).",
+        bold=False, font_size="18", space_before="40", space_after="20"
     ))
     
-    # Cell 2: strictly ONE point!
     set_cell_simple(r15_cells[2], [
-        ("Provide structured Paper 3 USA retrieval packs for pupils on the Grade 4/5 boundary to secure 5+ attainment.", False, False, "19")
+        ("Use targeted revision and retrieval packs for pupils on the Grade 4/5 boundary to secure 5+.", False, False, "20")
     ])
     
     # -------------------------------------------------------------
@@ -303,13 +297,10 @@ def populate_form():
     # -------------------------------------------------------------
     r17_cells = [c for c in rows[17] if c.tag == f"{{{W_NS}}}tc"]
     set_cell_simple(r17_cells[1], [
-        ("1. Sylvie Drew: FFT 20 Target 4 | OTF 1 | CWA 1 | ATL D | Assessment 8%. Significant underachievement and engagement concern.", False, False, "18", "left", "30"),
-        ("2. Elise Longman: FFT 20 Target 5 | OTF 4 | CWA 3 | ATL D | Assessment 25%. Underperforming against target with low assessment retention.", False, False, "18", "left", "30"),
-        ("3. Tobias Bishop: FFT 20 Target 6 | OTF UC | CWA UC | Assessment 0%. Unclassified due to missing assessments and attendance concerns.", False, False, "18", "left", "30")
+        ("1. Elise Longman: FFT Target 5, OTF 4, CWA 3, ATL D, Assessment 25%. Underperforming against target with low assessment retention.", False, False, "18")
     ])
-    # Cell 2: Interventions planned - strictly ONE point!
     set_cell_simple(r17_cells[2], [
-        ("Implement bi-weekly supervised catch-up sessions and targeted 4-mark writing scaffolds for Drew and Longman, alongside attendance monitoring and parental liaison for Bishop.", False, False, "19")
+        ("Encourage attendance but also engagement in lessons, move to front positive reinforcement needed; already done she is working better. I recommend she is highlighted to ALL teachers as a ‘ghost’ pupil as she has hidden ability I think.", False, False, "18")
     ])
     
     # -------------------------------------------------------------
@@ -317,20 +308,19 @@ def populate_form():
     # -------------------------------------------------------------
     r19_cells = [c for c in rows[19] if c.tag == f"{{{W_NS}}}tc"]
     set_cell_simple(r19_cells[0], [("Date: September 2026", True, False, "20")])
-    set_cell_simple(r19_cells[1], [("In attendance: Department Lead (Head of History), SLT Line Manager", True, False, "20")])
+    set_cell_simple(r19_cells[1], [("In attendance: Benjamin Lovett (Head of History), SLT Line Manager and Headteacher", True, False, "20")])
     
     # -------------------------------------------------------------
     # ROW 21: MEETING NOTES & ACTIONS
     # -------------------------------------------------------------
     r21_cells = [c for c in rows[21] if c.tag == f"{{{W_NS}}}tc"]
     set_cell_simple(r21_cells[0], [
-        ("1. 2026 outcomes validated: 100% 4+, 94.1% 5+, 41.2% 7+, VA +1.04. Strong positive progress across both genders and SEND.", False, False, "18", "left", "30"),
-        ("2. Year 10 transition into Year 11 reviewed against FFT 20: 85.7% OTF 4+ and +0.62 OTF VA.", False, False, "18", "left", "30"),
-        ("3. Three pupils of concern identified for targeted intervention (Drew, Longman, Bishop).", False, False, "18", "left", "30")
+        ("1. 2026 outcomes validated: 100% 4+, 94.1% 5+, 41.2% 7+ (29.4% at Grade 8+ post-remark), VA +1.10. Strong progress across boys, girls and SEND.", False, False, "18", "left", "20"),
+        ("2. Year 10 into 11 reviewed against FFT 20: 85.7% OTF 4+ and +0.62 OTF VA.", False, False, "18", "left", "20"),
+        ("3. Pupil of concern for targeted intervention: Elise Longman (Drew and Bishop have discontinued History).", False, False, "18", "left", "20")
     ])
-    # Cell 1: Actions - strictly ONE point!
     set_cell_simple(r21_cells[1], [
-        ("Launch Year 11 targeted intervention sessions and track attendance and mock performance for the 3 identified pupils of concern.", False, False, "19")
+        ("Launch targeted Year 11 intervention sessions and track attendance and mock performance for Elise Longman.", False, False, "20")
     ])
     
     # -------------------------------------------------------------
