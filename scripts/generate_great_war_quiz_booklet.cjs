@@ -514,10 +514,10 @@ const A5_BOOKLET_CSS = `
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    max-height: 46mm;
+    max-height: 98mm;
   }
   .cover-map-img {
-    max-height: 46mm;
+    max-height: 98mm;
     max-width: 100%;
     object-fit: contain;
     border: 1px solid #94a3b8;
