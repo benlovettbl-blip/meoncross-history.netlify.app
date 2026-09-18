@@ -368,6 +368,9 @@
       background-color: #1d4ed8;
     }
   
+    
+
+  
     /* Question-Anchor Quick Launch Button Styles */
     .btn-time-question {
       display: inline-flex;
@@ -412,7 +415,7 @@
 </head>
 <body>
 
-        <!-- Top Docked Invigilator Toolbar (Interactive Screen Mode) -->
+          <!-- Top Docked Invigilator Toolbar (Interactive Screen Mode) -->
   <div class="invigilator-hud no-print" style="position: sticky; top: 0; z-index: 9999; background: #0f172a; color: #ffffff; border-bottom: 3px solid #3b82f6; padding: 8px 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); font-family: 'Open Sans', Arial, sans-serif;">
     <!-- Left: Clock & Status -->
     <div style="display: flex; align-items: center; gap: 14px;">
@@ -420,8 +423,8 @@
         <div style="font-size: 9px; font-weight: 800; letter-spacing: 1px; color: #94a3b8; text-transform: uppercase;">PEARSON EXAM CLOCK &bull; 1HI0/31</div>
         <div id="mock-exam-clock" style="font-size: 26px; font-weight: 800; font-family: 'Courier New', Courier, monospace; color: #38bdf8; line-height: 1.1; cursor: pointer; text-shadow: 0 0 10px rgba(56,189,248,0.3);" title="Click to set custom timer duration">01:20:00</div>
       </div>
-      <div style="font-size: 11px; color: #cbd5e1; border-left: 1px solid #334155; padding-left: 12px; max-width: 250px; line-height: 1.3;">
-        <div id="mock-pacing-status"><strong>Pacing:</strong> Sec A: 30m | Sec B: 50m</div>
+      <div style="font-size: 11px; color: #cbd5e1; border-left: 1px solid #334155; padding-left: 12px; max-width: 260px; line-height: 1.3;">
+        <div id="mock-pacing-status"><strong>Pacing:</strong> Sec A: 28m (Q1 5m, Q2 18m) &bull; Sec B: 52m (Q3a 12m, Q3b 5m, Q3c 5m, Q3d 27m)</div>
         <div style="font-size: 10px; color: #64748b; margin-top: 2px;">💡 Click clock to type custom minutes</div>
       </div>
     </div>
@@ -429,10 +432,10 @@
     <!-- Center: Single-Question Practice Presets, Strategy Drawer & Custom Mins -->
     <div style="display: flex; align-items: center; gap: 5px; flex-wrap: wrap; background: #1e293b; padding: 4px 8px; border-radius: 6px; border: 1px solid #334155;">
       <span style="font-size: 10px; font-weight: 800; color: #93c5fd; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 2px;">Question Practice:</span>
-      <button type="button" class="mock-preset-btn" data-mins="5" onclick="setMockExamTimerMinutes(5, '4-Mark Question (5m)')" style="background: #0f172a; color: #e2e8f0; border: 1px solid #475569; padding: 4px 7px; font-weight: 700; font-size: 11px; border-radius: 4px; cursor: pointer;" title="5 Minutes (4-Mark Question)">5m</button>
-      <button type="button" class="mock-preset-btn" data-mins="10" onclick="setMockExamTimerMinutes(10, '8-Mark Question (10m)')" style="background: #0f172a; color: #e2e8f0; border: 1px solid #475569; padding: 4px 7px; font-weight: 700; font-size: 11px; border-radius: 4px; cursor: pointer;" title="10 Minutes (8-Mark Question)">10m</button>
-      <button type="button" class="mock-preset-btn" data-mins="15" onclick="setMockExamTimerMinutes(15, '12-Mark Question (15m)')" style="background: #0f172a; color: #e2e8f0; border: 1px solid #475569; padding: 4px 7px; font-weight: 700; font-size: 11px; border-radius: 4px; cursor: pointer;" title="15 Minutes (12-Mark Question)">15m</button>
-      <button type="button" class="mock-preset-btn" data-mins="25" onclick="setMockExamTimerMinutes(25, '16-Mark Essay (25m)')" style="background: #0f172a; color: #e2e8f0; border: 1px solid #475569; padding: 4px 7px; font-weight: 700; font-size: 11px; border-radius: 4px; cursor: pointer;" title="25 Minutes (16-Mark Essay / Section)">25m</button>
+      <button type="button" class="mock-preset-btn" data-mins="5" onclick="setMockExamTimerMinutes(5, '4-Mark Question (5m)')" style="background: #0f172a; color: #e2e8f0; border: 1px solid #475569; padding: 4px 7px; font-weight: 700; font-size: 11px; border-radius: 4px; cursor: pointer;" title="5 Minutes (4-Mark Inference / Diff / Reason)">5m</button>
+      <button type="button" class="mock-preset-btn" data-mins="12" onclick="setMockExamTimerMinutes(12, '8-Mark Utility (12m)')" style="background: #0f172a; color: #e2e8f0; border: 1px solid #475569; padding: 4px 7px; font-weight: 700; font-size: 11px; border-radius: 4px; cursor: pointer;" title="12 Minutes (8-Mark Source Utility)">12m</button>
+      <button type="button" class="mock-preset-btn" data-mins="18" onclick="setMockExamTimerMinutes(18, '12-Mark Causation (18m)')" style="background: #0f172a; color: #e2e8f0; border: 1px solid #475569; padding: 4px 7px; font-weight: 700; font-size: 11px; border-radius: 4px; cursor: pointer;" title="18 Minutes (12-Mark Explain Why)">18m</button>
+      <button type="button" class="mock-preset-btn" data-mins="27" onclick="setMockExamTimerMinutes(27, '16+4 Mark Essay (27m)')" style="background: #0f172a; color: #e2e8f0; border: 1px solid #475569; padding: 4px 7px; font-weight: 700; font-size: 11px; border-radius: 4px; cursor: pointer;" title="27 Minutes (16+4 Mark Evaluative Essay)">27m</button>
       <button type="button" class="mock-preset-btn" data-mins="80" onclick="setMockExamTimerMinutes(80, 'Full Paper (80m)')" style="background: #0f172a; color: #38bdf8; border: 1px solid #0284c7; padding: 4px 7px; font-weight: 700; font-size: 11px; border-radius: 4px; cursor: pointer;" title="Full Paper (80m)">Full (80m)</button>
       
       <!-- Custom Minute Input -->
@@ -490,53 +493,63 @@
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid #1e293b;">
-              <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">2 Marks</td>
-              <td style="padding: 6px 10px; color: #e2e8f0;">Describe one feature / Identification</td>
-              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">3 mins</td>
-              <td style="padding: 6px 10px; color: #94a3b8;"><strong>30s</strong> target feature recall</td>
-              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>2.5m</strong> 2 precise sentences (feature + detail)</td>
-              <td style="padding: 6px 10px; text-align: right;">
-                <button type="button" onclick="setMockExamTimerMinutes(3, '2-Mark Question (3m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (3m)</button>
-              </td>
-            </tr>
-            <tr style="border-bottom: 1px solid #1e293b;">
               <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">4 Marks</td>
-              <td style="padding: 6px 10px; color: #e2e8f0;">Inference / Similarity &amp; Diff / Consequence / Follow-up</td>
+              <td style="padding: 6px 10px; color: #e2e8f0;">Give two things you can infer from Source A... (Sec A: Q1)</td>
               <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">5 mins</td>
-              <td style="padding: 6px 10px; color: #94a3b8;"><strong>1 min</strong> identify quotes / key factor</td>
-              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>4 mins</strong> single sustained analytical paragraph</td>
+              <td style="padding: 6px 10px; color: #94a3b8;"><strong>1 min</strong> identify quotes and details in Source A</td>
+              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>4 mins</strong> 2 separate inference + evidence pairs (2× 2 marks)</td>
               <td style="padding: 6px 10px; text-align: right;">
-                <button type="button" onclick="setMockExamTimerMinutes(5, '4-Mark Question (5m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (5m)</button>
-              </td>
-            </tr>
-            <tr style="border-bottom: 1px solid #1e293b;">
-              <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">8 Marks</td>
-              <td style="padding: 6px 10px; color: #e2e8f0;">Source Utility (NOP + Content) / Narrative Account</td>
-              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">10 mins</td>
-              <td style="padding: 6px 10px; color: #94a3b8;"><strong>2 mins</strong> annotate provenance (NOP) + own knowledge</td>
-              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>8 mins</strong> 2 balanced paragraphs (4m per source/phase)</td>
-              <td style="padding: 6px 10px; text-align: right;">
-                <button type="button" onclick="setMockExamTimerMinutes(10, '8-Mark Question (10m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (10m)</button>
+                <button type="button" onclick="setMockExamTimerMinutes(5, '4-Mark Inference (5m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (5m)</button>
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #1e293b;">
               <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">12 Marks</td>
-              <td style="padding: 6px 10px; color: #e2e8f0;">Explain why... (Causation / Analytical Account)</td>
-              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">15 mins</td>
-              <td style="padding: 6px 10px; color: #94a3b8;"><strong>3 mins</strong> select 3 distinct causes + 1 own point</td>
-              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>12 mins</strong> 3 PEEL paragraphs with causal links (4m each)</td>
+              <td style="padding: 6px 10px; color: #e2e8f0;">Explain why... (Causation / Analytical Account - Sec A: Q2)</td>
+              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">18 mins</td>
+              <td style="padding: 6px 10px; color: #94a3b8;"><strong>3 mins</strong> select 3 distinct causes (2 stimulus + 1 own point)</td>
+              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>15 mins</strong> 3 PEEL paragraphs with sustained causal links</td>
               <td style="padding: 6px 10px; text-align: right;">
-                <button type="button" onclick="setMockExamTimerMinutes(15, '12-Mark Question (15m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (15m)</button>
+                <button type="button" onclick="setMockExamTimerMinutes(18, '12-Mark Causation (18m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (18m)</button>
               </td>
             </tr>
-            <tr>
-              <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">16+4 Marks</td>
-              <td style="padding: 6px 10px; color: #e2e8f0;">Statement Evaluation Essay ("How far do you agree?")</td>
-              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">25 mins</td>
-              <td style="padding: 6px 10px; color: #94a3b8;"><strong>5 mins</strong> define criteria + balance argument + conclusion</td>
-              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>20 mins</strong> Intro + Agree + Counter + Justified Judgement</td>
+            <tr style="border-bottom: 1px solid #1e293b;">
+              <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">8 Marks</td>
+              <td style="padding: 6px 10px; color: #e2e8f0;">How useful are Sources B and C for an enquiry into... (Sec B: Q3a)</td>
+              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">12 mins</td>
+              <td style="padding: 6px 10px; color: #94a3b8;"><strong>2 mins</strong> annotate provenance (NOP) + own knowledge context</td>
+              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>10 mins</strong> 2 balanced paragraphs evaluating utility on content and NOP</td>
               <td style="padding: 6px 10px; text-align: right;">
-                <button type="button" onclick="setMockExamTimerMinutes(25, '16-Mark Essay (25m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (25m)</button>
+                <button type="button" onclick="setMockExamTimerMinutes(12, '8-Mark Utility (12m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (12m)</button>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #1e293b;">
+              <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">4 Marks</td>
+              <td style="padding: 6px 10px; color: #e2e8f0;">What is the main difference between Interpretations 1 and 2? (Sec B: Q3b)</td>
+              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">5 mins</td>
+              <td style="padding: 6px 10px; color: #94a3b8;"><strong>1 min</strong> compare historical perspectives in Interpretations 1 & 2</td>
+              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>4 mins</strong> identify primary divergence supported by direct quotations</td>
+              <td style="padding: 6px 10px; text-align: right;">
+                <button type="button" onclick="setMockExamTimerMinutes(5, '4-Mark Difference (5m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (5m)</button>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #1e293b;">
+              <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">4 Marks</td>
+              <td style="padding: 6px 10px; color: #e2e8f0;">Suggest one reason why Interpretations 1 and 2 give different views (Sec B: Q3c)</td>
+              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">5 mins</td>
+              <td style="padding: 6px 10px; color: #94a3b8;"><strong>1 min</strong> match with Sources B/C or author focus/emphasis</td>
+              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>4 mins</strong> explain reason for divergence (different sources/motives)</td>
+              <td style="padding: 6px 10px; text-align: right;">
+                <button type="button" onclick="setMockExamTimerMinutes(5, '4-Mark Reason (5m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (5m)</button>
+              </td>
+            </tr>
+            <tr style="">
+              <td style="padding: 6px 10px; font-weight: 800; color: #38bdf8;">16+4 Marks</td>
+              <td style="padding: 6px 10px; color: #e2e8f0;">How far do you agree with Interpretation 2... (Sec B: Q3d)</td>
+              <td style="padding: 6px 10px; font-weight: 700; color: #facc15;">27 mins</td>
+              <td style="padding: 6px 10px; color: #94a3b8;"><strong>5 mins</strong> define criteria + balance views against Interpretation 1</td>
+              <td style="padding: 6px 10px; color: #cbd5e1;"><strong>22 mins</strong> Intro + evaluate Int 2 + evaluate Int 1/context + Judgement + SPaG</td>
+              <td style="padding: 6px 10px; text-align: right;">
+                <button type="button" onclick="setMockExamTimerMinutes(27, '16+4 Mark Essay (27m)'); toggleMockExamTimer('start');" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 2px 7px; border-radius: 3px; font-weight: 700; font-size: 10px; cursor: pointer;">⏱ Time (27m)</button>
               </td>
             </tr>
           </tbody>
@@ -637,7 +650,7 @@
           <div class="question-num">1</div>
           <div style="width: 100%;">
             Give two things you can infer from Source A about cultural changes in the Weimar Republic.
-            <span style="float: right; font-weight: 400; color: #444;">(4) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 5, '4-Mark Question (5m)')" title="Lock timer to 5m and start immediately">⏱ Time this question (5m)</button></span>
+            <span style="float: right; font-weight: 400; color: #444;">(4) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 5, '4-Mark Inference (5m)')" title="Lock timer to 5m and start immediately">⏱ Time this question (5m)</button> </span>
           </div>
         </div>
     <div class="source-box" style="margin-top: 15px;">Source A: From a letter written by a traditionalist schoolmaster, Bernhard Rust, living in Hanover, October 1927.<br><br>"This city, once so quiet, is now infested with modernism. The women cut their hair like boys, wear painted faces, and smoke openly in the cafés. At the local gallery, the beautiful landscapes have been replaced by disgusting, distorted paintings by Dix and Grosz, which highlight only the dirt and depravity of our nation. The local theater is presenting plays that mock our traditional German values. When I speak out, my colleagues tell me that this is 'freedom of expression' guaranteed by our new constitution. If this is the 'Golden Age' that Stresemann speaks of, it is an age of moral decline and the death of German culture."</div></div><div style="margin-top: 20px; font-weight: bold; margin-bottom: 20px;">Complete the table below to explain your answer.</div><div style="margin-top: 15px;">(i) What I can infer:</div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="margin-top: 15px;">Details in the source that tell me this:</div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="margin-top: 25px;">(ii) What I can infer:</div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="margin-top: 15px;">Details in the source that tell me this:</div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
@@ -651,7 +664,7 @@
           <div class="question-num">2</div>
           <div style="width: 100%;">
             Explain why there was a "Golden Age" of cultural development in Weimar Germany in the years 1924–29.
-            <span style="float: right; font-weight: 400; color: #444;">(12) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 15, '12-Mark Question (15m)')" title="Lock timer to 15m and start immediately">⏱ Time this question (15m)</button></span>
+            <span style="float: right; font-weight: 400; color: #444;">(12) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 18, '12-Mark Causation (18m)')" title="Lock timer to 18m and start immediately">⏱ Time this question (18m)</button> </span>
           </div>
         </div>
     
@@ -683,7 +696,7 @@
           <div class="question-num">3</div>
           <div style="width: 100%;">
             Explain why the Nazi Party was reorganised in the years 1924–28.
-            <span style="float: right; font-weight: 400; color: #444;">(12) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 15, '12-Mark Question (15m)')" title="Lock timer to 15m and start immediately">⏱ Time this question (15m)</button></span>
+            <span style="float: right; font-weight: 400; color: #444;">(12) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 18, '12-Mark Causation (18m)')" title="Lock timer to 18m and start immediately">⏱ Time this question (18m)</button> </span>
           </div>
         </div>
     
@@ -714,7 +727,7 @@
       <div></div>
       <div class="turn-over">Turn over &#9654;</div>
     </div>
-  </div></div><div class="page"><div class="page-inner"><div style="font-weight: bold; margin-bottom: 20px;">Enquiry: Religious opposition to the Nazi regime in the years 1933–39<br><br>3(a) How useful are Sources B and C for an enquiry into religious opposition to the Nazi regime in the years 1933–39? Explain your answer, using Sources B and C and your knowledge of the historical context. (8) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 10, '(8) Question')" title="Lock timer to 10m and start immediately">⏱ Time this question (10m)</button></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
+  </div></div><div class="page"><div class="page-inner"><div style="font-weight: bold; margin-bottom: 20px;">Enquiry: Religious opposition to the Nazi regime in the years 1933–39<br><br>3(a) How useful are Sources B and C for an enquiry into religious opposition to the Nazi regime in the years 1933–39? Explain your answer, using Sources B and C and your knowledge of the historical context. (8) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 12, '8-Mark Utility (12m)')" title="Lock timer to 12m and start immediately">⏱ Time this question (12m)</button> </div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
     <div class="footer">
       <div></div>
       <div class="turn-over">Turn over &#9654;</div>
@@ -724,12 +737,12 @@
       <div></div>
       <div class="turn-over">Turn over &#9654;</div>
     </div>
-  </div></div><div class="page"><div class="page-inner"><div style="font-weight: bold; margin-bottom: 20px;">3(b) Study Interpretations 1 and 2. They give different views about religious opposition to the Nazi regime in the years 1933–39. What is the main difference between these views? Explain your answer, using details from both interpretations. (4) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 5, '(4) Question')" title="Lock timer to 5m and start immediately">⏱ Time this question (5m)</button></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="font-weight: bold; margin-bottom: 20px; margin-top: 30px;">3(c) Suggest one reason why Interpretations 1 and 2 give different views about religious opposition to the Nazi regime in the years 1933–39. You may use Sources B and C to help explain your answer. (4) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 5, '(4) Question')" title="Lock timer to 5m and start immediately">⏱ Time this question (5m)</button></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
+  </div></div><div class="page"><div class="page-inner"><div style="font-weight: bold; margin-bottom: 20px;">3(b) Study Interpretations 1 and 2. They give different views about religious opposition to the Nazi regime in the years 1933–39. What is the main difference between these views? Explain your answer, using details from both interpretations. (4) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 5, '4-Mark Question (5m)')" title="Lock timer to 5m and start immediately">⏱ Time this question (5m)</button> </div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div style="font-weight: bold; margin-bottom: 20px; margin-top: 30px;">3(c) Suggest one reason why Interpretations 1 and 2 give different views about religious opposition to the Nazi regime in the years 1933–39. You may use Sources B and C to help explain your answer. (4) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 5, '4-Mark Question (5m)')" title="Lock timer to 5m and start immediately">⏱ Time this question (5m)</button> </div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
     <div class="footer">
       <div></div>
       <div class="turn-over">Turn over &#9654;</div>
     </div>
-  </div></div><div class="page"><div class="page-inner"><div style="font-weight: bold; margin-bottom: 20px;">3(d) How far do you agree with Interpretation 2 about religious opposition to the Nazi regime in the years 1933–39? Explain your answer, using both interpretations and your knowledge of the historical context. (16+4 SPaG) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 25, '(16+4 SPaG) Question')" title="Lock timer to 25m and start immediately">⏱ Time this question (25m)</button></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
+  </div></div><div class="page"><div class="page-inner"><div style="font-weight: bold; margin-bottom: 20px;">3(d) How far do you agree with Interpretation 2 about religious opposition to the Nazi regime in the years 1933–39? Explain your answer, using both interpretations and your knowledge of the historical context. (16+4 SPaG) <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 27, '16+4 Mark Essay (27m)')" title="Lock timer to 27m and start immediately">⏱ Time this question (27m)</button> </div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div><div class="dotted-line"></div>
     <div class="footer">
       <div></div>
       <div class="turn-over">Turn over &#9654;</div>
@@ -752,6 +765,7 @@
   </div></div>
 
     
+  
   <!-- Pearson Invigilator HUD Live Timer Engine -->
   <script>
   (function () {
