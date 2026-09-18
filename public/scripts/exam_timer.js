@@ -1,332 +1,268 @@
 /**
- * GCSE Mock Exam Digital Timer
- * Floating, non-printing countdown timer for authentic timed exam practice.
+ * Pearson Exam Clock & Flexible Practice Timer Engine
+ * Gives teachers 1-click presets for single questions (4m, 8m, 12m, 16m),
+ * full paper countdowns, access arrangements (+25%), and click-to-edit custom times.
  */
 (function () {
   if (typeof window === 'undefined') return;
 
-  function initTimer() {
-    // Avoid double injection if invigilator-hud or digital-exam-timer-bar exists
-    if (
-      document.getElementById('digital-exam-timer-bar') ||
-      document.querySelector('.invigilator-hud') ||
-      document.getElementById('docked-invigilator-hud')
-    )
-      return;
+  var totalSecs = 80 * 60;
+  var initialSecs = 80 * 60;
+  var interval = null;
+  var isRunning = false;
+  var soundEnabled = true;
+  var currentModeLabel = 'Full Paper';
 
-    // Detect duration from document text or URL query
-    const params = new URLSearchParams(window.location.search);
-    let totalMinutes = 55;
+  function formatTime(secs) {
+    var h = Math.floor(secs / 3600);
+    var m = Math.floor((secs % 3600) / 60);
+    var s = secs % 60;
+    if (h > 0) {
+      return (h < 10 ? '0' + h : h) + ':' + (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+    }
+    return (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+  }
 
-    if (params.get('time')) {
-      totalMinutes = parseInt(params.get('time'), 10) || 55;
+  function updateClockDisplay() {
+    var clockEl = document.getElementById('mock-exam-clock');
+    if (!clockEl) return;
+
+    if (totalSecs <= 0) {
+      clockEl.style.color = '#ef4444';
+      clockEl.textContent = "00:00 (TIME'S UP)";
+    } else if (totalSecs <= 300) {
+      clockEl.style.color = '#facc15';
+      clockEl.textContent = formatTime(totalSecs);
     } else {
-      const pageText = document.body ? document.body.innerText.toLowerCase() : '';
-      if (
-        pageText.includes('1 hour 20') ||
-        pageText.includes('80 minutes') ||
-        pageText.includes('1hr 20')
-      ) {
-        totalMinutes = 80;
-      } else if (
-        pageText.includes('1 hour 15') ||
-        pageText.includes('75 minutes') ||
-        pageText.includes('1hr 15')
-      ) {
-        totalMinutes = 75;
-      } else if (pageText.includes('55 minutes') || pageText.includes('55 mins')) {
-        totalMinutes = 55;
-      } else if (
-        window.location.pathname.includes('weimar') ||
-        window.location.pathname.includes('medicine')
-      ) {
-        totalMinutes = 80;
+      clockEl.style.color = '#38bdf8';
+      clockEl.textContent = formatTime(totalSecs);
+    }
+  }
+
+  function playTone(freq, dur) {
+    if (!soundEnabled) return;
+    try {
+      var ctx = new (window.AudioContext || window.webkitAudioContext)();
+      var osc = ctx.createOscillator();
+      var gain = ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, ctx.currentTime);
+      gain.gain.setValueAtTime(0.15, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + dur);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime + dur);
+    } catch (e) {}
+  }
+
+  window.setMockExamTimerMinutes = function (mins, label) {
+    mins = parseInt(mins, 10);
+    if (isNaN(mins) || mins <= 0) return;
+    if (interval) {
+      clearInterval(interval);
+      interval = null;
+      isRunning = false;
+    }
+    totalSecs = mins * 60;
+    initialSecs = totalSecs;
+    currentModeLabel = label || mins + ' mins';
+
+    var startBtn = document.getElementById('mock-timer-toggle');
+    var pauseBtn = document.getElementById('mock-timer-pause');
+    if (startBtn) {
+      startBtn.style.display = 'inline-flex';
+      startBtn.innerHTML = '▶ Start Clock';
+    }
+    if (pauseBtn) pauseBtn.style.display = 'none';
+
+    var statusEl = document.getElementById('mock-pacing-status');
+    if (statusEl) {
+      statusEl.innerHTML = '<strong>Practice Mode:</strong> ' + currentModeLabel;
+    }
+
+    var presetBtns = document.querySelectorAll('.mock-preset-btn, .preset-btn');
+    presetBtns.forEach(function (btn) {
+      var btnMins = btn.getAttribute('data-mins');
+      if (btnMins === String(mins) || btn.textContent.trim().startsWith(String(mins) + 'm')) {
+        btn.style.background = '#2563eb';
+        btn.style.color = '#ffffff';
+        btn.style.borderColor = '#60a5fa';
       } else {
-        totalMinutes = 55;
+        btn.style.background = '#0f172a';
+        btn.style.color = '#e2e8f0';
+        btn.style.borderColor = '#475569';
       }
-    }
+    });
 
-    let totalSeconds = totalMinutes * 60;
-    const initialSeconds = totalSeconds;
-    let timerInterval = null;
-    let isRunning = false;
-    let isMinimized = false;
+    var customInput = document.getElementById('mock-custom-mins');
+    if (customInput) customInput.value = mins;
 
-    // Inject CSS
-    const style = document.createElement('style');
-    style.id = 'digital-exam-timer-styles';
-    style.textContent = `
-      #digital-exam-timer-bar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 999999;
-        background: rgba(15, 23, 42, 0.96);
-        backdrop-filter: blur(10px);
-        color: #f8fafc;
-        padding: 10px 24px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        border-bottom: 2px solid #38bdf8;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        box-sizing: border-box;
-      }
-      #digital-exam-timer-pill {
-        position: fixed;
-        top: 15px;
-        right: 20px;
-        z-index: 999999;
-        background: #0f172a;
-        color: #38bdf8;
-        border: 1.5px solid #38bdf8;
-        border-radius: 30px;
-        padding: 8px 18px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        cursor: pointer;
-        display: none;
-        align-items: center;
-        gap: 10px;
-        font-family: monospace;
-        font-size: 1.1rem;
-        font-weight: bold;
-      }
-      .exam-timer-btn {
-        border: none;
-        border-radius: 6px;
-        padding: 7px 14px;
-        font-size: 0.85rem;
-        font-weight: 700;
-        cursor: pointer;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        transition: all 0.2s ease;
-        font-family: inherit;
-      }
-      .exam-timer-btn:hover {
-        opacity: 0.9;
-        transform: translateY(-1px);
-      }
-      @media print {
-        #digital-exam-timer-bar,
-        #digital-exam-timer-pill,
-        .no-print {
-          display: none !important;
-        }
-        body {
-          padding-top: 0 !important;
+    updateClockDisplay();
+  };
+
+  window.applyCustomMockMinutes = function () {
+    var input = document.getElementById('mock-custom-mins');
+    var val = input ? parseInt(input.value, 10) : NaN;
+    if (isNaN(val) || val <= 0) {
+      var promptVal = prompt(
+        'Enter custom timer minutes (e.g. 5, 10, 15, 25, 45, 80):',
+        Math.round(totalSecs / 60) || '15',
+      );
+      if (promptVal) {
+        var m = parseInt(promptVal, 10);
+        if (!isNaN(m) && m > 0) {
+          window.setMockExamTimerMinutes(m, m + 'm (Custom Single Question)');
         }
       }
-    `;
-    document.head.appendChild(style);
-
-    // Create Timer Bar
-    const bar = document.createElement('div');
-    bar.id = 'digital-exam-timer-bar';
-    bar.className = 'no-print';
-
-    const paperTitle = document.title || 'GCSE Mock Examination';
-
-    bar.innerHTML = `
-      <div style="display: flex; align-items: center; gap: 14px; min-width: 260px;">
-        <span style="background: #ef4444; color: #fff; font-size: 0.72rem; font-weight: 800; padding: 4px 8px; border-radius: 4px; letter-spacing: 0.05em; text-transform: uppercase;">
-          Timed Practice
-        </span>
-        <div style="max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 0.88rem; font-weight: 600; color: #e2e8f0;">
-          ${paperTitle}
-        </div>
-      </div>
-
-      <!-- Center Clock -->
-      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-        <div id="exam-clock-time" style="font-size: 1.75rem; font-weight: 800; font-family: 'Courier New', Courier, monospace; letter-spacing: 2px; color: #38bdf8; line-height: 1;">
-          00:00:00
-        </div>
-        <div id="exam-clock-status" style="font-size: 0.75rem; color: #94a3b8; margin-top: 3px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;">
-          Ready (${totalMinutes} Minutes)
-        </div>
-      </div>
-
-      <!-- Right Controls -->
-      <div style="display: flex; align-items: center; gap: 8px;">
-        <button type="button" class="exam-timer-btn" id="exam-start-btn" style="background: #10b981; color: #ffffff;">
-          ▶ Start
-        </button>
-        <button type="button" class="exam-timer-btn" id="exam-pause-btn" style="background: #f59e0b; color: #ffffff; display: none;">
-          ⏸ Pause
-        </button>
-        <button type="button" class="exam-timer-btn" id="exam-reset-btn" style="background: #334155; color: #e2e8f0;">
-          🔄 Reset
-        </button>
-        <button type="button" class="exam-timer-btn" id="exam-print-btn" style="background: #1e293b; color: #94a3b8; border: 1px solid #475569;">
-          🖨️ Print
-        </button>
-        <button type="button" class="exam-timer-btn" id="exam-min-btn" style="background: transparent; color: #94a3b8; padding: 7px 8px;" title="Minimize to corner">
-          ➖
-        </button>
-      </div>
-    `;
-
-    // Create Minimized Pill
-    const pill = document.createElement('div');
-    pill.id = 'digital-exam-timer-pill';
-    pill.className = 'no-print';
-    pill.innerHTML = `
-      <span id="pill-clock-time">00:00:00</span>
-      <span style="font-size: 0.8rem; color: #94a3b8;">🔍 Expand</span>
-    `;
-
-    document.body.prepend(bar);
-    document.body.appendChild(pill);
-
-    // Push body down so fixed bar doesn't overlap title page
-    document.body.style.paddingTop = '60px';
-
-    const clockDisplay = document.getElementById('exam-clock-time');
-    const clockStatus = document.getElementById('exam-clock-status');
-    const pillClock = document.getElementById('pill-clock-time');
-    const startBtn = document.getElementById('exam-start-btn');
-    const pauseBtn = document.getElementById('exam-pause-btn');
-    const resetBtn = document.getElementById('exam-reset-btn');
-    const printBtn = document.getElementById('exam-print-btn');
-    const minBtn = document.getElementById('exam-min-btn');
-
-    function formatHMS(seconds) {
-      const h = Math.floor(seconds / 3600);
-      const m = Math.floor((seconds % 3600) / 60);
-      const s = seconds % 60;
-      if (h > 0) {
-        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
-      }
-      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      return;
     }
+    window.setMockExamTimerMinutes(val, val + 'm (Custom Single Question)');
+  };
 
-    function updateDisplay() {
-      const formatted = formatHMS(totalSeconds);
-      clockDisplay.textContent = formatted;
-      pillClock.textContent = formatted;
+  window.toggleMockExamTimer = function (action) {
+    var startBtn = document.getElementById('mock-timer-toggle');
+    var pauseBtn = document.getElementById('mock-timer-pause');
+    var soundBtn = document.getElementById('mock-timer-sound');
 
-      if (totalSeconds === 0) {
-        clockDisplay.style.color = '#ef4444';
-        pillClock.style.color = '#ef4444';
-        clockStatus.textContent = "Time's Up! Exam Complete";
-        clockStatus.style.color = '#ef4444';
-      } else if (totalSeconds <= 300) {
-        clockDisplay.style.color = '#ef4444';
-        pillClock.style.color = '#ef4444';
-        clockStatus.textContent = 'Final 5 Minutes - Check SPaG & Conclusions';
-        clockStatus.style.color = '#ef4444';
-      } else if (totalSeconds <= 900) {
-        clockDisplay.style.color = '#f59e0b';
-        pillClock.style.color = '#f59e0b';
-        clockStatus.textContent = '15 Minutes Remaining - Pace Final Question';
-        clockStatus.style.color = '#f59e0b';
-      } else {
-        clockDisplay.style.color = '#38bdf8';
-        pillClock.style.color = '#38bdf8';
-        if (isRunning) {
-          clockStatus.textContent = 'Exam in Progress';
-          clockStatus.style.color = '#10b981';
-        }
-      }
-    }
-
-    function playChime() {
-      try {
-        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(523.25, audioCtx.currentTime); // C5
-        osc.frequency.setValueAtTime(659.25, audioCtx.currentTime + 0.2); // E5
-        osc.frequency.setValueAtTime(783.99, audioCtx.currentTime + 0.4); // G5
-        gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 1.2);
-        osc.connect(gain);
-        gain.connect(audioCtx.destination);
-        osc.start();
-        osc.stop(audioCtx.currentTime + 1.2);
-      } catch (e) {}
-    }
-
-    startBtn.onclick = function () {
+    if (action === 'start') {
       if (isRunning) return;
-      if (totalSeconds === 0) totalSeconds = initialSeconds;
+      if (totalSecs <= 0) totalSecs = initialSecs;
       isRunning = true;
-      startBtn.style.display = 'none';
-      pauseBtn.style.display = 'inline-flex';
-      clockStatus.textContent = 'Exam in Progress';
-      clockStatus.style.color = '#10b981';
+      if (startBtn) startBtn.style.display = 'none';
+      if (pauseBtn) pauseBtn.style.display = 'inline-flex';
 
-      timerInterval = setInterval(function () {
-        if (totalSeconds > 0) {
-          totalSeconds--;
-          updateDisplay();
-          if (totalSeconds === 0) {
-            clearInterval(timerInterval);
-            timerInterval = null;
+      if (interval) clearInterval(interval);
+      interval = setInterval(function () {
+        if (totalSecs > 0) {
+          totalSecs--;
+          updateClockDisplay();
+
+          // 5-minute warning chime
+          if (totalSecs === 300) {
+            playTone(659.25, 0.6);
+            setTimeout(function () {
+              playTone(880, 0.8);
+            }, 250);
+          } else if (totalSecs === 60) {
+            // 1-minute warning chime
+            playTone(587.33, 0.5);
+          }
+
+          // Time's up chime
+          if (totalSecs === 0) {
+            playTone(440, 1.2);
+            setTimeout(function () {
+              playTone(440, 1.2);
+            }, 400);
+            clearInterval(interval);
+            interval = null;
             isRunning = false;
-            startBtn.style.display = 'inline-flex';
-            startBtn.textContent = '🔄 Restart';
-            pauseBtn.style.display = 'none';
-            playChime();
+            if (startBtn) {
+              startBtn.style.display = 'inline-flex';
+              startBtn.innerHTML = '🔄 Restart';
+            }
+            if (pauseBtn) pauseBtn.style.display = 'none';
           }
         }
       }, 1000);
-    };
-
-    pauseBtn.onclick = function () {
+    } else if (action === 'pause') {
       if (!isRunning) return;
-      clearInterval(timerInterval);
-      timerInterval = null;
+      clearInterval(interval);
+      interval = null;
       isRunning = false;
-      startBtn.style.display = 'inline-flex';
-      startBtn.textContent = '▶ Resume';
-      pauseBtn.style.display = 'none';
-      clockStatus.textContent = 'Exam Paused';
-      clockStatus.style.color = '#f59e0b';
-    };
-
-    resetBtn.onclick = function () {
-      clearInterval(timerInterval);
-      timerInterval = null;
+      if (startBtn) {
+        startBtn.style.display = 'inline-flex';
+        startBtn.innerHTML = '▶ Resume';
+      }
+      if (pauseBtn) pauseBtn.style.display = 'none';
+    } else if (action === 'reset') {
+      if (interval) clearInterval(interval);
+      interval = null;
       isRunning = false;
-      totalSeconds = initialSeconds;
-      updateDisplay();
-      startBtn.style.display = 'inline-flex';
-      startBtn.textContent = '▶ Start';
-      pauseBtn.style.display = 'none';
-      clockStatus.textContent = `Ready (${totalMinutes} Minutes)`;
-      clockStatus.style.color = '#94a3b8';
-    };
+      totalSecs = initialSecs;
+      updateClockDisplay();
+      if (startBtn) {
+        startBtn.style.display = 'inline-flex';
+        startBtn.innerHTML = '▶ Start Clock';
+      }
+      if (pauseBtn) pauseBtn.style.display = 'none';
+    } else if (action === 'sub1') {
+      if (totalSecs > 60) totalSecs -= 60;
+      else totalSecs = 0;
+      updateClockDisplay();
+    } else if (action === 'add1') {
+      totalSecs += 60;
+      updateClockDisplay();
+    } else if (action === 'add5') {
+      totalSecs += 300;
+      updateClockDisplay();
+    } else if (action === 'add20' || action === 'add25pct') {
+      var extra = Math.round(initialSecs * 0.25);
+      if (extra < 60) extra = 300;
+      totalSecs += extra;
+      updateClockDisplay();
+      var statusEl = document.getElementById('mock-pacing-status');
+      if (statusEl && !statusEl.textContent.includes('+25%')) {
+        statusEl.innerHTML +=
+          ' <span style="color: #c084fc; font-weight: 700;">(+25% Extra Time: +' +
+          Math.round(extra / 60) +
+          'm)</span>';
+      }
+    } else if (action === 'toggleSound') {
+      soundEnabled = !soundEnabled;
+      if (soundBtn) {
+        soundBtn.textContent = soundEnabled ? '🔊 Sound: On' : '🔇 Sound: Off';
+      }
+    }
+  };
 
-    printBtn.onclick = function () {
-      window.print();
-    };
+  function initHud() {
+    var clockEl = document.getElementById('mock-exam-clock');
+    var defaultMinutes = 80;
+    if (clockEl) {
+      var text = clockEl.textContent.trim();
+      var parts = text.split(':');
+      if (parts.length === 3) {
+        var h = parseInt(parts[0], 10) || 0;
+        var m = parseInt(parts[1], 10) || 0;
+        defaultMinutes = h * 60 + m;
+      } else if (parts.length === 2) {
+        var m = parseInt(parts[0], 10) || 0;
+        defaultMinutes = m;
+      }
+    }
+    if (defaultMinutes <= 0) {
+      var p = window.location.pathname;
+      if (p.includes('cme') || p.includes('eee')) defaultMinutes = 55;
+      else if (p.includes('medicine')) defaultMinutes = 80;
+      else defaultMinutes = 80;
+    }
 
-    minBtn.onclick = function () {
-      bar.style.display = 'none';
-      pill.style.display = 'inline-flex';
-      document.body.style.paddingTop = '0px';
-      isMinimized = true;
-    };
+    totalSecs = defaultMinutes * 60;
+    initialSecs = totalSecs;
 
-    pill.onclick = function () {
-      pill.style.display = 'none';
-      bar.style.display = 'flex';
-      document.body.style.paddingTop = '60px';
-      isMinimized = false;
-    };
+    if (clockEl) {
+      clockEl.onclick = function () {
+        window.applyCustomMockMinutes();
+      };
+      clockEl.style.cursor = 'pointer';
+      clockEl.title = 'Click to set custom duration in minutes';
+    }
 
-    updateDisplay();
+    var customInput = document.getElementById('mock-custom-mins');
+    if (customInput) {
+      customInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') window.applyCustomMockMinutes();
+      });
+    }
+
+    updateClockDisplay();
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initTimer);
+    document.addEventListener('DOMContentLoaded', initHud);
   } else {
-    initTimer();
+    initHud();
   }
 })();
