@@ -251,6 +251,7 @@ export function renderDashboard() {
       great_war_part2: 'center top',
       weimar_nazi_germany: 'center 20%',
       usa: 'center 25%',
+      cme_new: 'center top',
     };
     const bgPos = unit.cover_image_position || positionFallbacks[unit.id] || 'center';
 
@@ -1407,8 +1408,22 @@ export async function renderLessonsView() {
 
   let headerHtml = '';
   if (heroImageUrl) {
+    const positionFallbacks = {
+      edexcel_medicine: 'center 10%',
+      eee: 'center 10%',
+      australia: 'center 70%',
+      great_war_part2: 'center top',
+      weimar_nazi_germany: 'center 20%',
+      usa: 'center 25%',
+      cme_new: 'center top',
+    };
+    const heroBgPos =
+      data.cover_image_position ||
+      positionFallbacks[unitId] ||
+      positionFallbacks[data.id] ||
+      'center';
     headerHtml = `
-      <div style="position: relative; text-align: center; padding: 70px 24px 50px 24px; background-image: url('${heroImageUrl}'); background-size: cover; background-position: center; border-radius: 0;">
+      <div style="position: relative; text-align: center; padding: 70px 24px 50px 24px; background-image: url('${heroImageUrl}'); background-size: cover; background-position: ${heroBgPos}; border-radius: 0;">
         <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.88));"></div>
         <div style="position: relative; z-index: 1; max-width: 900px; margin: 0 auto;">
           <h1 class="enquiry-title" style="font-family: 'Playfair Display', serif; font-size: clamp(1.65rem, 5.2vw, 2.7rem); line-height: 1.25; color: white; margin-bottom: 12px; text-shadow: 0 2px 4px rgba(0,0,0,0.5); hyphens: none; -webkit-hyphens: none; word-break: normal; overflow-wrap: normal; text-wrap: balance;">${data.enquiry_question || data.enquiry || 'Unit Enquiry'}</h1>

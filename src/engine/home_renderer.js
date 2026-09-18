@@ -99,8 +99,22 @@ export function renderHomepage() {
     }
 
     if (heroImageUrl) {
+      const positionFallbacks = {
+        edexcel_medicine: 'center 10%',
+        eee: 'center 10%',
+        australia: 'center 70%',
+        great_war_part2: 'center top',
+        weimar_nazi_germany: 'center 20%',
+        usa: 'center 25%',
+        cme_new: 'center top',
+      };
+      const heroBgPos =
+        appStore.state.activeUnitData.cover_image_position ||
+        positionFallbacks[appStore.state.currentUnitId] ||
+        positionFallbacks[appStore.state.activeUnitData.id] ||
+        'center';
       topSectionHTML = `
-          <div class="hero-container" style="background: linear-gradient(to bottom, rgba(15,23,42,0.9) 0%, rgba(15,23,42,0.1) 100%), url('${heroImageUrl}') center/cover no-repeat;">
+          <div class="hero-container" style="background: linear-gradient(to bottom, rgba(15,23,42,0.9) 0%, rgba(15,23,42,0.1) 100%), url('${heroImageUrl}') ${heroBgPos}/cover no-repeat;">
             <h1 class="hero-title">${appStore.state.activeUnitData.enquiry_question || appStore.state.activeUnitData.enquiry || 'Unit Enquiry'}</h1>
             <h2 class="hero-subtitle">
               ${appStore.state.activeUnitData.title}
