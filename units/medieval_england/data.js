@@ -256,6 +256,16 @@ export default {
         source_context:
           'The Bayeux Tapestry was commissioned by Bishop Odo of Bayeux (William’s half-brother) to celebrate the conquest. Notice how Harold’s death under an arrow barrage is framed as divine retribution for oath-breaking. Hinge Question: How does Bishop Odo’s partisan motivation affect the historical utility of the Bayeux Tapestry for understanding the Saxon defeat?',
       },
+      video: {
+        title: 'timelinesTV: Norman Conquest (The Battle of Hastings)',
+        type: 'youtube',
+        url: 'https://www.youtube.com/watch?v=PE0RAgHr06U',
+        duration: '7 mins 34 secs',
+        viewing_task:
+          'Identify the 3 claimants to the English throne in 1066 (Harold Godwinson, Harald Hardrada, William of Normandy) and explain how William secured victory on Senlac Hill using the feigned retreat tactic.',
+        model_answer:
+          "In 1066, Harold Godwinson seized the throne, but faced invasion from Norwegian King Harald Hardrada (defeated at Stamford Bridge) and Duke William of Normandy. At Hastings, Harold's Saxon shield wall held the ridge until William's Norman cavalry used the 'feigned retreat'—pretending to flee in panic to lure the Saxons down the hill, breaking their formation and surrounding them.",
+      },
       do_now: {
         type: 'retrieval_grid',
         title: 'Spaced Retrieval: Anglo-Saxon England & Early Britain',
@@ -767,6 +777,16 @@ export default {
         source_context:
           'Orderic Vitalis was an Anglo-Norman monk who wrote his chronicle fifty years after the Harrying. Although usually supportive of the Normans, he condemned William’s brutal starvation of 100,000 innocents. Hinge Question: Why does Orderic Vitalis’s condemnation carry exceptional weight as historical evidence of William’s brutality?',
       },
+      video: {
+        title: 'timelinesTV: The Norman Conquest (Castles and Control)',
+        type: 'youtube',
+        url: 'https://www.youtube.com/watch?v=BEU_xPJd7Yo',
+        duration: '7 mins 35 secs',
+        viewing_task:
+          'Explain how William the Conqueror used Motte and Bailey castles, the Harrying of the North (1069–70), and the Domesday Book (1086) to establish absolute feudal control over Saxon England.',
+        model_answer:
+          'William rapidly erected hundreds of pre-fabricated wooden Motte and Bailey earthwork castles to garrison Norman knights and terrorise local Saxon populations. When the North rebelled in 1069, William executed the ruthless Harrying of the North, burning crops, slaughtering livestock, and salting fields to cause mass famine. In 1086, he commissioned the Domesday Book, a forensic land and wealth survey that enabled systematic taxation and total feudal ownership.',
+      },
       do_now: {
         type: 'retrieval_grid',
         title: 'Spaced Retrieval: 1066 & The Battle of Hastings',
@@ -1272,6 +1292,16 @@ export default {
         ],
         source_context:
           'Edward Grim was a Cambridge clerk visiting Becket who stayed at his side during the attack, suffering a broken arm from a knight’s sword blow. Hinge Question: How does Grim’s visceral eyewitness detail of Becket’s shattered skull turn a political assassination into an unassailable tale of Christian martyrdom?',
+      },
+      video: {
+        title: 'timelinesTV: Church & Crown (Henry II and Thomas Becket)',
+        type: 'youtube',
+        url: 'https://www.youtube.com/watch?v=_EKUIBz_po0',
+        duration: '3 mins 53 secs',
+        viewing_task:
+          "Explain why Henry II appointed his close friend Thomas Becket as Archbishop of Canterbury, and why Becket's defense of benefit of clergy and papal authority provoked Henry's fatal rage in 1170.",
+        model_answer:
+          "Henry II appointed his chancellor and friend Thomas Becket hoping to bring the powerful English Catholic Church under royal legal control (ending 'benefit of clergy' in church courts). However, upon becoming Archbishop, Becket transformed into a devout defender of Church independence and papal authority, refusing Henry's Constitutions of Clarendon. When Henry uttered his furious outburst, four Norman knights rode to Canterbury Cathedral and brutally murdered Becket on the altar steps.",
       },
       do_now: {
         type: 'retrieval_grid',
@@ -1787,6 +1817,16 @@ export default {
         source_context:
           'Matthew Paris was a monk of St Albans who wrote his chronicle thirty years after John’s death. He despised King John for his heavy taxes on monasteries and described him as an ungodly monster. Hinge Question: How does Matthew Paris’s monastic bias influence his presentation of King John as a tyrannical coward?',
       },
+      video: {
+        title: 'British Library: What is Magna Carta?',
+        type: 'youtube',
+        url: 'https://www.youtube.com/watch?v=7xo4tUMdAMw',
+        duration: '3 mins 33 secs',
+        viewing_task:
+          'Explain why the rebel barons forced King John to seal Magna Carta at Runnymede in June 1215, and identify the fundamental principle established by Clause 39.',
+        model_answer:
+          'King John alienated his barons through extortionate feudal scutage taxes, arbitrary arrests, and the catastrophic loss of Normandy at the Battle of Bouvines (1214). In June 1215, rebel barons captured London and forced John to sign the Great Charter at Runnymede. Crucially, Clause 39 established that no free man could be imprisoned, outlawed, or dispossessed except by lawful judgement of his equals or by the law of the land, establishing for the first time that the monarch is not above the law.',
+      },
       do_now: {
         type: 'retrieval_grid',
         title: 'Spaced Retrieval: Henry II & Thomas Becket',
@@ -2295,6 +2335,16 @@ export default {
         ],
         source_context:
           'The Bishop of Winchester’s Pipe Rolls are the most complete financial manorial records in medieval Europe, recording every penny of tithe and fine extracted from Meon Valley villages like Waltham, Fareham, and Droxford. Hinge Question: What do the Winchester Pipe Rolls reveal about the economic ruthlessness of high-ranking churchmen in Hampshire?',
+      },
+      video: {
+        title: 'timelinesTV: Medieval Manor (Life in a Medieval Village)',
+        type: 'youtube',
+        url: 'https://www.youtube.com/watch?v=fgd9eI8dk6U',
+        duration: '7 mins 21 secs',
+        viewing_task:
+          'Describe the daily existence of medieval serfs and peasants in the open-field strip system, their obligations to the Lord of the Manor, and the immense terror of Hell illustrated by Doom paintings in parish churches.',
+        model_answer:
+          "Medieval peasant life revolved around the agricultural seasons, farming narrow strips in three giant open fields. Serfs (villeins) were legally tied to the Lord of the Manor, forced to perform unpaid labour (corvée/boon-work) on the lord's demesne land. Religion governed every aspect of village life; illiterate villagers were constantly reminded of divine judgement, Purgatory, and the horrors of eternal damnation through graphic 'Doom paintings' painted above the chancel arch in the parish church.",
       },
       do_now: {
         type: 'retrieval_grid',
@@ -2809,6 +2859,16 @@ export default {
         ],
         source_context:
           'Henry Knighton was an Augustinian canon at St Mary de Pratis Abbey in Leicester. Writing in the 1350s, he watched his world collapse as crops rotted in fields and workers refused to labour without exorbitant pay. Hinge Question: How does Knighton’s position as a wealthy monastic landowner influence his bitter resentment toward surviving labourers?',
+      },
+      video: {
+        title: 'timelinesTV: Black Death (The Plague of 1348)',
+        type: 'youtube',
+        url: 'https://www.youtube.com/watch?v=YhsPPBGtquo',
+        duration: '6 mins 34 secs',
+        viewing_task:
+          "Trace the arrival of the bubonic plague in England in 1348, medieval beliefs about its causes (miasma, God's wrath, planetary alignment), and how the death of 30–50% of the population shook the feudal hierarchy.",
+        model_answer:
+          'The Black Death arrived at Melcombe Regis (Weymouth) in summer 1348 aboard trade ships, spread by fleas living on black rats (Yersinia pestis). Medieval doctors, ignorant of germs, blamed corrupt air (miasma) and divine punishment. The epidemic wiped out an estimated one-third to half of the population. The acute labour shortage shattered the feudal system: surviving peasants demanded higher wages and the freedom to leave manors, prompting the Crown to pass the repressive 1351 Statute of Labourers.',
       },
       do_now: {
         type: 'retrieval_grid',
@@ -3329,6 +3389,16 @@ export default {
         source_context:
           'Jean Froissart was a French chronicler who wrote for aristocratic royal courts. He held deep contempt for the "unruly commoners" and viewed John Ball as a dangerous madman. Hinge Question: How does Froissart’s aristocratic worldview color his account of John Ball’s sermon on natural equality?',
       },
+      video: {
+        title: 'timelinesTV: Peasants Revolt (1381)',
+        type: 'youtube',
+        url: 'https://www.youtube.com/watch?v=D3EzLF2rOKY',
+        duration: '8 mins 45 secs',
+        viewing_task:
+          "Explain how the third Poll Tax (1381), the preaching of John Ball, and Wat Tyler's leadership sparked the uprising, and how 14-year-old Richard II outmaneuvered the rebels at Smithfield.",
+        model_answer:
+          "A third regressive Poll Tax of 12 groats levied on everyone over fifteen sparked armed resistance in Essex and Kent in May 1381. Radical priest John Ball preached equality ('When Adam delved and Eve span, who was then the gentleman?'). Under Wat Tyler, rebels marched on London, stormed the Tower, and beheaded Archbishop Sudbury. At Smithfield, Mayor Walworth stabbed Tyler during negotiations; King Richard II boldly rode out, promised to grant all demands, but once the peasants dispersed, violently rescinded his promises and executed hundreds.",
+      },
       do_now: {
         type: 'retrieval_grid',
         title: 'Spaced Retrieval: The Black Death (1348)',
@@ -3834,6 +3904,16 @@ export default {
         ],
         source_context:
           'The Crowland Chronicle was written by senior churchmen and royal civil servants with direct access to court. It laments the unchecked ambition of overmighty nobles and the tragic decay of royal authority under Henry VI. Hinge Question: How does the Crowland Chronicle’s insider administrative perspective make it an authoritative diagnosis of baronial factionalism?',
+      },
+      video: {
+        title: 'History Matters: The Wars of the Roses (Short Animated Documentary)',
+        type: 'youtube',
+        url: 'https://www.youtube.com/watch?v=uNcBrrMoyL8',
+        duration: '10 mins 0 sec',
+        viewing_task:
+          "Identify the dynastic rivalry between the House of Lancaster (Red Rose) and House of York (White Rose), Henry VI's mental collapse, and how Henry Tudor founded the Tudor dynasty at the Battle of Bosworth Field in 1485.",
+        model_answer:
+          "The civil wars erupted due to the weak, mentally unstable reign of Lancastrian King Henry VI and the ambition of Richard, Duke of York. The conflict witnessed brutal reversals of fortune, including Edward IV seizing the throne, the Earl of Warwick switching sides ('The Kingmaker'), and Richard III usurping the crown. The conflict concluded at Bosworth Field in 1485 when Henry Tudor defeated Richard III, married Elizabeth of York, united the white and red roses into the Tudor Rose, and established the Tudor dynasty.",
       },
       do_now: {
         type: 'retrieval_grid',

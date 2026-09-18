@@ -8842,6 +8842,17 @@ export const unitData = {
             'Following the 2007 ban on smoking in enclosed public spaces, the UK government enacted the Children and Families Act 2014, introducing mandatory standardized plain packaging for all tobacco products from May 2016. All logos, bright colors, and glamorous branding were eliminated and replaced with a uniform drab dark olive-green (Pantone 448 C), accompanied by graphic photographs of diseased lungs and explicit warnings covering 65% of the packet. **Hinge Question:** Why did public health policy transition from optional educational warning labels to total brand bans and mandatory graphic medical imagery on packaging?',
         },
       },
+      video: {
+        title:
+          'GCSE History Mr Rochester: GCSE History - Medicine through Time - Modern - Lung Cancer',
+        type: 'youtube',
+        url: 'https://www.youtube.com/watch?v=tlNtakmOOho',
+        duration: '18 mins 0 sec',
+        viewing_task:
+          'Note how the link between smoking and lung cancer was proven (Doll & Hill 1950), and distinguish between government prevention policies (ad bans, taxation, 2007 smoking ban) versus high-tech diagnostic/treatment technologies (CT scans, chemotherapy, radiotherapy).',
+        model_answer:
+          '1) Doll and Hill (1950) statistically proved that heavy smokers were significantly more likely to develop lung cancer. 2) Prevention policies evolved from education and advertising bans (1965 TV ban) to direct regulation: 2007 ban on smoking in enclosed public places, raising the legal age to 18, and 2016 plain packaging laws. 3) Modern technology revolutionised diagnosis via CT scans and broncho-endoscopies, alongside multimodal treatments: surgery to remove tumours, radiation therapy, and chemotherapy/immunotherapy.',
+      },
       do_now: {
         type: 'questions',
         title: 'Recall & Retrieval',
@@ -10067,6 +10078,16 @@ export const unitData = {
         ],
         source_context:
           "A crucial primary source for this lesson is the set of British Army War diaries and official medical circulars detailing trench foot inspections and instructions to rub feet with grease or whale oil. These records show that the army treated trench foot not merely as a clinical problem, but as a disciplinary and logistical issue, holding officers directly responsible for the health of their men's feet. Despite these efforts, thousands of men had to be evacuated, showing the limits of military organization against extreme environmental conditions. **If the British Army developed highly organized, compulsory preventative measures like daily foot inspections and delousing, why did illnesses arising from the trench environment remain a major drain on military manpower throughout the war?**\n\nLook at Source A. **If a student were analyzing this source for utility, what limitations might they find regarding its provenance?**",
+      },
+      video: {
+        title: 'Simple History: Average Day In The Life Of A WW1 Soldier',
+        type: 'youtube',
+        url: 'https://www.youtube.com/watch?v=bSPh5Jgx_wY',
+        duration: '10 mins 4 secs',
+        viewing_task:
+          'Identify the daily routine and severe environmental health hazards faced by soldiers on the Western Front, including waterlogged mud causing Trench Foot, body lice causing Trench Fever, and constant shell bombardment leading to Shell Shock.',
+        model_answer:
+          'The video highlights that soldiers rotated through frontline, support, and reserve trenches under constant damp and filth. Standing in waterlogged mud caused painful swelling and gangrene (Trench Foot), countered by rubbing feet with whale oil and changing socks. Millions of body lice infesting clothing seams transmitted Trench Fever, prompting delousing stations. Relentless heavy artillery barrages caused catastrophic blast trauma, shrapnel wounds, and severe psychological trauma (Shell Shock / NYD.N).',
       },
       flashcards: [
         {

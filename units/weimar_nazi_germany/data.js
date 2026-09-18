@@ -1467,6 +1467,16 @@ export default {
         source_context:
           "This photograph shows Walter Gropius's modernist Bauhaus building in Dessau, celebrated worldwide for its revolutionary glass curtain walls, steel frames, and minimalist functional aesthetic ('form follows function'). While urban intellectuals embraced this avant-garde architecture as proof of Weimar cultural liberation, traditional conservatives and nationalists condemned it as degenerate, un-German, and communist. **Hinge Question:** Why did revolutionary modernist cultural movements like the Bauhaus provoke such violent political backlash among traditional, conservative Germans?",
       },
+      video: {
+        title: 'The History Teacher: Changes for workers, women and to culture in the 1920s',
+        type: 'youtube',
+        url: 'https://www.youtube.com/watch?v=-j52Dx5wUFk',
+        duration: '6 mins 12 secs',
+        viewing_task:
+          "Note 3 specific changes in living standards for German workers, 2 ways women's social/political freedom expanded, and how traditionalists reacted to avant-garde Berlin culture.",
+        model_answer:
+          "1) Workers saw real wages increase by 10% between 1924 and 1928, over 100,000 new modern homes built, and the 1927 Unemployment Insurance Act protecting 17M workers. 2) Women gained full voting rights under Article 109, took up professional jobs as teachers/clerks ('New Woman' image), and enjoyed greater social independence. 3) Traditionalists and right-wing nationalists condemned modernist Bauhaus architecture, Expressionist art, and cabaret nightlife as decadent, immoral, and 'un-German'.",
+      },
       learning_objectives: {
         overarching:
           "To understand how German society, culture, and living standards changed during the Weimar 'Golden Age'.",
@@ -5846,6 +5856,16 @@ export default {
         ],
         source_context:
           "This photograph displays the Honour Cross of the German Mother (Ehrenkreuz der Deutschen Mutter), a medal instituted by the Nazi regime in 1938 awarded in bronze, silver, and gold to racially 'pure' German women who bore four, six, or eight children. Modeled explicitly on military medals like the Iron Cross, the award reflected the Nazi obsession with demographic expansion ('Kinder, Küche, Kirche') to breed soldiers for future imperial conquest. **Hinge Question:** How did the institution of the Mother's Cross demonstrate that the Nazi state viewed a woman's private domestic life and reproductive choices as state-controlled military assets?",
+      },
+      video: {
+        title: 'The History Teacher: Life for Women: Weimar and Nazi Germany',
+        type: 'youtube',
+        url: 'https://www.youtube.com/watch?v=arCs4X2rko4',
+        duration: '6 mins 6 secs',
+        viewing_task:
+          "Explain the Nazi slogan 'Kinder, Küche, Kirche' and explain how the Law for the Encouragement of Marriage (1933) and the Mother's Cross incentivised high birth rates.",
+        model_answer:
+          "The slogan emphasised the Nazi ideal that women belonged strictly in the domestic sphere: children, kitchen, and church. The 1933 Law for the Encouragement of Marriage provided loans of 1,000 marks to newly-wed couples, with 25% of the loan written off for each child born (having 4 children cleared the debt). The Mother's Cross (Ehrenkreuz der Deutschen Mutter) awarded bronze (4-5 children), silver (6-7), and gold (8+) medals to Aryan mothers, elevating motherhood into a patriotic duty to build the Reich's military strength.",
       },
       learning_objectives: {
         overarching: 'To understand the key concepts of this topic.',

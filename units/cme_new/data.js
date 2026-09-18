@@ -462,6 +462,28 @@ export const unitData = {
         source_context:
           'Primary map of the secret Sykes-Picot Agreement signed on 8 May 1916 by Sir Mark Sykes and François Georges-Picot, dividing the Ottoman Middle East into British and French zones, alongside the 1917 Balfour Declaration letter. **Hinge Question:** How did the imperial borders drawn by Britain and France in 1916 set the stage for the collapse of British authority in Palestine by 1945?',
       },
+      video: {
+        title: 'Vox: The Israel-Palestine conflict: a brief, simple history',
+        type: 'youtube',
+        url: 'https://www.youtube.com/watch?v=iRYZjOuUnlU',
+        duration: '10 mins 19 secs',
+        viewing_task:
+          'Identify how the collapse of the Ottoman Empire during World War I and British imperial administration shaped modern borders in Palestine, and why contradictory promises caused escalating tension.',
+        model_answer:
+          'The video demonstrates that following the collapse of the Ottoman Empire in WWI, Britain took control of Palestine under a League of Nations mandate. Britain issued the 1917 Balfour Declaration backing a Jewish national home while having previously offered vague promises of independence to Arab leaders (McMahon-Hussein Correspondence). As Jewish immigration increased, competing nationalisms collided, leading to mutual suspicion and violent clashes, culminating in the 1947 UN Partition Plan.',
+      },
+      extra_videos: [
+        {
+          title: "The Economist: The Balfour Declaration's impact, 100 years on",
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=kbdvn8QHyX8',
+          duration: '8 mins 3 secs',
+          viewing_task:
+            'Explain why Arthur Balfour issued his 67-word declaration to Lord Rothschild in November 1917, and how conflicting interpretations of Palestinian non-Jewish civil and religious rights fuelled future conflict.',
+          model_answer:
+            "The documentary highlights that Britain sought to rally international Jewish support (especially in Russia and the US) during WWI and protect the Suez Canal approach. However, the declaration promised support for a 'Jewish national home' without clearly defining what that meant, while claiming 'nothing shall be done which may prejudice the civil and religious rights of existing non-Jewish communities'—conspicuously ignoring political rights for the 90% Arab majority, establishing deep grievance.",
+        },
+      ],
       narrative_blocks: [
         {
           type: 'narrative',

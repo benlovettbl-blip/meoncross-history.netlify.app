@@ -1481,6 +1481,16 @@ const water_and_sanitation = {
           },
         ],
       },
+      video: {
+        title: 'BBC Bitesize: Chadwick and Snow | Secondary History',
+        type: 'youtube',
+        url: 'https://www.youtube.com/watch?v=TT4Z1Ikf36w',
+        duration: '5 mins 0 sec',
+        viewing_task:
+          "Identify Edwin Chadwick's 1842 Report on the Sanitary Conditions of the Labouring Population and Dr John Snow's 1854 Broad Street pump investigation, explaining how each tackled Victorian public health.",
+        model_answer:
+          'Edwin Chadwick highlighted that filthy living conditions and open cesspools caused disease and poverty, proposing clean water piped into homes and underground sewers, which led directly to the 1848 Public Health Act. In 1854, Dr John Snow mapped cholera deaths around Soho, proving the disease was waterborne rather than spread by bad air (miasma) by linking the outbreak directly to the contaminated Broad Street water pump.',
+      },
       narrative_blocks: [
         {
           text: "Between 1750 and 1850, the Industrial Revolution triggered an unprecedented demographic explosion, causing Britain's population to skyrocket from roughly 6 million to over 21 million. Desperate for employment and a better life, thousands of rural agricultural families flooded into rapidly expanding, smoke-filled cities like Manchester, Leeds, and London to work in enormous steam-powered textile factories and deep coal mines. This resulted in an era of rapid, totally unregulated urbanization. Cities expanded so violently that local governments were entirely overwhelmed. Without any planning laws or building regulations, the sheer speed of this migration resulted in intense, suffocating crowding, transforming once-small market towns into sprawling industrial metropolises choked with soot and desperate workers.",
@@ -2297,6 +2307,16 @@ const water_and_sanitation = {
           'Complete the EBI (Even Better If) section — what did you find most challenging?',
           'Circle your effort level (1-5) and set a specific target for the next unit.',
         ],
+      },
+      video: {
+        title: 'BBC Bitesize: Chadwick and Snow | Secondary History',
+        type: 'youtube',
+        url: 'https://www.youtube.com/watch?v=TT4Z1Ikf36w',
+        duration: '5 mins 0 sec',
+        viewing_task:
+          'Observe how Dr John Snow tracked the 1854 cholera outbreak in Soho, and use evidence from his epidemiological investigation to explain the significance of removing the Broad Street pump handle.',
+        model_answer:
+          'The clip illustrates that Dr John Snow suspected water contamination rather than foul air (miasma). By marking each cholera victim on a street map, the clustering around the Broad Street pump became obvious. When Snow inspected the water and had the parish council remove the pump handle, new infections ceased immediately. This provided empirical proof that cholera was a waterborne disease, laying the scientific foundation for modern public health and water sanitation infrastructure.',
       },
       extended: {
         question:

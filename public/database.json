@@ -2770,6 +2770,24 @@
             ],
             "source_context": "Primary map of the secret Sykes-Picot Agreement signed on 8 May 1916 by Sir Mark Sykes and François Georges-Picot, dividing the Ottoman Middle East into British and French zones, alongside the 1917 Balfour Declaration letter. **Hinge Question:** How did the imperial borders drawn by Britain and France in 1916 set the stage for the collapse of British authority in Palestine by 1945?"
           },
+          "video": {
+            "title": "Vox: The Israel-Palestine conflict: a brief, simple history",
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=iRYZjOuUnlU",
+            "duration": "10 mins 19 secs",
+            "viewing_task": "Identify how the collapse of the Ottoman Empire during World War I and British imperial administration shaped modern borders in Palestine, and why contradictory promises caused escalating tension.",
+            "model_answer": "The video demonstrates that following the collapse of the Ottoman Empire in WWI, Britain took control of Palestine under a League of Nations mandate. Britain issued the 1917 Balfour Declaration backing a Jewish national home while having previously offered vague promises of independence to Arab leaders (McMahon-Hussein Correspondence). As Jewish immigration increased, competing nationalisms collided, leading to mutual suspicion and violent clashes, culminating in the 1947 UN Partition Plan."
+          },
+          "extra_videos": [
+            {
+              "title": "The Economist: The Balfour Declaration's impact, 100 years on",
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=kbdvn8QHyX8",
+              "duration": "8 mins 3 secs",
+              "viewing_task": "Explain why Arthur Balfour issued his 67-word declaration to Lord Rothschild in November 1917, and how conflicting interpretations of Palestinian non-Jewish civil and religious rights fuelled future conflict.",
+              "model_answer": "The documentary highlights that Britain sought to rally international Jewish support (especially in Russia and the US) during WWI and protect the Suez Canal approach. However, the declaration promised support for a 'Jewish national home' without clearly defining what that meant, while claiming 'nothing shall be done which may prejudice the civil and religious rights of existing non-Jewish communities'—conspicuously ignoring political rights for the 90% Arab majority, establishing deep grievance."
+            }
+          ],
           "narrative_blocks": [
             {
               "type": "narrative",
@@ -28457,6 +28475,14 @@
               "Source C": "Following the 2007 ban on smoking in enclosed public spaces, the UK government enacted the Children and Families Act 2014, introducing mandatory standardized plain packaging for all tobacco products from May 2016. All logos, bright colors, and glamorous branding were eliminated and replaced with a uniform drab dark olive-green (Pantone 448 C), accompanied by graphic photographs of diseased lungs and explicit warnings covering 65% of the packet. **Hinge Question:** Why did public health policy transition from optional educational warning labels to total brand bans and mandatory graphic medical imagery on packaging?"
             }
           },
+          "video": {
+            "title": "GCSE History Mr Rochester: GCSE History - Medicine through Time - Modern - Lung Cancer",
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=tlNtakmOOho",
+            "duration": "18 mins 0 sec",
+            "viewing_task": "Note how the link between smoking and lung cancer was proven (Doll & Hill 1950), and distinguish between government prevention policies (ad bans, taxation, 2007 smoking ban) versus high-tech diagnostic/treatment technologies (CT scans, chemotherapy, radiotherapy).",
+            "model_answer": "1) Doll and Hill (1950) statistically proved that heavy smokers were significantly more likely to develop lung cancer. 2) Prevention policies evolved from education and advertising bans (1965 TV ban) to direct regulation: 2007 ban on smoking in enclosed public places, raising the legal age to 18, and 2016 plain packaging laws. 3) Modern technology revolutionised diagnosis via CT scans and broncho-endoscopies, alongside multimodal treatments: surgery to remove tumours, radiation therapy, and chemotherapy/immunotherapy."
+          },
           "do_now": {
             "type": "questions",
             "title": "Recall & Retrieval",
@@ -29576,6 +29602,14 @@
               }
             ],
             "source_context": "A crucial primary source for this lesson is the set of British Army War diaries and official medical circulars detailing trench foot inspections and instructions to rub feet with grease or whale oil. These records show that the army treated trench foot not merely as a clinical problem, but as a disciplinary and logistical issue, holding officers directly responsible for the health of their men's feet. Despite these efforts, thousands of men had to be evacuated, showing the limits of military organization against extreme environmental conditions. **If the British Army developed highly organized, compulsory preventative measures like daily foot inspections and delousing, why did illnesses arising from the trench environment remain a major drain on military manpower throughout the war?**\n\nLook at Source A. **If a student were analyzing this source for utility, what limitations might they find regarding its provenance?**"
+          },
+          "video": {
+            "title": "Simple History: Average Day In The Life Of A WW1 Soldier",
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=bSPh5Jgx_wY",
+            "duration": "10 mins 4 secs",
+            "viewing_task": "Identify the daily routine and severe environmental health hazards faced by soldiers on the Western Front, including waterlogged mud causing Trench Foot, body lice causing Trench Fever, and constant shell bombardment leading to Shell Shock.",
+            "model_answer": "The video highlights that soldiers rotated through frontline, support, and reserve trenches under constant damp and filth. Standing in waterlogged mud caused painful swelling and gangrene (Trench Foot), countered by rubbing feet with whale oil and changing socks. Millions of body lice infesting clothing seams transmitted Trench Fever, prompting delousing stations. Relentless heavy artillery barrages caused catastrophic blast trauma, shrapnel wounds, and severe psychological trauma (Shell Shock / NYD.N)."
           },
           "flashcards": [
             {
@@ -33247,6 +33281,14 @@
             ],
             "source_context": "This document captures the legislative bedrock of Elizabethan statecraft: the 1559 Act of Supremacy, in which Elizabeth established her authority over the Church of England as 'Supreme Governor' rather than 'Supreme Head'. This deliberate linguistic compromise was intended to appease moderate Catholics who believed only the Pope or Christ could head the Church, while reassuring Protestants that royal authority reigned supreme. **Hinge Question:** Why was the subtle title change from 'Supreme Head' to 'Supreme Governor' such a crucial political concession in preventing rebellion?"
           },
+          "video": {
+            "title": "The History Teacher: The Religious settlement",
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=-GbkZ_Y1AeQ",
+            "duration": "5 mins 48 secs",
+            "viewing_task": "Identify the 3 key components of Elizabeth's 1559 Religious Settlement: the Act of Supremacy, the Act of Uniformity, and the Royal Injunctions, and how they formed a 'Middle Way'.",
+            "model_answer": "1) Act of Supremacy established Elizabeth as 'Supreme Governor' of the Church of England and required all clergy and royal officials to take an oath of loyalty. 2) Act of Uniformity made Protestant church services compulsory across England using the 1559 Book of Common Prayer, with shilling fines for recusants. 3) Royal Injunctions enforced Protestant theology (English Bible) while allowing moderate traditional Catholic vestments and decorations to appease moderate conservatives."
+          },
           "exam_practice": [
             {
               "type": "Feature (2 Marks)",
@@ -33674,6 +33716,14 @@
             ],
             "source_context": "This visual represents the 1570 Papal Bull 'Regnans in Excelsis' issued by Pope Pius V, which formally excommunicated Elizabeth I from the Catholic Church, branded her a heretic, and released all Catholic subjects from their oath of allegiance to the English Crown. This provocative decree turned English Catholics into potential traitors in the eyes of the law and drastically escalated sectarian conflict. **Hinge Question:** How did the Pope's excommunication of Elizabeth paradoxically make life far more dangerous for ordinary, loyal English Catholics?"
           },
+          "video": {
+            "title": "The History Teacher: Threats to Elizabeth's Religious Settlement",
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=_tD3KvqCc8g",
+            "duration": "5 mins 37 secs",
+            "viewing_task": "Contrast the Puritan challenge (Vestments and Crucifix controversy) with the Catholic threat (Recusancy, Papal Bull of Excommunication 1570, and foreign powers).",
+            "model_answer": "Puritans challenged Elizabeth from within the Protestant church, refusing to wear Catholic-style surplices (vestment controversy) and demanding the removal of crucifixes. The Catholic threat was more dangerous politically: wealthy Catholic nobles refused to attend Church (recusants), and in 1570 Pope Pius V issued the Papal Bull 'Regnans in Excelsis' excommunicating Elizabeth and releasing her subjects from obedience, transforming Catholic dissent into potential treason."
+          },
           "exam_practice": [
             {
               "type": "Feature (2 Marks)",
@@ -34095,6 +34145,14 @@
               }
             ],
             "source_context": "This portrait of Mary Stuart, Queen of Scots, presents Elizabeth's cousin in regalia, highlighting her status as a sovereign queen and legitimate great-granddaughter of Henry VII. Mary's Catholic faith and unquestioned dynastic pedigree made her an existential rival to Elizabeth, embodying the hopes of European Catholics seeking to reclaim England for Rome. **Hinge Question:** Why was Mary Stuart's bloodline considered legally and dynastically stronger by European monarchs than Elizabeth Tudor's?"
+          },
+          "video": {
+            "title": "The History Teacher: The Problem of Mary Queen of Scots",
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=LIZtyIgtVio",
+            "duration": "8 mins 10 secs",
+            "viewing_task": "Explain why Mary Queen of Scots arrived in England in 1568 and why her presence presented an immediate existential threat to Elizabeth I.",
+            "model_answer": "Mary fled Scotland after Scottish Protestant lords revolted following the mysterious murder of Lord Darnley and her marriage to Bothwell. In England, Mary was Elizabeth's legitimate Catholic cousin with a strong hereditary claim to the English throne. For English Catholics and foreign powers (Spain and the Papacy), Mary represented an ideal alternative monarch, making her the natural figurehead and focus for Catholic conspiracies and assassination plots (such as the Northern Rebellion, Ridolfi, Throckmorton, and Babington plots)."
           },
           "exam_practice": [
             {
@@ -34972,6 +35030,24 @@
             ],
             "source_context": "This official portrait of King Philip II of Spain presents the most powerful monarch in Europe, ruler of a global Catholic empire spanning Spain, the Netherlands, parts of Italy, and the silver-rich Americas. Once married to Mary I of England, Philip initially sought an alliance with Elizabeth, but their deep religious divide, commercial conflict in the Caribbean, and the Dutch revolt drove them into an irreconcilable imperial collision. **Hinge Question:** Why did Philip II tolerate English privateering and religious heresy for over twenty years before finally committing to all-out war?"
           },
+          "video": {
+            "title": "The History Teacher: Spain: Political and Religious Rivalry",
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=ldZYD51Ohjo",
+            "duration": "4 mins 48 secs",
+            "viewing_task": "Explain how religious division (Catholic Philip II vs Protestant Elizabeth), the Dutch Revolt, and privateering in the New World caused Anglo-Spanish relations to deteriorate.",
+            "model_answer": "Philip II of Spain was a devout Catholic determined to eliminate Protestant heresy in Europe. When Dutch Protestants revolted against Spanish rule in the Netherlands, England secretly assisted the Dutch rebels because the Netherlands was crucial for English cloth trade and close to the English coast. Combined with English privateers raiding Spanish treasure galleons, political and religious tensions brought the two superpowers to the brink of direct military conflict."
+          },
+          "extra_videos": [
+            {
+              "title": "The History Teacher: Spain and England - Commercial Rivalry",
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=xPAKnqCOl_Q",
+              "duration": "4 mins 4 secs",
+              "viewing_task": "Explain how Francis Drake and English privateers challenged Spain's trade monopoly in the Americas and how Elizabeth's covert support enraged Philip II.",
+              "model_answer": "Spain claimed exclusive monopoly over trade in the New World under the Treaty of Tordesillas. English privateers like Francis Drake and John Hawkins openly challenged this by smuggling enslaved Africans and raiding Spanish ports and treasure ships (e.g. Drake seizing £400,000 aboard the Cacafuego in 1579). Elizabeth not only backed these expeditions but knighted Drake on the Golden Hind in 1581, infuriating Philip II."
+            }
+          ],
           "exam_practice": [
             {
               "type": "Feature (2 Marks)",
@@ -35394,6 +35470,14 @@
               }
             ],
             "source_context": "This portrait captures Sir Francis Drake, the intrepid English privateer, navigator, and naval commander whom Elizabeth knighted and Philip II reviled as 'El Draque' (The Dragon). Drake's audacious global raids on Spanish bullion fleets, circumnavigation of the globe, and preemptive strike on the port of Cadiz in 1587 embodied England's aggressive challenge to Spain's maritime monopoly. **Hinge Question:** How did Elizabeth's decision to publicly knight Francis Drake on the Golden Hind in 1581 send an unmistakable diplomatic message to King Philip of Spain?"
+          },
+          "video": {
+            "title": "The History Teacher: The Netherlands and Cadiz",
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=33zs4b3iyyw",
+            "duration": "4 mins 7 secs",
+            "viewing_task": "Explain the significance of the Treaty of Nonsuch (1585) and Drake's daring raid on Cadiz (1587) in delaying the Spanish Armada.",
+            "model_answer": "Under the Treaty of Nonsuch (1585), Elizabeth intervened directly in the Netherlands by sending Robert Dudley with 7,400 troops, placing England officially at war with Spain. In April 1587, Sir Francis Drake sailed into Cadiz harbour in a pre-emptive strike known as the 'Singeing of the King of Spain's Beard', destroying over 30 Spanish naval vessels, massive provisions, and seasoned barrel staves, delaying the launch of the Spanish Armada by more than a full year."
           },
           "learning_objectives": {
             "target": [
@@ -38409,6 +38493,24 @@
         {
           "id": "lesson_1",
           "title": "How did the Franco-Prussian War create a lasting legacy of hatred?",
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=j1Yk0lzV40Q",
+              "title": "History Matters: The Franco Prussian War (Short Animated Documentary)",
+              "duration": "3 mins 49 secs",
+              "viewing_task": "Identify how Otto von Bismarck engineered the conflict against Napoleon III, how the German Empire was proclaimed in Versailles, and why the annexation of Alsace-Lorraine created permanent French resentment.",
+              "model_answer": "Bismarck used the Ems Dispatch to provoke Napoleon III into declaring war, uniting the southern German states with Prussia. Prussian military efficiency culminated in the catastrophic French defeat at Sedan. In January 1871, the German Empire was proclaimed in the Hall of Mirrors at Versailles, and Germany annexed the border province of Alsace-Lorraine and imposed a 5 billion franc indemnity, establishing an enduring French desire for revenge (revanche)."
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=xVISzFmBiPU",
+              "title": "The Armchair Historian: How Prussia Ended The French Empire",
+              "duration": "27 mins 56 secs",
+              "viewing_task": "Observe the technological and logistical advantages of the Prussian military (Krupp breech-loading artillery, needle guns, railway mobilization) over the French Imperial Army.",
+              "model_answer": "Prussia utilised rapid railway mobilisation and a professional General Staff under Helmuth von Moltke. Prussian breech-loading Krupp steel artillery heavily outranged French bronze muzzle-loaders, allowing the Prussians to encircle and annihilate French armies at Sedan and Metz despite the superior French Chassepot rifle."
+            }
+          ],
           "sources": [
             {
               "title": "Map A: The Annexation of Alsace-Lorraine (Treaty of Frankfurt, 1871)",
@@ -40197,6 +40299,16 @@
         {
           "id": "lesson_5",
           "title": "Why did a single assassination in Sarajevo ignite a World War?",
+          "video": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=Fmobm9pZtTg",
+              "title": "Simple History: The Bullet that Started WWI (The Assassination of Franz Ferdinand)",
+              "duration": "10 mins 27 secs",
+              "viewing_task": "Trace the sequence of events on 28 June 1914 in Sarajevo, from the Black Hand plot to Gavrilo Princip's fateful encounter with the Archduke's car outside Schiller's Delicatessen.",
+              "model_answer": "Six teenage Bosnian Serb nationalists recruited by the Black Hand lined the Appel Quay armed with bombs and pistols. An initial grenade thrown by Čabrinović missed. Later, when the motorcade changed plans to visit injured officers, the chauffeur took a wrong turn into Franz Josef Street. While trying to reverse, the car stalled outside Schiller's Delicatessen directly in front of Gavrilo Princip, who fired two shots, killing Sophie and Franz Ferdinand and sparking the July Crisis."
+            }
+          ],
           "sources": [
             {
               "title": "Diagram A: The July Crisis Domino Sequence (1914)",
@@ -50769,6 +50881,14 @@
             ],
             "source_context": "The Bayeux Tapestry was commissioned by Bishop Odo of Bayeux (William’s half-brother) to celebrate the conquest. Notice how Harold’s death under an arrow barrage is framed as divine retribution for oath-breaking. Hinge Question: How does Bishop Odo’s partisan motivation affect the historical utility of the Bayeux Tapestry for understanding the Saxon defeat?"
           },
+          "video": {
+            "title": "timelinesTV: Norman Conquest (The Battle of Hastings)",
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=PE0RAgHr06U",
+            "duration": "7 mins 34 secs",
+            "viewing_task": "Identify the 3 claimants to the English throne in 1066 (Harold Godwinson, Harald Hardrada, William of Normandy) and explain how William secured victory on Senlac Hill using the feigned retreat tactic.",
+            "model_answer": "In 1066, Harold Godwinson seized the throne, but faced invasion from Norwegian King Harald Hardrada (defeated at Stamford Bridge) and Duke William of Normandy. At Hastings, Harold's Saxon shield wall held the ridge until William's Norman cavalry used the 'feigned retreat'—pretending to flee in panic to lure the Saxons down the hill, breaking their formation and surrounding them."
+          },
           "do_now": {
             "type": "retrieval_grid",
             "title": "Spaced Retrieval: Anglo-Saxon England & Early Britain",
@@ -51229,6 +51349,14 @@
               }
             ],
             "source_context": "Orderic Vitalis was an Anglo-Norman monk who wrote his chronicle fifty years after the Harrying. Although usually supportive of the Normans, he condemned William’s brutal starvation of 100,000 innocents. Hinge Question: Why does Orderic Vitalis’s condemnation carry exceptional weight as historical evidence of William’s brutality?"
+          },
+          "video": {
+            "title": "timelinesTV: The Norman Conquest (Castles and Control)",
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=BEU_xPJd7Yo",
+            "duration": "7 mins 35 secs",
+            "viewing_task": "Explain how William the Conqueror used Motte and Bailey castles, the Harrying of the North (1069–70), and the Domesday Book (1086) to establish absolute feudal control over Saxon England.",
+            "model_answer": "William rapidly erected hundreds of pre-fabricated wooden Motte and Bailey earthwork castles to garrison Norman knights and terrorise local Saxon populations. When the North rebelled in 1069, William executed the ruthless Harrying of the North, burning crops, slaughtering livestock, and salting fields to cause mass famine. In 1086, he commissioned the Domesday Book, a forensic land and wealth survey that enabled systematic taxation and total feudal ownership."
           },
           "do_now": {
             "type": "retrieval_grid",
@@ -51691,6 +51819,14 @@
             ],
             "source_context": "Edward Grim was a Cambridge clerk visiting Becket who stayed at his side during the attack, suffering a broken arm from a knight’s sword blow. Hinge Question: How does Grim’s visceral eyewitness detail of Becket’s shattered skull turn a political assassination into an unassailable tale of Christian martyrdom?"
           },
+          "video": {
+            "title": "timelinesTV: Church & Crown (Henry II and Thomas Becket)",
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=_EKUIBz_po0",
+            "duration": "3 mins 53 secs",
+            "viewing_task": "Explain why Henry II appointed his close friend Thomas Becket as Archbishop of Canterbury, and why Becket's defense of benefit of clergy and papal authority provoked Henry's fatal rage in 1170.",
+            "model_answer": "Henry II appointed his chancellor and friend Thomas Becket hoping to bring the powerful English Catholic Church under royal legal control (ending 'benefit of clergy' in church courts). However, upon becoming Archbishop, Becket transformed into a devout defender of Church independence and papal authority, refusing Henry's Constitutions of Clarendon. When Henry uttered his furious outburst, four Norman knights rode to Canterbury Cathedral and brutally murdered Becket on the altar steps."
+          },
           "do_now": {
             "type": "retrieval_grid",
             "title": "Spaced Retrieval: Norman Control & Domesday",
@@ -52151,6 +52287,14 @@
               }
             ],
             "source_context": "Matthew Paris was a monk of St Albans who wrote his chronicle thirty years after John’s death. He despised King John for his heavy taxes on monasteries and described him as an ungodly monster. Hinge Question: How does Matthew Paris’s monastic bias influence his presentation of King John as a tyrannical coward?"
+          },
+          "video": {
+            "title": "British Library: What is Magna Carta?",
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=7xo4tUMdAMw",
+            "duration": "3 mins 33 secs",
+            "viewing_task": "Explain why the rebel barons forced King John to seal Magna Carta at Runnymede in June 1215, and identify the fundamental principle established by Clause 39.",
+            "model_answer": "King John alienated his barons through extortionate feudal scutage taxes, arbitrary arrests, and the catastrophic loss of Normandy at the Battle of Bouvines (1214). In June 1215, rebel barons captured London and forced John to sign the Great Charter at Runnymede. Crucially, Clause 39 established that no free man could be imprisoned, outlawed, or dispossessed except by lawful judgement of his equals or by the law of the land, establishing for the first time that the monarch is not above the law."
           },
           "do_now": {
             "type": "retrieval_grid",
@@ -52613,6 +52757,14 @@
             ],
             "source_context": "The Bishop of Winchester’s Pipe Rolls are the most complete financial manorial records in medieval Europe, recording every penny of tithe and fine extracted from Meon Valley villages like Waltham, Fareham, and Droxford. Hinge Question: What do the Winchester Pipe Rolls reveal about the economic ruthlessness of high-ranking churchmen in Hampshire?"
           },
+          "video": {
+            "title": "timelinesTV: Medieval Manor (Life in a Medieval Village)",
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=fgd9eI8dk6U",
+            "duration": "7 mins 21 secs",
+            "viewing_task": "Describe the daily existence of medieval serfs and peasants in the open-field strip system, their obligations to the Lord of the Manor, and the immense terror of Hell illustrated by Doom paintings in parish churches.",
+            "model_answer": "Medieval peasant life revolved around the agricultural seasons, farming narrow strips in three giant open fields. Serfs (villeins) were legally tied to the Lord of the Manor, forced to perform unpaid labour (corvée/boon-work) on the lord's demesne land. Religion governed every aspect of village life; illiterate villagers were constantly reminded of divine judgement, Purgatory, and the horrors of eternal damnation through graphic 'Doom paintings' painted above the chancel arch in the parish church."
+          },
           "do_now": {
             "type": "retrieval_grid",
             "title": "Spaced Retrieval: Magna Carta (1215)",
@@ -53073,6 +53225,14 @@
               }
             ],
             "source_context": "Henry Knighton was an Augustinian canon at St Mary de Pratis Abbey in Leicester. Writing in the 1350s, he watched his world collapse as crops rotted in fields and workers refused to labour without exorbitant pay. Hinge Question: How does Knighton’s position as a wealthy monastic landowner influence his bitter resentment toward surviving labourers?"
+          },
+          "video": {
+            "title": "timelinesTV: Black Death (The Plague of 1348)",
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=YhsPPBGtquo",
+            "duration": "6 mins 34 secs",
+            "viewing_task": "Trace the arrival of the bubonic plague in England in 1348, medieval beliefs about its causes (miasma, God's wrath, planetary alignment), and how the death of 30–50% of the population shook the feudal hierarchy.",
+            "model_answer": "The Black Death arrived at Melcombe Regis (Weymouth) in summer 1348 aboard trade ships, spread by fleas living on black rats (Yersinia pestis). Medieval doctors, ignorant of germs, blamed corrupt air (miasma) and divine punishment. The epidemic wiped out an estimated one-third to half of the population. The acute labour shortage shattered the feudal system: surviving peasants demanded higher wages and the freedom to leave manors, prompting the Crown to pass the repressive 1351 Statute of Labourers."
           },
           "do_now": {
             "type": "retrieval_grid",
@@ -53535,6 +53695,14 @@
             ],
             "source_context": "Jean Froissart was a French chronicler who wrote for aristocratic royal courts. He held deep contempt for the \"unruly commoners\" and viewed John Ball as a dangerous madman. Hinge Question: How does Froissart’s aristocratic worldview color his account of John Ball’s sermon on natural equality?"
           },
+          "video": {
+            "title": "timelinesTV: Peasants Revolt (1381)",
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=D3EzLF2rOKY",
+            "duration": "8 mins 45 secs",
+            "viewing_task": "Explain how the third Poll Tax (1381), the preaching of John Ball, and Wat Tyler's leadership sparked the uprising, and how 14-year-old Richard II outmaneuvered the rebels at Smithfield.",
+            "model_answer": "A third regressive Poll Tax of 12 groats levied on everyone over fifteen sparked armed resistance in Essex and Kent in May 1381. Radical priest John Ball preached equality ('When Adam delved and Eve span, who was then the gentleman?'). Under Wat Tyler, rebels marched on London, stormed the Tower, and beheaded Archbishop Sudbury. At Smithfield, Mayor Walworth stabbed Tyler during negotiations; King Richard II boldly rode out, promised to grant all demands, but once the peasants dispersed, violently rescinded his promises and executed hundreds."
+          },
           "do_now": {
             "type": "retrieval_grid",
             "title": "Spaced Retrieval: The Black Death (1348)",
@@ -53995,6 +54163,14 @@
               }
             ],
             "source_context": "The Crowland Chronicle was written by senior churchmen and royal civil servants with direct access to court. It laments the unchecked ambition of overmighty nobles and the tragic decay of royal authority under Henry VI. Hinge Question: How does the Crowland Chronicle’s insider administrative perspective make it an authoritative diagnosis of baronial factionalism?"
+          },
+          "video": {
+            "title": "History Matters: The Wars of the Roses (Short Animated Documentary)",
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=uNcBrrMoyL8",
+            "duration": "10 mins 0 sec",
+            "viewing_task": "Identify the dynastic rivalry between the House of Lancaster (Red Rose) and House of York (White Rose), Henry VI's mental collapse, and how Henry Tudor founded the Tudor dynasty at the Battle of Bosworth Field in 1485.",
+            "model_answer": "The civil wars erupted due to the weak, mentally unstable reign of Lancastrian King Henry VI and the ambition of Richard, Duke of York. The conflict witnessed brutal reversals of fortune, including Edward IV seizing the throne, the Earl of Warwick switching sides ('The Kingmaker'), and Richard III usurping the crown. The conflict concluded at Bosworth Field in 1485 when Henry Tudor defeated Richard III, married Elizabeth of York, united the white and red roses into the Tudor Rose, and established the Tudor dynasty."
           },
           "do_now": {
             "type": "retrieval_grid",
@@ -68370,6 +68546,14 @@
               }
             ]
           },
+          "video": {
+            "title": "BBC Bitesize: Chadwick and Snow | Secondary History",
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=TT4Z1Ikf36w",
+            "duration": "5 mins 0 sec",
+            "viewing_task": "Identify Edwin Chadwick's 1842 Report on the Sanitary Conditions of the Labouring Population and Dr John Snow's 1854 Broad Street pump investigation, explaining how each tackled Victorian public health.",
+            "model_answer": "Edwin Chadwick highlighted that filthy living conditions and open cesspools caused disease and poverty, proposing clean water piped into homes and underground sewers, which led directly to the 1848 Public Health Act. In 1854, Dr John Snow mapped cholera deaths around Soho, proving the disease was waterborne rather than spread by bad air (miasma) by linking the outbreak directly to the contaminated Broad Street water pump."
+          },
           "narrative_blocks": [
             {
               "text": "Between 1750 and 1850, the Industrial Revolution triggered an unprecedented demographic explosion, causing Britain's population to skyrocket from roughly 6 million to over 21 million. Desperate for employment and a better life, thousands of rural agricultural families flooded into rapidly expanding, smoke-filled cities like Manchester, Leeds, and London to work in enormous steam-powered textile factories and deep coal mines. This resulted in an era of rapid, totally unregulated urbanization. Cities expanded so violently that local governments were entirely overwhelmed. Without any planning laws or building regulations, the sheer speed of this migration resulted in intense, suffocating crowding, transforming once-small market towns into sprawling industrial metropolises choked with soot and desperate workers.",
@@ -69099,6 +69283,14 @@
               "Complete the EBI (Even Better If) section — what did you find most challenging?",
               "Circle your effort level (1-5) and set a specific target for the next unit."
             ]
+          },
+          "video": {
+            "title": "BBC Bitesize: Chadwick and Snow | Secondary History",
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=TT4Z1Ikf36w",
+            "duration": "5 mins 0 sec",
+            "viewing_task": "Observe how Dr John Snow tracked the 1854 cholera outbreak in Soho, and use evidence from his epidemiological investigation to explain the significance of removing the Broad Street pump handle.",
+            "model_answer": "The clip illustrates that Dr John Snow suspected water contamination rather than foul air (miasma). By marking each cholera victim on a street map, the clustering around the Broad Street pump became obvious. When Snow inspected the water and had the parish council remove the pump handle, new infections ceased immediately. This provided empirical proof that cholera was a waterborne disease, laying the scientific foundation for modern public health and water sanitation infrastructure."
           },
           "extended": {
             "question": "Explain the significance of John Snow's discovery during the 1854 Broad Street Cholera outbreak. (8 marks)",
@@ -71534,6 +71726,14 @@
               }
             ],
             "source_context": "This photograph shows Walter Gropius's modernist Bauhaus building in Dessau, celebrated worldwide for its revolutionary glass curtain walls, steel frames, and minimalist functional aesthetic ('form follows function'). While urban intellectuals embraced this avant-garde architecture as proof of Weimar cultural liberation, traditional conservatives and nationalists condemned it as degenerate, un-German, and communist. **Hinge Question:** Why did revolutionary modernist cultural movements like the Bauhaus provoke such violent political backlash among traditional, conservative Germans?"
+          },
+          "video": {
+            "title": "The History Teacher: Changes for workers, women and to culture in the 1920s",
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=-j52Dx5wUFk",
+            "duration": "6 mins 12 secs",
+            "viewing_task": "Note 3 specific changes in living standards for German workers, 2 ways women's social/political freedom expanded, and how traditionalists reacted to avant-garde Berlin culture.",
+            "model_answer": "1) Workers saw real wages increase by 10% between 1924 and 1928, over 100,000 new modern homes built, and the 1927 Unemployment Insurance Act protecting 17M workers. 2) Women gained full voting rights under Article 109, took up professional jobs as teachers/clerks ('New Woman' image), and enjoyed greater social independence. 3) Traditionalists and right-wing nationalists condemned modernist Bauhaus architecture, Expressionist art, and cabaret nightlife as decadent, immoral, and 'un-German'."
           },
           "learning_objectives": {
             "overarching": "To understand how German society, culture, and living standards changed during the Weimar 'Golden Age'.",
@@ -76088,6 +76288,14 @@
               }
             ],
             "source_context": "This photograph displays the Honour Cross of the German Mother (Ehrenkreuz der Deutschen Mutter), a medal instituted by the Nazi regime in 1938 awarded in bronze, silver, and gold to racially 'pure' German women who bore four, six, or eight children. Modeled explicitly on military medals like the Iron Cross, the award reflected the Nazi obsession with demographic expansion ('Kinder, Küche, Kirche') to breed soldiers for future imperial conquest. **Hinge Question:** How did the institution of the Mother's Cross demonstrate that the Nazi state viewed a woman's private domestic life and reproductive choices as state-controlled military assets?"
+          },
+          "video": {
+            "title": "The History Teacher: Life for Women: Weimar and Nazi Germany",
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=arCs4X2rko4",
+            "duration": "6 mins 6 secs",
+            "viewing_task": "Explain the Nazi slogan 'Kinder, Küche, Kirche' and explain how the Law for the Encouragement of Marriage (1933) and the Mother's Cross incentivised high birth rates.",
+            "model_answer": "The slogan emphasised the Nazi ideal that women belonged strictly in the domestic sphere: children, kitchen, and church. The 1933 Law for the Encouragement of Marriage provided loans of 1,000 marks to newly-wed couples, with 25% of the loan written off for each child born (having 4 children cleared the debt). The Mother's Cross (Ehrenkreuz der Deutschen Mutter) awarded bronze (4-5 children), silver (6-7), and gold (8+) medals to Aryan mothers, elevating motherhood into a patriotic duty to build the Reich's military strength."
           },
           "learning_objectives": {
             "overarching": "To understand the key concepts of this topic.",

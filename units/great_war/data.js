@@ -370,6 +370,28 @@ const great_war = {
     {
       id: 'lesson_1',
       title: 'How did the Franco-Prussian War create a lasting legacy of hatred?',
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=j1Yk0lzV40Q',
+          title: 'History Matters: The Franco Prussian War (Short Animated Documentary)',
+          duration: '3 mins 49 secs',
+          viewing_task:
+            'Identify how Otto von Bismarck engineered the conflict against Napoleon III, how the German Empire was proclaimed in Versailles, and why the annexation of Alsace-Lorraine created permanent French resentment.',
+          model_answer:
+            'Bismarck used the Ems Dispatch to provoke Napoleon III into declaring war, uniting the southern German states with Prussia. Prussian military efficiency culminated in the catastrophic French defeat at Sedan. In January 1871, the German Empire was proclaimed in the Hall of Mirrors at Versailles, and Germany annexed the border province of Alsace-Lorraine and imposed a 5 billion franc indemnity, establishing an enduring French desire for revenge (revanche).',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=xVISzFmBiPU',
+          title: 'The Armchair Historian: How Prussia Ended The French Empire',
+          duration: '27 mins 56 secs',
+          viewing_task:
+            'Observe the technological and logistical advantages of the Prussian military (Krupp breech-loading artillery, needle guns, railway mobilization) over the French Imperial Army.',
+          model_answer:
+            'Prussia utilised rapid railway mobilisation and a professional General Staff under Helmuth von Moltke. Prussian breech-loading Krupp steel artillery heavily outranged French bronze muzzle-loaders, allowing the Prussians to encircle and annihilate French armies at Sedan and Metz despite the superior French Chassepot rifle.',
+        },
+      ],
       sources: [
         {
           title: 'Map A: The Annexation of Alsace-Lorraine (Treaty of Frankfurt, 1871)',
@@ -2342,6 +2364,19 @@ const great_war = {
     {
       id: 'lesson_5',
       title: 'Why did a single assassination in Sarajevo ignite a World War?',
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=Fmobm9pZtTg',
+          title:
+            'Simple History: The Bullet that Started WWI (The Assassination of Franz Ferdinand)',
+          duration: '10 mins 27 secs',
+          viewing_task:
+            "Trace the sequence of events on 28 June 1914 in Sarajevo, from the Black Hand plot to Gavrilo Princip's fateful encounter with the Archduke's car outside Schiller's Delicatessen.",
+          model_answer:
+            "Six teenage Bosnian Serb nationalists recruited by the Black Hand lined the Appel Quay armed with bombs and pistols. An initial grenade thrown by Čabrinović missed. Later, when the motorcade changed plans to visit injured officers, the chauffeur took a wrong turn into Franz Josef Street. While trying to reverse, the car stalled outside Schiller's Delicatessen directly in front of Gavrilo Princip, who fired two shots, killing Sophie and Franz Ferdinand and sparking the July Crisis.",
+        },
+      ],
       sources: [
         {
           title: 'Diagram A: The July Crisis Domino Sequence (1914)',

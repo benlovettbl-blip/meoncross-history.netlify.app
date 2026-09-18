@@ -643,6 +643,16 @@ export default {
         source_context:
           "This document captures the legislative bedrock of Elizabethan statecraft: the 1559 Act of Supremacy, in which Elizabeth established her authority over the Church of England as 'Supreme Governor' rather than 'Supreme Head'. This deliberate linguistic compromise was intended to appease moderate Catholics who believed only the Pope or Christ could head the Church, while reassuring Protestants that royal authority reigned supreme. **Hinge Question:** Why was the subtle title change from 'Supreme Head' to 'Supreme Governor' such a crucial political concession in preventing rebellion?",
       },
+      video: {
+        title: 'The History Teacher: The Religious settlement',
+        type: 'youtube',
+        url: 'https://www.youtube.com/watch?v=-GbkZ_Y1AeQ',
+        duration: '5 mins 48 secs',
+        viewing_task:
+          "Identify the 3 key components of Elizabeth's 1559 Religious Settlement: the Act of Supremacy, the Act of Uniformity, and the Royal Injunctions, and how they formed a 'Middle Way'.",
+        model_answer:
+          "1) Act of Supremacy established Elizabeth as 'Supreme Governor' of the Church of England and required all clergy and royal officials to take an oath of loyalty. 2) Act of Uniformity made Protestant church services compulsory across England using the 1559 Book of Common Prayer, with shilling fines for recusants. 3) Royal Injunctions enforced Protestant theology (English Bible) while allowing moderate traditional Catholic vestments and decorations to appease moderate conservatives.",
+      },
       exam_practice: [
         {
           type: 'Feature (2 Marks)',
@@ -1095,6 +1105,16 @@ export default {
         ],
         source_context:
           "This visual represents the 1570 Papal Bull 'Regnans in Excelsis' issued by Pope Pius V, which formally excommunicated Elizabeth I from the Catholic Church, branded her a heretic, and released all Catholic subjects from their oath of allegiance to the English Crown. This provocative decree turned English Catholics into potential traitors in the eyes of the law and drastically escalated sectarian conflict. **Hinge Question:** How did the Pope's excommunication of Elizabeth paradoxically make life far more dangerous for ordinary, loyal English Catholics?",
+      },
+      video: {
+        title: "The History Teacher: Threats to Elizabeth's Religious Settlement",
+        type: 'youtube',
+        url: 'https://www.youtube.com/watch?v=_tD3KvqCc8g',
+        duration: '5 mins 37 secs',
+        viewing_task:
+          'Contrast the Puritan challenge (Vestments and Crucifix controversy) with the Catholic threat (Recusancy, Papal Bull of Excommunication 1570, and foreign powers).',
+        model_answer:
+          "Puritans challenged Elizabeth from within the Protestant church, refusing to wear Catholic-style surplices (vestment controversy) and demanding the removal of crucifixes. The Catholic threat was more dangerous politically: wealthy Catholic nobles refused to attend Church (recusants), and in 1570 Pope Pius V issued the Papal Bull 'Regnans in Excelsis' excommunicating Elizabeth and releasing her subjects from obedience, transforming Catholic dissent into potential treason.",
       },
       exam_practice: [
         {
@@ -1552,6 +1572,16 @@ export default {
         ],
         source_context:
           "This portrait of Mary Stuart, Queen of Scots, presents Elizabeth's cousin in regalia, highlighting her status as a sovereign queen and legitimate great-granddaughter of Henry VII. Mary's Catholic faith and unquestioned dynastic pedigree made her an existential rival to Elizabeth, embodying the hopes of European Catholics seeking to reclaim England for Rome. **Hinge Question:** Why was Mary Stuart's bloodline considered legally and dynastically stronger by European monarchs than Elizabeth Tudor's?",
+      },
+      video: {
+        title: 'The History Teacher: The Problem of Mary Queen of Scots',
+        type: 'youtube',
+        url: 'https://www.youtube.com/watch?v=LIZtyIgtVio',
+        duration: '8 mins 10 secs',
+        viewing_task:
+          'Explain why Mary Queen of Scots arrived in England in 1568 and why her presence presented an immediate existential threat to Elizabeth I.',
+        model_answer:
+          "Mary fled Scotland after Scottish Protestant lords revolted following the mysterious murder of Lord Darnley and her marriage to Bothwell. In England, Mary was Elizabeth's legitimate Catholic cousin with a strong hereditary claim to the English throne. For English Catholics and foreign powers (Spain and the Papacy), Mary represented an ideal alternative monarch, making her the natural figurehead and focus for Catholic conspiracies and assassination plots (such as the Northern Rebellion, Ridolfi, Throckmorton, and Babington plots).",
       },
       exam_practice: [
         {
@@ -2497,6 +2527,28 @@ export default {
         source_context:
           'This official portrait of King Philip II of Spain presents the most powerful monarch in Europe, ruler of a global Catholic empire spanning Spain, the Netherlands, parts of Italy, and the silver-rich Americas. Once married to Mary I of England, Philip initially sought an alliance with Elizabeth, but their deep religious divide, commercial conflict in the Caribbean, and the Dutch revolt drove them into an irreconcilable imperial collision. **Hinge Question:** Why did Philip II tolerate English privateering and religious heresy for over twenty years before finally committing to all-out war?',
       },
+      video: {
+        title: 'The History Teacher: Spain: Political and Religious Rivalry',
+        type: 'youtube',
+        url: 'https://www.youtube.com/watch?v=ldZYD51Ohjo',
+        duration: '4 mins 48 secs',
+        viewing_task:
+          'Explain how religious division (Catholic Philip II vs Protestant Elizabeth), the Dutch Revolt, and privateering in the New World caused Anglo-Spanish relations to deteriorate.',
+        model_answer:
+          'Philip II of Spain was a devout Catholic determined to eliminate Protestant heresy in Europe. When Dutch Protestants revolted against Spanish rule in the Netherlands, England secretly assisted the Dutch rebels because the Netherlands was crucial for English cloth trade and close to the English coast. Combined with English privateers raiding Spanish treasure galleons, political and religious tensions brought the two superpowers to the brink of direct military conflict.',
+      },
+      extra_videos: [
+        {
+          title: 'The History Teacher: Spain and England - Commercial Rivalry',
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=xPAKnqCOl_Q',
+          duration: '4 mins 4 secs',
+          viewing_task:
+            "Explain how Francis Drake and English privateers challenged Spain's trade monopoly in the Americas and how Elizabeth's covert support enraged Philip II.",
+          model_answer:
+            'Spain claimed exclusive monopoly over trade in the New World under the Treaty of Tordesillas. English privateers like Francis Drake and John Hawkins openly challenged this by smuggling enslaved Africans and raiding Spanish ports and treasure ships (e.g. Drake seizing £400,000 aboard the Cacafuego in 1579). Elizabeth not only backed these expeditions but knighted Drake on the Golden Hind in 1581, infuriating Philip II.',
+        },
+      ],
       exam_practice: [
         {
           type: 'Feature (2 Marks)',
@@ -2929,6 +2981,16 @@ export default {
         ],
         source_context:
           "This portrait captures Sir Francis Drake, the intrepid English privateer, navigator, and naval commander whom Elizabeth knighted and Philip II reviled as 'El Draque' (The Dragon). Drake's audacious global raids on Spanish bullion fleets, circumnavigation of the globe, and preemptive strike on the port of Cadiz in 1587 embodied England's aggressive challenge to Spain's maritime monopoly. **Hinge Question:** How did Elizabeth's decision to publicly knight Francis Drake on the Golden Hind in 1581 send an unmistakable diplomatic message to King Philip of Spain?",
+      },
+      video: {
+        title: 'The History Teacher: The Netherlands and Cadiz',
+        type: 'youtube',
+        url: 'https://www.youtube.com/watch?v=33zs4b3iyyw',
+        duration: '4 mins 7 secs',
+        viewing_task:
+          "Explain the significance of the Treaty of Nonsuch (1585) and Drake's daring raid on Cadiz (1587) in delaying the Spanish Armada.",
+        model_answer:
+          "Under the Treaty of Nonsuch (1585), Elizabeth intervened directly in the Netherlands by sending Robert Dudley with 7,400 troops, placing England officially at war with Spain. In April 1587, Sir Francis Drake sailed into Cadiz harbour in a pre-emptive strike known as the 'Singeing of the King of Spain's Beard', destroying over 30 Spanish naval vessels, massive provisions, and seasoned barrel staves, delaying the launch of the Spanish Armada by more than a full year.",
       },
       learning_objectives: {
         target: [
