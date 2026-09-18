@@ -139,6 +139,272 @@ if (typeof window !== 'undefined') {
   window.sanitizePupilName = sanitizePupilName;
 }
 
+// Local Real-Name Reference Registry (100% Local-First · Kept strictly on school laptop)
+export const DEFAULT_LOCAL_NAME_MAP = {
+  p_1789653842949: 'Ethan P.',
+  p_1789653874979: 'Austen C.',
+  p_1789653816754: 'Alex R.',
+  p_1789653887768: 'Will V.',
+  p_1789653828428: 'Woody R.',
+  p_1789653854856: 'Harry C.',
+  p_1789653903667: 'Jacob C.',
+  p_1789653983357: 'Thomas S.',
+  p_1789653925819: 'Tadhg F.',
+  p_1789653972946: 'Jake B.',
+  p_1789653960520: 'Ben T.',
+  p_1789653940195: 'Harry M.',
+};
+
+// Combinatorial Historical Naval Chess Themes
+export const HOUSE_NICKNAME_THEMES = {
+  victory: {
+    titles: [
+      'Admiral',
+      'Captain',
+      'Signal',
+      'Trafalgar',
+      'Quarterdeck',
+      'Copenhagen',
+      'Sovereign',
+      'Temeraire',
+      'Vanguard',
+      'Royal',
+      'Sea Lord',
+      'Fleet',
+    ],
+    heroes: [
+      'Nelson',
+      'Collingwood',
+      'Hardy',
+      'Hood',
+      'Hawke',
+      'Victory',
+      'Temeraire',
+      'Trafalgar',
+    ],
+    roles: [
+      'Knight',
+      'Bishop',
+      'Rook',
+      'Tactician',
+      'Gambit',
+      'Striker',
+      'Maestro',
+      'Master',
+      'Sentinel',
+    ],
+  },
+  warrior: {
+    titles: [
+      'Iron',
+      'Black',
+      'Armoured',
+      'Broadside',
+      'Fortress',
+      'Citadel',
+      'Highland',
+      'Heavy',
+      'Victorian',
+      'Ironclad',
+      'Grenadier',
+      'Wellington',
+      'Royal',
+    ],
+    heroes: ['Duke', 'Prince', 'Warrior', 'Wellington', 'Cochrane', 'Ironclad', 'Fortress'],
+    roles: [
+      'Warrior',
+      'Knight',
+      'Rook',
+      'King',
+      'Bishop',
+      'Sentinel',
+      'Marshal',
+      'Champion',
+      'Guard',
+    ],
+  },
+  dreadnought: {
+    titles: [
+      'Super',
+      'Fearless',
+      'Grand Fleet',
+      'Battleship',
+      'Jutland',
+      'Turbine',
+      'Scapa',
+      'North Sea',
+      'Dreadnought',
+      'Iron Duke',
+      'Heavy Fleet',
+    ],
+    heroes: ['Fisher', 'Jellicoe', 'Beatty', 'Dreadnought', 'Orion', 'Iron Duke', 'Warspite'],
+    roles: [
+      'Bishop',
+      'Knight',
+      'Rook',
+      'Raider',
+      'Tactician',
+      'Maestro',
+      'Captain',
+      'Striker',
+      'Commander',
+    ],
+  },
+  invincible: {
+    titles: [
+      'Swift',
+      'Lightning',
+      'Battlecruiser',
+      'Falkland',
+      'Precision',
+      'High-Speed',
+      'Cruiser',
+      'Fleet',
+      'Invincible',
+      'Tempest',
+      'Phantom',
+    ],
+    heroes: ['Sturdee', 'Arbuthnot', 'Invincible', 'Inflexible', 'Indomitable', 'Lion'],
+    roles: [
+      'Battlecruiser',
+      'Gambit',
+      'Corsair',
+      'Striker',
+      'Rook',
+      'Knight',
+      'Bishop',
+      'Maestro',
+      'Scout',
+    ],
+  },
+};
+
+export function generateHouseThematicNickname(realName, houseId, existingNicknames = []) {
+  let hash = 0;
+  const str = (realName || '').trim().toLowerCase();
+  for (let i = 0; i < str.length; i++) {
+    hash = (hash << 5) - hash + str.charCodeAt(i);
+    hash |= 0;
+  }
+  const absHash = Math.abs(hash);
+  const theme = HOUSE_NICKNAME_THEMES[houseId] || HOUSE_NICKNAME_THEMES.warrior;
+
+  for (let attempt = 0; attempt < 50; attempt++) {
+    const titleIdx = (absHash + attempt * 7) % theme.titles.length;
+    const heroIdx = (absHash + attempt * 13) % theme.heroes.length;
+    const roleIdx = (absHash + attempt * 19) % theme.roles.length;
+
+    let candidate = '';
+    if (attempt % 2 === 0) {
+      candidate = `${theme.titles[titleIdx]} ${theme.roles[roleIdx]}`;
+    } else {
+      candidate = `${theme.titles[titleIdx]} ${theme.heroes[heroIdx]}`;
+    }
+
+    candidate = candidate.trim();
+    if (!existingNicknames.includes(candidate)) {
+      return candidate;
+    }
+  }
+  return `${theme.titles[0]} ${theme.roles[0]} ${(absHash % 20) + 1}`;
+}
+
+export function savePlayerRealName(playerId, realName) {
+  if (typeof window === 'undefined') return;
+  try {
+    let localMap = {};
+    const raw = localStorage.getItem('chess_local_roster_names');
+    if (raw) localMap = JSON.parse(raw);
+    localMap[playerId] = realName;
+    localStorage.setItem('chess_local_roster_names', JSON.stringify(localMap));
+  } catch (e) {}
+}
+
+export function hydratePlayerRealNames(players) {
+  if (!Array.isArray(players)) return;
+  let localMap = {};
+  if (typeof window !== 'undefined') {
+    try {
+      const raw = localStorage.getItem('chess_local_roster_names');
+      if (raw) localMap = JSON.parse(raw);
+    } catch (e) {}
+  }
+
+  players.forEach((p) => {
+    if (!p.nickname) {
+      p.nickname = p.name;
+    }
+    if (!p.realName) {
+      p.realName = localMap[p.id] || DEFAULT_LOCAL_NAME_MAP[p.id] || '';
+    }
+    if (p.name && /^[A-Za-z]+ [A-Za-z]\.?$/.test(p.name) && !p.realName) {
+      p.realName = p.name;
+      p.nickname = generateHouseThematicNickname(
+        p.realName,
+        p.house,
+        players.map((x) => x.nickname).filter(Boolean),
+      );
+    }
+  });
+}
+
+export function getPlayerDisplayName(player, context = 'default') {
+  if (!player) return 'Unknown Player';
+  const h = HOUSES[player.house];
+  const real = player.realName;
+  const nick = player.nickname || player.name;
+
+  // If in Teacher view on school laptop (and not in projector mode or pupil preview):
+  if (
+    chessState.userRole === 'teacher' &&
+    !chessState.isPupilPreview &&
+    !chessState.projectorMode &&
+    real &&
+    real !== nick
+  ) {
+    if (context === 'short') {
+      return `${real} (${nick})`;
+    }
+    if (context === 'table') {
+      return `
+        <div style="display: flex; flex-direction: column; gap: 2px;">
+          <span style="font-weight: 800; color: #0f172a; font-size: 0.95rem;">${real}</span>
+          <span style="font-size: 0.72rem; font-weight: 700; color: ${h?.colorDark || '#334155'}; background: ${h?.bgLight || '#f1f5f9'}; border: 1px solid ${h?.borderColor || '#cbd5e1'}; padding: 1px 6px; border-radius: 4px; display: inline-flex; align-items: center; gap: 4px; width: fit-content;">
+            ⚓ ${nick}
+          </span>
+        </div>
+      `;
+    }
+    if (context === 'podium') {
+      return `
+        <div style="font-size: 1.2rem; font-weight: 800; color: #0f172a; font-family: 'Playfair Display', serif;">${real}</div>
+        <div style="font-size: 0.76rem; font-weight: 800; color: ${h?.colorDark || '#334155'}; background: ${h?.bgLight || '#f1f5f9'}; border: 1px solid ${h?.borderColor || '#cbd5e1'}; padding: 2px 8px; border-radius: 6px; margin: 4px auto 0 auto; display: inline-block;">
+          ⚓ ${nick}
+        </div>
+      `;
+    }
+    return `
+      <span style="font-weight: 800; color: #0f172a;">${real}</span>
+      <span style="font-size: 0.74rem; font-weight: 700; color: ${h?.colorDark || '#334155'}; background: ${h?.bgLight || '#f1f5f9'}; border: 1px solid ${h?.borderColor || '#cbd5e1'}; padding: 1px 6px; border-radius: 4px; display: inline-flex; align-items: center; gap: 4px; margin-left: 6px;">
+        ⚓ ${nick}
+      </span>
+    `;
+  }
+
+  // Spectator, Pupil, Projector, Netlify Cloud view: Always Nickname!
+  return `<span style="font-weight: 700;">${nick}</span>`;
+}
+
+export function getPlayerSelectLabel(player) {
+  if (!player) return '';
+  const h = HOUSES[player.house];
+  const houseName = h ? h.name : player.house;
+  if (player.realName && player.realName !== player.nickname) {
+    return `${player.realName} [${player.nickname || player.name}] (${houseName} - Rtg ${player.rating})`;
+  }
+  return `${player.nickname || player.name} (${houseName} - Rtg ${player.rating})`;
+}
+
 // Helper: Inspect emergency recovery backup
 function getBackupInfo() {
   try {
@@ -196,6 +462,7 @@ let chessState = {
   filterHouse: 'all', // 'all' | houseId
   userRole: getInitialRole(), // 'teacher' | 'pupil'
   airgapMode: isAirgapModeActive(), // Safe by default on school laptop
+  projectorMode: false, // Cloaks real names for classroom TV/projector
   isPupilPreview: false,
   currentPuzzleIdx: 0,
   puzzleCategory: 'grandmaster', // 'grandmaster' | 'beginner'
@@ -511,6 +778,9 @@ function initChessState(forceClean = false) {
     loaded = true;
     saveChessState();
   }
+
+  // Hydrate real names and nicknames for all active players
+  hydratePlayerRealNames(chessState.players);
 
   // 4. Fallback check from IndexedDB offline database if still empty
   if (!loaded && typeof window !== 'undefined') {
@@ -1348,7 +1618,7 @@ function renderLadderTab(players) {
 
                 <div>
                   <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-                    <h3 style="margin: 0; font-size: 1.08rem; color: #0f172a; font-weight: 700;">${p.name}</h3>
+                    <h3 style="margin: 0; font-size: 1.08rem; color: #0f172a; font-weight: 700;">${renderPlayerNameWithCallsign(p)}</h3>
                     <span style="background: ${h.bgLight}; color: ${h.color}; border: 1px solid ${h.borderColor}; padding: 2px 8px; border-radius: 10px; font-size: 0.72rem; font-weight: 800;">
                       ${h.name}
                     </span>
@@ -1619,7 +1889,7 @@ function renderLeagueTableTab(players) {
                     return `
                     <tr class="chess-table-row" style="border-bottom: 1px solid #f1f5f9; transition: background 0.15s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
                       <td style="padding: 12px 14px; font-weight: 800; color: #64748b;">${idx + 1}</td>
-                      <td style="padding: 12px 14px; font-weight: 700; color: #0f172a;">${p.name}</td>
+                      <td style="padding: 12px 14px; font-weight: 700; color: #0f172a;">${renderPlayerNameWithCallsign(p)}</td>
                       <td style="padding: 12px 14px; color: #475569;"></td>
                       <td style="padding: 12px 14px;">
                         <span style="background: ${h.bgLight}; color: ${h.color}; border: 1px solid ${h.borderColor}; padding: 3px 8px; border-radius: 12px; font-size: 0.72rem; font-weight: 700;">
@@ -2802,6 +3072,9 @@ function renderSignInTab(players = []) {
           </div>
 
           <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+            <button onclick="window.toggleProjectorMode()" style="background: ${chessState.projectorMode ? '#8b5cf6' : 'rgba(255,255,255,0.1)'}; color: #ffffff; border: 1.5px solid ${chessState.projectorMode ? '#c084fc' : 'rgba(255,255,255,0.2)'}; font-weight: 700; font-size: 0.82rem; padding: 9px 13px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Cloak pupil real names on classroom projector">
+              <span>${chessState.projectorMode ? '📺 Projector Cloak: ON' : '📺 Projector Cloak: OFF'}</span>
+            </button>
             ${
               chessState.players.length > 0
                 ? `
@@ -2833,6 +3106,8 @@ function renderSignInTab(players = []) {
           <span>·</span>
           <span>Games logged this term: <strong style="color: #facc15;">${chessState.matches.length}</strong></span>
           ${hasPairings ? `<span>·</span><span style="color: #38bdf8; font-weight: 700;">⚔️ ${chessState.activePairings.filter((p) => !p.isBye).length} Boards Currently Paired</span>` : ''}
+          <span>·</span>
+          <span style="color: ${chessState.projectorMode ? '#c084fc' : '#94a3b8'};">Display Mode: <strong>${chessState.projectorMode ? 'Projector Cloak (Callsigns Only)' : 'Teacher View (Names + Callsigns)'}</strong></span>
         </div>
       </div>
 
@@ -2855,7 +3130,7 @@ function renderSignInTab(players = []) {
               <input type="text" id="reg-name" required placeholder="e.g. Leo B. or Emily T." style="width: 100%; box-sizing: border-box; padding: 10px 12px; border-radius: 8px; border: 1.5px solid #cbd5e1; font-size: 0.95rem; font-family: inherit; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='#10b981'" onblur="this.style.borderColor='#cbd5e1'; if(this.value && window.sanitizePupilName) this.value = window.sanitizePupilName(this.value);">
               <div style="font-size: 0.74rem; color: #64748b; margin-top: 5px; display: flex; align-items: center; gap: 5px; line-height: 1.3;">
                 <i class="fa-solid fa-shield-halved" style="color: #6366f1;"></i>
-                <span><strong>School Privacy:</strong> First Name + Last Initial (e.g. <em>Leo B.</em>). Full surnames are auto-sanitised.</span>
+                <span><strong>GDPR Safe Callsigns:</strong> Pupils receive an epic historical callsign (e.g. <em>Spartan Alexander</em>) for leaderboards &amp; projector displays.</span>
               </div>
             </div>
 
@@ -2901,7 +3176,7 @@ function renderSignInTab(players = []) {
                   return `
                   <button type="button" onclick="window.checkInPlayer('${p.id}')" style="background: #f8fafc; border: 1.5px solid ${h.borderColor}; border-radius: 20px; padding: 6px 14px; font-size: 0.85rem; font-weight: 700; color: #1e293b; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s;" onmouseover="this.style.background='${h.bgLight}';this.style.borderColor='${h.color}'" onmouseout="this.style.background='#f8fafc';this.style.borderColor='${h.borderColor}'">
                     <i class="fa-solid fa-circle-plus" style="color: ${h.color};"></i>
-                    <span>${p.name} (${h.name})</span>
+                    <span>${renderPlayerNameWithCallsign(p)} (${h.name})</span>
                   </button>
                 `;
                 })
@@ -2973,7 +3248,7 @@ function renderSignInTab(players = []) {
                   <div style="display: flex; align-items: center; gap: 10px; min-width: 0;">
                     <span style="width: 10px; height: 10px; border-radius: 50%; background: #22c55e; flex-shrink: 0; box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);"></span>
                     <div style="min-width: 0;">
-                      <div style="font-weight: 700; font-size: 0.95rem; color: #0f172a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${p.name}</div>
+                      <div style="font-weight: 700; font-size: 0.95rem; color: #0f172a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${renderPlayerNameWithCallsign(p)}</div>
                       <div style="font-size: 0.74rem; color: ${h.color}; font-weight: 700;"> · ${h.name}</div>
                     </div>
                   </div>
@@ -3102,7 +3377,7 @@ function renderSignInTab(players = []) {
                     return `
                     <tr style="border-bottom: 1px solid #e7e2d7; transition: background 0.15s ease; background: ${idx % 2 === 0 ? '#ffffff' : '#faf8f5'};" onmouseover="this.style.background='#f3efe6'" onmouseout="this.style.background='${idx % 2 === 0 ? '#ffffff' : '#faf8f5'}'">
                       <td style="padding: 10px 12px; text-align: center;">${rankBadge}</td>
-                      <td style="padding: 10px 12px; font-weight: 700; color: #1c1917; font-family: 'Playfair Display', Georgia, serif; font-size: 0.95rem;">${p.name}</td>
+                      <td style="padding: 10px 12px; font-weight: 700; color: #1c1917; font-family: 'Playfair Display', Georgia, serif; font-size: 0.95rem;">${renderPlayerNameWithCallsign(p)}</td>
                       
                       <td style="padding: 10px 12px;">
                         <span style="background: ${h.bgLight}; color: ${h.color}; border: 1px solid ${h.borderColor}; padding: 2px 8px; border-radius: 3px; font-size: 0.72rem; font-weight: 700; font-family: monospace;">
@@ -4031,6 +4306,17 @@ window.exitPupilPreview = function () {
   renderChessHubView();
 };
 
+window.toggleProjectorMode = function () {
+  chessState.projectorMode = !chessState.projectorMode;
+  renderChessHubView();
+  showChessToast(
+    chessState.projectorMode
+      ? '📺 Projector Cloak Active: Showing Historical Callsigns only (GDPR Projector Safe)!'
+      : '💻 Teacher View Active: Showing pupil names with callsign badges.',
+    'info',
+  );
+};
+
 window.lockTeacherMode = function () {
   localStorage.removeItem('history_chess_teacher_auth');
   chessState.isPupilPreview = false;
@@ -4229,26 +4515,41 @@ window.handleSelfRegister = function (e) {
     return false;
   }
 
-  // Check if pupil already registered (case-insensitive)
-  const existing = chessState.players.find((p) => p.name.toLowerCase() === name.toLowerCase());
+  // Check if pupil already registered (case-insensitive by realName, name, or nickname)
+  const existing = chessState.players.find(
+    (p) =>
+      (p.realName && p.realName.toLowerCase() === name.toLowerCase()) ||
+      p.name.toLowerCase() === name.toLowerCase() ||
+      (p.nickname && p.nickname.toLowerCase() === name.toLowerCase()),
+  );
 
   if (existing) {
     if (!chessState.checkedInPlayerIds.includes(existing.id)) {
       chessState.checkedInPlayerIds.push(existing.id);
       saveChessState();
       renderChessHubView();
-      showChessToast(`Welcome back, ${existing.name}! Checked in for today.`, 'success');
+      showChessToast(
+        `Welcome back, ${existing.realName || existing.name}! Callsign: "${existing.nickname || existing.name}" checked in.`,
+        'success',
+      );
     } else {
-      showChessToast(`${existing.name} is already checked in for today!`, 'info');
+      showChessToast(
+        `${existing.realName || existing.name} [${existing.nickname || existing.name}] is already checked in for today!`,
+        'info',
+      );
     }
     return false;
   }
 
+  const existingNicks = chessState.players.map((p) => p.nickname || p.name);
+  const nickname = generateHouseThematicNickname(name, house, existingNicks);
   const newId = 'p_' + Date.now();
   const newRank = chessState.players.length + 1;
-  chessState.players.push({
+  const newPlayer = {
     id: newId,
-    name: name,
+    name: nickname,
+    nickname: nickname,
+    realName: name,
     house: house,
     rating: 1000,
     games: 0,
@@ -4256,13 +4557,15 @@ window.handleSelfRegister = function (e) {
     drawn: 0,
     lost: 0,
     rank: newRank,
-  });
+  };
 
+  chessState.players.push(newPlayer);
   chessState.checkedInPlayerIds.push(newId);
+  savePlayerRealName(newId, name);
   saveChessState();
   renderChessHubView();
   showChessToast(
-    `🎉 Registered & checked in ${name} for House ${HOUSES[house]?.name || house}!`,
+    `🎉 Welcome ${name}! Callsign: "${nickname}" (${HOUSES[house]?.name || house})`,
     'success',
   );
 
@@ -7667,7 +7970,7 @@ window.printWeeklyChessSheet = function () {
       (p) => `
     <tr>
       <td style="text-align: center; font-weight: bold;">${p.rank}</td>
-      <td style="font-weight: 600;">${p.name}</td>
+      <td style="font-weight: 600;">${p.name}${p.realName ? ` <span style="font-size: 0.85em; color: #64748b; font-weight: normal;">(${p.realName})</span>` : ''}</td>
       <td style="text-align: center;"></td>
       <td style="text-align: center; text-transform: uppercase; font-size: 11px; font-weight: bold; color: ${HOUSES[p.house]?.color || '#333'};">${HOUSES[p.house]?.name || p.house}</td>
       <td style="text-align: center; width: 60px;">[ &nbsp; ]</td>
@@ -8139,17 +8442,19 @@ window.handleAddPlayerSubmit = function (e) {
   if (e && e.preventDefault) e.preventDefault();
   const rawName = document.getElementById('new-player-name')?.value.trim();
   const name = sanitizePupilName(rawName);
-
-  const house = document.getElementById('new-player-house')?.value;
+  const house = document.getElementById('new-player-house')?.value || 'warrior';
 
   if (!name) return;
 
+  const existingNicks = chessState.players.map((p) => p.nickname || p.name);
+  const nickname = generateHouseThematicNickname(name, house, existingNicks);
   const newId = 'p_' + Date.now();
   const newRank = chessState.players.length + 1;
-  chessState.players.push({
+  const newPlayer = {
     id: newId,
-    name: name,
-    year: year,
+    name: nickname,
+    nickname: nickname,
+    realName: name,
     house: house,
     rating: 1000,
     games: 0,
@@ -8157,14 +8462,16 @@ window.handleAddPlayerSubmit = function (e) {
     drawn: 0,
     lost: 0,
     rank: newRank,
-  });
+  };
 
+  chessState.players.push(newPlayer);
   chessState.checkedInPlayerIds.push(newId);
+  savePlayerRealName(newId, name);
   saveChessState();
   window.closeChessModal();
   renderChessHubView();
   showChessToast(
-    `🎉 Added & checked in ${name} for House ${HOUSES[house]?.name || house}!`,
+    `🎉 Added ${name} with Callsign "${nickname}" (${HOUSES[house]?.name || house})!`,
     'success',
   );
 };

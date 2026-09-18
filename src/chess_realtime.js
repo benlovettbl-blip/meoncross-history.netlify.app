@@ -64,10 +64,61 @@ export async function broadcastStateToCloud(chessState, showToast = false) {
       updateSyncStatusUI();
 
       try {
+        const nicknameMap = {};
+        (chessState.players || []).forEach((p) => {
+          const nick = p.nickname || p.name;
+          nicknameMap[p.id] = nick;
+          if (p.realName) nicknameMap[p.realName] = nick;
+          nicknameMap[p.name] = nick;
+        });
+
+        // Strict GDPR Cloak: Strip realName and year; force name to be nickname
+        const cloakedPlayers = (chessState.players || []).map((p) => {
+          const { realName, year, ...rest } = p;
+          const nick = p.nickname || p.name;
+          return {
+            ...rest,
+            name: nick,
+            nickname: nick,
+          };
+        });
+
+        // Cloak player names in matches
+        const cloakedMatches = (chessState.matches || []).map((m) => {
+          return {
+            ...m,
+            white: nicknameMap[m.white] || m.white,
+            black: nicknameMap[m.black] || m.black,
+          };
+        });
+
+        // Cloak active pairings if any
+        const cloakedPairings = (chessState.activePairings || []).map((pair) => {
+          const p1 = pair.p1
+            ? {
+                ...pair.p1,
+                name: nicknameMap[pair.p1.id] || pair.p1.nickname || pair.p1.name,
+                realName: undefined,
+              }
+            : null;
+          const p2 = pair.p2
+            ? {
+                ...pair.p2,
+                name: nicknameMap[pair.p2.id] || pair.p2.nickname || pair.p2.name,
+                realName: undefined,
+              }
+            : null;
+          return {
+            ...pair,
+            p1,
+            p2,
+          };
+        });
+
         const payload = {
-          players: chessState.players || [],
-          matches: chessState.matches || [],
-          activePairings: chessState.activePairings || [],
+          players: cloakedPlayers,
+          matches: cloakedMatches,
+          activePairings: cloakedPairings,
           checkedInPlayerIds: chessState.checkedInPlayerIds || [],
           sessionTimeRemaining: chessState.sessionTimeRemaining,
           sessionActive: chessState.sessionActive,
