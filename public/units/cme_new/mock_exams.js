@@ -94,7 +94,7 @@ export const mock_exams = [
       },
       {
         num: '1 (b)',
-        text: 'Explain one consequence of US involvement in the Gulf War, 1991, for the PLO.',
+        text: 'Explain one consequence of US involvement in the Gulf War (1991).',
         marks: 4,
         lines: 12,
       },
@@ -210,7 +210,7 @@ export const mock_exams = [
     questions: [
       {
         num: '1 (a)',
-        text: 'Explain one consequence of the Cairo Conference (1964) for the Palestinian nationalist movement.',
+        text: 'Explain one consequence of the Cairo Conference (1964).',
         marks: 4,
         lines: 12,
       },

@@ -417,7 +417,7 @@ function generateInvigilatorHud(unit, msUrl) {
     })
     .join('\n            ');
 
-  return `  <!-- Top Docked Invigilator Toolbar (Interactive Screen Mode) -->
+  return `<!-- Top Docked Invigilator Toolbar (Interactive Screen Mode) -->
   <div class="invigilator-hud no-print" style="position: sticky; top: 0; z-index: 9999; background: #0f172a; color: #ffffff; border-bottom: 3px solid #3b82f6; padding: 8px 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); font-family: 'Open Sans', Arial, sans-serif;">
     <!-- Left: Clock & Status -->
     <div style="display: flex; align-items: center; gap: 14px;">
@@ -839,10 +839,10 @@ const buttonCss = `
 `;
 
 function injectButtonStyles(content) {
-  if (content.includes('.btn-time-question')) {
-    content = content.replace(
-      /\/\* Question-Anchor Quick Launch Button Styles \*\/[\s\S]*?@media print\s*\{[\s\S]*?\.btn-time-question[^\}]*\}\s*\}/gi,
-      '',
+  if (content.includes('/* Question-Anchor Quick Launch Button Styles */')) {
+    return content.replace(
+      /(?:\n\s*){2,}\/\* Question-Anchor Quick Launch Button Styles \*\//g,
+      '\n    /* Question-Anchor Quick Launch Button Styles */',
     );
   }
   return content.replace(/<\/style>/i, `${buttonCss}\n  </style>`);
@@ -889,7 +889,7 @@ function makeTimeQuestionButton(marks, label, unitId) {
 function injectQuestionTimeButtons(content, unitId) {
   // Strip any previous buttons for clean idempotency
   content = content.replace(
-    /<button[^>]*class=["'][^"']*btn-time-question[^"']*["'][^>]*>[\s\S]*?<\/button>/gi,
+    /\s*<button[^>]*class=["'][^"']*btn-time-question[^"']*["'][^>]*>[\s\S]*?<\/button>/gi,
     '',
   );
 
@@ -927,15 +927,18 @@ function injectQuestionTimeButtons(content, unitId) {
           lbl = 'Choice: 8 Marks (14m)';
         }
         const btn = ` <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, ${mins}, '${lbl}')" title="Lock timer to ${mins}m and start immediately">⏱ Time this question (${mins}m)</button>`;
-        return `${p1}(${marks})${btn}${p2}`;
+        return `${p1.trimEnd()}(${marks})${btn} </span>`;
       },
     );
 
     // Question 3 total:
-    content = content.replace(/(\(Total for Question 3 = 16 marks\))/g, (match, p1) => {
-      const btn = ` <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 28, 'Question 3: Both Choices (28m)')" title="Lock timer to 28m and start immediately">⏱ Time Question 3 (28m)</button>`;
-      return `${p1}${btn}`;
-    });
+    content = content.replace(
+      /(\(Total for Question 3 = 16 marks\))(?:\s*<button[^>]*class=["'][^"']*btn-time-question[^"']*["'][^>]*>[\s\S]*?<\/button>)?/g,
+      (match, p1) => {
+        const btn = ` <button type="button" class="btn-time-question no-print" onclick="window.timeThisQuestion(this, 28, 'Question 3: Both Choices (28m)')" title="Lock timer to 28m and start immediately">⏱ Time Question 3 (28m)</button>`;
+        return `${p1.trimEnd()}${btn}`;
+      },
+    );
   }
 
   if (unitId === 'eee') {
@@ -948,15 +951,15 @@ function injectQuestionTimeButtons(content, unitId) {
         if (m === 2) label = '2-Mark Feature (3m)';
         else if (m === 12) label = '12-Mark Causation (18m)';
         const btn = makeTimeQuestionButton(marks, label, unitId);
-        return `${p1}(${marks})${btn}${p2}`;
+        return `${p1.trimEnd()}(${marks})${btn} </span>`;
       },
     );
     // Question 3 and 4 in Total for Question X = 16 marks
     content = content.replace(
-      /(\(Total for Question (\d+) = (16) marks\))/g,
+      /(\(Total for Question (\d+) = (16) marks\))(?:\s*<button[^>]*class=["'][^"']*btn-time-question[^"']*["'][^>]*>[\s\S]*?<\/button>)?/g,
       (match, p1, qNum, marks) => {
         const btn = makeTimeQuestionButton(marks, `Question ${qNum} (25m)`, unitId);
-        return `${p1}${btn}`;
+        return `${p1.trimEnd()}${btn}`;
       },
     );
   }
@@ -1053,23 +1056,32 @@ function replaceOrInjectHud(content, hudHtml) {
     }
 
     if (endIdx !== -1 && startIdx !== -1) {
-      return content.substring(0, startIdx) + hudHtml + content.substring(endIdx);
+      return (
+        content.substring(0, startIdx).trimEnd() +
+        '\n  ' +
+        hudHtml.trim() +
+        '\n' +
+        content.substring(endIdx).trimStart()
+      );
     }
   }
 
   // Fallback if not found: insert after <body>
-  return content.replace(/<body[^>]*>/i, (match) => `${match}\n${hudHtml}`);
+  return content.replace(/<body[^>]*>/i, (match) => `${match}\n  ${hudHtml.trim()}`);
 }
 
 function replaceOrInjectTimerScript(content, scriptHtml) {
-  content = content.replace(/<!-- Invigilator HUD Live Timer Engine -->[\s\S]*?<\/script>/gi, '');
   content = content.replace(
-    /<!-- Pearson Invigilator HUD Live Timer Engine -->[\s\S]*?<\/script>/gi,
+    /\s*<!-- Invigilator HUD Live Timer Engine -->[\s\S]*?<\/script>/gi,
     '',
   );
-  content = content.replace(/<script src="[^"]*exam_timer\.js"><\/script>\s*/gi, '');
+  content = content.replace(
+    /\s*<!-- Pearson Invigilator HUD Live Timer Engine -->[\s\S]*?<\/script>/gi,
+    '',
+  );
+  content = content.replace(/\s*<script src="[^"]*exam_timer\.js"><\/script>\s*/gi, '');
 
-  return content.replace(/<\/body>/i, `${scriptHtml}\n</body>`);
+  return content.replace(/<\/body>/i, `\n  ${scriptHtml.trim()}\n</body>`);
 }
 
 function generateMinimalMasthead(paperRef) {

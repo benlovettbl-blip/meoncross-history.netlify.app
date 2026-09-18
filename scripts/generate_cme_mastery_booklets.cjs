@@ -437,7 +437,7 @@ const KT_DATA = {
     exam: {
       q1a: {
         num: '1 (a)',
-        stem: 'Explain one consequence of the events of 7 April 1967 for escalating tension between Israel and Syria.',
+        stem: 'Explain one consequence of the events of 7 April 1967.',
         marks: 4,
         provenance: { tag: '★ High-Yield Forecast', type: 'forecast' },
         lines: 9,
@@ -578,7 +578,7 @@ const KT_DATA = {
     depthBank: {
       q4a: {
         num: '4 (a)',
-        stem: 'Explain one consequence of Israel’s raid on Samu (1966) for tension between Israel and Jordan.',
+        stem: 'Explain one consequence of Israel’s raid on Samu (1966).',
         marks: 4,
         provenance: { tag: 'Unexamined Spec Target', type: 'unexamined' },
         lines: 9,
@@ -601,7 +601,7 @@ const KT_DATA = {
       },
       q4b: {
         num: '4 (b)',
-        stem: 'Explain one consequence of the Black September attack at the Munich Olympics (1972) for international attitudes towards the Palestine issue.',
+        stem: 'Explain one consequence of the terrorist attack at the Munich Olympics (1972).',
         marks: 4,
         provenance: { tag: 'Edexcel Specimen', type: 'specimen' },
         lines: 9,
@@ -808,7 +808,7 @@ const KT_DATA = {
       {
         num: 1,
         type: '4m Consequence',
-        q: 'Explain one consequence of the Cairo Conference (1964) for Palestinian nationalism.',
+        q: 'Explain one consequence of the Cairo Conference (1964).',
       },
       {
         num: 2,
@@ -838,7 +838,7 @@ const KT_DATA = {
       {
         num: 7,
         type: '4m Consequence',
-        q: 'Explain one consequence of the Yom Kippur War (1973) for superpower involvement in the Middle East.',
+        q: 'Explain one consequence of the Yom Kippur War (1973).',
       },
     ],
   },
@@ -852,7 +852,7 @@ const KT_DATA = {
     exam: {
       q1a: {
         num: '1 (a)',
-        stem: 'Explain one consequence of the Treaty of Washington (1979) for Egyptian relations with other Arab states.',
+        stem: 'Explain one consequence of the Treaty of Washington (1979).',
         marks: 4,
         provenance: { tag: 'Edexcel June 2018', type: 'past' },
         lines: 9,
@@ -1014,7 +1014,7 @@ const KT_DATA = {
       },
       q4b: {
         num: '4 (b)',
-        stem: 'Explain one consequence of the Oslo II agreement (1995) for Palestinian self-rule in the West Bank.',
+        stem: 'Explain one consequence of the Oslo II agreement (1995).',
         marks: 4,
         provenance: { tag: 'Unexamined Spec Target', type: 'unexamined' },
         lines: 9,
@@ -1243,12 +1243,12 @@ const KT_DATA = {
       {
         num: 5,
         type: '4m Consequence',
-        q: 'Explain one consequence of the First Palestinian Intifada (1987–93) for relations between Israelis and Palestinians.',
+        q: 'Explain one consequence of the First Palestinian Intifada (1987–93).',
       },
       {
         num: 6,
         type: '4m Consequence',
-        q: 'Explain one consequence of US involvement in the Gulf War (1991) for the Middle East peace process.',
+        q: 'Explain one consequence of US involvement in the Gulf War (1991).',
       },
       {
         num: 7,

@@ -1140,8 +1140,7 @@ export const unitData = {
             tariff: '4 marks',
             type: '4-mark',
             marks: 4,
-            question:
-              'Explain one consequence of the Balfour Declaration (1917) for Palestine. (4 marks)',
+            question: 'Explain one consequence of the Balfour Declaration (1917). (4 marks)',
             prompt:
               'Write 1 concise paragraph (approx. 3–4 sentences) using the P-F-C formula: State the consequence clearly (Point), support it with specific historical evidence (Fact), and explain how this directly resulted from the event (Consequence Link).',
             model:
@@ -7289,7 +7288,7 @@ export const unitData = {
         prompt:
           'In Edexcel Paper 2, Question 1 is **always** a 4-mark question: *"Explain one consequence of..."* Spend 3 minutes writing a single PEEL paragraph for today’s topic:',
         options: [
-          'Question: Explain one consequence of the Battle of Karameh (1968) for the Palestinian resistance movement.',
+          'Question: Explain one consequence of the Battle of Karameh (1968).',
           'Structure Requirement: State your Point (1 mark), provide specific historical Evidence [e.g. Fatah recruitment, Arafat prestige] (1 mark), and Explain the consequence (2 marks).',
         ],
         guidance: 'Write with precision. Avoid generic fluff.',
@@ -9308,8 +9307,7 @@ export const unitData = {
             tariff: '4 marks',
             type: '4-mark',
             marks: 4,
-            question:
-              "Explain one consequence of the 1979 Egypt-Israel Peace Treaty for Egypt's position in the Arab world. (4 marks)",
+            question: 'Explain one consequence of the 1979 Egypt-Israel Peace Treaty. (4 marks)',
             prompt:
               'Write 1 concise paragraph (approx. 3–4 sentences) using the P-F-C formula: State the consequence clearly (Point), support it with specific historical evidence (Fact), and explain how this directly resulted from the event (Consequence Link).',
             model:
@@ -12737,7 +12735,7 @@ export const unitData = {
         {
           type: 'consequence_4',
           marks: 4,
-          text: 'Explain one consequence of the Black September crisis in Jordan (1970) for the PLO. (4 marks)',
+          text: 'Explain one consequence of the Black September crisis in Jordan (1970). (4 marks)',
           wagoll:
             'One consequence of the Black September crisis in Jordan in 1970 for the PLO was the **geographical relocation of its central headquarters to Lebanon, establishing a powerful "state-within-a-state" along Israel\'s northern border**. Following their military defeat and expulsion by Jordan\'s army, Yasser Arafat and thousands of PLO fighters established new bases in Beirut and southern Lebanon. **As a direct result of this relocation**, which took advantage of Lebanon\'s weak central government and its large population of 400,000 Palestinian refugees, the region of southern Lebanon became known as **"Fatahland"**. This geographical shift allowed the PLO to rebuild its military infrastructure and launch frequent Katyusha rocket barrages into northern Israel, fundamentally reshaping Israel\'s national security concerns and paving the way for the 1978 and 1982 invasions.',
           structure_strip: {
@@ -12951,7 +12949,7 @@ export const unitData = {
         {
           type: 'consequence_4',
           marks: 4,
-          text: 'Explain one consequence of the Yom Kippur War (1973) for Israeli domestic politics. (4 marks)',
+          text: 'Explain one consequence of the Yom Kippur War (1973). (4 marks)',
           wagoll:
             "**One consequence of the Yom Kippur War for Israeli domestic politics was a profound crisis of public confidence in the political leadership that forced the resignation of Prime Minister Golda Meir and Defense Minister Moshe Dayan**. Because the coordinated Egyptian and Syrian surprise attack caught the country completely unprepared on Yom Kippur, the IDF suffered catastrophic initial losses of men, tanks, and combat aircraft before its reserves could be fully mobilized. **As a direct result of these severe military setbacks and high casualty rates**, the Israeli public was deeply traumatized and blamed the government for complacency and intelligence failures. Consequently, despite Israel's eventual military recovery, the intense political backlash and the findings of the subsequent Agranat Commission of Inquiry forced Golda Meir and Moshe Dayan to step down in 1974, breaking decades of unchallenged Labor Party dominance.",
           structure_strip: {
@@ -13045,7 +13043,7 @@ export const unitData = {
         {
           type: 'consequence_4',
           marks: 4,
-          text: 'Explain one consequence of the 1973–74 Oil Crisis for diplomatic negotiations in the Middle East. (4 marks)',
+          text: 'Explain one consequence of the 1973–74 Oil Crisis. (4 marks)',
           wagoll:
             'One consequence of the 1973–74 Oil Crisis was that it forced the United States to abandon its policy of passive containment and actively intervene as the primary diplomatic mediator in the region**. Following the OPEC oil embargo of October 1973, which quadrupled global crude prices from $3 to $12 a barrel, Western economies plummeted into a severe depression characterized by high inflation and fuel shortages. **As a direct consequence of this economic shock**, the Nixon administration realized that domestic energy security was directly bound to Middle Eastern stability and could not be ignored. This forced the US government to pressure Israel to negotiate, leading US Secretary of State Henry Kissinger to launch his campaign of "shuttle diplomacy" to broker the Sinai I (1974) and Sinai II (1975) military disengagement treaties, which defused the border standoff and allowed the Suez Canal to reopen in June 1975.',
           structure_strip: {
@@ -13092,7 +13090,7 @@ export const unitData = {
         {
           type: 'consequence_4',
           marks: 4,
-          text: "Explain one consequence of the First Palestinian Intifada (1987–93) for Yasser Arafat's PLO. (4 marks)",
+          text: 'Explain one consequence of the First Palestinian Intifada (1987–93). (4 marks)',
           wagoll:
             "One consequence of the First Palestinian Intifada was that it forced Yasser Arafat to dramatically alter PLO strategy and adopt a moderate diplomatic track to avoid being sidelined by grassroots leaders**. Because the December 1987 uprising erupted spontaneously under local popular committees in the occupied territories (the UNLU) and gave rise to radical Islamist rivals like Hamas, Arafat's Tunis-based PLO leadership was initially marginalized. **Consequently, to reclaim the political spotlight and capitalize on growing international sympathy for the Palestinian cause**, Arafat decided to abandon armed struggle. This tactical recalculation culminated in his historic December 1988 speech to the UN in Geneva, where Arafat officially renounced terrorism, accepted UN Resolutions 242 and 338, and recognized Israel's right to exist under a two-state solution.",
           structure_strip: {
