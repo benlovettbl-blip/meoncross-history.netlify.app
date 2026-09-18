@@ -1,2 +1,3 @@
+node scripts/verify_sanitization.cjs
 npm run test:qa
 npx lint-staged

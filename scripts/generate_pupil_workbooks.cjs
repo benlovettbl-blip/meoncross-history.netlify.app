@@ -1345,6 +1345,16 @@ allDirs.forEach((unitId) => {
       img { max-width: 100% !important; object-fit: contain !important;  }
       .source-container {  }
     }
+    /* Commercial School Brand Customizer */
+    [data-department-name]:not([data-department-name=""]):not([data-department-name="The History Department"]):not([data-department-name="History Department"]) .school-brand-target {
+      display: inline-block;
+      font-size: 0 !important;
+    }
+    [data-department-name]:not([data-department-name=""]):not([data-department-name="The History Department"]):not([data-department-name="History Department"]) .school-brand-target::after {
+      content: attr(data-department-name);
+      font-size: 11pt !important;
+      letter-spacing: 2px;
+    }
 </style>
 </head>
 <body>
@@ -1541,8 +1551,8 @@ allDirs.forEach((unitId) => {
     <div class="cover-page" style="page-break-after: always; display: flex; flex-direction: column; justify-content: flex-start; align-items: stretch; padding: 0; height: 95vh; box-sizing: border-box; background: #fff; border: 4px solid #1e293b; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); position: relative;">
       ${heroHtml}
       
-      <div style="background-color: #1e293b; color: #ffffff; padding: 8px 20px; font-size: 11pt; letter-spacing: 2px; text-transform: uppercase; text-align: center; font-weight: bold; width: 100%; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center;">
-        <span style="flex: 1; text-align: center;">The History Portal | History Department</span>
+      <div class="cover-brand-banner" data-department-name="${process.env.SCHOOL_NAME || process.env.DEPARTMENT_NAME || 'The History Department'}" style="background-color: #1e293b; color: #ffffff; padding: 8px 20px; font-size: 11pt; letter-spacing: 2px; text-transform: uppercase; text-align: center; font-weight: bold; width: 100%; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center;">
+        <span style="flex: 1; text-align: center;">The History Portal | <span class="school-brand-target">${process.env.SCHOOL_NAME || process.env.DEPARTMENT_NAME || 'History Department'}</span></span>
         <span style="font-size: 8.5pt; font-weight: 600; letter-spacing: 1px; opacity: 0.9; background: rgba(255,255,255,0.18); padding: 2px 8px; border-radius: 4px; white-space: nowrap;">Edition ${unitData.edition || '2026.1'}</span>
       </div>
       
@@ -4657,6 +4667,15 @@ allDirs.forEach((unitId) => {
     // replaceLines('task-lines');
     // replaceLines('task-lines-large');
     document.querySelectorAll('.dirt-box, .hint-box').forEach(b => b.contentEditable = true);
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const customSchool = params.get('school') || params.get('dept');
+      if (customSchool) {
+        document.querySelectorAll('[data-department-name]').forEach(function(el) {
+          el.setAttribute('data-department-name', customSchool);
+        });
+      }
+    } catch(e) {}
   });
 </script></body></html>`;
 

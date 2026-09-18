@@ -428,6 +428,15 @@ const A5_BOOKLET_CSS = `
     text-transform: uppercase;
     letter-spacing: 0.8px;
   }
+  /* Commercial School Cover Customizer */
+  [data-department-name]:not([data-department-name=""]):not([data-department-name="The History Department"]) .school-brand-target {
+    display: inline-block;
+    font-size: 0;
+  }
+  [data-department-name]:not([data-department-name=""]):not([data-department-name="The History Department"]) .school-brand-target::after {
+    content: attr(data-department-name);
+    font-size: 6.5pt;
+  }
   .cover-header-block {
     text-align: center;
     padding: 4px 6px 3px 6px;
@@ -957,8 +966,8 @@ async function buildHtml() {
   const page1 = `
   <div class="a5-page">
     <div>
-      <div class="cover-banner">
-        <span>The History Revision Hub &bull; The History Department</span>
+      <div class="cover-banner" data-department-name="${process.env.SCHOOL_NAME || process.env.DEPARTMENT_NAME || 'The History Department'}">
+        <span>The History Revision Hub &bull; <span class="school-brand-target">${process.env.SCHOOL_NAME || process.env.DEPARTMENT_NAME || 'The History Department'}</span></span>
         <span>Key Stage 3 Companion</span>
       </div>
       <div class="cover-header-block">
@@ -1592,6 +1601,19 @@ async function buildHtml() {
   ${page10}
   ${page11}
   ${page12}
+  <script>
+    (function() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const customSchool = params.get('school') || params.get('dept');
+        if (customSchool) {
+          document.querySelectorAll('[data-department-name]').forEach(function(el) {
+            el.setAttribute('data-department-name', customSchool);
+          });
+        }
+      } catch(e) {}
+    })();
+  </script>
 </body>
 </html>`;
 }

@@ -95,6 +95,16 @@ function getFileHash(filePath) {
           timeout: 300000,
         });
 
+        // Apply custom school/department branding if specified via environment variables
+        const customSchoolBrand = process.env.SCHOOL_NAME || process.env.DEPARTMENT_NAME;
+        if (customSchoolBrand) {
+          await page.evaluate((brand) => {
+            document.querySelectorAll('[data-department-name]').forEach((el) => {
+              el.setAttribute('data-department-name', brand);
+            });
+          }, customSchoolBrand);
+        }
+
         // Convert all relative image src paths to base64 data URIs so Chromium's
         // file:// security policy cannot block them from rendering in the PDF.
         const htmlDir = path.dirname(htmlPath);

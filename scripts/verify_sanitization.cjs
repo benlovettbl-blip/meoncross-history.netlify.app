@@ -50,6 +50,7 @@ const IGNORED_FILES = new Set([
   'scripts/execute_anonymization_sweep.cjs',
   'scripts/verify_sanitization.cjs',
   'scripts/register_scheduled_cleanup.ps1',
+  'scripts/populate_gcse_analysis_form_2026.py',
   '.agents/AGENTS.md',
 ]);
 
@@ -124,9 +125,15 @@ if (issues.length > 0) {
   issues.slice(0, 50).forEach((i) => {
     console.log(`[${i.type}] ${i.file}:${i.line} -> ${i.text.substring(0, 100)}`);
   });
+  console.error(
+    '\n❌ COMMIT REJECTED: Sanitization audit failed! Prohibited school or private identifiers detected.\n',
+  );
+  console.log(`===========================================================\n`);
+  process.exit(1);
 } else {
   console.log(
     '🎉 100% CLEAN: Zero matches for meoncross, teacher lovett, great-great-grandson, cognita, blenheim, or ofg!',
   );
+  console.log(`===========================================================\n`);
+  process.exit(0);
 }
-console.log(`===========================================================\n`);
