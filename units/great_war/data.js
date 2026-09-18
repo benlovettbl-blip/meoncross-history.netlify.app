@@ -373,6 +373,16 @@ const great_war = {
       video: [
         {
           type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=xfTI_YLapog',
+          title: 'Welcome To Glory & Defeat - Why We Should Remember The Franco-Prussian War',
+          duration: '4 mins 28 secs',
+          viewing_task:
+            'Watch this introductory overview and note down three reasons why the Franco-Prussian War of 1870–71 was a crucial turning point that shaped modern European history and paved the path toward 1914.',
+          model_answer:
+            'The documentary explains that the Franco-Prussian War created the modern German nation-state, destroyed the French Second Empire, led to the traumatic Paris Commune, and ignited decades of bitter French resentment (revanche) that made a future European confrontation virtually inevitable.',
+        },
+        {
+          type: 'youtube',
           url: 'https://www.youtube.com/watch?v=j1Yk0lzV40Q',
           title: 'History Matters: The Franco Prussian War (Short Animated Documentary)',
           duration: '3 mins 49 secs',
@@ -390,17 +400,6 @@ const great_war = {
             'Observe the technological and logistical advantages of the Prussian military (Krupp breech-loading artillery, needle guns, railway mobilization) over the French Imperial Army.',
           model_answer:
             'Prussia utilised rapid railway mobilisation and a professional General Staff under Helmuth von Moltke. Prussian breech-loading Krupp steel artillery heavily outranged French bronze muzzle-loaders, allowing the Prussians to encircle and annihilate French armies at Sedan and Metz despite the superior French Chassepot rifle.',
-        },
-        {
-          type: 'youtube',
-          url: 'https://www.youtube.com/watch?v=xKtSXGisbxU',
-          title:
-            'The World of the Franco-Prussian War – The 19th Century up to 1870 | GLORY & DEFEAT',
-          duration: '13 mins 1 sec',
-          viewing_task:
-            'Examine the broader 19th-century background leading up to 1870. Identify how industrialisation, expanding railway networks, and rising European nationalism created the geopolitical tensions that led directly to the Franco-Prussian War.',
-          model_answer:
-            'The documentary explains that 19th-century industrialisation and modern railway networks radically transformed state power and the speed of military mobilization. Emerging nationalist movements disrupted traditional balances of power, creating intense friction between an established French Empire and a rising, ambitious Prussia that Otto von Bismarck skillfully exploited to spark the conflict of 1870.',
         },
       ],
       sources: [
