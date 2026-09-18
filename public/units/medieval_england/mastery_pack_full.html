@@ -34,12 +34,41 @@
             box-sizing: border-box;
         }
         @media print {
+            @page {
+                size: A4 portrait;
+                margin: 12mm 15mm;
+            }
+            body {
+                background: #fff !important;
+                color: #000 !important;
+                padding: 0 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
             .page {
-                margin: 0;
-                box-shadow: none;
-                width: 100%;
-                min-height: 100%;
-                padding: 0;
+                margin: 0 !important;
+                box-shadow: none !important;
+                width: 100% !important;
+                min-height: 270mm !important;
+                padding: 0 !important;
+                page-break-after: always !important;
+                break-after: page !important;
+            }
+            .page:last-child {
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+            }
+            .screen-vault-toolbar,
+            .leitner-modal-overlay,
+            .vault-screen-controls,
+            .vault-btn-group,
+            .cover-qr-card {
+                /* ensure clean print output */
+            }
+            .screen-vault-toolbar,
+            .leitner-modal-overlay,
+            .vault-screen-controls {
+                display: none !important;
             }
         }
         
@@ -47,12 +76,13 @@
         .cover {
             background-color: var(--brand-dark);
             color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
             align-items: center;
             text-align: center;
             position: relative;
+            box-sizing: border-box !important;
             background-image: url('/images/portchester_keep.jpg'); background-size: cover; background-position: center;
         }
         .cover::after {
@@ -67,8 +97,10 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             height: 100%;
+            min-height: 240mm;
+            box-sizing: border-box;
         }
         .cover h1 {
             font-family: 'Playfair Display', serif;
@@ -162,6 +194,39 @@
             font-weight: 700;
             color: #2563eb;
             word-break: break-all;
+        }
+
+        /* Strategy Page Styling */
+        .strategy {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            box-sizing: border-box !important;
+        }
+        .strategy h1 {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 2.2rem;
+        }
+        .strategy h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            color: var(--brand-dark);
+            margin-top: 14px;
+            margin-bottom: 6px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 4px;
+        }
+        .strategy p, .strategy li {
+            font-size: 1.02rem;
+            line-height: 1.5;
+            color: #334155;
+        }
+        .strategy ul {
+            margin: 6px 0;
+            padding-left: 20px;
         }
 
         /* Screen-Only Mobile Toolbar */
@@ -1724,7 +1789,7 @@
             table-layout: fixed;
         }
         th, td {
-            border: 1px solid #ccc;
+            border: 1.2px solid #475569;
             padding: 8px 10px;
             text-align: left;
             vertical-align: top;
@@ -1745,26 +1810,25 @@
         
         .rag-checkbox {
             width: 12px; height: 12px;
-            border: 1px solid #888;
+            border: 1.5px solid #334155;
             margin: 0 auto;
             background: white;
         }
 
         /* Footer Debrief */
         .debrief {
-            margin-top: auto;
+            margin-top: auto !important;
             border: 2px dashed var(--brand-red);
-            padding: 15px;
+            padding: 14px 18px;
             background: #fff;
-            margin-top: 20px;
         }
         .debrief h3 {
-            margin: 0 0 10px 0;
+            margin: 0 0 8px 0;
             font-family: 'Montserrat', sans-serif;
             color: var(--brand-red);
         }
         .debrief p {
-            margin: 5px 0;
+            margin: 4px 0;
             font-weight: 600;
         }
 
@@ -1772,6 +1836,10 @@
         .vault-page {
             background-color: #fffbc8; /* Pastel yellow */
             position: relative;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            box-sizing: border-box !important;
         }
         .vault-watermark {
             position: absolute;
@@ -1786,6 +1854,10 @@
         .vault-content {
             position: relative;
             z-index: 1;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .vault-page h1 {
             font-family: 'Montserrat', sans-serif;
@@ -1918,20 +1990,29 @@
             }
         }
 
-        /* Tracker Page */
+        /* Tracker Page Flex Distribution */
+        .tracker-page {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            box-sizing: border-box !important;
+        }
         .tracker-page h1 {
             font-family: 'Montserrat', sans-serif;
             text-align: center;
+            margin-top: 5px;
+            margin-bottom: 4px;
         }
         .tracker-table {
             width: 100%;
             table-layout: fixed;
             border-collapse: collapse;
+            margin-bottom: 12px;
         }
         .tracker-table th, .tracker-table td {
-            padding: 15px;
-            font-size: 1.1rem;
-            border: 1px solid #ccc;
+            padding: 16px 12px;
+            font-size: 1.05rem;
+            border: 1.2px solid #cbd5e1;
             text-align: center;
         }
         .tracker-table th {
@@ -2010,9 +2091,34 @@
         }
         .reflection-box {
             border: 2px solid var(--brand-dark);
-            padding: 20px;
-            margin-top: 30px;
-            min-height: 150px;
+            padding: 20px 24px;
+            margin-top: 10px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 240px;
+            background: #fdfdfd;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        .reflection-box h3 {
+            margin-top: 0;
+            font-size: 1.25rem;
+            color: var(--brand-dark);
+            border-bottom: 2px solid var(--brand-dark);
+            padding-bottom: 4px;
+            margin-bottom: 8px;
+        }
+        .reflection-prompt {
+            margin: 8px 0;
+            font-size: 0.98rem;
+        }
+        .reflection-lines {
+            border-bottom: 1.2px dashed #94a3b8;
+            height: 28px;
+            width: 100%;
+            margin-top: 4px;
         }
 
         /* Print Optimization & Vault Answers Guarantee */
@@ -2086,7 +2192,7 @@
                 <p><strong>Operative / Student Name:</strong> ___________________________</p>
                 <p><strong>Target:</strong> Total Recall of 180 Crucial Questions</p>
                 <div class="cover-qr-card">
-                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
+                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
                     <div class="cover-qr-info">
                         <div class="cover-qr-title">⚡ Interactive Recall Quiz &amp; Scratch-Off Vault</div>
                         <div class="cover-qr-desc">Scan with your phone to launch Instant-Feedback Recall Quiz (#practice-mode) &amp; tap-to-reveal self-marking solutions.</div>
@@ -3985,9 +4091,9 @@
     </div>
             
     <!-- The Vault -->
-    <div class="page vault-page page-break vault-bg" id="the-vault">
+    <div class="page vault-page page-break vault-bg page-flex-full" id="the-vault">
         <div class="vault-watermark">🔒</div>
-        <div class="vault-content">
+        <div class="vault-content page-body-stretch">
             <h1>THE VAULT</h1>
             <p class="vault-subtitle">Restricted Access: Answer Keys</p>
             <div class="vault-screen-controls">
@@ -4178,7 +4284,13 @@
                     <div class="answer-num">36.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">French</div>
                 </div>
-                
+                </div>
+        </div>
+    </div>
+    <div class="page vault-page page-break vault-bg page-flex-full">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content page-body-stretch">
+                <div class="answer-list"><h3>Lesson 2: Castles, Terror, and the Domesday Book - How did William control England?</h3>
                 <div class="answer-item">
                     <div class="answer-num">37.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Everything that everyone owned across England</div>
@@ -4198,13 +4310,7 @@
                     <div class="answer-num">40.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">That he retained ultimate ownership and control over all land in England</div>
                 </div>
-                </div>
-        </div>
-    </div>
-    <div class="page vault-page page-break vault-bg">
-        <div class="vault-watermark">🔒</div>
-        <div class="vault-content">
-                <div class="answer-list"><h3>Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?</h3>
+                </div><div class="answer-list"><h3>Lesson 3: Crown vs Church: Why did Henry II clash with Thomas Becket?</h3>
                 <div class="answer-item">
                     <div class="answer-num">41.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">William the Conqueror.</div>
@@ -4364,7 +4470,13 @@
                     <div class="answer-num">72.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">John's failure to inherit significant lands compared to his older brothers</div>
                 </div>
-                
+                </div>
+        </div>
+    </div>
+    <div class="page vault-page page-break vault-bg page-flex-full">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content page-body-stretch">
+                <div class="answer-list"><h3>Lesson 4: Magna Carta (1215): A triumph of liberty or a selfish baronial power grab?</h3>
                 <div class="answer-item">
                     <div class="answer-num">73.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">By imposing massive, arbitrary taxes on the barons</div>
@@ -4404,13 +4516,7 @@
                     <div class="answer-num">80.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">The First Barons' War</div>
                 </div>
-                </div>
-        </div>
-    </div>
-    <div class="page vault-page page-break vault-bg">
-        <div class="vault-watermark">🔒</div>
-        <div class="vault-content">
-                <div class="answer-list"><h3>Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?</h3>
+                </div><div class="answer-list"><h3>Lesson 5: Doom Paintings and Tithes: What was life like in a medieval village?</h3>
                 <div class="answer-item">
                     <div class="answer-num">81.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Over 90%</div>
@@ -4550,7 +4656,13 @@
                     <div class="answer-num">108.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">William the Conqueror.</div>
                 </div>
-                
+                </div>
+        </div>
+    </div>
+    <div class="page vault-page page-break vault-bg page-flex-full">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content page-body-stretch">
+                <div class="answer-list"><h3>Lesson 6: 1348: How did the Black Death shatter medieval social order?</h3>
                 <div class="answer-item">
                     <div class="answer-num">109.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">William's brutal destruction of crops to stop northern rebellions.</div>
@@ -4610,13 +4722,7 @@
                     <div class="answer-num">120.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Because priests were dying just like everyone else, and their prayers hadn't stopped the disease</div>
                 </div>
-                </div>
-        </div>
-    </div>
-    <div class="page vault-page page-break vault-bg">
-        <div class="vault-watermark">🔒</div>
-        <div class="vault-content">
-                <div class="answer-list"><h3>Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?</h3>
+                </div><div class="answer-list"><h3>Lesson 7: 1381: Why did the Peasants revolt, and did they achieve anything?</h3>
                 <div class="answer-item">
                     <div class="answer-num">121.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">1348.</div>
@@ -4736,7 +4842,13 @@
                     <div class="answer-num">144.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">A white rose</div>
                 </div>
-                
+                </div>
+        </div>
+    </div>
+    <div class="page vault-page page-break vault-bg page-flex-full">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content page-body-stretch">
+                <div class="answer-list"><h3>Lesson 8: The Wars of the Roses (1455–1485) - How did the medieval era end in blood?</h3>
                 <div class="answer-item">
                     <div class="answer-num">145.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">King Henry VI was a weak, mentally unstable ruler</div>
@@ -4816,13 +4928,7 @@
                     <div class="answer-num">160.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">The Middle Ages</div>
                 </div>
-                </div>
-        </div>
-    </div>
-    <div class="page vault-page page-break vault-bg">
-        <div class="vault-watermark">🔒</div>
-        <div class="vault-content">
-                <div class="answer-list"><h3>Lesson 9: Assessment: How powerful was a medieval monarch?</h3>
+                </div><div class="answer-list"><h3>Lesson 9: Assessment: How powerful was a medieval monarch?</h3>
                 <div class="answer-item">
                     <div class="answer-num">161.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">The Battle of Hastings</div>
@@ -4927,22 +5033,23 @@
     </div>
     
     <!-- Tracker Page -->
-    <div class="page tracker-page">
-        <h1>Mastery Tracker</h1>
-        <p style="text-align: center; margin-bottom: 30px;">Track your total recall score across all 180 questions.</p>
-        
-        <table class="tracker-table">
-            <thead>
-                <tr>
-                    <th class="col-attempt">Attempt</th>
-                    <th class="col-date">Date</th>
-                    <th class="col-score">Score (/180)</th>
-                    <th class="col-sig">Parent Validation Stamp</th>
-                    <th class="col-target">Target for Next Time</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td><strong>1</strong></td><td></td><td></td><td class="col-sig-cell">
+    <div class="page tracker-page page-flex-full">
+        <div>
+            <h1>Mastery Tracker</h1>
+            <p style="text-align: center; margin-bottom: 16px;">Track your total recall score across all 180 questions.</p>
+            
+            <table class="tracker-table">
+                <thead>
+                    <tr>
+                        <th class="col-attempt">Attempt</th>
+                        <th class="col-date">Date</th>
+                        <th class="col-score">Score (/180)</th>
+                        <th class="col-sig">Parent Validation Stamp</th>
+                        <th class="col-target">Target for Next Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>1</strong></td><td></td><td></td><td class="col-sig-cell">
                         <div class="parent-stamp-box">
                             <div class="stamp-badge">PARENT VALIDATION STAMP</div>
                             <div class="stamp-effort">
@@ -4952,7 +5059,7 @@
                             <div class="stamp-field"><span class="stamp-label">Date:</span><span class="stamp-line"></span></div>
                             <div class="stamp-field"><span class="stamp-label">Signature:</span><span class="stamp-line"></span></div>
                         </div></td><td></td></tr>
-                <tr><td><strong>2</strong></td><td></td><td></td><td class="col-sig-cell">
+                    <tr><td><strong>2</strong></td><td></td><td></td><td class="col-sig-cell">
                         <div class="parent-stamp-box">
                             <div class="stamp-badge">PARENT VALIDATION STAMP</div>
                             <div class="stamp-effort">
@@ -4962,7 +5069,7 @@
                             <div class="stamp-field"><span class="stamp-label">Date:</span><span class="stamp-line"></span></div>
                             <div class="stamp-field"><span class="stamp-label">Signature:</span><span class="stamp-line"></span></div>
                         </div></td><td></td></tr>
-                <tr><td><strong>3</strong></td><td></td><td></td><td class="col-sig-cell">
+                    <tr><td><strong>3</strong></td><td></td><td></td><td class="col-sig-cell">
                         <div class="parent-stamp-box">
                             <div class="stamp-badge">PARENT VALIDATION STAMP</div>
                             <div class="stamp-effort">
@@ -4972,13 +5079,28 @@
                             <div class="stamp-field"><span class="stamp-label">Date:</span><span class="stamp-line"></span></div>
                             <div class="stamp-field"><span class="stamp-label">Signature:</span><span class="stamp-line"></span></div>
                         </div></td><td></td></tr>
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
 
-        <div class="reflection-box">
-            <h3 style="margin-top: 0;">Operative Reflection</h3>
-            <p><strong>My ultimate strength in this unit is...</strong><br><br><br></p>
-            <p><strong>The three specific facts I need to hunt down and memorize tonight are...</strong><br><br><br></p>
+        <div class="reflection-box page-body-stretch">
+            <h3>Operative Reflection</h3>
+            <div class="reflection-prompt">
+                <strong>1. My ultimate strength in this unit is...</strong>
+                <div class="reflection-lines"></div>
+                <div class="reflection-lines"></div>
+            </div>
+            <div class="reflection-prompt">
+                <strong>2. The three specific facts I need to hunt down and memorize tonight are...</strong>
+                <div class="reflection-lines"></div>
+                <div class="reflection-lines"></div>
+                <div class="reflection-lines"></div>
+            </div>
+            <div class="reflection-prompt">
+                <strong>3. Key targets and action steps for the next retrieval attempt:</strong>
+                <div class="reflection-lines"></div>
+                <div class="reflection-lines"></div>
+            </div>
         </div>
     </div>
 

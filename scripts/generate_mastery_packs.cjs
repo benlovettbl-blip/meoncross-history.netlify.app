@@ -322,12 +322,13 @@ const units = fs
         .cover {
             background-color: var(--brand-dark);
             color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
             align-items: center;
             text-align: center;
             position: relative;
+            box-sizing: border-box !important;
             ${bgImage ? `background-image: url('${bgImage}'); background-size: cover; background-position: center;` : ''}
         }
         .cover::after {
@@ -342,8 +343,10 @@ const units = fs
             width: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             height: 100%;
+            min-height: 240mm;
+            box-sizing: border-box;
         }
         .cover h1 {
             font-family: 'Playfair Display', serif;
@@ -437,6 +440,39 @@ const units = fs
             font-weight: 700;
             color: #2563eb;
             word-break: break-all;
+        }
+
+        /* Strategy Page Styling */
+        .strategy {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            box-sizing: border-box !important;
+        }
+        .strategy h1 {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 2.2rem;
+        }
+        .strategy h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            color: var(--brand-dark);
+            margin-top: 14px;
+            margin-bottom: 6px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 4px;
+        }
+        .strategy p, .strategy li {
+            font-size: 1.02rem;
+            line-height: 1.5;
+            color: #334155;
+        }
+        .strategy ul {
+            margin: 6px 0;
+            padding-left: 20px;
         }
 
         /* Screen-Only Mobile Toolbar */
@@ -2027,19 +2063,18 @@ const units = fs
 
         /* Footer Debrief */
         .debrief {
-            margin-top: auto;
+            margin-top: auto !important;
             border: 2px dashed var(--brand-red);
-            padding: 15px;
+            padding: 14px 18px;
             background: #fff;
-            margin-top: 20px;
         }
         .debrief h3 {
-            margin: 0 0 10px 0;
+            margin: 0 0 8px 0;
             font-family: 'Montserrat', sans-serif;
             color: var(--brand-red);
         }
         .debrief p {
-            margin: 5px 0;
+            margin: 4px 0;
             font-weight: 600;
         }
 
@@ -2047,6 +2082,10 @@ const units = fs
         .vault-page {
             background-color: #fffbc8; /* Pastel yellow */
             position: relative;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            box-sizing: border-box !important;
         }
         .vault-watermark {
             position: absolute;
@@ -2061,6 +2100,10 @@ const units = fs
         .vault-content {
             position: relative;
             z-index: 1;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .vault-page h1 {
             font-family: 'Montserrat', sans-serif;
@@ -2193,20 +2236,29 @@ const units = fs
             }
         }
 
-        /* Tracker Page */
+        /* Tracker Page Flex Distribution */
+        .tracker-page {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            box-sizing: border-box !important;
+        }
         .tracker-page h1 {
             font-family: 'Montserrat', sans-serif;
             text-align: center;
+            margin-top: 5px;
+            margin-bottom: 4px;
         }
         .tracker-table {
             width: 100%;
             table-layout: fixed;
             border-collapse: collapse;
+            margin-bottom: 12px;
         }
         .tracker-table th, .tracker-table td {
-            padding: 15px;
-            font-size: 1.1rem;
-            border: 1px solid #ccc;
+            padding: 16px 12px;
+            font-size: 1.05rem;
+            border: 1.2px solid #cbd5e1;
             text-align: center;
         }
         .tracker-table th {
@@ -2285,9 +2337,34 @@ const units = fs
         }
         .reflection-box {
             border: 2px solid var(--brand-dark);
-            padding: 20px;
-            margin-top: 30px;
-            min-height: 150px;
+            padding: 20px 24px;
+            margin-top: 10px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 240px;
+            background: #fdfdfd;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        .reflection-box h3 {
+            margin-top: 0;
+            font-size: 1.25rem;
+            color: var(--brand-dark);
+            border-bottom: 2px solid var(--brand-dark);
+            padding-bottom: 4px;
+            margin-bottom: 8px;
+        }
+        .reflection-prompt {
+            margin: 8px 0;
+            font-size: 0.98rem;
+        }
+        .reflection-lines {
+            border-bottom: 1.2px dashed #94a3b8;
+            height: 28px;
+            width: 100%;
+            margin-top: 4px;
         }
 
         /* Print Optimization & Vault Answers Guarantee */
@@ -2454,9 +2531,9 @@ const units = fs
         // The Vault (Answers)
         html += `
     <!-- The Vault -->
-    <div class="page vault-page page-break vault-bg" id="the-vault">
+    <div class="page vault-page page-break vault-bg page-flex-full" id="the-vault">
         <div class="vault-watermark">🔒</div>
-        <div class="vault-content">
+        <div class="vault-content page-body-stretch">
             <h1>THE VAULT</h1>
             <p class="vault-subtitle">Restricted Access: Answer Keys</p>
             <div class="vault-screen-controls">
@@ -2470,29 +2547,33 @@ const units = fs
         `;
 
         globalQNum = 1;
-        // Group answers by page/lesson for The Vault
-        // 40 answers per page fits nicely
-        let vaultPages = [];
-        let currentVaultPage = [];
+        let allVaultQuestions = [];
         pages.forEach((p) => {
           p.questions.forEach((q) => {
-            if (currentVaultPage.length === 40) {
-              vaultPages.push(currentVaultPage);
-              currentVaultPage = [];
-            }
-            currentVaultPage.push({ num: globalQNum++, a: q.a, title: p.title });
+            allVaultQuestions.push({ num: globalQNum++, a: q.a, title: p.title });
           });
         });
-        if (currentVaultPage.length > 0) vaultPages.push(currentVaultPage);
+
+        // Determine optimal vault page count and balanced distribution
+        // Max 36 questions per page for clean vertical pacing
+        const maxPerVaultPage = 36;
+        const totalVaultQ = allVaultQuestions.length;
+        const numVaultPages = Math.max(1, Math.ceil(totalVaultQ / maxPerVaultPage));
+        const balancedPerPage = Math.ceil(totalVaultQ / numVaultPages);
+
+        let vaultPages = [];
+        for (let i = 0; i < totalVaultQ; i += balancedPerPage) {
+          vaultPages.push(allVaultQuestions.slice(i, i + balancedPerPage));
+        }
 
         vaultPages.forEach((vp, vIndex) => {
           if (vIndex > 0) {
             html += `
         </div>
     </div>
-    <div class="page vault-page page-break vault-bg">
+    <div class="page vault-page page-break vault-bg page-flex-full">
         <div class="vault-watermark">🔒</div>
-        <div class="vault-content">
+        <div class="vault-content page-body-stretch">
                 `;
           }
           let currentTitle = '';
@@ -2531,31 +2612,47 @@ const units = fs
         // Tracker Page
         html += `
     <!-- Tracker Page -->
-    <div class="page tracker-page">
-        <h1>Mastery Tracker</h1>
-        <p style="text-align: center; margin-bottom: 30px;">Track your total recall score across all ${questions.length} questions.</p>
-        
-        <table class="tracker-table">
-            <thead>
-                <tr>
-                    <th class="col-attempt">Attempt</th>
-                    <th class="col-date">Date</th>
-                    <th class="col-score">Score (/${questions.length})</th>
-                    <th class="col-sig">Parent Validation Stamp</th>
-                    <th class="col-target">Target for Next Time</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td><strong>1</strong></td><td></td><td></td><td class="col-sig-cell">${stampBoxHtml}</td><td></td></tr>
-                <tr><td><strong>2</strong></td><td></td><td></td><td class="col-sig-cell">${stampBoxHtml}</td><td></td></tr>
-                <tr><td><strong>3</strong></td><td></td><td></td><td class="col-sig-cell">${stampBoxHtml}</td><td></td></tr>
-            </tbody>
-        </table>
+    <div class="page tracker-page page-flex-full">
+        <div>
+            <h1>Mastery Tracker</h1>
+            <p style="text-align: center; margin-bottom: 16px;">Track your total recall score across all ${questions.length} questions.</p>
+            
+            <table class="tracker-table">
+                <thead>
+                    <tr>
+                        <th class="col-attempt">Attempt</th>
+                        <th class="col-date">Date</th>
+                        <th class="col-score">Score (/${questions.length})</th>
+                        <th class="col-sig">Parent Validation Stamp</th>
+                        <th class="col-target">Target for Next Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>1</strong></td><td></td><td></td><td class="col-sig-cell">${stampBoxHtml}</td><td></td></tr>
+                    <tr><td><strong>2</strong></td><td></td><td></td><td class="col-sig-cell">${stampBoxHtml}</td><td></td></tr>
+                    <tr><td><strong>3</strong></td><td></td><td></td><td class="col-sig-cell">${stampBoxHtml}</td><td></td></tr>
+                </tbody>
+            </table>
+        </div>
 
-        <div class="reflection-box">
-            <h3 style="margin-top: 0;">Operative Reflection</h3>
-            <p><strong>My ultimate strength in this unit is...</strong><br><br><br></p>
-            <p><strong>The three specific facts I need to hunt down and memorize tonight are...</strong><br><br><br></p>
+        <div class="reflection-box page-body-stretch">
+            <h3>Operative Reflection</h3>
+            <div class="reflection-prompt">
+                <strong>1. My ultimate strength in this unit is...</strong>
+                <div class="reflection-lines"></div>
+                <div class="reflection-lines"></div>
+            </div>
+            <div class="reflection-prompt">
+                <strong>2. The three specific facts I need to hunt down and memorize tonight are...</strong>
+                <div class="reflection-lines"></div>
+                <div class="reflection-lines"></div>
+                <div class="reflection-lines"></div>
+            </div>
+            <div class="reflection-prompt">
+                <strong>3. Key targets and action steps for the next retrieval attempt:</strong>
+                <div class="reflection-lines"></div>
+                <div class="reflection-lines"></div>
+            </div>
         </div>
     </div>
 

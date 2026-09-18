@@ -76,12 +76,13 @@
         .cover {
             background-color: var(--brand-dark);
             color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
             align-items: center;
             text-align: center;
             position: relative;
+            box-sizing: border-box !important;
             background-image: url('./assets/sources/airborne-little-rock-patrol.jpg'); background-size: cover; background-position: center;
         }
         .cover::after {
@@ -96,8 +97,10 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             height: 100%;
+            min-height: 240mm;
+            box-sizing: border-box;
         }
         .cover h1 {
             font-family: 'Playfair Display', serif;
@@ -191,6 +194,39 @@
             font-weight: 700;
             color: #2563eb;
             word-break: break-all;
+        }
+
+        /* Strategy Page Styling */
+        .strategy {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            box-sizing: border-box !important;
+        }
+        .strategy h1 {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 2.2rem;
+        }
+        .strategy h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            color: var(--brand-dark);
+            margin-top: 14px;
+            margin-bottom: 6px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 4px;
+        }
+        .strategy p, .strategy li {
+            font-size: 1.02rem;
+            line-height: 1.5;
+            color: #334155;
+        }
+        .strategy ul {
+            margin: 6px 0;
+            padding-left: 20px;
         }
 
         /* Screen-Only Mobile Toolbar */
@@ -1781,19 +1817,18 @@
 
         /* Footer Debrief */
         .debrief {
-            margin-top: auto;
+            margin-top: auto !important;
             border: 2px dashed var(--brand-red);
-            padding: 15px;
+            padding: 14px 18px;
             background: #fff;
-            margin-top: 20px;
         }
         .debrief h3 {
-            margin: 0 0 10px 0;
+            margin: 0 0 8px 0;
             font-family: 'Montserrat', sans-serif;
             color: var(--brand-red);
         }
         .debrief p {
-            margin: 5px 0;
+            margin: 4px 0;
             font-weight: 600;
         }
 
@@ -1801,6 +1836,10 @@
         .vault-page {
             background-color: #fffbc8; /* Pastel yellow */
             position: relative;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            box-sizing: border-box !important;
         }
         .vault-watermark {
             position: absolute;
@@ -1815,6 +1854,10 @@
         .vault-content {
             position: relative;
             z-index: 1;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .vault-page h1 {
             font-family: 'Montserrat', sans-serif;
@@ -1947,20 +1990,29 @@
             }
         }
 
-        /* Tracker Page */
+        /* Tracker Page Flex Distribution */
+        .tracker-page {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            box-sizing: border-box !important;
+        }
         .tracker-page h1 {
             font-family: 'Montserrat', sans-serif;
             text-align: center;
+            margin-top: 5px;
+            margin-bottom: 4px;
         }
         .tracker-table {
             width: 100%;
             table-layout: fixed;
             border-collapse: collapse;
+            margin-bottom: 12px;
         }
         .tracker-table th, .tracker-table td {
-            padding: 15px;
-            font-size: 1.1rem;
-            border: 1px solid #ccc;
+            padding: 16px 12px;
+            font-size: 1.05rem;
+            border: 1.2px solid #cbd5e1;
             text-align: center;
         }
         .tracker-table th {
@@ -2039,9 +2091,34 @@
         }
         .reflection-box {
             border: 2px solid var(--brand-dark);
-            padding: 20px;
-            margin-top: 30px;
-            min-height: 150px;
+            padding: 20px 24px;
+            margin-top: 10px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 240px;
+            background: #fdfdfd;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        .reflection-box h3 {
+            margin-top: 0;
+            font-size: 1.25rem;
+            color: var(--brand-dark);
+            border-bottom: 2px solid var(--brand-dark);
+            padding-bottom: 4px;
+            margin-bottom: 8px;
+        }
+        .reflection-prompt {
+            margin: 8px 0;
+            font-size: 0.98rem;
+        }
+        .reflection-lines {
+            border-bottom: 1.2px dashed #94a3b8;
+            height: 28px;
+            width: 100%;
+            margin-top: 4px;
         }
 
         /* Print Optimization & Vault Answers Guarantee */
@@ -2115,7 +2192,7 @@
                 <p><strong>Operative / Student Name:</strong> ___________________________</p>
                 <p><strong>Target:</strong> Total Recall of 320 Crucial Questions</p>
                 <div class="cover-qr-card">
-                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAYAAACHjumMAAAAAklEQVR4AewaftIAAA0gSURBVO3BAZFcOwxFwRPX8BAQ4RIK4RIQIckPADtV3nqa2f253b9+/4GIyICFiMiQhYjIkIWIyJCFiMiQhYjIkIWIyJAXf2Ge/ERdwY55ctIV7JgnJ13BU8yT76orODFPdrqCE/Pkp+kKbpknJ13BjnnyE3UFOwsRkSELEZEhCxGRIQsRkSELEZEhCxGRIS++qCv4JPPkSebJTldwYp7c6gqe0hXcMk9OuoId8+SkK3hKV3Binux0BbfMk5OuYMc8OekKdrqCJ3UFn2Se3FqIiAxZiIgMWYiIDFmIiAxZiIgMefEw8+RJXcFTuoIT82THPLnVFZyYJ7e6glvmyU5XcGKevENXsGOenHQFt8yTdzBPdrqCdzBPntQVPGUhIjJkISIyZCEiMmQhIjJkISIyZCEiMuTFP8Q8OekKnmKenHQF79AVPKUrODFPdrqCE/Nkpyu4ZZ6cdAW3zJOdruDEPNkxT066gn/BQkRkyEJEZMhCRGTIQkRkyEJEZMiLf0hXcMs8OekKbpknO13BLfPkpCt4inlyyzw56Qp2zJMnmSc7XcE7dAX/uoWIyJCFiMiQhYjIkIWIyJCFiMiQhYjIkBcP6wr+T7qCTzNPvquuYMc8eYeu4EldwY55css8OekKntIVfFcLEZEhCxGRIQsRkSELEZEhCxGRIS++yDz5acyTk65gxzw56QpudQU75slJV7BjntwyT066gh3z5NO6gh3z5KQr2DFPTrqCW13BjnnyJPPkp1mIiAxZiIgMWYiIDFmIiAxZiIgMWYiIDHnxF13Bv8I8+a7Mk52u4MQ8uWWe/DRdwa2u4MQ82ekKbnUFt7qC/5OFiMiQhYjIkIWIyJCFiMiQhYjIkBd/YZ6cdAU75smtruDEPHlKV3Binux0Bbe6gid1BZ/UFZyYJ7fMk6eYJ+9gnjypK9gxT066glvmyU5XcGKe3OoKdhYiIkMWIiJDFiIiQxYiIkMWIiJDFiIiQ178RVfwDubJra7gxDy51RXcMk+e0hWcmCdP6QpOzJMd8+RWV3Binux0BSfmya2uYMc8OekKdsyTTzNPbnUFO+bJOyxERIYsRESGLEREhixERIYsRESGvPgi8+QduoId8+SWeXLSFeyYJ7e6ghPz5FZXsGOenHQFO+bJSVewY56cdAU75sk7dAW3uoIT8+RWV/CUruCWefIOXcGthYjIkIWIyJCFiMiQhYjIkIWIyJCFiMiQF39hnpx0BZ/UFZyYJztdwa2u4JZ5css8OekKdrqC76orODFPPsk8OekKnmKe3OoKbnUFt7qCE/Nkxzw56Qp2FiIiQxYiIkMWIiJDFiIiQxYiIkN+/f6DDzNPTrqCHfPkJ+oKdsyTd+gKbpknJ13Bjnly0hXsmCdP6gp2zJNbXcGJebLTFXyaefKUruDWQkRkyEJEZMhCRGTIQkRkyEJEZMhCRGTIi78wTz7NPNnpCk7Mk52u4MQ82ekKTsyTna7gxDzZ6QqeZJ7smCcnXcEt82SnKzgxTz6pK/iuzJOTruApXcEt8+SkK9hZiIgMWYiIDFmIiAxZiIgMWYiIDHnxRV3BU8yTk65gxzy5ZZ6cdAU75slJV7BjnjzJPNnpCm51BSfmySd1BbfMkyeZJ08xT066glvmyU5XcMs8OekKnrIQERmyEBEZshARGbIQERmyEBEZshARGfLih+oKbpknTzJPnmKenHQFt7qCW13BLfPkuzJPdrqCk67gKebJO5gnJ13BU7qCWwsRkSELEZEhCxGRIQsRkSELEZEhL/6iK7hlntzqCm6ZJ7e6gnfoCk7Mk52u4B3Mk5OuYMc8uWWenHQFt8yTna7gHcyTW13Bra7glnnyXS1ERIYsRESGLEREhixERIYsRESGLEREhrz4C/PkSV3BLfNkpyu4ZZ6cdAU7XcGJebJjnpx0BTvmyUlX8H9inryDebLTFTypK9gxT251BSfmyU5XcMs8OekKnrIQERmyEBEZshARGbIQERmyEBEZ8uKLuoId8+QdzJNP6wrewTy51RW8Q1ewY56cdAU75slJV/AU8+SkK9jpCm51BSfmya2uYMc8+a4WIiJDFiIiQxYiIkMWIiJDFiIiQxYiIkNefJF5stMV3DJPbnUFTzJPntIV3OoKTsyTW+bJU7qCE/Nkpys4MU8+qSs4MU92uoIT8+RWV7BjntzqCk7Mk1vmya2uYGchIjJkISIyZCEiMmQhIjJkISIy5NfvP3iQeXLSFTzFPLnVFdwyT066gh3z5KQr2DFPTrqCTzJPTrqCW+bJTldwYp7sdAVPMk+e0hXcMk9OuoId8+QduoJbCxGRIQsRkSELEZEhCxGRIQsRkSELEZEhv37/wReYJztdwYl5stMVnJgnO13BLfPkSV3BLfPkKV3Bk8yTW13BLfPkVlewY56cdAU75sm/oiu4ZZ7c6gp2FiIiQxYiIkMWIiJDFiIiQxYiIkN+/f6DNzFP/gVdwS3z5KQr+CTz5KQr2DFPbnUFJ+bJra7glnmy0xXcMk9udQVPMk92uoIT82SnK7i1EBEZshARGbIQERmyEBEZshARGbIQERny4ovMk1tdwSeZJ/8n5slJV7BjnrxDV/Bp5slOV3DSFbxDV7Bjnpx0BTvmyUlX8EkLEZEhCxGRIQsRkSELEZEhCxGRIS++qCvYMU9umScnXcGOeXLSFdzqCnbMkyeZJ7fMk1vmyU5XcMs8uWWenHQF35V5stMVnJgnO13Bra7gxDzZ6QpOzJOnmCcnXcHOQkRkyEJEZMhCRGTIQkRkyEJEZMhCRGTIizcyT57SFZyYJ7fMk52u4MQ82TFPntQV7JgnTzJPdrqCE/PkKebJSVdwyzzZMU9OuoKnmCcnXcGOeXLSFbxDV7BjntxaiIgMWYiIDFmIiAxZiIgMWYiIDPn1+w8OzJOTruCWefJJXcGJebLTFZyYJ7e6gk8yT96hK7hlntzqCt7BPPmuuoIT82SnKzgxT251BTsLEZEhCxGRIQsRkSELEZEhCxGRIQsRkSEvvsg8eUpX8A7myUlXsGOenHQFt8yTna7gHbqCW+bJk8yTna7glnnypK7gHbqCp5gn39VCRGTIQkRkyEJEZMhCRGTIQkRkyIsv6gqeYp58mnnyFPPklnnypK5gxzw56QqeYp6cdAU75smtruDEPNnpCuSsK3jKQkRkyEJEZMhCRGTIQkRkyEJEZMhCRGTIr99/8AXmyU5X8CTzZKcrODFPdrqCW+bJra7gxDzZ6QpumScnXcGOefJpXcEt8+RWV/BJ5slJV3DLPNnpCm6ZJyddwVMWIiJDFiIiQxYiIkMWIiJDFiIiQ178hXly0hXsmCcnXcGtrmDHPPm0ruBWV7BjntzqCt6hKzgxT3a6gv8T8+SkK7hlntzqCnbMk1tdwTssRESGLEREhixERIYsRESGLEREhixERIb8+v0H/zPmyTt0BTvmyUlXsGOevENXcGKe7HQFTzJPdrqCW+bJO3QF72Ce/ERdwc5CRGTIQkRkyEJEZMhCRGTIQkRkyK/ff/AF5sk7dAU75slJV7BjnnxXXcGJebLTFZyYJ7e6glvmyU5X8A7myad1BTvmyU/UFeyYJyddwc5CRGTIQkRkyEJEZMhCRGTIQkRkyEJEZMiv33/wjzBPTrqCp5gnT+oKdsyTW13BiXnySV3BiXlyqyvYMU9OuoId8+RJXcFTzJNP6wp2FiIiQxYiIkMWIiJDFiIiQxYiIkNe/IV58hN1BU8xT066gp2u4JZ5cmKe7HQFt8yTk65gxzw56QpumSc75smtruBJ5sknmScnXcEndQW3FiIiQxYiIkMWIiJDFiIiQxYiIkMWIiJDXnxRV/BJ5sm/oiu4ZZ7sdAUn5sk7dAU75slJV/AOXcGOeXLSFeyYJ7e6gid1BbfMkx3z5KQr2FmIiAxZiIgMWYiIDFmIiAxZiIgMefEw8+RJXcFTuoIT82SnK7hlnpx0BTtdwS3z5KQruNUV7JgnJ+bJTldwqyu4ZZ7c6go+zTz5JPPkHRYiIkMWIiJDFiIiQxYiIkMWIiJDFiIiQ178Q8yTW+bJSVfwFPPkVlfwJPNkpyu4ZZ6cdAU75slJV/AU8+RWV3BintzqCp5inpyYJ0/pCm4tRESGLEREhixERIYsRESGLEREhryQLzNPdrqCW13Bk8yTna7glnnyDl3BiXlyqyt4inly0hW8g3my0xWcmCc7XcGJebJjnpx0BTsLEZEhCxGRIQsRkSELEZEhCxGRIQsRkSEvHtYVfFddwZPMk6eYJ0/qCm51BbfMk52u4JZ5ctIV3DJPdrqCW13BLfPkpCvYMU9OuoId8+QduoJbCxGRIQsRkSELEZEhCxGRIQsRkSEvvsg8+WnMk1tdwUlXsGOePKkr2DFPbpkn72Ce3OoKTsyTna7g08yTT+oKvquFiMiQhYjIkIWIyJCFiMiQhYjIkIWIyJBfv/9ARGTAQkRkyEJEZMhCRGTIQkRkyEJEZMh/evKq4kjcrGEAAAAASUVORK5CYII=" alt="Digital Vault QR Code" class="cover-qr-img">
                     <div class="cover-qr-info">
                         <div class="cover-qr-title">⚡ Interactive Recall Quiz &amp; Scratch-Off Vault</div>
                         <div class="cover-qr-desc">Scan with your phone to launch Instant-Feedback Recall Quiz (#practice-mode) &amp; tap-to-reveal self-marking solutions.</div>
@@ -5456,9 +5533,9 @@
     </div>
             
     <!-- The Vault -->
-    <div class="page vault-page page-break vault-bg" id="the-vault">
+    <div class="page vault-page page-break vault-bg page-flex-full" id="the-vault">
         <div class="vault-watermark">🔒</div>
-        <div class="vault-content">
+        <div class="vault-content page-body-stretch">
             <h1>THE VAULT</h1>
             <p class="vault-subtitle">Restricted Access: Answer Keys</p>
             <div class="vault-screen-controls">
@@ -5649,7 +5726,13 @@
                     <div class="answer-num">36.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">To assert federal authority and enforce the Supreme Court desegregation order against state-level resistance.</div>
                 </div>
-                
+                </div>
+        </div>
+    </div>
+    <div class="page vault-page page-break vault-bg page-flex-full">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content page-body-stretch">
+                <div class="answer-list"><h3>KT 1.2: How did developments in education challenge segregation (1954–57)?</h3>
                 <div class="answer-item">
                     <div class="answer-num">37.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">It demonstrated that federal intervention was necessary to overcome active Southern state resistance to integration.</div>
@@ -5669,13 +5752,7 @@
                     <div class="answer-num">40.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">The 'doll test', showing Black children preferred white dolls and saw Black dolls as inferior.</div>
                 </div>
-                </div>
-        </div>
-    </div>
-    <div class="page vault-page page-break vault-bg">
-        <div class="vault-watermark">🔒</div>
-        <div class="vault-content">
-                <div class="answer-list"><h3>KT 1.3: How did the Montgomery Bus Boycott happen, and why did it succeed?</h3>
+                </div><div class="answer-list"><h3>KT 1.3: How did the Montgomery Bus Boycott happen, and why did it succeed?</h3>
                 <div class="answer-item">
                     <div class="answer-num">41.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Rosa Parks</div>
@@ -5835,7 +5912,13 @@
                     <div class="answer-num">72.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Because his mother held an open-casket funeral to expose the brutality of racism</div>
                 </div>
-                
+                </div>
+        </div>
+    </div>
+    <div class="page vault-page page-break vault-bg page-flex-full">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content page-body-stretch">
+                <div class="answer-list"><h3>KT 1.4: Why did white people in the South resist integration, and how did they do it?</h3>
                 <div class="answer-item">
                     <div class="answer-num">73.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Dixiecrats</div>
@@ -5875,13 +5958,7 @@
                     <div class="answer-num">80.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Sumner, Mississippi.</div>
                 </div>
-                </div>
-        </div>
-    </div>
-    <div class="page vault-page page-break vault-bg">
-        <div class="vault-watermark">🔒</div>
-        <div class="vault-content">
-                <div class="answer-list"><h3>KT 2.1: How did peaceful protests (like sit-ins and Freedom Rides) force the government to act?</h3>
+                </div><div class="answer-list"><h3>KT 2.1: How did peaceful protests (like sit-ins and Freedom Rides) force the government to act?</h3>
                 <div class="answer-item">
                     <div class="answer-num">81.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Greensboro, North Carolina</div>
@@ -6021,7 +6098,13 @@
                     <div class="answer-num">108.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Selma, Alabama</div>
                 </div>
-                
+                </div>
+        </div>
+    </div>
+    <div class="page vault-page page-break vault-bg page-flex-full">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content page-body-stretch">
+                <div class="answer-list"><h3>KT 2.2: How did protests in Birmingham and Selma lead to the Civil and Voting Rights Acts?</h3>
                 <div class="answer-item">
                     <div class="answer-num">109.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Voting Rights Act of 1965</div>
@@ -6081,13 +6164,7 @@
                     <div class="answer-num">120.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">A Ku Klux Klan bomb explosion during Sunday church services.</div>
                 </div>
-                </div>
-        </div>
-    </div>
-    <div class="page vault-page page-break vault-bg">
-        <div class="vault-watermark">🔒</div>
-        <div class="vault-content">
-                <div class="answer-list"><h3>KT 2.3: What was the Black Power movement, and how did it differ from non-violent protests?</h3>
+                </div><div class="answer-list"><h3>KT 2.3: What was the Black Power movement, and how did it differ from non-violent protests?</h3>
                 <div class="answer-item">
                     <div class="answer-num">121.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Malcolm X</div>
@@ -6207,7 +6284,13 @@
                     <div class="answer-num">144.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Memphis, Tennessee</div>
                 </div>
-                
+                </div>
+        </div>
+    </div>
+    <div class="page vault-page page-break vault-bg page-flex-full">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content page-body-stretch">
+                <div class="answer-list"><h3>KT 2.4: Why did riots break out in American cities between 1965 and 1968?</h3>
                 <div class="answer-item">
                     <div class="answer-num">145.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Chicago Freedom Movement</div>
@@ -6287,13 +6370,7 @@
                     <div class="answer-num">160.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Congress quickly passed the Civil Rights Act of 1968 (Fair Housing Act) as a tribute and to calm urban unrest.</div>
                 </div>
-                </div>
-        </div>
-    </div>
-    <div class="page vault-page page-break vault-bg">
-        <div class="vault-watermark">🔒</div>
-        <div class="vault-content">
-                <div class="answer-list"><h3>KT 3.1: Why did the US support the unpopular government of Ngo Dinh Diem in South Vietnam?</h3>
+                </div><div class="answer-list"><h3>KT 3.1: Why did the US support the unpopular government of Ngo Dinh Diem in South Vietnam?</h3>
                 <div class="answer-item">
                     <div class="answer-num">161.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Ho Chi Minh</div>
@@ -6393,7 +6470,13 @@
                     <div class="answer-num">180.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">It backfired, increasing peasant resentment and boosting support for the Vietcong.</div>
                 </div>
-                </div><div class="answer-list"><h3>KT 3.2: Why did the US send combat troops to Vietnam after the Gulf of Tonkin incident?</h3>
+                </div>
+        </div>
+    </div>
+    <div class="page vault-page page-break vault-bg page-flex-full">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content page-body-stretch">
+                <div class="answer-list"><h3>KT 3.2: Why did the US send combat troops to Vietnam after the Gulf of Tonkin incident?</h3>
                 <div class="answer-item">
                     <div class="answer-num">181.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">USS Maddox</div>
@@ -6493,13 +6576,7 @@
                     <div class="answer-num">200.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">It led to high US casualty rates and rising public opposition, without breaking the enemy's resolve.</div>
                 </div>
-                </div>
-        </div>
-    </div>
-    <div class="page vault-page page-break vault-bg">
-        <div class="vault-watermark">🔒</div>
-        <div class="vault-content">
-                <div class="answer-list"><h3>KT 3.3: Why did US military tactics (like bombing and search & destroy) fail to defeat the Vietcong?</h3>
+                </div><div class="answer-list"><h3>KT 3.3: Why did US military tactics (like bombing and search & destroy) fail to defeat the Vietcong?</h3>
                 <div class="answer-item">
                     <div class="answer-num">201.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Guerrilla warfare</div>
@@ -6579,7 +6656,13 @@
                     <div class="answer-num">216.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">15,000 km</div>
                 </div>
-                
+                </div>
+        </div>
+    </div>
+    <div class="page vault-page page-break vault-bg page-flex-full">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content page-body-stretch">
+                <div class="answer-list"><h3>KT 3.3: Why did US military tactics (like bombing and search & destroy) fail to defeat the Vietcong?</h3>
                 <div class="answer-item">
                     <div class="answer-num">217.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">It allowed North Vietnam to continuously supply guerrillas in the South via routes in Laos and Cambodia.</div>
@@ -6699,13 +6782,7 @@
                     <div class="answer-num">240.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">To destroy North Vietnamese sanctuaries and supply bases along the border.</div>
                 </div>
-                </div>
-        </div>
-    </div>
-    <div class="page vault-page page-break vault-bg">
-        <div class="vault-watermark">🔒</div>
-        <div class="vault-content">
-                <div class="answer-list"><h3>KT 4.1: Why did so many Americans oppose the Vietnam War (like at My Lai and Kent State)?</h3>
+                </div><div class="answer-list"><h3>KT 4.1: Why did so many Americans oppose the Vietnam War (like at My Lai and Kent State)?</h3>
                 <div class="answer-item">
                     <div class="answer-num">241.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">The Draft</div>
@@ -6765,7 +6842,13 @@
                     <div class="answer-num">252.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">They triggered a nationwide student strike and highlighted deep divisions over the war</div>
                 </div>
-                
+                </div>
+        </div>
+    </div>
+    <div class="page vault-page page-break vault-bg page-flex-full">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content page-body-stretch">
+                <div class="answer-list"><h3>KT 4.1: Why did so many Americans oppose the Vietnam War (like at My Lai and Kent State)?</h3>
                 <div class="answer-item">
                     <div class="answer-num">253.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">It exposed the moral cost of the war and shocked the public's conscience</div>
@@ -6905,13 +6988,7 @@
                     <div class="answer-num">280.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">It allowed Nixon to isolate the anti-war movement and build a powerful electoral coalition for the 1972 election.</div>
                 </div>
-                </div>
-        </div>
-    </div>
-    <div class="page vault-page page-break vault-bg">
-        <div class="vault-watermark">🔒</div>
-        <div class="vault-content">
-                <div class="answer-list"><h3>KT 4.3: How did the US exit Vietnam, and why did South Vietnam fall so quickly in 1975?</h3>
+                </div><div class="answer-list"><h3>KT 4.3: How did the US exit Vietnam, and why did South Vietnam fall so quickly in 1975?</h3>
                 <div class="answer-item">
                     <div class="answer-num">281.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">The Fall of Saigon to North Vietnamese forces</div>
@@ -6951,7 +7028,13 @@
                     <div class="answer-num">288.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Operation Linebacker II (Christmas Bombings)</div>
                 </div>
-                
+                </div>
+        </div>
+    </div>
+    <div class="page vault-page page-break vault-bg page-flex-full">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content page-body-stretch">
+                <div class="answer-list"><h3>KT 4.3: How did the US exit Vietnam, and why did South Vietnam fall so quickly in 1975?</h3>
                 <div class="answer-item">
                     <div class="answer-num">289.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">War Powers Act</div>
@@ -7116,22 +7199,23 @@
     </div>
     
     <!-- Tracker Page -->
-    <div class="page tracker-page">
-        <h1>Mastery Tracker</h1>
-        <p style="text-align: center; margin-bottom: 30px;">Track your total recall score across all 320 questions.</p>
-        
-        <table class="tracker-table">
-            <thead>
-                <tr>
-                    <th class="col-attempt">Attempt</th>
-                    <th class="col-date">Date</th>
-                    <th class="col-score">Score (/320)</th>
-                    <th class="col-sig">Parent Validation Stamp</th>
-                    <th class="col-target">Target for Next Time</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td><strong>1</strong></td><td></td><td></td><td class="col-sig-cell">
+    <div class="page tracker-page page-flex-full">
+        <div>
+            <h1>Mastery Tracker</h1>
+            <p style="text-align: center; margin-bottom: 16px;">Track your total recall score across all 320 questions.</p>
+            
+            <table class="tracker-table">
+                <thead>
+                    <tr>
+                        <th class="col-attempt">Attempt</th>
+                        <th class="col-date">Date</th>
+                        <th class="col-score">Score (/320)</th>
+                        <th class="col-sig">Parent Validation Stamp</th>
+                        <th class="col-target">Target for Next Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>1</strong></td><td></td><td></td><td class="col-sig-cell">
                         <div class="parent-stamp-box">
                             <div class="stamp-badge">PARENT VALIDATION STAMP</div>
                             <div class="stamp-effort">
@@ -7141,7 +7225,7 @@
                             <div class="stamp-field"><span class="stamp-label">Date:</span><span class="stamp-line"></span></div>
                             <div class="stamp-field"><span class="stamp-label">Signature:</span><span class="stamp-line"></span></div>
                         </div></td><td></td></tr>
-                <tr><td><strong>2</strong></td><td></td><td></td><td class="col-sig-cell">
+                    <tr><td><strong>2</strong></td><td></td><td></td><td class="col-sig-cell">
                         <div class="parent-stamp-box">
                             <div class="stamp-badge">PARENT VALIDATION STAMP</div>
                             <div class="stamp-effort">
@@ -7151,7 +7235,7 @@
                             <div class="stamp-field"><span class="stamp-label">Date:</span><span class="stamp-line"></span></div>
                             <div class="stamp-field"><span class="stamp-label">Signature:</span><span class="stamp-line"></span></div>
                         </div></td><td></td></tr>
-                <tr><td><strong>3</strong></td><td></td><td></td><td class="col-sig-cell">
+                    <tr><td><strong>3</strong></td><td></td><td></td><td class="col-sig-cell">
                         <div class="parent-stamp-box">
                             <div class="stamp-badge">PARENT VALIDATION STAMP</div>
                             <div class="stamp-effort">
@@ -7161,13 +7245,28 @@
                             <div class="stamp-field"><span class="stamp-label">Date:</span><span class="stamp-line"></span></div>
                             <div class="stamp-field"><span class="stamp-label">Signature:</span><span class="stamp-line"></span></div>
                         </div></td><td></td></tr>
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
 
-        <div class="reflection-box">
-            <h3 style="margin-top: 0;">Operative Reflection</h3>
-            <p><strong>My ultimate strength in this unit is...</strong><br><br><br></p>
-            <p><strong>The three specific facts I need to hunt down and memorize tonight are...</strong><br><br><br></p>
+        <div class="reflection-box page-body-stretch">
+            <h3>Operative Reflection</h3>
+            <div class="reflection-prompt">
+                <strong>1. My ultimate strength in this unit is...</strong>
+                <div class="reflection-lines"></div>
+                <div class="reflection-lines"></div>
+            </div>
+            <div class="reflection-prompt">
+                <strong>2. The three specific facts I need to hunt down and memorize tonight are...</strong>
+                <div class="reflection-lines"></div>
+                <div class="reflection-lines"></div>
+                <div class="reflection-lines"></div>
+            </div>
+            <div class="reflection-prompt">
+                <strong>3. Key targets and action steps for the next retrieval attempt:</strong>
+                <div class="reflection-lines"></div>
+                <div class="reflection-lines"></div>
+            </div>
         </div>
     </div>
 

@@ -5,8 +5,9 @@ import {
   getGoldenSentenceExemplar,
 } from './lesson_renderer.js';
 import { getAssetUrl } from './assets.js';
-import { getWorkbookPageAnchor } from './workbook_page_map.js';
+import { WORKBOOK_PAGE_MAP, getWorkbookPageAnchor } from './workbook_page_map.js';
 
+window.WORKBOOK_PAGE_MAP = WORKBOOK_PAGE_MAP;
 window.getWorkbookPageAnchor = getWorkbookPageAnchor;
 
 let glossaryPopover = null;
@@ -2780,6 +2781,7 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
 
   let periodType = 'double'; // 'single' or 'double'
   let resourceMode = currentUnitId === 'cme_new' ? 'paper' : 'workbooks'; // 'workbooks' or 'paper'
+  let workCollectionMode = 'collect'; // 'collect', 'folders', or 'digital'
   let lesson1Idx = 0;
   let lesson2Idx = 1;
   let supervisorNotes = 'Pupils should sit in their normal seating plan. Silent independent work.';
@@ -2924,6 +2926,41 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
             </div>
           </div>
 
+          <!-- Work Collection Policy Selector -->
+          <div>
+            <label style="display: block; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em; margin-bottom: 6px;">
+              <i class="fa-solid fa-clipboard-check" style="color: #38bdf8; margin-right: 5px;"></i> Work Collection Policy
+            </label>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div id="coverWorkCollect" style="background: rgba(56, 189, 248, 0.15); border: 1px solid #38bdf8; border-radius: 6px; padding: 7px 10px; cursor: pointer; transition: all 0.15s ease;">
+                <div style="display: flex; align-items: center; gap: 7px; font-size: 0.82rem; font-weight: 700; color: #7dd3fc;">
+                  <i class="fa-solid fa-inbox"></i> Collect at End of Period
+                </div>
+                <div style="font-size: 0.72rem; color: #94a3b8; margin-top: 2px;">
+                  Supervisor collects all work at the bell to leave on teacher's desk.
+                </div>
+              </div>
+
+              <div id="coverWorkFolders" style="background: #1e293b; border: 1px solid #334155; border-radius: 6px; padding: 7px 10px; cursor: pointer; transition: all 0.15s ease;">
+                <div style="display: flex; align-items: center; gap: 7px; font-size: 0.82rem; font-weight: 700; color: #e2e8f0;">
+                  <i class="fa-solid fa-folder-closed"></i> Keep in Books / Folders
+                </div>
+                <div style="font-size: 0.72rem; color: #94a3b8; margin-top: 2px;">
+                  Pupils keep work safe in their books/folders; checked next lesson.
+                </div>
+              </div>
+
+              <div id="coverWorkDigital" style="background: #1e293b; border: 1px solid #334155; border-radius: 6px; padding: 7px 10px; cursor: pointer; transition: all 0.15s ease;">
+                <div style="display: flex; align-items: center; gap: 7px; font-size: 0.82rem; font-weight: 700; color: #e2e8f0;">
+                  <i class="fa-solid fa-cloud-arrow-up"></i> Submit Digitally (VLE)
+                </div>
+                <div style="font-size: 0.72rem; color: #94a3b8; margin-top: 2px;">
+                  Pupils submit notes/photos via Google Classroom / Microsoft Teams.
+                </div>
+              </div>
+            </div>
+          </div>
+
           <!-- Supervisor Custom Notes -->
           <div>
             <label style="display: block; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em; margin-bottom: 6px;">
@@ -2982,6 +3019,9 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
   const lesson2Wrapper = overlay.querySelector('#coverLesson2Wrapper');
   const modeWorkbooks = overlay.querySelector('#coverModeWorkbooks');
   const modePaper = overlay.querySelector('#coverModePaper');
+  const workCollectBtn = overlay.querySelector('#coverWorkCollect');
+  const workFoldersBtn = overlay.querySelector('#coverWorkFolders');
+  const workDigitalBtn = overlay.querySelector('#coverWorkDigital');
   const supervisorInput = overlay.querySelector('#coverSupervisorInput');
   const tabPreviewBtn = overlay.querySelector('#coverTabPreviewBtn');
   const tabTextBtn = overlay.querySelector('#coverTabTextBtn');
@@ -3027,30 +3067,75 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
     if (lesson2Idx >= lessons.length) lesson2Idx = Math.min(1, lessons.length - 1);
   };
 
-  // Helper to map page numbers for workbooks
-  const getPageReferences = (uId, lessonIdx) => {
-    if (uId === 'edexcel_medicine') {
-      if (lessonIdx === 0)
-        return { wb: 'Pages 3–6', tb: 'Pages 3–7', doNow: 'Page 3', vocab: 'Page 4' };
-      if (lessonIdx === 1)
-        return { wb: 'Pages 18–21', tb: 'Pages 8–11', doNow: 'Page 18', vocab: 'Page 19' };
-      if (lessonIdx === 2)
-        return { wb: 'Pages 33–37', tb: 'Pages 12–15', doNow: 'Page 33', vocab: 'Page 34' };
-      const wbStart = 3 + lessonIdx * 15;
-      const tbStart = 3 + lessonIdx * 5;
+  // Helper to map page numbers for workbooks using dynamic WORKBOOK_PAGE_MAP
+  const getPageReferences = (uId, lessonIdx, lesson) => {
+    const lId = lesson ? lesson.id || `lesson_${lessonIdx + 1}` : `lesson_${lessonIdx + 1}`;
+    let anchor = null;
+    try {
+      if (typeof getWorkbookPageAnchor === 'function') {
+        anchor = getWorkbookPageAnchor(uId, lId, lessonIdx);
+      }
+    } catch (e) {
+      console.warn('Page anchor error:', e);
+    }
+
+    if (anchor && anchor.page) {
+      const p = anchor.page;
+      const bTitle = anchor.booklet || 'Pupil Workbook';
+      const isMultiBooklet = [
+        'cme_new',
+        'edexcel_medicine',
+        'eee',
+        'usa',
+        'weimar_nazi_germany',
+      ].includes(uId);
+      const bLabel = isMultiBooklet ? `${bTitle}` : 'Pupil Workbook';
       return {
-        wb: `Pages ${wbStart}–${wbStart + 3}`,
-        tb: `Pages ${tbStart}–${tbStart + 4}`,
-        doNow: `Page ${wbStart}`,
-        vocab: `Page ${wbStart + 1}`,
+        booklet: bLabel,
+        wb: `${bLabel} (Pages ${p}–${p + 3})`,
+        tb: `Textbook (Pages ${Math.max(1, p - 1)}–${p + 3})`,
+        doNow: `${bLabel} (Page ${p})`,
+        vocab: `${bLabel} (Page ${p + 1})`,
+        rawPage: p,
       };
     }
-    const wbStart = 3 + lessonIdx * 8;
+
+    // Fallback if not mapped
+    const wbStart = 3 + lessonIdx * 6;
     return {
+      booklet: 'Pupil Workbook',
       wb: `Pages ${wbStart}–${wbStart + 3}`,
-      tb: `Pages ${3 + lessonIdx * 4}–${6 + lessonIdx * 4}`,
+      tb: `Pages ${wbStart}–${wbStart + 3}`,
       doNow: `Page ${wbStart}`,
       vocab: `Page ${wbStart + 1}`,
+      rawPage: wbStart,
+    };
+  };
+
+  const getCollectionNotice = () => {
+    if (workCollectionMode === 'collect') {
+      return {
+        sheet:
+          "<strong>📥 Work Collection:</strong> All completed work MUST be collected by the supervisor at the bell and left on the teacher's desk.",
+        plain:
+          "All work MUST be collected by the supervisor at the bell and left on the teacher's desk.",
+        footer: 'All work collected by supervisor at the bell.',
+      };
+    }
+    if (workCollectionMode === 'folders') {
+      return {
+        sheet:
+          '<strong>📁 Work Collection:</strong> Pupils must keep all completed work safely filed in their history folders/books. It will be inspected and marked next lesson.',
+        plain:
+          'Pupils must keep all completed work safely filed in their history folders/books; checked next lesson.',
+        footer: 'Keep work safely in student books / folders for teacher inspection.',
+      };
+    }
+    return {
+      sheet:
+        '<strong>🌐 Work Collection:</strong> Pupils must photograph or submit their completed work via Google Classroom / Teams before leaving the classroom.',
+      plain: 'Pupils must submit their completed work on Google Classroom / Teams before leaving.',
+      footer: 'Digital submission required via Google Classroom / Teams.',
     };
   };
 
@@ -3073,232 +3158,137 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
     const l1Qr = `https://api.qrserver.com/v1/create-qr-code/?size=100x100&margin=2&data=${encodeURIComponent(l1Url)}`;
     const l2Qr = `https://api.qrserver.com/v1/create-qr-code/?size=100x100&margin=2&data=${encodeURIComponent(l2Url)}`;
 
-    const p1Refs = getPageReferences(currentUnitId, lesson1Idx);
-    const p2Refs = getPageReferences(currentUnitId, lesson2Idx);
+    const p1Refs = getPageReferences(currentUnitId, lesson1Idx, l1);
+    const p2Refs = getPageReferences(currentUnitId, lesson2Idx, l2);
+    const collectNotice = getCollectionNotice();
 
-    // Build Sheet HTML
-    let sheetHtml = `
-      <!-- ==================== PERIOD 1 ==================== -->
-      <div style="border-bottom: 2px solid #881337; padding-bottom: 5px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
+    // Helper to render streamlined 3-step period
+    const renderPeriodHtml = (periodNum, lessonObj, pRefs, lessonUrl, qrUrl) => `
+      <div style="border-bottom: 2px solid #881337; padding-bottom: 6px; margin-bottom: 7px; display: flex; justify-content: space-between; align-items: center;">
         <div style="flex: 1;">
-          <span style="display: inline-block; background: #881337; color: white; font-size: 6.8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; padding: 2px 7px; border-radius: 4px; margin-bottom: 2px;">
+          <span style="display: inline-block; background: #881337; color: white; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; padding: 2.5px 8px; border-radius: 4px; margin-bottom: 2px;">
             The History Revision Hub • ${unitMeta.spec} (${unitMeta.year})
           </span>
-          <h1 style="font-size: 13pt; margin: 0 0 2px 0; color: #0f172a; font-weight: 800; line-height: 1.2;">
+          <h1 style="font-size: 13.5pt; margin: 2px 0; color: #0f172a; font-weight: 800; line-height: 1.2;">
             ${uData.title || unitMeta.name}
           </h1>
-          <div style="font-size: 8.5pt; color: #475569; font-weight: 600; margin-bottom: 3px;">
-            Period 1 Cover Task • ${l1.title}
+          <div style="font-size: 9.2pt; color: #475569; font-weight: 700; margin-bottom: 3px;">
+            Period ${periodNum} Cover Enquiry: ${lessonObj.title}
           </div>
-          <div style="font-size: 7.4pt; color: #881337; background: #fff1f2; padding: 2px 7px; border-radius: 4px; border: 1px solid #fecdd3; display: inline-block;">
-            🌐 <strong>Digital App Link:</strong> <a href="${l1Url}" target="_blank" style="color: #be123c; text-decoration: underline; font-weight: 700;">${l1Url}</a>
+          <div style="font-size: 7.8pt; color: #881337; background: #fff1f2; padding: 3px 8px; border-radius: 4px; border: 1px solid #fecdd3; display: inline-block;">
+            🌐 <strong>Interactive App:</strong> <a href="${lessonUrl}" target="_blank" style="color: #be123c; text-decoration: underline; font-weight: 700;">${lessonUrl}</a>
           </div>
         </div>
-        <div style="display: flex; flex-direction: column; align-items: center; text-align: center; background: #fff1f2; border: 1px solid #fecdd3; border-radius: 6px; padding: 3px 6px; margin-left: 10px;">
-          <img src="${l1Qr}" alt="QR" style="width: 48px; height: 48px; display: block;">
-          <span style="font-size: 5.6pt; font-weight: 700; color: #881337; margin-top: 1px;">LAPTOP CAM QR</span>
+        <div style="display: flex; flex-direction: column; align-items: center; text-align: center; background: #fff1f2; border: 1px solid #fecdd3; border-radius: 6px; padding: 4px 7px; margin-left: 10px;">
+          <img src="${qrUrl}" alt="QR" style="width: 50px; height: 50px; display: block;">
+          <span style="font-size: 5.8pt; font-weight: 800; color: #881337; margin-top: 2px;">SCAN TO OPEN</span>
         </div>
       </div>
 
-      <div style="background: #fff7ed; border-left: 3.5px solid #ea580c; padding: 4px 8px; border-radius: 0 4px 4px 0; margin-bottom: 6px; font-size: 8pt; line-height: 1.35;">
-        <strong>📋 CLASS INSTRUCTIONS (Period 1):</strong> 
-        ${
-          resourceMode === 'workbooks'
-            ? `You have your <strong>printed Course Textbook (${p1Refs.tb})</strong> and <strong>printed Pupil Workbook (${p1Refs.wb})</strong>. Complete all workbook activities in neat pen. Access the digital app for interactive flashcards and visual sources.`
-            : `You will complete your tasks on <strong>1 blank sheet of A4 paper</strong>. Use your laptop/tablet to access the core narrative and visual sources at the link/QR above.`
-        }
-        ${supervisorNotes ? `<br><em>Note: ${supervisorNotes}</em>` : ''}
-      </div>
-
-      <div style="font-size: 9.2pt; font-weight: 800; color: #881337; border-bottom: 1.5px solid #cbd5e1; padding-bottom: 2px; margin: 4px 0 5px 0; display: flex; align-items: center; gap: 6px;">
-        <span style="background: #be123c; color: white; font-size: 6.6pt; font-weight: 700; padding: 1px 5px; border-radius: 3px; text-transform: uppercase;">Period 1</span>
-        <span>${l1.title}</span>
-      </div>
-
-      <!-- Period 1 Tasks -->
-      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 5px; padding: 6px 9px; margin-bottom: 6px;">
-        <div style="font-weight: 700; color: #0f172a; font-size: 8.5pt; margin-bottom: 3px; display: flex; justify-content: space-between;">
-          <span>Task 1: Retrieval Starter & Vocabulary</span>
-          <span style="font-size: 6.8pt; font-weight: 700; background: #e2e8f0; color: #334155; padding: 1px 5px; border-radius: 3px;">
-            ${resourceMode === 'workbooks' ? 'Workbook: ' + p1Refs.doNow : 'Blank Paper'}
-          </span>
-        </div>
-        <ol style="margin: 2px 0 3px 16px; padding: 0; font-size: 8.2pt;">
+      <!-- Supervisor & Class Survival Box -->
+      <div style="background: #fff7ed; border-left: 4px solid #ea580c; padding: 6px 10px; border-radius: 0 5px 5px 0; margin-bottom: 8px; font-size: 8.5pt; line-height: 1.4;">
+        <div style="margin-bottom: 3px;">
+          <strong>📋 CLASS SETTING:</strong> 
           ${
             resourceMode === 'workbooks'
-              ? `<li><strong>Do Now Recall:</strong> Turn to <strong>${p1Refs.doNow}</strong> in your workbook. Complete the 10 retrieval questions testing recall from previous lessons.</li>
-               <li><strong>Key Vocabulary:</strong> On <strong>${p1Refs.vocab}</strong>, complete the vocabulary activity (fill-in-the-blank summary or term mapping).</li>`
-              : `<li><strong>Recall Starter (5 mins):</strong> Open the digital lesson. Answer the 5 quick recall starter questions at the top of the blank sheet.</li>
-               <li><strong>Key Terms:</strong> Define 3 essential historical concepts from today's enquiry in full sentences.</li>`
+              ? `Pupils have their <strong>printed Course Textbook (${pRefs.tb})</strong> and <strong>printed Pupil Workbook (${pRefs.wb})</strong>. Complete all written tasks in neat pen.`
+              : `Pupils complete their work on <strong>1 clean sheet of A4 paper</strong>. Access historical narrative and contemporary sources via the link or QR above.`
+          }
+        </div>
+        <div style="color: #c2410c; margin-bottom: 2px;">
+          ${collectNotice.sheet}
+        </div>
+        ${supervisorNotes ? `<div style="color: #475569; font-style: italic; margin-top: 2px;">Room / Supervisor Note: ${supervisorNotes}</div>` : ''}
+      </div>
+
+      <div style="font-size: 9.8pt; font-weight: 800; color: #881337; border-bottom: 1.5px solid #cbd5e1; padding-bottom: 3px; margin: 6px 0 8px 0; display: flex; align-items: center; gap: 7px;">
+        <span style="background: #be123c; color: white; font-size: 7.2pt; font-weight: 800; padding: 1.5px 6px; border-radius: 3px; text-transform: uppercase;">Period ${periodNum}</span>
+        <span>Three-Step Lesson Pathway</span>
+      </div>
+
+      <!-- STEP 1: RETRIEVAL STARTER & VOCABULARY (10 MINS) -->
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 4.5px solid #2563eb; border-radius: 6px; padding: 8px 12px; margin-bottom: 8px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+          <span style="font-weight: 800; color: #1e3a8a; font-size: 9.2pt;">
+            STEP 1: Retrieval Starter &amp; Academic Vocabulary (10 Mins)
+          </span>
+          <span style="font-size: 7.2pt; font-weight: 800; background: #dbeafe; color: #1e40af; padding: 1.5px 6px; border-radius: 3px;">
+            ${resourceMode === 'workbooks' ? pRefs.doNow : 'A4 Paper (Top)'}
+          </span>
+        </div>
+        <ol style="margin: 2px 0 2px 18px; padding: 0; font-size: 8.6pt; line-height: 1.45; color: #1e293b;">
+          ${
+            resourceMode === 'workbooks'
+              ? `<li><strong>Do Now Recall:</strong> Open your workbook to <strong>${pRefs.doNow}</strong>. Complete the 10 retrieval questions testing recall from previous topics.</li>
+                 <li><strong>Vocabulary Foundation:</strong> On <strong>${pRefs.vocab}</strong>, complete the vocabulary activity (fill-in-the-blank summary or dual-term analytical mapping).</li>`
+              : `<li><strong>Recall Starter:</strong> Write today's date, title, and your full name at the top of your paper. Open the digital lesson and write down the answers to the 5 recall starter questions.</li>
+                 <li><strong>Key Concepts:</strong> Read the key terminology box and write full definitions for 3 essential historical terms from this lesson.</li>`
           }
         </ol>
       </div>
 
-      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 5px; padding: 6px 9px; margin-bottom: 6px;">
-        <div style="font-weight: 700; color: #0f172a; font-size: 8.5pt; margin-bottom: 3px; display: flex; justify-content: space-between;">
-          <span>Task 2: Core Historical Narrative Reading</span>
-          <span style="font-size: 6.8pt; font-weight: 700; background: #e2e8f0; color: #334155; padding: 1px 5px; border-radius: 3px;">
-            ${resourceMode === 'workbooks' ? 'Textbook: ' + p1Refs.tb : 'Digital App Narrative'}
+      <!-- STEP 2: CORE HISTORICAL INVESTIGATION & APPLICATION (30 MINS) -->
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 4.5px solid #881337; border-radius: 6px; padding: 8px 12px; margin-bottom: 8px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+          <span style="font-weight: 800; color: #881337; font-size: 9.2pt;">
+            STEP 2: Core Investigation &amp; Extended Enquiry (30 Mins)
+          </span>
+          <span style="font-size: 7.2pt; font-weight: 800; background: #fee2e2; color: #991b1b; padding: 1.5px 6px; border-radius: 3px;">
+            ${resourceMode === 'workbooks' ? pRefs.wb : 'A4 Paper Task'}
           </span>
         </div>
-        <p style="margin: 1px 0 3px 0; font-size: 8pt; color: #334155;">
-          ${
-            resourceMode === 'workbooks'
-              ? `Read through <strong>${p1Refs.tb}</strong> in your textbook or read the <strong>Core Historical Narrative</strong> on the app.`
-              : `Read through the <strong>Core Historical Narrative</strong> on your screen, examining the contemporary sources and maps.`
-          }
-        </p>
+        <div style="font-size: 8.6pt; line-height: 1.45; color: #1e293b;">
+          <div style="margin-bottom: 4px;">
+            📖 <strong>Core Reading:</strong> ${resourceMode === 'workbooks' ? `Read through <strong>${pRefs.tb}</strong> in your textbook or read the core historical narrative on the app.` : `Read through the core narrative on your screen, carefully studying the contemporary maps and primary sources.`}
+          </div>
+          <div>
+            ✍️ <strong>Written Application Task:</strong>
+            ${
+              resourceMode === 'workbooks'
+                ? `Turn to <strong>${pRefs.wb}</strong> in your workbook. Complete the structured analytical enquiry tasks in neat pen. Write in academic prose deploying <strong>PEE/PEEL structure strips</strong> and connectives from the <strong>Causal Connective Bank</strong> (<em>Consequently, As a direct result, In stark contrast</em>).`
+                : currentUnitId === 'cme_new'
+                  ? periodNum === 1
+                    ? `<strong>Dual-Perspective Partition Map Activity:</strong> Sketch the outline of Mandate Palestine. Clearly shade the proposed Jewish state vs Arab state under the 1947 UN Partition Plan (Resolution 181). Around the margins, annotate 3 reasons why Jewish leaders accepted the plan and 3 reasons why Arab leaders rejected it.`
+                    : `<strong>12-Point Chronological Milestone Timeline:</strong> Construct an annotated timeline (1915–1949). For each event (McMahon, Balfour, Arab Revolt, 1948 War), write 2 bullet points: (1) What happened, and (2) Why it escalated conflict.`
+                  : `<strong>Analytical Evidence Matrix &amp; Conclusion:</strong> Divide your page into two columns comparing competing historical factors (e.g., Short-term vs Long-term causes, or Change vs Continuity). Annotate 4 precise historical facts in each column, then write a 1-paragraph evaluative verdict answering the lesson enquiry.`
+            }
+          </div>
+        </div>
       </div>
 
-      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 5px; padding: 6px 9px; margin-bottom: 6px;">
-        <div style="font-weight: 700; color: #0f172a; font-size: 8.5pt; margin-bottom: 3px; display: flex; justify-content: space-between;">
-          <span>Task 3: Deep Application Enquiry</span>
-          <span style="font-size: 6.8pt; font-weight: 700; background: #e2e8f0; color: #334155; padding: 1px 5px; border-radius: 3px;">
-            ${resourceMode === 'workbooks' ? 'Workbook: ' + p1Refs.wb : 'A4 Blank Paper Task'}
+      <!-- STEP 3: DIGITAL MASTERY CHECK & WORK SUBMISSION (15 MINS) -->
+      <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-left: 4.5px solid #16a34a; border-radius: 6px; padding: 8px 12px; margin-bottom: 8px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+          <span style="font-weight: 800; color: #166534; font-size: 9.2pt;">
+            STEP 3: Digital Mastery Check &amp; Submission (15 Mins)
+          </span>
+          <span style="font-size: 7.2pt; font-weight: 800; background: #dcfce7; color: #15803d; padding: 1.5px 6px; border-radius: 3px;">
+            Interactive Quiz
           </span>
         </div>
-        ${
-          resourceMode === 'workbooks'
-            ? `<ol style="margin: 2px 0 3px 16px; padding: 0; font-size: 8.2pt;">
-              <li>Complete the structured enquiry comprehension tasks in your workbook on <strong>${p1Refs.wb}</strong>.</li>
-              <li>Structure written responses using <strong>PEE/PEEL Structure Strips</strong> and deploy terms from the <strong>Causal Connective Bank</strong>.</li>
-              <li>Ensure all sentences are written in academic historical prose with precise names, dates, and factors.</li>
-            </ol>`
-            : `<p style="margin: 1px 0 3px 0; font-size: 8pt;">
-              ${
-                currentUnitId === 'cme_new'
-                  ? `<strong>Dual-Perspective Strategic Map Activity:</strong> Sketch the outline of Mandate Palestine. Clearly shade the proposed Jewish state vs Arab state under the 1947 UN Partition Plan (Resolution 181). Around the margins, annotate 3 reasons why Jewish leaders accepted the plan and 3 reasons why Arab leaders rejected it.`
-                  : `<strong>Analytical Concept Matrix:</strong> Divide your blank paper into two columns comparing the core competing historical factors (e.g. Supernatural vs Rational, or Change vs Continuity). Annotate 4 specific pieces of historical evidence in each column.`
-              }
-            </p>`
-        }
-      </div>
-
-      <div style="background: #fff1f2; border: 1px solid #fecdd3; border-radius: 5px; padding: 6px 9px; margin-bottom: 0;">
-        <div style="font-weight: 700; color: #881337; font-size: 8.5pt; margin-bottom: 2px; display: flex; justify-content: space-between;">
-          <span>Task 4: Interactive Quizzing & Plenary Check</span>
-          <span style="font-size: 6.8pt; font-weight: 700; background: #be123c; color: white; padding: 1px 5px; border-radius: 3px;">Digital App</span>
+        <div style="font-size: 8.6pt; line-height: 1.45; color: #14532d;">
+          <p style="margin: 0 0 3px 0;">
+            🎯 <strong>Mastery Quiz:</strong> Open the <strong>Interactive Quiz Zone</strong> on the lesson app page. Complete the quick-fire questions to check your recall score before the end of the lesson.
+          </p>
+          <p style="margin: 0; font-weight: 700; color: #166534;">
+            📦 <strong>Pack Up:</strong> ${collectNotice.sheet}
+          </p>
         </div>
-        <p style="margin: 0; font-size: 7.8pt; color: #4c0519;">
-          Open the <strong>Interactive Quiz Zone</strong> on the lesson app page. Complete the quick-fire questions to check your mastery before Period 2!
-        </p>
       </div>
 
-      <div style="margin-top: 8px; padding-top: 3px; border-top: 1px solid #e2e8f0; font-size: 6.8pt; color: #64748b; display: flex; justify-content: space-between;">
-        <span>The History Portal • Department Lead</span>
-        <span>${periodType === 'double' ? 'Period 1 Complete — See Next Page for Period 2' : 'Ensure all work is kept safe for review next lesson.'}</span>
+      <div style="margin-top: 10px; padding-top: 4px; border-top: 1px solid #e2e8f0; font-size: 7.2pt; color: #64748b; display: flex; justify-content: space-between;">
+        <span>The History Revision Hub • Department Lead</span>
+        <span>${collectNotice.footer}</span>
       </div>
     `;
+
+    let sheetHtml = renderPeriodHtml(1, l1, p1Refs, l1Url, l1Qr);
 
     if (periodType === 'double') {
       sheetHtml += `
         <!-- ==================== PERIOD 2 (PAGE BREAK) ==================== -->
         <div style="page-break-before: always; break-before: page; margin-top: 15mm;"></div>
-
-        <div style="border-bottom: 2px solid #881337; padding-bottom: 5px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
-          <div style="flex: 1;">
-            <span style="display: inline-block; background: #881337; color: white; font-size: 6.8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; padding: 2px 7px; border-radius: 4px; margin-bottom: 2px;">
-              The History Revision Hub • ${unitMeta.spec} (${unitMeta.year})
-            </span>
-            <h1 style="font-size: 13pt; margin: 0 0 2px 0; color: #0f172a; font-weight: 800; line-height: 1.2;">
-              ${uData.title || unitMeta.name}
-            </h1>
-            <div style="font-size: 8.5pt; color: #475569; font-weight: 600; margin-bottom: 3px;">
-              Period 2 Cover Task • ${l2.title}
-            </div>
-            <div style="font-size: 7.4pt; color: #881337; background: #fff1f2; padding: 2px 7px; border-radius: 4px; border: 1px solid #fecdd3; display: inline-block;">
-              🌐 <strong>Digital App Link:</strong> <a href="${l2Url}" target="_blank" style="color: #be123c; text-decoration: underline; font-weight: 700;">${l2Url}</a>
-            </div>
-          </div>
-          <div style="display: flex; flex-direction: column; align-items: center; text-align: center; background: #fff1f2; border: 1px solid #fecdd3; border-radius: 6px; padding: 3px 6px; margin-left: 10px;">
-            <img src="${l2Qr}" alt="QR" style="width: 48px; height: 48px; display: block;">
-            <span style="font-size: 5.6pt; font-weight: 700; color: #881337; margin-top: 1px;">LAPTOP CAM QR</span>
-          </div>
-        </div>
-
-        <div style="background: #fff7ed; border-left: 3.5px solid #ea580c; padding: 4px 8px; border-radius: 0 4px 4px 0; margin-bottom: 6px; font-size: 8pt; line-height: 1.35;">
-          <strong>📋 CLASS INSTRUCTIONS (Period 2):</strong> 
-          ${
-            resourceMode === 'workbooks'
-              ? `Turn to <strong>Lesson 2 in your printed textbook (${p2Refs.tb})</strong> and your <strong>printed workbook (${p2Refs.wb})</strong>. Complete all activities before the end of the double period.`
-              : `You will complete Period 2 on <strong>1 lined sheet of A4 paper</strong>. Access the digital app for sources and context.`
-          }
-          ${supervisorNotes ? `<br><em>Note: ${supervisorNotes}</em>` : ''}
-        </div>
-
-        <div style="font-size: 9.2pt; font-weight: 800; color: #881337; border-bottom: 1.5px solid #cbd5e1; padding-bottom: 2px; margin: 4px 0 5px 0; display: flex; align-items: center; gap: 6px;">
-          <span style="background: #be123c; color: white; font-size: 6.6pt; font-weight: 700; padding: 1px 5px; border-radius: 3px; text-transform: uppercase;">Period 2</span>
-          <span>${l2.title}</span>
-        </div>
-
-        <!-- Period 2 Tasks -->
-        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 5px; padding: 6px 9px; margin-bottom: 6px;">
-          <div style="font-weight: 700; color: #0f172a; font-size: 8.5pt; margin-bottom: 3px; display: flex; justify-content: space-between;">
-            <span>Task 1: Recall Starter & Vocabulary</span>
-            <span style="font-size: 6.8pt; font-weight: 700; background: #e2e8f0; color: #334155; padding: 1px 5px; border-radius: 3px;">
-              ${resourceMode === 'workbooks' ? 'Workbook: ' + p2Refs.doNow : 'Lined Paper'}
-            </span>
-          </div>
-          <ol style="margin: 2px 0 3px 16px; padding: 0; font-size: 8.2pt;">
-            ${
-              resourceMode === 'workbooks'
-                ? `<li><strong>Do Now Retrieval:</strong> Turn to <strong>${p2Refs.doNow}</strong> in your workbook. Complete the 10 recall questions on previous topics.</li>
-                 <li><strong>Vocabulary Mapping:</strong> On <strong>${p2Refs.vocab}</strong>, complete the key terms linking sentence or grid.</li>`
-                : `<li><strong>Retrieval Quick 5:</strong> Write 5 recall starter answers at the top of your lined paper.</li>
-                 <li><strong>Concept Check:</strong> Write down 2 key historical developments from Period 1 that connect directly to Period 2.</li>`
-            }
-          </ol>
-        </div>
-
-        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 5px; padding: 6px 9px; margin-bottom: 6px;">
-          <div style="font-weight: 700; color: #0f172a; font-size: 8.5pt; margin-bottom: 3px; display: flex; justify-content: space-between;">
-            <span>Task 2: Core Reading & Case Study Analysis</span>
-            <span style="font-size: 6.8pt; font-weight: 700; background: #e2e8f0; color: #334155; padding: 1px 5px; border-radius: 3px;">
-              ${resourceMode === 'workbooks' ? 'Textbook: ' + p2Refs.tb : 'Digital App Narrative'}
-            </span>
-          </div>
-          <p style="margin: 1px 0 3px 0; font-size: 8pt; color: #334155;">
-            Read through ${resourceMode === 'workbooks' ? `<strong>${p2Refs.tb}</strong> in your textbook` : 'the core narrative on your screen'}, focusing on key individuals, government decisions, and consequences.
-          </p>
-        </div>
-
-        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 5px; padding: 6px 9px; margin-bottom: 6px;">
-          <div style="font-weight: 700; color: #0f172a; font-size: 8.5pt; margin-bottom: 3px; display: flex; justify-content: space-between;">
-            <span>Task 3: Synthesis & Application Task</span>
-            <span style="font-size: 6.8pt; font-weight: 700; background: #e2e8f0; color: #334155; padding: 1px 5px; border-radius: 3px;">
-              ${resourceMode === 'workbooks' ? 'Workbook: ' + p2Refs.wb : 'Lined Paper Timeline / Essay'}
-            </span>
-          </div>
-          ${
-            resourceMode === 'workbooks'
-              ? `<ol style="margin: 2px 0 3px 16px; padding: 0; font-size: 8.2pt;">
-                <li>In your workbook (<strong>${p2Refs.wb}</strong>), complete the comparison activities and source evaluation tables.</li>
-                <li>Write a high-grade conclusion paragraph answering the lesson enquiry question using <strong>PEE/PEEL Structure Strips</strong> and the <strong>Causal Connective Bank</strong>.</li>
-              </ol>`
-              : `<p style="margin: 1px 0 3px 0; font-size: 8pt;">
-                ${
-                  currentUnitId === 'cme_new'
-                    ? `<strong>12-Point Chronological Milestone Timeline:</strong> On lined paper, construct a detailed timeline (1915–1949). For each event (McMahon, Balfour, Arab Revolt, Exodus, 1948 War, 1949 Armistice), write 2 bullet points: (1) What happened, and (2) Why it escalated conflict.`
-                    : `<strong>Chronological Milestone Flowchart:</strong> Construct an annotated timeline or cause-consequence chain of 8 key events from the narrative on your lined paper. Explain the significance of each event.`
-                }
-              </p>`
-          }
-        </div>
-
-        <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 5px; padding: 6px 9px; margin-bottom: 0;">
-          <div style="font-weight: 700; color: #166534; font-size: 8.5pt; margin-bottom: 2px; display: flex; justify-content: space-between;">
-            <span>Task 4: Lesson Mastery Check (Final 10 Mins)</span>
-            <span style="font-size: 6.8pt; font-weight: 700; background: #15803d; color: white; padding: 1px 5px; border-radius: 3px;">Digital App</span>
-          </div>
-          <p style="margin: 0; font-size: 7.8pt; color: #14532d;">
-            Complete the <strong>Lesson Mastery Quiz</strong> on the digital app to lock in your retrieval score. Ensure all work is neatly titled and dated.
-          </p>
-        </div>
-
-        <div style="margin-top: 8px; padding-top: 3px; border-top: 1px solid #e2e8f0; font-size: 6.8pt; color: #64748b; display: flex; justify-content: space-between;">
-          <span>The History Portal • Department of History • Department Lead</span>
-          <span>Ensure workbooks / paper sheets are handed in or stored safely in student folders.</span>
-        </div>
+        ${renderPeriodHtml(2, l2, p2Refs, l2Url, l2Qr)}
       `;
     }
 
@@ -3307,21 +3297,20 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
     // Build Plain Text VLE / Email string
     let plainText = `SUBJECT: GCSE History — ${unitMeta.year} Cover Work (${periodType === 'double' ? 'Double Period' : 'Single Period'})\n`;
     plainText += `TOPIC: ${uData.title || unitMeta.name}\n`;
-    plainText += `RESOURCES: ${resourceMode === 'workbooks' ? `Pupils have their printed physical Course Textbook and Pupil Workbook.` : `1 sheet of blank A4 paper (Period 1) and 1 sheet of lined A4 paper (Period 2) per pupil.`}\n`;
+    plainText += `RESOURCES: ${resourceMode === 'workbooks' ? `Pupils have their printed physical Course Textbook and Pupil Workbook.` : `1 sheet of clean A4 paper per pupil.`}\n`;
+    plainText += `WORK POLICY: ${collectNotice.plain}\n`;
     if (supervisorNotes) plainText += `SUPERVISOR NOTE: ${supervisorNotes}\n`;
     plainText += `\n=========================================\n`;
     plainText += `PERIOD 1 — ${l1.title}\n`;
     plainText += `🌐 Digital App: ${l1Url}\n`;
     if (resourceMode === 'workbooks') {
-      plainText += `1. DO NOW & VOCAB: Open workbook to ${p1Refs.doNow}. Complete the 10 retrieval questions and vocabulary activity on ${p1Refs.vocab}.\n`;
-      plainText += `2. READING: Read textbook ${p1Refs.tb} or the core historical narrative on the app.\n`;
-      plainText += `3. WORKBOOK ENQUIRY: In workbook (${p1Refs.wb}), complete the core enquiry tasks in neat pen using PEE/PEEL Structure Strips and Causal Connective Banks.\n`;
-      plainText += `4. CHECK: Complete the 10-question retrieval check on the digital app.\n`;
+      plainText += `1. STEP 1 (10 MINS) - STARTER & VOCABULARY:\n   • Open workbook to ${p1Refs.doNow}. Complete the 10 recall starter questions.\n   • On ${p1Refs.vocab}, complete the key vocabulary activity.\n`;
+      plainText += `2. STEP 2 (30 MINS) - CORE INVESTIGATION & APPLICATION:\n   • Read textbook ${p1Refs.tb} or the core historical narrative on the app.\n   • In workbook (${p1Refs.wb}), complete all structured enquiry tasks using PEE/PEEL structure strips and the Causal Connective Bank.\n`;
+      plainText += `3. STEP 3 (15 MINS) - DIGITAL PLENARY & SUBMISSION:\n   • Complete the interactive quiz on the app to lock in your retrieval score.\n   • ${collectNotice.plain}\n`;
     } else {
-      plainText += `1. STARTER: On blank A4 paper, answer the 5 recall starter questions from the top of the lesson app.\n`;
-      plainText += `2. READING: Read the core historical narrative and examine the maps/sources on screen.\n`;
-      plainText += `3. APPLICATION: ${currentUnitId === 'cme_new' ? 'Complete the Dual-Perspective Partition Map Activity on blank paper (sketch Palestine, shade Jewish/Arab zones, annotate 3 reasons for accept/reject).' : 'Complete the Analytical Factor Matrix comparing competing historical arguments on blank paper.'}\n`;
-      plainText += `4. CHECK: Complete the quick digital quiz on the app.\n`;
+      plainText += `1. STEP 1 (10 MINS) - STARTER & VOCABULARY:\n   • On clean A4 paper, answer the 5 recall starter questions from the app.\n   • Define 3 essential historical concepts from today's enquiry in full sentences.\n`;
+      plainText += `2. STEP 2 (30 MINS) - CORE INVESTIGATION & APPLICATION:\n   • Read the core historical narrative on screen.\n   • Complete the application task: ${currentUnitId === 'cme_new' ? 'Sketch Partition Map of Palestine (Resolution 181), shade Jewish/Arab zones, annotate 3 reasons for accept/reject.' : 'Complete 2-column comparative factor matrix and 1-paragraph evaluative conclusion.'}\n`;
+      plainText += `3. STEP 3 (15 MINS) - DIGITAL PLENARY & SUBMISSION:\n   • Complete the digital quiz on the app.\n   • ${collectNotice.plain}\n`;
     }
 
     if (periodType === 'double') {
@@ -3329,20 +3318,58 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
       plainText += `PERIOD 2 — ${l2.title}\n`;
       plainText += `🌐 Digital App: ${l2Url}\n`;
       if (resourceMode === 'workbooks') {
-        plainText += `1. DO NOW & VOCAB: Open workbook to ${p2Refs.doNow} (10 recall questions) and ${p2Refs.vocab} (vocab mapping).\n`;
-        plainText += `2. READING: Read textbook ${p2Refs.tb} or the core narrative on the app.\n`;
-        plainText += `3. WORKBOOK ENQUIRY: In workbook (${p2Refs.wb}), complete the comparison grid and evaluation tasks using PEE/PEEL Structure Strips and Causal Connective Banks.\n`;
-        plainText += `4. PLENARY: Complete the Lesson Mastery Quiz on the digital app before the end of the double period.\n`;
+        plainText += `1. STEP 1 (10 MINS) - STARTER & VOCABULARY:\n   • Open workbook to ${p2Refs.doNow} (10 recall questions) and ${p2Refs.vocab} (vocab mapping).\n`;
+        plainText += `2. STEP 2 (30 MINS) - CORE INVESTIGATION & APPLICATION:\n   • Read textbook ${p2Refs.tb} or the core narrative on the app.\n   • In workbook (${p2Refs.wb}), complete the comparison grid and evaluation tasks.\n`;
+        plainText += `3. STEP 3 (15 MINS) - DIGITAL PLENARY & SUBMISSION:\n   • Complete the Lesson Mastery Quiz on the app before the end of the double period.\n   • ${collectNotice.plain}\n`;
       } else {
-        plainText += `1. RECALL: On lined A4 paper, complete the 5 recall starter questions.\n`;
-        plainText += `2. READING: Read the core narrative for Period 2 on your screen.\n`;
-        plainText += `3. SYNTHESIS: ${currentUnitId === 'cme_new' ? 'Construct a 12-point chronological timeline (1915–1949) on lined paper with 2 bullet points per event (what happened + impact).' : 'Construct an 8-event cause-and-consequence milestone flowchart on lined paper.'}\n`;
-        plainText += `4. PLENARY: Complete the digital multiple-choice mastery quiz on the app. All paper handed in.\n`;
+        plainText += `1. STEP 1 (10 MINS) - STARTER & VOCABULARY:\n   • On paper, complete the 5 recall starter questions.\n`;
+        plainText += `2. STEP 2 (30 MINS) - CORE INVESTIGATION & APPLICATION:\n   • Read the core narrative for Period 2 on screen.\n   • Complete the synthesis task: ${currentUnitId === 'cme_new' ? 'Construct a 12-point chronological timeline (1915–1949) with 2 bullet points per milestone.' : 'Construct an 8-event cause-and-consequence milestone flowchart.'}\n`;
+        plainText += `3. STEP 3 (15 MINS) - DIGITAL PLENARY & SUBMISSION:\n   • Complete the digital quiz on the app.\n   • ${collectNotice.plain}\n`;
       }
     }
 
     plainTextArea.value = plainText;
   };
+
+  // Work Collection Mode Event Handlers
+  const updateWorkCollectionUI = () => {
+    [
+      { btn: workCollectBtn, mode: 'collect' },
+      { btn: workFoldersBtn, mode: 'folders' },
+      { btn: workDigitalBtn, mode: 'digital' },
+    ].forEach(({ btn, mode }) => {
+      if (!btn) return;
+      const isActive = workCollectionMode === mode;
+      btn.style.background = isActive ? 'rgba(56, 189, 248, 0.15)' : '#1e293b';
+      btn.style.borderColor = isActive ? '#38bdf8' : '#334155';
+      const labelDiv = btn.firstElementChild;
+      if (labelDiv) labelDiv.style.color = isActive ? '#7dd3fc' : '#e2e8f0';
+    });
+  };
+
+  if (workCollectBtn) {
+    workCollectBtn.onclick = () => {
+      workCollectionMode = 'collect';
+      updateWorkCollectionUI();
+      updateCover();
+    };
+  }
+
+  if (workFoldersBtn) {
+    workFoldersBtn.onclick = () => {
+      workCollectionMode = 'folders';
+      updateWorkCollectionUI();
+      updateCover();
+    };
+  }
+
+  if (workDigitalBtn) {
+    workDigitalBtn.onclick = () => {
+      workCollectionMode = 'digital';
+      updateWorkCollectionUI();
+      updateCover();
+    };
+  }
 
   // Event Handlers
   unitSelect.onchange = () => {

@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const { PATHS } = require('./config.cjs');
+const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.cjs');
 const ROOT_DIR = path.join(__dirname, '..');
 
 require('./generate_textbooks.cjs');
@@ -193,6 +194,17 @@ function getFileHash(filePath) {
                 el.style.setProperty('page-break-inside', 'avoid', 'important');
               });
           });
+        }
+
+        // Universal Page Budget & Space Utilization Audit
+        try {
+          const audit = await auditPageBudget(page, {
+            underflowThresholdPx: 50,
+            pageSelector: '.a5-page, .page, .page-landscape, .a4-page',
+          });
+          printSpaceAuditReport(audit, pdfFileName);
+        } catch (auditErr) {
+          console.warn(`⚠️ Space audit notice for ${pdfFileName}:`, auditErr.message);
         }
 
         let success = false;

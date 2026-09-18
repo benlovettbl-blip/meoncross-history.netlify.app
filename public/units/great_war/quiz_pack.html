@@ -44,6 +44,26 @@
   }
   .a5-page:last-child { page-break-after: avoid; }
 
+  .page-flex-full {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 198mm !important;
+    box-sizing: border-box !important;
+  }
+  .page-body-stretch {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .timeline-page-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
   /* Page Headers & Footers */
   .page-header-strip {
     border-bottom: 1.5px solid #0f172a;
@@ -180,10 +200,10 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    max-height: 98mm;
+    max-height: 90mm;
   }
   .cover-map-img {
-    max-height: 98mm;
+    max-height: 90mm;
     max-width: 100%;
     object-fit: contain;
     border: 1px solid #94a3b8;
@@ -218,7 +238,7 @@
   }
   .tracking-table td {
     border: 1px solid #cbd5e1;
-    padding: 2.5px 3px;
+    padding: 2.8px 3px;
     text-align: center;
     vertical-align: middle;
   }
@@ -256,18 +276,14 @@
   .retrieval-boxes span {
     font-weight: 600;
   }
-  .parent-box {
-    border: 1px solid #94a3b8;
-    background: #ffffff;
-    border-radius: 2px;
-    height: 14px;
-    width: 100%;
+  .parent-sig-cell {
+    padding: 2px 4px;
   }
-  .staff-box {
+  .parent-sig-box {
     border: 1px solid #94a3b8;
     background: #ffffff;
     border-radius: 2px;
-    height: 14px;
+    height: 16px;
     width: 100%;
   }
 
@@ -331,6 +347,8 @@
     gap: 2.5px;
     flex: 1;
     justify-content: space-between;
+    margin-top: 2px;
+    margin-bottom: 2px;
   }
   .domino-node {
     display: flex;
@@ -377,10 +395,10 @@
     background: #ffffff;
     border: 1px solid #cbd5e1;
     border-radius: 3px;
-    padding: 2.5px 5px;
+    padding: 3px 6px;
     display: flex;
     flex-direction: column;
-    gap: 1px;
+    gap: 1.5px;
   }
   .q-header {
     display: flex;
@@ -416,7 +434,7 @@
   .q-line-row {
     display: flex;
     align-items: flex-end;
-    gap: 4px;
+    gap: 5px;
     font-size: 7.2pt;
     margin-top: 1px;
   }
@@ -430,7 +448,7 @@
   .q-solid-line {
     flex: 1;
     border-bottom: 1.2px solid #000000;
-    min-height: 9px;
+    min-height: 18px;
   }
 
   /* Pages 9 & 10: Marking Bank */
@@ -645,8 +663,8 @@
 </head>
 <body>
   
-  <div class="a5-page">
-    <div>
+  <div class="a5-page page-flex-full">
+    <div class="page-body-stretch">
       <div class="cover-banner" data-department-name="The History Department">
         <span>The History Revision Hub &bull; <span class="school-brand-target">The History Department</span></span>
         <span>Key Stage 3 Companion</span>
@@ -672,9 +690,7 @@
           <strong>Historical Reference Map:</strong> The German Reich (1871–1918) &mdash; Geopolitical Encirclement &amp; The Balance of Power
         </div>
       </div>
-    </div>
 
-    <div>
       <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-bottom: none; padding: 2.5px 6px; font-size: 6.2pt; font-weight: 700; color: #334155; display: flex; justify-content: space-between;">
         <span>FORMATIVE HOMEWORK &amp; RETRIEVAL LEDGER</span>
         <span>30-SECOND DESK INSPECTION READY</span>
@@ -683,12 +699,11 @@
       <table class="tracking-table">
         <thead>
           <tr>
-            <th style="width: 44%; text-align: left;">Lesson &amp; Enquiry Focus</th>
-            <th style="width: 7%;">1</th>
-            <th style="width: 7%;">2</th>
-            <th style="width: 24%;">Retrieval Strength</th>
-            <th style="width: 10%;">Parent Signature</th>
-            <th style="width: 8%;">Staff Signature</th>
+            <th style="width: 34%; text-align: left;">Lesson &amp; Enquiry Focus</th>
+            <th style="width: 12%;">Attempt 1</th>
+            <th style="width: 12%;">Attempt 2</th>
+            <th style="width: 20%;">Retrieval Strength</th>
+            <th style="width: 22%; font-size: 5.4pt; text-transform: uppercase;">Parent Signature</th>
           </tr>
         </thead>
         <tbody>
@@ -700,8 +715,7 @@
             <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><div class="retrieval-boxes"><span>[ ] Instant</span> <span>[ ] Effortful</span> <span>[ ] Restudy</span></div></td>
-            <td><div class="parent-box"></div></td>
-            <td><div class="staff-box"></div></td>
+            <td class="parent-sig-cell"><div class="parent-sig-box"></div></td>
           </tr>
           <tr>
             <td class="left-title">
@@ -711,8 +725,7 @@
             <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><div class="retrieval-boxes"><span>[ ] Instant</span> <span>[ ] Effortful</span> <span>[ ] Restudy</span></div></td>
-            <td><div class="parent-box"></div></td>
-            <td><div class="staff-box"></div></td>
+            <td class="parent-sig-cell"><div class="parent-sig-box"></div></td>
           </tr>
           <tr>
             <td class="left-title">
@@ -722,8 +735,7 @@
             <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><div class="retrieval-boxes"><span>[ ] Instant</span> <span>[ ] Effortful</span> <span>[ ] Restudy</span></div></td>
-            <td><div class="parent-box"></div></td>
-            <td><div class="staff-box"></div></td>
+            <td class="parent-sig-cell"><div class="parent-sig-box"></div></td>
           </tr>
           <tr>
             <td class="left-title">
@@ -733,8 +745,7 @@
             <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><div class="retrieval-boxes"><span>[ ] Instant</span> <span>[ ] Effortful</span> <span>[ ] Restudy</span></div></td>
-            <td><div class="parent-box"></div></td>
-            <td><div class="staff-box"></div></td>
+            <td class="parent-sig-cell"><div class="parent-sig-box"></div></td>
           </tr>
           <tr>
             <td class="left-title">
@@ -744,8 +755,7 @@
             <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><div class="retrieval-boxes"><span>[ ] Instant</span> <span>[ ] Effortful</span> <span>[ ] Restudy</span></div></td>
-            <td><div class="parent-box"></div></td>
-            <td><div class="staff-box"></div></td>
+            <td class="parent-sig-cell"><div class="parent-sig-box"></div></td>
           </tr>
           <tr>
             <td class="left-title">
@@ -755,27 +765,11 @@
             <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><div class="retrieval-boxes"><span>[ ] Instant</span> <span>[ ] Effortful</span> <span>[ ] Restudy</span></div></td>
-            <td><div class="parent-box"></div></td>
-            <td><div class="staff-box"></div></td>
+            <td class="parent-sig-cell"><div class="parent-sig-box"></div></td>
           </tr>
         </tbody>
       </table>
 
-      <!-- 3-Tier Traffic Light Mastery & DIRT Rule -->
-      <div class="mastery-traffic-strip">
-        <div class="traffic-tier">
-          <span class="traffic-dot green-dot">&#9679;</span>
-          <span><strong>7–8/8: Mastered</strong> (Ready for essay)</span>
-        </div>
-        <div class="traffic-tier">
-          <span class="traffic-dot amber-dot">&#9679;</span>
-          <span><strong>5–6/8: Revise Vault</strong> (Check Pages 9–10)</span>
-        </div>
-        <div class="traffic-tier">
-          <span class="traffic-dot red-dot">&#9679;</span>
-          <span><strong>0–4/8: Retake Quiz</strong> (Scan QR for Attempt 2)</span>
-        </div>
-      </div>
 
       <div class="qr-strip">
         <img src="data:image/png;base64,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" alt="Digital Quiz QR" class="qr-code-img">
@@ -792,72 +786,93 @@
   </div>
   
   
-  <div class="a5-page">
-    <div class="page-header-strip">
-      <div>
-        <h2>Master Chronology Domino Flowchart</h2>
-        <p>1871–1914 &bull; 11 Anchor Flashpoints from German Unification to Continental War</p>
+  <div class="a5-page page-flex-full">
+    <div class="timeline-page-content">
+      <div class="page-header-strip">
+        <div>
+          <h2>Master Chronology Domino Flowchart</h2>
+          <p>1871–1914 &bull; 14 Anchor Flashpoints from German Unification to Continental War</p>
+        </div>
+        <span class="page-tag">Domino Flowchart</span>
       </div>
-      <span class="page-tag">Domino Flowchart</span>
-    </div>
 
-    <div class="timeline-flow">
-      
-        <div class="domino-node">
-          <span class="domino-year">1871</span>
-          <span class="domino-text"><strong>German Empire Proclaimed:</strong> Unified in the Hall of Mirrors at Versailles; Alsace-Lorraine annexed from France, sparking lifelong French <em>Revanche</em>.</span>
-        </div>
-      
-        <div class="domino-node">
-          <span class="domino-year">1882</span>
-          <span class="domino-text"><strong>Triple Alliance Formed:</strong> Germany, Austria-Hungary, and Italy create a central defensive military pact.</span>
-        </div>
-      
-        <div class="domino-node">
-          <span class="domino-year">1890</span>
-          <span class="domino-text"><strong>Bismarck Dismissed:</strong> Kaiser Wilhelm II rejects defensive diplomacy, cancels the Reinsurance Treaty, and launches aggressive <em>Weltpolitik</em>.</span>
-        </div>
-      
-        <div class="domino-node">
-          <span class="domino-year">1894</span>
-          <span class="domino-text"><strong>Franco-Russian Alliance:</strong> France and Russia unite militarily, trapping Germany between two rival powers (the two-front encirclement nightmare).</span>
-        </div>
-      
-        <div class="domino-node">
-          <span class="domino-year">1898–1900</span>
-          <span class="domino-text"><strong>Tirpitz Naval Laws:</strong> Germany begins building the High Seas Fleet to challenge the British Royal Navy's supremacy.</span>
-        </div>
-      
-        <div class="domino-node">
-          <span class="domino-year">1904</span>
-          <span class="domino-text"><strong>Entente Cordiale Signed:</strong> Britain and France settle colonial disputes (Egypt & Morocco) and begin joint defensive military discussions.</span>
-        </div>
-      
-        <div class="domino-node">
-          <span class="domino-year">1905–1906</span>
-          <span class="domino-text"><strong>First Moroccan Crisis:</strong> Wilhelm II lands at Tangier to test the Entente; the Algeciras Conference (1906) isolates Germany and binds Britain to France.</span>
-        </div>
-      
-        <div class="domino-node">
-          <span class="domino-year">1906</span>
-          <span class="domino-text"><strong>HMS Dreadnought Launched:</strong> Revolutionary British all-big-gun battleship resets naval technology and intensifies the Anglo-German arms race.</span>
-        </div>
-      
-        <div class="domino-node">
-          <span class="domino-year">1907</span>
-          <span class="domino-text"><strong>Triple Entente Completed:</strong> The Anglo-Russian Convention settles Asian colonial rivalries, uniting Britain, France, and Russia.</span>
-        </div>
-      
-        <div class="domino-node">
-          <span class="domino-year">1908</span>
-          <span class="domino-text"><strong>The Bosnian Crisis:</strong> Austria-Hungary annexes Bosnia, permanently alienating Serbia and humiliating Tsarist Russia.</span>
-        </div>
-      
-        <div class="domino-node">
-          <span class="domino-year">28 Jun – 4 Aug 1914</span>
-          <span class="domino-text"><strong>The July Crisis &amp; War:</strong> Franz Ferdinand assassinated in Sarajevo &rarr; German Blank Cheque &rarr; Austrian Ultimatum &rarr; Russian mobilisation &rarr; Schlieffen Plan &rarr; World War.</span>
-        </div>
-      
+      <div class="lesson-instruction-bar" style="margin-bottom: 2px;">
+        <strong>Causal Chain:</strong> Trace how imperial rivalry, military alliances, and the arms race escalated into the July Crisis and the outbreak of the Great War.
+      </div>
+
+      <div class="timeline-flow">
+        
+          <div class="domino-node">
+            <span class="domino-year">1871</span>
+            <span class="domino-text"><strong>German Empire Proclaimed:</strong> Unified in the Hall of Mirrors at Versailles; Alsace-Lorraine annexed from France, sparking lifelong French <em>Revanche</em>.</span>
+          </div>
+        
+          <div class="domino-node">
+            <span class="domino-year">1879</span>
+            <span class="domino-text"><strong>Dual Alliance Formed:</strong> Bismarck signs a defensive military treaty between Germany and Austria-Hungary against Tsarist Russia.</span>
+          </div>
+        
+          <div class="domino-node">
+            <span class="domino-year">1882</span>
+            <span class="domino-text"><strong>Triple Alliance Formed:</strong> Germany, Austria-Hungary, and Italy create a central European mutual defense pact.</span>
+          </div>
+        
+          <div class="domino-node">
+            <span class="domino-year">1890</span>
+            <span class="domino-text"><strong>Bismarck Dismissed:</strong> Kaiser Wilhelm II rejects defensive diplomacy, cancels the Reinsurance Treaty, and launches aggressive <em>Weltpolitik</em>.</span>
+          </div>
+        
+          <div class="domino-node">
+            <span class="domino-year">1894</span>
+            <span class="domino-text"><strong>Franco-Russian Alliance:</strong> France and Russia unite militarily, trapping Germany between two rival powers (the two-front encirclement nightmare).</span>
+          </div>
+        
+          <div class="domino-node">
+            <span class="domino-year">1898–1900</span>
+            <span class="domino-text"><strong>Tirpitz Naval Laws:</strong> Germany begins building the High Seas Fleet to challenge the British Royal Navy's supremacy.</span>
+          </div>
+        
+          <div class="domino-node">
+            <span class="domino-year">1904</span>
+            <span class="domino-text"><strong>Entente Cordiale Signed:</strong> Britain and France settle colonial disputes (Egypt & Morocco) and begin joint defensive military discussions.</span>
+          </div>
+        
+          <div class="domino-node">
+            <span class="domino-year">1905–1906</span>
+            <span class="domino-text"><strong>First Moroccan Crisis:</strong> Wilhelm II lands at Tangier to test the Entente; the Algeciras Conference (1906) isolates Germany and binds Britain to France.</span>
+          </div>
+        
+          <div class="domino-node">
+            <span class="domino-year">1906</span>
+            <span class="domino-text"><strong>HMS Dreadnought Launched:</strong> Revolutionary British all-big-gun battleship resets naval technology and intensifies the Anglo-German arms race.</span>
+          </div>
+        
+          <div class="domino-node">
+            <span class="domino-year">1907</span>
+            <span class="domino-text"><strong>Triple Entente Completed:</strong> The Anglo-Russian Convention settles Asian colonial rivalries, uniting Britain, France, and Russia.</span>
+          </div>
+        
+          <div class="domino-node">
+            <span class="domino-year">1908</span>
+            <span class="domino-text"><strong>The Bosnian Crisis:</strong> Austria-Hungary annexes Bosnia, permanently alienating Serbia and humiliating Tsarist Russia.</span>
+          </div>
+        
+          <div class="domino-node">
+            <span class="domino-year">1911</span>
+            <span class="domino-text"><strong>Second Moroccan Crisis:</strong> Germany sends gunboat Panther to Agadir; British Mansion House speech warns Germany, cementing Anglo-French solidarity.</span>
+          </div>
+        
+          <div class="domino-node">
+            <span class="domino-year">1912–1913</span>
+            <span class="domino-text"><strong>The Balkan Wars:</strong> Balkan states defeat the Ottomans; Serbia doubles in size, escalating Austrian hostility and regional panic.</span>
+          </div>
+        
+          <div class="domino-node">
+            <span class="domino-year">28 Jun – 4 Aug 1914</span>
+            <span class="domino-text"><strong>The July Crisis &amp; War:</strong> Franz Ferdinand assassinated in Sarajevo &rarr; German Blank Cheque &rarr; Austrian Ultimatum &rarr; Russian mobilisation &rarr; Schlieffen Plan &rarr; World War.</span>
+          </div>
+        
+      </div>
     </div>
 
     <div class="page-footer-strip">
@@ -880,7 +895,7 @@
           </div>
         </div>
         <div class="lesson-instruction-bar">
-          <strong>Instructions:</strong> Complete Line 1 (Answer) from memory. Complete Lines 2 &amp; 3 (Explanation) to articulate the historical mechanism, motive, or consequence.
+          <strong>Instructions:</strong> Complete Line 1 (Answer) from memory. Complete Line 2 (Detail / Why) to articulate the historical mechanism, motive, or consequence.
         </div>
       </div>
 
@@ -899,11 +914,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -920,11 +932,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -941,11 +950,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -962,11 +968,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -983,11 +986,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1004,11 +1004,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1025,11 +1022,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1046,11 +1040,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1076,7 +1067,7 @@
           </div>
         </div>
         <div class="lesson-instruction-bar">
-          <strong>Instructions:</strong> Complete Line 1 (Answer) from memory. Complete Lines 2 &amp; 3 (Explanation) to articulate the historical mechanism, motive, or consequence.
+          <strong>Instructions:</strong> Complete Line 1 (Answer) from memory. Complete Line 2 (Detail / Why) to articulate the historical mechanism, motive, or consequence.
         </div>
       </div>
 
@@ -1095,11 +1086,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1116,11 +1104,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1137,11 +1122,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1158,11 +1140,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1179,11 +1158,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1200,11 +1176,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1221,11 +1194,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1242,11 +1212,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1272,7 +1239,7 @@
           </div>
         </div>
         <div class="lesson-instruction-bar">
-          <strong>Instructions:</strong> Complete Line 1 (Answer) from memory. Complete Lines 2 &amp; 3 (Explanation) to articulate the historical mechanism, motive, or consequence.
+          <strong>Instructions:</strong> Complete Line 1 (Answer) from memory. Complete Line 2 (Detail / Why) to articulate the historical mechanism, motive, or consequence.
         </div>
       </div>
 
@@ -1291,11 +1258,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1312,11 +1276,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1333,11 +1294,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1354,11 +1312,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1375,11 +1330,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1396,11 +1348,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1417,11 +1366,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1438,11 +1384,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1468,7 +1411,7 @@
           </div>
         </div>
         <div class="lesson-instruction-bar">
-          <strong>Instructions:</strong> Complete Line 1 (Answer) from memory. Complete Lines 2 &amp; 3 (Explanation) to articulate the historical mechanism, motive, or consequence.
+          <strong>Instructions:</strong> Complete Line 1 (Answer) from memory. Complete Line 2 (Detail / Why) to articulate the historical mechanism, motive, or consequence.
         </div>
       </div>
 
@@ -1487,11 +1430,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1508,11 +1448,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1529,11 +1466,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1550,11 +1484,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1571,11 +1502,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1592,11 +1520,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1613,11 +1538,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1634,11 +1556,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1664,7 +1583,7 @@
           </div>
         </div>
         <div class="lesson-instruction-bar">
-          <strong>Instructions:</strong> Complete Line 1 (Answer) from memory. Complete Lines 2 &amp; 3 (Explanation) to articulate the historical mechanism, motive, or consequence.
+          <strong>Instructions:</strong> Complete Line 1 (Answer) from memory. Complete Line 2 (Detail / Why) to articulate the historical mechanism, motive, or consequence.
         </div>
       </div>
 
@@ -1683,11 +1602,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1704,11 +1620,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1725,11 +1638,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1746,11 +1656,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1767,11 +1674,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1788,11 +1692,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1809,11 +1710,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1830,11 +1728,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1860,7 +1755,7 @@
           </div>
         </div>
         <div class="lesson-instruction-bar">
-          <strong>Instructions:</strong> Complete Line 1 (Answer) from memory. Complete Lines 2 &amp; 3 (Explanation) to articulate the historical mechanism, motive, or consequence.
+          <strong>Instructions:</strong> Complete Line 1 (Answer) from memory. Complete Line 2 (Detail / Why) to articulate the historical mechanism, motive, or consequence.
         </div>
       </div>
 
@@ -1879,11 +1774,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1900,11 +1792,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1921,11 +1810,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1942,11 +1828,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1963,11 +1846,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -1984,11 +1864,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -2005,11 +1882,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       
@@ -2026,11 +1900,8 @@
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       

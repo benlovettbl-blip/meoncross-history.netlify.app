@@ -637,19 +637,138 @@ window.renderLessonByIndex = function (index, skipHistory = false) {
   }
 };
 
+// Register global switchVideoTab handler if in browser
+if (typeof window !== 'undefined' && !window.switchVideoTab) {
+  window.switchVideoTab = function (btn, sectionId, targetCardId) {
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+    // Hide all video cards in this section
+    section.querySelectorAll('.archival-video-entry').forEach(function (card) {
+      card.style.display = 'none';
+    });
+    // Show target card
+    const targetCard = document.getElementById(targetCardId);
+    if (targetCard) {
+      targetCard.style.display = 'flex';
+    }
+    // Update button states
+    const tabBtns = section.querySelectorAll('.video-pathway-tab-btn');
+    tabBtns.forEach(function (b) {
+      b.classList.remove('is-active');
+      b.style.background = '#ffffff';
+      b.style.color = '#475569';
+      b.style.borderColor = '#cbd5e1';
+      b.style.fontWeight = '600';
+      b.style.boxShadow = '0 1px 2px rgba(0,0,0,0.03)';
+      const icon = b.querySelector('i');
+      if (icon) icon.style.color = '#2563eb';
+    });
+    btn.classList.add('is-active');
+    btn.style.background = '#1e40af';
+    btn.style.color = '#ffffff';
+    btn.style.borderColor = '#1e40af';
+    btn.style.fontWeight = '700';
+    btn.style.boxShadow = '0 2px 5px rgba(30,64,175,0.25)';
+    const activeIcon = btn.querySelector('i');
+    if (activeIcon) activeIcon.style.color = '#93c5fd';
+  };
+}
+
+function parseDurationMinutes(durationStr) {
+  if (!durationStr || typeof durationStr !== 'string') return 0;
+  const colonMatch = durationStr.match(/(?:(\d+):)?(\d+):(\d+)/);
+  if (colonMatch) {
+    const hours = colonMatch[1] ? parseInt(colonMatch[1], 10) : 0;
+    const minutes = parseInt(colonMatch[2], 10);
+    return hours * 60 + minutes;
+  }
+  let mins = 0;
+  const hrMatch = durationStr.match(/(\d+)\s*(?:h|hr|hour)/i);
+  if (hrMatch) mins += parseInt(hrMatch[1], 10) * 60;
+  const minMatch = durationStr.match(/(\d+)\s*(?:m|min|minute)/i);
+  if (minMatch) mins += parseInt(minMatch[1], 10);
+  return mins;
+}
+
+function resolveVideoPathway(vid) {
+  const mins = parseDurationMinutes(vid.duration);
+  let pathway = vid.pathway;
+  let guidance = vid.teacher_guidance;
+  let icon = 'fa-solid fa-route';
+
+  if (!pathway) {
+    if (mins > 0 && mins < 5) {
+      pathway = 'Quick Summary';
+    } else if (mins >= 15) {
+      pathway = 'In-Depth Analysis';
+    } else {
+      pathway = 'Core Overview';
+    }
+  }
+
+  const pLower = pathway.toLowerCase();
+  if (
+    pLower.includes('quick') ||
+    pLower.includes('starter') ||
+    pLower.includes('summary') ||
+    pLower.includes('recap')
+  ) {
+    icon = 'fa-solid fa-bolt';
+  } else if (
+    pLower.includes('deep') ||
+    pLower.includes('documentary') ||
+    pLower.includes('in-depth') ||
+    pLower.includes('tactics') ||
+    pLower.includes('mechanics') ||
+    pLower.includes('masterclass')
+  ) {
+    icon = 'fa-solid fa-magnifying-glass-chart';
+  } else if (
+    pLower.includes('context') ||
+    pLower.includes('causes') ||
+    pLower.includes('strategic')
+  ) {
+    icon = 'fa-solid fa-globe';
+  } else if (pLower.includes('alliance') || pLower.includes('camp')) {
+    icon = 'fa-solid fa-handshake';
+  } else if (
+    pLower.includes('balkan') ||
+    pLower.includes('flashpoint') ||
+    pLower.includes('narrative')
+  ) {
+    icon = 'fa-solid fa-fire';
+  }
+
+  if (!guidance) {
+    if (mins > 0 && mins < 5) {
+      guidance = 'Ideal for starter recaps, rapid retrieval hooks, or SEN visual scaffolding.';
+    } else if (mins >= 15) {
+      guidance = 'Recommended for flipped homework, independent research, or high-attainer depth.';
+    } else {
+      guidance = 'Recommended for direct whole-class instruction or guided dual-coding notes.';
+    }
+  }
+
+  return { pathway, guidance, icon };
+}
+
 function renderLessonVideos(videos, lesson, unitId) {
   if (!videos || videos.length === 0) return '';
   const formatBold = window.formatBold || ((s) => s);
 
+  const safeLessonId = (
+    lesson && (lesson.id || lesson.title) ? String(lesson.id || lesson.title) : 'lesson'
+  ).replace(/[^a-zA-Z0-9_-]/g, '_');
+  const videoSectionId = 'video-section-' + safeLessonId;
+
   let videoCardsHtml = '';
 
-  videos.forEach((vid) => {
+  videos.forEach((vid, idx) => {
     const isYt =
       vid.type === 'youtube' ||
       (vid.url && (vid.url.includes('youtube.com') || vid.url.includes('youtu.be')));
     const isEra = vid.type === 'era' || (vid.url && vid.url.includes('era.org.uk'));
 
-    // Extract YouTube ID
     let ytId = null;
     if (isYt && vid.url) {
       const match = vid.url.match(
@@ -659,107 +778,117 @@ function renderLessonVideos(videos, lesson, unitId) {
     }
 
     const providerName = isEra
-      ? 'BBC / ERA Educational Broadcast'
+      ? 'BBC / ERA Educational'
       : isYt
-        ? 'YouTube Archival Video'
-        : 'Educational Resource';
+        ? 'YouTube Archival'
+        : 'Educational Video';
     const providerBadgeColor = isEra ? '#1e40af' : '#dc2626';
     const providerBadgeBg = isEra ? '#eff6ff' : '#fef2f2';
     const providerBadgeBorder = isEra ? '#bfdbfe' : '#fecaca';
     const providerIcon = isEra ? 'fa-solid fa-graduation-cap' : 'fa-brands fa-youtube';
 
+    const pathwayInfo = resolveVideoPathway(vid);
+
     let actionButtonHtml = '';
     if (ytId) {
       actionButtonHtml = `
-        <button type="button" class="btn btn-primary no-print" data-action="open-video-modal" data-youtube="${ytId}" style="display: inline-flex; align-items: center; gap: 8px; background: #dc2626; color: #ffffff; border: none; padding: 9px 18px; border-radius: 6px; font-weight: 700; font-size: 0.92rem; cursor: pointer; transition: all 0.2s; box-shadow: 0 2px 6px rgba(220, 38, 38, 0.3);">
-          <i class="fa-solid fa-play"></i> Watch in App (Distraction-Free)
+        <button type="button" class="btn btn-primary no-print" data-action="open-video-modal" data-youtube="${ytId}" style="display: inline-flex; align-items: center; gap: 6px; background: #dc2626; color: #ffffff; border: none; padding: 7px 14px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; box-shadow: 0 2px 5px rgba(220, 38, 38, 0.25);">
+          <i class="fa-solid fa-play" style="font-size: 0.78rem;"></i> Watch in App
         </button>
-        <a href="${vid.url}" target="_blank" rel="noopener noreferrer" class="no-print" style="color: #64748b; font-size: 0.85rem; text-decoration: underline; display: inline-flex; align-items: center; gap: 4px;">
-          External Link <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+        <a href="${vid.url}" target="_blank" rel="noopener noreferrer" class="no-print" style="color: #64748b; font-size: 0.8rem; text-decoration: underline; display: inline-flex; align-items: center; gap: 3px;">
+          Link <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i>
         </a>
       `;
     } else if (isEra) {
       actionButtonHtml = `
-        <a href="${vid.url}" target="_blank" rel="noopener noreferrer" class="no-print" style="display: inline-flex; align-items: center; gap: 8px; background: #1e40af; color: #ffffff; border: none; padding: 9px 18px; border-radius: 6px; font-weight: 700; font-size: 0.92rem; text-decoration: none; transition: all 0.2s; box-shadow: 0 2px 6px rgba(30, 64, 175, 0.3);">
-          <i class="fa-solid fa-lock" style="font-size: 0.8rem;"></i> Stream on ERA (School SSO) <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem; margin-left: 2px;"></i>
+        <a href="${vid.url}" target="_blank" rel="noopener noreferrer" class="no-print" style="display: inline-flex; align-items: center; gap: 6px; background: #1e40af; color: #ffffff; border: none; padding: 7px 14px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; text-decoration: none; transition: all 0.2s; box-shadow: 0 2px 5px rgba(30, 64, 175, 0.25);">
+          <i class="fa-solid fa-lock" style="font-size: 0.75rem;"></i> Stream on ERA <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem; margin-left: 2px;"></i>
         </a>
-        <span class="no-print" style="color: #64748b; font-size: 0.82rem; font-style: italic;">Requires School SSO</span>
+        <span class="no-print" style="color: #64748b; font-size: 0.78rem; font-style: italic;">School SSO</span>
       `;
     } else {
       actionButtonHtml = `
-        <a href="${vid.url}" target="_blank" rel="noopener noreferrer" class="no-print" style="display: inline-flex; align-items: center; gap: 8px; background: #0f172a; color: #ffffff; border: none; padding: 9px 18px; border-radius: 6px; font-weight: 700; font-size: 0.92rem; text-decoration: none;">
-          <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Resource
+        <a href="${vid.url}" target="_blank" rel="noopener noreferrer" class="no-print" style="display: inline-flex; align-items: center; gap: 6px; background: #0f172a; color: #ffffff; border: none; padding: 7px 14px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; text-decoration: none;">
+          <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i> Open
         </a>
       `;
     }
 
     videoCardsHtml += `
-      <div class="archival-video-entry" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); display: flex; flex-direction: column; gap: 14px;">
-        <!-- Top row: Provider + Duration + Title + Action -->
+      <div id="${videoSectionId}-card-${idx}" class="archival-video-entry" style="display: ${idx === 0 ? 'flex' : 'none'}; flex-direction: column; gap: 10px; background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 14px 16px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+        <!-- Top row: Provider + Duration + Pathway Badge + Title + Action -->
         <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap;">
-          <div style="flex: 1; min-width: 260px;">
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px; flex-wrap: wrap;">
-              <span class="archival-meta-tag" style="background: ${providerBadgeBg}; color: ${providerBadgeColor}; border: 1px solid ${providerBadgeBorder}; font-size: 0.72rem; padding: 2px 8px; border-radius: 4px; font-weight: 700; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 5px;">
+          <div style="flex: 1; min-width: 240px;">
+            <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px; flex-wrap: wrap;">
+              <span class="archival-meta-tag" style="background: ${providerBadgeBg}; color: ${providerBadgeColor}; border: 1px solid ${providerBadgeBorder}; font-size: 0.70rem; padding: 2px 7px; border-radius: 4px; font-weight: 700; letter-spacing: 0.04em; display: inline-flex; align-items: center; gap: 4px;">
                 <i class="${providerIcon}"></i> ${providerName}
               </span>
-              ${vid.duration ? `<span style="background: #f1f5f9; color: #475569; font-size: 0.78rem; font-weight: 600; padding: 2px 8px; border-radius: 4px; border: 1px solid #e2e8f0; display: inline-flex; align-items: center; gap: 4px;"><i class="fa-regular fa-clock"></i> ${vid.duration}</span>` : ''}
-              ${vid.pathway ? `<span class="archival-meta-tag" style="background: #eff6ff; color: #1e40af; border: 1.5px solid #bfdbfe; font-size: 0.74rem; padding: 2px 9px; border-radius: 4px; font-weight: 700; letter-spacing: 0.04em; display: inline-flex; align-items: center; gap: 5px;"><i class="fa-solid fa-route" style="color: #2563eb;"></i> ${vid.pathway}</span>` : ''}
+              ${vid.duration ? `<span style="background: #f1f5f9; color: #475569; font-size: 0.74rem; font-weight: 600; padding: 2px 7px; border-radius: 4px; border: 1px solid #e2e8f0; display: inline-flex; align-items: center; gap: 4px;"><i class="fa-regular fa-clock"></i> ${vid.duration}</span>` : ''}
+              <span class="archival-meta-tag" style="background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; font-size: 0.72rem; padding: 2px 8px; border-radius: 4px; font-weight: 700; letter-spacing: 0.04em; display: inline-flex; align-items: center; gap: 4px;">
+                <i class="${pathwayInfo.icon}" style="color: #2563eb;"></i> ${pathwayInfo.pathway}
+              </span>
             </div>
-            <h4 style="margin: 0; font-size: 1.15rem; color: #0f172a; font-family: 'Playfair Display', serif; line-height: 1.4;">
+            <h4 style="margin: 0; font-size: 1.05rem; color: #0f172a; font-family: 'Playfair Display', serif; line-height: 1.35;">
               ${vid.title || 'Historical Documentary Resource'}
             </h4>
           </div>
-          <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
             ${actionButtonHtml}
           </div>
         </div>
 
-        <!-- Teacher Pathway & Lesson Pace Guidance -->
-        ${
-          vid.teacher_guidance
-            ? `
-          <div class="video-teacher-guidance-box" style="background: #f8fafc; border-left: 4px solid #6366f1; padding: 10px 14px; border-radius: 0 6px 6px 0; display: flex; align-items: flex-start; gap: 10px;">
-            <div style="color: #4f46e5; font-size: 1rem; margin-top: 2px; flex-shrink: 0;">
-              <i class="fa-solid fa-chalkboard-user"></i>
-            </div>
-            <div>
-              <div style="font-size: 0.76rem; font-weight: 800; color: #4338ca; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 2px;">
-                Teacher Video Pathway Guidance:
+        <!-- Side-by-side Teacher Guidance + Active Viewing Task Grid (Option 4) -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px; margin-top: 2px;">
+          ${
+            pathwayInfo.guidance
+              ? `
+            <div class="video-teacher-guidance-box" style="background: #f8fafc; border-left: 3px solid #6366f1; padding: 8px 12px; border-radius: 0 5px 5px 0; display: flex; align-items: flex-start; gap: 8px;">
+              <div style="color: #4f46e5; font-size: 0.88rem; margin-top: 2px; flex-shrink: 0;">
+                <i class="fa-solid fa-chalkboard-user"></i>
               </div>
-              <div style="font-size: 0.88rem; color: #334155; line-height: 1.5;">
-                ${formatBold(vid.teacher_guidance)}
+              <div>
+                <div style="font-size: 0.70rem; font-weight: 800; color: #4338ca; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px;">
+                  Teacher Video Pathway Guidance:
+                </div>
+                <div style="font-size: 0.84rem; color: #334155; line-height: 1.45;">
+                  ${formatBold(pathwayInfo.guidance)}
+                </div>
               </div>
             </div>
-          </div>
-        `
-            : ''
-        }
+          `
+              : ''
+          }
 
-        <!-- Active Viewing Task -->
-        ${
-          vid.viewing_task
-            ? `
-          <div class="video-viewing-task-box" style="background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; border-radius: 0 6px 6px 0;">
-            <div style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">
-              <i class="fa-solid fa-crosshairs"></i> Active Viewing Task:
+          ${
+            vid.viewing_task
+              ? `
+            <div class="video-viewing-task-box" style="background: #fffbeb; border-left: 3px solid #f59e0b; padding: 8px 12px; border-radius: 0 5px 5px 0; display: flex; align-items: flex-start; gap: 8px;">
+              <div style="color: #d97706; font-size: 0.88rem; margin-top: 2px; flex-shrink: 0;">
+                <i class="fa-solid fa-crosshairs"></i>
+              </div>
+              <div>
+                <div style="font-size: 0.70rem; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px;">
+                  Active Viewing Task:
+                </div>
+                <div style="font-size: 0.85rem; color: #92400e; line-height: 1.45;">
+                  ${formatBold(vid.viewing_task)}
+                </div>
+              </div>
             </div>
-            <div style="font-size: 0.95rem; color: #92400e; line-height: 1.55;">
-              ${formatBold(vid.viewing_task)}
-            </div>
-          </div>
-        `
-            : ''
-        }
+          `
+              : ''
+          }
+        </div>
 
         <!-- Revealable Model Answer -->
         ${
           vid.model_answer
             ? `
-          <details class="video-model-details" style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; overflow: hidden;">
-            <summary style="cursor: pointer; padding: 9px 14px; font-size: 0.88rem; color: #166534; font-weight: 700; user-select: none; display: flex; align-items: center; gap: 8px; background: #f0fdf4;">
+          <details class="video-model-details" style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; overflow: hidden; margin-top: 2px;">
+            <summary style="cursor: pointer; padding: 7px 12px; font-size: 0.82rem; color: #166534; font-weight: 700; user-select: none; display: flex; align-items: center; gap: 6px; background: #f0fdf4;">
               <i class="fa-solid fa-key" style="color: #16a34a;"></i> Reveal Viewing Task Model Notes
             </summary>
-            <div style="padding: 12px 16px; font-size: 0.92rem; color: #14532d; line-height: 1.6; border-top: 1px solid #bbf7d0; background: #ffffff;">
+            <div style="padding: 10px 14px; font-size: 0.88rem; color: #14532d; line-height: 1.55; border-top: 1px solid #bbf7d0; background: #ffffff;">
               ${formatBold(vid.model_answer)}
             </div>
           </details>
@@ -770,42 +899,78 @@ function renderLessonVideos(videos, lesson, unitId) {
     `;
   });
 
+  // Segmented Pathway Tabs Bar if multiple videos
+  let tabBarHtml = '';
+  if (videos.length > 1) {
+    const tabButtons = videos
+      .map((v, i) => {
+        const info = resolveVideoPathway(v);
+        const isActive = i === 0;
+        let shortDur = '';
+        if (v.duration) {
+          shortDur = v.duration
+            .replace(/\s*secs?/i, 's')
+            .replace(/\s*mins?/i, 'm')
+            .replace(/\s+/g, ' ')
+            .trim();
+        }
+        return `
+          <button type="button" 
+            class="video-pathway-tab-btn ${isActive ? 'is-active' : ''}" 
+            data-target="${videoSectionId}-card-${i}"
+            onclick="window.switchVideoTab && window.switchVideoTab(this, '${videoSectionId}', '${videoSectionId}-card-${i}')"
+            style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 6px; font-size: 0.82rem; font-weight: ${isActive ? '700' : '600'}; background: ${isActive ? '#1e40af' : '#ffffff'}; color: ${isActive ? '#ffffff' : '#475569'}; border: 1px solid ${isActive ? '#1e40af' : '#cbd5e1'}; cursor: pointer; transition: all 0.15s ease; white-space: nowrap; box-shadow: ${isActive ? '0 2px 5px rgba(30,64,175,0.25)' : '0 1px 2px rgba(0,0,0,0.03)'};"
+            onmouseover="if (!this.classList.contains('is-active')) { this.style.background='#f8fafc'; this.style.borderColor='#94a3b8'; }"
+            onmouseout="if (!this.classList.contains('is-active')) { this.style.background='#ffffff'; this.style.borderColor='#cbd5e1'; }"
+          >
+            <i class="${info.icon}" style="color: ${isActive ? '#93c5fd' : '#2563eb'};"></i>
+            <span>${info.pathway}</span>
+            ${shortDur ? `<span style="font-size: 0.74rem; opacity: 0.85; font-family: monospace;">(${shortDur})</span>` : ''}
+          </button>
+        `;
+      })
+      .join('');
+
+    tabBarHtml = `
+      <div class="video-pathway-tabs-bar no-print" style="display: flex; gap: 8px; margin-bottom: 12px; overflow-x: auto; padding-bottom: 4px; border-bottom: 1px solid #e2e8f0;">
+        ${tabButtons}
+      </div>
+    `;
+  }
+
   return `
-    <div class="phase-card archival-media-phase" style="margin-top: 30px; margin-bottom: 30px; background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.05);">
-      <!-- Header Banner -->
-      <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #ffffff; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <div style="background: rgba(239, 68, 68, 0.2); border: 1px solid rgba(239, 68, 68, 0.4); width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-            <i class="fa-solid fa-film" style="color: #f87171; font-size: 1.1rem;"></i>
-          </div>
-          <div>
-            <div style="font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: #94a3b8; font-weight: 700;">
-              Act 2 Bridge &bull; Dual-Coding Audio-Visual Reinforcement
-            </div>
-            <div style="font-size: 1.2rem; font-weight: 700; font-family: 'Playfair Display', serif; color: #ffffff;">
-              Archival Broadcast &amp; Documentary Evidence
-            </div>
-          </div>
+    <div id="${videoSectionId}" class="phase-card archival-media-phase" style="margin-top: 24px; margin-bottom: 24px; background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 10px; overflow: hidden; box-shadow: 0 3px 10px rgba(0,0,0,0.04);">
+      <!-- Streamlined Archival Header Bar (Option 4) -->
+      <div style="background: #0f172a; color: #ffffff; padding: 8px 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; border-bottom: 1px solid #334155;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-film" style="color: #f87171; font-size: 0.85rem;"></i>
+          <span style="font-size: 0.88rem; font-weight: 700; color: #f8fafc; font-family: 'Playfair Display', serif; letter-spacing: 0.02em;">
+            Archival Video Evidence
+          </span>
+          <span class="no-print" style="font-size: 0.72rem; color: #94a3b8; font-weight: 500;">&bull; Act 2 Audio-Visual Bridge</span>
         </div>
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <span class="archival-shelfmark-stamp" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: #cbd5e1; font-size: 0.75rem; padding: 4px 10px; border-radius: 4px; font-family: monospace;">
-            MEDIA // ${(unitId || 'HIST').toUpperCase()} &bull; ${videos.length} ${videos.length === 1 ? 'Resource' : 'Resources'}
+        <div style="display: flex; align-items: center; gap: 8px;">
+          ${
+            videos.length > 1
+              ? `
+            <span class="no-print" style="font-size: 0.72rem; color: #94a3b8; background: rgba(255,255,255,0.08); padding: 2px 7px; border-radius: 3px;">
+              ${videos.length} Pathways Available
+            </span>
+          `
+              : ''
+          }
+          <span class="archival-shelfmark-stamp" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: #cbd5e1; font-size: 0.72rem; padding: 2px 7px; border-radius: 3px; font-family: monospace;">
+            MEDIA // ${(unitId || 'HIST').toUpperCase()}
           </span>
         </div>
       </div>
 
-      <!-- Pedagogical Subtitle -->
-      <div style="background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 12px 24px; font-size: 0.9rem; color: #475569; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <i class="fa-solid fa-circle-info" style="color: #3b82f6;"></i>
-          <span><strong>Active Viewing Instruction:</strong> Review the viewing task before playing. Use evidence from the broadcast to reinforce your historical explanation.</span>
+      <!-- Inner Content Area -->
+      <div style="padding: 12px 16px; background: #f8fafc;">
+        ${tabBarHtml}
+        <div class="video-cards-container">
+          ${videoCardsHtml}
         </div>
-        <span class="no-print" style="font-size: 0.8rem; color: #64748b;"><i class="fa-regular fa-circle-play" style="color: #10b981; margin-right: 4px;"></i> In-App Player Active</span>
-      </div>
-
-      <!-- Video Cards List -->
-      <div style="padding: 20px 24px; display: flex; flex-direction: column; gap: 18px;">
-        ${videoCardsHtml}
       </div>
     </div>
   `;

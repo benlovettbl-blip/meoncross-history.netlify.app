@@ -7,8 +7,14 @@ STRICT RULE: You are STRICTLY FORBIDDEN from using the name of the user's school
 5. **Git Pre-Commit Sanitization Guardrail:** `node scripts/verify_sanitization.cjs` is strictly enforced in `npm run test:qa` and `.husky/pre-commit`. Any attempt to commit code or documents containing prohibited school or teacher identifiers will exit with code 1 and immediately abort the commit.
 6. **Commercial School Cover Customizer Standard:** All printed booklets, pupil workbooks, and revision packs must follow the customizer pattern: `data-department-name="The History Department"` on the cover banner enclosing `<span class="school-brand-target">The History Department</span>`. Purchasing schools can seamlessly stamp their own school or department name on the cover via pure CSS (`[data-department-name]::after`), browser query parameter (`?school=School+Name`), or CLI/PDF environment variable (`SCHOOL_NAME="School Name" node scripts/export_pdfs.cjs`), keeping our source repository 100% institutional-neutral.
 
-## Layout Checks
-Always proactively check for layout overflows, spilling text, and missing title pages after making any structural HTML changes.
+## Layout Checks & Universal Page Budget Standardization
+Always proactively audit documents for page overflows, spilling text, and dead underflow space using `node scripts/check_overflows.cjs <unit_id>`.
+1. **Container Architecture:** All discrete printable page containers (`.a5-page`, `.page`, `.page-container`) must enforce rigid page limits (`overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;`).
+2. **Universal Flex Distribution:** Standard utility classes:
+   - `.page-flex-full`: Forces full container height flex column with space-between justification.
+   - `.page-body-stretch`: Applied to central content sections (`flex: 1; display: flex; flex-direction: column; justify-content: space-between;`) to ensure even vertical distribution and eliminate dead bottom gaps.
+   - `.content-stretch`: Flex child expanding to absorb available vertical room.
+3. **Automated Audit Pipeline:** All PDF compilation pipelines (`scripts/export_pdfs.cjs`, `scripts/generate_all_standalone_cover_packs.cjs`) and unit sync workflows (`scripts/sync_unit.cjs`) automatically execute `scripts/audit_page_budget.cjs` to guarantee 0px overflow and optimal (>85%) space utilization.
 
 ## New Unit Creation
 When the user asks to build, add, or create a new unit:

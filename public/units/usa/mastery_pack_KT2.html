@@ -76,12 +76,13 @@
         .cover {
             background-color: var(--brand-dark);
             color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
             align-items: center;
             text-align: center;
             position: relative;
+            box-sizing: border-box !important;
             background-image: url('./assets/sources/birmingham-protests-dogs-1963.jpg'); background-size: cover; background-position: center;
         }
         .cover::after {
@@ -96,8 +97,10 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             height: 100%;
+            min-height: 240mm;
+            box-sizing: border-box;
         }
         .cover h1 {
             font-family: 'Playfair Display', serif;
@@ -191,6 +194,39 @@
             font-weight: 700;
             color: #2563eb;
             word-break: break-all;
+        }
+
+        /* Strategy Page Styling */
+        .strategy {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            box-sizing: border-box !important;
+        }
+        .strategy h1 {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 2.2rem;
+        }
+        .strategy h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            color: var(--brand-dark);
+            margin-top: 14px;
+            margin-bottom: 6px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 4px;
+        }
+        .strategy p, .strategy li {
+            font-size: 1.02rem;
+            line-height: 1.5;
+            color: #334155;
+        }
+        .strategy ul {
+            margin: 6px 0;
+            padding-left: 20px;
         }
 
         /* Screen-Only Mobile Toolbar */
@@ -1781,19 +1817,18 @@
 
         /* Footer Debrief */
         .debrief {
-            margin-top: auto;
+            margin-top: auto !important;
             border: 2px dashed var(--brand-red);
-            padding: 15px;
+            padding: 14px 18px;
             background: #fff;
-            margin-top: 20px;
         }
         .debrief h3 {
-            margin: 0 0 10px 0;
+            margin: 0 0 8px 0;
             font-family: 'Montserrat', sans-serif;
             color: var(--brand-red);
         }
         .debrief p {
-            margin: 5px 0;
+            margin: 4px 0;
             font-weight: 600;
         }
 
@@ -1801,6 +1836,10 @@
         .vault-page {
             background-color: #fffbc8; /* Pastel yellow */
             position: relative;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            box-sizing: border-box !important;
         }
         .vault-watermark {
             position: absolute;
@@ -1815,6 +1854,10 @@
         .vault-content {
             position: relative;
             z-index: 1;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .vault-page h1 {
             font-family: 'Montserrat', sans-serif;
@@ -1947,20 +1990,29 @@
             }
         }
 
-        /* Tracker Page */
+        /* Tracker Page Flex Distribution */
+        .tracker-page {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            box-sizing: border-box !important;
+        }
         .tracker-page h1 {
             font-family: 'Montserrat', sans-serif;
             text-align: center;
+            margin-top: 5px;
+            margin-bottom: 4px;
         }
         .tracker-table {
             width: 100%;
             table-layout: fixed;
             border-collapse: collapse;
+            margin-bottom: 12px;
         }
         .tracker-table th, .tracker-table td {
-            padding: 15px;
-            font-size: 1.1rem;
-            border: 1px solid #ccc;
+            padding: 16px 12px;
+            font-size: 1.05rem;
+            border: 1.2px solid #cbd5e1;
             text-align: center;
         }
         .tracker-table th {
@@ -2039,9 +2091,34 @@
         }
         .reflection-box {
             border: 2px solid var(--brand-dark);
-            padding: 20px;
-            margin-top: 30px;
-            min-height: 150px;
+            padding: 20px 24px;
+            margin-top: 10px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 240px;
+            background: #fdfdfd;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        .reflection-box h3 {
+            margin-top: 0;
+            font-size: 1.25rem;
+            color: var(--brand-dark);
+            border-bottom: 2px solid var(--brand-dark);
+            padding-bottom: 4px;
+            margin-bottom: 8px;
+        }
+        .reflection-prompt {
+            margin: 8px 0;
+            font-size: 0.98rem;
+        }
+        .reflection-lines {
+            border-bottom: 1.2px dashed #94a3b8;
+            height: 28px;
+            width: 100%;
+            margin-top: 4px;
         }
 
         /* Print Optimization & Vault Answers Guarantee */
@@ -2115,7 +2192,7 @@
                 <p><strong>Operative / Student Name:</strong> ___________________________</p>
                 <p><strong>Target:</strong> Total Recall of 80 Crucial Questions</p>
                 <div class="cover-qr-card">
-                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
+                    <img src="data:image/png;base64,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" alt="Digital Vault QR Code" class="cover-qr-img">
                     <div class="cover-qr-info">
                         <div class="cover-qr-title">⚡ Interactive Recall Quiz &amp; Scratch-Off Vault</div>
                         <div class="cover-qr-desc">Scan with your phone to launch Instant-Feedback Recall Quiz (#practice-mode) &amp; tap-to-reveal self-marking solutions.</div>
@@ -2984,9 +3061,9 @@
     </div>
             
     <!-- The Vault -->
-    <div class="page vault-page page-break vault-bg" id="the-vault">
+    <div class="page vault-page page-break vault-bg page-flex-full" id="the-vault">
         <div class="vault-watermark">🔒</div>
-        <div class="vault-content">
+        <div class="vault-content page-body-stretch">
             <h1>THE VAULT</h1>
             <p class="vault-subtitle">Restricted Access: Answer Keys</p>
             <div class="vault-screen-controls">
@@ -3132,7 +3209,13 @@
                     <div class="answer-num">27.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Lyndon B. Johnson</div>
                 </div>
-                
+                </div>
+        </div>
+    </div>
+    <div class="page vault-page page-break vault-bg page-flex-full">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content page-body-stretch">
+                <div class="answer-list"><h3>KT 2.2: How did protests in Birmingham and Selma lead to the Civil and Voting Rights Acts?</h3>
                 <div class="answer-item">
                     <div class="answer-num">28.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Selma, Alabama</div>
@@ -3197,13 +3280,7 @@
                     <div class="answer-num">40.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">A Ku Klux Klan bomb explosion during Sunday church services.</div>
                 </div>
-                </div>
-        </div>
-    </div>
-    <div class="page vault-page page-break vault-bg">
-        <div class="vault-watermark">🔒</div>
-        <div class="vault-content">
-                <div class="answer-list"><h3>KT 2.3: What was the Black Power movement, and how did it differ from non-violent protests?</h3>
+                </div><div class="answer-list"><h3>KT 2.3: What was the Black Power movement, and how did it differ from non-violent protests?</h3>
                 <div class="answer-item">
                     <div class="answer-num">41.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Malcolm X</div>
@@ -3273,7 +3350,13 @@
                     <div class="answer-num">54.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Institutional racism</div>
                 </div>
-                
+                </div>
+        </div>
+    </div>
+    <div class="page vault-page page-break vault-bg page-flex-full">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content page-body-stretch">
+                <div class="answer-list"><h3>KT 2.3: What was the Black Power movement, and how did it differ from non-violent protests?</h3>
                 <div class="answer-item">
                     <div class="answer-num">55.</div>
                     <div class="answer-text" onclick="this.classList.toggle('revealed')">Selma campaign</div>
@@ -3408,22 +3491,23 @@
     </div>
     
     <!-- Tracker Page -->
-    <div class="page tracker-page">
-        <h1>Mastery Tracker</h1>
-        <p style="text-align: center; margin-bottom: 30px;">Track your total recall score across all 80 questions.</p>
-        
-        <table class="tracker-table">
-            <thead>
-                <tr>
-                    <th class="col-attempt">Attempt</th>
-                    <th class="col-date">Date</th>
-                    <th class="col-score">Score (/80)</th>
-                    <th class="col-sig">Parent Validation Stamp</th>
-                    <th class="col-target">Target for Next Time</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td><strong>1</strong></td><td></td><td></td><td class="col-sig-cell">
+    <div class="page tracker-page page-flex-full">
+        <div>
+            <h1>Mastery Tracker</h1>
+            <p style="text-align: center; margin-bottom: 16px;">Track your total recall score across all 80 questions.</p>
+            
+            <table class="tracker-table">
+                <thead>
+                    <tr>
+                        <th class="col-attempt">Attempt</th>
+                        <th class="col-date">Date</th>
+                        <th class="col-score">Score (/80)</th>
+                        <th class="col-sig">Parent Validation Stamp</th>
+                        <th class="col-target">Target for Next Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>1</strong></td><td></td><td></td><td class="col-sig-cell">
                         <div class="parent-stamp-box">
                             <div class="stamp-badge">PARENT VALIDATION STAMP</div>
                             <div class="stamp-effort">
@@ -3433,7 +3517,7 @@
                             <div class="stamp-field"><span class="stamp-label">Date:</span><span class="stamp-line"></span></div>
                             <div class="stamp-field"><span class="stamp-label">Signature:</span><span class="stamp-line"></span></div>
                         </div></td><td></td></tr>
-                <tr><td><strong>2</strong></td><td></td><td></td><td class="col-sig-cell">
+                    <tr><td><strong>2</strong></td><td></td><td></td><td class="col-sig-cell">
                         <div class="parent-stamp-box">
                             <div class="stamp-badge">PARENT VALIDATION STAMP</div>
                             <div class="stamp-effort">
@@ -3443,7 +3527,7 @@
                             <div class="stamp-field"><span class="stamp-label">Date:</span><span class="stamp-line"></span></div>
                             <div class="stamp-field"><span class="stamp-label">Signature:</span><span class="stamp-line"></span></div>
                         </div></td><td></td></tr>
-                <tr><td><strong>3</strong></td><td></td><td></td><td class="col-sig-cell">
+                    <tr><td><strong>3</strong></td><td></td><td></td><td class="col-sig-cell">
                         <div class="parent-stamp-box">
                             <div class="stamp-badge">PARENT VALIDATION STAMP</div>
                             <div class="stamp-effort">
@@ -3453,13 +3537,28 @@
                             <div class="stamp-field"><span class="stamp-label">Date:</span><span class="stamp-line"></span></div>
                             <div class="stamp-field"><span class="stamp-label">Signature:</span><span class="stamp-line"></span></div>
                         </div></td><td></td></tr>
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
 
-        <div class="reflection-box">
-            <h3 style="margin-top: 0;">Operative Reflection</h3>
-            <p><strong>My ultimate strength in this unit is...</strong><br><br><br></p>
-            <p><strong>The three specific facts I need to hunt down and memorize tonight are...</strong><br><br><br></p>
+        <div class="reflection-box page-body-stretch">
+            <h3>Operative Reflection</h3>
+            <div class="reflection-prompt">
+                <strong>1. My ultimate strength in this unit is...</strong>
+                <div class="reflection-lines"></div>
+                <div class="reflection-lines"></div>
+            </div>
+            <div class="reflection-prompt">
+                <strong>2. The three specific facts I need to hunt down and memorize tonight are...</strong>
+                <div class="reflection-lines"></div>
+                <div class="reflection-lines"></div>
+                <div class="reflection-lines"></div>
+            </div>
+            <div class="reflection-prompt">
+                <strong>3. Key targets and action steps for the next retrieval attempt:</strong>
+                <div class="reflection-lines"></div>
+                <div class="reflection-lines"></div>
+            </div>
         </div>
     </div>
 

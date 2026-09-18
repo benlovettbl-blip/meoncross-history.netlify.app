@@ -228,6 +228,9 @@ const great_war = {
           url: 'https://www.youtube.com/watch?v=-PAEmgYv0DE',
           title: 'German Unification and Empire - History in 5 Minutes',
           duration: '5 mins 21 secs',
+          pathway: 'Quick Summary',
+          teacher_guidance:
+            'Punchy starter recap or SEN visual hook. Rapidly outlines Bismarck\'s "blood and iron" doctrine and the three decisive unification wars in just over 5 minutes.',
           viewing_task:
             'Note down the key steps Bismarck took to unify the German states and create the Empire.',
           model_answer:
@@ -238,6 +241,9 @@ const great_war = {
           url: 'https://www.youtube.com/watch?v=o_PKusG7NFs',
           title: '"The Great War" 1 | What Made Germany So Successful Before World War 1?',
           duration: '23 mins 7 secs',
+          pathway: 'Deep-Dive Documentary',
+          teacher_guidance:
+            "Recommended for flipped learning, independent homework, or high-attaining pupils seeking in-depth analysis of Wilhelmine Germany's industrial boom, steel production, and military discipline.",
           viewing_task:
             'Watch the first 5 minutes of this documentary and note down the key factors that made the German Empire such a powerful new nation.',
           model_answer:
@@ -373,19 +379,6 @@ const great_war = {
       video: [
         {
           type: 'youtube',
-          url: 'https://www.youtube.com/watch?v=xfTI_YLapog',
-          title: 'Welcome To Glory & Defeat - Why We Should Remember The Franco-Prussian War',
-          duration: '4 mins 28 secs',
-          pathway: 'Broader Context & Strategic Causes',
-          teacher_guidance:
-            'Excellent introductory hook, homework primer, or flipped learning task before analyzing the Ems Telegram and the proclamation in the Hall of Mirrors.',
-          viewing_task:
-            'Watch this introductory overview and note down three reasons why the Franco-Prussian War of 1870–71 was a crucial turning point that shaped modern European history and paved the path toward 1914.',
-          model_answer:
-            'The documentary explains that the Franco-Prussian War created the modern German nation-state, destroyed the French Second Empire, led to the traumatic Paris Commune, and ignited decades of bitter French resentment (revanche) that made a future European confrontation virtually inevitable.',
-        },
-        {
-          type: 'youtube',
           url: 'https://www.youtube.com/watch?v=j1Yk0lzV40Q',
           title: 'History Matters: The Franco Prussian War (Short Animated Documentary)',
           duration: '3 mins 49 secs',
@@ -396,6 +389,19 @@ const great_war = {
             'Identify how Otto von Bismarck engineered the conflict against Napoleon III, how the German Empire was proclaimed in Versailles, and why the annexation of Alsace-Lorraine created permanent French resentment.',
           model_answer:
             'Bismarck used the Ems Dispatch to provoke Napoleon III into declaring war, uniting the southern German states with Prussia. Prussian military efficiency culminated in the catastrophic French defeat at Sedan. In January 1871, the German Empire was proclaimed in the Hall of Mirrors at Versailles, and Germany annexed the border province of Alsace-Lorraine and imposed a 5 billion franc indemnity, establishing an enduring French desire for revenge (revanche).',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=xfTI_YLapog',
+          title: 'Welcome To Glory & Defeat - Why We Should Remember The Franco-Prussian War',
+          duration: '4 mins 28 secs',
+          pathway: 'Broader Context & Strategic Causes',
+          teacher_guidance:
+            'Excellent introductory hook, homework primer, or flipped learning task before analyzing the Ems Telegram and the proclamation in the Hall of Mirrors.',
+          viewing_task:
+            'Watch this introductory overview and note down three reasons why the Franco-Prussian War of 1870–71 was a crucial turning point that shaped modern European history and paved the path toward 1914.',
+          model_answer:
+            'The documentary explains that the Franco-Prussian War created the modern German nation-state, destroyed the French Second Empire, led to the traumatic Paris Commune, and ignited decades of bitter French resentment (revanche) that made a future European confrontation virtually inevitable.',
         },
         {
           type: 'youtube',
@@ -1206,13 +1212,16 @@ const great_war = {
       video: [
         {
           type: 'youtube',
-          url: 'https://www.youtube.com/watch?v=0SEgckAL-xc',
-          title: 'Powder Keg: Europe 1900 to 1914 | Historical Documentary | Lucasfilm',
-          duration: '26 mins 6 secs',
+          url: 'https://www.youtube.com/watch?v=DduN1cU2p9U',
+          title: "What was the 'Scramble for Africa'? - BBC What's New",
+          duration: '3 mins 0 secs',
+          pathway: 'Quick Summary',
+          teacher_guidance:
+            'Bite-sized starter recap or SEN introduction. Explains the 1884 Berlin Conference and how European empires carved up the continent without African consultation.',
           viewing_task:
-            'Watch this documentary to understand the intense imperial and naval rivalries in Europe leading up to 1914. Note down two examples of how European empires aggressively competed for power.',
+            'Watch this short BBC clip and summarize how the Berlin Conference formalized the division of Africa.',
           model_answer:
-            "European empires competed fiercely for global dominance. Two examples include: the 'Scramble for Africa', where nations like Britain, France, and Germany rushed to claim colonies for resources; and the Naval Arms Race, where Germany aggressively expanded its battle fleet to challenge British maritime supremacy.",
+            'At the 1884 Berlin Conference, European leaders literally drew lines on a map of Africa, dividing the continent among themselves to prevent war between their empires. No African leaders were invited or consulted.',
         },
         {
           type: 'youtube',
@@ -1220,6 +1229,9 @@ const great_war = {
           title:
             '80 The Scramble for Africa Explained: Imperialism, Empire, and the Road to World War I',
           duration: '12 mins 49 secs',
+          pathway: 'Core Curriculum Overview',
+          teacher_guidance:
+            'Ideal for direct whole-class instruction or guided note-taking. Connects industrial capitalism, raw material extraction, and imperial rivalry directly to the road to 1914.',
           viewing_task:
             'Note down how the industrial revolution pushed European nations to scramble for African colonies.',
           model_answer:
@@ -1227,13 +1239,16 @@ const great_war = {
         },
         {
           type: 'youtube',
-          url: 'https://www.youtube.com/watch?v=DduN1cU2p9U',
-          title: "What was the 'Scramble for Africa'? - BBC What's New",
-          duration: '3 mins 0 secs',
+          url: 'https://www.youtube.com/watch?v=0SEgckAL-xc',
+          title: 'Powder Keg: Europe 1900 to 1914 | Historical Documentary | Lucasfilm',
+          duration: '26 mins 6 secs',
+          pathway: 'Deep-Dive Documentary',
+          teacher_guidance:
+            'Superb for flipped learning, independent research, or high-attainers. Explores the interlocking tensions of Weltpolitik, the Moroccan Crises, and naval competition in rich narrative detail.',
           viewing_task:
-            'Watch this short BBC clip and summarize how the Berlin Conference formalized the division of Africa.',
+            'Watch this documentary to understand the intense imperial and naval rivalries in Europe leading up to 1914. Note down two examples of how European empires aggressively competed for power.',
           model_answer:
-            'At the 1884 Berlin Conference, European leaders literally drew lines on a map of Africa, dividing the continent among themselves to prevent war between their empires. No African leaders were invited or consulted.',
+            "European empires competed fiercely for global dominance. Two examples include: the 'Scramble for Africa', where nations like Britain, France, and Germany rushed to claim colonies for resources; and the Naval Arms Race, where Germany aggressively expanded its battle fleet to challenge British maritime supremacy.",
         },
       ],
       narrative_blocks: [
@@ -1679,20 +1694,13 @@ const great_war = {
       video: [
         {
           type: 'youtube',
-          url: 'https://www.youtube.com/watch?v=-osfjjJuY6U',
-          title: 'Anglo-German Dreadnought Arms Race - Anything you can build I can build better!',
-          duration: '32 mins 1 sec',
-          viewing_task:
-            'Watch this documentary to understand the fierce naval competition between Britain and Germany. Note down how the dreadnought escalated tensions.',
-          model_answer:
-            'The Dreadnought made all older ships obsolete, effectively resetting the naval race to zero. This gave Germany a realistic chance to challenge British naval supremacy from scratch, escalating tensions as both sides scrambled to out-build each other.',
-        },
-        {
-          type: 'youtube',
           url: 'https://www.youtube.com/watch?v=yryey5NVODs',
           title:
             '14th June 1900: Anglo-German naval arms race triggered by the Second German Naval Law',
           duration: '2 mins 35 secs',
+          pathway: 'Quick Summary',
+          teacher_guidance:
+            'Snappy starter clip focusing on the Second German Naval Law of 1900 and Admiral von Tirpitz\'s "Risk Fleet" doctrine.',
           viewing_task:
             'Watch this short clip on the Second German Naval Law. Explain why Britain saw this law as a direct threat.',
           model_answer:
@@ -1700,9 +1708,25 @@ const great_war = {
         },
         {
           type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=-osfjjJuY6U',
+          title: 'Anglo-German Dreadnought Arms Race - Anything you can build I can build better!',
+          duration: '32 mins 1 sec',
+          pathway: 'In-Depth Naval Analysis',
+          teacher_guidance:
+            "Superb for whole-class exploration or extension study into the revolutionary engineering of HMS Dreadnought, Fisher's reforms, and the North Sea gunnery race.",
+          viewing_task:
+            'Watch this documentary to understand the fierce naval competition between Britain and Germany. Note down how the dreadnought escalated tensions.',
+          model_answer:
+            'The Dreadnought made all older ships obsolete, effectively resetting the naval race to zero. This gave Germany a realistic chance to challenge British naval supremacy from scratch, escalating tensions as both sides scrambled to out-build each other.',
+        },
+        {
+          type: 'youtube',
           url: 'https://www.youtube.com/watch?v=qmYJUYwsZqY',
           title: '67. Anglo-German Relations',
           duration: '52 mins 22 secs',
+          pathway: 'Archival Masterclass',
+          teacher_guidance:
+            'Advanced academic lecture for high-attainers or teacher subject knowledge. Delves into diplomatic exchanges, public press agitation, and the Navy League.',
           viewing_task:
             'Watch this in-depth lecture on Anglo-German relations to understand the wider diplomatic context of the naval arms race. Note down how public opinion in both countries escalated the tension.',
           model_answer:
@@ -2190,6 +2214,9 @@ const great_war = {
           url: 'https://www.youtube.com/watch?v=f11CKYB2FCA',
           title: 'Europe Prior to World War I: Alliances and Enemies I PRELUDE TO WW1 - Part 1/3',
           duration: '9 mins 47 secs',
+          pathway: 'Core Alliance System',
+          teacher_guidance:
+            "Clear, visual breakdown of the transition from Bismarck's complex defensive network to the rigid two-camp division (Triple Entente vs. Triple Alliance).",
           viewing_task:
             'Watch this video to understand the formation of the alliance system. Note down why countries felt the need to form secret defensive treaties.',
           model_answer:
@@ -2200,6 +2227,9 @@ const great_war = {
           url: 'https://www.youtube.com/watch?v=dYrofaDfMKI',
           title: 'Tinderbox Europe - From Balkan Troubles to World War I PRELUDE TO WW1 - Part 2/3',
           duration: '7 mins 37 secs',
+          pathway: 'Balkan Flashpoints',
+          teacher_guidance:
+            'Focuses on the Bosnian Crisis (1908) and Balkan Wars (1912–13), explaining why the Balkans became the "powder keg" that triggered the alliance chain reaction.',
           viewing_task:
             'Watch this video about the escalating tensions in the Balkans. Explain how the alliance system turned a local crisis into a global conflict.',
           model_answer:
@@ -2416,6 +2446,9 @@ const great_war = {
           title:
             'Simple History: The Bullet that Started WWI (The Assassination of Franz Ferdinand)',
           duration: '10 mins 27 secs',
+          pathway: 'Core Narrative & July Crisis',
+          teacher_guidance:
+            'Engaging, highly accurate animated breakdown of the assassination day in Sarajevo and the subsequent diplomatic chain reaction across Europe.',
           viewing_task:
             "Trace the sequence of events on 28 June 1914 in Sarajevo, from the Black Hand plot to Gavrilo Princip's fateful encounter with the Archduke's car outside Schiller's Delicatessen.",
           model_answer:

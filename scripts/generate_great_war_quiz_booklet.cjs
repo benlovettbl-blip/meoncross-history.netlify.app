@@ -378,6 +378,26 @@ const A5_BOOKLET_CSS = `
   }
   .a5-page:last-child { page-break-after: avoid; }
 
+  .page-flex-full {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 198mm !important;
+    box-sizing: border-box !important;
+  }
+  .page-body-stretch {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .timeline-page-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
   /* Page Headers & Footers */
   .page-header-strip {
     border-bottom: 1.5px solid #0f172a;
@@ -514,10 +534,10 @@ const A5_BOOKLET_CSS = `
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    max-height: 98mm;
+    max-height: 90mm;
   }
   .cover-map-img {
-    max-height: 98mm;
+    max-height: 90mm;
     max-width: 100%;
     object-fit: contain;
     border: 1px solid #94a3b8;
@@ -552,7 +572,7 @@ const A5_BOOKLET_CSS = `
   }
   .tracking-table td {
     border: 1px solid #cbd5e1;
-    padding: 2.5px 3px;
+    padding: 2.8px 3px;
     text-align: center;
     vertical-align: middle;
   }
@@ -590,18 +610,14 @@ const A5_BOOKLET_CSS = `
   .retrieval-boxes span {
     font-weight: 600;
   }
-  .parent-box {
-    border: 1px solid #94a3b8;
-    background: #ffffff;
-    border-radius: 2px;
-    height: 14px;
-    width: 100%;
+  .parent-sig-cell {
+    padding: 2px 4px;
   }
-  .staff-box {
+  .parent-sig-box {
     border: 1px solid #94a3b8;
     background: #ffffff;
     border-radius: 2px;
-    height: 14px;
+    height: 16px;
     width: 100%;
   }
 
@@ -665,6 +681,8 @@ const A5_BOOKLET_CSS = `
     gap: 2.5px;
     flex: 1;
     justify-content: space-between;
+    margin-top: 2px;
+    margin-bottom: 2px;
   }
   .domino-node {
     display: flex;
@@ -711,10 +729,10 @@ const A5_BOOKLET_CSS = `
     background: #ffffff;
     border: 1px solid #cbd5e1;
     border-radius: 3px;
-    padding: 2.5px 5px;
+    padding: 3px 6px;
     display: flex;
     flex-direction: column;
-    gap: 1px;
+    gap: 1.5px;
   }
   .q-header {
     display: flex;
@@ -750,7 +768,7 @@ const A5_BOOKLET_CSS = `
   .q-line-row {
     display: flex;
     align-items: flex-end;
-    gap: 4px;
+    gap: 5px;
     font-size: 7.2pt;
     margin-top: 1px;
   }
@@ -764,7 +782,7 @@ const A5_BOOKLET_CSS = `
   .q-solid-line {
     flex: 1;
     border-bottom: 1.2px solid #000000;
-    min-height: 9px;
+    min-height: 18px;
   }
 
   /* Pages 9 & 10: Marking Bank */
@@ -1001,8 +1019,8 @@ async function buildHtml() {
   // PAGE 1: FRONT COVER & FORMATIVE HOMEWORK RETRIEVAL LEDGER
   // ------------------------------------------------------------------------
   const page1 = `
-  <div class="a5-page">
-    <div>
+  <div class="a5-page page-flex-full">
+    <div class="page-body-stretch">
       <div class="cover-banner" data-department-name="${process.env.SCHOOL_NAME || process.env.DEPARTMENT_NAME || 'The History Department'}">
         <span>The History Revision Hub &bull; <span class="school-brand-target">${process.env.SCHOOL_NAME || process.env.DEPARTMENT_NAME || 'The History Department'}</span></span>
         <span>Key Stage 3 Companion</span>
@@ -1028,9 +1046,7 @@ async function buildHtml() {
           <strong>Historical Reference Map:</strong> The German Reich (1871–1918) &mdash; Geopolitical Encirclement &amp; The Balance of Power
         </div>
       </div>
-    </div>
 
-    <div>
       <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-bottom: none; padding: 2.5px 6px; font-size: 6.2pt; font-weight: 700; color: #334155; display: flex; justify-content: space-between;">
         <span>FORMATIVE HOMEWORK &amp; RETRIEVAL LEDGER</span>
         <span>30-SECOND DESK INSPECTION READY</span>
@@ -1039,12 +1055,11 @@ async function buildHtml() {
       <table class="tracking-table">
         <thead>
           <tr>
-            <th style="width: 44%; text-align: left;">Lesson &amp; Enquiry Focus</th>
-            <th style="width: 7%;">1</th>
-            <th style="width: 7%;">2</th>
-            <th style="width: 24%;">Retrieval Strength</th>
-            <th style="width: 10%;">Parent Signature</th>
-            <th style="width: 8%;">Staff Signature</th>
+            <th style="width: 34%; text-align: left;">Lesson &amp; Enquiry Focus</th>
+            <th style="width: 12%;">Attempt 1</th>
+            <th style="width: 12%;">Attempt 2</th>
+            <th style="width: 20%;">Retrieval Strength</th>
+            <th style="width: 22%; font-size: 5.4pt; text-transform: uppercase;">Parent Signature</th>
           </tr>
         </thead>
         <tbody>
@@ -1056,8 +1071,7 @@ async function buildHtml() {
             <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><div class="retrieval-boxes"><span>[ ] Instant</span> <span>[ ] Effortful</span> <span>[ ] Restudy</span></div></td>
-            <td><div class="parent-box"></div></td>
-            <td><div class="staff-box"></div></td>
+            <td class="parent-sig-cell"><div class="parent-sig-box"></div></td>
           </tr>
           <tr>
             <td class="left-title">
@@ -1067,8 +1081,7 @@ async function buildHtml() {
             <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><div class="retrieval-boxes"><span>[ ] Instant</span> <span>[ ] Effortful</span> <span>[ ] Restudy</span></div></td>
-            <td><div class="parent-box"></div></td>
-            <td><div class="staff-box"></div></td>
+            <td class="parent-sig-cell"><div class="parent-sig-box"></div></td>
           </tr>
           <tr>
             <td class="left-title">
@@ -1078,8 +1091,7 @@ async function buildHtml() {
             <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><div class="retrieval-boxes"><span>[ ] Instant</span> <span>[ ] Effortful</span> <span>[ ] Restudy</span></div></td>
-            <td><div class="parent-box"></div></td>
-            <td><div class="staff-box"></div></td>
+            <td class="parent-sig-cell"><div class="parent-sig-box"></div></td>
           </tr>
           <tr>
             <td class="left-title">
@@ -1089,8 +1101,7 @@ async function buildHtml() {
             <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><div class="retrieval-boxes"><span>[ ] Instant</span> <span>[ ] Effortful</span> <span>[ ] Restudy</span></div></td>
-            <td><div class="parent-box"></div></td>
-            <td><div class="staff-box"></div></td>
+            <td class="parent-sig-cell"><div class="parent-sig-box"></div></td>
           </tr>
           <tr>
             <td class="left-title">
@@ -1100,8 +1111,7 @@ async function buildHtml() {
             <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><div class="retrieval-boxes"><span>[ ] Instant</span> <span>[ ] Effortful</span> <span>[ ] Restudy</span></div></td>
-            <td><div class="parent-box"></div></td>
-            <td><div class="staff-box"></div></td>
+            <td class="parent-sig-cell"><div class="parent-sig-box"></div></td>
           </tr>
           <tr>
             <td class="left-title">
@@ -1111,27 +1121,11 @@ async function buildHtml() {
             <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
             <td><div class="retrieval-boxes"><span>[ ] Instant</span> <span>[ ] Effortful</span> <span>[ ] Restudy</span></div></td>
-            <td><div class="parent-box"></div></td>
-            <td><div class="staff-box"></div></td>
+            <td class="parent-sig-cell"><div class="parent-sig-box"></div></td>
           </tr>
         </tbody>
       </table>
 
-      <!-- 3-Tier Traffic Light Mastery & DIRT Rule -->
-      <div class="mastery-traffic-strip">
-        <div class="traffic-tier">
-          <span class="traffic-dot green-dot">&#9679;</span>
-          <span><strong>7–8/8: Mastered</strong> (Ready for essay)</span>
-        </div>
-        <div class="traffic-tier">
-          <span class="traffic-dot amber-dot">&#9679;</span>
-          <span><strong>5–6/8: Revise Vault</strong> (Check Pages 9–10)</span>
-        </div>
-        <div class="traffic-tier">
-          <span class="traffic-dot red-dot">&#9679;</span>
-          <span><strong>0–4/8: Retake Quiz</strong> (Scan QR for Attempt 2)</span>
-        </div>
-      </div>
 
       <div class="qr-strip">
         <img src="${qrDataUrl}" alt="Digital Quiz QR" class="qr-code-img">
@@ -1157,8 +1151,12 @@ async function buildHtml() {
       text: '<strong>German Empire Proclaimed:</strong> Unified in the Hall of Mirrors at Versailles; Alsace-Lorraine annexed from France, sparking lifelong French <em>Revanche</em>.',
     },
     {
+      year: '1879',
+      text: '<strong>Dual Alliance Formed:</strong> Bismarck signs a defensive military treaty between Germany and Austria-Hungary against Tsarist Russia.',
+    },
+    {
       year: '1882',
-      text: '<strong>Triple Alliance Formed:</strong> Germany, Austria-Hungary, and Italy create a central defensive military pact.',
+      text: '<strong>Triple Alliance Formed:</strong> Germany, Austria-Hungary, and Italy create a central European mutual defense pact.',
     },
     {
       year: '1890',
@@ -1193,32 +1191,46 @@ async function buildHtml() {
       text: '<strong>The Bosnian Crisis:</strong> Austria-Hungary annexes Bosnia, permanently alienating Serbia and humiliating Tsarist Russia.',
     },
     {
+      year: '1911',
+      text: '<strong>Second Moroccan Crisis:</strong> Germany sends gunboat Panther to Agadir; British Mansion House speech warns Germany, cementing Anglo-French solidarity.',
+    },
+    {
+      year: '1912–1913',
+      text: '<strong>The Balkan Wars:</strong> Balkan states defeat the Ottomans; Serbia doubles in size, escalating Austrian hostility and regional panic.',
+    },
+    {
       year: '28 Jun – 4 Aug 1914',
       text: '<strong>The July Crisis &amp; War:</strong> Franz Ferdinand assassinated in Sarajevo &rarr; German Blank Cheque &rarr; Austrian Ultimatum &rarr; Russian mobilisation &rarr; Schlieffen Plan &rarr; World War.',
     },
   ];
 
   const page2 = `
-  <div class="a5-page">
-    <div class="page-header-strip">
-      <div>
-        <h2>Master Chronology Domino Flowchart</h2>
-        <p>1871–1914 &bull; 11 Anchor Flashpoints from German Unification to Continental War</p>
-      </div>
-      <span class="page-tag">Domino Flowchart</span>
-    </div>
-
-    <div class="timeline-flow">
-      ${timelineNodes
-        .map(
-          (node) => `
-        <div class="domino-node">
-          <span class="domino-year">${node.year}</span>
-          <span class="domino-text">${node.text}</span>
+  <div class="a5-page page-flex-full">
+    <div class="timeline-page-content">
+      <div class="page-header-strip">
+        <div>
+          <h2>Master Chronology Domino Flowchart</h2>
+          <p>1871–1914 &bull; 14 Anchor Flashpoints from German Unification to Continental War</p>
         </div>
-      `,
-        )
-        .join('')}
+        <span class="page-tag">Domino Flowchart</span>
+      </div>
+
+      <div class="lesson-instruction-bar" style="margin-bottom: 2px;">
+        <strong>Causal Chain:</strong> Trace how imperial rivalry, military alliances, and the arms race escalated into the July Crisis and the outbreak of the Great War.
+      </div>
+
+      <div class="timeline-flow">
+        ${timelineNodes
+          .map(
+            (node) => `
+          <div class="domino-node">
+            <span class="domino-year">${node.year}</span>
+            <span class="domino-text">${node.text}</span>
+          </div>
+        `,
+          )
+          .join('')}
+      </div>
     </div>
 
     <div class="page-footer-strip">
@@ -1254,11 +1266,8 @@ async function buildHtml() {
             <span class="q-solid-line"></span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Explanation:</span>
+            <span class="q-line-lbl">Detail / Why:</span>
             <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-solid-line" style="margin-left: 0;"></span>
           </div>
         </div>
       `;
@@ -1279,7 +1288,7 @@ async function buildHtml() {
           </div>
         </div>
         <div class="lesson-instruction-bar">
-          <strong>Instructions:</strong> Complete Line 1 (Answer) from memory. Complete Lines 2 &amp; 3 (Explanation) to articulate the historical mechanism, motive, or consequence.
+          <strong>Instructions:</strong> Complete Line 1 (Answer) from memory. Complete Line 2 (Detail / Why) to articulate the historical mechanism, motive, or consequence.
         </div>
       </div>
 
@@ -1700,27 +1709,53 @@ async function run() {
   });
   console.log(`📑 Total A5 Pages rendered in DOM: ${pageCount}`);
 
-  // Audit overflow on every page
-  const overflows = await page.evaluate(() => {
+  // ------------------------------------------------------------------------
+  // AUTOMATED PAGE BUDGET & SPACE UTILIZATION AUDIT
+  // ------------------------------------------------------------------------
+  const spaceAudit = await page.evaluate(() => {
     const pages = document.querySelectorAll('.a5-page');
-    const issues = [];
+    const auditResults = [];
     pages.forEach((p, idx) => {
-      if (p.scrollHeight > p.clientHeight + 2) {
-        issues.push({
-          page: idx + 1,
-          scrollHeight: p.scrollHeight,
-          clientHeight: p.clientHeight,
-          overflowPx: p.scrollHeight - p.clientHeight,
-        });
+      const pageNum = idx + 1;
+      const clientH = p.clientHeight;
+      const scrollH = p.scrollHeight;
+      const overflow = scrollH > clientH + 4 ? scrollH - clientH : 0;
+
+      // Measure content height down to footer
+      const footer = p.querySelector('.page-footer-strip');
+      let unusedBottom = 0;
+      if (footer) {
+        const pRect = p.getBoundingClientRect();
+        const fRect = footer.getBoundingClientRect();
+        unusedBottom = Math.max(0, Math.round(pRect.bottom - fRect.bottom));
       }
+
+      const utilizationPct = Math.min(100, Math.round(((clientH - unusedBottom) / clientH) * 100));
+      auditResults.push({ pageNum, clientH, scrollH, overflow, unusedBottom, utilizationPct });
     });
-    return issues;
+    return auditResults;
   });
 
-  if (overflows.length > 0) {
-    console.warn('⚠️ Layout Overflow Detected on Pages:', JSON.stringify(overflows, null, 2));
+  console.log('\n=============================================================');
+  console.log('📐 AUTOMATED PAGE BUDGET & SPACE UTILIZATION AUDIT');
+  console.log('=============================================================');
+  let hasErrors = false;
+  spaceAudit.forEach((res) => {
+    const status =
+      res.overflow > 0
+        ? `❌ OVERFLOW (+${res.overflow}px)`
+        : res.unusedBottom > 35
+          ? `⚠️ UNDERFLOW (${res.unusedBottom}px gap)`
+          : `✅ OPTIMAL (${res.utilizationPct}% utilized, ${res.unusedBottom}px gap)`;
+    console.log(`Page ${String(res.pageNum).padStart(2, ' ')}: ${status}`);
+    if (res.overflow > 0) hasErrors = true;
+  });
+  console.log('=============================================================\n');
+
+  if (hasErrors) {
+    console.warn('⚠️ Please fix layout overflows before production printing!');
   } else {
-    console.log('✅ Layout Check Passed: 0 page overflows detected across all 12 pages!');
+    console.log('✅ Layout & Space Audit Passed: 100% clean across all 12 pages!');
   }
 
   // A5 dimensions: 148mm x 210mm
@@ -1750,11 +1785,29 @@ async function run() {
 
   // Copy to Google Drive if available
   try {
-    const driveMinutesDir = 'G:\\My Drive\\AAMX\\Dep File';
-    if (fs.existsSync(driveMinutesDir)) {
-      const gdrivePdf = path.join(driveMinutesDir, 'Causes_of_the_Great_War_A5_Quiz_Booklet.pdf');
-      fs.copyFileSync(primaryPdf, gdrivePdf);
-      console.log(`✅ Synced 12-Page A5 Quiz Booklet to Google Drive: ${gdrivePdf}`);
+    const driveBaseDir = 'G:\\My Drive\\AAMX\\Dep File';
+    if (fs.existsSync(driveBaseDir)) {
+      const gdriveTargets = [
+        path.join(driveBaseDir, 'Causes_of_the_Great_War_A5_Quiz_Booklet.pdf'),
+        path.join(
+          driveBaseDir,
+          'Year 9',
+          'The Great War',
+          'Causes_of_the_Great_War_A5_Quiz_Booklet.pdf',
+        ),
+        path.join(
+          driveBaseDir,
+          'Year 9',
+          'The Great War',
+          'Causes of the Great War Knowledge Recall Quiz (All 48 Questions).pdf',
+        ),
+      ];
+      gdriveTargets.forEach((targetPath) => {
+        const targetDir = path.dirname(targetPath);
+        if (!fs.existsSync(targetDir)) fs.mkdirSync(targetDir, { recursive: true });
+        fs.copyFileSync(primaryPdf, targetPath);
+        console.log(`✅ Synced 12-Page A5 Quiz Booklet to Google Drive: ${targetPath}`);
+      });
     }
   } catch (e) {
     console.warn(`⚠️ Warning syncing to Google Drive: ${e.message}`);

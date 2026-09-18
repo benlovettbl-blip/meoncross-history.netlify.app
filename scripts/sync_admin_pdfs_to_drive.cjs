@@ -223,6 +223,42 @@ const PDF_MAPPINGS = [
 
   // Year 9
   {
+    folder: path.join('Year 9', 'The Great War'),
+    src: 'great_war_recall_quiz_FULL.pdf',
+    dest: 'Causes_of_the_Great_War_A5_Quiz_Booklet.pdf',
+    category: 'Year 9',
+  },
+  {
+    folder: path.join('Year 9', 'The Great War'),
+    src: 'great_war_recall_quiz_FULL.pdf',
+    dest: 'Causes of the Great War Knowledge Recall Quiz (All 48 Questions).pdf',
+    category: 'Year 9',
+  },
+  {
+    folder: path.join('Year 9', 'The Great War'),
+    src: 'great_war_pupil_workbook_FINAL_V17.pdf',
+    dest: 'Causes of the Great War Pupil Workbook.pdf',
+    category: 'Year 9',
+  },
+  {
+    folder: path.join('Year 9', 'The Great War'),
+    src: 'great_war_textbook_FINAL_V17.pdf',
+    dest: 'Causes of the Great War Master Textbook.pdf',
+    category: 'Year 9',
+  },
+  {
+    folder: path.join('Year 9', 'The Great War'),
+    src: 'great_war_mastery_pack_full_FINAL_V17.pdf',
+    dest: 'Causes of the Great War Complete Mastery Pack.pdf',
+    category: 'Year 9',
+  },
+  {
+    folder: path.join('Year 9', 'The Great War'),
+    src: 'standalone_cover_yr9_christmas_truce.pdf',
+    dest: 'The Christmas Truce of 1914 Standalone Emergency Cover Pack (Double Period).pdf',
+    category: 'Year 9',
+  },
+  {
     folder: path.join('Year 9', 'The Shoah (Holocaust)'),
     src: 'the_shoah_pupil_workbook_FINAL_V17.pdf',
     dest: 'The Shoah (Holocaust) Pupil Workbook.pdf',

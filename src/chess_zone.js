@@ -21,6 +21,8 @@ import {
   startPupilRealtimeSync,
   renderCloudSyncStatusPill,
   getCloudSyncStatus,
+  isAirgapModeActive,
+  setAirgapMode,
 } from './chess_realtime.js';
 import QRCode from 'qrcode';
 
@@ -193,6 +195,7 @@ let chessState = {
   activeTab: 'ladder', // 'ladder' | 'signin' | 'table' | 'pairings' | 'knockout' | 'drills' | 'beginners' | 'matches'
   filterHouse: 'all', // 'all' | houseId
   userRole: getInitialRole(), // 'teacher' | 'pupil'
+  airgapMode: isAirgapModeActive(), // Safe by default on school laptop
   isPupilPreview: false,
   currentPuzzleIdx: 0,
   puzzleCategory: 'grandmaster', // 'grandmaster' | 'beginner'
@@ -592,8 +595,8 @@ function saveChessState(isIntentionalReset = false) {
   // Mirror to IndexedDB asynchronously
   persistToIndexedDB(payload);
 
-  // Broadcast state to live cloud room for pupil devices if in teacher mode
-  if (chessState.userRole === 'teacher' && !chessState.isPupilPreview) {
+  // Broadcast state to live cloud room for pupil devices if in teacher mode and not in Airgap mode
+  if (chessState.userRole === 'teacher' && !chessState.isPupilPreview && !isAirgapModeActive()) {
     broadcastStateToCloud(chessState);
   }
 }
@@ -792,6 +795,9 @@ export function renderChessHubView() {
                   <span>⚙️</span> Teacher Tools ▾
                 </button>
                 <div id="chess-admin-dropdown" style="display: ${chessState.showAdminDropdown ? 'block' : 'none'}; position: absolute; right: 0; top: calc(100% + 8px); background: #292524; border: 1.5px solid #57534e; border-radius: 8px; box-shadow: 0 12px 32px rgba(0,0,0,0.65); z-index: 9999; min-width: 250px; overflow: hidden;">
+                  <button type="button" onclick="window.closeChessAdminDropdownOnly(); window.openAirgapInfoModal();" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: ${isAirgapModeActive() ? '#86efac' : '#fde68a'}; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
+                    <span>🛡️</span> School Laptop Airgap (${isAirgapModeActive() ? 'Active / 100% Safe' : 'Cloud On'})
+                  </button>
                   <button type="button" onclick="window.closeChessAdminDropdownOnly(); window.forceCloudBroadcast();" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: #34d399; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
                     <span>☁️</span> Broadcast Room to Cloud Now
                   </button>
@@ -7261,6 +7267,16 @@ window.openSnapshotExportModal = function () {
             <p style="margin: 0 0 10px 0; font-size: 0.8rem; color: #7c2d12; line-height: 1.45;">
               Click "Copy Code" and ask your AI assistant to update <code>chess_data.js</code>. Once committed, the live Netlify site permanently displays these standings to every pupil worldwide without needing local storage!
             </p>
+            ${
+              isAirgapModeActive()
+                ? `
+            <div style="background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 6px; padding: 8px 12px; margin-bottom: 10px; font-size: 0.76rem; color: #166534; display: flex; gap: 8px; align-items: center;">
+              <span style="font-size: 1.1rem; line-height: 1;">🛡️</span>
+              <span><strong>Airgap Mode Active:</strong> Pupil names typed on this school laptop are protected by GDPR. Do not commit actual pupil names to public GitHub code.</span>
+            </div>
+            `
+                : ''
+            }
             <textarea id="snapshot-code-snippet" readonly style="width: 100%; box-sizing: border-box; height: 95px; padding: 8px; font-family: 'Courier New', monospace; font-size: 0.72rem; border: 1px solid #fed7aa; border-radius: 4px; background: #fffaf0; color: #431407; resize: none; margin-bottom: 8px;">${codeSnippet}</textarea>
             <button type="button" onclick="const el = document.getElementById('snapshot-code-snippet'); if(el){ el.select(); document.execCommand('copy'); } window.showChessToast('📋 Snapshot code copied to clipboard!', 'success');" style="background: #ea580c; color: #ffffff; border: none; padding: 7px 16px; border-radius: 4px; font-weight: 700; font-size: 0.78rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
               <span>📋</span> Copy Code Snippet for Git
@@ -8162,6 +8178,10 @@ window.quickChallengePlayer = function (targetId) {
 };
 
 window.forceCloudBroadcast = async function () {
+  if (isAirgapModeActive()) {
+    window.openAirgapInfoModal();
+    return;
+  }
   showChessToast('Broadcasting state to cloud...', 'info');
   const success = await broadcastStateToCloud(chessState, true);
   if (success) {
@@ -8242,4 +8262,112 @@ window.openPupilQrModal = async function () {
       </div>
     </div>
   `;
+};
+
+window.openAirgapInfoModal = function () {
+  const modalCont = getChessModalContainer();
+  if (!modalCont) return;
+
+  const isActive = isAirgapModeActive();
+  const playerCount = chessState.players.length;
+
+  modalCont.innerHTML = `
+    <div style="position: fixed; inset: 0; background: rgba(15, 23, 42, 0.75); display: flex; align-items: center; justify-content: center; z-index: 99999; padding: 20px;" onclick="if(event.target === this) window.closeChessModal();">
+      <div style="background: #ffffff; border-radius: 14px; max-width: 580px; width: 100%; padding: 26px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); animation: zoomIn 0.2s ease-out; font-family: 'Outfit', sans-serif;">
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 12px; margin-bottom: 16px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 38px; height: 38px; border-radius: 10px; background: #ecfdf5; border: 1.5px solid #86efac; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">
+              🛡️
+            </div>
+            <div>
+              <h3 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; color: #0f172a;">
+                School Laptop Airgap Mode &amp; GDPR Safety
+              </h3>
+              <div style="font-size: 0.74rem; color: #166534; font-weight: 700; margin-top: 2px;">
+                UK GDPR &bull; Data Protection Act 2018 &bull; 100% Local Device Storage
+              </div>
+            </div>
+          </div>
+          <button type="button" onclick="window.closeChessModal()" style="background: transparent; border: none; font-size: 1.3rem; color: #94a3b8; cursor: pointer; padding: 4px 8px;">✕</button>
+        </div>
+
+        <div style="background: ${isActive ? '#f0fdf4' : '#fffbeb'}; border: 1.5px solid ${isActive ? '#86efac' : '#fde68a'}; border-radius: 10px; padding: 14px 16px; margin-bottom: 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+            <div>
+              <div style="font-weight: 800; font-size: 0.92rem; color: ${isActive ? '#166534' : '#92400e'}; display: flex; align-items: center; gap: 6px;">
+                <span>${isActive ? '✅ Airgap Protection is ACTIVE' : '⚠️ Cloud Broadcasting is ENABLED'}</span>
+              </div>
+              <p style="margin: 4px 0 0 0; font-size: 0.78rem; color: ${isActive ? '#15803d' : '#78350f'}; line-height: 1.45;">
+                ${
+                  isActive
+                    ? 'All pupil records, first names, and house points are strictly locked to this school laptop. Zero bytes are transmitted to Netlify or the internet.'
+                    : 'Cloud broadcasting is active. Only use non-identifiable test handles in this mode.'
+                }
+              </p>
+            </div>
+            <button type="button" onclick="window.toggleAirgapMode()" style="background: ${isActive ? '#16a34a' : '#d97706'}; color: #ffffff; border: none; padding: 8px 14px; border-radius: 6px; font-weight: 800; font-size: 0.78rem; cursor: pointer; white-space: nowrap;">
+              ${isActive ? 'Turn Off (Cloud)' : 'Turn On (Airgap)'}
+            </button>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="font-size: 1.05rem; background: #eff6ff; padding: 6px; border-radius: 6px;">💻</span>
+            <div>
+              <strong style="font-size: 0.84rem; color: #1e293b;">Safe for Real Pupil First Names:</strong>
+              <div style="font-size: 0.78rem; color: #64748b; line-height: 1.45; margin-top: 2px;">
+                You can safely type your pupils\' first names (or first name + initial, e.g. <em>Arthur</em> or <em>Arthur P.</em>). Everything stays strictly on this machine in <code>localStorage</code> and offline <code>IndexedDB</code>.
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="font-size: 1.05rem; background: #fef2f2; padding: 6px; border-radius: 6px;">🚫</span>
+            <div>
+              <strong style="font-size: 0.84rem; color: #1e293b;">Zero Network Requests:</strong>
+              <div style="font-size: 0.78rem; color: #64748b; line-height: 1.45; margin-top: 2px;">
+                All outbound cloud sync calls are hard-blocked. No pupil names can be queried from the public internet by anyone.
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="font-size: 1.05rem; background: #faf5ff; padding: 6px; border-radius: 6px;">🔒</span>
+            <div>
+              <strong style="font-size: 0.84rem; color: #1e293b;">Git &amp; Deployment Shield:</strong>
+              <div style="font-size: 0.78rem; color: #64748b; line-height: 1.45; margin-top: 2px;">
+                Local pupil names can never be accidentally copied or committed to GitHub repository code, preventing any public website leaks.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1.5px solid #e2e8f0; padding-top: 12px;">
+          <div style="font-size: 0.74rem; color: #64748b;">
+            Current Local Roster: <strong>${playerCount} pupils</strong> on this device
+          </div>
+          <button type="button" onclick="window.closeChessModal()" style="background: #0f172a; color: #ffffff; border: none; padding: 8px 18px; border-radius: 6px; font-weight: 700; font-size: 0.82rem; cursor: pointer;">
+            Done / Close
+          </button>
+        </div>
+
+      </div>
+    </div>
+  `;
+};
+
+window.toggleAirgapMode = function () {
+  const current = isAirgapModeActive();
+  setAirgapMode(!current);
+  chessState.airgapMode = !current;
+  renderChessHubView();
+  showChessToast(
+    !current
+      ? '🛡️ Airgap Mode Activated: Data locked locally to this school laptop (100% GDPR Safe)!'
+      : '☁️ Cloud Mode Activated: Standings can be synced across devices.',
+    'success',
+  );
+  window.openAirgapInfoModal();
 };

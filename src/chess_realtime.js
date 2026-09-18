@@ -13,9 +13,24 @@ let isPushing = false;
 let pushDebounceTimer = null;
 let currentSyncStatus = 'idle'; // 'idle' | 'syncing' | 'synced' | 'offline'
 
+export function isAirgapModeActive() {
+  if (typeof window === 'undefined') return true;
+  const val = localStorage.getItem('chess_airgap_mode');
+  // Safe by default: Airgap is active unless explicitly turned off
+  return val !== 'false';
+}
+
+export function setAirgapMode(active) {
+  if (typeof window !== 'undefined') {
+    localStorage.setItem('chess_airgap_mode', active ? 'true' : 'false');
+    currentSyncStatus = active ? 'airgap' : 'idle';
+    updateSyncStatusUI();
+  }
+}
+
 export function getCloudSyncStatus() {
   return {
-    status: currentSyncStatus,
+    status: isAirgapModeActive() ? 'airgap' : currentSyncStatus,
     lastSyncedAt: lastKnownSyncedAt,
   };
 }
@@ -25,6 +40,18 @@ export function getCloudSyncStatus() {
  */
 export async function broadcastStateToCloud(chessState, showToast = false) {
   if (!chessState) return;
+
+  if (isAirgapModeActive()) {
+    currentSyncStatus = 'airgap';
+    updateSyncStatusUI();
+    if (showToast && typeof window !== 'undefined' && window.showChessToast) {
+      window.showChessToast(
+        '🛡️ Airgap Mode Active: Data stays strictly on this school laptop (GDPR Compliant)',
+        'info',
+      );
+    }
+    return false;
+  }
 
   if (pushDebounceTimer) {
     clearTimeout(pushDebounceTimer);
@@ -154,6 +181,16 @@ export function startPupilRealtimeSync(onUpdateReceived) {
  * UI Status Pill in Header
  */
 export function renderCloudSyncStatusPill(userRole = 'pupil') {
+  if (isAirgapModeActive()) {
+    return `
+      <div id="chess-cloud-sync-pill" onclick="window.openAirgapInfoModal && window.openAirgapInfoModal()" style="cursor: pointer; display: inline-flex; align-items: center; gap: 7px; background: #f0fdf4; color: #166534; border: 1.5px solid #86efac; padding: 6px 14px; border-radius: 20px; font-size: 0.74rem; font-weight: 800; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; box-shadow: 0 1px 4px rgba(0,0,0,0.06); transition: all 0.15s;" title="Airgap Mode Active: Data stored strictly on this school laptop and never sent to the internet (Click for GDPR & privacy settings)">
+        <i class="fa-solid fa-shield-halved" style="color: #16a34a; font-size: 0.88rem;"></i>
+        <span>Airgap Mode: Local Laptop</span>
+        <span style="background: #dcfce7; color: #166534; font-size: 0.65rem; padding: 1px 6px; border-radius: 10px; text-transform: uppercase; font-weight: 800; letter-spacing: 0.05em;">100% GDPR Safe</span>
+      </div>
+    `;
+  }
+
   let badgeText = 'Live Cloud';
   let badgeColor = '#10b981'; // Green
   let badgeBg = '#ecfdf5';

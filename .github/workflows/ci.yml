@@ -1,0 +1,67 @@
+name: CI Quality & Space Budget Assurance
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  qa_and_sanitization:
+    name: Institutional Neutrality & Core QA Gate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Institutional Neutrality & Sanitization Audit
+        run: node scripts/verify_sanitization.cjs
+
+      - name: Curriculum & Question Verification
+        run: |
+          node scripts/test_question_sync.cjs
+          node scripts/verify_vault_answers.cjs
+          node scripts/check_vault_randomization.cjs
+          node scripts/verify_source_sync.cjs
+          node scripts/verify_source_lettering.cjs
+          node scripts/verify_images.cjs
+
+  space_budget_matrix:
+    name: Space Budget Matrix (${{ matrix.unit }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        unit:
+          - edexcel_medicine
+          - cme_new
+          - usa
+          - weimar_nazi_germany
+          - great_war
+          - water_and_sanitation
+          - early_modern_world
+          - boosters
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Space Budget Gate (${{ matrix.unit }})
+        run: node scripts/check_overflows.cjs ${{ matrix.unit }} --strict

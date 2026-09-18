@@ -1,0 +1,362 @@
+[
+  {
+    "unitId": "australia",
+    "unitTitle": "KS3: History of Australia",
+    "lessonIndex": 3,
+    "lessonTitle": "Encounters with the Indigenous Peoples"
+  },
+  {
+    "unitId": "australia",
+    "unitTitle": "KS3: History of Australia",
+    "lessonIndex": 4,
+    "lessonTitle": "From Penal Colony to Settlement"
+  },
+  {
+    "unitId": "australia",
+    "unitTitle": "KS3: History of Australia",
+    "lessonIndex": 5,
+    "lessonTitle": "Lesson 5: Assessment - What's the story of Australia?"
+  },
+  {
+    "unitId": "cold_war",
+    "unitTitle": "KS3: The Cold War",
+    "lessonIndex": 1,
+    "lessonTitle": "Ideological Clash: Why could Capitalism and Communism never peacefully coexist?"
+  },
+  {
+    "unitId": "cold_war",
+    "unitTitle": "KS3: The Cold War",
+    "lessonIndex": 2,
+    "lessonTitle": "Yalta to Potsdam (1945): How did wartime allies become bitter rivals?"
+  },
+  {
+    "unitId": "cold_war",
+    "unitTitle": "KS3: The Cold War",
+    "lessonIndex": 3,
+    "lessonTitle": "The Iron Curtain & The Berlin Blockade (1948–1949): The first flashpoint."
+  },
+  {
+    "unitId": "cold_war",
+    "unitTitle": "KS3: The Cold War",
+    "lessonIndex": 4,
+    "lessonTitle": "Nuclear Brinkmanship: The Cuban Missile Crisis (1962)."
+  },
+  {
+    "unitId": "cold_war",
+    "unitTitle": "KS3: The Cold War",
+    "lessonIndex": 5,
+    "lessonTitle": "Proxy Wars: Why did the superpowers fight in Asia (Korea & Vietnam)?"
+  },
+  {
+    "unitId": "cold_war",
+    "unitTitle": "KS3: The Cold War",
+    "lessonIndex": 6,
+    "lessonTitle": "Fall of the Berlin Wall (1989) and the collapse of the Soviet Union (1991)."
+  },
+  {
+    "unitId": "cold_war",
+    "unitTitle": "KS3: The Cold War",
+    "lessonIndex": 7,
+    "lessonTitle": "Assessment: Was the Cold War ever truly 'cold'?"
+  },
+  {
+    "unitId": "early_modern_world",
+    "unitTitle": "KS3: Early Modern World & Global Encounters (1450–1750)",
+    "lessonIndex": 1,
+    "lessonTitle": "Who held global power in 1450?"
+  },
+  {
+    "unitId": "early_modern_world",
+    "unitTitle": "KS3: Early Modern World & Global Encounters (1450–1750)",
+    "lessonIndex": 2,
+    "lessonTitle": "How did religious conflict trigger global exploration (1517–1588)?"
+  },
+  {
+    "unitId": "early_modern_world",
+    "unitTitle": "KS3: Early Modern World & Global Encounters (1450–1750)",
+    "lessonIndex": 4,
+    "lessonTitle": "James I and the Gunpowder Plot: Why was religious division so volatile?"
+  },
+  {
+    "unitId": "early_modern_world",
+    "unitTitle": "KS3: Early Modern World & Global Encounters (1450–1750)",
+    "lessonIndex": 5,
+    "lessonTitle": "Who controlled Britain? The Ideological Battle"
+  },
+  {
+    "unitId": "early_modern_world",
+    "unitTitle": "KS3: Early Modern World & Global Encounters (1450–1750)",
+    "lessonIndex": 6,
+    "lessonTitle": "Who controlled Britain? The Economic Shift"
+  },
+  {
+    "unitId": "early_modern_world",
+    "unitTitle": "KS3: Early Modern World & Global Encounters (1450–1750)",
+    "lessonIndex": 9,
+    "lessonTitle": "How 'modern' was Britain by 1750? (Synthesis & Assessment)"
+  },
+  {
+    "unitId": "eee",
+    "unitTitle": "Paper 2: Early Elizabethan England, 1558-88",
+    "lessonIndex": 9,
+    "lessonTitle": "KT3.1: Education and leisure"
+  },
+  {
+    "unitId": "eee",
+    "unitTitle": "Paper 2: Early Elizabethan England, 1558-88",
+    "lessonIndex": 10,
+    "lessonTitle": "KT3.2: The Problem of Poverty"
+  },
+  {
+    "unitId": "eee",
+    "unitTitle": "Paper 2: Early Elizabethan England, 1558-88",
+    "lessonIndex": 11,
+    "lessonTitle": "KT3.3: Exploration and voyages of discovery"
+  },
+  {
+    "unitId": "eee",
+    "unitTitle": "Paper 2: Early Elizabethan England, 1558-88",
+    "lessonIndex": 12,
+    "lessonTitle": "KT3.4: Raleigh and Virginia"
+  },
+  {
+    "unitId": "industrialisation_and_empire",
+    "unitTitle": "KS3: Industrialisation, Empire, and Power (1750–1900)",
+    "lessonIndex": 2,
+    "lessonTitle": "Was industrial work progress or punishment?"
+  },
+  {
+    "unitId": "industrialisation_and_empire",
+    "unitTitle": "KS3: Industrialisation, Empire, and Power (1750–1900)",
+    "lessonIndex": 3,
+    "lessonTitle": "Did industrialisation make British towns unlivable?"
+  },
+  {
+    "unitId": "industrialisation_and_empire",
+    "unitTitle": "KS3: Industrialisation, Empire, and Power (1750–1900)",
+    "lessonIndex": 4,
+    "lessonTitle": "How was the British Empire built and sustained?"
+  },
+  {
+    "unitId": "industrialisation_and_empire",
+    "unitTitle": "KS3: Industrialisation, Empire, and Power (1750–1900)",
+    "lessonIndex": 5,
+    "lessonTitle": "How did the Empire strike back? The 1857 Indian Rebellion"
+  },
+  {
+    "unitId": "industrialisation_and_empire",
+    "unitTitle": "KS3: Industrialisation, Empire, and Power (1750–1900)",
+    "lessonIndex": 6,
+    "lessonTitle": "How did ordinary people fight for a voice?"
+  },
+  {
+    "unitId": "industrialisation_and_empire",
+    "unitTitle": "KS3: Industrialisation, Empire, and Power (1750–1900)",
+    "lessonIndex": 7,
+    "lessonTitle": "How did the road to democracy expand?"
+  },
+  {
+    "unitId": "industrialisation_and_empire",
+    "unitTitle": "KS3: Industrialisation, Empire, and Power (1750–1900)",
+    "lessonIndex": 8,
+    "lessonTitle": "Who truly benefited from 19th-century transformation?"
+  },
+  {
+    "unitId": "medieval_england",
+    "unitTitle": "Medieval England: 1066–1485",
+    "lessonIndex": 9,
+    "lessonTitle": "Assessment: How powerful was a medieval monarch?"
+  },
+  {
+    "unitId": "post_war_britain",
+    "unitTitle": "KS3: Rights, Protest, and Post-War Britain (1900–Present)",
+    "lessonIndex": 1,
+    "lessonTitle": "Votes for Women: Were the Suffragists or Suffragettes more effective in securing the vote?"
+  },
+  {
+    "unitId": "post_war_britain",
+    "unitTitle": "KS3: Rights, Protest, and Post-War Britain (1900–Present)",
+    "lessonIndex": 2,
+    "lessonTitle": "1945: How did the aftermath of total war build the Welfare State and the NHS?"
+  },
+  {
+    "unitId": "post_war_britain",
+    "unitTitle": "KS3: Rights, Protest, and Post-War Britain (1900–Present)",
+    "lessonIndex": 3,
+    "lessonTitle": "The Windrush Generation: Why did Britain invite Commonwealth citizens, and what did they face?"
+  },
+  {
+    "unitId": "post_war_britain",
+    "unitTitle": "KS3: Rights, Protest, and Post-War Britain (1900–Present)",
+    "lessonIndex": 4,
+    "lessonTitle": "The 1963 Bristol Bus Boycott & the fight for British civil rights."
+  },
+  {
+    "unitId": "post_war_britain",
+    "unitTitle": "KS3: Rights, Protest, and Post-War Britain (1900–Present)",
+    "lessonIndex": 5,
+    "lessonTitle": "The Cold War on the Home Front: How did nuclear paranoia shape British popular culture?"
+  },
+  {
+    "unitId": "post_war_britain",
+    "unitTitle": "KS3: Rights, Protest, and Post-War Britain (1900–Present)",
+    "lessonIndex": 6,
+    "lessonTitle": "Assessment: How has British identity transformed since 1945?"
+  },
+  {
+    "unitId": "the_shoah",
+    "unitTitle": "KS3: The Shoah",
+    "lessonIndex": 1,
+    "lessonTitle": "Anti-Semitism: How did centuries of prejudice pave the way for Nazi ideology?"
+  },
+  {
+    "unitId": "the_shoah",
+    "unitTitle": "KS3: The Shoah",
+    "lessonIndex": 2,
+    "lessonTitle": "1933–1939: How were German Jews progressively stripped of citizenship and rights?"
+  },
+  {
+    "unitId": "the_shoah",
+    "unitTitle": "KS3: The Shoah",
+    "lessonIndex": 3,
+    "lessonTitle": "The Ghettos and the Einsatzgruppen: How did persecution turn into systematic mass murder?"
+  },
+  {
+    "unitId": "the_shoah",
+    "unitTitle": "KS3: The Shoah",
+    "lessonIndex": 4,
+    "lessonTitle": "The 'Final Solution': How did the death camps operate as industrialised extermination?"
+  },
+  {
+    "unitId": "the_shoah",
+    "unitTitle": "KS3: The Shoah",
+    "lessonIndex": 5,
+    "lessonTitle": "Resistance, Rescue, and Complicity: Did anyone stand up to the perpetrators?"
+  },
+  {
+    "unitId": "the_shoah",
+    "unitTitle": "KS3: The Shoah",
+    "lessonIndex": 6,
+    "lessonTitle": "Liberation and Legacy: What does survivor testimony teach us about humanity and memory?"
+  },
+  {
+    "unitId": "the_shoah",
+    "unitTitle": "KS3: The Shoah",
+    "lessonIndex": 7,
+    "lessonTitle": "Assessment: The Shoah Enquiry"
+  },
+  {
+    "unitId": "usa",
+    "unitTitle": "Paper 3: Conflict at Home and Abroad: the USA, 1954–75",
+    "lessonIndex": 1,
+    "lessonTitle": "KT 1.1: What was the position of Black Americans in the early 1950s?"
+  },
+  {
+    "unitId": "usa",
+    "unitTitle": "Paper 3: Conflict at Home and Abroad: the USA, 1954–75",
+    "lessonIndex": 2,
+    "lessonTitle": "KT 1.2: How did developments in education challenge segregation (1954–57)?"
+  },
+  {
+    "unitId": "usa",
+    "unitTitle": "Paper 3: Conflict at Home and Abroad: the USA, 1954–75",
+    "lessonIndex": 3,
+    "lessonTitle": "KT 1.3: How did the Montgomery Bus Boycott happen, and why did it succeed?"
+  },
+  {
+    "unitId": "usa",
+    "unitTitle": "Paper 3: Conflict at Home and Abroad: the USA, 1954–75",
+    "lessonIndex": 4,
+    "lessonTitle": "KT 1.4: Why did white people in the South resist integration, and how did they do it?"
+  },
+  {
+    "unitId": "usa",
+    "unitTitle": "Paper 3: Conflict at Home and Abroad: the USA, 1954–75",
+    "lessonIndex": 5,
+    "lessonTitle": "KT 2.1: How did peaceful protests (like sit-ins and Freedom Rides) force the government to act?"
+  },
+  {
+    "unitId": "usa",
+    "unitTitle": "Paper 3: Conflict at Home and Abroad: the USA, 1954–75",
+    "lessonIndex": 6,
+    "lessonTitle": "KT 2.2: How did protests in Birmingham and Selma lead to the Civil and Voting Rights Acts?"
+  },
+  {
+    "unitId": "usa",
+    "unitTitle": "Paper 3: Conflict at Home and Abroad: the USA, 1954–75",
+    "lessonIndex": 7,
+    "lessonTitle": "KT 2.3: What was the Black Power movement, and how did it differ from non-violent protests?"
+  },
+  {
+    "unitId": "usa",
+    "unitTitle": "Paper 3: Conflict at Home and Abroad: the USA, 1954–75",
+    "lessonIndex": 8,
+    "lessonTitle": "KT 2.4: Why did riots break out in American cities between 1965 and 1968?"
+  },
+  {
+    "unitId": "usa",
+    "unitTitle": "Paper 3: Conflict at Home and Abroad: the USA, 1954–75",
+    "lessonIndex": 9,
+    "lessonTitle": "KT 3.1: Why did the US support the unpopular government of Ngo Dinh Diem in South Vietnam?"
+  },
+  {
+    "unitId": "usa",
+    "unitTitle": "Paper 3: Conflict at Home and Abroad: the USA, 1954–75",
+    "lessonIndex": 10,
+    "lessonTitle": "KT 3.2: Why did the US send combat troops to Vietnam after the Gulf of Tonkin incident?"
+  },
+  {
+    "unitId": "usa",
+    "unitTitle": "Paper 3: Conflict at Home and Abroad: the USA, 1954–75",
+    "lessonIndex": 11,
+    "lessonTitle": "KT 3.3: Why did US military tactics (like bombing and search & destroy) fail to defeat the Vietcong?"
+  },
+  {
+    "unitId": "usa",
+    "unitTitle": "Paper 3: Conflict at Home and Abroad: the USA, 1954–75",
+    "lessonIndex": 12,
+    "lessonTitle": "KT 3.4: What was Nixon's 'Vietnamization' policy, and did it achieve peace with honour?"
+  },
+  {
+    "unitId": "usa",
+    "unitTitle": "Paper 3: Conflict at Home and Abroad: the USA, 1954–75",
+    "lessonIndex": 13,
+    "lessonTitle": "KT 4.1: Why did so many Americans oppose the Vietnam War (like at My Lai and Kent State)?"
+  },
+  {
+    "unitId": "usa",
+    "unitTitle": "Paper 3: Conflict at Home and Abroad: the USA, 1954–75",
+    "lessonIndex": 14,
+    "lessonTitle": "KT 4.2: Why did some Americans support the Vietnam War and the 'Silent Majority'?"
+  },
+  {
+    "unitId": "usa",
+    "unitTitle": "Paper 3: Conflict at Home and Abroad: the USA, 1954–75",
+    "lessonIndex": 15,
+    "lessonTitle": "KT 4.3: How did the US exit Vietnam, and why did South Vietnam fall so quickly in 1975?"
+  },
+  {
+    "unitId": "usa",
+    "unitTitle": "Paper 3: Conflict at Home and Abroad: the USA, 1954–75",
+    "lessonIndex": 16,
+    "lessonTitle": "KT 4.4: What were the main reasons why the US failed to win the war in Vietnam?"
+  },
+  {
+    "unitId": "water_and_sanitation",
+    "unitTitle": "KS3: Water and Sanitation Through Time",
+    "lessonIndex": 2,
+    "lessonTitle": "Why did public health decline during the Middle Ages?"
+  },
+  {
+    "unitId": "water_and_sanitation",
+    "unitTitle": "KS3: Water and Sanitation Through Time",
+    "lessonIndex": 3,
+    "lessonTitle": "To what extent did towns become filthier during the Early Modern period?"
+  },
+  {
+    "unitId": "water_and_sanitation",
+    "unitTitle": "KS3: Water and Sanitation Through Time",
+    "lessonIndex": 5,
+    "lessonTitle": "Why did it take the 'Great Stink' to finally clean up Britain's streets?"
+  }
+]

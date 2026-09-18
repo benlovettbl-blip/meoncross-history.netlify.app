@@ -1,137 +1,145 @@
 const puppeteer = require('puppeteer');
+const fs = require('fs');
+const path = require('path');
+const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.cjs');
 
 (async () => {
-  const browser = await puppeteer.launch({ headless: 'new', protocolTimeout: 600000 });
+  const args = process.argv.slice(2);
+  const isStrict = args.includes('--strict') || args.includes('--ci') || Boolean(process.env.CI);
+  const maxDeadSpaceArg = args.find((a) => a.startsWith('--max-dead-space='));
+  const maxAllowedDeadSpace = maxDeadSpaceArg ? parseInt(maxDeadSpaceArg.split('=')[1], 10) : 150; // User specification: >150px dead space is blocked
+
+  const nonFlagArgs = args.filter((a) => !a.startsWith('--'));
+  const arg = nonFlagArgs[0] || 'great_war';
+
+  const browser = await puppeteer.launch({
+    headless: 'new',
+    protocolTimeout: 600000,
+    args: ['--allow-file-access-from-files', '--no-sandbox', '--disable-setuid-sandbox'],
+  });
   const page = await browser.newPage();
+  await page.setViewport({ width: 1200, height: 1600 });
 
-  // Set viewport to simulate a mobile screen
-  await page.setViewport({ width: 375, height: 812, isMobile: true });
+  const targetFiles = [];
 
-  const arg = process.argv[2] || 'water_and_sanitation';
-  const path = require('path');
-
-  const fs = require('fs');
-  let htmlPath;
   if (arg.endsWith('.html')) {
-    htmlPath = path.resolve(arg);
-  } else {
-    const defaultPath = path.join(__dirname, '..', 'public', 'units', arg, 'pupil_workbook.html');
-    const kt1Path = path.join(__dirname, '..', 'public', 'units', arg, 'pupil_workbook_KT1.html');
-    const medPath = path.join(
-      __dirname,
-      '..',
-      'public',
-      'units',
-      arg,
-      'pupil_workbook_medieval.html',
-    );
-    if (fs.existsSync(defaultPath)) {
-      htmlPath = defaultPath;
-    } else if (fs.existsSync(kt1Path)) {
-      htmlPath = kt1Path;
-    } else if (fs.existsSync(medPath)) {
-      htmlPath = medPath;
-    } else {
-      const unitFolder = path.join(__dirname, '..', 'public', 'units', arg);
-      if (fs.existsSync(unitFolder)) {
-        const found = fs
-          .readdirSync(unitFolder)
-          .find((f) => f.startsWith('pupil_workbook') && f.endsWith('.html'));
-        htmlPath = found ? path.join(unitFolder, found) : defaultPath;
-      } else {
-        htmlPath = defaultPath;
+    targetFiles.push(path.resolve(arg));
+  } else if (arg === 'boosters' || arg === 'revision_sheets') {
+    const boostersDir = path.join(__dirname, '..', 'public', 'revision_sheets');
+    if (fs.existsSync(boostersDir)) {
+      const htmls = fs.readdirSync(boostersDir).filter((f) => f.endsWith('.html'));
+      htmls.forEach((h) => targetFiles.push(path.join(boostersDir, h)));
+    }
+  } else if (arg === 'all') {
+    const publicUnits = path.join(__dirname, '..', 'public', 'units');
+    if (fs.existsSync(publicUnits)) {
+      const unitFolders = fs
+        .readdirSync(publicUnits)
+        .filter((d) => fs.statSync(path.join(publicUnits, d)).isDirectory() && !d.startsWith('.'));
+      for (const u of unitFolders) {
+        const uDir = path.join(publicUnits, u);
+        const htmls = fs
+          .readdirSync(uDir)
+          .filter(
+            (f) =>
+              f.endsWith('.html') &&
+              (f.startsWith('quiz_pack') ||
+                f.startsWith('mastery_pack') ||
+                f.startsWith('pupil_workbook')),
+          );
+        htmls.forEach((h) => targetFiles.push(path.join(uDir, h)));
       }
     }
-  }
-
-  const LOCAL_URL = require('url').pathToFileURL(htmlPath).href;
-
-  console.log(`Navigating to ${LOCAL_URL}...`);
-  await page.goto(LOCAL_URL, { waitUntil: 'domcontentloaded', timeout: 300000 });
-
-  // Wait for content to render
-  try {
-    await page.waitForSelector('.page, .page-landscape, .narrative-block, .task-box', {
-      timeout: 3000,
-    });
-  } catch (e) {
-    // Continue if selectors differ
-  }
-  await new Promise((r) => setTimeout(r, 1000)); // Buffer for images/layout to settle
-
-  console.log('Page loaded. Running overflow detection...');
-
-  const overflows = await page.evaluate(() => {
-    const issues = [];
-
-    // Force all pages to be visible for checking
-    const allPages = document.querySelectorAll('.page, .page-landscape');
-    allPages.forEach((p) => {
-      p.style.display = 'flex';
-    });
-
-    // Wait a tiny bit for layout to settle (though synchronously is usually fine after display:flex)
-    allPages.forEach((p) => {
-      const pageBounds = p.getBoundingClientRect();
-      const pageId = p.id || 'unknown-page';
-
-      // We check all elements inside the page
-      const elements = p.querySelectorAll('*');
-      elements.forEach((el) => {
-        // Ignore hidden elements, empty containers, scripts, styles
-        if (el.style.display === 'none' || el.tagName === 'SCRIPT' || el.tagName === 'STYLE')
-          return;
-
-        const bounds = el.getBoundingClientRect();
-
-        // Skip elements with 0 width/height
-        if (bounds.width === 0 || bounds.height === 0) return;
-
-        // Check if element spills out of the bottom of the page
-        // Tolerance of 10px to avoid false positives with borders/shadows
-        if (bounds.bottom > pageBounds.bottom + 10) {
-          issues.push({
-            page: pageId,
-            element: el.tagName,
-            classes: el.className,
-            text: el.textContent.substring(0, 50).trim().replace(/\n/g, ' '),
-            overflowBottom: Math.round(bounds.bottom - pageBounds.bottom),
-          });
-        }
-      });
-    });
-
-    return issues;
-  });
-
-  console.log('\n--- Overflow Report ---');
-  if (overflows.length === 0) {
-    console.log('✅ All pages fit perfectly! No overflows detected.');
+    const boostersDir = path.join(__dirname, '..', 'public', 'revision_sheets');
+    if (fs.existsSync(boostersDir)) {
+      const htmls = fs.readdirSync(boostersDir).filter((f) => f.endsWith('.html'));
+      htmls.forEach((h) => targetFiles.push(path.join(boostersDir, h)));
+    }
   } else {
-    console.log(`❌ Found ${overflows.length} elements spilling off their pages:\n`);
-
-    // De-duplicate issues (since a parent spilling might cause children to spill)
-    // We group by page to make it readable
-    const issuesByPage = {};
-    overflows.forEach((o) => {
-      if (!issuesByPage[o.page]) issuesByPage[o.page] = [];
-      issuesByPage[o.page].push(o);
-    });
-
-    for (const [pageId, issues] of Object.entries(issuesByPage)) {
-      console.log(`\nPage ID: ${pageId}`);
-      issues.forEach((i) => {
-        console.log(
-          `  - <${i.element} class="${i.classes}"> "${i.text}" (Spills by ${i.overflowBottom}px)`,
-        );
-      });
+    const unitFolder = path.join(__dirname, '..', 'public', 'units', arg);
+    if (fs.existsSync(unitFolder)) {
+      const candidates = fs.readdirSync(unitFolder).filter((f) => f.endsWith('.html'));
+      const priorityPrefixes = ['pupil_workbook', 'quiz_pack', 'mastery_pack', 'textbook'];
+      const matched = candidates.filter((f) => priorityPrefixes.some((p) => f.startsWith(p)));
+      if (matched.length > 0) {
+        matched.forEach((f) => targetFiles.push(path.join(unitFolder, f)));
+      } else {
+        targetFiles.push(path.join(unitFolder, 'pupil_workbook.html'));
+      }
+    } else {
+      console.error(`❌ Unit folder not found: ${unitFolder}`);
+      await browser.close();
+      process.exit(1);
     }
   }
-  console.log('-----------------------\n');
+
+  let totalErrors = 0;
+  let totalBudgetViolations = 0;
+
+  for (const htmlPath of targetFiles) {
+    if (!fs.existsSync(htmlPath)) {
+      continue;
+    }
+
+    const localUrl = require('url').pathToFileURL(htmlPath).href;
+    const docName = path.basename(htmlPath);
+    console.log(`\n🔍 Auditing Page Budget & Layout: ${docName}...`);
+
+    try {
+      await page.goto(localUrl, { waitUntil: 'domcontentloaded', timeout: 300000 });
+      await new Promise((r) => setTimeout(r, 600));
+
+      const audit = await auditPageBudget(page, {
+        underflowThresholdPx: docName.includes('quiz_pack') ? 35 : 60,
+        pageSelector: '.a5-page, .page, .page-landscape, .a4-page, .sheet-page',
+      });
+
+      printSpaceAuditReport(audit, docName);
+
+      if (audit.hasErrors) {
+        totalErrors += audit.results.filter((r) => r.isOverflow).length;
+      }
+
+      // Automated Space Budget Gate: dead space > maxAllowedDeadSpace (150px)
+      const deadSpaceViolations = audit.results.filter(
+        (r) =>
+          !r.isOverflow && r.unusedBottom > maxAllowedDeadSpace && !r.pageId.includes('Continuous'),
+      );
+      if (deadSpaceViolations.length > 0) {
+        deadSpaceViolations.forEach((v) => {
+          console.warn(
+            `  ⚠️ Space Budget Gate: ${v.pageId} exceeds max dead space threshold (${v.unusedBottom}px > ${maxAllowedDeadSpace}px limit)!`,
+          );
+        });
+        totalBudgetViolations += deadSpaceViolations.length;
+      }
+    } catch (err) {
+      console.error(`❌ Failed to audit ${docName}:`, err.message);
+      totalErrors++;
+    }
+  }
 
   await browser.close();
 
-  if (overflows.length > 0) {
+  if (totalErrors > 0) {
+    console.error(`\n❌ Layout Overflows detected! Total overflow errors: ${totalErrors}`);
     process.exit(1);
+  }
+
+  if (isStrict && totalBudgetViolations > 0) {
+    console.error(
+      `\n❌ Space Budget Gate Failed! ${totalBudgetViolations} page(s) exceeded the ${maxAllowedDeadSpace}px dead space limit.`,
+    );
+    process.exit(1);
+  }
+
+  if (totalBudgetViolations > 0) {
+    console.warn(
+      `\n⚠️ Note: ${totalBudgetViolations} page(s) have dead space > ${maxAllowedDeadSpace}px (run with --strict to enforce hard blocking).`,
+    );
+  } else {
+    console.log(
+      `\n🎉 Space Budget Gate Passed: 0 overflows and 0 pages exceeding ${maxAllowedDeadSpace}px dead space!`,
+    );
   }
 })();
