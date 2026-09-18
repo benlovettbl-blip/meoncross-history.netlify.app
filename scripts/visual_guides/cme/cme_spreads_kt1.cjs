@@ -29,9 +29,9 @@ module.exports = [
           subtitle: 'Guerrilla Strikes vs British Rule',
           bullets: [
             '**The Paramilitary Underground:** The mainstream Haganah (defense force led by Ben-Gurion) and militant splinter groups Irgun (led by Menachem Begin) and Lehi (Stern Gang) formed the unified Hebrew Resistance Movement following the furious August 1945 London Zionist conference.',
-            '**153 Railway Bombs & Transport Paralysis:** Jewish underground fighters detonated **153 bombs on railway lines**, severed telephone communications, blew up military radar stations, and destroyed oil pipelines, effectively paralyzing British troop logistics across Palestine.',
+            '**Night of the Trains & Transport Paralysis (Nov 1945):** Jewish underground fighters detonated **153 bombs on railway lines** across Palestine, severed telephone communications, blew up radar stations, and crippled British logistics.',
             '**Night of the Bridges (June 1946):** Haganah commandos destroyed **11 road and rail bridges** linking Palestine to Transjordan, Syria, Lebanon, and Egypt in a single night, demonstrating complete tactical dominance over the countryside and severing British supply routes.',
-            '**King David Hotel Bombing (22 July 1946):** Irgun commandos disguised as milk delivery men detonated 225kg of TNT inside British military headquarters, killing **91 people** (British, Arab, Jewish civil servants); Ben-Gurion publicly condemned the Irgun after Begin ignored evacuation warnings.',
+            '**King David Hotel Bombing (22 July 1946):** Irgun commandos disguised as milkmen detonated 225kg of explosives inside British military headquarters, killing **91 people**; despite Irgun claiming advance warning calls were placed, the building was not evacuated, provoking fierce condemnation from Ben-Gurion.',
           ],
         },
         {
@@ -39,9 +39,9 @@ module.exports = [
           subtitle: 'The Police State & Surrender',
           bullets: [
             '**The "Bevingrad" Police State:** Britain deployed **100,000 soldiers** (1 soldier for every 6 Jews) costing **£40 million annually**; Jerusalem and Tel Aviv administration compounds were sealed behind massive barbed-wire fortresses nicknamed "Bevingrad" under strict curfews.',
-            '**Acre Prison Raid (May 1947):** Irgun commandos dynamited the ancient crusader fortress of Acre, freeing 27 underground prisoners; British military courts responded by sentencing 3 captured Irgun fighters to death by hanging.',
-            "**The Sergeants Affair (July 1947):** Begin retaliated by hanging 2 captured British military intelligence sergeants (Clifford Martin and Mervyn Paice) in an orange grove and booby-trapping Martin's body with a landmine, triggering violent anti-Jewish riots across British cities.",
-            '**UN Referral (18 Feb 1947):** Exhausted by WWII debt, facing calls to "bring the boys home", and pressured by US threats to withhold postwar financial loans, Foreign Secretary Ernest Bevin announced Britain would surrender the Mandate to the UN without recommending any solution.',
+            '**UN Referral (18 Feb 1947):** Exhausted by WWII debt, facing domestic calls to "bring the boys home", and pressured by US loan leverage, Foreign Secretary Ernest Bevin announced Britain would surrender the Mandate to the UN without recommending any solution.',
+            '**Acre Prison Raid (May 1947):** Irgun commandos dynamited the fortress of Acre, freeing 27 underground prisoners; British military courts responded by sentencing 3 captured Irgun fighters to death by hanging.',
+            "**The Sergeants Affair & Evacuation (July–Sept 1947):** In retaliation, Irgun hanged 2 British sergeants (Martin and Paice) and booby-trapped a body; the public backlash and SS Exodus scandal destroyed British will, prompting Britain's Sept 1947 decision to fully evacuate by May 1948.",
           ],
         },
       ],
@@ -85,12 +85,12 @@ module.exports = [
           ],
         },
         {
-          title: '2. Railway Sabotage (153 Bombs) & King David Hotel',
+          title: '2. Night of the Trains & King David Hotel (1945–46)',
           points: [
-            "**London Conference Backlash (Aug 1945):** Fury at Attlee's Labour government upholding the White Paper led Jewish groups to launch an armed offensive against British rule.",
-            '**Railway Sabotage:** Underground fighters set **153 bombs on railway lines**, blowing up tracks, locomotives, and signal boxes to paralyze British troop deployments.',
-            '**King David Hotel Strike (July 1946):** Irgun commandos disguised as Arab milk delivery men planted explosives in the basement; **91 civilians and military staff were killed**.',
-            '**Haganah Condemnation:** While initially united under the Hebrew Resistance Movement, Ben-Gurion condemned the Irgun for ignoring evacuation warnings, splitting the underground.',
+            '**Night of the Trains (Nov 1945):** Fury at Attlee upholding the White Paper led underground fighters to detonate **153 bombs on railway lines**, paralyzing British troop logistics.',
+            '**King David Hotel Strike (July 1946):** Irgun commandos disguised as milk delivery men detonated 225kg of TNT in the basement; **91 civilians and military staff were killed**.',
+            '**Evacuation Warnings Controversy:** Begin maintained 3 warning calls were placed (to hotel, French consulate, Palestine Post); British officials denied receiving a timely warning, and the building was not evacuated.',
+            '**Haganah Condemnation:** Shocked by 91 civilian deaths, Ben-Gurion publicly condemned the Irgun, severing the unified Hebrew Resistance Movement alliance.',
           ],
         },
         {
@@ -103,12 +103,12 @@ module.exports = [
           ],
         },
         {
-          title: '4. The Sergeants Affair & The Bevingrad Police State',
+          title: '4. The Sergeants Affair & The Decision to Evacuate',
           points: [
             '**"Bevingrad" Fortresses:** 100,000 British troops (£40m/yr cost) placed major cities under constant curfews, retreating into barbed-wire administrative compounds ("Bevingrad").',
             '**Acre Prison Raid (May 1947):** Irgun dynamited the ancient fortress of Acre, freeing 27 underground prisoners; Britain responded by sentencing 3 captured Irgun men to death.',
             "**Sergeants Hanged (July 1947):** Irgun hanged two captured British sergeants (Clifford Martin and Mervyn Paice) in an orange grove and booby-trapped Martin's body with landmines.",
-            '**Domestic Collapse:** The deaths caused anti-Semitic riots in Liverpool and London; British newspapers declared Palestine an "unbearable drain in blood and treasure".',
+            '**Domestic Collapse:** The deaths caused anti-Jewish riots in Liverpool and London; in Sept 1947, Britain announced total withdrawal by 15 May 1948 regardless of UN partition.',
           ],
         },
       ],
@@ -118,16 +118,16 @@ module.exports = [
           text: '1939 cap (15k/yr) traps 250k Holocaust survivors in European camps; Aliyah Bet blockade running begins.',
         },
         {
-          stage: '2. Insurgency & 153 Bombs',
-          text: 'Irgun & Haganah set 153 railway bombs; King David Hotel bombing kills 91; Bevin establishes police state.',
+          stage: '2. Insurgency & King David Bombing',
+          text: '153 railway bombs and King David Hotel bombing kill 91; Bevin deploys 100k troops (£40m/yr) into "Bevingrad" fortresses.',
         },
         {
-          stage: '3. Exodus & Sergeants Affair',
-          text: 'Exodus deportation shocks world; 2 sergeants hanged in retaliation; British public demands troop withdrawal.',
+          stage: '3. Economic Drain & UN Referral (Feb 47)',
+          text: 'Exhausted by £40m annual costs and US loan pressure, Britain admits Mandate is unworkable and refers it to the UN.',
         },
         {
-          stage: '4. UN Referral (Feb 1947)',
-          text: 'Exhausted by £40m annual costs, 100k troops, and US financial pressure, Britain surrenders Mandate to UN.',
+          stage: '4. Exodus, Sergeants & Evacuation (Summer 47)',
+          text: 'SS Exodus outrage and hanged sergeants trigger UK riots; Britain refuses to enforce partition and decides to withdraw.',
         },
       ],
       masterWordBank: [
@@ -137,7 +137,7 @@ module.exports = [
         },
         {
           term: '1939 White Paper',
-          def: 'British policy limiting Jewish immigration to 15,000 per year for five years.',
+          def: 'British policy limiting Jewish immigration to 75,000 total (15,000/yr average).',
         },
         {
           term: 'Aliyah Bet',
@@ -152,8 +152,8 @@ module.exports = [
           def: 'Militant revisionist splinter group led by Menachem Begin.',
         },
         {
-          term: '153 Railway Bombs',
-          def: 'Sabotage strikes on railway lines crippling British transport.',
+          term: 'Night of the Trains',
+          def: 'Nov 1945 sabotage: 153 railway bombs detonated across Palestine, paralyzing transport.',
         },
         {
           term: 'King David Hotel',
@@ -209,8 +209,8 @@ module.exports = [
           bullets: [
             '**Outbreak of Civil War:** Violence erupted immediately after the UN vote; Arab irregulars ambushed Jewish convoys, blockading food and water supplies to **100,000 Jewish residents besieged in Jerusalem**.',
             '**Arab Liberation Army (ALA):** The Arab League sponsored 5,000 volunteers under Fawzi al-Qawuqji crossing into Palestine before British withdrawal, surrounding Jewish enclaves in Galilee and the Negev.',
-            '**Operation Dalet (April 1948):** Haganah operational plan to secure state borders and clear vital transport corridors, commanding the capture of strategic Arab villages along the Tel Aviv-Jerusalem highway.',
-            '**Deir Yassin Massacre (9 April 1948):** Irgun and Lehi commandos attacked the village on the road to Jerusalem, killing **around 100 villagers (including women and children)**; exaggerated Arab radio reports intended to rally Arab nations backfired, causing **250,000 Palestinians to flee before 15 May**.',
+            '**Operation Dalet (April 1948):** Haganah operational plan to secure borders and clear transport corridors; controversial among historians over whether it was purely defensive or an intentional expulsion plan.',
+            '**Deir Yassin & Flight Controversy (9 April 1948):** Irgun and Lehi killed around 100 villagers; while traditional accounts claimed Arab radio urged flight, modern archives show no broadcast orders existed—terror from Deir Yassin and Plan Dalet assaults caused **250,000 Palestinians to flee before 15 May**.',
           ],
         },
         {
@@ -268,7 +268,7 @@ module.exports = [
           points: [
             '**Jerusalem Blockade:** Arab forces cut off the supply road to 100,000 Jewish residents in Jerusalem, causing severe starvation and water rationing.',
             '**The Deir Yassin Attack (9 April):** Irgun and Lehi fighters stormed the strategic hillside village; house-to-house fighting and grenade clearing resulted in **around 100 villagers killed**.',
-            '**Mass Flight Mechanism:** Broadcasts by Arab radio intended to shame Arab leaders into invading instead triggered widespread panic; **250,000 Palestinians fled their homes before 15 May**.',
+            '**Controversy Over Flight:** Zionist accounts claimed Arab radio ordered flight; New Historians (e.g. Benny Morris) proved no broadcast orders existed—mass panic from Deir Yassin, combat fear, and Plan Dalet expulsions drove **250,000 Palestinians to flee before 15 May**.',
             '**Haganah Condemnation:** Ben-Gurion sent an official apology to King Abdullah of Transjordan, but the psychological terror created by the massacre proved irreversible.',
           ],
         },
@@ -298,7 +298,7 @@ module.exports = [
         },
         {
           stage: '2. Deir Yassin & Flight (Apr 48)',
-          text: 'Irgun/Lehi attack Deir Yassin killing ~100; Arab broadcast panic triggers mass flight of 250k Palestinians before 15 May.',
+          text: 'Irgun/Lehi attack Deir Yassin killing ~100; terror and Plan Dalet assaults drive mass flight of 250k Palestinians before 15 May.',
         },
         {
           stage: '3. June Truce & Czech Arms',

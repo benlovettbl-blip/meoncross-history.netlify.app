@@ -99,7 +99,7 @@ module.exports = [
             '**Low-Level Flight:** 200 Israeli jets flew 15 meters above the Mediterranean waves beneath Egyptian radar, striking during the morning shift change when pilots were eating breakfast.',
             '**Dibber Bombs:** French rocket-assisted penetration bombs created massive craters in runways, trapping 300 Egyptian aircraft on the tarmac before destroying them.',
             '**Air Supremacy in 4 Hours:** By midday, Egypt, Syria, and Jordan lost 452 aircraft; IDF ground forces operated with complete, unchallenged air support across all fronts.',
-            '**Ground Advance:** Israeli armored divisions broke through fortified Egyptian defenses at Abu Ageila and Jebel Libni, cutting off Egyptian retreat routes to the Suez Canal.',
+            '**Pre-Emptive Strike Controversy:** Israel viewed the strike as legitimate self-defense against an existential blockade; revisionist historians noted Nasser was political bluffing without an attack plan, arguing Israel seized a calculated opportunity.',
           ],
         },
         {

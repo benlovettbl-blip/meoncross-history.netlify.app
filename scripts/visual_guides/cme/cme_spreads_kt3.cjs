@@ -192,7 +192,7 @@ module.exports = [
       tag: 'KT 3.2 • Carter, Begin, Sadat & The Assassination',
       headline: 'Thirteen Days, Billions in Aid & The Price of Treason: Camp David 1978–79',
       summary:
-        'In September 1978, US President Jimmy Carter isolated Anwar Sadat and Menachem Begin at the Camp David presidential retreat for 13 days of grueling negotiations. The summit produced two distinct agreements: the Framework for Egyptian-Israeli Peace (full Sinai withdrawal in exchange for mutual recognition) and the deliberately vague Framework for Peace in the Middle East (promising 5-year transitional autonomy for West Bank and Gaza Palestinians). Carter sealed the deal with massive US financial underwriting: $10 billion in aid to Egypt ($1 billion annually for 10 years) and $3 billion in loans/grants to Israel for replacement Negev airbases. On 26 March 1979, the formal Treaty of Washington was signed on the White House lawn. While Sadat and Begin shared the 1978 Nobel Peace Prize, the Arab world reacted with fury: the Arab League expelled Egypt, and on 6 October 1981, Sadat was assassinated by Egyptian Islamic Jihad militants.',
+        'In September 1978, US President Jimmy Carter isolated Anwar Sadat and Menachem Begin at the Camp David presidential retreat for 13 days of grueling negotiations. The summit produced two distinct agreements: the Framework for Egyptian-Israeli Peace (full Sinai withdrawal in exchange for mutual recognition) and the deliberately vague Framework for Peace in the Middle East (promising 5-year transitional autonomy for West Bank and Gaza Palestinians). Carter sealed the deal with massive US financial underwriting: $10 billion in aid to Egypt ($1 billion annually for 10 years) and $3 billion in loans/grants to Israel for replacement Negev airbases. On 26 March 1979, the formal Treaty of Washington was signed on the White House lawn. While Sadat and Begin shared the 1978 Nobel Peace Prize, the Arab world reacted with fury: the Arab League expelled Egypt, and on 6 October 1981, Sadat was assassinated by militant Egyptian soldiers opposed to peace with Israel.',
       pillars: [
         {
           title: 'The 13 Days at Camp David (1978)',
@@ -221,7 +221,7 @@ module.exports = [
             "**Treaty of Washington (26 March 1979):** Signed on the White House lawn; Egypt became the first Arab state to officially recognize Israel's right to exist in peace, ending 31 years of official warfare.",
             '**Arab League Expulsion:** Arab nations denounced Sadat as a traitor who abandoned Palestine; Egypt was expelled from the Arab League, the League HQ was moved from Cairo to Tunis, and Gulf states cut off financial subsidies.',
             '**Domestic Repression (Sept 1981):** Facing mounting opposition from Islamists and leftists, Sadat cracked down, arresting over 1,500 political opponents, intellectuals, and religious figures in September 1981.',
-            '**Assassination of Sadat (6 Oct 1981):** During a military victory parade in Cairo celebrating the 1973 crossing, Islamic Jihad soldiers led by Lieutenant Khalid Islambouli leaped from a truck and assassinated Sadat with automatic rifles.',
+            '**Assassination of Sadat (6 Oct 1981):** During a military victory parade in Cairo celebrating the 1973 crossing, militant Egyptian soldiers and Islamist extremists opposed to peace with Israel assassinated Sadat with automatic rifles.',
           ],
         },
       ],
@@ -239,8 +239,8 @@ module.exports = [
           role: 'Israeli Prime Minister who conceded Sinai and dismantled the Yamit settlement, while retaining military control over the West Bank and Gaza.',
         },
         {
-          name: 'Hosni Mubarak',
-          role: "Sadat's Vice President who survived the 1981 assassination attack, became Egyptian President, and upheld the peace treaty with Israel.",
+          name: 'Yasser Arafat & PLO',
+          role: 'Condemned Camp David as a separate peace that abandoned Palestinian rights and failed to halt West Bank settlements.',
         },
       ],
       archivalSource: {
@@ -288,7 +288,7 @@ module.exports = [
             '**Arab League Sanctions:** Meeting in Baghdad, 18 Arab nations suspended Egypt from the Arab League, moved the League headquarters from Cairo to Tunis, and imposed a total diplomatic, cultural, and economic boycott.',
             "**Saudi Subsidy Cut:** Saudi Arabia and Kuwait immediately terminated billions in annual financial subsidies that had supported Egypt's treasury since the 1967 Khartoum summit, leaving Egypt wholly reliant on US aid.",
             '**Islamic Extremist Rage:** Egyptian Islamists viewed peace with Israel as an unpardonable betrayal of Islam; Sadat further inflamed tensions by arresting 1,500 political opponents, lawyers, and sheikhs in Sept 1981.',
-            '**6 October 1981 Parade:** Lieutenant Khalid Islambouli and three fellow conspirators sprayed the presidential reviewing stand with automatic rifles and grenades, assassinating Sadat on live global television.',
+            '**6 October 1981 Parade:** Militant army conspirators opposed to the peace treaty leaped from a truck and sprayed the presidential reviewing stand, assassinating Sadat on live global television.',
           ],
         },
       ],
@@ -345,15 +345,15 @@ module.exports = [
         },
         {
           term: 'Sadat Assassination (1981)',
-          def: 'Murder of Anwar Sadat on 6 Oct 1981 by Islamic Jihad during a military parade.',
+          def: 'Murder of Anwar Sadat on 6 Oct 1981 by militant soldiers opposed to the peace treaty.',
         },
         {
-          term: 'Khalid Islambouli',
-          def: 'Egyptian Islamic Jihad army officer who led the assassination of Anwar Sadat.',
+          term: 'Palestinian Autonomy',
+          def: 'Vague 5-year self-governing proposal for West Bank/Gaza, boycotted by Palestinians.',
         },
         {
-          term: 'Hosni Mubarak',
-          def: 'Succeeded Sadat as Egyptian President, maintaining the peace treaty while thawing Arab ties.',
+          term: 'Sinai Withdrawal (1979–82)',
+          def: 'Three-year phased Israeli military and civilian evacuation completed in April 1982.',
         },
         {
           term: 'Nobel Peace Prize (1978)',

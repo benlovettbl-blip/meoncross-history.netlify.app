@@ -417,16 +417,16 @@ function renderPage2() {
         <!-- Blueprint Grid: 3 Question Types -->
         <div style="border: 1.5px solid #000; border-radius: 3px; padding: 7px 10px; background: #fff; margin-bottom: 7px;">
           <div style="font-size: 10pt; font-weight: 800; text-transform: uppercase; color: #000; margin-bottom: 4px; border-bottom: 1.2px solid #000; padding-bottom: 2px;">
-            The Three Question Formats &bull; Strict Pacing Guide (32 Marks Total &bull; 50 Mins)
+            The Three Question Formats &bull; Strict Pacing Guide (28 Marks Total &bull; 50 Mins)
           </div>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 9.5pt; line-height: 1.35; color: #000;">
             <div style="border: 1.2px solid #000; border-radius: 2px; padding: 6px 8px; background: #f8fafc;">
               <div style="font-size: 10pt; font-weight: 800; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
-                Q1: Explain Two Consequences (8m &bull; 12 mins)
+                Q1: Explain One Consequence (4m &bull; 6 mins)
               </div>
-              <div>&bull; <strong>Structure:</strong> Answer Question 1(a) [4 marks] AND Question 1(b) [4 marks] separately.</div>
+              <div>&bull; <strong>Structure:</strong> Single focused 4-mark question: "Explain one consequence of..."</div>
               <div>&bull; <strong>Formula:</strong> State the consequence directly &rarr; Provide 2 precise supporting facts &rarr; Explain the causal outcome.</div>
-              <div>&bull; <strong>Pacing:</strong> Spend strictly 6 minutes per consequence question (12 minutes total).</div>
+              <div>&bull; <strong>Pacing:</strong> Spend strictly 5–6 minutes. Write 1 punchy, fully explained paragraph.</div>
             </div>
 
             <div style="border: 1.2px solid #000; border-radius: 2px; padding: 6px 8px; background: #f8fafc;">
@@ -513,9 +513,10 @@ function renderPage3() {
               Key Topic 1: The birth of the state of Israel, 1945–63
             </div>
             <div style="font-size: 8.5pt; line-height: 1.30; color: #000; display: flex; flex-direction: column; gap: 3px;">
-              <div><strong>1945:</strong> Jewish insurgency begins against White Paper quotas.</div>
+              <div><strong>Nov 1945:</strong> Night of the Trains (153 bombs detonated).</div>
               <div><strong>22 July 1946:</strong> Irgun bombs King David Hotel (91 dead).</div>
               <div><strong>18 Feb 1947:</strong> Britain surrenders Mandate to United Nations.</div>
+              <div><strong>July 1947:</strong> SS Exodus intercepted; Sergeants Affair destroys British will.</div>
               <div><strong>29 Nov 1947:</strong> UN passes Resolution 181 partition plan (55% Jewish state).</div>
               <div><strong>14 May 1948:</strong> Ben-Gurion declares State of Israel; 5 Arab armies invade.</div>
               <div><strong>1949:</strong> Armistice agreements; Israel controls 79% (Green Line).</div>
