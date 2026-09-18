@@ -7856,6 +7856,12 @@ window.applySyncKey = function () {
 };
 
 window.downloadChessBackupJSON = function () {
+  let localNames = {};
+  try {
+    const raw = localStorage.getItem('chess_local_roster_names');
+    if (raw) localNames = JSON.parse(raw);
+  } catch (e) {}
+
   const backup = {
     app: 'The History Portal Chess Club',
     exportedAt: new Date().toISOString(),
@@ -7866,6 +7872,7 @@ window.downloadChessBackupJSON = function () {
       matches: chessState.matches,
       checkedInPlayerIds: chessState.checkedInPlayerIds,
       knockoutBracket: chessState.knockoutBracket,
+      realNames: localNames,
     },
   };
   const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' });
@@ -7898,6 +7905,12 @@ window.handleRestoreBackupFile = function (e) {
         ? incomingState.checkedInPlayerIds
         : [];
       chessState.knockoutBracket = incomingState.knockoutBracket || null;
+      if (incomingState.realNames && typeof incomingState.realNames === 'object') {
+        try {
+          localStorage.setItem('chess_local_roster_names', JSON.stringify(incomingState.realNames));
+        } catch (e) {}
+      }
+      hydratePlayerRealNames(chessState.players);
       saveChessState();
       window.closeChessModal();
       renderChessHubView();
