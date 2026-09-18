@@ -1,5 +1,187 @@
 import { state } from './state.js';
 
+let currentPreviewState = {
+  activeTab: 'qp',
+  qpUrl: null,
+  msUrl: null,
+  title: '',
+  pdfUrl: null,
+  url: '',
+  isMockPaper: false,
+};
+
+window.openInPagePreview = function (url, title, pdfUrl, options = {}) {
+  const consoleEl = document.getElementById('inpage-preview-console');
+  const iframe = document.getElementById('inpagePreviewIframe');
+  const titleEl = document.getElementById('previewConsoleTitle');
+  const docTypeEl = document.getElementById('previewConsoleDocType');
+  const tabsEl = document.getElementById('previewConsoleTabs');
+  const downloadBtn = document.getElementById('btnPreviewDownload');
+  const fullTabBtn = document.getElementById('btnPreviewFullTab');
+
+  if (!consoleEl || !iframe) {
+    if (window.openTeacherPrintPreview) {
+      window.openTeacherPrintPreview(url, title, pdfUrl);
+    }
+    return;
+  }
+
+  currentPreviewState = {
+    activeTab: options.activeTab || 'qp',
+    qpUrl: options.qpUrl || (options.isMockPaper ? url : null),
+    msUrl: options.msUrl || null,
+    title: options.title || title,
+    pdfUrl: pdfUrl || url,
+    url: url,
+    isMockPaper: Boolean(options.isMockPaper),
+  };
+
+  if (titleEl) titleEl.textContent = title || 'Document Preview';
+  if (docTypeEl) {
+    docTypeEl.textContent = options.isMockPaper
+      ? 'Mock Examination Paper'
+      : options.badge || 'Document Viewer';
+  }
+
+  if (options.isMockPaper && options.qpUrl && options.msUrl) {
+    if (tabsEl) tabsEl.style.display = 'inline-flex';
+    window.updatePreviewConsoleTabs(options.activeTab || 'qp');
+  } else {
+    if (tabsEl) tabsEl.style.display = 'none';
+  }
+
+  if (downloadBtn) {
+    downloadBtn.href = pdfUrl || url;
+    downloadBtn.style.display = 'inline-flex';
+  }
+
+  if (fullTabBtn) {
+    fullTabBtn.href = url;
+  }
+
+  iframe.src = url;
+
+  consoleEl.style.display = 'flex';
+  setTimeout(() => {
+    consoleEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 50);
+};
+
+window.switchPreviewConsoleTab = function (tab) {
+  if (!currentPreviewState) return;
+  const iframe = document.getElementById('inpagePreviewIframe');
+  const titleEl = document.getElementById('previewConsoleTitle');
+  const fullTabBtn = document.getElementById('btnPreviewFullTab');
+
+  if (tab === 'qp' && currentPreviewState.qpUrl) {
+    currentPreviewState.activeTab = 'qp';
+    if (iframe) iframe.src = currentPreviewState.qpUrl;
+    if (titleEl) titleEl.textContent = currentPreviewState.title + ' (Question Paper)';
+    if (fullTabBtn) fullTabBtn.href = currentPreviewState.qpUrl;
+    window.updatePreviewConsoleTabs('qp');
+  } else if (tab === 'ms' && currentPreviewState.msUrl) {
+    currentPreviewState.activeTab = 'ms';
+    if (iframe) iframe.src = currentPreviewState.msUrl;
+    if (titleEl) titleEl.textContent = currentPreviewState.title + ' (Mark Scheme)';
+    if (fullTabBtn) fullTabBtn.href = currentPreviewState.msUrl;
+    window.updatePreviewConsoleTabs('ms');
+  }
+};
+
+window.updatePreviewConsoleTabs = function (activeTab) {
+  const btnQP = document.getElementById('btnTabQP');
+  const btnMS = document.getElementById('btnTabMS');
+  if (!btnQP || !btnMS) return;
+  if (activeTab === 'qp') {
+    btnQP.style.background = '#2563eb';
+    btnQP.style.color = '#ffffff';
+    btnMS.style.background = 'transparent';
+    btnMS.style.color = '#94a3b8';
+  } else {
+    btnMS.style.background = '#16a34a';
+    btnMS.style.color = '#ffffff';
+    btnQP.style.background = 'transparent';
+    btnQP.style.color = '#94a3b8';
+  }
+};
+
+window.printInPagePreview = function () {
+  const iframe = document.getElementById('inpagePreviewIframe');
+  if (iframe && iframe.contentWindow) {
+    iframe.contentWindow.focus();
+    iframe.contentWindow.print();
+  }
+};
+
+window.closeInPagePreview = function () {
+  const consoleEl = document.getElementById('inpage-preview-console');
+  const iframe = document.getElementById('inpagePreviewIframe');
+  if (consoleEl) {
+    consoleEl.style.display = 'none';
+  }
+  if (iframe) {
+    iframe.src = 'about:blank';
+  }
+};
+
+function renderInPagePreviewConsole() {
+  return `
+    <!-- In-Page PDF & Document Preview Console (Solution 2) -->
+    <div id="inpage-preview-console" style="display: none; background: #0f172a; border: 1.5px solid #334155; border-radius: 8px; margin-top: 14px; overflow: hidden; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5); flex-direction: column;">
+      
+      <!-- Top Console Header Strip -->
+      <div style="background: #1e293b; border-bottom: 1px solid #334155; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+        
+        <!-- Left: Document Identity -->
+        <div style="display: flex; align-items: center; gap: 12px; min-width: 260px;">
+          <div id="previewConsoleIcon" style="width: 34px; height: 34px; border-radius: 6px; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 1rem; box-shadow: 0 2px 6px rgba(2,132,199,0.35);">
+            <i class="fa-solid fa-book-open-reader"></i>
+          </div>
+          <div>
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <span style="font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; background: rgba(14, 165, 233, 0.2); color: #38bdf8; padding: 1px 6px; border-radius: 3px; border: 1px solid rgba(56, 189, 248, 0.3);">In-Page Preview</span>
+              <span id="previewConsoleDocType" style="font-size: 0.68rem; font-weight: 600; color: #94a3b8;">Document Viewer</span>
+            </div>
+            <h3 id="previewConsoleTitle" style="margin: 2px 0 0 0; color: #f8fafc; font-size: 1.02rem; font-weight: 700; letter-spacing: -0.01em;">Classroom Preview</h3>
+          </div>
+        </div>
+
+        <!-- Center: Mock Exam QP vs MS Tab Switcher -->
+        <div id="previewConsoleTabs" style="display: none; align-items: center; background: #0f172a; padding: 3px; border-radius: 6px; border: 1px solid #334155; gap: 4px;">
+          <button id="btnTabQP" type="button" onclick="window.switchPreviewConsoleTab('qp')" style="background: #2563eb; color: #ffffff; border: none; border-radius: 4px; padding: 5px 12px; font-size: 0.74rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s ease;">
+            <i class="fa-solid fa-file-lines"></i> Question Paper
+          </button>
+          <button id="btnTabMS" type="button" onclick="window.switchPreviewConsoleTab('ms')" style="background: transparent; color: #94a3b8; border: none; border-radius: 4px; padding: 5px 12px; font-size: 0.74rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s ease;">
+            <i class="fa-solid fa-check-double"></i> Mark Scheme
+          </button>
+        </div>
+
+        <!-- Right: Action Controls -->
+        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+          <button id="btnPreviewPrint" type="button" onclick="window.printInPagePreview()" style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: #ffffff; border: none; font-weight: 700; font-size: 0.76rem; padding: 6px 12px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(37,99,235,0.35);">
+            <i class="fa-solid fa-print"></i> Print
+          </button>
+          <a id="btnPreviewDownload" href="#" download style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); font-weight: 600; font-size: 0.76rem; padding: 5px 10px; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">
+            <i class="fa-solid fa-file-arrow-down"></i> Download PDF
+          </a>
+          <a id="btnPreviewFullTab" href="#" target="_blank" style="background: rgba(255, 255, 255, 0.08); color: #e2e8f0; border: 1px solid rgba(255, 255, 255, 0.15); font-weight: 600; font-size: 0.76rem; padding: 5px 10px; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Full Tab
+          </a>
+          <button id="btnPreviewClose" type="button" onclick="window.closeInPagePreview()" style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); color: #94a3b8; font-size: 0.9rem; width: 30px; height: 30px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center;" title="Close In-Page Preview">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Iframe Display Body -->
+      <div style="position: relative; width: 100%; height: 750px; background: #0b1120;">
+        <iframe id="inpagePreviewIframe" src="about:blank" style="width: 100%; height: 100%; border: none; background: #ffffff;"></iframe>
+      </div>
+    </div>
+  `;
+}
+
 export function renderWorkbooksZone(container, unitData) {
   unitData = unitData || state.activeUnitData || {};
   const activeUnitId = state.selectedUnitId || window.currentUnitId;
@@ -62,6 +244,7 @@ export function renderWorkbooksZone(container, unitData) {
     `;
 
     booklets.forEach((b) => {
+      const cleanTitle = (b.title || '').replace(/'/g, "\\'");
       gridHtml += `
         <div style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 3.5px solid ${b.color}; border-radius: 7px; padding: 12px 14px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 1px 4px rgba(0,0,0,0.03); min-height: 168px; box-sizing: border-box;">
           <div>
@@ -82,7 +265,7 @@ export function renderWorkbooksZone(container, unitData) {
           </div>
 
           <div style="display: flex; gap: 5px; margin-top: 8px;">
-            <button type="button" class="btn" onclick="window.openTeacherPrintPreview('${b.fileBase}', '${b.title}', '${b.pdfUrl}')" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid ${b.color}; padding: 5px 6px; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 5px; font-size: 0.74rem; font-weight: 700; color: #1e293b; transition: all 0.15s ease;" onmouseover="this.style.borderColor='${b.color}'; this.style.boxShadow='0 1px 4px rgba(0,0,0,0.1)';" onmouseout="this.style.borderColor='#cbd5e1'; this.style.borderLeftColor='${b.color}'; this.style.boxShadow='none';">
+            <button type="button" class="btn" onclick="window.openInPagePreview('${b.fileBase}', '${cleanTitle}', '${b.pdfUrl}', { badge: '${b.badge}' })" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid ${b.color}; padding: 5px 6px; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 5px; font-size: 0.74rem; font-weight: 700; color: #1e293b; transition: all 0.15s ease;" onmouseover="this.style.borderColor='${b.color}'; this.style.boxShadow='0 1px 4px rgba(0,0,0,0.1)';" onmouseout="this.style.borderColor='#cbd5e1'; this.style.borderLeftColor='${b.color}'; this.style.boxShadow='none';">
               <i class="fa-solid fa-eye" style="color: ${b.color};"></i> Preview
             </button>
 
@@ -164,6 +347,7 @@ export function renderWorkbooksZone(container, unitData) {
         mock.mark_scheme_url || `${paperUrl.replace(/\.html$/, '')}_mark_scheme.html`;
       const fullMsUrl = msFileName.startsWith('/') ? msFileName : `/units/${unitId}/${msFileName}`;
       const badgeText = mock.title.includes('Prediction') ? 'PREDICTION' : `MOCK PAPER ${idx + 1}`;
+      const cleanMockTitle = (mock.title || '').replace(/'/g, "\\'");
 
       mocksHtml += `
         <div style="background: #ffffff; border: 1px solid #d1d5db; border-radius: 5px; padding: 6px 8px; display: flex; flex-direction: column; justify-content: space-between; gap: 4px;">
@@ -185,16 +369,16 @@ export function renderWorkbooksZone(container, unitData) {
           </div>
 
           <div style="display: flex; gap: 5px; margin-top: 4px;">
-            <a href="${fullPaperUrl}" target="_blank" style="flex: 1; text-align: center; text-decoration: none; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 4px 6px; border-radius: 3px; font-size: 0.72rem; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 4px;">
+            <button type="button" onclick="window.openInPagePreview('${fullPaperUrl}', '${cleanMockTitle} (Question Paper)', null, { isMockPaper: true, qpUrl: '${fullPaperUrl}', msUrl: '${hasMs ? fullMsUrl : ''}', activeTab: 'qp', title: '${cleanMockTitle}' })" style="flex: 1; text-align: center; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 4px 6px; border-radius: 3px; font-size: 0.72rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 4px; transition: opacity 0.15s ease;" onmouseover="this.style.opacity='0.85';" onmouseout="this.style.opacity='1';">
               <i class="fa-solid fa-file-lines"></i> Question Paper
-            </a>
+            </button>
 
             ${
               hasMs
                 ? `
-              <a href="${fullMsUrl}" target="_blank" style="flex: 1; text-align: center; text-decoration: none; background: #ffffff; color: #000000; border: 1px solid #000000; padding: 4px 6px; border-radius: 3px; font-size: 0.72rem; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 4px;">
+              <button type="button" onclick="window.openInPagePreview('${fullMsUrl}', '${cleanMockTitle} (Mark Scheme)', null, { isMockPaper: true, qpUrl: '${fullPaperUrl}', msUrl: '${fullMsUrl}', activeTab: 'ms', title: '${cleanMockTitle}' })" style="flex: 1; text-align: center; background: #ffffff; color: #000000; border: 1px solid #000000; padding: 4px 6px; border-radius: 3px; font-size: 0.72rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 4px; transition: background 0.15s ease;" onmouseover="this.style.background='#f3f4f6';" onmouseout="this.style.background='#ffffff';">
                 <i class="fa-solid fa-check"></i> Mark Scheme
-              </a>
+              </button>
             `
                 : `
               <div style="font-size: 0.65rem; color: #6b7280; text-align: center; font-style: italic; padding: 4px;">
@@ -395,13 +579,13 @@ export function renderWorkbooksZone(container, unitData) {
         webUrl: '/units/great_war/mastery_pack_full.html',
       },
       {
-        title: 'Master Recall Quiz Pack',
-        badge: 'RETRIEVAL & QUIZZING',
+        title: 'Master Recall Quiz & Homework Companion',
+        badge: 'RETRIEVAL & HOMEWORK',
         color: '#7c3aed',
-        pages: '84 Recall Items',
-        desc: 'Complete unit retrieval compendium with multiple choice drills, distractors, explanation notes, and flashcard vaults.',
-        pdfUrl: '/pdfs/great_war_quiz_pack_FINAL_V17.pdf',
-        webUrl: '/units/great_war/mastery_pack_full.html',
+        pages: '12 Pages (A5 Booklet)',
+        desc: '48 core factual questions across all 6 lessons with two handwriting lines, 1871–1914 domino flowchart, front tracking ledger, marking bank, and assessment architect.',
+        pdfUrl: '/pdfs/great_war_recall_quiz_FULL.pdf',
+        webUrl: '/units/great_war/quiz_pack.html',
       },
     ];
 
@@ -410,6 +594,7 @@ export function renderWorkbooksZone(container, unitData) {
     `;
 
     gwCards.forEach((c) => {
+      const cleanTitle = (c.title || '').replace(/'/g, "\\'");
       html += `
         <div style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 3.5px solid ${c.color}; border-radius: 7px; padding: 12px 14px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 1px 4px rgba(0,0,0,0.03); min-height: 168px; box-sizing: border-box;">
           <div>
@@ -430,7 +615,7 @@ export function renderWorkbooksZone(container, unitData) {
           </div>
 
           <div style="display: flex; gap: 5px; margin-top: 8px;">
-            <button type="button" class="btn" onclick="window.openTeacherPrintPreview('${c.webUrl}', '${c.title}', '${c.pdfUrl}')" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid ${c.color}; padding: 5px 6px; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px; font-size: 0.74rem; font-weight: 700; color: #1e293b; transition: all 0.15s ease;" onmouseover="this.style.borderColor='${c.color}';" onmouseout="this.style.borderColor='#cbd5e1';">
+            <button type="button" class="btn" onclick="window.openInPagePreview('${c.webUrl}', '${cleanTitle}', '${c.pdfUrl}', { badge: '${c.badge}' })" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid ${c.color}; padding: 5px 6px; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px; font-size: 0.74rem; font-weight: 700; color: #1e293b; transition: all 0.15s ease;" onmouseover="this.style.borderColor='${c.color}';" onmouseout="this.style.borderColor='#cbd5e1';">
               <i class="fa-solid fa-eye" style="color: ${c.color};"></i> Preview
             </button>
 
@@ -624,6 +809,7 @@ export function renderWorkbooksZone(container, unitData) {
     const uId = activeUnitId;
     const title = unitData.title || uId;
 
+    const cleanUnitTitle = (title || uId).replace(/'/g, "\\'");
     html += `
       <div style="background: #ffffff; padding: 14px 18px; border-radius: 7px; border: 1px solid #e2e8f0; box-shadow: 0 1px 4px rgba(0,0,0,0.03); margin-bottom: 10px;">
         <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #e2e8f0;">
@@ -644,9 +830,14 @@ export function renderWorkbooksZone(container, unitData) {
               <h4 style="margin: 4px 0 2px 0; color: #0f172a; font-size: 0.85rem; font-weight: 800;">Complete Core Textbook</h4>
               <p style="margin: 0; font-size: 0.72rem; color: #64748b;">Class set reading materials and primary extracts.</p>
             </div>
-            <a href="/pdfs/${uId}_textbook_FINAL_V17.pdf" target="_blank" download style="background: #0284c7; color: #ffffff; padding: 6px 10px; border-radius: 4px; text-decoration: none; font-size: 0.74rem; font-weight: 700; text-align: center; display: block; margin-top: 8px;">
-              <i class="fa-solid fa-download"></i> Download Textbook PDF
-            </a>
+            <div style="display: flex; gap: 5px; margin-top: 8px;">
+              <button type="button" class="btn" onclick="window.openInPagePreview('/units/${uId}/textbook.html', '${cleanUnitTitle} Core Textbook', '/pdfs/${uId}_textbook_FINAL_V17.pdf', { badge: 'TEXTBOOK' })" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #0284c7; padding: 5px 6px; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px; font-size: 0.74rem; font-weight: 700; color: #1e293b; transition: all 0.15s ease;" onmouseover="this.style.borderColor='#0284c7';" onmouseout="this.style.borderColor='#cbd5e1';">
+                <i class="fa-solid fa-eye" style="color: #0284c7;"></i> Preview
+              </button>
+              <a href="/pdfs/${uId}_textbook_FINAL_V17.pdf" target="_blank" download style="background: #0284c7; color: #ffffff; padding: 5px 9px; border-radius: 4px; text-decoration: none; font-size: 0.74rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: opacity 0.15s ease;" onmouseover="this.style.opacity='0.9';" onmouseout="this.style.opacity='1';" title="Download Textbook PDF">
+                <i class="fa-solid fa-download"></i> PDF
+              </a>
+            </div>
           </div>
 
           <!-- 2. Pupil Workbook PDF -->
@@ -656,9 +847,14 @@ export function renderWorkbooksZone(container, unitData) {
               <h4 style="margin: 4px 0 2px 0; color: #0f172a; font-size: 0.85rem; font-weight: 800;">Pupil Workbook</h4>
               <p style="margin: 0; font-size: 0.72rem; color: #64748b;">Writing spaces, source evaluation, and pupil tasks.</p>
             </div>
-            <a href="/pdfs/${uId}_pupil_workbook_FINAL_V17.pdf" target="_blank" download style="background: #d97706; color: #ffffff; padding: 6px 10px; border-radius: 4px; text-decoration: none; font-size: 0.74rem; font-weight: 700; text-align: center; display: block; margin-top: 8px;">
-              <i class="fa-solid fa-download"></i> Download Workbook PDF
-            </a>
+            <div style="display: flex; gap: 5px; margin-top: 8px;">
+              <button type="button" class="btn" onclick="window.openInPagePreview('/units/${uId}/pupil_workbook.html', '${cleanUnitTitle} Pupil Workbook', '/pdfs/${uId}_pupil_workbook_FINAL_V17.pdf', { badge: 'WORKBOOK' })" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #d97706; padding: 5px 6px; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px; font-size: 0.74rem; font-weight: 700; color: #1e293b; transition: all 0.15s ease;" onmouseover="this.style.borderColor='#d97706';" onmouseout="this.style.borderColor='#cbd5e1';">
+                <i class="fa-solid fa-eye" style="color: #d97706;"></i> Preview
+              </button>
+              <a href="/pdfs/${uId}_pupil_workbook_FINAL_V17.pdf" target="_blank" download style="background: #d97706; color: #ffffff; padding: 5px 9px; border-radius: 4px; text-decoration: none; font-size: 0.74rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: opacity 0.15s ease;" onmouseover="this.style.opacity='0.9';" onmouseout="this.style.opacity='1';" title="Download Workbook PDF">
+                <i class="fa-solid fa-download"></i> PDF
+              </a>
+            </div>
           </div>
 
           <!-- 3. Mastery Pack PDF -->
@@ -668,9 +864,14 @@ export function renderWorkbooksZone(container, unitData) {
               <h4 style="margin: 4px 0 2px 0; color: #0f172a; font-size: 0.85rem; font-weight: 800;">Mastery Pack</h4>
               <p style="margin: 0; font-size: 0.72rem; color: #64748b;">Extended writing, retrieval, and assessment tasks.</p>
             </div>
-            <a href="/pdfs/${uId}_mastery_pack_full_FINAL_V17.pdf" target="_blank" download style="background: #b91c1c; color: #ffffff; padding: 6px 10px; border-radius: 4px; text-decoration: none; font-size: 0.74rem; font-weight: 700; text-align: center; display: block; margin-top: 8px;">
-              <i class="fa-solid fa-download"></i> Download Mastery PDF
-            </a>
+            <div style="display: flex; gap: 5px; margin-top: 8px;">
+              <button type="button" class="btn" onclick="window.openInPagePreview('/units/${uId}/mastery_pack_full.html', '${cleanUnitTitle} Mastery Pack', '/pdfs/${uId}_mastery_pack_full_FINAL_V17.pdf', { badge: 'MASTERY' })" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #b91c1c; padding: 5px 6px; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px; font-size: 0.74rem; font-weight: 700; color: #1e293b; transition: all 0.15s ease;" onmouseover="this.style.borderColor='#b91c1c';" onmouseout="this.style.borderColor='#cbd5e1';">
+                <i class="fa-solid fa-eye" style="color: #b91c1c;"></i> Preview
+              </button>
+              <a href="/pdfs/${uId}_mastery_pack_full_FINAL_V17.pdf" target="_blank" download style="background: #b91c1c; color: #ffffff; padding: 5px 9px; border-radius: 4px; text-decoration: none; font-size: 0.74rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: opacity 0.15s ease;" onmouseover="this.style.opacity='0.9';" onmouseout="this.style.opacity='1';" title="Download Mastery PDF">
+                <i class="fa-solid fa-download"></i> PDF
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -846,6 +1047,11 @@ export function renderWorkbooksZone(container, unitData) {
         </div>
       </div>
     `;
+  }
+
+  // Render docked in-page preview console for all units except all-units directory
+  if (activeUnitId && activeUnitId !== 'all') {
+    html += renderInPagePreviewConsole();
   }
 
   container.innerHTML = html;
