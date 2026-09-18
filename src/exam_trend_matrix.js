@@ -1439,7 +1439,7 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
                                           <span style="font-size: 0.75rem; font-weight: 700; background: #f1f5f9; color: #475569; padding: 4px 10px; border-radius: 12px;">
                                             ${pt.exam_count}x in Exams
                                           </span>
-                                          <button class="etm-btn-quick-launch" 
+                                          <button class="etm-btn-drill-overdue etm-btn-quick-launch" 
                                                   data-point="${encodeURIComponent(pt.point_text)}" 
                                                   data-overdue="${pt.overdue_status}" 
                                                   data-last="${pt.last_examined}"
@@ -1447,9 +1447,9 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
                                                   data-topic="${encodeURIComponent(top.title)}"
                                                   data-sec="${encodeURIComponent(sec.title)}"
                                                   data-note="${encodeURIComponent(pt.teacher_note || '')}"
-                                                  style="background: ${pt.overdue_status === 'high' ? 'linear-gradient(135deg, #dc2626, #b91c1c)' : 'linear-gradient(135deg, #2563eb, #1d4ed8)'}; color: white; border: none; padding: 4px 12px; border-radius: 8px; font-size: 0.75rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: ${pt.overdue_status === 'high' ? '0 2px 6px rgba(220,38,38,0.25)' : '0 2px 6px rgba(37,99,235,0.2)'}; transition: transform 0.15s ease;"
-                                                  title="Immediately launch this unexamined/overdue syllabus prompt into the timed Exam Practice Zone with structure strip">
-                                            <i class="fa-solid fa-bolt" style="color: #fbbf24;"></i> Quick Practice
+                                                  style="background: ${pt.overdue_status === 'high' ? 'linear-gradient(135deg, #dc2626, #991b1b)' : 'linear-gradient(135deg, #2563eb, #1d4ed8)'}; color: white; border: none; padding: 6px 14px; border-radius: 8px; font-size: 0.78rem; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: ${pt.overdue_status === 'high' ? '0 2px 8px rgba(220,38,38,0.3)' : '0 2px 8px rgba(37,99,235,0.25)'}; transition: transform 0.15s ease;"
+                                                  title="1-Click: Immediately launch this overdue syllabus prompt into the timed Exam Practice Zone with structure strip and model answer guidance">
+                                            <i class="fa-solid fa-fire" style="color: #fbbf24;"></i> Drill Overdue Topic
                                           </button>
                                         </div>
                                       </div>
@@ -1617,7 +1617,10 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
   });
 
   // Quick-Launch Radar Question directly into Exam Practice Zone
-  const quickLaunchBtns = container.querySelectorAll('.etm-btn-quick-launch');
+  // Quick-Launch Radar Question directly into Exam Practice Zone
+  const quickLaunchBtns = container.querySelectorAll(
+    '.etm-btn-quick-launch, .etm-btn-drill-overdue',
+  );
   quickLaunchBtns.forEach((btn) => {
     btn.addEventListener('click', async (e) => {
       e.stopPropagation();
@@ -1641,11 +1644,11 @@ function buildTrendMatrixUI(container, pastData, trendData, unitId, cfg) {
       });
 
       const contentArea =
-        document.getElementById('main-content') || document.getElementById('content-area');
+        document.getElementById('content-area') || document.getElementById('main-content');
       if (contentArea) {
         const { renderExamPracticeZone } = await import('./exam_practice_zone.js');
         const activeUnitData =
-          (window.db && window.db[unitId] && window.db[unitId].data) ||
+          (window.db && window.db[unitId] && (window.db[unitId].data || window.db[unitId])) ||
           window.currentUnitData ||
           {};
         renderExamPracticeZone(contentArea, activeUnitData, questionObj);

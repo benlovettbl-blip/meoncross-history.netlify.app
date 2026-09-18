@@ -1,7 +1,16 @@
-import { updateLeitnerBox, saveProgress } from './storage.js';
+import {
+  updateLeitnerBox,
+  saveProgress,
+  recordQuestionResult,
+  getWeakSpots,
+  clearWeakSpots,
+  generateQuestionId,
+} from './storage.js';
+import { state } from './state.js';
 
 export function renderQuizZone(container, unitData) {
   // --- 1. DATA PREPARATION ---
+  const curUnit = unitData.id || window.currentUnitId || '';
   let quizPack = [];
   let masterBank = [];
   let vocabBank = [];
@@ -25,7 +34,8 @@ export function renderQuizZone(container, unitData) {
       }
 
       const addQuestion = (q, options, a, img, explanation = '') => {
-        const questionObj = { q, a, options, img, source: l.title, explanation };
+        const qId = generateQuestionId(curUnit, l.title, q);
+        const questionObj = { id: qId, q, a, options, img, source: l.title, explanation };
         quizPack.push(questionObj);
         groupedLevels[topicKey].questions.push(questionObj);
       };
@@ -36,7 +46,9 @@ export function renderQuizZone(container, unitData) {
         lessonQuiz.forEach((q) => {
           const qText = q.question || q.q;
           if (qText === 'Who is this historical figure?') {
+            const qId = generateQuestionId(curUnit, l.title, q.img || qText);
             portraitBank.push({
+              id: qId,
               q: qText,
               a: q.options ? q.options[q.answer] : q.a,
               options: q.options,
@@ -66,7 +78,9 @@ export function renderQuizZone(container, unitData) {
           if (q.options && typeof q.answer === 'number') {
             answerText = q.options[q.answer];
           }
+          const qId = generateQuestionId(curUnit, l.title, qText);
           const questionObj = {
+            id: qId,
             q: qText,
             options: q.options,
             a: answerText,
@@ -87,7 +101,8 @@ export function renderQuizZone(container, unitData) {
 
       // For Vocab and Flashcards (masterBank)
       const addFlashcard = (q, a) => {
-        const questionObj = { q, a, source: l.title };
+        const qId = generateQuestionId(curUnit, l.title, q);
+        const questionObj = { id: qId, q, a, source: l.title };
         masterBank.push(questionObj);
         groupedFlashcardLevels[topicKey].questions.push(questionObj);
       };
@@ -130,18 +145,51 @@ export function renderQuizZone(container, unitData) {
   const levels = Object.values(groupedLevels).filter((lvl) => lvl.questions.length > 0);
   const bossQuestions = [...quizPack].sort(() => 0.5 - Math.random()).slice(0, 15);
 
+  // Spaced Repetition Weak Spots helpers
+  const getActiveWeak = () => getWeakSpots(curUnit);
+  const initialWeak = getActiveWeak();
+  const initialWeakCount = initialWeak.length;
+  const initialRedCount = initialWeak.filter((w) => w.tier === 'red').length;
+  const initialAmberCount = initialWeak.filter((w) => w.tier === 'amber').length;
+
   // --- 2. UI SHELL ---
   container.innerHTML = `
         <div style="max-width: 800px; margin: 0 auto; padding-bottom: 50px; font-family: 'Inter', sans-serif;">
-            <div style="text-align: center; margin-bottom: 40px;">
+            <div style="text-align: center; margin-bottom: 30px;">
                 <h1 style="font-size: 2.5rem; color: #ffffff; margin-bottom: 10px; font-weight: 800; letter-spacing: -0.5px; text-shadow: 0 2px 10px rgba(0,0,0,0.3);"><i class="fa-solid fa-gamepad" style="color: #60a5fa;"></i> Interactive Revision Hub</h1>
                 <p style="color: #cbd5e1; font-size: 1.1rem; text-shadow: 0 1px 3px rgba(0,0,0,0.2);">Test your recall of key historical facts!</p>
             </div>
 
+            <!-- QUICK WEAK SPOTS BANNER -->
+            <div id="weak-spots-quick-banner" style="background: linear-gradient(135deg, #fef2f2, #fee2e2); border: 1.5px solid #fca5a5; border-radius: 12px; padding: 14px 20px; margin-bottom: 25px; display: ${initialWeakCount > 0 ? 'flex' : 'none'}; align-items: center; justify-content: space-between; gap: 15px; flex-wrap: wrap; box-shadow: 0 4px 12px rgba(220,38,38,0.12);">
+                <div style="display: flex; align-items: center; gap: 14px;">
+                    <div style="width: 42px; height: 42px; border-radius: 50%; background: #fee2e2; display: flex; align-items: center; justify-content: center; color: #dc2626; font-size: 1.25rem; border: 2px solid #fca5a5;">
+                        <i class="fa-solid fa-crosshairs"></i>
+                    </div>
+                    <div>
+                        <div class="weak-banner-title" style="font-weight: 800; color: #991b1b; font-size: 1rem;">Spaced Repetition: ${initialWeakCount} Target Questions Need Review</div>
+                        <div class="weak-banner-sub" style="font-size: 0.84rem; color: #7f1d1d;">${initialRedCount} Urgent (Red) &bull; ${initialAmberCount} Recovering (Amber) &bull; Master them with a 1-click rapid recall test</div>
+                    </div>
+                </div>
+                <button id="btn-quick-drill-weak" style="background: #dc2626; color: #ffffff; border: none; padding: 9px 18px; border-radius: 6px; font-weight: 800; font-size: 0.88rem; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(220,38,38,0.3); transition: all 0.15s ease;" onmouseover="this.style.background='#b91c1c';" onmouseout="this.style.background='#dc2626';">
+                    <i class="fa-solid fa-bolt" style="color: #fef08a;"></i> Drill My Weak Spots
+                </button>
+            </div>
+
             <!-- MODE SELECT MENU -->
             <div id="mode-select-container">
-                <p style="font-size: 1.15rem; color: #cbd5e1; margin-bottom: 30px; text-align: center; text-shadow: 0 1px 3px rgba(0,0,0,0.2);">Select a game mode to test your knowledge!</p>
+                <p style="font-size: 1.15rem; color: #cbd5e1; margin-bottom: 25px; text-align: center; text-shadow: 0 1px 3px rgba(0,0,0,0.2);">Select a game mode to test your knowledge!</p>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                    <!-- TARGETED WEAKNESS MODE CARD -->
+                    <div style="border: 2px solid #ef4444; border-radius: 12px; padding: 25px; text-align: center; cursor: pointer; transition: 0.2s; background: #fff5f5; position: relative;" onmouseover="this.style.borderColor='#dc2626'; this.style.background='#fee2e2';" onmouseout="this.style.borderColor='#ef4444'; this.style.background='#fff5f5';" id="btn-mode-weak-spots">
+                        <div style="position: relative; display: inline-block;">
+                            <i class="fa-solid fa-crosshairs" style="font-size: 3rem; color: #dc2626; margin-bottom: 15px;"></i>
+                            <span id="weak-spots-count-badge" style="display: ${initialWeakCount > 0 ? 'inline-block' : 'none'}; position: absolute; top: -6px; right: -18px; background: #dc2626; color: white; border-radius: 999px; padding: 2px 8px; font-size: 0.78rem; font-weight: 800; border: 2px solid #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">${initialWeakCount}</span>
+                        </div>
+                        <h3 style="margin:0 0 10px 0; color: #991b1b; font-size: 1.5rem;">Targeted Weakness</h3>
+                        <p id="weak-spots-card-desc" style="color: #64748b; margin:0;">${initialWeakCount === 0 ? '🎉 0 weak spots! You are 100% on target across this unit.' : `10-question rapid recall test drill focusing ONLY on your missed questions (${initialRedCount} Red, ${initialAmberCount} Amber).`}</p>
+                    </div>
+
                     <div style="border: 2px solid #e2e8f0; border-radius: 12px; padding: 25px; text-align: center; cursor: pointer; transition: 0.2s;" onmouseover="this.style.borderColor='#1e3a8a'; this.style.background='#f8fafc';" onmouseout="this.style.borderColor='#e2e8f0'; this.style.background='white';" id="btn-mode-levels">
                         <i class="fa-solid fa-layer-group" style="font-size: 3rem; color: #3b82f6; margin-bottom: 15px;"></i>
                         <h3 style="margin:0 0 10px 0; color: #1e3a8a; font-size: 1.5rem;">Topic Quizzes</h3>
@@ -208,7 +256,126 @@ export function renderQuizZone(container, unitData) {
   const uiContainer = container.querySelector('#quiz-ui-container');
   let activeMode = null;
 
+  function refreshWeakSpotUI() {
+    const activeWeak = getActiveWeak();
+    const count = activeWeak.length;
+    const redCount = activeWeak.filter((w) => w.tier === 'red').length;
+    const amberCount = activeWeak.filter((w) => w.tier === 'amber').length;
+
+    const badge = container.querySelector('#weak-spots-count-badge');
+    if (badge) {
+      badge.textContent = count;
+      badge.style.display = count > 0 ? 'inline-block' : 'none';
+    }
+
+    const desc = container.querySelector('#weak-spots-card-desc');
+    if (desc) {
+      if (count === 0) {
+        desc.innerHTML = '🎉 0 weak spots! You are 100% on target across this unit.';
+      } else {
+        desc.innerHTML = `10-question rapid recall test drill focusing ONLY on your missed questions (${redCount} Red, ${amberCount} Amber).`;
+      }
+    }
+
+    const quickBanner = container.querySelector('#weak-spots-quick-banner');
+    if (quickBanner) {
+      if (count === 0) {
+        quickBanner.style.display = 'none';
+      } else {
+        quickBanner.style.display = 'flex';
+        const sub = quickBanner.querySelector('.weak-banner-sub');
+        if (sub) {
+          sub.textContent = `${redCount} Urgent (Red) • ${amberCount} Recovering (Amber) • Master them with a 1-click rapid recall test`;
+        }
+        const title = quickBanner.querySelector('.weak-banner-title');
+        if (title) {
+          title.textContent = `Spaced Repetition: ${count} Target Questions Need Review`;
+        }
+      }
+    }
+  }
+
+  function startWeakSpotsDrill() {
+    activeMode = 'weak_spots';
+    const activeWeak = getActiveWeak();
+
+    if (activeWeak.length === 0) {
+      modeSelect.style.display = 'none';
+      uiContainer.style.display = 'block';
+      uiContainer.innerHTML = `
+        <div style="background: white; border-radius: 12px; padding: 40px 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center; max-width: 600px; margin: 0 auto;">
+          <div style="font-size: 4rem; color: #16a34a; margin-bottom: 15px;"><i class="fa-solid fa-circle-check"></i></div>
+          <h2 style="font-size: 1.8rem; color: #0f172a; margin-bottom: 10px; font-weight: 800;">0 Weak Spots!</h2>
+          <p style="color: #475569; font-size: 1.05rem; line-height: 1.5; margin-bottom: 25px;">
+            You have zero missed questions on your spaced repetition radar. You're 100% on target!
+          </p>
+          <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+            <button id="btn-weak-back-menu" style="background: #1e3a8a; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 700; cursor: pointer;">
+              <i class="fa-solid fa-arrow-left"></i> Return to Menu
+            </button>
+            <button id="btn-weak-try-ultimate" style="background: #f59e0b; color: #0f172a; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 800; cursor: pointer;">
+              <i class="fa-solid fa-crown"></i> Challenge The Ultimate Test
+            </button>
+          </div>
+        </div>
+      `;
+      uiContainer.querySelector('#btn-weak-back-menu').addEventListener('click', () => {
+        uiContainer.style.display = 'none';
+        modeSelect.style.display = 'block';
+        refreshWeakSpotUI();
+      });
+      uiContainer.querySelector('#btn-weak-try-ultimate').addEventListener('click', () => {
+        startQuiz(bossQuestions, 'The Ultimate Test', true);
+      });
+      return;
+    }
+
+    // Prioritize Red first, then Amber, then by most missed
+    const drillSet = activeWeak.slice(0, 10).map((w) => {
+      let options = w.options;
+      if (!options || options.length < 2) {
+        const poolAnswers = quizPack.map((qp) => qp.a).filter((ans) => ans && ans !== w.a);
+        const wrongSample = poolAnswers.sort(() => 0.5 - Math.random()).slice(0, 3);
+        while (wrongSample.length < 3) wrongSample.push('Alternative Historical Factor');
+        options = [w.a, ...wrongSample].sort(() => 0.5 - Math.random());
+      }
+      return {
+        id: w.id,
+        q: w.q,
+        a: w.a,
+        options: options,
+        img: w.img,
+        source: w.source || 'Targeted Weak Spot',
+        explanation:
+          w.explanation ||
+          (w.tier === 'red'
+            ? '⚠️ High-Priority Weak Spot (Red) - Master this specification point!'
+            : '🔄 Reviewing Amber Weak Spot - One more correct recall to master!'),
+        isWeakSpotDrill: true,
+        tier: w.tier,
+      };
+    });
+
+    modeSelect.style.display = 'none';
+    uiContainer.style.display = 'block';
+    startQuiz(drillSet, `🎯 Targeted Weakness Drill (${drillSet.length} Questions)`, true);
+  }
+
   // Menu Navigation
+  const btnWeakSpots = container.querySelector('#btn-mode-weak-spots');
+  if (btnWeakSpots) {
+    btnWeakSpots.addEventListener('click', () => {
+      startWeakSpotsDrill();
+    });
+  }
+
+  const btnQuickDrillWeak = container.querySelector('#btn-quick-drill-weak');
+  if (btnQuickDrillWeak) {
+    btnQuickDrillWeak.addEventListener('click', () => {
+      startWeakSpotsDrill();
+    });
+  }
+
   container.querySelector('#btn-mode-levels').addEventListener('click', () => {
     activeMode = 'levels';
     modeSelect.style.display = 'none';
@@ -308,10 +475,18 @@ export function renderQuizZone(container, unitData) {
         ? 'Select a GCSE Exam Clinic Topic'
         : 'Select a Subtopic Quiz';
 
+    const activeWeakList = getActiveWeak();
     let levelHtml = `
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
                 <h2 style="color: #0f172a; margin: 0;">${titlePrefix}</h2>
-                <button id="btn-back-main" style="background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; padding: 8px 15px; border-radius: 6px; cursor: pointer;"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                <div style="display: flex; gap: 8px; align-items: center;">
+                  ${
+                    activeWeakList.length > 0
+                      ? `<button id="btn-level-drill-weak" style="background: #dc2626; color: white; border: none; padding: 7px 14px; border-radius: 6px; font-weight: 800; font-size: 0.82rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(220,38,38,0.25);"><i class="fa-solid fa-bolt" style="color: #fef08a;"></i> Drill Weak Spots (${activeWeakList.length})</button>`
+                      : ''
+                  }
+                  <button id="btn-back-main" style="background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; padding: 8px 15px; border-radius: 6px; cursor: pointer;"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                </div>
             </div>
             ${filterPillsHtml}
             <div id="quiz-levels-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
@@ -497,12 +672,18 @@ export function renderQuizZone(container, unitData) {
             btn.style.borderColor = '#22c55e';
             btn.style.color = '#166534';
             score++;
+
+            const wasWeak = q.isWeakSpotDrill || (q.id && state.weakSpots && state.weakSpots[q.id]);
+            const promoBadge = wasWeak
+              ? `<span style="display: inline-block; background: #dcfce7; color: #15803d; border: 1px solid #86efac; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 800; margin-left: 10px;"><i class="fa-solid fa-arrow-trend-up"></i> Promoted to Amber / Mastered!</span>`
+              : '';
             uiContainer.querySelector('#quiz-feedback').innerHTML =
-              `<div style="color: #16a34a; font-weight: bold; font-size: 1.2rem;"><i class="fa-solid fa-circle-check"></i> Correct!</div>`;
+              `<div style="color: #16a34a; font-weight: bold; font-size: 1.2rem;"><i class="fa-solid fa-circle-check"></i> Correct! ${promoBadge}</div>`;
 
             if (trackProgress && q.id) {
               updateLeitnerBox(q.id, true);
               saveProgress();
+              recordQuestionResult(q.id, true, q, curUnit);
             }
           } else {
             btn.style.background = '#fee2e2';
@@ -515,11 +696,12 @@ export function renderQuizZone(container, unitData) {
               correctBtn.style.borderColor = '#22c55e';
             }
             uiContainer.querySelector('#quiz-feedback').innerHTML =
-              `<div style="color: #dc2626; font-weight: bold; font-size: 1.2rem;"><i class="fa-solid fa-circle-xmark"></i> Incorrect. The answer was ${correct}</div>`;
+              `<div style="color: #dc2626; font-weight: bold; font-size: 1.2rem;"><i class="fa-solid fa-circle-xmark"></i> Incorrect. The answer was ${correct} <span style="display: inline-block; background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 800; margin-left: 10px;"><i class="fa-solid fa-crosshairs"></i> Saved to Weak Spots</span></div>`;
 
             if (trackProgress && q.id) {
               updateLeitnerBox(q.id, false);
               saveProgress();
+              recordQuestionResult(q.id, false, q, curUnit);
             }
           }
 
@@ -595,6 +777,7 @@ export function renderQuizZone(container, unitData) {
     uiContainer.querySelector('#back-to-menu-btn').addEventListener('click', () => {
       uiContainer.style.display = 'none';
       modeSelect.style.display = 'block';
+      refreshWeakSpotUI();
     });
     if (fromLevels) {
       uiContainer
@@ -771,6 +954,7 @@ export function renderQuizZone(container, unitData) {
         if (q.id) {
           updateLeitnerBox(q.id, false);
           saveProgress();
+          recordQuestionResult(q.id, false, q, curUnit);
         }
         currentIndex++;
         renderCard();
@@ -781,6 +965,7 @@ export function renderQuizZone(container, unitData) {
         if (q.id) {
           updateLeitnerBox(q.id, true);
           saveProgress();
+          recordQuestionResult(q.id, true, q, curUnit);
         }
         currentIndex++;
         renderCard();
@@ -807,6 +992,7 @@ export function renderQuizZone(container, unitData) {
       uiContainer.querySelector('#back-to-menu-btn').addEventListener('click', () => {
         uiContainer.style.display = 'none';
         modeSelect.style.display = 'block';
+        refreshWeakSpotUI();
       });
       uiContainer
         .querySelector('#back-to-levels-btn')

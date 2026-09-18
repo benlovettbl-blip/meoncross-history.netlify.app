@@ -230,6 +230,53 @@ export function getStructureStrip(questionObj, marks, unitId = '') {
 </ul>`;
 }
 
+export function getPacingMinutes(marks, unitId = '', qType = '', qText = '') {
+  const normUnit = (unitId || '').toLowerCase();
+  const normText = (qText || '').toLowerCase();
+  const normType = (qType || '').toLowerCase();
+
+  // Middle East (Paper 2)
+  if (normUnit.includes('cme')) {
+    if (marks === 4) return 6; // Q1(a)/(b) Consequence (6m: 1m plan + 5m write)
+    if (marks === 8) return 14; // Q2 Narrative or Q3 Importance (14m: 2m plan + 12m write)
+    if (marks === 16) return 28; // Q3 Both choices (28m: 4m plan + 24m write)
+    return Math.max(3, Math.round(marks * 1.5));
+  }
+
+  // Early Elizabethan England (Paper 2)
+  if (normUnit === 'eee') {
+    if (marks === 2) return 3; // 2m Feature (3m: 30s recall + 2.5m write)
+    if (marks === 12) return 18; // 12m Causation (18m: 3m plan + 15m write)
+    if (marks === 16) return 25; // 16m Essay (25m: 5m plan + 20m write)
+    return Math.max(3, Math.round(marks * 1.5));
+  }
+
+  // Medicine Through Time (Paper 1)
+  if (normUnit.includes('medicine')) {
+    if (marks === 2) return 3; // 2m Feature
+    if (marks === 4) {
+      if (normType.includes('follow') || normText.includes('follow')) return 5;
+      return 6; // Similarity/diff
+    }
+    if (marks === 8) return 12; // 8m Utility
+    if (marks === 12) return 18; // 12m Causation
+    if (marks === 16) return 26; // 16+4m Essay
+    return Math.max(3, Math.round(marks * 1.5));
+  }
+
+  // USA & Weimar (Paper 3)
+  if (normUnit.includes('usa') || normUnit.includes('germany') || normUnit.includes('weimar')) {
+    if (marks === 4) return 5; // 4m Inference, Diff, or Reason
+    if (marks === 8) return 12; // 8m Utility
+    if (marks === 12) return 18; // 12m Causation
+    if (marks === 16) return 27; // 16+4m Evaluative Essay
+    return Math.max(3, Math.round(marks * 1.5));
+  }
+
+  // Fallback: ~1.5 mins per mark
+  return Math.max(3, Math.round(marks * 1.5));
+}
+
 export function renderExamPracticeZone(container, unitData, initialQuestion = null) {
   // 1. Flatten the exam_practice from lessons into a master list of questions
   let examBank = [];
@@ -728,11 +775,18 @@ export function renderExamPracticeZone(container, unitData, initialQuestion = nu
   };
 
   if (btnResetQ) {
-    btnResetQ.addEventListener('click', () =>
-      setTimerDuration(
-        questionTariffSeconds || (currentQuestion?.marks ? currentQuestion.marks * 90 : 600),
-      ),
-    );
+    btnResetQ.addEventListener('click', () => {
+      const targetUnit = initialQuestion?.unitId || window.currentUnitId || unitData.id || '';
+      const defaultSeconds = currentQuestion?.marks
+        ? getPacingMinutes(
+            currentQuestion.marks,
+            targetUnit,
+            currentQuestion.type,
+            currentQuestion.question,
+          ) * 60
+        : 600;
+      setTimerDuration(questionTariffSeconds || defaultSeconds);
+    });
   }
   if (btnAdd5m) {
     btnAdd5m.addEventListener('click', () => {
@@ -923,7 +977,9 @@ export function renderExamPracticeZone(container, unitData, initialQuestion = nu
       marks = 2;
     }
     if (!marks) marks = 4;
-    questionTariffSeconds = marks * 90; // 1.5 mins per mark
+    const curUnit = window.currentUnitId || unitData.id || '';
+    const pacingMins = getPacingMinutes(marks, curUnit, currentQuestion.type, displayQText);
+    questionTariffSeconds = pacingMins * 60;
     setTimerDuration(questionTariffSeconds);
 
     qMeta.innerHTML = `<i class="fa-solid fa-book-open"></i> ${currentQuestion.blockTitle} &bull; ${currentQuestion.type || marks + '-mark'} Question`;
@@ -1053,11 +1109,22 @@ export function renderExamPracticeZone(container, unitData, initialQuestion = nu
       provenance_clue: initialQuestion.provenance_clue,
     };
 
-    // Set Timer duration based on tariff (1.5 mins per mark)
-    questionTariffSeconds = marks * 90;
+    // Set Timer duration based on specification pacing
+    const targetUnit = initialQuestion.unitId || window.currentUnitId || unitData.id || '';
+    const pacingMins = getPacingMinutes(
+      marks,
+      targetUnit,
+      currentQuestion.type,
+      currentQuestion.question,
+    );
+    questionTariffSeconds = pacingMins * 60;
     setTimerDuration(questionTariffSeconds);
 
-    qMeta.innerHTML = `<i class="fa-solid fa-graduation-cap"></i> ${initialQuestion.year ? initialQuestion.year + ' Past Paper &bull; ' : ''}${initialQuestion.q_number ? initialQuestion.q_number + ' &bull; ' : ''}${marks} Marks (${marks * 1.5} Mins)`;
+    if (initialQuestion.fromRadar) {
+      qMeta.innerHTML = `<span style="display: inline-flex; align-items: center; gap: 6px; background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; padding: 3px 8px; border-radius: 4px; font-weight: 800; font-size: 0.8rem; margin-right: 8px;"><i class="fa-solid fa-fire"></i> TARGETED OVERDUE SPECIFICATION DRILL</span> <i class="fa-solid fa-stopwatch"></i> ${marks} Marks &bull; Allocated Time: ${pacingMins} Mins`;
+    } else {
+      qMeta.innerHTML = `<i class="fa-solid fa-graduation-cap"></i> ${initialQuestion.year ? initialQuestion.year + ' Past Paper &bull; ' : ''}${initialQuestion.q_number ? initialQuestion.q_number + ' &bull; ' : ''}${marks} Marks (${pacingMins} Mins)`;
+    }
     qText.textContent = currentQuestion.question;
 
     if (currentQuestion.stimulus) {

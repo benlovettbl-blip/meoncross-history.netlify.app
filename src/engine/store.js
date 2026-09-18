@@ -10,7 +10,7 @@ class Store {
         target[key] = value;
         this.notify(key, value);
         return true;
-      }
+      },
     });
     this.listeners = {};
   }
@@ -21,21 +21,21 @@ class Store {
       this.listeners[key] = [];
     }
     this.listeners[key].push(callback);
-    
+
     // Return unsubscribe function
     return () => {
-      this.listeners[key] = this.listeners[key].filter(cb => cb !== callback);
+      this.listeners[key] = this.listeners[key].filter((cb) => cb !== callback);
     };
   }
 
   // Notify listeners when a key changes
   notify(key, value) {
     if (this.listeners[key]) {
-      this.listeners[key].forEach(callback => callback(value));
+      this.listeners[key].forEach((callback) => callback(value));
     }
     // Also trigger wildcard listeners
     if (this.listeners['*']) {
-      this.listeners['*'].forEach(callback => callback(key, value));
+      this.listeners['*'].forEach((callback) => callback(key, value));
     }
   }
 
@@ -55,9 +55,10 @@ export const appStore = new Store({
     metadata: {},
     subtopics: [],
     timelineEvents: [],
-    quizData: []
+    quizData: [],
   },
   mastery: {},
+  weakSpots: {},
   bookmarks: [],
   dailyXp: 0,
   lastActiveDate: null,
@@ -66,5 +67,5 @@ export const appStore = new Store({
   userProfile: null,
   allQuestions: [],
   examTimers: {},
-  db: {}
+  db: {},
 });

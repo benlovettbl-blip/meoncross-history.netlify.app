@@ -2281,6 +2281,16 @@ export async function renderMockExamsView() {
           </a>
 
           ${
+            isRadarMock
+              ? `
+            <button class="btn btn-jump-to-radar" style="text-align: center; text-decoration: none; background: #fee2e2; color: #991b1b; border: 2px solid #000000; padding: 9px 14px; border-radius: 4px; font-size: 0.85rem; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; transition: all 0.15s ease;" onmouseover="this.style.background='#fecaca';" onmouseout="this.style.background='#fee2e2';">
+              <i class="fa-solid fa-fire" style="color: #dc2626;"></i> Drill Overdue Radar Gaps
+            </button>
+          `
+              : ''
+          }
+
+          ${
             hasMs
               ? `
             <a href="${fullMsUrl}" target="_blank" style="text-align: center; text-decoration: none; background: #ffffff; color: #000000; border: 2px solid #000000; padding: 9px 14px; border-radius: 4px; font-size: 0.85rem; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.15s ease;" onmouseover="this.style.background='#f4f4f5';" onmouseout="this.style.background='#ffffff';">
@@ -2360,6 +2370,16 @@ export async function renderMockExamsView() {
     ) {
       tabBtnTrend.click();
     }
+
+    contentArea.querySelectorAll('.btn-jump-to-radar').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        tabBtnTrend.click();
+        setTimeout(() => {
+          const radarTab = document.querySelector('.etm-tab-btn[data-tab="radar"]');
+          if (radarTab) radarTab.click();
+        }, 150);
+      });
+    });
   }
 
   if (window.scrollToTop) window.scrollToTop(true);
