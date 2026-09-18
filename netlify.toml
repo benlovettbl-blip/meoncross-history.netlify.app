@@ -6,30 +6,68 @@
   directory = "netlify/functions"
 
 [[headers]]
-  # Ensure the service worker is never cached by the browser HTTP cache
+  # Service worker: strictly no-cache, anti-indexing
   for = "/sw.js"
   [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
+    Cache-Control = "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0"
+    Pragma = "no-cache"
+    Expires = "0"
+    Surrogate-Control = "no-store"
+    X-Robots-Tag = "noindex, nofollow, noarchive, nosnippet"
 
 [[headers]]
-  # Ensure the root HTML entrypoint is never cached stale by browser HTTP cache
+  # Root entrypoint: strictly no-cache, anti-indexing
   for = "/"
   [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
+    Cache-Control = "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0"
+    Pragma = "no-cache"
+    Expires = "0"
+    Surrogate-Control = "no-store"
+    X-Robots-Tag = "noindex, nofollow, noarchive, nosnippet"
 
 [[headers]]
+  # HTML index: strictly no-cache, anti-indexing
   for = "/index.html"
   [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
+    Cache-Control = "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0"
+    Pragma = "no-cache"
+    Expires = "0"
+    Surrogate-Control = "no-store"
+    X-Robots-Tag = "noindex, nofollow, noarchive, nosnippet"
 
 [[headers]]
-  # By default, force the browser to check if the file has changed (for HTML, PDFs, public/style.css)
+  # Netlify Functions (Chess Sync & Live API State)
+  for = "/.netlify/functions/*"
+  [headers.values]
+    Cache-Control = "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0"
+    Pragma = "no-cache"
+    Expires = "0"
+    Surrogate-Control = "no-store"
+    X-Robots-Tag = "noindex, nofollow, noarchive, nosnippet"
+
+[[headers]]
+  # API proxy route
+  for = "/api/*"
+  [headers.values]
+    Cache-Control = "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0"
+    Pragma = "no-cache"
+    Expires = "0"
+    Surrogate-Control = "no-store"
+    X-Robots-Tag = "noindex, nofollow, noarchive, nosnippet"
+
+[[headers]]
+  # Global fallback for app routes: strict no-cache, anti-indexing
   for = "/*"
   [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
+    Cache-Control = "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0"
+    Pragma = "no-cache"
+    Expires = "0"
+    Surrogate-Control = "no-store"
+    X-Robots-Tag = "noindex, nofollow, noarchive, nosnippet"
 
 [[headers]]
-  # Vite hashes all JS/CSS in the /assets/ folder, so those can be cached forever safely
+  # Hashed Vite JS/CSS assets in /assets/ folder
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+    X-Robots-Tag = "noindex, nofollow, noarchive, nosnippet"

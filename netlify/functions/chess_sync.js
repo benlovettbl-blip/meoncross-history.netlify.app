@@ -1,5 +1,17 @@
 let memoryFallbackState = null;
 
+const STRICT_SECURITY_HEADERS = {
+  'Content-Type': 'application/json',
+  'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0',
+  Pragma: 'no-cache',
+  Expires: '0',
+  'Surrogate-Control': 'no-store',
+  'X-Robots-Tag': 'noindex, nofollow, noarchive, nosnippet',
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, x-teacher-passkey',
+};
+
 async function handleRequest(method, headers, body) {
   const getHeader = (name) => {
     if (!headers) return '';
@@ -11,11 +23,7 @@ async function handleRequest(method, headers, body) {
   if (method === 'OPTIONS') {
     return {
       status: 204,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, x-teacher-passkey',
-      },
+      headers: STRICT_SECURITY_HEADERS,
       body: '',
     };
   }
@@ -39,13 +47,16 @@ async function handleRequest(method, headers, body) {
       }
     }
 
+    // GDPR Sanitization check: Ensure no academic year or unsanitized fields leak
+    if (data && Array.isArray(data.players)) {
+      data.players.forEach((p) => {
+        delete p.year;
+      });
+    }
+
     return {
       status: 200,
-      headers: {
-        'Content-Type': 'application/json',
-        'Cache-Control': 'no-cache, no-store, must-revalidate',
-        'Access-Control-Allow-Origin': '*',
-      },
+      headers: STRICT_SECURITY_HEADERS,
       body: JSON.stringify(data || null),
     };
   }
@@ -56,10 +67,7 @@ async function handleRequest(method, headers, body) {
     if (!validPasskeys.includes(passkey)) {
       return {
         status: 401,
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
-        },
+        headers: STRICT_SECURITY_HEADERS,
         body: JSON.stringify({ error: 'Unauthorized teacher passkey' }),
       };
     }
@@ -70,12 +78,16 @@ async function handleRequest(method, headers, body) {
     } catch (e) {
       return {
         status: 400,
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
-        },
+        headers: STRICT_SECURITY_HEADERS,
         body: JSON.stringify({ error: 'Invalid JSON body' }),
       };
+    }
+
+    // GDPR scrub on ingress: Strip any year field
+    if (Array.isArray(parsedPayload.players)) {
+      parsedPayload.players.forEach((p) => {
+        delete p.year;
+      });
     }
 
     const stateToStore = {
@@ -95,17 +107,14 @@ async function handleRequest(method, headers, body) {
 
     return {
       status: 200,
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-      },
+      headers: STRICT_SECURITY_HEADERS,
       body: JSON.stringify({ success: true, syncedAt: stateToStore.syncedAt }),
     };
   }
 
   return {
     status: 405,
-    headers: { 'Access-Control-Allow-Origin': '*' },
+    headers: STRICT_SECURITY_HEADERS,
     body: 'Method Not Allowed',
   };
 }

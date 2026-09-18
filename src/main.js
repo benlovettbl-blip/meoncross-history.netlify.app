@@ -12,7 +12,65 @@ import { initEventDelegation } from './engine/events.js';
 import { initSpeech, cancelSpeech } from './engine/speech.js';
 import './langemarck_myth.js';
 
+function purgeGDPRHistoricalCache() {
+  try {
+    const PURGE_KEY = 'history_hub_gdpr_cache_purged_v2';
+    if (!localStorage.getItem(PURGE_KEY)) {
+      if (typeof caches !== 'undefined' && caches.keys) {
+        caches.keys().then((keys) => keys.forEach((k) => caches.delete(k)));
+      }
+      const keysToRemove = [
+        'meoncross_chess_club_v5',
+        'meoncross_chess_master_archive',
+        'meoncross_chess_backup_snapshot',
+        'meoncross_chess_club_v4',
+        'meoncross_chess_club_v3',
+        'meoncross_chess_club_v2',
+        'meoncross_chess_club_v1',
+        'meoncross_chess_active_session',
+        'meoncross_chess_export_history',
+        'meoncross_chess_teacher_auth',
+        'meoncross_chess_active_players',
+      ];
+      keysToRemove.forEach((k) => {
+        try {
+          localStorage.removeItem(k);
+        } catch (e) {}
+      });
+      for (let i = localStorage.length - 1; i >= 0; i--) {
+        const key = localStorage.key(i);
+        if (key && (key.includes('chess') || key.includes('leaderboard'))) {
+          try {
+            localStorage.removeItem(key);
+          } catch (e) {}
+        }
+      }
+      if (typeof sessionStorage !== 'undefined') {
+        try {
+          sessionStorage.clear();
+        } catch (e) {}
+      }
+      if (typeof indexedDB !== 'undefined' && indexedDB.deleteDatabase) {
+        try {
+          indexedDB.deleteDatabase('MeoncrossChessDB');
+        } catch (e) {}
+      }
+      if ('serviceWorker' in navigator && navigator.serviceWorker.getRegistrations) {
+        navigator.serviceWorker.getRegistrations().then((registrations) => {
+          for (const r of registrations) r.unregister();
+        });
+      }
+      localStorage.setItem(PURGE_KEY, 'true');
+    }
+  } catch (err) {
+    console.warn('GDPR cache purge notice:', err);
+  }
+}
+
 window.addEventListener('DOMContentLoaded', async () => {
+  // Execute GDPR cache, storage, and service worker scrub
+  purgeGDPRHistoricalCache();
+
   // Initialize UI subscribers
   initNavigationUI();
   initEventDelegation();

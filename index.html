@@ -4,6 +4,83 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Mr Lovett's History Hub Mega App</title>
+    <!-- Strict GDPR Anti-Indexing & Edge Cache Invalidation Meta Tags -->
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+
+    <script>
+      // Immediate One-Time GDPR Cache, Storage, and Service Worker Purge
+      (function () {
+        var PURGE_KEY = 'history_hub_gdpr_cache_purged_v2';
+        if (!localStorage.getItem(PURGE_KEY)) {
+          try {
+            // a) Clear all Service Worker Cache Storage
+            if (typeof caches !== 'undefined' && caches.keys) {
+              caches.keys().then(function (keys) {
+                keys.forEach(function (k) {
+                  caches.delete(k);
+                });
+              });
+            }
+            // b) Clear localStorage and sessionStorage keys containing historical leaderboard or pupil data
+            var keysToRemove = [
+              'meoncross_chess_club_v5',
+              'meoncross_chess_master_archive',
+              'meoncross_chess_backup_snapshot',
+              'meoncross_chess_club_v4',
+              'meoncross_chess_club_v3',
+              'meoncross_chess_club_v2',
+              'meoncross_chess_club_v1',
+              'meoncross_chess_active_session',
+              'meoncross_chess_export_history',
+              'meoncross_chess_teacher_auth',
+              'meoncross_chess_active_players',
+            ];
+            keysToRemove.forEach(function (k) {
+              try {
+                localStorage.removeItem(k);
+              } catch (e) {}
+            });
+            for (var i = localStorage.length - 1; i >= 0; i--) {
+              var key = localStorage.key(i);
+              if (key && (key.indexOf('chess') !== -1 || key.indexOf('leaderboard') !== -1)) {
+                try {
+                  localStorage.removeItem(key);
+                } catch (e) {}
+              }
+            }
+            if (typeof sessionStorage !== 'undefined') {
+              try {
+                sessionStorage.clear();
+              } catch (e) {}
+            }
+            // Clear IndexedDB multi-layer vault
+            if (typeof indexedDB !== 'undefined' && indexedDB.deleteDatabase) {
+              try {
+                indexedDB.deleteDatabase('MeoncrossChessDB');
+              } catch (e) {}
+            }
+            // c) Unregister and update existing Service Workers
+            if ('serviceWorker' in navigator && navigator.serviceWorker.getRegistrations) {
+              navigator.serviceWorker.getRegistrations().then(function (registrations) {
+                for (var r of registrations) {
+                  r.unregister();
+                }
+              });
+            }
+            localStorage.setItem(PURGE_KEY, 'true');
+            console.log(
+              '🔒 [GDPR Compliance] Complete client cache and historical leaderboard scrub executed.',
+            );
+          } catch (err) {
+            console.warn('[GDPR Compliance] Cache purge error:', err);
+          }
+        }
+      })();
+    </script>
+
     <link rel="manifest" href="/manifest.json" />
     <meta name="theme-color" content="#0f172a" />
     <meta name="mobile-web-app-capable" content="yes" />

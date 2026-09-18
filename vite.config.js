@@ -12,11 +12,11 @@ function serviceWorkerVersionPlugin() {
         const buildTimestamp = Date.now();
         swContent = swContent.replace(
           /const CACHE_NAME = ['"][^'"]+['"];/,
-          `const CACHE_NAME = 'history-hub-cache-v17-${buildTimestamp}';`,
+          `const CACHE_NAME = 'history-hub-cache-v18-gdpr-${buildTimestamp}';`,
         );
         swContent = swContent.replace(
           /const DYNAMIC_CACHE = ['"][^'"]+['"];/,
-          `const DYNAMIC_CACHE = 'history-hub-dynamic-v17-${buildTimestamp}';`,
+          `const DYNAMIC_CACHE = 'history-hub-dynamic-v18-gdpr-${buildTimestamp}';`,
         );
         fs.writeFileSync(swPath, swContent, 'utf8');
         console.log(
@@ -38,6 +38,14 @@ function localChessSyncPlugin() {
           res.setHeader('Access-Control-Allow-Headers', 'Content-Type, x-teacher-passkey');
           res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
           res.setHeader('Content-Type', 'application/json');
+          res.setHeader(
+            'Cache-Control',
+            'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0',
+          );
+          res.setHeader('Pragma', 'no-cache');
+          res.setHeader('Expires', '0');
+          res.setHeader('Surrogate-Control', 'no-store');
+          res.setHeader('X-Robots-Tag', 'noindex, nofollow, noarchive, nosnippet');
 
           if (req.method === 'OPTIONS') {
             res.statusCode = 204;
@@ -46,6 +54,9 @@ function localChessSyncPlugin() {
 
           if (req.method === 'GET') {
             res.statusCode = 200;
+            if (inMemoryState && Array.isArray(inMemoryState.players)) {
+              inMemoryState.players.forEach((p) => delete p.year);
+            }
             return res.end(JSON.stringify(inMemoryState || null));
           }
 
@@ -57,6 +68,9 @@ function localChessSyncPlugin() {
             req.on('end', () => {
               try {
                 const data = JSON.parse(body);
+                if (Array.isArray(data.players)) {
+                  data.players.forEach((p) => delete p.year);
+                }
                 inMemoryState = { ...data, syncedAt: Date.now() };
                 res.statusCode = 200;
                 return res.end(JSON.stringify({ success: true, syncedAt: inMemoryState.syncedAt }));

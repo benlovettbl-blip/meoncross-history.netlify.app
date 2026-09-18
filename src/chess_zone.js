@@ -191,7 +191,6 @@ let chessState = {
   leagueTableViewMode: 'matrix', // 'matrix' | 'table'
   knockoutBracket: null,
   activeTab: 'ladder', // 'ladder' | 'signin' | 'table' | 'pairings' | 'knockout' | 'drills' | 'beginners' | 'matches'
-  filterYear: 'all', // 'all' | 'ks3' | 'ks4'
   filterHouse: 'all', // 'all' | houseId
   userRole: getInitialRole(), // 'teacher' | 'pupil'
   isPupilPreview: false,
@@ -715,11 +714,7 @@ export function renderChessHubView() {
 
   // Filtering players for display
   let filteredPlayers = [...chessState.players];
-  if (chessState.filterYear === 'ks3') {
-    filteredPlayers = filteredPlayers.filter((p) => p.year <= 9);
-  } else if (chessState.filterYear === 'ks4') {
-    filteredPlayers = filteredPlayers.filter((p) => p.year >= 10);
-  }
+  // Year filter removed for GDPR compliance
   if (chessState.filterHouse !== 'all') {
     filteredPlayers = filteredPlayers.filter((p) => p.house === chessState.filterHouse);
   }
@@ -1064,14 +1059,7 @@ export function renderChessHubView() {
         chessState.activeTab === 'ladder' || chessState.activeTab === 'table'
           ? `
         <div style="display: flex; gap: 10px; margin-bottom: 18px; flex-wrap: wrap; align-items: center; background: #ffffff; padding: 10px 14px; border-radius: 10px; border: 1.5px solid #e2e8f0; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
-          <div style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 700; color: #64748b; text-transform: uppercase;">
-            <i class="fa-solid fa-filter" style="color: #8b5cf6;"></i> Year:
-          </div>
-          <button onclick="window.setChessYearFilter('all')" style="${getFilterPillStyle(chessState.filterYear === 'all')}">All (7–11)</button>
-          <button onclick="window.setChessYearFilter('ks3')" style="${getFilterPillStyle(chessState.filterYear === 'ks3')}">KS3 (Y7–9)</button>
-          <button onclick="window.setChessYearFilter('ks4')" style="${getFilterPillStyle(chessState.filterYear === 'ks4')}">KS4 (Y10–11)</button>
-
-          <div style="width: 1px; height: 18px; background: #cbd5e1; margin: 0 2px;"></div>
+          
 
           <div style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 700; color: #64748b; text-transform: uppercase;">
             <i class="fa-solid fa-shield-halved" style="color: #2563eb;"></i> House:
@@ -1210,7 +1198,7 @@ function renderLadderTab(players) {
                   <span style="background: ${HOUSES[p2.house]?.bgLight || '#f1f5f9'}; color: ${HOUSES[p2.house]?.color || '#334155'}; border: 1px solid ${HOUSES[p2.house]?.borderColor || '#cbd5e1'}; padding: 2px 8px; border-radius: 10px; font-size: 0.72rem; font-weight: 800;">
                     ${HOUSES[p2.house]?.name || p2.house}
                   </span>
-                  <span style="font-size: 0.72rem; color: #64748b; font-weight: 700;">Year ${p2.year}</span>
+                  
                 </div>
                 <div style="display: flex; justify-content: center; gap: 12px; margin-top: 8px; padding-top: 8px; border-top: 1px solid #f1f5f9; font-family: monospace;">
                   <div>
@@ -1240,7 +1228,7 @@ function renderLadderTab(players) {
                   <span style="background: ${HOUSES[p1.house]?.bgLight || '#f1f5f9'}; color: ${HOUSES[p1.house]?.color || '#334155'}; border: 1px solid ${HOUSES[p1.house]?.borderColor || '#cbd5e1'}; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 800;">
                     ${HOUSES[p1.house]?.name || p1.house}
                   </span>
-                  <span style="font-size: 0.75rem; color: #854d0e; font-weight: 800; background: #fef9c3; padding: 2px 6px; border-radius: 4px;">Year ${p1.year}</span>
+                  
                 </div>
                 <div style="display: flex; justify-content: center; gap: 14px; margin-top: 10px; padding-top: 10px; border-top: 1px solid #fef08a; font-family: monospace;">
                   <div>
@@ -1270,7 +1258,7 @@ function renderLadderTab(players) {
                   <span style="background: ${HOUSES[p3.house]?.bgLight || '#f1f5f9'}; color: ${HOUSES[p3.house]?.color || '#334155'}; border: 1px solid ${HOUSES[p3.house]?.borderColor || '#cbd5e1'}; padding: 2px 8px; border-radius: 10px; font-size: 0.72rem; font-weight: 800;">
                     ${HOUSES[p3.house]?.name || p3.house}
                   </span>
-                  <span style="font-size: 0.72rem; color: #64748b; font-weight: 700;">Year ${p3.year}</span>
+                  
                 </div>
                 <div style="display: flex; justify-content: center; gap: 12px; margin-top: 8px; padding-top: 8px; border-top: 1px solid #f1f5f9; font-family: monospace;">
                   <div>
@@ -1358,7 +1346,7 @@ function renderLadderTab(players) {
                       ${h.name}
                     </span>
                     <span style="background: #f1f5f9; color: #475569; padding: 2px 6px; border-radius: 4px; font-size: 0.72rem; font-weight: 700;">
-                      Year ${p.year}
+                      
                     </span>
                     ${
                       isCheckedIn
@@ -1603,7 +1591,7 @@ function renderLeagueTableTab(players) {
                 <tr style="background: #f8fafc; border-bottom: 2px solid #e2e8f0; color: #475569; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em;">
                   <th style="padding: 12px 14px;">Rank</th>
                   <th style="padding: 12px 14px;">Pupil</th>
-                  <th style="padding: 12px 14px;">Year</th>
+                  
                   <th style="padding: 12px 14px;">House</th>
                   <th style="padding: 12px 14px; text-align: center;">Played</th>
                   <th style="padding: 12px 14px; text-align: center;">Won</th>
@@ -1625,7 +1613,7 @@ function renderLeagueTableTab(players) {
                     <tr class="chess-table-row" style="border-bottom: 1px solid #f1f5f9; transition: background 0.15s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
                       <td style="padding: 12px 14px; font-weight: 800; color: #64748b;">${idx + 1}</td>
                       <td style="padding: 12px 14px; font-weight: 700; color: #0f172a;">${p.name}</td>
-                      <td style="padding: 12px 14px; color: #475569;">Year ${p.year}</td>
+                      <td style="padding: 12px 14px; color: #475569;"></td>
                       <td style="padding: 12px 14px;">
                         <span style="background: ${h.bgLight}; color: ${h.color}; border: 1px solid ${h.borderColor}; padding: 3px 8px; border-radius: 12px; font-size: 0.72rem; font-weight: 700;">
                           <i class="fa-solid ${h.icon}"></i> ${h.name}
@@ -2644,7 +2632,7 @@ function renderActiveBoardPairingsGrid() {
                   </div>
                   <div style="display: flex; align-items: center; gap: 4px; margin-top: 3px;">
                     <span style="background: ${wH.bgLight}; color: ${wH.color}; font-size: 0.68rem; font-weight: 700; padding: 1px 6px; border-radius: 3px; border: 1px solid ${wH.borderColor};">
-                      ${wH.name} · Y${p.white.year}
+                      ${wH.name}
                     </span>
                   </div>
                 </div>
@@ -2661,7 +2649,7 @@ function renderActiveBoardPairingsGrid() {
                   </div>
                   <div style="display: flex; align-items: center; gap: 4px; margin-top: 3px; justify-content: flex-end;">
                     <span style="background: ${bH.bgLight}; color: ${bH.color}; font-size: 0.68rem; font-weight: 700; padding: 1px 6px; border-radius: 3px; border: 1px solid ${bH.borderColor};">
-                      ${bH.name} · Y${p.black.year}
+                      ${bH.name}
                     </span>
                   </div>
                 </div>
@@ -2744,7 +2732,7 @@ function renderActiveBoardPairingsGrid() {
             <div style="background: #fafaf9; border: 1.5px dashed #cbd5e1; border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between;">
               <div>
                 <div style="font-size: 0.72rem; font-weight: 800; color: #94a3b8; text-transform: uppercase;">Odd Number of Pupils · Practice Bye</div>
-                <div style="font-size: 0.95rem; font-weight: 700; color: #0f172a;">${p.white.name} (Y${p.white.year} · ${h.name})</div>
+                <div style="font-size: 0.95rem; font-weight: 700; color: #0f172a;">${p.white.name} (${h.name})</div>
               </div>
               <span style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.76rem; font-weight: 700; padding: 3px 8px; border-radius: 4px;">
                 +1 Bye Pt
@@ -2866,14 +2854,7 @@ function renderSignInTab(players = []) {
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
               <div>
-                <label for="reg-year" style="display: block; font-size: 0.8rem; font-weight: 700; color: #334155; margin-bottom: 5px;">Year Group:</label>
-                <select id="reg-year" required style="width: 100%; box-sizing: border-box; padding: 9px 10px; border-radius: 8px; border: 1.5px solid #cbd5e1; font-size: 0.88rem; font-family: inherit; background: #fff;">
-                  <option value="7">Year 7</option>
-                  <option value="8" selected>Year 8</option>
-                  <option value="9">Year 9</option>
-                  <option value="10">Year 10 (GCSE)</option>
-                  <option value="11">Year 11 (GCSE)</option>
-                </select>
+                
               </div>
 
               <div>
@@ -2913,7 +2894,7 @@ function renderSignInTab(players = []) {
                   return `
                   <button type="button" onclick="window.checkInPlayer('${p.id}')" style="background: #f8fafc; border: 1.5px solid ${h.borderColor}; border-radius: 20px; padding: 6px 14px; font-size: 0.85rem; font-weight: 700; color: #1e293b; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s;" onmouseover="this.style.background='${h.bgLight}';this.style.borderColor='${h.color}'" onmouseout="this.style.background='#f8fafc';this.style.borderColor='${h.borderColor}'">
                     <i class="fa-solid fa-circle-plus" style="color: ${h.color};"></i>
-                    <span>${p.name} (Y${p.year} · ${h.name})</span>
+                    <span>${p.name} (${h.name})</span>
                   </button>
                 `;
                 })
@@ -2986,7 +2967,7 @@ function renderSignInTab(players = []) {
                     <span style="width: 10px; height: 10px; border-radius: 50%; background: #22c55e; flex-shrink: 0; box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);"></span>
                     <div style="min-width: 0;">
                       <div style="font-weight: 700; font-size: 0.95rem; color: #0f172a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${p.name}</div>
-                      <div style="font-size: 0.74rem; color: ${h.color}; font-weight: 700;">Year ${p.year} · ${h.name}</div>
+                      <div style="font-size: 0.74rem; color: ${h.color}; font-weight: 700;"> · ${h.name}</div>
                     </div>
                   </div>
                   <div style="display: flex; gap: 4px; flex-shrink: 0;">
@@ -3076,7 +3057,7 @@ function renderSignInTab(players = []) {
                 <tr style="background: #1c1917; color: #fafaf9; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.08em; font-family: monospace;">
                   <th style="padding: 10px 12px; width: 45px; text-align: center;">POS</th>
                   <th style="padding: 10px 12px; font-family: 'Playfair Display', Georgia, serif;">Player</th>
-                  <th style="padding: 10px 12px;">Year</th>
+                  
                   <th style="padding: 10px 12px;">House</th>
                   <th style="padding: 10px 12px; text-align: center;">Session</th>
                   <th style="padding: 10px 12px; text-align: center;">P</th>
@@ -3115,7 +3096,7 @@ function renderSignInTab(players = []) {
                     <tr style="border-bottom: 1px solid #e7e2d7; transition: background 0.15s ease; background: ${idx % 2 === 0 ? '#ffffff' : '#faf8f5'};" onmouseover="this.style.background='#f3efe6'" onmouseout="this.style.background='${idx % 2 === 0 ? '#ffffff' : '#faf8f5'}'">
                       <td style="padding: 10px 12px; text-align: center;">${rankBadge}</td>
                       <td style="padding: 10px 12px; font-weight: 700; color: #1c1917; font-family: 'Playfair Display', Georgia, serif; font-size: 0.95rem;">${p.name}</td>
-                      <td style="padding: 10px 12px; color: #57534e; font-family: monospace; font-size: 0.8rem;">Yr ${p.year}</td>
+                      
                       <td style="padding: 10px 12px;">
                         <span style="background: ${h.bgLight}; color: ${h.color}; border: 1px solid ${h.borderColor}; padding: 2px 8px; border-radius: 3px; font-size: 0.72rem; font-weight: 700; font-family: monospace;">
                           ${h.name}
@@ -3202,7 +3183,7 @@ function renderPairingsTab() {
               <label style="display: flex; align-items: center; gap: 8px; background: #ffffff; padding: 6px 10px; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 0.82rem; cursor: pointer;">
                 <input type="checkbox" class="attendance-check" data-player-id="${p.id}" ${isChecked ? 'checked' : ''} onchange="window.handleChecklistChange('${p.id}', this.checked)">
                 <span style="font-weight: 600; color: #0f172a;">${p.name}</span>
-                <span style="margin-left: auto; font-size: 0.72rem; color: #64748b; font-weight: 700;">Y${p.year}</span>
+                
               </label>
             `;
             })
@@ -4089,10 +4070,7 @@ window.switchChessTab = function (tabName) {
   renderChessHubView();
 };
 
-window.setChessYearFilter = function (filter) {
-  chessState.filterYear = filter;
-  renderChessHubView();
-};
+window.setChessYearFilter = function () {};
 
 window.setChessHouseFilter = function (houseId) {
   chessState.filterHouse = houseId;
@@ -4236,7 +4214,7 @@ window.handleSelfRegister = function (e) {
   const rawName = nameInput.value.trim();
   const name = sanitizePupilName(rawName);
   nameInput.value = name;
-  const year = parseInt(document.getElementById('reg-year')?.value || '8', 10);
+
   const house = document.getElementById('reg-house')?.value || 'warrior';
 
   if (!name) {
@@ -4264,7 +4242,6 @@ window.handleSelfRegister = function (e) {
   chessState.players.push({
     id: newId,
     name: name,
-    year: year,
     house: house,
     rating: 1000,
     games: 0,
@@ -5935,7 +5912,7 @@ export function renderWhiteboardModeView(sortedHouses) {
                           ${m.p1.name}
                         </div>
                         <div style="font-size: 0.64rem; color: #94a3b8; font-family: monospace;">
-                          Yr ${m.p1.year || 8} · ${m.p1.rating || 1000}
+                          ${m.p1.rating || 1000}
                         </div>
                       </div>
 
@@ -5951,7 +5928,7 @@ export function renderWhiteboardModeView(sortedHouses) {
                           ${m.p2.name}
                         </div>
                         <div style="font-size: 0.64rem; color: #94a3b8; font-family: monospace;">
-                          Yr ${m.p2.year || 8} · ${m.p2.rating || 1000}
+                          ${m.p2.rating || 1000}
                         </div>
                       </div>
                     </div>
@@ -6027,7 +6004,7 @@ export function renderWhiteboardModeView(sortedHouses) {
                         ${m.p1.name}
                       </div>
                       <div style="font-size: 0.74rem; color: #94a3b8; margin-top: 2px; font-family: monospace;">
-                        Year ${m.p1.year || 8} · Elo ${m.p1.rating || 1000}
+                        Elo ${m.p1.rating || 1000}
                       </div>
                     </div>
 
@@ -6044,7 +6021,7 @@ export function renderWhiteboardModeView(sortedHouses) {
                         ${m.p2.name}
                       </div>
                       <div style="font-size: 0.74rem; color: #94a3b8; margin-top: 2px; font-family: monospace;">
-                        Year ${m.p2.year || 8} · Elo ${m.p2.rating || 1000}
+                        Elo ${m.p2.rating || 1000}
                       </div>
                     </div>
                   </div>
@@ -6444,7 +6421,7 @@ window.openLogMatchModal = function (
   const otherList = chessState.players.filter((p) => !checkedInSet.has(p.id));
 
   const renderPlayerOpt = (p) =>
-    `<option value="${p.id}">${p.name} (Yr ${p.year} • ${HOUSES[p.house]?.name || p.house} • Rtg ${p.rating})</option>`;
+    `<option value="${p.id}">${p.name} (${HOUSES[p.house]?.name || p.house} • Rtg ${p.rating})</option>`;
 
   const playerOptionsHtml = `
     ${
@@ -6683,9 +6660,8 @@ window.openAssemblySlideModal = function () {
   });
   const champ = chessState.players.find((p) => p.rank === 1) ||
     sortedByPoints[0] || {
-      name: 'Tadhg F.',
+      name: 'Grandmaster_01',
       house: 'invincible',
-      year: 9,
       rating: 1000,
       won: 1,
       drawn: 0,
@@ -6767,7 +6743,7 @@ window.openAssemblySlideModal = function () {
                 <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.65rem; font-weight: 900; color: #ffffff; margin-top: 1px; text-shadow: 0 2px 10px rgba(0,0,0,0.6); line-height: 1.1;">
                   ${champ.name}
                   <span style="font-size: 0.95rem; color: #fef08a; font-family: 'Outfit', sans-serif; font-weight: 700; margin-left: 6px;">
-                    (${champHouse.name} · Year ${champ.year || 8})
+                    (${champHouse.name})
                   </span>
                 </div>
                 <div style="font-size: 0.7rem; color: #e2e8f0; margin-top: 1px; font-style: italic;">
@@ -6877,7 +6853,7 @@ window.copyAssemblyNoticeText = function () {
   const text = `👑 MEONCROSS CHESS CLUB — WEEKLY ASSEMBLY HONORS (Period 6 Thursdays)
 
 ⭐ INDIVIDUAL SCHOOL GRANDMASTER OF THE WEEK:
-🥇 Huge congratulations to ${champ ? champ.name : 'our club champion'} (${champHouseName}, Year ${champ ? champ.year : '—'})!
+🥇 Huge congratulations to ${champ ? champ.name : 'our club champion'} (${champHouseName})!
 ${champ ? champ.name : 'They'} currently sit at RANK #1 on the Meoncross Master Ladder with ${champPts} points (${champ ? champ.won : 0} Wins, ${champ ? champ.drawn : 0} Draws, ${champLosses} Losses, Elo ${champ ? champ.rating : 1000})! An outstanding display of tactical mastery and sportsmanship on the boards!
 
 🏰 WEEKLY HOUSE CHAMPIONSHIP STANDINGS:
@@ -6915,9 +6891,8 @@ window.downloadAssemblySlidePNG = function () {
   });
   const champ = chessState.players.find((p) => p.rank === 1) ||
     sortedByPoints[0] || {
-      name: 'Top Pupil',
+      name: 'Grandmaster_01',
       house: 'invincible',
-      year: 9,
       rating: 1000,
       won: 1,
       drawn: 0,
@@ -7003,7 +6978,7 @@ window.downloadAssemblySlidePNG = function () {
   ctx.fillStyle = '#fef08a';
   ctx.font = 'bold 36px sans-serif';
   const nameWidth = ctx.measureText(champ.name).width;
-  ctx.fillText(`(${champHouse.name} · Year ${champ.year || 8})`, cX + 175 + nameWidth, cY + 128);
+  ctx.fillText(`(${champHouse.name})`, cX + 175 + nameWidth, cY + 128);
 
   // Acclaim Quote
   ctx.fillStyle = '#e2e8f0';
@@ -7152,7 +7127,7 @@ window.generateFridayBulletinText = function () {
     ? `${HOUSES[sortedHouses[3].id]?.name || 'Invincible'} (${sortedHouses[3].points} pts)`
     : 'Invincible (0 pts)';
 
-  return `♟️ MEONCROSS CHESS CLUB & HOUSE LEAGUE — FRIDAY BULLETIN ♟️\n🏆 House Championship Standings:\n   1st: ${h1}  ·  2nd: ${h2}  ·  3rd: ${h3}  ·  4th: ${h4}\n👑 Master Ladder Leader: ${leader ? `${leader.name} (Year ${leader.year} · ${leaderHouseName} · Rating ${leader.rating || 1000})` : 'Autumn Season Underway'}\n⚔ Total Games Completed: ${chessState.matches.length} tournament matches logged this term\n📅 Next Club: Thursday Period 6 in the Senior Block History Room!`;
+  return `♟️ MEONCROSS CHESS CLUB & HOUSE LEAGUE — FRIDAY BULLETIN ♟️\n🏆 House Championship Standings:\n   1st: ${h1}  ·  2nd: ${h2}  ·  3rd: ${h3}  ·  4th: ${h4}\n👑 Master Ladder Leader: ${leader ? `${leader.name} (${leaderHouseName} · Rating ${leader.rating || 1000})` : 'Autumn Season Underway'}\n⚔ Total Games Completed: ${chessState.matches.length} tournament matches logged this term\n📅 Next Club: Thursday Period 6 in the Senior Block History Room!`;
 };
 
 window.copyFridayBulletinNotice = function () {
@@ -7628,7 +7603,6 @@ window.copyRosterCodeToClipboard = function () {
   const cleanPlayers = chessState.players.map((p) => ({
     id: p.id,
     name: p.name,
-    year: p.year,
     house: p.house,
     rating: p.rating || 1000,
     games: p.games || 0,
@@ -7679,7 +7653,7 @@ window.printWeeklyChessSheet = function () {
     <tr>
       <td style="text-align: center; font-weight: bold;">${p.rank}</td>
       <td style="font-weight: 600;">${p.name}</td>
-      <td style="text-align: center;">Year ${p.year}</td>
+      <td style="text-align: center;"></td>
       <td style="text-align: center; text-transform: uppercase; font-size: 11px; font-weight: bold; color: ${HOUSES[p.house]?.color || '#333'};">${HOUSES[p.house]?.name || p.house}</td>
       <td style="text-align: center; width: 60px;">[ &nbsp; ]</td>
       <td style="text-align: center;">${p.games}</td>
@@ -7740,7 +7714,7 @@ window.printWeeklyChessSheet = function () {
           <tr>
             <th style="width: 35px;">Rank</th>
             <th>Pupil Name</th>
-            <th style="width: 70px;">Year</th>
+            
             <th style="width: 90px;">House</th>
             <th>Present</th>
             <th style="width: 50px;">Played</th>
@@ -7831,7 +7805,7 @@ window.printFidePairingSheet = function () {
         <tr style="background: #f8fafc;">
           <td style="text-align: center; font-weight: 900; font-size: 13px;">Board ${p.board}</td>
           <td style="font-weight: 700; font-size: 13px; color: #0f172a;">
-            ♔ ${p.white.name} <span style="font-size: 11px; color: #64748b;">(Y${p.white.year})</span>
+            ♔ ${p.white.name} 
             <div style="font-size: 10px; color: ${HOUSES[p.white.house]?.color || '#333'}; font-weight: 800; text-transform: uppercase;">
               ${HOUSES[p.white.house]?.name || p.white.house} · ELO ${p.white.rating}
             </div>
@@ -7855,7 +7829,7 @@ window.printFidePairingSheet = function () {
         </td>
         <td>
           <div style="font-weight: 700; font-size: 13px; color: #0f172a;">
-            ♔ ${p.white.name} <span style="font-size: 11px; font-weight: 600; color: #64748b;">(Y${p.white.year})</span>
+            ♔ ${p.white.name} 
           </div>
           <div style="font-size: 10px; font-weight: 800; color: ${wH?.color || '#333'}; text-transform: uppercase;">
             ${wH?.name || p.white.house} House · ELO ${p.white.rating}
@@ -7872,7 +7846,7 @@ window.printFidePairingSheet = function () {
         </td>
         <td>
           <div style="font-weight: 700; font-size: 13px; color: #0f172a;">
-            ♚ ${p.black.name} <span style="font-size: 11px; font-weight: 600; color: #64748b;">(Y${p.black.year})</span>
+            ♚ ${p.black.name} 
           </div>
           <div style="font-size: 10px; font-weight: 800; color: ${bH?.color || '#333'}; text-transform: uppercase;">
             ${bH?.name || p.black.house} House · ELO ${p.black.rating}
@@ -8122,14 +8096,7 @@ window.openAddPlayerModal = function () {
           </div>
 
           <div style="margin-bottom: 14px;">
-            <label style="display: block; font-weight: 700; font-size: 0.85rem; color: #334155; margin-bottom: 5px;">Year Group:</label>
-            <select id="new-player-year" required style="width: 100%; padding: 10px; border-radius: 6px; border: 1.5px solid #cbd5e1; font-size: 0.95rem;">
-              <option value="7">Year 7 (KS3)</option>
-              <option value="8">Year 8 (KS3)</option>
-              <option value="9">Year 9 (KS3)</option>
-              <option value="10">Year 10 (GCSE / KS4)</option>
-              <option value="11">Year 11 (GCSE / KS4)</option>
-            </select>
+            
           </div>
 
           <div style="margin-bottom: 14px;">
@@ -8157,7 +8124,7 @@ window.handleAddPlayerSubmit = function (e) {
   if (e && e.preventDefault) e.preventDefault();
   const rawName = document.getElementById('new-player-name')?.value.trim();
   const name = sanitizePupilName(rawName);
-  const year = parseInt(document.getElementById('new-player-year')?.value, 10);
+
   const house = document.getElementById('new-player-house')?.value;
 
   if (!name) return;

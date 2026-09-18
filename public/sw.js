@@ -1,5 +1,5 @@
-const CACHE_NAME = 'history-hub-cache-v17';
-const DYNAMIC_CACHE = 'history-hub-dynamic-v17';
+const CACHE_NAME = 'history-hub-cache-v18-gdpr';
+const DYNAMIC_CACHE = 'history-hub-dynamic-v18-gdpr';
 
 const CORE_ASSETS = [
   '/',
@@ -39,23 +39,26 @@ const CORE_ASSETS = [
 
 // Install Event: Precache core assets with resilient per-item handling
 self.addEventListener('install', (event) => {
+  console.log('[Service Worker] Installing version:', CACHE_NAME);
   self.skipWaiting();
+
   event.waitUntil(
-    caches.open(CACHE_NAME).then(async (cache) => {
-      console.log('[Service Worker] Precaching core assets and Ypres offline companion');
-      for (const asset of CORE_ASSETS) {
-        try {
-          await cache.add(asset);
-        } catch (err) {
-          console.warn('[Service Worker] Non-critical precache notice for:', asset, err.message);
-        }
-      }
+    caches.open(CACHE_NAME).then((cache) => {
+      console.log('[Service Worker] Precaching core shell assets...');
+      return Promise.allSettled(
+        CORE_ASSETS.map((asset) =>
+          cache.add(asset).catch((err) => {
+            console.warn(`[Service Worker] Failed to precache ${asset}:`, err.message);
+          }),
+        ),
+      );
     }),
   );
 });
 
-// Activate Event: Immediate takeover and older cache eviction
+// Activate Event: Delete all old caches immediately
 self.addEventListener('activate', (event) => {
+  console.log('[Service Worker] Activating version:', CACHE_NAME);
   event.waitUntil(
     caches
       .keys()
@@ -87,6 +90,15 @@ self.addEventListener('fetch', (event) => {
 
   // Bypass entirely on localhost/127.0.0.1 for live development
   if (url.hostname === 'localhost' || url.hostname === '127.0.0.1') {
+    return;
+  }
+
+  // Never intercept or cache chess sync API or netlify functions (strictly no-cache)
+  if (
+    url.pathname.includes('chess_sync') ||
+    url.pathname.startsWith('/.netlify/') ||
+    url.pathname.startsWith('/api/')
+  ) {
     return;
   }
 
