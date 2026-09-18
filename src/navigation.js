@@ -34,14 +34,11 @@ export function initNavigationUI() {
       }
     }
 
-    // Manage Header Right Brand Badge
+    // Header Right
     const headerRight = document.querySelector('.header-right');
     if (headerRight) {
-      headerRight.innerHTML = `<span class="school-tag"><i class="fa-solid fa-award"></i> The History Revision Hub</span>`;
-      headerRight.style.flex = '';
-      headerRight.style.display = '';
-      headerRight.style.justifyContent = '';
-      headerRight.style.alignItems = '';
+      headerRight.innerHTML = '';
+      headerRight.style.display = 'none';
     }
 
     // Manage Breadcrumbs

@@ -2752,12 +2752,6 @@ export function renderLesson(lesson) {
         styledContent = contentStr.replace(/^<strong>(.*?)<\/strong>\s*/i, (match, headingText) => {
           return `<div class="paragraph-signpost" style="font-weight: 700; color: #1e3a8a; font-size: 1.08rem; letter-spacing: 0.1px; margin-bottom: 6px; border-left: 3px solid #3b82f6; padding-left: 8px;">${headingText}</div><br/>`;
         });
-      } else if (!isQuote && !contentStr.trim().startsWith('<') && contentStr.length > 20) {
-        const firstLetter = contentStr.charAt(0);
-        const rest = contentStr.slice(1);
-        styledContent =
-          `<span style="float: left; font-size: 3rem; line-height: 2.5rem; padding-top: 4px; padding-right: 8px; padding-left: 3px; font-family: 'Playfair Display', serif; color: #1e3a8a;">${firstLetter}</span>` +
-          rest;
       }
 
       let l4StyledContent = '';
@@ -2793,12 +2787,6 @@ export function renderLesson(lesson) {
               return `<div class="paragraph-signpost" style="font-weight: 700; color: #047857; font-size: 1.08rem; letter-spacing: 0.1px; margin-bottom: 6px; border-left: 3px solid #10b981; padding-left: 8px;">${headingText}</div><br/>`;
             },
           );
-        } else if (!isQuote && !l4ContentStr.trim().startsWith('<') && l4ContentStr.length > 20) {
-          const firstLetter = l4ContentStr.charAt(0);
-          const rest = l4ContentStr.slice(1);
-          l4StyledContent =
-            `<span style="float: left; font-size: 3rem; line-height: 2.5rem; padding-top: 4px; padding-right: 8px; padding-left: 3px; font-family: 'Playfair Display', serif; color: #047857;">${firstLetter}</span>` +
-            rest;
         }
       }
 

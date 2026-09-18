@@ -465,14 +465,9 @@ body {
   animation: fadeIn 0.3s ease;
 }
 
-.school-tag {
-  font-weight: 700;
-  font-size: 0.95rem;
-  color: var(--primary);
-  background: var(--bg-app);
-  padding: 6px 14px;
-  border-radius: 30px;
-  border: 1px solid var(--border-glass);
+.school-tag,
+.header-right {
+  display: none !important;
 }
 
 .content-container {
@@ -1313,8 +1308,14 @@ pre.ascii-diagram {
 }
 
 /* 1. Dyslexia Mode Font Override */
-body.sen-mode .standard-narrative-container span[style*="font-family: 'Playfair Display'"] {
-  font-family: 'Comic Sans MS', 'OpenDyslexic', sans-serif !important;
+body.sen-mode .standard-narrative-container span[style*="font-family: 'Playfair Display'"],
+body.sen-mode .narrative-block span[style*="font-family: 'Playfair Display'"] {
+  float: none !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  padding: 0 !important;
+  font-family: inherit !important;
+  color: inherit !important;
 }
 
 /* 2. Model Answer Polish & Animations */
