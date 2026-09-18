@@ -100,6 +100,12 @@ allDirs.forEach((unitId) => {
 
   if (!unitData.lessons) return;
 
+  if (unitId === 'industrialisation_and_empire') {
+    const { buildIndustrialisationTextbook } = require('./render_industrialisation_textbook.cjs');
+    buildIndustrialisationTextbook(unitData);
+    return;
+  }
+
   const markersPath = path.join(ROOT_DIR, 'scratch', `pdf_markers_${unitId}.json`);
   let pdfMarkers = [];
   if (fs.existsSync(markersPath)) {

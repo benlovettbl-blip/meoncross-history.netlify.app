@@ -42,7 +42,8 @@ const lessonConfigs = [
       type: 'draw_label',
       badge: 'Technical Blueprint & Archival Anatomy',
       title: 'Task 4: Draw & Label Henry Cort’s Puddling Furnace & Grooved Rollers (1784)',
-      instruction: 'Sketch the furnace and rollers in the box below, then label the 4 key parts:',
+      instruction:
+        'Using Source B in your textbook / on screen, sketch the furnace and rollers in the box below, then label the 4 key parts:',
       checklist:
         '① <strong>Firebox</strong> (keeps coal separate from iron) &bull; ② <strong>Arched roof</strong> (bounces heat down onto iron) &bull; ③ <strong>Puddling bar</strong> (worker stirs out carbon) &bull; ④ <strong>Grooved rollers</strong> (squeezes out impurities)',
       clue: '<em>Low-Floor Clue:</em> Notice how the coal fuel never touches the iron directly—only the heat melts the metal, keeping it pure and strong.',
@@ -821,31 +822,21 @@ function buildIndustrialisationTwoPageWorkbook(unitData, period) {
             <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 700; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 1px 7px; border-radius: 3px;">Score: &nbsp; &nbsp; / 5</span>
           </div>
           <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px;">
-            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q1</div>
-              <div class="task-line-dotted" style="height: 5.5mm;"></div>
-              <div class="task-line-dotted" style="height: 5.5mm;"></div>
-            </div>
-            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q2</div>
-              <div class="task-line-dotted" style="height: 5.5mm;"></div>
-              <div class="task-line-dotted" style="height: 5.5mm;"></div>
-            </div>
-            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q3</div>
-              <div class="task-line-dotted" style="height: 5.5mm;"></div>
-              <div class="task-line-dotted" style="height: 5.5mm;"></div>
-            </div>
-            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q4</div>
-              <div class="task-line-dotted" style="height: 5.5mm;"></div>
-              <div class="task-line-dotted" style="height: 5.5mm;"></div>
-            </div>
-            <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #1e3a8a; margin-bottom: 1px;">Q5</div>
-              <div class="task-line-dotted" style="height: 5.5mm;"></div>
-              <div class="task-line-dotted" style="height: 5.5mm;"></div>
-            </div>
+            ${(lesson.do_now && lesson.do_now.items ? lesson.do_now.items.slice(0, 5) : [])
+              .map(
+                (item, qIdx) => `
+              <div style="background: #fafaf9; border: 1px solid #e2e8f0; border-radius: 3px; padding: 4px 5px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.22; color: #1e293b; margin-bottom: 2px;">
+                  <strong style="color: #1e3a8a;">Q${qIdx + 1}:</strong> ${formatText(item.question)}
+                </div>
+                <div>
+                  <div class="task-line-dotted" style="height: 5.2mm;"></div>
+                  <div class="task-line-dotted" style="height: 5.2mm;"></div>
+                </div>
+              </div>
+            `,
+              )
+              .join('')}
           </div>
         </div>
 
