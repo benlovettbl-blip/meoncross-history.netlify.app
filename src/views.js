@@ -5,7 +5,15 @@
 
 import { state } from './state.js';
 import { getProfile, setMockUser } from './auth.js';
-import { getMasteryStatus, updateLeitnerBox, toggleBookmark, saveProgress } from './storage.js';
+import {
+  getMasteryStatus,
+  updateLeitnerBox,
+  toggleBookmark,
+  saveProgress,
+  addXp,
+  showXpToast,
+} from './storage.js';
+export { addXp, showXpToast };
 import { renderCoverSourcesHTML } from './cover_sources.js';
 import { renderKeyTopicLessonsHTML } from './lesson_cards.js';
 import { renderUnitSynopsis } from './unit_synopses.js';
@@ -61,7 +69,7 @@ export function renderDashboard() {
           </div>
         </div>
         <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-          <span style="background: #fef3c7; color: #d97706; padding: 4px 10px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-fire"></i> ${state.dailyXp || 0} XP</span>
+          <span style="background: #fef3c7; color: #d97706; padding: 4px 10px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; border: 1px solid #fde68a; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-fire"></i> <span class="xp-display-counter">${state.dailyXp || 0} XP</span></span>
           <span style="background: #dcfce7; color: #166534; padding: 4px 10px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; border: 1px solid #bbf7d0; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-circle-check"></i> ${masteredCount} Mastered</span>
           <span style="background: #e0f2fe; color: #0369a1; padding: 4px 10px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; border: 1px solid #bae6fd; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-shield-halved"></i> ${securedCount} Secured</span>
         </div>
@@ -1067,6 +1075,9 @@ export async function renderDecisionsView() {
   window.playDecisionsPhase3 = function (gameId, choiceLetter, subChoice) {
     const g = decisionsData.find((x) => x.id === gameId);
     if (!g) return;
+
+    // Award +20 XP for completing decision scenario
+    addXp(20, 'Decision Simulator Completed');
 
     const selectedChoice = choiceLetter === 'A' ? g.phase1.choiceA : g.phase1.choiceB;
     const selectedSubChoice = subChoice === '1' ? selectedChoice.choice1 : selectedChoice.choice2;

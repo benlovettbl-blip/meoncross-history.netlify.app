@@ -5,6 +5,7 @@ import {
   getWeakSpots,
   clearWeakSpots,
   generateQuestionId,
+  addXp,
 } from './storage.js';
 import { state } from './state.js';
 
@@ -737,6 +738,13 @@ export function renderQuizZone(container, unitData) {
     let message = '';
     let color = '';
     let icon = '';
+
+    // Award expanded XP rewards for quiz performance
+    if (percentage === 100) {
+      addXp(25, 'Perfect Quiz Score (100%)!');
+    } else if (percentage >= 50) {
+      addXp(10, 'Quiz Passed');
+    }
 
     if (percentage >= 80) {
       message = 'Excellent work! You have a great historical memory.';

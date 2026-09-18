@@ -1,3 +1,5 @@
+import { addXp } from './storage.js';
+
 export async function initPhysicianGame(container, task) {
   container.innerHTML = `
     <div style="background: #1e293b; color: white; padding: 20px; border-radius: 8px; text-align: center; font-family: 'Playfair Display', serif; border: 4px solid #475569;">
@@ -9,45 +11,107 @@ export async function initPhysicianGame(container, task) {
   try {
     const patients = [
       {
-        name: "William the Blacksmith",
-        symptoms: "High fever, shivering, and large, painful black swellings (buboes) in his armpits and groin.",
-        type: "Bubonic Plague",
+        name: 'William the Blacksmith',
+        symptoms:
+          'High fever, shivering, and large, painful black swellings (buboes) in his armpits and groin.',
+        type: 'Bubonic Plague',
         cures: [
-          { name: "Bleeding with leeches", death: true, explanation: "You bled him to balance his Humours, but he was already weak. The loss of blood killed him faster." },
-          { name: "Lancing the buboes", death: true, explanation: "You cut open the swellings to let the poison out, but the wound became infected with bacteria and he died of sepsis." },
-          { name: "Applying a dried frog poultice", death: true, explanation: "You placed a dried toad on the buboes to 'draw out the poison'. It did absolutely nothing, and he died three days later." }
-        ]
+          {
+            name: 'Bleeding with leeches',
+            death: true,
+            explanation:
+              'You bled him to balance his Humours, but he was already weak. The loss of blood killed him faster.',
+          },
+          {
+            name: 'Lancing the buboes',
+            death: true,
+            explanation:
+              'You cut open the swellings to let the poison out, but the wound became infected with bacteria and he died of sepsis.',
+          },
+          {
+            name: 'Applying a dried frog poultice',
+            death: true,
+            explanation:
+              "You placed a dried toad on the buboes to 'draw out the poison'. It did absolutely nothing, and he died three days later.",
+          },
+        ],
       },
       {
-        name: "Agnes the Weaver",
-        symptoms: "Coughing up blood, severe chest pain, and struggling to breathe.",
-        type: "Pneumonic Plague",
+        name: 'Agnes the Weaver',
+        symptoms: 'Coughing up blood, severe chest pain, and struggling to breathe.',
+        type: 'Pneumonic Plague',
         cures: [
-          { name: "Smelling a sweet posy of flowers", death: true, explanation: "You told her to carry sweet-smelling flowers to block the 'Miasma' (bad air). She died the next day, and since it was pneumonic plague, she probably infected you by coughing on you!" },
-          { name: "Drinking a mixture of vinegar and crushed emeralds", death: true, explanation: "A very expensive cure! But sadly, crushed emeralds do not kill the Yersinia pestis bacteria. She died in agony." },
-          { name: "Praying and flagellation (whipping)", death: true, explanation: "You told her the plague was a punishment from God. She whipped herself to show repentance, but she still died of respiratory failure." }
-        ]
+          {
+            name: 'Smelling a sweet posy of flowers',
+            death: true,
+            explanation:
+              "You told her to carry sweet-smelling flowers to block the 'Miasma' (bad air). She died the next day, and since it was pneumonic plague, she probably infected you by coughing on you!",
+          },
+          {
+            name: 'Drinking a mixture of vinegar and crushed emeralds',
+            death: true,
+            explanation:
+              'A very expensive cure! But sadly, crushed emeralds do not kill the Yersinia pestis bacteria. She died in agony.',
+          },
+          {
+            name: 'Praying and flagellation (whipping)',
+            death: true,
+            explanation:
+              'You told her the plague was a punishment from God. She whipped herself to show repentance, but she still died of respiratory failure.',
+          },
+        ],
       },
       {
-        name: "John the Priest",
-        symptoms: "His fingers and toes have turned completely black. He has a high fever and is vomiting constantly.",
-        type: "Septicemic Plague",
+        name: 'John the Priest',
+        symptoms:
+          'His fingers and toes have turned completely black. He has a high fever and is vomiting constantly.',
+        type: 'Septicemic Plague',
         cures: [
-          { name: "Bathing in urine", death: true, explanation: "You prescribed a bath in urine to balance the humours. Not only was it disgusting, but the bacteria had already poisoned his blood. He died within 24 hours." },
-          { name: "Eating a diet of only dry bread", death: true, explanation: "You thought rich food was causing an imbalance of blood. Starving him didn't cure the septicemia. He died." },
-          { name: "Tying a live chicken to him", death: true, explanation: "You tied a live chicken to his chest hoping the disease would transfer to the bird. The bird lived, but John died." }
-        ]
+          {
+            name: 'Bathing in urine',
+            death: true,
+            explanation:
+              'You prescribed a bath in urine to balance the humours. Not only was it disgusting, but the bacteria had already poisoned his blood. He died within 24 hours.',
+          },
+          {
+            name: 'Eating a diet of only dry bread',
+            death: true,
+            explanation:
+              "You thought rich food was causing an imbalance of blood. Starving him didn't cure the septicemia. He died.",
+          },
+          {
+            name: 'Tying a live chicken to him',
+            death: true,
+            explanation:
+              'You tied a live chicken to his chest hoping the disease would transfer to the bird. The bird lived, but John died.',
+          },
+        ],
       },
       {
-        name: "Little Thomas",
-        symptoms: "A runny nose, a mild cough, and he says he feels a bit tired.",
-        type: "The Common Cold",
+        name: 'Little Thomas',
+        symptoms: 'A runny nose, a mild cough, and he says he feels a bit tired.',
+        type: 'The Common Cold',
         cures: [
-          { name: "Rest and chicken soup", death: false, explanation: "Excellent! He just had a common cold. He recovered perfectly after a few days of rest." },
-          { name: "Bleeding with leeches", death: true, explanation: "You bled a child for a minor cold! He was already small and the blood loss killed him. You are a terrible physician!" },
-          { name: "Trepanning (drilling a hole in his skull)", death: true, explanation: "You drilled a hole in his head to let the 'evil spirits' out. The shock and infection killed him instantly." }
-        ]
-      }
+          {
+            name: 'Rest and chicken soup',
+            death: false,
+            explanation:
+              'Excellent! He just had a common cold. He recovered perfectly after a few days of rest.',
+          },
+          {
+            name: 'Bleeding with leeches',
+            death: true,
+            explanation:
+              'You bled a child for a minor cold! He was already small and the blood loss killed him. You are a terrible physician!',
+          },
+          {
+            name: 'Trepanning (drilling a hole in his skull)',
+            death: true,
+            explanation:
+              "You drilled a hole in his head to let the 'evil spirits' out. The shock and infection killed him instantly.",
+          },
+        ],
+      },
     ];
 
     let currentPatient = null;
@@ -84,26 +148,37 @@ export async function initPhysicianGame(container, task) {
             
             <h4 style="font-size: 1.3rem; margin-bottom: 15px; font-family: 'Playfair Display', serif;">How will you treat them, Doctor?</h4>
             <div style="display: flex; flex-direction: column; gap: 10px; max-width: 500px; margin: 0 auto;">
-              ${currentPatient.cures.map((cure, idx) => `
+              ${currentPatient.cures
+                .map(
+                  (cure, idx) => `
                 <button class="cure-btn" data-idx="${idx}" style="background: #334155; color: white; border: none; padding: 12px 20px; font-size: 1.1rem; border-radius: 6px; cursor: pointer; font-weight: bold; transition: background 0.2s;">
                   ${cure.name}
                 </button>
-              `).join('')}
+              `,
+                )
+                .join('')}
             </div>
           </div>
         </div>
       `;
-      
-      document.querySelectorAll('.cure-btn').forEach(btn => {
-        btn.onmouseover = () => { btn.style.background = '#475569'; };
-        btn.onmouseout = () => { btn.style.background = '#334155'; };
+
+      document.querySelectorAll('.cure-btn').forEach((btn) => {
+        btn.onmouseover = () => {
+          btn.style.background = '#475569';
+        };
+        btn.onmouseout = () => {
+          btn.style.background = '#334155';
+        };
         btn.onclick = () => renderOutcome(btn.getAttribute('data-idx'));
       });
     };
 
     const renderOutcome = (cureIdx) => {
       const selectedCure = currentPatient.cures[cureIdx];
-      
+
+      // Award +20 XP for decision simulation completion
+      addXp(20, 'Physician Case Decision Completed');
+
       container.innerHTML = `
         <div style="background: #f8fafc; color: #0f172a; padding: 0; border-radius: 8px; border: 4px solid #334155; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
            <div style="background: #1e293b; color: white; padding: 15px; text-align: center; font-family: 'Playfair Display', serif;">
@@ -126,12 +201,11 @@ export async function initPhysicianGame(container, task) {
           </div>
         </div>
       `;
-      
+
       document.getElementById('btn-again').onclick = pickPatient;
     };
 
     renderIdle();
-
   } catch (err) {
     container.innerHTML = `<div style="padding: 20px; color: red;">Error loading game: ${err.message}</div>`;
   }

@@ -91,8 +91,8 @@ export function updateLeitnerBox(questionId, isCorrect) {
     entry.status = newBox === 5 ? 'mastered' : 'secured';
     entry.timestamp = now;
 
-    // Add XP
-    state.dailyXp += 10;
+    // Add XP via centralized reward dispatcher
+    addXp(10, 'Leitner Card Mastered');
   } else {
     // Demote to box 1 and review immediately
     entry.leitnerBox = 1;
@@ -238,4 +238,66 @@ export function clearWeakSpots(unitId = null) {
     });
   }
   saveProgress();
+}
+
+/**
+ * Renders an animated gamified XP reward toast notification.
+ */
+export function showXpToast(amount, reason = '') {
+  if (typeof document === 'undefined') return;
+  let container = document.getElementById('xp-toast-container');
+  if (!container) {
+    container = document.createElement('div');
+    container.id = 'xp-toast-container';
+    container.style.cssText =
+      'position: fixed; bottom: 24px; right: 24px; z-index: 99999; display: flex; flex-direction: column; gap: 8px; pointer-events: none;';
+    document.body.appendChild(container);
+  }
+
+  const toast = document.createElement('div');
+  toast.className = 'xp-reward-toast';
+  toast.style.cssText =
+    'background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #facc15; border: 1.5px solid #f59e0b; padding: 10px 18px; border-radius: 30px; font-weight: 800; font-size: 0.95rem; box-shadow: 0 10px 25px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 8px; pointer-events: auto; animation: slideUpToast 0.35s cubic-bezier(0.16, 1, 0.3, 1);';
+  toast.innerHTML = `<i class="fa-solid fa-bolt" style="color: #fbbf24;"></i> <span>+${amount} XP</span>${reason ? `<span style="color: #e2e8f0; font-size: 0.85rem; font-weight: 600; margin-left: 4px;">· ${reason}</span>` : ''}`;
+
+  container.appendChild(toast);
+
+  // Update any XP badges in the page DOM
+  document.querySelectorAll('.xp-display-counter, .xp-badge-val').forEach((el) => {
+    el.textContent = `${state.dailyXp || 0} XP`;
+  });
+
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateY(10px) scale(0.95)';
+    toast.style.transition = 'all 0.3s ease';
+    setTimeout(() => toast.remove(), 300);
+  }, 2600);
+}
+
+/**
+ * Centrally awards XP points to pupil, persists in localStorage, and triggers feedback.
+ */
+export function addXp(amount, reason = '') {
+  const pts = parseInt(amount, 10);
+  if (isNaN(pts) || pts <= 0) return state.dailyXp || 0;
+  if (!state.dailyXp) state.dailyXp = 0;
+  state.dailyXp += pts;
+  saveProgress();
+  showXpToast(pts, reason);
+  try {
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(
+        new CustomEvent('history-xp-awarded', {
+          detail: { amount: pts, total: state.dailyXp, reason },
+        }),
+      );
+    }
+  } catch (e) {}
+  return state.dailyXp;
+}
+
+if (typeof window !== 'undefined') {
+  window.addXp = addXp;
+  window.showXpToast = showXpToast;
 }

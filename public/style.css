@@ -2809,6 +2809,106 @@ body.sen-mode .narrative-chunk.reading-highlight {
   border-left-color: #d97706 !important;
   box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.35) !important;
 }
+
+/* In-Lesson Audio Playback Bar & Speed Pill */
+.read-aloud-playback-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--bg-card, #ffffff);
+  border: 1px solid var(--border-glass, #e2e8f0);
+  border-radius: 20px;
+  padding: 3px 4px 3px 7px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  flex-shrink: 0;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.speech-speed-pill {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  padding: 1px;
+  gap: 1px;
+}
+
+.speech-speed-opt {
+  border: none;
+  background: transparent;
+  color: var(--text-muted, #64748b);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  line-height: 1.2;
+  user-select: none;
+}
+
+.speech-speed-opt:hover {
+  color: var(--text-main, #0f172a);
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.speech-speed-opt.active {
+  background: var(--primary, #2563eb);
+  color: #ffffff !important;
+  box-shadow: 0 1px 2px rgba(37, 99, 235, 0.3);
+}
+
+.read-aloud-playback-bar .read-aloud-btn {
+  padding: 5px 8px !important;
+  font-size: 0.82rem !important;
+  border-radius: 50% !important;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1px !important;
+  border: none !important;
+  background: #f1f5f9;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.read-aloud-playback-bar .read-aloud-btn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.read-aloud-playback-bar .read-aloud-btn.reading-active {
+  background: #ef4444 !important;
+  color: #ffffff !important;
+}
+
+/* SEN Mode Styling for Playback Bar */
+body.sen-mode .read-aloud-playback-bar {
+  background: #fdfaf2;
+  border-color: #d1c7b7;
+}
+
+body.sen-mode .speech-speed-pill {
+  background: #eae2d0;
+}
+
+body.sen-mode .speech-speed-opt {
+  color: #574e40;
+}
+
+body.sen-mode .speech-speed-opt.active {
+  background: #854d0e;
+  color: #ffffff !important;
+}
+
+body.sen-mode .read-aloud-playback-bar .read-aloud-btn {
+  background: #eae2d0;
+  color: #383024;
+}
 .sidebar {
   background: #0f172a !important;
   border-right: none !important;

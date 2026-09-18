@@ -32,8 +32,32 @@ export function setSpeechRate(rate) {
         localStorage.setItem('speech_rate', currentSpeechRate.toString());
       }
     } catch (e) {}
+
+    // Update all speed pills across the DOM
+    if (typeof document !== 'undefined') {
+      document.querySelectorAll('.speech-speed-opt').forEach((opt) => {
+        const optRate = parseFloat(opt.dataset.rate);
+        if (!isNaN(optRate) && Math.abs(optRate - currentSpeechRate) < 0.05) {
+          opt.classList.add('active');
+        } else {
+          opt.classList.remove('active');
+        }
+      });
+    }
+
     if (activeUtterance) {
       activeUtterance.rate = currentSpeechRate;
+      // If currently playing, smoothly restart with active button so pupil hears new speed immediately
+      if (
+        activeButton &&
+        typeof window !== 'undefined' &&
+        window.speechSynthesis &&
+        window.speechSynthesis.speaking
+      ) {
+        const currentBtn = activeButton;
+        cancelSpeech();
+        readAloudText(currentBtn);
+      }
     }
   }
 }
@@ -43,6 +67,32 @@ export function setSpeechRate(rate) {
  */
 export function getSpeechRate() {
   return currentSpeechRate;
+}
+
+/**
+ * Generates the compact HTML playback bar containing the speed pill selector (0.85x | 1.0x | 1.15x)
+ * and the read-aloud trigger button.
+ */
+export function renderAudioPlaybackBar(buttonTitle = 'Read Aloud', customClass = '') {
+  const rate = getSpeechRate();
+  const rates = [0.85, 1.0, 1.15];
+  const pillHtml = rates
+    .map((r) => {
+      const isSelected = Math.abs(rate - r) < 0.05;
+      return `<button type="button" class="speech-speed-opt ${isSelected ? 'active' : ''}" data-action="change-speech-rate" data-rate="${r}" title="Playback speed ${r}x">${r}x</button>`;
+    })
+    .join('');
+
+  return `
+    <div class="read-aloud-playback-bar no-print ${customClass}" role="region" aria-label="Audio Controls">
+      <div class="speech-speed-pill" role="group" aria-label="Playback Speed">
+        ${pillHtml}
+      </div>
+      <button type="button" class="btn btn-secondary read-aloud-btn" data-action="read-aloud" title="${buttonTitle}">
+        <i class="fa-solid fa-volume-high"></i>
+      </button>
+    </div>
+  `;
 }
 
 /**
@@ -410,6 +460,7 @@ export function initSpeech() {
   window.cancelSpeech = cancelSpeech;
   window.setSpeechRate = setSpeechRate;
   window.getSpeechRate = getSpeechRate;
+  window.renderAudioPlaybackBar = renderAudioPlaybackBar;
 
   if ('speechSynthesis' in window) {
     // Prime voices immediately and when changed asynchronously

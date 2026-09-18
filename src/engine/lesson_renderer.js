@@ -3,6 +3,7 @@ import { generateKeyIndividualEmbedHTML } from '../key_individuals.js';
 import { appStore } from './store.js';
 import { getAssetUrl } from './assets.js';
 import { getWorkbookPageAnchor } from './workbook_page_map.js';
+import { renderAudioPlaybackBar } from './speech.js';
 
 // Module-level fallback to ensure isGCSE never throws ReferenceError
 var isGCSE = false;
@@ -2954,7 +2955,7 @@ export function renderLesson(lesson) {
 
         const sourceTitle = rawSource.title || rawSource.caption || '';
         const sourceAudioBtnHtml = isWrittenSource
-          ? `<button class="btn btn-secondary no-print read-aloud-btn" data-action="read-aloud" style="padding: 5px 9px; flex-shrink: 0; margin-left: 8px; cursor: pointer;" title="Read Aloud Primary Source Excerpt"><i class="fa-solid fa-volume-high"></i></button>`
+          ? renderAudioPlaybackBar('Read Aloud Primary Source Excerpt', 'source-audio-bar')
           : '';
 
         const sourceHeaderHtml = sourceTitle
@@ -3094,7 +3095,7 @@ export function renderLesson(lesson) {
                 ${!block.text || !block.text.trim() || (typeof block.text === 'string' && block.text.includes('side-quest-box')) || (block.title && block.title.toLowerCase().includes('lesson reflection')) ? '' : '<div class="para-number">' + (index + 1) + '</div>'}
                 <div class="narrative-text" style="flex-grow: 1; line-height: 1.6;">${themeHeadingHtml}${styledContent}</div>
                 <div style="display: flex; align-items: flex-start;">
-                  <button class="btn btn-secondary no-print" data-action="read-aloud" style="padding: 6px 10px; flex-shrink: 0; margin-left: 15px;" title="Read Aloud"><i class="fa-solid fa-volume-high"></i></button>
+                  ${renderAudioPlaybackBar('Read Aloud Paragraph')}
                 </div>
               </div>
             </div>
@@ -3108,7 +3109,7 @@ export function renderLesson(lesson) {
                 <div class="para-number" style="background:#ecfdf5; color:#047857;">${index + 1}</div>
                 <div class="narrative-text" style="flex-grow: 1; line-height: 1.6; font-size: 1.15rem; color:#1e293b;">${l4StyledContent}</div>
                 <div style="display: flex; align-items: flex-start;">
-                  <button class="btn btn-secondary no-print" data-action="read-aloud" style="padding: 6px 10px; flex-shrink: 0; margin-left: 15px;" title="Read Aloud"><i class="fa-solid fa-volume-high"></i></button>
+                  ${renderAudioPlaybackBar('Read Aloud Paragraph (Level 4)')}
                 </div>
               </div>
             </div>
@@ -5256,15 +5257,16 @@ export function injectArchivalAudioButtons(container = document) {
     const body = box.querySelector('.archival-source-body');
     if (!body || !body.textContent.trim()) return;
 
-    // Skip if button is already present
-    if (box.querySelector('[data-action="read-aloud"], .read-aloud-btn')) return;
+    // Skip if button or playback bar is already present
+    if (box.querySelector('[data-action="read-aloud"], .read-aloud-btn, .read-aloud-playback-bar'))
+      return;
 
-    const btn = document.createElement('button');
-    btn.className = 'btn btn-secondary no-print read-aloud-btn';
-    btn.setAttribute('data-action', 'read-aloud');
-    btn.setAttribute('title', 'Read Aloud Primary Source Excerpt');
-    btn.style.cssText = 'padding: 5px 9px; flex-shrink: 0; margin-left: 8px; cursor: pointer;';
-    btn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+    const barWrap = document.createElement('div');
+    barWrap.innerHTML = renderAudioPlaybackBar(
+      'Read Aloud Primary Source Excerpt',
+      'source-audio-bar',
+    );
+    const bar = barWrap.firstElementChild;
 
     const header = box.querySelector('.archival-source-header');
     if (header) {
@@ -5275,18 +5277,18 @@ export function injectArchivalAudioButtons(container = document) {
         rightContainer !== header &&
         rightContainer.style.display?.includes('flex')
       ) {
-        rightContainer.appendChild(btn);
+        rightContainer.appendChild(bar);
       } else {
         const wrap = document.createElement('div');
         wrap.style.cssText = 'display: inline-flex; align-items: center; margin-left: auto;';
-        wrap.appendChild(btn);
+        wrap.appendChild(bar);
         header.appendChild(wrap);
       }
     } else {
       const topBar = document.createElement('div');
       topBar.className = 'archival-audio-bar no-print';
       topBar.style.cssText = 'display: flex; justify-content: flex-end; margin-bottom: 8px;';
-      topBar.appendChild(btn);
+      topBar.appendChild(bar);
       box.insertBefore(topBar, box.firstChild);
     }
   });

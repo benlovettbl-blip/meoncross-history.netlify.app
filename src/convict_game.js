@@ -1,3 +1,5 @@
+import { addXp } from './storage.js';
+
 export async function initConvictGame(container) {
   container.innerHTML = `
     <div style="background: #1e293b; color: white; padding: 20px; border-radius: 8px; text-align: center; font-family: 'Playfair Display', serif; border: 4px solid #475569;">
@@ -10,7 +12,7 @@ export async function initConvictGame(container) {
     const response = await fetch('/assets/first_fleet_database.txt');
     const text = await response.text();
     const lines = text.split('\n');
-    
+
     // Parse valid convicts
     const convicts = [];
     for (const line of lines) {
@@ -74,15 +76,18 @@ export async function initConvictGame(container) {
           </div>
         </div>
       `;
-      
-      document.querySelectorAll('.judge-btn').forEach(btn => {
+
+      document.querySelectorAll('.judge-btn').forEach((btn) => {
         btn.onclick = () => renderReveal();
       });
     };
 
     const renderReveal = () => {
       let isDeath = currentConvict.sentence.toLowerCase().includes('death');
-      
+
+      // Award +20 XP for decision simulation completion
+      addXp(20, 'Court Verdict Decision Completed');
+
       container.innerHTML = `
         <div style="background: #f8fafc; color: #0f172a; padding: 0; border-radius: 8px; border: 4px solid #334155; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
            <div style="background: #1e293b; color: white; padding: 15px; text-align: center; font-family: 'Playfair Display', serif;">
@@ -95,7 +100,7 @@ export async function initConvictGame(container) {
             
             <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto 20px; line-height: 1.6;">
               In the 18th century, the 'Bloody Code' meant that even minor crimes like "${currentConvict.crime}" were brutally punished. 
-              ${isDeath ? "Although sentenced to death, their sentence was later commuted (reduced) to transportation." : "Prisons were full, so transportation was the primary severe punishment."}
+              ${isDeath ? 'Although sentenced to death, their sentence was later commuted (reduced) to transportation.' : 'Prisons were full, so transportation was the primary severe punishment.'}
             </p>
             
             <div style="background: #e0f2fe; border-left: 4px solid #0284c7; padding: 15px; text-align: left; margin-bottom: 25px;">
@@ -107,7 +112,7 @@ export async function initConvictGame(container) {
           </div>
         </div>
       `;
-      
+
       document.getElementById('btn-again').onclick = pickConvict;
     };
 
@@ -116,7 +121,6 @@ export async function initConvictGame(container) {
     } else {
       container.innerHTML = `<div style="padding: 20px; color: red;">Failed to parse database.</div>`;
     }
-
   } catch (err) {
     container.innerHTML = `<div style="padding: 20px; color: red;">Error loading game: ${err.message}</div>`;
   }
